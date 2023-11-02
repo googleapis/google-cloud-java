@@ -26,8 +26,8 @@ import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.aiplatform.v1beta1.CreateFeatureGroupOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.CreateFeatureGroupRequest;
+import com.google.cloud.aiplatform.v1beta1.CreateFeatureOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.CreateFeatureRequest;
-import com.google.cloud.aiplatform.v1beta1.CreateRegistryFeatureOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.DeleteFeatureGroupRequest;
 import com.google.cloud.aiplatform.v1beta1.DeleteFeatureRequest;
 import com.google.cloud.aiplatform.v1beta1.DeleteOperationMetadata;
@@ -117,7 +117,7 @@ public abstract class FeatureRegistryServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: deleteFeatureGroupCallable()");
   }
 
-  public OperationCallable<CreateFeatureRequest, Feature, CreateRegistryFeatureOperationMetadata>
+  public OperationCallable<CreateFeatureRequest, Feature, CreateFeatureOperationMetadata>
       createFeatureOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: createFeatureOperationCallable()");
   }
