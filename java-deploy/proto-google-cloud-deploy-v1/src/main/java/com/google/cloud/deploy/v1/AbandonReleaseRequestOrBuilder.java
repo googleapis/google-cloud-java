@@ -28,8 +28,7 @@ public interface AbandonReleaseRequestOrBuilder
    *
    * <pre>
    * Required. Name of the Release. Format is
-   * projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/
-   * releases/{release}.
+   * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}`.
    * </pre>
    *
    * <code>
@@ -44,8 +43,7 @@ public interface AbandonReleaseRequestOrBuilder
    *
    * <pre>
    * Required. Name of the Release. Format is
-   * projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/
-   * releases/{release}.
+   * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}`.
    * </pre>
    *
    * <code>

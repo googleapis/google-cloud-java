@@ -29,7 +29,7 @@ public interface CreateRolloutRequestOrBuilder
    * <pre>
    * Required. The parent collection in which the `Rollout` should be created.
    * Format should be
-   * projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}/releases/{release_name}.
+   * `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}/releases/{release_name}`.
    * </pre>
    *
    * <code>
@@ -45,7 +45,7 @@ public interface CreateRolloutRequestOrBuilder
    * <pre>
    * Required. The parent collection in which the `Rollout` should be created.
    * Format should be
-   * projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}/releases/{release_name}.
+   * `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}/releases/{release_name}`.
    * </pre>
    *
    * <code>

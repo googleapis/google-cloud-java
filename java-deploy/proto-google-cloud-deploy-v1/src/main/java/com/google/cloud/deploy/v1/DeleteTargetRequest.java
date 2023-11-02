@@ -73,7 +73,7 @@ public final class DeleteTargetRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. The name of the `Target` to delete. Format should be
-   * projects/{project_id}/locations/{location_name}/targets/{target_name}.
+   * `projects/{project_id}/locations/{location_name}/targets/{target_name}`.
    * </pre>
    *
    * <code>
@@ -99,7 +99,7 @@ public final class DeleteTargetRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. The name of the `Target` to delete. Format should be
-   * projects/{project_id}/locations/{location_name}/targets/{target_name}.
+   * `projects/{project_id}/locations/{location_name}/targets/{target_name}`.
    * </pre>
    *
    * <code>
@@ -728,7 +728,7 @@ public final class DeleteTargetRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The name of the `Target` to delete. Format should be
-     * projects/{project_id}/locations/{location_name}/targets/{target_name}.
+     * `projects/{project_id}/locations/{location_name}/targets/{target_name}`.
      * </pre>
      *
      * <code>
@@ -753,7 +753,7 @@ public final class DeleteTargetRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The name of the `Target` to delete. Format should be
-     * projects/{project_id}/locations/{location_name}/targets/{target_name}.
+     * `projects/{project_id}/locations/{location_name}/targets/{target_name}`.
      * </pre>
      *
      * <code>
@@ -778,7 +778,7 @@ public final class DeleteTargetRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The name of the `Target` to delete. Format should be
-     * projects/{project_id}/locations/{location_name}/targets/{target_name}.
+     * `projects/{project_id}/locations/{location_name}/targets/{target_name}`.
      * </pre>
      *
      * <code>
@@ -802,7 +802,7 @@ public final class DeleteTargetRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The name of the `Target` to delete. Format should be
-     * projects/{project_id}/locations/{location_name}/targets/{target_name}.
+     * `projects/{project_id}/locations/{location_name}/targets/{target_name}`.
      * </pre>
      *
      * <code>
@@ -822,7 +822,7 @@ public final class DeleteTargetRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The name of the `Target` to delete. Format should be
-     * projects/{project_id}/locations/{location_name}/targets/{target_name}.
+     * `projects/{project_id}/locations/{location_name}/targets/{target_name}`.
      * </pre>
      *
      * <code>

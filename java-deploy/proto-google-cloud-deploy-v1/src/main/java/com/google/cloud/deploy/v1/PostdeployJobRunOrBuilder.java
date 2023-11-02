@@ -29,7 +29,7 @@ public interface PostdeployJobRunOrBuilder
    * <pre>
    * Output only. The resource name of the Cloud Build `Build` object that is
    * used to execute the custom actions associated with the postdeploy Job.
-   * Format is projects/{project}/locations/{location}/builds/{build}.
+   * Format is `projects/{project}/locations/{location}/builds/{build}`.
    * </pre>
    *
    * <code>
@@ -45,7 +45,7 @@ public interface PostdeployJobRunOrBuilder
    * <pre>
    * Output only. The resource name of the Cloud Build `Build` object that is
    * used to execute the custom actions associated with the postdeploy Job.
-   * Format is projects/{project}/locations/{location}/builds/{build}.
+   * Format is `projects/{project}/locations/{location}/builds/{build}`.
    * </pre>
    *
    * <code>

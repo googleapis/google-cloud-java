@@ -187,6 +187,27 @@ public class MockCloudDeployImpl extends CloudDeployImplBase {
   }
 
   @Override
+  public void rollbackTarget(
+      RollbackTargetRequest request, StreamObserver<RollbackTargetResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof RollbackTargetResponse) {
+      requests.add(request);
+      responseObserver.onNext(((RollbackTargetResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method RollbackTarget, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  RollbackTargetResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void getTarget(GetTargetRequest request, StreamObserver<Target> responseObserver) {
     Object response = responses.poll();
     if (response instanceof Target) {
@@ -596,6 +617,176 @@ public class MockCloudDeployImpl extends CloudDeployImplBase {
                   "Unrecognized response type %s for method GetConfig, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Config.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createAutomation(
+      CreateAutomationRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateAutomation, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateAutomation(
+      UpdateAutomationRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateAutomation, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteAutomation(
+      DeleteAutomationRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteAutomation, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getAutomation(
+      GetAutomationRequest request, StreamObserver<Automation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Automation) {
+      requests.add(request);
+      responseObserver.onNext(((Automation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetAutomation, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Automation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listAutomations(
+      ListAutomationsRequest request, StreamObserver<ListAutomationsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListAutomationsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListAutomationsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListAutomations, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListAutomationsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getAutomationRun(
+      GetAutomationRunRequest request, StreamObserver<AutomationRun> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof AutomationRun) {
+      requests.add(request);
+      responseObserver.onNext(((AutomationRun) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetAutomationRun, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  AutomationRun.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listAutomationRuns(
+      ListAutomationRunsRequest request,
+      StreamObserver<ListAutomationRunsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListAutomationRunsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListAutomationRunsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListAutomationRuns, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListAutomationRunsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void cancelAutomationRun(
+      CancelAutomationRunRequest request,
+      StreamObserver<CancelAutomationRunResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof CancelAutomationRunResponse) {
+      requests.add(request);
+      responseObserver.onNext(((CancelAutomationRunResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CancelAutomationRun, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  CancelAutomationRunResponse.class.getName(),
                   Exception.class.getName())));
     }
   }

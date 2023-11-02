@@ -73,7 +73,8 @@ public final class CreateDeliveryPipelineRequest extends com.google.protobuf.Gen
    *
    * <pre>
    * Required. The parent collection in which the `DeliveryPipeline` should be
-   * created. Format should be projects/{project_id}/locations/{location_name}.
+   * created. Format should be
+   * `projects/{project_id}/locations/{location_name}`.
    * </pre>
    *
    * <code>
@@ -99,7 +100,8 @@ public final class CreateDeliveryPipelineRequest extends com.google.protobuf.Gen
    *
    * <pre>
    * Required. The parent collection in which the `DeliveryPipeline` should be
-   * created. Format should be projects/{project_id}/locations/{location_name}.
+   * created. Format should be
+   * `projects/{project_id}/locations/{location_name}`.
    * </pre>
    *
    * <code>
@@ -774,7 +776,8 @@ public final class CreateDeliveryPipelineRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Required. The parent collection in which the `DeliveryPipeline` should be
-     * created. Format should be projects/{project_id}/locations/{location_name}.
+     * created. Format should be
+     * `projects/{project_id}/locations/{location_name}`.
      * </pre>
      *
      * <code>
@@ -799,7 +802,8 @@ public final class CreateDeliveryPipelineRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Required. The parent collection in which the `DeliveryPipeline` should be
-     * created. Format should be projects/{project_id}/locations/{location_name}.
+     * created. Format should be
+     * `projects/{project_id}/locations/{location_name}`.
      * </pre>
      *
      * <code>
@@ -824,7 +828,8 @@ public final class CreateDeliveryPipelineRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Required. The parent collection in which the `DeliveryPipeline` should be
-     * created. Format should be projects/{project_id}/locations/{location_name}.
+     * created. Format should be
+     * `projects/{project_id}/locations/{location_name}`.
      * </pre>
      *
      * <code>
@@ -848,7 +853,8 @@ public final class CreateDeliveryPipelineRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Required. The parent collection in which the `DeliveryPipeline` should be
-     * created. Format should be projects/{project_id}/locations/{location_name}.
+     * created. Format should be
+     * `projects/{project_id}/locations/{location_name}`.
      * </pre>
      *
      * <code>
@@ -868,7 +874,8 @@ public final class CreateDeliveryPipelineRequest extends com.google.protobuf.Gen
      *
      * <pre>
      * Required. The parent collection in which the `DeliveryPipeline` should be
-     * created. Format should be projects/{project_id}/locations/{location_name}.
+     * created. Format should be
+     * `projects/{project_id}/locations/{location_name}`.
      * </pre>
      *
      * <code>
