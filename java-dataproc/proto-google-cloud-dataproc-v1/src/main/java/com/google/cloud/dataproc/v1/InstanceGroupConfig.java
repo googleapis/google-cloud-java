@@ -1037,6 +1037,65 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
         : instanceFlexibilityPolicy_;
   }
 
+  public static final int STARTUP_CONFIG_FIELD_NUMBER = 14;
+  private com.google.cloud.dataproc.v1.StartupConfig startupConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration to handle the startup of instances during cluster
+   * create and update process.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.StartupConfig startup_config = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the startupConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasStartupConfig() {
+    return startupConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration to handle the startup of instances during cluster
+   * create and update process.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.StartupConfig startup_config = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The startupConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.dataproc.v1.StartupConfig getStartupConfig() {
+    return startupConfig_ == null
+        ? com.google.cloud.dataproc.v1.StartupConfig.getDefaultInstance()
+        : startupConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration to handle the startup of instances during cluster
+   * create and update process.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.StartupConfig startup_config = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dataproc.v1.StartupConfigOrBuilder getStartupConfigOrBuilder() {
+    return startupConfig_ == null
+        ? com.google.cloud.dataproc.v1.StartupConfig.getDefaultInstance()
+        : startupConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1092,6 +1151,9 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
     }
     if (instanceFlexibilityPolicy_ != null) {
       output.writeMessage(13, getInstanceFlexibilityPolicy());
+    }
+    if (startupConfig_ != null) {
+      output.writeMessage(14, getStartupConfig());
     }
     getUnknownFields().writeTo(output);
   }
@@ -1152,6 +1214,9 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               13, getInstanceFlexibilityPolicy());
     }
+    if (startupConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, getStartupConfig());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1190,6 +1255,10 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
     if (hasInstanceFlexibilityPolicy()) {
       if (!getInstanceFlexibilityPolicy().equals(other.getInstanceFlexibilityPolicy()))
         return false;
+    }
+    if (hasStartupConfig() != other.hasStartupConfig()) return false;
+    if (hasStartupConfig()) {
+      if (!getStartupConfig().equals(other.getStartupConfig())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -1239,6 +1308,10 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
     if (hasInstanceFlexibilityPolicy()) {
       hash = (37 * hash) + INSTANCE_FLEXIBILITY_POLICY_FIELD_NUMBER;
       hash = (53 * hash) + getInstanceFlexibilityPolicy().hashCode();
+    }
+    if (hasStartupConfig()) {
+      hash = (37 * hash) + STARTUP_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getStartupConfig().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1417,6 +1490,11 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
         instanceFlexibilityPolicyBuilder_.dispose();
         instanceFlexibilityPolicyBuilder_ = null;
       }
+      startupConfig_ = null;
+      if (startupConfigBuilder_ != null) {
+        startupConfigBuilder_.dispose();
+        startupConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -1515,6 +1593,10 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
             instanceFlexibilityPolicyBuilder_ == null
                 ? instanceFlexibilityPolicy_
                 : instanceFlexibilityPolicyBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.startupConfig_ =
+            startupConfigBuilder_ == null ? startupConfig_ : startupConfigBuilder_.build();
       }
     }
 
@@ -1664,6 +1746,9 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       if (other.hasInstanceFlexibilityPolicy()) {
         mergeInstanceFlexibilityPolicy(other.getInstanceFlexibilityPolicy());
       }
+      if (other.hasStartupConfig()) {
+        mergeStartupConfig(other.getStartupConfig());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1785,6 +1870,12 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
                 bitField0_ |= 0x00001000;
                 break;
               } // case 106
+            case 114:
+              {
+                input.readMessage(getStartupConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 114
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4254,6 +4345,217 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
         instanceFlexibilityPolicy_ = null;
       }
       return instanceFlexibilityPolicyBuilder_;
+    }
+
+    private com.google.cloud.dataproc.v1.StartupConfig startupConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataproc.v1.StartupConfig,
+            com.google.cloud.dataproc.v1.StartupConfig.Builder,
+            com.google.cloud.dataproc.v1.StartupConfigOrBuilder>
+        startupConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration to handle the startup of instances during cluster
+     * create and update process.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.StartupConfig startup_config = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the startupConfig field is set.
+     */
+    public boolean hasStartupConfig() {
+      return ((bitField0_ & 0x00002000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration to handle the startup of instances during cluster
+     * create and update process.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.StartupConfig startup_config = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The startupConfig.
+     */
+    public com.google.cloud.dataproc.v1.StartupConfig getStartupConfig() {
+      if (startupConfigBuilder_ == null) {
+        return startupConfig_ == null
+            ? com.google.cloud.dataproc.v1.StartupConfig.getDefaultInstance()
+            : startupConfig_;
+      } else {
+        return startupConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration to handle the startup of instances during cluster
+     * create and update process.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.StartupConfig startup_config = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setStartupConfig(com.google.cloud.dataproc.v1.StartupConfig value) {
+      if (startupConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        startupConfig_ = value;
+      } else {
+        startupConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration to handle the startup of instances during cluster
+     * create and update process.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.StartupConfig startup_config = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setStartupConfig(
+        com.google.cloud.dataproc.v1.StartupConfig.Builder builderForValue) {
+      if (startupConfigBuilder_ == null) {
+        startupConfig_ = builderForValue.build();
+      } else {
+        startupConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration to handle the startup of instances during cluster
+     * create and update process.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.StartupConfig startup_config = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeStartupConfig(com.google.cloud.dataproc.v1.StartupConfig value) {
+      if (startupConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00002000) != 0)
+            && startupConfig_ != null
+            && startupConfig_ != com.google.cloud.dataproc.v1.StartupConfig.getDefaultInstance()) {
+          getStartupConfigBuilder().mergeFrom(value);
+        } else {
+          startupConfig_ = value;
+        }
+      } else {
+        startupConfigBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration to handle the startup of instances during cluster
+     * create and update process.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.StartupConfig startup_config = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearStartupConfig() {
+      bitField0_ = (bitField0_ & ~0x00002000);
+      startupConfig_ = null;
+      if (startupConfigBuilder_ != null) {
+        startupConfigBuilder_.dispose();
+        startupConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration to handle the startup of instances during cluster
+     * create and update process.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.StartupConfig startup_config = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dataproc.v1.StartupConfig.Builder getStartupConfigBuilder() {
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return getStartupConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration to handle the startup of instances during cluster
+     * create and update process.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.StartupConfig startup_config = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dataproc.v1.StartupConfigOrBuilder getStartupConfigOrBuilder() {
+      if (startupConfigBuilder_ != null) {
+        return startupConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return startupConfig_ == null
+            ? com.google.cloud.dataproc.v1.StartupConfig.getDefaultInstance()
+            : startupConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration to handle the startup of instances during cluster
+     * create and update process.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.StartupConfig startup_config = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataproc.v1.StartupConfig,
+            com.google.cloud.dataproc.v1.StartupConfig.Builder,
+            com.google.cloud.dataproc.v1.StartupConfigOrBuilder>
+        getStartupConfigFieldBuilder() {
+      if (startupConfigBuilder_ == null) {
+        startupConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataproc.v1.StartupConfig,
+                com.google.cloud.dataproc.v1.StartupConfig.Builder,
+                com.google.cloud.dataproc.v1.StartupConfigOrBuilder>(
+                getStartupConfig(), getParentForChildren(), isClean());
+        startupConfig_ = null;
+      }
+      return startupConfigBuilder_;
     }
 
     @java.lang.Override
