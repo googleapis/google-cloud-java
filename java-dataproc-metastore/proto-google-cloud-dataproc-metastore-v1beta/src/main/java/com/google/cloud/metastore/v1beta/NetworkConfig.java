@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,8 @@ package com.google.cloud.metastore.v1beta;
  *
  * <pre>
  * Network configuration for the Dataproc Metastore service.
+ *
+ * Next available ID: 4
  * </pre>
  *
  * Protobuf type {@code google.cloud.metastore.v1beta.NetworkConfig}
@@ -45,11 +47,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new NetworkConfig();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -82,6 +79,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      * hosts in a subnet in the same region and same network. There must
      * be at least one IP address available in the subnet's primary range. The
      * subnet is specified in the following form:
+     *
      * `projects/{project_number}/regions/{region_id}/subnetworks/{subnetwork_id}`
      * </pre>
      *
@@ -102,6 +100,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      * hosts in a subnet in the same region and same network. There must
      * be at least one IP address available in the subnet's primary range. The
      * subnet is specified in the following form:
+     *
      * `projects/{project_number}/regions/{region_id}/subnetworks/{subnetwork_id}`
      * </pre>
      *
@@ -122,6 +121,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      * hosts in a subnet in the same region and same network. There must
      * be at least one IP address available in the subnet's primary range. The
      * subnet is specified in the following form:
+     *
      * `projects/{project_number}/regions/{region_id}/subnetworks/{subnetwork_id}`
      * </pre>
      *
@@ -160,14 +160,46 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getEndpointUriBytes();
 
-    public com.google.cloud.metastore.v1beta.NetworkConfig.Consumer.VpcResourceCase
-        getVpcResourceCase();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The location of the endpoint URI. Format:
+     * `projects/{project}/locations/{location}`.
+     * </pre>
+     *
+     * <code>
+     * string endpoint_location = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The endpointLocation.
+     */
+    java.lang.String getEndpointLocation();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The location of the endpoint URI. Format:
+     * `projects/{project}/locations/{location}`.
+     * </pre>
+     *
+     * <code>
+     * string endpoint_location = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for endpointLocation.
+     */
+    com.google.protobuf.ByteString getEndpointLocationBytes();
+
+    com.google.cloud.metastore.v1beta.NetworkConfig.Consumer.VpcResourceCase getVpcResourceCase();
   }
   /**
    *
    *
    * <pre>
    * Contains information of the customer's network configurations.
+   *
+   * Next available ID: 5
    * </pre>
    *
    * Protobuf type {@code google.cloud.metastore.v1beta.NetworkConfig.Consumer}
@@ -184,17 +216,13 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
 
     private Consumer() {
       endpointUri_ = "";
+      endpointLocation_ = "";
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Consumer();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -213,6 +241,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int vpcResourceCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object vpcResource_;
 
     public enum VpcResourceCase
@@ -267,6 +297,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      * hosts in a subnet in the same region and same network. There must
      * be at least one IP address available in the subnet's primary range. The
      * subnet is specified in the following form:
+     *
      * `projects/{project_number}/regions/{region_id}/subnetworks/{subnetwork_id}`
      * </pre>
      *
@@ -289,6 +320,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      * hosts in a subnet in the same region and same network. There must
      * be at least one IP address available in the subnet's primary range. The
      * subnet is specified in the following form:
+     *
      * `projects/{project_number}/regions/{region_id}/subnetworks/{subnetwork_id}`
      * </pre>
      *
@@ -324,6 +356,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      * hosts in a subnet in the same region and same network. There must
      * be at least one IP address available in the subnet's primary range. The
      * subnet is specified in the following form:
+     *
      * `projects/{project_number}/regions/{region_id}/subnetworks/{subnetwork_id}`
      * </pre>
      *
@@ -403,6 +436,63 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       }
     }
 
+    public static final int ENDPOINT_LOCATION_FIELD_NUMBER = 4;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object endpointLocation_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The location of the endpoint URI. Format:
+     * `projects/{project}/locations/{location}`.
+     * </pre>
+     *
+     * <code>
+     * string endpoint_location = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The endpointLocation.
+     */
+    @java.lang.Override
+    public java.lang.String getEndpointLocation() {
+      java.lang.Object ref = endpointLocation_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        endpointLocation_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The location of the endpoint URI. Format:
+     * `projects/{project}/locations/{location}`.
+     * </pre>
+     *
+     * <code>
+     * string endpoint_location = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for endpointLocation.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getEndpointLocationBytes() {
+      java.lang.Object ref = endpointLocation_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        endpointLocation_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -423,6 +513,9 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(endpointUri_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, endpointUri_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(endpointLocation_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, endpointLocation_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -437,6 +530,9 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(endpointUri_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, endpointUri_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(endpointLocation_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, endpointLocation_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -455,6 +551,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
           (com.google.cloud.metastore.v1beta.NetworkConfig.Consumer) obj;
 
       if (!getEndpointUri().equals(other.getEndpointUri())) return false;
+      if (!getEndpointLocation().equals(other.getEndpointLocation())) return false;
       if (!getVpcResourceCase().equals(other.getVpcResourceCase())) return false;
       switch (vpcResourceCase_) {
         case 1:
@@ -476,6 +573,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ENDPOINT_URI_FIELD_NUMBER;
       hash = (53 * hash) + getEndpointUri().hashCode();
+      hash = (37 * hash) + ENDPOINT_LOCATION_FIELD_NUMBER;
+      hash = (53 * hash) + getEndpointLocation().hashCode();
       switch (vpcResourceCase_) {
         case 1:
           hash = (37 * hash) + SUBNETWORK_FIELD_NUMBER;
@@ -591,6 +690,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Contains information of the customer's network configurations.
+     *
+     * Next available ID: 5
      * </pre>
      *
      * Protobuf type {@code google.cloud.metastore.v1beta.NetworkConfig.Consumer}
@@ -627,6 +728,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
         super.clear();
         bitField0_ = 0;
         endpointUri_ = "";
+        endpointLocation_ = "";
         vpcResourceCase_ = 0;
         vpcResource_ = null;
         return this;
@@ -668,6 +770,9 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.endpointUri_ = endpointUri_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.endpointLocation_ = endpointLocation_;
         }
       }
 
@@ -730,6 +835,11 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
           bitField0_ |= 0x00000002;
           onChanged();
         }
+        if (!other.getEndpointLocation().isEmpty()) {
+          endpointLocation_ = other.endpointLocation_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
         switch (other.getVpcResourceCase()) {
           case SUBNETWORK:
             {
@@ -782,6 +892,12 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000002;
                   break;
                 } // case 26
+              case 34:
+                {
+                  endpointLocation_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 34
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -825,6 +941,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
        * hosts in a subnet in the same region and same network. There must
        * be at least one IP address available in the subnet's primary range. The
        * subnet is specified in the following form:
+       *
        * `projects/{project_number}/regions/{region_id}/subnetworks/{subnetwork_id}`
        * </pre>
        *
@@ -848,6 +965,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
        * hosts in a subnet in the same region and same network. There must
        * be at least one IP address available in the subnet's primary range. The
        * subnet is specified in the following form:
+       *
        * `projects/{project_number}/regions/{region_id}/subnetworks/{subnetwork_id}`
        * </pre>
        *
@@ -884,6 +1002,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
        * hosts in a subnet in the same region and same network. There must
        * be at least one IP address available in the subnet's primary range. The
        * subnet is specified in the following form:
+       *
        * `projects/{project_number}/regions/{region_id}/subnetworks/{subnetwork_id}`
        * </pre>
        *
@@ -920,6 +1039,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
        * hosts in a subnet in the same region and same network. There must
        * be at least one IP address available in the subnet's primary range. The
        * subnet is specified in the following form:
+       *
        * `projects/{project_number}/regions/{region_id}/subnetworks/{subnetwork_id}`
        * </pre>
        *
@@ -949,6 +1069,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
        * hosts in a subnet in the same region and same network. There must
        * be at least one IP address available in the subnet's primary range. The
        * subnet is specified in the following form:
+       *
        * `projects/{project_number}/regions/{region_id}/subnetworks/{subnetwork_id}`
        * </pre>
        *
@@ -976,6 +1097,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
        * hosts in a subnet in the same region and same network. There must
        * be at least one IP address available in the subnet's primary range. The
        * subnet is specified in the following form:
+       *
        * `projects/{project_number}/regions/{region_id}/subnetworks/{subnetwork_id}`
        * </pre>
        *
@@ -1104,6 +1226,127 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
         checkByteStringIsUtf8(value);
         endpointUri_ = value;
         bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object endpointLocation_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The location of the endpoint URI. Format:
+       * `projects/{project}/locations/{location}`.
+       * </pre>
+       *
+       * <code>
+       * string endpoint_location = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The endpointLocation.
+       */
+      public java.lang.String getEndpointLocation() {
+        java.lang.Object ref = endpointLocation_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          endpointLocation_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The location of the endpoint URI. Format:
+       * `projects/{project}/locations/{location}`.
+       * </pre>
+       *
+       * <code>
+       * string endpoint_location = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The bytes for endpointLocation.
+       */
+      public com.google.protobuf.ByteString getEndpointLocationBytes() {
+        java.lang.Object ref = endpointLocation_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          endpointLocation_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The location of the endpoint URI. Format:
+       * `projects/{project}/locations/{location}`.
+       * </pre>
+       *
+       * <code>
+       * string endpoint_location = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param value The endpointLocation to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEndpointLocation(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        endpointLocation_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The location of the endpoint URI. Format:
+       * `projects/{project}/locations/{location}`.
+       * </pre>
+       *
+       * <code>
+       * string endpoint_location = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearEndpointLocation() {
+        endpointLocation_ = getDefaultInstance().getEndpointLocation();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The location of the endpoint URI. Format:
+       * `projects/{project}/locations/{location}`.
+       * </pre>
+       *
+       * <code>
+       * string endpoint_location = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param value The bytes for endpointLocation to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEndpointLocationBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        endpointLocation_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1454,6 +1697,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Network configuration for the Dataproc Metastore service.
+   *
+   * Next available ID: 4
    * </pre>
    *
    * Protobuf type {@code google.cloud.metastore.v1beta.NetworkConfig}

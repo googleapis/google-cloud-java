@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,11 +49,6 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
     return new TablesModelMetadata();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.automl.v1beta1.Tables
         .internal_static_google_cloud_automl_v1beta1_TablesModelMetadata_descriptor;
@@ -70,6 +65,8 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
   }
 
   private int additionalOptimizationObjectiveConfigCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object additionalOptimizationObjectiveConfig_;
 
   public enum AdditionalOptimizationObjectiveConfigCase
@@ -276,17 +273,24 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
    * Column specs of the dataset's primary table's columns, on which
    * the model is trained and which are used as the input for predictions.
    * The
+   *
    * [target_column][google.cloud.automl.v1beta1.TablesModelMetadata.target_column_spec]
    * as well as, according to dataset's state upon model creation,
+   *
    * [weight_column][google.cloud.automl.v1beta1.TablesDatasetMetadata.weight_column_spec_id],
    * and
+   *
    * [ml_use_column][google.cloud.automl.v1beta1.TablesDatasetMetadata.ml_use_column_spec_id]
    * must never be included here.
+   *
    * Only 3 fields are used:
+   *
    * * name - May be set on CreateModel, if set only the columns specified are
    *   used, otherwise all primary table's columns (except the ones listed
    *   above) are used for the training and prediction input.
+   *
    * * display_name - Output only.
+   *
    * * data_type - Output only.
    * </pre>
    *
@@ -304,17 +308,24 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
    * Column specs of the dataset's primary table's columns, on which
    * the model is trained and which are used as the input for predictions.
    * The
+   *
    * [target_column][google.cloud.automl.v1beta1.TablesModelMetadata.target_column_spec]
    * as well as, according to dataset's state upon model creation,
+   *
    * [weight_column][google.cloud.automl.v1beta1.TablesDatasetMetadata.weight_column_spec_id],
    * and
+   *
    * [ml_use_column][google.cloud.automl.v1beta1.TablesDatasetMetadata.ml_use_column_spec_id]
    * must never be included here.
+   *
    * Only 3 fields are used:
+   *
    * * name - May be set on CreateModel, if set only the columns specified are
    *   used, otherwise all primary table's columns (except the ones listed
    *   above) are used for the training and prediction input.
+   *
    * * display_name - Output only.
+   *
    * * data_type - Output only.
    * </pre>
    *
@@ -332,17 +343,24 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
    * Column specs of the dataset's primary table's columns, on which
    * the model is trained and which are used as the input for predictions.
    * The
+   *
    * [target_column][google.cloud.automl.v1beta1.TablesModelMetadata.target_column_spec]
    * as well as, according to dataset's state upon model creation,
+   *
    * [weight_column][google.cloud.automl.v1beta1.TablesDatasetMetadata.weight_column_spec_id],
    * and
+   *
    * [ml_use_column][google.cloud.automl.v1beta1.TablesDatasetMetadata.ml_use_column_spec_id]
    * must never be included here.
+   *
    * Only 3 fields are used:
+   *
    * * name - May be set on CreateModel, if set only the columns specified are
    *   used, otherwise all primary table's columns (except the ones listed
    *   above) are used for the training and prediction input.
+   *
    * * display_name - Output only.
+   *
    * * data_type - Output only.
    * </pre>
    *
@@ -359,17 +377,24 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
    * Column specs of the dataset's primary table's columns, on which
    * the model is trained and which are used as the input for predictions.
    * The
+   *
    * [target_column][google.cloud.automl.v1beta1.TablesModelMetadata.target_column_spec]
    * as well as, according to dataset's state upon model creation,
+   *
    * [weight_column][google.cloud.automl.v1beta1.TablesDatasetMetadata.weight_column_spec_id],
    * and
+   *
    * [ml_use_column][google.cloud.automl.v1beta1.TablesDatasetMetadata.ml_use_column_spec_id]
    * must never be included here.
+   *
    * Only 3 fields are used:
+   *
    * * name - May be set on CreateModel, if set only the columns specified are
    *   used, otherwise all primary table's columns (except the ones listed
    *   above) are used for the training and prediction input.
+   *
    * * display_name - Output only.
+   *
    * * data_type - Output only.
    * </pre>
    *
@@ -386,17 +411,24 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
    * Column specs of the dataset's primary table's columns, on which
    * the model is trained and which are used as the input for predictions.
    * The
+   *
    * [target_column][google.cloud.automl.v1beta1.TablesModelMetadata.target_column_spec]
    * as well as, according to dataset's state upon model creation,
+   *
    * [weight_column][google.cloud.automl.v1beta1.TablesDatasetMetadata.weight_column_spec_id],
    * and
+   *
    * [ml_use_column][google.cloud.automl.v1beta1.TablesDatasetMetadata.ml_use_column_spec_id]
    * must never be included here.
+   *
    * Only 3 fields are used:
+   *
    * * name - May be set on CreateModel, if set only the columns specified are
    *   used, otherwise all primary table's columns (except the ones listed
    *   above) are used for the training and prediction input.
+   *
    * * display_name - Output only.
+   *
    * * data_type - Output only.
    * </pre>
    *
@@ -419,8 +451,10 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
    * Objective function the model is optimizing towards. The training process
    * creates a model that maximizes/minimizes the value of the objective
    * function over the validation set.
+   *
    * The supported optimization objectives depend on the prediction type.
    * If the field is not set, a default objective function is used.
+   *
    * CLASSIFICATION_BINARY:
    *   "MAXIMIZE_AU_ROC" (default) - Maximize the area under the receiver
    *                                 operating characteristic (ROC) curve.
@@ -430,8 +464,11 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
    *                                   recall value.
    *   "MAXIMIZE_RECALL_AT_PRECISION" - Maximize recall for a specified
    *                                    precision value.
+   *
    * CLASSIFICATION_MULTI_CLASS :
    *   "MINIMIZE_LOG_LOSS" (default) - Minimize log loss.
+   *
+   *
    * REGRESSION:
    *   "MINIMIZE_RMSE" (default) - Minimize root-mean-squared error (RMSE).
    *   "MINIMIZE_MAE" - Minimize mean-absolute error (MAE).
@@ -461,8 +498,10 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
    * Objective function the model is optimizing towards. The training process
    * creates a model that maximizes/minimizes the value of the objective
    * function over the validation set.
+   *
    * The supported optimization objectives depend on the prediction type.
    * If the field is not set, a default objective function is used.
+   *
    * CLASSIFICATION_BINARY:
    *   "MAXIMIZE_AU_ROC" (default) - Maximize the area under the receiver
    *                                 operating characteristic (ROC) curve.
@@ -472,8 +511,11 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
    *                                   recall value.
    *   "MAXIMIZE_RECALL_AT_PRECISION" - Maximize recall for a specified
    *                                    precision value.
+   *
    * CLASSIFICATION_MULTI_CLASS :
    *   "MINIMIZE_LOG_LOSS" (default) - Minimize log loss.
+   *
+   *
    * REGRESSION:
    *   "MINIMIZE_RMSE" (default) - Minimize root-mean-squared error (RMSE).
    *   "MINIMIZE_MAE" - Minimize mean-absolute error (MAE).
@@ -589,13 +631,16 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
    * <pre>
    * Required. The train budget of creating this model, expressed in milli node
    * hours i.e. 1,000 value in this field means 1 node hour.
+   *
    * The training cost of the model will not exceed this budget. The final cost
    * will be attempted to be close to the budget, though may end up being (even)
    * noticeably smaller - at the backend's discretion. This especially may
    * happen when further model training ceases to provide any improvements.
+   *
    * If the budget is set to a value known to be insufficient to train a
    * model for the given dataset, the training won't be attempted and
    * will error.
+   *
    * The train budget must be between 1,000 and 72,000 milli node hours,
    * inclusive.
    * </pre>
@@ -1764,17 +1809,24 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      * Column specs of the dataset's primary table's columns, on which
      * the model is trained and which are used as the input for predictions.
      * The
+     *
      * [target_column][google.cloud.automl.v1beta1.TablesModelMetadata.target_column_spec]
      * as well as, according to dataset's state upon model creation,
+     *
      * [weight_column][google.cloud.automl.v1beta1.TablesDatasetMetadata.weight_column_spec_id],
      * and
+     *
      * [ml_use_column][google.cloud.automl.v1beta1.TablesDatasetMetadata.ml_use_column_spec_id]
      * must never be included here.
+     *
      * Only 3 fields are used:
+     *
      * * name - May be set on CreateModel, if set only the columns specified are
      *   used, otherwise all primary table's columns (except the ones listed
      *   above) are used for the training and prediction input.
+     *
      * * display_name - Output only.
+     *
      * * data_type - Output only.
      * </pre>
      *
@@ -1795,17 +1847,24 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      * Column specs of the dataset's primary table's columns, on which
      * the model is trained and which are used as the input for predictions.
      * The
+     *
      * [target_column][google.cloud.automl.v1beta1.TablesModelMetadata.target_column_spec]
      * as well as, according to dataset's state upon model creation,
+     *
      * [weight_column][google.cloud.automl.v1beta1.TablesDatasetMetadata.weight_column_spec_id],
      * and
+     *
      * [ml_use_column][google.cloud.automl.v1beta1.TablesDatasetMetadata.ml_use_column_spec_id]
      * must never be included here.
+     *
      * Only 3 fields are used:
+     *
      * * name - May be set on CreateModel, if set only the columns specified are
      *   used, otherwise all primary table's columns (except the ones listed
      *   above) are used for the training and prediction input.
+     *
      * * display_name - Output only.
+     *
      * * data_type - Output only.
      * </pre>
      *
@@ -1825,17 +1884,24 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      * Column specs of the dataset's primary table's columns, on which
      * the model is trained and which are used as the input for predictions.
      * The
+     *
      * [target_column][google.cloud.automl.v1beta1.TablesModelMetadata.target_column_spec]
      * as well as, according to dataset's state upon model creation,
+     *
      * [weight_column][google.cloud.automl.v1beta1.TablesDatasetMetadata.weight_column_spec_id],
      * and
+     *
      * [ml_use_column][google.cloud.automl.v1beta1.TablesDatasetMetadata.ml_use_column_spec_id]
      * must never be included here.
+     *
      * Only 3 fields are used:
+     *
      * * name - May be set on CreateModel, if set only the columns specified are
      *   used, otherwise all primary table's columns (except the ones listed
      *   above) are used for the training and prediction input.
+     *
      * * display_name - Output only.
+     *
      * * data_type - Output only.
      * </pre>
      *
@@ -1855,17 +1921,24 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      * Column specs of the dataset's primary table's columns, on which
      * the model is trained and which are used as the input for predictions.
      * The
+     *
      * [target_column][google.cloud.automl.v1beta1.TablesModelMetadata.target_column_spec]
      * as well as, according to dataset's state upon model creation,
+     *
      * [weight_column][google.cloud.automl.v1beta1.TablesDatasetMetadata.weight_column_spec_id],
      * and
+     *
      * [ml_use_column][google.cloud.automl.v1beta1.TablesDatasetMetadata.ml_use_column_spec_id]
      * must never be included here.
+     *
      * Only 3 fields are used:
+     *
      * * name - May be set on CreateModel, if set only the columns specified are
      *   used, otherwise all primary table's columns (except the ones listed
      *   above) are used for the training and prediction input.
+     *
      * * display_name - Output only.
+     *
      * * data_type - Output only.
      * </pre>
      *
@@ -1892,17 +1965,24 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      * Column specs of the dataset's primary table's columns, on which
      * the model is trained and which are used as the input for predictions.
      * The
+     *
      * [target_column][google.cloud.automl.v1beta1.TablesModelMetadata.target_column_spec]
      * as well as, according to dataset's state upon model creation,
+     *
      * [weight_column][google.cloud.automl.v1beta1.TablesDatasetMetadata.weight_column_spec_id],
      * and
+     *
      * [ml_use_column][google.cloud.automl.v1beta1.TablesDatasetMetadata.ml_use_column_spec_id]
      * must never be included here.
+     *
      * Only 3 fields are used:
+     *
      * * name - May be set on CreateModel, if set only the columns specified are
      *   used, otherwise all primary table's columns (except the ones listed
      *   above) are used for the training and prediction input.
+     *
      * * display_name - Output only.
+     *
      * * data_type - Output only.
      * </pre>
      *
@@ -1926,17 +2006,24 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      * Column specs of the dataset's primary table's columns, on which
      * the model is trained and which are used as the input for predictions.
      * The
+     *
      * [target_column][google.cloud.automl.v1beta1.TablesModelMetadata.target_column_spec]
      * as well as, according to dataset's state upon model creation,
+     *
      * [weight_column][google.cloud.automl.v1beta1.TablesDatasetMetadata.weight_column_spec_id],
      * and
+     *
      * [ml_use_column][google.cloud.automl.v1beta1.TablesDatasetMetadata.ml_use_column_spec_id]
      * must never be included here.
+     *
      * Only 3 fields are used:
+     *
      * * name - May be set on CreateModel, if set only the columns specified are
      *   used, otherwise all primary table's columns (except the ones listed
      *   above) are used for the training and prediction input.
+     *
      * * display_name - Output only.
+     *
      * * data_type - Output only.
      * </pre>
      *
@@ -1962,17 +2049,24 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      * Column specs of the dataset's primary table's columns, on which
      * the model is trained and which are used as the input for predictions.
      * The
+     *
      * [target_column][google.cloud.automl.v1beta1.TablesModelMetadata.target_column_spec]
      * as well as, according to dataset's state upon model creation,
+     *
      * [weight_column][google.cloud.automl.v1beta1.TablesDatasetMetadata.weight_column_spec_id],
      * and
+     *
      * [ml_use_column][google.cloud.automl.v1beta1.TablesDatasetMetadata.ml_use_column_spec_id]
      * must never be included here.
+     *
      * Only 3 fields are used:
+     *
      * * name - May be set on CreateModel, if set only the columns specified are
      *   used, otherwise all primary table's columns (except the ones listed
      *   above) are used for the training and prediction input.
+     *
      * * display_name - Output only.
+     *
      * * data_type - Output only.
      * </pre>
      *
@@ -1999,17 +2093,24 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      * Column specs of the dataset's primary table's columns, on which
      * the model is trained and which are used as the input for predictions.
      * The
+     *
      * [target_column][google.cloud.automl.v1beta1.TablesModelMetadata.target_column_spec]
      * as well as, according to dataset's state upon model creation,
+     *
      * [weight_column][google.cloud.automl.v1beta1.TablesDatasetMetadata.weight_column_spec_id],
      * and
+     *
      * [ml_use_column][google.cloud.automl.v1beta1.TablesDatasetMetadata.ml_use_column_spec_id]
      * must never be included here.
+     *
      * Only 3 fields are used:
+     *
      * * name - May be set on CreateModel, if set only the columns specified are
      *   used, otherwise all primary table's columns (except the ones listed
      *   above) are used for the training and prediction input.
+     *
      * * display_name - Output only.
+     *
      * * data_type - Output only.
      * </pre>
      *
@@ -2033,17 +2134,24 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      * Column specs of the dataset's primary table's columns, on which
      * the model is trained and which are used as the input for predictions.
      * The
+     *
      * [target_column][google.cloud.automl.v1beta1.TablesModelMetadata.target_column_spec]
      * as well as, according to dataset's state upon model creation,
+     *
      * [weight_column][google.cloud.automl.v1beta1.TablesDatasetMetadata.weight_column_spec_id],
      * and
+     *
      * [ml_use_column][google.cloud.automl.v1beta1.TablesDatasetMetadata.ml_use_column_spec_id]
      * must never be included here.
+     *
      * Only 3 fields are used:
+     *
      * * name - May be set on CreateModel, if set only the columns specified are
      *   used, otherwise all primary table's columns (except the ones listed
      *   above) are used for the training and prediction input.
+     *
      * * display_name - Output only.
+     *
      * * data_type - Output only.
      * </pre>
      *
@@ -2067,17 +2175,24 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      * Column specs of the dataset's primary table's columns, on which
      * the model is trained and which are used as the input for predictions.
      * The
+     *
      * [target_column][google.cloud.automl.v1beta1.TablesModelMetadata.target_column_spec]
      * as well as, according to dataset's state upon model creation,
+     *
      * [weight_column][google.cloud.automl.v1beta1.TablesDatasetMetadata.weight_column_spec_id],
      * and
+     *
      * [ml_use_column][google.cloud.automl.v1beta1.TablesDatasetMetadata.ml_use_column_spec_id]
      * must never be included here.
+     *
      * Only 3 fields are used:
+     *
      * * name - May be set on CreateModel, if set only the columns specified are
      *   used, otherwise all primary table's columns (except the ones listed
      *   above) are used for the training and prediction input.
+     *
      * * display_name - Output only.
+     *
      * * data_type - Output only.
      * </pre>
      *
@@ -2101,17 +2216,24 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      * Column specs of the dataset's primary table's columns, on which
      * the model is trained and which are used as the input for predictions.
      * The
+     *
      * [target_column][google.cloud.automl.v1beta1.TablesModelMetadata.target_column_spec]
      * as well as, according to dataset's state upon model creation,
+     *
      * [weight_column][google.cloud.automl.v1beta1.TablesDatasetMetadata.weight_column_spec_id],
      * and
+     *
      * [ml_use_column][google.cloud.automl.v1beta1.TablesDatasetMetadata.ml_use_column_spec_id]
      * must never be included here.
+     *
      * Only 3 fields are used:
+     *
      * * name - May be set on CreateModel, if set only the columns specified are
      *   used, otherwise all primary table's columns (except the ones listed
      *   above) are used for the training and prediction input.
+     *
      * * display_name - Output only.
+     *
      * * data_type - Output only.
      * </pre>
      *
@@ -2134,17 +2256,24 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      * Column specs of the dataset's primary table's columns, on which
      * the model is trained and which are used as the input for predictions.
      * The
+     *
      * [target_column][google.cloud.automl.v1beta1.TablesModelMetadata.target_column_spec]
      * as well as, according to dataset's state upon model creation,
+     *
      * [weight_column][google.cloud.automl.v1beta1.TablesDatasetMetadata.weight_column_spec_id],
      * and
+     *
      * [ml_use_column][google.cloud.automl.v1beta1.TablesDatasetMetadata.ml_use_column_spec_id]
      * must never be included here.
+     *
      * Only 3 fields are used:
+     *
      * * name - May be set on CreateModel, if set only the columns specified are
      *   used, otherwise all primary table's columns (except the ones listed
      *   above) are used for the training and prediction input.
+     *
      * * display_name - Output only.
+     *
      * * data_type - Output only.
      * </pre>
      *
@@ -2167,17 +2296,24 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      * Column specs of the dataset's primary table's columns, on which
      * the model is trained and which are used as the input for predictions.
      * The
+     *
      * [target_column][google.cloud.automl.v1beta1.TablesModelMetadata.target_column_spec]
      * as well as, according to dataset's state upon model creation,
+     *
      * [weight_column][google.cloud.automl.v1beta1.TablesDatasetMetadata.weight_column_spec_id],
      * and
+     *
      * [ml_use_column][google.cloud.automl.v1beta1.TablesDatasetMetadata.ml_use_column_spec_id]
      * must never be included here.
+     *
      * Only 3 fields are used:
+     *
      * * name - May be set on CreateModel, if set only the columns specified are
      *   used, otherwise all primary table's columns (except the ones listed
      *   above) are used for the training and prediction input.
+     *
      * * display_name - Output only.
+     *
      * * data_type - Output only.
      * </pre>
      *
@@ -2194,17 +2330,24 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      * Column specs of the dataset's primary table's columns, on which
      * the model is trained and which are used as the input for predictions.
      * The
+     *
      * [target_column][google.cloud.automl.v1beta1.TablesModelMetadata.target_column_spec]
      * as well as, according to dataset's state upon model creation,
+     *
      * [weight_column][google.cloud.automl.v1beta1.TablesDatasetMetadata.weight_column_spec_id],
      * and
+     *
      * [ml_use_column][google.cloud.automl.v1beta1.TablesDatasetMetadata.ml_use_column_spec_id]
      * must never be included here.
+     *
      * Only 3 fields are used:
+     *
      * * name - May be set on CreateModel, if set only the columns specified are
      *   used, otherwise all primary table's columns (except the ones listed
      *   above) are used for the training and prediction input.
+     *
      * * display_name - Output only.
+     *
      * * data_type - Output only.
      * </pre>
      *
@@ -2225,17 +2368,24 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      * Column specs of the dataset's primary table's columns, on which
      * the model is trained and which are used as the input for predictions.
      * The
+     *
      * [target_column][google.cloud.automl.v1beta1.TablesModelMetadata.target_column_spec]
      * as well as, according to dataset's state upon model creation,
+     *
      * [weight_column][google.cloud.automl.v1beta1.TablesDatasetMetadata.weight_column_spec_id],
      * and
+     *
      * [ml_use_column][google.cloud.automl.v1beta1.TablesDatasetMetadata.ml_use_column_spec_id]
      * must never be included here.
+     *
      * Only 3 fields are used:
+     *
      * * name - May be set on CreateModel, if set only the columns specified are
      *   used, otherwise all primary table's columns (except the ones listed
      *   above) are used for the training and prediction input.
+     *
      * * display_name - Output only.
+     *
      * * data_type - Output only.
      * </pre>
      *
@@ -2256,17 +2406,24 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      * Column specs of the dataset's primary table's columns, on which
      * the model is trained and which are used as the input for predictions.
      * The
+     *
      * [target_column][google.cloud.automl.v1beta1.TablesModelMetadata.target_column_spec]
      * as well as, according to dataset's state upon model creation,
+     *
      * [weight_column][google.cloud.automl.v1beta1.TablesDatasetMetadata.weight_column_spec_id],
      * and
+     *
      * [ml_use_column][google.cloud.automl.v1beta1.TablesDatasetMetadata.ml_use_column_spec_id]
      * must never be included here.
+     *
      * Only 3 fields are used:
+     *
      * * name - May be set on CreateModel, if set only the columns specified are
      *   used, otherwise all primary table's columns (except the ones listed
      *   above) are used for the training and prediction input.
+     *
      * * display_name - Output only.
+     *
      * * data_type - Output only.
      * </pre>
      *
@@ -2283,17 +2440,24 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      * Column specs of the dataset's primary table's columns, on which
      * the model is trained and which are used as the input for predictions.
      * The
+     *
      * [target_column][google.cloud.automl.v1beta1.TablesModelMetadata.target_column_spec]
      * as well as, according to dataset's state upon model creation,
+     *
      * [weight_column][google.cloud.automl.v1beta1.TablesDatasetMetadata.weight_column_spec_id],
      * and
+     *
      * [ml_use_column][google.cloud.automl.v1beta1.TablesDatasetMetadata.ml_use_column_spec_id]
      * must never be included here.
+     *
      * Only 3 fields are used:
+     *
      * * name - May be set on CreateModel, if set only the columns specified are
      *   used, otherwise all primary table's columns (except the ones listed
      *   above) are used for the training and prediction input.
+     *
      * * display_name - Output only.
+     *
      * * data_type - Output only.
      * </pre>
      *
@@ -2311,17 +2475,24 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      * Column specs of the dataset's primary table's columns, on which
      * the model is trained and which are used as the input for predictions.
      * The
+     *
      * [target_column][google.cloud.automl.v1beta1.TablesModelMetadata.target_column_spec]
      * as well as, according to dataset's state upon model creation,
+     *
      * [weight_column][google.cloud.automl.v1beta1.TablesDatasetMetadata.weight_column_spec_id],
      * and
+     *
      * [ml_use_column][google.cloud.automl.v1beta1.TablesDatasetMetadata.ml_use_column_spec_id]
      * must never be included here.
+     *
      * Only 3 fields are used:
+     *
      * * name - May be set on CreateModel, if set only the columns specified are
      *   used, otherwise all primary table's columns (except the ones listed
      *   above) are used for the training and prediction input.
+     *
      * * display_name - Output only.
+     *
      * * data_type - Output only.
      * </pre>
      *
@@ -2360,8 +2531,10 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      * Objective function the model is optimizing towards. The training process
      * creates a model that maximizes/minimizes the value of the objective
      * function over the validation set.
+     *
      * The supported optimization objectives depend on the prediction type.
      * If the field is not set, a default objective function is used.
+     *
      * CLASSIFICATION_BINARY:
      *   "MAXIMIZE_AU_ROC" (default) - Maximize the area under the receiver
      *                                 operating characteristic (ROC) curve.
@@ -2371,8 +2544,11 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      *                                   recall value.
      *   "MAXIMIZE_RECALL_AT_PRECISION" - Maximize recall for a specified
      *                                    precision value.
+     *
      * CLASSIFICATION_MULTI_CLASS :
      *   "MINIMIZE_LOG_LOSS" (default) - Minimize log loss.
+     *
+     *
      * REGRESSION:
      *   "MINIMIZE_RMSE" (default) - Minimize root-mean-squared error (RMSE).
      *   "MINIMIZE_MAE" - Minimize mean-absolute error (MAE).
@@ -2401,8 +2577,10 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      * Objective function the model is optimizing towards. The training process
      * creates a model that maximizes/minimizes the value of the objective
      * function over the validation set.
+     *
      * The supported optimization objectives depend on the prediction type.
      * If the field is not set, a default objective function is used.
+     *
      * CLASSIFICATION_BINARY:
      *   "MAXIMIZE_AU_ROC" (default) - Maximize the area under the receiver
      *                                 operating characteristic (ROC) curve.
@@ -2412,8 +2590,11 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      *                                   recall value.
      *   "MAXIMIZE_RECALL_AT_PRECISION" - Maximize recall for a specified
      *                                    precision value.
+     *
      * CLASSIFICATION_MULTI_CLASS :
      *   "MINIMIZE_LOG_LOSS" (default) - Minimize log loss.
+     *
+     *
      * REGRESSION:
      *   "MINIMIZE_RMSE" (default) - Minimize root-mean-squared error (RMSE).
      *   "MINIMIZE_MAE" - Minimize mean-absolute error (MAE).
@@ -2442,8 +2623,10 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      * Objective function the model is optimizing towards. The training process
      * creates a model that maximizes/minimizes the value of the objective
      * function over the validation set.
+     *
      * The supported optimization objectives depend on the prediction type.
      * If the field is not set, a default objective function is used.
+     *
      * CLASSIFICATION_BINARY:
      *   "MAXIMIZE_AU_ROC" (default) - Maximize the area under the receiver
      *                                 operating characteristic (ROC) curve.
@@ -2453,8 +2636,11 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      *                                   recall value.
      *   "MAXIMIZE_RECALL_AT_PRECISION" - Maximize recall for a specified
      *                                    precision value.
+     *
      * CLASSIFICATION_MULTI_CLASS :
      *   "MINIMIZE_LOG_LOSS" (default) - Minimize log loss.
+     *
+     *
      * REGRESSION:
      *   "MINIMIZE_RMSE" (default) - Minimize root-mean-squared error (RMSE).
      *   "MINIMIZE_MAE" - Minimize mean-absolute error (MAE).
@@ -2482,8 +2668,10 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      * Objective function the model is optimizing towards. The training process
      * creates a model that maximizes/minimizes the value of the objective
      * function over the validation set.
+     *
      * The supported optimization objectives depend on the prediction type.
      * If the field is not set, a default objective function is used.
+     *
      * CLASSIFICATION_BINARY:
      *   "MAXIMIZE_AU_ROC" (default) - Maximize the area under the receiver
      *                                 operating characteristic (ROC) curve.
@@ -2493,8 +2681,11 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      *                                   recall value.
      *   "MAXIMIZE_RECALL_AT_PRECISION" - Maximize recall for a specified
      *                                    precision value.
+     *
      * CLASSIFICATION_MULTI_CLASS :
      *   "MINIMIZE_LOG_LOSS" (default) - Minimize log loss.
+     *
+     *
      * REGRESSION:
      *   "MINIMIZE_RMSE" (default) - Minimize root-mean-squared error (RMSE).
      *   "MINIMIZE_MAE" - Minimize mean-absolute error (MAE).
@@ -2518,8 +2709,10 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      * Objective function the model is optimizing towards. The training process
      * creates a model that maximizes/minimizes the value of the objective
      * function over the validation set.
+     *
      * The supported optimization objectives depend on the prediction type.
      * If the field is not set, a default objective function is used.
+     *
      * CLASSIFICATION_BINARY:
      *   "MAXIMIZE_AU_ROC" (default) - Maximize the area under the receiver
      *                                 operating characteristic (ROC) curve.
@@ -2529,8 +2722,11 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      *                                   recall value.
      *   "MAXIMIZE_RECALL_AT_PRECISION" - Maximize recall for a specified
      *                                    precision value.
+     *
      * CLASSIFICATION_MULTI_CLASS :
      *   "MINIMIZE_LOG_LOSS" (default) - Minimize log loss.
+     *
+     *
      * REGRESSION:
      *   "MINIMIZE_RMSE" (default) - Minimize root-mean-squared error (RMSE).
      *   "MINIMIZE_MAE" - Minimize mean-absolute error (MAE).
@@ -2980,13 +3176,16 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. The train budget of creating this model, expressed in milli node
      * hours i.e. 1,000 value in this field means 1 node hour.
+     *
      * The training cost of the model will not exceed this budget. The final cost
      * will be attempted to be close to the budget, though may end up being (even)
      * noticeably smaller - at the backend's discretion. This especially may
      * happen when further model training ceases to provide any improvements.
+     *
      * If the budget is set to a value known to be insufficient to train a
      * model for the given dataset, the training won't be attempted and
      * will error.
+     *
      * The train budget must be between 1,000 and 72,000 milli node hours,
      * inclusive.
      * </pre>
@@ -3005,13 +3204,16 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. The train budget of creating this model, expressed in milli node
      * hours i.e. 1,000 value in this field means 1 node hour.
+     *
      * The training cost of the model will not exceed this budget. The final cost
      * will be attempted to be close to the budget, though may end up being (even)
      * noticeably smaller - at the backend's discretion. This especially may
      * happen when further model training ceases to provide any improvements.
+     *
      * If the budget is set to a value known to be insufficient to train a
      * model for the given dataset, the training won't be attempted and
      * will error.
+     *
      * The train budget must be between 1,000 and 72,000 milli node hours,
      * inclusive.
      * </pre>
@@ -3034,13 +3236,16 @@ public final class TablesModelMetadata extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. The train budget of creating this model, expressed in milli node
      * hours i.e. 1,000 value in this field means 1 node hour.
+     *
      * The training cost of the model will not exceed this budget. The final cost
      * will be attempted to be close to the budget, though may end up being (even)
      * noticeably smaller - at the backend's discretion. This especially may
      * happen when further model training ceases to provide any improvements.
+     *
      * If the budget is set to a value known to be insufficient to train a
      * model for the given dataset, the training won't be attempted and
      * will error.
+     *
      * The train budget must be between 1,000 and 72,000 milli node hours,
      * inclusive.
      * </pre>

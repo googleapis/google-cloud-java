@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,11 +52,6 @@ public final class InspectTemplate extends com.google.protobuf.GeneratedMessageV
     return new InspectTemplate();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.privacy.dlp.v2.DlpProto
         .internal_static_google_privacy_dlp_v2_InspectTemplate_descriptor;
@@ -81,6 +76,7 @@ public final class InspectTemplate extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Output only. The template name.
+   *
    * The template will have one of the following formats:
    * `projects/PROJECT_ID/inspectTemplates/TEMPLATE_ID` OR
    * `organizations/ORGANIZATION_ID/inspectTemplates/TEMPLATE_ID`;
@@ -107,6 +103,7 @@ public final class InspectTemplate extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Output only. The template name.
+   *
    * The template will have one of the following formats:
    * `projects/PROJECT_ID/inspectTemplates/TEMPLATE_ID` OR
    * `organizations/ORGANIZATION_ID/inspectTemplates/TEMPLATE_ID`;
@@ -871,6 +868,7 @@ public final class InspectTemplate extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Output only. The template name.
+     *
      * The template will have one of the following formats:
      * `projects/PROJECT_ID/inspectTemplates/TEMPLATE_ID` OR
      * `organizations/ORGANIZATION_ID/inspectTemplates/TEMPLATE_ID`;
@@ -896,6 +894,7 @@ public final class InspectTemplate extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Output only. The template name.
+     *
      * The template will have one of the following formats:
      * `projects/PROJECT_ID/inspectTemplates/TEMPLATE_ID` OR
      * `organizations/ORGANIZATION_ID/inspectTemplates/TEMPLATE_ID`;
@@ -921,6 +920,7 @@ public final class InspectTemplate extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Output only. The template name.
+     *
      * The template will have one of the following formats:
      * `projects/PROJECT_ID/inspectTemplates/TEMPLATE_ID` OR
      * `organizations/ORGANIZATION_ID/inspectTemplates/TEMPLATE_ID`;
@@ -945,6 +945,7 @@ public final class InspectTemplate extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Output only. The template name.
+     *
      * The template will have one of the following formats:
      * `projects/PROJECT_ID/inspectTemplates/TEMPLATE_ID` OR
      * `organizations/ORGANIZATION_ID/inspectTemplates/TEMPLATE_ID`;
@@ -965,6 +966,7 @@ public final class InspectTemplate extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Output only. The template name.
+     *
      * The template will have one of the following formats:
      * `projects/PROJECT_ID/inspectTemplates/TEMPLATE_ID` OR
      * `organizations/ORGANIZATION_ID/inspectTemplates/TEMPLATE_ID`;

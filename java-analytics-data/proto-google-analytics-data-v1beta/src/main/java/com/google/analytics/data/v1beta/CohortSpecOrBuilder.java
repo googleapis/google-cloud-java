@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ public interface CohortSpecOrBuilder
    *
    * <pre>
    * Defines the selection criteria to group users into cohorts.
+   *
    * Most cohort reports define only a single cohort. If multiple cohorts are
    * specified, each cohort can be recognized in the report by their name.
    * </pre>
@@ -40,6 +41,7 @@ public interface CohortSpecOrBuilder
    *
    * <pre>
    * Defines the selection criteria to group users into cohorts.
+   *
    * Most cohort reports define only a single cohort. If multiple cohorts are
    * specified, each cohort can be recognized in the report by their name.
    * </pre>
@@ -52,6 +54,7 @@ public interface CohortSpecOrBuilder
    *
    * <pre>
    * Defines the selection criteria to group users into cohorts.
+   *
    * Most cohort reports define only a single cohort. If multiple cohorts are
    * specified, each cohort can be recognized in the report by their name.
    * </pre>
@@ -64,6 +67,7 @@ public interface CohortSpecOrBuilder
    *
    * <pre>
    * Defines the selection criteria to group users into cohorts.
+   *
    * Most cohort reports define only a single cohort. If multiple cohorts are
    * specified, each cohort can be recognized in the report by their name.
    * </pre>
@@ -77,6 +81,7 @@ public interface CohortSpecOrBuilder
    *
    * <pre>
    * Defines the selection criteria to group users into cohorts.
+   *
    * Most cohort reports define only a single cohort. If multiple cohorts are
    * specified, each cohort can be recognized in the report by their name.
    * </pre>

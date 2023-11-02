@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@ import static com.google.cloud.alloydb.v1alpha.AlloyDBAdminClient.ListClustersPa
 import static com.google.cloud.alloydb.v1alpha.AlloyDBAdminClient.ListInstancesPagedResponse;
 import static com.google.cloud.alloydb.v1alpha.AlloyDBAdminClient.ListLocationsPagedResponse;
 import static com.google.cloud.alloydb.v1alpha.AlloyDBAdminClient.ListSupportedDatabaseFlagsPagedResponse;
+import static com.google.cloud.alloydb.v1alpha.AlloyDBAdminClient.ListUsersPagedResponse;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -29,6 +30,7 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.alloydb.v1alpha.Backup;
 import com.google.cloud.alloydb.v1alpha.BatchCreateInstancesRequest;
@@ -40,9 +42,11 @@ import com.google.cloud.alloydb.v1alpha.CreateClusterRequest;
 import com.google.cloud.alloydb.v1alpha.CreateInstanceRequest;
 import com.google.cloud.alloydb.v1alpha.CreateSecondaryClusterRequest;
 import com.google.cloud.alloydb.v1alpha.CreateSecondaryInstanceRequest;
+import com.google.cloud.alloydb.v1alpha.CreateUserRequest;
 import com.google.cloud.alloydb.v1alpha.DeleteBackupRequest;
 import com.google.cloud.alloydb.v1alpha.DeleteClusterRequest;
 import com.google.cloud.alloydb.v1alpha.DeleteInstanceRequest;
+import com.google.cloud.alloydb.v1alpha.DeleteUserRequest;
 import com.google.cloud.alloydb.v1alpha.FailoverInstanceRequest;
 import com.google.cloud.alloydb.v1alpha.GenerateClientCertificateRequest;
 import com.google.cloud.alloydb.v1alpha.GenerateClientCertificateResponse;
@@ -50,6 +54,8 @@ import com.google.cloud.alloydb.v1alpha.GetBackupRequest;
 import com.google.cloud.alloydb.v1alpha.GetClusterRequest;
 import com.google.cloud.alloydb.v1alpha.GetConnectionInfoRequest;
 import com.google.cloud.alloydb.v1alpha.GetInstanceRequest;
+import com.google.cloud.alloydb.v1alpha.GetUserRequest;
+import com.google.cloud.alloydb.v1alpha.InjectFaultRequest;
 import com.google.cloud.alloydb.v1alpha.Instance;
 import com.google.cloud.alloydb.v1alpha.ListBackupsRequest;
 import com.google.cloud.alloydb.v1alpha.ListBackupsResponse;
@@ -59,6 +65,8 @@ import com.google.cloud.alloydb.v1alpha.ListInstancesRequest;
 import com.google.cloud.alloydb.v1alpha.ListInstancesResponse;
 import com.google.cloud.alloydb.v1alpha.ListSupportedDatabaseFlagsRequest;
 import com.google.cloud.alloydb.v1alpha.ListSupportedDatabaseFlagsResponse;
+import com.google.cloud.alloydb.v1alpha.ListUsersRequest;
+import com.google.cloud.alloydb.v1alpha.ListUsersResponse;
 import com.google.cloud.alloydb.v1alpha.OperationMetadata;
 import com.google.cloud.alloydb.v1alpha.PromoteClusterRequest;
 import com.google.cloud.alloydb.v1alpha.RestartInstanceRequest;
@@ -66,11 +74,12 @@ import com.google.cloud.alloydb.v1alpha.RestoreClusterRequest;
 import com.google.cloud.alloydb.v1alpha.UpdateBackupRequest;
 import com.google.cloud.alloydb.v1alpha.UpdateClusterRequest;
 import com.google.cloud.alloydb.v1alpha.UpdateInstanceRequest;
+import com.google.cloud.alloydb.v1alpha.UpdateUserRequest;
+import com.google.cloud.alloydb.v1alpha.User;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
-import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
@@ -247,6 +256,14 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<InjectFaultRequest, Operation> injectFaultMethodDescriptor =
+      MethodDescriptor.<InjectFaultRequest, Operation>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.alloydb.v1alpha.AlloyDBAdmin/InjectFault")
+          .setRequestMarshaller(ProtoUtils.marshaller(InjectFaultRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .build();
+
   private static final MethodDescriptor<RestartInstanceRequest, Operation>
       restartInstanceMethodDescriptor =
           MethodDescriptor.<RestartInstanceRequest, Operation>newBuilder()
@@ -340,6 +357,47 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
               .setResponseMarshaller(ProtoUtils.marshaller(ConnectionInfo.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<ListUsersRequest, ListUsersResponse>
+      listUsersMethodDescriptor =
+          MethodDescriptor.<ListUsersRequest, ListUsersResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.alloydb.v1alpha.AlloyDBAdmin/ListUsers")
+              .setRequestMarshaller(ProtoUtils.marshaller(ListUsersRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ListUsersResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetUserRequest, User> getUserMethodDescriptor =
+      MethodDescriptor.<GetUserRequest, User>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.alloydb.v1alpha.AlloyDBAdmin/GetUser")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetUserRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(User.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<CreateUserRequest, User> createUserMethodDescriptor =
+      MethodDescriptor.<CreateUserRequest, User>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.alloydb.v1alpha.AlloyDBAdmin/CreateUser")
+          .setRequestMarshaller(ProtoUtils.marshaller(CreateUserRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(User.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<UpdateUserRequest, User> updateUserMethodDescriptor =
+      MethodDescriptor.<UpdateUserRequest, User>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.alloydb.v1alpha.AlloyDBAdmin/UpdateUser")
+          .setRequestMarshaller(ProtoUtils.marshaller(UpdateUserRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(User.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<DeleteUserRequest, Empty> deleteUserMethodDescriptor =
+      MethodDescriptor.<DeleteUserRequest, Empty>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.alloydb.v1alpha.AlloyDBAdmin/DeleteUser")
+          .setRequestMarshaller(ProtoUtils.marshaller(DeleteUserRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .build();
+
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -406,6 +464,9 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
   private final UnaryCallable<FailoverInstanceRequest, Operation> failoverInstanceCallable;
   private final OperationCallable<FailoverInstanceRequest, Instance, OperationMetadata>
       failoverInstanceOperationCallable;
+  private final UnaryCallable<InjectFaultRequest, Operation> injectFaultCallable;
+  private final OperationCallable<InjectFaultRequest, Instance, OperationMetadata>
+      injectFaultOperationCallable;
   private final UnaryCallable<RestartInstanceRequest, Operation> restartInstanceCallable;
   private final OperationCallable<RestartInstanceRequest, Instance, OperationMetadata>
       restartInstanceOperationCallable;
@@ -430,6 +491,12 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
   private final UnaryCallable<GenerateClientCertificateRequest, GenerateClientCertificateResponse>
       generateClientCertificateCallable;
   private final UnaryCallable<GetConnectionInfoRequest, ConnectionInfo> getConnectionInfoCallable;
+  private final UnaryCallable<ListUsersRequest, ListUsersResponse> listUsersCallable;
+  private final UnaryCallable<ListUsersRequest, ListUsersPagedResponse> listUsersPagedCallable;
+  private final UnaryCallable<GetUserRequest, User> getUserCallable;
+  private final UnaryCallable<CreateUserRequest, User> createUserCallable;
+  private final UnaryCallable<UpdateUserRequest, User> updateUserCallable;
+  private final UnaryCallable<DeleteUserRequest, Empty> deleteUserCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -482,9 +549,9 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
             .setMethodDescriptor(listClustersMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetClusterRequest, Cluster> getClusterTransportSettings =
@@ -492,9 +559,9 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
             .setMethodDescriptor(getClusterMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CreateClusterRequest, Operation> createClusterTransportSettings =
@@ -502,9 +569,9 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
             .setMethodDescriptor(createClusterMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateClusterRequest, Operation> updateClusterTransportSettings =
@@ -512,9 +579,9 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
             .setMethodDescriptor(updateClusterMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("cluster.name", String.valueOf(request.getCluster().getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("cluster.name", String.valueOf(request.getCluster().getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteClusterRequest, Operation> deleteClusterTransportSettings =
@@ -522,9 +589,9 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
             .setMethodDescriptor(deleteClusterMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<PromoteClusterRequest, Operation> promoteClusterTransportSettings =
@@ -532,9 +599,9 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
             .setMethodDescriptor(promoteClusterMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<RestoreClusterRequest, Operation> restoreClusterTransportSettings =
@@ -542,9 +609,9 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
             .setMethodDescriptor(restoreClusterMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CreateSecondaryClusterRequest, Operation>
@@ -553,9 +620,9 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
                 .setMethodDescriptor(createSecondaryClusterMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<ListInstancesRequest, ListInstancesResponse> listInstancesTransportSettings =
@@ -563,9 +630,9 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
             .setMethodDescriptor(listInstancesMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetInstanceRequest, Instance> getInstanceTransportSettings =
@@ -573,9 +640,9 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
             .setMethodDescriptor(getInstanceMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CreateInstanceRequest, Operation> createInstanceTransportSettings =
@@ -583,9 +650,9 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
             .setMethodDescriptor(createInstanceMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CreateSecondaryInstanceRequest, Operation>
@@ -594,9 +661,9 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
                 .setMethodDescriptor(createSecondaryInstanceMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<BatchCreateInstancesRequest, Operation> batchCreateInstancesTransportSettings =
@@ -604,9 +671,9 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
             .setMethodDescriptor(batchCreateInstancesMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateInstanceRequest, Operation> updateInstanceTransportSettings =
@@ -614,9 +681,9 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
             .setMethodDescriptor(updateInstanceMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("instance.name", String.valueOf(request.getInstance().getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("instance.name", String.valueOf(request.getInstance().getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteInstanceRequest, Operation> deleteInstanceTransportSettings =
@@ -624,9 +691,9 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
             .setMethodDescriptor(deleteInstanceMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<FailoverInstanceRequest, Operation> failoverInstanceTransportSettings =
@@ -634,9 +701,19 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
             .setMethodDescriptor(failoverInstanceMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<InjectFaultRequest, Operation> injectFaultTransportSettings =
+        GrpcCallSettings.<InjectFaultRequest, Operation>newBuilder()
+            .setMethodDescriptor(injectFaultMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<RestartInstanceRequest, Operation> restartInstanceTransportSettings =
@@ -644,9 +721,9 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
             .setMethodDescriptor(restartInstanceMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListBackupsRequest, ListBackupsResponse> listBackupsTransportSettings =
@@ -654,9 +731,9 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
             .setMethodDescriptor(listBackupsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetBackupRequest, Backup> getBackupTransportSettings =
@@ -664,9 +741,9 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
             .setMethodDescriptor(getBackupMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CreateBackupRequest, Operation> createBackupTransportSettings =
@@ -674,9 +751,9 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
             .setMethodDescriptor(createBackupMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateBackupRequest, Operation> updateBackupTransportSettings =
@@ -684,9 +761,9 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
             .setMethodDescriptor(updateBackupMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("backup.name", String.valueOf(request.getBackup().getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("backup.name", String.valueOf(request.getBackup().getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteBackupRequest, Operation> deleteBackupTransportSettings =
@@ -694,9 +771,9 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
             .setMethodDescriptor(deleteBackupMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListSupportedDatabaseFlagsRequest, ListSupportedDatabaseFlagsResponse>
@@ -706,9 +783,9 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
                 .setMethodDescriptor(listSupportedDatabaseFlagsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GenerateClientCertificateRequest, GenerateClientCertificateResponse>
@@ -718,9 +795,9 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
                 .setMethodDescriptor(generateClientCertificateMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetConnectionInfoRequest, ConnectionInfo> getConnectionInfoTransportSettings =
@@ -728,9 +805,59 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
             .setMethodDescriptor(getConnectionInfoMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<ListUsersRequest, ListUsersResponse> listUsersTransportSettings =
+        GrpcCallSettings.<ListUsersRequest, ListUsersResponse>newBuilder()
+            .setMethodDescriptor(listUsersMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<GetUserRequest, User> getUserTransportSettings =
+        GrpcCallSettings.<GetUserRequest, User>newBuilder()
+            .setMethodDescriptor(getUserMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<CreateUserRequest, User> createUserTransportSettings =
+        GrpcCallSettings.<CreateUserRequest, User>newBuilder()
+            .setMethodDescriptor(createUserMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<UpdateUserRequest, User> updateUserTransportSettings =
+        GrpcCallSettings.<UpdateUserRequest, User>newBuilder()
+            .setMethodDescriptor(updateUserMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("user.name", String.valueOf(request.getUser().getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<DeleteUserRequest, Empty> deleteUserTransportSettings =
+        GrpcCallSettings.<DeleteUserRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteUserMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
@@ -738,9 +865,9 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
             .setMethodDescriptor(listLocationsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetLocationRequest, Location> getLocationTransportSettings =
@@ -748,9 +875,9 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
             .setMethodDescriptor(getLocationMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
 
@@ -886,6 +1013,15 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
             settings.failoverInstanceOperationSettings(),
             clientContext,
             operationsStub);
+    this.injectFaultCallable =
+        callableFactory.createUnaryCallable(
+            injectFaultTransportSettings, settings.injectFaultSettings(), clientContext);
+    this.injectFaultOperationCallable =
+        callableFactory.createOperationCallable(
+            injectFaultTransportSettings,
+            settings.injectFaultOperationSettings(),
+            clientContext,
+            operationsStub);
     this.restartInstanceCallable =
         callableFactory.createUnaryCallable(
             restartInstanceTransportSettings, settings.restartInstanceSettings(), clientContext);
@@ -951,6 +1087,24 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
             getConnectionInfoTransportSettings,
             settings.getConnectionInfoSettings(),
             clientContext);
+    this.listUsersCallable =
+        callableFactory.createUnaryCallable(
+            listUsersTransportSettings, settings.listUsersSettings(), clientContext);
+    this.listUsersPagedCallable =
+        callableFactory.createPagedCallable(
+            listUsersTransportSettings, settings.listUsersSettings(), clientContext);
+    this.getUserCallable =
+        callableFactory.createUnaryCallable(
+            getUserTransportSettings, settings.getUserSettings(), clientContext);
+    this.createUserCallable =
+        callableFactory.createUnaryCallable(
+            createUserTransportSettings, settings.createUserSettings(), clientContext);
+    this.updateUserCallable =
+        callableFactory.createUnaryCallable(
+            updateUserTransportSettings, settings.updateUserSettings(), clientContext);
+    this.deleteUserCallable =
+        callableFactory.createUnaryCallable(
+            deleteUserTransportSettings, settings.deleteUserSettings(), clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -1135,6 +1289,17 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
   }
 
   @Override
+  public UnaryCallable<InjectFaultRequest, Operation> injectFaultCallable() {
+    return injectFaultCallable;
+  }
+
+  @Override
+  public OperationCallable<InjectFaultRequest, Instance, OperationMetadata>
+      injectFaultOperationCallable() {
+    return injectFaultOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<RestartInstanceRequest, Operation> restartInstanceCallable() {
     return restartInstanceCallable;
   }
@@ -1214,6 +1379,36 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
   @Override
   public UnaryCallable<GetConnectionInfoRequest, ConnectionInfo> getConnectionInfoCallable() {
     return getConnectionInfoCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListUsersRequest, ListUsersResponse> listUsersCallable() {
+    return listUsersCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListUsersRequest, ListUsersPagedResponse> listUsersPagedCallable() {
+    return listUsersPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetUserRequest, User> getUserCallable() {
+    return getUserCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateUserRequest, User> createUserCallable() {
+    return createUserCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateUserRequest, User> updateUserCallable() {
+    return updateUserCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteUserRequest, Empty> deleteUserCallable() {
+    return deleteUserCallable;
   }
 
   @Override

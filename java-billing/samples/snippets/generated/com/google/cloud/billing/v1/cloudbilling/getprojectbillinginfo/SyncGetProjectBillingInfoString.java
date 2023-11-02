@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,6 +19,7 @@ package com.google.cloud.billing.v1.samples;
 // [START cloudbilling_v1_generated_CloudBilling_GetProjectBillingInfo_String_sync]
 import com.google.cloud.billing.v1.CloudBillingClient;
 import com.google.cloud.billing.v1.ProjectBillingInfo;
+import com.google.cloud.billing.v1.ProjectName;
 
 public class SyncGetProjectBillingInfoString {
 
@@ -33,7 +34,7 @@ public class SyncGetProjectBillingInfoString {
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
-      String name = "name3373707";
+      String name = ProjectName.of("[PROJECT]").toString();
       ProjectBillingInfo response = cloudBillingClient.getProjectBillingInfo(name);
     }
   }

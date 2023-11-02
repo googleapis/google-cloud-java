@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class AutoMlParams extends com.google.protobuf.GeneratedMessageV3
     return new AutoMlParams();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.documentai.v1beta2.DocumentAiProto
         .internal_static_google_cloud_documentai_v1beta2_AutoMlParams_descriptor;
@@ -76,6 +71,7 @@ public final class AutoMlParams extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Resource name of the AutoML model.
+   *
    * Format: `projects/{project-id}/locations/{location-id}/models/{model-id}`.
    * </pre>
    *
@@ -100,6 +96,7 @@ public final class AutoMlParams extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Resource name of the AutoML model.
+   *
    * Format: `projects/{project-id}/locations/{location-id}/models/{model-id}`.
    * </pre>
    *
@@ -468,6 +465,7 @@ public final class AutoMlParams extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Resource name of the AutoML model.
+     *
      * Format: `projects/{project-id}/locations/{location-id}/models/{model-id}`.
      * </pre>
      *
@@ -491,6 +489,7 @@ public final class AutoMlParams extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Resource name of the AutoML model.
+     *
      * Format: `projects/{project-id}/locations/{location-id}/models/{model-id}`.
      * </pre>
      *
@@ -514,6 +513,7 @@ public final class AutoMlParams extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Resource name of the AutoML model.
+     *
      * Format: `projects/{project-id}/locations/{location-id}/models/{model-id}`.
      * </pre>
      *
@@ -536,6 +536,7 @@ public final class AutoMlParams extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Resource name of the AutoML model.
+     *
      * Format: `projects/{project-id}/locations/{location-id}/models/{model-id}`.
      * </pre>
      *
@@ -554,6 +555,7 @@ public final class AutoMlParams extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Resource name of the AutoML model.
+     *
      * Format: `projects/{project-id}/locations/{location-id}/models/{model-id}`.
      * </pre>
      *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -107,21 +107,29 @@ public interface GcsSourceOrBuilder
    *
    * <pre>
    * The schema to use when parsing the data from the source.
+   *
    * Supported values for product imports:
+   *
    * * `product` (default): One JSON [Product][google.cloud.retail.v2.Product]
    * per line. Each product must
    *   have a valid [Product.id][google.cloud.retail.v2.Product.id].
    * * `product_merchant_center`: See [Importing catalog data from Merchant
    *   Center](https://cloud.google.com/retail/recommendations-ai/docs/upload-catalog#mc).
+   *
    * Supported values for user events imports:
+   *
    * * `user_event` (default): One JSON
    * [UserEvent][google.cloud.retail.v2.UserEvent] per line.
    * * `user_event_ga360`: Using
    *   https://support.google.com/analytics/answer/3437719.
+   *
    * Supported values for control imports:
+   *
    * * `control` (default): One JSON [Control][google.cloud.retail.v2.Control]
    * per line.
+   *
    * Supported values for catalog attribute imports:
+   *
    * * `catalog_attribute` (default): One CSV
    * [CatalogAttribute][google.cloud.retail.v2.CatalogAttribute] per line.
    * </pre>
@@ -136,21 +144,29 @@ public interface GcsSourceOrBuilder
    *
    * <pre>
    * The schema to use when parsing the data from the source.
+   *
    * Supported values for product imports:
+   *
    * * `product` (default): One JSON [Product][google.cloud.retail.v2.Product]
    * per line. Each product must
    *   have a valid [Product.id][google.cloud.retail.v2.Product.id].
    * * `product_merchant_center`: See [Importing catalog data from Merchant
    *   Center](https://cloud.google.com/retail/recommendations-ai/docs/upload-catalog#mc).
+   *
    * Supported values for user events imports:
+   *
    * * `user_event` (default): One JSON
    * [UserEvent][google.cloud.retail.v2.UserEvent] per line.
    * * `user_event_ga360`: Using
    *   https://support.google.com/analytics/answer/3437719.
+   *
    * Supported values for control imports:
+   *
    * * `control` (default): One JSON [Control][google.cloud.retail.v2.Control]
    * per line.
+   *
    * Supported values for catalog attribute imports:
+   *
    * * `catalog_attribute` (default): One CSV
    * [CatalogAttribute][google.cloud.retail.v2.CatalogAttribute] per line.
    * </pre>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,7 +32,9 @@ public interface ResourceSearchResultOrBuilder
    * See [Cloud Asset Inventory Resource Name
    * Format](https://cloud.google.com/asset-inventory/docs/resource-name-format)
    * for more information.
+   *
    * To search against the `name`:
+   *
    * * Use a field query. Example: `name:instance1`
    * * Use a free text query. Example: `instance1`
    * </pre>
@@ -51,7 +53,9 @@ public interface ResourceSearchResultOrBuilder
    * See [Cloud Asset Inventory Resource Name
    * Format](https://cloud.google.com/asset-inventory/docs/resource-name-format)
    * for more information.
+   *
    * To search against the `name`:
+   *
    * * Use a field query. Example: `name:instance1`
    * * Use a free text query. Example: `instance1`
    * </pre>
@@ -67,7 +71,9 @@ public interface ResourceSearchResultOrBuilder
    *
    * <pre>
    * The type of this resource. Example: `compute.googleapis.com/Disk`.
+   *
    * To search against the `asset_type`:
+   *
    * * Specify the `asset_type` field in your search request.
    * </pre>
    *
@@ -81,7 +87,9 @@ public interface ResourceSearchResultOrBuilder
    *
    * <pre>
    * The type of this resource. Example: `compute.googleapis.com/Disk`.
+   *
    * To search against the `asset_type`:
+   *
    * * Specify the `asset_type` field in your search request.
    * </pre>
    *
@@ -98,7 +106,9 @@ public interface ResourceSearchResultOrBuilder
    * The project that this resource belongs to, in the form of
    * projects/{PROJECT_NUMBER}. This field is available when the resource
    * belongs to a project.
+   *
    * To search against `project`:
+   *
    * * Use a field query. Example: `project:12345`
    * * Use a free text query. Example: `12345`
    * * Specify the `scope` field as this project in your search request.
@@ -116,7 +126,9 @@ public interface ResourceSearchResultOrBuilder
    * The project that this resource belongs to, in the form of
    * projects/{PROJECT_NUMBER}. This field is available when the resource
    * belongs to a project.
+   *
    * To search against `project`:
+   *
    * * Use a field query. Example: `project:12345`
    * * Use a free text query. Example: `12345`
    * * Specify the `scope` field as this project in your search request.
@@ -135,7 +147,9 @@ public interface ResourceSearchResultOrBuilder
    * The folder(s) that this resource belongs to, in the form of
    * folders/{FOLDER_NUMBER}. This field is available when the resource
    * belongs to one or more folders.
+   *
    * To search against `folders`:
+   *
    * * Use a field query. Example: `folders:(123 OR 456)`
    * * Use a free text query. Example: `123`
    * * Specify the `scope` field as this folder in your search request.
@@ -153,7 +167,9 @@ public interface ResourceSearchResultOrBuilder
    * The folder(s) that this resource belongs to, in the form of
    * folders/{FOLDER_NUMBER}. This field is available when the resource
    * belongs to one or more folders.
+   *
    * To search against `folders`:
+   *
    * * Use a field query. Example: `folders:(123 OR 456)`
    * * Use a free text query. Example: `123`
    * * Specify the `scope` field as this folder in your search request.
@@ -171,7 +187,9 @@ public interface ResourceSearchResultOrBuilder
    * The folder(s) that this resource belongs to, in the form of
    * folders/{FOLDER_NUMBER}. This field is available when the resource
    * belongs to one or more folders.
+   *
    * To search against `folders`:
+   *
    * * Use a field query. Example: `folders:(123 OR 456)`
    * * Use a free text query. Example: `123`
    * * Specify the `scope` field as this folder in your search request.
@@ -190,7 +208,9 @@ public interface ResourceSearchResultOrBuilder
    * The folder(s) that this resource belongs to, in the form of
    * folders/{FOLDER_NUMBER}. This field is available when the resource
    * belongs to one or more folders.
+   *
    * To search against `folders`:
+   *
    * * Use a field query. Example: `folders:(123 OR 456)`
    * * Use a free text query. Example: `123`
    * * Specify the `scope` field as this folder in your search request.
@@ -210,7 +230,9 @@ public interface ResourceSearchResultOrBuilder
    * The organization that this resource belongs to, in the form of
    * organizations/{ORGANIZATION_NUMBER}. This field is available when the
    * resource belongs to an organization.
+   *
    * To search against `organization`:
+   *
    * * Use a field query. Example: `organization:123`
    * * Use a free text query. Example: `123`
    * * Specify the `scope` field as this organization in your search request.
@@ -228,7 +250,9 @@ public interface ResourceSearchResultOrBuilder
    * The organization that this resource belongs to, in the form of
    * organizations/{ORGANIZATION_NUMBER}. This field is available when the
    * resource belongs to an organization.
+   *
    * To search against `organization`:
+   *
    * * Use a field query. Example: `organization:123`
    * * Use a free text query. Example: `123`
    * * Specify the `scope` field as this organization in your search request.
@@ -246,7 +270,9 @@ public interface ResourceSearchResultOrBuilder
    * <pre>
    * The display name of this resource. This field is available only when the
    * resource's Protobuf contains it.
+   *
    * To search against the `display_name`:
+   *
    * * Use a field query. Example: `displayName:"My Instance"`
    * * Use a free text query. Example: `"My Instance"`
    * </pre>
@@ -262,7 +288,9 @@ public interface ResourceSearchResultOrBuilder
    * <pre>
    * The display name of this resource. This field is available only when the
    * resource's Protobuf contains it.
+   *
    * To search against the `display_name`:
+   *
    * * Use a field query. Example: `displayName:"My Instance"`
    * * Use a free text query. Example: `"My Instance"`
    * </pre>
@@ -280,7 +308,9 @@ public interface ResourceSearchResultOrBuilder
    * One or more paragraphs of text description of this resource. Maximum length
    * could be up to 1M bytes. This field is available only when the resource's
    * Protobuf contains it.
+   *
    * To search against the `description`:
+   *
    * * Use a field query. Example: `description:"important instance"`
    * * Use a free text query. Example: `"important instance"`
    * </pre>
@@ -297,7 +327,9 @@ public interface ResourceSearchResultOrBuilder
    * One or more paragraphs of text description of this resource. Maximum length
    * could be up to 1M bytes. This field is available only when the resource's
    * Protobuf contains it.
+   *
    * To search against the `description`:
+   *
    * * Use a field query. Example: `description:"important instance"`
    * * Use a free text query. Example: `"important instance"`
    * </pre>
@@ -315,7 +347,9 @@ public interface ResourceSearchResultOrBuilder
    * Location can be `global`, regional like `us-east1`, or zonal like
    * `us-west1-b`. This field is available only when the resource's Protobuf
    * contains it.
+   *
    * To search against the `location`:
+   *
    * * Use a field query. Example: `location:us-west*`
    * * Use a free text query. Example: `us-west*`
    * </pre>
@@ -332,7 +366,9 @@ public interface ResourceSearchResultOrBuilder
    * Location can be `global`, regional like `us-east1`, or zonal like
    * `us-west1-b`. This field is available only when the resource's Protobuf
    * contains it.
+   *
    * To search against the `location`:
+   *
    * * Use a field query. Example: `location:us-west*`
    * * Use a free text query. Example: `us-west*`
    * </pre>
@@ -352,7 +388,9 @@ public interface ResourceSearchResultOrBuilder
    * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
    * for more information. This field is available only when the resource's
    * Protobuf contains it.
+   *
    * To search against the `labels`:
+   *
    * * Use a field query:
    *     - query on any label's key or value. Example: `labels:prod`
    *     - query by a given label. Example: `labels.env:prod`
@@ -372,7 +410,9 @@ public interface ResourceSearchResultOrBuilder
    * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
    * for more information. This field is available only when the resource's
    * Protobuf contains it.
+   *
    * To search against the `labels`:
+   *
    * * Use a field query:
    *     - query on any label's key or value. Example: `labels:prod`
    *     - query by a given label. Example: `labels.env:prod`
@@ -395,7 +435,9 @@ public interface ResourceSearchResultOrBuilder
    * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
    * for more information. This field is available only when the resource's
    * Protobuf contains it.
+   *
    * To search against the `labels`:
+   *
    * * Use a field query:
    *     - query on any label's key or value. Example: `labels:prod`
    *     - query by a given label. Example: `labels.env:prod`
@@ -415,7 +457,9 @@ public interface ResourceSearchResultOrBuilder
    * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
    * for more information. This field is available only when the resource's
    * Protobuf contains it.
+   *
    * To search against the `labels`:
+   *
    * * Use a field query:
    *     - query on any label's key or value. Example: `labels:prod`
    *     - query by a given label. Example: `labels.env:prod`
@@ -439,7 +483,9 @@ public interface ResourceSearchResultOrBuilder
    * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
    * for more information. This field is available only when the resource's
    * Protobuf contains it.
+   *
    * To search against the `labels`:
+   *
    * * Use a field query:
    *     - query on any label's key or value. Example: `labels:prod`
    *     - query by a given label. Example: `labels.env:prod`
@@ -461,7 +507,9 @@ public interface ResourceSearchResultOrBuilder
    * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
    * for more information. This field is available only when the resource's
    * Protobuf contains it.
+   *
    * To search against the `network_tags`:
+   *
    * * Use a field query. Example: `networkTags:internal`
    * * Use a free text query. Example: `internal`
    * </pre>
@@ -481,7 +529,9 @@ public interface ResourceSearchResultOrBuilder
    * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
    * for more information. This field is available only when the resource's
    * Protobuf contains it.
+   *
    * To search against the `network_tags`:
+   *
    * * Use a field query. Example: `networkTags:internal`
    * * Use a free text query. Example: `internal`
    * </pre>
@@ -501,7 +551,9 @@ public interface ResourceSearchResultOrBuilder
    * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
    * for more information. This field is available only when the resource's
    * Protobuf contains it.
+   *
    * To search against the `network_tags`:
+   *
    * * Use a field query. Example: `networkTags:internal`
    * * Use a free text query. Example: `internal`
    * </pre>
@@ -522,7 +574,9 @@ public interface ResourceSearchResultOrBuilder
    * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
    * for more information. This field is available only when the resource's
    * Protobuf contains it.
+   *
    * To search against the `network_tags`:
+   *
    * * Use a field query. Example: `networkTags:internal`
    * * Use a free text query. Example: `internal`
    * </pre>
@@ -543,13 +597,16 @@ public interface ResourceSearchResultOrBuilder
    * name or
    * [CryptoKeyVersion](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions)
    * name.
+   *
    * This field only presents for the purpose of backward compatibility. Please
    * use the `kms_keys` field to retrieve Cloud KMS key information. This field
    * is available only when the resource's Protobuf contains it and will only be
    * populated for [these resource
    * types](https://cloud.google.com/asset-inventory/docs/legacy-field-names#resource_types_with_the_to_be_deprecated_kmskey_field)
    * for backward compatible purposes.
+   *
    * To search against the `kms_key`:
+   *
    * * Use a field query. Example: `kmsKey:key`
    * * Use a free text query. Example: `key`
    * </pre>
@@ -557,7 +614,7 @@ public interface ResourceSearchResultOrBuilder
    * <code>string kms_key = 10 [deprecated = true];</code>
    *
    * @deprecated google.cloud.asset.v1.ResourceSearchResult.kms_key is deprecated. See
-   *     google/cloud/asset/v1/assets.proto;l=437
+   *     google/cloud/asset/v1/assets.proto;l=471
    * @return The kmsKey.
    */
   @java.lang.Deprecated
@@ -571,13 +628,16 @@ public interface ResourceSearchResultOrBuilder
    * name or
    * [CryptoKeyVersion](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions)
    * name.
+   *
    * This field only presents for the purpose of backward compatibility. Please
    * use the `kms_keys` field to retrieve Cloud KMS key information. This field
    * is available only when the resource's Protobuf contains it and will only be
    * populated for [these resource
    * types](https://cloud.google.com/asset-inventory/docs/legacy-field-names#resource_types_with_the_to_be_deprecated_kmskey_field)
    * for backward compatible purposes.
+   *
    * To search against the `kms_key`:
+   *
    * * Use a field query. Example: `kmsKey:key`
    * * Use a free text query. Example: `key`
    * </pre>
@@ -585,7 +645,7 @@ public interface ResourceSearchResultOrBuilder
    * <code>string kms_key = 10 [deprecated = true];</code>
    *
    * @deprecated google.cloud.asset.v1.ResourceSearchResult.kms_key is deprecated. See
-   *     google/cloud/asset/v1/assets.proto;l=437
+   *     google/cloud/asset/v1/assets.proto;l=471
    * @return The bytes for kmsKey.
    */
   @java.lang.Deprecated
@@ -601,7 +661,9 @@ public interface ResourceSearchResultOrBuilder
    * [CryptoKeyVersion](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions)
    * names. This field is available only when the resource's Protobuf contains
    * it.
+   *
    * To search against the `kms_keys`:
+   *
    * * Use a field query. Example: `kmsKeys:key`
    * * Use a free text query. Example: `key`
    * </pre>
@@ -621,7 +683,9 @@ public interface ResourceSearchResultOrBuilder
    * [CryptoKeyVersion](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions)
    * names. This field is available only when the resource's Protobuf contains
    * it.
+   *
    * To search against the `kms_keys`:
+   *
    * * Use a field query. Example: `kmsKeys:key`
    * * Use a free text query. Example: `key`
    * </pre>
@@ -641,7 +705,9 @@ public interface ResourceSearchResultOrBuilder
    * [CryptoKeyVersion](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions)
    * names. This field is available only when the resource's Protobuf contains
    * it.
+   *
    * To search against the `kms_keys`:
+   *
    * * Use a field query. Example: `kmsKeys:key`
    * * Use a free text query. Example: `key`
    * </pre>
@@ -662,7 +728,9 @@ public interface ResourceSearchResultOrBuilder
    * [CryptoKeyVersion](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions)
    * names. This field is available only when the resource's Protobuf contains
    * it.
+   *
    * To search against the `kms_keys`:
+   *
    * * Use a field query. Example: `kmsKeys:key`
    * * Use a free text query. Example: `key`
    * </pre>
@@ -681,7 +749,9 @@ public interface ResourceSearchResultOrBuilder
    * The create timestamp of this resource, at which the resource was created.
    * The granularity is in seconds. Timestamp.nanos will always be 0. This field
    * is available only when the resource's Protobuf contains it.
+   *
    * To search against `create_time`:
+   *
    * * Use a field query.
    *     - value in seconds since unix epoch. Example: `createTime &gt; 1609459200`
    *     - value in date string. Example: `createTime &gt; 2021-01-01`
@@ -701,7 +771,9 @@ public interface ResourceSearchResultOrBuilder
    * The create timestamp of this resource, at which the resource was created.
    * The granularity is in seconds. Timestamp.nanos will always be 0. This field
    * is available only when the resource's Protobuf contains it.
+   *
    * To search against `create_time`:
+   *
    * * Use a field query.
    *     - value in seconds since unix epoch. Example: `createTime &gt; 1609459200`
    *     - value in date string. Example: `createTime &gt; 2021-01-01`
@@ -721,7 +793,9 @@ public interface ResourceSearchResultOrBuilder
    * The create timestamp of this resource, at which the resource was created.
    * The granularity is in seconds. Timestamp.nanos will always be 0. This field
    * is available only when the resource's Protobuf contains it.
+   *
    * To search against `create_time`:
+   *
    * * Use a field query.
    *     - value in seconds since unix epoch. Example: `createTime &gt; 1609459200`
    *     - value in date string. Example: `createTime &gt; 2021-01-01`
@@ -741,7 +815,9 @@ public interface ResourceSearchResultOrBuilder
    * modified or deleted. The granularity is in seconds. Timestamp.nanos will
    * always be 0. This field is available only when the resource's Protobuf
    * contains it.
+   *
    * To search against `update_time`:
+   *
    * * Use a field query.
    *     - value in seconds since unix epoch. Example: `updateTime &lt; 1609459200`
    *     - value in date string. Example: `updateTime &lt; 2021-01-01`
@@ -762,7 +838,9 @@ public interface ResourceSearchResultOrBuilder
    * modified or deleted. The granularity is in seconds. Timestamp.nanos will
    * always be 0. This field is available only when the resource's Protobuf
    * contains it.
+   *
    * To search against `update_time`:
+   *
    * * Use a field query.
    *     - value in seconds since unix epoch. Example: `updateTime &lt; 1609459200`
    *     - value in date string. Example: `updateTime &lt; 2021-01-01`
@@ -783,7 +861,9 @@ public interface ResourceSearchResultOrBuilder
    * modified or deleted. The granularity is in seconds. Timestamp.nanos will
    * always be 0. This field is available only when the resource's Protobuf
    * contains it.
+   *
    * To search against `update_time`:
+   *
    * * Use a field query.
    *     - value in seconds since unix epoch. Example: `updateTime &lt; 1609459200`
    *     - value in date string. Example: `updateTime &lt; 2021-01-01`
@@ -803,6 +883,7 @@ public interface ResourceSearchResultOrBuilder
    * definitions that are mapped from various fields of different resource
    * types. This field is available only when the resource's Protobuf contains
    * it.
+   *
    * Example:
    * If the resource is an instance provided by Compute Engine,
    * its state will include PROVISIONING, STAGING, RUNNING, STOPPING,
@@ -813,7 +894,9 @@ public interface ResourceSearchResultOrBuilder
    * will include LIFECYCLE_STATE_UNSPECIFIED, ACTIVE, DELETE_REQUESTED and
    * DELETE_IN_PROGRESS. See `lifecycleState` definition in [API
    * Reference](https://cloud.google.com/resource-manager/reference/rest/v1/projects).
+   *
    * To search against the `state`:
+   *
    * * Use a field query. Example: `state:RUNNING`
    * * Use a free text query. Example: `RUNNING`
    * </pre>
@@ -831,6 +914,7 @@ public interface ResourceSearchResultOrBuilder
    * definitions that are mapped from various fields of different resource
    * types. This field is available only when the resource's Protobuf contains
    * it.
+   *
    * Example:
    * If the resource is an instance provided by Compute Engine,
    * its state will include PROVISIONING, STAGING, RUNNING, STOPPING,
@@ -841,7 +925,9 @@ public interface ResourceSearchResultOrBuilder
    * will include LIFECYCLE_STATE_UNSPECIFIED, ACTIVE, DELETE_REQUESTED and
    * DELETE_IN_PROGRESS. See `lifecycleState` definition in [API
    * Reference](https://cloud.google.com/resource-manager/reference/rest/v1/projects).
+   *
    * To search against the `state`:
+   *
    * * Use a field query. Example: `state:RUNNING`
    * * Use a free text query. Example: `RUNNING`
    * </pre>
@@ -864,11 +950,14 @@ public interface ResourceSearchResultOrBuilder
    * references and supported searchable
    * attributes](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types)
    * to see which fields are included.
+   *
    * You can search values of these fields through free text search. However,
    * you should not consume the field programically as the field names and
    * values may change as the Google Cloud service updates to a new incompatible
    * API version.
+   *
    * To search against the `additional_attributes`:
+   *
    * * Use a free text query to match the attributes values. Example: to search
    *   `additional_attributes = { dnsName: "foobar" }`, you can issue a query
    *   `foobar`.
@@ -891,11 +980,14 @@ public interface ResourceSearchResultOrBuilder
    * references and supported searchable
    * attributes](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types)
    * to see which fields are included.
+   *
    * You can search values of these fields through free text search. However,
    * you should not consume the field programically as the field names and
    * values may change as the Google Cloud service updates to a new incompatible
    * API version.
+   *
    * To search against the `additional_attributes`:
+   *
    * * Use a free text query to match the attributes values. Example: to search
    *   `additional_attributes = { dnsName: "foobar" }`, you can issue a query
    *   `foobar`.
@@ -918,11 +1010,14 @@ public interface ResourceSearchResultOrBuilder
    * references and supported searchable
    * attributes](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types)
    * to see which fields are included.
+   *
    * You can search values of these fields through free text search. However,
    * you should not consume the field programically as the field names and
    * values may change as the Google Cloud service updates to a new incompatible
    * API version.
+   *
    * To search against the `additional_attributes`:
+   *
    * * Use a free text query to match the attributes values. Example: to search
    *   `additional_attributes = { dnsName: "foobar" }`, you can issue a query
    *   `foobar`.
@@ -938,6 +1033,7 @@ public interface ResourceSearchResultOrBuilder
    * <pre>
    * The full resource name of this resource's parent, if it has one.
    * To search against the `parent_full_resource_name`:
+   *
    * * Use a field query. Example:
    * `parentFullResourceName:"project-name"`
    * * Use a free text query. Example:
@@ -955,6 +1051,7 @@ public interface ResourceSearchResultOrBuilder
    * <pre>
    * The full resource name of this resource's parent, if it has one.
    * To search against the `parent_full_resource_name`:
+   *
    * * Use a field query. Example:
    * `parentFullResourceName:"project-name"`
    * * Use a free text query. Example:
@@ -974,6 +1071,7 @@ public interface ResourceSearchResultOrBuilder
    * Versioned resource representations of this resource. This is repeated
    * because there could be multiple versions of resource representations during
    * version migration.
+   *
    * This `versioned_resources` field is not searchable. Some attributes of the
    * resource representations are exposed in `additional_attributes` field, so
    * as to allow users to search on them.
@@ -989,6 +1087,7 @@ public interface ResourceSearchResultOrBuilder
    * Versioned resource representations of this resource. This is repeated
    * because there could be multiple versions of resource representations during
    * version migration.
+   *
    * This `versioned_resources` field is not searchable. Some attributes of the
    * resource representations are exposed in `additional_attributes` field, so
    * as to allow users to search on them.
@@ -1004,6 +1103,7 @@ public interface ResourceSearchResultOrBuilder
    * Versioned resource representations of this resource. This is repeated
    * because there could be multiple versions of resource representations during
    * version migration.
+   *
    * This `versioned_resources` field is not searchable. Some attributes of the
    * resource representations are exposed in `additional_attributes` field, so
    * as to allow users to search on them.
@@ -1019,6 +1119,7 @@ public interface ResourceSearchResultOrBuilder
    * Versioned resource representations of this resource. This is repeated
    * because there could be multiple versions of resource representations during
    * version migration.
+   *
    * This `versioned_resources` field is not searchable. Some attributes of the
    * resource representations are exposed in `additional_attributes` field, so
    * as to allow users to search on them.
@@ -1035,6 +1136,7 @@ public interface ResourceSearchResultOrBuilder
    * Versioned resource representations of this resource. This is repeated
    * because there could be multiple versions of resource representations during
    * version migration.
+   *
    * This `versioned_resources` field is not searchable. Some attributes of the
    * resource representations are exposed in `additional_attributes` field, so
    * as to allow users to search on them.
@@ -1051,6 +1153,7 @@ public interface ResourceSearchResultOrBuilder
    * Attached resources of this resource. For example, an OSConfig
    * Inventory is an attached resource of a Compute Instance. This field is
    * repeated because a resource could have multiple attached resources.
+   *
    * This `attached_resources` field is not searchable. Some attributes
    * of the attached resources are exposed in `additional_attributes` field, so
    * as to allow users to search on them.
@@ -1066,6 +1169,7 @@ public interface ResourceSearchResultOrBuilder
    * Attached resources of this resource. For example, an OSConfig
    * Inventory is an attached resource of a Compute Instance. This field is
    * repeated because a resource could have multiple attached resources.
+   *
    * This `attached_resources` field is not searchable. Some attributes
    * of the attached resources are exposed in `additional_attributes` field, so
    * as to allow users to search on them.
@@ -1081,6 +1185,7 @@ public interface ResourceSearchResultOrBuilder
    * Attached resources of this resource. For example, an OSConfig
    * Inventory is an attached resource of a Compute Instance. This field is
    * repeated because a resource could have multiple attached resources.
+   *
    * This `attached_resources` field is not searchable. Some attributes
    * of the attached resources are exposed in `additional_attributes` field, so
    * as to allow users to search on them.
@@ -1096,6 +1201,7 @@ public interface ResourceSearchResultOrBuilder
    * Attached resources of this resource. For example, an OSConfig
    * Inventory is an attached resource of a Compute Instance. This field is
    * repeated because a resource could have multiple attached resources.
+   *
    * This `attached_resources` field is not searchable. Some attributes
    * of the attached resources are exposed in `additional_attributes` field, so
    * as to allow users to search on them.
@@ -1112,6 +1218,7 @@ public interface ResourceSearchResultOrBuilder
    * Attached resources of this resource. For example, an OSConfig
    * Inventory is an attached resource of a Compute Instance. This field is
    * repeated because a resource could have multiple attached resources.
+   *
    * This `attached_resources` field is not searchable. Some attributes
    * of the attached resources are exposed in `additional_attributes` field, so
    * as to allow users to search on them.
@@ -1208,249 +1315,596 @@ public interface ResourceSearchResultOrBuilder
    *
    *
    * <pre>
+   * This field is only present for the purpose of backward compatibility.
+   * Please use the `tags` field instead.
+   *
    * TagKey namespaced names, in the format of {ORG_ID}/{TAG_KEY_SHORT_NAME}.
    * To search against the `tagKeys`:
+   *
    * * Use a field query. Example:
    *     - `tagKeys:"123456789/env*"`
    *     - `tagKeys="123456789/env"`
    *     - `tagKeys:"env"`
+   *
    * * Use a free text query. Example:
    *     - `env`
    * </pre>
    *
-   * <code>repeated string tag_keys = 23;</code>
+   * <code>repeated string tag_keys = 23 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_keys is deprecated. See
+   *     google/cloud/asset/v1/assets.proto;l=604
    * @return A list containing the tagKeys.
    */
+  @java.lang.Deprecated
   java.util.List<java.lang.String> getTagKeysList();
   /**
    *
    *
    * <pre>
+   * This field is only present for the purpose of backward compatibility.
+   * Please use the `tags` field instead.
+   *
    * TagKey namespaced names, in the format of {ORG_ID}/{TAG_KEY_SHORT_NAME}.
    * To search against the `tagKeys`:
+   *
    * * Use a field query. Example:
    *     - `tagKeys:"123456789/env*"`
    *     - `tagKeys="123456789/env"`
    *     - `tagKeys:"env"`
+   *
    * * Use a free text query. Example:
    *     - `env`
    * </pre>
    *
-   * <code>repeated string tag_keys = 23;</code>
+   * <code>repeated string tag_keys = 23 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_keys is deprecated. See
+   *     google/cloud/asset/v1/assets.proto;l=604
    * @return The count of tagKeys.
    */
+  @java.lang.Deprecated
   int getTagKeysCount();
   /**
    *
    *
    * <pre>
+   * This field is only present for the purpose of backward compatibility.
+   * Please use the `tags` field instead.
+   *
    * TagKey namespaced names, in the format of {ORG_ID}/{TAG_KEY_SHORT_NAME}.
    * To search against the `tagKeys`:
+   *
    * * Use a field query. Example:
    *     - `tagKeys:"123456789/env*"`
    *     - `tagKeys="123456789/env"`
    *     - `tagKeys:"env"`
+   *
    * * Use a free text query. Example:
    *     - `env`
    * </pre>
    *
-   * <code>repeated string tag_keys = 23;</code>
+   * <code>repeated string tag_keys = 23 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_keys is deprecated. See
+   *     google/cloud/asset/v1/assets.proto;l=604
    * @param index The index of the element to return.
    * @return The tagKeys at the given index.
    */
+  @java.lang.Deprecated
   java.lang.String getTagKeys(int index);
   /**
    *
    *
    * <pre>
+   * This field is only present for the purpose of backward compatibility.
+   * Please use the `tags` field instead.
+   *
    * TagKey namespaced names, in the format of {ORG_ID}/{TAG_KEY_SHORT_NAME}.
    * To search against the `tagKeys`:
+   *
    * * Use a field query. Example:
    *     - `tagKeys:"123456789/env*"`
    *     - `tagKeys="123456789/env"`
    *     - `tagKeys:"env"`
+   *
    * * Use a free text query. Example:
    *     - `env`
    * </pre>
    *
-   * <code>repeated string tag_keys = 23;</code>
+   * <code>repeated string tag_keys = 23 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_keys is deprecated. See
+   *     google/cloud/asset/v1/assets.proto;l=604
    * @param index The index of the value to return.
    * @return The bytes of the tagKeys at the given index.
    */
+  @java.lang.Deprecated
   com.google.protobuf.ByteString getTagKeysBytes(int index);
 
   /**
    *
    *
    * <pre>
+   * This field is only present for the purpose of backward compatibility.
+   * Please use the `tags` field instead.
+   *
    * TagValue namespaced names, in the format of
    * {ORG_ID}/{TAG_KEY_SHORT_NAME}/{TAG_VALUE_SHORT_NAME}.
    * To search against the `tagValues`:
+   *
    * * Use a field query. Example:
    *     - `tagValues:"env"`
    *     - `tagValues:"env/prod"`
    *     - `tagValues:"123456789/env/prod*"`
    *     - `tagValues="123456789/env/prod"`
+   *
    * * Use a free text query. Example:
    *     - `prod`
    * </pre>
    *
-   * <code>repeated string tag_values = 25;</code>
+   * <code>repeated string tag_values = 25 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_values is deprecated. See
+   *     google/cloud/asset/v1/assets.proto;l=621
    * @return A list containing the tagValues.
    */
+  @java.lang.Deprecated
   java.util.List<java.lang.String> getTagValuesList();
   /**
    *
    *
    * <pre>
+   * This field is only present for the purpose of backward compatibility.
+   * Please use the `tags` field instead.
+   *
    * TagValue namespaced names, in the format of
    * {ORG_ID}/{TAG_KEY_SHORT_NAME}/{TAG_VALUE_SHORT_NAME}.
    * To search against the `tagValues`:
+   *
    * * Use a field query. Example:
    *     - `tagValues:"env"`
    *     - `tagValues:"env/prod"`
    *     - `tagValues:"123456789/env/prod*"`
    *     - `tagValues="123456789/env/prod"`
+   *
    * * Use a free text query. Example:
    *     - `prod`
    * </pre>
    *
-   * <code>repeated string tag_values = 25;</code>
+   * <code>repeated string tag_values = 25 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_values is deprecated. See
+   *     google/cloud/asset/v1/assets.proto;l=621
    * @return The count of tagValues.
    */
+  @java.lang.Deprecated
   int getTagValuesCount();
   /**
    *
    *
    * <pre>
+   * This field is only present for the purpose of backward compatibility.
+   * Please use the `tags` field instead.
+   *
    * TagValue namespaced names, in the format of
    * {ORG_ID}/{TAG_KEY_SHORT_NAME}/{TAG_VALUE_SHORT_NAME}.
    * To search against the `tagValues`:
+   *
    * * Use a field query. Example:
    *     - `tagValues:"env"`
    *     - `tagValues:"env/prod"`
    *     - `tagValues:"123456789/env/prod*"`
    *     - `tagValues="123456789/env/prod"`
+   *
    * * Use a free text query. Example:
    *     - `prod`
    * </pre>
    *
-   * <code>repeated string tag_values = 25;</code>
+   * <code>repeated string tag_values = 25 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_values is deprecated. See
+   *     google/cloud/asset/v1/assets.proto;l=621
    * @param index The index of the element to return.
    * @return The tagValues at the given index.
    */
+  @java.lang.Deprecated
   java.lang.String getTagValues(int index);
   /**
    *
    *
    * <pre>
+   * This field is only present for the purpose of backward compatibility.
+   * Please use the `tags` field instead.
+   *
    * TagValue namespaced names, in the format of
    * {ORG_ID}/{TAG_KEY_SHORT_NAME}/{TAG_VALUE_SHORT_NAME}.
    * To search against the `tagValues`:
+   *
    * * Use a field query. Example:
    *     - `tagValues:"env"`
    *     - `tagValues:"env/prod"`
    *     - `tagValues:"123456789/env/prod*"`
    *     - `tagValues="123456789/env/prod"`
+   *
    * * Use a free text query. Example:
    *     - `prod`
    * </pre>
    *
-   * <code>repeated string tag_values = 25;</code>
+   * <code>repeated string tag_values = 25 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_values is deprecated. See
+   *     google/cloud/asset/v1/assets.proto;l=621
    * @param index The index of the value to return.
    * @return The bytes of the tagValues at the given index.
    */
+  @java.lang.Deprecated
   com.google.protobuf.ByteString getTagValuesBytes(int index);
 
   /**
    *
    *
    * <pre>
+   * This field is only present for the purpose of backward compatibility.
+   * Please use the `tags` field instead.
+   *
    * TagValue IDs, in the format of tagValues/{TAG_VALUE_ID}.
    * To search against the `tagValueIds`:
+   *
    * * Use a field query. Example:
-   *     - `tagValueIds:"456"`
    *     - `tagValueIds="tagValues/456"`
+   *
    * * Use a free text query. Example:
    *     - `456`
    * </pre>
    *
-   * <code>repeated string tag_value_ids = 26;</code>
+   * <code>repeated string tag_value_ids = 26 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_value_ids is deprecated. See
+   *     google/cloud/asset/v1/assets.proto;l=634
    * @return A list containing the tagValueIds.
    */
+  @java.lang.Deprecated
   java.util.List<java.lang.String> getTagValueIdsList();
   /**
    *
    *
    * <pre>
+   * This field is only present for the purpose of backward compatibility.
+   * Please use the `tags` field instead.
+   *
    * TagValue IDs, in the format of tagValues/{TAG_VALUE_ID}.
    * To search against the `tagValueIds`:
+   *
    * * Use a field query. Example:
-   *     - `tagValueIds:"456"`
    *     - `tagValueIds="tagValues/456"`
+   *
    * * Use a free text query. Example:
    *     - `456`
    * </pre>
    *
-   * <code>repeated string tag_value_ids = 26;</code>
+   * <code>repeated string tag_value_ids = 26 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_value_ids is deprecated. See
+   *     google/cloud/asset/v1/assets.proto;l=634
    * @return The count of tagValueIds.
    */
+  @java.lang.Deprecated
   int getTagValueIdsCount();
   /**
    *
    *
    * <pre>
+   * This field is only present for the purpose of backward compatibility.
+   * Please use the `tags` field instead.
+   *
    * TagValue IDs, in the format of tagValues/{TAG_VALUE_ID}.
    * To search against the `tagValueIds`:
+   *
    * * Use a field query. Example:
-   *     - `tagValueIds:"456"`
    *     - `tagValueIds="tagValues/456"`
+   *
    * * Use a free text query. Example:
    *     - `456`
    * </pre>
    *
-   * <code>repeated string tag_value_ids = 26;</code>
+   * <code>repeated string tag_value_ids = 26 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_value_ids is deprecated. See
+   *     google/cloud/asset/v1/assets.proto;l=634
    * @param index The index of the element to return.
    * @return The tagValueIds at the given index.
    */
+  @java.lang.Deprecated
   java.lang.String getTagValueIds(int index);
   /**
    *
    *
    * <pre>
+   * This field is only present for the purpose of backward compatibility.
+   * Please use the `tags` field instead.
+   *
    * TagValue IDs, in the format of tagValues/{TAG_VALUE_ID}.
    * To search against the `tagValueIds`:
+   *
    * * Use a field query. Example:
-   *     - `tagValueIds:"456"`
    *     - `tagValueIds="tagValues/456"`
+   *
    * * Use a free text query. Example:
    *     - `456`
    * </pre>
    *
-   * <code>repeated string tag_value_ids = 26;</code>
+   * <code>repeated string tag_value_ids = 26 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_value_ids is deprecated. See
+   *     google/cloud/asset/v1/assets.proto;l=634
    * @param index The index of the value to return.
    * @return The bytes of the tagValueIds at the given index.
    */
+  @java.lang.Deprecated
   com.google.protobuf.ByteString getTagValueIdsBytes(int index);
 
   /**
    *
    *
    * <pre>
+   * The tags directly attached to this resource.
+   *
+   * To search against the `tags`:
+   *
+   * * Use a field query. Example:
+   *     - `tagKeys:"123456789/env*"`
+   *     - `tagKeys="123456789/env"`
+   *     - `tagKeys:"env"`
+   *     - `tagValues:"env"`
+   *     - `tagValues:"env/prod"`
+   *     - `tagValues:"123456789/env/prod*"`
+   *     - `tagValues="123456789/env/prod"`
+   *     - `tagValueIds="tagValues/456"`
+   *
+   * * Use a free text query. Example:
+   *     - `env/prod`
+   * </pre>
+   *
+   * <code>repeated .google.cloud.asset.v1.Tag tags = 29;</code>
+   */
+  java.util.List<com.google.cloud.asset.v1.Tag> getTagsList();
+  /**
+   *
+   *
+   * <pre>
+   * The tags directly attached to this resource.
+   *
+   * To search against the `tags`:
+   *
+   * * Use a field query. Example:
+   *     - `tagKeys:"123456789/env*"`
+   *     - `tagKeys="123456789/env"`
+   *     - `tagKeys:"env"`
+   *     - `tagValues:"env"`
+   *     - `tagValues:"env/prod"`
+   *     - `tagValues:"123456789/env/prod*"`
+   *     - `tagValues="123456789/env/prod"`
+   *     - `tagValueIds="tagValues/456"`
+   *
+   * * Use a free text query. Example:
+   *     - `env/prod`
+   * </pre>
+   *
+   * <code>repeated .google.cloud.asset.v1.Tag tags = 29;</code>
+   */
+  com.google.cloud.asset.v1.Tag getTags(int index);
+  /**
+   *
+   *
+   * <pre>
+   * The tags directly attached to this resource.
+   *
+   * To search against the `tags`:
+   *
+   * * Use a field query. Example:
+   *     - `tagKeys:"123456789/env*"`
+   *     - `tagKeys="123456789/env"`
+   *     - `tagKeys:"env"`
+   *     - `tagValues:"env"`
+   *     - `tagValues:"env/prod"`
+   *     - `tagValues:"123456789/env/prod*"`
+   *     - `tagValues="123456789/env/prod"`
+   *     - `tagValueIds="tagValues/456"`
+   *
+   * * Use a free text query. Example:
+   *     - `env/prod`
+   * </pre>
+   *
+   * <code>repeated .google.cloud.asset.v1.Tag tags = 29;</code>
+   */
+  int getTagsCount();
+  /**
+   *
+   *
+   * <pre>
+   * The tags directly attached to this resource.
+   *
+   * To search against the `tags`:
+   *
+   * * Use a field query. Example:
+   *     - `tagKeys:"123456789/env*"`
+   *     - `tagKeys="123456789/env"`
+   *     - `tagKeys:"env"`
+   *     - `tagValues:"env"`
+   *     - `tagValues:"env/prod"`
+   *     - `tagValues:"123456789/env/prod*"`
+   *     - `tagValues="123456789/env/prod"`
+   *     - `tagValueIds="tagValues/456"`
+   *
+   * * Use a free text query. Example:
+   *     - `env/prod`
+   * </pre>
+   *
+   * <code>repeated .google.cloud.asset.v1.Tag tags = 29;</code>
+   */
+  java.util.List<? extends com.google.cloud.asset.v1.TagOrBuilder> getTagsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * The tags directly attached to this resource.
+   *
+   * To search against the `tags`:
+   *
+   * * Use a field query. Example:
+   *     - `tagKeys:"123456789/env*"`
+   *     - `tagKeys="123456789/env"`
+   *     - `tagKeys:"env"`
+   *     - `tagValues:"env"`
+   *     - `tagValues:"env/prod"`
+   *     - `tagValues:"123456789/env/prod*"`
+   *     - `tagValues="123456789/env/prod"`
+   *     - `tagValueIds="tagValues/456"`
+   *
+   * * Use a free text query. Example:
+   *     - `env/prod`
+   * </pre>
+   *
+   * <code>repeated .google.cloud.asset.v1.Tag tags = 29;</code>
+   */
+  com.google.cloud.asset.v1.TagOrBuilder getTagsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * The effective tags on this resource. All of the tags that are both attached
+   * to and inherited by a resource are collectively called the effective
+   * tags. For more information, see [tag
+   * inheritance](https://cloud.google.com/resource-manager/docs/tags/tags-overview#inheritance).
+   *
+   * To search against the `effective_tags`:
+   *
+   * * Use a field query. Example:
+   *     - `effectiveTagKeys:"123456789/env*"`
+   *     - `effectiveTagKeys="123456789/env"`
+   *     - `effectiveTagKeys:"env"`
+   *     - `effectiveTagValues:"env"`
+   *     - `effectiveTagValues:"env/prod"`
+   *     - `effectiveTagValues:"123456789/env/prod*"`
+   *     - `effectiveTagValues="123456789/env/prod"`
+   *     - `effectiveTagValueIds="tagValues/456"`
+   * </pre>
+   *
+   * <code>repeated .google.cloud.asset.v1.EffectiveTagDetails effective_tags = 30;</code>
+   */
+  java.util.List<com.google.cloud.asset.v1.EffectiveTagDetails> getEffectiveTagsList();
+  /**
+   *
+   *
+   * <pre>
+   * The effective tags on this resource. All of the tags that are both attached
+   * to and inherited by a resource are collectively called the effective
+   * tags. For more information, see [tag
+   * inheritance](https://cloud.google.com/resource-manager/docs/tags/tags-overview#inheritance).
+   *
+   * To search against the `effective_tags`:
+   *
+   * * Use a field query. Example:
+   *     - `effectiveTagKeys:"123456789/env*"`
+   *     - `effectiveTagKeys="123456789/env"`
+   *     - `effectiveTagKeys:"env"`
+   *     - `effectiveTagValues:"env"`
+   *     - `effectiveTagValues:"env/prod"`
+   *     - `effectiveTagValues:"123456789/env/prod*"`
+   *     - `effectiveTagValues="123456789/env/prod"`
+   *     - `effectiveTagValueIds="tagValues/456"`
+   * </pre>
+   *
+   * <code>repeated .google.cloud.asset.v1.EffectiveTagDetails effective_tags = 30;</code>
+   */
+  com.google.cloud.asset.v1.EffectiveTagDetails getEffectiveTags(int index);
+  /**
+   *
+   *
+   * <pre>
+   * The effective tags on this resource. All of the tags that are both attached
+   * to and inherited by a resource are collectively called the effective
+   * tags. For more information, see [tag
+   * inheritance](https://cloud.google.com/resource-manager/docs/tags/tags-overview#inheritance).
+   *
+   * To search against the `effective_tags`:
+   *
+   * * Use a field query. Example:
+   *     - `effectiveTagKeys:"123456789/env*"`
+   *     - `effectiveTagKeys="123456789/env"`
+   *     - `effectiveTagKeys:"env"`
+   *     - `effectiveTagValues:"env"`
+   *     - `effectiveTagValues:"env/prod"`
+   *     - `effectiveTagValues:"123456789/env/prod*"`
+   *     - `effectiveTagValues="123456789/env/prod"`
+   *     - `effectiveTagValueIds="tagValues/456"`
+   * </pre>
+   *
+   * <code>repeated .google.cloud.asset.v1.EffectiveTagDetails effective_tags = 30;</code>
+   */
+  int getEffectiveTagsCount();
+  /**
+   *
+   *
+   * <pre>
+   * The effective tags on this resource. All of the tags that are both attached
+   * to and inherited by a resource are collectively called the effective
+   * tags. For more information, see [tag
+   * inheritance](https://cloud.google.com/resource-manager/docs/tags/tags-overview#inheritance).
+   *
+   * To search against the `effective_tags`:
+   *
+   * * Use a field query. Example:
+   *     - `effectiveTagKeys:"123456789/env*"`
+   *     - `effectiveTagKeys="123456789/env"`
+   *     - `effectiveTagKeys:"env"`
+   *     - `effectiveTagValues:"env"`
+   *     - `effectiveTagValues:"env/prod"`
+   *     - `effectiveTagValues:"123456789/env/prod*"`
+   *     - `effectiveTagValues="123456789/env/prod"`
+   *     - `effectiveTagValueIds="tagValues/456"`
+   * </pre>
+   *
+   * <code>repeated .google.cloud.asset.v1.EffectiveTagDetails effective_tags = 30;</code>
+   */
+  java.util.List<? extends com.google.cloud.asset.v1.EffectiveTagDetailsOrBuilder>
+      getEffectiveTagsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * The effective tags on this resource. All of the tags that are both attached
+   * to and inherited by a resource are collectively called the effective
+   * tags. For more information, see [tag
+   * inheritance](https://cloud.google.com/resource-manager/docs/tags/tags-overview#inheritance).
+   *
+   * To search against the `effective_tags`:
+   *
+   * * Use a field query. Example:
+   *     - `effectiveTagKeys:"123456789/env*"`
+   *     - `effectiveTagKeys="123456789/env"`
+   *     - `effectiveTagKeys:"env"`
+   *     - `effectiveTagValues:"env"`
+   *     - `effectiveTagValues:"env/prod"`
+   *     - `effectiveTagValues:"123456789/env/prod*"`
+   *     - `effectiveTagValues="123456789/env/prod"`
+   *     - `effectiveTagValueIds="tagValues/456"`
+   * </pre>
+   *
+   * <code>repeated .google.cloud.asset.v1.EffectiveTagDetails effective_tags = 30;</code>
+   */
+  com.google.cloud.asset.v1.EffectiveTagDetailsOrBuilder getEffectiveTagsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * The type of this resource's immediate parent, if there is one.
+   *
    * To search against the `parent_asset_type`:
+   *
    * * Use a field query. Example:
    * `parentAssetType:"cloudresourcemanager.googleapis.com/Project"`
    * * Use a free text query. Example:
@@ -1467,7 +1921,9 @@ public interface ResourceSearchResultOrBuilder
    *
    * <pre>
    * The type of this resource's immediate parent, if there is one.
+   *
    * To search against the `parent_asset_type`:
+   *
    * * Use a field query. Example:
    * `parentAssetType:"cloudresourcemanager.googleapis.com/Project"`
    * * Use a free text query. Example:
@@ -1479,4 +1935,122 @@ public interface ResourceSearchResultOrBuilder
    * @return The bytes for parentAssetType.
    */
   com.google.protobuf.ByteString getParentAssetTypeBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The actual content of Security Command Center security marks associated
+   * with the asset.
+   *
+   *
+   * Note that both staging &amp; prod SecurityMarks are attached on prod resources.
+   * In CAS preprod/prod, both staging &amp; prod SecurityMarks are ingested and
+   * returned in the following `security_marks` map. In that case, the prefix
+   * "staging." will be added to the keys of all the staging marks.
+   * To search against SCC SecurityMarks field:
+   *
+   *   * Use a field query:
+   *     - query by a given key value pair. Example: `sccSecurityMarks.foo=bar`
+   *     - query by a given key's existence. Example: `sccSecurityMarks.foo:*`
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; scc_security_marks = 32;</code>
+   */
+  int getSccSecurityMarksCount();
+  /**
+   *
+   *
+   * <pre>
+   * The actual content of Security Command Center security marks associated
+   * with the asset.
+   *
+   *
+   * Note that both staging &amp; prod SecurityMarks are attached on prod resources.
+   * In CAS preprod/prod, both staging &amp; prod SecurityMarks are ingested and
+   * returned in the following `security_marks` map. In that case, the prefix
+   * "staging." will be added to the keys of all the staging marks.
+   * To search against SCC SecurityMarks field:
+   *
+   *   * Use a field query:
+   *     - query by a given key value pair. Example: `sccSecurityMarks.foo=bar`
+   *     - query by a given key's existence. Example: `sccSecurityMarks.foo:*`
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; scc_security_marks = 32;</code>
+   */
+  boolean containsSccSecurityMarks(java.lang.String key);
+  /** Use {@link #getSccSecurityMarksMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String> getSccSecurityMarks();
+  /**
+   *
+   *
+   * <pre>
+   * The actual content of Security Command Center security marks associated
+   * with the asset.
+   *
+   *
+   * Note that both staging &amp; prod SecurityMarks are attached on prod resources.
+   * In CAS preprod/prod, both staging &amp; prod SecurityMarks are ingested and
+   * returned in the following `security_marks` map. In that case, the prefix
+   * "staging." will be added to the keys of all the staging marks.
+   * To search against SCC SecurityMarks field:
+   *
+   *   * Use a field query:
+   *     - query by a given key value pair. Example: `sccSecurityMarks.foo=bar`
+   *     - query by a given key's existence. Example: `sccSecurityMarks.foo:*`
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; scc_security_marks = 32;</code>
+   */
+  java.util.Map<java.lang.String, java.lang.String> getSccSecurityMarksMap();
+  /**
+   *
+   *
+   * <pre>
+   * The actual content of Security Command Center security marks associated
+   * with the asset.
+   *
+   *
+   * Note that both staging &amp; prod SecurityMarks are attached on prod resources.
+   * In CAS preprod/prod, both staging &amp; prod SecurityMarks are ingested and
+   * returned in the following `security_marks` map. In that case, the prefix
+   * "staging." will be added to the keys of all the staging marks.
+   * To search against SCC SecurityMarks field:
+   *
+   *   * Use a field query:
+   *     - query by a given key value pair. Example: `sccSecurityMarks.foo=bar`
+   *     - query by a given key's existence. Example: `sccSecurityMarks.foo:*`
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; scc_security_marks = 32;</code>
+   */
+  /* nullable */
+  java.lang.String getSccSecurityMarksOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
+  /**
+   *
+   *
+   * <pre>
+   * The actual content of Security Command Center security marks associated
+   * with the asset.
+   *
+   *
+   * Note that both staging &amp; prod SecurityMarks are attached on prod resources.
+   * In CAS preprod/prod, both staging &amp; prod SecurityMarks are ingested and
+   * returned in the following `security_marks` map. In that case, the prefix
+   * "staging." will be added to the keys of all the staging marks.
+   * To search against SCC SecurityMarks field:
+   *
+   *   * Use a field query:
+   *     - query by a given key value pair. Example: `sccSecurityMarks.foo=bar`
+   *     - query by a given key's existence. Example: `sccSecurityMarks.foo:*`
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; scc_security_marks = 32;</code>
+   */
+  java.lang.String getSccSecurityMarksOrThrow(java.lang.String key);
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,7 @@ package com.google.cloud.gkebackup.v1;
  * <pre>
  * The configuration of a potential series of Restore operations to be performed
  * against Backups belong to a particular BackupPlan.
- * Next id: 11
+ * Next id: 13
  * </pre>
  *
  * Protobuf type {@code google.cloud.gkebackup.v1.RestorePlan}
@@ -46,17 +46,14 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
     backupPlan_ = "";
     cluster_ = "";
     etag_ = "";
+    state_ = 0;
+    stateReason_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new RestorePlan();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -85,6 +82,207 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.gkebackup.v1.RestorePlan.Builder.class);
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * State
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.gkebackup.v1.RestorePlan.State}
+   */
+  public enum State implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Default first value for Enums.
+     * </pre>
+     *
+     * <code>STATE_UNSPECIFIED = 0;</code>
+     */
+    STATE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Waiting for cluster state to be RUNNING.
+     * </pre>
+     *
+     * <code>CLUSTER_PENDING = 1;</code>
+     */
+    CLUSTER_PENDING(1),
+    /**
+     *
+     *
+     * <pre>
+     * The RestorePlan has successfully been created and is ready for Restores.
+     * </pre>
+     *
+     * <code>READY = 2;</code>
+     */
+    READY(2),
+    /**
+     *
+     *
+     * <pre>
+     * RestorePlan creation has failed.
+     * </pre>
+     *
+     * <code>FAILED = 3;</code>
+     */
+    FAILED(3),
+    /**
+     *
+     *
+     * <pre>
+     * The RestorePlan is in the process of being deleted.
+     * </pre>
+     *
+     * <code>DELETING = 4;</code>
+     */
+    DELETING(4),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Default first value for Enums.
+     * </pre>
+     *
+     * <code>STATE_UNSPECIFIED = 0;</code>
+     */
+    public static final int STATE_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Waiting for cluster state to be RUNNING.
+     * </pre>
+     *
+     * <code>CLUSTER_PENDING = 1;</code>
+     */
+    public static final int CLUSTER_PENDING_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * The RestorePlan has successfully been created and is ready for Restores.
+     * </pre>
+     *
+     * <code>READY = 2;</code>
+     */
+    public static final int READY_VALUE = 2;
+    /**
+     *
+     *
+     * <pre>
+     * RestorePlan creation has failed.
+     * </pre>
+     *
+     * <code>FAILED = 3;</code>
+     */
+    public static final int FAILED_VALUE = 3;
+    /**
+     *
+     *
+     * <pre>
+     * The RestorePlan is in the process of being deleted.
+     * </pre>
+     *
+     * <code>DELETING = 4;</code>
+     */
+    public static final int DELETING_VALUE = 4;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static State valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static State forNumber(int value) {
+      switch (value) {
+        case 0:
+          return STATE_UNSPECIFIED;
+        case 1:
+          return CLUSTER_PENDING;
+        case 2:
+          return READY;
+        case 3:
+          return FAILED;
+        case 4:
+          return DELETING;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<State> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<State> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<State>() {
+          public State findValueByNumber(int number) {
+            return State.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.gkebackup.v1.RestorePlan.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final State[] VALUES = values();
+
+    public static State valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private State(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.gkebackup.v1.RestorePlan.State)
+  }
+
   public static final int NAME_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -94,7 +292,7 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The full name of the RestorePlan resource.
-   * Format: projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;.
+   * Format: `projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -118,7 +316,7 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The full name of the RestorePlan resource.
-   * Format: projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;.
+   * Format: `projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -354,9 +552,10 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Immutable. A reference to the [BackupPlan][google.cloud.gkebackup.v1.BackupPlan] from which Backups may be used as the
-   * source for Restores created via this RestorePlan.
-   * Format: projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;.
+   * Required. Immutable. A reference to the
+   * [BackupPlan][google.cloud.gkebackup.v1.BackupPlan] from which Backups may
+   * be used as the source for Restores created via this RestorePlan. Format:
+   * `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;`.
    * </pre>
    *
    * <code>
@@ -381,9 +580,10 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Immutable. A reference to the [BackupPlan][google.cloud.gkebackup.v1.BackupPlan] from which Backups may be used as the
-   * source for Restores created via this RestorePlan.
-   * Format: projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;.
+   * Required. Immutable. A reference to the
+   * [BackupPlan][google.cloud.gkebackup.v1.BackupPlan] from which Backups may
+   * be used as the source for Restores created via this RestorePlan. Format:
+   * `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;`.
    * </pre>
    *
    * <code>
@@ -413,12 +613,12 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Immutable. The target cluster into which Restores created via this RestorePlan
-   * will restore data. NOTE: the cluster's region must be the same as the
-   * RestorePlan.
-   * Valid formats:
-   *   - projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;
-   *   - projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;
+   * Required. Immutable. The target cluster into which Restores created via
+   * this RestorePlan will restore data. NOTE: the cluster's region must be the
+   * same as the RestorePlan. Valid formats:
+   *
+   *   - `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`
+   *   - `projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;`
    * </pre>
    *
    * <code>
@@ -443,12 +643,12 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Immutable. The target cluster into which Restores created via this RestorePlan
-   * will restore data. NOTE: the cluster's region must be the same as the
-   * RestorePlan.
-   * Valid formats:
-   *   - projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;
-   *   - projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;
+   * Required. Immutable. The target cluster into which Restores created via
+   * this RestorePlan will restore data. NOTE: the cluster's region must be the
+   * same as the RestorePlan. Valid formats:
+   *
+   *   - `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`
+   *   - `projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;`
    * </pre>
    *
    * <code>
@@ -636,8 +836,8 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. `etag` is used for optimistic concurrency control as a way to help
-   * prevent simultaneous updates of a restore from overwriting each other.
+   * Output only. `etag` is used for optimistic concurrency control as a way to
+   * help prevent simultaneous updates of a restore from overwriting each other.
    * It is strongly suggested that systems make use of the `etag` in the
    * read-modify-write cycle to perform restore updates in order to avoid
    * race conditions: An `etag` is returned in the response to `GetRestorePlan`,
@@ -666,8 +866,8 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. `etag` is used for optimistic concurrency control as a way to help
-   * prevent simultaneous updates of a restore from overwriting each other.
+   * Output only. `etag` is used for optimistic concurrency control as a way to
+   * help prevent simultaneous updates of a restore from overwriting each other.
    * It is strongly suggested that systems make use of the `etag` in the
    * read-modify-write cycle to perform restore updates in order to avoid
    * race conditions: An `etag` is returned in the response to `GetRestorePlan`,
@@ -687,6 +887,102 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       etag_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int STATE_FIELD_NUMBER = 11;
+  private int state_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. State of the RestorePlan. This State field reflects the
+   * various stages a RestorePlan can be in
+   * during the Create operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkebackup.v1.RestorePlan.State state = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for state.
+   */
+  @java.lang.Override
+  public int getStateValue() {
+    return state_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. State of the RestorePlan. This State field reflects the
+   * various stages a RestorePlan can be in
+   * during the Create operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkebackup.v1.RestorePlan.State state = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The state.
+   */
+  @java.lang.Override
+  public com.google.cloud.gkebackup.v1.RestorePlan.State getState() {
+    com.google.cloud.gkebackup.v1.RestorePlan.State result =
+        com.google.cloud.gkebackup.v1.RestorePlan.State.forNumber(state_);
+    return result == null ? com.google.cloud.gkebackup.v1.RestorePlan.State.UNRECOGNIZED : result;
+  }
+
+  public static final int STATE_REASON_FIELD_NUMBER = 12;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object stateReason_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Human-readable description of why RestorePlan is in the
+   * current `state`
+   * </pre>
+   *
+   * <code>string state_reason = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The stateReason.
+   */
+  @java.lang.Override
+  public java.lang.String getStateReason() {
+    java.lang.Object ref = stateReason_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      stateReason_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Human-readable description of why RestorePlan is in the
+   * current `state`
+   * </pre>
+   *
+   * <code>string state_reason = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for stateReason.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getStateReasonBytes() {
+    java.lang.Object ref = stateReason_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      stateReason_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -736,6 +1032,12 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, etag_);
     }
+    if (state_ != com.google.cloud.gkebackup.v1.RestorePlan.State.STATE_UNSPECIFIED.getNumber()) {
+      output.writeEnum(11, state_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(stateReason_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 12, stateReason_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -782,6 +1084,12 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, etag_);
     }
+    if (state_ != com.google.cloud.gkebackup.v1.RestorePlan.State.STATE_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(11, state_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(stateReason_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, stateReason_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -817,6 +1125,8 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
     }
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
     if (!getEtag().equals(other.getEtag())) return false;
+    if (state_ != other.state_) return false;
+    if (!getStateReason().equals(other.getStateReason())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -856,6 +1166,10 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + ETAG_FIELD_NUMBER;
     hash = (53 * hash) + getEtag().hashCode();
+    hash = (37 * hash) + STATE_FIELD_NUMBER;
+    hash = (53 * hash) + state_;
+    hash = (37 * hash) + STATE_REASON_FIELD_NUMBER;
+    hash = (53 * hash) + getStateReason().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -962,7 +1276,7 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The configuration of a potential series of Restore operations to be performed
    * against Backups belong to a particular BackupPlan.
-   * Next id: 11
+   * Next id: 13
    * </pre>
    *
    * Protobuf type {@code google.cloud.gkebackup.v1.RestorePlan}
@@ -1039,6 +1353,8 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
       }
       internalGetMutableLabels().clear();
       etag_ = "";
+      state_ = 0;
+      stateReason_ = "";
       return this;
     }
 
@@ -1106,6 +1422,12 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
         result.etag_ = etag_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.stateReason_ = stateReason_;
       }
     }
 
@@ -1193,6 +1515,14 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
         bitField0_ |= 0x00000200;
+        onChanged();
+      }
+      if (other.state_ != 0) {
+        setStateValue(other.getStateValue());
+      }
+      if (!other.getStateReason().isEmpty()) {
+        stateReason_ = other.stateReason_;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1287,6 +1617,18 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000200;
                 break;
               } // case 82
+            case 88:
+              {
+                state_ = input.readEnum();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 88
+            case 98:
+              {
+                stateReason_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 98
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1312,7 +1654,7 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The full name of the RestorePlan resource.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;.
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1335,7 +1677,7 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The full name of the RestorePlan resource.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;.
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1358,7 +1700,7 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The full name of the RestorePlan resource.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;.
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1380,7 +1722,7 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The full name of the RestorePlan resource.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;.
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1398,7 +1740,7 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The full name of the RestorePlan resource.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;.
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2059,9 +2401,10 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. A reference to the [BackupPlan][google.cloud.gkebackup.v1.BackupPlan] from which Backups may be used as the
-     * source for Restores created via this RestorePlan.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;.
+     * Required. Immutable. A reference to the
+     * [BackupPlan][google.cloud.gkebackup.v1.BackupPlan] from which Backups may
+     * be used as the source for Restores created via this RestorePlan. Format:
+     * `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;`.
      * </pre>
      *
      * <code>
@@ -2085,9 +2428,10 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. A reference to the [BackupPlan][google.cloud.gkebackup.v1.BackupPlan] from which Backups may be used as the
-     * source for Restores created via this RestorePlan.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;.
+     * Required. Immutable. A reference to the
+     * [BackupPlan][google.cloud.gkebackup.v1.BackupPlan] from which Backups may
+     * be used as the source for Restores created via this RestorePlan. Format:
+     * `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;`.
      * </pre>
      *
      * <code>
@@ -2111,9 +2455,10 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. A reference to the [BackupPlan][google.cloud.gkebackup.v1.BackupPlan] from which Backups may be used as the
-     * source for Restores created via this RestorePlan.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;.
+     * Required. Immutable. A reference to the
+     * [BackupPlan][google.cloud.gkebackup.v1.BackupPlan] from which Backups may
+     * be used as the source for Restores created via this RestorePlan. Format:
+     * `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;`.
      * </pre>
      *
      * <code>
@@ -2136,9 +2481,10 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. A reference to the [BackupPlan][google.cloud.gkebackup.v1.BackupPlan] from which Backups may be used as the
-     * source for Restores created via this RestorePlan.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;.
+     * Required. Immutable. A reference to the
+     * [BackupPlan][google.cloud.gkebackup.v1.BackupPlan] from which Backups may
+     * be used as the source for Restores created via this RestorePlan. Format:
+     * `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;`.
      * </pre>
      *
      * <code>
@@ -2157,9 +2503,10 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. A reference to the [BackupPlan][google.cloud.gkebackup.v1.BackupPlan] from which Backups may be used as the
-     * source for Restores created via this RestorePlan.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;.
+     * Required. Immutable. A reference to the
+     * [BackupPlan][google.cloud.gkebackup.v1.BackupPlan] from which Backups may
+     * be used as the source for Restores created via this RestorePlan. Format:
+     * `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;`.
      * </pre>
      *
      * <code>
@@ -2185,12 +2532,12 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. The target cluster into which Restores created via this RestorePlan
-     * will restore data. NOTE: the cluster's region must be the same as the
-     * RestorePlan.
-     * Valid formats:
-     *   - projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;
-     *   - projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;
+     * Required. Immutable. The target cluster into which Restores created via
+     * this RestorePlan will restore data. NOTE: the cluster's region must be the
+     * same as the RestorePlan. Valid formats:
+     *
+     *   - `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`
+     *   - `projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;`
      * </pre>
      *
      * <code>
@@ -2214,12 +2561,12 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. The target cluster into which Restores created via this RestorePlan
-     * will restore data. NOTE: the cluster's region must be the same as the
-     * RestorePlan.
-     * Valid formats:
-     *   - projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;
-     *   - projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;
+     * Required. Immutable. The target cluster into which Restores created via
+     * this RestorePlan will restore data. NOTE: the cluster's region must be the
+     * same as the RestorePlan. Valid formats:
+     *
+     *   - `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`
+     *   - `projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;`
      * </pre>
      *
      * <code>
@@ -2243,12 +2590,12 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. The target cluster into which Restores created via this RestorePlan
-     * will restore data. NOTE: the cluster's region must be the same as the
-     * RestorePlan.
-     * Valid formats:
-     *   - projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;
-     *   - projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;
+     * Required. Immutable. The target cluster into which Restores created via
+     * this RestorePlan will restore data. NOTE: the cluster's region must be the
+     * same as the RestorePlan. Valid formats:
+     *
+     *   - `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`
+     *   - `projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;`
      * </pre>
      *
      * <code>
@@ -2271,12 +2618,12 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. The target cluster into which Restores created via this RestorePlan
-     * will restore data. NOTE: the cluster's region must be the same as the
-     * RestorePlan.
-     * Valid formats:
-     *   - projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;
-     *   - projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;
+     * Required. Immutable. The target cluster into which Restores created via
+     * this RestorePlan will restore data. NOTE: the cluster's region must be the
+     * same as the RestorePlan. Valid formats:
+     *
+     *   - `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`
+     *   - `projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;`
      * </pre>
      *
      * <code>
@@ -2295,12 +2642,12 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. The target cluster into which Restores created via this RestorePlan
-     * will restore data. NOTE: the cluster's region must be the same as the
-     * RestorePlan.
-     * Valid formats:
-     *   - projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;
-     *   - projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;
+     * Required. Immutable. The target cluster into which Restores created via
+     * this RestorePlan will restore data. NOTE: the cluster's region must be the
+     * same as the RestorePlan. Valid formats:
+     *
+     *   - `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`
+     *   - `projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;`
      * </pre>
      *
      * <code>
@@ -2691,8 +3038,8 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. `etag` is used for optimistic concurrency control as a way to help
-     * prevent simultaneous updates of a restore from overwriting each other.
+     * Output only. `etag` is used for optimistic concurrency control as a way to
+     * help prevent simultaneous updates of a restore from overwriting each other.
      * It is strongly suggested that systems make use of the `etag` in the
      * read-modify-write cycle to perform restore updates in order to avoid
      * race conditions: An `etag` is returned in the response to `GetRestorePlan`,
@@ -2720,8 +3067,8 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. `etag` is used for optimistic concurrency control as a way to help
-     * prevent simultaneous updates of a restore from overwriting each other.
+     * Output only. `etag` is used for optimistic concurrency control as a way to
+     * help prevent simultaneous updates of a restore from overwriting each other.
      * It is strongly suggested that systems make use of the `etag` in the
      * read-modify-write cycle to perform restore updates in order to avoid
      * race conditions: An `etag` is returned in the response to `GetRestorePlan`,
@@ -2749,8 +3096,8 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. `etag` is used for optimistic concurrency control as a way to help
-     * prevent simultaneous updates of a restore from overwriting each other.
+     * Output only. `etag` is used for optimistic concurrency control as a way to
+     * help prevent simultaneous updates of a restore from overwriting each other.
      * It is strongly suggested that systems make use of the `etag` in the
      * read-modify-write cycle to perform restore updates in order to avoid
      * race conditions: An `etag` is returned in the response to `GetRestorePlan`,
@@ -2777,8 +3124,8 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. `etag` is used for optimistic concurrency control as a way to help
-     * prevent simultaneous updates of a restore from overwriting each other.
+     * Output only. `etag` is used for optimistic concurrency control as a way to
+     * help prevent simultaneous updates of a restore from overwriting each other.
      * It is strongly suggested that systems make use of the `etag` in the
      * read-modify-write cycle to perform restore updates in order to avoid
      * race conditions: An `etag` is returned in the response to `GetRestorePlan`,
@@ -2801,8 +3148,8 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. `etag` is used for optimistic concurrency control as a way to help
-     * prevent simultaneous updates of a restore from overwriting each other.
+     * Output only. `etag` is used for optimistic concurrency control as a way to
+     * help prevent simultaneous updates of a restore from overwriting each other.
      * It is strongly suggested that systems make use of the `etag` in the
      * read-modify-write cycle to perform restore updates in order to avoid
      * race conditions: An `etag` is returned in the response to `GetRestorePlan`,
@@ -2823,6 +3170,227 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       etag_ = value;
       bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    private int state_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. State of the RestorePlan. This State field reflects the
+     * various stages a RestorePlan can be in
+     * during the Create operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkebackup.v1.RestorePlan.State state = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for state.
+     */
+    @java.lang.Override
+    public int getStateValue() {
+      return state_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. State of the RestorePlan. This State field reflects the
+     * various stages a RestorePlan can be in
+     * during the Create operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkebackup.v1.RestorePlan.State state = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for state to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStateValue(int value) {
+      state_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. State of the RestorePlan. This State field reflects the
+     * various stages a RestorePlan can be in
+     * during the Create operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkebackup.v1.RestorePlan.State state = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The state.
+     */
+    @java.lang.Override
+    public com.google.cloud.gkebackup.v1.RestorePlan.State getState() {
+      com.google.cloud.gkebackup.v1.RestorePlan.State result =
+          com.google.cloud.gkebackup.v1.RestorePlan.State.forNumber(state_);
+      return result == null ? com.google.cloud.gkebackup.v1.RestorePlan.State.UNRECOGNIZED : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. State of the RestorePlan. This State field reflects the
+     * various stages a RestorePlan can be in
+     * during the Create operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkebackup.v1.RestorePlan.State state = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The state to set.
+     * @return This builder for chaining.
+     */
+    public Builder setState(com.google.cloud.gkebackup.v1.RestorePlan.State value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000400;
+      state_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. State of the RestorePlan. This State field reflects the
+     * various stages a RestorePlan can be in
+     * during the Create operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkebackup.v1.RestorePlan.State state = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearState() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      state_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object stateReason_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Human-readable description of why RestorePlan is in the
+     * current `state`
+     * </pre>
+     *
+     * <code>string state_reason = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The stateReason.
+     */
+    public java.lang.String getStateReason() {
+      java.lang.Object ref = stateReason_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        stateReason_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Human-readable description of why RestorePlan is in the
+     * current `state`
+     * </pre>
+     *
+     * <code>string state_reason = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for stateReason.
+     */
+    public com.google.protobuf.ByteString getStateReasonBytes() {
+      java.lang.Object ref = stateReason_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        stateReason_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Human-readable description of why RestorePlan is in the
+     * current `state`
+     * </pre>
+     *
+     * <code>string state_reason = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The stateReason to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStateReason(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      stateReason_ = value;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Human-readable description of why RestorePlan is in the
+     * current `state`
+     * </pre>
+     *
+     * <code>string state_reason = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearStateReason() {
+      stateReason_ = getDefaultInstance().getStateReason();
+      bitField0_ = (bitField0_ & ~0x00000800);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Human-readable description of why RestorePlan is in the
+     * current `state`
+     * </pre>
+     *
+     * <code>string state_reason = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for stateReason to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStateReasonBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      stateReason_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }

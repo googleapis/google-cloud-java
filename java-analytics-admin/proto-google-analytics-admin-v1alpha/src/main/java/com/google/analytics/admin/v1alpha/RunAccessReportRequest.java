@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,11 +52,6 @@ public final class RunAccessReportRequest extends com.google.protobuf.GeneratedM
     return new RunAccessReportRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.analytics.admin.v1alpha.AnalyticsAdminProto
         .internal_static_google_analytics_admin_v1alpha_RunAccessReportRequest_descriptor;
@@ -83,6 +78,7 @@ public final class RunAccessReportRequest extends com.google.protobuf.GeneratedM
    * The Data Access Report supports requesting at the property level or account
    * level. If requested at the account level, Data Access Reports include all
    * access for all properties under that account.
+   *
    * To request at the property level, entity should be for example
    * 'properties/123' if "123" is your GA4 property ID. To request at the
    * account level, entity should be for example 'accounts/1234' if "1234" is
@@ -112,6 +108,7 @@ public final class RunAccessReportRequest extends com.google.protobuf.GeneratedM
    * The Data Access Report supports requesting at the property level or account
    * level. If requested at the account level, Data Access Reports include all
    * access for all properties under that account.
+   *
    * To request at the property level, entity should be for example
    * 'properties/123' if "123" is your GA4 property ID. To request at the
    * account level, entity should be for example 'accounts/1234' if "1234" is
@@ -512,6 +509,7 @@ public final class RunAccessReportRequest extends com.google.protobuf.GeneratedM
    * The row count of the start row. The first row is counted as row 0. If
    * offset is unspecified, it is treated as 0. If offset is zero, then this
    * method will return the first page of results with `limit` entries.
+   *
    * To learn more about this pagination parameter, see
    * [Pagination](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#pagination).
    * </pre>
@@ -534,11 +532,13 @@ public final class RunAccessReportRequest extends com.google.protobuf.GeneratedM
    * The number of rows to return. If unspecified, 10,000 rows are returned. The
    * API returns a maximum of 100,000 rows per request, no matter how many you
    * ask for. `limit` must be positive.
+   *
    * The API may return fewer rows than the requested `limit`, if there aren't
    * as many remaining rows as the `limit`. For instance, there are fewer than
    * 300 possible values for the dimension `country`, so when reporting on only
    * `country`, you can't get more than 300 rows, even if you set `limit` to a
    * higher value.
+   *
    * To learn more about this pagination parameter, see
    * [Pagination](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#pagination).
    * </pre>
@@ -563,6 +563,7 @@ public final class RunAccessReportRequest extends com.google.protobuf.GeneratedM
    * This request's time zone if specified. If unspecified, the property's time
    * zone is used. The request's time zone is used to interpret the start &amp; end
    * dates of the report.
+   *
    * Formatted as strings from the IANA Time Zone database
    * (https://www.iana.org/time-zones); for example "America/New_York" or
    * "Asia/Tokyo".
@@ -591,6 +592,7 @@ public final class RunAccessReportRequest extends com.google.protobuf.GeneratedM
    * This request's time zone if specified. If unspecified, the property's time
    * zone is used. The request's time zone is used to interpret the start &amp; end
    * dates of the report.
+   *
    * Formatted as strings from the IANA Time Zone database
    * (https://www.iana.org/time-zones); for example "America/New_York" or
    * "Asia/Tokyo".
@@ -704,6 +706,49 @@ public final class RunAccessReportRequest extends com.google.protobuf.GeneratedM
     return returnEntityQuota_;
   }
 
+  public static final int INCLUDE_ALL_USERS_FIELD_NUMBER = 12;
+  private boolean includeAllUsers_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Determines whether to include users who have never made an API
+   * call in the response. If true, all users with access to the specified
+   * property or account are included in the response, regardless of whether
+   * they have made an API call or not. If false, only the users who have made
+   * an API call will be included.
+   * </pre>
+   *
+   * <code>bool include_all_users = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The includeAllUsers.
+   */
+  @java.lang.Override
+  public boolean getIncludeAllUsers() {
+    return includeAllUsers_;
+  }
+
+  public static final int EXPAND_GROUPS_FIELD_NUMBER = 13;
+  private boolean expandGroups_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Decides whether to return the users within user groups. This
+   * field works only when include_all_users is set to true. If true, it will
+   * return all users with access to the specified property or account.
+   * If false, only the users with direct access will be returned.
+   * </pre>
+   *
+   * <code>bool expand_groups = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The expandGroups.
+   */
+  @java.lang.Override
+  public boolean getExpandGroups() {
+    return expandGroups_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -751,6 +796,12 @@ public final class RunAccessReportRequest extends com.google.protobuf.GeneratedM
     if (returnEntityQuota_ != false) {
       output.writeBool(11, returnEntityQuota_);
     }
+    if (includeAllUsers_ != false) {
+      output.writeBool(12, includeAllUsers_);
+    }
+    if (expandGroups_ != false) {
+      output.writeBool(13, expandGroups_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -793,6 +844,12 @@ public final class RunAccessReportRequest extends com.google.protobuf.GeneratedM
     if (returnEntityQuota_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(11, returnEntityQuota_);
     }
+    if (includeAllUsers_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(12, includeAllUsers_);
+    }
+    if (expandGroups_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(13, expandGroups_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -826,6 +883,8 @@ public final class RunAccessReportRequest extends com.google.protobuf.GeneratedM
     if (!getTimeZone().equals(other.getTimeZone())) return false;
     if (!getOrderBysList().equals(other.getOrderBysList())) return false;
     if (getReturnEntityQuota() != other.getReturnEntityQuota()) return false;
+    if (getIncludeAllUsers() != other.getIncludeAllUsers()) return false;
+    if (getExpandGroups() != other.getExpandGroups()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -871,6 +930,10 @@ public final class RunAccessReportRequest extends com.google.protobuf.GeneratedM
     }
     hash = (37 * hash) + RETURN_ENTITY_QUOTA_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getReturnEntityQuota());
+    hash = (37 * hash) + INCLUDE_ALL_USERS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIncludeAllUsers());
+    hash = (37 * hash) + EXPAND_GROUPS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getExpandGroups());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1054,6 +1117,8 @@ public final class RunAccessReportRequest extends com.google.protobuf.GeneratedM
       }
       bitField0_ = (bitField0_ & ~0x00000200);
       returnEntityQuota_ = false;
+      includeAllUsers_ = false;
+      expandGroups_ = false;
       return this;
     }
 
@@ -1153,6 +1218,12 @@ public final class RunAccessReportRequest extends com.google.protobuf.GeneratedM
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
         result.returnEntityQuota_ = returnEntityQuota_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.includeAllUsers_ = includeAllUsers_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.expandGroups_ = expandGroups_;
       }
     }
 
@@ -1335,6 +1406,12 @@ public final class RunAccessReportRequest extends com.google.protobuf.GeneratedM
       if (other.getReturnEntityQuota() != false) {
         setReturnEntityQuota(other.getReturnEntityQuota());
       }
+      if (other.getIncludeAllUsers() != false) {
+        setIncludeAllUsers(other.getIncludeAllUsers());
+      }
+      if (other.getExpandGroups() != false) {
+        setExpandGroups(other.getExpandGroups());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1459,6 +1536,18 @@ public final class RunAccessReportRequest extends com.google.protobuf.GeneratedM
                 bitField0_ |= 0x00000400;
                 break;
               } // case 88
+            case 96:
+              {
+                includeAllUsers_ = input.readBool();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 96
+            case 104:
+              {
+                expandGroups_ = input.readBool();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 104
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1486,6 +1575,7 @@ public final class RunAccessReportRequest extends com.google.protobuf.GeneratedM
      * The Data Access Report supports requesting at the property level or account
      * level. If requested at the account level, Data Access Reports include all
      * access for all properties under that account.
+     *
      * To request at the property level, entity should be for example
      * 'properties/123' if "123" is your GA4 property ID. To request at the
      * account level, entity should be for example 'accounts/1234' if "1234" is
@@ -1514,6 +1604,7 @@ public final class RunAccessReportRequest extends com.google.protobuf.GeneratedM
      * The Data Access Report supports requesting at the property level or account
      * level. If requested at the account level, Data Access Reports include all
      * access for all properties under that account.
+     *
      * To request at the property level, entity should be for example
      * 'properties/123' if "123" is your GA4 property ID. To request at the
      * account level, entity should be for example 'accounts/1234' if "1234" is
@@ -1542,6 +1633,7 @@ public final class RunAccessReportRequest extends com.google.protobuf.GeneratedM
      * The Data Access Report supports requesting at the property level or account
      * level. If requested at the account level, Data Access Reports include all
      * access for all properties under that account.
+     *
      * To request at the property level, entity should be for example
      * 'properties/123' if "123" is your GA4 property ID. To request at the
      * account level, entity should be for example 'accounts/1234' if "1234" is
@@ -1569,6 +1661,7 @@ public final class RunAccessReportRequest extends com.google.protobuf.GeneratedM
      * The Data Access Report supports requesting at the property level or account
      * level. If requested at the account level, Data Access Reports include all
      * access for all properties under that account.
+     *
      * To request at the property level, entity should be for example
      * 'properties/123' if "123" is your GA4 property ID. To request at the
      * account level, entity should be for example 'accounts/1234' if "1234" is
@@ -1592,6 +1685,7 @@ public final class RunAccessReportRequest extends com.google.protobuf.GeneratedM
      * The Data Access Report supports requesting at the property level or account
      * level. If requested at the account level, Data Access Reports include all
      * access for all properties under that account.
+     *
      * To request at the property level, entity should be for example
      * 'properties/123' if "123" is your GA4 property ID. To request at the
      * account level, entity should be for example 'accounts/1234' if "1234" is
@@ -3238,6 +3332,7 @@ public final class RunAccessReportRequest extends com.google.protobuf.GeneratedM
      * The row count of the start row. The first row is counted as row 0. If
      * offset is unspecified, it is treated as 0. If offset is zero, then this
      * method will return the first page of results with `limit` entries.
+     *
      * To learn more about this pagination parameter, see
      * [Pagination](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#pagination).
      * </pre>
@@ -3257,6 +3352,7 @@ public final class RunAccessReportRequest extends com.google.protobuf.GeneratedM
      * The row count of the start row. The first row is counted as row 0. If
      * offset is unspecified, it is treated as 0. If offset is zero, then this
      * method will return the first page of results with `limit` entries.
+     *
      * To learn more about this pagination parameter, see
      * [Pagination](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#pagination).
      * </pre>
@@ -3280,6 +3376,7 @@ public final class RunAccessReportRequest extends com.google.protobuf.GeneratedM
      * The row count of the start row. The first row is counted as row 0. If
      * offset is unspecified, it is treated as 0. If offset is zero, then this
      * method will return the first page of results with `limit` entries.
+     *
      * To learn more about this pagination parameter, see
      * [Pagination](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#pagination).
      * </pre>
@@ -3303,11 +3400,13 @@ public final class RunAccessReportRequest extends com.google.protobuf.GeneratedM
      * The number of rows to return. If unspecified, 10,000 rows are returned. The
      * API returns a maximum of 100,000 rows per request, no matter how many you
      * ask for. `limit` must be positive.
+     *
      * The API may return fewer rows than the requested `limit`, if there aren't
      * as many remaining rows as the `limit`. For instance, there are fewer than
      * 300 possible values for the dimension `country`, so when reporting on only
      * `country`, you can't get more than 300 rows, even if you set `limit` to a
      * higher value.
+     *
      * To learn more about this pagination parameter, see
      * [Pagination](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#pagination).
      * </pre>
@@ -3327,11 +3426,13 @@ public final class RunAccessReportRequest extends com.google.protobuf.GeneratedM
      * The number of rows to return. If unspecified, 10,000 rows are returned. The
      * API returns a maximum of 100,000 rows per request, no matter how many you
      * ask for. `limit` must be positive.
+     *
      * The API may return fewer rows than the requested `limit`, if there aren't
      * as many remaining rows as the `limit`. For instance, there are fewer than
      * 300 possible values for the dimension `country`, so when reporting on only
      * `country`, you can't get more than 300 rows, even if you set `limit` to a
      * higher value.
+     *
      * To learn more about this pagination parameter, see
      * [Pagination](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#pagination).
      * </pre>
@@ -3355,11 +3456,13 @@ public final class RunAccessReportRequest extends com.google.protobuf.GeneratedM
      * The number of rows to return. If unspecified, 10,000 rows are returned. The
      * API returns a maximum of 100,000 rows per request, no matter how many you
      * ask for. `limit` must be positive.
+     *
      * The API may return fewer rows than the requested `limit`, if there aren't
      * as many remaining rows as the `limit`. For instance, there are fewer than
      * 300 possible values for the dimension `country`, so when reporting on only
      * `country`, you can't get more than 300 rows, even if you set `limit` to a
      * higher value.
+     *
      * To learn more about this pagination parameter, see
      * [Pagination](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#pagination).
      * </pre>
@@ -3383,6 +3486,7 @@ public final class RunAccessReportRequest extends com.google.protobuf.GeneratedM
      * This request's time zone if specified. If unspecified, the property's time
      * zone is used. The request's time zone is used to interpret the start &amp; end
      * dates of the report.
+     *
      * Formatted as strings from the IANA Time Zone database
      * (https://www.iana.org/time-zones); for example "America/New_York" or
      * "Asia/Tokyo".
@@ -3410,6 +3514,7 @@ public final class RunAccessReportRequest extends com.google.protobuf.GeneratedM
      * This request's time zone if specified. If unspecified, the property's time
      * zone is used. The request's time zone is used to interpret the start &amp; end
      * dates of the report.
+     *
      * Formatted as strings from the IANA Time Zone database
      * (https://www.iana.org/time-zones); for example "America/New_York" or
      * "Asia/Tokyo".
@@ -3437,6 +3542,7 @@ public final class RunAccessReportRequest extends com.google.protobuf.GeneratedM
      * This request's time zone if specified. If unspecified, the property's time
      * zone is used. The request's time zone is used to interpret the start &amp; end
      * dates of the report.
+     *
      * Formatted as strings from the IANA Time Zone database
      * (https://www.iana.org/time-zones); for example "America/New_York" or
      * "Asia/Tokyo".
@@ -3463,6 +3569,7 @@ public final class RunAccessReportRequest extends com.google.protobuf.GeneratedM
      * This request's time zone if specified. If unspecified, the property's time
      * zone is used. The request's time zone is used to interpret the start &amp; end
      * dates of the report.
+     *
      * Formatted as strings from the IANA Time Zone database
      * (https://www.iana.org/time-zones); for example "America/New_York" or
      * "Asia/Tokyo".
@@ -3485,6 +3592,7 @@ public final class RunAccessReportRequest extends com.google.protobuf.GeneratedM
      * This request's time zone if specified. If unspecified, the property's time
      * zone is used. The request's time zone is used to interpret the start &amp; end
      * dates of the report.
+     *
      * Formatted as strings from the IANA Time Zone database
      * (https://www.iana.org/time-zones); for example "America/New_York" or
      * "Asia/Tokyo".
@@ -3913,6 +4021,133 @@ public final class RunAccessReportRequest extends com.google.protobuf.GeneratedM
     public Builder clearReturnEntityQuota() {
       bitField0_ = (bitField0_ & ~0x00000400);
       returnEntityQuota_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean includeAllUsers_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Determines whether to include users who have never made an API
+     * call in the response. If true, all users with access to the specified
+     * property or account are included in the response, regardless of whether
+     * they have made an API call or not. If false, only the users who have made
+     * an API call will be included.
+     * </pre>
+     *
+     * <code>bool include_all_users = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The includeAllUsers.
+     */
+    @java.lang.Override
+    public boolean getIncludeAllUsers() {
+      return includeAllUsers_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Determines whether to include users who have never made an API
+     * call in the response. If true, all users with access to the specified
+     * property or account are included in the response, regardless of whether
+     * they have made an API call or not. If false, only the users who have made
+     * an API call will be included.
+     * </pre>
+     *
+     * <code>bool include_all_users = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The includeAllUsers to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIncludeAllUsers(boolean value) {
+
+      includeAllUsers_ = value;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Determines whether to include users who have never made an API
+     * call in the response. If true, all users with access to the specified
+     * property or account are included in the response, regardless of whether
+     * they have made an API call or not. If false, only the users who have made
+     * an API call will be included.
+     * </pre>
+     *
+     * <code>bool include_all_users = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearIncludeAllUsers() {
+      bitField0_ = (bitField0_ & ~0x00000800);
+      includeAllUsers_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean expandGroups_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Decides whether to return the users within user groups. This
+     * field works only when include_all_users is set to true. If true, it will
+     * return all users with access to the specified property or account.
+     * If false, only the users with direct access will be returned.
+     * </pre>
+     *
+     * <code>bool expand_groups = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The expandGroups.
+     */
+    @java.lang.Override
+    public boolean getExpandGroups() {
+      return expandGroups_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Decides whether to return the users within user groups. This
+     * field works only when include_all_users is set to true. If true, it will
+     * return all users with access to the specified property or account.
+     * If false, only the users with direct access will be returned.
+     * </pre>
+     *
+     * <code>bool expand_groups = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The expandGroups to set.
+     * @return This builder for chaining.
+     */
+    public Builder setExpandGroups(boolean value) {
+
+      expandGroups_ = value;
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Decides whether to return the users within user groups. This
+     * field works only when include_all_users is set to true. If true, it will
+     * return all users with access to the specified property or account.
+     * If false, only the users with direct access will be returned.
+     * </pre>
+     *
+     * <code>bool expand_groups = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearExpandGroups() {
+      bitField0_ = (bitField0_ & ~0x00001000);
+      expandGroups_ = false;
       onChanged();
       return this;
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ public interface InstanceGroupManagersDeleteInstancesRequestOrBuilder
    *
    *
    * <pre>
-   * The URLs of one or more instances to delete. This can be a full URL or a partial URL, such as zones/[ZONE]/instances/[INSTANCE_NAME].
+   * The URLs of one or more instances to delete. This can be a full URL or a partial URL, such as zones/[ZONE]/instances/[INSTANCE_NAME]. Queued instances do not have URL and can be deleted only by name. One cannot specify both URLs and names in a single request.
    * </pre>
    *
    * <code>repeated string instances = 29097598;</code>
@@ -39,7 +39,7 @@ public interface InstanceGroupManagersDeleteInstancesRequestOrBuilder
    *
    *
    * <pre>
-   * The URLs of one or more instances to delete. This can be a full URL or a partial URL, such as zones/[ZONE]/instances/[INSTANCE_NAME].
+   * The URLs of one or more instances to delete. This can be a full URL or a partial URL, such as zones/[ZONE]/instances/[INSTANCE_NAME]. Queued instances do not have URL and can be deleted only by name. One cannot specify both URLs and names in a single request.
    * </pre>
    *
    * <code>repeated string instances = 29097598;</code>
@@ -51,7 +51,7 @@ public interface InstanceGroupManagersDeleteInstancesRequestOrBuilder
    *
    *
    * <pre>
-   * The URLs of one or more instances to delete. This can be a full URL or a partial URL, such as zones/[ZONE]/instances/[INSTANCE_NAME].
+   * The URLs of one or more instances to delete. This can be a full URL or a partial URL, such as zones/[ZONE]/instances/[INSTANCE_NAME]. Queued instances do not have URL and can be deleted only by name. One cannot specify both URLs and names in a single request.
    * </pre>
    *
    * <code>repeated string instances = 29097598;</code>
@@ -64,7 +64,7 @@ public interface InstanceGroupManagersDeleteInstancesRequestOrBuilder
    *
    *
    * <pre>
-   * The URLs of one or more instances to delete. This can be a full URL or a partial URL, such as zones/[ZONE]/instances/[INSTANCE_NAME].
+   * The URLs of one or more instances to delete. This can be a full URL or a partial URL, such as zones/[ZONE]/instances/[INSTANCE_NAME]. Queued instances do not have URL and can be deleted only by name. One cannot specify both URLs and names in a single request.
    * </pre>
    *
    * <code>repeated string instances = 29097598;</code>

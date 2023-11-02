@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -54,11 +54,6 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new AttachedCluster();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -351,8 +346,10 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * The name of this resource.
+   *
    * Cluster names are formatted as
    * `projects/&lt;project-number&gt;/locations/&lt;region&gt;/attachedClusters/&lt;cluster-id&gt;`.
+   *
    * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
    * for more details on Google Cloud Platform resource names.
    * </pre>
@@ -378,8 +375,10 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * The name of this resource.
+   *
    * Cluster names are formatted as
    * `projects/&lt;project-number&gt;/locations/&lt;region&gt;/attachedClusters/&lt;cluster-id&gt;`.
+   *
    * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
    * for more details on Google Cloud Platform resource names.
    * </pre>
@@ -519,6 +518,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Required. The platform version for the cluster (e.g. `1.19.0-gke.1000`).
+   *
    * You can list all supported versions on a given Google Cloud region by
    * calling
    * [GetAttachedServerConfig][google.cloud.gkemulticloud.v1.AttachedClusters.GetAttachedServerConfig].
@@ -545,6 +545,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Required. The platform version for the cluster (e.g. `1.19.0-gke.1000`).
+   *
    * You can list all supported versions on a given Google Cloud region by
    * calling
    * [GetAttachedServerConfig][google.cloud.gkemulticloud.v1.AttachedClusters.GetAttachedServerConfig].
@@ -576,6 +577,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Required. The Kubernetes distribution of the underlying attached cluster.
+   *
    * Supported values: ["eks", "aks"].
    * </pre>
    *
@@ -600,6 +602,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Required. The Kubernetes distribution of the underlying attached cluster.
+   *
    * Supported values: ["eks", "aks"].
    * </pre>
    *
@@ -629,6 +632,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Output only. The region where this cluster runs.
+   *
    * For EKS clusters, this is a AWS region. For AKS clusters,
    * this is an Azure region.
    * </pre>
@@ -654,6 +658,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Output only. The region where this cluster runs.
+   *
    * For EKS clusters, this is a AWS region. For AKS clusters,
    * this is an Azure region.
    * </pre>
@@ -942,6 +947,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
    * <pre>
    * Allows clients to perform consistent read-modify-writes
    * through optimistic concurrency control.
+   *
    * Can be sent on update and delete requests to ensure the
    * client has an up-to-date value before proceeding.
    * </pre>
@@ -968,6 +974,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
    * <pre>
    * Allows clients to perform consistent read-modify-writes
    * through optimistic concurrency control.
+   *
    * Can be sent on update and delete requests to ensure the
    * client has an up-to-date value before proceeding.
    * </pre>
@@ -1072,6 +1079,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Optional. Annotations on the cluster.
+   *
    * This field has the same restrictions as Kubernetes annotations.
    * The total size of all keys and values combined is limited to 256k.
    * Key can have 2 segments: prefix (optional) and name (required),
@@ -1102,6 +1110,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Optional. Annotations on the cluster.
+   *
    * This field has the same restrictions as Kubernetes annotations.
    * The total size of all keys and values combined is limited to 256k.
    * Key can have 2 segments: prefix (optional) and name (required),
@@ -1123,6 +1132,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Optional. Annotations on the cluster.
+   *
    * This field has the same restrictions as Kubernetes annotations.
    * The total size of all keys and values combined is limited to 256k.
    * Key can have 2 segments: prefix (optional) and name (required),
@@ -1151,6 +1161,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Optional. Annotations on the cluster.
+   *
    * This field has the same restrictions as Kubernetes annotations.
    * The total size of all keys and values combined is limited to 256k.
    * Key can have 2 segments: prefix (optional) and name (required),
@@ -2432,8 +2443,10 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The name of this resource.
+     *
      * Cluster names are formatted as
      * `projects/&lt;project-number&gt;/locations/&lt;region&gt;/attachedClusters/&lt;cluster-id&gt;`.
+     *
      * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
      * for more details on Google Cloud Platform resource names.
      * </pre>
@@ -2458,8 +2471,10 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The name of this resource.
+     *
      * Cluster names are formatted as
      * `projects/&lt;project-number&gt;/locations/&lt;region&gt;/attachedClusters/&lt;cluster-id&gt;`.
+     *
      * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
      * for more details on Google Cloud Platform resource names.
      * </pre>
@@ -2484,8 +2499,10 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The name of this resource.
+     *
      * Cluster names are formatted as
      * `projects/&lt;project-number&gt;/locations/&lt;region&gt;/attachedClusters/&lt;cluster-id&gt;`.
+     *
      * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
      * for more details on Google Cloud Platform resource names.
      * </pre>
@@ -2509,8 +2526,10 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The name of this resource.
+     *
      * Cluster names are formatted as
      * `projects/&lt;project-number&gt;/locations/&lt;region&gt;/attachedClusters/&lt;cluster-id&gt;`.
+     *
      * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
      * for more details on Google Cloud Platform resource names.
      * </pre>
@@ -2530,8 +2549,10 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The name of this resource.
+     *
      * Cluster names are formatted as
      * `projects/&lt;project-number&gt;/locations/&lt;region&gt;/attachedClusters/&lt;cluster-id&gt;`.
+     *
      * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
      * for more details on Google Cloud Platform resource names.
      * </pre>
@@ -2872,6 +2893,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Required. The platform version for the cluster (e.g. `1.19.0-gke.1000`).
+     *
      * You can list all supported versions on a given Google Cloud region by
      * calling
      * [GetAttachedServerConfig][google.cloud.gkemulticloud.v1.AttachedClusters.GetAttachedServerConfig].
@@ -2897,6 +2919,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Required. The platform version for the cluster (e.g. `1.19.0-gke.1000`).
+     *
      * You can list all supported versions on a given Google Cloud region by
      * calling
      * [GetAttachedServerConfig][google.cloud.gkemulticloud.v1.AttachedClusters.GetAttachedServerConfig].
@@ -2922,6 +2945,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Required. The platform version for the cluster (e.g. `1.19.0-gke.1000`).
+     *
      * You can list all supported versions on a given Google Cloud region by
      * calling
      * [GetAttachedServerConfig][google.cloud.gkemulticloud.v1.AttachedClusters.GetAttachedServerConfig].
@@ -2946,6 +2970,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Required. The platform version for the cluster (e.g. `1.19.0-gke.1000`).
+     *
      * You can list all supported versions on a given Google Cloud region by
      * calling
      * [GetAttachedServerConfig][google.cloud.gkemulticloud.v1.AttachedClusters.GetAttachedServerConfig].
@@ -2966,6 +2991,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Required. The platform version for the cluster (e.g. `1.19.0-gke.1000`).
+     *
      * You can list all supported versions on a given Google Cloud region by
      * calling
      * [GetAttachedServerConfig][google.cloud.gkemulticloud.v1.AttachedClusters.GetAttachedServerConfig].
@@ -2993,6 +3019,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Required. The Kubernetes distribution of the underlying attached cluster.
+     *
      * Supported values: ["eks", "aks"].
      * </pre>
      *
@@ -3016,6 +3043,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Required. The Kubernetes distribution of the underlying attached cluster.
+     *
      * Supported values: ["eks", "aks"].
      * </pre>
      *
@@ -3039,6 +3067,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Required. The Kubernetes distribution of the underlying attached cluster.
+     *
      * Supported values: ["eks", "aks"].
      * </pre>
      *
@@ -3061,6 +3090,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Required. The Kubernetes distribution of the underlying attached cluster.
+     *
      * Supported values: ["eks", "aks"].
      * </pre>
      *
@@ -3079,6 +3109,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Required. The Kubernetes distribution of the underlying attached cluster.
+     *
      * Supported values: ["eks", "aks"].
      * </pre>
      *
@@ -3104,6 +3135,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Output only. The region where this cluster runs.
+     *
      * For EKS clusters, this is a AWS region. For AKS clusters,
      * this is an Azure region.
      * </pre>
@@ -3128,6 +3160,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Output only. The region where this cluster runs.
+     *
      * For EKS clusters, this is a AWS region. For AKS clusters,
      * this is an Azure region.
      * </pre>
@@ -3152,6 +3185,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Output only. The region where this cluster runs.
+     *
      * For EKS clusters, this is a AWS region. For AKS clusters,
      * this is an Azure region.
      * </pre>
@@ -3175,6 +3209,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Output only. The region where this cluster runs.
+     *
      * For EKS clusters, this is a AWS region. For AKS clusters,
      * this is an Azure region.
      * </pre>
@@ -3194,6 +3229,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Output only. The region where this cluster runs.
+     *
      * For EKS clusters, this is a AWS region. For AKS clusters,
      * this is an Azure region.
      * </pre>
@@ -4085,6 +4121,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Allows clients to perform consistent read-modify-writes
      * through optimistic concurrency control.
+     *
      * Can be sent on update and delete requests to ensure the
      * client has an up-to-date value before proceeding.
      * </pre>
@@ -4110,6 +4147,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Allows clients to perform consistent read-modify-writes
      * through optimistic concurrency control.
+     *
      * Can be sent on update and delete requests to ensure the
      * client has an up-to-date value before proceeding.
      * </pre>
@@ -4135,6 +4173,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Allows clients to perform consistent read-modify-writes
      * through optimistic concurrency control.
+     *
      * Can be sent on update and delete requests to ensure the
      * client has an up-to-date value before proceeding.
      * </pre>
@@ -4159,6 +4198,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Allows clients to perform consistent read-modify-writes
      * through optimistic concurrency control.
+     *
      * Can be sent on update and delete requests to ensure the
      * client has an up-to-date value before proceeding.
      * </pre>
@@ -4179,6 +4219,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Allows clients to perform consistent read-modify-writes
      * through optimistic concurrency control.
+     *
      * Can be sent on update and delete requests to ensure the
      * client has an up-to-date value before proceeding.
      * </pre>
@@ -4338,6 +4379,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Optional. Annotations on the cluster.
+     *
      * This field has the same restrictions as Kubernetes annotations.
      * The total size of all keys and values combined is limited to 256k.
      * Key can have 2 segments: prefix (optional) and name (required),
@@ -4368,6 +4410,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Optional. Annotations on the cluster.
+     *
      * This field has the same restrictions as Kubernetes annotations.
      * The total size of all keys and values combined is limited to 256k.
      * Key can have 2 segments: prefix (optional) and name (required),
@@ -4389,6 +4432,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Optional. Annotations on the cluster.
+     *
      * This field has the same restrictions as Kubernetes annotations.
      * The total size of all keys and values combined is limited to 256k.
      * Key can have 2 segments: prefix (optional) and name (required),
@@ -4417,6 +4461,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Optional. Annotations on the cluster.
+     *
      * This field has the same restrictions as Kubernetes annotations.
      * The total size of all keys and values combined is limited to 256k.
      * Key can have 2 segments: prefix (optional) and name (required),
@@ -4451,6 +4496,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Optional. Annotations on the cluster.
+     *
      * This field has the same restrictions as Kubernetes annotations.
      * The total size of all keys and values combined is limited to 256k.
      * Key can have 2 segments: prefix (optional) and name (required),
@@ -4481,6 +4527,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Optional. Annotations on the cluster.
+     *
      * This field has the same restrictions as Kubernetes annotations.
      * The total size of all keys and values combined is limited to 256k.
      * Key can have 2 segments: prefix (optional) and name (required),
@@ -4509,6 +4556,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Optional. Annotations on the cluster.
+     *
      * This field has the same restrictions as Kubernetes annotations.
      * The total size of all keys and values combined is limited to 256k.
      * Key can have 2 segments: prefix (optional) and name (required),

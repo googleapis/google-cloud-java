@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,8 @@ package com.google.cloud.deploy.v1;
  *
  *
  * <pre>
- * A `Rollout` resource in the Google Cloud Deploy API.
+ * A `Rollout` resource in the Cloud Deploy API.
+ *
  * A `Rollout` contains information around a specific deployment to a `Target`.
  * </pre>
  *
@@ -51,17 +52,14 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     deployFailureCause_ = 0;
     phases_ = java.util.Collections.emptyList();
     controllerRollout_ = "";
+    rollbackOfRollout_ = "";
+    rolledBackByRollouts_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Rollout();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -654,7 +652,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Cloud Build is not available, either because it is not enabled or because
      * Cloud Deploy has insufficient permissions. See [required
-     * permission](/deploy/docs/cloud-deploy-service-account#required_permissions).
+     * permission](https://cloud.google.com/deploy/docs/cloud-deploy-service-account#required_permissions).
      * </pre>
      *
      * <code>CLOUD_BUILD_UNAVAILABLE = 1;</code>
@@ -715,8 +713,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud Build failed to fulfill Google Cloud Deploy's request. See
-     * failure_message for additional details.
+     * Cloud Build failed to fulfill Cloud Deploy's request. See failure_message
+     * for additional details.
      * </pre>
      *
      * <code>CLOUD_BUILD_REQUEST_FAILED = 7;</code>
@@ -741,7 +739,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Cloud Build is not available, either because it is not enabled or because
      * Cloud Deploy has insufficient permissions. See [required
-     * permission](/deploy/docs/cloud-deploy-service-account#required_permissions).
+     * permission](https://cloud.google.com/deploy/docs/cloud-deploy-service-account#required_permissions).
      * </pre>
      *
      * <code>CLOUD_BUILD_UNAVAILABLE = 1;</code>
@@ -802,8 +800,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud Build failed to fulfill Google Cloud Deploy's request. See
-     * failure_message for additional details.
+     * Cloud Build failed to fulfill Cloud Deploy's request. See failure_message
+     * for additional details.
      * </pre>
      *
      * <code>CLOUD_BUILD_REQUEST_FAILED = 7;</code>
@@ -911,9 +909,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Name of the `Rollout`. Format is projects/{project}/
-   * locations/{location}/deliveryPipelines/{deliveryPipeline}/
-   * releases/{release}/rollouts/[a-z][a-z0-9&#92;-]{0,62}.
+   * Optional. Name of the `Rollout`. Format is
+   * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/[a-z][a-z0-9&#92;-]{0,62}`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -936,9 +933,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Name of the `Rollout`. Format is projects/{project}/
-   * locations/{location}/deliveryPipelines/{deliveryPipeline}/
-   * releases/{release}/rollouts/[a-z][a-z0-9&#92;-]{0,62}.
+   * Optional. Name of the `Rollout`. Format is
+   * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/[a-z][a-z0-9&#92;-]{0,62}`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1094,9 +1090,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * User annotations. These attributes can only be set and used by the
-   * user, and not by Google Cloud Deploy. See
-   * https://google.aip.dev/128#annotations for more details such as format and
-   * size limitations.
+   * user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations
+   * for more details such as format and size limitations.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 4;</code>
@@ -1119,9 +1114,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * User annotations. These attributes can only be set and used by the
-   * user, and not by Google Cloud Deploy. See
-   * https://google.aip.dev/128#annotations for more details such as format and
-   * size limitations.
+   * user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations
+   * for more details such as format and size limitations.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 4;</code>
@@ -1135,9 +1129,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * User annotations. These attributes can only be set and used by the
-   * user, and not by Google Cloud Deploy. See
-   * https://google.aip.dev/128#annotations for more details such as format and
-   * size limitations.
+   * user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations
+   * for more details such as format and size limitations.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 4;</code>
@@ -1158,9 +1151,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * User annotations. These attributes can only be set and used by the
-   * user, and not by Google Cloud Deploy. See
-   * https://google.aip.dev/128#annotations for more details such as format and
-   * size limitations.
+   * user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations
+   * for more details such as format and size limitations.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 4;</code>
@@ -1208,14 +1200,15 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Labels are attributes that can be set and used by both the
-   * user and by Google Cloud Deploy. Labels must meet the following
-   * constraints:
+   * user and by Cloud Deploy. Labels must meet the following constraints:
+   *
    * * Keys and values can contain only lowercase letters, numeric characters,
    * underscores, and dashes.
    * * All characters must use UTF-8 encoding, and international characters are
    * allowed.
    * * Keys must start with a lowercase letter or international character.
    * * Each resource is limited to a maximum of 64 labels.
+   *
    * Both keys and values are additionally constrained to be &lt;= 128 bytes.
    * </pre>
    *
@@ -1239,14 +1232,15 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Labels are attributes that can be set and used by both the
-   * user and by Google Cloud Deploy. Labels must meet the following
-   * constraints:
+   * user and by Cloud Deploy. Labels must meet the following constraints:
+   *
    * * Keys and values can contain only lowercase letters, numeric characters,
    * underscores, and dashes.
    * * All characters must use UTF-8 encoding, and international characters are
    * allowed.
    * * Keys must start with a lowercase letter or international character.
    * * Each resource is limited to a maximum of 64 labels.
+   *
    * Both keys and values are additionally constrained to be &lt;= 128 bytes.
    * </pre>
    *
@@ -1261,14 +1255,15 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Labels are attributes that can be set and used by both the
-   * user and by Google Cloud Deploy. Labels must meet the following
-   * constraints:
+   * user and by Cloud Deploy. Labels must meet the following constraints:
+   *
    * * Keys and values can contain only lowercase letters, numeric characters,
    * underscores, and dashes.
    * * All characters must use UTF-8 encoding, and international characters are
    * allowed.
    * * Keys must start with a lowercase letter or international character.
    * * Each resource is limited to a maximum of 64 labels.
+   *
    * Both keys and values are additionally constrained to be &lt;= 128 bytes.
    * </pre>
    *
@@ -1290,14 +1285,15 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Labels are attributes that can be set and used by both the
-   * user and by Google Cloud Deploy. Labels must meet the following
-   * constraints:
+   * user and by Cloud Deploy. Labels must meet the following constraints:
+   *
    * * Keys and values can contain only lowercase letters, numeric characters,
    * underscores, and dashes.
    * * All characters must use UTF-8 encoding, and international characters are
    * allowed.
    * * Keys must start with a lowercase letter or international character.
    * * Each resource is limited to a maximum of 64 labels.
+   *
    * Both keys and values are additionally constrained to be &lt;= 128 bytes.
    * </pre>
    *
@@ -2052,9 +2048,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Name of the `ControllerRollout`. Format is projects/{project}/
-   * locations/{location}/deliveryPipelines/{deliveryPipeline}/
-   * releases/{release}/rollouts/[a-z][a-z0-9&#92;-]{0,62}.
+   * Output only. Name of the `ControllerRollout`. Format is
+   * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/[a-z][a-z0-9&#92;-]{0,62}`.
    * </pre>
    *
    * <code>string controller_rollout = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2077,9 +2072,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Name of the `ControllerRollout`. Format is projects/{project}/
-   * locations/{location}/deliveryPipelines/{deliveryPipeline}/
-   * releases/{release}/rollouts/[a-z][a-z0-9&#92;-]{0,62}.
+   * Output only. Name of the `ControllerRollout`. Format is
+   * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/[a-z][a-z0-9&#92;-]{0,62}`.
    * </pre>
    *
    * <code>string controller_rollout = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2097,6 +2091,131 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int ROLLBACK_OF_ROLLOUT_FIELD_NUMBER = 26;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object rollbackOfRollout_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Name of the `Rollout` that is rolled back by this `Rollout`.
+   * Empty if this `Rollout` wasn't created as a rollback.
+   * </pre>
+   *
+   * <code>string rollback_of_rollout = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The rollbackOfRollout.
+   */
+  @java.lang.Override
+  public java.lang.String getRollbackOfRollout() {
+    java.lang.Object ref = rollbackOfRollout_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      rollbackOfRollout_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Name of the `Rollout` that is rolled back by this `Rollout`.
+   * Empty if this `Rollout` wasn't created as a rollback.
+   * </pre>
+   *
+   * <code>string rollback_of_rollout = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for rollbackOfRollout.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getRollbackOfRolloutBytes() {
+    java.lang.Object ref = rollbackOfRollout_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      rollbackOfRollout_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int ROLLED_BACK_BY_ROLLOUTS_FIELD_NUMBER = 27;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList rolledBackByRollouts_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Names of `Rollouts` that rolled back this `Rollout`.
+   * </pre>
+   *
+   * <code>
+   * repeated string rolled_back_by_rollouts = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return A list containing the rolledBackByRollouts.
+   */
+  public com.google.protobuf.ProtocolStringList getRolledBackByRolloutsList() {
+    return rolledBackByRollouts_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Names of `Rollouts` that rolled back this `Rollout`.
+   * </pre>
+   *
+   * <code>
+   * repeated string rolled_back_by_rollouts = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The count of rolledBackByRollouts.
+   */
+  public int getRolledBackByRolloutsCount() {
+    return rolledBackByRollouts_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Names of `Rollouts` that rolled back this `Rollout`.
+   * </pre>
+   *
+   * <code>
+   * repeated string rolled_back_by_rollouts = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The rolledBackByRollouts at the given index.
+   */
+  public java.lang.String getRolledBackByRollouts(int index) {
+    return rolledBackByRollouts_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Names of `Rollouts` that rolled back this `Rollout`.
+   * </pre>
+   *
+   * <code>
+   * repeated string rolled_back_by_rollouts = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the rolledBackByRollouts at the given index.
+   */
+  public com.google.protobuf.ByteString getRolledBackByRolloutsBytes(int index) {
+    return rolledBackByRollouts_.getByteString(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -2173,6 +2292,13 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(controllerRollout_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 25, controllerRollout_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rollbackOfRollout_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 26, rollbackOfRollout_);
+    }
+    for (int i = 0; i < rolledBackByRollouts_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 27, rolledBackByRollouts_.getRaw(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -2260,6 +2386,17 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(controllerRollout_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(25, controllerRollout_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rollbackOfRollout_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(26, rollbackOfRollout_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < rolledBackByRollouts_.size(); i++) {
+        dataSize += computeStringSizeNoTag(rolledBackByRollouts_.getRaw(i));
+      }
+      size += dataSize;
+      size += 2 * getRolledBackByRolloutsList().size();
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2313,6 +2450,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       if (!getMetadata().equals(other.getMetadata())) return false;
     }
     if (!getControllerRollout().equals(other.getControllerRollout())) return false;
+    if (!getRollbackOfRollout().equals(other.getRollbackOfRollout())) return false;
+    if (!getRolledBackByRolloutsList().equals(other.getRolledBackByRolloutsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2382,6 +2521,12 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + CONTROLLER_ROLLOUT_FIELD_NUMBER;
     hash = (53 * hash) + getControllerRollout().hashCode();
+    hash = (37 * hash) + ROLLBACK_OF_ROLLOUT_FIELD_NUMBER;
+    hash = (53 * hash) + getRollbackOfRollout().hashCode();
+    if (getRolledBackByRolloutsCount() > 0) {
+      hash = (37 * hash) + ROLLED_BACK_BY_ROLLOUTS_FIELD_NUMBER;
+      hash = (53 * hash) + getRolledBackByRolloutsList().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2485,7 +2630,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A `Rollout` resource in the Google Cloud Deploy API.
+   * A `Rollout` resource in the Cloud Deploy API.
+   *
    * A `Rollout` contains information around a specific deployment to a `Target`.
    * </pre>
    *
@@ -2595,6 +2741,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
         metadataBuilder_ = null;
       }
       controllerRollout_ = "";
+      rollbackOfRollout_ = "";
+      rolledBackByRollouts_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -2705,6 +2853,13 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00080000) != 0)) {
         result.controllerRollout_ = controllerRollout_;
+      }
+      if (((from_bitField0_ & 0x00100000) != 0)) {
+        result.rollbackOfRollout_ = rollbackOfRollout_;
+      }
+      if (((from_bitField0_ & 0x00200000) != 0)) {
+        rolledBackByRollouts_.makeImmutable();
+        result.rolledBackByRollouts_ = rolledBackByRollouts_;
       }
     }
 
@@ -2849,6 +3004,21 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       if (!other.getControllerRollout().isEmpty()) {
         controllerRollout_ = other.controllerRollout_;
         bitField0_ |= 0x00080000;
+        onChanged();
+      }
+      if (!other.getRollbackOfRollout().isEmpty()) {
+        rollbackOfRollout_ = other.rollbackOfRollout_;
+        bitField0_ |= 0x00100000;
+        onChanged();
+      }
+      if (!other.rolledBackByRollouts_.isEmpty()) {
+        if (rolledBackByRollouts_.isEmpty()) {
+          rolledBackByRollouts_ = other.rolledBackByRollouts_;
+          bitField0_ |= 0x00200000;
+        } else {
+          ensureRolledBackByRolloutsIsMutable();
+          rolledBackByRollouts_.addAll(other.rolledBackByRollouts_);
+        }
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -3015,6 +3185,19 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00080000;
                 break;
               } // case 202
+            case 210:
+              {
+                rollbackOfRollout_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00100000;
+                break;
+              } // case 210
+            case 218:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureRolledBackByRolloutsIsMutable();
+                rolledBackByRollouts_.add(s);
+                break;
+              } // case 218
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3039,9 +3222,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Name of the `Rollout`. Format is projects/{project}/
-     * locations/{location}/deliveryPipelines/{deliveryPipeline}/
-     * releases/{release}/rollouts/[a-z][a-z0-9&#92;-]{0,62}.
+     * Optional. Name of the `Rollout`. Format is
+     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/[a-z][a-z0-9&#92;-]{0,62}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3063,9 +3245,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Name of the `Rollout`. Format is projects/{project}/
-     * locations/{location}/deliveryPipelines/{deliveryPipeline}/
-     * releases/{release}/rollouts/[a-z][a-z0-9&#92;-]{0,62}.
+     * Optional. Name of the `Rollout`. Format is
+     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/[a-z][a-z0-9&#92;-]{0,62}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3087,9 +3268,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Name of the `Rollout`. Format is projects/{project}/
-     * locations/{location}/deliveryPipelines/{deliveryPipeline}/
-     * releases/{release}/rollouts/[a-z][a-z0-9&#92;-]{0,62}.
+     * Optional. Name of the `Rollout`. Format is
+     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/[a-z][a-z0-9&#92;-]{0,62}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3110,9 +3290,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Name of the `Rollout`. Format is projects/{project}/
-     * locations/{location}/deliveryPipelines/{deliveryPipeline}/
-     * releases/{release}/rollouts/[a-z][a-z0-9&#92;-]{0,62}.
+     * Optional. Name of the `Rollout`. Format is
+     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/[a-z][a-z0-9&#92;-]{0,62}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3129,9 +3308,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Name of the `Rollout`. Format is projects/{project}/
-     * locations/{location}/deliveryPipelines/{deliveryPipeline}/
-     * releases/{release}/rollouts/[a-z][a-z0-9&#92;-]{0,62}.
+     * Optional. Name of the `Rollout`. Format is
+     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/[a-z][a-z0-9&#92;-]{0,62}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3400,9 +3578,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * User annotations. These attributes can only be set and used by the
-     * user, and not by Google Cloud Deploy. See
-     * https://google.aip.dev/128#annotations for more details such as format and
-     * size limitations.
+     * user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations
+     * for more details such as format and size limitations.
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotations = 4;</code>
@@ -3425,9 +3602,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * User annotations. These attributes can only be set and used by the
-     * user, and not by Google Cloud Deploy. See
-     * https://google.aip.dev/128#annotations for more details such as format and
-     * size limitations.
+     * user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations
+     * for more details such as format and size limitations.
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotations = 4;</code>
@@ -3441,9 +3617,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * User annotations. These attributes can only be set and used by the
-     * user, and not by Google Cloud Deploy. See
-     * https://google.aip.dev/128#annotations for more details such as format and
-     * size limitations.
+     * user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations
+     * for more details such as format and size limitations.
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotations = 4;</code>
@@ -3464,9 +3639,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * User annotations. These attributes can only be set and used by the
-     * user, and not by Google Cloud Deploy. See
-     * https://google.aip.dev/128#annotations for more details such as format and
-     * size limitations.
+     * user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations
+     * for more details such as format and size limitations.
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotations = 4;</code>
@@ -3493,9 +3667,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * User annotations. These attributes can only be set and used by the
-     * user, and not by Google Cloud Deploy. See
-     * https://google.aip.dev/128#annotations for more details such as format and
-     * size limitations.
+     * user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations
+     * for more details such as format and size limitations.
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotations = 4;</code>
@@ -3518,9 +3691,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * User annotations. These attributes can only be set and used by the
-     * user, and not by Google Cloud Deploy. See
-     * https://google.aip.dev/128#annotations for more details such as format and
-     * size limitations.
+     * user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations
+     * for more details such as format and size limitations.
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotations = 4;</code>
@@ -3541,9 +3713,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * User annotations. These attributes can only be set and used by the
-     * user, and not by Google Cloud Deploy. See
-     * https://google.aip.dev/128#annotations for more details such as format and
-     * size limitations.
+     * user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations
+     * for more details such as format and size limitations.
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotations = 4;</code>
@@ -3584,14 +3755,15 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Labels are attributes that can be set and used by both the
-     * user and by Google Cloud Deploy. Labels must meet the following
-     * constraints:
+     * user and by Cloud Deploy. Labels must meet the following constraints:
+     *
      * * Keys and values can contain only lowercase letters, numeric characters,
      * underscores, and dashes.
      * * All characters must use UTF-8 encoding, and international characters are
      * allowed.
      * * Keys must start with a lowercase letter or international character.
      * * Each resource is limited to a maximum of 64 labels.
+     *
      * Both keys and values are additionally constrained to be &lt;= 128 bytes.
      * </pre>
      *
@@ -3615,14 +3787,15 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Labels are attributes that can be set and used by both the
-     * user and by Google Cloud Deploy. Labels must meet the following
-     * constraints:
+     * user and by Cloud Deploy. Labels must meet the following constraints:
+     *
      * * Keys and values can contain only lowercase letters, numeric characters,
      * underscores, and dashes.
      * * All characters must use UTF-8 encoding, and international characters are
      * allowed.
      * * Keys must start with a lowercase letter or international character.
      * * Each resource is limited to a maximum of 64 labels.
+     *
      * Both keys and values are additionally constrained to be &lt;= 128 bytes.
      * </pre>
      *
@@ -3637,14 +3810,15 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Labels are attributes that can be set and used by both the
-     * user and by Google Cloud Deploy. Labels must meet the following
-     * constraints:
+     * user and by Cloud Deploy. Labels must meet the following constraints:
+     *
      * * Keys and values can contain only lowercase letters, numeric characters,
      * underscores, and dashes.
      * * All characters must use UTF-8 encoding, and international characters are
      * allowed.
      * * Keys must start with a lowercase letter or international character.
      * * Each resource is limited to a maximum of 64 labels.
+     *
      * Both keys and values are additionally constrained to be &lt;= 128 bytes.
      * </pre>
      *
@@ -3666,14 +3840,15 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Labels are attributes that can be set and used by both the
-     * user and by Google Cloud Deploy. Labels must meet the following
-     * constraints:
+     * user and by Cloud Deploy. Labels must meet the following constraints:
+     *
      * * Keys and values can contain only lowercase letters, numeric characters,
      * underscores, and dashes.
      * * All characters must use UTF-8 encoding, and international characters are
      * allowed.
      * * Keys must start with a lowercase letter or international character.
      * * Each resource is limited to a maximum of 64 labels.
+     *
      * Both keys and values are additionally constrained to be &lt;= 128 bytes.
      * </pre>
      *
@@ -3701,14 +3876,15 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Labels are attributes that can be set and used by both the
-     * user and by Google Cloud Deploy. Labels must meet the following
-     * constraints:
+     * user and by Cloud Deploy. Labels must meet the following constraints:
+     *
      * * Keys and values can contain only lowercase letters, numeric characters,
      * underscores, and dashes.
      * * All characters must use UTF-8 encoding, and international characters are
      * allowed.
      * * Keys must start with a lowercase letter or international character.
      * * Each resource is limited to a maximum of 64 labels.
+     *
      * Both keys and values are additionally constrained to be &lt;= 128 bytes.
      * </pre>
      *
@@ -3732,14 +3908,15 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Labels are attributes that can be set and used by both the
-     * user and by Google Cloud Deploy. Labels must meet the following
-     * constraints:
+     * user and by Cloud Deploy. Labels must meet the following constraints:
+     *
      * * Keys and values can contain only lowercase letters, numeric characters,
      * underscores, and dashes.
      * * All characters must use UTF-8 encoding, and international characters are
      * allowed.
      * * Keys must start with a lowercase letter or international character.
      * * Each resource is limited to a maximum of 64 labels.
+     *
      * Both keys and values are additionally constrained to be &lt;= 128 bytes.
      * </pre>
      *
@@ -3761,14 +3938,15 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Labels are attributes that can be set and used by both the
-     * user and by Google Cloud Deploy. Labels must meet the following
-     * constraints:
+     * user and by Cloud Deploy. Labels must meet the following constraints:
+     *
      * * Keys and values can contain only lowercase letters, numeric characters,
      * underscores, and dashes.
      * * All characters must use UTF-8 encoding, and international characters are
      * allowed.
      * * Keys must start with a lowercase letter or international character.
      * * Each resource is limited to a maximum of 64 labels.
+     *
      * Both keys and values are additionally constrained to be &lt;= 128 bytes.
      * </pre>
      *
@@ -6139,9 +6317,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Name of the `ControllerRollout`. Format is projects/{project}/
-     * locations/{location}/deliveryPipelines/{deliveryPipeline}/
-     * releases/{release}/rollouts/[a-z][a-z0-9&#92;-]{0,62}.
+     * Output only. Name of the `ControllerRollout`. Format is
+     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/[a-z][a-z0-9&#92;-]{0,62}`.
      * </pre>
      *
      * <code>string controller_rollout = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -6163,9 +6340,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Name of the `ControllerRollout`. Format is projects/{project}/
-     * locations/{location}/deliveryPipelines/{deliveryPipeline}/
-     * releases/{release}/rollouts/[a-z][a-z0-9&#92;-]{0,62}.
+     * Output only. Name of the `ControllerRollout`. Format is
+     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/[a-z][a-z0-9&#92;-]{0,62}`.
      * </pre>
      *
      * <code>string controller_rollout = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -6187,9 +6363,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Name of the `ControllerRollout`. Format is projects/{project}/
-     * locations/{location}/deliveryPipelines/{deliveryPipeline}/
-     * releases/{release}/rollouts/[a-z][a-z0-9&#92;-]{0,62}.
+     * Output only. Name of the `ControllerRollout`. Format is
+     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/[a-z][a-z0-9&#92;-]{0,62}`.
      * </pre>
      *
      * <code>string controller_rollout = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -6210,9 +6385,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Name of the `ControllerRollout`. Format is projects/{project}/
-     * locations/{location}/deliveryPipelines/{deliveryPipeline}/
-     * releases/{release}/rollouts/[a-z][a-z0-9&#92;-]{0,62}.
+     * Output only. Name of the `ControllerRollout`. Format is
+     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/[a-z][a-z0-9&#92;-]{0,62}`.
      * </pre>
      *
      * <code>string controller_rollout = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -6229,9 +6403,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Name of the `ControllerRollout`. Format is projects/{project}/
-     * locations/{location}/deliveryPipelines/{deliveryPipeline}/
-     * releases/{release}/rollouts/[a-z][a-z0-9&#92;-]{0,62}.
+     * Output only. Name of the `ControllerRollout`. Format is
+     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/[a-z][a-z0-9&#92;-]{0,62}`.
      * </pre>
      *
      * <code>string controller_rollout = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -6246,6 +6419,309 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       controllerRollout_ = value;
       bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object rollbackOfRollout_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Name of the `Rollout` that is rolled back by this `Rollout`.
+     * Empty if this `Rollout` wasn't created as a rollback.
+     * </pre>
+     *
+     * <code>string rollback_of_rollout = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The rollbackOfRollout.
+     */
+    public java.lang.String getRollbackOfRollout() {
+      java.lang.Object ref = rollbackOfRollout_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        rollbackOfRollout_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Name of the `Rollout` that is rolled back by this `Rollout`.
+     * Empty if this `Rollout` wasn't created as a rollback.
+     * </pre>
+     *
+     * <code>string rollback_of_rollout = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for rollbackOfRollout.
+     */
+    public com.google.protobuf.ByteString getRollbackOfRolloutBytes() {
+      java.lang.Object ref = rollbackOfRollout_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        rollbackOfRollout_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Name of the `Rollout` that is rolled back by this `Rollout`.
+     * Empty if this `Rollout` wasn't created as a rollback.
+     * </pre>
+     *
+     * <code>string rollback_of_rollout = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The rollbackOfRollout to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRollbackOfRollout(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      rollbackOfRollout_ = value;
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Name of the `Rollout` that is rolled back by this `Rollout`.
+     * Empty if this `Rollout` wasn't created as a rollback.
+     * </pre>
+     *
+     * <code>string rollback_of_rollout = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRollbackOfRollout() {
+      rollbackOfRollout_ = getDefaultInstance().getRollbackOfRollout();
+      bitField0_ = (bitField0_ & ~0x00100000);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Name of the `Rollout` that is rolled back by this `Rollout`.
+     * Empty if this `Rollout` wasn't created as a rollback.
+     * </pre>
+     *
+     * <code>string rollback_of_rollout = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for rollbackOfRollout to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRollbackOfRolloutBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      rollbackOfRollout_ = value;
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList rolledBackByRollouts_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureRolledBackByRolloutsIsMutable() {
+      if (!rolledBackByRollouts_.isModifiable()) {
+        rolledBackByRollouts_ = new com.google.protobuf.LazyStringArrayList(rolledBackByRollouts_);
+      }
+      bitField0_ |= 0x00200000;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Names of `Rollouts` that rolled back this `Rollout`.
+     * </pre>
+     *
+     * <code>
+     * repeated string rolled_back_by_rollouts = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return A list containing the rolledBackByRollouts.
+     */
+    public com.google.protobuf.ProtocolStringList getRolledBackByRolloutsList() {
+      rolledBackByRollouts_.makeImmutable();
+      return rolledBackByRollouts_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Names of `Rollouts` that rolled back this `Rollout`.
+     * </pre>
+     *
+     * <code>
+     * repeated string rolled_back_by_rollouts = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The count of rolledBackByRollouts.
+     */
+    public int getRolledBackByRolloutsCount() {
+      return rolledBackByRollouts_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Names of `Rollouts` that rolled back this `Rollout`.
+     * </pre>
+     *
+     * <code>
+     * repeated string rolled_back_by_rollouts = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The rolledBackByRollouts at the given index.
+     */
+    public java.lang.String getRolledBackByRollouts(int index) {
+      return rolledBackByRollouts_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Names of `Rollouts` that rolled back this `Rollout`.
+     * </pre>
+     *
+     * <code>
+     * repeated string rolled_back_by_rollouts = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the rolledBackByRollouts at the given index.
+     */
+    public com.google.protobuf.ByteString getRolledBackByRolloutsBytes(int index) {
+      return rolledBackByRollouts_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Names of `Rollouts` that rolled back this `Rollout`.
+     * </pre>
+     *
+     * <code>
+     * repeated string rolled_back_by_rollouts = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The rolledBackByRollouts to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRolledBackByRollouts(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureRolledBackByRolloutsIsMutable();
+      rolledBackByRollouts_.set(index, value);
+      bitField0_ |= 0x00200000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Names of `Rollouts` that rolled back this `Rollout`.
+     * </pre>
+     *
+     * <code>
+     * repeated string rolled_back_by_rollouts = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The rolledBackByRollouts to add.
+     * @return This builder for chaining.
+     */
+    public Builder addRolledBackByRollouts(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureRolledBackByRolloutsIsMutable();
+      rolledBackByRollouts_.add(value);
+      bitField0_ |= 0x00200000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Names of `Rollouts` that rolled back this `Rollout`.
+     * </pre>
+     *
+     * <code>
+     * repeated string rolled_back_by_rollouts = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param values The rolledBackByRollouts to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllRolledBackByRollouts(java.lang.Iterable<java.lang.String> values) {
+      ensureRolledBackByRolloutsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, rolledBackByRollouts_);
+      bitField0_ |= 0x00200000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Names of `Rollouts` that rolled back this `Rollout`.
+     * </pre>
+     *
+     * <code>
+     * repeated string rolled_back_by_rollouts = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRolledBackByRollouts() {
+      rolledBackByRollouts_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00200000);
+      ;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Names of `Rollouts` that rolled back this `Rollout`.
+     * </pre>
+     *
+     * <code>
+     * repeated string rolled_back_by_rollouts = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The bytes of the rolledBackByRollouts to add.
+     * @return This builder for chaining.
+     */
+    public Builder addRolledBackByRolloutsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureRolledBackByRolloutsIsMutable();
+      rolledBackByRollouts_.add(value);
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }

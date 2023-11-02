@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,8 @@ package com.google.cloud.channel.v1;
  *
  * <pre>
  * The ID and description of a report that was used to generate report data.
- * For example, "GCP Daily Spend", "Google Workspace License Activity", etc.
+ * For example, "Google Cloud Daily Spend", "Google Workspace License Activity",
+ * etc.
  * </pre>
  *
  * Protobuf type {@code google.cloud.channel.v1.Report}
@@ -49,11 +50,6 @@ public final class Report extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Report();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -82,6 +78,7 @@ public final class Report extends com.google.protobuf.GeneratedMessageV3
    * Required. The report's resource name. Specifies the account and report used
    * to generate report data. The report_id identifier is a UID (for example,
    * `613bf59q`).
+   *
    * Name uses the format:
    * accounts/{account_id}/reports/{report_id}
    * </pre>
@@ -109,6 +106,7 @@ public final class Report extends com.google.protobuf.GeneratedMessageV3
    * Required. The report's resource name. Specifies the account and report used
    * to generate report data. The report_id identifier is a UID (for example,
    * `613bf59q`).
+   *
    * Name uses the format:
    * accounts/{account_id}/reports/{report_id}
    * </pre>
@@ -501,7 +499,8 @@ public final class Report extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The ID and description of a report that was used to generate report data.
-   * For example, "GCP Daily Spend", "Google Workspace License Activity", etc.
+   * For example, "Google Cloud Daily Spend", "Google Workspace License Activity",
+   * etc.
    * </pre>
    *
    * Protobuf type {@code google.cloud.channel.v1.Report}
@@ -776,6 +775,7 @@ public final class Report extends com.google.protobuf.GeneratedMessageV3
      * Required. The report's resource name. Specifies the account and report used
      * to generate report data. The report_id identifier is a UID (for example,
      * `613bf59q`).
+     *
      * Name uses the format:
      * accounts/{account_id}/reports/{report_id}
      * </pre>
@@ -802,6 +802,7 @@ public final class Report extends com.google.protobuf.GeneratedMessageV3
      * Required. The report's resource name. Specifies the account and report used
      * to generate report data. The report_id identifier is a UID (for example,
      * `613bf59q`).
+     *
      * Name uses the format:
      * accounts/{account_id}/reports/{report_id}
      * </pre>
@@ -828,6 +829,7 @@ public final class Report extends com.google.protobuf.GeneratedMessageV3
      * Required. The report's resource name. Specifies the account and report used
      * to generate report data. The report_id identifier is a UID (for example,
      * `613bf59q`).
+     *
      * Name uses the format:
      * accounts/{account_id}/reports/{report_id}
      * </pre>
@@ -853,6 +855,7 @@ public final class Report extends com.google.protobuf.GeneratedMessageV3
      * Required. The report's resource name. Specifies the account and report used
      * to generate report data. The report_id identifier is a UID (for example,
      * `613bf59q`).
+     *
      * Name uses the format:
      * accounts/{account_id}/reports/{report_id}
      * </pre>
@@ -874,6 +877,7 @@ public final class Report extends com.google.protobuf.GeneratedMessageV3
      * Required. The report's resource name. Specifies the account and report used
      * to generate report data. The report_id identifier is a UID (for example,
      * `613bf59q`).
+     *
      * Name uses the format:
      * accounts/{account_id}/reports/{report_id}
      * </pre>

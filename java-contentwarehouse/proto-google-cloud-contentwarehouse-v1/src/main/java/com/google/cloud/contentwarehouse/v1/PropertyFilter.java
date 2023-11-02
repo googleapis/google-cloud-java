@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,11 +38,6 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new PropertyFilter();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -127,10 +122,12 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The filter condition.
    * The syntax for this expression is a subset of SQL syntax.
+   *
    * Supported operators are: `=`, `!=`, `&lt;`, `&lt;=`, `&gt;`, `&gt;=`, and `~~` where
    * the left of the operator is a property name and the right of the operator
    * is a number or a quoted string. You must escape backslash (&#92;&#92;) and quote
    * (&#92;") characters.
+   *
    * `~~` is the LIKE operator. The right of the operator must be a string. The
    * only supported property data type for LIKE is text_values. It provides
    * semantic search functionality by parsing, stemming and doing synonyms
@@ -139,23 +136,30 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
    * matching. For example, "property.company ~~ &#92;"google&#92;"" will match records
    * whose property `property.compnay` have values like "Google Inc.", "Google
    * LLC" or "Google Company".
+   *
    * Supported functions are `LOWER([property_name])` to perform a
    * case insensitive match and `EMPTY([property_name])` to filter on the
    * existence of a key.
+   *
    * Boolean expressions (AND/OR/NOT) are supported up to 3 levels of nesting
    * (for example, "((A AND B AND C) OR NOT D) AND E"), a maximum of 100
    * comparisons or functions are allowed in the expression. The expression must
    * be &lt; 6000 bytes in length.
+   *
    * Only properties that are marked filterable are allowed
    * ([PropertyDefinition.is_filterable][google.cloud.contentwarehouse.v1.PropertyDefinition.is_filterable]).
    * Property names do not need to be prefixed by the document schema id (as is
    * the case with histograms), however property names will need to be prefixed
    * by its parent hierarchy, if any.  For example:
    * top_property_name.sub_property_name.
+   *
    * Sample Query:
    * `(LOWER(driving_license)="class &#92;"a&#92;"" OR EMPTY(driving_license)) AND
    * driving_years &gt; 10`
+   *
+   *
    * CMEK compliant deployment only supports:
+   *
    * * Operators: `=`, `&lt;`, `&lt;=`, `&gt;`, and `&gt;=`.
    * * Boolean expressions: AND and OR.
    * </pre>
@@ -182,10 +186,12 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The filter condition.
    * The syntax for this expression is a subset of SQL syntax.
+   *
    * Supported operators are: `=`, `!=`, `&lt;`, `&lt;=`, `&gt;`, `&gt;=`, and `~~` where
    * the left of the operator is a property name and the right of the operator
    * is a number or a quoted string. You must escape backslash (&#92;&#92;) and quote
    * (&#92;") characters.
+   *
    * `~~` is the LIKE operator. The right of the operator must be a string. The
    * only supported property data type for LIKE is text_values. It provides
    * semantic search functionality by parsing, stemming and doing synonyms
@@ -194,23 +200,30 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
    * matching. For example, "property.company ~~ &#92;"google&#92;"" will match records
    * whose property `property.compnay` have values like "Google Inc.", "Google
    * LLC" or "Google Company".
+   *
    * Supported functions are `LOWER([property_name])` to perform a
    * case insensitive match and `EMPTY([property_name])` to filter on the
    * existence of a key.
+   *
    * Boolean expressions (AND/OR/NOT) are supported up to 3 levels of nesting
    * (for example, "((A AND B AND C) OR NOT D) AND E"), a maximum of 100
    * comparisons or functions are allowed in the expression. The expression must
    * be &lt; 6000 bytes in length.
+   *
    * Only properties that are marked filterable are allowed
    * ([PropertyDefinition.is_filterable][google.cloud.contentwarehouse.v1.PropertyDefinition.is_filterable]).
    * Property names do not need to be prefixed by the document schema id (as is
    * the case with histograms), however property names will need to be prefixed
    * by its parent hierarchy, if any.  For example:
    * top_property_name.sub_property_name.
+   *
    * Sample Query:
    * `(LOWER(driving_license)="class &#92;"a&#92;"" OR EMPTY(driving_license)) AND
    * driving_years &gt; 10`
+   *
+   *
    * CMEK compliant deployment only supports:
+   *
    * * Operators: `=`, `&lt;`, `&lt;=`, `&gt;`, and `&gt;=`.
    * * Boolean expressions: AND and OR.
    * </pre>
@@ -718,10 +731,12 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The filter condition.
      * The syntax for this expression is a subset of SQL syntax.
+     *
      * Supported operators are: `=`, `!=`, `&lt;`, `&lt;=`, `&gt;`, `&gt;=`, and `~~` where
      * the left of the operator is a property name and the right of the operator
      * is a number or a quoted string. You must escape backslash (&#92;&#92;) and quote
      * (&#92;") characters.
+     *
      * `~~` is the LIKE operator. The right of the operator must be a string. The
      * only supported property data type for LIKE is text_values. It provides
      * semantic search functionality by parsing, stemming and doing synonyms
@@ -730,23 +745,30 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
      * matching. For example, "property.company ~~ &#92;"google&#92;"" will match records
      * whose property `property.compnay` have values like "Google Inc.", "Google
      * LLC" or "Google Company".
+     *
      * Supported functions are `LOWER([property_name])` to perform a
      * case insensitive match and `EMPTY([property_name])` to filter on the
      * existence of a key.
+     *
      * Boolean expressions (AND/OR/NOT) are supported up to 3 levels of nesting
      * (for example, "((A AND B AND C) OR NOT D) AND E"), a maximum of 100
      * comparisons or functions are allowed in the expression. The expression must
      * be &lt; 6000 bytes in length.
+     *
      * Only properties that are marked filterable are allowed
      * ([PropertyDefinition.is_filterable][google.cloud.contentwarehouse.v1.PropertyDefinition.is_filterable]).
      * Property names do not need to be prefixed by the document schema id (as is
      * the case with histograms), however property names will need to be prefixed
      * by its parent hierarchy, if any.  For example:
      * top_property_name.sub_property_name.
+     *
      * Sample Query:
      * `(LOWER(driving_license)="class &#92;"a&#92;"" OR EMPTY(driving_license)) AND
      * driving_years &gt; 10`
+     *
+     *
      * CMEK compliant deployment only supports:
+     *
      * * Operators: `=`, `&lt;`, `&lt;=`, `&gt;`, and `&gt;=`.
      * * Boolean expressions: AND and OR.
      * </pre>
@@ -772,10 +794,12 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The filter condition.
      * The syntax for this expression is a subset of SQL syntax.
+     *
      * Supported operators are: `=`, `!=`, `&lt;`, `&lt;=`, `&gt;`, `&gt;=`, and `~~` where
      * the left of the operator is a property name and the right of the operator
      * is a number or a quoted string. You must escape backslash (&#92;&#92;) and quote
      * (&#92;") characters.
+     *
      * `~~` is the LIKE operator. The right of the operator must be a string. The
      * only supported property data type for LIKE is text_values. It provides
      * semantic search functionality by parsing, stemming and doing synonyms
@@ -784,23 +808,30 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
      * matching. For example, "property.company ~~ &#92;"google&#92;"" will match records
      * whose property `property.compnay` have values like "Google Inc.", "Google
      * LLC" or "Google Company".
+     *
      * Supported functions are `LOWER([property_name])` to perform a
      * case insensitive match and `EMPTY([property_name])` to filter on the
      * existence of a key.
+     *
      * Boolean expressions (AND/OR/NOT) are supported up to 3 levels of nesting
      * (for example, "((A AND B AND C) OR NOT D) AND E"), a maximum of 100
      * comparisons or functions are allowed in the expression. The expression must
      * be &lt; 6000 bytes in length.
+     *
      * Only properties that are marked filterable are allowed
      * ([PropertyDefinition.is_filterable][google.cloud.contentwarehouse.v1.PropertyDefinition.is_filterable]).
      * Property names do not need to be prefixed by the document schema id (as is
      * the case with histograms), however property names will need to be prefixed
      * by its parent hierarchy, if any.  For example:
      * top_property_name.sub_property_name.
+     *
      * Sample Query:
      * `(LOWER(driving_license)="class &#92;"a&#92;"" OR EMPTY(driving_license)) AND
      * driving_years &gt; 10`
+     *
+     *
      * CMEK compliant deployment only supports:
+     *
      * * Operators: `=`, `&lt;`, `&lt;=`, `&gt;`, and `&gt;=`.
      * * Boolean expressions: AND and OR.
      * </pre>
@@ -826,10 +857,12 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The filter condition.
      * The syntax for this expression is a subset of SQL syntax.
+     *
      * Supported operators are: `=`, `!=`, `&lt;`, `&lt;=`, `&gt;`, `&gt;=`, and `~~` where
      * the left of the operator is a property name and the right of the operator
      * is a number or a quoted string. You must escape backslash (&#92;&#92;) and quote
      * (&#92;") characters.
+     *
      * `~~` is the LIKE operator. The right of the operator must be a string. The
      * only supported property data type for LIKE is text_values. It provides
      * semantic search functionality by parsing, stemming and doing synonyms
@@ -838,23 +871,30 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
      * matching. For example, "property.company ~~ &#92;"google&#92;"" will match records
      * whose property `property.compnay` have values like "Google Inc.", "Google
      * LLC" or "Google Company".
+     *
      * Supported functions are `LOWER([property_name])` to perform a
      * case insensitive match and `EMPTY([property_name])` to filter on the
      * existence of a key.
+     *
      * Boolean expressions (AND/OR/NOT) are supported up to 3 levels of nesting
      * (for example, "((A AND B AND C) OR NOT D) AND E"), a maximum of 100
      * comparisons or functions are allowed in the expression. The expression must
      * be &lt; 6000 bytes in length.
+     *
      * Only properties that are marked filterable are allowed
      * ([PropertyDefinition.is_filterable][google.cloud.contentwarehouse.v1.PropertyDefinition.is_filterable]).
      * Property names do not need to be prefixed by the document schema id (as is
      * the case with histograms), however property names will need to be prefixed
      * by its parent hierarchy, if any.  For example:
      * top_property_name.sub_property_name.
+     *
      * Sample Query:
      * `(LOWER(driving_license)="class &#92;"a&#92;"" OR EMPTY(driving_license)) AND
      * driving_years &gt; 10`
+     *
+     *
      * CMEK compliant deployment only supports:
+     *
      * * Operators: `=`, `&lt;`, `&lt;=`, `&gt;`, and `&gt;=`.
      * * Boolean expressions: AND and OR.
      * </pre>
@@ -879,10 +919,12 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The filter condition.
      * The syntax for this expression is a subset of SQL syntax.
+     *
      * Supported operators are: `=`, `!=`, `&lt;`, `&lt;=`, `&gt;`, `&gt;=`, and `~~` where
      * the left of the operator is a property name and the right of the operator
      * is a number or a quoted string. You must escape backslash (&#92;&#92;) and quote
      * (&#92;") characters.
+     *
      * `~~` is the LIKE operator. The right of the operator must be a string. The
      * only supported property data type for LIKE is text_values. It provides
      * semantic search functionality by parsing, stemming and doing synonyms
@@ -891,23 +933,30 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
      * matching. For example, "property.company ~~ &#92;"google&#92;"" will match records
      * whose property `property.compnay` have values like "Google Inc.", "Google
      * LLC" or "Google Company".
+     *
      * Supported functions are `LOWER([property_name])` to perform a
      * case insensitive match and `EMPTY([property_name])` to filter on the
      * existence of a key.
+     *
      * Boolean expressions (AND/OR/NOT) are supported up to 3 levels of nesting
      * (for example, "((A AND B AND C) OR NOT D) AND E"), a maximum of 100
      * comparisons or functions are allowed in the expression. The expression must
      * be &lt; 6000 bytes in length.
+     *
      * Only properties that are marked filterable are allowed
      * ([PropertyDefinition.is_filterable][google.cloud.contentwarehouse.v1.PropertyDefinition.is_filterable]).
      * Property names do not need to be prefixed by the document schema id (as is
      * the case with histograms), however property names will need to be prefixed
      * by its parent hierarchy, if any.  For example:
      * top_property_name.sub_property_name.
+     *
      * Sample Query:
      * `(LOWER(driving_license)="class &#92;"a&#92;"" OR EMPTY(driving_license)) AND
      * driving_years &gt; 10`
+     *
+     *
      * CMEK compliant deployment only supports:
+     *
      * * Operators: `=`, `&lt;`, `&lt;=`, `&gt;`, and `&gt;=`.
      * * Boolean expressions: AND and OR.
      * </pre>
@@ -928,10 +977,12 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The filter condition.
      * The syntax for this expression is a subset of SQL syntax.
+     *
      * Supported operators are: `=`, `!=`, `&lt;`, `&lt;=`, `&gt;`, `&gt;=`, and `~~` where
      * the left of the operator is a property name and the right of the operator
      * is a number or a quoted string. You must escape backslash (&#92;&#92;) and quote
      * (&#92;") characters.
+     *
      * `~~` is the LIKE operator. The right of the operator must be a string. The
      * only supported property data type for LIKE is text_values. It provides
      * semantic search functionality by parsing, stemming and doing synonyms
@@ -940,23 +991,30 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
      * matching. For example, "property.company ~~ &#92;"google&#92;"" will match records
      * whose property `property.compnay` have values like "Google Inc.", "Google
      * LLC" or "Google Company".
+     *
      * Supported functions are `LOWER([property_name])` to perform a
      * case insensitive match and `EMPTY([property_name])` to filter on the
      * existence of a key.
+     *
      * Boolean expressions (AND/OR/NOT) are supported up to 3 levels of nesting
      * (for example, "((A AND B AND C) OR NOT D) AND E"), a maximum of 100
      * comparisons or functions are allowed in the expression. The expression must
      * be &lt; 6000 bytes in length.
+     *
      * Only properties that are marked filterable are allowed
      * ([PropertyDefinition.is_filterable][google.cloud.contentwarehouse.v1.PropertyDefinition.is_filterable]).
      * Property names do not need to be prefixed by the document schema id (as is
      * the case with histograms), however property names will need to be prefixed
      * by its parent hierarchy, if any.  For example:
      * top_property_name.sub_property_name.
+     *
      * Sample Query:
      * `(LOWER(driving_license)="class &#92;"a&#92;"" OR EMPTY(driving_license)) AND
      * driving_years &gt; 10`
+     *
+     *
      * CMEK compliant deployment only supports:
+     *
      * * Operators: `=`, `&lt;`, `&lt;=`, `&gt;`, and `&gt;=`.
      * * Boolean expressions: AND and OR.
      * </pre>

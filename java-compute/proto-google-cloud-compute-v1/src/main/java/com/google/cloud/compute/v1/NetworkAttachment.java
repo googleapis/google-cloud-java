@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,23 +46,18 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
     kind_ = "";
     name_ = "";
     network_ = "";
-    producerAcceptLists_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    producerRejectLists_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    producerAcceptLists_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    producerRejectLists_ = com.google.protobuf.LazyStringArrayList.emptyList();
     region_ = "";
     selfLink_ = "";
     selfLinkWithId_ = "";
-    subnetworks_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    subnetworks_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new NetworkAttachment();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -509,7 +504,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Output Only] Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. An up-to-date fingerprint must be provided in order to patch.
+   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. An up-to-date fingerprint must be provided in order to patch.
    * </pre>
    *
    * <code>optional string fingerprint = 234678500;</code>
@@ -524,7 +519,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Output Only] Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. An up-to-date fingerprint must be provided in order to patch.
+   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. An up-to-date fingerprint must be provided in order to patch.
    * </pre>
    *
    * <code>optional string fingerprint = 234678500;</code>
@@ -547,7 +542,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Output Only] Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. An up-to-date fingerprint must be provided in order to patch.
+   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. An up-to-date fingerprint must be provided in order to patch.
    * </pre>
    *
    * <code>optional string fingerprint = 234678500;</code>
@@ -740,7 +735,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Output Only] The URL of the network which the Network Attachment belongs to.
+   * [Output Only] The URL of the network which the Network Attachment belongs to. Practically it is inferred by fetching the network of the first subnetwork associated. Because it is required that all the subnetworks must be from the same network, it is assured that the Network Attachment belongs to the same network as all the subnetworks.
    * </pre>
    *
    * <code>optional string network = 232872494;</code>
@@ -755,7 +750,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Output Only] The URL of the network which the Network Attachment belongs to.
+   * [Output Only] The URL of the network which the Network Attachment belongs to. Practically it is inferred by fetching the network of the first subnetwork associated. Because it is required that all the subnetworks must be from the same network, it is assured that the Network Attachment belongs to the same network as all the subnetworks.
    * </pre>
    *
    * <code>optional string network = 232872494;</code>
@@ -778,7 +773,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Output Only] The URL of the network which the Network Attachment belongs to.
+   * [Output Only] The URL of the network which the Network Attachment belongs to. Practically it is inferred by fetching the network of the first subnetwork associated. Because it is required that all the subnetworks must be from the same network, it is assured that the Network Attachment belongs to the same network as all the subnetworks.
    * </pre>
    *
    * <code>optional string network = 232872494;</code>
@@ -801,7 +796,8 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
   public static final int PRODUCER_ACCEPT_LISTS_FIELD_NUMBER = 202804523;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList producerAcceptLists_;
+  private com.google.protobuf.LazyStringArrayList producerAcceptLists_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -864,7 +860,8 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
   public static final int PRODUCER_REJECT_LISTS_FIELD_NUMBER = 4112002;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList producerRejectLists_;
+  private com.google.protobuf.LazyStringArrayList producerRejectLists_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -1125,7 +1122,8 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
   public static final int SUBNETWORKS_FIELD_NUMBER = 415853125;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList subnetworks_;
+  private com.google.protobuf.LazyStringArrayList subnetworks_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -1609,15 +1607,12 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
       kind_ = "";
       name_ = "";
       network_ = "";
-      producerAcceptLists_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000200);
-      producerRejectLists_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000400);
+      producerAcceptLists_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      producerRejectLists_ = com.google.protobuf.LazyStringArrayList.emptyList();
       region_ = "";
       selfLink_ = "";
       selfLinkWithId_ = "";
-      subnetworks_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00004000);
+      subnetworks_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -1663,21 +1658,6 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
       } else {
         result.connectionEndpoints_ = connectionEndpointsBuilder_.build();
       }
-      if (((bitField0_ & 0x00000200) != 0)) {
-        producerAcceptLists_ = producerAcceptLists_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000200);
-      }
-      result.producerAcceptLists_ = producerAcceptLists_;
-      if (((bitField0_ & 0x00000400) != 0)) {
-        producerRejectLists_ = producerRejectLists_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000400);
-      }
-      result.producerRejectLists_ = producerRejectLists_;
-      if (((bitField0_ & 0x00004000) != 0)) {
-        subnetworks_ = subnetworks_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00004000);
-      }
-      result.subnetworks_ = subnetworks_;
     }
 
     private void buildPartial0(com.google.cloud.compute.v1.NetworkAttachment result) {
@@ -1715,6 +1695,14 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
         result.network_ = network_;
         to_bitField0_ |= 0x00000080;
       }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        producerAcceptLists_.makeImmutable();
+        result.producerAcceptLists_ = producerAcceptLists_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        producerRejectLists_.makeImmutable();
+        result.producerRejectLists_ = producerRejectLists_;
+      }
       if (((from_bitField0_ & 0x00000800) != 0)) {
         result.region_ = region_;
         to_bitField0_ |= 0x00000100;
@@ -1726,6 +1714,10 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
       if (((from_bitField0_ & 0x00002000) != 0)) {
         result.selfLinkWithId_ = selfLinkWithId_;
         to_bitField0_ |= 0x00000400;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        subnetworks_.makeImmutable();
+        result.subnetworks_ = subnetworks_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1843,7 +1835,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
       if (!other.producerAcceptLists_.isEmpty()) {
         if (producerAcceptLists_.isEmpty()) {
           producerAcceptLists_ = other.producerAcceptLists_;
-          bitField0_ = (bitField0_ & ~0x00000200);
+          bitField0_ |= 0x00000200;
         } else {
           ensureProducerAcceptListsIsMutable();
           producerAcceptLists_.addAll(other.producerAcceptLists_);
@@ -1853,7 +1845,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
       if (!other.producerRejectLists_.isEmpty()) {
         if (producerRejectLists_.isEmpty()) {
           producerRejectLists_ = other.producerRejectLists_;
-          bitField0_ = (bitField0_ & ~0x00000400);
+          bitField0_ |= 0x00000400;
         } else {
           ensureProducerRejectListsIsMutable();
           producerRejectLists_.addAll(other.producerRejectLists_);
@@ -1878,7 +1870,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
       if (!other.subnetworks_.isEmpty()) {
         if (subnetworks_.isEmpty()) {
           subnetworks_ = other.subnetworks_;
-          bitField0_ = (bitField0_ & ~0x00004000);
+          bitField0_ |= 0x00004000;
         } else {
           ensureSubnetworksIsMutable();
           subnetworks_.addAll(other.subnetworks_);
@@ -2809,7 +2801,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. An up-to-date fingerprint must be provided in order to patch.
+     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. An up-to-date fingerprint must be provided in order to patch.
      * </pre>
      *
      * <code>optional string fingerprint = 234678500;</code>
@@ -2823,7 +2815,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. An up-to-date fingerprint must be provided in order to patch.
+     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. An up-to-date fingerprint must be provided in order to patch.
      * </pre>
      *
      * <code>optional string fingerprint = 234678500;</code>
@@ -2845,7 +2837,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. An up-to-date fingerprint must be provided in order to patch.
+     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. An up-to-date fingerprint must be provided in order to patch.
      * </pre>
      *
      * <code>optional string fingerprint = 234678500;</code>
@@ -2867,7 +2859,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. An up-to-date fingerprint must be provided in order to patch.
+     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. An up-to-date fingerprint must be provided in order to patch.
      * </pre>
      *
      * <code>optional string fingerprint = 234678500;</code>
@@ -2888,7 +2880,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. An up-to-date fingerprint must be provided in order to patch.
+     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. An up-to-date fingerprint must be provided in order to patch.
      * </pre>
      *
      * <code>optional string fingerprint = 234678500;</code>
@@ -2905,7 +2897,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. An up-to-date fingerprint must be provided in order to patch.
+     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. An up-to-date fingerprint must be provided in order to patch.
      * </pre>
      *
      * <code>optional string fingerprint = 234678500;</code>
@@ -3237,7 +3229,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] The URL of the network which the Network Attachment belongs to.
+     * [Output Only] The URL of the network which the Network Attachment belongs to. Practically it is inferred by fetching the network of the first subnetwork associated. Because it is required that all the subnetworks must be from the same network, it is assured that the Network Attachment belongs to the same network as all the subnetworks.
      * </pre>
      *
      * <code>optional string network = 232872494;</code>
@@ -3251,7 +3243,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] The URL of the network which the Network Attachment belongs to.
+     * [Output Only] The URL of the network which the Network Attachment belongs to. Practically it is inferred by fetching the network of the first subnetwork associated. Because it is required that all the subnetworks must be from the same network, it is assured that the Network Attachment belongs to the same network as all the subnetworks.
      * </pre>
      *
      * <code>optional string network = 232872494;</code>
@@ -3273,7 +3265,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] The URL of the network which the Network Attachment belongs to.
+     * [Output Only] The URL of the network which the Network Attachment belongs to. Practically it is inferred by fetching the network of the first subnetwork associated. Because it is required that all the subnetworks must be from the same network, it is assured that the Network Attachment belongs to the same network as all the subnetworks.
      * </pre>
      *
      * <code>optional string network = 232872494;</code>
@@ -3295,7 +3287,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] The URL of the network which the Network Attachment belongs to.
+     * [Output Only] The URL of the network which the Network Attachment belongs to. Practically it is inferred by fetching the network of the first subnetwork associated. Because it is required that all the subnetworks must be from the same network, it is assured that the Network Attachment belongs to the same network as all the subnetworks.
      * </pre>
      *
      * <code>optional string network = 232872494;</code>
@@ -3316,7 +3308,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] The URL of the network which the Network Attachment belongs to.
+     * [Output Only] The URL of the network which the Network Attachment belongs to. Practically it is inferred by fetching the network of the first subnetwork associated. Because it is required that all the subnetworks must be from the same network, it is assured that the Network Attachment belongs to the same network as all the subnetworks.
      * </pre>
      *
      * <code>optional string network = 232872494;</code>
@@ -3333,7 +3325,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] The URL of the network which the Network Attachment belongs to.
+     * [Output Only] The URL of the network which the Network Attachment belongs to. Practically it is inferred by fetching the network of the first subnetwork associated. Because it is required that all the subnetworks must be from the same network, it is assured that the Network Attachment belongs to the same network as all the subnetworks.
      * </pre>
      *
      * <code>optional string network = 232872494;</code>
@@ -3352,14 +3344,14 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
       return this;
     }
 
-    private com.google.protobuf.LazyStringList producerAcceptLists_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList producerAcceptLists_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureProducerAcceptListsIsMutable() {
-      if (!((bitField0_ & 0x00000200) != 0)) {
+      if (!producerAcceptLists_.isModifiable()) {
         producerAcceptLists_ = new com.google.protobuf.LazyStringArrayList(producerAcceptLists_);
-        bitField0_ |= 0x00000200;
       }
+      bitField0_ |= 0x00000200;
     }
     /**
      *
@@ -3373,7 +3365,8 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      * @return A list containing the producerAcceptLists.
      */
     public com.google.protobuf.ProtocolStringList getProducerAcceptListsList() {
-      return producerAcceptLists_.getUnmodifiableView();
+      producerAcceptLists_.makeImmutable();
+      return producerAcceptLists_;
     }
     /**
      *
@@ -3438,6 +3431,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
       }
       ensureProducerAcceptListsIsMutable();
       producerAcceptLists_.set(index, value);
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3459,6 +3453,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
       }
       ensureProducerAcceptListsIsMutable();
       producerAcceptLists_.add(value);
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3477,6 +3472,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
     public Builder addAllProducerAcceptLists(java.lang.Iterable<java.lang.String> values) {
       ensureProducerAcceptListsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, producerAcceptLists_);
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3492,8 +3488,9 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearProducerAcceptLists() {
-      producerAcceptLists_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      producerAcceptLists_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000200);
+      ;
       onChanged();
       return this;
     }
@@ -3516,18 +3513,19 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
       checkByteStringIsUtf8(value);
       ensureProducerAcceptListsIsMutable();
       producerAcceptLists_.add(value);
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList producerRejectLists_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList producerRejectLists_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureProducerRejectListsIsMutable() {
-      if (!((bitField0_ & 0x00000400) != 0)) {
+      if (!producerRejectLists_.isModifiable()) {
         producerRejectLists_ = new com.google.protobuf.LazyStringArrayList(producerRejectLists_);
-        bitField0_ |= 0x00000400;
       }
+      bitField0_ |= 0x00000400;
     }
     /**
      *
@@ -3541,7 +3539,8 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      * @return A list containing the producerRejectLists.
      */
     public com.google.protobuf.ProtocolStringList getProducerRejectListsList() {
-      return producerRejectLists_.getUnmodifiableView();
+      producerRejectLists_.makeImmutable();
+      return producerRejectLists_;
     }
     /**
      *
@@ -3606,6 +3605,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
       }
       ensureProducerRejectListsIsMutable();
       producerRejectLists_.set(index, value);
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3627,6 +3627,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
       }
       ensureProducerRejectListsIsMutable();
       producerRejectLists_.add(value);
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3645,6 +3646,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
     public Builder addAllProducerRejectLists(java.lang.Iterable<java.lang.String> values) {
       ensureProducerRejectListsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, producerRejectLists_);
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3660,8 +3662,9 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearProducerRejectLists() {
-      producerRejectLists_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      producerRejectLists_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000400);
+      ;
       onChanged();
       return this;
     }
@@ -3684,6 +3687,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
       checkByteStringIsUtf8(value);
       ensureProducerRejectListsIsMutable();
       producerRejectLists_.add(value);
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -4048,14 +4052,14 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
       return this;
     }
 
-    private com.google.protobuf.LazyStringList subnetworks_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList subnetworks_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureSubnetworksIsMutable() {
-      if (!((bitField0_ & 0x00004000) != 0)) {
+      if (!subnetworks_.isModifiable()) {
         subnetworks_ = new com.google.protobuf.LazyStringArrayList(subnetworks_);
-        bitField0_ |= 0x00004000;
       }
+      bitField0_ |= 0x00004000;
     }
     /**
      *
@@ -4069,7 +4073,8 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      * @return A list containing the subnetworks.
      */
     public com.google.protobuf.ProtocolStringList getSubnetworksList() {
-      return subnetworks_.getUnmodifiableView();
+      subnetworks_.makeImmutable();
+      return subnetworks_;
     }
     /**
      *
@@ -4134,6 +4139,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
       }
       ensureSubnetworksIsMutable();
       subnetworks_.set(index, value);
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4155,6 +4161,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
       }
       ensureSubnetworksIsMutable();
       subnetworks_.add(value);
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4173,6 +4180,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
     public Builder addAllSubnetworks(java.lang.Iterable<java.lang.String> values) {
       ensureSubnetworksIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, subnetworks_);
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4188,8 +4196,9 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearSubnetworks() {
-      subnetworks_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      subnetworks_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00004000);
+      ;
       onChanged();
       return this;
     }
@@ -4212,6 +4221,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
       checkByteStringIsUtf8(value);
       ensureSubnetworksIsMutable();
       subnetworks_.add(value);
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }

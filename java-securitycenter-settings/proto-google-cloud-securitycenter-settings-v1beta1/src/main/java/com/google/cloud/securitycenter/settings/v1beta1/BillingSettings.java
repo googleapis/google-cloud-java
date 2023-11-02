@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,11 +46,6 @@ public final class BillingSettings extends com.google.protobuf.GeneratedMessageV
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new BillingSettings();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -209,6 +204,7 @@ public final class BillingSettings extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Output only. The absolute point in time when the subscription expires.
+   *
    * If this field is populated and billing_tier is STANDARD, this is
    * indication of a point in the _past_ when a PREMIUM access ended.
    * </pre>
@@ -227,6 +223,7 @@ public final class BillingSettings extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Output only. The absolute point in time when the subscription expires.
+   *
    * If this field is populated and billing_tier is STANDARD, this is
    * indication of a point in the _past_ when a PREMIUM access ended.
    * </pre>
@@ -245,6 +242,7 @@ public final class BillingSettings extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Output only. The absolute point in time when the subscription expires.
+   *
    * If this field is populated and billing_tier is STANDARD, this is
    * indication of a point in the _past_ when a PREMIUM access ended.
    * </pre>
@@ -1108,6 +1106,7 @@ public final class BillingSettings extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Output only. The absolute point in time when the subscription expires.
+     *
      * If this field is populated and billing_tier is STANDARD, this is
      * indication of a point in the _past_ when a PREMIUM access ended.
      * </pre>
@@ -1126,6 +1125,7 @@ public final class BillingSettings extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Output only. The absolute point in time when the subscription expires.
+     *
      * If this field is populated and billing_tier is STANDARD, this is
      * indication of a point in the _past_ when a PREMIUM access ended.
      * </pre>
@@ -1150,6 +1150,7 @@ public final class BillingSettings extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Output only. The absolute point in time when the subscription expires.
+     *
      * If this field is populated and billing_tier is STANDARD, this is
      * indication of a point in the _past_ when a PREMIUM access ended.
      * </pre>
@@ -1176,6 +1177,7 @@ public final class BillingSettings extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Output only. The absolute point in time when the subscription expires.
+     *
      * If this field is populated and billing_tier is STANDARD, this is
      * indication of a point in the _past_ when a PREMIUM access ended.
      * </pre>
@@ -1199,6 +1201,7 @@ public final class BillingSettings extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Output only. The absolute point in time when the subscription expires.
+     *
      * If this field is populated and billing_tier is STANDARD, this is
      * indication of a point in the _past_ when a PREMIUM access ended.
      * </pre>
@@ -1228,6 +1231,7 @@ public final class BillingSettings extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Output only. The absolute point in time when the subscription expires.
+     *
      * If this field is populated and billing_tier is STANDARD, this is
      * indication of a point in the _past_ when a PREMIUM access ended.
      * </pre>
@@ -1251,6 +1255,7 @@ public final class BillingSettings extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Output only. The absolute point in time when the subscription expires.
+     *
      * If this field is populated and billing_tier is STANDARD, this is
      * indication of a point in the _past_ when a PREMIUM access ended.
      * </pre>
@@ -1269,6 +1274,7 @@ public final class BillingSettings extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Output only. The absolute point in time when the subscription expires.
+     *
      * If this field is populated and billing_tier is STANDARD, this is
      * indication of a point in the _past_ when a PREMIUM access ended.
      * </pre>
@@ -1291,6 +1297,7 @@ public final class BillingSettings extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Output only. The absolute point in time when the subscription expires.
+     *
      * If this field is populated and billing_tier is STANDARD, this is
      * indication of a point in the _past_ when a PREMIUM access ended.
      * </pre>

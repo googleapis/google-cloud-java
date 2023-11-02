@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class ClusterSelector extends com.google.protobuf.GeneratedMessageV
     return new ClusterSelector();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dataproc.v1.WorkflowTemplatesProto
         .internal_static_google_cloud_dataproc_v1_ClusterSelector_descriptor;
@@ -88,6 +83,7 @@ public final class ClusterSelector extends com.google.protobuf.GeneratedMessageV
    * <pre>
    * Optional. The zone where workflow process executes. This parameter does not
    * affect the selection of the cluster.
+   *
    * If unspecified, the zone of the first cluster matching the selector
    * is used.
    * </pre>
@@ -114,6 +110,7 @@ public final class ClusterSelector extends com.google.protobuf.GeneratedMessageV
    * <pre>
    * Optional. The zone where workflow process executes. This parameter does not
    * affect the selection of the cluster.
+   *
    * If unspecified, the zone of the first cluster matching the selector
    * is used.
    * </pre>
@@ -651,6 +648,7 @@ public final class ClusterSelector extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Optional. The zone where workflow process executes. This parameter does not
      * affect the selection of the cluster.
+     *
      * If unspecified, the zone of the first cluster matching the selector
      * is used.
      * </pre>
@@ -676,6 +674,7 @@ public final class ClusterSelector extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Optional. The zone where workflow process executes. This parameter does not
      * affect the selection of the cluster.
+     *
      * If unspecified, the zone of the first cluster matching the selector
      * is used.
      * </pre>
@@ -701,6 +700,7 @@ public final class ClusterSelector extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Optional. The zone where workflow process executes. This parameter does not
      * affect the selection of the cluster.
+     *
      * If unspecified, the zone of the first cluster matching the selector
      * is used.
      * </pre>
@@ -725,6 +725,7 @@ public final class ClusterSelector extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Optional. The zone where workflow process executes. This parameter does not
      * affect the selection of the cluster.
+     *
      * If unspecified, the zone of the first cluster matching the selector
      * is used.
      * </pre>
@@ -745,6 +746,7 @@ public final class ClusterSelector extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Optional. The zone where workflow process executes. This parameter does not
      * affect the selection of the cluster.
+     *
      * If unspecified, the zone of the first cluster matching the selector
      * is used.
      * </pre>

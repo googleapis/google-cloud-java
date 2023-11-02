@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,11 +49,6 @@ public final class AccessDimension extends com.google.protobuf.GeneratedMessageV
     return new AccessDimension();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.analytics.admin.v1beta.AccessReportProto
         .internal_static_google_analytics_admin_v1beta_AccessDimension_descriptor;
@@ -80,6 +75,7 @@ public final class AccessDimension extends com.google.protobuf.GeneratedMessageV
    * The API name of the dimension. See [Data Access
    * Schema](https://developers.google.com/analytics/devguides/config/admin/v1/access-api-schema)
    * for the list of dimensions supported in this API.
+   *
    * Dimensions are referenced by name in `dimensionFilter` and `orderBys`.
    * </pre>
    *
@@ -106,6 +102,7 @@ public final class AccessDimension extends com.google.protobuf.GeneratedMessageV
    * The API name of the dimension. See [Data Access
    * Schema](https://developers.google.com/analytics/devguides/config/admin/v1/access-api-schema)
    * for the list of dimensions supported in this API.
+   *
    * Dimensions are referenced by name in `dimensionFilter` and `orderBys`.
    * </pre>
    *
@@ -478,6 +475,7 @@ public final class AccessDimension extends com.google.protobuf.GeneratedMessageV
      * The API name of the dimension. See [Data Access
      * Schema](https://developers.google.com/analytics/devguides/config/admin/v1/access-api-schema)
      * for the list of dimensions supported in this API.
+     *
      * Dimensions are referenced by name in `dimensionFilter` and `orderBys`.
      * </pre>
      *
@@ -503,6 +501,7 @@ public final class AccessDimension extends com.google.protobuf.GeneratedMessageV
      * The API name of the dimension. See [Data Access
      * Schema](https://developers.google.com/analytics/devguides/config/admin/v1/access-api-schema)
      * for the list of dimensions supported in this API.
+     *
      * Dimensions are referenced by name in `dimensionFilter` and `orderBys`.
      * </pre>
      *
@@ -528,6 +527,7 @@ public final class AccessDimension extends com.google.protobuf.GeneratedMessageV
      * The API name of the dimension. See [Data Access
      * Schema](https://developers.google.com/analytics/devguides/config/admin/v1/access-api-schema)
      * for the list of dimensions supported in this API.
+     *
      * Dimensions are referenced by name in `dimensionFilter` and `orderBys`.
      * </pre>
      *
@@ -552,6 +552,7 @@ public final class AccessDimension extends com.google.protobuf.GeneratedMessageV
      * The API name of the dimension. See [Data Access
      * Schema](https://developers.google.com/analytics/devguides/config/admin/v1/access-api-schema)
      * for the list of dimensions supported in this API.
+     *
      * Dimensions are referenced by name in `dimensionFilter` and `orderBys`.
      * </pre>
      *
@@ -572,6 +573,7 @@ public final class AccessDimension extends com.google.protobuf.GeneratedMessageV
      * The API name of the dimension. See [Data Access
      * Schema](https://developers.google.com/analytics/devguides/config/admin/v1/access-api-schema)
      * for the list of dimensions supported in this API.
+     *
      * Dimensions are referenced by name in `dimensionFilter` and `orderBys`.
      * </pre>
      *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,9 @@ public interface TextStreamOrBuilder
    *
    * <pre>
    * Required. The codec for this text stream.
+   *
    * Supported text codecs:
+   *
    * - `cea608`
    * - `cea708`
    * </pre>
@@ -43,7 +45,9 @@ public interface TextStreamOrBuilder
    *
    * <pre>
    * Required. The codec for this text stream.
+   *
    * Supported text codecs:
+   *
    * - `cea608`
    * - `cea708`
    * </pre>

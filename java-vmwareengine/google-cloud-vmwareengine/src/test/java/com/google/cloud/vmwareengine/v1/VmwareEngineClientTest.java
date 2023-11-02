@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,6 +22,8 @@ import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListLocationsP
 import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListNetworkPoliciesPagedResponse;
 import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListNodeTypesPagedResponse;
 import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListPrivateCloudsPagedResponse;
+import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListPrivateConnectionPeeringRoutesPagedResponse;
+import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListPrivateConnectionsPagedResponse;
 import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListSubnetsPagedResponse;
 import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListVmwareEngineNetworksPagedResponse;
 
@@ -1237,6 +1239,143 @@ public class VmwareEngineClientTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
+    }
+  }
+
+  @Test
+  public void getSubnetTest() throws Exception {
+    Subnet expectedResponse =
+        Subnet.newBuilder()
+            .setName(
+                SubnetName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]", "[SUBNET]").toString())
+            .setIpCidrRange("ipCidrRange-866375486")
+            .setGatewayIp("gatewayIp-1354641781")
+            .setType("type3575610")
+            .build();
+    mockVmwareEngine.addResponse(expectedResponse);
+
+    SubnetName name = SubnetName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]", "[SUBNET]");
+
+    Subnet actualResponse = client.getSubnet(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockVmwareEngine.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetSubnetRequest actualRequest = ((GetSubnetRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getSubnetExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVmwareEngine.addException(exception);
+
+    try {
+      SubnetName name = SubnetName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]", "[SUBNET]");
+      client.getSubnet(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getSubnetTest2() throws Exception {
+    Subnet expectedResponse =
+        Subnet.newBuilder()
+            .setName(
+                SubnetName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]", "[SUBNET]").toString())
+            .setIpCidrRange("ipCidrRange-866375486")
+            .setGatewayIp("gatewayIp-1354641781")
+            .setType("type3575610")
+            .build();
+    mockVmwareEngine.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    Subnet actualResponse = client.getSubnet(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockVmwareEngine.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetSubnetRequest actualRequest = ((GetSubnetRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getSubnetExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVmwareEngine.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getSubnet(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateSubnetTest() throws Exception {
+    Subnet expectedResponse =
+        Subnet.newBuilder()
+            .setName(
+                SubnetName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CLOUD]", "[SUBNET]").toString())
+            .setIpCidrRange("ipCidrRange-866375486")
+            .setGatewayIp("gatewayIp-1354641781")
+            .setType("type3575610")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateSubnetTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockVmwareEngine.addResponse(resultOperation);
+
+    Subnet subnet = Subnet.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    Subnet actualResponse = client.updateSubnetAsync(subnet, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockVmwareEngine.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateSubnetRequest actualRequest = ((UpdateSubnetRequest) actualRequests.get(0));
+
+    Assert.assertEquals(subnet, actualRequest.getSubnet());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateSubnetExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVmwareEngine.addException(exception);
+
+    try {
+      Subnet subnet = Subnet.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateSubnetAsync(subnet, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 
@@ -3045,6 +3184,587 @@ public class VmwareEngineClientTest {
     try {
       String parent = "parent-995424086";
       client.listVmwareEngineNetworks(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createPrivateConnectionTest() throws Exception {
+    PrivateConnection expectedResponse =
+        PrivateConnection.newBuilder()
+            .setName(
+                PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDescription("description-1724546052")
+            .setVmwareEngineNetwork(
+                VmwareEngineNetworkName.of("[PROJECT]", "[LOCATION]", "[VMWARE_ENGINE_NETWORK]")
+                    .toString())
+            .setVmwareEngineNetworkCanonical(
+                VmwareEngineNetworkName.of("[PROJECT]", "[LOCATION]", "[VMWARE_ENGINE_NETWORK]")
+                    .toString())
+            .setPeeringId("peeringId-2128589701")
+            .setUid("uid115792")
+            .setServiceNetwork("serviceNetwork-195025479")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createPrivateConnectionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockVmwareEngine.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    PrivateConnection privateConnection = PrivateConnection.newBuilder().build();
+    String privateConnectionId = "privateConnectionId-1926654532";
+
+    PrivateConnection actualResponse =
+        client.createPrivateConnectionAsync(parent, privateConnection, privateConnectionId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockVmwareEngine.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreatePrivateConnectionRequest actualRequest =
+        ((CreatePrivateConnectionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(privateConnection, actualRequest.getPrivateConnection());
+    Assert.assertEquals(privateConnectionId, actualRequest.getPrivateConnectionId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createPrivateConnectionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVmwareEngine.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      PrivateConnection privateConnection = PrivateConnection.newBuilder().build();
+      String privateConnectionId = "privateConnectionId-1926654532";
+      client.createPrivateConnectionAsync(parent, privateConnection, privateConnectionId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createPrivateConnectionTest2() throws Exception {
+    PrivateConnection expectedResponse =
+        PrivateConnection.newBuilder()
+            .setName(
+                PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDescription("description-1724546052")
+            .setVmwareEngineNetwork(
+                VmwareEngineNetworkName.of("[PROJECT]", "[LOCATION]", "[VMWARE_ENGINE_NETWORK]")
+                    .toString())
+            .setVmwareEngineNetworkCanonical(
+                VmwareEngineNetworkName.of("[PROJECT]", "[LOCATION]", "[VMWARE_ENGINE_NETWORK]")
+                    .toString())
+            .setPeeringId("peeringId-2128589701")
+            .setUid("uid115792")
+            .setServiceNetwork("serviceNetwork-195025479")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createPrivateConnectionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockVmwareEngine.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    PrivateConnection privateConnection = PrivateConnection.newBuilder().build();
+    String privateConnectionId = "privateConnectionId-1926654532";
+
+    PrivateConnection actualResponse =
+        client.createPrivateConnectionAsync(parent, privateConnection, privateConnectionId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockVmwareEngine.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreatePrivateConnectionRequest actualRequest =
+        ((CreatePrivateConnectionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(privateConnection, actualRequest.getPrivateConnection());
+    Assert.assertEquals(privateConnectionId, actualRequest.getPrivateConnectionId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createPrivateConnectionExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVmwareEngine.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      PrivateConnection privateConnection = PrivateConnection.newBuilder().build();
+      String privateConnectionId = "privateConnectionId-1926654532";
+      client.createPrivateConnectionAsync(parent, privateConnection, privateConnectionId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void getPrivateConnectionTest() throws Exception {
+    PrivateConnection expectedResponse =
+        PrivateConnection.newBuilder()
+            .setName(
+                PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDescription("description-1724546052")
+            .setVmwareEngineNetwork(
+                VmwareEngineNetworkName.of("[PROJECT]", "[LOCATION]", "[VMWARE_ENGINE_NETWORK]")
+                    .toString())
+            .setVmwareEngineNetworkCanonical(
+                VmwareEngineNetworkName.of("[PROJECT]", "[LOCATION]", "[VMWARE_ENGINE_NETWORK]")
+                    .toString())
+            .setPeeringId("peeringId-2128589701")
+            .setUid("uid115792")
+            .setServiceNetwork("serviceNetwork-195025479")
+            .build();
+    mockVmwareEngine.addResponse(expectedResponse);
+
+    PrivateConnectionName name =
+        PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]");
+
+    PrivateConnection actualResponse = client.getPrivateConnection(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockVmwareEngine.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetPrivateConnectionRequest actualRequest =
+        ((GetPrivateConnectionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getPrivateConnectionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVmwareEngine.addException(exception);
+
+    try {
+      PrivateConnectionName name =
+          PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]");
+      client.getPrivateConnection(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getPrivateConnectionTest2() throws Exception {
+    PrivateConnection expectedResponse =
+        PrivateConnection.newBuilder()
+            .setName(
+                PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDescription("description-1724546052")
+            .setVmwareEngineNetwork(
+                VmwareEngineNetworkName.of("[PROJECT]", "[LOCATION]", "[VMWARE_ENGINE_NETWORK]")
+                    .toString())
+            .setVmwareEngineNetworkCanonical(
+                VmwareEngineNetworkName.of("[PROJECT]", "[LOCATION]", "[VMWARE_ENGINE_NETWORK]")
+                    .toString())
+            .setPeeringId("peeringId-2128589701")
+            .setUid("uid115792")
+            .setServiceNetwork("serviceNetwork-195025479")
+            .build();
+    mockVmwareEngine.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    PrivateConnection actualResponse = client.getPrivateConnection(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockVmwareEngine.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetPrivateConnectionRequest actualRequest =
+        ((GetPrivateConnectionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getPrivateConnectionExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVmwareEngine.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getPrivateConnection(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listPrivateConnectionsTest() throws Exception {
+    PrivateConnection responsesElement = PrivateConnection.newBuilder().build();
+    ListPrivateConnectionsResponse expectedResponse =
+        ListPrivateConnectionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllPrivateConnections(Arrays.asList(responsesElement))
+            .build();
+    mockVmwareEngine.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListPrivateConnectionsPagedResponse pagedListResponse = client.listPrivateConnections(parent);
+
+    List<PrivateConnection> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getPrivateConnectionsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockVmwareEngine.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListPrivateConnectionsRequest actualRequest =
+        ((ListPrivateConnectionsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listPrivateConnectionsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVmwareEngine.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listPrivateConnections(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listPrivateConnectionsTest2() throws Exception {
+    PrivateConnection responsesElement = PrivateConnection.newBuilder().build();
+    ListPrivateConnectionsResponse expectedResponse =
+        ListPrivateConnectionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllPrivateConnections(Arrays.asList(responsesElement))
+            .build();
+    mockVmwareEngine.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListPrivateConnectionsPagedResponse pagedListResponse = client.listPrivateConnections(parent);
+
+    List<PrivateConnection> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getPrivateConnectionsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockVmwareEngine.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListPrivateConnectionsRequest actualRequest =
+        ((ListPrivateConnectionsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listPrivateConnectionsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVmwareEngine.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listPrivateConnections(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updatePrivateConnectionTest() throws Exception {
+    PrivateConnection expectedResponse =
+        PrivateConnection.newBuilder()
+            .setName(
+                PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDescription("description-1724546052")
+            .setVmwareEngineNetwork(
+                VmwareEngineNetworkName.of("[PROJECT]", "[LOCATION]", "[VMWARE_ENGINE_NETWORK]")
+                    .toString())
+            .setVmwareEngineNetworkCanonical(
+                VmwareEngineNetworkName.of("[PROJECT]", "[LOCATION]", "[VMWARE_ENGINE_NETWORK]")
+                    .toString())
+            .setPeeringId("peeringId-2128589701")
+            .setUid("uid115792")
+            .setServiceNetwork("serviceNetwork-195025479")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updatePrivateConnectionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockVmwareEngine.addResponse(resultOperation);
+
+    PrivateConnection privateConnection = PrivateConnection.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    PrivateConnection actualResponse =
+        client.updatePrivateConnectionAsync(privateConnection, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockVmwareEngine.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdatePrivateConnectionRequest actualRequest =
+        ((UpdatePrivateConnectionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(privateConnection, actualRequest.getPrivateConnection());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updatePrivateConnectionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVmwareEngine.addException(exception);
+
+    try {
+      PrivateConnection privateConnection = PrivateConnection.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updatePrivateConnectionAsync(privateConnection, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deletePrivateConnectionTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deletePrivateConnectionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockVmwareEngine.addResponse(resultOperation);
+
+    PrivateConnectionName name =
+        PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]");
+
+    client.deletePrivateConnectionAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockVmwareEngine.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeletePrivateConnectionRequest actualRequest =
+        ((DeletePrivateConnectionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deletePrivateConnectionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVmwareEngine.addException(exception);
+
+    try {
+      PrivateConnectionName name =
+          PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]");
+      client.deletePrivateConnectionAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deletePrivateConnectionTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deletePrivateConnectionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockVmwareEngine.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    client.deletePrivateConnectionAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockVmwareEngine.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeletePrivateConnectionRequest actualRequest =
+        ((DeletePrivateConnectionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deletePrivateConnectionExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVmwareEngine.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deletePrivateConnectionAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void listPrivateConnectionPeeringRoutesTest() throws Exception {
+    PeeringRoute responsesElement = PeeringRoute.newBuilder().build();
+    ListPrivateConnectionPeeringRoutesResponse expectedResponse =
+        ListPrivateConnectionPeeringRoutesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllPeeringRoutes(Arrays.asList(responsesElement))
+            .build();
+    mockVmwareEngine.addResponse(expectedResponse);
+
+    PrivateConnectionName parent =
+        PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]");
+
+    ListPrivateConnectionPeeringRoutesPagedResponse pagedListResponse =
+        client.listPrivateConnectionPeeringRoutes(parent);
+
+    List<PeeringRoute> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getPeeringRoutesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockVmwareEngine.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListPrivateConnectionPeeringRoutesRequest actualRequest =
+        ((ListPrivateConnectionPeeringRoutesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listPrivateConnectionPeeringRoutesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVmwareEngine.addException(exception);
+
+    try {
+      PrivateConnectionName parent =
+          PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]");
+      client.listPrivateConnectionPeeringRoutes(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listPrivateConnectionPeeringRoutesTest2() throws Exception {
+    PeeringRoute responsesElement = PeeringRoute.newBuilder().build();
+    ListPrivateConnectionPeeringRoutesResponse expectedResponse =
+        ListPrivateConnectionPeeringRoutesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllPeeringRoutes(Arrays.asList(responsesElement))
+            .build();
+    mockVmwareEngine.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListPrivateConnectionPeeringRoutesPagedResponse pagedListResponse =
+        client.listPrivateConnectionPeeringRoutes(parent);
+
+    List<PeeringRoute> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getPeeringRoutesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockVmwareEngine.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListPrivateConnectionPeeringRoutesRequest actualRequest =
+        ((ListPrivateConnectionPeeringRoutesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listPrivateConnectionPeeringRoutesExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVmwareEngine.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listPrivateConnectionPeeringRoutes(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

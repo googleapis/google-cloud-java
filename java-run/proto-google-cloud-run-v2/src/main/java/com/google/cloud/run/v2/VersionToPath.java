@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class VersionToPath extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new VersionToPath();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -184,7 +179,9 @@ public final class VersionToPath extends com.google.protobuf.GeneratedMessageV3
    * Integer octal mode bits to use on this file, must be a value between
    * 01 and 0777 (octal). If 0 or not set, the Volume's default mode will be
    * used.
+   *
    * Notes
+   *
    * * Internally, a umask of 0222 will be applied to any non-zero value.
    * * This is an integer representation of the mode bits. So, the octal
    * integer value should look exactly as the chmod numeric notation with a
@@ -821,7 +818,9 @@ public final class VersionToPath extends com.google.protobuf.GeneratedMessageV3
      * Integer octal mode bits to use on this file, must be a value between
      * 01 and 0777 (octal). If 0 or not set, the Volume's default mode will be
      * used.
+     *
      * Notes
+     *
      * * Internally, a umask of 0222 will be applied to any non-zero value.
      * * This is an integer representation of the mode bits. So, the octal
      * integer value should look exactly as the chmod numeric notation with a
@@ -848,7 +847,9 @@ public final class VersionToPath extends com.google.protobuf.GeneratedMessageV3
      * Integer octal mode bits to use on this file, must be a value between
      * 01 and 0777 (octal). If 0 or not set, the Volume's default mode will be
      * used.
+     *
      * Notes
+     *
      * * Internally, a umask of 0222 will be applied to any non-zero value.
      * * This is an integer representation of the mode bits. So, the octal
      * integer value should look exactly as the chmod numeric notation with a
@@ -879,7 +880,9 @@ public final class VersionToPath extends com.google.protobuf.GeneratedMessageV3
      * Integer octal mode bits to use on this file, must be a value between
      * 01 and 0777 (octal). If 0 or not set, the Volume's default mode will be
      * used.
+     *
      * Notes
+     *
      * * Internally, a umask of 0222 will be applied to any non-zero value.
      * * This is an integer representation of the mode bits. So, the octal
      * integer value should look exactly as the chmod numeric notation with a

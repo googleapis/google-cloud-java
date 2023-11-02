@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class CreatePhraseSetRequest extends com.google.protobuf.GeneratedM
     return new CreatePhraseSetRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.speech.v1.SpeechAdaptationProto
         .internal_static_google_cloud_speech_v1_CreatePhraseSetRequest_descriptor;
@@ -78,7 +73,9 @@ public final class CreatePhraseSetRequest extends com.google.protobuf.GeneratedM
    * <pre>
    * Required. The parent resource where this phrase set will be created.
    * Format:
+   *
    * `projects/{project}/locations/{location}`
+   *
    * Speech-to-Text supports three locations: `global`, `us` (US North America),
    * and `eu` (Europe). If you are calling the `speech.googleapis.com`
    * endpoint, use the `global` location. To specify a region, use a
@@ -110,7 +107,9 @@ public final class CreatePhraseSetRequest extends com.google.protobuf.GeneratedM
    * <pre>
    * Required. The parent resource where this phrase set will be created.
    * Format:
+   *
    * `projects/{project}/locations/{location}`
+   *
    * Speech-to-Text supports three locations: `global`, `us` (US North America),
    * and `eu` (Europe). If you are calling the `speech.googleapis.com`
    * endpoint, use the `global` location. To specify a region, use a
@@ -147,6 +146,7 @@ public final class CreatePhraseSetRequest extends com.google.protobuf.GeneratedM
    * <pre>
    * Required. The ID to use for the phrase set, which will become the final
    * component of the phrase set's resource name.
+   *
    * This value should restrict to letters, numbers, and hyphens, with the first
    * character a letter, the last a letter or a number, and be 4-63 characters.
    * </pre>
@@ -173,6 +173,7 @@ public final class CreatePhraseSetRequest extends com.google.protobuf.GeneratedM
    * <pre>
    * Required. The ID to use for the phrase set, which will become the final
    * component of the phrase set's resource name.
+   *
    * This value should restrict to letters, numbers, and hyphens, with the first
    * character a letter, the last a letter or a number, and be 4-63 characters.
    * </pre>
@@ -654,7 +655,9 @@ public final class CreatePhraseSetRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The parent resource where this phrase set will be created.
      * Format:
+     *
      * `projects/{project}/locations/{location}`
+     *
      * Speech-to-Text supports three locations: `global`, `us` (US North America),
      * and `eu` (Europe). If you are calling the `speech.googleapis.com`
      * endpoint, use the `global` location. To specify a region, use a
@@ -685,7 +688,9 @@ public final class CreatePhraseSetRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The parent resource where this phrase set will be created.
      * Format:
+     *
      * `projects/{project}/locations/{location}`
+     *
      * Speech-to-Text supports three locations: `global`, `us` (US North America),
      * and `eu` (Europe). If you are calling the `speech.googleapis.com`
      * endpoint, use the `global` location. To specify a region, use a
@@ -716,7 +721,9 @@ public final class CreatePhraseSetRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The parent resource where this phrase set will be created.
      * Format:
+     *
      * `projects/{project}/locations/{location}`
+     *
      * Speech-to-Text supports three locations: `global`, `us` (US North America),
      * and `eu` (Europe). If you are calling the `speech.googleapis.com`
      * endpoint, use the `global` location. To specify a region, use a
@@ -746,7 +753,9 @@ public final class CreatePhraseSetRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The parent resource where this phrase set will be created.
      * Format:
+     *
      * `projects/{project}/locations/{location}`
+     *
      * Speech-to-Text supports three locations: `global`, `us` (US North America),
      * and `eu` (Europe). If you are calling the `speech.googleapis.com`
      * endpoint, use the `global` location. To specify a region, use a
@@ -772,7 +781,9 @@ public final class CreatePhraseSetRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The parent resource where this phrase set will be created.
      * Format:
+     *
      * `projects/{project}/locations/{location}`
+     *
      * Speech-to-Text supports three locations: `global`, `us` (US North America),
      * and `eu` (Europe). If you are calling the `speech.googleapis.com`
      * endpoint, use the `global` location. To specify a region, use a
@@ -805,6 +816,7 @@ public final class CreatePhraseSetRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The ID to use for the phrase set, which will become the final
      * component of the phrase set's resource name.
+     *
      * This value should restrict to letters, numbers, and hyphens, with the first
      * character a letter, the last a letter or a number, and be 4-63 characters.
      * </pre>
@@ -830,6 +842,7 @@ public final class CreatePhraseSetRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The ID to use for the phrase set, which will become the final
      * component of the phrase set's resource name.
+     *
      * This value should restrict to letters, numbers, and hyphens, with the first
      * character a letter, the last a letter or a number, and be 4-63 characters.
      * </pre>
@@ -855,6 +868,7 @@ public final class CreatePhraseSetRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The ID to use for the phrase set, which will become the final
      * component of the phrase set's resource name.
+     *
      * This value should restrict to letters, numbers, and hyphens, with the first
      * character a letter, the last a letter or a number, and be 4-63 characters.
      * </pre>
@@ -879,6 +893,7 @@ public final class CreatePhraseSetRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The ID to use for the phrase set, which will become the final
      * component of the phrase set's resource name.
+     *
      * This value should restrict to letters, numbers, and hyphens, with the first
      * character a letter, the last a letter or a number, and be 4-63 characters.
      * </pre>
@@ -899,6 +914,7 @@ public final class CreatePhraseSetRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The ID to use for the phrase set, which will become the final
      * component of the phrase set's resource name.
+     *
      * This value should restrict to letters, numbers, and hyphens, with the first
      * character a letter, the last a letter or a number, and be 4-63 characters.
      * </pre>

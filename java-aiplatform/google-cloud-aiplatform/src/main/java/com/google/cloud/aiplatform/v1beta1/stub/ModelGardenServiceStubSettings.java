@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@
 package com.google.cloud.aiplatform.v1beta1.stub;
 
 import static com.google.cloud.aiplatform.v1beta1.ModelGardenServiceClient.ListLocationsPagedResponse;
+import static com.google.cloud.aiplatform.v1beta1.ModelGardenServiceClient.ListPublisherModelsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
@@ -41,6 +42,8 @@ import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.aiplatform.v1beta1.GetPublisherModelRequest;
+import com.google.cloud.aiplatform.v1beta1.ListPublisherModelsRequest;
+import com.google.cloud.aiplatform.v1beta1.ListPublisherModelsResponse;
 import com.google.cloud.aiplatform.v1beta1.PublisherModel;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -107,6 +110,9 @@ public class ModelGardenServiceStubSettings extends StubSettings<ModelGardenServ
   private final UnaryCallSettings<GetPublisherModelRequest, PublisherModel>
       getPublisherModelSettings;
   private final PagedCallSettings<
+          ListPublisherModelsRequest, ListPublisherModelsResponse, ListPublisherModelsPagedResponse>
+      listPublisherModelsSettings;
+  private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
   private final UnaryCallSettings<GetLocationRequest, Location> getLocationSettings;
@@ -114,6 +120,46 @@ public class ModelGardenServiceStubSettings extends StubSettings<ModelGardenServ
   private final UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings;
   private final UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsSettings;
+
+  private static final PagedListDescriptor<
+          ListPublisherModelsRequest, ListPublisherModelsResponse, PublisherModel>
+      LIST_PUBLISHER_MODELS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListPublisherModelsRequest, ListPublisherModelsResponse, PublisherModel>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListPublisherModelsRequest injectToken(
+                ListPublisherModelsRequest payload, String token) {
+              return ListPublisherModelsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListPublisherModelsRequest injectPageSize(
+                ListPublisherModelsRequest payload, int pageSize) {
+              return ListPublisherModelsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListPublisherModelsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListPublisherModelsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<PublisherModel> extractResources(ListPublisherModelsResponse payload) {
+              return payload.getPublisherModelsList() == null
+                  ? ImmutableList.<PublisherModel>of()
+                  : payload.getPublisherModelsList();
+            }
+          };
 
   private static final PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>
       LIST_LOCATIONS_PAGE_STR_DESC =
@@ -152,6 +198,27 @@ public class ModelGardenServiceStubSettings extends StubSettings<ModelGardenServ
           };
 
   private static final PagedListResponseFactory<
+          ListPublisherModelsRequest, ListPublisherModelsResponse, ListPublisherModelsPagedResponse>
+      LIST_PUBLISHER_MODELS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListPublisherModelsRequest,
+              ListPublisherModelsResponse,
+              ListPublisherModelsPagedResponse>() {
+            @Override
+            public ApiFuture<ListPublisherModelsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListPublisherModelsRequest, ListPublisherModelsResponse> callable,
+                ListPublisherModelsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListPublisherModelsResponse> futureResponse) {
+              PageContext<ListPublisherModelsRequest, ListPublisherModelsResponse, PublisherModel>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_PUBLISHER_MODELS_PAGE_STR_DESC, request, context);
+              return ListPublisherModelsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       LIST_LOCATIONS_PAGE_STR_FACT =
           new PagedListResponseFactory<
@@ -171,6 +238,13 @@ public class ModelGardenServiceStubSettings extends StubSettings<ModelGardenServ
   /** Returns the object with the settings used for calls to getPublisherModel. */
   public UnaryCallSettings<GetPublisherModelRequest, PublisherModel> getPublisherModelSettings() {
     return getPublisherModelSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listPublisherModels. */
+  public PagedCallSettings<
+          ListPublisherModelsRequest, ListPublisherModelsResponse, ListPublisherModelsPagedResponse>
+      listPublisherModelsSettings() {
+    return listPublisherModelsSettings;
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -276,6 +350,7 @@ public class ModelGardenServiceStubSettings extends StubSettings<ModelGardenServ
     super(settingsBuilder);
 
     getPublisherModelSettings = settingsBuilder.getPublisherModelSettings().build();
+    listPublisherModelsSettings = settingsBuilder.listPublisherModelsSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
@@ -289,6 +364,11 @@ public class ModelGardenServiceStubSettings extends StubSettings<ModelGardenServ
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
     private final UnaryCallSettings.Builder<GetPublisherModelRequest, PublisherModel>
         getPublisherModelSettings;
+    private final PagedCallSettings.Builder<
+            ListPublisherModelsRequest,
+            ListPublisherModelsResponse,
+            ListPublisherModelsPagedResponse>
+        listPublisherModelsSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -325,6 +405,8 @@ public class ModelGardenServiceStubSettings extends StubSettings<ModelGardenServ
       super(clientContext);
 
       getPublisherModelSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listPublisherModelsSettings =
+          PagedCallSettings.newBuilder(LIST_PUBLISHER_MODELS_PAGE_STR_FACT);
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -334,6 +416,7 @@ public class ModelGardenServiceStubSettings extends StubSettings<ModelGardenServ
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               getPublisherModelSettings,
+              listPublisherModelsSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -346,6 +429,7 @@ public class ModelGardenServiceStubSettings extends StubSettings<ModelGardenServ
       super(settings);
 
       getPublisherModelSettings = settings.getPublisherModelSettings.toBuilder();
+      listPublisherModelsSettings = settings.listPublisherModelsSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
@@ -355,6 +439,7 @@ public class ModelGardenServiceStubSettings extends StubSettings<ModelGardenServ
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               getPublisherModelSettings,
+              listPublisherModelsSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -378,6 +463,11 @@ public class ModelGardenServiceStubSettings extends StubSettings<ModelGardenServ
     private static Builder initDefaults(Builder builder) {
       builder
           .getPublisherModelSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listPublisherModelsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -428,6 +518,15 @@ public class ModelGardenServiceStubSettings extends StubSettings<ModelGardenServ
     public UnaryCallSettings.Builder<GetPublisherModelRequest, PublisherModel>
         getPublisherModelSettings() {
       return getPublisherModelSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listPublisherModels. */
+    public PagedCallSettings.Builder<
+            ListPublisherModelsRequest,
+            ListPublisherModelsResponse,
+            ListPublisherModelsPagedResponse>
+        listPublisherModelsSettings() {
+      return listPublisherModelsSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

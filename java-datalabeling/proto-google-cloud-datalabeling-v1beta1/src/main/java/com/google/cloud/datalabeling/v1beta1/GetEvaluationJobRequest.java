@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class GetEvaluationJobRequest extends com.google.protobuf.Generated
     return new GetEvaluationJobRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datalabeling.v1beta1.DataLabelingServiceOuterClass
         .internal_static_google_cloud_datalabeling_v1beta1_GetEvaluationJobRequest_descriptor;
@@ -76,6 +71,7 @@ public final class GetEvaluationJobRequest extends com.google.protobuf.Generated
    *
    * <pre>
    * Required. Name of the evaluation job. Format:
+   *
    * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/evaluationJobs/&lt;var&gt;{evaluation_job_id}&lt;/var&gt;"
    * </pre>
    *
@@ -102,6 +98,7 @@ public final class GetEvaluationJobRequest extends com.google.protobuf.Generated
    *
    * <pre>
    * Required. Name of the evaluation job. Format:
+   *
    * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/evaluationJobs/&lt;var&gt;{evaluation_job_id}&lt;/var&gt;"
    * </pre>
    *
@@ -476,6 +473,7 @@ public final class GetEvaluationJobRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. Name of the evaluation job. Format:
+     *
      * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/evaluationJobs/&lt;var&gt;{evaluation_job_id}&lt;/var&gt;"
      * </pre>
      *
@@ -501,6 +499,7 @@ public final class GetEvaluationJobRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. Name of the evaluation job. Format:
+     *
      * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/evaluationJobs/&lt;var&gt;{evaluation_job_id}&lt;/var&gt;"
      * </pre>
      *
@@ -526,6 +525,7 @@ public final class GetEvaluationJobRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. Name of the evaluation job. Format:
+     *
      * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/evaluationJobs/&lt;var&gt;{evaluation_job_id}&lt;/var&gt;"
      * </pre>
      *
@@ -550,6 +550,7 @@ public final class GetEvaluationJobRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. Name of the evaluation job. Format:
+     *
      * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/evaluationJobs/&lt;var&gt;{evaluation_job_id}&lt;/var&gt;"
      * </pre>
      *
@@ -570,6 +571,7 @@ public final class GetEvaluationJobRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. Name of the evaluation job. Format:
+     *
      * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/evaluationJobs/&lt;var&gt;{evaluation_job_id}&lt;/var&gt;"
      * </pre>
      *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new CompleteQueryResponse();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -104,8 +99,10 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Custom attributes for the suggestion term.
+     *
      * * For "user-data", the attributes are additional custom attributes
      * ingested through BigQuery.
+     *
      * * For "cloud-retail", the attributes are product attributes generated
      * by Cloud Retail. It requires
      * [UserEvent.product_details][google.cloud.retail.v2.UserEvent.product_details]
@@ -120,8 +117,10 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Custom attributes for the suggestion term.
+     *
      * * For "user-data", the attributes are additional custom attributes
      * ingested through BigQuery.
+     *
      * * For "cloud-retail", the attributes are product attributes generated
      * by Cloud Retail. It requires
      * [UserEvent.product_details][google.cloud.retail.v2.UserEvent.product_details]
@@ -139,8 +138,10 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Custom attributes for the suggestion term.
+     *
      * * For "user-data", the attributes are additional custom attributes
      * ingested through BigQuery.
+     *
      * * For "cloud-retail", the attributes are product attributes generated
      * by Cloud Retail. It requires
      * [UserEvent.product_details][google.cloud.retail.v2.UserEvent.product_details]
@@ -155,8 +156,10 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Custom attributes for the suggestion term.
+     *
      * * For "user-data", the attributes are additional custom attributes
      * ingested through BigQuery.
+     *
      * * For "cloud-retail", the attributes are product attributes generated
      * by Cloud Retail. It requires
      * [UserEvent.product_details][google.cloud.retail.v2.UserEvent.product_details]
@@ -175,8 +178,10 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Custom attributes for the suggestion term.
+     *
      * * For "user-data", the attributes are additional custom attributes
      * ingested through BigQuery.
+     *
      * * For "cloud-retail", the attributes are product attributes generated
      * by Cloud Retail. It requires
      * [UserEvent.product_details][google.cloud.retail.v2.UserEvent.product_details]
@@ -214,11 +219,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new CompletionResult();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -337,8 +337,10 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Custom attributes for the suggestion term.
+     *
      * * For "user-data", the attributes are additional custom attributes
      * ingested through BigQuery.
+     *
      * * For "cloud-retail", the attributes are product attributes generated
      * by Cloud Retail. It requires
      * [UserEvent.product_details][google.cloud.retail.v2.UserEvent.product_details]
@@ -366,8 +368,10 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Custom attributes for the suggestion term.
+     *
      * * For "user-data", the attributes are additional custom attributes
      * ingested through BigQuery.
+     *
      * * For "cloud-retail", the attributes are product attributes generated
      * by Cloud Retail. It requires
      * [UserEvent.product_details][google.cloud.retail.v2.UserEvent.product_details]
@@ -386,8 +390,10 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Custom attributes for the suggestion term.
+     *
      * * For "user-data", the attributes are additional custom attributes
      * ingested through BigQuery.
+     *
      * * For "cloud-retail", the attributes are product attributes generated
      * by Cloud Retail. It requires
      * [UserEvent.product_details][google.cloud.retail.v2.UserEvent.product_details]
@@ -413,8 +419,10 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Custom attributes for the suggestion term.
+     *
      * * For "user-data", the attributes are additional custom attributes
      * ingested through BigQuery.
+     *
      * * For "cloud-retail", the attributes are product attributes generated
      * by Cloud Retail. It requires
      * [UserEvent.product_details][google.cloud.retail.v2.UserEvent.product_details]
@@ -993,8 +1001,10 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
        *
        * <pre>
        * Custom attributes for the suggestion term.
+       *
        * * For "user-data", the attributes are additional custom attributes
        * ingested through BigQuery.
+       *
        * * For "cloud-retail", the attributes are product attributes generated
        * by Cloud Retail. It requires
        * [UserEvent.product_details][google.cloud.retail.v2.UserEvent.product_details]
@@ -1022,8 +1032,10 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
        *
        * <pre>
        * Custom attributes for the suggestion term.
+       *
        * * For "user-data", the attributes are additional custom attributes
        * ingested through BigQuery.
+       *
        * * For "cloud-retail", the attributes are product attributes generated
        * by Cloud Retail. It requires
        * [UserEvent.product_details][google.cloud.retail.v2.UserEvent.product_details]
@@ -1042,8 +1054,10 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
        *
        * <pre>
        * Custom attributes for the suggestion term.
+       *
        * * For "user-data", the attributes are additional custom attributes
        * ingested through BigQuery.
+       *
        * * For "cloud-retail", the attributes are product attributes generated
        * by Cloud Retail. It requires
        * [UserEvent.product_details][google.cloud.retail.v2.UserEvent.product_details]
@@ -1069,8 +1083,10 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
        *
        * <pre>
        * Custom attributes for the suggestion term.
+       *
        * * For "user-data", the attributes are additional custom attributes
        * ingested through BigQuery.
+       *
        * * For "cloud-retail", the attributes are product attributes generated
        * by Cloud Retail. It requires
        * [UserEvent.product_details][google.cloud.retail.v2.UserEvent.product_details]
@@ -1102,8 +1118,10 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
        *
        * <pre>
        * Custom attributes for the suggestion term.
+       *
        * * For "user-data", the attributes are additional custom attributes
        * ingested through BigQuery.
+       *
        * * For "cloud-retail", the attributes are product attributes generated
        * by Cloud Retail. It requires
        * [UserEvent.product_details][google.cloud.retail.v2.UserEvent.product_details]
@@ -1131,8 +1149,10 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
        *
        * <pre>
        * Custom attributes for the suggestion term.
+       *
        * * For "user-data", the attributes are additional custom attributes
        * ingested through BigQuery.
+       *
        * * For "cloud-retail", the attributes are product attributes generated
        * by Cloud Retail. It requires
        * [UserEvent.product_details][google.cloud.retail.v2.UserEvent.product_details]
@@ -1158,8 +1178,10 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
        *
        * <pre>
        * Custom attributes for the suggestion term.
+       *
        * * For "user-data", the attributes are additional custom attributes
        * ingested through BigQuery.
+       *
        * * For "cloud-retail", the attributes are product attributes generated
        * by Cloud Retail. It requires
        * [UserEvent.product_details][google.cloud.retail.v2.UserEvent.product_details]
@@ -1299,11 +1321,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new RecentSearchResult();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2060,16 +2077,22 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
    * Matched recent searches of this user. The maximum number of recent searches
    * is 10. This field is a restricted feature. Contact Retail Search support
    * team if you are interested in enabling it.
+   *
    * This feature is only available when
    * [CompleteQueryRequest.visitor_id][google.cloud.retail.v2.CompleteQueryRequest.visitor_id]
    * field is set and [UserEvent][google.cloud.retail.v2.UserEvent] is imported.
    * The recent searches satisfy the follow rules:
+   *
    *  * They are ordered from latest to oldest.
+   *
    *  * They are matched with
    *  [CompleteQueryRequest.query][google.cloud.retail.v2.CompleteQueryRequest.query]
    *  case insensitively.
+   *
    *  * They are transformed to lower case.
+   *
    *  * They are UTF-8 safe.
+   *
    * Recent searches are deduplicated. More recent searches will be reserved
    * when duplication happens.
    * </pre>
@@ -2090,16 +2113,22 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
    * Matched recent searches of this user. The maximum number of recent searches
    * is 10. This field is a restricted feature. Contact Retail Search support
    * team if you are interested in enabling it.
+   *
    * This feature is only available when
    * [CompleteQueryRequest.visitor_id][google.cloud.retail.v2.CompleteQueryRequest.visitor_id]
    * field is set and [UserEvent][google.cloud.retail.v2.UserEvent] is imported.
    * The recent searches satisfy the follow rules:
+   *
    *  * They are ordered from latest to oldest.
+   *
    *  * They are matched with
    *  [CompleteQueryRequest.query][google.cloud.retail.v2.CompleteQueryRequest.query]
    *  case insensitively.
+   *
    *  * They are transformed to lower case.
+   *
    *  * They are UTF-8 safe.
+   *
    * Recent searches are deduplicated. More recent searches will be reserved
    * when duplication happens.
    * </pre>
@@ -2121,16 +2150,22 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
    * Matched recent searches of this user. The maximum number of recent searches
    * is 10. This field is a restricted feature. Contact Retail Search support
    * team if you are interested in enabling it.
+   *
    * This feature is only available when
    * [CompleteQueryRequest.visitor_id][google.cloud.retail.v2.CompleteQueryRequest.visitor_id]
    * field is set and [UserEvent][google.cloud.retail.v2.UserEvent] is imported.
    * The recent searches satisfy the follow rules:
+   *
    *  * They are ordered from latest to oldest.
+   *
    *  * They are matched with
    *  [CompleteQueryRequest.query][google.cloud.retail.v2.CompleteQueryRequest.query]
    *  case insensitively.
+   *
    *  * They are transformed to lower case.
+   *
    *  * They are UTF-8 safe.
+   *
    * Recent searches are deduplicated. More recent searches will be reserved
    * when duplication happens.
    * </pre>
@@ -2150,16 +2185,22 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
    * Matched recent searches of this user. The maximum number of recent searches
    * is 10. This field is a restricted feature. Contact Retail Search support
    * team if you are interested in enabling it.
+   *
    * This feature is only available when
    * [CompleteQueryRequest.visitor_id][google.cloud.retail.v2.CompleteQueryRequest.visitor_id]
    * field is set and [UserEvent][google.cloud.retail.v2.UserEvent] is imported.
    * The recent searches satisfy the follow rules:
+   *
    *  * They are ordered from latest to oldest.
+   *
    *  * They are matched with
    *  [CompleteQueryRequest.query][google.cloud.retail.v2.CompleteQueryRequest.query]
    *  case insensitively.
+   *
    *  * They are transformed to lower case.
+   *
    *  * They are UTF-8 safe.
+   *
    * Recent searches are deduplicated. More recent searches will be reserved
    * when duplication happens.
    * </pre>
@@ -2180,16 +2221,22 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
    * Matched recent searches of this user. The maximum number of recent searches
    * is 10. This field is a restricted feature. Contact Retail Search support
    * team if you are interested in enabling it.
+   *
    * This feature is only available when
    * [CompleteQueryRequest.visitor_id][google.cloud.retail.v2.CompleteQueryRequest.visitor_id]
    * field is set and [UserEvent][google.cloud.retail.v2.UserEvent] is imported.
    * The recent searches satisfy the follow rules:
+   *
    *  * They are ordered from latest to oldest.
+   *
    *  * They are matched with
    *  [CompleteQueryRequest.query][google.cloud.retail.v2.CompleteQueryRequest.query]
    *  case insensitively.
+   *
    *  * They are transformed to lower case.
+   *
    *  * They are UTF-8 safe.
+   *
    * Recent searches are deduplicated. More recent searches will be reserved
    * when duplication happens.
    * </pre>
@@ -3266,16 +3313,22 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * Matched recent searches of this user. The maximum number of recent searches
      * is 10. This field is a restricted feature. Contact Retail Search support
      * team if you are interested in enabling it.
+     *
      * This feature is only available when
      * [CompleteQueryRequest.visitor_id][google.cloud.retail.v2.CompleteQueryRequest.visitor_id]
      * field is set and [UserEvent][google.cloud.retail.v2.UserEvent] is imported.
      * The recent searches satisfy the follow rules:
+     *
      *  * They are ordered from latest to oldest.
+     *
      *  * They are matched with
      *  [CompleteQueryRequest.query][google.cloud.retail.v2.CompleteQueryRequest.query]
      *  case insensitively.
+     *
      *  * They are transformed to lower case.
+     *
      *  * They are UTF-8 safe.
+     *
      * Recent searches are deduplicated. More recent searches will be reserved
      * when duplication happens.
      * </pre>
@@ -3299,16 +3352,22 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * Matched recent searches of this user. The maximum number of recent searches
      * is 10. This field is a restricted feature. Contact Retail Search support
      * team if you are interested in enabling it.
+     *
      * This feature is only available when
      * [CompleteQueryRequest.visitor_id][google.cloud.retail.v2.CompleteQueryRequest.visitor_id]
      * field is set and [UserEvent][google.cloud.retail.v2.UserEvent] is imported.
      * The recent searches satisfy the follow rules:
+     *
      *  * They are ordered from latest to oldest.
+     *
      *  * They are matched with
      *  [CompleteQueryRequest.query][google.cloud.retail.v2.CompleteQueryRequest.query]
      *  case insensitively.
+     *
      *  * They are transformed to lower case.
+     *
      *  * They are UTF-8 safe.
+     *
      * Recent searches are deduplicated. More recent searches will be reserved
      * when duplication happens.
      * </pre>
@@ -3331,16 +3390,22 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * Matched recent searches of this user. The maximum number of recent searches
      * is 10. This field is a restricted feature. Contact Retail Search support
      * team if you are interested in enabling it.
+     *
      * This feature is only available when
      * [CompleteQueryRequest.visitor_id][google.cloud.retail.v2.CompleteQueryRequest.visitor_id]
      * field is set and [UserEvent][google.cloud.retail.v2.UserEvent] is imported.
      * The recent searches satisfy the follow rules:
+     *
      *  * They are ordered from latest to oldest.
+     *
      *  * They are matched with
      *  [CompleteQueryRequest.query][google.cloud.retail.v2.CompleteQueryRequest.query]
      *  case insensitively.
+     *
      *  * They are transformed to lower case.
+     *
      *  * They are UTF-8 safe.
+     *
      * Recent searches are deduplicated. More recent searches will be reserved
      * when duplication happens.
      * </pre>
@@ -3364,16 +3429,22 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * Matched recent searches of this user. The maximum number of recent searches
      * is 10. This field is a restricted feature. Contact Retail Search support
      * team if you are interested in enabling it.
+     *
      * This feature is only available when
      * [CompleteQueryRequest.visitor_id][google.cloud.retail.v2.CompleteQueryRequest.visitor_id]
      * field is set and [UserEvent][google.cloud.retail.v2.UserEvent] is imported.
      * The recent searches satisfy the follow rules:
+     *
      *  * They are ordered from latest to oldest.
+     *
      *  * They are matched with
      *  [CompleteQueryRequest.query][google.cloud.retail.v2.CompleteQueryRequest.query]
      *  case insensitively.
+     *
      *  * They are transformed to lower case.
+     *
      *  * They are UTF-8 safe.
+     *
      * Recent searches are deduplicated. More recent searches will be reserved
      * when duplication happens.
      * </pre>
@@ -3403,16 +3474,22 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * Matched recent searches of this user. The maximum number of recent searches
      * is 10. This field is a restricted feature. Contact Retail Search support
      * team if you are interested in enabling it.
+     *
      * This feature is only available when
      * [CompleteQueryRequest.visitor_id][google.cloud.retail.v2.CompleteQueryRequest.visitor_id]
      * field is set and [UserEvent][google.cloud.retail.v2.UserEvent] is imported.
      * The recent searches satisfy the follow rules:
+     *
      *  * They are ordered from latest to oldest.
+     *
      *  * They are matched with
      *  [CompleteQueryRequest.query][google.cloud.retail.v2.CompleteQueryRequest.query]
      *  case insensitively.
+     *
      *  * They are transformed to lower case.
+     *
      *  * They are UTF-8 safe.
+     *
      * Recent searches are deduplicated. More recent searches will be reserved
      * when duplication happens.
      * </pre>
@@ -3441,16 +3518,22 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * Matched recent searches of this user. The maximum number of recent searches
      * is 10. This field is a restricted feature. Contact Retail Search support
      * team if you are interested in enabling it.
+     *
      * This feature is only available when
      * [CompleteQueryRequest.visitor_id][google.cloud.retail.v2.CompleteQueryRequest.visitor_id]
      * field is set and [UserEvent][google.cloud.retail.v2.UserEvent] is imported.
      * The recent searches satisfy the follow rules:
+     *
      *  * They are ordered from latest to oldest.
+     *
      *  * They are matched with
      *  [CompleteQueryRequest.query][google.cloud.retail.v2.CompleteQueryRequest.query]
      *  case insensitively.
+     *
      *  * They are transformed to lower case.
+     *
      *  * They are UTF-8 safe.
+     *
      * Recent searches are deduplicated. More recent searches will be reserved
      * when duplication happens.
      * </pre>
@@ -3480,16 +3563,22 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * Matched recent searches of this user. The maximum number of recent searches
      * is 10. This field is a restricted feature. Contact Retail Search support
      * team if you are interested in enabling it.
+     *
      * This feature is only available when
      * [CompleteQueryRequest.visitor_id][google.cloud.retail.v2.CompleteQueryRequest.visitor_id]
      * field is set and [UserEvent][google.cloud.retail.v2.UserEvent] is imported.
      * The recent searches satisfy the follow rules:
+     *
      *  * They are ordered from latest to oldest.
+     *
      *  * They are matched with
      *  [CompleteQueryRequest.query][google.cloud.retail.v2.CompleteQueryRequest.query]
      *  case insensitively.
+     *
      *  * They are transformed to lower case.
+     *
      *  * They are UTF-8 safe.
+     *
      * Recent searches are deduplicated. More recent searches will be reserved
      * when duplication happens.
      * </pre>
@@ -3519,16 +3608,22 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * Matched recent searches of this user. The maximum number of recent searches
      * is 10. This field is a restricted feature. Contact Retail Search support
      * team if you are interested in enabling it.
+     *
      * This feature is only available when
      * [CompleteQueryRequest.visitor_id][google.cloud.retail.v2.CompleteQueryRequest.visitor_id]
      * field is set and [UserEvent][google.cloud.retail.v2.UserEvent] is imported.
      * The recent searches satisfy the follow rules:
+     *
      *  * They are ordered from latest to oldest.
+     *
      *  * They are matched with
      *  [CompleteQueryRequest.query][google.cloud.retail.v2.CompleteQueryRequest.query]
      *  case insensitively.
+     *
      *  * They are transformed to lower case.
+     *
      *  * They are UTF-8 safe.
+     *
      * Recent searches are deduplicated. More recent searches will be reserved
      * when duplication happens.
      * </pre>
@@ -3556,16 +3651,22 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * Matched recent searches of this user. The maximum number of recent searches
      * is 10. This field is a restricted feature. Contact Retail Search support
      * team if you are interested in enabling it.
+     *
      * This feature is only available when
      * [CompleteQueryRequest.visitor_id][google.cloud.retail.v2.CompleteQueryRequest.visitor_id]
      * field is set and [UserEvent][google.cloud.retail.v2.UserEvent] is imported.
      * The recent searches satisfy the follow rules:
+     *
      *  * They are ordered from latest to oldest.
+     *
      *  * They are matched with
      *  [CompleteQueryRequest.query][google.cloud.retail.v2.CompleteQueryRequest.query]
      *  case insensitively.
+     *
      *  * They are transformed to lower case.
+     *
      *  * They are UTF-8 safe.
+     *
      * Recent searches are deduplicated. More recent searches will be reserved
      * when duplication happens.
      * </pre>
@@ -3594,16 +3695,22 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * Matched recent searches of this user. The maximum number of recent searches
      * is 10. This field is a restricted feature. Contact Retail Search support
      * team if you are interested in enabling it.
+     *
      * This feature is only available when
      * [CompleteQueryRequest.visitor_id][google.cloud.retail.v2.CompleteQueryRequest.visitor_id]
      * field is set and [UserEvent][google.cloud.retail.v2.UserEvent] is imported.
      * The recent searches satisfy the follow rules:
+     *
      *  * They are ordered from latest to oldest.
+     *
      *  * They are matched with
      *  [CompleteQueryRequest.query][google.cloud.retail.v2.CompleteQueryRequest.query]
      *  case insensitively.
+     *
      *  * They are transformed to lower case.
+     *
      *  * They are UTF-8 safe.
+     *
      * Recent searches are deduplicated. More recent searches will be reserved
      * when duplication happens.
      * </pre>
@@ -3632,16 +3739,22 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * Matched recent searches of this user. The maximum number of recent searches
      * is 10. This field is a restricted feature. Contact Retail Search support
      * team if you are interested in enabling it.
+     *
      * This feature is only available when
      * [CompleteQueryRequest.visitor_id][google.cloud.retail.v2.CompleteQueryRequest.visitor_id]
      * field is set and [UserEvent][google.cloud.retail.v2.UserEvent] is imported.
      * The recent searches satisfy the follow rules:
+     *
      *  * They are ordered from latest to oldest.
+     *
      *  * They are matched with
      *  [CompleteQueryRequest.query][google.cloud.retail.v2.CompleteQueryRequest.query]
      *  case insensitively.
+     *
      *  * They are transformed to lower case.
+     *
      *  * They are UTF-8 safe.
+     *
      * Recent searches are deduplicated. More recent searches will be reserved
      * when duplication happens.
      * </pre>
@@ -3667,16 +3780,22 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * Matched recent searches of this user. The maximum number of recent searches
      * is 10. This field is a restricted feature. Contact Retail Search support
      * team if you are interested in enabling it.
+     *
      * This feature is only available when
      * [CompleteQueryRequest.visitor_id][google.cloud.retail.v2.CompleteQueryRequest.visitor_id]
      * field is set and [UserEvent][google.cloud.retail.v2.UserEvent] is imported.
      * The recent searches satisfy the follow rules:
+     *
      *  * They are ordered from latest to oldest.
+     *
      *  * They are matched with
      *  [CompleteQueryRequest.query][google.cloud.retail.v2.CompleteQueryRequest.query]
      *  case insensitively.
+     *
      *  * They are transformed to lower case.
+     *
      *  * They are UTF-8 safe.
+     *
      * Recent searches are deduplicated. More recent searches will be reserved
      * when duplication happens.
      * </pre>
@@ -3702,16 +3821,22 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * Matched recent searches of this user. The maximum number of recent searches
      * is 10. This field is a restricted feature. Contact Retail Search support
      * team if you are interested in enabling it.
+     *
      * This feature is only available when
      * [CompleteQueryRequest.visitor_id][google.cloud.retail.v2.CompleteQueryRequest.visitor_id]
      * field is set and [UserEvent][google.cloud.retail.v2.UserEvent] is imported.
      * The recent searches satisfy the follow rules:
+     *
      *  * They are ordered from latest to oldest.
+     *
      *  * They are matched with
      *  [CompleteQueryRequest.query][google.cloud.retail.v2.CompleteQueryRequest.query]
      *  case insensitively.
+     *
      *  * They are transformed to lower case.
+     *
      *  * They are UTF-8 safe.
+     *
      * Recent searches are deduplicated. More recent searches will be reserved
      * when duplication happens.
      * </pre>
@@ -3731,16 +3856,22 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * Matched recent searches of this user. The maximum number of recent searches
      * is 10. This field is a restricted feature. Contact Retail Search support
      * team if you are interested in enabling it.
+     *
      * This feature is only available when
      * [CompleteQueryRequest.visitor_id][google.cloud.retail.v2.CompleteQueryRequest.visitor_id]
      * field is set and [UserEvent][google.cloud.retail.v2.UserEvent] is imported.
      * The recent searches satisfy the follow rules:
+     *
      *  * They are ordered from latest to oldest.
+     *
      *  * They are matched with
      *  [CompleteQueryRequest.query][google.cloud.retail.v2.CompleteQueryRequest.query]
      *  case insensitively.
+     *
      *  * They are transformed to lower case.
+     *
      *  * They are UTF-8 safe.
+     *
      * Recent searches are deduplicated. More recent searches will be reserved
      * when duplication happens.
      * </pre>
@@ -3764,16 +3895,22 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * Matched recent searches of this user. The maximum number of recent searches
      * is 10. This field is a restricted feature. Contact Retail Search support
      * team if you are interested in enabling it.
+     *
      * This feature is only available when
      * [CompleteQueryRequest.visitor_id][google.cloud.retail.v2.CompleteQueryRequest.visitor_id]
      * field is set and [UserEvent][google.cloud.retail.v2.UserEvent] is imported.
      * The recent searches satisfy the follow rules:
+     *
      *  * They are ordered from latest to oldest.
+     *
      *  * They are matched with
      *  [CompleteQueryRequest.query][google.cloud.retail.v2.CompleteQueryRequest.query]
      *  case insensitively.
+     *
      *  * They are transformed to lower case.
+     *
      *  * They are UTF-8 safe.
+     *
      * Recent searches are deduplicated. More recent searches will be reserved
      * when duplication happens.
      * </pre>
@@ -3798,16 +3935,22 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * Matched recent searches of this user. The maximum number of recent searches
      * is 10. This field is a restricted feature. Contact Retail Search support
      * team if you are interested in enabling it.
+     *
      * This feature is only available when
      * [CompleteQueryRequest.visitor_id][google.cloud.retail.v2.CompleteQueryRequest.visitor_id]
      * field is set and [UserEvent][google.cloud.retail.v2.UserEvent] is imported.
      * The recent searches satisfy the follow rules:
+     *
      *  * They are ordered from latest to oldest.
+     *
      *  * They are matched with
      *  [CompleteQueryRequest.query][google.cloud.retail.v2.CompleteQueryRequest.query]
      *  case insensitively.
+     *
      *  * They are transformed to lower case.
+     *
      *  * They are UTF-8 safe.
+     *
      * Recent searches are deduplicated. More recent searches will be reserved
      * when duplication happens.
      * </pre>
@@ -3830,16 +3973,22 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * Matched recent searches of this user. The maximum number of recent searches
      * is 10. This field is a restricted feature. Contact Retail Search support
      * team if you are interested in enabling it.
+     *
      * This feature is only available when
      * [CompleteQueryRequest.visitor_id][google.cloud.retail.v2.CompleteQueryRequest.visitor_id]
      * field is set and [UserEvent][google.cloud.retail.v2.UserEvent] is imported.
      * The recent searches satisfy the follow rules:
+     *
      *  * They are ordered from latest to oldest.
+     *
      *  * They are matched with
      *  [CompleteQueryRequest.query][google.cloud.retail.v2.CompleteQueryRequest.query]
      *  case insensitively.
+     *
      *  * They are transformed to lower case.
+     *
      *  * They are UTF-8 safe.
+     *
      * Recent searches are deduplicated. More recent searches will be reserved
      * when duplication happens.
      * </pre>
@@ -3863,16 +4012,22 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * Matched recent searches of this user. The maximum number of recent searches
      * is 10. This field is a restricted feature. Contact Retail Search support
      * team if you are interested in enabling it.
+     *
      * This feature is only available when
      * [CompleteQueryRequest.visitor_id][google.cloud.retail.v2.CompleteQueryRequest.visitor_id]
      * field is set and [UserEvent][google.cloud.retail.v2.UserEvent] is imported.
      * The recent searches satisfy the follow rules:
+     *
      *  * They are ordered from latest to oldest.
+     *
      *  * They are matched with
      *  [CompleteQueryRequest.query][google.cloud.retail.v2.CompleteQueryRequest.query]
      *  case insensitively.
+     *
      *  * They are transformed to lower case.
+     *
      *  * They are UTF-8 safe.
+     *
      * Recent searches are deduplicated. More recent searches will be reserved
      * when duplication happens.
      * </pre>

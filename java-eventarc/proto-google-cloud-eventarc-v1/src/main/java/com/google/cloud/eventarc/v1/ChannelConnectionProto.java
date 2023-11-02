@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,23 +44,23 @@ public final class ChannelConnectionProto {
           + "ction.proto\022\030google.cloud.eventarc.v1\032\037g"
           + "oogle/api/field_behavior.proto\032\031google/a"
           + "pi/resource.proto\032\037google/protobuf/times"
-          + "tamp.proto\"\247\003\n\021ChannelConnection\022\021\n\004name"
-          + "\030\001 \001(\tB\003\340A\002\022\020\n\003uid\030\002 \001(\tB\003\340A\003\0228\n\007channel"
-          + "\030\005 \001(\tB\'\340A\002\372A!\n\037eventarc.googleapis.com/"
-          + "Channel\0224\n\013create_time\030\006 \001(\0132\032.google.pr"
-          + "otobuf.TimestampB\003\340A\003\0224\n\013update_time\030\007 \001"
-          + "(\0132\032.google.protobuf.TimestampB\003\340A\003\022\035\n\020a"
-          + "ctivation_token\030\010 \001(\tB\003\340A\004:\247\001\352A\243\001\n)event"
-          + "arc.googleapis.com/ChannelConnection\022Opr"
-          + "ojects/{project}/locations/{location}/ch"
-          + "annelConnections/{channel_connection}*\022c"
-          + "hannelConnections2\021channelConnectionB\306\001\n"
-          + "\034com.google.cloud.eventarc.v1B\026ChannelCo"
-          + "nnectionProtoP\001Z8cloud.google.com/go/eve"
-          + "ntarc/apiv1/eventarcpb;eventarcpb\252\002\030Goog"
-          + "le.Cloud.Eventarc.V1\312\002\030Google\\Cloud\\Even"
-          + "tarc\\V1\352\002\033Google::Cloud::Eventarc::V1b\006p"
-          + "roto3"
+          + "tamp.proto\"\255\003\n\021ChannelConnection\022\022\n\004name"
+          + "\030\001 \001(\tB\004\342A\001\002\022\021\n\003uid\030\002 \001(\tB\004\342A\001\003\0229\n\007chann"
+          + "el\030\005 \001(\tB(\342A\001\002\372A!\n\037eventarc.googleapis.c"
+          + "om/Channel\0225\n\013create_time\030\006 \001(\0132\032.google"
+          + ".protobuf.TimestampB\004\342A\001\003\0225\n\013update_time"
+          + "\030\007 \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003"
+          + "\022\036\n\020activation_token\030\010 \001(\tB\004\342A\001\004:\247\001\352A\243\001\n"
+          + ")eventarc.googleapis.com/ChannelConnecti"
+          + "on\022Oprojects/{project}/locations/{locati"
+          + "on}/channelConnections/{channel_connecti"
+          + "on}*\022channelConnections2\021channelConnecti"
+          + "onB\306\001\n\034com.google.cloud.eventarc.v1B\026Cha"
+          + "nnelConnectionProtoP\001Z8cloud.google.com/"
+          + "go/eventarc/apiv1/eventarcpb;eventarcpb\252"
+          + "\002\030Google.Cloud.Eventarc.V1\312\002\030Google\\Clou"
+          + "d\\Eventarc\\V1\352\002\033Google::Cloud::Eventarc:"
+          + ":V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

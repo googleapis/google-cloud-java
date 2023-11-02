@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,11 +43,6 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new KubernetesConfig();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -146,6 +141,53 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
      * @return The bytes for deployment.
      */
     com.google.protobuf.ByteString getDeploymentBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The time to wait for route updates to propagate. The maximum
+     * configurable time is 3 hours, in seconds format. If unspecified, there is
+     * no wait time.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration route_update_wait_time = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the routeUpdateWaitTime field is set.
+     */
+    boolean hasRouteUpdateWaitTime();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The time to wait for route updates to propagate. The maximum
+     * configurable time is 3 hours, in seconds format. If unspecified, there is
+     * no wait time.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration route_update_wait_time = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The routeUpdateWaitTime.
+     */
+    com.google.protobuf.Duration getRouteUpdateWaitTime();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The time to wait for route updates to propagate. The maximum
+     * configurable time is 3 hours, in seconds format. If unspecified, there is
+     * no wait time.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration route_update_wait_time = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.protobuf.DurationOrBuilder getRouteUpdateWaitTimeOrBuilder();
   }
   /**
    *
@@ -176,11 +218,6 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new GatewayServiceMesh();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -353,6 +390,68 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
       }
     }
 
+    public static final int ROUTE_UPDATE_WAIT_TIME_FIELD_NUMBER = 4;
+    private com.google.protobuf.Duration routeUpdateWaitTime_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The time to wait for route updates to propagate. The maximum
+     * configurable time is 3 hours, in seconds format. If unspecified, there is
+     * no wait time.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration route_update_wait_time = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the routeUpdateWaitTime field is set.
+     */
+    @java.lang.Override
+    public boolean hasRouteUpdateWaitTime() {
+      return routeUpdateWaitTime_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The time to wait for route updates to propagate. The maximum
+     * configurable time is 3 hours, in seconds format. If unspecified, there is
+     * no wait time.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration route_update_wait_time = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The routeUpdateWaitTime.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Duration getRouteUpdateWaitTime() {
+      return routeUpdateWaitTime_ == null
+          ? com.google.protobuf.Duration.getDefaultInstance()
+          : routeUpdateWaitTime_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The time to wait for route updates to propagate. The maximum
+     * configurable time is 3 hours, in seconds format. If unspecified, there is
+     * no wait time.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration route_update_wait_time = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.DurationOrBuilder getRouteUpdateWaitTimeOrBuilder() {
+      return routeUpdateWaitTime_ == null
+          ? com.google.protobuf.Duration.getDefaultInstance()
+          : routeUpdateWaitTime_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -376,6 +475,9 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(deployment_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, deployment_);
       }
+      if (routeUpdateWaitTime_ != null) {
+        output.writeMessage(4, getRouteUpdateWaitTime());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -393,6 +495,10 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(deployment_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, deployment_);
+      }
+      if (routeUpdateWaitTime_ != null) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(4, getRouteUpdateWaitTime());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -413,6 +519,10 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
       if (!getHttpRoute().equals(other.getHttpRoute())) return false;
       if (!getService().equals(other.getService())) return false;
       if (!getDeployment().equals(other.getDeployment())) return false;
+      if (hasRouteUpdateWaitTime() != other.hasRouteUpdateWaitTime()) return false;
+      if (hasRouteUpdateWaitTime()) {
+        if (!getRouteUpdateWaitTime().equals(other.getRouteUpdateWaitTime())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -430,6 +540,10 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
       hash = (53 * hash) + getService().hashCode();
       hash = (37 * hash) + DEPLOYMENT_FIELD_NUMBER;
       hash = (53 * hash) + getDeployment().hashCode();
+      if (hasRouteUpdateWaitTime()) {
+        hash = (37 * hash) + ROUTE_UPDATE_WAIT_TIME_FIELD_NUMBER;
+        hash = (53 * hash) + getRouteUpdateWaitTime().hashCode();
+      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -575,6 +689,11 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
         httpRoute_ = "";
         service_ = "";
         deployment_ = "";
+        routeUpdateWaitTime_ = null;
+        if (routeUpdateWaitTimeBuilder_ != null) {
+          routeUpdateWaitTimeBuilder_.dispose();
+          routeUpdateWaitTimeBuilder_ = null;
+        }
         return this;
       }
 
@@ -621,6 +740,12 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
         }
         if (((from_bitField0_ & 0x00000004) != 0)) {
           result.deployment_ = deployment_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.routeUpdateWaitTime_ =
+              routeUpdateWaitTimeBuilder_ == null
+                  ? routeUpdateWaitTime_
+                  : routeUpdateWaitTimeBuilder_.build();
         }
       }
 
@@ -689,6 +814,9 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
           bitField0_ |= 0x00000004;
           onChanged();
         }
+        if (other.hasRouteUpdateWaitTime()) {
+          mergeRouteUpdateWaitTime(other.getRouteUpdateWaitTime());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -733,6 +861,13 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
                   bitField0_ |= 0x00000004;
                   break;
                 } // case 26
+              case 34:
+                {
+                  input.readMessage(
+                      getRouteUpdateWaitTimeFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 34
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1075,6 +1210,225 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
         return this;
       }
 
+      private com.google.protobuf.Duration routeUpdateWaitTime_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Duration,
+              com.google.protobuf.Duration.Builder,
+              com.google.protobuf.DurationOrBuilder>
+          routeUpdateWaitTimeBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The time to wait for route updates to propagate. The maximum
+       * configurable time is 3 hours, in seconds format. If unspecified, there is
+       * no wait time.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration route_update_wait_time = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the routeUpdateWaitTime field is set.
+       */
+      public boolean hasRouteUpdateWaitTime() {
+        return ((bitField0_ & 0x00000008) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The time to wait for route updates to propagate. The maximum
+       * configurable time is 3 hours, in seconds format. If unspecified, there is
+       * no wait time.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration route_update_wait_time = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The routeUpdateWaitTime.
+       */
+      public com.google.protobuf.Duration getRouteUpdateWaitTime() {
+        if (routeUpdateWaitTimeBuilder_ == null) {
+          return routeUpdateWaitTime_ == null
+              ? com.google.protobuf.Duration.getDefaultInstance()
+              : routeUpdateWaitTime_;
+        } else {
+          return routeUpdateWaitTimeBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The time to wait for route updates to propagate. The maximum
+       * configurable time is 3 hours, in seconds format. If unspecified, there is
+       * no wait time.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration route_update_wait_time = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setRouteUpdateWaitTime(com.google.protobuf.Duration value) {
+        if (routeUpdateWaitTimeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          routeUpdateWaitTime_ = value;
+        } else {
+          routeUpdateWaitTimeBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The time to wait for route updates to propagate. The maximum
+       * configurable time is 3 hours, in seconds format. If unspecified, there is
+       * no wait time.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration route_update_wait_time = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setRouteUpdateWaitTime(com.google.protobuf.Duration.Builder builderForValue) {
+        if (routeUpdateWaitTimeBuilder_ == null) {
+          routeUpdateWaitTime_ = builderForValue.build();
+        } else {
+          routeUpdateWaitTimeBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The time to wait for route updates to propagate. The maximum
+       * configurable time is 3 hours, in seconds format. If unspecified, there is
+       * no wait time.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration route_update_wait_time = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeRouteUpdateWaitTime(com.google.protobuf.Duration value) {
+        if (routeUpdateWaitTimeBuilder_ == null) {
+          if (((bitField0_ & 0x00000008) != 0)
+              && routeUpdateWaitTime_ != null
+              && routeUpdateWaitTime_ != com.google.protobuf.Duration.getDefaultInstance()) {
+            getRouteUpdateWaitTimeBuilder().mergeFrom(value);
+          } else {
+            routeUpdateWaitTime_ = value;
+          }
+        } else {
+          routeUpdateWaitTimeBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The time to wait for route updates to propagate. The maximum
+       * configurable time is 3 hours, in seconds format. If unspecified, there is
+       * no wait time.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration route_update_wait_time = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearRouteUpdateWaitTime() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        routeUpdateWaitTime_ = null;
+        if (routeUpdateWaitTimeBuilder_ != null) {
+          routeUpdateWaitTimeBuilder_.dispose();
+          routeUpdateWaitTimeBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The time to wait for route updates to propagate. The maximum
+       * configurable time is 3 hours, in seconds format. If unspecified, there is
+       * no wait time.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration route_update_wait_time = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.protobuf.Duration.Builder getRouteUpdateWaitTimeBuilder() {
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return getRouteUpdateWaitTimeFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The time to wait for route updates to propagate. The maximum
+       * configurable time is 3 hours, in seconds format. If unspecified, there is
+       * no wait time.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration route_update_wait_time = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.protobuf.DurationOrBuilder getRouteUpdateWaitTimeOrBuilder() {
+        if (routeUpdateWaitTimeBuilder_ != null) {
+          return routeUpdateWaitTimeBuilder_.getMessageOrBuilder();
+        } else {
+          return routeUpdateWaitTime_ == null
+              ? com.google.protobuf.Duration.getDefaultInstance()
+              : routeUpdateWaitTime_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The time to wait for route updates to propagate. The maximum
+       * configurable time is 3 hours, in seconds format. If unspecified, there is
+       * no wait time.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration route_update_wait_time = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Duration,
+              com.google.protobuf.Duration.Builder,
+              com.google.protobuf.DurationOrBuilder>
+          getRouteUpdateWaitTimeFieldBuilder() {
+        if (routeUpdateWaitTimeBuilder_ == null) {
+          routeUpdateWaitTimeBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.Duration,
+                  com.google.protobuf.Duration.Builder,
+                  com.google.protobuf.DurationOrBuilder>(
+                  getRouteUpdateWaitTime(), getParentForChildren(), isClean());
+          routeUpdateWaitTime_ = null;
+        }
+        return routeUpdateWaitTimeBuilder_;
+      }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1198,6 +1552,22 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
      * @return The bytes for deployment.
      */
     com.google.protobuf.ByteString getDeploymentBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to disable Pod overprovisioning. If Pod
+     * overprovisioning is disabled then Cloud Deploy will limit the number of
+     * total Pods used for the deployment strategy to the number of Pods the
+     * Deployment has on the cluster.
+     * </pre>
+     *
+     * <code>bool disable_pod_overprovisioning = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The disablePodOverprovisioning.
+     */
+    boolean getDisablePodOverprovisioning();
   }
   /**
    *
@@ -1227,11 +1597,6 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new ServiceNetworking();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1353,6 +1718,27 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
       }
     }
 
+    public static final int DISABLE_POD_OVERPROVISIONING_FIELD_NUMBER = 3;
+    private boolean disablePodOverprovisioning_ = false;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to disable Pod overprovisioning. If Pod
+     * overprovisioning is disabled then Cloud Deploy will limit the number of
+     * total Pods used for the deployment strategy to the number of Pods the
+     * Deployment has on the cluster.
+     * </pre>
+     *
+     * <code>bool disable_pod_overprovisioning = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The disablePodOverprovisioning.
+     */
+    @java.lang.Override
+    public boolean getDisablePodOverprovisioning() {
+      return disablePodOverprovisioning_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -1373,6 +1759,9 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(deployment_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, deployment_);
       }
+      if (disablePodOverprovisioning_ != false) {
+        output.writeBool(3, disablePodOverprovisioning_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -1387,6 +1776,10 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(deployment_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, deployment_);
+      }
+      if (disablePodOverprovisioning_ != false) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeBoolSize(3, disablePodOverprovisioning_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -1406,6 +1799,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
 
       if (!getService().equals(other.getService())) return false;
       if (!getDeployment().equals(other.getDeployment())) return false;
+      if (getDisablePodOverprovisioning() != other.getDisablePodOverprovisioning()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -1421,6 +1815,9 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
       hash = (53 * hash) + getService().hashCode();
       hash = (37 * hash) + DEPLOYMENT_FIELD_NUMBER;
       hash = (53 * hash) + getDeployment().hashCode();
+      hash = (37 * hash) + DISABLE_POD_OVERPROVISIONING_FIELD_NUMBER;
+      hash =
+          (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDisablePodOverprovisioning());
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1565,6 +1962,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
         bitField0_ = 0;
         service_ = "";
         deployment_ = "";
+        disablePodOverprovisioning_ = false;
         return this;
       }
 
@@ -1608,6 +2006,9 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
         }
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.deployment_ = deployment_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.disablePodOverprovisioning_ = disablePodOverprovisioning_;
         }
       }
 
@@ -1671,6 +2072,9 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
           bitField0_ |= 0x00000002;
           onChanged();
         }
+        if (other.getDisablePodOverprovisioning() != false) {
+          setDisablePodOverprovisioning(other.getDisablePodOverprovisioning());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -1709,6 +2113,12 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
                   bitField0_ |= 0x00000002;
                   break;
                 } // case 18
+              case 24:
+                {
+                  disablePodOverprovisioning_ = input.readBool();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 24
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1945,6 +2355,71 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
         return this;
       }
 
+      private boolean disablePodOverprovisioning_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether to disable Pod overprovisioning. If Pod
+       * overprovisioning is disabled then Cloud Deploy will limit the number of
+       * total Pods used for the deployment strategy to the number of Pods the
+       * Deployment has on the cluster.
+       * </pre>
+       *
+       * <code>bool disable_pod_overprovisioning = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The disablePodOverprovisioning.
+       */
+      @java.lang.Override
+      public boolean getDisablePodOverprovisioning() {
+        return disablePodOverprovisioning_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether to disable Pod overprovisioning. If Pod
+       * overprovisioning is disabled then Cloud Deploy will limit the number of
+       * total Pods used for the deployment strategy to the number of Pods the
+       * Deployment has on the cluster.
+       * </pre>
+       *
+       * <code>bool disable_pod_overprovisioning = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The disablePodOverprovisioning to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDisablePodOverprovisioning(boolean value) {
+
+        disablePodOverprovisioning_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether to disable Pod overprovisioning. If Pod
+       * overprovisioning is disabled then Cloud Deploy will limit the number of
+       * total Pods used for the deployment strategy to the number of Pods the
+       * Deployment has on the cluster.
+       * </pre>
+       *
+       * <code>bool disable_pod_overprovisioning = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearDisablePodOverprovisioning() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        disablePodOverprovisioning_ = false;
+        onChanged();
+        return this;
+      }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -2013,6 +2488,8 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
   }
 
   private int serviceDefinitionCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object serviceDefinition_;
 
   public enum ServiceDefinitionCase

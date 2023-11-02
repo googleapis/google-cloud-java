@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ package com.google.cloud.securitycenter.settings.v1beta1;
  * must be defined for a given Security Center component under a specified
  * billing tier. Organizations can configure the list of detectors based on
  * their subscribed billing tier.
+ *
  * Defines a detector, its billing tier and any applicable labels.
  * </pre>
  *
@@ -47,18 +48,13 @@ public final class Detector extends com.google.protobuf.GeneratedMessageV3
     detector_ = "";
     component_ = "";
     billingTier_ = 0;
-    detectorLabels_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    detectorLabels_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Detector();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -226,7 +222,8 @@ public final class Detector extends com.google.protobuf.GeneratedMessageV3
   public static final int DETECTOR_LABELS_FIELD_NUMBER = 4;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList detectorLabels_;
+  private com.google.protobuf.LazyStringArrayList detectorLabels_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -506,6 +503,7 @@ public final class Detector extends com.google.protobuf.GeneratedMessageV3
    * must be defined for a given Security Center component under a specified
    * billing tier. Organizations can configure the list of detectors based on
    * their subscribed billing tier.
+   *
    * Defines a detector, its billing tier and any applicable labels.
    * </pre>
    *
@@ -544,8 +542,7 @@ public final class Detector extends com.google.protobuf.GeneratedMessageV3
       detector_ = "";
       component_ = "";
       billingTier_ = 0;
-      detectorLabels_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      detectorLabels_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -573,21 +570,11 @@ public final class Detector extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.securitycenter.settings.v1beta1.Detector buildPartial() {
       com.google.cloud.securitycenter.settings.v1beta1.Detector result =
           new com.google.cloud.securitycenter.settings.v1beta1.Detector(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(
-        com.google.cloud.securitycenter.settings.v1beta1.Detector result) {
-      if (((bitField0_ & 0x00000008) != 0)) {
-        detectorLabels_ = detectorLabels_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000008);
-      }
-      result.detectorLabels_ = detectorLabels_;
     }
 
     private void buildPartial0(com.google.cloud.securitycenter.settings.v1beta1.Detector result) {
@@ -600,6 +587,10 @@ public final class Detector extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.billingTier_ = billingTier_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        detectorLabels_.makeImmutable();
+        result.detectorLabels_ = detectorLabels_;
       }
     }
 
@@ -665,7 +656,7 @@ public final class Detector extends com.google.protobuf.GeneratedMessageV3
       if (!other.detectorLabels_.isEmpty()) {
         if (detectorLabels_.isEmpty()) {
           detectorLabels_ = other.detectorLabels_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ |= 0x00000008;
         } else {
           ensureDetectorLabelsIsMutable();
           detectorLabels_.addAll(other.detectorLabels_);
@@ -1067,14 +1058,14 @@ public final class Detector extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList detectorLabels_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList detectorLabels_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureDetectorLabelsIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!detectorLabels_.isModifiable()) {
         detectorLabels_ = new com.google.protobuf.LazyStringArrayList(detectorLabels_);
-        bitField0_ |= 0x00000008;
       }
+      bitField0_ |= 0x00000008;
     }
     /**
      *
@@ -1092,7 +1083,8 @@ public final class Detector extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the detectorLabels.
      */
     public com.google.protobuf.ProtocolStringList getDetectorLabelsList() {
-      return detectorLabels_.getUnmodifiableView();
+      detectorLabels_.makeImmutable();
+      return detectorLabels_;
     }
     /**
      *
@@ -1173,6 +1165,7 @@ public final class Detector extends com.google.protobuf.GeneratedMessageV3
       }
       ensureDetectorLabelsIsMutable();
       detectorLabels_.set(index, value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1198,6 +1191,7 @@ public final class Detector extends com.google.protobuf.GeneratedMessageV3
       }
       ensureDetectorLabelsIsMutable();
       detectorLabels_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1220,6 +1214,7 @@ public final class Detector extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllDetectorLabels(java.lang.Iterable<java.lang.String> values) {
       ensureDetectorLabelsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, detectorLabels_);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1239,8 +1234,9 @@ public final class Detector extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDetectorLabels() {
-      detectorLabels_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      detectorLabels_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000008);
+      ;
       onChanged();
       return this;
     }
@@ -1267,6 +1263,7 @@ public final class Detector extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureDetectorLabelsIsMutable();
       detectorLabels_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

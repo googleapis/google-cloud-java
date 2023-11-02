@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -169,5 +169,5 @@ public interface MaintenanceWindowOrBuilder
    */
   com.google.container.v1beta1.TimeWindow getMaintenanceExclusionsOrThrow(java.lang.String key);
 
-  public com.google.container.v1beta1.MaintenanceWindow.PolicyCase getPolicyCase();
+  com.google.container.v1beta1.MaintenanceWindow.PolicyCase getPolicyCase();
 }

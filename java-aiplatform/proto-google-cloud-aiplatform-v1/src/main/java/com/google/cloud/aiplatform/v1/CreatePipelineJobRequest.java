@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class CreatePipelineJobRequest extends com.google.protobuf.Generate
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new CreatePipelineJobRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -193,8 +188,9 @@ public final class CreatePipelineJobRequest extends com.google.protobuf.Generate
    * The ID to use for the PipelineJob, which will become the final component of
    * the PipelineJob name. If not provided, an ID will be automatically
    * generated.
+   *
    * This value should be less than 128 characters, and valid characters
-   * are /[a-z][0-9]-/.
+   * are `/[a-z][0-9]-/`.
    * </pre>
    *
    * <code>string pipeline_job_id = 3;</code>
@@ -220,8 +216,9 @@ public final class CreatePipelineJobRequest extends com.google.protobuf.Generate
    * The ID to use for the PipelineJob, which will become the final component of
    * the PipelineJob name. If not provided, an ID will be automatically
    * generated.
+   *
    * This value should be less than 128 characters, and valid characters
-   * are /[a-z][0-9]-/.
+   * are `/[a-z][0-9]-/`.
    * </pre>
    *
    * <code>string pipeline_job_id = 3;</code>
@@ -972,8 +969,9 @@ public final class CreatePipelineJobRequest extends com.google.protobuf.Generate
      * The ID to use for the PipelineJob, which will become the final component of
      * the PipelineJob name. If not provided, an ID will be automatically
      * generated.
+     *
      * This value should be less than 128 characters, and valid characters
-     * are /[a-z][0-9]-/.
+     * are `/[a-z][0-9]-/`.
      * </pre>
      *
      * <code>string pipeline_job_id = 3;</code>
@@ -998,8 +996,9 @@ public final class CreatePipelineJobRequest extends com.google.protobuf.Generate
      * The ID to use for the PipelineJob, which will become the final component of
      * the PipelineJob name. If not provided, an ID will be automatically
      * generated.
+     *
      * This value should be less than 128 characters, and valid characters
-     * are /[a-z][0-9]-/.
+     * are `/[a-z][0-9]-/`.
      * </pre>
      *
      * <code>string pipeline_job_id = 3;</code>
@@ -1024,8 +1023,9 @@ public final class CreatePipelineJobRequest extends com.google.protobuf.Generate
      * The ID to use for the PipelineJob, which will become the final component of
      * the PipelineJob name. If not provided, an ID will be automatically
      * generated.
+     *
      * This value should be less than 128 characters, and valid characters
-     * are /[a-z][0-9]-/.
+     * are `/[a-z][0-9]-/`.
      * </pre>
      *
      * <code>string pipeline_job_id = 3;</code>
@@ -1049,8 +1049,9 @@ public final class CreatePipelineJobRequest extends com.google.protobuf.Generate
      * The ID to use for the PipelineJob, which will become the final component of
      * the PipelineJob name. If not provided, an ID will be automatically
      * generated.
+     *
      * This value should be less than 128 characters, and valid characters
-     * are /[a-z][0-9]-/.
+     * are `/[a-z][0-9]-/`.
      * </pre>
      *
      * <code>string pipeline_job_id = 3;</code>
@@ -1070,8 +1071,9 @@ public final class CreatePipelineJobRequest extends com.google.protobuf.Generate
      * The ID to use for the PipelineJob, which will become the final component of
      * the PipelineJob name. If not provided, an ID will be automatically
      * generated.
+     *
      * This value should be less than 128 characters, and valid characters
-     * are /[a-z][0-9]-/.
+     * are `/[a-z][0-9]-/`.
      * </pre>
      *
      * <code>string pipeline_job_id = 3;</code>

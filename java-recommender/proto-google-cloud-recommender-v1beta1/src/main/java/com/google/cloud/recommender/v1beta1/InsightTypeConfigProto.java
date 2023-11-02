@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -53,29 +53,29 @@ public final class InsightTypeConfigProto {
           + "mender.v1beta1\032\037google/api/field_behavio"
           + "r.proto\032\031google/api/resource.proto\032\034goog"
           + "le/protobuf/struct.proto\032\037google/protobu"
-          + "f/timestamp.proto\"\340\004\n\021InsightTypeConfig\022"
+          + "f/timestamp.proto\"\337\004\n\021InsightTypeConfig\022"
           + "\014\n\004name\030\001 \001(\t\022e\n\036insight_type_generation"
           + "_config\030\002 \001(\0132=.google.cloud.recommender"
           + ".v1beta1.InsightTypeGenerationConfig\022\014\n\004"
           + "etag\030\003 \001(\t\022/\n\013update_time\030\004 \001(\0132\032.google"
-          + ".protobuf.Timestamp\022\033\n\013revision_id\030\005 \001(\t"
-          + "B\006\340A\005\340A\003\022Y\n\013annotations\030\006 \003(\0132D.google.c"
-          + "loud.recommender.v1beta1.InsightTypeConf"
-          + "ig.AnnotationsEntry\022\024\n\014display_name\030\007 \001("
-          + "\t\0322\n\020AnnotationsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005va"
-          + "lue\030\002 \001(\t:\0028\001:\324\001\352A\320\001\n,recommender.google"
-          + "apis.com/InsightTypeConfig\022Jprojects/{pr"
-          + "oject}/locations/{location}/insightTypes"
-          + "/{insight_type}/config\022Torganizations/{o"
-          + "rganization}/locations/{location}/insigh"
-          + "tTypes/{insight_type}/config\"F\n\033InsightT"
-          + "ypeGenerationConfig\022\'\n\006params\030\001 \001(\0132\027.go"
-          + "ogle.protobuf.StructB\262\001\n$com.google.clou"
-          + "d.recommender.v1beta1B\026InsightTypeConfig"
-          + "ProtoP\001ZFcloud.google.com/go/recommender"
-          + "/apiv1beta1/recommenderpb;recommenderpb\242"
-          + "\002\004CREC\252\002 Google.Cloud.Recommender.V1Beta"
-          + "1b\006proto3"
+          + ".protobuf.Timestamp\022\032\n\013revision_id\030\005 \001(\t"
+          + "B\005\342A\002\005\003\022Y\n\013annotations\030\006 \003(\0132D.google.cl"
+          + "oud.recommender.v1beta1.InsightTypeConfi"
+          + "g.AnnotationsEntry\022\024\n\014display_name\030\007 \001(\t"
+          + "\0322\n\020AnnotationsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005val"
+          + "ue\030\002 \001(\t:\0028\001:\324\001\352A\320\001\n,recommender.googlea"
+          + "pis.com/InsightTypeConfig\022Jprojects/{pro"
+          + "ject}/locations/{location}/insightTypes/"
+          + "{insight_type}/config\022Torganizations/{or"
+          + "ganization}/locations/{location}/insight"
+          + "Types/{insight_type}/config\"F\n\033InsightTy"
+          + "peGenerationConfig\022\'\n\006params\030\001 \001(\0132\027.goo"
+          + "gle.protobuf.StructB\262\001\n$com.google.cloud"
+          + ".recommender.v1beta1B\026InsightTypeConfigP"
+          + "rotoP\001ZFcloud.google.com/go/recommender/"
+          + "apiv1beta1/recommenderpb;recommenderpb\242\002"
+          + "\004CREC\252\002 Google.Cloud.Recommender.V1Beta1"
+          + "b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

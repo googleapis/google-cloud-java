@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -224,8 +224,8 @@ public interface LineItemChangeOrBuilder
    *
    *
    * <pre>
-   * Output only. Predefined enum types for why this line item change is in current state.
-   * For example, a line item change's state could be
+   * Output only. Predefined enum types for why this line item change is in
+   * current state. For example, a line item change's state could be
    * `LINE_ITEM_CHANGE_STATE_COMPLETED` because of end-of-term expiration,
    * immediate cancellation initiated by the user, or system-initiated
    * cancellation.
@@ -242,8 +242,8 @@ public interface LineItemChangeOrBuilder
    *
    *
    * <pre>
-   * Output only. Predefined enum types for why this line item change is in current state.
-   * For example, a line item change's state could be
+   * Output only. Predefined enum types for why this line item change is in
+   * current state. For example, a line item change's state could be
    * `LINE_ITEM_CHANGE_STATE_COMPLETED` because of end-of-term expiration,
    * immediate cancellation initiated by the user, or system-initiated
    * cancellation.

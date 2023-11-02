@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -74,4 +74,31 @@ public interface RowOrBuilder
    * <code>repeated .google.cloud.channel.v1.ReportValue values = 1;</code>
    */
   com.google.cloud.channel.v1.ReportValueOrBuilder getValuesOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * The key for the partition this row belongs to. This field is empty
+   * if the report is not partitioned.
+   * </pre>
+   *
+   * <code>string partition_key = 2;</code>
+   *
+   * @return The partitionKey.
+   */
+  java.lang.String getPartitionKey();
+  /**
+   *
+   *
+   * <pre>
+   * The key for the partition this row belongs to. This field is empty
+   * if the report is not partitioned.
+   * </pre>
+   *
+   * <code>string partition_key = 2;</code>
+   *
+   * @return The bytes for partitionKey.
+   */
+  com.google.protobuf.ByteString getPartitionKeyBytes();
 }

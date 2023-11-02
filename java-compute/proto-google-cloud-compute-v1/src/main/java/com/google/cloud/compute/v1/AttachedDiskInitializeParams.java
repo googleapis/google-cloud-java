@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,9 +42,10 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
     description_ = "";
     diskName_ = "";
     diskType_ = "";
-    licenses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    licenses_ = com.google.protobuf.LazyStringArrayList.emptyList();
     onUpdateAction_ = "";
-    resourcePolicies_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    replicaZones_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    resourcePolicies_ = com.google.protobuf.LazyStringArrayList.emptyList();
     sourceImage_ = "";
     sourceSnapshot_ = "";
   }
@@ -53,11 +54,6 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new AttachedDiskInitializeParams();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -856,7 +852,8 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
   public static final int LICENSES_FIELD_NUMBER = 337642578;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList licenses_;
+  private com.google.protobuf.LazyStringArrayList licenses_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -1018,6 +1015,103 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
     return provisionedIops_;
   }
 
+  public static final int PROVISIONED_THROUGHPUT_FIELD_NUMBER = 526524181;
+  private long provisionedThroughput_ = 0L;
+  /**
+   *
+   *
+   * <pre>
+   * Indicates how much throughput to provision for the disk. This sets the number of throughput mb per second that the disk can handle. Values must be between 1 and 7,124.
+   * </pre>
+   *
+   * <code>optional int64 provisioned_throughput = 526524181;</code>
+   *
+   * @return Whether the provisionedThroughput field is set.
+   */
+  @java.lang.Override
+  public boolean hasProvisionedThroughput() {
+    return ((bitField0_ & 0x00000080) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Indicates how much throughput to provision for the disk. This sets the number of throughput mb per second that the disk can handle. Values must be between 1 and 7,124.
+   * </pre>
+   *
+   * <code>optional int64 provisioned_throughput = 526524181;</code>
+   *
+   * @return The provisionedThroughput.
+   */
+  @java.lang.Override
+  public long getProvisionedThroughput() {
+    return provisionedThroughput_;
+  }
+
+  public static final int REPLICA_ZONES_FIELD_NUMBER = 48438272;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList replicaZones_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   *
+   *
+   * <pre>
+   * Required for each regional disk associated with the instance. Specify the URLs of the zones where the disk should be replicated to. You must provide exactly two replica zones, and one zone must be the same as the instance zone. You can't use this option with boot disks.
+   * </pre>
+   *
+   * <code>repeated string replica_zones = 48438272;</code>
+   *
+   * @return A list containing the replicaZones.
+   */
+  public com.google.protobuf.ProtocolStringList getReplicaZonesList() {
+    return replicaZones_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Required for each regional disk associated with the instance. Specify the URLs of the zones where the disk should be replicated to. You must provide exactly two replica zones, and one zone must be the same as the instance zone. You can't use this option with boot disks.
+   * </pre>
+   *
+   * <code>repeated string replica_zones = 48438272;</code>
+   *
+   * @return The count of replicaZones.
+   */
+  public int getReplicaZonesCount() {
+    return replicaZones_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Required for each regional disk associated with the instance. Specify the URLs of the zones where the disk should be replicated to. You must provide exactly two replica zones, and one zone must be the same as the instance zone. You can't use this option with boot disks.
+   * </pre>
+   *
+   * <code>repeated string replica_zones = 48438272;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The replicaZones at the given index.
+   */
+  public java.lang.String getReplicaZones(int index) {
+    return replicaZones_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Required for each regional disk associated with the instance. Specify the URLs of the zones where the disk should be replicated to. You must provide exactly two replica zones, and one zone must be the same as the instance zone. You can't use this option with boot disks.
+   * </pre>
+   *
+   * <code>repeated string replica_zones = 48438272;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the replicaZones at the given index.
+   */
+  public com.google.protobuf.ByteString getReplicaZonesBytes(int index) {
+    return replicaZones_.getByteString(index);
+  }
+
   public static final int RESOURCE_MANAGER_TAGS_FIELD_NUMBER = 377671164;
 
   private static final class ResourceManagerTagsDefaultEntryHolder {
@@ -1127,7 +1221,8 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
   public static final int RESOURCE_POLICIES_FIELD_NUMBER = 22220385;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList resourcePolicies_;
+  private com.google.protobuf.LazyStringArrayList resourcePolicies_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -1204,7 +1299,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
    */
   @java.lang.Override
   public boolean hasSourceImage() {
-    return ((bitField0_ & 0x00000080) != 0);
+    return ((bitField0_ & 0x00000100) != 0);
   }
   /**
    *
@@ -1270,7 +1365,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
    */
   @java.lang.Override
   public boolean hasSourceImageEncryptionKey() {
-    return ((bitField0_ & 0x00000100) != 0);
+    return ((bitField0_ & 0x00000200) != 0);
   }
   /**
    *
@@ -1327,7 +1422,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
    */
   @java.lang.Override
   public boolean hasSourceSnapshot() {
-    return ((bitField0_ & 0x00000200) != 0);
+    return ((bitField0_ & 0x00000400) != 0);
   }
   /**
    *
@@ -1393,7 +1488,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
    */
   @java.lang.Override
   public boolean hasSourceSnapshotEncryptionKey() {
-    return ((bitField0_ & 0x00000400) != 0);
+    return ((bitField0_ & 0x00000800) != 0);
   }
   /**
    *
@@ -1451,7 +1546,10 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 22220385, resourcePolicies_.getRaw(i));
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    for (int i = 0; i < replicaZones_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 48438272, replicaZones_.getRaw(i));
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 50443319, sourceImage_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
@@ -1460,7 +1558,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
     if (((bitField0_ & 0x00000010) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 93009052, diskType_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 126061928, sourceSnapshot_);
     }
     if (((bitField0_ & 0x00000040) != 0)) {
@@ -1472,7 +1570,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 302803283, architecture_);
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       output.writeMessage(303679322, getSourceSnapshotEncryptionKey());
     }
     if (((bitField0_ & 0x00000008) != 0)) {
@@ -1486,7 +1584,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
         internalGetResourceManagerTags(),
         ResourceManagerTagsDefaultEntryHolder.defaultEntry,
         377671164);
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       output.writeMessage(381503659, getSourceImageEncryptionKey());
     }
     if (((bitField0_ & 0x00000002) != 0)) {
@@ -1494,6 +1592,9 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 500195327);
+    if (((bitField0_ & 0x00000080) != 0)) {
+      output.writeInt64(526524181, provisionedThroughput_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1511,7 +1612,15 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
       size += dataSize;
       size += 4 * getResourcePoliciesList().size();
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    {
+      int dataSize = 0;
+      for (int i = 0; i < replicaZones_.size(); i++) {
+        dataSize += computeStringSizeNoTag(replicaZones_.getRaw(i));
+      }
+      size += dataSize;
+      size += 5 * getReplicaZonesList().size();
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(50443319, sourceImage_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
@@ -1520,7 +1629,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
     if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(93009052, diskType_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(126061928, sourceSnapshot_);
     }
     if (((bitField0_ & 0x00000040) != 0)) {
@@ -1532,7 +1641,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(302803283, architecture_);
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               303679322, getSourceSnapshotEncryptionKey());
@@ -1560,7 +1669,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               377671164, resourceManagerTags__);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               381503659, getSourceImageEncryptionKey());
@@ -1577,6 +1686,10 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
               .setValue(entry.getValue())
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(500195327, labels__);
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeInt64Size(526524181, provisionedThroughput_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1624,6 +1737,11 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
     if (hasProvisionedIops()) {
       if (getProvisionedIops() != other.getProvisionedIops()) return false;
     }
+    if (hasProvisionedThroughput() != other.hasProvisionedThroughput()) return false;
+    if (hasProvisionedThroughput()) {
+      if (getProvisionedThroughput() != other.getProvisionedThroughput()) return false;
+    }
+    if (!getReplicaZonesList().equals(other.getReplicaZonesList())) return false;
     if (!internalGetResourceManagerTags().equals(other.internalGetResourceManagerTags()))
       return false;
     if (!getResourcePoliciesList().equals(other.getResourcePoliciesList())) return false;
@@ -1690,6 +1808,14 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
     if (hasProvisionedIops()) {
       hash = (37 * hash) + PROVISIONED_IOPS_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getProvisionedIops());
+    }
+    if (hasProvisionedThroughput()) {
+      hash = (37 * hash) + PROVISIONED_THROUGHPUT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getProvisionedThroughput());
+    }
+    if (getReplicaZonesCount() > 0) {
+      hash = (37 * hash) + REPLICA_ZONES_FIELD_NUMBER;
+      hash = (53 * hash) + getReplicaZonesList().hashCode();
     }
     if (!internalGetResourceManagerTags().getMap().isEmpty()) {
       hash = (37 * hash) + RESOURCE_MANAGER_TAGS_FIELD_NUMBER;
@@ -1895,13 +2021,13 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
       diskSizeGb_ = 0L;
       diskType_ = "";
       internalGetMutableLabels().clear();
-      licenses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000040);
+      licenses_ = com.google.protobuf.LazyStringArrayList.emptyList();
       onUpdateAction_ = "";
       provisionedIops_ = 0L;
+      provisionedThroughput_ = 0L;
+      replicaZones_ = com.google.protobuf.LazyStringArrayList.emptyList();
       internalGetMutableResourceManagerTags().clear();
-      resourcePolicies_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000400);
+      resourcePolicies_ = com.google.protobuf.LazyStringArrayList.emptyList();
       sourceImage_ = "";
       sourceImageEncryptionKey_ = null;
       if (sourceImageEncryptionKeyBuilder_ != null) {
@@ -1941,26 +2067,11 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
     public com.google.cloud.compute.v1.AttachedDiskInitializeParams buildPartial() {
       com.google.cloud.compute.v1.AttachedDiskInitializeParams result =
           new com.google.cloud.compute.v1.AttachedDiskInitializeParams(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(
-        com.google.cloud.compute.v1.AttachedDiskInitializeParams result) {
-      if (((bitField0_ & 0x00000040) != 0)) {
-        licenses_ = licenses_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000040);
-      }
-      result.licenses_ = licenses_;
-      if (((bitField0_ & 0x00000400) != 0)) {
-        resourcePolicies_ = resourcePolicies_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000400);
-      }
-      result.resourcePolicies_ = resourcePolicies_;
     }
 
     private void buildPartial0(com.google.cloud.compute.v1.AttachedDiskInitializeParams result) {
@@ -1990,6 +2101,10 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
         result.labels_ = internalGetLabels();
         result.labels_.makeImmutable();
       }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        licenses_.makeImmutable();
+        result.licenses_ = licenses_;
+      }
       if (((from_bitField0_ & 0x00000080) != 0)) {
         result.onUpdateAction_ = onUpdateAction_;
         to_bitField0_ |= 0x00000020;
@@ -1999,30 +2114,42 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
         to_bitField0_ |= 0x00000040;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.provisionedThroughput_ = provisionedThroughput_;
+        to_bitField0_ |= 0x00000080;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        replicaZones_.makeImmutable();
+        result.replicaZones_ = replicaZones_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.resourceManagerTags_ = internalGetResourceManagerTags();
         result.resourceManagerTags_.makeImmutable();
       }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
-        result.sourceImage_ = sourceImage_;
-        to_bitField0_ |= 0x00000080;
-      }
       if (((from_bitField0_ & 0x00001000) != 0)) {
+        resourcePolicies_.makeImmutable();
+        result.resourcePolicies_ = resourcePolicies_;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.sourceImage_ = sourceImage_;
+        to_bitField0_ |= 0x00000100;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         result.sourceImageEncryptionKey_ =
             sourceImageEncryptionKeyBuilder_ == null
                 ? sourceImageEncryptionKey_
                 : sourceImageEncryptionKeyBuilder_.build();
-        to_bitField0_ |= 0x00000100;
-      }
-      if (((from_bitField0_ & 0x00002000) != 0)) {
-        result.sourceSnapshot_ = sourceSnapshot_;
         to_bitField0_ |= 0x00000200;
       }
-      if (((from_bitField0_ & 0x00004000) != 0)) {
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.sourceSnapshot_ = sourceSnapshot_;
+        to_bitField0_ |= 0x00000400;
+      }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
         result.sourceSnapshotEncryptionKey_ =
             sourceSnapshotEncryptionKeyBuilder_ == null
                 ? sourceSnapshotEncryptionKey_
                 : sourceSnapshotEncryptionKeyBuilder_.build();
-        to_bitField0_ |= 0x00000400;
+        to_bitField0_ |= 0x00000800;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2101,7 +2228,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
       if (!other.licenses_.isEmpty()) {
         if (licenses_.isEmpty()) {
           licenses_ = other.licenses_;
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ |= 0x00000040;
         } else {
           ensureLicensesIsMutable();
           licenses_.addAll(other.licenses_);
@@ -2116,12 +2243,25 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
       if (other.hasProvisionedIops()) {
         setProvisionedIops(other.getProvisionedIops());
       }
+      if (other.hasProvisionedThroughput()) {
+        setProvisionedThroughput(other.getProvisionedThroughput());
+      }
+      if (!other.replicaZones_.isEmpty()) {
+        if (replicaZones_.isEmpty()) {
+          replicaZones_ = other.replicaZones_;
+          bitField0_ |= 0x00000400;
+        } else {
+          ensureReplicaZonesIsMutable();
+          replicaZones_.addAll(other.replicaZones_);
+        }
+        onChanged();
+      }
       internalGetMutableResourceManagerTags().mergeFrom(other.internalGetResourceManagerTags());
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000800;
       if (!other.resourcePolicies_.isEmpty()) {
         if (resourcePolicies_.isEmpty()) {
           resourcePolicies_ = other.resourcePolicies_;
-          bitField0_ = (bitField0_ & ~0x00000400);
+          bitField0_ |= 0x00001000;
         } else {
           ensureResourcePoliciesIsMutable();
           resourcePolicies_.addAll(other.resourcePolicies_);
@@ -2130,7 +2270,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
       }
       if (other.hasSourceImage()) {
         sourceImage_ = other.sourceImage_;
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       if (other.hasSourceImageEncryptionKey()) {
@@ -2138,7 +2278,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
       }
       if (other.hasSourceSnapshot()) {
         sourceSnapshot_ = other.sourceSnapshot_;
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00008000;
         onChanged();
       }
       if (other.hasSourceSnapshotEncryptionKey()) {
@@ -2177,10 +2317,17 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
                 resourcePolicies_.add(s);
                 break;
               } // case 177763082
+            case 387506178:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureReplicaZonesIsMutable();
+                replicaZones_.add(s);
+                break;
+              } // case 387506178
             case 403546554:
               {
                 sourceImage_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 403546554
             case 742457194:
@@ -2198,7 +2345,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
             case 1008495426:
               {
                 sourceSnapshot_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 1008495426
             case 1494152864:
@@ -2223,7 +2370,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
               {
                 input.readMessage(
                     getSourceSnapshotEncryptionKeyFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case -1865532718
             case -1764857416:
@@ -2249,14 +2396,14 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
                 internalGetMutableResourceManagerTags()
                     .getMutableMap()
                     .put(resourceManagerTags__.getKey(), resourceManagerTags__.getValue());
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000800;
                 break;
               } // case -1273597982
             case -1242938022:
               {
                 input.readMessage(
                     getSourceImageEncryptionKeyFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case -1242938022
             case -911466526:
@@ -2277,6 +2424,12 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
                 bitField0_ |= 0x00000020;
                 break;
               } // case -293404678
+            case -82773848:
+              {
+                provisionedThroughput_ = input.readInt64();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case -82773848
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3013,14 +3166,14 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
       return this;
     }
 
-    private com.google.protobuf.LazyStringList licenses_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList licenses_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureLicensesIsMutable() {
-      if (!((bitField0_ & 0x00000040) != 0)) {
+      if (!licenses_.isModifiable()) {
         licenses_ = new com.google.protobuf.LazyStringArrayList(licenses_);
-        bitField0_ |= 0x00000040;
       }
+      bitField0_ |= 0x00000040;
     }
     /**
      *
@@ -3034,7 +3187,8 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * @return A list containing the licenses.
      */
     public com.google.protobuf.ProtocolStringList getLicensesList() {
-      return licenses_.getUnmodifiableView();
+      licenses_.makeImmutable();
+      return licenses_;
     }
     /**
      *
@@ -3099,6 +3253,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
       }
       ensureLicensesIsMutable();
       licenses_.set(index, value);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3120,6 +3275,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
       }
       ensureLicensesIsMutable();
       licenses_.add(value);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3138,6 +3294,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
     public Builder addAllLicenses(java.lang.Iterable<java.lang.String> values) {
       ensureLicensesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, licenses_);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3153,8 +3310,9 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearLicenses() {
-      licenses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      licenses_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000040);
+      ;
       onChanged();
       return this;
     }
@@ -3177,6 +3335,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
       checkByteStringIsUtf8(value);
       ensureLicensesIsMutable();
       licenses_.add(value);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3375,6 +3534,248 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
       return this;
     }
 
+    private long provisionedThroughput_;
+    /**
+     *
+     *
+     * <pre>
+     * Indicates how much throughput to provision for the disk. This sets the number of throughput mb per second that the disk can handle. Values must be between 1 and 7,124.
+     * </pre>
+     *
+     * <code>optional int64 provisioned_throughput = 526524181;</code>
+     *
+     * @return Whether the provisionedThroughput field is set.
+     */
+    @java.lang.Override
+    public boolean hasProvisionedThroughput() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates how much throughput to provision for the disk. This sets the number of throughput mb per second that the disk can handle. Values must be between 1 and 7,124.
+     * </pre>
+     *
+     * <code>optional int64 provisioned_throughput = 526524181;</code>
+     *
+     * @return The provisionedThroughput.
+     */
+    @java.lang.Override
+    public long getProvisionedThroughput() {
+      return provisionedThroughput_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates how much throughput to provision for the disk. This sets the number of throughput mb per second that the disk can handle. Values must be between 1 and 7,124.
+     * </pre>
+     *
+     * <code>optional int64 provisioned_throughput = 526524181;</code>
+     *
+     * @param value The provisionedThroughput to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProvisionedThroughput(long value) {
+
+      provisionedThroughput_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates how much throughput to provision for the disk. This sets the number of throughput mb per second that the disk can handle. Values must be between 1 and 7,124.
+     * </pre>
+     *
+     * <code>optional int64 provisioned_throughput = 526524181;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearProvisionedThroughput() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      provisionedThroughput_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList replicaZones_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureReplicaZonesIsMutable() {
+      if (!replicaZones_.isModifiable()) {
+        replicaZones_ = new com.google.protobuf.LazyStringArrayList(replicaZones_);
+      }
+      bitField0_ |= 0x00000400;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required for each regional disk associated with the instance. Specify the URLs of the zones where the disk should be replicated to. You must provide exactly two replica zones, and one zone must be the same as the instance zone. You can't use this option with boot disks.
+     * </pre>
+     *
+     * <code>repeated string replica_zones = 48438272;</code>
+     *
+     * @return A list containing the replicaZones.
+     */
+    public com.google.protobuf.ProtocolStringList getReplicaZonesList() {
+      replicaZones_.makeImmutable();
+      return replicaZones_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required for each regional disk associated with the instance. Specify the URLs of the zones where the disk should be replicated to. You must provide exactly two replica zones, and one zone must be the same as the instance zone. You can't use this option with boot disks.
+     * </pre>
+     *
+     * <code>repeated string replica_zones = 48438272;</code>
+     *
+     * @return The count of replicaZones.
+     */
+    public int getReplicaZonesCount() {
+      return replicaZones_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required for each regional disk associated with the instance. Specify the URLs of the zones where the disk should be replicated to. You must provide exactly two replica zones, and one zone must be the same as the instance zone. You can't use this option with boot disks.
+     * </pre>
+     *
+     * <code>repeated string replica_zones = 48438272;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The replicaZones at the given index.
+     */
+    public java.lang.String getReplicaZones(int index) {
+      return replicaZones_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required for each regional disk associated with the instance. Specify the URLs of the zones where the disk should be replicated to. You must provide exactly two replica zones, and one zone must be the same as the instance zone. You can't use this option with boot disks.
+     * </pre>
+     *
+     * <code>repeated string replica_zones = 48438272;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the replicaZones at the given index.
+     */
+    public com.google.protobuf.ByteString getReplicaZonesBytes(int index) {
+      return replicaZones_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required for each regional disk associated with the instance. Specify the URLs of the zones where the disk should be replicated to. You must provide exactly two replica zones, and one zone must be the same as the instance zone. You can't use this option with boot disks.
+     * </pre>
+     *
+     * <code>repeated string replica_zones = 48438272;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The replicaZones to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReplicaZones(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureReplicaZonesIsMutable();
+      replicaZones_.set(index, value);
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required for each regional disk associated with the instance. Specify the URLs of the zones where the disk should be replicated to. You must provide exactly two replica zones, and one zone must be the same as the instance zone. You can't use this option with boot disks.
+     * </pre>
+     *
+     * <code>repeated string replica_zones = 48438272;</code>
+     *
+     * @param value The replicaZones to add.
+     * @return This builder for chaining.
+     */
+    public Builder addReplicaZones(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureReplicaZonesIsMutable();
+      replicaZones_.add(value);
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required for each regional disk associated with the instance. Specify the URLs of the zones where the disk should be replicated to. You must provide exactly two replica zones, and one zone must be the same as the instance zone. You can't use this option with boot disks.
+     * </pre>
+     *
+     * <code>repeated string replica_zones = 48438272;</code>
+     *
+     * @param values The replicaZones to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllReplicaZones(java.lang.Iterable<java.lang.String> values) {
+      ensureReplicaZonesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, replicaZones_);
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required for each regional disk associated with the instance. Specify the URLs of the zones where the disk should be replicated to. You must provide exactly two replica zones, and one zone must be the same as the instance zone. You can't use this option with boot disks.
+     * </pre>
+     *
+     * <code>repeated string replica_zones = 48438272;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearReplicaZones() {
+      replicaZones_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000400);
+      ;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required for each regional disk associated with the instance. Specify the URLs of the zones where the disk should be replicated to. You must provide exactly two replica zones, and one zone must be the same as the instance zone. You can't use this option with boot disks.
+     * </pre>
+     *
+     * <code>repeated string replica_zones = 48438272;</code>
+     *
+     * @param value The bytes of the replicaZones to add.
+     * @return This builder for chaining.
+     */
+    public Builder addReplicaZonesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureReplicaZonesIsMutable();
+      replicaZones_.add(value);
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
     private com.google.protobuf.MapField<java.lang.String, java.lang.String> resourceManagerTags_;
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
@@ -3396,7 +3797,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
       if (!resourceManagerTags_.isMutable()) {
         resourceManagerTags_ = resourceManagerTags_.copy();
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000800;
       onChanged();
       return resourceManagerTags_;
     }
@@ -3483,7 +3884,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
     }
 
     public Builder clearResourceManagerTags() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000800);
       internalGetMutableResourceManagerTags().getMutableMap().clear();
       return this;
     }
@@ -3506,7 +3907,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableResourceManagerTags() {
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000800;
       return internalGetMutableResourceManagerTags().getMutableMap();
     }
     /**
@@ -3526,7 +3927,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
         throw new NullPointerException("map value");
       }
       internalGetMutableResourceManagerTags().getMutableMap().put(key, value);
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000800;
       return this;
     }
     /**
@@ -3541,18 +3942,18 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
     public Builder putAllResourceManagerTags(
         java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableResourceManagerTags().getMutableMap().putAll(values);
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000800;
       return this;
     }
 
-    private com.google.protobuf.LazyStringList resourcePolicies_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList resourcePolicies_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureResourcePoliciesIsMutable() {
-      if (!((bitField0_ & 0x00000400) != 0)) {
+      if (!resourcePolicies_.isModifiable()) {
         resourcePolicies_ = new com.google.protobuf.LazyStringArrayList(resourcePolicies_);
-        bitField0_ |= 0x00000400;
       }
+      bitField0_ |= 0x00001000;
     }
     /**
      *
@@ -3566,7 +3967,8 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * @return A list containing the resourcePolicies.
      */
     public com.google.protobuf.ProtocolStringList getResourcePoliciesList() {
-      return resourcePolicies_.getUnmodifiableView();
+      resourcePolicies_.makeImmutable();
+      return resourcePolicies_;
     }
     /**
      *
@@ -3631,6 +4033,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
       }
       ensureResourcePoliciesIsMutable();
       resourcePolicies_.set(index, value);
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3652,6 +4055,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
       }
       ensureResourcePoliciesIsMutable();
       resourcePolicies_.add(value);
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3670,6 +4074,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
     public Builder addAllResourcePolicies(java.lang.Iterable<java.lang.String> values) {
       ensureResourcePoliciesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, resourcePolicies_);
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3685,8 +4090,9 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearResourcePolicies() {
-      resourcePolicies_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000400);
+      resourcePolicies_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00001000);
+      ;
       onChanged();
       return this;
     }
@@ -3709,6 +4115,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
       checkByteStringIsUtf8(value);
       ensureResourcePoliciesIsMutable();
       resourcePolicies_.add(value);
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3726,7 +4133,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * @return Whether the sourceImage field is set.
      */
     public boolean hasSourceImage() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
     /**
      *
@@ -3789,7 +4196,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       sourceImage_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -3806,7 +4213,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      */
     public Builder clearSourceImage() {
       sourceImage_ = getDefaultInstance().getSourceImage();
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00002000);
       onChanged();
       return this;
     }
@@ -3828,7 +4235,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
       }
       checkByteStringIsUtf8(value);
       sourceImage_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -3853,7 +4260,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * @return Whether the sourceImageEncryptionKey field is set.
      */
     public boolean hasSourceImageEncryptionKey() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
     /**
      *
@@ -3898,7 +4305,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
       } else {
         sourceImageEncryptionKeyBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -3920,7 +4327,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
       } else {
         sourceImageEncryptionKeyBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -3938,7 +4345,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
     public Builder mergeSourceImageEncryptionKey(
         com.google.cloud.compute.v1.CustomerEncryptionKey value) {
       if (sourceImageEncryptionKeyBuilder_ == null) {
-        if (((bitField0_ & 0x00001000) != 0)
+        if (((bitField0_ & 0x00004000) != 0)
             && sourceImageEncryptionKey_ != null
             && sourceImageEncryptionKey_
                 != com.google.cloud.compute.v1.CustomerEncryptionKey.getDefaultInstance()) {
@@ -3949,7 +4356,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
       } else {
         sourceImageEncryptionKeyBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -3965,7 +4372,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * </code>
      */
     public Builder clearSourceImageEncryptionKey() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       sourceImageEncryptionKey_ = null;
       if (sourceImageEncryptionKeyBuilder_ != null) {
         sourceImageEncryptionKeyBuilder_.dispose();
@@ -3987,7 +4394,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      */
     public com.google.cloud.compute.v1.CustomerEncryptionKey.Builder
         getSourceImageEncryptionKeyBuilder() {
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return getSourceImageEncryptionKeyFieldBuilder().getBuilder();
     }
@@ -4053,7 +4460,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * @return Whether the sourceSnapshot field is set.
      */
     public boolean hasSourceSnapshot() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00008000) != 0);
     }
     /**
      *
@@ -4116,7 +4523,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       sourceSnapshot_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4133,7 +4540,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      */
     public Builder clearSourceSnapshot() {
       sourceSnapshot_ = getDefaultInstance().getSourceSnapshot();
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       onChanged();
       return this;
     }
@@ -4155,7 +4562,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
       }
       checkByteStringIsUtf8(value);
       sourceSnapshot_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4180,7 +4587,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * @return Whether the sourceSnapshotEncryptionKey field is set.
      */
     public boolean hasSourceSnapshotEncryptionKey() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00010000) != 0);
     }
     /**
      *
@@ -4225,7 +4632,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
       } else {
         sourceSnapshotEncryptionKeyBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -4247,7 +4654,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
       } else {
         sourceSnapshotEncryptionKeyBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -4265,7 +4672,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
     public Builder mergeSourceSnapshotEncryptionKey(
         com.google.cloud.compute.v1.CustomerEncryptionKey value) {
       if (sourceSnapshotEncryptionKeyBuilder_ == null) {
-        if (((bitField0_ & 0x00004000) != 0)
+        if (((bitField0_ & 0x00010000) != 0)
             && sourceSnapshotEncryptionKey_ != null
             && sourceSnapshotEncryptionKey_
                 != com.google.cloud.compute.v1.CustomerEncryptionKey.getDefaultInstance()) {
@@ -4276,7 +4683,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
       } else {
         sourceSnapshotEncryptionKeyBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -4292,7 +4699,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      * </code>
      */
     public Builder clearSourceSnapshotEncryptionKey() {
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       sourceSnapshotEncryptionKey_ = null;
       if (sourceSnapshotEncryptionKeyBuilder_ != null) {
         sourceSnapshotEncryptionKeyBuilder_.dispose();
@@ -4314,7 +4721,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      */
     public com.google.cloud.compute.v1.CustomerEncryptionKey.Builder
         getSourceSnapshotEncryptionKeyBuilder() {
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return getSourceSnapshotEncryptionKeyFieldBuilder().getBuilder();
     }

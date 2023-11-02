@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -616,6 +616,7 @@ public class BatchServiceClient implements BackgroundResource {
    *       ListJobsRequest.newBuilder()
    *           .setParent("parent-995424086")
    *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -649,6 +650,7 @@ public class BatchServiceClient implements BackgroundResource {
    *       ListJobsRequest.newBuilder()
    *           .setParent("parent-995424086")
    *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -681,6 +683,7 @@ public class BatchServiceClient implements BackgroundResource {
    *       ListJobsRequest.newBuilder()
    *           .setParent("parent-995424086")
    *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -894,6 +897,7 @@ public class BatchServiceClient implements BackgroundResource {
    *           .setParent(
    *               TaskGroupName.of("[PROJECT]", "[LOCATION]", "[JOB]", "[TASK_GROUP]").toString())
    *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -928,6 +932,7 @@ public class BatchServiceClient implements BackgroundResource {
    *           .setParent(
    *               TaskGroupName.of("[PROJECT]", "[LOCATION]", "[JOB]", "[TASK_GROUP]").toString())
    *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -961,6 +966,7 @@ public class BatchServiceClient implements BackgroundResource {
    *           .setParent(
    *               TaskGroupName.of("[PROJECT]", "[LOCATION]", "[JOB]", "[TASK_GROUP]").toString())
    *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();

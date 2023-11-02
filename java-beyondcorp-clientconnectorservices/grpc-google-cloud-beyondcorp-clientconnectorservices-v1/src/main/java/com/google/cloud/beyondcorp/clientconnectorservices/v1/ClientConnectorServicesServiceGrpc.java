@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,7 +39,7 @@ public final class ClientConnectorServicesServiceGrpc {
 
   private ClientConnectorServicesServiceGrpc() {}
 
-  public static final String SERVICE_NAME =
+  public static final java.lang.String SERVICE_NAME =
       "google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorServicesService";
 
   // Static method descriptors that strictly reflect the proto.
@@ -977,9 +977,9 @@ public final class ClientConnectorServicesServiceGrpc {
   private static final class ClientConnectorServicesServiceMethodDescriptorSupplier
       extends ClientConnectorServicesServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    ClientConnectorServicesServiceMethodDescriptorSupplier(String methodName) {
+    ClientConnectorServicesServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

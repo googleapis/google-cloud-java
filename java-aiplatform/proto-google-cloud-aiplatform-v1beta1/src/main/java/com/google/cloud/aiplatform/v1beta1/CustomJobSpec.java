@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,10 +38,11 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
   }
 
   private CustomJobSpec() {
+    persistentResourceId_ = "";
     workerPoolSpecs_ = java.util.Collections.emptyList();
     serviceAccount_ = "";
     network_ = "";
-    reservedIpRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    reservedIpRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
     tensorboard_ = "";
     experiment_ = "";
     experimentRun_ = "";
@@ -51,11 +52,6 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new CustomJobSpec();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -71,6 +67,73 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
         .ensureFieldAccessorsInitialized(
             com.google.cloud.aiplatform.v1beta1.CustomJobSpec.class,
             com.google.cloud.aiplatform.v1beta1.CustomJobSpec.Builder.class);
+  }
+
+  public static final int PERSISTENT_RESOURCE_ID_FIELD_NUMBER = 14;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object persistentResourceId_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The ID of the PersistentResource in the same Project and Location
+   * which to run
+   *
+   * If this is specified, the job will be run on existing machines held by the
+   * PersistentResource instead of on-demand short-live machines.
+   * The network and CMEK configs on the job should be consistent with those on
+   * the PersistentResource, otherwise, the job will be rejected.
+   * </pre>
+   *
+   * <code>
+   * string persistent_resource_id = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The persistentResourceId.
+   */
+  @java.lang.Override
+  public java.lang.String getPersistentResourceId() {
+    java.lang.Object ref = persistentResourceId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      persistentResourceId_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The ID of the PersistentResource in the same Project and Location
+   * which to run
+   *
+   * If this is specified, the job will be run on existing machines held by the
+   * PersistentResource instead of on-demand short-live machines.
+   * The network and CMEK configs on the job should be consistent with those on
+   * the PersistentResource, otherwise, the job will be rejected.
+   * </pre>
+   *
+   * <code>
+   * string persistent_resource_id = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for persistentResourceId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getPersistentResourceIdBytes() {
+    java.lang.Object ref = persistentResourceId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      persistentResourceId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int WORKER_POOL_SPECS_FIELD_NUMBER = 1;
@@ -290,9 +353,11 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
    * is of the form `projects/{project}/global/networks/{network}`.
    * Where {project} is a project number, as in `12345`, and {network} is a
    * network name.
+   *
    * To specify this field, you must have already [configured VPC Network
    * Peering for Vertex
    * AI](https://cloud.google.com/vertex-ai/docs/general/vpc-peering).
+   *
    * If this field is left unspecified, the job is not peered with any network.
    * </pre>
    *
@@ -325,9 +390,11 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
    * is of the form `projects/{project}/global/networks/{network}`.
    * Where {project} is a project number, as in `12345`, and {network} is a
    * network name.
+   *
    * To specify this field, you must have already [configured VPC Network
    * Peering for Vertex
    * AI](https://cloud.google.com/vertex-ai/docs/general/vpc-peering).
+   *
    * If this field is left unspecified, the job is not peered with any network.
    * </pre>
    *
@@ -353,16 +420,19 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
   public static final int RESERVED_IP_RANGES_FIELD_NUMBER = 13;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList reservedIpRanges_;
+  private com.google.protobuf.LazyStringArrayList reservedIpRanges_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
    * <pre>
    * Optional. A list of names for the reserved ip ranges under the VPC network
    * that can be used for this job.
+   *
    * If set, we will deploy the job within the provided ip ranges. Otherwise,
    * the job will be deployed to any ip ranges under the provided VPC
    * network.
+   *
    * Example: ['vertex-ai-ip-range'].
    * </pre>
    *
@@ -379,9 +449,11 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. A list of names for the reserved ip ranges under the VPC network
    * that can be used for this job.
+   *
    * If set, we will deploy the job within the provided ip ranges. Otherwise,
    * the job will be deployed to any ip ranges under the provided VPC
    * network.
+   *
    * Example: ['vertex-ai-ip-range'].
    * </pre>
    *
@@ -398,9 +470,11 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. A list of names for the reserved ip ranges under the VPC network
    * that can be used for this job.
+   *
    * If set, we will deploy the job within the provided ip ranges. Otherwise,
    * the job will be deployed to any ip ranges under the provided VPC
    * network.
+   *
    * Example: ['vertex-ai-ip-range'].
    * </pre>
    *
@@ -418,9 +492,11 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. A list of names for the reserved ip ranges under the VPC network
    * that can be used for this job.
+   *
    * If set, we will deploy the job within the provided ip ranges. Otherwise,
    * the job will be deployed to any ip ranges under the provided VPC
    * network.
+   *
    * Example: ['vertex-ai-ip-range'].
    * </pre>
    *
@@ -445,13 +521,18 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
    * each child CustomJob backing a Trial is set to a subdirectory of name
    * [id][google.cloud.aiplatform.v1beta1.Trial.id] under its parent
    * HyperparameterTuningJob's baseOutputDirectory.
+   *
    * The following Vertex AI environment variables will be passed to
    * containers or python modules when this field is set:
+   *
    *   For CustomJob:
+   *
    *   * AIP_MODEL_DIR = `&lt;base_output_directory&gt;/model/`
    *   * AIP_CHECKPOINT_DIR = `&lt;base_output_directory&gt;/checkpoints/`
    *   * AIP_TENSORBOARD_LOG_DIR = `&lt;base_output_directory&gt;/logs/`
+   *
    *   For CustomJob backing a Trial of HyperparameterTuningJob:
+   *
    *   * AIP_MODEL_DIR = `&lt;base_output_directory&gt;/&lt;trial_id&gt;/model/`
    *   * AIP_CHECKPOINT_DIR = `&lt;base_output_directory&gt;/&lt;trial_id&gt;/checkpoints/`
    *   * AIP_TENSORBOARD_LOG_DIR = `&lt;base_output_directory&gt;/&lt;trial_id&gt;/logs/`
@@ -475,13 +556,18 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
    * each child CustomJob backing a Trial is set to a subdirectory of name
    * [id][google.cloud.aiplatform.v1beta1.Trial.id] under its parent
    * HyperparameterTuningJob's baseOutputDirectory.
+   *
    * The following Vertex AI environment variables will be passed to
    * containers or python modules when this field is set:
+   *
    *   For CustomJob:
+   *
    *   * AIP_MODEL_DIR = `&lt;base_output_directory&gt;/model/`
    *   * AIP_CHECKPOINT_DIR = `&lt;base_output_directory&gt;/checkpoints/`
    *   * AIP_TENSORBOARD_LOG_DIR = `&lt;base_output_directory&gt;/logs/`
+   *
    *   For CustomJob backing a Trial of HyperparameterTuningJob:
+   *
    *   * AIP_MODEL_DIR = `&lt;base_output_directory&gt;/&lt;trial_id&gt;/model/`
    *   * AIP_CHECKPOINT_DIR = `&lt;base_output_directory&gt;/&lt;trial_id&gt;/checkpoints/`
    *   * AIP_TENSORBOARD_LOG_DIR = `&lt;base_output_directory&gt;/&lt;trial_id&gt;/logs/`
@@ -507,13 +593,18 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
    * each child CustomJob backing a Trial is set to a subdirectory of name
    * [id][google.cloud.aiplatform.v1beta1.Trial.id] under its parent
    * HyperparameterTuningJob's baseOutputDirectory.
+   *
    * The following Vertex AI environment variables will be passed to
    * containers or python modules when this field is set:
+   *
    *   For CustomJob:
+   *
    *   * AIP_MODEL_DIR = `&lt;base_output_directory&gt;/model/`
    *   * AIP_CHECKPOINT_DIR = `&lt;base_output_directory&gt;/checkpoints/`
    *   * AIP_TENSORBOARD_LOG_DIR = `&lt;base_output_directory&gt;/logs/`
+   *
    *   For CustomJob backing a Trial of HyperparameterTuningJob:
+   *
    *   * AIP_MODEL_DIR = `&lt;base_output_directory&gt;/&lt;trial_id&gt;/model/`
    *   * AIP_CHECKPOINT_DIR = `&lt;base_output_directory&gt;/&lt;trial_id&gt;/checkpoints/`
    *   * AIP_TENSORBOARD_LOG_DIR = `&lt;base_output_directory&gt;/&lt;trial_id&gt;/logs/`
@@ -599,6 +690,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
    * Optional. Whether you want Vertex AI to enable [interactive shell
    * access](https://cloud.google.com/vertex-ai/docs/training/monitor-debug-interactive-shell)
    * to training containers.
+   *
    * If set to `true`, you can access interactive shells at the URIs given
    * by
    * [CustomJob.web_access_uris][google.cloud.aiplatform.v1beta1.CustomJob.web_access_uris]
@@ -625,6 +717,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. Whether you want Vertex AI to enable access to the customized
    * dashboard in training chief container.
+   *
    * If set to `true`, you can access the dashboard at the URIs given
    * by
    * [CustomJob.web_access_uris][google.cloud.aiplatform.v1beta1.CustomJob.web_access_uris]
@@ -799,6 +892,9 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < reservedIpRanges_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 13, reservedIpRanges_.getRaw(i));
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(persistentResourceId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 14, persistentResourceId_);
+    }
     if (enableDashboardAccess_ != false) {
       output.writeBool(16, enableDashboardAccess_);
     }
@@ -846,6 +942,9 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 1 * getReservedIpRangesList().size();
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(persistentResourceId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, persistentResourceId_);
+    }
     if (enableDashboardAccess_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(16, enableDashboardAccess_);
     }
@@ -871,6 +970,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.aiplatform.v1beta1.CustomJobSpec other =
         (com.google.cloud.aiplatform.v1beta1.CustomJobSpec) obj;
 
+    if (!getPersistentResourceId().equals(other.getPersistentResourceId())) return false;
     if (!getWorkerPoolSpecsList().equals(other.getWorkerPoolSpecsList())) return false;
     if (hasScheduling() != other.hasScheduling()) return false;
     if (hasScheduling()) {
@@ -899,6 +999,8 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + PERSISTENT_RESOURCE_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getPersistentResourceId().hashCode();
     if (getWorkerPoolSpecsCount() > 0) {
       hash = (37 * hash) + WORKER_POOL_SPECS_FIELD_NUMBER;
       hash = (53 * hash) + getWorkerPoolSpecsList().hashCode();
@@ -1068,13 +1170,14 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      persistentResourceId_ = "";
       if (workerPoolSpecsBuilder_ == null) {
         workerPoolSpecs_ = java.util.Collections.emptyList();
       } else {
         workerPoolSpecs_ = null;
         workerPoolSpecsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       scheduling_ = null;
       if (schedulingBuilder_ != null) {
         schedulingBuilder_.dispose();
@@ -1082,8 +1185,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
       }
       serviceAccount_ = "";
       network_ = "";
-      reservedIpRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000010);
+      reservedIpRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
       baseOutputDirectory_ = null;
       if (baseOutputDirectoryBuilder_ != null) {
         baseOutputDirectoryBuilder_.dispose();
@@ -1132,51 +1234,53 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
     private void buildPartialRepeatedFields(
         com.google.cloud.aiplatform.v1beta1.CustomJobSpec result) {
       if (workerPoolSpecsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           workerPoolSpecs_ = java.util.Collections.unmodifiableList(workerPoolSpecs_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.workerPoolSpecs_ = workerPoolSpecs_;
       } else {
         result.workerPoolSpecs_ = workerPoolSpecsBuilder_.build();
       }
-      if (((bitField0_ & 0x00000010) != 0)) {
-        reservedIpRanges_ = reservedIpRanges_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000010);
-      }
-      result.reservedIpRanges_ = reservedIpRanges_;
     }
 
     private void buildPartial0(com.google.cloud.aiplatform.v1beta1.CustomJobSpec result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.scheduling_ = schedulingBuilder_ == null ? scheduling_ : schedulingBuilder_.build();
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.persistentResourceId_ = persistentResourceId_;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.serviceAccount_ = serviceAccount_;
+        result.scheduling_ = schedulingBuilder_ == null ? scheduling_ : schedulingBuilder_.build();
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.serviceAccount_ = serviceAccount_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.network_ = network_;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
+        reservedIpRanges_.makeImmutable();
+        result.reservedIpRanges_ = reservedIpRanges_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.baseOutputDirectory_ =
             baseOutputDirectoryBuilder_ == null
                 ? baseOutputDirectory_
                 : baseOutputDirectoryBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.tensorboard_ = tensorboard_;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.enableWebAccess_ = enableWebAccess_;
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.enableDashboardAccess_ = enableDashboardAccess_;
       }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.experiment_ = experiment_;
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.experimentRun_ = experimentRun_;
       }
     }
@@ -1227,11 +1331,16 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeFrom(com.google.cloud.aiplatform.v1beta1.CustomJobSpec other) {
       if (other == com.google.cloud.aiplatform.v1beta1.CustomJobSpec.getDefaultInstance())
         return this;
+      if (!other.getPersistentResourceId().isEmpty()) {
+        persistentResourceId_ = other.persistentResourceId_;
+        bitField0_ |= 0x00000001;
+        onChanged();
+      }
       if (workerPoolSpecsBuilder_ == null) {
         if (!other.workerPoolSpecs_.isEmpty()) {
           if (workerPoolSpecs_.isEmpty()) {
             workerPoolSpecs_ = other.workerPoolSpecs_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureWorkerPoolSpecsIsMutable();
             workerPoolSpecs_.addAll(other.workerPoolSpecs_);
@@ -1244,7 +1353,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
             workerPoolSpecsBuilder_.dispose();
             workerPoolSpecsBuilder_ = null;
             workerPoolSpecs_ = other.workerPoolSpecs_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             workerPoolSpecsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getWorkerPoolSpecsFieldBuilder()
@@ -1259,18 +1368,18 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getServiceAccount().isEmpty()) {
         serviceAccount_ = other.serviceAccount_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getNetwork().isEmpty()) {
         network_ = other.network_;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.reservedIpRanges_.isEmpty()) {
         if (reservedIpRanges_.isEmpty()) {
           reservedIpRanges_ = other.reservedIpRanges_;
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ |= 0x00000020;
         } else {
           ensureReservedIpRangesIsMutable();
           reservedIpRanges_.addAll(other.reservedIpRanges_);
@@ -1282,7 +1391,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getTensorboard().isEmpty()) {
         tensorboard_ = other.tensorboard_;
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (other.getEnableWebAccess() != false) {
@@ -1293,12 +1402,12 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getExperiment().isEmpty()) {
         experiment_ = other.experiment_;
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       if (!other.getExperimentRun().isEmpty()) {
         experimentRun_ = other.experimentRun_;
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1344,38 +1453,38 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
             case 26:
               {
                 input.readMessage(getSchedulingFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 serviceAccount_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 network_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 input.readMessage(
                     getBaseOutputDirectoryFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 50
             case 58:
               {
                 tensorboard_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 58
             case 80:
               {
                 enableWebAccess_ = input.readBool();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 80
             case 106:
@@ -1385,22 +1494,28 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
                 reservedIpRanges_.add(s);
                 break;
               } // case 106
+            case 114:
+              {
+                persistentResourceId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 114
             case 128:
               {
                 enableDashboardAccess_ = input.readBool();
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 128
             case 138:
               {
                 experiment_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 138
             case 146:
               {
                 experimentRun_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 146
             default:
@@ -1422,15 +1537,161 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
 
     private int bitField0_;
 
+    private java.lang.Object persistentResourceId_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The ID of the PersistentResource in the same Project and Location
+     * which to run
+     *
+     * If this is specified, the job will be run on existing machines held by the
+     * PersistentResource instead of on-demand short-live machines.
+     * The network and CMEK configs on the job should be consistent with those on
+     * the PersistentResource, otherwise, the job will be rejected.
+     * </pre>
+     *
+     * <code>
+     * string persistent_resource_id = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The persistentResourceId.
+     */
+    public java.lang.String getPersistentResourceId() {
+      java.lang.Object ref = persistentResourceId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        persistentResourceId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The ID of the PersistentResource in the same Project and Location
+     * which to run
+     *
+     * If this is specified, the job will be run on existing machines held by the
+     * PersistentResource instead of on-demand short-live machines.
+     * The network and CMEK configs on the job should be consistent with those on
+     * the PersistentResource, otherwise, the job will be rejected.
+     * </pre>
+     *
+     * <code>
+     * string persistent_resource_id = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for persistentResourceId.
+     */
+    public com.google.protobuf.ByteString getPersistentResourceIdBytes() {
+      java.lang.Object ref = persistentResourceId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        persistentResourceId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The ID of the PersistentResource in the same Project and Location
+     * which to run
+     *
+     * If this is specified, the job will be run on existing machines held by the
+     * PersistentResource instead of on-demand short-live machines.
+     * The network and CMEK configs on the job should be consistent with those on
+     * the PersistentResource, otherwise, the job will be rejected.
+     * </pre>
+     *
+     * <code>
+     * string persistent_resource_id = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The persistentResourceId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPersistentResourceId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      persistentResourceId_ = value;
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The ID of the PersistentResource in the same Project and Location
+     * which to run
+     *
+     * If this is specified, the job will be run on existing machines held by the
+     * PersistentResource instead of on-demand short-live machines.
+     * The network and CMEK configs on the job should be consistent with those on
+     * the PersistentResource, otherwise, the job will be rejected.
+     * </pre>
+     *
+     * <code>
+     * string persistent_resource_id = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPersistentResourceId() {
+      persistentResourceId_ = getDefaultInstance().getPersistentResourceId();
+      bitField0_ = (bitField0_ & ~0x00000001);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The ID of the PersistentResource in the same Project and Location
+     * which to run
+     *
+     * If this is specified, the job will be run on existing machines held by the
+     * PersistentResource instead of on-demand short-live machines.
+     * The network and CMEK configs on the job should be consistent with those on
+     * the PersistentResource, otherwise, the job will be rejected.
+     * </pre>
+     *
+     * <code>
+     * string persistent_resource_id = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for persistentResourceId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPersistentResourceIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      persistentResourceId_ = value;
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
     private java.util.List<com.google.cloud.aiplatform.v1beta1.WorkerPoolSpec> workerPoolSpecs_ =
         java.util.Collections.emptyList();
 
     private void ensureWorkerPoolSpecsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         workerPoolSpecs_ =
             new java.util.ArrayList<com.google.cloud.aiplatform.v1beta1.WorkerPoolSpec>(
                 workerPoolSpecs_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -1693,7 +1954,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
     public Builder clearWorkerPoolSpecs() {
       if (workerPoolSpecsBuilder_ == null) {
         workerPoolSpecs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         workerPoolSpecsBuilder_.clear();
@@ -1848,7 +2109,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.aiplatform.v1beta1.WorkerPoolSpec.Builder,
                 com.google.cloud.aiplatform.v1beta1.WorkerPoolSpecOrBuilder>(
                 workerPoolSpecs_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         workerPoolSpecs_ = null;
@@ -1874,7 +2135,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the scheduling field is set.
      */
     public boolean hasScheduling() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1914,7 +2175,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
       } else {
         schedulingBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1934,7 +2195,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
       } else {
         schedulingBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1949,7 +2210,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeScheduling(com.google.cloud.aiplatform.v1beta1.Scheduling value) {
       if (schedulingBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)
+        if (((bitField0_ & 0x00000004) != 0)
             && scheduling_ != null
             && scheduling_ != com.google.cloud.aiplatform.v1beta1.Scheduling.getDefaultInstance()) {
           getSchedulingBuilder().mergeFrom(value);
@@ -1959,7 +2220,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
       } else {
         schedulingBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1973,7 +2234,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.aiplatform.v1beta1.Scheduling scheduling = 3;</code>
      */
     public Builder clearScheduling() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       scheduling_ = null;
       if (schedulingBuilder_ != null) {
         schedulingBuilder_.dispose();
@@ -1992,7 +2253,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.aiplatform.v1beta1.Scheduling scheduling = 3;</code>
      */
     public com.google.cloud.aiplatform.v1beta1.Scheduling.Builder getSchedulingBuilder() {
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return getSchedulingFieldBuilder().getBuilder();
     }
@@ -2114,7 +2375,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       serviceAccount_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2135,7 +2396,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearServiceAccount() {
       serviceAccount_ = getDefaultInstance().getServiceAccount();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -2161,7 +2422,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       serviceAccount_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2178,9 +2439,11 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * is of the form `projects/{project}/global/networks/{network}`.
      * Where {project} is a project number, as in `12345`, and {network} is a
      * network name.
+     *
      * To specify this field, you must have already [configured VPC Network
      * Peering for Vertex
      * AI](https://cloud.google.com/vertex-ai/docs/general/vpc-peering).
+     *
      * If this field is left unspecified, the job is not peered with any network.
      * </pre>
      *
@@ -2212,9 +2475,11 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * is of the form `projects/{project}/global/networks/{network}`.
      * Where {project} is a project number, as in `12345`, and {network} is a
      * network name.
+     *
      * To specify this field, you must have already [configured VPC Network
      * Peering for Vertex
      * AI](https://cloud.google.com/vertex-ai/docs/general/vpc-peering).
+     *
      * If this field is left unspecified, the job is not peered with any network.
      * </pre>
      *
@@ -2246,9 +2511,11 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * is of the form `projects/{project}/global/networks/{network}`.
      * Where {project} is a project number, as in `12345`, and {network} is a
      * network name.
+     *
      * To specify this field, you must have already [configured VPC Network
      * Peering for Vertex
      * AI](https://cloud.google.com/vertex-ai/docs/general/vpc-peering).
+     *
      * If this field is left unspecified, the job is not peered with any network.
      * </pre>
      *
@@ -2264,7 +2531,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       network_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2279,9 +2546,11 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * is of the form `projects/{project}/global/networks/{network}`.
      * Where {project} is a project number, as in `12345`, and {network} is a
      * network name.
+     *
      * To specify this field, you must have already [configured VPC Network
      * Peering for Vertex
      * AI](https://cloud.google.com/vertex-ai/docs/general/vpc-peering).
+     *
      * If this field is left unspecified, the job is not peered with any network.
      * </pre>
      *
@@ -2293,7 +2562,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearNetwork() {
       network_ = getDefaultInstance().getNetwork();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -2308,9 +2577,11 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * is of the form `projects/{project}/global/networks/{network}`.
      * Where {project} is a project number, as in `12345`, and {network} is a
      * network name.
+     *
      * To specify this field, you must have already [configured VPC Network
      * Peering for Vertex
      * AI](https://cloud.google.com/vertex-ai/docs/general/vpc-peering).
+     *
      * If this field is left unspecified, the job is not peered with any network.
      * </pre>
      *
@@ -2327,19 +2598,19 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       network_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList reservedIpRanges_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList reservedIpRanges_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureReservedIpRangesIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!reservedIpRanges_.isModifiable()) {
         reservedIpRanges_ = new com.google.protobuf.LazyStringArrayList(reservedIpRanges_);
-        bitField0_ |= 0x00000010;
       }
+      bitField0_ |= 0x00000020;
     }
     /**
      *
@@ -2347,9 +2618,11 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. A list of names for the reserved ip ranges under the VPC network
      * that can be used for this job.
+     *
      * If set, we will deploy the job within the provided ip ranges. Otherwise,
      * the job will be deployed to any ip ranges under the provided VPC
      * network.
+     *
      * Example: ['vertex-ai-ip-range'].
      * </pre>
      *
@@ -2359,7 +2632,8 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the reservedIpRanges.
      */
     public com.google.protobuf.ProtocolStringList getReservedIpRangesList() {
-      return reservedIpRanges_.getUnmodifiableView();
+      reservedIpRanges_.makeImmutable();
+      return reservedIpRanges_;
     }
     /**
      *
@@ -2367,9 +2641,11 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. A list of names for the reserved ip ranges under the VPC network
      * that can be used for this job.
+     *
      * If set, we will deploy the job within the provided ip ranges. Otherwise,
      * the job will be deployed to any ip ranges under the provided VPC
      * network.
+     *
      * Example: ['vertex-ai-ip-range'].
      * </pre>
      *
@@ -2387,9 +2663,11 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. A list of names for the reserved ip ranges under the VPC network
      * that can be used for this job.
+     *
      * If set, we will deploy the job within the provided ip ranges. Otherwise,
      * the job will be deployed to any ip ranges under the provided VPC
      * network.
+     *
      * Example: ['vertex-ai-ip-range'].
      * </pre>
      *
@@ -2408,9 +2686,11 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. A list of names for the reserved ip ranges under the VPC network
      * that can be used for this job.
+     *
      * If set, we will deploy the job within the provided ip ranges. Otherwise,
      * the job will be deployed to any ip ranges under the provided VPC
      * network.
+     *
      * Example: ['vertex-ai-ip-range'].
      * </pre>
      *
@@ -2429,9 +2709,11 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. A list of names for the reserved ip ranges under the VPC network
      * that can be used for this job.
+     *
      * If set, we will deploy the job within the provided ip ranges. Otherwise,
      * the job will be deployed to any ip ranges under the provided VPC
      * network.
+     *
      * Example: ['vertex-ai-ip-range'].
      * </pre>
      *
@@ -2448,6 +2730,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
       }
       ensureReservedIpRangesIsMutable();
       reservedIpRanges_.set(index, value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2457,9 +2740,11 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. A list of names for the reserved ip ranges under the VPC network
      * that can be used for this job.
+     *
      * If set, we will deploy the job within the provided ip ranges. Otherwise,
      * the job will be deployed to any ip ranges under the provided VPC
      * network.
+     *
      * Example: ['vertex-ai-ip-range'].
      * </pre>
      *
@@ -2475,6 +2760,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
       }
       ensureReservedIpRangesIsMutable();
       reservedIpRanges_.add(value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2484,9 +2770,11 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. A list of names for the reserved ip ranges under the VPC network
      * that can be used for this job.
+     *
      * If set, we will deploy the job within the provided ip ranges. Otherwise,
      * the job will be deployed to any ip ranges under the provided VPC
      * network.
+     *
      * Example: ['vertex-ai-ip-range'].
      * </pre>
      *
@@ -2499,6 +2787,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllReservedIpRanges(java.lang.Iterable<java.lang.String> values) {
       ensureReservedIpRangesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, reservedIpRanges_);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2508,9 +2797,11 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. A list of names for the reserved ip ranges under the VPC network
      * that can be used for this job.
+     *
      * If set, we will deploy the job within the provided ip ranges. Otherwise,
      * the job will be deployed to any ip ranges under the provided VPC
      * network.
+     *
      * Example: ['vertex-ai-ip-range'].
      * </pre>
      *
@@ -2520,8 +2811,9 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearReservedIpRanges() {
-      reservedIpRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000010);
+      reservedIpRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000020);
+      ;
       onChanged();
       return this;
     }
@@ -2531,9 +2823,11 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. A list of names for the reserved ip ranges under the VPC network
      * that can be used for this job.
+     *
      * If set, we will deploy the job within the provided ip ranges. Otherwise,
      * the job will be deployed to any ip ranges under the provided VPC
      * network.
+     *
      * Example: ['vertex-ai-ip-range'].
      * </pre>
      *
@@ -2550,6 +2844,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureReservedIpRangesIsMutable();
       reservedIpRanges_.add(value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2570,13 +2865,18 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * each child CustomJob backing a Trial is set to a subdirectory of name
      * [id][google.cloud.aiplatform.v1beta1.Trial.id] under its parent
      * HyperparameterTuningJob's baseOutputDirectory.
+     *
      * The following Vertex AI environment variables will be passed to
      * containers or python modules when this field is set:
+     *
      *   For CustomJob:
+     *
      *   * AIP_MODEL_DIR = `&lt;base_output_directory&gt;/model/`
      *   * AIP_CHECKPOINT_DIR = `&lt;base_output_directory&gt;/checkpoints/`
      *   * AIP_TENSORBOARD_LOG_DIR = `&lt;base_output_directory&gt;/logs/`
+     *
      *   For CustomJob backing a Trial of HyperparameterTuningJob:
+     *
      *   * AIP_MODEL_DIR = `&lt;base_output_directory&gt;/&lt;trial_id&gt;/model/`
      *   * AIP_CHECKPOINT_DIR = `&lt;base_output_directory&gt;/&lt;trial_id&gt;/checkpoints/`
      *   * AIP_TENSORBOARD_LOG_DIR = `&lt;base_output_directory&gt;/&lt;trial_id&gt;/logs/`
@@ -2587,7 +2887,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the baseOutputDirectory field is set.
      */
     public boolean hasBaseOutputDirectory() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -2599,13 +2899,18 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * each child CustomJob backing a Trial is set to a subdirectory of name
      * [id][google.cloud.aiplatform.v1beta1.Trial.id] under its parent
      * HyperparameterTuningJob's baseOutputDirectory.
+     *
      * The following Vertex AI environment variables will be passed to
      * containers or python modules when this field is set:
+     *
      *   For CustomJob:
+     *
      *   * AIP_MODEL_DIR = `&lt;base_output_directory&gt;/model/`
      *   * AIP_CHECKPOINT_DIR = `&lt;base_output_directory&gt;/checkpoints/`
      *   * AIP_TENSORBOARD_LOG_DIR = `&lt;base_output_directory&gt;/logs/`
+     *
      *   For CustomJob backing a Trial of HyperparameterTuningJob:
+     *
      *   * AIP_MODEL_DIR = `&lt;base_output_directory&gt;/&lt;trial_id&gt;/model/`
      *   * AIP_CHECKPOINT_DIR = `&lt;base_output_directory&gt;/&lt;trial_id&gt;/checkpoints/`
      *   * AIP_TENSORBOARD_LOG_DIR = `&lt;base_output_directory&gt;/&lt;trial_id&gt;/logs/`
@@ -2634,13 +2939,18 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * each child CustomJob backing a Trial is set to a subdirectory of name
      * [id][google.cloud.aiplatform.v1beta1.Trial.id] under its parent
      * HyperparameterTuningJob's baseOutputDirectory.
+     *
      * The following Vertex AI environment variables will be passed to
      * containers or python modules when this field is set:
+     *
      *   For CustomJob:
+     *
      *   * AIP_MODEL_DIR = `&lt;base_output_directory&gt;/model/`
      *   * AIP_CHECKPOINT_DIR = `&lt;base_output_directory&gt;/checkpoints/`
      *   * AIP_TENSORBOARD_LOG_DIR = `&lt;base_output_directory&gt;/logs/`
+     *
      *   For CustomJob backing a Trial of HyperparameterTuningJob:
+     *
      *   * AIP_MODEL_DIR = `&lt;base_output_directory&gt;/&lt;trial_id&gt;/model/`
      *   * AIP_CHECKPOINT_DIR = `&lt;base_output_directory&gt;/&lt;trial_id&gt;/checkpoints/`
      *   * AIP_TENSORBOARD_LOG_DIR = `&lt;base_output_directory&gt;/&lt;trial_id&gt;/logs/`
@@ -2658,7 +2968,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
       } else {
         baseOutputDirectoryBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2672,13 +2982,18 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * each child CustomJob backing a Trial is set to a subdirectory of name
      * [id][google.cloud.aiplatform.v1beta1.Trial.id] under its parent
      * HyperparameterTuningJob's baseOutputDirectory.
+     *
      * The following Vertex AI environment variables will be passed to
      * containers or python modules when this field is set:
+     *
      *   For CustomJob:
+     *
      *   * AIP_MODEL_DIR = `&lt;base_output_directory&gt;/model/`
      *   * AIP_CHECKPOINT_DIR = `&lt;base_output_directory&gt;/checkpoints/`
      *   * AIP_TENSORBOARD_LOG_DIR = `&lt;base_output_directory&gt;/logs/`
+     *
      *   For CustomJob backing a Trial of HyperparameterTuningJob:
+     *
      *   * AIP_MODEL_DIR = `&lt;base_output_directory&gt;/&lt;trial_id&gt;/model/`
      *   * AIP_CHECKPOINT_DIR = `&lt;base_output_directory&gt;/&lt;trial_id&gt;/checkpoints/`
      *   * AIP_TENSORBOARD_LOG_DIR = `&lt;base_output_directory&gt;/&lt;trial_id&gt;/logs/`
@@ -2693,7 +3008,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
       } else {
         baseOutputDirectoryBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2707,13 +3022,18 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * each child CustomJob backing a Trial is set to a subdirectory of name
      * [id][google.cloud.aiplatform.v1beta1.Trial.id] under its parent
      * HyperparameterTuningJob's baseOutputDirectory.
+     *
      * The following Vertex AI environment variables will be passed to
      * containers or python modules when this field is set:
+     *
      *   For CustomJob:
+     *
      *   * AIP_MODEL_DIR = `&lt;base_output_directory&gt;/model/`
      *   * AIP_CHECKPOINT_DIR = `&lt;base_output_directory&gt;/checkpoints/`
      *   * AIP_TENSORBOARD_LOG_DIR = `&lt;base_output_directory&gt;/logs/`
+     *
      *   For CustomJob backing a Trial of HyperparameterTuningJob:
+     *
      *   * AIP_MODEL_DIR = `&lt;base_output_directory&gt;/&lt;trial_id&gt;/model/`
      *   * AIP_CHECKPOINT_DIR = `&lt;base_output_directory&gt;/&lt;trial_id&gt;/checkpoints/`
      *   * AIP_TENSORBOARD_LOG_DIR = `&lt;base_output_directory&gt;/&lt;trial_id&gt;/logs/`
@@ -2724,7 +3044,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeBaseOutputDirectory(
         com.google.cloud.aiplatform.v1beta1.GcsDestination value) {
       if (baseOutputDirectoryBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)
+        if (((bitField0_ & 0x00000040) != 0)
             && baseOutputDirectory_ != null
             && baseOutputDirectory_
                 != com.google.cloud.aiplatform.v1beta1.GcsDestination.getDefaultInstance()) {
@@ -2735,7 +3055,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
       } else {
         baseOutputDirectoryBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2749,13 +3069,18 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * each child CustomJob backing a Trial is set to a subdirectory of name
      * [id][google.cloud.aiplatform.v1beta1.Trial.id] under its parent
      * HyperparameterTuningJob's baseOutputDirectory.
+     *
      * The following Vertex AI environment variables will be passed to
      * containers or python modules when this field is set:
+     *
      *   For CustomJob:
+     *
      *   * AIP_MODEL_DIR = `&lt;base_output_directory&gt;/model/`
      *   * AIP_CHECKPOINT_DIR = `&lt;base_output_directory&gt;/checkpoints/`
      *   * AIP_TENSORBOARD_LOG_DIR = `&lt;base_output_directory&gt;/logs/`
+     *
      *   For CustomJob backing a Trial of HyperparameterTuningJob:
+     *
      *   * AIP_MODEL_DIR = `&lt;base_output_directory&gt;/&lt;trial_id&gt;/model/`
      *   * AIP_CHECKPOINT_DIR = `&lt;base_output_directory&gt;/&lt;trial_id&gt;/checkpoints/`
      *   * AIP_TENSORBOARD_LOG_DIR = `&lt;base_output_directory&gt;/&lt;trial_id&gt;/logs/`
@@ -2764,7 +3089,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.aiplatform.v1beta1.GcsDestination base_output_directory = 6;</code>
      */
     public Builder clearBaseOutputDirectory() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       baseOutputDirectory_ = null;
       if (baseOutputDirectoryBuilder_ != null) {
         baseOutputDirectoryBuilder_.dispose();
@@ -2783,13 +3108,18 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * each child CustomJob backing a Trial is set to a subdirectory of name
      * [id][google.cloud.aiplatform.v1beta1.Trial.id] under its parent
      * HyperparameterTuningJob's baseOutputDirectory.
+     *
      * The following Vertex AI environment variables will be passed to
      * containers or python modules when this field is set:
+     *
      *   For CustomJob:
+     *
      *   * AIP_MODEL_DIR = `&lt;base_output_directory&gt;/model/`
      *   * AIP_CHECKPOINT_DIR = `&lt;base_output_directory&gt;/checkpoints/`
      *   * AIP_TENSORBOARD_LOG_DIR = `&lt;base_output_directory&gt;/logs/`
+     *
      *   For CustomJob backing a Trial of HyperparameterTuningJob:
+     *
      *   * AIP_MODEL_DIR = `&lt;base_output_directory&gt;/&lt;trial_id&gt;/model/`
      *   * AIP_CHECKPOINT_DIR = `&lt;base_output_directory&gt;/&lt;trial_id&gt;/checkpoints/`
      *   * AIP_TENSORBOARD_LOG_DIR = `&lt;base_output_directory&gt;/&lt;trial_id&gt;/logs/`
@@ -2799,7 +3129,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.aiplatform.v1beta1.GcsDestination.Builder
         getBaseOutputDirectoryBuilder() {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return getBaseOutputDirectoryFieldBuilder().getBuilder();
     }
@@ -2813,13 +3143,18 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * each child CustomJob backing a Trial is set to a subdirectory of name
      * [id][google.cloud.aiplatform.v1beta1.Trial.id] under its parent
      * HyperparameterTuningJob's baseOutputDirectory.
+     *
      * The following Vertex AI environment variables will be passed to
      * containers or python modules when this field is set:
+     *
      *   For CustomJob:
+     *
      *   * AIP_MODEL_DIR = `&lt;base_output_directory&gt;/model/`
      *   * AIP_CHECKPOINT_DIR = `&lt;base_output_directory&gt;/checkpoints/`
      *   * AIP_TENSORBOARD_LOG_DIR = `&lt;base_output_directory&gt;/logs/`
+     *
      *   For CustomJob backing a Trial of HyperparameterTuningJob:
+     *
      *   * AIP_MODEL_DIR = `&lt;base_output_directory&gt;/&lt;trial_id&gt;/model/`
      *   * AIP_CHECKPOINT_DIR = `&lt;base_output_directory&gt;/&lt;trial_id&gt;/checkpoints/`
      *   * AIP_TENSORBOARD_LOG_DIR = `&lt;base_output_directory&gt;/&lt;trial_id&gt;/logs/`
@@ -2847,13 +3182,18 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * each child CustomJob backing a Trial is set to a subdirectory of name
      * [id][google.cloud.aiplatform.v1beta1.Trial.id] under its parent
      * HyperparameterTuningJob's baseOutputDirectory.
+     *
      * The following Vertex AI environment variables will be passed to
      * containers or python modules when this field is set:
+     *
      *   For CustomJob:
+     *
      *   * AIP_MODEL_DIR = `&lt;base_output_directory&gt;/model/`
      *   * AIP_CHECKPOINT_DIR = `&lt;base_output_directory&gt;/checkpoints/`
      *   * AIP_TENSORBOARD_LOG_DIR = `&lt;base_output_directory&gt;/logs/`
+     *
      *   For CustomJob backing a Trial of HyperparameterTuningJob:
+     *
      *   * AIP_MODEL_DIR = `&lt;base_output_directory&gt;/&lt;trial_id&gt;/model/`
      *   * AIP_CHECKPOINT_DIR = `&lt;base_output_directory&gt;/&lt;trial_id&gt;/checkpoints/`
      *   * AIP_TENSORBOARD_LOG_DIR = `&lt;base_output_directory&gt;/&lt;trial_id&gt;/logs/`
@@ -2955,7 +3295,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       tensorboard_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2977,7 +3317,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearTensorboard() {
       tensorboard_ = getDefaultInstance().getTensorboard();
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -3004,7 +3344,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       tensorboard_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3017,6 +3357,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * Optional. Whether you want Vertex AI to enable [interactive shell
      * access](https://cloud.google.com/vertex-ai/docs/training/monitor-debug-interactive-shell)
      * to training containers.
+     *
      * If set to `true`, you can access interactive shells at the URIs given
      * by
      * [CustomJob.web_access_uris][google.cloud.aiplatform.v1beta1.CustomJob.web_access_uris]
@@ -3041,6 +3382,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * Optional. Whether you want Vertex AI to enable [interactive shell
      * access](https://cloud.google.com/vertex-ai/docs/training/monitor-debug-interactive-shell)
      * to training containers.
+     *
      * If set to `true`, you can access interactive shells at the URIs given
      * by
      * [CustomJob.web_access_uris][google.cloud.aiplatform.v1beta1.CustomJob.web_access_uris]
@@ -3058,7 +3400,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
     public Builder setEnableWebAccess(boolean value) {
 
       enableWebAccess_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3069,6 +3411,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * Optional. Whether you want Vertex AI to enable [interactive shell
      * access](https://cloud.google.com/vertex-ai/docs/training/monitor-debug-interactive-shell)
      * to training containers.
+     *
      * If set to `true`, you can access interactive shells at the URIs given
      * by
      * [CustomJob.web_access_uris][google.cloud.aiplatform.v1beta1.CustomJob.web_access_uris]
@@ -3083,7 +3426,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEnableWebAccess() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       enableWebAccess_ = false;
       onChanged();
       return this;
@@ -3096,6 +3439,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Whether you want Vertex AI to enable access to the customized
      * dashboard in training chief container.
+     *
      * If set to `true`, you can access the dashboard at the URIs given
      * by
      * [CustomJob.web_access_uris][google.cloud.aiplatform.v1beta1.CustomJob.web_access_uris]
@@ -3119,6 +3463,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Whether you want Vertex AI to enable access to the customized
      * dashboard in training chief container.
+     *
      * If set to `true`, you can access the dashboard at the URIs given
      * by
      * [CustomJob.web_access_uris][google.cloud.aiplatform.v1beta1.CustomJob.web_access_uris]
@@ -3136,7 +3481,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
     public Builder setEnableDashboardAccess(boolean value) {
 
       enableDashboardAccess_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3146,6 +3491,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Whether you want Vertex AI to enable access to the customized
      * dashboard in training chief container.
+     *
      * If set to `true`, you can access the dashboard at the URIs given
      * by
      * [CustomJob.web_access_uris][google.cloud.aiplatform.v1beta1.CustomJob.web_access_uris]
@@ -3160,7 +3506,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEnableDashboardAccess() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       enableDashboardAccess_ = false;
       onChanged();
       return this;
@@ -3240,7 +3586,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       experiment_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3261,7 +3607,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearExperiment() {
       experiment_ = getDefaultInstance().getExperiment();
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -3287,7 +3633,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       experiment_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3366,7 +3712,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       experimentRun_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3387,7 +3733,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearExperimentRun() {
       experimentRun_ = getDefaultInstance().getExperimentRun();
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -3413,7 +3759,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       experimentRun_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }

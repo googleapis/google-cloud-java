@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -73,59 +73,61 @@ public final class BudgetModel {
           + "budgets.v1beta1\032\037google/api/field_behavi"
           + "or.proto\032\031google/api/resource.proto\032\034goo"
           + "gle/protobuf/struct.proto\032\026google/type/d"
-          + "ate.proto\032\027google/type/money.proto\"\336\003\n\006B"
-          + "udget\022\021\n\004name\030\001 \001(\tB\003\340A\003\022\024\n\014display_name"
-          + "\030\002 \001(\t\022H\n\rbudget_filter\030\003 \001(\0132,.google.c"
-          + "loud.billing.budgets.v1beta1.FilterB\003\340A\001"
-          + "\022G\n\006amount\030\004 \001(\01322.google.cloud.billing."
-          + "budgets.v1beta1.BudgetAmountB\003\340A\002\022Q\n\017thr"
-          + "eshold_rules\030\005 \003(\01323.google.cloud.billin"
-          + "g.budgets.v1beta1.ThresholdRuleB\003\340A\001\022S\n\020"
-          + "all_updates_rule\030\006 \001(\01324.google.cloud.bi"
-          + "lling.budgets.v1beta1.AllUpdatesRuleB\003\340A"
-          + "\001\022\021\n\004etag\030\007 \001(\tB\003\340A\001:]\352AZ\n$billingbudget"
-          + "s.googleapis.com/Budget\0222billingAccounts"
-          + "/{billing_account}/budgets/{budget}\"\245\001\n\014"
-          + "BudgetAmount\022.\n\020specified_amount\030\001 \001(\0132\022"
-          + ".google.type.MoneyH\000\022T\n\022last_period_amou"
-          + "nt\030\002 \001(\01326.google.cloud.billing.budgets."
-          + "v1beta1.LastPeriodAmountH\000B\017\n\rbudget_amo"
-          + "unt\"\022\n\020LastPeriodAmount\"\315\001\n\rThresholdRul"
-          + "e\022\036\n\021threshold_percent\030\001 \001(\001B\003\340A\002\022S\n\013spe"
-          + "nd_basis\030\002 \001(\01629.google.cloud.billing.bu"
-          + "dgets.v1beta1.ThresholdRule.BasisB\003\340A\001\"G"
-          + "\n\005Basis\022\025\n\021BASIS_UNSPECIFIED\020\000\022\021\n\rCURREN"
-          + "T_SPEND\020\001\022\024\n\020FORECASTED_SPEND\020\002\"\244\001\n\016AllU"
-          + "pdatesRule\022\031\n\014pubsub_topic\030\001 \001(\tB\003\340A\001\022\033\n"
-          + "\016schema_version\030\002 \001(\tB\003\340A\001\022-\n monitoring"
-          + "_notification_channels\030\003 \003(\tB\003\340A\001\022+\n\036dis"
-          + "able_default_iam_recipients\030\004 \001(\010B\003\340A\001\"\267"
-          + "\005\n\006Filter\022\025\n\010projects\030\001 \003(\tB\003\340A\001\022\031\n\014cred"
-          + "it_types\030\007 \003(\tB\003\340A\001\022f\n\026credit_types_trea"
-          + "tment\030\004 \001(\0162A.google.cloud.billing.budge"
-          + "ts.v1beta1.Filter.CreditTypesTreatmentB\003"
-          + "\340A\001\022\025\n\010services\030\003 \003(\tB\003\340A\001\022\030\n\013subaccount"
-          + "s\030\005 \003(\tB\003\340A\001\022M\n\006labels\030\006 \003(\01328.google.cl"
-          + "oud.billing.budgets.v1beta1.Filter.Label"
-          + "sEntryB\003\340A\001\022T\n\017calendar_period\030\010 \001(\01624.g"
-          + "oogle.cloud.billing.budgets.v1beta1.Cale"
-          + "ndarPeriodB\003\340A\001H\000\022P\n\rcustom_period\030\t \001(\013"
-          + "22.google.cloud.billing.budgets.v1beta1."
-          + "CustomPeriodB\003\340A\001H\000\032I\n\013LabelsEntry\022\013\n\003ke"
-          + "y\030\001 \001(\t\022)\n\005value\030\002 \001(\0132\032.google.protobuf"
-          + ".ListValue:\0028\001\"\217\001\n\024CreditTypesTreatment\022"
-          + "&\n\"CREDIT_TYPES_TREATMENT_UNSPECIFIED\020\000\022"
-          + "\027\n\023INCLUDE_ALL_CREDITS\020\001\022\027\n\023EXCLUDE_ALL_"
-          + "CREDITS\020\002\022\035\n\031INCLUDE_SPECIFIED_CREDITS\020\003"
-          + "B\016\n\014usage_period\"d\n\014CustomPeriod\022*\n\nstar"
-          + "t_date\030\001 \001(\0132\021.google.type.DateB\003\340A\002\022(\n\010"
-          + "end_date\030\002 \001(\0132\021.google.type.DateB\003\340A\001*S"
-          + "\n\016CalendarPeriod\022\037\n\033CALENDAR_PERIOD_UNSP"
-          + "ECIFIED\020\000\022\t\n\005MONTH\020\001\022\013\n\007QUARTER\020\002\022\010\n\004YEA"
-          + "R\020\003Bp\n(com.google.cloud.billing.budgets."
-          + "v1beta1P\001ZBcloud.google.com/go/billing/b"
-          + "udgets/apiv1beta1/budgetspb;budgetspbb\006p"
-          + "roto3"
+          + "ate.proto\032\027google/type/money.proto\"\344\003\n\006B"
+          + "udget\022\022\n\004name\030\001 \001(\tB\004\342A\001\003\022\024\n\014display_nam"
+          + "e\030\002 \001(\t\022I\n\rbudget_filter\030\003 \001(\0132,.google."
+          + "cloud.billing.budgets.v1beta1.FilterB\004\342A"
+          + "\001\001\022H\n\006amount\030\004 \001(\01322.google.cloud.billin"
+          + "g.budgets.v1beta1.BudgetAmountB\004\342A\001\002\022R\n\017"
+          + "threshold_rules\030\005 \003(\01323.google.cloud.bil"
+          + "ling.budgets.v1beta1.ThresholdRuleB\004\342A\001\001"
+          + "\022T\n\020all_updates_rule\030\006 \001(\01324.google.clou"
+          + "d.billing.budgets.v1beta1.AllUpdatesRule"
+          + "B\004\342A\001\001\022\022\n\004etag\030\007 \001(\tB\004\342A\001\001:]\352AZ\n$billing"
+          + "budgets.googleapis.com/Budget\0222billingAc"
+          + "counts/{billing_account}/budgets/{budget"
+          + "}\"\245\001\n\014BudgetAmount\022.\n\020specified_amount\030\001"
+          + " \001(\0132\022.google.type.MoneyH\000\022T\n\022last_perio"
+          + "d_amount\030\002 \001(\01326.google.cloud.billing.bu"
+          + "dgets.v1beta1.LastPeriodAmountH\000B\017\n\rbudg"
+          + "et_amount\"\022\n\020LastPeriodAmount\"\317\001\n\rThresh"
+          + "oldRule\022\037\n\021threshold_percent\030\001 \001(\001B\004\342A\001\002"
+          + "\022T\n\013spend_basis\030\002 \001(\01629.google.cloud.bil"
+          + "ling.budgets.v1beta1.ThresholdRule.Basis"
+          + "B\004\342A\001\001\"G\n\005Basis\022\025\n\021BASIS_UNSPECIFIED\020\000\022\021"
+          + "\n\rCURRENT_SPEND\020\001\022\024\n\020FORECASTED_SPEND\020\002\""
+          + "\327\001\n\016AllUpdatesRule\022\032\n\014pubsub_topic\030\001 \001(\t"
+          + "B\004\342A\001\001\022\034\n\016schema_version\030\002 \001(\tB\004\342A\001\001\022.\n "
+          + "monitoring_notification_channels\030\003 \003(\tB\004"
+          + "\342A\001\001\022,\n\036disable_default_iam_recipients\030\004"
+          + " \001(\010B\004\342A\001\001\022-\n\037enable_project_level_recip"
+          + "ients\030\005 \001(\010B\004\342A\001\001\"\341\005\n\006Filter\022\026\n\010projects"
+          + "\030\001 \003(\tB\004\342A\001\001\022 \n\022resource_ancestors\030\002 \003(\t"
+          + "B\004\342A\001\001\022\032\n\014credit_types\030\007 \003(\tB\004\342A\001\001\022g\n\026cr"
+          + "edit_types_treatment\030\004 \001(\0162A.google.clou"
+          + "d.billing.budgets.v1beta1.Filter.CreditT"
+          + "ypesTreatmentB\004\342A\001\001\022\026\n\010services\030\003 \003(\tB\004\342"
+          + "A\001\001\022\031\n\013subaccounts\030\005 \003(\tB\004\342A\001\001\022N\n\006labels"
+          + "\030\006 \003(\01328.google.cloud.billing.budgets.v1"
+          + "beta1.Filter.LabelsEntryB\004\342A\001\001\022U\n\017calend"
+          + "ar_period\030\010 \001(\01624.google.cloud.billing.b"
+          + "udgets.v1beta1.CalendarPeriodB\004\342A\001\001H\000\022Q\n"
+          + "\rcustom_period\030\t \001(\01322.google.cloud.bill"
+          + "ing.budgets.v1beta1.CustomPeriodB\004\342A\001\001H\000"
+          + "\032I\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022)\n\005value\030\002 "
+          + "\001(\0132\032.google.protobuf.ListValue:\0028\001\"\217\001\n\024"
+          + "CreditTypesTreatment\022&\n\"CREDIT_TYPES_TRE"
+          + "ATMENT_UNSPECIFIED\020\000\022\027\n\023INCLUDE_ALL_CRED"
+          + "ITS\020\001\022\027\n\023EXCLUDE_ALL_CREDITS\020\002\022\035\n\031INCLUD"
+          + "E_SPECIFIED_CREDITS\020\003B\016\n\014usage_period\"f\n"
+          + "\014CustomPeriod\022+\n\nstart_date\030\001 \001(\0132\021.goog"
+          + "le.type.DateB\004\342A\001\002\022)\n\010end_date\030\002 \001(\0132\021.g"
+          + "oogle.type.DateB\004\342A\001\001*S\n\016CalendarPeriod\022"
+          + "\037\n\033CALENDAR_PERIOD_UNSPECIFIED\020\000\022\t\n\005MONT"
+          + "H\020\001\022\013\n\007QUARTER\020\002\022\010\n\004YEAR\020\003Bp\n(com.google"
+          + ".cloud.billing.budgets.v1beta1P\001ZBcloud."
+          + "google.com/go/billing/budgets/apiv1beta1"
+          + "/budgetspb;budgetspbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -183,6 +185,7 @@ public final class BudgetModel {
               "SchemaVersion",
               "MonitoringNotificationChannels",
               "DisableDefaultIamRecipients",
+              "EnableProjectLevelRecipients",
             });
     internal_static_google_cloud_billing_budgets_v1beta1_Filter_descriptor =
         getDescriptor().getMessageTypes().get(5);
@@ -191,6 +194,7 @@ public final class BudgetModel {
             internal_static_google_cloud_billing_budgets_v1beta1_Filter_descriptor,
             new java.lang.String[] {
               "Projects",
+              "ResourceAncestors",
               "CreditTypes",
               "CreditTypesTreatment",
               "Services",

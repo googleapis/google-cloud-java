@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,7 +39,7 @@ public final class TableExtractionParams extends com.google.protobuf.GeneratedMe
 
   private TableExtractionParams() {
     tableBoundHints_ = java.util.Collections.emptyList();
-    headerHints_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    headerHints_ = com.google.protobuf.LazyStringArrayList.emptyList();
     modelVersion_ = "";
   }
 
@@ -47,11 +47,6 @@ public final class TableExtractionParams extends com.google.protobuf.GeneratedMe
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new TableExtractionParams();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -178,13 +173,13 @@ public final class TableExtractionParams extends com.google.protobuf.GeneratedMe
   public static final int HEADER_HINTS_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList headerHints_;
+  private com.google.protobuf.LazyStringArrayList headerHints_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
    * <pre>
-   * Optional. Table header hints. The extraction will bias towards producing
-   * these terms as table headers, which may improve accuracy.
+   * Optional. Reserved for future use.
    * </pre>
    *
    * <code>repeated string header_hints = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -198,8 +193,7 @@ public final class TableExtractionParams extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Optional. Table header hints. The extraction will bias towards producing
-   * these terms as table headers, which may improve accuracy.
+   * Optional. Reserved for future use.
    * </pre>
    *
    * <code>repeated string header_hints = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -213,8 +207,7 @@ public final class TableExtractionParams extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Optional. Table header hints. The extraction will bias towards producing
-   * these terms as table headers, which may improve accuracy.
+   * Optional. Reserved for future use.
    * </pre>
    *
    * <code>repeated string header_hints = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -229,8 +222,7 @@ public final class TableExtractionParams extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Optional. Table header hints. The extraction will bias towards producing
-   * these terms as table headers, which may improve accuracy.
+   * Optional. Reserved for future use.
    * </pre>
    *
    * <code>repeated string header_hints = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -538,8 +530,7 @@ public final class TableExtractionParams extends com.google.protobuf.GeneratedMe
         tableBoundHintsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000002);
-      headerHints_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      headerHints_ = com.google.protobuf.LazyStringArrayList.emptyList();
       modelVersion_ = "";
       return this;
     }
@@ -587,17 +578,16 @@ public final class TableExtractionParams extends com.google.protobuf.GeneratedMe
       } else {
         result.tableBoundHints_ = tableBoundHintsBuilder_.build();
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
-        headerHints_ = headerHints_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.headerHints_ = headerHints_;
     }
 
     private void buildPartial0(com.google.cloud.documentai.v1beta2.TableExtractionParams result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.enabled_ = enabled_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        headerHints_.makeImmutable();
+        result.headerHints_ = headerHints_;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.modelVersion_ = modelVersion_;
@@ -683,7 +673,7 @@ public final class TableExtractionParams extends com.google.protobuf.GeneratedMe
       if (!other.headerHints_.isEmpty()) {
         if (headerHints_.isEmpty()) {
           headerHints_ = other.headerHints_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ |= 0x00000004;
         } else {
           ensureHeaderHintsIsMutable();
           headerHints_.addAll(other.headerHints_);
@@ -1242,21 +1232,20 @@ public final class TableExtractionParams extends com.google.protobuf.GeneratedMe
       return tableBoundHintsBuilder_;
     }
 
-    private com.google.protobuf.LazyStringList headerHints_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList headerHints_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureHeaderHintsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!headerHints_.isModifiable()) {
         headerHints_ = new com.google.protobuf.LazyStringArrayList(headerHints_);
-        bitField0_ |= 0x00000004;
       }
+      bitField0_ |= 0x00000004;
     }
     /**
      *
      *
      * <pre>
-     * Optional. Table header hints. The extraction will bias towards producing
-     * these terms as table headers, which may improve accuracy.
+     * Optional. Reserved for future use.
      * </pre>
      *
      * <code>repeated string header_hints = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1264,14 +1253,14 @@ public final class TableExtractionParams extends com.google.protobuf.GeneratedMe
      * @return A list containing the headerHints.
      */
     public com.google.protobuf.ProtocolStringList getHeaderHintsList() {
-      return headerHints_.getUnmodifiableView();
+      headerHints_.makeImmutable();
+      return headerHints_;
     }
     /**
      *
      *
      * <pre>
-     * Optional. Table header hints. The extraction will bias towards producing
-     * these terms as table headers, which may improve accuracy.
+     * Optional. Reserved for future use.
      * </pre>
      *
      * <code>repeated string header_hints = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1285,8 +1274,7 @@ public final class TableExtractionParams extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Table header hints. The extraction will bias towards producing
-     * these terms as table headers, which may improve accuracy.
+     * Optional. Reserved for future use.
      * </pre>
      *
      * <code>repeated string header_hints = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1301,8 +1289,7 @@ public final class TableExtractionParams extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Table header hints. The extraction will bias towards producing
-     * these terms as table headers, which may improve accuracy.
+     * Optional. Reserved for future use.
      * </pre>
      *
      * <code>repeated string header_hints = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1317,8 +1304,7 @@ public final class TableExtractionParams extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Table header hints. The extraction will bias towards producing
-     * these terms as table headers, which may improve accuracy.
+     * Optional. Reserved for future use.
      * </pre>
      *
      * <code>repeated string header_hints = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1333,6 +1319,7 @@ public final class TableExtractionParams extends com.google.protobuf.GeneratedMe
       }
       ensureHeaderHintsIsMutable();
       headerHints_.set(index, value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1340,8 +1327,7 @@ public final class TableExtractionParams extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Table header hints. The extraction will bias towards producing
-     * these terms as table headers, which may improve accuracy.
+     * Optional. Reserved for future use.
      * </pre>
      *
      * <code>repeated string header_hints = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1355,6 +1341,7 @@ public final class TableExtractionParams extends com.google.protobuf.GeneratedMe
       }
       ensureHeaderHintsIsMutable();
       headerHints_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1362,8 +1349,7 @@ public final class TableExtractionParams extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Table header hints. The extraction will bias towards producing
-     * these terms as table headers, which may improve accuracy.
+     * Optional. Reserved for future use.
      * </pre>
      *
      * <code>repeated string header_hints = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1374,6 +1360,7 @@ public final class TableExtractionParams extends com.google.protobuf.GeneratedMe
     public Builder addAllHeaderHints(java.lang.Iterable<java.lang.String> values) {
       ensureHeaderHintsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, headerHints_);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1381,8 +1368,7 @@ public final class TableExtractionParams extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Table header hints. The extraction will bias towards producing
-     * these terms as table headers, which may improve accuracy.
+     * Optional. Reserved for future use.
      * </pre>
      *
      * <code>repeated string header_hints = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1390,8 +1376,9 @@ public final class TableExtractionParams extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearHeaderHints() {
-      headerHints_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      headerHints_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000004);
+      ;
       onChanged();
       return this;
     }
@@ -1399,8 +1386,7 @@ public final class TableExtractionParams extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Table header hints. The extraction will bias towards producing
-     * these terms as table headers, which may improve accuracy.
+     * Optional. Reserved for future use.
      * </pre>
      *
      * <code>repeated string header_hints = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1415,6 +1401,7 @@ public final class TableExtractionParams extends com.google.protobuf.GeneratedMe
       checkByteStringIsUtf8(value);
       ensureHeaderHintsIsMutable();
       headerHints_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

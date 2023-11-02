@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,18 +41,13 @@ public final class Compliance extends com.google.protobuf.GeneratedMessageV3
   private Compliance() {
     standard_ = "";
     version_ = "";
-    ids_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    ids_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Compliance();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -78,8 +73,8 @@ public final class Compliance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Refers to industry wide standards or benchmarks e.g. "cis", "pci", "owasp",
-   * etc.
+   * Industry-wide compliance standards or benchmarks, such as CIS, PCI, and
+   * OWASP.
    * </pre>
    *
    * <code>string standard = 1;</code>
@@ -102,8 +97,8 @@ public final class Compliance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Refers to industry wide standards or benchmarks e.g. "cis", "pci", "owasp",
-   * etc.
+   * Industry-wide compliance standards or benchmarks, such as CIS, PCI, and
+   * OWASP.
    * </pre>
    *
    * <code>string standard = 1;</code>
@@ -131,7 +126,7 @@ public final class Compliance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Version of the standard/benchmark e.g. 1.1
+   * Version of the standard or benchmark, for example, 1.1
    * </pre>
    *
    * <code>string version = 2;</code>
@@ -154,7 +149,7 @@ public final class Compliance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Version of the standard/benchmark e.g. 1.1
+   * Version of the standard or benchmark, for example, 1.1
    * </pre>
    *
    * <code>string version = 2;</code>
@@ -177,12 +172,13 @@ public final class Compliance extends com.google.protobuf.GeneratedMessageV3
   public static final int IDS_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList ids_;
+  private com.google.protobuf.LazyStringArrayList ids_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
    * <pre>
-   * Policies within the standard/benchmark e.g. A.12.4.1
+   * Policies within the standard or benchmark, for example, A.12.4.1
    * </pre>
    *
    * <code>repeated string ids = 3;</code>
@@ -196,7 +192,7 @@ public final class Compliance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Policies within the standard/benchmark e.g. A.12.4.1
+   * Policies within the standard or benchmark, for example, A.12.4.1
    * </pre>
    *
    * <code>repeated string ids = 3;</code>
@@ -210,7 +206,7 @@ public final class Compliance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Policies within the standard/benchmark e.g. A.12.4.1
+   * Policies within the standard or benchmark, for example, A.12.4.1
    * </pre>
    *
    * <code>repeated string ids = 3;</code>
@@ -225,7 +221,7 @@ public final class Compliance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Policies within the standard/benchmark e.g. A.12.4.1
+   * Policies within the standard or benchmark, for example, A.12.4.1
    * </pre>
    *
    * <code>repeated string ids = 3;</code>
@@ -463,8 +459,7 @@ public final class Compliance extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = 0;
       standard_ = "";
       version_ = "";
-      ids_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      ids_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -492,20 +487,11 @@ public final class Compliance extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.securitycenter.v1.Compliance buildPartial() {
       com.google.cloud.securitycenter.v1.Compliance result =
           new com.google.cloud.securitycenter.v1.Compliance(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(com.google.cloud.securitycenter.v1.Compliance result) {
-      if (((bitField0_ & 0x00000004) != 0)) {
-        ids_ = ids_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.ids_ = ids_;
     }
 
     private void buildPartial0(com.google.cloud.securitycenter.v1.Compliance result) {
@@ -515,6 +501,10 @@ public final class Compliance extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.version_ = version_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        ids_.makeImmutable();
+        result.ids_ = ids_;
       }
     }
 
@@ -576,7 +566,7 @@ public final class Compliance extends com.google.protobuf.GeneratedMessageV3
       if (!other.ids_.isEmpty()) {
         if (ids_.isEmpty()) {
           ids_ = other.ids_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ |= 0x00000004;
         } else {
           ensureIdsIsMutable();
           ids_.addAll(other.ids_);
@@ -652,8 +642,8 @@ public final class Compliance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Refers to industry wide standards or benchmarks e.g. "cis", "pci", "owasp",
-     * etc.
+     * Industry-wide compliance standards or benchmarks, such as CIS, PCI, and
+     * OWASP.
      * </pre>
      *
      * <code>string standard = 1;</code>
@@ -675,8 +665,8 @@ public final class Compliance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Refers to industry wide standards or benchmarks e.g. "cis", "pci", "owasp",
-     * etc.
+     * Industry-wide compliance standards or benchmarks, such as CIS, PCI, and
+     * OWASP.
      * </pre>
      *
      * <code>string standard = 1;</code>
@@ -698,8 +688,8 @@ public final class Compliance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Refers to industry wide standards or benchmarks e.g. "cis", "pci", "owasp",
-     * etc.
+     * Industry-wide compliance standards or benchmarks, such as CIS, PCI, and
+     * OWASP.
      * </pre>
      *
      * <code>string standard = 1;</code>
@@ -720,8 +710,8 @@ public final class Compliance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Refers to industry wide standards or benchmarks e.g. "cis", "pci", "owasp",
-     * etc.
+     * Industry-wide compliance standards or benchmarks, such as CIS, PCI, and
+     * OWASP.
      * </pre>
      *
      * <code>string standard = 1;</code>
@@ -738,8 +728,8 @@ public final class Compliance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Refers to industry wide standards or benchmarks e.g. "cis", "pci", "owasp",
-     * etc.
+     * Industry-wide compliance standards or benchmarks, such as CIS, PCI, and
+     * OWASP.
      * </pre>
      *
      * <code>string standard = 1;</code>
@@ -763,7 +753,7 @@ public final class Compliance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Version of the standard/benchmark e.g. 1.1
+     * Version of the standard or benchmark, for example, 1.1
      * </pre>
      *
      * <code>string version = 2;</code>
@@ -785,7 +775,7 @@ public final class Compliance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Version of the standard/benchmark e.g. 1.1
+     * Version of the standard or benchmark, for example, 1.1
      * </pre>
      *
      * <code>string version = 2;</code>
@@ -807,7 +797,7 @@ public final class Compliance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Version of the standard/benchmark e.g. 1.1
+     * Version of the standard or benchmark, for example, 1.1
      * </pre>
      *
      * <code>string version = 2;</code>
@@ -828,7 +818,7 @@ public final class Compliance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Version of the standard/benchmark e.g. 1.1
+     * Version of the standard or benchmark, for example, 1.1
      * </pre>
      *
      * <code>string version = 2;</code>
@@ -845,7 +835,7 @@ public final class Compliance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Version of the standard/benchmark e.g. 1.1
+     * Version of the standard or benchmark, for example, 1.1
      * </pre>
      *
      * <code>string version = 2;</code>
@@ -864,19 +854,20 @@ public final class Compliance extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList ids_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList ids_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureIdsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!ids_.isModifiable()) {
         ids_ = new com.google.protobuf.LazyStringArrayList(ids_);
-        bitField0_ |= 0x00000004;
       }
+      bitField0_ |= 0x00000004;
     }
     /**
      *
      *
      * <pre>
-     * Policies within the standard/benchmark e.g. A.12.4.1
+     * Policies within the standard or benchmark, for example, A.12.4.1
      * </pre>
      *
      * <code>repeated string ids = 3;</code>
@@ -884,13 +875,14 @@ public final class Compliance extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the ids.
      */
     public com.google.protobuf.ProtocolStringList getIdsList() {
-      return ids_.getUnmodifiableView();
+      ids_.makeImmutable();
+      return ids_;
     }
     /**
      *
      *
      * <pre>
-     * Policies within the standard/benchmark e.g. A.12.4.1
+     * Policies within the standard or benchmark, for example, A.12.4.1
      * </pre>
      *
      * <code>repeated string ids = 3;</code>
@@ -904,7 +896,7 @@ public final class Compliance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Policies within the standard/benchmark e.g. A.12.4.1
+     * Policies within the standard or benchmark, for example, A.12.4.1
      * </pre>
      *
      * <code>repeated string ids = 3;</code>
@@ -919,7 +911,7 @@ public final class Compliance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Policies within the standard/benchmark e.g. A.12.4.1
+     * Policies within the standard or benchmark, for example, A.12.4.1
      * </pre>
      *
      * <code>repeated string ids = 3;</code>
@@ -934,7 +926,7 @@ public final class Compliance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Policies within the standard/benchmark e.g. A.12.4.1
+     * Policies within the standard or benchmark, for example, A.12.4.1
      * </pre>
      *
      * <code>repeated string ids = 3;</code>
@@ -949,6 +941,7 @@ public final class Compliance extends com.google.protobuf.GeneratedMessageV3
       }
       ensureIdsIsMutable();
       ids_.set(index, value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -956,7 +949,7 @@ public final class Compliance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Policies within the standard/benchmark e.g. A.12.4.1
+     * Policies within the standard or benchmark, for example, A.12.4.1
      * </pre>
      *
      * <code>repeated string ids = 3;</code>
@@ -970,6 +963,7 @@ public final class Compliance extends com.google.protobuf.GeneratedMessageV3
       }
       ensureIdsIsMutable();
       ids_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -977,7 +971,7 @@ public final class Compliance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Policies within the standard/benchmark e.g. A.12.4.1
+     * Policies within the standard or benchmark, for example, A.12.4.1
      * </pre>
      *
      * <code>repeated string ids = 3;</code>
@@ -988,6 +982,7 @@ public final class Compliance extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllIds(java.lang.Iterable<java.lang.String> values) {
       ensureIdsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, ids_);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -995,7 +990,7 @@ public final class Compliance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Policies within the standard/benchmark e.g. A.12.4.1
+     * Policies within the standard or benchmark, for example, A.12.4.1
      * </pre>
      *
      * <code>repeated string ids = 3;</code>
@@ -1003,8 +998,9 @@ public final class Compliance extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearIds() {
-      ids_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      ids_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000004);
+      ;
       onChanged();
       return this;
     }
@@ -1012,7 +1008,7 @@ public final class Compliance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Policies within the standard/benchmark e.g. A.12.4.1
+     * Policies within the standard or benchmark, for example, A.12.4.1
      * </pre>
      *
      * <code>repeated string ids = 3;</code>
@@ -1027,6 +1023,7 @@ public final class Compliance extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureIdsIsMutable();
       ids_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

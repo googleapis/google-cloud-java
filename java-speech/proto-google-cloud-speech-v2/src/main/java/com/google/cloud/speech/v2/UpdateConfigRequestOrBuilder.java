@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ public interface UpdateConfigRequestOrBuilder
    *
    * <pre>
    * Required. The config to update.
+   *
    * The config's `name` field is used to identify the config to be updated.
    * The expected format is `projects/{project}/locations/{location}/config`.
    * </pre>
@@ -43,6 +44,7 @@ public interface UpdateConfigRequestOrBuilder
    *
    * <pre>
    * Required. The config to update.
+   *
    * The config's `name` field is used to identify the config to be updated.
    * The expected format is `projects/{project}/locations/{location}/config`.
    * </pre>
@@ -58,6 +60,7 @@ public interface UpdateConfigRequestOrBuilder
    *
    * <pre>
    * Required. The config to update.
+   *
    * The config's `name` field is used to identify the config to be updated.
    * The expected format is `projects/{project}/locations/{location}/config`.
    * </pre>

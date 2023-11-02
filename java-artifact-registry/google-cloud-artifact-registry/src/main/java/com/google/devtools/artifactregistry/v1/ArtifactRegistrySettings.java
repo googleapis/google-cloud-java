@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -250,6 +250,18 @@ public class ArtifactRegistrySettings extends ClientSettings<ArtifactRegistrySet
   public OperationCallSettings<DeleteVersionRequest, Empty, OperationMetadata>
       deleteVersionOperationSettings() {
     return ((ArtifactRegistryStubSettings) getStubSettings()).deleteVersionOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchDeleteVersions. */
+  public UnaryCallSettings<BatchDeleteVersionsRequest, Operation> batchDeleteVersionsSettings() {
+    return ((ArtifactRegistryStubSettings) getStubSettings()).batchDeleteVersionsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchDeleteVersions. */
+  public OperationCallSettings<BatchDeleteVersionsRequest, Empty, BatchDeleteVersionsMetadata>
+      batchDeleteVersionsOperationSettings() {
+    return ((ArtifactRegistryStubSettings) getStubSettings())
+        .batchDeleteVersionsOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to listFiles. */
@@ -615,6 +627,19 @@ public class ArtifactRegistrySettings extends ClientSettings<ArtifactRegistrySet
     public OperationCallSettings.Builder<DeleteVersionRequest, Empty, OperationMetadata>
         deleteVersionOperationSettings() {
       return getStubSettingsBuilder().deleteVersionOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchDeleteVersions. */
+    public UnaryCallSettings.Builder<BatchDeleteVersionsRequest, Operation>
+        batchDeleteVersionsSettings() {
+      return getStubSettingsBuilder().batchDeleteVersionsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchDeleteVersions. */
+    public OperationCallSettings.Builder<
+            BatchDeleteVersionsRequest, Empty, BatchDeleteVersionsMetadata>
+        batchDeleteVersionsOperationSettings() {
+      return getStubSettingsBuilder().batchDeleteVersionsOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listFiles. */

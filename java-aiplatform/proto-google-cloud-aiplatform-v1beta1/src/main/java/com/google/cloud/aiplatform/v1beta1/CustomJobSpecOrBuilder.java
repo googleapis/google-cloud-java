@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,6 +22,47 @@ public interface CustomJobSpecOrBuilder
     extends
     // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.CustomJobSpec)
     com.google.protobuf.MessageOrBuilder {
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The ID of the PersistentResource in the same Project and Location
+   * which to run
+   *
+   * If this is specified, the job will be run on existing machines held by the
+   * PersistentResource instead of on-demand short-live machines.
+   * The network and CMEK configs on the job should be consistent with those on
+   * the PersistentResource, otherwise, the job will be rejected.
+   * </pre>
+   *
+   * <code>
+   * string persistent_resource_id = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The persistentResourceId.
+   */
+  java.lang.String getPersistentResourceId();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The ID of the PersistentResource in the same Project and Location
+   * which to run
+   *
+   * If this is specified, the job will be run on existing machines held by the
+   * PersistentResource instead of on-demand short-live machines.
+   * The network and CMEK configs on the job should be consistent with those on
+   * the PersistentResource, otherwise, the job will be rejected.
+   * </pre>
+   *
+   * <code>
+   * string persistent_resource_id = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for persistentResourceId.
+   */
+  com.google.protobuf.ByteString getPersistentResourceIdBytes();
 
   /**
    *
@@ -175,9 +216,11 @@ public interface CustomJobSpecOrBuilder
    * is of the form `projects/{project}/global/networks/{network}`.
    * Where {project} is a project number, as in `12345`, and {network} is a
    * network name.
+   *
    * To specify this field, you must have already [configured VPC Network
    * Peering for Vertex
    * AI](https://cloud.google.com/vertex-ai/docs/general/vpc-peering).
+   *
    * If this field is left unspecified, the job is not peered with any network.
    * </pre>
    *
@@ -199,9 +242,11 @@ public interface CustomJobSpecOrBuilder
    * is of the form `projects/{project}/global/networks/{network}`.
    * Where {project} is a project number, as in `12345`, and {network} is a
    * network name.
+   *
    * To specify this field, you must have already [configured VPC Network
    * Peering for Vertex
    * AI](https://cloud.google.com/vertex-ai/docs/general/vpc-peering).
+   *
    * If this field is left unspecified, the job is not peered with any network.
    * </pre>
    *
@@ -219,9 +264,11 @@ public interface CustomJobSpecOrBuilder
    * <pre>
    * Optional. A list of names for the reserved ip ranges under the VPC network
    * that can be used for this job.
+   *
    * If set, we will deploy the job within the provided ip ranges. Otherwise,
    * the job will be deployed to any ip ranges under the provided VPC
    * network.
+   *
    * Example: ['vertex-ai-ip-range'].
    * </pre>
    *
@@ -236,9 +283,11 @@ public interface CustomJobSpecOrBuilder
    * <pre>
    * Optional. A list of names for the reserved ip ranges under the VPC network
    * that can be used for this job.
+   *
    * If set, we will deploy the job within the provided ip ranges. Otherwise,
    * the job will be deployed to any ip ranges under the provided VPC
    * network.
+   *
    * Example: ['vertex-ai-ip-range'].
    * </pre>
    *
@@ -253,9 +302,11 @@ public interface CustomJobSpecOrBuilder
    * <pre>
    * Optional. A list of names for the reserved ip ranges under the VPC network
    * that can be used for this job.
+   *
    * If set, we will deploy the job within the provided ip ranges. Otherwise,
    * the job will be deployed to any ip ranges under the provided VPC
    * network.
+   *
    * Example: ['vertex-ai-ip-range'].
    * </pre>
    *
@@ -271,9 +322,11 @@ public interface CustomJobSpecOrBuilder
    * <pre>
    * Optional. A list of names for the reserved ip ranges under the VPC network
    * that can be used for this job.
+   *
    * If set, we will deploy the job within the provided ip ranges. Otherwise,
    * the job will be deployed to any ip ranges under the provided VPC
    * network.
+   *
    * Example: ['vertex-ai-ip-range'].
    * </pre>
    *
@@ -294,13 +347,18 @@ public interface CustomJobSpecOrBuilder
    * each child CustomJob backing a Trial is set to a subdirectory of name
    * [id][google.cloud.aiplatform.v1beta1.Trial.id] under its parent
    * HyperparameterTuningJob's baseOutputDirectory.
+   *
    * The following Vertex AI environment variables will be passed to
    * containers or python modules when this field is set:
+   *
    *   For CustomJob:
+   *
    *   * AIP_MODEL_DIR = `&lt;base_output_directory&gt;/model/`
    *   * AIP_CHECKPOINT_DIR = `&lt;base_output_directory&gt;/checkpoints/`
    *   * AIP_TENSORBOARD_LOG_DIR = `&lt;base_output_directory&gt;/logs/`
+   *
    *   For CustomJob backing a Trial of HyperparameterTuningJob:
+   *
    *   * AIP_MODEL_DIR = `&lt;base_output_directory&gt;/&lt;trial_id&gt;/model/`
    *   * AIP_CHECKPOINT_DIR = `&lt;base_output_directory&gt;/&lt;trial_id&gt;/checkpoints/`
    *   * AIP_TENSORBOARD_LOG_DIR = `&lt;base_output_directory&gt;/&lt;trial_id&gt;/logs/`
@@ -321,13 +379,18 @@ public interface CustomJobSpecOrBuilder
    * each child CustomJob backing a Trial is set to a subdirectory of name
    * [id][google.cloud.aiplatform.v1beta1.Trial.id] under its parent
    * HyperparameterTuningJob's baseOutputDirectory.
+   *
    * The following Vertex AI environment variables will be passed to
    * containers or python modules when this field is set:
+   *
    *   For CustomJob:
+   *
    *   * AIP_MODEL_DIR = `&lt;base_output_directory&gt;/model/`
    *   * AIP_CHECKPOINT_DIR = `&lt;base_output_directory&gt;/checkpoints/`
    *   * AIP_TENSORBOARD_LOG_DIR = `&lt;base_output_directory&gt;/logs/`
+   *
    *   For CustomJob backing a Trial of HyperparameterTuningJob:
+   *
    *   * AIP_MODEL_DIR = `&lt;base_output_directory&gt;/&lt;trial_id&gt;/model/`
    *   * AIP_CHECKPOINT_DIR = `&lt;base_output_directory&gt;/&lt;trial_id&gt;/checkpoints/`
    *   * AIP_TENSORBOARD_LOG_DIR = `&lt;base_output_directory&gt;/&lt;trial_id&gt;/logs/`
@@ -348,13 +411,18 @@ public interface CustomJobSpecOrBuilder
    * each child CustomJob backing a Trial is set to a subdirectory of name
    * [id][google.cloud.aiplatform.v1beta1.Trial.id] under its parent
    * HyperparameterTuningJob's baseOutputDirectory.
+   *
    * The following Vertex AI environment variables will be passed to
    * containers or python modules when this field is set:
+   *
    *   For CustomJob:
+   *
    *   * AIP_MODEL_DIR = `&lt;base_output_directory&gt;/model/`
    *   * AIP_CHECKPOINT_DIR = `&lt;base_output_directory&gt;/checkpoints/`
    *   * AIP_TENSORBOARD_LOG_DIR = `&lt;base_output_directory&gt;/logs/`
+   *
    *   For CustomJob backing a Trial of HyperparameterTuningJob:
+   *
    *   * AIP_MODEL_DIR = `&lt;base_output_directory&gt;/&lt;trial_id&gt;/model/`
    *   * AIP_CHECKPOINT_DIR = `&lt;base_output_directory&gt;/&lt;trial_id&gt;/checkpoints/`
    *   * AIP_TENSORBOARD_LOG_DIR = `&lt;base_output_directory&gt;/&lt;trial_id&gt;/logs/`
@@ -406,6 +474,7 @@ public interface CustomJobSpecOrBuilder
    * Optional. Whether you want Vertex AI to enable [interactive shell
    * access](https://cloud.google.com/vertex-ai/docs/training/monitor-debug-interactive-shell)
    * to training containers.
+   *
    * If set to `true`, you can access interactive shells at the URIs given
    * by
    * [CustomJob.web_access_uris][google.cloud.aiplatform.v1beta1.CustomJob.web_access_uris]
@@ -427,6 +496,7 @@ public interface CustomJobSpecOrBuilder
    * <pre>
    * Optional. Whether you want Vertex AI to enable access to the customized
    * dashboard in training chief container.
+   *
    * If set to `true`, you can access the dashboard at the URIs given
    * by
    * [CustomJob.web_access_uris][google.cloud.aiplatform.v1beta1.CustomJob.web_access_uris]

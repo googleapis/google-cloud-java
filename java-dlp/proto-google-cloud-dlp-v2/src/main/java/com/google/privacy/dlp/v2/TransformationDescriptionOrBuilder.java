@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -86,6 +86,7 @@ public interface TransformationDescriptionOrBuilder
    * A human-readable string representation of the `RecordCondition`
    * corresponding to this transformation. Set if a `RecordCondition` was used
    * to determine whether or not to apply this transformation.
+   *
    * Examples:
    *     * (age_field &gt; 85)
    *     * (age_field &lt;= 18)
@@ -106,6 +107,7 @@ public interface TransformationDescriptionOrBuilder
    * A human-readable string representation of the `RecordCondition`
    * corresponding to this transformation. Set if a `RecordCondition` was used
    * to determine whether or not to apply this transformation.
+   *
    * Examples:
    *     * (age_field &gt; 85)
    *     * (age_field &lt;= 18)

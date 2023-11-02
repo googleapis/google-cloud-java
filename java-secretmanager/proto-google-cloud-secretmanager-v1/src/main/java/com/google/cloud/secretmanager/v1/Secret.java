@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ package com.google.cloud.secretmanager.v1;
  * <pre>
  * A [Secret][google.cloud.secretmanager.v1.Secret] is a logical secret whose
  * value and versions can be accessed.
+ *
  * A [Secret][google.cloud.secretmanager.v1.Secret] is made up of zero or more
  * [SecretVersions][google.cloud.secretmanager.v1.SecretVersion] that represent
  * the secret data.
@@ -51,11 +52,6 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Secret();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -89,6 +85,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int expirationCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object expiration_;
 
   public enum ExpirationCase
@@ -198,6 +196,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required. Immutable. The replication policy of the secret data attached to
    * the [Secret][google.cloud.secretmanager.v1.Secret].
+   *
    * The replication policy cannot be changed after the Secret has been created.
    * </pre>
    *
@@ -217,6 +216,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required. Immutable. The replication policy of the secret data attached to
    * the [Secret][google.cloud.secretmanager.v1.Secret].
+   *
    * The replication policy cannot be changed after the Secret has been created.
    * </pre>
    *
@@ -238,6 +238,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required. Immutable. The replication policy of the secret data attached to
    * the [Secret][google.cloud.secretmanager.v1.Secret].
+   *
    * The replication policy cannot be changed after the Secret has been created.
    * </pre>
    *
@@ -335,12 +336,15 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The labels assigned to this Secret.
+   *
    * Label keys must be between 1 and 63 characters long, have a UTF-8 encoding
    * of maximum 128 bytes, and must conform to the following PCRE regular
    * expression: `[&#92;p{Ll}&#92;p{Lo}][&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,62}`
+   *
    * Label values must be between 0 and 63 characters long, have a UTF-8
    * encoding of maximum 128 bytes, and must conform to the following PCRE
    * regular expression: `[&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,63}`
+   *
    * No more than 64 labels can be assigned to a given resource.
    * </pre>
    *
@@ -364,12 +368,15 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The labels assigned to this Secret.
+   *
    * Label keys must be between 1 and 63 characters long, have a UTF-8 encoding
    * of maximum 128 bytes, and must conform to the following PCRE regular
    * expression: `[&#92;p{Ll}&#92;p{Lo}][&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,62}`
+   *
    * Label values must be between 0 and 63 characters long, have a UTF-8
    * encoding of maximum 128 bytes, and must conform to the following PCRE
    * regular expression: `[&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,63}`
+   *
    * No more than 64 labels can be assigned to a given resource.
    * </pre>
    *
@@ -384,12 +391,15 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The labels assigned to this Secret.
+   *
    * Label keys must be between 1 and 63 characters long, have a UTF-8 encoding
    * of maximum 128 bytes, and must conform to the following PCRE regular
    * expression: `[&#92;p{Ll}&#92;p{Lo}][&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,62}`
+   *
    * Label values must be between 0 and 63 characters long, have a UTF-8
    * encoding of maximum 128 bytes, and must conform to the following PCRE
    * regular expression: `[&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,63}`
+   *
    * No more than 64 labels can be assigned to a given resource.
    * </pre>
    *
@@ -411,12 +421,15 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The labels assigned to this Secret.
+   *
    * Label keys must be between 1 and 63 characters long, have a UTF-8 encoding
    * of maximum 128 bytes, and must conform to the following PCRE regular
    * expression: `[&#92;p{Ll}&#92;p{Lo}][&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,62}`
+   *
    * Label values must be between 0 and 63 characters long, have a UTF-8
    * encoding of maximum 128 bytes, and must conform to the following PCRE
    * regular expression: `[&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,63}`
+   *
    * No more than 64 labels can be assigned to a given resource.
    * </pre>
    *
@@ -782,11 +795,13 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Mapping from version alias to version name.
+   *
    * A version alias is a string with a maximum length of 63 characters and can
    * contain uppercase and lowercase letters, numerals, and the hyphen (`-`)
    * and underscore ('_') characters. An alias string must start with a
    * letter and cannot be the string 'latest' or 'NEW'.
    * No more than 50 aliases can be assigned to a given secret.
+   *
    * Version-Alias pairs will be viewable via GetSecret and modifiable via
    * UpdateSecret. At launch access by alias will only be supported on
    * GetSecretVersion and AccessSecretVersion.
@@ -813,11 +828,13 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Mapping from version alias to version name.
+   *
    * A version alias is a string with a maximum length of 63 characters and can
    * contain uppercase and lowercase letters, numerals, and the hyphen (`-`)
    * and underscore ('_') characters. An alias string must start with a
    * letter and cannot be the string 'latest' or 'NEW'.
    * No more than 50 aliases can be assigned to a given secret.
+   *
    * Version-Alias pairs will be viewable via GetSecret and modifiable via
    * UpdateSecret. At launch access by alias will only be supported on
    * GetSecretVersion and AccessSecretVersion.
@@ -835,11 +852,13 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Mapping from version alias to version name.
+   *
    * A version alias is a string with a maximum length of 63 characters and can
    * contain uppercase and lowercase letters, numerals, and the hyphen (`-`)
    * and underscore ('_') characters. An alias string must start with a
    * letter and cannot be the string 'latest' or 'NEW'.
    * No more than 50 aliases can be assigned to a given secret.
+   *
    * Version-Alias pairs will be viewable via GetSecret and modifiable via
    * UpdateSecret. At launch access by alias will only be supported on
    * GetSecretVersion and AccessSecretVersion.
@@ -861,11 +880,13 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Mapping from version alias to version name.
+   *
    * A version alias is a string with a maximum length of 63 characters and can
    * contain uppercase and lowercase letters, numerals, and the hyphen (`-`)
    * and underscore ('_') characters. An alias string must start with a
    * letter and cannot be the string 'latest' or 'NEW'.
    * No more than 50 aliases can be assigned to a given secret.
+   *
    * Version-Alias pairs will be viewable via GetSecret and modifiable via
    * UpdateSecret. At launch access by alias will only be supported on
    * GetSecretVersion and AccessSecretVersion.
@@ -918,13 +939,16 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Custom metadata about the secret.
+   *
    * Annotations are distinct from various forms of labels.
    * Annotations exist to allow client tools to store their own state
    * information without requiring a database.
+   *
    * Annotation keys must be between 1 and 63 characters long, have a UTF-8
    * encoding of maximum 128 bytes, begin and end with an alphanumeric character
    * ([a-z0-9A-Z]), and may have dashes (-), underscores (_), dots (.), and
    * alphanumerics in between these symbols.
+   *
    * The total size of annotation keys and values must be less than 16KiB.
    * </pre>
    *
@@ -949,13 +973,16 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Custom metadata about the secret.
+   *
    * Annotations are distinct from various forms of labels.
    * Annotations exist to allow client tools to store their own state
    * information without requiring a database.
+   *
    * Annotation keys must be between 1 and 63 characters long, have a UTF-8
    * encoding of maximum 128 bytes, begin and end with an alphanumeric character
    * ([a-z0-9A-Z]), and may have dashes (-), underscores (_), dots (.), and
    * alphanumerics in between these symbols.
+   *
    * The total size of annotation keys and values must be less than 16KiB.
    * </pre>
    *
@@ -971,13 +998,16 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Custom metadata about the secret.
+   *
    * Annotations are distinct from various forms of labels.
    * Annotations exist to allow client tools to store their own state
    * information without requiring a database.
+   *
    * Annotation keys must be between 1 and 63 characters long, have a UTF-8
    * encoding of maximum 128 bytes, begin and end with an alphanumeric character
    * ([a-z0-9A-Z]), and may have dashes (-), underscores (_), dots (.), and
    * alphanumerics in between these symbols.
+   *
    * The total size of annotation keys and values must be less than 16KiB.
    * </pre>
    *
@@ -1000,13 +1030,16 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Custom metadata about the secret.
+   *
    * Annotations are distinct from various forms of labels.
    * Annotations exist to allow client tools to store their own state
    * information without requiring a database.
+   *
    * Annotation keys must be between 1 and 63 characters long, have a UTF-8
    * encoding of maximum 128 bytes, begin and end with an alphanumeric character
    * ([a-z0-9A-Z]), and may have dashes (-), underscores (_), dots (.), and
    * alphanumerics in between these symbols.
+   *
    * The total size of annotation keys and values must be less than 16KiB.
    * </pre>
    *
@@ -1341,6 +1374,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * A [Secret][google.cloud.secretmanager.v1.Secret] is a logical secret whose
    * value and versions can be accessed.
+   *
    * A [Secret][google.cloud.secretmanager.v1.Secret] is made up of zero or more
    * [SecretVersions][google.cloud.secretmanager.v1.SecretVersion] that represent
    * the secret data.
@@ -1923,6 +1957,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Immutable. The replication policy of the secret data attached to
      * the [Secret][google.cloud.secretmanager.v1.Secret].
+     *
      * The replication policy cannot be changed after the Secret has been created.
      * </pre>
      *
@@ -1941,6 +1976,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Immutable. The replication policy of the secret data attached to
      * the [Secret][google.cloud.secretmanager.v1.Secret].
+     *
      * The replication policy cannot be changed after the Secret has been created.
      * </pre>
      *
@@ -1965,6 +2001,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Immutable. The replication policy of the secret data attached to
      * the [Secret][google.cloud.secretmanager.v1.Secret].
+     *
      * The replication policy cannot be changed after the Secret has been created.
      * </pre>
      *
@@ -1991,6 +2028,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Immutable. The replication policy of the secret data attached to
      * the [Secret][google.cloud.secretmanager.v1.Secret].
+     *
      * The replication policy cannot be changed after the Secret has been created.
      * </pre>
      *
@@ -2015,6 +2053,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Immutable. The replication policy of the secret data attached to
      * the [Secret][google.cloud.secretmanager.v1.Secret].
+     *
      * The replication policy cannot be changed after the Secret has been created.
      * </pre>
      *
@@ -2044,6 +2083,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Immutable. The replication policy of the secret data attached to
      * the [Secret][google.cloud.secretmanager.v1.Secret].
+     *
      * The replication policy cannot be changed after the Secret has been created.
      * </pre>
      *
@@ -2067,6 +2107,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Immutable. The replication policy of the secret data attached to
      * the [Secret][google.cloud.secretmanager.v1.Secret].
+     *
      * The replication policy cannot be changed after the Secret has been created.
      * </pre>
      *
@@ -2085,6 +2126,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Immutable. The replication policy of the secret data attached to
      * the [Secret][google.cloud.secretmanager.v1.Secret].
+     *
      * The replication policy cannot be changed after the Secret has been created.
      * </pre>
      *
@@ -2107,6 +2149,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Immutable. The replication policy of the secret data attached to
      * the [Secret][google.cloud.secretmanager.v1.Secret].
+     *
      * The replication policy cannot be changed after the Secret has been created.
      * </pre>
      *
@@ -2371,12 +2414,15 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The labels assigned to this Secret.
+     *
      * Label keys must be between 1 and 63 characters long, have a UTF-8 encoding
      * of maximum 128 bytes, and must conform to the following PCRE regular
      * expression: `[&#92;p{Ll}&#92;p{Lo}][&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,62}`
+     *
      * Label values must be between 0 and 63 characters long, have a UTF-8
      * encoding of maximum 128 bytes, and must conform to the following PCRE
      * regular expression: `[&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,63}`
+     *
      * No more than 64 labels can be assigned to a given resource.
      * </pre>
      *
@@ -2400,12 +2446,15 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The labels assigned to this Secret.
+     *
      * Label keys must be between 1 and 63 characters long, have a UTF-8 encoding
      * of maximum 128 bytes, and must conform to the following PCRE regular
      * expression: `[&#92;p{Ll}&#92;p{Lo}][&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,62}`
+     *
      * Label values must be between 0 and 63 characters long, have a UTF-8
      * encoding of maximum 128 bytes, and must conform to the following PCRE
      * regular expression: `[&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,63}`
+     *
      * No more than 64 labels can be assigned to a given resource.
      * </pre>
      *
@@ -2420,12 +2469,15 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The labels assigned to this Secret.
+     *
      * Label keys must be between 1 and 63 characters long, have a UTF-8 encoding
      * of maximum 128 bytes, and must conform to the following PCRE regular
      * expression: `[&#92;p{Ll}&#92;p{Lo}][&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,62}`
+     *
      * Label values must be between 0 and 63 characters long, have a UTF-8
      * encoding of maximum 128 bytes, and must conform to the following PCRE
      * regular expression: `[&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,63}`
+     *
      * No more than 64 labels can be assigned to a given resource.
      * </pre>
      *
@@ -2447,12 +2499,15 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The labels assigned to this Secret.
+     *
      * Label keys must be between 1 and 63 characters long, have a UTF-8 encoding
      * of maximum 128 bytes, and must conform to the following PCRE regular
      * expression: `[&#92;p{Ll}&#92;p{Lo}][&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,62}`
+     *
      * Label values must be between 0 and 63 characters long, have a UTF-8
      * encoding of maximum 128 bytes, and must conform to the following PCRE
      * regular expression: `[&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,63}`
+     *
      * No more than 64 labels can be assigned to a given resource.
      * </pre>
      *
@@ -2480,12 +2535,15 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The labels assigned to this Secret.
+     *
      * Label keys must be between 1 and 63 characters long, have a UTF-8 encoding
      * of maximum 128 bytes, and must conform to the following PCRE regular
      * expression: `[&#92;p{Ll}&#92;p{Lo}][&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,62}`
+     *
      * Label values must be between 0 and 63 characters long, have a UTF-8
      * encoding of maximum 128 bytes, and must conform to the following PCRE
      * regular expression: `[&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,63}`
+     *
      * No more than 64 labels can be assigned to a given resource.
      * </pre>
      *
@@ -2509,12 +2567,15 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The labels assigned to this Secret.
+     *
      * Label keys must be between 1 and 63 characters long, have a UTF-8 encoding
      * of maximum 128 bytes, and must conform to the following PCRE regular
      * expression: `[&#92;p{Ll}&#92;p{Lo}][&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,62}`
+     *
      * Label values must be between 0 and 63 characters long, have a UTF-8
      * encoding of maximum 128 bytes, and must conform to the following PCRE
      * regular expression: `[&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,63}`
+     *
      * No more than 64 labels can be assigned to a given resource.
      * </pre>
      *
@@ -2536,12 +2597,15 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The labels assigned to this Secret.
+     *
      * Label keys must be between 1 and 63 characters long, have a UTF-8 encoding
      * of maximum 128 bytes, and must conform to the following PCRE regular
      * expression: `[&#92;p{Ll}&#92;p{Lo}][&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,62}`
+     *
      * Label values must be between 0 and 63 characters long, have a UTF-8
      * encoding of maximum 128 bytes, and must conform to the following PCRE
      * regular expression: `[&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,63}`
+     *
      * No more than 64 labels can be assigned to a given resource.
      * </pre>
      *
@@ -3764,11 +3828,13 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Mapping from version alias to version name.
+     *
      * A version alias is a string with a maximum length of 63 characters and can
      * contain uppercase and lowercase letters, numerals, and the hyphen (`-`)
      * and underscore ('_') characters. An alias string must start with a
      * letter and cannot be the string 'latest' or 'NEW'.
      * No more than 50 aliases can be assigned to a given secret.
+     *
      * Version-Alias pairs will be viewable via GetSecret and modifiable via
      * UpdateSecret. At launch access by alias will only be supported on
      * GetSecretVersion and AccessSecretVersion.
@@ -3796,11 +3862,13 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Mapping from version alias to version name.
+     *
      * A version alias is a string with a maximum length of 63 characters and can
      * contain uppercase and lowercase letters, numerals, and the hyphen (`-`)
      * and underscore ('_') characters. An alias string must start with a
      * letter and cannot be the string 'latest' or 'NEW'.
      * No more than 50 aliases can be assigned to a given secret.
+     *
      * Version-Alias pairs will be viewable via GetSecret and modifiable via
      * UpdateSecret. At launch access by alias will only be supported on
      * GetSecretVersion and AccessSecretVersion.
@@ -3819,11 +3887,13 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Mapping from version alias to version name.
+     *
      * A version alias is a string with a maximum length of 63 characters and can
      * contain uppercase and lowercase letters, numerals, and the hyphen (`-`)
      * and underscore ('_') characters. An alias string must start with a
      * letter and cannot be the string 'latest' or 'NEW'.
      * No more than 50 aliases can be assigned to a given secret.
+     *
      * Version-Alias pairs will be viewable via GetSecret and modifiable via
      * UpdateSecret. At launch access by alias will only be supported on
      * GetSecretVersion and AccessSecretVersion.
@@ -3846,11 +3916,13 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Mapping from version alias to version name.
+     *
      * A version alias is a string with a maximum length of 63 characters and can
      * contain uppercase and lowercase letters, numerals, and the hyphen (`-`)
      * and underscore ('_') characters. An alias string must start with a
      * letter and cannot be the string 'latest' or 'NEW'.
      * No more than 50 aliases can be assigned to a given secret.
+     *
      * Version-Alias pairs will be viewable via GetSecret and modifiable via
      * UpdateSecret. At launch access by alias will only be supported on
      * GetSecretVersion and AccessSecretVersion.
@@ -3882,11 +3954,13 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Mapping from version alias to version name.
+     *
      * A version alias is a string with a maximum length of 63 characters and can
      * contain uppercase and lowercase letters, numerals, and the hyphen (`-`)
      * and underscore ('_') characters. An alias string must start with a
      * letter and cannot be the string 'latest' or 'NEW'.
      * No more than 50 aliases can be assigned to a given secret.
+     *
      * Version-Alias pairs will be viewable via GetSecret and modifiable via
      * UpdateSecret. At launch access by alias will only be supported on
      * GetSecretVersion and AccessSecretVersion.
@@ -3914,11 +3988,13 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Mapping from version alias to version name.
+     *
      * A version alias is a string with a maximum length of 63 characters and can
      * contain uppercase and lowercase letters, numerals, and the hyphen (`-`)
      * and underscore ('_') characters. An alias string must start with a
      * letter and cannot be the string 'latest' or 'NEW'.
      * No more than 50 aliases can be assigned to a given secret.
+     *
      * Version-Alias pairs will be viewable via GetSecret and modifiable via
      * UpdateSecret. At launch access by alias will only be supported on
      * GetSecretVersion and AccessSecretVersion.
@@ -3942,11 +4018,13 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Mapping from version alias to version name.
+     *
      * A version alias is a string with a maximum length of 63 characters and can
      * contain uppercase and lowercase letters, numerals, and the hyphen (`-`)
      * and underscore ('_') characters. An alias string must start with a
      * letter and cannot be the string 'latest' or 'NEW'.
      * No more than 50 aliases can be assigned to a given secret.
+     *
      * Version-Alias pairs will be viewable via GetSecret and modifiable via
      * UpdateSecret. At launch access by alias will only be supported on
      * GetSecretVersion and AccessSecretVersion.
@@ -3995,13 +4073,16 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Custom metadata about the secret.
+     *
      * Annotations are distinct from various forms of labels.
      * Annotations exist to allow client tools to store their own state
      * information without requiring a database.
+     *
      * Annotation keys must be between 1 and 63 characters long, have a UTF-8
      * encoding of maximum 128 bytes, begin and end with an alphanumeric character
      * ([a-z0-9A-Z]), and may have dashes (-), underscores (_), dots (.), and
      * alphanumerics in between these symbols.
+     *
      * The total size of annotation keys and values must be less than 16KiB.
      * </pre>
      *
@@ -4026,13 +4107,16 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Custom metadata about the secret.
+     *
      * Annotations are distinct from various forms of labels.
      * Annotations exist to allow client tools to store their own state
      * information without requiring a database.
+     *
      * Annotation keys must be between 1 and 63 characters long, have a UTF-8
      * encoding of maximum 128 bytes, begin and end with an alphanumeric character
      * ([a-z0-9A-Z]), and may have dashes (-), underscores (_), dots (.), and
      * alphanumerics in between these symbols.
+     *
      * The total size of annotation keys and values must be less than 16KiB.
      * </pre>
      *
@@ -4048,13 +4132,16 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Custom metadata about the secret.
+     *
      * Annotations are distinct from various forms of labels.
      * Annotations exist to allow client tools to store their own state
      * information without requiring a database.
+     *
      * Annotation keys must be between 1 and 63 characters long, have a UTF-8
      * encoding of maximum 128 bytes, begin and end with an alphanumeric character
      * ([a-z0-9A-Z]), and may have dashes (-), underscores (_), dots (.), and
      * alphanumerics in between these symbols.
+     *
      * The total size of annotation keys and values must be less than 16KiB.
      * </pre>
      *
@@ -4077,13 +4164,16 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Custom metadata about the secret.
+     *
      * Annotations are distinct from various forms of labels.
      * Annotations exist to allow client tools to store their own state
      * information without requiring a database.
+     *
      * Annotation keys must be between 1 and 63 characters long, have a UTF-8
      * encoding of maximum 128 bytes, begin and end with an alphanumeric character
      * ([a-z0-9A-Z]), and may have dashes (-), underscores (_), dots (.), and
      * alphanumerics in between these symbols.
+     *
      * The total size of annotation keys and values must be less than 16KiB.
      * </pre>
      *
@@ -4112,13 +4202,16 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Custom metadata about the secret.
+     *
      * Annotations are distinct from various forms of labels.
      * Annotations exist to allow client tools to store their own state
      * information without requiring a database.
+     *
      * Annotation keys must be between 1 and 63 characters long, have a UTF-8
      * encoding of maximum 128 bytes, begin and end with an alphanumeric character
      * ([a-z0-9A-Z]), and may have dashes (-), underscores (_), dots (.), and
      * alphanumerics in between these symbols.
+     *
      * The total size of annotation keys and values must be less than 16KiB.
      * </pre>
      *
@@ -4143,13 +4236,16 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Custom metadata about the secret.
+     *
      * Annotations are distinct from various forms of labels.
      * Annotations exist to allow client tools to store their own state
      * information without requiring a database.
+     *
      * Annotation keys must be between 1 and 63 characters long, have a UTF-8
      * encoding of maximum 128 bytes, begin and end with an alphanumeric character
      * ([a-z0-9A-Z]), and may have dashes (-), underscores (_), dots (.), and
      * alphanumerics in between these symbols.
+     *
      * The total size of annotation keys and values must be less than 16KiB.
      * </pre>
      *
@@ -4172,13 +4268,16 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Custom metadata about the secret.
+     *
      * Annotations are distinct from various forms of labels.
      * Annotations exist to allow client tools to store their own state
      * information without requiring a database.
+     *
      * Annotation keys must be between 1 and 63 characters long, have a UTF-8
      * encoding of maximum 128 bytes, begin and end with an alphanumeric character
      * ([a-z0-9A-Z]), and may have dashes (-), underscores (_), dots (.), and
      * alphanumerics in between these symbols.
+     *
      * The total size of annotation keys and values must be less than 16KiB.
      * </pre>
      *

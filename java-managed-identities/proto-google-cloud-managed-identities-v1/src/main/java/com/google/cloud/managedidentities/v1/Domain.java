@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,9 +39,9 @@ public final class Domain extends com.google.protobuf.GeneratedMessageV3
 
   private Domain() {
     name_ = "";
-    authorizedNetworks_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    authorizedNetworks_ = com.google.protobuf.LazyStringArrayList.emptyList();
     reservedIpRange_ = "";
-    locations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    locations_ = com.google.protobuf.LazyStringArrayList.emptyList();
     admin_ = "";
     fqdn_ = "";
     state_ = 0;
@@ -53,11 +53,6 @@ public final class Domain extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Domain();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -513,7 +508,8 @@ public final class Domain extends com.google.protobuf.GeneratedMessageV3
   public static final int AUTHORIZED_NETWORKS_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList authorizedNetworks_;
+  private com.google.protobuf.LazyStringArrayList authorizedNetworks_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -649,7 +645,8 @@ public final class Domain extends com.google.protobuf.GeneratedMessageV3
   public static final int LOCATIONS_FIELD_NUMBER = 5;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList locations_;
+  private com.google.protobuf.LazyStringArrayList locations_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -1461,11 +1458,9 @@ public final class Domain extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = 0;
       name_ = "";
       internalGetMutableLabels().clear();
-      authorizedNetworks_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      authorizedNetworks_ = com.google.protobuf.LazyStringArrayList.emptyList();
       reservedIpRange_ = "";
-      locations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000010);
+      locations_ = com.google.protobuf.LazyStringArrayList.emptyList();
       admin_ = "";
       fqdn_ = "";
       createTime_ = null;
@@ -1523,16 +1518,6 @@ public final class Domain extends com.google.protobuf.GeneratedMessageV3
     }
 
     private void buildPartialRepeatedFields(com.google.cloud.managedidentities.v1.Domain result) {
-      if (((bitField0_ & 0x00000004) != 0)) {
-        authorizedNetworks_ = authorizedNetworks_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.authorizedNetworks_ = authorizedNetworks_;
-      if (((bitField0_ & 0x00000010) != 0)) {
-        locations_ = locations_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000010);
-      }
-      result.locations_ = locations_;
       if (trustsBuilder_ == null) {
         if (((bitField0_ & 0x00000800) != 0)) {
           trusts_ = java.util.Collections.unmodifiableList(trusts_);
@@ -1553,8 +1538,16 @@ public final class Domain extends com.google.protobuf.GeneratedMessageV3
         result.labels_ = internalGetLabels();
         result.labels_.makeImmutable();
       }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        authorizedNetworks_.makeImmutable();
+        result.authorizedNetworks_ = authorizedNetworks_;
+      }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.reservedIpRange_ = reservedIpRange_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        locations_.makeImmutable();
+        result.locations_ = locations_;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.admin_ = admin_;
@@ -1631,7 +1624,7 @@ public final class Domain extends com.google.protobuf.GeneratedMessageV3
       if (!other.authorizedNetworks_.isEmpty()) {
         if (authorizedNetworks_.isEmpty()) {
           authorizedNetworks_ = other.authorizedNetworks_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ |= 0x00000004;
         } else {
           ensureAuthorizedNetworksIsMutable();
           authorizedNetworks_.addAll(other.authorizedNetworks_);
@@ -1646,7 +1639,7 @@ public final class Domain extends com.google.protobuf.GeneratedMessageV3
       if (!other.locations_.isEmpty()) {
         if (locations_.isEmpty()) {
           locations_ = other.locations_;
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ |= 0x00000010;
         } else {
           ensureLocationsIsMutable();
           locations_.addAll(other.locations_);
@@ -2110,14 +2103,14 @@ public final class Domain extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList authorizedNetworks_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList authorizedNetworks_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureAuthorizedNetworksIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!authorizedNetworks_.isModifiable()) {
         authorizedNetworks_ = new com.google.protobuf.LazyStringArrayList(authorizedNetworks_);
-        bitField0_ |= 0x00000004;
       }
+      bitField0_ |= 0x00000004;
     }
     /**
      *
@@ -2136,7 +2129,8 @@ public final class Domain extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the authorizedNetworks.
      */
     public com.google.protobuf.ProtocolStringList getAuthorizedNetworksList() {
-      return authorizedNetworks_.getUnmodifiableView();
+      authorizedNetworks_.makeImmutable();
+      return authorizedNetworks_;
     }
     /**
      *
@@ -2221,6 +2215,7 @@ public final class Domain extends com.google.protobuf.GeneratedMessageV3
       }
       ensureAuthorizedNetworksIsMutable();
       authorizedNetworks_.set(index, value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2247,6 +2242,7 @@ public final class Domain extends com.google.protobuf.GeneratedMessageV3
       }
       ensureAuthorizedNetworksIsMutable();
       authorizedNetworks_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2270,6 +2266,7 @@ public final class Domain extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllAuthorizedNetworks(java.lang.Iterable<java.lang.String> values) {
       ensureAuthorizedNetworksIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, authorizedNetworks_);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2290,8 +2287,9 @@ public final class Domain extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAuthorizedNetworks() {
-      authorizedNetworks_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      authorizedNetworks_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000004);
+      ;
       onChanged();
       return this;
     }
@@ -2319,6 +2317,7 @@ public final class Domain extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureAuthorizedNetworksIsMutable();
       authorizedNetworks_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2444,14 +2443,14 @@ public final class Domain extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList locations_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList locations_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureLocationsIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!locations_.isModifiable()) {
         locations_ = new com.google.protobuf.LazyStringArrayList(locations_);
-        bitField0_ |= 0x00000010;
       }
+      bitField0_ |= 0x00000010;
     }
     /**
      *
@@ -2469,7 +2468,8 @@ public final class Domain extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the locations.
      */
     public com.google.protobuf.ProtocolStringList getLocationsList() {
-      return locations_.getUnmodifiableView();
+      locations_.makeImmutable();
+      return locations_;
     }
     /**
      *
@@ -2550,6 +2550,7 @@ public final class Domain extends com.google.protobuf.GeneratedMessageV3
       }
       ensureLocationsIsMutable();
       locations_.set(index, value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2575,6 +2576,7 @@ public final class Domain extends com.google.protobuf.GeneratedMessageV3
       }
       ensureLocationsIsMutable();
       locations_.add(value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2597,6 +2599,7 @@ public final class Domain extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllLocations(java.lang.Iterable<java.lang.String> values) {
       ensureLocationsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, locations_);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2616,8 +2619,9 @@ public final class Domain extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearLocations() {
-      locations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      locations_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000010);
+      ;
       onChanged();
       return this;
     }
@@ -2644,6 +2648,7 @@ public final class Domain extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureLocationsIsMutable();
       locations_.add(value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

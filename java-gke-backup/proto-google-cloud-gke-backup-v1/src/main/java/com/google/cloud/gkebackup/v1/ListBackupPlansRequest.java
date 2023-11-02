@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,11 +50,6 @@ public final class ListBackupPlansRequest extends com.google.protobuf.GeneratedM
     return new ListBackupPlansRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gkebackup.v1.GKEBackupProto
         .internal_static_google_cloud_gkebackup_v1_ListBackupPlansRequest_descriptor;
@@ -79,7 +74,7 @@ public final class ListBackupPlansRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Required. The location that contains the BackupPlans to list.
-   * Format: projects/&#42;&#47;locations/&#42;
+   * Format: `projects/&#42;&#47;locations/&#42;`
    * </pre>
    *
    * <code>
@@ -105,7 +100,7 @@ public final class ListBackupPlansRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Required. The location that contains the BackupPlans to list.
-   * Format: projects/&#42;&#47;locations/&#42;
+   * Format: `projects/&#42;&#47;locations/&#42;`
    * </pre>
    *
    * <code>
@@ -755,7 +750,7 @@ public final class ListBackupPlansRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The location that contains the BackupPlans to list.
-     * Format: projects/&#42;&#47;locations/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;`
      * </pre>
      *
      * <code>
@@ -780,7 +775,7 @@ public final class ListBackupPlansRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The location that contains the BackupPlans to list.
-     * Format: projects/&#42;&#47;locations/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;`
      * </pre>
      *
      * <code>
@@ -805,7 +800,7 @@ public final class ListBackupPlansRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The location that contains the BackupPlans to list.
-     * Format: projects/&#42;&#47;locations/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;`
      * </pre>
      *
      * <code>
@@ -829,7 +824,7 @@ public final class ListBackupPlansRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The location that contains the BackupPlans to list.
-     * Format: projects/&#42;&#47;locations/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;`
      * </pre>
      *
      * <code>
@@ -849,7 +844,7 @@ public final class ListBackupPlansRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The location that contains the BackupPlans to list.
-     * Format: projects/&#42;&#47;locations/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;`
      * </pre>
      *
      * <code>

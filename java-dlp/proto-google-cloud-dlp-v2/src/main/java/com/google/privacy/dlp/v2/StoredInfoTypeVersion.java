@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new StoredInfoTypeVersion();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -217,9 +212,11 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
    * anomalies detected in the storedInfoType data that render it unusable. Only
    * the five most recent errors will be displayed, with the most recent error
    * appearing first.
+   *
    * For example, some of the data for stored custom dictionaries is put in
    * the user's Cloud Storage bucket, and if this data is modified or
    * deleted by the user or another system, the dictionary becomes invalid.
+   *
    * If any errors occur, fix the problem indicated by the error message and
    * use the UpdateStoredInfoType API method to create another version of the
    * storedInfoType to continue using it, reusing the same `config` if it was
@@ -240,9 +237,11 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
    * anomalies detected in the storedInfoType data that render it unusable. Only
    * the five most recent errors will be displayed, with the most recent error
    * appearing first.
+   *
    * For example, some of the data for stored custom dictionaries is put in
    * the user's Cloud Storage bucket, and if this data is modified or
    * deleted by the user or another system, the dictionary becomes invalid.
+   *
    * If any errors occur, fix the problem indicated by the error message and
    * use the UpdateStoredInfoType API method to create another version of the
    * storedInfoType to continue using it, reusing the same `config` if it was
@@ -264,9 +263,11 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
    * anomalies detected in the storedInfoType data that render it unusable. Only
    * the five most recent errors will be displayed, with the most recent error
    * appearing first.
+   *
    * For example, some of the data for stored custom dictionaries is put in
    * the user's Cloud Storage bucket, and if this data is modified or
    * deleted by the user or another system, the dictionary becomes invalid.
+   *
    * If any errors occur, fix the problem indicated by the error message and
    * use the UpdateStoredInfoType API method to create another version of the
    * storedInfoType to continue using it, reusing the same `config` if it was
@@ -287,9 +288,11 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
    * anomalies detected in the storedInfoType data that render it unusable. Only
    * the five most recent errors will be displayed, with the most recent error
    * appearing first.
+   *
    * For example, some of the data for stored custom dictionaries is put in
    * the user's Cloud Storage bucket, and if this data is modified or
    * deleted by the user or another system, the dictionary becomes invalid.
+   *
    * If any errors occur, fix the problem indicated by the error message and
    * use the UpdateStoredInfoType API method to create another version of the
    * storedInfoType to continue using it, reusing the same `config` if it was
@@ -310,9 +313,11 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
    * anomalies detected in the storedInfoType data that render it unusable. Only
    * the five most recent errors will be displayed, with the most recent error
    * appearing first.
+   *
    * For example, some of the data for stored custom dictionaries is put in
    * the user's Cloud Storage bucket, and if this data is modified or
    * deleted by the user or another system, the dictionary becomes invalid.
+   *
    * If any errors occur, fix the problem indicated by the error message and
    * use the UpdateStoredInfoType API method to create another version of the
    * storedInfoType to continue using it, reusing the same `config` if it was
@@ -1380,9 +1385,11 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
      * anomalies detected in the storedInfoType data that render it unusable. Only
      * the five most recent errors will be displayed, with the most recent error
      * appearing first.
+     *
      * For example, some of the data for stored custom dictionaries is put in
      * the user's Cloud Storage bucket, and if this data is modified or
      * deleted by the user or another system, the dictionary becomes invalid.
+     *
      * If any errors occur, fix the problem indicated by the error message and
      * use the UpdateStoredInfoType API method to create another version of the
      * storedInfoType to continue using it, reusing the same `config` if it was
@@ -1406,9 +1413,11 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
      * anomalies detected in the storedInfoType data that render it unusable. Only
      * the five most recent errors will be displayed, with the most recent error
      * appearing first.
+     *
      * For example, some of the data for stored custom dictionaries is put in
      * the user's Cloud Storage bucket, and if this data is modified or
      * deleted by the user or another system, the dictionary becomes invalid.
+     *
      * If any errors occur, fix the problem indicated by the error message and
      * use the UpdateStoredInfoType API method to create another version of the
      * storedInfoType to continue using it, reusing the same `config` if it was
@@ -1432,9 +1441,11 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
      * anomalies detected in the storedInfoType data that render it unusable. Only
      * the five most recent errors will be displayed, with the most recent error
      * appearing first.
+     *
      * For example, some of the data for stored custom dictionaries is put in
      * the user's Cloud Storage bucket, and if this data is modified or
      * deleted by the user or another system, the dictionary becomes invalid.
+     *
      * If any errors occur, fix the problem indicated by the error message and
      * use the UpdateStoredInfoType API method to create another version of the
      * storedInfoType to continue using it, reusing the same `config` if it was
@@ -1458,9 +1469,11 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
      * anomalies detected in the storedInfoType data that render it unusable. Only
      * the five most recent errors will be displayed, with the most recent error
      * appearing first.
+     *
      * For example, some of the data for stored custom dictionaries is put in
      * the user's Cloud Storage bucket, and if this data is modified or
      * deleted by the user or another system, the dictionary becomes invalid.
+     *
      * If any errors occur, fix the problem indicated by the error message and
      * use the UpdateStoredInfoType API method to create another version of the
      * storedInfoType to continue using it, reusing the same `config` if it was
@@ -1490,9 +1503,11 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
      * anomalies detected in the storedInfoType data that render it unusable. Only
      * the five most recent errors will be displayed, with the most recent error
      * appearing first.
+     *
      * For example, some of the data for stored custom dictionaries is put in
      * the user's Cloud Storage bucket, and if this data is modified or
      * deleted by the user or another system, the dictionary becomes invalid.
+     *
      * If any errors occur, fix the problem indicated by the error message and
      * use the UpdateStoredInfoType API method to create another version of the
      * storedInfoType to continue using it, reusing the same `config` if it was
@@ -1519,9 +1534,11 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
      * anomalies detected in the storedInfoType data that render it unusable. Only
      * the five most recent errors will be displayed, with the most recent error
      * appearing first.
+     *
      * For example, some of the data for stored custom dictionaries is put in
      * the user's Cloud Storage bucket, and if this data is modified or
      * deleted by the user or another system, the dictionary becomes invalid.
+     *
      * If any errors occur, fix the problem indicated by the error message and
      * use the UpdateStoredInfoType API method to create another version of the
      * storedInfoType to continue using it, reusing the same `config` if it was
@@ -1551,9 +1568,11 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
      * anomalies detected in the storedInfoType data that render it unusable. Only
      * the five most recent errors will be displayed, with the most recent error
      * appearing first.
+     *
      * For example, some of the data for stored custom dictionaries is put in
      * the user's Cloud Storage bucket, and if this data is modified or
      * deleted by the user or another system, the dictionary becomes invalid.
+     *
      * If any errors occur, fix the problem indicated by the error message and
      * use the UpdateStoredInfoType API method to create another version of the
      * storedInfoType to continue using it, reusing the same `config` if it was
@@ -1583,9 +1602,11 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
      * anomalies detected in the storedInfoType data that render it unusable. Only
      * the five most recent errors will be displayed, with the most recent error
      * appearing first.
+     *
      * For example, some of the data for stored custom dictionaries is put in
      * the user's Cloud Storage bucket, and if this data is modified or
      * deleted by the user or another system, the dictionary becomes invalid.
+     *
      * If any errors occur, fix the problem indicated by the error message and
      * use the UpdateStoredInfoType API method to create another version of the
      * storedInfoType to continue using it, reusing the same `config` if it was
@@ -1612,9 +1633,11 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
      * anomalies detected in the storedInfoType data that render it unusable. Only
      * the five most recent errors will be displayed, with the most recent error
      * appearing first.
+     *
      * For example, some of the data for stored custom dictionaries is put in
      * the user's Cloud Storage bucket, and if this data is modified or
      * deleted by the user or another system, the dictionary becomes invalid.
+     *
      * If any errors occur, fix the problem indicated by the error message and
      * use the UpdateStoredInfoType API method to create another version of the
      * storedInfoType to continue using it, reusing the same `config` if it was
@@ -1641,9 +1664,11 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
      * anomalies detected in the storedInfoType data that render it unusable. Only
      * the five most recent errors will be displayed, with the most recent error
      * appearing first.
+     *
      * For example, some of the data for stored custom dictionaries is put in
      * the user's Cloud Storage bucket, and if this data is modified or
      * deleted by the user or another system, the dictionary becomes invalid.
+     *
      * If any errors occur, fix the problem indicated by the error message and
      * use the UpdateStoredInfoType API method to create another version of the
      * storedInfoType to continue using it, reusing the same `config` if it was
@@ -1671,9 +1696,11 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
      * anomalies detected in the storedInfoType data that render it unusable. Only
      * the five most recent errors will be displayed, with the most recent error
      * appearing first.
+     *
      * For example, some of the data for stored custom dictionaries is put in
      * the user's Cloud Storage bucket, and if this data is modified or
      * deleted by the user or another system, the dictionary becomes invalid.
+     *
      * If any errors occur, fix the problem indicated by the error message and
      * use the UpdateStoredInfoType API method to create another version of the
      * storedInfoType to continue using it, reusing the same `config` if it was
@@ -1700,9 +1727,11 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
      * anomalies detected in the storedInfoType data that render it unusable. Only
      * the five most recent errors will be displayed, with the most recent error
      * appearing first.
+     *
      * For example, some of the data for stored custom dictionaries is put in
      * the user's Cloud Storage bucket, and if this data is modified or
      * deleted by the user or another system, the dictionary becomes invalid.
+     *
      * If any errors occur, fix the problem indicated by the error message and
      * use the UpdateStoredInfoType API method to create another version of the
      * storedInfoType to continue using it, reusing the same `config` if it was
@@ -1729,9 +1758,11 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
      * anomalies detected in the storedInfoType data that render it unusable. Only
      * the five most recent errors will be displayed, with the most recent error
      * appearing first.
+     *
      * For example, some of the data for stored custom dictionaries is put in
      * the user's Cloud Storage bucket, and if this data is modified or
      * deleted by the user or another system, the dictionary becomes invalid.
+     *
      * If any errors occur, fix the problem indicated by the error message and
      * use the UpdateStoredInfoType API method to create another version of the
      * storedInfoType to continue using it, reusing the same `config` if it was
@@ -1751,9 +1782,11 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
      * anomalies detected in the storedInfoType data that render it unusable. Only
      * the five most recent errors will be displayed, with the most recent error
      * appearing first.
+     *
      * For example, some of the data for stored custom dictionaries is put in
      * the user's Cloud Storage bucket, and if this data is modified or
      * deleted by the user or another system, the dictionary becomes invalid.
+     *
      * If any errors occur, fix the problem indicated by the error message and
      * use the UpdateStoredInfoType API method to create another version of the
      * storedInfoType to continue using it, reusing the same `config` if it was
@@ -1777,9 +1810,11 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
      * anomalies detected in the storedInfoType data that render it unusable. Only
      * the five most recent errors will be displayed, with the most recent error
      * appearing first.
+     *
      * For example, some of the data for stored custom dictionaries is put in
      * the user's Cloud Storage bucket, and if this data is modified or
      * deleted by the user or another system, the dictionary becomes invalid.
+     *
      * If any errors occur, fix the problem indicated by the error message and
      * use the UpdateStoredInfoType API method to create another version of the
      * storedInfoType to continue using it, reusing the same `config` if it was
@@ -1804,9 +1839,11 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
      * anomalies detected in the storedInfoType data that render it unusable. Only
      * the five most recent errors will be displayed, with the most recent error
      * appearing first.
+     *
      * For example, some of the data for stored custom dictionaries is put in
      * the user's Cloud Storage bucket, and if this data is modified or
      * deleted by the user or another system, the dictionary becomes invalid.
+     *
      * If any errors occur, fix the problem indicated by the error message and
      * use the UpdateStoredInfoType API method to create another version of the
      * storedInfoType to continue using it, reusing the same `config` if it was
@@ -1827,9 +1864,11 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
      * anomalies detected in the storedInfoType data that render it unusable. Only
      * the five most recent errors will be displayed, with the most recent error
      * appearing first.
+     *
      * For example, some of the data for stored custom dictionaries is put in
      * the user's Cloud Storage bucket, and if this data is modified or
      * deleted by the user or another system, the dictionary becomes invalid.
+     *
      * If any errors occur, fix the problem indicated by the error message and
      * use the UpdateStoredInfoType API method to create another version of the
      * storedInfoType to continue using it, reusing the same `config` if it was
@@ -1850,9 +1889,11 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
      * anomalies detected in the storedInfoType data that render it unusable. Only
      * the five most recent errors will be displayed, with the most recent error
      * appearing first.
+     *
      * For example, some of the data for stored custom dictionaries is put in
      * the user's Cloud Storage bucket, and if this data is modified or
      * deleted by the user or another system, the dictionary becomes invalid.
+     *
      * If any errors occur, fix the problem indicated by the error message and
      * use the UpdateStoredInfoType API method to create another version of the
      * storedInfoType to continue using it, reusing the same `config` if it was

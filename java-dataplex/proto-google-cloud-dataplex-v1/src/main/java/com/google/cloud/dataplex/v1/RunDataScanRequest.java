@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class RunDataScanRequest extends com.google.protobuf.GeneratedMessa
     return new RunDataScanRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dataplex.v1.DataScansProto
         .internal_static_google_cloud_dataplex_v1_RunDataScanRequest_descriptor;
@@ -79,6 +74,7 @@ public final class RunDataScanRequest extends com.google.protobuf.GeneratedMessa
    * `projects/{project}/locations/{location_id}/dataScans/{data_scan_id}`.
    * where `project` refers to a *project_id* or *project_number* and
    * `location_id` refers to a GCP region.
+   *
    * Only **OnDemand** data scans are allowed.
    * </pre>
    *
@@ -108,6 +104,7 @@ public final class RunDataScanRequest extends com.google.protobuf.GeneratedMessa
    * `projects/{project}/locations/{location_id}/dataScans/{data_scan_id}`.
    * where `project` refers to a *project_id* or *project_number* and
    * `location_id` refers to a GCP region.
+   *
    * Only **OnDemand** data scans are allowed.
    * </pre>
    *
@@ -481,6 +478,7 @@ public final class RunDataScanRequest extends com.google.protobuf.GeneratedMessa
      * `projects/{project}/locations/{location_id}/dataScans/{data_scan_id}`.
      * where `project` refers to a *project_id* or *project_number* and
      * `location_id` refers to a GCP region.
+     *
      * Only **OnDemand** data scans are allowed.
      * </pre>
      *
@@ -509,6 +507,7 @@ public final class RunDataScanRequest extends com.google.protobuf.GeneratedMessa
      * `projects/{project}/locations/{location_id}/dataScans/{data_scan_id}`.
      * where `project` refers to a *project_id* or *project_number* and
      * `location_id` refers to a GCP region.
+     *
      * Only **OnDemand** data scans are allowed.
      * </pre>
      *
@@ -537,6 +536,7 @@ public final class RunDataScanRequest extends com.google.protobuf.GeneratedMessa
      * `projects/{project}/locations/{location_id}/dataScans/{data_scan_id}`.
      * where `project` refers to a *project_id* or *project_number* and
      * `location_id` refers to a GCP region.
+     *
      * Only **OnDemand** data scans are allowed.
      * </pre>
      *
@@ -564,6 +564,7 @@ public final class RunDataScanRequest extends com.google.protobuf.GeneratedMessa
      * `projects/{project}/locations/{location_id}/dataScans/{data_scan_id}`.
      * where `project` refers to a *project_id* or *project_number* and
      * `location_id` refers to a GCP region.
+     *
      * Only **OnDemand** data scans are allowed.
      * </pre>
      *
@@ -587,6 +588,7 @@ public final class RunDataScanRequest extends com.google.protobuf.GeneratedMessa
      * `projects/{project}/locations/{location_id}/dataScans/{data_scan_id}`.
      * where `project` refers to a *project_id* or *project_number* and
      * `location_id` refers to a GCP region.
+     *
      * Only **OnDemand** data scans are allowed.
      * </pre>
      *

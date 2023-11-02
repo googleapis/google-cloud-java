@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -53,14 +53,17 @@ public interface LocationFilterOrBuilder
    *
    * <pre>
    * CLDR region code of the country/region. This field may be used in two ways:
+   *
    * 1) If telecommute preference is not set, this field is used address
    * ambiguity of the user-input address. For example, "Liverpool" may refer to
    * "Liverpool, NY, US" or "Liverpool, UK". This region code biases the
    * address resolution toward a specific country or territory. If this field is
    * not set, address resolution is biased toward the United States by default.
+   *
    * 2) If telecommute preference is set to TELECOMMUTE_ALLOWED, the
    * telecommute location filter will be limited to the region specified in this
    * field. If this field is not set, the telecommute job locations will not be
+   *
    * See
    * https://unicode-org.github.io/cldr-staging/charts/latest/supplemental/territory_information.html
    * for details. Example: "CH" for Switzerland.
@@ -76,14 +79,17 @@ public interface LocationFilterOrBuilder
    *
    * <pre>
    * CLDR region code of the country/region. This field may be used in two ways:
+   *
    * 1) If telecommute preference is not set, this field is used address
    * ambiguity of the user-input address. For example, "Liverpool" may refer to
    * "Liverpool, NY, US" or "Liverpool, UK". This region code biases the
    * address resolution toward a specific country or territory. If this field is
    * not set, address resolution is biased toward the United States by default.
+   *
    * 2) If telecommute preference is set to TELECOMMUTE_ALLOWED, the
    * telecommute location filter will be limited to the region specified in this
    * field. If this field is not set, the telecommute job locations will not be
+   *
    * See
    * https://unicode-org.github.io/cldr-staging/charts/latest/supplemental/territory_information.html
    * for details. Example: "CH" for Switzerland.
@@ -168,12 +174,14 @@ public interface LocationFilterOrBuilder
    * and have additional [Job.addresses][google.cloud.talent.v4.Job.addresses]
    * may still be matched based on other location filters using
    * [address][google.cloud.talent.v4.LocationFilter.address] or [latlng][].
+   *
    * This filter can be used by itself to search exclusively for telecommuting
    * jobs, or it can be combined with another location
    * filter to search for a combination of job locations,
    * such as "Mountain View" or "telecommuting" jobs. However, when used in
    * combination with other location filters, telecommuting jobs can be
    * treated as less relevant than other jobs in the search response.
+   *
    * This field is only used for job search requests.
    * </pre>
    *
@@ -203,12 +211,14 @@ public interface LocationFilterOrBuilder
    * and have additional [Job.addresses][google.cloud.talent.v4.Job.addresses]
    * may still be matched based on other location filters using
    * [address][google.cloud.talent.v4.LocationFilter.address] or [latlng][].
+   *
    * This filter can be used by itself to search exclusively for telecommuting
    * jobs, or it can be combined with another location
    * filter to search for a combination of job locations,
    * such as "Mountain View" or "telecommuting" jobs. However, when used in
    * combination with other location filters, telecommuting jobs can be
    * treated as less relevant than other jobs in the search response.
+   *
    * This field is only used for job search requests.
    * </pre>
    *

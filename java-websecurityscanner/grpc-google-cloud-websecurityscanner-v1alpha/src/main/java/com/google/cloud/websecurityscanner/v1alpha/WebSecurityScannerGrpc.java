@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,7 +34,7 @@ public final class WebSecurityScannerGrpc {
 
   private WebSecurityScannerGrpc() {}
 
-  public static final String SERVICE_NAME =
+  public static final java.lang.String SERVICE_NAME =
       "google.cloud.websecurityscanner.v1alpha.WebSecurityScanner";
 
   // Static method descriptors that strictly reflect the proto.
@@ -1819,9 +1819,9 @@ public final class WebSecurityScannerGrpc {
   private static final class WebSecurityScannerMethodDescriptorSupplier
       extends WebSecurityScannerBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    WebSecurityScannerMethodDescriptorSupplier(String methodName) {
+    WebSecurityScannerMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

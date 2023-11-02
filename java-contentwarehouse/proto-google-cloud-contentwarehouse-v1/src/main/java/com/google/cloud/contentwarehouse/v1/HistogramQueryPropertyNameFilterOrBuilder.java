@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,7 @@ public interface HistogramQueryPropertyNameFilterOrBuilder
    * [Document.document_schema_name][google.cloud.contentwarehouse.v1.Document.document_schema_name]
    * to run histogram query against. It is optional. It will perform histogram
    * for property names for all the document schemas if it is not set.
+   *
    * At most 10 document schema names are allowed.
    * Format:
    * projects/{project_number}/locations/{location}/documentSchemas/{document_schema_id}.
@@ -49,6 +50,7 @@ public interface HistogramQueryPropertyNameFilterOrBuilder
    * [Document.document_schema_name][google.cloud.contentwarehouse.v1.Document.document_schema_name]
    * to run histogram query against. It is optional. It will perform histogram
    * for property names for all the document schemas if it is not set.
+   *
    * At most 10 document schema names are allowed.
    * Format:
    * projects/{project_number}/locations/{location}/documentSchemas/{document_schema_id}.
@@ -67,6 +69,7 @@ public interface HistogramQueryPropertyNameFilterOrBuilder
    * [Document.document_schema_name][google.cloud.contentwarehouse.v1.Document.document_schema_name]
    * to run histogram query against. It is optional. It will perform histogram
    * for property names for all the document schemas if it is not set.
+   *
    * At most 10 document schema names are allowed.
    * Format:
    * projects/{project_number}/locations/{location}/documentSchemas/{document_schema_id}.
@@ -86,6 +89,7 @@ public interface HistogramQueryPropertyNameFilterOrBuilder
    * [Document.document_schema_name][google.cloud.contentwarehouse.v1.Document.document_schema_name]
    * to run histogram query against. It is optional. It will perform histogram
    * for property names for all the document schemas if it is not set.
+   *
    * At most 10 document schema names are allowed.
    * Format:
    * projects/{project_number}/locations/{location}/documentSchemas/{document_schema_id}.

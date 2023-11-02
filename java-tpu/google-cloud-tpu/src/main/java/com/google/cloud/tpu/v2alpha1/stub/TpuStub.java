@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -54,6 +54,7 @@ import com.google.cloud.tpu.v2alpha1.ListRuntimeVersionsResponse;
 import com.google.cloud.tpu.v2alpha1.Node;
 import com.google.cloud.tpu.v2alpha1.OperationMetadata;
 import com.google.cloud.tpu.v2alpha1.QueuedResource;
+import com.google.cloud.tpu.v2alpha1.ResetQueuedResourceRequest;
 import com.google.cloud.tpu.v2alpha1.RuntimeVersion;
 import com.google.cloud.tpu.v2alpha1.SimulateMaintenanceEventRequest;
 import com.google.cloud.tpu.v2alpha1.StartNodeRequest;
@@ -165,6 +166,16 @@ public abstract class TpuStub implements BackgroundResource {
 
   public UnaryCallable<DeleteQueuedResourceRequest, Operation> deleteQueuedResourceCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteQueuedResourceCallable()");
+  }
+
+  public OperationCallable<ResetQueuedResourceRequest, QueuedResource, OperationMetadata>
+      resetQueuedResourceOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: resetQueuedResourceOperationCallable()");
+  }
+
+  public UnaryCallable<ResetQueuedResourceRequest, Operation> resetQueuedResourceCallable() {
+    throw new UnsupportedOperationException("Not implemented: resetQueuedResourceCallable()");
   }
 
   public UnaryCallable<GenerateServiceIdentityRequest, GenerateServiceIdentityResponse>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,7 +43,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
     title_ = "";
     description_ = "";
     languageCode_ = "";
-    tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    tags_ = com.google.protobuf.LazyStringArrayList.emptyList();
     itemGroupId_ = "";
   }
 
@@ -51,11 +51,6 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new CatalogItem();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -84,6 +79,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Catalog item categories. Each category should be a UTF-8
      * encoded string with a length limit of 2 KiB.
+     *
      * Note that the order in the list denotes the specificity (from least to
      * most specific).
      * </pre>
@@ -99,6 +95,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Catalog item categories. Each category should be a UTF-8
      * encoded string with a length limit of 2 KiB.
+     *
      * Note that the order in the list denotes the specificity (from least to
      * most specific).
      * </pre>
@@ -114,6 +111,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Catalog item categories. Each category should be a UTF-8
      * encoded string with a length limit of 2 KiB.
+     *
      * Note that the order in the list denotes the specificity (from least to
      * most specific).
      * </pre>
@@ -130,6 +128,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Catalog item categories. Each category should be a UTF-8
      * encoded string with a length limit of 2 KiB.
+     *
      * Note that the order in the list denotes the specificity (from least to
      * most specific).
      * </pre>
@@ -161,18 +160,13 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
     }
 
     private CategoryHierarchy() {
-      categories_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      categories_ = com.google.protobuf.LazyStringArrayList.emptyList();
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new CategoryHierarchy();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -194,13 +188,15 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
     public static final int CATEGORIES_FIELD_NUMBER = 1;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList categories_;
+    private com.google.protobuf.LazyStringArrayList categories_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
      * <pre>
      * Required. Catalog item categories. Each category should be a UTF-8
      * encoded string with a length limit of 2 KiB.
+     *
      * Note that the order in the list denotes the specificity (from least to
      * most specific).
      * </pre>
@@ -218,6 +214,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Catalog item categories. Each category should be a UTF-8
      * encoded string with a length limit of 2 KiB.
+     *
      * Note that the order in the list denotes the specificity (from least to
      * most specific).
      * </pre>
@@ -235,6 +232,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Catalog item categories. Each category should be a UTF-8
      * encoded string with a length limit of 2 KiB.
+     *
      * Note that the order in the list denotes the specificity (from least to
      * most specific).
      * </pre>
@@ -253,6 +251,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Catalog item categories. Each category should be a UTF-8
      * encoded string with a length limit of 2 KiB.
+     *
      * Note that the order in the list denotes the specificity (from least to
      * most specific).
      * </pre>
@@ -483,8 +482,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        categories_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        categories_ = com.google.protobuf.LazyStringArrayList.emptyList();
         return this;
       }
 
@@ -516,7 +514,6 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
           buildPartial() {
         com.google.cloud.recommendationengine.v1beta1.CatalogItem.CategoryHierarchy result =
             new com.google.cloud.recommendationengine.v1beta1.CatalogItem.CategoryHierarchy(this);
-        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
@@ -524,18 +521,13 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
         return result;
       }
 
-      private void buildPartialRepeatedFields(
-          com.google.cloud.recommendationengine.v1beta1.CatalogItem.CategoryHierarchy result) {
-        if (((bitField0_ & 0x00000001) != 0)) {
-          categories_ = categories_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.categories_ = categories_;
-      }
-
       private void buildPartial0(
           com.google.cloud.recommendationengine.v1beta1.CatalogItem.CategoryHierarchy result) {
         int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          categories_.makeImmutable();
+          result.categories_ = categories_;
+        }
       }
 
       @java.lang.Override
@@ -594,7 +586,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
         if (!other.categories_.isEmpty()) {
           if (categories_.isEmpty()) {
             categories_ = other.categories_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ |= 0x00000001;
           } else {
             ensureCategoriesIsMutable();
             categories_.addAll(other.categories_);
@@ -653,14 +645,14 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
 
       private int bitField0_;
 
-      private com.google.protobuf.LazyStringList categories_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList categories_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureCategoriesIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!categories_.isModifiable()) {
           categories_ = new com.google.protobuf.LazyStringArrayList(categories_);
-          bitField0_ |= 0x00000001;
         }
+        bitField0_ |= 0x00000001;
       }
       /**
        *
@@ -668,6 +660,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. Catalog item categories. Each category should be a UTF-8
        * encoded string with a length limit of 2 KiB.
+       *
        * Note that the order in the list denotes the specificity (from least to
        * most specific).
        * </pre>
@@ -677,7 +670,8 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
        * @return A list containing the categories.
        */
       public com.google.protobuf.ProtocolStringList getCategoriesList() {
-        return categories_.getUnmodifiableView();
+        categories_.makeImmutable();
+        return categories_;
       }
       /**
        *
@@ -685,6 +679,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. Catalog item categories. Each category should be a UTF-8
        * encoded string with a length limit of 2 KiB.
+       *
        * Note that the order in the list denotes the specificity (from least to
        * most specific).
        * </pre>
@@ -702,6 +697,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. Catalog item categories. Each category should be a UTF-8
        * encoded string with a length limit of 2 KiB.
+       *
        * Note that the order in the list denotes the specificity (from least to
        * most specific).
        * </pre>
@@ -720,6 +716,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. Catalog item categories. Each category should be a UTF-8
        * encoded string with a length limit of 2 KiB.
+       *
        * Note that the order in the list denotes the specificity (from least to
        * most specific).
        * </pre>
@@ -738,6 +735,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. Catalog item categories. Each category should be a UTF-8
        * encoded string with a length limit of 2 KiB.
+       *
        * Note that the order in the list denotes the specificity (from least to
        * most specific).
        * </pre>
@@ -754,6 +752,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
         }
         ensureCategoriesIsMutable();
         categories_.set(index, value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -763,6 +762,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. Catalog item categories. Each category should be a UTF-8
        * encoded string with a length limit of 2 KiB.
+       *
        * Note that the order in the list denotes the specificity (from least to
        * most specific).
        * </pre>
@@ -778,6 +778,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
         }
         ensureCategoriesIsMutable();
         categories_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -787,6 +788,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. Catalog item categories. Each category should be a UTF-8
        * encoded string with a length limit of 2 KiB.
+       *
        * Note that the order in the list denotes the specificity (from least to
        * most specific).
        * </pre>
@@ -799,6 +801,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
       public Builder addAllCategories(java.lang.Iterable<java.lang.String> values) {
         ensureCategoriesIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, categories_);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -808,6 +811,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. Catalog item categories. Each category should be a UTF-8
        * encoded string with a length limit of 2 KiB.
+       *
        * Note that the order in the list denotes the specificity (from least to
        * most specific).
        * </pre>
@@ -817,8 +821,9 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearCategories() {
-        categories_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        categories_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
+        ;
         onChanged();
         return this;
       }
@@ -828,6 +833,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. Catalog item categories. Each category should be a UTF-8
        * encoded string with a length limit of 2 KiB.
+       *
        * Note that the order in the list denotes the specificity (from least to
        * most specific).
        * </pre>
@@ -844,6 +850,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
         checkByteStringIsUtf8(value);
         ensureCategoriesIsMutable();
         categories_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -917,6 +924,8 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int recommendationTypeCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object recommendationType_;
 
   public enum RecommendationTypeCase
@@ -970,6 +979,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required. Catalog item identifier. UTF-8 encoded string with a length limit
    * of 128 bytes.
+   *
    * This id must be unique among all catalog items within the same catalog. It
    * should also be used when logging user events in order for the user events
    * to be joined with the Catalog.
@@ -997,6 +1007,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required. Catalog item identifier. UTF-8 encoded string with a length limit
    * of 128 bytes.
+   *
    * This id must be unique among all catalog items within the same catalog. It
    * should also be used when logging user events in order for the user events
    * to be joined with the Catalog.
@@ -1031,10 +1042,12 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required. Catalog item categories. This field is repeated for supporting
    * one catalog item belonging to several parallel category hierarchies.
+   *
    * For example, if a shoes product belongs to both
    * ["Shoes &amp; Accessories" -&gt; "Shoes"] and
    * ["Sports &amp; Fitness" -&gt; "Athletic Clothing" -&gt; "Shoes"], it could be
    * represented as:
+   *
    *      "categoryHierarchies": [
    *        { "categories": ["Shoes &amp; Accessories", "Shoes"]},
    *        { "categories": ["Sports &amp; Fitness", "Athletic Clothing", "Shoes"] }
@@ -1056,10 +1069,12 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required. Catalog item categories. This field is repeated for supporting
    * one catalog item belonging to several parallel category hierarchies.
+   *
    * For example, if a shoes product belongs to both
    * ["Shoes &amp; Accessories" -&gt; "Shoes"] and
    * ["Sports &amp; Fitness" -&gt; "Athletic Clothing" -&gt; "Shoes"], it could be
    * represented as:
+   *
    *      "categoryHierarchies": [
    *        { "categories": ["Shoes &amp; Accessories", "Shoes"]},
    *        { "categories": ["Sports &amp; Fitness", "Athletic Clothing", "Shoes"] }
@@ -1083,10 +1098,12 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required. Catalog item categories. This field is repeated for supporting
    * one catalog item belonging to several parallel category hierarchies.
+   *
    * For example, if a shoes product belongs to both
    * ["Shoes &amp; Accessories" -&gt; "Shoes"] and
    * ["Sports &amp; Fitness" -&gt; "Athletic Clothing" -&gt; "Shoes"], it could be
    * represented as:
+   *
    *      "categoryHierarchies": [
    *        { "categories": ["Shoes &amp; Accessories", "Shoes"]},
    *        { "categories": ["Sports &amp; Fitness", "Athletic Clothing", "Shoes"] }
@@ -1107,10 +1124,12 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required. Catalog item categories. This field is repeated for supporting
    * one catalog item belonging to several parallel category hierarchies.
+   *
    * For example, if a shoes product belongs to both
    * ["Shoes &amp; Accessories" -&gt; "Shoes"] and
    * ["Sports &amp; Fitness" -&gt; "Athletic Clothing" -&gt; "Shoes"], it could be
    * represented as:
+   *
    *      "categoryHierarchies": [
    *        { "categories": ["Shoes &amp; Accessories", "Shoes"]},
    *        { "categories": ["Sports &amp; Fitness", "Athletic Clothing", "Shoes"] }
@@ -1132,10 +1151,12 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required. Catalog item categories. This field is repeated for supporting
    * one catalog item belonging to several parallel category hierarchies.
+   *
    * For example, if a shoes product belongs to both
    * ["Shoes &amp; Accessories" -&gt; "Shoes"] and
    * ["Sports &amp; Fitness" -&gt; "Athletic Clothing" -&gt; "Shoes"], it could be
    * represented as:
+   *
    *      "categoryHierarchies": [
    *        { "categories": ["Shoes &amp; Accessories", "Shoes"]},
    *        { "categories": ["Sports &amp; Fitness", "Athletic Clothing", "Shoes"] }
@@ -1389,13 +1410,15 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
   public static final int TAGS_FIELD_NUMBER = 8;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList tags_;
+  private com.google.protobuf.LazyStringArrayList tags_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
    * <pre>
    * Optional. Filtering tags associated with the catalog item. Each tag should
    * be a UTF-8 encoded string with a length limit of 1 KiB.
+   *
    * This tag can be used for filtering recommendation results by passing the
    * tag as part of the predict request filter.
    * </pre>
@@ -1413,6 +1436,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. Filtering tags associated with the catalog item. Each tag should
    * be a UTF-8 encoded string with a length limit of 1 KiB.
+   *
    * This tag can be used for filtering recommendation results by passing the
    * tag as part of the predict request filter.
    * </pre>
@@ -1430,6 +1454,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. Filtering tags associated with the catalog item. Each tag should
    * be a UTF-8 encoded string with a length limit of 1 KiB.
+   *
    * This tag can be used for filtering recommendation results by passing the
    * tag as part of the predict request filter.
    * </pre>
@@ -1448,6 +1473,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. Filtering tags associated with the catalog item. Each tag should
    * be a UTF-8 encoded string with a length limit of 1 KiB.
+   *
    * This tag can be used for filtering recommendation results by passing the
    * tag as part of the predict request filter.
    * </pre>
@@ -1471,6 +1497,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. Variant group identifier for prediction results. UTF-8 encoded
    * string with a length limit of 128 bytes.
+   *
    * This field must be enabled before it can be used. [Learn
    * more](/recommendations-ai/docs/catalog#item-group-id).
    * </pre>
@@ -1497,6 +1524,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. Variant group identifier for prediction results. UTF-8 encoded
    * string with a length limit of 128 bytes.
+   *
    * This field must be enabled before it can be used. [Learn
    * more](/recommendations-ai/docs/catalog#item-group-id).
    * </pre>
@@ -1897,8 +1925,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
         itemAttributesBuilder_ = null;
       }
       languageCode_ = "";
-      tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000040);
+      tags_ = com.google.protobuf.LazyStringArrayList.emptyList();
       itemGroupId_ = "";
       if (productMetadataBuilder_ != null) {
         productMetadataBuilder_.clear();
@@ -1952,11 +1979,6 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.categoryHierarchies_ = categoryHierarchiesBuilder_.build();
       }
-      if (((bitField0_ & 0x00000040) != 0)) {
-        tags_ = tags_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000040);
-      }
-      result.tags_ = tags_;
     }
 
     private void buildPartial0(com.google.cloud.recommendationengine.v1beta1.CatalogItem result) {
@@ -1976,6 +1998,10 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.languageCode_ = languageCode_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        tags_.makeImmutable();
+        result.tags_ = tags_;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
         result.itemGroupId_ = itemGroupId_;
@@ -2090,7 +2116,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
       if (!other.tags_.isEmpty()) {
         if (tags_.isEmpty()) {
           tags_ = other.tags_;
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ |= 0x00000040;
         } else {
           ensureTagsIsMutable();
           tags_.addAll(other.tags_);
@@ -2243,6 +2269,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Catalog item identifier. UTF-8 encoded string with a length limit
      * of 128 bytes.
+     *
      * This id must be unique among all catalog items within the same catalog. It
      * should also be used when logging user events in order for the user events
      * to be joined with the Catalog.
@@ -2269,6 +2296,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Catalog item identifier. UTF-8 encoded string with a length limit
      * of 128 bytes.
+     *
      * This id must be unique among all catalog items within the same catalog. It
      * should also be used when logging user events in order for the user events
      * to be joined with the Catalog.
@@ -2295,6 +2323,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Catalog item identifier. UTF-8 encoded string with a length limit
      * of 128 bytes.
+     *
      * This id must be unique among all catalog items within the same catalog. It
      * should also be used when logging user events in order for the user events
      * to be joined with the Catalog.
@@ -2320,6 +2349,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Catalog item identifier. UTF-8 encoded string with a length limit
      * of 128 bytes.
+     *
      * This id must be unique among all catalog items within the same catalog. It
      * should also be used when logging user events in order for the user events
      * to be joined with the Catalog.
@@ -2341,6 +2371,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Catalog item identifier. UTF-8 encoded string with a length limit
      * of 128 bytes.
+     *
      * This id must be unique among all catalog items within the same catalog. It
      * should also be used when logging user events in order for the user events
      * to be joined with the Catalog.
@@ -2388,10 +2419,12 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Catalog item categories. This field is repeated for supporting
      * one catalog item belonging to several parallel category hierarchies.
+     *
      * For example, if a shoes product belongs to both
      * ["Shoes &amp; Accessories" -&gt; "Shoes"] and
      * ["Sports &amp; Fitness" -&gt; "Athletic Clothing" -&gt; "Shoes"], it could be
      * represented as:
+     *
      *      "categoryHierarchies": [
      *        { "categories": ["Shoes &amp; Accessories", "Shoes"]},
      *        { "categories": ["Sports &amp; Fitness", "Athletic Clothing", "Shoes"] }
@@ -2417,10 +2450,12 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Catalog item categories. This field is repeated for supporting
      * one catalog item belonging to several parallel category hierarchies.
+     *
      * For example, if a shoes product belongs to both
      * ["Shoes &amp; Accessories" -&gt; "Shoes"] and
      * ["Sports &amp; Fitness" -&gt; "Athletic Clothing" -&gt; "Shoes"], it could be
      * represented as:
+     *
      *      "categoryHierarchies": [
      *        { "categories": ["Shoes &amp; Accessories", "Shoes"]},
      *        { "categories": ["Sports &amp; Fitness", "Athletic Clothing", "Shoes"] }
@@ -2444,10 +2479,12 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Catalog item categories. This field is repeated for supporting
      * one catalog item belonging to several parallel category hierarchies.
+     *
      * For example, if a shoes product belongs to both
      * ["Shoes &amp; Accessories" -&gt; "Shoes"] and
      * ["Sports &amp; Fitness" -&gt; "Athletic Clothing" -&gt; "Shoes"], it could be
      * represented as:
+     *
      *      "categoryHierarchies": [
      *        { "categories": ["Shoes &amp; Accessories", "Shoes"]},
      *        { "categories": ["Sports &amp; Fitness", "Athletic Clothing", "Shoes"] }
@@ -2472,10 +2509,12 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Catalog item categories. This field is repeated for supporting
      * one catalog item belonging to several parallel category hierarchies.
+     *
      * For example, if a shoes product belongs to both
      * ["Shoes &amp; Accessories" -&gt; "Shoes"] and
      * ["Sports &amp; Fitness" -&gt; "Athletic Clothing" -&gt; "Shoes"], it could be
      * represented as:
+     *
      *      "categoryHierarchies": [
      *        { "categories": ["Shoes &amp; Accessories", "Shoes"]},
      *        { "categories": ["Sports &amp; Fitness", "Athletic Clothing", "Shoes"] }
@@ -2507,10 +2546,12 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Catalog item categories. This field is repeated for supporting
      * one catalog item belonging to several parallel category hierarchies.
+     *
      * For example, if a shoes product belongs to both
      * ["Shoes &amp; Accessories" -&gt; "Shoes"] and
      * ["Sports &amp; Fitness" -&gt; "Athletic Clothing" -&gt; "Shoes"], it could be
      * represented as:
+     *
      *      "categoryHierarchies": [
      *        { "categories": ["Shoes &amp; Accessories", "Shoes"]},
      *        { "categories": ["Sports &amp; Fitness", "Athletic Clothing", "Shoes"] }
@@ -2540,10 +2581,12 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Catalog item categories. This field is repeated for supporting
      * one catalog item belonging to several parallel category hierarchies.
+     *
      * For example, if a shoes product belongs to both
      * ["Shoes &amp; Accessories" -&gt; "Shoes"] and
      * ["Sports &amp; Fitness" -&gt; "Athletic Clothing" -&gt; "Shoes"], it could be
      * represented as:
+     *
      *      "categoryHierarchies": [
      *        { "categories": ["Shoes &amp; Accessories", "Shoes"]},
      *        { "categories": ["Sports &amp; Fitness", "Athletic Clothing", "Shoes"] }
@@ -2574,10 +2617,12 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Catalog item categories. This field is repeated for supporting
      * one catalog item belonging to several parallel category hierarchies.
+     *
      * For example, if a shoes product belongs to both
      * ["Shoes &amp; Accessories" -&gt; "Shoes"] and
      * ["Sports &amp; Fitness" -&gt; "Athletic Clothing" -&gt; "Shoes"], it could be
      * represented as:
+     *
      *      "categoryHierarchies": [
      *        { "categories": ["Shoes &amp; Accessories", "Shoes"]},
      *        { "categories": ["Sports &amp; Fitness", "Athletic Clothing", "Shoes"] }
@@ -2609,10 +2654,12 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Catalog item categories. This field is repeated for supporting
      * one catalog item belonging to several parallel category hierarchies.
+     *
      * For example, if a shoes product belongs to both
      * ["Shoes &amp; Accessories" -&gt; "Shoes"] and
      * ["Sports &amp; Fitness" -&gt; "Athletic Clothing" -&gt; "Shoes"], it could be
      * represented as:
+     *
      *      "categoryHierarchies": [
      *        { "categories": ["Shoes &amp; Accessories", "Shoes"]},
      *        { "categories": ["Sports &amp; Fitness", "Athletic Clothing", "Shoes"] }
@@ -2641,10 +2688,12 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Catalog item categories. This field is repeated for supporting
      * one catalog item belonging to several parallel category hierarchies.
+     *
      * For example, if a shoes product belongs to both
      * ["Shoes &amp; Accessories" -&gt; "Shoes"] and
      * ["Sports &amp; Fitness" -&gt; "Athletic Clothing" -&gt; "Shoes"], it could be
      * represented as:
+     *
      *      "categoryHierarchies": [
      *        { "categories": ["Shoes &amp; Accessories", "Shoes"]},
      *        { "categories": ["Sports &amp; Fitness", "Athletic Clothing", "Shoes"] }
@@ -2674,10 +2723,12 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Catalog item categories. This field is repeated for supporting
      * one catalog item belonging to several parallel category hierarchies.
+     *
      * For example, if a shoes product belongs to both
      * ["Shoes &amp; Accessories" -&gt; "Shoes"] and
      * ["Sports &amp; Fitness" -&gt; "Athletic Clothing" -&gt; "Shoes"], it could be
      * represented as:
+     *
      *      "categoryHierarchies": [
      *        { "categories": ["Shoes &amp; Accessories", "Shoes"]},
      *        { "categories": ["Sports &amp; Fitness", "Athletic Clothing", "Shoes"] }
@@ -2708,10 +2759,12 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Catalog item categories. This field is repeated for supporting
      * one catalog item belonging to several parallel category hierarchies.
+     *
      * For example, if a shoes product belongs to both
      * ["Shoes &amp; Accessories" -&gt; "Shoes"] and
      * ["Sports &amp; Fitness" -&gt; "Athletic Clothing" -&gt; "Shoes"], it could be
      * represented as:
+     *
      *      "categoryHierarchies": [
      *        { "categories": ["Shoes &amp; Accessories", "Shoes"]},
      *        { "categories": ["Sports &amp; Fitness", "Athletic Clothing", "Shoes"] }
@@ -2738,10 +2791,12 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Catalog item categories. This field is repeated for supporting
      * one catalog item belonging to several parallel category hierarchies.
+     *
      * For example, if a shoes product belongs to both
      * ["Shoes &amp; Accessories" -&gt; "Shoes"] and
      * ["Sports &amp; Fitness" -&gt; "Athletic Clothing" -&gt; "Shoes"], it could be
      * represented as:
+     *
      *      "categoryHierarchies": [
      *        { "categories": ["Shoes &amp; Accessories", "Shoes"]},
      *        { "categories": ["Sports &amp; Fitness", "Athletic Clothing", "Shoes"] }
@@ -2768,10 +2823,12 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Catalog item categories. This field is repeated for supporting
      * one catalog item belonging to several parallel category hierarchies.
+     *
      * For example, if a shoes product belongs to both
      * ["Shoes &amp; Accessories" -&gt; "Shoes"] and
      * ["Sports &amp; Fitness" -&gt; "Athletic Clothing" -&gt; "Shoes"], it could be
      * represented as:
+     *
      *      "categoryHierarchies": [
      *        { "categories": ["Shoes &amp; Accessories", "Shoes"]},
      *        { "categories": ["Sports &amp; Fitness", "Athletic Clothing", "Shoes"] }
@@ -2792,10 +2849,12 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Catalog item categories. This field is repeated for supporting
      * one catalog item belonging to several parallel category hierarchies.
+     *
      * For example, if a shoes product belongs to both
      * ["Shoes &amp; Accessories" -&gt; "Shoes"] and
      * ["Sports &amp; Fitness" -&gt; "Athletic Clothing" -&gt; "Shoes"], it could be
      * represented as:
+     *
      *      "categoryHierarchies": [
      *        { "categories": ["Shoes &amp; Accessories", "Shoes"]},
      *        { "categories": ["Sports &amp; Fitness", "Athletic Clothing", "Shoes"] }
@@ -2820,10 +2879,12 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Catalog item categories. This field is repeated for supporting
      * one catalog item belonging to several parallel category hierarchies.
+     *
      * For example, if a shoes product belongs to both
      * ["Shoes &amp; Accessories" -&gt; "Shoes"] and
      * ["Sports &amp; Fitness" -&gt; "Athletic Clothing" -&gt; "Shoes"], it could be
      * represented as:
+     *
      *      "categoryHierarchies": [
      *        { "categories": ["Shoes &amp; Accessories", "Shoes"]},
      *        { "categories": ["Sports &amp; Fitness", "Athletic Clothing", "Shoes"] }
@@ -2851,10 +2912,12 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Catalog item categories. This field is repeated for supporting
      * one catalog item belonging to several parallel category hierarchies.
+     *
      * For example, if a shoes product belongs to both
      * ["Shoes &amp; Accessories" -&gt; "Shoes"] and
      * ["Sports &amp; Fitness" -&gt; "Athletic Clothing" -&gt; "Shoes"], it could be
      * represented as:
+     *
      *      "categoryHierarchies": [
      *        { "categories": ["Shoes &amp; Accessories", "Shoes"]},
      *        { "categories": ["Sports &amp; Fitness", "Athletic Clothing", "Shoes"] }
@@ -2878,10 +2941,12 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Catalog item categories. This field is repeated for supporting
      * one catalog item belonging to several parallel category hierarchies.
+     *
      * For example, if a shoes product belongs to both
      * ["Shoes &amp; Accessories" -&gt; "Shoes"] and
      * ["Sports &amp; Fitness" -&gt; "Athletic Clothing" -&gt; "Shoes"], it could be
      * represented as:
+     *
      *      "categoryHierarchies": [
      *        { "categories": ["Shoes &amp; Accessories", "Shoes"]},
      *        { "categories": ["Sports &amp; Fitness", "Athletic Clothing", "Shoes"] }
@@ -2906,10 +2971,12 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Catalog item categories. This field is repeated for supporting
      * one catalog item belonging to several parallel category hierarchies.
+     *
      * For example, if a shoes product belongs to both
      * ["Shoes &amp; Accessories" -&gt; "Shoes"] and
      * ["Sports &amp; Fitness" -&gt; "Athletic Clothing" -&gt; "Shoes"], it could be
      * represented as:
+     *
      *      "categoryHierarchies": [
      *        { "categories": ["Shoes &amp; Accessories", "Shoes"]},
      *        { "categories": ["Sports &amp; Fitness", "Athletic Clothing", "Shoes"] }
@@ -3538,14 +3605,14 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList tags_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList tags_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureTagsIsMutable() {
-      if (!((bitField0_ & 0x00000040) != 0)) {
+      if (!tags_.isModifiable()) {
         tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
-        bitField0_ |= 0x00000040;
       }
+      bitField0_ |= 0x00000040;
     }
     /**
      *
@@ -3553,6 +3620,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Filtering tags associated with the catalog item. Each tag should
      * be a UTF-8 encoded string with a length limit of 1 KiB.
+     *
      * This tag can be used for filtering recommendation results by passing the
      * tag as part of the predict request filter.
      * </pre>
@@ -3562,7 +3630,8 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the tags.
      */
     public com.google.protobuf.ProtocolStringList getTagsList() {
-      return tags_.getUnmodifiableView();
+      tags_.makeImmutable();
+      return tags_;
     }
     /**
      *
@@ -3570,6 +3639,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Filtering tags associated with the catalog item. Each tag should
      * be a UTF-8 encoded string with a length limit of 1 KiB.
+     *
      * This tag can be used for filtering recommendation results by passing the
      * tag as part of the predict request filter.
      * </pre>
@@ -3587,6 +3657,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Filtering tags associated with the catalog item. Each tag should
      * be a UTF-8 encoded string with a length limit of 1 KiB.
+     *
      * This tag can be used for filtering recommendation results by passing the
      * tag as part of the predict request filter.
      * </pre>
@@ -3605,6 +3676,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Filtering tags associated with the catalog item. Each tag should
      * be a UTF-8 encoded string with a length limit of 1 KiB.
+     *
      * This tag can be used for filtering recommendation results by passing the
      * tag as part of the predict request filter.
      * </pre>
@@ -3623,6 +3695,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Filtering tags associated with the catalog item. Each tag should
      * be a UTF-8 encoded string with a length limit of 1 KiB.
+     *
      * This tag can be used for filtering recommendation results by passing the
      * tag as part of the predict request filter.
      * </pre>
@@ -3639,6 +3712,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
       }
       ensureTagsIsMutable();
       tags_.set(index, value);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3648,6 +3722,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Filtering tags associated with the catalog item. Each tag should
      * be a UTF-8 encoded string with a length limit of 1 KiB.
+     *
      * This tag can be used for filtering recommendation results by passing the
      * tag as part of the predict request filter.
      * </pre>
@@ -3663,6 +3738,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
       }
       ensureTagsIsMutable();
       tags_.add(value);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3672,6 +3748,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Filtering tags associated with the catalog item. Each tag should
      * be a UTF-8 encoded string with a length limit of 1 KiB.
+     *
      * This tag can be used for filtering recommendation results by passing the
      * tag as part of the predict request filter.
      * </pre>
@@ -3684,6 +3761,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllTags(java.lang.Iterable<java.lang.String> values) {
       ensureTagsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, tags_);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3693,6 +3771,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Filtering tags associated with the catalog item. Each tag should
      * be a UTF-8 encoded string with a length limit of 1 KiB.
+     *
      * This tag can be used for filtering recommendation results by passing the
      * tag as part of the predict request filter.
      * </pre>
@@ -3702,8 +3781,9 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTags() {
-      tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      tags_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000040);
+      ;
       onChanged();
       return this;
     }
@@ -3713,6 +3793,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Filtering tags associated with the catalog item. Each tag should
      * be a UTF-8 encoded string with a length limit of 1 KiB.
+     *
      * This tag can be used for filtering recommendation results by passing the
      * tag as part of the predict request filter.
      * </pre>
@@ -3729,6 +3810,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureTagsIsMutable();
       tags_.add(value);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3740,6 +3822,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Variant group identifier for prediction results. UTF-8 encoded
      * string with a length limit of 128 bytes.
+     *
      * This field must be enabled before it can be used. [Learn
      * more](/recommendations-ai/docs/catalog#item-group-id).
      * </pre>
@@ -3765,6 +3848,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Variant group identifier for prediction results. UTF-8 encoded
      * string with a length limit of 128 bytes.
+     *
      * This field must be enabled before it can be used. [Learn
      * more](/recommendations-ai/docs/catalog#item-group-id).
      * </pre>
@@ -3790,6 +3874,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Variant group identifier for prediction results. UTF-8 encoded
      * string with a length limit of 128 bytes.
+     *
      * This field must be enabled before it can be used. [Learn
      * more](/recommendations-ai/docs/catalog#item-group-id).
      * </pre>
@@ -3814,6 +3899,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Variant group identifier for prediction results. UTF-8 encoded
      * string with a length limit of 128 bytes.
+     *
      * This field must be enabled before it can be used. [Learn
      * more](/recommendations-ai/docs/catalog#item-group-id).
      * </pre>
@@ -3834,6 +3920,7 @@ public final class CatalogItem extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Variant group identifier for prediction results. UTF-8 encoded
      * string with a length limit of 128 bytes.
+     *
      * This field must be enabled before it can be used. [Learn
      * more](/recommendations-ai/docs/catalog#item-group-id).
      * </pre>

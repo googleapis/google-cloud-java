@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,18 +39,13 @@ public final class ObjectMetadataReportOptions extends com.google.protobuf.Gener
   }
 
   private ObjectMetadataReportOptions() {
-    metadataFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    metadataFields_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ObjectMetadataReportOptions();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -69,6 +64,8 @@ public final class ObjectMetadataReportOptions extends com.google.protobuf.Gener
   }
 
   private int filterCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object filter_;
 
   public enum FilterCase
@@ -113,6 +110,8 @@ public final class ObjectMetadataReportOptions extends com.google.protobuf.Gener
   }
 
   private int destinationOptionsCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object destinationOptions_;
 
   public enum DestinationOptionsCase
@@ -159,7 +158,8 @@ public final class ObjectMetadataReportOptions extends com.google.protobuf.Gener
   public static final int METADATA_FIELDS_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList metadataFields_;
+  private com.google.protobuf.LazyStringArrayList metadataFields_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -592,8 +592,7 @@ public final class ObjectMetadataReportOptions extends com.google.protobuf.Gener
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      metadataFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      metadataFields_ = com.google.protobuf.LazyStringArrayList.emptyList();
       if (storageFiltersBuilder_ != null) {
         storageFiltersBuilder_.clear();
       }
@@ -632,7 +631,6 @@ public final class ObjectMetadataReportOptions extends com.google.protobuf.Gener
     public com.google.cloud.storageinsights.v1.ObjectMetadataReportOptions buildPartial() {
       com.google.cloud.storageinsights.v1.ObjectMetadataReportOptions result =
           new com.google.cloud.storageinsights.v1.ObjectMetadataReportOptions(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -641,18 +639,13 @@ public final class ObjectMetadataReportOptions extends com.google.protobuf.Gener
       return result;
     }
 
-    private void buildPartialRepeatedFields(
-        com.google.cloud.storageinsights.v1.ObjectMetadataReportOptions result) {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        metadataFields_ = metadataFields_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.metadataFields_ = metadataFields_;
-    }
-
     private void buildPartial0(
         com.google.cloud.storageinsights.v1.ObjectMetadataReportOptions result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        metadataFields_.makeImmutable();
+        result.metadataFields_ = metadataFields_;
+      }
     }
 
     private void buildPartialOneofs(
@@ -720,7 +713,7 @@ public final class ObjectMetadataReportOptions extends com.google.protobuf.Gener
       if (!other.metadataFields_.isEmpty()) {
         if (metadataFields_.isEmpty()) {
           metadataFields_ = other.metadataFields_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ |= 0x00000001;
         } else {
           ensureMetadataFieldsIsMutable();
           metadataFields_.addAll(other.metadataFields_);
@@ -842,14 +835,14 @@ public final class ObjectMetadataReportOptions extends com.google.protobuf.Gener
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList metadataFields_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList metadataFields_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureMetadataFieldsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!metadataFields_.isModifiable()) {
         metadataFields_ = new com.google.protobuf.LazyStringArrayList(metadataFields_);
-        bitField0_ |= 0x00000001;
       }
+      bitField0_ |= 0x00000001;
     }
     /**
      *
@@ -863,7 +856,8 @@ public final class ObjectMetadataReportOptions extends com.google.protobuf.Gener
      * @return A list containing the metadataFields.
      */
     public com.google.protobuf.ProtocolStringList getMetadataFieldsList() {
-      return metadataFields_.getUnmodifiableView();
+      metadataFields_.makeImmutable();
+      return metadataFields_;
     }
     /**
      *
@@ -928,6 +922,7 @@ public final class ObjectMetadataReportOptions extends com.google.protobuf.Gener
       }
       ensureMetadataFieldsIsMutable();
       metadataFields_.set(index, value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -949,6 +944,7 @@ public final class ObjectMetadataReportOptions extends com.google.protobuf.Gener
       }
       ensureMetadataFieldsIsMutable();
       metadataFields_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -967,6 +963,7 @@ public final class ObjectMetadataReportOptions extends com.google.protobuf.Gener
     public Builder addAllMetadataFields(java.lang.Iterable<java.lang.String> values) {
       ensureMetadataFieldsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, metadataFields_);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -982,8 +979,9 @@ public final class ObjectMetadataReportOptions extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearMetadataFields() {
-      metadataFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      metadataFields_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      ;
       onChanged();
       return this;
     }
@@ -1006,6 +1004,7 @@ public final class ObjectMetadataReportOptions extends com.google.protobuf.Gener
       checkByteStringIsUtf8(value);
       ensureMetadataFieldsIsMutable();
       metadataFields_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

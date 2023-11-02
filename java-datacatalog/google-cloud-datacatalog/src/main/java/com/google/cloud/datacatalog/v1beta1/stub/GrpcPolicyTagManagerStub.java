@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.datacatalog.v1beta1.CreatePolicyTagRequest;
 import com.google.cloud.datacatalog.v1beta1.CreateTaxonomyRequest;
@@ -40,7 +41,6 @@ import com.google.cloud.datacatalog.v1beta1.PolicyTag;
 import com.google.cloud.datacatalog.v1beta1.Taxonomy;
 import com.google.cloud.datacatalog.v1beta1.UpdatePolicyTagRequest;
 import com.google.cloud.datacatalog.v1beta1.UpdateTaxonomyRequest;
-import com.google.common.collect.ImmutableMap;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -261,9 +261,9 @@ public class GrpcPolicyTagManagerStub extends PolicyTagManagerStub {
             .setMethodDescriptor(createTaxonomyMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteTaxonomyRequest, Empty> deleteTaxonomyTransportSettings =
@@ -271,9 +271,9 @@ public class GrpcPolicyTagManagerStub extends PolicyTagManagerStub {
             .setMethodDescriptor(deleteTaxonomyMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateTaxonomyRequest, Taxonomy> updateTaxonomyTransportSettings =
@@ -281,9 +281,9 @@ public class GrpcPolicyTagManagerStub extends PolicyTagManagerStub {
             .setMethodDescriptor(updateTaxonomyMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("taxonomy.name", String.valueOf(request.getTaxonomy().getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("taxonomy.name", String.valueOf(request.getTaxonomy().getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListTaxonomiesRequest, ListTaxonomiesResponse>
@@ -292,9 +292,9 @@ public class GrpcPolicyTagManagerStub extends PolicyTagManagerStub {
                 .setMethodDescriptor(listTaxonomiesMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetTaxonomyRequest, Taxonomy> getTaxonomyTransportSettings =
@@ -302,9 +302,9 @@ public class GrpcPolicyTagManagerStub extends PolicyTagManagerStub {
             .setMethodDescriptor(getTaxonomyMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CreatePolicyTagRequest, PolicyTag> createPolicyTagTransportSettings =
@@ -312,9 +312,9 @@ public class GrpcPolicyTagManagerStub extends PolicyTagManagerStub {
             .setMethodDescriptor(createPolicyTagMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeletePolicyTagRequest, Empty> deletePolicyTagTransportSettings =
@@ -322,9 +322,9 @@ public class GrpcPolicyTagManagerStub extends PolicyTagManagerStub {
             .setMethodDescriptor(deletePolicyTagMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdatePolicyTagRequest, PolicyTag> updatePolicyTagTransportSettings =
@@ -332,9 +332,9 @@ public class GrpcPolicyTagManagerStub extends PolicyTagManagerStub {
             .setMethodDescriptor(updatePolicyTagMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("policy_tag.name", String.valueOf(request.getPolicyTag().getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("policy_tag.name", String.valueOf(request.getPolicyTag().getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListPolicyTagsRequest, ListPolicyTagsResponse>
@@ -343,9 +343,9 @@ public class GrpcPolicyTagManagerStub extends PolicyTagManagerStub {
                 .setMethodDescriptor(listPolicyTagsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetPolicyTagRequest, PolicyTag> getPolicyTagTransportSettings =
@@ -353,9 +353,9 @@ public class GrpcPolicyTagManagerStub extends PolicyTagManagerStub {
             .setMethodDescriptor(getPolicyTagMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
@@ -363,9 +363,9 @@ public class GrpcPolicyTagManagerStub extends PolicyTagManagerStub {
             .setMethodDescriptor(getIamPolicyMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("resource", String.valueOf(request.getResource()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
@@ -373,9 +373,9 @@ public class GrpcPolicyTagManagerStub extends PolicyTagManagerStub {
             .setMethodDescriptor(setIamPolicyMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("resource", String.valueOf(request.getResource()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -384,9 +384,9 @@ public class GrpcPolicyTagManagerStub extends PolicyTagManagerStub {
                 .setMethodDescriptor(testIamPermissionsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("resource", String.valueOf(request.getResource()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      return builder.build();
                     })
                 .build();
 

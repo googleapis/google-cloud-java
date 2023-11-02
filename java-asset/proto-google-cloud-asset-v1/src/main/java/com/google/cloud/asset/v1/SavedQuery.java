@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new SavedQuery();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -136,7 +131,7 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.asset.v1.IamPolicyAnalysisQueryOrBuilder getIamPolicyAnalysisQueryOrBuilder();
 
-    public com.google.cloud.asset.v1.SavedQuery.QueryContent.QueryContentCase getQueryContentCase();
+    com.google.cloud.asset.v1.SavedQuery.QueryContent.QueryContentCase getQueryContentCase();
   }
   /**
    *
@@ -165,11 +160,6 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
       return new QueryContent();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.asset.v1.AssetServiceProto
           .internal_static_google_cloud_asset_v1_SavedQuery_QueryContent_descriptor;
@@ -186,6 +176,8 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int queryContentCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object queryContent_;
 
     public enum QueryContentCase
@@ -1020,6 +1012,7 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The resource name of the saved query. The format must be:
+   *
    * * projects/project_number/savedQueries/saved_query_id
    * * folders/folder_number/savedQueries/saved_query_id
    * * organizations/organization_number/savedQueries/saved_query_id
@@ -1046,6 +1039,7 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The resource name of the saved query. The format must be:
+   *
    * * projects/project_number/savedQueries/saved_query_id
    * * folders/folder_number/savedQueries/saved_query_id
    * * organizations/organization_number/savedQueries/saved_query_id
@@ -2056,6 +2050,7 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name of the saved query. The format must be:
+     *
      * * projects/project_number/savedQueries/saved_query_id
      * * folders/folder_number/savedQueries/saved_query_id
      * * organizations/organization_number/savedQueries/saved_query_id
@@ -2081,6 +2076,7 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name of the saved query. The format must be:
+     *
      * * projects/project_number/savedQueries/saved_query_id
      * * folders/folder_number/savedQueries/saved_query_id
      * * organizations/organization_number/savedQueries/saved_query_id
@@ -2106,6 +2102,7 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name of the saved query. The format must be:
+     *
      * * projects/project_number/savedQueries/saved_query_id
      * * folders/folder_number/savedQueries/saved_query_id
      * * organizations/organization_number/savedQueries/saved_query_id
@@ -2130,6 +2127,7 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name of the saved query. The format must be:
+     *
      * * projects/project_number/savedQueries/saved_query_id
      * * folders/folder_number/savedQueries/saved_query_id
      * * organizations/organization_number/savedQueries/saved_query_id
@@ -2150,6 +2148,7 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name of the saved query. The format must be:
+     *
      * * projects/project_number/savedQueries/saved_query_id
      * * folders/folder_number/savedQueries/saved_query_id
      * * organizations/organization_number/savedQueries/saved_query_id

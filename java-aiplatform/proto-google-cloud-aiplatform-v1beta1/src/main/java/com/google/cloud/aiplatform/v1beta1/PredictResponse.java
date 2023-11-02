@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,11 +50,6 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new PredictResponse();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -384,6 +379,55 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
     }
   }
 
+  public static final int METADATA_FIELD_NUMBER = 6;
+  private com.google.protobuf.Value metadata_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Request-level metadata returned by the model. The metadata
+   * type will be dependent upon the model implementation.
+   * </pre>
+   *
+   * <code>.google.protobuf.Value metadata = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the metadata field is set.
+   */
+  @java.lang.Override
+  public boolean hasMetadata() {
+    return metadata_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Request-level metadata returned by the model. The metadata
+   * type will be dependent upon the model implementation.
+   * </pre>
+   *
+   * <code>.google.protobuf.Value metadata = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The metadata.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Value getMetadata() {
+    return metadata_ == null ? com.google.protobuf.Value.getDefaultInstance() : metadata_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Request-level metadata returned by the model. The metadata
+   * type will be dependent upon the model implementation.
+   * </pre>
+   *
+   * <code>.google.protobuf.Value metadata = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.ValueOrBuilder getMetadataOrBuilder() {
+    return metadata_ == null ? com.google.protobuf.Value.getDefaultInstance() : metadata_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -413,6 +457,9 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelVersionId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, modelVersionId_);
     }
+    if (metadata_ != null) {
+      output.writeMessage(6, getMetadata());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -437,6 +484,9 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelVersionId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, modelVersionId_);
     }
+    if (metadata_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getMetadata());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -458,6 +508,10 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
     if (!getModel().equals(other.getModel())) return false;
     if (!getModelVersionId().equals(other.getModelVersionId())) return false;
     if (!getModelDisplayName().equals(other.getModelDisplayName())) return false;
+    if (hasMetadata() != other.hasMetadata()) return false;
+    if (hasMetadata()) {
+      if (!getMetadata().equals(other.getMetadata())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -481,6 +535,10 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
     hash = (53 * hash) + getModelVersionId().hashCode();
     hash = (37 * hash) + MODEL_DISPLAY_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getModelDisplayName().hashCode();
+    if (hasMetadata()) {
+      hash = (37 * hash) + METADATA_FIELD_NUMBER;
+      hash = (53 * hash) + getMetadata().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -632,6 +690,11 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       model_ = "";
       modelVersionId_ = "";
       modelDisplayName_ = "";
+      metadata_ = null;
+      if (metadataBuilder_ != null) {
+        metadataBuilder_.dispose();
+        metadataBuilder_ = null;
+      }
       return this;
     }
 
@@ -693,6 +756,9 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.modelDisplayName_ = modelDisplayName_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.metadata_ = metadataBuilder_ == null ? metadata_ : metadataBuilder_.build();
       }
     }
 
@@ -789,6 +855,9 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
         bitField0_ |= 0x00000010;
         onChanged();
       }
+      if (other.hasMetadata()) {
+        mergeMetadata(other.getMetadata());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -851,6 +920,12 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
                 bitField0_ |= 0x00000008;
                 break;
               } // case 42
+            case 50:
+              {
+                input.readMessage(getMetadataFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1758,6 +1833,203 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       bitField0_ |= 0x00000010;
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.Value metadata_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Value,
+            com.google.protobuf.Value.Builder,
+            com.google.protobuf.ValueOrBuilder>
+        metadataBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Request-level metadata returned by the model. The metadata
+     * type will be dependent upon the model implementation.
+     * </pre>
+     *
+     * <code>.google.protobuf.Value metadata = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the metadata field is set.
+     */
+    public boolean hasMetadata() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Request-level metadata returned by the model. The metadata
+     * type will be dependent upon the model implementation.
+     * </pre>
+     *
+     * <code>.google.protobuf.Value metadata = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The metadata.
+     */
+    public com.google.protobuf.Value getMetadata() {
+      if (metadataBuilder_ == null) {
+        return metadata_ == null ? com.google.protobuf.Value.getDefaultInstance() : metadata_;
+      } else {
+        return metadataBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Request-level metadata returned by the model. The metadata
+     * type will be dependent upon the model implementation.
+     * </pre>
+     *
+     * <code>.google.protobuf.Value metadata = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setMetadata(com.google.protobuf.Value value) {
+      if (metadataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        metadata_ = value;
+      } else {
+        metadataBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Request-level metadata returned by the model. The metadata
+     * type will be dependent upon the model implementation.
+     * </pre>
+     *
+     * <code>.google.protobuf.Value metadata = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setMetadata(com.google.protobuf.Value.Builder builderForValue) {
+      if (metadataBuilder_ == null) {
+        metadata_ = builderForValue.build();
+      } else {
+        metadataBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Request-level metadata returned by the model. The metadata
+     * type will be dependent upon the model implementation.
+     * </pre>
+     *
+     * <code>.google.protobuf.Value metadata = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeMetadata(com.google.protobuf.Value value) {
+      if (metadataBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) != 0)
+            && metadata_ != null
+            && metadata_ != com.google.protobuf.Value.getDefaultInstance()) {
+          getMetadataBuilder().mergeFrom(value);
+        } else {
+          metadata_ = value;
+        }
+      } else {
+        metadataBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Request-level metadata returned by the model. The metadata
+     * type will be dependent upon the model implementation.
+     * </pre>
+     *
+     * <code>.google.protobuf.Value metadata = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearMetadata() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      metadata_ = null;
+      if (metadataBuilder_ != null) {
+        metadataBuilder_.dispose();
+        metadataBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Request-level metadata returned by the model. The metadata
+     * type will be dependent upon the model implementation.
+     * </pre>
+     *
+     * <code>.google.protobuf.Value metadata = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.Value.Builder getMetadataBuilder() {
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return getMetadataFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Request-level metadata returned by the model. The metadata
+     * type will be dependent upon the model implementation.
+     * </pre>
+     *
+     * <code>.google.protobuf.Value metadata = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.ValueOrBuilder getMetadataOrBuilder() {
+      if (metadataBuilder_ != null) {
+        return metadataBuilder_.getMessageOrBuilder();
+      } else {
+        return metadata_ == null ? com.google.protobuf.Value.getDefaultInstance() : metadata_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Request-level metadata returned by the model. The metadata
+     * type will be dependent upon the model implementation.
+     * </pre>
+     *
+     * <code>.google.protobuf.Value metadata = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Value,
+            com.google.protobuf.Value.Builder,
+            com.google.protobuf.ValueOrBuilder>
+        getMetadataFieldBuilder() {
+      if (metadataBuilder_ == null) {
+        metadataBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Value,
+                com.google.protobuf.Value.Builder,
+                com.google.protobuf.ValueOrBuilder>(
+                getMetadata(), getParentForChildren(), isClean());
+        metadata_ = null;
+      }
+      return metadataBuilder_;
     }
 
     @java.lang.Override

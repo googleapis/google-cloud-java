@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,7 +42,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
     defaultNetworkTier_ = "";
     defaultServiceAccount_ = "";
     description_ = "";
-    enabledFeatures_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    enabledFeatures_ = com.google.protobuf.LazyStringArrayList.emptyList();
     kind_ = "";
     name_ = "";
     quotas_ = java.util.Collections.emptyList();
@@ -55,11 +55,6 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Project();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -866,7 +861,8 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
   public static final int ENABLED_FEATURES_FIELD_NUMBER = 469017467;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList enabledFeatures_;
+  private com.google.protobuf.LazyStringArrayList enabledFeatures_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -1832,8 +1828,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
       defaultNetworkTier_ = "";
       defaultServiceAccount_ = "";
       description_ = "";
-      enabledFeatures_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000020);
+      enabledFeatures_ = com.google.protobuf.LazyStringArrayList.emptyList();
       id_ = 0L;
       kind_ = "";
       name_ = "";
@@ -1887,11 +1882,6 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
     }
 
     private void buildPartialRepeatedFields(com.google.cloud.compute.v1.Project result) {
-      if (((bitField0_ & 0x00000020) != 0)) {
-        enabledFeatures_ = enabledFeatures_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000020);
-      }
-      result.enabledFeatures_ = enabledFeatures_;
       if (quotasBuilder_ == null) {
         if (((bitField0_ & 0x00000200) != 0)) {
           quotas_ = java.util.Collections.unmodifiableList(quotas_);
@@ -1928,6 +1918,10 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.description_ = description_;
         to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        enabledFeatures_.makeImmutable();
+        result.enabledFeatures_ = enabledFeatures_;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.id_ = id_;
@@ -2034,7 +2028,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
       if (!other.enabledFeatures_.isEmpty()) {
         if (enabledFeatures_.isEmpty()) {
           enabledFeatures_ = other.enabledFeatures_;
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ |= 0x00000020;
         } else {
           ensureEnabledFeaturesIsMutable();
           enabledFeatures_.addAll(other.enabledFeatures_);
@@ -2909,14 +2903,14 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList enabledFeatures_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList enabledFeatures_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureEnabledFeaturesIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!enabledFeatures_.isModifiable()) {
         enabledFeatures_ = new com.google.protobuf.LazyStringArrayList(enabledFeatures_);
-        bitField0_ |= 0x00000020;
       }
+      bitField0_ |= 0x00000020;
     }
     /**
      *
@@ -2930,7 +2924,8 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the enabledFeatures.
      */
     public com.google.protobuf.ProtocolStringList getEnabledFeaturesList() {
-      return enabledFeatures_.getUnmodifiableView();
+      enabledFeatures_.makeImmutable();
+      return enabledFeatures_;
     }
     /**
      *
@@ -2995,6 +2990,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
       }
       ensureEnabledFeaturesIsMutable();
       enabledFeatures_.set(index, value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3016,6 +3012,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
       }
       ensureEnabledFeaturesIsMutable();
       enabledFeatures_.add(value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3034,6 +3031,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllEnabledFeatures(java.lang.Iterable<java.lang.String> values) {
       ensureEnabledFeaturesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, enabledFeatures_);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3049,8 +3047,9 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEnabledFeatures() {
-      enabledFeatures_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      enabledFeatures_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000020);
+      ;
       onChanged();
       return this;
     }
@@ -3073,6 +3072,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureEnabledFeaturesIsMutable();
       enabledFeatures_.add(value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,11 +52,6 @@ public final class ListDlpJobsRequest extends com.google.protobuf.GeneratedMessa
     return new ListDlpJobsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.privacy.dlp.v2.DlpProto
         .internal_static_google_privacy_dlp_v2_ListDlpJobsRequest_descriptor;
@@ -81,16 +76,20 @@ public final class ListDlpJobsRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Required. Parent resource name.
+   *
    * The format of this value varies depending on whether you have [specified a
    * processing
    * location](https://cloud.google.com/dlp/docs/specifying-location):
+   *
    * + Projects scope, location specified:&lt;br/&gt;
    *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    * + Projects scope, no location specified (defaults to global):&lt;br/&gt;
    *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;
+   *
    * The following example `parent` string specifies a parent project with the
    * identifier `example-project`, and specifies the `europe-west3` location
    * for processing data:
+   *
    *     parent=projects/example-project/locations/europe-west3
    * </pre>
    *
@@ -117,16 +116,20 @@ public final class ListDlpJobsRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Required. Parent resource name.
+   *
    * The format of this value varies depending on whether you have [specified a
    * processing
    * location](https://cloud.google.com/dlp/docs/specifying-location):
+   *
    * + Projects scope, location specified:&lt;br/&gt;
    *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    * + Projects scope, no location specified (defaults to global):&lt;br/&gt;
    *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;
+   *
    * The following example `parent` string specifies a parent project with the
    * identifier `example-project`, and specifies the `europe-west3` location
    * for processing data:
+   *
    *     parent=projects/example-project/locations/europe-west3
    * </pre>
    *
@@ -158,7 +161,9 @@ public final class ListDlpJobsRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Allows filtering.
+   *
    * Supported syntax:
+   *
    * * Filter expressions are made up of one or more restrictions.
    * * Restrictions can be combined by `AND` or `OR` logical operators. A
    * sequence of restrictions implicitly uses `AND`.
@@ -174,11 +179,14 @@ public final class ListDlpJobsRequest extends com.google.protobuf.GeneratedMessa
    *     - 'end_time` - Corresponds to the time the job finished.
    *     - 'start_time` - Corresponds to the time the job finished.
    * * The operator must be `=` or `!=`.
+   *
    * Examples:
+   *
    * * inspected_storage = cloud_storage AND state = done
    * * inspected_storage = cloud_storage OR inspected_storage = bigquery
    * * inspected_storage = cloud_storage AND (state = done OR state = canceled)
    * * end_time &gt; &#92;"2017-12-12T00:00:00+00:00&#92;"
+   *
    * The length of this field should be no more than 500 characters.
    * </pre>
    *
@@ -203,7 +211,9 @@ public final class ListDlpJobsRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Allows filtering.
+   *
    * Supported syntax:
+   *
    * * Filter expressions are made up of one or more restrictions.
    * * Restrictions can be combined by `AND` or `OR` logical operators. A
    * sequence of restrictions implicitly uses `AND`.
@@ -219,11 +229,14 @@ public final class ListDlpJobsRequest extends com.google.protobuf.GeneratedMessa
    *     - 'end_time` - Corresponds to the time the job finished.
    *     - 'start_time` - Corresponds to the time the job finished.
    * * The operator must be `=` or `!=`.
+   *
    * Examples:
+   *
    * * inspected_storage = cloud_storage AND state = done
    * * inspected_storage = cloud_storage OR inspected_storage = bigquery
    * * inspected_storage = cloud_storage AND (state = done OR state = canceled)
    * * end_time &gt; &#92;"2017-12-12T00:00:00+00:00&#92;"
+   *
    * The length of this field should be no more than 500 characters.
    * </pre>
    *
@@ -357,11 +370,14 @@ public final class ListDlpJobsRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Comma separated list of fields to order by,
-   * followed by `asc` or `desc` postfix. This list is case-insensitive,
-   * default sorting order is ascending, redundant space characters are
+   * followed by `asc` or `desc` postfix. This list is case insensitive. The
+   * default sorting order is ascending. Redundant space characters are
    * insignificant.
+   *
    * Example: `name asc, end_time asc, create_time desc`
+   *
    * Supported fields are:
+   *
    * - `create_time`: corresponds to the time the job was created.
    * - `end_time`: corresponds to the time the job ended.
    * - `name`: corresponds to the job's name.
@@ -389,11 +405,14 @@ public final class ListDlpJobsRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Comma separated list of fields to order by,
-   * followed by `asc` or `desc` postfix. This list is case-insensitive,
-   * default sorting order is ascending, redundant space characters are
+   * followed by `asc` or `desc` postfix. This list is case insensitive. The
+   * default sorting order is ascending. Redundant space characters are
    * insignificant.
+   *
    * Example: `name asc, end_time asc, create_time desc`
+   *
    * Supported fields are:
+   *
    * - `create_time`: corresponds to the time the job was created.
    * - `end_time`: corresponds to the time the job ended.
    * - `name`: corresponds to the job's name.
@@ -955,16 +974,20 @@ public final class ListDlpJobsRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. Parent resource name.
+     *
      * The format of this value varies depending on whether you have [specified a
      * processing
      * location](https://cloud.google.com/dlp/docs/specifying-location):
+     *
      * + Projects scope, location specified:&lt;br/&gt;
      *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
      * + Projects scope, no location specified (defaults to global):&lt;br/&gt;
      *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;
+     *
      * The following example `parent` string specifies a parent project with the
      * identifier `example-project`, and specifies the `europe-west3` location
      * for processing data:
+     *
      *     parent=projects/example-project/locations/europe-west3
      * </pre>
      *
@@ -990,16 +1013,20 @@ public final class ListDlpJobsRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. Parent resource name.
+     *
      * The format of this value varies depending on whether you have [specified a
      * processing
      * location](https://cloud.google.com/dlp/docs/specifying-location):
+     *
      * + Projects scope, location specified:&lt;br/&gt;
      *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
      * + Projects scope, no location specified (defaults to global):&lt;br/&gt;
      *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;
+     *
      * The following example `parent` string specifies a parent project with the
      * identifier `example-project`, and specifies the `europe-west3` location
      * for processing data:
+     *
      *     parent=projects/example-project/locations/europe-west3
      * </pre>
      *
@@ -1025,16 +1052,20 @@ public final class ListDlpJobsRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. Parent resource name.
+     *
      * The format of this value varies depending on whether you have [specified a
      * processing
      * location](https://cloud.google.com/dlp/docs/specifying-location):
+     *
      * + Projects scope, location specified:&lt;br/&gt;
      *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
      * + Projects scope, no location specified (defaults to global):&lt;br/&gt;
      *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;
+     *
      * The following example `parent` string specifies a parent project with the
      * identifier `example-project`, and specifies the `europe-west3` location
      * for processing data:
+     *
      *     parent=projects/example-project/locations/europe-west3
      * </pre>
      *
@@ -1059,16 +1090,20 @@ public final class ListDlpJobsRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. Parent resource name.
+     *
      * The format of this value varies depending on whether you have [specified a
      * processing
      * location](https://cloud.google.com/dlp/docs/specifying-location):
+     *
      * + Projects scope, location specified:&lt;br/&gt;
      *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
      * + Projects scope, no location specified (defaults to global):&lt;br/&gt;
      *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;
+     *
      * The following example `parent` string specifies a parent project with the
      * identifier `example-project`, and specifies the `europe-west3` location
      * for processing data:
+     *
      *     parent=projects/example-project/locations/europe-west3
      * </pre>
      *
@@ -1089,16 +1124,20 @@ public final class ListDlpJobsRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. Parent resource name.
+     *
      * The format of this value varies depending on whether you have [specified a
      * processing
      * location](https://cloud.google.com/dlp/docs/specifying-location):
+     *
      * + Projects scope, location specified:&lt;br/&gt;
      *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
      * + Projects scope, no location specified (defaults to global):&lt;br/&gt;
      *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;
+     *
      * The following example `parent` string specifies a parent project with the
      * identifier `example-project`, and specifies the `europe-west3` location
      * for processing data:
+     *
      *     parent=projects/example-project/locations/europe-west3
      * </pre>
      *
@@ -1126,7 +1165,9 @@ public final class ListDlpJobsRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Allows filtering.
+     *
      * Supported syntax:
+     *
      * * Filter expressions are made up of one or more restrictions.
      * * Restrictions can be combined by `AND` or `OR` logical operators. A
      * sequence of restrictions implicitly uses `AND`.
@@ -1142,11 +1183,14 @@ public final class ListDlpJobsRequest extends com.google.protobuf.GeneratedMessa
      *     - 'end_time` - Corresponds to the time the job finished.
      *     - 'start_time` - Corresponds to the time the job finished.
      * * The operator must be `=` or `!=`.
+     *
      * Examples:
+     *
      * * inspected_storage = cloud_storage AND state = done
      * * inspected_storage = cloud_storage OR inspected_storage = bigquery
      * * inspected_storage = cloud_storage AND (state = done OR state = canceled)
      * * end_time &gt; &#92;"2017-12-12T00:00:00+00:00&#92;"
+     *
      * The length of this field should be no more than 500 characters.
      * </pre>
      *
@@ -1170,7 +1214,9 @@ public final class ListDlpJobsRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Allows filtering.
+     *
      * Supported syntax:
+     *
      * * Filter expressions are made up of one or more restrictions.
      * * Restrictions can be combined by `AND` or `OR` logical operators. A
      * sequence of restrictions implicitly uses `AND`.
@@ -1186,11 +1232,14 @@ public final class ListDlpJobsRequest extends com.google.protobuf.GeneratedMessa
      *     - 'end_time` - Corresponds to the time the job finished.
      *     - 'start_time` - Corresponds to the time the job finished.
      * * The operator must be `=` or `!=`.
+     *
      * Examples:
+     *
      * * inspected_storage = cloud_storage AND state = done
      * * inspected_storage = cloud_storage OR inspected_storage = bigquery
      * * inspected_storage = cloud_storage AND (state = done OR state = canceled)
      * * end_time &gt; &#92;"2017-12-12T00:00:00+00:00&#92;"
+     *
      * The length of this field should be no more than 500 characters.
      * </pre>
      *
@@ -1214,7 +1263,9 @@ public final class ListDlpJobsRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Allows filtering.
+     *
      * Supported syntax:
+     *
      * * Filter expressions are made up of one or more restrictions.
      * * Restrictions can be combined by `AND` or `OR` logical operators. A
      * sequence of restrictions implicitly uses `AND`.
@@ -1230,11 +1281,14 @@ public final class ListDlpJobsRequest extends com.google.protobuf.GeneratedMessa
      *     - 'end_time` - Corresponds to the time the job finished.
      *     - 'start_time` - Corresponds to the time the job finished.
      * * The operator must be `=` or `!=`.
+     *
      * Examples:
+     *
      * * inspected_storage = cloud_storage AND state = done
      * * inspected_storage = cloud_storage OR inspected_storage = bigquery
      * * inspected_storage = cloud_storage AND (state = done OR state = canceled)
      * * end_time &gt; &#92;"2017-12-12T00:00:00+00:00&#92;"
+     *
      * The length of this field should be no more than 500 characters.
      * </pre>
      *
@@ -1257,7 +1311,9 @@ public final class ListDlpJobsRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Allows filtering.
+     *
      * Supported syntax:
+     *
      * * Filter expressions are made up of one or more restrictions.
      * * Restrictions can be combined by `AND` or `OR` logical operators. A
      * sequence of restrictions implicitly uses `AND`.
@@ -1273,11 +1329,14 @@ public final class ListDlpJobsRequest extends com.google.protobuf.GeneratedMessa
      *     - 'end_time` - Corresponds to the time the job finished.
      *     - 'start_time` - Corresponds to the time the job finished.
      * * The operator must be `=` or `!=`.
+     *
      * Examples:
+     *
      * * inspected_storage = cloud_storage AND state = done
      * * inspected_storage = cloud_storage OR inspected_storage = bigquery
      * * inspected_storage = cloud_storage AND (state = done OR state = canceled)
      * * end_time &gt; &#92;"2017-12-12T00:00:00+00:00&#92;"
+     *
      * The length of this field should be no more than 500 characters.
      * </pre>
      *
@@ -1296,7 +1355,9 @@ public final class ListDlpJobsRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Allows filtering.
+     *
      * Supported syntax:
+     *
      * * Filter expressions are made up of one or more restrictions.
      * * Restrictions can be combined by `AND` or `OR` logical operators. A
      * sequence of restrictions implicitly uses `AND`.
@@ -1312,11 +1373,14 @@ public final class ListDlpJobsRequest extends com.google.protobuf.GeneratedMessa
      *     - 'end_time` - Corresponds to the time the job finished.
      *     - 'start_time` - Corresponds to the time the job finished.
      * * The operator must be `=` or `!=`.
+     *
      * Examples:
+     *
      * * inspected_storage = cloud_storage AND state = done
      * * inspected_storage = cloud_storage OR inspected_storage = bigquery
      * * inspected_storage = cloud_storage AND (state = done OR state = canceled)
      * * end_time &gt; &#92;"2017-12-12T00:00:00+00:00&#92;"
+     *
      * The length of this field should be no more than 500 characters.
      * </pre>
      *
@@ -1591,11 +1655,14 @@ public final class ListDlpJobsRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Comma separated list of fields to order by,
-     * followed by `asc` or `desc` postfix. This list is case-insensitive,
-     * default sorting order is ascending, redundant space characters are
+     * followed by `asc` or `desc` postfix. This list is case insensitive. The
+     * default sorting order is ascending. Redundant space characters are
      * insignificant.
+     *
      * Example: `name asc, end_time asc, create_time desc`
+     *
      * Supported fields are:
+     *
      * - `create_time`: corresponds to the time the job was created.
      * - `end_time`: corresponds to the time the job ended.
      * - `name`: corresponds to the job's name.
@@ -1622,11 +1689,14 @@ public final class ListDlpJobsRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Comma separated list of fields to order by,
-     * followed by `asc` or `desc` postfix. This list is case-insensitive,
-     * default sorting order is ascending, redundant space characters are
+     * followed by `asc` or `desc` postfix. This list is case insensitive. The
+     * default sorting order is ascending. Redundant space characters are
      * insignificant.
+     *
      * Example: `name asc, end_time asc, create_time desc`
+     *
      * Supported fields are:
+     *
      * - `create_time`: corresponds to the time the job was created.
      * - `end_time`: corresponds to the time the job ended.
      * - `name`: corresponds to the job's name.
@@ -1653,11 +1723,14 @@ public final class ListDlpJobsRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Comma separated list of fields to order by,
-     * followed by `asc` or `desc` postfix. This list is case-insensitive,
-     * default sorting order is ascending, redundant space characters are
+     * followed by `asc` or `desc` postfix. This list is case insensitive. The
+     * default sorting order is ascending. Redundant space characters are
      * insignificant.
+     *
      * Example: `name asc, end_time asc, create_time desc`
+     *
      * Supported fields are:
+     *
      * - `create_time`: corresponds to the time the job was created.
      * - `end_time`: corresponds to the time the job ended.
      * - `name`: corresponds to the job's name.
@@ -1683,11 +1756,14 @@ public final class ListDlpJobsRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Comma separated list of fields to order by,
-     * followed by `asc` or `desc` postfix. This list is case-insensitive,
-     * default sorting order is ascending, redundant space characters are
+     * followed by `asc` or `desc` postfix. This list is case insensitive. The
+     * default sorting order is ascending. Redundant space characters are
      * insignificant.
+     *
      * Example: `name asc, end_time asc, create_time desc`
+     *
      * Supported fields are:
+     *
      * - `create_time`: corresponds to the time the job was created.
      * - `end_time`: corresponds to the time the job ended.
      * - `name`: corresponds to the job's name.
@@ -1709,11 +1785,14 @@ public final class ListDlpJobsRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Comma separated list of fields to order by,
-     * followed by `asc` or `desc` postfix. This list is case-insensitive,
-     * default sorting order is ascending, redundant space characters are
+     * followed by `asc` or `desc` postfix. This list is case insensitive. The
+     * default sorting order is ascending. Redundant space characters are
      * insignificant.
+     *
      * Example: `name asc, end_time asc, create_time desc`
+     *
      * Supported fields are:
+     *
      * - `create_time`: corresponds to the time the job was created.
      * - `end_time`: corresponds to the time the job ended.
      * - `name`: corresponds to the job's name.

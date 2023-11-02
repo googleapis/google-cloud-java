@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,18 +38,13 @@ public final class ImportYumArtifactsGcsSource extends com.google.protobuf.Gener
   }
 
   private ImportYumArtifactsGcsSource() {
-    uris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    uris_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ImportYumArtifactsGcsSource();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -70,7 +65,8 @@ public final class ImportYumArtifactsGcsSource extends com.google.protobuf.Gener
   public static final int URIS_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList uris_;
+  private com.google.protobuf.LazyStringArrayList uris_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -365,8 +361,7 @@ public final class ImportYumArtifactsGcsSource extends com.google.protobuf.Gener
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      uris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      uris_ = com.google.protobuf.LazyStringArrayList.emptyList();
       useWildcards_ = false;
       return this;
     }
@@ -397,7 +392,6 @@ public final class ImportYumArtifactsGcsSource extends com.google.protobuf.Gener
     public com.google.devtools.artifactregistry.v1.ImportYumArtifactsGcsSource buildPartial() {
       com.google.devtools.artifactregistry.v1.ImportYumArtifactsGcsSource result =
           new com.google.devtools.artifactregistry.v1.ImportYumArtifactsGcsSource(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -405,18 +399,13 @@ public final class ImportYumArtifactsGcsSource extends com.google.protobuf.Gener
       return result;
     }
 
-    private void buildPartialRepeatedFields(
-        com.google.devtools.artifactregistry.v1.ImportYumArtifactsGcsSource result) {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        uris_ = uris_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.uris_ = uris_;
-    }
-
     private void buildPartial0(
         com.google.devtools.artifactregistry.v1.ImportYumArtifactsGcsSource result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        uris_.makeImmutable();
+        result.uris_ = uris_;
+      }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.useWildcards_ = useWildcards_;
       }
@@ -474,7 +463,7 @@ public final class ImportYumArtifactsGcsSource extends com.google.protobuf.Gener
       if (!other.uris_.isEmpty()) {
         if (uris_.isEmpty()) {
           uris_ = other.uris_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ |= 0x00000001;
         } else {
           ensureUrisIsMutable();
           uris_.addAll(other.uris_);
@@ -542,14 +531,14 @@ public final class ImportYumArtifactsGcsSource extends com.google.protobuf.Gener
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList uris_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList uris_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureUrisIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!uris_.isModifiable()) {
         uris_ = new com.google.protobuf.LazyStringArrayList(uris_);
-        bitField0_ |= 0x00000001;
       }
+      bitField0_ |= 0x00000001;
     }
     /**
      *
@@ -563,7 +552,8 @@ public final class ImportYumArtifactsGcsSource extends com.google.protobuf.Gener
      * @return A list containing the uris.
      */
     public com.google.protobuf.ProtocolStringList getUrisList() {
-      return uris_.getUnmodifiableView();
+      uris_.makeImmutable();
+      return uris_;
     }
     /**
      *
@@ -628,6 +618,7 @@ public final class ImportYumArtifactsGcsSource extends com.google.protobuf.Gener
       }
       ensureUrisIsMutable();
       uris_.set(index, value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -649,6 +640,7 @@ public final class ImportYumArtifactsGcsSource extends com.google.protobuf.Gener
       }
       ensureUrisIsMutable();
       uris_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -667,6 +659,7 @@ public final class ImportYumArtifactsGcsSource extends com.google.protobuf.Gener
     public Builder addAllUris(java.lang.Iterable<java.lang.String> values) {
       ensureUrisIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, uris_);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -682,8 +675,9 @@ public final class ImportYumArtifactsGcsSource extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearUris() {
-      uris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      uris_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      ;
       onChanged();
       return this;
     }
@@ -706,6 +700,7 @@ public final class ImportYumArtifactsGcsSource extends com.google.protobuf.Gener
       checkByteStringIsUtf8(value);
       ensureUrisIsMutable();
       uris_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

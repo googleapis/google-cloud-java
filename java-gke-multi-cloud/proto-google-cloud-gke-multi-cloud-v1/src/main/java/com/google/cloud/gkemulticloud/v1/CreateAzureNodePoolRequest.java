@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class CreateAzureNodePoolRequest extends com.google.protobuf.Genera
     return new CreateAzureNodePoolRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gkemulticloud.v1.AzureServiceProto
         .internal_static_google_cloud_gkemulticloud_v1_CreateAzureNodePoolRequest_descriptor;
@@ -78,7 +73,9 @@ public final class CreateAzureNodePoolRequest extends com.google.protobuf.Genera
    * <pre>
    * Required. The [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster]
    * resource where this node pool will be created.
+   *
    * Location names are formatted as `projects/&lt;project-id&gt;/locations/&lt;region&gt;`.
+   *
    * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
    * for more details on Google Cloud resource names.
    * </pre>
@@ -107,7 +104,9 @@ public final class CreateAzureNodePoolRequest extends com.google.protobuf.Genera
    * <pre>
    * Required. The [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster]
    * resource where this node pool will be created.
+   *
    * Location names are formatted as `projects/&lt;project-id&gt;/locations/&lt;region&gt;`.
+   *
    * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
    * for more details on Google Cloud resource names.
    * </pre>
@@ -200,10 +199,12 @@ public final class CreateAzureNodePoolRequest extends com.google.protobuf.Genera
    * <pre>
    * Required. A client provided ID the resource. Must be unique within the
    * parent resource.
+   *
    * The provided ID will be part of the
    * [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] resource name
    * formatted as
    * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClusters/&lt;cluster-id&gt;/azureNodePools/&lt;node-pool-id&gt;`.
+   *
    * Valid characters are `/[a-z][0-9]-/`. Cannot be longer than 63 characters.
    * </pre>
    *
@@ -229,10 +230,12 @@ public final class CreateAzureNodePoolRequest extends com.google.protobuf.Genera
    * <pre>
    * Required. A client provided ID the resource. Must be unique within the
    * parent resource.
+   *
    * The provided ID will be part of the
    * [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] resource name
    * formatted as
    * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClusters/&lt;cluster-id&gt;/azureNodePools/&lt;node-pool-id&gt;`.
+   *
    * Valid characters are `/[a-z][0-9]-/`. Cannot be longer than 63 characters.
    * </pre>
    *
@@ -703,7 +706,9 @@ public final class CreateAzureNodePoolRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. The [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster]
      * resource where this node pool will be created.
+     *
      * Location names are formatted as `projects/&lt;project-id&gt;/locations/&lt;region&gt;`.
+     *
      * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
      * for more details on Google Cloud resource names.
      * </pre>
@@ -731,7 +736,9 @@ public final class CreateAzureNodePoolRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. The [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster]
      * resource where this node pool will be created.
+     *
      * Location names are formatted as `projects/&lt;project-id&gt;/locations/&lt;region&gt;`.
+     *
      * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
      * for more details on Google Cloud resource names.
      * </pre>
@@ -759,7 +766,9 @@ public final class CreateAzureNodePoolRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. The [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster]
      * resource where this node pool will be created.
+     *
      * Location names are formatted as `projects/&lt;project-id&gt;/locations/&lt;region&gt;`.
+     *
      * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
      * for more details on Google Cloud resource names.
      * </pre>
@@ -786,7 +795,9 @@ public final class CreateAzureNodePoolRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. The [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster]
      * resource where this node pool will be created.
+     *
      * Location names are formatted as `projects/&lt;project-id&gt;/locations/&lt;region&gt;`.
+     *
      * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
      * for more details on Google Cloud resource names.
      * </pre>
@@ -809,7 +820,9 @@ public final class CreateAzureNodePoolRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. The [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster]
      * resource where this node pool will be created.
+     *
      * Location names are formatted as `projects/&lt;project-id&gt;/locations/&lt;region&gt;`.
+     *
      * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
      * for more details on Google Cloud resource names.
      * </pre>
@@ -1051,10 +1064,12 @@ public final class CreateAzureNodePoolRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. A client provided ID the resource. Must be unique within the
      * parent resource.
+     *
      * The provided ID will be part of the
      * [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] resource name
      * formatted as
      * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClusters/&lt;cluster-id&gt;/azureNodePools/&lt;node-pool-id&gt;`.
+     *
      * Valid characters are `/[a-z][0-9]-/`. Cannot be longer than 63 characters.
      * </pre>
      *
@@ -1079,10 +1094,12 @@ public final class CreateAzureNodePoolRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. A client provided ID the resource. Must be unique within the
      * parent resource.
+     *
      * The provided ID will be part of the
      * [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] resource name
      * formatted as
      * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClusters/&lt;cluster-id&gt;/azureNodePools/&lt;node-pool-id&gt;`.
+     *
      * Valid characters are `/[a-z][0-9]-/`. Cannot be longer than 63 characters.
      * </pre>
      *
@@ -1107,10 +1124,12 @@ public final class CreateAzureNodePoolRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. A client provided ID the resource. Must be unique within the
      * parent resource.
+     *
      * The provided ID will be part of the
      * [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] resource name
      * formatted as
      * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClusters/&lt;cluster-id&gt;/azureNodePools/&lt;node-pool-id&gt;`.
+     *
      * Valid characters are `/[a-z][0-9]-/`. Cannot be longer than 63 characters.
      * </pre>
      *
@@ -1134,10 +1153,12 @@ public final class CreateAzureNodePoolRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. A client provided ID the resource. Must be unique within the
      * parent resource.
+     *
      * The provided ID will be part of the
      * [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] resource name
      * formatted as
      * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClusters/&lt;cluster-id&gt;/azureNodePools/&lt;node-pool-id&gt;`.
+     *
      * Valid characters are `/[a-z][0-9]-/`. Cannot be longer than 63 characters.
      * </pre>
      *
@@ -1157,10 +1178,12 @@ public final class CreateAzureNodePoolRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. A client provided ID the resource. Must be unique within the
      * parent resource.
+     *
      * The provided ID will be part of the
      * [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] resource name
      * formatted as
      * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClusters/&lt;cluster-id&gt;/azureNodePools/&lt;node-pool-id&gt;`.
+     *
      * Valid characters are `/[a-z][0-9]-/`. Cannot be longer than 63 characters.
      * </pre>
      *

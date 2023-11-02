@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,6 +40,7 @@ public class SyncDeleteQueuedResource {
               .setName(
                   QueuedResourceName.of("[PROJECT]", "[LOCATION]", "[QUEUED_RESOURCE]").toString())
               .setRequestId("requestId693933066")
+              .setForce(true)
               .build();
       QueuedResource response = tpuClient.deleteQueuedResourceAsync(request).get();
     }

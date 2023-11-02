@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ package com.google.cloud.securitycenter.v1;
  *
  * <pre>
  * Security Command Center finding.
+ *
  * A finding is a record of assessment data like security, risk, health, or
  * privacy, that is ingested into Security Command Center for presentation,
  * notification, analysis, policy testing, and enforcement. For example, a
@@ -70,11 +71,6 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Finding();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -298,6 +294,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * cloud resources and workloads. Examples include publicly accessible
      * unprotected user data and public SSH access with weak or no
      * passwords.
+     *
      * Threat:
      * Indicates a threat that is able to access, modify, or delete data or
      * execute unauthorized code within existing resources.
@@ -318,6 +315,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * An example is a database with weak or no passwords that is only
      * accessible internally. This database could easily be compromised by an
      * actor that had access to the internal network.
+     *
      * Threat:
      * Indicates a threat that is able to create new computational resources in
      * an environment but not able to access data or execute code in existing
@@ -339,6 +337,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * access to more projects than it should have. If an actor gains access to
      * the service account, they could potentially use that access to manipulate
      * a project the service account was not intended to.
+     *
      * Threat:
      * Indicates a threat that is able to cause operational impact but may not
      * access data or execute unauthorized code.
@@ -356,6 +355,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * detect vulnerabilities or active threats in their deployment, or prevents
      * the root cause investigation of security issues. An example is monitoring
      * and logs being disabled for resource configurations and access.
+     *
      * Threat:
      * Indicates a threat that has obtained minimal access to an environment but
      * is not able to access data, execute code, or create resources.
@@ -389,6 +389,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * cloud resources and workloads. Examples include publicly accessible
      * unprotected user data and public SSH access with weak or no
      * passwords.
+     *
      * Threat:
      * Indicates a threat that is able to access, modify, or delete data or
      * execute unauthorized code within existing resources.
@@ -409,6 +410,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * An example is a database with weak or no passwords that is only
      * accessible internally. This database could easily be compromised by an
      * actor that had access to the internal network.
+     *
      * Threat:
      * Indicates a threat that is able to create new computational resources in
      * an environment but not able to access data or execute code in existing
@@ -430,6 +432,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * access to more projects than it should have. If an actor gains access to
      * the service account, they could potentially use that access to manipulate
      * a project the service account was not intended to.
+     *
      * Threat:
      * Indicates a threat that is able to cause operational impact but may not
      * access data or execute unauthorized code.
@@ -447,6 +450,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * detect vulnerabilities or active threats in their deployment, or prevents
      * the root cause investigation of security issues. An example is monitoring
      * and logs being disabled for resource configurations and access.
+     *
      * Threat:
      * Indicates a threat that has obtained minimal access to an environment but
      * is not able to access data, execute code, or create resources.
@@ -2392,6 +2396,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    * The key represents the type of contact, while the value contains a list of
    * all the contacts that pertain. Please refer to:
    * https://cloud.google.com/resource-manager/docs/managing-notification-contacts#notification-categories
+   *
    *     {
    *       "security": {
    *         "contacts": [
@@ -2432,6 +2437,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    * The key represents the type of contact, while the value contains a list of
    * all the contacts that pertain. Please refer to:
    * https://cloud.google.com/resource-manager/docs/managing-notification-contacts#notification-categories
+   *
    *     {
    *       "security": {
    *         "contacts": [
@@ -2463,6 +2469,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    * The key represents the type of contact, while the value contains a list of
    * all the contacts that pertain. Please refer to:
    * https://cloud.google.com/resource-manager/docs/managing-notification-contacts#notification-categories
+   *
    *     {
    *       "security": {
    *         "contacts": [
@@ -2501,6 +2508,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    * The key represents the type of contact, while the value contains a list of
    * all the contacts that pertain. Please refer to:
    * https://cloud.google.com/resource-manager/docs/managing-notification-contacts#notification-categories
+   *
    *     {
    *       "security": {
    *         "contacts": [
@@ -3956,6 +3964,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Security Command Center finding.
+   *
    * A finding is a record of assessment data like security, risk, health, or
    * privacy, that is ingested into Security Command Center for presentation,
    * notification, analysis, policy testing, and enforcement. For example, a
@@ -9061,6 +9070,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * The key represents the type of contact, while the value contains a list of
      * all the contacts that pertain. Please refer to:
      * https://cloud.google.com/resource-manager/docs/managing-notification-contacts#notification-categories
+     *
      *     {
      *       "security": {
      *         "contacts": [
@@ -9101,6 +9111,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * The key represents the type of contact, while the value contains a list of
      * all the contacts that pertain. Please refer to:
      * https://cloud.google.com/resource-manager/docs/managing-notification-contacts#notification-categories
+     *
      *     {
      *       "security": {
      *         "contacts": [
@@ -9132,6 +9143,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * The key represents the type of contact, while the value contains a list of
      * all the contacts that pertain. Please refer to:
      * https://cloud.google.com/resource-manager/docs/managing-notification-contacts#notification-categories
+     *
      *     {
      *       "security": {
      *         "contacts": [
@@ -9170,6 +9182,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * The key represents the type of contact, while the value contains a list of
      * all the contacts that pertain. Please refer to:
      * https://cloud.google.com/resource-manager/docs/managing-notification-contacts#notification-categories
+     *
      *     {
      *       "security": {
      *         "contacts": [
@@ -9215,6 +9228,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * The key represents the type of contact, while the value contains a list of
      * all the contacts that pertain. Please refer to:
      * https://cloud.google.com/resource-manager/docs/managing-notification-contacts#notification-categories
+     *
      *     {
      *       "security": {
      *         "contacts": [
@@ -9255,6 +9269,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * The key represents the type of contact, while the value contains a list of
      * all the contacts that pertain. Please refer to:
      * https://cloud.google.com/resource-manager/docs/managing-notification-contacts#notification-categories
+     *
      *     {
      *       "security": {
      *         "contacts": [
@@ -9293,6 +9308,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * The key represents the type of contact, while the value contains a list of
      * all the contacts that pertain. Please refer to:
      * https://cloud.google.com/resource-manager/docs/managing-notification-contacts#notification-categories
+     *
      *     {
      *       "security": {
      *         "contacts": [

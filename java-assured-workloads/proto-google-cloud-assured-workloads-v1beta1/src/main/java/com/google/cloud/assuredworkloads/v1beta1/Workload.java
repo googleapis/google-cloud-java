@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,18 +48,13 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     provisionedResourcesParent_ = "";
     resourceSettings_ = java.util.Collections.emptyList();
     kajEnrollmentState_ = 0;
-    compliantButDisallowedServices_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    compliantButDisallowedServices_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Workload();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -684,11 +679,6 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new ResourceInfo();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1707,11 +1697,6 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new KMSSettings();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2817,11 +2802,6 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       return new IL4Settings();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.assuredworkloads.v1beta1.AssuredworkloadsProto
           .internal_static_google_cloud_assuredworkloads_v1beta1_Workload_IL4Settings_descriptor;
@@ -3602,11 +3582,6 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new CJISSettings();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -4391,11 +4366,6 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new FedrampHighSettings();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -5187,11 +5157,6 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new FedrampModerateSettings();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -6045,11 +6010,6 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new ResourceSettings();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -7214,11 +7174,6 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new SaaEnrollmentResponse();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -8683,6 +8638,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int complianceRegimeSettingsCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object complianceRegimeSettings_;
 
   public enum ComplianceRegimeSettingsCase
@@ -8750,6 +8707,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    * Optional. The resource name of the workload.
    * Format:
    * organizations/{organization}/locations/{location}/workloads/{workload}
+   *
    * Read-only.
    * </pre>
    *
@@ -8776,6 +8734,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    * Optional. The resource name of the workload.
    * Format:
    * organizations/{organization}/locations/{location}/workloads/{workload}
+   *
    * Read-only.
    * </pre>
    *
@@ -8808,6 +8767,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    * When present it must be between 4 to 30 characters.
    * Allowed characters are: lowercase and uppercase letters, numbers,
    * hyphen, and spaces.
+   *
    * Example: My Workload
    * </pre>
    *
@@ -8835,6 +8795,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    * When present it must be between 4 to 30 characters.
    * Allowed characters are: lowercase and uppercase letters, numbers,
    * hyphen, and spaces.
+   *
    * Example: My Workload
    * </pre>
    *
@@ -9910,7 +9871,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
   public static final int COMPLIANT_BUT_DISALLOWED_SERVICES_FIELD_NUMBER = 24;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList compliantButDisallowedServices_;
+  private com.google.protobuf.LazyStringArrayList compliantButDisallowedServices_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -10527,8 +10489,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         saaEnrollmentResponseBuilder_.dispose();
         saaEnrollmentResponseBuilder_ = null;
       }
-      compliantButDisallowedServices_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00040000);
+      compliantButDisallowedServices_ = com.google.protobuf.LazyStringArrayList.emptyList();
       complianceRegimeSettingsCase_ = 0;
       complianceRegimeSettings_ = null;
       return this;
@@ -10587,11 +10548,6 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.resourceSettings_ = resourceSettingsBuilder_.build();
       }
-      if (((bitField0_ & 0x00040000) != 0)) {
-        compliantButDisallowedServices_ = compliantButDisallowedServices_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00040000);
-      }
-      result.compliantButDisallowedServices_ = compliantButDisallowedServices_;
     }
 
     private void buildPartial0(com.google.cloud.assuredworkloads.v1beta1.Workload result) {
@@ -10636,6 +10592,10 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
             saaEnrollmentResponseBuilder_ == null
                 ? saaEnrollmentResponse_
                 : saaEnrollmentResponseBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00040000) != 0)) {
+        compliantButDisallowedServices_.makeImmutable();
+        result.compliantButDisallowedServices_ = compliantButDisallowedServices_;
       }
     }
 
@@ -10804,7 +10764,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       if (!other.compliantButDisallowedServices_.isEmpty()) {
         if (compliantButDisallowedServices_.isEmpty()) {
           compliantButDisallowedServices_ = other.compliantButDisallowedServices_;
-          bitField0_ = (bitField0_ & ~0x00040000);
+          bitField0_ |= 0x00040000;
         } else {
           ensureCompliantButDisallowedServicesIsMutable();
           compliantButDisallowedServices_.addAll(other.compliantButDisallowedServices_);
@@ -11045,6 +11005,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * Optional. The resource name of the workload.
      * Format:
      * organizations/{organization}/locations/{location}/workloads/{workload}
+     *
      * Read-only.
      * </pre>
      *
@@ -11070,6 +11031,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * Optional. The resource name of the workload.
      * Format:
      * organizations/{organization}/locations/{location}/workloads/{workload}
+     *
      * Read-only.
      * </pre>
      *
@@ -11095,6 +11057,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * Optional. The resource name of the workload.
      * Format:
      * organizations/{organization}/locations/{location}/workloads/{workload}
+     *
      * Read-only.
      * </pre>
      *
@@ -11119,6 +11082,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * Optional. The resource name of the workload.
      * Format:
      * organizations/{organization}/locations/{location}/workloads/{workload}
+     *
      * Read-only.
      * </pre>
      *
@@ -11139,6 +11103,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * Optional. The resource name of the workload.
      * Format:
      * organizations/{organization}/locations/{location}/workloads/{workload}
+     *
      * Read-only.
      * </pre>
      *
@@ -11167,6 +11132,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * When present it must be between 4 to 30 characters.
      * Allowed characters are: lowercase and uppercase letters, numbers,
      * hyphen, and spaces.
+     *
      * Example: My Workload
      * </pre>
      *
@@ -11193,6 +11159,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * When present it must be between 4 to 30 characters.
      * Allowed characters are: lowercase and uppercase letters, numbers,
      * hyphen, and spaces.
+     *
      * Example: My Workload
      * </pre>
      *
@@ -11219,6 +11186,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * When present it must be between 4 to 30 characters.
      * Allowed characters are: lowercase and uppercase letters, numbers,
      * hyphen, and spaces.
+     *
      * Example: My Workload
      * </pre>
      *
@@ -11244,6 +11212,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * When present it must be between 4 to 30 characters.
      * Allowed characters are: lowercase and uppercase letters, numbers,
      * hyphen, and spaces.
+     *
      * Example: My Workload
      * </pre>
      *
@@ -11265,6 +11234,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * When present it must be between 4 to 30 characters.
      * Allowed characters are: lowercase and uppercase letters, numbers,
      * hyphen, and spaces.
+     *
      * Example: My Workload
      * </pre>
      *
@@ -14711,15 +14681,15 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       return saaEnrollmentResponseBuilder_;
     }
 
-    private com.google.protobuf.LazyStringList compliantButDisallowedServices_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList compliantButDisallowedServices_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureCompliantButDisallowedServicesIsMutable() {
-      if (!((bitField0_ & 0x00040000) != 0)) {
+      if (!compliantButDisallowedServices_.isModifiable()) {
         compliantButDisallowedServices_ =
             new com.google.protobuf.LazyStringArrayList(compliantButDisallowedServices_);
-        bitField0_ |= 0x00040000;
       }
+      bitField0_ |= 0x00040000;
     }
     /**
      *
@@ -14738,7 +14708,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the compliantButDisallowedServices.
      */
     public com.google.protobuf.ProtocolStringList getCompliantButDisallowedServicesList() {
-      return compliantButDisallowedServices_.getUnmodifiableView();
+      compliantButDisallowedServices_.makeImmutable();
+      return compliantButDisallowedServices_;
     }
     /**
      *
@@ -14823,6 +14794,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       }
       ensureCompliantButDisallowedServicesIsMutable();
       compliantButDisallowedServices_.set(index, value);
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -14849,6 +14821,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       }
       ensureCompliantButDisallowedServicesIsMutable();
       compliantButDisallowedServices_.add(value);
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -14874,6 +14847,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       ensureCompliantButDisallowedServicesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(
           values, compliantButDisallowedServices_);
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -14894,8 +14868,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCompliantButDisallowedServices() {
-      compliantButDisallowedServices_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      compliantButDisallowedServices_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00040000);
+      ;
       onChanged();
       return this;
     }
@@ -14923,6 +14898,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureCompliantButDisallowedServicesIsMutable();
       compliantButDisallowedServices_.add(value);
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }

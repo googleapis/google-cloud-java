@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -239,5 +239,5 @@ public interface EnvironmentOrBuilder
    */
   com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
 
-  public com.google.cloud.notebooks.v1beta1.Environment.ImageTypeCase getImageTypeCase();
+  com.google.cloud.notebooks.v1beta1.Environment.ImageTypeCase getImageTypeCase();
 }

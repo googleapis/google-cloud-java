@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,7 +41,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
     catalog_ = "";
     query_ = "";
     visitorId_ = "";
-    languageCodes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    languageCodes_ = com.google.protobuf.LazyStringArrayList.emptyList();
     deviceType_ = "";
     dataset_ = "";
     entity_ = "";
@@ -51,11 +51,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new CompleteQueryRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -82,6 +77,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. Catalog for which the completion is performed.
+   *
    * Full resource name of catalog, such as
    * `projects/&#42;&#47;locations/global/catalogs/default_catalog`.
    * </pre>
@@ -109,6 +105,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. Catalog for which the completion is performed.
+   *
    * Full resource name of catalog, such as
    * `projects/&#42;&#47;locations/global/catalogs/default_catalog`.
    * </pre>
@@ -141,6 +138,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. The query used to generate suggestions.
+   *
    * The maximum number of allowed characters is 255.
    * </pre>
    *
@@ -165,6 +163,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. The query used to generate suggestions.
+   *
    * The maximum number of allowed characters is 255.
    * </pre>
    *
@@ -197,6 +196,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
    * this could be implemented with an HTTP cookie, which should be able to
    * uniquely identify a visitor on a single device. This unique identifier
    * should not change if the visitor logs in or out of the website.
+   *
    * The field must be a UTF-8 encoded string with a length limit of 128
    * characters. Otherwise, an INVALID_ARGUMENT error is returned.
    * </pre>
@@ -225,6 +225,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
    * this could be implemented with an HTTP cookie, which should be able to
    * uniquely identify a visitor on a single device. This unique identifier
    * should not change if the visitor logs in or out of the website.
+   *
    * The field must be a UTF-8 encoded string with a length limit of 128
    * characters. Otherwise, an INVALID_ARGUMENT error is returned.
    * </pre>
@@ -249,13 +250,15 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
   public static final int LANGUAGE_CODES_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList languageCodes_;
+  private com.google.protobuf.LazyStringArrayList languageCodes_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
    * <pre>
    * Note that this field applies for `user-data` dataset only. For requests
    * with `cloud-retail` dataset, setting this field has no effect.
+   *
    * The language filters applied to the output suggestions. If set, it should
    * contain the language of the query. If not set, suggestions are returned
    * without considering language restrictions. This is the BCP-47 language
@@ -277,6 +280,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Note that this field applies for `user-data` dataset only. For requests
    * with `cloud-retail` dataset, setting this field has no effect.
+   *
    * The language filters applied to the output suggestions. If set, it should
    * contain the language of the query. If not set, suggestions are returned
    * without considering language restrictions. This is the BCP-47 language
@@ -298,6 +302,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Note that this field applies for `user-data` dataset only. For requests
    * with `cloud-retail` dataset, setting this field has no effect.
+   *
    * The language filters applied to the output suggestions. If set, it should
    * contain the language of the query. If not set, suggestions are returned
    * without considering language restrictions. This is the BCP-47 language
@@ -320,6 +325,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Note that this field applies for `user-data` dataset only. For requests
    * with `cloud-retail` dataset, setting this field has no effect.
+   *
    * The language filters applied to the output suggestions. If set, it should
    * contain the language of the query. If not set, suggestions are returned
    * without considering language restrictions. This is the BCP-47 language
@@ -347,13 +353,19 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * The device type context for completion suggestions. We recommend that you
    * leave this field empty.
+   *
    * It can apply different suggestions on different device types, e.g.
    * `DESKTOP`, `MOBILE`. If it is empty, the suggestions are across all device
    * types.
+   *
    * Supported formats:
+   *
    * * `UNKNOWN_DEVICE_TYPE`
+   *
    * * `DESKTOP`
+   *
    * * `MOBILE`
+   *
    * * A customized string starts with `OTHER_`, e.g. `OTHER_IPHONE`.
    * </pre>
    *
@@ -379,13 +391,19 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * The device type context for completion suggestions. We recommend that you
    * leave this field empty.
+   *
    * It can apply different suggestions on different device types, e.g.
    * `DESKTOP`, `MOBILE`. If it is empty, the suggestions are across all device
    * types.
+   *
    * Supported formats:
+   *
    * * `UNKNOWN_DEVICE_TYPE`
+   *
    * * `DESKTOP`
+   *
    * * `MOBILE`
+   *
    * * A customized string starts with `OTHER_`, e.g. `OTHER_IPHONE`.
    * </pre>
    *
@@ -419,8 +437,11 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
    * [CompletionService.ImportCompletionData][google.cloud.retail.v2alpha.CompletionService.ImportCompletionData].
    * "cloud-retail" will use the dataset generated by cloud retail based on user
    * events. If leave empty, it will use the "user-data".
+   *
    * Current supported values:
+   *
    * * user-data
+   *
    * * cloud-retail:
    *   This option requires enabling auto-learning function first. See
    *   [guidelines](https://cloud.google.com/retail/docs/completion-overview#generated-completion-dataset).
@@ -451,8 +472,11 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
    * [CompletionService.ImportCompletionData][google.cloud.retail.v2alpha.CompletionService.ImportCompletionData].
    * "cloud-retail" will use the dataset generated by cloud retail based on user
    * events. If leave empty, it will use the "user-data".
+   *
    * Current supported values:
+   *
    * * user-data
+   *
    * * cloud-retail:
    *   This option requires enabling auto-learning function first. See
    *   [guidelines](https://cloud.google.com/retail/docs/completion-overview#generated-completion-dataset).
@@ -484,6 +508,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
    * Completion max suggestions. If left unset or set to 0, then will fallback
    * to the configured value
    * [CompletionConfig.max_suggestions][google.cloud.retail.v2alpha.CompletionConfig.max_suggestions].
+   *
    * The maximum allowed max suggestions is 20. If it is set higher, it will be
    * capped by 20.
    * </pre>
@@ -504,6 +529,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * If true, attribute suggestions are enabled and provided in response.
+   *
    * This field is only available for "cloud-retail" dataset.
    * </pre>
    *
@@ -857,8 +883,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
       catalog_ = "";
       query_ = "";
       visitorId_ = "";
-      languageCodes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      languageCodes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       deviceType_ = "";
       dataset_ = "";
       maxSuggestions_ = 0;
@@ -891,21 +916,11 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
     public com.google.cloud.retail.v2alpha.CompleteQueryRequest buildPartial() {
       com.google.cloud.retail.v2alpha.CompleteQueryRequest result =
           new com.google.cloud.retail.v2alpha.CompleteQueryRequest(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(
-        com.google.cloud.retail.v2alpha.CompleteQueryRequest result) {
-      if (((bitField0_ & 0x00000008) != 0)) {
-        languageCodes_ = languageCodes_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000008);
-      }
-      result.languageCodes_ = languageCodes_;
     }
 
     private void buildPartial0(com.google.cloud.retail.v2alpha.CompleteQueryRequest result) {
@@ -918,6 +933,10 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.visitorId_ = visitorId_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        languageCodes_.makeImmutable();
+        result.languageCodes_ = languageCodes_;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.deviceType_ = deviceType_;
@@ -1000,7 +1019,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
       if (!other.languageCodes_.isEmpty()) {
         if (languageCodes_.isEmpty()) {
           languageCodes_ = other.languageCodes_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ |= 0x00000008;
         } else {
           ensureLanguageCodesIsMutable();
           languageCodes_.addAll(other.languageCodes_);
@@ -1134,6 +1153,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. Catalog for which the completion is performed.
+     *
      * Full resource name of catalog, such as
      * `projects/&#42;&#47;locations/global/catalogs/default_catalog`.
      * </pre>
@@ -1160,6 +1180,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. Catalog for which the completion is performed.
+     *
      * Full resource name of catalog, such as
      * `projects/&#42;&#47;locations/global/catalogs/default_catalog`.
      * </pre>
@@ -1186,6 +1207,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. Catalog for which the completion is performed.
+     *
      * Full resource name of catalog, such as
      * `projects/&#42;&#47;locations/global/catalogs/default_catalog`.
      * </pre>
@@ -1211,6 +1233,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. Catalog for which the completion is performed.
+     *
      * Full resource name of catalog, such as
      * `projects/&#42;&#47;locations/global/catalogs/default_catalog`.
      * </pre>
@@ -1232,6 +1255,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. Catalog for which the completion is performed.
+     *
      * Full resource name of catalog, such as
      * `projects/&#42;&#47;locations/global/catalogs/default_catalog`.
      * </pre>
@@ -1260,6 +1284,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The query used to generate suggestions.
+     *
      * The maximum number of allowed characters is 255.
      * </pre>
      *
@@ -1283,6 +1308,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The query used to generate suggestions.
+     *
      * The maximum number of allowed characters is 255.
      * </pre>
      *
@@ -1306,6 +1332,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The query used to generate suggestions.
+     *
      * The maximum number of allowed characters is 255.
      * </pre>
      *
@@ -1328,6 +1355,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The query used to generate suggestions.
+     *
      * The maximum number of allowed characters is 255.
      * </pre>
      *
@@ -1346,6 +1374,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The query used to generate suggestions.
+     *
      * The maximum number of allowed characters is 255.
      * </pre>
      *
@@ -1374,6 +1403,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * this could be implemented with an HTTP cookie, which should be able to
      * uniquely identify a visitor on a single device. This unique identifier
      * should not change if the visitor logs in or out of the website.
+     *
      * The field must be a UTF-8 encoded string with a length limit of 128
      * characters. Otherwise, an INVALID_ARGUMENT error is returned.
      * </pre>
@@ -1401,6 +1431,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * this could be implemented with an HTTP cookie, which should be able to
      * uniquely identify a visitor on a single device. This unique identifier
      * should not change if the visitor logs in or out of the website.
+     *
      * The field must be a UTF-8 encoded string with a length limit of 128
      * characters. Otherwise, an INVALID_ARGUMENT error is returned.
      * </pre>
@@ -1428,6 +1459,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * this could be implemented with an HTTP cookie, which should be able to
      * uniquely identify a visitor on a single device. This unique identifier
      * should not change if the visitor logs in or out of the website.
+     *
      * The field must be a UTF-8 encoded string with a length limit of 128
      * characters. Otherwise, an INVALID_ARGUMENT error is returned.
      * </pre>
@@ -1454,6 +1486,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * this could be implemented with an HTTP cookie, which should be able to
      * uniquely identify a visitor on a single device. This unique identifier
      * should not change if the visitor logs in or out of the website.
+     *
      * The field must be a UTF-8 encoded string with a length limit of 128
      * characters. Otherwise, an INVALID_ARGUMENT error is returned.
      * </pre>
@@ -1476,6 +1509,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * this could be implemented with an HTTP cookie, which should be able to
      * uniquely identify a visitor on a single device. This unique identifier
      * should not change if the visitor logs in or out of the website.
+     *
      * The field must be a UTF-8 encoded string with a length limit of 128
      * characters. Otherwise, an INVALID_ARGUMENT error is returned.
      * </pre>
@@ -1496,14 +1530,14 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
       return this;
     }
 
-    private com.google.protobuf.LazyStringList languageCodes_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList languageCodes_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureLanguageCodesIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!languageCodes_.isModifiable()) {
         languageCodes_ = new com.google.protobuf.LazyStringArrayList(languageCodes_);
-        bitField0_ |= 0x00000008;
       }
+      bitField0_ |= 0x00000008;
     }
     /**
      *
@@ -1511,6 +1545,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Note that this field applies for `user-data` dataset only. For requests
      * with `cloud-retail` dataset, setting this field has no effect.
+     *
      * The language filters applied to the output suggestions. If set, it should
      * contain the language of the query. If not set, suggestions are returned
      * without considering language restrictions. This is the BCP-47 language
@@ -1524,7 +1559,8 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * @return A list containing the languageCodes.
      */
     public com.google.protobuf.ProtocolStringList getLanguageCodesList() {
-      return languageCodes_.getUnmodifiableView();
+      languageCodes_.makeImmutable();
+      return languageCodes_;
     }
     /**
      *
@@ -1532,6 +1568,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Note that this field applies for `user-data` dataset only. For requests
      * with `cloud-retail` dataset, setting this field has no effect.
+     *
      * The language filters applied to the output suggestions. If set, it should
      * contain the language of the query. If not set, suggestions are returned
      * without considering language restrictions. This is the BCP-47 language
@@ -1553,6 +1590,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Note that this field applies for `user-data` dataset only. For requests
      * with `cloud-retail` dataset, setting this field has no effect.
+     *
      * The language filters applied to the output suggestions. If set, it should
      * contain the language of the query. If not set, suggestions are returned
      * without considering language restrictions. This is the BCP-47 language
@@ -1575,6 +1613,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Note that this field applies for `user-data` dataset only. For requests
      * with `cloud-retail` dataset, setting this field has no effect.
+     *
      * The language filters applied to the output suggestions. If set, it should
      * contain the language of the query. If not set, suggestions are returned
      * without considering language restrictions. This is the BCP-47 language
@@ -1597,6 +1636,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Note that this field applies for `user-data` dataset only. For requests
      * with `cloud-retail` dataset, setting this field has no effect.
+     *
      * The language filters applied to the output suggestions. If set, it should
      * contain the language of the query. If not set, suggestions are returned
      * without considering language restrictions. This is the BCP-47 language
@@ -1617,6 +1657,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
       }
       ensureLanguageCodesIsMutable();
       languageCodes_.set(index, value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1626,6 +1667,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Note that this field applies for `user-data` dataset only. For requests
      * with `cloud-retail` dataset, setting this field has no effect.
+     *
      * The language filters applied to the output suggestions. If set, it should
      * contain the language of the query. If not set, suggestions are returned
      * without considering language restrictions. This is the BCP-47 language
@@ -1645,6 +1687,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
       }
       ensureLanguageCodesIsMutable();
       languageCodes_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1654,6 +1697,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Note that this field applies for `user-data` dataset only. For requests
      * with `cloud-retail` dataset, setting this field has no effect.
+     *
      * The language filters applied to the output suggestions. If set, it should
      * contain the language of the query. If not set, suggestions are returned
      * without considering language restrictions. This is the BCP-47 language
@@ -1670,6 +1714,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
     public Builder addAllLanguageCodes(java.lang.Iterable<java.lang.String> values) {
       ensureLanguageCodesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, languageCodes_);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1679,6 +1724,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Note that this field applies for `user-data` dataset only. For requests
      * with `cloud-retail` dataset, setting this field has no effect.
+     *
      * The language filters applied to the output suggestions. If set, it should
      * contain the language of the query. If not set, suggestions are returned
      * without considering language restrictions. This is the BCP-47 language
@@ -1692,8 +1738,9 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearLanguageCodes() {
-      languageCodes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      languageCodes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000008);
+      ;
       onChanged();
       return this;
     }
@@ -1703,6 +1750,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Note that this field applies for `user-data` dataset only. For requests
      * with `cloud-retail` dataset, setting this field has no effect.
+     *
      * The language filters applied to the output suggestions. If set, it should
      * contain the language of the query. If not set, suggestions are returned
      * without considering language restrictions. This is the BCP-47 language
@@ -1723,6 +1771,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
       checkByteStringIsUtf8(value);
       ensureLanguageCodesIsMutable();
       languageCodes_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1734,13 +1783,19 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * The device type context for completion suggestions. We recommend that you
      * leave this field empty.
+     *
      * It can apply different suggestions on different device types, e.g.
      * `DESKTOP`, `MOBILE`. If it is empty, the suggestions are across all device
      * types.
+     *
      * Supported formats:
+     *
      * * `UNKNOWN_DEVICE_TYPE`
+     *
      * * `DESKTOP`
+     *
      * * `MOBILE`
+     *
      * * A customized string starts with `OTHER_`, e.g. `OTHER_IPHONE`.
      * </pre>
      *
@@ -1765,13 +1820,19 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * The device type context for completion suggestions. We recommend that you
      * leave this field empty.
+     *
      * It can apply different suggestions on different device types, e.g.
      * `DESKTOP`, `MOBILE`. If it is empty, the suggestions are across all device
      * types.
+     *
      * Supported formats:
+     *
      * * `UNKNOWN_DEVICE_TYPE`
+     *
      * * `DESKTOP`
+     *
      * * `MOBILE`
+     *
      * * A customized string starts with `OTHER_`, e.g. `OTHER_IPHONE`.
      * </pre>
      *
@@ -1796,13 +1857,19 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * The device type context for completion suggestions. We recommend that you
      * leave this field empty.
+     *
      * It can apply different suggestions on different device types, e.g.
      * `DESKTOP`, `MOBILE`. If it is empty, the suggestions are across all device
      * types.
+     *
      * Supported formats:
+     *
      * * `UNKNOWN_DEVICE_TYPE`
+     *
      * * `DESKTOP`
+     *
      * * `MOBILE`
+     *
      * * A customized string starts with `OTHER_`, e.g. `OTHER_IPHONE`.
      * </pre>
      *
@@ -1826,13 +1893,19 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * The device type context for completion suggestions. We recommend that you
      * leave this field empty.
+     *
      * It can apply different suggestions on different device types, e.g.
      * `DESKTOP`, `MOBILE`. If it is empty, the suggestions are across all device
      * types.
+     *
      * Supported formats:
+     *
      * * `UNKNOWN_DEVICE_TYPE`
+     *
      * * `DESKTOP`
+     *
      * * `MOBILE`
+     *
      * * A customized string starts with `OTHER_`, e.g. `OTHER_IPHONE`.
      * </pre>
      *
@@ -1852,13 +1925,19 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * The device type context for completion suggestions. We recommend that you
      * leave this field empty.
+     *
      * It can apply different suggestions on different device types, e.g.
      * `DESKTOP`, `MOBILE`. If it is empty, the suggestions are across all device
      * types.
+     *
      * Supported formats:
+     *
      * * `UNKNOWN_DEVICE_TYPE`
+     *
      * * `DESKTOP`
+     *
      * * `MOBILE`
+     *
      * * A customized string starts with `OTHER_`, e.g. `OTHER_IPHONE`.
      * </pre>
      *
@@ -1888,8 +1967,11 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * [CompletionService.ImportCompletionData][google.cloud.retail.v2alpha.CompletionService.ImportCompletionData].
      * "cloud-retail" will use the dataset generated by cloud retail based on user
      * events. If leave empty, it will use the "user-data".
+     *
      * Current supported values:
+     *
      * * user-data
+     *
      * * cloud-retail:
      *   This option requires enabling auto-learning function first. See
      *   [guidelines](https://cloud.google.com/retail/docs/completion-overview#generated-completion-dataset).
@@ -1919,8 +2001,11 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * [CompletionService.ImportCompletionData][google.cloud.retail.v2alpha.CompletionService.ImportCompletionData].
      * "cloud-retail" will use the dataset generated by cloud retail based on user
      * events. If leave empty, it will use the "user-data".
+     *
      * Current supported values:
+     *
      * * user-data
+     *
      * * cloud-retail:
      *   This option requires enabling auto-learning function first. See
      *   [guidelines](https://cloud.google.com/retail/docs/completion-overview#generated-completion-dataset).
@@ -1950,8 +2035,11 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * [CompletionService.ImportCompletionData][google.cloud.retail.v2alpha.CompletionService.ImportCompletionData].
      * "cloud-retail" will use the dataset generated by cloud retail based on user
      * events. If leave empty, it will use the "user-data".
+     *
      * Current supported values:
+     *
      * * user-data
+     *
      * * cloud-retail:
      *   This option requires enabling auto-learning function first. See
      *   [guidelines](https://cloud.google.com/retail/docs/completion-overview#generated-completion-dataset).
@@ -1980,8 +2068,11 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * [CompletionService.ImportCompletionData][google.cloud.retail.v2alpha.CompletionService.ImportCompletionData].
      * "cloud-retail" will use the dataset generated by cloud retail based on user
      * events. If leave empty, it will use the "user-data".
+     *
      * Current supported values:
+     *
      * * user-data
+     *
      * * cloud-retail:
      *   This option requires enabling auto-learning function first. See
      *   [guidelines](https://cloud.google.com/retail/docs/completion-overview#generated-completion-dataset).
@@ -2006,8 +2097,11 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * [CompletionService.ImportCompletionData][google.cloud.retail.v2alpha.CompletionService.ImportCompletionData].
      * "cloud-retail" will use the dataset generated by cloud retail based on user
      * events. If leave empty, it will use the "user-data".
+     *
      * Current supported values:
+     *
      * * user-data
+     *
      * * cloud-retail:
      *   This option requires enabling auto-learning function first. See
      *   [guidelines](https://cloud.google.com/retail/docs/completion-overview#generated-completion-dataset).
@@ -2037,6 +2131,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * Completion max suggestions. If left unset or set to 0, then will fallback
      * to the configured value
      * [CompletionConfig.max_suggestions][google.cloud.retail.v2alpha.CompletionConfig.max_suggestions].
+     *
      * The maximum allowed max suggestions is 20. If it is set higher, it will be
      * capped by 20.
      * </pre>
@@ -2056,6 +2151,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * Completion max suggestions. If left unset or set to 0, then will fallback
      * to the configured value
      * [CompletionConfig.max_suggestions][google.cloud.retail.v2alpha.CompletionConfig.max_suggestions].
+     *
      * The maximum allowed max suggestions is 20. If it is set higher, it will be
      * capped by 20.
      * </pre>
@@ -2079,6 +2175,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * Completion max suggestions. If left unset or set to 0, then will fallback
      * to the configured value
      * [CompletionConfig.max_suggestions][google.cloud.retail.v2alpha.CompletionConfig.max_suggestions].
+     *
      * The maximum allowed max suggestions is 20. If it is set higher, it will be
      * capped by 20.
      * </pre>
@@ -2100,6 +2197,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * If true, attribute suggestions are enabled and provided in response.
+     *
      * This field is only available for "cloud-retail" dataset.
      * </pre>
      *
@@ -2116,6 +2214,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * If true, attribute suggestions are enabled and provided in response.
+     *
      * This field is only available for "cloud-retail" dataset.
      * </pre>
      *
@@ -2136,6 +2235,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * If true, attribute suggestions are enabled and provided in response.
+     *
      * This field is only available for "cloud-retail" dataset.
      * </pre>
      *

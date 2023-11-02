@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -105,5 +105,5 @@ public interface RequestBasedSliOrBuilder
    */
   com.google.monitoring.v3.DistributionCutOrBuilder getDistributionCutOrBuilder();
 
-  public com.google.monitoring.v3.RequestBasedSli.MethodCase getMethodCase();
+  com.google.monitoring.v3.RequestBasedSli.MethodCase getMethodCase();
 }

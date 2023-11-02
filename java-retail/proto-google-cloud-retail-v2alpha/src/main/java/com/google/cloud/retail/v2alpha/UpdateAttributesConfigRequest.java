@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class UpdateAttributesConfigRequest extends com.google.protobuf.Gen
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new UpdateAttributesConfigRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -135,7 +130,9 @@ public final class UpdateAttributesConfigRequest extends com.google.protobuf.Gen
    * Indicates which fields in the provided
    * [AttributesConfig][google.cloud.retail.v2alpha.AttributesConfig] to update.
    * The following is the only supported field:
+   *
    * * [AttributesConfig.catalog_attributes][google.cloud.retail.v2alpha.AttributesConfig.catalog_attributes]
+   *
    * If not set, all supported fields are updated.
    * </pre>
    *
@@ -154,7 +151,9 @@ public final class UpdateAttributesConfigRequest extends com.google.protobuf.Gen
    * Indicates which fields in the provided
    * [AttributesConfig][google.cloud.retail.v2alpha.AttributesConfig] to update.
    * The following is the only supported field:
+   *
    * * [AttributesConfig.catalog_attributes][google.cloud.retail.v2alpha.AttributesConfig.catalog_attributes]
+   *
    * If not set, all supported fields are updated.
    * </pre>
    *
@@ -173,7 +172,9 @@ public final class UpdateAttributesConfigRequest extends com.google.protobuf.Gen
    * Indicates which fields in the provided
    * [AttributesConfig][google.cloud.retail.v2alpha.AttributesConfig] to update.
    * The following is the only supported field:
+   *
    * * [AttributesConfig.catalog_attributes][google.cloud.retail.v2alpha.AttributesConfig.catalog_attributes]
+   *
    * If not set, all supported fields are updated.
    * </pre>
    *
@@ -798,7 +799,9 @@ public final class UpdateAttributesConfigRequest extends com.google.protobuf.Gen
      * Indicates which fields in the provided
      * [AttributesConfig][google.cloud.retail.v2alpha.AttributesConfig] to update.
      * The following is the only supported field:
+     *
      * * [AttributesConfig.catalog_attributes][google.cloud.retail.v2alpha.AttributesConfig.catalog_attributes]
+     *
      * If not set, all supported fields are updated.
      * </pre>
      *
@@ -816,7 +819,9 @@ public final class UpdateAttributesConfigRequest extends com.google.protobuf.Gen
      * Indicates which fields in the provided
      * [AttributesConfig][google.cloud.retail.v2alpha.AttributesConfig] to update.
      * The following is the only supported field:
+     *
      * * [AttributesConfig.catalog_attributes][google.cloud.retail.v2alpha.AttributesConfig.catalog_attributes]
+     *
      * If not set, all supported fields are updated.
      * </pre>
      *
@@ -840,7 +845,9 @@ public final class UpdateAttributesConfigRequest extends com.google.protobuf.Gen
      * Indicates which fields in the provided
      * [AttributesConfig][google.cloud.retail.v2alpha.AttributesConfig] to update.
      * The following is the only supported field:
+     *
      * * [AttributesConfig.catalog_attributes][google.cloud.retail.v2alpha.AttributesConfig.catalog_attributes]
+     *
      * If not set, all supported fields are updated.
      * </pre>
      *
@@ -866,7 +873,9 @@ public final class UpdateAttributesConfigRequest extends com.google.protobuf.Gen
      * Indicates which fields in the provided
      * [AttributesConfig][google.cloud.retail.v2alpha.AttributesConfig] to update.
      * The following is the only supported field:
+     *
      * * [AttributesConfig.catalog_attributes][google.cloud.retail.v2alpha.AttributesConfig.catalog_attributes]
+     *
      * If not set, all supported fields are updated.
      * </pre>
      *
@@ -889,7 +898,9 @@ public final class UpdateAttributesConfigRequest extends com.google.protobuf.Gen
      * Indicates which fields in the provided
      * [AttributesConfig][google.cloud.retail.v2alpha.AttributesConfig] to update.
      * The following is the only supported field:
+     *
      * * [AttributesConfig.catalog_attributes][google.cloud.retail.v2alpha.AttributesConfig.catalog_attributes]
+     *
      * If not set, all supported fields are updated.
      * </pre>
      *
@@ -918,7 +929,9 @@ public final class UpdateAttributesConfigRequest extends com.google.protobuf.Gen
      * Indicates which fields in the provided
      * [AttributesConfig][google.cloud.retail.v2alpha.AttributesConfig] to update.
      * The following is the only supported field:
+     *
      * * [AttributesConfig.catalog_attributes][google.cloud.retail.v2alpha.AttributesConfig.catalog_attributes]
+     *
      * If not set, all supported fields are updated.
      * </pre>
      *
@@ -941,7 +954,9 @@ public final class UpdateAttributesConfigRequest extends com.google.protobuf.Gen
      * Indicates which fields in the provided
      * [AttributesConfig][google.cloud.retail.v2alpha.AttributesConfig] to update.
      * The following is the only supported field:
+     *
      * * [AttributesConfig.catalog_attributes][google.cloud.retail.v2alpha.AttributesConfig.catalog_attributes]
+     *
      * If not set, all supported fields are updated.
      * </pre>
      *
@@ -959,7 +974,9 @@ public final class UpdateAttributesConfigRequest extends com.google.protobuf.Gen
      * Indicates which fields in the provided
      * [AttributesConfig][google.cloud.retail.v2alpha.AttributesConfig] to update.
      * The following is the only supported field:
+     *
      * * [AttributesConfig.catalog_attributes][google.cloud.retail.v2alpha.AttributesConfig.catalog_attributes]
+     *
      * If not set, all supported fields are updated.
      * </pre>
      *
@@ -981,7 +998,9 @@ public final class UpdateAttributesConfigRequest extends com.google.protobuf.Gen
      * Indicates which fields in the provided
      * [AttributesConfig][google.cloud.retail.v2alpha.AttributesConfig] to update.
      * The following is the only supported field:
+     *
      * * [AttributesConfig.catalog_attributes][google.cloud.retail.v2alpha.AttributesConfig.catalog_attributes]
+     *
      * If not set, all supported fields are updated.
      * </pre>
      *

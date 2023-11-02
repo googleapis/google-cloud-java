@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new OutputAudioConfig();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -137,6 +132,9 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Optional. Configuration of how speech should be synthesized.
+   * If not specified,
+   * [Agent.text_to_speech_settings][google.cloud.dialogflow.cx.v3.Agent.text_to_speech_settings]
+   * is applied.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.cx.v3.SynthesizeSpeechConfig synthesize_speech_config = 3;
@@ -153,6 +151,9 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Optional. Configuration of how speech should be synthesized.
+   * If not specified,
+   * [Agent.text_to_speech_settings][google.cloud.dialogflow.cx.v3.Agent.text_to_speech_settings]
+   * is applied.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.cx.v3.SynthesizeSpeechConfig synthesize_speech_config = 3;
@@ -171,6 +172,9 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Optional. Configuration of how speech should be synthesized.
+   * If not specified,
+   * [Agent.text_to_speech_settings][google.cloud.dialogflow.cx.v3.Agent.text_to_speech_settings]
+   * is applied.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.cx.v3.SynthesizeSpeechConfig synthesize_speech_config = 3;
@@ -764,6 +768,9 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. Configuration of how speech should be synthesized.
+     * If not specified,
+     * [Agent.text_to_speech_settings][google.cloud.dialogflow.cx.v3.Agent.text_to_speech_settings]
+     * is applied.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3.SynthesizeSpeechConfig synthesize_speech_config = 3;
@@ -779,6 +786,9 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. Configuration of how speech should be synthesized.
+     * If not specified,
+     * [Agent.text_to_speech_settings][google.cloud.dialogflow.cx.v3.Agent.text_to_speech_settings]
+     * is applied.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3.SynthesizeSpeechConfig synthesize_speech_config = 3;
@@ -800,6 +810,9 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. Configuration of how speech should be synthesized.
+     * If not specified,
+     * [Agent.text_to_speech_settings][google.cloud.dialogflow.cx.v3.Agent.text_to_speech_settings]
+     * is applied.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3.SynthesizeSpeechConfig synthesize_speech_config = 3;
@@ -824,6 +837,9 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. Configuration of how speech should be synthesized.
+     * If not specified,
+     * [Agent.text_to_speech_settings][google.cloud.dialogflow.cx.v3.Agent.text_to_speech_settings]
+     * is applied.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3.SynthesizeSpeechConfig synthesize_speech_config = 3;
@@ -845,6 +861,9 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. Configuration of how speech should be synthesized.
+     * If not specified,
+     * [Agent.text_to_speech_settings][google.cloud.dialogflow.cx.v3.Agent.text_to_speech_settings]
+     * is applied.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3.SynthesizeSpeechConfig synthesize_speech_config = 3;
@@ -873,6 +892,9 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. Configuration of how speech should be synthesized.
+     * If not specified,
+     * [Agent.text_to_speech_settings][google.cloud.dialogflow.cx.v3.Agent.text_to_speech_settings]
+     * is applied.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3.SynthesizeSpeechConfig synthesize_speech_config = 3;
@@ -893,6 +915,9 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. Configuration of how speech should be synthesized.
+     * If not specified,
+     * [Agent.text_to_speech_settings][google.cloud.dialogflow.cx.v3.Agent.text_to_speech_settings]
+     * is applied.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3.SynthesizeSpeechConfig synthesize_speech_config = 3;
@@ -909,6 +934,9 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. Configuration of how speech should be synthesized.
+     * If not specified,
+     * [Agent.text_to_speech_settings][google.cloud.dialogflow.cx.v3.Agent.text_to_speech_settings]
+     * is applied.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3.SynthesizeSpeechConfig synthesize_speech_config = 3;
@@ -929,6 +957,9 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. Configuration of how speech should be synthesized.
+     * If not specified,
+     * [Agent.text_to_speech_settings][google.cloud.dialogflow.cx.v3.Agent.text_to_speech_settings]
+     * is applied.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3.SynthesizeSpeechConfig synthesize_speech_config = 3;

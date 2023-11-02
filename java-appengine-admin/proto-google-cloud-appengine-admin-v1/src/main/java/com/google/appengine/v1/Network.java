@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,7 +39,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
   }
 
   private Network() {
-    forwardedPorts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    forwardedPorts_ = com.google.protobuf.LazyStringArrayList.emptyList();
     instanceTag_ = "";
     name_ = "";
     subnetworkName_ = "";
@@ -49,11 +49,6 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Network();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -73,7 +68,8 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
   public static final int FORWARDED_PORTS_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList forwardedPorts_;
+  private com.google.protobuf.LazyStringArrayList forwardedPorts_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -204,6 +200,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Google Compute Engine network where the virtual machines are created.
    * Specify the short name, not the resource path.
+   *
    * Defaults to `default`.
    * </pre>
    *
@@ -229,6 +226,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Google Compute Engine network where the virtual machines are created.
    * Specify the short name, not the resource path.
+   *
    * Defaults to `default`.
    * </pre>
    *
@@ -259,8 +257,10 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Google Cloud Platform sub-network where the virtual machines are created.
    * Specify the short name, not the resource path.
+   *
    * If a subnetwork name is specified, a network name will also be required
    * unless it is for the default network.
+   *
    * * If the network that the instance is being created in is a Legacy network,
    * then the IP address is allocated from the IPv4Range.
    * * If the network that the instance is being created in is an auto Subnet
@@ -270,6 +270,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
    * * If the network that the instance is being created in is a custom Subnet
    * Mode Network, then the subnetwork_name must be specified and the
    * IP address is created from the IPCidrRange of the subnetwork.
+   *
    * If specified, the subnetwork must exist in the same region as the
    * App Engine flexible environment application.
    * </pre>
@@ -296,8 +297,10 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Google Cloud Platform sub-network where the virtual machines are created.
    * Specify the short name, not the resource path.
+   *
    * If a subnetwork name is specified, a network name will also be required
    * unless it is for the default network.
+   *
    * * If the network that the instance is being created in is a Legacy network,
    * then the IP address is allocated from the IPv4Range.
    * * If the network that the instance is being created in is an auto Subnet
@@ -307,6 +310,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
    * * If the network that the instance is being created in is a custom Subnet
    * Mode Network, then the subnetwork_name must be specified and the
    * IP address is created from the IPCidrRange of the subnetwork.
+   *
    * If specified, the subnetwork must exist in the same region as the
    * App Engine flexible environment application.
    * </pre>
@@ -586,8 +590,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      forwardedPorts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      forwardedPorts_ = com.google.protobuf.LazyStringArrayList.emptyList();
       instanceTag_ = "";
       name_ = "";
       subnetworkName_ = "";
@@ -618,7 +621,6 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.appengine.v1.Network buildPartial() {
       com.google.appengine.v1.Network result = new com.google.appengine.v1.Network(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -626,16 +628,12 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       return result;
     }
 
-    private void buildPartialRepeatedFields(com.google.appengine.v1.Network result) {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        forwardedPorts_ = forwardedPorts_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.forwardedPorts_ = forwardedPorts_;
-    }
-
     private void buildPartial0(com.google.appengine.v1.Network result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        forwardedPorts_.makeImmutable();
+        result.forwardedPorts_ = forwardedPorts_;
+      }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.instanceTag_ = instanceTag_;
       }
@@ -698,7 +696,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       if (!other.forwardedPorts_.isEmpty()) {
         if (forwardedPorts_.isEmpty()) {
           forwardedPorts_ = other.forwardedPorts_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ |= 0x00000001;
         } else {
           ensureForwardedPortsIsMutable();
           forwardedPorts_.addAll(other.forwardedPorts_);
@@ -799,14 +797,14 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList forwardedPorts_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList forwardedPorts_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureForwardedPortsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!forwardedPorts_.isModifiable()) {
         forwardedPorts_ = new com.google.protobuf.LazyStringArrayList(forwardedPorts_);
-        bitField0_ |= 0x00000001;
       }
+      bitField0_ |= 0x00000001;
     }
     /**
      *
@@ -822,7 +820,8 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the forwardedPorts.
      */
     public com.google.protobuf.ProtocolStringList getForwardedPortsList() {
-      return forwardedPorts_.getUnmodifiableView();
+      forwardedPorts_.makeImmutable();
+      return forwardedPorts_;
     }
     /**
      *
@@ -895,6 +894,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       }
       ensureForwardedPortsIsMutable();
       forwardedPorts_.set(index, value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -918,6 +918,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       }
       ensureForwardedPortsIsMutable();
       forwardedPorts_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -938,6 +939,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllForwardedPorts(java.lang.Iterable<java.lang.String> values) {
       ensureForwardedPortsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, forwardedPorts_);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -955,8 +957,9 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearForwardedPorts() {
-      forwardedPorts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      forwardedPorts_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      ;
       onChanged();
       return this;
     }
@@ -981,6 +984,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureForwardedPortsIsMutable();
       forwardedPorts_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1103,6 +1107,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Google Compute Engine network where the virtual machines are created.
      * Specify the short name, not the resource path.
+     *
      * Defaults to `default`.
      * </pre>
      *
@@ -1127,6 +1132,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Google Compute Engine network where the virtual machines are created.
      * Specify the short name, not the resource path.
+     *
      * Defaults to `default`.
      * </pre>
      *
@@ -1151,6 +1157,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Google Compute Engine network where the virtual machines are created.
      * Specify the short name, not the resource path.
+     *
      * Defaults to `default`.
      * </pre>
      *
@@ -1174,6 +1181,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Google Compute Engine network where the virtual machines are created.
      * Specify the short name, not the resource path.
+     *
      * Defaults to `default`.
      * </pre>
      *
@@ -1193,6 +1201,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Google Compute Engine network where the virtual machines are created.
      * Specify the short name, not the resource path.
+     *
      * Defaults to `default`.
      * </pre>
      *
@@ -1219,8 +1228,10 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Google Cloud Platform sub-network where the virtual machines are created.
      * Specify the short name, not the resource path.
+     *
      * If a subnetwork name is specified, a network name will also be required
      * unless it is for the default network.
+     *
      * * If the network that the instance is being created in is a Legacy network,
      * then the IP address is allocated from the IPv4Range.
      * * If the network that the instance is being created in is an auto Subnet
@@ -1230,6 +1241,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * * If the network that the instance is being created in is a custom Subnet
      * Mode Network, then the subnetwork_name must be specified and the
      * IP address is created from the IPCidrRange of the subnetwork.
+     *
      * If specified, the subnetwork must exist in the same region as the
      * App Engine flexible environment application.
      * </pre>
@@ -1255,8 +1267,10 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Google Cloud Platform sub-network where the virtual machines are created.
      * Specify the short name, not the resource path.
+     *
      * If a subnetwork name is specified, a network name will also be required
      * unless it is for the default network.
+     *
      * * If the network that the instance is being created in is a Legacy network,
      * then the IP address is allocated from the IPv4Range.
      * * If the network that the instance is being created in is an auto Subnet
@@ -1266,6 +1280,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * * If the network that the instance is being created in is a custom Subnet
      * Mode Network, then the subnetwork_name must be specified and the
      * IP address is created from the IPCidrRange of the subnetwork.
+     *
      * If specified, the subnetwork must exist in the same region as the
      * App Engine flexible environment application.
      * </pre>
@@ -1291,8 +1306,10 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Google Cloud Platform sub-network where the virtual machines are created.
      * Specify the short name, not the resource path.
+     *
      * If a subnetwork name is specified, a network name will also be required
      * unless it is for the default network.
+     *
      * * If the network that the instance is being created in is a Legacy network,
      * then the IP address is allocated from the IPv4Range.
      * * If the network that the instance is being created in is an auto Subnet
@@ -1302,6 +1319,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * * If the network that the instance is being created in is a custom Subnet
      * Mode Network, then the subnetwork_name must be specified and the
      * IP address is created from the IPCidrRange of the subnetwork.
+     *
      * If specified, the subnetwork must exist in the same region as the
      * App Engine flexible environment application.
      * </pre>
@@ -1326,8 +1344,10 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Google Cloud Platform sub-network where the virtual machines are created.
      * Specify the short name, not the resource path.
+     *
      * If a subnetwork name is specified, a network name will also be required
      * unless it is for the default network.
+     *
      * * If the network that the instance is being created in is a Legacy network,
      * then the IP address is allocated from the IPv4Range.
      * * If the network that the instance is being created in is an auto Subnet
@@ -1337,6 +1357,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * * If the network that the instance is being created in is a custom Subnet
      * Mode Network, then the subnetwork_name must be specified and the
      * IP address is created from the IPCidrRange of the subnetwork.
+     *
      * If specified, the subnetwork must exist in the same region as the
      * App Engine flexible environment application.
      * </pre>
@@ -1357,8 +1378,10 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Google Cloud Platform sub-network where the virtual machines are created.
      * Specify the short name, not the resource path.
+     *
      * If a subnetwork name is specified, a network name will also be required
      * unless it is for the default network.
+     *
      * * If the network that the instance is being created in is a Legacy network,
      * then the IP address is allocated from the IPv4Range.
      * * If the network that the instance is being created in is an auto Subnet
@@ -1368,6 +1391,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * * If the network that the instance is being created in is a custom Subnet
      * Mode Network, then the subnetwork_name must be specified and the
      * IP address is created from the IPCidrRange of the subnetwork.
+     *
      * If specified, the subnetwork must exist in the same region as the
      * App Engine flexible environment application.
      * </pre>

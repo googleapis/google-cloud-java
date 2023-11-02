@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,8 +38,9 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
 
   private RouterBgpPeer() {
     advertiseMode_ = "";
-    advertisedGroups_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    advertisedGroups_ = com.google.protobuf.LazyStringArrayList.emptyList();
     advertisedIpRanges_ = java.util.Collections.emptyList();
+    customLearnedIpRanges_ = java.util.Collections.emptyList();
     enable_ = "";
     interfaceName_ = "";
     ipAddress_ = "";
@@ -56,11 +57,6 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new RouterBgpPeer();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -694,7 +690,8 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
   public static final int ADVERTISED_GROUPS_FIELD_NUMBER = 21065526;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList advertisedGroups_;
+  private com.google.protobuf.LazyStringArrayList advertisedGroups_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -920,6 +917,125 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
     return bfd_ == null ? com.google.cloud.compute.v1.RouterBgpPeerBfd.getDefaultInstance() : bfd_;
   }
 
+  public static final int CUSTOM_LEARNED_IP_RANGES_FIELD_NUMBER = 481363012;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.compute.v1.RouterBgpPeerCustomLearnedIpRange>
+      customLearnedIpRanges_;
+  /**
+   *
+   *
+   * <pre>
+   * A list of user-defined custom learned route IP address ranges for a BGP session.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.RouterBgpPeerCustomLearnedIpRange custom_learned_ip_ranges = 481363012;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.compute.v1.RouterBgpPeerCustomLearnedIpRange>
+      getCustomLearnedIpRangesList() {
+    return customLearnedIpRanges_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A list of user-defined custom learned route IP address ranges for a BGP session.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.RouterBgpPeerCustomLearnedIpRange custom_learned_ip_ranges = 481363012;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends com.google.cloud.compute.v1.RouterBgpPeerCustomLearnedIpRangeOrBuilder>
+      getCustomLearnedIpRangesOrBuilderList() {
+    return customLearnedIpRanges_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A list of user-defined custom learned route IP address ranges for a BGP session.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.RouterBgpPeerCustomLearnedIpRange custom_learned_ip_ranges = 481363012;
+   * </code>
+   */
+  @java.lang.Override
+  public int getCustomLearnedIpRangesCount() {
+    return customLearnedIpRanges_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A list of user-defined custom learned route IP address ranges for a BGP session.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.RouterBgpPeerCustomLearnedIpRange custom_learned_ip_ranges = 481363012;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.RouterBgpPeerCustomLearnedIpRange getCustomLearnedIpRanges(
+      int index) {
+    return customLearnedIpRanges_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A list of user-defined custom learned route IP address ranges for a BGP session.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.RouterBgpPeerCustomLearnedIpRange custom_learned_ip_ranges = 481363012;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.RouterBgpPeerCustomLearnedIpRangeOrBuilder
+      getCustomLearnedIpRangesOrBuilder(int index) {
+    return customLearnedIpRanges_.get(index);
+  }
+
+  public static final int CUSTOM_LEARNED_ROUTE_PRIORITY_FIELD_NUMBER = 330412356;
+  private int customLearnedRoutePriority_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * The user-defined custom learned route priority for a BGP session. This value is applied to all custom learned route ranges for the session. You can choose a value from `0` to `65335`. If you don't provide a value, Google Cloud assigns a priority of `100` to the ranges.
+   * </pre>
+   *
+   * <code>optional int32 custom_learned_route_priority = 330412356;</code>
+   *
+   * @return Whether the customLearnedRoutePriority field is set.
+   */
+  @java.lang.Override
+  public boolean hasCustomLearnedRoutePriority() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The user-defined custom learned route priority for a BGP session. This value is applied to all custom learned route ranges for the session. You can choose a value from `0` to `65335`. If you don't provide a value, Google Cloud assigns a priority of `100` to the ranges.
+   * </pre>
+   *
+   * <code>optional int32 custom_learned_route_priority = 330412356;</code>
+   *
+   * @return The customLearnedRoutePriority.
+   */
+  @java.lang.Override
+  public int getCustomLearnedRoutePriority() {
+    return customLearnedRoutePriority_;
+  }
+
   public static final int ENABLE_FIELD_NUMBER = 311764355;
 
   @SuppressWarnings("serial")
@@ -938,7 +1054,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasEnable() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
   /**
    *
@@ -1004,7 +1120,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasEnableIpv6() {
-    return ((bitField0_ & 0x00000010) != 0);
+    return ((bitField0_ & 0x00000020) != 0);
   }
   /**
    *
@@ -1039,7 +1155,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasInterfaceName() {
-    return ((bitField0_ & 0x00000020) != 0);
+    return ((bitField0_ & 0x00000040) != 0);
   }
   /**
    *
@@ -1105,7 +1221,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasIpAddress() {
-    return ((bitField0_ & 0x00000040) != 0);
+    return ((bitField0_ & 0x00000080) != 0);
   }
   /**
    *
@@ -1171,7 +1287,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasIpv6NexthopAddress() {
-    return ((bitField0_ & 0x00000080) != 0);
+    return ((bitField0_ & 0x00000100) != 0);
   }
   /**
    *
@@ -1238,7 +1354,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasManagementType() {
-    return ((bitField0_ & 0x00000100) != 0);
+    return ((bitField0_ & 0x00000200) != 0);
   }
   /**
    *
@@ -1306,7 +1422,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasMd5AuthenticationKeyName() {
-    return ((bitField0_ & 0x00000200) != 0);
+    return ((bitField0_ & 0x00000400) != 0);
   }
   /**
    *
@@ -1372,7 +1488,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasName() {
-    return ((bitField0_ & 0x00000400) != 0);
+    return ((bitField0_ & 0x00000800) != 0);
   }
   /**
    *
@@ -1436,7 +1552,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasPeerAsn() {
-    return ((bitField0_ & 0x00000800) != 0);
+    return ((bitField0_ & 0x00001000) != 0);
   }
   /**
    *
@@ -1471,7 +1587,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasPeerIpAddress() {
-    return ((bitField0_ & 0x00001000) != 0);
+    return ((bitField0_ & 0x00002000) != 0);
   }
   /**
    *
@@ -1537,7 +1653,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasPeerIpv6NexthopAddress() {
-    return ((bitField0_ & 0x00002000) != 0);
+    return ((bitField0_ & 0x00004000) != 0);
   }
   /**
    *
@@ -1603,7 +1719,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasRouterApplianceInstance() {
-    return ((bitField0_ & 0x00004000) != 0);
+    return ((bitField0_ & 0x00008000) != 0);
   }
   /**
    *
@@ -1669,55 +1785,61 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(97440, getBfd());
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
     for (int i = 0; i < advertisedGroups_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 21065526, advertisedGroups_.getRaw(i));
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 27968211, ipv6NexthopAddress_);
     }
     for (int i = 0; i < advertisedIpRanges_.size(); i++) {
       output.writeMessage(35449932, advertisedIpRanges_.get(i));
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       output.writeUInt32(69573151, peerAsn_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 173703606, managementType_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       output.writeBool(181467939, enableIpv6_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeUInt32(186486332, advertisedRoutePriority_);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 207735769, peerIpAddress_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 281075345, md5AuthenticationKeyName_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 311764355, enable_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 312134331, advertiseMode_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeInt32(330412356, customLearnedRoutePriority_);
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 406272220, ipAddress_);
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 437854673, interfaceName_);
     }
-    if (((bitField0_ & 0x00004000) != 0)) {
+    if (((bitField0_ & 0x00008000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 468312989, routerApplianceInstance_);
     }
-    if (((bitField0_ & 0x00002000) != 0)) {
+    for (int i = 0; i < customLearnedIpRanges_.size(); i++) {
+      output.writeMessage(481363012, customLearnedIpRanges_.get(i));
+    }
+    if (((bitField0_ & 0x00004000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 491486608, peerIpv6NexthopAddress_);
     }
@@ -1733,7 +1855,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(97440, getBfd());
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
     {
@@ -1744,7 +1866,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 4 * getAdvertisedGroupsList().size();
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(27968211, ipv6NexthopAddress_);
     }
@@ -1753,13 +1875,13 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               35449932, advertisedIpRanges_.get(i));
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeUInt32Size(69573151, peerAsn_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(173703606, managementType_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(181467939, enableIpv6_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
@@ -1767,32 +1889,42 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeUInt32Size(
               186486332, advertisedRoutePriority_);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(207735769, peerIpAddress_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(
               281075345, md5AuthenticationKeyName_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(311764355, enable_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(312134331, advertiseMode_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeInt32Size(
+              330412356, customLearnedRoutePriority_);
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(406272220, ipAddress_);
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(437854673, interfaceName_);
     }
-    if (((bitField0_ & 0x00004000) != 0)) {
+    if (((bitField0_ & 0x00008000) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(
               468312989, routerApplianceInstance_);
     }
-    if (((bitField0_ & 0x00002000) != 0)) {
+    for (int i = 0; i < customLearnedIpRanges_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              481363012, customLearnedIpRanges_.get(i));
+    }
+    if (((bitField0_ & 0x00004000) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(
               491486608, peerIpv6NexthopAddress_);
@@ -1826,6 +1958,11 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
     if (hasBfd() != other.hasBfd()) return false;
     if (hasBfd()) {
       if (!getBfd().equals(other.getBfd())) return false;
+    }
+    if (!getCustomLearnedIpRangesList().equals(other.getCustomLearnedIpRangesList())) return false;
+    if (hasCustomLearnedRoutePriority() != other.hasCustomLearnedRoutePriority()) return false;
+    if (hasCustomLearnedRoutePriority()) {
+      if (getCustomLearnedRoutePriority() != other.getCustomLearnedRoutePriority()) return false;
     }
     if (hasEnable() != other.hasEnable()) return false;
     if (hasEnable()) {
@@ -1905,6 +2042,14 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
     if (hasBfd()) {
       hash = (37 * hash) + BFD_FIELD_NUMBER;
       hash = (53 * hash) + getBfd().hashCode();
+    }
+    if (getCustomLearnedIpRangesCount() > 0) {
+      hash = (37 * hash) + CUSTOM_LEARNED_IP_RANGES_FIELD_NUMBER;
+      hash = (53 * hash) + getCustomLearnedIpRangesList().hashCode();
+    }
+    if (hasCustomLearnedRoutePriority()) {
+      hash = (37 * hash) + CUSTOM_LEARNED_ROUTE_PRIORITY_FIELD_NUMBER;
+      hash = (53 * hash) + getCustomLearnedRoutePriority();
     }
     if (hasEnable()) {
       hash = (37 * hash) + ENABLE_FIELD_NUMBER;
@@ -2095,6 +2240,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getAdvertisedIpRangesFieldBuilder();
         getBfdFieldBuilder();
+        getCustomLearnedIpRangesFieldBuilder();
       }
     }
 
@@ -2103,8 +2249,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       bitField0_ = 0;
       advertiseMode_ = "";
-      advertisedGroups_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      advertisedGroups_ = com.google.protobuf.LazyStringArrayList.emptyList();
       if (advertisedIpRangesBuilder_ == null) {
         advertisedIpRanges_ = java.util.Collections.emptyList();
       } else {
@@ -2118,6 +2263,14 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
         bfdBuilder_.dispose();
         bfdBuilder_ = null;
       }
+      if (customLearnedIpRangesBuilder_ == null) {
+        customLearnedIpRanges_ = java.util.Collections.emptyList();
+      } else {
+        customLearnedIpRanges_ = null;
+        customLearnedIpRangesBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000020);
+      customLearnedRoutePriority_ = 0;
       enable_ = "";
       enableIpv6_ = false;
       interfaceName_ = "";
@@ -2166,11 +2319,6 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
     }
 
     private void buildPartialRepeatedFields(com.google.cloud.compute.v1.RouterBgpPeer result) {
-      if (((bitField0_ & 0x00000002) != 0)) {
-        advertisedGroups_ = advertisedGroups_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.advertisedGroups_ = advertisedGroups_;
       if (advertisedIpRangesBuilder_ == null) {
         if (((bitField0_ & 0x00000004) != 0)) {
           advertisedIpRanges_ = java.util.Collections.unmodifiableList(advertisedIpRanges_);
@@ -2179,6 +2327,15 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
         result.advertisedIpRanges_ = advertisedIpRanges_;
       } else {
         result.advertisedIpRanges_ = advertisedIpRangesBuilder_.build();
+      }
+      if (customLearnedIpRangesBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) != 0)) {
+          customLearnedIpRanges_ = java.util.Collections.unmodifiableList(customLearnedIpRanges_);
+          bitField0_ = (bitField0_ & ~0x00000020);
+        }
+        result.customLearnedIpRanges_ = customLearnedIpRanges_;
+      } else {
+        result.customLearnedIpRanges_ = customLearnedIpRangesBuilder_.build();
       }
     }
 
@@ -2189,6 +2346,10 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
         result.advertiseMode_ = advertiseMode_;
         to_bitField0_ |= 0x00000001;
       }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        advertisedGroups_.makeImmutable();
+        result.advertisedGroups_ = advertisedGroups_;
+      }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.advertisedRoutePriority_ = advertisedRoutePriority_;
         to_bitField0_ |= 0x00000002;
@@ -2197,53 +2358,57 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
         result.bfd_ = bfdBuilder_ == null ? bfd_ : bfdBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.enable_ = enable_;
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.customLearnedRoutePriority_ = customLearnedRoutePriority_;
         to_bitField0_ |= 0x00000008;
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.enableIpv6_ = enableIpv6_;
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.enable_ = enable_;
         to_bitField0_ |= 0x00000010;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
-        result.interfaceName_ = interfaceName_;
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.enableIpv6_ = enableIpv6_;
         to_bitField0_ |= 0x00000020;
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
-        result.ipAddress_ = ipAddress_;
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.interfaceName_ = interfaceName_;
         to_bitField0_ |= 0x00000040;
       }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
-        result.ipv6NexthopAddress_ = ipv6NexthopAddress_;
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.ipAddress_ = ipAddress_;
         to_bitField0_ |= 0x00000080;
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
-        result.managementType_ = managementType_;
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.ipv6NexthopAddress_ = ipv6NexthopAddress_;
         to_bitField0_ |= 0x00000100;
       }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
-        result.md5AuthenticationKeyName_ = md5AuthenticationKeyName_;
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.managementType_ = managementType_;
         to_bitField0_ |= 0x00000200;
       }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
-        result.name_ = name_;
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.md5AuthenticationKeyName_ = md5AuthenticationKeyName_;
         to_bitField0_ |= 0x00000400;
       }
-      if (((from_bitField0_ & 0x00002000) != 0)) {
-        result.peerAsn_ = peerAsn_;
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.name_ = name_;
         to_bitField0_ |= 0x00000800;
       }
-      if (((from_bitField0_ & 0x00004000) != 0)) {
-        result.peerIpAddress_ = peerIpAddress_;
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.peerAsn_ = peerAsn_;
         to_bitField0_ |= 0x00001000;
       }
-      if (((from_bitField0_ & 0x00008000) != 0)) {
-        result.peerIpv6NexthopAddress_ = peerIpv6NexthopAddress_;
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.peerIpAddress_ = peerIpAddress_;
         to_bitField0_ |= 0x00002000;
       }
-      if (((from_bitField0_ & 0x00010000) != 0)) {
-        result.routerApplianceInstance_ = routerApplianceInstance_;
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.peerIpv6NexthopAddress_ = peerIpv6NexthopAddress_;
         to_bitField0_ |= 0x00004000;
+      }
+      if (((from_bitField0_ & 0x00040000) != 0)) {
+        result.routerApplianceInstance_ = routerApplianceInstance_;
+        to_bitField0_ |= 0x00008000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2301,7 +2466,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
       if (!other.advertisedGroups_.isEmpty()) {
         if (advertisedGroups_.isEmpty()) {
           advertisedGroups_ = other.advertisedGroups_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureAdvertisedGroupsIsMutable();
           advertisedGroups_.addAll(other.advertisedGroups_);
@@ -2341,9 +2506,39 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
       if (other.hasBfd()) {
         mergeBfd(other.getBfd());
       }
+      if (customLearnedIpRangesBuilder_ == null) {
+        if (!other.customLearnedIpRanges_.isEmpty()) {
+          if (customLearnedIpRanges_.isEmpty()) {
+            customLearnedIpRanges_ = other.customLearnedIpRanges_;
+            bitField0_ = (bitField0_ & ~0x00000020);
+          } else {
+            ensureCustomLearnedIpRangesIsMutable();
+            customLearnedIpRanges_.addAll(other.customLearnedIpRanges_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.customLearnedIpRanges_.isEmpty()) {
+          if (customLearnedIpRangesBuilder_.isEmpty()) {
+            customLearnedIpRangesBuilder_.dispose();
+            customLearnedIpRangesBuilder_ = null;
+            customLearnedIpRanges_ = other.customLearnedIpRanges_;
+            bitField0_ = (bitField0_ & ~0x00000020);
+            customLearnedIpRangesBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getCustomLearnedIpRangesFieldBuilder()
+                    : null;
+          } else {
+            customLearnedIpRangesBuilder_.addAllMessages(other.customLearnedIpRanges_);
+          }
+        }
+      }
+      if (other.hasCustomLearnedRoutePriority()) {
+        setCustomLearnedRoutePriority(other.getCustomLearnedRoutePriority());
+      }
       if (other.hasEnable()) {
         enable_ = other.enable_;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (other.hasEnableIpv6()) {
@@ -2351,32 +2546,32 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasInterfaceName()) {
         interfaceName_ = other.interfaceName_;
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       if (other.hasIpAddress()) {
         ipAddress_ = other.ipAddress_;
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       if (other.hasIpv6NexthopAddress()) {
         ipv6NexthopAddress_ = other.ipv6NexthopAddress_;
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       if (other.hasManagementType()) {
         managementType_ = other.managementType_;
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       if (other.hasMd5AuthenticationKeyName()) {
         md5AuthenticationKeyName_ = other.md5AuthenticationKeyName_;
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       if (other.hasName()) {
         name_ = other.name_;
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       if (other.hasPeerAsn()) {
@@ -2384,17 +2579,17 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasPeerIpAddress()) {
         peerIpAddress_ = other.peerIpAddress_;
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00010000;
         onChanged();
       }
       if (other.hasPeerIpv6NexthopAddress()) {
         peerIpv6NexthopAddress_ = other.peerIpv6NexthopAddress_;
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00020000;
         onChanged();
       }
       if (other.hasRouterApplianceInstance()) {
         routerApplianceInstance_ = other.routerApplianceInstance_;
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00040000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -2432,7 +2627,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
             case 26989658:
               {
                 name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 26989658
             case 168524210:
@@ -2445,7 +2640,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
             case 223745690:
               {
                 ipv6NexthopAddress_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 223745690
             case 283599458:
@@ -2465,19 +2660,19 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
             case 556585208:
               {
                 peerAsn_ = input.readUInt32();
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 556585208
             case 1389628850:
               {
                 managementType_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 1389628850
             case 1451743512:
               {
                 enableIpv6_ = input.readBool();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 1451743512
             case 1491890656:
@@ -2489,19 +2684,19 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
             case 1661886154:
               {
                 peerIpAddress_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case 1661886154
             case -2046364534:
               {
                 md5AuthenticationKeyName_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00002000;
                 break;
               } // case -2046364534
             case -1800852454:
               {
                 enable_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000080;
                 break;
               } // case -1800852454
             case -1797892646:
@@ -2510,28 +2705,48 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000001;
                 break;
               } // case -1797892646
+            case -1651668448:
+              {
+                customLearnedRoutePriority_ = input.readInt32();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case -1651668448
             case -1044789534:
               {
                 ipAddress_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000400;
                 break;
               } // case -1044789534
             case -792129910:
               {
                 interfaceName_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000200;
                 break;
               } // case -792129910
             case -548463382:
               {
                 routerApplianceInstance_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case -548463382
+            case -444063198:
+              {
+                com.google.cloud.compute.v1.RouterBgpPeerCustomLearnedIpRange m =
+                    input.readMessage(
+                        com.google.cloud.compute.v1.RouterBgpPeerCustomLearnedIpRange.parser(),
+                        extensionRegistry);
+                if (customLearnedIpRangesBuilder_ == null) {
+                  ensureCustomLearnedIpRangesIsMutable();
+                  customLearnedIpRanges_.add(m);
+                } else {
+                  customLearnedIpRangesBuilder_.addMessage(m);
+                }
+                break;
+              } // case -444063198
             case -363074430:
               {
                 peerIpv6NexthopAddress_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case -363074430
             default:
@@ -2679,14 +2894,14 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList advertisedGroups_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList advertisedGroups_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureAdvertisedGroupsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!advertisedGroups_.isModifiable()) {
         advertisedGroups_ = new com.google.protobuf.LazyStringArrayList(advertisedGroups_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -2701,7 +2916,8 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the advertisedGroups.
      */
     public com.google.protobuf.ProtocolStringList getAdvertisedGroupsList() {
-      return advertisedGroups_.getUnmodifiableView();
+      advertisedGroups_.makeImmutable();
+      return advertisedGroups_;
     }
     /**
      *
@@ -2770,6 +2986,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
       }
       ensureAdvertisedGroupsIsMutable();
       advertisedGroups_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2792,6 +3009,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
       }
       ensureAdvertisedGroupsIsMutable();
       advertisedGroups_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2811,6 +3029,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllAdvertisedGroups(java.lang.Iterable<java.lang.String> values) {
       ensureAdvertisedGroupsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, advertisedGroups_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2827,8 +3046,9 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAdvertisedGroups() {
-      advertisedGroups_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      advertisedGroups_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -2852,6 +3072,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureAdvertisedGroupsIsMutable();
       advertisedGroups_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -3507,6 +3728,481 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
       return bfdBuilder_;
     }
 
+    private java.util.List<com.google.cloud.compute.v1.RouterBgpPeerCustomLearnedIpRange>
+        customLearnedIpRanges_ = java.util.Collections.emptyList();
+
+    private void ensureCustomLearnedIpRangesIsMutable() {
+      if (!((bitField0_ & 0x00000020) != 0)) {
+        customLearnedIpRanges_ =
+            new java.util.ArrayList<com.google.cloud.compute.v1.RouterBgpPeerCustomLearnedIpRange>(
+                customLearnedIpRanges_);
+        bitField0_ |= 0x00000020;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.compute.v1.RouterBgpPeerCustomLearnedIpRange,
+            com.google.cloud.compute.v1.RouterBgpPeerCustomLearnedIpRange.Builder,
+            com.google.cloud.compute.v1.RouterBgpPeerCustomLearnedIpRangeOrBuilder>
+        customLearnedIpRangesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of user-defined custom learned route IP address ranges for a BGP session.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.RouterBgpPeerCustomLearnedIpRange custom_learned_ip_ranges = 481363012;
+     * </code>
+     */
+    public java.util.List<com.google.cloud.compute.v1.RouterBgpPeerCustomLearnedIpRange>
+        getCustomLearnedIpRangesList() {
+      if (customLearnedIpRangesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(customLearnedIpRanges_);
+      } else {
+        return customLearnedIpRangesBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of user-defined custom learned route IP address ranges for a BGP session.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.RouterBgpPeerCustomLearnedIpRange custom_learned_ip_ranges = 481363012;
+     * </code>
+     */
+    public int getCustomLearnedIpRangesCount() {
+      if (customLearnedIpRangesBuilder_ == null) {
+        return customLearnedIpRanges_.size();
+      } else {
+        return customLearnedIpRangesBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of user-defined custom learned route IP address ranges for a BGP session.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.RouterBgpPeerCustomLearnedIpRange custom_learned_ip_ranges = 481363012;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.RouterBgpPeerCustomLearnedIpRange getCustomLearnedIpRanges(
+        int index) {
+      if (customLearnedIpRangesBuilder_ == null) {
+        return customLearnedIpRanges_.get(index);
+      } else {
+        return customLearnedIpRangesBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of user-defined custom learned route IP address ranges for a BGP session.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.RouterBgpPeerCustomLearnedIpRange custom_learned_ip_ranges = 481363012;
+     * </code>
+     */
+    public Builder setCustomLearnedIpRanges(
+        int index, com.google.cloud.compute.v1.RouterBgpPeerCustomLearnedIpRange value) {
+      if (customLearnedIpRangesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCustomLearnedIpRangesIsMutable();
+        customLearnedIpRanges_.set(index, value);
+        onChanged();
+      } else {
+        customLearnedIpRangesBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of user-defined custom learned route IP address ranges for a BGP session.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.RouterBgpPeerCustomLearnedIpRange custom_learned_ip_ranges = 481363012;
+     * </code>
+     */
+    public Builder setCustomLearnedIpRanges(
+        int index,
+        com.google.cloud.compute.v1.RouterBgpPeerCustomLearnedIpRange.Builder builderForValue) {
+      if (customLearnedIpRangesBuilder_ == null) {
+        ensureCustomLearnedIpRangesIsMutable();
+        customLearnedIpRanges_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        customLearnedIpRangesBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of user-defined custom learned route IP address ranges for a BGP session.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.RouterBgpPeerCustomLearnedIpRange custom_learned_ip_ranges = 481363012;
+     * </code>
+     */
+    public Builder addCustomLearnedIpRanges(
+        com.google.cloud.compute.v1.RouterBgpPeerCustomLearnedIpRange value) {
+      if (customLearnedIpRangesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCustomLearnedIpRangesIsMutable();
+        customLearnedIpRanges_.add(value);
+        onChanged();
+      } else {
+        customLearnedIpRangesBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of user-defined custom learned route IP address ranges for a BGP session.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.RouterBgpPeerCustomLearnedIpRange custom_learned_ip_ranges = 481363012;
+     * </code>
+     */
+    public Builder addCustomLearnedIpRanges(
+        int index, com.google.cloud.compute.v1.RouterBgpPeerCustomLearnedIpRange value) {
+      if (customLearnedIpRangesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCustomLearnedIpRangesIsMutable();
+        customLearnedIpRanges_.add(index, value);
+        onChanged();
+      } else {
+        customLearnedIpRangesBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of user-defined custom learned route IP address ranges for a BGP session.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.RouterBgpPeerCustomLearnedIpRange custom_learned_ip_ranges = 481363012;
+     * </code>
+     */
+    public Builder addCustomLearnedIpRanges(
+        com.google.cloud.compute.v1.RouterBgpPeerCustomLearnedIpRange.Builder builderForValue) {
+      if (customLearnedIpRangesBuilder_ == null) {
+        ensureCustomLearnedIpRangesIsMutable();
+        customLearnedIpRanges_.add(builderForValue.build());
+        onChanged();
+      } else {
+        customLearnedIpRangesBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of user-defined custom learned route IP address ranges for a BGP session.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.RouterBgpPeerCustomLearnedIpRange custom_learned_ip_ranges = 481363012;
+     * </code>
+     */
+    public Builder addCustomLearnedIpRanges(
+        int index,
+        com.google.cloud.compute.v1.RouterBgpPeerCustomLearnedIpRange.Builder builderForValue) {
+      if (customLearnedIpRangesBuilder_ == null) {
+        ensureCustomLearnedIpRangesIsMutable();
+        customLearnedIpRanges_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        customLearnedIpRangesBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of user-defined custom learned route IP address ranges for a BGP session.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.RouterBgpPeerCustomLearnedIpRange custom_learned_ip_ranges = 481363012;
+     * </code>
+     */
+    public Builder addAllCustomLearnedIpRanges(
+        java.lang.Iterable<? extends com.google.cloud.compute.v1.RouterBgpPeerCustomLearnedIpRange>
+            values) {
+      if (customLearnedIpRangesBuilder_ == null) {
+        ensureCustomLearnedIpRangesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, customLearnedIpRanges_);
+        onChanged();
+      } else {
+        customLearnedIpRangesBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of user-defined custom learned route IP address ranges for a BGP session.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.RouterBgpPeerCustomLearnedIpRange custom_learned_ip_ranges = 481363012;
+     * </code>
+     */
+    public Builder clearCustomLearnedIpRanges() {
+      if (customLearnedIpRangesBuilder_ == null) {
+        customLearnedIpRanges_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000020);
+        onChanged();
+      } else {
+        customLearnedIpRangesBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of user-defined custom learned route IP address ranges for a BGP session.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.RouterBgpPeerCustomLearnedIpRange custom_learned_ip_ranges = 481363012;
+     * </code>
+     */
+    public Builder removeCustomLearnedIpRanges(int index) {
+      if (customLearnedIpRangesBuilder_ == null) {
+        ensureCustomLearnedIpRangesIsMutable();
+        customLearnedIpRanges_.remove(index);
+        onChanged();
+      } else {
+        customLearnedIpRangesBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of user-defined custom learned route IP address ranges for a BGP session.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.RouterBgpPeerCustomLearnedIpRange custom_learned_ip_ranges = 481363012;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.RouterBgpPeerCustomLearnedIpRange.Builder
+        getCustomLearnedIpRangesBuilder(int index) {
+      return getCustomLearnedIpRangesFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of user-defined custom learned route IP address ranges for a BGP session.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.RouterBgpPeerCustomLearnedIpRange custom_learned_ip_ranges = 481363012;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.RouterBgpPeerCustomLearnedIpRangeOrBuilder
+        getCustomLearnedIpRangesOrBuilder(int index) {
+      if (customLearnedIpRangesBuilder_ == null) {
+        return customLearnedIpRanges_.get(index);
+      } else {
+        return customLearnedIpRangesBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of user-defined custom learned route IP address ranges for a BGP session.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.RouterBgpPeerCustomLearnedIpRange custom_learned_ip_ranges = 481363012;
+     * </code>
+     */
+    public java.util.List<
+            ? extends com.google.cloud.compute.v1.RouterBgpPeerCustomLearnedIpRangeOrBuilder>
+        getCustomLearnedIpRangesOrBuilderList() {
+      if (customLearnedIpRangesBuilder_ != null) {
+        return customLearnedIpRangesBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(customLearnedIpRanges_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of user-defined custom learned route IP address ranges for a BGP session.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.RouterBgpPeerCustomLearnedIpRange custom_learned_ip_ranges = 481363012;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.RouterBgpPeerCustomLearnedIpRange.Builder
+        addCustomLearnedIpRangesBuilder() {
+      return getCustomLearnedIpRangesFieldBuilder()
+          .addBuilder(
+              com.google.cloud.compute.v1.RouterBgpPeerCustomLearnedIpRange.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of user-defined custom learned route IP address ranges for a BGP session.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.RouterBgpPeerCustomLearnedIpRange custom_learned_ip_ranges = 481363012;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.RouterBgpPeerCustomLearnedIpRange.Builder
+        addCustomLearnedIpRangesBuilder(int index) {
+      return getCustomLearnedIpRangesFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.cloud.compute.v1.RouterBgpPeerCustomLearnedIpRange.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of user-defined custom learned route IP address ranges for a BGP session.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.RouterBgpPeerCustomLearnedIpRange custom_learned_ip_ranges = 481363012;
+     * </code>
+     */
+    public java.util.List<com.google.cloud.compute.v1.RouterBgpPeerCustomLearnedIpRange.Builder>
+        getCustomLearnedIpRangesBuilderList() {
+      return getCustomLearnedIpRangesFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.compute.v1.RouterBgpPeerCustomLearnedIpRange,
+            com.google.cloud.compute.v1.RouterBgpPeerCustomLearnedIpRange.Builder,
+            com.google.cloud.compute.v1.RouterBgpPeerCustomLearnedIpRangeOrBuilder>
+        getCustomLearnedIpRangesFieldBuilder() {
+      if (customLearnedIpRangesBuilder_ == null) {
+        customLearnedIpRangesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.compute.v1.RouterBgpPeerCustomLearnedIpRange,
+                com.google.cloud.compute.v1.RouterBgpPeerCustomLearnedIpRange.Builder,
+                com.google.cloud.compute.v1.RouterBgpPeerCustomLearnedIpRangeOrBuilder>(
+                customLearnedIpRanges_,
+                ((bitField0_ & 0x00000020) != 0),
+                getParentForChildren(),
+                isClean());
+        customLearnedIpRanges_ = null;
+      }
+      return customLearnedIpRangesBuilder_;
+    }
+
+    private int customLearnedRoutePriority_;
+    /**
+     *
+     *
+     * <pre>
+     * The user-defined custom learned route priority for a BGP session. This value is applied to all custom learned route ranges for the session. You can choose a value from `0` to `65335`. If you don't provide a value, Google Cloud assigns a priority of `100` to the ranges.
+     * </pre>
+     *
+     * <code>optional int32 custom_learned_route_priority = 330412356;</code>
+     *
+     * @return Whether the customLearnedRoutePriority field is set.
+     */
+    @java.lang.Override
+    public boolean hasCustomLearnedRoutePriority() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The user-defined custom learned route priority for a BGP session. This value is applied to all custom learned route ranges for the session. You can choose a value from `0` to `65335`. If you don't provide a value, Google Cloud assigns a priority of `100` to the ranges.
+     * </pre>
+     *
+     * <code>optional int32 custom_learned_route_priority = 330412356;</code>
+     *
+     * @return The customLearnedRoutePriority.
+     */
+    @java.lang.Override
+    public int getCustomLearnedRoutePriority() {
+      return customLearnedRoutePriority_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The user-defined custom learned route priority for a BGP session. This value is applied to all custom learned route ranges for the session. You can choose a value from `0` to `65335`. If you don't provide a value, Google Cloud assigns a priority of `100` to the ranges.
+     * </pre>
+     *
+     * <code>optional int32 custom_learned_route_priority = 330412356;</code>
+     *
+     * @param value The customLearnedRoutePriority to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCustomLearnedRoutePriority(int value) {
+
+      customLearnedRoutePriority_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The user-defined custom learned route priority for a BGP session. This value is applied to all custom learned route ranges for the session. You can choose a value from `0` to `65335`. If you don't provide a value, Google Cloud assigns a priority of `100` to the ranges.
+     * </pre>
+     *
+     * <code>optional int32 custom_learned_route_priority = 330412356;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCustomLearnedRoutePriority() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      customLearnedRoutePriority_ = 0;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object enable_ = "";
     /**
      *
@@ -3521,7 +4217,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the enable field is set.
      */
     public boolean hasEnable() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -3587,7 +4283,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       enable_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3605,7 +4301,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearEnable() {
       enable_ = getDefaultInstance().getEnable();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -3628,7 +4324,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       enable_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3647,7 +4343,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasEnableIpv6() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -3679,7 +4375,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
     public Builder setEnableIpv6(boolean value) {
 
       enableIpv6_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3695,7 +4391,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEnableIpv6() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000100);
       enableIpv6_ = false;
       onChanged();
       return this;
@@ -3714,7 +4410,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the interfaceName field is set.
      */
     public boolean hasInterfaceName() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -3777,7 +4473,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       interfaceName_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3794,7 +4490,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearInterfaceName() {
       interfaceName_ = getDefaultInstance().getInterfaceName();
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -3816,7 +4512,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       interfaceName_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3834,7 +4530,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the ipAddress field is set.
      */
     public boolean hasIpAddress() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      *
@@ -3897,7 +4593,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       ipAddress_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3914,7 +4610,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearIpAddress() {
       ipAddress_ = getDefaultInstance().getIpAddress();
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -3936,7 +4632,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       ipAddress_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3954,7 +4650,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the ipv6NexthopAddress field is set.
      */
     public boolean hasIpv6NexthopAddress() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
     /**
      *
@@ -4017,7 +4713,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       ipv6NexthopAddress_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4034,7 +4730,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearIpv6NexthopAddress() {
       ipv6NexthopAddress_ = getDefaultInstance().getIpv6NexthopAddress();
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -4056,7 +4752,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       ipv6NexthopAddress_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4075,7 +4771,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the managementType field is set.
      */
     public boolean hasManagementType() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
     /**
      *
@@ -4141,7 +4837,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       managementType_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4159,7 +4855,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearManagementType() {
       managementType_ = getDefaultInstance().getManagementType();
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00001000);
       onChanged();
       return this;
     }
@@ -4182,7 +4878,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       managementType_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4200,7 +4896,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the md5AuthenticationKeyName field is set.
      */
     public boolean hasMd5AuthenticationKeyName() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
     /**
      *
@@ -4263,7 +4959,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       md5AuthenticationKeyName_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4280,7 +4976,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearMd5AuthenticationKeyName() {
       md5AuthenticationKeyName_ = getDefaultInstance().getMd5AuthenticationKeyName();
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00002000);
       onChanged();
       return this;
     }
@@ -4302,7 +4998,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       md5AuthenticationKeyName_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4320,7 +5016,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the name field is set.
      */
     public boolean hasName() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
     /**
      *
@@ -4383,7 +5079,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       name_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4400,7 +5096,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearName() {
       name_ = getDefaultInstance().getName();
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       onChanged();
       return this;
     }
@@ -4422,7 +5118,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       name_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4441,7 +5137,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasPeerAsn() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00008000) != 0);
     }
     /**
      *
@@ -4473,7 +5169,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
     public Builder setPeerAsn(int value) {
 
       peerAsn_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4489,7 +5185,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPeerAsn() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       peerAsn_ = 0;
       onChanged();
       return this;
@@ -4508,7 +5204,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the peerIpAddress field is set.
      */
     public boolean hasPeerIpAddress() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00010000) != 0);
     }
     /**
      *
@@ -4571,7 +5267,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       peerIpAddress_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -4588,7 +5284,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearPeerIpAddress() {
       peerIpAddress_ = getDefaultInstance().getPeerIpAddress();
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       onChanged();
       return this;
     }
@@ -4610,7 +5306,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       peerIpAddress_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -4628,7 +5324,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the peerIpv6NexthopAddress field is set.
      */
     public boolean hasPeerIpv6NexthopAddress() {
-      return ((bitField0_ & 0x00008000) != 0);
+      return ((bitField0_ & 0x00020000) != 0);
     }
     /**
      *
@@ -4691,7 +5387,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       peerIpv6NexthopAddress_ = value;
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -4708,7 +5404,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearPeerIpv6NexthopAddress() {
       peerIpv6NexthopAddress_ = getDefaultInstance().getPeerIpv6NexthopAddress();
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       onChanged();
       return this;
     }
@@ -4730,7 +5426,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       peerIpv6NexthopAddress_ = value;
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -4748,7 +5444,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the routerApplianceInstance field is set.
      */
     public boolean hasRouterApplianceInstance() {
-      return ((bitField0_ & 0x00010000) != 0);
+      return ((bitField0_ & 0x00040000) != 0);
     }
     /**
      *
@@ -4811,7 +5507,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       routerApplianceInstance_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -4828,7 +5524,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearRouterApplianceInstance() {
       routerApplianceInstance_ = getDefaultInstance().getRouterApplianceInstance();
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       onChanged();
       return this;
     }
@@ -4850,7 +5546,7 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       routerApplianceInstance_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }

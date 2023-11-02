@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,11 +50,6 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
     return new Container();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.securitycenter.v1.ContainerProto
         .internal_static_google_cloud_securitycenter_v1_Container_descriptor;
@@ -78,7 +73,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Container name.
+   * Name of the container.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -101,7 +96,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Container name.
+   * Name of the container.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -129,8 +124,8 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Container image URI provided when configuring a pod/container.
-   * May identify a container image version using mutable tags.
+   * Container image URI provided when configuring a pod or container. This
+   * string can identify a container image version using mutable tags.
    * </pre>
    *
    * <code>string uri = 2;</code>
@@ -153,8 +148,8 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Container image URI provided when configuring a pod/container.
-   * May identify a container image version using mutable tags.
+   * Container image URI provided when configuring a pod or container. This
+   * string can identify a container image version using mutable tags.
    * </pre>
    *
    * <code>string uri = 2;</code>
@@ -182,9 +177,8 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional container image id, when provided by the container runtime.
-   * Uniquely identifies the container image launched using a container image
-   * digest.
+   * Optional container image ID, if provided by the container runtime. Uniquely
+   * identifies the container image launched using a container image digest.
    * </pre>
    *
    * <code>string image_id = 3;</code>
@@ -207,9 +201,8 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional container image id, when provided by the container runtime.
-   * Uniquely identifies the container image launched using a container image
-   * digest.
+   * Optional container image ID, if provided by the container runtime. Uniquely
+   * identifies the container image launched using a container image digest.
    * </pre>
    *
    * <code>string image_id = 3;</code>
@@ -765,7 +758,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Container name.
+     * Name of the container.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -787,7 +780,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Container name.
+     * Name of the container.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -809,7 +802,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Container name.
+     * Name of the container.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -830,7 +823,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Container name.
+     * Name of the container.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -847,7 +840,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Container name.
+     * Name of the container.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -871,8 +864,8 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Container image URI provided when configuring a pod/container.
-     * May identify a container image version using mutable tags.
+     * Container image URI provided when configuring a pod or container. This
+     * string can identify a container image version using mutable tags.
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -894,8 +887,8 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Container image URI provided when configuring a pod/container.
-     * May identify a container image version using mutable tags.
+     * Container image URI provided when configuring a pod or container. This
+     * string can identify a container image version using mutable tags.
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -917,8 +910,8 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Container image URI provided when configuring a pod/container.
-     * May identify a container image version using mutable tags.
+     * Container image URI provided when configuring a pod or container. This
+     * string can identify a container image version using mutable tags.
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -939,8 +932,8 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Container image URI provided when configuring a pod/container.
-     * May identify a container image version using mutable tags.
+     * Container image URI provided when configuring a pod or container. This
+     * string can identify a container image version using mutable tags.
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -957,8 +950,8 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Container image URI provided when configuring a pod/container.
-     * May identify a container image version using mutable tags.
+     * Container image URI provided when configuring a pod or container. This
+     * string can identify a container image version using mutable tags.
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -982,9 +975,8 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional container image id, when provided by the container runtime.
-     * Uniquely identifies the container image launched using a container image
-     * digest.
+     * Optional container image ID, if provided by the container runtime. Uniquely
+     * identifies the container image launched using a container image digest.
      * </pre>
      *
      * <code>string image_id = 3;</code>
@@ -1006,9 +998,8 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional container image id, when provided by the container runtime.
-     * Uniquely identifies the container image launched using a container image
-     * digest.
+     * Optional container image ID, if provided by the container runtime. Uniquely
+     * identifies the container image launched using a container image digest.
      * </pre>
      *
      * <code>string image_id = 3;</code>
@@ -1030,9 +1021,8 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional container image id, when provided by the container runtime.
-     * Uniquely identifies the container image launched using a container image
-     * digest.
+     * Optional container image ID, if provided by the container runtime. Uniquely
+     * identifies the container image launched using a container image digest.
      * </pre>
      *
      * <code>string image_id = 3;</code>
@@ -1053,9 +1043,8 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional container image id, when provided by the container runtime.
-     * Uniquely identifies the container image launched using a container image
-     * digest.
+     * Optional container image ID, if provided by the container runtime. Uniquely
+     * identifies the container image launched using a container image digest.
      * </pre>
      *
      * <code>string image_id = 3;</code>
@@ -1072,9 +1061,8 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional container image id, when provided by the container runtime.
-     * Uniquely identifies the container image launched using a container image
-     * digest.
+     * Optional container image ID, if provided by the container runtime. Uniquely
+     * identifies the container image launched using a container image digest.
      * </pre>
      *
      * <code>string image_id = 3;</code>

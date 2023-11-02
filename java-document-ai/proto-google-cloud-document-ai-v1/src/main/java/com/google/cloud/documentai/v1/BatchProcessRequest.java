@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,8 @@ package com.google.cloud.documentai.v1;
  *
  *
  * <pre>
- * Request message for batch process document method.
+ * Request message for
+ * [BatchProcessDocuments][google.cloud.documentai.v1.DocumentProcessorService.BatchProcessDocuments].
  * </pre>
  *
  * Protobuf type {@code google.cloud.documentai.v1.BatchProcessRequest}
@@ -45,11 +46,6 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new BatchProcessRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -138,7 +134,9 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The input documents for batch process.
+   * The input documents for the
+   * [BatchProcessDocuments][google.cloud.documentai.v1.DocumentProcessorService.BatchProcessDocuments]
+   * method.
    * </pre>
    *
    * <code>.google.cloud.documentai.v1.BatchDocumentsInputConfig input_documents = 5;</code>
@@ -153,7 +151,9 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The input documents for batch process.
+   * The input documents for the
+   * [BatchProcessDocuments][google.cloud.documentai.v1.DocumentProcessorService.BatchProcessDocuments]
+   * method.
    * </pre>
    *
    * <code>.google.cloud.documentai.v1.BatchDocumentsInputConfig input_documents = 5;</code>
@@ -170,7 +170,9 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The input documents for batch process.
+   * The input documents for the
+   * [BatchProcessDocuments][google.cloud.documentai.v1.DocumentProcessorService.BatchProcessDocuments]
+   * method.
    * </pre>
    *
    * <code>.google.cloud.documentai.v1.BatchDocumentsInputConfig input_documents = 5;</code>
@@ -189,7 +191,9 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The overall output config for batch process.
+   * The output configuration for the
+   * [BatchProcessDocuments][google.cloud.documentai.v1.DocumentProcessorService.BatchProcessDocuments]
+   * method.
    * </pre>
    *
    * <code>.google.cloud.documentai.v1.DocumentOutputConfig document_output_config = 6;</code>
@@ -204,7 +208,9 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The overall output config for batch process.
+   * The output configuration for the
+   * [BatchProcessDocuments][google.cloud.documentai.v1.DocumentProcessorService.BatchProcessDocuments]
+   * method.
    * </pre>
    *
    * <code>.google.cloud.documentai.v1.DocumentOutputConfig document_output_config = 6;</code>
@@ -221,7 +227,9 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The overall output config for batch process.
+   * The output configuration for the
+   * [BatchProcessDocuments][google.cloud.documentai.v1.DocumentProcessorService.BatchProcessDocuments]
+   * method.
    * </pre>
    *
    * <code>.google.cloud.documentai.v1.DocumentOutputConfig document_output_config = 6;</code>
@@ -240,8 +248,8 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Whether Human Review feature should be skipped for this request. Default to
-   * false.
+   * Whether human review should be skipped for this request. Default to
+   * `false`.
    * </pre>
    *
    * <code>bool skip_human_review = 4;</code>
@@ -251,6 +259,56 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
   @java.lang.Override
   public boolean getSkipHumanReview() {
     return skipHumanReview_;
+  }
+
+  public static final int PROCESS_OPTIONS_FIELD_NUMBER = 7;
+  private com.google.cloud.documentai.v1.ProcessOptions processOptions_;
+  /**
+   *
+   *
+   * <pre>
+   * Inference-time options for the process API
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1.ProcessOptions process_options = 7;</code>
+   *
+   * @return Whether the processOptions field is set.
+   */
+  @java.lang.Override
+  public boolean hasProcessOptions() {
+    return processOptions_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Inference-time options for the process API
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1.ProcessOptions process_options = 7;</code>
+   *
+   * @return The processOptions.
+   */
+  @java.lang.Override
+  public com.google.cloud.documentai.v1.ProcessOptions getProcessOptions() {
+    return processOptions_ == null
+        ? com.google.cloud.documentai.v1.ProcessOptions.getDefaultInstance()
+        : processOptions_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Inference-time options for the process API
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1.ProcessOptions process_options = 7;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.documentai.v1.ProcessOptionsOrBuilder getProcessOptionsOrBuilder() {
+    return processOptions_ == null
+        ? com.google.cloud.documentai.v1.ProcessOptions.getDefaultInstance()
+        : processOptions_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -279,6 +337,9 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
     if (documentOutputConfig_ != null) {
       output.writeMessage(6, getDocumentOutputConfig());
     }
+    if (processOptions_ != null) {
+      output.writeMessage(7, getProcessOptions());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -300,6 +361,9 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
     if (documentOutputConfig_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(6, getDocumentOutputConfig());
+    }
+    if (processOptions_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getProcessOptions());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -327,6 +391,10 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
       if (!getDocumentOutputConfig().equals(other.getDocumentOutputConfig())) return false;
     }
     if (getSkipHumanReview() != other.getSkipHumanReview()) return false;
+    if (hasProcessOptions() != other.hasProcessOptions()) return false;
+    if (hasProcessOptions()) {
+      if (!getProcessOptions().equals(other.getProcessOptions())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -350,6 +418,10 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
     }
     hash = (37 * hash) + SKIP_HUMAN_REVIEW_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSkipHumanReview());
+    if (hasProcessOptions()) {
+      hash = (37 * hash) + PROCESS_OPTIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getProcessOptions().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -454,7 +526,8 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Request message for batch process document method.
+   * Request message for
+   * [BatchProcessDocuments][google.cloud.documentai.v1.DocumentProcessorService.BatchProcessDocuments].
    * </pre>
    *
    * Protobuf type {@code google.cloud.documentai.v1.BatchProcessRequest}
@@ -501,6 +574,11 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
         documentOutputConfigBuilder_ = null;
       }
       skipHumanReview_ = false;
+      processOptions_ = null;
+      if (processOptionsBuilder_ != null) {
+        processOptionsBuilder_.dispose();
+        processOptionsBuilder_ = null;
+      }
       return this;
     }
 
@@ -552,6 +630,10 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.skipHumanReview_ = skipHumanReview_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.processOptions_ =
+            processOptionsBuilder_ == null ? processOptions_ : processOptionsBuilder_.build();
       }
     }
 
@@ -615,6 +697,9 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
       if (other.getSkipHumanReview() != false) {
         setSkipHumanReview(other.getSkipHumanReview());
       }
+      if (other.hasProcessOptions()) {
+        mergeProcessOptions(other.getProcessOptions());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -666,6 +751,12 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
                 bitField0_ |= 0x00000004;
                 break;
               } // case 50
+            case 58:
+              {
+                input.readMessage(getProcessOptionsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -836,7 +927,9 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The input documents for batch process.
+     * The input documents for the
+     * [BatchProcessDocuments][google.cloud.documentai.v1.DocumentProcessorService.BatchProcessDocuments]
+     * method.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1.BatchDocumentsInputConfig input_documents = 5;</code>
@@ -850,7 +943,9 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The input documents for batch process.
+     * The input documents for the
+     * [BatchProcessDocuments][google.cloud.documentai.v1.DocumentProcessorService.BatchProcessDocuments]
+     * method.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1.BatchDocumentsInputConfig input_documents = 5;</code>
@@ -870,7 +965,9 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The input documents for batch process.
+     * The input documents for the
+     * [BatchProcessDocuments][google.cloud.documentai.v1.DocumentProcessorService.BatchProcessDocuments]
+     * method.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1.BatchDocumentsInputConfig input_documents = 5;</code>
@@ -893,7 +990,9 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The input documents for batch process.
+     * The input documents for the
+     * [BatchProcessDocuments][google.cloud.documentai.v1.DocumentProcessorService.BatchProcessDocuments]
+     * method.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1.BatchDocumentsInputConfig input_documents = 5;</code>
@@ -913,7 +1012,9 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The input documents for batch process.
+     * The input documents for the
+     * [BatchProcessDocuments][google.cloud.documentai.v1.DocumentProcessorService.BatchProcessDocuments]
+     * method.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1.BatchDocumentsInputConfig input_documents = 5;</code>
@@ -940,7 +1041,9 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The input documents for batch process.
+     * The input documents for the
+     * [BatchProcessDocuments][google.cloud.documentai.v1.DocumentProcessorService.BatchProcessDocuments]
+     * method.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1.BatchDocumentsInputConfig input_documents = 5;</code>
@@ -959,7 +1062,9 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The input documents for batch process.
+     * The input documents for the
+     * [BatchProcessDocuments][google.cloud.documentai.v1.DocumentProcessorService.BatchProcessDocuments]
+     * method.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1.BatchDocumentsInputConfig input_documents = 5;</code>
@@ -974,7 +1079,9 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The input documents for batch process.
+     * The input documents for the
+     * [BatchProcessDocuments][google.cloud.documentai.v1.DocumentProcessorService.BatchProcessDocuments]
+     * method.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1.BatchDocumentsInputConfig input_documents = 5;</code>
@@ -993,7 +1100,9 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The input documents for batch process.
+     * The input documents for the
+     * [BatchProcessDocuments][google.cloud.documentai.v1.DocumentProcessorService.BatchProcessDocuments]
+     * method.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1.BatchDocumentsInputConfig input_documents = 5;</code>
@@ -1025,7 +1134,9 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The overall output config for batch process.
+     * The output configuration for the
+     * [BatchProcessDocuments][google.cloud.documentai.v1.DocumentProcessorService.BatchProcessDocuments]
+     * method.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1.DocumentOutputConfig document_output_config = 6;</code>
@@ -1039,7 +1150,9 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The overall output config for batch process.
+     * The output configuration for the
+     * [BatchProcessDocuments][google.cloud.documentai.v1.DocumentProcessorService.BatchProcessDocuments]
+     * method.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1.DocumentOutputConfig document_output_config = 6;</code>
@@ -1059,7 +1172,9 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The overall output config for batch process.
+     * The output configuration for the
+     * [BatchProcessDocuments][google.cloud.documentai.v1.DocumentProcessorService.BatchProcessDocuments]
+     * method.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1.DocumentOutputConfig document_output_config = 6;</code>
@@ -1082,7 +1197,9 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The overall output config for batch process.
+     * The output configuration for the
+     * [BatchProcessDocuments][google.cloud.documentai.v1.DocumentProcessorService.BatchProcessDocuments]
+     * method.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1.DocumentOutputConfig document_output_config = 6;</code>
@@ -1102,7 +1219,9 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The overall output config for batch process.
+     * The output configuration for the
+     * [BatchProcessDocuments][google.cloud.documentai.v1.DocumentProcessorService.BatchProcessDocuments]
+     * method.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1.DocumentOutputConfig document_output_config = 6;</code>
@@ -1129,7 +1248,9 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The overall output config for batch process.
+     * The output configuration for the
+     * [BatchProcessDocuments][google.cloud.documentai.v1.DocumentProcessorService.BatchProcessDocuments]
+     * method.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1.DocumentOutputConfig document_output_config = 6;</code>
@@ -1148,7 +1269,9 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The overall output config for batch process.
+     * The output configuration for the
+     * [BatchProcessDocuments][google.cloud.documentai.v1.DocumentProcessorService.BatchProcessDocuments]
+     * method.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1.DocumentOutputConfig document_output_config = 6;</code>
@@ -1163,7 +1286,9 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The overall output config for batch process.
+     * The output configuration for the
+     * [BatchProcessDocuments][google.cloud.documentai.v1.DocumentProcessorService.BatchProcessDocuments]
+     * method.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1.DocumentOutputConfig document_output_config = 6;</code>
@@ -1182,7 +1307,9 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The overall output config for batch process.
+     * The output configuration for the
+     * [BatchProcessDocuments][google.cloud.documentai.v1.DocumentProcessorService.BatchProcessDocuments]
+     * method.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1.DocumentOutputConfig document_output_config = 6;</code>
@@ -1209,8 +1336,8 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Whether Human Review feature should be skipped for this request. Default to
-     * false.
+     * Whether human review should be skipped for this request. Default to
+     * `false`.
      * </pre>
      *
      * <code>bool skip_human_review = 4;</code>
@@ -1225,8 +1352,8 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Whether Human Review feature should be skipped for this request. Default to
-     * false.
+     * Whether human review should be skipped for this request. Default to
+     * `false`.
      * </pre>
      *
      * <code>bool skip_human_review = 4;</code>
@@ -1245,8 +1372,8 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Whether Human Review feature should be skipped for this request. Default to
-     * false.
+     * Whether human review should be skipped for this request. Default to
+     * `false`.
      * </pre>
      *
      * <code>bool skip_human_review = 4;</code>
@@ -1258,6 +1385,191 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
       skipHumanReview_ = false;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.documentai.v1.ProcessOptions processOptions_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.documentai.v1.ProcessOptions,
+            com.google.cloud.documentai.v1.ProcessOptions.Builder,
+            com.google.cloud.documentai.v1.ProcessOptionsOrBuilder>
+        processOptionsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Inference-time options for the process API
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1.ProcessOptions process_options = 7;</code>
+     *
+     * @return Whether the processOptions field is set.
+     */
+    public boolean hasProcessOptions() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Inference-time options for the process API
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1.ProcessOptions process_options = 7;</code>
+     *
+     * @return The processOptions.
+     */
+    public com.google.cloud.documentai.v1.ProcessOptions getProcessOptions() {
+      if (processOptionsBuilder_ == null) {
+        return processOptions_ == null
+            ? com.google.cloud.documentai.v1.ProcessOptions.getDefaultInstance()
+            : processOptions_;
+      } else {
+        return processOptionsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Inference-time options for the process API
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1.ProcessOptions process_options = 7;</code>
+     */
+    public Builder setProcessOptions(com.google.cloud.documentai.v1.ProcessOptions value) {
+      if (processOptionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        processOptions_ = value;
+      } else {
+        processOptionsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Inference-time options for the process API
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1.ProcessOptions process_options = 7;</code>
+     */
+    public Builder setProcessOptions(
+        com.google.cloud.documentai.v1.ProcessOptions.Builder builderForValue) {
+      if (processOptionsBuilder_ == null) {
+        processOptions_ = builderForValue.build();
+      } else {
+        processOptionsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Inference-time options for the process API
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1.ProcessOptions process_options = 7;</code>
+     */
+    public Builder mergeProcessOptions(com.google.cloud.documentai.v1.ProcessOptions value) {
+      if (processOptionsBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)
+            && processOptions_ != null
+            && processOptions_
+                != com.google.cloud.documentai.v1.ProcessOptions.getDefaultInstance()) {
+          getProcessOptionsBuilder().mergeFrom(value);
+        } else {
+          processOptions_ = value;
+        }
+      } else {
+        processOptionsBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Inference-time options for the process API
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1.ProcessOptions process_options = 7;</code>
+     */
+    public Builder clearProcessOptions() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      processOptions_ = null;
+      if (processOptionsBuilder_ != null) {
+        processOptionsBuilder_.dispose();
+        processOptionsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Inference-time options for the process API
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1.ProcessOptions process_options = 7;</code>
+     */
+    public com.google.cloud.documentai.v1.ProcessOptions.Builder getProcessOptionsBuilder() {
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return getProcessOptionsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Inference-time options for the process API
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1.ProcessOptions process_options = 7;</code>
+     */
+    public com.google.cloud.documentai.v1.ProcessOptionsOrBuilder getProcessOptionsOrBuilder() {
+      if (processOptionsBuilder_ != null) {
+        return processOptionsBuilder_.getMessageOrBuilder();
+      } else {
+        return processOptions_ == null
+            ? com.google.cloud.documentai.v1.ProcessOptions.getDefaultInstance()
+            : processOptions_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Inference-time options for the process API
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1.ProcessOptions process_options = 7;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.documentai.v1.ProcessOptions,
+            com.google.cloud.documentai.v1.ProcessOptions.Builder,
+            com.google.cloud.documentai.v1.ProcessOptionsOrBuilder>
+        getProcessOptionsFieldBuilder() {
+      if (processOptionsBuilder_ == null) {
+        processOptionsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.documentai.v1.ProcessOptions,
+                com.google.cloud.documentai.v1.ProcessOptions.Builder,
+                com.google.cloud.documentai.v1.ProcessOptionsOrBuilder>(
+                getProcessOptions(), getParentForChildren(), isClean());
+        processOptions_ = null;
+      }
+      return processOptionsBuilder_;
     }
 
     @java.lang.Override

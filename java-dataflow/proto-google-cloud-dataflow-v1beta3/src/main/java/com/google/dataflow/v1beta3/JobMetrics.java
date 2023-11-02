@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@ package com.google.dataflow.v1beta3;
  * JobMetrics contains a collection of metrics describing the detailed progress
  * of a Dataflow job. Metrics correspond to user-defined and system-defined
  * metrics in the job.
+ *
  * This resource captures only the most recent values of each metric;
  * time-series data can be queried for them (under the same metric names)
  * from Cloud Monitoring.
@@ -50,11 +51,6 @@ public final class JobMetrics extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new JobMetrics();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -370,6 +366,7 @@ public final class JobMetrics extends com.google.protobuf.GeneratedMessageV3
    * JobMetrics contains a collection of metrics describing the detailed progress
    * of a Dataflow job. Metrics correspond to user-defined and system-defined
    * metrics in the job.
+   *
    * This resource captures only the most recent values of each metric;
    * time-series data can be queried for them (under the same metric names)
    * from Cloud Monitoring.

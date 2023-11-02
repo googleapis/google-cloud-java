@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -303,8 +303,10 @@ public interface ComputeRoutesRequestOrBuilder
    *
    * <pre>
    * Optional. The departure time. If you don't set this value, then this value
-   * defaults to the time that you made the request. If you set this value to a
-   * time that has already occurred, then the request fails.
+   * defaults to the time that you made the request.
+   * NOTE: You can only specify a `departure_time` in the past when
+   * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
+   * `TRANSIT`.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp departure_time = 7 [(.google.api.field_behavior) = OPTIONAL];
@@ -318,8 +320,10 @@ public interface ComputeRoutesRequestOrBuilder
    *
    * <pre>
    * Optional. The departure time. If you don't set this value, then this value
-   * defaults to the time that you made the request. If you set this value to a
-   * time that has already occurred, then the request fails.
+   * defaults to the time that you made the request.
+   * NOTE: You can only specify a `departure_time` in the past when
+   * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
+   * `TRANSIT`.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp departure_time = 7 [(.google.api.field_behavior) = OPTIONAL];
@@ -333,14 +337,66 @@ public interface ComputeRoutesRequestOrBuilder
    *
    * <pre>
    * Optional. The departure time. If you don't set this value, then this value
-   * defaults to the time that you made the request. If you set this value to a
-   * time that has already occurred, then the request fails.
+   * defaults to the time that you made the request.
+   * NOTE: You can only specify a `departure_time` in the past when
+   * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
+   * `TRANSIT`.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp departure_time = 7 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   com.google.protobuf.TimestampOrBuilder getDepartureTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The arrival time.
+   * NOTE: Can only be set when
+   * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
+   * `TRANSIT`. You can specify either departure_time or arrival_time, but not
+   * both.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp arrival_time = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the arrivalTime field is set.
+   */
+  boolean hasArrivalTime();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The arrival time.
+   * NOTE: Can only be set when
+   * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
+   * `TRANSIT`. You can specify either departure_time or arrival_time, but not
+   * both.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp arrival_time = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The arrivalTime.
+   */
+  com.google.protobuf.Timestamp getArrivalTime();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The arrival time.
+   * NOTE: Can only be set when
+   * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
+   * `TRANSIT`. You can specify either departure_time or arrival_time, but not
+   * both.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp arrival_time = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.protobuf.TimestampOrBuilder getArrivalTimeOrBuilder();
 
   /**
    *
@@ -469,12 +525,12 @@ public interface ComputeRoutesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Specifies the units of measure for the display fields. This
-   * includes the `instruction` field in
+   * Optional. Specifies the units of measure for the display fields. These
+   * fields include the `instruction` field in
    * [NavigationInstruction][google.maps.routing.v2.NavigationInstruction]. The
    * units of measure used for the route, leg, step distance, and duration are
    * not affected by this value. If you don't provide this value, then the
-   * display units are inferred from the location of the request.
+   * display units are inferred from the location of the first origin.
    * </pre>
    *
    * <code>.google.maps.routing.v2.Units units = 11 [(.google.api.field_behavior) = OPTIONAL];
@@ -487,12 +543,12 @@ public interface ComputeRoutesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Specifies the units of measure for the display fields. This
-   * includes the `instruction` field in
+   * Optional. Specifies the units of measure for the display fields. These
+   * fields include the `instruction` field in
    * [NavigationInstruction][google.maps.routing.v2.NavigationInstruction]. The
    * units of measure used for the route, leg, step distance, and duration are
    * not affected by this value. If you don't provide this value, then the
-   * display units are inferred from the location of the request.
+   * display units are inferred from the location of the first origin.
    * </pre>
    *
    * <code>.google.maps.routing.v2.Units units = 11 [(.google.api.field_behavior) = OPTIONAL];
@@ -501,6 +557,28 @@ public interface ComputeRoutesRequestOrBuilder
    * @return The units.
    */
   com.google.maps.routing.v2.Units getUnits();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set to true, the service attempts to minimize the overall cost
+   * of the route by re-ordering the specified intermediate waypoints. The
+   * request fails if any of the intermediate waypoints is a `via` waypoint. Use
+   * `ComputeRoutesResponse.Routes.optimized_intermediate_waypoint_index` to
+   * find the new ordering.
+   * If `ComputeRoutesResponseroutes.optimized_intermediate_waypoint_index` is
+   * not requested in the `X-Goog-FieldMask` header, the request fails.
+   * If `optimize_waypoint_order` is set to false,
+   * `ComputeRoutesResponse.optimized_intermediate_waypoint_index` will be
+   * empty.
+   * </pre>
+   *
+   * <code>bool optimize_waypoint_order = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The optimizeWaypointOrder.
+   */
+  boolean getOptimizeWaypointOrder();
 
   /**
    *
@@ -685,4 +763,103 @@ public interface ComputeRoutesRequestOrBuilder
    * @return The enum numeric value on the wire of extraComputations at the given index.
    */
   int getExtraComputationsValue(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the assumptions to use when calculating time in
+   * traffic. This setting affects the value returned in the duration field in
+   * the [Route][google.maps.routing.v2.Route] and
+   * [RouteLeg][google.maps.routing.v2.RouteLeg] which contains the predicted
+   * time in traffic based on historical averages.
+   * `TrafficModel` is only available for requests that have set
+   * [RoutingPreference][google.maps.routing.v2.RoutingPreference] to
+   * `TRAFFIC_AWARE_OPTIMAL` and
+   * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] to `DRIVE`.
+   * Defaults to `BEST_GUESS` if traffic is requested and `TrafficModel` is not
+   * specified.
+   * </pre>
+   *
+   * <code>
+   * .google.maps.routing.v2.TrafficModel traffic_model = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for trafficModel.
+   */
+  int getTrafficModelValue();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the assumptions to use when calculating time in
+   * traffic. This setting affects the value returned in the duration field in
+   * the [Route][google.maps.routing.v2.Route] and
+   * [RouteLeg][google.maps.routing.v2.RouteLeg] which contains the predicted
+   * time in traffic based on historical averages.
+   * `TrafficModel` is only available for requests that have set
+   * [RoutingPreference][google.maps.routing.v2.RoutingPreference] to
+   * `TRAFFIC_AWARE_OPTIMAL` and
+   * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] to `DRIVE`.
+   * Defaults to `BEST_GUESS` if traffic is requested and `TrafficModel` is not
+   * specified.
+   * </pre>
+   *
+   * <code>
+   * .google.maps.routing.v2.TrafficModel traffic_model = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The trafficModel.
+   */
+  com.google.maps.routing.v2.TrafficModel getTrafficModel();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies preferences that influence the route returned for
+   * `TRANSIT` routes. NOTE: You can only specify a `transit_preferences` when
+   * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
+   * `TRANSIT`.
+   * </pre>
+   *
+   * <code>
+   * .google.maps.routing.v2.TransitPreferences transit_preferences = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the transitPreferences field is set.
+   */
+  boolean hasTransitPreferences();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies preferences that influence the route returned for
+   * `TRANSIT` routes. NOTE: You can only specify a `transit_preferences` when
+   * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
+   * `TRANSIT`.
+   * </pre>
+   *
+   * <code>
+   * .google.maps.routing.v2.TransitPreferences transit_preferences = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The transitPreferences.
+   */
+  com.google.maps.routing.v2.TransitPreferences getTransitPreferences();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies preferences that influence the route returned for
+   * `TRANSIT` routes. NOTE: You can only specify a `transit_preferences` when
+   * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode] is set to
+   * `TRANSIT`.
+   * </pre>
+   *
+   * <code>
+   * .google.maps.routing.v2.TransitPreferences transit_preferences = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.maps.routing.v2.TransitPreferencesOrBuilder getTransitPreferencesOrBuilder();
 }

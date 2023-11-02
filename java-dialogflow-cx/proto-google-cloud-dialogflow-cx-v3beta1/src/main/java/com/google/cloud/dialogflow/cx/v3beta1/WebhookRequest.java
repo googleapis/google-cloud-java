@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ package com.google.cloud.dialogflow.cx.v3beta1;
  * <pre>
  * The request message for a webhook call. The request is sent as a JSON object
  * and the field names will be presented in camel cases.
+ *
  * You may see undocumented fields in an actual request. These fields are used
  * internally by Dialogflow and should be ignored.
  * </pre>
@@ -50,11 +51,6 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new WebhookRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -141,11 +137,6 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new FulfillmentInfo();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -987,11 +978,6 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
       return new IntentInfo();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.dialogflow.cx.v3beta1.WebhookProto
           .internal_static_google_cloud_dialogflow_cx_v3beta1_WebhookRequest_IntentInfo_descriptor;
@@ -1114,11 +1100,6 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new IntentParameterValue();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -3444,11 +3425,6 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
       return new SentimentAnalysisResult();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.dialogflow.cx.v3beta1.WebhookProto
           .internal_static_google_cloud_dialogflow_cx_v3beta1_WebhookRequest_SentimentAnalysisResult_descriptor;
@@ -4080,6 +4056,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int queryCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object query_;
 
   public enum QueryCase
@@ -5366,6 +5344,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The request message for a webhook call. The request is sent as a JSON object
    * and the field names will be presented in camel cases.
+   *
    * You may see undocumented fields in an actual request. These fields are used
    * internally by Dialogflow and should be ignored.
    * </pre>

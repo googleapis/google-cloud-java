@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class CreateEntityTypeRequest extends com.google.protobuf.Generated
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new CreateEntityTypeRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -188,8 +183,10 @@ public final class CreateEntityTypeRequest extends com.google.protobuf.Generated
    * <pre>
    * Required. The ID to use for the EntityType, which will become the final
    * component of the EntityType's resource name.
+   *
    * This value may be up to 60 characters, and valid characters are
    * `[a-z0-9_]`. The first character cannot be a number.
+   *
    * The value must be unique within a featurestore.
    * </pre>
    *
@@ -215,8 +212,10 @@ public final class CreateEntityTypeRequest extends com.google.protobuf.Generated
    * <pre>
    * Required. The ID to use for the EntityType, which will become the final
    * component of the EntityType's resource name.
+   *
    * This value may be up to 60 characters, and valid characters are
    * `[a-z0-9_]`. The first character cannot be a number.
+   *
    * The value must be unique within a featurestore.
    * </pre>
    *
@@ -953,8 +952,10 @@ public final class CreateEntityTypeRequest extends com.google.protobuf.Generated
      * <pre>
      * Required. The ID to use for the EntityType, which will become the final
      * component of the EntityType's resource name.
+     *
      * This value may be up to 60 characters, and valid characters are
      * `[a-z0-9_]`. The first character cannot be a number.
+     *
      * The value must be unique within a featurestore.
      * </pre>
      *
@@ -979,8 +980,10 @@ public final class CreateEntityTypeRequest extends com.google.protobuf.Generated
      * <pre>
      * Required. The ID to use for the EntityType, which will become the final
      * component of the EntityType's resource name.
+     *
      * This value may be up to 60 characters, and valid characters are
      * `[a-z0-9_]`. The first character cannot be a number.
+     *
      * The value must be unique within a featurestore.
      * </pre>
      *
@@ -1005,8 +1008,10 @@ public final class CreateEntityTypeRequest extends com.google.protobuf.Generated
      * <pre>
      * Required. The ID to use for the EntityType, which will become the final
      * component of the EntityType's resource name.
+     *
      * This value may be up to 60 characters, and valid characters are
      * `[a-z0-9_]`. The first character cannot be a number.
+     *
      * The value must be unique within a featurestore.
      * </pre>
      *
@@ -1030,8 +1035,10 @@ public final class CreateEntityTypeRequest extends com.google.protobuf.Generated
      * <pre>
      * Required. The ID to use for the EntityType, which will become the final
      * component of the EntityType's resource name.
+     *
      * This value may be up to 60 characters, and valid characters are
      * `[a-z0-9_]`. The first character cannot be a number.
+     *
      * The value must be unique within a featurestore.
      * </pre>
      *
@@ -1051,8 +1058,10 @@ public final class CreateEntityTypeRequest extends com.google.protobuf.Generated
      * <pre>
      * Required. The ID to use for the EntityType, which will become the final
      * component of the EntityType's resource name.
+     *
      * This value may be up to 60 characters, and valid characters are
      * `[a-z0-9_]`. The first character cannot be a number.
+     *
      * The value must be unique within a featurestore.
      * </pre>
      *

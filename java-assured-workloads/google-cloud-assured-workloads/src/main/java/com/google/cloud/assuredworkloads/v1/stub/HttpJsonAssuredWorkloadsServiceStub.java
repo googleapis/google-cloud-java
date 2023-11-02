@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,6 +33,7 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.httpjson.longrunning.stub.HttpJsonOperationsStub;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.assuredworkloads.v1.AcknowledgeViolationRequest;
 import com.google.cloud.assuredworkloads.v1.AcknowledgeViolationResponse;
@@ -387,11 +388,23 @@ public class HttpJsonAssuredWorkloadsServiceStub extends AssuredWorkloadsService
         HttpJsonCallSettings.<CreateWorkloadRequest, Operation>newBuilder()
             .setMethodDescriptor(createWorkloadMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateWorkloadRequest, Workload> updateWorkloadTransportSettings =
         HttpJsonCallSettings.<UpdateWorkloadRequest, Workload>newBuilder()
             .setMethodDescriptor(updateWorkloadMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("workload.name", String.valueOf(request.getWorkload().getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<RestrictAllowedResourcesRequest, RestrictAllowedResourcesResponse>
         restrictAllowedResourcesTransportSettings =
@@ -399,22 +412,46 @@ public class HttpJsonAssuredWorkloadsServiceStub extends AssuredWorkloadsService
                 .<RestrictAllowedResourcesRequest, RestrictAllowedResourcesResponse>newBuilder()
                 .setMethodDescriptor(restrictAllowedResourcesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteWorkloadRequest, Empty> deleteWorkloadTransportSettings =
         HttpJsonCallSettings.<DeleteWorkloadRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteWorkloadMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetWorkloadRequest, Workload> getWorkloadTransportSettings =
         HttpJsonCallSettings.<GetWorkloadRequest, Workload>newBuilder()
             .setMethodDescriptor(getWorkloadMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListWorkloadsRequest, ListWorkloadsResponse>
         listWorkloadsTransportSettings =
             HttpJsonCallSettings.<ListWorkloadsRequest, ListWorkloadsResponse>newBuilder()
                 .setMethodDescriptor(listWorkloadsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
 
     this.createWorkloadCallable =

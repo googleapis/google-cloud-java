@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ public interface SchemaOrBuilder
    *
    * <pre>
    * The unified GoogleSQL-like schema of columns.
+   *
    * The overall maximum number of columns and nested columns is 10,000.
    * The maximum nested depth is 15 levels.
    * </pre>
@@ -40,6 +41,7 @@ public interface SchemaOrBuilder
    *
    * <pre>
    * The unified GoogleSQL-like schema of columns.
+   *
    * The overall maximum number of columns and nested columns is 10,000.
    * The maximum nested depth is 15 levels.
    * </pre>
@@ -52,6 +54,7 @@ public interface SchemaOrBuilder
    *
    * <pre>
    * The unified GoogleSQL-like schema of columns.
+   *
    * The overall maximum number of columns and nested columns is 10,000.
    * The maximum nested depth is 15 levels.
    * </pre>
@@ -64,6 +67,7 @@ public interface SchemaOrBuilder
    *
    * <pre>
    * The unified GoogleSQL-like schema of columns.
+   *
    * The overall maximum number of columns and nested columns is 10,000.
    * The maximum nested depth is 15 levels.
    * </pre>
@@ -77,6 +81,7 @@ public interface SchemaOrBuilder
    *
    * <pre>
    * The unified GoogleSQL-like schema of columns.
+   *
    * The overall maximum number of columns and nested columns is 10,000.
    * The maximum nested depth is 15 levels.
    * </pre>

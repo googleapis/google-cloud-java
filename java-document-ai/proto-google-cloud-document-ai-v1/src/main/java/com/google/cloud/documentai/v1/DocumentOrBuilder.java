@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,10 +28,9 @@ public interface DocumentOrBuilder
    *
    * <pre>
    * Optional. Currently supports Google Cloud Storage URI of the form
-   *    `gs://bucket_name/object_name`. Object versioning is not supported.
-   *    See [Google Cloud Storage Request
-   *    URIs](https://cloud.google.com/storage/docs/reference-uris) for more
-   *    info.
+   * `gs://bucket_name/object_name`. Object versioning is not supported.
+   * For more information, refer to [Google Cloud Storage Request
+   * URIs](https://cloud.google.com/storage/docs/reference-uris).
    * </pre>
    *
    * <code>string uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -44,10 +43,9 @@ public interface DocumentOrBuilder
    *
    * <pre>
    * Optional. Currently supports Google Cloud Storage URI of the form
-   *    `gs://bucket_name/object_name`. Object versioning is not supported.
-   *    See [Google Cloud Storage Request
-   *    URIs](https://cloud.google.com/storage/docs/reference-uris) for more
-   *    info.
+   * `gs://bucket_name/object_name`. Object versioning is not supported.
+   * For more information, refer to [Google Cloud Storage Request
+   * URIs](https://cloud.google.com/storage/docs/reference-uris).
    * </pre>
    *
    * <code>string uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -60,10 +58,9 @@ public interface DocumentOrBuilder
    *
    * <pre>
    * Optional. Currently supports Google Cloud Storage URI of the form
-   *    `gs://bucket_name/object_name`. Object versioning is not supported.
-   *    See [Google Cloud Storage Request
-   *    URIs](https://cloud.google.com/storage/docs/reference-uris) for more
-   *    info.
+   * `gs://bucket_name/object_name`. Object versioning is not supported.
+   * For more information, refer to [Google Cloud Storage Request
+   * URIs](https://cloud.google.com/storage/docs/reference-uris).
    * </pre>
    *
    * <code>string uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -105,9 +102,8 @@ public interface DocumentOrBuilder
    *
    *
    * <pre>
-   * An IANA published MIME type (also referred to as media type). For more
-   * information, see
-   * https://www.iana.org/assignments/media-types/media-types.xhtml.
+   * An IANA published [media type (MIME
+   * type)](https://www.iana.org/assignments/media-types/media-types.xhtml).
    * </pre>
    *
    * <code>string mime_type = 3;</code>
@@ -119,9 +115,8 @@ public interface DocumentOrBuilder
    *
    *
    * <pre>
-   * An IANA published MIME type (also referred to as media type). For more
-   * information, see
-   * https://www.iana.org/assignments/media-types/media-types.xhtml.
+   * An IANA published [media type (MIME
+   * type)](https://www.iana.org/assignments/media-types/media-types.xhtml).
    * </pre>
    *
    * <code>string mime_type = 3;</code>
@@ -581,5 +576,5 @@ public interface DocumentOrBuilder
    */
   com.google.cloud.documentai.v1.Document.RevisionOrBuilder getRevisionsOrBuilder(int index);
 
-  public com.google.cloud.documentai.v1.Document.SourceCase getSourceCase();
+  com.google.cloud.documentai.v1.Document.SourceCase getSourceCase();
 }

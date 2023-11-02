@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -85,6 +85,8 @@ import com.google.cloud.securitycenter.v1.SecurityHealthAnalyticsCustomModule;
 import com.google.cloud.securitycenter.v1.SecurityMarks;
 import com.google.cloud.securitycenter.v1.SetFindingStateRequest;
 import com.google.cloud.securitycenter.v1.SetMuteRequest;
+import com.google.cloud.securitycenter.v1.SimulateSecurityHealthAnalyticsCustomModuleRequest;
+import com.google.cloud.securitycenter.v1.SimulateSecurityHealthAnalyticsCustomModuleResponse;
 import com.google.cloud.securitycenter.v1.Source;
 import com.google.cloud.securitycenter.v1.UpdateBigQueryExportRequest;
 import com.google.cloud.securitycenter.v1.UpdateExternalSystemRequest;
@@ -210,10 +212,12 @@ public abstract class SecurityCenterStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: getSourceCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<GroupAssetsRequest, GroupAssetsPagedResponse> groupAssetsPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: groupAssetsPagedCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<GroupAssetsRequest, GroupAssetsResponse> groupAssetsCallable() {
     throw new UnsupportedOperationException("Not implemented: groupAssetsCallable()");
   }
@@ -227,10 +231,12 @@ public abstract class SecurityCenterStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: groupFindingsCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<ListAssetsRequest, ListAssetsPagedResponse> listAssetsPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: listAssetsPagedCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<ListAssetsRequest, ListAssetsResponse> listAssetsCallable() {
     throw new UnsupportedOperationException("Not implemented: listAssetsCallable()");
   }
@@ -319,12 +325,14 @@ public abstract class SecurityCenterStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: listSourcesCallable()");
   }
 
+  @Deprecated
   public OperationCallable<RunAssetDiscoveryRequest, RunAssetDiscoveryResponse, Empty>
       runAssetDiscoveryOperationCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: runAssetDiscoveryOperationCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<RunAssetDiscoveryRequest, Operation> runAssetDiscoveryCallable() {
     throw new UnsupportedOperationException("Not implemented: runAssetDiscoveryCallable()");
   }
@@ -344,6 +352,14 @@ public abstract class SecurityCenterStub implements BackgroundResource {
   public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable() {
     throw new UnsupportedOperationException("Not implemented: testIamPermissionsCallable()");
+  }
+
+  public UnaryCallable<
+          SimulateSecurityHealthAnalyticsCustomModuleRequest,
+          SimulateSecurityHealthAnalyticsCustomModuleResponse>
+      simulateSecurityHealthAnalyticsCustomModuleCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: simulateSecurityHealthAnalyticsCustomModuleCallable()");
   }
 
   public UnaryCallable<UpdateExternalSystemRequest, ExternalSystem> updateExternalSystemCallable() {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class FormExtractionParams extends com.google.protobuf.GeneratedMes
     return new FormExtractionParams();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.documentai.v1beta2.DocumentAiProto
         .internal_static_google_cloud_documentai_v1beta2_FormExtractionParams_descriptor;
@@ -94,16 +89,7 @@ public final class FormExtractionParams extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * User can provide pairs of (key text, value type) to improve the parsing
-   * result.
-   * For example, if a document has a field called "Date" that holds a date
-   * value and a field called "Amount" that may hold either a currency value
-   * (e.g., "$500.00") or a simple number value (e.g., "20"), you could use the
-   * following hints: [ {"key": "Date", value_types: [ "DATE"]}, {"key":
-   * "Amount", "value_types": [ "PRICE", "NUMBER" ]} ]
-   * If the value type is unknown, but you want to provide hints for the keys,
-   * you can leave the value_types field blank. e.g. {"key": "Date",
-   * "value_types": []}
+   * Reserved for future use.
    * </pre>
    *
    * <code>repeated .google.cloud.documentai.v1beta2.KeyValuePairHint key_value_pair_hints = 2;
@@ -118,16 +104,7 @@ public final class FormExtractionParams extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * User can provide pairs of (key text, value type) to improve the parsing
-   * result.
-   * For example, if a document has a field called "Date" that holds a date
-   * value and a field called "Amount" that may hold either a currency value
-   * (e.g., "$500.00") or a simple number value (e.g., "20"), you could use the
-   * following hints: [ {"key": "Date", value_types: [ "DATE"]}, {"key":
-   * "Amount", "value_types": [ "PRICE", "NUMBER" ]} ]
-   * If the value type is unknown, but you want to provide hints for the keys,
-   * you can leave the value_types field blank. e.g. {"key": "Date",
-   * "value_types": []}
+   * Reserved for future use.
    * </pre>
    *
    * <code>repeated .google.cloud.documentai.v1beta2.KeyValuePairHint key_value_pair_hints = 2;
@@ -142,16 +119,7 @@ public final class FormExtractionParams extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * User can provide pairs of (key text, value type) to improve the parsing
-   * result.
-   * For example, if a document has a field called "Date" that holds a date
-   * value and a field called "Amount" that may hold either a currency value
-   * (e.g., "$500.00") or a simple number value (e.g., "20"), you could use the
-   * following hints: [ {"key": "Date", value_types: [ "DATE"]}, {"key":
-   * "Amount", "value_types": [ "PRICE", "NUMBER" ]} ]
-   * If the value type is unknown, but you want to provide hints for the keys,
-   * you can leave the value_types field blank. e.g. {"key": "Date",
-   * "value_types": []}
+   * Reserved for future use.
    * </pre>
    *
    * <code>repeated .google.cloud.documentai.v1beta2.KeyValuePairHint key_value_pair_hints = 2;
@@ -165,16 +133,7 @@ public final class FormExtractionParams extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * User can provide pairs of (key text, value type) to improve the parsing
-   * result.
-   * For example, if a document has a field called "Date" that holds a date
-   * value and a field called "Amount" that may hold either a currency value
-   * (e.g., "$500.00") or a simple number value (e.g., "20"), you could use the
-   * following hints: [ {"key": "Date", value_types: [ "DATE"]}, {"key":
-   * "Amount", "value_types": [ "PRICE", "NUMBER" ]} ]
-   * If the value type is unknown, but you want to provide hints for the keys,
-   * you can leave the value_types field blank. e.g. {"key": "Date",
-   * "value_types": []}
+   * Reserved for future use.
    * </pre>
    *
    * <code>repeated .google.cloud.documentai.v1beta2.KeyValuePairHint key_value_pair_hints = 2;
@@ -188,16 +147,7 @@ public final class FormExtractionParams extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * User can provide pairs of (key text, value type) to improve the parsing
-   * result.
-   * For example, if a document has a field called "Date" that holds a date
-   * value and a field called "Amount" that may hold either a currency value
-   * (e.g., "$500.00") or a simple number value (e.g., "20"), you could use the
-   * following hints: [ {"key": "Date", value_types: [ "DATE"]}, {"key":
-   * "Amount", "value_types": [ "PRICE", "NUMBER" ]} ]
-   * If the value type is unknown, but you want to provide hints for the keys,
-   * you can leave the value_types field blank. e.g. {"key": "Date",
-   * "value_types": []}
+   * Reserved for future use.
    * </pre>
    *
    * <code>repeated .google.cloud.documentai.v1beta2.KeyValuePairHint key_value_pair_hints = 2;
@@ -219,7 +169,7 @@ public final class FormExtractionParams extends com.google.protobuf.GeneratedMes
    * <pre>
    * Model version of the form extraction system. Default is
    * "builtin/stable". Specify "builtin/latest" for the latest model.
-   * For custom form models, specify: “custom/{model_name}". Model name
+   * For custom form models, specify: "custom/{model_name}". Model name
    * format is "bucket_name/path/to/modeldir" corresponding to
    * "gs://bucket_name/path/to/modeldir" where annotated examples are stored.
    * </pre>
@@ -246,7 +196,7 @@ public final class FormExtractionParams extends com.google.protobuf.GeneratedMes
    * <pre>
    * Model version of the form extraction system. Default is
    * "builtin/stable". Specify "builtin/latest" for the latest model.
-   * For custom form models, specify: “custom/{model_name}". Model name
+   * For custom form models, specify: "custom/{model_name}". Model name
    * format is "bucket_name/path/to/modeldir" corresponding to
    * "gs://bucket_name/path/to/modeldir" where annotated examples are stored.
    * </pre>
@@ -782,16 +732,7 @@ public final class FormExtractionParams extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * User can provide pairs of (key text, value type) to improve the parsing
-     * result.
-     * For example, if a document has a field called "Date" that holds a date
-     * value and a field called "Amount" that may hold either a currency value
-     * (e.g., "$500.00") or a simple number value (e.g., "20"), you could use the
-     * following hints: [ {"key": "Date", value_types: [ "DATE"]}, {"key":
-     * "Amount", "value_types": [ "PRICE", "NUMBER" ]} ]
-     * If the value type is unknown, but you want to provide hints for the keys,
-     * you can leave the value_types field blank. e.g. {"key": "Date",
-     * "value_types": []}
+     * Reserved for future use.
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1beta2.KeyValuePairHint key_value_pair_hints = 2;
@@ -809,16 +750,7 @@ public final class FormExtractionParams extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * User can provide pairs of (key text, value type) to improve the parsing
-     * result.
-     * For example, if a document has a field called "Date" that holds a date
-     * value and a field called "Amount" that may hold either a currency value
-     * (e.g., "$500.00") or a simple number value (e.g., "20"), you could use the
-     * following hints: [ {"key": "Date", value_types: [ "DATE"]}, {"key":
-     * "Amount", "value_types": [ "PRICE", "NUMBER" ]} ]
-     * If the value type is unknown, but you want to provide hints for the keys,
-     * you can leave the value_types field blank. e.g. {"key": "Date",
-     * "value_types": []}
+     * Reserved for future use.
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1beta2.KeyValuePairHint key_value_pair_hints = 2;
@@ -835,16 +767,7 @@ public final class FormExtractionParams extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * User can provide pairs of (key text, value type) to improve the parsing
-     * result.
-     * For example, if a document has a field called "Date" that holds a date
-     * value and a field called "Amount" that may hold either a currency value
-     * (e.g., "$500.00") or a simple number value (e.g., "20"), you could use the
-     * following hints: [ {"key": "Date", value_types: [ "DATE"]}, {"key":
-     * "Amount", "value_types": [ "PRICE", "NUMBER" ]} ]
-     * If the value type is unknown, but you want to provide hints for the keys,
-     * you can leave the value_types field blank. e.g. {"key": "Date",
-     * "value_types": []}
+     * Reserved for future use.
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1beta2.KeyValuePairHint key_value_pair_hints = 2;
@@ -861,16 +784,7 @@ public final class FormExtractionParams extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * User can provide pairs of (key text, value type) to improve the parsing
-     * result.
-     * For example, if a document has a field called "Date" that holds a date
-     * value and a field called "Amount" that may hold either a currency value
-     * (e.g., "$500.00") or a simple number value (e.g., "20"), you could use the
-     * following hints: [ {"key": "Date", value_types: [ "DATE"]}, {"key":
-     * "Amount", "value_types": [ "PRICE", "NUMBER" ]} ]
-     * If the value type is unknown, but you want to provide hints for the keys,
-     * you can leave the value_types field blank. e.g. {"key": "Date",
-     * "value_types": []}
+     * Reserved for future use.
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1beta2.KeyValuePairHint key_value_pair_hints = 2;
@@ -894,16 +808,7 @@ public final class FormExtractionParams extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * User can provide pairs of (key text, value type) to improve the parsing
-     * result.
-     * For example, if a document has a field called "Date" that holds a date
-     * value and a field called "Amount" that may hold either a currency value
-     * (e.g., "$500.00") or a simple number value (e.g., "20"), you could use the
-     * following hints: [ {"key": "Date", value_types: [ "DATE"]}, {"key":
-     * "Amount", "value_types": [ "PRICE", "NUMBER" ]} ]
-     * If the value type is unknown, but you want to provide hints for the keys,
-     * you can leave the value_types field blank. e.g. {"key": "Date",
-     * "value_types": []}
+     * Reserved for future use.
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1beta2.KeyValuePairHint key_value_pair_hints = 2;
@@ -924,16 +829,7 @@ public final class FormExtractionParams extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * User can provide pairs of (key text, value type) to improve the parsing
-     * result.
-     * For example, if a document has a field called "Date" that holds a date
-     * value and a field called "Amount" that may hold either a currency value
-     * (e.g., "$500.00") or a simple number value (e.g., "20"), you could use the
-     * following hints: [ {"key": "Date", value_types: [ "DATE"]}, {"key":
-     * "Amount", "value_types": [ "PRICE", "NUMBER" ]} ]
-     * If the value type is unknown, but you want to provide hints for the keys,
-     * you can leave the value_types field blank. e.g. {"key": "Date",
-     * "value_types": []}
+     * Reserved for future use.
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1beta2.KeyValuePairHint key_value_pair_hints = 2;
@@ -957,16 +853,7 @@ public final class FormExtractionParams extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * User can provide pairs of (key text, value type) to improve the parsing
-     * result.
-     * For example, if a document has a field called "Date" that holds a date
-     * value and a field called "Amount" that may hold either a currency value
-     * (e.g., "$500.00") or a simple number value (e.g., "20"), you could use the
-     * following hints: [ {"key": "Date", value_types: [ "DATE"]}, {"key":
-     * "Amount", "value_types": [ "PRICE", "NUMBER" ]} ]
-     * If the value type is unknown, but you want to provide hints for the keys,
-     * you can leave the value_types field blank. e.g. {"key": "Date",
-     * "value_types": []}
+     * Reserved for future use.
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1beta2.KeyValuePairHint key_value_pair_hints = 2;
@@ -990,16 +877,7 @@ public final class FormExtractionParams extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * User can provide pairs of (key text, value type) to improve the parsing
-     * result.
-     * For example, if a document has a field called "Date" that holds a date
-     * value and a field called "Amount" that may hold either a currency value
-     * (e.g., "$500.00") or a simple number value (e.g., "20"), you could use the
-     * following hints: [ {"key": "Date", value_types: [ "DATE"]}, {"key":
-     * "Amount", "value_types": [ "PRICE", "NUMBER" ]} ]
-     * If the value type is unknown, but you want to provide hints for the keys,
-     * you can leave the value_types field blank. e.g. {"key": "Date",
-     * "value_types": []}
+     * Reserved for future use.
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1beta2.KeyValuePairHint key_value_pair_hints = 2;
@@ -1020,16 +898,7 @@ public final class FormExtractionParams extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * User can provide pairs of (key text, value type) to improve the parsing
-     * result.
-     * For example, if a document has a field called "Date" that holds a date
-     * value and a field called "Amount" that may hold either a currency value
-     * (e.g., "$500.00") or a simple number value (e.g., "20"), you could use the
-     * following hints: [ {"key": "Date", value_types: [ "DATE"]}, {"key":
-     * "Amount", "value_types": [ "PRICE", "NUMBER" ]} ]
-     * If the value type is unknown, but you want to provide hints for the keys,
-     * you can leave the value_types field blank. e.g. {"key": "Date",
-     * "value_types": []}
+     * Reserved for future use.
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1beta2.KeyValuePairHint key_value_pair_hints = 2;
@@ -1050,16 +919,7 @@ public final class FormExtractionParams extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * User can provide pairs of (key text, value type) to improve the parsing
-     * result.
-     * For example, if a document has a field called "Date" that holds a date
-     * value and a field called "Amount" that may hold either a currency value
-     * (e.g., "$500.00") or a simple number value (e.g., "20"), you could use the
-     * following hints: [ {"key": "Date", value_types: [ "DATE"]}, {"key":
-     * "Amount", "value_types": [ "PRICE", "NUMBER" ]} ]
-     * If the value type is unknown, but you want to provide hints for the keys,
-     * you can leave the value_types field blank. e.g. {"key": "Date",
-     * "value_types": []}
+     * Reserved for future use.
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1beta2.KeyValuePairHint key_value_pair_hints = 2;
@@ -1080,16 +940,7 @@ public final class FormExtractionParams extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * User can provide pairs of (key text, value type) to improve the parsing
-     * result.
-     * For example, if a document has a field called "Date" that holds a date
-     * value and a field called "Amount" that may hold either a currency value
-     * (e.g., "$500.00") or a simple number value (e.g., "20"), you could use the
-     * following hints: [ {"key": "Date", value_types: [ "DATE"]}, {"key":
-     * "Amount", "value_types": [ "PRICE", "NUMBER" ]} ]
-     * If the value type is unknown, but you want to provide hints for the keys,
-     * you can leave the value_types field blank. e.g. {"key": "Date",
-     * "value_types": []}
+     * Reserved for future use.
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1beta2.KeyValuePairHint key_value_pair_hints = 2;
@@ -1109,16 +960,7 @@ public final class FormExtractionParams extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * User can provide pairs of (key text, value type) to improve the parsing
-     * result.
-     * For example, if a document has a field called "Date" that holds a date
-     * value and a field called "Amount" that may hold either a currency value
-     * (e.g., "$500.00") or a simple number value (e.g., "20"), you could use the
-     * following hints: [ {"key": "Date", value_types: [ "DATE"]}, {"key":
-     * "Amount", "value_types": [ "PRICE", "NUMBER" ]} ]
-     * If the value type is unknown, but you want to provide hints for the keys,
-     * you can leave the value_types field blank. e.g. {"key": "Date",
-     * "value_types": []}
+     * Reserved for future use.
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1beta2.KeyValuePairHint key_value_pair_hints = 2;
@@ -1138,16 +980,7 @@ public final class FormExtractionParams extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * User can provide pairs of (key text, value type) to improve the parsing
-     * result.
-     * For example, if a document has a field called "Date" that holds a date
-     * value and a field called "Amount" that may hold either a currency value
-     * (e.g., "$500.00") or a simple number value (e.g., "20"), you could use the
-     * following hints: [ {"key": "Date", value_types: [ "DATE"]}, {"key":
-     * "Amount", "value_types": [ "PRICE", "NUMBER" ]} ]
-     * If the value type is unknown, but you want to provide hints for the keys,
-     * you can leave the value_types field blank. e.g. {"key": "Date",
-     * "value_types": []}
+     * Reserved for future use.
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1beta2.KeyValuePairHint key_value_pair_hints = 2;
@@ -1161,16 +994,7 @@ public final class FormExtractionParams extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * User can provide pairs of (key text, value type) to improve the parsing
-     * result.
-     * For example, if a document has a field called "Date" that holds a date
-     * value and a field called "Amount" that may hold either a currency value
-     * (e.g., "$500.00") or a simple number value (e.g., "20"), you could use the
-     * following hints: [ {"key": "Date", value_types: [ "DATE"]}, {"key":
-     * "Amount", "value_types": [ "PRICE", "NUMBER" ]} ]
-     * If the value type is unknown, but you want to provide hints for the keys,
-     * you can leave the value_types field blank. e.g. {"key": "Date",
-     * "value_types": []}
+     * Reserved for future use.
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1beta2.KeyValuePairHint key_value_pair_hints = 2;
@@ -1188,16 +1012,7 @@ public final class FormExtractionParams extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * User can provide pairs of (key text, value type) to improve the parsing
-     * result.
-     * For example, if a document has a field called "Date" that holds a date
-     * value and a field called "Amount" that may hold either a currency value
-     * (e.g., "$500.00") or a simple number value (e.g., "20"), you could use the
-     * following hints: [ {"key": "Date", value_types: [ "DATE"]}, {"key":
-     * "Amount", "value_types": [ "PRICE", "NUMBER" ]} ]
-     * If the value type is unknown, but you want to provide hints for the keys,
-     * you can leave the value_types field blank. e.g. {"key": "Date",
-     * "value_types": []}
+     * Reserved for future use.
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1beta2.KeyValuePairHint key_value_pair_hints = 2;
@@ -1215,16 +1030,7 @@ public final class FormExtractionParams extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * User can provide pairs of (key text, value type) to improve the parsing
-     * result.
-     * For example, if a document has a field called "Date" that holds a date
-     * value and a field called "Amount" that may hold either a currency value
-     * (e.g., "$500.00") or a simple number value (e.g., "20"), you could use the
-     * following hints: [ {"key": "Date", value_types: [ "DATE"]}, {"key":
-     * "Amount", "value_types": [ "PRICE", "NUMBER" ]} ]
-     * If the value type is unknown, but you want to provide hints for the keys,
-     * you can leave the value_types field blank. e.g. {"key": "Date",
-     * "value_types": []}
+     * Reserved for future use.
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1beta2.KeyValuePairHint key_value_pair_hints = 2;
@@ -1239,16 +1045,7 @@ public final class FormExtractionParams extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * User can provide pairs of (key text, value type) to improve the parsing
-     * result.
-     * For example, if a document has a field called "Date" that holds a date
-     * value and a field called "Amount" that may hold either a currency value
-     * (e.g., "$500.00") or a simple number value (e.g., "20"), you could use the
-     * following hints: [ {"key": "Date", value_types: [ "DATE"]}, {"key":
-     * "Amount", "value_types": [ "PRICE", "NUMBER" ]} ]
-     * If the value type is unknown, but you want to provide hints for the keys,
-     * you can leave the value_types field blank. e.g. {"key": "Date",
-     * "value_types": []}
+     * Reserved for future use.
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1beta2.KeyValuePairHint key_value_pair_hints = 2;
@@ -1264,16 +1061,7 @@ public final class FormExtractionParams extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * User can provide pairs of (key text, value type) to improve the parsing
-     * result.
-     * For example, if a document has a field called "Date" that holds a date
-     * value and a field called "Amount" that may hold either a currency value
-     * (e.g., "$500.00") or a simple number value (e.g., "20"), you could use the
-     * following hints: [ {"key": "Date", value_types: [ "DATE"]}, {"key":
-     * "Amount", "value_types": [ "PRICE", "NUMBER" ]} ]
-     * If the value type is unknown, but you want to provide hints for the keys,
-     * you can leave the value_types field blank. e.g. {"key": "Date",
-     * "value_types": []}
+     * Reserved for future use.
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1beta2.KeyValuePairHint key_value_pair_hints = 2;
@@ -1311,7 +1099,7 @@ public final class FormExtractionParams extends com.google.protobuf.GeneratedMes
      * <pre>
      * Model version of the form extraction system. Default is
      * "builtin/stable". Specify "builtin/latest" for the latest model.
-     * For custom form models, specify: “custom/{model_name}". Model name
+     * For custom form models, specify: "custom/{model_name}". Model name
      * format is "bucket_name/path/to/modeldir" corresponding to
      * "gs://bucket_name/path/to/modeldir" where annotated examples are stored.
      * </pre>
@@ -1337,7 +1125,7 @@ public final class FormExtractionParams extends com.google.protobuf.GeneratedMes
      * <pre>
      * Model version of the form extraction system. Default is
      * "builtin/stable". Specify "builtin/latest" for the latest model.
-     * For custom form models, specify: “custom/{model_name}". Model name
+     * For custom form models, specify: "custom/{model_name}". Model name
      * format is "bucket_name/path/to/modeldir" corresponding to
      * "gs://bucket_name/path/to/modeldir" where annotated examples are stored.
      * </pre>
@@ -1363,7 +1151,7 @@ public final class FormExtractionParams extends com.google.protobuf.GeneratedMes
      * <pre>
      * Model version of the form extraction system. Default is
      * "builtin/stable". Specify "builtin/latest" for the latest model.
-     * For custom form models, specify: “custom/{model_name}". Model name
+     * For custom form models, specify: "custom/{model_name}". Model name
      * format is "bucket_name/path/to/modeldir" corresponding to
      * "gs://bucket_name/path/to/modeldir" where annotated examples are stored.
      * </pre>
@@ -1388,7 +1176,7 @@ public final class FormExtractionParams extends com.google.protobuf.GeneratedMes
      * <pre>
      * Model version of the form extraction system. Default is
      * "builtin/stable". Specify "builtin/latest" for the latest model.
-     * For custom form models, specify: “custom/{model_name}". Model name
+     * For custom form models, specify: "custom/{model_name}". Model name
      * format is "bucket_name/path/to/modeldir" corresponding to
      * "gs://bucket_name/path/to/modeldir" where annotated examples are stored.
      * </pre>
@@ -1409,7 +1197,7 @@ public final class FormExtractionParams extends com.google.protobuf.GeneratedMes
      * <pre>
      * Model version of the form extraction system. Default is
      * "builtin/stable". Specify "builtin/latest" for the latest model.
-     * For custom form models, specify: “custom/{model_name}". Model name
+     * For custom form models, specify: "custom/{model_name}". Model name
      * format is "bucket_name/path/to/modeldir" corresponding to
      * "gs://bucket_name/path/to/modeldir" where annotated examples are stored.
      * </pre>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,8 +28,10 @@ public interface VPCSCConfigOrBuilder
    *
    * <pre>
    * The name of the project's VPC SC Config.
+   *
    * Always of the form:
    * projects/{projectID}/locations/{location}/vpcscConfig
+   *
    * In update request: never set
    * In response: always set
    * </pre>
@@ -44,8 +46,10 @@ public interface VPCSCConfigOrBuilder
    *
    * <pre>
    * The name of the project's VPC SC Config.
+   *
    * Always of the form:
    * projects/{projectID}/locations/{location}/vpcscConfig
+   *
    * In update request: never set
    * In response: always set
    * </pre>

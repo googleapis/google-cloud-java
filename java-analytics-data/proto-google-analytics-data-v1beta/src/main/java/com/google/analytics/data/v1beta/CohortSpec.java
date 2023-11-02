@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,14 +23,17 @@ package com.google.analytics.data.v1beta;
  *
  * <pre>
  * The specification of cohorts for a cohort report.
+ *
  * Cohort reports create a time series of user retention for the cohort. For
  * example, you could select the cohort of users that were acquired in the first
  * week of September and follow that cohort for the next six weeks. Selecting
  * the users acquired in the first week of September cohort is specified in the
  * `cohort` object. Following that cohort for the next six weeks is specified in
  * the `cohortsRange` object.
+ *
  * For examples, see [Cohort Report
  * Examples](https://developers.google.com/analytics/devguides/reporting/data/v1/advanced#cohort_report_examples).
+ *
  * The report response could show a weekly time series where say your app has
  * retained 60% of this cohort after three weeks and 25% of this cohort after
  * six weeks. These two percentages can be calculated by the metric
@@ -59,11 +62,6 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
     return new CohortSpec();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.analytics.data.v1beta.ReportingApiProto
         .internal_static_google_analytics_data_v1beta_CohortSpec_descriptor;
@@ -88,6 +86,7 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Defines the selection criteria to group users into cohorts.
+   *
    * Most cohort reports define only a single cohort. If multiple cohorts are
    * specified, each cohort can be recognized in the report by their name.
    * </pre>
@@ -103,6 +102,7 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Defines the selection criteria to group users into cohorts.
+   *
    * Most cohort reports define only a single cohort. If multiple cohorts are
    * specified, each cohort can be recognized in the report by their name.
    * </pre>
@@ -119,6 +119,7 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Defines the selection criteria to group users into cohorts.
+   *
    * Most cohort reports define only a single cohort. If multiple cohorts are
    * specified, each cohort can be recognized in the report by their name.
    * </pre>
@@ -134,6 +135,7 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Defines the selection criteria to group users into cohorts.
+   *
    * Most cohort reports define only a single cohort. If multiple cohorts are
    * specified, each cohort can be recognized in the report by their name.
    * </pre>
@@ -149,6 +151,7 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Defines the selection criteria to group users into cohorts.
+   *
    * Most cohort reports define only a single cohort. If multiple cohorts are
    * specified, each cohort can be recognized in the report by their name.
    * </pre>
@@ -459,14 +462,17 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The specification of cohorts for a cohort report.
+   *
    * Cohort reports create a time series of user retention for the cohort. For
    * example, you could select the cohort of users that were acquired in the first
    * week of September and follow that cohort for the next six weeks. Selecting
    * the users acquired in the first week of September cohort is specified in the
    * `cohort` object. Following that cohort for the next six weeks is specified in
    * the `cohortsRange` object.
+   *
    * For examples, see [Cohort Report
    * Examples](https://developers.google.com/analytics/devguides/reporting/data/v1/advanced#cohort_report_examples).
+   *
    * The report response could show a weekly time series where say your app has
    * retained 60% of this cohort after three weeks and 25% of this cohort after
    * six weeks. These two percentages can be calculated by the metric
@@ -753,6 +759,7 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Defines the selection criteria to group users into cohorts.
+     *
      * Most cohort reports define only a single cohort. If multiple cohorts are
      * specified, each cohort can be recognized in the report by their name.
      * </pre>
@@ -771,6 +778,7 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Defines the selection criteria to group users into cohorts.
+     *
      * Most cohort reports define only a single cohort. If multiple cohorts are
      * specified, each cohort can be recognized in the report by their name.
      * </pre>
@@ -789,6 +797,7 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Defines the selection criteria to group users into cohorts.
+     *
      * Most cohort reports define only a single cohort. If multiple cohorts are
      * specified, each cohort can be recognized in the report by their name.
      * </pre>
@@ -807,6 +816,7 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Defines the selection criteria to group users into cohorts.
+     *
      * Most cohort reports define only a single cohort. If multiple cohorts are
      * specified, each cohort can be recognized in the report by their name.
      * </pre>
@@ -831,6 +841,7 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Defines the selection criteria to group users into cohorts.
+     *
      * Most cohort reports define only a single cohort. If multiple cohorts are
      * specified, each cohort can be recognized in the report by their name.
      * </pre>
@@ -853,6 +864,7 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Defines the selection criteria to group users into cohorts.
+     *
      * Most cohort reports define only a single cohort. If multiple cohorts are
      * specified, each cohort can be recognized in the report by their name.
      * </pre>
@@ -877,6 +889,7 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Defines the selection criteria to group users into cohorts.
+     *
      * Most cohort reports define only a single cohort. If multiple cohorts are
      * specified, each cohort can be recognized in the report by their name.
      * </pre>
@@ -901,6 +914,7 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Defines the selection criteria to group users into cohorts.
+     *
      * Most cohort reports define only a single cohort. If multiple cohorts are
      * specified, each cohort can be recognized in the report by their name.
      * </pre>
@@ -922,6 +936,7 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Defines the selection criteria to group users into cohorts.
+     *
      * Most cohort reports define only a single cohort. If multiple cohorts are
      * specified, each cohort can be recognized in the report by their name.
      * </pre>
@@ -944,6 +959,7 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Defines the selection criteria to group users into cohorts.
+     *
      * Most cohort reports define only a single cohort. If multiple cohorts are
      * specified, each cohort can be recognized in the report by their name.
      * </pre>
@@ -966,6 +982,7 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Defines the selection criteria to group users into cohorts.
+     *
      * Most cohort reports define only a single cohort. If multiple cohorts are
      * specified, each cohort can be recognized in the report by their name.
      * </pre>
@@ -987,6 +1004,7 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Defines the selection criteria to group users into cohorts.
+     *
      * Most cohort reports define only a single cohort. If multiple cohorts are
      * specified, each cohort can be recognized in the report by their name.
      * </pre>
@@ -1008,6 +1026,7 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Defines the selection criteria to group users into cohorts.
+     *
      * Most cohort reports define only a single cohort. If multiple cohorts are
      * specified, each cohort can be recognized in the report by their name.
      * </pre>
@@ -1022,6 +1041,7 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Defines the selection criteria to group users into cohorts.
+     *
      * Most cohort reports define only a single cohort. If multiple cohorts are
      * specified, each cohort can be recognized in the report by their name.
      * </pre>
@@ -1040,6 +1060,7 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Defines the selection criteria to group users into cohorts.
+     *
      * Most cohort reports define only a single cohort. If multiple cohorts are
      * specified, each cohort can be recognized in the report by their name.
      * </pre>
@@ -1059,6 +1080,7 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Defines the selection criteria to group users into cohorts.
+     *
      * Most cohort reports define only a single cohort. If multiple cohorts are
      * specified, each cohort can be recognized in the report by their name.
      * </pre>
@@ -1074,6 +1096,7 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Defines the selection criteria to group users into cohorts.
+     *
      * Most cohort reports define only a single cohort. If multiple cohorts are
      * specified, each cohort can be recognized in the report by their name.
      * </pre>
@@ -1089,6 +1112,7 @@ public final class CohortSpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Defines the selection criteria to group users into cohorts.
+     *
      * Most cohort reports define only a single cohort. If multiple cohorts are
      * specified, each cohort can be recognized in the report by their name.
      * </pre>

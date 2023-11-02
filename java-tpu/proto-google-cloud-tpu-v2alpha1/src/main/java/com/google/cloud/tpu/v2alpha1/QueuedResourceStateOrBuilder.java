@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -337,5 +337,34 @@ public interface QueuedResourceStateOrBuilder
   com.google.cloud.tpu.v2alpha1.QueuedResourceState.SuspendedDataOrBuilder
       getSuspendedDataOrBuilder();
 
-  public com.google.cloud.tpu.v2alpha1.QueuedResourceState.StateDataCase getStateDataCase();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The initiator of the QueuedResources's current state.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.tpu.v2alpha1.QueuedResourceState.StateInitiator state_initiator = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for stateInitiator.
+   */
+  int getStateInitiatorValue();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The initiator of the QueuedResources's current state.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.tpu.v2alpha1.QueuedResourceState.StateInitiator state_initiator = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The stateInitiator.
+   */
+  com.google.cloud.tpu.v2alpha1.QueuedResourceState.StateInitiator getStateInitiator();
+
+  com.google.cloud.tpu.v2alpha1.QueuedResourceState.StateDataCase getStateDataCase();
 }

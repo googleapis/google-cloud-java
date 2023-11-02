@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,17 +40,18 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
   private Model() {
     name_ = "";
     versionId_ = "";
-    versionAliases_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    versionAliases_ = com.google.protobuf.LazyStringArrayList.emptyList();
     displayName_ = "";
     description_ = "";
     versionDescription_ = "";
     metadataSchemaUri_ = "";
     supportedExportFormats_ = java.util.Collections.emptyList();
     trainingPipeline_ = "";
+    pipelineJob_ = "";
     artifactUri_ = "";
     supportedDeploymentResourcesTypes_ = java.util.Collections.emptyList();
-    supportedInputStorageFormats_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    supportedOutputStorageFormats_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    supportedInputStorageFormats_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    supportedOutputStorageFormats_ = com.google.protobuf.LazyStringArrayList.emptyList();
     deployedModels_ = java.util.Collections.emptyList();
     etag_ = "";
     metadataArtifact_ = "";
@@ -60,11 +61,6 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Model();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -296,17 +292,23 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The ID of the export format.
      * The possible format IDs are:
+     *
      * * `tflite`
      * Used for Android mobile devices.
+     *
      * * `edgetpu-tflite`
      * Used for [Edge TPU](https://cloud.google.com/edge-tpu/) devices.
+     *
      * * `tf-saved-model`
      * A tensorflow model in SavedModel format.
+     *
      * * `tf-js`
      * A [TensorFlow.js](https://www.tensorflow.org/js) model that can be used
      * in the browser and in Node.js using JavaScript.
+     *
      * * `core-ml`
      * Used for iOS mobile devices.
+     *
      * * `custom-trained`
      * A Model that was uploaded or trained by custom code.
      * </pre>
@@ -322,17 +324,23 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The ID of the export format.
      * The possible format IDs are:
+     *
      * * `tflite`
      * Used for Android mobile devices.
+     *
      * * `edgetpu-tflite`
      * Used for [Edge TPU](https://cloud.google.com/edge-tpu/) devices.
+     *
      * * `tf-saved-model`
      * A tensorflow model in SavedModel format.
+     *
      * * `tf-js`
      * A [TensorFlow.js](https://www.tensorflow.org/js) model that can be used
      * in the browser and in Node.js using JavaScript.
+     *
      * * `core-ml`
      * Used for iOS mobile devices.
+     *
      * * `custom-trained`
      * A Model that was uploaded or trained by custom code.
      * </pre>
@@ -447,11 +455,6 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new ExportFormat();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -655,17 +658,23 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The ID of the export format.
      * The possible format IDs are:
+     *
      * * `tflite`
      * Used for Android mobile devices.
+     *
      * * `edgetpu-tflite`
      * Used for [Edge TPU](https://cloud.google.com/edge-tpu/) devices.
+     *
      * * `tf-saved-model`
      * A tensorflow model in SavedModel format.
+     *
      * * `tf-js`
      * A [TensorFlow.js](https://www.tensorflow.org/js) model that can be used
      * in the browser and in Node.js using JavaScript.
+     *
      * * `core-ml`
      * Used for iOS mobile devices.
+     *
      * * `custom-trained`
      * A Model that was uploaded or trained by custom code.
      * </pre>
@@ -692,17 +701,23 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The ID of the export format.
      * The possible format IDs are:
+     *
      * * `tflite`
      * Used for Android mobile devices.
+     *
      * * `edgetpu-tflite`
      * Used for [Edge TPU](https://cloud.google.com/edge-tpu/) devices.
+     *
      * * `tf-saved-model`
      * A tensorflow model in SavedModel format.
+     *
      * * `tf-js`
      * A [TensorFlow.js](https://www.tensorflow.org/js) model that can be used
      * in the browser and in Node.js using JavaScript.
+     *
      * * `core-ml`
      * Used for iOS mobile devices.
+     *
      * * `custom-trained`
      * A Model that was uploaded or trained by custom code.
      * </pre>
@@ -1262,17 +1277,23 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Output only. The ID of the export format.
        * The possible format IDs are:
+       *
        * * `tflite`
        * Used for Android mobile devices.
+       *
        * * `edgetpu-tflite`
        * Used for [Edge TPU](https://cloud.google.com/edge-tpu/) devices.
+       *
        * * `tf-saved-model`
        * A tensorflow model in SavedModel format.
+       *
        * * `tf-js`
        * A [TensorFlow.js](https://www.tensorflow.org/js) model that can be used
        * in the browser and in Node.js using JavaScript.
+       *
        * * `core-ml`
        * Used for iOS mobile devices.
+       *
        * * `custom-trained`
        * A Model that was uploaded or trained by custom code.
        * </pre>
@@ -1298,17 +1319,23 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Output only. The ID of the export format.
        * The possible format IDs are:
+       *
        * * `tflite`
        * Used for Android mobile devices.
+       *
        * * `edgetpu-tflite`
        * Used for [Edge TPU](https://cloud.google.com/edge-tpu/) devices.
+       *
        * * `tf-saved-model`
        * A tensorflow model in SavedModel format.
+       *
        * * `tf-js`
        * A [TensorFlow.js](https://www.tensorflow.org/js) model that can be used
        * in the browser and in Node.js using JavaScript.
+       *
        * * `core-ml`
        * Used for iOS mobile devices.
+       *
        * * `custom-trained`
        * A Model that was uploaded or trained by custom code.
        * </pre>
@@ -1334,17 +1361,23 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Output only. The ID of the export format.
        * The possible format IDs are:
+       *
        * * `tflite`
        * Used for Android mobile devices.
+       *
        * * `edgetpu-tflite`
        * Used for [Edge TPU](https://cloud.google.com/edge-tpu/) devices.
+       *
        * * `tf-saved-model`
        * A tensorflow model in SavedModel format.
+       *
        * * `tf-js`
        * A [TensorFlow.js](https://www.tensorflow.org/js) model that can be used
        * in the browser and in Node.js using JavaScript.
+       *
        * * `core-ml`
        * Used for iOS mobile devices.
+       *
        * * `custom-trained`
        * A Model that was uploaded or trained by custom code.
        * </pre>
@@ -1369,17 +1402,23 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Output only. The ID of the export format.
        * The possible format IDs are:
+       *
        * * `tflite`
        * Used for Android mobile devices.
+       *
        * * `edgetpu-tflite`
        * Used for [Edge TPU](https://cloud.google.com/edge-tpu/) devices.
+       *
        * * `tf-saved-model`
        * A tensorflow model in SavedModel format.
+       *
        * * `tf-js`
        * A [TensorFlow.js](https://www.tensorflow.org/js) model that can be used
        * in the browser and in Node.js using JavaScript.
+       *
        * * `core-ml`
        * Used for iOS mobile devices.
+       *
        * * `custom-trained`
        * A Model that was uploaded or trained by custom code.
        * </pre>
@@ -1400,17 +1439,23 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Output only. The ID of the export format.
        * The possible format IDs are:
+       *
        * * `tflite`
        * Used for Android mobile devices.
+       *
        * * `edgetpu-tflite`
        * Used for [Edge TPU](https://cloud.google.com/edge-tpu/) devices.
+       *
        * * `tf-saved-model`
        * A tensorflow model in SavedModel format.
+       *
        * * `tf-js`
        * A [TensorFlow.js](https://www.tensorflow.org/js) model that can be used
        * in the browser and in Node.js using JavaScript.
+       *
        * * `core-ml`
        * Used for iOS mobile devices.
+       *
        * * `custom-trained`
        * A Model that was uploaded or trained by custom code.
        * </pre>
@@ -1812,11 +1857,6 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new OriginalModelInfo();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2545,7 +2585,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
   public static final int VERSION_ALIASES_FIELD_NUMBER = 29;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList versionAliases_;
+  private com.google.protobuf.LazyStringArrayList versionAliases_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -3237,6 +3278,63 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int PIPELINE_JOB_FIELD_NUMBER = 47;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object pipelineJob_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This field is populated if the model is produced by a pipeline
+   * job.
+   * </pre>
+   *
+   * <code>
+   * string pipeline_job = 47 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The pipelineJob.
+   */
+  @java.lang.Override
+  public java.lang.String getPipelineJob() {
+    java.lang.Object ref = pipelineJob_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      pipelineJob_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This field is populated if the model is produced by a pipeline
+   * job.
+   * </pre>
+   *
+   * <code>
+   * string pipeline_job = 47 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for pipelineJob.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getPipelineJobBytes() {
+    java.lang.Object ref = pipelineJob_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      pipelineJob_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int CONTAINER_SPEC_FIELD_NUMBER = 9;
   private com.google.cloud.aiplatform.v1.ModelContainerSpec containerSpec_;
   /**
@@ -3557,7 +3655,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
   public static final int SUPPORTED_INPUT_STORAGE_FORMATS_FIELD_NUMBER = 11;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList supportedInputStorageFormats_;
+  private com.google.protobuf.LazyStringArrayList supportedInputStorageFormats_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -3567,30 +3666,39 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    * If
    * [PredictSchemata.instance_schema_uri][google.cloud.aiplatform.v1.PredictSchemata.instance_schema_uri]
    * exists, the instances should be given as per that schema.
+   *
    * The possible formats are:
+   *
    * * `jsonl`
    * The JSON Lines format, where each instance is a single line. Uses
    * [GcsSource][google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig.gcs_source].
+   *
    * * `csv`
    * The CSV format, where each instance is a single comma-separated line.
    * The first line in the file is the header, containing comma-separated field
    * names. Uses
    * [GcsSource][google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig.gcs_source].
+   *
    * * `tf-record`
    * The TFRecord format, where each instance is a single record in tfrecord
    * syntax. Uses
    * [GcsSource][google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig.gcs_source].
+   *
    * * `tf-record-gzip`
    * Similar to `tf-record`, but the file is gzipped. Uses
    * [GcsSource][google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig.gcs_source].
+   *
    * * `bigquery`
    * Each instance is a single row in BigQuery. Uses
    * [BigQuerySource][google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig.bigquery_source].
+   *
    * * `file-list`
    * Each line of the file is the location of an instance to process, uses
    * `gcs_source` field of the
    * [InputConfig][google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig]
    * object.
+   *
+   *
    * If this Model doesn't support any of these formats it means it cannot be
    * used with a
    * [BatchPredictionJob][google.cloud.aiplatform.v1.BatchPredictionJob].
@@ -3620,30 +3728,39 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    * If
    * [PredictSchemata.instance_schema_uri][google.cloud.aiplatform.v1.PredictSchemata.instance_schema_uri]
    * exists, the instances should be given as per that schema.
+   *
    * The possible formats are:
+   *
    * * `jsonl`
    * The JSON Lines format, where each instance is a single line. Uses
    * [GcsSource][google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig.gcs_source].
+   *
    * * `csv`
    * The CSV format, where each instance is a single comma-separated line.
    * The first line in the file is the header, containing comma-separated field
    * names. Uses
    * [GcsSource][google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig.gcs_source].
+   *
    * * `tf-record`
    * The TFRecord format, where each instance is a single record in tfrecord
    * syntax. Uses
    * [GcsSource][google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig.gcs_source].
+   *
    * * `tf-record-gzip`
    * Similar to `tf-record`, but the file is gzipped. Uses
    * [GcsSource][google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig.gcs_source].
+   *
    * * `bigquery`
    * Each instance is a single row in BigQuery. Uses
    * [BigQuerySource][google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig.bigquery_source].
+   *
    * * `file-list`
    * Each line of the file is the location of an instance to process, uses
    * `gcs_source` field of the
    * [InputConfig][google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig]
    * object.
+   *
+   *
    * If this Model doesn't support any of these formats it means it cannot be
    * used with a
    * [BatchPredictionJob][google.cloud.aiplatform.v1.BatchPredictionJob].
@@ -3673,30 +3790,39 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    * If
    * [PredictSchemata.instance_schema_uri][google.cloud.aiplatform.v1.PredictSchemata.instance_schema_uri]
    * exists, the instances should be given as per that schema.
+   *
    * The possible formats are:
+   *
    * * `jsonl`
    * The JSON Lines format, where each instance is a single line. Uses
    * [GcsSource][google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig.gcs_source].
+   *
    * * `csv`
    * The CSV format, where each instance is a single comma-separated line.
    * The first line in the file is the header, containing comma-separated field
    * names. Uses
    * [GcsSource][google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig.gcs_source].
+   *
    * * `tf-record`
    * The TFRecord format, where each instance is a single record in tfrecord
    * syntax. Uses
    * [GcsSource][google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig.gcs_source].
+   *
    * * `tf-record-gzip`
    * Similar to `tf-record`, but the file is gzipped. Uses
    * [GcsSource][google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig.gcs_source].
+   *
    * * `bigquery`
    * Each instance is a single row in BigQuery. Uses
    * [BigQuerySource][google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig.bigquery_source].
+   *
    * * `file-list`
    * Each line of the file is the location of an instance to process, uses
    * `gcs_source` field of the
    * [InputConfig][google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig]
    * object.
+   *
+   *
    * If this Model doesn't support any of these formats it means it cannot be
    * used with a
    * [BatchPredictionJob][google.cloud.aiplatform.v1.BatchPredictionJob].
@@ -3727,30 +3853,39 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    * If
    * [PredictSchemata.instance_schema_uri][google.cloud.aiplatform.v1.PredictSchemata.instance_schema_uri]
    * exists, the instances should be given as per that schema.
+   *
    * The possible formats are:
+   *
    * * `jsonl`
    * The JSON Lines format, where each instance is a single line. Uses
    * [GcsSource][google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig.gcs_source].
+   *
    * * `csv`
    * The CSV format, where each instance is a single comma-separated line.
    * The first line in the file is the header, containing comma-separated field
    * names. Uses
    * [GcsSource][google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig.gcs_source].
+   *
    * * `tf-record`
    * The TFRecord format, where each instance is a single record in tfrecord
    * syntax. Uses
    * [GcsSource][google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig.gcs_source].
+   *
    * * `tf-record-gzip`
    * Similar to `tf-record`, but the file is gzipped. Uses
    * [GcsSource][google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig.gcs_source].
+   *
    * * `bigquery`
    * Each instance is a single row in BigQuery. Uses
    * [BigQuerySource][google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig.bigquery_source].
+   *
    * * `file-list`
    * Each line of the file is the location of an instance to process, uses
    * `gcs_source` field of the
    * [InputConfig][google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig]
    * object.
+   *
+   *
    * If this Model doesn't support any of these formats it means it cannot be
    * used with a
    * [BatchPredictionJob][google.cloud.aiplatform.v1.BatchPredictionJob].
@@ -3776,7 +3911,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
   public static final int SUPPORTED_OUTPUT_STORAGE_FORMATS_FIELD_NUMBER = 12;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList supportedOutputStorageFormats_;
+  private com.google.protobuf.LazyStringArrayList supportedOutputStorageFormats_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -3790,19 +3926,25 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    * exist, the predictions are returned together with their instances. In other
    * words, the prediction has the original instance data first, followed by the
    * actual prediction content (as per the schema).
+   *
    * The possible formats are:
+   *
    * * `jsonl`
    * The JSON Lines format, where each prediction is a single line. Uses
    * [GcsDestination][google.cloud.aiplatform.v1.BatchPredictionJob.OutputConfig.gcs_destination].
+   *
    * * `csv`
    * The CSV format, where each prediction is a single comma-separated line.
    * The first line in the file is the header, containing comma-separated field
    * names. Uses
    * [GcsDestination][google.cloud.aiplatform.v1.BatchPredictionJob.OutputConfig.gcs_destination].
+   *
    * * `bigquery`
    * Each prediction is a single row in a BigQuery table, uses
    * [BigQueryDestination][google.cloud.aiplatform.v1.BatchPredictionJob.OutputConfig.bigquery_destination]
    * .
+   *
+   *
    * If this Model doesn't support any of these formats it means it cannot be
    * used with a
    * [BatchPredictionJob][google.cloud.aiplatform.v1.BatchPredictionJob].
@@ -3836,19 +3978,25 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    * exist, the predictions are returned together with their instances. In other
    * words, the prediction has the original instance data first, followed by the
    * actual prediction content (as per the schema).
+   *
    * The possible formats are:
+   *
    * * `jsonl`
    * The JSON Lines format, where each prediction is a single line. Uses
    * [GcsDestination][google.cloud.aiplatform.v1.BatchPredictionJob.OutputConfig.gcs_destination].
+   *
    * * `csv`
    * The CSV format, where each prediction is a single comma-separated line.
    * The first line in the file is the header, containing comma-separated field
    * names. Uses
    * [GcsDestination][google.cloud.aiplatform.v1.BatchPredictionJob.OutputConfig.gcs_destination].
+   *
    * * `bigquery`
    * Each prediction is a single row in a BigQuery table, uses
    * [BigQueryDestination][google.cloud.aiplatform.v1.BatchPredictionJob.OutputConfig.bigquery_destination]
    * .
+   *
+   *
    * If this Model doesn't support any of these formats it means it cannot be
    * used with a
    * [BatchPredictionJob][google.cloud.aiplatform.v1.BatchPredictionJob].
@@ -3882,19 +4030,25 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    * exist, the predictions are returned together with their instances. In other
    * words, the prediction has the original instance data first, followed by the
    * actual prediction content (as per the schema).
+   *
    * The possible formats are:
+   *
    * * `jsonl`
    * The JSON Lines format, where each prediction is a single line. Uses
    * [GcsDestination][google.cloud.aiplatform.v1.BatchPredictionJob.OutputConfig.gcs_destination].
+   *
    * * `csv`
    * The CSV format, where each prediction is a single comma-separated line.
    * The first line in the file is the header, containing comma-separated field
    * names. Uses
    * [GcsDestination][google.cloud.aiplatform.v1.BatchPredictionJob.OutputConfig.gcs_destination].
+   *
    * * `bigquery`
    * Each prediction is a single row in a BigQuery table, uses
    * [BigQueryDestination][google.cloud.aiplatform.v1.BatchPredictionJob.OutputConfig.bigquery_destination]
    * .
+   *
+   *
    * If this Model doesn't support any of these formats it means it cannot be
    * used with a
    * [BatchPredictionJob][google.cloud.aiplatform.v1.BatchPredictionJob].
@@ -3929,19 +4083,25 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    * exist, the predictions are returned together with their instances. In other
    * words, the prediction has the original instance data first, followed by the
    * actual prediction content (as per the schema).
+   *
    * The possible formats are:
+   *
    * * `jsonl`
    * The JSON Lines format, where each prediction is a single line. Uses
    * [GcsDestination][google.cloud.aiplatform.v1.BatchPredictionJob.OutputConfig.gcs_destination].
+   *
    * * `csv`
    * The CSV format, where each prediction is a single comma-separated line.
    * The first line in the file is the header, containing comma-separated field
    * names. Uses
    * [GcsDestination][google.cloud.aiplatform.v1.BatchPredictionJob.OutputConfig.gcs_destination].
+   *
    * * `bigquery`
    * Each prediction is a single row in a BigQuery table, uses
    * [BigQueryDestination][google.cloud.aiplatform.v1.BatchPredictionJob.OutputConfig.bigquery_destination]
    * .
+   *
+   *
    * If this Model doesn't support any of these formats it means it cannot be
    * used with a
    * [BatchPredictionJob][google.cloud.aiplatform.v1.BatchPredictionJob].
@@ -4156,6 +4316,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The default explanation specification for this Model.
+   *
    * The Model can be used for
    * [requesting
    * explanation][google.cloud.aiplatform.v1.PredictionService.Explain] after
@@ -4163,6 +4324,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    * it is populated. The Model can be used for [batch
    * explanation][google.cloud.aiplatform.v1.BatchPredictionJob.generate_explanation]
    * if it is populated.
+   *
    * All fields of the explanation_spec can be overridden by
    * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec]
    * of
@@ -4170,6 +4332,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    * or
    * [explanation_spec][google.cloud.aiplatform.v1.BatchPredictionJob.explanation_spec]
    * of [BatchPredictionJob][google.cloud.aiplatform.v1.BatchPredictionJob].
+   *
    * If the default explanation specification is not set for this Model, this
    * Model can still be used for
    * [requesting
@@ -4198,6 +4361,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The default explanation specification for this Model.
+   *
    * The Model can be used for
    * [requesting
    * explanation][google.cloud.aiplatform.v1.PredictionService.Explain] after
@@ -4205,6 +4369,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    * it is populated. The Model can be used for [batch
    * explanation][google.cloud.aiplatform.v1.BatchPredictionJob.generate_explanation]
    * if it is populated.
+   *
    * All fields of the explanation_spec can be overridden by
    * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec]
    * of
@@ -4212,6 +4377,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    * or
    * [explanation_spec][google.cloud.aiplatform.v1.BatchPredictionJob.explanation_spec]
    * of [BatchPredictionJob][google.cloud.aiplatform.v1.BatchPredictionJob].
+   *
    * If the default explanation specification is not set for this Model, this
    * Model can still be used for
    * [requesting
@@ -4242,6 +4408,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The default explanation specification for this Model.
+   *
    * The Model can be used for
    * [requesting
    * explanation][google.cloud.aiplatform.v1.PredictionService.Explain] after
@@ -4249,6 +4416,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    * it is populated. The Model can be used for [batch
    * explanation][google.cloud.aiplatform.v1.BatchPredictionJob.generate_explanation]
    * if it is populated.
+   *
    * All fields of the explanation_spec can be overridden by
    * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec]
    * of
@@ -4256,6 +4424,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    * or
    * [explanation_spec][google.cloud.aiplatform.v1.BatchPredictionJob.explanation_spec]
    * of [BatchPredictionJob][google.cloud.aiplatform.v1.BatchPredictionJob].
+   *
    * If the default explanation specification is not set for this Model, this
    * Model can still be used for
    * [requesting
@@ -4364,9 +4533,11 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The labels with user-defined metadata to organize your Models.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
+   *
    * See https://goo.gl/xmQnxf for more information and examples of labels.
    * </pre>
    *
@@ -4390,9 +4561,11 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The labels with user-defined metadata to organize your Models.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
+   *
    * See https://goo.gl/xmQnxf for more information and examples of labels.
    * </pre>
    *
@@ -4407,9 +4580,11 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The labels with user-defined metadata to organize your Models.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
+   *
    * See https://goo.gl/xmQnxf for more information and examples of labels.
    * </pre>
    *
@@ -4431,9 +4606,11 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The labels with user-defined metadata to organize your Models.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
+   *
    * See https://goo.gl/xmQnxf for more information and examples of labels.
    * </pre>
    *
@@ -4784,6 +4961,9 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(metadataArtifact_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 44, metadataArtifact_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pipelineJob_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 47, pipelineJob_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -4912,6 +5092,9 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(metadataArtifact_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(44, metadataArtifact_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pipelineJob_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(47, pipelineJob_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -4953,6 +5136,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     if (!getSupportedExportFormatsList().equals(other.getSupportedExportFormatsList()))
       return false;
     if (!getTrainingPipeline().equals(other.getTrainingPipeline())) return false;
+    if (!getPipelineJob().equals(other.getPipelineJob())) return false;
     if (hasContainerSpec() != other.hasContainerSpec()) return false;
     if (hasContainerSpec()) {
       if (!getContainerSpec().equals(other.getContainerSpec())) return false;
@@ -5041,6 +5225,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + TRAINING_PIPELINE_FIELD_NUMBER;
     hash = (53 * hash) + getTrainingPipeline().hashCode();
+    hash = (37 * hash) + PIPELINE_JOB_FIELD_NUMBER;
+    hash = (53 * hash) + getPipelineJob().hashCode();
     if (hasContainerSpec()) {
       hash = (37 * hash) + CONTAINER_SPEC_FIELD_NUMBER;
       hash = (53 * hash) + getContainerSpec().hashCode();
@@ -5255,8 +5441,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = 0;
       name_ = "";
       versionId_ = "";
-      versionAliases_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      versionAliases_ = com.google.protobuf.LazyStringArrayList.emptyList();
       versionCreateTime_ = null;
       if (versionCreateTimeBuilder_ != null) {
         versionCreateTimeBuilder_.dispose();
@@ -5289,6 +5474,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ = (bitField0_ & ~0x00000800);
       trainingPipeline_ = "";
+      pipelineJob_ = "";
       containerSpec_ = null;
       if (containerSpecBuilder_ != null) {
         containerSpecBuilder_.dispose();
@@ -5296,11 +5482,9 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       }
       artifactUri_ = "";
       supportedDeploymentResourcesTypes_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00008000);
-      supportedInputStorageFormats_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00010000);
-      supportedOutputStorageFormats_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00020000);
+      supportedInputStorageFormats_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      supportedOutputStorageFormats_ = com.google.protobuf.LazyStringArrayList.emptyList();
       createTime_ = null;
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
@@ -5317,7 +5501,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
         deployedModels_ = null;
         deployedModelsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00100000);
+      bitField0_ = (bitField0_ & ~0x00200000);
       explanationSpec_ = null;
       if (explanationSpecBuilder_ != null) {
         explanationSpecBuilder_.dispose();
@@ -5376,11 +5560,6 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     }
 
     private void buildPartialRepeatedFields(com.google.cloud.aiplatform.v1.Model result) {
-      if (((bitField0_ & 0x00000004) != 0)) {
-        versionAliases_ = versionAliases_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.versionAliases_ = versionAliases_;
       if (supportedExportFormatsBuilder_ == null) {
         if (((bitField0_ & 0x00000800) != 0)) {
           supportedExportFormats_ = java.util.Collections.unmodifiableList(supportedExportFormats_);
@@ -5390,26 +5569,16 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.supportedExportFormats_ = supportedExportFormatsBuilder_.build();
       }
-      if (((bitField0_ & 0x00008000) != 0)) {
+      if (((bitField0_ & 0x00010000) != 0)) {
         supportedDeploymentResourcesTypes_ =
             java.util.Collections.unmodifiableList(supportedDeploymentResourcesTypes_);
-        bitField0_ = (bitField0_ & ~0x00008000);
-      }
-      result.supportedDeploymentResourcesTypes_ = supportedDeploymentResourcesTypes_;
-      if (((bitField0_ & 0x00010000) != 0)) {
-        supportedInputStorageFormats_ = supportedInputStorageFormats_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00010000);
       }
-      result.supportedInputStorageFormats_ = supportedInputStorageFormats_;
-      if (((bitField0_ & 0x00020000) != 0)) {
-        supportedOutputStorageFormats_ = supportedOutputStorageFormats_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00020000);
-      }
-      result.supportedOutputStorageFormats_ = supportedOutputStorageFormats_;
+      result.supportedDeploymentResourcesTypes_ = supportedDeploymentResourcesTypes_;
       if (deployedModelsBuilder_ == null) {
-        if (((bitField0_ & 0x00100000) != 0)) {
+        if (((bitField0_ & 0x00200000) != 0)) {
           deployedModels_ = java.util.Collections.unmodifiableList(deployedModels_);
-          bitField0_ = (bitField0_ & ~0x00100000);
+          bitField0_ = (bitField0_ & ~0x00200000);
         }
         result.deployedModels_ = deployedModels_;
       } else {
@@ -5424,6 +5593,10 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.versionId_ = versionId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        versionAliases_.makeImmutable();
+        result.versionAliases_ = versionAliases_;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.versionCreateTime_ =
@@ -5460,44 +5633,55 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
         result.trainingPipeline_ = trainingPipeline_;
       }
       if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.pipelineJob_ = pipelineJob_;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         result.containerSpec_ =
             containerSpecBuilder_ == null ? containerSpec_ : containerSpecBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00004000) != 0)) {
+      if (((from_bitField0_ & 0x00008000) != 0)) {
         result.artifactUri_ = artifactUri_;
       }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        supportedInputStorageFormats_.makeImmutable();
+        result.supportedInputStorageFormats_ = supportedInputStorageFormats_;
+      }
       if (((from_bitField0_ & 0x00040000) != 0)) {
-        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+        supportedOutputStorageFormats_.makeImmutable();
+        result.supportedOutputStorageFormats_ = supportedOutputStorageFormats_;
       }
       if (((from_bitField0_ & 0x00080000) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00100000) != 0)) {
         result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00200000) != 0)) {
+      if (((from_bitField0_ & 0x00400000) != 0)) {
         result.explanationSpec_ =
             explanationSpecBuilder_ == null ? explanationSpec_ : explanationSpecBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00400000) != 0)) {
+      if (((from_bitField0_ & 0x00800000) != 0)) {
         result.etag_ = etag_;
       }
-      if (((from_bitField0_ & 0x00800000) != 0)) {
+      if (((from_bitField0_ & 0x01000000) != 0)) {
         result.labels_ = internalGetLabels();
         result.labels_.makeImmutable();
       }
-      if (((from_bitField0_ & 0x01000000) != 0)) {
+      if (((from_bitField0_ & 0x02000000) != 0)) {
         result.encryptionSpec_ =
             encryptionSpecBuilder_ == null ? encryptionSpec_ : encryptionSpecBuilder_.build();
       }
-      if (((from_bitField0_ & 0x02000000) != 0)) {
+      if (((from_bitField0_ & 0x04000000) != 0)) {
         result.modelSourceInfo_ =
             modelSourceInfoBuilder_ == null ? modelSourceInfo_ : modelSourceInfoBuilder_.build();
       }
-      if (((from_bitField0_ & 0x04000000) != 0)) {
+      if (((from_bitField0_ & 0x08000000) != 0)) {
         result.originalModelInfo_ =
             originalModelInfoBuilder_ == null
                 ? originalModelInfo_
                 : originalModelInfoBuilder_.build();
       }
-      if (((from_bitField0_ & 0x08000000) != 0)) {
+      if (((from_bitField0_ & 0x10000000) != 0)) {
         result.metadataArtifact_ = metadataArtifact_;
       }
     }
@@ -5560,7 +5744,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       if (!other.versionAliases_.isEmpty()) {
         if (versionAliases_.isEmpty()) {
           versionAliases_ = other.versionAliases_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ |= 0x00000004;
         } else {
           ensureVersionAliasesIsMutable();
           versionAliases_.addAll(other.versionAliases_);
@@ -5631,18 +5815,23 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00001000;
         onChanged();
       }
+      if (!other.getPipelineJob().isEmpty()) {
+        pipelineJob_ = other.pipelineJob_;
+        bitField0_ |= 0x00002000;
+        onChanged();
+      }
       if (other.hasContainerSpec()) {
         mergeContainerSpec(other.getContainerSpec());
       }
       if (!other.getArtifactUri().isEmpty()) {
         artifactUri_ = other.artifactUri_;
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00008000;
         onChanged();
       }
       if (!other.supportedDeploymentResourcesTypes_.isEmpty()) {
         if (supportedDeploymentResourcesTypes_.isEmpty()) {
           supportedDeploymentResourcesTypes_ = other.supportedDeploymentResourcesTypes_;
-          bitField0_ = (bitField0_ & ~0x00008000);
+          bitField0_ = (bitField0_ & ~0x00010000);
         } else {
           ensureSupportedDeploymentResourcesTypesIsMutable();
           supportedDeploymentResourcesTypes_.addAll(other.supportedDeploymentResourcesTypes_);
@@ -5652,7 +5841,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       if (!other.supportedInputStorageFormats_.isEmpty()) {
         if (supportedInputStorageFormats_.isEmpty()) {
           supportedInputStorageFormats_ = other.supportedInputStorageFormats_;
-          bitField0_ = (bitField0_ & ~0x00010000);
+          bitField0_ |= 0x00020000;
         } else {
           ensureSupportedInputStorageFormatsIsMutable();
           supportedInputStorageFormats_.addAll(other.supportedInputStorageFormats_);
@@ -5662,7 +5851,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       if (!other.supportedOutputStorageFormats_.isEmpty()) {
         if (supportedOutputStorageFormats_.isEmpty()) {
           supportedOutputStorageFormats_ = other.supportedOutputStorageFormats_;
-          bitField0_ = (bitField0_ & ~0x00020000);
+          bitField0_ |= 0x00040000;
         } else {
           ensureSupportedOutputStorageFormatsIsMutable();
           supportedOutputStorageFormats_.addAll(other.supportedOutputStorageFormats_);
@@ -5679,7 +5868,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
         if (!other.deployedModels_.isEmpty()) {
           if (deployedModels_.isEmpty()) {
             deployedModels_ = other.deployedModels_;
-            bitField0_ = (bitField0_ & ~0x00100000);
+            bitField0_ = (bitField0_ & ~0x00200000);
           } else {
             ensureDeployedModelsIsMutable();
             deployedModels_.addAll(other.deployedModels_);
@@ -5692,7 +5881,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
             deployedModelsBuilder_.dispose();
             deployedModelsBuilder_ = null;
             deployedModels_ = other.deployedModels_;
-            bitField0_ = (bitField0_ & ~0x00100000);
+            bitField0_ = (bitField0_ & ~0x00200000);
             deployedModelsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getDeployedModelsFieldBuilder()
@@ -5707,11 +5896,11 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
-        bitField0_ |= 0x00400000;
+        bitField0_ |= 0x00800000;
         onChanged();
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x01000000;
       if (other.hasEncryptionSpec()) {
         mergeEncryptionSpec(other.getEncryptionSpec());
       }
@@ -5723,7 +5912,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getMetadataArtifact().isEmpty()) {
         metadataArtifact_ = other.metadataArtifact_;
-        bitField0_ |= 0x08000000;
+        bitField0_ |= 0x10000000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -5797,7 +5986,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
             case 74:
               {
                 input.readMessage(getContainerSpecFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 74
             case 80:
@@ -5836,13 +6025,13 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
             case 106:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00040000;
+                bitField0_ |= 0x00080000;
                 break;
               } // case 106
             case 114:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00080000;
+                bitField0_ |= 0x00100000;
                 break;
               } // case 114
             case 122:
@@ -5862,7 +6051,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
             case 130:
               {
                 etag_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00400000;
+                bitField0_ |= 0x00800000;
                 break;
               } // case 130
             case 138:
@@ -5874,7 +6063,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
-                bitField0_ |= 0x00800000;
+                bitField0_ |= 0x01000000;
                 break;
               } // case 138
             case 162:
@@ -5894,19 +6083,19 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
             case 186:
               {
                 input.readMessage(getExplanationSpecFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00200000;
+                bitField0_ |= 0x00400000;
                 break;
               } // case 186
             case 194:
               {
                 input.readMessage(getEncryptionSpecFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x01000000;
+                bitField0_ |= 0x02000000;
                 break;
               } // case 194
             case 210:
               {
                 artifactUri_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 210
             case 226:
@@ -5946,21 +6135,27 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
               {
                 input.readMessage(
                     getOriginalModelInfoFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x04000000;
+                bitField0_ |= 0x08000000;
                 break;
               } // case 274
             case 306:
               {
                 input.readMessage(getModelSourceInfoFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x02000000;
+                bitField0_ |= 0x04000000;
                 break;
               } // case 306
             case 354:
               {
                 metadataArtifact_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x08000000;
+                bitField0_ |= 0x10000000;
                 break;
               } // case 354
+            case 378:
+              {
+                pipelineJob_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 378
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -6217,14 +6412,14 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList versionAliases_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList versionAliases_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureVersionAliasesIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!versionAliases_.isModifiable()) {
         versionAliases_ = new com.google.protobuf.LazyStringArrayList(versionAliases_);
-        bitField0_ |= 0x00000004;
       }
+      bitField0_ |= 0x00000004;
     }
     /**
      *
@@ -6246,7 +6441,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the versionAliases.
      */
     public com.google.protobuf.ProtocolStringList getVersionAliasesList() {
-      return versionAliases_.getUnmodifiableView();
+      versionAliases_.makeImmutable();
+      return versionAliases_;
     }
     /**
      *
@@ -6343,6 +6539,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       }
       ensureVersionAliasesIsMutable();
       versionAliases_.set(index, value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -6372,6 +6569,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       }
       ensureVersionAliasesIsMutable();
       versionAliases_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -6398,6 +6596,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllVersionAliases(java.lang.Iterable<java.lang.String> values) {
       ensureVersionAliasesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, versionAliases_);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -6421,8 +6620,9 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearVersionAliases() {
-      versionAliases_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      versionAliases_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000004);
+      ;
       onChanged();
       return this;
     }
@@ -6453,6 +6653,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureVersionAliasesIsMutable();
       versionAliases_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -8304,6 +8505,127 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private java.lang.Object pipelineJob_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field is populated if the model is produced by a pipeline
+     * job.
+     * </pre>
+     *
+     * <code>
+     * string pipeline_job = 47 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The pipelineJob.
+     */
+    public java.lang.String getPipelineJob() {
+      java.lang.Object ref = pipelineJob_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        pipelineJob_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field is populated if the model is produced by a pipeline
+     * job.
+     * </pre>
+     *
+     * <code>
+     * string pipeline_job = 47 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for pipelineJob.
+     */
+    public com.google.protobuf.ByteString getPipelineJobBytes() {
+      java.lang.Object ref = pipelineJob_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        pipelineJob_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field is populated if the model is produced by a pipeline
+     * job.
+     * </pre>
+     *
+     * <code>
+     * string pipeline_job = 47 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The pipelineJob to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPipelineJob(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      pipelineJob_ = value;
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field is populated if the model is produced by a pipeline
+     * job.
+     * </pre>
+     *
+     * <code>
+     * string pipeline_job = 47 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPipelineJob() {
+      pipelineJob_ = getDefaultInstance().getPipelineJob();
+      bitField0_ = (bitField0_ & ~0x00002000);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field is populated if the model is produced by a pipeline
+     * job.
+     * </pre>
+     *
+     * <code>
+     * string pipeline_job = 47 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for pipelineJob to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPipelineJobBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      pipelineJob_ = value;
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
     private com.google.cloud.aiplatform.v1.ModelContainerSpec containerSpec_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.aiplatform.v1.ModelContainerSpec,
@@ -8328,7 +8650,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the containerSpec field is set.
      */
     public boolean hasContainerSpec() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
     /**
      *
@@ -8380,7 +8702,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       } else {
         containerSpecBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -8406,7 +8728,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       } else {
         containerSpecBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -8427,7 +8749,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeContainerSpec(com.google.cloud.aiplatform.v1.ModelContainerSpec value) {
       if (containerSpecBuilder_ == null) {
-        if (((bitField0_ & 0x00002000) != 0)
+        if (((bitField0_ & 0x00004000) != 0)
             && containerSpec_ != null
             && containerSpec_
                 != com.google.cloud.aiplatform.v1.ModelContainerSpec.getDefaultInstance()) {
@@ -8438,7 +8760,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       } else {
         containerSpecBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -8458,7 +8780,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearContainerSpec() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       containerSpec_ = null;
       if (containerSpecBuilder_ != null) {
         containerSpecBuilder_.dispose();
@@ -8483,7 +8805,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.aiplatform.v1.ModelContainerSpec.Builder getContainerSpecBuilder() {
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return getContainerSpecFieldBuilder().getBuilder();
     }
@@ -8608,7 +8930,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       artifactUri_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -8626,7 +8948,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearArtifactUri() {
       artifactUri_ = getDefaultInstance().getArtifactUri();
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       onChanged();
       return this;
     }
@@ -8649,7 +8971,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       artifactUri_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -8658,10 +8980,10 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureSupportedDeploymentResourcesTypesIsMutable() {
-      if (!((bitField0_ & 0x00008000) != 0)) {
+      if (!((bitField0_ & 0x00010000) != 0)) {
         supportedDeploymentResourcesTypes_ =
             new java.util.ArrayList<java.lang.Integer>(supportedDeploymentResourcesTypes_);
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00010000;
       }
     }
     /**
@@ -8918,7 +9240,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSupportedDeploymentResourcesTypes() {
       supportedDeploymentResourcesTypes_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       onChanged();
       return this;
     }
@@ -9103,15 +9425,15 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList supportedInputStorageFormats_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList supportedInputStorageFormats_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureSupportedInputStorageFormatsIsMutable() {
-      if (!((bitField0_ & 0x00010000) != 0)) {
+      if (!supportedInputStorageFormats_.isModifiable()) {
         supportedInputStorageFormats_ =
             new com.google.protobuf.LazyStringArrayList(supportedInputStorageFormats_);
-        bitField0_ |= 0x00010000;
       }
+      bitField0_ |= 0x00020000;
     }
     /**
      *
@@ -9122,30 +9444,39 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * If
      * [PredictSchemata.instance_schema_uri][google.cloud.aiplatform.v1.PredictSchemata.instance_schema_uri]
      * exists, the instances should be given as per that schema.
+     *
      * The possible formats are:
+     *
      * * `jsonl`
      * The JSON Lines format, where each instance is a single line. Uses
      * [GcsSource][google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig.gcs_source].
+     *
      * * `csv`
      * The CSV format, where each instance is a single comma-separated line.
      * The first line in the file is the header, containing comma-separated field
      * names. Uses
      * [GcsSource][google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig.gcs_source].
+     *
      * * `tf-record`
      * The TFRecord format, where each instance is a single record in tfrecord
      * syntax. Uses
      * [GcsSource][google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig.gcs_source].
+     *
      * * `tf-record-gzip`
      * Similar to `tf-record`, but the file is gzipped. Uses
      * [GcsSource][google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig.gcs_source].
+     *
      * * `bigquery`
      * Each instance is a single row in BigQuery. Uses
      * [BigQuerySource][google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig.bigquery_source].
+     *
      * * `file-list`
      * Each line of the file is the location of an instance to process, uses
      * `gcs_source` field of the
      * [InputConfig][google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig]
      * object.
+     *
+     *
      * If this Model doesn't support any of these formats it means it cannot be
      * used with a
      * [BatchPredictionJob][google.cloud.aiplatform.v1.BatchPredictionJob].
@@ -9164,7 +9495,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the supportedInputStorageFormats.
      */
     public com.google.protobuf.ProtocolStringList getSupportedInputStorageFormatsList() {
-      return supportedInputStorageFormats_.getUnmodifiableView();
+      supportedInputStorageFormats_.makeImmutable();
+      return supportedInputStorageFormats_;
     }
     /**
      *
@@ -9175,30 +9507,39 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * If
      * [PredictSchemata.instance_schema_uri][google.cloud.aiplatform.v1.PredictSchemata.instance_schema_uri]
      * exists, the instances should be given as per that schema.
+     *
      * The possible formats are:
+     *
      * * `jsonl`
      * The JSON Lines format, where each instance is a single line. Uses
      * [GcsSource][google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig.gcs_source].
+     *
      * * `csv`
      * The CSV format, where each instance is a single comma-separated line.
      * The first line in the file is the header, containing comma-separated field
      * names. Uses
      * [GcsSource][google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig.gcs_source].
+     *
      * * `tf-record`
      * The TFRecord format, where each instance is a single record in tfrecord
      * syntax. Uses
      * [GcsSource][google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig.gcs_source].
+     *
      * * `tf-record-gzip`
      * Similar to `tf-record`, but the file is gzipped. Uses
      * [GcsSource][google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig.gcs_source].
+     *
      * * `bigquery`
      * Each instance is a single row in BigQuery. Uses
      * [BigQuerySource][google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig.bigquery_source].
+     *
      * * `file-list`
      * Each line of the file is the location of an instance to process, uses
      * `gcs_source` field of the
      * [InputConfig][google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig]
      * object.
+     *
+     *
      * If this Model doesn't support any of these formats it means it cannot be
      * used with a
      * [BatchPredictionJob][google.cloud.aiplatform.v1.BatchPredictionJob].
@@ -9228,30 +9569,39 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * If
      * [PredictSchemata.instance_schema_uri][google.cloud.aiplatform.v1.PredictSchemata.instance_schema_uri]
      * exists, the instances should be given as per that schema.
+     *
      * The possible formats are:
+     *
      * * `jsonl`
      * The JSON Lines format, where each instance is a single line. Uses
      * [GcsSource][google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig.gcs_source].
+     *
      * * `csv`
      * The CSV format, where each instance is a single comma-separated line.
      * The first line in the file is the header, containing comma-separated field
      * names. Uses
      * [GcsSource][google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig.gcs_source].
+     *
      * * `tf-record`
      * The TFRecord format, where each instance is a single record in tfrecord
      * syntax. Uses
      * [GcsSource][google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig.gcs_source].
+     *
      * * `tf-record-gzip`
      * Similar to `tf-record`, but the file is gzipped. Uses
      * [GcsSource][google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig.gcs_source].
+     *
      * * `bigquery`
      * Each instance is a single row in BigQuery. Uses
      * [BigQuerySource][google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig.bigquery_source].
+     *
      * * `file-list`
      * Each line of the file is the location of an instance to process, uses
      * `gcs_source` field of the
      * [InputConfig][google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig]
      * object.
+     *
+     *
      * If this Model doesn't support any of these formats it means it cannot be
      * used with a
      * [BatchPredictionJob][google.cloud.aiplatform.v1.BatchPredictionJob].
@@ -9282,30 +9632,39 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * If
      * [PredictSchemata.instance_schema_uri][google.cloud.aiplatform.v1.PredictSchemata.instance_schema_uri]
      * exists, the instances should be given as per that schema.
+     *
      * The possible formats are:
+     *
      * * `jsonl`
      * The JSON Lines format, where each instance is a single line. Uses
      * [GcsSource][google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig.gcs_source].
+     *
      * * `csv`
      * The CSV format, where each instance is a single comma-separated line.
      * The first line in the file is the header, containing comma-separated field
      * names. Uses
      * [GcsSource][google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig.gcs_source].
+     *
      * * `tf-record`
      * The TFRecord format, where each instance is a single record in tfrecord
      * syntax. Uses
      * [GcsSource][google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig.gcs_source].
+     *
      * * `tf-record-gzip`
      * Similar to `tf-record`, but the file is gzipped. Uses
      * [GcsSource][google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig.gcs_source].
+     *
      * * `bigquery`
      * Each instance is a single row in BigQuery. Uses
      * [BigQuerySource][google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig.bigquery_source].
+     *
      * * `file-list`
      * Each line of the file is the location of an instance to process, uses
      * `gcs_source` field of the
      * [InputConfig][google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig]
      * object.
+     *
+     *
      * If this Model doesn't support any of these formats it means it cannot be
      * used with a
      * [BatchPredictionJob][google.cloud.aiplatform.v1.BatchPredictionJob].
@@ -9336,30 +9695,39 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * If
      * [PredictSchemata.instance_schema_uri][google.cloud.aiplatform.v1.PredictSchemata.instance_schema_uri]
      * exists, the instances should be given as per that schema.
+     *
      * The possible formats are:
+     *
      * * `jsonl`
      * The JSON Lines format, where each instance is a single line. Uses
      * [GcsSource][google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig.gcs_source].
+     *
      * * `csv`
      * The CSV format, where each instance is a single comma-separated line.
      * The first line in the file is the header, containing comma-separated field
      * names. Uses
      * [GcsSource][google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig.gcs_source].
+     *
      * * `tf-record`
      * The TFRecord format, where each instance is a single record in tfrecord
      * syntax. Uses
      * [GcsSource][google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig.gcs_source].
+     *
      * * `tf-record-gzip`
      * Similar to `tf-record`, but the file is gzipped. Uses
      * [GcsSource][google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig.gcs_source].
+     *
      * * `bigquery`
      * Each instance is a single row in BigQuery. Uses
      * [BigQuerySource][google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig.bigquery_source].
+     *
      * * `file-list`
      * Each line of the file is the location of an instance to process, uses
      * `gcs_source` field of the
      * [InputConfig][google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig]
      * object.
+     *
+     *
      * If this Model doesn't support any of these formats it means it cannot be
      * used with a
      * [BatchPredictionJob][google.cloud.aiplatform.v1.BatchPredictionJob].
@@ -9385,6 +9753,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       }
       ensureSupportedInputStorageFormatsIsMutable();
       supportedInputStorageFormats_.set(index, value);
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -9397,30 +9766,39 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * If
      * [PredictSchemata.instance_schema_uri][google.cloud.aiplatform.v1.PredictSchemata.instance_schema_uri]
      * exists, the instances should be given as per that schema.
+     *
      * The possible formats are:
+     *
      * * `jsonl`
      * The JSON Lines format, where each instance is a single line. Uses
      * [GcsSource][google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig.gcs_source].
+     *
      * * `csv`
      * The CSV format, where each instance is a single comma-separated line.
      * The first line in the file is the header, containing comma-separated field
      * names. Uses
      * [GcsSource][google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig.gcs_source].
+     *
      * * `tf-record`
      * The TFRecord format, where each instance is a single record in tfrecord
      * syntax. Uses
      * [GcsSource][google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig.gcs_source].
+     *
      * * `tf-record-gzip`
      * Similar to `tf-record`, but the file is gzipped. Uses
      * [GcsSource][google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig.gcs_source].
+     *
      * * `bigquery`
      * Each instance is a single row in BigQuery. Uses
      * [BigQuerySource][google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig.bigquery_source].
+     *
      * * `file-list`
      * Each line of the file is the location of an instance to process, uses
      * `gcs_source` field of the
      * [InputConfig][google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig]
      * object.
+     *
+     *
      * If this Model doesn't support any of these formats it means it cannot be
      * used with a
      * [BatchPredictionJob][google.cloud.aiplatform.v1.BatchPredictionJob].
@@ -9445,6 +9823,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       }
       ensureSupportedInputStorageFormatsIsMutable();
       supportedInputStorageFormats_.add(value);
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -9457,30 +9836,39 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * If
      * [PredictSchemata.instance_schema_uri][google.cloud.aiplatform.v1.PredictSchemata.instance_schema_uri]
      * exists, the instances should be given as per that schema.
+     *
      * The possible formats are:
+     *
      * * `jsonl`
      * The JSON Lines format, where each instance is a single line. Uses
      * [GcsSource][google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig.gcs_source].
+     *
      * * `csv`
      * The CSV format, where each instance is a single comma-separated line.
      * The first line in the file is the header, containing comma-separated field
      * names. Uses
      * [GcsSource][google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig.gcs_source].
+     *
      * * `tf-record`
      * The TFRecord format, where each instance is a single record in tfrecord
      * syntax. Uses
      * [GcsSource][google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig.gcs_source].
+     *
      * * `tf-record-gzip`
      * Similar to `tf-record`, but the file is gzipped. Uses
      * [GcsSource][google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig.gcs_source].
+     *
      * * `bigquery`
      * Each instance is a single row in BigQuery. Uses
      * [BigQuerySource][google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig.bigquery_source].
+     *
      * * `file-list`
      * Each line of the file is the location of an instance to process, uses
      * `gcs_source` field of the
      * [InputConfig][google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig]
      * object.
+     *
+     *
      * If this Model doesn't support any of these formats it means it cannot be
      * used with a
      * [BatchPredictionJob][google.cloud.aiplatform.v1.BatchPredictionJob].
@@ -9502,6 +9890,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllSupportedInputStorageFormats(java.lang.Iterable<java.lang.String> values) {
       ensureSupportedInputStorageFormatsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, supportedInputStorageFormats_);
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -9514,30 +9903,39 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * If
      * [PredictSchemata.instance_schema_uri][google.cloud.aiplatform.v1.PredictSchemata.instance_schema_uri]
      * exists, the instances should be given as per that schema.
+     *
      * The possible formats are:
+     *
      * * `jsonl`
      * The JSON Lines format, where each instance is a single line. Uses
      * [GcsSource][google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig.gcs_source].
+     *
      * * `csv`
      * The CSV format, where each instance is a single comma-separated line.
      * The first line in the file is the header, containing comma-separated field
      * names. Uses
      * [GcsSource][google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig.gcs_source].
+     *
      * * `tf-record`
      * The TFRecord format, where each instance is a single record in tfrecord
      * syntax. Uses
      * [GcsSource][google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig.gcs_source].
+     *
      * * `tf-record-gzip`
      * Similar to `tf-record`, but the file is gzipped. Uses
      * [GcsSource][google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig.gcs_source].
+     *
      * * `bigquery`
      * Each instance is a single row in BigQuery. Uses
      * [BigQuerySource][google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig.bigquery_source].
+     *
      * * `file-list`
      * Each line of the file is the location of an instance to process, uses
      * `gcs_source` field of the
      * [InputConfig][google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig]
      * object.
+     *
+     *
      * If this Model doesn't support any of these formats it means it cannot be
      * used with a
      * [BatchPredictionJob][google.cloud.aiplatform.v1.BatchPredictionJob].
@@ -9556,8 +9954,9 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSupportedInputStorageFormats() {
-      supportedInputStorageFormats_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00010000);
+      supportedInputStorageFormats_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00020000);
+      ;
       onChanged();
       return this;
     }
@@ -9570,30 +9969,39 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * If
      * [PredictSchemata.instance_schema_uri][google.cloud.aiplatform.v1.PredictSchemata.instance_schema_uri]
      * exists, the instances should be given as per that schema.
+     *
      * The possible formats are:
+     *
      * * `jsonl`
      * The JSON Lines format, where each instance is a single line. Uses
      * [GcsSource][google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig.gcs_source].
+     *
      * * `csv`
      * The CSV format, where each instance is a single comma-separated line.
      * The first line in the file is the header, containing comma-separated field
      * names. Uses
      * [GcsSource][google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig.gcs_source].
+     *
      * * `tf-record`
      * The TFRecord format, where each instance is a single record in tfrecord
      * syntax. Uses
      * [GcsSource][google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig.gcs_source].
+     *
      * * `tf-record-gzip`
      * Similar to `tf-record`, but the file is gzipped. Uses
      * [GcsSource][google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig.gcs_source].
+     *
      * * `bigquery`
      * Each instance is a single row in BigQuery. Uses
      * [BigQuerySource][google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig.bigquery_source].
+     *
      * * `file-list`
      * Each line of the file is the location of an instance to process, uses
      * `gcs_source` field of the
      * [InputConfig][google.cloud.aiplatform.v1.BatchPredictionJob.InputConfig]
      * object.
+     *
+     *
      * If this Model doesn't support any of these formats it means it cannot be
      * used with a
      * [BatchPredictionJob][google.cloud.aiplatform.v1.BatchPredictionJob].
@@ -9619,19 +10027,20 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureSupportedInputStorageFormatsIsMutable();
       supportedInputStorageFormats_.add(value);
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList supportedOutputStorageFormats_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList supportedOutputStorageFormats_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureSupportedOutputStorageFormatsIsMutable() {
-      if (!((bitField0_ & 0x00020000) != 0)) {
+      if (!supportedOutputStorageFormats_.isModifiable()) {
         supportedOutputStorageFormats_ =
             new com.google.protobuf.LazyStringArrayList(supportedOutputStorageFormats_);
-        bitField0_ |= 0x00020000;
       }
+      bitField0_ |= 0x00040000;
     }
     /**
      *
@@ -9646,19 +10055,25 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * exist, the predictions are returned together with their instances. In other
      * words, the prediction has the original instance data first, followed by the
      * actual prediction content (as per the schema).
+     *
      * The possible formats are:
+     *
      * * `jsonl`
      * The JSON Lines format, where each prediction is a single line. Uses
      * [GcsDestination][google.cloud.aiplatform.v1.BatchPredictionJob.OutputConfig.gcs_destination].
+     *
      * * `csv`
      * The CSV format, where each prediction is a single comma-separated line.
      * The first line in the file is the header, containing comma-separated field
      * names. Uses
      * [GcsDestination][google.cloud.aiplatform.v1.BatchPredictionJob.OutputConfig.gcs_destination].
+     *
      * * `bigquery`
      * Each prediction is a single row in a BigQuery table, uses
      * [BigQueryDestination][google.cloud.aiplatform.v1.BatchPredictionJob.OutputConfig.bigquery_destination]
      * .
+     *
+     *
      * If this Model doesn't support any of these formats it means it cannot be
      * used with a
      * [BatchPredictionJob][google.cloud.aiplatform.v1.BatchPredictionJob].
@@ -9677,7 +10092,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the supportedOutputStorageFormats.
      */
     public com.google.protobuf.ProtocolStringList getSupportedOutputStorageFormatsList() {
-      return supportedOutputStorageFormats_.getUnmodifiableView();
+      supportedOutputStorageFormats_.makeImmutable();
+      return supportedOutputStorageFormats_;
     }
     /**
      *
@@ -9692,19 +10108,25 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * exist, the predictions are returned together with their instances. In other
      * words, the prediction has the original instance data first, followed by the
      * actual prediction content (as per the schema).
+     *
      * The possible formats are:
+     *
      * * `jsonl`
      * The JSON Lines format, where each prediction is a single line. Uses
      * [GcsDestination][google.cloud.aiplatform.v1.BatchPredictionJob.OutputConfig.gcs_destination].
+     *
      * * `csv`
      * The CSV format, where each prediction is a single comma-separated line.
      * The first line in the file is the header, containing comma-separated field
      * names. Uses
      * [GcsDestination][google.cloud.aiplatform.v1.BatchPredictionJob.OutputConfig.gcs_destination].
+     *
      * * `bigquery`
      * Each prediction is a single row in a BigQuery table, uses
      * [BigQueryDestination][google.cloud.aiplatform.v1.BatchPredictionJob.OutputConfig.bigquery_destination]
      * .
+     *
+     *
      * If this Model doesn't support any of these formats it means it cannot be
      * used with a
      * [BatchPredictionJob][google.cloud.aiplatform.v1.BatchPredictionJob].
@@ -9738,19 +10160,25 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * exist, the predictions are returned together with their instances. In other
      * words, the prediction has the original instance data first, followed by the
      * actual prediction content (as per the schema).
+     *
      * The possible formats are:
+     *
      * * `jsonl`
      * The JSON Lines format, where each prediction is a single line. Uses
      * [GcsDestination][google.cloud.aiplatform.v1.BatchPredictionJob.OutputConfig.gcs_destination].
+     *
      * * `csv`
      * The CSV format, where each prediction is a single comma-separated line.
      * The first line in the file is the header, containing comma-separated field
      * names. Uses
      * [GcsDestination][google.cloud.aiplatform.v1.BatchPredictionJob.OutputConfig.gcs_destination].
+     *
      * * `bigquery`
      * Each prediction is a single row in a BigQuery table, uses
      * [BigQueryDestination][google.cloud.aiplatform.v1.BatchPredictionJob.OutputConfig.bigquery_destination]
      * .
+     *
+     *
      * If this Model doesn't support any of these formats it means it cannot be
      * used with a
      * [BatchPredictionJob][google.cloud.aiplatform.v1.BatchPredictionJob].
@@ -9785,19 +10213,25 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * exist, the predictions are returned together with their instances. In other
      * words, the prediction has the original instance data first, followed by the
      * actual prediction content (as per the schema).
+     *
      * The possible formats are:
+     *
      * * `jsonl`
      * The JSON Lines format, where each prediction is a single line. Uses
      * [GcsDestination][google.cloud.aiplatform.v1.BatchPredictionJob.OutputConfig.gcs_destination].
+     *
      * * `csv`
      * The CSV format, where each prediction is a single comma-separated line.
      * The first line in the file is the header, containing comma-separated field
      * names. Uses
      * [GcsDestination][google.cloud.aiplatform.v1.BatchPredictionJob.OutputConfig.gcs_destination].
+     *
      * * `bigquery`
      * Each prediction is a single row in a BigQuery table, uses
      * [BigQueryDestination][google.cloud.aiplatform.v1.BatchPredictionJob.OutputConfig.bigquery_destination]
      * .
+     *
+     *
      * If this Model doesn't support any of these formats it means it cannot be
      * used with a
      * [BatchPredictionJob][google.cloud.aiplatform.v1.BatchPredictionJob].
@@ -9832,19 +10266,25 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * exist, the predictions are returned together with their instances. In other
      * words, the prediction has the original instance data first, followed by the
      * actual prediction content (as per the schema).
+     *
      * The possible formats are:
+     *
      * * `jsonl`
      * The JSON Lines format, where each prediction is a single line. Uses
      * [GcsDestination][google.cloud.aiplatform.v1.BatchPredictionJob.OutputConfig.gcs_destination].
+     *
      * * `csv`
      * The CSV format, where each prediction is a single comma-separated line.
      * The first line in the file is the header, containing comma-separated field
      * names. Uses
      * [GcsDestination][google.cloud.aiplatform.v1.BatchPredictionJob.OutputConfig.gcs_destination].
+     *
      * * `bigquery`
      * Each prediction is a single row in a BigQuery table, uses
      * [BigQueryDestination][google.cloud.aiplatform.v1.BatchPredictionJob.OutputConfig.bigquery_destination]
      * .
+     *
+     *
      * If this Model doesn't support any of these formats it means it cannot be
      * used with a
      * [BatchPredictionJob][google.cloud.aiplatform.v1.BatchPredictionJob].
@@ -9870,6 +10310,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       }
       ensureSupportedOutputStorageFormatsIsMutable();
       supportedOutputStorageFormats_.set(index, value);
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -9886,19 +10327,25 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * exist, the predictions are returned together with their instances. In other
      * words, the prediction has the original instance data first, followed by the
      * actual prediction content (as per the schema).
+     *
      * The possible formats are:
+     *
      * * `jsonl`
      * The JSON Lines format, where each prediction is a single line. Uses
      * [GcsDestination][google.cloud.aiplatform.v1.BatchPredictionJob.OutputConfig.gcs_destination].
+     *
      * * `csv`
      * The CSV format, where each prediction is a single comma-separated line.
      * The first line in the file is the header, containing comma-separated field
      * names. Uses
      * [GcsDestination][google.cloud.aiplatform.v1.BatchPredictionJob.OutputConfig.gcs_destination].
+     *
      * * `bigquery`
      * Each prediction is a single row in a BigQuery table, uses
      * [BigQueryDestination][google.cloud.aiplatform.v1.BatchPredictionJob.OutputConfig.bigquery_destination]
      * .
+     *
+     *
      * If this Model doesn't support any of these formats it means it cannot be
      * used with a
      * [BatchPredictionJob][google.cloud.aiplatform.v1.BatchPredictionJob].
@@ -9923,6 +10370,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       }
       ensureSupportedOutputStorageFormatsIsMutable();
       supportedOutputStorageFormats_.add(value);
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -9939,19 +10387,25 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * exist, the predictions are returned together with their instances. In other
      * words, the prediction has the original instance data first, followed by the
      * actual prediction content (as per the schema).
+     *
      * The possible formats are:
+     *
      * * `jsonl`
      * The JSON Lines format, where each prediction is a single line. Uses
      * [GcsDestination][google.cloud.aiplatform.v1.BatchPredictionJob.OutputConfig.gcs_destination].
+     *
      * * `csv`
      * The CSV format, where each prediction is a single comma-separated line.
      * The first line in the file is the header, containing comma-separated field
      * names. Uses
      * [GcsDestination][google.cloud.aiplatform.v1.BatchPredictionJob.OutputConfig.gcs_destination].
+     *
      * * `bigquery`
      * Each prediction is a single row in a BigQuery table, uses
      * [BigQueryDestination][google.cloud.aiplatform.v1.BatchPredictionJob.OutputConfig.bigquery_destination]
      * .
+     *
+     *
      * If this Model doesn't support any of these formats it means it cannot be
      * used with a
      * [BatchPredictionJob][google.cloud.aiplatform.v1.BatchPredictionJob].
@@ -9975,6 +10429,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       ensureSupportedOutputStorageFormatsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(
           values, supportedOutputStorageFormats_);
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -9991,19 +10446,25 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * exist, the predictions are returned together with their instances. In other
      * words, the prediction has the original instance data first, followed by the
      * actual prediction content (as per the schema).
+     *
      * The possible formats are:
+     *
      * * `jsonl`
      * The JSON Lines format, where each prediction is a single line. Uses
      * [GcsDestination][google.cloud.aiplatform.v1.BatchPredictionJob.OutputConfig.gcs_destination].
+     *
      * * `csv`
      * The CSV format, where each prediction is a single comma-separated line.
      * The first line in the file is the header, containing comma-separated field
      * names. Uses
      * [GcsDestination][google.cloud.aiplatform.v1.BatchPredictionJob.OutputConfig.gcs_destination].
+     *
      * * `bigquery`
      * Each prediction is a single row in a BigQuery table, uses
      * [BigQueryDestination][google.cloud.aiplatform.v1.BatchPredictionJob.OutputConfig.bigquery_destination]
      * .
+     *
+     *
      * If this Model doesn't support any of these formats it means it cannot be
      * used with a
      * [BatchPredictionJob][google.cloud.aiplatform.v1.BatchPredictionJob].
@@ -10022,8 +10483,9 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSupportedOutputStorageFormats() {
-      supportedOutputStorageFormats_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00020000);
+      supportedOutputStorageFormats_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00040000);
+      ;
       onChanged();
       return this;
     }
@@ -10040,19 +10502,25 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * exist, the predictions are returned together with their instances. In other
      * words, the prediction has the original instance data first, followed by the
      * actual prediction content (as per the schema).
+     *
      * The possible formats are:
+     *
      * * `jsonl`
      * The JSON Lines format, where each prediction is a single line. Uses
      * [GcsDestination][google.cloud.aiplatform.v1.BatchPredictionJob.OutputConfig.gcs_destination].
+     *
      * * `csv`
      * The CSV format, where each prediction is a single comma-separated line.
      * The first line in the file is the header, containing comma-separated field
      * names. Uses
      * [GcsDestination][google.cloud.aiplatform.v1.BatchPredictionJob.OutputConfig.gcs_destination].
+     *
      * * `bigquery`
      * Each prediction is a single row in a BigQuery table, uses
      * [BigQueryDestination][google.cloud.aiplatform.v1.BatchPredictionJob.OutputConfig.bigquery_destination]
      * .
+     *
+     *
      * If this Model doesn't support any of these formats it means it cannot be
      * used with a
      * [BatchPredictionJob][google.cloud.aiplatform.v1.BatchPredictionJob].
@@ -10078,6 +10546,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureSupportedOutputStorageFormatsIsMutable();
       supportedOutputStorageFormats_.add(value);
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -10102,7 +10571,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return ((bitField0_ & 0x00040000) != 0);
+      return ((bitField0_ & 0x00080000) != 0);
     }
     /**
      *
@@ -10146,7 +10615,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       } else {
         createTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -10167,7 +10636,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -10184,7 +10653,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00040000) != 0)
+        if (((bitField0_ & 0x00080000) != 0)
             && createTime_ != null
             && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getCreateTimeBuilder().mergeFrom(value);
@@ -10194,7 +10663,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -10210,7 +10679,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCreateTime() {
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       createTime_ = null;
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
@@ -10231,7 +10700,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -10303,7 +10772,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return ((bitField0_ & 0x00080000) != 0);
+      return ((bitField0_ & 0x00100000) != 0);
     }
     /**
      *
@@ -10347,7 +10816,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -10368,7 +10837,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -10385,7 +10854,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00080000) != 0)
+        if (((bitField0_ & 0x00100000) != 0)
             && updateTime_ != null
             && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getUpdateTimeBuilder().mergeFrom(value);
@@ -10395,7 +10864,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       } else {
         updateTimeBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -10411,7 +10880,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearUpdateTime() {
-      bitField0_ = (bitField0_ & ~0x00080000);
+      bitField0_ = (bitField0_ & ~0x00100000);
       updateTime_ = null;
       if (updateTimeBuilder_ != null) {
         updateTimeBuilder_.dispose();
@@ -10432,7 +10901,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
@@ -10488,11 +10957,11 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureDeployedModelsIsMutable() {
-      if (!((bitField0_ & 0x00100000) != 0)) {
+      if (!((bitField0_ & 0x00200000) != 0)) {
         deployedModels_ =
             new java.util.ArrayList<com.google.cloud.aiplatform.v1.DeployedModelRef>(
                 deployedModels_);
-        bitField0_ |= 0x00100000;
+        bitField0_ |= 0x00200000;
       }
     }
 
@@ -10743,7 +11212,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     public Builder clearDeployedModels() {
       if (deployedModelsBuilder_ == null) {
         deployedModels_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00100000);
+        bitField0_ = (bitField0_ & ~0x00200000);
         onChanged();
       } else {
         deployedModelsBuilder_.clear();
@@ -10890,7 +11359,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.aiplatform.v1.DeployedModelRef.Builder,
                 com.google.cloud.aiplatform.v1.DeployedModelRefOrBuilder>(
                 deployedModels_,
-                ((bitField0_ & 0x00100000) != 0),
+                ((bitField0_ & 0x00200000) != 0),
                 getParentForChildren(),
                 isClean());
         deployedModels_ = null;
@@ -10909,6 +11378,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The default explanation specification for this Model.
+     *
      * The Model can be used for
      * [requesting
      * explanation][google.cloud.aiplatform.v1.PredictionService.Explain] after
@@ -10916,6 +11386,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * it is populated. The Model can be used for [batch
      * explanation][google.cloud.aiplatform.v1.BatchPredictionJob.generate_explanation]
      * if it is populated.
+     *
      * All fields of the explanation_spec can be overridden by
      * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec]
      * of
@@ -10923,6 +11394,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * or
      * [explanation_spec][google.cloud.aiplatform.v1.BatchPredictionJob.explanation_spec]
      * of [BatchPredictionJob][google.cloud.aiplatform.v1.BatchPredictionJob].
+     *
      * If the default explanation specification is not set for this Model, this
      * Model can still be used for
      * [requesting
@@ -10943,13 +11415,14 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the explanationSpec field is set.
      */
     public boolean hasExplanationSpec() {
-      return ((bitField0_ & 0x00200000) != 0);
+      return ((bitField0_ & 0x00400000) != 0);
     }
     /**
      *
      *
      * <pre>
      * The default explanation specification for this Model.
+     *
      * The Model can be used for
      * [requesting
      * explanation][google.cloud.aiplatform.v1.PredictionService.Explain] after
@@ -10957,6 +11430,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * it is populated. The Model can be used for [batch
      * explanation][google.cloud.aiplatform.v1.BatchPredictionJob.generate_explanation]
      * if it is populated.
+     *
      * All fields of the explanation_spec can be overridden by
      * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec]
      * of
@@ -10964,6 +11438,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * or
      * [explanation_spec][google.cloud.aiplatform.v1.BatchPredictionJob.explanation_spec]
      * of [BatchPredictionJob][google.cloud.aiplatform.v1.BatchPredictionJob].
+     *
      * If the default explanation specification is not set for this Model, this
      * Model can still be used for
      * [requesting
@@ -10997,6 +11472,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The default explanation specification for this Model.
+     *
      * The Model can be used for
      * [requesting
      * explanation][google.cloud.aiplatform.v1.PredictionService.Explain] after
@@ -11004,6 +11480,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * it is populated. The Model can be used for [batch
      * explanation][google.cloud.aiplatform.v1.BatchPredictionJob.generate_explanation]
      * if it is populated.
+     *
      * All fields of the explanation_spec can be overridden by
      * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec]
      * of
@@ -11011,6 +11488,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * or
      * [explanation_spec][google.cloud.aiplatform.v1.BatchPredictionJob.explanation_spec]
      * of [BatchPredictionJob][google.cloud.aiplatform.v1.BatchPredictionJob].
+     *
      * If the default explanation specification is not set for this Model, this
      * Model can still be used for
      * [requesting
@@ -11037,7 +11515,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       } else {
         explanationSpecBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -11046,6 +11524,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The default explanation specification for this Model.
+     *
      * The Model can be used for
      * [requesting
      * explanation][google.cloud.aiplatform.v1.PredictionService.Explain] after
@@ -11053,6 +11532,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * it is populated. The Model can be used for [batch
      * explanation][google.cloud.aiplatform.v1.BatchPredictionJob.generate_explanation]
      * if it is populated.
+     *
      * All fields of the explanation_spec can be overridden by
      * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec]
      * of
@@ -11060,6 +11540,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * or
      * [explanation_spec][google.cloud.aiplatform.v1.BatchPredictionJob.explanation_spec]
      * of [BatchPredictionJob][google.cloud.aiplatform.v1.BatchPredictionJob].
+     *
      * If the default explanation specification is not set for this Model, this
      * Model can still be used for
      * [requesting
@@ -11084,7 +11565,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       } else {
         explanationSpecBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -11093,6 +11574,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The default explanation specification for this Model.
+     *
      * The Model can be used for
      * [requesting
      * explanation][google.cloud.aiplatform.v1.PredictionService.Explain] after
@@ -11100,6 +11582,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * it is populated. The Model can be used for [batch
      * explanation][google.cloud.aiplatform.v1.BatchPredictionJob.generate_explanation]
      * if it is populated.
+     *
      * All fields of the explanation_spec can be overridden by
      * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec]
      * of
@@ -11107,6 +11590,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * or
      * [explanation_spec][google.cloud.aiplatform.v1.BatchPredictionJob.explanation_spec]
      * of [BatchPredictionJob][google.cloud.aiplatform.v1.BatchPredictionJob].
+     *
      * If the default explanation specification is not set for this Model, this
      * Model can still be used for
      * [requesting
@@ -11126,7 +11610,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeExplanationSpec(com.google.cloud.aiplatform.v1.ExplanationSpec value) {
       if (explanationSpecBuilder_ == null) {
-        if (((bitField0_ & 0x00200000) != 0)
+        if (((bitField0_ & 0x00400000) != 0)
             && explanationSpec_ != null
             && explanationSpec_
                 != com.google.cloud.aiplatform.v1.ExplanationSpec.getDefaultInstance()) {
@@ -11137,7 +11621,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       } else {
         explanationSpecBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -11146,6 +11630,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The default explanation specification for this Model.
+     *
      * The Model can be used for
      * [requesting
      * explanation][google.cloud.aiplatform.v1.PredictionService.Explain] after
@@ -11153,6 +11638,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * it is populated. The Model can be used for [batch
      * explanation][google.cloud.aiplatform.v1.BatchPredictionJob.generate_explanation]
      * if it is populated.
+     *
      * All fields of the explanation_spec can be overridden by
      * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec]
      * of
@@ -11160,6 +11646,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * or
      * [explanation_spec][google.cloud.aiplatform.v1.BatchPredictionJob.explanation_spec]
      * of [BatchPredictionJob][google.cloud.aiplatform.v1.BatchPredictionJob].
+     *
      * If the default explanation specification is not set for this Model, this
      * Model can still be used for
      * [requesting
@@ -11178,7 +11665,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.aiplatform.v1.ExplanationSpec explanation_spec = 23;</code>
      */
     public Builder clearExplanationSpec() {
-      bitField0_ = (bitField0_ & ~0x00200000);
+      bitField0_ = (bitField0_ & ~0x00400000);
       explanationSpec_ = null;
       if (explanationSpecBuilder_ != null) {
         explanationSpecBuilder_.dispose();
@@ -11192,6 +11679,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The default explanation specification for this Model.
+     *
      * The Model can be used for
      * [requesting
      * explanation][google.cloud.aiplatform.v1.PredictionService.Explain] after
@@ -11199,6 +11687,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * it is populated. The Model can be used for [batch
      * explanation][google.cloud.aiplatform.v1.BatchPredictionJob.generate_explanation]
      * if it is populated.
+     *
      * All fields of the explanation_spec can be overridden by
      * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec]
      * of
@@ -11206,6 +11695,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * or
      * [explanation_spec][google.cloud.aiplatform.v1.BatchPredictionJob.explanation_spec]
      * of [BatchPredictionJob][google.cloud.aiplatform.v1.BatchPredictionJob].
+     *
      * If the default explanation specification is not set for this Model, this
      * Model can still be used for
      * [requesting
@@ -11224,7 +11714,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.aiplatform.v1.ExplanationSpec explanation_spec = 23;</code>
      */
     public com.google.cloud.aiplatform.v1.ExplanationSpec.Builder getExplanationSpecBuilder() {
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return getExplanationSpecFieldBuilder().getBuilder();
     }
@@ -11233,6 +11723,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The default explanation specification for this Model.
+     *
      * The Model can be used for
      * [requesting
      * explanation][google.cloud.aiplatform.v1.PredictionService.Explain] after
@@ -11240,6 +11731,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * it is populated. The Model can be used for [batch
      * explanation][google.cloud.aiplatform.v1.BatchPredictionJob.generate_explanation]
      * if it is populated.
+     *
      * All fields of the explanation_spec can be overridden by
      * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec]
      * of
@@ -11247,6 +11739,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * or
      * [explanation_spec][google.cloud.aiplatform.v1.BatchPredictionJob.explanation_spec]
      * of [BatchPredictionJob][google.cloud.aiplatform.v1.BatchPredictionJob].
+     *
      * If the default explanation specification is not set for this Model, this
      * Model can still be used for
      * [requesting
@@ -11278,6 +11771,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The default explanation specification for this Model.
+     *
      * The Model can be used for
      * [requesting
      * explanation][google.cloud.aiplatform.v1.PredictionService.Explain] after
@@ -11285,6 +11779,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * it is populated. The Model can be used for [batch
      * explanation][google.cloud.aiplatform.v1.BatchPredictionJob.generate_explanation]
      * if it is populated.
+     *
      * All fields of the explanation_spec can be overridden by
      * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec]
      * of
@@ -11292,6 +11787,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * or
      * [explanation_spec][google.cloud.aiplatform.v1.BatchPredictionJob.explanation_spec]
      * of [BatchPredictionJob][google.cloud.aiplatform.v1.BatchPredictionJob].
+     *
      * If the default explanation specification is not set for this Model, this
      * Model can still be used for
      * [requesting
@@ -11391,7 +11887,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       etag_ = value;
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -11409,7 +11905,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearEtag() {
       etag_ = getDefaultInstance().getEtag();
-      bitField0_ = (bitField0_ & ~0x00400000);
+      bitField0_ = (bitField0_ & ~0x00800000);
       onChanged();
       return this;
     }
@@ -11432,7 +11928,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       etag_ = value;
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -11454,7 +11950,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return labels_;
     }
@@ -11467,9 +11963,11 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The labels with user-defined metadata to organize your Models.
+     *
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
+     *
      * See https://goo.gl/xmQnxf for more information and examples of labels.
      * </pre>
      *
@@ -11493,9 +11991,11 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The labels with user-defined metadata to organize your Models.
+     *
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
+     *
      * See https://goo.gl/xmQnxf for more information and examples of labels.
      * </pre>
      *
@@ -11510,9 +12010,11 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The labels with user-defined metadata to organize your Models.
+     *
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
+     *
      * See https://goo.gl/xmQnxf for more information and examples of labels.
      * </pre>
      *
@@ -11534,9 +12036,11 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The labels with user-defined metadata to organize your Models.
+     *
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
+     *
      * See https://goo.gl/xmQnxf for more information and examples of labels.
      * </pre>
      *
@@ -11555,7 +12059,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearLabels() {
-      bitField0_ = (bitField0_ & ~0x00800000);
+      bitField0_ = (bitField0_ & ~0x01000000);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -11564,9 +12068,11 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The labels with user-defined metadata to organize your Models.
+     *
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
+     *
      * See https://goo.gl/xmQnxf for more information and examples of labels.
      * </pre>
      *
@@ -11582,7 +12088,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x01000000;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -11590,9 +12096,11 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The labels with user-defined metadata to organize your Models.
+     *
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
+     *
      * See https://goo.gl/xmQnxf for more information and examples of labels.
      * </pre>
      *
@@ -11606,7 +12114,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException("map value");
       }
       internalGetMutableLabels().getMutableMap().put(key, value);
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x01000000;
       return this;
     }
     /**
@@ -11614,9 +12122,11 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The labels with user-defined metadata to organize your Models.
+     *
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
+     *
      * See https://goo.gl/xmQnxf for more information and examples of labels.
      * </pre>
      *
@@ -11624,7 +12134,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x01000000;
       return this;
     }
 
@@ -11647,7 +12157,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the encryptionSpec field is set.
      */
     public boolean hasEncryptionSpec() {
-      return ((bitField0_ & 0x01000000) != 0);
+      return ((bitField0_ & 0x02000000) != 0);
     }
     /**
      *
@@ -11689,7 +12199,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       } else {
         encryptionSpecBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x01000000;
+      bitField0_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -11710,7 +12220,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       } else {
         encryptionSpecBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x01000000;
+      bitField0_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -11726,7 +12236,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeEncryptionSpec(com.google.cloud.aiplatform.v1.EncryptionSpec value) {
       if (encryptionSpecBuilder_ == null) {
-        if (((bitField0_ & 0x01000000) != 0)
+        if (((bitField0_ & 0x02000000) != 0)
             && encryptionSpec_ != null
             && encryptionSpec_
                 != com.google.cloud.aiplatform.v1.EncryptionSpec.getDefaultInstance()) {
@@ -11737,7 +12247,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       } else {
         encryptionSpecBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x01000000;
+      bitField0_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -11752,7 +12262,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 24;</code>
      */
     public Builder clearEncryptionSpec() {
-      bitField0_ = (bitField0_ & ~0x01000000);
+      bitField0_ = (bitField0_ & ~0x02000000);
       encryptionSpec_ = null;
       if (encryptionSpecBuilder_ != null) {
         encryptionSpecBuilder_.dispose();
@@ -11772,7 +12282,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 24;</code>
      */
     public com.google.cloud.aiplatform.v1.EncryptionSpec.Builder getEncryptionSpecBuilder() {
-      bitField0_ |= 0x01000000;
+      bitField0_ |= 0x02000000;
       onChanged();
       return getEncryptionSpecFieldBuilder().getBuilder();
     }
@@ -11843,7 +12353,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the modelSourceInfo field is set.
      */
     public boolean hasModelSourceInfo() {
-      return ((bitField0_ & 0x02000000) != 0);
+      return ((bitField0_ & 0x04000000) != 0);
     }
     /**
      *
@@ -11889,7 +12399,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       } else {
         modelSourceInfoBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x04000000;
       onChanged();
       return this;
     }
@@ -11912,7 +12422,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       } else {
         modelSourceInfoBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x04000000;
       onChanged();
       return this;
     }
@@ -11930,7 +12440,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeModelSourceInfo(com.google.cloud.aiplatform.v1.ModelSourceInfo value) {
       if (modelSourceInfoBuilder_ == null) {
-        if (((bitField0_ & 0x02000000) != 0)
+        if (((bitField0_ & 0x04000000) != 0)
             && modelSourceInfo_ != null
             && modelSourceInfo_
                 != com.google.cloud.aiplatform.v1.ModelSourceInfo.getDefaultInstance()) {
@@ -11941,7 +12451,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       } else {
         modelSourceInfoBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x04000000;
       onChanged();
       return this;
     }
@@ -11958,7 +12468,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearModelSourceInfo() {
-      bitField0_ = (bitField0_ & ~0x02000000);
+      bitField0_ = (bitField0_ & ~0x04000000);
       modelSourceInfo_ = null;
       if (modelSourceInfoBuilder_ != null) {
         modelSourceInfoBuilder_.dispose();
@@ -11980,7 +12490,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.aiplatform.v1.ModelSourceInfo.Builder getModelSourceInfoBuilder() {
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x04000000;
       onChanged();
       return getModelSourceInfoFieldBuilder().getBuilder();
     }
@@ -12055,7 +12565,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the originalModelInfo field is set.
      */
     public boolean hasOriginalModelInfo() {
-      return ((bitField0_ & 0x04000000) != 0);
+      return ((bitField0_ & 0x08000000) != 0);
     }
     /**
      *
@@ -12102,7 +12612,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       } else {
         originalModelInfoBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x08000000;
       onChanged();
       return this;
     }
@@ -12125,7 +12635,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       } else {
         originalModelInfoBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x08000000;
       onChanged();
       return this;
     }
@@ -12144,7 +12654,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeOriginalModelInfo(
         com.google.cloud.aiplatform.v1.Model.OriginalModelInfo value) {
       if (originalModelInfoBuilder_ == null) {
-        if (((bitField0_ & 0x04000000) != 0)
+        if (((bitField0_ & 0x08000000) != 0)
             && originalModelInfo_ != null
             && originalModelInfo_
                 != com.google.cloud.aiplatform.v1.Model.OriginalModelInfo.getDefaultInstance()) {
@@ -12155,7 +12665,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       } else {
         originalModelInfoBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x08000000;
       onChanged();
       return this;
     }
@@ -12172,7 +12682,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearOriginalModelInfo() {
-      bitField0_ = (bitField0_ & ~0x04000000);
+      bitField0_ = (bitField0_ & ~0x08000000);
       originalModelInfo_ = null;
       if (originalModelInfoBuilder_ != null) {
         originalModelInfoBuilder_.dispose();
@@ -12195,7 +12705,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.aiplatform.v1.Model.OriginalModelInfo.Builder
         getOriginalModelInfoBuilder() {
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x08000000;
       onChanged();
       return getOriginalModelInfoFieldBuilder().getBuilder();
     }
@@ -12321,7 +12831,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       metadataArtifact_ = value;
-      bitField0_ |= 0x08000000;
+      bitField0_ |= 0x10000000;
       onChanged();
       return this;
     }
@@ -12341,7 +12851,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearMetadataArtifact() {
       metadataArtifact_ = getDefaultInstance().getMetadataArtifact();
-      bitField0_ = (bitField0_ & ~0x08000000);
+      bitField0_ = (bitField0_ & ~0x10000000);
       onChanged();
       return this;
     }
@@ -12366,7 +12876,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       metadataArtifact_ = value;
-      bitField0_ |= 0x08000000;
+      bitField0_ |= 0x10000000;
       onChanged();
       return this;
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ import com.google.cloud.clouddms.v1.MigrationJob;
 import com.google.cloud.clouddms.v1.MigrationJobName;
 import com.google.cloud.clouddms.v1.OperationMetadata;
 import com.google.cloud.clouddms.v1.VerifyMigrationJobRequest;
+import com.google.protobuf.FieldMask;
 
 public class AsyncVerifyMigrationJobLRO {
 
@@ -41,6 +42,8 @@ public class AsyncVerifyMigrationJobLRO {
       VerifyMigrationJobRequest request =
           VerifyMigrationJobRequest.newBuilder()
               .setName(MigrationJobName.of("[PROJECT]", "[LOCATION]", "[MIGRATION_JOB]").toString())
+              .setUpdateMask(FieldMask.newBuilder().build())
+              .setMigrationJob(MigrationJob.newBuilder().build())
               .build();
       OperationFuture<MigrationJob, OperationMetadata> future =
           dataMigrationServiceClient.verifyMigrationJobOperationCallable().futureCall(request);

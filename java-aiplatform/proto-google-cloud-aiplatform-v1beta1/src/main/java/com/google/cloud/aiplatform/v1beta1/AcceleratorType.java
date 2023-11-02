@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -122,6 +122,16 @@ public enum AcceleratorType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
+   * Nvidia H100 80Gb GPU.
+   * </pre>
+   *
+   * <code>NVIDIA_H100_80GB = 13;</code>
+   */
+  NVIDIA_H100_80GB(13),
+  /**
+   *
+   *
+   * <pre>
    * TPU v2.
    * </pre>
    *
@@ -148,6 +158,16 @@ public enum AcceleratorType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>TPU_V4_POD = 10;</code>
    */
   TPU_V4_POD(10),
+  /**
+   *
+   *
+   * <pre>
+   * TPU v5.
+   * </pre>
+   *
+   * <code>TPU_V5_LITEPOD = 12;</code>
+   */
+  TPU_V5_LITEPOD(12),
   UNRECOGNIZED(-1),
   ;
 
@@ -245,6 +265,16 @@ public enum AcceleratorType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
+   * Nvidia H100 80Gb GPU.
+   * </pre>
+   *
+   * <code>NVIDIA_H100_80GB = 13;</code>
+   */
+  public static final int NVIDIA_H100_80GB_VALUE = 13;
+  /**
+   *
+   *
+   * <pre>
    * TPU v2.
    * </pre>
    *
@@ -271,6 +301,16 @@ public enum AcceleratorType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>TPU_V4_POD = 10;</code>
    */
   public static final int TPU_V4_POD_VALUE = 10;
+  /**
+   *
+   *
+   * <pre>
+   * TPU v5.
+   * </pre>
+   *
+   * <code>TPU_V5_LITEPOD = 12;</code>
+   */
+  public static final int TPU_V5_LITEPOD_VALUE = 12;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -314,12 +354,16 @@ public enum AcceleratorType implements com.google.protobuf.ProtocolMessageEnum {
         return NVIDIA_A100_80GB;
       case 11:
         return NVIDIA_L4;
+      case 13:
+        return NVIDIA_H100_80GB;
       case 6:
         return TPU_V2;
       case 7:
         return TPU_V3;
       case 10:
         return TPU_V4_POD;
+      case 12:
+        return TPU_V5_LITEPOD;
       default:
         return null;
     }

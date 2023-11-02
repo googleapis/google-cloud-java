@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,8 +29,8 @@ public interface ListExecutionsRequestOrBuilder
    * <pre>
    * Required. The Execution from which the Executions should be listed.
    * To list all Executions across Jobs, use "-" instead of Job name.
-   * Format: projects/{project}/locations/{location}/jobs/{job}, where {project}
-   * can be project id or number.
+   * Format: `projects/{project}/locations/{location}/jobs/{job}`, where
+   * `{project}` can be project id or number.
    * </pre>
    *
    * <code>
@@ -46,8 +46,8 @@ public interface ListExecutionsRequestOrBuilder
    * <pre>
    * Required. The Execution from which the Executions should be listed.
    * To list all Executions across Jobs, use "-" instead of Job name.
-   * Format: projects/{project}/locations/{location}/jobs/{job}, where {project}
-   * can be project id or number.
+   * Format: `projects/{project}/locations/{location}/jobs/{job}`, where
+   * `{project}` can be project id or number.
    * </pre>
    *
    * <code>

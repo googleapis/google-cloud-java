@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,11 +37,6 @@ public final class ProfileStatus extends com.google.protobuf.GeneratedMessageV3
     return new ProfileStatus();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.privacy.dlp.v2.DlpProto
         .internal_static_google_privacy_dlp_v2_ProfileStatus_descriptor;
@@ -63,7 +58,8 @@ public final class ProfileStatus extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Profiling status code and optional message
+   * Profiling status code and optional message. The `status.code` value is 0
+   * (default value) for OK.
    * </pre>
    *
    * <code>.google.rpc.Status status = 1;</code>
@@ -78,7 +74,8 @@ public final class ProfileStatus extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Profiling status code and optional message
+   * Profiling status code and optional message. The `status.code` value is 0
+   * (default value) for OK.
    * </pre>
    *
    * <code>.google.rpc.Status status = 1;</code>
@@ -93,7 +90,8 @@ public final class ProfileStatus extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Profiling status code and optional message
+   * Profiling status code and optional message. The `status.code` value is 0
+   * (default value) for OK.
    * </pre>
    *
    * <code>.google.rpc.Status status = 1;</code>
@@ -527,7 +525,8 @@ public final class ProfileStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Profiling status code and optional message
+     * Profiling status code and optional message. The `status.code` value is 0
+     * (default value) for OK.
      * </pre>
      *
      * <code>.google.rpc.Status status = 1;</code>
@@ -541,7 +540,8 @@ public final class ProfileStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Profiling status code and optional message
+     * Profiling status code and optional message. The `status.code` value is 0
+     * (default value) for OK.
      * </pre>
      *
      * <code>.google.rpc.Status status = 1;</code>
@@ -559,7 +559,8 @@ public final class ProfileStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Profiling status code and optional message
+     * Profiling status code and optional message. The `status.code` value is 0
+     * (default value) for OK.
      * </pre>
      *
      * <code>.google.rpc.Status status = 1;</code>
@@ -581,7 +582,8 @@ public final class ProfileStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Profiling status code and optional message
+     * Profiling status code and optional message. The `status.code` value is 0
+     * (default value) for OK.
      * </pre>
      *
      * <code>.google.rpc.Status status = 1;</code>
@@ -600,7 +602,8 @@ public final class ProfileStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Profiling status code and optional message
+     * Profiling status code and optional message. The `status.code` value is 0
+     * (default value) for OK.
      * </pre>
      *
      * <code>.google.rpc.Status status = 1;</code>
@@ -625,7 +628,8 @@ public final class ProfileStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Profiling status code and optional message
+     * Profiling status code and optional message. The `status.code` value is 0
+     * (default value) for OK.
      * </pre>
      *
      * <code>.google.rpc.Status status = 1;</code>
@@ -644,7 +648,8 @@ public final class ProfileStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Profiling status code and optional message
+     * Profiling status code and optional message. The `status.code` value is 0
+     * (default value) for OK.
      * </pre>
      *
      * <code>.google.rpc.Status status = 1;</code>
@@ -658,7 +663,8 @@ public final class ProfileStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Profiling status code and optional message
+     * Profiling status code and optional message. The `status.code` value is 0
+     * (default value) for OK.
      * </pre>
      *
      * <code>.google.rpc.Status status = 1;</code>
@@ -674,7 +680,8 @@ public final class ProfileStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Profiling status code and optional message
+     * Profiling status code and optional message. The `status.code` value is 0
+     * (default value) for OK.
      * </pre>
      *
      * <code>.google.rpc.Status status = 1;</code>

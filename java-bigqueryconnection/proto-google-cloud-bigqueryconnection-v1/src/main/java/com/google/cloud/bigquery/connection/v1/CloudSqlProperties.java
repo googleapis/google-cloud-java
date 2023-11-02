@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new CloudSqlProperties();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -435,6 +430,7 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
    * <pre>
    * Output only. The account ID of the service used for the purpose of this
    * connection.
+   *
    * When the connection is used in the context of an operation in
    * BigQuery, this service account will serve as the identity being used for
    * connecting to the CloudSQL instance specified in this connection.
@@ -462,6 +458,7 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
    * <pre>
    * Output only. The account ID of the service used for the purpose of this
    * connection.
+   *
    * When the connection is used in the context of an operation in
    * BigQuery, this service account will serve as the identity being used for
    * connecting to the CloudSQL instance specified in this connection.
@@ -1453,6 +1450,7 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Output only. The account ID of the service used for the purpose of this
      * connection.
+     *
      * When the connection is used in the context of an operation in
      * BigQuery, this service account will serve as the identity being used for
      * connecting to the CloudSQL instance specified in this connection.
@@ -1479,6 +1477,7 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Output only. The account ID of the service used for the purpose of this
      * connection.
+     *
      * When the connection is used in the context of an operation in
      * BigQuery, this service account will serve as the identity being used for
      * connecting to the CloudSQL instance specified in this connection.
@@ -1505,6 +1504,7 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Output only. The account ID of the service used for the purpose of this
      * connection.
+     *
      * When the connection is used in the context of an operation in
      * BigQuery, this service account will serve as the identity being used for
      * connecting to the CloudSQL instance specified in this connection.
@@ -1530,6 +1530,7 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Output only. The account ID of the service used for the purpose of this
      * connection.
+     *
      * When the connection is used in the context of an operation in
      * BigQuery, this service account will serve as the identity being used for
      * connecting to the CloudSQL instance specified in this connection.
@@ -1551,6 +1552,7 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Output only. The account ID of the service used for the purpose of this
      * connection.
+     *
      * When the connection is used in the context of an operation in
      * BigQuery, this service account will serve as the identity being used for
      * connecting to the CloudSQL instance specified in this connection.

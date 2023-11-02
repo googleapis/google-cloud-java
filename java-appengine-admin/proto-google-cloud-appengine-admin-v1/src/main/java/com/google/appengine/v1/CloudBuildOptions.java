@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,11 +49,6 @@ public final class CloudBuildOptions extends com.google.protobuf.GeneratedMessag
     return new CloudBuildOptions();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.appengine.v1.DeployProto
         .internal_static_google_appengine_v1_CloudBuildOptions_descriptor;
@@ -79,7 +74,9 @@ public final class CloudBuildOptions extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Path to the yaml file used in deployment, used to determine runtime
    * configuration details.
+   *
    * Required for flexible environment builds.
+   *
    * See https://cloud.google.com/appengine/docs/standard/python/config/appref
    * for more details.
    * </pre>
@@ -106,7 +103,9 @@ public final class CloudBuildOptions extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Path to the yaml file used in deployment, used to determine runtime
    * configuration details.
+   *
    * Required for flexible environment builds.
+   *
    * See https://cloud.google.com/appengine/docs/standard/python/config/appref
    * for more details.
    * </pre>
@@ -566,7 +565,9 @@ public final class CloudBuildOptions extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Path to the yaml file used in deployment, used to determine runtime
      * configuration details.
+     *
      * Required for flexible environment builds.
+     *
      * See https://cloud.google.com/appengine/docs/standard/python/config/appref
      * for more details.
      * </pre>
@@ -592,7 +593,9 @@ public final class CloudBuildOptions extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Path to the yaml file used in deployment, used to determine runtime
      * configuration details.
+     *
      * Required for flexible environment builds.
+     *
      * See https://cloud.google.com/appengine/docs/standard/python/config/appref
      * for more details.
      * </pre>
@@ -618,7 +621,9 @@ public final class CloudBuildOptions extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Path to the yaml file used in deployment, used to determine runtime
      * configuration details.
+     *
      * Required for flexible environment builds.
+     *
      * See https://cloud.google.com/appengine/docs/standard/python/config/appref
      * for more details.
      * </pre>
@@ -643,7 +648,9 @@ public final class CloudBuildOptions extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Path to the yaml file used in deployment, used to determine runtime
      * configuration details.
+     *
      * Required for flexible environment builds.
+     *
      * See https://cloud.google.com/appengine/docs/standard/python/config/appref
      * for more details.
      * </pre>
@@ -664,7 +671,9 @@ public final class CloudBuildOptions extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Path to the yaml file used in deployment, used to determine runtime
      * configuration details.
+     *
      * Required for flexible environment builds.
+     *
      * See https://cloud.google.com/appengine/docs/standard/python/config/appref
      * for more details.
      * </pre>

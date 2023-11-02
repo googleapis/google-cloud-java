@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,11 +50,6 @@ public final class ProductEventDetail extends com.google.protobuf.GeneratedMessa
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ProductEventDetail();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -248,7 +243,9 @@ public final class ProductEventDetail extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * The main product details related to the event.
+   *
    * This field is required for the following event types:
+   *
    * * `add-to-cart`
    * * `add-to-list`
    * * `checkout-start`
@@ -257,11 +254,15 @@ public final class ProductEventDetail extends com.google.protobuf.GeneratedMessa
    * * `refund`
    * * `remove-from-cart`
    * * `remove-from-list`
+   *
    * This field is optional for the following event types:
+   *
    * * `page-visit`
    * * `shopping-cart-page-view` - note that 'product_details' should be set for
    *   this unless the shopping cart is empty.
+   *
    * This field is not allowed for the following event types:
+   *
    * * `category-page-view`
    * * `home-page-view`
    * * `search`
@@ -280,7 +281,9 @@ public final class ProductEventDetail extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * The main product details related to the event.
+   *
    * This field is required for the following event types:
+   *
    * * `add-to-cart`
    * * `add-to-list`
    * * `checkout-start`
@@ -289,11 +292,15 @@ public final class ProductEventDetail extends com.google.protobuf.GeneratedMessa
    * * `refund`
    * * `remove-from-cart`
    * * `remove-from-list`
+   *
    * This field is optional for the following event types:
+   *
    * * `page-visit`
    * * `shopping-cart-page-view` - note that 'product_details' should be set for
    *   this unless the shopping cart is empty.
+   *
    * This field is not allowed for the following event types:
+   *
    * * `category-page-view`
    * * `home-page-view`
    * * `search`
@@ -313,7 +320,9 @@ public final class ProductEventDetail extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * The main product details related to the event.
+   *
    * This field is required for the following event types:
+   *
    * * `add-to-cart`
    * * `add-to-list`
    * * `checkout-start`
@@ -322,11 +331,15 @@ public final class ProductEventDetail extends com.google.protobuf.GeneratedMessa
    * * `refund`
    * * `remove-from-cart`
    * * `remove-from-list`
+   *
    * This field is optional for the following event types:
+   *
    * * `page-visit`
    * * `shopping-cart-page-view` - note that 'product_details' should be set for
    *   this unless the shopping cart is empty.
+   *
    * This field is not allowed for the following event types:
+   *
    * * `category-page-view`
    * * `home-page-view`
    * * `search`
@@ -344,7 +357,9 @@ public final class ProductEventDetail extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * The main product details related to the event.
+   *
    * This field is required for the following event types:
+   *
    * * `add-to-cart`
    * * `add-to-list`
    * * `checkout-start`
@@ -353,11 +368,15 @@ public final class ProductEventDetail extends com.google.protobuf.GeneratedMessa
    * * `refund`
    * * `remove-from-cart`
    * * `remove-from-list`
+   *
    * This field is optional for the following event types:
+   *
    * * `page-visit`
    * * `shopping-cart-page-view` - note that 'product_details' should be set for
    *   this unless the shopping cart is empty.
+   *
    * This field is not allowed for the following event types:
+   *
    * * `category-page-view`
    * * `home-page-view`
    * * `search`
@@ -375,7 +394,9 @@ public final class ProductEventDetail extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * The main product details related to the event.
+   *
    * This field is required for the following event types:
+   *
    * * `add-to-cart`
    * * `add-to-list`
    * * `checkout-start`
@@ -384,11 +405,15 @@ public final class ProductEventDetail extends com.google.protobuf.GeneratedMessa
    * * `refund`
    * * `remove-from-cart`
    * * `remove-from-list`
+   *
    * This field is optional for the following event types:
+   *
    * * `page-visit`
    * * `shopping-cart-page-view` - note that 'product_details' should be set for
    *   this unless the shopping cart is empty.
+   *
    * This field is not allowed for the following event types:
+   *
    * * `category-page-view`
    * * `home-page-view`
    * * `search`
@@ -468,6 +493,7 @@ public final class ProductEventDetail extends com.google.protobuf.GeneratedMessa
    * <pre>
    * Optional. The id or name of the associated shopping cart. This id is used
    * to associate multiple items added or present in the cart before purchase.
+   *
    * This can only be set for `add-to-cart`, `remove-from-cart`,
    * `checkout-start`, `purchase-complete`, or `shopping-cart-page-view` events.
    * </pre>
@@ -494,6 +520,7 @@ public final class ProductEventDetail extends com.google.protobuf.GeneratedMessa
    * <pre>
    * Optional. The id or name of the associated shopping cart. This id is used
    * to associate multiple items added or present in the cart before purchase.
+   *
    * This can only be set for `add-to-cart`, `remove-from-cart`,
    * `checkout-start`, `purchase-complete`, or `shopping-cart-page-view` events.
    * </pre>
@@ -1799,7 +1826,9 @@ public final class ProductEventDetail extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The main product details related to the event.
+     *
      * This field is required for the following event types:
+     *
      * * `add-to-cart`
      * * `add-to-list`
      * * `checkout-start`
@@ -1808,11 +1837,15 @@ public final class ProductEventDetail extends com.google.protobuf.GeneratedMessa
      * * `refund`
      * * `remove-from-cart`
      * * `remove-from-list`
+     *
      * This field is optional for the following event types:
+     *
      * * `page-visit`
      * * `shopping-cart-page-view` - note that 'product_details' should be set for
      *   this unless the shopping cart is empty.
+     *
      * This field is not allowed for the following event types:
+     *
      * * `category-page-view`
      * * `home-page-view`
      * * `search`
@@ -1834,7 +1867,9 @@ public final class ProductEventDetail extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The main product details related to the event.
+     *
      * This field is required for the following event types:
+     *
      * * `add-to-cart`
      * * `add-to-list`
      * * `checkout-start`
@@ -1843,11 +1878,15 @@ public final class ProductEventDetail extends com.google.protobuf.GeneratedMessa
      * * `refund`
      * * `remove-from-cart`
      * * `remove-from-list`
+     *
      * This field is optional for the following event types:
+     *
      * * `page-visit`
      * * `shopping-cart-page-view` - note that 'product_details' should be set for
      *   this unless the shopping cart is empty.
+     *
      * This field is not allowed for the following event types:
+     *
      * * `category-page-view`
      * * `home-page-view`
      * * `search`
@@ -1868,7 +1907,9 @@ public final class ProductEventDetail extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The main product details related to the event.
+     *
      * This field is required for the following event types:
+     *
      * * `add-to-cart`
      * * `add-to-list`
      * * `checkout-start`
@@ -1877,11 +1918,15 @@ public final class ProductEventDetail extends com.google.protobuf.GeneratedMessa
      * * `refund`
      * * `remove-from-cart`
      * * `remove-from-list`
+     *
      * This field is optional for the following event types:
+     *
      * * `page-visit`
      * * `shopping-cart-page-view` - note that 'product_details' should be set for
      *   this unless the shopping cart is empty.
+     *
      * This field is not allowed for the following event types:
+     *
      * * `category-page-view`
      * * `home-page-view`
      * * `search`
@@ -1903,7 +1948,9 @@ public final class ProductEventDetail extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The main product details related to the event.
+     *
      * This field is required for the following event types:
+     *
      * * `add-to-cart`
      * * `add-to-list`
      * * `checkout-start`
@@ -1912,11 +1959,15 @@ public final class ProductEventDetail extends com.google.protobuf.GeneratedMessa
      * * `refund`
      * * `remove-from-cart`
      * * `remove-from-list`
+     *
      * This field is optional for the following event types:
+     *
      * * `page-visit`
      * * `shopping-cart-page-view` - note that 'product_details' should be set for
      *   this unless the shopping cart is empty.
+     *
      * This field is not allowed for the following event types:
+     *
      * * `category-page-view`
      * * `home-page-view`
      * * `search`
@@ -1944,7 +1995,9 @@ public final class ProductEventDetail extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The main product details related to the event.
+     *
      * This field is required for the following event types:
+     *
      * * `add-to-cart`
      * * `add-to-list`
      * * `checkout-start`
@@ -1953,11 +2006,15 @@ public final class ProductEventDetail extends com.google.protobuf.GeneratedMessa
      * * `refund`
      * * `remove-from-cart`
      * * `remove-from-list`
+     *
      * This field is optional for the following event types:
+     *
      * * `page-visit`
      * * `shopping-cart-page-view` - note that 'product_details' should be set for
      *   this unless the shopping cart is empty.
+     *
      * This field is not allowed for the following event types:
+     *
      * * `category-page-view`
      * * `home-page-view`
      * * `search`
@@ -1983,7 +2040,9 @@ public final class ProductEventDetail extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The main product details related to the event.
+     *
      * This field is required for the following event types:
+     *
      * * `add-to-cart`
      * * `add-to-list`
      * * `checkout-start`
@@ -1992,11 +2051,15 @@ public final class ProductEventDetail extends com.google.protobuf.GeneratedMessa
      * * `refund`
      * * `remove-from-cart`
      * * `remove-from-list`
+     *
      * This field is optional for the following event types:
+     *
      * * `page-visit`
      * * `shopping-cart-page-view` - note that 'product_details' should be set for
      *   this unless the shopping cart is empty.
+     *
      * This field is not allowed for the following event types:
+     *
      * * `category-page-view`
      * * `home-page-view`
      * * `search`
@@ -2024,7 +2087,9 @@ public final class ProductEventDetail extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The main product details related to the event.
+     *
      * This field is required for the following event types:
+     *
      * * `add-to-cart`
      * * `add-to-list`
      * * `checkout-start`
@@ -2033,11 +2098,15 @@ public final class ProductEventDetail extends com.google.protobuf.GeneratedMessa
      * * `refund`
      * * `remove-from-cart`
      * * `remove-from-list`
+     *
      * This field is optional for the following event types:
+     *
      * * `page-visit`
      * * `shopping-cart-page-view` - note that 'product_details' should be set for
      *   this unless the shopping cart is empty.
+     *
      * This field is not allowed for the following event types:
+     *
      * * `category-page-view`
      * * `home-page-view`
      * * `search`
@@ -2065,7 +2134,9 @@ public final class ProductEventDetail extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The main product details related to the event.
+     *
      * This field is required for the following event types:
+     *
      * * `add-to-cart`
      * * `add-to-list`
      * * `checkout-start`
@@ -2074,11 +2145,15 @@ public final class ProductEventDetail extends com.google.protobuf.GeneratedMessa
      * * `refund`
      * * `remove-from-cart`
      * * `remove-from-list`
+     *
      * This field is optional for the following event types:
+     *
      * * `page-visit`
      * * `shopping-cart-page-view` - note that 'product_details' should be set for
      *   this unless the shopping cart is empty.
+     *
      * This field is not allowed for the following event types:
+     *
      * * `category-page-view`
      * * `home-page-view`
      * * `search`
@@ -2103,7 +2178,9 @@ public final class ProductEventDetail extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The main product details related to the event.
+     *
      * This field is required for the following event types:
+     *
      * * `add-to-cart`
      * * `add-to-list`
      * * `checkout-start`
@@ -2112,11 +2189,15 @@ public final class ProductEventDetail extends com.google.protobuf.GeneratedMessa
      * * `refund`
      * * `remove-from-cart`
      * * `remove-from-list`
+     *
      * This field is optional for the following event types:
+     *
      * * `page-visit`
      * * `shopping-cart-page-view` - note that 'product_details' should be set for
      *   this unless the shopping cart is empty.
+     *
      * This field is not allowed for the following event types:
+     *
      * * `category-page-view`
      * * `home-page-view`
      * * `search`
@@ -2142,7 +2223,9 @@ public final class ProductEventDetail extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The main product details related to the event.
+     *
      * This field is required for the following event types:
+     *
      * * `add-to-cart`
      * * `add-to-list`
      * * `checkout-start`
@@ -2151,11 +2234,15 @@ public final class ProductEventDetail extends com.google.protobuf.GeneratedMessa
      * * `refund`
      * * `remove-from-cart`
      * * `remove-from-list`
+     *
      * This field is optional for the following event types:
+     *
      * * `page-visit`
      * * `shopping-cart-page-view` - note that 'product_details' should be set for
      *   this unless the shopping cart is empty.
+     *
      * This field is not allowed for the following event types:
+     *
      * * `category-page-view`
      * * `home-page-view`
      * * `search`
@@ -2181,7 +2268,9 @@ public final class ProductEventDetail extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The main product details related to the event.
+     *
      * This field is required for the following event types:
+     *
      * * `add-to-cart`
      * * `add-to-list`
      * * `checkout-start`
@@ -2190,11 +2279,15 @@ public final class ProductEventDetail extends com.google.protobuf.GeneratedMessa
      * * `refund`
      * * `remove-from-cart`
      * * `remove-from-list`
+     *
      * This field is optional for the following event types:
+     *
      * * `page-visit`
      * * `shopping-cart-page-view` - note that 'product_details' should be set for
      *   this unless the shopping cart is empty.
+     *
      * This field is not allowed for the following event types:
+     *
      * * `category-page-view`
      * * `home-page-view`
      * * `search`
@@ -2218,7 +2311,9 @@ public final class ProductEventDetail extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The main product details related to the event.
+     *
      * This field is required for the following event types:
+     *
      * * `add-to-cart`
      * * `add-to-list`
      * * `checkout-start`
@@ -2227,11 +2322,15 @@ public final class ProductEventDetail extends com.google.protobuf.GeneratedMessa
      * * `refund`
      * * `remove-from-cart`
      * * `remove-from-list`
+     *
      * This field is optional for the following event types:
+     *
      * * `page-visit`
      * * `shopping-cart-page-view` - note that 'product_details' should be set for
      *   this unless the shopping cart is empty.
+     *
      * This field is not allowed for the following event types:
+     *
      * * `category-page-view`
      * * `home-page-view`
      * * `search`
@@ -2255,7 +2354,9 @@ public final class ProductEventDetail extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The main product details related to the event.
+     *
      * This field is required for the following event types:
+     *
      * * `add-to-cart`
      * * `add-to-list`
      * * `checkout-start`
@@ -2264,11 +2365,15 @@ public final class ProductEventDetail extends com.google.protobuf.GeneratedMessa
      * * `refund`
      * * `remove-from-cart`
      * * `remove-from-list`
+     *
      * This field is optional for the following event types:
+     *
      * * `page-visit`
      * * `shopping-cart-page-view` - note that 'product_details' should be set for
      *   this unless the shopping cart is empty.
+     *
      * This field is not allowed for the following event types:
+     *
      * * `category-page-view`
      * * `home-page-view`
      * * `search`
@@ -2286,7 +2391,9 @@ public final class ProductEventDetail extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The main product details related to the event.
+     *
      * This field is required for the following event types:
+     *
      * * `add-to-cart`
      * * `add-to-list`
      * * `checkout-start`
@@ -2295,11 +2402,15 @@ public final class ProductEventDetail extends com.google.protobuf.GeneratedMessa
      * * `refund`
      * * `remove-from-cart`
      * * `remove-from-list`
+     *
      * This field is optional for the following event types:
+     *
      * * `page-visit`
      * * `shopping-cart-page-view` - note that 'product_details' should be set for
      *   this unless the shopping cart is empty.
+     *
      * This field is not allowed for the following event types:
+     *
      * * `category-page-view`
      * * `home-page-view`
      * * `search`
@@ -2321,7 +2432,9 @@ public final class ProductEventDetail extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The main product details related to the event.
+     *
      * This field is required for the following event types:
+     *
      * * `add-to-cart`
      * * `add-to-list`
      * * `checkout-start`
@@ -2330,11 +2443,15 @@ public final class ProductEventDetail extends com.google.protobuf.GeneratedMessa
      * * `refund`
      * * `remove-from-cart`
      * * `remove-from-list`
+     *
      * This field is optional for the following event types:
+     *
      * * `page-visit`
      * * `shopping-cart-page-view` - note that 'product_details' should be set for
      *   this unless the shopping cart is empty.
+     *
      * This field is not allowed for the following event types:
+     *
      * * `category-page-view`
      * * `home-page-view`
      * * `search`
@@ -2357,7 +2474,9 @@ public final class ProductEventDetail extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The main product details related to the event.
+     *
      * This field is required for the following event types:
+     *
      * * `add-to-cart`
      * * `add-to-list`
      * * `checkout-start`
@@ -2366,11 +2485,15 @@ public final class ProductEventDetail extends com.google.protobuf.GeneratedMessa
      * * `refund`
      * * `remove-from-cart`
      * * `remove-from-list`
+     *
      * This field is optional for the following event types:
+     *
      * * `page-visit`
      * * `shopping-cart-page-view` - note that 'product_details' should be set for
      *   this unless the shopping cart is empty.
+     *
      * This field is not allowed for the following event types:
+     *
      * * `category-page-view`
      * * `home-page-view`
      * * `search`
@@ -2390,7 +2513,9 @@ public final class ProductEventDetail extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The main product details related to the event.
+     *
      * This field is required for the following event types:
+     *
      * * `add-to-cart`
      * * `add-to-list`
      * * `checkout-start`
@@ -2399,11 +2524,15 @@ public final class ProductEventDetail extends com.google.protobuf.GeneratedMessa
      * * `refund`
      * * `remove-from-cart`
      * * `remove-from-list`
+     *
      * This field is optional for the following event types:
+     *
      * * `page-visit`
      * * `shopping-cart-page-view` - note that 'product_details' should be set for
      *   this unless the shopping cart is empty.
+     *
      * This field is not allowed for the following event types:
+     *
      * * `category-page-view`
      * * `home-page-view`
      * * `search`
@@ -2424,7 +2553,9 @@ public final class ProductEventDetail extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The main product details related to the event.
+     *
      * This field is required for the following event types:
+     *
      * * `add-to-cart`
      * * `add-to-list`
      * * `checkout-start`
@@ -2433,11 +2564,15 @@ public final class ProductEventDetail extends com.google.protobuf.GeneratedMessa
      * * `refund`
      * * `remove-from-cart`
      * * `remove-from-list`
+     *
      * This field is optional for the following event types:
+     *
      * * `page-visit`
      * * `shopping-cart-page-view` - note that 'product_details' should be set for
      *   this unless the shopping cart is empty.
+     *
      * This field is not allowed for the following event types:
+     *
      * * `category-page-view`
      * * `home-page-view`
      * * `search`
@@ -2594,6 +2729,7 @@ public final class ProductEventDetail extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Optional. The id or name of the associated shopping cart. This id is used
      * to associate multiple items added or present in the cart before purchase.
+     *
      * This can only be set for `add-to-cart`, `remove-from-cart`,
      * `checkout-start`, `purchase-complete`, or `shopping-cart-page-view` events.
      * </pre>
@@ -2619,6 +2755,7 @@ public final class ProductEventDetail extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Optional. The id or name of the associated shopping cart. This id is used
      * to associate multiple items added or present in the cart before purchase.
+     *
      * This can only be set for `add-to-cart`, `remove-from-cart`,
      * `checkout-start`, `purchase-complete`, or `shopping-cart-page-view` events.
      * </pre>
@@ -2644,6 +2781,7 @@ public final class ProductEventDetail extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Optional. The id or name of the associated shopping cart. This id is used
      * to associate multiple items added or present in the cart before purchase.
+     *
      * This can only be set for `add-to-cart`, `remove-from-cart`,
      * `checkout-start`, `purchase-complete`, or `shopping-cart-page-view` events.
      * </pre>
@@ -2668,6 +2806,7 @@ public final class ProductEventDetail extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Optional. The id or name of the associated shopping cart. This id is used
      * to associate multiple items added or present in the cart before purchase.
+     *
      * This can only be set for `add-to-cart`, `remove-from-cart`,
      * `checkout-start`, `purchase-complete`, or `shopping-cart-page-view` events.
      * </pre>
@@ -2688,6 +2827,7 @@ public final class ProductEventDetail extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Optional. The id or name of the associated shopping cart. This id is used
      * to associate multiple items added or present in the cart before purchase.
+     *
      * This can only be set for `add-to-cart`, `remove-from-cart`,
      * `checkout-start`, `purchase-complete`, or `shopping-cart-page-view` events.
      * </pre>

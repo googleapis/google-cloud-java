@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -78,6 +78,9 @@ public interface VRFOrBuilder
    *
    * <pre>
    * The QOS policy applied to this VRF.
+   * The value is only meaningful when all the vlan attachments have the same
+   * QoS. This field should not be used for new integrations, use vlan
+   * attachment level qos instead. The field is left for backward-compatibility.
    * </pre>
    *
    * <code>.google.cloud.baremetalsolution.v2.VRF.QosPolicy qos_policy = 6;</code>
@@ -90,6 +93,9 @@ public interface VRFOrBuilder
    *
    * <pre>
    * The QOS policy applied to this VRF.
+   * The value is only meaningful when all the vlan attachments have the same
+   * QoS. This field should not be used for new integrations, use vlan
+   * attachment level qos instead. The field is left for backward-compatibility.
    * </pre>
    *
    * <code>.google.cloud.baremetalsolution.v2.VRF.QosPolicy qos_policy = 6;</code>
@@ -102,6 +108,9 @@ public interface VRFOrBuilder
    *
    * <pre>
    * The QOS policy applied to this VRF.
+   * The value is only meaningful when all the vlan attachments have the same
+   * QoS. This field should not be used for new integrations, use vlan
+   * attachment level qos instead. The field is left for backward-compatibility.
    * </pre>
    *
    * <code>.google.cloud.baremetalsolution.v2.VRF.QosPolicy qos_policy = 6;</code>

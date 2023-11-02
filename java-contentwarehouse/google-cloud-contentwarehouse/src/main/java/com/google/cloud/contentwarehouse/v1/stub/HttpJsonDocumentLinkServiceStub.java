@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.contentwarehouse.v1.CreateDocumentLinkRequest;
 import com.google.cloud.contentwarehouse.v1.DeleteDocumentLinkRequest;
@@ -268,23 +269,47 @@ public class HttpJsonDocumentLinkServiceStub extends DocumentLinkServiceStub {
             HttpJsonCallSettings.<ListLinkedTargetsRequest, ListLinkedTargetsResponse>newBuilder()
                 .setMethodDescriptor(listLinkedTargetsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ListLinkedSourcesRequest, ListLinkedSourcesResponse>
         listLinkedSourcesTransportSettings =
             HttpJsonCallSettings.<ListLinkedSourcesRequest, ListLinkedSourcesResponse>newBuilder()
                 .setMethodDescriptor(listLinkedSourcesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<CreateDocumentLinkRequest, DocumentLink>
         createDocumentLinkTransportSettings =
             HttpJsonCallSettings.<CreateDocumentLinkRequest, DocumentLink>newBuilder()
                 .setMethodDescriptor(createDocumentLinkMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteDocumentLinkRequest, Empty> deleteDocumentLinkTransportSettings =
         HttpJsonCallSettings.<DeleteDocumentLinkRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteDocumentLinkMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
 
     this.listLinkedTargetsCallable =

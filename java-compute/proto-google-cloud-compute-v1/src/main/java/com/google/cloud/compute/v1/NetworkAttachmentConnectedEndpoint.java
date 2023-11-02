@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,7 +41,7 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
   private NetworkAttachmentConnectedEndpoint() {
     ipAddress_ = "";
     projectIdOrNum_ = "";
-    secondaryIpCidrRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    secondaryIpCidrRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
     status_ = "";
     subnetwork_ = "";
   }
@@ -50,11 +50,6 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new NetworkAttachmentConnectedEndpoint();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -312,7 +307,7 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
    *
    *
    * <pre>
-   * The IP address assigned to the producer instance network interface. This value will be a range in case of Serverless.
+   * The IPv4 address assigned to the producer instance network interface. This value will be a range in case of Serverless.
    * </pre>
    *
    * <code>optional string ip_address = 406272220;</code>
@@ -327,7 +322,7 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
    *
    *
    * <pre>
-   * The IP address assigned to the producer instance network interface. This value will be a range in case of Serverless.
+   * The IPv4 address assigned to the producer instance network interface. This value will be a range in case of Serverless.
    * </pre>
    *
    * <code>optional string ip_address = 406272220;</code>
@@ -350,7 +345,7 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
    *
    *
    * <pre>
-   * The IP address assigned to the producer instance network interface. This value will be a range in case of Serverless.
+   * The IPv4 address assigned to the producer instance network interface. This value will be a range in case of Serverless.
    * </pre>
    *
    * <code>optional string ip_address = 406272220;</code>
@@ -439,12 +434,13 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
   public static final int SECONDARY_IP_CIDR_RANGES_FIELD_NUMBER = 117184788;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList secondaryIpCidrRanges_;
+  private com.google.protobuf.LazyStringArrayList secondaryIpCidrRanges_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
    * <pre>
-   * Alias IP ranges from the same subnetwork
+   * Alias IP ranges from the same subnetwork.
    * </pre>
    *
    * <code>repeated string secondary_ip_cidr_ranges = 117184788;</code>
@@ -458,7 +454,7 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
    *
    *
    * <pre>
-   * Alias IP ranges from the same subnetwork
+   * Alias IP ranges from the same subnetwork.
    * </pre>
    *
    * <code>repeated string secondary_ip_cidr_ranges = 117184788;</code>
@@ -472,7 +468,7 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
    *
    *
    * <pre>
-   * Alias IP ranges from the same subnetwork
+   * Alias IP ranges from the same subnetwork.
    * </pre>
    *
    * <code>repeated string secondary_ip_cidr_ranges = 117184788;</code>
@@ -487,7 +483,7 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
    *
    *
    * <pre>
-   * Alias IP ranges from the same subnetwork
+   * Alias IP ranges from the same subnetwork.
    * </pre>
    *
    * <code>repeated string secondary_ip_cidr_ranges = 117184788;</code>
@@ -899,8 +895,7 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
       bitField0_ = 0;
       ipAddress_ = "";
       projectIdOrNum_ = "";
-      secondaryIpCidrRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      secondaryIpCidrRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
       status_ = "";
       subnetwork_ = "";
       return this;
@@ -931,21 +926,11 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
     public com.google.cloud.compute.v1.NetworkAttachmentConnectedEndpoint buildPartial() {
       com.google.cloud.compute.v1.NetworkAttachmentConnectedEndpoint result =
           new com.google.cloud.compute.v1.NetworkAttachmentConnectedEndpoint(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(
-        com.google.cloud.compute.v1.NetworkAttachmentConnectedEndpoint result) {
-      if (((bitField0_ & 0x00000004) != 0)) {
-        secondaryIpCidrRanges_ = secondaryIpCidrRanges_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.secondaryIpCidrRanges_ = secondaryIpCidrRanges_;
     }
 
     private void buildPartial0(
@@ -959,6 +944,10 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.projectIdOrNum_ = projectIdOrNum_;
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        secondaryIpCidrRanges_.makeImmutable();
+        result.secondaryIpCidrRanges_ = secondaryIpCidrRanges_;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.status_ = status_;
@@ -1031,7 +1020,7 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
       if (!other.secondaryIpCidrRanges_.isEmpty()) {
         if (secondaryIpCidrRanges_.isEmpty()) {
           secondaryIpCidrRanges_ = other.secondaryIpCidrRanges_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ |= 0x00000004;
         } else {
           ensureSecondaryIpCidrRangesIsMutable();
           secondaryIpCidrRanges_.addAll(other.secondaryIpCidrRanges_);
@@ -1129,7 +1118,7 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
      *
      *
      * <pre>
-     * The IP address assigned to the producer instance network interface. This value will be a range in case of Serverless.
+     * The IPv4 address assigned to the producer instance network interface. This value will be a range in case of Serverless.
      * </pre>
      *
      * <code>optional string ip_address = 406272220;</code>
@@ -1143,7 +1132,7 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
      *
      *
      * <pre>
-     * The IP address assigned to the producer instance network interface. This value will be a range in case of Serverless.
+     * The IPv4 address assigned to the producer instance network interface. This value will be a range in case of Serverless.
      * </pre>
      *
      * <code>optional string ip_address = 406272220;</code>
@@ -1165,7 +1154,7 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
      *
      *
      * <pre>
-     * The IP address assigned to the producer instance network interface. This value will be a range in case of Serverless.
+     * The IPv4 address assigned to the producer instance network interface. This value will be a range in case of Serverless.
      * </pre>
      *
      * <code>optional string ip_address = 406272220;</code>
@@ -1187,7 +1176,7 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
      *
      *
      * <pre>
-     * The IP address assigned to the producer instance network interface. This value will be a range in case of Serverless.
+     * The IPv4 address assigned to the producer instance network interface. This value will be a range in case of Serverless.
      * </pre>
      *
      * <code>optional string ip_address = 406272220;</code>
@@ -1208,7 +1197,7 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
      *
      *
      * <pre>
-     * The IP address assigned to the producer instance network interface. This value will be a range in case of Serverless.
+     * The IPv4 address assigned to the producer instance network interface. This value will be a range in case of Serverless.
      * </pre>
      *
      * <code>optional string ip_address = 406272220;</code>
@@ -1225,7 +1214,7 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
      *
      *
      * <pre>
-     * The IP address assigned to the producer instance network interface. This value will be a range in case of Serverless.
+     * The IPv4 address assigned to the producer instance network interface. This value will be a range in case of Serverless.
      * </pre>
      *
      * <code>optional string ip_address = 406272220;</code>
@@ -1364,21 +1353,21 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
       return this;
     }
 
-    private com.google.protobuf.LazyStringList secondaryIpCidrRanges_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList secondaryIpCidrRanges_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureSecondaryIpCidrRangesIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!secondaryIpCidrRanges_.isModifiable()) {
         secondaryIpCidrRanges_ =
             new com.google.protobuf.LazyStringArrayList(secondaryIpCidrRanges_);
-        bitField0_ |= 0x00000004;
       }
+      bitField0_ |= 0x00000004;
     }
     /**
      *
      *
      * <pre>
-     * Alias IP ranges from the same subnetwork
+     * Alias IP ranges from the same subnetwork.
      * </pre>
      *
      * <code>repeated string secondary_ip_cidr_ranges = 117184788;</code>
@@ -1386,13 +1375,14 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
      * @return A list containing the secondaryIpCidrRanges.
      */
     public com.google.protobuf.ProtocolStringList getSecondaryIpCidrRangesList() {
-      return secondaryIpCidrRanges_.getUnmodifiableView();
+      secondaryIpCidrRanges_.makeImmutable();
+      return secondaryIpCidrRanges_;
     }
     /**
      *
      *
      * <pre>
-     * Alias IP ranges from the same subnetwork
+     * Alias IP ranges from the same subnetwork.
      * </pre>
      *
      * <code>repeated string secondary_ip_cidr_ranges = 117184788;</code>
@@ -1406,7 +1396,7 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
      *
      *
      * <pre>
-     * Alias IP ranges from the same subnetwork
+     * Alias IP ranges from the same subnetwork.
      * </pre>
      *
      * <code>repeated string secondary_ip_cidr_ranges = 117184788;</code>
@@ -1421,7 +1411,7 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
      *
      *
      * <pre>
-     * Alias IP ranges from the same subnetwork
+     * Alias IP ranges from the same subnetwork.
      * </pre>
      *
      * <code>repeated string secondary_ip_cidr_ranges = 117184788;</code>
@@ -1436,7 +1426,7 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
      *
      *
      * <pre>
-     * Alias IP ranges from the same subnetwork
+     * Alias IP ranges from the same subnetwork.
      * </pre>
      *
      * <code>repeated string secondary_ip_cidr_ranges = 117184788;</code>
@@ -1451,6 +1441,7 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
       }
       ensureSecondaryIpCidrRangesIsMutable();
       secondaryIpCidrRanges_.set(index, value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1458,7 +1449,7 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
      *
      *
      * <pre>
-     * Alias IP ranges from the same subnetwork
+     * Alias IP ranges from the same subnetwork.
      * </pre>
      *
      * <code>repeated string secondary_ip_cidr_ranges = 117184788;</code>
@@ -1472,6 +1463,7 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
       }
       ensureSecondaryIpCidrRangesIsMutable();
       secondaryIpCidrRanges_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1479,7 +1471,7 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
      *
      *
      * <pre>
-     * Alias IP ranges from the same subnetwork
+     * Alias IP ranges from the same subnetwork.
      * </pre>
      *
      * <code>repeated string secondary_ip_cidr_ranges = 117184788;</code>
@@ -1490,6 +1482,7 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
     public Builder addAllSecondaryIpCidrRanges(java.lang.Iterable<java.lang.String> values) {
       ensureSecondaryIpCidrRangesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, secondaryIpCidrRanges_);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1497,7 +1490,7 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
      *
      *
      * <pre>
-     * Alias IP ranges from the same subnetwork
+     * Alias IP ranges from the same subnetwork.
      * </pre>
      *
      * <code>repeated string secondary_ip_cidr_ranges = 117184788;</code>
@@ -1505,8 +1498,9 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder clearSecondaryIpCidrRanges() {
-      secondaryIpCidrRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      secondaryIpCidrRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000004);
+      ;
       onChanged();
       return this;
     }
@@ -1514,7 +1508,7 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
      *
      *
      * <pre>
-     * Alias IP ranges from the same subnetwork
+     * Alias IP ranges from the same subnetwork.
      * </pre>
      *
      * <code>repeated string secondary_ip_cidr_ranges = 117184788;</code>
@@ -1529,6 +1523,7 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
       checkByteStringIsUtf8(value);
       ensureSecondaryIpCidrRangesIsMutable();
       secondaryIpCidrRanges_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

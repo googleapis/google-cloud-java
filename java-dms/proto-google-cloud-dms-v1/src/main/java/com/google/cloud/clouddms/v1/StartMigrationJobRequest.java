@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class StartMigrationJobRequest extends com.google.protobuf.Generate
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new StartMigrationJobRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -118,6 +113,25 @@ public final class StartMigrationJobRequest extends com.google.protobuf.Generate
     }
   }
 
+  public static final int SKIP_VALIDATION_FIELD_NUMBER = 2;
+  private boolean skipValidation_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Start the migration job without running prior configuration
+   * verification. Defaults to `false`.
+   * </pre>
+   *
+   * <code>bool skip_validation = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The skipValidation.
+   */
+  @java.lang.Override
+  public boolean getSkipValidation() {
+    return skipValidation_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -135,6 +149,9 @@ public final class StartMigrationJobRequest extends com.google.protobuf.Generate
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
+    if (skipValidation_ != false) {
+      output.writeBool(2, skipValidation_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -146,6 +163,9 @@ public final class StartMigrationJobRequest extends com.google.protobuf.Generate
     size = 0;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+    }
+    if (skipValidation_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, skipValidation_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -164,6 +184,7 @@ public final class StartMigrationJobRequest extends com.google.protobuf.Generate
         (com.google.cloud.clouddms.v1.StartMigrationJobRequest) obj;
 
     if (!getName().equals(other.getName())) return false;
+    if (getSkipValidation() != other.getSkipValidation()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -177,6 +198,8 @@ public final class StartMigrationJobRequest extends com.google.protobuf.Generate
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + SKIP_VALIDATION_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSkipValidation());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -318,6 +341,7 @@ public final class StartMigrationJobRequest extends com.google.protobuf.Generate
       super.clear();
       bitField0_ = 0;
       name_ = "";
+      skipValidation_ = false;
       return this;
     }
 
@@ -356,6 +380,9 @@ public final class StartMigrationJobRequest extends com.google.protobuf.Generate
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.skipValidation_ = skipValidation_;
       }
     }
 
@@ -410,6 +437,9 @@ public final class StartMigrationJobRequest extends com.google.protobuf.Generate
         bitField0_ |= 0x00000001;
         onChanged();
       }
+      if (other.getSkipValidation() != false) {
+        setSkipValidation(other.getSkipValidation());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -442,6 +472,12 @@ public final class StartMigrationJobRequest extends com.google.protobuf.Generate
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
+            case 16:
+              {
+                skipValidation_ = input.readBool();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -563,6 +599,62 @@ public final class StartMigrationJobRequest extends com.google.protobuf.Generate
       checkByteStringIsUtf8(value);
       name_ = value;
       bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    private boolean skipValidation_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Start the migration job without running prior configuration
+     * verification. Defaults to `false`.
+     * </pre>
+     *
+     * <code>bool skip_validation = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The skipValidation.
+     */
+    @java.lang.Override
+    public boolean getSkipValidation() {
+      return skipValidation_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Start the migration job without running prior configuration
+     * verification. Defaults to `false`.
+     * </pre>
+     *
+     * <code>bool skip_validation = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The skipValidation to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSkipValidation(boolean value) {
+
+      skipValidation_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Start the migration job without running prior configuration
+     * verification. Defaults to `false`.
+     * </pre>
+     *
+     * <code>bool skip_validation = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSkipValidation() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      skipValidation_ = false;
       onChanged();
       return this;
     }

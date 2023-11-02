@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,11 +49,6 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new DeviceRegistry();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -466,6 +461,7 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * **Beta Feature**
+   *
    * The default logging verbosity for activity from devices in this registry.
    * The verbosity level can be overridden by Device.log_level.
    * </pre>
@@ -483,6 +479,7 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * **Beta Feature**
+   *
    * The default logging verbosity for activity from devices in this registry.
    * The verbosity level can be overridden by Device.log_level.
    * </pre>
@@ -511,6 +508,7 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
    * empty, no verification is performed. Otherwise, the credentials of a newly
    * created device or added credentials of an updated device should be signed
    * with one of these registry credentials.
+   *
    * Note, however, that existing devices will never be affected by
    * modifications to this list of credentials: after a device has been
    * successfully created in a registry, it should be able to connect even if
@@ -533,6 +531,7 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
    * empty, no verification is performed. Otherwise, the credentials of a newly
    * created device or added credentials of an updated device should be signed
    * with one of these registry credentials.
+   *
    * Note, however, that existing devices will never be affected by
    * modifications to this list of credentials: after a device has been
    * successfully created in a registry, it should be able to connect even if
@@ -556,6 +555,7 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
    * empty, no verification is performed. Otherwise, the credentials of a newly
    * created device or added credentials of an updated device should be signed
    * with one of these registry credentials.
+   *
    * Note, however, that existing devices will never be affected by
    * modifications to this list of credentials: after a device has been
    * successfully created in a registry, it should be able to connect even if
@@ -578,6 +578,7 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
    * empty, no verification is performed. Otherwise, the credentials of a newly
    * created device or added credentials of an updated device should be signed
    * with one of these registry credentials.
+   *
    * Note, however, that existing devices will never be affected by
    * modifications to this list of credentials: after a device has been
    * successfully created in a registry, it should be able to connect even if
@@ -600,6 +601,7 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
    * empty, no verification is performed. Otherwise, the credentials of a newly
    * created device or added credentials of an updated device should be signed
    * with one of these registry credentials.
+   *
    * Note, however, that existing devices will never be affected by
    * modifications to this list of credentials: after a device has been
    * successfully created in a registry, it should be able to connect even if
@@ -2588,6 +2590,7 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * **Beta Feature**
+     *
      * The default logging verbosity for activity from devices in this registry.
      * The verbosity level can be overridden by Device.log_level.
      * </pre>
@@ -2605,6 +2608,7 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * **Beta Feature**
+     *
      * The default logging verbosity for activity from devices in this registry.
      * The verbosity level can be overridden by Device.log_level.
      * </pre>
@@ -2625,6 +2629,7 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * **Beta Feature**
+     *
      * The default logging verbosity for activity from devices in this registry.
      * The verbosity level can be overridden by Device.log_level.
      * </pre>
@@ -2644,6 +2649,7 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * **Beta Feature**
+     *
      * The default logging verbosity for activity from devices in this registry.
      * The verbosity level can be overridden by Device.log_level.
      * </pre>
@@ -2667,6 +2673,7 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * **Beta Feature**
+     *
      * The default logging verbosity for activity from devices in this registry.
      * The verbosity level can be overridden by Device.log_level.
      * </pre>
@@ -2709,6 +2716,7 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
      * empty, no verification is performed. Otherwise, the credentials of a newly
      * created device or added credentials of an updated device should be signed
      * with one of these registry credentials.
+     *
      * Note, however, that existing devices will never be affected by
      * modifications to this list of credentials: after a device has been
      * successfully created in a registry, it should be able to connect even if
@@ -2734,6 +2742,7 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
      * empty, no verification is performed. Otherwise, the credentials of a newly
      * created device or added credentials of an updated device should be signed
      * with one of these registry credentials.
+     *
      * Note, however, that existing devices will never be affected by
      * modifications to this list of credentials: after a device has been
      * successfully created in a registry, it should be able to connect even if
@@ -2759,6 +2768,7 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
      * empty, no verification is performed. Otherwise, the credentials of a newly
      * created device or added credentials of an updated device should be signed
      * with one of these registry credentials.
+     *
      * Note, however, that existing devices will never be affected by
      * modifications to this list of credentials: after a device has been
      * successfully created in a registry, it should be able to connect even if
@@ -2784,6 +2794,7 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
      * empty, no verification is performed. Otherwise, the credentials of a newly
      * created device or added credentials of an updated device should be signed
      * with one of these registry credentials.
+     *
      * Note, however, that existing devices will never be affected by
      * modifications to this list of credentials: after a device has been
      * successfully created in a registry, it should be able to connect even if
@@ -2815,6 +2826,7 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
      * empty, no verification is performed. Otherwise, the credentials of a newly
      * created device or added credentials of an updated device should be signed
      * with one of these registry credentials.
+     *
      * Note, however, that existing devices will never be affected by
      * modifications to this list of credentials: after a device has been
      * successfully created in a registry, it should be able to connect even if
@@ -2844,6 +2856,7 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
      * empty, no verification is performed. Otherwise, the credentials of a newly
      * created device or added credentials of an updated device should be signed
      * with one of these registry credentials.
+     *
      * Note, however, that existing devices will never be affected by
      * modifications to this list of credentials: after a device has been
      * successfully created in a registry, it should be able to connect even if
@@ -2875,6 +2888,7 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
      * empty, no verification is performed. Otherwise, the credentials of a newly
      * created device or added credentials of an updated device should be signed
      * with one of these registry credentials.
+     *
      * Note, however, that existing devices will never be affected by
      * modifications to this list of credentials: after a device has been
      * successfully created in a registry, it should be able to connect even if
@@ -2906,6 +2920,7 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
      * empty, no verification is performed. Otherwise, the credentials of a newly
      * created device or added credentials of an updated device should be signed
      * with one of these registry credentials.
+     *
      * Note, however, that existing devices will never be affected by
      * modifications to this list of credentials: after a device has been
      * successfully created in a registry, it should be able to connect even if
@@ -2935,6 +2950,7 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
      * empty, no verification is performed. Otherwise, the credentials of a newly
      * created device or added credentials of an updated device should be signed
      * with one of these registry credentials.
+     *
      * Note, however, that existing devices will never be affected by
      * modifications to this list of credentials: after a device has been
      * successfully created in a registry, it should be able to connect even if
@@ -2964,6 +2980,7 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
      * empty, no verification is performed. Otherwise, the credentials of a newly
      * created device or added credentials of an updated device should be signed
      * with one of these registry credentials.
+     *
      * Note, however, that existing devices will never be affected by
      * modifications to this list of credentials: after a device has been
      * successfully created in a registry, it should be able to connect even if
@@ -2993,6 +3010,7 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
      * empty, no verification is performed. Otherwise, the credentials of a newly
      * created device or added credentials of an updated device should be signed
      * with one of these registry credentials.
+     *
      * Note, however, that existing devices will never be affected by
      * modifications to this list of credentials: after a device has been
      * successfully created in a registry, it should be able to connect even if
@@ -3021,6 +3039,7 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
      * empty, no verification is performed. Otherwise, the credentials of a newly
      * created device or added credentials of an updated device should be signed
      * with one of these registry credentials.
+     *
      * Note, however, that existing devices will never be affected by
      * modifications to this list of credentials: after a device has been
      * successfully created in a registry, it should be able to connect even if
@@ -3049,6 +3068,7 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
      * empty, no verification is performed. Otherwise, the credentials of a newly
      * created device or added credentials of an updated device should be signed
      * with one of these registry credentials.
+     *
      * Note, however, that existing devices will never be affected by
      * modifications to this list of credentials: after a device has been
      * successfully created in a registry, it should be able to connect even if
@@ -3070,6 +3090,7 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
      * empty, no verification is performed. Otherwise, the credentials of a newly
      * created device or added credentials of an updated device should be signed
      * with one of these registry credentials.
+     *
      * Note, however, that existing devices will never be affected by
      * modifications to this list of credentials: after a device has been
      * successfully created in a registry, it should be able to connect even if
@@ -3095,6 +3116,7 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
      * empty, no verification is performed. Otherwise, the credentials of a newly
      * created device or added credentials of an updated device should be signed
      * with one of these registry credentials.
+     *
      * Note, however, that existing devices will never be affected by
      * modifications to this list of credentials: after a device has been
      * successfully created in a registry, it should be able to connect even if
@@ -3121,6 +3143,7 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
      * empty, no verification is performed. Otherwise, the credentials of a newly
      * created device or added credentials of an updated device should be signed
      * with one of these registry credentials.
+     *
      * Note, however, that existing devices will never be affected by
      * modifications to this list of credentials: after a device has been
      * successfully created in a registry, it should be able to connect even if
@@ -3143,6 +3166,7 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
      * empty, no verification is performed. Otherwise, the credentials of a newly
      * created device or added credentials of an updated device should be signed
      * with one of these registry credentials.
+     *
      * Note, however, that existing devices will never be affected by
      * modifications to this list of credentials: after a device has been
      * successfully created in a registry, it should be able to connect even if
@@ -3165,6 +3189,7 @@ public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
      * empty, no verification is performed. Otherwise, the credentials of a newly
      * created device or added credentials of an updated device should be signed
      * with one of these registry credentials.
+     *
      * Note, however, that existing devices will never be affected by
      * modifications to this list of credentials: after a device has been
      * successfully created in a registry, it should be able to connect even if

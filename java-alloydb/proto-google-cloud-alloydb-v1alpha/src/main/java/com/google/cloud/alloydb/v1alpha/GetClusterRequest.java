@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,17 +39,13 @@ public final class GetClusterRequest extends com.google.protobuf.GeneratedMessag
 
   private GetClusterRequest() {
     name_ = "";
+    view_ = 0;
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new GetClusterRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -124,6 +120,47 @@ public final class GetClusterRequest extends com.google.protobuf.GeneratedMessag
     }
   }
 
+  public static final int VIEW_FIELD_NUMBER = 2;
+  private int view_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The view of the cluster to return. Returns all default fields if
+   * not set.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1alpha.ClusterView view = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for view.
+   */
+  @java.lang.Override
+  public int getViewValue() {
+    return view_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The view of the cluster to return. Returns all default fields if
+   * not set.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1alpha.ClusterView view = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The view.
+   */
+  @java.lang.Override
+  public com.google.cloud.alloydb.v1alpha.ClusterView getView() {
+    com.google.cloud.alloydb.v1alpha.ClusterView result =
+        com.google.cloud.alloydb.v1alpha.ClusterView.forNumber(view_);
+    return result == null ? com.google.cloud.alloydb.v1alpha.ClusterView.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -141,6 +178,10 @@ public final class GetClusterRequest extends com.google.protobuf.GeneratedMessag
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
+    if (view_
+        != com.google.cloud.alloydb.v1alpha.ClusterView.CLUSTER_VIEW_UNSPECIFIED.getNumber()) {
+      output.writeEnum(2, view_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -152,6 +193,10 @@ public final class GetClusterRequest extends com.google.protobuf.GeneratedMessag
     size = 0;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+    }
+    if (view_
+        != com.google.cloud.alloydb.v1alpha.ClusterView.CLUSTER_VIEW_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, view_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -170,6 +215,7 @@ public final class GetClusterRequest extends com.google.protobuf.GeneratedMessag
         (com.google.cloud.alloydb.v1alpha.GetClusterRequest) obj;
 
     if (!getName().equals(other.getName())) return false;
+    if (view_ != other.view_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -183,6 +229,8 @@ public final class GetClusterRequest extends com.google.protobuf.GeneratedMessag
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + VIEW_FIELD_NUMBER;
+    hash = (53 * hash) + view_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -323,6 +371,7 @@ public final class GetClusterRequest extends com.google.protobuf.GeneratedMessag
       super.clear();
       bitField0_ = 0;
       name_ = "";
+      view_ = 0;
       return this;
     }
 
@@ -361,6 +410,9 @@ public final class GetClusterRequest extends com.google.protobuf.GeneratedMessag
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.view_ = view_;
       }
     }
 
@@ -415,6 +467,9 @@ public final class GetClusterRequest extends com.google.protobuf.GeneratedMessag
         bitField0_ |= 0x00000001;
         onChanged();
       }
+      if (other.view_ != 0) {
+        setViewValue(other.getViewValue());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -447,6 +502,12 @@ public final class GetClusterRequest extends com.google.protobuf.GeneratedMessag
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
+            case 16:
+              {
+                view_ = input.readEnum();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -583,6 +644,111 @@ public final class GetClusterRequest extends com.google.protobuf.GeneratedMessag
       checkByteStringIsUtf8(value);
       name_ = value;
       bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    private int view_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The view of the cluster to return. Returns all default fields if
+     * not set.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1alpha.ClusterView view = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for view.
+     */
+    @java.lang.Override
+    public int getViewValue() {
+      return view_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The view of the cluster to return. Returns all default fields if
+     * not set.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1alpha.ClusterView view = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for view to set.
+     * @return This builder for chaining.
+     */
+    public Builder setViewValue(int value) {
+      view_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The view of the cluster to return. Returns all default fields if
+     * not set.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1alpha.ClusterView view = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The view.
+     */
+    @java.lang.Override
+    public com.google.cloud.alloydb.v1alpha.ClusterView getView() {
+      com.google.cloud.alloydb.v1alpha.ClusterView result =
+          com.google.cloud.alloydb.v1alpha.ClusterView.forNumber(view_);
+      return result == null ? com.google.cloud.alloydb.v1alpha.ClusterView.UNRECOGNIZED : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The view of the cluster to return. Returns all default fields if
+     * not set.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1alpha.ClusterView view = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The view to set.
+     * @return This builder for chaining.
+     */
+    public Builder setView(com.google.cloud.alloydb.v1alpha.ClusterView value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000002;
+      view_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The view of the cluster to return. Returns all default fields if
+     * not set.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1alpha.ClusterView view = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearView() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      view_ = 0;
       onChanged();
       return this;
     }

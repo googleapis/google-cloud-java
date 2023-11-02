@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,11 +51,6 @@ public final class Explanation extends com.google.protobuf.GeneratedMessageV3
     return new Explanation();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1.ExplanationProto
         .internal_static_google_cloud_aiplatform_v1_Explanation_descriptor;
@@ -80,6 +75,7 @@ public final class Explanation extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. Feature attributions grouped by predicted outputs.
+   *
    * For Models that predict only one output, such as regression Models that
    * predict only one score, there is only one attibution that explains the
    * predicted output. For Models that predict multiple outputs, such as
@@ -87,6 +83,7 @@ public final class Explanation extends com.google.protobuf.GeneratedMessageV3
    * specific item.
    * [Attribution.output_index][google.cloud.aiplatform.v1.Attribution.output_index]
    * can be used to identify which output this attribution is explaining.
+   *
    * If users set
    * [ExplanationParameters.top_k][google.cloud.aiplatform.v1.ExplanationParameters.top_k],
    * the attributions are sorted by
@@ -111,6 +108,7 @@ public final class Explanation extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. Feature attributions grouped by predicted outputs.
+   *
    * For Models that predict only one output, such as regression Models that
    * predict only one score, there is only one attibution that explains the
    * predicted output. For Models that predict multiple outputs, such as
@@ -118,6 +116,7 @@ public final class Explanation extends com.google.protobuf.GeneratedMessageV3
    * specific item.
    * [Attribution.output_index][google.cloud.aiplatform.v1.Attribution.output_index]
    * can be used to identify which output this attribution is explaining.
+   *
    * If users set
    * [ExplanationParameters.top_k][google.cloud.aiplatform.v1.ExplanationParameters.top_k],
    * the attributions are sorted by
@@ -143,6 +142,7 @@ public final class Explanation extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. Feature attributions grouped by predicted outputs.
+   *
    * For Models that predict only one output, such as regression Models that
    * predict only one score, there is only one attibution that explains the
    * predicted output. For Models that predict multiple outputs, such as
@@ -150,6 +150,7 @@ public final class Explanation extends com.google.protobuf.GeneratedMessageV3
    * specific item.
    * [Attribution.output_index][google.cloud.aiplatform.v1.Attribution.output_index]
    * can be used to identify which output this attribution is explaining.
+   *
    * If users set
    * [ExplanationParameters.top_k][google.cloud.aiplatform.v1.ExplanationParameters.top_k],
    * the attributions are sorted by
@@ -174,6 +175,7 @@ public final class Explanation extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. Feature attributions grouped by predicted outputs.
+   *
    * For Models that predict only one output, such as regression Models that
    * predict only one score, there is only one attibution that explains the
    * predicted output. For Models that predict multiple outputs, such as
@@ -181,6 +183,7 @@ public final class Explanation extends com.google.protobuf.GeneratedMessageV3
    * specific item.
    * [Attribution.output_index][google.cloud.aiplatform.v1.Attribution.output_index]
    * can be used to identify which output this attribution is explaining.
+   *
    * If users set
    * [ExplanationParameters.top_k][google.cloud.aiplatform.v1.ExplanationParameters.top_k],
    * the attributions are sorted by
@@ -205,6 +208,7 @@ public final class Explanation extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. Feature attributions grouped by predicted outputs.
+   *
    * For Models that predict only one output, such as regression Models that
    * predict only one score, there is only one attibution that explains the
    * predicted output. For Models that predict multiple outputs, such as
@@ -212,6 +216,7 @@ public final class Explanation extends com.google.protobuf.GeneratedMessageV3
    * specific item.
    * [Attribution.output_index][google.cloud.aiplatform.v1.Attribution.output_index]
    * can be used to identify which output this attribution is explaining.
+   *
    * If users set
    * [ExplanationParameters.top_k][google.cloud.aiplatform.v1.ExplanationParameters.top_k],
    * the attributions are sorted by
@@ -241,6 +246,7 @@ public final class Explanation extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. List of the nearest neighbors for example-based explanations.
+   *
    * For models deployed with the examples explanations feature enabled, the
    * attributions field is empty and instead the neighbors field is populated.
    * </pre>
@@ -258,6 +264,7 @@ public final class Explanation extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. List of the nearest neighbors for example-based explanations.
+   *
    * For models deployed with the examples explanations feature enabled, the
    * attributions field is empty and instead the neighbors field is populated.
    * </pre>
@@ -276,6 +283,7 @@ public final class Explanation extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. List of the nearest neighbors for example-based explanations.
+   *
    * For models deployed with the examples explanations feature enabled, the
    * attributions field is empty and instead the neighbors field is populated.
    * </pre>
@@ -293,6 +301,7 @@ public final class Explanation extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. List of the nearest neighbors for example-based explanations.
+   *
    * For models deployed with the examples explanations feature enabled, the
    * attributions field is empty and instead the neighbors field is populated.
    * </pre>
@@ -310,6 +319,7 @@ public final class Explanation extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. List of the nearest neighbors for example-based explanations.
+   *
    * For models deployed with the examples explanations feature enabled, the
    * attributions field is empty and instead the neighbors field is populated.
    * </pre>
@@ -803,6 +813,7 @@ public final class Explanation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Feature attributions grouped by predicted outputs.
+     *
      * For Models that predict only one output, such as regression Models that
      * predict only one score, there is only one attibution that explains the
      * predicted output. For Models that predict multiple outputs, such as
@@ -810,6 +821,7 @@ public final class Explanation extends com.google.protobuf.GeneratedMessageV3
      * specific item.
      * [Attribution.output_index][google.cloud.aiplatform.v1.Attribution.output_index]
      * can be used to identify which output this attribution is explaining.
+     *
      * If users set
      * [ExplanationParameters.top_k][google.cloud.aiplatform.v1.ExplanationParameters.top_k],
      * the attributions are sorted by
@@ -837,6 +849,7 @@ public final class Explanation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Feature attributions grouped by predicted outputs.
+     *
      * For Models that predict only one output, such as regression Models that
      * predict only one score, there is only one attibution that explains the
      * predicted output. For Models that predict multiple outputs, such as
@@ -844,6 +857,7 @@ public final class Explanation extends com.google.protobuf.GeneratedMessageV3
      * specific item.
      * [Attribution.output_index][google.cloud.aiplatform.v1.Attribution.output_index]
      * can be used to identify which output this attribution is explaining.
+     *
      * If users set
      * [ExplanationParameters.top_k][google.cloud.aiplatform.v1.ExplanationParameters.top_k],
      * the attributions are sorted by
@@ -871,6 +885,7 @@ public final class Explanation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Feature attributions grouped by predicted outputs.
+     *
      * For Models that predict only one output, such as regression Models that
      * predict only one score, there is only one attibution that explains the
      * predicted output. For Models that predict multiple outputs, such as
@@ -878,6 +893,7 @@ public final class Explanation extends com.google.protobuf.GeneratedMessageV3
      * specific item.
      * [Attribution.output_index][google.cloud.aiplatform.v1.Attribution.output_index]
      * can be used to identify which output this attribution is explaining.
+     *
      * If users set
      * [ExplanationParameters.top_k][google.cloud.aiplatform.v1.ExplanationParameters.top_k],
      * the attributions are sorted by
@@ -905,6 +921,7 @@ public final class Explanation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Feature attributions grouped by predicted outputs.
+     *
      * For Models that predict only one output, such as regression Models that
      * predict only one score, there is only one attibution that explains the
      * predicted output. For Models that predict multiple outputs, such as
@@ -912,6 +929,7 @@ public final class Explanation extends com.google.protobuf.GeneratedMessageV3
      * specific item.
      * [Attribution.output_index][google.cloud.aiplatform.v1.Attribution.output_index]
      * can be used to identify which output this attribution is explaining.
+     *
      * If users set
      * [ExplanationParameters.top_k][google.cloud.aiplatform.v1.ExplanationParameters.top_k],
      * the attributions are sorted by
@@ -945,6 +963,7 @@ public final class Explanation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Feature attributions grouped by predicted outputs.
+     *
      * For Models that predict only one output, such as regression Models that
      * predict only one score, there is only one attibution that explains the
      * predicted output. For Models that predict multiple outputs, such as
@@ -952,6 +971,7 @@ public final class Explanation extends com.google.protobuf.GeneratedMessageV3
      * specific item.
      * [Attribution.output_index][google.cloud.aiplatform.v1.Attribution.output_index]
      * can be used to identify which output this attribution is explaining.
+     *
      * If users set
      * [ExplanationParameters.top_k][google.cloud.aiplatform.v1.ExplanationParameters.top_k],
      * the attributions are sorted by
@@ -983,6 +1003,7 @@ public final class Explanation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Feature attributions grouped by predicted outputs.
+     *
      * For Models that predict only one output, such as regression Models that
      * predict only one score, there is only one attibution that explains the
      * predicted output. For Models that predict multiple outputs, such as
@@ -990,6 +1011,7 @@ public final class Explanation extends com.google.protobuf.GeneratedMessageV3
      * specific item.
      * [Attribution.output_index][google.cloud.aiplatform.v1.Attribution.output_index]
      * can be used to identify which output this attribution is explaining.
+     *
      * If users set
      * [ExplanationParameters.top_k][google.cloud.aiplatform.v1.ExplanationParameters.top_k],
      * the attributions are sorted by
@@ -1023,6 +1045,7 @@ public final class Explanation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Feature attributions grouped by predicted outputs.
+     *
      * For Models that predict only one output, such as regression Models that
      * predict only one score, there is only one attibution that explains the
      * predicted output. For Models that predict multiple outputs, such as
@@ -1030,6 +1053,7 @@ public final class Explanation extends com.google.protobuf.GeneratedMessageV3
      * specific item.
      * [Attribution.output_index][google.cloud.aiplatform.v1.Attribution.output_index]
      * can be used to identify which output this attribution is explaining.
+     *
      * If users set
      * [ExplanationParameters.top_k][google.cloud.aiplatform.v1.ExplanationParameters.top_k],
      * the attributions are sorted by
@@ -1063,6 +1087,7 @@ public final class Explanation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Feature attributions grouped by predicted outputs.
+     *
      * For Models that predict only one output, such as regression Models that
      * predict only one score, there is only one attibution that explains the
      * predicted output. For Models that predict multiple outputs, such as
@@ -1070,6 +1095,7 @@ public final class Explanation extends com.google.protobuf.GeneratedMessageV3
      * specific item.
      * [Attribution.output_index][google.cloud.aiplatform.v1.Attribution.output_index]
      * can be used to identify which output this attribution is explaining.
+     *
      * If users set
      * [ExplanationParameters.top_k][google.cloud.aiplatform.v1.ExplanationParameters.top_k],
      * the attributions are sorted by
@@ -1101,6 +1127,7 @@ public final class Explanation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Feature attributions grouped by predicted outputs.
+     *
      * For Models that predict only one output, such as regression Models that
      * predict only one score, there is only one attibution that explains the
      * predicted output. For Models that predict multiple outputs, such as
@@ -1108,6 +1135,7 @@ public final class Explanation extends com.google.protobuf.GeneratedMessageV3
      * specific item.
      * [Attribution.output_index][google.cloud.aiplatform.v1.Attribution.output_index]
      * can be used to identify which output this attribution is explaining.
+     *
      * If users set
      * [ExplanationParameters.top_k][google.cloud.aiplatform.v1.ExplanationParameters.top_k],
      * the attributions are sorted by
@@ -1139,6 +1167,7 @@ public final class Explanation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Feature attributions grouped by predicted outputs.
+     *
      * For Models that predict only one output, such as regression Models that
      * predict only one score, there is only one attibution that explains the
      * predicted output. For Models that predict multiple outputs, such as
@@ -1146,6 +1175,7 @@ public final class Explanation extends com.google.protobuf.GeneratedMessageV3
      * specific item.
      * [Attribution.output_index][google.cloud.aiplatform.v1.Attribution.output_index]
      * can be used to identify which output this attribution is explaining.
+     *
      * If users set
      * [ExplanationParameters.top_k][google.cloud.aiplatform.v1.ExplanationParameters.top_k],
      * the attributions are sorted by
@@ -1177,6 +1207,7 @@ public final class Explanation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Feature attributions grouped by predicted outputs.
+     *
      * For Models that predict only one output, such as regression Models that
      * predict only one score, there is only one attibution that explains the
      * predicted output. For Models that predict multiple outputs, such as
@@ -1184,6 +1215,7 @@ public final class Explanation extends com.google.protobuf.GeneratedMessageV3
      * specific item.
      * [Attribution.output_index][google.cloud.aiplatform.v1.Attribution.output_index]
      * can be used to identify which output this attribution is explaining.
+     *
      * If users set
      * [ExplanationParameters.top_k][google.cloud.aiplatform.v1.ExplanationParameters.top_k],
      * the attributions are sorted by
@@ -1214,6 +1246,7 @@ public final class Explanation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Feature attributions grouped by predicted outputs.
+     *
      * For Models that predict only one output, such as regression Models that
      * predict only one score, there is only one attibution that explains the
      * predicted output. For Models that predict multiple outputs, such as
@@ -1221,6 +1254,7 @@ public final class Explanation extends com.google.protobuf.GeneratedMessageV3
      * specific item.
      * [Attribution.output_index][google.cloud.aiplatform.v1.Attribution.output_index]
      * can be used to identify which output this attribution is explaining.
+     *
      * If users set
      * [ExplanationParameters.top_k][google.cloud.aiplatform.v1.ExplanationParameters.top_k],
      * the attributions are sorted by
@@ -1251,6 +1285,7 @@ public final class Explanation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Feature attributions grouped by predicted outputs.
+     *
      * For Models that predict only one output, such as regression Models that
      * predict only one score, there is only one attibution that explains the
      * predicted output. For Models that predict multiple outputs, such as
@@ -1258,6 +1293,7 @@ public final class Explanation extends com.google.protobuf.GeneratedMessageV3
      * specific item.
      * [Attribution.output_index][google.cloud.aiplatform.v1.Attribution.output_index]
      * can be used to identify which output this attribution is explaining.
+     *
      * If users set
      * [ExplanationParameters.top_k][google.cloud.aiplatform.v1.ExplanationParameters.top_k],
      * the attributions are sorted by
@@ -1281,6 +1317,7 @@ public final class Explanation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Feature attributions grouped by predicted outputs.
+     *
      * For Models that predict only one output, such as regression Models that
      * predict only one score, there is only one attibution that explains the
      * predicted output. For Models that predict multiple outputs, such as
@@ -1288,6 +1325,7 @@ public final class Explanation extends com.google.protobuf.GeneratedMessageV3
      * specific item.
      * [Attribution.output_index][google.cloud.aiplatform.v1.Attribution.output_index]
      * can be used to identify which output this attribution is explaining.
+     *
      * If users set
      * [ExplanationParameters.top_k][google.cloud.aiplatform.v1.ExplanationParameters.top_k],
      * the attributions are sorted by
@@ -1315,6 +1353,7 @@ public final class Explanation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Feature attributions grouped by predicted outputs.
+     *
      * For Models that predict only one output, such as regression Models that
      * predict only one score, there is only one attibution that explains the
      * predicted output. For Models that predict multiple outputs, such as
@@ -1322,6 +1361,7 @@ public final class Explanation extends com.google.protobuf.GeneratedMessageV3
      * specific item.
      * [Attribution.output_index][google.cloud.aiplatform.v1.Attribution.output_index]
      * can be used to identify which output this attribution is explaining.
+     *
      * If users set
      * [ExplanationParameters.top_k][google.cloud.aiplatform.v1.ExplanationParameters.top_k],
      * the attributions are sorted by
@@ -1350,6 +1390,7 @@ public final class Explanation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Feature attributions grouped by predicted outputs.
+     *
      * For Models that predict only one output, such as regression Models that
      * predict only one score, there is only one attibution that explains the
      * predicted output. For Models that predict multiple outputs, such as
@@ -1357,6 +1398,7 @@ public final class Explanation extends com.google.protobuf.GeneratedMessageV3
      * specific item.
      * [Attribution.output_index][google.cloud.aiplatform.v1.Attribution.output_index]
      * can be used to identify which output this attribution is explaining.
+     *
      * If users set
      * [ExplanationParameters.top_k][google.cloud.aiplatform.v1.ExplanationParameters.top_k],
      * the attributions are sorted by
@@ -1381,6 +1423,7 @@ public final class Explanation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Feature attributions grouped by predicted outputs.
+     *
      * For Models that predict only one output, such as regression Models that
      * predict only one score, there is only one attibution that explains the
      * predicted output. For Models that predict multiple outputs, such as
@@ -1388,6 +1431,7 @@ public final class Explanation extends com.google.protobuf.GeneratedMessageV3
      * specific item.
      * [Attribution.output_index][google.cloud.aiplatform.v1.Attribution.output_index]
      * can be used to identify which output this attribution is explaining.
+     *
      * If users set
      * [ExplanationParameters.top_k][google.cloud.aiplatform.v1.ExplanationParameters.top_k],
      * the attributions are sorted by
@@ -1412,6 +1456,7 @@ public final class Explanation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Feature attributions grouped by predicted outputs.
+     *
      * For Models that predict only one output, such as regression Models that
      * predict only one score, there is only one attibution that explains the
      * predicted output. For Models that predict multiple outputs, such as
@@ -1419,6 +1464,7 @@ public final class Explanation extends com.google.protobuf.GeneratedMessageV3
      * specific item.
      * [Attribution.output_index][google.cloud.aiplatform.v1.Attribution.output_index]
      * can be used to identify which output this attribution is explaining.
+     *
      * If users set
      * [ExplanationParameters.top_k][google.cloud.aiplatform.v1.ExplanationParameters.top_k],
      * the attributions are sorted by
@@ -1477,6 +1523,7 @@ public final class Explanation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. List of the nearest neighbors for example-based explanations.
+     *
      * For models deployed with the examples explanations feature enabled, the
      * attributions field is empty and instead the neighbors field is populated.
      * </pre>
@@ -1497,6 +1544,7 @@ public final class Explanation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. List of the nearest neighbors for example-based explanations.
+     *
      * For models deployed with the examples explanations feature enabled, the
      * attributions field is empty and instead the neighbors field is populated.
      * </pre>
@@ -1517,6 +1565,7 @@ public final class Explanation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. List of the nearest neighbors for example-based explanations.
+     *
      * For models deployed with the examples explanations feature enabled, the
      * attributions field is empty and instead the neighbors field is populated.
      * </pre>
@@ -1537,6 +1586,7 @@ public final class Explanation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. List of the nearest neighbors for example-based explanations.
+     *
      * For models deployed with the examples explanations feature enabled, the
      * attributions field is empty and instead the neighbors field is populated.
      * </pre>
@@ -1563,6 +1613,7 @@ public final class Explanation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. List of the nearest neighbors for example-based explanations.
+     *
      * For models deployed with the examples explanations feature enabled, the
      * attributions field is empty and instead the neighbors field is populated.
      * </pre>
@@ -1587,6 +1638,7 @@ public final class Explanation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. List of the nearest neighbors for example-based explanations.
+     *
      * For models deployed with the examples explanations feature enabled, the
      * attributions field is empty and instead the neighbors field is populated.
      * </pre>
@@ -1613,6 +1665,7 @@ public final class Explanation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. List of the nearest neighbors for example-based explanations.
+     *
      * For models deployed with the examples explanations feature enabled, the
      * attributions field is empty and instead the neighbors field is populated.
      * </pre>
@@ -1639,6 +1692,7 @@ public final class Explanation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. List of the nearest neighbors for example-based explanations.
+     *
      * For models deployed with the examples explanations feature enabled, the
      * attributions field is empty and instead the neighbors field is populated.
      * </pre>
@@ -1662,6 +1716,7 @@ public final class Explanation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. List of the nearest neighbors for example-based explanations.
+     *
      * For models deployed with the examples explanations feature enabled, the
      * attributions field is empty and instead the neighbors field is populated.
      * </pre>
@@ -1686,6 +1741,7 @@ public final class Explanation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. List of the nearest neighbors for example-based explanations.
+     *
      * For models deployed with the examples explanations feature enabled, the
      * attributions field is empty and instead the neighbors field is populated.
      * </pre>
@@ -1710,6 +1766,7 @@ public final class Explanation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. List of the nearest neighbors for example-based explanations.
+     *
      * For models deployed with the examples explanations feature enabled, the
      * attributions field is empty and instead the neighbors field is populated.
      * </pre>
@@ -1733,6 +1790,7 @@ public final class Explanation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. List of the nearest neighbors for example-based explanations.
+     *
      * For models deployed with the examples explanations feature enabled, the
      * attributions field is empty and instead the neighbors field is populated.
      * </pre>
@@ -1756,6 +1814,7 @@ public final class Explanation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. List of the nearest neighbors for example-based explanations.
+     *
      * For models deployed with the examples explanations feature enabled, the
      * attributions field is empty and instead the neighbors field is populated.
      * </pre>
@@ -1772,6 +1831,7 @@ public final class Explanation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. List of the nearest neighbors for example-based explanations.
+     *
      * For models deployed with the examples explanations feature enabled, the
      * attributions field is empty and instead the neighbors field is populated.
      * </pre>
@@ -1792,6 +1852,7 @@ public final class Explanation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. List of the nearest neighbors for example-based explanations.
+     *
      * For models deployed with the examples explanations feature enabled, the
      * attributions field is empty and instead the neighbors field is populated.
      * </pre>
@@ -1813,6 +1874,7 @@ public final class Explanation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. List of the nearest neighbors for example-based explanations.
+     *
      * For models deployed with the examples explanations feature enabled, the
      * attributions field is empty and instead the neighbors field is populated.
      * </pre>
@@ -1830,6 +1892,7 @@ public final class Explanation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. List of the nearest neighbors for example-based explanations.
+     *
      * For models deployed with the examples explanations feature enabled, the
      * attributions field is empty and instead the neighbors field is populated.
      * </pre>
@@ -1847,6 +1910,7 @@ public final class Explanation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. List of the nearest neighbors for example-based explanations.
+     *
      * For models deployed with the examples explanations feature enabled, the
      * attributions field is empty and instead the neighbors field is populated.
      * </pre>

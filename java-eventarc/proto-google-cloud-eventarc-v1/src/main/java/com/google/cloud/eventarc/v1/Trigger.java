@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,11 +50,6 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Trigger();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -387,10 +382,12 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. The IAM service account email associated with the trigger. The
    * service account represents the identity of the trigger.
+   *
    * The principal who calls this API must have the `iam.serviceAccounts.actAs`
    * permission in the service account. See
    * https://cloud.google.com/iam/docs/understanding-service-accounts?hl=en#sa_common
    * for more information.
+   *
    * For Cloud Run destinations, this service account is used to generate
    * identity tokens when invoking the service. See
    * https://cloud.google.com/run/docs/triggering/pubsub-push#create-service-account
@@ -423,10 +420,12 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. The IAM service account email associated with the trigger. The
    * service account represents the identity of the trigger.
+   *
    * The principal who calls this API must have the `iam.serviceAccounts.actAs`
    * permission in the service account. See
    * https://cloud.google.com/iam/docs/understanding-service-accounts?hl=en#sa_common
    * for more information.
+   *
    * For Cloud Run destinations, this service account is used to generate
    * identity tokens when invoking the service. See
    * https://cloud.google.com/run/docs/triggering/pubsub-push#create-service-account
@@ -2678,10 +2677,12 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The IAM service account email associated with the trigger. The
      * service account represents the identity of the trigger.
+     *
      * The principal who calls this API must have the `iam.serviceAccounts.actAs`
      * permission in the service account. See
      * https://cloud.google.com/iam/docs/understanding-service-accounts?hl=en#sa_common
      * for more information.
+     *
      * For Cloud Run destinations, this service account is used to generate
      * identity tokens when invoking the service. See
      * https://cloud.google.com/run/docs/triggering/pubsub-push#create-service-account
@@ -2713,10 +2714,12 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The IAM service account email associated with the trigger. The
      * service account represents the identity of the trigger.
+     *
      * The principal who calls this API must have the `iam.serviceAccounts.actAs`
      * permission in the service account. See
      * https://cloud.google.com/iam/docs/understanding-service-accounts?hl=en#sa_common
      * for more information.
+     *
      * For Cloud Run destinations, this service account is used to generate
      * identity tokens when invoking the service. See
      * https://cloud.google.com/run/docs/triggering/pubsub-push#create-service-account
@@ -2748,10 +2751,12 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The IAM service account email associated with the trigger. The
      * service account represents the identity of the trigger.
+     *
      * The principal who calls this API must have the `iam.serviceAccounts.actAs`
      * permission in the service account. See
      * https://cloud.google.com/iam/docs/understanding-service-accounts?hl=en#sa_common
      * for more information.
+     *
      * For Cloud Run destinations, this service account is used to generate
      * identity tokens when invoking the service. See
      * https://cloud.google.com/run/docs/triggering/pubsub-push#create-service-account
@@ -2782,10 +2787,12 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The IAM service account email associated with the trigger. The
      * service account represents the identity of the trigger.
+     *
      * The principal who calls this API must have the `iam.serviceAccounts.actAs`
      * permission in the service account. See
      * https://cloud.google.com/iam/docs/understanding-service-accounts?hl=en#sa_common
      * for more information.
+     *
      * For Cloud Run destinations, this service account is used to generate
      * identity tokens when invoking the service. See
      * https://cloud.google.com/run/docs/triggering/pubsub-push#create-service-account
@@ -2812,10 +2819,12 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The IAM service account email associated with the trigger. The
      * service account represents the identity of the trigger.
+     *
      * The principal who calls this API must have the `iam.serviceAccounts.actAs`
      * permission in the service account. See
      * https://cloud.google.com/iam/docs/understanding-service-accounts?hl=en#sa_common
      * for more information.
+     *
      * For Cloud Run destinations, this service account is used to generate
      * identity tokens when invoking the service. See
      * https://cloud.google.com/run/docs/triggering/pubsub-push#create-service-account

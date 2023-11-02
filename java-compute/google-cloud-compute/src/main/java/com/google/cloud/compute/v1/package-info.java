@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -532,6 +532,27 @@
  *   String interconnectLocation = "interconnectLocation220117603";
  *   InterconnectLocation response =
  *       interconnectLocationsClient.get(project, interconnectLocation);
+ * }
+ * }</pre>
+ *
+ * <p>======================= InterconnectRemoteLocationsClient =======================
+ *
+ * <p>Service Description: The InterconnectRemoteLocations API.
+ *
+ * <p>Sample for InterconnectRemoteLocationsClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (InterconnectRemoteLocationsClient interconnectRemoteLocationsClient =
+ *     InterconnectRemoteLocationsClient.create()) {
+ *   String project = "project-309310695";
+ *   String interconnectRemoteLocation = "interconnectRemoteLocation-993839543";
+ *   InterconnectRemoteLocation response =
+ *       interconnectRemoteLocationsClient.get(project, interconnectRemoteLocation);
  * }
  * }</pre>
  *

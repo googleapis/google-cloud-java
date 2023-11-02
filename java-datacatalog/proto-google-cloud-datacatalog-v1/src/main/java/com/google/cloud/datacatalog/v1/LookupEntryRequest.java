@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,17 +38,15 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
     super(builder);
   }
 
-  private LookupEntryRequest() {}
+  private LookupEntryRequest() {
+    project_ = "";
+    location_ = "";
+  }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new LookupEntryRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -67,6 +65,8 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
   }
 
   private int targetNameCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object targetName_;
 
   public enum TargetNameCase
@@ -124,7 +124,9 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
    * The full name of the Google Cloud Platform resource the Data Catalog
    * entry represents. For more information, see [Full Resource Name]
    * (https://cloud.google.com/apis/design/resource_names#full_resource_name).
+   *
    * Full names are case-sensitive. For example:
+   *
    *  * `//bigquery.googleapis.com/projects/{PROJECT_ID}/datasets/{DATASET_ID}/tables/{TABLE_ID}`
    *  * `//pubsub.googleapis.com/projects/{PROJECT_ID}/topics/{TOPIC_ID}`
    * </pre>
@@ -143,7 +145,9 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
    * The full name of the Google Cloud Platform resource the Data Catalog
    * entry represents. For more information, see [Full Resource Name]
    * (https://cloud.google.com/apis/design/resource_names#full_resource_name).
+   *
    * Full names are case-sensitive. For example:
+   *
    *  * `//bigquery.googleapis.com/projects/{PROJECT_ID}/datasets/{DATASET_ID}/tables/{TABLE_ID}`
    *  * `//pubsub.googleapis.com/projects/{PROJECT_ID}/topics/{TOPIC_ID}`
    * </pre>
@@ -175,7 +179,9 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
    * The full name of the Google Cloud Platform resource the Data Catalog
    * entry represents. For more information, see [Full Resource Name]
    * (https://cloud.google.com/apis/design/resource_names#full_resource_name).
+   *
    * Full names are case-sensitive. For example:
+   *
    *  * `//bigquery.googleapis.com/projects/{PROJECT_ID}/datasets/{DATASET_ID}/tables/{TABLE_ID}`
    *  * `//pubsub.googleapis.com/projects/{PROJECT_ID}/topics/{TOPIC_ID}`
    * </pre>
@@ -207,12 +213,15 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * The SQL name of the entry. SQL names are case-sensitive.
+   *
    * Examples:
+   *
    * * `pubsub.topic.{PROJECT_ID}.{TOPIC_ID}`
    * * `pubsub.topic.{PROJECT_ID}.`&#92;``{TOPIC.ID.SEPARATED.WITH.DOTS}`&#92;`
    * * `bigquery.table.{PROJECT_ID}.{DATASET_ID}.{TABLE_ID}`
    * * `bigquery.dataset.{PROJECT_ID}.{DATASET_ID}`
    * * `datacatalog.entry.{PROJECT_ID}.{LOCATION_ID}.{ENTRY_GROUP_ID}.{ENTRY_ID}`
+   *
    * Identifiers (`*_ID`) should comply with the
    * [Lexical structure in Standard SQL]
    * (https://cloud.google.com/bigquery/docs/reference/standard-sql/lexical).
@@ -230,12 +239,15 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * The SQL name of the entry. SQL names are case-sensitive.
+   *
    * Examples:
+   *
    * * `pubsub.topic.{PROJECT_ID}.{TOPIC_ID}`
    * * `pubsub.topic.{PROJECT_ID}.`&#92;``{TOPIC.ID.SEPARATED.WITH.DOTS}`&#92;`
    * * `bigquery.table.{PROJECT_ID}.{DATASET_ID}.{TABLE_ID}`
    * * `bigquery.dataset.{PROJECT_ID}.{DATASET_ID}`
    * * `datacatalog.entry.{PROJECT_ID}.{LOCATION_ID}.{ENTRY_GROUP_ID}.{ENTRY_ID}`
+   *
    * Identifiers (`*_ID`) should comply with the
    * [Lexical structure in Standard SQL]
    * (https://cloud.google.com/bigquery/docs/reference/standard-sql/lexical).
@@ -266,12 +278,15 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * The SQL name of the entry. SQL names are case-sensitive.
+   *
    * Examples:
+   *
    * * `pubsub.topic.{PROJECT_ID}.{TOPIC_ID}`
    * * `pubsub.topic.{PROJECT_ID}.`&#92;``{TOPIC.ID.SEPARATED.WITH.DOTS}`&#92;`
    * * `bigquery.table.{PROJECT_ID}.{DATASET_ID}.{TABLE_ID}`
    * * `bigquery.dataset.{PROJECT_ID}.{DATASET_ID}`
    * * `datacatalog.entry.{PROJECT_ID}.{LOCATION_ID}.{ENTRY_GROUP_ID}.{ENTRY_ID}`
+   *
    * Identifiers (`*_ID`) should comply with the
    * [Lexical structure in Standard SQL]
    * (https://cloud.google.com/bigquery/docs/reference/standard-sql/lexical).
@@ -303,13 +318,22 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Fully qualified name (FQN) of the resource.
+   * [Fully Qualified Name
+   * (FQN)](https://cloud.google.com//data-catalog/docs/fully-qualified-names)
+   * of the resource.
+   *
    * FQNs take two forms:
+   *
    * * For non-regionalized resources:
+   *
    *   `{SYSTEM}:{PROJECT}.{PATH_TO_RESOURCE_SEPARATED_WITH_DOTS}`
+   *
    * * For regionalized resources:
+   *
    *   `{SYSTEM}:{PROJECT}.{LOCATION_ID}.{PATH_TO_RESOURCE_SEPARATED_WITH_DOTS}`
+   *
    * Example for a DPMS table:
+   *
    * `dataproc_metastore:{PROJECT_ID}.{LOCATION_ID}.{INSTANCE_ID}.{DATABASE_ID}.{TABLE_ID}`
    * </pre>
    *
@@ -324,13 +348,22 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Fully qualified name (FQN) of the resource.
+   * [Fully Qualified Name
+   * (FQN)](https://cloud.google.com//data-catalog/docs/fully-qualified-names)
+   * of the resource.
+   *
    * FQNs take two forms:
+   *
    * * For non-regionalized resources:
+   *
    *   `{SYSTEM}:{PROJECT}.{PATH_TO_RESOURCE_SEPARATED_WITH_DOTS}`
+   *
    * * For regionalized resources:
+   *
    *   `{SYSTEM}:{PROJECT}.{LOCATION_ID}.{PATH_TO_RESOURCE_SEPARATED_WITH_DOTS}`
+   *
    * Example for a DPMS table:
+   *
    * `dataproc_metastore:{PROJECT_ID}.{LOCATION_ID}.{INSTANCE_ID}.{DATABASE_ID}.{TABLE_ID}`
    * </pre>
    *
@@ -358,13 +391,22 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Fully qualified name (FQN) of the resource.
+   * [Fully Qualified Name
+   * (FQN)](https://cloud.google.com//data-catalog/docs/fully-qualified-names)
+   * of the resource.
+   *
    * FQNs take two forms:
+   *
    * * For non-regionalized resources:
+   *
    *   `{SYSTEM}:{PROJECT}.{PATH_TO_RESOURCE_SEPARATED_WITH_DOTS}`
+   *
    * * For regionalized resources:
+   *
    *   `{SYSTEM}:{PROJECT}.{LOCATION_ID}.{PATH_TO_RESOURCE_SEPARATED_WITH_DOTS}`
+   *
    * Example for a DPMS table:
+   *
    * `dataproc_metastore:{PROJECT_ID}.{LOCATION_ID}.{INSTANCE_ID}.{DATABASE_ID}.{TABLE_ID}`
    * </pre>
    *
@@ -383,6 +425,116 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
       if (targetNameCase_ == 5) {
         targetName_ = b;
       }
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int PROJECT_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Project where the lookup should be performed. Required to lookup
+   * entry that is not a part of `DPMS` or `DATAPLEX` `integrated_system`
+   * using its `fully_qualified_name`. Ignored in other cases.
+   * </pre>
+   *
+   * <code>string project = 6;</code>
+   *
+   * @return The project.
+   */
+  @java.lang.Override
+  public java.lang.String getProject() {
+    java.lang.Object ref = project_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      project_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Project where the lookup should be performed. Required to lookup
+   * entry that is not a part of `DPMS` or `DATAPLEX` `integrated_system`
+   * using its `fully_qualified_name`. Ignored in other cases.
+   * </pre>
+   *
+   * <code>string project = 6;</code>
+   *
+   * @return The bytes for project.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getProjectBytes() {
+    java.lang.Object ref = project_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      project_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int LOCATION_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object location_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Location where the lookup should be performed. Required to lookup
+   * entry that is not a part of `DPMS` or `DATAPLEX` `integrated_system`
+   * using its `fully_qualified_name`. Ignored in other cases.
+   * </pre>
+   *
+   * <code>string location = 7;</code>
+   *
+   * @return The location.
+   */
+  @java.lang.Override
+  public java.lang.String getLocation() {
+    java.lang.Object ref = location_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      location_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Location where the lookup should be performed. Required to lookup
+   * entry that is not a part of `DPMS` or `DATAPLEX` `integrated_system`
+   * using its `fully_qualified_name`. Ignored in other cases.
+   * </pre>
+   *
+   * <code>string location = 7;</code>
+   *
+   * @return The bytes for location.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getLocationBytes() {
+    java.lang.Object ref = location_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      location_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -412,6 +564,12 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
     if (targetNameCase_ == 5) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, targetName_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(project_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, project_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(location_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, location_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -430,6 +588,12 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
     if (targetNameCase_ == 5) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, targetName_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(project_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, project_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(location_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, location_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -446,6 +610,8 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
     com.google.cloud.datacatalog.v1.LookupEntryRequest other =
         (com.google.cloud.datacatalog.v1.LookupEntryRequest) obj;
 
+    if (!getProject().equals(other.getProject())) return false;
+    if (!getLocation().equals(other.getLocation())) return false;
     if (!getTargetNameCase().equals(other.getTargetNameCase())) return false;
     switch (targetNameCase_) {
       case 1:
@@ -471,6 +637,10 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + PROJECT_FIELD_NUMBER;
+    hash = (53 * hash) + getProject().hashCode();
+    hash = (37 * hash) + LOCATION_FIELD_NUMBER;
+    hash = (53 * hash) + getLocation().hashCode();
     switch (targetNameCase_) {
       case 1:
         hash = (37 * hash) + LINKED_RESOURCE_FIELD_NUMBER;
@@ -627,6 +797,8 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      project_ = "";
+      location_ = "";
       targetNameCase_ = 0;
       targetName_ = null;
       return this;
@@ -666,6 +838,12 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
 
     private void buildPartial0(com.google.cloud.datacatalog.v1.LookupEntryRequest result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.project_ = project_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.location_ = location_;
+      }
     }
 
     private void buildPartialOneofs(com.google.cloud.datacatalog.v1.LookupEntryRequest result) {
@@ -719,6 +897,16 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
     public Builder mergeFrom(com.google.cloud.datacatalog.v1.LookupEntryRequest other) {
       if (other == com.google.cloud.datacatalog.v1.LookupEntryRequest.getDefaultInstance())
         return this;
+      if (!other.getProject().isEmpty()) {
+        project_ = other.project_;
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
+      if (!other.getLocation().isEmpty()) {
+        location_ = other.location_;
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
       switch (other.getTargetNameCase()) {
         case LINKED_RESOURCE:
           {
@@ -793,6 +981,18 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
                 targetName_ = s;
                 break;
               } // case 42
+            case 50:
+              {
+                project_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 50
+            case 58:
+              {
+                location_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -833,7 +1033,9 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
      * The full name of the Google Cloud Platform resource the Data Catalog
      * entry represents. For more information, see [Full Resource Name]
      * (https://cloud.google.com/apis/design/resource_names#full_resource_name).
+     *
      * Full names are case-sensitive. For example:
+     *
      *  * `//bigquery.googleapis.com/projects/{PROJECT_ID}/datasets/{DATASET_ID}/tables/{TABLE_ID}`
      *  * `//pubsub.googleapis.com/projects/{PROJECT_ID}/topics/{TOPIC_ID}`
      * </pre>
@@ -853,7 +1055,9 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
      * The full name of the Google Cloud Platform resource the Data Catalog
      * entry represents. For more information, see [Full Resource Name]
      * (https://cloud.google.com/apis/design/resource_names#full_resource_name).
+     *
      * Full names are case-sensitive. For example:
+     *
      *  * `//bigquery.googleapis.com/projects/{PROJECT_ID}/datasets/{DATASET_ID}/tables/{TABLE_ID}`
      *  * `//pubsub.googleapis.com/projects/{PROJECT_ID}/topics/{TOPIC_ID}`
      * </pre>
@@ -886,7 +1090,9 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
      * The full name of the Google Cloud Platform resource the Data Catalog
      * entry represents. For more information, see [Full Resource Name]
      * (https://cloud.google.com/apis/design/resource_names#full_resource_name).
+     *
      * Full names are case-sensitive. For example:
+     *
      *  * `//bigquery.googleapis.com/projects/{PROJECT_ID}/datasets/{DATASET_ID}/tables/{TABLE_ID}`
      *  * `//pubsub.googleapis.com/projects/{PROJECT_ID}/topics/{TOPIC_ID}`
      * </pre>
@@ -919,7 +1125,9 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
      * The full name of the Google Cloud Platform resource the Data Catalog
      * entry represents. For more information, see [Full Resource Name]
      * (https://cloud.google.com/apis/design/resource_names#full_resource_name).
+     *
      * Full names are case-sensitive. For example:
+     *
      *  * `//bigquery.googleapis.com/projects/{PROJECT_ID}/datasets/{DATASET_ID}/tables/{TABLE_ID}`
      *  * `//pubsub.googleapis.com/projects/{PROJECT_ID}/topics/{TOPIC_ID}`
      * </pre>
@@ -945,7 +1153,9 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
      * The full name of the Google Cloud Platform resource the Data Catalog
      * entry represents. For more information, see [Full Resource Name]
      * (https://cloud.google.com/apis/design/resource_names#full_resource_name).
+     *
      * Full names are case-sensitive. For example:
+     *
      *  * `//bigquery.googleapis.com/projects/{PROJECT_ID}/datasets/{DATASET_ID}/tables/{TABLE_ID}`
      *  * `//pubsub.googleapis.com/projects/{PROJECT_ID}/topics/{TOPIC_ID}`
      * </pre>
@@ -969,7 +1179,9 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
      * The full name of the Google Cloud Platform resource the Data Catalog
      * entry represents. For more information, see [Full Resource Name]
      * (https://cloud.google.com/apis/design/resource_names#full_resource_name).
+     *
      * Full names are case-sensitive. For example:
+     *
      *  * `//bigquery.googleapis.com/projects/{PROJECT_ID}/datasets/{DATASET_ID}/tables/{TABLE_ID}`
      *  * `//pubsub.googleapis.com/projects/{PROJECT_ID}/topics/{TOPIC_ID}`
      * </pre>
@@ -995,12 +1207,15 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The SQL name of the entry. SQL names are case-sensitive.
+     *
      * Examples:
+     *
      * * `pubsub.topic.{PROJECT_ID}.{TOPIC_ID}`
      * * `pubsub.topic.{PROJECT_ID}.`&#92;``{TOPIC.ID.SEPARATED.WITH.DOTS}`&#92;`
      * * `bigquery.table.{PROJECT_ID}.{DATASET_ID}.{TABLE_ID}`
      * * `bigquery.dataset.{PROJECT_ID}.{DATASET_ID}`
      * * `datacatalog.entry.{PROJECT_ID}.{LOCATION_ID}.{ENTRY_GROUP_ID}.{ENTRY_ID}`
+     *
      * Identifiers (`*_ID`) should comply with the
      * [Lexical structure in Standard SQL]
      * (https://cloud.google.com/bigquery/docs/reference/standard-sql/lexical).
@@ -1019,12 +1234,15 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The SQL name of the entry. SQL names are case-sensitive.
+     *
      * Examples:
+     *
      * * `pubsub.topic.{PROJECT_ID}.{TOPIC_ID}`
      * * `pubsub.topic.{PROJECT_ID}.`&#92;``{TOPIC.ID.SEPARATED.WITH.DOTS}`&#92;`
      * * `bigquery.table.{PROJECT_ID}.{DATASET_ID}.{TABLE_ID}`
      * * `bigquery.dataset.{PROJECT_ID}.{DATASET_ID}`
      * * `datacatalog.entry.{PROJECT_ID}.{LOCATION_ID}.{ENTRY_GROUP_ID}.{ENTRY_ID}`
+     *
      * Identifiers (`*_ID`) should comply with the
      * [Lexical structure in Standard SQL]
      * (https://cloud.google.com/bigquery/docs/reference/standard-sql/lexical).
@@ -1056,12 +1274,15 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The SQL name of the entry. SQL names are case-sensitive.
+     *
      * Examples:
+     *
      * * `pubsub.topic.{PROJECT_ID}.{TOPIC_ID}`
      * * `pubsub.topic.{PROJECT_ID}.`&#92;``{TOPIC.ID.SEPARATED.WITH.DOTS}`&#92;`
      * * `bigquery.table.{PROJECT_ID}.{DATASET_ID}.{TABLE_ID}`
      * * `bigquery.dataset.{PROJECT_ID}.{DATASET_ID}`
      * * `datacatalog.entry.{PROJECT_ID}.{LOCATION_ID}.{ENTRY_GROUP_ID}.{ENTRY_ID}`
+     *
      * Identifiers (`*_ID`) should comply with the
      * [Lexical structure in Standard SQL]
      * (https://cloud.google.com/bigquery/docs/reference/standard-sql/lexical).
@@ -1093,12 +1314,15 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The SQL name of the entry. SQL names are case-sensitive.
+     *
      * Examples:
+     *
      * * `pubsub.topic.{PROJECT_ID}.{TOPIC_ID}`
      * * `pubsub.topic.{PROJECT_ID}.`&#92;``{TOPIC.ID.SEPARATED.WITH.DOTS}`&#92;`
      * * `bigquery.table.{PROJECT_ID}.{DATASET_ID}.{TABLE_ID}`
      * * `bigquery.dataset.{PROJECT_ID}.{DATASET_ID}`
      * * `datacatalog.entry.{PROJECT_ID}.{LOCATION_ID}.{ENTRY_GROUP_ID}.{ENTRY_ID}`
+     *
      * Identifiers (`*_ID`) should comply with the
      * [Lexical structure in Standard SQL]
      * (https://cloud.google.com/bigquery/docs/reference/standard-sql/lexical).
@@ -1123,12 +1347,15 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The SQL name of the entry. SQL names are case-sensitive.
+     *
      * Examples:
+     *
      * * `pubsub.topic.{PROJECT_ID}.{TOPIC_ID}`
      * * `pubsub.topic.{PROJECT_ID}.`&#92;``{TOPIC.ID.SEPARATED.WITH.DOTS}`&#92;`
      * * `bigquery.table.{PROJECT_ID}.{DATASET_ID}.{TABLE_ID}`
      * * `bigquery.dataset.{PROJECT_ID}.{DATASET_ID}`
      * * `datacatalog.entry.{PROJECT_ID}.{LOCATION_ID}.{ENTRY_GROUP_ID}.{ENTRY_ID}`
+     *
      * Identifiers (`*_ID`) should comply with the
      * [Lexical structure in Standard SQL]
      * (https://cloud.google.com/bigquery/docs/reference/standard-sql/lexical).
@@ -1151,12 +1378,15 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The SQL name of the entry. SQL names are case-sensitive.
+     *
      * Examples:
+     *
      * * `pubsub.topic.{PROJECT_ID}.{TOPIC_ID}`
      * * `pubsub.topic.{PROJECT_ID}.`&#92;``{TOPIC.ID.SEPARATED.WITH.DOTS}`&#92;`
      * * `bigquery.table.{PROJECT_ID}.{DATASET_ID}.{TABLE_ID}`
      * * `bigquery.dataset.{PROJECT_ID}.{DATASET_ID}`
      * * `datacatalog.entry.{PROJECT_ID}.{LOCATION_ID}.{ENTRY_GROUP_ID}.{ENTRY_ID}`
+     *
      * Identifiers (`*_ID`) should comply with the
      * [Lexical structure in Standard SQL]
      * (https://cloud.google.com/bigquery/docs/reference/standard-sql/lexical).
@@ -1182,13 +1412,22 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Fully qualified name (FQN) of the resource.
+     * [Fully Qualified Name
+     * (FQN)](https://cloud.google.com//data-catalog/docs/fully-qualified-names)
+     * of the resource.
+     *
      * FQNs take two forms:
+     *
      * * For non-regionalized resources:
+     *
      *   `{SYSTEM}:{PROJECT}.{PATH_TO_RESOURCE_SEPARATED_WITH_DOTS}`
+     *
      * * For regionalized resources:
+     *
      *   `{SYSTEM}:{PROJECT}.{LOCATION_ID}.{PATH_TO_RESOURCE_SEPARATED_WITH_DOTS}`
+     *
      * Example for a DPMS table:
+     *
      * `dataproc_metastore:{PROJECT_ID}.{LOCATION_ID}.{INSTANCE_ID}.{DATABASE_ID}.{TABLE_ID}`
      * </pre>
      *
@@ -1204,13 +1443,22 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Fully qualified name (FQN) of the resource.
+     * [Fully Qualified Name
+     * (FQN)](https://cloud.google.com//data-catalog/docs/fully-qualified-names)
+     * of the resource.
+     *
      * FQNs take two forms:
+     *
      * * For non-regionalized resources:
+     *
      *   `{SYSTEM}:{PROJECT}.{PATH_TO_RESOURCE_SEPARATED_WITH_DOTS}`
+     *
      * * For regionalized resources:
+     *
      *   `{SYSTEM}:{PROJECT}.{LOCATION_ID}.{PATH_TO_RESOURCE_SEPARATED_WITH_DOTS}`
+     *
      * Example for a DPMS table:
+     *
      * `dataproc_metastore:{PROJECT_ID}.{LOCATION_ID}.{INSTANCE_ID}.{DATABASE_ID}.{TABLE_ID}`
      * </pre>
      *
@@ -1239,13 +1487,22 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Fully qualified name (FQN) of the resource.
+     * [Fully Qualified Name
+     * (FQN)](https://cloud.google.com//data-catalog/docs/fully-qualified-names)
+     * of the resource.
+     *
      * FQNs take two forms:
+     *
      * * For non-regionalized resources:
+     *
      *   `{SYSTEM}:{PROJECT}.{PATH_TO_RESOURCE_SEPARATED_WITH_DOTS}`
+     *
      * * For regionalized resources:
+     *
      *   `{SYSTEM}:{PROJECT}.{LOCATION_ID}.{PATH_TO_RESOURCE_SEPARATED_WITH_DOTS}`
+     *
      * Example for a DPMS table:
+     *
      * `dataproc_metastore:{PROJECT_ID}.{LOCATION_ID}.{INSTANCE_ID}.{DATABASE_ID}.{TABLE_ID}`
      * </pre>
      *
@@ -1274,13 +1531,22 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Fully qualified name (FQN) of the resource.
+     * [Fully Qualified Name
+     * (FQN)](https://cloud.google.com//data-catalog/docs/fully-qualified-names)
+     * of the resource.
+     *
      * FQNs take two forms:
+     *
      * * For non-regionalized resources:
+     *
      *   `{SYSTEM}:{PROJECT}.{PATH_TO_RESOURCE_SEPARATED_WITH_DOTS}`
+     *
      * * For regionalized resources:
+     *
      *   `{SYSTEM}:{PROJECT}.{LOCATION_ID}.{PATH_TO_RESOURCE_SEPARATED_WITH_DOTS}`
+     *
      * Example for a DPMS table:
+     *
      * `dataproc_metastore:{PROJECT_ID}.{LOCATION_ID}.{INSTANCE_ID}.{DATABASE_ID}.{TABLE_ID}`
      * </pre>
      *
@@ -1302,13 +1568,22 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Fully qualified name (FQN) of the resource.
+     * [Fully Qualified Name
+     * (FQN)](https://cloud.google.com//data-catalog/docs/fully-qualified-names)
+     * of the resource.
+     *
      * FQNs take two forms:
+     *
      * * For non-regionalized resources:
+     *
      *   `{SYSTEM}:{PROJECT}.{PATH_TO_RESOURCE_SEPARATED_WITH_DOTS}`
+     *
      * * For regionalized resources:
+     *
      *   `{SYSTEM}:{PROJECT}.{LOCATION_ID}.{PATH_TO_RESOURCE_SEPARATED_WITH_DOTS}`
+     *
      * Example for a DPMS table:
+     *
      * `dataproc_metastore:{PROJECT_ID}.{LOCATION_ID}.{INSTANCE_ID}.{DATABASE_ID}.{TABLE_ID}`
      * </pre>
      *
@@ -1328,13 +1603,22 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Fully qualified name (FQN) of the resource.
+     * [Fully Qualified Name
+     * (FQN)](https://cloud.google.com//data-catalog/docs/fully-qualified-names)
+     * of the resource.
+     *
      * FQNs take two forms:
+     *
      * * For non-regionalized resources:
+     *
      *   `{SYSTEM}:{PROJECT}.{PATH_TO_RESOURCE_SEPARATED_WITH_DOTS}`
+     *
      * * For regionalized resources:
+     *
      *   `{SYSTEM}:{PROJECT}.{LOCATION_ID}.{PATH_TO_RESOURCE_SEPARATED_WITH_DOTS}`
+     *
      * Example for a DPMS table:
+     *
      * `dataproc_metastore:{PROJECT_ID}.{LOCATION_ID}.{INSTANCE_ID}.{DATABASE_ID}.{TABLE_ID}`
      * </pre>
      *
@@ -1350,6 +1634,238 @@ public final class LookupEntryRequest extends com.google.protobuf.GeneratedMessa
       checkByteStringIsUtf8(value);
       targetNameCase_ = 5;
       targetName_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object project_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Project where the lookup should be performed. Required to lookup
+     * entry that is not a part of `DPMS` or `DATAPLEX` `integrated_system`
+     * using its `fully_qualified_name`. Ignored in other cases.
+     * </pre>
+     *
+     * <code>string project = 6;</code>
+     *
+     * @return The project.
+     */
+    public java.lang.String getProject() {
+      java.lang.Object ref = project_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        project_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Project where the lookup should be performed. Required to lookup
+     * entry that is not a part of `DPMS` or `DATAPLEX` `integrated_system`
+     * using its `fully_qualified_name`. Ignored in other cases.
+     * </pre>
+     *
+     * <code>string project = 6;</code>
+     *
+     * @return The bytes for project.
+     */
+    public com.google.protobuf.ByteString getProjectBytes() {
+      java.lang.Object ref = project_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        project_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Project where the lookup should be performed. Required to lookup
+     * entry that is not a part of `DPMS` or `DATAPLEX` `integrated_system`
+     * using its `fully_qualified_name`. Ignored in other cases.
+     * </pre>
+     *
+     * <code>string project = 6;</code>
+     *
+     * @param value The project to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProject(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      project_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Project where the lookup should be performed. Required to lookup
+     * entry that is not a part of `DPMS` or `DATAPLEX` `integrated_system`
+     * using its `fully_qualified_name`. Ignored in other cases.
+     * </pre>
+     *
+     * <code>string project = 6;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearProject() {
+      project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Project where the lookup should be performed. Required to lookup
+     * entry that is not a part of `DPMS` or `DATAPLEX` `integrated_system`
+     * using its `fully_qualified_name`. Ignored in other cases.
+     * </pre>
+     *
+     * <code>string project = 6;</code>
+     *
+     * @param value The bytes for project to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProjectBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      project_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object location_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Location where the lookup should be performed. Required to lookup
+     * entry that is not a part of `DPMS` or `DATAPLEX` `integrated_system`
+     * using its `fully_qualified_name`. Ignored in other cases.
+     * </pre>
+     *
+     * <code>string location = 7;</code>
+     *
+     * @return The location.
+     */
+    public java.lang.String getLocation() {
+      java.lang.Object ref = location_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        location_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Location where the lookup should be performed. Required to lookup
+     * entry that is not a part of `DPMS` or `DATAPLEX` `integrated_system`
+     * using its `fully_qualified_name`. Ignored in other cases.
+     * </pre>
+     *
+     * <code>string location = 7;</code>
+     *
+     * @return The bytes for location.
+     */
+    public com.google.protobuf.ByteString getLocationBytes() {
+      java.lang.Object ref = location_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        location_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Location where the lookup should be performed. Required to lookup
+     * entry that is not a part of `DPMS` or `DATAPLEX` `integrated_system`
+     * using its `fully_qualified_name`. Ignored in other cases.
+     * </pre>
+     *
+     * <code>string location = 7;</code>
+     *
+     * @param value The location to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLocation(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      location_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Location where the lookup should be performed. Required to lookup
+     * entry that is not a part of `DPMS` or `DATAPLEX` `integrated_system`
+     * using its `fully_qualified_name`. Ignored in other cases.
+     * </pre>
+     *
+     * <code>string location = 7;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearLocation() {
+      location_ = getDefaultInstance().getLocation();
+      bitField0_ = (bitField0_ & ~0x00000010);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Location where the lookup should be performed. Required to lookup
+     * entry that is not a part of `DPMS` or `DATAPLEX` `integrated_system`
+     * using its `fully_qualified_name`. Ignored in other cases.
+     * </pre>
+     *
+     * <code>string location = 7;</code>
+     *
+     * @param value The bytes for location to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLocationBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      location_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

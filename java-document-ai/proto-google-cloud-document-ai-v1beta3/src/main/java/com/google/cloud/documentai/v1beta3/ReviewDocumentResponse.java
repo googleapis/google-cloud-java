@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,9 @@ package com.google.cloud.documentai.v1beta3;
  *
  *
  * <pre>
- * Response message for review document method.
+ * Response message for the
+ * [ReviewDocument][google.cloud.documentai.v1beta3.DocumentProcessorService.ReviewDocument]
+ * method.
  * </pre>
  *
  * Protobuf type {@code google.cloud.documentai.v1beta3.ReviewDocumentResponse}
@@ -47,11 +49,6 @@ public final class ReviewDocumentResponse extends com.google.protobuf.GeneratedM
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ReviewDocumentResponse();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -555,7 +552,9 @@ public final class ReviewDocumentResponse extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Response message for review document method.
+   * Response message for the
+   * [ReviewDocument][google.cloud.documentai.v1beta3.DocumentProcessorService.ReviewDocument]
+   * method.
    * </pre>
    *
    * Protobuf type {@code google.cloud.documentai.v1beta3.ReviewDocumentResponse}

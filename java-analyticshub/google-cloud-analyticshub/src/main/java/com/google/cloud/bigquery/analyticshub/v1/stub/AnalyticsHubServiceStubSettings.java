@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,6 +19,8 @@ package com.google.cloud.bigquery.analyticshub.v1.stub;
 import static com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubServiceClient.ListDataExchangesPagedResponse;
 import static com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubServiceClient.ListListingsPagedResponse;
 import static com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubServiceClient.ListOrgDataExchangesPagedResponse;
+import static com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubServiceClient.ListSharedResourceSubscriptionsPagedResponse;
+import static com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubServiceClient.ListSubscriptionsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
@@ -29,13 +31,17 @@ import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.GrpcTransportChannel;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
+import com.google.api.gax.grpc.ProtoOperationTransformers;
 import com.google.api.gax.httpjson.GaxHttpJsonProperties;
 import com.google.api.gax.httpjson.HttpJsonTransportChannel;
 import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
+import com.google.api.gax.longrunning.OperationSnapshot;
+import com.google.api.gax.longrunning.OperationTimedPollAlgorithm;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.PagedListDescriptor;
@@ -50,17 +56,31 @@ import com.google.cloud.bigquery.analyticshub.v1.CreateListingRequest;
 import com.google.cloud.bigquery.analyticshub.v1.DataExchange;
 import com.google.cloud.bigquery.analyticshub.v1.DeleteDataExchangeRequest;
 import com.google.cloud.bigquery.analyticshub.v1.DeleteListingRequest;
+import com.google.cloud.bigquery.analyticshub.v1.DeleteSubscriptionRequest;
 import com.google.cloud.bigquery.analyticshub.v1.GetDataExchangeRequest;
 import com.google.cloud.bigquery.analyticshub.v1.GetListingRequest;
+import com.google.cloud.bigquery.analyticshub.v1.GetSubscriptionRequest;
 import com.google.cloud.bigquery.analyticshub.v1.ListDataExchangesRequest;
 import com.google.cloud.bigquery.analyticshub.v1.ListDataExchangesResponse;
 import com.google.cloud.bigquery.analyticshub.v1.ListListingsRequest;
 import com.google.cloud.bigquery.analyticshub.v1.ListListingsResponse;
 import com.google.cloud.bigquery.analyticshub.v1.ListOrgDataExchangesRequest;
 import com.google.cloud.bigquery.analyticshub.v1.ListOrgDataExchangesResponse;
+import com.google.cloud.bigquery.analyticshub.v1.ListSharedResourceSubscriptionsRequest;
+import com.google.cloud.bigquery.analyticshub.v1.ListSharedResourceSubscriptionsResponse;
+import com.google.cloud.bigquery.analyticshub.v1.ListSubscriptionsRequest;
+import com.google.cloud.bigquery.analyticshub.v1.ListSubscriptionsResponse;
 import com.google.cloud.bigquery.analyticshub.v1.Listing;
+import com.google.cloud.bigquery.analyticshub.v1.OperationMetadata;
+import com.google.cloud.bigquery.analyticshub.v1.RefreshSubscriptionRequest;
+import com.google.cloud.bigquery.analyticshub.v1.RefreshSubscriptionResponse;
+import com.google.cloud.bigquery.analyticshub.v1.RevokeSubscriptionRequest;
+import com.google.cloud.bigquery.analyticshub.v1.RevokeSubscriptionResponse;
+import com.google.cloud.bigquery.analyticshub.v1.SubscribeDataExchangeRequest;
+import com.google.cloud.bigquery.analyticshub.v1.SubscribeDataExchangeResponse;
 import com.google.cloud.bigquery.analyticshub.v1.SubscribeListingRequest;
 import com.google.cloud.bigquery.analyticshub.v1.SubscribeListingResponse;
+import com.google.cloud.bigquery.analyticshub.v1.Subscription;
 import com.google.cloud.bigquery.analyticshub.v1.UpdateDataExchangeRequest;
 import com.google.cloud.bigquery.analyticshub.v1.UpdateListingRequest;
 import com.google.common.collect.ImmutableList;
@@ -72,6 +92,7 @@ import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
@@ -148,6 +169,30 @@ public class AnalyticsHubServiceStubSettings extends StubSettings<AnalyticsHubSe
   private final UnaryCallSettings<DeleteListingRequest, Empty> deleteListingSettings;
   private final UnaryCallSettings<SubscribeListingRequest, SubscribeListingResponse>
       subscribeListingSettings;
+  private final UnaryCallSettings<SubscribeDataExchangeRequest, Operation>
+      subscribeDataExchangeSettings;
+  private final OperationCallSettings<
+          SubscribeDataExchangeRequest, SubscribeDataExchangeResponse, OperationMetadata>
+      subscribeDataExchangeOperationSettings;
+  private final UnaryCallSettings<RefreshSubscriptionRequest, Operation>
+      refreshSubscriptionSettings;
+  private final OperationCallSettings<
+          RefreshSubscriptionRequest, RefreshSubscriptionResponse, OperationMetadata>
+      refreshSubscriptionOperationSettings;
+  private final UnaryCallSettings<GetSubscriptionRequest, Subscription> getSubscriptionSettings;
+  private final PagedCallSettings<
+          ListSubscriptionsRequest, ListSubscriptionsResponse, ListSubscriptionsPagedResponse>
+      listSubscriptionsSettings;
+  private final PagedCallSettings<
+          ListSharedResourceSubscriptionsRequest,
+          ListSharedResourceSubscriptionsResponse,
+          ListSharedResourceSubscriptionsPagedResponse>
+      listSharedResourceSubscriptionsSettings;
+  private final UnaryCallSettings<RevokeSubscriptionRequest, RevokeSubscriptionResponse>
+      revokeSubscriptionSettings;
+  private final UnaryCallSettings<DeleteSubscriptionRequest, Operation> deleteSubscriptionSettings;
+  private final OperationCallSettings<DeleteSubscriptionRequest, Empty, OperationMetadata>
+      deleteSubscriptionOperationSettings;
   private final UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings;
   private final UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings;
   private final UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -269,6 +314,95 @@ public class AnalyticsHubServiceStubSettings extends StubSettings<AnalyticsHubSe
             }
           };
 
+  private static final PagedListDescriptor<
+          ListSubscriptionsRequest, ListSubscriptionsResponse, Subscription>
+      LIST_SUBSCRIPTIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListSubscriptionsRequest, ListSubscriptionsResponse, Subscription>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListSubscriptionsRequest injectToken(
+                ListSubscriptionsRequest payload, String token) {
+              return ListSubscriptionsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListSubscriptionsRequest injectPageSize(
+                ListSubscriptionsRequest payload, int pageSize) {
+              return ListSubscriptionsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListSubscriptionsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListSubscriptionsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Subscription> extractResources(ListSubscriptionsResponse payload) {
+              return payload.getSubscriptionsList() == null
+                  ? ImmutableList.<Subscription>of()
+                  : payload.getSubscriptionsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListSharedResourceSubscriptionsRequest,
+          ListSharedResourceSubscriptionsResponse,
+          Subscription>
+      LIST_SHARED_RESOURCE_SUBSCRIPTIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListSharedResourceSubscriptionsRequest,
+              ListSharedResourceSubscriptionsResponse,
+              Subscription>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListSharedResourceSubscriptionsRequest injectToken(
+                ListSharedResourceSubscriptionsRequest payload, String token) {
+              return ListSharedResourceSubscriptionsRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public ListSharedResourceSubscriptionsRequest injectPageSize(
+                ListSharedResourceSubscriptionsRequest payload, int pageSize) {
+              return ListSharedResourceSubscriptionsRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListSharedResourceSubscriptionsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListSharedResourceSubscriptionsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Subscription> extractResources(
+                ListSharedResourceSubscriptionsResponse payload) {
+              return payload.getSharedResourceSubscriptionsList() == null
+                  ? ImmutableList.<Subscription>of()
+                  : payload.getSharedResourceSubscriptionsList();
+            }
+          };
+
   private static final PagedListResponseFactory<
           ListDataExchangesRequest, ListDataExchangesResponse, ListDataExchangesPagedResponse>
       LIST_DATA_EXCHANGES_PAGE_STR_FACT =
@@ -327,6 +461,60 @@ public class AnalyticsHubServiceStubSettings extends StubSettings<AnalyticsHubSe
               PageContext<ListListingsRequest, ListListingsResponse, Listing> pageContext =
                   PageContext.create(callable, LIST_LISTINGS_PAGE_STR_DESC, request, context);
               return ListListingsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListSubscriptionsRequest, ListSubscriptionsResponse, ListSubscriptionsPagedResponse>
+      LIST_SUBSCRIPTIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListSubscriptionsRequest,
+              ListSubscriptionsResponse,
+              ListSubscriptionsPagedResponse>() {
+            @Override
+            public ApiFuture<ListSubscriptionsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListSubscriptionsRequest, ListSubscriptionsResponse> callable,
+                ListSubscriptionsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListSubscriptionsResponse> futureResponse) {
+              PageContext<ListSubscriptionsRequest, ListSubscriptionsResponse, Subscription>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_SUBSCRIPTIONS_PAGE_STR_DESC, request, context);
+              return ListSubscriptionsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListSharedResourceSubscriptionsRequest,
+          ListSharedResourceSubscriptionsResponse,
+          ListSharedResourceSubscriptionsPagedResponse>
+      LIST_SHARED_RESOURCE_SUBSCRIPTIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListSharedResourceSubscriptionsRequest,
+              ListSharedResourceSubscriptionsResponse,
+              ListSharedResourceSubscriptionsPagedResponse>() {
+            @Override
+            public ApiFuture<ListSharedResourceSubscriptionsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<
+                        ListSharedResourceSubscriptionsRequest,
+                        ListSharedResourceSubscriptionsResponse>
+                    callable,
+                ListSharedResourceSubscriptionsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListSharedResourceSubscriptionsResponse> futureResponse) {
+              PageContext<
+                      ListSharedResourceSubscriptionsRequest,
+                      ListSharedResourceSubscriptionsResponse,
+                      Subscription>
+                  pageContext =
+                      PageContext.create(
+                          callable,
+                          LIST_SHARED_RESOURCE_SUBSCRIPTIONS_PAGE_STR_DESC,
+                          request,
+                          context);
+              return ListSharedResourceSubscriptionsPagedResponse.createAsync(
+                  pageContext, futureResponse);
             }
           };
 
@@ -396,6 +584,69 @@ public class AnalyticsHubServiceStubSettings extends StubSettings<AnalyticsHubSe
   public UnaryCallSettings<SubscribeListingRequest, SubscribeListingResponse>
       subscribeListingSettings() {
     return subscribeListingSettings;
+  }
+
+  /** Returns the object with the settings used for calls to subscribeDataExchange. */
+  public UnaryCallSettings<SubscribeDataExchangeRequest, Operation>
+      subscribeDataExchangeSettings() {
+    return subscribeDataExchangeSettings;
+  }
+
+  /** Returns the object with the settings used for calls to subscribeDataExchange. */
+  public OperationCallSettings<
+          SubscribeDataExchangeRequest, SubscribeDataExchangeResponse, OperationMetadata>
+      subscribeDataExchangeOperationSettings() {
+    return subscribeDataExchangeOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to refreshSubscription. */
+  public UnaryCallSettings<RefreshSubscriptionRequest, Operation> refreshSubscriptionSettings() {
+    return refreshSubscriptionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to refreshSubscription. */
+  public OperationCallSettings<
+          RefreshSubscriptionRequest, RefreshSubscriptionResponse, OperationMetadata>
+      refreshSubscriptionOperationSettings() {
+    return refreshSubscriptionOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getSubscription. */
+  public UnaryCallSettings<GetSubscriptionRequest, Subscription> getSubscriptionSettings() {
+    return getSubscriptionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listSubscriptions. */
+  public PagedCallSettings<
+          ListSubscriptionsRequest, ListSubscriptionsResponse, ListSubscriptionsPagedResponse>
+      listSubscriptionsSettings() {
+    return listSubscriptionsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listSharedResourceSubscriptions. */
+  public PagedCallSettings<
+          ListSharedResourceSubscriptionsRequest,
+          ListSharedResourceSubscriptionsResponse,
+          ListSharedResourceSubscriptionsPagedResponse>
+      listSharedResourceSubscriptionsSettings() {
+    return listSharedResourceSubscriptionsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to revokeSubscription. */
+  public UnaryCallSettings<RevokeSubscriptionRequest, RevokeSubscriptionResponse>
+      revokeSubscriptionSettings() {
+    return revokeSubscriptionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteSubscription. */
+  public UnaryCallSettings<DeleteSubscriptionRequest, Operation> deleteSubscriptionSettings() {
+    return deleteSubscriptionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteSubscription. */
+  public OperationCallSettings<DeleteSubscriptionRequest, Empty, OperationMetadata>
+      deleteSubscriptionOperationSettings() {
+    return deleteSubscriptionOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to getIamPolicy. */
@@ -532,6 +783,20 @@ public class AnalyticsHubServiceStubSettings extends StubSettings<AnalyticsHubSe
     updateListingSettings = settingsBuilder.updateListingSettings().build();
     deleteListingSettings = settingsBuilder.deleteListingSettings().build();
     subscribeListingSettings = settingsBuilder.subscribeListingSettings().build();
+    subscribeDataExchangeSettings = settingsBuilder.subscribeDataExchangeSettings().build();
+    subscribeDataExchangeOperationSettings =
+        settingsBuilder.subscribeDataExchangeOperationSettings().build();
+    refreshSubscriptionSettings = settingsBuilder.refreshSubscriptionSettings().build();
+    refreshSubscriptionOperationSettings =
+        settingsBuilder.refreshSubscriptionOperationSettings().build();
+    getSubscriptionSettings = settingsBuilder.getSubscriptionSettings().build();
+    listSubscriptionsSettings = settingsBuilder.listSubscriptionsSettings().build();
+    listSharedResourceSubscriptionsSettings =
+        settingsBuilder.listSharedResourceSubscriptionsSettings().build();
+    revokeSubscriptionSettings = settingsBuilder.revokeSubscriptionSettings().build();
+    deleteSubscriptionSettings = settingsBuilder.deleteSubscriptionSettings().build();
+    deleteSubscriptionOperationSettings =
+        settingsBuilder.deleteSubscriptionOperationSettings().build();
     getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
     testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
@@ -566,6 +831,32 @@ public class AnalyticsHubServiceStubSettings extends StubSettings<AnalyticsHubSe
     private final UnaryCallSettings.Builder<DeleteListingRequest, Empty> deleteListingSettings;
     private final UnaryCallSettings.Builder<SubscribeListingRequest, SubscribeListingResponse>
         subscribeListingSettings;
+    private final UnaryCallSettings.Builder<SubscribeDataExchangeRequest, Operation>
+        subscribeDataExchangeSettings;
+    private final OperationCallSettings.Builder<
+            SubscribeDataExchangeRequest, SubscribeDataExchangeResponse, OperationMetadata>
+        subscribeDataExchangeOperationSettings;
+    private final UnaryCallSettings.Builder<RefreshSubscriptionRequest, Operation>
+        refreshSubscriptionSettings;
+    private final OperationCallSettings.Builder<
+            RefreshSubscriptionRequest, RefreshSubscriptionResponse, OperationMetadata>
+        refreshSubscriptionOperationSettings;
+    private final UnaryCallSettings.Builder<GetSubscriptionRequest, Subscription>
+        getSubscriptionSettings;
+    private final PagedCallSettings.Builder<
+            ListSubscriptionsRequest, ListSubscriptionsResponse, ListSubscriptionsPagedResponse>
+        listSubscriptionsSettings;
+    private final PagedCallSettings.Builder<
+            ListSharedResourceSubscriptionsRequest,
+            ListSharedResourceSubscriptionsResponse,
+            ListSharedResourceSubscriptionsPagedResponse>
+        listSharedResourceSubscriptionsSettings;
+    private final UnaryCallSettings.Builder<RevokeSubscriptionRequest, RevokeSubscriptionResponse>
+        revokeSubscriptionSettings;
+    private final UnaryCallSettings.Builder<DeleteSubscriptionRequest, Operation>
+        deleteSubscriptionSettings;
+    private final OperationCallSettings.Builder<DeleteSubscriptionRequest, Empty, OperationMetadata>
+        deleteSubscriptionOperationSettings;
     private final UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings;
     private final UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings;
     private final UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -623,6 +914,17 @@ public class AnalyticsHubServiceStubSettings extends StubSettings<AnalyticsHubSe
       updateListingSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteListingSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       subscribeListingSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      subscribeDataExchangeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      subscribeDataExchangeOperationSettings = OperationCallSettings.newBuilder();
+      refreshSubscriptionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      refreshSubscriptionOperationSettings = OperationCallSettings.newBuilder();
+      getSubscriptionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listSubscriptionsSettings = PagedCallSettings.newBuilder(LIST_SUBSCRIPTIONS_PAGE_STR_FACT);
+      listSharedResourceSubscriptionsSettings =
+          PagedCallSettings.newBuilder(LIST_SHARED_RESOURCE_SUBSCRIPTIONS_PAGE_STR_FACT);
+      revokeSubscriptionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteSubscriptionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteSubscriptionOperationSettings = OperationCallSettings.newBuilder();
       getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -641,6 +943,13 @@ public class AnalyticsHubServiceStubSettings extends StubSettings<AnalyticsHubSe
               updateListingSettings,
               deleteListingSettings,
               subscribeListingSettings,
+              subscribeDataExchangeSettings,
+              refreshSubscriptionSettings,
+              getSubscriptionSettings,
+              listSubscriptionsSettings,
+              listSharedResourceSubscriptionsSettings,
+              revokeSubscriptionSettings,
+              deleteSubscriptionSettings,
               getIamPolicySettings,
               setIamPolicySettings,
               testIamPermissionsSettings);
@@ -662,6 +971,20 @@ public class AnalyticsHubServiceStubSettings extends StubSettings<AnalyticsHubSe
       updateListingSettings = settings.updateListingSettings.toBuilder();
       deleteListingSettings = settings.deleteListingSettings.toBuilder();
       subscribeListingSettings = settings.subscribeListingSettings.toBuilder();
+      subscribeDataExchangeSettings = settings.subscribeDataExchangeSettings.toBuilder();
+      subscribeDataExchangeOperationSettings =
+          settings.subscribeDataExchangeOperationSettings.toBuilder();
+      refreshSubscriptionSettings = settings.refreshSubscriptionSettings.toBuilder();
+      refreshSubscriptionOperationSettings =
+          settings.refreshSubscriptionOperationSettings.toBuilder();
+      getSubscriptionSettings = settings.getSubscriptionSettings.toBuilder();
+      listSubscriptionsSettings = settings.listSubscriptionsSettings.toBuilder();
+      listSharedResourceSubscriptionsSettings =
+          settings.listSharedResourceSubscriptionsSettings.toBuilder();
+      revokeSubscriptionSettings = settings.revokeSubscriptionSettings.toBuilder();
+      deleteSubscriptionSettings = settings.deleteSubscriptionSettings.toBuilder();
+      deleteSubscriptionOperationSettings =
+          settings.deleteSubscriptionOperationSettings.toBuilder();
       getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
       testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
@@ -680,6 +1003,13 @@ public class AnalyticsHubServiceStubSettings extends StubSettings<AnalyticsHubSe
               updateListingSettings,
               deleteListingSettings,
               subscribeListingSettings,
+              subscribeDataExchangeSettings,
+              refreshSubscriptionSettings,
+              getSubscriptionSettings,
+              listSubscriptionsSettings,
+              listSharedResourceSubscriptionsSettings,
+              revokeSubscriptionSettings,
+              deleteSubscriptionSettings,
               getIamPolicySettings,
               setIamPolicySettings,
               testIamPermissionsSettings);
@@ -773,6 +1103,41 @@ public class AnalyticsHubServiceStubSettings extends StubSettings<AnalyticsHubSe
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
+          .subscribeDataExchangeSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .refreshSubscriptionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getSubscriptionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listSubscriptionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listSharedResourceSubscriptionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .revokeSubscriptionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deleteSubscriptionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
           .getIamPolicySettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
@@ -786,6 +1151,80 @@ public class AnalyticsHubServiceStubSettings extends StubSettings<AnalyticsHubSe
           .testIamPermissionsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .subscribeDataExchangeOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<SubscribeDataExchangeRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(
+                  SubscribeDataExchangeResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .refreshSubscriptionOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<RefreshSubscriptionRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(
+                  RefreshSubscriptionResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteSubscriptionOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteSubscriptionRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
 
       return builder;
     }
@@ -876,6 +1315,78 @@ public class AnalyticsHubServiceStubSettings extends StubSettings<AnalyticsHubSe
     public UnaryCallSettings.Builder<SubscribeListingRequest, SubscribeListingResponse>
         subscribeListingSettings() {
       return subscribeListingSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to subscribeDataExchange. */
+    public UnaryCallSettings.Builder<SubscribeDataExchangeRequest, Operation>
+        subscribeDataExchangeSettings() {
+      return subscribeDataExchangeSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to subscribeDataExchange. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            SubscribeDataExchangeRequest, SubscribeDataExchangeResponse, OperationMetadata>
+        subscribeDataExchangeOperationSettings() {
+      return subscribeDataExchangeOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to refreshSubscription. */
+    public UnaryCallSettings.Builder<RefreshSubscriptionRequest, Operation>
+        refreshSubscriptionSettings() {
+      return refreshSubscriptionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to refreshSubscription. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            RefreshSubscriptionRequest, RefreshSubscriptionResponse, OperationMetadata>
+        refreshSubscriptionOperationSettings() {
+      return refreshSubscriptionOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getSubscription. */
+    public UnaryCallSettings.Builder<GetSubscriptionRequest, Subscription>
+        getSubscriptionSettings() {
+      return getSubscriptionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listSubscriptions. */
+    public PagedCallSettings.Builder<
+            ListSubscriptionsRequest, ListSubscriptionsResponse, ListSubscriptionsPagedResponse>
+        listSubscriptionsSettings() {
+      return listSubscriptionsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listSharedResourceSubscriptions. */
+    public PagedCallSettings.Builder<
+            ListSharedResourceSubscriptionsRequest,
+            ListSharedResourceSubscriptionsResponse,
+            ListSharedResourceSubscriptionsPagedResponse>
+        listSharedResourceSubscriptionsSettings() {
+      return listSharedResourceSubscriptionsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to revokeSubscription. */
+    public UnaryCallSettings.Builder<RevokeSubscriptionRequest, RevokeSubscriptionResponse>
+        revokeSubscriptionSettings() {
+      return revokeSubscriptionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteSubscription. */
+    public UnaryCallSettings.Builder<DeleteSubscriptionRequest, Operation>
+        deleteSubscriptionSettings() {
+      return deleteSubscriptionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteSubscription. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<DeleteSubscriptionRequest, Empty, OperationMetadata>
+        deleteSubscriptionOperationSettings() {
+      return deleteSubscriptionOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to getIamPolicy. */

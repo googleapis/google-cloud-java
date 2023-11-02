@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,11 +46,6 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new AnnotateTextRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -142,6 +137,19 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
+     * Moderate the document for harmful and sensitive categories.
+     * </pre>
+     *
+     * <code>bool moderate_text = 11;</code>
+     *
+     * @return The moderateText.
+     */
+    boolean getModerateText();
+
+    /**
+     *
+     *
+     * <pre>
      * The model options to use for classification. Defaults to v1 options
      * if not specified. Only used if `classify_text` is set to true.
      * </pre>
@@ -206,11 +214,6 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Features();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -318,6 +321,24 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
       return classifyText_;
     }
 
+    public static final int MODERATE_TEXT_FIELD_NUMBER = 11;
+    private boolean moderateText_ = false;
+    /**
+     *
+     *
+     * <pre>
+     * Moderate the document for harmful and sensitive categories.
+     * </pre>
+     *
+     * <code>bool moderate_text = 11;</code>
+     *
+     * @return The moderateText.
+     */
+    @java.lang.Override
+    public boolean getModerateText() {
+      return moderateText_;
+    }
+
     public static final int CLASSIFICATION_MODEL_OPTIONS_FIELD_NUMBER = 10;
     private com.google.cloud.language.v1.ClassificationModelOptions classificationModelOptions_;
     /**
@@ -407,6 +428,9 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
       if (classificationModelOptions_ != null) {
         output.writeMessage(10, getClassificationModelOptions());
       }
+      if (moderateText_ != false) {
+        output.writeBool(11, moderateText_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -436,6 +460,9 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
             com.google.protobuf.CodedOutputStream.computeMessageSize(
                 10, getClassificationModelOptions());
       }
+      if (moderateText_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(11, moderateText_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -457,6 +484,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
       if (getExtractDocumentSentiment() != other.getExtractDocumentSentiment()) return false;
       if (getExtractEntitySentiment() != other.getExtractEntitySentiment()) return false;
       if (getClassifyText() != other.getClassifyText()) return false;
+      if (getModerateText() != other.getModerateText()) return false;
       if (hasClassificationModelOptions() != other.hasClassificationModelOptions()) return false;
       if (hasClassificationModelOptions()) {
         if (!getClassificationModelOptions().equals(other.getClassificationModelOptions()))
@@ -483,6 +511,8 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getExtractEntitySentiment());
       hash = (37 * hash) + CLASSIFY_TEXT_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getClassifyText());
+      hash = (37 * hash) + MODERATE_TEXT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getModerateText());
       if (hasClassificationModelOptions()) {
         hash = (37 * hash) + CLASSIFICATION_MODEL_OPTIONS_FIELD_NUMBER;
         hash = (53 * hash) + getClassificationModelOptions().hashCode();
@@ -635,6 +665,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
         extractDocumentSentiment_ = false;
         extractEntitySentiment_ = false;
         classifyText_ = false;
+        moderateText_ = false;
         classificationModelOptions_ = null;
         if (classificationModelOptionsBuilder_ != null) {
           classificationModelOptionsBuilder_.dispose();
@@ -692,6 +723,9 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
           result.classifyText_ = classifyText_;
         }
         if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.moderateText_ = moderateText_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
           result.classificationModelOptions_ =
               classificationModelOptionsBuilder_ == null
                   ? classificationModelOptions_
@@ -762,6 +796,9 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
         if (other.getClassifyText() != false) {
           setClassifyText(other.getClassifyText());
         }
+        if (other.getModerateText() != false) {
+          setModerateText(other.getModerateText());
+        }
         if (other.hasClassificationModelOptions()) {
           mergeClassificationModelOptions(other.getClassificationModelOptions());
         }
@@ -825,9 +862,15 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
                 {
                   input.readMessage(
                       getClassificationModelOptionsFieldBuilder().getBuilder(), extensionRegistry);
-                  bitField0_ |= 0x00000020;
+                  bitField0_ |= 0x00000040;
                   break;
                 } // case 82
+              case 88:
+                {
+                  moderateText_ = input.readBool();
+                  bitField0_ |= 0x00000020;
+                  break;
+                } // case 88
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1112,6 +1155,59 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
         return this;
       }
 
+      private boolean moderateText_;
+      /**
+       *
+       *
+       * <pre>
+       * Moderate the document for harmful and sensitive categories.
+       * </pre>
+       *
+       * <code>bool moderate_text = 11;</code>
+       *
+       * @return The moderateText.
+       */
+      @java.lang.Override
+      public boolean getModerateText() {
+        return moderateText_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Moderate the document for harmful and sensitive categories.
+       * </pre>
+       *
+       * <code>bool moderate_text = 11;</code>
+       *
+       * @param value The moderateText to set.
+       * @return This builder for chaining.
+       */
+      public Builder setModerateText(boolean value) {
+
+        moderateText_ = value;
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Moderate the document for harmful and sensitive categories.
+       * </pre>
+       *
+       * <code>bool moderate_text = 11;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearModerateText() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        moderateText_ = false;
+        onChanged();
+        return this;
+      }
+
       private com.google.cloud.language.v1.ClassificationModelOptions classificationModelOptions_;
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.cloud.language.v1.ClassificationModelOptions,
@@ -1133,7 +1229,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
        * @return Whether the classificationModelOptions field is set.
        */
       public boolean hasClassificationModelOptions() {
-        return ((bitField0_ & 0x00000020) != 0);
+        return ((bitField0_ & 0x00000040) != 0);
       }
       /**
        *
@@ -1181,7 +1277,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
         } else {
           classificationModelOptionsBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -1204,7 +1300,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
         } else {
           classificationModelOptionsBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -1223,7 +1319,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
       public Builder mergeClassificationModelOptions(
           com.google.cloud.language.v1.ClassificationModelOptions value) {
         if (classificationModelOptionsBuilder_ == null) {
-          if (((bitField0_ & 0x00000020) != 0)
+          if (((bitField0_ & 0x00000040) != 0)
               && classificationModelOptions_ != null
               && classificationModelOptions_
                   != com.google.cloud.language.v1.ClassificationModelOptions.getDefaultInstance()) {
@@ -1234,7 +1330,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
         } else {
           classificationModelOptionsBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -1251,7 +1347,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
        * </code>
        */
       public Builder clearClassificationModelOptions() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000040);
         classificationModelOptions_ = null;
         if (classificationModelOptionsBuilder_ != null) {
           classificationModelOptionsBuilder_.dispose();
@@ -1274,7 +1370,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
        */
       public com.google.cloud.language.v1.ClassificationModelOptions.Builder
           getClassificationModelOptionsBuilder() {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
         return getClassificationModelOptionsFieldBuilder().getBuilder();
       }

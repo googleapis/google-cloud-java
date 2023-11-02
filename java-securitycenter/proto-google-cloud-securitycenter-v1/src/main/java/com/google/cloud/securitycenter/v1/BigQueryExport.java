@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,11 +50,6 @@ public final class BigQueryExport extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new BigQueryExport();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -200,14 +195,19 @@ public final class BigQueryExport extends com.google.protobuf.GeneratedMessageV3
    * of findings. The expression is a list of zero or more restrictions combined
    * via logical operators `AND` and `OR`. Parentheses are supported, and `OR`
    * has higher precedence than `AND`.
+   *
    * Restrictions have the form `&lt;field&gt; &lt;operator&gt; &lt;value&gt;` and may have a
    * `-` character in front of them to indicate negation. The fields map to
    * those defined in the corresponding resource.
+   *
    * The supported operators are:
+   *
    * * `=` for all value types.
    * * `&gt;`, `&lt;`, `&gt;=`, `&lt;=` for integer values.
    * * `:`, meaning substring matching, for strings.
+   *
    * The supported value types are:
+   *
    * * string literals in quotes.
    * * integer literals without quotes.
    * * boolean literals `true` and `false` without quotes.
@@ -237,14 +237,19 @@ public final class BigQueryExport extends com.google.protobuf.GeneratedMessageV3
    * of findings. The expression is a list of zero or more restrictions combined
    * via logical operators `AND` and `OR`. Parentheses are supported, and `OR`
    * has higher precedence than `AND`.
+   *
    * Restrictions have the form `&lt;field&gt; &lt;operator&gt; &lt;value&gt;` and may have a
    * `-` character in front of them to indicate negation. The fields map to
    * those defined in the corresponding resource.
+   *
    * The supported operators are:
+   *
    * * `=` for all value types.
    * * `&gt;`, `&lt;`, `&gt;=`, `&lt;=` for integer values.
    * * `:`, meaning substring matching, for strings.
+   *
    * The supported value types are:
+   *
    * * string literals in quotes.
    * * integer literals without quotes.
    * * boolean literals `true` and `false` without quotes.
@@ -1322,14 +1327,19 @@ public final class BigQueryExport extends com.google.protobuf.GeneratedMessageV3
      * of findings. The expression is a list of zero or more restrictions combined
      * via logical operators `AND` and `OR`. Parentheses are supported, and `OR`
      * has higher precedence than `AND`.
+     *
      * Restrictions have the form `&lt;field&gt; &lt;operator&gt; &lt;value&gt;` and may have a
      * `-` character in front of them to indicate negation. The fields map to
      * those defined in the corresponding resource.
+     *
      * The supported operators are:
+     *
      * * `=` for all value types.
      * * `&gt;`, `&lt;`, `&gt;=`, `&lt;=` for integer values.
      * * `:`, meaning substring matching, for strings.
+     *
      * The supported value types are:
+     *
      * * string literals in quotes.
      * * integer literals without quotes.
      * * boolean literals `true` and `false` without quotes.
@@ -1358,14 +1368,19 @@ public final class BigQueryExport extends com.google.protobuf.GeneratedMessageV3
      * of findings. The expression is a list of zero or more restrictions combined
      * via logical operators `AND` and `OR`. Parentheses are supported, and `OR`
      * has higher precedence than `AND`.
+     *
      * Restrictions have the form `&lt;field&gt; &lt;operator&gt; &lt;value&gt;` and may have a
      * `-` character in front of them to indicate negation. The fields map to
      * those defined in the corresponding resource.
+     *
      * The supported operators are:
+     *
      * * `=` for all value types.
      * * `&gt;`, `&lt;`, `&gt;=`, `&lt;=` for integer values.
      * * `:`, meaning substring matching, for strings.
+     *
      * The supported value types are:
+     *
      * * string literals in quotes.
      * * integer literals without quotes.
      * * boolean literals `true` and `false` without quotes.
@@ -1394,14 +1409,19 @@ public final class BigQueryExport extends com.google.protobuf.GeneratedMessageV3
      * of findings. The expression is a list of zero or more restrictions combined
      * via logical operators `AND` and `OR`. Parentheses are supported, and `OR`
      * has higher precedence than `AND`.
+     *
      * Restrictions have the form `&lt;field&gt; &lt;operator&gt; &lt;value&gt;` and may have a
      * `-` character in front of them to indicate negation. The fields map to
      * those defined in the corresponding resource.
+     *
      * The supported operators are:
+     *
      * * `=` for all value types.
      * * `&gt;`, `&lt;`, `&gt;=`, `&lt;=` for integer values.
      * * `:`, meaning substring matching, for strings.
+     *
      * The supported value types are:
+     *
      * * string literals in quotes.
      * * integer literals without quotes.
      * * boolean literals `true` and `false` without quotes.
@@ -1429,14 +1449,19 @@ public final class BigQueryExport extends com.google.protobuf.GeneratedMessageV3
      * of findings. The expression is a list of zero or more restrictions combined
      * via logical operators `AND` and `OR`. Parentheses are supported, and `OR`
      * has higher precedence than `AND`.
+     *
      * Restrictions have the form `&lt;field&gt; &lt;operator&gt; &lt;value&gt;` and may have a
      * `-` character in front of them to indicate negation. The fields map to
      * those defined in the corresponding resource.
+     *
      * The supported operators are:
+     *
      * * `=` for all value types.
      * * `&gt;`, `&lt;`, `&gt;=`, `&lt;=` for integer values.
      * * `:`, meaning substring matching, for strings.
+     *
      * The supported value types are:
+     *
      * * string literals in quotes.
      * * integer literals without quotes.
      * * boolean literals `true` and `false` without quotes.
@@ -1460,14 +1485,19 @@ public final class BigQueryExport extends com.google.protobuf.GeneratedMessageV3
      * of findings. The expression is a list of zero or more restrictions combined
      * via logical operators `AND` and `OR`. Parentheses are supported, and `OR`
      * has higher precedence than `AND`.
+     *
      * Restrictions have the form `&lt;field&gt; &lt;operator&gt; &lt;value&gt;` and may have a
      * `-` character in front of them to indicate negation. The fields map to
      * those defined in the corresponding resource.
+     *
      * The supported operators are:
+     *
      * * `=` for all value types.
      * * `&gt;`, `&lt;`, `&gt;=`, `&lt;=` for integer values.
      * * `:`, meaning substring matching, for strings.
+     *
      * The supported value types are:
+     *
      * * string literals in quotes.
      * * integer literals without quotes.
      * * boolean literals `true` and `false` without quotes.

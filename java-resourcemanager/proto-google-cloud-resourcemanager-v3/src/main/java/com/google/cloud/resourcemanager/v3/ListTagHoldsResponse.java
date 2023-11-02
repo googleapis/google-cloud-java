@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,11 +46,6 @@ public final class ListTagHoldsResponse extends com.google.protobuf.GeneratedMes
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ListTagHoldsResponse();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -148,12 +143,15 @@ public final class ListTagHoldsResponse extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Pagination token.
+   *
    * If the result set is too large to fit in a single response, this token
    * is returned. It encodes the position of the current result cursor.
    * Feeding this value into a new list request with the `page_token` parameter
    * gives the next page of the results.
+   *
    * When `next_page_token` is not filled in, there is no next page and
    * the list returned is the last page in the result set.
+   *
    * Pagination tokens have a limited lifetime.
    * </pre>
    *
@@ -178,12 +176,15 @@ public final class ListTagHoldsResponse extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Pagination token.
+   *
    * If the result set is too large to fit in a single response, this token
    * is returned. It encodes the position of the current result cursor.
    * Feeding this value into a new list request with the `page_token` parameter
    * gives the next page of the results.
+   *
    * When `next_page_token` is not filled in, there is no next page and
    * the list returned is the last page in the result set.
+   *
    * Pagination tokens have a limited lifetime.
    * </pre>
    *
@@ -975,12 +976,15 @@ public final class ListTagHoldsResponse extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Pagination token.
+     *
      * If the result set is too large to fit in a single response, this token
      * is returned. It encodes the position of the current result cursor.
      * Feeding this value into a new list request with the `page_token` parameter
      * gives the next page of the results.
+     *
      * When `next_page_token` is not filled in, there is no next page and
      * the list returned is the last page in the result set.
+     *
      * Pagination tokens have a limited lifetime.
      * </pre>
      *
@@ -1004,12 +1008,15 @@ public final class ListTagHoldsResponse extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Pagination token.
+     *
      * If the result set is too large to fit in a single response, this token
      * is returned. It encodes the position of the current result cursor.
      * Feeding this value into a new list request with the `page_token` parameter
      * gives the next page of the results.
+     *
      * When `next_page_token` is not filled in, there is no next page and
      * the list returned is the last page in the result set.
+     *
      * Pagination tokens have a limited lifetime.
      * </pre>
      *
@@ -1033,12 +1040,15 @@ public final class ListTagHoldsResponse extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Pagination token.
+     *
      * If the result set is too large to fit in a single response, this token
      * is returned. It encodes the position of the current result cursor.
      * Feeding this value into a new list request with the `page_token` parameter
      * gives the next page of the results.
+     *
      * When `next_page_token` is not filled in, there is no next page and
      * the list returned is the last page in the result set.
+     *
      * Pagination tokens have a limited lifetime.
      * </pre>
      *
@@ -1061,12 +1071,15 @@ public final class ListTagHoldsResponse extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Pagination token.
+     *
      * If the result set is too large to fit in a single response, this token
      * is returned. It encodes the position of the current result cursor.
      * Feeding this value into a new list request with the `page_token` parameter
      * gives the next page of the results.
+     *
      * When `next_page_token` is not filled in, there is no next page and
      * the list returned is the last page in the result set.
+     *
      * Pagination tokens have a limited lifetime.
      * </pre>
      *
@@ -1085,12 +1098,15 @@ public final class ListTagHoldsResponse extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Pagination token.
+     *
      * If the result set is too large to fit in a single response, this token
      * is returned. It encodes the position of the current result cursor.
      * Feeding this value into a new list request with the `page_token` parameter
      * gives the next page of the results.
+     *
      * When `next_page_token` is not filled in, there is no next page and
      * the list returned is the last page in the result set.
+     *
      * Pagination tokens have a limited lifetime.
      * </pre>
      *

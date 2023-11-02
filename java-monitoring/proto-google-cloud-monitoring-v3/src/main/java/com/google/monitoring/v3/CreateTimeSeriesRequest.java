@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
     return new CreateTimeSeriesRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.monitoring.v3.MetricServiceProto
         .internal_static_google_monitoring_v3_CreateTimeSeriesRequest_descriptor;
@@ -78,6 +73,7 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
    * <pre>
    * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
    * which to execute the request. The format is:
+   *
    *     projects/[PROJECT_ID_OR_NUMBER]
    * </pre>
    *
@@ -105,6 +101,7 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
    * <pre>
    * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
    * which to execute the request. The format is:
+   *
    *     projects/[PROJECT_ID_OR_NUMBER]
    * </pre>
    *
@@ -140,6 +137,7 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
    * point must be more recent than any other point in its time series.  Each
    * `TimeSeries` value must fully specify a unique time series by supplying
    * all label values for the metric and the monitored resource.
+   *
    * The maximum number of `TimeSeries` objects per `Create` request is 200.
    * </pre>
    *
@@ -160,6 +158,7 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
    * point must be more recent than any other point in its time series.  Each
    * `TimeSeries` value must fully specify a unique time series by supplying
    * all label values for the metric and the monitored resource.
+   *
    * The maximum number of `TimeSeries` objects per `Create` request is 200.
    * </pre>
    *
@@ -181,6 +180,7 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
    * point must be more recent than any other point in its time series.  Each
    * `TimeSeries` value must fully specify a unique time series by supplying
    * all label values for the metric and the monitored resource.
+   *
    * The maximum number of `TimeSeries` objects per `Create` request is 200.
    * </pre>
    *
@@ -201,6 +201,7 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
    * point must be more recent than any other point in its time series.  Each
    * `TimeSeries` value must fully specify a unique time series by supplying
    * all label values for the metric and the monitored resource.
+   *
    * The maximum number of `TimeSeries` objects per `Create` request is 200.
    * </pre>
    *
@@ -221,6 +222,7 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
    * point must be more recent than any other point in its time series.  Each
    * `TimeSeries` value must fully specify a unique time series by supplying
    * all label values for the metric and the monitored resource.
+   *
    * The maximum number of `TimeSeries` objects per `Create` request is 200.
    * </pre>
    *
@@ -654,6 +656,7 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
      * <pre>
      * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
      * which to execute the request. The format is:
+     *
      *     projects/[PROJECT_ID_OR_NUMBER]
      * </pre>
      *
@@ -680,6 +683,7 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
      * <pre>
      * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
      * which to execute the request. The format is:
+     *
      *     projects/[PROJECT_ID_OR_NUMBER]
      * </pre>
      *
@@ -706,6 +710,7 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
      * <pre>
      * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
      * which to execute the request. The format is:
+     *
      *     projects/[PROJECT_ID_OR_NUMBER]
      * </pre>
      *
@@ -731,6 +736,7 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
      * <pre>
      * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
      * which to execute the request. The format is:
+     *
      *     projects/[PROJECT_ID_OR_NUMBER]
      * </pre>
      *
@@ -752,6 +758,7 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
      * <pre>
      * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
      * which to execute the request. The format is:
+     *
      *     projects/[PROJECT_ID_OR_NUMBER]
      * </pre>
      *
@@ -798,6 +805,7 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
      * point must be more recent than any other point in its time series.  Each
      * `TimeSeries` value must fully specify a unique time series by supplying
      * all label values for the metric and the monitored resource.
+     *
      * The maximum number of `TimeSeries` objects per `Create` request is 200.
      * </pre>
      *
@@ -821,6 +829,7 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
      * point must be more recent than any other point in its time series.  Each
      * `TimeSeries` value must fully specify a unique time series by supplying
      * all label values for the metric and the monitored resource.
+     *
      * The maximum number of `TimeSeries` objects per `Create` request is 200.
      * </pre>
      *
@@ -844,6 +853,7 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
      * point must be more recent than any other point in its time series.  Each
      * `TimeSeries` value must fully specify a unique time series by supplying
      * all label values for the metric and the monitored resource.
+     *
      * The maximum number of `TimeSeries` objects per `Create` request is 200.
      * </pre>
      *
@@ -867,6 +877,7 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
      * point must be more recent than any other point in its time series.  Each
      * `TimeSeries` value must fully specify a unique time series by supplying
      * all label values for the metric and the monitored resource.
+     *
      * The maximum number of `TimeSeries` objects per `Create` request is 200.
      * </pre>
      *
@@ -896,6 +907,7 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
      * point must be more recent than any other point in its time series.  Each
      * `TimeSeries` value must fully specify a unique time series by supplying
      * all label values for the metric and the monitored resource.
+     *
      * The maximum number of `TimeSeries` objects per `Create` request is 200.
      * </pre>
      *
@@ -923,6 +935,7 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
      * point must be more recent than any other point in its time series.  Each
      * `TimeSeries` value must fully specify a unique time series by supplying
      * all label values for the metric and the monitored resource.
+     *
      * The maximum number of `TimeSeries` objects per `Create` request is 200.
      * </pre>
      *
@@ -952,6 +965,7 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
      * point must be more recent than any other point in its time series.  Each
      * `TimeSeries` value must fully specify a unique time series by supplying
      * all label values for the metric and the monitored resource.
+     *
      * The maximum number of `TimeSeries` objects per `Create` request is 200.
      * </pre>
      *
@@ -981,6 +995,7 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
      * point must be more recent than any other point in its time series.  Each
      * `TimeSeries` value must fully specify a unique time series by supplying
      * all label values for the metric and the monitored resource.
+     *
      * The maximum number of `TimeSeries` objects per `Create` request is 200.
      * </pre>
      *
@@ -1007,6 +1022,7 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
      * point must be more recent than any other point in its time series.  Each
      * `TimeSeries` value must fully specify a unique time series by supplying
      * all label values for the metric and the monitored resource.
+     *
      * The maximum number of `TimeSeries` objects per `Create` request is 200.
      * </pre>
      *
@@ -1034,6 +1050,7 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
      * point must be more recent than any other point in its time series.  Each
      * `TimeSeries` value must fully specify a unique time series by supplying
      * all label values for the metric and the monitored resource.
+     *
      * The maximum number of `TimeSeries` objects per `Create` request is 200.
      * </pre>
      *
@@ -1061,6 +1078,7 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
      * point must be more recent than any other point in its time series.  Each
      * `TimeSeries` value must fully specify a unique time series by supplying
      * all label values for the metric and the monitored resource.
+     *
      * The maximum number of `TimeSeries` objects per `Create` request is 200.
      * </pre>
      *
@@ -1087,6 +1105,7 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
      * point must be more recent than any other point in its time series.  Each
      * `TimeSeries` value must fully specify a unique time series by supplying
      * all label values for the metric and the monitored resource.
+     *
      * The maximum number of `TimeSeries` objects per `Create` request is 200.
      * </pre>
      *
@@ -1113,6 +1132,7 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
      * point must be more recent than any other point in its time series.  Each
      * `TimeSeries` value must fully specify a unique time series by supplying
      * all label values for the metric and the monitored resource.
+     *
      * The maximum number of `TimeSeries` objects per `Create` request is 200.
      * </pre>
      *
@@ -1132,6 +1152,7 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
      * point must be more recent than any other point in its time series.  Each
      * `TimeSeries` value must fully specify a unique time series by supplying
      * all label values for the metric and the monitored resource.
+     *
      * The maximum number of `TimeSeries` objects per `Create` request is 200.
      * </pre>
      *
@@ -1155,6 +1176,7 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
      * point must be more recent than any other point in its time series.  Each
      * `TimeSeries` value must fully specify a unique time series by supplying
      * all label values for the metric and the monitored resource.
+     *
      * The maximum number of `TimeSeries` objects per `Create` request is 200.
      * </pre>
      *
@@ -1179,6 +1201,7 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
      * point must be more recent than any other point in its time series.  Each
      * `TimeSeries` value must fully specify a unique time series by supplying
      * all label values for the metric and the monitored resource.
+     *
      * The maximum number of `TimeSeries` objects per `Create` request is 200.
      * </pre>
      *
@@ -1199,6 +1222,7 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
      * point must be more recent than any other point in its time series.  Each
      * `TimeSeries` value must fully specify a unique time series by supplying
      * all label values for the metric and the monitored resource.
+     *
      * The maximum number of `TimeSeries` objects per `Create` request is 200.
      * </pre>
      *
@@ -1219,6 +1243,7 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
      * point must be more recent than any other point in its time series.  Each
      * `TimeSeries` value must fully specify a unique time series by supplying
      * all label values for the metric and the monitored resource.
+     *
      * The maximum number of `TimeSeries` objects per `Create` request is 200.
      * </pre>
      *

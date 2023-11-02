@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class DeleteModelVersionRequest extends com.google.protobuf.Generat
     return new DeleteModelVersionRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1.ModelServiceProto
         .internal_static_google_cloud_aiplatform_v1_DeleteModelVersionRequest_descriptor;
@@ -78,6 +73,7 @@ public final class DeleteModelVersionRequest extends com.google.protobuf.Generat
    * <pre>
    * Required. The name of the model version to be deleted, with a version ID
    * explicitly included.
+   *
    * Example: `projects/{project}/locations/{location}/models/{model}&#64;1234`
    * </pre>
    *
@@ -105,6 +101,7 @@ public final class DeleteModelVersionRequest extends com.google.protobuf.Generat
    * <pre>
    * Required. The name of the model version to be deleted, with a version ID
    * explicitly included.
+   *
    * Example: `projects/{project}/locations/{location}/models/{model}&#64;1234`
    * </pre>
    *
@@ -478,6 +475,7 @@ public final class DeleteModelVersionRequest extends com.google.protobuf.Generat
      * <pre>
      * Required. The name of the model version to be deleted, with a version ID
      * explicitly included.
+     *
      * Example: `projects/{project}/locations/{location}/models/{model}&#64;1234`
      * </pre>
      *
@@ -504,6 +502,7 @@ public final class DeleteModelVersionRequest extends com.google.protobuf.Generat
      * <pre>
      * Required. The name of the model version to be deleted, with a version ID
      * explicitly included.
+     *
      * Example: `projects/{project}/locations/{location}/models/{model}&#64;1234`
      * </pre>
      *
@@ -530,6 +529,7 @@ public final class DeleteModelVersionRequest extends com.google.protobuf.Generat
      * <pre>
      * Required. The name of the model version to be deleted, with a version ID
      * explicitly included.
+     *
      * Example: `projects/{project}/locations/{location}/models/{model}&#64;1234`
      * </pre>
      *
@@ -555,6 +555,7 @@ public final class DeleteModelVersionRequest extends com.google.protobuf.Generat
      * <pre>
      * Required. The name of the model version to be deleted, with a version ID
      * explicitly included.
+     *
      * Example: `projects/{project}/locations/{location}/models/{model}&#64;1234`
      * </pre>
      *
@@ -576,6 +577,7 @@ public final class DeleteModelVersionRequest extends com.google.protobuf.Generat
      * <pre>
      * Required. The name of the model version to be deleted, with a version ID
      * explicitly included.
+     *
      * Example: `projects/{project}/locations/{location}/models/{model}&#64;1234`
      * </pre>
      *

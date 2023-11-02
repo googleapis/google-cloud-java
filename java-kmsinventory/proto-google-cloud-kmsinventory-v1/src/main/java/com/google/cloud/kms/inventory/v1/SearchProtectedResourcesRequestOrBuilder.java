@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -108,6 +108,7 @@ public interface SearchProtectedResourcesRequestOrBuilder
    * A page token, received from a previous
    * [KeyTrackingService.SearchProtectedResources][google.cloud.kms.inventory.v1.KeyTrackingService.SearchProtectedResources]
    * call. Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to
    * [KeyTrackingService.SearchProtectedResources][google.cloud.kms.inventory.v1.KeyTrackingService.SearchProtectedResources]
    * must match the call that provided the page token.
@@ -125,6 +126,7 @@ public interface SearchProtectedResourcesRequestOrBuilder
    * A page token, received from a previous
    * [KeyTrackingService.SearchProtectedResources][google.cloud.kms.inventory.v1.KeyTrackingService.SearchProtectedResources]
    * call. Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to
    * [KeyTrackingService.SearchProtectedResources][google.cloud.kms.inventory.v1.KeyTrackingService.SearchProtectedResources]
    * must match the call that provided the page token.
@@ -135,4 +137,107 @@ public interface SearchProtectedResourcesRequestOrBuilder
    * @return The bytes for pageToken.
    */
   com.google.protobuf.ByteString getPageTokenBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of resource types that this request searches for. If
+   * empty, it will search all the [trackable resource
+   * types](https://cloud.google.com/kms/docs/view-key-usage#tracked-resource-types).
+   *
+   * Regular expressions are also supported. For example:
+   *
+   * * `compute.googleapis.com.*` snapshots resources whose type starts
+   * with `compute.googleapis.com`.
+   * * `.*Image` snapshots resources whose type ends with `Image`.
+   * * `.*Image.*` snapshots resources whose type contains `Image`.
+   *
+   * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
+   * regular expression syntax. If the regular expression does not match any
+   * supported resource type, an INVALID_ARGUMENT error will be returned.
+   * </pre>
+   *
+   * <code>repeated string resource_types = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the resourceTypes.
+   */
+  java.util.List<java.lang.String> getResourceTypesList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of resource types that this request searches for. If
+   * empty, it will search all the [trackable resource
+   * types](https://cloud.google.com/kms/docs/view-key-usage#tracked-resource-types).
+   *
+   * Regular expressions are also supported. For example:
+   *
+   * * `compute.googleapis.com.*` snapshots resources whose type starts
+   * with `compute.googleapis.com`.
+   * * `.*Image` snapshots resources whose type ends with `Image`.
+   * * `.*Image.*` snapshots resources whose type contains `Image`.
+   *
+   * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
+   * regular expression syntax. If the regular expression does not match any
+   * supported resource type, an INVALID_ARGUMENT error will be returned.
+   * </pre>
+   *
+   * <code>repeated string resource_types = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of resourceTypes.
+   */
+  int getResourceTypesCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of resource types that this request searches for. If
+   * empty, it will search all the [trackable resource
+   * types](https://cloud.google.com/kms/docs/view-key-usage#tracked-resource-types).
+   *
+   * Regular expressions are also supported. For example:
+   *
+   * * `compute.googleapis.com.*` snapshots resources whose type starts
+   * with `compute.googleapis.com`.
+   * * `.*Image` snapshots resources whose type ends with `Image`.
+   * * `.*Image.*` snapshots resources whose type contains `Image`.
+   *
+   * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
+   * regular expression syntax. If the regular expression does not match any
+   * supported resource type, an INVALID_ARGUMENT error will be returned.
+   * </pre>
+   *
+   * <code>repeated string resource_types = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The resourceTypes at the given index.
+   */
+  java.lang.String getResourceTypes(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of resource types that this request searches for. If
+   * empty, it will search all the [trackable resource
+   * types](https://cloud.google.com/kms/docs/view-key-usage#tracked-resource-types).
+   *
+   * Regular expressions are also supported. For example:
+   *
+   * * `compute.googleapis.com.*` snapshots resources whose type starts
+   * with `compute.googleapis.com`.
+   * * `.*Image` snapshots resources whose type ends with `Image`.
+   * * `.*Image.*` snapshots resources whose type contains `Image`.
+   *
+   * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
+   * regular expression syntax. If the regular expression does not match any
+   * supported resource type, an INVALID_ARGUMENT error will be returned.
+   * </pre>
+   *
+   * <code>repeated string resource_types = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the resourceTypes at the given index.
+   */
+  com.google.protobuf.ByteString getResourceTypesBytes(int index);
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,11 +50,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
     return new Settings();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.securitycenter.settings.v1beta1.SettingsProto
         .internal_static_google_cloud_securitycenter_settings_v1beta1_Settings_descriptor;
@@ -88,6 +83,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Defines the onboarding states for SCC
+   *
    * Potentially is just an indicator that a user has reviewed some subset of
    * our configuration surface, even if it's still currently set to its
    * API-default state.
@@ -397,11 +393,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new DetectorGroupSettings();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {

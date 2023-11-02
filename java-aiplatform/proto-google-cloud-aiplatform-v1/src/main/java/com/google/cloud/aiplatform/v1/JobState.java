@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -140,6 +140,16 @@ public enum JobState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>JOB_STATE_UPDATING = 10;</code>
    */
   JOB_STATE_UPDATING(10),
+  /**
+   *
+   *
+   * <pre>
+   * The job is partially succeeded, some results may be missing due to errors.
+   * </pre>
+   *
+   * <code>JOB_STATE_PARTIALLY_SUCCEEDED = 11;</code>
+   */
+  JOB_STATE_PARTIALLY_SUCCEEDED(11),
   UNRECOGNIZED(-1),
   ;
 
@@ -255,6 +265,16 @@ public enum JobState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>JOB_STATE_UPDATING = 10;</code>
    */
   public static final int JOB_STATE_UPDATING_VALUE = 10;
+  /**
+   *
+   *
+   * <pre>
+   * The job is partially succeeded, some results may be missing due to errors.
+   * </pre>
+   *
+   * <code>JOB_STATE_PARTIALLY_SUCCEEDED = 11;</code>
+   */
+  public static final int JOB_STATE_PARTIALLY_SUCCEEDED_VALUE = 11;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -302,6 +322,8 @@ public enum JobState implements com.google.protobuf.ProtocolMessageEnum {
         return JOB_STATE_EXPIRED;
       case 10:
         return JOB_STATE_UPDATING;
+      case 11:
+        return JOB_STATE_PARTIALLY_SUCCEEDED;
       default:
         return null;
     }

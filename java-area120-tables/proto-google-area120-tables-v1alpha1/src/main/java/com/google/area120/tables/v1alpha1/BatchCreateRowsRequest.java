@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,11 +46,6 @@ public final class BatchCreateRowsRequest extends com.google.protobuf.GeneratedM
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new BatchCreateRowsRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -130,6 +125,7 @@ public final class BatchCreateRowsRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Required. The request message specifying the rows to create.
+   *
    * A maximum of 500 rows can be created in a single batch.
    * </pre>
    *
@@ -146,6 +142,7 @@ public final class BatchCreateRowsRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Required. The request message specifying the rows to create.
+   *
    * A maximum of 500 rows can be created in a single batch.
    * </pre>
    *
@@ -163,6 +160,7 @@ public final class BatchCreateRowsRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Required. The request message specifying the rows to create.
+   *
    * A maximum of 500 rows can be created in a single batch.
    * </pre>
    *
@@ -179,6 +177,7 @@ public final class BatchCreateRowsRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Required. The request message specifying the rows to create.
+   *
    * A maximum of 500 rows can be created in a single batch.
    * </pre>
    *
@@ -195,6 +194,7 @@ public final class BatchCreateRowsRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Required. The request message specifying the rows to create.
+   *
    * A maximum of 500 rows can be created in a single batch.
    * </pre>
    *
@@ -757,6 +757,7 @@ public final class BatchCreateRowsRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The request message specifying the rows to create.
+     *
      * A maximum of 500 rows can be created in a single batch.
      * </pre>
      *
@@ -776,6 +777,7 @@ public final class BatchCreateRowsRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The request message specifying the rows to create.
+     *
      * A maximum of 500 rows can be created in a single batch.
      * </pre>
      *
@@ -795,6 +797,7 @@ public final class BatchCreateRowsRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The request message specifying the rows to create.
+     *
      * A maximum of 500 rows can be created in a single batch.
      * </pre>
      *
@@ -814,6 +817,7 @@ public final class BatchCreateRowsRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The request message specifying the rows to create.
+     *
      * A maximum of 500 rows can be created in a single batch.
      * </pre>
      *
@@ -840,6 +844,7 @@ public final class BatchCreateRowsRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The request message specifying the rows to create.
+     *
      * A maximum of 500 rows can be created in a single batch.
      * </pre>
      *
@@ -863,6 +868,7 @@ public final class BatchCreateRowsRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The request message specifying the rows to create.
+     *
      * A maximum of 500 rows can be created in a single batch.
      * </pre>
      *
@@ -888,6 +894,7 @@ public final class BatchCreateRowsRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The request message specifying the rows to create.
+     *
      * A maximum of 500 rows can be created in a single batch.
      * </pre>
      *
@@ -914,6 +921,7 @@ public final class BatchCreateRowsRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The request message specifying the rows to create.
+     *
      * A maximum of 500 rows can be created in a single batch.
      * </pre>
      *
@@ -937,6 +945,7 @@ public final class BatchCreateRowsRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The request message specifying the rows to create.
+     *
      * A maximum of 500 rows can be created in a single batch.
      * </pre>
      *
@@ -960,6 +969,7 @@ public final class BatchCreateRowsRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The request message specifying the rows to create.
+     *
      * A maximum of 500 rows can be created in a single batch.
      * </pre>
      *
@@ -983,6 +993,7 @@ public final class BatchCreateRowsRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The request message specifying the rows to create.
+     *
      * A maximum of 500 rows can be created in a single batch.
      * </pre>
      *
@@ -1005,6 +1016,7 @@ public final class BatchCreateRowsRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The request message specifying the rows to create.
+     *
      * A maximum of 500 rows can be created in a single batch.
      * </pre>
      *
@@ -1027,6 +1039,7 @@ public final class BatchCreateRowsRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The request message specifying the rows to create.
+     *
      * A maximum of 500 rows can be created in a single batch.
      * </pre>
      *
@@ -1043,6 +1056,7 @@ public final class BatchCreateRowsRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The request message specifying the rows to create.
+     *
      * A maximum of 500 rows can be created in a single batch.
      * </pre>
      *
@@ -1063,6 +1077,7 @@ public final class BatchCreateRowsRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The request message specifying the rows to create.
+     *
      * A maximum of 500 rows can be created in a single batch.
      * </pre>
      *
@@ -1083,6 +1098,7 @@ public final class BatchCreateRowsRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The request message specifying the rows to create.
+     *
      * A maximum of 500 rows can be created in a single batch.
      * </pre>
      *
@@ -1099,6 +1115,7 @@ public final class BatchCreateRowsRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The request message specifying the rows to create.
+     *
      * A maximum of 500 rows can be created in a single batch.
      * </pre>
      *
@@ -1117,6 +1134,7 @@ public final class BatchCreateRowsRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The request message specifying the rows to create.
+     *
      * A maximum of 500 rows can be created in a single batch.
      * </pre>
      *

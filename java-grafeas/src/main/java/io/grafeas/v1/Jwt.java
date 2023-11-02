@@ -40,11 +40,6 @@ public final class Jwt extends com.google.protobuf.GeneratedMessageV3
     return new Jwt();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return io.grafeas.v1.Attestation.internal_static_grafeas_v1_Jwt_descriptor;
   }

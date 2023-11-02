@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,11 +49,6 @@ public final class CreateEntryRequest extends com.google.protobuf.GeneratedMessa
     return new CreateEntryRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datacatalog.v1.Datacatalog
         .internal_static_google_cloud_datacatalog_v1_CreateEntryRequest_descriptor;
@@ -78,6 +73,7 @@ public final class CreateEntryRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Required. The name of the entry group this entry belongs to.
+   *
    * Note: The entry itself and its child resources might not be stored in
    * the location specified in its name.
    * </pre>
@@ -105,6 +101,7 @@ public final class CreateEntryRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Required. The name of the entry group this entry belongs to.
+   *
    * Note: The entry itself and its child resources might not be stored in
    * the location specified in its name.
    * </pre>
@@ -137,6 +134,7 @@ public final class CreateEntryRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Required. The ID of the entry to create.
+   *
    * The ID must contain only letters (a-z, A-Z), numbers (0-9),
    * and underscores (_).
    * The maximum size is 64 bytes when encoded in UTF-8.
@@ -163,6 +161,7 @@ public final class CreateEntryRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Required. The ID of the entry to create.
+   *
    * The ID must contain only letters (a-z, A-Z), numbers (0-9),
    * and underscores (_).
    * The maximum size is 64 bytes when encoded in UTF-8.
@@ -638,6 +637,7 @@ public final class CreateEntryRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The name of the entry group this entry belongs to.
+     *
      * Note: The entry itself and its child resources might not be stored in
      * the location specified in its name.
      * </pre>
@@ -664,6 +664,7 @@ public final class CreateEntryRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The name of the entry group this entry belongs to.
+     *
      * Note: The entry itself and its child resources might not be stored in
      * the location specified in its name.
      * </pre>
@@ -690,6 +691,7 @@ public final class CreateEntryRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The name of the entry group this entry belongs to.
+     *
      * Note: The entry itself and its child resources might not be stored in
      * the location specified in its name.
      * </pre>
@@ -715,6 +717,7 @@ public final class CreateEntryRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The name of the entry group this entry belongs to.
+     *
      * Note: The entry itself and its child resources might not be stored in
      * the location specified in its name.
      * </pre>
@@ -736,6 +739,7 @@ public final class CreateEntryRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The name of the entry group this entry belongs to.
+     *
      * Note: The entry itself and its child resources might not be stored in
      * the location specified in its name.
      * </pre>
@@ -764,6 +768,7 @@ public final class CreateEntryRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The ID of the entry to create.
+     *
      * The ID must contain only letters (a-z, A-Z), numbers (0-9),
      * and underscores (_).
      * The maximum size is 64 bytes when encoded in UTF-8.
@@ -789,6 +794,7 @@ public final class CreateEntryRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The ID of the entry to create.
+     *
      * The ID must contain only letters (a-z, A-Z), numbers (0-9),
      * and underscores (_).
      * The maximum size is 64 bytes when encoded in UTF-8.
@@ -814,6 +820,7 @@ public final class CreateEntryRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The ID of the entry to create.
+     *
      * The ID must contain only letters (a-z, A-Z), numbers (0-9),
      * and underscores (_).
      * The maximum size is 64 bytes when encoded in UTF-8.
@@ -838,6 +845,7 @@ public final class CreateEntryRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The ID of the entry to create.
+     *
      * The ID must contain only letters (a-z, A-Z), numbers (0-9),
      * and underscores (_).
      * The maximum size is 64 bytes when encoded in UTF-8.
@@ -858,6 +866,7 @@ public final class CreateEntryRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The ID of the entry to create.
+     *
      * The ID must contain only letters (a-z, A-Z), numbers (0-9),
      * and underscores (_).
      * The maximum size is 64 bytes when encoded in UTF-8.

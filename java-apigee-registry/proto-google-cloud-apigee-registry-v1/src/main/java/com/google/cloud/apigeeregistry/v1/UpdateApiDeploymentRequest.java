@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class UpdateApiDeploymentRequest extends com.google.protobuf.Genera
     return new UpdateApiDeploymentRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.apigeeregistry.v1.RegistryServiceProto
         .internal_static_google_cloud_apigeeregistry_v1_UpdateApiDeploymentRequest_descriptor;
@@ -72,6 +67,7 @@ public final class UpdateApiDeploymentRequest extends com.google.protobuf.Genera
    *
    * <pre>
    * Required. The deployment to update.
+   *
    * The `name` field is used to identify the deployment to update.
    * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;deployments/&#42;`
    * </pre>
@@ -91,6 +87,7 @@ public final class UpdateApiDeploymentRequest extends com.google.protobuf.Genera
    *
    * <pre>
    * Required. The deployment to update.
+   *
    * The `name` field is used to identify the deployment to update.
    * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;deployments/&#42;`
    * </pre>
@@ -112,6 +109,7 @@ public final class UpdateApiDeploymentRequest extends com.google.protobuf.Genera
    *
    * <pre>
    * Required. The deployment to update.
+   *
    * The `name` field is used to identify the deployment to update.
    * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;deployments/&#42;`
    * </pre>
@@ -619,6 +617,7 @@ public final class UpdateApiDeploymentRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The deployment to update.
+     *
      * The `name` field is used to identify the deployment to update.
      * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;deployments/&#42;`
      * </pre>
@@ -637,6 +636,7 @@ public final class UpdateApiDeploymentRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The deployment to update.
+     *
      * The `name` field is used to identify the deployment to update.
      * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;deployments/&#42;`
      * </pre>
@@ -661,6 +661,7 @@ public final class UpdateApiDeploymentRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The deployment to update.
+     *
      * The `name` field is used to identify the deployment to update.
      * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;deployments/&#42;`
      * </pre>
@@ -687,6 +688,7 @@ public final class UpdateApiDeploymentRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The deployment to update.
+     *
      * The `name` field is used to identify the deployment to update.
      * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;deployments/&#42;`
      * </pre>
@@ -711,6 +713,7 @@ public final class UpdateApiDeploymentRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The deployment to update.
+     *
      * The `name` field is used to identify the deployment to update.
      * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;deployments/&#42;`
      * </pre>
@@ -741,6 +744,7 @@ public final class UpdateApiDeploymentRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The deployment to update.
+     *
      * The `name` field is used to identify the deployment to update.
      * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;deployments/&#42;`
      * </pre>
@@ -764,6 +768,7 @@ public final class UpdateApiDeploymentRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The deployment to update.
+     *
      * The `name` field is used to identify the deployment to update.
      * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;deployments/&#42;`
      * </pre>
@@ -782,6 +787,7 @@ public final class UpdateApiDeploymentRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The deployment to update.
+     *
      * The `name` field is used to identify the deployment to update.
      * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;deployments/&#42;`
      * </pre>
@@ -804,6 +810,7 @@ public final class UpdateApiDeploymentRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The deployment to update.
+     *
      * The `name` field is used to identify the deployment to update.
      * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;deployments/&#42;`
      * </pre>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new CompilationResultAction();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -624,24 +619,19 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
 
     private Relation() {
       dependencyTargets_ = java.util.Collections.emptyList();
-      tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      tags_ = com.google.protobuf.LazyStringArrayList.emptyList();
       relationType_ = 0;
       selectQuery_ = "";
-      preOperations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      postOperations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      preOperations_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      postOperations_ = com.google.protobuf.LazyStringArrayList.emptyList();
       partitionExpression_ = "";
-      clusterExpressions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      clusterExpressions_ = com.google.protobuf.LazyStringArrayList.emptyList();
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Relation();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1143,21 +1133,16 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
 
       private IncrementalTableConfig() {
         incrementalSelectQuery_ = "";
-        uniqueKeyParts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        uniqueKeyParts_ = com.google.protobuf.LazyStringArrayList.emptyList();
         updatePartitionFilter_ = "";
-        incrementalPreOperations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        incrementalPostOperations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        incrementalPreOperations_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        incrementalPostOperations_ = com.google.protobuf.LazyStringArrayList.emptyList();
       }
 
       @java.lang.Override
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new IncrementalTableConfig();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1251,7 +1236,8 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       public static final int UNIQUE_KEY_PARTS_FIELD_NUMBER = 3;
 
       @SuppressWarnings("serial")
-      private com.google.protobuf.LazyStringList uniqueKeyParts_;
+      private com.google.protobuf.LazyStringArrayList uniqueKeyParts_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
       /**
        *
        *
@@ -1381,7 +1367,8 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       public static final int INCREMENTAL_PRE_OPERATIONS_FIELD_NUMBER = 5;
 
       @SuppressWarnings("serial")
-      private com.google.protobuf.LazyStringList incrementalPreOperations_;
+      private com.google.protobuf.LazyStringArrayList incrementalPreOperations_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
       /**
        *
        *
@@ -1448,7 +1435,8 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       public static final int INCREMENTAL_POST_OPERATIONS_FIELD_NUMBER = 6;
 
       @SuppressWarnings("serial")
-      private com.google.protobuf.LazyStringList incrementalPostOperations_;
+      private com.google.protobuf.LazyStringArrayList incrementalPostOperations_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
       /**
        *
        *
@@ -1819,13 +1807,10 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           bitField0_ = 0;
           incrementalSelectQuery_ = "";
           refreshDisabled_ = false;
-          uniqueKeyParts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          uniqueKeyParts_ = com.google.protobuf.LazyStringArrayList.emptyList();
           updatePartitionFilter_ = "";
-          incrementalPreOperations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-          bitField0_ = (bitField0_ & ~0x00000010);
-          incrementalPostOperations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-          bitField0_ = (bitField0_ & ~0x00000020);
+          incrementalPreOperations_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          incrementalPostOperations_ = com.google.protobuf.LazyStringArrayList.emptyList();
           return this;
         }
 
@@ -1863,33 +1848,11 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
               result =
                   new com.google.cloud.dataform.v1beta1.CompilationResultAction.Relation
                       .IncrementalTableConfig(this);
-          buildPartialRepeatedFields(result);
           if (bitField0_ != 0) {
             buildPartial0(result);
           }
           onBuilt();
           return result;
-        }
-
-        private void buildPartialRepeatedFields(
-            com.google.cloud.dataform.v1beta1.CompilationResultAction.Relation
-                    .IncrementalTableConfig
-                result) {
-          if (((bitField0_ & 0x00000004) != 0)) {
-            uniqueKeyParts_ = uniqueKeyParts_.getUnmodifiableView();
-            bitField0_ = (bitField0_ & ~0x00000004);
-          }
-          result.uniqueKeyParts_ = uniqueKeyParts_;
-          if (((bitField0_ & 0x00000010) != 0)) {
-            incrementalPreOperations_ = incrementalPreOperations_.getUnmodifiableView();
-            bitField0_ = (bitField0_ & ~0x00000010);
-          }
-          result.incrementalPreOperations_ = incrementalPreOperations_;
-          if (((bitField0_ & 0x00000020) != 0)) {
-            incrementalPostOperations_ = incrementalPostOperations_.getUnmodifiableView();
-            bitField0_ = (bitField0_ & ~0x00000020);
-          }
-          result.incrementalPostOperations_ = incrementalPostOperations_;
         }
 
         private void buildPartial0(
@@ -1903,8 +1866,20 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           if (((from_bitField0_ & 0x00000002) != 0)) {
             result.refreshDisabled_ = refreshDisabled_;
           }
+          if (((from_bitField0_ & 0x00000004) != 0)) {
+            uniqueKeyParts_.makeImmutable();
+            result.uniqueKeyParts_ = uniqueKeyParts_;
+          }
           if (((from_bitField0_ & 0x00000008) != 0)) {
             result.updatePartitionFilter_ = updatePartitionFilter_;
+          }
+          if (((from_bitField0_ & 0x00000010) != 0)) {
+            incrementalPreOperations_.makeImmutable();
+            result.incrementalPreOperations_ = incrementalPreOperations_;
+          }
+          if (((from_bitField0_ & 0x00000020) != 0)) {
+            incrementalPostOperations_.makeImmutable();
+            result.incrementalPostOperations_ = incrementalPostOperations_;
           }
         }
 
@@ -1977,7 +1952,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           if (!other.uniqueKeyParts_.isEmpty()) {
             if (uniqueKeyParts_.isEmpty()) {
               uniqueKeyParts_ = other.uniqueKeyParts_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ |= 0x00000004;
             } else {
               ensureUniqueKeyPartsIsMutable();
               uniqueKeyParts_.addAll(other.uniqueKeyParts_);
@@ -1992,7 +1967,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           if (!other.incrementalPreOperations_.isEmpty()) {
             if (incrementalPreOperations_.isEmpty()) {
               incrementalPreOperations_ = other.incrementalPreOperations_;
-              bitField0_ = (bitField0_ & ~0x00000010);
+              bitField0_ |= 0x00000010;
             } else {
               ensureIncrementalPreOperationsIsMutable();
               incrementalPreOperations_.addAll(other.incrementalPreOperations_);
@@ -2002,7 +1977,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           if (!other.incrementalPostOperations_.isEmpty()) {
             if (incrementalPostOperations_.isEmpty()) {
               incrementalPostOperations_ = other.incrementalPostOperations_;
-              bitField0_ = (bitField0_ & ~0x00000020);
+              bitField0_ |= 0x00000020;
             } else {
               ensureIncrementalPostOperationsIsMutable();
               incrementalPostOperations_.addAll(other.incrementalPostOperations_);
@@ -2257,14 +2232,14 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           return this;
         }
 
-        private com.google.protobuf.LazyStringList uniqueKeyParts_ =
-            com.google.protobuf.LazyStringArrayList.EMPTY;
+        private com.google.protobuf.LazyStringArrayList uniqueKeyParts_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
 
         private void ensureUniqueKeyPartsIsMutable() {
-          if (!((bitField0_ & 0x00000004) != 0)) {
+          if (!uniqueKeyParts_.isModifiable()) {
             uniqueKeyParts_ = new com.google.protobuf.LazyStringArrayList(uniqueKeyParts_);
-            bitField0_ |= 0x00000004;
           }
+          bitField0_ |= 0x00000004;
         }
         /**
          *
@@ -2281,7 +2256,8 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
          * @return A list containing the uniqueKeyParts.
          */
         public com.google.protobuf.ProtocolStringList getUniqueKeyPartsList() {
-          return uniqueKeyParts_.getUnmodifiableView();
+          uniqueKeyParts_.makeImmutable();
+          return uniqueKeyParts_;
         }
         /**
          *
@@ -2358,6 +2334,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           }
           ensureUniqueKeyPartsIsMutable();
           uniqueKeyParts_.set(index, value);
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -2382,6 +2359,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           }
           ensureUniqueKeyPartsIsMutable();
           uniqueKeyParts_.add(value);
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -2403,6 +2381,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         public Builder addAllUniqueKeyParts(java.lang.Iterable<java.lang.String> values) {
           ensureUniqueKeyPartsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(values, uniqueKeyParts_);
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -2421,8 +2400,9 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
          * @return This builder for chaining.
          */
         public Builder clearUniqueKeyParts() {
-          uniqueKeyParts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+          uniqueKeyParts_ = com.google.protobuf.LazyStringArrayList.emptyList();
           bitField0_ = (bitField0_ & ~0x00000004);
+          ;
           onChanged();
           return this;
         }
@@ -2448,6 +2428,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           checkByteStringIsUtf8(value);
           ensureUniqueKeyPartsIsMutable();
           uniqueKeyParts_.add(value);
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -2568,15 +2549,15 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           return this;
         }
 
-        private com.google.protobuf.LazyStringList incrementalPreOperations_ =
-            com.google.protobuf.LazyStringArrayList.EMPTY;
+        private com.google.protobuf.LazyStringArrayList incrementalPreOperations_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
 
         private void ensureIncrementalPreOperationsIsMutable() {
-          if (!((bitField0_ & 0x00000010) != 0)) {
+          if (!incrementalPreOperations_.isModifiable()) {
             incrementalPreOperations_ =
                 new com.google.protobuf.LazyStringArrayList(incrementalPreOperations_);
-            bitField0_ |= 0x00000010;
           }
+          bitField0_ |= 0x00000010;
         }
         /**
          *
@@ -2591,7 +2572,8 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
          * @return A list containing the incrementalPreOperations.
          */
         public com.google.protobuf.ProtocolStringList getIncrementalPreOperationsList() {
-          return incrementalPreOperations_.getUnmodifiableView();
+          incrementalPreOperations_.makeImmutable();
+          return incrementalPreOperations_;
         }
         /**
          *
@@ -2660,6 +2642,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           }
           ensureIncrementalPreOperationsIsMutable();
           incrementalPreOperations_.set(index, value);
+          bitField0_ |= 0x00000010;
           onChanged();
           return this;
         }
@@ -2682,6 +2665,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           }
           ensureIncrementalPreOperationsIsMutable();
           incrementalPreOperations_.add(value);
+          bitField0_ |= 0x00000010;
           onChanged();
           return this;
         }
@@ -2701,6 +2685,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         public Builder addAllIncrementalPreOperations(java.lang.Iterable<java.lang.String> values) {
           ensureIncrementalPreOperationsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(values, incrementalPreOperations_);
+          bitField0_ |= 0x00000010;
           onChanged();
           return this;
         }
@@ -2717,8 +2702,9 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
          * @return This builder for chaining.
          */
         public Builder clearIncrementalPreOperations() {
-          incrementalPreOperations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+          incrementalPreOperations_ = com.google.protobuf.LazyStringArrayList.emptyList();
           bitField0_ = (bitField0_ & ~0x00000010);
+          ;
           onChanged();
           return this;
         }
@@ -2742,19 +2728,20 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           checkByteStringIsUtf8(value);
           ensureIncrementalPreOperationsIsMutable();
           incrementalPreOperations_.add(value);
+          bitField0_ |= 0x00000010;
           onChanged();
           return this;
         }
 
-        private com.google.protobuf.LazyStringList incrementalPostOperations_ =
-            com.google.protobuf.LazyStringArrayList.EMPTY;
+        private com.google.protobuf.LazyStringArrayList incrementalPostOperations_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
 
         private void ensureIncrementalPostOperationsIsMutable() {
-          if (!((bitField0_ & 0x00000020) != 0)) {
+          if (!incrementalPostOperations_.isModifiable()) {
             incrementalPostOperations_ =
                 new com.google.protobuf.LazyStringArrayList(incrementalPostOperations_);
-            bitField0_ |= 0x00000020;
           }
+          bitField0_ |= 0x00000020;
         }
         /**
          *
@@ -2769,7 +2756,8 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
          * @return A list containing the incrementalPostOperations.
          */
         public com.google.protobuf.ProtocolStringList getIncrementalPostOperationsList() {
-          return incrementalPostOperations_.getUnmodifiableView();
+          incrementalPostOperations_.makeImmutable();
+          return incrementalPostOperations_;
         }
         /**
          *
@@ -2838,6 +2826,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           }
           ensureIncrementalPostOperationsIsMutable();
           incrementalPostOperations_.set(index, value);
+          bitField0_ |= 0x00000020;
           onChanged();
           return this;
         }
@@ -2860,6 +2849,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           }
           ensureIncrementalPostOperationsIsMutable();
           incrementalPostOperations_.add(value);
+          bitField0_ |= 0x00000020;
           onChanged();
           return this;
         }
@@ -2881,6 +2871,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           ensureIncrementalPostOperationsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
               values, incrementalPostOperations_);
+          bitField0_ |= 0x00000020;
           onChanged();
           return this;
         }
@@ -2897,8 +2888,9 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
          * @return This builder for chaining.
          */
         public Builder clearIncrementalPostOperations() {
-          incrementalPostOperations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+          incrementalPostOperations_ = com.google.protobuf.LazyStringArrayList.emptyList();
           bitField0_ = (bitField0_ & ~0x00000020);
+          ;
           onChanged();
           return this;
         }
@@ -2922,6 +2914,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           checkByteStringIsUtf8(value);
           ensureIncrementalPostOperationsIsMutable();
           incrementalPostOperations_.add(value);
+          bitField0_ |= 0x00000020;
           onChanged();
           return this;
         }
@@ -3091,7 +3084,8 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     public static final int TAGS_FIELD_NUMBER = 3;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList tags_;
+    private com.google.protobuf.LazyStringArrayList tags_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -3300,7 +3294,8 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     public static final int PRE_OPERATIONS_FIELD_NUMBER = 7;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList preOperations_;
+    private com.google.protobuf.LazyStringArrayList preOperations_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -3363,7 +3358,8 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     public static final int POST_OPERATIONS_FIELD_NUMBER = 8;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList postOperations_;
+    private com.google.protobuf.LazyStringArrayList postOperations_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -3543,7 +3539,8 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     public static final int CLUSTER_EXPRESSIONS_FIELD_NUMBER = 11;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList clusterExpressions_;
+    private com.google.protobuf.LazyStringArrayList clusterExpressions_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -4170,8 +4167,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         }
         bitField0_ = (bitField0_ & ~0x00000001);
         disabled_ = false;
-        tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000004);
+        tags_ = com.google.protobuf.LazyStringArrayList.emptyList();
         relationDescriptor_ = null;
         if (relationDescriptorBuilder_ != null) {
           relationDescriptorBuilder_.dispose();
@@ -4179,18 +4175,15 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         }
         relationType_ = 0;
         selectQuery_ = "";
-        preOperations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000040);
-        postOperations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000080);
+        preOperations_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        postOperations_ = com.google.protobuf.LazyStringArrayList.emptyList();
         incrementalTableConfig_ = null;
         if (incrementalTableConfigBuilder_ != null) {
           incrementalTableConfigBuilder_.dispose();
           incrementalTableConfigBuilder_ = null;
         }
         partitionExpression_ = "";
-        clusterExpressions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000400);
+        clusterExpressions_ = com.google.protobuf.LazyStringArrayList.emptyList();
         partitionExpirationDays_ = 0;
         requirePartitionFilter_ = false;
         internalGetMutableAdditionalOptions().clear();
@@ -4242,26 +4235,6 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         } else {
           result.dependencyTargets_ = dependencyTargetsBuilder_.build();
         }
-        if (((bitField0_ & 0x00000004) != 0)) {
-          tags_ = tags_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000004);
-        }
-        result.tags_ = tags_;
-        if (((bitField0_ & 0x00000040) != 0)) {
-          preOperations_ = preOperations_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000040);
-        }
-        result.preOperations_ = preOperations_;
-        if (((bitField0_ & 0x00000080) != 0)) {
-          postOperations_ = postOperations_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000080);
-        }
-        result.postOperations_ = postOperations_;
-        if (((bitField0_ & 0x00000400) != 0)) {
-          clusterExpressions_ = clusterExpressions_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000400);
-        }
-        result.clusterExpressions_ = clusterExpressions_;
       }
 
       private void buildPartial0(
@@ -4269,6 +4242,10 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.disabled_ = disabled_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          tags_.makeImmutable();
+          result.tags_ = tags_;
         }
         if (((from_bitField0_ & 0x00000008) != 0)) {
           result.relationDescriptor_ =
@@ -4282,6 +4259,14 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         if (((from_bitField0_ & 0x00000020) != 0)) {
           result.selectQuery_ = selectQuery_;
         }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          preOperations_.makeImmutable();
+          result.preOperations_ = preOperations_;
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          postOperations_.makeImmutable();
+          result.postOperations_ = postOperations_;
+        }
         if (((from_bitField0_ & 0x00000100) != 0)) {
           result.incrementalTableConfig_ =
               incrementalTableConfigBuilder_ == null
@@ -4290,6 +4275,10 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         }
         if (((from_bitField0_ & 0x00000200) != 0)) {
           result.partitionExpression_ = partitionExpression_;
+        }
+        if (((from_bitField0_ & 0x00000400) != 0)) {
+          clusterExpressions_.makeImmutable();
+          result.clusterExpressions_ = clusterExpressions_;
         }
         if (((from_bitField0_ & 0x00000800) != 0)) {
           result.partitionExpirationDays_ = partitionExpirationDays_;
@@ -4387,7 +4376,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         if (!other.tags_.isEmpty()) {
           if (tags_.isEmpty()) {
             tags_ = other.tags_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ |= 0x00000004;
           } else {
             ensureTagsIsMutable();
             tags_.addAll(other.tags_);
@@ -4408,7 +4397,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         if (!other.preOperations_.isEmpty()) {
           if (preOperations_.isEmpty()) {
             preOperations_ = other.preOperations_;
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ |= 0x00000040;
           } else {
             ensurePreOperationsIsMutable();
             preOperations_.addAll(other.preOperations_);
@@ -4418,7 +4407,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         if (!other.postOperations_.isEmpty()) {
           if (postOperations_.isEmpty()) {
             postOperations_ = other.postOperations_;
-            bitField0_ = (bitField0_ & ~0x00000080);
+            bitField0_ |= 0x00000080;
           } else {
             ensurePostOperationsIsMutable();
             postOperations_.addAll(other.postOperations_);
@@ -4436,7 +4425,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         if (!other.clusterExpressions_.isEmpty()) {
           if (clusterExpressions_.isEmpty()) {
             clusterExpressions_ = other.clusterExpressions_;
-            bitField0_ = (bitField0_ & ~0x00000400);
+            bitField0_ |= 0x00000400;
           } else {
             ensureClusterExpressionsIsMutable();
             clusterExpressions_.addAll(other.clusterExpressions_);
@@ -5012,14 +5001,14 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         return this;
       }
 
-      private com.google.protobuf.LazyStringList tags_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList tags_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureTagsIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!tags_.isModifiable()) {
           tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
-          bitField0_ |= 0x00000004;
         }
+        bitField0_ |= 0x00000004;
       }
       /**
        *
@@ -5033,7 +5022,8 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
        * @return A list containing the tags.
        */
       public com.google.protobuf.ProtocolStringList getTagsList() {
-        return tags_.getUnmodifiableView();
+        tags_.makeImmutable();
+        return tags_;
       }
       /**
        *
@@ -5098,6 +5088,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         }
         ensureTagsIsMutable();
         tags_.set(index, value);
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -5119,6 +5110,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         }
         ensureTagsIsMutable();
         tags_.add(value);
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -5137,6 +5129,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       public Builder addAllTags(java.lang.Iterable<java.lang.String> values) {
         ensureTagsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, tags_);
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -5152,8 +5145,9 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
        * @return This builder for chaining.
        */
       public Builder clearTags() {
-        tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        tags_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000004);
+        ;
         onChanged();
         return this;
       }
@@ -5176,6 +5170,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         checkByteStringIsUtf8(value);
         ensureTagsIsMutable();
         tags_.add(value);
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -5581,14 +5576,14 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         return this;
       }
 
-      private com.google.protobuf.LazyStringList preOperations_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList preOperations_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensurePreOperationsIsMutable() {
-        if (!((bitField0_ & 0x00000040) != 0)) {
+        if (!preOperations_.isModifiable()) {
           preOperations_ = new com.google.protobuf.LazyStringArrayList(preOperations_);
-          bitField0_ |= 0x00000040;
         }
+        bitField0_ |= 0x00000040;
       }
       /**
        *
@@ -5602,7 +5597,8 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
        * @return A list containing the preOperations.
        */
       public com.google.protobuf.ProtocolStringList getPreOperationsList() {
-        return preOperations_.getUnmodifiableView();
+        preOperations_.makeImmutable();
+        return preOperations_;
       }
       /**
        *
@@ -5667,6 +5663,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         }
         ensurePreOperationsIsMutable();
         preOperations_.set(index, value);
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -5688,6 +5685,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         }
         ensurePreOperationsIsMutable();
         preOperations_.add(value);
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -5706,6 +5704,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       public Builder addAllPreOperations(java.lang.Iterable<java.lang.String> values) {
         ensurePreOperationsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, preOperations_);
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -5721,8 +5720,9 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
        * @return This builder for chaining.
        */
       public Builder clearPreOperations() {
-        preOperations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        preOperations_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000040);
+        ;
         onChanged();
         return this;
       }
@@ -5745,18 +5745,19 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         checkByteStringIsUtf8(value);
         ensurePreOperationsIsMutable();
         preOperations_.add(value);
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
 
-      private com.google.protobuf.LazyStringList postOperations_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList postOperations_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensurePostOperationsIsMutable() {
-        if (!((bitField0_ & 0x00000080) != 0)) {
+        if (!postOperations_.isModifiable()) {
           postOperations_ = new com.google.protobuf.LazyStringArrayList(postOperations_);
-          bitField0_ |= 0x00000080;
         }
+        bitField0_ |= 0x00000080;
       }
       /**
        *
@@ -5770,7 +5771,8 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
        * @return A list containing the postOperations.
        */
       public com.google.protobuf.ProtocolStringList getPostOperationsList() {
-        return postOperations_.getUnmodifiableView();
+        postOperations_.makeImmutable();
+        return postOperations_;
       }
       /**
        *
@@ -5835,6 +5837,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         }
         ensurePostOperationsIsMutable();
         postOperations_.set(index, value);
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -5856,6 +5859,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         }
         ensurePostOperationsIsMutable();
         postOperations_.add(value);
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -5874,6 +5878,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       public Builder addAllPostOperations(java.lang.Iterable<java.lang.String> values) {
         ensurePostOperationsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, postOperations_);
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -5889,8 +5894,9 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
        * @return This builder for chaining.
        */
       public Builder clearPostOperations() {
-        postOperations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        postOperations_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000080);
+        ;
         onChanged();
         return this;
       }
@@ -5913,6 +5919,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         checkByteStringIsUtf8(value);
         ensurePostOperationsIsMutable();
         postOperations_.add(value);
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -6261,14 +6268,14 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         return this;
       }
 
-      private com.google.protobuf.LazyStringList clusterExpressions_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList clusterExpressions_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureClusterExpressionsIsMutable() {
-        if (!((bitField0_ & 0x00000400) != 0)) {
+        if (!clusterExpressions_.isModifiable()) {
           clusterExpressions_ = new com.google.protobuf.LazyStringArrayList(clusterExpressions_);
-          bitField0_ |= 0x00000400;
         }
+        bitField0_ |= 0x00000400;
       }
       /**
        *
@@ -6282,7 +6289,8 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
        * @return A list containing the clusterExpressions.
        */
       public com.google.protobuf.ProtocolStringList getClusterExpressionsList() {
-        return clusterExpressions_.getUnmodifiableView();
+        clusterExpressions_.makeImmutable();
+        return clusterExpressions_;
       }
       /**
        *
@@ -6347,6 +6355,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         }
         ensureClusterExpressionsIsMutable();
         clusterExpressions_.set(index, value);
+        bitField0_ |= 0x00000400;
         onChanged();
         return this;
       }
@@ -6368,6 +6377,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         }
         ensureClusterExpressionsIsMutable();
         clusterExpressions_.add(value);
+        bitField0_ |= 0x00000400;
         onChanged();
         return this;
       }
@@ -6386,6 +6396,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       public Builder addAllClusterExpressions(java.lang.Iterable<java.lang.String> values) {
         ensureClusterExpressionsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, clusterExpressions_);
+        bitField0_ |= 0x00000400;
         onChanged();
         return this;
       }
@@ -6401,8 +6412,9 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
        * @return This builder for chaining.
        */
       public Builder clearClusterExpressions() {
-        clusterExpressions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        clusterExpressions_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000400);
+        ;
         onChanged();
         return this;
       }
@@ -6425,6 +6437,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         checkByteStringIsUtf8(value);
         ensureClusterExpressionsIsMutable();
         clusterExpressions_.add(value);
+        bitField0_ |= 0x00000400;
         onChanged();
         return this;
       }
@@ -7044,19 +7057,14 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
 
     private Operations() {
       dependencyTargets_ = java.util.Collections.emptyList();
-      tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      queries_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      tags_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      queries_ = com.google.protobuf.LazyStringArrayList.emptyList();
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Operations();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -7167,7 +7175,8 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     public static final int TAGS_FIELD_NUMBER = 3;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList tags_;
+    private com.google.protobuf.LazyStringArrayList tags_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -7284,7 +7293,8 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     public static final int QUERIES_FIELD_NUMBER = 4;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList queries_;
+    private com.google.protobuf.LazyStringArrayList queries_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -7645,15 +7655,13 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         }
         bitField0_ = (bitField0_ & ~0x00000001);
         disabled_ = false;
-        tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000004);
+        tags_ = com.google.protobuf.LazyStringArrayList.emptyList();
         relationDescriptor_ = null;
         if (relationDescriptorBuilder_ != null) {
           relationDescriptorBuilder_.dispose();
           relationDescriptorBuilder_ = null;
         }
-        queries_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000010);
+        queries_ = com.google.protobuf.LazyStringArrayList.emptyList();
         hasOutput_ = false;
         return this;
       }
@@ -7704,16 +7712,6 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         } else {
           result.dependencyTargets_ = dependencyTargetsBuilder_.build();
         }
-        if (((bitField0_ & 0x00000004) != 0)) {
-          tags_ = tags_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000004);
-        }
-        result.tags_ = tags_;
-        if (((bitField0_ & 0x00000010) != 0)) {
-          queries_ = queries_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000010);
-        }
-        result.queries_ = queries_;
       }
 
       private void buildPartial0(
@@ -7722,11 +7720,19 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.disabled_ = disabled_;
         }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          tags_.makeImmutable();
+          result.tags_ = tags_;
+        }
         if (((from_bitField0_ & 0x00000008) != 0)) {
           result.relationDescriptor_ =
               relationDescriptorBuilder_ == null
                   ? relationDescriptor_
                   : relationDescriptorBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          queries_.makeImmutable();
+          result.queries_ = queries_;
         }
         if (((from_bitField0_ & 0x00000020) != 0)) {
           result.hasOutput_ = hasOutput_;
@@ -7817,7 +7823,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         if (!other.tags_.isEmpty()) {
           if (tags_.isEmpty()) {
             tags_ = other.tags_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ |= 0x00000004;
           } else {
             ensureTagsIsMutable();
             tags_.addAll(other.tags_);
@@ -7830,7 +7836,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         if (!other.queries_.isEmpty()) {
           if (queries_.isEmpty()) {
             queries_ = other.queries_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ |= 0x00000010;
           } else {
             ensureQueriesIsMutable();
             queries_.addAll(other.queries_);
@@ -8343,14 +8349,14 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         return this;
       }
 
-      private com.google.protobuf.LazyStringList tags_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList tags_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureTagsIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!tags_.isModifiable()) {
           tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
-          bitField0_ |= 0x00000004;
         }
+        bitField0_ |= 0x00000004;
       }
       /**
        *
@@ -8364,7 +8370,8 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
        * @return A list containing the tags.
        */
       public com.google.protobuf.ProtocolStringList getTagsList() {
-        return tags_.getUnmodifiableView();
+        tags_.makeImmutable();
+        return tags_;
       }
       /**
        *
@@ -8429,6 +8436,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         }
         ensureTagsIsMutable();
         tags_.set(index, value);
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -8450,6 +8458,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         }
         ensureTagsIsMutable();
         tags_.add(value);
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -8468,6 +8477,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       public Builder addAllTags(java.lang.Iterable<java.lang.String> values) {
         ensureTagsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, tags_);
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -8483,8 +8493,9 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
        * @return This builder for chaining.
        */
       public Builder clearTags() {
-        tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        tags_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000004);
+        ;
         onChanged();
         return this;
       }
@@ -8507,6 +8518,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         checkByteStringIsUtf8(value);
         ensureTagsIsMutable();
         tags_.add(value);
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -8709,14 +8721,14 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         return relationDescriptorBuilder_;
       }
 
-      private com.google.protobuf.LazyStringList queries_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList queries_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureQueriesIsMutable() {
-        if (!((bitField0_ & 0x00000010) != 0)) {
+        if (!queries_.isModifiable()) {
           queries_ = new com.google.protobuf.LazyStringArrayList(queries_);
-          bitField0_ |= 0x00000010;
         }
+        bitField0_ |= 0x00000010;
       }
       /**
        *
@@ -8731,7 +8743,8 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
        * @return A list containing the queries.
        */
       public com.google.protobuf.ProtocolStringList getQueriesList() {
-        return queries_.getUnmodifiableView();
+        queries_.makeImmutable();
+        return queries_;
       }
       /**
        *
@@ -8800,6 +8813,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         }
         ensureQueriesIsMutable();
         queries_.set(index, value);
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -8822,6 +8836,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         }
         ensureQueriesIsMutable();
         queries_.add(value);
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -8841,6 +8856,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       public Builder addAllQueries(java.lang.Iterable<java.lang.String> values) {
         ensureQueriesIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, queries_);
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -8857,8 +8873,9 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
        * @return This builder for chaining.
        */
       public Builder clearQueries() {
-        queries_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        queries_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000010);
+        ;
         onChanged();
         return this;
       }
@@ -8882,6 +8899,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         checkByteStringIsUtf8(value);
         ensureQueriesIsMutable();
         queries_.add(value);
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -9252,7 +9270,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
 
     private Assertion() {
       dependencyTargets_ = java.util.Collections.emptyList();
-      tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      tags_ = com.google.protobuf.LazyStringArrayList.emptyList();
       selectQuery_ = "";
     }
 
@@ -9260,11 +9278,6 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Assertion();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -9428,7 +9441,8 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     public static final int TAGS_FIELD_NUMBER = 3;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList tags_;
+    private com.google.protobuf.LazyStringArrayList tags_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -9878,8 +9892,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
           parentActionBuilder_ = null;
         }
         disabled_ = false;
-        tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000008);
+        tags_ = com.google.protobuf.LazyStringArrayList.emptyList();
         selectQuery_ = "";
         relationDescriptor_ = null;
         if (relationDescriptorBuilder_ != null) {
@@ -9934,11 +9947,6 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         } else {
           result.dependencyTargets_ = dependencyTargetsBuilder_.build();
         }
-        if (((bitField0_ & 0x00000008) != 0)) {
-          tags_ = tags_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000008);
-        }
-        result.tags_ = tags_;
       }
 
       private void buildPartial0(
@@ -9950,6 +9958,10 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         }
         if (((from_bitField0_ & 0x00000004) != 0)) {
           result.disabled_ = disabled_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          tags_.makeImmutable();
+          result.tags_ = tags_;
         }
         if (((from_bitField0_ & 0x00000010) != 0)) {
           result.selectQuery_ = selectQuery_;
@@ -10049,7 +10061,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         if (!other.tags_.isEmpty()) {
           if (tags_.isEmpty()) {
             tags_ = other.tags_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ |= 0x00000008;
           } else {
             ensureTagsIsMutable();
             tags_.addAll(other.tags_);
@@ -10759,14 +10771,14 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         return this;
       }
 
-      private com.google.protobuf.LazyStringList tags_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList tags_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureTagsIsMutable() {
-        if (!((bitField0_ & 0x00000008) != 0)) {
+        if (!tags_.isModifiable()) {
           tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
-          bitField0_ |= 0x00000008;
         }
+        bitField0_ |= 0x00000008;
       }
       /**
        *
@@ -10780,7 +10792,8 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
        * @return A list containing the tags.
        */
       public com.google.protobuf.ProtocolStringList getTagsList() {
-        return tags_.getUnmodifiableView();
+        tags_.makeImmutable();
+        return tags_;
       }
       /**
        *
@@ -10845,6 +10858,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         }
         ensureTagsIsMutable();
         tags_.set(index, value);
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -10866,6 +10880,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         }
         ensureTagsIsMutable();
         tags_.add(value);
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -10884,6 +10899,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
       public Builder addAllTags(java.lang.Iterable<java.lang.String> values) {
         ensureTagsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, tags_);
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -10899,8 +10915,9 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
        * @return This builder for chaining.
        */
       public Builder clearTags() {
-        tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        tags_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000008);
+        ;
         onChanged();
         return this;
       }
@@ -10923,6 +10940,7 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
         checkByteStringIsUtf8(value);
         ensureTagsIsMutable();
         tags_.add(value);
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -11372,11 +11390,6 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Declaration();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -12086,6 +12099,8 @@ public final class CompilationResultAction extends com.google.protobuf.Generated
   }
 
   private int compiledObjectCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object compiledObject_;
 
   public enum CompiledObjectCase

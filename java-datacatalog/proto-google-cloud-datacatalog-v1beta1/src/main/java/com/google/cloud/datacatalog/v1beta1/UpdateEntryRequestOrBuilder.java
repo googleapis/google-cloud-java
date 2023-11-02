@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -68,25 +68,30 @@ public interface UpdateEntryRequestOrBuilder
    *
    *
    * <pre>
-   * The fields to update on the entry. If absent or empty, all modifiable
-   * fields are updated.
+   * Names of fields whose values to overwrite on an entry.
+   *
+   * If this parameter is absent or empty, all modifiable fields
+   * are overwritten. If such fields are non-required and omitted in the
+   * request body, their values are emptied.
+   *
    * The following fields are modifiable:
+   *
    * * For entries with type `DATA_STREAM`:
    *    * `schema`
-   * * For entries with type `FILESET`
+   * * For entries with type `FILESET`:
    *    * `schema`
    *    * `display_name`
    *    * `description`
    *    * `gcs_fileset_spec`
    *    * `gcs_fileset_spec.file_patterns`
-   * * For entries with `user_specified_type`
+   * * For entries with `user_specified_type`:
    *    * `schema`
    *    * `display_name`
    *    * `description`
-   *    * user_specified_type
-   *    * user_specified_system
-   *    * linked_resource
-   *    * source_system_timestamps
+   *    * `user_specified_type`
+   *    * `user_specified_system`
+   *    * `linked_resource`
+   *    * `source_system_timestamps`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -98,25 +103,30 @@ public interface UpdateEntryRequestOrBuilder
    *
    *
    * <pre>
-   * The fields to update on the entry. If absent or empty, all modifiable
-   * fields are updated.
+   * Names of fields whose values to overwrite on an entry.
+   *
+   * If this parameter is absent or empty, all modifiable fields
+   * are overwritten. If such fields are non-required and omitted in the
+   * request body, their values are emptied.
+   *
    * The following fields are modifiable:
+   *
    * * For entries with type `DATA_STREAM`:
    *    * `schema`
-   * * For entries with type `FILESET`
+   * * For entries with type `FILESET`:
    *    * `schema`
    *    * `display_name`
    *    * `description`
    *    * `gcs_fileset_spec`
    *    * `gcs_fileset_spec.file_patterns`
-   * * For entries with `user_specified_type`
+   * * For entries with `user_specified_type`:
    *    * `schema`
    *    * `display_name`
    *    * `description`
-   *    * user_specified_type
-   *    * user_specified_system
-   *    * linked_resource
-   *    * source_system_timestamps
+   *    * `user_specified_type`
+   *    * `user_specified_system`
+   *    * `linked_resource`
+   *    * `source_system_timestamps`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -128,25 +138,30 @@ public interface UpdateEntryRequestOrBuilder
    *
    *
    * <pre>
-   * The fields to update on the entry. If absent or empty, all modifiable
-   * fields are updated.
+   * Names of fields whose values to overwrite on an entry.
+   *
+   * If this parameter is absent or empty, all modifiable fields
+   * are overwritten. If such fields are non-required and omitted in the
+   * request body, their values are emptied.
+   *
    * The following fields are modifiable:
+   *
    * * For entries with type `DATA_STREAM`:
    *    * `schema`
-   * * For entries with type `FILESET`
+   * * For entries with type `FILESET`:
    *    * `schema`
    *    * `display_name`
    *    * `description`
    *    * `gcs_fileset_spec`
    *    * `gcs_fileset_spec.file_patterns`
-   * * For entries with `user_specified_type`
+   * * For entries with `user_specified_type`:
    *    * `schema`
    *    * `display_name`
    *    * `description`
-   *    * user_specified_type
-   *    * user_specified_system
-   *    * linked_resource
-   *    * source_system_timestamps
+   *    * `user_specified_type`
+   *    * `user_specified_system`
+   *    * `linked_resource`
+   *    * `source_system_timestamps`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -100,6 +100,7 @@ public interface CreateNodeGroupRequestOrBuilder
    *
    * <pre>
    * Optional. An optional node group ID. Generated if not specified.
+   *
    * The ID must contain only letters (a-z, A-Z), numbers (0-9),
    * underscores (_), and hyphens (-). Cannot begin or end with underscore
    * or hyphen. Must consist of from 3 to 33 characters.
@@ -115,6 +116,7 @@ public interface CreateNodeGroupRequestOrBuilder
    *
    * <pre>
    * Optional. An optional node group ID. Generated if not specified.
+   *
    * The ID must contain only letters (a-z, A-Z), numbers (0-9),
    * underscores (_), and hyphens (-). Cannot begin or end with underscore
    * or hyphen. Must consist of from 3 to 33 characters.
@@ -136,8 +138,10 @@ public interface CreateNodeGroupRequestOrBuilder
    * with the same ID, the second request is ignored and the
    * first [google.longrunning.Operation][google.longrunning.Operation] created
    * and stored in the backend is returned.
+   *
    * Recommendation: Set this value to a
    * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
+   *
    * The ID must contain only letters (a-z, A-Z), numbers (0-9),
    * underscores (_), and hyphens (-). The maximum length is 40 characters.
    * </pre>
@@ -157,8 +161,10 @@ public interface CreateNodeGroupRequestOrBuilder
    * with the same ID, the second request is ignored and the
    * first [google.longrunning.Operation][google.longrunning.Operation] created
    * and stored in the backend is returned.
+   *
    * Recommendation: Set this value to a
    * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
+   *
    * The ID must contain only letters (a-z, A-Z), numbers (0-9),
    * underscores (_), and hyphens (-). The maximum length is 40 characters.
    * </pre>

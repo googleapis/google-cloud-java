@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
     return new UpdateDocumentRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.discoveryengine.v1beta.DocumentServiceProto
         .internal_static_google_cloud_discoveryengine_v1beta_UpdateDocumentRequest_descriptor;
@@ -74,9 +69,11 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Required. The document to update/create.
+   *
    * If the caller does not have permission to update the
    * [Document][google.cloud.discoveryengine.v1beta.Document], regardless of
    * whether or not it exists, a `PERMISSION_DENIED` error is returned.
+   *
    * If the [Document][google.cloud.discoveryengine.v1beta.Document] to update
    * does not exist and
    * [allow_missing][google.cloud.discoveryengine.v1beta.UpdateDocumentRequest.allow_missing]
@@ -98,9 +95,11 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Required. The document to update/create.
+   *
    * If the caller does not have permission to update the
    * [Document][google.cloud.discoveryengine.v1beta.Document], regardless of
    * whether or not it exists, a `PERMISSION_DENIED` error is returned.
+   *
    * If the [Document][google.cloud.discoveryengine.v1beta.Document] to update
    * does not exist and
    * [allow_missing][google.cloud.discoveryengine.v1beta.UpdateDocumentRequest.allow_missing]
@@ -124,9 +123,11 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Required. The document to update/create.
+   *
    * If the caller does not have permission to update the
    * [Document][google.cloud.discoveryengine.v1beta.Document], regardless of
    * whether or not it exists, a `PERMISSION_DENIED` error is returned.
+   *
    * If the [Document][google.cloud.discoveryengine.v1beta.Document] to update
    * does not exist and
    * [allow_missing][google.cloud.discoveryengine.v1beta.UpdateDocumentRequest.allow_missing]
@@ -553,9 +554,11 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The document to update/create.
+     *
      * If the caller does not have permission to update the
      * [Document][google.cloud.discoveryengine.v1beta.Document], regardless of
      * whether or not it exists, a `PERMISSION_DENIED` error is returned.
+     *
      * If the [Document][google.cloud.discoveryengine.v1beta.Document] to update
      * does not exist and
      * [allow_missing][google.cloud.discoveryengine.v1beta.UpdateDocumentRequest.allow_missing]
@@ -576,9 +579,11 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The document to update/create.
+     *
      * If the caller does not have permission to update the
      * [Document][google.cloud.discoveryengine.v1beta.Document], regardless of
      * whether or not it exists, a `PERMISSION_DENIED` error is returned.
+     *
      * If the [Document][google.cloud.discoveryengine.v1beta.Document] to update
      * does not exist and
      * [allow_missing][google.cloud.discoveryengine.v1beta.UpdateDocumentRequest.allow_missing]
@@ -605,9 +610,11 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The document to update/create.
+     *
      * If the caller does not have permission to update the
      * [Document][google.cloud.discoveryengine.v1beta.Document], regardless of
      * whether or not it exists, a `PERMISSION_DENIED` error is returned.
+     *
      * If the [Document][google.cloud.discoveryengine.v1beta.Document] to update
      * does not exist and
      * [allow_missing][google.cloud.discoveryengine.v1beta.UpdateDocumentRequest.allow_missing]
@@ -636,9 +643,11 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The document to update/create.
+     *
      * If the caller does not have permission to update the
      * [Document][google.cloud.discoveryengine.v1beta.Document], regardless of
      * whether or not it exists, a `PERMISSION_DENIED` error is returned.
+     *
      * If the [Document][google.cloud.discoveryengine.v1beta.Document] to update
      * does not exist and
      * [allow_missing][google.cloud.discoveryengine.v1beta.UpdateDocumentRequest.allow_missing]
@@ -665,9 +674,11 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The document to update/create.
+     *
      * If the caller does not have permission to update the
      * [Document][google.cloud.discoveryengine.v1beta.Document], regardless of
      * whether or not it exists, a `PERMISSION_DENIED` error is returned.
+     *
      * If the [Document][google.cloud.discoveryengine.v1beta.Document] to update
      * does not exist and
      * [allow_missing][google.cloud.discoveryengine.v1beta.UpdateDocumentRequest.allow_missing]
@@ -699,9 +710,11 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The document to update/create.
+     *
      * If the caller does not have permission to update the
      * [Document][google.cloud.discoveryengine.v1beta.Document], regardless of
      * whether or not it exists, a `PERMISSION_DENIED` error is returned.
+     *
      * If the [Document][google.cloud.discoveryengine.v1beta.Document] to update
      * does not exist and
      * [allow_missing][google.cloud.discoveryengine.v1beta.UpdateDocumentRequest.allow_missing]
@@ -727,9 +740,11 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The document to update/create.
+     *
      * If the caller does not have permission to update the
      * [Document][google.cloud.discoveryengine.v1beta.Document], regardless of
      * whether or not it exists, a `PERMISSION_DENIED` error is returned.
+     *
      * If the [Document][google.cloud.discoveryengine.v1beta.Document] to update
      * does not exist and
      * [allow_missing][google.cloud.discoveryengine.v1beta.UpdateDocumentRequest.allow_missing]
@@ -750,9 +765,11 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The document to update/create.
+     *
      * If the caller does not have permission to update the
      * [Document][google.cloud.discoveryengine.v1beta.Document], regardless of
      * whether or not it exists, a `PERMISSION_DENIED` error is returned.
+     *
      * If the [Document][google.cloud.discoveryengine.v1beta.Document] to update
      * does not exist and
      * [allow_missing][google.cloud.discoveryengine.v1beta.UpdateDocumentRequest.allow_missing]
@@ -777,9 +794,11 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The document to update/create.
+     *
      * If the caller does not have permission to update the
      * [Document][google.cloud.discoveryengine.v1beta.Document], regardless of
      * whether or not it exists, a `PERMISSION_DENIED` error is returned.
+     *
      * If the [Document][google.cloud.discoveryengine.v1beta.Document] to update
      * does not exist and
      * [allow_missing][google.cloud.discoveryengine.v1beta.UpdateDocumentRequest.allow_missing]

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -203,6 +203,44 @@ public interface ConnectionOrBuilder
    *
    *
    * <pre>
+   * Configuration for connections to gitlab.com or an instance of GitLab
+   * Enterprise.
+   * </pre>
+   *
+   * <code>.google.devtools.cloudbuild.v2.GitLabConfig gitlab_config = 7;</code>
+   *
+   * @return Whether the gitlabConfig field is set.
+   */
+  boolean hasGitlabConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for connections to gitlab.com or an instance of GitLab
+   * Enterprise.
+   * </pre>
+   *
+   * <code>.google.devtools.cloudbuild.v2.GitLabConfig gitlab_config = 7;</code>
+   *
+   * @return The gitlabConfig.
+   */
+  com.google.cloudbuild.v2.GitLabConfig getGitlabConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for connections to gitlab.com or an instance of GitLab
+   * Enterprise.
+   * </pre>
+   *
+   * <code>.google.devtools.cloudbuild.v2.GitLabConfig gitlab_config = 7;</code>
+   */
+  com.google.cloudbuild.v2.GitLabConfigOrBuilder getGitlabConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. Installation state of the Connection.
    * </pre>
    *
@@ -356,5 +394,5 @@ public interface ConnectionOrBuilder
    */
   com.google.protobuf.ByteString getEtagBytes();
 
-  public com.google.cloudbuild.v2.Connection.ConnectionConfigCase getConnectionConfigCase();
+  com.google.cloudbuild.v2.Connection.ConnectionConfigCase getConnectionConfigCase();
 }

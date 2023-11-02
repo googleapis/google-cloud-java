@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class ManagementSettings extends com.google.protobuf.GeneratedMessa
     return new ManagementSettings();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.domains.v1.DomainsProto
         .internal_static_google_cloud_domains_v1_ManagementSettings_descriptor;
@@ -93,6 +88,7 @@ public final class ManagementSettings extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The domain is automatically renewed each year .
+     *
      * To disable automatic renewals, delete the resource by calling
      * `DeleteRegistration` or export it by calling `ExportRegistration`.
      * </pre>
@@ -107,6 +103,7 @@ public final class ManagementSettings extends com.google.protobuf.GeneratedMessa
      * The domain must be explicitly renewed each year before its
      * `expire_time`. This option is only available when the `Registration`
      * is in state `EXPORTED`.
+     *
      * To manage the domain's current billing and
      * renewal settings, go to [Google Domains](https://domains.google/).
      * </pre>
@@ -132,6 +129,7 @@ public final class ManagementSettings extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The domain is automatically renewed each year .
+     *
      * To disable automatic renewals, delete the resource by calling
      * `DeleteRegistration` or export it by calling `ExportRegistration`.
      * </pre>
@@ -146,6 +144,7 @@ public final class ManagementSettings extends com.google.protobuf.GeneratedMessa
      * The domain must be explicitly renewed each year before its
      * `expire_time`. This option is only available when the `Registration`
      * is in state `EXPORTED`.
+     *
      * To manage the domain's current billing and
      * renewal settings, go to [Google Domains](https://domains.google/).
      * </pre>

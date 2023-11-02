@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -151,10 +151,12 @@ public interface ResourceOrBuilder
    * [Resource
    * Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
    * for more information.
+   *
    * For GCP assets, it is the parent resource defined in the [Cloud IAM policy
    * hierarchy](https://cloud.google.com/iam/docs/overview#policy_hierarchy).
    * For example:
    * `"//cloudresourcemanager.googleapis.com/projects/my_project_123"`.
+   *
    * For third-party assets, it is up to the users to define.
    * </pre>
    *
@@ -171,10 +173,12 @@ public interface ResourceOrBuilder
    * [Resource
    * Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
    * for more information.
+   *
    * For GCP assets, it is the parent resource defined in the [Cloud IAM policy
    * hierarchy](https://cloud.google.com/iam/docs/overview#policy_hierarchy).
    * For example:
    * `"//cloudresourcemanager.googleapis.com/projects/my_project_123"`.
+   *
    * For third-party assets, it is up to the users to define.
    * </pre>
    *

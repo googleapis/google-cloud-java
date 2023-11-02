@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,8 +28,10 @@ public interface AzureNodeConfigOrBuilder
    *
    * <pre>
    * Optional. The Azure VM size name. Example: `Standard_DS2_v2`.
+   *
    * See [Supported VM
    * sizes](/anthos/clusters/docs/azure/reference/supported-vms) for options.
+   *
    * When unspecified, it defaults to `Standard_DS2_v2`.
    * </pre>
    *
@@ -43,8 +45,10 @@ public interface AzureNodeConfigOrBuilder
    *
    * <pre>
    * Optional. The Azure VM size name. Example: `Standard_DS2_v2`.
+   *
    * See [Supported VM
    * sizes](/anthos/clusters/docs/azure/reference/supported-vms) for options.
+   *
    * When unspecified, it defaults to `Standard_DS2_v2`.
    * </pre>
    *
@@ -60,6 +64,7 @@ public interface AzureNodeConfigOrBuilder
    * <pre>
    * Optional. Configuration related to the root volume provisioned for each
    * node pool machine.
+   *
    * When unspecified, it defaults to a 32-GiB Azure Disk.
    * </pre>
    *
@@ -76,6 +81,7 @@ public interface AzureNodeConfigOrBuilder
    * <pre>
    * Optional. Configuration related to the root volume provisioned for each
    * node pool machine.
+   *
    * When unspecified, it defaults to a 32-GiB Azure Disk.
    * </pre>
    *
@@ -92,6 +98,7 @@ public interface AzureNodeConfigOrBuilder
    * <pre>
    * Optional. Configuration related to the root volume provisioned for each
    * node pool machine.
+   *
    * When unspecified, it defaults to a 32-GiB Azure Disk.
    * </pre>
    *
@@ -107,6 +114,7 @@ public interface AzureNodeConfigOrBuilder
    * <pre>
    * Optional. A set of tags to apply to all underlying Azure resources for this
    * node pool. This currently only includes Virtual Machine Scale Sets.
+   *
    * Specify at most 50 pairs containing alphanumerics, spaces, and symbols
    * (.+-=_:&#64;/). Keys can be up to 127 Unicode characters. Values can be up to
    * 255 Unicode characters.
@@ -121,6 +129,7 @@ public interface AzureNodeConfigOrBuilder
    * <pre>
    * Optional. A set of tags to apply to all underlying Azure resources for this
    * node pool. This currently only includes Virtual Machine Scale Sets.
+   *
    * Specify at most 50 pairs containing alphanumerics, spaces, and symbols
    * (.+-=_:&#64;/). Keys can be up to 127 Unicode characters. Values can be up to
    * 255 Unicode characters.
@@ -138,6 +147,7 @@ public interface AzureNodeConfigOrBuilder
    * <pre>
    * Optional. A set of tags to apply to all underlying Azure resources for this
    * node pool. This currently only includes Virtual Machine Scale Sets.
+   *
    * Specify at most 50 pairs containing alphanumerics, spaces, and symbols
    * (.+-=_:&#64;/). Keys can be up to 127 Unicode characters. Values can be up to
    * 255 Unicode characters.
@@ -152,6 +162,7 @@ public interface AzureNodeConfigOrBuilder
    * <pre>
    * Optional. A set of tags to apply to all underlying Azure resources for this
    * node pool. This currently only includes Virtual Machine Scale Sets.
+   *
    * Specify at most 50 pairs containing alphanumerics, spaces, and symbols
    * (.+-=_:&#64;/). Keys can be up to 127 Unicode characters. Values can be up to
    * 255 Unicode characters.
@@ -170,6 +181,7 @@ public interface AzureNodeConfigOrBuilder
    * <pre>
    * Optional. A set of tags to apply to all underlying Azure resources for this
    * node pool. This currently only includes Virtual Machine Scale Sets.
+   *
    * Specify at most 50 pairs containing alphanumerics, spaces, and symbols
    * (.+-=_:&#64;/). Keys can be up to 127 Unicode characters. Values can be up to
    * 255 Unicode characters.
@@ -186,6 +198,7 @@ public interface AzureNodeConfigOrBuilder
    * Optional. The OS image type to use on node pool instances.
    * Can have a value of `ubuntu`, or `windows` if the cluster enables
    * the Windows node pool preview feature.
+   *
    * When unspecified, it defaults to `ubuntu`.
    * </pre>
    *
@@ -201,6 +214,7 @@ public interface AzureNodeConfigOrBuilder
    * Optional. The OS image type to use on node pool instances.
    * Can have a value of `ubuntu`, or `windows` if the cluster enables
    * the Windows node pool preview feature.
+   *
    * When unspecified, it defaults to `ubuntu`.
    * </pre>
    *

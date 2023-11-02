@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,11 +50,6 @@ public final class DeidentifyTemplate extends com.google.protobuf.GeneratedMessa
     return new DeidentifyTemplate();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.privacy.dlp.v2.DlpProto
         .internal_static_google_privacy_dlp_v2_DeidentifyTemplate_descriptor;
@@ -79,6 +74,7 @@ public final class DeidentifyTemplate extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Output only. The template name.
+   *
    * The template will have one of the following formats:
    * `projects/PROJECT_ID/deidentifyTemplates/TEMPLATE_ID` OR
    * `organizations/ORGANIZATION_ID/deidentifyTemplates/TEMPLATE_ID`
@@ -105,6 +101,7 @@ public final class DeidentifyTemplate extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Output only. The template name.
+   *
    * The template will have one of the following formats:
    * `projects/PROJECT_ID/deidentifyTemplates/TEMPLATE_ID` OR
    * `organizations/ORGANIZATION_ID/deidentifyTemplates/TEMPLATE_ID`
@@ -868,6 +865,7 @@ public final class DeidentifyTemplate extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Output only. The template name.
+     *
      * The template will have one of the following formats:
      * `projects/PROJECT_ID/deidentifyTemplates/TEMPLATE_ID` OR
      * `organizations/ORGANIZATION_ID/deidentifyTemplates/TEMPLATE_ID`
@@ -893,6 +891,7 @@ public final class DeidentifyTemplate extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Output only. The template name.
+     *
      * The template will have one of the following formats:
      * `projects/PROJECT_ID/deidentifyTemplates/TEMPLATE_ID` OR
      * `organizations/ORGANIZATION_ID/deidentifyTemplates/TEMPLATE_ID`
@@ -918,6 +917,7 @@ public final class DeidentifyTemplate extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Output only. The template name.
+     *
      * The template will have one of the following formats:
      * `projects/PROJECT_ID/deidentifyTemplates/TEMPLATE_ID` OR
      * `organizations/ORGANIZATION_ID/deidentifyTemplates/TEMPLATE_ID`
@@ -942,6 +942,7 @@ public final class DeidentifyTemplate extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Output only. The template name.
+     *
      * The template will have one of the following formats:
      * `projects/PROJECT_ID/deidentifyTemplates/TEMPLATE_ID` OR
      * `organizations/ORGANIZATION_ID/deidentifyTemplates/TEMPLATE_ID`
@@ -962,6 +963,7 @@ public final class DeidentifyTemplate extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Output only. The template name.
+     *
      * The template will have one of the following formats:
      * `projects/PROJECT_ID/deidentifyTemplates/TEMPLATE_ID` OR
      * `organizations/ORGANIZATION_ID/deidentifyTemplates/TEMPLATE_ID`

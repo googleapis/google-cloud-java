@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,9 +22,9 @@ package com.google.cloud.clouddms.v1;
  *
  *
  * <pre>
- * The source database will allow incoming connections from the destination
- * database's public IP. You can retrieve the Cloud SQL instance's public IP
- * from the Cloud SQL console or using Cloud SQL APIs. No additional
+ * The source database will allow incoming connections from the public IP of the
+ * destination database. You can retrieve the public IP of the Cloud SQL
+ * instance from the Cloud SQL console or using Cloud SQL APIs. No additional
  * configuration is required.
  * </pre>
  *
@@ -46,11 +46,6 @@ public final class StaticIpConnectivity extends com.google.protobuf.GeneratedMes
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new StaticIpConnectivity();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -222,9 +217,9 @@ public final class StaticIpConnectivity extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The source database will allow incoming connections from the destination
-   * database's public IP. You can retrieve the Cloud SQL instance's public IP
-   * from the Cloud SQL console or using Cloud SQL APIs. No additional
+   * The source database will allow incoming connections from the public IP of the
+   * destination database. You can retrieve the public IP of the Cloud SQL
+   * instance from the Cloud SQL console or using Cloud SQL APIs. No additional
    * configuration is required.
    * </pre>
    *

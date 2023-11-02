@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -203,7 +203,7 @@ public enum StoredInfoTypeState implements com.google.protobuf.ProtocolMessageEn
   }
 
   public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-    return com.google.privacy.dlp.v2.DlpProto.getDescriptor().getEnumTypes().get(9);
+    return com.google.privacy.dlp.v2.DlpProto.getDescriptor().getEnumTypes().get(14);
   }
 
   private static final StoredInfoTypeState[] VALUES = values();

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
     return new EncryptionConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.metastore.v1beta.MetastoreProto
         .internal_static_google_cloud_metastore_v1beta_EncryptionConfig_descriptor;
@@ -77,6 +72,7 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
    * <pre>
    * The fully qualified customer provided Cloud KMS key name to use for
    * customer data encryption, in the following form:
+   *
    * `projects/{project_number}/locations/{location_id}/keyRings/{key_ring_id}/cryptoKeys/{crypto_key_id}`.
    * </pre>
    *
@@ -102,6 +98,7 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
    * <pre>
    * The fully qualified customer provided Cloud KMS key name to use for
    * customer data encryption, in the following form:
+   *
    * `projects/{project_number}/locations/{location_id}/keyRings/{key_ring_id}/cryptoKeys/{crypto_key_id}`.
    * </pre>
    *
@@ -471,6 +468,7 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
      * <pre>
      * The fully qualified customer provided Cloud KMS key name to use for
      * customer data encryption, in the following form:
+     *
      * `projects/{project_number}/locations/{location_id}/keyRings/{key_ring_id}/cryptoKeys/{crypto_key_id}`.
      * </pre>
      *
@@ -495,6 +493,7 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
      * <pre>
      * The fully qualified customer provided Cloud KMS key name to use for
      * customer data encryption, in the following form:
+     *
      * `projects/{project_number}/locations/{location_id}/keyRings/{key_ring_id}/cryptoKeys/{crypto_key_id}`.
      * </pre>
      *
@@ -519,6 +518,7 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
      * <pre>
      * The fully qualified customer provided Cloud KMS key name to use for
      * customer data encryption, in the following form:
+     *
      * `projects/{project_number}/locations/{location_id}/keyRings/{key_ring_id}/cryptoKeys/{crypto_key_id}`.
      * </pre>
      *
@@ -542,6 +542,7 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
      * <pre>
      * The fully qualified customer provided Cloud KMS key name to use for
      * customer data encryption, in the following form:
+     *
      * `projects/{project_number}/locations/{location_id}/keyRings/{key_ring_id}/cryptoKeys/{crypto_key_id}`.
      * </pre>
      *
@@ -561,6 +562,7 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
      * <pre>
      * The fully qualified customer provided Cloud KMS key name to use for
      * customer data encryption, in the following form:
+     *
      * `projects/{project_number}/locations/{location_id}/keyRings/{key_ring_id}/cryptoKeys/{crypto_key_id}`.
      * </pre>
      *

@@ -37,6 +37,10 @@ option (google.api.resource_definition) = {
   pattern: "projects/{project}/conversations/{conversation}/participants/{participant}"
   pattern: "projects/{project}/locations/{location}/conversations/{conversation}/participants/{participant}"
 };
+option (google.api.resource_definition) = {
+  type: "speech.googleapis.com/Recognizer"
+  pattern: "projects/{project}/locations/{location}/recognizers/{recognizer}"
+};
 
 // The conversation resource.
 message Conversation {
@@ -650,6 +654,18 @@ message IssueModel {
     DELETING = 5;
   }
 
+  // Type of the model.
+  enum ModelType {
+    // Unspecified model type.
+    MODEL_TYPE_UNSPECIFIED = 0;
+
+    // Type V1.
+    TYPE_V1 = 1;
+
+    // Type V2.
+    TYPE_V2 = 2;
+  }
+
   // Immutable. The resource name of the issue model.
   // Format:
   // projects/{project}/locations/{location}/issueModels/{issue_model}
@@ -681,6 +697,12 @@ message IssueModel {
     (google.api.field_behavior) = OUTPUT_ONLY,
     (google.api.field_behavior) = IMMUTABLE
   ];
+
+  // Type of the model.
+  ModelType model_type = 9;
+
+  // Language of the model.
+  string language_code = 10;
 }
 
 // The issue resource.
@@ -929,6 +951,10 @@ message Settings {
   // Default DLP redaction resources to be applied while ingesting
   // conversations.
   RedactionConfig redaction_config = 10;
+
+  // Optional. Default Speech-to-Text resources to be used while ingesting audio
+  // files. Optional, CCAI Insights will create a default if not provided.
+  SpeechConfig speech_config = 11 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // DLP resources used for redaction while ingesting conversations.
@@ -940,8 +966,18 @@ message RedactionConfig {
 
   // The fully-qualified DLP inspect template resource name.
   // Format:
-  // `projects/{project}/inspectTemplates/{template}`
+  // `projects/{project}/locations/{location}/inspectTemplates/{template}`
   string inspect_template = 2;
+}
+
+// Speech-to-Text configuration.
+message SpeechConfig {
+  // The fully-qualified Speech Recognizer resource name.
+  // Format:
+  // `projects/{project_id}/locations/{location}/recognizer/{recognizer}`
+  string speech_recognizer = 1 [(google.api.resource_reference) = {
+    type: "speech.googleapis.com/Recognizer"
+  }];
 }
 
 // An annotation that was generated during the customer and agent interaction.

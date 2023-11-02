@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,7 +36,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2685
+   *     google/container/v1beta1/cluster_service.proto;l=3016
    * @return The projectId.
    */
   @java.lang.Deprecated
@@ -54,7 +54,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2685
+   *     google/container/v1beta1/cluster_service.proto;l=3016
    * @return The bytes for projectId.
    */
   @java.lang.Deprecated
@@ -73,7 +73,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2692
+   *     google/container/v1beta1/cluster_service.proto;l=3023
    * @return The zone.
    */
   @java.lang.Deprecated
@@ -91,7 +91,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2692
+   *     google/container/v1beta1/cluster_service.proto;l=3023
    * @return The bytes for zone.
    */
   @java.lang.Deprecated
@@ -109,7 +109,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.cluster_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2696
+   *     google/container/v1beta1/cluster_service.proto;l=3027
    * @return The clusterId.
    */
   @java.lang.Deprecated
@@ -126,7 +126,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.cluster_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2696
+   *     google/container/v1beta1/cluster_service.proto;l=3027
    * @return The bytes for clusterId.
    */
   @java.lang.Deprecated
@@ -144,7 +144,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2701
+   *     google/container/v1beta1/cluster_service.proto;l=3032
    * @return The nodePoolId.
    */
   @java.lang.Deprecated
@@ -161,7 +161,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2701
+   *     google/container/v1beta1/cluster_service.proto;l=3032
    * @return The bytes for nodePoolId.
    */
   @java.lang.Deprecated
@@ -173,8 +173,10 @@ public interface UpdateNodePoolRequestOrBuilder
    * <pre>
    * Required. The Kubernetes version to change the nodes to (typically an
    * upgrade).
+   *
    * Users may specify either explicit versions offered by Kubernetes Engine or
    * version aliases, which have the following behavior:
+   *
    * - "latest": picks the highest valid Kubernetes version
    * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
    * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
@@ -193,8 +195,10 @@ public interface UpdateNodePoolRequestOrBuilder
    * <pre>
    * Required. The Kubernetes version to change the nodes to (typically an
    * upgrade).
+   *
    * Users may specify either explicit versions offered by Kubernetes Engine or
    * version aliases, which have the following behavior:
+   *
    * - "latest": picks the highest valid Kubernetes version
    * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
    * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
@@ -910,4 +914,118 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>.google.container.v1beta1.WindowsNodeConfig windows_node_config = 34;</code>
    */
   com.google.container.v1beta1.WindowsNodeConfigOrBuilder getWindowsNodeConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The desired machine type for nodes in the node pool.
+   * Initiates an upgrade operation that migrates the nodes in the
+   * node pool to the specified machine type.
+   * </pre>
+   *
+   * <code>string machine_type = 36 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The machineType.
+   */
+  java.lang.String getMachineType();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The desired machine type for nodes in the node pool.
+   * Initiates an upgrade operation that migrates the nodes in the
+   * node pool to the specified machine type.
+   * </pre>
+   *
+   * <code>string machine_type = 36 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for machineType.
+   */
+  com.google.protobuf.ByteString getMachineTypeBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The desired disk type for nodes in the node pool.
+   * Initiates an upgrade operation that migrates the nodes in the
+   * node pool to the specified disk type.
+   * </pre>
+   *
+   * <code>string disk_type = 37 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The diskType.
+   */
+  java.lang.String getDiskType();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The desired disk type for nodes in the node pool.
+   * Initiates an upgrade operation that migrates the nodes in the
+   * node pool to the specified disk type.
+   * </pre>
+   *
+   * <code>string disk_type = 37 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for diskType.
+   */
+  com.google.protobuf.ByteString getDiskTypeBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The desired disk size for nodes in the node pool.
+   * Initiates an upgrade operation that migrates the nodes in the
+   * node pool to the specified disk size.
+   * </pre>
+   *
+   * <code>int64 disk_size_gb = 38 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The diskSizeGb.
+   */
+  long getDiskSizeGb();
+
+  /**
+   *
+   *
+   * <pre>
+   * Desired resource manager tag keys and values to be attached to the nodes
+   * for managing Compute Engine firewalls using Network Firewall Policies.
+   * Existing tags will be replaced with new values.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.ResourceManagerTags resource_manager_tags = 39;</code>
+   *
+   * @return Whether the resourceManagerTags field is set.
+   */
+  boolean hasResourceManagerTags();
+  /**
+   *
+   *
+   * <pre>
+   * Desired resource manager tag keys and values to be attached to the nodes
+   * for managing Compute Engine firewalls using Network Firewall Policies.
+   * Existing tags will be replaced with new values.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.ResourceManagerTags resource_manager_tags = 39;</code>
+   *
+   * @return The resourceManagerTags.
+   */
+  com.google.container.v1beta1.ResourceManagerTags getResourceManagerTags();
+  /**
+   *
+   *
+   * <pre>
+   * Desired resource manager tag keys and values to be attached to the nodes
+   * for managing Compute Engine firewalls using Network Firewall Policies.
+   * Existing tags will be replaced with new values.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.ResourceManagerTags resource_manager_tags = 39;</code>
+   */
+  com.google.container.v1beta1.ResourceManagerTagsOrBuilder getResourceManagerTagsOrBuilder();
 }

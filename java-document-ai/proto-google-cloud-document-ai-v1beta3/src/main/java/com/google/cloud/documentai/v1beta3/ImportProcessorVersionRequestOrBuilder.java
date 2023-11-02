@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,8 @@ public interface ImportProcessorVersionRequestOrBuilder
    *
    *
    * <pre>
-   * The source processor version to import from.
+   * The source processor version to import from. The source processor version
+   * and destination processor need to be in the same environment and region.
    * </pre>
    *
    * <code>string processor_version_source = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -39,7 +40,8 @@ public interface ImportProcessorVersionRequestOrBuilder
    *
    *
    * <pre>
-   * The source processor version to import from.
+   * The source processor version to import from. The source processor version
+   * and destination processor need to be in the same environment and region.
    * </pre>
    *
    * <code>string processor_version_source = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -51,7 +53,8 @@ public interface ImportProcessorVersionRequestOrBuilder
    *
    *
    * <pre>
-   * The source processor version to import from.
+   * The source processor version to import from. The source processor version
+   * and destination processor need to be in the same environment and region.
    * </pre>
    *
    * <code>string processor_version_source = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -59,6 +62,53 @@ public interface ImportProcessorVersionRequestOrBuilder
    * @return The bytes for processorVersionSource.
    */
   com.google.protobuf.ByteString getProcessorVersionSourceBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The source processor version to import from. It can be from a different
+   * environment and region than the destination processor.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.documentai.v1beta3.ImportProcessorVersionRequest.ExternalProcessorVersionSource external_processor_version_source = 3;
+   * </code>
+   *
+   * @return Whether the externalProcessorVersionSource field is set.
+   */
+  boolean hasExternalProcessorVersionSource();
+  /**
+   *
+   *
+   * <pre>
+   * The source processor version to import from. It can be from a different
+   * environment and region than the destination processor.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.documentai.v1beta3.ImportProcessorVersionRequest.ExternalProcessorVersionSource external_processor_version_source = 3;
+   * </code>
+   *
+   * @return The externalProcessorVersionSource.
+   */
+  com.google.cloud.documentai.v1beta3.ImportProcessorVersionRequest.ExternalProcessorVersionSource
+      getExternalProcessorVersionSource();
+  /**
+   *
+   *
+   * <pre>
+   * The source processor version to import from. It can be from a different
+   * environment and region than the destination processor.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.documentai.v1beta3.ImportProcessorVersionRequest.ExternalProcessorVersionSource external_processor_version_source = 3;
+   * </code>
+   */
+  com.google.cloud.documentai.v1beta3.ImportProcessorVersionRequest
+          .ExternalProcessorVersionSourceOrBuilder
+      getExternalProcessorVersionSourceOrBuilder();
 
   /**
    *
@@ -93,6 +143,5 @@ public interface ImportProcessorVersionRequestOrBuilder
    */
   com.google.protobuf.ByteString getParentBytes();
 
-  public com.google.cloud.documentai.v1beta3.ImportProcessorVersionRequest.SourceCase
-      getSourceCase();
+  com.google.cloud.documentai.v1beta3.ImportProcessorVersionRequest.SourceCase getSourceCase();
 }

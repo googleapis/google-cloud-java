@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,12 +21,12 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.eventarc.publishing.v1.PublishChannelConnectionEventsRequest;
 import com.google.cloud.eventarc.publishing.v1.PublishChannelConnectionEventsResponse;
 import com.google.cloud.eventarc.publishing.v1.PublishEventsRequest;
 import com.google.cloud.eventarc.publishing.v1.PublishEventsResponse;
-import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
@@ -123,10 +123,10 @@ public class GrpcPublisherStub extends PublisherStub {
                 .setMethodDescriptor(publishChannelConnectionEventsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put(
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
                           "channel_connection", String.valueOf(request.getChannelConnection()));
-                      return params.build();
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<PublishEventsRequest, PublishEventsResponse> publishEventsTransportSettings =
@@ -134,9 +134,9 @@ public class GrpcPublisherStub extends PublisherStub {
             .setMethodDescriptor(publishEventsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("channel", String.valueOf(request.getChannel()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("channel", String.valueOf(request.getChannel()));
+                  return builder.build();
                 })
             .build();
 

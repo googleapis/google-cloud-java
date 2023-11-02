@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,6 +64,7 @@ public interface CreateDocumentResponseOrBuilder
    * <pre>
    * Output from Rule Engine recording the rule evaluator and action executor's
    * output.
+   *
    * Refer format in: google/cloud/contentwarehouse/v1/rule_engine.proto
    * </pre>
    *
@@ -78,6 +79,7 @@ public interface CreateDocumentResponseOrBuilder
    * <pre>
    * Output from Rule Engine recording the rule evaluator and action executor's
    * output.
+   *
    * Refer format in: google/cloud/contentwarehouse/v1/rule_engine.proto
    * </pre>
    *
@@ -92,6 +94,7 @@ public interface CreateDocumentResponseOrBuilder
    * <pre>
    * Output from Rule Engine recording the rule evaluator and action executor's
    * output.
+   *
    * Refer format in: google/cloud/contentwarehouse/v1/rule_engine.proto
    * </pre>
    *

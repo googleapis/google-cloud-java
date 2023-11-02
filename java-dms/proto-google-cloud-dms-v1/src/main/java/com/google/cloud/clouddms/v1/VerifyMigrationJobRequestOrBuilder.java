@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,4 +47,89 @@ public interface VerifyMigrationJobRequestOrBuilder
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Field mask is used to specify the changed fields to be verified.
+   * It will not update the migration job.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the updateMask field is set.
+   */
+  boolean hasUpdateMask();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Field mask is used to specify the changed fields to be verified.
+   * It will not update the migration job.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The updateMask.
+   */
+  com.google.protobuf.FieldMask getUpdateMask();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Field mask is used to specify the changed fields to be verified.
+   * It will not update the migration job.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The changed migration job parameters to verify.
+   * It will not update the migration job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.clouddms.v1.MigrationJob migration_job = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the migrationJob field is set.
+   */
+  boolean hasMigrationJob();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The changed migration job parameters to verify.
+   * It will not update the migration job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.clouddms.v1.MigrationJob migration_job = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The migrationJob.
+   */
+  com.google.cloud.clouddms.v1.MigrationJob getMigrationJob();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The changed migration job parameters to verify.
+   * It will not update the migration job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.clouddms.v1.MigrationJob migration_job = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.clouddms.v1.MigrationJobOrBuilder getMigrationJobOrBuilder();
 }

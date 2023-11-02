@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,11 +43,6 @@ public final class ExportDataOperationMetadata extends com.google.protobuf.Gener
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ExportDataOperationMetadata();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -110,8 +105,7 @@ public final class ExportDataOperationMetadata extends com.google.protobuf.Gener
      */
     com.google.protobuf.ByteString getGcsOutputDirectoryBytes();
 
-    public com.google.cloud.automl.v1.ExportDataOperationMetadata.ExportDataOutputInfo
-            .OutputLocationCase
+    com.google.cloud.automl.v1.ExportDataOperationMetadata.ExportDataOutputInfo.OutputLocationCase
         getOutputLocationCase();
   }
   /**
@@ -143,11 +137,6 @@ public final class ExportDataOperationMetadata extends com.google.protobuf.Gener
       return new ExportDataOutputInfo();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.automl.v1.Operations
           .internal_static_google_cloud_automl_v1_ExportDataOperationMetadata_ExportDataOutputInfo_descriptor;
@@ -165,6 +154,8 @@ public final class ExportDataOperationMetadata extends com.google.protobuf.Gener
     }
 
     private int outputLocationCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object outputLocation_;
 
     public enum OutputLocationCase

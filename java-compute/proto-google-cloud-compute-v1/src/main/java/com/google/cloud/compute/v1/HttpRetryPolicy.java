@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,18 +38,13 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
   }
 
   private HttpRetryPolicy() {
-    retryConditions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    retryConditions_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new HttpRetryPolicy();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -154,7 +149,8 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
   public static final int RETRY_CONDITIONS_FIELD_NUMBER = 28815535;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList retryConditions_;
+  private com.google.protobuf.LazyStringArrayList retryConditions_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -464,8 +460,7 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
         perTryTimeoutBuilder_.dispose();
         perTryTimeoutBuilder_ = null;
       }
-      retryConditions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      retryConditions_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -493,20 +488,11 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.compute.v1.HttpRetryPolicy buildPartial() {
       com.google.cloud.compute.v1.HttpRetryPolicy result =
           new com.google.cloud.compute.v1.HttpRetryPolicy(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(com.google.cloud.compute.v1.HttpRetryPolicy result) {
-      if (((bitField0_ & 0x00000004) != 0)) {
-        retryConditions_ = retryConditions_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.retryConditions_ = retryConditions_;
     }
 
     private void buildPartial0(com.google.cloud.compute.v1.HttpRetryPolicy result) {
@@ -520,6 +506,10 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
         result.perTryTimeout_ =
             perTryTimeoutBuilder_ == null ? perTryTimeout_ : perTryTimeoutBuilder_.build();
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        retryConditions_.makeImmutable();
+        result.retryConditions_ = retryConditions_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -578,7 +568,7 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
       if (!other.retryConditions_.isEmpty()) {
         if (retryConditions_.isEmpty()) {
           retryConditions_ = other.retryConditions_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ |= 0x00000004;
         } else {
           ensureRetryConditionsIsMutable();
           retryConditions_.addAll(other.retryConditions_);
@@ -900,14 +890,14 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
       return perTryTimeoutBuilder_;
     }
 
-    private com.google.protobuf.LazyStringList retryConditions_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList retryConditions_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureRetryConditionsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!retryConditions_.isModifiable()) {
         retryConditions_ = new com.google.protobuf.LazyStringArrayList(retryConditions_);
-        bitField0_ |= 0x00000004;
       }
+      bitField0_ |= 0x00000004;
     }
     /**
      *
@@ -921,7 +911,8 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
      * @return A list containing the retryConditions.
      */
     public com.google.protobuf.ProtocolStringList getRetryConditionsList() {
-      return retryConditions_.getUnmodifiableView();
+      retryConditions_.makeImmutable();
+      return retryConditions_;
     }
     /**
      *
@@ -986,6 +977,7 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
       }
       ensureRetryConditionsIsMutable();
       retryConditions_.set(index, value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1007,6 +999,7 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
       }
       ensureRetryConditionsIsMutable();
       retryConditions_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1025,6 +1018,7 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
     public Builder addAllRetryConditions(java.lang.Iterable<java.lang.String> values) {
       ensureRetryConditionsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, retryConditions_);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1040,8 +1034,9 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearRetryConditions() {
-      retryConditions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      retryConditions_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000004);
+      ;
       onChanged();
       return this;
     }
@@ -1064,6 +1059,7 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
       checkByteStringIsUtf8(value);
       ensureRetryConditionsIsMutable();
       retryConditions_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,11 +52,6 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
     return new RunPivotReportRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.analytics.data.v1beta.AnalyticsDataApiProto
         .internal_static_google_analytics_data_v1beta_RunPivotReportRequest_descriptor;
@@ -86,6 +81,7 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
    * ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id).
    * Within a batch request, this property should either be unspecified or
    * consistent with the batch-level property.
+   *
    * Example: properties/1234
    * </pre>
    *
@@ -115,6 +111,7 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
    * ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id).
    * Within a batch request, this property should either be unspecified or
    * consistent with the batch-level property.
+   *
    * Example: properties/1234
    * </pre>
    *
@@ -693,6 +690,13 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
    * If false or unspecified, each row with all metrics equal to 0 will not be
    * returned. If true, these rows will be returned if they are not separately
    * removed by a filter.
+   *
+   * Regardless of this `keep_empty_rows` setting, only data recorded by the
+   * Google Analytics (GA4) property can be displayed in a report.
+   *
+   * For example if a property never logs a `purchase` event, then a query for
+   * the `eventName` dimension and  `eventCount` metric will not have a row
+   * eventName: "purchase" and eventCount: 0.
    * </pre>
    *
    * <code>bool keep_empty_rows = 10;</code>
@@ -1513,6 +1517,7 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
      * ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id).
      * Within a batch request, this property should either be unspecified or
      * consistent with the batch-level property.
+     *
      * Example: properties/1234
      * </pre>
      *
@@ -1541,6 +1546,7 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
      * ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id).
      * Within a batch request, this property should either be unspecified or
      * consistent with the batch-level property.
+     *
      * Example: properties/1234
      * </pre>
      *
@@ -1569,6 +1575,7 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
      * ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id).
      * Within a batch request, this property should either be unspecified or
      * consistent with the batch-level property.
+     *
      * Example: properties/1234
      * </pre>
      *
@@ -1596,6 +1603,7 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
      * ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id).
      * Within a batch request, this property should either be unspecified or
      * consistent with the batch-level property.
+     *
      * Example: properties/1234
      * </pre>
      *
@@ -1619,6 +1627,7 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
      * ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id).
      * Within a batch request, this property should either be unspecified or
      * consistent with the batch-level property.
+     *
      * Example: properties/1234
      * </pre>
      *
@@ -3926,6 +3935,13 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
      * If false or unspecified, each row with all metrics equal to 0 will not be
      * returned. If true, these rows will be returned if they are not separately
      * removed by a filter.
+     *
+     * Regardless of this `keep_empty_rows` setting, only data recorded by the
+     * Google Analytics (GA4) property can be displayed in a report.
+     *
+     * For example if a property never logs a `purchase` event, then a query for
+     * the `eventName` dimension and  `eventCount` metric will not have a row
+     * eventName: "purchase" and eventCount: 0.
      * </pre>
      *
      * <code>bool keep_empty_rows = 10;</code>
@@ -3943,6 +3959,13 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
      * If false or unspecified, each row with all metrics equal to 0 will not be
      * returned. If true, these rows will be returned if they are not separately
      * removed by a filter.
+     *
+     * Regardless of this `keep_empty_rows` setting, only data recorded by the
+     * Google Analytics (GA4) property can be displayed in a report.
+     *
+     * For example if a property never logs a `purchase` event, then a query for
+     * the `eventName` dimension and  `eventCount` metric will not have a row
+     * eventName: "purchase" and eventCount: 0.
      * </pre>
      *
      * <code>bool keep_empty_rows = 10;</code>
@@ -3964,6 +3987,13 @@ public final class RunPivotReportRequest extends com.google.protobuf.GeneratedMe
      * If false or unspecified, each row with all metrics equal to 0 will not be
      * returned. If true, these rows will be returned if they are not separately
      * removed by a filter.
+     *
+     * Regardless of this `keep_empty_rows` setting, only data recorded by the
+     * Google Analytics (GA4) property can be displayed in a report.
+     *
+     * For example if a property never logs a `purchase` event, then a query for
+     * the `eventName` dimension and  `eventCount` metric will not have a row
+     * eventName: "purchase" and eventCount: 0.
      * </pre>
      *
      * <code>bool keep_empty_rows = 10;</code>

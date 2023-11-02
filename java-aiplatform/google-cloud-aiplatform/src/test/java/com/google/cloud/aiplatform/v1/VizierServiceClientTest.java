@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -542,6 +542,7 @@ public class VizierServiceClientTest {
             .setParent(StudyName.of("[PROJECT]", "[LOCATION]", "[STUDY]").toString())
             .setSuggestionCount(390130452)
             .setClientId("clientId908408390")
+            .addAllContexts(new ArrayList<TrialContext>())
             .build();
 
     SuggestTrialsResponse actualResponse = client.suggestTrialsAsync(request).get();
@@ -554,6 +555,7 @@ public class VizierServiceClientTest {
     Assert.assertEquals(request.getParent(), actualRequest.getParent());
     Assert.assertEquals(request.getSuggestionCount(), actualRequest.getSuggestionCount());
     Assert.assertEquals(request.getClientId(), actualRequest.getClientId());
+    Assert.assertEquals(request.getContextsList(), actualRequest.getContextsList());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -571,6 +573,7 @@ public class VizierServiceClientTest {
               .setParent(StudyName.of("[PROJECT]", "[LOCATION]", "[STUDY]").toString())
               .setSuggestionCount(390130452)
               .setClientId("clientId908408390")
+              .addAllContexts(new ArrayList<TrialContext>())
               .build();
       client.suggestTrialsAsync(request).get();
       Assert.fail("No exception raised");

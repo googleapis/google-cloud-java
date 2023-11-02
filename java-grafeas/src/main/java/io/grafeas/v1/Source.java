@@ -49,11 +49,6 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
     return new Source();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return io.grafeas.v1.Provenance.internal_static_grafeas_v1_Source_descriptor;
   }
@@ -165,8 +160,10 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Hash(es) of the build source, which can be used to verify that the original
    * source integrity was maintained in the build.
+   *
    * The keys to this map are file paths used as build source and the values
    * contain the hash values for those files.
+   *
    * If the build source came in a single package such as a gzipped tarfile
    * (.tar.gz), the FileHash will be for the single path to that file.
    * </pre>
@@ -192,8 +189,10 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Hash(es) of the build source, which can be used to verify that the original
    * source integrity was maintained in the build.
+   *
    * The keys to this map are file paths used as build source and the values
    * contain the hash values for those files.
+   *
    * If the build source came in a single package such as a gzipped tarfile
    * (.tar.gz), the FileHash will be for the single path to that file.
    * </pre>
@@ -210,8 +209,10 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Hash(es) of the build source, which can be used to verify that the original
    * source integrity was maintained in the build.
+   *
    * The keys to this map are file paths used as build source and the values
    * contain the hash values for those files.
+   *
    * If the build source came in a single package such as a gzipped tarfile
    * (.tar.gz), the FileHash will be for the single path to that file.
    * </pre>
@@ -236,8 +237,10 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Hash(es) of the build source, which can be used to verify that the original
    * source integrity was maintained in the build.
+   *
    * The keys to this map are file paths used as build source and the values
    * contain the hash values for those files.
+   *
    * If the build source came in a single package such as a gzipped tarfile
    * (.tar.gz), the FileHash will be for the single path to that file.
    * </pre>
@@ -1028,8 +1031,10 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Hash(es) of the build source, which can be used to verify that the original
      * source integrity was maintained in the build.
+     *
      * The keys to this map are file paths used as build source and the values
      * contain the hash values for those files.
+     *
      * If the build source came in a single package such as a gzipped tarfile
      * (.tar.gz), the FileHash will be for the single path to that file.
      * </pre>
@@ -1055,8 +1060,10 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Hash(es) of the build source, which can be used to verify that the original
      * source integrity was maintained in the build.
+     *
      * The keys to this map are file paths used as build source and the values
      * contain the hash values for those files.
+     *
      * If the build source came in a single package such as a gzipped tarfile
      * (.tar.gz), the FileHash will be for the single path to that file.
      * </pre>
@@ -1073,8 +1080,10 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Hash(es) of the build source, which can be used to verify that the original
      * source integrity was maintained in the build.
+     *
      * The keys to this map are file paths used as build source and the values
      * contain the hash values for those files.
+     *
      * If the build source came in a single package such as a gzipped tarfile
      * (.tar.gz), the FileHash will be for the single path to that file.
      * </pre>
@@ -1099,8 +1108,10 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Hash(es) of the build source, which can be used to verify that the original
      * source integrity was maintained in the build.
+     *
      * The keys to this map are file paths used as build source and the values
      * contain the hash values for those files.
+     *
      * If the build source came in a single package such as a gzipped tarfile
      * (.tar.gz), the FileHash will be for the single path to that file.
      * </pre>
@@ -1131,8 +1142,10 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Hash(es) of the build source, which can be used to verify that the original
      * source integrity was maintained in the build.
+     *
      * The keys to this map are file paths used as build source and the values
      * contain the hash values for those files.
+     *
      * If the build source came in a single package such as a gzipped tarfile
      * (.tar.gz), the FileHash will be for the single path to that file.
      * </pre>
@@ -1158,8 +1171,10 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Hash(es) of the build source, which can be used to verify that the original
      * source integrity was maintained in the build.
+     *
      * The keys to this map are file paths used as build source and the values
      * contain the hash values for those files.
+     *
      * If the build source came in a single package such as a gzipped tarfile
      * (.tar.gz), the FileHash will be for the single path to that file.
      * </pre>
@@ -1183,8 +1198,10 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Hash(es) of the build source, which can be used to verify that the original
      * source integrity was maintained in the build.
+     *
      * The keys to this map are file paths used as build source and the values
      * contain the hash values for those files.
+     *
      * If the build source came in a single package such as a gzipped tarfile
      * (.tar.gz), the FileHash will be for the single path to that file.
      * </pre>

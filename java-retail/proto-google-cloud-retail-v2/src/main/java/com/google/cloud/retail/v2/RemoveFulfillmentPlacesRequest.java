@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,18 +43,13 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
   private RemoveFulfillmentPlacesRequest() {
     product_ = "";
     type_ = "";
-    placeIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    placeIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new RemoveFulfillmentPlacesRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -83,6 +78,7 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
    * Required. Full resource name of [Product][google.cloud.retail.v2.Product],
    * such as
    * `projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch/products/some_product_id`.
+   *
    * If the caller does not have permission to access the
    * [Product][google.cloud.retail.v2.Product], regardless of whether or not it
    * exists, a PERMISSION_DENIED error is returned.
@@ -113,6 +109,7 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
    * Required. Full resource name of [Product][google.cloud.retail.v2.Product],
    * such as
    * `projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch/products/some_product_id`.
+   *
    * If the caller does not have permission to access the
    * [Product][google.cloud.retail.v2.Product], regardless of whether or not it
    * exists, a PERMISSION_DENIED error is returned.
@@ -147,7 +144,9 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
    * <pre>
    * Required. The fulfillment type, including commonly used types (such as
    * pickup in store and same day delivery), and custom types.
+   *
    * Supported values:
+   *
    * * "pickup-in-store"
    * * "ship-to-store"
    * * "same-day-delivery"
@@ -157,8 +156,10 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
    * * "custom-type-3"
    * * "custom-type-4"
    * * "custom-type-5"
+   *
    * If this field is set to an invalid value other than these, an
    * INVALID_ARGUMENT error is returned.
+   *
    * This field directly corresponds to
    * [Product.fulfillment_info.type][google.cloud.retail.v2.FulfillmentInfo.type].
    * </pre>
@@ -185,7 +186,9 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
    * <pre>
    * Required. The fulfillment type, including commonly used types (such as
    * pickup in store and same day delivery), and custom types.
+   *
    * Supported values:
+   *
    * * "pickup-in-store"
    * * "ship-to-store"
    * * "same-day-delivery"
@@ -195,8 +198,10 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
    * * "custom-type-3"
    * * "custom-type-4"
    * * "custom-type-5"
+   *
    * If this field is set to an invalid value other than these, an
    * INVALID_ARGUMENT error is returned.
+   *
    * This field directly corresponds to
    * [Product.fulfillment_info.type][google.cloud.retail.v2.FulfillmentInfo.type].
    * </pre>
@@ -221,7 +226,8 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
   public static final int PLACE_IDS_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList placeIds_;
+  private com.google.protobuf.LazyStringArrayList placeIds_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -231,6 +237,7 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
    * the store IDs for "pickup-in-store" or the region IDs for
    * "same-day-delivery", to be removed for this
    * [type][google.cloud.retail.v2.RemoveFulfillmentPlacesRequest.type].
+   *
    * At least 1 value is required, and a maximum of 2000 values are allowed.
    * Each value must be a string with a length limit of 10 characters, matching
    * the pattern `[a-zA-Z0-9_-]+`, such as "store1" or "REGION-2". Otherwise, an
@@ -253,6 +260,7 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
    * the store IDs for "pickup-in-store" or the region IDs for
    * "same-day-delivery", to be removed for this
    * [type][google.cloud.retail.v2.RemoveFulfillmentPlacesRequest.type].
+   *
    * At least 1 value is required, and a maximum of 2000 values are allowed.
    * Each value must be a string with a length limit of 10 characters, matching
    * the pattern `[a-zA-Z0-9_-]+`, such as "store1" or "REGION-2". Otherwise, an
@@ -275,6 +283,7 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
    * the store IDs for "pickup-in-store" or the region IDs for
    * "same-day-delivery", to be removed for this
    * [type][google.cloud.retail.v2.RemoveFulfillmentPlacesRequest.type].
+   *
    * At least 1 value is required, and a maximum of 2000 values are allowed.
    * Each value must be a string with a length limit of 10 characters, matching
    * the pattern `[a-zA-Z0-9_-]+`, such as "store1" or "REGION-2". Otherwise, an
@@ -298,6 +307,7 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
    * the store IDs for "pickup-in-store" or the region IDs for
    * "same-day-delivery", to be removed for this
    * [type][google.cloud.retail.v2.RemoveFulfillmentPlacesRequest.type].
+   *
    * At least 1 value is required, and a maximum of 2000 values are allowed.
    * Each value must be a string with a length limit of 10 characters, matching
    * the pattern `[a-zA-Z0-9_-]+`, such as "store1" or "REGION-2". Otherwise, an
@@ -639,8 +649,7 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
       bitField0_ = 0;
       product_ = "";
       type_ = "";
-      placeIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      placeIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
       removeTime_ = null;
       if (removeTimeBuilder_ != null) {
         removeTimeBuilder_.dispose();
@@ -674,21 +683,11 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
     public com.google.cloud.retail.v2.RemoveFulfillmentPlacesRequest buildPartial() {
       com.google.cloud.retail.v2.RemoveFulfillmentPlacesRequest result =
           new com.google.cloud.retail.v2.RemoveFulfillmentPlacesRequest(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(
-        com.google.cloud.retail.v2.RemoveFulfillmentPlacesRequest result) {
-      if (((bitField0_ & 0x00000004) != 0)) {
-        placeIds_ = placeIds_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.placeIds_ = placeIds_;
     }
 
     private void buildPartial0(com.google.cloud.retail.v2.RemoveFulfillmentPlacesRequest result) {
@@ -698,6 +697,10 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.type_ = type_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        placeIds_.makeImmutable();
+        result.placeIds_ = placeIds_;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.removeTime_ = removeTimeBuilder_ == null ? removeTime_ : removeTimeBuilder_.build();
@@ -766,7 +769,7 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
       if (!other.placeIds_.isEmpty()) {
         if (placeIds_.isEmpty()) {
           placeIds_ = other.placeIds_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ |= 0x00000004;
         } else {
           ensurePlaceIdsIsMutable();
           placeIds_.addAll(other.placeIds_);
@@ -863,6 +866,7 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
      * Required. Full resource name of [Product][google.cloud.retail.v2.Product],
      * such as
      * `projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch/products/some_product_id`.
+     *
      * If the caller does not have permission to access the
      * [Product][google.cloud.retail.v2.Product], regardless of whether or not it
      * exists, a PERMISSION_DENIED error is returned.
@@ -892,6 +896,7 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
      * Required. Full resource name of [Product][google.cloud.retail.v2.Product],
      * such as
      * `projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch/products/some_product_id`.
+     *
      * If the caller does not have permission to access the
      * [Product][google.cloud.retail.v2.Product], regardless of whether or not it
      * exists, a PERMISSION_DENIED error is returned.
@@ -921,6 +926,7 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
      * Required. Full resource name of [Product][google.cloud.retail.v2.Product],
      * such as
      * `projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch/products/some_product_id`.
+     *
      * If the caller does not have permission to access the
      * [Product][google.cloud.retail.v2.Product], regardless of whether or not it
      * exists, a PERMISSION_DENIED error is returned.
@@ -949,6 +955,7 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
      * Required. Full resource name of [Product][google.cloud.retail.v2.Product],
      * such as
      * `projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch/products/some_product_id`.
+     *
      * If the caller does not have permission to access the
      * [Product][google.cloud.retail.v2.Product], regardless of whether or not it
      * exists, a PERMISSION_DENIED error is returned.
@@ -973,6 +980,7 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
      * Required. Full resource name of [Product][google.cloud.retail.v2.Product],
      * such as
      * `projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch/products/some_product_id`.
+     *
      * If the caller does not have permission to access the
      * [Product][google.cloud.retail.v2.Product], regardless of whether or not it
      * exists, a PERMISSION_DENIED error is returned.
@@ -1003,7 +1011,9 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
      * <pre>
      * Required. The fulfillment type, including commonly used types (such as
      * pickup in store and same day delivery), and custom types.
+     *
      * Supported values:
+     *
      * * "pickup-in-store"
      * * "ship-to-store"
      * * "same-day-delivery"
@@ -1013,8 +1023,10 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
      * * "custom-type-3"
      * * "custom-type-4"
      * * "custom-type-5"
+     *
      * If this field is set to an invalid value other than these, an
      * INVALID_ARGUMENT error is returned.
+     *
      * This field directly corresponds to
      * [Product.fulfillment_info.type][google.cloud.retail.v2.FulfillmentInfo.type].
      * </pre>
@@ -1040,7 +1052,9 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
      * <pre>
      * Required. The fulfillment type, including commonly used types (such as
      * pickup in store and same day delivery), and custom types.
+     *
      * Supported values:
+     *
      * * "pickup-in-store"
      * * "ship-to-store"
      * * "same-day-delivery"
@@ -1050,8 +1064,10 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
      * * "custom-type-3"
      * * "custom-type-4"
      * * "custom-type-5"
+     *
      * If this field is set to an invalid value other than these, an
      * INVALID_ARGUMENT error is returned.
+     *
      * This field directly corresponds to
      * [Product.fulfillment_info.type][google.cloud.retail.v2.FulfillmentInfo.type].
      * </pre>
@@ -1077,7 +1093,9 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
      * <pre>
      * Required. The fulfillment type, including commonly used types (such as
      * pickup in store and same day delivery), and custom types.
+     *
      * Supported values:
+     *
      * * "pickup-in-store"
      * * "ship-to-store"
      * * "same-day-delivery"
@@ -1087,8 +1105,10 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
      * * "custom-type-3"
      * * "custom-type-4"
      * * "custom-type-5"
+     *
      * If this field is set to an invalid value other than these, an
      * INVALID_ARGUMENT error is returned.
+     *
      * This field directly corresponds to
      * [Product.fulfillment_info.type][google.cloud.retail.v2.FulfillmentInfo.type].
      * </pre>
@@ -1113,7 +1133,9 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
      * <pre>
      * Required. The fulfillment type, including commonly used types (such as
      * pickup in store and same day delivery), and custom types.
+     *
      * Supported values:
+     *
      * * "pickup-in-store"
      * * "ship-to-store"
      * * "same-day-delivery"
@@ -1123,8 +1145,10 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
      * * "custom-type-3"
      * * "custom-type-4"
      * * "custom-type-5"
+     *
      * If this field is set to an invalid value other than these, an
      * INVALID_ARGUMENT error is returned.
+     *
      * This field directly corresponds to
      * [Product.fulfillment_info.type][google.cloud.retail.v2.FulfillmentInfo.type].
      * </pre>
@@ -1145,7 +1169,9 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
      * <pre>
      * Required. The fulfillment type, including commonly used types (such as
      * pickup in store and same day delivery), and custom types.
+     *
      * Supported values:
+     *
      * * "pickup-in-store"
      * * "ship-to-store"
      * * "same-day-delivery"
@@ -1155,8 +1181,10 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
      * * "custom-type-3"
      * * "custom-type-4"
      * * "custom-type-5"
+     *
      * If this field is set to an invalid value other than these, an
      * INVALID_ARGUMENT error is returned.
+     *
      * This field directly corresponds to
      * [Product.fulfillment_info.type][google.cloud.retail.v2.FulfillmentInfo.type].
      * </pre>
@@ -1177,14 +1205,14 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
       return this;
     }
 
-    private com.google.protobuf.LazyStringList placeIds_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList placeIds_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensurePlaceIdsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!placeIds_.isModifiable()) {
         placeIds_ = new com.google.protobuf.LazyStringArrayList(placeIds_);
-        bitField0_ |= 0x00000004;
       }
+      bitField0_ |= 0x00000004;
     }
     /**
      *
@@ -1195,6 +1223,7 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
      * the store IDs for "pickup-in-store" or the region IDs for
      * "same-day-delivery", to be removed for this
      * [type][google.cloud.retail.v2.RemoveFulfillmentPlacesRequest.type].
+     *
      * At least 1 value is required, and a maximum of 2000 values are allowed.
      * Each value must be a string with a length limit of 10 characters, matching
      * the pattern `[a-zA-Z0-9_-]+`, such as "store1" or "REGION-2". Otherwise, an
@@ -1206,7 +1235,8 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
      * @return A list containing the placeIds.
      */
     public com.google.protobuf.ProtocolStringList getPlaceIdsList() {
-      return placeIds_.getUnmodifiableView();
+      placeIds_.makeImmutable();
+      return placeIds_;
     }
     /**
      *
@@ -1217,6 +1247,7 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
      * the store IDs for "pickup-in-store" or the region IDs for
      * "same-day-delivery", to be removed for this
      * [type][google.cloud.retail.v2.RemoveFulfillmentPlacesRequest.type].
+     *
      * At least 1 value is required, and a maximum of 2000 values are allowed.
      * Each value must be a string with a length limit of 10 characters, matching
      * the pattern `[a-zA-Z0-9_-]+`, such as "store1" or "REGION-2". Otherwise, an
@@ -1239,6 +1270,7 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
      * the store IDs for "pickup-in-store" or the region IDs for
      * "same-day-delivery", to be removed for this
      * [type][google.cloud.retail.v2.RemoveFulfillmentPlacesRequest.type].
+     *
      * At least 1 value is required, and a maximum of 2000 values are allowed.
      * Each value must be a string with a length limit of 10 characters, matching
      * the pattern `[a-zA-Z0-9_-]+`, such as "store1" or "REGION-2". Otherwise, an
@@ -1262,6 +1294,7 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
      * the store IDs for "pickup-in-store" or the region IDs for
      * "same-day-delivery", to be removed for this
      * [type][google.cloud.retail.v2.RemoveFulfillmentPlacesRequest.type].
+     *
      * At least 1 value is required, and a maximum of 2000 values are allowed.
      * Each value must be a string with a length limit of 10 characters, matching
      * the pattern `[a-zA-Z0-9_-]+`, such as "store1" or "REGION-2". Otherwise, an
@@ -1285,6 +1318,7 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
      * the store IDs for "pickup-in-store" or the region IDs for
      * "same-day-delivery", to be removed for this
      * [type][google.cloud.retail.v2.RemoveFulfillmentPlacesRequest.type].
+     *
      * At least 1 value is required, and a maximum of 2000 values are allowed.
      * Each value must be a string with a length limit of 10 characters, matching
      * the pattern `[a-zA-Z0-9_-]+`, such as "store1" or "REGION-2". Otherwise, an
@@ -1303,6 +1337,7 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
       }
       ensurePlaceIdsIsMutable();
       placeIds_.set(index, value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1315,6 +1350,7 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
      * the store IDs for "pickup-in-store" or the region IDs for
      * "same-day-delivery", to be removed for this
      * [type][google.cloud.retail.v2.RemoveFulfillmentPlacesRequest.type].
+     *
      * At least 1 value is required, and a maximum of 2000 values are allowed.
      * Each value must be a string with a length limit of 10 characters, matching
      * the pattern `[a-zA-Z0-9_-]+`, such as "store1" or "REGION-2". Otherwise, an
@@ -1332,6 +1368,7 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
       }
       ensurePlaceIdsIsMutable();
       placeIds_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1344,6 +1381,7 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
      * the store IDs for "pickup-in-store" or the region IDs for
      * "same-day-delivery", to be removed for this
      * [type][google.cloud.retail.v2.RemoveFulfillmentPlacesRequest.type].
+     *
      * At least 1 value is required, and a maximum of 2000 values are allowed.
      * Each value must be a string with a length limit of 10 characters, matching
      * the pattern `[a-zA-Z0-9_-]+`, such as "store1" or "REGION-2". Otherwise, an
@@ -1358,6 +1396,7 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
     public Builder addAllPlaceIds(java.lang.Iterable<java.lang.String> values) {
       ensurePlaceIdsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, placeIds_);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1370,6 +1409,7 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
      * the store IDs for "pickup-in-store" or the region IDs for
      * "same-day-delivery", to be removed for this
      * [type][google.cloud.retail.v2.RemoveFulfillmentPlacesRequest.type].
+     *
      * At least 1 value is required, and a maximum of 2000 values are allowed.
      * Each value must be a string with a length limit of 10 characters, matching
      * the pattern `[a-zA-Z0-9_-]+`, such as "store1" or "REGION-2". Otherwise, an
@@ -1381,8 +1421,9 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearPlaceIds() {
-      placeIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      placeIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000004);
+      ;
       onChanged();
       return this;
     }
@@ -1395,6 +1436,7 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
      * the store IDs for "pickup-in-store" or the region IDs for
      * "same-day-delivery", to be removed for this
      * [type][google.cloud.retail.v2.RemoveFulfillmentPlacesRequest.type].
+     *
      * At least 1 value is required, and a maximum of 2000 values are allowed.
      * Each value must be a string with a length limit of 10 characters, matching
      * the pattern `[a-zA-Z0-9_-]+`, such as "store1" or "REGION-2". Otherwise, an
@@ -1413,6 +1455,7 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
       checkByteStringIsUtf8(value);
       ensurePlaceIdsIsMutable();
       placeIds_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

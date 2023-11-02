@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,7 +56,7 @@ public interface ListSpokesRequestOrBuilder
    *
    *
    * <pre>
-   * The maximum number of results per page that should be returned.
+   * The maximum number of results to return per page.
    * </pre>
    *
    * <code>int32 page_size = 2;</code>
@@ -94,7 +94,7 @@ public interface ListSpokesRequestOrBuilder
    *
    *
    * <pre>
-   * An expression that filters the results listed in the response.
+   * An expression that filters the list of results.
    * </pre>
    *
    * <code>string filter = 4;</code>
@@ -106,7 +106,7 @@ public interface ListSpokesRequestOrBuilder
    *
    *
    * <pre>
-   * An expression that filters the results listed in the response.
+   * An expression that filters the list of results.
    * </pre>
    *
    * <code>string filter = 4;</code>

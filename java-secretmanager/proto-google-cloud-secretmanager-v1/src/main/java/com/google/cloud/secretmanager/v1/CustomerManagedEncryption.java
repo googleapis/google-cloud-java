@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class CustomerManagedEncryption extends com.google.protobuf.Generat
     return new CustomerManagedEncryption();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.secretmanager.v1.ResourcesProto
         .internal_static_google_cloud_secretmanager_v1_CustomerManagedEncryption_descriptor;
@@ -78,13 +73,16 @@ public final class CustomerManagedEncryption extends com.google.protobuf.Generat
    * <pre>
    * Required. The resource name of the Cloud KMS CryptoKey used to encrypt
    * secret payloads.
+   *
    * For secrets using the
    * [UserManaged][google.cloud.secretmanager.v1.Replication.UserManaged]
    * replication policy type, Cloud KMS CryptoKeys must reside in the same
    * location as the [replica location][Secret.UserManaged.Replica.location].
+   *
    * For secrets using the
    * [Automatic][google.cloud.secretmanager.v1.Replication.Automatic]
    * replication policy type, Cloud KMS CryptoKeys must reside in `global`.
+   *
    * The expected format is `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
    * </pre>
    *
@@ -110,13 +108,16 @@ public final class CustomerManagedEncryption extends com.google.protobuf.Generat
    * <pre>
    * Required. The resource name of the Cloud KMS CryptoKey used to encrypt
    * secret payloads.
+   *
    * For secrets using the
    * [UserManaged][google.cloud.secretmanager.v1.Replication.UserManaged]
    * replication policy type, Cloud KMS CryptoKeys must reside in the same
    * location as the [replica location][Secret.UserManaged.Replica.location].
+   *
    * For secrets using the
    * [Automatic][google.cloud.secretmanager.v1.Replication.Automatic]
    * replication policy type, Cloud KMS CryptoKeys must reside in `global`.
+   *
    * The expected format is `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
    * </pre>
    *
@@ -488,13 +489,16 @@ public final class CustomerManagedEncryption extends com.google.protobuf.Generat
      * <pre>
      * Required. The resource name of the Cloud KMS CryptoKey used to encrypt
      * secret payloads.
+     *
      * For secrets using the
      * [UserManaged][google.cloud.secretmanager.v1.Replication.UserManaged]
      * replication policy type, Cloud KMS CryptoKeys must reside in the same
      * location as the [replica location][Secret.UserManaged.Replica.location].
+     *
      * For secrets using the
      * [Automatic][google.cloud.secretmanager.v1.Replication.Automatic]
      * replication policy type, Cloud KMS CryptoKeys must reside in `global`.
+     *
      * The expected format is `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
      * </pre>
      *
@@ -519,13 +523,16 @@ public final class CustomerManagedEncryption extends com.google.protobuf.Generat
      * <pre>
      * Required. The resource name of the Cloud KMS CryptoKey used to encrypt
      * secret payloads.
+     *
      * For secrets using the
      * [UserManaged][google.cloud.secretmanager.v1.Replication.UserManaged]
      * replication policy type, Cloud KMS CryptoKeys must reside in the same
      * location as the [replica location][Secret.UserManaged.Replica.location].
+     *
      * For secrets using the
      * [Automatic][google.cloud.secretmanager.v1.Replication.Automatic]
      * replication policy type, Cloud KMS CryptoKeys must reside in `global`.
+     *
      * The expected format is `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
      * </pre>
      *
@@ -550,13 +557,16 @@ public final class CustomerManagedEncryption extends com.google.protobuf.Generat
      * <pre>
      * Required. The resource name of the Cloud KMS CryptoKey used to encrypt
      * secret payloads.
+     *
      * For secrets using the
      * [UserManaged][google.cloud.secretmanager.v1.Replication.UserManaged]
      * replication policy type, Cloud KMS CryptoKeys must reside in the same
      * location as the [replica location][Secret.UserManaged.Replica.location].
+     *
      * For secrets using the
      * [Automatic][google.cloud.secretmanager.v1.Replication.Automatic]
      * replication policy type, Cloud KMS CryptoKeys must reside in `global`.
+     *
      * The expected format is `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
      * </pre>
      *
@@ -580,13 +590,16 @@ public final class CustomerManagedEncryption extends com.google.protobuf.Generat
      * <pre>
      * Required. The resource name of the Cloud KMS CryptoKey used to encrypt
      * secret payloads.
+     *
      * For secrets using the
      * [UserManaged][google.cloud.secretmanager.v1.Replication.UserManaged]
      * replication policy type, Cloud KMS CryptoKeys must reside in the same
      * location as the [replica location][Secret.UserManaged.Replica.location].
+     *
      * For secrets using the
      * [Automatic][google.cloud.secretmanager.v1.Replication.Automatic]
      * replication policy type, Cloud KMS CryptoKeys must reside in `global`.
+     *
      * The expected format is `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
      * </pre>
      *
@@ -606,13 +619,16 @@ public final class CustomerManagedEncryption extends com.google.protobuf.Generat
      * <pre>
      * Required. The resource name of the Cloud KMS CryptoKey used to encrypt
      * secret payloads.
+     *
      * For secrets using the
      * [UserManaged][google.cloud.secretmanager.v1.Replication.UserManaged]
      * replication policy type, Cloud KMS CryptoKeys must reside in the same
      * location as the [replica location][Secret.UserManaged.Replica.location].
+     *
      * For secrets using the
      * [Automatic][google.cloud.secretmanager.v1.Replication.Automatic]
      * replication policy type, Cloud KMS CryptoKeys must reside in `global`.
+     *
      * The expected format is `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
      * </pre>
      *

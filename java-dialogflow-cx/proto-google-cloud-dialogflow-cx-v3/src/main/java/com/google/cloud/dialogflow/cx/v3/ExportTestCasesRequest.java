@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class ExportTestCasesRequest extends com.google.protobuf.GeneratedM
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ExportTestCasesRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -230,6 +225,8 @@ public final class ExportTestCasesRequest extends com.google.protobuf.GeneratedM
   }
 
   private int destinationCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object destination_;
 
   public enum DestinationCase
@@ -339,6 +336,7 @@ public final class ExportTestCasesRequest extends com.google.protobuf.GeneratedM
    * export the test cases to. The format of this URI must be
    * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`. If unspecified, the serialized test
    * cases is returned inline.
+   *
    * Dialogflow performs a write operation for the Cloud Storage object
    * on the caller's behalf, so your request authentication must
    * have write permissions for the object. For more information, see
@@ -361,6 +359,7 @@ public final class ExportTestCasesRequest extends com.google.protobuf.GeneratedM
    * export the test cases to. The format of this URI must be
    * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`. If unspecified, the serialized test
    * cases is returned inline.
+   *
    * Dialogflow performs a write operation for the Cloud Storage object
    * on the caller's behalf, so your request authentication must
    * have write permissions for the object. For more information, see
@@ -396,6 +395,7 @@ public final class ExportTestCasesRequest extends com.google.protobuf.GeneratedM
    * export the test cases to. The format of this URI must be
    * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`. If unspecified, the serialized test
    * cases is returned inline.
+   *
    * Dialogflow performs a write operation for the Cloud Storage object
    * on the caller's behalf, so your request authentication must
    * have write permissions for the object. For more information, see
@@ -474,8 +474,11 @@ public final class ExportTestCasesRequest extends com.google.protobuf.GeneratedM
    * The filter expression used to filter exported test cases, see
    * [API Filtering](https://aip.dev/160). The expression is case insensitive
    * and supports the following syntax:
+   *
    *   name = &lt;value&gt; [OR name = &lt;value&gt;] ...
+   *
    * For example:
+   *
    * *   "name = t1 OR name = t2" matches the test case with the exact resource
    *     name "t1" or "t2".
    * </pre>
@@ -503,8 +506,11 @@ public final class ExportTestCasesRequest extends com.google.protobuf.GeneratedM
    * The filter expression used to filter exported test cases, see
    * [API Filtering](https://aip.dev/160). The expression is case insensitive
    * and supports the following syntax:
+   *
    *   name = &lt;value&gt; [OR name = &lt;value&gt;] ...
+   *
    * For example:
+   *
    * *   "name = t1 OR name = t2" matches the test case with the exact resource
    *     name "t1" or "t2".
    * </pre>
@@ -1116,6 +1122,7 @@ public final class ExportTestCasesRequest extends com.google.protobuf.GeneratedM
      * export the test cases to. The format of this URI must be
      * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`. If unspecified, the serialized test
      * cases is returned inline.
+     *
      * Dialogflow performs a write operation for the Cloud Storage object
      * on the caller's behalf, so your request authentication must
      * have write permissions for the object. For more information, see
@@ -1139,6 +1146,7 @@ public final class ExportTestCasesRequest extends com.google.protobuf.GeneratedM
      * export the test cases to. The format of this URI must be
      * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`. If unspecified, the serialized test
      * cases is returned inline.
+     *
      * Dialogflow performs a write operation for the Cloud Storage object
      * on the caller's behalf, so your request authentication must
      * have write permissions for the object. For more information, see
@@ -1175,6 +1183,7 @@ public final class ExportTestCasesRequest extends com.google.protobuf.GeneratedM
      * export the test cases to. The format of this URI must be
      * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`. If unspecified, the serialized test
      * cases is returned inline.
+     *
      * Dialogflow performs a write operation for the Cloud Storage object
      * on the caller's behalf, so your request authentication must
      * have write permissions for the object. For more information, see
@@ -1211,6 +1220,7 @@ public final class ExportTestCasesRequest extends com.google.protobuf.GeneratedM
      * export the test cases to. The format of this URI must be
      * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`. If unspecified, the serialized test
      * cases is returned inline.
+     *
      * Dialogflow performs a write operation for the Cloud Storage object
      * on the caller's behalf, so your request authentication must
      * have write permissions for the object. For more information, see
@@ -1240,6 +1250,7 @@ public final class ExportTestCasesRequest extends com.google.protobuf.GeneratedM
      * export the test cases to. The format of this URI must be
      * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`. If unspecified, the serialized test
      * cases is returned inline.
+     *
      * Dialogflow performs a write operation for the Cloud Storage object
      * on the caller's behalf, so your request authentication must
      * have write permissions for the object. For more information, see
@@ -1267,6 +1278,7 @@ public final class ExportTestCasesRequest extends com.google.protobuf.GeneratedM
      * export the test cases to. The format of this URI must be
      * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`. If unspecified, the serialized test
      * cases is returned inline.
+     *
      * Dialogflow performs a write operation for the Cloud Storage object
      * on the caller's behalf, so your request authentication must
      * have write permissions for the object. For more information, see
@@ -1402,8 +1414,11 @@ public final class ExportTestCasesRequest extends com.google.protobuf.GeneratedM
      * The filter expression used to filter exported test cases, see
      * [API Filtering](https://aip.dev/160). The expression is case insensitive
      * and supports the following syntax:
+     *
      *   name = &lt;value&gt; [OR name = &lt;value&gt;] ...
+     *
      * For example:
+     *
      * *   "name = t1 OR name = t2" matches the test case with the exact resource
      *     name "t1" or "t2".
      * </pre>
@@ -1430,8 +1445,11 @@ public final class ExportTestCasesRequest extends com.google.protobuf.GeneratedM
      * The filter expression used to filter exported test cases, see
      * [API Filtering](https://aip.dev/160). The expression is case insensitive
      * and supports the following syntax:
+     *
      *   name = &lt;value&gt; [OR name = &lt;value&gt;] ...
+     *
      * For example:
+     *
      * *   "name = t1 OR name = t2" matches the test case with the exact resource
      *     name "t1" or "t2".
      * </pre>
@@ -1458,8 +1476,11 @@ public final class ExportTestCasesRequest extends com.google.protobuf.GeneratedM
      * The filter expression used to filter exported test cases, see
      * [API Filtering](https://aip.dev/160). The expression is case insensitive
      * and supports the following syntax:
+     *
      *   name = &lt;value&gt; [OR name = &lt;value&gt;] ...
+     *
      * For example:
+     *
      * *   "name = t1 OR name = t2" matches the test case with the exact resource
      *     name "t1" or "t2".
      * </pre>
@@ -1485,8 +1506,11 @@ public final class ExportTestCasesRequest extends com.google.protobuf.GeneratedM
      * The filter expression used to filter exported test cases, see
      * [API Filtering](https://aip.dev/160). The expression is case insensitive
      * and supports the following syntax:
+     *
      *   name = &lt;value&gt; [OR name = &lt;value&gt;] ...
+     *
      * For example:
+     *
      * *   "name = t1 OR name = t2" matches the test case with the exact resource
      *     name "t1" or "t2".
      * </pre>
@@ -1508,8 +1532,11 @@ public final class ExportTestCasesRequest extends com.google.protobuf.GeneratedM
      * The filter expression used to filter exported test cases, see
      * [API Filtering](https://aip.dev/160). The expression is case insensitive
      * and supports the following syntax:
+     *
      *   name = &lt;value&gt; [OR name = &lt;value&gt;] ...
+     *
      * For example:
+     *
      * *   "name = t1 OR name = t2" matches the test case with the exact resource
      *     name "t1" or "t2".
      * </pre>

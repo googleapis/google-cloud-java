@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class FeatureValueDestination extends com.google.protobuf.Generated
     return new FeatureValueDestination();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1beta1.FeaturestoreServiceProto
         .internal_static_google_cloud_aiplatform_v1beta1_FeatureValueDestination_descriptor;
@@ -66,6 +61,8 @@ public final class FeatureValueDestination extends com.google.protobuf.Generated
   }
 
   private int destinationCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object destination_;
 
   public enum DestinationCase
@@ -185,8 +182,10 @@ public final class FeatureValueDestination extends com.google.protobuf.Generated
    *
    * <pre>
    * Output in TFRecord format.
+   *
    * Below are the mapping from Feature value type
    * in Featurestore to Feature value type in TFRecord:
+   *
    *     Value type in Featurestore                 | Value type in TFRecord
    *     DOUBLE, DOUBLE_ARRAY                       | FLOAT_LIST
    *     INT64, INT64_ARRAY                         | INT64_LIST
@@ -208,8 +207,10 @@ public final class FeatureValueDestination extends com.google.protobuf.Generated
    *
    * <pre>
    * Output in TFRecord format.
+   *
    * Below are the mapping from Feature value type
    * in Featurestore to Feature value type in TFRecord:
+   *
    *     Value type in Featurestore                 | Value type in TFRecord
    *     DOUBLE, DOUBLE_ARRAY                       | FLOAT_LIST
    *     INT64, INT64_ARRAY                         | INT64_LIST
@@ -234,8 +235,10 @@ public final class FeatureValueDestination extends com.google.protobuf.Generated
    *
    * <pre>
    * Output in TFRecord format.
+   *
    * Below are the mapping from Feature value type
    * in Featurestore to Feature value type in TFRecord:
+   *
    *     Value type in Featurestore                 | Value type in TFRecord
    *     DOUBLE, DOUBLE_ARRAY                       | FLOAT_LIST
    *     INT64, INT64_ARRAY                         | INT64_LIST
@@ -1027,8 +1030,10 @@ public final class FeatureValueDestination extends com.google.protobuf.Generated
      *
      * <pre>
      * Output in TFRecord format.
+     *
      * Below are the mapping from Feature value type
      * in Featurestore to Feature value type in TFRecord:
+     *
      *     Value type in Featurestore                 | Value type in TFRecord
      *     DOUBLE, DOUBLE_ARRAY                       | FLOAT_LIST
      *     INT64, INT64_ARRAY                         | INT64_LIST
@@ -1050,8 +1055,10 @@ public final class FeatureValueDestination extends com.google.protobuf.Generated
      *
      * <pre>
      * Output in TFRecord format.
+     *
      * Below are the mapping from Feature value type
      * in Featurestore to Feature value type in TFRecord:
+     *
      *     Value type in Featurestore                 | Value type in TFRecord
      *     DOUBLE, DOUBLE_ARRAY                       | FLOAT_LIST
      *     INT64, INT64_ARRAY                         | INT64_LIST
@@ -1083,8 +1090,10 @@ public final class FeatureValueDestination extends com.google.protobuf.Generated
      *
      * <pre>
      * Output in TFRecord format.
+     *
      * Below are the mapping from Feature value type
      * in Featurestore to Feature value type in TFRecord:
+     *
      *     Value type in Featurestore                 | Value type in TFRecord
      *     DOUBLE, DOUBLE_ARRAY                       | FLOAT_LIST
      *     INT64, INT64_ARRAY                         | INT64_LIST
@@ -1114,8 +1123,10 @@ public final class FeatureValueDestination extends com.google.protobuf.Generated
      *
      * <pre>
      * Output in TFRecord format.
+     *
      * Below are the mapping from Feature value type
      * in Featurestore to Feature value type in TFRecord:
+     *
      *     Value type in Featurestore                 | Value type in TFRecord
      *     DOUBLE, DOUBLE_ARRAY                       | FLOAT_LIST
      *     INT64, INT64_ARRAY                         | INT64_LIST
@@ -1142,8 +1153,10 @@ public final class FeatureValueDestination extends com.google.protobuf.Generated
      *
      * <pre>
      * Output in TFRecord format.
+     *
      * Below are the mapping from Feature value type
      * in Featurestore to Feature value type in TFRecord:
+     *
      *     Value type in Featurestore                 | Value type in TFRecord
      *     DOUBLE, DOUBLE_ARRAY                       | FLOAT_LIST
      *     INT64, INT64_ARRAY                         | INT64_LIST
@@ -1184,8 +1197,10 @@ public final class FeatureValueDestination extends com.google.protobuf.Generated
      *
      * <pre>
      * Output in TFRecord format.
+     *
      * Below are the mapping from Feature value type
      * in Featurestore to Feature value type in TFRecord:
+     *
      *     Value type in Featurestore                 | Value type in TFRecord
      *     DOUBLE, DOUBLE_ARRAY                       | FLOAT_LIST
      *     INT64, INT64_ARRAY                         | INT64_LIST
@@ -1217,8 +1232,10 @@ public final class FeatureValueDestination extends com.google.protobuf.Generated
      *
      * <pre>
      * Output in TFRecord format.
+     *
      * Below are the mapping from Feature value type
      * in Featurestore to Feature value type in TFRecord:
+     *
      *     Value type in Featurestore                 | Value type in TFRecord
      *     DOUBLE, DOUBLE_ARRAY                       | FLOAT_LIST
      *     INT64, INT64_ARRAY                         | INT64_LIST
@@ -1238,8 +1255,10 @@ public final class FeatureValueDestination extends com.google.protobuf.Generated
      *
      * <pre>
      * Output in TFRecord format.
+     *
      * Below are the mapping from Feature value type
      * in Featurestore to Feature value type in TFRecord:
+     *
      *     Value type in Featurestore                 | Value type in TFRecord
      *     DOUBLE, DOUBLE_ARRAY                       | FLOAT_LIST
      *     INT64, INT64_ARRAY                         | INT64_LIST
@@ -1267,8 +1286,10 @@ public final class FeatureValueDestination extends com.google.protobuf.Generated
      *
      * <pre>
      * Output in TFRecord format.
+     *
      * Below are the mapping from Feature value type
      * in Featurestore to Feature value type in TFRecord:
+     *
      *     Value type in Featurestore                 | Value type in TFRecord
      *     DOUBLE, DOUBLE_ARRAY                       | FLOAT_LIST
      *     INT64, INT64_ARRAY                         | INT64_LIST

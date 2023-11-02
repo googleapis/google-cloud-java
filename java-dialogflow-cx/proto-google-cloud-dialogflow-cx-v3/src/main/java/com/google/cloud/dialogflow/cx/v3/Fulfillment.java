@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,9 +23,11 @@ package com.google.cloud.dialogflow.cx.v3;
  *
  * <pre>
  * A fulfillment can do one or more of the following actions at the same time:
+ *
  *   * Generate rich message responses.
  *   * Set parameter values.
  *   * Call the webhook.
+ *
  * Fulfillments can be called at various stages in the
  * [Page][google.cloud.dialogflow.cx.v3.Page] or
  * [Form][google.cloud.dialogflow.cx.v3.Form] lifecycle. For example, when a
@@ -61,11 +63,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Fulfillment();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -175,11 +172,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new SetParameterAction();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1127,11 +1119,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
       return new ConditionalCases();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.dialogflow.cx.v3.FulfillmentProto
           .internal_static_google_cloud_dialogflow_cx_v3_Fulfillment_ConditionalCases_descriptor;
@@ -1160,6 +1147,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
        * condition is always true. The condition is evaluated against [form
        * parameters][Form.parameters] or [session
        * parameters][SessionInfo.parameters].
+       *
        * See the [conditions
        * reference](https://cloud.google.com/dialogflow/cx/docs/reference/condition).
        * </pre>
@@ -1177,6 +1165,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
        * condition is always true. The condition is evaluated against [form
        * parameters][Form.parameters] or [session
        * parameters][SessionInfo.parameters].
+       *
        * See the [conditions
        * reference](https://cloud.google.com/dialogflow/cx/docs/reference/condition).
        * </pre>
@@ -1287,11 +1276,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
         return new Case();
       }
 
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
-      }
-
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.cloud.dialogflow.cx.v3.FulfillmentProto
             .internal_static_google_cloud_dialogflow_cx_v3_Fulfillment_ConditionalCases_Case_descriptor;
@@ -1386,7 +1370,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.dialogflow.cx.v3.Fulfillment.ConditionalCasesOrBuilder
             getAdditionalCasesOrBuilder();
 
-        public com.google.cloud.dialogflow.cx.v3.Fulfillment.ConditionalCases.Case.CaseContent
+        com.google.cloud.dialogflow.cx.v3.Fulfillment.ConditionalCases.Case.CaseContent
                 .CasesOrMessageCase
             getCasesOrMessageCase();
       }
@@ -1418,11 +1402,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
           return new CaseContent();
         }
 
-        @java.lang.Override
-        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-          return this.unknownFields;
-        }
-
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
           return com.google.cloud.dialogflow.cx.v3.FulfillmentProto
               .internal_static_google_cloud_dialogflow_cx_v3_Fulfillment_ConditionalCases_Case_CaseContent_descriptor;
@@ -1441,6 +1420,8 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
         }
 
         private int casesOrMessageCase_ = 0;
+
+        @SuppressWarnings("serial")
         private java.lang.Object casesOrMessage_;
 
         public enum CasesOrMessageCase
@@ -2601,6 +2582,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
        * condition is always true. The condition is evaluated against [form
        * parameters][Form.parameters] or [session
        * parameters][SessionInfo.parameters].
+       *
        * See the [conditions
        * reference](https://cloud.google.com/dialogflow/cx/docs/reference/condition).
        * </pre>
@@ -2629,6 +2611,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
        * condition is always true. The condition is evaluated against [form
        * parameters][Form.parameters] or [session
        * parameters][SessionInfo.parameters].
+       *
        * See the [conditions
        * reference](https://cloud.google.com/dialogflow/cx/docs/reference/condition).
        * </pre>
@@ -3185,6 +3168,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
          * condition is always true. The condition is evaluated against [form
          * parameters][Form.parameters] or [session
          * parameters][SessionInfo.parameters].
+         *
          * See the [conditions
          * reference](https://cloud.google.com/dialogflow/cx/docs/reference/condition).
          * </pre>
@@ -3212,6 +3196,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
          * condition is always true. The condition is evaluated against [form
          * parameters][Form.parameters] or [session
          * parameters][SessionInfo.parameters].
+         *
          * See the [conditions
          * reference](https://cloud.google.com/dialogflow/cx/docs/reference/condition).
          * </pre>
@@ -3239,6 +3224,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
          * condition is always true. The condition is evaluated against [form
          * parameters][Form.parameters] or [session
          * parameters][SessionInfo.parameters].
+         *
          * See the [conditions
          * reference](https://cloud.google.com/dialogflow/cx/docs/reference/condition).
          * </pre>
@@ -3265,6 +3251,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
          * condition is always true. The condition is evaluated against [form
          * parameters][Form.parameters] or [session
          * parameters][SessionInfo.parameters].
+         *
          * See the [conditions
          * reference](https://cloud.google.com/dialogflow/cx/docs/reference/condition).
          * </pre>
@@ -3287,6 +3274,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
          * condition is always true. The condition is evaluated against [form
          * parameters][Form.parameters] or [session
          * parameters][SessionInfo.parameters].
+         *
          * See the [conditions
          * reference](https://cloud.google.com/dialogflow/cx/docs/reference/condition).
          * </pre>
@@ -5140,6 +5128,82 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
     return conditionalCases_.get(index);
   }
 
+  public static final int ADVANCED_SETTINGS_FIELD_NUMBER = 7;
+  private com.google.cloud.dialogflow.cx.v3.AdvancedSettings advancedSettings_;
+  /**
+   *
+   *
+   * <pre>
+   * Hierarchical advanced settings for this fulfillment. The settings exposed
+   * at the lower level overrides the settings exposed at the higher level.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3.AdvancedSettings advanced_settings = 7;</code>
+   *
+   * @return Whether the advancedSettings field is set.
+   */
+  @java.lang.Override
+  public boolean hasAdvancedSettings() {
+    return advancedSettings_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Hierarchical advanced settings for this fulfillment. The settings exposed
+   * at the lower level overrides the settings exposed at the higher level.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3.AdvancedSettings advanced_settings = 7;</code>
+   *
+   * @return The advancedSettings.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3.AdvancedSettings getAdvancedSettings() {
+    return advancedSettings_ == null
+        ? com.google.cloud.dialogflow.cx.v3.AdvancedSettings.getDefaultInstance()
+        : advancedSettings_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Hierarchical advanced settings for this fulfillment. The settings exposed
+   * at the lower level overrides the settings exposed at the higher level.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3.AdvancedSettings advanced_settings = 7;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3.AdvancedSettingsOrBuilder
+      getAdvancedSettingsOrBuilder() {
+    return advancedSettings_ == null
+        ? com.google.cloud.dialogflow.cx.v3.AdvancedSettings.getDefaultInstance()
+        : advancedSettings_;
+  }
+
+  public static final int ENABLE_GENERATIVE_FALLBACK_FIELD_NUMBER = 12;
+  private boolean enableGenerativeFallback_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * If the flag is true, the agent will utilize LLM to generate a text
+   * response. If LLM generation fails, the defined
+   * [responses][google.cloud.dialogflow.cx.v3.Fulfillment.messages] in the
+   * fulfillment will be respected. This flag is only useful for fulfillments
+   * associated with no-match event handlers.
+   * </pre>
+   *
+   * <code>bool enable_generative_fallback = 12;</code>
+   *
+   * @return The enableGenerativeFallback.
+   */
+  @java.lang.Override
+  public boolean getEnableGenerativeFallback() {
+    return enableGenerativeFallback_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -5169,8 +5233,14 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < conditionalCases_.size(); i++) {
       output.writeMessage(5, conditionalCases_.get(i));
     }
+    if (advancedSettings_ != null) {
+      output.writeMessage(7, getAdvancedSettings());
+    }
     if (returnPartialResponses_ != false) {
       output.writeBool(8, returnPartialResponses_);
+    }
+    if (enableGenerativeFallback_ != false) {
+      output.writeBool(12, enableGenerativeFallback_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -5197,8 +5267,14 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < conditionalCases_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, conditionalCases_.get(i));
     }
+    if (advancedSettings_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getAdvancedSettings());
+    }
     if (returnPartialResponses_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(8, returnPartialResponses_);
+    }
+    if (enableGenerativeFallback_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(12, enableGenerativeFallback_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -5222,6 +5298,11 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
     if (!getTag().equals(other.getTag())) return false;
     if (!getSetParameterActionsList().equals(other.getSetParameterActionsList())) return false;
     if (!getConditionalCasesList().equals(other.getConditionalCasesList())) return false;
+    if (hasAdvancedSettings() != other.hasAdvancedSettings()) return false;
+    if (hasAdvancedSettings()) {
+      if (!getAdvancedSettings().equals(other.getAdvancedSettings())) return false;
+    }
+    if (getEnableGenerativeFallback() != other.getEnableGenerativeFallback()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -5251,6 +5332,12 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + CONDITIONAL_CASES_FIELD_NUMBER;
       hash = (53 * hash) + getConditionalCasesList().hashCode();
     }
+    if (hasAdvancedSettings()) {
+      hash = (37 * hash) + ADVANCED_SETTINGS_FIELD_NUMBER;
+      hash = (53 * hash) + getAdvancedSettings().hashCode();
+    }
+    hash = (37 * hash) + ENABLE_GENERATIVE_FALLBACK_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableGenerativeFallback());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -5356,9 +5443,11 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A fulfillment can do one or more of the following actions at the same time:
+   *
    *   * Generate rich message responses.
    *   * Set parameter values.
    *   * Call the webhook.
+   *
    * Fulfillments can be called at various stages in the
    * [Page][google.cloud.dialogflow.cx.v3.Page] or
    * [Form][google.cloud.dialogflow.cx.v3.Form] lifecycle. For example, when a
@@ -5426,6 +5515,12 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
         conditionalCasesBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000020);
+      advancedSettings_ = null;
+      if (advancedSettingsBuilder_ != null) {
+        advancedSettingsBuilder_.dispose();
+        advancedSettingsBuilder_ = null;
+      }
+      enableGenerativeFallback_ = false;
       return this;
     }
 
@@ -5501,6 +5596,13 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.tag_ = tag_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.advancedSettings_ =
+            advancedSettingsBuilder_ == null ? advancedSettings_ : advancedSettingsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.enableGenerativeFallback_ = enableGenerativeFallback_;
       }
     }
 
@@ -5643,6 +5745,12 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
+      if (other.hasAdvancedSettings()) {
+        mergeAdvancedSettings(other.getAdvancedSettings());
+      }
+      if (other.getEnableGenerativeFallback() != false) {
+        setEnableGenerativeFallback(other.getEnableGenerativeFallback());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -5723,12 +5831,25 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
                 }
                 break;
               } // case 42
+            case 58:
+              {
+                input.readMessage(
+                    getAdvancedSettingsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 58
             case 64:
               {
                 returnPartialResponses_ = input.readBool();
                 bitField0_ |= 0x00000004;
                 break;
               } // case 64
+            case 96:
+              {
+                enableGenerativeFallback_ = input.readBool();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 96
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -7246,6 +7367,266 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
         conditionalCases_ = null;
       }
       return conditionalCasesBuilder_;
+    }
+
+    private com.google.cloud.dialogflow.cx.v3.AdvancedSettings advancedSettings_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3.AdvancedSettings,
+            com.google.cloud.dialogflow.cx.v3.AdvancedSettings.Builder,
+            com.google.cloud.dialogflow.cx.v3.AdvancedSettingsOrBuilder>
+        advancedSettingsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Hierarchical advanced settings for this fulfillment. The settings exposed
+     * at the lower level overrides the settings exposed at the higher level.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.AdvancedSettings advanced_settings = 7;</code>
+     *
+     * @return Whether the advancedSettings field is set.
+     */
+    public boolean hasAdvancedSettings() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Hierarchical advanced settings for this fulfillment. The settings exposed
+     * at the lower level overrides the settings exposed at the higher level.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.AdvancedSettings advanced_settings = 7;</code>
+     *
+     * @return The advancedSettings.
+     */
+    public com.google.cloud.dialogflow.cx.v3.AdvancedSettings getAdvancedSettings() {
+      if (advancedSettingsBuilder_ == null) {
+        return advancedSettings_ == null
+            ? com.google.cloud.dialogflow.cx.v3.AdvancedSettings.getDefaultInstance()
+            : advancedSettings_;
+      } else {
+        return advancedSettingsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Hierarchical advanced settings for this fulfillment. The settings exposed
+     * at the lower level overrides the settings exposed at the higher level.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.AdvancedSettings advanced_settings = 7;</code>
+     */
+    public Builder setAdvancedSettings(com.google.cloud.dialogflow.cx.v3.AdvancedSettings value) {
+      if (advancedSettingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        advancedSettings_ = value;
+      } else {
+        advancedSettingsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Hierarchical advanced settings for this fulfillment. The settings exposed
+     * at the lower level overrides the settings exposed at the higher level.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.AdvancedSettings advanced_settings = 7;</code>
+     */
+    public Builder setAdvancedSettings(
+        com.google.cloud.dialogflow.cx.v3.AdvancedSettings.Builder builderForValue) {
+      if (advancedSettingsBuilder_ == null) {
+        advancedSettings_ = builderForValue.build();
+      } else {
+        advancedSettingsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Hierarchical advanced settings for this fulfillment. The settings exposed
+     * at the lower level overrides the settings exposed at the higher level.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.AdvancedSettings advanced_settings = 7;</code>
+     */
+    public Builder mergeAdvancedSettings(com.google.cloud.dialogflow.cx.v3.AdvancedSettings value) {
+      if (advancedSettingsBuilder_ == null) {
+        if (((bitField0_ & 0x00000040) != 0)
+            && advancedSettings_ != null
+            && advancedSettings_
+                != com.google.cloud.dialogflow.cx.v3.AdvancedSettings.getDefaultInstance()) {
+          getAdvancedSettingsBuilder().mergeFrom(value);
+        } else {
+          advancedSettings_ = value;
+        }
+      } else {
+        advancedSettingsBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Hierarchical advanced settings for this fulfillment. The settings exposed
+     * at the lower level overrides the settings exposed at the higher level.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.AdvancedSettings advanced_settings = 7;</code>
+     */
+    public Builder clearAdvancedSettings() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      advancedSettings_ = null;
+      if (advancedSettingsBuilder_ != null) {
+        advancedSettingsBuilder_.dispose();
+        advancedSettingsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Hierarchical advanced settings for this fulfillment. The settings exposed
+     * at the lower level overrides the settings exposed at the higher level.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.AdvancedSettings advanced_settings = 7;</code>
+     */
+    public com.google.cloud.dialogflow.cx.v3.AdvancedSettings.Builder getAdvancedSettingsBuilder() {
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return getAdvancedSettingsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Hierarchical advanced settings for this fulfillment. The settings exposed
+     * at the lower level overrides the settings exposed at the higher level.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.AdvancedSettings advanced_settings = 7;</code>
+     */
+    public com.google.cloud.dialogflow.cx.v3.AdvancedSettingsOrBuilder
+        getAdvancedSettingsOrBuilder() {
+      if (advancedSettingsBuilder_ != null) {
+        return advancedSettingsBuilder_.getMessageOrBuilder();
+      } else {
+        return advancedSettings_ == null
+            ? com.google.cloud.dialogflow.cx.v3.AdvancedSettings.getDefaultInstance()
+            : advancedSettings_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Hierarchical advanced settings for this fulfillment. The settings exposed
+     * at the lower level overrides the settings exposed at the higher level.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.AdvancedSettings advanced_settings = 7;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3.AdvancedSettings,
+            com.google.cloud.dialogflow.cx.v3.AdvancedSettings.Builder,
+            com.google.cloud.dialogflow.cx.v3.AdvancedSettingsOrBuilder>
+        getAdvancedSettingsFieldBuilder() {
+      if (advancedSettingsBuilder_ == null) {
+        advancedSettingsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.cx.v3.AdvancedSettings,
+                com.google.cloud.dialogflow.cx.v3.AdvancedSettings.Builder,
+                com.google.cloud.dialogflow.cx.v3.AdvancedSettingsOrBuilder>(
+                getAdvancedSettings(), getParentForChildren(), isClean());
+        advancedSettings_ = null;
+      }
+      return advancedSettingsBuilder_;
+    }
+
+    private boolean enableGenerativeFallback_;
+    /**
+     *
+     *
+     * <pre>
+     * If the flag is true, the agent will utilize LLM to generate a text
+     * response. If LLM generation fails, the defined
+     * [responses][google.cloud.dialogflow.cx.v3.Fulfillment.messages] in the
+     * fulfillment will be respected. This flag is only useful for fulfillments
+     * associated with no-match event handlers.
+     * </pre>
+     *
+     * <code>bool enable_generative_fallback = 12;</code>
+     *
+     * @return The enableGenerativeFallback.
+     */
+    @java.lang.Override
+    public boolean getEnableGenerativeFallback() {
+      return enableGenerativeFallback_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If the flag is true, the agent will utilize LLM to generate a text
+     * response. If LLM generation fails, the defined
+     * [responses][google.cloud.dialogflow.cx.v3.Fulfillment.messages] in the
+     * fulfillment will be respected. This flag is only useful for fulfillments
+     * associated with no-match event handlers.
+     * </pre>
+     *
+     * <code>bool enable_generative_fallback = 12;</code>
+     *
+     * @param value The enableGenerativeFallback to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnableGenerativeFallback(boolean value) {
+
+      enableGenerativeFallback_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If the flag is true, the agent will utilize LLM to generate a text
+     * response. If LLM generation fails, the defined
+     * [responses][google.cloud.dialogflow.cx.v3.Fulfillment.messages] in the
+     * fulfillment will be respected. This flag is only useful for fulfillments
+     * associated with no-match event handlers.
+     * </pre>
+     *
+     * <code>bool enable_generative_fallback = 12;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEnableGenerativeFallback() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      enableGenerativeFallback_ = false;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

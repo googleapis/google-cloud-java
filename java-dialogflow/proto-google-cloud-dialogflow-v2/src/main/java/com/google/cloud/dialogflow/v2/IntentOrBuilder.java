@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -118,6 +118,7 @@ public interface IntentOrBuilder
    * <pre>
    * Optional. The priority of this intent. Higher numbers represent higher
    * priorities.
+   *
    * - If the supplied value is unspecified or 0, the service
    *   translates the value to 500,000, which corresponds to the
    *   `Normal` priority in the console.
@@ -720,6 +721,7 @@ public interface IntentOrBuilder
    * Read-only. The unique identifier of the root intent in the chain of
    * followup intents. It identifies the correct followup intents chain for
    * this intent. We populate this field only in the output.
+   *
    * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
    * </pre>
    *
@@ -737,6 +739,7 @@ public interface IntentOrBuilder
    * Read-only. The unique identifier of the root intent in the chain of
    * followup intents. It identifies the correct followup intents chain for
    * this intent. We populate this field only in the output.
+   *
    * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
    * </pre>
    *
@@ -757,6 +760,7 @@ public interface IntentOrBuilder
    * [CreateIntent][google.cloud.dialogflow.v2.Intents.CreateIntent] or
    * [BatchUpdateIntents][google.cloud.dialogflow.v2.Intents.BatchUpdateIntents],
    * in order to make this intent a followup intent.
+   *
    * It identifies the parent followup intent.
    * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
    * </pre>
@@ -776,6 +780,7 @@ public interface IntentOrBuilder
    * [CreateIntent][google.cloud.dialogflow.v2.Intents.CreateIntent] or
    * [BatchUpdateIntents][google.cloud.dialogflow.v2.Intents.BatchUpdateIntents],
    * in order to make this intent a followup intent.
+   *
    * It identifies the parent followup intent.
    * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
    * </pre>

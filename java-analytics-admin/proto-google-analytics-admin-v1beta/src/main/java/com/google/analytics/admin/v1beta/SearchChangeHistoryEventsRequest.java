@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,7 +43,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
     property_ = "";
     resourceType_ = java.util.Collections.emptyList();
     action_ = java.util.Collections.emptyList();
-    actorEmail_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    actorEmail_ = com.google.protobuf.LazyStringArrayList.emptyList();
     pageToken_ = "";
   }
 
@@ -51,11 +51,6 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new SearchChangeHistoryEventsRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -422,7 +417,8 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
   public static final int ACTOR_EMAIL_FIELD_NUMBER = 5;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList actorEmail_;
+  private com.google.protobuf.LazyStringArrayList actorEmail_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -1006,8 +1002,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
       bitField0_ = (bitField0_ & ~0x00000004);
       action_ = java.util.Collections.emptyList();
       bitField0_ = (bitField0_ & ~0x00000008);
-      actorEmail_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000010);
+      actorEmail_ = com.google.protobuf.LazyStringArrayList.emptyList();
       earliestChangeTime_ = null;
       if (earliestChangeTimeBuilder_ != null) {
         earliestChangeTimeBuilder_.dispose();
@@ -1069,11 +1064,6 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
         bitField0_ = (bitField0_ & ~0x00000008);
       }
       result.action_ = action_;
-      if (((bitField0_ & 0x00000010) != 0)) {
-        actorEmail_ = actorEmail_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000010);
-      }
-      result.actorEmail_ = actorEmail_;
     }
 
     private void buildPartial0(
@@ -1084,6 +1074,10 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.property_ = property_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        actorEmail_.makeImmutable();
+        result.actorEmail_ = actorEmail_;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.earliestChangeTime_ =
@@ -1185,7 +1179,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
       if (!other.actorEmail_.isEmpty()) {
         if (actorEmail_.isEmpty()) {
           actorEmail_ = other.actorEmail_;
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ |= 0x00000010;
         } else {
           ensureActorEmailIsMutable();
           actorEmail_.addAll(other.actorEmail_);
@@ -2094,14 +2088,14 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
       return this;
     }
 
-    private com.google.protobuf.LazyStringList actorEmail_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList actorEmail_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureActorEmailIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!actorEmail_.isModifiable()) {
         actorEmail_ = new com.google.protobuf.LazyStringArrayList(actorEmail_);
-        bitField0_ |= 0x00000010;
       }
+      bitField0_ |= 0x00000010;
     }
     /**
      *
@@ -2116,7 +2110,8 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
      * @return A list containing the actorEmail.
      */
     public com.google.protobuf.ProtocolStringList getActorEmailList() {
-      return actorEmail_.getUnmodifiableView();
+      actorEmail_.makeImmutable();
+      return actorEmail_;
     }
     /**
      *
@@ -2185,6 +2180,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
       }
       ensureActorEmailIsMutable();
       actorEmail_.set(index, value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2207,6 +2203,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
       }
       ensureActorEmailIsMutable();
       actorEmail_.add(value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2226,6 +2223,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
     public Builder addAllActorEmail(java.lang.Iterable<java.lang.String> values) {
       ensureActorEmailIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, actorEmail_);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2242,8 +2240,9 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
      * @return This builder for chaining.
      */
     public Builder clearActorEmail() {
-      actorEmail_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      actorEmail_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000010);
+      ;
       onChanged();
       return this;
     }
@@ -2267,6 +2266,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
       checkByteStringIsUtf8(value);
       ensureActorEmailIsMutable();
       actorEmail_.add(value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

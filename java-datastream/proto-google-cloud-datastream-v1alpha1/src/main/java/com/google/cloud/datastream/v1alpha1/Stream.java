@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,11 +40,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Stream();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -128,6 +123,7 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The stream is in maintenance mode.
+     *
      * Updates are rejected on the resource in this state.
      * </pre>
      *
@@ -224,6 +220,7 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The stream is in maintenance mode.
+     *
      * Updates are rejected on the resource in this state.
      * </pre>
      *
@@ -443,7 +440,7 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.datastream.v1alpha1.MysqlRdbmsOrBuilder getMysqlExcludedObjectsOrBuilder();
 
-    public com.google.cloud.datastream.v1alpha1.Stream.BackfillAllStrategy.ExcludedObjectsCase
+    com.google.cloud.datastream.v1alpha1.Stream.BackfillAllStrategy.ExcludedObjectsCase
         getExcludedObjectsCase();
   }
   /**
@@ -474,11 +471,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
       return new BackfillAllStrategy();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.datastream.v1alpha1.CloudDatastreamResourcesProto
           .internal_static_google_cloud_datastream_v1alpha1_Stream_BackfillAllStrategy_descriptor;
@@ -495,6 +487,8 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int excludedObjectsCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object excludedObjects_;
 
     public enum ExcludedObjectsCase
@@ -1606,11 +1600,6 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
       return new BackfillNoneStrategy();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.datastream.v1alpha1.CloudDatastreamResourcesProto
           .internal_static_google_cloud_datastream_v1alpha1_Stream_BackfillNoneStrategy_descriptor;
@@ -2014,6 +2003,8 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int backfillStrategyCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object backfillStrategy_;
 
   public enum BackfillStrategyCase

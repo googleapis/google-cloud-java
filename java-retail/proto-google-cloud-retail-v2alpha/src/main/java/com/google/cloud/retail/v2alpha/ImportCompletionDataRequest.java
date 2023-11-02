@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class ImportCompletionDataRequest extends com.google.protobuf.Gener
     return new ImportCompletionDataRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.retail.v2alpha.ImportConfigProto
         .internal_static_google_cloud_retail_v2alpha_ImportCompletionDataRequest_descriptor;
@@ -77,6 +72,7 @@ public final class ImportCompletionDataRequest extends com.google.protobuf.Gener
    *
    * <pre>
    * Required. The catalog which the suggestions dataset belongs to.
+   *
    * Format: `projects/1234/locations/global/catalogs/default_catalog`.
    * </pre>
    *
@@ -103,6 +99,7 @@ public final class ImportCompletionDataRequest extends com.google.protobuf.Gener
    *
    * <pre>
    * Required. The catalog which the suggestions dataset belongs to.
+   *
    * Format: `projects/1234/locations/global/catalogs/default_catalog`.
    * </pre>
    *
@@ -646,6 +643,7 @@ public final class ImportCompletionDataRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. The catalog which the suggestions dataset belongs to.
+     *
      * Format: `projects/1234/locations/global/catalogs/default_catalog`.
      * </pre>
      *
@@ -671,6 +669,7 @@ public final class ImportCompletionDataRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. The catalog which the suggestions dataset belongs to.
+     *
      * Format: `projects/1234/locations/global/catalogs/default_catalog`.
      * </pre>
      *
@@ -696,6 +695,7 @@ public final class ImportCompletionDataRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. The catalog which the suggestions dataset belongs to.
+     *
      * Format: `projects/1234/locations/global/catalogs/default_catalog`.
      * </pre>
      *
@@ -720,6 +720,7 @@ public final class ImportCompletionDataRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. The catalog which the suggestions dataset belongs to.
+     *
      * Format: `projects/1234/locations/global/catalogs/default_catalog`.
      * </pre>
      *
@@ -740,6 +741,7 @@ public final class ImportCompletionDataRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. The catalog which the suggestions dataset belongs to.
+     *
      * Format: `projects/1234/locations/global/catalogs/default_catalog`.
      * </pre>
      *

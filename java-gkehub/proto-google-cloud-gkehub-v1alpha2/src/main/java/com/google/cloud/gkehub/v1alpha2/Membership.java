@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,11 +51,6 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
     return new Membership();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gkehub.v1alpha2.MembershipProto
         .internal_static_google_cloud_gkehub_v1alpha2_Membership_descriptor;
@@ -88,6 +83,7 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Specifies the infrastructure type of a Membership. Infrastructure type is
    * used by Hub to control infrastructure-specific behavior, including pricing.
+   *
    * Each GKE distribution (on-GCP, on-Prem, on-X,...) will set this field
    * automatically, but Attached Clusters customers should specify a type
    * during registration.
@@ -251,6 +247,8 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int typeCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object type_;
 
   public enum TypeCase
@@ -304,10 +302,13 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. The full, unique name of this Membership resource in the format
    * `projects/&#42;&#47;locations/&#42;&#47;memberships/{membership_id}`, set during creation.
+   *
    * `membership_id` must be a valid RFC 1123 compliant DNS label:
+   *
    *   1. At most 63 characters in length
    *   2. It must consist of lower case alphanumeric characters or `-`
    *   3. It must start and end with an alphanumeric character
+   *
    * Which can be expressed as the regex: `[a-z0-9]([-a-z0-9]*[a-z0-9])?`,
    * with a maximum length of 63 characters.
    * </pre>
@@ -334,10 +335,13 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. The full, unique name of this Membership resource in the format
    * `projects/&#42;&#47;locations/&#42;&#47;memberships/{membership_id}`, set during creation.
+   *
    * `membership_id` must be a valid RFC 1123 compliant DNS label:
+   *
    *   1. At most 63 characters in length
    *   2. It must consist of lower case alphanumeric characters or `-`
    *   3. It must start and end with an alphanumeric character
+   *
    * Which can be expressed as the regex: `[a-z0-9]([-a-z0-9]*[a-z0-9])?`,
    * with a maximum length of 63 characters.
    * </pre>
@@ -471,6 +475,7 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. Description of this membership, limited to 63 characters.
    * Must match the regex: `[a-zA-Z0-9][a-zA-Z0-9_&#92;-&#92;.&#92; ]*`
+   *
    * This field is present for legacy purposes.
    * </pre>
    *
@@ -496,6 +501,7 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. Description of this membership, limited to 63 characters.
    * Must match the regex: `[a-zA-Z0-9][a-zA-Z0-9_&#92;-&#92;.&#92; ]*`
+   *
    * This field is present for legacy purposes.
    * </pre>
    *
@@ -787,7 +793,9 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
    * Optional. An externally-generated and managed ID for this Membership. This ID may
    * be modified after creation, but this is not recommended. For GKE clusters,
    * external_id is managed by the Hub API and updates will be ignored.
+   *
    * The ID must match the regex: `[a-zA-Z0-9][a-zA-Z0-9_&#92;-&#92;.]*`
+   *
    * If this Membership represents a Kubernetes cluster, this value should be
    * set to the UID of the `kube-system` namespace object.
    * </pre>
@@ -815,7 +823,9 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
    * Optional. An externally-generated and managed ID for this Membership. This ID may
    * be modified after creation, but this is not recommended. For GKE clusters,
    * external_id is managed by the Hub API and updates will be ignored.
+   *
    * The ID must match the regex: `[a-zA-Z0-9][a-zA-Z0-9_&#92;-&#92;.]*`
+   *
    * If this Membership represents a Kubernetes cluster, this value should be
    * set to the UID of the `kube-system` namespace object.
    * </pre>
@@ -1824,10 +1834,13 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The full, unique name of this Membership resource in the format
      * `projects/&#42;&#47;locations/&#42;&#47;memberships/{membership_id}`, set during creation.
+     *
      * `membership_id` must be a valid RFC 1123 compliant DNS label:
+     *
      *   1. At most 63 characters in length
      *   2. It must consist of lower case alphanumeric characters or `-`
      *   3. It must start and end with an alphanumeric character
+     *
      * Which can be expressed as the regex: `[a-z0-9]([-a-z0-9]*[a-z0-9])?`,
      * with a maximum length of 63 characters.
      * </pre>
@@ -1853,10 +1866,13 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The full, unique name of this Membership resource in the format
      * `projects/&#42;&#47;locations/&#42;&#47;memberships/{membership_id}`, set during creation.
+     *
      * `membership_id` must be a valid RFC 1123 compliant DNS label:
+     *
      *   1. At most 63 characters in length
      *   2. It must consist of lower case alphanumeric characters or `-`
      *   3. It must start and end with an alphanumeric character
+     *
      * Which can be expressed as the regex: `[a-z0-9]([-a-z0-9]*[a-z0-9])?`,
      * with a maximum length of 63 characters.
      * </pre>
@@ -1882,10 +1898,13 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The full, unique name of this Membership resource in the format
      * `projects/&#42;&#47;locations/&#42;&#47;memberships/{membership_id}`, set during creation.
+     *
      * `membership_id` must be a valid RFC 1123 compliant DNS label:
+     *
      *   1. At most 63 characters in length
      *   2. It must consist of lower case alphanumeric characters or `-`
      *   3. It must start and end with an alphanumeric character
+     *
      * Which can be expressed as the regex: `[a-z0-9]([-a-z0-9]*[a-z0-9])?`,
      * with a maximum length of 63 characters.
      * </pre>
@@ -1910,10 +1929,13 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The full, unique name of this Membership resource in the format
      * `projects/&#42;&#47;locations/&#42;&#47;memberships/{membership_id}`, set during creation.
+     *
      * `membership_id` must be a valid RFC 1123 compliant DNS label:
+     *
      *   1. At most 63 characters in length
      *   2. It must consist of lower case alphanumeric characters or `-`
      *   3. It must start and end with an alphanumeric character
+     *
      * Which can be expressed as the regex: `[a-z0-9]([-a-z0-9]*[a-z0-9])?`,
      * with a maximum length of 63 characters.
      * </pre>
@@ -1934,10 +1956,13 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The full, unique name of this Membership resource in the format
      * `projects/&#42;&#47;locations/&#42;&#47;memberships/{membership_id}`, set during creation.
+     *
      * `membership_id` must be a valid RFC 1123 compliant DNS label:
+     *
      *   1. At most 63 characters in length
      *   2. It must consist of lower case alphanumeric characters or `-`
      *   3. It must start and end with an alphanumeric character
+     *
      * Which can be expressed as the regex: `[a-z0-9]([-a-z0-9]*[a-z0-9])?`,
      * with a maximum length of 63 characters.
      * </pre>
@@ -2128,6 +2153,7 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Description of this membership, limited to 63 characters.
      * Must match the regex: `[a-zA-Z0-9][a-zA-Z0-9_&#92;-&#92;.&#92; ]*`
+     *
      * This field is present for legacy purposes.
      * </pre>
      *
@@ -2152,6 +2178,7 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Description of this membership, limited to 63 characters.
      * Must match the regex: `[a-zA-Z0-9][a-zA-Z0-9_&#92;-&#92;.&#92; ]*`
+     *
      * This field is present for legacy purposes.
      * </pre>
      *
@@ -2176,6 +2203,7 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Description of this membership, limited to 63 characters.
      * Must match the regex: `[a-zA-Z0-9][a-zA-Z0-9_&#92;-&#92;.&#92; ]*`
+     *
      * This field is present for legacy purposes.
      * </pre>
      *
@@ -2199,6 +2227,7 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Description of this membership, limited to 63 characters.
      * Must match the regex: `[a-zA-Z0-9][a-zA-Z0-9_&#92;-&#92;.&#92; ]*`
+     *
      * This field is present for legacy purposes.
      * </pre>
      *
@@ -2218,6 +2247,7 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Description of this membership, limited to 63 characters.
      * Must match the regex: `[a-zA-Z0-9][a-zA-Z0-9_&#92;-&#92;.&#92; ]*`
+     *
      * This field is present for legacy purposes.
      * </pre>
      *
@@ -3277,7 +3307,9 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      * Optional. An externally-generated and managed ID for this Membership. This ID may
      * be modified after creation, but this is not recommended. For GKE clusters,
      * external_id is managed by the Hub API and updates will be ignored.
+     *
      * The ID must match the regex: `[a-zA-Z0-9][a-zA-Z0-9_&#92;-&#92;.]*`
+     *
      * If this Membership represents a Kubernetes cluster, this value should be
      * set to the UID of the `kube-system` namespace object.
      * </pre>
@@ -3304,7 +3336,9 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      * Optional. An externally-generated and managed ID for this Membership. This ID may
      * be modified after creation, but this is not recommended. For GKE clusters,
      * external_id is managed by the Hub API and updates will be ignored.
+     *
      * The ID must match the regex: `[a-zA-Z0-9][a-zA-Z0-9_&#92;-&#92;.]*`
+     *
      * If this Membership represents a Kubernetes cluster, this value should be
      * set to the UID of the `kube-system` namespace object.
      * </pre>
@@ -3331,7 +3365,9 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      * Optional. An externally-generated and managed ID for this Membership. This ID may
      * be modified after creation, but this is not recommended. For GKE clusters,
      * external_id is managed by the Hub API and updates will be ignored.
+     *
      * The ID must match the regex: `[a-zA-Z0-9][a-zA-Z0-9_&#92;-&#92;.]*`
+     *
      * If this Membership represents a Kubernetes cluster, this value should be
      * set to the UID of the `kube-system` namespace object.
      * </pre>
@@ -3357,7 +3393,9 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      * Optional. An externally-generated and managed ID for this Membership. This ID may
      * be modified after creation, but this is not recommended. For GKE clusters,
      * external_id is managed by the Hub API and updates will be ignored.
+     *
      * The ID must match the regex: `[a-zA-Z0-9][a-zA-Z0-9_&#92;-&#92;.]*`
+     *
      * If this Membership represents a Kubernetes cluster, this value should be
      * set to the UID of the `kube-system` namespace object.
      * </pre>
@@ -3379,7 +3417,9 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      * Optional. An externally-generated and managed ID for this Membership. This ID may
      * be modified after creation, but this is not recommended. For GKE clusters,
      * external_id is managed by the Hub API and updates will be ignored.
+     *
      * The ID must match the regex: `[a-zA-Z0-9][a-zA-Z0-9_&#92;-&#92;.]*`
+     *
      * If this Membership represents a Kubernetes cluster, this value should be
      * set to the UID of the `kube-system` namespace object.
      * </pre>

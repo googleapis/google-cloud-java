@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -55,11 +55,6 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new AzureCluster();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -350,8 +345,10 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The name of this resource.
+   *
    * Cluster names are formatted as
    * `projects/&lt;project-number&gt;/locations/&lt;region&gt;/azureClusters/&lt;cluster-id&gt;`.
+   *
    * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
    * for more details on Google Cloud Platform resource names.
    * </pre>
@@ -377,8 +374,10 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The name of this resource.
+   *
    * Cluster names are formatted as
    * `projects/&lt;project-number&gt;/locations/&lt;region&gt;/azureClusters/&lt;cluster-id&gt;`.
+   *
    * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
    * for more details on Google Cloud Platform resource names.
    * </pre>
@@ -462,6 +461,7 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. The Azure region where the cluster runs.
+   *
    * Each Google Cloud region supports a subset of nearby Azure regions.
    * You can call
    * [GetAzureServerConfig][google.cloud.gkemulticloud.v1.AzureClusters.GetAzureServerConfig]
@@ -489,6 +489,7 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. The Azure region where the cluster runs.
+   *
    * Each Google Cloud region supports a subset of nearby Azure regions.
    * You can call
    * [GetAzureServerConfig][google.cloud.gkemulticloud.v1.AzureClusters.GetAzureServerConfig]
@@ -579,10 +580,13 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
    * [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] that contains
    * authentication configuration for how the Anthos Multi-Cloud API connects to
    * Azure APIs.
+   *
    * The `AzureClient` resource must reside on the same Google Cloud Platform
    * project and region as the `AzureCluster`.
+   *
    * `AzureClient` names are formatted as
    * `projects/&lt;project-number&gt;/locations/&lt;region&gt;/azureClients/&lt;client-id&gt;`.
+   *
    * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
    * for more details on Google Cloud resource names.
    * </pre>
@@ -611,10 +615,13 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
    * [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] that contains
    * authentication configuration for how the Anthos Multi-Cloud API connects to
    * Azure APIs.
+   *
    * The `AzureClient` resource must reside on the same Google Cloud Platform
    * project and region as the `AzureCluster`.
+   *
    * `AzureClient` names are formatted as
    * `projects/&lt;project-number&gt;/locations/&lt;region&gt;/azureClients/&lt;client-id&gt;`.
+   *
    * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
    * for more details on Google Cloud resource names.
    * </pre>
@@ -1133,6 +1140,7 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Allows clients to perform consistent read-modify-writes
    * through optimistic concurrency control.
+   *
    * Can be sent on update and delete requests to ensure the
    * client has an up-to-date value before proceeding.
    * </pre>
@@ -1159,6 +1167,7 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Allows clients to perform consistent read-modify-writes
    * through optimistic concurrency control.
+   *
    * Can be sent on update and delete requests to ensure the
    * client has an up-to-date value before proceeding.
    * </pre>
@@ -1212,6 +1221,7 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Annotations on the cluster.
+   *
    * This field has the same restrictions as Kubernetes annotations.
    * The total size of all keys and values combined is limited to 256k.
    * Keys can have 2 segments: prefix (optional) and name (required),
@@ -1242,6 +1252,7 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Annotations on the cluster.
+   *
    * This field has the same restrictions as Kubernetes annotations.
    * The total size of all keys and values combined is limited to 256k.
    * Keys can have 2 segments: prefix (optional) and name (required),
@@ -1263,6 +1274,7 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Annotations on the cluster.
+   *
    * This field has the same restrictions as Kubernetes annotations.
    * The total size of all keys and values combined is limited to 256k.
    * Keys can have 2 segments: prefix (optional) and name (required),
@@ -1291,6 +1303,7 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Annotations on the cluster.
+   *
    * This field has the same restrictions as Kubernetes annotations.
    * The total size of all keys and values combined is limited to 256k.
    * Keys can have 2 segments: prefix (optional) and name (required),
@@ -2800,8 +2813,10 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of this resource.
+     *
      * Cluster names are formatted as
      * `projects/&lt;project-number&gt;/locations/&lt;region&gt;/azureClusters/&lt;cluster-id&gt;`.
+     *
      * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
      * for more details on Google Cloud Platform resource names.
      * </pre>
@@ -2826,8 +2841,10 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of this resource.
+     *
      * Cluster names are formatted as
      * `projects/&lt;project-number&gt;/locations/&lt;region&gt;/azureClusters/&lt;cluster-id&gt;`.
+     *
      * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
      * for more details on Google Cloud Platform resource names.
      * </pre>
@@ -2852,8 +2869,10 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of this resource.
+     *
      * Cluster names are formatted as
      * `projects/&lt;project-number&gt;/locations/&lt;region&gt;/azureClusters/&lt;cluster-id&gt;`.
+     *
      * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
      * for more details on Google Cloud Platform resource names.
      * </pre>
@@ -2877,8 +2896,10 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of this resource.
+     *
      * Cluster names are formatted as
      * `projects/&lt;project-number&gt;/locations/&lt;region&gt;/azureClusters/&lt;cluster-id&gt;`.
+     *
      * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
      * for more details on Google Cloud Platform resource names.
      * </pre>
@@ -2898,8 +2919,10 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of this resource.
+     *
      * Cluster names are formatted as
      * `projects/&lt;project-number&gt;/locations/&lt;region&gt;/azureClusters/&lt;cluster-id&gt;`.
+     *
      * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
      * for more details on Google Cloud Platform resource names.
      * </pre>
@@ -3037,6 +3060,7 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The Azure region where the cluster runs.
+     *
      * Each Google Cloud region supports a subset of nearby Azure regions.
      * You can call
      * [GetAzureServerConfig][google.cloud.gkemulticloud.v1.AzureClusters.GetAzureServerConfig]
@@ -3063,6 +3087,7 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The Azure region where the cluster runs.
+     *
      * Each Google Cloud region supports a subset of nearby Azure regions.
      * You can call
      * [GetAzureServerConfig][google.cloud.gkemulticloud.v1.AzureClusters.GetAzureServerConfig]
@@ -3089,6 +3114,7 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The Azure region where the cluster runs.
+     *
      * Each Google Cloud region supports a subset of nearby Azure regions.
      * You can call
      * [GetAzureServerConfig][google.cloud.gkemulticloud.v1.AzureClusters.GetAzureServerConfig]
@@ -3114,6 +3140,7 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The Azure region where the cluster runs.
+     *
      * Each Google Cloud region supports a subset of nearby Azure regions.
      * You can call
      * [GetAzureServerConfig][google.cloud.gkemulticloud.v1.AzureClusters.GetAzureServerConfig]
@@ -3135,6 +3162,7 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The Azure region where the cluster runs.
+     *
      * Each Google Cloud region supports a subset of nearby Azure regions.
      * You can call
      * [GetAzureServerConfig][google.cloud.gkemulticloud.v1.AzureClusters.GetAzureServerConfig]
@@ -3282,10 +3310,13 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
      * [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] that contains
      * authentication configuration for how the Anthos Multi-Cloud API connects to
      * Azure APIs.
+     *
      * The `AzureClient` resource must reside on the same Google Cloud Platform
      * project and region as the `AzureCluster`.
+     *
      * `AzureClient` names are formatted as
      * `projects/&lt;project-number&gt;/locations/&lt;region&gt;/azureClients/&lt;client-id&gt;`.
+     *
      * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
      * for more details on Google Cloud resource names.
      * </pre>
@@ -3313,10 +3344,13 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
      * [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] that contains
      * authentication configuration for how the Anthos Multi-Cloud API connects to
      * Azure APIs.
+     *
      * The `AzureClient` resource must reside on the same Google Cloud Platform
      * project and region as the `AzureCluster`.
+     *
      * `AzureClient` names are formatted as
      * `projects/&lt;project-number&gt;/locations/&lt;region&gt;/azureClients/&lt;client-id&gt;`.
+     *
      * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
      * for more details on Google Cloud resource names.
      * </pre>
@@ -3344,10 +3378,13 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
      * [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] that contains
      * authentication configuration for how the Anthos Multi-Cloud API connects to
      * Azure APIs.
+     *
      * The `AzureClient` resource must reside on the same Google Cloud Platform
      * project and region as the `AzureCluster`.
+     *
      * `AzureClient` names are formatted as
      * `projects/&lt;project-number&gt;/locations/&lt;region&gt;/azureClients/&lt;client-id&gt;`.
+     *
      * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
      * for more details on Google Cloud resource names.
      * </pre>
@@ -3374,10 +3411,13 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
      * [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] that contains
      * authentication configuration for how the Anthos Multi-Cloud API connects to
      * Azure APIs.
+     *
      * The `AzureClient` resource must reside on the same Google Cloud Platform
      * project and region as the `AzureCluster`.
+     *
      * `AzureClient` names are formatted as
      * `projects/&lt;project-number&gt;/locations/&lt;region&gt;/azureClients/&lt;client-id&gt;`.
+     *
      * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
      * for more details on Google Cloud resource names.
      * </pre>
@@ -3400,10 +3440,13 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
      * [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] that contains
      * authentication configuration for how the Anthos Multi-Cloud API connects to
      * Azure APIs.
+     *
      * The `AzureClient` resource must reside on the same Google Cloud Platform
      * project and region as the `AzureCluster`.
+     *
      * `AzureClient` names are formatted as
      * `projects/&lt;project-number&gt;/locations/&lt;region&gt;/azureClients/&lt;client-id&gt;`.
+     *
      * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
      * for more details on Google Cloud resource names.
      * </pre>
@@ -5021,6 +5064,7 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Allows clients to perform consistent read-modify-writes
      * through optimistic concurrency control.
+     *
      * Can be sent on update and delete requests to ensure the
      * client has an up-to-date value before proceeding.
      * </pre>
@@ -5046,6 +5090,7 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Allows clients to perform consistent read-modify-writes
      * through optimistic concurrency control.
+     *
      * Can be sent on update and delete requests to ensure the
      * client has an up-to-date value before proceeding.
      * </pre>
@@ -5071,6 +5116,7 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Allows clients to perform consistent read-modify-writes
      * through optimistic concurrency control.
+     *
      * Can be sent on update and delete requests to ensure the
      * client has an up-to-date value before proceeding.
      * </pre>
@@ -5095,6 +5141,7 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Allows clients to perform consistent read-modify-writes
      * through optimistic concurrency control.
+     *
      * Can be sent on update and delete requests to ensure the
      * client has an up-to-date value before proceeding.
      * </pre>
@@ -5115,6 +5162,7 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Allows clients to perform consistent read-modify-writes
      * through optimistic concurrency control.
+     *
      * Can be sent on update and delete requests to ensure the
      * client has an up-to-date value before proceeding.
      * </pre>
@@ -5168,6 +5216,7 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Annotations on the cluster.
+     *
      * This field has the same restrictions as Kubernetes annotations.
      * The total size of all keys and values combined is limited to 256k.
      * Keys can have 2 segments: prefix (optional) and name (required),
@@ -5198,6 +5247,7 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Annotations on the cluster.
+     *
      * This field has the same restrictions as Kubernetes annotations.
      * The total size of all keys and values combined is limited to 256k.
      * Keys can have 2 segments: prefix (optional) and name (required),
@@ -5219,6 +5269,7 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Annotations on the cluster.
+     *
      * This field has the same restrictions as Kubernetes annotations.
      * The total size of all keys and values combined is limited to 256k.
      * Keys can have 2 segments: prefix (optional) and name (required),
@@ -5247,6 +5298,7 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Annotations on the cluster.
+     *
      * This field has the same restrictions as Kubernetes annotations.
      * The total size of all keys and values combined is limited to 256k.
      * Keys can have 2 segments: prefix (optional) and name (required),
@@ -5281,6 +5333,7 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Annotations on the cluster.
+     *
      * This field has the same restrictions as Kubernetes annotations.
      * The total size of all keys and values combined is limited to 256k.
      * Keys can have 2 segments: prefix (optional) and name (required),
@@ -5311,6 +5364,7 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Annotations on the cluster.
+     *
      * This field has the same restrictions as Kubernetes annotations.
      * The total size of all keys and values combined is limited to 256k.
      * Keys can have 2 segments: prefix (optional) and name (required),
@@ -5339,6 +5393,7 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Annotations on the cluster.
+     *
      * This field has the same restrictions as Kubernetes annotations.
      * The total size of all keys and values combined is limited to 256k.
      * Keys can have 2 segments: prefix (optional) and name (required),

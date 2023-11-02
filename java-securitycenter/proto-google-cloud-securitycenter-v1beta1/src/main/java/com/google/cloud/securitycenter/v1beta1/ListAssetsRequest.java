@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ListAssetsRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -139,21 +134,28 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
    * The expression is a list of zero or more restrictions combined via logical
    * operators `AND` and `OR`.
    * Parentheses are not supported, and `OR` has higher precedence than `AND`.
+   *
    * Restrictions have the form `&lt;field&gt; &lt;operator&gt; &lt;value&gt;` and may have a `-`
    * character in front of them to indicate negation. The fields map to those
    * defined in the Asset resource. Examples include:
+   *
    * * name
    * * security_center_properties.resource_name
    * * resource_properties.a_property
    * * security_marks.marks.marka
+   *
    * The supported operators are:
+   *
    * * `=` for all value types.
    * * `&gt;`, `&lt;`, `&gt;=`, `&lt;=` for integer values.
    * * `:`, meaning substring matching, for strings.
+   *
    * The supported value types are:
+   *
    * * string literals in quotes.
    * * integer literals without quotes.
    * * boolean literals `true` and `false` without quotes.
+   *
    * For example, `resource_properties.size = 100` is a valid filter string.
    * </pre>
    *
@@ -181,21 +183,28 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
    * The expression is a list of zero or more restrictions combined via logical
    * operators `AND` and `OR`.
    * Parentheses are not supported, and `OR` has higher precedence than `AND`.
+   *
    * Restrictions have the form `&lt;field&gt; &lt;operator&gt; &lt;value&gt;` and may have a `-`
    * character in front of them to indicate negation. The fields map to those
    * defined in the Asset resource. Examples include:
+   *
    * * name
    * * security_center_properties.resource_name
    * * resource_properties.a_property
    * * security_marks.marks.marka
+   *
    * The supported operators are:
+   *
    * * `=` for all value types.
    * * `&gt;`, `&lt;`, `&gt;=`, `&lt;=` for integer values.
    * * `:`, meaning substring matching, for strings.
+   *
    * The supported value types are:
+   *
    * * string literals in quotes.
    * * integer literals without quotes.
    * * boolean literals `true` and `false` without quotes.
+   *
    * For example, `resource_properties.size = 100` is a valid filter string.
    * </pre>
    *
@@ -347,11 +356,14 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
    * present during the compare_duration period of time that precedes the
    * read_time. This is the time between (read_time -
    * compare_duration) and read_time.
+   *
    * The state value is derived based on the presence of the asset at the two
    * points in time. Intermediate state changes between the two times don't
    * affect the result. For example, the results aren't affected if the asset is
    * removed and re-created again.
+   *
    * Possible "state" values when compare_duration is specified:
+   *
    * * "ADDED": indicates that the asset was not present before
    *              compare_duration, but present at read_time.
    * * "REMOVED": indicates that the asset was present at the start of
@@ -359,6 +371,7 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
    * * "ACTIVE": indicates that the asset was present at both the
    *              start and the end of the time period defined by
    *              compare_duration and read_time.
+   *
    * If compare_duration is not specified, then the only possible state is
    * "UNUSED", which indicates that the asset is present at read_time.
    * </pre>
@@ -380,11 +393,14 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
    * present during the compare_duration period of time that precedes the
    * read_time. This is the time between (read_time -
    * compare_duration) and read_time.
+   *
    * The state value is derived based on the presence of the asset at the two
    * points in time. Intermediate state changes between the two times don't
    * affect the result. For example, the results aren't affected if the asset is
    * removed and re-created again.
+   *
    * Possible "state" values when compare_duration is specified:
+   *
    * * "ADDED": indicates that the asset was not present before
    *              compare_duration, but present at read_time.
    * * "REMOVED": indicates that the asset was present at the start of
@@ -392,6 +408,7 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
    * * "ACTIVE": indicates that the asset was present at both the
    *              start and the end of the time period defined by
    *              compare_duration and read_time.
+   *
    * If compare_duration is not specified, then the only possible state is
    * "UNUSED", which indicates that the asset is present at read_time.
    * </pre>
@@ -415,11 +432,14 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
    * present during the compare_duration period of time that precedes the
    * read_time. This is the time between (read_time -
    * compare_duration) and read_time.
+   *
    * The state value is derived based on the presence of the asset at the two
    * points in time. Intermediate state changes between the two times don't
    * affect the result. For example, the results aren't affected if the asset is
    * removed and re-created again.
+   *
    * Possible "state" values when compare_duration is specified:
+   *
    * * "ADDED": indicates that the asset was not present before
    *              compare_duration, but present at read_time.
    * * "REMOVED": indicates that the asset was present at the start of
@@ -427,6 +447,7 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
    * * "ACTIVE": indicates that the asset was present at both the
    *              start and the end of the time period defined by
    *              compare_duration and read_time.
+   *
    * If compare_duration is not specified, then the only possible state is
    * "UNUSED", which indicates that the asset is present at read_time.
    * </pre>
@@ -1230,21 +1251,28 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      * The expression is a list of zero or more restrictions combined via logical
      * operators `AND` and `OR`.
      * Parentheses are not supported, and `OR` has higher precedence than `AND`.
+     *
      * Restrictions have the form `&lt;field&gt; &lt;operator&gt; &lt;value&gt;` and may have a `-`
      * character in front of them to indicate negation. The fields map to those
      * defined in the Asset resource. Examples include:
+     *
      * * name
      * * security_center_properties.resource_name
      * * resource_properties.a_property
      * * security_marks.marks.marka
+     *
      * The supported operators are:
+     *
      * * `=` for all value types.
      * * `&gt;`, `&lt;`, `&gt;=`, `&lt;=` for integer values.
      * * `:`, meaning substring matching, for strings.
+     *
      * The supported value types are:
+     *
      * * string literals in quotes.
      * * integer literals without quotes.
      * * boolean literals `true` and `false` without quotes.
+     *
      * For example, `resource_properties.size = 100` is a valid filter string.
      * </pre>
      *
@@ -1271,21 +1299,28 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      * The expression is a list of zero or more restrictions combined via logical
      * operators `AND` and `OR`.
      * Parentheses are not supported, and `OR` has higher precedence than `AND`.
+     *
      * Restrictions have the form `&lt;field&gt; &lt;operator&gt; &lt;value&gt;` and may have a `-`
      * character in front of them to indicate negation. The fields map to those
      * defined in the Asset resource. Examples include:
+     *
      * * name
      * * security_center_properties.resource_name
      * * resource_properties.a_property
      * * security_marks.marks.marka
+     *
      * The supported operators are:
+     *
      * * `=` for all value types.
      * * `&gt;`, `&lt;`, `&gt;=`, `&lt;=` for integer values.
      * * `:`, meaning substring matching, for strings.
+     *
      * The supported value types are:
+     *
      * * string literals in quotes.
      * * integer literals without quotes.
      * * boolean literals `true` and `false` without quotes.
+     *
      * For example, `resource_properties.size = 100` is a valid filter string.
      * </pre>
      *
@@ -1312,21 +1347,28 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      * The expression is a list of zero or more restrictions combined via logical
      * operators `AND` and `OR`.
      * Parentheses are not supported, and `OR` has higher precedence than `AND`.
+     *
      * Restrictions have the form `&lt;field&gt; &lt;operator&gt; &lt;value&gt;` and may have a `-`
      * character in front of them to indicate negation. The fields map to those
      * defined in the Asset resource. Examples include:
+     *
      * * name
      * * security_center_properties.resource_name
      * * resource_properties.a_property
      * * security_marks.marks.marka
+     *
      * The supported operators are:
+     *
      * * `=` for all value types.
      * * `&gt;`, `&lt;`, `&gt;=`, `&lt;=` for integer values.
      * * `:`, meaning substring matching, for strings.
+     *
      * The supported value types are:
+     *
      * * string literals in quotes.
      * * integer literals without quotes.
      * * boolean literals `true` and `false` without quotes.
+     *
      * For example, `resource_properties.size = 100` is a valid filter string.
      * </pre>
      *
@@ -1352,21 +1394,28 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      * The expression is a list of zero or more restrictions combined via logical
      * operators `AND` and `OR`.
      * Parentheses are not supported, and `OR` has higher precedence than `AND`.
+     *
      * Restrictions have the form `&lt;field&gt; &lt;operator&gt; &lt;value&gt;` and may have a `-`
      * character in front of them to indicate negation. The fields map to those
      * defined in the Asset resource. Examples include:
+     *
      * * name
      * * security_center_properties.resource_name
      * * resource_properties.a_property
      * * security_marks.marks.marka
+     *
      * The supported operators are:
+     *
      * * `=` for all value types.
      * * `&gt;`, `&lt;`, `&gt;=`, `&lt;=` for integer values.
      * * `:`, meaning substring matching, for strings.
+     *
      * The supported value types are:
+     *
      * * string literals in quotes.
      * * integer literals without quotes.
      * * boolean literals `true` and `false` without quotes.
+     *
      * For example, `resource_properties.size = 100` is a valid filter string.
      * </pre>
      *
@@ -1388,21 +1437,28 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      * The expression is a list of zero or more restrictions combined via logical
      * operators `AND` and `OR`.
      * Parentheses are not supported, and `OR` has higher precedence than `AND`.
+     *
      * Restrictions have the form `&lt;field&gt; &lt;operator&gt; &lt;value&gt;` and may have a `-`
      * character in front of them to indicate negation. The fields map to those
      * defined in the Asset resource. Examples include:
+     *
      * * name
      * * security_center_properties.resource_name
      * * resource_properties.a_property
      * * security_marks.marks.marka
+     *
      * The supported operators are:
+     *
      * * `=` for all value types.
      * * `&gt;`, `&lt;`, `&gt;=`, `&lt;=` for integer values.
      * * `:`, meaning substring matching, for strings.
+     *
      * The supported value types are:
+     *
      * * string literals in quotes.
      * * integer literals without quotes.
      * * boolean literals `true` and `false` without quotes.
+     *
      * For example, `resource_properties.size = 100` is a valid filter string.
      * </pre>
      *
@@ -1784,11 +1840,14 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      * present during the compare_duration period of time that precedes the
      * read_time. This is the time between (read_time -
      * compare_duration) and read_time.
+     *
      * The state value is derived based on the presence of the asset at the two
      * points in time. Intermediate state changes between the two times don't
      * affect the result. For example, the results aren't affected if the asset is
      * removed and re-created again.
+     *
      * Possible "state" values when compare_duration is specified:
+     *
      * * "ADDED": indicates that the asset was not present before
      *              compare_duration, but present at read_time.
      * * "REMOVED": indicates that the asset was present at the start of
@@ -1796,6 +1855,7 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      * * "ACTIVE": indicates that the asset was present at both the
      *              start and the end of the time period defined by
      *              compare_duration and read_time.
+     *
      * If compare_duration is not specified, then the only possible state is
      * "UNUSED", which indicates that the asset is present at read_time.
      * </pre>
@@ -1816,11 +1876,14 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      * present during the compare_duration period of time that precedes the
      * read_time. This is the time between (read_time -
      * compare_duration) and read_time.
+     *
      * The state value is derived based on the presence of the asset at the two
      * points in time. Intermediate state changes between the two times don't
      * affect the result. For example, the results aren't affected if the asset is
      * removed and re-created again.
+     *
      * Possible "state" values when compare_duration is specified:
+     *
      * * "ADDED": indicates that the asset was not present before
      *              compare_duration, but present at read_time.
      * * "REMOVED": indicates that the asset was present at the start of
@@ -1828,6 +1891,7 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      * * "ACTIVE": indicates that the asset was present at both the
      *              start and the end of the time period defined by
      *              compare_duration and read_time.
+     *
      * If compare_duration is not specified, then the only possible state is
      * "UNUSED", which indicates that the asset is present at read_time.
      * </pre>
@@ -1854,11 +1918,14 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      * present during the compare_duration period of time that precedes the
      * read_time. This is the time between (read_time -
      * compare_duration) and read_time.
+     *
      * The state value is derived based on the presence of the asset at the two
      * points in time. Intermediate state changes between the two times don't
      * affect the result. For example, the results aren't affected if the asset is
      * removed and re-created again.
+     *
      * Possible "state" values when compare_duration is specified:
+     *
      * * "ADDED": indicates that the asset was not present before
      *              compare_duration, but present at read_time.
      * * "REMOVED": indicates that the asset was present at the start of
@@ -1866,6 +1933,7 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      * * "ACTIVE": indicates that the asset was present at both the
      *              start and the end of the time period defined by
      *              compare_duration and read_time.
+     *
      * If compare_duration is not specified, then the only possible state is
      * "UNUSED", which indicates that the asset is present at read_time.
      * </pre>
@@ -1894,11 +1962,14 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      * present during the compare_duration period of time that precedes the
      * read_time. This is the time between (read_time -
      * compare_duration) and read_time.
+     *
      * The state value is derived based on the presence of the asset at the two
      * points in time. Intermediate state changes between the two times don't
      * affect the result. For example, the results aren't affected if the asset is
      * removed and re-created again.
+     *
      * Possible "state" values when compare_duration is specified:
+     *
      * * "ADDED": indicates that the asset was not present before
      *              compare_duration, but present at read_time.
      * * "REMOVED": indicates that the asset was present at the start of
@@ -1906,6 +1977,7 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      * * "ACTIVE": indicates that the asset was present at both the
      *              start and the end of the time period defined by
      *              compare_duration and read_time.
+     *
      * If compare_duration is not specified, then the only possible state is
      * "UNUSED", which indicates that the asset is present at read_time.
      * </pre>
@@ -1931,11 +2003,14 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      * present during the compare_duration period of time that precedes the
      * read_time. This is the time between (read_time -
      * compare_duration) and read_time.
+     *
      * The state value is derived based on the presence of the asset at the two
      * points in time. Intermediate state changes between the two times don't
      * affect the result. For example, the results aren't affected if the asset is
      * removed and re-created again.
+     *
      * Possible "state" values when compare_duration is specified:
+     *
      * * "ADDED": indicates that the asset was not present before
      *              compare_duration, but present at read_time.
      * * "REMOVED": indicates that the asset was present at the start of
@@ -1943,6 +2018,7 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      * * "ACTIVE": indicates that the asset was present at both the
      *              start and the end of the time period defined by
      *              compare_duration and read_time.
+     *
      * If compare_duration is not specified, then the only possible state is
      * "UNUSED", which indicates that the asset is present at read_time.
      * </pre>
@@ -1974,11 +2050,14 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      * present during the compare_duration period of time that precedes the
      * read_time. This is the time between (read_time -
      * compare_duration) and read_time.
+     *
      * The state value is derived based on the presence of the asset at the two
      * points in time. Intermediate state changes between the two times don't
      * affect the result. For example, the results aren't affected if the asset is
      * removed and re-created again.
+     *
      * Possible "state" values when compare_duration is specified:
+     *
      * * "ADDED": indicates that the asset was not present before
      *              compare_duration, but present at read_time.
      * * "REMOVED": indicates that the asset was present at the start of
@@ -1986,6 +2065,7 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      * * "ACTIVE": indicates that the asset was present at both the
      *              start and the end of the time period defined by
      *              compare_duration and read_time.
+     *
      * If compare_duration is not specified, then the only possible state is
      * "UNUSED", which indicates that the asset is present at read_time.
      * </pre>
@@ -2011,11 +2091,14 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      * present during the compare_duration period of time that precedes the
      * read_time. This is the time between (read_time -
      * compare_duration) and read_time.
+     *
      * The state value is derived based on the presence of the asset at the two
      * points in time. Intermediate state changes between the two times don't
      * affect the result. For example, the results aren't affected if the asset is
      * removed and re-created again.
+     *
      * Possible "state" values when compare_duration is specified:
+     *
      * * "ADDED": indicates that the asset was not present before
      *              compare_duration, but present at read_time.
      * * "REMOVED": indicates that the asset was present at the start of
@@ -2023,6 +2106,7 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      * * "ACTIVE": indicates that the asset was present at both the
      *              start and the end of the time period defined by
      *              compare_duration and read_time.
+     *
      * If compare_duration is not specified, then the only possible state is
      * "UNUSED", which indicates that the asset is present at read_time.
      * </pre>
@@ -2043,11 +2127,14 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      * present during the compare_duration period of time that precedes the
      * read_time. This is the time between (read_time -
      * compare_duration) and read_time.
+     *
      * The state value is derived based on the presence of the asset at the two
      * points in time. Intermediate state changes between the two times don't
      * affect the result. For example, the results aren't affected if the asset is
      * removed and re-created again.
+     *
      * Possible "state" values when compare_duration is specified:
+     *
      * * "ADDED": indicates that the asset was not present before
      *              compare_duration, but present at read_time.
      * * "REMOVED": indicates that the asset was present at the start of
@@ -2055,6 +2142,7 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      * * "ACTIVE": indicates that the asset was present at both the
      *              start and the end of the time period defined by
      *              compare_duration and read_time.
+     *
      * If compare_duration is not specified, then the only possible state is
      * "UNUSED", which indicates that the asset is present at read_time.
      * </pre>
@@ -2079,11 +2167,14 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      * present during the compare_duration period of time that precedes the
      * read_time. This is the time between (read_time -
      * compare_duration) and read_time.
+     *
      * The state value is derived based on the presence of the asset at the two
      * points in time. Intermediate state changes between the two times don't
      * affect the result. For example, the results aren't affected if the asset is
      * removed and re-created again.
+     *
      * Possible "state" values when compare_duration is specified:
+     *
      * * "ADDED": indicates that the asset was not present before
      *              compare_duration, but present at read_time.
      * * "REMOVED": indicates that the asset was present at the start of
@@ -2091,6 +2182,7 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      * * "ACTIVE": indicates that the asset was present at both the
      *              start and the end of the time period defined by
      *              compare_duration and read_time.
+     *
      * If compare_duration is not specified, then the only possible state is
      * "UNUSED", which indicates that the asset is present at read_time.
      * </pre>

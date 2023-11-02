@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,9 +27,8 @@ public interface AdvanceChildRolloutJobRunOrBuilder
    *
    *
    * <pre>
-   * Output only. Name of the `ChildRollout`. Format is projects/{project}/
-   * locations/{location}/deliveryPipelines/{deliveryPipeline}/
-   * releases/{release}/rollouts/[a-z][a-z0-9&#92;-]{0,62}.
+   * Output only. Name of the `ChildRollout`. Format is
+   * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/[a-z][a-z0-9&#92;-]{0,62}`.
    * </pre>
    *
    * <code>string rollout = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -41,9 +40,8 @@ public interface AdvanceChildRolloutJobRunOrBuilder
    *
    *
    * <pre>
-   * Output only. Name of the `ChildRollout`. Format is projects/{project}/
-   * locations/{location}/deliveryPipelines/{deliveryPipeline}/
-   * releases/{release}/rollouts/[a-z][a-z0-9&#92;-]{0,62}.
+   * Output only. Name of the `ChildRollout`. Format is
+   * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/[a-z][a-z0-9&#92;-]{0,62}`.
    * </pre>
    *
    * <code>string rollout = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

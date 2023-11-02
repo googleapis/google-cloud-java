@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,11 +51,6 @@ public final class RecognizeRequest extends com.google.protobuf.GeneratedMessage
     return new RecognizeRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.speech.v2.CloudSpeechProto
         .internal_static_google_cloud_speech_v2_RecognizeRequest_descriptor;
@@ -72,6 +67,8 @@ public final class RecognizeRequest extends com.google.protobuf.GeneratedMessage
   }
 
   private int audioSourceCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object audioSource_;
 
   public enum AudioSourceCase
@@ -128,7 +125,8 @@ public final class RecognizeRequest extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Required. The name of the Recognizer to use during recognition. The
    * expected format is
-   * `projects/{project}/locations/{location}/recognizers/{recognizer}`.
+   * `projects/{project}/locations/{location}/recognizers/{recognizer}`. The
+   * {recognizer} segment may be set to `_` to use an empty implicit Recognizer.
    * </pre>
    *
    * <code>
@@ -155,7 +153,8 @@ public final class RecognizeRequest extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Required. The name of the Recognizer to use during recognition. The
    * expected format is
-   * `projects/{project}/locations/{location}/recognizers/{recognizer}`.
+   * `projects/{project}/locations/{location}/recognizers/{recognizer}`. The
+   * {recognizer} segment may be set to `_` to use an empty implicit Recognizer.
    * </pre>
    *
    * <code>
@@ -960,7 +959,8 @@ public final class RecognizeRequest extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Required. The name of the Recognizer to use during recognition. The
      * expected format is
-     * `projects/{project}/locations/{location}/recognizers/{recognizer}`.
+     * `projects/{project}/locations/{location}/recognizers/{recognizer}`. The
+     * {recognizer} segment may be set to `_` to use an empty implicit Recognizer.
      * </pre>
      *
      * <code>
@@ -986,7 +986,8 @@ public final class RecognizeRequest extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Required. The name of the Recognizer to use during recognition. The
      * expected format is
-     * `projects/{project}/locations/{location}/recognizers/{recognizer}`.
+     * `projects/{project}/locations/{location}/recognizers/{recognizer}`. The
+     * {recognizer} segment may be set to `_` to use an empty implicit Recognizer.
      * </pre>
      *
      * <code>
@@ -1012,7 +1013,8 @@ public final class RecognizeRequest extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Required. The name of the Recognizer to use during recognition. The
      * expected format is
-     * `projects/{project}/locations/{location}/recognizers/{recognizer}`.
+     * `projects/{project}/locations/{location}/recognizers/{recognizer}`. The
+     * {recognizer} segment may be set to `_` to use an empty implicit Recognizer.
      * </pre>
      *
      * <code>
@@ -1037,7 +1039,8 @@ public final class RecognizeRequest extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Required. The name of the Recognizer to use during recognition. The
      * expected format is
-     * `projects/{project}/locations/{location}/recognizers/{recognizer}`.
+     * `projects/{project}/locations/{location}/recognizers/{recognizer}`. The
+     * {recognizer} segment may be set to `_` to use an empty implicit Recognizer.
      * </pre>
      *
      * <code>
@@ -1058,7 +1061,8 @@ public final class RecognizeRequest extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Required. The name of the Recognizer to use during recognition. The
      * expected format is
-     * `projects/{project}/locations/{location}/recognizers/{recognizer}`.
+     * `projects/{project}/locations/{location}/recognizers/{recognizer}`. The
+     * {recognizer} segment may be set to `_` to use an empty implicit Recognizer.
      * </pre>
      *
      * <code>

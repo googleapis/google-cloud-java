@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,7 +31,9 @@ public interface ListDocumentsRequestOrBuilder
    * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/branches/{branch}`.
    * Use `default_branch` as the branch ID, to list documents under the default
    * branch.
-   * If the caller does not have permission to list [Documents][]s under this
+   *
+   * If the caller does not have permission to list
+   * [Document][google.cloud.discoveryengine.v1beta.Document]s under this
    * branch, regardless of whether or not this branch exists, a
    * `PERMISSION_DENIED` error is returned.
    * </pre>
@@ -51,7 +53,9 @@ public interface ListDocumentsRequestOrBuilder
    * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/branches/{branch}`.
    * Use `default_branch` as the branch ID, to list documents under the default
    * branch.
-   * If the caller does not have permission to list [Documents][]s under this
+   *
+   * If the caller does not have permission to list
+   * [Document][google.cloud.discoveryengine.v1beta.Document]s under this
    * branch, regardless of whether or not this branch exists, a
    * `PERMISSION_DENIED` error is returned.
    * </pre>
@@ -71,6 +75,7 @@ public interface ListDocumentsRequestOrBuilder
    * Maximum number of [Document][google.cloud.discoveryengine.v1beta.Document]s
    * to return. If unspecified, defaults to 100. The maximum allowed value is
    * 1000. Values above 1000 will be coerced to 1000.
+   *
    * If this field is negative, an `INVALID_ARGUMENT` error is returned.
    * </pre>
    *
@@ -89,6 +94,7 @@ public interface ListDocumentsRequestOrBuilder
    * received from a previous
    * [DocumentService.ListDocuments][google.cloud.discoveryengine.v1beta.DocumentService.ListDocuments]
    * call. Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to
    * [DocumentService.ListDocuments][google.cloud.discoveryengine.v1beta.DocumentService.ListDocuments]
    * must match the call that provided the page token. Otherwise, an
@@ -109,6 +115,7 @@ public interface ListDocumentsRequestOrBuilder
    * received from a previous
    * [DocumentService.ListDocuments][google.cloud.discoveryengine.v1beta.DocumentService.ListDocuments]
    * call. Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to
    * [DocumentService.ListDocuments][google.cloud.discoveryengine.v1beta.DocumentService.ListDocuments]
    * must match the call that provided the page token. Otherwise, an

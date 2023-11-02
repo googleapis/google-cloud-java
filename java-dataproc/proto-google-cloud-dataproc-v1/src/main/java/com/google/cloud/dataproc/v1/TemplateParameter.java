@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,7 +47,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
 
   private TemplateParameter() {
     name_ = "";
-    fields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    fields_ = com.google.protobuf.LazyStringArrayList.emptyList();
     description_ = "";
   }
 
@@ -55,11 +55,6 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new TemplateParameter();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -143,7 +138,8 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
   public static final int FIELDS_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList fields_;
+  private com.google.protobuf.LazyStringArrayList fields_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -151,17 +147,21 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
    * Required. Paths to all fields that the parameter replaces.
    * A field is allowed to appear in at most one parameter's list of field
    * paths.
+   *
    * A field path is similar in syntax to a
    * [google.protobuf.FieldMask][google.protobuf.FieldMask]. For example, a
    * field path that references the zone field of a workflow template's cluster
    * selector would be specified as `placement.clusterSelector.zone`.
+   *
    * Also, field paths can reference fields using the following syntax:
+   *
    * * Values in maps can be referenced by key:
    *     * labels['key']
    *     * placement.clusterSelector.clusterLabels['key']
    *     * placement.managedCluster.labels['key']
    *     * placement.clusterSelector.clusterLabels['key']
    *     * jobs['step-id'].labels['key']
+   *
    * * Jobs in the jobs list can be referenced by step-id:
    *     * jobs['step-id'].hadoopJob.mainJarFileUri
    *     * jobs['step-id'].hiveJob.queryFileUri
@@ -170,18 +170,22 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
    *     * jobs['step-id'].hadoopJob.archiveUris[0]
    *     * jobs['step-id'].hadoopJob.fileUris[0]
    *     * jobs['step-id'].pySparkJob.pythonFileUris[0]
+   *
    * * Items in repeated fields can be referenced by a zero-based index:
    *     * jobs['step-id'].sparkJob.args[0]
+   *
    * * Other examples:
    *     * jobs['step-id'].hadoopJob.properties['key']
    *     * jobs['step-id'].hadoopJob.args[0]
    *     * jobs['step-id'].hiveJob.scriptVariables['key']
    *     * jobs['step-id'].hadoopJob.mainJarFileUri
    *     * placement.clusterSelector.zone
+   *
    * It may not be possible to parameterize maps and repeated fields in their
    * entirety since only individual map values and individual items in repeated
    * fields can be referenced. For example, the following field paths are
    * invalid:
+   *
    * - placement.clusterSelector.clusterLabels
    * - jobs['step-id'].sparkJob.args
    * </pre>
@@ -200,17 +204,21 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
    * Required. Paths to all fields that the parameter replaces.
    * A field is allowed to appear in at most one parameter's list of field
    * paths.
+   *
    * A field path is similar in syntax to a
    * [google.protobuf.FieldMask][google.protobuf.FieldMask]. For example, a
    * field path that references the zone field of a workflow template's cluster
    * selector would be specified as `placement.clusterSelector.zone`.
+   *
    * Also, field paths can reference fields using the following syntax:
+   *
    * * Values in maps can be referenced by key:
    *     * labels['key']
    *     * placement.clusterSelector.clusterLabels['key']
    *     * placement.managedCluster.labels['key']
    *     * placement.clusterSelector.clusterLabels['key']
    *     * jobs['step-id'].labels['key']
+   *
    * * Jobs in the jobs list can be referenced by step-id:
    *     * jobs['step-id'].hadoopJob.mainJarFileUri
    *     * jobs['step-id'].hiveJob.queryFileUri
@@ -219,18 +227,22 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
    *     * jobs['step-id'].hadoopJob.archiveUris[0]
    *     * jobs['step-id'].hadoopJob.fileUris[0]
    *     * jobs['step-id'].pySparkJob.pythonFileUris[0]
+   *
    * * Items in repeated fields can be referenced by a zero-based index:
    *     * jobs['step-id'].sparkJob.args[0]
+   *
    * * Other examples:
    *     * jobs['step-id'].hadoopJob.properties['key']
    *     * jobs['step-id'].hadoopJob.args[0]
    *     * jobs['step-id'].hiveJob.scriptVariables['key']
    *     * jobs['step-id'].hadoopJob.mainJarFileUri
    *     * placement.clusterSelector.zone
+   *
    * It may not be possible to parameterize maps and repeated fields in their
    * entirety since only individual map values and individual items in repeated
    * fields can be referenced. For example, the following field paths are
    * invalid:
+   *
    * - placement.clusterSelector.clusterLabels
    * - jobs['step-id'].sparkJob.args
    * </pre>
@@ -249,17 +261,21 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
    * Required. Paths to all fields that the parameter replaces.
    * A field is allowed to appear in at most one parameter's list of field
    * paths.
+   *
    * A field path is similar in syntax to a
    * [google.protobuf.FieldMask][google.protobuf.FieldMask]. For example, a
    * field path that references the zone field of a workflow template's cluster
    * selector would be specified as `placement.clusterSelector.zone`.
+   *
    * Also, field paths can reference fields using the following syntax:
+   *
    * * Values in maps can be referenced by key:
    *     * labels['key']
    *     * placement.clusterSelector.clusterLabels['key']
    *     * placement.managedCluster.labels['key']
    *     * placement.clusterSelector.clusterLabels['key']
    *     * jobs['step-id'].labels['key']
+   *
    * * Jobs in the jobs list can be referenced by step-id:
    *     * jobs['step-id'].hadoopJob.mainJarFileUri
    *     * jobs['step-id'].hiveJob.queryFileUri
@@ -268,18 +284,22 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
    *     * jobs['step-id'].hadoopJob.archiveUris[0]
    *     * jobs['step-id'].hadoopJob.fileUris[0]
    *     * jobs['step-id'].pySparkJob.pythonFileUris[0]
+   *
    * * Items in repeated fields can be referenced by a zero-based index:
    *     * jobs['step-id'].sparkJob.args[0]
+   *
    * * Other examples:
    *     * jobs['step-id'].hadoopJob.properties['key']
    *     * jobs['step-id'].hadoopJob.args[0]
    *     * jobs['step-id'].hiveJob.scriptVariables['key']
    *     * jobs['step-id'].hadoopJob.mainJarFileUri
    *     * placement.clusterSelector.zone
+   *
    * It may not be possible to parameterize maps and repeated fields in their
    * entirety since only individual map values and individual items in repeated
    * fields can be referenced. For example, the following field paths are
    * invalid:
+   *
    * - placement.clusterSelector.clusterLabels
    * - jobs['step-id'].sparkJob.args
    * </pre>
@@ -299,17 +319,21 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
    * Required. Paths to all fields that the parameter replaces.
    * A field is allowed to appear in at most one parameter's list of field
    * paths.
+   *
    * A field path is similar in syntax to a
    * [google.protobuf.FieldMask][google.protobuf.FieldMask]. For example, a
    * field path that references the zone field of a workflow template's cluster
    * selector would be specified as `placement.clusterSelector.zone`.
+   *
    * Also, field paths can reference fields using the following syntax:
+   *
    * * Values in maps can be referenced by key:
    *     * labels['key']
    *     * placement.clusterSelector.clusterLabels['key']
    *     * placement.managedCluster.labels['key']
    *     * placement.clusterSelector.clusterLabels['key']
    *     * jobs['step-id'].labels['key']
+   *
    * * Jobs in the jobs list can be referenced by step-id:
    *     * jobs['step-id'].hadoopJob.mainJarFileUri
    *     * jobs['step-id'].hiveJob.queryFileUri
@@ -318,18 +342,22 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
    *     * jobs['step-id'].hadoopJob.archiveUris[0]
    *     * jobs['step-id'].hadoopJob.fileUris[0]
    *     * jobs['step-id'].pySparkJob.pythonFileUris[0]
+   *
    * * Items in repeated fields can be referenced by a zero-based index:
    *     * jobs['step-id'].sparkJob.args[0]
+   *
    * * Other examples:
    *     * jobs['step-id'].hadoopJob.properties['key']
    *     * jobs['step-id'].hadoopJob.args[0]
    *     * jobs['step-id'].hiveJob.scriptVariables['key']
    *     * jobs['step-id'].hadoopJob.mainJarFileUri
    *     * placement.clusterSelector.zone
+   *
    * It may not be possible to parameterize maps and repeated fields in their
    * entirety since only individual map values and individual items in repeated
    * fields can be referenced. For example, the following field paths are
    * invalid:
+   *
    * - placement.clusterSelector.clusterLabels
    * - jobs['step-id'].sparkJob.args
    * </pre>
@@ -698,8 +726,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
       super.clear();
       bitField0_ = 0;
       name_ = "";
-      fields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      fields_ = com.google.protobuf.LazyStringArrayList.emptyList();
       description_ = "";
       validation_ = null;
       if (validationBuilder_ != null) {
@@ -733,7 +760,6 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.dataproc.v1.TemplateParameter buildPartial() {
       com.google.cloud.dataproc.v1.TemplateParameter result =
           new com.google.cloud.dataproc.v1.TemplateParameter(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -741,18 +767,14 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
       return result;
     }
 
-    private void buildPartialRepeatedFields(com.google.cloud.dataproc.v1.TemplateParameter result) {
-      if (((bitField0_ & 0x00000002) != 0)) {
-        fields_ = fields_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.fields_ = fields_;
-    }
-
     private void buildPartial0(com.google.cloud.dataproc.v1.TemplateParameter result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        fields_.makeImmutable();
+        result.fields_ = fields_;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.description_ = description_;
@@ -815,7 +837,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
       if (!other.fields_.isEmpty()) {
         if (fields_.isEmpty()) {
           fields_ = other.fields_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureFieldsIsMutable();
           fields_.addAll(other.fields_);
@@ -1036,14 +1058,14 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
       return this;
     }
 
-    private com.google.protobuf.LazyStringList fields_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList fields_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureFieldsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!fields_.isModifiable()) {
         fields_ = new com.google.protobuf.LazyStringArrayList(fields_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -1052,17 +1074,21 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      * Required. Paths to all fields that the parameter replaces.
      * A field is allowed to appear in at most one parameter's list of field
      * paths.
+     *
      * A field path is similar in syntax to a
      * [google.protobuf.FieldMask][google.protobuf.FieldMask]. For example, a
      * field path that references the zone field of a workflow template's cluster
      * selector would be specified as `placement.clusterSelector.zone`.
+     *
      * Also, field paths can reference fields using the following syntax:
+     *
      * * Values in maps can be referenced by key:
      *     * labels['key']
      *     * placement.clusterSelector.clusterLabels['key']
      *     * placement.managedCluster.labels['key']
      *     * placement.clusterSelector.clusterLabels['key']
      *     * jobs['step-id'].labels['key']
+     *
      * * Jobs in the jobs list can be referenced by step-id:
      *     * jobs['step-id'].hadoopJob.mainJarFileUri
      *     * jobs['step-id'].hiveJob.queryFileUri
@@ -1071,18 +1097,22 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      *     * jobs['step-id'].hadoopJob.archiveUris[0]
      *     * jobs['step-id'].hadoopJob.fileUris[0]
      *     * jobs['step-id'].pySparkJob.pythonFileUris[0]
+     *
      * * Items in repeated fields can be referenced by a zero-based index:
      *     * jobs['step-id'].sparkJob.args[0]
+     *
      * * Other examples:
      *     * jobs['step-id'].hadoopJob.properties['key']
      *     * jobs['step-id'].hadoopJob.args[0]
      *     * jobs['step-id'].hiveJob.scriptVariables['key']
      *     * jobs['step-id'].hadoopJob.mainJarFileUri
      *     * placement.clusterSelector.zone
+     *
      * It may not be possible to parameterize maps and repeated fields in their
      * entirety since only individual map values and individual items in repeated
      * fields can be referenced. For example, the following field paths are
      * invalid:
+     *
      * - placement.clusterSelector.clusterLabels
      * - jobs['step-id'].sparkJob.args
      * </pre>
@@ -1092,7 +1122,8 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      * @return A list containing the fields.
      */
     public com.google.protobuf.ProtocolStringList getFieldsList() {
-      return fields_.getUnmodifiableView();
+      fields_.makeImmutable();
+      return fields_;
     }
     /**
      *
@@ -1101,17 +1132,21 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      * Required. Paths to all fields that the parameter replaces.
      * A field is allowed to appear in at most one parameter's list of field
      * paths.
+     *
      * A field path is similar in syntax to a
      * [google.protobuf.FieldMask][google.protobuf.FieldMask]. For example, a
      * field path that references the zone field of a workflow template's cluster
      * selector would be specified as `placement.clusterSelector.zone`.
+     *
      * Also, field paths can reference fields using the following syntax:
+     *
      * * Values in maps can be referenced by key:
      *     * labels['key']
      *     * placement.clusterSelector.clusterLabels['key']
      *     * placement.managedCluster.labels['key']
      *     * placement.clusterSelector.clusterLabels['key']
      *     * jobs['step-id'].labels['key']
+     *
      * * Jobs in the jobs list can be referenced by step-id:
      *     * jobs['step-id'].hadoopJob.mainJarFileUri
      *     * jobs['step-id'].hiveJob.queryFileUri
@@ -1120,18 +1155,22 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      *     * jobs['step-id'].hadoopJob.archiveUris[0]
      *     * jobs['step-id'].hadoopJob.fileUris[0]
      *     * jobs['step-id'].pySparkJob.pythonFileUris[0]
+     *
      * * Items in repeated fields can be referenced by a zero-based index:
      *     * jobs['step-id'].sparkJob.args[0]
+     *
      * * Other examples:
      *     * jobs['step-id'].hadoopJob.properties['key']
      *     * jobs['step-id'].hadoopJob.args[0]
      *     * jobs['step-id'].hiveJob.scriptVariables['key']
      *     * jobs['step-id'].hadoopJob.mainJarFileUri
      *     * placement.clusterSelector.zone
+     *
      * It may not be possible to parameterize maps and repeated fields in their
      * entirety since only individual map values and individual items in repeated
      * fields can be referenced. For example, the following field paths are
      * invalid:
+     *
      * - placement.clusterSelector.clusterLabels
      * - jobs['step-id'].sparkJob.args
      * </pre>
@@ -1150,17 +1189,21 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      * Required. Paths to all fields that the parameter replaces.
      * A field is allowed to appear in at most one parameter's list of field
      * paths.
+     *
      * A field path is similar in syntax to a
      * [google.protobuf.FieldMask][google.protobuf.FieldMask]. For example, a
      * field path that references the zone field of a workflow template's cluster
      * selector would be specified as `placement.clusterSelector.zone`.
+     *
      * Also, field paths can reference fields using the following syntax:
+     *
      * * Values in maps can be referenced by key:
      *     * labels['key']
      *     * placement.clusterSelector.clusterLabels['key']
      *     * placement.managedCluster.labels['key']
      *     * placement.clusterSelector.clusterLabels['key']
      *     * jobs['step-id'].labels['key']
+     *
      * * Jobs in the jobs list can be referenced by step-id:
      *     * jobs['step-id'].hadoopJob.mainJarFileUri
      *     * jobs['step-id'].hiveJob.queryFileUri
@@ -1169,18 +1212,22 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      *     * jobs['step-id'].hadoopJob.archiveUris[0]
      *     * jobs['step-id'].hadoopJob.fileUris[0]
      *     * jobs['step-id'].pySparkJob.pythonFileUris[0]
+     *
      * * Items in repeated fields can be referenced by a zero-based index:
      *     * jobs['step-id'].sparkJob.args[0]
+     *
      * * Other examples:
      *     * jobs['step-id'].hadoopJob.properties['key']
      *     * jobs['step-id'].hadoopJob.args[0]
      *     * jobs['step-id'].hiveJob.scriptVariables['key']
      *     * jobs['step-id'].hadoopJob.mainJarFileUri
      *     * placement.clusterSelector.zone
+     *
      * It may not be possible to parameterize maps and repeated fields in their
      * entirety since only individual map values and individual items in repeated
      * fields can be referenced. For example, the following field paths are
      * invalid:
+     *
      * - placement.clusterSelector.clusterLabels
      * - jobs['step-id'].sparkJob.args
      * </pre>
@@ -1200,17 +1247,21 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      * Required. Paths to all fields that the parameter replaces.
      * A field is allowed to appear in at most one parameter's list of field
      * paths.
+     *
      * A field path is similar in syntax to a
      * [google.protobuf.FieldMask][google.protobuf.FieldMask]. For example, a
      * field path that references the zone field of a workflow template's cluster
      * selector would be specified as `placement.clusterSelector.zone`.
+     *
      * Also, field paths can reference fields using the following syntax:
+     *
      * * Values in maps can be referenced by key:
      *     * labels['key']
      *     * placement.clusterSelector.clusterLabels['key']
      *     * placement.managedCluster.labels['key']
      *     * placement.clusterSelector.clusterLabels['key']
      *     * jobs['step-id'].labels['key']
+     *
      * * Jobs in the jobs list can be referenced by step-id:
      *     * jobs['step-id'].hadoopJob.mainJarFileUri
      *     * jobs['step-id'].hiveJob.queryFileUri
@@ -1219,18 +1270,22 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      *     * jobs['step-id'].hadoopJob.archiveUris[0]
      *     * jobs['step-id'].hadoopJob.fileUris[0]
      *     * jobs['step-id'].pySparkJob.pythonFileUris[0]
+     *
      * * Items in repeated fields can be referenced by a zero-based index:
      *     * jobs['step-id'].sparkJob.args[0]
+     *
      * * Other examples:
      *     * jobs['step-id'].hadoopJob.properties['key']
      *     * jobs['step-id'].hadoopJob.args[0]
      *     * jobs['step-id'].hiveJob.scriptVariables['key']
      *     * jobs['step-id'].hadoopJob.mainJarFileUri
      *     * placement.clusterSelector.zone
+     *
      * It may not be possible to parameterize maps and repeated fields in their
      * entirety since only individual map values and individual items in repeated
      * fields can be referenced. For example, the following field paths are
      * invalid:
+     *
      * - placement.clusterSelector.clusterLabels
      * - jobs['step-id'].sparkJob.args
      * </pre>
@@ -1250,17 +1305,21 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      * Required. Paths to all fields that the parameter replaces.
      * A field is allowed to appear in at most one parameter's list of field
      * paths.
+     *
      * A field path is similar in syntax to a
      * [google.protobuf.FieldMask][google.protobuf.FieldMask]. For example, a
      * field path that references the zone field of a workflow template's cluster
      * selector would be specified as `placement.clusterSelector.zone`.
+     *
      * Also, field paths can reference fields using the following syntax:
+     *
      * * Values in maps can be referenced by key:
      *     * labels['key']
      *     * placement.clusterSelector.clusterLabels['key']
      *     * placement.managedCluster.labels['key']
      *     * placement.clusterSelector.clusterLabels['key']
      *     * jobs['step-id'].labels['key']
+     *
      * * Jobs in the jobs list can be referenced by step-id:
      *     * jobs['step-id'].hadoopJob.mainJarFileUri
      *     * jobs['step-id'].hiveJob.queryFileUri
@@ -1269,18 +1328,22 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      *     * jobs['step-id'].hadoopJob.archiveUris[0]
      *     * jobs['step-id'].hadoopJob.fileUris[0]
      *     * jobs['step-id'].pySparkJob.pythonFileUris[0]
+     *
      * * Items in repeated fields can be referenced by a zero-based index:
      *     * jobs['step-id'].sparkJob.args[0]
+     *
      * * Other examples:
      *     * jobs['step-id'].hadoopJob.properties['key']
      *     * jobs['step-id'].hadoopJob.args[0]
      *     * jobs['step-id'].hiveJob.scriptVariables['key']
      *     * jobs['step-id'].hadoopJob.mainJarFileUri
      *     * placement.clusterSelector.zone
+     *
      * It may not be possible to parameterize maps and repeated fields in their
      * entirety since only individual map values and individual items in repeated
      * fields can be referenced. For example, the following field paths are
      * invalid:
+     *
      * - placement.clusterSelector.clusterLabels
      * - jobs['step-id'].sparkJob.args
      * </pre>
@@ -1297,6 +1360,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
       }
       ensureFieldsIsMutable();
       fields_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1307,17 +1371,21 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      * Required. Paths to all fields that the parameter replaces.
      * A field is allowed to appear in at most one parameter's list of field
      * paths.
+     *
      * A field path is similar in syntax to a
      * [google.protobuf.FieldMask][google.protobuf.FieldMask]. For example, a
      * field path that references the zone field of a workflow template's cluster
      * selector would be specified as `placement.clusterSelector.zone`.
+     *
      * Also, field paths can reference fields using the following syntax:
+     *
      * * Values in maps can be referenced by key:
      *     * labels['key']
      *     * placement.clusterSelector.clusterLabels['key']
      *     * placement.managedCluster.labels['key']
      *     * placement.clusterSelector.clusterLabels['key']
      *     * jobs['step-id'].labels['key']
+     *
      * * Jobs in the jobs list can be referenced by step-id:
      *     * jobs['step-id'].hadoopJob.mainJarFileUri
      *     * jobs['step-id'].hiveJob.queryFileUri
@@ -1326,18 +1394,22 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      *     * jobs['step-id'].hadoopJob.archiveUris[0]
      *     * jobs['step-id'].hadoopJob.fileUris[0]
      *     * jobs['step-id'].pySparkJob.pythonFileUris[0]
+     *
      * * Items in repeated fields can be referenced by a zero-based index:
      *     * jobs['step-id'].sparkJob.args[0]
+     *
      * * Other examples:
      *     * jobs['step-id'].hadoopJob.properties['key']
      *     * jobs['step-id'].hadoopJob.args[0]
      *     * jobs['step-id'].hiveJob.scriptVariables['key']
      *     * jobs['step-id'].hadoopJob.mainJarFileUri
      *     * placement.clusterSelector.zone
+     *
      * It may not be possible to parameterize maps and repeated fields in their
      * entirety since only individual map values and individual items in repeated
      * fields can be referenced. For example, the following field paths are
      * invalid:
+     *
      * - placement.clusterSelector.clusterLabels
      * - jobs['step-id'].sparkJob.args
      * </pre>
@@ -1353,6 +1425,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
       }
       ensureFieldsIsMutable();
       fields_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1363,17 +1436,21 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      * Required. Paths to all fields that the parameter replaces.
      * A field is allowed to appear in at most one parameter's list of field
      * paths.
+     *
      * A field path is similar in syntax to a
      * [google.protobuf.FieldMask][google.protobuf.FieldMask]. For example, a
      * field path that references the zone field of a workflow template's cluster
      * selector would be specified as `placement.clusterSelector.zone`.
+     *
      * Also, field paths can reference fields using the following syntax:
+     *
      * * Values in maps can be referenced by key:
      *     * labels['key']
      *     * placement.clusterSelector.clusterLabels['key']
      *     * placement.managedCluster.labels['key']
      *     * placement.clusterSelector.clusterLabels['key']
      *     * jobs['step-id'].labels['key']
+     *
      * * Jobs in the jobs list can be referenced by step-id:
      *     * jobs['step-id'].hadoopJob.mainJarFileUri
      *     * jobs['step-id'].hiveJob.queryFileUri
@@ -1382,18 +1459,22 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      *     * jobs['step-id'].hadoopJob.archiveUris[0]
      *     * jobs['step-id'].hadoopJob.fileUris[0]
      *     * jobs['step-id'].pySparkJob.pythonFileUris[0]
+     *
      * * Items in repeated fields can be referenced by a zero-based index:
      *     * jobs['step-id'].sparkJob.args[0]
+     *
      * * Other examples:
      *     * jobs['step-id'].hadoopJob.properties['key']
      *     * jobs['step-id'].hadoopJob.args[0]
      *     * jobs['step-id'].hiveJob.scriptVariables['key']
      *     * jobs['step-id'].hadoopJob.mainJarFileUri
      *     * placement.clusterSelector.zone
+     *
      * It may not be possible to parameterize maps and repeated fields in their
      * entirety since only individual map values and individual items in repeated
      * fields can be referenced. For example, the following field paths are
      * invalid:
+     *
      * - placement.clusterSelector.clusterLabels
      * - jobs['step-id'].sparkJob.args
      * </pre>
@@ -1406,6 +1487,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
     public Builder addAllFields(java.lang.Iterable<java.lang.String> values) {
       ensureFieldsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, fields_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1416,17 +1498,21 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      * Required. Paths to all fields that the parameter replaces.
      * A field is allowed to appear in at most one parameter's list of field
      * paths.
+     *
      * A field path is similar in syntax to a
      * [google.protobuf.FieldMask][google.protobuf.FieldMask]. For example, a
      * field path that references the zone field of a workflow template's cluster
      * selector would be specified as `placement.clusterSelector.zone`.
+     *
      * Also, field paths can reference fields using the following syntax:
+     *
      * * Values in maps can be referenced by key:
      *     * labels['key']
      *     * placement.clusterSelector.clusterLabels['key']
      *     * placement.managedCluster.labels['key']
      *     * placement.clusterSelector.clusterLabels['key']
      *     * jobs['step-id'].labels['key']
+     *
      * * Jobs in the jobs list can be referenced by step-id:
      *     * jobs['step-id'].hadoopJob.mainJarFileUri
      *     * jobs['step-id'].hiveJob.queryFileUri
@@ -1435,18 +1521,22 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      *     * jobs['step-id'].hadoopJob.archiveUris[0]
      *     * jobs['step-id'].hadoopJob.fileUris[0]
      *     * jobs['step-id'].pySparkJob.pythonFileUris[0]
+     *
      * * Items in repeated fields can be referenced by a zero-based index:
      *     * jobs['step-id'].sparkJob.args[0]
+     *
      * * Other examples:
      *     * jobs['step-id'].hadoopJob.properties['key']
      *     * jobs['step-id'].hadoopJob.args[0]
      *     * jobs['step-id'].hiveJob.scriptVariables['key']
      *     * jobs['step-id'].hadoopJob.mainJarFileUri
      *     * placement.clusterSelector.zone
+     *
      * It may not be possible to parameterize maps and repeated fields in their
      * entirety since only individual map values and individual items in repeated
      * fields can be referenced. For example, the following field paths are
      * invalid:
+     *
      * - placement.clusterSelector.clusterLabels
      * - jobs['step-id'].sparkJob.args
      * </pre>
@@ -1456,8 +1546,9 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearFields() {
-      fields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      fields_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -1468,17 +1559,21 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      * Required. Paths to all fields that the parameter replaces.
      * A field is allowed to appear in at most one parameter's list of field
      * paths.
+     *
      * A field path is similar in syntax to a
      * [google.protobuf.FieldMask][google.protobuf.FieldMask]. For example, a
      * field path that references the zone field of a workflow template's cluster
      * selector would be specified as `placement.clusterSelector.zone`.
+     *
      * Also, field paths can reference fields using the following syntax:
+     *
      * * Values in maps can be referenced by key:
      *     * labels['key']
      *     * placement.clusterSelector.clusterLabels['key']
      *     * placement.managedCluster.labels['key']
      *     * placement.clusterSelector.clusterLabels['key']
      *     * jobs['step-id'].labels['key']
+     *
      * * Jobs in the jobs list can be referenced by step-id:
      *     * jobs['step-id'].hadoopJob.mainJarFileUri
      *     * jobs['step-id'].hiveJob.queryFileUri
@@ -1487,18 +1582,22 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
      *     * jobs['step-id'].hadoopJob.archiveUris[0]
      *     * jobs['step-id'].hadoopJob.fileUris[0]
      *     * jobs['step-id'].pySparkJob.pythonFileUris[0]
+     *
      * * Items in repeated fields can be referenced by a zero-based index:
      *     * jobs['step-id'].sparkJob.args[0]
+     *
      * * Other examples:
      *     * jobs['step-id'].hadoopJob.properties['key']
      *     * jobs['step-id'].hadoopJob.args[0]
      *     * jobs['step-id'].hiveJob.scriptVariables['key']
      *     * jobs['step-id'].hadoopJob.mainJarFileUri
      *     * placement.clusterSelector.zone
+     *
      * It may not be possible to parameterize maps and repeated fields in their
      * entirety since only individual map values and individual items in repeated
      * fields can be referenced. For example, the following field paths are
      * invalid:
+     *
      * - placement.clusterSelector.clusterLabels
      * - jobs['step-id'].sparkJob.args
      * </pre>
@@ -1515,6 +1614,7 @@ public final class TemplateParameter extends com.google.protobuf.GeneratedMessag
       checkByteStringIsUtf8(value);
       ensureFieldsIsMutable();
       fields_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

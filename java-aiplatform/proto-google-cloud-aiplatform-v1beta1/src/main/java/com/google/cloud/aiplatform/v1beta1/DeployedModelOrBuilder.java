@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -148,7 +148,8 @@ public interface DeployedModelOrBuilder
    * <pre>
    * Immutable. The ID of the DeployedModel. If not provided upon deployment,
    * Vertex AI will generate a value for this ID.
-   * This value should be 1-10 characters, and valid characters are /[0-9]/.
+   *
+   * This value should be 1-10 characters, and valid characters are `/[0-9]/`.
    * </pre>
    *
    * <code>string id = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -162,7 +163,8 @@ public interface DeployedModelOrBuilder
    * <pre>
    * Immutable. The ID of the DeployedModel. If not provided upon deployment,
    * Vertex AI will generate a value for this ID.
-   * This value should be 1-10 characters, and valid characters are /[0-9]/.
+   *
+   * This value should be 1-10 characters, and valid characters are `/[0-9]/`.
    * </pre>
    *
    * <code>string id = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -178,6 +180,7 @@ public interface DeployedModelOrBuilder
    * Required. The resource name of the Model that this is the deployment of.
    * Note that the Model may be in a different location than the DeployedModel's
    * Endpoint.
+   *
    * The resource name may contain version id or version alias to specify the
    * version.
    *  Example: `projects/{project}/locations/{location}/models/{model}&#64;2`
@@ -200,6 +203,7 @@ public interface DeployedModelOrBuilder
    * Required. The resource name of the Model that this is the deployment of.
    * Note that the Model may be in a different location than the DeployedModel's
    * Endpoint.
+   *
    * The resource name may contain version id or version alias to specify the
    * version.
    *  Example: `projects/{project}/locations/{location}/models/{model}&#64;2`
@@ -311,6 +315,7 @@ public interface DeployedModelOrBuilder
    *
    * <pre>
    * Explanation configuration for this DeployedModel.
+   *
    * When deploying a Model using
    * [EndpointService.DeployModel][google.cloud.aiplatform.v1beta1.EndpointService.DeployModel],
    * this value overrides the value of
@@ -338,6 +343,7 @@ public interface DeployedModelOrBuilder
    *
    * <pre>
    * Explanation configuration for this DeployedModel.
+   *
    * When deploying a Model using
    * [EndpointService.DeployModel][google.cloud.aiplatform.v1beta1.EndpointService.DeployModel],
    * this value overrides the value of
@@ -365,6 +371,7 @@ public interface DeployedModelOrBuilder
    *
    * <pre>
    * Explanation configuration for this DeployedModel.
+   *
    * When deploying a Model using
    * [EndpointService.DeployModel][google.cloud.aiplatform.v1beta1.EndpointService.DeployModel],
    * this value overrides the value of
@@ -411,6 +418,7 @@ public interface DeployedModelOrBuilder
    * email address of the service account. If this service account is not
    * specified, the container runs as a service account that doesn't have access
    * to the resource project.
+   *
    * Users deploying the Model must have the `iam.serviceAccounts.actAs`
    * permission on this service account.
    * </pre>
@@ -428,6 +436,7 @@ public interface DeployedModelOrBuilder
    * email address of the service account. If this service account is not
    * specified, the container runs as a service account that doesn't have access
    * to the resource project.
+   *
    * Users deploying the Model must have the `iam.serviceAccounts.actAs`
    * permission on this service account.
    * </pre>
@@ -444,6 +453,7 @@ public interface DeployedModelOrBuilder
    * <pre>
    * If true, the container of the DeployedModel instances will send `stderr`
    * and `stdout` streams to Cloud Logging.
+   *
    * Only supported for custom-trained Models and AutoML Tabular Models.
    * </pre>
    *
@@ -461,6 +471,7 @@ public interface DeployedModelOrBuilder
    * Logging.
    * These logs are like standard server access logs, containing
    * information like timestamp and latency for each prediction request.
+   *
    * Note that logs may incur a cost, especially if your project
    * receives prediction requests at a high queries per second rate (QPS).
    * Estimate your costs before enabling this option.
@@ -522,6 +533,6 @@ public interface DeployedModelOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.PrivateEndpointsOrBuilder getPrivateEndpointsOrBuilder();
 
-  public com.google.cloud.aiplatform.v1beta1.DeployedModel.PredictionResourcesCase
+  com.google.cloud.aiplatform.v1beta1.DeployedModel.PredictionResourcesCase
       getPredictionResourcesCase();
 }

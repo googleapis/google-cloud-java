@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -132,6 +132,37 @@ public interface RunnableOrBuilder
    *
    *
    * <pre>
+   * Optional. DisplayName is an optional field that can be provided by the
+   * caller. If provided, it will be used in logs and other outputs to identify
+   * the script, making it easier for users to understand the logs. If not
+   * provided the index of the runnable will be used for outputs.
+   * </pre>
+   *
+   * <code>string display_name = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The displayName.
+   */
+  java.lang.String getDisplayName();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. DisplayName is an optional field that can be provided by the
+   * caller. If provided, it will be used in logs and other outputs to identify
+   * the script, making it easier for users to understand the logs. If not
+   * provided the index of the runnable will be used for outputs.
+   * </pre>
+   *
+   * <code>string display_name = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for displayName.
+   */
+  com.google.protobuf.ByteString getDisplayNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Normally, a non-zero exit status causes the Task to fail. This flag allows
    * execution of other Runnables to continue instead.
    * </pre>
@@ -165,6 +196,7 @@ public interface RunnableOrBuilder
    * flag indicates that this Runnable must be run even if the Task has already
    * failed. This is useful for Runnables that copy output files off of the VM
    * or for debugging.
+   *
    * The always_run flag does not override the Task's overall max_run_duration.
    * If the max_run_duration has expired then no further Runnables will execute,
    * not even always_run Runnables.
@@ -307,5 +339,5 @@ public interface RunnableOrBuilder
    */
   java.lang.String getLabelsOrThrow(java.lang.String key);
 
-  public com.google.cloud.batch.v1alpha.Runnable.ExecutableCase getExecutableCase();
+  com.google.cloud.batch.v1alpha.Runnable.ExecutableCase getExecutableCase();
 }

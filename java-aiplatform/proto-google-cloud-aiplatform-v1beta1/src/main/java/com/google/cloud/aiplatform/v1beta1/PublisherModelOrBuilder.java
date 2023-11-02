@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -116,6 +116,50 @@ public interface PublisherModelOrBuilder
    *
    *
    * <pre>
+   * Optional. The parent that this model was customized from. E.g., Vision API,
+   * Natural Language API, LaMDA, T5, etc. Foundation models don't have parents.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.PublisherModel.Parent parent = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the parent field is set.
+   */
+  boolean hasParent();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The parent that this model was customized from. E.g., Vision API,
+   * Natural Language API, LaMDA, T5, etc. Foundation models don't have parents.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.PublisherModel.Parent parent = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The parent.
+   */
+  com.google.cloud.aiplatform.v1beta1.PublisherModel.Parent getParent();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The parent that this model was customized from. E.g., Vision API,
+   * Natural Language API, LaMDA, T5, etc. Foundation models don't have parents.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.PublisherModel.Parent parent = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.PublisherModel.ParentOrBuilder getParentOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Supported call-to-action options.
    * </pre>
    *
@@ -204,6 +248,35 @@ public interface PublisherModelOrBuilder
    * @return The bytes of the frameworks at the given index.
    */
   com.google.protobuf.ByteString getFrameworksBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Indicates the launch stage of the model.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.PublisherModel.LaunchStage launch_stage = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for launchStage.
+   */
+  int getLaunchStageValue();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Indicates the launch stage of the model.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.PublisherModel.LaunchStage launch_stage = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The launchStage.
+   */
+  com.google.cloud.aiplatform.v1beta1.PublisherModel.LaunchStage getLaunchStage();
 
   /**
    *

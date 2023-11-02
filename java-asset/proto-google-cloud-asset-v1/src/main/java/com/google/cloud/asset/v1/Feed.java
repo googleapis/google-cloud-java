@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,21 +43,16 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
 
   private Feed() {
     name_ = "";
-    assetNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    assetTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    assetNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    assetTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
     contentType_ = 0;
-    relationshipTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    relationshipTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Feed();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -86,6 +81,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
    * projects/{project_number}/feeds/{client-assigned_feed_identifier} or
    * folders/{folder_number}/feeds/{client-assigned_feed_identifier} or
    * organizations/{organization_number}/feeds/{client-assigned_feed_identifier}
+   *
    * The client-assigned feed identifier must be unique within the parent
    * project/folder/organization.
    * </pre>
@@ -114,6 +110,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
    * projects/{project_number}/feeds/{client-assigned_feed_identifier} or
    * folders/{folder_number}/feeds/{client-assigned_feed_identifier} or
    * organizations/{organization_number}/feeds/{client-assigned_feed_identifier}
+   *
    * The client-assigned feed identifier must be unique within the parent
    * project/folder/organization.
    * </pre>
@@ -138,7 +135,8 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
   public static final int ASSET_NAMES_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList assetNames_;
+  private com.google.protobuf.LazyStringArrayList assetNames_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -225,7 +223,8 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
   public static final int ASSET_TYPES_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList assetTypes_;
+  private com.google.protobuf.LazyStringArrayList assetTypes_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -234,6 +233,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
    * or both of asset_names and asset_types. Only asset updates matching
    * specified asset_names or asset_types are exported to the feed.
    * Example: `"compute.googleapis.com/Disk"`
+   *
    * For a list of all supported asset types, see
    * [Supported asset types](/asset-inventory/docs/supported-asset-types).
    * </pre>
@@ -253,6 +253,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
    * or both of asset_names and asset_types. Only asset updates matching
    * specified asset_names or asset_types are exported to the feed.
    * Example: `"compute.googleapis.com/Disk"`
+   *
    * For a list of all supported asset types, see
    * [Supported asset types](/asset-inventory/docs/supported-asset-types).
    * </pre>
@@ -272,6 +273,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
    * or both of asset_names and asset_types. Only asset updates matching
    * specified asset_names or asset_types are exported to the feed.
    * Example: `"compute.googleapis.com/Disk"`
+   *
    * For a list of all supported asset types, see
    * [Supported asset types](/asset-inventory/docs/supported-asset-types).
    * </pre>
@@ -292,6 +294,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
    * or both of asset_names and asset_types. Only asset updates matching
    * specified asset_names or asset_types are exported to the feed.
    * Example: `"compute.googleapis.com/Disk"`
+   *
    * For a list of all supported asset types, see
    * [Supported asset types](/asset-inventory/docs/supported-asset-types).
    * </pre>
@@ -415,6 +418,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
    * `temporal_asset`. Example: a Feed with expression ("temporal_asset.deleted
    * == true") will only publish Asset deletions. Other fields of `Expr` are
    * optional.
+   *
    * See our [user
    * guide](https://cloud.google.com/asset-inventory/docs/monitoring-asset-changes-with-condition)
    * for detailed instructions.
@@ -440,6 +444,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
    * `temporal_asset`. Example: a Feed with expression ("temporal_asset.deleted
    * == true") will only publish Asset deletions. Other fields of `Expr` are
    * optional.
+   *
    * See our [user
    * guide](https://cloud.google.com/asset-inventory/docs/monitoring-asset-changes-with-condition)
    * for detailed instructions.
@@ -465,6 +470,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
    * `temporal_asset`. Example: a Feed with expression ("temporal_asset.deleted
    * == true") will only publish Asset deletions. Other fields of `Expr` are
    * optional.
+   *
    * See our [user
    * guide](https://cloud.google.com/asset-inventory/docs/monitoring-asset-changes-with-condition)
    * for detailed instructions.
@@ -480,7 +486,8 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
   public static final int RELATIONSHIP_TYPES_FIELD_NUMBER = 7;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList relationshipTypes_;
+  private com.google.protobuf.LazyStringArrayList relationshipTypes_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -887,10 +894,8 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       bitField0_ = 0;
       name_ = "";
-      assetNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
-      assetTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      assetNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      assetTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       contentType_ = 0;
       feedOutputConfig_ = null;
       if (feedOutputConfigBuilder_ != null) {
@@ -902,8 +907,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
         conditionBuilder_.dispose();
         conditionBuilder_ = null;
       }
-      relationshipTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000040);
+      relationshipTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -930,7 +934,6 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.asset.v1.Feed buildPartial() {
       com.google.cloud.asset.v1.Feed result = new com.google.cloud.asset.v1.Feed(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -938,28 +941,18 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
       return result;
     }
 
-    private void buildPartialRepeatedFields(com.google.cloud.asset.v1.Feed result) {
-      if (((bitField0_ & 0x00000002) != 0)) {
-        assetNames_ = assetNames_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.assetNames_ = assetNames_;
-      if (((bitField0_ & 0x00000004) != 0)) {
-        assetTypes_ = assetTypes_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.assetTypes_ = assetTypes_;
-      if (((bitField0_ & 0x00000040) != 0)) {
-        relationshipTypes_ = relationshipTypes_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000040);
-      }
-      result.relationshipTypes_ = relationshipTypes_;
-    }
-
     private void buildPartial0(com.google.cloud.asset.v1.Feed result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        assetNames_.makeImmutable();
+        result.assetNames_ = assetNames_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        assetTypes_.makeImmutable();
+        result.assetTypes_ = assetTypes_;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.contentType_ = contentType_;
@@ -970,6 +963,10 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.condition_ = conditionBuilder_ == null ? condition_ : conditionBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        relationshipTypes_.makeImmutable();
+        result.relationshipTypes_ = relationshipTypes_;
       }
     }
 
@@ -1026,7 +1023,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
       if (!other.assetNames_.isEmpty()) {
         if (assetNames_.isEmpty()) {
           assetNames_ = other.assetNames_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureAssetNamesIsMutable();
           assetNames_.addAll(other.assetNames_);
@@ -1036,7 +1033,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
       if (!other.assetTypes_.isEmpty()) {
         if (assetTypes_.isEmpty()) {
           assetTypes_ = other.assetTypes_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ |= 0x00000004;
         } else {
           ensureAssetTypesIsMutable();
           assetTypes_.addAll(other.assetTypes_);
@@ -1055,7 +1052,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
       if (!other.relationshipTypes_.isEmpty()) {
         if (relationshipTypes_.isEmpty()) {
           relationshipTypes_ = other.relationshipTypes_;
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ |= 0x00000040;
         } else {
           ensureRelationshipTypesIsMutable();
           relationshipTypes_.addAll(other.relationshipTypes_);
@@ -1162,6 +1159,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * projects/{project_number}/feeds/{client-assigned_feed_identifier} or
      * folders/{folder_number}/feeds/{client-assigned_feed_identifier} or
      * organizations/{organization_number}/feeds/{client-assigned_feed_identifier}
+     *
      * The client-assigned feed identifier must be unique within the parent
      * project/folder/organization.
      * </pre>
@@ -1189,6 +1187,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * projects/{project_number}/feeds/{client-assigned_feed_identifier} or
      * folders/{folder_number}/feeds/{client-assigned_feed_identifier} or
      * organizations/{organization_number}/feeds/{client-assigned_feed_identifier}
+     *
      * The client-assigned feed identifier must be unique within the parent
      * project/folder/organization.
      * </pre>
@@ -1216,6 +1215,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * projects/{project_number}/feeds/{client-assigned_feed_identifier} or
      * folders/{folder_number}/feeds/{client-assigned_feed_identifier} or
      * organizations/{organization_number}/feeds/{client-assigned_feed_identifier}
+     *
      * The client-assigned feed identifier must be unique within the parent
      * project/folder/organization.
      * </pre>
@@ -1242,6 +1242,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * projects/{project_number}/feeds/{client-assigned_feed_identifier} or
      * folders/{folder_number}/feeds/{client-assigned_feed_identifier} or
      * organizations/{organization_number}/feeds/{client-assigned_feed_identifier}
+     *
      * The client-assigned feed identifier must be unique within the parent
      * project/folder/organization.
      * </pre>
@@ -1264,6 +1265,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * projects/{project_number}/feeds/{client-assigned_feed_identifier} or
      * folders/{folder_number}/feeds/{client-assigned_feed_identifier} or
      * organizations/{organization_number}/feeds/{client-assigned_feed_identifier}
+     *
      * The client-assigned feed identifier must be unique within the parent
      * project/folder/organization.
      * </pre>
@@ -1284,14 +1286,14 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList assetNames_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList assetNames_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureAssetNamesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!assetNames_.isModifiable()) {
         assetNames_ = new com.google.protobuf.LazyStringArrayList(assetNames_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -1311,7 +1313,8 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the assetNames.
      */
     public com.google.protobuf.ProtocolStringList getAssetNamesList() {
-      return assetNames_.getUnmodifiableView();
+      assetNames_.makeImmutable();
+      return assetNames_;
     }
     /**
      *
@@ -1400,6 +1403,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
       }
       ensureAssetNamesIsMutable();
       assetNames_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1427,6 +1431,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
       }
       ensureAssetNamesIsMutable();
       assetNames_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1451,6 +1456,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllAssetNames(java.lang.Iterable<java.lang.String> values) {
       ensureAssetNamesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, assetNames_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1472,8 +1478,9 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAssetNames() {
-      assetNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      assetNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -1502,18 +1509,19 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureAssetNamesIsMutable();
       assetNames_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList assetTypes_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList assetTypes_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureAssetTypesIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!assetTypes_.isModifiable()) {
         assetTypes_ = new com.google.protobuf.LazyStringArrayList(assetTypes_);
-        bitField0_ |= 0x00000004;
       }
+      bitField0_ |= 0x00000004;
     }
     /**
      *
@@ -1523,6 +1531,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * or both of asset_names and asset_types. Only asset updates matching
      * specified asset_names or asset_types are exported to the feed.
      * Example: `"compute.googleapis.com/Disk"`
+     *
      * For a list of all supported asset types, see
      * [Supported asset types](/asset-inventory/docs/supported-asset-types).
      * </pre>
@@ -1532,7 +1541,8 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the assetTypes.
      */
     public com.google.protobuf.ProtocolStringList getAssetTypesList() {
-      return assetTypes_.getUnmodifiableView();
+      assetTypes_.makeImmutable();
+      return assetTypes_;
     }
     /**
      *
@@ -1542,6 +1552,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * or both of asset_names and asset_types. Only asset updates matching
      * specified asset_names or asset_types are exported to the feed.
      * Example: `"compute.googleapis.com/Disk"`
+     *
      * For a list of all supported asset types, see
      * [Supported asset types](/asset-inventory/docs/supported-asset-types).
      * </pre>
@@ -1561,6 +1572,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * or both of asset_names and asset_types. Only asset updates matching
      * specified asset_names or asset_types are exported to the feed.
      * Example: `"compute.googleapis.com/Disk"`
+     *
      * For a list of all supported asset types, see
      * [Supported asset types](/asset-inventory/docs/supported-asset-types).
      * </pre>
@@ -1581,6 +1593,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * or both of asset_names and asset_types. Only asset updates matching
      * specified asset_names or asset_types are exported to the feed.
      * Example: `"compute.googleapis.com/Disk"`
+     *
      * For a list of all supported asset types, see
      * [Supported asset types](/asset-inventory/docs/supported-asset-types).
      * </pre>
@@ -1601,6 +1614,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * or both of asset_names and asset_types. Only asset updates matching
      * specified asset_names or asset_types are exported to the feed.
      * Example: `"compute.googleapis.com/Disk"`
+     *
      * For a list of all supported asset types, see
      * [Supported asset types](/asset-inventory/docs/supported-asset-types).
      * </pre>
@@ -1617,6 +1631,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
       }
       ensureAssetTypesIsMutable();
       assetTypes_.set(index, value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1628,6 +1643,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * or both of asset_names and asset_types. Only asset updates matching
      * specified asset_names or asset_types are exported to the feed.
      * Example: `"compute.googleapis.com/Disk"`
+     *
      * For a list of all supported asset types, see
      * [Supported asset types](/asset-inventory/docs/supported-asset-types).
      * </pre>
@@ -1643,6 +1659,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
       }
       ensureAssetTypesIsMutable();
       assetTypes_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1654,6 +1671,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * or both of asset_names and asset_types. Only asset updates matching
      * specified asset_names or asset_types are exported to the feed.
      * Example: `"compute.googleapis.com/Disk"`
+     *
      * For a list of all supported asset types, see
      * [Supported asset types](/asset-inventory/docs/supported-asset-types).
      * </pre>
@@ -1666,6 +1684,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllAssetTypes(java.lang.Iterable<java.lang.String> values) {
       ensureAssetTypesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, assetTypes_);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1677,6 +1696,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * or both of asset_names and asset_types. Only asset updates matching
      * specified asset_names or asset_types are exported to the feed.
      * Example: `"compute.googleapis.com/Disk"`
+     *
      * For a list of all supported asset types, see
      * [Supported asset types](/asset-inventory/docs/supported-asset-types).
      * </pre>
@@ -1686,8 +1706,9 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAssetTypes() {
-      assetTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      assetTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000004);
+      ;
       onChanged();
       return this;
     }
@@ -1699,6 +1720,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * or both of asset_names and asset_types. Only asset updates matching
      * specified asset_names or asset_types are exported to the feed.
      * Example: `"compute.googleapis.com/Disk"`
+     *
      * For a list of all supported asset types, see
      * [Supported asset types](/asset-inventory/docs/supported-asset-types).
      * </pre>
@@ -1715,6 +1737,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureAssetTypesIsMutable();
       assetTypes_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2042,6 +2065,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * `temporal_asset`. Example: a Feed with expression ("temporal_asset.deleted
      * == true") will only publish Asset deletions. Other fields of `Expr` are
      * optional.
+     *
      * See our [user
      * guide](https://cloud.google.com/asset-inventory/docs/monitoring-asset-changes-with-condition)
      * for detailed instructions.
@@ -2066,6 +2090,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * `temporal_asset`. Example: a Feed with expression ("temporal_asset.deleted
      * == true") will only publish Asset deletions. Other fields of `Expr` are
      * optional.
+     *
      * See our [user
      * guide](https://cloud.google.com/asset-inventory/docs/monitoring-asset-changes-with-condition)
      * for detailed instructions.
@@ -2094,6 +2119,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * `temporal_asset`. Example: a Feed with expression ("temporal_asset.deleted
      * == true") will only publish Asset deletions. Other fields of `Expr` are
      * optional.
+     *
      * See our [user
      * guide](https://cloud.google.com/asset-inventory/docs/monitoring-asset-changes-with-condition)
      * for detailed instructions.
@@ -2126,6 +2152,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * `temporal_asset`. Example: a Feed with expression ("temporal_asset.deleted
      * == true") will only publish Asset deletions. Other fields of `Expr` are
      * optional.
+     *
      * See our [user
      * guide](https://cloud.google.com/asset-inventory/docs/monitoring-asset-changes-with-condition)
      * for detailed instructions.
@@ -2155,6 +2182,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * `temporal_asset`. Example: a Feed with expression ("temporal_asset.deleted
      * == true") will only publish Asset deletions. Other fields of `Expr` are
      * optional.
+     *
      * See our [user
      * guide](https://cloud.google.com/asset-inventory/docs/monitoring-asset-changes-with-condition)
      * for detailed instructions.
@@ -2190,6 +2218,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * `temporal_asset`. Example: a Feed with expression ("temporal_asset.deleted
      * == true") will only publish Asset deletions. Other fields of `Expr` are
      * optional.
+     *
      * See our [user
      * guide](https://cloud.google.com/asset-inventory/docs/monitoring-asset-changes-with-condition)
      * for detailed instructions.
@@ -2219,6 +2248,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * `temporal_asset`. Example: a Feed with expression ("temporal_asset.deleted
      * == true") will only publish Asset deletions. Other fields of `Expr` are
      * optional.
+     *
      * See our [user
      * guide](https://cloud.google.com/asset-inventory/docs/monitoring-asset-changes-with-condition)
      * for detailed instructions.
@@ -2243,6 +2273,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * `temporal_asset`. Example: a Feed with expression ("temporal_asset.deleted
      * == true") will only publish Asset deletions. Other fields of `Expr` are
      * optional.
+     *
      * See our [user
      * guide](https://cloud.google.com/asset-inventory/docs/monitoring-asset-changes-with-condition)
      * for detailed instructions.
@@ -2269,6 +2300,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * `temporal_asset`. Example: a Feed with expression ("temporal_asset.deleted
      * == true") will only publish Asset deletions. Other fields of `Expr` are
      * optional.
+     *
      * See our [user
      * guide](https://cloud.google.com/asset-inventory/docs/monitoring-asset-changes-with-condition)
      * for detailed instructions.
@@ -2289,14 +2321,14 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
       return conditionBuilder_;
     }
 
-    private com.google.protobuf.LazyStringList relationshipTypes_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList relationshipTypes_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureRelationshipTypesIsMutable() {
-      if (!((bitField0_ & 0x00000040) != 0)) {
+      if (!relationshipTypes_.isModifiable()) {
         relationshipTypes_ = new com.google.protobuf.LazyStringArrayList(relationshipTypes_);
-        bitField0_ |= 0x00000040;
       }
+      bitField0_ |= 0x00000040;
     }
     /**
      *
@@ -2325,7 +2357,8 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the relationshipTypes.
      */
     public com.google.protobuf.ProtocolStringList getRelationshipTypesList() {
-      return relationshipTypes_.getUnmodifiableView();
+      relationshipTypes_.makeImmutable();
+      return relationshipTypes_;
     }
     /**
      *
@@ -2450,6 +2483,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
       }
       ensureRelationshipTypesIsMutable();
       relationshipTypes_.set(index, value);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2486,6 +2520,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
       }
       ensureRelationshipTypesIsMutable();
       relationshipTypes_.add(value);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2519,6 +2554,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllRelationshipTypes(java.lang.Iterable<java.lang.String> values) {
       ensureRelationshipTypesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, relationshipTypes_);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2549,8 +2585,9 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRelationshipTypes() {
-      relationshipTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      relationshipTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000040);
+      ;
       onChanged();
       return this;
     }
@@ -2588,6 +2625,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureRelationshipTypesIsMutable();
       relationshipTypes_.add(value);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }

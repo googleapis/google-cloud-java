@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -230,5 +230,5 @@ public interface RestrictionsOrBuilder
    */
   com.google.api.apikeys.v2.ApiTargetOrBuilder getApiTargetsOrBuilder(int index);
 
-  public com.google.api.apikeys.v2.Restrictions.ClientRestrictionsCase getClientRestrictionsCase();
+  com.google.api.apikeys.v2.Restrictions.ClientRestrictionsCase getClientRestrictionsCase();
 }

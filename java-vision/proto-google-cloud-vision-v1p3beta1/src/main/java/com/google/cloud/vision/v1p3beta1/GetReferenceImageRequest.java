@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class GetReferenceImageRequest extends com.google.protobuf.Generate
     return new GetReferenceImageRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.vision.v1p3beta1.ProductSearchServiceProto
         .internal_static_google_cloud_vision_v1p3beta1_GetReferenceImageRequest_descriptor;
@@ -76,7 +71,9 @@ public final class GetReferenceImageRequest extends com.google.protobuf.Generate
    *
    * <pre>
    * Required. The resource name of the ReferenceImage to get.
+   *
    * Format is:
+   *
    * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID/referenceImages/IMAGE_ID`.
    * </pre>
    *
@@ -103,7 +100,9 @@ public final class GetReferenceImageRequest extends com.google.protobuf.Generate
    *
    * <pre>
    * Required. The resource name of the ReferenceImage to get.
+   *
    * Format is:
+   *
    * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID/referenceImages/IMAGE_ID`.
    * </pre>
    *
@@ -475,7 +474,9 @@ public final class GetReferenceImageRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. The resource name of the ReferenceImage to get.
+     *
      * Format is:
+     *
      * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID/referenceImages/IMAGE_ID`.
      * </pre>
      *
@@ -501,7 +502,9 @@ public final class GetReferenceImageRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. The resource name of the ReferenceImage to get.
+     *
      * Format is:
+     *
      * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID/referenceImages/IMAGE_ID`.
      * </pre>
      *
@@ -527,7 +530,9 @@ public final class GetReferenceImageRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. The resource name of the ReferenceImage to get.
+     *
      * Format is:
+     *
      * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID/referenceImages/IMAGE_ID`.
      * </pre>
      *
@@ -552,7 +557,9 @@ public final class GetReferenceImageRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. The resource name of the ReferenceImage to get.
+     *
      * Format is:
+     *
      * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID/referenceImages/IMAGE_ID`.
      * </pre>
      *
@@ -573,7 +580,9 @@ public final class GetReferenceImageRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. The resource name of the ReferenceImage to get.
+     *
      * Format is:
+     *
      * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID/referenceImages/IMAGE_ID`.
      * </pre>
      *

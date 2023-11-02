@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,6 +20,7 @@ import com.google.api.core.BetaApi;
 import com.google.cloud.baremetalsolution.v2.BareMetalSolutionGrpc.BareMetalSolutionImplBase;
 import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
+import com.google.protobuf.Empty;
 import io.grpc.stub.StreamObserver;
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -122,6 +123,27 @@ public class MockBareMetalSolutionImpl extends BareMetalSolutionImplBase {
   }
 
   @Override
+  public void renameInstance(
+      RenameInstanceRequest request, StreamObserver<Instance> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Instance) {
+      requests.add(request);
+      responseObserver.onNext(((Instance) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method RenameInstance, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Instance.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void resetInstance(
       ResetInstanceRequest request, StreamObserver<Operation> responseObserver) {
     Object response = responses.poll();
@@ -185,6 +207,48 @@ public class MockBareMetalSolutionImpl extends BareMetalSolutionImplBase {
   }
 
   @Override
+  public void enableInteractiveSerialConsole(
+      EnableInteractiveSerialConsoleRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method EnableInteractiveSerialConsole, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void disableInteractiveSerialConsole(
+      DisableInteractiveSerialConsoleRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DisableInteractiveSerialConsole, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void detachLun(DetachLunRequest request, StreamObserver<Operation> responseObserver) {
     Object response = responses.poll();
     if (response instanceof Operation) {
@@ -200,6 +264,67 @@ public class MockBareMetalSolutionImpl extends BareMetalSolutionImplBase {
                   "Unrecognized response type %s for method DetachLun, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listSSHKeys(
+      ListSSHKeysRequest request, StreamObserver<ListSSHKeysResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListSSHKeysResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListSSHKeysResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListSSHKeys, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListSSHKeysResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createSSHKey(CreateSSHKeyRequest request, StreamObserver<SSHKey> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof SSHKey) {
+      requests.add(request);
+      responseObserver.onNext(((SSHKey) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateSSHKey, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  SSHKey.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteSSHKey(DeleteSSHKeyRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteSSHKey, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
                   Exception.class.getName())));
     }
   }
@@ -260,6 +385,46 @@ public class MockBareMetalSolutionImpl extends BareMetalSolutionImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateVolume, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void renameVolume(RenameVolumeRequest request, StreamObserver<Volume> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Volume) {
+      requests.add(request);
+      responseObserver.onNext(((Volume) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method RenameVolume, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Volume.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void evictVolume(EvictVolumeRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method EvictVolume, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -371,6 +536,112 @@ public class MockBareMetalSolutionImpl extends BareMetalSolutionImplBase {
   }
 
   @Override
+  public void createVolumeSnapshot(
+      CreateVolumeSnapshotRequest request, StreamObserver<VolumeSnapshot> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof VolumeSnapshot) {
+      requests.add(request);
+      responseObserver.onNext(((VolumeSnapshot) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateVolumeSnapshot, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  VolumeSnapshot.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void restoreVolumeSnapshot(
+      RestoreVolumeSnapshotRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method RestoreVolumeSnapshot, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteVolumeSnapshot(
+      DeleteVolumeSnapshotRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteVolumeSnapshot, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getVolumeSnapshot(
+      GetVolumeSnapshotRequest request, StreamObserver<VolumeSnapshot> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof VolumeSnapshot) {
+      requests.add(request);
+      responseObserver.onNext(((VolumeSnapshot) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetVolumeSnapshot, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  VolumeSnapshot.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listVolumeSnapshots(
+      ListVolumeSnapshotsRequest request,
+      StreamObserver<ListVolumeSnapshotsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListVolumeSnapshotsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListVolumeSnapshotsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListVolumeSnapshots, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListVolumeSnapshotsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void getLun(GetLunRequest request, StreamObserver<Lun> responseObserver) {
     Object response = responses.poll();
     if (response instanceof Lun) {
@@ -406,6 +677,26 @@ public class MockBareMetalSolutionImpl extends BareMetalSolutionImplBase {
                   "Unrecognized response type %s for method ListLuns, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListLunsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void evictLun(EvictLunRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method EvictLun, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
                   Exception.class.getName())));
     }
   }
@@ -468,6 +759,220 @@ public class MockBareMetalSolutionImpl extends BareMetalSolutionImplBase {
                   "Unrecognized response type %s for method UpdateNfsShare, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createNfsShare(
+      CreateNfsShareRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateNfsShare, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void renameNfsShare(
+      RenameNfsShareRequest request, StreamObserver<NfsShare> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof NfsShare) {
+      requests.add(request);
+      responseObserver.onNext(((NfsShare) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method RenameNfsShare, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  NfsShare.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteNfsShare(
+      DeleteNfsShareRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteNfsShare, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listProvisioningQuotas(
+      ListProvisioningQuotasRequest request,
+      StreamObserver<ListProvisioningQuotasResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListProvisioningQuotasResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListProvisioningQuotasResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListProvisioningQuotas, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListProvisioningQuotasResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void submitProvisioningConfig(
+      SubmitProvisioningConfigRequest request,
+      StreamObserver<SubmitProvisioningConfigResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof SubmitProvisioningConfigResponse) {
+      requests.add(request);
+      responseObserver.onNext(((SubmitProvisioningConfigResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method SubmitProvisioningConfig, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  SubmitProvisioningConfigResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getProvisioningConfig(
+      GetProvisioningConfigRequest request, StreamObserver<ProvisioningConfig> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ProvisioningConfig) {
+      requests.add(request);
+      responseObserver.onNext(((ProvisioningConfig) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetProvisioningConfig, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ProvisioningConfig.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createProvisioningConfig(
+      CreateProvisioningConfigRequest request,
+      StreamObserver<ProvisioningConfig> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ProvisioningConfig) {
+      requests.add(request);
+      responseObserver.onNext(((ProvisioningConfig) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateProvisioningConfig, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ProvisioningConfig.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateProvisioningConfig(
+      UpdateProvisioningConfigRequest request,
+      StreamObserver<ProvisioningConfig> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ProvisioningConfig) {
+      requests.add(request);
+      responseObserver.onNext(((ProvisioningConfig) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateProvisioningConfig, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ProvisioningConfig.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void renameNetwork(
+      RenameNetworkRequest request, StreamObserver<Network> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Network) {
+      requests.add(request);
+      responseObserver.onNext(((Network) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method RenameNetwork, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Network.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listOSImages(
+      ListOSImagesRequest request, StreamObserver<ListOSImagesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListOSImagesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListOSImagesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListOSImages, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListOSImagesResponse.class.getName(),
                   Exception.class.getName())));
     }
   }

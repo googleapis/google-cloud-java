@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,11 +51,6 @@ public final class ListTransferableSkusRequest extends com.google.protobuf.Gener
     return new ListTransferableSkusRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.channel.v1.ServiceProto
         .internal_static_google_cloud_channel_v1_ListTransferableSkusRequest_descriptor;
@@ -72,6 +67,8 @@ public final class ListTransferableSkusRequest extends com.google.protobuf.Gener
   }
 
   private int transferredCustomerIdentityCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object transferredCustomerIdentity_;
 
   public enum TransferredCustomerIdentityCase

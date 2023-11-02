@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,11 +49,6 @@ public final class UndeleteProjectRequest extends com.google.protobuf.GeneratedM
     return new UndeleteProjectRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.resourcemanager.v3.ProjectsProto
         .internal_static_google_cloud_resourcemanager_v3_UndeleteProjectRequest_descriptor;
@@ -78,6 +73,7 @@ public final class UndeleteProjectRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Required. The name of the project (for example, `projects/415104041262`).
+   *
    * Required.
    * </pre>
    *
@@ -104,6 +100,7 @@ public final class UndeleteProjectRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Required. The name of the project (for example, `projects/415104041262`).
+   *
    * Required.
    * </pre>
    *
@@ -477,6 +474,7 @@ public final class UndeleteProjectRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The name of the project (for example, `projects/415104041262`).
+     *
      * Required.
      * </pre>
      *
@@ -502,6 +500,7 @@ public final class UndeleteProjectRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The name of the project (for example, `projects/415104041262`).
+     *
      * Required.
      * </pre>
      *
@@ -527,6 +526,7 @@ public final class UndeleteProjectRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The name of the project (for example, `projects/415104041262`).
+     *
      * Required.
      * </pre>
      *
@@ -551,6 +551,7 @@ public final class UndeleteProjectRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The name of the project (for example, `projects/415104041262`).
+     *
      * Required.
      * </pre>
      *
@@ -571,6 +572,7 @@ public final class UndeleteProjectRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The name of the project (for example, `projects/415104041262`).
+     *
      * Required.
      * </pre>
      *

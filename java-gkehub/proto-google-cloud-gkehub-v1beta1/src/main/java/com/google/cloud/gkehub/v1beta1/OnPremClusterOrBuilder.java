@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ public interface OnPremClusterOrBuilder
    * <pre>
    * Immutable. Self-link of the GCP resource for the GKE On-Prem cluster. For
    * example:
+   *
    *  //gkeonprem.googleapis.com/projects/my-project/locations/us-west1-a/vmwareClusters/my-cluster
    *  //gkeonprem.googleapis.com/projects/my-project/locations/us-west1-a/bareMetalClusters/my-cluster
    * </pre>
@@ -44,6 +45,7 @@ public interface OnPremClusterOrBuilder
    * <pre>
    * Immutable. Self-link of the GCP resource for the GKE On-Prem cluster. For
    * example:
+   *
    *  //gkeonprem.googleapis.com/projects/my-project/locations/us-west1-a/vmwareClusters/my-cluster
    *  //gkeonprem.googleapis.com/projects/my-project/locations/us-west1-a/bareMetalClusters/my-cluster
    * </pre>

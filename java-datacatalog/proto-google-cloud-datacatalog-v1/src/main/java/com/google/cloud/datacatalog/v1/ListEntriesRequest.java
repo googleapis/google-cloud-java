@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,11 +49,6 @@ public final class ListEntriesRequest extends com.google.protobuf.GeneratedMessa
     return new ListEntriesRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datacatalog.v1.Datacatalog
         .internal_static_google_cloud_datacatalog_v1_ListEntriesRequest_descriptor;
@@ -78,6 +73,7 @@ public final class ListEntriesRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Required. The name of the entry group that contains the entries to list.
+   *
    * Can be provided in URL format.
    * </pre>
    *
@@ -104,6 +100,7 @@ public final class ListEntriesRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Required. The name of the entry group that contains the entries to list.
+   *
    * Can be provided in URL format.
    * </pre>
    *
@@ -206,6 +203,7 @@ public final class ListEntriesRequest extends com.google.protobuf.GeneratedMessa
    * <pre>
    * The fields to return for each entry. If empty or omitted, all
    * fields are returned.
+   *
    * For example, to return a list of entries with only the `name` field,
    * set `read_mask` to only one path with the `name` value.
    * </pre>
@@ -224,6 +222,7 @@ public final class ListEntriesRequest extends com.google.protobuf.GeneratedMessa
    * <pre>
    * The fields to return for each entry. If empty or omitted, all
    * fields are returned.
+   *
    * For example, to return a list of entries with only the `name` field,
    * set `read_mask` to only one path with the `name` value.
    * </pre>
@@ -242,6 +241,7 @@ public final class ListEntriesRequest extends com.google.protobuf.GeneratedMessa
    * <pre>
    * The fields to return for each entry. If empty or omitted, all
    * fields are returned.
+   *
    * For example, to return a list of entries with only the `name` field,
    * set `read_mask` to only one path with the `name` value.
    * </pre>
@@ -679,6 +679,7 @@ public final class ListEntriesRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The name of the entry group that contains the entries to list.
+     *
      * Can be provided in URL format.
      * </pre>
      *
@@ -704,6 +705,7 @@ public final class ListEntriesRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The name of the entry group that contains the entries to list.
+     *
      * Can be provided in URL format.
      * </pre>
      *
@@ -729,6 +731,7 @@ public final class ListEntriesRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The name of the entry group that contains the entries to list.
+     *
      * Can be provided in URL format.
      * </pre>
      *
@@ -753,6 +756,7 @@ public final class ListEntriesRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The name of the entry group that contains the entries to list.
+     *
      * Can be provided in URL format.
      * </pre>
      *
@@ -773,6 +777,7 @@ public final class ListEntriesRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The name of the entry group that contains the entries to list.
+     *
      * Can be provided in URL format.
      * </pre>
      *
@@ -973,6 +978,7 @@ public final class ListEntriesRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * The fields to return for each entry. If empty or omitted, all
      * fields are returned.
+     *
      * For example, to return a list of entries with only the `name` field,
      * set `read_mask` to only one path with the `name` value.
      * </pre>
@@ -990,6 +996,7 @@ public final class ListEntriesRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * The fields to return for each entry. If empty or omitted, all
      * fields are returned.
+     *
      * For example, to return a list of entries with only the `name` field,
      * set `read_mask` to only one path with the `name` value.
      * </pre>
@@ -1011,6 +1018,7 @@ public final class ListEntriesRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * The fields to return for each entry. If empty or omitted, all
      * fields are returned.
+     *
      * For example, to return a list of entries with only the `name` field,
      * set `read_mask` to only one path with the `name` value.
      * </pre>
@@ -1036,6 +1044,7 @@ public final class ListEntriesRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * The fields to return for each entry. If empty or omitted, all
      * fields are returned.
+     *
      * For example, to return a list of entries with only the `name` field,
      * set `read_mask` to only one path with the `name` value.
      * </pre>
@@ -1058,6 +1067,7 @@ public final class ListEntriesRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * The fields to return for each entry. If empty or omitted, all
      * fields are returned.
+     *
      * For example, to return a list of entries with only the `name` field,
      * set `read_mask` to only one path with the `name` value.
      * </pre>
@@ -1086,6 +1096,7 @@ public final class ListEntriesRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * The fields to return for each entry. If empty or omitted, all
      * fields are returned.
+     *
      * For example, to return a list of entries with only the `name` field,
      * set `read_mask` to only one path with the `name` value.
      * </pre>
@@ -1108,6 +1119,7 @@ public final class ListEntriesRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * The fields to return for each entry. If empty or omitted, all
      * fields are returned.
+     *
      * For example, to return a list of entries with only the `name` field,
      * set `read_mask` to only one path with the `name` value.
      * </pre>
@@ -1125,6 +1137,7 @@ public final class ListEntriesRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * The fields to return for each entry. If empty or omitted, all
      * fields are returned.
+     *
      * For example, to return a list of entries with only the `name` field,
      * set `read_mask` to only one path with the `name` value.
      * </pre>
@@ -1144,6 +1157,7 @@ public final class ListEntriesRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * The fields to return for each entry. If empty or omitted, all
      * fields are returned.
+     *
      * For example, to return a list of entries with only the `name` field,
      * set `read_mask` to only one path with the `name` value.
      * </pre>

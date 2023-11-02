@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ public interface HistogramQueryOrBuilder
    * <pre>
    * An expression specifies a histogram request against matching jobs for
    * searches.
+   *
    * See
    * [SearchJobsRequest.histogram_queries][google.cloud.talent.v4.SearchJobsRequest.histogram_queries]
    * for details about syntax.
@@ -45,6 +46,7 @@ public interface HistogramQueryOrBuilder
    * <pre>
    * An expression specifies a histogram request against matching jobs for
    * searches.
+   *
    * See
    * [SearchJobsRequest.histogram_queries][google.cloud.talent.v4.SearchJobsRequest.histogram_queries]
    * for details about syntax.

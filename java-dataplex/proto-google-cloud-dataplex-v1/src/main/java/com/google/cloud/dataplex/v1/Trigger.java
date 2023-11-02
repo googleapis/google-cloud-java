@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,11 +43,6 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Trigger();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -94,11 +89,6 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new OnDemand();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -503,6 +493,7 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. [Cron](https://en.wikipedia.org/wiki/Cron) schedule for running
      * scans periodically.
+     *
      * To explicitly set a timezone in the cron tab, apply a prefix in the
      * cron tab: **"CRON_TZ=${IANA_TIME_ZONE}"** or **"TZ=${IANA_TIME_ZONE}"**.
      * The **${IANA_TIME_ZONE}** may only be a valid string from IANA time zone
@@ -510,6 +501,7 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      * ([wikipedia](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List)).
      * For example, `CRON_TZ=America/New_York 1 * * * *`, or
      * `TZ=America/New_York 1 * * * *`.
+     *
      * This field is required for Schedule scans.
      * </pre>
      *
@@ -524,6 +516,7 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. [Cron](https://en.wikipedia.org/wiki/Cron) schedule for running
      * scans periodically.
+     *
      * To explicitly set a timezone in the cron tab, apply a prefix in the
      * cron tab: **"CRON_TZ=${IANA_TIME_ZONE}"** or **"TZ=${IANA_TIME_ZONE}"**.
      * The **${IANA_TIME_ZONE}** may only be a valid string from IANA time zone
@@ -531,6 +524,7 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      * ([wikipedia](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List)).
      * For example, `CRON_TZ=America/New_York 1 * * * *`, or
      * `TZ=America/New_York 1 * * * *`.
+     *
      * This field is required for Schedule scans.
      * </pre>
      *
@@ -569,11 +563,6 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
       return new Schedule();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.dataplex.v1.ProcessingProto
           .internal_static_google_cloud_dataplex_v1_Trigger_Schedule_descriptor;
@@ -599,6 +588,7 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. [Cron](https://en.wikipedia.org/wiki/Cron) schedule for running
      * scans periodically.
+     *
      * To explicitly set a timezone in the cron tab, apply a prefix in the
      * cron tab: **"CRON_TZ=${IANA_TIME_ZONE}"** or **"TZ=${IANA_TIME_ZONE}"**.
      * The **${IANA_TIME_ZONE}** may only be a valid string from IANA time zone
@@ -606,6 +596,7 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      * ([wikipedia](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List)).
      * For example, `CRON_TZ=America/New_York 1 * * * *`, or
      * `TZ=America/New_York 1 * * * *`.
+     *
      * This field is required for Schedule scans.
      * </pre>
      *
@@ -631,6 +622,7 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. [Cron](https://en.wikipedia.org/wiki/Cron) schedule for running
      * scans periodically.
+     *
      * To explicitly set a timezone in the cron tab, apply a prefix in the
      * cron tab: **"CRON_TZ=${IANA_TIME_ZONE}"** or **"TZ=${IANA_TIME_ZONE}"**.
      * The **${IANA_TIME_ZONE}** may only be a valid string from IANA time zone
@@ -638,6 +630,7 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      * ([wikipedia](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List)).
      * For example, `CRON_TZ=America/New_York 1 * * * *`, or
      * `TZ=America/New_York 1 * * * *`.
+     *
      * This field is required for Schedule scans.
      * </pre>
      *
@@ -1011,6 +1004,7 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. [Cron](https://en.wikipedia.org/wiki/Cron) schedule for running
        * scans periodically.
+       *
        * To explicitly set a timezone in the cron tab, apply a prefix in the
        * cron tab: **"CRON_TZ=${IANA_TIME_ZONE}"** or **"TZ=${IANA_TIME_ZONE}"**.
        * The **${IANA_TIME_ZONE}** may only be a valid string from IANA time zone
@@ -1018,6 +1012,7 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
        * ([wikipedia](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List)).
        * For example, `CRON_TZ=America/New_York 1 * * * *`, or
        * `TZ=America/New_York 1 * * * *`.
+       *
        * This field is required for Schedule scans.
        * </pre>
        *
@@ -1042,6 +1037,7 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. [Cron](https://en.wikipedia.org/wiki/Cron) schedule for running
        * scans periodically.
+       *
        * To explicitly set a timezone in the cron tab, apply a prefix in the
        * cron tab: **"CRON_TZ=${IANA_TIME_ZONE}"** or **"TZ=${IANA_TIME_ZONE}"**.
        * The **${IANA_TIME_ZONE}** may only be a valid string from IANA time zone
@@ -1049,6 +1045,7 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
        * ([wikipedia](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List)).
        * For example, `CRON_TZ=America/New_York 1 * * * *`, or
        * `TZ=America/New_York 1 * * * *`.
+       *
        * This field is required for Schedule scans.
        * </pre>
        *
@@ -1073,6 +1070,7 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. [Cron](https://en.wikipedia.org/wiki/Cron) schedule for running
        * scans periodically.
+       *
        * To explicitly set a timezone in the cron tab, apply a prefix in the
        * cron tab: **"CRON_TZ=${IANA_TIME_ZONE}"** or **"TZ=${IANA_TIME_ZONE}"**.
        * The **${IANA_TIME_ZONE}** may only be a valid string from IANA time zone
@@ -1080,6 +1078,7 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
        * ([wikipedia](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List)).
        * For example, `CRON_TZ=America/New_York 1 * * * *`, or
        * `TZ=America/New_York 1 * * * *`.
+       *
        * This field is required for Schedule scans.
        * </pre>
        *
@@ -1103,6 +1102,7 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. [Cron](https://en.wikipedia.org/wiki/Cron) schedule for running
        * scans periodically.
+       *
        * To explicitly set a timezone in the cron tab, apply a prefix in the
        * cron tab: **"CRON_TZ=${IANA_TIME_ZONE}"** or **"TZ=${IANA_TIME_ZONE}"**.
        * The **${IANA_TIME_ZONE}** may only be a valid string from IANA time zone
@@ -1110,6 +1110,7 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
        * ([wikipedia](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List)).
        * For example, `CRON_TZ=America/New_York 1 * * * *`, or
        * `TZ=America/New_York 1 * * * *`.
+       *
        * This field is required for Schedule scans.
        * </pre>
        *
@@ -1129,6 +1130,7 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Required. [Cron](https://en.wikipedia.org/wiki/Cron) schedule for running
        * scans periodically.
+       *
        * To explicitly set a timezone in the cron tab, apply a prefix in the
        * cron tab: **"CRON_TZ=${IANA_TIME_ZONE}"** or **"TZ=${IANA_TIME_ZONE}"**.
        * The **${IANA_TIME_ZONE}** may only be a valid string from IANA time zone
@@ -1136,6 +1138,7 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
        * ([wikipedia](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List)).
        * For example, `CRON_TZ=America/New_York 1 * * * *`, or
        * `TZ=America/New_York 1 * * * *`.
+       *
        * This field is required for Schedule scans.
        * </pre>
        *
@@ -1220,6 +1223,8 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int modeCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object mode_;
 
   public enum ModeCase

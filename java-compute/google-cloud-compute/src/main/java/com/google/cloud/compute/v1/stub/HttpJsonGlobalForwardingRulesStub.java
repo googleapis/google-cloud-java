@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,7 @@ import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.DeleteGlobalForwardingRuleRequest;
 import com.google.cloud.compute.v1.ForwardingRule;
@@ -488,39 +489,86 @@ public class HttpJsonGlobalForwardingRulesStub extends GlobalForwardingRulesStub
         HttpJsonCallSettings.<DeleteGlobalForwardingRuleRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("forwarding_rule", String.valueOf(request.getForwardingRule()));
+                  builder.add("project", String.valueOf(request.getProject()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetGlobalForwardingRuleRequest, ForwardingRule> getTransportSettings =
         HttpJsonCallSettings.<GetGlobalForwardingRuleRequest, ForwardingRule>newBuilder()
             .setMethodDescriptor(getMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("forwarding_rule", String.valueOf(request.getForwardingRule()));
+                  builder.add("project", String.valueOf(request.getProject()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<InsertGlobalForwardingRuleRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertGlobalForwardingRuleRequest, Operation>newBuilder()
             .setMethodDescriptor(insertMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListGlobalForwardingRulesRequest, ForwardingRuleList>
         listTransportSettings =
             HttpJsonCallSettings.<ListGlobalForwardingRulesRequest, ForwardingRuleList>newBuilder()
                 .setMethodDescriptor(listMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<PatchGlobalForwardingRuleRequest, Operation> patchTransportSettings =
         HttpJsonCallSettings.<PatchGlobalForwardingRuleRequest, Operation>newBuilder()
             .setMethodDescriptor(patchMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("forwarding_rule", String.valueOf(request.getForwardingRule()));
+                  builder.add("project", String.valueOf(request.getProject()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<SetLabelsGlobalForwardingRuleRequest, Operation>
         setLabelsTransportSettings =
             HttpJsonCallSettings.<SetLabelsGlobalForwardingRuleRequest, Operation>newBuilder()
                 .setMethodDescriptor(setLabelsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<SetTargetGlobalForwardingRuleRequest, Operation>
         setTargetTransportSettings =
             HttpJsonCallSettings.<SetTargetGlobalForwardingRuleRequest, Operation>newBuilder()
                 .setMethodDescriptor(setTargetMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("forwarding_rule", String.valueOf(request.getForwardingRule()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      return builder.build();
+                    })
                 .build();
 
     this.deleteCallable =

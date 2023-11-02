@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ package com.google.cloud.gkemulticloud.v1;
  *
  * <pre>
  * Configuration related to application-layer secrets encryption.
+ *
  * Anthos clusters on Azure encrypts your Kubernetes data at rest
  * in etcd using Azure Key Vault.
  * </pre>
@@ -49,11 +50,6 @@ public final class AzureDatabaseEncryption extends com.google.protobuf.Generated
     return new AzureDatabaseEncryption();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gkemulticloud.v1.AzureResourcesProto
         .internal_static_google_cloud_gkemulticloud_v1_AzureDatabaseEncryption_descriptor;
@@ -78,6 +74,7 @@ public final class AzureDatabaseEncryption extends com.google.protobuf.Generated
    *
    * <pre>
    * Required. The ARM ID of the Azure Key Vault key to encrypt / decrypt data.
+   *
    * For example:
    * `/subscriptions/&lt;subscription-id&gt;/resourceGroups/&lt;resource-group-id&gt;/providers/Microsoft.KeyVault/vaults/&lt;key-vault-id&gt;/keys/&lt;key-name&gt;`
    * Encryption will always take the latest version of the key and hence
@@ -105,6 +102,7 @@ public final class AzureDatabaseEncryption extends com.google.protobuf.Generated
    *
    * <pre>
    * Required. The ARM ID of the Azure Key Vault key to encrypt / decrypt data.
+   *
    * For example:
    * `/subscriptions/&lt;subscription-id&gt;/resourceGroups/&lt;resource-group-id&gt;/providers/Microsoft.KeyVault/vaults/&lt;key-vault-id&gt;/keys/&lt;key-name&gt;`
    * Encryption will always take the latest version of the key and hence
@@ -293,6 +291,7 @@ public final class AzureDatabaseEncryption extends com.google.protobuf.Generated
    *
    * <pre>
    * Configuration related to application-layer secrets encryption.
+   *
    * Anthos clusters on Azure encrypts your Kubernetes data at rest
    * in etcd using Azure Key Vault.
    * </pre>
@@ -479,6 +478,7 @@ public final class AzureDatabaseEncryption extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The ARM ID of the Azure Key Vault key to encrypt / decrypt data.
+     *
      * For example:
      * `/subscriptions/&lt;subscription-id&gt;/resourceGroups/&lt;resource-group-id&gt;/providers/Microsoft.KeyVault/vaults/&lt;key-vault-id&gt;/keys/&lt;key-name&gt;`
      * Encryption will always take the latest version of the key and hence
@@ -505,6 +505,7 @@ public final class AzureDatabaseEncryption extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The ARM ID of the Azure Key Vault key to encrypt / decrypt data.
+     *
      * For example:
      * `/subscriptions/&lt;subscription-id&gt;/resourceGroups/&lt;resource-group-id&gt;/providers/Microsoft.KeyVault/vaults/&lt;key-vault-id&gt;/keys/&lt;key-name&gt;`
      * Encryption will always take the latest version of the key and hence
@@ -531,6 +532,7 @@ public final class AzureDatabaseEncryption extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The ARM ID of the Azure Key Vault key to encrypt / decrypt data.
+     *
      * For example:
      * `/subscriptions/&lt;subscription-id&gt;/resourceGroups/&lt;resource-group-id&gt;/providers/Microsoft.KeyVault/vaults/&lt;key-vault-id&gt;/keys/&lt;key-name&gt;`
      * Encryption will always take the latest version of the key and hence
@@ -556,6 +558,7 @@ public final class AzureDatabaseEncryption extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The ARM ID of the Azure Key Vault key to encrypt / decrypt data.
+     *
      * For example:
      * `/subscriptions/&lt;subscription-id&gt;/resourceGroups/&lt;resource-group-id&gt;/providers/Microsoft.KeyVault/vaults/&lt;key-vault-id&gt;/keys/&lt;key-name&gt;`
      * Encryption will always take the latest version of the key and hence
@@ -577,6 +580,7 @@ public final class AzureDatabaseEncryption extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The ARM ID of the Azure Key Vault key to encrypt / decrypt data.
+     *
      * For example:
      * `/subscriptions/&lt;subscription-id&gt;/resourceGroups/&lt;resource-group-id&gt;/providers/Microsoft.KeyVault/vaults/&lt;key-vault-id&gt;/keys/&lt;key-name&gt;`
      * Encryption will always take the latest version of the key and hence

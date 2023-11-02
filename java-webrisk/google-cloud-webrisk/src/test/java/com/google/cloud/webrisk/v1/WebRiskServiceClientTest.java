@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,10 @@ import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
+import com.google.api.gax.rpc.StatusCode;
+import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
+import com.google.protobuf.Any;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Timestamp;
 import com.google.webrisk.v1.ComputeThreatListDiffRequest;
@@ -35,8 +38,11 @@ import com.google.webrisk.v1.SearchHashesResponse;
 import com.google.webrisk.v1.SearchUrisRequest;
 import com.google.webrisk.v1.SearchUrisResponse;
 import com.google.webrisk.v1.Submission;
+import com.google.webrisk.v1.SubmitUriRequest;
+import com.google.webrisk.v1.ThreatDiscovery;
 import com.google.webrisk.v1.ThreatEntryAdditions;
 import com.google.webrisk.v1.ThreatEntryRemovals;
+import com.google.webrisk.v1.ThreatInfo;
 import com.google.webrisk.v1.ThreatType;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
@@ -44,6 +50,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
+import java.util.concurrent.ExecutionException;
 import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -227,7 +234,11 @@ public class WebRiskServiceClientTest {
 
   @Test
   public void createSubmissionTest() throws Exception {
-    Submission expectedResponse = Submission.newBuilder().setUri("uri116076").build();
+    Submission expectedResponse =
+        Submission.newBuilder()
+            .setUri("uri116076")
+            .addAllThreatTypes(new ArrayList<ThreatType>())
+            .build();
     mockWebRiskService.addResponse(expectedResponse);
 
     ProjectName parent = ProjectName.of("[PROJECT]");
@@ -265,7 +276,11 @@ public class WebRiskServiceClientTest {
 
   @Test
   public void createSubmissionTest2() throws Exception {
-    Submission expectedResponse = Submission.newBuilder().setUri("uri116076").build();
+    Submission expectedResponse =
+        Submission.newBuilder()
+            .setUri("uri116076")
+            .addAllThreatTypes(new ArrayList<ThreatType>())
+            .build();
     mockWebRiskService.addResponse(expectedResponse);
 
     String parent = "parent-995424086";
@@ -298,6 +313,68 @@ public class WebRiskServiceClientTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
+    }
+  }
+
+  @Test
+  public void submitUriTest() throws Exception {
+    Submission expectedResponse =
+        Submission.newBuilder()
+            .setUri("uri116076")
+            .addAllThreatTypes(new ArrayList<ThreatType>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("submitUriTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockWebRiskService.addResponse(resultOperation);
+
+    SubmitUriRequest request =
+        SubmitUriRequest.newBuilder()
+            .setParent(ProjectName.of("[PROJECT]").toString())
+            .setSubmission(Submission.newBuilder().build())
+            .setThreatInfo(ThreatInfo.newBuilder().build())
+            .setThreatDiscovery(ThreatDiscovery.newBuilder().build())
+            .build();
+
+    Submission actualResponse = client.submitUriAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockWebRiskService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    SubmitUriRequest actualRequest = ((SubmitUriRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getParent(), actualRequest.getParent());
+    Assert.assertEquals(request.getSubmission(), actualRequest.getSubmission());
+    Assert.assertEquals(request.getThreatInfo(), actualRequest.getThreatInfo());
+    Assert.assertEquals(request.getThreatDiscovery(), actualRequest.getThreatDiscovery());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void submitUriExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockWebRiskService.addException(exception);
+
+    try {
+      SubmitUriRequest request =
+          SubmitUriRequest.newBuilder()
+              .setParent(ProjectName.of("[PROJECT]").toString())
+              .setSubmission(Submission.newBuilder().build())
+              .setThreatInfo(ThreatInfo.newBuilder().build())
+              .setThreatDiscovery(ThreatDiscovery.newBuilder().build())
+              .build();
+      client.submitUriAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 }

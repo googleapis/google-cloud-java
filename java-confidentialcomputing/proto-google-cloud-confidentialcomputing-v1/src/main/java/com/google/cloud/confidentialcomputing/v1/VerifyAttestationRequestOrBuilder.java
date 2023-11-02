@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -143,4 +143,90 @@ public interface VerifyAttestationRequestOrBuilder
    * </code>
    */
   com.google.cloud.confidentialcomputing.v1.TpmAttestationOrBuilder getTpmAttestationOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Optional information related to the Confidential Space TEE.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.confidentialcomputing.v1.ConfidentialSpaceInfo confidential_space_info = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the confidentialSpaceInfo field is set.
+   */
+  boolean hasConfidentialSpaceInfo();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Optional information related to the Confidential Space TEE.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.confidentialcomputing.v1.ConfidentialSpaceInfo confidential_space_info = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The confidentialSpaceInfo.
+   */
+  com.google.cloud.confidentialcomputing.v1.ConfidentialSpaceInfo getConfidentialSpaceInfo();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Optional information related to the Confidential Space TEE.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.confidentialcomputing.v1.ConfidentialSpaceInfo confidential_space_info = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.confidentialcomputing.v1.ConfidentialSpaceInfoOrBuilder
+      getConfidentialSpaceInfoOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A collection of optional, workload-specified claims that modify
+   * the token output.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.confidentialcomputing.v1.TokenOptions token_options = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the tokenOptions field is set.
+   */
+  boolean hasTokenOptions();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A collection of optional, workload-specified claims that modify
+   * the token output.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.confidentialcomputing.v1.TokenOptions token_options = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The tokenOptions.
+   */
+  com.google.cloud.confidentialcomputing.v1.TokenOptions getTokenOptions();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A collection of optional, workload-specified claims that modify
+   * the token output.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.confidentialcomputing.v1.TokenOptions token_options = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.confidentialcomputing.v1.TokenOptionsOrBuilder getTokenOptionsOrBuilder();
 }

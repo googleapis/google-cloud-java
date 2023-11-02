@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class EnvVar extends com.google.protobuf.GeneratedMessageV3
     return new EnvVar();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.run.v2.K8sMinProto
         .internal_static_google_cloud_run_v2_EnvVar_descriptor;
@@ -67,6 +62,8 @@ public final class EnvVar extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int valuesCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object values_;
 
   public enum ValuesCase
@@ -121,8 +118,8 @@ public final class EnvVar extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Name of the environment variable. Must be a C_IDENTIFIER, and
-   * mnay not exceed 32768 characters.
+   * Required. Name of the environment variable. Must not exceed 32768
+   * characters.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -145,8 +142,8 @@ public final class EnvVar extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Name of the environment variable. Must be a C_IDENTIFIER, and
-   * mnay not exceed 32768 characters.
+   * Required. Name of the environment variable. Must not exceed 32768
+   * characters.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -746,8 +743,8 @@ public final class EnvVar extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Name of the environment variable. Must be a C_IDENTIFIER, and
-     * mnay not exceed 32768 characters.
+     * Required. Name of the environment variable. Must not exceed 32768
+     * characters.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -769,8 +766,8 @@ public final class EnvVar extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Name of the environment variable. Must be a C_IDENTIFIER, and
-     * mnay not exceed 32768 characters.
+     * Required. Name of the environment variable. Must not exceed 32768
+     * characters.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -792,8 +789,8 @@ public final class EnvVar extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Name of the environment variable. Must be a C_IDENTIFIER, and
-     * mnay not exceed 32768 characters.
+     * Required. Name of the environment variable. Must not exceed 32768
+     * characters.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -814,8 +811,8 @@ public final class EnvVar extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Name of the environment variable. Must be a C_IDENTIFIER, and
-     * mnay not exceed 32768 characters.
+     * Required. Name of the environment variable. Must not exceed 32768
+     * characters.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -832,8 +829,8 @@ public final class EnvVar extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Name of the environment variable. Must be a C_IDENTIFIER, and
-     * mnay not exceed 32768 characters.
+     * Required. Name of the environment variable. Must not exceed 32768
+     * characters.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,8 +28,10 @@ public interface ProductSetOrBuilder
    *
    * <pre>
    * The resource name of the ProductSet.
+   *
    * Format is:
    * `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`.
+   *
    * This field is ignored when creating a ProductSet.
    * </pre>
    *
@@ -43,8 +45,10 @@ public interface ProductSetOrBuilder
    *
    * <pre>
    * The resource name of the ProductSet.
+   *
    * Format is:
    * `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`.
+   *
    * This field is ignored when creating a ProductSet.
    * </pre>
    *
@@ -89,6 +93,7 @@ public interface ProductSetOrBuilder
    * results will reflect all updates before this time. If this ProductSet has
    * never been indexed, this timestamp is the default value
    * "1970-01-01T00:00:00Z".
+   *
    * This field is ignored when creating a ProductSet.
    * </pre>
    *
@@ -106,6 +111,7 @@ public interface ProductSetOrBuilder
    * results will reflect all updates before this time. If this ProductSet has
    * never been indexed, this timestamp is the default value
    * "1970-01-01T00:00:00Z".
+   *
    * This field is ignored when creating a ProductSet.
    * </pre>
    *
@@ -123,6 +129,7 @@ public interface ProductSetOrBuilder
    * results will reflect all updates before this time. If this ProductSet has
    * never been indexed, this timestamp is the default value
    * "1970-01-01T00:00:00Z".
+   *
    * This field is ignored when creating a ProductSet.
    * </pre>
    *
@@ -137,6 +144,7 @@ public interface ProductSetOrBuilder
    * <pre>
    * Output only. If there was an error with indexing the product set, the field
    * is populated.
+   *
    * This field is ignored when creating a ProductSet.
    * </pre>
    *
@@ -151,6 +159,7 @@ public interface ProductSetOrBuilder
    * <pre>
    * Output only. If there was an error with indexing the product set, the field
    * is populated.
+   *
    * This field is ignored when creating a ProductSet.
    * </pre>
    *
@@ -165,6 +174,7 @@ public interface ProductSetOrBuilder
    * <pre>
    * Output only. If there was an error with indexing the product set, the field
    * is populated.
+   *
    * This field is ignored when creating a ProductSet.
    * </pre>
    *

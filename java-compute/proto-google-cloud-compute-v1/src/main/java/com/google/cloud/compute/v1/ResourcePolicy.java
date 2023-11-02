@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,11 +51,6 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ResourcePolicy();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -395,6 +390,65 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int DISK_CONSISTENCY_GROUP_POLICY_FIELD_NUMBER = 473727515;
+  private com.google.cloud.compute.v1.ResourcePolicyDiskConsistencyGroupPolicy
+      diskConsistencyGroupPolicy_;
+  /**
+   *
+   *
+   * <pre>
+   * Resource policy for disk consistency groups.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.ResourcePolicyDiskConsistencyGroupPolicy disk_consistency_group_policy = 473727515;
+   * </code>
+   *
+   * @return Whether the diskConsistencyGroupPolicy field is set.
+   */
+  @java.lang.Override
+  public boolean hasDiskConsistencyGroupPolicy() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Resource policy for disk consistency groups.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.ResourcePolicyDiskConsistencyGroupPolicy disk_consistency_group_policy = 473727515;
+   * </code>
+   *
+   * @return The diskConsistencyGroupPolicy.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.ResourcePolicyDiskConsistencyGroupPolicy
+      getDiskConsistencyGroupPolicy() {
+    return diskConsistencyGroupPolicy_ == null
+        ? com.google.cloud.compute.v1.ResourcePolicyDiskConsistencyGroupPolicy.getDefaultInstance()
+        : diskConsistencyGroupPolicy_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Resource policy for disk consistency groups.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.ResourcePolicyDiskConsistencyGroupPolicy disk_consistency_group_policy = 473727515;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.ResourcePolicyDiskConsistencyGroupPolicyOrBuilder
+      getDiskConsistencyGroupPolicyOrBuilder() {
+    return diskConsistencyGroupPolicy_ == null
+        ? com.google.cloud.compute.v1.ResourcePolicyDiskConsistencyGroupPolicy.getDefaultInstance()
+        : diskConsistencyGroupPolicy_;
+  }
+
   public static final int GROUP_PLACEMENT_POLICY_FIELD_NUMBER = 10931596;
   private com.google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy groupPlacementPolicy_;
   /**
@@ -412,7 +466,7 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasGroupPlacementPolicy() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
   /**
    *
@@ -467,7 +521,7 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasId() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
   /**
    *
@@ -502,7 +556,7 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasInstanceSchedulePolicy() {
-    return ((bitField0_ & 0x00000010) != 0);
+    return ((bitField0_ & 0x00000020) != 0);
   }
   /**
    *
@@ -560,7 +614,7 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasKind() {
-    return ((bitField0_ & 0x00000020) != 0);
+    return ((bitField0_ & 0x00000040) != 0);
   }
   /**
    *
@@ -626,7 +680,7 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasName() {
-    return ((bitField0_ & 0x00000040) != 0);
+    return ((bitField0_ & 0x00000080) != 0);
   }
   /**
    *
@@ -686,7 +740,7 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasRegion() {
-    return ((bitField0_ & 0x00000080) != 0);
+    return ((bitField0_ & 0x00000100) != 0);
   }
   /**
    * <code>optional string region = 138946292;</code>
@@ -740,7 +794,7 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasResourceStatus() {
-    return ((bitField0_ & 0x00000100) != 0);
+    return ((bitField0_ & 0x00000200) != 0);
   }
   /**
    *
@@ -797,7 +851,7 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSelfLink() {
-    return ((bitField0_ & 0x00000200) != 0);
+    return ((bitField0_ & 0x00000400) != 0);
   }
   /**
    *
@@ -863,7 +917,7 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSnapshotSchedulePolicy() {
-    return ((bitField0_ & 0x00000400) != 0);
+    return ((bitField0_ & 0x00000800) != 0);
   }
   /**
    *
@@ -922,7 +976,7 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasStatus() {
-    return ((bitField0_ & 0x00000800) != 0);
+    return ((bitField0_ & 0x00001000) != 0);
   }
   /**
    *
@@ -987,41 +1041,44 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       output.writeUInt64(3355, id_);
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3292052, kind_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(10931596, getGroupPlacementPolicy());
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 181260274, status_);
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       output.writeMessage(218131295, getSnapshotSchedulePolicy());
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       output.writeMessage(249429315, getResourceStatus());
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       output.writeMessage(344877104, getInstanceSchedulePolicy());
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(473727515, getDiskConsistencyGroupPolicy());
     }
     getUnknownFields().writeTo(output);
   }
@@ -1032,16 +1089,16 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeUInt64Size(3355, id_);
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3292052, kind_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               10931596, getGroupPlacementPolicy());
@@ -1050,22 +1107,22 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(181260274, status_);
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               218131295, getSnapshotSchedulePolicy());
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(249429315, getResourceStatus());
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               344877104, getInstanceSchedulePolicy());
@@ -1073,8 +1130,13 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              473727515, getDiskConsistencyGroupPolicy());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1099,6 +1161,11 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
     if (hasDescription() != other.hasDescription()) return false;
     if (hasDescription()) {
       if (!getDescription().equals(other.getDescription())) return false;
+    }
+    if (hasDiskConsistencyGroupPolicy() != other.hasDiskConsistencyGroupPolicy()) return false;
+    if (hasDiskConsistencyGroupPolicy()) {
+      if (!getDiskConsistencyGroupPolicy().equals(other.getDiskConsistencyGroupPolicy()))
+        return false;
     }
     if (hasGroupPlacementPolicy() != other.hasGroupPlacementPolicy()) return false;
     if (hasGroupPlacementPolicy()) {
@@ -1158,6 +1225,10 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
     if (hasDescription()) {
       hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
       hash = (53 * hash) + getDescription().hashCode();
+    }
+    if (hasDiskConsistencyGroupPolicy()) {
+      hash = (37 * hash) + DISK_CONSISTENCY_GROUP_POLICY_FIELD_NUMBER;
+      hash = (53 * hash) + getDiskConsistencyGroupPolicy().hashCode();
     }
     if (hasGroupPlacementPolicy()) {
       hash = (37 * hash) + GROUP_PLACEMENT_POLICY_FIELD_NUMBER;
@@ -1339,6 +1410,7 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
 
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getDiskConsistencyGroupPolicyFieldBuilder();
         getGroupPlacementPolicyFieldBuilder();
         getInstanceSchedulePolicyFieldBuilder();
         getResourceStatusFieldBuilder();
@@ -1352,6 +1424,11 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = 0;
       creationTimestamp_ = "";
       description_ = "";
+      diskConsistencyGroupPolicy_ = null;
+      if (diskConsistencyGroupPolicyBuilder_ != null) {
+        diskConsistencyGroupPolicyBuilder_.dispose();
+        diskConsistencyGroupPolicyBuilder_ = null;
+      }
       groupPlacementPolicy_ = null;
       if (groupPlacementPolicyBuilder_ != null) {
         groupPlacementPolicyBuilder_.dispose();
@@ -1424,54 +1501,61 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.diskConsistencyGroupPolicy_ =
+            diskConsistencyGroupPolicyBuilder_ == null
+                ? diskConsistencyGroupPolicy_
+                : diskConsistencyGroupPolicyBuilder_.build();
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.groupPlacementPolicy_ =
             groupPlacementPolicyBuilder_ == null
                 ? groupPlacementPolicy_
                 : groupPlacementPolicyBuilder_.build();
-        to_bitField0_ |= 0x00000004;
-      }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.id_ = id_;
         to_bitField0_ |= 0x00000008;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.id_ = id_;
+        to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.instanceSchedulePolicy_ =
             instanceSchedulePolicyBuilder_ == null
                 ? instanceSchedulePolicy_
                 : instanceSchedulePolicyBuilder_.build();
-        to_bitField0_ |= 0x00000010;
-      }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.kind_ = kind_;
         to_bitField0_ |= 0x00000020;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.name_ = name_;
+        result.kind_ = kind_;
         to_bitField0_ |= 0x00000040;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
-        result.region_ = region_;
+        result.name_ = name_;
         to_bitField0_ |= 0x00000080;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
-        result.resourceStatus_ =
-            resourceStatusBuilder_ == null ? resourceStatus_ : resourceStatusBuilder_.build();
+        result.region_ = region_;
         to_bitField0_ |= 0x00000100;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
-        result.selfLink_ = selfLink_;
+        result.resourceStatus_ =
+            resourceStatusBuilder_ == null ? resourceStatus_ : resourceStatusBuilder_.build();
         to_bitField0_ |= 0x00000200;
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.selfLink_ = selfLink_;
+        to_bitField0_ |= 0x00000400;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.snapshotSchedulePolicy_ =
             snapshotSchedulePolicyBuilder_ == null
                 ? snapshotSchedulePolicy_
                 : snapshotSchedulePolicyBuilder_.build();
-        to_bitField0_ |= 0x00000400;
-      }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
-        result.status_ = status_;
         to_bitField0_ |= 0x00000800;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.status_ = status_;
+        to_bitField0_ |= 0x00001000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1531,6 +1615,9 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000002;
         onChanged();
       }
+      if (other.hasDiskConsistencyGroupPolicy()) {
+        mergeDiskConsistencyGroupPolicy(other.getDiskConsistencyGroupPolicy());
+      }
       if (other.hasGroupPlacementPolicy()) {
         mergeGroupPlacementPolicy(other.getGroupPlacementPolicy());
       }
@@ -1542,17 +1629,17 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasKind()) {
         kind_ = other.kind_;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (other.hasName()) {
         name_ = other.name_;
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (other.hasRegion()) {
         region_ = other.region_;
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       if (other.hasResourceStatus()) {
@@ -1560,7 +1647,7 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasSelfLink()) {
         selfLink_ = other.selfLink_;
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       if (other.hasSnapshotSchedulePolicy()) {
@@ -1568,7 +1655,7 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasStatus()) {
         status_ = other.status_;
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1600,26 +1687,26 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
             case 26840:
               {
                 id_ = input.readUInt64();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 26840
             case 26336418:
               {
                 kind_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 26336418
             case 26989658:
               {
                 name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 26989658
             case 87452770:
               {
                 input.readMessage(
                     getGroupPlacementPolicyFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 87452770
             case 244202930:
@@ -1631,33 +1718,33 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
             case 1111570338:
               {
                 region_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 1111570338
             case 1450082194:
               {
                 status_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 1450082194
             case 1745050362:
               {
                 input.readMessage(
                     getSnapshotSchedulePolicyFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 1745050362
             case 1995434522:
               {
                 input.readMessage(getResourceStatusFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 1995434522
             case -1535950462:
               {
                 input.readMessage(
                     getInstanceSchedulePolicyFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case -1535950462
             case -911466526:
@@ -1669,9 +1756,16 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
             case -645248918:
               {
                 selfLink_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case -645248918
+            case -505147174:
+              {
+                input.readMessage(
+                    getDiskConsistencyGroupPolicyFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case -505147174
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1895,6 +1989,219 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private com.google.cloud.compute.v1.ResourcePolicyDiskConsistencyGroupPolicy
+        diskConsistencyGroupPolicy_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.ResourcePolicyDiskConsistencyGroupPolicy,
+            com.google.cloud.compute.v1.ResourcePolicyDiskConsistencyGroupPolicy.Builder,
+            com.google.cloud.compute.v1.ResourcePolicyDiskConsistencyGroupPolicyOrBuilder>
+        diskConsistencyGroupPolicyBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Resource policy for disk consistency groups.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.ResourcePolicyDiskConsistencyGroupPolicy disk_consistency_group_policy = 473727515;
+     * </code>
+     *
+     * @return Whether the diskConsistencyGroupPolicy field is set.
+     */
+    public boolean hasDiskConsistencyGroupPolicy() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Resource policy for disk consistency groups.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.ResourcePolicyDiskConsistencyGroupPolicy disk_consistency_group_policy = 473727515;
+     * </code>
+     *
+     * @return The diskConsistencyGroupPolicy.
+     */
+    public com.google.cloud.compute.v1.ResourcePolicyDiskConsistencyGroupPolicy
+        getDiskConsistencyGroupPolicy() {
+      if (diskConsistencyGroupPolicyBuilder_ == null) {
+        return diskConsistencyGroupPolicy_ == null
+            ? com.google.cloud.compute.v1.ResourcePolicyDiskConsistencyGroupPolicy
+                .getDefaultInstance()
+            : diskConsistencyGroupPolicy_;
+      } else {
+        return diskConsistencyGroupPolicyBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Resource policy for disk consistency groups.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.ResourcePolicyDiskConsistencyGroupPolicy disk_consistency_group_policy = 473727515;
+     * </code>
+     */
+    public Builder setDiskConsistencyGroupPolicy(
+        com.google.cloud.compute.v1.ResourcePolicyDiskConsistencyGroupPolicy value) {
+      if (diskConsistencyGroupPolicyBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        diskConsistencyGroupPolicy_ = value;
+      } else {
+        diskConsistencyGroupPolicyBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Resource policy for disk consistency groups.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.ResourcePolicyDiskConsistencyGroupPolicy disk_consistency_group_policy = 473727515;
+     * </code>
+     */
+    public Builder setDiskConsistencyGroupPolicy(
+        com.google.cloud.compute.v1.ResourcePolicyDiskConsistencyGroupPolicy.Builder
+            builderForValue) {
+      if (diskConsistencyGroupPolicyBuilder_ == null) {
+        diskConsistencyGroupPolicy_ = builderForValue.build();
+      } else {
+        diskConsistencyGroupPolicyBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Resource policy for disk consistency groups.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.ResourcePolicyDiskConsistencyGroupPolicy disk_consistency_group_policy = 473727515;
+     * </code>
+     */
+    public Builder mergeDiskConsistencyGroupPolicy(
+        com.google.cloud.compute.v1.ResourcePolicyDiskConsistencyGroupPolicy value) {
+      if (diskConsistencyGroupPolicyBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && diskConsistencyGroupPolicy_ != null
+            && diskConsistencyGroupPolicy_
+                != com.google.cloud.compute.v1.ResourcePolicyDiskConsistencyGroupPolicy
+                    .getDefaultInstance()) {
+          getDiskConsistencyGroupPolicyBuilder().mergeFrom(value);
+        } else {
+          diskConsistencyGroupPolicy_ = value;
+        }
+      } else {
+        diskConsistencyGroupPolicyBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Resource policy for disk consistency groups.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.ResourcePolicyDiskConsistencyGroupPolicy disk_consistency_group_policy = 473727515;
+     * </code>
+     */
+    public Builder clearDiskConsistencyGroupPolicy() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      diskConsistencyGroupPolicy_ = null;
+      if (diskConsistencyGroupPolicyBuilder_ != null) {
+        diskConsistencyGroupPolicyBuilder_.dispose();
+        diskConsistencyGroupPolicyBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Resource policy for disk consistency groups.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.ResourcePolicyDiskConsistencyGroupPolicy disk_consistency_group_policy = 473727515;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.ResourcePolicyDiskConsistencyGroupPolicy.Builder
+        getDiskConsistencyGroupPolicyBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return getDiskConsistencyGroupPolicyFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Resource policy for disk consistency groups.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.ResourcePolicyDiskConsistencyGroupPolicy disk_consistency_group_policy = 473727515;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.ResourcePolicyDiskConsistencyGroupPolicyOrBuilder
+        getDiskConsistencyGroupPolicyOrBuilder() {
+      if (diskConsistencyGroupPolicyBuilder_ != null) {
+        return diskConsistencyGroupPolicyBuilder_.getMessageOrBuilder();
+      } else {
+        return diskConsistencyGroupPolicy_ == null
+            ? com.google.cloud.compute.v1.ResourcePolicyDiskConsistencyGroupPolicy
+                .getDefaultInstance()
+            : diskConsistencyGroupPolicy_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Resource policy for disk consistency groups.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.ResourcePolicyDiskConsistencyGroupPolicy disk_consistency_group_policy = 473727515;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.ResourcePolicyDiskConsistencyGroupPolicy,
+            com.google.cloud.compute.v1.ResourcePolicyDiskConsistencyGroupPolicy.Builder,
+            com.google.cloud.compute.v1.ResourcePolicyDiskConsistencyGroupPolicyOrBuilder>
+        getDiskConsistencyGroupPolicyFieldBuilder() {
+      if (diskConsistencyGroupPolicyBuilder_ == null) {
+        diskConsistencyGroupPolicyBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.compute.v1.ResourcePolicyDiskConsistencyGroupPolicy,
+                com.google.cloud.compute.v1.ResourcePolicyDiskConsistencyGroupPolicy.Builder,
+                com.google.cloud.compute.v1.ResourcePolicyDiskConsistencyGroupPolicyOrBuilder>(
+                getDiskConsistencyGroupPolicy(), getParentForChildren(), isClean());
+        diskConsistencyGroupPolicy_ = null;
+      }
+      return diskConsistencyGroupPolicyBuilder_;
+    }
+
     private com.google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy groupPlacementPolicy_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy,
@@ -1915,7 +2222,7 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the groupPlacementPolicy field is set.
      */
     public boolean hasGroupPlacementPolicy() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1961,7 +2268,7 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
       } else {
         groupPlacementPolicyBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1983,7 +2290,7 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
       } else {
         groupPlacementPolicyBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2001,7 +2308,7 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeGroupPlacementPolicy(
         com.google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy value) {
       if (groupPlacementPolicyBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)
+        if (((bitField0_ & 0x00000008) != 0)
             && groupPlacementPolicy_ != null
             && groupPlacementPolicy_
                 != com.google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy
@@ -2013,7 +2320,7 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
       } else {
         groupPlacementPolicyBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2029,7 +2336,7 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearGroupPlacementPolicy() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       groupPlacementPolicy_ = null;
       if (groupPlacementPolicyBuilder_ != null) {
         groupPlacementPolicyBuilder_.dispose();
@@ -2051,7 +2358,7 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy.Builder
         getGroupPlacementPolicyBuilder() {
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return getGroupPlacementPolicyFieldBuilder().getBuilder();
     }
@@ -2118,7 +2425,7 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasId() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -2150,7 +2457,7 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
     public Builder setId(long value) {
 
       id_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2166,7 +2473,7 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearId() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       id_ = 0L;
       onChanged();
       return this;
@@ -2193,7 +2500,7 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the instanceSchedulePolicy field is set.
      */
     public boolean hasInstanceSchedulePolicy() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -2239,7 +2546,7 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
       } else {
         instanceSchedulePolicyBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2261,7 +2568,7 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
       } else {
         instanceSchedulePolicyBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2279,7 +2586,7 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeInstanceSchedulePolicy(
         com.google.cloud.compute.v1.ResourcePolicyInstanceSchedulePolicy value) {
       if (instanceSchedulePolicyBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)
+        if (((bitField0_ & 0x00000020) != 0)
             && instanceSchedulePolicy_ != null
             && instanceSchedulePolicy_
                 != com.google.cloud.compute.v1.ResourcePolicyInstanceSchedulePolicy
@@ -2291,7 +2598,7 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
       } else {
         instanceSchedulePolicyBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2307,7 +2614,7 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearInstanceSchedulePolicy() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       instanceSchedulePolicy_ = null;
       if (instanceSchedulePolicyBuilder_ != null) {
         instanceSchedulePolicyBuilder_.dispose();
@@ -2329,7 +2636,7 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.compute.v1.ResourcePolicyInstanceSchedulePolicy.Builder
         getInstanceSchedulePolicyBuilder() {
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return getInstanceSchedulePolicyFieldBuilder().getBuilder();
     }
@@ -2395,7 +2702,7 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the kind field is set.
      */
     public boolean hasKind() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -2458,7 +2765,7 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       kind_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2475,7 +2782,7 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearKind() {
       kind_ = getDefaultInstance().getKind();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -2497,7 +2804,7 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       kind_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2515,7 +2822,7 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the name field is set.
      */
     public boolean hasName() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -2578,7 +2885,7 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       name_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2595,7 +2902,7 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearName() {
       name_ = getDefaultInstance().getName();
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -2617,7 +2924,7 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       name_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2629,7 +2936,7 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the region field is set.
      */
     public boolean hasRegion() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      * <code>optional string region = 138946292;</code>
@@ -2674,7 +2981,7 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       region_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2685,7 +2992,7 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearRegion() {
       region_ = getDefaultInstance().getRegion();
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -2701,7 +3008,7 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       region_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2726,7 +3033,7 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the resourceStatus field is set.
      */
     public boolean hasResourceStatus() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -2771,7 +3078,7 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
       } else {
         resourceStatusBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2793,7 +3100,7 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
       } else {
         resourceStatusBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2811,7 +3118,7 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeResourceStatus(
         com.google.cloud.compute.v1.ResourcePolicyResourceStatus value) {
       if (resourceStatusBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)
+        if (((bitField0_ & 0x00000200) != 0)
             && resourceStatus_ != null
             && resourceStatus_
                 != com.google.cloud.compute.v1.ResourcePolicyResourceStatus.getDefaultInstance()) {
@@ -2822,7 +3129,7 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
       } else {
         resourceStatusBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2838,7 +3145,7 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearResourceStatus() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       resourceStatus_ = null;
       if (resourceStatusBuilder_ != null) {
         resourceStatusBuilder_.dispose();
@@ -2860,7 +3167,7 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.compute.v1.ResourcePolicyResourceStatus.Builder
         getResourceStatusBuilder() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return getResourceStatusFieldBuilder().getBuilder();
     }
@@ -2926,7 +3233,7 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the selfLink field is set.
      */
     public boolean hasSelfLink() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      *
@@ -2989,7 +3296,7 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       selfLink_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3006,7 +3313,7 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSelfLink() {
       selfLink_ = getDefaultInstance().getSelfLink();
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -3028,7 +3335,7 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       selfLink_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3054,7 +3361,7 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the snapshotSchedulePolicy field is set.
      */
     public boolean hasSnapshotSchedulePolicy() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
     /**
      *
@@ -3100,7 +3407,7 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
       } else {
         snapshotSchedulePolicyBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3122,7 +3429,7 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
       } else {
         snapshotSchedulePolicyBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3140,7 +3447,7 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeSnapshotSchedulePolicy(
         com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicy value) {
       if (snapshotSchedulePolicyBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0)
+        if (((bitField0_ & 0x00000800) != 0)
             && snapshotSchedulePolicy_ != null
             && snapshotSchedulePolicy_
                 != com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicy
@@ -3152,7 +3459,7 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
       } else {
         snapshotSchedulePolicyBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3168,7 +3475,7 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearSnapshotSchedulePolicy() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       snapshotSchedulePolicy_ = null;
       if (snapshotSchedulePolicyBuilder_ != null) {
         snapshotSchedulePolicyBuilder_.dispose();
@@ -3190,7 +3497,7 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicy.Builder
         getSnapshotSchedulePolicyBuilder() {
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return getSnapshotSchedulePolicyFieldBuilder().getBuilder();
     }
@@ -3257,7 +3564,7 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the status field is set.
      */
     public boolean hasStatus() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
     /**
      *
@@ -3323,7 +3630,7 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       status_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3341,7 +3648,7 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearStatus() {
       status_ = getDefaultInstance().getStatus();
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       onChanged();
       return this;
     }
@@ -3364,7 +3671,7 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       status_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }

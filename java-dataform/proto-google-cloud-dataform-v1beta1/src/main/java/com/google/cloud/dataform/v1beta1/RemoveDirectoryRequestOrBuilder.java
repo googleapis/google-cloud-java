@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,8 +56,8 @@ public interface RemoveDirectoryRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The directory's full path including directory name, relative to the
-   * workspace root.
+   * Required. The directory's full path including directory name, relative to
+   * the workspace root.
    * </pre>
    *
    * <code>string path = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -69,8 +69,8 @@ public interface RemoveDirectoryRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The directory's full path including directory name, relative to the
-   * workspace root.
+   * Required. The directory's full path including directory name, relative to
+   * the workspace root.
    * </pre>
    *
    * <code>string path = 2 [(.google.api.field_behavior) = REQUIRED];</code>

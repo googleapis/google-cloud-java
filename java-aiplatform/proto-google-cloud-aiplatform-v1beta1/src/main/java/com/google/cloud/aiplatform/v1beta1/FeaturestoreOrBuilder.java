@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -159,9 +159,11 @@ public interface FeaturestoreOrBuilder
    * <pre>
    * Optional. The labels with user-defined metadata to organize your
    * Featurestore.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
+   *
    * See https://goo.gl/xmQnxf for more information on and examples of labels.
    * No more than 64 user labels can be associated with one Featurestore(System
    * labels are excluded)."
@@ -178,9 +180,11 @@ public interface FeaturestoreOrBuilder
    * <pre>
    * Optional. The labels with user-defined metadata to organize your
    * Featurestore.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
+   *
    * See https://goo.gl/xmQnxf for more information on and examples of labels.
    * No more than 64 user labels can be associated with one Featurestore(System
    * labels are excluded)."
@@ -200,9 +204,11 @@ public interface FeaturestoreOrBuilder
    * <pre>
    * Optional. The labels with user-defined metadata to organize your
    * Featurestore.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
+   *
    * See https://goo.gl/xmQnxf for more information on and examples of labels.
    * No more than 64 user labels can be associated with one Featurestore(System
    * labels are excluded)."
@@ -219,9 +225,11 @@ public interface FeaturestoreOrBuilder
    * <pre>
    * Optional. The labels with user-defined metadata to organize your
    * Featurestore.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
+   *
    * See https://goo.gl/xmQnxf for more information on and examples of labels.
    * No more than 64 user labels can be associated with one Featurestore(System
    * labels are excluded)."
@@ -242,9 +250,11 @@ public interface FeaturestoreOrBuilder
    * <pre>
    * Optional. The labels with user-defined metadata to organize your
    * Featurestore.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
+   *
    * See https://goo.gl/xmQnxf for more information on and examples of labels.
    * No more than 64 user labels can be associated with one Featurestore(System
    * labels are excluded)."

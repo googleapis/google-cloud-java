@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,6 +42,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
   private InspectConfig() {
     infoTypes_ = java.util.Collections.emptyList();
     minLikelihood_ = 0;
+    minLikelihoodPerInfoType_ = java.util.Collections.emptyList();
     customInfoTypes_ = java.util.Collections.emptyList();
     contentOptions_ = java.util.Collections.emptyList();
     ruleSet_ = java.util.Collections.emptyList();
@@ -51,11 +52,6 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new InspectConfig();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -73,6 +69,966 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.privacy.dlp.v2.InspectConfig.Builder.class);
   }
 
+  public interface InfoTypeLikelihoodOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Type of information the likelihood threshold applies to. Only one
+     * likelihood per info_type should be provided. If InfoTypeLikelihood does
+     * not have an info_type, the configuration fails.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
+     *
+     * @return Whether the infoType field is set.
+     */
+    boolean hasInfoType();
+    /**
+     *
+     *
+     * <pre>
+     * Type of information the likelihood threshold applies to. Only one
+     * likelihood per info_type should be provided. If InfoTypeLikelihood does
+     * not have an info_type, the configuration fails.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
+     *
+     * @return The infoType.
+     */
+    com.google.privacy.dlp.v2.InfoType getInfoType();
+    /**
+     *
+     *
+     * <pre>
+     * Type of information the likelihood threshold applies to. Only one
+     * likelihood per info_type should be provided. If InfoTypeLikelihood does
+     * not have an info_type, the configuration fails.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
+     */
+    com.google.privacy.dlp.v2.InfoTypeOrBuilder getInfoTypeOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Only returns findings equal to or above this threshold. This field is
+     * required or else the configuration fails.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.Likelihood min_likelihood = 2;</code>
+     *
+     * @return The enum numeric value on the wire for minLikelihood.
+     */
+    int getMinLikelihoodValue();
+    /**
+     *
+     *
+     * <pre>
+     * Only returns findings equal to or above this threshold. This field is
+     * required or else the configuration fails.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.Likelihood min_likelihood = 2;</code>
+     *
+     * @return The minLikelihood.
+     */
+    com.google.privacy.dlp.v2.Likelihood getMinLikelihood();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for setting a minimum likelihood per infotype. Used to
+   * customize the minimum likelihood level for specific infotypes in the
+   * request. For example, use this if you want to lower the precision for
+   * PERSON_NAME without lowering the precision for the other infotypes in the
+   * request.
+   * </pre>
+   *
+   * Protobuf type {@code google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood}
+   */
+  public static final class InfoTypeLikelihood extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood)
+      InfoTypeLikelihoodOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use InfoTypeLikelihood.newBuilder() to construct.
+    private InfoTypeLikelihood(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private InfoTypeLikelihood() {
+      minLikelihood_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new InfoTypeLikelihood();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_InspectConfig_InfoTypeLikelihood_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_InspectConfig_InfoTypeLikelihood_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood.class,
+              com.google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood.Builder.class);
+    }
+
+    public static final int INFO_TYPE_FIELD_NUMBER = 1;
+    private com.google.privacy.dlp.v2.InfoType infoType_;
+    /**
+     *
+     *
+     * <pre>
+     * Type of information the likelihood threshold applies to. Only one
+     * likelihood per info_type should be provided. If InfoTypeLikelihood does
+     * not have an info_type, the configuration fails.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
+     *
+     * @return Whether the infoType field is set.
+     */
+    @java.lang.Override
+    public boolean hasInfoType() {
+      return infoType_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Type of information the likelihood threshold applies to. Only one
+     * likelihood per info_type should be provided. If InfoTypeLikelihood does
+     * not have an info_type, the configuration fails.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
+     *
+     * @return The infoType.
+     */
+    @java.lang.Override
+    public com.google.privacy.dlp.v2.InfoType getInfoType() {
+      return infoType_ == null
+          ? com.google.privacy.dlp.v2.InfoType.getDefaultInstance()
+          : infoType_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Type of information the likelihood threshold applies to. Only one
+     * likelihood per info_type should be provided. If InfoTypeLikelihood does
+     * not have an info_type, the configuration fails.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
+     */
+    @java.lang.Override
+    public com.google.privacy.dlp.v2.InfoTypeOrBuilder getInfoTypeOrBuilder() {
+      return infoType_ == null
+          ? com.google.privacy.dlp.v2.InfoType.getDefaultInstance()
+          : infoType_;
+    }
+
+    public static final int MIN_LIKELIHOOD_FIELD_NUMBER = 2;
+    private int minLikelihood_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Only returns findings equal to or above this threshold. This field is
+     * required or else the configuration fails.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.Likelihood min_likelihood = 2;</code>
+     *
+     * @return The enum numeric value on the wire for minLikelihood.
+     */
+    @java.lang.Override
+    public int getMinLikelihoodValue() {
+      return minLikelihood_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Only returns findings equal to or above this threshold. This field is
+     * required or else the configuration fails.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.Likelihood min_likelihood = 2;</code>
+     *
+     * @return The minLikelihood.
+     */
+    @java.lang.Override
+    public com.google.privacy.dlp.v2.Likelihood getMinLikelihood() {
+      com.google.privacy.dlp.v2.Likelihood result =
+          com.google.privacy.dlp.v2.Likelihood.forNumber(minLikelihood_);
+      return result == null ? com.google.privacy.dlp.v2.Likelihood.UNRECOGNIZED : result;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (infoType_ != null) {
+        output.writeMessage(1, getInfoType());
+      }
+      if (minLikelihood_
+          != com.google.privacy.dlp.v2.Likelihood.LIKELIHOOD_UNSPECIFIED.getNumber()) {
+        output.writeEnum(2, minLikelihood_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (infoType_ != null) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getInfoType());
+      }
+      if (minLikelihood_
+          != com.google.privacy.dlp.v2.Likelihood.LIKELIHOOD_UNSPECIFIED.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, minLikelihood_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood)) {
+        return super.equals(obj);
+      }
+      com.google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood other =
+          (com.google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood) obj;
+
+      if (hasInfoType() != other.hasInfoType()) return false;
+      if (hasInfoType()) {
+        if (!getInfoType().equals(other.getInfoType())) return false;
+      }
+      if (minLikelihood_ != other.minLikelihood_) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasInfoType()) {
+        hash = (37 * hash) + INFO_TYPE_FIELD_NUMBER;
+        hash = (53 * hash) + getInfoType().hashCode();
+      }
+      hash = (37 * hash) + MIN_LIKELIHOOD_FIELD_NUMBER;
+      hash = (53 * hash) + minLikelihood_;
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for setting a minimum likelihood per infotype. Used to
+     * customize the minimum likelihood level for specific infotypes in the
+     * request. For example, use this if you want to lower the precision for
+     * PERSON_NAME without lowering the precision for the other infotypes in the
+     * request.
+     * </pre>
+     *
+     * Protobuf type {@code google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood)
+        com.google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihoodOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.privacy.dlp.v2.DlpProto
+            .internal_static_google_privacy_dlp_v2_InspectConfig_InfoTypeLikelihood_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.privacy.dlp.v2.DlpProto
+            .internal_static_google_privacy_dlp_v2_InspectConfig_InfoTypeLikelihood_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood.class,
+                com.google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood.Builder.class);
+      }
+
+      // Construct using com.google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        infoType_ = null;
+        if (infoTypeBuilder_ != null) {
+          infoTypeBuilder_.dispose();
+          infoTypeBuilder_ = null;
+        }
+        minLikelihood_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.privacy.dlp.v2.DlpProto
+            .internal_static_google_privacy_dlp_v2_InspectConfig_InfoTypeLikelihood_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood
+          getDefaultInstanceForType() {
+        return com.google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood build() {
+        com.google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood buildPartial() {
+        com.google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood result =
+            new com.google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.infoType_ = infoTypeBuilder_ == null ? infoType_ : infoTypeBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.minLikelihood_ = minLikelihood_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood) {
+          return mergeFrom((com.google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood other) {
+        if (other
+            == com.google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood.getDefaultInstance())
+          return this;
+        if (other.hasInfoType()) {
+          mergeInfoType(other.getInfoType());
+        }
+        if (other.minLikelihood_ != 0) {
+          setMinLikelihoodValue(other.getMinLikelihoodValue());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(getInfoTypeFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 16:
+                {
+                  minLikelihood_ = input.readEnum();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.privacy.dlp.v2.InfoType infoType_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.privacy.dlp.v2.InfoType,
+              com.google.privacy.dlp.v2.InfoType.Builder,
+              com.google.privacy.dlp.v2.InfoTypeOrBuilder>
+          infoTypeBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Type of information the likelihood threshold applies to. Only one
+       * likelihood per info_type should be provided. If InfoTypeLikelihood does
+       * not have an info_type, the configuration fails.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
+       *
+       * @return Whether the infoType field is set.
+       */
+      public boolean hasInfoType() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Type of information the likelihood threshold applies to. Only one
+       * likelihood per info_type should be provided. If InfoTypeLikelihood does
+       * not have an info_type, the configuration fails.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
+       *
+       * @return The infoType.
+       */
+      public com.google.privacy.dlp.v2.InfoType getInfoType() {
+        if (infoTypeBuilder_ == null) {
+          return infoType_ == null
+              ? com.google.privacy.dlp.v2.InfoType.getDefaultInstance()
+              : infoType_;
+        } else {
+          return infoTypeBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Type of information the likelihood threshold applies to. Only one
+       * likelihood per info_type should be provided. If InfoTypeLikelihood does
+       * not have an info_type, the configuration fails.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
+       */
+      public Builder setInfoType(com.google.privacy.dlp.v2.InfoType value) {
+        if (infoTypeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          infoType_ = value;
+        } else {
+          infoTypeBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Type of information the likelihood threshold applies to. Only one
+       * likelihood per info_type should be provided. If InfoTypeLikelihood does
+       * not have an info_type, the configuration fails.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
+       */
+      public Builder setInfoType(com.google.privacy.dlp.v2.InfoType.Builder builderForValue) {
+        if (infoTypeBuilder_ == null) {
+          infoType_ = builderForValue.build();
+        } else {
+          infoTypeBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Type of information the likelihood threshold applies to. Only one
+       * likelihood per info_type should be provided. If InfoTypeLikelihood does
+       * not have an info_type, the configuration fails.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
+       */
+      public Builder mergeInfoType(com.google.privacy.dlp.v2.InfoType value) {
+        if (infoTypeBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)
+              && infoType_ != null
+              && infoType_ != com.google.privacy.dlp.v2.InfoType.getDefaultInstance()) {
+            getInfoTypeBuilder().mergeFrom(value);
+          } else {
+            infoType_ = value;
+          }
+        } else {
+          infoTypeBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Type of information the likelihood threshold applies to. Only one
+       * likelihood per info_type should be provided. If InfoTypeLikelihood does
+       * not have an info_type, the configuration fails.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
+       */
+      public Builder clearInfoType() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        infoType_ = null;
+        if (infoTypeBuilder_ != null) {
+          infoTypeBuilder_.dispose();
+          infoTypeBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Type of information the likelihood threshold applies to. Only one
+       * likelihood per info_type should be provided. If InfoTypeLikelihood does
+       * not have an info_type, the configuration fails.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
+       */
+      public com.google.privacy.dlp.v2.InfoType.Builder getInfoTypeBuilder() {
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return getInfoTypeFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Type of information the likelihood threshold applies to. Only one
+       * likelihood per info_type should be provided. If InfoTypeLikelihood does
+       * not have an info_type, the configuration fails.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
+       */
+      public com.google.privacy.dlp.v2.InfoTypeOrBuilder getInfoTypeOrBuilder() {
+        if (infoTypeBuilder_ != null) {
+          return infoTypeBuilder_.getMessageOrBuilder();
+        } else {
+          return infoType_ == null
+              ? com.google.privacy.dlp.v2.InfoType.getDefaultInstance()
+              : infoType_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Type of information the likelihood threshold applies to. Only one
+       * likelihood per info_type should be provided. If InfoTypeLikelihood does
+       * not have an info_type, the configuration fails.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.privacy.dlp.v2.InfoType,
+              com.google.privacy.dlp.v2.InfoType.Builder,
+              com.google.privacy.dlp.v2.InfoTypeOrBuilder>
+          getInfoTypeFieldBuilder() {
+        if (infoTypeBuilder_ == null) {
+          infoTypeBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.privacy.dlp.v2.InfoType,
+                  com.google.privacy.dlp.v2.InfoType.Builder,
+                  com.google.privacy.dlp.v2.InfoTypeOrBuilder>(
+                  getInfoType(), getParentForChildren(), isClean());
+          infoType_ = null;
+        }
+        return infoTypeBuilder_;
+      }
+
+      private int minLikelihood_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Only returns findings equal to or above this threshold. This field is
+       * required or else the configuration fails.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.Likelihood min_likelihood = 2;</code>
+       *
+       * @return The enum numeric value on the wire for minLikelihood.
+       */
+      @java.lang.Override
+      public int getMinLikelihoodValue() {
+        return minLikelihood_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Only returns findings equal to or above this threshold. This field is
+       * required or else the configuration fails.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.Likelihood min_likelihood = 2;</code>
+       *
+       * @param value The enum numeric value on the wire for minLikelihood to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMinLikelihoodValue(int value) {
+        minLikelihood_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Only returns findings equal to or above this threshold. This field is
+       * required or else the configuration fails.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.Likelihood min_likelihood = 2;</code>
+       *
+       * @return The minLikelihood.
+       */
+      @java.lang.Override
+      public com.google.privacy.dlp.v2.Likelihood getMinLikelihood() {
+        com.google.privacy.dlp.v2.Likelihood result =
+            com.google.privacy.dlp.v2.Likelihood.forNumber(minLikelihood_);
+        return result == null ? com.google.privacy.dlp.v2.Likelihood.UNRECOGNIZED : result;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Only returns findings equal to or above this threshold. This field is
+       * required or else the configuration fails.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.Likelihood min_likelihood = 2;</code>
+       *
+       * @param value The minLikelihood to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMinLikelihood(com.google.privacy.dlp.v2.Likelihood value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000002;
+        minLikelihood_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Only returns findings equal to or above this threshold. This field is
+       * required or else the configuration fails.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.Likelihood min_likelihood = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearMinLikelihood() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        minLikelihood_ = 0;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood)
+    private static final com.google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood();
+    }
+
+    public static com.google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<InfoTypeLikelihood> PARSER =
+        new com.google.protobuf.AbstractParser<InfoTypeLikelihood>() {
+          @java.lang.Override
+          public InfoTypeLikelihood parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<InfoTypeLikelihood> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<InfoTypeLikelihood> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public interface FindingLimitsOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.InspectConfig.FindingLimits)
@@ -82,10 +1038,16 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Max number of findings that will be returned for each item scanned.
-     * When set within `InspectJobConfig`,
-     * the maximum returned is 2000 regardless if this is set higher.
-     * When set within `InspectContentRequest`, this field is ignored.
+     * Max number of findings that are returned for each item scanned.
+     *
+     * When set within an
+     * [InspectContentRequest][google.privacy.dlp.v2.InspectContentRequest],
+     * this field is ignored.
+     *
+     * This value isn't a hard limit. If the number of findings for an item
+     * reaches this limit, the inspection of that item ends gradually, not
+     * abruptly. Therefore, the actual number of findings that Cloud DLP returns
+     * for the item can be multiple times higher than this value.
      * </pre>
      *
      * <code>int32 max_findings_per_item = 1;</code>
@@ -98,9 +1060,17 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Max number of findings that will be returned per request/job.
-     * When set within `InspectContentRequest`, the maximum returned is 2000
-     * regardless if this is set higher.
+     * Max number of findings that are returned per request or job.
+     *
+     * If you set this field in an
+     * [InspectContentRequest][google.privacy.dlp.v2.InspectContentRequest], the
+     * resulting maximum value is the value that you set or 3,000, whichever is
+     * lower.
+     *
+     * This value isn't a hard limit. If an inspection reaches this limit, the
+     * inspection ends gradually, not abruptly. Therefore, the actual number of
+     * findings that Cloud DLP returns can be multiple times higher than this
+     * value.
      * </pre>
      *
      * <code>int32 max_findings_per_request = 2;</code>
@@ -181,6 +1151,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Configuration to control the number of findings returned for inspection.
    * This is not used for de-identification or data profiling.
+   *
    * When redacting sensitive data from images, finding limits don't apply. They
    * can cause unexpected or inconsistent results, where only some data is
    * redacted. Don't include finding limits in
@@ -208,11 +1179,6 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new FindingLimits();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -318,11 +1284,6 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new InfoTypeLimit();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1143,10 +2104,16 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Max number of findings that will be returned for each item scanned.
-     * When set within `InspectJobConfig`,
-     * the maximum returned is 2000 regardless if this is set higher.
-     * When set within `InspectContentRequest`, this field is ignored.
+     * Max number of findings that are returned for each item scanned.
+     *
+     * When set within an
+     * [InspectContentRequest][google.privacy.dlp.v2.InspectContentRequest],
+     * this field is ignored.
+     *
+     * This value isn't a hard limit. If the number of findings for an item
+     * reaches this limit, the inspection of that item ends gradually, not
+     * abruptly. Therefore, the actual number of findings that Cloud DLP returns
+     * for the item can be multiple times higher than this value.
      * </pre>
      *
      * <code>int32 max_findings_per_item = 1;</code>
@@ -1164,9 +2131,17 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Max number of findings that will be returned per request/job.
-     * When set within `InspectContentRequest`, the maximum returned is 2000
-     * regardless if this is set higher.
+     * Max number of findings that are returned per request or job.
+     *
+     * If you set this field in an
+     * [InspectContentRequest][google.privacy.dlp.v2.InspectContentRequest], the
+     * resulting maximum value is the value that you set or 3,000, whichever is
+     * lower.
+     *
+     * This value isn't a hard limit. If an inspection reaches this limit, the
+     * inspection ends gradually, not abruptly. Therefore, the actual number of
+     * findings that Cloud DLP returns can be multiple times higher than this
+     * value.
      * </pre>
      *
      * <code>int32 max_findings_per_request = 2;</code>
@@ -1454,6 +2429,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Configuration to control the number of findings returned for inspection.
      * This is not used for de-identification or data profiling.
+     *
      * When redacting sensitive data from images, finding limits don't apply. They
      * can cause unexpected or inconsistent results, where only some data is
      * redacted. Don't include finding limits in
@@ -1720,10 +2696,16 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Max number of findings that will be returned for each item scanned.
-       * When set within `InspectJobConfig`,
-       * the maximum returned is 2000 regardless if this is set higher.
-       * When set within `InspectContentRequest`, this field is ignored.
+       * Max number of findings that are returned for each item scanned.
+       *
+       * When set within an
+       * [InspectContentRequest][google.privacy.dlp.v2.InspectContentRequest],
+       * this field is ignored.
+       *
+       * This value isn't a hard limit. If the number of findings for an item
+       * reaches this limit, the inspection of that item ends gradually, not
+       * abruptly. Therefore, the actual number of findings that Cloud DLP returns
+       * for the item can be multiple times higher than this value.
        * </pre>
        *
        * <code>int32 max_findings_per_item = 1;</code>
@@ -1738,10 +2720,16 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Max number of findings that will be returned for each item scanned.
-       * When set within `InspectJobConfig`,
-       * the maximum returned is 2000 regardless if this is set higher.
-       * When set within `InspectContentRequest`, this field is ignored.
+       * Max number of findings that are returned for each item scanned.
+       *
+       * When set within an
+       * [InspectContentRequest][google.privacy.dlp.v2.InspectContentRequest],
+       * this field is ignored.
+       *
+       * This value isn't a hard limit. If the number of findings for an item
+       * reaches this limit, the inspection of that item ends gradually, not
+       * abruptly. Therefore, the actual number of findings that Cloud DLP returns
+       * for the item can be multiple times higher than this value.
        * </pre>
        *
        * <code>int32 max_findings_per_item = 1;</code>
@@ -1760,10 +2748,16 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Max number of findings that will be returned for each item scanned.
-       * When set within `InspectJobConfig`,
-       * the maximum returned is 2000 regardless if this is set higher.
-       * When set within `InspectContentRequest`, this field is ignored.
+       * Max number of findings that are returned for each item scanned.
+       *
+       * When set within an
+       * [InspectContentRequest][google.privacy.dlp.v2.InspectContentRequest],
+       * this field is ignored.
+       *
+       * This value isn't a hard limit. If the number of findings for an item
+       * reaches this limit, the inspection of that item ends gradually, not
+       * abruptly. Therefore, the actual number of findings that Cloud DLP returns
+       * for the item can be multiple times higher than this value.
        * </pre>
        *
        * <code>int32 max_findings_per_item = 1;</code>
@@ -1782,9 +2776,17 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Max number of findings that will be returned per request/job.
-       * When set within `InspectContentRequest`, the maximum returned is 2000
-       * regardless if this is set higher.
+       * Max number of findings that are returned per request or job.
+       *
+       * If you set this field in an
+       * [InspectContentRequest][google.privacy.dlp.v2.InspectContentRequest], the
+       * resulting maximum value is the value that you set or 3,000, whichever is
+       * lower.
+       *
+       * This value isn't a hard limit. If an inspection reaches this limit, the
+       * inspection ends gradually, not abruptly. Therefore, the actual number of
+       * findings that Cloud DLP returns can be multiple times higher than this
+       * value.
        * </pre>
        *
        * <code>int32 max_findings_per_request = 2;</code>
@@ -1799,9 +2801,17 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Max number of findings that will be returned per request/job.
-       * When set within `InspectContentRequest`, the maximum returned is 2000
-       * regardless if this is set higher.
+       * Max number of findings that are returned per request or job.
+       *
+       * If you set this field in an
+       * [InspectContentRequest][google.privacy.dlp.v2.InspectContentRequest], the
+       * resulting maximum value is the value that you set or 3,000, whichever is
+       * lower.
+       *
+       * This value isn't a hard limit. If an inspection reaches this limit, the
+       * inspection ends gradually, not abruptly. Therefore, the actual number of
+       * findings that Cloud DLP returns can be multiple times higher than this
+       * value.
        * </pre>
        *
        * <code>int32 max_findings_per_request = 2;</code>
@@ -1820,9 +2830,17 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Max number of findings that will be returned per request/job.
-       * When set within `InspectContentRequest`, the maximum returned is 2000
-       * regardless if this is set higher.
+       * Max number of findings that are returned per request or job.
+       *
+       * If you set this field in an
+       * [InspectContentRequest][google.privacy.dlp.v2.InspectContentRequest], the
+       * resulting maximum value is the value that you set or 3,000, whichever is
+       * lower.
+       *
+       * This value isn't a hard limit. If an inspection reaches this limit, the
+       * inspection ends gradually, not abruptly. Therefore, the actual number of
+       * findings that Cloud DLP returns can be multiple times higher than this
+       * value.
        * </pre>
        *
        * <code>int32 max_findings_per_request = 2;</code>
@@ -2327,9 +3345,11 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
    * Restricts what info_types to look for. The values must correspond to
    * InfoType values returned by ListInfoTypes or listed at
    * https://cloud.google.com/dlp/docs/infotypes-reference.
+   *
    * When no InfoTypes or CustomInfoTypes are specified in a request, the
-   * system may automatically choose what detectors to run. By default this may
-   * be all types, but may change over time as detectors are updated.
+   * system may automatically choose a default list of detectors to run, which
+   * may change over time.
+   *
    * If you need precise control and predictability as to what detectors are
    * run you should specify specific InfoTypes listed in the reference,
    * otherwise a default list will be used, which may change over time.
@@ -2348,9 +3368,11 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
    * Restricts what info_types to look for. The values must correspond to
    * InfoType values returned by ListInfoTypes or listed at
    * https://cloud.google.com/dlp/docs/infotypes-reference.
+   *
    * When no InfoTypes or CustomInfoTypes are specified in a request, the
-   * system may automatically choose what detectors to run. By default this may
-   * be all types, but may change over time as detectors are updated.
+   * system may automatically choose a default list of detectors to run, which
+   * may change over time.
+   *
    * If you need precise control and predictability as to what detectors are
    * run you should specify specific InfoTypes listed in the reference,
    * otherwise a default list will be used, which may change over time.
@@ -2370,9 +3392,11 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
    * Restricts what info_types to look for. The values must correspond to
    * InfoType values returned by ListInfoTypes or listed at
    * https://cloud.google.com/dlp/docs/infotypes-reference.
+   *
    * When no InfoTypes or CustomInfoTypes are specified in a request, the
-   * system may automatically choose what detectors to run. By default this may
-   * be all types, but may change over time as detectors are updated.
+   * system may automatically choose a default list of detectors to run, which
+   * may change over time.
+   *
    * If you need precise control and predictability as to what detectors are
    * run you should specify specific InfoTypes listed in the reference,
    * otherwise a default list will be used, which may change over time.
@@ -2391,9 +3415,11 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
    * Restricts what info_types to look for. The values must correspond to
    * InfoType values returned by ListInfoTypes or listed at
    * https://cloud.google.com/dlp/docs/infotypes-reference.
+   *
    * When no InfoTypes or CustomInfoTypes are specified in a request, the
-   * system may automatically choose what detectors to run. By default this may
-   * be all types, but may change over time as detectors are updated.
+   * system may automatically choose a default list of detectors to run, which
+   * may change over time.
+   *
    * If you need precise control and predictability as to what detectors are
    * run you should specify specific InfoTypes listed in the reference,
    * otherwise a default list will be used, which may change over time.
@@ -2412,9 +3438,11 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
    * Restricts what info_types to look for. The values must correspond to
    * InfoType values returned by ListInfoTypes or listed at
    * https://cloud.google.com/dlp/docs/infotypes-reference.
+   *
    * When no InfoTypes or CustomInfoTypes are specified in a request, the
-   * system may automatically choose what detectors to run. By default this may
-   * be all types, but may change over time as detectors are updated.
+   * system may automatically choose a default list of detectors to run, which
+   * may change over time.
+   *
    * If you need precise control and predictability as to what detectors are
    * run you should specify specific InfoTypes listed in the reference,
    * otherwise a default list will be used, which may change over time.
@@ -2433,9 +3461,12 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Only returns findings equal or above this threshold. The default is
+   * Only returns findings equal to or above this threshold. The default is
    * POSSIBLE.
-   * See https://cloud.google.com/dlp/docs/likelihood to learn more.
+   *
+   * In general, the highest likelihood setting yields the fewest findings in
+   * results and the lowest chance of a false positive. For more information,
+   * see [Match likelihood](https://cloud.google.com/dlp/docs/likelihood).
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Likelihood min_likelihood = 2;</code>
@@ -2450,9 +3481,12 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Only returns findings equal or above this threshold. The default is
+   * Only returns findings equal to or above this threshold. The default is
    * POSSIBLE.
-   * See https://cloud.google.com/dlp/docs/likelihood to learn more.
+   *
+   * In general, the highest likelihood setting yields the fewest findings in
+   * results and the lowest chance of a false positive. For more information,
+   * see [Match likelihood](https://cloud.google.com/dlp/docs/likelihood).
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Likelihood min_likelihood = 2;</code>
@@ -2466,6 +3500,107 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
     return result == null ? com.google.privacy.dlp.v2.Likelihood.UNRECOGNIZED : result;
   }
 
+  public static final int MIN_LIKELIHOOD_PER_INFO_TYPE_FIELD_NUMBER = 11;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood>
+      minLikelihoodPerInfoType_;
+  /**
+   *
+   *
+   * <pre>
+   * Minimum likelihood per infotype. For each infotype, a user can specify a
+   * minimum likelihood. The system only returns a finding if its likelihood is
+   * above this threshold. If this field is not set, the system uses the
+   * InspectConfig min_likelihood.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood min_likelihood_per_info_type = 11;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood>
+      getMinLikelihoodPerInfoTypeList() {
+    return minLikelihoodPerInfoType_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Minimum likelihood per infotype. For each infotype, a user can specify a
+   * minimum likelihood. The system only returns a finding if its likelihood is
+   * above this threshold. If this field is not set, the system uses the
+   * InspectConfig min_likelihood.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood min_likelihood_per_info_type = 11;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends com.google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihoodOrBuilder>
+      getMinLikelihoodPerInfoTypeOrBuilderList() {
+    return minLikelihoodPerInfoType_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Minimum likelihood per infotype. For each infotype, a user can specify a
+   * minimum likelihood. The system only returns a finding if its likelihood is
+   * above this threshold. If this field is not set, the system uses the
+   * InspectConfig min_likelihood.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood min_likelihood_per_info_type = 11;
+   * </code>
+   */
+  @java.lang.Override
+  public int getMinLikelihoodPerInfoTypeCount() {
+    return minLikelihoodPerInfoType_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Minimum likelihood per infotype. For each infotype, a user can specify a
+   * minimum likelihood. The system only returns a finding if its likelihood is
+   * above this threshold. If this field is not set, the system uses the
+   * InspectConfig min_likelihood.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood min_likelihood_per_info_type = 11;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood getMinLikelihoodPerInfoType(
+      int index) {
+    return minLikelihoodPerInfoType_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Minimum likelihood per infotype. For each infotype, a user can specify a
+   * minimum likelihood. The system only returns a finding if its likelihood is
+   * above this threshold. If this field is not set, the system uses the
+   * InspectConfig min_likelihood.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood min_likelihood_per_info_type = 11;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihoodOrBuilder
+      getMinLikelihoodPerInfoTypeOrBuilder(int index) {
+    return minLikelihoodPerInfoType_.get(index);
+  }
+
   public static final int LIMITS_FIELD_NUMBER = 3;
   private com.google.privacy.dlp.v2.InspectConfig.FindingLimits limits_;
   /**
@@ -2474,11 +3609,19 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Configuration to control the number of findings returned.
    * This is not used for data profiling.
+   *
    * When redacting sensitive data from images, finding limits don't apply. They
    * can cause unexpected or inconsistent results, where only some data is
    * redacted. Don't include finding limits in
    * [RedactImage][google.privacy.dlp.v2.DlpService.RedactImage]
    * requests. Otherwise, Cloud DLP returns an error.
+   *
+   * When set within an
+   * [InspectJobConfig][google.privacy.dlp.v2.InspectJobConfig], the specified
+   * maximum values aren't hard limits. If an inspection job reaches these
+   * limits, the job ends gradually, not abruptly. Therefore, the actual number
+   * of findings that Cloud DLP returns can be multiple times higher than these
+   * maximum values.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InspectConfig.FindingLimits limits = 3;</code>
@@ -2495,11 +3638,19 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Configuration to control the number of findings returned.
    * This is not used for data profiling.
+   *
    * When redacting sensitive data from images, finding limits don't apply. They
    * can cause unexpected or inconsistent results, where only some data is
    * redacted. Don't include finding limits in
    * [RedactImage][google.privacy.dlp.v2.DlpService.RedactImage]
    * requests. Otherwise, Cloud DLP returns an error.
+   *
+   * When set within an
+   * [InspectJobConfig][google.privacy.dlp.v2.InspectJobConfig], the specified
+   * maximum values aren't hard limits. If an inspection job reaches these
+   * limits, the job ends gradually, not abruptly. Therefore, the actual number
+   * of findings that Cloud DLP returns can be multiple times higher than these
+   * maximum values.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InspectConfig.FindingLimits limits = 3;</code>
@@ -2518,11 +3669,19 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Configuration to control the number of findings returned.
    * This is not used for data profiling.
+   *
    * When redacting sensitive data from images, finding limits don't apply. They
    * can cause unexpected or inconsistent results, where only some data is
    * redacted. Don't include finding limits in
    * [RedactImage][google.privacy.dlp.v2.DlpService.RedactImage]
    * requests. Otherwise, Cloud DLP returns an error.
+   *
+   * When set within an
+   * [InspectJobConfig][google.privacy.dlp.v2.InspectJobConfig], the specified
+   * maximum values aren't hard limits. If an inspection job reaches these
+   * limits, the job ends gradually, not abruptly. Therefore, the actual number
+   * of findings that Cloud DLP returns can be multiple times higher than these
+   * maximum values.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InspectConfig.FindingLimits limits = 3;</code>
@@ -2541,8 +3700,9 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * When true, a contextual quote from the data that triggered a finding is
-   * included in the response; see [Finding.quote][google.privacy.dlp.v2.Finding.quote].
-   * This is not used for data profiling.
+   * included in the response; see
+   * [Finding.quote][google.privacy.dlp.v2.Finding.quote]. This is not used for
+   * data profiling.
    * </pre>
    *
    * <code>bool include_quote = 4;</code>
@@ -2871,6 +4031,9 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < ruleSet_.size(); i++) {
       output.writeMessage(10, ruleSet_.get(i));
     }
+    for (int i = 0; i < minLikelihoodPerInfoType_.size(); i++) {
+      output.writeMessage(11, minLikelihoodPerInfoType_.get(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -2914,6 +4077,11 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < ruleSet_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, ruleSet_.get(i));
     }
+    for (int i = 0; i < minLikelihoodPerInfoType_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              11, minLikelihoodPerInfoType_.get(i));
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2931,6 +4099,8 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
 
     if (!getInfoTypesList().equals(other.getInfoTypesList())) return false;
     if (minLikelihood_ != other.minLikelihood_) return false;
+    if (!getMinLikelihoodPerInfoTypeList().equals(other.getMinLikelihoodPerInfoTypeList()))
+      return false;
     if (hasLimits() != other.hasLimits()) return false;
     if (hasLimits()) {
       if (!getLimits().equals(other.getLimits())) return false;
@@ -2957,6 +4127,10 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + MIN_LIKELIHOOD_FIELD_NUMBER;
     hash = (53 * hash) + minLikelihood_;
+    if (getMinLikelihoodPerInfoTypeCount() > 0) {
+      hash = (37 * hash) + MIN_LIKELIHOOD_PER_INFO_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getMinLikelihoodPerInfoTypeList().hashCode();
+    }
     if (hasLimits()) {
       hash = (37 * hash) + LIMITS_FIELD_NUMBER;
       hash = (53 * hash) + getLimits().hashCode();
@@ -3126,6 +4300,13 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ = (bitField0_ & ~0x00000001);
       minLikelihood_ = 0;
+      if (minLikelihoodPerInfoTypeBuilder_ == null) {
+        minLikelihoodPerInfoType_ = java.util.Collections.emptyList();
+      } else {
+        minLikelihoodPerInfoType_ = null;
+        minLikelihoodPerInfoTypeBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000004);
       limits_ = null;
       if (limitsBuilder_ != null) {
         limitsBuilder_.dispose();
@@ -3139,16 +4320,16 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
         customInfoTypes_ = null;
         customInfoTypesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000020);
-      contentOptions_ = java.util.Collections.emptyList();
       bitField0_ = (bitField0_ & ~0x00000040);
+      contentOptions_ = java.util.Collections.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000080);
       if (ruleSetBuilder_ == null) {
         ruleSet_ = java.util.Collections.emptyList();
       } else {
         ruleSet_ = null;
         ruleSetBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       return this;
     }
 
@@ -3194,24 +4375,34 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.infoTypes_ = infoTypesBuilder_.build();
       }
+      if (minLikelihoodPerInfoTypeBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)) {
+          minLikelihoodPerInfoType_ =
+              java.util.Collections.unmodifiableList(minLikelihoodPerInfoType_);
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.minLikelihoodPerInfoType_ = minLikelihoodPerInfoType_;
+      } else {
+        result.minLikelihoodPerInfoType_ = minLikelihoodPerInfoTypeBuilder_.build();
+      }
       if (customInfoTypesBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)) {
+        if (((bitField0_ & 0x00000040) != 0)) {
           customInfoTypes_ = java.util.Collections.unmodifiableList(customInfoTypes_);
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000040);
         }
         result.customInfoTypes_ = customInfoTypes_;
       } else {
         result.customInfoTypes_ = customInfoTypesBuilder_.build();
       }
-      if (((bitField0_ & 0x00000040) != 0)) {
+      if (((bitField0_ & 0x00000080) != 0)) {
         contentOptions_ = java.util.Collections.unmodifiableList(contentOptions_);
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000080);
       }
       result.contentOptions_ = contentOptions_;
       if (ruleSetBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)) {
+        if (((bitField0_ & 0x00000100) != 0)) {
           ruleSet_ = java.util.Collections.unmodifiableList(ruleSet_);
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ = (bitField0_ & ~0x00000100);
         }
         result.ruleSet_ = ruleSet_;
       } else {
@@ -3224,13 +4415,13 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.minLikelihood_ = minLikelihood_;
       }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.limits_ = limitsBuilder_ == null ? limits_ : limitsBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.includeQuote_ = includeQuote_;
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.excludeInfoTypes_ = excludeInfoTypes_;
       }
     }
@@ -3310,6 +4501,33 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
       if (other.minLikelihood_ != 0) {
         setMinLikelihoodValue(other.getMinLikelihoodValue());
       }
+      if (minLikelihoodPerInfoTypeBuilder_ == null) {
+        if (!other.minLikelihoodPerInfoType_.isEmpty()) {
+          if (minLikelihoodPerInfoType_.isEmpty()) {
+            minLikelihoodPerInfoType_ = other.minLikelihoodPerInfoType_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+          } else {
+            ensureMinLikelihoodPerInfoTypeIsMutable();
+            minLikelihoodPerInfoType_.addAll(other.minLikelihoodPerInfoType_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.minLikelihoodPerInfoType_.isEmpty()) {
+          if (minLikelihoodPerInfoTypeBuilder_.isEmpty()) {
+            minLikelihoodPerInfoTypeBuilder_.dispose();
+            minLikelihoodPerInfoTypeBuilder_ = null;
+            minLikelihoodPerInfoType_ = other.minLikelihoodPerInfoType_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+            minLikelihoodPerInfoTypeBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getMinLikelihoodPerInfoTypeFieldBuilder()
+                    : null;
+          } else {
+            minLikelihoodPerInfoTypeBuilder_.addAllMessages(other.minLikelihoodPerInfoType_);
+          }
+        }
+      }
       if (other.hasLimits()) {
         mergeLimits(other.getLimits());
       }
@@ -3323,7 +4541,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
         if (!other.customInfoTypes_.isEmpty()) {
           if (customInfoTypes_.isEmpty()) {
             customInfoTypes_ = other.customInfoTypes_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000040);
           } else {
             ensureCustomInfoTypesIsMutable();
             customInfoTypes_.addAll(other.customInfoTypes_);
@@ -3336,7 +4554,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
             customInfoTypesBuilder_.dispose();
             customInfoTypesBuilder_ = null;
             customInfoTypes_ = other.customInfoTypes_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000040);
             customInfoTypesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getCustomInfoTypesFieldBuilder()
@@ -3349,7 +4567,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
       if (!other.contentOptions_.isEmpty()) {
         if (contentOptions_.isEmpty()) {
           contentOptions_ = other.contentOptions_;
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00000080);
         } else {
           ensureContentOptionsIsMutable();
           contentOptions_.addAll(other.contentOptions_);
@@ -3360,7 +4578,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
         if (!other.ruleSet_.isEmpty()) {
           if (ruleSet_.isEmpty()) {
             ruleSet_ = other.ruleSet_;
-            bitField0_ = (bitField0_ & ~0x00000080);
+            bitField0_ = (bitField0_ & ~0x00000100);
           } else {
             ensureRuleSetIsMutable();
             ruleSet_.addAll(other.ruleSet_);
@@ -3373,7 +4591,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
             ruleSetBuilder_.dispose();
             ruleSetBuilder_ = null;
             ruleSet_ = other.ruleSet_;
-            bitField0_ = (bitField0_ & ~0x00000080);
+            bitField0_ = (bitField0_ & ~0x00000100);
             ruleSetBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getRuleSetFieldBuilder()
@@ -3431,19 +4649,19 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
             case 26:
               {
                 input.readMessage(getLimitsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 26
             case 32:
               {
                 includeQuote_ = input.readBool();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 32
             case 40:
               {
                 excludeInfoTypes_ = input.readBool();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 40
             case 50:
@@ -3491,6 +4709,20 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
                 }
                 break;
               } // case 82
+            case 90:
+              {
+                com.google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood m =
+                    input.readMessage(
+                        com.google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood.parser(),
+                        extensionRegistry);
+                if (minLikelihoodPerInfoTypeBuilder_ == null) {
+                  ensureMinLikelihoodPerInfoTypeIsMutable();
+                  minLikelihoodPerInfoType_.add(m);
+                } else {
+                  minLikelihoodPerInfoTypeBuilder_.addMessage(m);
+                }
+                break;
+              } // case 90
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3533,9 +4765,11 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * Restricts what info_types to look for. The values must correspond to
      * InfoType values returned by ListInfoTypes or listed at
      * https://cloud.google.com/dlp/docs/infotypes-reference.
+     *
      * When no InfoTypes or CustomInfoTypes are specified in a request, the
-     * system may automatically choose what detectors to run. By default this may
-     * be all types, but may change over time as detectors are updated.
+     * system may automatically choose a default list of detectors to run, which
+     * may change over time.
+     *
      * If you need precise control and predictability as to what detectors are
      * run you should specify specific InfoTypes listed in the reference,
      * otherwise a default list will be used, which may change over time.
@@ -3557,9 +4791,11 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * Restricts what info_types to look for. The values must correspond to
      * InfoType values returned by ListInfoTypes or listed at
      * https://cloud.google.com/dlp/docs/infotypes-reference.
+     *
      * When no InfoTypes or CustomInfoTypes are specified in a request, the
-     * system may automatically choose what detectors to run. By default this may
-     * be all types, but may change over time as detectors are updated.
+     * system may automatically choose a default list of detectors to run, which
+     * may change over time.
+     *
      * If you need precise control and predictability as to what detectors are
      * run you should specify specific InfoTypes listed in the reference,
      * otherwise a default list will be used, which may change over time.
@@ -3581,9 +4817,11 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * Restricts what info_types to look for. The values must correspond to
      * InfoType values returned by ListInfoTypes or listed at
      * https://cloud.google.com/dlp/docs/infotypes-reference.
+     *
      * When no InfoTypes or CustomInfoTypes are specified in a request, the
-     * system may automatically choose what detectors to run. By default this may
-     * be all types, but may change over time as detectors are updated.
+     * system may automatically choose a default list of detectors to run, which
+     * may change over time.
+     *
      * If you need precise control and predictability as to what detectors are
      * run you should specify specific InfoTypes listed in the reference,
      * otherwise a default list will be used, which may change over time.
@@ -3605,9 +4843,11 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * Restricts what info_types to look for. The values must correspond to
      * InfoType values returned by ListInfoTypes or listed at
      * https://cloud.google.com/dlp/docs/infotypes-reference.
+     *
      * When no InfoTypes or CustomInfoTypes are specified in a request, the
-     * system may automatically choose what detectors to run. By default this may
-     * be all types, but may change over time as detectors are updated.
+     * system may automatically choose a default list of detectors to run, which
+     * may change over time.
+     *
      * If you need precise control and predictability as to what detectors are
      * run you should specify specific InfoTypes listed in the reference,
      * otherwise a default list will be used, which may change over time.
@@ -3635,9 +4875,11 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * Restricts what info_types to look for. The values must correspond to
      * InfoType values returned by ListInfoTypes or listed at
      * https://cloud.google.com/dlp/docs/infotypes-reference.
+     *
      * When no InfoTypes or CustomInfoTypes are specified in a request, the
-     * system may automatically choose what detectors to run. By default this may
-     * be all types, but may change over time as detectors are updated.
+     * system may automatically choose a default list of detectors to run, which
+     * may change over time.
+     *
      * If you need precise control and predictability as to what detectors are
      * run you should specify specific InfoTypes listed in the reference,
      * otherwise a default list will be used, which may change over time.
@@ -3663,9 +4905,11 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * Restricts what info_types to look for. The values must correspond to
      * InfoType values returned by ListInfoTypes or listed at
      * https://cloud.google.com/dlp/docs/infotypes-reference.
+     *
      * When no InfoTypes or CustomInfoTypes are specified in a request, the
-     * system may automatically choose what detectors to run. By default this may
-     * be all types, but may change over time as detectors are updated.
+     * system may automatically choose a default list of detectors to run, which
+     * may change over time.
+     *
      * If you need precise control and predictability as to what detectors are
      * run you should specify specific InfoTypes listed in the reference,
      * otherwise a default list will be used, which may change over time.
@@ -3693,9 +4937,11 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * Restricts what info_types to look for. The values must correspond to
      * InfoType values returned by ListInfoTypes or listed at
      * https://cloud.google.com/dlp/docs/infotypes-reference.
+     *
      * When no InfoTypes or CustomInfoTypes are specified in a request, the
-     * system may automatically choose what detectors to run. By default this may
-     * be all types, but may change over time as detectors are updated.
+     * system may automatically choose a default list of detectors to run, which
+     * may change over time.
+     *
      * If you need precise control and predictability as to what detectors are
      * run you should specify specific InfoTypes listed in the reference,
      * otherwise a default list will be used, which may change over time.
@@ -3723,9 +4969,11 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * Restricts what info_types to look for. The values must correspond to
      * InfoType values returned by ListInfoTypes or listed at
      * https://cloud.google.com/dlp/docs/infotypes-reference.
+     *
      * When no InfoTypes or CustomInfoTypes are specified in a request, the
-     * system may automatically choose what detectors to run. By default this may
-     * be all types, but may change over time as detectors are updated.
+     * system may automatically choose a default list of detectors to run, which
+     * may change over time.
+     *
      * If you need precise control and predictability as to what detectors are
      * run you should specify specific InfoTypes listed in the reference,
      * otherwise a default list will be used, which may change over time.
@@ -3750,9 +4998,11 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * Restricts what info_types to look for. The values must correspond to
      * InfoType values returned by ListInfoTypes or listed at
      * https://cloud.google.com/dlp/docs/infotypes-reference.
+     *
      * When no InfoTypes or CustomInfoTypes are specified in a request, the
-     * system may automatically choose what detectors to run. By default this may
-     * be all types, but may change over time as detectors are updated.
+     * system may automatically choose a default list of detectors to run, which
+     * may change over time.
+     *
      * If you need precise control and predictability as to what detectors are
      * run you should specify specific InfoTypes listed in the reference,
      * otherwise a default list will be used, which may change over time.
@@ -3778,9 +5028,11 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * Restricts what info_types to look for. The values must correspond to
      * InfoType values returned by ListInfoTypes or listed at
      * https://cloud.google.com/dlp/docs/infotypes-reference.
+     *
      * When no InfoTypes or CustomInfoTypes are specified in a request, the
-     * system may automatically choose what detectors to run. By default this may
-     * be all types, but may change over time as detectors are updated.
+     * system may automatically choose a default list of detectors to run, which
+     * may change over time.
+     *
      * If you need precise control and predictability as to what detectors are
      * run you should specify specific InfoTypes listed in the reference,
      * otherwise a default list will be used, which may change over time.
@@ -3806,9 +5058,11 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * Restricts what info_types to look for. The values must correspond to
      * InfoType values returned by ListInfoTypes or listed at
      * https://cloud.google.com/dlp/docs/infotypes-reference.
+     *
      * When no InfoTypes or CustomInfoTypes are specified in a request, the
-     * system may automatically choose what detectors to run. By default this may
-     * be all types, but may change over time as detectors are updated.
+     * system may automatically choose a default list of detectors to run, which
+     * may change over time.
+     *
      * If you need precise control and predictability as to what detectors are
      * run you should specify specific InfoTypes listed in the reference,
      * otherwise a default list will be used, which may change over time.
@@ -3833,9 +5087,11 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * Restricts what info_types to look for. The values must correspond to
      * InfoType values returned by ListInfoTypes or listed at
      * https://cloud.google.com/dlp/docs/infotypes-reference.
+     *
      * When no InfoTypes or CustomInfoTypes are specified in a request, the
-     * system may automatically choose what detectors to run. By default this may
-     * be all types, but may change over time as detectors are updated.
+     * system may automatically choose a default list of detectors to run, which
+     * may change over time.
+     *
      * If you need precise control and predictability as to what detectors are
      * run you should specify specific InfoTypes listed in the reference,
      * otherwise a default list will be used, which may change over time.
@@ -3860,9 +5116,11 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * Restricts what info_types to look for. The values must correspond to
      * InfoType values returned by ListInfoTypes or listed at
      * https://cloud.google.com/dlp/docs/infotypes-reference.
+     *
      * When no InfoTypes or CustomInfoTypes are specified in a request, the
-     * system may automatically choose what detectors to run. By default this may
-     * be all types, but may change over time as detectors are updated.
+     * system may automatically choose a default list of detectors to run, which
+     * may change over time.
+     *
      * If you need precise control and predictability as to what detectors are
      * run you should specify specific InfoTypes listed in the reference,
      * otherwise a default list will be used, which may change over time.
@@ -3880,9 +5138,11 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * Restricts what info_types to look for. The values must correspond to
      * InfoType values returned by ListInfoTypes or listed at
      * https://cloud.google.com/dlp/docs/infotypes-reference.
+     *
      * When no InfoTypes or CustomInfoTypes are specified in a request, the
-     * system may automatically choose what detectors to run. By default this may
-     * be all types, but may change over time as detectors are updated.
+     * system may automatically choose a default list of detectors to run, which
+     * may change over time.
+     *
      * If you need precise control and predictability as to what detectors are
      * run you should specify specific InfoTypes listed in the reference,
      * otherwise a default list will be used, which may change over time.
@@ -3904,9 +5164,11 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * Restricts what info_types to look for. The values must correspond to
      * InfoType values returned by ListInfoTypes or listed at
      * https://cloud.google.com/dlp/docs/infotypes-reference.
+     *
      * When no InfoTypes or CustomInfoTypes are specified in a request, the
-     * system may automatically choose what detectors to run. By default this may
-     * be all types, but may change over time as detectors are updated.
+     * system may automatically choose a default list of detectors to run, which
+     * may change over time.
+     *
      * If you need precise control and predictability as to what detectors are
      * run you should specify specific InfoTypes listed in the reference,
      * otherwise a default list will be used, which may change over time.
@@ -3929,9 +5191,11 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * Restricts what info_types to look for. The values must correspond to
      * InfoType values returned by ListInfoTypes or listed at
      * https://cloud.google.com/dlp/docs/infotypes-reference.
+     *
      * When no InfoTypes or CustomInfoTypes are specified in a request, the
-     * system may automatically choose what detectors to run. By default this may
-     * be all types, but may change over time as detectors are updated.
+     * system may automatically choose a default list of detectors to run, which
+     * may change over time.
+     *
      * If you need precise control and predictability as to what detectors are
      * run you should specify specific InfoTypes listed in the reference,
      * otherwise a default list will be used, which may change over time.
@@ -3950,9 +5214,11 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * Restricts what info_types to look for. The values must correspond to
      * InfoType values returned by ListInfoTypes or listed at
      * https://cloud.google.com/dlp/docs/infotypes-reference.
+     *
      * When no InfoTypes or CustomInfoTypes are specified in a request, the
-     * system may automatically choose what detectors to run. By default this may
-     * be all types, but may change over time as detectors are updated.
+     * system may automatically choose a default list of detectors to run, which
+     * may change over time.
+     *
      * If you need precise control and predictability as to what detectors are
      * run you should specify specific InfoTypes listed in the reference,
      * otherwise a default list will be used, which may change over time.
@@ -3971,9 +5237,11 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * Restricts what info_types to look for. The values must correspond to
      * InfoType values returned by ListInfoTypes or listed at
      * https://cloud.google.com/dlp/docs/infotypes-reference.
+     *
      * When no InfoTypes or CustomInfoTypes are specified in a request, the
-     * system may automatically choose what detectors to run. By default this may
-     * be all types, but may change over time as detectors are updated.
+     * system may automatically choose a default list of detectors to run, which
+     * may change over time.
+     *
      * If you need precise control and predictability as to what detectors are
      * run you should specify specific InfoTypes listed in the reference,
      * otherwise a default list will be used, which may change over time.
@@ -4007,9 +5275,12 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Only returns findings equal or above this threshold. The default is
+     * Only returns findings equal to or above this threshold. The default is
      * POSSIBLE.
-     * See https://cloud.google.com/dlp/docs/likelihood to learn more.
+     *
+     * In general, the highest likelihood setting yields the fewest findings in
+     * results and the lowest chance of a false positive. For more information,
+     * see [Match likelihood](https://cloud.google.com/dlp/docs/likelihood).
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Likelihood min_likelihood = 2;</code>
@@ -4024,9 +5295,12 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Only returns findings equal or above this threshold. The default is
+     * Only returns findings equal to or above this threshold. The default is
      * POSSIBLE.
-     * See https://cloud.google.com/dlp/docs/likelihood to learn more.
+     *
+     * In general, the highest likelihood setting yields the fewest findings in
+     * results and the lowest chance of a false positive. For more information,
+     * see [Match likelihood](https://cloud.google.com/dlp/docs/likelihood).
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Likelihood min_likelihood = 2;</code>
@@ -4044,9 +5318,12 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Only returns findings equal or above this threshold. The default is
+     * Only returns findings equal to or above this threshold. The default is
      * POSSIBLE.
-     * See https://cloud.google.com/dlp/docs/likelihood to learn more.
+     *
+     * In general, the highest likelihood setting yields the fewest findings in
+     * results and the lowest chance of a false positive. For more information,
+     * see [Match likelihood](https://cloud.google.com/dlp/docs/likelihood).
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Likelihood min_likelihood = 2;</code>
@@ -4063,9 +5340,12 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Only returns findings equal or above this threshold. The default is
+     * Only returns findings equal to or above this threshold. The default is
      * POSSIBLE.
-     * See https://cloud.google.com/dlp/docs/likelihood to learn more.
+     *
+     * In general, the highest likelihood setting yields the fewest findings in
+     * results and the lowest chance of a false positive. For more information,
+     * see [Match likelihood](https://cloud.google.com/dlp/docs/likelihood).
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Likelihood min_likelihood = 2;</code>
@@ -4086,9 +5366,12 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Only returns findings equal or above this threshold. The default is
+     * Only returns findings equal to or above this threshold. The default is
      * POSSIBLE.
-     * See https://cloud.google.com/dlp/docs/likelihood to learn more.
+     *
+     * In general, the highest likelihood setting yields the fewest findings in
+     * results and the lowest chance of a false positive. For more information,
+     * see [Match likelihood](https://cloud.google.com/dlp/docs/likelihood).
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Likelihood min_likelihood = 2;</code>
@@ -4100,6 +5383,467 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
       minLikelihood_ = 0;
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood>
+        minLikelihoodPerInfoType_ = java.util.Collections.emptyList();
+
+    private void ensureMinLikelihoodPerInfoTypeIsMutable() {
+      if (!((bitField0_ & 0x00000004) != 0)) {
+        minLikelihoodPerInfoType_ =
+            new java.util.ArrayList<com.google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood>(
+                minLikelihoodPerInfoType_);
+        bitField0_ |= 0x00000004;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood,
+            com.google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood.Builder,
+            com.google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihoodOrBuilder>
+        minLikelihoodPerInfoTypeBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Minimum likelihood per infotype. For each infotype, a user can specify a
+     * minimum likelihood. The system only returns a finding if its likelihood is
+     * above this threshold. If this field is not set, the system uses the
+     * InspectConfig min_likelihood.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood min_likelihood_per_info_type = 11;
+     * </code>
+     */
+    public java.util.List<com.google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood>
+        getMinLikelihoodPerInfoTypeList() {
+      if (minLikelihoodPerInfoTypeBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(minLikelihoodPerInfoType_);
+      } else {
+        return minLikelihoodPerInfoTypeBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Minimum likelihood per infotype. For each infotype, a user can specify a
+     * minimum likelihood. The system only returns a finding if its likelihood is
+     * above this threshold. If this field is not set, the system uses the
+     * InspectConfig min_likelihood.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood min_likelihood_per_info_type = 11;
+     * </code>
+     */
+    public int getMinLikelihoodPerInfoTypeCount() {
+      if (minLikelihoodPerInfoTypeBuilder_ == null) {
+        return minLikelihoodPerInfoType_.size();
+      } else {
+        return minLikelihoodPerInfoTypeBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Minimum likelihood per infotype. For each infotype, a user can specify a
+     * minimum likelihood. The system only returns a finding if its likelihood is
+     * above this threshold. If this field is not set, the system uses the
+     * InspectConfig min_likelihood.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood min_likelihood_per_info_type = 11;
+     * </code>
+     */
+    public com.google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood getMinLikelihoodPerInfoType(
+        int index) {
+      if (minLikelihoodPerInfoTypeBuilder_ == null) {
+        return minLikelihoodPerInfoType_.get(index);
+      } else {
+        return minLikelihoodPerInfoTypeBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Minimum likelihood per infotype. For each infotype, a user can specify a
+     * minimum likelihood. The system only returns a finding if its likelihood is
+     * above this threshold. If this field is not set, the system uses the
+     * InspectConfig min_likelihood.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood min_likelihood_per_info_type = 11;
+     * </code>
+     */
+    public Builder setMinLikelihoodPerInfoType(
+        int index, com.google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood value) {
+      if (minLikelihoodPerInfoTypeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMinLikelihoodPerInfoTypeIsMutable();
+        minLikelihoodPerInfoType_.set(index, value);
+        onChanged();
+      } else {
+        minLikelihoodPerInfoTypeBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Minimum likelihood per infotype. For each infotype, a user can specify a
+     * minimum likelihood. The system only returns a finding if its likelihood is
+     * above this threshold. If this field is not set, the system uses the
+     * InspectConfig min_likelihood.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood min_likelihood_per_info_type = 11;
+     * </code>
+     */
+    public Builder setMinLikelihoodPerInfoType(
+        int index,
+        com.google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood.Builder builderForValue) {
+      if (minLikelihoodPerInfoTypeBuilder_ == null) {
+        ensureMinLikelihoodPerInfoTypeIsMutable();
+        minLikelihoodPerInfoType_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        minLikelihoodPerInfoTypeBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Minimum likelihood per infotype. For each infotype, a user can specify a
+     * minimum likelihood. The system only returns a finding if its likelihood is
+     * above this threshold. If this field is not set, the system uses the
+     * InspectConfig min_likelihood.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood min_likelihood_per_info_type = 11;
+     * </code>
+     */
+    public Builder addMinLikelihoodPerInfoType(
+        com.google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood value) {
+      if (minLikelihoodPerInfoTypeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMinLikelihoodPerInfoTypeIsMutable();
+        minLikelihoodPerInfoType_.add(value);
+        onChanged();
+      } else {
+        minLikelihoodPerInfoTypeBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Minimum likelihood per infotype. For each infotype, a user can specify a
+     * minimum likelihood. The system only returns a finding if its likelihood is
+     * above this threshold. If this field is not set, the system uses the
+     * InspectConfig min_likelihood.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood min_likelihood_per_info_type = 11;
+     * </code>
+     */
+    public Builder addMinLikelihoodPerInfoType(
+        int index, com.google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood value) {
+      if (minLikelihoodPerInfoTypeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMinLikelihoodPerInfoTypeIsMutable();
+        minLikelihoodPerInfoType_.add(index, value);
+        onChanged();
+      } else {
+        minLikelihoodPerInfoTypeBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Minimum likelihood per infotype. For each infotype, a user can specify a
+     * minimum likelihood. The system only returns a finding if its likelihood is
+     * above this threshold. If this field is not set, the system uses the
+     * InspectConfig min_likelihood.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood min_likelihood_per_info_type = 11;
+     * </code>
+     */
+    public Builder addMinLikelihoodPerInfoType(
+        com.google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood.Builder builderForValue) {
+      if (minLikelihoodPerInfoTypeBuilder_ == null) {
+        ensureMinLikelihoodPerInfoTypeIsMutable();
+        minLikelihoodPerInfoType_.add(builderForValue.build());
+        onChanged();
+      } else {
+        minLikelihoodPerInfoTypeBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Minimum likelihood per infotype. For each infotype, a user can specify a
+     * minimum likelihood. The system only returns a finding if its likelihood is
+     * above this threshold. If this field is not set, the system uses the
+     * InspectConfig min_likelihood.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood min_likelihood_per_info_type = 11;
+     * </code>
+     */
+    public Builder addMinLikelihoodPerInfoType(
+        int index,
+        com.google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood.Builder builderForValue) {
+      if (minLikelihoodPerInfoTypeBuilder_ == null) {
+        ensureMinLikelihoodPerInfoTypeIsMutable();
+        minLikelihoodPerInfoType_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        minLikelihoodPerInfoTypeBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Minimum likelihood per infotype. For each infotype, a user can specify a
+     * minimum likelihood. The system only returns a finding if its likelihood is
+     * above this threshold. If this field is not set, the system uses the
+     * InspectConfig min_likelihood.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood min_likelihood_per_info_type = 11;
+     * </code>
+     */
+    public Builder addAllMinLikelihoodPerInfoType(
+        java.lang.Iterable<? extends com.google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood>
+            values) {
+      if (minLikelihoodPerInfoTypeBuilder_ == null) {
+        ensureMinLikelihoodPerInfoTypeIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, minLikelihoodPerInfoType_);
+        onChanged();
+      } else {
+        minLikelihoodPerInfoTypeBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Minimum likelihood per infotype. For each infotype, a user can specify a
+     * minimum likelihood. The system only returns a finding if its likelihood is
+     * above this threshold. If this field is not set, the system uses the
+     * InspectConfig min_likelihood.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood min_likelihood_per_info_type = 11;
+     * </code>
+     */
+    public Builder clearMinLikelihoodPerInfoType() {
+      if (minLikelihoodPerInfoTypeBuilder_ == null) {
+        minLikelihoodPerInfoType_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+      } else {
+        minLikelihoodPerInfoTypeBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Minimum likelihood per infotype. For each infotype, a user can specify a
+     * minimum likelihood. The system only returns a finding if its likelihood is
+     * above this threshold. If this field is not set, the system uses the
+     * InspectConfig min_likelihood.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood min_likelihood_per_info_type = 11;
+     * </code>
+     */
+    public Builder removeMinLikelihoodPerInfoType(int index) {
+      if (minLikelihoodPerInfoTypeBuilder_ == null) {
+        ensureMinLikelihoodPerInfoTypeIsMutable();
+        minLikelihoodPerInfoType_.remove(index);
+        onChanged();
+      } else {
+        minLikelihoodPerInfoTypeBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Minimum likelihood per infotype. For each infotype, a user can specify a
+     * minimum likelihood. The system only returns a finding if its likelihood is
+     * above this threshold. If this field is not set, the system uses the
+     * InspectConfig min_likelihood.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood min_likelihood_per_info_type = 11;
+     * </code>
+     */
+    public com.google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood.Builder
+        getMinLikelihoodPerInfoTypeBuilder(int index) {
+      return getMinLikelihoodPerInfoTypeFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Minimum likelihood per infotype. For each infotype, a user can specify a
+     * minimum likelihood. The system only returns a finding if its likelihood is
+     * above this threshold. If this field is not set, the system uses the
+     * InspectConfig min_likelihood.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood min_likelihood_per_info_type = 11;
+     * </code>
+     */
+    public com.google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihoodOrBuilder
+        getMinLikelihoodPerInfoTypeOrBuilder(int index) {
+      if (minLikelihoodPerInfoTypeBuilder_ == null) {
+        return minLikelihoodPerInfoType_.get(index);
+      } else {
+        return minLikelihoodPerInfoTypeBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Minimum likelihood per infotype. For each infotype, a user can specify a
+     * minimum likelihood. The system only returns a finding if its likelihood is
+     * above this threshold. If this field is not set, the system uses the
+     * InspectConfig min_likelihood.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood min_likelihood_per_info_type = 11;
+     * </code>
+     */
+    public java.util.List<
+            ? extends com.google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihoodOrBuilder>
+        getMinLikelihoodPerInfoTypeOrBuilderList() {
+      if (minLikelihoodPerInfoTypeBuilder_ != null) {
+        return minLikelihoodPerInfoTypeBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(minLikelihoodPerInfoType_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Minimum likelihood per infotype. For each infotype, a user can specify a
+     * minimum likelihood. The system only returns a finding if its likelihood is
+     * above this threshold. If this field is not set, the system uses the
+     * InspectConfig min_likelihood.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood min_likelihood_per_info_type = 11;
+     * </code>
+     */
+    public com.google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood.Builder
+        addMinLikelihoodPerInfoTypeBuilder() {
+      return getMinLikelihoodPerInfoTypeFieldBuilder()
+          .addBuilder(
+              com.google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Minimum likelihood per infotype. For each infotype, a user can specify a
+     * minimum likelihood. The system only returns a finding if its likelihood is
+     * above this threshold. If this field is not set, the system uses the
+     * InspectConfig min_likelihood.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood min_likelihood_per_info_type = 11;
+     * </code>
+     */
+    public com.google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood.Builder
+        addMinLikelihoodPerInfoTypeBuilder(int index) {
+      return getMinLikelihoodPerInfoTypeFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Minimum likelihood per infotype. For each infotype, a user can specify a
+     * minimum likelihood. The system only returns a finding if its likelihood is
+     * above this threshold. If this field is not set, the system uses the
+     * InspectConfig min_likelihood.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood min_likelihood_per_info_type = 11;
+     * </code>
+     */
+    public java.util.List<com.google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood.Builder>
+        getMinLikelihoodPerInfoTypeBuilderList() {
+      return getMinLikelihoodPerInfoTypeFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood,
+            com.google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood.Builder,
+            com.google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihoodOrBuilder>
+        getMinLikelihoodPerInfoTypeFieldBuilder() {
+      if (minLikelihoodPerInfoTypeBuilder_ == null) {
+        minLikelihoodPerInfoTypeBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood,
+                com.google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihood.Builder,
+                com.google.privacy.dlp.v2.InspectConfig.InfoTypeLikelihoodOrBuilder>(
+                minLikelihoodPerInfoType_,
+                ((bitField0_ & 0x00000004) != 0),
+                getParentForChildren(),
+                isClean());
+        minLikelihoodPerInfoType_ = null;
+      }
+      return minLikelihoodPerInfoTypeBuilder_;
     }
 
     private com.google.privacy.dlp.v2.InspectConfig.FindingLimits limits_;
@@ -4114,11 +5858,19 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Configuration to control the number of findings returned.
      * This is not used for data profiling.
+     *
      * When redacting sensitive data from images, finding limits don't apply. They
      * can cause unexpected or inconsistent results, where only some data is
      * redacted. Don't include finding limits in
      * [RedactImage][google.privacy.dlp.v2.DlpService.RedactImage]
      * requests. Otherwise, Cloud DLP returns an error.
+     *
+     * When set within an
+     * [InspectJobConfig][google.privacy.dlp.v2.InspectJobConfig], the specified
+     * maximum values aren't hard limits. If an inspection job reaches these
+     * limits, the job ends gradually, not abruptly. Therefore, the actual number
+     * of findings that Cloud DLP returns can be multiple times higher than these
+     * maximum values.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InspectConfig.FindingLimits limits = 3;</code>
@@ -4126,7 +5878,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the limits field is set.
      */
     public boolean hasLimits() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -4134,11 +5886,19 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Configuration to control the number of findings returned.
      * This is not used for data profiling.
+     *
      * When redacting sensitive data from images, finding limits don't apply. They
      * can cause unexpected or inconsistent results, where only some data is
      * redacted. Don't include finding limits in
      * [RedactImage][google.privacy.dlp.v2.DlpService.RedactImage]
      * requests. Otherwise, Cloud DLP returns an error.
+     *
+     * When set within an
+     * [InspectJobConfig][google.privacy.dlp.v2.InspectJobConfig], the specified
+     * maximum values aren't hard limits. If an inspection job reaches these
+     * limits, the job ends gradually, not abruptly. Therefore, the actual number
+     * of findings that Cloud DLP returns can be multiple times higher than these
+     * maximum values.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InspectConfig.FindingLimits limits = 3;</code>
@@ -4160,11 +5920,19 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Configuration to control the number of findings returned.
      * This is not used for data profiling.
+     *
      * When redacting sensitive data from images, finding limits don't apply. They
      * can cause unexpected or inconsistent results, where only some data is
      * redacted. Don't include finding limits in
      * [RedactImage][google.privacy.dlp.v2.DlpService.RedactImage]
      * requests. Otherwise, Cloud DLP returns an error.
+     *
+     * When set within an
+     * [InspectJobConfig][google.privacy.dlp.v2.InspectJobConfig], the specified
+     * maximum values aren't hard limits. If an inspection job reaches these
+     * limits, the job ends gradually, not abruptly. Therefore, the actual number
+     * of findings that Cloud DLP returns can be multiple times higher than these
+     * maximum values.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InspectConfig.FindingLimits limits = 3;</code>
@@ -4178,7 +5946,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
       } else {
         limitsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -4188,11 +5956,19 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Configuration to control the number of findings returned.
      * This is not used for data profiling.
+     *
      * When redacting sensitive data from images, finding limits don't apply. They
      * can cause unexpected or inconsistent results, where only some data is
      * redacted. Don't include finding limits in
      * [RedactImage][google.privacy.dlp.v2.DlpService.RedactImage]
      * requests. Otherwise, Cloud DLP returns an error.
+     *
+     * When set within an
+     * [InspectJobConfig][google.privacy.dlp.v2.InspectJobConfig], the specified
+     * maximum values aren't hard limits. If an inspection job reaches these
+     * limits, the job ends gradually, not abruptly. Therefore, the actual number
+     * of findings that Cloud DLP returns can be multiple times higher than these
+     * maximum values.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InspectConfig.FindingLimits limits = 3;</code>
@@ -4204,7 +5980,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
       } else {
         limitsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -4214,18 +5990,26 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Configuration to control the number of findings returned.
      * This is not used for data profiling.
+     *
      * When redacting sensitive data from images, finding limits don't apply. They
      * can cause unexpected or inconsistent results, where only some data is
      * redacted. Don't include finding limits in
      * [RedactImage][google.privacy.dlp.v2.DlpService.RedactImage]
      * requests. Otherwise, Cloud DLP returns an error.
+     *
+     * When set within an
+     * [InspectJobConfig][google.privacy.dlp.v2.InspectJobConfig], the specified
+     * maximum values aren't hard limits. If an inspection job reaches these
+     * limits, the job ends gradually, not abruptly. Therefore, the actual number
+     * of findings that Cloud DLP returns can be multiple times higher than these
+     * maximum values.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InspectConfig.FindingLimits limits = 3;</code>
      */
     public Builder mergeLimits(com.google.privacy.dlp.v2.InspectConfig.FindingLimits value) {
       if (limitsBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)
+        if (((bitField0_ & 0x00000008) != 0)
             && limits_ != null
             && limits_
                 != com.google.privacy.dlp.v2.InspectConfig.FindingLimits.getDefaultInstance()) {
@@ -4236,7 +6020,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
       } else {
         limitsBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -4246,17 +6030,25 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Configuration to control the number of findings returned.
      * This is not used for data profiling.
+     *
      * When redacting sensitive data from images, finding limits don't apply. They
      * can cause unexpected or inconsistent results, where only some data is
      * redacted. Don't include finding limits in
      * [RedactImage][google.privacy.dlp.v2.DlpService.RedactImage]
      * requests. Otherwise, Cloud DLP returns an error.
+     *
+     * When set within an
+     * [InspectJobConfig][google.privacy.dlp.v2.InspectJobConfig], the specified
+     * maximum values aren't hard limits. If an inspection job reaches these
+     * limits, the job ends gradually, not abruptly. Therefore, the actual number
+     * of findings that Cloud DLP returns can be multiple times higher than these
+     * maximum values.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InspectConfig.FindingLimits limits = 3;</code>
      */
     public Builder clearLimits() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       limits_ = null;
       if (limitsBuilder_ != null) {
         limitsBuilder_.dispose();
@@ -4271,17 +6063,25 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Configuration to control the number of findings returned.
      * This is not used for data profiling.
+     *
      * When redacting sensitive data from images, finding limits don't apply. They
      * can cause unexpected or inconsistent results, where only some data is
      * redacted. Don't include finding limits in
      * [RedactImage][google.privacy.dlp.v2.DlpService.RedactImage]
      * requests. Otherwise, Cloud DLP returns an error.
+     *
+     * When set within an
+     * [InspectJobConfig][google.privacy.dlp.v2.InspectJobConfig], the specified
+     * maximum values aren't hard limits. If an inspection job reaches these
+     * limits, the job ends gradually, not abruptly. Therefore, the actual number
+     * of findings that Cloud DLP returns can be multiple times higher than these
+     * maximum values.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InspectConfig.FindingLimits limits = 3;</code>
      */
     public com.google.privacy.dlp.v2.InspectConfig.FindingLimits.Builder getLimitsBuilder() {
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return getLimitsFieldBuilder().getBuilder();
     }
@@ -4291,11 +6091,19 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Configuration to control the number of findings returned.
      * This is not used for data profiling.
+     *
      * When redacting sensitive data from images, finding limits don't apply. They
      * can cause unexpected or inconsistent results, where only some data is
      * redacted. Don't include finding limits in
      * [RedactImage][google.privacy.dlp.v2.DlpService.RedactImage]
      * requests. Otherwise, Cloud DLP returns an error.
+     *
+     * When set within an
+     * [InspectJobConfig][google.privacy.dlp.v2.InspectJobConfig], the specified
+     * maximum values aren't hard limits. If an inspection job reaches these
+     * limits, the job ends gradually, not abruptly. Therefore, the actual number
+     * of findings that Cloud DLP returns can be multiple times higher than these
+     * maximum values.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InspectConfig.FindingLimits limits = 3;</code>
@@ -4315,11 +6123,19 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Configuration to control the number of findings returned.
      * This is not used for data profiling.
+     *
      * When redacting sensitive data from images, finding limits don't apply. They
      * can cause unexpected or inconsistent results, where only some data is
      * redacted. Don't include finding limits in
      * [RedactImage][google.privacy.dlp.v2.DlpService.RedactImage]
      * requests. Otherwise, Cloud DLP returns an error.
+     *
+     * When set within an
+     * [InspectJobConfig][google.privacy.dlp.v2.InspectJobConfig], the specified
+     * maximum values aren't hard limits. If an inspection job reaches these
+     * limits, the job ends gradually, not abruptly. Therefore, the actual number
+     * of findings that Cloud DLP returns can be multiple times higher than these
+     * maximum values.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InspectConfig.FindingLimits limits = 3;</code>
@@ -4347,8 +6163,9 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * When true, a contextual quote from the data that triggered a finding is
-     * included in the response; see [Finding.quote][google.privacy.dlp.v2.Finding.quote].
-     * This is not used for data profiling.
+     * included in the response; see
+     * [Finding.quote][google.privacy.dlp.v2.Finding.quote]. This is not used for
+     * data profiling.
      * </pre>
      *
      * <code>bool include_quote = 4;</code>
@@ -4364,8 +6181,9 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * When true, a contextual quote from the data that triggered a finding is
-     * included in the response; see [Finding.quote][google.privacy.dlp.v2.Finding.quote].
-     * This is not used for data profiling.
+     * included in the response; see
+     * [Finding.quote][google.privacy.dlp.v2.Finding.quote]. This is not used for
+     * data profiling.
      * </pre>
      *
      * <code>bool include_quote = 4;</code>
@@ -4376,7 +6194,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder setIncludeQuote(boolean value) {
 
       includeQuote_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -4385,8 +6203,9 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * When true, a contextual quote from the data that triggered a finding is
-     * included in the response; see [Finding.quote][google.privacy.dlp.v2.Finding.quote].
-     * This is not used for data profiling.
+     * included in the response; see
+     * [Finding.quote][google.privacy.dlp.v2.Finding.quote]. This is not used for
+     * data profiling.
      * </pre>
      *
      * <code>bool include_quote = 4;</code>
@@ -4394,7 +6213,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearIncludeQuote() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       includeQuote_ = false;
       onChanged();
       return this;
@@ -4433,7 +6252,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder setExcludeInfoTypes(boolean value) {
 
       excludeInfoTypes_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -4450,7 +6269,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearExcludeInfoTypes() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       excludeInfoTypes_ = false;
       onChanged();
       return this;
@@ -4460,10 +6279,10 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureCustomInfoTypesIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!((bitField0_ & 0x00000040) != 0)) {
         customInfoTypes_ =
             new java.util.ArrayList<com.google.privacy.dlp.v2.CustomInfoType>(customInfoTypes_);
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
       }
     }
 
@@ -4690,7 +6509,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder clearCustomInfoTypes() {
       if (customInfoTypesBuilder_ == null) {
         customInfoTypes_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000040);
         onChanged();
       } else {
         customInfoTypesBuilder_.clear();
@@ -4821,7 +6640,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
                 com.google.privacy.dlp.v2.CustomInfoType.Builder,
                 com.google.privacy.dlp.v2.CustomInfoTypeOrBuilder>(
                 customInfoTypes_,
-                ((bitField0_ & 0x00000020) != 0),
+                ((bitField0_ & 0x00000040) != 0),
                 getParentForChildren(),
                 isClean());
         customInfoTypes_ = null;
@@ -4832,9 +6651,9 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
     private java.util.List<java.lang.Integer> contentOptions_ = java.util.Collections.emptyList();
 
     private void ensureContentOptionsIsMutable() {
-      if (!((bitField0_ & 0x00000040) != 0)) {
+      if (!((bitField0_ & 0x00000080) != 0)) {
         contentOptions_ = new java.util.ArrayList<java.lang.Integer>(contentOptions_);
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
       }
     }
     /**
@@ -4959,7 +6778,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearContentOptions() {
       contentOptions_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -5054,9 +6873,9 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureRuleSetIsMutable() {
-      if (!((bitField0_ & 0x00000080) != 0)) {
+      if (!((bitField0_ & 0x00000100) != 0)) {
         ruleSet_ = new java.util.ArrayList<com.google.privacy.dlp.v2.InspectionRuleSet>(ruleSet_);
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
       }
     }
 
@@ -5293,7 +7112,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder clearRuleSet() {
       if (ruleSetBuilder_ == null) {
         ruleSet_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000100);
         onChanged();
       } else {
         ruleSetBuilder_.clear();
@@ -5429,7 +7248,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
                 com.google.privacy.dlp.v2.InspectionRuleSet,
                 com.google.privacy.dlp.v2.InspectionRuleSet.Builder,
                 com.google.privacy.dlp.v2.InspectionRuleSetOrBuilder>(
-                ruleSet_, ((bitField0_ & 0x00000080) != 0), getParentForChildren(), isClean());
+                ruleSet_, ((bitField0_ & 0x00000100) != 0), getParentForChildren(), isClean());
         ruleSet_ = null;
       }
       return ruleSetBuilder_;

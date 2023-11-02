@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,11 +50,6 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
     return new AnalyzeContentRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.v2beta1.ParticipantProto
         .internal_static_google_cloud_dialogflow_v2beta1_AnalyzeContentRequest_descriptor;
@@ -71,6 +66,8 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
   }
 
   private int inputCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object input_;
 
   public enum InputCase
@@ -80,6 +77,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
     TEXT_INPUT(6),
     AUDIO_INPUT(7),
     EVENT_INPUT(8),
+    SUGGESTION_INPUT(12),
     INPUT_NOT_SET(0);
     private final int value;
 
@@ -104,6 +102,8 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
           return AUDIO_INPUT;
         case 8:
           return EVENT_INPUT;
+        case 12:
+          return SUGGESTION_INPUT;
         case 0:
           return INPUT_NOT_SET;
         default:
@@ -332,6 +332,58 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
     return com.google.cloud.dialogflow.v2beta1.EventInput.getDefaultInstance();
   }
 
+  public static final int SUGGESTION_INPUT_FIELD_NUMBER = 12;
+  /**
+   *
+   *
+   * <pre>
+   * An input representing the selection of a suggestion.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2beta1.SuggestionInput suggestion_input = 12;</code>
+   *
+   * @return Whether the suggestionInput field is set.
+   */
+  @java.lang.Override
+  public boolean hasSuggestionInput() {
+    return inputCase_ == 12;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * An input representing the selection of a suggestion.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2beta1.SuggestionInput suggestion_input = 12;</code>
+   *
+   * @return The suggestionInput.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2beta1.SuggestionInput getSuggestionInput() {
+    if (inputCase_ == 12) {
+      return (com.google.cloud.dialogflow.v2beta1.SuggestionInput) input_;
+    }
+    return com.google.cloud.dialogflow.v2beta1.SuggestionInput.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * An input representing the selection of a suggestion.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2beta1.SuggestionInput suggestion_input = 12;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2beta1.SuggestionInputOrBuilder
+      getSuggestionInputOrBuilder() {
+    if (inputCase_ == 12) {
+      return (com.google.cloud.dialogflow.v2beta1.SuggestionInput) input_;
+    }
+    return com.google.cloud.dialogflow.v2beta1.SuggestionInput.getDefaultInstance();
+  }
+
   public static final int REPLY_AUDIO_CONFIG_FIELD_NUMBER = 5;
   private com.google.cloud.dialogflow.v2beta1.OutputAudioConfig replyAudioConfig_;
   /**
@@ -505,6 +557,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
    * Additional parameters to be put into Dialogflow CX session parameters. To
    * remove a parameter from the session, clients should explicitly set the
    * parameter value to null.
+   *
    * Note: this field should only be used if you are connecting to a Dialogflow
    * CX agent.
    * </pre>
@@ -524,6 +577,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
    * Additional parameters to be put into Dialogflow CX session parameters. To
    * remove a parameter from the session, clients should explicitly set the
    * parameter value to null.
+   *
    * Note: this field should only be used if you are connecting to a Dialogflow
    * CX agent.
    * </pre>
@@ -543,6 +597,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
    * Additional parameters to be put into Dialogflow CX session parameters. To
    * remove a parameter from the session, clients should explicitly set the
    * parameter value to null.
+   *
    * Note: this field should only be used if you are connecting to a Dialogflow
    * CX agent.
    * </pre>
@@ -566,12 +621,14 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
    * session.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    * ID&gt;/flows/&lt;Flow ID&gt;/pages/&lt;Page ID&gt;`.
+   *
    * If `cx_current_page` is specified, the previous state of the session will
    * be ignored by Dialogflow CX, including the [previous
    * page][QueryResult.current_page] and the [previous session
    * parameters][QueryResult.parameters]. In most cases, `cx_current_page` and
    * `cx_parameters` should be configured together to direct a session to a
    * specific state.
+   *
    * Note: this field should only be used if you are connecting to a Dialogflow
    * CX agent.
    * </pre>
@@ -600,12 +657,14 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
    * session.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    * ID&gt;/flows/&lt;Flow ID&gt;/pages/&lt;Page ID&gt;`.
+   *
    * If `cx_current_page` is specified, the previous state of the session will
    * be ignored by Dialogflow CX, including the [previous
    * page][QueryResult.current_page] and the [previous session
    * parameters][QueryResult.parameters]. In most cases, `cx_current_page` and
    * `cx_parameters` should be configured together to direct a session to a
    * specific state.
+   *
    * Note: this field should only be used if you are connecting to a Dialogflow
    * CX agent.
    * </pre>
@@ -636,13 +695,15 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
    * Optional. The send time of the message from end user or human agent's
    * perspective. It is used for identifying the same message under one
    * participant.
+   *
    * Given two messages under the same participant:
-   *  - If send time are different regardless of whether the content of the
-   *  messages are exactly the same, the conversation will regard them as
-   *  two distinct messages sent by the participant.
-   *  - If send time is the same regardless of whether the content of the
-   *  messages are exactly the same, the conversation will regard them as
-   *  same message, and ignore the message received later.
+   * * If send time are different regardless of whether the content of the
+   * messages are exactly the same, the conversation will regard them as
+   * two distinct messages sent by the participant.
+   * * If send time is the same regardless of whether the content of the
+   * messages are exactly the same, the conversation will regard them as
+   * same message, and ignore the message received later.
+   *
    * If the value is not provided, a new request will always be regarded as a
    * new message without any de-duplication.
    * </pre>
@@ -662,13 +723,15 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
    * Optional. The send time of the message from end user or human agent's
    * perspective. It is used for identifying the same message under one
    * participant.
+   *
    * Given two messages under the same participant:
-   *  - If send time are different regardless of whether the content of the
-   *  messages are exactly the same, the conversation will regard them as
-   *  two distinct messages sent by the participant.
-   *  - If send time is the same regardless of whether the content of the
-   *  messages are exactly the same, the conversation will regard them as
-   *  same message, and ignore the message received later.
+   * * If send time are different regardless of whether the content of the
+   * messages are exactly the same, the conversation will regard them as
+   * two distinct messages sent by the participant.
+   * * If send time is the same regardless of whether the content of the
+   * messages are exactly the same, the conversation will regard them as
+   * same message, and ignore the message received later.
+   *
    * If the value is not provided, a new request will always be regarded as a
    * new message without any de-duplication.
    * </pre>
@@ -690,13 +753,15 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
    * Optional. The send time of the message from end user or human agent's
    * perspective. It is used for identifying the same message under one
    * participant.
+   *
    * Given two messages under the same participant:
-   *  - If send time are different regardless of whether the content of the
-   *  messages are exactly the same, the conversation will regard them as
-   *  two distinct messages sent by the participant.
-   *  - If send time is the same regardless of whether the content of the
-   *  messages are exactly the same, the conversation will regard them as
-   *  same message, and ignore the message received later.
+   * * If send time are different regardless of whether the content of the
+   * messages are exactly the same, the conversation will regard them as
+   * two distinct messages sent by the participant.
+   * * If send time is the same regardless of whether the content of the
+   * messages are exactly the same, the conversation will regard them as
+   * same message, and ignore the message received later.
+   *
    * If the value is not provided, a new request will always be regarded as a
    * new message without any de-duplication.
    * </pre>
@@ -803,6 +868,9 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 11, requestId_);
     }
+    if (inputCase_ == 12) {
+      output.writeMessage(12, (com.google.cloud.dialogflow.v2beta1.SuggestionInput) input_);
+    }
     if (assistQueryParams_ != null) {
       output.writeMessage(14, getAssistQueryParams());
     }
@@ -850,6 +918,11 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, requestId_);
+    }
+    if (inputCase_ == 12) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              12, (com.google.cloud.dialogflow.v2beta1.SuggestionInput) input_);
     }
     if (assistQueryParams_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, getAssistQueryParams());
@@ -910,6 +983,9 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
       case 8:
         if (!getEventInput().equals(other.getEventInput())) return false;
         break;
+      case 12:
+        if (!getSuggestionInput().equals(other.getSuggestionInput())) return false;
+        break;
       case 0:
       default:
     }
@@ -962,6 +1038,10 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
       case 8:
         hash = (37 * hash) + EVENT_INPUT_FIELD_NUMBER;
         hash = (53 * hash) + getEventInput().hashCode();
+        break;
+      case 12:
+        hash = (37 * hash) + SUGGESTION_INPUT_FIELD_NUMBER;
+        hash = (53 * hash) + getSuggestionInput().hashCode();
         break;
       case 0:
       default:
@@ -1117,6 +1197,9 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
       if (eventInputBuilder_ != null) {
         eventInputBuilder_.clear();
       }
+      if (suggestionInputBuilder_ != null) {
+        suggestionInputBuilder_.clear();
+      }
       replyAudioConfig_ = null;
       if (replyAudioConfigBuilder_ != null) {
         replyAudioConfigBuilder_.dispose();
@@ -1186,32 +1269,32 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.participant_ = participant_;
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.replyAudioConfig_ =
             replyAudioConfigBuilder_ == null ? replyAudioConfig_ : replyAudioConfigBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.queryParams_ =
             queryParamsBuilder_ == null ? queryParams_ : queryParamsBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.assistQueryParams_ =
             assistQueryParamsBuilder_ == null
                 ? assistQueryParams_
                 : assistQueryParamsBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.cxParameters_ =
             cxParametersBuilder_ == null ? cxParameters_ : cxParametersBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.cxCurrentPage_ = cxCurrentPage_;
       }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.messageSendTime_ =
             messageSendTimeBuilder_ == null ? messageSendTime_ : messageSendTimeBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.requestId_ = requestId_;
       }
     }
@@ -1228,6 +1311,9 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
       }
       if (inputCase_ == 8 && eventInputBuilder_ != null) {
         result.input_ = eventInputBuilder_.build();
+      }
+      if (inputCase_ == 12 && suggestionInputBuilder_ != null) {
+        result.input_ = suggestionInputBuilder_.build();
       }
     }
 
@@ -1296,7 +1382,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
       }
       if (!other.getCxCurrentPage().isEmpty()) {
         cxCurrentPage_ = other.cxCurrentPage_;
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       if (other.hasMessageSendTime()) {
@@ -1304,7 +1390,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
       }
       if (!other.getRequestId().isEmpty()) {
         requestId_ = other.requestId_;
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       switch (other.getInputCase()) {
@@ -1321,6 +1407,11 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
         case EVENT_INPUT:
           {
             mergeEventInput(other.getEventInput());
+            break;
+          }
+        case SUGGESTION_INPUT:
+          {
+            mergeSuggestionInput(other.getSuggestionInput());
             break;
           }
         case INPUT_NOT_SET:
@@ -1364,7 +1455,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
               {
                 input.readMessage(
                     getReplyAudioConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 42
             case 50:
@@ -1388,38 +1479,44 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
             case 74:
               {
                 input.readMessage(getQueryParamsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 74
             case 82:
               {
                 input.readMessage(getMessageSendTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 82
             case 90:
               {
                 requestId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 90
+            case 98:
+              {
+                input.readMessage(getSuggestionInputFieldBuilder().getBuilder(), extensionRegistry);
+                inputCase_ = 12;
+                break;
+              } // case 98
             case 114:
               {
                 input.readMessage(
                     getAssistQueryParamsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 114
             case 146:
               {
                 input.readMessage(getCxParametersFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 146
             case 162:
               {
                 cxCurrentPage_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 162
             default:
@@ -2208,6 +2305,216 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
       return eventInputBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.v2beta1.SuggestionInput,
+            com.google.cloud.dialogflow.v2beta1.SuggestionInput.Builder,
+            com.google.cloud.dialogflow.v2beta1.SuggestionInputOrBuilder>
+        suggestionInputBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * An input representing the selection of a suggestion.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.SuggestionInput suggestion_input = 12;</code>
+     *
+     * @return Whether the suggestionInput field is set.
+     */
+    @java.lang.Override
+    public boolean hasSuggestionInput() {
+      return inputCase_ == 12;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An input representing the selection of a suggestion.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.SuggestionInput suggestion_input = 12;</code>
+     *
+     * @return The suggestionInput.
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2beta1.SuggestionInput getSuggestionInput() {
+      if (suggestionInputBuilder_ == null) {
+        if (inputCase_ == 12) {
+          return (com.google.cloud.dialogflow.v2beta1.SuggestionInput) input_;
+        }
+        return com.google.cloud.dialogflow.v2beta1.SuggestionInput.getDefaultInstance();
+      } else {
+        if (inputCase_ == 12) {
+          return suggestionInputBuilder_.getMessage();
+        }
+        return com.google.cloud.dialogflow.v2beta1.SuggestionInput.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An input representing the selection of a suggestion.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.SuggestionInput suggestion_input = 12;</code>
+     */
+    public Builder setSuggestionInput(com.google.cloud.dialogflow.v2beta1.SuggestionInput value) {
+      if (suggestionInputBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        input_ = value;
+        onChanged();
+      } else {
+        suggestionInputBuilder_.setMessage(value);
+      }
+      inputCase_ = 12;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An input representing the selection of a suggestion.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.SuggestionInput suggestion_input = 12;</code>
+     */
+    public Builder setSuggestionInput(
+        com.google.cloud.dialogflow.v2beta1.SuggestionInput.Builder builderForValue) {
+      if (suggestionInputBuilder_ == null) {
+        input_ = builderForValue.build();
+        onChanged();
+      } else {
+        suggestionInputBuilder_.setMessage(builderForValue.build());
+      }
+      inputCase_ = 12;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An input representing the selection of a suggestion.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.SuggestionInput suggestion_input = 12;</code>
+     */
+    public Builder mergeSuggestionInput(com.google.cloud.dialogflow.v2beta1.SuggestionInput value) {
+      if (suggestionInputBuilder_ == null) {
+        if (inputCase_ == 12
+            && input_ != com.google.cloud.dialogflow.v2beta1.SuggestionInput.getDefaultInstance()) {
+          input_ =
+              com.google.cloud.dialogflow.v2beta1.SuggestionInput.newBuilder(
+                      (com.google.cloud.dialogflow.v2beta1.SuggestionInput) input_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          input_ = value;
+        }
+        onChanged();
+      } else {
+        if (inputCase_ == 12) {
+          suggestionInputBuilder_.mergeFrom(value);
+        } else {
+          suggestionInputBuilder_.setMessage(value);
+        }
+      }
+      inputCase_ = 12;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An input representing the selection of a suggestion.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.SuggestionInput suggestion_input = 12;</code>
+     */
+    public Builder clearSuggestionInput() {
+      if (suggestionInputBuilder_ == null) {
+        if (inputCase_ == 12) {
+          inputCase_ = 0;
+          input_ = null;
+          onChanged();
+        }
+      } else {
+        if (inputCase_ == 12) {
+          inputCase_ = 0;
+          input_ = null;
+        }
+        suggestionInputBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An input representing the selection of a suggestion.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.SuggestionInput suggestion_input = 12;</code>
+     */
+    public com.google.cloud.dialogflow.v2beta1.SuggestionInput.Builder getSuggestionInputBuilder() {
+      return getSuggestionInputFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An input representing the selection of a suggestion.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.SuggestionInput suggestion_input = 12;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2beta1.SuggestionInputOrBuilder
+        getSuggestionInputOrBuilder() {
+      if ((inputCase_ == 12) && (suggestionInputBuilder_ != null)) {
+        return suggestionInputBuilder_.getMessageOrBuilder();
+      } else {
+        if (inputCase_ == 12) {
+          return (com.google.cloud.dialogflow.v2beta1.SuggestionInput) input_;
+        }
+        return com.google.cloud.dialogflow.v2beta1.SuggestionInput.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An input representing the selection of a suggestion.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.v2beta1.SuggestionInput suggestion_input = 12;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.v2beta1.SuggestionInput,
+            com.google.cloud.dialogflow.v2beta1.SuggestionInput.Builder,
+            com.google.cloud.dialogflow.v2beta1.SuggestionInputOrBuilder>
+        getSuggestionInputFieldBuilder() {
+      if (suggestionInputBuilder_ == null) {
+        if (!(inputCase_ == 12)) {
+          input_ = com.google.cloud.dialogflow.v2beta1.SuggestionInput.getDefaultInstance();
+        }
+        suggestionInputBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.v2beta1.SuggestionInput,
+                com.google.cloud.dialogflow.v2beta1.SuggestionInput.Builder,
+                com.google.cloud.dialogflow.v2beta1.SuggestionInputOrBuilder>(
+                (com.google.cloud.dialogflow.v2beta1.SuggestionInput) input_,
+                getParentForChildren(),
+                isClean());
+        input_ = null;
+      }
+      inputCase_ = 12;
+      onChanged();
+      return suggestionInputBuilder_;
+    }
+
     private com.google.cloud.dialogflow.v2beta1.OutputAudioConfig replyAudioConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dialogflow.v2beta1.OutputAudioConfig,
@@ -2230,7 +2537,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the replyAudioConfig field is set.
      */
     public boolean hasReplyAudioConfig() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -2279,7 +2586,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
       } else {
         replyAudioConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2303,7 +2610,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
       } else {
         replyAudioConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2323,7 +2630,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
     public Builder mergeReplyAudioConfig(
         com.google.cloud.dialogflow.v2beta1.OutputAudioConfig value) {
       if (replyAudioConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)
+        if (((bitField0_ & 0x00000020) != 0)
             && replyAudioConfig_ != null
             && replyAudioConfig_
                 != com.google.cloud.dialogflow.v2beta1.OutputAudioConfig.getDefaultInstance()) {
@@ -2334,7 +2641,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
       } else {
         replyAudioConfigBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2352,7 +2659,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.cloud.dialogflow.v2beta1.OutputAudioConfig reply_audio_config = 5;</code>
      */
     public Builder clearReplyAudioConfig() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       replyAudioConfig_ = null;
       if (replyAudioConfigBuilder_ != null) {
         replyAudioConfigBuilder_.dispose();
@@ -2376,7 +2683,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      */
     public com.google.cloud.dialogflow.v2beta1.OutputAudioConfig.Builder
         getReplyAudioConfigBuilder() {
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return getReplyAudioConfigFieldBuilder().getBuilder();
     }
@@ -2451,7 +2758,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the queryParams field is set.
      */
     public boolean hasQueryParams() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -2491,7 +2798,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
       } else {
         queryParamsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2511,7 +2818,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
       } else {
         queryParamsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2526,7 +2833,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeQueryParams(com.google.cloud.dialogflow.v2beta1.QueryParameters value) {
       if (queryParamsBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)
+        if (((bitField0_ & 0x00000040) != 0)
             && queryParams_ != null
             && queryParams_
                 != com.google.cloud.dialogflow.v2beta1.QueryParameters.getDefaultInstance()) {
@@ -2537,7 +2844,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
       } else {
         queryParamsBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2551,7 +2858,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.cloud.dialogflow.v2beta1.QueryParameters query_params = 9;</code>
      */
     public Builder clearQueryParams() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       queryParams_ = null;
       if (queryParamsBuilder_ != null) {
         queryParamsBuilder_.dispose();
@@ -2570,7 +2877,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.cloud.dialogflow.v2beta1.QueryParameters query_params = 9;</code>
      */
     public com.google.cloud.dialogflow.v2beta1.QueryParameters.Builder getQueryParamsBuilder() {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return getQueryParamsFieldBuilder().getBuilder();
     }
@@ -2636,7 +2943,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the assistQueryParams field is set.
      */
     public boolean hasAssistQueryParams() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -2677,7 +2984,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
       } else {
         assistQueryParamsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2697,7 +3004,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
       } else {
         assistQueryParamsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2713,7 +3020,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
     public Builder mergeAssistQueryParams(
         com.google.cloud.dialogflow.v2beta1.AssistQueryParameters value) {
       if (assistQueryParamsBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)
+        if (((bitField0_ & 0x00000080) != 0)
             && assistQueryParams_ != null
             && assistQueryParams_
                 != com.google.cloud.dialogflow.v2beta1.AssistQueryParameters.getDefaultInstance()) {
@@ -2724,7 +3031,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
       } else {
         assistQueryParamsBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2738,7 +3045,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.cloud.dialogflow.v2beta1.AssistQueryParameters assist_query_params = 14;</code>
      */
     public Builder clearAssistQueryParams() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       assistQueryParams_ = null;
       if (assistQueryParamsBuilder_ != null) {
         assistQueryParamsBuilder_.dispose();
@@ -2758,7 +3065,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      */
     public com.google.cloud.dialogflow.v2beta1.AssistQueryParameters.Builder
         getAssistQueryParamsBuilder() {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return getAssistQueryParamsFieldBuilder().getBuilder();
     }
@@ -2820,6 +3127,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      * Additional parameters to be put into Dialogflow CX session parameters. To
      * remove a parameter from the session, clients should explicitly set the
      * parameter value to null.
+     *
      * Note: this field should only be used if you are connecting to a Dialogflow
      * CX agent.
      * </pre>
@@ -2829,7 +3137,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the cxParameters field is set.
      */
     public boolean hasCxParameters() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -2838,6 +3146,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      * Additional parameters to be put into Dialogflow CX session parameters. To
      * remove a parameter from the session, clients should explicitly set the
      * parameter value to null.
+     *
      * Note: this field should only be used if you are connecting to a Dialogflow
      * CX agent.
      * </pre>
@@ -2862,6 +3171,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      * Additional parameters to be put into Dialogflow CX session parameters. To
      * remove a parameter from the session, clients should explicitly set the
      * parameter value to null.
+     *
      * Note: this field should only be used if you are connecting to a Dialogflow
      * CX agent.
      * </pre>
@@ -2877,7 +3187,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
       } else {
         cxParametersBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2888,6 +3198,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      * Additional parameters to be put into Dialogflow CX session parameters. To
      * remove a parameter from the session, clients should explicitly set the
      * parameter value to null.
+     *
      * Note: this field should only be used if you are connecting to a Dialogflow
      * CX agent.
      * </pre>
@@ -2900,7 +3211,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
       } else {
         cxParametersBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2911,6 +3222,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      * Additional parameters to be put into Dialogflow CX session parameters. To
      * remove a parameter from the session, clients should explicitly set the
      * parameter value to null.
+     *
      * Note: this field should only be used if you are connecting to a Dialogflow
      * CX agent.
      * </pre>
@@ -2919,7 +3231,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeCxParameters(com.google.protobuf.Struct value) {
       if (cxParametersBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)
+        if (((bitField0_ & 0x00000100) != 0)
             && cxParameters_ != null
             && cxParameters_ != com.google.protobuf.Struct.getDefaultInstance()) {
           getCxParametersBuilder().mergeFrom(value);
@@ -2929,7 +3241,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
       } else {
         cxParametersBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2940,6 +3252,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      * Additional parameters to be put into Dialogflow CX session parameters. To
      * remove a parameter from the session, clients should explicitly set the
      * parameter value to null.
+     *
      * Note: this field should only be used if you are connecting to a Dialogflow
      * CX agent.
      * </pre>
@@ -2947,7 +3260,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.protobuf.Struct cx_parameters = 18;</code>
      */
     public Builder clearCxParameters() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       cxParameters_ = null;
       if (cxParametersBuilder_ != null) {
         cxParametersBuilder_.dispose();
@@ -2963,6 +3276,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      * Additional parameters to be put into Dialogflow CX session parameters. To
      * remove a parameter from the session, clients should explicitly set the
      * parameter value to null.
+     *
      * Note: this field should only be used if you are connecting to a Dialogflow
      * CX agent.
      * </pre>
@@ -2970,7 +3284,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.protobuf.Struct cx_parameters = 18;</code>
      */
     public com.google.protobuf.Struct.Builder getCxParametersBuilder() {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return getCxParametersFieldBuilder().getBuilder();
     }
@@ -2981,6 +3295,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      * Additional parameters to be put into Dialogflow CX session parameters. To
      * remove a parameter from the session, clients should explicitly set the
      * parameter value to null.
+     *
      * Note: this field should only be used if you are connecting to a Dialogflow
      * CX agent.
      * </pre>
@@ -3003,6 +3318,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      * Additional parameters to be put into Dialogflow CX session parameters. To
      * remove a parameter from the session, clients should explicitly set the
      * parameter value to null.
+     *
      * Note: this field should only be used if you are connecting to a Dialogflow
      * CX agent.
      * </pre>
@@ -3035,12 +3351,14 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      * session.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/flows/&lt;Flow ID&gt;/pages/&lt;Page ID&gt;`.
+     *
      * If `cx_current_page` is specified, the previous state of the session will
      * be ignored by Dialogflow CX, including the [previous
      * page][QueryResult.current_page] and the [previous session
      * parameters][QueryResult.parameters]. In most cases, `cx_current_page` and
      * `cx_parameters` should be configured together to direct a session to a
      * specific state.
+     *
      * Note: this field should only be used if you are connecting to a Dialogflow
      * CX agent.
      * </pre>
@@ -3068,12 +3386,14 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      * session.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/flows/&lt;Flow ID&gt;/pages/&lt;Page ID&gt;`.
+     *
      * If `cx_current_page` is specified, the previous state of the session will
      * be ignored by Dialogflow CX, including the [previous
      * page][QueryResult.current_page] and the [previous session
      * parameters][QueryResult.parameters]. In most cases, `cx_current_page` and
      * `cx_parameters` should be configured together to direct a session to a
      * specific state.
+     *
      * Note: this field should only be used if you are connecting to a Dialogflow
      * CX agent.
      * </pre>
@@ -3101,12 +3421,14 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      * session.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/flows/&lt;Flow ID&gt;/pages/&lt;Page ID&gt;`.
+     *
      * If `cx_current_page` is specified, the previous state of the session will
      * be ignored by Dialogflow CX, including the [previous
      * page][QueryResult.current_page] and the [previous session
      * parameters][QueryResult.parameters]. In most cases, `cx_current_page` and
      * `cx_parameters` should be configured together to direct a session to a
      * specific state.
+     *
      * Note: this field should only be used if you are connecting to a Dialogflow
      * CX agent.
      * </pre>
@@ -3121,7 +3443,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       cxCurrentPage_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3133,12 +3455,14 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      * session.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/flows/&lt;Flow ID&gt;/pages/&lt;Page ID&gt;`.
+     *
      * If `cx_current_page` is specified, the previous state of the session will
      * be ignored by Dialogflow CX, including the [previous
      * page][QueryResult.current_page] and the [previous session
      * parameters][QueryResult.parameters]. In most cases, `cx_current_page` and
      * `cx_parameters` should be configured together to direct a session to a
      * specific state.
+     *
      * Note: this field should only be used if you are connecting to a Dialogflow
      * CX agent.
      * </pre>
@@ -3149,7 +3473,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder clearCxCurrentPage() {
       cxCurrentPage_ = getDefaultInstance().getCxCurrentPage();
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -3161,12 +3485,14 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      * session.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/flows/&lt;Flow ID&gt;/pages/&lt;Page ID&gt;`.
+     *
      * If `cx_current_page` is specified, the previous state of the session will
      * be ignored by Dialogflow CX, including the [previous
      * page][QueryResult.current_page] and the [previous session
      * parameters][QueryResult.parameters]. In most cases, `cx_current_page` and
      * `cx_parameters` should be configured together to direct a session to a
      * specific state.
+     *
      * Note: this field should only be used if you are connecting to a Dialogflow
      * CX agent.
      * </pre>
@@ -3182,7 +3508,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
       }
       checkByteStringIsUtf8(value);
       cxCurrentPage_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3200,13 +3526,15 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      * Optional. The send time of the message from end user or human agent's
      * perspective. It is used for identifying the same message under one
      * participant.
+     *
      * Given two messages under the same participant:
-     *  - If send time are different regardless of whether the content of the
-     *  messages are exactly the same, the conversation will regard them as
-     *  two distinct messages sent by the participant.
-     *  - If send time is the same regardless of whether the content of the
-     *  messages are exactly the same, the conversation will regard them as
-     *  same message, and ignore the message received later.
+     * * If send time are different regardless of whether the content of the
+     * messages are exactly the same, the conversation will regard them as
+     * two distinct messages sent by the participant.
+     * * If send time is the same regardless of whether the content of the
+     * messages are exactly the same, the conversation will regard them as
+     * same message, and ignore the message received later.
+     *
      * If the value is not provided, a new request will always be regarded as a
      * new message without any de-duplication.
      * </pre>
@@ -3216,7 +3544,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the messageSendTime field is set.
      */
     public boolean hasMessageSendTime() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      *
@@ -3225,13 +3553,15 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      * Optional. The send time of the message from end user or human agent's
      * perspective. It is used for identifying the same message under one
      * participant.
+     *
      * Given two messages under the same participant:
-     *  - If send time are different regardless of whether the content of the
-     *  messages are exactly the same, the conversation will regard them as
-     *  two distinct messages sent by the participant.
-     *  - If send time is the same regardless of whether the content of the
-     *  messages are exactly the same, the conversation will regard them as
-     *  same message, and ignore the message received later.
+     * * If send time are different regardless of whether the content of the
+     * messages are exactly the same, the conversation will regard them as
+     * two distinct messages sent by the participant.
+     * * If send time is the same regardless of whether the content of the
+     * messages are exactly the same, the conversation will regard them as
+     * same message, and ignore the message received later.
+     *
      * If the value is not provided, a new request will always be regarded as a
      * new message without any de-duplication.
      * </pre>
@@ -3256,13 +3586,15 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      * Optional. The send time of the message from end user or human agent's
      * perspective. It is used for identifying the same message under one
      * participant.
+     *
      * Given two messages under the same participant:
-     *  - If send time are different regardless of whether the content of the
-     *  messages are exactly the same, the conversation will regard them as
-     *  two distinct messages sent by the participant.
-     *  - If send time is the same regardless of whether the content of the
-     *  messages are exactly the same, the conversation will regard them as
-     *  same message, and ignore the message received later.
+     * * If send time are different regardless of whether the content of the
+     * messages are exactly the same, the conversation will regard them as
+     * two distinct messages sent by the participant.
+     * * If send time is the same regardless of whether the content of the
+     * messages are exactly the same, the conversation will regard them as
+     * same message, and ignore the message received later.
+     *
      * If the value is not provided, a new request will always be regarded as a
      * new message without any de-duplication.
      * </pre>
@@ -3278,7 +3610,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
       } else {
         messageSendTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3289,13 +3621,15 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      * Optional. The send time of the message from end user or human agent's
      * perspective. It is used for identifying the same message under one
      * participant.
+     *
      * Given two messages under the same participant:
-     *  - If send time are different regardless of whether the content of the
-     *  messages are exactly the same, the conversation will regard them as
-     *  two distinct messages sent by the participant.
-     *  - If send time is the same regardless of whether the content of the
-     *  messages are exactly the same, the conversation will regard them as
-     *  same message, and ignore the message received later.
+     * * If send time are different regardless of whether the content of the
+     * messages are exactly the same, the conversation will regard them as
+     * two distinct messages sent by the participant.
+     * * If send time is the same regardless of whether the content of the
+     * messages are exactly the same, the conversation will regard them as
+     * same message, and ignore the message received later.
+     *
      * If the value is not provided, a new request will always be regarded as a
      * new message without any de-duplication.
      * </pre>
@@ -3308,7 +3642,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
       } else {
         messageSendTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3319,13 +3653,15 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      * Optional. The send time of the message from end user or human agent's
      * perspective. It is used for identifying the same message under one
      * participant.
+     *
      * Given two messages under the same participant:
-     *  - If send time are different regardless of whether the content of the
-     *  messages are exactly the same, the conversation will regard them as
-     *  two distinct messages sent by the participant.
-     *  - If send time is the same regardless of whether the content of the
-     *  messages are exactly the same, the conversation will regard them as
-     *  same message, and ignore the message received later.
+     * * If send time are different regardless of whether the content of the
+     * messages are exactly the same, the conversation will regard them as
+     * two distinct messages sent by the participant.
+     * * If send time is the same regardless of whether the content of the
+     * messages are exactly the same, the conversation will regard them as
+     * same message, and ignore the message received later.
+     *
      * If the value is not provided, a new request will always be regarded as a
      * new message without any de-duplication.
      * </pre>
@@ -3334,7 +3670,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeMessageSendTime(com.google.protobuf.Timestamp value) {
       if (messageSendTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) != 0)
+        if (((bitField0_ & 0x00000400) != 0)
             && messageSendTime_ != null
             && messageSendTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getMessageSendTimeBuilder().mergeFrom(value);
@@ -3344,7 +3680,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
       } else {
         messageSendTimeBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3355,13 +3691,15 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      * Optional. The send time of the message from end user or human agent's
      * perspective. It is used for identifying the same message under one
      * participant.
+     *
      * Given two messages under the same participant:
-     *  - If send time are different regardless of whether the content of the
-     *  messages are exactly the same, the conversation will regard them as
-     *  two distinct messages sent by the participant.
-     *  - If send time is the same regardless of whether the content of the
-     *  messages are exactly the same, the conversation will regard them as
-     *  same message, and ignore the message received later.
+     * * If send time are different regardless of whether the content of the
+     * messages are exactly the same, the conversation will regard them as
+     * two distinct messages sent by the participant.
+     * * If send time is the same regardless of whether the content of the
+     * messages are exactly the same, the conversation will regard them as
+     * same message, and ignore the message received later.
+     *
      * If the value is not provided, a new request will always be regarded as a
      * new message without any de-duplication.
      * </pre>
@@ -3369,7 +3707,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.protobuf.Timestamp message_send_time = 10;</code>
      */
     public Builder clearMessageSendTime() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       messageSendTime_ = null;
       if (messageSendTimeBuilder_ != null) {
         messageSendTimeBuilder_.dispose();
@@ -3385,13 +3723,15 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      * Optional. The send time of the message from end user or human agent's
      * perspective. It is used for identifying the same message under one
      * participant.
+     *
      * Given two messages under the same participant:
-     *  - If send time are different regardless of whether the content of the
-     *  messages are exactly the same, the conversation will regard them as
-     *  two distinct messages sent by the participant.
-     *  - If send time is the same regardless of whether the content of the
-     *  messages are exactly the same, the conversation will regard them as
-     *  same message, and ignore the message received later.
+     * * If send time are different regardless of whether the content of the
+     * messages are exactly the same, the conversation will regard them as
+     * two distinct messages sent by the participant.
+     * * If send time is the same regardless of whether the content of the
+     * messages are exactly the same, the conversation will regard them as
+     * same message, and ignore the message received later.
+     *
      * If the value is not provided, a new request will always be regarded as a
      * new message without any de-duplication.
      * </pre>
@@ -3399,7 +3739,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.protobuf.Timestamp message_send_time = 10;</code>
      */
     public com.google.protobuf.Timestamp.Builder getMessageSendTimeBuilder() {
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return getMessageSendTimeFieldBuilder().getBuilder();
     }
@@ -3410,13 +3750,15 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      * Optional. The send time of the message from end user or human agent's
      * perspective. It is used for identifying the same message under one
      * participant.
+     *
      * Given two messages under the same participant:
-     *  - If send time are different regardless of whether the content of the
-     *  messages are exactly the same, the conversation will regard them as
-     *  two distinct messages sent by the participant.
-     *  - If send time is the same regardless of whether the content of the
-     *  messages are exactly the same, the conversation will regard them as
-     *  same message, and ignore the message received later.
+     * * If send time are different regardless of whether the content of the
+     * messages are exactly the same, the conversation will regard them as
+     * two distinct messages sent by the participant.
+     * * If send time is the same regardless of whether the content of the
+     * messages are exactly the same, the conversation will regard them as
+     * same message, and ignore the message received later.
+     *
      * If the value is not provided, a new request will always be regarded as a
      * new message without any de-duplication.
      * </pre>
@@ -3439,13 +3781,15 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      * Optional. The send time of the message from end user or human agent's
      * perspective. It is used for identifying the same message under one
      * participant.
+     *
      * Given two messages under the same participant:
-     *  - If send time are different regardless of whether the content of the
-     *  messages are exactly the same, the conversation will regard them as
-     *  two distinct messages sent by the participant.
-     *  - If send time is the same regardless of whether the content of the
-     *  messages are exactly the same, the conversation will regard them as
-     *  same message, and ignore the message received later.
+     * * If send time are different regardless of whether the content of the
+     * messages are exactly the same, the conversation will regard them as
+     * two distinct messages sent by the participant.
+     * * If send time is the same regardless of whether the content of the
+     * messages are exactly the same, the conversation will regard them as
+     * same message, and ignore the message received later.
+     *
      * If the value is not provided, a new request will always be regarded as a
      * new message without any de-duplication.
      * </pre>
@@ -3537,7 +3881,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       requestId_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3556,7 +3900,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder clearRequestId() {
       requestId_ = getDefaultInstance().getRequestId();
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -3580,7 +3924,7 @@ public final class AnalyzeContentRequest extends com.google.protobuf.GeneratedMe
       }
       checkByteStringIsUtf8(value);
       requestId_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }

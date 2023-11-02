@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,11 +49,6 @@ public final class PubsubTarget extends com.google.protobuf.GeneratedMessageV3
     return new PubsubTarget();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.scheduler.v1.TargetProto
         .internal_static_google_cloud_scheduler_v1_PubsubTarget_descriptor;
@@ -93,6 +88,7 @@ public final class PubsubTarget extends com.google.protobuf.GeneratedMessageV3
    * same format as required by Pub/Sub's
    * [PublishRequest.name](https://cloud.google.com/pubsub/docs/reference/rpc/google.pubsub.v1#publishrequest),
    * for example `projects/PROJECT_ID/topics/TOPIC_ID`.
+   *
    * The topic must be in the same project as the Cloud Scheduler job.
    * </pre>
    *
@@ -121,6 +117,7 @@ public final class PubsubTarget extends com.google.protobuf.GeneratedMessageV3
    * same format as required by Pub/Sub's
    * [PublishRequest.name](https://cloud.google.com/pubsub/docs/reference/rpc/google.pubsub.v1#publishrequest),
    * for example `projects/PROJECT_ID/topics/TOPIC_ID`.
+   *
    * The topic must be in the same project as the Cloud Scheduler job.
    * </pre>
    *
@@ -148,6 +145,7 @@ public final class PubsubTarget extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The message payload for PubsubMessage.
+   *
    * Pubsub message must contain either non-empty data, or at least one
    * attribute.
    * </pre>
@@ -192,6 +190,7 @@ public final class PubsubTarget extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Attributes for PubsubMessage.
+   *
    * Pubsub message must contain either non-empty data, or at least one
    * attribute.
    * </pre>
@@ -216,6 +215,7 @@ public final class PubsubTarget extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Attributes for PubsubMessage.
+   *
    * Pubsub message must contain either non-empty data, or at least one
    * attribute.
    * </pre>
@@ -231,6 +231,7 @@ public final class PubsubTarget extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Attributes for PubsubMessage.
+   *
    * Pubsub message must contain either non-empty data, or at least one
    * attribute.
    * </pre>
@@ -253,6 +254,7 @@ public final class PubsubTarget extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Attributes for PubsubMessage.
+   *
    * Pubsub message must contain either non-empty data, or at least one
    * attribute.
    * </pre>
@@ -701,6 +703,7 @@ public final class PubsubTarget extends com.google.protobuf.GeneratedMessageV3
      * same format as required by Pub/Sub's
      * [PublishRequest.name](https://cloud.google.com/pubsub/docs/reference/rpc/google.pubsub.v1#publishrequest),
      * for example `projects/PROJECT_ID/topics/TOPIC_ID`.
+     *
      * The topic must be in the same project as the Cloud Scheduler job.
      * </pre>
      *
@@ -728,6 +731,7 @@ public final class PubsubTarget extends com.google.protobuf.GeneratedMessageV3
      * same format as required by Pub/Sub's
      * [PublishRequest.name](https://cloud.google.com/pubsub/docs/reference/rpc/google.pubsub.v1#publishrequest),
      * for example `projects/PROJECT_ID/topics/TOPIC_ID`.
+     *
      * The topic must be in the same project as the Cloud Scheduler job.
      * </pre>
      *
@@ -755,6 +759,7 @@ public final class PubsubTarget extends com.google.protobuf.GeneratedMessageV3
      * same format as required by Pub/Sub's
      * [PublishRequest.name](https://cloud.google.com/pubsub/docs/reference/rpc/google.pubsub.v1#publishrequest),
      * for example `projects/PROJECT_ID/topics/TOPIC_ID`.
+     *
      * The topic must be in the same project as the Cloud Scheduler job.
      * </pre>
      *
@@ -781,6 +786,7 @@ public final class PubsubTarget extends com.google.protobuf.GeneratedMessageV3
      * same format as required by Pub/Sub's
      * [PublishRequest.name](https://cloud.google.com/pubsub/docs/reference/rpc/google.pubsub.v1#publishrequest),
      * for example `projects/PROJECT_ID/topics/TOPIC_ID`.
+     *
      * The topic must be in the same project as the Cloud Scheduler job.
      * </pre>
      *
@@ -803,6 +809,7 @@ public final class PubsubTarget extends com.google.protobuf.GeneratedMessageV3
      * same format as required by Pub/Sub's
      * [PublishRequest.name](https://cloud.google.com/pubsub/docs/reference/rpc/google.pubsub.v1#publishrequest),
      * for example `projects/PROJECT_ID/topics/TOPIC_ID`.
+     *
      * The topic must be in the same project as the Cloud Scheduler job.
      * </pre>
      *
@@ -828,6 +835,7 @@ public final class PubsubTarget extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The message payload for PubsubMessage.
+     *
      * Pubsub message must contain either non-empty data, or at least one
      * attribute.
      * </pre>
@@ -845,6 +853,7 @@ public final class PubsubTarget extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The message payload for PubsubMessage.
+     *
      * Pubsub message must contain either non-empty data, or at least one
      * attribute.
      * </pre>
@@ -868,6 +877,7 @@ public final class PubsubTarget extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The message payload for PubsubMessage.
+     *
      * Pubsub message must contain either non-empty data, or at least one
      * attribute.
      * </pre>
@@ -916,6 +926,7 @@ public final class PubsubTarget extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Attributes for PubsubMessage.
+     *
      * Pubsub message must contain either non-empty data, or at least one
      * attribute.
      * </pre>
@@ -940,6 +951,7 @@ public final class PubsubTarget extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Attributes for PubsubMessage.
+     *
      * Pubsub message must contain either non-empty data, or at least one
      * attribute.
      * </pre>
@@ -955,6 +967,7 @@ public final class PubsubTarget extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Attributes for PubsubMessage.
+     *
      * Pubsub message must contain either non-empty data, or at least one
      * attribute.
      * </pre>
@@ -977,6 +990,7 @@ public final class PubsubTarget extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Attributes for PubsubMessage.
+     *
      * Pubsub message must contain either non-empty data, or at least one
      * attribute.
      * </pre>
@@ -1005,6 +1019,7 @@ public final class PubsubTarget extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Attributes for PubsubMessage.
+     *
      * Pubsub message must contain either non-empty data, or at least one
      * attribute.
      * </pre>
@@ -1029,6 +1044,7 @@ public final class PubsubTarget extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Attributes for PubsubMessage.
+     *
      * Pubsub message must contain either non-empty data, or at least one
      * attribute.
      * </pre>
@@ -1051,6 +1067,7 @@ public final class PubsubTarget extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Attributes for PubsubMessage.
+     *
      * Pubsub message must contain either non-empty data, or at least one
      * attribute.
      * </pre>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,8 +16,13 @@
 
 package com.google.cloud.clouddms.v1;
 
+import static com.google.cloud.clouddms.v1.DataMigrationServiceClient.DescribeDatabaseEntitiesPagedResponse;
+import static com.google.cloud.clouddms.v1.DataMigrationServiceClient.FetchStaticIpsPagedResponse;
 import static com.google.cloud.clouddms.v1.DataMigrationServiceClient.ListConnectionProfilesPagedResponse;
+import static com.google.cloud.clouddms.v1.DataMigrationServiceClient.ListConversionWorkspacesPagedResponse;
+import static com.google.cloud.clouddms.v1.DataMigrationServiceClient.ListMappingRulesPagedResponse;
 import static com.google.cloud.clouddms.v1.DataMigrationServiceClient.ListMigrationJobsPagedResponse;
+import static com.google.cloud.clouddms.v1.DataMigrationServiceClient.ListPrivateConnectionsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
@@ -38,6 +43,7 @@ import com.google.protobuf.Timestamp;
 import com.google.rpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -187,6 +193,7 @@ public class DataMigrationServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setDisplayName("displayName1714148973")
             .setDumpPath("dumpPath-2122385351")
+            .setDumpFlags(MigrationJob.DumpFlags.newBuilder().build())
             .setSource("source-896505829")
             .setDestination("destination-1429847026")
             .setDuration(Duration.newBuilder().build())
@@ -194,6 +201,10 @@ public class DataMigrationServiceClientTest {
             .setSourceDatabase(DatabaseType.newBuilder().build())
             .setDestinationDatabase(DatabaseType.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
+            .setConversionWorkspace(ConversionWorkspaceInfo.newBuilder().build())
+            .setFilter("filter-1274492040")
+            .setCmekKeyName("cmekKeyName-1267813158")
+            .setPerformanceConfig(MigrationJob.PerformanceConfig.newBuilder().build())
             .build();
     mockDataMigrationService.addResponse(expectedResponse);
 
@@ -237,6 +248,7 @@ public class DataMigrationServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setDisplayName("displayName1714148973")
             .setDumpPath("dumpPath-2122385351")
+            .setDumpFlags(MigrationJob.DumpFlags.newBuilder().build())
             .setSource("source-896505829")
             .setDestination("destination-1429847026")
             .setDuration(Duration.newBuilder().build())
@@ -244,6 +256,10 @@ public class DataMigrationServiceClientTest {
             .setSourceDatabase(DatabaseType.newBuilder().build())
             .setDestinationDatabase(DatabaseType.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
+            .setConversionWorkspace(ConversionWorkspaceInfo.newBuilder().build())
+            .setFilter("filter-1274492040")
+            .setCmekKeyName("cmekKeyName-1267813158")
+            .setPerformanceConfig(MigrationJob.PerformanceConfig.newBuilder().build())
             .build();
     mockDataMigrationService.addResponse(expectedResponse);
 
@@ -287,6 +303,7 @@ public class DataMigrationServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setDisplayName("displayName1714148973")
             .setDumpPath("dumpPath-2122385351")
+            .setDumpFlags(MigrationJob.DumpFlags.newBuilder().build())
             .setSource("source-896505829")
             .setDestination("destination-1429847026")
             .setDuration(Duration.newBuilder().build())
@@ -294,6 +311,10 @@ public class DataMigrationServiceClientTest {
             .setSourceDatabase(DatabaseType.newBuilder().build())
             .setDestinationDatabase(DatabaseType.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
+            .setConversionWorkspace(ConversionWorkspaceInfo.newBuilder().build())
+            .setFilter("filter-1274492040")
+            .setCmekKeyName("cmekKeyName-1267813158")
+            .setPerformanceConfig(MigrationJob.PerformanceConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -352,6 +373,7 @@ public class DataMigrationServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setDisplayName("displayName1714148973")
             .setDumpPath("dumpPath-2122385351")
+            .setDumpFlags(MigrationJob.DumpFlags.newBuilder().build())
             .setSource("source-896505829")
             .setDestination("destination-1429847026")
             .setDuration(Duration.newBuilder().build())
@@ -359,6 +381,10 @@ public class DataMigrationServiceClientTest {
             .setSourceDatabase(DatabaseType.newBuilder().build())
             .setDestinationDatabase(DatabaseType.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
+            .setConversionWorkspace(ConversionWorkspaceInfo.newBuilder().build())
+            .setFilter("filter-1274492040")
+            .setCmekKeyName("cmekKeyName-1267813158")
+            .setPerformanceConfig(MigrationJob.PerformanceConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -417,6 +443,7 @@ public class DataMigrationServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setDisplayName("displayName1714148973")
             .setDumpPath("dumpPath-2122385351")
+            .setDumpFlags(MigrationJob.DumpFlags.newBuilder().build())
             .setSource("source-896505829")
             .setDestination("destination-1429847026")
             .setDuration(Duration.newBuilder().build())
@@ -424,6 +451,10 @@ public class DataMigrationServiceClientTest {
             .setSourceDatabase(DatabaseType.newBuilder().build())
             .setDestinationDatabase(DatabaseType.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
+            .setConversionWorkspace(ConversionWorkspaceInfo.newBuilder().build())
+            .setFilter("filter-1274492040")
+            .setCmekKeyName("cmekKeyName-1267813158")
+            .setPerformanceConfig(MigrationJob.PerformanceConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -562,6 +593,7 @@ public class DataMigrationServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setDisplayName("displayName1714148973")
             .setDumpPath("dumpPath-2122385351")
+            .setDumpFlags(MigrationJob.DumpFlags.newBuilder().build())
             .setSource("source-896505829")
             .setDestination("destination-1429847026")
             .setDuration(Duration.newBuilder().build())
@@ -569,6 +601,10 @@ public class DataMigrationServiceClientTest {
             .setSourceDatabase(DatabaseType.newBuilder().build())
             .setDestinationDatabase(DatabaseType.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
+            .setConversionWorkspace(ConversionWorkspaceInfo.newBuilder().build())
+            .setFilter("filter-1274492040")
+            .setCmekKeyName("cmekKeyName-1267813158")
+            .setPerformanceConfig(MigrationJob.PerformanceConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -581,6 +617,7 @@ public class DataMigrationServiceClientTest {
     StartMigrationJobRequest request =
         StartMigrationJobRequest.newBuilder()
             .setName(MigrationJobName.of("[PROJECT]", "[LOCATION]", "[MIGRATION_JOB]").toString())
+            .setSkipValidation(true)
             .build();
 
     MigrationJob actualResponse = client.startMigrationJobAsync(request).get();
@@ -591,6 +628,7 @@ public class DataMigrationServiceClientTest {
     StartMigrationJobRequest actualRequest = ((StartMigrationJobRequest) actualRequests.get(0));
 
     Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(request.getSkipValidation(), actualRequest.getSkipValidation());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -606,6 +644,7 @@ public class DataMigrationServiceClientTest {
       StartMigrationJobRequest request =
           StartMigrationJobRequest.newBuilder()
               .setName(MigrationJobName.of("[PROJECT]", "[LOCATION]", "[MIGRATION_JOB]").toString())
+              .setSkipValidation(true)
               .build();
       client.startMigrationJobAsync(request).get();
       Assert.fail("No exception raised");
@@ -626,6 +665,7 @@ public class DataMigrationServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setDisplayName("displayName1714148973")
             .setDumpPath("dumpPath-2122385351")
+            .setDumpFlags(MigrationJob.DumpFlags.newBuilder().build())
             .setSource("source-896505829")
             .setDestination("destination-1429847026")
             .setDuration(Duration.newBuilder().build())
@@ -633,6 +673,10 @@ public class DataMigrationServiceClientTest {
             .setSourceDatabase(DatabaseType.newBuilder().build())
             .setDestinationDatabase(DatabaseType.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
+            .setConversionWorkspace(ConversionWorkspaceInfo.newBuilder().build())
+            .setFilter("filter-1274492040")
+            .setCmekKeyName("cmekKeyName-1267813158")
+            .setPerformanceConfig(MigrationJob.PerformanceConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -690,6 +734,7 @@ public class DataMigrationServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setDisplayName("displayName1714148973")
             .setDumpPath("dumpPath-2122385351")
+            .setDumpFlags(MigrationJob.DumpFlags.newBuilder().build())
             .setSource("source-896505829")
             .setDestination("destination-1429847026")
             .setDuration(Duration.newBuilder().build())
@@ -697,6 +742,10 @@ public class DataMigrationServiceClientTest {
             .setSourceDatabase(DatabaseType.newBuilder().build())
             .setDestinationDatabase(DatabaseType.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
+            .setConversionWorkspace(ConversionWorkspaceInfo.newBuilder().build())
+            .setFilter("filter-1274492040")
+            .setCmekKeyName("cmekKeyName-1267813158")
+            .setPerformanceConfig(MigrationJob.PerformanceConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -754,6 +803,7 @@ public class DataMigrationServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setDisplayName("displayName1714148973")
             .setDumpPath("dumpPath-2122385351")
+            .setDumpFlags(MigrationJob.DumpFlags.newBuilder().build())
             .setSource("source-896505829")
             .setDestination("destination-1429847026")
             .setDuration(Duration.newBuilder().build())
@@ -761,6 +811,10 @@ public class DataMigrationServiceClientTest {
             .setSourceDatabase(DatabaseType.newBuilder().build())
             .setDestinationDatabase(DatabaseType.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
+            .setConversionWorkspace(ConversionWorkspaceInfo.newBuilder().build())
+            .setFilter("filter-1274492040")
+            .setCmekKeyName("cmekKeyName-1267813158")
+            .setPerformanceConfig(MigrationJob.PerformanceConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -818,6 +872,7 @@ public class DataMigrationServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setDisplayName("displayName1714148973")
             .setDumpPath("dumpPath-2122385351")
+            .setDumpFlags(MigrationJob.DumpFlags.newBuilder().build())
             .setSource("source-896505829")
             .setDestination("destination-1429847026")
             .setDuration(Duration.newBuilder().build())
@@ -825,6 +880,10 @@ public class DataMigrationServiceClientTest {
             .setSourceDatabase(DatabaseType.newBuilder().build())
             .setDestinationDatabase(DatabaseType.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
+            .setConversionWorkspace(ConversionWorkspaceInfo.newBuilder().build())
+            .setFilter("filter-1274492040")
+            .setCmekKeyName("cmekKeyName-1267813158")
+            .setPerformanceConfig(MigrationJob.PerformanceConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -837,6 +896,8 @@ public class DataMigrationServiceClientTest {
     VerifyMigrationJobRequest request =
         VerifyMigrationJobRequest.newBuilder()
             .setName(MigrationJobName.of("[PROJECT]", "[LOCATION]", "[MIGRATION_JOB]").toString())
+            .setUpdateMask(FieldMask.newBuilder().build())
+            .setMigrationJob(MigrationJob.newBuilder().build())
             .build();
 
     MigrationJob actualResponse = client.verifyMigrationJobAsync(request).get();
@@ -847,6 +908,8 @@ public class DataMigrationServiceClientTest {
     VerifyMigrationJobRequest actualRequest = ((VerifyMigrationJobRequest) actualRequests.get(0));
 
     Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(request.getUpdateMask(), actualRequest.getUpdateMask());
+    Assert.assertEquals(request.getMigrationJob(), actualRequest.getMigrationJob());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -862,6 +925,8 @@ public class DataMigrationServiceClientTest {
       VerifyMigrationJobRequest request =
           VerifyMigrationJobRequest.newBuilder()
               .setName(MigrationJobName.of("[PROJECT]", "[LOCATION]", "[MIGRATION_JOB]").toString())
+              .setUpdateMask(FieldMask.newBuilder().build())
+              .setMigrationJob(MigrationJob.newBuilder().build())
               .build();
       client.verifyMigrationJobAsync(request).get();
       Assert.fail("No exception raised");
@@ -882,6 +947,7 @@ public class DataMigrationServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setDisplayName("displayName1714148973")
             .setDumpPath("dumpPath-2122385351")
+            .setDumpFlags(MigrationJob.DumpFlags.newBuilder().build())
             .setSource("source-896505829")
             .setDestination("destination-1429847026")
             .setDuration(Duration.newBuilder().build())
@@ -889,6 +955,10 @@ public class DataMigrationServiceClientTest {
             .setSourceDatabase(DatabaseType.newBuilder().build())
             .setDestinationDatabase(DatabaseType.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
+            .setConversionWorkspace(ConversionWorkspaceInfo.newBuilder().build())
+            .setFilter("filter-1274492040")
+            .setCmekKeyName("cmekKeyName-1267813158")
+            .setPerformanceConfig(MigrationJob.PerformanceConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -901,6 +971,7 @@ public class DataMigrationServiceClientTest {
     RestartMigrationJobRequest request =
         RestartMigrationJobRequest.newBuilder()
             .setName(MigrationJobName.of("[PROJECT]", "[LOCATION]", "[MIGRATION_JOB]").toString())
+            .setSkipValidation(true)
             .build();
 
     MigrationJob actualResponse = client.restartMigrationJobAsync(request).get();
@@ -911,6 +982,7 @@ public class DataMigrationServiceClientTest {
     RestartMigrationJobRequest actualRequest = ((RestartMigrationJobRequest) actualRequests.get(0));
 
     Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(request.getSkipValidation(), actualRequest.getSkipValidation());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -926,6 +998,7 @@ public class DataMigrationServiceClientTest {
       RestartMigrationJobRequest request =
           RestartMigrationJobRequest.newBuilder()
               .setName(MigrationJobName.of("[PROJECT]", "[LOCATION]", "[MIGRATION_JOB]").toString())
+              .setSkipValidation(true)
               .build();
       client.restartMigrationJobAsync(request).get();
       Assert.fail("No exception raised");
@@ -981,6 +1054,63 @@ public class DataMigrationServiceClientTest {
               .setVmPort(563010825)
               .build();
       client.generateSshScript(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void generateTcpProxyScriptTest() throws Exception {
+    TcpProxyScript expectedResponse =
+        TcpProxyScript.newBuilder().setScript("script-907685685").build();
+    mockDataMigrationService.addResponse(expectedResponse);
+
+    GenerateTcpProxyScriptRequest request =
+        GenerateTcpProxyScriptRequest.newBuilder()
+            .setMigrationJob(
+                MigrationJobName.of("[PROJECT]", "[LOCATION]", "[MIGRATION_JOB]").toString())
+            .setVmName("vmName-813643294")
+            .setVmMachineType("vmMachineType-1921917718")
+            .setVmZone("vmZone-813272317")
+            .setVmSubnet("vmSubnet-65857292")
+            .build();
+
+    TcpProxyScript actualResponse = client.generateTcpProxyScript(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataMigrationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GenerateTcpProxyScriptRequest actualRequest =
+        ((GenerateTcpProxyScriptRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getMigrationJob(), actualRequest.getMigrationJob());
+    Assert.assertEquals(request.getVmName(), actualRequest.getVmName());
+    Assert.assertEquals(request.getVmMachineType(), actualRequest.getVmMachineType());
+    Assert.assertEquals(request.getVmZone(), actualRequest.getVmZone());
+    Assert.assertEquals(request.getVmSubnet(), actualRequest.getVmSubnet());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void generateTcpProxyScriptExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataMigrationService.addException(exception);
+
+    try {
+      GenerateTcpProxyScriptRequest request =
+          GenerateTcpProxyScriptRequest.newBuilder()
+              .setMigrationJob(
+                  MigrationJobName.of("[PROJECT]", "[LOCATION]", "[MIGRATION_JOB]").toString())
+              .setVmName("vmName-813643294")
+              .setVmMachineType("vmMachineType-1921917718")
+              .setVmZone("vmZone-813272317")
+              .setVmSubnet("vmSubnet-65857292")
+              .build();
+      client.generateTcpProxyScript(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
@@ -1195,8 +1325,7 @@ public class DataMigrationServiceClientTest {
             .build();
     mockDataMigrationService.addResponse(resultOperation);
 
-    ConnectionProfileName parent =
-        ConnectionProfileName.of("[PROJECT]", "[LOCATION]", "[CONNECTION_PROFILE]");
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
     ConnectionProfile connectionProfile = ConnectionProfile.newBuilder().build();
     String connectionProfileId = "connectionProfileId597575526";
 
@@ -1224,8 +1353,7 @@ public class DataMigrationServiceClientTest {
     mockDataMigrationService.addException(exception);
 
     try {
-      ConnectionProfileName parent =
-          ConnectionProfileName.of("[PROJECT]", "[LOCATION]", "[CONNECTION_PROFILE]");
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
       ConnectionProfile connectionProfile = ConnectionProfile.newBuilder().build();
       String connectionProfileId = "connectionProfileId597575526";
       client.createConnectionProfileAsync(parent, connectionProfile, connectionProfileId).get();
@@ -1443,6 +1571,1966 @@ public class DataMigrationServiceClientTest {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
       InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createPrivateConnectionTest() throws Exception {
+    PrivateConnection expectedResponse =
+        PrivateConnection.newBuilder()
+            .setName(
+                PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDisplayName("displayName1714148973")
+            .setError(Status.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createPrivateConnectionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockDataMigrationService.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    PrivateConnection privateConnection = PrivateConnection.newBuilder().build();
+    String privateConnectionId = "privateConnectionId-1926654532";
+
+    PrivateConnection actualResponse =
+        client.createPrivateConnectionAsync(parent, privateConnection, privateConnectionId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataMigrationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreatePrivateConnectionRequest actualRequest =
+        ((CreatePrivateConnectionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(privateConnection, actualRequest.getPrivateConnection());
+    Assert.assertEquals(privateConnectionId, actualRequest.getPrivateConnectionId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createPrivateConnectionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataMigrationService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      PrivateConnection privateConnection = PrivateConnection.newBuilder().build();
+      String privateConnectionId = "privateConnectionId-1926654532";
+      client.createPrivateConnectionAsync(parent, privateConnection, privateConnectionId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createPrivateConnectionTest2() throws Exception {
+    PrivateConnection expectedResponse =
+        PrivateConnection.newBuilder()
+            .setName(
+                PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDisplayName("displayName1714148973")
+            .setError(Status.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createPrivateConnectionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockDataMigrationService.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    PrivateConnection privateConnection = PrivateConnection.newBuilder().build();
+    String privateConnectionId = "privateConnectionId-1926654532";
+
+    PrivateConnection actualResponse =
+        client.createPrivateConnectionAsync(parent, privateConnection, privateConnectionId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataMigrationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreatePrivateConnectionRequest actualRequest =
+        ((CreatePrivateConnectionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(privateConnection, actualRequest.getPrivateConnection());
+    Assert.assertEquals(privateConnectionId, actualRequest.getPrivateConnectionId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createPrivateConnectionExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataMigrationService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      PrivateConnection privateConnection = PrivateConnection.newBuilder().build();
+      String privateConnectionId = "privateConnectionId-1926654532";
+      client.createPrivateConnectionAsync(parent, privateConnection, privateConnectionId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void getPrivateConnectionTest() throws Exception {
+    PrivateConnection expectedResponse =
+        PrivateConnection.newBuilder()
+            .setName(
+                PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDisplayName("displayName1714148973")
+            .setError(Status.newBuilder().build())
+            .build();
+    mockDataMigrationService.addResponse(expectedResponse);
+
+    PrivateConnectionName name =
+        PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]");
+
+    PrivateConnection actualResponse = client.getPrivateConnection(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataMigrationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetPrivateConnectionRequest actualRequest =
+        ((GetPrivateConnectionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getPrivateConnectionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataMigrationService.addException(exception);
+
+    try {
+      PrivateConnectionName name =
+          PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]");
+      client.getPrivateConnection(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getPrivateConnectionTest2() throws Exception {
+    PrivateConnection expectedResponse =
+        PrivateConnection.newBuilder()
+            .setName(
+                PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDisplayName("displayName1714148973")
+            .setError(Status.newBuilder().build())
+            .build();
+    mockDataMigrationService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    PrivateConnection actualResponse = client.getPrivateConnection(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataMigrationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetPrivateConnectionRequest actualRequest =
+        ((GetPrivateConnectionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getPrivateConnectionExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataMigrationService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getPrivateConnection(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listPrivateConnectionsTest() throws Exception {
+    PrivateConnection responsesElement = PrivateConnection.newBuilder().build();
+    ListPrivateConnectionsResponse expectedResponse =
+        ListPrivateConnectionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllPrivateConnections(Arrays.asList(responsesElement))
+            .build();
+    mockDataMigrationService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListPrivateConnectionsPagedResponse pagedListResponse = client.listPrivateConnections(parent);
+
+    List<PrivateConnection> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getPrivateConnectionsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockDataMigrationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListPrivateConnectionsRequest actualRequest =
+        ((ListPrivateConnectionsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listPrivateConnectionsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataMigrationService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listPrivateConnections(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listPrivateConnectionsTest2() throws Exception {
+    PrivateConnection responsesElement = PrivateConnection.newBuilder().build();
+    ListPrivateConnectionsResponse expectedResponse =
+        ListPrivateConnectionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllPrivateConnections(Arrays.asList(responsesElement))
+            .build();
+    mockDataMigrationService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListPrivateConnectionsPagedResponse pagedListResponse = client.listPrivateConnections(parent);
+
+    List<PrivateConnection> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getPrivateConnectionsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockDataMigrationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListPrivateConnectionsRequest actualRequest =
+        ((ListPrivateConnectionsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listPrivateConnectionsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataMigrationService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listPrivateConnections(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deletePrivateConnectionTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deletePrivateConnectionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockDataMigrationService.addResponse(resultOperation);
+
+    PrivateConnectionName name =
+        PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]");
+
+    client.deletePrivateConnectionAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockDataMigrationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeletePrivateConnectionRequest actualRequest =
+        ((DeletePrivateConnectionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deletePrivateConnectionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataMigrationService.addException(exception);
+
+    try {
+      PrivateConnectionName name =
+          PrivateConnectionName.of("[PROJECT]", "[LOCATION]", "[PRIVATE_CONNECTION]");
+      client.deletePrivateConnectionAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deletePrivateConnectionTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deletePrivateConnectionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockDataMigrationService.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    client.deletePrivateConnectionAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockDataMigrationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeletePrivateConnectionRequest actualRequest =
+        ((DeletePrivateConnectionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deletePrivateConnectionExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataMigrationService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deletePrivateConnectionAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void getConversionWorkspaceTest() throws Exception {
+    ConversionWorkspace expectedResponse =
+        ConversionWorkspace.newBuilder()
+            .setName(
+                ConversionWorkspaceName.of("[PROJECT]", "[LOCATION]", "[CONVERSION_WORKSPACE]")
+                    .toString())
+            .setSource(DatabaseEngineInfo.newBuilder().build())
+            .setDestination(DatabaseEngineInfo.newBuilder().build())
+            .putAllGlobalSettings(new HashMap<String, String>())
+            .setHasUncommittedChanges(true)
+            .setLatestCommitId("latestCommitId-1343996583")
+            .setLatestCommitTime(Timestamp.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDisplayName("displayName1714148973")
+            .build();
+    mockDataMigrationService.addResponse(expectedResponse);
+
+    ConversionWorkspaceName name =
+        ConversionWorkspaceName.of("[PROJECT]", "[LOCATION]", "[CONVERSION_WORKSPACE]");
+
+    ConversionWorkspace actualResponse = client.getConversionWorkspace(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataMigrationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetConversionWorkspaceRequest actualRequest =
+        ((GetConversionWorkspaceRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getConversionWorkspaceExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataMigrationService.addException(exception);
+
+    try {
+      ConversionWorkspaceName name =
+          ConversionWorkspaceName.of("[PROJECT]", "[LOCATION]", "[CONVERSION_WORKSPACE]");
+      client.getConversionWorkspace(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getConversionWorkspaceTest2() throws Exception {
+    ConversionWorkspace expectedResponse =
+        ConversionWorkspace.newBuilder()
+            .setName(
+                ConversionWorkspaceName.of("[PROJECT]", "[LOCATION]", "[CONVERSION_WORKSPACE]")
+                    .toString())
+            .setSource(DatabaseEngineInfo.newBuilder().build())
+            .setDestination(DatabaseEngineInfo.newBuilder().build())
+            .putAllGlobalSettings(new HashMap<String, String>())
+            .setHasUncommittedChanges(true)
+            .setLatestCommitId("latestCommitId-1343996583")
+            .setLatestCommitTime(Timestamp.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDisplayName("displayName1714148973")
+            .build();
+    mockDataMigrationService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    ConversionWorkspace actualResponse = client.getConversionWorkspace(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataMigrationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetConversionWorkspaceRequest actualRequest =
+        ((GetConversionWorkspaceRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getConversionWorkspaceExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataMigrationService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getConversionWorkspace(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listConversionWorkspacesTest() throws Exception {
+    ConversionWorkspace responsesElement = ConversionWorkspace.newBuilder().build();
+    ListConversionWorkspacesResponse expectedResponse =
+        ListConversionWorkspacesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllConversionWorkspaces(Arrays.asList(responsesElement))
+            .build();
+    mockDataMigrationService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListConversionWorkspacesPagedResponse pagedListResponse =
+        client.listConversionWorkspaces(parent);
+
+    List<ConversionWorkspace> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getConversionWorkspacesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockDataMigrationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListConversionWorkspacesRequest actualRequest =
+        ((ListConversionWorkspacesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listConversionWorkspacesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataMigrationService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listConversionWorkspaces(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listConversionWorkspacesTest2() throws Exception {
+    ConversionWorkspace responsesElement = ConversionWorkspace.newBuilder().build();
+    ListConversionWorkspacesResponse expectedResponse =
+        ListConversionWorkspacesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllConversionWorkspaces(Arrays.asList(responsesElement))
+            .build();
+    mockDataMigrationService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListConversionWorkspacesPagedResponse pagedListResponse =
+        client.listConversionWorkspaces(parent);
+
+    List<ConversionWorkspace> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getConversionWorkspacesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockDataMigrationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListConversionWorkspacesRequest actualRequest =
+        ((ListConversionWorkspacesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listConversionWorkspacesExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataMigrationService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listConversionWorkspaces(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createConversionWorkspaceTest() throws Exception {
+    ConversionWorkspace expectedResponse =
+        ConversionWorkspace.newBuilder()
+            .setName(
+                ConversionWorkspaceName.of("[PROJECT]", "[LOCATION]", "[CONVERSION_WORKSPACE]")
+                    .toString())
+            .setSource(DatabaseEngineInfo.newBuilder().build())
+            .setDestination(DatabaseEngineInfo.newBuilder().build())
+            .putAllGlobalSettings(new HashMap<String, String>())
+            .setHasUncommittedChanges(true)
+            .setLatestCommitId("latestCommitId-1343996583")
+            .setLatestCommitTime(Timestamp.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDisplayName("displayName1714148973")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createConversionWorkspaceTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockDataMigrationService.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    ConversionWorkspace conversionWorkspace = ConversionWorkspace.newBuilder().build();
+    String conversionWorkspaceId = "conversionWorkspaceId-928604774";
+
+    ConversionWorkspace actualResponse =
+        client
+            .createConversionWorkspaceAsync(parent, conversionWorkspace, conversionWorkspaceId)
+            .get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataMigrationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateConversionWorkspaceRequest actualRequest =
+        ((CreateConversionWorkspaceRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(conversionWorkspace, actualRequest.getConversionWorkspace());
+    Assert.assertEquals(conversionWorkspaceId, actualRequest.getConversionWorkspaceId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createConversionWorkspaceExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataMigrationService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      ConversionWorkspace conversionWorkspace = ConversionWorkspace.newBuilder().build();
+      String conversionWorkspaceId = "conversionWorkspaceId-928604774";
+      client
+          .createConversionWorkspaceAsync(parent, conversionWorkspace, conversionWorkspaceId)
+          .get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createConversionWorkspaceTest2() throws Exception {
+    ConversionWorkspace expectedResponse =
+        ConversionWorkspace.newBuilder()
+            .setName(
+                ConversionWorkspaceName.of("[PROJECT]", "[LOCATION]", "[CONVERSION_WORKSPACE]")
+                    .toString())
+            .setSource(DatabaseEngineInfo.newBuilder().build())
+            .setDestination(DatabaseEngineInfo.newBuilder().build())
+            .putAllGlobalSettings(new HashMap<String, String>())
+            .setHasUncommittedChanges(true)
+            .setLatestCommitId("latestCommitId-1343996583")
+            .setLatestCommitTime(Timestamp.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDisplayName("displayName1714148973")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createConversionWorkspaceTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockDataMigrationService.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    ConversionWorkspace conversionWorkspace = ConversionWorkspace.newBuilder().build();
+    String conversionWorkspaceId = "conversionWorkspaceId-928604774";
+
+    ConversionWorkspace actualResponse =
+        client
+            .createConversionWorkspaceAsync(parent, conversionWorkspace, conversionWorkspaceId)
+            .get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataMigrationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateConversionWorkspaceRequest actualRequest =
+        ((CreateConversionWorkspaceRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(conversionWorkspace, actualRequest.getConversionWorkspace());
+    Assert.assertEquals(conversionWorkspaceId, actualRequest.getConversionWorkspaceId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createConversionWorkspaceExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataMigrationService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      ConversionWorkspace conversionWorkspace = ConversionWorkspace.newBuilder().build();
+      String conversionWorkspaceId = "conversionWorkspaceId-928604774";
+      client
+          .createConversionWorkspaceAsync(parent, conversionWorkspace, conversionWorkspaceId)
+          .get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void updateConversionWorkspaceTest() throws Exception {
+    ConversionWorkspace expectedResponse =
+        ConversionWorkspace.newBuilder()
+            .setName(
+                ConversionWorkspaceName.of("[PROJECT]", "[LOCATION]", "[CONVERSION_WORKSPACE]")
+                    .toString())
+            .setSource(DatabaseEngineInfo.newBuilder().build())
+            .setDestination(DatabaseEngineInfo.newBuilder().build())
+            .putAllGlobalSettings(new HashMap<String, String>())
+            .setHasUncommittedChanges(true)
+            .setLatestCommitId("latestCommitId-1343996583")
+            .setLatestCommitTime(Timestamp.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDisplayName("displayName1714148973")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateConversionWorkspaceTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockDataMigrationService.addResponse(resultOperation);
+
+    ConversionWorkspace conversionWorkspace = ConversionWorkspace.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    ConversionWorkspace actualResponse =
+        client.updateConversionWorkspaceAsync(conversionWorkspace, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataMigrationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateConversionWorkspaceRequest actualRequest =
+        ((UpdateConversionWorkspaceRequest) actualRequests.get(0));
+
+    Assert.assertEquals(conversionWorkspace, actualRequest.getConversionWorkspace());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateConversionWorkspaceExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataMigrationService.addException(exception);
+
+    try {
+      ConversionWorkspace conversionWorkspace = ConversionWorkspace.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateConversionWorkspaceAsync(conversionWorkspace, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteConversionWorkspaceTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteConversionWorkspaceTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockDataMigrationService.addResponse(resultOperation);
+
+    ConversionWorkspaceName name =
+        ConversionWorkspaceName.of("[PROJECT]", "[LOCATION]", "[CONVERSION_WORKSPACE]");
+
+    client.deleteConversionWorkspaceAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockDataMigrationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteConversionWorkspaceRequest actualRequest =
+        ((DeleteConversionWorkspaceRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteConversionWorkspaceExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataMigrationService.addException(exception);
+
+    try {
+      ConversionWorkspaceName name =
+          ConversionWorkspaceName.of("[PROJECT]", "[LOCATION]", "[CONVERSION_WORKSPACE]");
+      client.deleteConversionWorkspaceAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteConversionWorkspaceTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteConversionWorkspaceTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockDataMigrationService.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    client.deleteConversionWorkspaceAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockDataMigrationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteConversionWorkspaceRequest actualRequest =
+        ((DeleteConversionWorkspaceRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteConversionWorkspaceExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataMigrationService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteConversionWorkspaceAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createMappingRuleTest() throws Exception {
+    MappingRule expectedResponse =
+        MappingRule.newBuilder()
+            .setName(
+                MappingRuleName.of(
+                        "[PROJECT]", "[LOCATION]", "[CONVERSION_WORKSPACE]", "[MAPPING_RULE]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setRuleScope(DatabaseEntityType.forNumber(0))
+            .setFilter(MappingRuleFilter.newBuilder().build())
+            .setRuleOrder(-432188341)
+            .setRevisionId("revisionId-1507445162")
+            .setRevisionCreateTime(Timestamp.newBuilder().build())
+            .build();
+    mockDataMigrationService.addResponse(expectedResponse);
+
+    ConversionWorkspaceName parent =
+        ConversionWorkspaceName.of("[PROJECT]", "[LOCATION]", "[CONVERSION_WORKSPACE]");
+    MappingRule mappingRule = MappingRule.newBuilder().build();
+    String mappingRuleId = "mappingRuleId-900824155";
+
+    MappingRule actualResponse = client.createMappingRule(parent, mappingRule, mappingRuleId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataMigrationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateMappingRuleRequest actualRequest = ((CreateMappingRuleRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(mappingRule, actualRequest.getMappingRule());
+    Assert.assertEquals(mappingRuleId, actualRequest.getMappingRuleId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createMappingRuleExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataMigrationService.addException(exception);
+
+    try {
+      ConversionWorkspaceName parent =
+          ConversionWorkspaceName.of("[PROJECT]", "[LOCATION]", "[CONVERSION_WORKSPACE]");
+      MappingRule mappingRule = MappingRule.newBuilder().build();
+      String mappingRuleId = "mappingRuleId-900824155";
+      client.createMappingRule(parent, mappingRule, mappingRuleId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createMappingRuleTest2() throws Exception {
+    MappingRule expectedResponse =
+        MappingRule.newBuilder()
+            .setName(
+                MappingRuleName.of(
+                        "[PROJECT]", "[LOCATION]", "[CONVERSION_WORKSPACE]", "[MAPPING_RULE]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setRuleScope(DatabaseEntityType.forNumber(0))
+            .setFilter(MappingRuleFilter.newBuilder().build())
+            .setRuleOrder(-432188341)
+            .setRevisionId("revisionId-1507445162")
+            .setRevisionCreateTime(Timestamp.newBuilder().build())
+            .build();
+    mockDataMigrationService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    MappingRule mappingRule = MappingRule.newBuilder().build();
+    String mappingRuleId = "mappingRuleId-900824155";
+
+    MappingRule actualResponse = client.createMappingRule(parent, mappingRule, mappingRuleId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataMigrationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateMappingRuleRequest actualRequest = ((CreateMappingRuleRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(mappingRule, actualRequest.getMappingRule());
+    Assert.assertEquals(mappingRuleId, actualRequest.getMappingRuleId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createMappingRuleExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataMigrationService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      MappingRule mappingRule = MappingRule.newBuilder().build();
+      String mappingRuleId = "mappingRuleId-900824155";
+      client.createMappingRule(parent, mappingRule, mappingRuleId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteMappingRuleTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockDataMigrationService.addResponse(expectedResponse);
+
+    ConversionWorkspaceName name =
+        ConversionWorkspaceName.of("[PROJECT]", "[LOCATION]", "[CONVERSION_WORKSPACE]");
+
+    client.deleteMappingRule(name);
+
+    List<AbstractMessage> actualRequests = mockDataMigrationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteMappingRuleRequest actualRequest = ((DeleteMappingRuleRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteMappingRuleExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataMigrationService.addException(exception);
+
+    try {
+      ConversionWorkspaceName name =
+          ConversionWorkspaceName.of("[PROJECT]", "[LOCATION]", "[CONVERSION_WORKSPACE]");
+      client.deleteMappingRule(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteMappingRuleTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockDataMigrationService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    client.deleteMappingRule(name);
+
+    List<AbstractMessage> actualRequests = mockDataMigrationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteMappingRuleRequest actualRequest = ((DeleteMappingRuleRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteMappingRuleExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataMigrationService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteMappingRule(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listMappingRulesTest() throws Exception {
+    MappingRule responsesElement = MappingRule.newBuilder().build();
+    ListMappingRulesResponse expectedResponse =
+        ListMappingRulesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllMappingRules(Arrays.asList(responsesElement))
+            .build();
+    mockDataMigrationService.addResponse(expectedResponse);
+
+    ConversionWorkspaceName parent =
+        ConversionWorkspaceName.of("[PROJECT]", "[LOCATION]", "[CONVERSION_WORKSPACE]");
+
+    ListMappingRulesPagedResponse pagedListResponse = client.listMappingRules(parent);
+
+    List<MappingRule> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getMappingRulesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockDataMigrationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListMappingRulesRequest actualRequest = ((ListMappingRulesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listMappingRulesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataMigrationService.addException(exception);
+
+    try {
+      ConversionWorkspaceName parent =
+          ConversionWorkspaceName.of("[PROJECT]", "[LOCATION]", "[CONVERSION_WORKSPACE]");
+      client.listMappingRules(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listMappingRulesTest2() throws Exception {
+    MappingRule responsesElement = MappingRule.newBuilder().build();
+    ListMappingRulesResponse expectedResponse =
+        ListMappingRulesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllMappingRules(Arrays.asList(responsesElement))
+            .build();
+    mockDataMigrationService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListMappingRulesPagedResponse pagedListResponse = client.listMappingRules(parent);
+
+    List<MappingRule> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getMappingRulesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockDataMigrationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListMappingRulesRequest actualRequest = ((ListMappingRulesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listMappingRulesExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataMigrationService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listMappingRules(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getMappingRuleTest() throws Exception {
+    MappingRule expectedResponse =
+        MappingRule.newBuilder()
+            .setName(
+                MappingRuleName.of(
+                        "[PROJECT]", "[LOCATION]", "[CONVERSION_WORKSPACE]", "[MAPPING_RULE]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setRuleScope(DatabaseEntityType.forNumber(0))
+            .setFilter(MappingRuleFilter.newBuilder().build())
+            .setRuleOrder(-432188341)
+            .setRevisionId("revisionId-1507445162")
+            .setRevisionCreateTime(Timestamp.newBuilder().build())
+            .build();
+    mockDataMigrationService.addResponse(expectedResponse);
+
+    MappingRuleName name =
+        MappingRuleName.of("[PROJECT]", "[LOCATION]", "[CONVERSION_WORKSPACE]", "[MAPPING_RULE]");
+
+    MappingRule actualResponse = client.getMappingRule(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataMigrationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetMappingRuleRequest actualRequest = ((GetMappingRuleRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getMappingRuleExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataMigrationService.addException(exception);
+
+    try {
+      MappingRuleName name =
+          MappingRuleName.of("[PROJECT]", "[LOCATION]", "[CONVERSION_WORKSPACE]", "[MAPPING_RULE]");
+      client.getMappingRule(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getMappingRuleTest2() throws Exception {
+    MappingRule expectedResponse =
+        MappingRule.newBuilder()
+            .setName(
+                MappingRuleName.of(
+                        "[PROJECT]", "[LOCATION]", "[CONVERSION_WORKSPACE]", "[MAPPING_RULE]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setRuleScope(DatabaseEntityType.forNumber(0))
+            .setFilter(MappingRuleFilter.newBuilder().build())
+            .setRuleOrder(-432188341)
+            .setRevisionId("revisionId-1507445162")
+            .setRevisionCreateTime(Timestamp.newBuilder().build())
+            .build();
+    mockDataMigrationService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    MappingRule actualResponse = client.getMappingRule(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataMigrationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetMappingRuleRequest actualRequest = ((GetMappingRuleRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getMappingRuleExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataMigrationService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getMappingRule(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void seedConversionWorkspaceTest() throws Exception {
+    ConversionWorkspace expectedResponse =
+        ConversionWorkspace.newBuilder()
+            .setName(
+                ConversionWorkspaceName.of("[PROJECT]", "[LOCATION]", "[CONVERSION_WORKSPACE]")
+                    .toString())
+            .setSource(DatabaseEngineInfo.newBuilder().build())
+            .setDestination(DatabaseEngineInfo.newBuilder().build())
+            .putAllGlobalSettings(new HashMap<String, String>())
+            .setHasUncommittedChanges(true)
+            .setLatestCommitId("latestCommitId-1343996583")
+            .setLatestCommitTime(Timestamp.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDisplayName("displayName1714148973")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("seedConversionWorkspaceTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockDataMigrationService.addResponse(resultOperation);
+
+    SeedConversionWorkspaceRequest request =
+        SeedConversionWorkspaceRequest.newBuilder()
+            .setName(
+                ConversionWorkspaceName.of("[PROJECT]", "[LOCATION]", "[CONVERSION_WORKSPACE]")
+                    .toString())
+            .setAutoCommit(true)
+            .build();
+
+    ConversionWorkspace actualResponse = client.seedConversionWorkspaceAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataMigrationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    SeedConversionWorkspaceRequest actualRequest =
+        ((SeedConversionWorkspaceRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(request.getAutoCommit(), actualRequest.getAutoCommit());
+    Assert.assertEquals(
+        request.getSourceConnectionProfile(), actualRequest.getSourceConnectionProfile());
+    Assert.assertEquals(
+        request.getDestinationConnectionProfile(), actualRequest.getDestinationConnectionProfile());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void seedConversionWorkspaceExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataMigrationService.addException(exception);
+
+    try {
+      SeedConversionWorkspaceRequest request =
+          SeedConversionWorkspaceRequest.newBuilder()
+              .setName(
+                  ConversionWorkspaceName.of("[PROJECT]", "[LOCATION]", "[CONVERSION_WORKSPACE]")
+                      .toString())
+              .setAutoCommit(true)
+              .build();
+      client.seedConversionWorkspaceAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void importMappingRulesTest() throws Exception {
+    ConversionWorkspace expectedResponse =
+        ConversionWorkspace.newBuilder()
+            .setName(
+                ConversionWorkspaceName.of("[PROJECT]", "[LOCATION]", "[CONVERSION_WORKSPACE]")
+                    .toString())
+            .setSource(DatabaseEngineInfo.newBuilder().build())
+            .setDestination(DatabaseEngineInfo.newBuilder().build())
+            .putAllGlobalSettings(new HashMap<String, String>())
+            .setHasUncommittedChanges(true)
+            .setLatestCommitId("latestCommitId-1343996583")
+            .setLatestCommitTime(Timestamp.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDisplayName("displayName1714148973")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("importMappingRulesTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockDataMigrationService.addResponse(resultOperation);
+
+    ImportMappingRulesRequest request =
+        ImportMappingRulesRequest.newBuilder()
+            .setParent(
+                ConversionWorkspaceName.of("[PROJECT]", "[LOCATION]", "[CONVERSION_WORKSPACE]")
+                    .toString())
+            .setRulesFormat(ImportRulesFileFormat.forNumber(0))
+            .addAllRulesFiles(new ArrayList<ImportMappingRulesRequest.RulesFile>())
+            .setAutoCommit(true)
+            .build();
+
+    ConversionWorkspace actualResponse = client.importMappingRulesAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataMigrationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ImportMappingRulesRequest actualRequest = ((ImportMappingRulesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getParent(), actualRequest.getParent());
+    Assert.assertEquals(request.getRulesFormat(), actualRequest.getRulesFormat());
+    Assert.assertEquals(request.getRulesFilesList(), actualRequest.getRulesFilesList());
+    Assert.assertEquals(request.getAutoCommit(), actualRequest.getAutoCommit());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void importMappingRulesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataMigrationService.addException(exception);
+
+    try {
+      ImportMappingRulesRequest request =
+          ImportMappingRulesRequest.newBuilder()
+              .setParent(
+                  ConversionWorkspaceName.of("[PROJECT]", "[LOCATION]", "[CONVERSION_WORKSPACE]")
+                      .toString())
+              .setRulesFormat(ImportRulesFileFormat.forNumber(0))
+              .addAllRulesFiles(new ArrayList<ImportMappingRulesRequest.RulesFile>())
+              .setAutoCommit(true)
+              .build();
+      client.importMappingRulesAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void convertConversionWorkspaceTest() throws Exception {
+    ConversionWorkspace expectedResponse =
+        ConversionWorkspace.newBuilder()
+            .setName(
+                ConversionWorkspaceName.of("[PROJECT]", "[LOCATION]", "[CONVERSION_WORKSPACE]")
+                    .toString())
+            .setSource(DatabaseEngineInfo.newBuilder().build())
+            .setDestination(DatabaseEngineInfo.newBuilder().build())
+            .putAllGlobalSettings(new HashMap<String, String>())
+            .setHasUncommittedChanges(true)
+            .setLatestCommitId("latestCommitId-1343996583")
+            .setLatestCommitTime(Timestamp.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDisplayName("displayName1714148973")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("convertConversionWorkspaceTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockDataMigrationService.addResponse(resultOperation);
+
+    ConvertConversionWorkspaceRequest request =
+        ConvertConversionWorkspaceRequest.newBuilder()
+            .setName(
+                ConversionWorkspaceName.of("[PROJECT]", "[LOCATION]", "[CONVERSION_WORKSPACE]")
+                    .toString())
+            .setAutoCommit(true)
+            .setFilter("filter-1274492040")
+            .setConvertFullPath(true)
+            .build();
+
+    ConversionWorkspace actualResponse = client.convertConversionWorkspaceAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataMigrationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ConvertConversionWorkspaceRequest actualRequest =
+        ((ConvertConversionWorkspaceRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(request.getAutoCommit(), actualRequest.getAutoCommit());
+    Assert.assertEquals(request.getFilter(), actualRequest.getFilter());
+    Assert.assertEquals(request.getConvertFullPath(), actualRequest.getConvertFullPath());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void convertConversionWorkspaceExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataMigrationService.addException(exception);
+
+    try {
+      ConvertConversionWorkspaceRequest request =
+          ConvertConversionWorkspaceRequest.newBuilder()
+              .setName(
+                  ConversionWorkspaceName.of("[PROJECT]", "[LOCATION]", "[CONVERSION_WORKSPACE]")
+                      .toString())
+              .setAutoCommit(true)
+              .setFilter("filter-1274492040")
+              .setConvertFullPath(true)
+              .build();
+      client.convertConversionWorkspaceAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void commitConversionWorkspaceTest() throws Exception {
+    ConversionWorkspace expectedResponse =
+        ConversionWorkspace.newBuilder()
+            .setName(
+                ConversionWorkspaceName.of("[PROJECT]", "[LOCATION]", "[CONVERSION_WORKSPACE]")
+                    .toString())
+            .setSource(DatabaseEngineInfo.newBuilder().build())
+            .setDestination(DatabaseEngineInfo.newBuilder().build())
+            .putAllGlobalSettings(new HashMap<String, String>())
+            .setHasUncommittedChanges(true)
+            .setLatestCommitId("latestCommitId-1343996583")
+            .setLatestCommitTime(Timestamp.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDisplayName("displayName1714148973")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("commitConversionWorkspaceTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockDataMigrationService.addResponse(resultOperation);
+
+    CommitConversionWorkspaceRequest request =
+        CommitConversionWorkspaceRequest.newBuilder()
+            .setName(
+                ConversionWorkspaceName.of("[PROJECT]", "[LOCATION]", "[CONVERSION_WORKSPACE]")
+                    .toString())
+            .setCommitName("commitName1018078306")
+            .build();
+
+    ConversionWorkspace actualResponse = client.commitConversionWorkspaceAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataMigrationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CommitConversionWorkspaceRequest actualRequest =
+        ((CommitConversionWorkspaceRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(request.getCommitName(), actualRequest.getCommitName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void commitConversionWorkspaceExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataMigrationService.addException(exception);
+
+    try {
+      CommitConversionWorkspaceRequest request =
+          CommitConversionWorkspaceRequest.newBuilder()
+              .setName(
+                  ConversionWorkspaceName.of("[PROJECT]", "[LOCATION]", "[CONVERSION_WORKSPACE]")
+                      .toString())
+              .setCommitName("commitName1018078306")
+              .build();
+      client.commitConversionWorkspaceAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void rollbackConversionWorkspaceTest() throws Exception {
+    ConversionWorkspace expectedResponse =
+        ConversionWorkspace.newBuilder()
+            .setName(
+                ConversionWorkspaceName.of("[PROJECT]", "[LOCATION]", "[CONVERSION_WORKSPACE]")
+                    .toString())
+            .setSource(DatabaseEngineInfo.newBuilder().build())
+            .setDestination(DatabaseEngineInfo.newBuilder().build())
+            .putAllGlobalSettings(new HashMap<String, String>())
+            .setHasUncommittedChanges(true)
+            .setLatestCommitId("latestCommitId-1343996583")
+            .setLatestCommitTime(Timestamp.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDisplayName("displayName1714148973")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("rollbackConversionWorkspaceTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockDataMigrationService.addResponse(resultOperation);
+
+    RollbackConversionWorkspaceRequest request =
+        RollbackConversionWorkspaceRequest.newBuilder()
+            .setName(
+                ConversionWorkspaceName.of("[PROJECT]", "[LOCATION]", "[CONVERSION_WORKSPACE]")
+                    .toString())
+            .build();
+
+    ConversionWorkspace actualResponse = client.rollbackConversionWorkspaceAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataMigrationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RollbackConversionWorkspaceRequest actualRequest =
+        ((RollbackConversionWorkspaceRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void rollbackConversionWorkspaceExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataMigrationService.addException(exception);
+
+    try {
+      RollbackConversionWorkspaceRequest request =
+          RollbackConversionWorkspaceRequest.newBuilder()
+              .setName(
+                  ConversionWorkspaceName.of("[PROJECT]", "[LOCATION]", "[CONVERSION_WORKSPACE]")
+                      .toString())
+              .build();
+      client.rollbackConversionWorkspaceAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void applyConversionWorkspaceTest() throws Exception {
+    ConversionWorkspace expectedResponse =
+        ConversionWorkspace.newBuilder()
+            .setName(
+                ConversionWorkspaceName.of("[PROJECT]", "[LOCATION]", "[CONVERSION_WORKSPACE]")
+                    .toString())
+            .setSource(DatabaseEngineInfo.newBuilder().build())
+            .setDestination(DatabaseEngineInfo.newBuilder().build())
+            .putAllGlobalSettings(new HashMap<String, String>())
+            .setHasUncommittedChanges(true)
+            .setLatestCommitId("latestCommitId-1343996583")
+            .setLatestCommitTime(Timestamp.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDisplayName("displayName1714148973")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("applyConversionWorkspaceTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockDataMigrationService.addResponse(resultOperation);
+
+    ApplyConversionWorkspaceRequest request =
+        ApplyConversionWorkspaceRequest.newBuilder()
+            .setName(
+                ConversionWorkspaceName.of("[PROJECT]", "[LOCATION]", "[CONVERSION_WORKSPACE]")
+                    .toString())
+            .setFilter("filter-1274492040")
+            .setDryRun(true)
+            .setAutoCommit(true)
+            .build();
+
+    ConversionWorkspace actualResponse = client.applyConversionWorkspaceAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataMigrationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ApplyConversionWorkspaceRequest actualRequest =
+        ((ApplyConversionWorkspaceRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(request.getFilter(), actualRequest.getFilter());
+    Assert.assertEquals(request.getDryRun(), actualRequest.getDryRun());
+    Assert.assertEquals(request.getAutoCommit(), actualRequest.getAutoCommit());
+    Assert.assertEquals(request.getConnectionProfile(), actualRequest.getConnectionProfile());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void applyConversionWorkspaceExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataMigrationService.addException(exception);
+
+    try {
+      ApplyConversionWorkspaceRequest request =
+          ApplyConversionWorkspaceRequest.newBuilder()
+              .setName(
+                  ConversionWorkspaceName.of("[PROJECT]", "[LOCATION]", "[CONVERSION_WORKSPACE]")
+                      .toString())
+              .setFilter("filter-1274492040")
+              .setDryRun(true)
+              .setAutoCommit(true)
+              .build();
+      client.applyConversionWorkspaceAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void describeDatabaseEntitiesTest() throws Exception {
+    DatabaseEntity responsesElement = DatabaseEntity.newBuilder().build();
+    DescribeDatabaseEntitiesResponse expectedResponse =
+        DescribeDatabaseEntitiesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllDatabaseEntities(Arrays.asList(responsesElement))
+            .build();
+    mockDataMigrationService.addResponse(expectedResponse);
+
+    DescribeDatabaseEntitiesRequest request =
+        DescribeDatabaseEntitiesRequest.newBuilder()
+            .setConversionWorkspace(
+                ConversionWorkspaceName.of("[PROJECT]", "[LOCATION]", "[CONVERSION_WORKSPACE]")
+                    .toString())
+            .setPageSize(883849137)
+            .setPageToken("pageToken873572522")
+            .setUncommitted(true)
+            .setCommitId("commitId-602292046")
+            .setFilter("filter-1274492040")
+            .setView(DatabaseEntityView.forNumber(0))
+            .build();
+
+    DescribeDatabaseEntitiesPagedResponse pagedListResponse =
+        client.describeDatabaseEntities(request);
+
+    List<DatabaseEntity> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getDatabaseEntitiesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockDataMigrationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DescribeDatabaseEntitiesRequest actualRequest =
+        ((DescribeDatabaseEntitiesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getConversionWorkspace(), actualRequest.getConversionWorkspace());
+    Assert.assertEquals(request.getPageSize(), actualRequest.getPageSize());
+    Assert.assertEquals(request.getPageToken(), actualRequest.getPageToken());
+    Assert.assertEquals(request.getTree(), actualRequest.getTree());
+    Assert.assertEquals(request.getUncommitted(), actualRequest.getUncommitted());
+    Assert.assertEquals(request.getCommitId(), actualRequest.getCommitId());
+    Assert.assertEquals(request.getFilter(), actualRequest.getFilter());
+    Assert.assertEquals(request.getView(), actualRequest.getView());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void describeDatabaseEntitiesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataMigrationService.addException(exception);
+
+    try {
+      DescribeDatabaseEntitiesRequest request =
+          DescribeDatabaseEntitiesRequest.newBuilder()
+              .setConversionWorkspace(
+                  ConversionWorkspaceName.of("[PROJECT]", "[LOCATION]", "[CONVERSION_WORKSPACE]")
+                      .toString())
+              .setPageSize(883849137)
+              .setPageToken("pageToken873572522")
+              .setUncommitted(true)
+              .setCommitId("commitId-602292046")
+              .setFilter("filter-1274492040")
+              .setView(DatabaseEntityView.forNumber(0))
+              .build();
+      client.describeDatabaseEntities(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void searchBackgroundJobsTest() throws Exception {
+    SearchBackgroundJobsResponse expectedResponse =
+        SearchBackgroundJobsResponse.newBuilder()
+            .addAllJobs(new ArrayList<BackgroundJobLogEntry>())
+            .build();
+    mockDataMigrationService.addResponse(expectedResponse);
+
+    SearchBackgroundJobsRequest request =
+        SearchBackgroundJobsRequest.newBuilder()
+            .setConversionWorkspace(
+                ConversionWorkspaceName.of("[PROJECT]", "[LOCATION]", "[CONVERSION_WORKSPACE]")
+                    .toString())
+            .setReturnMostRecentPerJobType(true)
+            .setMaxSize(408072700)
+            .setCompletedUntilTime(Timestamp.newBuilder().build())
+            .build();
+
+    SearchBackgroundJobsResponse actualResponse = client.searchBackgroundJobs(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataMigrationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    SearchBackgroundJobsRequest actualRequest =
+        ((SearchBackgroundJobsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getConversionWorkspace(), actualRequest.getConversionWorkspace());
+    Assert.assertEquals(
+        request.getReturnMostRecentPerJobType(), actualRequest.getReturnMostRecentPerJobType());
+    Assert.assertEquals(request.getMaxSize(), actualRequest.getMaxSize());
+    Assert.assertEquals(request.getCompletedUntilTime(), actualRequest.getCompletedUntilTime());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void searchBackgroundJobsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataMigrationService.addException(exception);
+
+    try {
+      SearchBackgroundJobsRequest request =
+          SearchBackgroundJobsRequest.newBuilder()
+              .setConversionWorkspace(
+                  ConversionWorkspaceName.of("[PROJECT]", "[LOCATION]", "[CONVERSION_WORKSPACE]")
+                      .toString())
+              .setReturnMostRecentPerJobType(true)
+              .setMaxSize(408072700)
+              .setCompletedUntilTime(Timestamp.newBuilder().build())
+              .build();
+      client.searchBackgroundJobs(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void describeConversionWorkspaceRevisionsTest() throws Exception {
+    DescribeConversionWorkspaceRevisionsResponse expectedResponse =
+        DescribeConversionWorkspaceRevisionsResponse.newBuilder()
+            .addAllRevisions(new ArrayList<ConversionWorkspace>())
+            .build();
+    mockDataMigrationService.addResponse(expectedResponse);
+
+    DescribeConversionWorkspaceRevisionsRequest request =
+        DescribeConversionWorkspaceRevisionsRequest.newBuilder()
+            .setConversionWorkspace(
+                ConversionWorkspaceName.of("[PROJECT]", "[LOCATION]", "[CONVERSION_WORKSPACE]")
+                    .toString())
+            .setCommitId("commitId-602292046")
+            .build();
+
+    DescribeConversionWorkspaceRevisionsResponse actualResponse =
+        client.describeConversionWorkspaceRevisions(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataMigrationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DescribeConversionWorkspaceRevisionsRequest actualRequest =
+        ((DescribeConversionWorkspaceRevisionsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getConversionWorkspace(), actualRequest.getConversionWorkspace());
+    Assert.assertEquals(request.getCommitId(), actualRequest.getCommitId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void describeConversionWorkspaceRevisionsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataMigrationService.addException(exception);
+
+    try {
+      DescribeConversionWorkspaceRevisionsRequest request =
+          DescribeConversionWorkspaceRevisionsRequest.newBuilder()
+              .setConversionWorkspace(
+                  ConversionWorkspaceName.of("[PROJECT]", "[LOCATION]", "[CONVERSION_WORKSPACE]")
+                      .toString())
+              .setCommitId("commitId-602292046")
+              .build();
+      client.describeConversionWorkspaceRevisions(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void fetchStaticIpsTest() throws Exception {
+    String responsesElement = "responsesElement-318365110";
+    FetchStaticIpsResponse expectedResponse =
+        FetchStaticIpsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllStaticIps(Arrays.asList(responsesElement))
+            .build();
+    mockDataMigrationService.addResponse(expectedResponse);
+
+    LocationName name = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    FetchStaticIpsPagedResponse pagedListResponse = client.fetchStaticIps(name);
+
+    List<String> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getStaticIpsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockDataMigrationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    FetchStaticIpsRequest actualRequest = ((FetchStaticIpsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void fetchStaticIpsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataMigrationService.addException(exception);
+
+    try {
+      LocationName name = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.fetchStaticIps(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void fetchStaticIpsTest2() throws Exception {
+    String responsesElement = "responsesElement-318365110";
+    FetchStaticIpsResponse expectedResponse =
+        FetchStaticIpsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllStaticIps(Arrays.asList(responsesElement))
+            .build();
+    mockDataMigrationService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    FetchStaticIpsPagedResponse pagedListResponse = client.fetchStaticIps(name);
+
+    List<String> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getStaticIpsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockDataMigrationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    FetchStaticIpsRequest actualRequest = ((FetchStaticIpsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void fetchStaticIpsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataMigrationService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.fetchStaticIps(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 }

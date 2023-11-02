@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -100,6 +100,7 @@ public interface UpdateEnvironmentRequestOrBuilder
    * `paths` values: "config.softwareConfig.pypiPackages.scikit-learn" and
    * "config.softwareConfig.pypiPackages.numpy". The included patch
    * environment would specify the scikit-learn version as follows:
+   *
    *     {
    *       "config":{
    *         "softwareConfig":{
@@ -109,8 +110,10 @@ public interface UpdateEnvironmentRequestOrBuilder
    *         }
    *       }
    *     }
+   *
    * Note that in the above example, any existing PyPI packages
    * other than scikit-learn and numpy will be unaffected.
+   *
    * Only one update type may be included in a single request's `updateMask`.
    * For example, one cannot update both the PyPI packages and
    * labels in the same request. However, it is possible to update multiple
@@ -119,14 +122,17 @@ public interface UpdateEnvironmentRequestOrBuilder
    * it already exists), one can
    * provide the paths "labels.label1", "labels.label2", and "labels.label3"
    * and populate the patch environment as follows:
+   *
    *     {
    *       "labels":{
    *         "label1":"new-label1-value"
    *         "label2":"new-label2-value"
    *       }
    *     }
+   *
    * Note that in the above example, any existing labels that are not
    * included in the `updateMask` will be unaffected.
+   *
    * It is also possible to replace an entire map field by providing the
    * map field's path in the `updateMask`. The new value of the field will
    * be that which is provided in the patch environment. For example, to
@@ -134,6 +140,7 @@ public interface UpdateEnvironmentRequestOrBuilder
    * install botocore at version 1.7.14, the `updateMask` would contain
    * the path "config.softwareConfig.pypiPackages", and
    * the patch environment would be the following:
+   *
    *     {
    *       "config":{
    *         "softwareConfig":{
@@ -143,7 +150,9 @@ public interface UpdateEnvironmentRequestOrBuilder
    *         }
    *       }
    *     }
+   *
    * **Note:** Only the following fields can be updated:
+   *
    * * `config.softwareConfig.pypiPackages`
    *     * Replace all custom custom PyPI packages. If a replacement
    *       package map is not included in `environment`, all custom
@@ -225,6 +234,7 @@ public interface UpdateEnvironmentRequestOrBuilder
    * `paths` values: "config.softwareConfig.pypiPackages.scikit-learn" and
    * "config.softwareConfig.pypiPackages.numpy". The included patch
    * environment would specify the scikit-learn version as follows:
+   *
    *     {
    *       "config":{
    *         "softwareConfig":{
@@ -234,8 +244,10 @@ public interface UpdateEnvironmentRequestOrBuilder
    *         }
    *       }
    *     }
+   *
    * Note that in the above example, any existing PyPI packages
    * other than scikit-learn and numpy will be unaffected.
+   *
    * Only one update type may be included in a single request's `updateMask`.
    * For example, one cannot update both the PyPI packages and
    * labels in the same request. However, it is possible to update multiple
@@ -244,14 +256,17 @@ public interface UpdateEnvironmentRequestOrBuilder
    * it already exists), one can
    * provide the paths "labels.label1", "labels.label2", and "labels.label3"
    * and populate the patch environment as follows:
+   *
    *     {
    *       "labels":{
    *         "label1":"new-label1-value"
    *         "label2":"new-label2-value"
    *       }
    *     }
+   *
    * Note that in the above example, any existing labels that are not
    * included in the `updateMask` will be unaffected.
+   *
    * It is also possible to replace an entire map field by providing the
    * map field's path in the `updateMask`. The new value of the field will
    * be that which is provided in the patch environment. For example, to
@@ -259,6 +274,7 @@ public interface UpdateEnvironmentRequestOrBuilder
    * install botocore at version 1.7.14, the `updateMask` would contain
    * the path "config.softwareConfig.pypiPackages", and
    * the patch environment would be the following:
+   *
    *     {
    *       "config":{
    *         "softwareConfig":{
@@ -268,7 +284,9 @@ public interface UpdateEnvironmentRequestOrBuilder
    *         }
    *       }
    *     }
+   *
    * **Note:** Only the following fields can be updated:
+   *
    * * `config.softwareConfig.pypiPackages`
    *     * Replace all custom custom PyPI packages. If a replacement
    *       package map is not included in `environment`, all custom
@@ -350,6 +368,7 @@ public interface UpdateEnvironmentRequestOrBuilder
    * `paths` values: "config.softwareConfig.pypiPackages.scikit-learn" and
    * "config.softwareConfig.pypiPackages.numpy". The included patch
    * environment would specify the scikit-learn version as follows:
+   *
    *     {
    *       "config":{
    *         "softwareConfig":{
@@ -359,8 +378,10 @@ public interface UpdateEnvironmentRequestOrBuilder
    *         }
    *       }
    *     }
+   *
    * Note that in the above example, any existing PyPI packages
    * other than scikit-learn and numpy will be unaffected.
+   *
    * Only one update type may be included in a single request's `updateMask`.
    * For example, one cannot update both the PyPI packages and
    * labels in the same request. However, it is possible to update multiple
@@ -369,14 +390,17 @@ public interface UpdateEnvironmentRequestOrBuilder
    * it already exists), one can
    * provide the paths "labels.label1", "labels.label2", and "labels.label3"
    * and populate the patch environment as follows:
+   *
    *     {
    *       "labels":{
    *         "label1":"new-label1-value"
    *         "label2":"new-label2-value"
    *       }
    *     }
+   *
    * Note that in the above example, any existing labels that are not
    * included in the `updateMask` will be unaffected.
+   *
    * It is also possible to replace an entire map field by providing the
    * map field's path in the `updateMask`. The new value of the field will
    * be that which is provided in the patch environment. For example, to
@@ -384,6 +408,7 @@ public interface UpdateEnvironmentRequestOrBuilder
    * install botocore at version 1.7.14, the `updateMask` would contain
    * the path "config.softwareConfig.pypiPackages", and
    * the patch environment would be the following:
+   *
    *     {
    *       "config":{
    *         "softwareConfig":{
@@ -393,7 +418,9 @@ public interface UpdateEnvironmentRequestOrBuilder
    *         }
    *       }
    *     }
+   *
    * **Note:** Only the following fields can be updated:
+   *
    * * `config.softwareConfig.pypiPackages`
    *     * Replace all custom custom PyPI packages. If a replacement
    *       package map is not included in `environment`, all custom

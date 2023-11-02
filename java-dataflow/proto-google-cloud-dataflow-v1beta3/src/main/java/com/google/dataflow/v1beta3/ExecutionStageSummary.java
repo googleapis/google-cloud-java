@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,7 +45,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
     kind_ = 0;
     inputSource_ = java.util.Collections.emptyList();
     outputSource_ = java.util.Collections.emptyList();
-    prerequisiteStage_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    prerequisiteStage_ = com.google.protobuf.LazyStringArrayList.emptyList();
     componentTransform_ = java.util.Collections.emptyList();
     componentSource_ = java.util.Collections.emptyList();
   }
@@ -54,11 +54,6 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ExecutionStageSummary();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -200,11 +195,6 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new StageSource();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1376,11 +1366,6 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       return new ComponentTransform();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.dataflow.v1beta3.JobsProto
           .internal_static_google_dataflow_v1beta3_ExecutionStageSummary_ComponentTransform_descriptor;
@@ -2457,11 +2442,6 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new ComponentSource();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -3732,7 +3712,8 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
   public static final int PREREQUISITE_STAGE_FIELD_NUMBER = 8;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList prerequisiteStage_;
+  private com.google.protobuf.LazyStringArrayList prerequisiteStage_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -4260,8 +4241,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
         outputSourceBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000010);
-      prerequisiteStage_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000020);
+      prerequisiteStage_ = com.google.protobuf.LazyStringArrayList.emptyList();
       if (componentTransformBuilder_ == null) {
         componentTransform_ = java.util.Collections.emptyList();
       } else {
@@ -4331,11 +4311,6 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       } else {
         result.outputSource_ = outputSourceBuilder_.build();
       }
-      if (((bitField0_ & 0x00000020) != 0)) {
-        prerequisiteStage_ = prerequisiteStage_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000020);
-      }
-      result.prerequisiteStage_ = prerequisiteStage_;
       if (componentTransformBuilder_ == null) {
         if (((bitField0_ & 0x00000040) != 0)) {
           componentTransform_ = java.util.Collections.unmodifiableList(componentTransform_);
@@ -4366,6 +4341,10 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.kind_ = kind_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        prerequisiteStage_.makeImmutable();
+        result.prerequisiteStage_ = prerequisiteStage_;
       }
     }
 
@@ -4485,7 +4464,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       if (!other.prerequisiteStage_.isEmpty()) {
         if (prerequisiteStage_.isEmpty()) {
           prerequisiteStage_ = other.prerequisiteStage_;
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ |= 0x00000020;
         } else {
           ensurePrerequisiteStageIsMutable();
           prerequisiteStage_.addAll(other.prerequisiteStage_);
@@ -5746,14 +5725,14 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       return outputSourceBuilder_;
     }
 
-    private com.google.protobuf.LazyStringList prerequisiteStage_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList prerequisiteStage_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensurePrerequisiteStageIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!prerequisiteStage_.isModifiable()) {
         prerequisiteStage_ = new com.google.protobuf.LazyStringArrayList(prerequisiteStage_);
-        bitField0_ |= 0x00000020;
       }
+      bitField0_ |= 0x00000020;
     }
     /**
      *
@@ -5767,7 +5746,8 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
      * @return A list containing the prerequisiteStage.
      */
     public com.google.protobuf.ProtocolStringList getPrerequisiteStageList() {
-      return prerequisiteStage_.getUnmodifiableView();
+      prerequisiteStage_.makeImmutable();
+      return prerequisiteStage_;
     }
     /**
      *
@@ -5832,6 +5812,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       }
       ensurePrerequisiteStageIsMutable();
       prerequisiteStage_.set(index, value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -5853,6 +5834,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       }
       ensurePrerequisiteStageIsMutable();
       prerequisiteStage_.add(value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -5871,6 +5853,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
     public Builder addAllPrerequisiteStage(java.lang.Iterable<java.lang.String> values) {
       ensurePrerequisiteStageIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, prerequisiteStage_);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -5886,8 +5869,9 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearPrerequisiteStage() {
-      prerequisiteStage_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      prerequisiteStage_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000020);
+      ;
       onChanged();
       return this;
     }
@@ -5910,6 +5894,7 @@ public final class ExecutionStageSummary extends com.google.protobuf.GeneratedMe
       checkByteStringIsUtf8(value);
       ensurePrerequisiteStageIsMutable();
       prerequisiteStage_.add(value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }

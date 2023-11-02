@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 
 package com.google.cloud.tasks.v2beta2;
 
+import static com.google.cloud.tasks.v2beta2.CloudTasksClient.ListLocationsPagedResponse;
 import static com.google.cloud.tasks.v2beta2.CloudTasksClient.ListQueuesPagedResponse;
 import static com.google.cloud.tasks.v2beta2.CloudTasksClient.ListTasksPagedResponse;
 
@@ -31,6 +32,10 @@ import com.google.api.gax.rpc.ClientSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.cloud.tasks.v2beta2.stub.CloudTasksStubSettings;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
@@ -123,6 +128,11 @@ public class CloudTasksSettings extends ClientSettings<CloudTasksSettings> {
     return ((CloudTasksStubSettings) getStubSettings()).resumeQueueSettings();
   }
 
+  /** Returns the object with the settings used for calls to uploadQueueYaml. */
+  public UnaryCallSettings<UploadQueueYamlRequest, Empty> uploadQueueYamlSettings() {
+    return ((CloudTasksStubSettings) getStubSettings()).uploadQueueYamlSettings();
+  }
+
   /** Returns the object with the settings used for calls to getIamPolicy. */
   public UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings() {
     return ((CloudTasksStubSettings) getStubSettings()).getIamPolicySettings();
@@ -183,6 +193,22 @@ public class CloudTasksSettings extends ClientSettings<CloudTasksSettings> {
   /** Returns the object with the settings used for calls to runTask. */
   public UnaryCallSettings<RunTaskRequest, Task> runTaskSettings() {
     return ((CloudTasksStubSettings) getStubSettings()).runTaskSettings();
+  }
+
+  /** Returns the object with the settings used for calls to bufferTask. */
+  public UnaryCallSettings<BufferTaskRequest, BufferTaskResponse> bufferTaskSettings() {
+    return ((CloudTasksStubSettings) getStubSettings()).bufferTaskSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listLocations. */
+  public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings() {
+    return ((CloudTasksStubSettings) getStubSettings()).listLocationsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getLocation. */
+  public UnaryCallSettings<GetLocationRequest, Location> getLocationSettings() {
+    return ((CloudTasksStubSettings) getStubSettings()).getLocationSettings();
   }
 
   public static final CloudTasksSettings create(CloudTasksStubSettings stub) throws IOException {
@@ -340,6 +366,11 @@ public class CloudTasksSettings extends ClientSettings<CloudTasksSettings> {
       return getStubSettingsBuilder().resumeQueueSettings();
     }
 
+    /** Returns the builder for the settings used for calls to uploadQueueYaml. */
+    public UnaryCallSettings.Builder<UploadQueueYamlRequest, Empty> uploadQueueYamlSettings() {
+      return getStubSettingsBuilder().uploadQueueYamlSettings();
+    }
+
     /** Returns the builder for the settings used for calls to getIamPolicy. */
     public UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings() {
       return getStubSettingsBuilder().getIamPolicySettings();
@@ -400,6 +431,23 @@ public class CloudTasksSettings extends ClientSettings<CloudTasksSettings> {
     /** Returns the builder for the settings used for calls to runTask. */
     public UnaryCallSettings.Builder<RunTaskRequest, Task> runTaskSettings() {
       return getStubSettingsBuilder().runTaskSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to bufferTask. */
+    public UnaryCallSettings.Builder<BufferTaskRequest, BufferTaskResponse> bufferTaskSettings() {
+      return getStubSettingsBuilder().bufferTaskSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listLocations. */
+    public PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings() {
+      return getStubSettingsBuilder().listLocationsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getLocation. */
+    public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
+      return getStubSettingsBuilder().getLocationSettings();
     }
 
     @Override

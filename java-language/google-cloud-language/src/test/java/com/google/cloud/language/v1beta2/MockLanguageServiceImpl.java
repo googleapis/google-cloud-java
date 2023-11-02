@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -160,6 +160,27 @@ public class MockLanguageServiceImpl extends LanguageServiceImplBase {
                   "Unrecognized response type %s for method ClassifyText, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ClassifyTextResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void moderateText(
+      ModerateTextRequest request, StreamObserver<ModerateTextResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ModerateTextResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ModerateTextResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ModerateText, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ModerateTextResponse.class.getName(),
                   Exception.class.getName())));
     }
   }

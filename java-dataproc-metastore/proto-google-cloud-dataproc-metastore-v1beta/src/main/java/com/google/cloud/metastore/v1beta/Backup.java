@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,18 +41,13 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     name_ = "";
     state_ = 0;
     description_ = "";
-    restoringServices_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    restoringServices_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Backup();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -302,6 +297,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Immutable. The relative resource name of the backup, in the following form:
+   *
    * `projects/{project_number}/locations/{location_id}/services/{service_id}/backups/{backup_id}`
    * </pre>
    *
@@ -326,6 +322,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Immutable. The relative resource name of the backup, in the following form:
+   *
    * `projects/{project_number}/locations/{location_id}/services/{service_id}/backups/{backup_id}`
    * </pre>
    *
@@ -593,7 +590,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
   public static final int RESTORING_SERVICES_FIELD_NUMBER = 7;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList restoringServices_;
+  private com.google.protobuf.LazyStringArrayList restoringServices_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -948,8 +946,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
         serviceRevisionBuilder_ = null;
       }
       description_ = "";
-      restoringServices_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000040);
+      restoringServices_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -977,20 +974,11 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.metastore.v1beta.Backup buildPartial() {
       com.google.cloud.metastore.v1beta.Backup result =
           new com.google.cloud.metastore.v1beta.Backup(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(com.google.cloud.metastore.v1beta.Backup result) {
-      if (((bitField0_ & 0x00000040) != 0)) {
-        restoringServices_ = restoringServices_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000040);
-      }
-      result.restoringServices_ = restoringServices_;
     }
 
     private void buildPartial0(com.google.cloud.metastore.v1beta.Backup result) {
@@ -1013,6 +1001,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        restoringServices_.makeImmutable();
+        result.restoringServices_ = restoringServices_;
       }
     }
 
@@ -1086,7 +1078,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
       if (!other.restoringServices_.isEmpty()) {
         if (restoringServices_.isEmpty()) {
           restoringServices_ = other.restoringServices_;
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ |= 0x00000040;
         } else {
           ensureRestoringServicesIsMutable();
           restoringServices_.addAll(other.restoringServices_);
@@ -1187,6 +1179,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Immutable. The relative resource name of the backup, in the following form:
+     *
      * `projects/{project_number}/locations/{location_id}/services/{service_id}/backups/{backup_id}`
      * </pre>
      *
@@ -1210,6 +1203,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Immutable. The relative resource name of the backup, in the following form:
+     *
      * `projects/{project_number}/locations/{location_id}/services/{service_id}/backups/{backup_id}`
      * </pre>
      *
@@ -1233,6 +1227,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Immutable. The relative resource name of the backup, in the following form:
+     *
      * `projects/{project_number}/locations/{location_id}/services/{service_id}/backups/{backup_id}`
      * </pre>
      *
@@ -1255,6 +1250,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Immutable. The relative resource name of the backup, in the following form:
+     *
      * `projects/{project_number}/locations/{location_id}/services/{service_id}/backups/{backup_id}`
      * </pre>
      *
@@ -1273,6 +1269,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Immutable. The relative resource name of the backup, in the following form:
+     *
      * `projects/{project_number}/locations/{location_id}/services/{service_id}/backups/{backup_id}`
      * </pre>
      *
@@ -2089,14 +2086,14 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList restoringServices_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList restoringServices_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureRestoringServicesIsMutable() {
-      if (!((bitField0_ & 0x00000040) != 0)) {
+      if (!restoringServices_.isModifiable()) {
         restoringServices_ = new com.google.protobuf.LazyStringArrayList(restoringServices_);
-        bitField0_ |= 0x00000040;
       }
+      bitField0_ |= 0x00000040;
     }
     /**
      *
@@ -2111,7 +2108,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the restoringServices.
      */
     public com.google.protobuf.ProtocolStringList getRestoringServicesList() {
-      return restoringServices_.getUnmodifiableView();
+      restoringServices_.makeImmutable();
+      return restoringServices_;
     }
     /**
      *
@@ -2180,6 +2178,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
       }
       ensureRestoringServicesIsMutable();
       restoringServices_.set(index, value);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2202,6 +2201,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
       }
       ensureRestoringServicesIsMutable();
       restoringServices_.add(value);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2221,6 +2221,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllRestoringServices(java.lang.Iterable<java.lang.String> values) {
       ensureRestoringServicesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, restoringServices_);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2237,8 +2238,9 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRestoringServices() {
-      restoringServices_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      restoringServices_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000040);
+      ;
       onChanged();
       return this;
     }
@@ -2262,6 +2264,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureRestoringServicesIsMutable();
       restoringServices_.add(value);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }

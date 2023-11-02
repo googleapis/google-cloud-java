@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -207,6 +207,7 @@ public class CloudFilestoreManagerClientHttpJsonTest {
             .setMaxShareCount(-1758695852)
             .setCapacityGb(-1923585408)
             .setMultiShareEnabled(true)
+            .setDirectoryServices(DirectoryServicesConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -266,6 +267,7 @@ public class CloudFilestoreManagerClientHttpJsonTest {
             .setMaxShareCount(-1758695852)
             .setCapacityGb(-1923585408)
             .setMultiShareEnabled(true)
+            .setDirectoryServices(DirectoryServicesConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -325,6 +327,7 @@ public class CloudFilestoreManagerClientHttpJsonTest {
             .setMaxShareCount(-1758695852)
             .setCapacityGb(-1923585408)
             .setMultiShareEnabled(true)
+            .setDirectoryServices(DirectoryServicesConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -393,6 +396,7 @@ public class CloudFilestoreManagerClientHttpJsonTest {
             .setMaxShareCount(-1758695852)
             .setCapacityGb(-1923585408)
             .setMultiShareEnabled(true)
+            .setDirectoryServices(DirectoryServicesConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -461,6 +465,7 @@ public class CloudFilestoreManagerClientHttpJsonTest {
             .setMaxShareCount(-1758695852)
             .setCapacityGb(-1923585408)
             .setMultiShareEnabled(true)
+            .setDirectoryServices(DirectoryServicesConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -488,6 +493,7 @@ public class CloudFilestoreManagerClientHttpJsonTest {
             .setMaxShareCount(-1758695852)
             .setCapacityGb(-1923585408)
             .setMultiShareEnabled(true)
+            .setDirectoryServices(DirectoryServicesConfig.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -535,6 +541,7 @@ public class CloudFilestoreManagerClientHttpJsonTest {
               .setMaxShareCount(-1758695852)
               .setCapacityGb(-1923585408)
               .setMultiShareEnabled(true)
+              .setDirectoryServices(DirectoryServicesConfig.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateInstanceAsync(instance, updateMask).get();
@@ -563,6 +570,7 @@ public class CloudFilestoreManagerClientHttpJsonTest {
             .setMaxShareCount(-1758695852)
             .setCapacityGb(-1923585408)
             .setMultiShareEnabled(true)
+            .setDirectoryServices(DirectoryServicesConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -635,6 +643,7 @@ public class CloudFilestoreManagerClientHttpJsonTest {
             .setMaxShareCount(-1758695852)
             .setCapacityGb(-1923585408)
             .setMultiShareEnabled(true)
+            .setDirectoryServices(DirectoryServicesConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,11 +49,6 @@ public final class DeleteWorkstationConfigRequest extends com.google.protobuf.Ge
     return new DeleteWorkstationConfigRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.workstations.v1beta.WorkstationsProto
         .internal_static_google_cloud_workstations_v1beta_DeleteWorkstationConfigRequest_descriptor;
@@ -77,7 +72,7 @@ public final class DeleteWorkstationConfigRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Required. Name of the config to delete.
+   * Required. Name of the workstation configuration to delete.
    * </pre>
    *
    * <code>
@@ -102,7 +97,7 @@ public final class DeleteWorkstationConfigRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Required. Name of the config to delete.
+   * Required. Name of the workstation configuration to delete.
    * </pre>
    *
    * <code>
@@ -130,11 +125,11 @@ public final class DeleteWorkstationConfigRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * If set, validate the request and preview the review, but do not actually
-   * apply it.
+   * Optional. If set, validate the request and preview the review, but do not
+   * actually apply it.
    * </pre>
    *
-   * <code>bool validate_only = 2;</code>
+   * <code>bool validate_only = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The validateOnly.
    */
@@ -151,11 +146,11 @@ public final class DeleteWorkstationConfigRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * If set, the request will be rejected if the latest version of the config on
-   * the server does not have this etag.
+   * Optional. If set, the request is rejected if the latest version of the
+   * workstation configuration on the server does not have this ETag.
    * </pre>
    *
-   * <code>string etag = 3;</code>
+   * <code>string etag = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The etag.
    */
@@ -175,11 +170,11 @@ public final class DeleteWorkstationConfigRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * If set, the request will be rejected if the latest version of the config on
-   * the server does not have this etag.
+   * Optional. If set, the request is rejected if the latest version of the
+   * workstation configuration on the server does not have this ETag.
    * </pre>
    *
-   * <code>string etag = 3;</code>
+   * <code>string etag = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for etag.
    */
@@ -202,11 +197,12 @@ public final class DeleteWorkstationConfigRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * If set, any Workstations in the config will also be deleted. Otherwise,
-   * the request will work only if the config has no workstations.
+   * Optional. If set, any workstations in the workstation configuration are
+   * also deleted. Otherwise, the request works only if the workstation
+   * configuration has no workstations.
    * </pre>
    *
-   * <code>bool force = 4;</code>
+   * <code>bool force = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The force.
    */
@@ -639,7 +635,7 @@ public final class DeleteWorkstationConfigRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. Name of the config to delete.
+     * Required. Name of the workstation configuration to delete.
      * </pre>
      *
      * <code>
@@ -663,7 +659,7 @@ public final class DeleteWorkstationConfigRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. Name of the config to delete.
+     * Required. Name of the workstation configuration to delete.
      * </pre>
      *
      * <code>
@@ -687,7 +683,7 @@ public final class DeleteWorkstationConfigRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. Name of the config to delete.
+     * Required. Name of the workstation configuration to delete.
      * </pre>
      *
      * <code>
@@ -710,7 +706,7 @@ public final class DeleteWorkstationConfigRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. Name of the config to delete.
+     * Required. Name of the workstation configuration to delete.
      * </pre>
      *
      * <code>
@@ -729,7 +725,7 @@ public final class DeleteWorkstationConfigRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. Name of the config to delete.
+     * Required. Name of the workstation configuration to delete.
      * </pre>
      *
      * <code>
@@ -755,11 +751,11 @@ public final class DeleteWorkstationConfigRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * If set, validate the request and preview the review, but do not actually
-     * apply it.
+     * Optional. If set, validate the request and preview the review, but do not
+     * actually apply it.
      * </pre>
      *
-     * <code>bool validate_only = 2;</code>
+     * <code>bool validate_only = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The validateOnly.
      */
@@ -771,11 +767,11 @@ public final class DeleteWorkstationConfigRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * If set, validate the request and preview the review, but do not actually
-     * apply it.
+     * Optional. If set, validate the request and preview the review, but do not
+     * actually apply it.
      * </pre>
      *
-     * <code>bool validate_only = 2;</code>
+     * <code>bool validate_only = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The validateOnly to set.
      * @return This builder for chaining.
@@ -791,11 +787,11 @@ public final class DeleteWorkstationConfigRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * If set, validate the request and preview the review, but do not actually
-     * apply it.
+     * Optional. If set, validate the request and preview the review, but do not
+     * actually apply it.
      * </pre>
      *
-     * <code>bool validate_only = 2;</code>
+     * <code>bool validate_only = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -811,11 +807,11 @@ public final class DeleteWorkstationConfigRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * If set, the request will be rejected if the latest version of the config on
-     * the server does not have this etag.
+     * Optional. If set, the request is rejected if the latest version of the
+     * workstation configuration on the server does not have this ETag.
      * </pre>
      *
-     * <code>string etag = 3;</code>
+     * <code>string etag = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The etag.
      */
@@ -834,11 +830,11 @@ public final class DeleteWorkstationConfigRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * If set, the request will be rejected if the latest version of the config on
-     * the server does not have this etag.
+     * Optional. If set, the request is rejected if the latest version of the
+     * workstation configuration on the server does not have this ETag.
      * </pre>
      *
-     * <code>string etag = 3;</code>
+     * <code>string etag = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for etag.
      */
@@ -857,11 +853,11 @@ public final class DeleteWorkstationConfigRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * If set, the request will be rejected if the latest version of the config on
-     * the server does not have this etag.
+     * Optional. If set, the request is rejected if the latest version of the
+     * workstation configuration on the server does not have this ETag.
      * </pre>
      *
-     * <code>string etag = 3;</code>
+     * <code>string etag = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The etag to set.
      * @return This builder for chaining.
@@ -879,11 +875,11 @@ public final class DeleteWorkstationConfigRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * If set, the request will be rejected if the latest version of the config on
-     * the server does not have this etag.
+     * Optional. If set, the request is rejected if the latest version of the
+     * workstation configuration on the server does not have this ETag.
      * </pre>
      *
-     * <code>string etag = 3;</code>
+     * <code>string etag = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -897,11 +893,11 @@ public final class DeleteWorkstationConfigRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * If set, the request will be rejected if the latest version of the config on
-     * the server does not have this etag.
+     * Optional. If set, the request is rejected if the latest version of the
+     * workstation configuration on the server does not have this ETag.
      * </pre>
      *
-     * <code>string etag = 3;</code>
+     * <code>string etag = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for etag to set.
      * @return This builder for chaining.
@@ -922,11 +918,12 @@ public final class DeleteWorkstationConfigRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * If set, any Workstations in the config will also be deleted. Otherwise,
-     * the request will work only if the config has no workstations.
+     * Optional. If set, any workstations in the workstation configuration are
+     * also deleted. Otherwise, the request works only if the workstation
+     * configuration has no workstations.
      * </pre>
      *
-     * <code>bool force = 4;</code>
+     * <code>bool force = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The force.
      */
@@ -938,11 +935,12 @@ public final class DeleteWorkstationConfigRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * If set, any Workstations in the config will also be deleted. Otherwise,
-     * the request will work only if the config has no workstations.
+     * Optional. If set, any workstations in the workstation configuration are
+     * also deleted. Otherwise, the request works only if the workstation
+     * configuration has no workstations.
      * </pre>
      *
-     * <code>bool force = 4;</code>
+     * <code>bool force = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The force to set.
      * @return This builder for chaining.
@@ -958,11 +956,12 @@ public final class DeleteWorkstationConfigRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * If set, any Workstations in the config will also be deleted. Otherwise,
-     * the request will work only if the config has no workstations.
+     * Optional. If set, any workstations in the workstation configuration are
+     * also deleted. Otherwise, the request works only if the workstation
+     * configuration has no workstations.
      * </pre>
      *
-     * <code>bool force = 4;</code>
+     * <code>bool force = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */

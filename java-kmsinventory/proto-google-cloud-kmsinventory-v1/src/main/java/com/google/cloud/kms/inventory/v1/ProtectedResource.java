@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,18 +45,13 @@ public final class ProtectedResource extends com.google.protobuf.GeneratedMessag
     resourceType_ = "";
     location_ = "";
     cryptoKeyVersion_ = "";
-    cryptoKeyVersions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    cryptoKeyVersions_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ProtectedResource();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -567,7 +562,8 @@ public final class ProtectedResource extends com.google.protobuf.GeneratedMessag
   public static final int CRYPTO_KEY_VERSIONS_FIELD_NUMBER = 10;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList cryptoKeyVersions_;
+  private com.google.protobuf.LazyStringArrayList cryptoKeyVersions_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -1030,8 +1026,7 @@ public final class ProtectedResource extends com.google.protobuf.GeneratedMessag
       location_ = "";
       internalGetMutableLabels().clear();
       cryptoKeyVersion_ = "";
-      cryptoKeyVersions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000100);
+      cryptoKeyVersions_ = com.google.protobuf.LazyStringArrayList.emptyList();
       createTime_ = null;
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
@@ -1064,21 +1059,11 @@ public final class ProtectedResource extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.kms.inventory.v1.ProtectedResource buildPartial() {
       com.google.cloud.kms.inventory.v1.ProtectedResource result =
           new com.google.cloud.kms.inventory.v1.ProtectedResource(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(
-        com.google.cloud.kms.inventory.v1.ProtectedResource result) {
-      if (((bitField0_ & 0x00000100) != 0)) {
-        cryptoKeyVersions_ = cryptoKeyVersions_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000100);
-      }
-      result.cryptoKeyVersions_ = cryptoKeyVersions_;
     }
 
     private void buildPartial0(com.google.cloud.kms.inventory.v1.ProtectedResource result) {
@@ -1107,6 +1092,10 @@ public final class ProtectedResource extends com.google.protobuf.GeneratedMessag
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
         result.cryptoKeyVersion_ = cryptoKeyVersion_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        cryptoKeyVersions_.makeImmutable();
+        result.cryptoKeyVersions_ = cryptoKeyVersions_;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
         result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
@@ -1199,7 +1188,7 @@ public final class ProtectedResource extends com.google.protobuf.GeneratedMessag
       if (!other.cryptoKeyVersions_.isEmpty()) {
         if (cryptoKeyVersions_.isEmpty()) {
           cryptoKeyVersions_ = other.cryptoKeyVersions_;
-          bitField0_ = (bitField0_ & ~0x00000100);
+          bitField0_ |= 0x00000100;
         } else {
           ensureCryptoKeyVersionsIsMutable();
           cryptoKeyVersions_.addAll(other.cryptoKeyVersions_);
@@ -2276,14 +2265,14 @@ public final class ProtectedResource extends com.google.protobuf.GeneratedMessag
       return this;
     }
 
-    private com.google.protobuf.LazyStringList cryptoKeyVersions_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList cryptoKeyVersions_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureCryptoKeyVersionsIsMutable() {
-      if (!((bitField0_ & 0x00000100) != 0)) {
+      if (!cryptoKeyVersions_.isModifiable()) {
         cryptoKeyVersions_ = new com.google.protobuf.LazyStringArrayList(cryptoKeyVersions_);
-        bitField0_ |= 0x00000100;
       }
+      bitField0_ |= 0x00000100;
     }
     /**
      *
@@ -2303,7 +2292,8 @@ public final class ProtectedResource extends com.google.protobuf.GeneratedMessag
      * @return A list containing the cryptoKeyVersions.
      */
     public com.google.protobuf.ProtocolStringList getCryptoKeyVersionsList() {
-      return cryptoKeyVersions_.getUnmodifiableView();
+      cryptoKeyVersions_.makeImmutable();
+      return cryptoKeyVersions_;
     }
     /**
      *
@@ -2392,6 +2382,7 @@ public final class ProtectedResource extends com.google.protobuf.GeneratedMessag
       }
       ensureCryptoKeyVersionsIsMutable();
       cryptoKeyVersions_.set(index, value);
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2419,6 +2410,7 @@ public final class ProtectedResource extends com.google.protobuf.GeneratedMessag
       }
       ensureCryptoKeyVersionsIsMutable();
       cryptoKeyVersions_.add(value);
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2443,6 +2435,7 @@ public final class ProtectedResource extends com.google.protobuf.GeneratedMessag
     public Builder addAllCryptoKeyVersions(java.lang.Iterable<java.lang.String> values) {
       ensureCryptoKeyVersionsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, cryptoKeyVersions_);
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2464,8 +2457,9 @@ public final class ProtectedResource extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearCryptoKeyVersions() {
-      cryptoKeyVersions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      cryptoKeyVersions_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000100);
+      ;
       onChanged();
       return this;
     }
@@ -2494,6 +2488,7 @@ public final class ProtectedResource extends com.google.protobuf.GeneratedMessag
       checkByteStringIsUtf8(value);
       ensureCryptoKeyVersionsIsMutable();
       cryptoKeyVersions_.add(value);
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }

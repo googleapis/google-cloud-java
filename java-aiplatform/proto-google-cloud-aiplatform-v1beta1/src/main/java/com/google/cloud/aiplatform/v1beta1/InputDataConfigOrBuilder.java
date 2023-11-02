@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -98,6 +98,7 @@ public interface InputDataConfigOrBuilder
    *
    * <pre>
    * Supported only for tabular Datasets.
+   *
    * Split based on a predefined key.
    * </pre>
    *
@@ -111,6 +112,7 @@ public interface InputDataConfigOrBuilder
    *
    * <pre>
    * Supported only for tabular Datasets.
+   *
    * Split based on a predefined key.
    * </pre>
    *
@@ -124,6 +126,7 @@ public interface InputDataConfigOrBuilder
    *
    * <pre>
    * Supported only for tabular Datasets.
+   *
    * Split based on a predefined key.
    * </pre>
    *
@@ -136,6 +139,7 @@ public interface InputDataConfigOrBuilder
    *
    * <pre>
    * Supported only for tabular Datasets.
+   *
    * Split based on the timestamp of the input data pieces.
    * </pre>
    *
@@ -149,6 +153,7 @@ public interface InputDataConfigOrBuilder
    *
    * <pre>
    * Supported only for tabular Datasets.
+   *
    * Split based on the timestamp of the input data pieces.
    * </pre>
    *
@@ -162,6 +167,7 @@ public interface InputDataConfigOrBuilder
    *
    * <pre>
    * Supported only for tabular Datasets.
+   *
    * Split based on the timestamp of the input data pieces.
    * </pre>
    *
@@ -174,6 +180,7 @@ public interface InputDataConfigOrBuilder
    *
    * <pre>
    * Supported only for tabular Datasets.
+   *
    * Split based on the distribution of the specified column.
    * </pre>
    *
@@ -187,6 +194,7 @@ public interface InputDataConfigOrBuilder
    *
    * <pre>
    * Supported only for tabular Datasets.
+   *
    * Split based on the distribution of the specified column.
    * </pre>
    *
@@ -200,6 +208,7 @@ public interface InputDataConfigOrBuilder
    *
    * <pre>
    * Supported only for tabular Datasets.
+   *
    * Split based on the distribution of the specified column.
    * </pre>
    *
@@ -217,14 +226,18 @@ public interface InputDataConfigOrBuilder
    * `dataset-&lt;dataset-id&gt;-&lt;annotation-type&gt;-&lt;timestamp-of-training-call&gt;`
    * where timestamp is in YYYY-MM-DDThh:mm:ss.sssZ ISO-8601 format.
    * All training input data is written into that directory.
+   *
    * The Vertex AI environment variables representing Cloud Storage
    * data URIs are represented in the Cloud Storage wildcard
    * format to support sharded data. e.g.: "gs://.../training-*.jsonl"
+   *
    * * AIP_DATA_FORMAT = "jsonl" for non-tabular data, "csv" for tabular data
    * * AIP_TRAINING_DATA_URI =
    * "gcs_destination/dataset-&lt;dataset-id&gt;-&lt;annotation-type&gt;-&lt;time&gt;/training-*.${AIP_DATA_FORMAT}"
+   *
    * * AIP_VALIDATION_DATA_URI =
    * "gcs_destination/dataset-&lt;dataset-id&gt;-&lt;annotation-type&gt;-&lt;time&gt;/validation-*.${AIP_DATA_FORMAT}"
+   *
    * * AIP_TEST_DATA_URI =
    * "gcs_destination/dataset-&lt;dataset-id&gt;-&lt;annotation-type&gt;-&lt;time&gt;/test-*.${AIP_DATA_FORMAT}"
    * </pre>
@@ -244,14 +257,18 @@ public interface InputDataConfigOrBuilder
    * `dataset-&lt;dataset-id&gt;-&lt;annotation-type&gt;-&lt;timestamp-of-training-call&gt;`
    * where timestamp is in YYYY-MM-DDThh:mm:ss.sssZ ISO-8601 format.
    * All training input data is written into that directory.
+   *
    * The Vertex AI environment variables representing Cloud Storage
    * data URIs are represented in the Cloud Storage wildcard
    * format to support sharded data. e.g.: "gs://.../training-*.jsonl"
+   *
    * * AIP_DATA_FORMAT = "jsonl" for non-tabular data, "csv" for tabular data
    * * AIP_TRAINING_DATA_URI =
    * "gcs_destination/dataset-&lt;dataset-id&gt;-&lt;annotation-type&gt;-&lt;time&gt;/training-*.${AIP_DATA_FORMAT}"
+   *
    * * AIP_VALIDATION_DATA_URI =
    * "gcs_destination/dataset-&lt;dataset-id&gt;-&lt;annotation-type&gt;-&lt;time&gt;/validation-*.${AIP_DATA_FORMAT}"
+   *
    * * AIP_TEST_DATA_URI =
    * "gcs_destination/dataset-&lt;dataset-id&gt;-&lt;annotation-type&gt;-&lt;time&gt;/test-*.${AIP_DATA_FORMAT}"
    * </pre>
@@ -271,14 +288,18 @@ public interface InputDataConfigOrBuilder
    * `dataset-&lt;dataset-id&gt;-&lt;annotation-type&gt;-&lt;timestamp-of-training-call&gt;`
    * where timestamp is in YYYY-MM-DDThh:mm:ss.sssZ ISO-8601 format.
    * All training input data is written into that directory.
+   *
    * The Vertex AI environment variables representing Cloud Storage
    * data URIs are represented in the Cloud Storage wildcard
    * format to support sharded data. e.g.: "gs://.../training-*.jsonl"
+   *
    * * AIP_DATA_FORMAT = "jsonl" for non-tabular data, "csv" for tabular data
    * * AIP_TRAINING_DATA_URI =
    * "gcs_destination/dataset-&lt;dataset-id&gt;-&lt;annotation-type&gt;-&lt;time&gt;/training-*.${AIP_DATA_FORMAT}"
+   *
    * * AIP_VALIDATION_DATA_URI =
    * "gcs_destination/dataset-&lt;dataset-id&gt;-&lt;annotation-type&gt;-&lt;time&gt;/validation-*.${AIP_DATA_FORMAT}"
+   *
    * * AIP_TEST_DATA_URI =
    * "gcs_destination/dataset-&lt;dataset-id&gt;-&lt;annotation-type&gt;-&lt;time&gt;/test-*.${AIP_DATA_FORMAT}"
    * </pre>
@@ -293,17 +314,21 @@ public interface InputDataConfigOrBuilder
    * <pre>
    * Only applicable to custom training with tabular Dataset with BigQuery
    * source.
+   *
    * The BigQuery project location where the training data is to be written
    * to. In the given project a new dataset is created with name
    * `dataset_&lt;dataset-id&gt;_&lt;annotation-type&gt;_&lt;timestamp-of-training-call&gt;`
    * where timestamp is in YYYY_MM_DDThh_mm_ss_sssZ format. All training
    * input data is written into that dataset. In the dataset three
    * tables are created, `training`, `validation` and `test`.
+   *
    * * AIP_DATA_FORMAT = "bigquery".
    * * AIP_TRAINING_DATA_URI  =
    * "bigquery_destination.dataset_&lt;dataset-id&gt;_&lt;annotation-type&gt;_&lt;time&gt;.training"
+   *
    * * AIP_VALIDATION_DATA_URI =
    * "bigquery_destination.dataset_&lt;dataset-id&gt;_&lt;annotation-type&gt;_&lt;time&gt;.validation"
+   *
    * * AIP_TEST_DATA_URI =
    * "bigquery_destination.dataset_&lt;dataset-id&gt;_&lt;annotation-type&gt;_&lt;time&gt;.test"
    * </pre>
@@ -319,17 +344,21 @@ public interface InputDataConfigOrBuilder
    * <pre>
    * Only applicable to custom training with tabular Dataset with BigQuery
    * source.
+   *
    * The BigQuery project location where the training data is to be written
    * to. In the given project a new dataset is created with name
    * `dataset_&lt;dataset-id&gt;_&lt;annotation-type&gt;_&lt;timestamp-of-training-call&gt;`
    * where timestamp is in YYYY_MM_DDThh_mm_ss_sssZ format. All training
    * input data is written into that dataset. In the dataset three
    * tables are created, `training`, `validation` and `test`.
+   *
    * * AIP_DATA_FORMAT = "bigquery".
    * * AIP_TRAINING_DATA_URI  =
    * "bigquery_destination.dataset_&lt;dataset-id&gt;_&lt;annotation-type&gt;_&lt;time&gt;.training"
+   *
    * * AIP_VALIDATION_DATA_URI =
    * "bigquery_destination.dataset_&lt;dataset-id&gt;_&lt;annotation-type&gt;_&lt;time&gt;.validation"
+   *
    * * AIP_TEST_DATA_URI =
    * "bigquery_destination.dataset_&lt;dataset-id&gt;_&lt;annotation-type&gt;_&lt;time&gt;.test"
    * </pre>
@@ -345,17 +374,21 @@ public interface InputDataConfigOrBuilder
    * <pre>
    * Only applicable to custom training with tabular Dataset with BigQuery
    * source.
+   *
    * The BigQuery project location where the training data is to be written
    * to. In the given project a new dataset is created with name
    * `dataset_&lt;dataset-id&gt;_&lt;annotation-type&gt;_&lt;timestamp-of-training-call&gt;`
    * where timestamp is in YYYY_MM_DDThh_mm_ss_sssZ format. All training
    * input data is written into that dataset. In the dataset three
    * tables are created, `training`, `validation` and `test`.
+   *
    * * AIP_DATA_FORMAT = "bigquery".
    * * AIP_TRAINING_DATA_URI  =
    * "bigquery_destination.dataset_&lt;dataset-id&gt;_&lt;annotation-type&gt;_&lt;time&gt;.training"
+   *
    * * AIP_VALIDATION_DATA_URI =
    * "bigquery_destination.dataset_&lt;dataset-id&gt;_&lt;annotation-type&gt;_&lt;time&gt;.validation"
+   *
    * * AIP_TEST_DATA_URI =
    * "bigquery_destination.dataset_&lt;dataset-id&gt;_&lt;annotation-type&gt;_&lt;time&gt;.test"
    * </pre>
@@ -407,6 +440,7 @@ public interface InputDataConfigOrBuilder
    *
    * <pre>
    * Applicable only to Datasets that have DataItems and Annotations.
+   *
    * A filter on Annotations of the Dataset. Only Annotations that both
    * match this filter and belong to DataItems not ignored by the split method
    * are used in respectively training, validation or test role, depending on
@@ -427,6 +461,7 @@ public interface InputDataConfigOrBuilder
    *
    * <pre>
    * Applicable only to Datasets that have DataItems and Annotations.
+   *
    * A filter on Annotations of the Dataset. Only Annotations that both
    * match this filter and belong to DataItems not ignored by the split method
    * are used in respectively training, validation or test role, depending on
@@ -449,6 +484,7 @@ public interface InputDataConfigOrBuilder
    * <pre>
    * Applicable only to custom training with Datasets that have DataItems and
    * Annotations.
+   *
    * Cloud Storage URI that points to a YAML file describing the annotation
    * schema. The schema is defined as an OpenAPI 3.0.2 [Schema
    * Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
@@ -458,9 +494,11 @@ public interface InputDataConfigOrBuilder
    * [metadata][google.cloud.aiplatform.v1beta1.Dataset.metadata_schema_uri] of
    * the Dataset specified by
    * [dataset_id][google.cloud.aiplatform.v1beta1.InputDataConfig.dataset_id].
+   *
    * Only Annotations that both match this schema and belong to DataItems not
    * ignored by the split method are used in respectively training, validation
    * or test role, depending on the role of the DataItem they are on.
+   *
    * When used in conjunction with
    * [annotations_filter][google.cloud.aiplatform.v1beta1.InputDataConfig.annotations_filter],
    * the Annotations used for training are filtered by both
@@ -480,6 +518,7 @@ public interface InputDataConfigOrBuilder
    * <pre>
    * Applicable only to custom training with Datasets that have DataItems and
    * Annotations.
+   *
    * Cloud Storage URI that points to a YAML file describing the annotation
    * schema. The schema is defined as an OpenAPI 3.0.2 [Schema
    * Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
@@ -489,9 +528,11 @@ public interface InputDataConfigOrBuilder
    * [metadata][google.cloud.aiplatform.v1beta1.Dataset.metadata_schema_uri] of
    * the Dataset specified by
    * [dataset_id][google.cloud.aiplatform.v1beta1.InputDataConfig.dataset_id].
+   *
    * Only Annotations that both match this schema and belong to DataItems not
    * ignored by the split method are used in respectively training, validation
    * or test role, depending on the role of the DataItem they are on.
+   *
    * When used in conjunction with
    * [annotations_filter][google.cloud.aiplatform.v1beta1.InputDataConfig.annotations_filter],
    * the Annotations used for training are filtered by both
@@ -511,9 +552,11 @@ public interface InputDataConfigOrBuilder
    *
    * <pre>
    * Only applicable to Datasets that have SavedQueries.
+   *
    * The ID of a SavedQuery (annotation set) under the Dataset specified by
    * [dataset_id][google.cloud.aiplatform.v1beta1.InputDataConfig.dataset_id]
    * used for filtering Annotations for training.
+   *
    * Only Annotations that are associated with this SavedQuery are used in
    * respectively training. When used in conjunction with
    * [annotations_filter][google.cloud.aiplatform.v1beta1.InputDataConfig.annotations_filter],
@@ -521,6 +564,7 @@ public interface InputDataConfigOrBuilder
    * [saved_query_id][google.cloud.aiplatform.v1beta1.InputDataConfig.saved_query_id]
    * and
    * [annotations_filter][google.cloud.aiplatform.v1beta1.InputDataConfig.annotations_filter].
+   *
    * Only one of
    * [saved_query_id][google.cloud.aiplatform.v1beta1.InputDataConfig.saved_query_id]
    * and
@@ -538,9 +582,11 @@ public interface InputDataConfigOrBuilder
    *
    * <pre>
    * Only applicable to Datasets that have SavedQueries.
+   *
    * The ID of a SavedQuery (annotation set) under the Dataset specified by
    * [dataset_id][google.cloud.aiplatform.v1beta1.InputDataConfig.dataset_id]
    * used for filtering Annotations for training.
+   *
    * Only Annotations that are associated with this SavedQuery are used in
    * respectively training. When used in conjunction with
    * [annotations_filter][google.cloud.aiplatform.v1beta1.InputDataConfig.annotations_filter],
@@ -548,6 +594,7 @@ public interface InputDataConfigOrBuilder
    * [saved_query_id][google.cloud.aiplatform.v1beta1.InputDataConfig.saved_query_id]
    * and
    * [annotations_filter][google.cloud.aiplatform.v1beta1.InputDataConfig.annotations_filter].
+   *
    * Only one of
    * [saved_query_id][google.cloud.aiplatform.v1beta1.InputDataConfig.saved_query_id]
    * and
@@ -574,7 +621,7 @@ public interface InputDataConfigOrBuilder
    */
   boolean getPersistMlUseAssignment();
 
-  public com.google.cloud.aiplatform.v1beta1.InputDataConfig.SplitCase getSplitCase();
+  com.google.cloud.aiplatform.v1beta1.InputDataConfig.SplitCase getSplitCase();
 
-  public com.google.cloud.aiplatform.v1beta1.InputDataConfig.DestinationCase getDestinationCase();
+  com.google.cloud.aiplatform.v1beta1.InputDataConfig.DestinationCase getDestinationCase();
 }

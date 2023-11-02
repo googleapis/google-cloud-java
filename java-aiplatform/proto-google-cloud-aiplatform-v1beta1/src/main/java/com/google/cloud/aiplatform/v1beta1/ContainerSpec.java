@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,8 +39,8 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
 
   private ContainerSpec() {
     imageUri_ = "";
-    command_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    args_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    command_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    args_ = com.google.protobuf.LazyStringArrayList.emptyList();
     env_ = java.util.Collections.emptyList();
   }
 
@@ -48,11 +48,6 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ContainerSpec();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -126,7 +121,8 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
   public static final int COMMAND_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList command_;
+  private com.google.protobuf.LazyStringArrayList command_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -193,7 +189,8 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
   public static final int ARGS_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList args_;
+  private com.google.protobuf.LazyStringArrayList args_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -571,10 +568,8 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       bitField0_ = 0;
       imageUri_ = "";
-      command_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
-      args_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      command_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      args_ = com.google.protobuf.LazyStringArrayList.emptyList();
       if (envBuilder_ == null) {
         env_ = java.util.Collections.emptyList();
       } else {
@@ -619,16 +614,6 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
 
     private void buildPartialRepeatedFields(
         com.google.cloud.aiplatform.v1beta1.ContainerSpec result) {
-      if (((bitField0_ & 0x00000002) != 0)) {
-        command_ = command_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.command_ = command_;
-      if (((bitField0_ & 0x00000004) != 0)) {
-        args_ = args_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.args_ = args_;
       if (envBuilder_ == null) {
         if (((bitField0_ & 0x00000008) != 0)) {
           env_ = java.util.Collections.unmodifiableList(env_);
@@ -644,6 +629,14 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.imageUri_ = imageUri_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        command_.makeImmutable();
+        result.command_ = command_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        args_.makeImmutable();
+        result.args_ = args_;
       }
     }
 
@@ -701,7 +694,7 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
       if (!other.command_.isEmpty()) {
         if (command_.isEmpty()) {
           command_ = other.command_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureCommandIsMutable();
           command_.addAll(other.command_);
@@ -711,7 +704,7 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
       if (!other.args_.isEmpty()) {
         if (args_.isEmpty()) {
           args_ = other.args_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ |= 0x00000004;
         } else {
           ensureArgsIsMutable();
           args_.addAll(other.args_);
@@ -934,14 +927,14 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList command_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList command_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureCommandIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!command_.isModifiable()) {
         command_ = new com.google.protobuf.LazyStringArrayList(command_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -956,7 +949,8 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the command.
      */
     public com.google.protobuf.ProtocolStringList getCommandList() {
-      return command_.getUnmodifiableView();
+      command_.makeImmutable();
+      return command_;
     }
     /**
      *
@@ -1025,6 +1019,7 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
       }
       ensureCommandIsMutable();
       command_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1047,6 +1042,7 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
       }
       ensureCommandIsMutable();
       command_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1066,6 +1062,7 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllCommand(java.lang.Iterable<java.lang.String> values) {
       ensureCommandIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, command_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1082,8 +1079,9 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCommand() {
-      command_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      command_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -1107,18 +1105,19 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureCommandIsMutable();
       command_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList args_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList args_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureArgsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!args_.isModifiable()) {
         args_ = new com.google.protobuf.LazyStringArrayList(args_);
-        bitField0_ |= 0x00000004;
       }
+      bitField0_ |= 0x00000004;
     }
     /**
      *
@@ -1132,7 +1131,8 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the args.
      */
     public com.google.protobuf.ProtocolStringList getArgsList() {
-      return args_.getUnmodifiableView();
+      args_.makeImmutable();
+      return args_;
     }
     /**
      *
@@ -1197,6 +1197,7 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
       }
       ensureArgsIsMutable();
       args_.set(index, value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1218,6 +1219,7 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
       }
       ensureArgsIsMutable();
       args_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1236,6 +1238,7 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllArgs(java.lang.Iterable<java.lang.String> values) {
       ensureArgsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, args_);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1251,8 +1254,9 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearArgs() {
-      args_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      args_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000004);
+      ;
       onChanged();
       return this;
     }
@@ -1275,6 +1279,7 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureArgsIsMutable();
       args_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

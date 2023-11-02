@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,14 +32,19 @@ public interface GlossaryInputConfigOrBuilder
    * [google.rpc.Code.INVALID_ARGUMENT] for unsupported URI-s and file
    * formats. Wildcards are not allowed. This must be a single file in one of
    * the following formats:
+   *
    * For unidirectional glossaries:
+   *
    * - TSV/CSV (`.tsv`/`.csv`): Two column file, tab- or comma-separated.
    *   The first column is source text. The second column is target text.
    *   No headers in this file. The first row contains data and not column
    *   names.
+   *
    * - TMX (`.tmx`): TMX file with parallel data defining source/target term
    * pairs.
+   *
    * For equivalent term sets glossaries:
+   *
    * - CSV (`.csv`): Multi-column CSV file defining equivalent glossary terms
    *   in multiple languages. See documentation for more information -
    *   [glossaries](https://cloud.google.com/translate/docs/advanced/glossary).
@@ -59,14 +64,19 @@ public interface GlossaryInputConfigOrBuilder
    * [google.rpc.Code.INVALID_ARGUMENT] for unsupported URI-s and file
    * formats. Wildcards are not allowed. This must be a single file in one of
    * the following formats:
+   *
    * For unidirectional glossaries:
+   *
    * - TSV/CSV (`.tsv`/`.csv`): Two column file, tab- or comma-separated.
    *   The first column is source text. The second column is target text.
    *   No headers in this file. The first row contains data and not column
    *   names.
+   *
    * - TMX (`.tmx`): TMX file with parallel data defining source/target term
    * pairs.
+   *
    * For equivalent term sets glossaries:
+   *
    * - CSV (`.csv`): Multi-column CSV file defining equivalent glossary terms
    *   in multiple languages. See documentation for more information -
    *   [glossaries](https://cloud.google.com/translate/docs/advanced/glossary).
@@ -86,14 +96,19 @@ public interface GlossaryInputConfigOrBuilder
    * [google.rpc.Code.INVALID_ARGUMENT] for unsupported URI-s and file
    * formats. Wildcards are not allowed. This must be a single file in one of
    * the following formats:
+   *
    * For unidirectional glossaries:
+   *
    * - TSV/CSV (`.tsv`/`.csv`): Two column file, tab- or comma-separated.
    *   The first column is source text. The second column is target text.
    *   No headers in this file. The first row contains data and not column
    *   names.
+   *
    * - TMX (`.tmx`): TMX file with parallel data defining source/target term
    * pairs.
+   *
    * For equivalent term sets glossaries:
+   *
    * - CSV (`.csv`): Multi-column CSV file defining equivalent glossary terms
    *   in multiple languages. See documentation for more information -
    *   [glossaries](https://cloud.google.com/translate/docs/advanced/glossary).
@@ -103,5 +118,5 @@ public interface GlossaryInputConfigOrBuilder
    */
   com.google.cloud.translate.v3.GcsSourceOrBuilder getGcsSourceOrBuilder();
 
-  public com.google.cloud.translate.v3.GlossaryInputConfig.SourceCase getSourceCase();
+  com.google.cloud.translate.v3.GlossaryInputConfig.SourceCase getSourceCase();
 }

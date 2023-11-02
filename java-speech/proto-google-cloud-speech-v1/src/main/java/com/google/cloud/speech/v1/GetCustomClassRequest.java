@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class GetCustomClassRequest extends com.google.protobuf.GeneratedMe
     return new GetCustomClassRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.speech.v1.SpeechAdaptationProto
         .internal_static_google_cloud_speech_v1_GetCustomClassRequest_descriptor;
@@ -76,6 +71,7 @@ public final class GetCustomClassRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Required. The name of the custom class to retrieve. Format:
+   *
    * `projects/{project}/locations/{location}/customClasses/{custom_class}`
    * </pre>
    *
@@ -102,6 +98,7 @@ public final class GetCustomClassRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Required. The name of the custom class to retrieve. Format:
+   *
    * `projects/{project}/locations/{location}/customClasses/{custom_class}`
    * </pre>
    *
@@ -472,6 +469,7 @@ public final class GetCustomClassRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The name of the custom class to retrieve. Format:
+     *
      * `projects/{project}/locations/{location}/customClasses/{custom_class}`
      * </pre>
      *
@@ -497,6 +495,7 @@ public final class GetCustomClassRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The name of the custom class to retrieve. Format:
+     *
      * `projects/{project}/locations/{location}/customClasses/{custom_class}`
      * </pre>
      *
@@ -522,6 +521,7 @@ public final class GetCustomClassRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The name of the custom class to retrieve. Format:
+     *
      * `projects/{project}/locations/{location}/customClasses/{custom_class}`
      * </pre>
      *
@@ -546,6 +546,7 @@ public final class GetCustomClassRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The name of the custom class to retrieve. Format:
+     *
      * `projects/{project}/locations/{location}/customClasses/{custom_class}`
      * </pre>
      *
@@ -566,6 +567,7 @@ public final class GetCustomClassRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The name of the custom class to retrieve. Format:
+     *
      * `projects/{project}/locations/{location}/customClasses/{custom_class}`
      * </pre>
      *

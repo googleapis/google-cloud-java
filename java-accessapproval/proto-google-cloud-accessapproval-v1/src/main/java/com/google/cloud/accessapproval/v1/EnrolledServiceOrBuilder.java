@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ public interface EnrolledServiceOrBuilder
    * <pre>
    * The product for which Access Approval will be enrolled. Allowed values are
    * listed below (case-sensitive):
+   *
    *   * all
    *   * GA
    *   * App Engine
@@ -53,8 +54,10 @@ public interface EnrolledServiceOrBuilder
    *   * Resource Manager
    *   * Secret Manager
    *   * Speaker ID
+   *
    * Note: These values are supported as input for legacy purposes, but will not
    * be returned from the API.
+   *
    *   * all
    *   * ga-only
    *   * appengine.googleapis.com
@@ -76,11 +79,14 @@ public interface EnrolledServiceOrBuilder
    *   * secretmanager.googleapis.com
    *   * speakerid.googleapis.com
    *   * storage.googleapis.com
+   *
    * Calls to UpdateAccessApprovalSettings using 'all' or any of the
    * XXX.googleapis.com will be translated to the associated product name
    * ('all', 'App Engine', etc.).
+   *
    * Note: 'all' will enroll the resource in all products supported at both 'GA'
    * and 'Preview' levels.
+   *
    * More information about levels of support is available at
    * https://cloud.google.com/access-approval/docs/supported-services
    * </pre>
@@ -96,6 +102,7 @@ public interface EnrolledServiceOrBuilder
    * <pre>
    * The product for which Access Approval will be enrolled. Allowed values are
    * listed below (case-sensitive):
+   *
    *   * all
    *   * GA
    *   * App Engine
@@ -120,8 +127,10 @@ public interface EnrolledServiceOrBuilder
    *   * Resource Manager
    *   * Secret Manager
    *   * Speaker ID
+   *
    * Note: These values are supported as input for legacy purposes, but will not
    * be returned from the API.
+   *
    *   * all
    *   * ga-only
    *   * appengine.googleapis.com
@@ -143,11 +152,14 @@ public interface EnrolledServiceOrBuilder
    *   * secretmanager.googleapis.com
    *   * speakerid.googleapis.com
    *   * storage.googleapis.com
+   *
    * Calls to UpdateAccessApprovalSettings using 'all' or any of the
    * XXX.googleapis.com will be translated to the associated product name
    * ('all', 'App Engine', etc.).
+   *
    * Note: 'all' will enroll the resource in all products supported at both 'GA'
    * and 'Preview' levels.
+   *
    * More information about levels of support is available at
    * https://cloud.google.com/access-approval/docs/supported-services
    * </pre>

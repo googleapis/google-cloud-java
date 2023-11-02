@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -578,5 +578,5 @@ public interface ModelOrBuilder
    */
   com.google.cloud.automl.v1beta1.Model.DeploymentState getDeploymentState();
 
-  public com.google.cloud.automl.v1beta1.Model.ModelMetadataCase getModelMetadataCase();
+  com.google.cloud.automl.v1beta1.Model.ModelMetadataCase getModelMetadataCase();
 }

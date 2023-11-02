@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,11 +52,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Violation();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -409,7 +404,7 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
     }
 
     private Remediation() {
-      compliantValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      compliantValues_ = com.google.protobuf.LazyStringArrayList.emptyList();
       remediationType_ = 0;
     }
 
@@ -417,11 +412,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Remediation();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -771,11 +761,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         return new Instructions();
       }
 
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
-      }
-
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.cloud.assuredworkloads.v1.AssuredworkloadsProto
             .internal_static_google_cloud_assuredworkloads_v1_Violation_Remediation_Instructions_descriptor;
@@ -971,20 +956,15 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         }
 
         private Gcloud() {
-          gcloudCommands_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-          steps_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-          additionalLinks_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+          gcloudCommands_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          steps_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          additionalLinks_ = com.google.protobuf.LazyStringArrayList.emptyList();
         }
 
         @java.lang.Override
         @SuppressWarnings({"unused"})
         protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
           return new Gcloud();
-        }
-
-        @java.lang.Override
-        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-          return this.unknownFields;
         }
 
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1007,7 +987,8 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         public static final int GCLOUD_COMMANDS_FIELD_NUMBER = 1;
 
         @SuppressWarnings("serial")
-        private com.google.protobuf.LazyStringList gcloudCommands_;
+        private com.google.protobuf.LazyStringArrayList gcloudCommands_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
         /**
          *
          *
@@ -1070,7 +1051,8 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         public static final int STEPS_FIELD_NUMBER = 2;
 
         @SuppressWarnings("serial")
-        private com.google.protobuf.LazyStringList steps_;
+        private com.google.protobuf.LazyStringArrayList steps_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
         /**
          *
          *
@@ -1133,7 +1115,8 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         public static final int ADDITIONAL_LINKS_FIELD_NUMBER = 3;
 
         @SuppressWarnings("serial")
-        private com.google.protobuf.LazyStringList additionalLinks_;
+        private com.google.protobuf.LazyStringArrayList additionalLinks_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
         /**
          *
          *
@@ -1454,12 +1437,9 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
           public Builder clear() {
             super.clear();
             bitField0_ = 0;
-            gcloudCommands_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-            bitField0_ = (bitField0_ & ~0x00000001);
-            steps_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-            bitField0_ = (bitField0_ & ~0x00000002);
-            additionalLinks_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            gcloudCommands_ = com.google.protobuf.LazyStringArrayList.emptyList();
+            steps_ = com.google.protobuf.LazyStringArrayList.emptyList();
+            additionalLinks_ = com.google.protobuf.LazyStringArrayList.emptyList();
             return this;
           }
 
@@ -1493,7 +1473,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.assuredworkloads.v1.Violation.Remediation.Instructions.Gcloud result =
                 new com.google.cloud.assuredworkloads.v1.Violation.Remediation.Instructions.Gcloud(
                     this);
-            buildPartialRepeatedFields(result);
             if (bitField0_ != 0) {
               buildPartial0(result);
             }
@@ -1501,30 +1480,22 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
             return result;
           }
 
-          private void buildPartialRepeatedFields(
-              com.google.cloud.assuredworkloads.v1.Violation.Remediation.Instructions.Gcloud
-                  result) {
-            if (((bitField0_ & 0x00000001) != 0)) {
-              gcloudCommands_ = gcloudCommands_.getUnmodifiableView();
-              bitField0_ = (bitField0_ & ~0x00000001);
-            }
-            result.gcloudCommands_ = gcloudCommands_;
-            if (((bitField0_ & 0x00000002) != 0)) {
-              steps_ = steps_.getUnmodifiableView();
-              bitField0_ = (bitField0_ & ~0x00000002);
-            }
-            result.steps_ = steps_;
-            if (((bitField0_ & 0x00000004) != 0)) {
-              additionalLinks_ = additionalLinks_.getUnmodifiableView();
-              bitField0_ = (bitField0_ & ~0x00000004);
-            }
-            result.additionalLinks_ = additionalLinks_;
-          }
-
           private void buildPartial0(
               com.google.cloud.assuredworkloads.v1.Violation.Remediation.Instructions.Gcloud
                   result) {
             int from_bitField0_ = bitField0_;
+            if (((from_bitField0_ & 0x00000001) != 0)) {
+              gcloudCommands_.makeImmutable();
+              result.gcloudCommands_ = gcloudCommands_;
+            }
+            if (((from_bitField0_ & 0x00000002) != 0)) {
+              steps_.makeImmutable();
+              result.steps_ = steps_;
+            }
+            if (((from_bitField0_ & 0x00000004) != 0)) {
+              additionalLinks_.makeImmutable();
+              result.additionalLinks_ = additionalLinks_;
+            }
           }
 
           @java.lang.Override
@@ -1585,7 +1556,7 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
             if (!other.gcloudCommands_.isEmpty()) {
               if (gcloudCommands_.isEmpty()) {
                 gcloudCommands_ = other.gcloudCommands_;
-                bitField0_ = (bitField0_ & ~0x00000001);
+                bitField0_ |= 0x00000001;
               } else {
                 ensureGcloudCommandsIsMutable();
                 gcloudCommands_.addAll(other.gcloudCommands_);
@@ -1595,7 +1566,7 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
             if (!other.steps_.isEmpty()) {
               if (steps_.isEmpty()) {
                 steps_ = other.steps_;
-                bitField0_ = (bitField0_ & ~0x00000002);
+                bitField0_ |= 0x00000002;
               } else {
                 ensureStepsIsMutable();
                 steps_.addAll(other.steps_);
@@ -1605,7 +1576,7 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
             if (!other.additionalLinks_.isEmpty()) {
               if (additionalLinks_.isEmpty()) {
                 additionalLinks_ = other.additionalLinks_;
-                bitField0_ = (bitField0_ & ~0x00000004);
+                bitField0_ |= 0x00000004;
               } else {
                 ensureAdditionalLinksIsMutable();
                 additionalLinks_.addAll(other.additionalLinks_);
@@ -1678,14 +1649,14 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
 
           private int bitField0_;
 
-          private com.google.protobuf.LazyStringList gcloudCommands_ =
-              com.google.protobuf.LazyStringArrayList.EMPTY;
+          private com.google.protobuf.LazyStringArrayList gcloudCommands_ =
+              com.google.protobuf.LazyStringArrayList.emptyList();
 
           private void ensureGcloudCommandsIsMutable() {
-            if (!((bitField0_ & 0x00000001) != 0)) {
+            if (!gcloudCommands_.isModifiable()) {
               gcloudCommands_ = new com.google.protobuf.LazyStringArrayList(gcloudCommands_);
-              bitField0_ |= 0x00000001;
             }
+            bitField0_ |= 0x00000001;
           }
           /**
            *
@@ -1699,7 +1670,8 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
            * @return A list containing the gcloudCommands.
            */
           public com.google.protobuf.ProtocolStringList getGcloudCommandsList() {
-            return gcloudCommands_.getUnmodifiableView();
+            gcloudCommands_.makeImmutable();
+            return gcloudCommands_;
           }
           /**
            *
@@ -1764,6 +1736,7 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
             }
             ensureGcloudCommandsIsMutable();
             gcloudCommands_.set(index, value);
+            bitField0_ |= 0x00000001;
             onChanged();
             return this;
           }
@@ -1785,6 +1758,7 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
             }
             ensureGcloudCommandsIsMutable();
             gcloudCommands_.add(value);
+            bitField0_ |= 0x00000001;
             onChanged();
             return this;
           }
@@ -1803,6 +1777,7 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
           public Builder addAllGcloudCommands(java.lang.Iterable<java.lang.String> values) {
             ensureGcloudCommandsIsMutable();
             com.google.protobuf.AbstractMessageLite.Builder.addAll(values, gcloudCommands_);
+            bitField0_ |= 0x00000001;
             onChanged();
             return this;
           }
@@ -1818,8 +1793,9 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
            * @return This builder for chaining.
            */
           public Builder clearGcloudCommands() {
-            gcloudCommands_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+            gcloudCommands_ = com.google.protobuf.LazyStringArrayList.emptyList();
             bitField0_ = (bitField0_ & ~0x00000001);
+            ;
             onChanged();
             return this;
           }
@@ -1842,18 +1818,19 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
             checkByteStringIsUtf8(value);
             ensureGcloudCommandsIsMutable();
             gcloudCommands_.add(value);
+            bitField0_ |= 0x00000001;
             onChanged();
             return this;
           }
 
-          private com.google.protobuf.LazyStringList steps_ =
-              com.google.protobuf.LazyStringArrayList.EMPTY;
+          private com.google.protobuf.LazyStringArrayList steps_ =
+              com.google.protobuf.LazyStringArrayList.emptyList();
 
           private void ensureStepsIsMutable() {
-            if (!((bitField0_ & 0x00000002) != 0)) {
+            if (!steps_.isModifiable()) {
               steps_ = new com.google.protobuf.LazyStringArrayList(steps_);
-              bitField0_ |= 0x00000002;
             }
+            bitField0_ |= 0x00000002;
           }
           /**
            *
@@ -1867,7 +1844,8 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
            * @return A list containing the steps.
            */
           public com.google.protobuf.ProtocolStringList getStepsList() {
-            return steps_.getUnmodifiableView();
+            steps_.makeImmutable();
+            return steps_;
           }
           /**
            *
@@ -1932,6 +1910,7 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
             }
             ensureStepsIsMutable();
             steps_.set(index, value);
+            bitField0_ |= 0x00000002;
             onChanged();
             return this;
           }
@@ -1953,6 +1932,7 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
             }
             ensureStepsIsMutable();
             steps_.add(value);
+            bitField0_ |= 0x00000002;
             onChanged();
             return this;
           }
@@ -1971,6 +1951,7 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
           public Builder addAllSteps(java.lang.Iterable<java.lang.String> values) {
             ensureStepsIsMutable();
             com.google.protobuf.AbstractMessageLite.Builder.addAll(values, steps_);
+            bitField0_ |= 0x00000002;
             onChanged();
             return this;
           }
@@ -1986,8 +1967,9 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
            * @return This builder for chaining.
            */
           public Builder clearSteps() {
-            steps_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+            steps_ = com.google.protobuf.LazyStringArrayList.emptyList();
             bitField0_ = (bitField0_ & ~0x00000002);
+            ;
             onChanged();
             return this;
           }
@@ -2010,18 +1992,19 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
             checkByteStringIsUtf8(value);
             ensureStepsIsMutable();
             steps_.add(value);
+            bitField0_ |= 0x00000002;
             onChanged();
             return this;
           }
 
-          private com.google.protobuf.LazyStringList additionalLinks_ =
-              com.google.protobuf.LazyStringArrayList.EMPTY;
+          private com.google.protobuf.LazyStringArrayList additionalLinks_ =
+              com.google.protobuf.LazyStringArrayList.emptyList();
 
           private void ensureAdditionalLinksIsMutable() {
-            if (!((bitField0_ & 0x00000004) != 0)) {
+            if (!additionalLinks_.isModifiable()) {
               additionalLinks_ = new com.google.protobuf.LazyStringArrayList(additionalLinks_);
-              bitField0_ |= 0x00000004;
             }
+            bitField0_ |= 0x00000004;
           }
           /**
            *
@@ -2035,7 +2018,8 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
            * @return A list containing the additionalLinks.
            */
           public com.google.protobuf.ProtocolStringList getAdditionalLinksList() {
-            return additionalLinks_.getUnmodifiableView();
+            additionalLinks_.makeImmutable();
+            return additionalLinks_;
           }
           /**
            *
@@ -2100,6 +2084,7 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
             }
             ensureAdditionalLinksIsMutable();
             additionalLinks_.set(index, value);
+            bitField0_ |= 0x00000004;
             onChanged();
             return this;
           }
@@ -2121,6 +2106,7 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
             }
             ensureAdditionalLinksIsMutable();
             additionalLinks_.add(value);
+            bitField0_ |= 0x00000004;
             onChanged();
             return this;
           }
@@ -2139,6 +2125,7 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
           public Builder addAllAdditionalLinks(java.lang.Iterable<java.lang.String> values) {
             ensureAdditionalLinksIsMutable();
             com.google.protobuf.AbstractMessageLite.Builder.addAll(values, additionalLinks_);
+            bitField0_ |= 0x00000004;
             onChanged();
             return this;
           }
@@ -2154,8 +2141,9 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
            * @return This builder for chaining.
            */
           public Builder clearAdditionalLinks() {
-            additionalLinks_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+            additionalLinks_ = com.google.protobuf.LazyStringArrayList.emptyList();
             bitField0_ = (bitField0_ & ~0x00000004);
+            ;
             onChanged();
             return this;
           }
@@ -2178,6 +2166,7 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
             checkByteStringIsUtf8(value);
             ensureAdditionalLinksIsMutable();
             additionalLinks_.add(value);
+            bitField0_ |= 0x00000004;
             onChanged();
             return this;
           }
@@ -2430,20 +2419,15 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         }
 
         private Console() {
-          consoleUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-          steps_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-          additionalLinks_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+          consoleUris_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          steps_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          additionalLinks_ = com.google.protobuf.LazyStringArrayList.emptyList();
         }
 
         @java.lang.Override
         @SuppressWarnings({"unused"})
         protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
           return new Console();
-        }
-
-        @java.lang.Override
-        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-          return this.unknownFields;
         }
 
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2466,7 +2450,8 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         public static final int CONSOLE_URIS_FIELD_NUMBER = 1;
 
         @SuppressWarnings("serial")
-        private com.google.protobuf.LazyStringList consoleUris_;
+        private com.google.protobuf.LazyStringArrayList consoleUris_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
         /**
          *
          *
@@ -2529,7 +2514,8 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         public static final int STEPS_FIELD_NUMBER = 2;
 
         @SuppressWarnings("serial")
-        private com.google.protobuf.LazyStringList steps_;
+        private com.google.protobuf.LazyStringArrayList steps_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
         /**
          *
          *
@@ -2592,7 +2578,8 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         public static final int ADDITIONAL_LINKS_FIELD_NUMBER = 3;
 
         @SuppressWarnings("serial")
-        private com.google.protobuf.LazyStringList additionalLinks_;
+        private com.google.protobuf.LazyStringArrayList additionalLinks_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
         /**
          *
          *
@@ -2924,12 +2911,9 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
           public Builder clear() {
             super.clear();
             bitField0_ = 0;
-            consoleUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-            bitField0_ = (bitField0_ & ~0x00000001);
-            steps_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-            bitField0_ = (bitField0_ & ~0x00000002);
-            additionalLinks_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            consoleUris_ = com.google.protobuf.LazyStringArrayList.emptyList();
+            steps_ = com.google.protobuf.LazyStringArrayList.emptyList();
+            additionalLinks_ = com.google.protobuf.LazyStringArrayList.emptyList();
             return this;
           }
 
@@ -2963,7 +2947,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.assuredworkloads.v1.Violation.Remediation.Instructions.Console result =
                 new com.google.cloud.assuredworkloads.v1.Violation.Remediation.Instructions.Console(
                     this);
-            buildPartialRepeatedFields(result);
             if (bitField0_ != 0) {
               buildPartial0(result);
             }
@@ -2971,30 +2954,22 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
             return result;
           }
 
-          private void buildPartialRepeatedFields(
-              com.google.cloud.assuredworkloads.v1.Violation.Remediation.Instructions.Console
-                  result) {
-            if (((bitField0_ & 0x00000001) != 0)) {
-              consoleUris_ = consoleUris_.getUnmodifiableView();
-              bitField0_ = (bitField0_ & ~0x00000001);
-            }
-            result.consoleUris_ = consoleUris_;
-            if (((bitField0_ & 0x00000002) != 0)) {
-              steps_ = steps_.getUnmodifiableView();
-              bitField0_ = (bitField0_ & ~0x00000002);
-            }
-            result.steps_ = steps_;
-            if (((bitField0_ & 0x00000004) != 0)) {
-              additionalLinks_ = additionalLinks_.getUnmodifiableView();
-              bitField0_ = (bitField0_ & ~0x00000004);
-            }
-            result.additionalLinks_ = additionalLinks_;
-          }
-
           private void buildPartial0(
               com.google.cloud.assuredworkloads.v1.Violation.Remediation.Instructions.Console
                   result) {
             int from_bitField0_ = bitField0_;
+            if (((from_bitField0_ & 0x00000001) != 0)) {
+              consoleUris_.makeImmutable();
+              result.consoleUris_ = consoleUris_;
+            }
+            if (((from_bitField0_ & 0x00000002) != 0)) {
+              steps_.makeImmutable();
+              result.steps_ = steps_;
+            }
+            if (((from_bitField0_ & 0x00000004) != 0)) {
+              additionalLinks_.makeImmutable();
+              result.additionalLinks_ = additionalLinks_;
+            }
           }
 
           @java.lang.Override
@@ -3055,7 +3030,7 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
             if (!other.consoleUris_.isEmpty()) {
               if (consoleUris_.isEmpty()) {
                 consoleUris_ = other.consoleUris_;
-                bitField0_ = (bitField0_ & ~0x00000001);
+                bitField0_ |= 0x00000001;
               } else {
                 ensureConsoleUrisIsMutable();
                 consoleUris_.addAll(other.consoleUris_);
@@ -3065,7 +3040,7 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
             if (!other.steps_.isEmpty()) {
               if (steps_.isEmpty()) {
                 steps_ = other.steps_;
-                bitField0_ = (bitField0_ & ~0x00000002);
+                bitField0_ |= 0x00000002;
               } else {
                 ensureStepsIsMutable();
                 steps_.addAll(other.steps_);
@@ -3075,7 +3050,7 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
             if (!other.additionalLinks_.isEmpty()) {
               if (additionalLinks_.isEmpty()) {
                 additionalLinks_ = other.additionalLinks_;
-                bitField0_ = (bitField0_ & ~0x00000004);
+                bitField0_ |= 0x00000004;
               } else {
                 ensureAdditionalLinksIsMutable();
                 additionalLinks_.addAll(other.additionalLinks_);
@@ -3148,14 +3123,14 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
 
           private int bitField0_;
 
-          private com.google.protobuf.LazyStringList consoleUris_ =
-              com.google.protobuf.LazyStringArrayList.EMPTY;
+          private com.google.protobuf.LazyStringArrayList consoleUris_ =
+              com.google.protobuf.LazyStringArrayList.emptyList();
 
           private void ensureConsoleUrisIsMutable() {
-            if (!((bitField0_ & 0x00000001) != 0)) {
+            if (!consoleUris_.isModifiable()) {
               consoleUris_ = new com.google.protobuf.LazyStringArrayList(consoleUris_);
-              bitField0_ |= 0x00000001;
             }
+            bitField0_ |= 0x00000001;
           }
           /**
            *
@@ -3169,7 +3144,8 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
            * @return A list containing the consoleUris.
            */
           public com.google.protobuf.ProtocolStringList getConsoleUrisList() {
-            return consoleUris_.getUnmodifiableView();
+            consoleUris_.makeImmutable();
+            return consoleUris_;
           }
           /**
            *
@@ -3234,6 +3210,7 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
             }
             ensureConsoleUrisIsMutable();
             consoleUris_.set(index, value);
+            bitField0_ |= 0x00000001;
             onChanged();
             return this;
           }
@@ -3255,6 +3232,7 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
             }
             ensureConsoleUrisIsMutable();
             consoleUris_.add(value);
+            bitField0_ |= 0x00000001;
             onChanged();
             return this;
           }
@@ -3273,6 +3251,7 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
           public Builder addAllConsoleUris(java.lang.Iterable<java.lang.String> values) {
             ensureConsoleUrisIsMutable();
             com.google.protobuf.AbstractMessageLite.Builder.addAll(values, consoleUris_);
+            bitField0_ |= 0x00000001;
             onChanged();
             return this;
           }
@@ -3288,8 +3267,9 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
            * @return This builder for chaining.
            */
           public Builder clearConsoleUris() {
-            consoleUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+            consoleUris_ = com.google.protobuf.LazyStringArrayList.emptyList();
             bitField0_ = (bitField0_ & ~0x00000001);
+            ;
             onChanged();
             return this;
           }
@@ -3312,18 +3292,19 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
             checkByteStringIsUtf8(value);
             ensureConsoleUrisIsMutable();
             consoleUris_.add(value);
+            bitField0_ |= 0x00000001;
             onChanged();
             return this;
           }
 
-          private com.google.protobuf.LazyStringList steps_ =
-              com.google.protobuf.LazyStringArrayList.EMPTY;
+          private com.google.protobuf.LazyStringArrayList steps_ =
+              com.google.protobuf.LazyStringArrayList.emptyList();
 
           private void ensureStepsIsMutable() {
-            if (!((bitField0_ & 0x00000002) != 0)) {
+            if (!steps_.isModifiable()) {
               steps_ = new com.google.protobuf.LazyStringArrayList(steps_);
-              bitField0_ |= 0x00000002;
             }
+            bitField0_ |= 0x00000002;
           }
           /**
            *
@@ -3337,7 +3318,8 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
            * @return A list containing the steps.
            */
           public com.google.protobuf.ProtocolStringList getStepsList() {
-            return steps_.getUnmodifiableView();
+            steps_.makeImmutable();
+            return steps_;
           }
           /**
            *
@@ -3402,6 +3384,7 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
             }
             ensureStepsIsMutable();
             steps_.set(index, value);
+            bitField0_ |= 0x00000002;
             onChanged();
             return this;
           }
@@ -3423,6 +3406,7 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
             }
             ensureStepsIsMutable();
             steps_.add(value);
+            bitField0_ |= 0x00000002;
             onChanged();
             return this;
           }
@@ -3441,6 +3425,7 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
           public Builder addAllSteps(java.lang.Iterable<java.lang.String> values) {
             ensureStepsIsMutable();
             com.google.protobuf.AbstractMessageLite.Builder.addAll(values, steps_);
+            bitField0_ |= 0x00000002;
             onChanged();
             return this;
           }
@@ -3456,8 +3441,9 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
            * @return This builder for chaining.
            */
           public Builder clearSteps() {
-            steps_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+            steps_ = com.google.protobuf.LazyStringArrayList.emptyList();
             bitField0_ = (bitField0_ & ~0x00000002);
+            ;
             onChanged();
             return this;
           }
@@ -3480,18 +3466,19 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
             checkByteStringIsUtf8(value);
             ensureStepsIsMutable();
             steps_.add(value);
+            bitField0_ |= 0x00000002;
             onChanged();
             return this;
           }
 
-          private com.google.protobuf.LazyStringList additionalLinks_ =
-              com.google.protobuf.LazyStringArrayList.EMPTY;
+          private com.google.protobuf.LazyStringArrayList additionalLinks_ =
+              com.google.protobuf.LazyStringArrayList.emptyList();
 
           private void ensureAdditionalLinksIsMutable() {
-            if (!((bitField0_ & 0x00000004) != 0)) {
+            if (!additionalLinks_.isModifiable()) {
               additionalLinks_ = new com.google.protobuf.LazyStringArrayList(additionalLinks_);
-              bitField0_ |= 0x00000004;
             }
+            bitField0_ |= 0x00000004;
           }
           /**
            *
@@ -3505,7 +3492,8 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
            * @return A list containing the additionalLinks.
            */
           public com.google.protobuf.ProtocolStringList getAdditionalLinksList() {
-            return additionalLinks_.getUnmodifiableView();
+            additionalLinks_.makeImmutable();
+            return additionalLinks_;
           }
           /**
            *
@@ -3570,6 +3558,7 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
             }
             ensureAdditionalLinksIsMutable();
             additionalLinks_.set(index, value);
+            bitField0_ |= 0x00000004;
             onChanged();
             return this;
           }
@@ -3591,6 +3580,7 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
             }
             ensureAdditionalLinksIsMutable();
             additionalLinks_.add(value);
+            bitField0_ |= 0x00000004;
             onChanged();
             return this;
           }
@@ -3609,6 +3599,7 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
           public Builder addAllAdditionalLinks(java.lang.Iterable<java.lang.String> values) {
             ensureAdditionalLinksIsMutable();
             com.google.protobuf.AbstractMessageLite.Builder.addAll(values, additionalLinks_);
+            bitField0_ |= 0x00000004;
             onChanged();
             return this;
           }
@@ -3624,8 +3615,9 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
            * @return This builder for chaining.
            */
           public Builder clearAdditionalLinks() {
-            additionalLinks_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+            additionalLinks_ = com.google.protobuf.LazyStringArrayList.emptyList();
             bitField0_ = (bitField0_ & ~0x00000004);
+            ;
             onChanged();
             return this;
           }
@@ -3648,6 +3640,7 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
             checkByteStringIsUtf8(value);
             ensureAdditionalLinksIsMutable();
             additionalLinks_.add(value);
+            bitField0_ |= 0x00000004;
             onChanged();
             return this;
           }
@@ -4833,7 +4826,8 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
     public static final int COMPLIANT_VALUES_FIELD_NUMBER = 2;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList compliantValues_;
+    private com.google.protobuf.LazyStringArrayList compliantValues_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -5187,8 +5181,7 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
           instructionsBuilder_.dispose();
           instructionsBuilder_ = null;
         }
-        compliantValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000002);
+        compliantValues_ = com.google.protobuf.LazyStringArrayList.emptyList();
         remediationType_ = 0;
         return this;
       }
@@ -5218,21 +5211,11 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.assuredworkloads.v1.Violation.Remediation buildPartial() {
         com.google.cloud.assuredworkloads.v1.Violation.Remediation result =
             new com.google.cloud.assuredworkloads.v1.Violation.Remediation(this);
-        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
         onBuilt();
         return result;
-      }
-
-      private void buildPartialRepeatedFields(
-          com.google.cloud.assuredworkloads.v1.Violation.Remediation result) {
-        if (((bitField0_ & 0x00000002) != 0)) {
-          compliantValues_ = compliantValues_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000002);
-        }
-        result.compliantValues_ = compliantValues_;
       }
 
       private void buildPartial0(
@@ -5241,6 +5224,10 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.instructions_ =
               instructionsBuilder_ == null ? instructions_ : instructionsBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          compliantValues_.makeImmutable();
+          result.compliantValues_ = compliantValues_;
         }
         if (((from_bitField0_ & 0x00000004) != 0)) {
           result.remediationType_ = remediationType_;
@@ -5302,7 +5289,7 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         if (!other.compliantValues_.isEmpty()) {
           if (compliantValues_.isEmpty()) {
             compliantValues_ = other.compliantValues_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ |= 0x00000002;
           } else {
             ensureCompliantValuesIsMutable();
             compliantValues_.addAll(other.compliantValues_);
@@ -5588,14 +5575,14 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         return instructionsBuilder_;
       }
 
-      private com.google.protobuf.LazyStringList compliantValues_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList compliantValues_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureCompliantValuesIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!compliantValues_.isModifiable()) {
           compliantValues_ = new com.google.protobuf.LazyStringArrayList(compliantValues_);
-          bitField0_ |= 0x00000002;
         }
+        bitField0_ |= 0x00000002;
       }
       /**
        *
@@ -5611,7 +5598,8 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
        * @return A list containing the compliantValues.
        */
       public com.google.protobuf.ProtocolStringList getCompliantValuesList() {
-        return compliantValues_.getUnmodifiableView();
+        compliantValues_.makeImmutable();
+        return compliantValues_;
       }
       /**
        *
@@ -5684,6 +5672,7 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         }
         ensureCompliantValuesIsMutable();
         compliantValues_.set(index, value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -5707,6 +5696,7 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         }
         ensureCompliantValuesIsMutable();
         compliantValues_.add(value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -5727,6 +5717,7 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
       public Builder addAllCompliantValues(java.lang.Iterable<java.lang.String> values) {
         ensureCompliantValuesIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, compliantValues_);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -5744,8 +5735,9 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearCompliantValues() {
-        compliantValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        compliantValues_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000002);
+        ;
         onChanged();
         return this;
       }
@@ -5770,6 +5762,7 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         checkByteStringIsUtf8(value);
         ensureCompliantValuesIsMutable();
         compliantValues_.add(value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }

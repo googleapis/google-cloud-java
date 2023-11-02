@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -260,10 +260,12 @@ public interface ShipmentRouteOrBuilder
    * insufficient time to complete traffic-adjusted travel, delays, and breaks
    * between visits, before the first visit, or after the last visit, while
    * still satisfying the visit and vehicle time windows. For example,
+   *
    * ```
    *   start_time(previous_visit) + duration(previous_visit) +
    *   travel_duration(previous_visit, next_visit) &gt; start_time(next_visit)
    * ```
+   *
    * Arrival at next_visit will likely happen later than its current
    * time window due the increased estimate of travel time
    * `travel_duration(previous_visit, next_visit)` due to traffic. Also, a break
@@ -727,8 +729,10 @@ public interface ShipmentRouteOrBuilder
    * This field will only be populated at the
    * [ShipmentRoute.Visit][google.cloud.optimization.v1.ShipmentRoute.Visit]
    * level.
+   *
    * This field is the extra detour time due to the shipments visited on the
    * route.
+   *
    * It is equal to `vehicle_end_time` - `vehicle_start_time` - travel duration
    * from the vehicle's start_location to its `end_location`.
    * </pre>
@@ -736,7 +740,7 @@ public interface ShipmentRouteOrBuilder
    * <code>.google.protobuf.Duration vehicle_detour = 15 [deprecated = true];</code>
    *
    * @deprecated google.cloud.optimization.v1.ShipmentRoute.vehicle_detour is deprecated. See
-   *     google/cloud/optimization/v1/fleet_routing.proto;l=2165
+   *     google/cloud/optimization/v1/fleet_routing.proto;l=2215
    * @return Whether the vehicleDetour field is set.
    */
   @java.lang.Deprecated
@@ -749,8 +753,10 @@ public interface ShipmentRouteOrBuilder
    * This field will only be populated at the
    * [ShipmentRoute.Visit][google.cloud.optimization.v1.ShipmentRoute.Visit]
    * level.
+   *
    * This field is the extra detour time due to the shipments visited on the
    * route.
+   *
    * It is equal to `vehicle_end_time` - `vehicle_start_time` - travel duration
    * from the vehicle's start_location to its `end_location`.
    * </pre>
@@ -758,7 +764,7 @@ public interface ShipmentRouteOrBuilder
    * <code>.google.protobuf.Duration vehicle_detour = 15 [deprecated = true];</code>
    *
    * @deprecated google.cloud.optimization.v1.ShipmentRoute.vehicle_detour is deprecated. See
-   *     google/cloud/optimization/v1/fleet_routing.proto;l=2165
+   *     google/cloud/optimization/v1/fleet_routing.proto;l=2215
    * @return The vehicleDetour.
    */
   @java.lang.Deprecated
@@ -771,8 +777,10 @@ public interface ShipmentRouteOrBuilder
    * This field will only be populated at the
    * [ShipmentRoute.Visit][google.cloud.optimization.v1.ShipmentRoute.Visit]
    * level.
+   *
    * This field is the extra detour time due to the shipments visited on the
    * route.
+   *
    * It is equal to `vehicle_end_time` - `vehicle_start_time` - travel duration
    * from the vehicle's start_location to its `end_location`.
    * </pre>
@@ -795,7 +803,7 @@ public interface ShipmentRouteOrBuilder
    * </code>
    *
    * @deprecated google.cloud.optimization.v1.ShipmentRoute.delay_before_vehicle_end is deprecated.
-   *     See google/cloud/optimization/v1/fleet_routing.proto;l=2169
+   *     See google/cloud/optimization/v1/fleet_routing.proto;l=2219
    * @return Whether the delayBeforeVehicleEnd field is set.
    */
   @java.lang.Deprecated
@@ -813,7 +821,7 @@ public interface ShipmentRouteOrBuilder
    * </code>
    *
    * @deprecated google.cloud.optimization.v1.ShipmentRoute.delay_before_vehicle_end is deprecated.
-   *     See google/cloud/optimization/v1/fleet_routing.proto;l=2169
+   *     See google/cloud/optimization/v1/fleet_routing.proto;l=2219
    * @return The delayBeforeVehicleEnd.
    */
   @java.lang.Deprecated

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class StreamingAnnotateVideoRequest extends com.google.protobuf.Gen
     return new StreamingAnnotateVideoRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.videointelligence.v1p3beta1.VideoIntelligenceServiceProto
         .internal_static_google_cloud_videointelligence_v1p3beta1_StreamingAnnotateVideoRequest_descriptor;
@@ -70,6 +65,8 @@ public final class StreamingAnnotateVideoRequest extends com.google.protobuf.Gen
   }
 
   private int streamingRequestCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object streamingRequest_;
 
   public enum StreamingRequestCase

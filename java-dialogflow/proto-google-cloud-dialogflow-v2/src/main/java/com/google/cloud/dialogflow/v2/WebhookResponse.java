@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,14 +23,17 @@ package com.google.cloud.dialogflow.v2;
  *
  * <pre>
  * The response message for a webhook call.
+ *
  * This response is validated by the Dialogflow server. If validation fails,
  * an error will be returned in the
  * [QueryResult.diagnostic_info][google.cloud.dialogflow.v2.QueryResult.diagnostic_info]
  * field. Setting JSON fields to an empty value with the wrong type is a common
  * error. To avoid this error:
+ *
  * - Use `""` for empty strings
  * - Use `{}` or `null` for empty objects
  * - Use `[]` or `null` for empty arrays
+ *
  * For more information, see the
  * [Protocol Buffers Language
  * Guide](https://developers.google.com/protocol-buffers/docs/proto3#json).
@@ -60,11 +63,6 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new WebhookResponse();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -847,14 +845,17 @@ public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * The response message for a webhook call.
+   *
    * This response is validated by the Dialogflow server. If validation fails,
    * an error will be returned in the
    * [QueryResult.diagnostic_info][google.cloud.dialogflow.v2.QueryResult.diagnostic_info]
    * field. Setting JSON fields to an empty value with the wrong type is a common
    * error. To avoid this error:
+   *
    * - Use `""` for empty strings
    * - Use `{}` or `null` for empty objects
    * - Use `[]` or `null` for empty arrays
+   *
    * For more information, see the
    * [Protocol Buffers Language
    * Guide](https://developers.google.com/protocol-buffers/docs/proto3#json).

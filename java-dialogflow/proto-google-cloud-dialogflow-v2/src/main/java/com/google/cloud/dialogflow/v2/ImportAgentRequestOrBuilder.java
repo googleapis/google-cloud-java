@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -60,6 +60,7 @@ public interface ImportAgentRequestOrBuilder
    * <pre>
    * The URI to a Google Cloud Storage file containing the agent to import.
    * Note: The URI must start with "gs://".
+   *
    * Dialogflow performs a read operation for the Cloud Storage object
    * on the caller's behalf, so your request authentication must
    * have read permissions for the object. For more information, see
@@ -78,6 +79,7 @@ public interface ImportAgentRequestOrBuilder
    * <pre>
    * The URI to a Google Cloud Storage file containing the agent to import.
    * Note: The URI must start with "gs://".
+   *
    * Dialogflow performs a read operation for the Cloud Storage object
    * on the caller's behalf, so your request authentication must
    * have read permissions for the object. For more information, see
@@ -96,6 +98,7 @@ public interface ImportAgentRequestOrBuilder
    * <pre>
    * The URI to a Google Cloud Storage file containing the agent to import.
    * Note: The URI must start with "gs://".
+   *
    * Dialogflow performs a read operation for the Cloud Storage object
    * on the caller's behalf, so your request authentication must
    * have read permissions for the object. For more information, see
@@ -134,5 +137,5 @@ public interface ImportAgentRequestOrBuilder
    */
   com.google.protobuf.ByteString getAgentContent();
 
-  public com.google.cloud.dialogflow.v2.ImportAgentRequest.AgentCase getAgentCase();
+  com.google.cloud.dialogflow.v2.ImportAgentRequest.AgentCase getAgentCase();
 }

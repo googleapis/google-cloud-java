@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,6 +56,8 @@ import com.google.cloudbuild.v2.CreateConnectionRequest;
 import com.google.cloudbuild.v2.CreateRepositoryRequest;
 import com.google.cloudbuild.v2.DeleteConnectionRequest;
 import com.google.cloudbuild.v2.DeleteRepositoryRequest;
+import com.google.cloudbuild.v2.FetchGitRefsRequest;
+import com.google.cloudbuild.v2.FetchGitRefsResponse;
 import com.google.cloudbuild.v2.FetchLinkableRepositoriesRequest;
 import com.google.cloudbuild.v2.FetchLinkableRepositoriesResponse;
 import com.google.cloudbuild.v2.FetchReadTokenRequest;
@@ -168,6 +170,7 @@ public class RepositoryManagerStubSettings extends StubSettings<RepositoryManage
           FetchLinkableRepositoriesResponse,
           FetchLinkableRepositoriesPagedResponse>
       fetchLinkableRepositoriesSettings;
+  private final UnaryCallSettings<FetchGitRefsRequest, FetchGitRefsResponse> fetchGitRefsSettings;
   private final UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings;
   private final UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings;
   private final UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -472,6 +475,11 @@ public class RepositoryManagerStubSettings extends StubSettings<RepositoryManage
     return fetchLinkableRepositoriesSettings;
   }
 
+  /** Returns the object with the settings used for calls to fetchGitRefs. */
+  public UnaryCallSettings<FetchGitRefsRequest, FetchGitRefsResponse> fetchGitRefsSettings() {
+    return fetchGitRefsSettings;
+  }
+
   /** Returns the object with the settings used for calls to setIamPolicy. */
   public UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings() {
     return setIamPolicySettings;
@@ -614,6 +622,7 @@ public class RepositoryManagerStubSettings extends StubSettings<RepositoryManage
     fetchReadWriteTokenSettings = settingsBuilder.fetchReadWriteTokenSettings().build();
     fetchReadTokenSettings = settingsBuilder.fetchReadTokenSettings().build();
     fetchLinkableRepositoriesSettings = settingsBuilder.fetchLinkableRepositoriesSettings().build();
+    fetchGitRefsSettings = settingsBuilder.fetchGitRefsSettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
     getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
     testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
@@ -667,6 +676,8 @@ public class RepositoryManagerStubSettings extends StubSettings<RepositoryManage
             FetchLinkableRepositoriesResponse,
             FetchLinkableRepositoriesPagedResponse>
         fetchLinkableRepositoriesSettings;
+    private final UnaryCallSettings.Builder<FetchGitRefsRequest, FetchGitRefsResponse>
+        fetchGitRefsSettings;
     private final UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings;
     private final UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings;
     private final UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -742,6 +753,7 @@ public class RepositoryManagerStubSettings extends StubSettings<RepositoryManage
       fetchReadTokenSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       fetchLinkableRepositoriesSettings =
           PagedCallSettings.newBuilder(FETCH_LINKABLE_REPOSITORIES_PAGE_STR_FACT);
+      fetchGitRefsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -761,6 +773,7 @@ public class RepositoryManagerStubSettings extends StubSettings<RepositoryManage
               fetchReadWriteTokenSettings,
               fetchReadTokenSettings,
               fetchLinkableRepositoriesSettings,
+              fetchGitRefsSettings,
               setIamPolicySettings,
               getIamPolicySettings,
               testIamPermissionsSettings);
@@ -790,6 +803,7 @@ public class RepositoryManagerStubSettings extends StubSettings<RepositoryManage
       fetchReadWriteTokenSettings = settings.fetchReadWriteTokenSettings.toBuilder();
       fetchReadTokenSettings = settings.fetchReadTokenSettings.toBuilder();
       fetchLinkableRepositoriesSettings = settings.fetchLinkableRepositoriesSettings.toBuilder();
+      fetchGitRefsSettings = settings.fetchGitRefsSettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
       getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
       testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
@@ -809,6 +823,7 @@ public class RepositoryManagerStubSettings extends StubSettings<RepositoryManage
               fetchReadWriteTokenSettings,
               fetchReadTokenSettings,
               fetchLinkableRepositoriesSettings,
+              fetchGitRefsSettings,
               setIamPolicySettings,
               getIamPolicySettings,
               testIamPermissionsSettings);
@@ -905,6 +920,11 @@ public class RepositoryManagerStubSettings extends StubSettings<RepositoryManage
           .fetchLinkableRepositoriesSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .fetchGitRefsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .setIamPolicySettings()
@@ -1212,6 +1232,12 @@ public class RepositoryManagerStubSettings extends StubSettings<RepositoryManage
             FetchLinkableRepositoriesPagedResponse>
         fetchLinkableRepositoriesSettings() {
       return fetchLinkableRepositoriesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to fetchGitRefs. */
+    public UnaryCallSettings.Builder<FetchGitRefsRequest, FetchGitRefsResponse>
+        fetchGitRefsSettings() {
+      return fetchGitRefsSettings;
     }
 
     /** Returns the builder for the settings used for calls to setIamPolicy. */

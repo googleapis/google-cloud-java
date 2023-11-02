@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class GetAzureServerConfigRequest extends com.google.protobuf.Gener
     return new GetAzureServerConfigRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gkemulticloud.v1.AzureServiceProto
         .internal_static_google_cloud_gkemulticloud_v1_GetAzureServerConfigRequest_descriptor;
@@ -78,8 +73,10 @@ public final class GetAzureServerConfigRequest extends com.google.protobuf.Gener
    * Required. The name of the
    * [AzureServerConfig][google.cloud.gkemulticloud.v1.AzureServerConfig]
    * resource to describe.
+   *
    * `AzureServerConfig` names are formatted as
    * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureServerConfig`.
+   *
    * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
    * for more details on Google Cloud resource names.
    * </pre>
@@ -109,8 +106,10 @@ public final class GetAzureServerConfigRequest extends com.google.protobuf.Gener
    * Required. The name of the
    * [AzureServerConfig][google.cloud.gkemulticloud.v1.AzureServerConfig]
    * resource to describe.
+   *
    * `AzureServerConfig` names are formatted as
    * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureServerConfig`.
+   *
    * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
    * for more details on Google Cloud resource names.
    * </pre>
@@ -488,8 +487,10 @@ public final class GetAzureServerConfigRequest extends com.google.protobuf.Gener
      * Required. The name of the
      * [AzureServerConfig][google.cloud.gkemulticloud.v1.AzureServerConfig]
      * resource to describe.
+     *
      * `AzureServerConfig` names are formatted as
      * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureServerConfig`.
+     *
      * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
      * for more details on Google Cloud resource names.
      * </pre>
@@ -518,8 +519,10 @@ public final class GetAzureServerConfigRequest extends com.google.protobuf.Gener
      * Required. The name of the
      * [AzureServerConfig][google.cloud.gkemulticloud.v1.AzureServerConfig]
      * resource to describe.
+     *
      * `AzureServerConfig` names are formatted as
      * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureServerConfig`.
+     *
      * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
      * for more details on Google Cloud resource names.
      * </pre>
@@ -548,8 +551,10 @@ public final class GetAzureServerConfigRequest extends com.google.protobuf.Gener
      * Required. The name of the
      * [AzureServerConfig][google.cloud.gkemulticloud.v1.AzureServerConfig]
      * resource to describe.
+     *
      * `AzureServerConfig` names are formatted as
      * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureServerConfig`.
+     *
      * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
      * for more details on Google Cloud resource names.
      * </pre>
@@ -577,8 +582,10 @@ public final class GetAzureServerConfigRequest extends com.google.protobuf.Gener
      * Required. The name of the
      * [AzureServerConfig][google.cloud.gkemulticloud.v1.AzureServerConfig]
      * resource to describe.
+     *
      * `AzureServerConfig` names are formatted as
      * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureServerConfig`.
+     *
      * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
      * for more details on Google Cloud resource names.
      * </pre>
@@ -602,8 +609,10 @@ public final class GetAzureServerConfigRequest extends com.google.protobuf.Gener
      * Required. The name of the
      * [AzureServerConfig][google.cloud.gkemulticloud.v1.AzureServerConfig]
      * resource to describe.
+     *
      * `AzureServerConfig` names are formatted as
      * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureServerConfig`.
+     *
      * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
      * for more details on Google Cloud resource names.
      * </pre>

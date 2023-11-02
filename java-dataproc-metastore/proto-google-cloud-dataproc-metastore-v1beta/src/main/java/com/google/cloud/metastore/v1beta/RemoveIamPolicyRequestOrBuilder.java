@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ public interface RemoveIamPolicyRequestOrBuilder
    * <pre>
    * Required. The relative resource name of the dataplane resource to remove
    * IAM policy, in the following form:
+   *
    * `projects/{project_id}/locations/{location_id}/services/{service_id}/databases/{database_id}`
    * or
    * `projects/{project_id}/locations/{location_id}/services/{service_id}/databases/{database_id}/tables/{table_id}`.
@@ -47,6 +48,7 @@ public interface RemoveIamPolicyRequestOrBuilder
    * <pre>
    * Required. The relative resource name of the dataplane resource to remove
    * IAM policy, in the following form:
+   *
    * `projects/{project_id}/locations/{location_id}/services/{service_id}/databases/{database_id}`
    * or
    * `projects/{project_id}/locations/{location_id}/services/{service_id}/databases/{database_id}/tables/{table_id}`.

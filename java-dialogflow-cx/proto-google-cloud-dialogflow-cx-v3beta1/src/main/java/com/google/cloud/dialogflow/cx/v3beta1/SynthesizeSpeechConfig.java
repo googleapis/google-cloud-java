@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,18 +38,13 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
   }
 
   private SynthesizeSpeechConfig() {
-    effectsProfileId_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    effectsProfileId_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new SynthesizeSpeechConfig();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -136,7 +131,8 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
   public static final int EFFECTS_PROFILE_ID_FIELD_NUMBER = 5;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList effectsProfileId_;
+  private com.google.protobuf.LazyStringArrayList effectsProfileId_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -515,8 +511,7 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
       speakingRate_ = 0D;
       pitch_ = 0D;
       volumeGainDb_ = 0D;
-      effectsProfileId_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      effectsProfileId_ = com.google.protobuf.LazyStringArrayList.emptyList();
       voice_ = null;
       if (voiceBuilder_ != null) {
         voiceBuilder_.dispose();
@@ -550,21 +545,11 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
     public com.google.cloud.dialogflow.cx.v3beta1.SynthesizeSpeechConfig buildPartial() {
       com.google.cloud.dialogflow.cx.v3beta1.SynthesizeSpeechConfig result =
           new com.google.cloud.dialogflow.cx.v3beta1.SynthesizeSpeechConfig(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(
-        com.google.cloud.dialogflow.cx.v3beta1.SynthesizeSpeechConfig result) {
-      if (((bitField0_ & 0x00000008) != 0)) {
-        effectsProfileId_ = effectsProfileId_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000008);
-      }
-      result.effectsProfileId_ = effectsProfileId_;
     }
 
     private void buildPartial0(
@@ -578,6 +563,10 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.volumeGainDb_ = volumeGainDb_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        effectsProfileId_.makeImmutable();
+        result.effectsProfileId_ = effectsProfileId_;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.voice_ = voiceBuilder_ == null ? voice_ : voiceBuilder_.build();
@@ -643,7 +632,7 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
       if (!other.effectsProfileId_.isEmpty()) {
         if (effectsProfileId_.isEmpty()) {
           effectsProfileId_ = other.effectsProfileId_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ |= 0x00000008;
         } else {
           ensureEffectsProfileIdIsMutable();
           effectsProfileId_.addAll(other.effectsProfileId_);
@@ -924,14 +913,14 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
       return this;
     }
 
-    private com.google.protobuf.LazyStringList effectsProfileId_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList effectsProfileId_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureEffectsProfileIdIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!effectsProfileId_.isModifiable()) {
         effectsProfileId_ = new com.google.protobuf.LazyStringArrayList(effectsProfileId_);
-        bitField0_ |= 0x00000008;
       }
+      bitField0_ |= 0x00000008;
     }
     /**
      *
@@ -947,7 +936,8 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
      * @return A list containing the effectsProfileId.
      */
     public com.google.protobuf.ProtocolStringList getEffectsProfileIdList() {
-      return effectsProfileId_.getUnmodifiableView();
+      effectsProfileId_.makeImmutable();
+      return effectsProfileId_;
     }
     /**
      *
@@ -1020,6 +1010,7 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
       }
       ensureEffectsProfileIdIsMutable();
       effectsProfileId_.set(index, value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1043,6 +1034,7 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
       }
       ensureEffectsProfileIdIsMutable();
       effectsProfileId_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1063,6 +1055,7 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
     public Builder addAllEffectsProfileId(java.lang.Iterable<java.lang.String> values) {
       ensureEffectsProfileIdIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, effectsProfileId_);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1080,8 +1073,9 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearEffectsProfileId() {
-      effectsProfileId_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      effectsProfileId_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000008);
+      ;
       onChanged();
       return this;
     }
@@ -1106,6 +1100,7 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
       checkByteStringIsUtf8(value);
       ensureEffectsProfileIdIsMutable();
       effectsProfileId_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

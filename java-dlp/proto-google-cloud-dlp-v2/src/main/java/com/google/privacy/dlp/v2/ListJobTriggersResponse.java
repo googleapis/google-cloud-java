@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,11 +46,6 @@ public final class ListJobTriggersResponse extends com.google.protobuf.Generated
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ListJobTriggersResponse();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -147,8 +142,8 @@ public final class ListJobTriggersResponse extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * If the next page is available then the next page token to be used
-   * in following ListJobTriggers request.
+   * If the next page is available then this value is the next page token to be
+   * used in the following ListJobTriggers request.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -171,8 +166,8 @@ public final class ListJobTriggersResponse extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * If the next page is available then the next page token to be used
-   * in following ListJobTriggers request.
+   * If the next page is available then this value is the next page token to be
+   * used in the following ListJobTriggers request.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -960,8 +955,8 @@ public final class ListJobTriggersResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * If the next page is available then the next page token to be used
-     * in following ListJobTriggers request.
+     * If the next page is available then this value is the next page token to be
+     * used in the following ListJobTriggers request.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -983,8 +978,8 @@ public final class ListJobTriggersResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * If the next page is available then the next page token to be used
-     * in following ListJobTriggers request.
+     * If the next page is available then this value is the next page token to be
+     * used in the following ListJobTriggers request.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1006,8 +1001,8 @@ public final class ListJobTriggersResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * If the next page is available then the next page token to be used
-     * in following ListJobTriggers request.
+     * If the next page is available then this value is the next page token to be
+     * used in the following ListJobTriggers request.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1028,8 +1023,8 @@ public final class ListJobTriggersResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * If the next page is available then the next page token to be used
-     * in following ListJobTriggers request.
+     * If the next page is available then this value is the next page token to be
+     * used in the following ListJobTriggers request.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1046,8 +1041,8 @@ public final class ListJobTriggersResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * If the next page is available then the next page token to be used
-     * in following ListJobTriggers request.
+     * If the next page is available then this value is the next page token to be
+     * used in the following ListJobTriggers request.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>

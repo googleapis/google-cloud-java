@@ -53,11 +53,6 @@ public final class Recipe extends com.google.protobuf.GeneratedMessageV3
     return new Recipe();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return io.grafeas.v1.InTotoProvenanceProto.internal_static_grafeas_v1_Recipe_descriptor;
   }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,11 +50,6 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
     return new Image();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.retail.v2.CommonProto
         .internal_static_google_cloud_retail_v2_Image_descriptor;
@@ -78,8 +73,10 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. URI of the image.
+   *
    * This field must be a valid UTF-8 encoded URI with a length limit of 5,000
    * characters. Otherwise, an INVALID_ARGUMENT error is returned.
+   *
    * Google Merchant Center property
    * [image_link](https://support.google.com/merchants/answer/6324350).
    * Schema.org property [Product.image](https://schema.org/image).
@@ -106,8 +103,10 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. URI of the image.
+   *
    * This field must be a valid UTF-8 encoded URI with a length limit of 5,000
    * characters. Otherwise, an INVALID_ARGUMENT error is returned.
+   *
    * Google Merchant Center property
    * [image_link](https://support.google.com/merchants/answer/6324350).
    * Schema.org property [Product.image](https://schema.org/image).
@@ -137,6 +136,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Height of the image in number of pixels.
+   *
    * This field must be nonnegative. Otherwise, an INVALID_ARGUMENT error is
    * returned.
    * </pre>
@@ -157,6 +157,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Width of the image in number of pixels.
+   *
    * This field must be nonnegative. Otherwise, an INVALID_ARGUMENT error is
    * returned.
    * </pre>
@@ -561,8 +562,10 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. URI of the image.
+     *
      * This field must be a valid UTF-8 encoded URI with a length limit of 5,000
      * characters. Otherwise, an INVALID_ARGUMENT error is returned.
+     *
      * Google Merchant Center property
      * [image_link](https://support.google.com/merchants/answer/6324350).
      * Schema.org property [Product.image](https://schema.org/image).
@@ -588,8 +591,10 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. URI of the image.
+     *
      * This field must be a valid UTF-8 encoded URI with a length limit of 5,000
      * characters. Otherwise, an INVALID_ARGUMENT error is returned.
+     *
      * Google Merchant Center property
      * [image_link](https://support.google.com/merchants/answer/6324350).
      * Schema.org property [Product.image](https://schema.org/image).
@@ -615,8 +620,10 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. URI of the image.
+     *
      * This field must be a valid UTF-8 encoded URI with a length limit of 5,000
      * characters. Otherwise, an INVALID_ARGUMENT error is returned.
+     *
      * Google Merchant Center property
      * [image_link](https://support.google.com/merchants/answer/6324350).
      * Schema.org property [Product.image](https://schema.org/image).
@@ -641,8 +648,10 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. URI of the image.
+     *
      * This field must be a valid UTF-8 encoded URI with a length limit of 5,000
      * characters. Otherwise, an INVALID_ARGUMENT error is returned.
+     *
      * Google Merchant Center property
      * [image_link](https://support.google.com/merchants/answer/6324350).
      * Schema.org property [Product.image](https://schema.org/image).
@@ -663,8 +672,10 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. URI of the image.
+     *
      * This field must be a valid UTF-8 encoded URI with a length limit of 5,000
      * characters. Otherwise, an INVALID_ARGUMENT error is returned.
+     *
      * Google Merchant Center property
      * [image_link](https://support.google.com/merchants/answer/6324350).
      * Schema.org property [Product.image](https://schema.org/image).
@@ -692,6 +703,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Height of the image in number of pixels.
+     *
      * This field must be nonnegative. Otherwise, an INVALID_ARGUMENT error is
      * returned.
      * </pre>
@@ -709,6 +721,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Height of the image in number of pixels.
+     *
      * This field must be nonnegative. Otherwise, an INVALID_ARGUMENT error is
      * returned.
      * </pre>
@@ -730,6 +743,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Height of the image in number of pixels.
+     *
      * This field must be nonnegative. Otherwise, an INVALID_ARGUMENT error is
      * returned.
      * </pre>
@@ -751,6 +765,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Width of the image in number of pixels.
+     *
      * This field must be nonnegative. Otherwise, an INVALID_ARGUMENT error is
      * returned.
      * </pre>
@@ -768,6 +783,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Width of the image in number of pixels.
+     *
      * This field must be nonnegative. Otherwise, an INVALID_ARGUMENT error is
      * returned.
      * </pre>
@@ -789,6 +805,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Width of the image in number of pixels.
+     *
      * This field must be nonnegative. Otherwise, an INVALID_ARGUMENT error is
      * returned.
      * </pre>

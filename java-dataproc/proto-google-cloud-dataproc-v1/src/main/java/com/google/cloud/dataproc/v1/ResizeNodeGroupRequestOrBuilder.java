@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -77,8 +77,10 @@ public interface ResizeNodeGroupRequestOrBuilder
    * with the same ID, the second request is ignored and the
    * first [google.longrunning.Operation][google.longrunning.Operation] created
    * and stored in the backend is returned.
+   *
    * Recommendation: Set this value to a
    * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
+   *
    * The ID must contain only letters (a-z, A-Z), numbers (0-9),
    * underscores (_), and hyphens (-). The maximum length is 40 characters.
    * </pre>
@@ -98,8 +100,10 @@ public interface ResizeNodeGroupRequestOrBuilder
    * with the same ID, the second request is ignored and the
    * first [google.longrunning.Operation][google.longrunning.Operation] created
    * and stored in the backend is returned.
+   *
    * Recommendation: Set this value to a
    * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
+   *
    * The ID must contain only letters (a-z, A-Z), numbers (0-9),
    * underscores (_), and hyphens (-). The maximum length is 40 characters.
    * </pre>
@@ -114,7 +118,7 @@ public interface ResizeNodeGroupRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Timeout for graceful YARN decomissioning. [Graceful
+   * Optional. Timeout for graceful YARN decommissioning. [Graceful
    * decommissioning]
    * (https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/scaling-clusters#graceful_decommissioning)
    * allows the removal of nodes from the Compute Engine node group
@@ -124,6 +128,7 @@ public interface ResizeNodeGroupRequestOrBuilder
    * decommission), and the maximum allowed timeout is 1 day. (see JSON
    * representation of
    * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+   *
    * Only supported on Dataproc image versions 1.2 and higher.
    * </pre>
    *
@@ -138,7 +143,7 @@ public interface ResizeNodeGroupRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Timeout for graceful YARN decomissioning. [Graceful
+   * Optional. Timeout for graceful YARN decommissioning. [Graceful
    * decommissioning]
    * (https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/scaling-clusters#graceful_decommissioning)
    * allows the removal of nodes from the Compute Engine node group
@@ -148,6 +153,7 @@ public interface ResizeNodeGroupRequestOrBuilder
    * decommission), and the maximum allowed timeout is 1 day. (see JSON
    * representation of
    * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+   *
    * Only supported on Dataproc image versions 1.2 and higher.
    * </pre>
    *
@@ -162,7 +168,7 @@ public interface ResizeNodeGroupRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Timeout for graceful YARN decomissioning. [Graceful
+   * Optional. Timeout for graceful YARN decommissioning. [Graceful
    * decommissioning]
    * (https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/scaling-clusters#graceful_decommissioning)
    * allows the removal of nodes from the Compute Engine node group
@@ -172,6 +178,7 @@ public interface ResizeNodeGroupRequestOrBuilder
    * decommission), and the maximum allowed timeout is 1 day. (see JSON
    * representation of
    * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+   *
    * Only supported on Dataproc image versions 1.2 and higher.
    * </pre>
    *

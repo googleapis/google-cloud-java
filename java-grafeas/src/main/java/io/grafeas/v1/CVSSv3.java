@@ -56,11 +56,6 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
     return new CVSSv3();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return io.grafeas.v1.CVSSProto.internal_static_grafeas_v1_CVSSv3_descriptor;
   }

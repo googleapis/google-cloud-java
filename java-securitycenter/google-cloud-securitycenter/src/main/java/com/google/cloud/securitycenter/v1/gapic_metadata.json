@@ -112,6 +112,9 @@
             "SetMute": {
               "methods": ["setMute", "setMute", "setMute", "setMuteCallable"]
             },
+            "SimulateSecurityHealthAnalyticsCustomModule": {
+              "methods": ["simulateSecurityHealthAnalyticsCustomModule", "simulateSecurityHealthAnalyticsCustomModule", "simulateSecurityHealthAnalyticsCustomModuleCallable"]
+            },
             "TestIamPermissions": {
               "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
             },

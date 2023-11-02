@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,7 @@ public final class EkmServiceGrpc {
 
   private EkmServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.kms.v1.EkmService";
+  public static final java.lang.String SERVICE_NAME = "google.cloud.kms.v1.EkmService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -300,6 +300,53 @@ public final class EkmServiceGrpc {
     return getUpdateEkmConfigMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.kms.v1.VerifyConnectivityRequest,
+          com.google.cloud.kms.v1.VerifyConnectivityResponse>
+      getVerifyConnectivityMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "VerifyConnectivity",
+      requestType = com.google.cloud.kms.v1.VerifyConnectivityRequest.class,
+      responseType = com.google.cloud.kms.v1.VerifyConnectivityResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.kms.v1.VerifyConnectivityRequest,
+          com.google.cloud.kms.v1.VerifyConnectivityResponse>
+      getVerifyConnectivityMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.kms.v1.VerifyConnectivityRequest,
+            com.google.cloud.kms.v1.VerifyConnectivityResponse>
+        getVerifyConnectivityMethod;
+    if ((getVerifyConnectivityMethod = EkmServiceGrpc.getVerifyConnectivityMethod) == null) {
+      synchronized (EkmServiceGrpc.class) {
+        if ((getVerifyConnectivityMethod = EkmServiceGrpc.getVerifyConnectivityMethod) == null) {
+          EkmServiceGrpc.getVerifyConnectivityMethod =
+              getVerifyConnectivityMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.kms.v1.VerifyConnectivityRequest,
+                          com.google.cloud.kms.v1.VerifyConnectivityResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "VerifyConnectivity"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.kms.v1.VerifyConnectivityRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.kms.v1.VerifyConnectivityResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new EkmServiceMethodDescriptorSupplier("VerifyConnectivity"))
+                      .build();
+        }
+      }
+    }
+    return getVerifyConnectivityMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static EkmServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<EkmServiceStub> factory =
@@ -439,6 +486,25 @@ public final class EkmServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.EkmConfig> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getUpdateEkmConfigMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Verifies that Cloud KMS can successfully connect to the external key
+     * manager specified by an [EkmConnection][google.cloud.kms.v1.EkmConnection].
+     * If there is an error connecting to the EKM, this method returns a
+     * FAILED_PRECONDITION status containing structured information as described
+     * at https://cloud.google.com/kms/docs/reference/ekm_errors.
+     * </pre>
+     */
+    default void verifyConnectivity(
+        com.google.cloud.kms.v1.VerifyConnectivityRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.VerifyConnectivityResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getVerifyConnectivityMethod(), responseObserver);
     }
   }
 
@@ -580,6 +646,27 @@ public final class EkmServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Verifies that Cloud KMS can successfully connect to the external key
+     * manager specified by an [EkmConnection][google.cloud.kms.v1.EkmConnection].
+     * If there is an error connecting to the EKM, this method returns a
+     * FAILED_PRECONDITION status containing structured information as described
+     * at https://cloud.google.com/kms/docs/reference/ekm_errors.
+     * </pre>
+     */
+    public void verifyConnectivity(
+        com.google.cloud.kms.v1.VerifyConnectivityRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.VerifyConnectivityResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getVerifyConnectivityMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -684,6 +771,23 @@ public final class EkmServiceGrpc {
         com.google.cloud.kms.v1.UpdateEkmConfigRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateEkmConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Verifies that Cloud KMS can successfully connect to the external key
+     * manager specified by an [EkmConnection][google.cloud.kms.v1.EkmConnection].
+     * If there is an error connecting to the EKM, this method returns a
+     * FAILED_PRECONDITION status containing structured information as described
+     * at https://cloud.google.com/kms/docs/reference/ekm_errors.
+     * </pre>
+     */
+    public com.google.cloud.kms.v1.VerifyConnectivityResponse verifyConnectivity(
+        com.google.cloud.kms.v1.VerifyConnectivityRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getVerifyConnectivityMethod(), getCallOptions(), request);
     }
   }
 
@@ -790,6 +894,24 @@ public final class EkmServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateEkmConfigMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Verifies that Cloud KMS can successfully connect to the external key
+     * manager specified by an [EkmConnection][google.cloud.kms.v1.EkmConnection].
+     * If there is an error connecting to the EKM, this method returns a
+     * FAILED_PRECONDITION status containing structured information as described
+     * at https://cloud.google.com/kms/docs/reference/ekm_errors.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.kms.v1.VerifyConnectivityResponse>
+        verifyConnectivity(com.google.cloud.kms.v1.VerifyConnectivityRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getVerifyConnectivityMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_EKM_CONNECTIONS = 0;
@@ -798,6 +920,7 @@ public final class EkmServiceGrpc {
   private static final int METHODID_UPDATE_EKM_CONNECTION = 3;
   private static final int METHODID_GET_EKM_CONFIG = 4;
   private static final int METHODID_UPDATE_EKM_CONFIG = 5;
+  private static final int METHODID_VERIFY_CONNECTIVITY = 6;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -849,6 +972,12 @@ public final class EkmServiceGrpc {
           serviceImpl.updateEkmConfig(
               (com.google.cloud.kms.v1.UpdateEkmConfigRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.EkmConfig>) responseObserver);
+          break;
+        case METHODID_VERIFY_CONNECTIVITY:
+          serviceImpl.verifyConnectivity(
+              (com.google.cloud.kms.v1.VerifyConnectivityRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.VerifyConnectivityResponse>)
+                  responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -907,6 +1036,13 @@ public final class EkmServiceGrpc {
                 new MethodHandlers<
                     com.google.cloud.kms.v1.UpdateEkmConfigRequest,
                     com.google.cloud.kms.v1.EkmConfig>(service, METHODID_UPDATE_EKM_CONFIG)))
+        .addMethod(
+            getVerifyConnectivityMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.kms.v1.VerifyConnectivityRequest,
+                    com.google.cloud.kms.v1.VerifyConnectivityResponse>(
+                    service, METHODID_VERIFY_CONNECTIVITY)))
         .build();
   }
 
@@ -934,9 +1070,9 @@ public final class EkmServiceGrpc {
   private static final class EkmServiceMethodDescriptorSupplier
       extends EkmServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    EkmServiceMethodDescriptorSupplier(String methodName) {
+    EkmServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 
@@ -964,6 +1100,7 @@ public final class EkmServiceGrpc {
                       .addMethod(getUpdateEkmConnectionMethod())
                       .addMethod(getGetEkmConfigMethod())
                       .addMethod(getUpdateEkmConfigMethod())
+                      .addMethod(getVerifyConnectivityMethod())
                       .build();
         }
       }

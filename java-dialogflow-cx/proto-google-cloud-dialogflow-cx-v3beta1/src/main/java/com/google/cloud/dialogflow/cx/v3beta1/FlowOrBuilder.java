@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -109,6 +109,7 @@ public interface FlowOrBuilder
    *
    * <pre>
    * A flow's transition routes serve two purposes:
+   *
    * *   They are responsible for matching the user's first utterances in the
    * flow.
    * *   They are inherited by every page's [transition
@@ -116,9 +117,12 @@ public interface FlowOrBuilder
    * saying "help" or "can I talk to a human?", which can be handled in a common
    * way regardless of the current page. Transition routes defined in the page
    * have higher priority than those defined in the flow.
+   *
    * TransitionRoutes are evalauted in the following order:
+   *
    * *   TransitionRoutes with intent specified.
    * *   TransitionRoutes with only condition specified.
+   *
    * TransitionRoutes with intent specified are inherited by pages in the flow.
    * </pre>
    *
@@ -131,6 +135,7 @@ public interface FlowOrBuilder
    *
    * <pre>
    * A flow's transition routes serve two purposes:
+   *
    * *   They are responsible for matching the user's first utterances in the
    * flow.
    * *   They are inherited by every page's [transition
@@ -138,9 +143,12 @@ public interface FlowOrBuilder
    * saying "help" or "can I talk to a human?", which can be handled in a common
    * way regardless of the current page. Transition routes defined in the page
    * have higher priority than those defined in the flow.
+   *
    * TransitionRoutes are evalauted in the following order:
+   *
    * *   TransitionRoutes with intent specified.
    * *   TransitionRoutes with only condition specified.
+   *
    * TransitionRoutes with intent specified are inherited by pages in the flow.
    * </pre>
    *
@@ -153,6 +161,7 @@ public interface FlowOrBuilder
    *
    * <pre>
    * A flow's transition routes serve two purposes:
+   *
    * *   They are responsible for matching the user's first utterances in the
    * flow.
    * *   They are inherited by every page's [transition
@@ -160,9 +169,12 @@ public interface FlowOrBuilder
    * saying "help" or "can I talk to a human?", which can be handled in a common
    * way regardless of the current page. Transition routes defined in the page
    * have higher priority than those defined in the flow.
+   *
    * TransitionRoutes are evalauted in the following order:
+   *
    * *   TransitionRoutes with intent specified.
    * *   TransitionRoutes with only condition specified.
+   *
    * TransitionRoutes with intent specified are inherited by pages in the flow.
    * </pre>
    *
@@ -175,6 +187,7 @@ public interface FlowOrBuilder
    *
    * <pre>
    * A flow's transition routes serve two purposes:
+   *
    * *   They are responsible for matching the user's first utterances in the
    * flow.
    * *   They are inherited by every page's [transition
@@ -182,9 +195,12 @@ public interface FlowOrBuilder
    * saying "help" or "can I talk to a human?", which can be handled in a common
    * way regardless of the current page. Transition routes defined in the page
    * have higher priority than those defined in the flow.
+   *
    * TransitionRoutes are evalauted in the following order:
+   *
    * *   TransitionRoutes with intent specified.
    * *   TransitionRoutes with only condition specified.
+   *
    * TransitionRoutes with intent specified are inherited by pages in the flow.
    * </pre>
    *
@@ -198,6 +214,7 @@ public interface FlowOrBuilder
    *
    * <pre>
    * A flow's transition routes serve two purposes:
+   *
    * *   They are responsible for matching the user's first utterances in the
    * flow.
    * *   They are inherited by every page's [transition
@@ -205,9 +222,12 @@ public interface FlowOrBuilder
    * saying "help" or "can I talk to a human?", which can be handled in a common
    * way regardless of the current page. Transition routes defined in the page
    * have higher priority than those defined in the flow.
+   *
    * TransitionRoutes are evalauted in the following order:
+   *
    * *   TransitionRoutes with intent specified.
    * *   TransitionRoutes with only condition specified.
+   *
    * TransitionRoutes with intent specified are inherited by pages in the flow.
    * </pre>
    *
@@ -222,12 +242,14 @@ public interface FlowOrBuilder
    *
    * <pre>
    * A flow's event handlers serve two purposes:
+   *
    * *   They are responsible for handling events (e.g. no match,
    * webhook errors) in the flow.
    * *   They are inherited by every page's [event
    * handlers][Page.event_handlers], which can be used to handle common events
    * regardless of the current page. Event handlers defined in the page
    * have higher priority than those defined in the flow.
+   *
    * Unlike
    * [transition_routes][google.cloud.dialogflow.cx.v3beta1.Flow.transition_routes],
    * these handlers are evaluated on a first-match basis. The first one that
@@ -242,12 +264,14 @@ public interface FlowOrBuilder
    *
    * <pre>
    * A flow's event handlers serve two purposes:
+   *
    * *   They are responsible for handling events (e.g. no match,
    * webhook errors) in the flow.
    * *   They are inherited by every page's [event
    * handlers][Page.event_handlers], which can be used to handle common events
    * regardless of the current page. Event handlers defined in the page
    * have higher priority than those defined in the flow.
+   *
    * Unlike
    * [transition_routes][google.cloud.dialogflow.cx.v3beta1.Flow.transition_routes],
    * these handlers are evaluated on a first-match basis. The first one that
@@ -262,12 +286,14 @@ public interface FlowOrBuilder
    *
    * <pre>
    * A flow's event handlers serve two purposes:
+   *
    * *   They are responsible for handling events (e.g. no match,
    * webhook errors) in the flow.
    * *   They are inherited by every page's [event
    * handlers][Page.event_handlers], which can be used to handle common events
    * regardless of the current page. Event handlers defined in the page
    * have higher priority than those defined in the flow.
+   *
    * Unlike
    * [transition_routes][google.cloud.dialogflow.cx.v3beta1.Flow.transition_routes],
    * these handlers are evaluated on a first-match basis. The first one that
@@ -282,12 +308,14 @@ public interface FlowOrBuilder
    *
    * <pre>
    * A flow's event handlers serve two purposes:
+   *
    * *   They are responsible for handling events (e.g. no match,
    * webhook errors) in the flow.
    * *   They are inherited by every page's [event
    * handlers][Page.event_handlers], which can be used to handle common events
    * regardless of the current page. Event handlers defined in the page
    * have higher priority than those defined in the flow.
+   *
    * Unlike
    * [transition_routes][google.cloud.dialogflow.cx.v3beta1.Flow.transition_routes],
    * these handlers are evaluated on a first-match basis. The first one that
@@ -303,12 +331,14 @@ public interface FlowOrBuilder
    *
    * <pre>
    * A flow's event handlers serve two purposes:
+   *
    * *   They are responsible for handling events (e.g. no match,
    * webhook errors) in the flow.
    * *   They are inherited by every page's [event
    * handlers][Page.event_handlers], which can be used to handle common events
    * regardless of the current page. Event handlers defined in the page
    * have higher priority than those defined in the flow.
+   *
    * Unlike
    * [transition_routes][google.cloud.dialogflow.cx.v3beta1.Flow.transition_routes],
    * these handlers are evaluated on a first-match basis. The first one that
@@ -324,13 +354,18 @@ public interface FlowOrBuilder
    *
    * <pre>
    * A flow's transition route group serve two purposes:
+   *
    * *   They are responsible for matching the user's first utterances in the
    * flow.
    * *   They are inherited by every page's [transition
    * route groups][Page.transition_route_groups]. Transition route groups
    * defined in the page have higher priority than those defined in the flow.
+   *
    * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`.
+   * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`
+   * or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;` for agent-level
+   * groups.
    * </pre>
    *
    * <code>repeated string transition_route_groups = 15 [(.google.api.resource_reference) = { ... }
@@ -344,13 +379,18 @@ public interface FlowOrBuilder
    *
    * <pre>
    * A flow's transition route group serve two purposes:
+   *
    * *   They are responsible for matching the user's first utterances in the
    * flow.
    * *   They are inherited by every page's [transition
    * route groups][Page.transition_route_groups]. Transition route groups
    * defined in the page have higher priority than those defined in the flow.
+   *
    * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`.
+   * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`
+   * or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;` for agent-level
+   * groups.
    * </pre>
    *
    * <code>repeated string transition_route_groups = 15 [(.google.api.resource_reference) = { ... }
@@ -364,13 +404,18 @@ public interface FlowOrBuilder
    *
    * <pre>
    * A flow's transition route group serve two purposes:
+   *
    * *   They are responsible for matching the user's first utterances in the
    * flow.
    * *   They are inherited by every page's [transition
    * route groups][Page.transition_route_groups]. Transition route groups
    * defined in the page have higher priority than those defined in the flow.
+   *
    * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`.
+   * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`
+   * or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;` for agent-level
+   * groups.
    * </pre>
    *
    * <code>repeated string transition_route_groups = 15 [(.google.api.resource_reference) = { ... }
@@ -385,13 +430,18 @@ public interface FlowOrBuilder
    *
    * <pre>
    * A flow's transition route group serve two purposes:
+   *
    * *   They are responsible for matching the user's first utterances in the
    * flow.
    * *   They are inherited by every page's [transition
    * route groups][Page.transition_route_groups]. Transition route groups
    * defined in the page have higher priority than those defined in the flow.
+   *
    * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`.
+   * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`
+   * or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;` for agent-level
+   * groups.
    * </pre>
    *
    * <code>repeated string transition_route_groups = 15 [(.google.api.resource_reference) = { ... }
@@ -436,4 +486,84 @@ public interface FlowOrBuilder
    * <code>.google.cloud.dialogflow.cx.v3beta1.NluSettings nlu_settings = 11;</code>
    */
   com.google.cloud.dialogflow.cx.v3beta1.NluSettingsOrBuilder getNluSettingsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Hierarchical advanced settings for this flow. The settings exposed at the
+   * lower level overrides the settings exposed at the higher level.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings advanced_settings = 14;</code>
+   *
+   * @return Whether the advancedSettings field is set.
+   */
+  boolean hasAdvancedSettings();
+  /**
+   *
+   *
+   * <pre>
+   * Hierarchical advanced settings for this flow. The settings exposed at the
+   * lower level overrides the settings exposed at the higher level.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings advanced_settings = 14;</code>
+   *
+   * @return The advancedSettings.
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings getAdvancedSettings();
+  /**
+   *
+   *
+   * <pre>
+   * Hierarchical advanced settings for this flow. The settings exposed at the
+   * lower level overrides the settings exposed at the higher level.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings advanced_settings = 14;</code>
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettingsOrBuilder getAdvancedSettingsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Knowledge connector configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.KnowledgeConnectorSettings knowledge_connector_settings = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the knowledgeConnectorSettings field is set.
+   */
+  boolean hasKnowledgeConnectorSettings();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Knowledge connector configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.KnowledgeConnectorSettings knowledge_connector_settings = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The knowledgeConnectorSettings.
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.KnowledgeConnectorSettings getKnowledgeConnectorSettings();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Knowledge connector configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.KnowledgeConnectorSettings knowledge_connector_settings = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.KnowledgeConnectorSettingsOrBuilder
+      getKnowledgeConnectorSettingsOrBuilder();
 }

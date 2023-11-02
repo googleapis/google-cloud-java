@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,8 @@ public interface CreateRepositoryRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the parent resource where the repository will be created.
+   * Required. The name of the parent resource where the repository will be
+   * created.
    * </pre>
    *
    * <code>
@@ -41,7 +42,8 @@ public interface CreateRepositoryRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the parent resource where the repository will be created.
+   * Required. The name of the parent resource where the repository will be
+   * created.
    * </pre>
    *
    * <code>
@@ -56,10 +58,10 @@ public interface CreateRepositoryRequestOrBuilder
    *
    *
    * <pre>
-   * The repository id to use for this repository.
+   * Required. The repository id to use for this repository.
    * </pre>
    *
-   * <code>string repository_id = 2;</code>
+   * <code>string repository_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The repositoryId.
    */
@@ -68,10 +70,10 @@ public interface CreateRepositoryRequestOrBuilder
    *
    *
    * <pre>
-   * The repository id to use for this repository.
+   * Required. The repository id to use for this repository.
    * </pre>
    *
-   * <code>string repository_id = 2;</code>
+   * <code>string repository_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for repositoryId.
    */
@@ -81,10 +83,12 @@ public interface CreateRepositoryRequestOrBuilder
    *
    *
    * <pre>
-   * The repository to be created.
+   * Required. The repository to be created.
    * </pre>
    *
-   * <code>.google.devtools.artifactregistry.v1.Repository repository = 3;</code>
+   * <code>
+   * .google.devtools.artifactregistry.v1.Repository repository = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the repository field is set.
    */
@@ -93,10 +97,12 @@ public interface CreateRepositoryRequestOrBuilder
    *
    *
    * <pre>
-   * The repository to be created.
+   * Required. The repository to be created.
    * </pre>
    *
-   * <code>.google.devtools.artifactregistry.v1.Repository repository = 3;</code>
+   * <code>
+   * .google.devtools.artifactregistry.v1.Repository repository = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The repository.
    */
@@ -105,10 +111,12 @@ public interface CreateRepositoryRequestOrBuilder
    *
    *
    * <pre>
-   * The repository to be created.
+   * Required. The repository to be created.
    * </pre>
    *
-   * <code>.google.devtools.artifactregistry.v1.Repository repository = 3;</code>
+   * <code>
+   * .google.devtools.artifactregistry.v1.Repository repository = 3 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.devtools.artifactregistry.v1.RepositoryOrBuilder getRepositoryOrBuilder();
 }

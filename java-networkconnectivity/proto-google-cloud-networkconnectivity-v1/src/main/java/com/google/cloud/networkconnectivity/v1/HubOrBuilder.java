@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -132,8 +132,8 @@ public interface HubOrBuilder
    *
    *
    * <pre>
-   * Optional labels in key:value format. For more information about labels, see
-   * [Requirements for
+   * Optional labels in key-value pair format. For more information about
+   * labels, see [Requirements for
    * labels](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements).
    * </pre>
    *
@@ -144,8 +144,8 @@ public interface HubOrBuilder
    *
    *
    * <pre>
-   * Optional labels in key:value format. For more information about labels, see
-   * [Requirements for
+   * Optional labels in key-value pair format. For more information about
+   * labels, see [Requirements for
    * labels](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements).
    * </pre>
    *
@@ -159,8 +159,8 @@ public interface HubOrBuilder
    *
    *
    * <pre>
-   * Optional labels in key:value format. For more information about labels, see
-   * [Requirements for
+   * Optional labels in key-value pair format. For more information about
+   * labels, see [Requirements for
    * labels](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements).
    * </pre>
    *
@@ -171,8 +171,8 @@ public interface HubOrBuilder
    *
    *
    * <pre>
-   * Optional labels in key:value format. For more information about labels, see
-   * [Requirements for
+   * Optional labels in key-value pair format. For more information about
+   * labels, see [Requirements for
    * labels](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements).
    * </pre>
    *
@@ -187,8 +187,8 @@ public interface HubOrBuilder
    *
    *
    * <pre>
-   * Optional labels in key:value format. For more information about labels, see
-   * [Requirements for
+   * Optional labels in key-value pair format. For more information about
+   * labels, see [Requirements for
    * labels](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements).
    * </pre>
    *
@@ -284,6 +284,7 @@ public interface HubOrBuilder
    *
    * <pre>
    * The VPC networks associated with this hub's spokes.
+   *
    * This field is read-only. Network Connectivity Center automatically
    * populates it based on the set of spokes attached to the hub.
    * </pre>
@@ -296,6 +297,7 @@ public interface HubOrBuilder
    *
    * <pre>
    * The VPC networks associated with this hub's spokes.
+   *
    * This field is read-only. Network Connectivity Center automatically
    * populates it based on the set of spokes attached to the hub.
    * </pre>
@@ -308,6 +310,7 @@ public interface HubOrBuilder
    *
    * <pre>
    * The VPC networks associated with this hub's spokes.
+   *
    * This field is read-only. Network Connectivity Center automatically
    * populates it based on the set of spokes attached to the hub.
    * </pre>
@@ -320,6 +323,7 @@ public interface HubOrBuilder
    *
    * <pre>
    * The VPC networks associated with this hub's spokes.
+   *
    * This field is read-only. Network Connectivity Center automatically
    * populates it based on the set of spokes attached to the hub.
    * </pre>
@@ -333,6 +337,7 @@ public interface HubOrBuilder
    *
    * <pre>
    * The VPC networks associated with this hub's spokes.
+   *
    * This field is read-only. Network Connectivity Center automatically
    * populates it based on the set of spokes attached to the hub.
    * </pre>
@@ -340,4 +345,128 @@ public interface HubOrBuilder
    * <code>repeated .google.cloud.networkconnectivity.v1.RoutingVPC routing_vpcs = 10;</code>
    */
   com.google.cloud.networkconnectivity.v1.RoutingVPCOrBuilder getRoutingVpcsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The route tables that belong to this hub. They use the
+   * following form:
+   *    `projects/{project_number}/locations/global/hubs/{hub_id}/routeTables/{route_table_id}`
+   *
+   * This field is read-only. Network Connectivity Center automatically
+   * populates it based on the route tables nested under the hub.
+   * </pre>
+   *
+   * <code>repeated string route_tables = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return A list containing the routeTables.
+   */
+  java.util.List<java.lang.String> getRouteTablesList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The route tables that belong to this hub. They use the
+   * following form:
+   *    `projects/{project_number}/locations/global/hubs/{hub_id}/routeTables/{route_table_id}`
+   *
+   * This field is read-only. Network Connectivity Center automatically
+   * populates it based on the route tables nested under the hub.
+   * </pre>
+   *
+   * <code>repeated string route_tables = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The count of routeTables.
+   */
+  int getRouteTablesCount();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The route tables that belong to this hub. They use the
+   * following form:
+   *    `projects/{project_number}/locations/global/hubs/{hub_id}/routeTables/{route_table_id}`
+   *
+   * This field is read-only. Network Connectivity Center automatically
+   * populates it based on the route tables nested under the hub.
+   * </pre>
+   *
+   * <code>repeated string route_tables = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The routeTables at the given index.
+   */
+  java.lang.String getRouteTables(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The route tables that belong to this hub. They use the
+   * following form:
+   *    `projects/{project_number}/locations/global/hubs/{hub_id}/routeTables/{route_table_id}`
+   *
+   * This field is read-only. Network Connectivity Center automatically
+   * populates it based on the route tables nested under the hub.
+   * </pre>
+   *
+   * <code>repeated string route_tables = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the routeTables at the given index.
+   */
+  com.google.protobuf.ByteString getRouteTablesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A summary of the spokes associated with a hub. The
+   * summary includes a count of spokes according to type
+   * and according to state. If any spokes are inactive,
+   * the summary also lists the reasons they are inactive,
+   * including a count for each reason.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkconnectivity.v1.SpokeSummary spoke_summary = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the spokeSummary field is set.
+   */
+  boolean hasSpokeSummary();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A summary of the spokes associated with a hub. The
+   * summary includes a count of spokes according to type
+   * and according to state. If any spokes are inactive,
+   * the summary also lists the reasons they are inactive,
+   * including a count for each reason.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkconnectivity.v1.SpokeSummary spoke_summary = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The spokeSummary.
+   */
+  com.google.cloud.networkconnectivity.v1.SpokeSummary getSpokeSummary();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A summary of the spokes associated with a hub. The
+   * summary includes a count of spokes according to type
+   * and according to state. If any spokes are inactive,
+   * the summary also lists the reasons they are inactive,
+   * including a count for each reason.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkconnectivity.v1.SpokeSummary spoke_summary = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.networkconnectivity.v1.SpokeSummaryOrBuilder getSpokeSummaryOrBuilder();
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -137,11 +137,13 @@ public interface TaskRunnerSettingsOrBuilder
    *
    * <pre>
    * The base URL for the taskrunner to use when accessing Google Cloud APIs.
+   *
    * When workers access Google Cloud APIs, they logically do so via
    * relative URLs.  If this field is specified, it supplies the base
    * URL to use for resolving these relative URLs.  The normative
    * algorithm used is defined by RFC 1808, "Relative Uniform Resource
    * Locators".
+   *
    * If not specified, the default value is "http://www.googleapis.com/"
    * </pre>
    *
@@ -155,11 +157,13 @@ public interface TaskRunnerSettingsOrBuilder
    *
    * <pre>
    * The base URL for the taskrunner to use when accessing Google Cloud APIs.
+   *
    * When workers access Google Cloud APIs, they logically do so via
    * relative URLs.  If this field is specified, it supplies the base
    * URL to use for resolving these relative URLs.  The normative
    * algorithm used is defined by RFC 1808, "Relative Uniform Resource
    * Locators".
+   *
    * If not specified, the default value is "http://www.googleapis.com/"
    * </pre>
    *
@@ -300,7 +304,9 @@ public interface TaskRunnerSettingsOrBuilder
    * <pre>
    * Indicates where to put logs.  If this is not specified, the logs
    * will not be uploaded.
+   *
    * The supported resource type is:
+   *
    * Google Cloud Storage:
    *   storage.googleapis.com/{bucket}/{object}
    *   bucket.storage.googleapis.com/{object}
@@ -317,7 +323,9 @@ public interface TaskRunnerSettingsOrBuilder
    * <pre>
    * Indicates where to put logs.  If this is not specified, the logs
    * will not be uploaded.
+   *
    * The supported resource type is:
+   *
    * Google Cloud Storage:
    *   storage.googleapis.com/{bucket}/{object}
    *   bucket.storage.googleapis.com/{object}
@@ -360,7 +368,9 @@ public interface TaskRunnerSettingsOrBuilder
    * <pre>
    * The prefix of the resources the taskrunner should use for
    * temporary storage.
+   *
    * The supported resource type is:
+   *
    * Google Cloud Storage:
    *   storage.googleapis.com/{bucket}/{object}
    *   bucket.storage.googleapis.com/{object}
@@ -377,7 +387,9 @@ public interface TaskRunnerSettingsOrBuilder
    * <pre>
    * The prefix of the resources the taskrunner should use for
    * temporary storage.
+   *
    * The supported resource type is:
+   *
    * Google Cloud Storage:
    *   storage.googleapis.com/{bucket}/{object}
    *   bucket.storage.googleapis.com/{object}

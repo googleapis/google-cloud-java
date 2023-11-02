@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,6 +36,7 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.httpjson.longrunning.stub.HttpJsonOperationsStub;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.serviceusage.v1beta1.BatchEnableServicesRequest;
 import com.google.api.serviceusage.v1beta1.ConsumerQuotaLimit;
@@ -984,27 +985,57 @@ public class HttpJsonServiceUsageStub extends ServiceUsageStub {
         HttpJsonCallSettings.<EnableServiceRequest, Operation>newBuilder()
             .setMethodDescriptor(enableServiceMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DisableServiceRequest, Operation> disableServiceTransportSettings =
         HttpJsonCallSettings.<DisableServiceRequest, Operation>newBuilder()
             .setMethodDescriptor(disableServiceMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetServiceRequest, Service> getServiceTransportSettings =
         HttpJsonCallSettings.<GetServiceRequest, Service>newBuilder()
             .setMethodDescriptor(getServiceMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListServicesRequest, ListServicesResponse> listServicesTransportSettings =
         HttpJsonCallSettings.<ListServicesRequest, ListServicesResponse>newBuilder()
             .setMethodDescriptor(listServicesMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<BatchEnableServicesRequest, Operation>
         batchEnableServicesTransportSettings =
             HttpJsonCallSettings.<BatchEnableServicesRequest, Operation>newBuilder()
                 .setMethodDescriptor(batchEnableServicesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ListConsumerQuotaMetricsRequest, ListConsumerQuotaMetricsResponse>
         listConsumerQuotaMetricsTransportSettings =
@@ -1012,66 +1043,132 @@ public class HttpJsonServiceUsageStub extends ServiceUsageStub {
                 .<ListConsumerQuotaMetricsRequest, ListConsumerQuotaMetricsResponse>newBuilder()
                 .setMethodDescriptor(listConsumerQuotaMetricsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetConsumerQuotaMetricRequest, ConsumerQuotaMetric>
         getConsumerQuotaMetricTransportSettings =
             HttpJsonCallSettings.<GetConsumerQuotaMetricRequest, ConsumerQuotaMetric>newBuilder()
                 .setMethodDescriptor(getConsumerQuotaMetricMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetConsumerQuotaLimitRequest, ConsumerQuotaLimit>
         getConsumerQuotaLimitTransportSettings =
             HttpJsonCallSettings.<GetConsumerQuotaLimitRequest, ConsumerQuotaLimit>newBuilder()
                 .setMethodDescriptor(getConsumerQuotaLimitMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<CreateAdminOverrideRequest, Operation>
         createAdminOverrideTransportSettings =
             HttpJsonCallSettings.<CreateAdminOverrideRequest, Operation>newBuilder()
                 .setMethodDescriptor(createAdminOverrideMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<UpdateAdminOverrideRequest, Operation>
         updateAdminOverrideTransportSettings =
             HttpJsonCallSettings.<UpdateAdminOverrideRequest, Operation>newBuilder()
                 .setMethodDescriptor(updateAdminOverrideMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteAdminOverrideRequest, Operation>
         deleteAdminOverrideTransportSettings =
             HttpJsonCallSettings.<DeleteAdminOverrideRequest, Operation>newBuilder()
                 .setMethodDescriptor(deleteAdminOverrideMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ListAdminOverridesRequest, ListAdminOverridesResponse>
         listAdminOverridesTransportSettings =
             HttpJsonCallSettings.<ListAdminOverridesRequest, ListAdminOverridesResponse>newBuilder()
                 .setMethodDescriptor(listAdminOverridesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ImportAdminOverridesRequest, Operation>
         importAdminOverridesTransportSettings =
             HttpJsonCallSettings.<ImportAdminOverridesRequest, Operation>newBuilder()
                 .setMethodDescriptor(importAdminOverridesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<CreateConsumerOverrideRequest, Operation>
         createConsumerOverrideTransportSettings =
             HttpJsonCallSettings.<CreateConsumerOverrideRequest, Operation>newBuilder()
                 .setMethodDescriptor(createConsumerOverrideMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<UpdateConsumerOverrideRequest, Operation>
         updateConsumerOverrideTransportSettings =
             HttpJsonCallSettings.<UpdateConsumerOverrideRequest, Operation>newBuilder()
                 .setMethodDescriptor(updateConsumerOverrideMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteConsumerOverrideRequest, Operation>
         deleteConsumerOverrideTransportSettings =
             HttpJsonCallSettings.<DeleteConsumerOverrideRequest, Operation>newBuilder()
                 .setMethodDescriptor(deleteConsumerOverrideMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ListConsumerOverridesRequest, ListConsumerOverridesResponse>
         listConsumerOverridesTransportSettings =
@@ -1079,18 +1176,36 @@ public class HttpJsonServiceUsageStub extends ServiceUsageStub {
                 .<ListConsumerOverridesRequest, ListConsumerOverridesResponse>newBuilder()
                 .setMethodDescriptor(listConsumerOverridesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ImportConsumerOverridesRequest, Operation>
         importConsumerOverridesTransportSettings =
             HttpJsonCallSettings.<ImportConsumerOverridesRequest, Operation>newBuilder()
                 .setMethodDescriptor(importConsumerOverridesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GenerateServiceIdentityRequest, Operation>
         generateServiceIdentityTransportSettings =
             HttpJsonCallSettings.<GenerateServiceIdentityRequest, Operation>newBuilder()
                 .setMethodDescriptor(generateServiceIdentityMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
 
     this.enableServiceCallable =

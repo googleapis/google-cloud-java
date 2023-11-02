@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,8 +27,8 @@ public interface DeliveryPipelineOrBuilder
    *
    *
    * <pre>
-   * Optional. Name of the `DeliveryPipeline`. Format is projects/{project}/
-   * locations/{location}/deliveryPipelines/[a-z][a-z0-9&#92;-]{0,62}.
+   * Optional. Name of the `DeliveryPipeline`. Format is
+   * `projects/{project}/locations/{location}/deliveryPipelines/[a-z][a-z0-9&#92;-]{0,62}`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -40,8 +40,8 @@ public interface DeliveryPipelineOrBuilder
    *
    *
    * <pre>
-   * Optional. Name of the `DeliveryPipeline`. Format is projects/{project}/
-   * locations/{location}/deliveryPipelines/[a-z][a-z0-9&#92;-]{0,62}.
+   * Optional. Name of the `DeliveryPipeline`. Format is
+   * `projects/{project}/locations/{location}/deliveryPipelines/[a-z][a-z0-9&#92;-]{0,62}`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -105,7 +105,7 @@ public interface DeliveryPipelineOrBuilder
    *
    * <pre>
    * User annotations. These attributes can only be set and used by the
-   * user, and not by Google Cloud Deploy.
+   * user, and not by Cloud Deploy.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 4;</code>
@@ -116,7 +116,7 @@ public interface DeliveryPipelineOrBuilder
    *
    * <pre>
    * User annotations. These attributes can only be set and used by the
-   * user, and not by Google Cloud Deploy.
+   * user, and not by Cloud Deploy.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 4;</code>
@@ -130,7 +130,7 @@ public interface DeliveryPipelineOrBuilder
    *
    * <pre>
    * User annotations. These attributes can only be set and used by the
-   * user, and not by Google Cloud Deploy.
+   * user, and not by Cloud Deploy.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 4;</code>
@@ -141,7 +141,7 @@ public interface DeliveryPipelineOrBuilder
    *
    * <pre>
    * User annotations. These attributes can only be set and used by the
-   * user, and not by Google Cloud Deploy.
+   * user, and not by Cloud Deploy.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 4;</code>
@@ -156,7 +156,7 @@ public interface DeliveryPipelineOrBuilder
    *
    * <pre>
    * User annotations. These attributes can only be set and used by the
-   * user, and not by Google Cloud Deploy.
+   * user, and not by Cloud Deploy.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 4;</code>
@@ -168,14 +168,15 @@ public interface DeliveryPipelineOrBuilder
    *
    * <pre>
    * Labels are attributes that can be set and used by both the
-   * user and by Google Cloud Deploy. Labels must meet the following
-   * constraints:
+   * user and by Cloud Deploy. Labels must meet the following constraints:
+   *
    * * Keys and values can contain only lowercase letters, numeric characters,
    * underscores, and dashes.
    * * All characters must use UTF-8 encoding, and international characters are
    * allowed.
    * * Keys must start with a lowercase letter or international character.
    * * Each resource is limited to a maximum of 64 labels.
+   *
    * Both keys and values are additionally constrained to be &lt;= 128 bytes.
    * </pre>
    *
@@ -187,14 +188,15 @@ public interface DeliveryPipelineOrBuilder
    *
    * <pre>
    * Labels are attributes that can be set and used by both the
-   * user and by Google Cloud Deploy. Labels must meet the following
-   * constraints:
+   * user and by Cloud Deploy. Labels must meet the following constraints:
+   *
    * * Keys and values can contain only lowercase letters, numeric characters,
    * underscores, and dashes.
    * * All characters must use UTF-8 encoding, and international characters are
    * allowed.
    * * Keys must start with a lowercase letter or international character.
    * * Each resource is limited to a maximum of 64 labels.
+   *
    * Both keys and values are additionally constrained to be &lt;= 128 bytes.
    * </pre>
    *
@@ -209,14 +211,15 @@ public interface DeliveryPipelineOrBuilder
    *
    * <pre>
    * Labels are attributes that can be set and used by both the
-   * user and by Google Cloud Deploy. Labels must meet the following
-   * constraints:
+   * user and by Cloud Deploy. Labels must meet the following constraints:
+   *
    * * Keys and values can contain only lowercase letters, numeric characters,
    * underscores, and dashes.
    * * All characters must use UTF-8 encoding, and international characters are
    * allowed.
    * * Keys must start with a lowercase letter or international character.
    * * Each resource is limited to a maximum of 64 labels.
+   *
    * Both keys and values are additionally constrained to be &lt;= 128 bytes.
    * </pre>
    *
@@ -228,14 +231,15 @@ public interface DeliveryPipelineOrBuilder
    *
    * <pre>
    * Labels are attributes that can be set and used by both the
-   * user and by Google Cloud Deploy. Labels must meet the following
-   * constraints:
+   * user and by Cloud Deploy. Labels must meet the following constraints:
+   *
    * * Keys and values can contain only lowercase letters, numeric characters,
    * underscores, and dashes.
    * * All characters must use UTF-8 encoding, and international characters are
    * allowed.
    * * Keys must start with a lowercase letter or international character.
    * * Each resource is limited to a maximum of 64 labels.
+   *
    * Both keys and values are additionally constrained to be &lt;= 128 bytes.
    * </pre>
    *
@@ -251,14 +255,15 @@ public interface DeliveryPipelineOrBuilder
    *
    * <pre>
    * Labels are attributes that can be set and used by both the
-   * user and by Google Cloud Deploy. Labels must meet the following
-   * constraints:
+   * user and by Cloud Deploy. Labels must meet the following constraints:
+   *
    * * Keys and values can contain only lowercase letters, numeric characters,
    * underscores, and dashes.
    * * All characters must use UTF-8 encoding, and international characters are
    * allowed.
    * * Keys must start with a lowercase letter or international character.
    * * Each resource is limited to a maximum of 64 labels.
+   *
    * Both keys and values are additionally constrained to be &lt;= 128 bytes.
    * </pre>
    *
@@ -464,5 +469,5 @@ public interface DeliveryPipelineOrBuilder
    */
   boolean getSuspended();
 
-  public com.google.cloud.deploy.v1.DeliveryPipeline.PipelineCase getPipelineCase();
+  com.google.cloud.deploy.v1.DeliveryPipeline.PipelineCase getPipelineCase();
 }

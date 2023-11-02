@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,11 +52,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new TransactionData();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -284,7 +279,7 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
 
     private Address() {
       recipient_ = "";
-      address_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      address_ = com.google.protobuf.LazyStringArrayList.emptyList();
       locality_ = "";
       administrativeArea_ = "";
       regionCode_ = "";
@@ -295,11 +290,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Address();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -371,7 +361,8 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
     public static final int ADDRESS_FIELD_NUMBER = 2;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList address_;
+    private com.google.protobuf.LazyStringArrayList address_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -897,8 +888,7 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
         super.clear();
         bitField0_ = 0;
         recipient_ = "";
-        address_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000002);
+        address_ = com.google.protobuf.LazyStringArrayList.emptyList();
         locality_ = "";
         administrativeArea_ = "";
         regionCode_ = "";
@@ -931,7 +921,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       public com.google.recaptchaenterprise.v1beta1.TransactionData.Address buildPartial() {
         com.google.recaptchaenterprise.v1beta1.TransactionData.Address result =
             new com.google.recaptchaenterprise.v1beta1.TransactionData.Address(this);
-        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
@@ -939,20 +928,15 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
         return result;
       }
 
-      private void buildPartialRepeatedFields(
-          com.google.recaptchaenterprise.v1beta1.TransactionData.Address result) {
-        if (((bitField0_ & 0x00000002) != 0)) {
-          address_ = address_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000002);
-        }
-        result.address_ = address_;
-      }
-
       private void buildPartial0(
           com.google.recaptchaenterprise.v1beta1.TransactionData.Address result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.recipient_ = recipient_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          address_.makeImmutable();
+          result.address_ = address_;
         }
         if (((from_bitField0_ & 0x00000004) != 0)) {
           result.locality_ = locality_;
@@ -1026,7 +1010,7 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
         if (!other.address_.isEmpty()) {
           if (address_.isEmpty()) {
             address_ = other.address_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ |= 0x00000002;
           } else {
             ensureAddressIsMutable();
             address_.addAll(other.address_);
@@ -1241,14 +1225,14 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
         return this;
       }
 
-      private com.google.protobuf.LazyStringList address_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList address_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureAddressIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!address_.isModifiable()) {
           address_ = new com.google.protobuf.LazyStringArrayList(address_);
-          bitField0_ |= 0x00000002;
         }
+        bitField0_ |= 0x00000002;
       }
       /**
        *
@@ -1264,7 +1248,8 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        * @return A list containing the address.
        */
       public com.google.protobuf.ProtocolStringList getAddressList() {
-        return address_.getUnmodifiableView();
+        address_.makeImmutable();
+        return address_;
       }
       /**
        *
@@ -1337,6 +1322,7 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
         }
         ensureAddressIsMutable();
         address_.set(index, value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1360,6 +1346,7 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
         }
         ensureAddressIsMutable();
         address_.add(value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1380,6 +1367,7 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       public Builder addAllAddress(java.lang.Iterable<java.lang.String> values) {
         ensureAddressIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, address_);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1397,8 +1385,9 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
        * @return This builder for chaining.
        */
       public Builder clearAddress() {
-        address_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        address_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000002);
+        ;
         onChanged();
         return this;
       }
@@ -1423,6 +1412,7 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
         checkByteStringIsUtf8(value);
         ensureAddressIsMutable();
         address_.add(value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -2072,11 +2062,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new User();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -3443,11 +3428,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       return new Item();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.recaptchaenterprise.v1beta1.RecaptchaEnterpriseProto
           .internal_static_google_cloud_recaptchaenterprise_v1beta1_TransactionData_Item_descriptor;
@@ -4556,11 +4536,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new GatewayInfo();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -5799,6 +5774,7 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * The payment method for the transaction. The allowed values are:
+   *
    * * credit-card
    * * debit-card
    * * gift-card
@@ -5829,6 +5805,7 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * The payment method for the transaction. The allowed values are:
+   *
    * * credit-card
    * * debit-card
    * * gift-card
@@ -7327,6 +7304,7 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The payment method for the transaction. The allowed values are:
+     *
      * * credit-card
      * * debit-card
      * * gift-card
@@ -7356,6 +7334,7 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The payment method for the transaction. The allowed values are:
+     *
      * * credit-card
      * * debit-card
      * * gift-card
@@ -7385,6 +7364,7 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The payment method for the transaction. The allowed values are:
+     *
      * * credit-card
      * * debit-card
      * * gift-card
@@ -7413,6 +7393,7 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The payment method for the transaction. The allowed values are:
+     *
      * * credit-card
      * * debit-card
      * * gift-card
@@ -7437,6 +7418,7 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The payment method for the transaction. The allowed values are:
+     *
      * * credit-card
      * * debit-card
      * * gift-card

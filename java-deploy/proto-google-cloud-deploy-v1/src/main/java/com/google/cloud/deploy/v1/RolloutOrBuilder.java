@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,9 +27,8 @@ public interface RolloutOrBuilder
    *
    *
    * <pre>
-   * Optional. Name of the `Rollout`. Format is projects/{project}/
-   * locations/{location}/deliveryPipelines/{deliveryPipeline}/
-   * releases/{release}/rollouts/[a-z][a-z0-9&#92;-]{0,62}.
+   * Optional. Name of the `Rollout`. Format is
+   * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/[a-z][a-z0-9&#92;-]{0,62}`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -41,9 +40,8 @@ public interface RolloutOrBuilder
    *
    *
    * <pre>
-   * Optional. Name of the `Rollout`. Format is projects/{project}/
-   * locations/{location}/deliveryPipelines/{deliveryPipeline}/
-   * releases/{release}/rollouts/[a-z][a-z0-9&#92;-]{0,62}.
+   * Optional. Name of the `Rollout`. Format is
+   * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/[a-z][a-z0-9&#92;-]{0,62}`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -109,9 +107,8 @@ public interface RolloutOrBuilder
    *
    * <pre>
    * User annotations. These attributes can only be set and used by the
-   * user, and not by Google Cloud Deploy. See
-   * https://google.aip.dev/128#annotations for more details such as format and
-   * size limitations.
+   * user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations
+   * for more details such as format and size limitations.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 4;</code>
@@ -122,9 +119,8 @@ public interface RolloutOrBuilder
    *
    * <pre>
    * User annotations. These attributes can only be set and used by the
-   * user, and not by Google Cloud Deploy. See
-   * https://google.aip.dev/128#annotations for more details such as format and
-   * size limitations.
+   * user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations
+   * for more details such as format and size limitations.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 4;</code>
@@ -138,9 +134,8 @@ public interface RolloutOrBuilder
    *
    * <pre>
    * User annotations. These attributes can only be set and used by the
-   * user, and not by Google Cloud Deploy. See
-   * https://google.aip.dev/128#annotations for more details such as format and
-   * size limitations.
+   * user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations
+   * for more details such as format and size limitations.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 4;</code>
@@ -151,9 +146,8 @@ public interface RolloutOrBuilder
    *
    * <pre>
    * User annotations. These attributes can only be set and used by the
-   * user, and not by Google Cloud Deploy. See
-   * https://google.aip.dev/128#annotations for more details such as format and
-   * size limitations.
+   * user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations
+   * for more details such as format and size limitations.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 4;</code>
@@ -168,9 +162,8 @@ public interface RolloutOrBuilder
    *
    * <pre>
    * User annotations. These attributes can only be set and used by the
-   * user, and not by Google Cloud Deploy. See
-   * https://google.aip.dev/128#annotations for more details such as format and
-   * size limitations.
+   * user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations
+   * for more details such as format and size limitations.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 4;</code>
@@ -182,14 +175,15 @@ public interface RolloutOrBuilder
    *
    * <pre>
    * Labels are attributes that can be set and used by both the
-   * user and by Google Cloud Deploy. Labels must meet the following
-   * constraints:
+   * user and by Cloud Deploy. Labels must meet the following constraints:
+   *
    * * Keys and values can contain only lowercase letters, numeric characters,
    * underscores, and dashes.
    * * All characters must use UTF-8 encoding, and international characters are
    * allowed.
    * * Keys must start with a lowercase letter or international character.
    * * Each resource is limited to a maximum of 64 labels.
+   *
    * Both keys and values are additionally constrained to be &lt;= 128 bytes.
    * </pre>
    *
@@ -201,14 +195,15 @@ public interface RolloutOrBuilder
    *
    * <pre>
    * Labels are attributes that can be set and used by both the
-   * user and by Google Cloud Deploy. Labels must meet the following
-   * constraints:
+   * user and by Cloud Deploy. Labels must meet the following constraints:
+   *
    * * Keys and values can contain only lowercase letters, numeric characters,
    * underscores, and dashes.
    * * All characters must use UTF-8 encoding, and international characters are
    * allowed.
    * * Keys must start with a lowercase letter or international character.
    * * Each resource is limited to a maximum of 64 labels.
+   *
    * Both keys and values are additionally constrained to be &lt;= 128 bytes.
    * </pre>
    *
@@ -223,14 +218,15 @@ public interface RolloutOrBuilder
    *
    * <pre>
    * Labels are attributes that can be set and used by both the
-   * user and by Google Cloud Deploy. Labels must meet the following
-   * constraints:
+   * user and by Cloud Deploy. Labels must meet the following constraints:
+   *
    * * Keys and values can contain only lowercase letters, numeric characters,
    * underscores, and dashes.
    * * All characters must use UTF-8 encoding, and international characters are
    * allowed.
    * * Keys must start with a lowercase letter or international character.
    * * Each resource is limited to a maximum of 64 labels.
+   *
    * Both keys and values are additionally constrained to be &lt;= 128 bytes.
    * </pre>
    *
@@ -242,14 +238,15 @@ public interface RolloutOrBuilder
    *
    * <pre>
    * Labels are attributes that can be set and used by both the
-   * user and by Google Cloud Deploy. Labels must meet the following
-   * constraints:
+   * user and by Cloud Deploy. Labels must meet the following constraints:
+   *
    * * Keys and values can contain only lowercase letters, numeric characters,
    * underscores, and dashes.
    * * All characters must use UTF-8 encoding, and international characters are
    * allowed.
    * * Keys must start with a lowercase letter or international character.
    * * Each resource is limited to a maximum of 64 labels.
+   *
    * Both keys and values are additionally constrained to be &lt;= 128 bytes.
    * </pre>
    *
@@ -265,14 +262,15 @@ public interface RolloutOrBuilder
    *
    * <pre>
    * Labels are attributes that can be set and used by both the
-   * user and by Google Cloud Deploy. Labels must meet the following
-   * constraints:
+   * user and by Cloud Deploy. Labels must meet the following constraints:
+   *
    * * Keys and values can contain only lowercase letters, numeric characters,
    * underscores, and dashes.
    * * All characters must use UTF-8 encoding, and international characters are
    * allowed.
    * * Keys must start with a lowercase letter or international character.
    * * Each resource is limited to a maximum of 64 labels.
+   *
    * Both keys and values are additionally constrained to be &lt;= 128 bytes.
    * </pre>
    *
@@ -785,9 +783,8 @@ public interface RolloutOrBuilder
    *
    *
    * <pre>
-   * Output only. Name of the `ControllerRollout`. Format is projects/{project}/
-   * locations/{location}/deliveryPipelines/{deliveryPipeline}/
-   * releases/{release}/rollouts/[a-z][a-z0-9&#92;-]{0,62}.
+   * Output only. Name of the `ControllerRollout`. Format is
+   * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/[a-z][a-z0-9&#92;-]{0,62}`.
    * </pre>
    *
    * <code>string controller_rollout = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -799,9 +796,8 @@ public interface RolloutOrBuilder
    *
    *
    * <pre>
-   * Output only. Name of the `ControllerRollout`. Format is projects/{project}/
-   * locations/{location}/deliveryPipelines/{deliveryPipeline}/
-   * releases/{release}/rollouts/[a-z][a-z0-9&#92;-]{0,62}.
+   * Output only. Name of the `ControllerRollout`. Format is
+   * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/[a-z][a-z0-9&#92;-]{0,62}`.
    * </pre>
    *
    * <code>string controller_rollout = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -809,4 +805,90 @@ public interface RolloutOrBuilder
    * @return The bytes for controllerRollout.
    */
   com.google.protobuf.ByteString getControllerRolloutBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Name of the `Rollout` that is rolled back by this `Rollout`.
+   * Empty if this `Rollout` wasn't created as a rollback.
+   * </pre>
+   *
+   * <code>string rollback_of_rollout = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The rollbackOfRollout.
+   */
+  java.lang.String getRollbackOfRollout();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Name of the `Rollout` that is rolled back by this `Rollout`.
+   * Empty if this `Rollout` wasn't created as a rollback.
+   * </pre>
+   *
+   * <code>string rollback_of_rollout = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for rollbackOfRollout.
+   */
+  com.google.protobuf.ByteString getRollbackOfRolloutBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Names of `Rollouts` that rolled back this `Rollout`.
+   * </pre>
+   *
+   * <code>
+   * repeated string rolled_back_by_rollouts = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return A list containing the rolledBackByRollouts.
+   */
+  java.util.List<java.lang.String> getRolledBackByRolloutsList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Names of `Rollouts` that rolled back this `Rollout`.
+   * </pre>
+   *
+   * <code>
+   * repeated string rolled_back_by_rollouts = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The count of rolledBackByRollouts.
+   */
+  int getRolledBackByRolloutsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Names of `Rollouts` that rolled back this `Rollout`.
+   * </pre>
+   *
+   * <code>
+   * repeated string rolled_back_by_rollouts = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The rolledBackByRollouts at the given index.
+   */
+  java.lang.String getRolledBackByRollouts(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Names of `Rollouts` that rolled back this `Rollout`.
+   * </pre>
+   *
+   * <code>
+   * repeated string rolled_back_by_rollouts = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the rolledBackByRollouts at the given index.
+   */
+  com.google.protobuf.ByteString getRolledBackByRolloutsBytes(int index);
 }

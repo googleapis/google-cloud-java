@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,11 +51,6 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
     return new Queue();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.tasks.v2beta3.QueueProto
         .internal_static_google_cloud_tasks_v2beta3_Queue_descriptor;
@@ -96,6 +91,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The queue is running. Tasks can be dispatched.
+     *
      * If the queue was created using Cloud Tasks and the queue has
      * had no activity (method calls or task dispatches) for 30 days,
      * the queue may take a few minutes to re-activate. Some method
@@ -124,14 +120,17 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The queue is disabled.
+     *
      * A queue becomes `DISABLED` when
      * [queue.yaml](https://cloud.google.com/appengine/docs/python/config/queueref)
      * or
      * [queue.xml](https://cloud.google.com/appengine/docs/standard/java/config/queueref)
      * is uploaded which does not contain the queue. You cannot directly disable
      * a queue.
+     *
      * When a queue is disabled, tasks can still be added to a queue
      * but the tasks are not dispatched.
+     *
      * To permanently delete this queue and all of its tasks, call
      * [DeleteQueue][google.cloud.tasks.v2beta3.CloudTasks.DeleteQueue].
      * </pre>
@@ -157,6 +156,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The queue is running. Tasks can be dispatched.
+     *
      * If the queue was created using Cloud Tasks and the queue has
      * had no activity (method calls or task dispatches) for 30 days,
      * the queue may take a few minutes to re-activate. Some method
@@ -185,14 +185,17 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The queue is disabled.
+     *
      * A queue becomes `DISABLED` when
      * [queue.yaml](https://cloud.google.com/appengine/docs/python/config/queueref)
      * or
      * [queue.xml](https://cloud.google.com/appengine/docs/standard/java/config/queueref)
      * is uploaded which does not contain the queue. You cannot directly disable
      * a queue.
+     *
      * When a queue is disabled, tasks can still be added to a queue
      * but the tasks are not dispatched.
+     *
      * To permanently delete this queue and all of its tasks, call
      * [DeleteQueue][google.cloud.tasks.v2beta3.CloudTasks.DeleteQueue].
      * </pre>
@@ -444,6 +447,8 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int queueTypeCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object queueType_;
 
   public enum QueueTypeCase
@@ -498,9 +503,12 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
    * Caller-specified and required in
    * [CreateQueue][google.cloud.tasks.v2beta3.CloudTasks.CreateQueue], after
    * which it becomes output only.
+   *
    * The queue name.
+   *
    * The queue name must have the following format:
    * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID`
+   *
    * * `PROJECT_ID` can contain letters ([A-Za-z]), numbers ([0-9]),
    *    hyphens (-), colons (:), or periods (.).
    *    For more information, see
@@ -537,9 +545,12 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
    * Caller-specified and required in
    * [CreateQueue][google.cloud.tasks.v2beta3.CloudTasks.CreateQueue], after
    * which it becomes output only.
+   *
    * The queue name.
+   *
    * The queue name must have the following format:
    * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID`
+   *
    * * `PROJECT_ID` can contain letters ([A-Za-z]), numbers ([0-9]),
    *    hyphens (-), colons (:), or periods (.).
    *    For more information, see
@@ -634,6 +645,56 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.tasks.v2beta3.AppEngineHttpQueue.getDefaultInstance();
   }
 
+  public static final int HTTP_TARGET_FIELD_NUMBER = 13;
+  private com.google.cloud.tasks.v2beta3.HttpTarget httpTarget_;
+  /**
+   *
+   *
+   * <pre>
+   * Modifies HTTP target for HTTP tasks.
+   * </pre>
+   *
+   * <code>.google.cloud.tasks.v2beta3.HttpTarget http_target = 13;</code>
+   *
+   * @return Whether the httpTarget field is set.
+   */
+  @java.lang.Override
+  public boolean hasHttpTarget() {
+    return httpTarget_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Modifies HTTP target for HTTP tasks.
+   * </pre>
+   *
+   * <code>.google.cloud.tasks.v2beta3.HttpTarget http_target = 13;</code>
+   *
+   * @return The httpTarget.
+   */
+  @java.lang.Override
+  public com.google.cloud.tasks.v2beta3.HttpTarget getHttpTarget() {
+    return httpTarget_ == null
+        ? com.google.cloud.tasks.v2beta3.HttpTarget.getDefaultInstance()
+        : httpTarget_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Modifies HTTP target for HTTP tasks.
+   * </pre>
+   *
+   * <code>.google.cloud.tasks.v2beta3.HttpTarget http_target = 13;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.tasks.v2beta3.HttpTargetOrBuilder getHttpTargetOrBuilder() {
+    return httpTarget_ == null
+        ? com.google.cloud.tasks.v2beta3.HttpTarget.getDefaultInstance()
+        : httpTarget_;
+  }
+
   public static final int RATE_LIMITS_FIELD_NUMBER = 4;
   private com.google.cloud.tasks.v2beta3.RateLimits rateLimits_;
   /**
@@ -641,10 +702,12 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Rate limits for task dispatches.
+   *
    * [rate_limits][google.cloud.tasks.v2beta3.Queue.rate_limits] and
    * [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] are related
    * because they both control task attempts. However they control task attempts
    * in different ways:
+   *
    * * [rate_limits][google.cloud.tasks.v2beta3.Queue.rate_limits] controls the
    * total rate of
    *   dispatches from a queue (i.e. all traffic dispatched from the
@@ -655,7 +718,9 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
    *   particular a task after its first attempt fails. That is,
    *   [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] controls
    *   task retries (the second attempt, third attempt, etc).
+   *
    * The queue's actual dispatch rate is the result of:
+   *
    * * Number of tasks in the queue
    * * User-specified throttling:
    * [rate_limits][google.cloud.tasks.v2beta3.Queue.rate_limits],
@@ -679,10 +744,12 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Rate limits for task dispatches.
+   *
    * [rate_limits][google.cloud.tasks.v2beta3.Queue.rate_limits] and
    * [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] are related
    * because they both control task attempts. However they control task attempts
    * in different ways:
+   *
    * * [rate_limits][google.cloud.tasks.v2beta3.Queue.rate_limits] controls the
    * total rate of
    *   dispatches from a queue (i.e. all traffic dispatched from the
@@ -693,7 +760,9 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
    *   particular a task after its first attempt fails. That is,
    *   [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] controls
    *   task retries (the second attempt, third attempt, etc).
+   *
    * The queue's actual dispatch rate is the result of:
+   *
    * * Number of tasks in the queue
    * * User-specified throttling:
    * [rate_limits][google.cloud.tasks.v2beta3.Queue.rate_limits],
@@ -719,10 +788,12 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Rate limits for task dispatches.
+   *
    * [rate_limits][google.cloud.tasks.v2beta3.Queue.rate_limits] and
    * [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] are related
    * because they both control task attempts. However they control task attempts
    * in different ways:
+   *
    * * [rate_limits][google.cloud.tasks.v2beta3.Queue.rate_limits] controls the
    * total rate of
    *   dispatches from a queue (i.e. all traffic dispatched from the
@@ -733,7 +804,9 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
    *   particular a task after its first attempt fails. That is,
    *   [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] controls
    *   task retries (the second attempt, third attempt, etc).
+   *
    * The queue's actual dispatch rate is the result of:
+   *
    * * Number of tasks in the queue
    * * User-specified throttling:
    * [rate_limits][google.cloud.tasks.v2beta3.Queue.rate_limits],
@@ -760,6 +833,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Settings that determine the retry behavior.
+   *
    * * For tasks created using Cloud Tasks: the queue-level retry settings
    *   apply to all tasks in the queue that were created using Cloud Tasks.
    *   Retry settings cannot be set on individual tasks.
@@ -783,6 +857,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Settings that determine the retry behavior.
+   *
    * * For tasks created using Cloud Tasks: the queue-level retry settings
    *   apply to all tasks in the queue that were created using Cloud Tasks.
    *   Retry settings cannot be set on individual tasks.
@@ -808,6 +883,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Settings that determine the retry behavior.
+   *
    * * For tasks created using Cloud Tasks: the queue-level retry settings
    *   apply to all tasks in the queue that were created using Cloud Tasks.
    *   Retry settings cannot be set on individual tasks.
@@ -834,7 +910,8 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The state of the queue.
-   * `state` can only be changed by calling
+   *
+   * `state` can only be changed by called
    * [PauseQueue][google.cloud.tasks.v2beta3.CloudTasks.PauseQueue],
    * [ResumeQueue][google.cloud.tasks.v2beta3.CloudTasks.ResumeQueue], or
    * uploading
@@ -856,7 +933,8 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The state of the queue.
-   * `state` can only be changed by calling
+   *
+   * `state` can only be changed by called
    * [PauseQueue][google.cloud.tasks.v2beta3.CloudTasks.PauseQueue],
    * [ResumeQueue][google.cloud.tasks.v2beta3.CloudTasks.ResumeQueue], or
    * uploading
@@ -883,12 +961,15 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The last time this queue was purged.
+   *
    * All tasks that were [created][google.cloud.tasks.v2beta3.Task.create_time]
    * before this time were purged.
+   *
    * A queue can be purged using
    * [PurgeQueue][google.cloud.tasks.v2beta3.CloudTasks.PurgeQueue], the [App
    * Engine Task Queue SDK, or the Cloud
    * Console](https://cloud.google.com/appengine/docs/standard/python/taskqueue/push/deleting-tasks-and-queues#purging_all_tasks_from_a_queue).
+   *
    * Purge time will be truncated to the nearest microsecond. Purge
    * time will be unset if the queue has never been purged.
    * </pre>
@@ -906,12 +987,15 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The last time this queue was purged.
+   *
    * All tasks that were [created][google.cloud.tasks.v2beta3.Task.create_time]
    * before this time were purged.
+   *
    * A queue can be purged using
    * [PurgeQueue][google.cloud.tasks.v2beta3.CloudTasks.PurgeQueue], the [App
    * Engine Task Queue SDK, or the Cloud
    * Console](https://cloud.google.com/appengine/docs/standard/python/taskqueue/push/deleting-tasks-and-queues#purging_all_tasks_from_a_queue).
+   *
    * Purge time will be truncated to the nearest microsecond. Purge
    * time will be unset if the queue has never been purged.
    * </pre>
@@ -929,12 +1013,15 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The last time this queue was purged.
+   *
    * All tasks that were [created][google.cloud.tasks.v2beta3.Task.create_time]
    * before this time were purged.
+   *
    * A queue can be purged using
    * [PurgeQueue][google.cloud.tasks.v2beta3.CloudTasks.PurgeQueue], the [App
    * Engine Task Queue SDK, or the Cloud
    * Console](https://cloud.google.com/appengine/docs/standard/python/taskqueue/push/deleting-tasks-and-queues#purging_all_tasks_from_a_queue).
+   *
    * Purge time will be truncated to the nearest microsecond. Purge
    * time will be unset if the queue has never been purged.
    * </pre>
@@ -954,9 +1041,11 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The maximum amount of time that a task will be retained in
    * this queue.
+   *
    * Queues created by Cloud Tasks have a default `task_ttl` of 31 days.
    * After a task has lived for `task_ttl`, the task will be deleted
    * regardless of whether it was dispatched or not.
+   *
    * The `task_ttl` for queues created via queue.yaml/xml is equal to the
    * maximum duration because there is a
    * [storage quota](https://cloud.google.com/appengine/quotas#Task_Queue) for
@@ -978,9 +1067,11 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The maximum amount of time that a task will be retained in
    * this queue.
+   *
    * Queues created by Cloud Tasks have a default `task_ttl` of 31 days.
    * After a task has lived for `task_ttl`, the task will be deleted
    * regardless of whether it was dispatched or not.
+   *
    * The `task_ttl` for queues created via queue.yaml/xml is equal to the
    * maximum duration because there is a
    * [storage quota](https://cloud.google.com/appengine/quotas#Task_Queue) for
@@ -1002,9 +1093,11 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The maximum amount of time that a task will be retained in
    * this queue.
+   *
    * Queues created by Cloud Tasks have a default `task_ttl` of 31 days.
    * After a task has lived for `task_ttl`, the task will be deleted
    * regardless of whether it was dispatched or not.
+   *
    * The `task_ttl` for queues created via queue.yaml/xml is equal to the
    * maximum duration because there is a
    * [storage quota](https://cloud.google.com/appengine/quotas#Task_Queue) for
@@ -1026,12 +1119,14 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The task tombstone time to live (TTL).
+   *
    * After a task is deleted or executed, the task's tombstone is
    * retained for the length of time specified by `tombstone_ttl`.
    * The tombstone is used by task de-duplication; another task with the same
    * name can't be created until the tombstone has expired. For more information
    * about task de-duplication, see the documentation for
    * [CreateTaskRequest][google.cloud.tasks.v2beta3.CreateTaskRequest.task].
+   *
    * Queues created by Cloud Tasks have a default `tombstone_ttl` of 1 hour.
    * </pre>
    *
@@ -1048,12 +1143,14 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The task tombstone time to live (TTL).
+   *
    * After a task is deleted or executed, the task's tombstone is
    * retained for the length of time specified by `tombstone_ttl`.
    * The tombstone is used by task de-duplication; another task with the same
    * name can't be created until the tombstone has expired. For more information
    * about task de-duplication, see the documentation for
    * [CreateTaskRequest][google.cloud.tasks.v2beta3.CreateTaskRequest.task].
+   *
    * Queues created by Cloud Tasks have a default `tombstone_ttl` of 1 hour.
    * </pre>
    *
@@ -1072,12 +1169,14 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The task tombstone time to live (TTL).
+   *
    * After a task is deleted or executed, the task's tombstone is
    * retained for the length of time specified by `tombstone_ttl`.
    * The tombstone is used by task de-duplication; another task with the same
    * name can't be created until the tombstone has expired. For more information
    * about task de-duplication, see the documentation for
    * [CreateTaskRequest][google.cloud.tasks.v2beta3.CreateTaskRequest.task].
+   *
    * Queues created by Cloud Tasks have a default `tombstone_ttl` of 1 hour.
    * </pre>
    *
@@ -1157,6 +1256,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Immutable. The type of a queue (push or pull).
+   *
    * `Queue.type` is an immutable property of the queue that is set at the queue
    * creation time. When left unspecified, the default value of `PUSH` is
    * selected.
@@ -1177,6 +1277,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Immutable. The type of a queue (push or pull).
+   *
    * `Queue.type` is an immutable property of the queue that is set at the queue
    * creation time. When left unspecified, the default value of `PUSH` is
    * selected.
@@ -1300,6 +1401,9 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
     if (stats_ != null) {
       output.writeMessage(12, getStats());
     }
+    if (httpTarget_ != null) {
+      output.writeMessage(13, getHttpTarget());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1346,6 +1450,9 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
     if (stats_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, getStats());
     }
+    if (httpTarget_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, getHttpTarget());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1362,6 +1469,10 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.tasks.v2beta3.Queue other = (com.google.cloud.tasks.v2beta3.Queue) obj;
 
     if (!getName().equals(other.getName())) return false;
+    if (hasHttpTarget() != other.hasHttpTarget()) return false;
+    if (hasHttpTarget()) {
+      if (!getHttpTarget().equals(other.getHttpTarget())) return false;
+    }
     if (hasRateLimits() != other.hasRateLimits()) return false;
     if (hasRateLimits()) {
       if (!getRateLimits().equals(other.getRateLimits())) return false;
@@ -1413,6 +1524,10 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    if (hasHttpTarget()) {
+      hash = (37 * hash) + HTTP_TARGET_FIELD_NUMBER;
+      hash = (53 * hash) + getHttpTarget().hashCode();
+    }
     if (hasRateLimits()) {
       hash = (37 * hash) + RATE_LIMITS_FIELD_NUMBER;
       hash = (53 * hash) + getRateLimits().hashCode();
@@ -1597,6 +1712,11 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
       if (appEngineHttpQueueBuilder_ != null) {
         appEngineHttpQueueBuilder_.clear();
       }
+      httpTarget_ = null;
+      if (httpTargetBuilder_ != null) {
+        httpTargetBuilder_.dispose();
+        httpTargetBuilder_ = null;
+      }
       rateLimits_ = null;
       if (rateLimitsBuilder_ != null) {
         rateLimitsBuilder_.dispose();
@@ -1676,35 +1796,38 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
         result.name_ = name_;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.rateLimits_ = rateLimitsBuilder_ == null ? rateLimits_ : rateLimitsBuilder_.build();
+        result.httpTarget_ = httpTargetBuilder_ == null ? httpTarget_ : httpTargetBuilder_.build();
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.rateLimits_ = rateLimitsBuilder_ == null ? rateLimits_ : rateLimitsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.retryConfig_ =
             retryConfigBuilder_ == null ? retryConfig_ : retryConfigBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.state_ = state_;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.purgeTime_ = purgeTimeBuilder_ == null ? purgeTime_ : purgeTimeBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.taskTtl_ = taskTtlBuilder_ == null ? taskTtl_ : taskTtlBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.tombstoneTtl_ =
             tombstoneTtlBuilder_ == null ? tombstoneTtl_ : tombstoneTtlBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.stackdriverLoggingConfig_ =
             stackdriverLoggingConfigBuilder_ == null
                 ? stackdriverLoggingConfig_
                 : stackdriverLoggingConfigBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.type_ = type_;
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.stats_ = statsBuilder_ == null ? stats_ : statsBuilder_.build();
       }
     }
@@ -1766,6 +1889,9 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
         name_ = other.name_;
         bitField0_ |= 0x00000001;
         onChanged();
+      }
+      if (other.hasHttpTarget()) {
+        mergeHttpTarget(other.getHttpTarget());
       }
       if (other.hasRateLimits()) {
         mergeRateLimits(other.getRateLimits());
@@ -1847,58 +1973,64 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
             case 34:
               {
                 input.readMessage(getRateLimitsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(getRetryConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 48:
               {
                 state_ = input.readEnum();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 48
             case 58:
               {
                 input.readMessage(getPurgeTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             case 66:
               {
                 input.readMessage(getTaskTtlFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 66
             case 74:
               {
                 input.readMessage(getTombstoneTtlFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 74
             case 82:
               {
                 input.readMessage(
                     getStackdriverLoggingConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 82
             case 88:
               {
                 type_ = input.readEnum();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 88
             case 98:
               {
                 input.readMessage(getStatsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 98
+            case 106:
+              {
+                input.readMessage(getHttpTargetFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 106
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1940,9 +2072,12 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * Caller-specified and required in
      * [CreateQueue][google.cloud.tasks.v2beta3.CloudTasks.CreateQueue], after
      * which it becomes output only.
+     *
      * The queue name.
+     *
      * The queue name must have the following format:
      * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID`
+     *
      * * `PROJECT_ID` can contain letters ([A-Za-z]), numbers ([0-9]),
      *    hyphens (-), colons (:), or periods (.).
      *    For more information, see
@@ -1978,9 +2113,12 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * Caller-specified and required in
      * [CreateQueue][google.cloud.tasks.v2beta3.CloudTasks.CreateQueue], after
      * which it becomes output only.
+     *
      * The queue name.
+     *
      * The queue name must have the following format:
      * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID`
+     *
      * * `PROJECT_ID` can contain letters ([A-Za-z]), numbers ([0-9]),
      *    hyphens (-), colons (:), or periods (.).
      *    For more information, see
@@ -2016,9 +2154,12 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * Caller-specified and required in
      * [CreateQueue][google.cloud.tasks.v2beta3.CloudTasks.CreateQueue], after
      * which it becomes output only.
+     *
      * The queue name.
+     *
      * The queue name must have the following format:
      * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID`
+     *
      * * `PROJECT_ID` can contain letters ([A-Za-z]), numbers ([0-9]),
      *    hyphens (-), colons (:), or periods (.).
      *    For more information, see
@@ -2053,9 +2194,12 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * Caller-specified and required in
      * [CreateQueue][google.cloud.tasks.v2beta3.CloudTasks.CreateQueue], after
      * which it becomes output only.
+     *
      * The queue name.
+     *
      * The queue name must have the following format:
      * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID`
+     *
      * * `PROJECT_ID` can contain letters ([A-Za-z]), numbers ([0-9]),
      *    hyphens (-), colons (:), or periods (.).
      *    For more information, see
@@ -2086,9 +2230,12 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * Caller-specified and required in
      * [CreateQueue][google.cloud.tasks.v2beta3.CloudTasks.CreateQueue], after
      * which it becomes output only.
+     *
      * The queue name.
+     *
      * The queue name must have the following format:
      * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID`
+     *
      * * `PROJECT_ID` can contain letters ([A-Za-z]), numbers ([0-9]),
      *    hyphens (-), colons (:), or periods (.).
      *    For more information, see
@@ -2367,6 +2514,190 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
       return appEngineHttpQueueBuilder_;
     }
 
+    private com.google.cloud.tasks.v2beta3.HttpTarget httpTarget_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.tasks.v2beta3.HttpTarget,
+            com.google.cloud.tasks.v2beta3.HttpTarget.Builder,
+            com.google.cloud.tasks.v2beta3.HttpTargetOrBuilder>
+        httpTargetBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Modifies HTTP target for HTTP tasks.
+     * </pre>
+     *
+     * <code>.google.cloud.tasks.v2beta3.HttpTarget http_target = 13;</code>
+     *
+     * @return Whether the httpTarget field is set.
+     */
+    public boolean hasHttpTarget() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Modifies HTTP target for HTTP tasks.
+     * </pre>
+     *
+     * <code>.google.cloud.tasks.v2beta3.HttpTarget http_target = 13;</code>
+     *
+     * @return The httpTarget.
+     */
+    public com.google.cloud.tasks.v2beta3.HttpTarget getHttpTarget() {
+      if (httpTargetBuilder_ == null) {
+        return httpTarget_ == null
+            ? com.google.cloud.tasks.v2beta3.HttpTarget.getDefaultInstance()
+            : httpTarget_;
+      } else {
+        return httpTargetBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Modifies HTTP target for HTTP tasks.
+     * </pre>
+     *
+     * <code>.google.cloud.tasks.v2beta3.HttpTarget http_target = 13;</code>
+     */
+    public Builder setHttpTarget(com.google.cloud.tasks.v2beta3.HttpTarget value) {
+      if (httpTargetBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        httpTarget_ = value;
+      } else {
+        httpTargetBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Modifies HTTP target for HTTP tasks.
+     * </pre>
+     *
+     * <code>.google.cloud.tasks.v2beta3.HttpTarget http_target = 13;</code>
+     */
+    public Builder setHttpTarget(
+        com.google.cloud.tasks.v2beta3.HttpTarget.Builder builderForValue) {
+      if (httpTargetBuilder_ == null) {
+        httpTarget_ = builderForValue.build();
+      } else {
+        httpTargetBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Modifies HTTP target for HTTP tasks.
+     * </pre>
+     *
+     * <code>.google.cloud.tasks.v2beta3.HttpTarget http_target = 13;</code>
+     */
+    public Builder mergeHttpTarget(com.google.cloud.tasks.v2beta3.HttpTarget value) {
+      if (httpTargetBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && httpTarget_ != null
+            && httpTarget_ != com.google.cloud.tasks.v2beta3.HttpTarget.getDefaultInstance()) {
+          getHttpTargetBuilder().mergeFrom(value);
+        } else {
+          httpTarget_ = value;
+        }
+      } else {
+        httpTargetBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Modifies HTTP target for HTTP tasks.
+     * </pre>
+     *
+     * <code>.google.cloud.tasks.v2beta3.HttpTarget http_target = 13;</code>
+     */
+    public Builder clearHttpTarget() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      httpTarget_ = null;
+      if (httpTargetBuilder_ != null) {
+        httpTargetBuilder_.dispose();
+        httpTargetBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Modifies HTTP target for HTTP tasks.
+     * </pre>
+     *
+     * <code>.google.cloud.tasks.v2beta3.HttpTarget http_target = 13;</code>
+     */
+    public com.google.cloud.tasks.v2beta3.HttpTarget.Builder getHttpTargetBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return getHttpTargetFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Modifies HTTP target for HTTP tasks.
+     * </pre>
+     *
+     * <code>.google.cloud.tasks.v2beta3.HttpTarget http_target = 13;</code>
+     */
+    public com.google.cloud.tasks.v2beta3.HttpTargetOrBuilder getHttpTargetOrBuilder() {
+      if (httpTargetBuilder_ != null) {
+        return httpTargetBuilder_.getMessageOrBuilder();
+      } else {
+        return httpTarget_ == null
+            ? com.google.cloud.tasks.v2beta3.HttpTarget.getDefaultInstance()
+            : httpTarget_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Modifies HTTP target for HTTP tasks.
+     * </pre>
+     *
+     * <code>.google.cloud.tasks.v2beta3.HttpTarget http_target = 13;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.tasks.v2beta3.HttpTarget,
+            com.google.cloud.tasks.v2beta3.HttpTarget.Builder,
+            com.google.cloud.tasks.v2beta3.HttpTargetOrBuilder>
+        getHttpTargetFieldBuilder() {
+      if (httpTargetBuilder_ == null) {
+        httpTargetBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.tasks.v2beta3.HttpTarget,
+                com.google.cloud.tasks.v2beta3.HttpTarget.Builder,
+                com.google.cloud.tasks.v2beta3.HttpTargetOrBuilder>(
+                getHttpTarget(), getParentForChildren(), isClean());
+        httpTarget_ = null;
+      }
+      return httpTargetBuilder_;
+    }
+
     private com.google.cloud.tasks.v2beta3.RateLimits rateLimits_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.tasks.v2beta3.RateLimits,
@@ -2378,10 +2709,12 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Rate limits for task dispatches.
+     *
      * [rate_limits][google.cloud.tasks.v2beta3.Queue.rate_limits] and
      * [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] are related
      * because they both control task attempts. However they control task attempts
      * in different ways:
+     *
      * * [rate_limits][google.cloud.tasks.v2beta3.Queue.rate_limits] controls the
      * total rate of
      *   dispatches from a queue (i.e. all traffic dispatched from the
@@ -2392,7 +2725,9 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      *   particular a task after its first attempt fails. That is,
      *   [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] controls
      *   task retries (the second attempt, third attempt, etc).
+     *
      * The queue's actual dispatch rate is the result of:
+     *
      * * Number of tasks in the queue
      * * User-specified throttling:
      * [rate_limits][google.cloud.tasks.v2beta3.Queue.rate_limits],
@@ -2408,17 +2743,19 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the rateLimits field is set.
      */
     public boolean hasRateLimits() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
      *
      * <pre>
      * Rate limits for task dispatches.
+     *
      * [rate_limits][google.cloud.tasks.v2beta3.Queue.rate_limits] and
      * [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] are related
      * because they both control task attempts. However they control task attempts
      * in different ways:
+     *
      * * [rate_limits][google.cloud.tasks.v2beta3.Queue.rate_limits] controls the
      * total rate of
      *   dispatches from a queue (i.e. all traffic dispatched from the
@@ -2429,7 +2766,9 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      *   particular a task after its first attempt fails. That is,
      *   [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] controls
      *   task retries (the second attempt, third attempt, etc).
+     *
      * The queue's actual dispatch rate is the result of:
+     *
      * * Number of tasks in the queue
      * * User-specified throttling:
      * [rate_limits][google.cloud.tasks.v2beta3.Queue.rate_limits],
@@ -2458,10 +2797,12 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Rate limits for task dispatches.
+     *
      * [rate_limits][google.cloud.tasks.v2beta3.Queue.rate_limits] and
      * [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] are related
      * because they both control task attempts. However they control task attempts
      * in different ways:
+     *
      * * [rate_limits][google.cloud.tasks.v2beta3.Queue.rate_limits] controls the
      * total rate of
      *   dispatches from a queue (i.e. all traffic dispatched from the
@@ -2472,7 +2813,9 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      *   particular a task after its first attempt fails. That is,
      *   [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] controls
      *   task retries (the second attempt, third attempt, etc).
+     *
      * The queue's actual dispatch rate is the result of:
+     *
      * * Number of tasks in the queue
      * * User-specified throttling:
      * [rate_limits][google.cloud.tasks.v2beta3.Queue.rate_limits],
@@ -2494,7 +2837,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
       } else {
         rateLimitsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2503,10 +2846,12 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Rate limits for task dispatches.
+     *
      * [rate_limits][google.cloud.tasks.v2beta3.Queue.rate_limits] and
      * [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] are related
      * because they both control task attempts. However they control task attempts
      * in different ways:
+     *
      * * [rate_limits][google.cloud.tasks.v2beta3.Queue.rate_limits] controls the
      * total rate of
      *   dispatches from a queue (i.e. all traffic dispatched from the
@@ -2517,7 +2862,9 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      *   particular a task after its first attempt fails. That is,
      *   [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] controls
      *   task retries (the second attempt, third attempt, etc).
+     *
      * The queue's actual dispatch rate is the result of:
+     *
      * * Number of tasks in the queue
      * * User-specified throttling:
      * [rate_limits][google.cloud.tasks.v2beta3.Queue.rate_limits],
@@ -2537,7 +2884,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
       } else {
         rateLimitsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2546,10 +2893,12 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Rate limits for task dispatches.
+     *
      * [rate_limits][google.cloud.tasks.v2beta3.Queue.rate_limits] and
      * [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] are related
      * because they both control task attempts. However they control task attempts
      * in different ways:
+     *
      * * [rate_limits][google.cloud.tasks.v2beta3.Queue.rate_limits] controls the
      * total rate of
      *   dispatches from a queue (i.e. all traffic dispatched from the
@@ -2560,7 +2909,9 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      *   particular a task after its first attempt fails. That is,
      *   [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] controls
      *   task retries (the second attempt, third attempt, etc).
+     *
      * The queue's actual dispatch rate is the result of:
+     *
      * * Number of tasks in the queue
      * * User-specified throttling:
      * [rate_limits][google.cloud.tasks.v2beta3.Queue.rate_limits],
@@ -2575,7 +2926,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeRateLimits(com.google.cloud.tasks.v2beta3.RateLimits value) {
       if (rateLimitsBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)
+        if (((bitField0_ & 0x00000008) != 0)
             && rateLimits_ != null
             && rateLimits_ != com.google.cloud.tasks.v2beta3.RateLimits.getDefaultInstance()) {
           getRateLimitsBuilder().mergeFrom(value);
@@ -2585,7 +2936,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
       } else {
         rateLimitsBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2594,10 +2945,12 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Rate limits for task dispatches.
+     *
      * [rate_limits][google.cloud.tasks.v2beta3.Queue.rate_limits] and
      * [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] are related
      * because they both control task attempts. However they control task attempts
      * in different ways:
+     *
      * * [rate_limits][google.cloud.tasks.v2beta3.Queue.rate_limits] controls the
      * total rate of
      *   dispatches from a queue (i.e. all traffic dispatched from the
@@ -2608,7 +2961,9 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      *   particular a task after its first attempt fails. That is,
      *   [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] controls
      *   task retries (the second attempt, third attempt, etc).
+     *
      * The queue's actual dispatch rate is the result of:
+     *
      * * Number of tasks in the queue
      * * User-specified throttling:
      * [rate_limits][google.cloud.tasks.v2beta3.Queue.rate_limits],
@@ -2622,7 +2977,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.tasks.v2beta3.RateLimits rate_limits = 4;</code>
      */
     public Builder clearRateLimits() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       rateLimits_ = null;
       if (rateLimitsBuilder_ != null) {
         rateLimitsBuilder_.dispose();
@@ -2636,10 +2991,12 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Rate limits for task dispatches.
+     *
      * [rate_limits][google.cloud.tasks.v2beta3.Queue.rate_limits] and
      * [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] are related
      * because they both control task attempts. However they control task attempts
      * in different ways:
+     *
      * * [rate_limits][google.cloud.tasks.v2beta3.Queue.rate_limits] controls the
      * total rate of
      *   dispatches from a queue (i.e. all traffic dispatched from the
@@ -2650,7 +3007,9 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      *   particular a task after its first attempt fails. That is,
      *   [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] controls
      *   task retries (the second attempt, third attempt, etc).
+     *
      * The queue's actual dispatch rate is the result of:
+     *
      * * Number of tasks in the queue
      * * User-specified throttling:
      * [rate_limits][google.cloud.tasks.v2beta3.Queue.rate_limits],
@@ -2664,7 +3023,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.tasks.v2beta3.RateLimits rate_limits = 4;</code>
      */
     public com.google.cloud.tasks.v2beta3.RateLimits.Builder getRateLimitsBuilder() {
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return getRateLimitsFieldBuilder().getBuilder();
     }
@@ -2673,10 +3032,12 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Rate limits for task dispatches.
+     *
      * [rate_limits][google.cloud.tasks.v2beta3.Queue.rate_limits] and
      * [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] are related
      * because they both control task attempts. However they control task attempts
      * in different ways:
+     *
      * * [rate_limits][google.cloud.tasks.v2beta3.Queue.rate_limits] controls the
      * total rate of
      *   dispatches from a queue (i.e. all traffic dispatched from the
@@ -2687,7 +3048,9 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      *   particular a task after its first attempt fails. That is,
      *   [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] controls
      *   task retries (the second attempt, third attempt, etc).
+     *
      * The queue's actual dispatch rate is the result of:
+     *
      * * Number of tasks in the queue
      * * User-specified throttling:
      * [rate_limits][google.cloud.tasks.v2beta3.Queue.rate_limits],
@@ -2714,10 +3077,12 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Rate limits for task dispatches.
+     *
      * [rate_limits][google.cloud.tasks.v2beta3.Queue.rate_limits] and
      * [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] are related
      * because they both control task attempts. However they control task attempts
      * in different ways:
+     *
      * * [rate_limits][google.cloud.tasks.v2beta3.Queue.rate_limits] controls the
      * total rate of
      *   dispatches from a queue (i.e. all traffic dispatched from the
@@ -2728,7 +3093,9 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      *   particular a task after its first attempt fails. That is,
      *   [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] controls
      *   task retries (the second attempt, third attempt, etc).
+     *
      * The queue's actual dispatch rate is the result of:
+     *
      * * Number of tasks in the queue
      * * User-specified throttling:
      * [rate_limits][google.cloud.tasks.v2beta3.Queue.rate_limits],
@@ -2769,6 +3136,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Settings that determine the retry behavior.
+     *
      * * For tasks created using Cloud Tasks: the queue-level retry settings
      *   apply to all tasks in the queue that were created using Cloud Tasks.
      *   Retry settings cannot be set on individual tasks.
@@ -2784,13 +3152,14 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the retryConfig field is set.
      */
     public boolean hasRetryConfig() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
      *
      * <pre>
      * Settings that determine the retry behavior.
+     *
      * * For tasks created using Cloud Tasks: the queue-level retry settings
      *   apply to all tasks in the queue that were created using Cloud Tasks.
      *   Retry settings cannot be set on individual tasks.
@@ -2819,6 +3188,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Settings that determine the retry behavior.
+     *
      * * For tasks created using Cloud Tasks: the queue-level retry settings
      *   apply to all tasks in the queue that were created using Cloud Tasks.
      *   Retry settings cannot be set on individual tasks.
@@ -2840,7 +3210,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
       } else {
         retryConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2849,6 +3219,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Settings that determine the retry behavior.
+     *
      * * For tasks created using Cloud Tasks: the queue-level retry settings
      *   apply to all tasks in the queue that were created using Cloud Tasks.
      *   Retry settings cannot be set on individual tasks.
@@ -2868,7 +3239,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
       } else {
         retryConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2877,6 +3248,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Settings that determine the retry behavior.
+     *
      * * For tasks created using Cloud Tasks: the queue-level retry settings
      *   apply to all tasks in the queue that were created using Cloud Tasks.
      *   Retry settings cannot be set on individual tasks.
@@ -2891,7 +3263,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeRetryConfig(com.google.cloud.tasks.v2beta3.RetryConfig value) {
       if (retryConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)
+        if (((bitField0_ & 0x00000010) != 0)
             && retryConfig_ != null
             && retryConfig_ != com.google.cloud.tasks.v2beta3.RetryConfig.getDefaultInstance()) {
           getRetryConfigBuilder().mergeFrom(value);
@@ -2901,7 +3273,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
       } else {
         retryConfigBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2910,6 +3282,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Settings that determine the retry behavior.
+     *
      * * For tasks created using Cloud Tasks: the queue-level retry settings
      *   apply to all tasks in the queue that were created using Cloud Tasks.
      *   Retry settings cannot be set on individual tasks.
@@ -2923,7 +3296,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.tasks.v2beta3.RetryConfig retry_config = 5;</code>
      */
     public Builder clearRetryConfig() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       retryConfig_ = null;
       if (retryConfigBuilder_ != null) {
         retryConfigBuilder_.dispose();
@@ -2937,6 +3310,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Settings that determine the retry behavior.
+     *
      * * For tasks created using Cloud Tasks: the queue-level retry settings
      *   apply to all tasks in the queue that were created using Cloud Tasks.
      *   Retry settings cannot be set on individual tasks.
@@ -2950,7 +3324,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.tasks.v2beta3.RetryConfig retry_config = 5;</code>
      */
     public com.google.cloud.tasks.v2beta3.RetryConfig.Builder getRetryConfigBuilder() {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return getRetryConfigFieldBuilder().getBuilder();
     }
@@ -2959,6 +3333,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Settings that determine the retry behavior.
+     *
      * * For tasks created using Cloud Tasks: the queue-level retry settings
      *   apply to all tasks in the queue that were created using Cloud Tasks.
      *   Retry settings cannot be set on individual tasks.
@@ -2985,6 +3360,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Settings that determine the retry behavior.
+     *
      * * For tasks created using Cloud Tasks: the queue-level retry settings
      *   apply to all tasks in the queue that were created using Cloud Tasks.
      *   Retry settings cannot be set on individual tasks.
@@ -3020,7 +3396,8 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The state of the queue.
-     * `state` can only be changed by calling
+     *
+     * `state` can only be changed by called
      * [PauseQueue][google.cloud.tasks.v2beta3.CloudTasks.PauseQueue],
      * [ResumeQueue][google.cloud.tasks.v2beta3.CloudTasks.ResumeQueue], or
      * uploading
@@ -3042,7 +3419,8 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The state of the queue.
-     * `state` can only be changed by calling
+     *
+     * `state` can only be changed by called
      * [PauseQueue][google.cloud.tasks.v2beta3.CloudTasks.PauseQueue],
      * [ResumeQueue][google.cloud.tasks.v2beta3.CloudTasks.ResumeQueue], or
      * uploading
@@ -3058,7 +3436,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setStateValue(int value) {
       state_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3067,7 +3445,8 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The state of the queue.
-     * `state` can only be changed by calling
+     *
+     * `state` can only be changed by called
      * [PauseQueue][google.cloud.tasks.v2beta3.CloudTasks.PauseQueue],
      * [ResumeQueue][google.cloud.tasks.v2beta3.CloudTasks.ResumeQueue], or
      * uploading
@@ -3091,7 +3470,8 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The state of the queue.
-     * `state` can only be changed by calling
+     *
+     * `state` can only be changed by called
      * [PauseQueue][google.cloud.tasks.v2beta3.CloudTasks.PauseQueue],
      * [ResumeQueue][google.cloud.tasks.v2beta3.CloudTasks.ResumeQueue], or
      * uploading
@@ -3109,7 +3489,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -3119,7 +3499,8 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The state of the queue.
-     * `state` can only be changed by calling
+     *
+     * `state` can only be changed by called
      * [PauseQueue][google.cloud.tasks.v2beta3.CloudTasks.PauseQueue],
      * [ResumeQueue][google.cloud.tasks.v2beta3.CloudTasks.ResumeQueue], or
      * uploading
@@ -3133,7 +3514,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearState() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       state_ = 0;
       onChanged();
       return this;
@@ -3150,12 +3531,15 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The last time this queue was purged.
+     *
      * All tasks that were [created][google.cloud.tasks.v2beta3.Task.create_time]
      * before this time were purged.
+     *
      * A queue can be purged using
      * [PurgeQueue][google.cloud.tasks.v2beta3.CloudTasks.PurgeQueue], the [App
      * Engine Task Queue SDK, or the Cloud
      * Console](https://cloud.google.com/appengine/docs/standard/python/taskqueue/push/deleting-tasks-and-queues#purging_all_tasks_from_a_queue).
+     *
      * Purge time will be truncated to the nearest microsecond. Purge
      * time will be unset if the queue has never been purged.
      * </pre>
@@ -3165,19 +3549,22 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the purgeTime field is set.
      */
     public boolean hasPurgeTime() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
      *
      * <pre>
      * Output only. The last time this queue was purged.
+     *
      * All tasks that were [created][google.cloud.tasks.v2beta3.Task.create_time]
      * before this time were purged.
+     *
      * A queue can be purged using
      * [PurgeQueue][google.cloud.tasks.v2beta3.CloudTasks.PurgeQueue], the [App
      * Engine Task Queue SDK, or the Cloud
      * Console](https://cloud.google.com/appengine/docs/standard/python/taskqueue/push/deleting-tasks-and-queues#purging_all_tasks_from_a_queue).
+     *
      * Purge time will be truncated to the nearest microsecond. Purge
      * time will be unset if the queue has never been purged.
      * </pre>
@@ -3198,12 +3585,15 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The last time this queue was purged.
+     *
      * All tasks that were [created][google.cloud.tasks.v2beta3.Task.create_time]
      * before this time were purged.
+     *
      * A queue can be purged using
      * [PurgeQueue][google.cloud.tasks.v2beta3.CloudTasks.PurgeQueue], the [App
      * Engine Task Queue SDK, or the Cloud
      * Console](https://cloud.google.com/appengine/docs/standard/python/taskqueue/push/deleting-tasks-and-queues#purging_all_tasks_from_a_queue).
+     *
      * Purge time will be truncated to the nearest microsecond. Purge
      * time will be unset if the queue has never been purged.
      * </pre>
@@ -3219,7 +3609,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
       } else {
         purgeTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3228,12 +3618,15 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The last time this queue was purged.
+     *
      * All tasks that were [created][google.cloud.tasks.v2beta3.Task.create_time]
      * before this time were purged.
+     *
      * A queue can be purged using
      * [PurgeQueue][google.cloud.tasks.v2beta3.CloudTasks.PurgeQueue], the [App
      * Engine Task Queue SDK, or the Cloud
      * Console](https://cloud.google.com/appengine/docs/standard/python/taskqueue/push/deleting-tasks-and-queues#purging_all_tasks_from_a_queue).
+     *
      * Purge time will be truncated to the nearest microsecond. Purge
      * time will be unset if the queue has never been purged.
      * </pre>
@@ -3246,7 +3639,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
       } else {
         purgeTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3255,12 +3648,15 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The last time this queue was purged.
+     *
      * All tasks that were [created][google.cloud.tasks.v2beta3.Task.create_time]
      * before this time were purged.
+     *
      * A queue can be purged using
      * [PurgeQueue][google.cloud.tasks.v2beta3.CloudTasks.PurgeQueue], the [App
      * Engine Task Queue SDK, or the Cloud
      * Console](https://cloud.google.com/appengine/docs/standard/python/taskqueue/push/deleting-tasks-and-queues#purging_all_tasks_from_a_queue).
+     *
      * Purge time will be truncated to the nearest microsecond. Purge
      * time will be unset if the queue has never been purged.
      * </pre>
@@ -3269,7 +3665,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergePurgeTime(com.google.protobuf.Timestamp value) {
       if (purgeTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)
+        if (((bitField0_ & 0x00000040) != 0)
             && purgeTime_ != null
             && purgeTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getPurgeTimeBuilder().mergeFrom(value);
@@ -3279,7 +3675,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
       } else {
         purgeTimeBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3288,12 +3684,15 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The last time this queue was purged.
+     *
      * All tasks that were [created][google.cloud.tasks.v2beta3.Task.create_time]
      * before this time were purged.
+     *
      * A queue can be purged using
      * [PurgeQueue][google.cloud.tasks.v2beta3.CloudTasks.PurgeQueue], the [App
      * Engine Task Queue SDK, or the Cloud
      * Console](https://cloud.google.com/appengine/docs/standard/python/taskqueue/push/deleting-tasks-and-queues#purging_all_tasks_from_a_queue).
+     *
      * Purge time will be truncated to the nearest microsecond. Purge
      * time will be unset if the queue has never been purged.
      * </pre>
@@ -3301,7 +3700,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp purge_time = 7;</code>
      */
     public Builder clearPurgeTime() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       purgeTime_ = null;
       if (purgeTimeBuilder_ != null) {
         purgeTimeBuilder_.dispose();
@@ -3315,12 +3714,15 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The last time this queue was purged.
+     *
      * All tasks that were [created][google.cloud.tasks.v2beta3.Task.create_time]
      * before this time were purged.
+     *
      * A queue can be purged using
      * [PurgeQueue][google.cloud.tasks.v2beta3.CloudTasks.PurgeQueue], the [App
      * Engine Task Queue SDK, or the Cloud
      * Console](https://cloud.google.com/appengine/docs/standard/python/taskqueue/push/deleting-tasks-and-queues#purging_all_tasks_from_a_queue).
+     *
      * Purge time will be truncated to the nearest microsecond. Purge
      * time will be unset if the queue has never been purged.
      * </pre>
@@ -3328,7 +3730,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp purge_time = 7;</code>
      */
     public com.google.protobuf.Timestamp.Builder getPurgeTimeBuilder() {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return getPurgeTimeFieldBuilder().getBuilder();
     }
@@ -3337,12 +3739,15 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The last time this queue was purged.
+     *
      * All tasks that were [created][google.cloud.tasks.v2beta3.Task.create_time]
      * before this time were purged.
+     *
      * A queue can be purged using
      * [PurgeQueue][google.cloud.tasks.v2beta3.CloudTasks.PurgeQueue], the [App
      * Engine Task Queue SDK, or the Cloud
      * Console](https://cloud.google.com/appengine/docs/standard/python/taskqueue/push/deleting-tasks-and-queues#purging_all_tasks_from_a_queue).
+     *
      * Purge time will be truncated to the nearest microsecond. Purge
      * time will be unset if the queue has never been purged.
      * </pre>
@@ -3361,12 +3766,15 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The last time this queue was purged.
+     *
      * All tasks that were [created][google.cloud.tasks.v2beta3.Task.create_time]
      * before this time were purged.
+     *
      * A queue can be purged using
      * [PurgeQueue][google.cloud.tasks.v2beta3.CloudTasks.PurgeQueue], the [App
      * Engine Task Queue SDK, or the Cloud
      * Console](https://cloud.google.com/appengine/docs/standard/python/taskqueue/push/deleting-tasks-and-queues#purging_all_tasks_from_a_queue).
+     *
      * Purge time will be truncated to the nearest microsecond. Purge
      * time will be unset if the queue has never been purged.
      * </pre>
@@ -3402,9 +3810,11 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The maximum amount of time that a task will be retained in
      * this queue.
+     *
      * Queues created by Cloud Tasks have a default `task_ttl` of 31 days.
      * After a task has lived for `task_ttl`, the task will be deleted
      * regardless of whether it was dispatched or not.
+     *
      * The `task_ttl` for queues created via queue.yaml/xml is equal to the
      * maximum duration because there is a
      * [storage quota](https://cloud.google.com/appengine/quotas#Task_Queue) for
@@ -3417,7 +3827,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the taskTtl field is set.
      */
     public boolean hasTaskTtl() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -3425,9 +3835,11 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The maximum amount of time that a task will be retained in
      * this queue.
+     *
      * Queues created by Cloud Tasks have a default `task_ttl` of 31 days.
      * After a task has lived for `task_ttl`, the task will be deleted
      * regardless of whether it was dispatched or not.
+     *
      * The `task_ttl` for queues created via queue.yaml/xml is equal to the
      * maximum duration because there is a
      * [storage quota](https://cloud.google.com/appengine/quotas#Task_Queue) for
@@ -3452,9 +3864,11 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The maximum amount of time that a task will be retained in
      * this queue.
+     *
      * Queues created by Cloud Tasks have a default `task_ttl` of 31 days.
      * After a task has lived for `task_ttl`, the task will be deleted
      * regardless of whether it was dispatched or not.
+     *
      * The `task_ttl` for queues created via queue.yaml/xml is equal to the
      * maximum duration because there is a
      * [storage quota](https://cloud.google.com/appengine/quotas#Task_Queue) for
@@ -3473,7 +3887,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
       } else {
         taskTtlBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3483,9 +3897,11 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The maximum amount of time that a task will be retained in
      * this queue.
+     *
      * Queues created by Cloud Tasks have a default `task_ttl` of 31 days.
      * After a task has lived for `task_ttl`, the task will be deleted
      * regardless of whether it was dispatched or not.
+     *
      * The `task_ttl` for queues created via queue.yaml/xml is equal to the
      * maximum duration because there is a
      * [storage quota](https://cloud.google.com/appengine/quotas#Task_Queue) for
@@ -3501,7 +3917,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
       } else {
         taskTtlBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3511,9 +3927,11 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The maximum amount of time that a task will be retained in
      * this queue.
+     *
      * Queues created by Cloud Tasks have a default `task_ttl` of 31 days.
      * After a task has lived for `task_ttl`, the task will be deleted
      * regardless of whether it was dispatched or not.
+     *
      * The `task_ttl` for queues created via queue.yaml/xml is equal to the
      * maximum duration because there is a
      * [storage quota](https://cloud.google.com/appengine/quotas#Task_Queue) for
@@ -3525,7 +3943,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeTaskTtl(com.google.protobuf.Duration value) {
       if (taskTtlBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)
+        if (((bitField0_ & 0x00000080) != 0)
             && taskTtl_ != null
             && taskTtl_ != com.google.protobuf.Duration.getDefaultInstance()) {
           getTaskTtlBuilder().mergeFrom(value);
@@ -3535,7 +3953,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
       } else {
         taskTtlBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3545,9 +3963,11 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The maximum amount of time that a task will be retained in
      * this queue.
+     *
      * Queues created by Cloud Tasks have a default `task_ttl` of 31 days.
      * After a task has lived for `task_ttl`, the task will be deleted
      * regardless of whether it was dispatched or not.
+     *
      * The `task_ttl` for queues created via queue.yaml/xml is equal to the
      * maximum duration because there is a
      * [storage quota](https://cloud.google.com/appengine/quotas#Task_Queue) for
@@ -3558,7 +3978,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration task_ttl = 8;</code>
      */
     public Builder clearTaskTtl() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       taskTtl_ = null;
       if (taskTtlBuilder_ != null) {
         taskTtlBuilder_.dispose();
@@ -3573,9 +3993,11 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The maximum amount of time that a task will be retained in
      * this queue.
+     *
      * Queues created by Cloud Tasks have a default `task_ttl` of 31 days.
      * After a task has lived for `task_ttl`, the task will be deleted
      * regardless of whether it was dispatched or not.
+     *
      * The `task_ttl` for queues created via queue.yaml/xml is equal to the
      * maximum duration because there is a
      * [storage quota](https://cloud.google.com/appengine/quotas#Task_Queue) for
@@ -3586,7 +4008,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration task_ttl = 8;</code>
      */
     public com.google.protobuf.Duration.Builder getTaskTtlBuilder() {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return getTaskTtlFieldBuilder().getBuilder();
     }
@@ -3596,9 +4018,11 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The maximum amount of time that a task will be retained in
      * this queue.
+     *
      * Queues created by Cloud Tasks have a default `task_ttl` of 31 days.
      * After a task has lived for `task_ttl`, the task will be deleted
      * regardless of whether it was dispatched or not.
+     *
      * The `task_ttl` for queues created via queue.yaml/xml is equal to the
      * maximum duration because there is a
      * [storage quota](https://cloud.google.com/appengine/quotas#Task_Queue) for
@@ -3621,9 +4045,11 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The maximum amount of time that a task will be retained in
      * this queue.
+     *
      * Queues created by Cloud Tasks have a default `task_ttl` of 31 days.
      * After a task has lived for `task_ttl`, the task will be deleted
      * regardless of whether it was dispatched or not.
+     *
      * The `task_ttl` for queues created via queue.yaml/xml is equal to the
      * maximum duration because there is a
      * [storage quota](https://cloud.google.com/appengine/quotas#Task_Queue) for
@@ -3661,12 +4087,14 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The task tombstone time to live (TTL).
+     *
      * After a task is deleted or executed, the task's tombstone is
      * retained for the length of time specified by `tombstone_ttl`.
      * The tombstone is used by task de-duplication; another task with the same
      * name can't be created until the tombstone has expired. For more information
      * about task de-duplication, see the documentation for
      * [CreateTaskRequest][google.cloud.tasks.v2beta3.CreateTaskRequest.task].
+     *
      * Queues created by Cloud Tasks have a default `tombstone_ttl` of 1 hour.
      * </pre>
      *
@@ -3675,19 +4103,21 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the tombstoneTtl field is set.
      */
     public boolean hasTombstoneTtl() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
      *
      * <pre>
      * The task tombstone time to live (TTL).
+     *
      * After a task is deleted or executed, the task's tombstone is
      * retained for the length of time specified by `tombstone_ttl`.
      * The tombstone is used by task de-duplication; another task with the same
      * name can't be created until the tombstone has expired. For more information
      * about task de-duplication, see the documentation for
      * [CreateTaskRequest][google.cloud.tasks.v2beta3.CreateTaskRequest.task].
+     *
      * Queues created by Cloud Tasks have a default `tombstone_ttl` of 1 hour.
      * </pre>
      *
@@ -3709,12 +4139,14 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The task tombstone time to live (TTL).
+     *
      * After a task is deleted or executed, the task's tombstone is
      * retained for the length of time specified by `tombstone_ttl`.
      * The tombstone is used by task de-duplication; another task with the same
      * name can't be created until the tombstone has expired. For more information
      * about task de-duplication, see the documentation for
      * [CreateTaskRequest][google.cloud.tasks.v2beta3.CreateTaskRequest.task].
+     *
      * Queues created by Cloud Tasks have a default `tombstone_ttl` of 1 hour.
      * </pre>
      *
@@ -3729,7 +4161,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
       } else {
         tombstoneTtlBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3738,12 +4170,14 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The task tombstone time to live (TTL).
+     *
      * After a task is deleted or executed, the task's tombstone is
      * retained for the length of time specified by `tombstone_ttl`.
      * The tombstone is used by task de-duplication; another task with the same
      * name can't be created until the tombstone has expired. For more information
      * about task de-duplication, see the documentation for
      * [CreateTaskRequest][google.cloud.tasks.v2beta3.CreateTaskRequest.task].
+     *
      * Queues created by Cloud Tasks have a default `tombstone_ttl` of 1 hour.
      * </pre>
      *
@@ -3755,7 +4189,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
       } else {
         tombstoneTtlBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3764,12 +4198,14 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The task tombstone time to live (TTL).
+     *
      * After a task is deleted or executed, the task's tombstone is
      * retained for the length of time specified by `tombstone_ttl`.
      * The tombstone is used by task de-duplication; another task with the same
      * name can't be created until the tombstone has expired. For more information
      * about task de-duplication, see the documentation for
      * [CreateTaskRequest][google.cloud.tasks.v2beta3.CreateTaskRequest.task].
+     *
      * Queues created by Cloud Tasks have a default `tombstone_ttl` of 1 hour.
      * </pre>
      *
@@ -3777,7 +4213,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeTombstoneTtl(com.google.protobuf.Duration value) {
       if (tombstoneTtlBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)
+        if (((bitField0_ & 0x00000100) != 0)
             && tombstoneTtl_ != null
             && tombstoneTtl_ != com.google.protobuf.Duration.getDefaultInstance()) {
           getTombstoneTtlBuilder().mergeFrom(value);
@@ -3787,7 +4223,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
       } else {
         tombstoneTtlBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3796,19 +4232,21 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The task tombstone time to live (TTL).
+     *
      * After a task is deleted or executed, the task's tombstone is
      * retained for the length of time specified by `tombstone_ttl`.
      * The tombstone is used by task de-duplication; another task with the same
      * name can't be created until the tombstone has expired. For more information
      * about task de-duplication, see the documentation for
      * [CreateTaskRequest][google.cloud.tasks.v2beta3.CreateTaskRequest.task].
+     *
      * Queues created by Cloud Tasks have a default `tombstone_ttl` of 1 hour.
      * </pre>
      *
      * <code>.google.protobuf.Duration tombstone_ttl = 9;</code>
      */
     public Builder clearTombstoneTtl() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       tombstoneTtl_ = null;
       if (tombstoneTtlBuilder_ != null) {
         tombstoneTtlBuilder_.dispose();
@@ -3822,19 +4260,21 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The task tombstone time to live (TTL).
+     *
      * After a task is deleted or executed, the task's tombstone is
      * retained for the length of time specified by `tombstone_ttl`.
      * The tombstone is used by task de-duplication; another task with the same
      * name can't be created until the tombstone has expired. For more information
      * about task de-duplication, see the documentation for
      * [CreateTaskRequest][google.cloud.tasks.v2beta3.CreateTaskRequest.task].
+     *
      * Queues created by Cloud Tasks have a default `tombstone_ttl` of 1 hour.
      * </pre>
      *
      * <code>.google.protobuf.Duration tombstone_ttl = 9;</code>
      */
     public com.google.protobuf.Duration.Builder getTombstoneTtlBuilder() {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return getTombstoneTtlFieldBuilder().getBuilder();
     }
@@ -3843,12 +4283,14 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The task tombstone time to live (TTL).
+     *
      * After a task is deleted or executed, the task's tombstone is
      * retained for the length of time specified by `tombstone_ttl`.
      * The tombstone is used by task de-duplication; another task with the same
      * name can't be created until the tombstone has expired. For more information
      * about task de-duplication, see the documentation for
      * [CreateTaskRequest][google.cloud.tasks.v2beta3.CreateTaskRequest.task].
+     *
      * Queues created by Cloud Tasks have a default `tombstone_ttl` of 1 hour.
      * </pre>
      *
@@ -3868,12 +4310,14 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The task tombstone time to live (TTL).
+     *
      * After a task is deleted or executed, the task's tombstone is
      * retained for the length of time specified by `tombstone_ttl`.
      * The tombstone is used by task de-duplication; another task with the same
      * name can't be created until the tombstone has expired. For more information
      * about task de-duplication, see the documentation for
      * [CreateTaskRequest][google.cloud.tasks.v2beta3.CreateTaskRequest.task].
+     *
      * Queues created by Cloud Tasks have a default `tombstone_ttl` of 1 hour.
      * </pre>
      *
@@ -3917,7 +4361,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the stackdriverLoggingConfig field is set.
      */
     public boolean hasStackdriverLoggingConfig() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -3964,7 +4408,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
       } else {
         stackdriverLoggingConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3987,7 +4431,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
       } else {
         stackdriverLoggingConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -4006,7 +4450,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeStackdriverLoggingConfig(
         com.google.cloud.tasks.v2beta3.StackdriverLoggingConfig value) {
       if (stackdriverLoggingConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)
+        if (((bitField0_ & 0x00000200) != 0)
             && stackdriverLoggingConfig_ != null
             && stackdriverLoggingConfig_
                 != com.google.cloud.tasks.v2beta3.StackdriverLoggingConfig.getDefaultInstance()) {
@@ -4017,7 +4461,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
       } else {
         stackdriverLoggingConfigBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -4034,7 +4478,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearStackdriverLoggingConfig() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       stackdriverLoggingConfig_ = null;
       if (stackdriverLoggingConfigBuilder_ != null) {
         stackdriverLoggingConfigBuilder_.dispose();
@@ -4057,7 +4501,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.tasks.v2beta3.StackdriverLoggingConfig.Builder
         getStackdriverLoggingConfigBuilder() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return getStackdriverLoggingConfigFieldBuilder().getBuilder();
     }
@@ -4118,6 +4562,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Immutable. The type of a queue (push or pull).
+     *
      * `Queue.type` is an immutable property of the queue that is set at the queue
      * creation time. When left unspecified, the default value of `PUSH` is
      * selected.
@@ -4138,6 +4583,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Immutable. The type of a queue (push or pull).
+     *
      * `Queue.type` is an immutable property of the queue that is set at the queue
      * creation time. When left unspecified, the default value of `PUSH` is
      * selected.
@@ -4152,7 +4598,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setTypeValue(int value) {
       type_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -4161,6 +4607,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Immutable. The type of a queue (push or pull).
+     *
      * `Queue.type` is an immutable property of the queue that is set at the queue
      * creation time. When left unspecified, the default value of `PUSH` is
      * selected.
@@ -4183,6 +4630,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Immutable. The type of a queue (push or pull).
+     *
      * `Queue.type` is an immutable property of the queue that is set at the queue
      * creation time. When left unspecified, the default value of `PUSH` is
      * selected.
@@ -4199,7 +4647,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       type_ = value.getNumber();
       onChanged();
       return this;
@@ -4209,6 +4657,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Immutable. The type of a queue (push or pull).
+     *
      * `Queue.type` is an immutable property of the queue that is set at the queue
      * creation time. When left unspecified, the default value of `PUSH` is
      * selected.
@@ -4221,7 +4670,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearType() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       type_ = 0;
       onChanged();
       return this;
@@ -4249,7 +4698,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the stats field is set.
      */
     public boolean hasStats() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
     /**
      *
@@ -4297,7 +4746,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
       } else {
         statsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4320,7 +4769,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
       } else {
         statsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4339,7 +4788,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeStats(com.google.cloud.tasks.v2beta3.QueueStats value) {
       if (statsBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0)
+        if (((bitField0_ & 0x00000800) != 0)
             && stats_ != null
             && stats_ != com.google.cloud.tasks.v2beta3.QueueStats.getDefaultInstance()) {
           getStatsBuilder().mergeFrom(value);
@@ -4349,7 +4798,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
       } else {
         statsBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4367,7 +4816,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearStats() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       stats_ = null;
       if (statsBuilder_ != null) {
         statsBuilder_.dispose();
@@ -4390,7 +4839,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.tasks.v2beta3.QueueStats.Builder getStatsBuilder() {
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return getStatsFieldBuilder().getBuilder();
     }

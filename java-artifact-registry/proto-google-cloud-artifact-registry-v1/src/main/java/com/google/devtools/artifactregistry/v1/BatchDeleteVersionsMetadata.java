@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,18 +38,13 @@ public final class BatchDeleteVersionsMetadata extends com.google.protobuf.Gener
   }
 
   private BatchDeleteVersionsMetadata() {
-    failedVersions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    failedVersions_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new BatchDeleteVersionsMetadata();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -70,7 +65,8 @@ public final class BatchDeleteVersionsMetadata extends com.google.protobuf.Gener
   public static final int FAILED_VERSIONS_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList failedVersions_;
+  private com.google.protobuf.LazyStringArrayList failedVersions_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -338,8 +334,7 @@ public final class BatchDeleteVersionsMetadata extends com.google.protobuf.Gener
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      failedVersions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      failedVersions_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -369,7 +364,6 @@ public final class BatchDeleteVersionsMetadata extends com.google.protobuf.Gener
     public com.google.devtools.artifactregistry.v1.BatchDeleteVersionsMetadata buildPartial() {
       com.google.devtools.artifactregistry.v1.BatchDeleteVersionsMetadata result =
           new com.google.devtools.artifactregistry.v1.BatchDeleteVersionsMetadata(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -377,18 +371,13 @@ public final class BatchDeleteVersionsMetadata extends com.google.protobuf.Gener
       return result;
     }
 
-    private void buildPartialRepeatedFields(
-        com.google.devtools.artifactregistry.v1.BatchDeleteVersionsMetadata result) {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        failedVersions_ = failedVersions_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.failedVersions_ = failedVersions_;
-    }
-
     private void buildPartial0(
         com.google.devtools.artifactregistry.v1.BatchDeleteVersionsMetadata result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        failedVersions_.makeImmutable();
+        result.failedVersions_ = failedVersions_;
+      }
     }
 
     @java.lang.Override
@@ -443,7 +432,7 @@ public final class BatchDeleteVersionsMetadata extends com.google.protobuf.Gener
       if (!other.failedVersions_.isEmpty()) {
         if (failedVersions_.isEmpty()) {
           failedVersions_ = other.failedVersions_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ |= 0x00000001;
         } else {
           ensureFailedVersionsIsMutable();
           failedVersions_.addAll(other.failedVersions_);
@@ -502,14 +491,14 @@ public final class BatchDeleteVersionsMetadata extends com.google.protobuf.Gener
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList failedVersions_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList failedVersions_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureFailedVersionsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!failedVersions_.isModifiable()) {
         failedVersions_ = new com.google.protobuf.LazyStringArrayList(failedVersions_);
-        bitField0_ |= 0x00000001;
       }
+      bitField0_ |= 0x00000001;
     }
     /**
      *
@@ -523,7 +512,8 @@ public final class BatchDeleteVersionsMetadata extends com.google.protobuf.Gener
      * @return A list containing the failedVersions.
      */
     public com.google.protobuf.ProtocolStringList getFailedVersionsList() {
-      return failedVersions_.getUnmodifiableView();
+      failedVersions_.makeImmutable();
+      return failedVersions_;
     }
     /**
      *
@@ -588,6 +578,7 @@ public final class BatchDeleteVersionsMetadata extends com.google.protobuf.Gener
       }
       ensureFailedVersionsIsMutable();
       failedVersions_.set(index, value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -609,6 +600,7 @@ public final class BatchDeleteVersionsMetadata extends com.google.protobuf.Gener
       }
       ensureFailedVersionsIsMutable();
       failedVersions_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -627,6 +619,7 @@ public final class BatchDeleteVersionsMetadata extends com.google.protobuf.Gener
     public Builder addAllFailedVersions(java.lang.Iterable<java.lang.String> values) {
       ensureFailedVersionsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, failedVersions_);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -642,8 +635,9 @@ public final class BatchDeleteVersionsMetadata extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearFailedVersions() {
-      failedVersions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      failedVersions_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      ;
       onChanged();
       return this;
     }
@@ -666,6 +660,7 @@ public final class BatchDeleteVersionsMetadata extends com.google.protobuf.Gener
       checkByteStringIsUtf8(value);
       ensureFailedVersionsIsMutable();
       failedVersions_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

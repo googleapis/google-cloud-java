@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -53,7 +53,7 @@ public interface ListServicesRequestOrBuilder
    *
    * <pre>
    * The max number of items to include in the response list. Page size is 50
-   * if not specified. Maximum value is 100.
+   * if not specified. Maximum value is 500.
    * </pre>
    *
    * <code>int32 page_size = 5;</code>
@@ -94,6 +94,7 @@ public interface ListServicesRequestOrBuilder
    *
    * <pre>
    * Include services consumed by the specified consumer.
+   *
    * The Google Service Management implementation accepts the following
    * forms:
    * - project:&lt;project_id&gt;
@@ -102,7 +103,7 @@ public interface ListServicesRequestOrBuilder
    * <code>string consumer_id = 7 [deprecated = true];</code>
    *
    * @deprecated google.api.servicemanagement.v1.ListServicesRequest.consumer_id is deprecated. See
-   *     google/api/servicemanagement/v1/servicemanager.proto;l=277
+   *     google/api/servicemanagement/v1/servicemanager.proto;l=278
    * @return The consumerId.
    */
   @java.lang.Deprecated
@@ -112,6 +113,7 @@ public interface ListServicesRequestOrBuilder
    *
    * <pre>
    * Include services consumed by the specified consumer.
+   *
    * The Google Service Management implementation accepts the following
    * forms:
    * - project:&lt;project_id&gt;
@@ -120,7 +122,7 @@ public interface ListServicesRequestOrBuilder
    * <code>string consumer_id = 7 [deprecated = true];</code>
    *
    * @deprecated google.api.servicemanagement.v1.ListServicesRequest.consumer_id is deprecated. See
-   *     google/api/servicemanagement/v1/servicemanager.proto;l=277
+   *     google/api/servicemanagement/v1/servicemanager.proto;l=278
    * @return The bytes for consumerId.
    */
   @java.lang.Deprecated

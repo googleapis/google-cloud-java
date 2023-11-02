@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ package com.google.cloud.dialogflow.v2beta1;
  * end-user wants to schedule a haircut on Friday, your service can check your
  * database and respond to the end-user with availability information for
  * Friday.
+ *
  * For more information, see the [fulfillment
  * guide](https://cloud.google.com/dialogflow/docs/fulfillment-overview).
  * </pre>
@@ -55,11 +56,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Fulfillment();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -223,6 +219,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Indicates if generic web service is created through Cloud
      * Functions integration. Defaults to false.
+     *
      * is_cloud_function is deprecated. Cloud functions can be configured by
      * its uri as a regular web service now.
      * </pre>
@@ -244,8 +241,10 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Represents configuration for a generic web service.
    * Dialogflow supports two mechanisms for authentications:
+   *
    * - Basic authentication with username and password.
    * - Authentication with additional authentication headers.
+   *
    * More information could be found at:
    * https://cloud.google.com/dialogflow/docs/fulfillment-configure.
    * </pre>
@@ -272,11 +271,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new GenericWebService();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -572,6 +566,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. Indicates if generic web service is created through Cloud
      * Functions integration. Defaults to false.
+     *
      * is_cloud_function is deprecated. Cloud functions can be configured by
      * its uri as a regular web service now.
      * </pre>
@@ -802,8 +797,10 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Represents configuration for a generic web service.
      * Dialogflow supports two mechanisms for authentications:
+     *
      * - Basic authentication with username and password.
      * - Authentication with additional authentication headers.
+     *
      * More information could be found at:
      * https://cloud.google.com/dialogflow/docs/fulfillment-configure.
      * </pre>
@@ -1577,6 +1574,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Optional. Indicates if generic web service is created through Cloud
        * Functions integration. Defaults to false.
+       *
        * is_cloud_function is deprecated. Cloud functions can be configured by
        * its uri as a regular web service now.
        * </pre>
@@ -1600,6 +1598,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Optional. Indicates if generic web service is created through Cloud
        * Functions integration. Defaults to false.
+       *
        * is_cloud_function is deprecated. Cloud functions can be configured by
        * its uri as a regular web service now.
        * </pre>
@@ -1627,6 +1626,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Optional. Indicates if generic web service is created through Cloud
        * Functions integration. Defaults to false.
+       *
        * is_cloud_function is deprecated. Cloud functions can be configured by
        * its uri as a regular web service now.
        * </pre>
@@ -1771,11 +1771,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Feature();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2473,6 +2468,8 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int fulfillmentCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object fulfillment_;
 
   public enum FulfillmentCase
@@ -2526,8 +2523,10 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required. The unique identifier of the fulfillment.
    * Supported formats:
+   *
    * - `projects/&lt;Project ID&gt;/agent/fulfillment`
    * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/fulfillment`
+   *
    * This field is not used for Fulfillment in an Environment.
    * </pre>
    *
@@ -2553,8 +2552,10 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required. The unique identifier of the fulfillment.
    * Supported formats:
+   *
    * - `projects/&lt;Project ID&gt;/agent/fulfillment`
    * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/fulfillment`
+   *
    * This field is not used for Fulfillment in an Environment.
    * </pre>
    *
@@ -2584,6 +2585,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The human-readable name of the fulfillment, unique within the agent.
+   *
    * This field is not used for Fulfillment in an Environment.
    * </pre>
    *
@@ -2608,6 +2610,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The human-readable name of the fulfillment, unique within the agent.
+   *
    * This field is not used for Fulfillment in an Environment.
    * </pre>
    *
@@ -2997,6 +3000,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
    * end-user wants to schedule a haircut on Friday, your service can check your
    * database and respond to the end-user with availability information for
    * Friday.
+   *
    * For more information, see the [fulfillment
    * guide](https://cloud.google.com/dialogflow/docs/fulfillment-overview).
    * </pre>
@@ -3320,8 +3324,10 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The unique identifier of the fulfillment.
      * Supported formats:
+     *
      * - `projects/&lt;Project ID&gt;/agent/fulfillment`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/fulfillment`
+     *
      * This field is not used for Fulfillment in an Environment.
      * </pre>
      *
@@ -3346,8 +3352,10 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The unique identifier of the fulfillment.
      * Supported formats:
+     *
      * - `projects/&lt;Project ID&gt;/agent/fulfillment`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/fulfillment`
+     *
      * This field is not used for Fulfillment in an Environment.
      * </pre>
      *
@@ -3372,8 +3380,10 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The unique identifier of the fulfillment.
      * Supported formats:
+     *
      * - `projects/&lt;Project ID&gt;/agent/fulfillment`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/fulfillment`
+     *
      * This field is not used for Fulfillment in an Environment.
      * </pre>
      *
@@ -3397,8 +3407,10 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The unique identifier of the fulfillment.
      * Supported formats:
+     *
      * - `projects/&lt;Project ID&gt;/agent/fulfillment`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/fulfillment`
+     *
      * This field is not used for Fulfillment in an Environment.
      * </pre>
      *
@@ -3418,8 +3430,10 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The unique identifier of the fulfillment.
      * Supported formats:
+     *
      * - `projects/&lt;Project ID&gt;/agent/fulfillment`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/fulfillment`
+     *
      * This field is not used for Fulfillment in an Environment.
      * </pre>
      *
@@ -3445,6 +3459,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The human-readable name of the fulfillment, unique within the agent.
+     *
      * This field is not used for Fulfillment in an Environment.
      * </pre>
      *
@@ -3468,6 +3483,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The human-readable name of the fulfillment, unique within the agent.
+     *
      * This field is not used for Fulfillment in an Environment.
      * </pre>
      *
@@ -3491,6 +3507,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The human-readable name of the fulfillment, unique within the agent.
+     *
      * This field is not used for Fulfillment in an Environment.
      * </pre>
      *
@@ -3513,6 +3530,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The human-readable name of the fulfillment, unique within the agent.
+     *
      * This field is not used for Fulfillment in an Environment.
      * </pre>
      *
@@ -3531,6 +3549,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The human-readable name of the fulfillment, unique within the agent.
+     *
      * This field is not used for Fulfillment in an Environment.
      * </pre>
      *

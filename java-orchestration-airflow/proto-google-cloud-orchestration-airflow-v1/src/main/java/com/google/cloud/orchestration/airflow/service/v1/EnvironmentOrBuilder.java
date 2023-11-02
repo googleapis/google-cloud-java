@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ public interface EnvironmentOrBuilder
    * <pre>
    * The resource name of the environment, in the form:
    * "projects/{projectId}/locations/{locationId}/environments/{environmentId}"
+   *
    * EnvironmentId must start with a lowercase letter followed by up to 63
    * lowercase letters, numbers, or hyphens, and cannot end with a hyphen.
    * </pre>
@@ -44,6 +45,7 @@ public interface EnvironmentOrBuilder
    * <pre>
    * The resource name of the environment, in the form:
    * "projects/{projectId}/locations/{locationId}/environments/{environmentId}"
+   *
    * EnvironmentId must start with a lowercase letter followed by up to 63
    * lowercase letters, numbers, or hyphens, and cannot end with a hyphen.
    * </pre>
@@ -218,6 +220,7 @@ public interface EnvironmentOrBuilder
    * Optional. User-defined labels for this environment.
    * The labels map can contain no more than 64 entries. Entries of the labels
    * map are UTF8 strings that comply with the following restrictions:
+   *
    * * Keys must conform to regexp: [&#92;p{Ll}&#92;p{Lo}][&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,62}
    * * Values must conform to regexp:  [&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,63}
    * * Both keys and values are additionally constrained to be &lt;= 128 bytes in
@@ -234,6 +237,7 @@ public interface EnvironmentOrBuilder
    * Optional. User-defined labels for this environment.
    * The labels map can contain no more than 64 entries. Entries of the labels
    * map are UTF8 strings that comply with the following restrictions:
+   *
    * * Keys must conform to regexp: [&#92;p{Ll}&#92;p{Lo}][&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,62}
    * * Values must conform to regexp:  [&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,63}
    * * Both keys and values are additionally constrained to be &lt;= 128 bytes in
@@ -253,6 +257,7 @@ public interface EnvironmentOrBuilder
    * Optional. User-defined labels for this environment.
    * The labels map can contain no more than 64 entries. Entries of the labels
    * map are UTF8 strings that comply with the following restrictions:
+   *
    * * Keys must conform to regexp: [&#92;p{Ll}&#92;p{Lo}][&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,62}
    * * Values must conform to regexp:  [&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,63}
    * * Both keys and values are additionally constrained to be &lt;= 128 bytes in
@@ -269,6 +274,7 @@ public interface EnvironmentOrBuilder
    * Optional. User-defined labels for this environment.
    * The labels map can contain no more than 64 entries. Entries of the labels
    * map are UTF8 strings that comply with the following restrictions:
+   *
    * * Keys must conform to regexp: [&#92;p{Ll}&#92;p{Lo}][&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,62}
    * * Values must conform to regexp:  [&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,63}
    * * Both keys and values are additionally constrained to be &lt;= 128 bytes in
@@ -289,6 +295,7 @@ public interface EnvironmentOrBuilder
    * Optional. User-defined labels for this environment.
    * The labels map can contain no more than 64 entries. Entries of the labels
    * map are UTF8 strings that comply with the following restrictions:
+   *
    * * Keys must conform to regexp: [&#92;p{Ll}&#92;p{Lo}][&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,62}
    * * Values must conform to regexp:  [&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,63}
    * * Both keys and values are additionally constrained to be &lt;= 128 bytes in

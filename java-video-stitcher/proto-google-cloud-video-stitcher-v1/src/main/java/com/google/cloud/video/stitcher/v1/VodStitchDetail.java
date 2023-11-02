@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,9 @@ package com.google.cloud.video.stitcher.v1;
  *
  *
  * <pre>
- * Detailed information related to the interstitial of a VOD session.
+ * Detailed information related to the interstitial of a VOD session. This
+ * resource is only available for VOD sessions that do not implement Google Ad
+ * Manager ad insertion.
  * </pre>
  *
  * Protobuf type {@code google.cloud.video.stitcher.v1.VodStitchDetail}
@@ -46,11 +48,6 @@ public final class VodStitchDetail extends com.google.protobuf.GeneratedMessageV
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new VodStitchDetail();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -368,7 +365,9 @@ public final class VodStitchDetail extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Detailed information related to the interstitial of a VOD session.
+   * Detailed information related to the interstitial of a VOD session. This
+   * resource is only available for VOD sessions that do not implement Google Ad
+   * Manager ad insertion.
    * </pre>
    *
    * Protobuf type {@code google.cloud.video.stitcher.v1.VodStitchDetail}

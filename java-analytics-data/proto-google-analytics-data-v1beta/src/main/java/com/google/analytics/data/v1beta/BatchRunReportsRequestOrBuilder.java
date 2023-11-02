@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,6 +34,7 @@ public interface BatchRunReportsRequestOrBuilder
    * This property must be specified for the batch. The property within
    * RunReportRequest may either be unspecified or consistent with this
    * property.
+   *
    * Example: properties/1234
    * </pre>
    *
@@ -53,6 +54,7 @@ public interface BatchRunReportsRequestOrBuilder
    * This property must be specified for the batch. The property within
    * RunReportRequest may either be unspecified or consistent with this
    * property.
+   *
    * Example: properties/1234
    * </pre>
    *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -55,11 +55,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ExecutionTemplate();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -167,6 +162,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      * The CUSTOM tier is not a set tier, but rather enables you to use your
      * own cluster specification. When you use this tier, set values to
      * configure your processing cluster according to these guidelines:
+     *
      * *   You _must_ set `ExecutionTemplate.masterType` to specify the type
      *     of machine to use for your master node. This is the only required
      *     setting.
@@ -246,6 +242,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      * The CUSTOM tier is not a set tier, but rather enables you to use your
      * own cluster specification. When you use this tier, set values to
      * configure your processing cluster according to these guidelines:
+     *
      * *   You _must_ set `ExecutionTemplate.masterType` to specify the type
      *     of machine to use for your master node. This is the only required
      *     setting.
@@ -873,11 +870,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new SchedulerAcceleratorConfig();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1626,11 +1618,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       return new DataprocParameters();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.notebooks.v1.ExecutionProto
           .internal_static_google_cloud_notebooks_v1_ExecutionTemplate_DataprocParameters_descriptor;
@@ -2249,6 +2236,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      * is of the form `projects/{project}/global/networks/{network}`.
      * Where `{project}` is a project number, as in `12345`, and `{network}` is
      * a network name.
+     *
      * Private services access must already be configured for the network. If
      * left unspecified, the job is not peered with any network.
      * </pre>
@@ -2270,6 +2258,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      * is of the form `projects/{project}/global/networks/{network}`.
      * Where `{project}` is a project number, as in `12345`, and `{network}` is
      * a network name.
+     *
      * Private services access must already be configured for the network. If
      * left unspecified, the job is not peered with any network.
      * </pre>
@@ -2377,11 +2366,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       return new VertexAIParameters();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.notebooks.v1.ExecutionProto
           .internal_static_google_cloud_notebooks_v1_ExecutionTemplate_VertexAIParameters_descriptor;
@@ -2424,6 +2408,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      * is of the form `projects/{project}/global/networks/{network}`.
      * Where `{project}` is a project number, as in `12345`, and `{network}` is
      * a network name.
+     *
      * Private services access must already be configured for the network. If
      * left unspecified, the job is not peered with any network.
      * </pre>
@@ -2456,6 +2441,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      * is of the form `projects/{project}/global/networks/{network}`.
      * Where `{project}` is a project number, as in `12345`, and `{network}` is
      * a network name.
+     *
      * Private services access must already be configured for the network. If
      * left unspecified, the job is not peered with any network.
      * </pre>
@@ -3008,6 +2994,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
        * is of the form `projects/{project}/global/networks/{network}`.
        * Where `{project}` is a project number, as in `12345`, and `{network}` is
        * a network name.
+       *
        * Private services access must already be configured for the network. If
        * left unspecified, the job is not peered with any network.
        * </pre>
@@ -3039,6 +3026,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
        * is of the form `projects/{project}/global/networks/{network}`.
        * Where `{project}` is a project number, as in `12345`, and `{network}` is
        * a network name.
+       *
        * Private services access must already be configured for the network. If
        * left unspecified, the job is not peered with any network.
        * </pre>
@@ -3070,6 +3058,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
        * is of the form `projects/{project}/global/networks/{network}`.
        * Where `{project}` is a project number, as in `12345`, and `{network}` is
        * a network name.
+       *
        * Private services access must already be configured for the network. If
        * left unspecified, the job is not peered with any network.
        * </pre>
@@ -3100,6 +3089,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
        * is of the form `projects/{project}/global/networks/{network}`.
        * Where `{project}` is a project number, as in `12345`, and `{network}` is
        * a network name.
+       *
        * Private services access must already be configured for the network. If
        * left unspecified, the job is not peered with any network.
        * </pre>
@@ -3126,6 +3116,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
        * is of the form `projects/{project}/global/networks/{network}`.
        * Where `{project}` is a project number, as in `12345`, and `{network}` is
        * a network name.
+       *
        * Private services access must already be configured for the network. If
        * left unspecified, the job is not peered with any network.
        * </pre>
@@ -3391,6 +3382,8 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
   }
 
   private int jobParametersCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object jobParameters_;
 
   public enum JobParametersCase
@@ -3497,8 +3490,10 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
    * Specifies the type of virtual machine to use for your training
    * job's master worker. You must specify this field when `scaleTier` is set to
    * `CUSTOM`.
+   *
    * You can use certain Compute Engine machine types directly in this field.
    * The following types are supported:
+   *
    * - `n1-standard-4`
    * - `n1-standard-8`
    * - `n1-standard-16`
@@ -3516,7 +3511,10 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
    * - `n1-highcpu-32`
    * - `n1-highcpu-64`
    * - `n1-highcpu-96`
+   *
+   *
    * Alternatively, you can use the following legacy machine types:
+   *
    * - `standard`
    * - `large_model`
    * - `complex_model_s`
@@ -3531,6 +3529,8 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
    * - `large_model_v100`
    * - `complex_model_m_v100`
    * - `complex_model_l_v100`
+   *
+   *
    * Finally, if you want to use a TPU for training, specify `cloud_tpu` in this
    * field. Learn more about the [special configuration options for training
    * with
@@ -3560,8 +3560,10 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
    * Specifies the type of virtual machine to use for your training
    * job's master worker. You must specify this field when `scaleTier` is set to
    * `CUSTOM`.
+   *
    * You can use certain Compute Engine machine types directly in this field.
    * The following types are supported:
+   *
    * - `n1-standard-4`
    * - `n1-standard-8`
    * - `n1-standard-16`
@@ -3579,7 +3581,10 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
    * - `n1-highcpu-32`
    * - `n1-highcpu-64`
    * - `n1-highcpu-96`
+   *
+   *
    * Alternatively, you can use the following legacy machine types:
+   *
    * - `standard`
    * - `large_model`
    * - `complex_model_s`
@@ -3594,6 +3599,8 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
    * - `large_model_v100`
    * - `complex_model_m_v100`
    * - `complex_model_l_v100`
+   *
+   *
    * Finally, if you want to use a TPU for training, specify `cloud_tpu` in this
    * field. Learn more about the [special configuration options for training
    * with
@@ -5313,8 +5320,10 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      * Specifies the type of virtual machine to use for your training
      * job's master worker. You must specify this field when `scaleTier` is set to
      * `CUSTOM`.
+     *
      * You can use certain Compute Engine machine types directly in this field.
      * The following types are supported:
+     *
      * - `n1-standard-4`
      * - `n1-standard-8`
      * - `n1-standard-16`
@@ -5332,7 +5341,10 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      * - `n1-highcpu-32`
      * - `n1-highcpu-64`
      * - `n1-highcpu-96`
+     *
+     *
      * Alternatively, you can use the following legacy machine types:
+     *
      * - `standard`
      * - `large_model`
      * - `complex_model_s`
@@ -5347,6 +5359,8 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      * - `large_model_v100`
      * - `complex_model_m_v100`
      * - `complex_model_l_v100`
+     *
+     *
      * Finally, if you want to use a TPU for training, specify `cloud_tpu` in this
      * field. Learn more about the [special configuration options for training
      * with
@@ -5375,8 +5389,10 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      * Specifies the type of virtual machine to use for your training
      * job's master worker. You must specify this field when `scaleTier` is set to
      * `CUSTOM`.
+     *
      * You can use certain Compute Engine machine types directly in this field.
      * The following types are supported:
+     *
      * - `n1-standard-4`
      * - `n1-standard-8`
      * - `n1-standard-16`
@@ -5394,7 +5410,10 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      * - `n1-highcpu-32`
      * - `n1-highcpu-64`
      * - `n1-highcpu-96`
+     *
+     *
      * Alternatively, you can use the following legacy machine types:
+     *
      * - `standard`
      * - `large_model`
      * - `complex_model_s`
@@ -5409,6 +5428,8 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      * - `large_model_v100`
      * - `complex_model_m_v100`
      * - `complex_model_l_v100`
+     *
+     *
      * Finally, if you want to use a TPU for training, specify `cloud_tpu` in this
      * field. Learn more about the [special configuration options for training
      * with
@@ -5437,8 +5458,10 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      * Specifies the type of virtual machine to use for your training
      * job's master worker. You must specify this field when `scaleTier` is set to
      * `CUSTOM`.
+     *
      * You can use certain Compute Engine machine types directly in this field.
      * The following types are supported:
+     *
      * - `n1-standard-4`
      * - `n1-standard-8`
      * - `n1-standard-16`
@@ -5456,7 +5479,10 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      * - `n1-highcpu-32`
      * - `n1-highcpu-64`
      * - `n1-highcpu-96`
+     *
+     *
      * Alternatively, you can use the following legacy machine types:
+     *
      * - `standard`
      * - `large_model`
      * - `complex_model_s`
@@ -5471,6 +5497,8 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      * - `large_model_v100`
      * - `complex_model_m_v100`
      * - `complex_model_l_v100`
+     *
+     *
      * Finally, if you want to use a TPU for training, specify `cloud_tpu` in this
      * field. Learn more about the [special configuration options for training
      * with
@@ -5498,8 +5526,10 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      * Specifies the type of virtual machine to use for your training
      * job's master worker. You must specify this field when `scaleTier` is set to
      * `CUSTOM`.
+     *
      * You can use certain Compute Engine machine types directly in this field.
      * The following types are supported:
+     *
      * - `n1-standard-4`
      * - `n1-standard-8`
      * - `n1-standard-16`
@@ -5517,7 +5547,10 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      * - `n1-highcpu-32`
      * - `n1-highcpu-64`
      * - `n1-highcpu-96`
+     *
+     *
      * Alternatively, you can use the following legacy machine types:
+     *
      * - `standard`
      * - `large_model`
      * - `complex_model_s`
@@ -5532,6 +5565,8 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      * - `large_model_v100`
      * - `complex_model_m_v100`
      * - `complex_model_l_v100`
+     *
+     *
      * Finally, if you want to use a TPU for training, specify `cloud_tpu` in this
      * field. Learn more about the [special configuration options for training
      * with
@@ -5555,8 +5590,10 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      * Specifies the type of virtual machine to use for your training
      * job's master worker. You must specify this field when `scaleTier` is set to
      * `CUSTOM`.
+     *
      * You can use certain Compute Engine machine types directly in this field.
      * The following types are supported:
+     *
      * - `n1-standard-4`
      * - `n1-standard-8`
      * - `n1-standard-16`
@@ -5574,7 +5611,10 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      * - `n1-highcpu-32`
      * - `n1-highcpu-64`
      * - `n1-highcpu-96`
+     *
+     *
      * Alternatively, you can use the following legacy machine types:
+     *
      * - `standard`
      * - `large_model`
      * - `complex_model_s`
@@ -5589,6 +5629,8 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      * - `large_model_v100`
      * - `complex_model_m_v100`
      * - `complex_model_l_v100`
+     *
+     *
      * Finally, if you want to use a TPU for training, specify `cloud_tpu` in this
      * field. Learn more about the [special configuration options for training
      * with

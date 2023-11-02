@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,27 +49,27 @@ public final class TensorboardProto {
           + "le/api/field_behavior.proto\032\031google/api/"
           + "resource.proto\0320google/cloud/aiplatform/"
           + "v1/encryption_spec.proto\032\037google/protobu"
-          + "f/timestamp.proto\"\306\004\n\013Tensorboard\022\021\n\004nam"
-          + "e\030\001 \001(\tB\003\340A\003\022\031\n\014display_name\030\002 \001(\tB\003\340A\002\022"
-          + "\023\n\013description\030\003 \001(\t\022C\n\017encryption_spec\030"
-          + "\013 \001(\0132*.google.cloud.aiplatform.v1.Encry"
-          + "ptionSpec\022%\n\030blob_storage_path_prefix\030\n "
-          + "\001(\tB\003\340A\003\022\026\n\trun_count\030\005 \001(\005B\003\340A\003\0224\n\013crea"
-          + "te_time\030\006 \001(\0132\032.google.protobuf.Timestam"
-          + "pB\003\340A\003\0224\n\013update_time\030\007 \001(\0132\032.google.pro"
-          + "tobuf.TimestampB\003\340A\003\022C\n\006labels\030\010 \003(\01323.g"
-          + "oogle.cloud.aiplatform.v1.Tensorboard.La"
-          + "belsEntry\022\014\n\004etag\030\t \001(\t\022\022\n\nis_default\030\014 "
-          + "\001(\010\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value"
-          + "\030\002 \001(\t:\0028\001:n\352Ak\n%aiplatform.googleapis.c"
-          + "om/Tensorboard\022Bprojects/{project}/locat"
-          + "ions/{location}/tensorboards/{tensorboar"
-          + "d}B\316\001\n\036com.google.cloud.aiplatform.v1B\020T"
-          + "ensorboardProtoP\001Z>cloud.google.com/go/a"
-          + "iplatform/apiv1/aiplatformpb;aiplatformp"
-          + "b\252\002\032Google.Cloud.AIPlatform.V1\312\002\032Google\\"
-          + "Cloud\\AIPlatform\\V1\352\002\035Google::Cloud::AIP"
-          + "latform::V1b\006proto3"
+          + "f/timestamp.proto\"\314\004\n\013Tensorboard\022\022\n\004nam"
+          + "e\030\001 \001(\tB\004\342A\001\003\022\032\n\014display_name\030\002 \001(\tB\004\342A\001"
+          + "\002\022\023\n\013description\030\003 \001(\t\022C\n\017encryption_spe"
+          + "c\030\013 \001(\0132*.google.cloud.aiplatform.v1.Enc"
+          + "ryptionSpec\022&\n\030blob_storage_path_prefix\030"
+          + "\n \001(\tB\004\342A\001\003\022\027\n\trun_count\030\005 \001(\005B\004\342A\001\003\0225\n\013"
+          + "create_time\030\006 \001(\0132\032.google.protobuf.Time"
+          + "stampB\004\342A\001\003\0225\n\013update_time\030\007 \001(\0132\032.googl"
+          + "e.protobuf.TimestampB\004\342A\001\003\022C\n\006labels\030\010 \003"
+          + "(\01323.google.cloud.aiplatform.v1.Tensorbo"
+          + "ard.LabelsEntry\022\014\n\004etag\030\t \001(\t\022\022\n\nis_defa"
+          + "ult\030\014 \001(\010\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n"
+          + "\005value\030\002 \001(\t:\0028\001:n\352Ak\n%aiplatform.google"
+          + "apis.com/Tensorboard\022Bprojects/{project}"
+          + "/locations/{location}/tensorboards/{tens"
+          + "orboard}B\316\001\n\036com.google.cloud.aiplatform"
+          + ".v1B\020TensorboardProtoP\001Z>cloud.google.co"
+          + "m/go/aiplatform/apiv1/aiplatformpb;aipla"
+          + "tformpb\252\002\032Google.Cloud.AIPlatform.V1\312\002\032G"
+          + "oogle\\Cloud\\AIPlatform\\V1\352\002\035Google::Clou"
+          + "d::AIPlatform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

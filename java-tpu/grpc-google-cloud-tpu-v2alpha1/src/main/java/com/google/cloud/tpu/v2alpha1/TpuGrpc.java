@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,7 +33,7 @@ public final class TpuGrpc {
 
   private TpuGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.tpu.v2alpha1.Tpu";
+  public static final java.lang.String SERVICE_NAME = "google.cloud.tpu.v2alpha1.Tpu";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -508,6 +508,52 @@ public final class TpuGrpc {
       }
     }
     return getDeleteQueuedResourceMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.tpu.v2alpha1.ResetQueuedResourceRequest,
+          com.google.longrunning.Operation>
+      getResetQueuedResourceMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ResetQueuedResource",
+      requestType = com.google.cloud.tpu.v2alpha1.ResetQueuedResourceRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.tpu.v2alpha1.ResetQueuedResourceRequest,
+          com.google.longrunning.Operation>
+      getResetQueuedResourceMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.tpu.v2alpha1.ResetQueuedResourceRequest,
+            com.google.longrunning.Operation>
+        getResetQueuedResourceMethod;
+    if ((getResetQueuedResourceMethod = TpuGrpc.getResetQueuedResourceMethod) == null) {
+      synchronized (TpuGrpc.class) {
+        if ((getResetQueuedResourceMethod = TpuGrpc.getResetQueuedResourceMethod) == null) {
+          TpuGrpc.getResetQueuedResourceMethod =
+              getResetQueuedResourceMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.tpu.v2alpha1.ResetQueuedResourceRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ResetQueuedResource"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.tpu.v2alpha1.ResetQueuedResourceRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new TpuMethodDescriptorSupplier("ResetQueuedResource"))
+                      .build();
+        }
+      }
+    }
+    return getResetQueuedResourceMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -1038,6 +1084,20 @@ public final class TpuGrpc {
      *
      *
      * <pre>
+     * Resets a QueuedResource TPU instance
+     * </pre>
+     */
+    default void resetQueuedResource(
+        com.google.cloud.tpu.v2alpha1.ResetQueuedResourceRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getResetQueuedResourceMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Generates the Cloud TPU service identity for the project.
      * </pre>
      */
@@ -1342,6 +1402,22 @@ public final class TpuGrpc {
      *
      *
      * <pre>
+     * Resets a QueuedResource TPU instance
+     * </pre>
+     */
+    public void resetQueuedResource(
+        com.google.cloud.tpu.v2alpha1.ResetQueuedResourceRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getResetQueuedResourceMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Generates the Cloud TPU service identity for the project.
      * </pre>
      */
@@ -1623,6 +1699,19 @@ public final class TpuGrpc {
      *
      *
      * <pre>
+     * Resets a QueuedResource TPU instance
+     * </pre>
+     */
+    public com.google.longrunning.Operation resetQueuedResource(
+        com.google.cloud.tpu.v2alpha1.ResetQueuedResourceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getResetQueuedResourceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Generates the Cloud TPU service identity for the project.
      * </pre>
      */
@@ -1879,6 +1968,19 @@ public final class TpuGrpc {
      *
      *
      * <pre>
+     * Resets a QueuedResource TPU instance
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        resetQueuedResource(com.google.cloud.tpu.v2alpha1.ResetQueuedResourceRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getResetQueuedResourceMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Generates the Cloud TPU service identity for the project.
      * </pre>
      */
@@ -1986,13 +2088,14 @@ public final class TpuGrpc {
   private static final int METHODID_GET_QUEUED_RESOURCE = 8;
   private static final int METHODID_CREATE_QUEUED_RESOURCE = 9;
   private static final int METHODID_DELETE_QUEUED_RESOURCE = 10;
-  private static final int METHODID_GENERATE_SERVICE_IDENTITY = 11;
-  private static final int METHODID_LIST_ACCELERATOR_TYPES = 12;
-  private static final int METHODID_GET_ACCELERATOR_TYPE = 13;
-  private static final int METHODID_LIST_RUNTIME_VERSIONS = 14;
-  private static final int METHODID_GET_RUNTIME_VERSION = 15;
-  private static final int METHODID_GET_GUEST_ATTRIBUTES = 16;
-  private static final int METHODID_SIMULATE_MAINTENANCE_EVENT = 17;
+  private static final int METHODID_RESET_QUEUED_RESOURCE = 11;
+  private static final int METHODID_GENERATE_SERVICE_IDENTITY = 12;
+  private static final int METHODID_LIST_ACCELERATOR_TYPES = 13;
+  private static final int METHODID_GET_ACCELERATOR_TYPE = 14;
+  private static final int METHODID_LIST_RUNTIME_VERSIONS = 15;
+  private static final int METHODID_GET_RUNTIME_VERSION = 16;
+  private static final int METHODID_GET_GUEST_ATTRIBUTES = 17;
+  private static final int METHODID_SIMULATE_MAINTENANCE_EVENT = 18;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2068,6 +2171,11 @@ public final class TpuGrpc {
         case METHODID_DELETE_QUEUED_RESOURCE:
           serviceImpl.deleteQueuedResource(
               (com.google.cloud.tpu.v2alpha1.DeleteQueuedResourceRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_RESET_QUEUED_RESOURCE:
+          serviceImpl.resetQueuedResource(
+              (com.google.cloud.tpu.v2alpha1.ResetQueuedResourceRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_GENERATE_SERVICE_IDENTITY:
@@ -2202,6 +2310,12 @@ public final class TpuGrpc {
                     com.google.cloud.tpu.v2alpha1.DeleteQueuedResourceRequest,
                     com.google.longrunning.Operation>(service, METHODID_DELETE_QUEUED_RESOURCE)))
         .addMethod(
+            getResetQueuedResourceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.tpu.v2alpha1.ResetQueuedResourceRequest,
+                    com.google.longrunning.Operation>(service, METHODID_RESET_QUEUED_RESOURCE)))
+        .addMethod(
             getGenerateServiceIdentityMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -2275,9 +2389,9 @@ public final class TpuGrpc {
 
   private static final class TpuMethodDescriptorSupplier extends TpuBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    TpuMethodDescriptorSupplier(String methodName) {
+    TpuMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 
@@ -2310,6 +2424,7 @@ public final class TpuGrpc {
                       .addMethod(getGetQueuedResourceMethod())
                       .addMethod(getCreateQueuedResourceMethod())
                       .addMethod(getDeleteQueuedResourceMethod())
+                      .addMethod(getResetQueuedResourceMethod())
                       .addMethod(getGenerateServiceIdentityMethod())
                       .addMethod(getListAcceleratorTypesMethod())
                       .addMethod(getGetAcceleratorTypeMethod())

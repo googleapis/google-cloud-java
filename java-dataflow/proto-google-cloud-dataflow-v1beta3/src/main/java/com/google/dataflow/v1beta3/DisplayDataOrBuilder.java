@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -387,5 +387,5 @@ public interface DisplayDataOrBuilder
    */
   com.google.protobuf.ByteString getLabelBytes();
 
-  public com.google.dataflow.v1beta3.DisplayData.ValueCase getValueCase();
+  com.google.dataflow.v1beta3.DisplayData.ValueCase getValueCase();
 }

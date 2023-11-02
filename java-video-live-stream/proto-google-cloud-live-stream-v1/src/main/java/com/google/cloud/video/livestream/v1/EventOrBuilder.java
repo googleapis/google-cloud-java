@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -188,12 +188,10 @@ public interface EventOrBuilder
    *
    *
    * <pre>
-   * Required. Switches to another input stream.
+   * Switches to another input stream.
    * </pre>
    *
-   * <code>
-   * .google.cloud.video.livestream.v1.Event.InputSwitchTask input_switch = 5 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>.google.cloud.video.livestream.v1.Event.InputSwitchTask input_switch = 5;</code>
    *
    * @return Whether the inputSwitch field is set.
    */
@@ -202,12 +200,10 @@ public interface EventOrBuilder
    *
    *
    * <pre>
-   * Required. Switches to another input stream.
+   * Switches to another input stream.
    * </pre>
    *
-   * <code>
-   * .google.cloud.video.livestream.v1.Event.InputSwitchTask input_switch = 5 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>.google.cloud.video.livestream.v1.Event.InputSwitchTask input_switch = 5;</code>
    *
    * @return The inputSwitch.
    */
@@ -216,12 +212,10 @@ public interface EventOrBuilder
    *
    *
    * <pre>
-   * Required. Switches to another input stream.
+   * Switches to another input stream.
    * </pre>
    *
-   * <code>
-   * .google.cloud.video.livestream.v1.Event.InputSwitchTask input_switch = 5 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>.google.cloud.video.livestream.v1.Event.InputSwitchTask input_switch = 5;</code>
    */
   com.google.cloud.video.livestream.v1.Event.InputSwitchTaskOrBuilder getInputSwitchOrBuilder();
 
@@ -229,12 +223,10 @@ public interface EventOrBuilder
    *
    *
    * <pre>
-   * Required. Inserts a new ad opportunity.
+   * Inserts a new ad opportunity.
    * </pre>
    *
-   * <code>
-   * .google.cloud.video.livestream.v1.Event.AdBreakTask ad_break = 6 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>.google.cloud.video.livestream.v1.Event.AdBreakTask ad_break = 6;</code>
    *
    * @return Whether the adBreak field is set.
    */
@@ -243,12 +235,10 @@ public interface EventOrBuilder
    *
    *
    * <pre>
-   * Required. Inserts a new ad opportunity.
+   * Inserts a new ad opportunity.
    * </pre>
    *
-   * <code>
-   * .google.cloud.video.livestream.v1.Event.AdBreakTask ad_break = 6 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>.google.cloud.video.livestream.v1.Event.AdBreakTask ad_break = 6;</code>
    *
    * @return The adBreak.
    */
@@ -257,12 +247,10 @@ public interface EventOrBuilder
    *
    *
    * <pre>
-   * Required. Inserts a new ad opportunity.
+   * Inserts a new ad opportunity.
    * </pre>
    *
-   * <code>
-   * .google.cloud.video.livestream.v1.Event.AdBreakTask ad_break = 6 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>.google.cloud.video.livestream.v1.Event.AdBreakTask ad_break = 6;</code>
    */
   com.google.cloud.video.livestream.v1.Event.AdBreakTaskOrBuilder getAdBreakOrBuilder();
 
@@ -270,11 +258,10 @@ public interface EventOrBuilder
    *
    *
    * <pre>
-   * Required. Stops any running ad break.
+   * Stops any running ad break.
    * </pre>
    *
-   * <code>
-   * .google.cloud.video.livestream.v1.Event.ReturnToProgramTask return_to_program = 13 [(.google.api.field_behavior) = REQUIRED];
+   * <code>.google.cloud.video.livestream.v1.Event.ReturnToProgramTask return_to_program = 13;
    * </code>
    *
    * @return Whether the returnToProgram field is set.
@@ -284,11 +271,10 @@ public interface EventOrBuilder
    *
    *
    * <pre>
-   * Required. Stops any running ad break.
+   * Stops any running ad break.
    * </pre>
    *
-   * <code>
-   * .google.cloud.video.livestream.v1.Event.ReturnToProgramTask return_to_program = 13 [(.google.api.field_behavior) = REQUIRED];
+   * <code>.google.cloud.video.livestream.v1.Event.ReturnToProgramTask return_to_program = 13;
    * </code>
    *
    * @return The returnToProgram.
@@ -298,11 +284,10 @@ public interface EventOrBuilder
    *
    *
    * <pre>
-   * Required. Stops any running ad break.
+   * Stops any running ad break.
    * </pre>
    *
-   * <code>
-   * .google.cloud.video.livestream.v1.Event.ReturnToProgramTask return_to_program = 13 [(.google.api.field_behavior) = REQUIRED];
+   * <code>.google.cloud.video.livestream.v1.Event.ReturnToProgramTask return_to_program = 13;
    * </code>
    */
   com.google.cloud.video.livestream.v1.Event.ReturnToProgramTaskOrBuilder
@@ -312,12 +297,45 @@ public interface EventOrBuilder
    *
    *
    * <pre>
-   * Required. Mutes the stream.
+   * Inserts a slate.
    * </pre>
    *
-   * <code>
-   * .google.cloud.video.livestream.v1.Event.MuteTask mute = 15 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>.google.cloud.video.livestream.v1.Event.SlateTask slate = 14;</code>
+   *
+   * @return Whether the slate field is set.
+   */
+  boolean hasSlate();
+  /**
+   *
+   *
+   * <pre>
+   * Inserts a slate.
+   * </pre>
+   *
+   * <code>.google.cloud.video.livestream.v1.Event.SlateTask slate = 14;</code>
+   *
+   * @return The slate.
+   */
+  com.google.cloud.video.livestream.v1.Event.SlateTask getSlate();
+  /**
+   *
+   *
+   * <pre>
+   * Inserts a slate.
+   * </pre>
+   *
+   * <code>.google.cloud.video.livestream.v1.Event.SlateTask slate = 14;</code>
+   */
+  com.google.cloud.video.livestream.v1.Event.SlateTaskOrBuilder getSlateOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Mutes the stream.
+   * </pre>
+   *
+   * <code>.google.cloud.video.livestream.v1.Event.MuteTask mute = 15;</code>
    *
    * @return Whether the mute field is set.
    */
@@ -326,12 +344,10 @@ public interface EventOrBuilder
    *
    *
    * <pre>
-   * Required. Mutes the stream.
+   * Mutes the stream.
    * </pre>
    *
-   * <code>
-   * .google.cloud.video.livestream.v1.Event.MuteTask mute = 15 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>.google.cloud.video.livestream.v1.Event.MuteTask mute = 15;</code>
    *
    * @return The mute.
    */
@@ -340,12 +356,10 @@ public interface EventOrBuilder
    *
    *
    * <pre>
-   * Required. Mutes the stream.
+   * Mutes the stream.
    * </pre>
    *
-   * <code>
-   * .google.cloud.video.livestream.v1.Event.MuteTask mute = 15 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>.google.cloud.video.livestream.v1.Event.MuteTask mute = 15;</code>
    */
   com.google.cloud.video.livestream.v1.Event.MuteTaskOrBuilder getMuteOrBuilder();
 
@@ -353,12 +367,10 @@ public interface EventOrBuilder
    *
    *
    * <pre>
-   * Required. Unmutes the stream.
+   * Unmutes the stream.
    * </pre>
    *
-   * <code>
-   * .google.cloud.video.livestream.v1.Event.UnmuteTask unmute = 16 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>.google.cloud.video.livestream.v1.Event.UnmuteTask unmute = 16;</code>
    *
    * @return Whether the unmute field is set.
    */
@@ -367,12 +379,10 @@ public interface EventOrBuilder
    *
    *
    * <pre>
-   * Required. Unmutes the stream.
+   * Unmutes the stream.
    * </pre>
    *
-   * <code>
-   * .google.cloud.video.livestream.v1.Event.UnmuteTask unmute = 16 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>.google.cloud.video.livestream.v1.Event.UnmuteTask unmute = 16;</code>
    *
    * @return The unmute.
    */
@@ -381,12 +391,10 @@ public interface EventOrBuilder
    *
    *
    * <pre>
-   * Required. Unmutes the stream.
+   * Unmutes the stream.
    * </pre>
    *
-   * <code>
-   * .google.cloud.video.livestream.v1.Event.UnmuteTask unmute = 16 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>.google.cloud.video.livestream.v1.Event.UnmuteTask unmute = 16;</code>
    */
   com.google.cloud.video.livestream.v1.Event.UnmuteTaskOrBuilder getUnmuteOrBuilder();
 
@@ -527,5 +535,5 @@ public interface EventOrBuilder
    */
   com.google.rpc.StatusOrBuilder getErrorOrBuilder();
 
-  public com.google.cloud.video.livestream.v1.Event.TaskCase getTaskCase();
+  com.google.cloud.video.livestream.v1.Event.TaskCase getTaskCase();
 }

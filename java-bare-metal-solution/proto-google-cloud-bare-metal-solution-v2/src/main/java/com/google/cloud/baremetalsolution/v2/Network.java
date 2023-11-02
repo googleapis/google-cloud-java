@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,23 +42,21 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     id_ = "";
     type_ = 0;
     ipAddress_ = "";
-    macAddress_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    macAddress_ = com.google.protobuf.LazyStringArrayList.emptyList();
     state_ = 0;
     vlanId_ = "";
     cidr_ = "";
     servicesCidr_ = "";
     reservations_ = java.util.Collections.emptyList();
+    pod_ = "";
+    mountPoints_ = java.util.Collections.emptyList();
+    gatewayIp_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Network();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -284,6 +282,26 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * <code>PROVISIONED = 2;</code>
      */
     PROVISIONED(2),
+    /**
+     *
+     *
+     * <pre>
+     * The Network is being deprovisioned.
+     * </pre>
+     *
+     * <code>DEPROVISIONING = 3;</code>
+     */
+    DEPROVISIONING(3),
+    /**
+     *
+     *
+     * <pre>
+     * The Network is being updated.
+     * </pre>
+     *
+     * <code>UPDATING = 4;</code>
+     */
+    UPDATING(4),
     UNRECOGNIZED(-1),
     ;
 
@@ -317,6 +335,26 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * <code>PROVISIONED = 2;</code>
      */
     public static final int PROVISIONED_VALUE = 2;
+    /**
+     *
+     *
+     * <pre>
+     * The Network is being deprovisioned.
+     * </pre>
+     *
+     * <code>DEPROVISIONING = 3;</code>
+     */
+    public static final int DEPROVISIONING_VALUE = 3;
+    /**
+     *
+     *
+     * <pre>
+     * The Network is being updated.
+     * </pre>
+     *
+     * <code>UPDATING = 4;</code>
+     */
+    public static final int UPDATING_VALUE = 4;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -348,6 +386,10 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
           return PROVISIONING;
         case 2:
           return PROVISIONED;
+        case 3:
+          return DEPROVISIONING;
+        case 4:
+          return UPDATING;
         default:
           return null;
       }
@@ -602,7 +644,8 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
   public static final int MAC_ADDRESS_FIELD_NUMBER = 4;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList macAddress_;
+  private com.google.protobuf.LazyStringArrayList macAddress_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -1091,6 +1134,209 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     return reservations_.get(index);
   }
 
+  public static final int POD_FIELD_NUMBER = 14;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object pod_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Pod name.
+   * </pre>
+   *
+   * <code>string pod = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The pod.
+   */
+  @java.lang.Override
+  public java.lang.String getPod() {
+    java.lang.Object ref = pod_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      pod_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Pod name.
+   * </pre>
+   *
+   * <code>string pod = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for pod.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getPodBytes() {
+    java.lang.Object ref = pod_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      pod_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int MOUNT_POINTS_FIELD_NUMBER = 15;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.baremetalsolution.v2.NetworkMountPoint> mountPoints_;
+  /**
+   *
+   *
+   * <pre>
+   * Input only. List of mount points to attach the network to.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.baremetalsolution.v2.NetworkMountPoint mount_points = 15 [(.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.baremetalsolution.v2.NetworkMountPoint>
+      getMountPointsList() {
+    return mountPoints_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Input only. List of mount points to attach the network to.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.baremetalsolution.v2.NetworkMountPoint mount_points = 15 [(.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.baremetalsolution.v2.NetworkMountPointOrBuilder>
+      getMountPointsOrBuilderList() {
+    return mountPoints_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Input only. List of mount points to attach the network to.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.baremetalsolution.v2.NetworkMountPoint mount_points = 15 [(.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public int getMountPointsCount() {
+    return mountPoints_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Input only. List of mount points to attach the network to.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.baremetalsolution.v2.NetworkMountPoint mount_points = 15 [(.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.baremetalsolution.v2.NetworkMountPoint getMountPoints(int index) {
+    return mountPoints_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Input only. List of mount points to attach the network to.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.baremetalsolution.v2.NetworkMountPoint mount_points = 15 [(.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.baremetalsolution.v2.NetworkMountPointOrBuilder getMountPointsOrBuilder(
+      int index) {
+    return mountPoints_.get(index);
+  }
+
+  public static final int JUMBO_FRAMES_ENABLED_FIELD_NUMBER = 16;
+  private boolean jumboFramesEnabled_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Whether network uses standard frames or jumbo ones.
+   * </pre>
+   *
+   * <code>bool jumbo_frames_enabled = 16;</code>
+   *
+   * @return The jumboFramesEnabled.
+   */
+  @java.lang.Override
+  public boolean getJumboFramesEnabled() {
+    return jumboFramesEnabled_;
+  }
+
+  public static final int GATEWAY_IP_FIELD_NUMBER = 17;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object gatewayIp_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Gateway ip address.
+   * </pre>
+   *
+   * <code>string gateway_ip = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The gatewayIp.
+   */
+  @java.lang.Override
+  public java.lang.String getGatewayIp() {
+    java.lang.Object ref = gatewayIp_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      gatewayIp_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Gateway ip address.
+   * </pre>
+   *
+   * <code>string gateway_ip = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for gatewayIp.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getGatewayIpBytes() {
+    java.lang.Object ref = gatewayIp_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      gatewayIp_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1140,6 +1386,18 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     }
     for (int i = 0; i < reservations_.size(); i++) {
       output.writeMessage(13, reservations_.get(i));
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pod_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 14, pod_);
+    }
+    for (int i = 0; i < mountPoints_.size(); i++) {
+      output.writeMessage(15, mountPoints_.get(i));
+    }
+    if (jumboFramesEnabled_ != false) {
+      output.writeBool(16, jumboFramesEnabled_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gatewayIp_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 17, gatewayIp_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1199,6 +1457,18 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < reservations_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, reservations_.get(i));
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pod_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, pod_);
+    }
+    for (int i = 0; i < mountPoints_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(15, mountPoints_.get(i));
+    }
+    if (jumboFramesEnabled_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(16, jumboFramesEnabled_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gatewayIp_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(17, gatewayIp_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1230,6 +1500,10 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
     if (!getServicesCidr().equals(other.getServicesCidr())) return false;
     if (!getReservationsList().equals(other.getReservationsList())) return false;
+    if (!getPod().equals(other.getPod())) return false;
+    if (!getMountPointsList().equals(other.getMountPointsList())) return false;
+    if (getJumboFramesEnabled() != other.getJumboFramesEnabled()) return false;
+    if (!getGatewayIp().equals(other.getGatewayIp())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1273,6 +1547,16 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + RESERVATIONS_FIELD_NUMBER;
       hash = (53 * hash) + getReservationsList().hashCode();
     }
+    hash = (37 * hash) + POD_FIELD_NUMBER;
+    hash = (53 * hash) + getPod().hashCode();
+    if (getMountPointsCount() > 0) {
+      hash = (37 * hash) + MOUNT_POINTS_FIELD_NUMBER;
+      hash = (53 * hash) + getMountPointsList().hashCode();
+    }
+    hash = (37 * hash) + JUMBO_FRAMES_ENABLED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getJumboFramesEnabled());
+    hash = (37 * hash) + GATEWAY_IP_FIELD_NUMBER;
+    hash = (53 * hash) + getGatewayIp().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1436,8 +1720,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       id_ = "";
       type_ = 0;
       ipAddress_ = "";
-      macAddress_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000010);
+      macAddress_ = com.google.protobuf.LazyStringArrayList.emptyList();
       state_ = 0;
       vlanId_ = "";
       cidr_ = "";
@@ -1455,6 +1738,16 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
         reservationsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000800);
+      pod_ = "";
+      if (mountPointsBuilder_ == null) {
+        mountPoints_ = java.util.Collections.emptyList();
+      } else {
+        mountPoints_ = null;
+        mountPointsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00002000);
+      jumboFramesEnabled_ = false;
+      gatewayIp_ = "";
       return this;
     }
 
@@ -1491,11 +1784,6 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     }
 
     private void buildPartialRepeatedFields(com.google.cloud.baremetalsolution.v2.Network result) {
-      if (((bitField0_ & 0x00000010) != 0)) {
-        macAddress_ = macAddress_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000010);
-      }
-      result.macAddress_ = macAddress_;
       if (reservationsBuilder_ == null) {
         if (((bitField0_ & 0x00000800) != 0)) {
           reservations_ = java.util.Collections.unmodifiableList(reservations_);
@@ -1504,6 +1792,15 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
         result.reservations_ = reservations_;
       } else {
         result.reservations_ = reservationsBuilder_.build();
+      }
+      if (mountPointsBuilder_ == null) {
+        if (((bitField0_ & 0x00002000) != 0)) {
+          mountPoints_ = java.util.Collections.unmodifiableList(mountPoints_);
+          bitField0_ = (bitField0_ & ~0x00002000);
+        }
+        result.mountPoints_ = mountPoints_;
+      } else {
+        result.mountPoints_ = mountPointsBuilder_.build();
       }
     }
 
@@ -1520,6 +1817,10 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.ipAddress_ = ipAddress_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        macAddress_.makeImmutable();
+        result.macAddress_ = macAddress_;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.state_ = state_;
@@ -1539,6 +1840,15 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
         result.servicesCidr_ = servicesCidr_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.pod_ = pod_;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.jumboFramesEnabled_ = jumboFramesEnabled_;
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.gatewayIp_ = gatewayIp_;
       }
     }
 
@@ -1608,7 +1918,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       if (!other.macAddress_.isEmpty()) {
         if (macAddress_.isEmpty()) {
           macAddress_ = other.macAddress_;
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ |= 0x00000010;
         } else {
           ensureMacAddressIsMutable();
           macAddress_.addAll(other.macAddress_);
@@ -1664,6 +1974,46 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
             reservationsBuilder_.addAllMessages(other.reservations_);
           }
         }
+      }
+      if (!other.getPod().isEmpty()) {
+        pod_ = other.pod_;
+        bitField0_ |= 0x00001000;
+        onChanged();
+      }
+      if (mountPointsBuilder_ == null) {
+        if (!other.mountPoints_.isEmpty()) {
+          if (mountPoints_.isEmpty()) {
+            mountPoints_ = other.mountPoints_;
+            bitField0_ = (bitField0_ & ~0x00002000);
+          } else {
+            ensureMountPointsIsMutable();
+            mountPoints_.addAll(other.mountPoints_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.mountPoints_.isEmpty()) {
+          if (mountPointsBuilder_.isEmpty()) {
+            mountPointsBuilder_.dispose();
+            mountPointsBuilder_ = null;
+            mountPoints_ = other.mountPoints_;
+            bitField0_ = (bitField0_ & ~0x00002000);
+            mountPointsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getMountPointsFieldBuilder()
+                    : null;
+          } else {
+            mountPointsBuilder_.addAllMessages(other.mountPoints_);
+          }
+        }
+      }
+      if (other.getJumboFramesEnabled() != false) {
+        setJumboFramesEnabled(other.getJumboFramesEnabled());
+      }
+      if (!other.getGatewayIp().isEmpty()) {
+        gatewayIp_ = other.gatewayIp_;
+        bitField0_ |= 0x00008000;
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1778,6 +2128,38 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
                 }
                 break;
               } // case 106
+            case 114:
+              {
+                pod_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 114
+            case 122:
+              {
+                com.google.cloud.baremetalsolution.v2.NetworkMountPoint m =
+                    input.readMessage(
+                        com.google.cloud.baremetalsolution.v2.NetworkMountPoint.parser(),
+                        extensionRegistry);
+                if (mountPointsBuilder_ == null) {
+                  ensureMountPointsIsMutable();
+                  mountPoints_.add(m);
+                } else {
+                  mountPointsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 122
+            case 128:
+              {
+                jumboFramesEnabled_ = input.readBool();
+                bitField0_ |= 0x00004000;
+                break;
+              } // case 128
+            case 138:
+              {
+                gatewayIp_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00008000;
+                break;
+              } // case 138
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2227,14 +2609,14 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList macAddress_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList macAddress_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureMacAddressIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!macAddress_.isModifiable()) {
         macAddress_ = new com.google.protobuf.LazyStringArrayList(macAddress_);
-        bitField0_ |= 0x00000010;
       }
+      bitField0_ |= 0x00000010;
     }
     /**
      *
@@ -2248,7 +2630,8 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the macAddress.
      */
     public com.google.protobuf.ProtocolStringList getMacAddressList() {
-      return macAddress_.getUnmodifiableView();
+      macAddress_.makeImmutable();
+      return macAddress_;
     }
     /**
      *
@@ -2313,6 +2696,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       }
       ensureMacAddressIsMutable();
       macAddress_.set(index, value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2334,6 +2718,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       }
       ensureMacAddressIsMutable();
       macAddress_.add(value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2352,6 +2737,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllMacAddress(java.lang.Iterable<java.lang.String> values) {
       ensureMacAddressIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, macAddress_);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2367,8 +2753,9 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMacAddress() {
-      macAddress_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      macAddress_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000010);
+      ;
       onChanged();
       return this;
     }
@@ -2391,6 +2778,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureMacAddressIsMutable();
       macAddress_.add(value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -3586,6 +3974,670 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
         reservations_ = null;
       }
       return reservationsBuilder_;
+    }
+
+    private java.lang.Object pod_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Pod name.
+     * </pre>
+     *
+     * <code>string pod = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The pod.
+     */
+    public java.lang.String getPod() {
+      java.lang.Object ref = pod_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        pod_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Pod name.
+     * </pre>
+     *
+     * <code>string pod = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for pod.
+     */
+    public com.google.protobuf.ByteString getPodBytes() {
+      java.lang.Object ref = pod_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        pod_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Pod name.
+     * </pre>
+     *
+     * <code>string pod = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The pod to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPod(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      pod_ = value;
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Pod name.
+     * </pre>
+     *
+     * <code>string pod = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPod() {
+      pod_ = getDefaultInstance().getPod();
+      bitField0_ = (bitField0_ & ~0x00001000);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Pod name.
+     * </pre>
+     *
+     * <code>string pod = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for pod to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPodBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      pod_ = value;
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    private java.util.List<com.google.cloud.baremetalsolution.v2.NetworkMountPoint> mountPoints_ =
+        java.util.Collections.emptyList();
+
+    private void ensureMountPointsIsMutable() {
+      if (!((bitField0_ & 0x00002000) != 0)) {
+        mountPoints_ =
+            new java.util.ArrayList<com.google.cloud.baremetalsolution.v2.NetworkMountPoint>(
+                mountPoints_);
+        bitField0_ |= 0x00002000;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.baremetalsolution.v2.NetworkMountPoint,
+            com.google.cloud.baremetalsolution.v2.NetworkMountPoint.Builder,
+            com.google.cloud.baremetalsolution.v2.NetworkMountPointOrBuilder>
+        mountPointsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. List of mount points to attach the network to.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.baremetalsolution.v2.NetworkMountPoint mount_points = 15 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.baremetalsolution.v2.NetworkMountPoint>
+        getMountPointsList() {
+      if (mountPointsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(mountPoints_);
+      } else {
+        return mountPointsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. List of mount points to attach the network to.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.baremetalsolution.v2.NetworkMountPoint mount_points = 15 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public int getMountPointsCount() {
+      if (mountPointsBuilder_ == null) {
+        return mountPoints_.size();
+      } else {
+        return mountPointsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. List of mount points to attach the network to.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.baremetalsolution.v2.NetworkMountPoint mount_points = 15 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.baremetalsolution.v2.NetworkMountPoint getMountPoints(int index) {
+      if (mountPointsBuilder_ == null) {
+        return mountPoints_.get(index);
+      } else {
+        return mountPointsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. List of mount points to attach the network to.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.baremetalsolution.v2.NetworkMountPoint mount_points = 15 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public Builder setMountPoints(
+        int index, com.google.cloud.baremetalsolution.v2.NetworkMountPoint value) {
+      if (mountPointsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMountPointsIsMutable();
+        mountPoints_.set(index, value);
+        onChanged();
+      } else {
+        mountPointsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. List of mount points to attach the network to.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.baremetalsolution.v2.NetworkMountPoint mount_points = 15 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public Builder setMountPoints(
+        int index,
+        com.google.cloud.baremetalsolution.v2.NetworkMountPoint.Builder builderForValue) {
+      if (mountPointsBuilder_ == null) {
+        ensureMountPointsIsMutable();
+        mountPoints_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        mountPointsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. List of mount points to attach the network to.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.baremetalsolution.v2.NetworkMountPoint mount_points = 15 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public Builder addMountPoints(com.google.cloud.baremetalsolution.v2.NetworkMountPoint value) {
+      if (mountPointsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMountPointsIsMutable();
+        mountPoints_.add(value);
+        onChanged();
+      } else {
+        mountPointsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. List of mount points to attach the network to.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.baremetalsolution.v2.NetworkMountPoint mount_points = 15 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public Builder addMountPoints(
+        int index, com.google.cloud.baremetalsolution.v2.NetworkMountPoint value) {
+      if (mountPointsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMountPointsIsMutable();
+        mountPoints_.add(index, value);
+        onChanged();
+      } else {
+        mountPointsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. List of mount points to attach the network to.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.baremetalsolution.v2.NetworkMountPoint mount_points = 15 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public Builder addMountPoints(
+        com.google.cloud.baremetalsolution.v2.NetworkMountPoint.Builder builderForValue) {
+      if (mountPointsBuilder_ == null) {
+        ensureMountPointsIsMutable();
+        mountPoints_.add(builderForValue.build());
+        onChanged();
+      } else {
+        mountPointsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. List of mount points to attach the network to.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.baremetalsolution.v2.NetworkMountPoint mount_points = 15 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public Builder addMountPoints(
+        int index,
+        com.google.cloud.baremetalsolution.v2.NetworkMountPoint.Builder builderForValue) {
+      if (mountPointsBuilder_ == null) {
+        ensureMountPointsIsMutable();
+        mountPoints_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        mountPointsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. List of mount points to attach the network to.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.baremetalsolution.v2.NetworkMountPoint mount_points = 15 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public Builder addAllMountPoints(
+        java.lang.Iterable<? extends com.google.cloud.baremetalsolution.v2.NetworkMountPoint>
+            values) {
+      if (mountPointsBuilder_ == null) {
+        ensureMountPointsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, mountPoints_);
+        onChanged();
+      } else {
+        mountPointsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. List of mount points to attach the network to.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.baremetalsolution.v2.NetworkMountPoint mount_points = 15 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public Builder clearMountPoints() {
+      if (mountPointsBuilder_ == null) {
+        mountPoints_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00002000);
+        onChanged();
+      } else {
+        mountPointsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. List of mount points to attach the network to.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.baremetalsolution.v2.NetworkMountPoint mount_points = 15 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public Builder removeMountPoints(int index) {
+      if (mountPointsBuilder_ == null) {
+        ensureMountPointsIsMutable();
+        mountPoints_.remove(index);
+        onChanged();
+      } else {
+        mountPointsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. List of mount points to attach the network to.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.baremetalsolution.v2.NetworkMountPoint mount_points = 15 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.baremetalsolution.v2.NetworkMountPoint.Builder getMountPointsBuilder(
+        int index) {
+      return getMountPointsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. List of mount points to attach the network to.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.baremetalsolution.v2.NetworkMountPoint mount_points = 15 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.baremetalsolution.v2.NetworkMountPointOrBuilder getMountPointsOrBuilder(
+        int index) {
+      if (mountPointsBuilder_ == null) {
+        return mountPoints_.get(index);
+      } else {
+        return mountPointsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. List of mount points to attach the network to.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.baremetalsolution.v2.NetworkMountPoint mount_points = 15 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<
+            ? extends com.google.cloud.baremetalsolution.v2.NetworkMountPointOrBuilder>
+        getMountPointsOrBuilderList() {
+      if (mountPointsBuilder_ != null) {
+        return mountPointsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(mountPoints_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. List of mount points to attach the network to.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.baremetalsolution.v2.NetworkMountPoint mount_points = 15 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.baremetalsolution.v2.NetworkMountPoint.Builder addMountPointsBuilder() {
+      return getMountPointsFieldBuilder()
+          .addBuilder(com.google.cloud.baremetalsolution.v2.NetworkMountPoint.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. List of mount points to attach the network to.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.baremetalsolution.v2.NetworkMountPoint mount_points = 15 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.baremetalsolution.v2.NetworkMountPoint.Builder addMountPointsBuilder(
+        int index) {
+      return getMountPointsFieldBuilder()
+          .addBuilder(
+              index, com.google.cloud.baremetalsolution.v2.NetworkMountPoint.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. List of mount points to attach the network to.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.baremetalsolution.v2.NetworkMountPoint mount_points = 15 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.baremetalsolution.v2.NetworkMountPoint.Builder>
+        getMountPointsBuilderList() {
+      return getMountPointsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.baremetalsolution.v2.NetworkMountPoint,
+            com.google.cloud.baremetalsolution.v2.NetworkMountPoint.Builder,
+            com.google.cloud.baremetalsolution.v2.NetworkMountPointOrBuilder>
+        getMountPointsFieldBuilder() {
+      if (mountPointsBuilder_ == null) {
+        mountPointsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.baremetalsolution.v2.NetworkMountPoint,
+                com.google.cloud.baremetalsolution.v2.NetworkMountPoint.Builder,
+                com.google.cloud.baremetalsolution.v2.NetworkMountPointOrBuilder>(
+                mountPoints_, ((bitField0_ & 0x00002000) != 0), getParentForChildren(), isClean());
+        mountPoints_ = null;
+      }
+      return mountPointsBuilder_;
+    }
+
+    private boolean jumboFramesEnabled_;
+    /**
+     *
+     *
+     * <pre>
+     * Whether network uses standard frames or jumbo ones.
+     * </pre>
+     *
+     * <code>bool jumbo_frames_enabled = 16;</code>
+     *
+     * @return The jumboFramesEnabled.
+     */
+    @java.lang.Override
+    public boolean getJumboFramesEnabled() {
+      return jumboFramesEnabled_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether network uses standard frames or jumbo ones.
+     * </pre>
+     *
+     * <code>bool jumbo_frames_enabled = 16;</code>
+     *
+     * @param value The jumboFramesEnabled to set.
+     * @return This builder for chaining.
+     */
+    public Builder setJumboFramesEnabled(boolean value) {
+
+      jumboFramesEnabled_ = value;
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether network uses standard frames or jumbo ones.
+     * </pre>
+     *
+     * <code>bool jumbo_frames_enabled = 16;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearJumboFramesEnabled() {
+      bitField0_ = (bitField0_ & ~0x00004000);
+      jumboFramesEnabled_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object gatewayIp_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Gateway ip address.
+     * </pre>
+     *
+     * <code>string gateway_ip = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The gatewayIp.
+     */
+    public java.lang.String getGatewayIp() {
+      java.lang.Object ref = gatewayIp_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        gatewayIp_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Gateway ip address.
+     * </pre>
+     *
+     * <code>string gateway_ip = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for gatewayIp.
+     */
+    public com.google.protobuf.ByteString getGatewayIpBytes() {
+      java.lang.Object ref = gatewayIp_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        gatewayIp_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Gateway ip address.
+     * </pre>
+     *
+     * <code>string gateway_ip = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The gatewayIp to set.
+     * @return This builder for chaining.
+     */
+    public Builder setGatewayIp(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      gatewayIp_ = value;
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Gateway ip address.
+     * </pre>
+     *
+     * <code>string gateway_ip = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearGatewayIp() {
+      gatewayIp_ = getDefaultInstance().getGatewayIp();
+      bitField0_ = (bitField0_ & ~0x00008000);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Gateway ip address.
+     * </pre>
+     *
+     * <code>string gateway_ip = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for gatewayIp to set.
+     * @return This builder for chaining.
+     */
+    public Builder setGatewayIpBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      gatewayIp_ = value;
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

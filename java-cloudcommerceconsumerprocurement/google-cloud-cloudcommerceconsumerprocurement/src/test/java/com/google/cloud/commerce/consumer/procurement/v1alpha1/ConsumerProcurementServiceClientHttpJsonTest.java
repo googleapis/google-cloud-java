@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -161,12 +161,9 @@ public class ConsumerProcurementServiceClientHttpJsonTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    GetOrderRequest request =
-        GetOrderRequest.newBuilder()
-            .setName("billingAccounts/billingAccount-9614/orders/order-9614")
-            .build();
+    String name = "billingAccounts/billingAccount-9614/orders/order-9614";
 
-    Order actualResponse = client.getOrder(request);
+    Order actualResponse = client.getOrder(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -192,11 +189,8 @@ public class ConsumerProcurementServiceClientHttpJsonTest {
     mockService.addException(exception);
 
     try {
-      GetOrderRequest request =
-          GetOrderRequest.newBuilder()
-              .setName("billingAccounts/billingAccount-9614/orders/order-9614")
-              .build();
-      client.getOrder(request);
+      String name = "billingAccounts/billingAccount-9614/orders/order-9614";
+      client.getOrder(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
@@ -213,15 +207,9 @@ public class ConsumerProcurementServiceClientHttpJsonTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    ListOrdersRequest request =
-        ListOrdersRequest.newBuilder()
-            .setParent("billingAccounts/billingAccount-7950")
-            .setPageSize(883849137)
-            .setPageToken("pageToken873572522")
-            .setFilter("filter-1274492040")
-            .build();
+    String parent = "billingAccounts/billingAccount-7950";
 
-    ListOrdersPagedResponse pagedListResponse = client.listOrders(request);
+    ListOrdersPagedResponse pagedListResponse = client.listOrders(parent);
 
     List<Order> resources = Lists.newArrayList(pagedListResponse.iterateAll());
 
@@ -251,14 +239,8 @@ public class ConsumerProcurementServiceClientHttpJsonTest {
     mockService.addException(exception);
 
     try {
-      ListOrdersRequest request =
-          ListOrdersRequest.newBuilder()
-              .setParent("billingAccounts/billingAccount-7950")
-              .setPageSize(883849137)
-              .setPageToken("pageToken873572522")
-              .setFilter("filter-1274492040")
-              .build();
-      client.listOrders(request);
+      String parent = "billingAccounts/billingAccount-7950";
+      client.listOrders(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

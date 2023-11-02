@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,11 +44,6 @@ public final class UpdatePolicyTagRequest extends com.google.protobuf.GeneratedM
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new UpdatePolicyTagRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -126,6 +121,7 @@ public final class UpdatePolicyTagRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Specifies the fields to update.
+   *
    * You can update only display name, description, and parent policy tag.
    * If not set, defaults to all updatable fields.
    * For more information, see [FieldMask]
@@ -145,6 +141,7 @@ public final class UpdatePolicyTagRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Specifies the fields to update.
+   *
    * You can update only display name, description, and parent policy tag.
    * If not set, defaults to all updatable fields.
    * For more information, see [FieldMask]
@@ -164,6 +161,7 @@ public final class UpdatePolicyTagRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Specifies the fields to update.
+   *
    * You can update only display name, description, and parent policy tag.
    * If not set, defaults to all updatable fields.
    * For more information, see [FieldMask]
@@ -762,6 +760,7 @@ public final class UpdatePolicyTagRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Specifies the fields to update.
+     *
      * You can update only display name, description, and parent policy tag.
      * If not set, defaults to all updatable fields.
      * For more information, see [FieldMask]
@@ -780,6 +779,7 @@ public final class UpdatePolicyTagRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Specifies the fields to update.
+     *
      * You can update only display name, description, and parent policy tag.
      * If not set, defaults to all updatable fields.
      * For more information, see [FieldMask]
@@ -804,6 +804,7 @@ public final class UpdatePolicyTagRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Specifies the fields to update.
+     *
      * You can update only display name, description, and parent policy tag.
      * If not set, defaults to all updatable fields.
      * For more information, see [FieldMask]
@@ -830,6 +831,7 @@ public final class UpdatePolicyTagRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Specifies the fields to update.
+     *
      * You can update only display name, description, and parent policy tag.
      * If not set, defaults to all updatable fields.
      * For more information, see [FieldMask]
@@ -853,6 +855,7 @@ public final class UpdatePolicyTagRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Specifies the fields to update.
+     *
      * You can update only display name, description, and parent policy tag.
      * If not set, defaults to all updatable fields.
      * For more information, see [FieldMask]
@@ -882,6 +885,7 @@ public final class UpdatePolicyTagRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Specifies the fields to update.
+     *
      * You can update only display name, description, and parent policy tag.
      * If not set, defaults to all updatable fields.
      * For more information, see [FieldMask]
@@ -905,6 +909,7 @@ public final class UpdatePolicyTagRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Specifies the fields to update.
+     *
      * You can update only display name, description, and parent policy tag.
      * If not set, defaults to all updatable fields.
      * For more information, see [FieldMask]
@@ -923,6 +928,7 @@ public final class UpdatePolicyTagRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Specifies the fields to update.
+     *
      * You can update only display name, description, and parent policy tag.
      * If not set, defaults to all updatable fields.
      * For more information, see [FieldMask]
@@ -945,6 +951,7 @@ public final class UpdatePolicyTagRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Specifies the fields to update.
+     *
      * You can update only display name, description, and parent policy tag.
      * If not set, defaults to all updatable fields.
      * For more information, see [FieldMask]

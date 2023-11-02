@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -68,33 +68,45 @@ public interface ListAssetsRequestOrBuilder
    * The expression is a list of zero or more restrictions combined via logical
    * operators `AND` and `OR`.
    * Parentheses are supported, and `OR` has higher precedence than `AND`.
+   *
    * Restrictions have the form `&lt;field&gt; &lt;operator&gt; &lt;value&gt;` and may have a `-`
    * character in front of them to indicate negation. The fields map to those
    * defined in the Asset resource. Examples include:
+   *
    * * name
    * * security_center_properties.resource_name
    * * resource_properties.a_property
    * * security_marks.marks.marka
+   *
    * The supported operators are:
+   *
    * * `=` for all value types.
    * * `&gt;`, `&lt;`, `&gt;=`, `&lt;=` for integer values.
    * * `:`, meaning substring matching, for strings.
+   *
    * The supported value types are:
+   *
    * * string literals in quotes.
    * * integer literals without quotes.
    * * boolean literals `true` and `false` without quotes.
+   *
    * The following are the allowed field and operator combinations:
+   *
    * * name: `=`
    * * update_time: `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+   *
    *   Usage: This should be milliseconds since epoch or an RFC3339 string.
    *   Examples:
    *     `update_time = "2019-06-10T16:07:18-07:00"`
    *     `update_time = 1560208038000`
+   *
    * * create_time: `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+   *
    *   Usage: This should be milliseconds since epoch or an RFC3339 string.
    *   Examples:
    *     `create_time = "2019-06-10T16:07:18-07:00"`
    *     `create_time = 1560208038000`
+   *
    * * iam_policy.policy_blob: `=`, `:`
    * * resource_properties: `=`, `:`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
    * * security_marks.marks: `=`, `:`
@@ -106,9 +118,12 @@ public interface ListAssetsRequestOrBuilder
    * * security_center_properties.resource_project: `=`, `:`
    * * security_center_properties.resource_project_display_name: `=`, `:`
    * * security_center_properties.resource_owners: `=`, `:`
+   *
    * For example, `resource_properties.size = 100` is a valid filter string.
+   *
    * Use a partial match on the empty string to filter based on a property
    * existing: `resource_properties.my_property : ""`
+   *
    * Use a negated partial match on the empty string to filter based on a
    * property not existing: `-resource_properties.my_property : ""`
    * </pre>
@@ -126,33 +141,45 @@ public interface ListAssetsRequestOrBuilder
    * The expression is a list of zero or more restrictions combined via logical
    * operators `AND` and `OR`.
    * Parentheses are supported, and `OR` has higher precedence than `AND`.
+   *
    * Restrictions have the form `&lt;field&gt; &lt;operator&gt; &lt;value&gt;` and may have a `-`
    * character in front of them to indicate negation. The fields map to those
    * defined in the Asset resource. Examples include:
+   *
    * * name
    * * security_center_properties.resource_name
    * * resource_properties.a_property
    * * security_marks.marks.marka
+   *
    * The supported operators are:
+   *
    * * `=` for all value types.
    * * `&gt;`, `&lt;`, `&gt;=`, `&lt;=` for integer values.
    * * `:`, meaning substring matching, for strings.
+   *
    * The supported value types are:
+   *
    * * string literals in quotes.
    * * integer literals without quotes.
    * * boolean literals `true` and `false` without quotes.
+   *
    * The following are the allowed field and operator combinations:
+   *
    * * name: `=`
    * * update_time: `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+   *
    *   Usage: This should be milliseconds since epoch or an RFC3339 string.
    *   Examples:
    *     `update_time = "2019-06-10T16:07:18-07:00"`
    *     `update_time = 1560208038000`
+   *
    * * create_time: `=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
+   *
    *   Usage: This should be milliseconds since epoch or an RFC3339 string.
    *   Examples:
    *     `create_time = "2019-06-10T16:07:18-07:00"`
    *     `create_time = 1560208038000`
+   *
    * * iam_policy.policy_blob: `=`, `:`
    * * resource_properties: `=`, `:`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`
    * * security_marks.marks: `=`, `:`
@@ -164,9 +191,12 @@ public interface ListAssetsRequestOrBuilder
    * * security_center_properties.resource_project: `=`, `:`
    * * security_center_properties.resource_project_display_name: `=`, `:`
    * * security_center_properties.resource_owners: `=`, `:`
+   *
    * For example, `resource_properties.size = 100` is a valid filter string.
+   *
    * Use a partial match on the empty string to filter based on a property
    * existing: `resource_properties.my_property : ""`
+   *
    * Use a negated partial match on the empty string to filter based on a
    * property not existing: `-resource_properties.my_property : ""`
    * </pre>
@@ -189,6 +219,7 @@ public interface ListAssetsRequestOrBuilder
    * desc,resource_properties.a_property". Redundant space characters in the
    * syntax are insignificant. "name desc,resource_properties.a_property" and "
    * name     desc  ,   resource_properties.a_property  " are equivalent.
+   *
    * The following fields are supported:
    * name
    * update_time
@@ -220,6 +251,7 @@ public interface ListAssetsRequestOrBuilder
    * desc,resource_properties.a_property". Redundant space characters in the
    * syntax are insignificant. "name desc,resource_properties.a_property" and "
    * name     desc  ,   resource_properties.a_property  " are equivalent.
+   *
    * The following fields are supported:
    * name
    * update_time
@@ -293,11 +325,14 @@ public interface ListAssetsRequestOrBuilder
    * remained present during the compare_duration period of time that precedes
    * the read_time. This is the time between (read_time - compare_duration) and
    * read_time.
+   *
    * The state_change value is derived based on the presence of the asset at the
    * two points in time. Intermediate state changes between the two times don't
    * affect the result. For example, the results aren't affected if the asset is
    * removed and re-created again.
+   *
    * Possible "state_change" values when compare_duration is specified:
+   *
    * * "ADDED":   indicates that the asset was not present at the start of
    *                compare_duration, but present at read_time.
    * * "REMOVED": indicates that the asset was present at the start of
@@ -305,6 +340,7 @@ public interface ListAssetsRequestOrBuilder
    * * "ACTIVE":  indicates that the asset was present at both the
    *                start and the end of the time period defined by
    *                compare_duration and read_time.
+   *
    * If compare_duration is not specified, then the only possible state_change
    * is "UNUSED",  which will be the state_change set for all assets present at
    * read_time.
@@ -324,11 +360,14 @@ public interface ListAssetsRequestOrBuilder
    * remained present during the compare_duration period of time that precedes
    * the read_time. This is the time between (read_time - compare_duration) and
    * read_time.
+   *
    * The state_change value is derived based on the presence of the asset at the
    * two points in time. Intermediate state changes between the two times don't
    * affect the result. For example, the results aren't affected if the asset is
    * removed and re-created again.
+   *
    * Possible "state_change" values when compare_duration is specified:
+   *
    * * "ADDED":   indicates that the asset was not present at the start of
    *                compare_duration, but present at read_time.
    * * "REMOVED": indicates that the asset was present at the start of
@@ -336,6 +375,7 @@ public interface ListAssetsRequestOrBuilder
    * * "ACTIVE":  indicates that the asset was present at both the
    *                start and the end of the time period defined by
    *                compare_duration and read_time.
+   *
    * If compare_duration is not specified, then the only possible state_change
    * is "UNUSED",  which will be the state_change set for all assets present at
    * read_time.
@@ -355,11 +395,14 @@ public interface ListAssetsRequestOrBuilder
    * remained present during the compare_duration period of time that precedes
    * the read_time. This is the time between (read_time - compare_duration) and
    * read_time.
+   *
    * The state_change value is derived based on the presence of the asset at the
    * two points in time. Intermediate state changes between the two times don't
    * affect the result. For example, the results aren't affected if the asset is
    * removed and re-created again.
+   *
    * Possible "state_change" values when compare_duration is specified:
+   *
    * * "ADDED":   indicates that the asset was not present at the start of
    *                compare_duration, but present at read_time.
    * * "REMOVED": indicates that the asset was present at the start of
@@ -367,6 +410,7 @@ public interface ListAssetsRequestOrBuilder
    * * "ACTIVE":  indicates that the asset was present at both the
    *                start and the end of the time period defined by
    *                compare_duration and read_time.
+   *
    * If compare_duration is not specified, then the only possible state_change
    * is "UNUSED",  which will be the state_change set for all assets present at
    * read_time.

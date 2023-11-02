@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,7 +47,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
     cidrBlock_ = "";
     networkEndpoints_ = java.util.Collections.emptyList();
     health_ = 0;
-    tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    tags_ = com.google.protobuf.LazyStringArrayList.emptyList();
     dataDisks_ = java.util.Collections.emptyList();
     apiVersion_ = 0;
     symptoms_ = java.util.Collections.emptyList();
@@ -58,11 +58,6 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Node();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1806,7 +1801,8 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
   public static final int TAGS_FIELD_NUMBER = 40;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList tags_;
+  private com.google.protobuf.LazyStringArrayList tags_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -2233,6 +2229,80 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
         : shieldedInstanceConfig_;
   }
 
+  public static final int MULTISLICE_NODE_FIELD_NUMBER = 47;
+  private boolean multisliceNode_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Whether the Node belongs to a Multislice group.
+   * </pre>
+   *
+   * <code>bool multislice_node = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The multisliceNode.
+   */
+  @java.lang.Override
+  public boolean getMultisliceNode() {
+    return multisliceNode_;
+  }
+
+  public static final int BOOT_DISK_CONFIG_FIELD_NUMBER = 49;
+  private com.google.cloud.tpu.v2alpha1.BootDiskConfig bootDiskConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Boot disk configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.tpu.v2alpha1.BootDiskConfig boot_disk_config = 49 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the bootDiskConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasBootDiskConfig() {
+    return bootDiskConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Boot disk configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.tpu.v2alpha1.BootDiskConfig boot_disk_config = 49 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The bootDiskConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.tpu.v2alpha1.BootDiskConfig getBootDiskConfig() {
+    return bootDiskConfig_ == null
+        ? com.google.cloud.tpu.v2alpha1.BootDiskConfig.getDefaultInstance()
+        : bootDiskConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Boot disk configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.tpu.v2alpha1.BootDiskConfig boot_disk_config = 49 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.tpu.v2alpha1.BootDiskConfigOrBuilder getBootDiskConfigOrBuilder() {
+    return bootDiskConfig_ == null
+        ? com.google.cloud.tpu.v2alpha1.BootDiskConfig.getDefaultInstance()
+        : bootDiskConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2314,6 +2384,12 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
     }
     if (shieldedInstanceConfig_ != null) {
       output.writeMessage(45, getShieldedInstanceConfig());
+    }
+    if (multisliceNode_ != false) {
+      output.writeBool(47, multisliceNode_);
+    }
+    if (bootDiskConfig_ != null) {
+      output.writeMessage(49, getBootDiskConfig());
     }
     getUnknownFields().writeTo(output);
   }
@@ -2415,6 +2491,12 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(45, getShieldedInstanceConfig());
     }
+    if (multisliceNode_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(47, multisliceNode_);
+    }
+    if (bootDiskConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(49, getBootDiskConfig());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2470,6 +2552,11 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
     if (hasShieldedInstanceConfig() != other.hasShieldedInstanceConfig()) return false;
     if (hasShieldedInstanceConfig()) {
       if (!getShieldedInstanceConfig().equals(other.getShieldedInstanceConfig())) return false;
+    }
+    if (getMultisliceNode() != other.getMultisliceNode()) return false;
+    if (hasBootDiskConfig() != other.hasBootDiskConfig()) return false;
+    if (hasBootDiskConfig()) {
+      if (!getBootDiskConfig().equals(other.getBootDiskConfig())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -2551,6 +2638,12 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
     if (hasShieldedInstanceConfig()) {
       hash = (37 * hash) + SHIELDED_INSTANCE_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getShieldedInstanceConfig().hashCode();
+    }
+    hash = (37 * hash) + MULTISLICE_NODE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getMultisliceNode());
+    if (hasBootDiskConfig()) {
+      hash = (37 * hash) + BOOT_DISK_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getBootDiskConfig().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -2751,8 +2844,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
       health_ = 0;
       internalGetMutableLabels().clear();
       internalGetMutableMetadata().clear();
-      tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00008000);
+      tags_ = com.google.protobuf.LazyStringArrayList.emptyList();
       id_ = 0L;
       if (dataDisksBuilder_ == null) {
         dataDisks_ = java.util.Collections.emptyList();
@@ -2779,6 +2871,12 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
       if (shieldedInstanceConfigBuilder_ != null) {
         shieldedInstanceConfigBuilder_.dispose();
         shieldedInstanceConfigBuilder_ = null;
+      }
+      multisliceNode_ = false;
+      bootDiskConfig_ = null;
+      if (bootDiskConfigBuilder_ != null) {
+        bootDiskConfigBuilder_.dispose();
+        bootDiskConfigBuilder_ = null;
       }
       return this;
     }
@@ -2824,11 +2922,6 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.networkEndpoints_ = networkEndpointsBuilder_.build();
       }
-      if (((bitField0_ & 0x00008000) != 0)) {
-        tags_ = tags_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00008000);
-      }
-      result.tags_ = tags_;
       if (dataDisksBuilder_ == null) {
         if (((bitField0_ & 0x00020000) != 0)) {
           dataDisks_ = java.util.Collections.unmodifiableList(dataDisks_);
@@ -2898,6 +2991,10 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
         result.metadata_ = internalGetMetadata();
         result.metadata_.makeImmutable();
       }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        tags_.makeImmutable();
+        result.tags_ = tags_;
+      }
       if (((from_bitField0_ & 0x00010000) != 0)) {
         result.id_ = id_;
       }
@@ -2918,6 +3015,13 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
             shieldedInstanceConfigBuilder_ == null
                 ? shieldedInstanceConfig_
                 : shieldedInstanceConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00800000) != 0)) {
+        result.multisliceNode_ = multisliceNode_;
+      }
+      if (((from_bitField0_ & 0x01000000) != 0)) {
+        result.bootDiskConfig_ =
+            bootDiskConfigBuilder_ == null ? bootDiskConfig_ : bootDiskConfigBuilder_.build();
       }
     }
 
@@ -3048,7 +3152,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
       if (!other.tags_.isEmpty()) {
         if (tags_.isEmpty()) {
           tags_ = other.tags_;
-          bitField0_ = (bitField0_ & ~0x00008000);
+          bitField0_ |= 0x00008000;
         } else {
           ensureTagsIsMutable();
           tags_.addAll(other.tags_);
@@ -3125,6 +3229,12 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasShieldedInstanceConfig()) {
         mergeShieldedInstanceConfig(other.getShieldedInstanceConfig());
+      }
+      if (other.getMultisliceNode() != false) {
+        setMultisliceNode(other.getMultisliceNode());
+      }
+      if (other.hasBootDiskConfig()) {
+        mergeBootDiskConfig(other.getBootDiskConfig());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -3327,6 +3437,18 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00400000;
                 break;
               } // case 362
+            case 376:
+              {
+                multisliceNode_ = input.readBool();
+                bitField0_ |= 0x00800000;
+                break;
+              } // case 376
+            case 394:
+              {
+                input.readMessage(getBootDiskConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x01000000;
+                break;
+              } // case 394
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5752,14 +5874,14 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList tags_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList tags_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureTagsIsMutable() {
-      if (!((bitField0_ & 0x00008000) != 0)) {
+      if (!tags_.isModifiable()) {
         tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
-        bitField0_ |= 0x00008000;
       }
+      bitField0_ |= 0x00008000;
     }
     /**
      *
@@ -5774,7 +5896,8 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the tags.
      */
     public com.google.protobuf.ProtocolStringList getTagsList() {
-      return tags_.getUnmodifiableView();
+      tags_.makeImmutable();
+      return tags_;
     }
     /**
      *
@@ -5843,6 +5966,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
       }
       ensureTagsIsMutable();
       tags_.set(index, value);
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -5865,6 +5989,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
       }
       ensureTagsIsMutable();
       tags_.add(value);
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -5884,6 +6009,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllTags(java.lang.Iterable<java.lang.String> values) {
       ensureTagsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, tags_);
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -5900,8 +6026,9 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTags() {
-      tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      tags_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00008000);
+      ;
       onChanged();
       return this;
     }
@@ -5925,6 +6052,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureTagsIsMutable();
       tags_.add(value);
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -7301,6 +7429,262 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
         shieldedInstanceConfig_ = null;
       }
       return shieldedInstanceConfigBuilder_;
+    }
+
+    private boolean multisliceNode_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Whether the Node belongs to a Multislice group.
+     * </pre>
+     *
+     * <code>bool multislice_node = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The multisliceNode.
+     */
+    @java.lang.Override
+    public boolean getMultisliceNode() {
+      return multisliceNode_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Whether the Node belongs to a Multislice group.
+     * </pre>
+     *
+     * <code>bool multislice_node = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The multisliceNode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMultisliceNode(boolean value) {
+
+      multisliceNode_ = value;
+      bitField0_ |= 0x00800000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Whether the Node belongs to a Multislice group.
+     * </pre>
+     *
+     * <code>bool multislice_node = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMultisliceNode() {
+      bitField0_ = (bitField0_ & ~0x00800000);
+      multisliceNode_ = false;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.tpu.v2alpha1.BootDiskConfig bootDiskConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.tpu.v2alpha1.BootDiskConfig,
+            com.google.cloud.tpu.v2alpha1.BootDiskConfig.Builder,
+            com.google.cloud.tpu.v2alpha1.BootDiskConfigOrBuilder>
+        bootDiskConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Boot disk configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.tpu.v2alpha1.BootDiskConfig boot_disk_config = 49 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the bootDiskConfig field is set.
+     */
+    public boolean hasBootDiskConfig() {
+      return ((bitField0_ & 0x01000000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Boot disk configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.tpu.v2alpha1.BootDiskConfig boot_disk_config = 49 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The bootDiskConfig.
+     */
+    public com.google.cloud.tpu.v2alpha1.BootDiskConfig getBootDiskConfig() {
+      if (bootDiskConfigBuilder_ == null) {
+        return bootDiskConfig_ == null
+            ? com.google.cloud.tpu.v2alpha1.BootDiskConfig.getDefaultInstance()
+            : bootDiskConfig_;
+      } else {
+        return bootDiskConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Boot disk configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.tpu.v2alpha1.BootDiskConfig boot_disk_config = 49 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setBootDiskConfig(com.google.cloud.tpu.v2alpha1.BootDiskConfig value) {
+      if (bootDiskConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bootDiskConfig_ = value;
+      } else {
+        bootDiskConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x01000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Boot disk configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.tpu.v2alpha1.BootDiskConfig boot_disk_config = 49 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setBootDiskConfig(
+        com.google.cloud.tpu.v2alpha1.BootDiskConfig.Builder builderForValue) {
+      if (bootDiskConfigBuilder_ == null) {
+        bootDiskConfig_ = builderForValue.build();
+      } else {
+        bootDiskConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x01000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Boot disk configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.tpu.v2alpha1.BootDiskConfig boot_disk_config = 49 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeBootDiskConfig(com.google.cloud.tpu.v2alpha1.BootDiskConfig value) {
+      if (bootDiskConfigBuilder_ == null) {
+        if (((bitField0_ & 0x01000000) != 0)
+            && bootDiskConfig_ != null
+            && bootDiskConfig_
+                != com.google.cloud.tpu.v2alpha1.BootDiskConfig.getDefaultInstance()) {
+          getBootDiskConfigBuilder().mergeFrom(value);
+        } else {
+          bootDiskConfig_ = value;
+        }
+      } else {
+        bootDiskConfigBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x01000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Boot disk configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.tpu.v2alpha1.BootDiskConfig boot_disk_config = 49 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearBootDiskConfig() {
+      bitField0_ = (bitField0_ & ~0x01000000);
+      bootDiskConfig_ = null;
+      if (bootDiskConfigBuilder_ != null) {
+        bootDiskConfigBuilder_.dispose();
+        bootDiskConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Boot disk configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.tpu.v2alpha1.BootDiskConfig boot_disk_config = 49 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.tpu.v2alpha1.BootDiskConfig.Builder getBootDiskConfigBuilder() {
+      bitField0_ |= 0x01000000;
+      onChanged();
+      return getBootDiskConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Boot disk configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.tpu.v2alpha1.BootDiskConfig boot_disk_config = 49 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.tpu.v2alpha1.BootDiskConfigOrBuilder getBootDiskConfigOrBuilder() {
+      if (bootDiskConfigBuilder_ != null) {
+        return bootDiskConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return bootDiskConfig_ == null
+            ? com.google.cloud.tpu.v2alpha1.BootDiskConfig.getDefaultInstance()
+            : bootDiskConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Boot disk configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.tpu.v2alpha1.BootDiskConfig boot_disk_config = 49 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.tpu.v2alpha1.BootDiskConfig,
+            com.google.cloud.tpu.v2alpha1.BootDiskConfig.Builder,
+            com.google.cloud.tpu.v2alpha1.BootDiskConfigOrBuilder>
+        getBootDiskConfigFieldBuilder() {
+      if (bootDiskConfigBuilder_ == null) {
+        bootDiskConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.tpu.v2alpha1.BootDiskConfig,
+                com.google.cloud.tpu.v2alpha1.BootDiskConfig.Builder,
+                com.google.cloud.tpu.v2alpha1.BootDiskConfigOrBuilder>(
+                getBootDiskConfig(), getParentForChildren(), isClean());
+        bootDiskConfig_ = null;
+      }
+      return bootDiskConfigBuilder_;
     }
 
     @java.lang.Override

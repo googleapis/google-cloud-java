@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,19 +39,14 @@ public final class Audience extends com.google.protobuf.GeneratedMessageV3
   }
 
   private Audience() {
-    genders_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    ageGroups_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    genders_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    ageGroups_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Audience();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -72,16 +67,19 @@ public final class Audience extends com.google.protobuf.GeneratedMessageV3
   public static final int GENDERS_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList genders_;
+  private com.google.protobuf.LazyStringArrayList genders_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
    * <pre>
    * The genders of the audience. Strongly encouraged to use the standard
    * values: "male", "female", "unisex".
+   *
    * At most 5 values are allowed. Each value must be a UTF-8 encoded string
    * with a length limit of 128 characters. Otherwise, an INVALID_ARGUMENT error
    * is returned.
+   *
    * Google Merchant Center property
    * [gender](https://support.google.com/merchants/answer/6324479). Schema.org
    * property
@@ -101,9 +99,11 @@ public final class Audience extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The genders of the audience. Strongly encouraged to use the standard
    * values: "male", "female", "unisex".
+   *
    * At most 5 values are allowed. Each value must be a UTF-8 encoded string
    * with a length limit of 128 characters. Otherwise, an INVALID_ARGUMENT error
    * is returned.
+   *
    * Google Merchant Center property
    * [gender](https://support.google.com/merchants/answer/6324479). Schema.org
    * property
@@ -123,9 +123,11 @@ public final class Audience extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The genders of the audience. Strongly encouraged to use the standard
    * values: "male", "female", "unisex".
+   *
    * At most 5 values are allowed. Each value must be a UTF-8 encoded string
    * with a length limit of 128 characters. Otherwise, an INVALID_ARGUMENT error
    * is returned.
+   *
    * Google Merchant Center property
    * [gender](https://support.google.com/merchants/answer/6324479). Schema.org
    * property
@@ -146,9 +148,11 @@ public final class Audience extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The genders of the audience. Strongly encouraged to use the standard
    * values: "male", "female", "unisex".
+   *
    * At most 5 values are allowed. Each value must be a UTF-8 encoded string
    * with a length limit of 128 characters. Otherwise, an INVALID_ARGUMENT error
    * is returned.
+   *
    * Google Merchant Center property
    * [gender](https://support.google.com/merchants/answer/6324479). Schema.org
    * property
@@ -167,7 +171,8 @@ public final class Audience extends com.google.protobuf.GeneratedMessageV3
   public static final int AGE_GROUPS_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList ageGroups_;
+  private com.google.protobuf.LazyStringArrayList ageGroups_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -176,9 +181,11 @@ public final class Audience extends com.google.protobuf.GeneratedMessageV3
    * values: "newborn" (up to 3 months old), "infant" (3–12 months old),
    * "toddler" (1–5 years old), "kids" (5–13 years old), "adult" (typically
    * teens or older).
+   *
    * At most 5 values are allowed. Each value must be a UTF-8 encoded string
    * with a length limit of 128 characters. Otherwise, an INVALID_ARGUMENT error
    * is returned.
+   *
    * Google Merchant Center property
    * [age_group](https://support.google.com/merchants/answer/6324463).
    * Schema.org property
@@ -201,9 +208,11 @@ public final class Audience extends com.google.protobuf.GeneratedMessageV3
    * values: "newborn" (up to 3 months old), "infant" (3–12 months old),
    * "toddler" (1–5 years old), "kids" (5–13 years old), "adult" (typically
    * teens or older).
+   *
    * At most 5 values are allowed. Each value must be a UTF-8 encoded string
    * with a length limit of 128 characters. Otherwise, an INVALID_ARGUMENT error
    * is returned.
+   *
    * Google Merchant Center property
    * [age_group](https://support.google.com/merchants/answer/6324463).
    * Schema.org property
@@ -226,9 +235,11 @@ public final class Audience extends com.google.protobuf.GeneratedMessageV3
    * values: "newborn" (up to 3 months old), "infant" (3–12 months old),
    * "toddler" (1–5 years old), "kids" (5–13 years old), "adult" (typically
    * teens or older).
+   *
    * At most 5 values are allowed. Each value must be a UTF-8 encoded string
    * with a length limit of 128 characters. Otherwise, an INVALID_ARGUMENT error
    * is returned.
+   *
    * Google Merchant Center property
    * [age_group](https://support.google.com/merchants/answer/6324463).
    * Schema.org property
@@ -252,9 +263,11 @@ public final class Audience extends com.google.protobuf.GeneratedMessageV3
    * values: "newborn" (up to 3 months old), "infant" (3–12 months old),
    * "toddler" (1–5 years old), "kids" (5–13 years old), "adult" (typically
    * teens or older).
+   *
    * At most 5 values are allowed. Each value must be a UTF-8 encoded string
    * with a length limit of 128 characters. Otherwise, an INVALID_ARGUMENT error
    * is returned.
+   *
    * Google Merchant Center property
    * [age_group](https://support.google.com/merchants/answer/6324463).
    * Schema.org property
@@ -491,10 +504,8 @@ public final class Audience extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      genders_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
-      ageGroups_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      genders_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      ageGroups_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -521,7 +532,6 @@ public final class Audience extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.retail.v2.Audience buildPartial() {
       com.google.cloud.retail.v2.Audience result = new com.google.cloud.retail.v2.Audience(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -529,21 +539,16 @@ public final class Audience extends com.google.protobuf.GeneratedMessageV3
       return result;
     }
 
-    private void buildPartialRepeatedFields(com.google.cloud.retail.v2.Audience result) {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        genders_ = genders_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.genders_ = genders_;
-      if (((bitField0_ & 0x00000002) != 0)) {
-        ageGroups_ = ageGroups_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.ageGroups_ = ageGroups_;
-    }
-
     private void buildPartial0(com.google.cloud.retail.v2.Audience result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        genders_.makeImmutable();
+        result.genders_ = genders_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        ageGroups_.makeImmutable();
+        result.ageGroups_ = ageGroups_;
+      }
     }
 
     @java.lang.Override
@@ -594,7 +599,7 @@ public final class Audience extends com.google.protobuf.GeneratedMessageV3
       if (!other.genders_.isEmpty()) {
         if (genders_.isEmpty()) {
           genders_ = other.genders_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ |= 0x00000001;
         } else {
           ensureGendersIsMutable();
           genders_.addAll(other.genders_);
@@ -604,7 +609,7 @@ public final class Audience extends com.google.protobuf.GeneratedMessageV3
       if (!other.ageGroups_.isEmpty()) {
         if (ageGroups_.isEmpty()) {
           ageGroups_ = other.ageGroups_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureAgeGroupsIsMutable();
           ageGroups_.addAll(other.ageGroups_);
@@ -670,14 +675,14 @@ public final class Audience extends com.google.protobuf.GeneratedMessageV3
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList genders_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList genders_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureGendersIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!genders_.isModifiable()) {
         genders_ = new com.google.protobuf.LazyStringArrayList(genders_);
-        bitField0_ |= 0x00000001;
       }
+      bitField0_ |= 0x00000001;
     }
     /**
      *
@@ -685,9 +690,11 @@ public final class Audience extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The genders of the audience. Strongly encouraged to use the standard
      * values: "male", "female", "unisex".
+     *
      * At most 5 values are allowed. Each value must be a UTF-8 encoded string
      * with a length limit of 128 characters. Otherwise, an INVALID_ARGUMENT error
      * is returned.
+     *
      * Google Merchant Center property
      * [gender](https://support.google.com/merchants/answer/6324479). Schema.org
      * property
@@ -699,7 +706,8 @@ public final class Audience extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the genders.
      */
     public com.google.protobuf.ProtocolStringList getGendersList() {
-      return genders_.getUnmodifiableView();
+      genders_.makeImmutable();
+      return genders_;
     }
     /**
      *
@@ -707,9 +715,11 @@ public final class Audience extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The genders of the audience. Strongly encouraged to use the standard
      * values: "male", "female", "unisex".
+     *
      * At most 5 values are allowed. Each value must be a UTF-8 encoded string
      * with a length limit of 128 characters. Otherwise, an INVALID_ARGUMENT error
      * is returned.
+     *
      * Google Merchant Center property
      * [gender](https://support.google.com/merchants/answer/6324479). Schema.org
      * property
@@ -729,9 +739,11 @@ public final class Audience extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The genders of the audience. Strongly encouraged to use the standard
      * values: "male", "female", "unisex".
+     *
      * At most 5 values are allowed. Each value must be a UTF-8 encoded string
      * with a length limit of 128 characters. Otherwise, an INVALID_ARGUMENT error
      * is returned.
+     *
      * Google Merchant Center property
      * [gender](https://support.google.com/merchants/answer/6324479). Schema.org
      * property
@@ -752,9 +764,11 @@ public final class Audience extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The genders of the audience. Strongly encouraged to use the standard
      * values: "male", "female", "unisex".
+     *
      * At most 5 values are allowed. Each value must be a UTF-8 encoded string
      * with a length limit of 128 characters. Otherwise, an INVALID_ARGUMENT error
      * is returned.
+     *
      * Google Merchant Center property
      * [gender](https://support.google.com/merchants/answer/6324479). Schema.org
      * property
@@ -775,9 +789,11 @@ public final class Audience extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The genders of the audience. Strongly encouraged to use the standard
      * values: "male", "female", "unisex".
+     *
      * At most 5 values are allowed. Each value must be a UTF-8 encoded string
      * with a length limit of 128 characters. Otherwise, an INVALID_ARGUMENT error
      * is returned.
+     *
      * Google Merchant Center property
      * [gender](https://support.google.com/merchants/answer/6324479). Schema.org
      * property
@@ -796,6 +812,7 @@ public final class Audience extends com.google.protobuf.GeneratedMessageV3
       }
       ensureGendersIsMutable();
       genders_.set(index, value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -805,9 +822,11 @@ public final class Audience extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The genders of the audience. Strongly encouraged to use the standard
      * values: "male", "female", "unisex".
+     *
      * At most 5 values are allowed. Each value must be a UTF-8 encoded string
      * with a length limit of 128 characters. Otherwise, an INVALID_ARGUMENT error
      * is returned.
+     *
      * Google Merchant Center property
      * [gender](https://support.google.com/merchants/answer/6324479). Schema.org
      * property
@@ -825,6 +844,7 @@ public final class Audience extends com.google.protobuf.GeneratedMessageV3
       }
       ensureGendersIsMutable();
       genders_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -834,9 +854,11 @@ public final class Audience extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The genders of the audience. Strongly encouraged to use the standard
      * values: "male", "female", "unisex".
+     *
      * At most 5 values are allowed. Each value must be a UTF-8 encoded string
      * with a length limit of 128 characters. Otherwise, an INVALID_ARGUMENT error
      * is returned.
+     *
      * Google Merchant Center property
      * [gender](https://support.google.com/merchants/answer/6324479). Schema.org
      * property
@@ -851,6 +873,7 @@ public final class Audience extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllGenders(java.lang.Iterable<java.lang.String> values) {
       ensureGendersIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, genders_);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -860,9 +883,11 @@ public final class Audience extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The genders of the audience. Strongly encouraged to use the standard
      * values: "male", "female", "unisex".
+     *
      * At most 5 values are allowed. Each value must be a UTF-8 encoded string
      * with a length limit of 128 characters. Otherwise, an INVALID_ARGUMENT error
      * is returned.
+     *
      * Google Merchant Center property
      * [gender](https://support.google.com/merchants/answer/6324479). Schema.org
      * property
@@ -874,8 +899,9 @@ public final class Audience extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearGenders() {
-      genders_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      genders_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      ;
       onChanged();
       return this;
     }
@@ -885,9 +911,11 @@ public final class Audience extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The genders of the audience. Strongly encouraged to use the standard
      * values: "male", "female", "unisex".
+     *
      * At most 5 values are allowed. Each value must be a UTF-8 encoded string
      * with a length limit of 128 characters. Otherwise, an INVALID_ARGUMENT error
      * is returned.
+     *
      * Google Merchant Center property
      * [gender](https://support.google.com/merchants/answer/6324479). Schema.org
      * property
@@ -906,18 +934,19 @@ public final class Audience extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureGendersIsMutable();
       genders_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList ageGroups_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList ageGroups_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureAgeGroupsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!ageGroups_.isModifiable()) {
         ageGroups_ = new com.google.protobuf.LazyStringArrayList(ageGroups_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -927,9 +956,11 @@ public final class Audience extends com.google.protobuf.GeneratedMessageV3
      * values: "newborn" (up to 3 months old), "infant" (3–12 months old),
      * "toddler" (1–5 years old), "kids" (5–13 years old), "adult" (typically
      * teens or older).
+     *
      * At most 5 values are allowed. Each value must be a UTF-8 encoded string
      * with a length limit of 128 characters. Otherwise, an INVALID_ARGUMENT error
      * is returned.
+     *
      * Google Merchant Center property
      * [age_group](https://support.google.com/merchants/answer/6324463).
      * Schema.org property
@@ -942,7 +973,8 @@ public final class Audience extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the ageGroups.
      */
     public com.google.protobuf.ProtocolStringList getAgeGroupsList() {
-      return ageGroups_.getUnmodifiableView();
+      ageGroups_.makeImmutable();
+      return ageGroups_;
     }
     /**
      *
@@ -952,9 +984,11 @@ public final class Audience extends com.google.protobuf.GeneratedMessageV3
      * values: "newborn" (up to 3 months old), "infant" (3–12 months old),
      * "toddler" (1–5 years old), "kids" (5–13 years old), "adult" (typically
      * teens or older).
+     *
      * At most 5 values are allowed. Each value must be a UTF-8 encoded string
      * with a length limit of 128 characters. Otherwise, an INVALID_ARGUMENT error
      * is returned.
+     *
      * Google Merchant Center property
      * [age_group](https://support.google.com/merchants/answer/6324463).
      * Schema.org property
@@ -977,9 +1011,11 @@ public final class Audience extends com.google.protobuf.GeneratedMessageV3
      * values: "newborn" (up to 3 months old), "infant" (3–12 months old),
      * "toddler" (1–5 years old), "kids" (5–13 years old), "adult" (typically
      * teens or older).
+     *
      * At most 5 values are allowed. Each value must be a UTF-8 encoded string
      * with a length limit of 128 characters. Otherwise, an INVALID_ARGUMENT error
      * is returned.
+     *
      * Google Merchant Center property
      * [age_group](https://support.google.com/merchants/answer/6324463).
      * Schema.org property
@@ -1003,9 +1039,11 @@ public final class Audience extends com.google.protobuf.GeneratedMessageV3
      * values: "newborn" (up to 3 months old), "infant" (3–12 months old),
      * "toddler" (1–5 years old), "kids" (5–13 years old), "adult" (typically
      * teens or older).
+     *
      * At most 5 values are allowed. Each value must be a UTF-8 encoded string
      * with a length limit of 128 characters. Otherwise, an INVALID_ARGUMENT error
      * is returned.
+     *
      * Google Merchant Center property
      * [age_group](https://support.google.com/merchants/answer/6324463).
      * Schema.org property
@@ -1029,9 +1067,11 @@ public final class Audience extends com.google.protobuf.GeneratedMessageV3
      * values: "newborn" (up to 3 months old), "infant" (3–12 months old),
      * "toddler" (1–5 years old), "kids" (5–13 years old), "adult" (typically
      * teens or older).
+     *
      * At most 5 values are allowed. Each value must be a UTF-8 encoded string
      * with a length limit of 128 characters. Otherwise, an INVALID_ARGUMENT error
      * is returned.
+     *
      * Google Merchant Center property
      * [age_group](https://support.google.com/merchants/answer/6324463).
      * Schema.org property
@@ -1051,6 +1091,7 @@ public final class Audience extends com.google.protobuf.GeneratedMessageV3
       }
       ensureAgeGroupsIsMutable();
       ageGroups_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1062,9 +1103,11 @@ public final class Audience extends com.google.protobuf.GeneratedMessageV3
      * values: "newborn" (up to 3 months old), "infant" (3–12 months old),
      * "toddler" (1–5 years old), "kids" (5–13 years old), "adult" (typically
      * teens or older).
+     *
      * At most 5 values are allowed. Each value must be a UTF-8 encoded string
      * with a length limit of 128 characters. Otherwise, an INVALID_ARGUMENT error
      * is returned.
+     *
      * Google Merchant Center property
      * [age_group](https://support.google.com/merchants/answer/6324463).
      * Schema.org property
@@ -1083,6 +1126,7 @@ public final class Audience extends com.google.protobuf.GeneratedMessageV3
       }
       ensureAgeGroupsIsMutable();
       ageGroups_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1094,9 +1138,11 @@ public final class Audience extends com.google.protobuf.GeneratedMessageV3
      * values: "newborn" (up to 3 months old), "infant" (3–12 months old),
      * "toddler" (1–5 years old), "kids" (5–13 years old), "adult" (typically
      * teens or older).
+     *
      * At most 5 values are allowed. Each value must be a UTF-8 encoded string
      * with a length limit of 128 characters. Otherwise, an INVALID_ARGUMENT error
      * is returned.
+     *
      * Google Merchant Center property
      * [age_group](https://support.google.com/merchants/answer/6324463).
      * Schema.org property
@@ -1112,6 +1158,7 @@ public final class Audience extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllAgeGroups(java.lang.Iterable<java.lang.String> values) {
       ensureAgeGroupsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, ageGroups_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1123,9 +1170,11 @@ public final class Audience extends com.google.protobuf.GeneratedMessageV3
      * values: "newborn" (up to 3 months old), "infant" (3–12 months old),
      * "toddler" (1–5 years old), "kids" (5–13 years old), "adult" (typically
      * teens or older).
+     *
      * At most 5 values are allowed. Each value must be a UTF-8 encoded string
      * with a length limit of 128 characters. Otherwise, an INVALID_ARGUMENT error
      * is returned.
+     *
      * Google Merchant Center property
      * [age_group](https://support.google.com/merchants/answer/6324463).
      * Schema.org property
@@ -1138,8 +1187,9 @@ public final class Audience extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAgeGroups() {
-      ageGroups_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      ageGroups_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -1151,9 +1201,11 @@ public final class Audience extends com.google.protobuf.GeneratedMessageV3
      * values: "newborn" (up to 3 months old), "infant" (3–12 months old),
      * "toddler" (1–5 years old), "kids" (5–13 years old), "adult" (typically
      * teens or older).
+     *
      * At most 5 values are allowed. Each value must be a UTF-8 encoded string
      * with a length limit of 128 characters. Otherwise, an INVALID_ARGUMENT error
      * is returned.
+     *
      * Google Merchant Center property
      * [age_group](https://support.google.com/merchants/answer/6324463).
      * Schema.org property
@@ -1173,6 +1225,7 @@ public final class Audience extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureAgeGroupsIsMutable();
       ageGroups_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,7 @@ package com.google.cloud.documentai.v1beta2;
  *
  *
  * <pre>
- * User-provided hint for key value pair.
+ * Reserved for future use.
  * </pre>
  *
  * Protobuf type {@code google.cloud.documentai.v1beta2.KeyValuePairHint}
@@ -39,18 +39,13 @@ public final class KeyValuePairHint extends com.google.protobuf.GeneratedMessage
 
   private KeyValuePairHint() {
     key_ = "";
-    valueTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    valueTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new KeyValuePairHint();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -122,7 +117,8 @@ public final class KeyValuePairHint extends com.google.protobuf.GeneratedMessage
   public static final int VALUE_TYPES_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList valueTypes_;
+  private com.google.protobuf.LazyStringArrayList valueTypes_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -373,7 +369,7 @@ public final class KeyValuePairHint extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * User-provided hint for key value pair.
+   * Reserved for future use.
    * </pre>
    *
    * Protobuf type {@code google.cloud.documentai.v1beta2.KeyValuePairHint}
@@ -409,8 +405,7 @@ public final class KeyValuePairHint extends com.google.protobuf.GeneratedMessage
       super.clear();
       bitField0_ = 0;
       key_ = "";
-      valueTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      valueTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -438,7 +433,6 @@ public final class KeyValuePairHint extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.documentai.v1beta2.KeyValuePairHint buildPartial() {
       com.google.cloud.documentai.v1beta2.KeyValuePairHint result =
           new com.google.cloud.documentai.v1beta2.KeyValuePairHint(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -446,19 +440,14 @@ public final class KeyValuePairHint extends com.google.protobuf.GeneratedMessage
       return result;
     }
 
-    private void buildPartialRepeatedFields(
-        com.google.cloud.documentai.v1beta2.KeyValuePairHint result) {
-      if (((bitField0_ & 0x00000002) != 0)) {
-        valueTypes_ = valueTypes_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.valueTypes_ = valueTypes_;
-    }
-
     private void buildPartial0(com.google.cloud.documentai.v1beta2.KeyValuePairHint result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.key_ = key_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        valueTypes_.makeImmutable();
+        result.valueTypes_ = valueTypes_;
       }
     }
 
@@ -516,7 +505,7 @@ public final class KeyValuePairHint extends com.google.protobuf.GeneratedMessage
       if (!other.valueTypes_.isEmpty()) {
         if (valueTypes_.isEmpty()) {
           valueTypes_ = other.valueTypes_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureValueTypesIsMutable();
           valueTypes_.addAll(other.valueTypes_);
@@ -687,14 +676,14 @@ public final class KeyValuePairHint extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
-    private com.google.protobuf.LazyStringList valueTypes_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList valueTypes_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureValueTypesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!valueTypes_.isModifiable()) {
         valueTypes_ = new com.google.protobuf.LazyStringArrayList(valueTypes_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -711,7 +700,8 @@ public final class KeyValuePairHint extends com.google.protobuf.GeneratedMessage
      * @return A list containing the valueTypes.
      */
     public com.google.protobuf.ProtocolStringList getValueTypesList() {
-      return valueTypes_.getUnmodifiableView();
+      valueTypes_.makeImmutable();
+      return valueTypes_;
     }
     /**
      *
@@ -788,6 +778,7 @@ public final class KeyValuePairHint extends com.google.protobuf.GeneratedMessage
       }
       ensureValueTypesIsMutable();
       valueTypes_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -812,6 +803,7 @@ public final class KeyValuePairHint extends com.google.protobuf.GeneratedMessage
       }
       ensureValueTypesIsMutable();
       valueTypes_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -833,6 +825,7 @@ public final class KeyValuePairHint extends com.google.protobuf.GeneratedMessage
     public Builder addAllValueTypes(java.lang.Iterable<java.lang.String> values) {
       ensureValueTypesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, valueTypes_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -851,8 +844,9 @@ public final class KeyValuePairHint extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearValueTypes() {
-      valueTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      valueTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -878,6 +872,7 @@ public final class KeyValuePairHint extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       ensureValueTypesIsMutable();
       valueTypes_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

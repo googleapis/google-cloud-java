@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,7 +32,7 @@ public final class AdaptationGrpc {
 
   private AdaptationGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.speech.v1p1beta1.Adaptation";
+  public static final java.lang.String SERVICE_NAME = "google.cloud.speech.v1p1beta1.Adaptation";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -1395,9 +1395,9 @@ public final class AdaptationGrpc {
   private static final class AdaptationMethodDescriptorSupplier
       extends AdaptationBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    AdaptationMethodDescriptorSupplier(String methodName) {
+    AdaptationMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

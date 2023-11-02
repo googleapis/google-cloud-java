@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Job();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -359,6 +354,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int jobTypeCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object jobType_;
 
   public enum JobTypeCase
@@ -367,6 +364,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     DEPLOY_JOB(4),
     VERIFY_JOB(5),
+    PREDEPLOY_JOB(9),
+    POSTDEPLOY_JOB(10),
     CREATE_CHILD_ROLLOUT_JOB(6),
     ADVANCE_CHILD_ROLLOUT_JOB(7),
     JOBTYPE_NOT_SET(0);
@@ -391,6 +390,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
           return DEPLOY_JOB;
         case 5:
           return VERIFY_JOB;
+        case 9:
+          return PREDEPLOY_JOB;
+        case 10:
+          return POSTDEPLOY_JOB;
         case 6:
           return CREATE_CHILD_ROLLOUT_JOB;
         case 7:
@@ -723,6 +726,120 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.deploy.v1.VerifyJob.getDefaultInstance();
   }
 
+  public static final int PREDEPLOY_JOB_FIELD_NUMBER = 9;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A predeploy Job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.PredeployJob predeploy_job = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the predeployJob field is set.
+   */
+  @java.lang.Override
+  public boolean hasPredeployJob() {
+    return jobTypeCase_ == 9;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A predeploy Job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.PredeployJob predeploy_job = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The predeployJob.
+   */
+  @java.lang.Override
+  public com.google.cloud.deploy.v1.PredeployJob getPredeployJob() {
+    if (jobTypeCase_ == 9) {
+      return (com.google.cloud.deploy.v1.PredeployJob) jobType_;
+    }
+    return com.google.cloud.deploy.v1.PredeployJob.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A predeploy Job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.PredeployJob predeploy_job = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.deploy.v1.PredeployJobOrBuilder getPredeployJobOrBuilder() {
+    if (jobTypeCase_ == 9) {
+      return (com.google.cloud.deploy.v1.PredeployJob) jobType_;
+    }
+    return com.google.cloud.deploy.v1.PredeployJob.getDefaultInstance();
+  }
+
+  public static final int POSTDEPLOY_JOB_FIELD_NUMBER = 10;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A postdeploy Job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.PostdeployJob postdeploy_job = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the postdeployJob field is set.
+   */
+  @java.lang.Override
+  public boolean hasPostdeployJob() {
+    return jobTypeCase_ == 10;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A postdeploy Job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.PostdeployJob postdeploy_job = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The postdeployJob.
+   */
+  @java.lang.Override
+  public com.google.cloud.deploy.v1.PostdeployJob getPostdeployJob() {
+    if (jobTypeCase_ == 10) {
+      return (com.google.cloud.deploy.v1.PostdeployJob) jobType_;
+    }
+    return com.google.cloud.deploy.v1.PostdeployJob.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A postdeploy Job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.PostdeployJob postdeploy_job = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.deploy.v1.PostdeployJobOrBuilder getPostdeployJobOrBuilder() {
+    if (jobTypeCase_ == 10) {
+      return (com.google.cloud.deploy.v1.PostdeployJob) jobType_;
+    }
+    return com.google.cloud.deploy.v1.PostdeployJob.getDefaultInstance();
+  }
+
   public static final int CREATE_CHILD_ROLLOUT_JOB_FIELD_NUMBER = 6;
   /**
    *
@@ -877,6 +994,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(skipMessage_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, skipMessage_);
     }
+    if (jobTypeCase_ == 9) {
+      output.writeMessage(9, (com.google.cloud.deploy.v1.PredeployJob) jobType_);
+    }
+    if (jobTypeCase_ == 10) {
+      output.writeMessage(10, (com.google.cloud.deploy.v1.PostdeployJob) jobType_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -918,6 +1041,16 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(skipMessage_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, skipMessage_);
     }
+    if (jobTypeCase_ == 9) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              9, (com.google.cloud.deploy.v1.PredeployJob) jobType_);
+    }
+    if (jobTypeCase_ == 10) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              10, (com.google.cloud.deploy.v1.PostdeployJob) jobType_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -944,6 +1077,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         break;
       case 5:
         if (!getVerifyJob().equals(other.getVerifyJob())) return false;
+        break;
+      case 9:
+        if (!getPredeployJob().equals(other.getPredeployJob())) return false;
+        break;
+      case 10:
+        if (!getPostdeployJob().equals(other.getPostdeployJob())) return false;
         break;
       case 6:
         if (!getCreateChildRolloutJob().equals(other.getCreateChildRolloutJob())) return false;
@@ -981,6 +1120,14 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       case 5:
         hash = (37 * hash) + VERIFY_JOB_FIELD_NUMBER;
         hash = (53 * hash) + getVerifyJob().hashCode();
+        break;
+      case 9:
+        hash = (37 * hash) + PREDEPLOY_JOB_FIELD_NUMBER;
+        hash = (53 * hash) + getPredeployJob().hashCode();
+        break;
+      case 10:
+        hash = (37 * hash) + POSTDEPLOY_JOB_FIELD_NUMBER;
+        hash = (53 * hash) + getPostdeployJob().hashCode();
         break;
       case 6:
         hash = (37 * hash) + CREATE_CHILD_ROLLOUT_JOB_FIELD_NUMBER;
@@ -1140,6 +1287,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       if (verifyJobBuilder_ != null) {
         verifyJobBuilder_.clear();
       }
+      if (predeployJobBuilder_ != null) {
+        predeployJobBuilder_.clear();
+      }
+      if (postdeployJobBuilder_ != null) {
+        postdeployJobBuilder_.clear();
+      }
       if (createChildRolloutJobBuilder_ != null) {
         createChildRolloutJobBuilder_.clear();
       }
@@ -1206,6 +1359,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       }
       if (jobTypeCase_ == 5 && verifyJobBuilder_ != null) {
         result.jobType_ = verifyJobBuilder_.build();
+      }
+      if (jobTypeCase_ == 9 && predeployJobBuilder_ != null) {
+        result.jobType_ = predeployJobBuilder_.build();
+      }
+      if (jobTypeCase_ == 10 && postdeployJobBuilder_ != null) {
+        result.jobType_ = postdeployJobBuilder_.build();
       }
       if (jobTypeCase_ == 6 && createChildRolloutJobBuilder_ != null) {
         result.jobType_ = createChildRolloutJobBuilder_.build();
@@ -1287,6 +1446,16 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         case VERIFY_JOB:
           {
             mergeVerifyJob(other.getVerifyJob());
+            break;
+          }
+        case PREDEPLOY_JOB:
+          {
+            mergePredeployJob(other.getPredeployJob());
+            break;
+          }
+        case POSTDEPLOY_JOB:
+          {
+            mergePostdeployJob(other.getPostdeployJob());
             break;
           }
         case CREATE_CHILD_ROLLOUT_JOB:
@@ -1380,6 +1549,18 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000004;
                 break;
               } // case 66
+            case 74:
+              {
+                input.readMessage(getPredeployJobFieldBuilder().getBuilder(), extensionRegistry);
+                jobTypeCase_ = 9;
+                break;
+              } // case 74
+            case 82:
+              {
+                input.readMessage(getPostdeployJobFieldBuilder().getBuilder(), extensionRegistry);
+                jobTypeCase_ = 10;
+                break;
+              } // case 82
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2297,6 +2478,460 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       jobTypeCase_ = 5;
       onChanged();
       return verifyJobBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.deploy.v1.PredeployJob,
+            com.google.cloud.deploy.v1.PredeployJob.Builder,
+            com.google.cloud.deploy.v1.PredeployJobOrBuilder>
+        predeployJobBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A predeploy Job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.PredeployJob predeploy_job = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the predeployJob field is set.
+     */
+    @java.lang.Override
+    public boolean hasPredeployJob() {
+      return jobTypeCase_ == 9;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A predeploy Job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.PredeployJob predeploy_job = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The predeployJob.
+     */
+    @java.lang.Override
+    public com.google.cloud.deploy.v1.PredeployJob getPredeployJob() {
+      if (predeployJobBuilder_ == null) {
+        if (jobTypeCase_ == 9) {
+          return (com.google.cloud.deploy.v1.PredeployJob) jobType_;
+        }
+        return com.google.cloud.deploy.v1.PredeployJob.getDefaultInstance();
+      } else {
+        if (jobTypeCase_ == 9) {
+          return predeployJobBuilder_.getMessage();
+        }
+        return com.google.cloud.deploy.v1.PredeployJob.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A predeploy Job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.PredeployJob predeploy_job = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setPredeployJob(com.google.cloud.deploy.v1.PredeployJob value) {
+      if (predeployJobBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        jobType_ = value;
+        onChanged();
+      } else {
+        predeployJobBuilder_.setMessage(value);
+      }
+      jobTypeCase_ = 9;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A predeploy Job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.PredeployJob predeploy_job = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setPredeployJob(
+        com.google.cloud.deploy.v1.PredeployJob.Builder builderForValue) {
+      if (predeployJobBuilder_ == null) {
+        jobType_ = builderForValue.build();
+        onChanged();
+      } else {
+        predeployJobBuilder_.setMessage(builderForValue.build());
+      }
+      jobTypeCase_ = 9;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A predeploy Job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.PredeployJob predeploy_job = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergePredeployJob(com.google.cloud.deploy.v1.PredeployJob value) {
+      if (predeployJobBuilder_ == null) {
+        if (jobTypeCase_ == 9
+            && jobType_ != com.google.cloud.deploy.v1.PredeployJob.getDefaultInstance()) {
+          jobType_ =
+              com.google.cloud.deploy.v1.PredeployJob.newBuilder(
+                      (com.google.cloud.deploy.v1.PredeployJob) jobType_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          jobType_ = value;
+        }
+        onChanged();
+      } else {
+        if (jobTypeCase_ == 9) {
+          predeployJobBuilder_.mergeFrom(value);
+        } else {
+          predeployJobBuilder_.setMessage(value);
+        }
+      }
+      jobTypeCase_ = 9;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A predeploy Job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.PredeployJob predeploy_job = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearPredeployJob() {
+      if (predeployJobBuilder_ == null) {
+        if (jobTypeCase_ == 9) {
+          jobTypeCase_ = 0;
+          jobType_ = null;
+          onChanged();
+        }
+      } else {
+        if (jobTypeCase_ == 9) {
+          jobTypeCase_ = 0;
+          jobType_ = null;
+        }
+        predeployJobBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A predeploy Job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.PredeployJob predeploy_job = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.deploy.v1.PredeployJob.Builder getPredeployJobBuilder() {
+      return getPredeployJobFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A predeploy Job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.PredeployJob predeploy_job = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.deploy.v1.PredeployJobOrBuilder getPredeployJobOrBuilder() {
+      if ((jobTypeCase_ == 9) && (predeployJobBuilder_ != null)) {
+        return predeployJobBuilder_.getMessageOrBuilder();
+      } else {
+        if (jobTypeCase_ == 9) {
+          return (com.google.cloud.deploy.v1.PredeployJob) jobType_;
+        }
+        return com.google.cloud.deploy.v1.PredeployJob.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A predeploy Job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.PredeployJob predeploy_job = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.deploy.v1.PredeployJob,
+            com.google.cloud.deploy.v1.PredeployJob.Builder,
+            com.google.cloud.deploy.v1.PredeployJobOrBuilder>
+        getPredeployJobFieldBuilder() {
+      if (predeployJobBuilder_ == null) {
+        if (!(jobTypeCase_ == 9)) {
+          jobType_ = com.google.cloud.deploy.v1.PredeployJob.getDefaultInstance();
+        }
+        predeployJobBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.deploy.v1.PredeployJob,
+                com.google.cloud.deploy.v1.PredeployJob.Builder,
+                com.google.cloud.deploy.v1.PredeployJobOrBuilder>(
+                (com.google.cloud.deploy.v1.PredeployJob) jobType_,
+                getParentForChildren(),
+                isClean());
+        jobType_ = null;
+      }
+      jobTypeCase_ = 9;
+      onChanged();
+      return predeployJobBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.deploy.v1.PostdeployJob,
+            com.google.cloud.deploy.v1.PostdeployJob.Builder,
+            com.google.cloud.deploy.v1.PostdeployJobOrBuilder>
+        postdeployJobBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A postdeploy Job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.PostdeployJob postdeploy_job = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the postdeployJob field is set.
+     */
+    @java.lang.Override
+    public boolean hasPostdeployJob() {
+      return jobTypeCase_ == 10;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A postdeploy Job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.PostdeployJob postdeploy_job = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The postdeployJob.
+     */
+    @java.lang.Override
+    public com.google.cloud.deploy.v1.PostdeployJob getPostdeployJob() {
+      if (postdeployJobBuilder_ == null) {
+        if (jobTypeCase_ == 10) {
+          return (com.google.cloud.deploy.v1.PostdeployJob) jobType_;
+        }
+        return com.google.cloud.deploy.v1.PostdeployJob.getDefaultInstance();
+      } else {
+        if (jobTypeCase_ == 10) {
+          return postdeployJobBuilder_.getMessage();
+        }
+        return com.google.cloud.deploy.v1.PostdeployJob.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A postdeploy Job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.PostdeployJob postdeploy_job = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setPostdeployJob(com.google.cloud.deploy.v1.PostdeployJob value) {
+      if (postdeployJobBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        jobType_ = value;
+        onChanged();
+      } else {
+        postdeployJobBuilder_.setMessage(value);
+      }
+      jobTypeCase_ = 10;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A postdeploy Job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.PostdeployJob postdeploy_job = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setPostdeployJob(
+        com.google.cloud.deploy.v1.PostdeployJob.Builder builderForValue) {
+      if (postdeployJobBuilder_ == null) {
+        jobType_ = builderForValue.build();
+        onChanged();
+      } else {
+        postdeployJobBuilder_.setMessage(builderForValue.build());
+      }
+      jobTypeCase_ = 10;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A postdeploy Job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.PostdeployJob postdeploy_job = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergePostdeployJob(com.google.cloud.deploy.v1.PostdeployJob value) {
+      if (postdeployJobBuilder_ == null) {
+        if (jobTypeCase_ == 10
+            && jobType_ != com.google.cloud.deploy.v1.PostdeployJob.getDefaultInstance()) {
+          jobType_ =
+              com.google.cloud.deploy.v1.PostdeployJob.newBuilder(
+                      (com.google.cloud.deploy.v1.PostdeployJob) jobType_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          jobType_ = value;
+        }
+        onChanged();
+      } else {
+        if (jobTypeCase_ == 10) {
+          postdeployJobBuilder_.mergeFrom(value);
+        } else {
+          postdeployJobBuilder_.setMessage(value);
+        }
+      }
+      jobTypeCase_ = 10;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A postdeploy Job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.PostdeployJob postdeploy_job = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearPostdeployJob() {
+      if (postdeployJobBuilder_ == null) {
+        if (jobTypeCase_ == 10) {
+          jobTypeCase_ = 0;
+          jobType_ = null;
+          onChanged();
+        }
+      } else {
+        if (jobTypeCase_ == 10) {
+          jobTypeCase_ = 0;
+          jobType_ = null;
+        }
+        postdeployJobBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A postdeploy Job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.PostdeployJob postdeploy_job = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.deploy.v1.PostdeployJob.Builder getPostdeployJobBuilder() {
+      return getPostdeployJobFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A postdeploy Job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.PostdeployJob postdeploy_job = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.deploy.v1.PostdeployJobOrBuilder getPostdeployJobOrBuilder() {
+      if ((jobTypeCase_ == 10) && (postdeployJobBuilder_ != null)) {
+        return postdeployJobBuilder_.getMessageOrBuilder();
+      } else {
+        if (jobTypeCase_ == 10) {
+          return (com.google.cloud.deploy.v1.PostdeployJob) jobType_;
+        }
+        return com.google.cloud.deploy.v1.PostdeployJob.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A postdeploy Job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.PostdeployJob postdeploy_job = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.deploy.v1.PostdeployJob,
+            com.google.cloud.deploy.v1.PostdeployJob.Builder,
+            com.google.cloud.deploy.v1.PostdeployJobOrBuilder>
+        getPostdeployJobFieldBuilder() {
+      if (postdeployJobBuilder_ == null) {
+        if (!(jobTypeCase_ == 10)) {
+          jobType_ = com.google.cloud.deploy.v1.PostdeployJob.getDefaultInstance();
+        }
+        postdeployJobBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.deploy.v1.PostdeployJob,
+                com.google.cloud.deploy.v1.PostdeployJob.Builder,
+                com.google.cloud.deploy.v1.PostdeployJobOrBuilder>(
+                (com.google.cloud.deploy.v1.PostdeployJob) jobType_,
+                getParentForChildren(),
+                isClean());
+        jobType_ = null;
+      }
+      jobTypeCase_ = 10;
+      onChanged();
+      return postdeployJobBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,6 +43,10 @@ public final class CloudRedisServiceV1Proto {
       internal_static_google_cloud_redis_v1_Instance_RedisConfigsEntry_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_redis_v1_Instance_RedisConfigsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_redis_v1_PersistenceConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_redis_v1_PersistenceConfig_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_redis_v1_RescheduleMaintenanceRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -158,217 +162,241 @@ public final class CloudRedisServiceV1Proto {
           + "\037google/api/field_behavior.proto\032\031google"
           + "/api/resource.proto\032#google/longrunning/"
           + "operations.proto\032\036google/protobuf/durati"
-          + "on.proto\032 google/protobuf/field_mask.pro"
-          + "to\032\037google/protobuf/timestamp.proto\032\033goo"
-          + "gle/type/dayofweek.proto\032\033google/type/ti"
-          + "meofday.proto\".\n\010NodeInfo\022\017\n\002id\030\001 \001(\tB\003\340"
-          + "A\003\022\021\n\004zone\030\002 \001(\tB\003\340A\003\"\236\020\n\010Instance\022\021\n\004na"
-          + "me\030\001 \001(\tB\003\340A\002\022\024\n\014display_name\030\002 \001(\t\022;\n\006l"
-          + "abels\030\003 \003(\0132+.google.cloud.redis.v1.Inst"
-          + "ance.LabelsEntry\022\030\n\013location_id\030\004 \001(\tB\003\340"
-          + "A\001\022$\n\027alternative_location_id\030\005 \001(\tB\003\340A\001"
-          + "\022\032\n\rredis_version\030\007 \001(\tB\003\340A\001\022\036\n\021reserved"
-          + "_ip_range\030\t \001(\tB\003\340A\001\022\037\n\022secondary_ip_ran"
-          + "ge\030\036 \001(\tB\003\340A\001\022\021\n\004host\030\n \001(\tB\003\340A\003\022\021\n\004port"
-          + "\030\013 \001(\005B\003\340A\003\022 \n\023current_location_id\030\014 \001(\t"
-          + "B\003\340A\003\0224\n\013create_time\030\r \001(\0132\032.google.prot"
-          + "obuf.TimestampB\003\340A\003\0229\n\005state\030\016 \001(\0162%.goo"
-          + "gle.cloud.redis.v1.Instance.StateB\003\340A\003\022\033"
-          + "\n\016status_message\030\017 \001(\tB\003\340A\003\022M\n\rredis_con"
-          + "figs\030\020 \003(\01321.google.cloud.redis.v1.Insta"
-          + "nce.RedisConfigsEntryB\003\340A\001\0227\n\004tier\030\021 \001(\016"
-          + "2$.google.cloud.redis.v1.Instance.TierB\003"
-          + "\340A\002\022\033\n\016memory_size_gb\030\022 \001(\005B\003\340A\002\022\037\n\022auth"
-          + "orized_network\030\024 \001(\tB\003\340A\001\022%\n\030persistence"
-          + "_iam_identity\030\025 \001(\tB\003\340A\003\022F\n\014connect_mode"
-          + "\030\026 \001(\0162+.google.cloud.redis.v1.Instance."
-          + "ConnectModeB\003\340A\001\022\031\n\014auth_enabled\030\027 \001(\010B\003"
-          + "\340A\001\022C\n\017server_ca_certs\030\031 \003(\0132%.google.cl"
-          + "oud.redis.v1.TlsCertificateB\003\340A\003\022[\n\027tran"
-          + "sit_encryption_mode\030\032 \001(\01625.google.cloud"
-          + ".redis.v1.Instance.TransitEncryptionMode"
-          + "B\003\340A\001\022I\n\022maintenance_policy\030\033 \001(\0132(.goog"
-          + "le.cloud.redis.v1.MaintenancePolicyB\003\340A\001"
-          + "\022M\n\024maintenance_schedule\030\034 \001(\0132*.google."
-          + "cloud.redis.v1.MaintenanceScheduleB\003\340A\003\022"
-          + "\032\n\rreplica_count\030\037 \001(\005B\003\340A\001\0223\n\005nodes\030  \003"
-          + "(\0132\037.google.cloud.redis.v1.NodeInfoB\003\340A\003"
-          + "\022\032\n\rread_endpoint\030! \001(\tB\003\340A\003\022\037\n\022read_end"
-          + "point_port\030\" \001(\005B\003\340A\003\022Q\n\022read_replicas_m"
-          + "ode\030# \001(\01620.google.cloud.redis.v1.Instan"
-          + "ce.ReadReplicasModeB\003\340A\001\032-\n\013LabelsEntry\022"
-          + "\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\0323\n\021Redis"
-          + "ConfigsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t"
-          + ":\0028\001\"\224\001\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\014\n"
-          + "\010CREATING\020\001\022\t\n\005READY\020\002\022\014\n\010UPDATING\020\003\022\014\n\010"
-          + "DELETING\020\004\022\r\n\tREPAIRING\020\005\022\017\n\013MAINTENANCE"
-          + "\020\006\022\r\n\tIMPORTING\020\010\022\020\n\014FAILING_OVER\020\t\"8\n\004T"
-          + "ier\022\024\n\020TIER_UNSPECIFIED\020\000\022\t\n\005BASIC\020\001\022\017\n\013"
-          + "STANDARD_HA\020\003\"[\n\013ConnectMode\022\034\n\030CONNECT_"
-          + "MODE_UNSPECIFIED\020\000\022\022\n\016DIRECT_PEERING\020\001\022\032"
-          + "\n\026PRIVATE_SERVICE_ACCESS\020\002\"i\n\025TransitEnc"
-          + "ryptionMode\022\'\n#TRANSIT_ENCRYPTION_MODE_U"
-          + "NSPECIFIED\020\000\022\031\n\025SERVER_AUTHENTICATION\020\001\022"
-          + "\014\n\010DISABLED\020\002\"m\n\020ReadReplicasMode\022\"\n\036REA"
-          + "D_REPLICAS_MODE_UNSPECIFIED\020\000\022\032\n\026READ_RE"
-          + "PLICAS_DISABLED\020\001\022\031\n\025READ_REPLICAS_ENABL"
-          + "ED\020\002:`\352A]\n\035redis.googleapis.com/Instance"
-          + "\022<projects/{project}/locations/{location"
-          + "}/instances/{instance}\"\335\002\n\034RescheduleMai"
-          + "ntenanceRequest\0223\n\004name\030\001 \001(\tB%\340A\002\372A\037\n\035r"
-          + "edis.googleapis.com/Instance\022`\n\017reschedu"
-          + "le_type\030\002 \001(\0162B.google.cloud.redis.v1.Re"
-          + "scheduleMaintenanceRequest.RescheduleTyp"
-          + "eB\003\340A\002\0226\n\rschedule_time\030\003 \001(\0132\032.google.p"
-          + "rotobuf.TimestampB\003\340A\001\"n\n\016RescheduleType"
+          + "on.proto\032\033google/protobuf/empty.proto\032 g"
+          + "oogle/protobuf/field_mask.proto\032\037google/"
+          + "protobuf/timestamp.proto\032\033google/type/da"
+          + "yofweek.proto\032\033google/type/timeofday.pro"
+          + "to\"0\n\010NodeInfo\022\020\n\002id\030\001 \001(\tB\004\342A\001\003\022\022\n\004zone"
+          + "\030\002 \001(\tB\004\342A\001\003\"\246\023\n\010Instance\022\022\n\004name\030\001 \001(\tB"
+          + "\004\342A\001\002\022\024\n\014display_name\030\002 \001(\t\022;\n\006labels\030\003 "
+          + "\003(\0132+.google.cloud.redis.v1.Instance.Lab"
+          + "elsEntry\022\031\n\013location_id\030\004 \001(\tB\004\342A\001\001\022%\n\027a"
+          + "lternative_location_id\030\005 \001(\tB\004\342A\001\001\022\033\n\rre"
+          + "dis_version\030\007 \001(\tB\004\342A\001\001\022\037\n\021reserved_ip_r"
+          + "ange\030\t \001(\tB\004\342A\001\001\022 \n\022secondary_ip_range\030\036"
+          + " \001(\tB\004\342A\001\001\022\022\n\004host\030\n \001(\tB\004\342A\001\003\022\022\n\004port\030\013"
+          + " \001(\005B\004\342A\001\003\022!\n\023current_location_id\030\014 \001(\tB"
+          + "\004\342A\001\003\0225\n\013create_time\030\r \001(\0132\032.google.prot"
+          + "obuf.TimestampB\004\342A\001\003\022:\n\005state\030\016 \001(\0162%.go"
+          + "ogle.cloud.redis.v1.Instance.StateB\004\342A\001\003"
+          + "\022\034\n\016status_message\030\017 \001(\tB\004\342A\001\003\022N\n\rredis_"
+          + "configs\030\020 \003(\01321.google.cloud.redis.v1.In"
+          + "stance.RedisConfigsEntryB\004\342A\001\001\0228\n\004tier\030\021"
+          + " \001(\0162$.google.cloud.redis.v1.Instance.Ti"
+          + "erB\004\342A\001\002\022\034\n\016memory_size_gb\030\022 \001(\005B\004\342A\001\002\022 "
+          + "\n\022authorized_network\030\024 \001(\tB\004\342A\001\001\022&\n\030pers"
+          + "istence_iam_identity\030\025 \001(\tB\004\342A\001\003\022G\n\014conn"
+          + "ect_mode\030\026 \001(\0162+.google.cloud.redis.v1.I"
+          + "nstance.ConnectModeB\004\342A\001\001\022\032\n\014auth_enable"
+          + "d\030\027 \001(\010B\004\342A\001\001\022D\n\017server_ca_certs\030\031 \003(\0132%"
+          + ".google.cloud.redis.v1.TlsCertificateB\004\342"
+          + "A\001\003\022\\\n\027transit_encryption_mode\030\032 \001(\01625.g"
+          + "oogle.cloud.redis.v1.Instance.TransitEnc"
+          + "ryptionModeB\004\342A\001\001\022J\n\022maintenance_policy\030"
+          + "\033 \001(\0132(.google.cloud.redis.v1.Maintenanc"
+          + "ePolicyB\004\342A\001\001\022N\n\024maintenance_schedule\030\034 "
+          + "\001(\0132*.google.cloud.redis.v1.MaintenanceS"
+          + "cheduleB\004\342A\001\003\022\033\n\rreplica_count\030\037 \001(\005B\004\342A"
+          + "\001\001\0224\n\005nodes\030  \003(\0132\037.google.cloud.redis.v"
+          + "1.NodeInfoB\004\342A\001\003\022\033\n\rread_endpoint\030! \001(\tB"
+          + "\004\342A\001\003\022 \n\022read_endpoint_port\030\" \001(\005B\004\342A\001\003\022"
+          + "R\n\022read_replicas_mode\030# \001(\01620.google.clo"
+          + "ud.redis.v1.Instance.ReadReplicasModeB\004\342"
+          + "A\001\001\022\"\n\024customer_managed_key\030$ \001(\tB\004\342A\001\001\022"
+          + "J\n\022persistence_config\030% \001(\0132(.google.clo"
+          + "ud.redis.v1.PersistenceConfigB\004\342A\001\001\022R\n\022s"
+          + "uspension_reasons\030& \003(\01620.google.cloud.r"
+          + "edis.v1.Instance.SuspensionReasonB\004\342A\001\001\022"
+          + "!\n\023maintenance_version\030\' \001(\tB\004\342A\001\001\022,\n\036av"
+          + "ailable_maintenance_versions\030( \003(\tB\004\342A\001\001"
+          + "\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 "
+          + "\001(\t:\0028\001\0323\n\021RedisConfigsEntry\022\013\n\003key\030\001 \001("
+          + "\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\224\001\n\005State\022\025\n\021STATE_"
+          + "UNSPECIFIED\020\000\022\014\n\010CREATING\020\001\022\t\n\005READY\020\002\022\014"
+          + "\n\010UPDATING\020\003\022\014\n\010DELETING\020\004\022\r\n\tREPAIRING\020"
+          + "\005\022\017\n\013MAINTENANCE\020\006\022\r\n\tIMPORTING\020\010\022\020\n\014FAI"
+          + "LING_OVER\020\t\"8\n\004Tier\022\024\n\020TIER_UNSPECIFIED\020"
+          + "\000\022\t\n\005BASIC\020\001\022\017\n\013STANDARD_HA\020\003\"[\n\013Connect"
+          + "Mode\022\034\n\030CONNECT_MODE_UNSPECIFIED\020\000\022\022\n\016DI"
+          + "RECT_PEERING\020\001\022\032\n\026PRIVATE_SERVICE_ACCESS"
+          + "\020\002\"i\n\025TransitEncryptionMode\022\'\n#TRANSIT_E"
+          + "NCRYPTION_MODE_UNSPECIFIED\020\000\022\031\n\025SERVER_A"
+          + "UTHENTICATION\020\001\022\014\n\010DISABLED\020\002\"m\n\020ReadRep"
+          + "licasMode\022\"\n\036READ_REPLICAS_MODE_UNSPECIF"
+          + "IED\020\000\022\032\n\026READ_REPLICAS_DISABLED\020\001\022\031\n\025REA"
+          + "D_REPLICAS_ENABLED\020\002\"U\n\020SuspensionReason"
+          + "\022!\n\035SUSPENSION_REASON_UNSPECIFIED\020\000\022\036\n\032C"
+          + "USTOMER_MANAGED_KEY_ISSUE\020\001:`\352A]\n\035redis."
+          + "googleapis.com/Instance\022<projects/{proje"
+          + "ct}/locations/{location}/instances/{inst"
+          + "ance}\"\223\004\n\021PersistenceConfig\022X\n\020persisten"
+          + "ce_mode\030\001 \001(\01628.google.cloud.redis.v1.Pe"
+          + "rsistenceConfig.PersistenceModeB\004\342A\001\001\022Z\n"
+          + "\023rdb_snapshot_period\030\002 \001(\01627.google.clou"
+          + "d.redis.v1.PersistenceConfig.SnapshotPer"
+          + "iodB\004\342A\001\001\022@\n\026rdb_next_snapshot_time\030\004 \001("
+          + "\0132\032.google.protobuf.TimestampB\004\342A\001\003\022A\n\027r"
+          + "db_snapshot_start_time\030\005 \001(\0132\032.google.pr"
+          + "otobuf.TimestampB\004\342A\001\001\"J\n\017PersistenceMod"
+          + "e\022 \n\034PERSISTENCE_MODE_UNSPECIFIED\020\000\022\014\n\010D"
+          + "ISABLED\020\001\022\007\n\003RDB\020\002\"w\n\016SnapshotPeriod\022\037\n\033"
+          + "SNAPSHOT_PERIOD_UNSPECIFIED\020\000\022\014\n\010ONE_HOU"
+          + "R\020\003\022\r\n\tSIX_HOURS\020\004\022\020\n\014TWELVE_HOURS\020\005\022\025\n\021"
+          + "TWENTY_FOUR_HOURS\020\006\"\340\002\n\034RescheduleMainte"
+          + "nanceRequest\0224\n\004name\030\001 \001(\tB&\342A\001\002\372A\037\n\035red"
+          + "is.googleapis.com/Instance\022a\n\017reschedule"
+          + "_type\030\002 \001(\0162B.google.cloud.redis.v1.Resc"
+          + "heduleMaintenanceRequest.RescheduleTypeB"
+          + "\004\342A\001\002\0227\n\rschedule_time\030\003 \001(\0132\032.google.pr"
+          + "otobuf.TimestampB\004\342A\001\001\"n\n\016RescheduleType"
           + "\022\037\n\033RESCHEDULE_TYPE_UNSPECIFIED\020\000\022\r\n\tIMM"
           + "EDIATE\020\001\022\031\n\025NEXT_AVAILABLE_WINDOW\020\002\022\021\n\rS"
-          + "PECIFIC_TIME\020\003\"\361\001\n\021MaintenancePolicy\0224\n\013"
+          + "PECIFIC_TIME\020\003\"\365\001\n\021MaintenancePolicy\0225\n\013"
           + "create_time\030\001 \001(\0132\032.google.protobuf.Time"
-          + "stampB\003\340A\003\0224\n\013update_time\030\002 \001(\0132\032.google"
-          + ".protobuf.TimestampB\003\340A\003\022\030\n\013description\030"
-          + "\003 \001(\tB\003\340A\001\022V\n\031weekly_maintenance_window\030"
-          + "\004 \003(\0132..google.cloud.redis.v1.WeeklyMain"
-          + "tenanceWindowB\003\340A\001\"\246\001\n\027WeeklyMaintenance"
-          + "Window\022(\n\003day\030\001 \001(\0162\026.google.type.DayOfW"
-          + "eekB\003\340A\002\022/\n\nstart_time\030\002 \001(\0132\026.google.ty"
-          + "pe.TimeOfDayB\003\340A\002\0220\n\010duration\030\003 \001(\0132\031.go"
-          + "ogle.protobuf.DurationB\003\340A\003\"\332\001\n\023Maintena"
-          + "nceSchedule\0223\n\nstart_time\030\001 \001(\0132\032.google"
-          + ".protobuf.TimestampB\003\340A\003\0221\n\010end_time\030\002 \001"
-          + "(\0132\032.google.protobuf.TimestampB\003\340A\003\022\032\n\016c"
-          + "an_reschedule\030\003 \001(\010B\002\030\001\022?\n\026schedule_dead"
-          + "line_time\030\005 \001(\0132\032.google.protobuf.Timest"
-          + "ampB\003\340A\003\"x\n\024ListInstancesRequest\0229\n\006pare"
-          + "nt\030\001 \001(\tB)\340A\002\372A#\n!locations.googleapis.c"
-          + "om/Location\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_t"
-          + "oken\030\003 \001(\t\"y\n\025ListInstancesResponse\0222\n\ti"
-          + "nstances\030\001 \003(\0132\037.google.cloud.redis.v1.I"
-          + "nstance\022\027\n\017next_page_token\030\002 \001(\t\022\023\n\013unre"
-          + "achable\030\003 \003(\t\"I\n\022GetInstanceRequest\0223\n\004n"
-          + "ame\030\001 \001(\tB%\340A\002\372A\037\n\035redis.googleapis.com/"
-          + "Instance\"S\n\034GetInstanceAuthStringRequest"
-          + "\0223\n\004name\030\001 \001(\tB%\340A\002\372A\037\n\035redis.googleapis"
-          + ".com/Instance\")\n\022InstanceAuthString\022\023\n\013a"
-          + "uth_string\030\001 \001(\t\"\244\001\n\025CreateInstanceReque"
-          + "st\0229\n\006parent\030\001 \001(\tB)\340A\002\372A#\n!locations.go"
-          + "ogleapis.com/Location\022\030\n\013instance_id\030\002 \001"
-          + "(\tB\003\340A\002\0226\n\010instance\030\003 \001(\0132\037.google.cloud"
-          + ".redis.v1.InstanceB\003\340A\002\"\205\001\n\025UpdateInstan"
-          + "ceRequest\0224\n\013update_mask\030\001 \001(\0132\032.google."
-          + "protobuf.FieldMaskB\003\340A\002\0226\n\010instance\030\002 \001("
-          + "\0132\037.google.cloud.redis.v1.InstanceB\003\340A\002\""
-          + "i\n\026UpgradeInstanceRequest\0223\n\004name\030\001 \001(\tB"
-          + "%\340A\002\372A\037\n\035redis.googleapis.com/Instance\022\032"
-          + "\n\rredis_version\030\002 \001(\tB\003\340A\002\"L\n\025DeleteInst"
-          + "anceRequest\0223\n\004name\030\001 \001(\tB%\340A\002\372A\037\n\035redis"
-          + ".googleapis.com/Instance\"\035\n\tGcsSource\022\020\n"
-          + "\003uri\030\001 \001(\tB\003\340A\002\"O\n\013InputConfig\0226\n\ngcs_so"
-          + "urce\030\001 \001(\0132 .google.cloud.redis.v1.GcsSo"
-          + "urceH\000B\010\n\006source\"i\n\025ImportInstanceReques"
-          + "t\022\021\n\004name\030\001 \001(\tB\003\340A\002\022=\n\014input_config\030\003 \001"
-          + "(\0132\".google.cloud.redis.v1.InputConfigB\003"
-          + "\340A\002\"\"\n\016GcsDestination\022\020\n\003uri\030\001 \001(\tB\003\340A\002\""
-          + "_\n\014OutputConfig\022@\n\017gcs_destination\030\001 \001(\013"
-          + "2%.google.cloud.redis.v1.GcsDestinationH"
-          + "\000B\r\n\013destination\"k\n\025ExportInstanceReques"
-          + "t\022\021\n\004name\030\001 \001(\tB\003\340A\002\022?\n\routput_config\030\003 "
-          + "\001(\0132#.google.cloud.redis.v1.OutputConfig"
-          + "B\003\340A\002\"\234\002\n\027FailoverInstanceRequest\0223\n\004nam"
-          + "e\030\001 \001(\tB%\340A\002\372A\037\n\035redis.googleapis.com/In"
-          + "stance\022d\n\024data_protection_mode\030\002 \001(\0162A.g"
-          + "oogle.cloud.redis.v1.FailoverInstanceReq"
-          + "uest.DataProtectionModeB\003\340A\001\"f\n\022DataProt"
-          + "ectionMode\022$\n DATA_PROTECTION_MODE_UNSPE"
-          + "CIFIED\020\000\022\025\n\021LIMITED_DATA_LOSS\020\001\022\023\n\017FORCE"
-          + "_DATA_LOSS\020\002\"\326\001\n\021OperationMetadata\022/\n\013cr"
-          + "eate_time\030\001 \001(\0132\032.google.protobuf.Timest"
-          + "amp\022,\n\010end_time\030\002 \001(\0132\032.google.protobuf."
-          + "Timestamp\022\016\n\006target\030\003 \001(\t\022\014\n\004verb\030\004 \001(\t\022"
-          + "\025\n\rstatus_detail\030\005 \001(\t\022\030\n\020cancel_request"
-          + "ed\030\006 \001(\010\022\023\n\013api_version\030\007 \001(\t\"\311\001\n\020Locati"
-          + "onMetadata\022Y\n\017available_zones\030\001 \003(\0132;.go"
-          + "ogle.cloud.redis.v1.LocationMetadata.Ava"
-          + "ilableZonesEntryB\003\340A\003\032Z\n\023AvailableZonesE"
-          + "ntry\022\013\n\003key\030\001 \001(\t\0222\n\005value\030\002 \001(\0132#.googl"
-          + "e.cloud.redis.v1.ZoneMetadata:\0028\001\"\016\n\014Zon"
-          + "eMetadata\"\273\001\n\016TlsCertificate\022\025\n\rserial_n"
-          + "umber\030\001 \001(\t\022\014\n\004cert\030\002 \001(\t\0224\n\013create_time"
-          + "\030\003 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022"
-          + "4\n\013expire_time\030\004 \001(\0132\032.google.protobuf.T"
-          + "imestampB\003\340A\003\022\030\n\020sha1_fingerprint\030\005 \001(\t2"
-          + "\250\025\n\nCloudRedis\022\252\001\n\rListInstances\022+.googl"
-          + "e.cloud.redis.v1.ListInstancesRequest\032,."
-          + "google.cloud.redis.v1.ListInstancesRespo"
-          + "nse\">\202\323\344\223\002/\022-/v1/{parent=projects/*/loca"
-          + "tions/*}/instances\332A\006parent\022\227\001\n\013GetInsta"
-          + "nce\022).google.cloud.redis.v1.GetInstanceR"
-          + "equest\032\037.google.cloud.redis.v1.Instance\""
-          + "<\202\323\344\223\002/\022-/v1/{name=projects/*/locations/"
-          + "*/instances/*}\332A\004name\022\300\001\n\025GetInstanceAut"
-          + "hString\0223.google.cloud.redis.v1.GetInsta"
-          + "nceAuthStringRequest\032).google.cloud.redi"
-          + "s.v1.InstanceAuthString\"G\202\323\344\223\002:\0228/v1/{na"
-          + "me=projects/*/locations/*/instances/*}/a"
-          + "uthString\332A\004name\022\211\002\n\016CreateInstance\022,.go"
-          + "ogle.cloud.redis.v1.CreateInstanceReques"
-          + "t\032\035.google.longrunning.Operation\"\251\001\202\323\344\223\002"
-          + "9\"-/v1/{parent=projects/*/locations/*}/i"
-          + "nstances:\010instance\332A\033parent,instance_id,"
-          + "instance\312AI\n\036google.cloud.redis.v1.Insta"
-          + "nce\022\'google.cloud.redis.v1.OperationMeta"
-          + "data\022\213\002\n\016UpdateInstance\022,.google.cloud.r"
-          + "edis.v1.UpdateInstanceRequest\032\035.google.l"
-          + "ongrunning.Operation\"\253\001\202\323\344\223\002B26/v1/{inst"
-          + "ance.name=projects/*/locations/*/instanc"
-          + "es/*}:\010instance\332A\024update_mask,instance\312A"
-          + "I\n\036google.cloud.redis.v1.Instance\022\'googl"
-          + "e.cloud.redis.v1.OperationMetadata\022\203\002\n\017U"
-          + "pgradeInstance\022-.google.cloud.redis.v1.U"
-          + "pgradeInstanceRequest\032\035.google.longrunni"
-          + "ng.Operation\"\241\001\202\323\344\223\002:\"5/v1/{name=project"
-          + "s/*/locations/*/instances/*}:upgrade:\001*\332"
-          + "A\022name,redis_version\312AI\n\036google.cloud.re"
-          + "dis.v1.Instance\022\'google.cloud.redis.v1.O"
-          + "perationMetadata\022\377\001\n\016ImportInstance\022,.go"
-          + "ogle.cloud.redis.v1.ImportInstanceReques"
-          + "t\032\035.google.longrunning.Operation\"\237\001\202\323\344\223\002"
-          + "9\"4/v1/{name=projects/*/locations/*/inst"
-          + "ances/*}:import:\001*\332A\021name,input_config\312A"
-          + "I\n\036google.cloud.redis.v1.Instance\022\'googl"
-          + "e.cloud.redis.v1.OperationMetadata\022\200\002\n\016E"
-          + "xportInstance\022,.google.cloud.redis.v1.Ex"
-          + "portInstanceRequest\032\035.google.longrunning"
-          + ".Operation\"\240\001\202\323\344\223\0029\"4/v1/{name=projects/"
-          + "*/locations/*/instances/*}:export:\001*\332A\022n"
-          + "ame,output_config\312AI\n\036google.cloud.redis"
-          + ".v1.Instance\022\'google.cloud.redis.v1.Oper"
-          + "ationMetadata\022\215\002\n\020FailoverInstance\022..goo"
-          + "gle.cloud.redis.v1.FailoverInstanceReque"
-          + "st\032\035.google.longrunning.Operation\"\251\001\202\323\344\223"
-          + "\002;\"6/v1/{name=projects/*/locations/*/ins"
-          + "tances/*}:failover:\001*\332A\031name,data_protec"
-          + "tion_mode\312AI\n\036google.cloud.redis.v1.Inst"
-          + "ance\022\'google.cloud.redis.v1.OperationMet"
-          + "adata\022\336\001\n\016DeleteInstance\022,.google.cloud."
-          + "redis.v1.DeleteInstanceRequest\032\035.google."
-          + "longrunning.Operation\"\177\202\323\344\223\002/*-/v1/{name"
-          + "=projects/*/locations/*/instances/*}\332A\004n"
-          + "ame\312A@\n\025google.protobuf.Empty\022\'google.cl"
-          + "oud.redis.v1.OperationMetadata\022\257\002\n\025Resch"
-          + "eduleMaintenance\0223.google.cloud.redis.v1"
-          + ".RescheduleMaintenanceRequest\032\035.google.l"
-          + "ongrunning.Operation\"\301\001\202\323\344\223\002H\"C/v1/{name"
-          + "=projects/*/locations/*/instances/*}:res"
-          + "cheduleMaintenance:\001*\332A$name, reschedule"
-          + "_type, schedule_time\312AI\n\036google.cloud.re"
-          + "dis.v1.Instance\022\'google.cloud.redis.v1.O"
-          + "perationMetadata\032H\312A\024redis.googleapis.co"
-          + "m\322A.https://www.googleapis.com/auth/clou"
-          + "d-platformBh\n\031com.google.cloud.redis.v1B"
-          + "\030CloudRedisServiceV1ProtoP\001Z/cloud.googl"
-          + "e.com/go/redis/apiv1/redispb;redispbb\006pr"
-          + "oto3"
+          + "stampB\004\342A\001\003\0225\n\013update_time\030\002 \001(\0132\032.googl"
+          + "e.protobuf.TimestampB\004\342A\001\003\022\031\n\013descriptio"
+          + "n\030\003 \001(\tB\004\342A\001\001\022W\n\031weekly_maintenance_wind"
+          + "ow\030\004 \003(\0132..google.cloud.redis.v1.WeeklyM"
+          + "aintenanceWindowB\004\342A\001\001\"\251\001\n\027WeeklyMainten"
+          + "anceWindow\022)\n\003day\030\001 \001(\0162\026.google.type.Da"
+          + "yOfWeekB\004\342A\001\002\0220\n\nstart_time\030\002 \001(\0132\026.goog"
+          + "le.type.TimeOfDayB\004\342A\001\002\0221\n\010duration\030\003 \001("
+          + "\0132\031.google.protobuf.DurationB\004\342A\001\003\"\335\001\n\023M"
+          + "aintenanceSchedule\0224\n\nstart_time\030\001 \001(\0132\032"
+          + ".google.protobuf.TimestampB\004\342A\001\003\0222\n\010end_"
+          + "time\030\002 \001(\0132\032.google.protobuf.TimestampB\004"
+          + "\342A\001\003\022\032\n\016can_reschedule\030\003 \001(\010B\002\030\001\022@\n\026sche"
+          + "dule_deadline_time\030\005 \001(\0132\032.google.protob"
+          + "uf.TimestampB\004\342A\001\003\"y\n\024ListInstancesReque"
+          + "st\022:\n\006parent\030\001 \001(\tB*\342A\001\002\372A#\n!locations.g"
+          + "oogleapis.com/Location\022\021\n\tpage_size\030\002 \001("
+          + "\005\022\022\n\npage_token\030\003 \001(\t\"y\n\025ListInstancesRe"
+          + "sponse\0222\n\tinstances\030\001 \003(\0132\037.google.cloud"
+          + ".redis.v1.Instance\022\027\n\017next_page_token\030\002 "
+          + "\001(\t\022\023\n\013unreachable\030\003 \003(\t\"J\n\022GetInstanceR"
+          + "equest\0224\n\004name\030\001 \001(\tB&\342A\001\002\372A\037\n\035redis.goo"
+          + "gleapis.com/Instance\"T\n\034GetInstanceAuthS"
+          + "tringRequest\0224\n\004name\030\001 \001(\tB&\342A\001\002\372A\037\n\035red"
+          + "is.googleapis.com/Instance\")\n\022InstanceAu"
+          + "thString\022\023\n\013auth_string\030\001 \001(\t\"\247\001\n\025Create"
+          + "InstanceRequest\022:\n\006parent\030\001 \001(\tB*\342A\001\002\372A#"
+          + "\n!locations.googleapis.com/Location\022\031\n\013i"
+          + "nstance_id\030\002 \001(\tB\004\342A\001\002\0227\n\010instance\030\003 \001(\013"
+          + "2\037.google.cloud.redis.v1.InstanceB\004\342A\001\002\""
+          + "\207\001\n\025UpdateInstanceRequest\0225\n\013update_mask"
+          + "\030\001 \001(\0132\032.google.protobuf.FieldMaskB\004\342A\001\002"
+          + "\0227\n\010instance\030\002 \001(\0132\037.google.cloud.redis."
+          + "v1.InstanceB\004\342A\001\002\"k\n\026UpgradeInstanceRequ"
+          + "est\0224\n\004name\030\001 \001(\tB&\342A\001\002\372A\037\n\035redis.google"
+          + "apis.com/Instance\022\033\n\rredis_version\030\002 \001(\t"
+          + "B\004\342A\001\002\"M\n\025DeleteInstanceRequest\0224\n\004name\030"
+          + "\001 \001(\tB&\342A\001\002\372A\037\n\035redis.googleapis.com/Ins"
+          + "tance\"\036\n\tGcsSource\022\021\n\003uri\030\001 \001(\tB\004\342A\001\002\"O\n"
+          + "\013InputConfig\0226\n\ngcs_source\030\001 \001(\0132 .googl"
+          + "e.cloud.redis.v1.GcsSourceH\000B\010\n\006source\"k"
+          + "\n\025ImportInstanceRequest\022\022\n\004name\030\001 \001(\tB\004\342"
+          + "A\001\002\022>\n\014input_config\030\003 \001(\0132\".google.cloud"
+          + ".redis.v1.InputConfigB\004\342A\001\002\"#\n\016GcsDestin"
+          + "ation\022\021\n\003uri\030\001 \001(\tB\004\342A\001\002\"_\n\014OutputConfig"
+          + "\022@\n\017gcs_destination\030\001 \001(\0132%.google.cloud"
+          + ".redis.v1.GcsDestinationH\000B\r\n\013destinatio"
+          + "n\"m\n\025ExportInstanceRequest\022\022\n\004name\030\001 \001(\t"
+          + "B\004\342A\001\002\022@\n\routput_config\030\003 \001(\0132#.google.c"
+          + "loud.redis.v1.OutputConfigB\004\342A\001\002\"\236\002\n\027Fai"
+          + "loverInstanceRequest\0224\n\004name\030\001 \001(\tB&\342A\001\002"
+          + "\372A\037\n\035redis.googleapis.com/Instance\022e\n\024da"
+          + "ta_protection_mode\030\002 \001(\0162A.google.cloud."
+          + "redis.v1.FailoverInstanceRequest.DataPro"
+          + "tectionModeB\004\342A\001\001\"f\n\022DataProtectionMode\022"
+          + "$\n DATA_PROTECTION_MODE_UNSPECIFIED\020\000\022\025\n"
+          + "\021LIMITED_DATA_LOSS\020\001\022\023\n\017FORCE_DATA_LOSS\020"
+          + "\002\"\326\001\n\021OperationMetadata\022/\n\013create_time\030\001"
+          + " \001(\0132\032.google.protobuf.Timestamp\022,\n\010end_"
+          + "time\030\002 \001(\0132\032.google.protobuf.Timestamp\022\016"
+          + "\n\006target\030\003 \001(\t\022\014\n\004verb\030\004 \001(\t\022\025\n\rstatus_d"
+          + "etail\030\005 \001(\t\022\030\n\020cancel_requested\030\006 \001(\010\022\023\n"
+          + "\013api_version\030\007 \001(\t\"\312\001\n\020LocationMetadata\022"
+          + "Z\n\017available_zones\030\001 \003(\0132;.google.cloud."
+          + "redis.v1.LocationMetadata.AvailableZones"
+          + "EntryB\004\342A\001\003\032Z\n\023AvailableZonesEntry\022\013\n\003ke"
+          + "y\030\001 \001(\t\0222\n\005value\030\002 \001(\0132#.google.cloud.re"
+          + "dis.v1.ZoneMetadata:\0028\001\"\016\n\014ZoneMetadata\""
+          + "\275\001\n\016TlsCertificate\022\025\n\rserial_number\030\001 \001("
+          + "\t\022\014\n\004cert\030\002 \001(\t\0225\n\013create_time\030\003 \001(\0132\032.g"
+          + "oogle.protobuf.TimestampB\004\342A\001\003\0225\n\013expire"
+          + "_time\030\004 \001(\0132\032.google.protobuf.TimestampB"
+          + "\004\342A\001\003\022\030\n\020sha1_fingerprint\030\005 \001(\t2\250\025\n\nClou"
+          + "dRedis\022\252\001\n\rListInstances\022+.google.cloud."
+          + "redis.v1.ListInstancesRequest\032,.google.c"
+          + "loud.redis.v1.ListInstancesResponse\">\332A\006"
+          + "parent\202\323\344\223\002/\022-/v1/{parent=projects/*/loc"
+          + "ations/*}/instances\022\227\001\n\013GetInstance\022).go"
+          + "ogle.cloud.redis.v1.GetInstanceRequest\032\037"
+          + ".google.cloud.redis.v1.Instance\"<\332A\004name"
+          + "\202\323\344\223\002/\022-/v1/{name=projects/*/locations/*"
+          + "/instances/*}\022\300\001\n\025GetInstanceAuthString\022"
+          + "3.google.cloud.redis.v1.GetInstanceAuthS"
+          + "tringRequest\032).google.cloud.redis.v1.Ins"
+          + "tanceAuthString\"G\332A\004name\202\323\344\223\002:\0228/v1/{nam"
+          + "e=projects/*/locations/*/instances/*}/au"
+          + "thString\022\211\002\n\016CreateInstance\022,.google.clo"
+          + "ud.redis.v1.CreateInstanceRequest\032\035.goog"
+          + "le.longrunning.Operation\"\251\001\312AI\n\036google.c"
+          + "loud.redis.v1.Instance\022\'google.cloud.red"
+          + "is.v1.OperationMetadata\332A\033parent,instanc"
+          + "e_id,instance\202\323\344\223\0029\"-/v1/{parent=project"
+          + "s/*/locations/*}/instances:\010instance\022\213\002\n"
+          + "\016UpdateInstance\022,.google.cloud.redis.v1."
+          + "UpdateInstanceRequest\032\035.google.longrunni"
+          + "ng.Operation\"\253\001\312AI\n\036google.cloud.redis.v"
+          + "1.Instance\022\'google.cloud.redis.v1.Operat"
+          + "ionMetadata\332A\024update_mask,instance\202\323\344\223\002B"
+          + "26/v1/{instance.name=projects/*/location"
+          + "s/*/instances/*}:\010instance\022\203\002\n\017UpgradeIn"
+          + "stance\022-.google.cloud.redis.v1.UpgradeIn"
+          + "stanceRequest\032\035.google.longrunning.Opera"
+          + "tion\"\241\001\312AI\n\036google.cloud.redis.v1.Instan"
+          + "ce\022\'google.cloud.redis.v1.OperationMetad"
+          + "ata\332A\022name,redis_version\202\323\344\223\002:\"5/v1/{nam"
+          + "e=projects/*/locations/*/instances/*}:up"
+          + "grade:\001*\022\377\001\n\016ImportInstance\022,.google.clo"
+          + "ud.redis.v1.ImportInstanceRequest\032\035.goog"
+          + "le.longrunning.Operation\"\237\001\312AI\n\036google.c"
+          + "loud.redis.v1.Instance\022\'google.cloud.red"
+          + "is.v1.OperationMetadata\332A\021name,input_con"
+          + "fig\202\323\344\223\0029\"4/v1/{name=projects/*/location"
+          + "s/*/instances/*}:import:\001*\022\200\002\n\016ExportIns"
+          + "tance\022,.google.cloud.redis.v1.ExportInst"
+          + "anceRequest\032\035.google.longrunning.Operati"
+          + "on\"\240\001\312AI\n\036google.cloud.redis.v1.Instance"
+          + "\022\'google.cloud.redis.v1.OperationMetadat"
+          + "a\332A\022name,output_config\202\323\344\223\0029\"4/v1/{name="
+          + "projects/*/locations/*/instances/*}:expo"
+          + "rt:\001*\022\215\002\n\020FailoverInstance\022..google.clou"
+          + "d.redis.v1.FailoverInstanceRequest\032\035.goo"
+          + "gle.longrunning.Operation\"\251\001\312AI\n\036google."
+          + "cloud.redis.v1.Instance\022\'google.cloud.re"
+          + "dis.v1.OperationMetadata\332A\031name,data_pro"
+          + "tection_mode\202\323\344\223\002;\"6/v1/{name=projects/*"
+          + "/locations/*/instances/*}:failover:\001*\022\336\001"
+          + "\n\016DeleteInstance\022,.google.cloud.redis.v1"
+          + ".DeleteInstanceRequest\032\035.google.longrunn"
+          + "ing.Operation\"\177\312A@\n\025google.protobuf.Empt"
+          + "y\022\'google.cloud.redis.v1.OperationMetada"
+          + "ta\332A\004name\202\323\344\223\002/*-/v1/{name=projects/*/lo"
+          + "cations/*/instances/*}\022\257\002\n\025RescheduleMai"
+          + "ntenance\0223.google.cloud.redis.v1.Resched"
+          + "uleMaintenanceRequest\032\035.google.longrunni"
+          + "ng.Operation\"\301\001\312AI\n\036google.cloud.redis.v"
+          + "1.Instance\022\'google.cloud.redis.v1.Operat"
+          + "ionMetadata\332A$name, reschedule_type, sch"
+          + "edule_time\202\323\344\223\002H\"C/v1/{name=projects/*/l"
+          + "ocations/*/instances/*}:rescheduleMainte"
+          + "nance:\001*\032H\312A\024redis.googleapis.com\322A.http"
+          + "s://www.googleapis.com/auth/cloud-platfo"
+          + "rmBh\n\031com.google.cloud.redis.v1B\030CloudRe"
+          + "disServiceV1ProtoP\001Z/cloud.google.com/go"
+          + "/redis/apiv1/redispb;redispbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -380,6 +408,7 @@ public final class CloudRedisServiceV1Proto {
               com.google.api.ResourceProto.getDescriptor(),
               com.google.longrunning.OperationsProto.getDescriptor(),
               com.google.protobuf.DurationProto.getDescriptor(),
+              com.google.protobuf.EmptyProto.getDescriptor(),
               com.google.protobuf.FieldMaskProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
               com.google.type.DayOfWeekProto.getDescriptor(),
@@ -429,6 +458,11 @@ public final class CloudRedisServiceV1Proto {
               "ReadEndpoint",
               "ReadEndpointPort",
               "ReadReplicasMode",
+              "CustomerManagedKey",
+              "PersistenceConfig",
+              "SuspensionReasons",
+              "MaintenanceVersion",
+              "AvailableMaintenanceVersions",
             });
     internal_static_google_cloud_redis_v1_Instance_LabelsEntry_descriptor =
         internal_static_google_cloud_redis_v1_Instance_descriptor.getNestedTypes().get(0);
@@ -446,8 +480,16 @@ public final class CloudRedisServiceV1Proto {
             new java.lang.String[] {
               "Key", "Value",
             });
-    internal_static_google_cloud_redis_v1_RescheduleMaintenanceRequest_descriptor =
+    internal_static_google_cloud_redis_v1_PersistenceConfig_descriptor =
         getDescriptor().getMessageTypes().get(2);
+    internal_static_google_cloud_redis_v1_PersistenceConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_redis_v1_PersistenceConfig_descriptor,
+            new java.lang.String[] {
+              "PersistenceMode", "RdbSnapshotPeriod", "RdbNextSnapshotTime", "RdbSnapshotStartTime",
+            });
+    internal_static_google_cloud_redis_v1_RescheduleMaintenanceRequest_descriptor =
+        getDescriptor().getMessageTypes().get(3);
     internal_static_google_cloud_redis_v1_RescheduleMaintenanceRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_redis_v1_RescheduleMaintenanceRequest_descriptor,
@@ -455,7 +497,7 @@ public final class CloudRedisServiceV1Proto {
               "Name", "RescheduleType", "ScheduleTime",
             });
     internal_static_google_cloud_redis_v1_MaintenancePolicy_descriptor =
-        getDescriptor().getMessageTypes().get(3);
+        getDescriptor().getMessageTypes().get(4);
     internal_static_google_cloud_redis_v1_MaintenancePolicy_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_redis_v1_MaintenancePolicy_descriptor,
@@ -463,7 +505,7 @@ public final class CloudRedisServiceV1Proto {
               "CreateTime", "UpdateTime", "Description", "WeeklyMaintenanceWindow",
             });
     internal_static_google_cloud_redis_v1_WeeklyMaintenanceWindow_descriptor =
-        getDescriptor().getMessageTypes().get(4);
+        getDescriptor().getMessageTypes().get(5);
     internal_static_google_cloud_redis_v1_WeeklyMaintenanceWindow_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_redis_v1_WeeklyMaintenanceWindow_descriptor,
@@ -471,7 +513,7 @@ public final class CloudRedisServiceV1Proto {
               "Day", "StartTime", "Duration",
             });
     internal_static_google_cloud_redis_v1_MaintenanceSchedule_descriptor =
-        getDescriptor().getMessageTypes().get(5);
+        getDescriptor().getMessageTypes().get(6);
     internal_static_google_cloud_redis_v1_MaintenanceSchedule_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_redis_v1_MaintenanceSchedule_descriptor,
@@ -479,7 +521,7 @@ public final class CloudRedisServiceV1Proto {
               "StartTime", "EndTime", "CanReschedule", "ScheduleDeadlineTime",
             });
     internal_static_google_cloud_redis_v1_ListInstancesRequest_descriptor =
-        getDescriptor().getMessageTypes().get(6);
+        getDescriptor().getMessageTypes().get(7);
     internal_static_google_cloud_redis_v1_ListInstancesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_redis_v1_ListInstancesRequest_descriptor,
@@ -487,7 +529,7 @@ public final class CloudRedisServiceV1Proto {
               "Parent", "PageSize", "PageToken",
             });
     internal_static_google_cloud_redis_v1_ListInstancesResponse_descriptor =
-        getDescriptor().getMessageTypes().get(7);
+        getDescriptor().getMessageTypes().get(8);
     internal_static_google_cloud_redis_v1_ListInstancesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_redis_v1_ListInstancesResponse_descriptor,
@@ -495,7 +537,7 @@ public final class CloudRedisServiceV1Proto {
               "Instances", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_redis_v1_GetInstanceRequest_descriptor =
-        getDescriptor().getMessageTypes().get(8);
+        getDescriptor().getMessageTypes().get(9);
     internal_static_google_cloud_redis_v1_GetInstanceRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_redis_v1_GetInstanceRequest_descriptor,
@@ -503,7 +545,7 @@ public final class CloudRedisServiceV1Proto {
               "Name",
             });
     internal_static_google_cloud_redis_v1_GetInstanceAuthStringRequest_descriptor =
-        getDescriptor().getMessageTypes().get(9);
+        getDescriptor().getMessageTypes().get(10);
     internal_static_google_cloud_redis_v1_GetInstanceAuthStringRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_redis_v1_GetInstanceAuthStringRequest_descriptor,
@@ -511,7 +553,7 @@ public final class CloudRedisServiceV1Proto {
               "Name",
             });
     internal_static_google_cloud_redis_v1_InstanceAuthString_descriptor =
-        getDescriptor().getMessageTypes().get(10);
+        getDescriptor().getMessageTypes().get(11);
     internal_static_google_cloud_redis_v1_InstanceAuthString_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_redis_v1_InstanceAuthString_descriptor,
@@ -519,7 +561,7 @@ public final class CloudRedisServiceV1Proto {
               "AuthString",
             });
     internal_static_google_cloud_redis_v1_CreateInstanceRequest_descriptor =
-        getDescriptor().getMessageTypes().get(11);
+        getDescriptor().getMessageTypes().get(12);
     internal_static_google_cloud_redis_v1_CreateInstanceRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_redis_v1_CreateInstanceRequest_descriptor,
@@ -527,7 +569,7 @@ public final class CloudRedisServiceV1Proto {
               "Parent", "InstanceId", "Instance",
             });
     internal_static_google_cloud_redis_v1_UpdateInstanceRequest_descriptor =
-        getDescriptor().getMessageTypes().get(12);
+        getDescriptor().getMessageTypes().get(13);
     internal_static_google_cloud_redis_v1_UpdateInstanceRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_redis_v1_UpdateInstanceRequest_descriptor,
@@ -535,7 +577,7 @@ public final class CloudRedisServiceV1Proto {
               "UpdateMask", "Instance",
             });
     internal_static_google_cloud_redis_v1_UpgradeInstanceRequest_descriptor =
-        getDescriptor().getMessageTypes().get(13);
+        getDescriptor().getMessageTypes().get(14);
     internal_static_google_cloud_redis_v1_UpgradeInstanceRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_redis_v1_UpgradeInstanceRequest_descriptor,
@@ -543,7 +585,7 @@ public final class CloudRedisServiceV1Proto {
               "Name", "RedisVersion",
             });
     internal_static_google_cloud_redis_v1_DeleteInstanceRequest_descriptor =
-        getDescriptor().getMessageTypes().get(14);
+        getDescriptor().getMessageTypes().get(15);
     internal_static_google_cloud_redis_v1_DeleteInstanceRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_redis_v1_DeleteInstanceRequest_descriptor,
@@ -551,7 +593,7 @@ public final class CloudRedisServiceV1Proto {
               "Name",
             });
     internal_static_google_cloud_redis_v1_GcsSource_descriptor =
-        getDescriptor().getMessageTypes().get(15);
+        getDescriptor().getMessageTypes().get(16);
     internal_static_google_cloud_redis_v1_GcsSource_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_redis_v1_GcsSource_descriptor,
@@ -559,7 +601,7 @@ public final class CloudRedisServiceV1Proto {
               "Uri",
             });
     internal_static_google_cloud_redis_v1_InputConfig_descriptor =
-        getDescriptor().getMessageTypes().get(16);
+        getDescriptor().getMessageTypes().get(17);
     internal_static_google_cloud_redis_v1_InputConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_redis_v1_InputConfig_descriptor,
@@ -567,7 +609,7 @@ public final class CloudRedisServiceV1Proto {
               "GcsSource", "Source",
             });
     internal_static_google_cloud_redis_v1_ImportInstanceRequest_descriptor =
-        getDescriptor().getMessageTypes().get(17);
+        getDescriptor().getMessageTypes().get(18);
     internal_static_google_cloud_redis_v1_ImportInstanceRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_redis_v1_ImportInstanceRequest_descriptor,
@@ -575,7 +617,7 @@ public final class CloudRedisServiceV1Proto {
               "Name", "InputConfig",
             });
     internal_static_google_cloud_redis_v1_GcsDestination_descriptor =
-        getDescriptor().getMessageTypes().get(18);
+        getDescriptor().getMessageTypes().get(19);
     internal_static_google_cloud_redis_v1_GcsDestination_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_redis_v1_GcsDestination_descriptor,
@@ -583,7 +625,7 @@ public final class CloudRedisServiceV1Proto {
               "Uri",
             });
     internal_static_google_cloud_redis_v1_OutputConfig_descriptor =
-        getDescriptor().getMessageTypes().get(19);
+        getDescriptor().getMessageTypes().get(20);
     internal_static_google_cloud_redis_v1_OutputConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_redis_v1_OutputConfig_descriptor,
@@ -591,7 +633,7 @@ public final class CloudRedisServiceV1Proto {
               "GcsDestination", "Destination",
             });
     internal_static_google_cloud_redis_v1_ExportInstanceRequest_descriptor =
-        getDescriptor().getMessageTypes().get(20);
+        getDescriptor().getMessageTypes().get(21);
     internal_static_google_cloud_redis_v1_ExportInstanceRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_redis_v1_ExportInstanceRequest_descriptor,
@@ -599,7 +641,7 @@ public final class CloudRedisServiceV1Proto {
               "Name", "OutputConfig",
             });
     internal_static_google_cloud_redis_v1_FailoverInstanceRequest_descriptor =
-        getDescriptor().getMessageTypes().get(21);
+        getDescriptor().getMessageTypes().get(22);
     internal_static_google_cloud_redis_v1_FailoverInstanceRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_redis_v1_FailoverInstanceRequest_descriptor,
@@ -607,7 +649,7 @@ public final class CloudRedisServiceV1Proto {
               "Name", "DataProtectionMode",
             });
     internal_static_google_cloud_redis_v1_OperationMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(22);
+        getDescriptor().getMessageTypes().get(23);
     internal_static_google_cloud_redis_v1_OperationMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_redis_v1_OperationMetadata_descriptor,
@@ -621,7 +663,7 @@ public final class CloudRedisServiceV1Proto {
               "ApiVersion",
             });
     internal_static_google_cloud_redis_v1_LocationMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(23);
+        getDescriptor().getMessageTypes().get(24);
     internal_static_google_cloud_redis_v1_LocationMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_redis_v1_LocationMetadata_descriptor,
@@ -637,13 +679,13 @@ public final class CloudRedisServiceV1Proto {
               "Key", "Value",
             });
     internal_static_google_cloud_redis_v1_ZoneMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(24);
+        getDescriptor().getMessageTypes().get(25);
     internal_static_google_cloud_redis_v1_ZoneMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_redis_v1_ZoneMetadata_descriptor,
             new java.lang.String[] {});
     internal_static_google_cloud_redis_v1_TlsCertificate_descriptor =
-        getDescriptor().getMessageTypes().get(25);
+        getDescriptor().getMessageTypes().get(26);
     internal_static_google_cloud_redis_v1_TlsCertificate_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_redis_v1_TlsCertificate_descriptor,
@@ -668,6 +710,7 @@ public final class CloudRedisServiceV1Proto {
     com.google.api.ResourceProto.getDescriptor();
     com.google.longrunning.OperationsProto.getDescriptor();
     com.google.protobuf.DurationProto.getDescriptor();
+    com.google.protobuf.EmptyProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.type.DayOfWeekProto.getDescriptor();

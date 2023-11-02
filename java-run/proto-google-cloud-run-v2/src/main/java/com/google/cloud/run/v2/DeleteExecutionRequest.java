@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class DeleteExecutionRequest extends com.google.protobuf.GeneratedM
     return new DeleteExecutionRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.run.v2.ExecutionProto
         .internal_static_google_cloud_run_v2_DeleteExecutionRequest_descriptor;
@@ -78,8 +73,8 @@ public final class DeleteExecutionRequest extends com.google.protobuf.GeneratedM
    * <pre>
    * Required. The name of the Execution to delete.
    * Format:
-   * projects/{project}/locations/{location}/jobs/{job}/executions/{execution},
-   * where {project} can be project id or number.
+   * `projects/{project}/locations/{location}/jobs/{job}/executions/{execution}`,
+   * where `{project}` can be project id or number.
    * </pre>
    *
    * <code>
@@ -106,8 +101,8 @@ public final class DeleteExecutionRequest extends com.google.protobuf.GeneratedM
    * <pre>
    * Required. The name of the Execution to delete.
    * Format:
-   * projects/{project}/locations/{location}/jobs/{job}/executions/{execution},
-   * where {project} can be project id or number.
+   * `projects/{project}/locations/{location}/jobs/{job}/executions/{execution}`,
+   * where `{project}` can be project id or number.
    * </pre>
    *
    * <code>
@@ -595,8 +590,8 @@ public final class DeleteExecutionRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The name of the Execution to delete.
      * Format:
-     * projects/{project}/locations/{location}/jobs/{job}/executions/{execution},
-     * where {project} can be project id or number.
+     * `projects/{project}/locations/{location}/jobs/{job}/executions/{execution}`,
+     * where `{project}` can be project id or number.
      * </pre>
      *
      * <code>
@@ -622,8 +617,8 @@ public final class DeleteExecutionRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The name of the Execution to delete.
      * Format:
-     * projects/{project}/locations/{location}/jobs/{job}/executions/{execution},
-     * where {project} can be project id or number.
+     * `projects/{project}/locations/{location}/jobs/{job}/executions/{execution}`,
+     * where `{project}` can be project id or number.
      * </pre>
      *
      * <code>
@@ -649,8 +644,8 @@ public final class DeleteExecutionRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The name of the Execution to delete.
      * Format:
-     * projects/{project}/locations/{location}/jobs/{job}/executions/{execution},
-     * where {project} can be project id or number.
+     * `projects/{project}/locations/{location}/jobs/{job}/executions/{execution}`,
+     * where `{project}` can be project id or number.
      * </pre>
      *
      * <code>
@@ -675,8 +670,8 @@ public final class DeleteExecutionRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The name of the Execution to delete.
      * Format:
-     * projects/{project}/locations/{location}/jobs/{job}/executions/{execution},
-     * where {project} can be project id or number.
+     * `projects/{project}/locations/{location}/jobs/{job}/executions/{execution}`,
+     * where `{project}` can be project id or number.
      * </pre>
      *
      * <code>
@@ -697,8 +692,8 @@ public final class DeleteExecutionRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The name of the Execution to delete.
      * Format:
-     * projects/{project}/locations/{location}/jobs/{job}/executions/{execution},
-     * where {project} can be project id or number.
+     * `projects/{project}/locations/{location}/jobs/{job}/executions/{execution}`,
+     * where `{project}` can be project id or number.
      * </pre>
      *
      * <code>

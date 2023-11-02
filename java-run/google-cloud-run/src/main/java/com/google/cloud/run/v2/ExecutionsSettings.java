@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -97,6 +97,17 @@ public class ExecutionsSettings extends ClientSettings<ExecutionsSettings> {
   public OperationCallSettings<DeleteExecutionRequest, Execution, Execution>
       deleteExecutionOperationSettings() {
     return ((ExecutionsStubSettings) getStubSettings()).deleteExecutionOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to cancelExecution. */
+  public UnaryCallSettings<CancelExecutionRequest, Operation> cancelExecutionSettings() {
+    return ((ExecutionsStubSettings) getStubSettings()).cancelExecutionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to cancelExecution. */
+  public OperationCallSettings<CancelExecutionRequest, Execution, Execution>
+      cancelExecutionOperationSettings() {
+    return ((ExecutionsStubSettings) getStubSettings()).cancelExecutionOperationSettings();
   }
 
   public static final ExecutionsSettings create(ExecutionsStubSettings stub) throws IOException {
@@ -234,6 +245,17 @@ public class ExecutionsSettings extends ClientSettings<ExecutionsSettings> {
     public OperationCallSettings.Builder<DeleteExecutionRequest, Execution, Execution>
         deleteExecutionOperationSettings() {
       return getStubSettingsBuilder().deleteExecutionOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to cancelExecution. */
+    public UnaryCallSettings.Builder<CancelExecutionRequest, Operation> cancelExecutionSettings() {
+      return getStubSettingsBuilder().cancelExecutionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to cancelExecution. */
+    public OperationCallSettings.Builder<CancelExecutionRequest, Execution, Execution>
+        cancelExecutionOperationSettings() {
+      return getStubSettingsBuilder().cancelExecutionOperationSettings();
     }
 
     @Override

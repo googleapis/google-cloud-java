@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.managedidentities.v1.AttachTrustRequest;
 import com.google.cloud.managedidentities.v1.CreateMicrosoftAdDomainRequest;
@@ -39,7 +40,6 @@ import com.google.cloud.managedidentities.v1.ResetAdminPasswordRequest;
 import com.google.cloud.managedidentities.v1.ResetAdminPasswordResponse;
 import com.google.cloud.managedidentities.v1.UpdateDomainRequest;
 import com.google.cloud.managedidentities.v1.ValidateTrustRequest;
-import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
@@ -239,9 +239,9 @@ public class GrpcManagedIdentitiesServiceStub extends ManagedIdentitiesServiceSt
                 .setMethodDescriptor(createMicrosoftAdDomainMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<ResetAdminPasswordRequest, ResetAdminPasswordResponse>
@@ -250,9 +250,9 @@ public class GrpcManagedIdentitiesServiceStub extends ManagedIdentitiesServiceSt
                 .setMethodDescriptor(resetAdminPasswordMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<ListDomainsRequest, ListDomainsResponse> listDomainsTransportSettings =
@@ -260,9 +260,9 @@ public class GrpcManagedIdentitiesServiceStub extends ManagedIdentitiesServiceSt
             .setMethodDescriptor(listDomainsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetDomainRequest, Domain> getDomainTransportSettings =
@@ -270,9 +270,9 @@ public class GrpcManagedIdentitiesServiceStub extends ManagedIdentitiesServiceSt
             .setMethodDescriptor(getDomainMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateDomainRequest, Operation> updateDomainTransportSettings =
@@ -280,9 +280,9 @@ public class GrpcManagedIdentitiesServiceStub extends ManagedIdentitiesServiceSt
             .setMethodDescriptor(updateDomainMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("domain.name", String.valueOf(request.getDomain().getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("domain.name", String.valueOf(request.getDomain().getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteDomainRequest, Operation> deleteDomainTransportSettings =
@@ -290,9 +290,9 @@ public class GrpcManagedIdentitiesServiceStub extends ManagedIdentitiesServiceSt
             .setMethodDescriptor(deleteDomainMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<AttachTrustRequest, Operation> attachTrustTransportSettings =
@@ -300,9 +300,9 @@ public class GrpcManagedIdentitiesServiceStub extends ManagedIdentitiesServiceSt
             .setMethodDescriptor(attachTrustMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ReconfigureTrustRequest, Operation> reconfigureTrustTransportSettings =
@@ -310,9 +310,9 @@ public class GrpcManagedIdentitiesServiceStub extends ManagedIdentitiesServiceSt
             .setMethodDescriptor(reconfigureTrustMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DetachTrustRequest, Operation> detachTrustTransportSettings =
@@ -320,9 +320,9 @@ public class GrpcManagedIdentitiesServiceStub extends ManagedIdentitiesServiceSt
             .setMethodDescriptor(detachTrustMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ValidateTrustRequest, Operation> validateTrustTransportSettings =
@@ -330,9 +330,9 @@ public class GrpcManagedIdentitiesServiceStub extends ManagedIdentitiesServiceSt
             .setMethodDescriptor(validateTrustMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
 

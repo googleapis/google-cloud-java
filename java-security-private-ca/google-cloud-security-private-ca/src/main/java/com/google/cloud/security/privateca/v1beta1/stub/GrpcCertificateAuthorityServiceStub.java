@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.security.privateca.v1beta1.ActivateCertificateAuthorityRequest;
 import com.google.cloud.security.privateca.v1beta1.Certificate;
@@ -59,7 +60,6 @@ import com.google.cloud.security.privateca.v1beta1.ScheduleDeleteCertificateAuth
 import com.google.cloud.security.privateca.v1beta1.UpdateCertificateAuthorityRequest;
 import com.google.cloud.security.privateca.v1beta1.UpdateCertificateRequest;
 import com.google.cloud.security.privateca.v1beta1.UpdateCertificateRevocationListRequest;
-import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
@@ -441,9 +441,9 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
             .setMethodDescriptor(createCertificateMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetCertificateRequest, Certificate> getCertificateTransportSettings =
@@ -451,9 +451,9 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
             .setMethodDescriptor(getCertificateMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListCertificatesRequest, ListCertificatesResponse>
@@ -462,9 +462,9 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
                 .setMethodDescriptor(listCertificatesMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<RevokeCertificateRequest, Certificate> revokeCertificateTransportSettings =
@@ -472,9 +472,9 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
             .setMethodDescriptor(revokeCertificateMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateCertificateRequest, Certificate> updateCertificateTransportSettings =
@@ -482,10 +482,10 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
             .setMethodDescriptor(updateCertificateMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put(
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
                       "certificate.name", String.valueOf(request.getCertificate().getName()));
-                  return params.build();
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ActivateCertificateAuthorityRequest, Operation>
@@ -494,9 +494,9 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
                 .setMethodDescriptor(activateCertificateAuthorityMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<CreateCertificateAuthorityRequest, Operation>
@@ -505,9 +505,9 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
                 .setMethodDescriptor(createCertificateAuthorityMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<DisableCertificateAuthorityRequest, Operation>
@@ -516,9 +516,9 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
                 .setMethodDescriptor(disableCertificateAuthorityMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<EnableCertificateAuthorityRequest, Operation>
@@ -527,9 +527,9 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
                 .setMethodDescriptor(enableCertificateAuthorityMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<FetchCertificateAuthorityCsrRequest, FetchCertificateAuthorityCsrResponse>
@@ -540,9 +540,9 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
                 .setMethodDescriptor(fetchCertificateAuthorityCsrMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetCertificateAuthorityRequest, CertificateAuthority>
@@ -551,9 +551,9 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
                 .setMethodDescriptor(getCertificateAuthorityMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<ListCertificateAuthoritiesRequest, ListCertificateAuthoritiesResponse>
@@ -563,9 +563,9 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
                 .setMethodDescriptor(listCertificateAuthoritiesMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<RestoreCertificateAuthorityRequest, Operation>
@@ -574,9 +574,9 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
                 .setMethodDescriptor(restoreCertificateAuthorityMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<ScheduleDeleteCertificateAuthorityRequest, Operation>
@@ -585,9 +585,9 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
                 .setMethodDescriptor(scheduleDeleteCertificateAuthorityMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<UpdateCertificateAuthorityRequest, Operation>
@@ -596,11 +596,11 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
                 .setMethodDescriptor(updateCertificateAuthorityMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put(
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
                           "certificate_authority.name",
                           String.valueOf(request.getCertificateAuthority().getName()));
-                      return params.build();
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetCertificateRevocationListRequest, CertificateRevocationList>
@@ -610,9 +610,9 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
                 .setMethodDescriptor(getCertificateRevocationListMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<ListCertificateRevocationListsRequest, ListCertificateRevocationListsResponse>
@@ -623,9 +623,9 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
                 .setMethodDescriptor(listCertificateRevocationListsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<UpdateCertificateRevocationListRequest, Operation>
@@ -634,11 +634,11 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
                 .setMethodDescriptor(updateCertificateRevocationListMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put(
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
                           "certificate_revocation_list.name",
                           String.valueOf(request.getCertificateRevocationList().getName()));
-                      return params.build();
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetReusableConfigRequest, ReusableConfig> getReusableConfigTransportSettings =
@@ -646,9 +646,9 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
             .setMethodDescriptor(getReusableConfigMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListReusableConfigsRequest, ListReusableConfigsResponse>
@@ -657,9 +657,9 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
                 .setMethodDescriptor(listReusableConfigsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
 

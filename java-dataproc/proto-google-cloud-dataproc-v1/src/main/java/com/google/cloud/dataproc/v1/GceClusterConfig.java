@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,19 +44,14 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
     subnetworkUri_ = "";
     privateIpv6GoogleAccess_ = 0;
     serviceAccount_ = "";
-    serviceAccountScopes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    serviceAccountScopes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    tags_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new GceClusterConfig();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -295,7 +290,9 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
    * Optional. The Compute Engine zone where the Dataproc cluster will be
    * located. If omitted, the service will pick a zone in the cluster's Compute
    * Engine region. On a get request, zone will always be present.
+   *
    * A full URL, partial URI, or short name are valid. Examples:
+   *
    * * `https://www.googleapis.com/compute/v1/projects/[project_id]/zones/[zone]`
    * * `projects/[project_id]/zones/[zone]`
    * * `[zone]`
@@ -324,7 +321,9 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
    * Optional. The Compute Engine zone where the Dataproc cluster will be
    * located. If omitted, the service will pick a zone in the cluster's Compute
    * Engine region. On a get request, zone will always be present.
+   *
    * A full URL, partial URI, or short name are valid. Examples:
+   *
    * * `https://www.googleapis.com/compute/v1/projects/[project_id]/zones/[zone]`
    * * `projects/[project_id]/zones/[zone]`
    * * `[zone]`
@@ -361,7 +360,9 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
    * the project is used, if it exists. Cannot be a "Custom Subnet Network" (see
    * [Using Subnetworks](https://cloud.google.com/compute/docs/subnetworks) for
    * more information).
+   *
    * A full URL, partial URI, or short name are valid. Examples:
+   *
    * * `https://www.googleapis.com/compute/v1/projects/[project_id]/global/networks/default`
    * * `projects/[project_id]/global/networks/default`
    * * `default`
@@ -393,7 +394,9 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
    * the project is used, if it exists. Cannot be a "Custom Subnet Network" (see
    * [Using Subnetworks](https://cloud.google.com/compute/docs/subnetworks) for
    * more information).
+   *
    * A full URL, partial URI, or short name are valid. Examples:
+   *
    * * `https://www.googleapis.com/compute/v1/projects/[project_id]/global/networks/default`
    * * `projects/[project_id]/global/networks/default`
    * * `default`
@@ -426,7 +429,9 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Optional. The Compute Engine subnetwork to be used for machine
    * communications. Cannot be specified with network_uri.
+   *
    * A full URL, partial URI, or short name are valid. Examples:
+   *
    * * `https://www.googleapis.com/compute/v1/projects/[project_id]/regions/[region]/subnetworks/sub0`
    * * `projects/[project_id]/regions/[region]/subnetworks/sub0`
    * * `sub0`
@@ -454,7 +459,9 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Optional. The Compute Engine subnetwork to be used for machine
    * communications. Cannot be specified with network_uri.
+   *
    * A full URL, partial URI, or short name are valid. Examples:
+   *
    * * `https://www.googleapis.com/compute/v1/projects/[project_id]/regions/[region]/subnetworks/sub0`
    * * `projects/[project_id]/regions/[region]/subnetworks/sub0`
    * * `sub0`
@@ -577,6 +584,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
    * identity](https://cloud.google.com/dataproc/docs/concepts/iam/dataproc-principals#vm_service_account_data_plane_identity))
    * used by Dataproc cluster VM instances to access Google Cloud Platform
    * services.
+   *
    * If not specified, the
    * [Compute Engine default service
    * account](https://cloud.google.com/compute/docs/access/service-accounts#default_service_account)
@@ -609,6 +617,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
    * identity](https://cloud.google.com/dataproc/docs/concepts/iam/dataproc-principals#vm_service_account_data_plane_identity))
    * used by Dataproc cluster VM instances to access Google Cloud Platform
    * services.
+   *
    * If not specified, the
    * [Compute Engine default service
    * account](https://cloud.google.com/compute/docs/access/service-accounts#default_service_account)
@@ -635,7 +644,8 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
   public static final int SERVICE_ACCOUNT_SCOPES_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList serviceAccountScopes_;
+  private com.google.protobuf.LazyStringArrayList serviceAccountScopes_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -643,10 +653,13 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
    * Optional. The URIs of service account scopes to be included in
    * Compute Engine instances. The following base set of scopes is always
    * included:
+   *
    * * https://www.googleapis.com/auth/cloud.useraccounts.readonly
    * * https://www.googleapis.com/auth/devstorage.read_write
    * * https://www.googleapis.com/auth/logging.write
+   *
    * If no scopes are specified, the following defaults are also provided:
+   *
    * * https://www.googleapis.com/auth/bigquery
    * * https://www.googleapis.com/auth/bigtable.admin.table
    * * https://www.googleapis.com/auth/bigtable.data
@@ -668,10 +681,13 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
    * Optional. The URIs of service account scopes to be included in
    * Compute Engine instances. The following base set of scopes is always
    * included:
+   *
    * * https://www.googleapis.com/auth/cloud.useraccounts.readonly
    * * https://www.googleapis.com/auth/devstorage.read_write
    * * https://www.googleapis.com/auth/logging.write
+   *
    * If no scopes are specified, the following defaults are also provided:
+   *
    * * https://www.googleapis.com/auth/bigquery
    * * https://www.googleapis.com/auth/bigtable.admin.table
    * * https://www.googleapis.com/auth/bigtable.data
@@ -693,10 +709,13 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
    * Optional. The URIs of service account scopes to be included in
    * Compute Engine instances. The following base set of scopes is always
    * included:
+   *
    * * https://www.googleapis.com/auth/cloud.useraccounts.readonly
    * * https://www.googleapis.com/auth/devstorage.read_write
    * * https://www.googleapis.com/auth/logging.write
+   *
    * If no scopes are specified, the following defaults are also provided:
+   *
    * * https://www.googleapis.com/auth/bigquery
    * * https://www.googleapis.com/auth/bigtable.admin.table
    * * https://www.googleapis.com/auth/bigtable.data
@@ -719,10 +738,13 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
    * Optional. The URIs of service account scopes to be included in
    * Compute Engine instances. The following base set of scopes is always
    * included:
+   *
    * * https://www.googleapis.com/auth/cloud.useraccounts.readonly
    * * https://www.googleapis.com/auth/devstorage.read_write
    * * https://www.googleapis.com/auth/logging.write
+   *
    * If no scopes are specified, the following defaults are also provided:
+   *
    * * https://www.googleapis.com/auth/bigquery
    * * https://www.googleapis.com/auth/bigtable.admin.table
    * * https://www.googleapis.com/auth/bigtable.data
@@ -742,7 +764,8 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
   public static final int TAGS_FIELD_NUMBER = 4;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList tags_;
+  private com.google.protobuf.LazyStringArrayList tags_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -836,12 +859,12 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The Compute Engine metadata entries to add to all instances (see
+   * Optional. The Compute Engine metadata entries to add to all instances (see
    * [Project and instance
    * metadata](https://cloud.google.com/compute/docs/storing-retrieving-metadata#project_and_instance_metadata)).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; metadata = 5;</code>
+   * <code>map&lt;string, string&gt; metadata = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public boolean containsMetadata(java.lang.String key) {
@@ -860,12 +883,12 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The Compute Engine metadata entries to add to all instances (see
+   * Optional. The Compute Engine metadata entries to add to all instances (see
    * [Project and instance
    * metadata](https://cloud.google.com/compute/docs/storing-retrieving-metadata#project_and_instance_metadata)).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; metadata = 5;</code>
+   * <code>map&lt;string, string&gt; metadata = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
@@ -875,12 +898,12 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The Compute Engine metadata entries to add to all instances (see
+   * Optional. The Compute Engine metadata entries to add to all instances (see
    * [Project and instance
    * metadata](https://cloud.google.com/compute/docs/storing-retrieving-metadata#project_and_instance_metadata)).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; metadata = 5;</code>
+   * <code>map&lt;string, string&gt; metadata = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public /* nullable */ java.lang.String getMetadataOrDefault(
@@ -897,12 +920,12 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The Compute Engine metadata entries to add to all instances (see
+   * Optional. The Compute Engine metadata entries to add to all instances (see
    * [Project and instance
    * metadata](https://cloud.google.com/compute/docs/storing-retrieving-metadata#project_and_instance_metadata)).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; metadata = 5;</code>
+   * <code>map&lt;string, string&gt; metadata = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public java.lang.String getMetadataOrThrow(java.lang.String key) {
@@ -1544,10 +1567,8 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
       internalIpOnly_ = false;
       privateIpv6GoogleAccess_ = 0;
       serviceAccount_ = "";
-      serviceAccountScopes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000040);
-      tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000080);
+      serviceAccountScopes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      tags_ = com.google.protobuf.LazyStringArrayList.emptyList();
       internalGetMutableMetadata().clear();
       reservationAffinity_ = null;
       if (reservationAffinityBuilder_ != null) {
@@ -1596,25 +1617,11 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.dataproc.v1.GceClusterConfig buildPartial() {
       com.google.cloud.dataproc.v1.GceClusterConfig result =
           new com.google.cloud.dataproc.v1.GceClusterConfig(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(com.google.cloud.dataproc.v1.GceClusterConfig result) {
-      if (((bitField0_ & 0x00000040) != 0)) {
-        serviceAccountScopes_ = serviceAccountScopes_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000040);
-      }
-      result.serviceAccountScopes_ = serviceAccountScopes_;
-      if (((bitField0_ & 0x00000080) != 0)) {
-        tags_ = tags_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000080);
-      }
-      result.tags_ = tags_;
     }
 
     private void buildPartial0(com.google.cloud.dataproc.v1.GceClusterConfig result) {
@@ -1638,6 +1645,14 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.serviceAccount_ = serviceAccount_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        serviceAccountScopes_.makeImmutable();
+        result.serviceAccountScopes_ = serviceAccountScopes_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        tags_.makeImmutable();
+        result.tags_ = tags_;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
         result.metadata_ = internalGetMetadata();
@@ -1744,7 +1759,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
       if (!other.serviceAccountScopes_.isEmpty()) {
         if (serviceAccountScopes_.isEmpty()) {
           serviceAccountScopes_ = other.serviceAccountScopes_;
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ |= 0x00000040;
         } else {
           ensureServiceAccountScopesIsMutable();
           serviceAccountScopes_.addAll(other.serviceAccountScopes_);
@@ -1754,7 +1769,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
       if (!other.tags_.isEmpty()) {
         if (tags_.isEmpty()) {
           tags_ = other.tags_;
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ |= 0x00000080;
         } else {
           ensureTagsIsMutable();
           tags_.addAll(other.tags_);
@@ -1918,7 +1933,9 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      * Optional. The Compute Engine zone where the Dataproc cluster will be
      * located. If omitted, the service will pick a zone in the cluster's Compute
      * Engine region. On a get request, zone will always be present.
+     *
      * A full URL, partial URI, or short name are valid. Examples:
+     *
      * * `https://www.googleapis.com/compute/v1/projects/[project_id]/zones/[zone]`
      * * `projects/[project_id]/zones/[zone]`
      * * `[zone]`
@@ -1946,7 +1963,9 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      * Optional. The Compute Engine zone where the Dataproc cluster will be
      * located. If omitted, the service will pick a zone in the cluster's Compute
      * Engine region. On a get request, zone will always be present.
+     *
      * A full URL, partial URI, or short name are valid. Examples:
+     *
      * * `https://www.googleapis.com/compute/v1/projects/[project_id]/zones/[zone]`
      * * `projects/[project_id]/zones/[zone]`
      * * `[zone]`
@@ -1974,7 +1993,9 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      * Optional. The Compute Engine zone where the Dataproc cluster will be
      * located. If omitted, the service will pick a zone in the cluster's Compute
      * Engine region. On a get request, zone will always be present.
+     *
      * A full URL, partial URI, or short name are valid. Examples:
+     *
      * * `https://www.googleapis.com/compute/v1/projects/[project_id]/zones/[zone]`
      * * `projects/[project_id]/zones/[zone]`
      * * `[zone]`
@@ -2001,7 +2022,9 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      * Optional. The Compute Engine zone where the Dataproc cluster will be
      * located. If omitted, the service will pick a zone in the cluster's Compute
      * Engine region. On a get request, zone will always be present.
+     *
      * A full URL, partial URI, or short name are valid. Examples:
+     *
      * * `https://www.googleapis.com/compute/v1/projects/[project_id]/zones/[zone]`
      * * `projects/[project_id]/zones/[zone]`
      * * `[zone]`
@@ -2024,7 +2047,9 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      * Optional. The Compute Engine zone where the Dataproc cluster will be
      * located. If omitted, the service will pick a zone in the cluster's Compute
      * Engine region. On a get request, zone will always be present.
+     *
      * A full URL, partial URI, or short name are valid. Examples:
+     *
      * * `https://www.googleapis.com/compute/v1/projects/[project_id]/zones/[zone]`
      * * `projects/[project_id]/zones/[zone]`
      * * `[zone]`
@@ -2057,7 +2082,9 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      * the project is used, if it exists. Cannot be a "Custom Subnet Network" (see
      * [Using Subnetworks](https://cloud.google.com/compute/docs/subnetworks) for
      * more information).
+     *
      * A full URL, partial URI, or short name are valid. Examples:
+     *
      * * `https://www.googleapis.com/compute/v1/projects/[project_id]/global/networks/default`
      * * `projects/[project_id]/global/networks/default`
      * * `default`
@@ -2088,7 +2115,9 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      * the project is used, if it exists. Cannot be a "Custom Subnet Network" (see
      * [Using Subnetworks](https://cloud.google.com/compute/docs/subnetworks) for
      * more information).
+     *
      * A full URL, partial URI, or short name are valid. Examples:
+     *
      * * `https://www.googleapis.com/compute/v1/projects/[project_id]/global/networks/default`
      * * `projects/[project_id]/global/networks/default`
      * * `default`
@@ -2119,7 +2148,9 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      * the project is used, if it exists. Cannot be a "Custom Subnet Network" (see
      * [Using Subnetworks](https://cloud.google.com/compute/docs/subnetworks) for
      * more information).
+     *
      * A full URL, partial URI, or short name are valid. Examples:
+     *
      * * `https://www.googleapis.com/compute/v1/projects/[project_id]/global/networks/default`
      * * `projects/[project_id]/global/networks/default`
      * * `default`
@@ -2149,7 +2180,9 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      * the project is used, if it exists. Cannot be a "Custom Subnet Network" (see
      * [Using Subnetworks](https://cloud.google.com/compute/docs/subnetworks) for
      * more information).
+     *
      * A full URL, partial URI, or short name are valid. Examples:
+     *
      * * `https://www.googleapis.com/compute/v1/projects/[project_id]/global/networks/default`
      * * `projects/[project_id]/global/networks/default`
      * * `default`
@@ -2175,7 +2208,9 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      * the project is used, if it exists. Cannot be a "Custom Subnet Network" (see
      * [Using Subnetworks](https://cloud.google.com/compute/docs/subnetworks) for
      * more information).
+     *
      * A full URL, partial URI, or short name are valid. Examples:
+     *
      * * `https://www.googleapis.com/compute/v1/projects/[project_id]/global/networks/default`
      * * `projects/[project_id]/global/networks/default`
      * * `default`
@@ -2204,7 +2239,9 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. The Compute Engine subnetwork to be used for machine
      * communications. Cannot be specified with network_uri.
+     *
      * A full URL, partial URI, or short name are valid. Examples:
+     *
      * * `https://www.googleapis.com/compute/v1/projects/[project_id]/regions/[region]/subnetworks/sub0`
      * * `projects/[project_id]/regions/[region]/subnetworks/sub0`
      * * `sub0`
@@ -2231,7 +2268,9 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. The Compute Engine subnetwork to be used for machine
      * communications. Cannot be specified with network_uri.
+     *
      * A full URL, partial URI, or short name are valid. Examples:
+     *
      * * `https://www.googleapis.com/compute/v1/projects/[project_id]/regions/[region]/subnetworks/sub0`
      * * `projects/[project_id]/regions/[region]/subnetworks/sub0`
      * * `sub0`
@@ -2258,7 +2297,9 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. The Compute Engine subnetwork to be used for machine
      * communications. Cannot be specified with network_uri.
+     *
      * A full URL, partial URI, or short name are valid. Examples:
+     *
      * * `https://www.googleapis.com/compute/v1/projects/[project_id]/regions/[region]/subnetworks/sub0`
      * * `projects/[project_id]/regions/[region]/subnetworks/sub0`
      * * `sub0`
@@ -2284,7 +2325,9 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. The Compute Engine subnetwork to be used for machine
      * communications. Cannot be specified with network_uri.
+     *
      * A full URL, partial URI, or short name are valid. Examples:
+     *
      * * `https://www.googleapis.com/compute/v1/projects/[project_id]/regions/[region]/subnetworks/sub0`
      * * `projects/[project_id]/regions/[region]/subnetworks/sub0`
      * * `sub0`
@@ -2306,7 +2349,9 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. The Compute Engine subnetwork to be used for machine
      * communications. Cannot be specified with network_uri.
+     *
      * A full URL, partial URI, or short name are valid. Examples:
+     *
      * * `https://www.googleapis.com/compute/v1/projects/[project_id]/regions/[region]/subnetworks/sub0`
      * * `projects/[project_id]/regions/[region]/subnetworks/sub0`
      * * `sub0`
@@ -2532,6 +2577,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      * identity](https://cloud.google.com/dataproc/docs/concepts/iam/dataproc-principals#vm_service_account_data_plane_identity))
      * used by Dataproc cluster VM instances to access Google Cloud Platform
      * services.
+     *
      * If not specified, the
      * [Compute Engine default service
      * account](https://cloud.google.com/compute/docs/access/service-accounts#default_service_account)
@@ -2563,6 +2609,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      * identity](https://cloud.google.com/dataproc/docs/concepts/iam/dataproc-principals#vm_service_account_data_plane_identity))
      * used by Dataproc cluster VM instances to access Google Cloud Platform
      * services.
+     *
      * If not specified, the
      * [Compute Engine default service
      * account](https://cloud.google.com/compute/docs/access/service-accounts#default_service_account)
@@ -2594,6 +2641,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      * identity](https://cloud.google.com/dataproc/docs/concepts/iam/dataproc-principals#vm_service_account_data_plane_identity))
      * used by Dataproc cluster VM instances to access Google Cloud Platform
      * services.
+     *
      * If not specified, the
      * [Compute Engine default service
      * account](https://cloud.google.com/compute/docs/access/service-accounts#default_service_account)
@@ -2624,6 +2672,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      * identity](https://cloud.google.com/dataproc/docs/concepts/iam/dataproc-principals#vm_service_account_data_plane_identity))
      * used by Dataproc cluster VM instances to access Google Cloud Platform
      * services.
+     *
      * If not specified, the
      * [Compute Engine default service
      * account](https://cloud.google.com/compute/docs/access/service-accounts#default_service_account)
@@ -2650,6 +2699,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      * identity](https://cloud.google.com/dataproc/docs/concepts/iam/dataproc-principals#vm_service_account_data_plane_identity))
      * used by Dataproc cluster VM instances to access Google Cloud Platform
      * services.
+     *
      * If not specified, the
      * [Compute Engine default service
      * account](https://cloud.google.com/compute/docs/access/service-accounts#default_service_account)
@@ -2672,14 +2722,14 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
-    private com.google.protobuf.LazyStringList serviceAccountScopes_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList serviceAccountScopes_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureServiceAccountScopesIsMutable() {
-      if (!((bitField0_ & 0x00000040) != 0)) {
+      if (!serviceAccountScopes_.isModifiable()) {
         serviceAccountScopes_ = new com.google.protobuf.LazyStringArrayList(serviceAccountScopes_);
-        bitField0_ |= 0x00000040;
       }
+      bitField0_ |= 0x00000040;
     }
     /**
      *
@@ -2688,10 +2738,13 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      * Optional. The URIs of service account scopes to be included in
      * Compute Engine instances. The following base set of scopes is always
      * included:
+     *
      * * https://www.googleapis.com/auth/cloud.useraccounts.readonly
      * * https://www.googleapis.com/auth/devstorage.read_write
      * * https://www.googleapis.com/auth/logging.write
+     *
      * If no scopes are specified, the following defaults are also provided:
+     *
      * * https://www.googleapis.com/auth/bigquery
      * * https://www.googleapis.com/auth/bigtable.admin.table
      * * https://www.googleapis.com/auth/bigtable.data
@@ -2704,7 +2757,8 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      * @return A list containing the serviceAccountScopes.
      */
     public com.google.protobuf.ProtocolStringList getServiceAccountScopesList() {
-      return serviceAccountScopes_.getUnmodifiableView();
+      serviceAccountScopes_.makeImmutable();
+      return serviceAccountScopes_;
     }
     /**
      *
@@ -2713,10 +2767,13 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      * Optional. The URIs of service account scopes to be included in
      * Compute Engine instances. The following base set of scopes is always
      * included:
+     *
      * * https://www.googleapis.com/auth/cloud.useraccounts.readonly
      * * https://www.googleapis.com/auth/devstorage.read_write
      * * https://www.googleapis.com/auth/logging.write
+     *
      * If no scopes are specified, the following defaults are also provided:
+     *
      * * https://www.googleapis.com/auth/bigquery
      * * https://www.googleapis.com/auth/bigtable.admin.table
      * * https://www.googleapis.com/auth/bigtable.data
@@ -2738,10 +2795,13 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      * Optional. The URIs of service account scopes to be included in
      * Compute Engine instances. The following base set of scopes is always
      * included:
+     *
      * * https://www.googleapis.com/auth/cloud.useraccounts.readonly
      * * https://www.googleapis.com/auth/devstorage.read_write
      * * https://www.googleapis.com/auth/logging.write
+     *
      * If no scopes are specified, the following defaults are also provided:
+     *
      * * https://www.googleapis.com/auth/bigquery
      * * https://www.googleapis.com/auth/bigtable.admin.table
      * * https://www.googleapis.com/auth/bigtable.data
@@ -2764,10 +2824,13 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      * Optional. The URIs of service account scopes to be included in
      * Compute Engine instances. The following base set of scopes is always
      * included:
+     *
      * * https://www.googleapis.com/auth/cloud.useraccounts.readonly
      * * https://www.googleapis.com/auth/devstorage.read_write
      * * https://www.googleapis.com/auth/logging.write
+     *
      * If no scopes are specified, the following defaults are also provided:
+     *
      * * https://www.googleapis.com/auth/bigquery
      * * https://www.googleapis.com/auth/bigtable.admin.table
      * * https://www.googleapis.com/auth/bigtable.data
@@ -2790,10 +2853,13 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      * Optional. The URIs of service account scopes to be included in
      * Compute Engine instances. The following base set of scopes is always
      * included:
+     *
      * * https://www.googleapis.com/auth/cloud.useraccounts.readonly
      * * https://www.googleapis.com/auth/devstorage.read_write
      * * https://www.googleapis.com/auth/logging.write
+     *
      * If no scopes are specified, the following defaults are also provided:
+     *
      * * https://www.googleapis.com/auth/bigquery
      * * https://www.googleapis.com/auth/bigtable.admin.table
      * * https://www.googleapis.com/auth/bigtable.data
@@ -2813,6 +2879,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
       }
       ensureServiceAccountScopesIsMutable();
       serviceAccountScopes_.set(index, value);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2823,10 +2890,13 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      * Optional. The URIs of service account scopes to be included in
      * Compute Engine instances. The following base set of scopes is always
      * included:
+     *
      * * https://www.googleapis.com/auth/cloud.useraccounts.readonly
      * * https://www.googleapis.com/auth/devstorage.read_write
      * * https://www.googleapis.com/auth/logging.write
+     *
      * If no scopes are specified, the following defaults are also provided:
+     *
      * * https://www.googleapis.com/auth/bigquery
      * * https://www.googleapis.com/auth/bigtable.admin.table
      * * https://www.googleapis.com/auth/bigtable.data
@@ -2845,6 +2915,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
       }
       ensureServiceAccountScopesIsMutable();
       serviceAccountScopes_.add(value);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2855,10 +2926,13 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      * Optional. The URIs of service account scopes to be included in
      * Compute Engine instances. The following base set of scopes is always
      * included:
+     *
      * * https://www.googleapis.com/auth/cloud.useraccounts.readonly
      * * https://www.googleapis.com/auth/devstorage.read_write
      * * https://www.googleapis.com/auth/logging.write
+     *
      * If no scopes are specified, the following defaults are also provided:
+     *
      * * https://www.googleapis.com/auth/bigquery
      * * https://www.googleapis.com/auth/bigtable.admin.table
      * * https://www.googleapis.com/auth/bigtable.data
@@ -2874,6 +2948,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
     public Builder addAllServiceAccountScopes(java.lang.Iterable<java.lang.String> values) {
       ensureServiceAccountScopesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, serviceAccountScopes_);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2884,10 +2959,13 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      * Optional. The URIs of service account scopes to be included in
      * Compute Engine instances. The following base set of scopes is always
      * included:
+     *
      * * https://www.googleapis.com/auth/cloud.useraccounts.readonly
      * * https://www.googleapis.com/auth/devstorage.read_write
      * * https://www.googleapis.com/auth/logging.write
+     *
      * If no scopes are specified, the following defaults are also provided:
+     *
      * * https://www.googleapis.com/auth/bigquery
      * * https://www.googleapis.com/auth/bigtable.admin.table
      * * https://www.googleapis.com/auth/bigtable.data
@@ -2900,8 +2978,9 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearServiceAccountScopes() {
-      serviceAccountScopes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      serviceAccountScopes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000040);
+      ;
       onChanged();
       return this;
     }
@@ -2912,10 +2991,13 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      * Optional. The URIs of service account scopes to be included in
      * Compute Engine instances. The following base set of scopes is always
      * included:
+     *
      * * https://www.googleapis.com/auth/cloud.useraccounts.readonly
      * * https://www.googleapis.com/auth/devstorage.read_write
      * * https://www.googleapis.com/auth/logging.write
+     *
      * If no scopes are specified, the following defaults are also provided:
+     *
      * * https://www.googleapis.com/auth/bigquery
      * * https://www.googleapis.com/auth/bigtable.admin.table
      * * https://www.googleapis.com/auth/bigtable.data
@@ -2935,18 +3017,19 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       ensureServiceAccountScopesIsMutable();
       serviceAccountScopes_.add(value);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList tags_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList tags_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureTagsIsMutable() {
-      if (!((bitField0_ & 0x00000080) != 0)) {
+      if (!tags_.isModifiable()) {
         tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
-        bitField0_ |= 0x00000080;
       }
+      bitField0_ |= 0x00000080;
     }
     /**
      *
@@ -2961,7 +3044,8 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      * @return A list containing the tags.
      */
     public com.google.protobuf.ProtocolStringList getTagsList() {
-      return tags_.getUnmodifiableView();
+      tags_.makeImmutable();
+      return tags_;
     }
     /**
      *
@@ -3030,6 +3114,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
       }
       ensureTagsIsMutable();
       tags_.set(index, value);
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3052,6 +3137,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
       }
       ensureTagsIsMutable();
       tags_.add(value);
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3071,6 +3157,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
     public Builder addAllTags(java.lang.Iterable<java.lang.String> values) {
       ensureTagsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, tags_);
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3087,8 +3174,9 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearTags() {
-      tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      tags_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000080);
+      ;
       onChanged();
       return this;
     }
@@ -3112,6 +3200,7 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       ensureTagsIsMutable();
       tags_.add(value);
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3146,12 +3235,13 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The Compute Engine metadata entries to add to all instances (see
+     * Optional. The Compute Engine metadata entries to add to all instances (see
      * [Project and instance
      * metadata](https://cloud.google.com/compute/docs/storing-retrieving-metadata#project_and_instance_metadata)).
      * </pre>
      *
-     * <code>map&lt;string, string&gt; metadata = 5;</code>
+     * <code>map&lt;string, string&gt; metadata = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public boolean containsMetadata(java.lang.String key) {
@@ -3170,12 +3260,13 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The Compute Engine metadata entries to add to all instances (see
+     * Optional. The Compute Engine metadata entries to add to all instances (see
      * [Project and instance
      * metadata](https://cloud.google.com/compute/docs/storing-retrieving-metadata#project_and_instance_metadata)).
      * </pre>
      *
-     * <code>map&lt;string, string&gt; metadata = 5;</code>
+     * <code>map&lt;string, string&gt; metadata = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
@@ -3185,12 +3276,13 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The Compute Engine metadata entries to add to all instances (see
+     * Optional. The Compute Engine metadata entries to add to all instances (see
      * [Project and instance
      * metadata](https://cloud.google.com/compute/docs/storing-retrieving-metadata#project_and_instance_metadata)).
      * </pre>
      *
-     * <code>map&lt;string, string&gt; metadata = 5;</code>
+     * <code>map&lt;string, string&gt; metadata = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public /* nullable */ java.lang.String getMetadataOrDefault(
@@ -3207,12 +3299,13 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The Compute Engine metadata entries to add to all instances (see
+     * Optional. The Compute Engine metadata entries to add to all instances (see
      * [Project and instance
      * metadata](https://cloud.google.com/compute/docs/storing-retrieving-metadata#project_and_instance_metadata)).
      * </pre>
      *
-     * <code>map&lt;string, string&gt; metadata = 5;</code>
+     * <code>map&lt;string, string&gt; metadata = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public java.lang.String getMetadataOrThrow(java.lang.String key) {
@@ -3235,12 +3328,13 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The Compute Engine metadata entries to add to all instances (see
+     * Optional. The Compute Engine metadata entries to add to all instances (see
      * [Project and instance
      * metadata](https://cloud.google.com/compute/docs/storing-retrieving-metadata#project_and_instance_metadata)).
      * </pre>
      *
-     * <code>map&lt;string, string&gt; metadata = 5;</code>
+     * <code>map&lt;string, string&gt; metadata = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder removeMetadata(java.lang.String key) {
       if (key == null) {
@@ -3259,12 +3353,13 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The Compute Engine metadata entries to add to all instances (see
+     * Optional. The Compute Engine metadata entries to add to all instances (see
      * [Project and instance
      * metadata](https://cloud.google.com/compute/docs/storing-retrieving-metadata#project_and_instance_metadata)).
      * </pre>
      *
-     * <code>map&lt;string, string&gt; metadata = 5;</code>
+     * <code>map&lt;string, string&gt; metadata = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder putMetadata(java.lang.String key, java.lang.String value) {
       if (key == null) {
@@ -3281,12 +3376,13 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The Compute Engine metadata entries to add to all instances (see
+     * Optional. The Compute Engine metadata entries to add to all instances (see
      * [Project and instance
      * metadata](https://cloud.google.com/compute/docs/storing-retrieving-metadata#project_and_instance_metadata)).
      * </pre>
      *
-     * <code>map&lt;string, string&gt; metadata = 5;</code>
+     * <code>map&lt;string, string&gt; metadata = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder putAllMetadata(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableMetadata().getMutableMap().putAll(values);

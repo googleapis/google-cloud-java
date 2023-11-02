@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -158,6 +158,27 @@ public class MockModelServiceImpl extends ModelServiceImplBase {
                   "Unrecognized response type %s for method UpdateModel, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Model.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateExplanationDataset(
+      UpdateExplanationDatasetRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateExplanationDataset, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
                   Exception.class.getName())));
     }
   }

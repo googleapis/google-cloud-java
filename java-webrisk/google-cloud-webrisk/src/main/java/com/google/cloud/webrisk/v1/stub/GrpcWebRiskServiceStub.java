@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,8 +21,10 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.common.collect.ImmutableMap;
+import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.webrisk.v1.ComputeThreatListDiffRequest;
 import com.google.webrisk.v1.ComputeThreatListDiffResponse;
@@ -32,6 +34,8 @@ import com.google.webrisk.v1.SearchHashesResponse;
 import com.google.webrisk.v1.SearchUrisRequest;
 import com.google.webrisk.v1.SearchUrisResponse;
 import com.google.webrisk.v1.Submission;
+import com.google.webrisk.v1.SubmitUriMetadata;
+import com.google.webrisk.v1.SubmitUriRequest;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
@@ -86,11 +90,22 @@ public class GrpcWebRiskServiceStub extends WebRiskServiceStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Submission.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<SubmitUriRequest, Operation> submitUriMethodDescriptor =
+      MethodDescriptor.<SubmitUriRequest, Operation>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.webrisk.v1.WebRiskService/SubmitUri")
+          .setRequestMarshaller(ProtoUtils.marshaller(SubmitUriRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .build();
+
   private final UnaryCallable<ComputeThreatListDiffRequest, ComputeThreatListDiffResponse>
       computeThreatListDiffCallable;
   private final UnaryCallable<SearchUrisRequest, SearchUrisResponse> searchUrisCallable;
   private final UnaryCallable<SearchHashesRequest, SearchHashesResponse> searchHashesCallable;
   private final UnaryCallable<CreateSubmissionRequest, Submission> createSubmissionCallable;
+  private final UnaryCallable<SubmitUriRequest, Operation> submitUriCallable;
+  private final OperationCallable<SubmitUriRequest, Submission, SubmitUriMetadata>
+      submitUriOperationCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -155,9 +170,19 @@ public class GrpcWebRiskServiceStub extends WebRiskServiceStub {
             .setMethodDescriptor(createSubmissionMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<SubmitUriRequest, Operation> submitUriTransportSettings =
+        GrpcCallSettings.<SubmitUriRequest, Operation>newBuilder()
+            .setMethodDescriptor(submitUriMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
 
@@ -175,6 +200,15 @@ public class GrpcWebRiskServiceStub extends WebRiskServiceStub {
     this.createSubmissionCallable =
         callableFactory.createUnaryCallable(
             createSubmissionTransportSettings, settings.createSubmissionSettings(), clientContext);
+    this.submitUriCallable =
+        callableFactory.createUnaryCallable(
+            submitUriTransportSettings, settings.submitUriSettings(), clientContext);
+    this.submitUriOperationCallable =
+        callableFactory.createOperationCallable(
+            submitUriTransportSettings,
+            settings.submitUriOperationSettings(),
+            clientContext,
+            operationsStub);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -203,6 +237,17 @@ public class GrpcWebRiskServiceStub extends WebRiskServiceStub {
   @Override
   public UnaryCallable<CreateSubmissionRequest, Submission> createSubmissionCallable() {
     return createSubmissionCallable;
+  }
+
+  @Override
+  public UnaryCallable<SubmitUriRequest, Operation> submitUriCallable() {
+    return submitUriCallable;
+  }
+
+  @Override
+  public OperationCallable<SubmitUriRequest, Submission, SubmitUriMetadata>
+      submitUriOperationCallable() {
+    return submitUriOperationCallable;
   }
 
   @Override

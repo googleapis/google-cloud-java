@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,6 +61,7 @@ public interface RestoreAgentRequestOrBuilder
    * The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI
    * to restore agent from. The format of this URI must be
    * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+   *
    * Dialogflow performs a read operation for the Cloud Storage object
    * on the caller's behalf, so your request authentication must
    * have read permissions for the object. For more information, see
@@ -80,6 +81,7 @@ public interface RestoreAgentRequestOrBuilder
    * The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI
    * to restore agent from. The format of this URI must be
    * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+   *
    * Dialogflow performs a read operation for the Cloud Storage object
    * on the caller's behalf, so your request authentication must
    * have read permissions for the object. For more information, see
@@ -99,6 +101,7 @@ public interface RestoreAgentRequestOrBuilder
    * The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI
    * to restore agent from. The format of this URI must be
    * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+   *
    * Dialogflow performs a read operation for the Cloud Storage object
    * on the caller's behalf, so your request authentication must
    * have read permissions for the object. For more information, see
@@ -141,6 +144,41 @@ public interface RestoreAgentRequestOrBuilder
    *
    *
    * <pre>
+   * Setting for restoring from a git branch
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSource git_source = 6;</code>
+   *
+   * @return Whether the gitSource field is set.
+   */
+  boolean hasGitSource();
+  /**
+   *
+   *
+   * <pre>
+   * Setting for restoring from a git branch
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSource git_source = 6;</code>
+   *
+   * @return The gitSource.
+   */
+  com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSource getGitSource();
+  /**
+   *
+   *
+   * <pre>
+   * Setting for restoring from a git branch
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSource git_source = 6;</code>
+   */
+  com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.GitSourceOrBuilder getGitSourceOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Agent restore mode. If not specified, `KEEP` is assumed.
    * </pre>
    *
@@ -164,5 +202,5 @@ public interface RestoreAgentRequestOrBuilder
    */
   com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.RestoreOption getRestoreOption();
 
-  public com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.AgentCase getAgentCase();
+  com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest.AgentCase getAgentCase();
 }

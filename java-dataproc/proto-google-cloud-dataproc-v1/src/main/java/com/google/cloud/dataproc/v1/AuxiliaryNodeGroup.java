@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class AuxiliaryNodeGroup extends com.google.protobuf.GeneratedMessa
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new AuxiliaryNodeGroup();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -132,6 +127,7 @@ public final class AuxiliaryNodeGroup extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Optional. A node group ID. Generated if not specified.
+   *
    * The ID must contain only letters (a-z, A-Z), numbers (0-9),
    * underscores (_), and hyphens (-). Cannot begin or end with underscore
    * or hyphen. Must consist of from 3 to 33 characters.
@@ -158,6 +154,7 @@ public final class AuxiliaryNodeGroup extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Optional. A node group ID. Generated if not specified.
+   *
    * The ID must contain only letters (a-z, A-Z), numbers (0-9),
    * underscores (_), and hyphens (-). Cannot begin or end with underscore
    * or hyphen. Must consist of from 3 to 33 characters.
@@ -760,6 +757,7 @@ public final class AuxiliaryNodeGroup extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Optional. A node group ID. Generated if not specified.
+     *
      * The ID must contain only letters (a-z, A-Z), numbers (0-9),
      * underscores (_), and hyphens (-). Cannot begin or end with underscore
      * or hyphen. Must consist of from 3 to 33 characters.
@@ -785,6 +783,7 @@ public final class AuxiliaryNodeGroup extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Optional. A node group ID. Generated if not specified.
+     *
      * The ID must contain only letters (a-z, A-Z), numbers (0-9),
      * underscores (_), and hyphens (-). Cannot begin or end with underscore
      * or hyphen. Must consist of from 3 to 33 characters.
@@ -810,6 +809,7 @@ public final class AuxiliaryNodeGroup extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Optional. A node group ID. Generated if not specified.
+     *
      * The ID must contain only letters (a-z, A-Z), numbers (0-9),
      * underscores (_), and hyphens (-). Cannot begin or end with underscore
      * or hyphen. Must consist of from 3 to 33 characters.
@@ -834,6 +834,7 @@ public final class AuxiliaryNodeGroup extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Optional. A node group ID. Generated if not specified.
+     *
      * The ID must contain only letters (a-z, A-Z), numbers (0-9),
      * underscores (_), and hyphens (-). Cannot begin or end with underscore
      * or hyphen. Must consist of from 3 to 33 characters.
@@ -854,6 +855,7 @@ public final class AuxiliaryNodeGroup extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Optional. A node group ID. Generated if not specified.
+     *
      * The ID must contain only letters (a-z, A-Z), numbers (0-9),
      * underscores (_), and hyphens (-). Cannot begin or end with underscore
      * or hyphen. Must consist of from 3 to 33 characters.

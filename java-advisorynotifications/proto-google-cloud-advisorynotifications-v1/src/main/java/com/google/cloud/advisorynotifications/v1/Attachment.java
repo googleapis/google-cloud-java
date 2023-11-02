@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
     return new Attachment();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.advisorynotifications.v1.ServiceProto
         .internal_static_google_cloud_advisorynotifications_v1_Attachment_descriptor;
@@ -68,6 +63,8 @@ public final class Attachment extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int dataCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object data_;
 
   public enum DataCase

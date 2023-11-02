@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,8 +28,10 @@ public interface ListCompaniesRequestOrBuilder
    *
    * <pre>
    * Required. Resource name of the tenant under which the company is created.
+   *
    * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
    * "projects/foo/tenant/bar".
+   *
    * If tenant id is unspecified, the default tenant will be used, for
    * example, "projects/foo".
    * </pre>
@@ -46,8 +48,10 @@ public interface ListCompaniesRequestOrBuilder
    *
    * <pre>
    * Required. Resource name of the tenant under which the company is created.
+   *
    * The format is "projects/{project_id}/tenants/{tenant_id}", for example,
    * "projects/foo/tenant/bar".
+   *
    * If tenant id is unspecified, the default tenant will be used, for
    * example, "projects/foo".
    * </pre>
@@ -104,7 +108,9 @@ public interface ListCompaniesRequestOrBuilder
    *
    * <pre>
    * Set to true if the companies requested must have open jobs.
+   *
    * Defaults to false.
+   *
    * If true, at most
    * [page_size][google.cloud.talent.v4beta1.ListCompaniesRequest.page_size] of
    * companies are fetched, among which only those with open jobs are returned.

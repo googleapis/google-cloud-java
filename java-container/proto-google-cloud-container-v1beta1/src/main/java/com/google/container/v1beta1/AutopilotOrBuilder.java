@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,4 +35,39 @@ public interface AutopilotOrBuilder
    * @return The enabled.
    */
   boolean getEnabled();
+
+  /**
+   *
+   *
+   * <pre>
+   * Workload policy configuration for Autopilot.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.WorkloadPolicyConfig workload_policy_config = 2;</code>
+   *
+   * @return Whether the workloadPolicyConfig field is set.
+   */
+  boolean hasWorkloadPolicyConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Workload policy configuration for Autopilot.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.WorkloadPolicyConfig workload_policy_config = 2;</code>
+   *
+   * @return The workloadPolicyConfig.
+   */
+  com.google.container.v1beta1.WorkloadPolicyConfig getWorkloadPolicyConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Workload policy configuration for Autopilot.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.WorkloadPolicyConfig workload_policy_config = 2;</code>
+   */
+  com.google.container.v1beta1.WorkloadPolicyConfigOrBuilder getWorkloadPolicyConfigOrBuilder();
 }

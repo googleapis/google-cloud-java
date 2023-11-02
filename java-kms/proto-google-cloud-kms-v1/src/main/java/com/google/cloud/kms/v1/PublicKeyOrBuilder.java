@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -101,6 +101,7 @@ public interface PublicKeyOrBuilder
    * different languages. However, it is a non-negative integer, which will
    * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
    * that support this type.
+   *
    * NOTE: This field is in Beta.
    * </pre>
    *
@@ -125,6 +126,7 @@ public interface PublicKeyOrBuilder
    * different languages. However, it is a non-negative integer, which will
    * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
    * that support this type.
+   *
    * NOTE: This field is in Beta.
    * </pre>
    *
@@ -149,6 +151,7 @@ public interface PublicKeyOrBuilder
    * different languages. However, it is a non-negative integer, which will
    * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
    * that support this type.
+   *
    * NOTE: This field is in Beta.
    * </pre>
    *
@@ -163,6 +166,7 @@ public interface PublicKeyOrBuilder
    * The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the
    * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] public key.
    * Provided here for verification.
+   *
    * NOTE: This field is in Beta.
    * </pre>
    *
@@ -178,6 +182,7 @@ public interface PublicKeyOrBuilder
    * The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the
    * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] public key.
    * Provided here for verification.
+   *
    * NOTE: This field is in Beta.
    * </pre>
    *

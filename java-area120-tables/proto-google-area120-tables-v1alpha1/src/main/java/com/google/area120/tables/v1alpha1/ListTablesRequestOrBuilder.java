@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ public interface ListTablesRequestOrBuilder
    * <pre>
    * The maximum number of tables to return. The service may return fewer than
    * this value.
+   *
    * If unspecified, at most 20 tables are returned. The maximum value is 100;
    * values above 100 are coerced to 100.
    * </pre>
@@ -45,6 +46,7 @@ public interface ListTablesRequestOrBuilder
    * <pre>
    * A page token, received from a previous `ListTables` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListTables` must match
    * the call that provided the page token.
    * </pre>
@@ -60,6 +62,7 @@ public interface ListTablesRequestOrBuilder
    * <pre>
    * A page token, received from a previous `ListTables` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListTables` must match
    * the call that provided the page token.
    * </pre>

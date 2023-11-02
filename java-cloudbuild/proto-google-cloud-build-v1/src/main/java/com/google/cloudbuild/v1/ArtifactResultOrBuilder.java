@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ public interface ArtifactResultOrBuilder
    *
    *
    * <pre>
-   * The path of an artifact in a Google Cloud Storage bucket, with the
+   * The path of an artifact in a Cloud Storage bucket, with the
    * generation number. For example,
    * `gs://mybucket/path/to/output.jar#generation`.
    * </pre>
@@ -41,7 +41,7 @@ public interface ArtifactResultOrBuilder
    *
    *
    * <pre>
-   * The path of an artifact in a Google Cloud Storage bucket, with the
+   * The path of an artifact in a Cloud Storage bucket, with the
    * generation number. For example,
    * `gs://mybucket/path/to/output.jar#generation`.
    * </pre>

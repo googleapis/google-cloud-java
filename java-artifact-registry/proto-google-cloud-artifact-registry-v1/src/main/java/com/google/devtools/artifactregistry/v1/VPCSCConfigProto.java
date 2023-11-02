@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -59,20 +59,20 @@ public final class VPCSCConfigProto {
           + "VPCSC_POLICY_UNSPECIFIED\020\000\022\010\n\004DENY\020\001\022\t\n\005"
           + "ALLOW\020\002:e\352Ab\n+artifactregistry.googleapi"
           + "s.com/VpcscConfig\0223projects/{project}/lo"
-          + "cations/{location}/vpcscConfig\"Z\n\025GetVPC"
-          + "SCConfigRequest\022A\n\004name\030\001 \001(\tB3\340A\002\372A-\n+a"
-          + "rtifactregistry.googleapis.com/VpcscConf"
-          + "ig\"\223\001\n\030UpdateVPCSCConfigRequest\022F\n\014vpcsc"
-          + "_config\030\001 \001(\01320.google.devtools.artifact"
-          + "registry.v1.VPCSCConfig\022/\n\013update_mask\030\002"
-          + " \001(\0132\032.google.protobuf.FieldMaskB\373\001\n\'com"
-          + ".google.devtools.artifactregistry.v1B\020VP"
-          + "CSCConfigProtoP\001ZPcloud.google.com/go/ar"
-          + "tifactregistry/apiv1/artifactregistrypb;"
-          + "artifactregistrypb\252\002 Google.Cloud.Artifa"
-          + "ctRegistry.V1\312\002 Google\\Cloud\\ArtifactReg"
-          + "istry\\V1\352\002#Google::Cloud::ArtifactRegist"
-          + "ry::V1b\006proto3"
+          + "cations/{location}/vpcscConfig\"[\n\025GetVPC"
+          + "SCConfigRequest\022B\n\004name\030\001 \001(\tB4\342A\001\002\372A-\n+"
+          + "artifactregistry.googleapis.com/VpcscCon"
+          + "fig\"\223\001\n\030UpdateVPCSCConfigRequest\022F\n\014vpcs"
+          + "c_config\030\001 \001(\01320.google.devtools.artifac"
+          + "tregistry.v1.VPCSCConfig\022/\n\013update_mask\030"
+          + "\002 \001(\0132\032.google.protobuf.FieldMaskB\373\001\n\'co"
+          + "m.google.devtools.artifactregistry.v1B\020V"
+          + "PCSCConfigProtoP\001ZPcloud.google.com/go/a"
+          + "rtifactregistry/apiv1/artifactregistrypb"
+          + ";artifactregistrypb\252\002 Google.Cloud.Artif"
+          + "actRegistry.V1\312\002 Google\\Cloud\\ArtifactRe"
+          + "gistry\\V1\352\002#Google::Cloud::ArtifactRegis"
+          + "try::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,7 +38,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
   }
 
   private PathRule() {
-    paths_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    paths_ = com.google.protobuf.LazyStringArrayList.emptyList();
     service_ = "";
   }
 
@@ -46,11 +46,6 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new PathRule();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -72,7 +67,8 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
   public static final int PATHS_FIELD_NUMBER = 106438894;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList paths_;
+  private com.google.protobuf.LazyStringArrayList paths_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -553,8 +549,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      paths_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      paths_ = com.google.protobuf.LazyStringArrayList.emptyList();
       routeAction_ = null;
       if (routeActionBuilder_ != null) {
         routeActionBuilder_.dispose();
@@ -592,7 +587,6 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.compute.v1.PathRule buildPartial() {
       com.google.cloud.compute.v1.PathRule result = new com.google.cloud.compute.v1.PathRule(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -600,16 +594,12 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
       return result;
     }
 
-    private void buildPartialRepeatedFields(com.google.cloud.compute.v1.PathRule result) {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        paths_ = paths_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.paths_ = paths_;
-    }
-
     private void buildPartial0(com.google.cloud.compute.v1.PathRule result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        paths_.makeImmutable();
+        result.paths_ = paths_;
+      }
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.routeAction_ =
@@ -676,7 +666,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
       if (!other.paths_.isEmpty()) {
         if (paths_.isEmpty()) {
           paths_ = other.paths_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ |= 0x00000001;
         } else {
           ensurePathsIsMutable();
           paths_.addAll(other.paths_);
@@ -764,14 +754,14 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList paths_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList paths_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensurePathsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!paths_.isModifiable()) {
         paths_ = new com.google.protobuf.LazyStringArrayList(paths_);
-        bitField0_ |= 0x00000001;
       }
+      bitField0_ |= 0x00000001;
     }
     /**
      *
@@ -785,7 +775,8 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the paths.
      */
     public com.google.protobuf.ProtocolStringList getPathsList() {
-      return paths_.getUnmodifiableView();
+      paths_.makeImmutable();
+      return paths_;
     }
     /**
      *
@@ -850,6 +841,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
       }
       ensurePathsIsMutable();
       paths_.set(index, value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -871,6 +863,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
       }
       ensurePathsIsMutable();
       paths_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -889,6 +882,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllPaths(java.lang.Iterable<java.lang.String> values) {
       ensurePathsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, paths_);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -904,8 +898,9 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPaths() {
-      paths_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      paths_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      ;
       onChanged();
       return this;
     }
@@ -928,6 +923,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensurePathsIsMutable();
       paths_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

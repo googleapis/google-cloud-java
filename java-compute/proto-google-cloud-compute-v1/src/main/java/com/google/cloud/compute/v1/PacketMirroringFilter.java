@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,8 +37,8 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
   }
 
   private PacketMirroringFilter() {
-    iPProtocols_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    cidrRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    iPProtocols_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    cidrRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
     direction_ = "";
   }
 
@@ -46,11 +46,6 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new PacketMirroringFilter();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -253,7 +248,8 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
   public static final int I_P_PROTOCOLS_FIELD_NUMBER = 98544854;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList iPProtocols_;
+  private com.google.protobuf.LazyStringArrayList iPProtocols_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -316,7 +312,8 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
   public static final int CIDR_RANGES_FIELD_NUMBER = 487901697;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList cidrRanges_;
+  private com.google.protobuf.LazyStringArrayList cidrRanges_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -679,10 +676,8 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      iPProtocols_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
-      cidrRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      iPProtocols_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      cidrRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
       direction_ = "";
       return this;
     }
@@ -711,7 +706,6 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
     public com.google.cloud.compute.v1.PacketMirroringFilter buildPartial() {
       com.google.cloud.compute.v1.PacketMirroringFilter result =
           new com.google.cloud.compute.v1.PacketMirroringFilter(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -719,22 +713,16 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
       return result;
     }
 
-    private void buildPartialRepeatedFields(
-        com.google.cloud.compute.v1.PacketMirroringFilter result) {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        iPProtocols_ = iPProtocols_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.iPProtocols_ = iPProtocols_;
-      if (((bitField0_ & 0x00000002) != 0)) {
-        cidrRanges_ = cidrRanges_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.cidrRanges_ = cidrRanges_;
-    }
-
     private void buildPartial0(com.google.cloud.compute.v1.PacketMirroringFilter result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        iPProtocols_.makeImmutable();
+        result.iPProtocols_ = iPProtocols_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        cidrRanges_.makeImmutable();
+        result.cidrRanges_ = cidrRanges_;
+      }
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.direction_ = direction_;
@@ -792,7 +780,7 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
       if (!other.iPProtocols_.isEmpty()) {
         if (iPProtocols_.isEmpty()) {
           iPProtocols_ = other.iPProtocols_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ |= 0x00000001;
         } else {
           ensureIPProtocolsIsMutable();
           iPProtocols_.addAll(other.iPProtocols_);
@@ -802,7 +790,7 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
       if (!other.cidrRanges_.isEmpty()) {
         if (cidrRanges_.isEmpty()) {
           cidrRanges_ = other.cidrRanges_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureCidrRangesIsMutable();
           cidrRanges_.addAll(other.cidrRanges_);
@@ -879,14 +867,14 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList iPProtocols_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList iPProtocols_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureIPProtocolsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!iPProtocols_.isModifiable()) {
         iPProtocols_ = new com.google.protobuf.LazyStringArrayList(iPProtocols_);
-        bitField0_ |= 0x00000001;
       }
+      bitField0_ |= 0x00000001;
     }
     /**
      *
@@ -900,7 +888,8 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
      * @return A list containing the iPProtocols.
      */
     public com.google.protobuf.ProtocolStringList getIPProtocolsList() {
-      return iPProtocols_.getUnmodifiableView();
+      iPProtocols_.makeImmutable();
+      return iPProtocols_;
     }
     /**
      *
@@ -965,6 +954,7 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
       }
       ensureIPProtocolsIsMutable();
       iPProtocols_.set(index, value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -986,6 +976,7 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
       }
       ensureIPProtocolsIsMutable();
       iPProtocols_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1004,6 +995,7 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
     public Builder addAllIPProtocols(java.lang.Iterable<java.lang.String> values) {
       ensureIPProtocolsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, iPProtocols_);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1019,8 +1011,9 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearIPProtocols() {
-      iPProtocols_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      iPProtocols_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      ;
       onChanged();
       return this;
     }
@@ -1043,18 +1036,19 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
       checkByteStringIsUtf8(value);
       ensureIPProtocolsIsMutable();
       iPProtocols_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList cidrRanges_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList cidrRanges_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureCidrRangesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!cidrRanges_.isModifiable()) {
         cidrRanges_ = new com.google.protobuf.LazyStringArrayList(cidrRanges_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -1068,7 +1062,8 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
      * @return A list containing the cidrRanges.
      */
     public com.google.protobuf.ProtocolStringList getCidrRangesList() {
-      return cidrRanges_.getUnmodifiableView();
+      cidrRanges_.makeImmutable();
+      return cidrRanges_;
     }
     /**
      *
@@ -1133,6 +1128,7 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
       }
       ensureCidrRangesIsMutable();
       cidrRanges_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1154,6 +1150,7 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
       }
       ensureCidrRangesIsMutable();
       cidrRanges_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1172,6 +1169,7 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
     public Builder addAllCidrRanges(java.lang.Iterable<java.lang.String> values) {
       ensureCidrRangesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, cidrRanges_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1187,8 +1185,9 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearCidrRanges() {
-      cidrRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      cidrRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -1211,6 +1210,7 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
       checkByteStringIsUtf8(value);
       ensureCidrRangesIsMutable();
       cidrRanges_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

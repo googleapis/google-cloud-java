@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,11 +49,6 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
     return new SearchAds360Link();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.analytics.admin.v1alpha.ResourcesProto
         .internal_static_google_analytics_admin_v1alpha_SearchAds360Link_descriptor;
@@ -79,6 +74,7 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Output only. The resource name for this SearchAds360Link resource.
    * Format: properties/{propertyId}/searchAds360Links/{linkId}
+   *
    * Note: linkId is not the Search Ads 360 advertiser ID
    * </pre>
    *
@@ -104,6 +100,7 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Output only. The resource name for this SearchAds360Link resource.
    * Format: properties/{propertyId}/searchAds360Links/{linkId}
+   *
    * Note: linkId is not the Search Ads 360 advertiser ID
    * </pre>
    *
@@ -1014,6 +1011,7 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. The resource name for this SearchAds360Link resource.
      * Format: properties/{propertyId}/searchAds360Links/{linkId}
+     *
      * Note: linkId is not the Search Ads 360 advertiser ID
      * </pre>
      *
@@ -1038,6 +1036,7 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. The resource name for this SearchAds360Link resource.
      * Format: properties/{propertyId}/searchAds360Links/{linkId}
+     *
      * Note: linkId is not the Search Ads 360 advertiser ID
      * </pre>
      *
@@ -1062,6 +1061,7 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. The resource name for this SearchAds360Link resource.
      * Format: properties/{propertyId}/searchAds360Links/{linkId}
+     *
      * Note: linkId is not the Search Ads 360 advertiser ID
      * </pre>
      *
@@ -1085,6 +1085,7 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. The resource name for this SearchAds360Link resource.
      * Format: properties/{propertyId}/searchAds360Links/{linkId}
+     *
      * Note: linkId is not the Search Ads 360 advertiser ID
      * </pre>
      *
@@ -1104,6 +1105,7 @@ public final class SearchAds360Link extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. The resource name for this SearchAds360Link resource.
      * Format: properties/{propertyId}/searchAds360Links/{linkId}
+     *
      * Note: linkId is not the Search Ads 360 advertiser ID
      * </pre>
      *

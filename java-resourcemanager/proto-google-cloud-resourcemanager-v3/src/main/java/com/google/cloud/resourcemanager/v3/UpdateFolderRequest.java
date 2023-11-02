@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@ package com.google.cloud.resourcemanager.v3;
  * The request sent to the
  * [UpdateFolder][google.cloud.resourcemanager.v3.Folder.UpdateFolder]
  * method.
+ *
  * Only the `display_name` field can be changed. All other fields will be
  * ignored. Use the
  * [MoveFolder][google.cloud.resourcemanager.v3.Folders.MoveFolder] method to
@@ -49,11 +50,6 @@ public final class UpdateFolderRequest extends com.google.protobuf.GeneratedMess
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new UpdateFolderRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -368,6 +364,7 @@ public final class UpdateFolderRequest extends com.google.protobuf.GeneratedMess
    * The request sent to the
    * [UpdateFolder][google.cloud.resourcemanager.v3.Folder.UpdateFolder]
    * method.
+   *
    * Only the `display_name` field can be changed. All other fields will be
    * ignored. Use the
    * [MoveFolder][google.cloud.resourcemanager.v3.Folders.MoveFolder] method to

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,16 +43,16 @@ public final class DeployedModelNameProto {
       "\n8google/cloud/aiplatform/v1beta1/deploy"
           + "ed_model_ref.proto\022\037google.cloud.aiplatf"
           + "orm.v1beta1\032\037google/api/field_behavior.p"
-          + "roto\032\031google/api/resource.proto\"p\n\020Deplo"
-          + "yedModelRef\022<\n\010endpoint\030\001 \001(\tB*\340A\005\372A$\n\"a"
-          + "iplatform.googleapis.com/Endpoint\022\036\n\021dep"
-          + "loyed_model_id\030\002 \001(\tB\003\340A\005B\355\001\n#com.google"
-          + ".cloud.aiplatform.v1beta1B\026DeployedModel"
-          + "NameProtoP\001ZCcloud.google.com/go/aiplatf"
-          + "orm/apiv1beta1/aiplatformpb;aiplatformpb"
-          + "\252\002\037Google.Cloud.AIPlatform.V1Beta1\312\002\037Goo"
-          + "gle\\Cloud\\AIPlatform\\V1beta1\352\002\"Google::C"
-          + "loud::AIPlatform::V1beta1b\006proto3"
+          + "roto\032\031google/api/resource.proto\"r\n\020Deplo"
+          + "yedModelRef\022=\n\010endpoint\030\001 \001(\tB+\342A\001\005\372A$\n\""
+          + "aiplatform.googleapis.com/Endpoint\022\037\n\021de"
+          + "ployed_model_id\030\002 \001(\tB\004\342A\001\005B\355\001\n#com.goog"
+          + "le.cloud.aiplatform.v1beta1B\026DeployedMod"
+          + "elNameProtoP\001ZCcloud.google.com/go/aipla"
+          + "tform/apiv1beta1/aiplatformpb;aiplatform"
+          + "pb\252\002\037Google.Cloud.AIPlatform.V1Beta1\312\002\037G"
+          + "oogle\\Cloud\\AIPlatform\\V1beta1\352\002\"Google:"
+          + ":Cloud::AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,11 +50,6 @@ public final class CompareVersionsRequest extends com.google.protobuf.GeneratedM
     return new CompareVersionsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.cx.v3beta1.VersionProto
         .internal_static_google_cloud_dialogflow_cx_v3beta1_CompareVersionsRequest_descriptor;
@@ -80,6 +75,7 @@ public final class CompareVersionsRequest extends com.google.protobuf.GeneratedM
    * <pre>
    * Required. Name of the base flow version to compare with the target version.
    * Use version ID `0` to indicate the draft version of the specified flow.
+   *
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/
    * &lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
    * </pre>
@@ -108,6 +104,7 @@ public final class CompareVersionsRequest extends com.google.protobuf.GeneratedM
    * <pre>
    * Required. Name of the base flow version to compare with the target version.
    * Use version ID `0` to indicate the draft version of the specified flow.
+   *
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/
    * &lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
    * </pre>
@@ -201,6 +198,7 @@ public final class CompareVersionsRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * The language to compare the flow versions for.
+   *
    * If not specified, the agent's default language is used.
    * [Many
    * languages](https://cloud.google.com/dialogflow/docs/reference/language) are
@@ -229,6 +227,7 @@ public final class CompareVersionsRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * The language to compare the flow versions for.
+   *
    * If not specified, the agent's default language is used.
    * [Many
    * languages](https://cloud.google.com/dialogflow/docs/reference/language) are
@@ -655,6 +654,7 @@ public final class CompareVersionsRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. Name of the base flow version to compare with the target version.
      * Use version ID `0` to indicate the draft version of the specified flow.
+     *
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/
      * &lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
      * </pre>
@@ -682,6 +682,7 @@ public final class CompareVersionsRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. Name of the base flow version to compare with the target version.
      * Use version ID `0` to indicate the draft version of the specified flow.
+     *
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/
      * &lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
      * </pre>
@@ -709,6 +710,7 @@ public final class CompareVersionsRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. Name of the base flow version to compare with the target version.
      * Use version ID `0` to indicate the draft version of the specified flow.
+     *
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/
      * &lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
      * </pre>
@@ -735,6 +737,7 @@ public final class CompareVersionsRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. Name of the base flow version to compare with the target version.
      * Use version ID `0` to indicate the draft version of the specified flow.
+     *
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/
      * &lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
      * </pre>
@@ -757,6 +760,7 @@ public final class CompareVersionsRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. Name of the base flow version to compare with the target version.
      * Use version ID `0` to indicate the draft version of the specified flow.
+     *
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/
      * &lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
      * </pre>
@@ -916,6 +920,7 @@ public final class CompareVersionsRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The language to compare the flow versions for.
+     *
      * If not specified, the agent's default language is used.
      * [Many
      * languages](https://cloud.google.com/dialogflow/docs/reference/language) are
@@ -943,6 +948,7 @@ public final class CompareVersionsRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The language to compare the flow versions for.
+     *
      * If not specified, the agent's default language is used.
      * [Many
      * languages](https://cloud.google.com/dialogflow/docs/reference/language) are
@@ -970,6 +976,7 @@ public final class CompareVersionsRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The language to compare the flow versions for.
+     *
      * If not specified, the agent's default language is used.
      * [Many
      * languages](https://cloud.google.com/dialogflow/docs/reference/language) are
@@ -996,6 +1003,7 @@ public final class CompareVersionsRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The language to compare the flow versions for.
+     *
      * If not specified, the agent's default language is used.
      * [Many
      * languages](https://cloud.google.com/dialogflow/docs/reference/language) are
@@ -1018,6 +1026,7 @@ public final class CompareVersionsRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The language to compare the flow versions for.
+     *
      * If not specified, the agent's default language is used.
      * [Many
      * languages](https://cloud.google.com/dialogflow/docs/reference/language) are

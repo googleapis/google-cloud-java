@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,10 +41,10 @@ public final class SubjectAltNames extends com.google.protobuf.GeneratedMessageV
   }
 
   private SubjectAltNames() {
-    dnsNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    uris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    emailAddresses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    ipAddresses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    dnsNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    uris_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    emailAddresses_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    ipAddresses_ = com.google.protobuf.LazyStringArrayList.emptyList();
     customSans_ = java.util.Collections.emptyList();
   }
 
@@ -52,11 +52,6 @@ public final class SubjectAltNames extends com.google.protobuf.GeneratedMessageV
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new SubjectAltNames();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -77,7 +72,8 @@ public final class SubjectAltNames extends com.google.protobuf.GeneratedMessageV
   public static final int DNS_NAMES_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList dnsNames_;
+  private com.google.protobuf.LazyStringArrayList dnsNames_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -140,7 +136,8 @@ public final class SubjectAltNames extends com.google.protobuf.GeneratedMessageV
   public static final int URIS_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList uris_;
+  private com.google.protobuf.LazyStringArrayList uris_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -203,7 +200,8 @@ public final class SubjectAltNames extends com.google.protobuf.GeneratedMessageV
   public static final int EMAIL_ADDRESSES_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList emailAddresses_;
+  private com.google.protobuf.LazyStringArrayList emailAddresses_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -266,7 +264,8 @@ public final class SubjectAltNames extends com.google.protobuf.GeneratedMessageV
   public static final int IP_ADDRESSES_FIELD_NUMBER = 4;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList ipAddresses_;
+  private com.google.protobuf.LazyStringArrayList ipAddresses_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -676,14 +675,10 @@ public final class SubjectAltNames extends com.google.protobuf.GeneratedMessageV
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      dnsNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
-      uris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
-      emailAddresses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
-      ipAddresses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      dnsNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      uris_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      emailAddresses_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      ipAddresses_ = com.google.protobuf.LazyStringArrayList.emptyList();
       if (customSansBuilder_ == null) {
         customSans_ = java.util.Collections.emptyList();
       } else {
@@ -728,26 +723,6 @@ public final class SubjectAltNames extends com.google.protobuf.GeneratedMessageV
 
     private void buildPartialRepeatedFields(
         com.google.cloud.security.privateca.v1.SubjectAltNames result) {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        dnsNames_ = dnsNames_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.dnsNames_ = dnsNames_;
-      if (((bitField0_ & 0x00000002) != 0)) {
-        uris_ = uris_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.uris_ = uris_;
-      if (((bitField0_ & 0x00000004) != 0)) {
-        emailAddresses_ = emailAddresses_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.emailAddresses_ = emailAddresses_;
-      if (((bitField0_ & 0x00000008) != 0)) {
-        ipAddresses_ = ipAddresses_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000008);
-      }
-      result.ipAddresses_ = ipAddresses_;
       if (customSansBuilder_ == null) {
         if (((bitField0_ & 0x00000010) != 0)) {
           customSans_ = java.util.Collections.unmodifiableList(customSans_);
@@ -761,6 +736,22 @@ public final class SubjectAltNames extends com.google.protobuf.GeneratedMessageV
 
     private void buildPartial0(com.google.cloud.security.privateca.v1.SubjectAltNames result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        dnsNames_.makeImmutable();
+        result.dnsNames_ = dnsNames_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        uris_.makeImmutable();
+        result.uris_ = uris_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        emailAddresses_.makeImmutable();
+        result.emailAddresses_ = emailAddresses_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        ipAddresses_.makeImmutable();
+        result.ipAddresses_ = ipAddresses_;
+      }
     }
 
     @java.lang.Override
@@ -812,7 +803,7 @@ public final class SubjectAltNames extends com.google.protobuf.GeneratedMessageV
       if (!other.dnsNames_.isEmpty()) {
         if (dnsNames_.isEmpty()) {
           dnsNames_ = other.dnsNames_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ |= 0x00000001;
         } else {
           ensureDnsNamesIsMutable();
           dnsNames_.addAll(other.dnsNames_);
@@ -822,7 +813,7 @@ public final class SubjectAltNames extends com.google.protobuf.GeneratedMessageV
       if (!other.uris_.isEmpty()) {
         if (uris_.isEmpty()) {
           uris_ = other.uris_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureUrisIsMutable();
           uris_.addAll(other.uris_);
@@ -832,7 +823,7 @@ public final class SubjectAltNames extends com.google.protobuf.GeneratedMessageV
       if (!other.emailAddresses_.isEmpty()) {
         if (emailAddresses_.isEmpty()) {
           emailAddresses_ = other.emailAddresses_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ |= 0x00000004;
         } else {
           ensureEmailAddressesIsMutable();
           emailAddresses_.addAll(other.emailAddresses_);
@@ -842,7 +833,7 @@ public final class SubjectAltNames extends com.google.protobuf.GeneratedMessageV
       if (!other.ipAddresses_.isEmpty()) {
         if (ipAddresses_.isEmpty()) {
           ipAddresses_ = other.ipAddresses_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ |= 0x00000008;
         } else {
           ensureIpAddressesIsMutable();
           ipAddresses_.addAll(other.ipAddresses_);
@@ -963,14 +954,14 @@ public final class SubjectAltNames extends com.google.protobuf.GeneratedMessageV
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList dnsNames_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList dnsNames_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureDnsNamesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!dnsNames_.isModifiable()) {
         dnsNames_ = new com.google.protobuf.LazyStringArrayList(dnsNames_);
-        bitField0_ |= 0x00000001;
       }
+      bitField0_ |= 0x00000001;
     }
     /**
      *
@@ -984,7 +975,8 @@ public final class SubjectAltNames extends com.google.protobuf.GeneratedMessageV
      * @return A list containing the dnsNames.
      */
     public com.google.protobuf.ProtocolStringList getDnsNamesList() {
-      return dnsNames_.getUnmodifiableView();
+      dnsNames_.makeImmutable();
+      return dnsNames_;
     }
     /**
      *
@@ -1049,6 +1041,7 @@ public final class SubjectAltNames extends com.google.protobuf.GeneratedMessageV
       }
       ensureDnsNamesIsMutable();
       dnsNames_.set(index, value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1070,6 +1063,7 @@ public final class SubjectAltNames extends com.google.protobuf.GeneratedMessageV
       }
       ensureDnsNamesIsMutable();
       dnsNames_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1088,6 +1082,7 @@ public final class SubjectAltNames extends com.google.protobuf.GeneratedMessageV
     public Builder addAllDnsNames(java.lang.Iterable<java.lang.String> values) {
       ensureDnsNamesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, dnsNames_);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1103,8 +1098,9 @@ public final class SubjectAltNames extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearDnsNames() {
-      dnsNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      dnsNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      ;
       onChanged();
       return this;
     }
@@ -1127,18 +1123,19 @@ public final class SubjectAltNames extends com.google.protobuf.GeneratedMessageV
       checkByteStringIsUtf8(value);
       ensureDnsNamesIsMutable();
       dnsNames_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList uris_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList uris_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureUrisIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!uris_.isModifiable()) {
         uris_ = new com.google.protobuf.LazyStringArrayList(uris_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -1152,7 +1149,8 @@ public final class SubjectAltNames extends com.google.protobuf.GeneratedMessageV
      * @return A list containing the uris.
      */
     public com.google.protobuf.ProtocolStringList getUrisList() {
-      return uris_.getUnmodifiableView();
+      uris_.makeImmutable();
+      return uris_;
     }
     /**
      *
@@ -1217,6 +1215,7 @@ public final class SubjectAltNames extends com.google.protobuf.GeneratedMessageV
       }
       ensureUrisIsMutable();
       uris_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1238,6 +1237,7 @@ public final class SubjectAltNames extends com.google.protobuf.GeneratedMessageV
       }
       ensureUrisIsMutable();
       uris_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1256,6 +1256,7 @@ public final class SubjectAltNames extends com.google.protobuf.GeneratedMessageV
     public Builder addAllUris(java.lang.Iterable<java.lang.String> values) {
       ensureUrisIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, uris_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1271,8 +1272,9 @@ public final class SubjectAltNames extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearUris() {
-      uris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      uris_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -1295,18 +1297,19 @@ public final class SubjectAltNames extends com.google.protobuf.GeneratedMessageV
       checkByteStringIsUtf8(value);
       ensureUrisIsMutable();
       uris_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList emailAddresses_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList emailAddresses_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureEmailAddressesIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!emailAddresses_.isModifiable()) {
         emailAddresses_ = new com.google.protobuf.LazyStringArrayList(emailAddresses_);
-        bitField0_ |= 0x00000004;
       }
+      bitField0_ |= 0x00000004;
     }
     /**
      *
@@ -1320,7 +1323,8 @@ public final class SubjectAltNames extends com.google.protobuf.GeneratedMessageV
      * @return A list containing the emailAddresses.
      */
     public com.google.protobuf.ProtocolStringList getEmailAddressesList() {
-      return emailAddresses_.getUnmodifiableView();
+      emailAddresses_.makeImmutable();
+      return emailAddresses_;
     }
     /**
      *
@@ -1385,6 +1389,7 @@ public final class SubjectAltNames extends com.google.protobuf.GeneratedMessageV
       }
       ensureEmailAddressesIsMutable();
       emailAddresses_.set(index, value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1406,6 +1411,7 @@ public final class SubjectAltNames extends com.google.protobuf.GeneratedMessageV
       }
       ensureEmailAddressesIsMutable();
       emailAddresses_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1424,6 +1430,7 @@ public final class SubjectAltNames extends com.google.protobuf.GeneratedMessageV
     public Builder addAllEmailAddresses(java.lang.Iterable<java.lang.String> values) {
       ensureEmailAddressesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, emailAddresses_);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1439,8 +1446,9 @@ public final class SubjectAltNames extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearEmailAddresses() {
-      emailAddresses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      emailAddresses_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000004);
+      ;
       onChanged();
       return this;
     }
@@ -1463,18 +1471,19 @@ public final class SubjectAltNames extends com.google.protobuf.GeneratedMessageV
       checkByteStringIsUtf8(value);
       ensureEmailAddressesIsMutable();
       emailAddresses_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList ipAddresses_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList ipAddresses_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureIpAddressesIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!ipAddresses_.isModifiable()) {
         ipAddresses_ = new com.google.protobuf.LazyStringArrayList(ipAddresses_);
-        bitField0_ |= 0x00000008;
       }
+      bitField0_ |= 0x00000008;
     }
     /**
      *
@@ -1488,7 +1497,8 @@ public final class SubjectAltNames extends com.google.protobuf.GeneratedMessageV
      * @return A list containing the ipAddresses.
      */
     public com.google.protobuf.ProtocolStringList getIpAddressesList() {
-      return ipAddresses_.getUnmodifiableView();
+      ipAddresses_.makeImmutable();
+      return ipAddresses_;
     }
     /**
      *
@@ -1553,6 +1563,7 @@ public final class SubjectAltNames extends com.google.protobuf.GeneratedMessageV
       }
       ensureIpAddressesIsMutable();
       ipAddresses_.set(index, value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1574,6 +1585,7 @@ public final class SubjectAltNames extends com.google.protobuf.GeneratedMessageV
       }
       ensureIpAddressesIsMutable();
       ipAddresses_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1592,6 +1604,7 @@ public final class SubjectAltNames extends com.google.protobuf.GeneratedMessageV
     public Builder addAllIpAddresses(java.lang.Iterable<java.lang.String> values) {
       ensureIpAddressesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, ipAddresses_);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1607,8 +1620,9 @@ public final class SubjectAltNames extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearIpAddresses() {
-      ipAddresses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      ipAddresses_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000008);
+      ;
       onChanged();
       return this;
     }
@@ -1631,6 +1645,7 @@ public final class SubjectAltNames extends com.google.protobuf.GeneratedMessageV
       checkByteStringIsUtf8(value);
       ensureIpAddressesIsMutable();
       ipAddresses_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

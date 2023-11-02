@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class TruncatableString extends com.google.protobuf.GeneratedMessag
     return new TruncatableString();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.devtools.cloudtrace.v2.TraceProto
         .internal_static_google_devtools_cloudtrace_v2_TruncatableString_descriptor;
@@ -78,6 +73,7 @@ public final class TruncatableString extends com.google.protobuf.GeneratedMessag
    * The shortened string. For example, if the original string is 500
    * bytes long and the limit of the string is 128 bytes, then
    * `value` contains the first 128 bytes of the 500-byte string.
+   *
    * Truncation always happens on a UTF8 character boundary. If there
    * are multi-byte characters in the string, then the length of the
    * shortened string might be less than the size limit.
@@ -106,6 +102,7 @@ public final class TruncatableString extends com.google.protobuf.GeneratedMessag
    * The shortened string. For example, if the original string is 500
    * bytes long and the limit of the string is 128 bytes, then
    * `value` contains the first 128 bytes of the 500-byte string.
+   *
    * Truncation always happens on a UTF8 character boundary. If there
    * are multi-byte characters in the string, then the length of the
    * shortened string might be less than the size limit.
@@ -519,6 +516,7 @@ public final class TruncatableString extends com.google.protobuf.GeneratedMessag
      * The shortened string. For example, if the original string is 500
      * bytes long and the limit of the string is 128 bytes, then
      * `value` contains the first 128 bytes of the 500-byte string.
+     *
      * Truncation always happens on a UTF8 character boundary. If there
      * are multi-byte characters in the string, then the length of the
      * shortened string might be less than the size limit.
@@ -546,6 +544,7 @@ public final class TruncatableString extends com.google.protobuf.GeneratedMessag
      * The shortened string. For example, if the original string is 500
      * bytes long and the limit of the string is 128 bytes, then
      * `value` contains the first 128 bytes of the 500-byte string.
+     *
      * Truncation always happens on a UTF8 character boundary. If there
      * are multi-byte characters in the string, then the length of the
      * shortened string might be less than the size limit.
@@ -573,6 +572,7 @@ public final class TruncatableString extends com.google.protobuf.GeneratedMessag
      * The shortened string. For example, if the original string is 500
      * bytes long and the limit of the string is 128 bytes, then
      * `value` contains the first 128 bytes of the 500-byte string.
+     *
      * Truncation always happens on a UTF8 character boundary. If there
      * are multi-byte characters in the string, then the length of the
      * shortened string might be less than the size limit.
@@ -599,6 +599,7 @@ public final class TruncatableString extends com.google.protobuf.GeneratedMessag
      * The shortened string. For example, if the original string is 500
      * bytes long and the limit of the string is 128 bytes, then
      * `value` contains the first 128 bytes of the 500-byte string.
+     *
      * Truncation always happens on a UTF8 character boundary. If there
      * are multi-byte characters in the string, then the length of the
      * shortened string might be less than the size limit.
@@ -621,6 +622,7 @@ public final class TruncatableString extends com.google.protobuf.GeneratedMessag
      * The shortened string. For example, if the original string is 500
      * bytes long and the limit of the string is 128 bytes, then
      * `value` contains the first 128 bytes of the 500-byte string.
+     *
      * Truncation always happens on a UTF8 character boundary. If there
      * are multi-byte characters in the string, then the length of the
      * shortened string might be less than the size limit.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,11 +46,6 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new NasJobSpec();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -269,11 +264,6 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new MultiTrialAlgorithmSpec();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -548,11 +538,6 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new MetricSpec();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1617,6 +1602,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * The number of failed trials that need to be seen before failing
        * the NasJob.
+       *
        * If set to 0, Vertex AI decides how many trials must fail
        * before the whole job fails.
        * </pre>
@@ -1653,11 +1639,6 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new SearchTrialSpec();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1782,6 +1763,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * The number of failed trials that need to be seen before failing
        * the NasJob.
+       *
        * If set to 0, Vertex AI decides how many trials must fail
        * before the whole job fails.
        * </pre>
@@ -2608,6 +2590,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * The number of failed trials that need to be seen before failing
          * the NasJob.
+         *
          * If set to 0, Vertex AI decides how many trials must fail
          * before the whole job fails.
          * </pre>
@@ -2626,6 +2609,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * The number of failed trials that need to be seen before failing
          * the NasJob.
+         *
          * If set to 0, Vertex AI decides how many trials must fail
          * before the whole job fails.
          * </pre>
@@ -2648,6 +2632,7 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * The number of failed trials that need to be seen before failing
          * the NasJob.
+         *
          * If set to 0, Vertex AI decides how many trials must fail
          * before the whole job fails.
          * </pre>
@@ -2838,11 +2823,6 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new TrainTrialSpec();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -5404,6 +5384,8 @@ public final class NasJobSpec extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int nasAlgorithmSpecCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object nasAlgorithmSpec_;
 
   public enum NasAlgorithmSpecCase

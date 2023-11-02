@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class SegmentSettings extends com.google.protobuf.GeneratedMessageV
     return new SegmentSettings();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.video.livestream.v1.OutputsProto
         .internal_static_google_cloud_video_livestream_v1_SegmentSettings_descriptor;
@@ -77,6 +72,7 @@ public final class SegmentSettings extends com.google.protobuf.GeneratedMessageV
    * and `segmentDuration` must be divisible by
    * [gop_duration][google.cloud.video.livestream.v1.VideoStream.H264CodecSettings.gop_duration].
    * Valid range is [2s, 20s].
+   *
    * All [mux_streams][google.cloud.video.livestream.v1.Manifest.mux_streams] in
    * the same manifest must have the same segment duration.
    * </pre>
@@ -99,6 +95,7 @@ public final class SegmentSettings extends com.google.protobuf.GeneratedMessageV
    * and `segmentDuration` must be divisible by
    * [gop_duration][google.cloud.video.livestream.v1.VideoStream.H264CodecSettings.gop_duration].
    * Valid range is [2s, 20s].
+   *
    * All [mux_streams][google.cloud.video.livestream.v1.Manifest.mux_streams] in
    * the same manifest must have the same segment duration.
    * </pre>
@@ -123,6 +120,7 @@ public final class SegmentSettings extends com.google.protobuf.GeneratedMessageV
    * and `segmentDuration` must be divisible by
    * [gop_duration][google.cloud.video.livestream.v1.VideoStream.H264CodecSettings.gop_duration].
    * Valid range is [2s, 20s].
+   *
    * All [mux_streams][google.cloud.video.livestream.v1.Manifest.mux_streams] in
    * the same manifest must have the same segment duration.
    * </pre>
@@ -502,6 +500,7 @@ public final class SegmentSettings extends com.google.protobuf.GeneratedMessageV
      * and `segmentDuration` must be divisible by
      * [gop_duration][google.cloud.video.livestream.v1.VideoStream.H264CodecSettings.gop_duration].
      * Valid range is [2s, 20s].
+     *
      * All [mux_streams][google.cloud.video.livestream.v1.Manifest.mux_streams] in
      * the same manifest must have the same segment duration.
      * </pre>
@@ -523,6 +522,7 @@ public final class SegmentSettings extends com.google.protobuf.GeneratedMessageV
      * and `segmentDuration` must be divisible by
      * [gop_duration][google.cloud.video.livestream.v1.VideoStream.H264CodecSettings.gop_duration].
      * Valid range is [2s, 20s].
+     *
      * All [mux_streams][google.cloud.video.livestream.v1.Manifest.mux_streams] in
      * the same manifest must have the same segment duration.
      * </pre>
@@ -550,6 +550,7 @@ public final class SegmentSettings extends com.google.protobuf.GeneratedMessageV
      * and `segmentDuration` must be divisible by
      * [gop_duration][google.cloud.video.livestream.v1.VideoStream.H264CodecSettings.gop_duration].
      * Valid range is [2s, 20s].
+     *
      * All [mux_streams][google.cloud.video.livestream.v1.Manifest.mux_streams] in
      * the same manifest must have the same segment duration.
      * </pre>
@@ -579,6 +580,7 @@ public final class SegmentSettings extends com.google.protobuf.GeneratedMessageV
      * and `segmentDuration` must be divisible by
      * [gop_duration][google.cloud.video.livestream.v1.VideoStream.H264CodecSettings.gop_duration].
      * Valid range is [2s, 20s].
+     *
      * All [mux_streams][google.cloud.video.livestream.v1.Manifest.mux_streams] in
      * the same manifest must have the same segment duration.
      * </pre>
@@ -605,6 +607,7 @@ public final class SegmentSettings extends com.google.protobuf.GeneratedMessageV
      * and `segmentDuration` must be divisible by
      * [gop_duration][google.cloud.video.livestream.v1.VideoStream.H264CodecSettings.gop_duration].
      * Valid range is [2s, 20s].
+     *
      * All [mux_streams][google.cloud.video.livestream.v1.Manifest.mux_streams] in
      * the same manifest must have the same segment duration.
      * </pre>
@@ -637,6 +640,7 @@ public final class SegmentSettings extends com.google.protobuf.GeneratedMessageV
      * and `segmentDuration` must be divisible by
      * [gop_duration][google.cloud.video.livestream.v1.VideoStream.H264CodecSettings.gop_duration].
      * Valid range is [2s, 20s].
+     *
      * All [mux_streams][google.cloud.video.livestream.v1.Manifest.mux_streams] in
      * the same manifest must have the same segment duration.
      * </pre>
@@ -663,6 +667,7 @@ public final class SegmentSettings extends com.google.protobuf.GeneratedMessageV
      * and `segmentDuration` must be divisible by
      * [gop_duration][google.cloud.video.livestream.v1.VideoStream.H264CodecSettings.gop_duration].
      * Valid range is [2s, 20s].
+     *
      * All [mux_streams][google.cloud.video.livestream.v1.Manifest.mux_streams] in
      * the same manifest must have the same segment duration.
      * </pre>
@@ -684,6 +689,7 @@ public final class SegmentSettings extends com.google.protobuf.GeneratedMessageV
      * and `segmentDuration` must be divisible by
      * [gop_duration][google.cloud.video.livestream.v1.VideoStream.H264CodecSettings.gop_duration].
      * Valid range is [2s, 20s].
+     *
      * All [mux_streams][google.cloud.video.livestream.v1.Manifest.mux_streams] in
      * the same manifest must have the same segment duration.
      * </pre>
@@ -709,6 +715,7 @@ public final class SegmentSettings extends com.google.protobuf.GeneratedMessageV
      * and `segmentDuration` must be divisible by
      * [gop_duration][google.cloud.video.livestream.v1.VideoStream.H264CodecSettings.gop_duration].
      * Valid range is [2s, 20s].
+     *
      * All [mux_streams][google.cloud.video.livestream.v1.Manifest.mux_streams] in
      * the same manifest must have the same segment duration.
      * </pre>

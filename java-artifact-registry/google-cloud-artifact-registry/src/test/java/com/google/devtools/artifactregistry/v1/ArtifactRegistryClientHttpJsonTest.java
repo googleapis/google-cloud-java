@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1112,6 +1112,10 @@ public class ArtifactRegistryClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setKmsKeyName("kmsKeyName412586233")
+            .putAllCleanupPolicies(new HashMap<String, CleanupPolicy>())
+            .setSizeBytes(-1796325715)
+            .setSatisfiesPzs(true)
+            .setCleanupPolicyDryRun(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1161,6 +1165,10 @@ public class ArtifactRegistryClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setKmsKeyName("kmsKeyName412586233")
+            .putAllCleanupPolicies(new HashMap<String, CleanupPolicy>())
+            .setSizeBytes(-1796325715)
+            .setSatisfiesPzs(true)
+            .setCleanupPolicyDryRun(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1210,6 +1218,10 @@ public class ArtifactRegistryClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setKmsKeyName("kmsKeyName412586233")
+            .putAllCleanupPolicies(new HashMap<String, CleanupPolicy>())
+            .setSizeBytes(-1796325715)
+            .setSatisfiesPzs(true)
+            .setCleanupPolicyDryRun(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1269,6 +1281,10 @@ public class ArtifactRegistryClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setKmsKeyName("kmsKeyName412586233")
+            .putAllCleanupPolicies(new HashMap<String, CleanupPolicy>())
+            .setSizeBytes(-1796325715)
+            .setSatisfiesPzs(true)
+            .setCleanupPolicyDryRun(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1328,6 +1344,10 @@ public class ArtifactRegistryClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setKmsKeyName("kmsKeyName412586233")
+            .putAllCleanupPolicies(new HashMap<String, CleanupPolicy>())
+            .setSizeBytes(-1796325715)
+            .setSatisfiesPzs(true)
+            .setCleanupPolicyDryRun(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1339,6 +1359,10 @@ public class ArtifactRegistryClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setKmsKeyName("kmsKeyName412586233")
+            .putAllCleanupPolicies(new HashMap<String, CleanupPolicy>())
+            .setSizeBytes(-1796325715)
+            .setSatisfiesPzs(true)
+            .setCleanupPolicyDryRun(true)
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -1376,6 +1400,10 @@ public class ArtifactRegistryClientHttpJsonTest {
               .setCreateTime(Timestamp.newBuilder().build())
               .setUpdateTime(Timestamp.newBuilder().build())
               .setKmsKeyName("kmsKeyName412586233")
+              .putAllCleanupPolicies(new HashMap<String, CleanupPolicy>())
+              .setSizeBytes(-1796325715)
+              .setSatisfiesPzs(true)
+              .setCleanupPolicyDryRun(true)
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateRepository(repository, updateMask);
@@ -1821,7 +1849,9 @@ public class ArtifactRegistryClientHttpJsonTest {
   public void getVersionTest() throws Exception {
     Version expectedResponse =
         Version.newBuilder()
-            .setName("name3373707")
+            .setName(
+                VersionName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PACKAGE]", "[VERSION]")
+                    .toString())
             .setDescription("description-1724546052")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
@@ -1910,6 +1940,102 @@ public class ArtifactRegistryClientHttpJsonTest {
       String name =
           "projects/project-9642/locations/location-9642/repositories/repositorie-9642/packages/package-9642/versions/version-9642";
       client.deleteVersionAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void batchDeleteVersionsTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("batchDeleteVersionsTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    PackageName parent = PackageName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PACKAGE]");
+    List<String> names = new ArrayList<>();
+
+    client.batchDeleteVersionsAsync(parent, names).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void batchDeleteVersionsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      PackageName parent = PackageName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PACKAGE]");
+      List<String> names = new ArrayList<>();
+      client.batchDeleteVersionsAsync(parent, names).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void batchDeleteVersionsTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("batchDeleteVersionsTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String parent =
+        "projects/project-5394/locations/location-5394/repositories/repositorie-5394/packages/package-5394";
+    List<String> names = new ArrayList<>();
+
+    client.batchDeleteVersionsAsync(parent, names).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void batchDeleteVersionsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent =
+          "projects/project-5394/locations/location-5394/repositories/repositorie-5394/packages/package-5394";
+      List<String> names = new ArrayList<>();
+      client.batchDeleteVersionsAsync(parent, names).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
     }

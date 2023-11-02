@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,11 +43,6 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new NodeConfigDefaults();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -165,6 +160,60 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
         : loggingConfig_;
   }
 
+  public static final int HOST_MAINTENANCE_POLICY_FIELD_NUMBER = 5;
+  private com.google.container.v1beta1.HostMaintenancePolicy hostMaintenancePolicy_;
+  /**
+   *
+   *
+   * <pre>
+   * HostMaintenancePolicy contains the desired maintenance policy for the
+   * Google Compute Engine hosts.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.HostMaintenancePolicy host_maintenance_policy = 5;</code>
+   *
+   * @return Whether the hostMaintenancePolicy field is set.
+   */
+  @java.lang.Override
+  public boolean hasHostMaintenancePolicy() {
+    return hostMaintenancePolicy_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * HostMaintenancePolicy contains the desired maintenance policy for the
+   * Google Compute Engine hosts.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.HostMaintenancePolicy host_maintenance_policy = 5;</code>
+   *
+   * @return The hostMaintenancePolicy.
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.HostMaintenancePolicy getHostMaintenancePolicy() {
+    return hostMaintenancePolicy_ == null
+        ? com.google.container.v1beta1.HostMaintenancePolicy.getDefaultInstance()
+        : hostMaintenancePolicy_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * HostMaintenancePolicy contains the desired maintenance policy for the
+   * Google Compute Engine hosts.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.HostMaintenancePolicy host_maintenance_policy = 5;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.HostMaintenancePolicyOrBuilder
+      getHostMaintenancePolicyOrBuilder() {
+    return hostMaintenancePolicy_ == null
+        ? com.google.container.v1beta1.HostMaintenancePolicy.getDefaultInstance()
+        : hostMaintenancePolicy_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -185,6 +234,9 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
     if (loggingConfig_ != null) {
       output.writeMessage(3, getLoggingConfig());
     }
+    if (hostMaintenancePolicy_ != null) {
+      output.writeMessage(5, getHostMaintenancePolicy());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -199,6 +251,10 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
     }
     if (loggingConfig_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getLoggingConfig());
+    }
+    if (hostMaintenancePolicy_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(5, getHostMaintenancePolicy());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -224,6 +280,10 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
     if (hasLoggingConfig()) {
       if (!getLoggingConfig().equals(other.getLoggingConfig())) return false;
     }
+    if (hasHostMaintenancePolicy() != other.hasHostMaintenancePolicy()) return false;
+    if (hasHostMaintenancePolicy()) {
+      if (!getHostMaintenancePolicy().equals(other.getHostMaintenancePolicy())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -242,6 +302,10 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
     if (hasLoggingConfig()) {
       hash = (37 * hash) + LOGGING_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getLoggingConfig().hashCode();
+    }
+    if (hasHostMaintenancePolicy()) {
+      hash = (37 * hash) + HOST_MAINTENANCE_POLICY_FIELD_NUMBER;
+      hash = (53 * hash) + getHostMaintenancePolicy().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -392,6 +456,11 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
         loggingConfigBuilder_.dispose();
         loggingConfigBuilder_ = null;
       }
+      hostMaintenancePolicy_ = null;
+      if (hostMaintenancePolicyBuilder_ != null) {
+        hostMaintenancePolicyBuilder_.dispose();
+        hostMaintenancePolicyBuilder_ = null;
+      }
       return this;
     }
 
@@ -434,6 +503,12 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.loggingConfig_ =
             loggingConfigBuilder_ == null ? loggingConfig_ : loggingConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.hostMaintenancePolicy_ =
+            hostMaintenancePolicyBuilder_ == null
+                ? hostMaintenancePolicy_
+                : hostMaintenancePolicyBuilder_.build();
       }
     }
 
@@ -489,6 +564,9 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
       if (other.hasLoggingConfig()) {
         mergeLoggingConfig(other.getLoggingConfig());
       }
+      if (other.hasHostMaintenancePolicy()) {
+        mergeHostMaintenancePolicy(other.getHostMaintenancePolicy());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -527,6 +605,13 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
                 bitField0_ |= 0x00000002;
                 break;
               } // case 26
+            case 42:
+              {
+                input.readMessage(
+                    getHostMaintenancePolicyFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -912,6 +997,204 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
         loggingConfig_ = null;
       }
       return loggingConfigBuilder_;
+    }
+
+    private com.google.container.v1beta1.HostMaintenancePolicy hostMaintenancePolicy_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.HostMaintenancePolicy,
+            com.google.container.v1beta1.HostMaintenancePolicy.Builder,
+            com.google.container.v1beta1.HostMaintenancePolicyOrBuilder>
+        hostMaintenancePolicyBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * HostMaintenancePolicy contains the desired maintenance policy for the
+     * Google Compute Engine hosts.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.HostMaintenancePolicy host_maintenance_policy = 5;</code>
+     *
+     * @return Whether the hostMaintenancePolicy field is set.
+     */
+    public boolean hasHostMaintenancePolicy() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * HostMaintenancePolicy contains the desired maintenance policy for the
+     * Google Compute Engine hosts.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.HostMaintenancePolicy host_maintenance_policy = 5;</code>
+     *
+     * @return The hostMaintenancePolicy.
+     */
+    public com.google.container.v1beta1.HostMaintenancePolicy getHostMaintenancePolicy() {
+      if (hostMaintenancePolicyBuilder_ == null) {
+        return hostMaintenancePolicy_ == null
+            ? com.google.container.v1beta1.HostMaintenancePolicy.getDefaultInstance()
+            : hostMaintenancePolicy_;
+      } else {
+        return hostMaintenancePolicyBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * HostMaintenancePolicy contains the desired maintenance policy for the
+     * Google Compute Engine hosts.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.HostMaintenancePolicy host_maintenance_policy = 5;</code>
+     */
+    public Builder setHostMaintenancePolicy(
+        com.google.container.v1beta1.HostMaintenancePolicy value) {
+      if (hostMaintenancePolicyBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        hostMaintenancePolicy_ = value;
+      } else {
+        hostMaintenancePolicyBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * HostMaintenancePolicy contains the desired maintenance policy for the
+     * Google Compute Engine hosts.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.HostMaintenancePolicy host_maintenance_policy = 5;</code>
+     */
+    public Builder setHostMaintenancePolicy(
+        com.google.container.v1beta1.HostMaintenancePolicy.Builder builderForValue) {
+      if (hostMaintenancePolicyBuilder_ == null) {
+        hostMaintenancePolicy_ = builderForValue.build();
+      } else {
+        hostMaintenancePolicyBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * HostMaintenancePolicy contains the desired maintenance policy for the
+     * Google Compute Engine hosts.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.HostMaintenancePolicy host_maintenance_policy = 5;</code>
+     */
+    public Builder mergeHostMaintenancePolicy(
+        com.google.container.v1beta1.HostMaintenancePolicy value) {
+      if (hostMaintenancePolicyBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && hostMaintenancePolicy_ != null
+            && hostMaintenancePolicy_
+                != com.google.container.v1beta1.HostMaintenancePolicy.getDefaultInstance()) {
+          getHostMaintenancePolicyBuilder().mergeFrom(value);
+        } else {
+          hostMaintenancePolicy_ = value;
+        }
+      } else {
+        hostMaintenancePolicyBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * HostMaintenancePolicy contains the desired maintenance policy for the
+     * Google Compute Engine hosts.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.HostMaintenancePolicy host_maintenance_policy = 5;</code>
+     */
+    public Builder clearHostMaintenancePolicy() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      hostMaintenancePolicy_ = null;
+      if (hostMaintenancePolicyBuilder_ != null) {
+        hostMaintenancePolicyBuilder_.dispose();
+        hostMaintenancePolicyBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * HostMaintenancePolicy contains the desired maintenance policy for the
+     * Google Compute Engine hosts.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.HostMaintenancePolicy host_maintenance_policy = 5;</code>
+     */
+    public com.google.container.v1beta1.HostMaintenancePolicy.Builder
+        getHostMaintenancePolicyBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return getHostMaintenancePolicyFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * HostMaintenancePolicy contains the desired maintenance policy for the
+     * Google Compute Engine hosts.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.HostMaintenancePolicy host_maintenance_policy = 5;</code>
+     */
+    public com.google.container.v1beta1.HostMaintenancePolicyOrBuilder
+        getHostMaintenancePolicyOrBuilder() {
+      if (hostMaintenancePolicyBuilder_ != null) {
+        return hostMaintenancePolicyBuilder_.getMessageOrBuilder();
+      } else {
+        return hostMaintenancePolicy_ == null
+            ? com.google.container.v1beta1.HostMaintenancePolicy.getDefaultInstance()
+            : hostMaintenancePolicy_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * HostMaintenancePolicy contains the desired maintenance policy for the
+     * Google Compute Engine hosts.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.HostMaintenancePolicy host_maintenance_policy = 5;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.HostMaintenancePolicy,
+            com.google.container.v1beta1.HostMaintenancePolicy.Builder,
+            com.google.container.v1beta1.HostMaintenancePolicyOrBuilder>
+        getHostMaintenancePolicyFieldBuilder() {
+      if (hostMaintenancePolicyBuilder_ == null) {
+        hostMaintenancePolicyBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1beta1.HostMaintenancePolicy,
+                com.google.container.v1beta1.HostMaintenancePolicy.Builder,
+                com.google.container.v1beta1.HostMaintenancePolicyOrBuilder>(
+                getHostMaintenancePolicy(), getParentForChildren(), isClean());
+        hostMaintenancePolicy_ = null;
+      }
+      return hostMaintenancePolicyBuilder_;
     }
 
     @java.lang.Override

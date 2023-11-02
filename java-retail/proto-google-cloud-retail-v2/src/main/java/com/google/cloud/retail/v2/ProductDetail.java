@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class ProductDetail extends com.google.protobuf.GeneratedMessageV3
     return new ProductDetail();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.retail.v2.UserEventProto
         .internal_static_google_cloud_retail_v2_ProductDetail_descriptor;
@@ -72,14 +67,20 @@ public final class ProductDetail extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. [Product][google.cloud.retail.v2.Product] information.
+   *
    * Required field(s):
+   *
    * * [Product.id][google.cloud.retail.v2.Product.id]
+   *
    * Optional override field(s):
+   *
    * * [Product.price_info][google.cloud.retail.v2.Product.price_info]
+   *
    * If any supported optional fields are provided, we will treat them as a full
    * override when looking up product information from the catalog. Thus, it is
    * important to ensure that the overriding fields are accurate and
    * complete.
+   *
    * All other product fields are ignored and instead populated via catalog
    * lookup after event ingestion.
    * </pre>
@@ -98,14 +99,20 @@ public final class ProductDetail extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. [Product][google.cloud.retail.v2.Product] information.
+   *
    * Required field(s):
+   *
    * * [Product.id][google.cloud.retail.v2.Product.id]
+   *
    * Optional override field(s):
+   *
    * * [Product.price_info][google.cloud.retail.v2.Product.price_info]
+   *
    * If any supported optional fields are provided, we will treat them as a full
    * override when looking up product information from the catalog. Thus, it is
    * important to ensure that the overriding fields are accurate and
    * complete.
+   *
    * All other product fields are ignored and instead populated via catalog
    * lookup after event ingestion.
    * </pre>
@@ -124,14 +131,20 @@ public final class ProductDetail extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. [Product][google.cloud.retail.v2.Product] information.
+   *
    * Required field(s):
+   *
    * * [Product.id][google.cloud.retail.v2.Product.id]
+   *
    * Optional override field(s):
+   *
    * * [Product.price_info][google.cloud.retail.v2.Product.price_info]
+   *
    * If any supported optional fields are provided, we will treat them as a full
    * override when looking up product information from the catalog. Thus, it is
    * important to ensure that the overriding fields are accurate and
    * complete.
+   *
    * All other product fields are ignored and instead populated via catalog
    * lookup after event ingestion.
    * </pre>
@@ -151,6 +164,7 @@ public final class ProductDetail extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Quantity of the product associated with the user event.
+   *
    * For example, this field will be 2 if two products are added to the shopping
    * cart for `purchase-complete` event. Required for `add-to-cart` and
    * `purchase-complete` event types.
@@ -169,6 +183,7 @@ public final class ProductDetail extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Quantity of the product associated with the user event.
+   *
    * For example, this field will be 2 if two products are added to the shopping
    * cart for `purchase-complete` event. Required for `add-to-cart` and
    * `purchase-complete` event types.
@@ -187,6 +202,7 @@ public final class ProductDetail extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Quantity of the product associated with the user event.
+   *
    * For example, this field will be 2 if two products are added to the shopping
    * cart for `purchase-complete` event. Required for `add-to-cart` and
    * `purchase-complete` event types.
@@ -588,14 +604,20 @@ public final class ProductDetail extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. [Product][google.cloud.retail.v2.Product] information.
+     *
      * Required field(s):
+     *
      * * [Product.id][google.cloud.retail.v2.Product.id]
+     *
      * Optional override field(s):
+     *
      * * [Product.price_info][google.cloud.retail.v2.Product.price_info]
+     *
      * If any supported optional fields are provided, we will treat them as a full
      * override when looking up product information from the catalog. Thus, it is
      * important to ensure that the overriding fields are accurate and
      * complete.
+     *
      * All other product fields are ignored and instead populated via catalog
      * lookup after event ingestion.
      * </pre>
@@ -613,14 +635,20 @@ public final class ProductDetail extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. [Product][google.cloud.retail.v2.Product] information.
+     *
      * Required field(s):
+     *
      * * [Product.id][google.cloud.retail.v2.Product.id]
+     *
      * Optional override field(s):
+     *
      * * [Product.price_info][google.cloud.retail.v2.Product.price_info]
+     *
      * If any supported optional fields are provided, we will treat them as a full
      * override when looking up product information from the catalog. Thus, it is
      * important to ensure that the overriding fields are accurate and
      * complete.
+     *
      * All other product fields are ignored and instead populated via catalog
      * lookup after event ingestion.
      * </pre>
@@ -644,14 +672,20 @@ public final class ProductDetail extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. [Product][google.cloud.retail.v2.Product] information.
+     *
      * Required field(s):
+     *
      * * [Product.id][google.cloud.retail.v2.Product.id]
+     *
      * Optional override field(s):
+     *
      * * [Product.price_info][google.cloud.retail.v2.Product.price_info]
+     *
      * If any supported optional fields are provided, we will treat them as a full
      * override when looking up product information from the catalog. Thus, it is
      * important to ensure that the overriding fields are accurate and
      * complete.
+     *
      * All other product fields are ignored and instead populated via catalog
      * lookup after event ingestion.
      * </pre>
@@ -677,14 +711,20 @@ public final class ProductDetail extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. [Product][google.cloud.retail.v2.Product] information.
+     *
      * Required field(s):
+     *
      * * [Product.id][google.cloud.retail.v2.Product.id]
+     *
      * Optional override field(s):
+     *
      * * [Product.price_info][google.cloud.retail.v2.Product.price_info]
+     *
      * If any supported optional fields are provided, we will treat them as a full
      * override when looking up product information from the catalog. Thus, it is
      * important to ensure that the overriding fields are accurate and
      * complete.
+     *
      * All other product fields are ignored and instead populated via catalog
      * lookup after event ingestion.
      * </pre>
@@ -707,14 +747,20 @@ public final class ProductDetail extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. [Product][google.cloud.retail.v2.Product] information.
+     *
      * Required field(s):
+     *
      * * [Product.id][google.cloud.retail.v2.Product.id]
+     *
      * Optional override field(s):
+     *
      * * [Product.price_info][google.cloud.retail.v2.Product.price_info]
+     *
      * If any supported optional fields are provided, we will treat them as a full
      * override when looking up product information from the catalog. Thus, it is
      * important to ensure that the overriding fields are accurate and
      * complete.
+     *
      * All other product fields are ignored and instead populated via catalog
      * lookup after event ingestion.
      * </pre>
@@ -743,14 +789,20 @@ public final class ProductDetail extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. [Product][google.cloud.retail.v2.Product] information.
+     *
      * Required field(s):
+     *
      * * [Product.id][google.cloud.retail.v2.Product.id]
+     *
      * Optional override field(s):
+     *
      * * [Product.price_info][google.cloud.retail.v2.Product.price_info]
+     *
      * If any supported optional fields are provided, we will treat them as a full
      * override when looking up product information from the catalog. Thus, it is
      * important to ensure that the overriding fields are accurate and
      * complete.
+     *
      * All other product fields are ignored and instead populated via catalog
      * lookup after event ingestion.
      * </pre>
@@ -773,14 +825,20 @@ public final class ProductDetail extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. [Product][google.cloud.retail.v2.Product] information.
+     *
      * Required field(s):
+     *
      * * [Product.id][google.cloud.retail.v2.Product.id]
+     *
      * Optional override field(s):
+     *
      * * [Product.price_info][google.cloud.retail.v2.Product.price_info]
+     *
      * If any supported optional fields are provided, we will treat them as a full
      * override when looking up product information from the catalog. Thus, it is
      * important to ensure that the overriding fields are accurate and
      * complete.
+     *
      * All other product fields are ignored and instead populated via catalog
      * lookup after event ingestion.
      * </pre>
@@ -798,14 +856,20 @@ public final class ProductDetail extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. [Product][google.cloud.retail.v2.Product] information.
+     *
      * Required field(s):
+     *
      * * [Product.id][google.cloud.retail.v2.Product.id]
+     *
      * Optional override field(s):
+     *
      * * [Product.price_info][google.cloud.retail.v2.Product.price_info]
+     *
      * If any supported optional fields are provided, we will treat them as a full
      * override when looking up product information from the catalog. Thus, it is
      * important to ensure that the overriding fields are accurate and
      * complete.
+     *
      * All other product fields are ignored and instead populated via catalog
      * lookup after event ingestion.
      * </pre>
@@ -827,14 +891,20 @@ public final class ProductDetail extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. [Product][google.cloud.retail.v2.Product] information.
+     *
      * Required field(s):
+     *
      * * [Product.id][google.cloud.retail.v2.Product.id]
+     *
      * Optional override field(s):
+     *
      * * [Product.price_info][google.cloud.retail.v2.Product.price_info]
+     *
      * If any supported optional fields are provided, we will treat them as a full
      * override when looking up product information from the catalog. Thus, it is
      * important to ensure that the overriding fields are accurate and
      * complete.
+     *
      * All other product fields are ignored and instead populated via catalog
      * lookup after event ingestion.
      * </pre>
@@ -870,6 +940,7 @@ public final class ProductDetail extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Quantity of the product associated with the user event.
+     *
      * For example, this field will be 2 if two products are added to the shopping
      * cart for `purchase-complete` event. Required for `add-to-cart` and
      * `purchase-complete` event types.
@@ -887,6 +958,7 @@ public final class ProductDetail extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Quantity of the product associated with the user event.
+     *
      * For example, this field will be 2 if two products are added to the shopping
      * cart for `purchase-complete` event. Required for `add-to-cart` and
      * `purchase-complete` event types.
@@ -908,6 +980,7 @@ public final class ProductDetail extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Quantity of the product associated with the user event.
+     *
      * For example, this field will be 2 if two products are added to the shopping
      * cart for `purchase-complete` event. Required for `add-to-cart` and
      * `purchase-complete` event types.
@@ -933,6 +1006,7 @@ public final class ProductDetail extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Quantity of the product associated with the user event.
+     *
      * For example, this field will be 2 if two products are added to the shopping
      * cart for `purchase-complete` event. Required for `add-to-cart` and
      * `purchase-complete` event types.
@@ -955,6 +1029,7 @@ public final class ProductDetail extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Quantity of the product associated with the user event.
+     *
      * For example, this field will be 2 if two products are added to the shopping
      * cart for `purchase-complete` event. Required for `add-to-cart` and
      * `purchase-complete` event types.
@@ -983,6 +1058,7 @@ public final class ProductDetail extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Quantity of the product associated with the user event.
+     *
      * For example, this field will be 2 if two products are added to the shopping
      * cart for `purchase-complete` event. Required for `add-to-cart` and
      * `purchase-complete` event types.
@@ -1005,6 +1081,7 @@ public final class ProductDetail extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Quantity of the product associated with the user event.
+     *
      * For example, this field will be 2 if two products are added to the shopping
      * cart for `purchase-complete` event. Required for `add-to-cart` and
      * `purchase-complete` event types.
@@ -1022,6 +1099,7 @@ public final class ProductDetail extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Quantity of the product associated with the user event.
+     *
      * For example, this field will be 2 if two products are added to the shopping
      * cart for `purchase-complete` event. Required for `add-to-cart` and
      * `purchase-complete` event types.
@@ -1041,6 +1119,7 @@ public final class ProductDetail extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Quantity of the product associated with the user event.
+     *
      * For example, this field will be 2 if two products are added to the shopping
      * cart for `purchase-complete` event. Required for `add-to-cart` and
      * `purchase-complete` event types.

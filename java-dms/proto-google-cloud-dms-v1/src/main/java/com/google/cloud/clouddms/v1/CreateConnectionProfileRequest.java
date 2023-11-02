@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,11 +50,6 @@ public final class CreateConnectionProfileRequest extends com.google.protobuf.Ge
     return new CreateConnectionProfileRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.clouddms.v1.ClouddmsProto
         .internal_static_google_cloud_clouddms_v1_CreateConnectionProfileRequest_descriptor;
@@ -78,7 +73,7 @@ public final class CreateConnectionProfileRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Required. The parent, which owns this collection of connection profiles.
+   * Required. The parent which owns this collection of connection profiles.
    * </pre>
    *
    * <code>
@@ -103,7 +98,7 @@ public final class CreateConnectionProfileRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Required. The parent, which owns this collection of connection profiles.
+   * Required. The parent which owns this collection of connection profiles.
    * </pre>
    *
    * <code>
@@ -240,14 +235,16 @@ public final class CreateConnectionProfileRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * A unique id used to identify the request. If the server receives two
-   * requests with the same id, then the second request will be ignored.
+   * Optional. A unique ID used to identify the request. If the server receives
+   * two requests with the same ID, then the second request is ignored.
+   *
    * It is recommended to always set this value to a UUID.
-   * The id must contain only letters (a-z, A-Z), numbers (0-9), underscores
+   *
+   * The ID must contain only letters (a-z, A-Z), numbers (0-9), underscores
    * (_), and hyphens (-). The maximum length is 40 characters.
    * </pre>
    *
-   * <code>string request_id = 4;</code>
+   * <code>string request_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The requestId.
    */
@@ -267,14 +264,16 @@ public final class CreateConnectionProfileRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * A unique id used to identify the request. If the server receives two
-   * requests with the same id, then the second request will be ignored.
+   * Optional. A unique ID used to identify the request. If the server receives
+   * two requests with the same ID, then the second request is ignored.
+   *
    * It is recommended to always set this value to a UUID.
-   * The id must contain only letters (a-z, A-Z), numbers (0-9), underscores
+   *
+   * The ID must contain only letters (a-z, A-Z), numbers (0-9), underscores
    * (_), and hyphens (-). The maximum length is 40 characters.
    * </pre>
    *
-   * <code>string request_id = 4;</code>
+   * <code>string request_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for requestId.
    */
@@ -289,6 +288,46 @@ public final class CreateConnectionProfileRequest extends com.google.protobuf.Ge
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int VALIDATE_ONLY_FIELD_NUMBER = 5;
+  private boolean validateOnly_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Only validate the connection profile, but don't create any
+   * resources. The default is false. Only supported for Oracle connection
+   * profiles.
+   * </pre>
+   *
+   * <code>bool validate_only = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The validateOnly.
+   */
+  @java.lang.Override
+  public boolean getValidateOnly() {
+    return validateOnly_;
+  }
+
+  public static final int SKIP_VALIDATION_FIELD_NUMBER = 6;
+  private boolean skipValidation_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Create the connection profile without validating it.
+   * The default is false.
+   * Only supported for Oracle connection profiles.
+   * </pre>
+   *
+   * <code>bool skip_validation = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The skipValidation.
+   */
+  @java.lang.Override
+  public boolean getSkipValidation() {
+    return skipValidation_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -317,6 +356,12 @@ public final class CreateConnectionProfileRequest extends com.google.protobuf.Ge
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, requestId_);
     }
+    if (validateOnly_ != false) {
+      output.writeBool(5, validateOnly_);
+    }
+    if (skipValidation_ != false) {
+      output.writeBool(6, skipValidation_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -337,6 +382,12 @@ public final class CreateConnectionProfileRequest extends com.google.protobuf.Ge
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, requestId_);
+    }
+    if (validateOnly_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(5, validateOnly_);
+    }
+    if (skipValidation_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(6, skipValidation_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -361,6 +412,8 @@ public final class CreateConnectionProfileRequest extends com.google.protobuf.Ge
       if (!getConnectionProfile().equals(other.getConnectionProfile())) return false;
     }
     if (!getRequestId().equals(other.getRequestId())) return false;
+    if (getValidateOnly() != other.getValidateOnly()) return false;
+    if (getSkipValidation() != other.getSkipValidation()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -382,6 +435,10 @@ public final class CreateConnectionProfileRequest extends com.google.protobuf.Ge
     }
     hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
     hash = (53 * hash) + getRequestId().hashCode();
+    hash = (37 * hash) + VALIDATE_ONLY_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getValidateOnly());
+    hash = (37 * hash) + SKIP_VALIDATION_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSkipValidation());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -530,6 +587,8 @@ public final class CreateConnectionProfileRequest extends com.google.protobuf.Ge
         connectionProfileBuilder_ = null;
       }
       requestId_ = "";
+      validateOnly_ = false;
+      skipValidation_ = false;
       return this;
     }
 
@@ -580,6 +639,12 @@ public final class CreateConnectionProfileRequest extends com.google.protobuf.Ge
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.requestId_ = requestId_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.validateOnly_ = validateOnly_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.skipValidation_ = skipValidation_;
       }
     }
 
@@ -647,6 +712,12 @@ public final class CreateConnectionProfileRequest extends com.google.protobuf.Ge
         bitField0_ |= 0x00000008;
         onChanged();
       }
+      if (other.getValidateOnly() != false) {
+        setValidateOnly(other.getValidateOnly());
+      }
+      if (other.getSkipValidation() != false) {
+        setSkipValidation(other.getSkipValidation());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -698,6 +769,18 @@ public final class CreateConnectionProfileRequest extends com.google.protobuf.Ge
                 bitField0_ |= 0x00000008;
                 break;
               } // case 34
+            case 40:
+              {
+                validateOnly_ = input.readBool();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 40
+            case 48:
+              {
+                skipValidation_ = input.readBool();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 48
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -722,7 +805,7 @@ public final class CreateConnectionProfileRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. The parent, which owns this collection of connection profiles.
+     * Required. The parent which owns this collection of connection profiles.
      * </pre>
      *
      * <code>
@@ -746,7 +829,7 @@ public final class CreateConnectionProfileRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. The parent, which owns this collection of connection profiles.
+     * Required. The parent which owns this collection of connection profiles.
      * </pre>
      *
      * <code>
@@ -770,7 +853,7 @@ public final class CreateConnectionProfileRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. The parent, which owns this collection of connection profiles.
+     * Required. The parent which owns this collection of connection profiles.
      * </pre>
      *
      * <code>
@@ -793,7 +876,7 @@ public final class CreateConnectionProfileRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. The parent, which owns this collection of connection profiles.
+     * Required. The parent which owns this collection of connection profiles.
      * </pre>
      *
      * <code>
@@ -812,7 +895,7 @@ public final class CreateConnectionProfileRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. The parent, which owns this collection of connection profiles.
+     * Required. The parent which owns this collection of connection profiles.
      * </pre>
      *
      * <code>
@@ -1147,14 +1230,16 @@ public final class CreateConnectionProfileRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * A unique id used to identify the request. If the server receives two
-     * requests with the same id, then the second request will be ignored.
+     * Optional. A unique ID used to identify the request. If the server receives
+     * two requests with the same ID, then the second request is ignored.
+     *
      * It is recommended to always set this value to a UUID.
-     * The id must contain only letters (a-z, A-Z), numbers (0-9), underscores
+     *
+     * The ID must contain only letters (a-z, A-Z), numbers (0-9), underscores
      * (_), and hyphens (-). The maximum length is 40 characters.
      * </pre>
      *
-     * <code>string request_id = 4;</code>
+     * <code>string request_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The requestId.
      */
@@ -1173,14 +1258,16 @@ public final class CreateConnectionProfileRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * A unique id used to identify the request. If the server receives two
-     * requests with the same id, then the second request will be ignored.
+     * Optional. A unique ID used to identify the request. If the server receives
+     * two requests with the same ID, then the second request is ignored.
+     *
      * It is recommended to always set this value to a UUID.
-     * The id must contain only letters (a-z, A-Z), numbers (0-9), underscores
+     *
+     * The ID must contain only letters (a-z, A-Z), numbers (0-9), underscores
      * (_), and hyphens (-). The maximum length is 40 characters.
      * </pre>
      *
-     * <code>string request_id = 4;</code>
+     * <code>string request_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for requestId.
      */
@@ -1199,14 +1286,16 @@ public final class CreateConnectionProfileRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * A unique id used to identify the request. If the server receives two
-     * requests with the same id, then the second request will be ignored.
+     * Optional. A unique ID used to identify the request. If the server receives
+     * two requests with the same ID, then the second request is ignored.
+     *
      * It is recommended to always set this value to a UUID.
-     * The id must contain only letters (a-z, A-Z), numbers (0-9), underscores
+     *
+     * The ID must contain only letters (a-z, A-Z), numbers (0-9), underscores
      * (_), and hyphens (-). The maximum length is 40 characters.
      * </pre>
      *
-     * <code>string request_id = 4;</code>
+     * <code>string request_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The requestId to set.
      * @return This builder for chaining.
@@ -1224,14 +1313,16 @@ public final class CreateConnectionProfileRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * A unique id used to identify the request. If the server receives two
-     * requests with the same id, then the second request will be ignored.
+     * Optional. A unique ID used to identify the request. If the server receives
+     * two requests with the same ID, then the second request is ignored.
+     *
      * It is recommended to always set this value to a UUID.
-     * The id must contain only letters (a-z, A-Z), numbers (0-9), underscores
+     *
+     * The ID must contain only letters (a-z, A-Z), numbers (0-9), underscores
      * (_), and hyphens (-). The maximum length is 40 characters.
      * </pre>
      *
-     * <code>string request_id = 4;</code>
+     * <code>string request_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1245,14 +1336,16 @@ public final class CreateConnectionProfileRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * A unique id used to identify the request. If the server receives two
-     * requests with the same id, then the second request will be ignored.
+     * Optional. A unique ID used to identify the request. If the server receives
+     * two requests with the same ID, then the second request is ignored.
+     *
      * It is recommended to always set this value to a UUID.
-     * The id must contain only letters (a-z, A-Z), numbers (0-9), underscores
+     *
+     * The ID must contain only letters (a-z, A-Z), numbers (0-9), underscores
      * (_), and hyphens (-). The maximum length is 40 characters.
      * </pre>
      *
-     * <code>string request_id = 4;</code>
+     * <code>string request_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for requestId to set.
      * @return This builder for chaining.
@@ -1264,6 +1357,124 @@ public final class CreateConnectionProfileRequest extends com.google.protobuf.Ge
       checkByteStringIsUtf8(value);
       requestId_ = value;
       bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    private boolean validateOnly_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Only validate the connection profile, but don't create any
+     * resources. The default is false. Only supported for Oracle connection
+     * profiles.
+     * </pre>
+     *
+     * <code>bool validate_only = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The validateOnly.
+     */
+    @java.lang.Override
+    public boolean getValidateOnly() {
+      return validateOnly_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Only validate the connection profile, but don't create any
+     * resources. The default is false. Only supported for Oracle connection
+     * profiles.
+     * </pre>
+     *
+     * <code>bool validate_only = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The validateOnly to set.
+     * @return This builder for chaining.
+     */
+    public Builder setValidateOnly(boolean value) {
+
+      validateOnly_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Only validate the connection profile, but don't create any
+     * resources. The default is false. Only supported for Oracle connection
+     * profiles.
+     * </pre>
+     *
+     * <code>bool validate_only = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearValidateOnly() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      validateOnly_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean skipValidation_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Create the connection profile without validating it.
+     * The default is false.
+     * Only supported for Oracle connection profiles.
+     * </pre>
+     *
+     * <code>bool skip_validation = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The skipValidation.
+     */
+    @java.lang.Override
+    public boolean getSkipValidation() {
+      return skipValidation_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Create the connection profile without validating it.
+     * The default is false.
+     * Only supported for Oracle connection profiles.
+     * </pre>
+     *
+     * <code>bool skip_validation = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The skipValidation to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSkipValidation(boolean value) {
+
+      skipValidation_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Create the connection profile without validating it.
+     * The default is false.
+     * Only supported for Oracle connection profiles.
+     * </pre>
+     *
+     * <code>bool skip_validation = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSkipValidation() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      skipValidation_ = false;
       onChanged();
       return this;
     }

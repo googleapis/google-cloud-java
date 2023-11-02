@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,6 +22,8 @@ import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListLocationsP
 import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListNetworkPoliciesPagedResponse;
 import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListNodeTypesPagedResponse;
 import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListPrivateCloudsPagedResponse;
+import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListPrivateConnectionPeeringRoutesPagedResponse;
+import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListPrivateConnectionsPagedResponse;
 import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListSubnetsPagedResponse;
 import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListVmwareEngineNetworksPagedResponse;
 
@@ -31,6 +33,7 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -41,17 +44,21 @@ import com.google.cloud.vmwareengine.v1.CreateClusterRequest;
 import com.google.cloud.vmwareengine.v1.CreateHcxActivationKeyRequest;
 import com.google.cloud.vmwareengine.v1.CreateNetworkPolicyRequest;
 import com.google.cloud.vmwareengine.v1.CreatePrivateCloudRequest;
+import com.google.cloud.vmwareengine.v1.CreatePrivateConnectionRequest;
 import com.google.cloud.vmwareengine.v1.CreateVmwareEngineNetworkRequest;
 import com.google.cloud.vmwareengine.v1.Credentials;
 import com.google.cloud.vmwareengine.v1.DeleteClusterRequest;
 import com.google.cloud.vmwareengine.v1.DeleteNetworkPolicyRequest;
 import com.google.cloud.vmwareengine.v1.DeletePrivateCloudRequest;
+import com.google.cloud.vmwareengine.v1.DeletePrivateConnectionRequest;
 import com.google.cloud.vmwareengine.v1.DeleteVmwareEngineNetworkRequest;
 import com.google.cloud.vmwareengine.v1.GetClusterRequest;
 import com.google.cloud.vmwareengine.v1.GetHcxActivationKeyRequest;
 import com.google.cloud.vmwareengine.v1.GetNetworkPolicyRequest;
 import com.google.cloud.vmwareengine.v1.GetNodeTypeRequest;
 import com.google.cloud.vmwareengine.v1.GetPrivateCloudRequest;
+import com.google.cloud.vmwareengine.v1.GetPrivateConnectionRequest;
+import com.google.cloud.vmwareengine.v1.GetSubnetRequest;
 import com.google.cloud.vmwareengine.v1.GetVmwareEngineNetworkRequest;
 import com.google.cloud.vmwareengine.v1.HcxActivationKey;
 import com.google.cloud.vmwareengine.v1.ListClustersRequest;
@@ -64,6 +71,10 @@ import com.google.cloud.vmwareengine.v1.ListNodeTypesRequest;
 import com.google.cloud.vmwareengine.v1.ListNodeTypesResponse;
 import com.google.cloud.vmwareengine.v1.ListPrivateCloudsRequest;
 import com.google.cloud.vmwareengine.v1.ListPrivateCloudsResponse;
+import com.google.cloud.vmwareengine.v1.ListPrivateConnectionPeeringRoutesRequest;
+import com.google.cloud.vmwareengine.v1.ListPrivateConnectionPeeringRoutesResponse;
+import com.google.cloud.vmwareengine.v1.ListPrivateConnectionsRequest;
+import com.google.cloud.vmwareengine.v1.ListPrivateConnectionsResponse;
 import com.google.cloud.vmwareengine.v1.ListSubnetsRequest;
 import com.google.cloud.vmwareengine.v1.ListSubnetsResponse;
 import com.google.cloud.vmwareengine.v1.ListVmwareEngineNetworksRequest;
@@ -72,17 +83,20 @@ import com.google.cloud.vmwareengine.v1.NetworkPolicy;
 import com.google.cloud.vmwareengine.v1.NodeType;
 import com.google.cloud.vmwareengine.v1.OperationMetadata;
 import com.google.cloud.vmwareengine.v1.PrivateCloud;
+import com.google.cloud.vmwareengine.v1.PrivateConnection;
 import com.google.cloud.vmwareengine.v1.ResetNsxCredentialsRequest;
 import com.google.cloud.vmwareengine.v1.ResetVcenterCredentialsRequest;
 import com.google.cloud.vmwareengine.v1.ShowNsxCredentialsRequest;
 import com.google.cloud.vmwareengine.v1.ShowVcenterCredentialsRequest;
+import com.google.cloud.vmwareengine.v1.Subnet;
 import com.google.cloud.vmwareengine.v1.UndeletePrivateCloudRequest;
 import com.google.cloud.vmwareengine.v1.UpdateClusterRequest;
 import com.google.cloud.vmwareengine.v1.UpdateNetworkPolicyRequest;
 import com.google.cloud.vmwareengine.v1.UpdatePrivateCloudRequest;
+import com.google.cloud.vmwareengine.v1.UpdatePrivateConnectionRequest;
+import com.google.cloud.vmwareengine.v1.UpdateSubnetRequest;
 import com.google.cloud.vmwareengine.v1.UpdateVmwareEngineNetworkRequest;
 import com.google.cloud.vmwareengine.v1.VmwareEngineNetwork;
-import com.google.common.collect.ImmutableMap;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -222,6 +236,23 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListSubnetsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListSubnetsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetSubnetRequest, Subnet> getSubnetMethodDescriptor =
+      MethodDescriptor.<GetSubnetRequest, Subnet>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.vmwareengine.v1.VmwareEngine/GetSubnet")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetSubnetRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Subnet.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<UpdateSubnetRequest, Operation>
+      updateSubnetMethodDescriptor =
+          MethodDescriptor.<UpdateSubnetRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.vmwareengine.v1.VmwareEngine/UpdateSubnet")
+              .setRequestMarshaller(ProtoUtils.marshaller(UpdateSubnetRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
   private static final MethodDescriptor<ListNodeTypesRequest, ListNodeTypesResponse>
@@ -424,6 +455,80 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                   ProtoUtils.marshaller(ListVmwareEngineNetworksResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<CreatePrivateConnectionRequest, Operation>
+      createPrivateConnectionMethodDescriptor =
+          MethodDescriptor.<CreatePrivateConnectionRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.vmwareengine.v1.VmwareEngine/CreatePrivateConnection")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreatePrivateConnectionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetPrivateConnectionRequest, PrivateConnection>
+      getPrivateConnectionMethodDescriptor =
+          MethodDescriptor.<GetPrivateConnectionRequest, PrivateConnection>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.vmwareengine.v1.VmwareEngine/GetPrivateConnection")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetPrivateConnectionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(PrivateConnection.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          ListPrivateConnectionsRequest, ListPrivateConnectionsResponse>
+      listPrivateConnectionsMethodDescriptor =
+          MethodDescriptor
+              .<ListPrivateConnectionsRequest, ListPrivateConnectionsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.vmwareengine.v1.VmwareEngine/ListPrivateConnections")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListPrivateConnectionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListPrivateConnectionsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UpdatePrivateConnectionRequest, Operation>
+      updatePrivateConnectionMethodDescriptor =
+          MethodDescriptor.<UpdatePrivateConnectionRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.vmwareengine.v1.VmwareEngine/UpdatePrivateConnection")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdatePrivateConnectionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeletePrivateConnectionRequest, Operation>
+      deletePrivateConnectionMethodDescriptor =
+          MethodDescriptor.<DeletePrivateConnectionRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.vmwareengine.v1.VmwareEngine/DeletePrivateConnection")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeletePrivateConnectionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          ListPrivateConnectionPeeringRoutesRequest, ListPrivateConnectionPeeringRoutesResponse>
+      listPrivateConnectionPeeringRoutesMethodDescriptor =
+          MethodDescriptor
+              .<ListPrivateConnectionPeeringRoutesRequest,
+                  ListPrivateConnectionPeeringRoutesResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.vmwareengine.v1.VmwareEngine/ListPrivateConnectionPeeringRoutes")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      ListPrivateConnectionPeeringRoutesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(
+                      ListPrivateConnectionPeeringRoutesResponse.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -503,6 +608,10 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
   private final UnaryCallable<ListSubnetsRequest, ListSubnetsResponse> listSubnetsCallable;
   private final UnaryCallable<ListSubnetsRequest, ListSubnetsPagedResponse>
       listSubnetsPagedCallable;
+  private final UnaryCallable<GetSubnetRequest, Subnet> getSubnetCallable;
+  private final UnaryCallable<UpdateSubnetRequest, Operation> updateSubnetCallable;
+  private final OperationCallable<UpdateSubnetRequest, Subnet, OperationMetadata>
+      updateSubnetOperationCallable;
   private final UnaryCallable<ListNodeTypesRequest, ListNodeTypesResponse> listNodeTypesCallable;
   private final UnaryCallable<ListNodeTypesRequest, ListNodeTypesPagedResponse>
       listNodeTypesPagedCallable;
@@ -563,6 +672,33 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
   private final UnaryCallable<
           ListVmwareEngineNetworksRequest, ListVmwareEngineNetworksPagedResponse>
       listVmwareEngineNetworksPagedCallable;
+  private final UnaryCallable<CreatePrivateConnectionRequest, Operation>
+      createPrivateConnectionCallable;
+  private final OperationCallable<
+          CreatePrivateConnectionRequest, PrivateConnection, OperationMetadata>
+      createPrivateConnectionOperationCallable;
+  private final UnaryCallable<GetPrivateConnectionRequest, PrivateConnection>
+      getPrivateConnectionCallable;
+  private final UnaryCallable<ListPrivateConnectionsRequest, ListPrivateConnectionsResponse>
+      listPrivateConnectionsCallable;
+  private final UnaryCallable<ListPrivateConnectionsRequest, ListPrivateConnectionsPagedResponse>
+      listPrivateConnectionsPagedCallable;
+  private final UnaryCallable<UpdatePrivateConnectionRequest, Operation>
+      updatePrivateConnectionCallable;
+  private final OperationCallable<
+          UpdatePrivateConnectionRequest, PrivateConnection, OperationMetadata>
+      updatePrivateConnectionOperationCallable;
+  private final UnaryCallable<DeletePrivateConnectionRequest, Operation>
+      deletePrivateConnectionCallable;
+  private final OperationCallable<DeletePrivateConnectionRequest, Empty, OperationMetadata>
+      deletePrivateConnectionOperationCallable;
+  private final UnaryCallable<
+          ListPrivateConnectionPeeringRoutesRequest, ListPrivateConnectionPeeringRoutesResponse>
+      listPrivateConnectionPeeringRoutesCallable;
+  private final UnaryCallable<
+          ListPrivateConnectionPeeringRoutesRequest,
+          ListPrivateConnectionPeeringRoutesPagedResponse>
+      listPrivateConnectionPeeringRoutesPagedCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -620,9 +756,9 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                 .setMethodDescriptor(listPrivateCloudsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetPrivateCloudRequest, PrivateCloud> getPrivateCloudTransportSettings =
@@ -630,9 +766,9 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
             .setMethodDescriptor(getPrivateCloudMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CreatePrivateCloudRequest, Operation> createPrivateCloudTransportSettings =
@@ -640,9 +776,9 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
             .setMethodDescriptor(createPrivateCloudMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdatePrivateCloudRequest, Operation> updatePrivateCloudTransportSettings =
@@ -650,10 +786,10 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
             .setMethodDescriptor(updatePrivateCloudMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put(
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
                       "private_cloud.name", String.valueOf(request.getPrivateCloud().getName()));
-                  return params.build();
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeletePrivateCloudRequest, Operation> deletePrivateCloudTransportSettings =
@@ -661,9 +797,9 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
             .setMethodDescriptor(deletePrivateCloudMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UndeletePrivateCloudRequest, Operation> undeletePrivateCloudTransportSettings =
@@ -671,9 +807,9 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
             .setMethodDescriptor(undeletePrivateCloudMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListClustersRequest, ListClustersResponse> listClustersTransportSettings =
@@ -681,9 +817,9 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
             .setMethodDescriptor(listClustersMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetClusterRequest, Cluster> getClusterTransportSettings =
@@ -691,9 +827,9 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
             .setMethodDescriptor(getClusterMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CreateClusterRequest, Operation> createClusterTransportSettings =
@@ -701,9 +837,9 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
             .setMethodDescriptor(createClusterMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateClusterRequest, Operation> updateClusterTransportSettings =
@@ -711,9 +847,9 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
             .setMethodDescriptor(updateClusterMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("cluster.name", String.valueOf(request.getCluster().getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("cluster.name", String.valueOf(request.getCluster().getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteClusterRequest, Operation> deleteClusterTransportSettings =
@@ -721,9 +857,9 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
             .setMethodDescriptor(deleteClusterMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListSubnetsRequest, ListSubnetsResponse> listSubnetsTransportSettings =
@@ -731,9 +867,29 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
             .setMethodDescriptor(listSubnetsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<GetSubnetRequest, Subnet> getSubnetTransportSettings =
+        GrpcCallSettings.<GetSubnetRequest, Subnet>newBuilder()
+            .setMethodDescriptor(getSubnetMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<UpdateSubnetRequest, Operation> updateSubnetTransportSettings =
+        GrpcCallSettings.<UpdateSubnetRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateSubnetMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("subnet.name", String.valueOf(request.getSubnet().getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListNodeTypesRequest, ListNodeTypesResponse> listNodeTypesTransportSettings =
@@ -741,9 +897,9 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
             .setMethodDescriptor(listNodeTypesMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetNodeTypeRequest, NodeType> getNodeTypeTransportSettings =
@@ -751,9 +907,9 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
             .setMethodDescriptor(getNodeTypeMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ShowNsxCredentialsRequest, Credentials> showNsxCredentialsTransportSettings =
@@ -761,9 +917,9 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
             .setMethodDescriptor(showNsxCredentialsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("private_cloud", String.valueOf(request.getPrivateCloud()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("private_cloud", String.valueOf(request.getPrivateCloud()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ShowVcenterCredentialsRequest, Credentials>
@@ -772,9 +928,9 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                 .setMethodDescriptor(showVcenterCredentialsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("private_cloud", String.valueOf(request.getPrivateCloud()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("private_cloud", String.valueOf(request.getPrivateCloud()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<ResetNsxCredentialsRequest, Operation> resetNsxCredentialsTransportSettings =
@@ -782,9 +938,9 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
             .setMethodDescriptor(resetNsxCredentialsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("private_cloud", String.valueOf(request.getPrivateCloud()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("private_cloud", String.valueOf(request.getPrivateCloud()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ResetVcenterCredentialsRequest, Operation>
@@ -793,9 +949,9 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                 .setMethodDescriptor(resetVcenterCredentialsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("private_cloud", String.valueOf(request.getPrivateCloud()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("private_cloud", String.valueOf(request.getPrivateCloud()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<CreateHcxActivationKeyRequest, Operation>
@@ -804,9 +960,9 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                 .setMethodDescriptor(createHcxActivationKeyMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<ListHcxActivationKeysRequest, ListHcxActivationKeysResponse>
@@ -816,9 +972,9 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                 .setMethodDescriptor(listHcxActivationKeysMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetHcxActivationKeyRequest, HcxActivationKey>
@@ -827,9 +983,9 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                 .setMethodDescriptor(getHcxActivationKeyMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetNetworkPolicyRequest, NetworkPolicy> getNetworkPolicyTransportSettings =
@@ -837,9 +993,9 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
             .setMethodDescriptor(getNetworkPolicyMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListNetworkPoliciesRequest, ListNetworkPoliciesResponse>
@@ -848,9 +1004,9 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                 .setMethodDescriptor(listNetworkPoliciesMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<CreateNetworkPolicyRequest, Operation> createNetworkPolicyTransportSettings =
@@ -858,9 +1014,9 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
             .setMethodDescriptor(createNetworkPolicyMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateNetworkPolicyRequest, Operation> updateNetworkPolicyTransportSettings =
@@ -868,10 +1024,10 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
             .setMethodDescriptor(updateNetworkPolicyMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put(
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
                       "network_policy.name", String.valueOf(request.getNetworkPolicy().getName()));
-                  return params.build();
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteNetworkPolicyRequest, Operation> deleteNetworkPolicyTransportSettings =
@@ -879,9 +1035,9 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
             .setMethodDescriptor(deleteNetworkPolicyMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CreateVmwareEngineNetworkRequest, Operation>
@@ -890,9 +1046,9 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                 .setMethodDescriptor(createVmwareEngineNetworkMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<UpdateVmwareEngineNetworkRequest, Operation>
@@ -901,11 +1057,11 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                 .setMethodDescriptor(updateVmwareEngineNetworkMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put(
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
                           "vmware_engine_network.name",
                           String.valueOf(request.getVmwareEngineNetwork().getName()));
-                      return params.build();
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<DeleteVmwareEngineNetworkRequest, Operation>
@@ -914,9 +1070,9 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                 .setMethodDescriptor(deleteVmwareEngineNetworkMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetVmwareEngineNetworkRequest, VmwareEngineNetwork>
@@ -925,9 +1081,9 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                 .setMethodDescriptor(getVmwareEngineNetworkMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<ListVmwareEngineNetworksRequest, ListVmwareEngineNetworksResponse>
@@ -937,9 +1093,82 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                 .setMethodDescriptor(listVmwareEngineNetworksMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<CreatePrivateConnectionRequest, Operation>
+        createPrivateConnectionTransportSettings =
+            GrpcCallSettings.<CreatePrivateConnectionRequest, Operation>newBuilder()
+                .setMethodDescriptor(createPrivateConnectionMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<GetPrivateConnectionRequest, PrivateConnection>
+        getPrivateConnectionTransportSettings =
+            GrpcCallSettings.<GetPrivateConnectionRequest, PrivateConnection>newBuilder()
+                .setMethodDescriptor(getPrivateConnectionMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<ListPrivateConnectionsRequest, ListPrivateConnectionsResponse>
+        listPrivateConnectionsTransportSettings =
+            GrpcCallSettings
+                .<ListPrivateConnectionsRequest, ListPrivateConnectionsResponse>newBuilder()
+                .setMethodDescriptor(listPrivateConnectionsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<UpdatePrivateConnectionRequest, Operation>
+        updatePrivateConnectionTransportSettings =
+            GrpcCallSettings.<UpdatePrivateConnectionRequest, Operation>newBuilder()
+                .setMethodDescriptor(updatePrivateConnectionMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "private_connection.name",
+                          String.valueOf(request.getPrivateConnection().getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<DeletePrivateConnectionRequest, Operation>
+        deletePrivateConnectionTransportSettings =
+            GrpcCallSettings.<DeletePrivateConnectionRequest, Operation>newBuilder()
+                .setMethodDescriptor(deletePrivateConnectionMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<
+            ListPrivateConnectionPeeringRoutesRequest, ListPrivateConnectionPeeringRoutesResponse>
+        listPrivateConnectionPeeringRoutesTransportSettings =
+            GrpcCallSettings
+                .<ListPrivateConnectionPeeringRoutesRequest,
+                    ListPrivateConnectionPeeringRoutesResponse>
+                    newBuilder()
+                .setMethodDescriptor(listPrivateConnectionPeeringRoutesMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
@@ -947,9 +1176,9 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
             .setMethodDescriptor(listLocationsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetLocationRequest, Location> getLocationTransportSettings =
@@ -957,9 +1186,9 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
             .setMethodDescriptor(getLocationMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
@@ -967,9 +1196,9 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
             .setMethodDescriptor(setIamPolicyMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("resource", String.valueOf(request.getResource()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
@@ -977,9 +1206,9 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
             .setMethodDescriptor(getIamPolicyMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("resource", String.valueOf(request.getResource()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -988,9 +1217,9 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
                 .setMethodDescriptor(testIamPermissionsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("resource", String.valueOf(request.getResource()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      return builder.build();
                     })
                 .build();
 
@@ -1093,6 +1322,18 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
     this.listSubnetsPagedCallable =
         callableFactory.createPagedCallable(
             listSubnetsTransportSettings, settings.listSubnetsSettings(), clientContext);
+    this.getSubnetCallable =
+        callableFactory.createUnaryCallable(
+            getSubnetTransportSettings, settings.getSubnetSettings(), clientContext);
+    this.updateSubnetCallable =
+        callableFactory.createUnaryCallable(
+            updateSubnetTransportSettings, settings.updateSubnetSettings(), clientContext);
+    this.updateSubnetOperationCallable =
+        callableFactory.createOperationCallable(
+            updateSubnetTransportSettings,
+            settings.updateSubnetOperationSettings(),
+            clientContext,
+            operationsStub);
     this.listNodeTypesCallable =
         callableFactory.createUnaryCallable(
             listNodeTypesTransportSettings, settings.listNodeTypesSettings(), clientContext);
@@ -1254,6 +1495,64 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
             listVmwareEngineNetworksTransportSettings,
             settings.listVmwareEngineNetworksSettings(),
             clientContext);
+    this.createPrivateConnectionCallable =
+        callableFactory.createUnaryCallable(
+            createPrivateConnectionTransportSettings,
+            settings.createPrivateConnectionSettings(),
+            clientContext);
+    this.createPrivateConnectionOperationCallable =
+        callableFactory.createOperationCallable(
+            createPrivateConnectionTransportSettings,
+            settings.createPrivateConnectionOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.getPrivateConnectionCallable =
+        callableFactory.createUnaryCallable(
+            getPrivateConnectionTransportSettings,
+            settings.getPrivateConnectionSettings(),
+            clientContext);
+    this.listPrivateConnectionsCallable =
+        callableFactory.createUnaryCallable(
+            listPrivateConnectionsTransportSettings,
+            settings.listPrivateConnectionsSettings(),
+            clientContext);
+    this.listPrivateConnectionsPagedCallable =
+        callableFactory.createPagedCallable(
+            listPrivateConnectionsTransportSettings,
+            settings.listPrivateConnectionsSettings(),
+            clientContext);
+    this.updatePrivateConnectionCallable =
+        callableFactory.createUnaryCallable(
+            updatePrivateConnectionTransportSettings,
+            settings.updatePrivateConnectionSettings(),
+            clientContext);
+    this.updatePrivateConnectionOperationCallable =
+        callableFactory.createOperationCallable(
+            updatePrivateConnectionTransportSettings,
+            settings.updatePrivateConnectionOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.deletePrivateConnectionCallable =
+        callableFactory.createUnaryCallable(
+            deletePrivateConnectionTransportSettings,
+            settings.deletePrivateConnectionSettings(),
+            clientContext);
+    this.deletePrivateConnectionOperationCallable =
+        callableFactory.createOperationCallable(
+            deletePrivateConnectionTransportSettings,
+            settings.deletePrivateConnectionOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.listPrivateConnectionPeeringRoutesCallable =
+        callableFactory.createUnaryCallable(
+            listPrivateConnectionPeeringRoutesTransportSettings,
+            settings.listPrivateConnectionPeeringRoutesSettings(),
+            clientContext);
+    this.listPrivateConnectionPeeringRoutesPagedCallable =
+        callableFactory.createPagedCallable(
+            listPrivateConnectionPeeringRoutesTransportSettings,
+            settings.listPrivateConnectionPeeringRoutesSettings(),
+            clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -1400,6 +1699,22 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
   @Override
   public UnaryCallable<ListSubnetsRequest, ListSubnetsPagedResponse> listSubnetsPagedCallable() {
     return listSubnetsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetSubnetRequest, Subnet> getSubnetCallable() {
+    return getSubnetCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateSubnetRequest, Operation> updateSubnetCallable() {
+    return updateSubnetCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateSubnetRequest, Subnet, OperationMetadata>
+      updateSubnetOperationCallable() {
+    return updateSubnetOperationCallable;
   }
 
   @Override
@@ -1582,6 +1897,75 @@ public class GrpcVmwareEngineStub extends VmwareEngineStub {
   public UnaryCallable<ListVmwareEngineNetworksRequest, ListVmwareEngineNetworksPagedResponse>
       listVmwareEngineNetworksPagedCallable() {
     return listVmwareEngineNetworksPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreatePrivateConnectionRequest, Operation>
+      createPrivateConnectionCallable() {
+    return createPrivateConnectionCallable;
+  }
+
+  @Override
+  public OperationCallable<CreatePrivateConnectionRequest, PrivateConnection, OperationMetadata>
+      createPrivateConnectionOperationCallable() {
+    return createPrivateConnectionOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetPrivateConnectionRequest, PrivateConnection>
+      getPrivateConnectionCallable() {
+    return getPrivateConnectionCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListPrivateConnectionsRequest, ListPrivateConnectionsResponse>
+      listPrivateConnectionsCallable() {
+    return listPrivateConnectionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListPrivateConnectionsRequest, ListPrivateConnectionsPagedResponse>
+      listPrivateConnectionsPagedCallable() {
+    return listPrivateConnectionsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdatePrivateConnectionRequest, Operation>
+      updatePrivateConnectionCallable() {
+    return updatePrivateConnectionCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdatePrivateConnectionRequest, PrivateConnection, OperationMetadata>
+      updatePrivateConnectionOperationCallable() {
+    return updatePrivateConnectionOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeletePrivateConnectionRequest, Operation>
+      deletePrivateConnectionCallable() {
+    return deletePrivateConnectionCallable;
+  }
+
+  @Override
+  public OperationCallable<DeletePrivateConnectionRequest, Empty, OperationMetadata>
+      deletePrivateConnectionOperationCallable() {
+    return deletePrivateConnectionOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListPrivateConnectionPeeringRoutesRequest, ListPrivateConnectionPeeringRoutesResponse>
+      listPrivateConnectionPeeringRoutesCallable() {
+    return listPrivateConnectionPeeringRoutesCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListPrivateConnectionPeeringRoutesRequest,
+          ListPrivateConnectionPeeringRoutesPagedResponse>
+      listPrivateConnectionPeeringRoutesPagedCallable() {
+    return listPrivateConnectionPeeringRoutesPagedCallable;
   }
 
   @Override

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,9 +24,11 @@ package com.google.cloud.kms.v1;
  * <pre>
  * A [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] represents an
  * individual cryptographic key, and the associated key material.
+ *
  * An
  * [ENABLED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.ENABLED]
  * version can be used for cryptographic operations.
+ *
  * For security reasons, the raw cryptographic key material represented by a
  * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] can never be viewed
  * or exported. It can only be used to encrypt, decrypt, or sign data when an
@@ -62,11 +64,6 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
     return new CryptoKeyVersion();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.kms.v1.KmsResourcesProto
         .internal_static_google_cloud_kms_v1_CryptoKeyVersion_descriptor;
@@ -89,35 +86,46 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
    * The algorithm of the
    * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion], indicating what
    * parameters must be used for each cryptographic operation.
+   *
    * The
    * [GOOGLE_SYMMETRIC_ENCRYPTION][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm.GOOGLE_SYMMETRIC_ENCRYPTION]
    * algorithm is usable with
    * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose]
    * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
-   * Algorithms beginning with "RSA_SIGN_" are usable with
+   *
+   * Algorithms beginning with `RSA_SIGN_` are usable with
    * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose]
    * [ASYMMETRIC_SIGN][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ASYMMETRIC_SIGN].
-   * The fields in the name after "RSA_SIGN_" correspond to the following
+   *
+   * The fields in the name after `RSA_SIGN_` correspond to the following
    * parameters: padding algorithm, modulus bit length, and digest algorithm.
+   *
    * For PSS, the salt length used is equal to the length of digest
    * algorithm. For example,
    * [RSA_SIGN_PSS_2048_SHA256][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm.RSA_SIGN_PSS_2048_SHA256]
    * will use PSS with a salt length of 256 bits or 32 bytes.
-   * Algorithms beginning with "RSA_DECRYPT_" are usable with
+   *
+   * Algorithms beginning with `RSA_DECRYPT_` are usable with
    * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose]
    * [ASYMMETRIC_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ASYMMETRIC_DECRYPT].
-   * The fields in the name after "RSA_DECRYPT_" correspond to the following
+   *
+   * The fields in the name after `RSA_DECRYPT_` correspond to the following
    * parameters: padding algorithm, modulus bit length, and digest algorithm.
-   * Algorithms beginning with "EC_SIGN_" are usable with
+   *
+   * Algorithms beginning with `EC_SIGN_` are usable with
    * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose]
    * [ASYMMETRIC_SIGN][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ASYMMETRIC_SIGN].
-   * The fields in the name after "EC_SIGN_" correspond to the following
+   *
+   * The fields in the name after `EC_SIGN_` correspond to the following
    * parameters: elliptic curve, digest algorithm.
-   * Algorithms beginning with "HMAC_" are usable with
+   *
+   * Algorithms beginning with `HMAC_` are usable with
    * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose]
    * [MAC][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.MAC].
-   * The suffix following "HMAC_" corresponds to the hash algorithm being used
+   *
+   * The suffix following `HMAC_` corresponds to the hash algorithm being used
    * (eg. SHA256).
+   *
    * For more information, see [Key purposes and algorithms]
    * (https://cloud.google.com/kms/docs/algorithms).
    * </pre>
@@ -145,6 +153,66 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      * <code>GOOGLE_SYMMETRIC_ENCRYPTION = 1;</code>
      */
     GOOGLE_SYMMETRIC_ENCRYPTION(1),
+    /**
+     *
+     *
+     * <pre>
+     * AES-GCM (Galois Counter Mode) using 128-bit keys.
+     * </pre>
+     *
+     * <code>AES_128_GCM = 41;</code>
+     */
+    AES_128_GCM(41),
+    /**
+     *
+     *
+     * <pre>
+     * AES-GCM (Galois Counter Mode) using 256-bit keys.
+     * </pre>
+     *
+     * <code>AES_256_GCM = 19;</code>
+     */
+    AES_256_GCM(19),
+    /**
+     *
+     *
+     * <pre>
+     * AES-CBC (Cipher Block Chaining Mode) using 128-bit keys.
+     * </pre>
+     *
+     * <code>AES_128_CBC = 42;</code>
+     */
+    AES_128_CBC(42),
+    /**
+     *
+     *
+     * <pre>
+     * AES-CBC (Cipher Block Chaining Mode) using 256-bit keys.
+     * </pre>
+     *
+     * <code>AES_256_CBC = 43;</code>
+     */
+    AES_256_CBC(43),
+    /**
+     *
+     *
+     * <pre>
+     * AES-CTR (Counter Mode) using 128-bit keys.
+     * </pre>
+     *
+     * <code>AES_128_CTR = 44;</code>
+     */
+    AES_128_CTR(44),
+    /**
+     *
+     *
+     * <pre>
+     * AES-CTR (Counter Mode) using 256-bit keys.
+     * </pre>
+     *
+     * <code>AES_256_CTR = 45;</code>
+     */
+    AES_256_CTR(45),
     /**
      *
      *
@@ -445,6 +513,66 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      * <code>GOOGLE_SYMMETRIC_ENCRYPTION = 1;</code>
      */
     public static final int GOOGLE_SYMMETRIC_ENCRYPTION_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * AES-GCM (Galois Counter Mode) using 128-bit keys.
+     * </pre>
+     *
+     * <code>AES_128_GCM = 41;</code>
+     */
+    public static final int AES_128_GCM_VALUE = 41;
+    /**
+     *
+     *
+     * <pre>
+     * AES-GCM (Galois Counter Mode) using 256-bit keys.
+     * </pre>
+     *
+     * <code>AES_256_GCM = 19;</code>
+     */
+    public static final int AES_256_GCM_VALUE = 19;
+    /**
+     *
+     *
+     * <pre>
+     * AES-CBC (Cipher Block Chaining Mode) using 128-bit keys.
+     * </pre>
+     *
+     * <code>AES_128_CBC = 42;</code>
+     */
+    public static final int AES_128_CBC_VALUE = 42;
+    /**
+     *
+     *
+     * <pre>
+     * AES-CBC (Cipher Block Chaining Mode) using 256-bit keys.
+     * </pre>
+     *
+     * <code>AES_256_CBC = 43;</code>
+     */
+    public static final int AES_256_CBC_VALUE = 43;
+    /**
+     *
+     *
+     * <pre>
+     * AES-CTR (Counter Mode) using 128-bit keys.
+     * </pre>
+     *
+     * <code>AES_128_CTR = 44;</code>
+     */
+    public static final int AES_128_CTR_VALUE = 44;
+    /**
+     *
+     *
+     * <pre>
+     * AES-CTR (Counter Mode) using 256-bit keys.
+     * </pre>
+     *
+     * <code>AES_256_CTR = 45;</code>
+     */
+    public static final int AES_256_CTR_VALUE = 45;
     /**
      *
      *
@@ -751,6 +879,18 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
           return CRYPTO_KEY_VERSION_ALGORITHM_UNSPECIFIED;
         case 1:
           return GOOGLE_SYMMETRIC_ENCRYPTION;
+        case 41:
+          return AES_128_GCM;
+        case 19:
+          return AES_256_GCM;
+        case 42:
+          return AES_128_CBC;
+        case 43:
+          return AES_256_CBC;
+        case 44:
+          return AES_128_CTR;
+        case 45:
+          return AES_256_CTR;
         case 2:
           return RSA_SIGN_PSS_2048_SHA256;
         case 3:
@@ -2644,9 +2784,11 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
    * <pre>
    * A [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] represents an
    * individual cryptographic key, and the associated key material.
+   *
    * An
    * [ENABLED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.ENABLED]
    * version can be used for cryptographic operations.
+   *
    * For security reasons, the raw cryptographic key material represented by a
    * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] can never be viewed
    * or exported. It can only be used to encrypt, decrypt, or sign data when an

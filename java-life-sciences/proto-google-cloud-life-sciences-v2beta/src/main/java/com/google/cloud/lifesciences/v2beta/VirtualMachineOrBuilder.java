@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -81,7 +81,9 @@ public interface VirtualMachineOrBuilder
    * These labels must adhere to the [name and value
    * restrictions](https://cloud.google.com/compute/docs/labeling-resources) on
    * VM labels imposed by Compute Engine.
+   *
    * Labels keys with the prefix 'google-' are reserved for use by Google.
+   *
    * Labels applied at creation time to the VM. Applied on a best-effort basis
    * to attached disk resources shortly after VM creation.
    * </pre>
@@ -97,7 +99,9 @@ public interface VirtualMachineOrBuilder
    * These labels must adhere to the [name and value
    * restrictions](https://cloud.google.com/compute/docs/labeling-resources) on
    * VM labels imposed by Compute Engine.
+   *
    * Labels keys with the prefix 'google-' are reserved for use by Google.
+   *
    * Labels applied at creation time to the VM. Applied on a best-effort basis
    * to attached disk resources shortly after VM creation.
    * </pre>
@@ -116,7 +120,9 @@ public interface VirtualMachineOrBuilder
    * These labels must adhere to the [name and value
    * restrictions](https://cloud.google.com/compute/docs/labeling-resources) on
    * VM labels imposed by Compute Engine.
+   *
    * Labels keys with the prefix 'google-' are reserved for use by Google.
+   *
    * Labels applied at creation time to the VM. Applied on a best-effort basis
    * to attached disk resources shortly after VM creation.
    * </pre>
@@ -132,7 +138,9 @@ public interface VirtualMachineOrBuilder
    * These labels must adhere to the [name and value
    * restrictions](https://cloud.google.com/compute/docs/labeling-resources) on
    * VM labels imposed by Compute Engine.
+   *
    * Labels keys with the prefix 'google-' are reserved for use by Google.
+   *
    * Labels applied at creation time to the VM. Applied on a best-effort basis
    * to attached disk resources shortly after VM creation.
    * </pre>
@@ -152,7 +160,9 @@ public interface VirtualMachineOrBuilder
    * These labels must adhere to the [name and value
    * restrictions](https://cloud.google.com/compute/docs/labeling-resources) on
    * VM labels imposed by Compute Engine.
+   *
    * Labels keys with the prefix 'google-' are reserved for use by Google.
+   *
    * Labels applied at creation time to the VM. Applied on a best-effort basis
    * to attached disk resources shortly after VM creation.
    * </pre>
@@ -166,6 +176,7 @@ public interface VirtualMachineOrBuilder
    *
    * <pre>
    * The list of disks to create and attach to the VM.
+   *
    * Specify either the `volumes[]` field or the `disks[]` field, but not both.
    * </pre>
    *
@@ -177,6 +188,7 @@ public interface VirtualMachineOrBuilder
    *
    * <pre>
    * The list of disks to create and attach to the VM.
+   *
    * Specify either the `volumes[]` field or the `disks[]` field, but not both.
    * </pre>
    *
@@ -188,6 +200,7 @@ public interface VirtualMachineOrBuilder
    *
    * <pre>
    * The list of disks to create and attach to the VM.
+   *
    * Specify either the `volumes[]` field or the `disks[]` field, but not both.
    * </pre>
    *
@@ -199,6 +212,7 @@ public interface VirtualMachineOrBuilder
    *
    * <pre>
    * The list of disks to create and attach to the VM.
+   *
    * Specify either the `volumes[]` field or the `disks[]` field, but not both.
    * </pre>
    *
@@ -211,6 +225,7 @@ public interface VirtualMachineOrBuilder
    *
    * <pre>
    * The list of disks to create and attach to the VM.
+   *
    * Specify either the `volumes[]` field or the `disks[]` field, but not both.
    * </pre>
    *
@@ -368,6 +383,7 @@ public interface VirtualMachineOrBuilder
    * parameter must be a valid Compute Engine CPU platform name (such as "Intel
    * Skylake"). This parameter is only useful for carefully optimized work
    * loads where the CPU platform has a significant impact.
+   *
    * For more information about the effect of this parameter, see
    * https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform.
    * </pre>
@@ -386,6 +402,7 @@ public interface VirtualMachineOrBuilder
    * parameter must be a valid Compute Engine CPU platform name (such as "Intel
    * Skylake"). This parameter is only useful for carefully optimized work
    * loads where the CPU platform has a significant impact.
+   *
    * For more information about the effect of this parameter, see
    * https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform.
    * </pre>
@@ -401,12 +418,16 @@ public interface VirtualMachineOrBuilder
    *
    * <pre>
    * The host operating system image to use.
+   *
    * Currently, only Container-Optimized OS images can be used.
+   *
    * The default value is `projects/cos-cloud/global/images/family/cos-stable`,
    * which selects the latest stable release of Container-Optimized OS.
+   *
    * This option is provided to allow testing against the beta release of the
    * operating system to ensure that the new version does not interact
    * negatively with production pipelines.
+   *
    * To test a pipeline against the beta release of Container-Optimized OS,
    * use the value `projects/cos-cloud/global/images/family/cos-beta`.
    * </pre>
@@ -421,12 +442,16 @@ public interface VirtualMachineOrBuilder
    *
    * <pre>
    * The host operating system image to use.
+   *
    * Currently, only Container-Optimized OS images can be used.
+   *
    * The default value is `projects/cos-cloud/global/images/family/cos-stable`,
    * which selects the latest stable release of Container-Optimized OS.
+   *
    * This option is provided to allow testing against the beta release of the
    * operating system to ensure that the new version does not interact
    * negatively with production pipelines.
+   *
    * To test a pipeline against the beta release of Container-Optimized OS,
    * use the value `projects/cos-cloud/global/images/family/cos-beta`.
    * </pre>
@@ -575,6 +600,7 @@ public interface VirtualMachineOrBuilder
    *
    * <pre>
    * The list of disks and other storage to create or attach to the VM.
+   *
    * Specify either the `volumes[]` field or the `disks[]` field, but not both.
    * </pre>
    *
@@ -586,6 +612,7 @@ public interface VirtualMachineOrBuilder
    *
    * <pre>
    * The list of disks and other storage to create or attach to the VM.
+   *
    * Specify either the `volumes[]` field or the `disks[]` field, but not both.
    * </pre>
    *
@@ -597,6 +624,7 @@ public interface VirtualMachineOrBuilder
    *
    * <pre>
    * The list of disks and other storage to create or attach to the VM.
+   *
    * Specify either the `volumes[]` field or the `disks[]` field, but not both.
    * </pre>
    *
@@ -608,6 +636,7 @@ public interface VirtualMachineOrBuilder
    *
    * <pre>
    * The list of disks and other storage to create or attach to the VM.
+   *
    * Specify either the `volumes[]` field or the `disks[]` field, but not both.
    * </pre>
    *
@@ -620,6 +649,7 @@ public interface VirtualMachineOrBuilder
    *
    * <pre>
    * The list of disks and other storage to create or attach to the VM.
+   *
    * Specify either the `volumes[]` field or the `disks[]` field, but not both.
    * </pre>
    *

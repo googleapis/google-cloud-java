@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,6 +62,7 @@ public interface MutateDeployedModelRequestOrBuilder
    * <pre>
    * Required. The DeployedModel to be mutated within the Endpoint. Only the
    * following fields can be mutated:
+   *
    * * `min_replica_count` in either
    * [DedicatedResources][google.cloud.aiplatform.v1.DedicatedResources] or
    * [AutomaticResources][google.cloud.aiplatform.v1.AutomaticResources]
@@ -86,6 +87,7 @@ public interface MutateDeployedModelRequestOrBuilder
    * <pre>
    * Required. The DeployedModel to be mutated within the Endpoint. Only the
    * following fields can be mutated:
+   *
    * * `min_replica_count` in either
    * [DedicatedResources][google.cloud.aiplatform.v1.DedicatedResources] or
    * [AutomaticResources][google.cloud.aiplatform.v1.AutomaticResources]
@@ -110,6 +112,7 @@ public interface MutateDeployedModelRequestOrBuilder
    * <pre>
    * Required. The DeployedModel to be mutated within the Endpoint. Only the
    * following fields can be mutated:
+   *
    * * `min_replica_count` in either
    * [DedicatedResources][google.cloud.aiplatform.v1.DedicatedResources] or
    * [AutomaticResources][google.cloud.aiplatform.v1.AutomaticResources]

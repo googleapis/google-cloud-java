@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new AgentAssistantFeedback();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -681,11 +676,6 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new SummarizationFeedback();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1816,6 +1806,986 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
     }
   }
 
+  public interface KnowledgeSearchFeedbackOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2.AgentAssistantFeedback.KnowledgeSearchFeedback)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Whether the answer was copied by the human agent or not.
+     * If the value is set to be true,
+     * [AnswerFeedback.clicked][google.cloud.dialogflow.v2.AnswerFeedback.clicked]
+     * will be updated to be true.
+     * </pre>
+     *
+     * <code>bool answer_copied = 1;</code>
+     *
+     * @return The answerCopied.
+     */
+    boolean getAnswerCopied();
+
+    /**
+     *
+     *
+     * <pre>
+     * The URIs clicked by the human agent. The value is appended for each
+     * [UpdateAnswerRecordRequest][google.cloud.dialogflow.v2.UpdateAnswerRecordRequest].
+     * If the value is not empty,
+     * [AnswerFeedback.clicked][google.cloud.dialogflow.v2.AnswerFeedback.clicked]
+     * will be updated to be true.
+     * </pre>
+     *
+     * <code>repeated string clicked_uris = 2;</code>
+     *
+     * @return A list containing the clickedUris.
+     */
+    java.util.List<java.lang.String> getClickedUrisList();
+    /**
+     *
+     *
+     * <pre>
+     * The URIs clicked by the human agent. The value is appended for each
+     * [UpdateAnswerRecordRequest][google.cloud.dialogflow.v2.UpdateAnswerRecordRequest].
+     * If the value is not empty,
+     * [AnswerFeedback.clicked][google.cloud.dialogflow.v2.AnswerFeedback.clicked]
+     * will be updated to be true.
+     * </pre>
+     *
+     * <code>repeated string clicked_uris = 2;</code>
+     *
+     * @return The count of clickedUris.
+     */
+    int getClickedUrisCount();
+    /**
+     *
+     *
+     * <pre>
+     * The URIs clicked by the human agent. The value is appended for each
+     * [UpdateAnswerRecordRequest][google.cloud.dialogflow.v2.UpdateAnswerRecordRequest].
+     * If the value is not empty,
+     * [AnswerFeedback.clicked][google.cloud.dialogflow.v2.AnswerFeedback.clicked]
+     * will be updated to be true.
+     * </pre>
+     *
+     * <code>repeated string clicked_uris = 2;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The clickedUris at the given index.
+     */
+    java.lang.String getClickedUris(int index);
+    /**
+     *
+     *
+     * <pre>
+     * The URIs clicked by the human agent. The value is appended for each
+     * [UpdateAnswerRecordRequest][google.cloud.dialogflow.v2.UpdateAnswerRecordRequest].
+     * If the value is not empty,
+     * [AnswerFeedback.clicked][google.cloud.dialogflow.v2.AnswerFeedback.clicked]
+     * will be updated to be true.
+     * </pre>
+     *
+     * <code>repeated string clicked_uris = 2;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the clickedUris at the given index.
+     */
+    com.google.protobuf.ByteString getClickedUrisBytes(int index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Feedback for knowledge search.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.dialogflow.v2.AgentAssistantFeedback.KnowledgeSearchFeedback}
+   */
+  public static final class KnowledgeSearchFeedback extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.AgentAssistantFeedback.KnowledgeSearchFeedback)
+      KnowledgeSearchFeedbackOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use KnowledgeSearchFeedback.newBuilder() to construct.
+    private KnowledgeSearchFeedback(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private KnowledgeSearchFeedback() {
+      clickedUris_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new KnowledgeSearchFeedback();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dialogflow.v2.AnswerRecordsProto
+          .internal_static_google_cloud_dialogflow_v2_AgentAssistantFeedback_KnowledgeSearchFeedback_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.dialogflow.v2.AnswerRecordsProto
+          .internal_static_google_cloud_dialogflow_v2_AgentAssistantFeedback_KnowledgeSearchFeedback_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.dialogflow.v2.AgentAssistantFeedback.KnowledgeSearchFeedback.class,
+              com.google.cloud.dialogflow.v2.AgentAssistantFeedback.KnowledgeSearchFeedback.Builder
+                  .class);
+    }
+
+    public static final int ANSWER_COPIED_FIELD_NUMBER = 1;
+    private boolean answerCopied_ = false;
+    /**
+     *
+     *
+     * <pre>
+     * Whether the answer was copied by the human agent or not.
+     * If the value is set to be true,
+     * [AnswerFeedback.clicked][google.cloud.dialogflow.v2.AnswerFeedback.clicked]
+     * will be updated to be true.
+     * </pre>
+     *
+     * <code>bool answer_copied = 1;</code>
+     *
+     * @return The answerCopied.
+     */
+    @java.lang.Override
+    public boolean getAnswerCopied() {
+      return answerCopied_;
+    }
+
+    public static final int CLICKED_URIS_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private com.google.protobuf.LazyStringArrayList clickedUris_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+    /**
+     *
+     *
+     * <pre>
+     * The URIs clicked by the human agent. The value is appended for each
+     * [UpdateAnswerRecordRequest][google.cloud.dialogflow.v2.UpdateAnswerRecordRequest].
+     * If the value is not empty,
+     * [AnswerFeedback.clicked][google.cloud.dialogflow.v2.AnswerFeedback.clicked]
+     * will be updated to be true.
+     * </pre>
+     *
+     * <code>repeated string clicked_uris = 2;</code>
+     *
+     * @return A list containing the clickedUris.
+     */
+    public com.google.protobuf.ProtocolStringList getClickedUrisList() {
+      return clickedUris_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The URIs clicked by the human agent. The value is appended for each
+     * [UpdateAnswerRecordRequest][google.cloud.dialogflow.v2.UpdateAnswerRecordRequest].
+     * If the value is not empty,
+     * [AnswerFeedback.clicked][google.cloud.dialogflow.v2.AnswerFeedback.clicked]
+     * will be updated to be true.
+     * </pre>
+     *
+     * <code>repeated string clicked_uris = 2;</code>
+     *
+     * @return The count of clickedUris.
+     */
+    public int getClickedUrisCount() {
+      return clickedUris_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The URIs clicked by the human agent. The value is appended for each
+     * [UpdateAnswerRecordRequest][google.cloud.dialogflow.v2.UpdateAnswerRecordRequest].
+     * If the value is not empty,
+     * [AnswerFeedback.clicked][google.cloud.dialogflow.v2.AnswerFeedback.clicked]
+     * will be updated to be true.
+     * </pre>
+     *
+     * <code>repeated string clicked_uris = 2;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The clickedUris at the given index.
+     */
+    public java.lang.String getClickedUris(int index) {
+      return clickedUris_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The URIs clicked by the human agent. The value is appended for each
+     * [UpdateAnswerRecordRequest][google.cloud.dialogflow.v2.UpdateAnswerRecordRequest].
+     * If the value is not empty,
+     * [AnswerFeedback.clicked][google.cloud.dialogflow.v2.AnswerFeedback.clicked]
+     * will be updated to be true.
+     * </pre>
+     *
+     * <code>repeated string clicked_uris = 2;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the clickedUris at the given index.
+     */
+    public com.google.protobuf.ByteString getClickedUrisBytes(int index) {
+      return clickedUris_.getByteString(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (answerCopied_ != false) {
+        output.writeBool(1, answerCopied_);
+      }
+      for (int i = 0; i < clickedUris_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, clickedUris_.getRaw(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (answerCopied_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, answerCopied_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < clickedUris_.size(); i++) {
+          dataSize += computeStringSizeNoTag(clickedUris_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getClickedUrisList().size();
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof
+          com.google.cloud.dialogflow.v2.AgentAssistantFeedback.KnowledgeSearchFeedback)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.dialogflow.v2.AgentAssistantFeedback.KnowledgeSearchFeedback other =
+          (com.google.cloud.dialogflow.v2.AgentAssistantFeedback.KnowledgeSearchFeedback) obj;
+
+      if (getAnswerCopied() != other.getAnswerCopied()) return false;
+      if (!getClickedUrisList().equals(other.getClickedUrisList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ANSWER_COPIED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAnswerCopied());
+      if (getClickedUrisCount() > 0) {
+        hash = (37 * hash) + CLICKED_URIS_FIELD_NUMBER;
+        hash = (53 * hash) + getClickedUrisList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.dialogflow.v2.AgentAssistantFeedback.KnowledgeSearchFeedback
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.v2.AgentAssistantFeedback.KnowledgeSearchFeedback
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.v2.AgentAssistantFeedback.KnowledgeSearchFeedback
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.v2.AgentAssistantFeedback.KnowledgeSearchFeedback
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.v2.AgentAssistantFeedback.KnowledgeSearchFeedback
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.v2.AgentAssistantFeedback.KnowledgeSearchFeedback
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.v2.AgentAssistantFeedback.KnowledgeSearchFeedback
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.v2.AgentAssistantFeedback.KnowledgeSearchFeedback
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.v2.AgentAssistantFeedback.KnowledgeSearchFeedback
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.v2.AgentAssistantFeedback.KnowledgeSearchFeedback
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.v2.AgentAssistantFeedback.KnowledgeSearchFeedback
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.v2.AgentAssistantFeedback.KnowledgeSearchFeedback
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.dialogflow.v2.AgentAssistantFeedback.KnowledgeSearchFeedback prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Feedback for knowledge search.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.dialogflow.v2.AgentAssistantFeedback.KnowledgeSearchFeedback}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.v2.AgentAssistantFeedback.KnowledgeSearchFeedback)
+        com.google.cloud.dialogflow.v2.AgentAssistantFeedback.KnowledgeSearchFeedbackOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dialogflow.v2.AnswerRecordsProto
+            .internal_static_google_cloud_dialogflow_v2_AgentAssistantFeedback_KnowledgeSearchFeedback_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dialogflow.v2.AnswerRecordsProto
+            .internal_static_google_cloud_dialogflow_v2_AgentAssistantFeedback_KnowledgeSearchFeedback_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dialogflow.v2.AgentAssistantFeedback.KnowledgeSearchFeedback.class,
+                com.google.cloud.dialogflow.v2.AgentAssistantFeedback.KnowledgeSearchFeedback
+                    .Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.dialogflow.v2.AgentAssistantFeedback.KnowledgeSearchFeedback.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        answerCopied_ = false;
+        clickedUris_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.dialogflow.v2.AnswerRecordsProto
+            .internal_static_google_cloud_dialogflow_v2_AgentAssistantFeedback_KnowledgeSearchFeedback_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.v2.AgentAssistantFeedback.KnowledgeSearchFeedback
+          getDefaultInstanceForType() {
+        return com.google.cloud.dialogflow.v2.AgentAssistantFeedback.KnowledgeSearchFeedback
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.v2.AgentAssistantFeedback.KnowledgeSearchFeedback build() {
+        com.google.cloud.dialogflow.v2.AgentAssistantFeedback.KnowledgeSearchFeedback result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.v2.AgentAssistantFeedback.KnowledgeSearchFeedback
+          buildPartial() {
+        com.google.cloud.dialogflow.v2.AgentAssistantFeedback.KnowledgeSearchFeedback result =
+            new com.google.cloud.dialogflow.v2.AgentAssistantFeedback.KnowledgeSearchFeedback(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dialogflow.v2.AgentAssistantFeedback.KnowledgeSearchFeedback result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.answerCopied_ = answerCopied_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          clickedUris_.makeImmutable();
+          result.clickedUris_ = clickedUris_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof
+            com.google.cloud.dialogflow.v2.AgentAssistantFeedback.KnowledgeSearchFeedback) {
+          return mergeFrom(
+              (com.google.cloud.dialogflow.v2.AgentAssistantFeedback.KnowledgeSearchFeedback)
+                  other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.dialogflow.v2.AgentAssistantFeedback.KnowledgeSearchFeedback other) {
+        if (other
+            == com.google.cloud.dialogflow.v2.AgentAssistantFeedback.KnowledgeSearchFeedback
+                .getDefaultInstance()) return this;
+        if (other.getAnswerCopied() != false) {
+          setAnswerCopied(other.getAnswerCopied());
+        }
+        if (!other.clickedUris_.isEmpty()) {
+          if (clickedUris_.isEmpty()) {
+            clickedUris_ = other.clickedUris_;
+            bitField0_ |= 0x00000002;
+          } else {
+            ensureClickedUrisIsMutable();
+            clickedUris_.addAll(other.clickedUris_);
+          }
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  answerCopied_ = input.readBool();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              case 18:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureClickedUrisIsMutable();
+                  clickedUris_.add(s);
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private boolean answerCopied_;
+      /**
+       *
+       *
+       * <pre>
+       * Whether the answer was copied by the human agent or not.
+       * If the value is set to be true,
+       * [AnswerFeedback.clicked][google.cloud.dialogflow.v2.AnswerFeedback.clicked]
+       * will be updated to be true.
+       * </pre>
+       *
+       * <code>bool answer_copied = 1;</code>
+       *
+       * @return The answerCopied.
+       */
+      @java.lang.Override
+      public boolean getAnswerCopied() {
+        return answerCopied_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Whether the answer was copied by the human agent or not.
+       * If the value is set to be true,
+       * [AnswerFeedback.clicked][google.cloud.dialogflow.v2.AnswerFeedback.clicked]
+       * will be updated to be true.
+       * </pre>
+       *
+       * <code>bool answer_copied = 1;</code>
+       *
+       * @param value The answerCopied to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAnswerCopied(boolean value) {
+
+        answerCopied_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Whether the answer was copied by the human agent or not.
+       * If the value is set to be true,
+       * [AnswerFeedback.clicked][google.cloud.dialogflow.v2.AnswerFeedback.clicked]
+       * will be updated to be true.
+       * </pre>
+       *
+       * <code>bool answer_copied = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearAnswerCopied() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        answerCopied_ = false;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringArrayList clickedUris_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+
+      private void ensureClickedUrisIsMutable() {
+        if (!clickedUris_.isModifiable()) {
+          clickedUris_ = new com.google.protobuf.LazyStringArrayList(clickedUris_);
+        }
+        bitField0_ |= 0x00000002;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The URIs clicked by the human agent. The value is appended for each
+       * [UpdateAnswerRecordRequest][google.cloud.dialogflow.v2.UpdateAnswerRecordRequest].
+       * If the value is not empty,
+       * [AnswerFeedback.clicked][google.cloud.dialogflow.v2.AnswerFeedback.clicked]
+       * will be updated to be true.
+       * </pre>
+       *
+       * <code>repeated string clicked_uris = 2;</code>
+       *
+       * @return A list containing the clickedUris.
+       */
+      public com.google.protobuf.ProtocolStringList getClickedUrisList() {
+        clickedUris_.makeImmutable();
+        return clickedUris_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The URIs clicked by the human agent. The value is appended for each
+       * [UpdateAnswerRecordRequest][google.cloud.dialogflow.v2.UpdateAnswerRecordRequest].
+       * If the value is not empty,
+       * [AnswerFeedback.clicked][google.cloud.dialogflow.v2.AnswerFeedback.clicked]
+       * will be updated to be true.
+       * </pre>
+       *
+       * <code>repeated string clicked_uris = 2;</code>
+       *
+       * @return The count of clickedUris.
+       */
+      public int getClickedUrisCount() {
+        return clickedUris_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The URIs clicked by the human agent. The value is appended for each
+       * [UpdateAnswerRecordRequest][google.cloud.dialogflow.v2.UpdateAnswerRecordRequest].
+       * If the value is not empty,
+       * [AnswerFeedback.clicked][google.cloud.dialogflow.v2.AnswerFeedback.clicked]
+       * will be updated to be true.
+       * </pre>
+       *
+       * <code>repeated string clicked_uris = 2;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The clickedUris at the given index.
+       */
+      public java.lang.String getClickedUris(int index) {
+        return clickedUris_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The URIs clicked by the human agent. The value is appended for each
+       * [UpdateAnswerRecordRequest][google.cloud.dialogflow.v2.UpdateAnswerRecordRequest].
+       * If the value is not empty,
+       * [AnswerFeedback.clicked][google.cloud.dialogflow.v2.AnswerFeedback.clicked]
+       * will be updated to be true.
+       * </pre>
+       *
+       * <code>repeated string clicked_uris = 2;</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the clickedUris at the given index.
+       */
+      public com.google.protobuf.ByteString getClickedUrisBytes(int index) {
+        return clickedUris_.getByteString(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The URIs clicked by the human agent. The value is appended for each
+       * [UpdateAnswerRecordRequest][google.cloud.dialogflow.v2.UpdateAnswerRecordRequest].
+       * If the value is not empty,
+       * [AnswerFeedback.clicked][google.cloud.dialogflow.v2.AnswerFeedback.clicked]
+       * will be updated to be true.
+       * </pre>
+       *
+       * <code>repeated string clicked_uris = 2;</code>
+       *
+       * @param index The index to set the value at.
+       * @param value The clickedUris to set.
+       * @return This builder for chaining.
+       */
+      public Builder setClickedUris(int index, java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureClickedUrisIsMutable();
+        clickedUris_.set(index, value);
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The URIs clicked by the human agent. The value is appended for each
+       * [UpdateAnswerRecordRequest][google.cloud.dialogflow.v2.UpdateAnswerRecordRequest].
+       * If the value is not empty,
+       * [AnswerFeedback.clicked][google.cloud.dialogflow.v2.AnswerFeedback.clicked]
+       * will be updated to be true.
+       * </pre>
+       *
+       * <code>repeated string clicked_uris = 2;</code>
+       *
+       * @param value The clickedUris to add.
+       * @return This builder for chaining.
+       */
+      public Builder addClickedUris(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureClickedUrisIsMutable();
+        clickedUris_.add(value);
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The URIs clicked by the human agent. The value is appended for each
+       * [UpdateAnswerRecordRequest][google.cloud.dialogflow.v2.UpdateAnswerRecordRequest].
+       * If the value is not empty,
+       * [AnswerFeedback.clicked][google.cloud.dialogflow.v2.AnswerFeedback.clicked]
+       * will be updated to be true.
+       * </pre>
+       *
+       * <code>repeated string clicked_uris = 2;</code>
+       *
+       * @param values The clickedUris to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllClickedUris(java.lang.Iterable<java.lang.String> values) {
+        ensureClickedUrisIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, clickedUris_);
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The URIs clicked by the human agent. The value is appended for each
+       * [UpdateAnswerRecordRequest][google.cloud.dialogflow.v2.UpdateAnswerRecordRequest].
+       * If the value is not empty,
+       * [AnswerFeedback.clicked][google.cloud.dialogflow.v2.AnswerFeedback.clicked]
+       * will be updated to be true.
+       * </pre>
+       *
+       * <code>repeated string clicked_uris = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearClickedUris() {
+        clickedUris_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        ;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The URIs clicked by the human agent. The value is appended for each
+       * [UpdateAnswerRecordRequest][google.cloud.dialogflow.v2.UpdateAnswerRecordRequest].
+       * If the value is not empty,
+       * [AnswerFeedback.clicked][google.cloud.dialogflow.v2.AnswerFeedback.clicked]
+       * will be updated to be true.
+       * </pre>
+       *
+       * <code>repeated string clicked_uris = 2;</code>
+       *
+       * @param value The bytes of the clickedUris to add.
+       * @return This builder for chaining.
+       */
+      public Builder addClickedUrisBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        ensureClickedUrisIsMutable();
+        clickedUris_.add(value);
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.v2.AgentAssistantFeedback.KnowledgeSearchFeedback)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.v2.AgentAssistantFeedback.KnowledgeSearchFeedback)
+    private static final com.google.cloud.dialogflow.v2.AgentAssistantFeedback
+            .KnowledgeSearchFeedback
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.dialogflow.v2.AgentAssistantFeedback.KnowledgeSearchFeedback();
+    }
+
+    public static com.google.cloud.dialogflow.v2.AgentAssistantFeedback.KnowledgeSearchFeedback
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<KnowledgeSearchFeedback> PARSER =
+        new com.google.protobuf.AbstractParser<KnowledgeSearchFeedback>() {
+          @java.lang.Override
+          public KnowledgeSearchFeedback parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<KnowledgeSearchFeedback> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<KnowledgeSearchFeedback> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2.AgentAssistantFeedback.KnowledgeSearchFeedback
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public static final int ANSWER_RELEVANCE_FIELD_NUMBER = 1;
   private int answerRelevance_ = 0;
   /**
@@ -1823,7 +2793,9 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Optional. Whether or not the suggested answer is relevant.
+   *
    * For example:
+   *
    * * Query: "Can I change my mailing address?"
    * * Suggested document says: "Items must be returned/exchanged within 60
    *   days of the purchase date."
@@ -1845,7 +2817,9 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Optional. Whether or not the suggested answer is relevant.
+   *
    * For example:
+   *
    * * Query: "Can I change my mailing address?"
    * * Suggested document says: "Items must be returned/exchanged within 60
    *   days of the purchase date."
@@ -1876,7 +2850,9 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Optional. Whether or not the information in the document is correct.
+   *
    * For example:
+   *
    * * Query: "Can I return the package in 2 days once received?"
    * * Suggested document says: "Items must be returned/exchanged within 60
    *   days of the purchase date."
@@ -1899,7 +2875,9 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Optional. Whether or not the information in the document is correct.
+   *
    * For example:
+   *
    * * Query: "Can I return the package in 2 days once received?"
    * * Suggested document says: "Items must be returned/exchanged within 60
    *   days of the purchase date."
@@ -2038,6 +3016,67 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
         : summarizationFeedback_;
   }
 
+  public static final int KNOWLEDGE_SEARCH_FEEDBACK_FIELD_NUMBER = 5;
+  private com.google.cloud.dialogflow.v2.AgentAssistantFeedback.KnowledgeSearchFeedback
+      knowledgeSearchFeedback_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Feedback for knowledge search.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.AgentAssistantFeedback.KnowledgeSearchFeedback knowledge_search_feedback = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the knowledgeSearchFeedback field is set.
+   */
+  @java.lang.Override
+  public boolean hasKnowledgeSearchFeedback() {
+    return knowledgeSearchFeedback_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Feedback for knowledge search.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.AgentAssistantFeedback.KnowledgeSearchFeedback knowledge_search_feedback = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The knowledgeSearchFeedback.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2.AgentAssistantFeedback.KnowledgeSearchFeedback
+      getKnowledgeSearchFeedback() {
+    return knowledgeSearchFeedback_ == null
+        ? com.google.cloud.dialogflow.v2.AgentAssistantFeedback.KnowledgeSearchFeedback
+            .getDefaultInstance()
+        : knowledgeSearchFeedback_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Feedback for knowledge search.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.AgentAssistantFeedback.KnowledgeSearchFeedback knowledge_search_feedback = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2.AgentAssistantFeedback.KnowledgeSearchFeedbackOrBuilder
+      getKnowledgeSearchFeedbackOrBuilder() {
+    return knowledgeSearchFeedback_ == null
+        ? com.google.cloud.dialogflow.v2.AgentAssistantFeedback.KnowledgeSearchFeedback
+            .getDefaultInstance()
+        : knowledgeSearchFeedback_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2073,6 +3112,9 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
     if (summarizationFeedback_ != null) {
       output.writeMessage(4, getSummarizationFeedback());
     }
+    if (knowledgeSearchFeedback_ != null) {
+      output.writeMessage(5, getKnowledgeSearchFeedback());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -2104,6 +3146,10 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(4, getSummarizationFeedback());
     }
+    if (knowledgeSearchFeedback_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(5, getKnowledgeSearchFeedback());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2127,6 +3173,10 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
     if (hasSummarizationFeedback()) {
       if (!getSummarizationFeedback().equals(other.getSummarizationFeedback())) return false;
     }
+    if (hasKnowledgeSearchFeedback() != other.hasKnowledgeSearchFeedback()) return false;
+    if (hasKnowledgeSearchFeedback()) {
+      if (!getKnowledgeSearchFeedback().equals(other.getKnowledgeSearchFeedback())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2147,6 +3197,10 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
     if (hasSummarizationFeedback()) {
       hash = (37 * hash) + SUMMARIZATION_FEEDBACK_FIELD_NUMBER;
       hash = (53 * hash) + getSummarizationFeedback().hashCode();
+    }
+    if (hasKnowledgeSearchFeedback()) {
+      hash = (37 * hash) + KNOWLEDGE_SEARCH_FEEDBACK_FIELD_NUMBER;
+      hash = (53 * hash) + getKnowledgeSearchFeedback().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -2296,6 +3350,11 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
         summarizationFeedbackBuilder_.dispose();
         summarizationFeedbackBuilder_ = null;
       }
+      knowledgeSearchFeedback_ = null;
+      if (knowledgeSearchFeedbackBuilder_ != null) {
+        knowledgeSearchFeedbackBuilder_.dispose();
+        knowledgeSearchFeedbackBuilder_ = null;
+      }
       return this;
     }
 
@@ -2346,6 +3405,12 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
             summarizationFeedbackBuilder_ == null
                 ? summarizationFeedback_
                 : summarizationFeedbackBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.knowledgeSearchFeedback_ =
+            knowledgeSearchFeedbackBuilder_ == null
+                ? knowledgeSearchFeedback_
+                : knowledgeSearchFeedbackBuilder_.build();
       }
     }
 
@@ -2407,6 +3472,9 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
       if (other.hasSummarizationFeedback()) {
         mergeSummarizationFeedback(other.getSummarizationFeedback());
       }
+      if (other.hasKnowledgeSearchFeedback()) {
+        mergeKnowledgeSearchFeedback(other.getKnowledgeSearchFeedback());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -2458,6 +3526,13 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
                 bitField0_ |= 0x00000008;
                 break;
               } // case 34
+            case 42:
+              {
+                input.readMessage(
+                    getKnowledgeSearchFeedbackFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2483,7 +3558,9 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. Whether or not the suggested answer is relevant.
+     *
      * For example:
+     *
      * * Query: "Can I change my mailing address?"
      * * Suggested document says: "Items must be returned/exchanged within 60
      *   days of the purchase date."
@@ -2505,7 +3582,9 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. Whether or not the suggested answer is relevant.
+     *
      * For example:
+     *
      * * Query: "Can I change my mailing address?"
      * * Suggested document says: "Items must be returned/exchanged within 60
      *   days of the purchase date."
@@ -2530,7 +3609,9 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. Whether or not the suggested answer is relevant.
+     *
      * For example:
+     *
      * * Query: "Can I change my mailing address?"
      * * Suggested document says: "Items must be returned/exchanged within 60
      *   days of the purchase date."
@@ -2558,7 +3639,9 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. Whether or not the suggested answer is relevant.
+     *
      * For example:
+     *
      * * Query: "Can I change my mailing address?"
      * * Suggested document says: "Items must be returned/exchanged within 60
      *   days of the purchase date."
@@ -2587,7 +3670,9 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. Whether or not the suggested answer is relevant.
+     *
      * For example:
+     *
      * * Query: "Can I change my mailing address?"
      * * Suggested document says: "Items must be returned/exchanged within 60
      *   days of the purchase date."
@@ -2613,7 +3698,9 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. Whether or not the information in the document is correct.
+     *
      * For example:
+     *
      * * Query: "Can I return the package in 2 days once received?"
      * * Suggested document says: "Items must be returned/exchanged within 60
      *   days of the purchase date."
@@ -2636,7 +3723,9 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. Whether or not the information in the document is correct.
+     *
      * For example:
+     *
      * * Query: "Can I return the package in 2 days once received?"
      * * Suggested document says: "Items must be returned/exchanged within 60
      *   days of the purchase date."
@@ -2662,7 +3751,9 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. Whether or not the information in the document is correct.
+     *
      * For example:
+     *
      * * Query: "Can I return the package in 2 days once received?"
      * * Suggested document says: "Items must be returned/exchanged within 60
      *   days of the purchase date."
@@ -2691,7 +3782,9 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. Whether or not the information in the document is correct.
+     *
      * For example:
+     *
      * * Query: "Can I return the package in 2 days once received?"
      * * Suggested document says: "Items must be returned/exchanged within 60
      *   days of the purchase date."
@@ -2721,7 +3814,9 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. Whether or not the information in the document is correct.
+     *
      * For example:
+     *
      * * Query: "Can I return the package in 2 days once received?"
      * * Suggested document says: "Items must be returned/exchanged within 60
      *   days of the purchase date."
@@ -3084,6 +4179,221 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
         summarizationFeedback_ = null;
       }
       return summarizationFeedbackBuilder_;
+    }
+
+    private com.google.cloud.dialogflow.v2.AgentAssistantFeedback.KnowledgeSearchFeedback
+        knowledgeSearchFeedback_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.v2.AgentAssistantFeedback.KnowledgeSearchFeedback,
+            com.google.cloud.dialogflow.v2.AgentAssistantFeedback.KnowledgeSearchFeedback.Builder,
+            com.google.cloud.dialogflow.v2.AgentAssistantFeedback.KnowledgeSearchFeedbackOrBuilder>
+        knowledgeSearchFeedbackBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Feedback for knowledge search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.AgentAssistantFeedback.KnowledgeSearchFeedback knowledge_search_feedback = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the knowledgeSearchFeedback field is set.
+     */
+    public boolean hasKnowledgeSearchFeedback() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Feedback for knowledge search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.AgentAssistantFeedback.KnowledgeSearchFeedback knowledge_search_feedback = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The knowledgeSearchFeedback.
+     */
+    public com.google.cloud.dialogflow.v2.AgentAssistantFeedback.KnowledgeSearchFeedback
+        getKnowledgeSearchFeedback() {
+      if (knowledgeSearchFeedbackBuilder_ == null) {
+        return knowledgeSearchFeedback_ == null
+            ? com.google.cloud.dialogflow.v2.AgentAssistantFeedback.KnowledgeSearchFeedback
+                .getDefaultInstance()
+            : knowledgeSearchFeedback_;
+      } else {
+        return knowledgeSearchFeedbackBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Feedback for knowledge search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.AgentAssistantFeedback.KnowledgeSearchFeedback knowledge_search_feedback = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setKnowledgeSearchFeedback(
+        com.google.cloud.dialogflow.v2.AgentAssistantFeedback.KnowledgeSearchFeedback value) {
+      if (knowledgeSearchFeedbackBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        knowledgeSearchFeedback_ = value;
+      } else {
+        knowledgeSearchFeedbackBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Feedback for knowledge search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.AgentAssistantFeedback.KnowledgeSearchFeedback knowledge_search_feedback = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setKnowledgeSearchFeedback(
+        com.google.cloud.dialogflow.v2.AgentAssistantFeedback.KnowledgeSearchFeedback.Builder
+            builderForValue) {
+      if (knowledgeSearchFeedbackBuilder_ == null) {
+        knowledgeSearchFeedback_ = builderForValue.build();
+      } else {
+        knowledgeSearchFeedbackBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Feedback for knowledge search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.AgentAssistantFeedback.KnowledgeSearchFeedback knowledge_search_feedback = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeKnowledgeSearchFeedback(
+        com.google.cloud.dialogflow.v2.AgentAssistantFeedback.KnowledgeSearchFeedback value) {
+      if (knowledgeSearchFeedbackBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)
+            && knowledgeSearchFeedback_ != null
+            && knowledgeSearchFeedback_
+                != com.google.cloud.dialogflow.v2.AgentAssistantFeedback.KnowledgeSearchFeedback
+                    .getDefaultInstance()) {
+          getKnowledgeSearchFeedbackBuilder().mergeFrom(value);
+        } else {
+          knowledgeSearchFeedback_ = value;
+        }
+      } else {
+        knowledgeSearchFeedbackBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Feedback for knowledge search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.AgentAssistantFeedback.KnowledgeSearchFeedback knowledge_search_feedback = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearKnowledgeSearchFeedback() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      knowledgeSearchFeedback_ = null;
+      if (knowledgeSearchFeedbackBuilder_ != null) {
+        knowledgeSearchFeedbackBuilder_.dispose();
+        knowledgeSearchFeedbackBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Feedback for knowledge search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.AgentAssistantFeedback.KnowledgeSearchFeedback knowledge_search_feedback = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2.AgentAssistantFeedback.KnowledgeSearchFeedback.Builder
+        getKnowledgeSearchFeedbackBuilder() {
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return getKnowledgeSearchFeedbackFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Feedback for knowledge search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.AgentAssistantFeedback.KnowledgeSearchFeedback knowledge_search_feedback = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2.AgentAssistantFeedback.KnowledgeSearchFeedbackOrBuilder
+        getKnowledgeSearchFeedbackOrBuilder() {
+      if (knowledgeSearchFeedbackBuilder_ != null) {
+        return knowledgeSearchFeedbackBuilder_.getMessageOrBuilder();
+      } else {
+        return knowledgeSearchFeedback_ == null
+            ? com.google.cloud.dialogflow.v2.AgentAssistantFeedback.KnowledgeSearchFeedback
+                .getDefaultInstance()
+            : knowledgeSearchFeedback_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Feedback for knowledge search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.AgentAssistantFeedback.KnowledgeSearchFeedback knowledge_search_feedback = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.v2.AgentAssistantFeedback.KnowledgeSearchFeedback,
+            com.google.cloud.dialogflow.v2.AgentAssistantFeedback.KnowledgeSearchFeedback.Builder,
+            com.google.cloud.dialogflow.v2.AgentAssistantFeedback.KnowledgeSearchFeedbackOrBuilder>
+        getKnowledgeSearchFeedbackFieldBuilder() {
+      if (knowledgeSearchFeedbackBuilder_ == null) {
+        knowledgeSearchFeedbackBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.v2.AgentAssistantFeedback.KnowledgeSearchFeedback,
+                com.google.cloud.dialogflow.v2.AgentAssistantFeedback.KnowledgeSearchFeedback
+                    .Builder,
+                com.google.cloud.dialogflow.v2.AgentAssistantFeedback
+                    .KnowledgeSearchFeedbackOrBuilder>(
+                getKnowledgeSearchFeedback(), getParentForChildren(), isClean());
+        knowledgeSearchFeedback_ = null;
+      }
+      return knowledgeSearchFeedbackBuilder_;
     }
 
     @java.lang.Override

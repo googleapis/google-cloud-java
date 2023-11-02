@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,6 +34,7 @@ import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AbandonInstancesRegionInstanceGroupManagerRequest;
 import com.google.cloud.compute.v1.ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest;
@@ -1377,6 +1378,16 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                 .<AbandonInstancesRegionInstanceGroupManagerRequest, Operation>newBuilder()
                 .setMethodDescriptor(abandonInstancesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "instance_group_manager",
+                          String.valueOf(request.getInstanceGroupManager()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest, Operation>
         applyUpdatesToInstancesTransportSettings =
@@ -1384,6 +1395,16 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                 .<ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest, Operation>newBuilder()
                 .setMethodDescriptor(applyUpdatesToInstancesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "instance_group_manager",
+                          String.valueOf(request.getInstanceGroupManager()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<CreateInstancesRegionInstanceGroupManagerRequest, Operation>
         createInstancesTransportSettings =
@@ -1391,12 +1412,32 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                 .<CreateInstancesRegionInstanceGroupManagerRequest, Operation>newBuilder()
                 .setMethodDescriptor(createInstancesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "instance_group_manager",
+                          String.valueOf(request.getInstanceGroupManager()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteRegionInstanceGroupManagerRequest, Operation>
         deleteTransportSettings =
             HttpJsonCallSettings.<DeleteRegionInstanceGroupManagerRequest, Operation>newBuilder()
                 .setMethodDescriptor(deleteMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "instance_group_manager",
+                          String.valueOf(request.getInstanceGroupManager()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteInstancesRegionInstanceGroupManagerRequest, Operation>
         deleteInstancesTransportSettings =
@@ -1404,6 +1445,16 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                 .<DeleteInstancesRegionInstanceGroupManagerRequest, Operation>newBuilder()
                 .setMethodDescriptor(deleteInstancesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "instance_group_manager",
+                          String.valueOf(request.getInstanceGroupManager()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeletePerInstanceConfigsRegionInstanceGroupManagerRequest, Operation>
         deletePerInstanceConfigsTransportSettings =
@@ -1411,6 +1462,16 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                 .<DeletePerInstanceConfigsRegionInstanceGroupManagerRequest, Operation>newBuilder()
                 .setMethodDescriptor(deletePerInstanceConfigsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "instance_group_manager",
+                          String.valueOf(request.getInstanceGroupManager()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetRegionInstanceGroupManagerRequest, InstanceGroupManager>
         getTransportSettings =
@@ -1418,12 +1479,29 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                 .<GetRegionInstanceGroupManagerRequest, InstanceGroupManager>newBuilder()
                 .setMethodDescriptor(getMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "instance_group_manager",
+                          String.valueOf(request.getInstanceGroupManager()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<InsertRegionInstanceGroupManagerRequest, Operation>
         insertTransportSettings =
             HttpJsonCallSettings.<InsertRegionInstanceGroupManagerRequest, Operation>newBuilder()
                 .setMethodDescriptor(insertMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ListRegionInstanceGroupManagersRequest, RegionInstanceGroupManagerList>
         listTransportSettings =
@@ -1432,6 +1510,13 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                     newBuilder()
                 .setMethodDescriptor(listMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<
             ListErrorsRegionInstanceGroupManagersRequest,
@@ -1443,6 +1528,16 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                     newBuilder()
                 .setMethodDescriptor(listErrorsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "instance_group_manager",
+                          String.valueOf(request.getInstanceGroupManager()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<
             ListManagedInstancesRegionInstanceGroupManagersRequest,
@@ -1454,6 +1549,16 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                     newBuilder()
                 .setMethodDescriptor(listManagedInstancesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "instance_group_manager",
+                          String.valueOf(request.getInstanceGroupManager()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<
             ListPerInstanceConfigsRegionInstanceGroupManagersRequest,
@@ -1465,11 +1570,30 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                     newBuilder()
                 .setMethodDescriptor(listPerInstanceConfigsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "instance_group_manager",
+                          String.valueOf(request.getInstanceGroupManager()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<PatchRegionInstanceGroupManagerRequest, Operation> patchTransportSettings =
         HttpJsonCallSettings.<PatchRegionInstanceGroupManagerRequest, Operation>newBuilder()
             .setMethodDescriptor(patchMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "instance_group_manager", String.valueOf(request.getInstanceGroupManager()));
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("region", String.valueOf(request.getRegion()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<PatchPerInstanceConfigsRegionInstanceGroupManagerRequest, Operation>
         patchPerInstanceConfigsTransportSettings =
@@ -1477,6 +1601,16 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                 .<PatchPerInstanceConfigsRegionInstanceGroupManagerRequest, Operation>newBuilder()
                 .setMethodDescriptor(patchPerInstanceConfigsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "instance_group_manager",
+                          String.valueOf(request.getInstanceGroupManager()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<RecreateInstancesRegionInstanceGroupManagerRequest, Operation>
         recreateInstancesTransportSettings =
@@ -1484,12 +1618,32 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                 .<RecreateInstancesRegionInstanceGroupManagerRequest, Operation>newBuilder()
                 .setMethodDescriptor(recreateInstancesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "instance_group_manager",
+                          String.valueOf(request.getInstanceGroupManager()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ResizeRegionInstanceGroupManagerRequest, Operation>
         resizeTransportSettings =
             HttpJsonCallSettings.<ResizeRegionInstanceGroupManagerRequest, Operation>newBuilder()
                 .setMethodDescriptor(resizeMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "instance_group_manager",
+                          String.valueOf(request.getInstanceGroupManager()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<SetInstanceTemplateRegionInstanceGroupManagerRequest, Operation>
         setInstanceTemplateTransportSettings =
@@ -1497,6 +1651,16 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                 .<SetInstanceTemplateRegionInstanceGroupManagerRequest, Operation>newBuilder()
                 .setMethodDescriptor(setInstanceTemplateMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "instance_group_manager",
+                          String.valueOf(request.getInstanceGroupManager()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<SetTargetPoolsRegionInstanceGroupManagerRequest, Operation>
         setTargetPoolsTransportSettings =
@@ -1504,6 +1668,16 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                 .<SetTargetPoolsRegionInstanceGroupManagerRequest, Operation>newBuilder()
                 .setMethodDescriptor(setTargetPoolsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "instance_group_manager",
+                          String.valueOf(request.getInstanceGroupManager()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<UpdatePerInstanceConfigsRegionInstanceGroupManagerRequest, Operation>
         updatePerInstanceConfigsTransportSettings =
@@ -1511,6 +1685,16 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                 .<UpdatePerInstanceConfigsRegionInstanceGroupManagerRequest, Operation>newBuilder()
                 .setMethodDescriptor(updatePerInstanceConfigsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "instance_group_manager",
+                          String.valueOf(request.getInstanceGroupManager()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      return builder.build();
+                    })
                 .build();
 
     this.abandonInstancesCallable =

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new FeatureMap();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -156,18 +151,13 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
     }
 
     private StringList() {
-      value_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      value_ = com.google.protobuf.LazyStringArrayList.emptyList();
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new StringList();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -188,7 +178,8 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
     public static final int VALUE_FIELD_NUMBER = 1;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList value_;
+    private com.google.protobuf.LazyStringArrayList value_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -458,8 +449,7 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        value_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        value_ = com.google.protobuf.LazyStringArrayList.emptyList();
         return this;
       }
 
@@ -489,7 +479,6 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.recommendationengine.v1beta1.FeatureMap.StringList buildPartial() {
         com.google.cloud.recommendationengine.v1beta1.FeatureMap.StringList result =
             new com.google.cloud.recommendationengine.v1beta1.FeatureMap.StringList(this);
-        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
@@ -497,18 +486,13 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
         return result;
       }
 
-      private void buildPartialRepeatedFields(
-          com.google.cloud.recommendationengine.v1beta1.FeatureMap.StringList result) {
-        if (((bitField0_ & 0x00000001) != 0)) {
-          value_ = value_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.value_ = value_;
-      }
-
       private void buildPartial0(
           com.google.cloud.recommendationengine.v1beta1.FeatureMap.StringList result) {
         int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          value_.makeImmutable();
+          result.value_ = value_;
+        }
       }
 
       @java.lang.Override
@@ -565,7 +549,7 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
         if (!other.value_.isEmpty()) {
           if (value_.isEmpty()) {
             value_ = other.value_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ |= 0x00000001;
           } else {
             ensureValueIsMutable();
             value_.addAll(other.value_);
@@ -624,14 +608,14 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
 
       private int bitField0_;
 
-      private com.google.protobuf.LazyStringList value_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList value_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureValueIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!value_.isModifiable()) {
           value_ = new com.google.protobuf.LazyStringArrayList(value_);
-          bitField0_ |= 0x00000001;
         }
+        bitField0_ |= 0x00000001;
       }
       /**
        *
@@ -645,7 +629,8 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
        * @return A list containing the value.
        */
       public com.google.protobuf.ProtocolStringList getValueList() {
-        return value_.getUnmodifiableView();
+        value_.makeImmutable();
+        return value_;
       }
       /**
        *
@@ -710,6 +695,7 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
         }
         ensureValueIsMutable();
         value_.set(index, value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -731,6 +717,7 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
         }
         ensureValueIsMutable();
         value_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -749,6 +736,7 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
       public Builder addAllValue(java.lang.Iterable<java.lang.String> values) {
         ensureValueIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, value_);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -764,8 +752,9 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearValue() {
-        value_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        value_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
+        ;
         onChanged();
         return this;
       }
@@ -788,6 +777,7 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
         checkByteStringIsUtf8(value);
         ensureValueIsMutable();
         value_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -929,11 +919,6 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new FloatList();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1634,7 +1619,9 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
    * Categorical features that can take on one of a limited number of possible
    * values. Some examples would be the brand/maker of a product, or country of
    * a customer.
+   *
    * Feature names and values must be UTF-8 encoded strings.
+   *
    * For example: `{ "colors": {"value": ["yellow", "green"]},
    *                 "sizes": {"value":["S", "M"]}`
    * </pre>
@@ -1665,7 +1652,9 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
    * Categorical features that can take on one of a limited number of possible
    * values. Some examples would be the brand/maker of a product, or country of
    * a customer.
+   *
    * Feature names and values must be UTF-8 encoded strings.
+   *
    * For example: `{ "colors": {"value": ["yellow", "green"]},
    *                 "sizes": {"value":["S", "M"]}`
    * </pre>
@@ -1687,7 +1676,9 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
    * Categorical features that can take on one of a limited number of possible
    * values. Some examples would be the brand/maker of a product, or country of
    * a customer.
+   *
    * Feature names and values must be UTF-8 encoded strings.
+   *
    * For example: `{ "colors": {"value": ["yellow", "green"]},
    *                 "sizes": {"value":["S", "M"]}`
    * </pre>
@@ -1717,7 +1708,9 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
    * Categorical features that can take on one of a limited number of possible
    * values. Some examples would be the brand/maker of a product, or country of
    * a customer.
+   *
    * Feature names and values must be UTF-8 encoded strings.
+   *
    * For example: `{ "colors": {"value": ["yellow", "green"]},
    *                 "sizes": {"value":["S", "M"]}`
    * </pre>
@@ -1784,7 +1777,9 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Numerical features. Some examples would be the height/weight of a product,
    * or age of a customer.
+   *
    * Feature names must be UTF-8 encoded strings.
+   *
    * For example: `{ "lengths_cm": {"value":[2.3, 15.4]},
    *                 "heights_cm": {"value":[8.1, 6.4]} }`
    * </pre>
@@ -1814,7 +1809,9 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Numerical features. Some examples would be the height/weight of a product,
    * or age of a customer.
+   *
    * Feature names must be UTF-8 encoded strings.
+   *
    * For example: `{ "lengths_cm": {"value":[2.3, 15.4]},
    *                 "heights_cm": {"value":[8.1, 6.4]} }`
    * </pre>
@@ -1835,7 +1832,9 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Numerical features. Some examples would be the height/weight of a product,
    * or age of a customer.
+   *
    * Feature names must be UTF-8 encoded strings.
+   *
    * For example: `{ "lengths_cm": {"value":[2.3, 15.4]},
    *                 "heights_cm": {"value":[8.1, 6.4]} }`
    * </pre>
@@ -1864,7 +1863,9 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Numerical features. Some examples would be the height/weight of a product,
    * or age of a customer.
+   *
    * Feature names must be UTF-8 encoded strings.
+   *
    * For example: `{ "lengths_cm": {"value":[2.3, 15.4]},
    *                 "heights_cm": {"value":[8.1, 6.4]} }`
    * </pre>
@@ -2364,7 +2365,9 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
      * Categorical features that can take on one of a limited number of possible
      * values. Some examples would be the brand/maker of a product, or country of
      * a customer.
+     *
      * Feature names and values must be UTF-8 encoded strings.
+     *
      * For example: `{ "colors": {"value": ["yellow", "green"]},
      *                 "sizes": {"value":["S", "M"]}`
      * </pre>
@@ -2395,7 +2398,9 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
      * Categorical features that can take on one of a limited number of possible
      * values. Some examples would be the brand/maker of a product, or country of
      * a customer.
+     *
      * Feature names and values must be UTF-8 encoded strings.
+     *
      * For example: `{ "colors": {"value": ["yellow", "green"]},
      *                 "sizes": {"value":["S", "M"]}`
      * </pre>
@@ -2417,7 +2422,9 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
      * Categorical features that can take on one of a limited number of possible
      * values. Some examples would be the brand/maker of a product, or country of
      * a customer.
+     *
      * Feature names and values must be UTF-8 encoded strings.
+     *
      * For example: `{ "colors": {"value": ["yellow", "green"]},
      *                 "sizes": {"value":["S", "M"]}`
      * </pre>
@@ -2447,7 +2454,9 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
      * Categorical features that can take on one of a limited number of possible
      * values. Some examples would be the brand/maker of a product, or country of
      * a customer.
+     *
      * Feature names and values must be UTF-8 encoded strings.
+     *
      * For example: `{ "colors": {"value": ["yellow", "green"]},
      *                 "sizes": {"value":["S", "M"]}`
      * </pre>
@@ -2483,7 +2492,9 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
      * Categorical features that can take on one of a limited number of possible
      * values. Some examples would be the brand/maker of a product, or country of
      * a customer.
+     *
      * Feature names and values must be UTF-8 encoded strings.
+     *
      * For example: `{ "colors": {"value": ["yellow", "green"]},
      *                 "sizes": {"value":["S", "M"]}`
      * </pre>
@@ -2514,7 +2525,9 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
      * Categorical features that can take on one of a limited number of possible
      * values. Some examples would be the brand/maker of a product, or country of
      * a customer.
+     *
      * Feature names and values must be UTF-8 encoded strings.
+     *
      * For example: `{ "colors": {"value": ["yellow", "green"]},
      *                 "sizes": {"value":["S", "M"]}`
      * </pre>
@@ -2543,7 +2556,9 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
      * Categorical features that can take on one of a limited number of possible
      * values. Some examples would be the brand/maker of a product, or country of
      * a customer.
+     *
      * Feature names and values must be UTF-8 encoded strings.
+     *
      * For example: `{ "colors": {"value": ["yellow", "green"]},
      *                 "sizes": {"value":["S", "M"]}`
      * </pre>
@@ -2601,7 +2616,9 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Numerical features. Some examples would be the height/weight of a product,
      * or age of a customer.
+     *
      * Feature names must be UTF-8 encoded strings.
+     *
      * For example: `{ "lengths_cm": {"value":[2.3, 15.4]},
      *                 "heights_cm": {"value":[8.1, 6.4]} }`
      * </pre>
@@ -2631,7 +2648,9 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Numerical features. Some examples would be the height/weight of a product,
      * or age of a customer.
+     *
      * Feature names must be UTF-8 encoded strings.
+     *
      * For example: `{ "lengths_cm": {"value":[2.3, 15.4]},
      *                 "heights_cm": {"value":[8.1, 6.4]} }`
      * </pre>
@@ -2652,7 +2671,9 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Numerical features. Some examples would be the height/weight of a product,
      * or age of a customer.
+     *
      * Feature names must be UTF-8 encoded strings.
+     *
      * For example: `{ "lengths_cm": {"value":[2.3, 15.4]},
      *                 "heights_cm": {"value":[8.1, 6.4]} }`
      * </pre>
@@ -2681,7 +2702,9 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Numerical features. Some examples would be the height/weight of a product,
      * or age of a customer.
+     *
      * Feature names must be UTF-8 encoded strings.
+     *
      * For example: `{ "lengths_cm": {"value":[2.3, 15.4]},
      *                 "heights_cm": {"value":[8.1, 6.4]} }`
      * </pre>
@@ -2716,7 +2739,9 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Numerical features. Some examples would be the height/weight of a product,
      * or age of a customer.
+     *
      * Feature names must be UTF-8 encoded strings.
+     *
      * For example: `{ "lengths_cm": {"value":[2.3, 15.4]},
      *                 "heights_cm": {"value":[8.1, 6.4]} }`
      * </pre>
@@ -2746,7 +2771,9 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Numerical features. Some examples would be the height/weight of a product,
      * or age of a customer.
+     *
      * Feature names must be UTF-8 encoded strings.
+     *
      * For example: `{ "lengths_cm": {"value":[2.3, 15.4]},
      *                 "heights_cm": {"value":[8.1, 6.4]} }`
      * </pre>
@@ -2774,7 +2801,9 @@ public final class FeatureMap extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Numerical features. Some examples would be the height/weight of a product,
      * or age of a customer.
+     *
      * Feature names must be UTF-8 encoded strings.
+     *
      * For example: `{ "lengths_cm": {"value":[2.3, 15.4]},
      *                 "heights_cm": {"value":[8.1, 6.4]} }`
      * </pre>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -212,6 +212,7 @@ public class ForwardingRulesClientTest {
             .setIPProtocol("iPProtocol1348929727")
             .setAllPorts(true)
             .setAllowGlobalAccess(true)
+            .setAllowPscGlobalAccess(true)
             .setBackendService("backendService-1884714623")
             .setBaseForwardingRule("baseForwardingRule124102858")
             .setCreationTimestamp("creationTimestamp-370203401")

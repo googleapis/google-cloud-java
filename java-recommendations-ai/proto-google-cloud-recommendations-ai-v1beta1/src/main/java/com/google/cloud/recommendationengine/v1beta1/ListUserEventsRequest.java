@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class ListUserEventsRequest extends com.google.protobuf.GeneratedMe
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ListUserEventsRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -210,17 +205,23 @@ public final class ListUserEventsRequest extends com.google.protobuf.GeneratedMe
    * restrict results to a specific time range, or filter events by eventType.
    *    eg: eventTime &gt; "2012-04-23T18:25:43.511Z" eventsMissingCatalogItems
    *    eventTime&lt;"2012-04-23T18:25:43.511Z" eventType=search
+   *
    *   We expect only 3 types of fields:
+   *
    *    * eventTime: this can be specified a maximum of 2 times, once with a
    *      less than operator and once with a greater than operator. The
    *      eventTime restrict should result in one contiguous valid eventTime
    *      range.
+   *
    *    * eventType: only 1 eventType restriction can be specified.
+   *
    *    * eventsMissingCatalogItems: specififying this will restrict results
    *      to events for which catalog items were not found in the catalog. The
    *      default behavior is to return only those events for which catalog
    *      items were found.
+   *
    *   Some examples of valid filters expressions:
+   *
    *   * Example 1: eventTime &gt; "2012-04-23T18:25:43.511Z"
    *             eventTime &lt; "2012-04-23T18:30:43.511Z"
    *   * Example 2: eventTime &gt; "2012-04-23T18:25:43.511Z"
@@ -258,17 +259,23 @@ public final class ListUserEventsRequest extends com.google.protobuf.GeneratedMe
    * restrict results to a specific time range, or filter events by eventType.
    *    eg: eventTime &gt; "2012-04-23T18:25:43.511Z" eventsMissingCatalogItems
    *    eventTime&lt;"2012-04-23T18:25:43.511Z" eventType=search
+   *
    *   We expect only 3 types of fields:
+   *
    *    * eventTime: this can be specified a maximum of 2 times, once with a
    *      less than operator and once with a greater than operator. The
    *      eventTime restrict should result in one contiguous valid eventTime
    *      range.
+   *
    *    * eventType: only 1 eventType restriction can be specified.
+   *
    *    * eventsMissingCatalogItems: specififying this will restrict results
    *      to events for which catalog items were not found in the catalog. The
    *      default behavior is to return only those events for which catalog
    *      items were found.
+   *
    *   Some examples of valid filters expressions:
+   *
    *   * Example 1: eventTime &gt; "2012-04-23T18:25:43.511Z"
    *             eventTime &lt; "2012-04-23T18:30:43.511Z"
    *   * Example 2: eventTime &gt; "2012-04-23T18:25:43.511Z"
@@ -1012,17 +1019,23 @@ public final class ListUserEventsRequest extends com.google.protobuf.GeneratedMe
      * restrict results to a specific time range, or filter events by eventType.
      *    eg: eventTime &gt; "2012-04-23T18:25:43.511Z" eventsMissingCatalogItems
      *    eventTime&lt;"2012-04-23T18:25:43.511Z" eventType=search
+     *
      *   We expect only 3 types of fields:
+     *
      *    * eventTime: this can be specified a maximum of 2 times, once with a
      *      less than operator and once with a greater than operator. The
      *      eventTime restrict should result in one contiguous valid eventTime
      *      range.
+     *
      *    * eventType: only 1 eventType restriction can be specified.
+     *
      *    * eventsMissingCatalogItems: specififying this will restrict results
      *      to events for which catalog items were not found in the catalog. The
      *      default behavior is to return only those events for which catalog
      *      items were found.
+     *
      *   Some examples of valid filters expressions:
+     *
      *   * Example 1: eventTime &gt; "2012-04-23T18:25:43.511Z"
      *             eventTime &lt; "2012-04-23T18:30:43.511Z"
      *   * Example 2: eventTime &gt; "2012-04-23T18:25:43.511Z"
@@ -1059,17 +1072,23 @@ public final class ListUserEventsRequest extends com.google.protobuf.GeneratedMe
      * restrict results to a specific time range, or filter events by eventType.
      *    eg: eventTime &gt; "2012-04-23T18:25:43.511Z" eventsMissingCatalogItems
      *    eventTime&lt;"2012-04-23T18:25:43.511Z" eventType=search
+     *
      *   We expect only 3 types of fields:
+     *
      *    * eventTime: this can be specified a maximum of 2 times, once with a
      *      less than operator and once with a greater than operator. The
      *      eventTime restrict should result in one contiguous valid eventTime
      *      range.
+     *
      *    * eventType: only 1 eventType restriction can be specified.
+     *
      *    * eventsMissingCatalogItems: specififying this will restrict results
      *      to events for which catalog items were not found in the catalog. The
      *      default behavior is to return only those events for which catalog
      *      items were found.
+     *
      *   Some examples of valid filters expressions:
+     *
      *   * Example 1: eventTime &gt; "2012-04-23T18:25:43.511Z"
      *             eventTime &lt; "2012-04-23T18:30:43.511Z"
      *   * Example 2: eventTime &gt; "2012-04-23T18:25:43.511Z"
@@ -1106,17 +1125,23 @@ public final class ListUserEventsRequest extends com.google.protobuf.GeneratedMe
      * restrict results to a specific time range, or filter events by eventType.
      *    eg: eventTime &gt; "2012-04-23T18:25:43.511Z" eventsMissingCatalogItems
      *    eventTime&lt;"2012-04-23T18:25:43.511Z" eventType=search
+     *
      *   We expect only 3 types of fields:
+     *
      *    * eventTime: this can be specified a maximum of 2 times, once with a
      *      less than operator and once with a greater than operator. The
      *      eventTime restrict should result in one contiguous valid eventTime
      *      range.
+     *
      *    * eventType: only 1 eventType restriction can be specified.
+     *
      *    * eventsMissingCatalogItems: specififying this will restrict results
      *      to events for which catalog items were not found in the catalog. The
      *      default behavior is to return only those events for which catalog
      *      items were found.
+     *
      *   Some examples of valid filters expressions:
+     *
      *   * Example 1: eventTime &gt; "2012-04-23T18:25:43.511Z"
      *             eventTime &lt; "2012-04-23T18:30:43.511Z"
      *   * Example 2: eventTime &gt; "2012-04-23T18:25:43.511Z"
@@ -1152,17 +1177,23 @@ public final class ListUserEventsRequest extends com.google.protobuf.GeneratedMe
      * restrict results to a specific time range, or filter events by eventType.
      *    eg: eventTime &gt; "2012-04-23T18:25:43.511Z" eventsMissingCatalogItems
      *    eventTime&lt;"2012-04-23T18:25:43.511Z" eventType=search
+     *
      *   We expect only 3 types of fields:
+     *
      *    * eventTime: this can be specified a maximum of 2 times, once with a
      *      less than operator and once with a greater than operator. The
      *      eventTime restrict should result in one contiguous valid eventTime
      *      range.
+     *
      *    * eventType: only 1 eventType restriction can be specified.
+     *
      *    * eventsMissingCatalogItems: specififying this will restrict results
      *      to events for which catalog items were not found in the catalog. The
      *      default behavior is to return only those events for which catalog
      *      items were found.
+     *
      *   Some examples of valid filters expressions:
+     *
      *   * Example 1: eventTime &gt; "2012-04-23T18:25:43.511Z"
      *             eventTime &lt; "2012-04-23T18:30:43.511Z"
      *   * Example 2: eventTime &gt; "2012-04-23T18:25:43.511Z"
@@ -1194,17 +1225,23 @@ public final class ListUserEventsRequest extends com.google.protobuf.GeneratedMe
      * restrict results to a specific time range, or filter events by eventType.
      *    eg: eventTime &gt; "2012-04-23T18:25:43.511Z" eventsMissingCatalogItems
      *    eventTime&lt;"2012-04-23T18:25:43.511Z" eventType=search
+     *
      *   We expect only 3 types of fields:
+     *
      *    * eventTime: this can be specified a maximum of 2 times, once with a
      *      less than operator and once with a greater than operator. The
      *      eventTime restrict should result in one contiguous valid eventTime
      *      range.
+     *
      *    * eventType: only 1 eventType restriction can be specified.
+     *
      *    * eventsMissingCatalogItems: specififying this will restrict results
      *      to events for which catalog items were not found in the catalog. The
      *      default behavior is to return only those events for which catalog
      *      items were found.
+     *
      *   Some examples of valid filters expressions:
+     *
      *   * Example 1: eventTime &gt; "2012-04-23T18:25:43.511Z"
      *             eventTime &lt; "2012-04-23T18:30:43.511Z"
      *   * Example 2: eventTime &gt; "2012-04-23T18:25:43.511Z"

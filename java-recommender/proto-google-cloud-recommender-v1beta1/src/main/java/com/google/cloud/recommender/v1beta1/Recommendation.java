@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -53,11 +53,6 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Recommendation();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -337,11 +332,6 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new InsightReference();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1063,6 +1053,7 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
    * new subtype might be added when significant changes to `content` or
    * `primary_impact.category` are introduced. See the Recommenders section
    * to see a list of subtypes for a given Recommender.
+   *
    * Examples:
    *   For recommender = "google.iam.policy.Recommender",
    *   recommender_subtype can be one of "REMOVE_ROLE"/"REPLACE_ROLE"
@@ -1093,6 +1084,7 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
    * new subtype might be added when significant changes to `content` or
    * `primary_impact.category` are introduced. See the Recommenders section
    * to see a list of subtypes for a given Recommender.
+   *
    * Examples:
    *   For recommender = "google.iam.policy.Recommender",
    *   recommender_subtype can be one of "REMOVE_ROLE"/"REPLACE_ROLE"
@@ -2597,6 +2589,7 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
      * new subtype might be added when significant changes to `content` or
      * `primary_impact.category` are introduced. See the Recommenders section
      * to see a list of subtypes for a given Recommender.
+     *
      * Examples:
      *   For recommender = "google.iam.policy.Recommender",
      *   recommender_subtype can be one of "REMOVE_ROLE"/"REPLACE_ROLE"
@@ -2626,6 +2619,7 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
      * new subtype might be added when significant changes to `content` or
      * `primary_impact.category` are introduced. See the Recommenders section
      * to see a list of subtypes for a given Recommender.
+     *
      * Examples:
      *   For recommender = "google.iam.policy.Recommender",
      *   recommender_subtype can be one of "REMOVE_ROLE"/"REPLACE_ROLE"
@@ -2655,6 +2649,7 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
      * new subtype might be added when significant changes to `content` or
      * `primary_impact.category` are introduced. See the Recommenders section
      * to see a list of subtypes for a given Recommender.
+     *
      * Examples:
      *   For recommender = "google.iam.policy.Recommender",
      *   recommender_subtype can be one of "REMOVE_ROLE"/"REPLACE_ROLE"
@@ -2683,6 +2678,7 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
      * new subtype might be added when significant changes to `content` or
      * `primary_impact.category` are introduced. See the Recommenders section
      * to see a list of subtypes for a given Recommender.
+     *
      * Examples:
      *   For recommender = "google.iam.policy.Recommender",
      *   recommender_subtype can be one of "REMOVE_ROLE"/"REPLACE_ROLE"
@@ -2707,6 +2703,7 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessageV3
      * new subtype might be added when significant changes to `content` or
      * `primary_impact.category` are introduced. See the Recommenders section
      * to see a list of subtypes for a given Recommender.
+     *
      * Examples:
      *   For recommender = "google.iam.policy.Recommender",
      *   recommender_subtype can be one of "REMOVE_ROLE"/"REPLACE_ROLE"

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -205,4 +205,42 @@ public interface PredictResponseOrBuilder
    * @return The bytes for modelDisplayName.
    */
   com.google.protobuf.ByteString getModelDisplayNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Request-level metadata returned by the model. The metadata
+   * type will be dependent upon the model implementation.
+   * </pre>
+   *
+   * <code>.google.protobuf.Value metadata = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the metadata field is set.
+   */
+  boolean hasMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Request-level metadata returned by the model. The metadata
+   * type will be dependent upon the model implementation.
+   * </pre>
+   *
+   * <code>.google.protobuf.Value metadata = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The metadata.
+   */
+  com.google.protobuf.Value getMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Request-level metadata returned by the model. The metadata
+   * type will be dependent upon the model implementation.
+   * </pre>
+   *
+   * <code>.google.protobuf.Value metadata = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   */
+  com.google.protobuf.ValueOrBuilder getMetadataOrBuilder();
 }

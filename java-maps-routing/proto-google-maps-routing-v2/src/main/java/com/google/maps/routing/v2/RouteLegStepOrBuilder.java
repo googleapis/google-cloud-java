@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -222,8 +222,8 @@ public interface RouteLegStepOrBuilder
    *
    *
    * <pre>
-   * Encapsulates the additional information that the user should be informed
-   * about, such as possible traffic zone restriction on a leg step.
+   * Contains the additional information that the user should be informed
+   * about, such as possible traffic zone restrictions, on a leg step.
    * </pre>
    *
    * <code>.google.maps.routing.v2.RouteLegStepTravelAdvisory travel_advisory = 7;</code>
@@ -235,8 +235,8 @@ public interface RouteLegStepOrBuilder
    *
    *
    * <pre>
-   * Encapsulates the additional information that the user should be informed
-   * about, such as possible traffic zone restriction on a leg step.
+   * Contains the additional information that the user should be informed
+   * about, such as possible traffic zone restrictions, on a leg step.
    * </pre>
    *
    * <code>.google.maps.routing.v2.RouteLegStepTravelAdvisory travel_advisory = 7;</code>
@@ -248,11 +248,110 @@ public interface RouteLegStepOrBuilder
    *
    *
    * <pre>
-   * Encapsulates the additional information that the user should be informed
-   * about, such as possible traffic zone restriction on a leg step.
+   * Contains the additional information that the user should be informed
+   * about, such as possible traffic zone restrictions, on a leg step.
    * </pre>
    *
    * <code>.google.maps.routing.v2.RouteLegStepTravelAdvisory travel_advisory = 7;</code>
    */
   com.google.maps.routing.v2.RouteLegStepTravelAdvisoryOrBuilder getTravelAdvisoryOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Text representations of properties of the `RouteLegStep`.
+   * </pre>
+   *
+   * <code>.google.maps.routing.v2.RouteLegStep.RouteLegStepLocalizedValues localized_values = 8;
+   * </code>
+   *
+   * @return Whether the localizedValues field is set.
+   */
+  boolean hasLocalizedValues();
+  /**
+   *
+   *
+   * <pre>
+   * Text representations of properties of the `RouteLegStep`.
+   * </pre>
+   *
+   * <code>.google.maps.routing.v2.RouteLegStep.RouteLegStepLocalizedValues localized_values = 8;
+   * </code>
+   *
+   * @return The localizedValues.
+   */
+  com.google.maps.routing.v2.RouteLegStep.RouteLegStepLocalizedValues getLocalizedValues();
+  /**
+   *
+   *
+   * <pre>
+   * Text representations of properties of the `RouteLegStep`.
+   * </pre>
+   *
+   * <code>.google.maps.routing.v2.RouteLegStep.RouteLegStepLocalizedValues localized_values = 8;
+   * </code>
+   */
+  com.google.maps.routing.v2.RouteLegStep.RouteLegStepLocalizedValuesOrBuilder
+      getLocalizedValuesOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Details pertaining to this step if the travel mode is `TRANSIT`.
+   * </pre>
+   *
+   * <code>.google.maps.routing.v2.RouteLegStepTransitDetails transit_details = 9;</code>
+   *
+   * @return Whether the transitDetails field is set.
+   */
+  boolean hasTransitDetails();
+  /**
+   *
+   *
+   * <pre>
+   * Details pertaining to this step if the travel mode is `TRANSIT`.
+   * </pre>
+   *
+   * <code>.google.maps.routing.v2.RouteLegStepTransitDetails transit_details = 9;</code>
+   *
+   * @return The transitDetails.
+   */
+  com.google.maps.routing.v2.RouteLegStepTransitDetails getTransitDetails();
+  /**
+   *
+   *
+   * <pre>
+   * Details pertaining to this step if the travel mode is `TRANSIT`.
+   * </pre>
+   *
+   * <code>.google.maps.routing.v2.RouteLegStepTransitDetails transit_details = 9;</code>
+   */
+  com.google.maps.routing.v2.RouteLegStepTransitDetailsOrBuilder getTransitDetailsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The travel mode used for this step.
+   * </pre>
+   *
+   * <code>.google.maps.routing.v2.RouteTravelMode travel_mode = 10;</code>
+   *
+   * @return The enum numeric value on the wire for travelMode.
+   */
+  int getTravelModeValue();
+  /**
+   *
+   *
+   * <pre>
+   * The travel mode used for this step.
+   * </pre>
+   *
+   * <code>.google.maps.routing.v2.RouteTravelMode travel_mode = 10;</code>
+   *
+   * @return The travelMode.
+   */
+  com.google.maps.routing.v2.RouteTravelMode getTravelMode();
 }

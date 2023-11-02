@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -104,6 +104,7 @@ public interface ListTagHoldsRequestOrBuilder
    * TagValue to return. This field follows the syntax defined by aip.dev/160;
    * the `holder` and `origin` fields are supported for filtering. Currently
    * only `AND` syntax is supported. Some example queries are:
+   *
    *   * `holder =
    *     //compute.googleapis.com/compute/projects/myproject/regions/us-east-1/instanceGroupManagers/instance-group`
    *   * `origin = 35678234`
@@ -125,6 +126,7 @@ public interface ListTagHoldsRequestOrBuilder
    * TagValue to return. This field follows the syntax defined by aip.dev/160;
    * the `holder` and `origin` fields are supported for filtering. Currently
    * only `AND` syntax is supported. Some example queries are:
+   *
    *   * `holder =
    *     //compute.googleapis.com/compute/projects/myproject/regions/us-east-1/instanceGroupManagers/instance-group`
    *   * `origin = 35678234`

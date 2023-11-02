@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,8 +22,8 @@ package com.google.maps.routing.v2;
  *
  *
  * <pre>
- * Encapsulates the additional information that the user should be informed
- * about, such as possible traffic zone restriction etc.
+ * Contains the additional information that the user should be informed
+ * about, such as possible traffic zone restrictions.
  * </pre>
  *
  * Protobuf type {@code google.maps.routing.v2.RouteTravelAdvisory}
@@ -48,11 +48,6 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
     return new RouteTravelAdvisory();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.maps.routing.v2.RouteProto
         .internal_static_google_maps_routing_v2_RouteTravelAdvisory_descriptor;
@@ -74,11 +69,11 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Encapsulates information about tolls on the Route.
-   * This field is only populated if we expect there are tolls on the Route.
-   * If this field is set but the estimated_price subfield is not populated,
-   * we expect that road contains tolls but we do not know an estimated price.
-   * If this field is not set, then we expect there is no toll on the Route.
+   * Contains information about tolls on the route. This field is only populated
+   * if tolls are expected on the route. If this field is set, but the
+   * estimatedPrice subfield is not populated, then the route contains tolls,
+   * but the estimated price is unknown. If this field is not set, then there
+   * are no tolls expected on the route.
    * </pre>
    *
    * <code>.google.maps.routing.v2.TollInfo toll_info = 2;</code>
@@ -93,11 +88,11 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Encapsulates information about tolls on the Route.
-   * This field is only populated if we expect there are tolls on the Route.
-   * If this field is set but the estimated_price subfield is not populated,
-   * we expect that road contains tolls but we do not know an estimated price.
-   * If this field is not set, then we expect there is no toll on the Route.
+   * Contains information about tolls on the route. This field is only populated
+   * if tolls are expected on the route. If this field is set, but the
+   * estimatedPrice subfield is not populated, then the route contains tolls,
+   * but the estimated price is unknown. If this field is not set, then there
+   * are no tolls expected on the route.
    * </pre>
    *
    * <code>.google.maps.routing.v2.TollInfo toll_info = 2;</code>
@@ -112,11 +107,11 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Encapsulates information about tolls on the Route.
-   * This field is only populated if we expect there are tolls on the Route.
-   * If this field is set but the estimated_price subfield is not populated,
-   * we expect that road contains tolls but we do not know an estimated price.
-   * If this field is not set, then we expect there is no toll on the Route.
+   * Contains information about tolls on the route. This field is only populated
+   * if tolls are expected on the route. If this field is set, but the
+   * estimatedPrice subfield is not populated, then the route contains tolls,
+   * but the estimated price is unknown. If this field is not set, then there
+   * are no tolls expected on the route.
    * </pre>
    *
    * <code>.google.maps.routing.v2.TollInfo toll_info = 2;</code>
@@ -139,7 +134,9 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
    * The intervals cover the entire polyline of the route without overlap.
    * The start point of a specified interval is the same as the end point of the
    * preceding interval.
+   *
    * Example:
+   *
    *     polyline: A ---- B ---- C ---- D ---- E ---- F ---- G
    *     speed_reading_intervals: [A,C), [C,D), [D,G).
    * </pre>
@@ -160,7 +157,9 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
    * The intervals cover the entire polyline of the route without overlap.
    * The start point of a specified interval is the same as the end point of the
    * preceding interval.
+   *
    * Example:
+   *
    *     polyline: A ---- B ---- C ---- D ---- E ---- F ---- G
    *     speed_reading_intervals: [A,C), [C,D), [D,G).
    * </pre>
@@ -181,7 +180,9 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
    * The intervals cover the entire polyline of the route without overlap.
    * The start point of a specified interval is the same as the end point of the
    * preceding interval.
+   *
    * Example:
+   *
    *     polyline: A ---- B ---- C ---- D ---- E ---- F ---- G
    *     speed_reading_intervals: [A,C), [C,D), [D,G).
    * </pre>
@@ -201,7 +202,9 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
    * The intervals cover the entire polyline of the route without overlap.
    * The start point of a specified interval is the same as the end point of the
    * preceding interval.
+   *
    * Example:
+   *
    *     polyline: A ---- B ---- C ---- D ---- E ---- F ---- G
    *     speed_reading_intervals: [A,C), [C,D), [D,G).
    * </pre>
@@ -221,7 +224,9 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
    * The intervals cover the entire polyline of the route without overlap.
    * The start point of a specified interval is the same as the end point of the
    * preceding interval.
+   *
    * Example:
+   *
    *     polyline: A ---- B ---- C ---- D ---- E ---- F ---- G
    *     speed_reading_intervals: [A,C), [C,D), [D,G).
    * </pre>
@@ -240,7 +245,7 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The fuel consumption prediction in microliters.
+   * The predicted fuel consumption in microliters.
    * </pre>
    *
    * <code>int64 fuel_consumption_microliters = 5;</code>
@@ -250,6 +255,77 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
   @java.lang.Override
   public long getFuelConsumptionMicroliters() {
     return fuelConsumptionMicroliters_;
+  }
+
+  public static final int ROUTE_RESTRICTIONS_PARTIALLY_IGNORED_FIELD_NUMBER = 6;
+  private boolean routeRestrictionsPartiallyIgnored_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Returned route may have restrictions that are not suitable for requested
+   * travel mode or route modifiers.
+   * </pre>
+   *
+   * <code>bool route_restrictions_partially_ignored = 6;</code>
+   *
+   * @return The routeRestrictionsPartiallyIgnored.
+   */
+  @java.lang.Override
+  public boolean getRouteRestrictionsPartiallyIgnored() {
+    return routeRestrictionsPartiallyIgnored_;
+  }
+
+  public static final int TRANSIT_FARE_FIELD_NUMBER = 7;
+  private com.google.type.Money transitFare_;
+  /**
+   *
+   *
+   * <pre>
+   * If present, contains the total fare or ticket costs on this route
+   * This property is only returned for `TRANSIT` requests and only
+   * for routes where fare information is available for all transit steps.
+   * </pre>
+   *
+   * <code>.google.type.Money transit_fare = 7;</code>
+   *
+   * @return Whether the transitFare field is set.
+   */
+  @java.lang.Override
+  public boolean hasTransitFare() {
+    return transitFare_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * If present, contains the total fare or ticket costs on this route
+   * This property is only returned for `TRANSIT` requests and only
+   * for routes where fare information is available for all transit steps.
+   * </pre>
+   *
+   * <code>.google.type.Money transit_fare = 7;</code>
+   *
+   * @return The transitFare.
+   */
+  @java.lang.Override
+  public com.google.type.Money getTransitFare() {
+    return transitFare_ == null ? com.google.type.Money.getDefaultInstance() : transitFare_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * If present, contains the total fare or ticket costs on this route
+   * This property is only returned for `TRANSIT` requests and only
+   * for routes where fare information is available for all transit steps.
+   * </pre>
+   *
+   * <code>.google.type.Money transit_fare = 7;</code>
+   */
+  @java.lang.Override
+  public com.google.type.MoneyOrBuilder getTransitFareOrBuilder() {
+    return transitFare_ == null ? com.google.type.Money.getDefaultInstance() : transitFare_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -275,6 +351,12 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
     if (fuelConsumptionMicroliters_ != 0L) {
       output.writeInt64(5, fuelConsumptionMicroliters_);
     }
+    if (routeRestrictionsPartiallyIgnored_ != false) {
+      output.writeBool(6, routeRestrictionsPartiallyIgnored_);
+    }
+    if (transitFare_ != null) {
+      output.writeMessage(7, getTransitFare());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -295,6 +377,14 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
     if (fuelConsumptionMicroliters_ != 0L) {
       size +=
           com.google.protobuf.CodedOutputStream.computeInt64Size(5, fuelConsumptionMicroliters_);
+    }
+    if (routeRestrictionsPartiallyIgnored_ != false) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(
+              6, routeRestrictionsPartiallyIgnored_);
+    }
+    if (transitFare_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getTransitFare());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -318,6 +408,12 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
     }
     if (!getSpeedReadingIntervalsList().equals(other.getSpeedReadingIntervalsList())) return false;
     if (getFuelConsumptionMicroliters() != other.getFuelConsumptionMicroliters()) return false;
+    if (getRouteRestrictionsPartiallyIgnored() != other.getRouteRestrictionsPartiallyIgnored())
+      return false;
+    if (hasTransitFare() != other.hasTransitFare()) return false;
+    if (hasTransitFare()) {
+      if (!getTransitFare().equals(other.getTransitFare())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -339,6 +435,14 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
     }
     hash = (37 * hash) + FUEL_CONSUMPTION_MICROLITERS_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getFuelConsumptionMicroliters());
+    hash = (37 * hash) + ROUTE_RESTRICTIONS_PARTIALLY_IGNORED_FIELD_NUMBER;
+    hash =
+        (53 * hash)
+            + com.google.protobuf.Internal.hashBoolean(getRouteRestrictionsPartiallyIgnored());
+    if (hasTransitFare()) {
+      hash = (37 * hash) + TRANSIT_FARE_FIELD_NUMBER;
+      hash = (53 * hash) + getTransitFare().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -443,8 +547,8 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Encapsulates the additional information that the user should be informed
-   * about, such as possible traffic zone restriction etc.
+   * Contains the additional information that the user should be informed
+   * about, such as possible traffic zone restrictions.
    * </pre>
    *
    * Protobuf type {@code google.maps.routing.v2.RouteTravelAdvisory}
@@ -492,6 +596,12 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
       }
       bitField0_ = (bitField0_ & ~0x00000002);
       fuelConsumptionMicroliters_ = 0L;
+      routeRestrictionsPartiallyIgnored_ = false;
+      transitFare_ = null;
+      if (transitFareBuilder_ != null) {
+        transitFareBuilder_.dispose();
+        transitFareBuilder_ = null;
+      }
       return this;
     }
 
@@ -546,6 +656,13 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.fuelConsumptionMicroliters_ = fuelConsumptionMicroliters_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.routeRestrictionsPartiallyIgnored_ = routeRestrictionsPartiallyIgnored_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.transitFare_ =
+            transitFareBuilder_ == null ? transitFare_ : transitFareBuilder_.build();
       }
     }
 
@@ -627,6 +744,12 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
       if (other.getFuelConsumptionMicroliters() != 0L) {
         setFuelConsumptionMicroliters(other.getFuelConsumptionMicroliters());
       }
+      if (other.getRouteRestrictionsPartiallyIgnored() != false) {
+        setRouteRestrictionsPartiallyIgnored(other.getRouteRestrictionsPartiallyIgnored());
+      }
+      if (other.hasTransitFare()) {
+        mergeTransitFare(other.getTransitFare());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -679,6 +802,18 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
                 bitField0_ |= 0x00000004;
                 break;
               } // case 40
+            case 48:
+              {
+                routeRestrictionsPartiallyIgnored_ = input.readBool();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 48
+            case 58:
+              {
+                input.readMessage(getTransitFareFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -708,11 +843,11 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Encapsulates information about tolls on the Route.
-     * This field is only populated if we expect there are tolls on the Route.
-     * If this field is set but the estimated_price subfield is not populated,
-     * we expect that road contains tolls but we do not know an estimated price.
-     * If this field is not set, then we expect there is no toll on the Route.
+     * Contains information about tolls on the route. This field is only populated
+     * if tolls are expected on the route. If this field is set, but the
+     * estimatedPrice subfield is not populated, then the route contains tolls,
+     * but the estimated price is unknown. If this field is not set, then there
+     * are no tolls expected on the route.
      * </pre>
      *
      * <code>.google.maps.routing.v2.TollInfo toll_info = 2;</code>
@@ -726,11 +861,11 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Encapsulates information about tolls on the Route.
-     * This field is only populated if we expect there are tolls on the Route.
-     * If this field is set but the estimated_price subfield is not populated,
-     * we expect that road contains tolls but we do not know an estimated price.
-     * If this field is not set, then we expect there is no toll on the Route.
+     * Contains information about tolls on the route. This field is only populated
+     * if tolls are expected on the route. If this field is set, but the
+     * estimatedPrice subfield is not populated, then the route contains tolls,
+     * but the estimated price is unknown. If this field is not set, then there
+     * are no tolls expected on the route.
      * </pre>
      *
      * <code>.google.maps.routing.v2.TollInfo toll_info = 2;</code>
@@ -750,11 +885,11 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Encapsulates information about tolls on the Route.
-     * This field is only populated if we expect there are tolls on the Route.
-     * If this field is set but the estimated_price subfield is not populated,
-     * we expect that road contains tolls but we do not know an estimated price.
-     * If this field is not set, then we expect there is no toll on the Route.
+     * Contains information about tolls on the route. This field is only populated
+     * if tolls are expected on the route. If this field is set, but the
+     * estimatedPrice subfield is not populated, then the route contains tolls,
+     * but the estimated price is unknown. If this field is not set, then there
+     * are no tolls expected on the route.
      * </pre>
      *
      * <code>.google.maps.routing.v2.TollInfo toll_info = 2;</code>
@@ -776,11 +911,11 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Encapsulates information about tolls on the Route.
-     * This field is only populated if we expect there are tolls on the Route.
-     * If this field is set but the estimated_price subfield is not populated,
-     * we expect that road contains tolls but we do not know an estimated price.
-     * If this field is not set, then we expect there is no toll on the Route.
+     * Contains information about tolls on the route. This field is only populated
+     * if tolls are expected on the route. If this field is set, but the
+     * estimatedPrice subfield is not populated, then the route contains tolls,
+     * but the estimated price is unknown. If this field is not set, then there
+     * are no tolls expected on the route.
      * </pre>
      *
      * <code>.google.maps.routing.v2.TollInfo toll_info = 2;</code>
@@ -799,11 +934,11 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Encapsulates information about tolls on the Route.
-     * This field is only populated if we expect there are tolls on the Route.
-     * If this field is set but the estimated_price subfield is not populated,
-     * we expect that road contains tolls but we do not know an estimated price.
-     * If this field is not set, then we expect there is no toll on the Route.
+     * Contains information about tolls on the route. This field is only populated
+     * if tolls are expected on the route. If this field is set, but the
+     * estimatedPrice subfield is not populated, then the route contains tolls,
+     * but the estimated price is unknown. If this field is not set, then there
+     * are no tolls expected on the route.
      * </pre>
      *
      * <code>.google.maps.routing.v2.TollInfo toll_info = 2;</code>
@@ -828,11 +963,11 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Encapsulates information about tolls on the Route.
-     * This field is only populated if we expect there are tolls on the Route.
-     * If this field is set but the estimated_price subfield is not populated,
-     * we expect that road contains tolls but we do not know an estimated price.
-     * If this field is not set, then we expect there is no toll on the Route.
+     * Contains information about tolls on the route. This field is only populated
+     * if tolls are expected on the route. If this field is set, but the
+     * estimatedPrice subfield is not populated, then the route contains tolls,
+     * but the estimated price is unknown. If this field is not set, then there
+     * are no tolls expected on the route.
      * </pre>
      *
      * <code>.google.maps.routing.v2.TollInfo toll_info = 2;</code>
@@ -851,11 +986,11 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Encapsulates information about tolls on the Route.
-     * This field is only populated if we expect there are tolls on the Route.
-     * If this field is set but the estimated_price subfield is not populated,
-     * we expect that road contains tolls but we do not know an estimated price.
-     * If this field is not set, then we expect there is no toll on the Route.
+     * Contains information about tolls on the route. This field is only populated
+     * if tolls are expected on the route. If this field is set, but the
+     * estimatedPrice subfield is not populated, then the route contains tolls,
+     * but the estimated price is unknown. If this field is not set, then there
+     * are no tolls expected on the route.
      * </pre>
      *
      * <code>.google.maps.routing.v2.TollInfo toll_info = 2;</code>
@@ -869,11 +1004,11 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Encapsulates information about tolls on the Route.
-     * This field is only populated if we expect there are tolls on the Route.
-     * If this field is set but the estimated_price subfield is not populated,
-     * we expect that road contains tolls but we do not know an estimated price.
-     * If this field is not set, then we expect there is no toll on the Route.
+     * Contains information about tolls on the route. This field is only populated
+     * if tolls are expected on the route. If this field is set, but the
+     * estimatedPrice subfield is not populated, then the route contains tolls,
+     * but the estimated price is unknown. If this field is not set, then there
+     * are no tolls expected on the route.
      * </pre>
      *
      * <code>.google.maps.routing.v2.TollInfo toll_info = 2;</code>
@@ -891,11 +1026,11 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Encapsulates information about tolls on the Route.
-     * This field is only populated if we expect there are tolls on the Route.
-     * If this field is set but the estimated_price subfield is not populated,
-     * we expect that road contains tolls but we do not know an estimated price.
-     * If this field is not set, then we expect there is no toll on the Route.
+     * Contains information about tolls on the route. This field is only populated
+     * if tolls are expected on the route. If this field is set, but the
+     * estimatedPrice subfield is not populated, then the route contains tolls,
+     * but the estimated price is unknown. If this field is not set, then there
+     * are no tolls expected on the route.
      * </pre>
      *
      * <code>.google.maps.routing.v2.TollInfo toll_info = 2;</code>
@@ -944,7 +1079,9 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
      * The intervals cover the entire polyline of the route without overlap.
      * The start point of a specified interval is the same as the end point of the
      * preceding interval.
+     *
      * Example:
+     *
      *     polyline: A ---- B ---- C ---- D ---- E ---- F ---- G
      *     speed_reading_intervals: [A,C), [C,D), [D,G).
      * </pre>
@@ -969,7 +1106,9 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
      * The intervals cover the entire polyline of the route without overlap.
      * The start point of a specified interval is the same as the end point of the
      * preceding interval.
+     *
      * Example:
+     *
      *     polyline: A ---- B ---- C ---- D ---- E ---- F ---- G
      *     speed_reading_intervals: [A,C), [C,D), [D,G).
      * </pre>
@@ -993,7 +1132,9 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
      * The intervals cover the entire polyline of the route without overlap.
      * The start point of a specified interval is the same as the end point of the
      * preceding interval.
+     *
      * Example:
+     *
      *     polyline: A ---- B ---- C ---- D ---- E ---- F ---- G
      *     speed_reading_intervals: [A,C), [C,D), [D,G).
      * </pre>
@@ -1017,7 +1158,9 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
      * The intervals cover the entire polyline of the route without overlap.
      * The start point of a specified interval is the same as the end point of the
      * preceding interval.
+     *
      * Example:
+     *
      *     polyline: A ---- B ---- C ---- D ---- E ---- F ---- G
      *     speed_reading_intervals: [A,C), [C,D), [D,G).
      * </pre>
@@ -1048,7 +1191,9 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
      * The intervals cover the entire polyline of the route without overlap.
      * The start point of a specified interval is the same as the end point of the
      * preceding interval.
+     *
      * Example:
+     *
      *     polyline: A ---- B ---- C ---- D ---- E ---- F ---- G
      *     speed_reading_intervals: [A,C), [C,D), [D,G).
      * </pre>
@@ -1076,7 +1221,9 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
      * The intervals cover the entire polyline of the route without overlap.
      * The start point of a specified interval is the same as the end point of the
      * preceding interval.
+     *
      * Example:
+     *
      *     polyline: A ---- B ---- C ---- D ---- E ---- F ---- G
      *     speed_reading_intervals: [A,C), [C,D), [D,G).
      * </pre>
@@ -1106,7 +1253,9 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
      * The intervals cover the entire polyline of the route without overlap.
      * The start point of a specified interval is the same as the end point of the
      * preceding interval.
+     *
      * Example:
+     *
      *     polyline: A ---- B ---- C ---- D ---- E ---- F ---- G
      *     speed_reading_intervals: [A,C), [C,D), [D,G).
      * </pre>
@@ -1137,7 +1286,9 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
      * The intervals cover the entire polyline of the route without overlap.
      * The start point of a specified interval is the same as the end point of the
      * preceding interval.
+     *
      * Example:
+     *
      *     polyline: A ---- B ---- C ---- D ---- E ---- F ---- G
      *     speed_reading_intervals: [A,C), [C,D), [D,G).
      * </pre>
@@ -1165,7 +1316,9 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
      * The intervals cover the entire polyline of the route without overlap.
      * The start point of a specified interval is the same as the end point of the
      * preceding interval.
+     *
      * Example:
+     *
      *     polyline: A ---- B ---- C ---- D ---- E ---- F ---- G
      *     speed_reading_intervals: [A,C), [C,D), [D,G).
      * </pre>
@@ -1193,7 +1346,9 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
      * The intervals cover the entire polyline of the route without overlap.
      * The start point of a specified interval is the same as the end point of the
      * preceding interval.
+     *
      * Example:
+     *
      *     polyline: A ---- B ---- C ---- D ---- E ---- F ---- G
      *     speed_reading_intervals: [A,C), [C,D), [D,G).
      * </pre>
@@ -1221,7 +1376,9 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
      * The intervals cover the entire polyline of the route without overlap.
      * The start point of a specified interval is the same as the end point of the
      * preceding interval.
+     *
      * Example:
+     *
      *     polyline: A ---- B ---- C ---- D ---- E ---- F ---- G
      *     speed_reading_intervals: [A,C), [C,D), [D,G).
      * </pre>
@@ -1248,7 +1405,9 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
      * The intervals cover the entire polyline of the route without overlap.
      * The start point of a specified interval is the same as the end point of the
      * preceding interval.
+     *
      * Example:
+     *
      *     polyline: A ---- B ---- C ---- D ---- E ---- F ---- G
      *     speed_reading_intervals: [A,C), [C,D), [D,G).
      * </pre>
@@ -1275,7 +1434,9 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
      * The intervals cover the entire polyline of the route without overlap.
      * The start point of a specified interval is the same as the end point of the
      * preceding interval.
+     *
      * Example:
+     *
      *     polyline: A ---- B ---- C ---- D ---- E ---- F ---- G
      *     speed_reading_intervals: [A,C), [C,D), [D,G).
      * </pre>
@@ -1296,7 +1457,9 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
      * The intervals cover the entire polyline of the route without overlap.
      * The start point of a specified interval is the same as the end point of the
      * preceding interval.
+     *
      * Example:
+     *
      *     polyline: A ---- B ---- C ---- D ---- E ---- F ---- G
      *     speed_reading_intervals: [A,C), [C,D), [D,G).
      * </pre>
@@ -1321,7 +1484,9 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
      * The intervals cover the entire polyline of the route without overlap.
      * The start point of a specified interval is the same as the end point of the
      * preceding interval.
+     *
      * Example:
+     *
      *     polyline: A ---- B ---- C ---- D ---- E ---- F ---- G
      *     speed_reading_intervals: [A,C), [C,D), [D,G).
      * </pre>
@@ -1346,7 +1511,9 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
      * The intervals cover the entire polyline of the route without overlap.
      * The start point of a specified interval is the same as the end point of the
      * preceding interval.
+     *
      * Example:
+     *
      *     polyline: A ---- B ---- C ---- D ---- E ---- F ---- G
      *     speed_reading_intervals: [A,C), [C,D), [D,G).
      * </pre>
@@ -1368,7 +1535,9 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
      * The intervals cover the entire polyline of the route without overlap.
      * The start point of a specified interval is the same as the end point of the
      * preceding interval.
+     *
      * Example:
+     *
      *     polyline: A ---- B ---- C ---- D ---- E ---- F ---- G
      *     speed_reading_intervals: [A,C), [C,D), [D,G).
      * </pre>
@@ -1390,7 +1559,9 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
      * The intervals cover the entire polyline of the route without overlap.
      * The start point of a specified interval is the same as the end point of the
      * preceding interval.
+     *
      * Example:
+     *
      *     polyline: A ---- B ---- C ---- D ---- E ---- F ---- G
      *     speed_reading_intervals: [A,C), [C,D), [D,G).
      * </pre>
@@ -1428,7 +1599,7 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The fuel consumption prediction in microliters.
+     * The predicted fuel consumption in microliters.
      * </pre>
      *
      * <code>int64 fuel_consumption_microliters = 5;</code>
@@ -1443,7 +1614,7 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The fuel consumption prediction in microliters.
+     * The predicted fuel consumption in microliters.
      * </pre>
      *
      * <code>int64 fuel_consumption_microliters = 5;</code>
@@ -1462,7 +1633,7 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The fuel consumption prediction in microliters.
+     * The predicted fuel consumption in microliters.
      * </pre>
      *
      * <code>int64 fuel_consumption_microliters = 5;</code>
@@ -1474,6 +1645,255 @@ public final class RouteTravelAdvisory extends com.google.protobuf.GeneratedMess
       fuelConsumptionMicroliters_ = 0L;
       onChanged();
       return this;
+    }
+
+    private boolean routeRestrictionsPartiallyIgnored_;
+    /**
+     *
+     *
+     * <pre>
+     * Returned route may have restrictions that are not suitable for requested
+     * travel mode or route modifiers.
+     * </pre>
+     *
+     * <code>bool route_restrictions_partially_ignored = 6;</code>
+     *
+     * @return The routeRestrictionsPartiallyIgnored.
+     */
+    @java.lang.Override
+    public boolean getRouteRestrictionsPartiallyIgnored() {
+      return routeRestrictionsPartiallyIgnored_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Returned route may have restrictions that are not suitable for requested
+     * travel mode or route modifiers.
+     * </pre>
+     *
+     * <code>bool route_restrictions_partially_ignored = 6;</code>
+     *
+     * @param value The routeRestrictionsPartiallyIgnored to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRouteRestrictionsPartiallyIgnored(boolean value) {
+
+      routeRestrictionsPartiallyIgnored_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Returned route may have restrictions that are not suitable for requested
+     * travel mode or route modifiers.
+     * </pre>
+     *
+     * <code>bool route_restrictions_partially_ignored = 6;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRouteRestrictionsPartiallyIgnored() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      routeRestrictionsPartiallyIgnored_ = false;
+      onChanged();
+      return this;
+    }
+
+    private com.google.type.Money transitFare_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.type.Money, com.google.type.Money.Builder, com.google.type.MoneyOrBuilder>
+        transitFareBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * If present, contains the total fare or ticket costs on this route
+     * This property is only returned for `TRANSIT` requests and only
+     * for routes where fare information is available for all transit steps.
+     * </pre>
+     *
+     * <code>.google.type.Money transit_fare = 7;</code>
+     *
+     * @return Whether the transitFare field is set.
+     */
+    public boolean hasTransitFare() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If present, contains the total fare or ticket costs on this route
+     * This property is only returned for `TRANSIT` requests and only
+     * for routes where fare information is available for all transit steps.
+     * </pre>
+     *
+     * <code>.google.type.Money transit_fare = 7;</code>
+     *
+     * @return The transitFare.
+     */
+    public com.google.type.Money getTransitFare() {
+      if (transitFareBuilder_ == null) {
+        return transitFare_ == null ? com.google.type.Money.getDefaultInstance() : transitFare_;
+      } else {
+        return transitFareBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If present, contains the total fare or ticket costs on this route
+     * This property is only returned for `TRANSIT` requests and only
+     * for routes where fare information is available for all transit steps.
+     * </pre>
+     *
+     * <code>.google.type.Money transit_fare = 7;</code>
+     */
+    public Builder setTransitFare(com.google.type.Money value) {
+      if (transitFareBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        transitFare_ = value;
+      } else {
+        transitFareBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If present, contains the total fare or ticket costs on this route
+     * This property is only returned for `TRANSIT` requests and only
+     * for routes where fare information is available for all transit steps.
+     * </pre>
+     *
+     * <code>.google.type.Money transit_fare = 7;</code>
+     */
+    public Builder setTransitFare(com.google.type.Money.Builder builderForValue) {
+      if (transitFareBuilder_ == null) {
+        transitFare_ = builderForValue.build();
+      } else {
+        transitFareBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If present, contains the total fare or ticket costs on this route
+     * This property is only returned for `TRANSIT` requests and only
+     * for routes where fare information is available for all transit steps.
+     * </pre>
+     *
+     * <code>.google.type.Money transit_fare = 7;</code>
+     */
+    public Builder mergeTransitFare(com.google.type.Money value) {
+      if (transitFareBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)
+            && transitFare_ != null
+            && transitFare_ != com.google.type.Money.getDefaultInstance()) {
+          getTransitFareBuilder().mergeFrom(value);
+        } else {
+          transitFare_ = value;
+        }
+      } else {
+        transitFareBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If present, contains the total fare or ticket costs on this route
+     * This property is only returned for `TRANSIT` requests and only
+     * for routes where fare information is available for all transit steps.
+     * </pre>
+     *
+     * <code>.google.type.Money transit_fare = 7;</code>
+     */
+    public Builder clearTransitFare() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      transitFare_ = null;
+      if (transitFareBuilder_ != null) {
+        transitFareBuilder_.dispose();
+        transitFareBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If present, contains the total fare or ticket costs on this route
+     * This property is only returned for `TRANSIT` requests and only
+     * for routes where fare information is available for all transit steps.
+     * </pre>
+     *
+     * <code>.google.type.Money transit_fare = 7;</code>
+     */
+    public com.google.type.Money.Builder getTransitFareBuilder() {
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return getTransitFareFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If present, contains the total fare or ticket costs on this route
+     * This property is only returned for `TRANSIT` requests and only
+     * for routes where fare information is available for all transit steps.
+     * </pre>
+     *
+     * <code>.google.type.Money transit_fare = 7;</code>
+     */
+    public com.google.type.MoneyOrBuilder getTransitFareOrBuilder() {
+      if (transitFareBuilder_ != null) {
+        return transitFareBuilder_.getMessageOrBuilder();
+      } else {
+        return transitFare_ == null ? com.google.type.Money.getDefaultInstance() : transitFare_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If present, contains the total fare or ticket costs on this route
+     * This property is only returned for `TRANSIT` requests and only
+     * for routes where fare information is available for all transit steps.
+     * </pre>
+     *
+     * <code>.google.type.Money transit_fare = 7;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.type.Money, com.google.type.Money.Builder, com.google.type.MoneyOrBuilder>
+        getTransitFareFieldBuilder() {
+      if (transitFareBuilder_ == null) {
+        transitFareBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.type.Money,
+                com.google.type.Money.Builder,
+                com.google.type.MoneyOrBuilder>(
+                getTransitFare(), getParentForChildren(), isClean());
+        transitFare_ = null;
+      }
+      return transitFareBuilder_;
     }
 
     @java.lang.Override

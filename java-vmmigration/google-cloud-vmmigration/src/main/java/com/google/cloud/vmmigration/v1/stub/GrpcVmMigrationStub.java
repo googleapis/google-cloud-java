@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,6 +33,7 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -113,7 +114,6 @@ import com.google.cloud.vmmigration.v1.UpdateTargetProjectRequest;
 import com.google.cloud.vmmigration.v1.UpgradeApplianceRequest;
 import com.google.cloud.vmmigration.v1.UpgradeApplianceResponse;
 import com.google.cloud.vmmigration.v1.UtilizationReport;
-import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
@@ -800,9 +800,9 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
             .setMethodDescriptor(listSourcesMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetSourceRequest, Source> getSourceTransportSettings =
@@ -810,9 +810,9 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
             .setMethodDescriptor(getSourceMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CreateSourceRequest, Operation> createSourceTransportSettings =
@@ -820,9 +820,9 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
             .setMethodDescriptor(createSourceMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateSourceRequest, Operation> updateSourceTransportSettings =
@@ -830,9 +830,9 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
             .setMethodDescriptor(updateSourceMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("source.name", String.valueOf(request.getSource().getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("source.name", String.valueOf(request.getSource().getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteSourceRequest, Operation> deleteSourceTransportSettings =
@@ -840,9 +840,9 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
             .setMethodDescriptor(deleteSourceMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<FetchInventoryRequest, FetchInventoryResponse>
@@ -851,9 +851,9 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
                 .setMethodDescriptor(fetchInventoryMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("source", String.valueOf(request.getSource()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("source", String.valueOf(request.getSource()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<ListUtilizationReportsRequest, ListUtilizationReportsResponse>
@@ -863,9 +863,9 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
                 .setMethodDescriptor(listUtilizationReportsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetUtilizationReportRequest, UtilizationReport>
@@ -874,9 +874,9 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
                 .setMethodDescriptor(getUtilizationReportMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<CreateUtilizationReportRequest, Operation>
@@ -885,9 +885,9 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
                 .setMethodDescriptor(createUtilizationReportMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<DeleteUtilizationReportRequest, Operation>
@@ -896,9 +896,9 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
                 .setMethodDescriptor(deleteUtilizationReportMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<ListDatacenterConnectorsRequest, ListDatacenterConnectorsResponse>
@@ -908,9 +908,9 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
                 .setMethodDescriptor(listDatacenterConnectorsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetDatacenterConnectorRequest, DatacenterConnector>
@@ -919,9 +919,9 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
                 .setMethodDescriptor(getDatacenterConnectorMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<CreateDatacenterConnectorRequest, Operation>
@@ -930,9 +930,9 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
                 .setMethodDescriptor(createDatacenterConnectorMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<DeleteDatacenterConnectorRequest, Operation>
@@ -941,9 +941,9 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
                 .setMethodDescriptor(deleteDatacenterConnectorMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<UpgradeApplianceRequest, Operation> upgradeApplianceTransportSettings =
@@ -951,10 +951,10 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
             .setMethodDescriptor(upgradeApplianceMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put(
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
                       "datacenter_connector", String.valueOf(request.getDatacenterConnector()));
-                  return params.build();
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CreateMigratingVmRequest, Operation> createMigratingVmTransportSettings =
@@ -962,9 +962,9 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
             .setMethodDescriptor(createMigratingVmMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListMigratingVmsRequest, ListMigratingVmsResponse>
@@ -973,9 +973,9 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
                 .setMethodDescriptor(listMigratingVmsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetMigratingVmRequest, MigratingVm> getMigratingVmTransportSettings =
@@ -983,9 +983,9 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
             .setMethodDescriptor(getMigratingVmMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateMigratingVmRequest, Operation> updateMigratingVmTransportSettings =
@@ -993,10 +993,10 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
             .setMethodDescriptor(updateMigratingVmMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put(
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
                       "migrating_vm.name", String.valueOf(request.getMigratingVm().getName()));
-                  return params.build();
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteMigratingVmRequest, Operation> deleteMigratingVmTransportSettings =
@@ -1004,9 +1004,9 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
             .setMethodDescriptor(deleteMigratingVmMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<StartMigrationRequest, Operation> startMigrationTransportSettings =
@@ -1014,9 +1014,9 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
             .setMethodDescriptor(startMigrationMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("migrating_vm", String.valueOf(request.getMigratingVm()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("migrating_vm", String.valueOf(request.getMigratingVm()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ResumeMigrationRequest, Operation> resumeMigrationTransportSettings =
@@ -1024,9 +1024,9 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
             .setMethodDescriptor(resumeMigrationMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("migrating_vm", String.valueOf(request.getMigratingVm()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("migrating_vm", String.valueOf(request.getMigratingVm()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<PauseMigrationRequest, Operation> pauseMigrationTransportSettings =
@@ -1034,9 +1034,9 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
             .setMethodDescriptor(pauseMigrationMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("migrating_vm", String.valueOf(request.getMigratingVm()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("migrating_vm", String.valueOf(request.getMigratingVm()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<FinalizeMigrationRequest, Operation> finalizeMigrationTransportSettings =
@@ -1044,9 +1044,9 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
             .setMethodDescriptor(finalizeMigrationMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("migrating_vm", String.valueOf(request.getMigratingVm()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("migrating_vm", String.valueOf(request.getMigratingVm()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CreateCloneJobRequest, Operation> createCloneJobTransportSettings =
@@ -1054,9 +1054,9 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
             .setMethodDescriptor(createCloneJobMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CancelCloneJobRequest, Operation> cancelCloneJobTransportSettings =
@@ -1064,9 +1064,9 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
             .setMethodDescriptor(cancelCloneJobMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListCloneJobsRequest, ListCloneJobsResponse> listCloneJobsTransportSettings =
@@ -1074,9 +1074,9 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
             .setMethodDescriptor(listCloneJobsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetCloneJobRequest, CloneJob> getCloneJobTransportSettings =
@@ -1084,9 +1084,9 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
             .setMethodDescriptor(getCloneJobMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CreateCutoverJobRequest, Operation> createCutoverJobTransportSettings =
@@ -1094,9 +1094,9 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
             .setMethodDescriptor(createCutoverJobMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CancelCutoverJobRequest, Operation> cancelCutoverJobTransportSettings =
@@ -1104,9 +1104,9 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
             .setMethodDescriptor(cancelCutoverJobMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListCutoverJobsRequest, ListCutoverJobsResponse>
@@ -1115,9 +1115,9 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
                 .setMethodDescriptor(listCutoverJobsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetCutoverJobRequest, CutoverJob> getCutoverJobTransportSettings =
@@ -1125,9 +1125,9 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
             .setMethodDescriptor(getCutoverJobMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListGroupsRequest, ListGroupsResponse> listGroupsTransportSettings =
@@ -1135,9 +1135,9 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
             .setMethodDescriptor(listGroupsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetGroupRequest, Group> getGroupTransportSettings =
@@ -1145,9 +1145,9 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
             .setMethodDescriptor(getGroupMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CreateGroupRequest, Operation> createGroupTransportSettings =
@@ -1155,9 +1155,9 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
             .setMethodDescriptor(createGroupMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateGroupRequest, Operation> updateGroupTransportSettings =
@@ -1165,9 +1165,9 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
             .setMethodDescriptor(updateGroupMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("group.name", String.valueOf(request.getGroup().getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("group.name", String.valueOf(request.getGroup().getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteGroupRequest, Operation> deleteGroupTransportSettings =
@@ -1175,9 +1175,9 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
             .setMethodDescriptor(deleteGroupMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<AddGroupMigrationRequest, Operation> addGroupMigrationTransportSettings =
@@ -1185,9 +1185,9 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
             .setMethodDescriptor(addGroupMigrationMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("group", String.valueOf(request.getGroup()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("group", String.valueOf(request.getGroup()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<RemoveGroupMigrationRequest, Operation> removeGroupMigrationTransportSettings =
@@ -1195,9 +1195,9 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
             .setMethodDescriptor(removeGroupMigrationMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("group", String.valueOf(request.getGroup()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("group", String.valueOf(request.getGroup()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListTargetProjectsRequest, ListTargetProjectsResponse>
@@ -1206,9 +1206,9 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
                 .setMethodDescriptor(listTargetProjectsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetTargetProjectRequest, TargetProject> getTargetProjectTransportSettings =
@@ -1216,9 +1216,9 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
             .setMethodDescriptor(getTargetProjectMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CreateTargetProjectRequest, Operation> createTargetProjectTransportSettings =
@@ -1226,9 +1226,9 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
             .setMethodDescriptor(createTargetProjectMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateTargetProjectRequest, Operation> updateTargetProjectTransportSettings =
@@ -1236,10 +1236,10 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
             .setMethodDescriptor(updateTargetProjectMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put(
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
                       "target_project.name", String.valueOf(request.getTargetProject().getName()));
-                  return params.build();
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteTargetProjectRequest, Operation> deleteTargetProjectTransportSettings =
@@ -1247,9 +1247,9 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
             .setMethodDescriptor(deleteTargetProjectMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListReplicationCyclesRequest, ListReplicationCyclesResponse>
@@ -1259,9 +1259,9 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
                 .setMethodDescriptor(listReplicationCyclesMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetReplicationCycleRequest, ReplicationCycle>
@@ -1270,9 +1270,9 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
                 .setMethodDescriptor(getReplicationCycleMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
@@ -1280,9 +1280,9 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
             .setMethodDescriptor(listLocationsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetLocationRequest, Location> getLocationTransportSettings =
@@ -1290,9 +1290,9 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
             .setMethodDescriptor(getLocationMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
 

@@ -25,6 +25,9 @@
             "DeleteRepository": {
               "methods": ["deleteRepositoryAsync", "deleteRepositoryAsync", "deleteRepositoryAsync", "deleteRepositoryOperationCallable", "deleteRepositoryCallable"]
             },
+            "FetchGitRefs": {
+              "methods": ["fetchGitRefs", "fetchGitRefs", "fetchGitRefs", "fetchGitRefsCallable"]
+            },
             "FetchLinkableRepositories": {
               "methods": ["fetchLinkableRepositories", "fetchLinkableRepositoriesPagedCallable", "fetchLinkableRepositoriesCallable"]
             },

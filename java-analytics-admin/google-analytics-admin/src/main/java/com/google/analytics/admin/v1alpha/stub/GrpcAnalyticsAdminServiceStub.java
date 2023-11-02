@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,10 +16,10 @@
 
 package com.google.analytics.admin.v1alpha.stub;
 
-import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.AuditUserLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccessBindingsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccountSummariesPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccountsPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAdSenseLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAudiencesPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListBigQueryLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListChannelGroupsPagedResponse;
@@ -29,19 +29,22 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Lis
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListDataStreamsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListDisplayVideo360AdvertiserLinkProposalsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListDisplayVideo360AdvertiserLinksPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListEventCreateRulesPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListExpandedDataSetsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListFirebaseLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListGoogleAdsLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListMeasurementProtocolSecretsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListPropertiesPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListRollupPropertySourceLinksPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListSKAdNetworkConversionValueSchemasPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListSearchAds360LinksPagedResponse;
-import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListUserLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.SearchChangeHistoryEventsPagedResponse;
 
 import com.google.analytics.admin.v1alpha.AccessBinding;
 import com.google.analytics.admin.v1alpha.Account;
 import com.google.analytics.admin.v1alpha.AcknowledgeUserDataCollectionRequest;
 import com.google.analytics.admin.v1alpha.AcknowledgeUserDataCollectionResponse;
+import com.google.analytics.admin.v1alpha.AdSenseLink;
 import com.google.analytics.admin.v1alpha.ApproveDisplayVideo360AdvertiserLinkProposalRequest;
 import com.google.analytics.admin.v1alpha.ApproveDisplayVideo360AdvertiserLinkProposalResponse;
 import com.google.analytics.admin.v1alpha.ArchiveAudienceRequest;
@@ -49,27 +52,19 @@ import com.google.analytics.admin.v1alpha.ArchiveCustomDimensionRequest;
 import com.google.analytics.admin.v1alpha.ArchiveCustomMetricRequest;
 import com.google.analytics.admin.v1alpha.AttributionSettings;
 import com.google.analytics.admin.v1alpha.Audience;
-import com.google.analytics.admin.v1alpha.AuditUserLinksRequest;
-import com.google.analytics.admin.v1alpha.AuditUserLinksResponse;
 import com.google.analytics.admin.v1alpha.BatchCreateAccessBindingsRequest;
 import com.google.analytics.admin.v1alpha.BatchCreateAccessBindingsResponse;
-import com.google.analytics.admin.v1alpha.BatchCreateUserLinksRequest;
-import com.google.analytics.admin.v1alpha.BatchCreateUserLinksResponse;
 import com.google.analytics.admin.v1alpha.BatchDeleteAccessBindingsRequest;
-import com.google.analytics.admin.v1alpha.BatchDeleteUserLinksRequest;
 import com.google.analytics.admin.v1alpha.BatchGetAccessBindingsRequest;
 import com.google.analytics.admin.v1alpha.BatchGetAccessBindingsResponse;
-import com.google.analytics.admin.v1alpha.BatchGetUserLinksRequest;
-import com.google.analytics.admin.v1alpha.BatchGetUserLinksResponse;
 import com.google.analytics.admin.v1alpha.BatchUpdateAccessBindingsRequest;
 import com.google.analytics.admin.v1alpha.BatchUpdateAccessBindingsResponse;
-import com.google.analytics.admin.v1alpha.BatchUpdateUserLinksRequest;
-import com.google.analytics.admin.v1alpha.BatchUpdateUserLinksResponse;
 import com.google.analytics.admin.v1alpha.BigQueryLink;
 import com.google.analytics.admin.v1alpha.CancelDisplayVideo360AdvertiserLinkProposalRequest;
 import com.google.analytics.admin.v1alpha.ChannelGroup;
 import com.google.analytics.admin.v1alpha.ConversionEvent;
 import com.google.analytics.admin.v1alpha.CreateAccessBindingRequest;
+import com.google.analytics.admin.v1alpha.CreateAdSenseLinkRequest;
 import com.google.analytics.admin.v1alpha.CreateAudienceRequest;
 import com.google.analytics.admin.v1alpha.CreateChannelGroupRequest;
 import com.google.analytics.admin.v1alpha.CreateConnectedSiteTagRequest;
@@ -80,36 +75,49 @@ import com.google.analytics.admin.v1alpha.CreateCustomMetricRequest;
 import com.google.analytics.admin.v1alpha.CreateDataStreamRequest;
 import com.google.analytics.admin.v1alpha.CreateDisplayVideo360AdvertiserLinkProposalRequest;
 import com.google.analytics.admin.v1alpha.CreateDisplayVideo360AdvertiserLinkRequest;
+import com.google.analytics.admin.v1alpha.CreateEventCreateRuleRequest;
 import com.google.analytics.admin.v1alpha.CreateExpandedDataSetRequest;
 import com.google.analytics.admin.v1alpha.CreateFirebaseLinkRequest;
 import com.google.analytics.admin.v1alpha.CreateGoogleAdsLinkRequest;
 import com.google.analytics.admin.v1alpha.CreateMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1alpha.CreatePropertyRequest;
+import com.google.analytics.admin.v1alpha.CreateRollupPropertyRequest;
+import com.google.analytics.admin.v1alpha.CreateRollupPropertyResponse;
+import com.google.analytics.admin.v1alpha.CreateRollupPropertySourceLinkRequest;
+import com.google.analytics.admin.v1alpha.CreateSKAdNetworkConversionValueSchemaRequest;
 import com.google.analytics.admin.v1alpha.CreateSearchAds360LinkRequest;
-import com.google.analytics.admin.v1alpha.CreateUserLinkRequest;
+import com.google.analytics.admin.v1alpha.CreateSubpropertyEventFilterRequest;
+import com.google.analytics.admin.v1alpha.CreateSubpropertyRequest;
+import com.google.analytics.admin.v1alpha.CreateSubpropertyResponse;
 import com.google.analytics.admin.v1alpha.CustomDimension;
 import com.google.analytics.admin.v1alpha.CustomMetric;
+import com.google.analytics.admin.v1alpha.DataRedactionSettings;
 import com.google.analytics.admin.v1alpha.DataRetentionSettings;
 import com.google.analytics.admin.v1alpha.DataSharingSettings;
 import com.google.analytics.admin.v1alpha.DataStream;
 import com.google.analytics.admin.v1alpha.DeleteAccessBindingRequest;
 import com.google.analytics.admin.v1alpha.DeleteAccountRequest;
+import com.google.analytics.admin.v1alpha.DeleteAdSenseLinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteChannelGroupRequest;
 import com.google.analytics.admin.v1alpha.DeleteConnectedSiteTagRequest;
 import com.google.analytics.admin.v1alpha.DeleteConversionEventRequest;
 import com.google.analytics.admin.v1alpha.DeleteDataStreamRequest;
 import com.google.analytics.admin.v1alpha.DeleteDisplayVideo360AdvertiserLinkProposalRequest;
 import com.google.analytics.admin.v1alpha.DeleteDisplayVideo360AdvertiserLinkRequest;
+import com.google.analytics.admin.v1alpha.DeleteEventCreateRuleRequest;
 import com.google.analytics.admin.v1alpha.DeleteExpandedDataSetRequest;
 import com.google.analytics.admin.v1alpha.DeleteFirebaseLinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteGoogleAdsLinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1alpha.DeletePropertyRequest;
+import com.google.analytics.admin.v1alpha.DeleteRollupPropertySourceLinkRequest;
+import com.google.analytics.admin.v1alpha.DeleteSKAdNetworkConversionValueSchemaRequest;
 import com.google.analytics.admin.v1alpha.DeleteSearchAds360LinkRequest;
-import com.google.analytics.admin.v1alpha.DeleteUserLinkRequest;
+import com.google.analytics.admin.v1alpha.DeleteSubpropertyEventFilterRequest;
 import com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink;
 import com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal;
 import com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings;
+import com.google.analytics.admin.v1alpha.EventCreateRule;
 import com.google.analytics.admin.v1alpha.ExpandedDataSet;
 import com.google.analytics.admin.v1alpha.FetchAutomatedGa4ConfigurationOptOutRequest;
 import com.google.analytics.admin.v1alpha.FetchAutomatedGa4ConfigurationOptOutResponse;
@@ -118,6 +126,7 @@ import com.google.analytics.admin.v1alpha.FetchConnectedGa4PropertyResponse;
 import com.google.analytics.admin.v1alpha.FirebaseLink;
 import com.google.analytics.admin.v1alpha.GetAccessBindingRequest;
 import com.google.analytics.admin.v1alpha.GetAccountRequest;
+import com.google.analytics.admin.v1alpha.GetAdSenseLinkRequest;
 import com.google.analytics.admin.v1alpha.GetAttributionSettingsRequest;
 import com.google.analytics.admin.v1alpha.GetAudienceRequest;
 import com.google.analytics.admin.v1alpha.GetBigQueryLinkRequest;
@@ -125,19 +134,22 @@ import com.google.analytics.admin.v1alpha.GetChannelGroupRequest;
 import com.google.analytics.admin.v1alpha.GetConversionEventRequest;
 import com.google.analytics.admin.v1alpha.GetCustomDimensionRequest;
 import com.google.analytics.admin.v1alpha.GetCustomMetricRequest;
+import com.google.analytics.admin.v1alpha.GetDataRedactionSettingsRequest;
 import com.google.analytics.admin.v1alpha.GetDataRetentionSettingsRequest;
 import com.google.analytics.admin.v1alpha.GetDataSharingSettingsRequest;
 import com.google.analytics.admin.v1alpha.GetDataStreamRequest;
 import com.google.analytics.admin.v1alpha.GetDisplayVideo360AdvertiserLinkProposalRequest;
 import com.google.analytics.admin.v1alpha.GetDisplayVideo360AdvertiserLinkRequest;
 import com.google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest;
+import com.google.analytics.admin.v1alpha.GetEventCreateRuleRequest;
 import com.google.analytics.admin.v1alpha.GetExpandedDataSetRequest;
 import com.google.analytics.admin.v1alpha.GetGlobalSiteTagRequest;
 import com.google.analytics.admin.v1alpha.GetGoogleSignalsSettingsRequest;
 import com.google.analytics.admin.v1alpha.GetMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1alpha.GetPropertyRequest;
+import com.google.analytics.admin.v1alpha.GetRollupPropertySourceLinkRequest;
+import com.google.analytics.admin.v1alpha.GetSKAdNetworkConversionValueSchemaRequest;
 import com.google.analytics.admin.v1alpha.GetSearchAds360LinkRequest;
-import com.google.analytics.admin.v1alpha.GetUserLinkRequest;
 import com.google.analytics.admin.v1alpha.GlobalSiteTag;
 import com.google.analytics.admin.v1alpha.GoogleAdsLink;
 import com.google.analytics.admin.v1alpha.GoogleSignalsSettings;
@@ -147,6 +159,8 @@ import com.google.analytics.admin.v1alpha.ListAccountSummariesRequest;
 import com.google.analytics.admin.v1alpha.ListAccountSummariesResponse;
 import com.google.analytics.admin.v1alpha.ListAccountsRequest;
 import com.google.analytics.admin.v1alpha.ListAccountsResponse;
+import com.google.analytics.admin.v1alpha.ListAdSenseLinksRequest;
+import com.google.analytics.admin.v1alpha.ListAdSenseLinksResponse;
 import com.google.analytics.admin.v1alpha.ListAudiencesRequest;
 import com.google.analytics.admin.v1alpha.ListAudiencesResponse;
 import com.google.analytics.admin.v1alpha.ListBigQueryLinksRequest;
@@ -167,6 +181,8 @@ import com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinkPropo
 import com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinkProposalsResponse;
 import com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinksRequest;
 import com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinksResponse;
+import com.google.analytics.admin.v1alpha.ListEventCreateRulesRequest;
+import com.google.analytics.admin.v1alpha.ListEventCreateRulesResponse;
 import com.google.analytics.admin.v1alpha.ListExpandedDataSetsRequest;
 import com.google.analytics.admin.v1alpha.ListExpandedDataSetsResponse;
 import com.google.analytics.admin.v1alpha.ListFirebaseLinksRequest;
@@ -177,48 +193,55 @@ import com.google.analytics.admin.v1alpha.ListMeasurementProtocolSecretsRequest;
 import com.google.analytics.admin.v1alpha.ListMeasurementProtocolSecretsResponse;
 import com.google.analytics.admin.v1alpha.ListPropertiesRequest;
 import com.google.analytics.admin.v1alpha.ListPropertiesResponse;
+import com.google.analytics.admin.v1alpha.ListRollupPropertySourceLinksRequest;
+import com.google.analytics.admin.v1alpha.ListRollupPropertySourceLinksResponse;
+import com.google.analytics.admin.v1alpha.ListSKAdNetworkConversionValueSchemasRequest;
+import com.google.analytics.admin.v1alpha.ListSKAdNetworkConversionValueSchemasResponse;
 import com.google.analytics.admin.v1alpha.ListSearchAds360LinksRequest;
 import com.google.analytics.admin.v1alpha.ListSearchAds360LinksResponse;
-import com.google.analytics.admin.v1alpha.ListUserLinksRequest;
-import com.google.analytics.admin.v1alpha.ListUserLinksResponse;
 import com.google.analytics.admin.v1alpha.MeasurementProtocolSecret;
 import com.google.analytics.admin.v1alpha.Property;
 import com.google.analytics.admin.v1alpha.ProvisionAccountTicketRequest;
 import com.google.analytics.admin.v1alpha.ProvisionAccountTicketResponse;
+import com.google.analytics.admin.v1alpha.RollupPropertySourceLink;
 import com.google.analytics.admin.v1alpha.RunAccessReportRequest;
 import com.google.analytics.admin.v1alpha.RunAccessReportResponse;
+import com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema;
 import com.google.analytics.admin.v1alpha.SearchAds360Link;
 import com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsRequest;
 import com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsResponse;
 import com.google.analytics.admin.v1alpha.SetAutomatedGa4ConfigurationOptOutRequest;
 import com.google.analytics.admin.v1alpha.SetAutomatedGa4ConfigurationOptOutResponse;
+import com.google.analytics.admin.v1alpha.SubpropertyEventFilter;
 import com.google.analytics.admin.v1alpha.UpdateAccessBindingRequest;
 import com.google.analytics.admin.v1alpha.UpdateAccountRequest;
 import com.google.analytics.admin.v1alpha.UpdateAttributionSettingsRequest;
 import com.google.analytics.admin.v1alpha.UpdateAudienceRequest;
 import com.google.analytics.admin.v1alpha.UpdateChannelGroupRequest;
+import com.google.analytics.admin.v1alpha.UpdateConversionEventRequest;
 import com.google.analytics.admin.v1alpha.UpdateCustomDimensionRequest;
 import com.google.analytics.admin.v1alpha.UpdateCustomMetricRequest;
+import com.google.analytics.admin.v1alpha.UpdateDataRedactionSettingsRequest;
 import com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest;
 import com.google.analytics.admin.v1alpha.UpdateDataStreamRequest;
 import com.google.analytics.admin.v1alpha.UpdateDisplayVideo360AdvertiserLinkRequest;
 import com.google.analytics.admin.v1alpha.UpdateEnhancedMeasurementSettingsRequest;
+import com.google.analytics.admin.v1alpha.UpdateEventCreateRuleRequest;
 import com.google.analytics.admin.v1alpha.UpdateExpandedDataSetRequest;
 import com.google.analytics.admin.v1alpha.UpdateGoogleAdsLinkRequest;
 import com.google.analytics.admin.v1alpha.UpdateGoogleSignalsSettingsRequest;
 import com.google.analytics.admin.v1alpha.UpdateMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1alpha.UpdatePropertyRequest;
+import com.google.analytics.admin.v1alpha.UpdateSKAdNetworkConversionValueSchemaRequest;
 import com.google.analytics.admin.v1alpha.UpdateSearchAds360LinkRequest;
-import com.google.analytics.admin.v1alpha.UpdateUserLinkRequest;
-import com.google.analytics.admin.v1alpha.UserLink;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
@@ -351,118 +374,6 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdatePropertyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Property.getDefaultInstance()))
-              .build();
-
-  private static final MethodDescriptor<GetUserLinkRequest, UserLink> getUserLinkMethodDescriptor =
-      MethodDescriptor.<GetUserLinkRequest, UserLink>newBuilder()
-          .setType(MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName("google.analytics.admin.v1alpha.AnalyticsAdminService/GetUserLink")
-          .setRequestMarshaller(ProtoUtils.marshaller(GetUserLinkRequest.getDefaultInstance()))
-          .setResponseMarshaller(ProtoUtils.marshaller(UserLink.getDefaultInstance()))
-          .build();
-
-  private static final MethodDescriptor<BatchGetUserLinksRequest, BatchGetUserLinksResponse>
-      batchGetUserLinksMethodDescriptor =
-          MethodDescriptor.<BatchGetUserLinksRequest, BatchGetUserLinksResponse>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.analytics.admin.v1alpha.AnalyticsAdminService/BatchGetUserLinks")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(BatchGetUserLinksRequest.getDefaultInstance()))
-              .setResponseMarshaller(
-                  ProtoUtils.marshaller(BatchGetUserLinksResponse.getDefaultInstance()))
-              .build();
-
-  private static final MethodDescriptor<ListUserLinksRequest, ListUserLinksResponse>
-      listUserLinksMethodDescriptor =
-          MethodDescriptor.<ListUserLinksRequest, ListUserLinksResponse>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.analytics.admin.v1alpha.AnalyticsAdminService/ListUserLinks")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(ListUserLinksRequest.getDefaultInstance()))
-              .setResponseMarshaller(
-                  ProtoUtils.marshaller(ListUserLinksResponse.getDefaultInstance()))
-              .build();
-
-  private static final MethodDescriptor<AuditUserLinksRequest, AuditUserLinksResponse>
-      auditUserLinksMethodDescriptor =
-          MethodDescriptor.<AuditUserLinksRequest, AuditUserLinksResponse>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.analytics.admin.v1alpha.AnalyticsAdminService/AuditUserLinks")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(AuditUserLinksRequest.getDefaultInstance()))
-              .setResponseMarshaller(
-                  ProtoUtils.marshaller(AuditUserLinksResponse.getDefaultInstance()))
-              .build();
-
-  private static final MethodDescriptor<CreateUserLinkRequest, UserLink>
-      createUserLinkMethodDescriptor =
-          MethodDescriptor.<CreateUserLinkRequest, UserLink>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.analytics.admin.v1alpha.AnalyticsAdminService/CreateUserLink")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(CreateUserLinkRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(UserLink.getDefaultInstance()))
-              .build();
-
-  private static final MethodDescriptor<BatchCreateUserLinksRequest, BatchCreateUserLinksResponse>
-      batchCreateUserLinksMethodDescriptor =
-          MethodDescriptor.<BatchCreateUserLinksRequest, BatchCreateUserLinksResponse>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.analytics.admin.v1alpha.AnalyticsAdminService/BatchCreateUserLinks")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(BatchCreateUserLinksRequest.getDefaultInstance()))
-              .setResponseMarshaller(
-                  ProtoUtils.marshaller(BatchCreateUserLinksResponse.getDefaultInstance()))
-              .build();
-
-  private static final MethodDescriptor<UpdateUserLinkRequest, UserLink>
-      updateUserLinkMethodDescriptor =
-          MethodDescriptor.<UpdateUserLinkRequest, UserLink>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.analytics.admin.v1alpha.AnalyticsAdminService/UpdateUserLink")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(UpdateUserLinkRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(UserLink.getDefaultInstance()))
-              .build();
-
-  private static final MethodDescriptor<BatchUpdateUserLinksRequest, BatchUpdateUserLinksResponse>
-      batchUpdateUserLinksMethodDescriptor =
-          MethodDescriptor.<BatchUpdateUserLinksRequest, BatchUpdateUserLinksResponse>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.analytics.admin.v1alpha.AnalyticsAdminService/BatchUpdateUserLinks")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(BatchUpdateUserLinksRequest.getDefaultInstance()))
-              .setResponseMarshaller(
-                  ProtoUtils.marshaller(BatchUpdateUserLinksResponse.getDefaultInstance()))
-              .build();
-
-  private static final MethodDescriptor<DeleteUserLinkRequest, Empty>
-      deleteUserLinkMethodDescriptor =
-          MethodDescriptor.<DeleteUserLinkRequest, Empty>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.analytics.admin.v1alpha.AnalyticsAdminService/DeleteUserLink")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(DeleteUserLinkRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
-              .build();
-
-  private static final MethodDescriptor<BatchDeleteUserLinksRequest, Empty>
-      batchDeleteUserLinksMethodDescriptor =
-          MethodDescriptor.<BatchDeleteUserLinksRequest, Empty>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.analytics.admin.v1alpha.AnalyticsAdminService/BatchDeleteUserLinks")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(BatchDeleteUserLinksRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
 
   private static final MethodDescriptor<CreateFirebaseLinkRequest, FirebaseLink>
@@ -655,6 +566,85 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .build();
 
   private static final MethodDescriptor<
+          GetSKAdNetworkConversionValueSchemaRequest, SKAdNetworkConversionValueSchema>
+      getSKAdNetworkConversionValueSchemaMethodDescriptor =
+          MethodDescriptor
+              .<GetSKAdNetworkConversionValueSchemaRequest, SKAdNetworkConversionValueSchema>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/GetSKAdNetworkConversionValueSchema")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      GetSKAdNetworkConversionValueSchemaRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(SKAdNetworkConversionValueSchema.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          CreateSKAdNetworkConversionValueSchemaRequest, SKAdNetworkConversionValueSchema>
+      createSKAdNetworkConversionValueSchemaMethodDescriptor =
+          MethodDescriptor
+              .<CreateSKAdNetworkConversionValueSchemaRequest, SKAdNetworkConversionValueSchema>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/CreateSKAdNetworkConversionValueSchema")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      CreateSKAdNetworkConversionValueSchemaRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(SKAdNetworkConversionValueSchema.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteSKAdNetworkConversionValueSchemaRequest, Empty>
+      deleteSKAdNetworkConversionValueSchemaMethodDescriptor =
+          MethodDescriptor.<DeleteSKAdNetworkConversionValueSchemaRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/DeleteSKAdNetworkConversionValueSchema")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      DeleteSKAdNetworkConversionValueSchemaRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          UpdateSKAdNetworkConversionValueSchemaRequest, SKAdNetworkConversionValueSchema>
+      updateSKAdNetworkConversionValueSchemaMethodDescriptor =
+          MethodDescriptor
+              .<UpdateSKAdNetworkConversionValueSchemaRequest, SKAdNetworkConversionValueSchema>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/UpdateSKAdNetworkConversionValueSchema")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      UpdateSKAdNetworkConversionValueSchemaRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(SKAdNetworkConversionValueSchema.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          ListSKAdNetworkConversionValueSchemasRequest,
+          ListSKAdNetworkConversionValueSchemasResponse>
+      listSKAdNetworkConversionValueSchemasMethodDescriptor =
+          MethodDescriptor
+              .<ListSKAdNetworkConversionValueSchemasRequest,
+                  ListSKAdNetworkConversionValueSchemasResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/ListSKAdNetworkConversionValueSchemas")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      ListSKAdNetworkConversionValueSchemasRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(
+                      ListSKAdNetworkConversionValueSchemasResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
           SearchChangeHistoryEventsRequest, SearchChangeHistoryEventsResponse>
       searchChangeHistoryEventsMethodDescriptor =
           MethodDescriptor
@@ -700,6 +690,17 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   "google.analytics.admin.v1alpha.AnalyticsAdminService/CreateConversionEvent")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateConversionEventRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ConversionEvent.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UpdateConversionEventRequest, ConversionEvent>
+      updateConversionEventMethodDescriptor =
+          MethodDescriptor.<UpdateConversionEventRequest, ConversionEvent>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/UpdateConversionEvent")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateConversionEventRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ConversionEvent.getDefaultInstance()))
               .build();
 
@@ -1612,6 +1613,232 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   ProtoUtils.marshaller(FetchConnectedGa4PropertyResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<GetAdSenseLinkRequest, AdSenseLink>
+      getAdSenseLinkMethodDescriptor =
+          MethodDescriptor.<GetAdSenseLinkRequest, AdSenseLink>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/GetAdSenseLink")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetAdSenseLinkRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(AdSenseLink.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<CreateAdSenseLinkRequest, AdSenseLink>
+      createAdSenseLinkMethodDescriptor =
+          MethodDescriptor.<CreateAdSenseLinkRequest, AdSenseLink>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/CreateAdSenseLink")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateAdSenseLinkRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(AdSenseLink.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteAdSenseLinkRequest, Empty>
+      deleteAdSenseLinkMethodDescriptor =
+          MethodDescriptor.<DeleteAdSenseLinkRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/DeleteAdSenseLink")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteAdSenseLinkRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ListAdSenseLinksRequest, ListAdSenseLinksResponse>
+      listAdSenseLinksMethodDescriptor =
+          MethodDescriptor.<ListAdSenseLinksRequest, ListAdSenseLinksResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/ListAdSenseLinks")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListAdSenseLinksRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListAdSenseLinksResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetEventCreateRuleRequest, EventCreateRule>
+      getEventCreateRuleMethodDescriptor =
+          MethodDescriptor.<GetEventCreateRuleRequest, EventCreateRule>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/GetEventCreateRule")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetEventCreateRuleRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(EventCreateRule.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ListEventCreateRulesRequest, ListEventCreateRulesResponse>
+      listEventCreateRulesMethodDescriptor =
+          MethodDescriptor.<ListEventCreateRulesRequest, ListEventCreateRulesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/ListEventCreateRules")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListEventCreateRulesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListEventCreateRulesResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<CreateEventCreateRuleRequest, EventCreateRule>
+      createEventCreateRuleMethodDescriptor =
+          MethodDescriptor.<CreateEventCreateRuleRequest, EventCreateRule>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/CreateEventCreateRule")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateEventCreateRuleRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(EventCreateRule.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UpdateEventCreateRuleRequest, EventCreateRule>
+      updateEventCreateRuleMethodDescriptor =
+          MethodDescriptor.<UpdateEventCreateRuleRequest, EventCreateRule>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/UpdateEventCreateRule")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateEventCreateRuleRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(EventCreateRule.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteEventCreateRuleRequest, Empty>
+      deleteEventCreateRuleMethodDescriptor =
+          MethodDescriptor.<DeleteEventCreateRuleRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/DeleteEventCreateRule")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteEventCreateRuleRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UpdateDataRedactionSettingsRequest, DataRedactionSettings>
+      updateDataRedactionSettingsMethodDescriptor =
+          MethodDescriptor.<UpdateDataRedactionSettingsRequest, DataRedactionSettings>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/UpdateDataRedactionSettings")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateDataRedactionSettingsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(DataRedactionSettings.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetDataRedactionSettingsRequest, DataRedactionSettings>
+      getDataRedactionSettingsMethodDescriptor =
+          MethodDescriptor.<GetDataRedactionSettingsRequest, DataRedactionSettings>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/GetDataRedactionSettings")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetDataRedactionSettingsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(DataRedactionSettings.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<CreateRollupPropertyRequest, CreateRollupPropertyResponse>
+      createRollupPropertyMethodDescriptor =
+          MethodDescriptor.<CreateRollupPropertyRequest, CreateRollupPropertyResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/CreateRollupProperty")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateRollupPropertyRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(CreateRollupPropertyResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          GetRollupPropertySourceLinkRequest, RollupPropertySourceLink>
+      getRollupPropertySourceLinkMethodDescriptor =
+          MethodDescriptor
+              .<GetRollupPropertySourceLinkRequest, RollupPropertySourceLink>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/GetRollupPropertySourceLink")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetRollupPropertySourceLinkRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(RollupPropertySourceLink.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          ListRollupPropertySourceLinksRequest, ListRollupPropertySourceLinksResponse>
+      listRollupPropertySourceLinksMethodDescriptor =
+          MethodDescriptor
+              .<ListRollupPropertySourceLinksRequest, ListRollupPropertySourceLinksResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/ListRollupPropertySourceLinks")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListRollupPropertySourceLinksRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListRollupPropertySourceLinksResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          CreateRollupPropertySourceLinkRequest, RollupPropertySourceLink>
+      createRollupPropertySourceLinkMethodDescriptor =
+          MethodDescriptor
+              .<CreateRollupPropertySourceLinkRequest, RollupPropertySourceLink>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/CreateRollupPropertySourceLink")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateRollupPropertySourceLinkRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(RollupPropertySourceLink.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteRollupPropertySourceLinkRequest, Empty>
+      deleteRollupPropertySourceLinkMethodDescriptor =
+          MethodDescriptor.<DeleteRollupPropertySourceLinkRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/DeleteRollupPropertySourceLink")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteRollupPropertySourceLinkRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<CreateSubpropertyRequest, CreateSubpropertyResponse>
+      createSubpropertyMethodDescriptor =
+          MethodDescriptor.<CreateSubpropertyRequest, CreateSubpropertyResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/CreateSubproperty")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateSubpropertyRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(CreateSubpropertyResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteSubpropertyEventFilterRequest, Empty>
+      deleteSubpropertyEventFilterMethodDescriptor =
+          MethodDescriptor.<DeleteSubpropertyEventFilterRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/DeleteSubpropertyEventFilter")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteSubpropertyEventFilterRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<CreateSubpropertyEventFilterRequest, SubpropertyEventFilter>
+      createSubpropertyEventFilterMethodDescriptor =
+          MethodDescriptor.<CreateSubpropertyEventFilterRequest, SubpropertyEventFilter>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/CreateSubpropertyEventFilter")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateSubpropertyEventFilterRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(SubpropertyEventFilter.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<GetAccountRequest, Account> getAccountCallable;
   private final UnaryCallable<ListAccountsRequest, ListAccountsResponse> listAccountsCallable;
   private final UnaryCallable<ListAccountsRequest, ListAccountsPagedResponse>
@@ -1631,23 +1858,6 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
   private final UnaryCallable<CreatePropertyRequest, Property> createPropertyCallable;
   private final UnaryCallable<DeletePropertyRequest, Property> deletePropertyCallable;
   private final UnaryCallable<UpdatePropertyRequest, Property> updatePropertyCallable;
-  private final UnaryCallable<GetUserLinkRequest, UserLink> getUserLinkCallable;
-  private final UnaryCallable<BatchGetUserLinksRequest, BatchGetUserLinksResponse>
-      batchGetUserLinksCallable;
-  private final UnaryCallable<ListUserLinksRequest, ListUserLinksResponse> listUserLinksCallable;
-  private final UnaryCallable<ListUserLinksRequest, ListUserLinksPagedResponse>
-      listUserLinksPagedCallable;
-  private final UnaryCallable<AuditUserLinksRequest, AuditUserLinksResponse> auditUserLinksCallable;
-  private final UnaryCallable<AuditUserLinksRequest, AuditUserLinksPagedResponse>
-      auditUserLinksPagedCallable;
-  private final UnaryCallable<CreateUserLinkRequest, UserLink> createUserLinkCallable;
-  private final UnaryCallable<BatchCreateUserLinksRequest, BatchCreateUserLinksResponse>
-      batchCreateUserLinksCallable;
-  private final UnaryCallable<UpdateUserLinkRequest, UserLink> updateUserLinkCallable;
-  private final UnaryCallable<BatchUpdateUserLinksRequest, BatchUpdateUserLinksResponse>
-      batchUpdateUserLinksCallable;
-  private final UnaryCallable<DeleteUserLinkRequest, Empty> deleteUserLinkCallable;
-  private final UnaryCallable<BatchDeleteUserLinksRequest, Empty> batchDeleteUserLinksCallable;
   private final UnaryCallable<CreateFirebaseLinkRequest, FirebaseLink> createFirebaseLinkCallable;
   private final UnaryCallable<DeleteFirebaseLinkRequest, Empty> deleteFirebaseLinkCallable;
   private final UnaryCallable<ListFirebaseLinksRequest, ListFirebaseLinksResponse>
@@ -1683,6 +1893,25 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
   private final UnaryCallable<
           AcknowledgeUserDataCollectionRequest, AcknowledgeUserDataCollectionResponse>
       acknowledgeUserDataCollectionCallable;
+  private final UnaryCallable<
+          GetSKAdNetworkConversionValueSchemaRequest, SKAdNetworkConversionValueSchema>
+      getSKAdNetworkConversionValueSchemaCallable;
+  private final UnaryCallable<
+          CreateSKAdNetworkConversionValueSchemaRequest, SKAdNetworkConversionValueSchema>
+      createSKAdNetworkConversionValueSchemaCallable;
+  private final UnaryCallable<DeleteSKAdNetworkConversionValueSchemaRequest, Empty>
+      deleteSKAdNetworkConversionValueSchemaCallable;
+  private final UnaryCallable<
+          UpdateSKAdNetworkConversionValueSchemaRequest, SKAdNetworkConversionValueSchema>
+      updateSKAdNetworkConversionValueSchemaCallable;
+  private final UnaryCallable<
+          ListSKAdNetworkConversionValueSchemasRequest,
+          ListSKAdNetworkConversionValueSchemasResponse>
+      listSKAdNetworkConversionValueSchemasCallable;
+  private final UnaryCallable<
+          ListSKAdNetworkConversionValueSchemasRequest,
+          ListSKAdNetworkConversionValueSchemasPagedResponse>
+      listSKAdNetworkConversionValueSchemasPagedCallable;
   private final UnaryCallable<SearchChangeHistoryEventsRequest, SearchChangeHistoryEventsResponse>
       searchChangeHistoryEventsCallable;
   private final UnaryCallable<
@@ -1694,6 +1923,8 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
       updateGoogleSignalsSettingsCallable;
   private final UnaryCallable<CreateConversionEventRequest, ConversionEvent>
       createConversionEventCallable;
+  private final UnaryCallable<UpdateConversionEventRequest, ConversionEvent>
+      updateConversionEventCallable;
   private final UnaryCallable<GetConversionEventRequest, ConversionEvent>
       getConversionEventCallable;
   private final UnaryCallable<DeleteConversionEventRequest, Empty> deleteConversionEventCallable;
@@ -1856,6 +2087,48 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
       listConnectedSiteTagsCallable;
   private final UnaryCallable<FetchConnectedGa4PropertyRequest, FetchConnectedGa4PropertyResponse>
       fetchConnectedGa4PropertyCallable;
+  private final UnaryCallable<GetAdSenseLinkRequest, AdSenseLink> getAdSenseLinkCallable;
+  private final UnaryCallable<CreateAdSenseLinkRequest, AdSenseLink> createAdSenseLinkCallable;
+  private final UnaryCallable<DeleteAdSenseLinkRequest, Empty> deleteAdSenseLinkCallable;
+  private final UnaryCallable<ListAdSenseLinksRequest, ListAdSenseLinksResponse>
+      listAdSenseLinksCallable;
+  private final UnaryCallable<ListAdSenseLinksRequest, ListAdSenseLinksPagedResponse>
+      listAdSenseLinksPagedCallable;
+  private final UnaryCallable<GetEventCreateRuleRequest, EventCreateRule>
+      getEventCreateRuleCallable;
+  private final UnaryCallable<ListEventCreateRulesRequest, ListEventCreateRulesResponse>
+      listEventCreateRulesCallable;
+  private final UnaryCallable<ListEventCreateRulesRequest, ListEventCreateRulesPagedResponse>
+      listEventCreateRulesPagedCallable;
+  private final UnaryCallable<CreateEventCreateRuleRequest, EventCreateRule>
+      createEventCreateRuleCallable;
+  private final UnaryCallable<UpdateEventCreateRuleRequest, EventCreateRule>
+      updateEventCreateRuleCallable;
+  private final UnaryCallable<DeleteEventCreateRuleRequest, Empty> deleteEventCreateRuleCallable;
+  private final UnaryCallable<UpdateDataRedactionSettingsRequest, DataRedactionSettings>
+      updateDataRedactionSettingsCallable;
+  private final UnaryCallable<GetDataRedactionSettingsRequest, DataRedactionSettings>
+      getDataRedactionSettingsCallable;
+  private final UnaryCallable<CreateRollupPropertyRequest, CreateRollupPropertyResponse>
+      createRollupPropertyCallable;
+  private final UnaryCallable<GetRollupPropertySourceLinkRequest, RollupPropertySourceLink>
+      getRollupPropertySourceLinkCallable;
+  private final UnaryCallable<
+          ListRollupPropertySourceLinksRequest, ListRollupPropertySourceLinksResponse>
+      listRollupPropertySourceLinksCallable;
+  private final UnaryCallable<
+          ListRollupPropertySourceLinksRequest, ListRollupPropertySourceLinksPagedResponse>
+      listRollupPropertySourceLinksPagedCallable;
+  private final UnaryCallable<CreateRollupPropertySourceLinkRequest, RollupPropertySourceLink>
+      createRollupPropertySourceLinkCallable;
+  private final UnaryCallable<DeleteRollupPropertySourceLinkRequest, Empty>
+      deleteRollupPropertySourceLinkCallable;
+  private final UnaryCallable<CreateSubpropertyRequest, CreateSubpropertyResponse>
+      createSubpropertyCallable;
+  private final UnaryCallable<DeleteSubpropertyEventFilterRequest, Empty>
+      deleteSubpropertyEventFilterCallable;
+  private final UnaryCallable<CreateSubpropertyEventFilterRequest, SubpropertyEventFilter>
+      createSubpropertyEventFilterCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -1906,9 +2179,9 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
             .setMethodDescriptor(getAccountMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListAccountsRequest, ListAccountsResponse> listAccountsTransportSettings =
@@ -1920,9 +2193,9 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
             .setMethodDescriptor(deleteAccountMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateAccountRequest, Account> updateAccountTransportSettings =
@@ -1930,9 +2203,9 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
             .setMethodDescriptor(updateAccountMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("account.name", String.valueOf(request.getAccount().getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("account.name", String.valueOf(request.getAccount().getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ProvisionAccountTicketRequest, ProvisionAccountTicketResponse>
@@ -1951,9 +2224,9 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
             .setMethodDescriptor(getPropertyMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListPropertiesRequest, ListPropertiesResponse>
@@ -1970,9 +2243,9 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
             .setMethodDescriptor(deletePropertyMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdatePropertyRequest, Property> updatePropertyTransportSettings =
@@ -1980,113 +2253,9 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
             .setMethodDescriptor(updatePropertyMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("property.name", String.valueOf(request.getProperty().getName()));
-                  return params.build();
-                })
-            .build();
-    GrpcCallSettings<GetUserLinkRequest, UserLink> getUserLinkTransportSettings =
-        GrpcCallSettings.<GetUserLinkRequest, UserLink>newBuilder()
-            .setMethodDescriptor(getUserLinkMethodDescriptor)
-            .setParamsExtractor(
-                request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
-                })
-            .build();
-    GrpcCallSettings<BatchGetUserLinksRequest, BatchGetUserLinksResponse>
-        batchGetUserLinksTransportSettings =
-            GrpcCallSettings.<BatchGetUserLinksRequest, BatchGetUserLinksResponse>newBuilder()
-                .setMethodDescriptor(batchGetUserLinksMethodDescriptor)
-                .setParamsExtractor(
-                    request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
-                    })
-                .build();
-    GrpcCallSettings<ListUserLinksRequest, ListUserLinksResponse> listUserLinksTransportSettings =
-        GrpcCallSettings.<ListUserLinksRequest, ListUserLinksResponse>newBuilder()
-            .setMethodDescriptor(listUserLinksMethodDescriptor)
-            .setParamsExtractor(
-                request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
-                })
-            .build();
-    GrpcCallSettings<AuditUserLinksRequest, AuditUserLinksResponse>
-        auditUserLinksTransportSettings =
-            GrpcCallSettings.<AuditUserLinksRequest, AuditUserLinksResponse>newBuilder()
-                .setMethodDescriptor(auditUserLinksMethodDescriptor)
-                .setParamsExtractor(
-                    request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
-                    })
-                .build();
-    GrpcCallSettings<CreateUserLinkRequest, UserLink> createUserLinkTransportSettings =
-        GrpcCallSettings.<CreateUserLinkRequest, UserLink>newBuilder()
-            .setMethodDescriptor(createUserLinkMethodDescriptor)
-            .setParamsExtractor(
-                request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
-                })
-            .build();
-    GrpcCallSettings<BatchCreateUserLinksRequest, BatchCreateUserLinksResponse>
-        batchCreateUserLinksTransportSettings =
-            GrpcCallSettings.<BatchCreateUserLinksRequest, BatchCreateUserLinksResponse>newBuilder()
-                .setMethodDescriptor(batchCreateUserLinksMethodDescriptor)
-                .setParamsExtractor(
-                    request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
-                    })
-                .build();
-    GrpcCallSettings<UpdateUserLinkRequest, UserLink> updateUserLinkTransportSettings =
-        GrpcCallSettings.<UpdateUserLinkRequest, UserLink>newBuilder()
-            .setMethodDescriptor(updateUserLinkMethodDescriptor)
-            .setParamsExtractor(
-                request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("user_link.name", String.valueOf(request.getUserLink().getName()));
-                  return params.build();
-                })
-            .build();
-    GrpcCallSettings<BatchUpdateUserLinksRequest, BatchUpdateUserLinksResponse>
-        batchUpdateUserLinksTransportSettings =
-            GrpcCallSettings.<BatchUpdateUserLinksRequest, BatchUpdateUserLinksResponse>newBuilder()
-                .setMethodDescriptor(batchUpdateUserLinksMethodDescriptor)
-                .setParamsExtractor(
-                    request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
-                    })
-                .build();
-    GrpcCallSettings<DeleteUserLinkRequest, Empty> deleteUserLinkTransportSettings =
-        GrpcCallSettings.<DeleteUserLinkRequest, Empty>newBuilder()
-            .setMethodDescriptor(deleteUserLinkMethodDescriptor)
-            .setParamsExtractor(
-                request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
-                })
-            .build();
-    GrpcCallSettings<BatchDeleteUserLinksRequest, Empty> batchDeleteUserLinksTransportSettings =
-        GrpcCallSettings.<BatchDeleteUserLinksRequest, Empty>newBuilder()
-            .setMethodDescriptor(batchDeleteUserLinksMethodDescriptor)
-            .setParamsExtractor(
-                request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("property.name", String.valueOf(request.getProperty().getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CreateFirebaseLinkRequest, FirebaseLink> createFirebaseLinkTransportSettings =
@@ -2094,9 +2263,9 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
             .setMethodDescriptor(createFirebaseLinkMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteFirebaseLinkRequest, Empty> deleteFirebaseLinkTransportSettings =
@@ -2104,9 +2273,9 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
             .setMethodDescriptor(deleteFirebaseLinkMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListFirebaseLinksRequest, ListFirebaseLinksResponse>
@@ -2115,9 +2284,9 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                 .setMethodDescriptor(listFirebaseLinksMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetGlobalSiteTagRequest, GlobalSiteTag> getGlobalSiteTagTransportSettings =
@@ -2125,9 +2294,9 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
             .setMethodDescriptor(getGlobalSiteTagMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CreateGoogleAdsLinkRequest, GoogleAdsLink>
@@ -2136,9 +2305,9 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                 .setMethodDescriptor(createGoogleAdsLinkMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<UpdateGoogleAdsLinkRequest, GoogleAdsLink>
@@ -2147,11 +2316,11 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                 .setMethodDescriptor(updateGoogleAdsLinkMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put(
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
                           "google_ads_link.name",
                           String.valueOf(request.getGoogleAdsLink().getName()));
-                      return params.build();
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<DeleteGoogleAdsLinkRequest, Empty> deleteGoogleAdsLinkTransportSettings =
@@ -2159,9 +2328,9 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
             .setMethodDescriptor(deleteGoogleAdsLinkMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListGoogleAdsLinksRequest, ListGoogleAdsLinksResponse>
@@ -2170,9 +2339,9 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                 .setMethodDescriptor(listGoogleAdsLinksMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetDataSharingSettingsRequest, DataSharingSettings>
@@ -2181,9 +2350,9 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                 .setMethodDescriptor(getDataSharingSettingsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetMeasurementProtocolSecretRequest, MeasurementProtocolSecret>
@@ -2193,9 +2362,9 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                 .setMethodDescriptor(getMeasurementProtocolSecretMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<ListMeasurementProtocolSecretsRequest, ListMeasurementProtocolSecretsResponse>
@@ -2206,9 +2375,9 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                 .setMethodDescriptor(listMeasurementProtocolSecretsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<CreateMeasurementProtocolSecretRequest, MeasurementProtocolSecret>
@@ -2218,9 +2387,9 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                 .setMethodDescriptor(createMeasurementProtocolSecretMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<DeleteMeasurementProtocolSecretRequest, Empty>
@@ -2229,9 +2398,9 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                 .setMethodDescriptor(deleteMeasurementProtocolSecretMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<UpdateMeasurementProtocolSecretRequest, MeasurementProtocolSecret>
@@ -2241,11 +2410,11 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                 .setMethodDescriptor(updateMeasurementProtocolSecretMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put(
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
                           "measurement_protocol_secret.name",
                           String.valueOf(request.getMeasurementProtocolSecret().getName()));
-                      return params.build();
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<AcknowledgeUserDataCollectionRequest, AcknowledgeUserDataCollectionResponse>
@@ -2256,9 +2425,79 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                 .setMethodDescriptor(acknowledgeUserDataCollectionMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("property", String.valueOf(request.getProperty()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("property", String.valueOf(request.getProperty()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<GetSKAdNetworkConversionValueSchemaRequest, SKAdNetworkConversionValueSchema>
+        getSKAdNetworkConversionValueSchemaTransportSettings =
+            GrpcCallSettings
+                .<GetSKAdNetworkConversionValueSchemaRequest, SKAdNetworkConversionValueSchema>
+                    newBuilder()
+                .setMethodDescriptor(getSKAdNetworkConversionValueSchemaMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<
+            CreateSKAdNetworkConversionValueSchemaRequest, SKAdNetworkConversionValueSchema>
+        createSKAdNetworkConversionValueSchemaTransportSettings =
+            GrpcCallSettings
+                .<CreateSKAdNetworkConversionValueSchemaRequest, SKAdNetworkConversionValueSchema>
+                    newBuilder()
+                .setMethodDescriptor(createSKAdNetworkConversionValueSchemaMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<DeleteSKAdNetworkConversionValueSchemaRequest, Empty>
+        deleteSKAdNetworkConversionValueSchemaTransportSettings =
+            GrpcCallSettings.<DeleteSKAdNetworkConversionValueSchemaRequest, Empty>newBuilder()
+                .setMethodDescriptor(deleteSKAdNetworkConversionValueSchemaMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<
+            UpdateSKAdNetworkConversionValueSchemaRequest, SKAdNetworkConversionValueSchema>
+        updateSKAdNetworkConversionValueSchemaTransportSettings =
+            GrpcCallSettings
+                .<UpdateSKAdNetworkConversionValueSchemaRequest, SKAdNetworkConversionValueSchema>
+                    newBuilder()
+                .setMethodDescriptor(updateSKAdNetworkConversionValueSchemaMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "skadnetwork_conversion_value_schema.name",
+                          String.valueOf(request.getSkadnetworkConversionValueSchema().getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<
+            ListSKAdNetworkConversionValueSchemasRequest,
+            ListSKAdNetworkConversionValueSchemasResponse>
+        listSKAdNetworkConversionValueSchemasTransportSettings =
+            GrpcCallSettings
+                .<ListSKAdNetworkConversionValueSchemasRequest,
+                    ListSKAdNetworkConversionValueSchemasResponse>
+                    newBuilder()
+                .setMethodDescriptor(listSKAdNetworkConversionValueSchemasMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<SearchChangeHistoryEventsRequest, SearchChangeHistoryEventsResponse>
@@ -2268,9 +2507,9 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                 .setMethodDescriptor(searchChangeHistoryEventsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("account", String.valueOf(request.getAccount()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("account", String.valueOf(request.getAccount()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetGoogleSignalsSettingsRequest, GoogleSignalsSettings>
@@ -2279,9 +2518,9 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                 .setMethodDescriptor(getGoogleSignalsSettingsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<UpdateGoogleSignalsSettingsRequest, GoogleSignalsSettings>
@@ -2290,11 +2529,11 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                 .setMethodDescriptor(updateGoogleSignalsSettingsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put(
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
                           "google_signals_settings.name",
                           String.valueOf(request.getGoogleSignalsSettings().getName()));
-                      return params.build();
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<CreateConversionEventRequest, ConversionEvent>
@@ -2303,9 +2542,22 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                 .setMethodDescriptor(createConversionEventMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<UpdateConversionEventRequest, ConversionEvent>
+        updateConversionEventTransportSettings =
+            GrpcCallSettings.<UpdateConversionEventRequest, ConversionEvent>newBuilder()
+                .setMethodDescriptor(updateConversionEventMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "conversion_event.name",
+                          String.valueOf(request.getConversionEvent().getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetConversionEventRequest, ConversionEvent>
@@ -2314,9 +2566,9 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                 .setMethodDescriptor(getConversionEventMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<DeleteConversionEventRequest, Empty> deleteConversionEventTransportSettings =
@@ -2324,9 +2576,9 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
             .setMethodDescriptor(deleteConversionEventMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListConversionEventsRequest, ListConversionEventsResponse>
@@ -2335,9 +2587,9 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                 .setMethodDescriptor(listConversionEventsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetDisplayVideo360AdvertiserLinkRequest, DisplayVideo360AdvertiserLink>
@@ -2348,9 +2600,9 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                 .setMethodDescriptor(getDisplayVideo360AdvertiserLinkMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<
@@ -2363,9 +2615,9 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                 .setMethodDescriptor(listDisplayVideo360AdvertiserLinksMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<CreateDisplayVideo360AdvertiserLinkRequest, DisplayVideo360AdvertiserLink>
@@ -2376,9 +2628,9 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                 .setMethodDescriptor(createDisplayVideo360AdvertiserLinkMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<DeleteDisplayVideo360AdvertiserLinkRequest, Empty>
@@ -2387,9 +2639,9 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                 .setMethodDescriptor(deleteDisplayVideo360AdvertiserLinkMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<UpdateDisplayVideo360AdvertiserLinkRequest, DisplayVideo360AdvertiserLink>
@@ -2400,11 +2652,11 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                 .setMethodDescriptor(updateDisplayVideo360AdvertiserLinkMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put(
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
                           "display_video_360_advertiser_link.name",
                           String.valueOf(request.getDisplayVideo360AdvertiserLink().getName()));
-                      return params.build();
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<
@@ -2417,9 +2669,9 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                 .setMethodDescriptor(getDisplayVideo360AdvertiserLinkProposalMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<
@@ -2433,9 +2685,9 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                 .setMethodDescriptor(listDisplayVideo360AdvertiserLinkProposalsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<
@@ -2449,9 +2701,9 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                 .setMethodDescriptor(createDisplayVideo360AdvertiserLinkProposalMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<DeleteDisplayVideo360AdvertiserLinkProposalRequest, Empty>
@@ -2460,9 +2712,9 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                 .setMethodDescriptor(deleteDisplayVideo360AdvertiserLinkProposalMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<
@@ -2476,9 +2728,9 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                 .setMethodDescriptor(approveDisplayVideo360AdvertiserLinkProposalMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<
@@ -2492,9 +2744,9 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                 .setMethodDescriptor(cancelDisplayVideo360AdvertiserLinkProposalMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<CreateCustomDimensionRequest, CustomDimension>
@@ -2503,9 +2755,9 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                 .setMethodDescriptor(createCustomDimensionMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<UpdateCustomDimensionRequest, CustomDimension>
@@ -2514,11 +2766,11 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                 .setMethodDescriptor(updateCustomDimensionMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put(
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
                           "custom_dimension.name",
                           String.valueOf(request.getCustomDimension().getName()));
-                      return params.build();
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<ListCustomDimensionsRequest, ListCustomDimensionsResponse>
@@ -2527,9 +2779,9 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                 .setMethodDescriptor(listCustomDimensionsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<ArchiveCustomDimensionRequest, Empty> archiveCustomDimensionTransportSettings =
@@ -2537,9 +2789,9 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
             .setMethodDescriptor(archiveCustomDimensionMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetCustomDimensionRequest, CustomDimension>
@@ -2548,9 +2800,9 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                 .setMethodDescriptor(getCustomDimensionMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<CreateCustomMetricRequest, CustomMetric> createCustomMetricTransportSettings =
@@ -2558,9 +2810,9 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
             .setMethodDescriptor(createCustomMetricMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateCustomMetricRequest, CustomMetric> updateCustomMetricTransportSettings =
@@ -2568,10 +2820,10 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
             .setMethodDescriptor(updateCustomMetricMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put(
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
                       "custom_metric.name", String.valueOf(request.getCustomMetric().getName()));
-                  return params.build();
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListCustomMetricsRequest, ListCustomMetricsResponse>
@@ -2580,9 +2832,9 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                 .setMethodDescriptor(listCustomMetricsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<ArchiveCustomMetricRequest, Empty> archiveCustomMetricTransportSettings =
@@ -2590,9 +2842,9 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
             .setMethodDescriptor(archiveCustomMetricMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetCustomMetricRequest, CustomMetric> getCustomMetricTransportSettings =
@@ -2600,9 +2852,9 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
             .setMethodDescriptor(getCustomMetricMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetDataRetentionSettingsRequest, DataRetentionSettings>
@@ -2611,9 +2863,9 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                 .setMethodDescriptor(getDataRetentionSettingsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<UpdateDataRetentionSettingsRequest, DataRetentionSettings>
@@ -2622,11 +2874,11 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                 .setMethodDescriptor(updateDataRetentionSettingsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put(
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
                           "data_retention_settings.name",
                           String.valueOf(request.getDataRetentionSettings().getName()));
-                      return params.build();
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<CreateDataStreamRequest, DataStream> createDataStreamTransportSettings =
@@ -2634,9 +2886,9 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
             .setMethodDescriptor(createDataStreamMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteDataStreamRequest, Empty> deleteDataStreamTransportSettings =
@@ -2644,9 +2896,9 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
             .setMethodDescriptor(deleteDataStreamMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateDataStreamRequest, DataStream> updateDataStreamTransportSettings =
@@ -2654,9 +2906,10 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
             .setMethodDescriptor(updateDataStreamMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("data_stream.name", String.valueOf(request.getDataStream().getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "data_stream.name", String.valueOf(request.getDataStream().getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListDataStreamsRequest, ListDataStreamsResponse>
@@ -2665,9 +2918,9 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                 .setMethodDescriptor(listDataStreamsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetDataStreamRequest, DataStream> getDataStreamTransportSettings =
@@ -2675,9 +2928,9 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
             .setMethodDescriptor(getDataStreamMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetAudienceRequest, Audience> getAudienceTransportSettings =
@@ -2685,9 +2938,9 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
             .setMethodDescriptor(getAudienceMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListAudiencesRequest, ListAudiencesResponse> listAudiencesTransportSettings =
@@ -2695,9 +2948,9 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
             .setMethodDescriptor(listAudiencesMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CreateAudienceRequest, Audience> createAudienceTransportSettings =
@@ -2705,9 +2958,9 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
             .setMethodDescriptor(createAudienceMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateAudienceRequest, Audience> updateAudienceTransportSettings =
@@ -2715,9 +2968,9 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
             .setMethodDescriptor(updateAudienceMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("audience.name", String.valueOf(request.getAudience().getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("audience.name", String.valueOf(request.getAudience().getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ArchiveAudienceRequest, Empty> archiveAudienceTransportSettings =
@@ -2725,9 +2978,9 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
             .setMethodDescriptor(archiveAudienceMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetSearchAds360LinkRequest, SearchAds360Link>
@@ -2736,9 +2989,9 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                 .setMethodDescriptor(getSearchAds360LinkMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<ListSearchAds360LinksRequest, ListSearchAds360LinksResponse>
@@ -2748,9 +3001,9 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                 .setMethodDescriptor(listSearchAds360LinksMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<CreateSearchAds360LinkRequest, SearchAds360Link>
@@ -2759,9 +3012,9 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                 .setMethodDescriptor(createSearchAds360LinkMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<DeleteSearchAds360LinkRequest, Empty> deleteSearchAds360LinkTransportSettings =
@@ -2769,9 +3022,9 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
             .setMethodDescriptor(deleteSearchAds360LinkMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateSearchAds360LinkRequest, SearchAds360Link>
@@ -2780,11 +3033,11 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                 .setMethodDescriptor(updateSearchAds360LinkMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put(
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
                           "search_ads_360_link.name",
                           String.valueOf(request.getSearchAds360Link().getName()));
-                      return params.build();
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetAttributionSettingsRequest, AttributionSettings>
@@ -2793,9 +3046,9 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                 .setMethodDescriptor(getAttributionSettingsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<UpdateAttributionSettingsRequest, AttributionSettings>
@@ -2804,11 +3057,11 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                 .setMethodDescriptor(updateAttributionSettingsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put(
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
                           "attribution_settings.name",
                           String.valueOf(request.getAttributionSettings().getName()));
-                      return params.build();
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<RunAccessReportRequest, RunAccessReportResponse>
@@ -2817,9 +3070,9 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                 .setMethodDescriptor(runAccessReportMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("entity", String.valueOf(request.getEntity()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("entity", String.valueOf(request.getEntity()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<CreateAccessBindingRequest, AccessBinding>
@@ -2828,9 +3081,9 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                 .setMethodDescriptor(createAccessBindingMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetAccessBindingRequest, AccessBinding> getAccessBindingTransportSettings =
@@ -2838,9 +3091,9 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
             .setMethodDescriptor(getAccessBindingMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateAccessBindingRequest, AccessBinding>
@@ -2849,11 +3102,11 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                 .setMethodDescriptor(updateAccessBindingMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put(
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
                           "access_binding.name",
                           String.valueOf(request.getAccessBinding().getName()));
-                      return params.build();
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<DeleteAccessBindingRequest, Empty> deleteAccessBindingTransportSettings =
@@ -2861,9 +3114,9 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
             .setMethodDescriptor(deleteAccessBindingMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListAccessBindingsRequest, ListAccessBindingsResponse>
@@ -2872,9 +3125,9 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                 .setMethodDescriptor(listAccessBindingsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<BatchCreateAccessBindingsRequest, BatchCreateAccessBindingsResponse>
@@ -2884,9 +3137,9 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                 .setMethodDescriptor(batchCreateAccessBindingsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<BatchGetAccessBindingsRequest, BatchGetAccessBindingsResponse>
@@ -2896,9 +3149,9 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                 .setMethodDescriptor(batchGetAccessBindingsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<BatchUpdateAccessBindingsRequest, BatchUpdateAccessBindingsResponse>
@@ -2908,9 +3161,9 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                 .setMethodDescriptor(batchUpdateAccessBindingsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<BatchDeleteAccessBindingsRequest, Empty>
@@ -2919,9 +3172,9 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                 .setMethodDescriptor(batchDeleteAccessBindingsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetExpandedDataSetRequest, ExpandedDataSet>
@@ -2930,9 +3183,9 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                 .setMethodDescriptor(getExpandedDataSetMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<ListExpandedDataSetsRequest, ListExpandedDataSetsResponse>
@@ -2941,9 +3194,9 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                 .setMethodDescriptor(listExpandedDataSetsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<CreateExpandedDataSetRequest, ExpandedDataSet>
@@ -2952,9 +3205,9 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                 .setMethodDescriptor(createExpandedDataSetMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<UpdateExpandedDataSetRequest, ExpandedDataSet>
@@ -2963,11 +3216,11 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                 .setMethodDescriptor(updateExpandedDataSetMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put(
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
                           "expanded_data_set.name",
                           String.valueOf(request.getExpandedDataSet().getName()));
-                      return params.build();
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<DeleteExpandedDataSetRequest, Empty> deleteExpandedDataSetTransportSettings =
@@ -2975,9 +3228,9 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
             .setMethodDescriptor(deleteExpandedDataSetMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetChannelGroupRequest, ChannelGroup> getChannelGroupTransportSettings =
@@ -2985,9 +3238,9 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
             .setMethodDescriptor(getChannelGroupMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListChannelGroupsRequest, ListChannelGroupsResponse>
@@ -2996,9 +3249,9 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                 .setMethodDescriptor(listChannelGroupsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<CreateChannelGroupRequest, ChannelGroup> createChannelGroupTransportSettings =
@@ -3006,9 +3259,9 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
             .setMethodDescriptor(createChannelGroupMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateChannelGroupRequest, ChannelGroup> updateChannelGroupTransportSettings =
@@ -3016,10 +3269,10 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
             .setMethodDescriptor(updateChannelGroupMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put(
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
                       "channel_group.name", String.valueOf(request.getChannelGroup().getName()));
-                  return params.build();
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteChannelGroupRequest, Empty> deleteChannelGroupTransportSettings =
@@ -3027,9 +3280,9 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
             .setMethodDescriptor(deleteChannelGroupMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<
@@ -3056,9 +3309,9 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
             .setMethodDescriptor(getBigQueryLinkMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListBigQueryLinksRequest, ListBigQueryLinksResponse>
@@ -3067,9 +3320,9 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                 .setMethodDescriptor(listBigQueryLinksMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetEnhancedMeasurementSettingsRequest, EnhancedMeasurementSettings>
@@ -3079,9 +3332,9 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                 .setMethodDescriptor(getEnhancedMeasurementSettingsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<UpdateEnhancedMeasurementSettingsRequest, EnhancedMeasurementSettings>
@@ -3091,11 +3344,11 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                 .setMethodDescriptor(updateEnhancedMeasurementSettingsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put(
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
                           "enhanced_measurement_settings.name",
                           String.valueOf(request.getEnhancedMeasurementSettings().getName()));
-                      return params.build();
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<CreateConnectedSiteTagRequest, CreateConnectedSiteTagResponse>
@@ -3119,6 +3372,208 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
             GrpcCallSettings
                 .<FetchConnectedGa4PropertyRequest, FetchConnectedGa4PropertyResponse>newBuilder()
                 .setMethodDescriptor(fetchConnectedGa4PropertyMethodDescriptor)
+                .build();
+    GrpcCallSettings<GetAdSenseLinkRequest, AdSenseLink> getAdSenseLinkTransportSettings =
+        GrpcCallSettings.<GetAdSenseLinkRequest, AdSenseLink>newBuilder()
+            .setMethodDescriptor(getAdSenseLinkMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<CreateAdSenseLinkRequest, AdSenseLink> createAdSenseLinkTransportSettings =
+        GrpcCallSettings.<CreateAdSenseLinkRequest, AdSenseLink>newBuilder()
+            .setMethodDescriptor(createAdSenseLinkMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<DeleteAdSenseLinkRequest, Empty> deleteAdSenseLinkTransportSettings =
+        GrpcCallSettings.<DeleteAdSenseLinkRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteAdSenseLinkMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<ListAdSenseLinksRequest, ListAdSenseLinksResponse>
+        listAdSenseLinksTransportSettings =
+            GrpcCallSettings.<ListAdSenseLinksRequest, ListAdSenseLinksResponse>newBuilder()
+                .setMethodDescriptor(listAdSenseLinksMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<GetEventCreateRuleRequest, EventCreateRule>
+        getEventCreateRuleTransportSettings =
+            GrpcCallSettings.<GetEventCreateRuleRequest, EventCreateRule>newBuilder()
+                .setMethodDescriptor(getEventCreateRuleMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<ListEventCreateRulesRequest, ListEventCreateRulesResponse>
+        listEventCreateRulesTransportSettings =
+            GrpcCallSettings.<ListEventCreateRulesRequest, ListEventCreateRulesResponse>newBuilder()
+                .setMethodDescriptor(listEventCreateRulesMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<CreateEventCreateRuleRequest, EventCreateRule>
+        createEventCreateRuleTransportSettings =
+            GrpcCallSettings.<CreateEventCreateRuleRequest, EventCreateRule>newBuilder()
+                .setMethodDescriptor(createEventCreateRuleMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<UpdateEventCreateRuleRequest, EventCreateRule>
+        updateEventCreateRuleTransportSettings =
+            GrpcCallSettings.<UpdateEventCreateRuleRequest, EventCreateRule>newBuilder()
+                .setMethodDescriptor(updateEventCreateRuleMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "event_create_rule.name",
+                          String.valueOf(request.getEventCreateRule().getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<DeleteEventCreateRuleRequest, Empty> deleteEventCreateRuleTransportSettings =
+        GrpcCallSettings.<DeleteEventCreateRuleRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteEventCreateRuleMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<UpdateDataRedactionSettingsRequest, DataRedactionSettings>
+        updateDataRedactionSettingsTransportSettings =
+            GrpcCallSettings.<UpdateDataRedactionSettingsRequest, DataRedactionSettings>newBuilder()
+                .setMethodDescriptor(updateDataRedactionSettingsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "data_redaction_settings.name",
+                          String.valueOf(request.getDataRedactionSettings().getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<GetDataRedactionSettingsRequest, DataRedactionSettings>
+        getDataRedactionSettingsTransportSettings =
+            GrpcCallSettings.<GetDataRedactionSettingsRequest, DataRedactionSettings>newBuilder()
+                .setMethodDescriptor(getDataRedactionSettingsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<CreateRollupPropertyRequest, CreateRollupPropertyResponse>
+        createRollupPropertyTransportSettings =
+            GrpcCallSettings.<CreateRollupPropertyRequest, CreateRollupPropertyResponse>newBuilder()
+                .setMethodDescriptor(createRollupPropertyMethodDescriptor)
+                .build();
+    GrpcCallSettings<GetRollupPropertySourceLinkRequest, RollupPropertySourceLink>
+        getRollupPropertySourceLinkTransportSettings =
+            GrpcCallSettings
+                .<GetRollupPropertySourceLinkRequest, RollupPropertySourceLink>newBuilder()
+                .setMethodDescriptor(getRollupPropertySourceLinkMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<ListRollupPropertySourceLinksRequest, ListRollupPropertySourceLinksResponse>
+        listRollupPropertySourceLinksTransportSettings =
+            GrpcCallSettings
+                .<ListRollupPropertySourceLinksRequest, ListRollupPropertySourceLinksResponse>
+                    newBuilder()
+                .setMethodDescriptor(listRollupPropertySourceLinksMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<CreateRollupPropertySourceLinkRequest, RollupPropertySourceLink>
+        createRollupPropertySourceLinkTransportSettings =
+            GrpcCallSettings
+                .<CreateRollupPropertySourceLinkRequest, RollupPropertySourceLink>newBuilder()
+                .setMethodDescriptor(createRollupPropertySourceLinkMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<DeleteRollupPropertySourceLinkRequest, Empty>
+        deleteRollupPropertySourceLinkTransportSettings =
+            GrpcCallSettings.<DeleteRollupPropertySourceLinkRequest, Empty>newBuilder()
+                .setMethodDescriptor(deleteRollupPropertySourceLinkMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<CreateSubpropertyRequest, CreateSubpropertyResponse>
+        createSubpropertyTransportSettings =
+            GrpcCallSettings.<CreateSubpropertyRequest, CreateSubpropertyResponse>newBuilder()
+                .setMethodDescriptor(createSubpropertyMethodDescriptor)
+                .build();
+    GrpcCallSettings<DeleteSubpropertyEventFilterRequest, Empty>
+        deleteSubpropertyEventFilterTransportSettings =
+            GrpcCallSettings.<DeleteSubpropertyEventFilterRequest, Empty>newBuilder()
+                .setMethodDescriptor(deleteSubpropertyEventFilterMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<CreateSubpropertyEventFilterRequest, SubpropertyEventFilter>
+        createSubpropertyEventFilterTransportSettings =
+            GrpcCallSettings
+                .<CreateSubpropertyEventFilterRequest, SubpropertyEventFilter>newBuilder()
+                .setMethodDescriptor(createSubpropertyEventFilterMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
 
     this.getAccountCallable =
@@ -3169,50 +3624,6 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
     this.updatePropertyCallable =
         callableFactory.createUnaryCallable(
             updatePropertyTransportSettings, settings.updatePropertySettings(), clientContext);
-    this.getUserLinkCallable =
-        callableFactory.createUnaryCallable(
-            getUserLinkTransportSettings, settings.getUserLinkSettings(), clientContext);
-    this.batchGetUserLinksCallable =
-        callableFactory.createUnaryCallable(
-            batchGetUserLinksTransportSettings,
-            settings.batchGetUserLinksSettings(),
-            clientContext);
-    this.listUserLinksCallable =
-        callableFactory.createUnaryCallable(
-            listUserLinksTransportSettings, settings.listUserLinksSettings(), clientContext);
-    this.listUserLinksPagedCallable =
-        callableFactory.createPagedCallable(
-            listUserLinksTransportSettings, settings.listUserLinksSettings(), clientContext);
-    this.auditUserLinksCallable =
-        callableFactory.createUnaryCallable(
-            auditUserLinksTransportSettings, settings.auditUserLinksSettings(), clientContext);
-    this.auditUserLinksPagedCallable =
-        callableFactory.createPagedCallable(
-            auditUserLinksTransportSettings, settings.auditUserLinksSettings(), clientContext);
-    this.createUserLinkCallable =
-        callableFactory.createUnaryCallable(
-            createUserLinkTransportSettings, settings.createUserLinkSettings(), clientContext);
-    this.batchCreateUserLinksCallable =
-        callableFactory.createUnaryCallable(
-            batchCreateUserLinksTransportSettings,
-            settings.batchCreateUserLinksSettings(),
-            clientContext);
-    this.updateUserLinkCallable =
-        callableFactory.createUnaryCallable(
-            updateUserLinkTransportSettings, settings.updateUserLinkSettings(), clientContext);
-    this.batchUpdateUserLinksCallable =
-        callableFactory.createUnaryCallable(
-            batchUpdateUserLinksTransportSettings,
-            settings.batchUpdateUserLinksSettings(),
-            clientContext);
-    this.deleteUserLinkCallable =
-        callableFactory.createUnaryCallable(
-            deleteUserLinkTransportSettings, settings.deleteUserLinkSettings(), clientContext);
-    this.batchDeleteUserLinksCallable =
-        callableFactory.createUnaryCallable(
-            batchDeleteUserLinksTransportSettings,
-            settings.batchDeleteUserLinksSettings(),
-            clientContext);
     this.createFirebaseLinkCallable =
         callableFactory.createUnaryCallable(
             createFirebaseLinkTransportSettings,
@@ -3301,6 +3712,36 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
             acknowledgeUserDataCollectionTransportSettings,
             settings.acknowledgeUserDataCollectionSettings(),
             clientContext);
+    this.getSKAdNetworkConversionValueSchemaCallable =
+        callableFactory.createUnaryCallable(
+            getSKAdNetworkConversionValueSchemaTransportSettings,
+            settings.getSKAdNetworkConversionValueSchemaSettings(),
+            clientContext);
+    this.createSKAdNetworkConversionValueSchemaCallable =
+        callableFactory.createUnaryCallable(
+            createSKAdNetworkConversionValueSchemaTransportSettings,
+            settings.createSKAdNetworkConversionValueSchemaSettings(),
+            clientContext);
+    this.deleteSKAdNetworkConversionValueSchemaCallable =
+        callableFactory.createUnaryCallable(
+            deleteSKAdNetworkConversionValueSchemaTransportSettings,
+            settings.deleteSKAdNetworkConversionValueSchemaSettings(),
+            clientContext);
+    this.updateSKAdNetworkConversionValueSchemaCallable =
+        callableFactory.createUnaryCallable(
+            updateSKAdNetworkConversionValueSchemaTransportSettings,
+            settings.updateSKAdNetworkConversionValueSchemaSettings(),
+            clientContext);
+    this.listSKAdNetworkConversionValueSchemasCallable =
+        callableFactory.createUnaryCallable(
+            listSKAdNetworkConversionValueSchemasTransportSettings,
+            settings.listSKAdNetworkConversionValueSchemasSettings(),
+            clientContext);
+    this.listSKAdNetworkConversionValueSchemasPagedCallable =
+        callableFactory.createPagedCallable(
+            listSKAdNetworkConversionValueSchemasTransportSettings,
+            settings.listSKAdNetworkConversionValueSchemasSettings(),
+            clientContext);
     this.searchChangeHistoryEventsCallable =
         callableFactory.createUnaryCallable(
             searchChangeHistoryEventsTransportSettings,
@@ -3325,6 +3766,11 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
         callableFactory.createUnaryCallable(
             createConversionEventTransportSettings,
             settings.createConversionEventSettings(),
+            clientContext);
+    this.updateConversionEventCallable =
+        callableFactory.createUnaryCallable(
+            updateConversionEventTransportSettings,
+            settings.updateConversionEventSettings(),
             clientContext);
     this.getConversionEventCallable =
         callableFactory.createUnaryCallable(
@@ -3717,6 +4163,110 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
             fetchConnectedGa4PropertyTransportSettings,
             settings.fetchConnectedGa4PropertySettings(),
             clientContext);
+    this.getAdSenseLinkCallable =
+        callableFactory.createUnaryCallable(
+            getAdSenseLinkTransportSettings, settings.getAdSenseLinkSettings(), clientContext);
+    this.createAdSenseLinkCallable =
+        callableFactory.createUnaryCallable(
+            createAdSenseLinkTransportSettings,
+            settings.createAdSenseLinkSettings(),
+            clientContext);
+    this.deleteAdSenseLinkCallable =
+        callableFactory.createUnaryCallable(
+            deleteAdSenseLinkTransportSettings,
+            settings.deleteAdSenseLinkSettings(),
+            clientContext);
+    this.listAdSenseLinksCallable =
+        callableFactory.createUnaryCallable(
+            listAdSenseLinksTransportSettings, settings.listAdSenseLinksSettings(), clientContext);
+    this.listAdSenseLinksPagedCallable =
+        callableFactory.createPagedCallable(
+            listAdSenseLinksTransportSettings, settings.listAdSenseLinksSettings(), clientContext);
+    this.getEventCreateRuleCallable =
+        callableFactory.createUnaryCallable(
+            getEventCreateRuleTransportSettings,
+            settings.getEventCreateRuleSettings(),
+            clientContext);
+    this.listEventCreateRulesCallable =
+        callableFactory.createUnaryCallable(
+            listEventCreateRulesTransportSettings,
+            settings.listEventCreateRulesSettings(),
+            clientContext);
+    this.listEventCreateRulesPagedCallable =
+        callableFactory.createPagedCallable(
+            listEventCreateRulesTransportSettings,
+            settings.listEventCreateRulesSettings(),
+            clientContext);
+    this.createEventCreateRuleCallable =
+        callableFactory.createUnaryCallable(
+            createEventCreateRuleTransportSettings,
+            settings.createEventCreateRuleSettings(),
+            clientContext);
+    this.updateEventCreateRuleCallable =
+        callableFactory.createUnaryCallable(
+            updateEventCreateRuleTransportSettings,
+            settings.updateEventCreateRuleSettings(),
+            clientContext);
+    this.deleteEventCreateRuleCallable =
+        callableFactory.createUnaryCallable(
+            deleteEventCreateRuleTransportSettings,
+            settings.deleteEventCreateRuleSettings(),
+            clientContext);
+    this.updateDataRedactionSettingsCallable =
+        callableFactory.createUnaryCallable(
+            updateDataRedactionSettingsTransportSettings,
+            settings.updateDataRedactionSettingsSettings(),
+            clientContext);
+    this.getDataRedactionSettingsCallable =
+        callableFactory.createUnaryCallable(
+            getDataRedactionSettingsTransportSettings,
+            settings.getDataRedactionSettingsSettings(),
+            clientContext);
+    this.createRollupPropertyCallable =
+        callableFactory.createUnaryCallable(
+            createRollupPropertyTransportSettings,
+            settings.createRollupPropertySettings(),
+            clientContext);
+    this.getRollupPropertySourceLinkCallable =
+        callableFactory.createUnaryCallable(
+            getRollupPropertySourceLinkTransportSettings,
+            settings.getRollupPropertySourceLinkSettings(),
+            clientContext);
+    this.listRollupPropertySourceLinksCallable =
+        callableFactory.createUnaryCallable(
+            listRollupPropertySourceLinksTransportSettings,
+            settings.listRollupPropertySourceLinksSettings(),
+            clientContext);
+    this.listRollupPropertySourceLinksPagedCallable =
+        callableFactory.createPagedCallable(
+            listRollupPropertySourceLinksTransportSettings,
+            settings.listRollupPropertySourceLinksSettings(),
+            clientContext);
+    this.createRollupPropertySourceLinkCallable =
+        callableFactory.createUnaryCallable(
+            createRollupPropertySourceLinkTransportSettings,
+            settings.createRollupPropertySourceLinkSettings(),
+            clientContext);
+    this.deleteRollupPropertySourceLinkCallable =
+        callableFactory.createUnaryCallable(
+            deleteRollupPropertySourceLinkTransportSettings,
+            settings.deleteRollupPropertySourceLinkSettings(),
+            clientContext);
+    this.createSubpropertyCallable =
+        callableFactory.createUnaryCallable(
+            createSubpropertyTransportSettings,
+            settings.createSubpropertySettings(),
+            clientContext);
+    this.deleteSubpropertyEventFilterCallable =
+        callableFactory.createUnaryCallable(
+            deleteSubpropertyEventFilterTransportSettings,
+            settings.deleteSubpropertyEventFilterSettings(),
+            clientContext);
+    this.createSubpropertyEventFilterCallable =
+        callableFactory.createUnaryCallable(
+            createSubpropertyEventFilterTransportSettings,
+            settings.createSubpropertyEventFilterSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -3798,71 +4348,6 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
   @Override
   public UnaryCallable<UpdatePropertyRequest, Property> updatePropertyCallable() {
     return updatePropertyCallable;
-  }
-
-  @Override
-  public UnaryCallable<GetUserLinkRequest, UserLink> getUserLinkCallable() {
-    return getUserLinkCallable;
-  }
-
-  @Override
-  public UnaryCallable<BatchGetUserLinksRequest, BatchGetUserLinksResponse>
-      batchGetUserLinksCallable() {
-    return batchGetUserLinksCallable;
-  }
-
-  @Override
-  public UnaryCallable<ListUserLinksRequest, ListUserLinksResponse> listUserLinksCallable() {
-    return listUserLinksCallable;
-  }
-
-  @Override
-  public UnaryCallable<ListUserLinksRequest, ListUserLinksPagedResponse>
-      listUserLinksPagedCallable() {
-    return listUserLinksPagedCallable;
-  }
-
-  @Override
-  public UnaryCallable<AuditUserLinksRequest, AuditUserLinksResponse> auditUserLinksCallable() {
-    return auditUserLinksCallable;
-  }
-
-  @Override
-  public UnaryCallable<AuditUserLinksRequest, AuditUserLinksPagedResponse>
-      auditUserLinksPagedCallable() {
-    return auditUserLinksPagedCallable;
-  }
-
-  @Override
-  public UnaryCallable<CreateUserLinkRequest, UserLink> createUserLinkCallable() {
-    return createUserLinkCallable;
-  }
-
-  @Override
-  public UnaryCallable<BatchCreateUserLinksRequest, BatchCreateUserLinksResponse>
-      batchCreateUserLinksCallable() {
-    return batchCreateUserLinksCallable;
-  }
-
-  @Override
-  public UnaryCallable<UpdateUserLinkRequest, UserLink> updateUserLinkCallable() {
-    return updateUserLinkCallable;
-  }
-
-  @Override
-  public UnaryCallable<BatchUpdateUserLinksRequest, BatchUpdateUserLinksResponse>
-      batchUpdateUserLinksCallable() {
-    return batchUpdateUserLinksCallable;
-  }
-
-  @Override
-  public UnaryCallable<DeleteUserLinkRequest, Empty> deleteUserLinkCallable() {
-    return deleteUserLinkCallable;
-  }
-
-  @Override
-  public UnaryCallable<BatchDeleteUserLinksRequest, Empty> batchDeleteUserLinksCallable() {
-    return batchDeleteUserLinksCallable;
   }
 
   @Override
@@ -3970,6 +4455,48 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
   }
 
   @Override
+  public UnaryCallable<GetSKAdNetworkConversionValueSchemaRequest, SKAdNetworkConversionValueSchema>
+      getSKAdNetworkConversionValueSchemaCallable() {
+    return getSKAdNetworkConversionValueSchemaCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          CreateSKAdNetworkConversionValueSchemaRequest, SKAdNetworkConversionValueSchema>
+      createSKAdNetworkConversionValueSchemaCallable() {
+    return createSKAdNetworkConversionValueSchemaCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteSKAdNetworkConversionValueSchemaRequest, Empty>
+      deleteSKAdNetworkConversionValueSchemaCallable() {
+    return deleteSKAdNetworkConversionValueSchemaCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          UpdateSKAdNetworkConversionValueSchemaRequest, SKAdNetworkConversionValueSchema>
+      updateSKAdNetworkConversionValueSchemaCallable() {
+    return updateSKAdNetworkConversionValueSchemaCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListSKAdNetworkConversionValueSchemasRequest,
+          ListSKAdNetworkConversionValueSchemasResponse>
+      listSKAdNetworkConversionValueSchemasCallable() {
+    return listSKAdNetworkConversionValueSchemasCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListSKAdNetworkConversionValueSchemasRequest,
+          ListSKAdNetworkConversionValueSchemasPagedResponse>
+      listSKAdNetworkConversionValueSchemasPagedCallable() {
+    return listSKAdNetworkConversionValueSchemasPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<SearchChangeHistoryEventsRequest, SearchChangeHistoryEventsResponse>
       searchChangeHistoryEventsCallable() {
     return searchChangeHistoryEventsCallable;
@@ -3997,6 +4524,12 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
   public UnaryCallable<CreateConversionEventRequest, ConversionEvent>
       createConversionEventCallable() {
     return createConversionEventCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateConversionEventRequest, ConversionEvent>
+      updateConversionEventCallable() {
+    return updateConversionEventCallable;
   }
 
   @Override
@@ -4488,6 +5021,134 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
   public UnaryCallable<FetchConnectedGa4PropertyRequest, FetchConnectedGa4PropertyResponse>
       fetchConnectedGa4PropertyCallable() {
     return fetchConnectedGa4PropertyCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetAdSenseLinkRequest, AdSenseLink> getAdSenseLinkCallable() {
+    return getAdSenseLinkCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateAdSenseLinkRequest, AdSenseLink> createAdSenseLinkCallable() {
+    return createAdSenseLinkCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteAdSenseLinkRequest, Empty> deleteAdSenseLinkCallable() {
+    return deleteAdSenseLinkCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAdSenseLinksRequest, ListAdSenseLinksResponse>
+      listAdSenseLinksCallable() {
+    return listAdSenseLinksCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAdSenseLinksRequest, ListAdSenseLinksPagedResponse>
+      listAdSenseLinksPagedCallable() {
+    return listAdSenseLinksPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetEventCreateRuleRequest, EventCreateRule> getEventCreateRuleCallable() {
+    return getEventCreateRuleCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListEventCreateRulesRequest, ListEventCreateRulesResponse>
+      listEventCreateRulesCallable() {
+    return listEventCreateRulesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListEventCreateRulesRequest, ListEventCreateRulesPagedResponse>
+      listEventCreateRulesPagedCallable() {
+    return listEventCreateRulesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateEventCreateRuleRequest, EventCreateRule>
+      createEventCreateRuleCallable() {
+    return createEventCreateRuleCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateEventCreateRuleRequest, EventCreateRule>
+      updateEventCreateRuleCallable() {
+    return updateEventCreateRuleCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteEventCreateRuleRequest, Empty> deleteEventCreateRuleCallable() {
+    return deleteEventCreateRuleCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateDataRedactionSettingsRequest, DataRedactionSettings>
+      updateDataRedactionSettingsCallable() {
+    return updateDataRedactionSettingsCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetDataRedactionSettingsRequest, DataRedactionSettings>
+      getDataRedactionSettingsCallable() {
+    return getDataRedactionSettingsCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateRollupPropertyRequest, CreateRollupPropertyResponse>
+      createRollupPropertyCallable() {
+    return createRollupPropertyCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetRollupPropertySourceLinkRequest, RollupPropertySourceLink>
+      getRollupPropertySourceLinkCallable() {
+    return getRollupPropertySourceLinkCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListRollupPropertySourceLinksRequest, ListRollupPropertySourceLinksResponse>
+      listRollupPropertySourceLinksCallable() {
+    return listRollupPropertySourceLinksCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListRollupPropertySourceLinksRequest, ListRollupPropertySourceLinksPagedResponse>
+      listRollupPropertySourceLinksPagedCallable() {
+    return listRollupPropertySourceLinksPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateRollupPropertySourceLinkRequest, RollupPropertySourceLink>
+      createRollupPropertySourceLinkCallable() {
+    return createRollupPropertySourceLinkCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteRollupPropertySourceLinkRequest, Empty>
+      deleteRollupPropertySourceLinkCallable() {
+    return deleteRollupPropertySourceLinkCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateSubpropertyRequest, CreateSubpropertyResponse>
+      createSubpropertyCallable() {
+    return createSubpropertyCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteSubpropertyEventFilterRequest, Empty>
+      deleteSubpropertyEventFilterCallable() {
+    return deleteSubpropertyEventFilterCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateSubpropertyEventFilterRequest, SubpropertyEventFilter>
+      createSubpropertyEventFilterCallable() {
+    return createSubpropertyEventFilterCallable;
   }
 
   @Override

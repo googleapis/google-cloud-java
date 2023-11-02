@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,7 +32,7 @@ public final class RecaptchaEnterpriseServiceGrpc {
 
   private RecaptchaEnterpriseServiceGrpc() {}
 
-  public static final String SERVICE_NAME =
+  public static final java.lang.String SERVICE_NAME =
       "google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseService";
 
   // Static method descriptors that strictly reflect the proto.
@@ -502,6 +502,265 @@ public final class RecaptchaEnterpriseServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.recaptchaenterprise.v1.CreateFirewallPolicyRequest,
+          com.google.recaptchaenterprise.v1.FirewallPolicy>
+      getCreateFirewallPolicyMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateFirewallPolicy",
+      requestType = com.google.recaptchaenterprise.v1.CreateFirewallPolicyRequest.class,
+      responseType = com.google.recaptchaenterprise.v1.FirewallPolicy.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.recaptchaenterprise.v1.CreateFirewallPolicyRequest,
+          com.google.recaptchaenterprise.v1.FirewallPolicy>
+      getCreateFirewallPolicyMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.recaptchaenterprise.v1.CreateFirewallPolicyRequest,
+            com.google.recaptchaenterprise.v1.FirewallPolicy>
+        getCreateFirewallPolicyMethod;
+    if ((getCreateFirewallPolicyMethod =
+            RecaptchaEnterpriseServiceGrpc.getCreateFirewallPolicyMethod)
+        == null) {
+      synchronized (RecaptchaEnterpriseServiceGrpc.class) {
+        if ((getCreateFirewallPolicyMethod =
+                RecaptchaEnterpriseServiceGrpc.getCreateFirewallPolicyMethod)
+            == null) {
+          RecaptchaEnterpriseServiceGrpc.getCreateFirewallPolicyMethod =
+              getCreateFirewallPolicyMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.recaptchaenterprise.v1.CreateFirewallPolicyRequest,
+                          com.google.recaptchaenterprise.v1.FirewallPolicy>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "CreateFirewallPolicy"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.recaptchaenterprise.v1.CreateFirewallPolicyRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.recaptchaenterprise.v1.FirewallPolicy
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new RecaptchaEnterpriseServiceMethodDescriptorSupplier(
+                              "CreateFirewallPolicy"))
+                      .build();
+        }
+      }
+    }
+    return getCreateFirewallPolicyMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.recaptchaenterprise.v1.ListFirewallPoliciesRequest,
+          com.google.recaptchaenterprise.v1.ListFirewallPoliciesResponse>
+      getListFirewallPoliciesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListFirewallPolicies",
+      requestType = com.google.recaptchaenterprise.v1.ListFirewallPoliciesRequest.class,
+      responseType = com.google.recaptchaenterprise.v1.ListFirewallPoliciesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.recaptchaenterprise.v1.ListFirewallPoliciesRequest,
+          com.google.recaptchaenterprise.v1.ListFirewallPoliciesResponse>
+      getListFirewallPoliciesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.recaptchaenterprise.v1.ListFirewallPoliciesRequest,
+            com.google.recaptchaenterprise.v1.ListFirewallPoliciesResponse>
+        getListFirewallPoliciesMethod;
+    if ((getListFirewallPoliciesMethod =
+            RecaptchaEnterpriseServiceGrpc.getListFirewallPoliciesMethod)
+        == null) {
+      synchronized (RecaptchaEnterpriseServiceGrpc.class) {
+        if ((getListFirewallPoliciesMethod =
+                RecaptchaEnterpriseServiceGrpc.getListFirewallPoliciesMethod)
+            == null) {
+          RecaptchaEnterpriseServiceGrpc.getListFirewallPoliciesMethod =
+              getListFirewallPoliciesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.recaptchaenterprise.v1.ListFirewallPoliciesRequest,
+                          com.google.recaptchaenterprise.v1.ListFirewallPoliciesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListFirewallPolicies"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.recaptchaenterprise.v1.ListFirewallPoliciesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.recaptchaenterprise.v1.ListFirewallPoliciesResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new RecaptchaEnterpriseServiceMethodDescriptorSupplier(
+                              "ListFirewallPolicies"))
+                      .build();
+        }
+      }
+    }
+    return getListFirewallPoliciesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.recaptchaenterprise.v1.GetFirewallPolicyRequest,
+          com.google.recaptchaenterprise.v1.FirewallPolicy>
+      getGetFirewallPolicyMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetFirewallPolicy",
+      requestType = com.google.recaptchaenterprise.v1.GetFirewallPolicyRequest.class,
+      responseType = com.google.recaptchaenterprise.v1.FirewallPolicy.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.recaptchaenterprise.v1.GetFirewallPolicyRequest,
+          com.google.recaptchaenterprise.v1.FirewallPolicy>
+      getGetFirewallPolicyMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.recaptchaenterprise.v1.GetFirewallPolicyRequest,
+            com.google.recaptchaenterprise.v1.FirewallPolicy>
+        getGetFirewallPolicyMethod;
+    if ((getGetFirewallPolicyMethod = RecaptchaEnterpriseServiceGrpc.getGetFirewallPolicyMethod)
+        == null) {
+      synchronized (RecaptchaEnterpriseServiceGrpc.class) {
+        if ((getGetFirewallPolicyMethod = RecaptchaEnterpriseServiceGrpc.getGetFirewallPolicyMethod)
+            == null) {
+          RecaptchaEnterpriseServiceGrpc.getGetFirewallPolicyMethod =
+              getGetFirewallPolicyMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.recaptchaenterprise.v1.GetFirewallPolicyRequest,
+                          com.google.recaptchaenterprise.v1.FirewallPolicy>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetFirewallPolicy"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.recaptchaenterprise.v1.GetFirewallPolicyRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.recaptchaenterprise.v1.FirewallPolicy
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new RecaptchaEnterpriseServiceMethodDescriptorSupplier(
+                              "GetFirewallPolicy"))
+                      .build();
+        }
+      }
+    }
+    return getGetFirewallPolicyMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.recaptchaenterprise.v1.UpdateFirewallPolicyRequest,
+          com.google.recaptchaenterprise.v1.FirewallPolicy>
+      getUpdateFirewallPolicyMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateFirewallPolicy",
+      requestType = com.google.recaptchaenterprise.v1.UpdateFirewallPolicyRequest.class,
+      responseType = com.google.recaptchaenterprise.v1.FirewallPolicy.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.recaptchaenterprise.v1.UpdateFirewallPolicyRequest,
+          com.google.recaptchaenterprise.v1.FirewallPolicy>
+      getUpdateFirewallPolicyMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.recaptchaenterprise.v1.UpdateFirewallPolicyRequest,
+            com.google.recaptchaenterprise.v1.FirewallPolicy>
+        getUpdateFirewallPolicyMethod;
+    if ((getUpdateFirewallPolicyMethod =
+            RecaptchaEnterpriseServiceGrpc.getUpdateFirewallPolicyMethod)
+        == null) {
+      synchronized (RecaptchaEnterpriseServiceGrpc.class) {
+        if ((getUpdateFirewallPolicyMethod =
+                RecaptchaEnterpriseServiceGrpc.getUpdateFirewallPolicyMethod)
+            == null) {
+          RecaptchaEnterpriseServiceGrpc.getUpdateFirewallPolicyMethod =
+              getUpdateFirewallPolicyMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.recaptchaenterprise.v1.UpdateFirewallPolicyRequest,
+                          com.google.recaptchaenterprise.v1.FirewallPolicy>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateFirewallPolicy"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.recaptchaenterprise.v1.UpdateFirewallPolicyRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.recaptchaenterprise.v1.FirewallPolicy
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new RecaptchaEnterpriseServiceMethodDescriptorSupplier(
+                              "UpdateFirewallPolicy"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateFirewallPolicyMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.recaptchaenterprise.v1.DeleteFirewallPolicyRequest, com.google.protobuf.Empty>
+      getDeleteFirewallPolicyMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteFirewallPolicy",
+      requestType = com.google.recaptchaenterprise.v1.DeleteFirewallPolicyRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.recaptchaenterprise.v1.DeleteFirewallPolicyRequest, com.google.protobuf.Empty>
+      getDeleteFirewallPolicyMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.recaptchaenterprise.v1.DeleteFirewallPolicyRequest,
+            com.google.protobuf.Empty>
+        getDeleteFirewallPolicyMethod;
+    if ((getDeleteFirewallPolicyMethod =
+            RecaptchaEnterpriseServiceGrpc.getDeleteFirewallPolicyMethod)
+        == null) {
+      synchronized (RecaptchaEnterpriseServiceGrpc.class) {
+        if ((getDeleteFirewallPolicyMethod =
+                RecaptchaEnterpriseServiceGrpc.getDeleteFirewallPolicyMethod)
+            == null) {
+          RecaptchaEnterpriseServiceGrpc.getDeleteFirewallPolicyMethod =
+              getDeleteFirewallPolicyMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.recaptchaenterprise.v1.DeleteFirewallPolicyRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "DeleteFirewallPolicy"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.recaptchaenterprise.v1.DeleteFirewallPolicyRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new RecaptchaEnterpriseServiceMethodDescriptorSupplier(
+                              "DeleteFirewallPolicy"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteFirewallPolicyMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.recaptchaenterprise.v1.ListRelatedAccountGroupsRequest,
           com.google.recaptchaenterprise.v1.ListRelatedAccountGroupsResponse>
       getListRelatedAccountGroupsMethod;
@@ -843,7 +1102,7 @@ public final class RecaptchaEnterpriseServiceGrpc {
      * Migrates an existing key from reCAPTCHA to reCAPTCHA Enterprise.
      * Once a key is migrated, it can be used from either product. SiteVerify
      * requests are billed as CreateAssessment calls. You must be
-     * authenticated as one of the current owners of the reCAPTCHA Site Key, and
+     * authenticated as one of the current owners of the reCAPTCHA Key, and
      * your user must have the reCAPTCHA Enterprise Admin IAM role in the
      * destination project.
      * </pre>
@@ -866,6 +1125,82 @@ public final class RecaptchaEnterpriseServiceGrpc {
         com.google.recaptchaenterprise.v1.GetMetricsRequest request,
         io.grpc.stub.StreamObserver<com.google.recaptchaenterprise.v1.Metrics> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetMetricsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new FirewallPolicy, specifying conditions at which reCAPTCHA
+     * Enterprise actions can be executed.
+     * A project may have a maximum of 1000 policies.
+     * </pre>
+     */
+    default void createFirewallPolicy(
+        com.google.recaptchaenterprise.v1.CreateFirewallPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.recaptchaenterprise.v1.FirewallPolicy>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateFirewallPolicyMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the list of all firewall policies that belong to a project.
+     * </pre>
+     */
+    default void listFirewallPolicies(
+        com.google.recaptchaenterprise.v1.ListFirewallPoliciesRequest request,
+        io.grpc.stub.StreamObserver<com.google.recaptchaenterprise.v1.ListFirewallPoliciesResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListFirewallPoliciesMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the specified firewall policy.
+     * </pre>
+     */
+    default void getFirewallPolicy(
+        com.google.recaptchaenterprise.v1.GetFirewallPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.recaptchaenterprise.v1.FirewallPolicy>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetFirewallPolicyMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the specified firewall policy.
+     * </pre>
+     */
+    default void updateFirewallPolicy(
+        com.google.recaptchaenterprise.v1.UpdateFirewallPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.recaptchaenterprise.v1.FirewallPolicy>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateFirewallPolicyMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified firewall policy.
+     * </pre>
+     */
+    default void deleteFirewallPolicy(
+        com.google.recaptchaenterprise.v1.DeleteFirewallPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteFirewallPolicyMethod(), responseObserver);
     }
 
     /**
@@ -1086,7 +1421,7 @@ public final class RecaptchaEnterpriseServiceGrpc {
      * Migrates an existing key from reCAPTCHA to reCAPTCHA Enterprise.
      * Once a key is migrated, it can be used from either product. SiteVerify
      * requests are billed as CreateAssessment calls. You must be
-     * authenticated as one of the current owners of the reCAPTCHA Site Key, and
+     * authenticated as one of the current owners of the reCAPTCHA Key, and
      * your user must have the reCAPTCHA Enterprise Admin IAM role in the
      * destination project.
      * </pre>
@@ -1111,6 +1446,92 @@ public final class RecaptchaEnterpriseServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.recaptchaenterprise.v1.Metrics> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetMetricsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new FirewallPolicy, specifying conditions at which reCAPTCHA
+     * Enterprise actions can be executed.
+     * A project may have a maximum of 1000 policies.
+     * </pre>
+     */
+    public void createFirewallPolicy(
+        com.google.recaptchaenterprise.v1.CreateFirewallPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.recaptchaenterprise.v1.FirewallPolicy>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateFirewallPolicyMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the list of all firewall policies that belong to a project.
+     * </pre>
+     */
+    public void listFirewallPolicies(
+        com.google.recaptchaenterprise.v1.ListFirewallPoliciesRequest request,
+        io.grpc.stub.StreamObserver<com.google.recaptchaenterprise.v1.ListFirewallPoliciesResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListFirewallPoliciesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the specified firewall policy.
+     * </pre>
+     */
+    public void getFirewallPolicy(
+        com.google.recaptchaenterprise.v1.GetFirewallPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.recaptchaenterprise.v1.FirewallPolicy>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetFirewallPolicyMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the specified firewall policy.
+     * </pre>
+     */
+    public void updateFirewallPolicy(
+        com.google.recaptchaenterprise.v1.UpdateFirewallPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.recaptchaenterprise.v1.FirewallPolicy>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateFirewallPolicyMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified firewall policy.
+     * </pre>
+     */
+    public void deleteFirewallPolicy(
+        com.google.recaptchaenterprise.v1.DeleteFirewallPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteFirewallPolicyMethod(), getCallOptions()),
+          request,
+          responseObserver);
     }
 
     /**
@@ -1303,7 +1724,7 @@ public final class RecaptchaEnterpriseServiceGrpc {
      * Migrates an existing key from reCAPTCHA to reCAPTCHA Enterprise.
      * Once a key is migrated, it can be used from either product. SiteVerify
      * requests are billed as CreateAssessment calls. You must be
-     * authenticated as one of the current owners of the reCAPTCHA Site Key, and
+     * authenticated as one of the current owners of the reCAPTCHA Key, and
      * your user must have the reCAPTCHA Enterprise Admin IAM role in the
      * destination project.
      * </pre>
@@ -1326,6 +1747,73 @@ public final class RecaptchaEnterpriseServiceGrpc {
         com.google.recaptchaenterprise.v1.GetMetricsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetMetricsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new FirewallPolicy, specifying conditions at which reCAPTCHA
+     * Enterprise actions can be executed.
+     * A project may have a maximum of 1000 policies.
+     * </pre>
+     */
+    public com.google.recaptchaenterprise.v1.FirewallPolicy createFirewallPolicy(
+        com.google.recaptchaenterprise.v1.CreateFirewallPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateFirewallPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the list of all firewall policies that belong to a project.
+     * </pre>
+     */
+    public com.google.recaptchaenterprise.v1.ListFirewallPoliciesResponse listFirewallPolicies(
+        com.google.recaptchaenterprise.v1.ListFirewallPoliciesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListFirewallPoliciesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the specified firewall policy.
+     * </pre>
+     */
+    public com.google.recaptchaenterprise.v1.FirewallPolicy getFirewallPolicy(
+        com.google.recaptchaenterprise.v1.GetFirewallPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetFirewallPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the specified firewall policy.
+     * </pre>
+     */
+    public com.google.recaptchaenterprise.v1.FirewallPolicy updateFirewallPolicy(
+        com.google.recaptchaenterprise.v1.UpdateFirewallPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateFirewallPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified firewall policy.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteFirewallPolicy(
+        com.google.recaptchaenterprise.v1.DeleteFirewallPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteFirewallPolicyMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1511,7 +1999,7 @@ public final class RecaptchaEnterpriseServiceGrpc {
      * Migrates an existing key from reCAPTCHA to reCAPTCHA Enterprise.
      * Once a key is migrated, it can be used from either product. SiteVerify
      * requests are billed as CreateAssessment calls. You must be
-     * authenticated as one of the current owners of the reCAPTCHA Site Key, and
+     * authenticated as one of the current owners of the reCAPTCHA Key, and
      * your user must have the reCAPTCHA Enterprise Admin IAM role in the
      * destination project.
      * </pre>
@@ -1535,6 +2023,81 @@ public final class RecaptchaEnterpriseServiceGrpc {
         getMetrics(com.google.recaptchaenterprise.v1.GetMetricsRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetMetricsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new FirewallPolicy, specifying conditions at which reCAPTCHA
+     * Enterprise actions can be executed.
+     * A project may have a maximum of 1000 policies.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.recaptchaenterprise.v1.FirewallPolicy>
+        createFirewallPolicy(
+            com.google.recaptchaenterprise.v1.CreateFirewallPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateFirewallPolicyMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the list of all firewall policies that belong to a project.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.recaptchaenterprise.v1.ListFirewallPoliciesResponse>
+        listFirewallPolicies(
+            com.google.recaptchaenterprise.v1.ListFirewallPoliciesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListFirewallPoliciesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the specified firewall policy.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.recaptchaenterprise.v1.FirewallPolicy>
+        getFirewallPolicy(com.google.recaptchaenterprise.v1.GetFirewallPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetFirewallPolicyMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the specified firewall policy.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.recaptchaenterprise.v1.FirewallPolicy>
+        updateFirewallPolicy(
+            com.google.recaptchaenterprise.v1.UpdateFirewallPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateFirewallPolicyMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified firewall policy.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        deleteFirewallPolicy(
+            com.google.recaptchaenterprise.v1.DeleteFirewallPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteFirewallPolicyMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1595,9 +2158,14 @@ public final class RecaptchaEnterpriseServiceGrpc {
   private static final int METHODID_DELETE_KEY = 7;
   private static final int METHODID_MIGRATE_KEY = 8;
   private static final int METHODID_GET_METRICS = 9;
-  private static final int METHODID_LIST_RELATED_ACCOUNT_GROUPS = 10;
-  private static final int METHODID_LIST_RELATED_ACCOUNT_GROUP_MEMBERSHIPS = 11;
-  private static final int METHODID_SEARCH_RELATED_ACCOUNT_GROUP_MEMBERSHIPS = 12;
+  private static final int METHODID_CREATE_FIREWALL_POLICY = 10;
+  private static final int METHODID_LIST_FIREWALL_POLICIES = 11;
+  private static final int METHODID_GET_FIREWALL_POLICY = 12;
+  private static final int METHODID_UPDATE_FIREWALL_POLICY = 13;
+  private static final int METHODID_DELETE_FIREWALL_POLICY = 14;
+  private static final int METHODID_LIST_RELATED_ACCOUNT_GROUPS = 15;
+  private static final int METHODID_LIST_RELATED_ACCOUNT_GROUP_MEMBERSHIPS = 16;
+  private static final int METHODID_SEARCH_RELATED_ACCOUNT_GROUP_MEMBERSHIPS = 17;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1676,6 +2244,36 @@ public final class RecaptchaEnterpriseServiceGrpc {
               (com.google.recaptchaenterprise.v1.GetMetricsRequest) request,
               (io.grpc.stub.StreamObserver<com.google.recaptchaenterprise.v1.Metrics>)
                   responseObserver);
+          break;
+        case METHODID_CREATE_FIREWALL_POLICY:
+          serviceImpl.createFirewallPolicy(
+              (com.google.recaptchaenterprise.v1.CreateFirewallPolicyRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.recaptchaenterprise.v1.FirewallPolicy>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_FIREWALL_POLICIES:
+          serviceImpl.listFirewallPolicies(
+              (com.google.recaptchaenterprise.v1.ListFirewallPoliciesRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.recaptchaenterprise.v1.ListFirewallPoliciesResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_FIREWALL_POLICY:
+          serviceImpl.getFirewallPolicy(
+              (com.google.recaptchaenterprise.v1.GetFirewallPolicyRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.recaptchaenterprise.v1.FirewallPolicy>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_FIREWALL_POLICY:
+          serviceImpl.updateFirewallPolicy(
+              (com.google.recaptchaenterprise.v1.UpdateFirewallPolicyRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.recaptchaenterprise.v1.FirewallPolicy>)
+                  responseObserver);
+          break;
+        case METHODID_DELETE_FIREWALL_POLICY:
+          serviceImpl.deleteFirewallPolicy(
+              (com.google.recaptchaenterprise.v1.DeleteFirewallPolicyRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
         case METHODID_LIST_RELATED_ACCOUNT_GROUPS:
           serviceImpl.listRelatedAccountGroups(
@@ -1783,6 +2381,40 @@ public final class RecaptchaEnterpriseServiceGrpc {
                     com.google.recaptchaenterprise.v1.GetMetricsRequest,
                     com.google.recaptchaenterprise.v1.Metrics>(service, METHODID_GET_METRICS)))
         .addMethod(
+            getCreateFirewallPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.recaptchaenterprise.v1.CreateFirewallPolicyRequest,
+                    com.google.recaptchaenterprise.v1.FirewallPolicy>(
+                    service, METHODID_CREATE_FIREWALL_POLICY)))
+        .addMethod(
+            getListFirewallPoliciesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.recaptchaenterprise.v1.ListFirewallPoliciesRequest,
+                    com.google.recaptchaenterprise.v1.ListFirewallPoliciesResponse>(
+                    service, METHODID_LIST_FIREWALL_POLICIES)))
+        .addMethod(
+            getGetFirewallPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.recaptchaenterprise.v1.GetFirewallPolicyRequest,
+                    com.google.recaptchaenterprise.v1.FirewallPolicy>(
+                    service, METHODID_GET_FIREWALL_POLICY)))
+        .addMethod(
+            getUpdateFirewallPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.recaptchaenterprise.v1.UpdateFirewallPolicyRequest,
+                    com.google.recaptchaenterprise.v1.FirewallPolicy>(
+                    service, METHODID_UPDATE_FIREWALL_POLICY)))
+        .addMethod(
+            getDeleteFirewallPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.recaptchaenterprise.v1.DeleteFirewallPolicyRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_FIREWALL_POLICY)))
+        .addMethod(
             getListRelatedAccountGroupsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -1830,9 +2462,9 @@ public final class RecaptchaEnterpriseServiceGrpc {
   private static final class RecaptchaEnterpriseServiceMethodDescriptorSupplier
       extends RecaptchaEnterpriseServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    RecaptchaEnterpriseServiceMethodDescriptorSupplier(String methodName) {
+    RecaptchaEnterpriseServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 
@@ -1864,6 +2496,11 @@ public final class RecaptchaEnterpriseServiceGrpc {
                       .addMethod(getDeleteKeyMethod())
                       .addMethod(getMigrateKeyMethod())
                       .addMethod(getGetMetricsMethod())
+                      .addMethod(getCreateFirewallPolicyMethod())
+                      .addMethod(getListFirewallPoliciesMethod())
+                      .addMethod(getGetFirewallPolicyMethod())
+                      .addMethod(getUpdateFirewallPolicyMethod())
+                      .addMethod(getDeleteFirewallPolicyMethod())
                       .addMethod(getListRelatedAccountGroupsMethod())
                       .addMethod(getListRelatedAccountGroupMembershipsMethod())
                       .addMethod(getSearchRelatedAccountGroupMembershipsMethod())

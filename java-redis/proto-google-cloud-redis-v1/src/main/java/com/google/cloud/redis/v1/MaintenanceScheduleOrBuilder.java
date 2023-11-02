@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,8 @@ public interface MaintenanceScheduleOrBuilder
    *
    *
    * <pre>
-   * Output only. The start time of any upcoming scheduled maintenance for this instance.
+   * Output only. The start time of any upcoming scheduled maintenance for this
+   * instance.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -40,7 +41,8 @@ public interface MaintenanceScheduleOrBuilder
    *
    *
    * <pre>
-   * Output only. The start time of any upcoming scheduled maintenance for this instance.
+   * Output only. The start time of any upcoming scheduled maintenance for this
+   * instance.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -53,7 +55,8 @@ public interface MaintenanceScheduleOrBuilder
    *
    *
    * <pre>
-   * Output only. The start time of any upcoming scheduled maintenance for this instance.
+   * Output only. The start time of any upcoming scheduled maintenance for this
+   * instance.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -65,7 +68,8 @@ public interface MaintenanceScheduleOrBuilder
    *
    *
    * <pre>
-   * Output only. The end time of any upcoming scheduled maintenance for this instance.
+   * Output only. The end time of any upcoming scheduled maintenance for this
+   * instance.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -78,7 +82,8 @@ public interface MaintenanceScheduleOrBuilder
    *
    *
    * <pre>
-   * Output only. The end time of any upcoming scheduled maintenance for this instance.
+   * Output only. The end time of any upcoming scheduled maintenance for this
+   * instance.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -91,7 +96,8 @@ public interface MaintenanceScheduleOrBuilder
    *
    *
    * <pre>
-   * Output only. The end time of any upcoming scheduled maintenance for this instance.
+   * Output only. The end time of any upcoming scheduled maintenance for this
+   * instance.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -109,7 +115,7 @@ public interface MaintenanceScheduleOrBuilder
    * <code>bool can_reschedule = 3 [deprecated = true];</code>
    *
    * @deprecated google.cloud.redis.v1.MaintenanceSchedule.can_reschedule is deprecated. See
-   *     google/cloud/redis/v1/cloud_redis.proto;l=576
+   *     google/cloud/redis/v1/cloud_redis.proto;l=690
    * @return The canReschedule.
    */
   @java.lang.Deprecated
@@ -119,8 +125,8 @@ public interface MaintenanceScheduleOrBuilder
    *
    *
    * <pre>
-   * Output only. The deadline that the maintenance schedule start time can not go beyond,
-   * including reschedule.
+   * Output only. The deadline that the maintenance schedule start time can not
+   * go beyond, including reschedule.
    * </pre>
    *
    * <code>
@@ -134,8 +140,8 @@ public interface MaintenanceScheduleOrBuilder
    *
    *
    * <pre>
-   * Output only. The deadline that the maintenance schedule start time can not go beyond,
-   * including reschedule.
+   * Output only. The deadline that the maintenance schedule start time can not
+   * go beyond, including reschedule.
    * </pre>
    *
    * <code>
@@ -149,8 +155,8 @@ public interface MaintenanceScheduleOrBuilder
    *
    *
    * <pre>
-   * Output only. The deadline that the maintenance schedule start time can not go beyond,
-   * including reschedule.
+   * Output only. The deadline that the maintenance schedule start time can not
+   * go beyond, including reschedule.
    * </pre>
    *
    * <code>

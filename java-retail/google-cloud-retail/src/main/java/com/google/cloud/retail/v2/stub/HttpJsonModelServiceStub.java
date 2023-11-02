@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,6 +33,7 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.httpjson.longrunning.stub.HttpJsonOperationsStub;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.retail.v2.CreateModelMetadata;
 import com.google.cloud.retail.v2.CreateModelRequest;
@@ -465,41 +466,89 @@ public class HttpJsonModelServiceStub extends ModelServiceStub {
         HttpJsonCallSettings.<CreateModelRequest, Operation>newBuilder()
             .setMethodDescriptor(createModelMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetModelRequest, Model> getModelTransportSettings =
         HttpJsonCallSettings.<GetModelRequest, Model>newBuilder()
             .setMethodDescriptor(getModelMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<PauseModelRequest, Model> pauseModelTransportSettings =
         HttpJsonCallSettings.<PauseModelRequest, Model>newBuilder()
             .setMethodDescriptor(pauseModelMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ResumeModelRequest, Model> resumeModelTransportSettings =
         HttpJsonCallSettings.<ResumeModelRequest, Model>newBuilder()
             .setMethodDescriptor(resumeModelMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeleteModelRequest, Empty> deleteModelTransportSettings =
         HttpJsonCallSettings.<DeleteModelRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteModelMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListModelsRequest, ListModelsResponse> listModelsTransportSettings =
         HttpJsonCallSettings.<ListModelsRequest, ListModelsResponse>newBuilder()
             .setMethodDescriptor(listModelsMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateModelRequest, Model> updateModelTransportSettings =
         HttpJsonCallSettings.<UpdateModelRequest, Model>newBuilder()
             .setMethodDescriptor(updateModelMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("model.name", String.valueOf(request.getModel().getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<TuneModelRequest, Operation> tuneModelTransportSettings =
         HttpJsonCallSettings.<TuneModelRequest, Operation>newBuilder()
             .setMethodDescriptor(tuneModelMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
 
     this.createModelCallable =

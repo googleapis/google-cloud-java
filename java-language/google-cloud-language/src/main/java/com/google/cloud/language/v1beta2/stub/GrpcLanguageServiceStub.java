@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,6 +35,8 @@ import com.google.cloud.language.v1beta2.AnnotateTextRequest;
 import com.google.cloud.language.v1beta2.AnnotateTextResponse;
 import com.google.cloud.language.v1beta2.ClassifyTextRequest;
 import com.google.cloud.language.v1beta2.ClassifyTextResponse;
+import com.google.cloud.language.v1beta2.ModerateTextRequest;
+import com.google.cloud.language.v1beta2.ModerateTextResponse;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
@@ -108,6 +110,16 @@ public class GrpcLanguageServiceStub extends LanguageServiceStub {
                   ProtoUtils.marshaller(ClassifyTextResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<ModerateTextRequest, ModerateTextResponse>
+      moderateTextMethodDescriptor =
+          MethodDescriptor.<ModerateTextRequest, ModerateTextResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.language.v1beta2.LanguageService/ModerateText")
+              .setRequestMarshaller(ProtoUtils.marshaller(ModerateTextRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ModerateTextResponse.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<AnnotateTextRequest, AnnotateTextResponse>
       annotateTextMethodDescriptor =
           MethodDescriptor.<AnnotateTextRequest, AnnotateTextResponse>newBuilder()
@@ -126,6 +138,7 @@ public class GrpcLanguageServiceStub extends LanguageServiceStub {
       analyzeEntitySentimentCallable;
   private final UnaryCallable<AnalyzeSyntaxRequest, AnalyzeSyntaxResponse> analyzeSyntaxCallable;
   private final UnaryCallable<ClassifyTextRequest, ClassifyTextResponse> classifyTextCallable;
+  private final UnaryCallable<ModerateTextRequest, ModerateTextResponse> moderateTextCallable;
   private final UnaryCallable<AnnotateTextRequest, AnnotateTextResponse> annotateTextCallable;
 
   private final BackgroundResource backgroundResources;
@@ -196,6 +209,10 @@ public class GrpcLanguageServiceStub extends LanguageServiceStub {
         GrpcCallSettings.<ClassifyTextRequest, ClassifyTextResponse>newBuilder()
             .setMethodDescriptor(classifyTextMethodDescriptor)
             .build();
+    GrpcCallSettings<ModerateTextRequest, ModerateTextResponse> moderateTextTransportSettings =
+        GrpcCallSettings.<ModerateTextRequest, ModerateTextResponse>newBuilder()
+            .setMethodDescriptor(moderateTextMethodDescriptor)
+            .build();
     GrpcCallSettings<AnnotateTextRequest, AnnotateTextResponse> annotateTextTransportSettings =
         GrpcCallSettings.<AnnotateTextRequest, AnnotateTextResponse>newBuilder()
             .setMethodDescriptor(annotateTextMethodDescriptor)
@@ -218,6 +235,9 @@ public class GrpcLanguageServiceStub extends LanguageServiceStub {
     this.classifyTextCallable =
         callableFactory.createUnaryCallable(
             classifyTextTransportSettings, settings.classifyTextSettings(), clientContext);
+    this.moderateTextCallable =
+        callableFactory.createUnaryCallable(
+            moderateTextTransportSettings, settings.moderateTextSettings(), clientContext);
     this.annotateTextCallable =
         callableFactory.createUnaryCallable(
             annotateTextTransportSettings, settings.annotateTextSettings(), clientContext);
@@ -255,6 +275,11 @@ public class GrpcLanguageServiceStub extends LanguageServiceStub {
   @Override
   public UnaryCallable<ClassifyTextRequest, ClassifyTextResponse> classifyTextCallable() {
     return classifyTextCallable;
+  }
+
+  @Override
+  public UnaryCallable<ModerateTextRequest, ModerateTextResponse> moderateTextCallable() {
+    return moderateTextCallable;
   }
 
   @Override

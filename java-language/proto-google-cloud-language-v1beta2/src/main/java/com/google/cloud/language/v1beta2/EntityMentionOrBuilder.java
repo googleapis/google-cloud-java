@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -88,9 +88,9 @@ public interface EntityMentionOrBuilder
    *
    * <pre>
    * For calls to [AnalyzeEntitySentiment][] or if
-   * [AnnotateTextRequest.Features.extract_entity_sentiment][google.cloud.language.v1beta2.AnnotateTextRequest.Features.extract_entity_sentiment] is set to
-   * true, this field will contain the sentiment expressed for this mention of
-   * the entity in the provided document.
+   * [AnnotateTextRequest.Features.extract_entity_sentiment][google.cloud.language.v1beta2.AnnotateTextRequest.Features.extract_entity_sentiment]
+   * is set to true, this field will contain the sentiment expressed for this
+   * mention of the entity in the provided document.
    * </pre>
    *
    * <code>.google.cloud.language.v1beta2.Sentiment sentiment = 3;</code>
@@ -103,9 +103,9 @@ public interface EntityMentionOrBuilder
    *
    * <pre>
    * For calls to [AnalyzeEntitySentiment][] or if
-   * [AnnotateTextRequest.Features.extract_entity_sentiment][google.cloud.language.v1beta2.AnnotateTextRequest.Features.extract_entity_sentiment] is set to
-   * true, this field will contain the sentiment expressed for this mention of
-   * the entity in the provided document.
+   * [AnnotateTextRequest.Features.extract_entity_sentiment][google.cloud.language.v1beta2.AnnotateTextRequest.Features.extract_entity_sentiment]
+   * is set to true, this field will contain the sentiment expressed for this
+   * mention of the entity in the provided document.
    * </pre>
    *
    * <code>.google.cloud.language.v1beta2.Sentiment sentiment = 3;</code>
@@ -118,9 +118,9 @@ public interface EntityMentionOrBuilder
    *
    * <pre>
    * For calls to [AnalyzeEntitySentiment][] or if
-   * [AnnotateTextRequest.Features.extract_entity_sentiment][google.cloud.language.v1beta2.AnnotateTextRequest.Features.extract_entity_sentiment] is set to
-   * true, this field will contain the sentiment expressed for this mention of
-   * the entity in the provided document.
+   * [AnnotateTextRequest.Features.extract_entity_sentiment][google.cloud.language.v1beta2.AnnotateTextRequest.Features.extract_entity_sentiment]
+   * is set to true, this field will contain the sentiment expressed for this
+   * mention of the entity in the provided document.
    * </pre>
    *
    * <code>.google.cloud.language.v1beta2.Sentiment sentiment = 3;</code>

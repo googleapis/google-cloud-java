@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -123,6 +123,11 @@ public class ScheduleServiceSettings extends ClientSettings<ScheduleServiceSetti
   /** Returns the object with the settings used for calls to resumeSchedule. */
   public UnaryCallSettings<ResumeScheduleRequest, Empty> resumeScheduleSettings() {
     return ((ScheduleServiceStubSettings) getStubSettings()).resumeScheduleSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateSchedule. */
+  public UnaryCallSettings<UpdateScheduleRequest, Schedule> updateScheduleSettings() {
+    return ((ScheduleServiceStubSettings) getStubSettings()).updateScheduleSettings();
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -285,6 +290,11 @@ public class ScheduleServiceSettings extends ClientSettings<ScheduleServiceSetti
     /** Returns the builder for the settings used for calls to resumeSchedule. */
     public UnaryCallSettings.Builder<ResumeScheduleRequest, Empty> resumeScheduleSettings() {
       return getStubSettingsBuilder().resumeScheduleSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateSchedule. */
+    public UnaryCallSettings.Builder<UpdateScheduleRequest, Schedule> updateScheduleSettings() {
+      return getStubSettingsBuilder().updateScheduleSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

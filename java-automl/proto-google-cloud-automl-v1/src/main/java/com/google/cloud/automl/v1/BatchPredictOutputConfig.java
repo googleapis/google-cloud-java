@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ package com.google.cloud.automl.v1;
  *
  * <pre>
  * Output configuration for BatchPredict Action.
+ *
  * As destination the
  * [gcs_destination][google.cloud.automl.v1.BatchPredictOutputConfig.gcs_destination]
  * must be set unless specified otherwise for a domain. If gcs_destination is
@@ -31,6 +32,7 @@ package com.google.cloud.automl.v1;
  * "prediction-&lt;model-display-name&gt;-&lt;timestamp-of-prediction-call&gt;",
  * where timestamp is in YYYY-MM-DDThh:mm:ss.sssZ ISO-8601 format. The contents
  * of it depends on the ML problem the predictions are made for.
+ *
  *  *  For Image Classification:
  *         In the created directory files `image_classification_1.jsonl`,
  *         `image_classification_2.jsonl`,...,`image_classification_N.jsonl`
@@ -50,6 +52,7 @@ package com.google.cloud.automl.v1;
  *         exactly one
  *         [`google.rpc.Status`](https://github.com/googleapis/googleapis/blob/master/google/rpc/status.proto)
  *         containing only `code` and `message`fields.
+ *
  *  *  For Image Object Detection:
  *         In the created directory files `image_object_detection_1.jsonl`,
  *         `image_object_detection_2.jsonl`,...,`image_object_detection_N.jsonl`
@@ -73,6 +76,7 @@ package com.google.cloud.automl.v1;
  *         In the created directory a video_classification.csv file, and a .JSON
  *         file per each video classification requested in the input (i.e. each
  *         line in given CSV(s)), will be created.
+ *
  *         The format of video_classification.csv is:
  *         GCS_FILE_PATH,TIME_SEGMENT_START,TIME_SEGMENT_END,JSON_FILE_NAME,STATUS
  *         where:
@@ -84,6 +88,7 @@ package com.google.cloud.automl.v1;
  *         STATUS = "OK" if prediction completed successfully, or an error code
  *             with message otherwise. If STATUS is not "OK" then the .JSON file
  *             for that line may not exist or be empty.
+ *
  *         Each .JSON file, assuming STATUS is "OK", will contain a list of
  *         AnnotationPayload protos in JSON format, which are the predictions
  *         for the video time segment the file is assigned to in the
@@ -92,12 +97,14 @@ package com.google.cloud.automl.v1;
  *         video_classification.type field (note that the returned types are
  *         governed by `classifaction_types` parameter in
  *         [PredictService.BatchPredictRequest.params][]).
+ *
  *  *  For Video Object Tracking:
  *         In the created directory a video_object_tracking.csv file will be
  *         created, and multiple files video_object_trackinng_1.json,
  *         video_object_trackinng_2.json,..., video_object_trackinng_N.json,
  *         where N is the number of requests in the input (i.e. the number of
  *         lines in given CSV(s)).
+ *
  *         The format of video_object_tracking.csv is:
  *         GCS_FILE_PATH,TIME_SEGMENT_START,TIME_SEGMENT_END,JSON_FILE_NAME,STATUS
  *         where:
@@ -109,6 +116,7 @@ package com.google.cloud.automl.v1;
  *         STATUS = "OK" if prediction completed successfully, or an error
  *             code with message otherwise. If STATUS is not "OK" then the .JSON
  *             file for that line may not exist or be empty.
+ *
  *         Each .JSON file, assuming STATUS is "OK", will contain a list of
  *         AnnotationPayload protos in JSON format, which are the predictions
  *         for each frame of the video time segment the file is assigned to in
@@ -119,6 +127,7 @@ package com.google.cloud.automl.v1;
  *         `text_classification_2.jsonl`,...,`text_classification_N.jsonl`
  *         will be created, where N may be 1, and depends on the
  *         total number of inputs and annotations found.
+ *
  *         Each .JSONL file will contain, per line, a JSON representation of a
  *         proto that wraps input text file (or document) in
  *         the text snippet (or document) proto and a list of
@@ -126,6 +135,7 @@ package com.google.cloud.automl.v1;
  *         have classification detail populated. A single text file (or
  *         document) will be listed only once with all its annotations, and its
  *         annotations will never be split across files.
+ *
  *         If prediction for any input file (or document) failed (partially or
  *         completely), then additional `errors_1.jsonl`, `errors_2.jsonl`,...,
  *         `errors_N.jsonl` files will be created (N depends on total number of
@@ -133,11 +143,13 @@ package com.google.cloud.automl.v1;
  *         proto that wraps input file followed by exactly one
  *         [`google.rpc.Status`](https://github.com/googleapis/googleapis/blob/master/google/rpc/status.proto)
  *         containing only `code` and `message`.
+ *
  *  *  For Text Sentiment:
  *         In the created directory files `text_sentiment_1.jsonl`,
  *         `text_sentiment_2.jsonl`,...,`text_sentiment_N.jsonl`
  *         will be created, where N may be 1, and depends on the
  *         total number of inputs and annotations found.
+ *
  *         Each .JSONL file will contain, per line, a JSON representation of a
  *         proto that wraps input text file (or document) in
  *         the text snippet (or document) proto and a list of
@@ -145,6 +157,7 @@ package com.google.cloud.automl.v1;
  *         have text_sentiment detail populated. A single text file (or
  *         document) will be listed only once with all its annotations, and its
  *         annotations will never be split across files.
+ *
  *         If prediction for any input file (or document) failed (partially or
  *         completely), then additional `errors_1.jsonl`, `errors_2.jsonl`,...,
  *         `errors_N.jsonl` files will be created (N depends on total number of
@@ -152,6 +165,7 @@ package com.google.cloud.automl.v1;
  *         proto that wraps input file followed by exactly one
  *         [`google.rpc.Status`](https://github.com/googleapis/googleapis/blob/master/google/rpc/status.proto)
  *         containing only `code` and `message`.
+ *
  *   *  For Text Extraction:
  *         In the created directory files `text_extraction_1.jsonl`,
  *         `text_extraction_2.jsonl`,...,`text_extraction_N.jsonl`
@@ -185,6 +199,7 @@ package com.google.cloud.automl.v1;
  *         exactly one
  *         [`google.rpc.Status`](https://github.com/googleapis/googleapis/blob/master/google/rpc/status.proto)
  *         containing only `code` and `message`.
+ *
  *  *  For Tables:
  *         Output depends on whether
  *         [gcs_destination][google.cloud.automl.v1p1beta.BatchPredictOutputConfig.gcs_destination]
@@ -278,11 +293,6 @@ public final class BatchPredictOutputConfig extends com.google.protobuf.Generate
     return new BatchPredictOutputConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.automl.v1.Io
         .internal_static_google_cloud_automl_v1_BatchPredictOutputConfig_descriptor;
@@ -299,6 +309,8 @@ public final class BatchPredictOutputConfig extends com.google.protobuf.Generate
   }
 
   private int destinationCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object destination_;
 
   public enum DestinationCase
@@ -581,6 +593,7 @@ public final class BatchPredictOutputConfig extends com.google.protobuf.Generate
    *
    * <pre>
    * Output configuration for BatchPredict Action.
+   *
    * As destination the
    * [gcs_destination][google.cloud.automl.v1.BatchPredictOutputConfig.gcs_destination]
    * must be set unless specified otherwise for a domain. If gcs_destination is
@@ -589,6 +602,7 @@ public final class BatchPredictOutputConfig extends com.google.protobuf.Generate
    * "prediction-&lt;model-display-name&gt;-&lt;timestamp-of-prediction-call&gt;",
    * where timestamp is in YYYY-MM-DDThh:mm:ss.sssZ ISO-8601 format. The contents
    * of it depends on the ML problem the predictions are made for.
+   *
    *  *  For Image Classification:
    *         In the created directory files `image_classification_1.jsonl`,
    *         `image_classification_2.jsonl`,...,`image_classification_N.jsonl`
@@ -608,6 +622,7 @@ public final class BatchPredictOutputConfig extends com.google.protobuf.Generate
    *         exactly one
    *         [`google.rpc.Status`](https://github.com/googleapis/googleapis/blob/master/google/rpc/status.proto)
    *         containing only `code` and `message`fields.
+   *
    *  *  For Image Object Detection:
    *         In the created directory files `image_object_detection_1.jsonl`,
    *         `image_object_detection_2.jsonl`,...,`image_object_detection_N.jsonl`
@@ -631,6 +646,7 @@ public final class BatchPredictOutputConfig extends com.google.protobuf.Generate
    *         In the created directory a video_classification.csv file, and a .JSON
    *         file per each video classification requested in the input (i.e. each
    *         line in given CSV(s)), will be created.
+   *
    *         The format of video_classification.csv is:
    *         GCS_FILE_PATH,TIME_SEGMENT_START,TIME_SEGMENT_END,JSON_FILE_NAME,STATUS
    *         where:
@@ -642,6 +658,7 @@ public final class BatchPredictOutputConfig extends com.google.protobuf.Generate
    *         STATUS = "OK" if prediction completed successfully, or an error code
    *             with message otherwise. If STATUS is not "OK" then the .JSON file
    *             for that line may not exist or be empty.
+   *
    *         Each .JSON file, assuming STATUS is "OK", will contain a list of
    *         AnnotationPayload protos in JSON format, which are the predictions
    *         for the video time segment the file is assigned to in the
@@ -650,12 +667,14 @@ public final class BatchPredictOutputConfig extends com.google.protobuf.Generate
    *         video_classification.type field (note that the returned types are
    *         governed by `classifaction_types` parameter in
    *         [PredictService.BatchPredictRequest.params][]).
+   *
    *  *  For Video Object Tracking:
    *         In the created directory a video_object_tracking.csv file will be
    *         created, and multiple files video_object_trackinng_1.json,
    *         video_object_trackinng_2.json,..., video_object_trackinng_N.json,
    *         where N is the number of requests in the input (i.e. the number of
    *         lines in given CSV(s)).
+   *
    *         The format of video_object_tracking.csv is:
    *         GCS_FILE_PATH,TIME_SEGMENT_START,TIME_SEGMENT_END,JSON_FILE_NAME,STATUS
    *         where:
@@ -667,6 +686,7 @@ public final class BatchPredictOutputConfig extends com.google.protobuf.Generate
    *         STATUS = "OK" if prediction completed successfully, or an error
    *             code with message otherwise. If STATUS is not "OK" then the .JSON
    *             file for that line may not exist or be empty.
+   *
    *         Each .JSON file, assuming STATUS is "OK", will contain a list of
    *         AnnotationPayload protos in JSON format, which are the predictions
    *         for each frame of the video time segment the file is assigned to in
@@ -677,6 +697,7 @@ public final class BatchPredictOutputConfig extends com.google.protobuf.Generate
    *         `text_classification_2.jsonl`,...,`text_classification_N.jsonl`
    *         will be created, where N may be 1, and depends on the
    *         total number of inputs and annotations found.
+   *
    *         Each .JSONL file will contain, per line, a JSON representation of a
    *         proto that wraps input text file (or document) in
    *         the text snippet (or document) proto and a list of
@@ -684,6 +705,7 @@ public final class BatchPredictOutputConfig extends com.google.protobuf.Generate
    *         have classification detail populated. A single text file (or
    *         document) will be listed only once with all its annotations, and its
    *         annotations will never be split across files.
+   *
    *         If prediction for any input file (or document) failed (partially or
    *         completely), then additional `errors_1.jsonl`, `errors_2.jsonl`,...,
    *         `errors_N.jsonl` files will be created (N depends on total number of
@@ -691,11 +713,13 @@ public final class BatchPredictOutputConfig extends com.google.protobuf.Generate
    *         proto that wraps input file followed by exactly one
    *         [`google.rpc.Status`](https://github.com/googleapis/googleapis/blob/master/google/rpc/status.proto)
    *         containing only `code` and `message`.
+   *
    *  *  For Text Sentiment:
    *         In the created directory files `text_sentiment_1.jsonl`,
    *         `text_sentiment_2.jsonl`,...,`text_sentiment_N.jsonl`
    *         will be created, where N may be 1, and depends on the
    *         total number of inputs and annotations found.
+   *
    *         Each .JSONL file will contain, per line, a JSON representation of a
    *         proto that wraps input text file (or document) in
    *         the text snippet (or document) proto and a list of
@@ -703,6 +727,7 @@ public final class BatchPredictOutputConfig extends com.google.protobuf.Generate
    *         have text_sentiment detail populated. A single text file (or
    *         document) will be listed only once with all its annotations, and its
    *         annotations will never be split across files.
+   *
    *         If prediction for any input file (or document) failed (partially or
    *         completely), then additional `errors_1.jsonl`, `errors_2.jsonl`,...,
    *         `errors_N.jsonl` files will be created (N depends on total number of
@@ -710,6 +735,7 @@ public final class BatchPredictOutputConfig extends com.google.protobuf.Generate
    *         proto that wraps input file followed by exactly one
    *         [`google.rpc.Status`](https://github.com/googleapis/googleapis/blob/master/google/rpc/status.proto)
    *         containing only `code` and `message`.
+   *
    *   *  For Text Extraction:
    *         In the created directory files `text_extraction_1.jsonl`,
    *         `text_extraction_2.jsonl`,...,`text_extraction_N.jsonl`
@@ -743,6 +769,7 @@ public final class BatchPredictOutputConfig extends com.google.protobuf.Generate
    *         exactly one
    *         [`google.rpc.Status`](https://github.com/googleapis/googleapis/blob/master/google/rpc/status.proto)
    *         containing only `code` and `message`.
+   *
    *  *  For Tables:
    *         Output depends on whether
    *         [gcs_destination][google.cloud.automl.v1p1beta.BatchPredictOutputConfig.gcs_destination]

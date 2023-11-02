@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,18 +39,13 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
 
   private ImageVersion() {
     imageVersionId_ = "";
-    supportedPythonVersions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    supportedPythonVersions_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ImageVersion();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -143,7 +138,8 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
   public static final int SUPPORTED_PYTHON_VERSIONS_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList supportedPythonVersions_;
+  private com.google.protobuf.LazyStringArrayList supportedPythonVersions_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -546,8 +542,7 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = 0;
       imageVersionId_ = "";
       isDefault_ = false;
-      supportedPythonVersions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      supportedPythonVersions_ = com.google.protobuf.LazyStringArrayList.emptyList();
       releaseDate_ = null;
       if (releaseDateBuilder_ != null) {
         releaseDateBuilder_.dispose();
@@ -583,21 +578,11 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.orchestration.airflow.service.v1.ImageVersion buildPartial() {
       com.google.cloud.orchestration.airflow.service.v1.ImageVersion result =
           new com.google.cloud.orchestration.airflow.service.v1.ImageVersion(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(
-        com.google.cloud.orchestration.airflow.service.v1.ImageVersion result) {
-      if (((bitField0_ & 0x00000004) != 0)) {
-        supportedPythonVersions_ = supportedPythonVersions_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.supportedPythonVersions_ = supportedPythonVersions_;
     }
 
     private void buildPartial0(
@@ -608,6 +593,10 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.isDefault_ = isDefault_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        supportedPythonVersions_.makeImmutable();
+        result.supportedPythonVersions_ = supportedPythonVersions_;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.releaseDate_ =
@@ -679,7 +668,7 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
       if (!other.supportedPythonVersions_.isEmpty()) {
         if (supportedPythonVersions_.isEmpty()) {
           supportedPythonVersions_ = other.supportedPythonVersions_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ |= 0x00000004;
         } else {
           ensureSupportedPythonVersionsIsMutable();
           supportedPythonVersions_.addAll(other.supportedPythonVersions_);
@@ -944,15 +933,15 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList supportedPythonVersions_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList supportedPythonVersions_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureSupportedPythonVersionsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!supportedPythonVersions_.isModifiable()) {
         supportedPythonVersions_ =
             new com.google.protobuf.LazyStringArrayList(supportedPythonVersions_);
-        bitField0_ |= 0x00000004;
       }
+      bitField0_ |= 0x00000004;
     }
     /**
      *
@@ -966,7 +955,8 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the supportedPythonVersions.
      */
     public com.google.protobuf.ProtocolStringList getSupportedPythonVersionsList() {
-      return supportedPythonVersions_.getUnmodifiableView();
+      supportedPythonVersions_.makeImmutable();
+      return supportedPythonVersions_;
     }
     /**
      *
@@ -1031,6 +1021,7 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
       }
       ensureSupportedPythonVersionsIsMutable();
       supportedPythonVersions_.set(index, value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1052,6 +1043,7 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
       }
       ensureSupportedPythonVersionsIsMutable();
       supportedPythonVersions_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1070,6 +1062,7 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllSupportedPythonVersions(java.lang.Iterable<java.lang.String> values) {
       ensureSupportedPythonVersionsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, supportedPythonVersions_);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1085,8 +1078,9 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSupportedPythonVersions() {
-      supportedPythonVersions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      supportedPythonVersions_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000004);
+      ;
       onChanged();
       return this;
     }
@@ -1109,6 +1103,7 @@ public final class ImageVersion extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureSupportedPythonVersionsIsMutable();
       supportedPythonVersions_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

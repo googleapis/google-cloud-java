@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,11 +49,6 @@ public final class ProductLevelConfig extends com.google.protobuf.GeneratedMessa
     return new ProductLevelConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.retail.v2beta.CatalogProto
         .internal_static_google_cloud_retail_v2beta_ProductLevelConfig_descriptor;
@@ -79,6 +74,7 @@ public final class ProductLevelConfig extends com.google.protobuf.GeneratedMessa
    * <pre>
    * The type of [Product][google.cloud.retail.v2beta.Product]s allowed to be
    * ingested into the catalog. Acceptable values are:
+   *
    * * `primary` (default): You can ingest
    * [Product][google.cloud.retail.v2beta.Product]s of all types. When
    *   ingesting a [Product][google.cloud.retail.v2beta.Product], its type will
@@ -91,11 +87,14 @@ public final class ProductLevelConfig extends com.google.protobuf.GeneratedMessa
    *   [Product][google.cloud.retail.v2beta.Product]s. This means
    *   [Product.primary_product_id][google.cloud.retail.v2beta.Product.primary_product_id]
    *   cannot be empty.
+   *
    * If this field is set to an invalid value other than these, an
    * INVALID_ARGUMENT error is returned.
+   *
    * If this field is `variant` and
    * [merchant_center_product_id_field][google.cloud.retail.v2beta.ProductLevelConfig.merchant_center_product_id_field]
    * is `itemGroupId`, an INVALID_ARGUMENT error is returned.
+   *
    * See [Product
    * levels](https://cloud.google.com/retail/docs/catalog#product-levels)
    * for more details.
@@ -123,6 +122,7 @@ public final class ProductLevelConfig extends com.google.protobuf.GeneratedMessa
    * <pre>
    * The type of [Product][google.cloud.retail.v2beta.Product]s allowed to be
    * ingested into the catalog. Acceptable values are:
+   *
    * * `primary` (default): You can ingest
    * [Product][google.cloud.retail.v2beta.Product]s of all types. When
    *   ingesting a [Product][google.cloud.retail.v2beta.Product], its type will
@@ -135,11 +135,14 @@ public final class ProductLevelConfig extends com.google.protobuf.GeneratedMessa
    *   [Product][google.cloud.retail.v2beta.Product]s. This means
    *   [Product.primary_product_id][google.cloud.retail.v2beta.Product.primary_product_id]
    *   cannot be empty.
+   *
    * If this field is set to an invalid value other than these, an
    * INVALID_ARGUMENT error is returned.
+   *
    * If this field is `variant` and
    * [merchant_center_product_id_field][google.cloud.retail.v2beta.ProductLevelConfig.merchant_center_product_id_field]
    * is `itemGroupId`, an INVALID_ARGUMENT error is returned.
+   *
    * See [Product
    * levels](https://cloud.google.com/retail/docs/catalog#product-levels)
    * for more details.
@@ -174,15 +177,19 @@ public final class ProductLevelConfig extends com.google.protobuf.GeneratedMessa
    * Product](/bigquery-transfer/docs/merchant-center-products-schema) should be
    * imported as [Product.id][google.cloud.retail.v2beta.Product.id]. Acceptable
    * values are:
+   *
    * * `offerId` (default): Import `offerId` as the product ID.
    * * `itemGroupId`: Import `itemGroupId` as the product ID. Notice that Retail
    *   API will choose one item from the ones with the same `itemGroupId`, and
    *   use it to represent the item group.
+   *
    * If this field is set to an invalid value other than these, an
    * INVALID_ARGUMENT error is returned.
+   *
    * If this field is `itemGroupId` and
    * [ingestion_product_type][google.cloud.retail.v2beta.ProductLevelConfig.ingestion_product_type]
    * is `variant`, an INVALID_ARGUMENT error is returned.
+   *
    * See [Product
    * levels](https://cloud.google.com/retail/docs/catalog#product-levels)
    * for more details.
@@ -212,15 +219,19 @@ public final class ProductLevelConfig extends com.google.protobuf.GeneratedMessa
    * Product](/bigquery-transfer/docs/merchant-center-products-schema) should be
    * imported as [Product.id][google.cloud.retail.v2beta.Product.id]. Acceptable
    * values are:
+   *
    * * `offerId` (default): Import `offerId` as the product ID.
    * * `itemGroupId`: Import `itemGroupId` as the product ID. Notice that Retail
    *   API will choose one item from the ones with the same `itemGroupId`, and
    *   use it to represent the item group.
+   *
    * If this field is set to an invalid value other than these, an
    * INVALID_ARGUMENT error is returned.
+   *
    * If this field is `itemGroupId` and
    * [ingestion_product_type][google.cloud.retail.v2beta.ProductLevelConfig.ingestion_product_type]
    * is `variant`, an INVALID_ARGUMENT error is returned.
+   *
    * See [Product
    * levels](https://cloud.google.com/retail/docs/catalog#product-levels)
    * for more details.
@@ -620,6 +631,7 @@ public final class ProductLevelConfig extends com.google.protobuf.GeneratedMessa
      * <pre>
      * The type of [Product][google.cloud.retail.v2beta.Product]s allowed to be
      * ingested into the catalog. Acceptable values are:
+     *
      * * `primary` (default): You can ingest
      * [Product][google.cloud.retail.v2beta.Product]s of all types. When
      *   ingesting a [Product][google.cloud.retail.v2beta.Product], its type will
@@ -632,11 +644,14 @@ public final class ProductLevelConfig extends com.google.protobuf.GeneratedMessa
      *   [Product][google.cloud.retail.v2beta.Product]s. This means
      *   [Product.primary_product_id][google.cloud.retail.v2beta.Product.primary_product_id]
      *   cannot be empty.
+     *
      * If this field is set to an invalid value other than these, an
      * INVALID_ARGUMENT error is returned.
+     *
      * If this field is `variant` and
      * [merchant_center_product_id_field][google.cloud.retail.v2beta.ProductLevelConfig.merchant_center_product_id_field]
      * is `itemGroupId`, an INVALID_ARGUMENT error is returned.
+     *
      * See [Product
      * levels](https://cloud.google.com/retail/docs/catalog#product-levels)
      * for more details.
@@ -663,6 +678,7 @@ public final class ProductLevelConfig extends com.google.protobuf.GeneratedMessa
      * <pre>
      * The type of [Product][google.cloud.retail.v2beta.Product]s allowed to be
      * ingested into the catalog. Acceptable values are:
+     *
      * * `primary` (default): You can ingest
      * [Product][google.cloud.retail.v2beta.Product]s of all types. When
      *   ingesting a [Product][google.cloud.retail.v2beta.Product], its type will
@@ -675,11 +691,14 @@ public final class ProductLevelConfig extends com.google.protobuf.GeneratedMessa
      *   [Product][google.cloud.retail.v2beta.Product]s. This means
      *   [Product.primary_product_id][google.cloud.retail.v2beta.Product.primary_product_id]
      *   cannot be empty.
+     *
      * If this field is set to an invalid value other than these, an
      * INVALID_ARGUMENT error is returned.
+     *
      * If this field is `variant` and
      * [merchant_center_product_id_field][google.cloud.retail.v2beta.ProductLevelConfig.merchant_center_product_id_field]
      * is `itemGroupId`, an INVALID_ARGUMENT error is returned.
+     *
      * See [Product
      * levels](https://cloud.google.com/retail/docs/catalog#product-levels)
      * for more details.
@@ -706,6 +725,7 @@ public final class ProductLevelConfig extends com.google.protobuf.GeneratedMessa
      * <pre>
      * The type of [Product][google.cloud.retail.v2beta.Product]s allowed to be
      * ingested into the catalog. Acceptable values are:
+     *
      * * `primary` (default): You can ingest
      * [Product][google.cloud.retail.v2beta.Product]s of all types. When
      *   ingesting a [Product][google.cloud.retail.v2beta.Product], its type will
@@ -718,11 +738,14 @@ public final class ProductLevelConfig extends com.google.protobuf.GeneratedMessa
      *   [Product][google.cloud.retail.v2beta.Product]s. This means
      *   [Product.primary_product_id][google.cloud.retail.v2beta.Product.primary_product_id]
      *   cannot be empty.
+     *
      * If this field is set to an invalid value other than these, an
      * INVALID_ARGUMENT error is returned.
+     *
      * If this field is `variant` and
      * [merchant_center_product_id_field][google.cloud.retail.v2beta.ProductLevelConfig.merchant_center_product_id_field]
      * is `itemGroupId`, an INVALID_ARGUMENT error is returned.
+     *
      * See [Product
      * levels](https://cloud.google.com/retail/docs/catalog#product-levels)
      * for more details.
@@ -748,6 +771,7 @@ public final class ProductLevelConfig extends com.google.protobuf.GeneratedMessa
      * <pre>
      * The type of [Product][google.cloud.retail.v2beta.Product]s allowed to be
      * ingested into the catalog. Acceptable values are:
+     *
      * * `primary` (default): You can ingest
      * [Product][google.cloud.retail.v2beta.Product]s of all types. When
      *   ingesting a [Product][google.cloud.retail.v2beta.Product], its type will
@@ -760,11 +784,14 @@ public final class ProductLevelConfig extends com.google.protobuf.GeneratedMessa
      *   [Product][google.cloud.retail.v2beta.Product]s. This means
      *   [Product.primary_product_id][google.cloud.retail.v2beta.Product.primary_product_id]
      *   cannot be empty.
+     *
      * If this field is set to an invalid value other than these, an
      * INVALID_ARGUMENT error is returned.
+     *
      * If this field is `variant` and
      * [merchant_center_product_id_field][google.cloud.retail.v2beta.ProductLevelConfig.merchant_center_product_id_field]
      * is `itemGroupId`, an INVALID_ARGUMENT error is returned.
+     *
      * See [Product
      * levels](https://cloud.google.com/retail/docs/catalog#product-levels)
      * for more details.
@@ -786,6 +813,7 @@ public final class ProductLevelConfig extends com.google.protobuf.GeneratedMessa
      * <pre>
      * The type of [Product][google.cloud.retail.v2beta.Product]s allowed to be
      * ingested into the catalog. Acceptable values are:
+     *
      * * `primary` (default): You can ingest
      * [Product][google.cloud.retail.v2beta.Product]s of all types. When
      *   ingesting a [Product][google.cloud.retail.v2beta.Product], its type will
@@ -798,11 +826,14 @@ public final class ProductLevelConfig extends com.google.protobuf.GeneratedMessa
      *   [Product][google.cloud.retail.v2beta.Product]s. This means
      *   [Product.primary_product_id][google.cloud.retail.v2beta.Product.primary_product_id]
      *   cannot be empty.
+     *
      * If this field is set to an invalid value other than these, an
      * INVALID_ARGUMENT error is returned.
+     *
      * If this field is `variant` and
      * [merchant_center_product_id_field][google.cloud.retail.v2beta.ProductLevelConfig.merchant_center_product_id_field]
      * is `itemGroupId`, an INVALID_ARGUMENT error is returned.
+     *
      * See [Product
      * levels](https://cloud.google.com/retail/docs/catalog#product-levels)
      * for more details.
@@ -833,15 +864,19 @@ public final class ProductLevelConfig extends com.google.protobuf.GeneratedMessa
      * Product](/bigquery-transfer/docs/merchant-center-products-schema) should be
      * imported as [Product.id][google.cloud.retail.v2beta.Product.id]. Acceptable
      * values are:
+     *
      * * `offerId` (default): Import `offerId` as the product ID.
      * * `itemGroupId`: Import `itemGroupId` as the product ID. Notice that Retail
      *   API will choose one item from the ones with the same `itemGroupId`, and
      *   use it to represent the item group.
+     *
      * If this field is set to an invalid value other than these, an
      * INVALID_ARGUMENT error is returned.
+     *
      * If this field is `itemGroupId` and
      * [ingestion_product_type][google.cloud.retail.v2beta.ProductLevelConfig.ingestion_product_type]
      * is `variant`, an INVALID_ARGUMENT error is returned.
+     *
      * See [Product
      * levels](https://cloud.google.com/retail/docs/catalog#product-levels)
      * for more details.
@@ -870,15 +905,19 @@ public final class ProductLevelConfig extends com.google.protobuf.GeneratedMessa
      * Product](/bigquery-transfer/docs/merchant-center-products-schema) should be
      * imported as [Product.id][google.cloud.retail.v2beta.Product.id]. Acceptable
      * values are:
+     *
      * * `offerId` (default): Import `offerId` as the product ID.
      * * `itemGroupId`: Import `itemGroupId` as the product ID. Notice that Retail
      *   API will choose one item from the ones with the same `itemGroupId`, and
      *   use it to represent the item group.
+     *
      * If this field is set to an invalid value other than these, an
      * INVALID_ARGUMENT error is returned.
+     *
      * If this field is `itemGroupId` and
      * [ingestion_product_type][google.cloud.retail.v2beta.ProductLevelConfig.ingestion_product_type]
      * is `variant`, an INVALID_ARGUMENT error is returned.
+     *
      * See [Product
      * levels](https://cloud.google.com/retail/docs/catalog#product-levels)
      * for more details.
@@ -907,15 +946,19 @@ public final class ProductLevelConfig extends com.google.protobuf.GeneratedMessa
      * Product](/bigquery-transfer/docs/merchant-center-products-schema) should be
      * imported as [Product.id][google.cloud.retail.v2beta.Product.id]. Acceptable
      * values are:
+     *
      * * `offerId` (default): Import `offerId` as the product ID.
      * * `itemGroupId`: Import `itemGroupId` as the product ID. Notice that Retail
      *   API will choose one item from the ones with the same `itemGroupId`, and
      *   use it to represent the item group.
+     *
      * If this field is set to an invalid value other than these, an
      * INVALID_ARGUMENT error is returned.
+     *
      * If this field is `itemGroupId` and
      * [ingestion_product_type][google.cloud.retail.v2beta.ProductLevelConfig.ingestion_product_type]
      * is `variant`, an INVALID_ARGUMENT error is returned.
+     *
      * See [Product
      * levels](https://cloud.google.com/retail/docs/catalog#product-levels)
      * for more details.
@@ -943,15 +986,19 @@ public final class ProductLevelConfig extends com.google.protobuf.GeneratedMessa
      * Product](/bigquery-transfer/docs/merchant-center-products-schema) should be
      * imported as [Product.id][google.cloud.retail.v2beta.Product.id]. Acceptable
      * values are:
+     *
      * * `offerId` (default): Import `offerId` as the product ID.
      * * `itemGroupId`: Import `itemGroupId` as the product ID. Notice that Retail
      *   API will choose one item from the ones with the same `itemGroupId`, and
      *   use it to represent the item group.
+     *
      * If this field is set to an invalid value other than these, an
      * INVALID_ARGUMENT error is returned.
+     *
      * If this field is `itemGroupId` and
      * [ingestion_product_type][google.cloud.retail.v2beta.ProductLevelConfig.ingestion_product_type]
      * is `variant`, an INVALID_ARGUMENT error is returned.
+     *
      * See [Product
      * levels](https://cloud.google.com/retail/docs/catalog#product-levels)
      * for more details.
@@ -975,15 +1022,19 @@ public final class ProductLevelConfig extends com.google.protobuf.GeneratedMessa
      * Product](/bigquery-transfer/docs/merchant-center-products-schema) should be
      * imported as [Product.id][google.cloud.retail.v2beta.Product.id]. Acceptable
      * values are:
+     *
      * * `offerId` (default): Import `offerId` as the product ID.
      * * `itemGroupId`: Import `itemGroupId` as the product ID. Notice that Retail
      *   API will choose one item from the ones with the same `itemGroupId`, and
      *   use it to represent the item group.
+     *
      * If this field is set to an invalid value other than these, an
      * INVALID_ARGUMENT error is returned.
+     *
      * If this field is `itemGroupId` and
      * [ingestion_product_type][google.cloud.retail.v2beta.ProductLevelConfig.ingestion_product_type]
      * is `variant`, an INVALID_ARGUMENT error is returned.
+     *
      * See [Product
      * levels](https://cloud.google.com/retail/docs/catalog#product-levels)
      * for more details.

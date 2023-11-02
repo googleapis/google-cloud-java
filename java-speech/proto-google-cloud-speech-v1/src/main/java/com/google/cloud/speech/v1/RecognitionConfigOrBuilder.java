@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -322,6 +322,56 @@ public interface RecognitionConfigOrBuilder
    * <code>.google.cloud.speech.v1.SpeechAdaptation adaptation = 20;</code>
    */
   com.google.cloud.speech.v1.SpeechAdaptationOrBuilder getAdaptationOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Use transcription normalization to automatically replace parts of
+   * the transcript with phrases of your choosing. For StreamingRecognize, this
+   * normalization only applies to stable partial transcripts (stability &gt; 0.8)
+   * and final transcripts.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.speech.v1.TranscriptNormalization transcript_normalization = 24 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the transcriptNormalization field is set.
+   */
+  boolean hasTranscriptNormalization();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Use transcription normalization to automatically replace parts of
+   * the transcript with phrases of your choosing. For StreamingRecognize, this
+   * normalization only applies to stable partial transcripts (stability &gt; 0.8)
+   * and final transcripts.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.speech.v1.TranscriptNormalization transcript_normalization = 24 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The transcriptNormalization.
+   */
+  com.google.cloud.speech.v1.TranscriptNormalization getTranscriptNormalization();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Use transcription normalization to automatically replace parts of
+   * the transcript with phrases of your choosing. For StreamingRecognize, this
+   * normalization only applies to stable partial transcripts (stability &gt; 0.8)
+   * and final transcripts.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.speech.v1.TranscriptNormalization transcript_normalization = 24 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.speech.v1.TranscriptNormalizationOrBuilder getTranscriptNormalizationOrBuilder();
 
   /**
    *
@@ -766,6 +816,7 @@ public interface RecognitionConfigOrBuilder
    * If `use_enhanced` is set to true and the `model` field is not set, then
    * an appropriate enhanced model is chosen if an enhanced model exists for
    * the audio.
+   *
    * If `use_enhanced` is true and an enhanced version of the specified model
    * does not exist, then the speech is recognized using the standard version
    * of the specified model.

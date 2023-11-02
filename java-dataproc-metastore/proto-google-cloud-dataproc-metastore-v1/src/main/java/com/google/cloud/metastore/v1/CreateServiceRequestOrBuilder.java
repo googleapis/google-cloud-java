@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ public interface CreateServiceRequestOrBuilder
    * <pre>
    * Required. The relative resource name of the location in which to create a
    * metastore service, in the following form:
+   *
    * `projects/{project_number}/locations/{location_id}`.
    * </pre>
    *
@@ -45,6 +46,7 @@ public interface CreateServiceRequestOrBuilder
    * <pre>
    * Required. The relative resource name of the location in which to create a
    * metastore service, in the following form:
+   *
    * `projects/{project_number}/locations/{location_id}`.
    * </pre>
    *
@@ -62,6 +64,7 @@ public interface CreateServiceRequestOrBuilder
    * <pre>
    * Required. The ID of the metastore service, which is used as the final
    * component of the metastore service's name.
+   *
    * This value must be between 2 and 63 characters long inclusive, begin with a
    * letter, end with a letter or number, and consist of alpha-numeric
    * ASCII characters or hyphens.
@@ -78,6 +81,7 @@ public interface CreateServiceRequestOrBuilder
    * <pre>
    * Required. The ID of the metastore service, which is used as the final
    * component of the metastore service's name.
+   *
    * This value must be between 2 and 63 characters long inclusive, begin with a
    * letter, end with a letter or number, and consist of alpha-numeric
    * ASCII characters or hyphens.
@@ -141,9 +145,11 @@ public interface CreateServiceRequestOrBuilder
    * ignore the request if it has completed. The server will ignore subsequent
    * requests that provide a duplicate request ID for at least 60 minutes after
    * the first request.
+   *
    * For example, if an initial request times out, followed by another request
    * with the same request ID, the server ignores the second request to prevent
    * the creation of duplicate commitments.
+   *
    * The request ID must be a valid
    * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier#Format)
    * A zero UUID (00000000-0000-0000-0000-000000000000) is not supported.
@@ -162,9 +168,11 @@ public interface CreateServiceRequestOrBuilder
    * ignore the request if it has completed. The server will ignore subsequent
    * requests that provide a duplicate request ID for at least 60 minutes after
    * the first request.
+   *
    * For example, if an initial request times out, followed by another request
    * with the same request ID, the server ignores the second request to prevent
    * the creation of duplicate commitments.
+   *
    * The request ID must be a valid
    * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier#Format)
    * A zero UUID (00000000-0000-0000-0000-000000000000) is not supported.

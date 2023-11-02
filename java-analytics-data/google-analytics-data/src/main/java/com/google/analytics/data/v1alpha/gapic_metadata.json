@@ -10,6 +10,18 @@
         "grpc": {
           "libraryClient": "AlphaAnalyticsDataClient",
           "rpcs": {
+            "CreateAudienceList": {
+              "methods": ["createAudienceListAsync", "createAudienceListAsync", "createAudienceListAsync", "createAudienceListOperationCallable", "createAudienceListCallable"]
+            },
+            "GetAudienceList": {
+              "methods": ["getAudienceList", "getAudienceList", "getAudienceList", "getAudienceListCallable"]
+            },
+            "ListAudienceLists": {
+              "methods": ["listAudienceLists", "listAudienceLists", "listAudienceLists", "listAudienceListsPagedCallable", "listAudienceListsCallable"]
+            },
+            "QueryAudienceList": {
+              "methods": ["queryAudienceList", "queryAudienceList", "queryAudienceListCallable"]
+            },
             "RunFunnelReport": {
               "methods": ["runFunnelReport", "runFunnelReportCallable"]
             }

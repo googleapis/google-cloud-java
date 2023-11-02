@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -58,6 +58,7 @@ public interface AcknowledgeUserDataCollectionRequestOrBuilder
    * <pre>
    * Required. An acknowledgement that the caller of this method understands the
    * terms of user data collection.
+   *
    * This field must contain the exact value:
    * "I acknowledge that I have the necessary privacy disclosures and rights
    * from my end users for the collection and processing of their data,
@@ -76,6 +77,7 @@ public interface AcknowledgeUserDataCollectionRequestOrBuilder
    * <pre>
    * Required. An acknowledgement that the caller of this method understands the
    * terms of user data collection.
+   *
    * This field must contain the exact value:
    * "I acknowledge that I have the necessary privacy disclosures and rights
    * from my end users for the collection and processing of their data,

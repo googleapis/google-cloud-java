@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -76,4 +76,21 @@ public interface DeleteQueuedResourceRequestOrBuilder
    * @return The bytes for requestId.
    */
   com.google.protobuf.ByteString getRequestIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * If set to true, all running nodes belonging to this queued resource will
+   * be deleted first and then the queued resource will be deleted.
+   * Otherwise (i.e. force=false), the queued resource will only be deleted if
+   * its nodes have already been deleted or the queued resource is in the
+   * ACCEPTED, FAILED, or SUSPENDED state.
+   * </pre>
+   *
+   * <code>bool force = 3;</code>
+   *
+   * @return The force.
+   */
+  boolean getForce();
 }

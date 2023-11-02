@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,11 +49,6 @@ public final class ListSupportedDatabaseFlagsRequest extends com.google.protobuf
     return new ListSupportedDatabaseFlagsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.alloydb.v1alpha.ServiceProto
         .internal_static_google_cloud_alloydb_v1alpha_ListSupportedDatabaseFlagsRequest_descriptor;
@@ -79,6 +74,7 @@ public final class ListSupportedDatabaseFlagsRequest extends com.google.protobuf
    * <pre>
    * Required. The name of the parent resource. The required format is:
    *  * projects/{project}/locations/{location}
+   *
    * Regardless of the parent specified here, as long it is contains a valid
    * project and location, the service will return a static list of supported
    * flags resources. Note that we do not yet support region-specific
@@ -109,6 +105,7 @@ public final class ListSupportedDatabaseFlagsRequest extends com.google.protobuf
    * <pre>
    * Required. The name of the parent resource. The required format is:
    *  * projects/{project}/locations/{location}
+   *
    * Regardless of the parent specified here, as long it is contains a valid
    * project and location, the service will return a static list of supported
    * flags resources. Note that we do not yet support region-specific
@@ -608,6 +605,7 @@ public final class ListSupportedDatabaseFlagsRequest extends com.google.protobuf
      * <pre>
      * Required. The name of the parent resource. The required format is:
      *  * projects/{project}/locations/{location}
+     *
      * Regardless of the parent specified here, as long it is contains a valid
      * project and location, the service will return a static list of supported
      * flags resources. Note that we do not yet support region-specific
@@ -637,6 +635,7 @@ public final class ListSupportedDatabaseFlagsRequest extends com.google.protobuf
      * <pre>
      * Required. The name of the parent resource. The required format is:
      *  * projects/{project}/locations/{location}
+     *
      * Regardless of the parent specified here, as long it is contains a valid
      * project and location, the service will return a static list of supported
      * flags resources. Note that we do not yet support region-specific
@@ -666,6 +665,7 @@ public final class ListSupportedDatabaseFlagsRequest extends com.google.protobuf
      * <pre>
      * Required. The name of the parent resource. The required format is:
      *  * projects/{project}/locations/{location}
+     *
      * Regardless of the parent specified here, as long it is contains a valid
      * project and location, the service will return a static list of supported
      * flags resources. Note that we do not yet support region-specific
@@ -694,6 +694,7 @@ public final class ListSupportedDatabaseFlagsRequest extends com.google.protobuf
      * <pre>
      * Required. The name of the parent resource. The required format is:
      *  * projects/{project}/locations/{location}
+     *
      * Regardless of the parent specified here, as long it is contains a valid
      * project and location, the service will return a static list of supported
      * flags resources. Note that we do not yet support region-specific
@@ -718,6 +719,7 @@ public final class ListSupportedDatabaseFlagsRequest extends com.google.protobuf
      * <pre>
      * Required. The name of the parent resource. The required format is:
      *  * projects/{project}/locations/{location}
+     *
      * Regardless of the parent specified here, as long it is contains a valid
      * project and location, the service will return a static list of supported
      * flags resources. Note that we do not yet support region-specific

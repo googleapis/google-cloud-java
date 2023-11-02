@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -101,6 +101,7 @@ public interface SchemaOrBuilder
    * <pre>
    * Immutable. The full resource name of the schema, in the format of
    * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/schemas/{schema}`.
+   *
    * This field must be a UTF-8 encoded string with a length limit of 1024
    * characters.
    * </pre>
@@ -116,6 +117,7 @@ public interface SchemaOrBuilder
    * <pre>
    * Immutable. The full resource name of the schema, in the format of
    * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/schemas/{schema}`.
+   *
    * This field must be a UTF-8 encoded string with a length limit of 1024
    * characters.
    * </pre>
@@ -126,5 +128,5 @@ public interface SchemaOrBuilder
    */
   com.google.protobuf.ByteString getNameBytes();
 
-  public com.google.cloud.discoveryengine.v1beta.Schema.SchemaCase getSchemaCase();
+  com.google.cloud.discoveryengine.v1beta.Schema.SchemaCase getSchemaCase();
 }

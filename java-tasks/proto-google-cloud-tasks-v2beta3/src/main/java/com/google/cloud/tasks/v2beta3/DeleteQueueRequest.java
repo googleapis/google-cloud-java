@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,8 @@ package com.google.cloud.tasks.v2beta3;
  *
  *
  * <pre>
- * Request message for [DeleteQueue][google.cloud.tasks.v2beta3.CloudTasks.DeleteQueue].
+ * Request message for
+ * [DeleteQueue][google.cloud.tasks.v2beta3.CloudTasks.DeleteQueue].
  * </pre>
  *
  * Protobuf type {@code google.cloud.tasks.v2beta3.DeleteQueueRequest}
@@ -45,11 +46,6 @@ public final class DeleteQueueRequest extends com.google.protobuf.GeneratedMessa
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new DeleteQueueRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -287,7 +283,8 @@ public final class DeleteQueueRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Request message for [DeleteQueue][google.cloud.tasks.v2beta3.CloudTasks.DeleteQueue].
+   * Request message for
+   * [DeleteQueue][google.cloud.tasks.v2beta3.CloudTasks.DeleteQueue].
    * </pre>
    *
    * Protobuf type {@code google.cloud.tasks.v2beta3.DeleteQueueRequest}

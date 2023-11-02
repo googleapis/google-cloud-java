@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -111,4 +111,59 @@ public interface RiskAnalysisOrBuilder
    * @return The enum numeric value on the wire of reasons at the given index.
    */
   int getReasonsValue(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Extended verdict reasons to be used for experimentation only. The set of
+   * possible reasons is subject to change.
+   * </pre>
+   *
+   * <code>repeated string extended_verdict_reasons = 3;</code>
+   *
+   * @return A list containing the extendedVerdictReasons.
+   */
+  java.util.List<java.lang.String> getExtendedVerdictReasonsList();
+  /**
+   *
+   *
+   * <pre>
+   * Extended verdict reasons to be used for experimentation only. The set of
+   * possible reasons is subject to change.
+   * </pre>
+   *
+   * <code>repeated string extended_verdict_reasons = 3;</code>
+   *
+   * @return The count of extendedVerdictReasons.
+   */
+  int getExtendedVerdictReasonsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Extended verdict reasons to be used for experimentation only. The set of
+   * possible reasons is subject to change.
+   * </pre>
+   *
+   * <code>repeated string extended_verdict_reasons = 3;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The extendedVerdictReasons at the given index.
+   */
+  java.lang.String getExtendedVerdictReasons(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Extended verdict reasons to be used for experimentation only. The set of
+   * possible reasons is subject to change.
+   * </pre>
+   *
+   * <code>repeated string extended_verdict_reasons = 3;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the extendedVerdictReasons at the given index.
+   */
+  com.google.protobuf.ByteString getExtendedVerdictReasonsBytes(int index);
 }

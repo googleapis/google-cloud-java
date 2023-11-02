@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class ShieldedInstanceConfig extends com.google.protobuf.GeneratedM
     return new ShieldedInstanceConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.container.v1beta1.ClusterServiceProto
         .internal_static_google_container_v1beta1_ShieldedInstanceConfig_descriptor;
@@ -72,6 +67,7 @@ public final class ShieldedInstanceConfig extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Defines whether the instance has Secure Boot enabled.
+   *
    * Secure Boot helps ensure that the system only runs authentic software by
    * verifying the digital signature of all boot components, and halting the
    * boot process if signature verification fails.
@@ -93,6 +89,7 @@ public final class ShieldedInstanceConfig extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Defines whether the instance has integrity monitoring enabled.
+   *
    * Enables monitoring and attestation of the boot integrity of the instance.
    * The attestation is performed against the integrity policy baseline. This
    * baseline is initially derived from the implicitly trusted boot image when
@@ -476,6 +473,7 @@ public final class ShieldedInstanceConfig extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Defines whether the instance has Secure Boot enabled.
+     *
      * Secure Boot helps ensure that the system only runs authentic software by
      * verifying the digital signature of all boot components, and halting the
      * boot process if signature verification fails.
@@ -494,6 +492,7 @@ public final class ShieldedInstanceConfig extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Defines whether the instance has Secure Boot enabled.
+     *
      * Secure Boot helps ensure that the system only runs authentic software by
      * verifying the digital signature of all boot components, and halting the
      * boot process if signature verification fails.
@@ -516,6 +515,7 @@ public final class ShieldedInstanceConfig extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Defines whether the instance has Secure Boot enabled.
+     *
      * Secure Boot helps ensure that the system only runs authentic software by
      * verifying the digital signature of all boot components, and halting the
      * boot process if signature verification fails.
@@ -538,6 +538,7 @@ public final class ShieldedInstanceConfig extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Defines whether the instance has integrity monitoring enabled.
+     *
      * Enables monitoring and attestation of the boot integrity of the instance.
      * The attestation is performed against the integrity policy baseline. This
      * baseline is initially derived from the implicitly trusted boot image when
@@ -557,6 +558,7 @@ public final class ShieldedInstanceConfig extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Defines whether the instance has integrity monitoring enabled.
+     *
      * Enables monitoring and attestation of the boot integrity of the instance.
      * The attestation is performed against the integrity policy baseline. This
      * baseline is initially derived from the implicitly trusted boot image when
@@ -580,6 +582,7 @@ public final class ShieldedInstanceConfig extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Defines whether the instance has integrity monitoring enabled.
+     *
      * Enables monitoring and attestation of the boot integrity of the instance.
      * The attestation is performed against the integrity policy baseline. This
      * baseline is initially derived from the implicitly trusted boot image when

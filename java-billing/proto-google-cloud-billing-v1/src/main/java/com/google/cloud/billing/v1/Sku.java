@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,7 +41,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
     name_ = "";
     skuId_ = "";
     description_ = "";
-    serviceRegions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    serviceRegions_ = com.google.protobuf.LazyStringArrayList.emptyList();
     pricingInfo_ = java.util.Collections.emptyList();
     serviceProviderName_ = "";
   }
@@ -50,11 +50,6 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Sku();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -283,7 +278,8 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
   public static final int SERVICE_REGIONS_FIELD_NUMBER = 5;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList serviceRegions_;
+  private com.google.protobuf.LazyStringArrayList serviceRegions_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -810,8 +806,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
         categoryBuilder_.dispose();
         categoryBuilder_ = null;
       }
-      serviceRegions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000010);
+      serviceRegions_ = com.google.protobuf.LazyStringArrayList.emptyList();
       if (pricingInfoBuilder_ == null) {
         pricingInfo_ = java.util.Collections.emptyList();
       } else {
@@ -860,11 +855,6 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
     }
 
     private void buildPartialRepeatedFields(com.google.cloud.billing.v1.Sku result) {
-      if (((bitField0_ & 0x00000010) != 0)) {
-        serviceRegions_ = serviceRegions_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000010);
-      }
-      result.serviceRegions_ = serviceRegions_;
       if (pricingInfoBuilder_ == null) {
         if (((bitField0_ & 0x00000020) != 0)) {
           pricingInfo_ = java.util.Collections.unmodifiableList(pricingInfo_);
@@ -889,6 +879,10 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.category_ = categoryBuilder_ == null ? category_ : categoryBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        serviceRegions_.makeImmutable();
+        result.serviceRegions_ = serviceRegions_;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.serviceProviderName_ = serviceProviderName_;
@@ -965,7 +959,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       if (!other.serviceRegions_.isEmpty()) {
         if (serviceRegions_.isEmpty()) {
           serviceRegions_ = other.serviceRegions_;
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ |= 0x00000010;
         } else {
           ensureServiceRegionsIsMutable();
           serviceRegions_.addAll(other.serviceRegions_);
@@ -1624,14 +1618,14 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       return categoryBuilder_;
     }
 
-    private com.google.protobuf.LazyStringList serviceRegions_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList serviceRegions_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureServiceRegionsIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!serviceRegions_.isModifiable()) {
         serviceRegions_ = new com.google.protobuf.LazyStringArrayList(serviceRegions_);
-        bitField0_ |= 0x00000010;
       }
+      bitField0_ |= 0x00000010;
     }
     /**
      *
@@ -1647,7 +1641,8 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the serviceRegions.
      */
     public com.google.protobuf.ProtocolStringList getServiceRegionsList() {
-      return serviceRegions_.getUnmodifiableView();
+      serviceRegions_.makeImmutable();
+      return serviceRegions_;
     }
     /**
      *
@@ -1720,6 +1715,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       }
       ensureServiceRegionsIsMutable();
       serviceRegions_.set(index, value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1743,6 +1739,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       }
       ensureServiceRegionsIsMutable();
       serviceRegions_.add(value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1763,6 +1760,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllServiceRegions(java.lang.Iterable<java.lang.String> values) {
       ensureServiceRegionsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, serviceRegions_);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1780,8 +1778,9 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearServiceRegions() {
-      serviceRegions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      serviceRegions_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000010);
+      ;
       onChanged();
       return this;
     }
@@ -1806,6 +1805,7 @@ public final class Sku extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureServiceRegionsIsMutable();
       serviceRegions_.add(value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

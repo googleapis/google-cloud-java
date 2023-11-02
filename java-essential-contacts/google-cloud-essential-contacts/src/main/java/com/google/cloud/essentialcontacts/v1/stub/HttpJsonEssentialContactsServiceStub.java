@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,6 +30,7 @@ import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.essentialcontacts.v1.ComputeContactsRequest;
 import com.google.cloud.essentialcontacts.v1.ComputeContactsResponse;
@@ -407,37 +408,79 @@ public class HttpJsonEssentialContactsServiceStub extends EssentialContactsServi
         HttpJsonCallSettings.<CreateContactRequest, Contact>newBuilder()
             .setMethodDescriptor(createContactMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateContactRequest, Contact> updateContactTransportSettings =
         HttpJsonCallSettings.<UpdateContactRequest, Contact>newBuilder()
             .setMethodDescriptor(updateContactMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("contact.name", String.valueOf(request.getContact().getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListContactsRequest, ListContactsResponse> listContactsTransportSettings =
         HttpJsonCallSettings.<ListContactsRequest, ListContactsResponse>newBuilder()
             .setMethodDescriptor(listContactsMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetContactRequest, Contact> getContactTransportSettings =
         HttpJsonCallSettings.<GetContactRequest, Contact>newBuilder()
             .setMethodDescriptor(getContactMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeleteContactRequest, Empty> deleteContactTransportSettings =
         HttpJsonCallSettings.<DeleteContactRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteContactMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ComputeContactsRequest, ComputeContactsResponse>
         computeContactsTransportSettings =
             HttpJsonCallSettings.<ComputeContactsRequest, ComputeContactsResponse>newBuilder()
                 .setMethodDescriptor(computeContactsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<SendTestMessageRequest, Empty> sendTestMessageTransportSettings =
         HttpJsonCallSettings.<SendTestMessageRequest, Empty>newBuilder()
             .setMethodDescriptor(sendTestMessageMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
+                })
             .build();
 
     this.createContactCallable =

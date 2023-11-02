@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.talent.v4.CreateTenantRequest;
 import com.google.cloud.talent.v4.DeleteTenantRequest;
@@ -31,7 +32,6 @@ import com.google.cloud.talent.v4.ListTenantsRequest;
 import com.google.cloud.talent.v4.ListTenantsResponse;
 import com.google.cloud.talent.v4.Tenant;
 import com.google.cloud.talent.v4.UpdateTenantRequest;
-import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
@@ -145,9 +145,9 @@ public class GrpcTenantServiceStub extends TenantServiceStub {
             .setMethodDescriptor(createTenantMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetTenantRequest, Tenant> getTenantTransportSettings =
@@ -155,9 +155,9 @@ public class GrpcTenantServiceStub extends TenantServiceStub {
             .setMethodDescriptor(getTenantMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateTenantRequest, Tenant> updateTenantTransportSettings =
@@ -165,9 +165,9 @@ public class GrpcTenantServiceStub extends TenantServiceStub {
             .setMethodDescriptor(updateTenantMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("tenant.name", String.valueOf(request.getTenant().getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("tenant.name", String.valueOf(request.getTenant().getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteTenantRequest, Empty> deleteTenantTransportSettings =
@@ -175,9 +175,9 @@ public class GrpcTenantServiceStub extends TenantServiceStub {
             .setMethodDescriptor(deleteTenantMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListTenantsRequest, ListTenantsResponse> listTenantsTransportSettings =
@@ -185,9 +185,9 @@ public class GrpcTenantServiceStub extends TenantServiceStub {
             .setMethodDescriptor(listTenantsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
 

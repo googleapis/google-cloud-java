@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,8 +41,8 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
     backupPool_ = "";
     creationTimestamp_ = "";
     description_ = "";
-    healthChecks_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    instances_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    healthChecks_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    instances_ = com.google.protobuf.LazyStringArrayList.emptyList();
     kind_ = "";
     name_ = "";
     region_ = "";
@@ -54,11 +54,6 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new TargetPool();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -602,7 +597,8 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
   public static final int HEALTH_CHECKS_FIELD_NUMBER = 448370606;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList healthChecks_;
+  private com.google.protobuf.LazyStringArrayList healthChecks_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -698,7 +694,8 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
   public static final int INSTANCES_FIELD_NUMBER = 29097598;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList instances_;
+  private com.google.protobuf.LazyStringArrayList instances_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -1458,11 +1455,9 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
       creationTimestamp_ = "";
       description_ = "";
       failoverRatio_ = 0F;
-      healthChecks_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000010);
+      healthChecks_ = com.google.protobuf.LazyStringArrayList.emptyList();
       id_ = 0L;
-      instances_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000040);
+      instances_ = com.google.protobuf.LazyStringArrayList.emptyList();
       kind_ = "";
       name_ = "";
       region_ = "";
@@ -1495,25 +1490,11 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.TargetPool buildPartial() {
       com.google.cloud.compute.v1.TargetPool result =
           new com.google.cloud.compute.v1.TargetPool(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(com.google.cloud.compute.v1.TargetPool result) {
-      if (((bitField0_ & 0x00000010) != 0)) {
-        healthChecks_ = healthChecks_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000010);
-      }
-      result.healthChecks_ = healthChecks_;
-      if (((bitField0_ & 0x00000040) != 0)) {
-        instances_ = instances_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000040);
-      }
-      result.instances_ = instances_;
     }
 
     private void buildPartial0(com.google.cloud.compute.v1.TargetPool result) {
@@ -1535,9 +1516,17 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
         result.failoverRatio_ = failoverRatio_;
         to_bitField0_ |= 0x00000008;
       }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        healthChecks_.makeImmutable();
+        result.healthChecks_ = healthChecks_;
+      }
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.id_ = id_;
         to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        instances_.makeImmutable();
+        result.instances_ = instances_;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
         result.kind_ = kind_;
@@ -1628,7 +1617,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
       if (!other.healthChecks_.isEmpty()) {
         if (healthChecks_.isEmpty()) {
           healthChecks_ = other.healthChecks_;
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ |= 0x00000010;
         } else {
           ensureHealthChecksIsMutable();
           healthChecks_.addAll(other.healthChecks_);
@@ -1641,7 +1630,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
       if (!other.instances_.isEmpty()) {
         if (instances_.isEmpty()) {
           instances_ = other.instances_;
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ |= 0x00000040;
         } else {
           ensureInstancesIsMutable();
           instances_.addAll(other.instances_);
@@ -2220,14 +2209,14 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList healthChecks_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList healthChecks_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureHealthChecksIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!healthChecks_.isModifiable()) {
         healthChecks_ = new com.google.protobuf.LazyStringArrayList(healthChecks_);
-        bitField0_ |= 0x00000010;
       }
+      bitField0_ |= 0x00000010;
     }
     /**
      *
@@ -2241,7 +2230,8 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the healthChecks.
      */
     public com.google.protobuf.ProtocolStringList getHealthChecksList() {
-      return healthChecks_.getUnmodifiableView();
+      healthChecks_.makeImmutable();
+      return healthChecks_;
     }
     /**
      *
@@ -2306,6 +2296,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
       }
       ensureHealthChecksIsMutable();
       healthChecks_.set(index, value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2327,6 +2318,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
       }
       ensureHealthChecksIsMutable();
       healthChecks_.add(value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2345,6 +2337,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllHealthChecks(java.lang.Iterable<java.lang.String> values) {
       ensureHealthChecksIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, healthChecks_);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2360,8 +2353,9 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearHealthChecks() {
-      healthChecks_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      healthChecks_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000010);
+      ;
       onChanged();
       return this;
     }
@@ -2384,6 +2378,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureHealthChecksIsMutable();
       healthChecks_.add(value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2456,14 +2451,14 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList instances_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList instances_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureInstancesIsMutable() {
-      if (!((bitField0_ & 0x00000040) != 0)) {
+      if (!instances_.isModifiable()) {
         instances_ = new com.google.protobuf.LazyStringArrayList(instances_);
-        bitField0_ |= 0x00000040;
       }
+      bitField0_ |= 0x00000040;
     }
     /**
      *
@@ -2477,7 +2472,8 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the instances.
      */
     public com.google.protobuf.ProtocolStringList getInstancesList() {
-      return instances_.getUnmodifiableView();
+      instances_.makeImmutable();
+      return instances_;
     }
     /**
      *
@@ -2542,6 +2538,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
       }
       ensureInstancesIsMutable();
       instances_.set(index, value);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2563,6 +2560,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
       }
       ensureInstancesIsMutable();
       instances_.add(value);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2581,6 +2579,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllInstances(java.lang.Iterable<java.lang.String> values) {
       ensureInstancesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, instances_);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2596,8 +2595,9 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearInstances() {
-      instances_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      instances_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000040);
+      ;
       onChanged();
       return this;
     }
@@ -2620,6 +2620,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureInstancesIsMutable();
       instances_.add(value);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }

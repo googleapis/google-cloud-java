@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -53,11 +53,6 @@ public final class CustomMetric extends com.google.protobuf.GeneratedMessageV3
     return new CustomMetric();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.analytics.admin.v1alpha.ResourcesProto
         .internal_static_google_analytics_admin_v1alpha_CustomMetric_descriptor;
@@ -78,6 +73,7 @@ public final class CustomMetric extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Possible types of representing the custom metric's value.
+   *
    * Currency representation may change in the future, requiring a breaking API
    * change.
    * </pre>
@@ -768,8 +764,10 @@ public final class CustomMetric extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. Immutable. Tagging name for this custom metric.
+   *
    * If this is an event-scoped metric, then this is the event parameter
    * name.
+   *
    * May only contain alphanumeric and underscore charactes, starting with a
    * letter. Max length of 40 characters for event-scoped metrics.
    * </pre>
@@ -797,8 +795,10 @@ public final class CustomMetric extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. Immutable. Tagging name for this custom metric.
+   *
    * If this is an event-scoped metric, then this is the event parameter
    * name.
+   *
    * May only contain alphanumeric and underscore charactes, starting with a
    * letter. Max length of 40 characters for event-scoped metrics.
    * </pre>
@@ -1795,8 +1795,10 @@ public final class CustomMetric extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. Immutable. Tagging name for this custom metric.
+     *
      * If this is an event-scoped metric, then this is the event parameter
      * name.
+     *
      * May only contain alphanumeric and underscore charactes, starting with a
      * letter. Max length of 40 characters for event-scoped metrics.
      * </pre>
@@ -1823,8 +1825,10 @@ public final class CustomMetric extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. Immutable. Tagging name for this custom metric.
+     *
      * If this is an event-scoped metric, then this is the event parameter
      * name.
+     *
      * May only contain alphanumeric and underscore charactes, starting with a
      * letter. Max length of 40 characters for event-scoped metrics.
      * </pre>
@@ -1851,8 +1855,10 @@ public final class CustomMetric extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. Immutable. Tagging name for this custom metric.
+     *
      * If this is an event-scoped metric, then this is the event parameter
      * name.
+     *
      * May only contain alphanumeric and underscore charactes, starting with a
      * letter. Max length of 40 characters for event-scoped metrics.
      * </pre>
@@ -1878,8 +1884,10 @@ public final class CustomMetric extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. Immutable. Tagging name for this custom metric.
+     *
      * If this is an event-scoped metric, then this is the event parameter
      * name.
+     *
      * May only contain alphanumeric and underscore charactes, starting with a
      * letter. Max length of 40 characters for event-scoped metrics.
      * </pre>
@@ -1901,8 +1909,10 @@ public final class CustomMetric extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. Immutable. Tagging name for this custom metric.
+     *
      * If this is an event-scoped metric, then this is the event parameter
      * name.
+     *
      * May only contain alphanumeric and underscore charactes, starting with a
      * letter. Max length of 40 characters for event-scoped metrics.
      * </pre>

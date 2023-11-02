@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@ package com.google.cloud.aiplatform.v1beta1.stub;
 
 import static com.google.cloud.aiplatform.v1beta1.DatasetServiceClient.ListAnnotationsPagedResponse;
 import static com.google.cloud.aiplatform.v1beta1.DatasetServiceClient.ListDataItemsPagedResponse;
+import static com.google.cloud.aiplatform.v1beta1.DatasetServiceClient.ListDatasetVersionsPagedResponse;
 import static com.google.cloud.aiplatform.v1beta1.DatasetServiceClient.ListDatasetsPagedResponse;
 import static com.google.cloud.aiplatform.v1beta1.DatasetServiceClient.ListLocationsPagedResponse;
 import static com.google.cloud.aiplatform.v1beta1.DatasetServiceClient.ListSavedQueriesPagedResponse;
@@ -30,18 +31,25 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.aiplatform.v1beta1.AnnotationSpec;
 import com.google.cloud.aiplatform.v1beta1.CreateDatasetOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.CreateDatasetRequest;
+import com.google.cloud.aiplatform.v1beta1.CreateDatasetVersionOperationMetadata;
+import com.google.cloud.aiplatform.v1beta1.CreateDatasetVersionRequest;
 import com.google.cloud.aiplatform.v1beta1.Dataset;
+import com.google.cloud.aiplatform.v1beta1.DatasetVersion;
 import com.google.cloud.aiplatform.v1beta1.DeleteDatasetRequest;
+import com.google.cloud.aiplatform.v1beta1.DeleteDatasetVersionRequest;
 import com.google.cloud.aiplatform.v1beta1.DeleteOperationMetadata;
+import com.google.cloud.aiplatform.v1beta1.DeleteSavedQueryRequest;
 import com.google.cloud.aiplatform.v1beta1.ExportDataOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.ExportDataRequest;
 import com.google.cloud.aiplatform.v1beta1.ExportDataResponse;
 import com.google.cloud.aiplatform.v1beta1.GetAnnotationSpecRequest;
 import com.google.cloud.aiplatform.v1beta1.GetDatasetRequest;
+import com.google.cloud.aiplatform.v1beta1.GetDatasetVersionRequest;
 import com.google.cloud.aiplatform.v1beta1.ImportDataOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.ImportDataRequest;
 import com.google.cloud.aiplatform.v1beta1.ImportDataResponse;
@@ -49,10 +57,14 @@ import com.google.cloud.aiplatform.v1beta1.ListAnnotationsRequest;
 import com.google.cloud.aiplatform.v1beta1.ListAnnotationsResponse;
 import com.google.cloud.aiplatform.v1beta1.ListDataItemsRequest;
 import com.google.cloud.aiplatform.v1beta1.ListDataItemsResponse;
+import com.google.cloud.aiplatform.v1beta1.ListDatasetVersionsRequest;
+import com.google.cloud.aiplatform.v1beta1.ListDatasetVersionsResponse;
 import com.google.cloud.aiplatform.v1beta1.ListDatasetsRequest;
 import com.google.cloud.aiplatform.v1beta1.ListDatasetsResponse;
 import com.google.cloud.aiplatform.v1beta1.ListSavedQueriesRequest;
 import com.google.cloud.aiplatform.v1beta1.ListSavedQueriesResponse;
+import com.google.cloud.aiplatform.v1beta1.RestoreDatasetVersionOperationMetadata;
+import com.google.cloud.aiplatform.v1beta1.RestoreDatasetVersionRequest;
 import com.google.cloud.aiplatform.v1beta1.SearchDataItemsRequest;
 import com.google.cloud.aiplatform.v1beta1.SearchDataItemsResponse;
 import com.google.cloud.aiplatform.v1beta1.UpdateDatasetRequest;
@@ -60,7 +72,6 @@ import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
-import com.google.common.collect.ImmutableMap;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -148,6 +159,61 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
           .build();
 
+  private static final MethodDescriptor<CreateDatasetVersionRequest, Operation>
+      createDatasetVersionMethodDescriptor =
+          MethodDescriptor.<CreateDatasetVersionRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1beta1.DatasetService/CreateDatasetVersion")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateDatasetVersionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteDatasetVersionRequest, Operation>
+      deleteDatasetVersionMethodDescriptor =
+          MethodDescriptor.<DeleteDatasetVersionRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1beta1.DatasetService/DeleteDatasetVersion")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteDatasetVersionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetDatasetVersionRequest, DatasetVersion>
+      getDatasetVersionMethodDescriptor =
+          MethodDescriptor.<GetDatasetVersionRequest, DatasetVersion>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.aiplatform.v1beta1.DatasetService/GetDatasetVersion")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetDatasetVersionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(DatasetVersion.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ListDatasetVersionsRequest, ListDatasetVersionsResponse>
+      listDatasetVersionsMethodDescriptor =
+          MethodDescriptor.<ListDatasetVersionsRequest, ListDatasetVersionsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1beta1.DatasetService/ListDatasetVersions")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListDatasetVersionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListDatasetVersionsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<RestoreDatasetVersionRequest, Operation>
+      restoreDatasetVersionMethodDescriptor =
+          MethodDescriptor.<RestoreDatasetVersionRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1beta1.DatasetService/RestoreDatasetVersion")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(RestoreDatasetVersionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<ListDataItemsRequest, ListDataItemsResponse>
       listDataItemsMethodDescriptor =
           MethodDescriptor.<ListDataItemsRequest, ListDataItemsResponse>newBuilder()
@@ -179,6 +245,16 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
                   ProtoUtils.marshaller(ListSavedQueriesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListSavedQueriesResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteSavedQueryRequest, Operation>
+      deleteSavedQueryMethodDescriptor =
+          MethodDescriptor.<DeleteSavedQueryRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.aiplatform.v1beta1.DatasetService/DeleteSavedQuery")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteSavedQueryRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
   private static final MethodDescriptor<GetAnnotationSpecRequest, AnnotationSpec>
@@ -267,6 +343,23 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
   private final OperationCallable<
           ExportDataRequest, ExportDataResponse, ExportDataOperationMetadata>
       exportDataOperationCallable;
+  private final UnaryCallable<CreateDatasetVersionRequest, Operation> createDatasetVersionCallable;
+  private final OperationCallable<
+          CreateDatasetVersionRequest, DatasetVersion, CreateDatasetVersionOperationMetadata>
+      createDatasetVersionOperationCallable;
+  private final UnaryCallable<DeleteDatasetVersionRequest, Operation> deleteDatasetVersionCallable;
+  private final OperationCallable<DeleteDatasetVersionRequest, Empty, DeleteOperationMetadata>
+      deleteDatasetVersionOperationCallable;
+  private final UnaryCallable<GetDatasetVersionRequest, DatasetVersion> getDatasetVersionCallable;
+  private final UnaryCallable<ListDatasetVersionsRequest, ListDatasetVersionsResponse>
+      listDatasetVersionsCallable;
+  private final UnaryCallable<ListDatasetVersionsRequest, ListDatasetVersionsPagedResponse>
+      listDatasetVersionsPagedCallable;
+  private final UnaryCallable<RestoreDatasetVersionRequest, Operation>
+      restoreDatasetVersionCallable;
+  private final OperationCallable<
+          RestoreDatasetVersionRequest, DatasetVersion, RestoreDatasetVersionOperationMetadata>
+      restoreDatasetVersionOperationCallable;
   private final UnaryCallable<ListDataItemsRequest, ListDataItemsResponse> listDataItemsCallable;
   private final UnaryCallable<ListDataItemsRequest, ListDataItemsPagedResponse>
       listDataItemsPagedCallable;
@@ -278,6 +371,9 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
       listSavedQueriesCallable;
   private final UnaryCallable<ListSavedQueriesRequest, ListSavedQueriesPagedResponse>
       listSavedQueriesPagedCallable;
+  private final UnaryCallable<DeleteSavedQueryRequest, Operation> deleteSavedQueryCallable;
+  private final OperationCallable<DeleteSavedQueryRequest, Empty, DeleteOperationMetadata>
+      deleteSavedQueryOperationCallable;
   private final UnaryCallable<GetAnnotationSpecRequest, AnnotationSpec> getAnnotationSpecCallable;
   private final UnaryCallable<ListAnnotationsRequest, ListAnnotationsResponse>
       listAnnotationsCallable;
@@ -341,9 +437,9 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
             .setMethodDescriptor(createDatasetMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetDatasetRequest, Dataset> getDatasetTransportSettings =
@@ -351,9 +447,9 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
             .setMethodDescriptor(getDatasetMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateDatasetRequest, Dataset> updateDatasetTransportSettings =
@@ -361,9 +457,9 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
             .setMethodDescriptor(updateDatasetMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("dataset.name", String.valueOf(request.getDataset().getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("dataset.name", String.valueOf(request.getDataset().getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListDatasetsRequest, ListDatasetsResponse> listDatasetsTransportSettings =
@@ -371,9 +467,9 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
             .setMethodDescriptor(listDatasetsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteDatasetRequest, Operation> deleteDatasetTransportSettings =
@@ -381,9 +477,9 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
             .setMethodDescriptor(deleteDatasetMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ImportDataRequest, Operation> importDataTransportSettings =
@@ -391,9 +487,9 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
             .setMethodDescriptor(importDataMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ExportDataRequest, Operation> exportDataTransportSettings =
@@ -401,19 +497,71 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
             .setMethodDescriptor(exportDataMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
+    GrpcCallSettings<CreateDatasetVersionRequest, Operation> createDatasetVersionTransportSettings =
+        GrpcCallSettings.<CreateDatasetVersionRequest, Operation>newBuilder()
+            .setMethodDescriptor(createDatasetVersionMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<DeleteDatasetVersionRequest, Operation> deleteDatasetVersionTransportSettings =
+        GrpcCallSettings.<DeleteDatasetVersionRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteDatasetVersionMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<GetDatasetVersionRequest, DatasetVersion> getDatasetVersionTransportSettings =
+        GrpcCallSettings.<GetDatasetVersionRequest, DatasetVersion>newBuilder()
+            .setMethodDescriptor(getDatasetVersionMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<ListDatasetVersionsRequest, ListDatasetVersionsResponse>
+        listDatasetVersionsTransportSettings =
+            GrpcCallSettings.<ListDatasetVersionsRequest, ListDatasetVersionsResponse>newBuilder()
+                .setMethodDescriptor(listDatasetVersionsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<RestoreDatasetVersionRequest, Operation>
+        restoreDatasetVersionTransportSettings =
+            GrpcCallSettings.<RestoreDatasetVersionRequest, Operation>newBuilder()
+                .setMethodDescriptor(restoreDatasetVersionMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<ListDataItemsRequest, ListDataItemsResponse> listDataItemsTransportSettings =
         GrpcCallSettings.<ListDataItemsRequest, ListDataItemsResponse>newBuilder()
             .setMethodDescriptor(listDataItemsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<SearchDataItemsRequest, SearchDataItemsResponse>
@@ -422,9 +570,9 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
                 .setMethodDescriptor(searchDataItemsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("dataset", String.valueOf(request.getDataset()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("dataset", String.valueOf(request.getDataset()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<ListSavedQueriesRequest, ListSavedQueriesResponse>
@@ -433,19 +581,29 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
                 .setMethodDescriptor(listSavedQueriesMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
+    GrpcCallSettings<DeleteSavedQueryRequest, Operation> deleteSavedQueryTransportSettings =
+        GrpcCallSettings.<DeleteSavedQueryRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteSavedQueryMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
     GrpcCallSettings<GetAnnotationSpecRequest, AnnotationSpec> getAnnotationSpecTransportSettings =
         GrpcCallSettings.<GetAnnotationSpecRequest, AnnotationSpec>newBuilder()
             .setMethodDescriptor(getAnnotationSpecMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListAnnotationsRequest, ListAnnotationsResponse>
@@ -454,9 +612,9 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
                 .setMethodDescriptor(listAnnotationsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
@@ -464,9 +622,9 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
             .setMethodDescriptor(listLocationsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetLocationRequest, Location> getLocationTransportSettings =
@@ -474,9 +632,9 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
             .setMethodDescriptor(getLocationMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
@@ -484,9 +642,9 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
             .setMethodDescriptor(setIamPolicyMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("resource", String.valueOf(request.getResource()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
@@ -494,9 +652,9 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
             .setMethodDescriptor(getIamPolicyMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("resource", String.valueOf(request.getResource()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -505,9 +663,9 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
                 .setMethodDescriptor(testIamPermissionsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("resource", String.valueOf(request.getResource()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      return builder.build();
                     })
                 .build();
 
@@ -559,6 +717,54 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
             settings.exportDataOperationSettings(),
             clientContext,
             operationsStub);
+    this.createDatasetVersionCallable =
+        callableFactory.createUnaryCallable(
+            createDatasetVersionTransportSettings,
+            settings.createDatasetVersionSettings(),
+            clientContext);
+    this.createDatasetVersionOperationCallable =
+        callableFactory.createOperationCallable(
+            createDatasetVersionTransportSettings,
+            settings.createDatasetVersionOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.deleteDatasetVersionCallable =
+        callableFactory.createUnaryCallable(
+            deleteDatasetVersionTransportSettings,
+            settings.deleteDatasetVersionSettings(),
+            clientContext);
+    this.deleteDatasetVersionOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteDatasetVersionTransportSettings,
+            settings.deleteDatasetVersionOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.getDatasetVersionCallable =
+        callableFactory.createUnaryCallable(
+            getDatasetVersionTransportSettings,
+            settings.getDatasetVersionSettings(),
+            clientContext);
+    this.listDatasetVersionsCallable =
+        callableFactory.createUnaryCallable(
+            listDatasetVersionsTransportSettings,
+            settings.listDatasetVersionsSettings(),
+            clientContext);
+    this.listDatasetVersionsPagedCallable =
+        callableFactory.createPagedCallable(
+            listDatasetVersionsTransportSettings,
+            settings.listDatasetVersionsSettings(),
+            clientContext);
+    this.restoreDatasetVersionCallable =
+        callableFactory.createUnaryCallable(
+            restoreDatasetVersionTransportSettings,
+            settings.restoreDatasetVersionSettings(),
+            clientContext);
+    this.restoreDatasetVersionOperationCallable =
+        callableFactory.createOperationCallable(
+            restoreDatasetVersionTransportSettings,
+            settings.restoreDatasetVersionOperationSettings(),
+            clientContext,
+            operationsStub);
     this.listDataItemsCallable =
         callableFactory.createUnaryCallable(
             listDataItemsTransportSettings, settings.listDataItemsSettings(), clientContext);
@@ -577,6 +783,15 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
     this.listSavedQueriesPagedCallable =
         callableFactory.createPagedCallable(
             listSavedQueriesTransportSettings, settings.listSavedQueriesSettings(), clientContext);
+    this.deleteSavedQueryCallable =
+        callableFactory.createUnaryCallable(
+            deleteSavedQueryTransportSettings, settings.deleteSavedQuerySettings(), clientContext);
+    this.deleteSavedQueryOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteSavedQueryTransportSettings,
+            settings.deleteSavedQueryOperationSettings(),
+            clientContext,
+            operationsStub);
     this.getAnnotationSpecCallable =
         callableFactory.createUnaryCallable(
             getAnnotationSpecTransportSettings,
@@ -682,6 +897,58 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
   }
 
   @Override
+  public UnaryCallable<CreateDatasetVersionRequest, Operation> createDatasetVersionCallable() {
+    return createDatasetVersionCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          CreateDatasetVersionRequest, DatasetVersion, CreateDatasetVersionOperationMetadata>
+      createDatasetVersionOperationCallable() {
+    return createDatasetVersionOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteDatasetVersionRequest, Operation> deleteDatasetVersionCallable() {
+    return deleteDatasetVersionCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteDatasetVersionRequest, Empty, DeleteOperationMetadata>
+      deleteDatasetVersionOperationCallable() {
+    return deleteDatasetVersionOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetDatasetVersionRequest, DatasetVersion> getDatasetVersionCallable() {
+    return getDatasetVersionCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListDatasetVersionsRequest, ListDatasetVersionsResponse>
+      listDatasetVersionsCallable() {
+    return listDatasetVersionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListDatasetVersionsRequest, ListDatasetVersionsPagedResponse>
+      listDatasetVersionsPagedCallable() {
+    return listDatasetVersionsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<RestoreDatasetVersionRequest, Operation> restoreDatasetVersionCallable() {
+    return restoreDatasetVersionCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          RestoreDatasetVersionRequest, DatasetVersion, RestoreDatasetVersionOperationMetadata>
+      restoreDatasetVersionOperationCallable() {
+    return restoreDatasetVersionOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<ListDataItemsRequest, ListDataItemsResponse> listDataItemsCallable() {
     return listDataItemsCallable;
   }
@@ -713,6 +980,17 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
   public UnaryCallable<ListSavedQueriesRequest, ListSavedQueriesPagedResponse>
       listSavedQueriesPagedCallable() {
     return listSavedQueriesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteSavedQueryRequest, Operation> deleteSavedQueryCallable() {
+    return deleteSavedQueryCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteSavedQueryRequest, Empty, DeleteOperationMetadata>
+      deleteSavedQueryOperationCallable() {
+    return deleteSavedQueryOperationCallable;
   }
 
   @Override

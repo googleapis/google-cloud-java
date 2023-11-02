@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,11 +46,6 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new TagField();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -125,11 +120,6 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new EnumValue();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -716,6 +706,8 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int kindCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object kind_;
 
   public enum KindCase
@@ -1073,8 +1065,9 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The order of this field with respect to other fields in this tag. It can be
-   * set in [Tag][google.cloud.datacatalog.v1beta1.TagTemplateField.order]. For
+   * Output only. The order of this field with respect to other fields in this
+   * tag. It can be set in
+   * [Tag][google.cloud.datacatalog.v1beta1.TagTemplateField.order]. For
    * example, a higher value can indicate a more important field. The value can
    * be negative. Multiple fields can have the same order, and field orders
    * within a tag do not have to be sequential.
@@ -2446,8 +2439,9 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The order of this field with respect to other fields in this tag. It can be
-     * set in [Tag][google.cloud.datacatalog.v1beta1.TagTemplateField.order]. For
+     * Output only. The order of this field with respect to other fields in this
+     * tag. It can be set in
+     * [Tag][google.cloud.datacatalog.v1beta1.TagTemplateField.order]. For
      * example, a higher value can indicate a more important field. The value can
      * be negative. Multiple fields can have the same order, and field orders
      * within a tag do not have to be sequential.
@@ -2465,8 +2459,9 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The order of this field with respect to other fields in this tag. It can be
-     * set in [Tag][google.cloud.datacatalog.v1beta1.TagTemplateField.order]. For
+     * Output only. The order of this field with respect to other fields in this
+     * tag. It can be set in
+     * [Tag][google.cloud.datacatalog.v1beta1.TagTemplateField.order]. For
      * example, a higher value can indicate a more important field. The value can
      * be negative. Multiple fields can have the same order, and field orders
      * within a tag do not have to be sequential.
@@ -2488,8 +2483,9 @@ public final class TagField extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The order of this field with respect to other fields in this tag. It can be
-     * set in [Tag][google.cloud.datacatalog.v1beta1.TagTemplateField.order]. For
+     * Output only. The order of this field with respect to other fields in this
+     * tag. It can be set in
+     * [Tag][google.cloud.datacatalog.v1beta1.TagTemplateField.order]. For
      * example, a higher value can indicate a more important field. The value can
      * be negative. Multiple fields can have the same order, and field orders
      * within a tag do not have to be sequential.

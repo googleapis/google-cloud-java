@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -322,4 +322,85 @@ public interface NetworkConfigOrBuilder
    * <code>.google.container.v1.GatewayAPIConfig gateway_api_config = 16;</code>
    */
   com.google.container.v1.GatewayAPIConfigOrBuilder getGatewayApiConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Whether multi-networking is enabled for this cluster.
+   * </pre>
+   *
+   * <code>bool enable_multi_networking = 17;</code>
+   *
+   * @return The enableMultiNetworking.
+   */
+  boolean getEnableMultiNetworking();
+
+  /**
+   *
+   *
+   * <pre>
+   * Network bandwidth tier configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.NetworkConfig.ClusterNetworkPerformanceConfig network_performance_config = 18;
+   * </code>
+   *
+   * @return Whether the networkPerformanceConfig field is set.
+   */
+  boolean hasNetworkPerformanceConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Network bandwidth tier configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.NetworkConfig.ClusterNetworkPerformanceConfig network_performance_config = 18;
+   * </code>
+   *
+   * @return The networkPerformanceConfig.
+   */
+  com.google.container.v1.NetworkConfig.ClusterNetworkPerformanceConfig
+      getNetworkPerformanceConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Network bandwidth tier configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.NetworkConfig.ClusterNetworkPerformanceConfig network_performance_config = 18;
+   * </code>
+   */
+  com.google.container.v1.NetworkConfig.ClusterNetworkPerformanceConfigOrBuilder
+      getNetworkPerformanceConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Whether FQDN Network Policy is enabled on this cluster.
+   * </pre>
+   *
+   * <code>optional bool enable_fqdn_network_policy = 19;</code>
+   *
+   * @return Whether the enableFqdnNetworkPolicy field is set.
+   */
+  boolean hasEnableFqdnNetworkPolicy();
+  /**
+   *
+   *
+   * <pre>
+   * Whether FQDN Network Policy is enabled on this cluster.
+   * </pre>
+   *
+   * <code>optional bool enable_fqdn_network_policy = 19;</code>
+   *
+   * @return The enableFqdnNetworkPolicy.
+   */
+  boolean getEnableFqdnNetworkPolicy();
 }

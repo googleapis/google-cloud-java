@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,18 +41,13 @@ public final class RemoveLocalInventoriesRequest extends com.google.protobuf.Gen
 
   private RemoveLocalInventoriesRequest() {
     product_ = "";
-    placeIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    placeIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new RemoveLocalInventoriesRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -81,6 +76,7 @@ public final class RemoveLocalInventoriesRequest extends com.google.protobuf.Gen
    * Required. Full resource name of [Product][google.cloud.retail.v2.Product],
    * such as
    * `projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch/products/some_product_id`.
+   *
    * If the caller does not have permission to access the
    * [Product][google.cloud.retail.v2.Product], regardless of whether or not it
    * exists, a PERMISSION_DENIED error is returned.
@@ -111,6 +107,7 @@ public final class RemoveLocalInventoriesRequest extends com.google.protobuf.Gen
    * Required. Full resource name of [Product][google.cloud.retail.v2.Product],
    * such as
    * `projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch/products/some_product_id`.
+   *
    * If the caller does not have permission to access the
    * [Product][google.cloud.retail.v2.Product], regardless of whether or not it
    * exists, a PERMISSION_DENIED error is returned.
@@ -138,7 +135,8 @@ public final class RemoveLocalInventoriesRequest extends com.google.protobuf.Gen
   public static final int PLACE_IDS_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList placeIds_;
+  private com.google.protobuf.LazyStringArrayList placeIds_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -518,8 +516,7 @@ public final class RemoveLocalInventoriesRequest extends com.google.protobuf.Gen
       super.clear();
       bitField0_ = 0;
       product_ = "";
-      placeIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      placeIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
       removeTime_ = null;
       if (removeTimeBuilder_ != null) {
         removeTimeBuilder_.dispose();
@@ -553,7 +550,6 @@ public final class RemoveLocalInventoriesRequest extends com.google.protobuf.Gen
     public com.google.cloud.retail.v2.RemoveLocalInventoriesRequest buildPartial() {
       com.google.cloud.retail.v2.RemoveLocalInventoriesRequest result =
           new com.google.cloud.retail.v2.RemoveLocalInventoriesRequest(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -561,19 +557,14 @@ public final class RemoveLocalInventoriesRequest extends com.google.protobuf.Gen
       return result;
     }
 
-    private void buildPartialRepeatedFields(
-        com.google.cloud.retail.v2.RemoveLocalInventoriesRequest result) {
-      if (((bitField0_ & 0x00000002) != 0)) {
-        placeIds_ = placeIds_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.placeIds_ = placeIds_;
-    }
-
     private void buildPartial0(com.google.cloud.retail.v2.RemoveLocalInventoriesRequest result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.product_ = product_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        placeIds_.makeImmutable();
+        result.placeIds_ = placeIds_;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.removeTime_ = removeTimeBuilder_ == null ? removeTime_ : removeTimeBuilder_.build();
@@ -637,7 +628,7 @@ public final class RemoveLocalInventoriesRequest extends com.google.protobuf.Gen
       if (!other.placeIds_.isEmpty()) {
         if (placeIds_.isEmpty()) {
           placeIds_ = other.placeIds_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensurePlaceIdsIsMutable();
           placeIds_.addAll(other.placeIds_);
@@ -728,6 +719,7 @@ public final class RemoveLocalInventoriesRequest extends com.google.protobuf.Gen
      * Required. Full resource name of [Product][google.cloud.retail.v2.Product],
      * such as
      * `projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch/products/some_product_id`.
+     *
      * If the caller does not have permission to access the
      * [Product][google.cloud.retail.v2.Product], regardless of whether or not it
      * exists, a PERMISSION_DENIED error is returned.
@@ -757,6 +749,7 @@ public final class RemoveLocalInventoriesRequest extends com.google.protobuf.Gen
      * Required. Full resource name of [Product][google.cloud.retail.v2.Product],
      * such as
      * `projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch/products/some_product_id`.
+     *
      * If the caller does not have permission to access the
      * [Product][google.cloud.retail.v2.Product], regardless of whether or not it
      * exists, a PERMISSION_DENIED error is returned.
@@ -786,6 +779,7 @@ public final class RemoveLocalInventoriesRequest extends com.google.protobuf.Gen
      * Required. Full resource name of [Product][google.cloud.retail.v2.Product],
      * such as
      * `projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch/products/some_product_id`.
+     *
      * If the caller does not have permission to access the
      * [Product][google.cloud.retail.v2.Product], regardless of whether or not it
      * exists, a PERMISSION_DENIED error is returned.
@@ -814,6 +808,7 @@ public final class RemoveLocalInventoriesRequest extends com.google.protobuf.Gen
      * Required. Full resource name of [Product][google.cloud.retail.v2.Product],
      * such as
      * `projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch/products/some_product_id`.
+     *
      * If the caller does not have permission to access the
      * [Product][google.cloud.retail.v2.Product], regardless of whether or not it
      * exists, a PERMISSION_DENIED error is returned.
@@ -838,6 +833,7 @@ public final class RemoveLocalInventoriesRequest extends com.google.protobuf.Gen
      * Required. Full resource name of [Product][google.cloud.retail.v2.Product],
      * such as
      * `projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch/products/some_product_id`.
+     *
      * If the caller does not have permission to access the
      * [Product][google.cloud.retail.v2.Product], regardless of whether or not it
      * exists, a PERMISSION_DENIED error is returned.
@@ -861,14 +857,14 @@ public final class RemoveLocalInventoriesRequest extends com.google.protobuf.Gen
       return this;
     }
 
-    private com.google.protobuf.LazyStringList placeIds_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList placeIds_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensurePlaceIdsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!placeIds_.isModifiable()) {
         placeIds_ = new com.google.protobuf.LazyStringArrayList(placeIds_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -883,7 +879,8 @@ public final class RemoveLocalInventoriesRequest extends com.google.protobuf.Gen
      * @return A list containing the placeIds.
      */
     public com.google.protobuf.ProtocolStringList getPlaceIdsList() {
-      return placeIds_.getUnmodifiableView();
+      placeIds_.makeImmutable();
+      return placeIds_;
     }
     /**
      *
@@ -952,6 +949,7 @@ public final class RemoveLocalInventoriesRequest extends com.google.protobuf.Gen
       }
       ensurePlaceIdsIsMutable();
       placeIds_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -974,6 +972,7 @@ public final class RemoveLocalInventoriesRequest extends com.google.protobuf.Gen
       }
       ensurePlaceIdsIsMutable();
       placeIds_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -993,6 +992,7 @@ public final class RemoveLocalInventoriesRequest extends com.google.protobuf.Gen
     public Builder addAllPlaceIds(java.lang.Iterable<java.lang.String> values) {
       ensurePlaceIdsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, placeIds_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1009,8 +1009,9 @@ public final class RemoveLocalInventoriesRequest extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearPlaceIds() {
-      placeIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      placeIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -1034,6 +1035,7 @@ public final class RemoveLocalInventoriesRequest extends com.google.protobuf.Gen
       checkByteStringIsUtf8(value);
       ensurePlaceIdsIsMutable();
       placeIds_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

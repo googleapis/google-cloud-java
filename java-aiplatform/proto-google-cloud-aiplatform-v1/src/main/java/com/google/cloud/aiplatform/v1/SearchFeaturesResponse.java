@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,11 +49,6 @@ public final class SearchFeaturesResponse extends com.google.protobuf.GeneratedM
     return new SearchFeaturesResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1.FeaturestoreServiceProto
         .internal_static_google_cloud_aiplatform_v1_SearchFeaturesResponse_descriptor;
@@ -78,7 +73,9 @@ public final class SearchFeaturesResponse extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * The Features matching the request.
+   *
    * Fields returned:
+   *
    *  * `name`
    *  * `description`
    *  * `labels`
@@ -97,7 +94,9 @@ public final class SearchFeaturesResponse extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * The Features matching the request.
+   *
    * Fields returned:
+   *
    *  * `name`
    *  * `description`
    *  * `labels`
@@ -117,7 +116,9 @@ public final class SearchFeaturesResponse extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * The Features matching the request.
+   *
    * Fields returned:
+   *
    *  * `name`
    *  * `description`
    *  * `labels`
@@ -136,7 +137,9 @@ public final class SearchFeaturesResponse extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * The Features matching the request.
+   *
    * Fields returned:
+   *
    *  * `name`
    *  * `description`
    *  * `labels`
@@ -155,7 +158,9 @@ public final class SearchFeaturesResponse extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * The Features matching the request.
+   *
    * Fields returned:
+   *
    *  * `name`
    *  * `description`
    *  * `labels`
@@ -664,7 +669,9 @@ public final class SearchFeaturesResponse extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The Features matching the request.
+     *
      * Fields returned:
+     *
      *  * `name`
      *  * `description`
      *  * `labels`
@@ -686,7 +693,9 @@ public final class SearchFeaturesResponse extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The Features matching the request.
+     *
      * Fields returned:
+     *
      *  * `name`
      *  * `description`
      *  * `labels`
@@ -708,7 +717,9 @@ public final class SearchFeaturesResponse extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The Features matching the request.
+     *
      * Fields returned:
+     *
      *  * `name`
      *  * `description`
      *  * `labels`
@@ -730,7 +741,9 @@ public final class SearchFeaturesResponse extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The Features matching the request.
+     *
      * Fields returned:
+     *
      *  * `name`
      *  * `description`
      *  * `labels`
@@ -758,7 +771,9 @@ public final class SearchFeaturesResponse extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The Features matching the request.
+     *
      * Fields returned:
+     *
      *  * `name`
      *  * `description`
      *  * `labels`
@@ -784,7 +799,9 @@ public final class SearchFeaturesResponse extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The Features matching the request.
+     *
      * Fields returned:
+     *
      *  * `name`
      *  * `description`
      *  * `labels`
@@ -812,7 +829,9 @@ public final class SearchFeaturesResponse extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The Features matching the request.
+     *
      * Fields returned:
+     *
      *  * `name`
      *  * `description`
      *  * `labels`
@@ -840,7 +859,9 @@ public final class SearchFeaturesResponse extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The Features matching the request.
+     *
      * Fields returned:
+     *
      *  * `name`
      *  * `description`
      *  * `labels`
@@ -865,7 +886,9 @@ public final class SearchFeaturesResponse extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The Features matching the request.
+     *
      * Fields returned:
+     *
      *  * `name`
      *  * `description`
      *  * `labels`
@@ -891,7 +914,9 @@ public final class SearchFeaturesResponse extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The Features matching the request.
+     *
      * Fields returned:
+     *
      *  * `name`
      *  * `description`
      *  * `labels`
@@ -917,7 +942,9 @@ public final class SearchFeaturesResponse extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The Features matching the request.
+     *
      * Fields returned:
+     *
      *  * `name`
      *  * `description`
      *  * `labels`
@@ -942,7 +969,9 @@ public final class SearchFeaturesResponse extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The Features matching the request.
+     *
      * Fields returned:
+     *
      *  * `name`
      *  * `description`
      *  * `labels`
@@ -967,7 +996,9 @@ public final class SearchFeaturesResponse extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The Features matching the request.
+     *
      * Fields returned:
+     *
      *  * `name`
      *  * `description`
      *  * `labels`
@@ -985,7 +1016,9 @@ public final class SearchFeaturesResponse extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The Features matching the request.
+     *
      * Fields returned:
+     *
      *  * `name`
      *  * `description`
      *  * `labels`
@@ -1007,7 +1040,9 @@ public final class SearchFeaturesResponse extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The Features matching the request.
+     *
      * Fields returned:
+     *
      *  * `name`
      *  * `description`
      *  * `labels`
@@ -1030,7 +1065,9 @@ public final class SearchFeaturesResponse extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The Features matching the request.
+     *
      * Fields returned:
+     *
      *  * `name`
      *  * `description`
      *  * `labels`
@@ -1049,7 +1086,9 @@ public final class SearchFeaturesResponse extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The Features matching the request.
+     *
      * Fields returned:
+     *
      *  * `name`
      *  * `description`
      *  * `labels`
@@ -1068,7 +1107,9 @@ public final class SearchFeaturesResponse extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * The Features matching the request.
+     *
      * Fields returned:
+     *
      *  * `name`
      *  * `description`
      *  * `labels`

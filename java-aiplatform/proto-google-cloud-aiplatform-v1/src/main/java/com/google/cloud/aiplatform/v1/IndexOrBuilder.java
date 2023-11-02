@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -286,9 +286,11 @@ public interface IndexOrBuilder
    *
    * <pre>
    * The labels with user-defined metadata to organize your Indexes.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
+   *
    * See https://goo.gl/xmQnxf for more information and examples of labels.
    * </pre>
    *
@@ -300,9 +302,11 @@ public interface IndexOrBuilder
    *
    * <pre>
    * The labels with user-defined metadata to organize your Indexes.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
+   *
    * See https://goo.gl/xmQnxf for more information and examples of labels.
    * </pre>
    *
@@ -317,9 +321,11 @@ public interface IndexOrBuilder
    *
    * <pre>
    * The labels with user-defined metadata to organize your Indexes.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
+   *
    * See https://goo.gl/xmQnxf for more information and examples of labels.
    * </pre>
    *
@@ -331,9 +337,11 @@ public interface IndexOrBuilder
    *
    * <pre>
    * The labels with user-defined metadata to organize your Indexes.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
+   *
    * See https://goo.gl/xmQnxf for more information and examples of labels.
    * </pre>
    *
@@ -349,9 +357,11 @@ public interface IndexOrBuilder
    *
    * <pre>
    * The labels with user-defined metadata to organize your Indexes.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
+   *
    * See https://goo.gl/xmQnxf for more information and examples of labels.
    * </pre>
    *
@@ -527,4 +537,48 @@ public interface IndexOrBuilder
    * @return The indexUpdateMethod.
    */
   com.google.cloud.aiplatform.v1.Index.IndexUpdateMethod getIndexUpdateMethod();
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Customer-managed encryption key spec for an Index. If set, this
+   * Index and all sub-resources of this Index will be secured by this key.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 17 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return Whether the encryptionSpec field is set.
+   */
+  boolean hasEncryptionSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Customer-managed encryption key spec for an Index. If set, this
+   * Index and all sub-resources of this Index will be secured by this key.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 17 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The encryptionSpec.
+   */
+  com.google.cloud.aiplatform.v1.EncryptionSpec getEncryptionSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Customer-managed encryption key spec for an Index. If set, this
+   * Index and all sub-resources of this Index will be secured by this key.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 17 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1.EncryptionSpecOrBuilder getEncryptionSpecOrBuilder();
 }

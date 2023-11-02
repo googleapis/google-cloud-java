@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,18 +38,13 @@ public final class EnumTypeOptions extends com.google.protobuf.GeneratedMessageV
   }
 
   private EnumTypeOptions() {
-    possibleValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    possibleValues_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new EnumTypeOptions();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -70,7 +65,8 @@ public final class EnumTypeOptions extends com.google.protobuf.GeneratedMessageV
   public static final int POSSIBLE_VALUES_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList possibleValues_;
+  private com.google.protobuf.LazyStringArrayList possibleValues_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -364,8 +360,7 @@ public final class EnumTypeOptions extends com.google.protobuf.GeneratedMessageV
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      possibleValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      possibleValues_ = com.google.protobuf.LazyStringArrayList.emptyList();
       validationCheckDisabled_ = false;
       return this;
     }
@@ -394,7 +389,6 @@ public final class EnumTypeOptions extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.contentwarehouse.v1.EnumTypeOptions buildPartial() {
       com.google.cloud.contentwarehouse.v1.EnumTypeOptions result =
           new com.google.cloud.contentwarehouse.v1.EnumTypeOptions(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -402,17 +396,12 @@ public final class EnumTypeOptions extends com.google.protobuf.GeneratedMessageV
       return result;
     }
 
-    private void buildPartialRepeatedFields(
-        com.google.cloud.contentwarehouse.v1.EnumTypeOptions result) {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        possibleValues_ = possibleValues_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.possibleValues_ = possibleValues_;
-    }
-
     private void buildPartial0(com.google.cloud.contentwarehouse.v1.EnumTypeOptions result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        possibleValues_.makeImmutable();
+        result.possibleValues_ = possibleValues_;
+      }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.validationCheckDisabled_ = validationCheckDisabled_;
       }
@@ -467,7 +456,7 @@ public final class EnumTypeOptions extends com.google.protobuf.GeneratedMessageV
       if (!other.possibleValues_.isEmpty()) {
         if (possibleValues_.isEmpty()) {
           possibleValues_ = other.possibleValues_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ |= 0x00000001;
         } else {
           ensurePossibleValuesIsMutable();
           possibleValues_.addAll(other.possibleValues_);
@@ -535,14 +524,14 @@ public final class EnumTypeOptions extends com.google.protobuf.GeneratedMessageV
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList possibleValues_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList possibleValues_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensurePossibleValuesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!possibleValues_.isModifiable()) {
         possibleValues_ = new com.google.protobuf.LazyStringArrayList(possibleValues_);
-        bitField0_ |= 0x00000001;
       }
+      bitField0_ |= 0x00000001;
     }
     /**
      *
@@ -556,7 +545,8 @@ public final class EnumTypeOptions extends com.google.protobuf.GeneratedMessageV
      * @return A list containing the possibleValues.
      */
     public com.google.protobuf.ProtocolStringList getPossibleValuesList() {
-      return possibleValues_.getUnmodifiableView();
+      possibleValues_.makeImmutable();
+      return possibleValues_;
     }
     /**
      *
@@ -621,6 +611,7 @@ public final class EnumTypeOptions extends com.google.protobuf.GeneratedMessageV
       }
       ensurePossibleValuesIsMutable();
       possibleValues_.set(index, value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -642,6 +633,7 @@ public final class EnumTypeOptions extends com.google.protobuf.GeneratedMessageV
       }
       ensurePossibleValuesIsMutable();
       possibleValues_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -660,6 +652,7 @@ public final class EnumTypeOptions extends com.google.protobuf.GeneratedMessageV
     public Builder addAllPossibleValues(java.lang.Iterable<java.lang.String> values) {
       ensurePossibleValuesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, possibleValues_);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -675,8 +668,9 @@ public final class EnumTypeOptions extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearPossibleValues() {
-      possibleValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      possibleValues_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      ;
       onChanged();
       return this;
     }
@@ -699,6 +693,7 @@ public final class EnumTypeOptions extends com.google.protobuf.GeneratedMessageV
       checkByteStringIsUtf8(value);
       ensurePossibleValuesIsMutable();
       possibleValues_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,7 +37,7 @@ public interface AwsPropertiesOrBuilder
    * </code>
    *
    * @deprecated google.cloud.bigquery.connection.v1.AwsProperties.cross_account_role is deprecated.
-   *     See google/cloud/bigquery/connection/v1/connection.proto;l=356
+   *     See google/cloud/bigquery/connection/v1/connection.proto;l=378
    * @return Whether the crossAccountRole field is set.
    */
   @java.lang.Deprecated
@@ -56,7 +56,7 @@ public interface AwsPropertiesOrBuilder
    * </code>
    *
    * @deprecated google.cloud.bigquery.connection.v1.AwsProperties.cross_account_role is deprecated.
-   *     See google/cloud/bigquery/connection/v1/connection.proto;l=356
+   *     See google/cloud/bigquery/connection/v1/connection.proto;l=378
    * @return The crossAccountRole.
    */
   @java.lang.Deprecated
@@ -116,6 +116,6 @@ public interface AwsPropertiesOrBuilder
    */
   com.google.cloud.bigquery.connection.v1.AwsAccessRoleOrBuilder getAccessRoleOrBuilder();
 
-  public com.google.cloud.bigquery.connection.v1.AwsProperties.AuthenticationMethodCase
+  com.google.cloud.bigquery.connection.v1.AwsProperties.AuthenticationMethodCase
       getAuthenticationMethodCase();
 }

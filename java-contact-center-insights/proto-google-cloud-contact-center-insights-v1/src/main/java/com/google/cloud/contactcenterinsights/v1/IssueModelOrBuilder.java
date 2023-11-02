@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -278,4 +278,54 @@ public interface IssueModelOrBuilder
    */
   com.google.cloud.contactcenterinsights.v1.IssueModelLabelStatsOrBuilder
       getTrainingStatsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Type of the model.
+   * </pre>
+   *
+   * <code>.google.cloud.contactcenterinsights.v1.IssueModel.ModelType model_type = 9;</code>
+   *
+   * @return The enum numeric value on the wire for modelType.
+   */
+  int getModelTypeValue();
+  /**
+   *
+   *
+   * <pre>
+   * Type of the model.
+   * </pre>
+   *
+   * <code>.google.cloud.contactcenterinsights.v1.IssueModel.ModelType model_type = 9;</code>
+   *
+   * @return The modelType.
+   */
+  com.google.cloud.contactcenterinsights.v1.IssueModel.ModelType getModelType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Language of the model.
+   * </pre>
+   *
+   * <code>string language_code = 10;</code>
+   *
+   * @return The languageCode.
+   */
+  java.lang.String getLanguageCode();
+  /**
+   *
+   *
+   * <pre>
+   * Language of the model.
+   * </pre>
+   *
+   * <code>string language_code = 10;</code>
+   *
+   * @return The bytes for languageCode.
+   */
+  com.google.protobuf.ByteString getLanguageCodeBytes();
 }

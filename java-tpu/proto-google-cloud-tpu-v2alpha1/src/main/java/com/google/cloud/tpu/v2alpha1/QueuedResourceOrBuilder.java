@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -126,7 +126,7 @@ public interface QueuedResourceOrBuilder
    *
    *
    * <pre>
-   * The Guaranteed tier
+   * The Guaranteed tier.
    * </pre>
    *
    * <code>.google.cloud.tpu.v2alpha1.QueuedResource.Guaranteed guaranteed = 4;</code>
@@ -138,7 +138,7 @@ public interface QueuedResourceOrBuilder
    *
    *
    * <pre>
-   * The Guaranteed tier
+   * The Guaranteed tier.
    * </pre>
    *
    * <code>.google.cloud.tpu.v2alpha1.QueuedResource.Guaranteed guaranteed = 4;</code>
@@ -150,12 +150,53 @@ public interface QueuedResourceOrBuilder
    *
    *
    * <pre>
-   * The Guaranteed tier
+   * The Guaranteed tier.
    * </pre>
    *
    * <code>.google.cloud.tpu.v2alpha1.QueuedResource.Guaranteed guaranteed = 4;</code>
    */
   com.google.cloud.tpu.v2alpha1.QueuedResource.GuaranteedOrBuilder getGuaranteedOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Spot tier.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.tpu.v2alpha1.QueuedResource.Spot spot = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the spot field is set.
+   */
+  boolean hasSpot();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Spot tier.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.tpu.v2alpha1.QueuedResource.Spot spot = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The spot.
+   */
+  com.google.cloud.tpu.v2alpha1.QueuedResource.Spot getSpot();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Spot tier.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.tpu.v2alpha1.QueuedResource.Spot spot = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.tpu.v2alpha1.QueuedResource.SpotOrBuilder getSpotOrBuilder();
 
   /**
    *
@@ -260,7 +301,7 @@ public interface QueuedResourceOrBuilder
    */
   com.google.protobuf.ByteString getReservationNameBytes();
 
-  public com.google.cloud.tpu.v2alpha1.QueuedResource.ResourceCase getResourceCase();
+  com.google.cloud.tpu.v2alpha1.QueuedResource.ResourceCase getResourceCase();
 
-  public com.google.cloud.tpu.v2alpha1.QueuedResource.TierCase getTierCase();
+  com.google.cloud.tpu.v2alpha1.QueuedResource.TierCase getTierCase();
 }

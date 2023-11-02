@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,6 +39,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
 
   private CompilationResult() {
     name_ = "";
+    resolvedGitCommitSha_ = "";
     dataformCoreVersion_ = "";
     compilationErrors_ = java.util.Collections.emptyList();
   }
@@ -47,11 +48,6 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new CompilationResult();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -67,2358 +63,6 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
         .ensureFieldAccessorsInitialized(
             com.google.cloud.dataform.v1beta1.CompilationResult.class,
             com.google.cloud.dataform.v1beta1.CompilationResult.Builder.class);
-  }
-
-  public interface CodeCompilationConfigOrBuilder
-      extends
-      // @@protoc_insertion_point(interface_extends:google.cloud.dataform.v1beta1.CompilationResult.CodeCompilationConfig)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The default database (Google Cloud project ID).
-     * </pre>
-     *
-     * <code>string default_database = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @return The defaultDatabase.
-     */
-    java.lang.String getDefaultDatabase();
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The default database (Google Cloud project ID).
-     * </pre>
-     *
-     * <code>string default_database = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @return The bytes for defaultDatabase.
-     */
-    com.google.protobuf.ByteString getDefaultDatabaseBytes();
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The default schema (BigQuery dataset ID).
-     * </pre>
-     *
-     * <code>string default_schema = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @return The defaultSchema.
-     */
-    java.lang.String getDefaultSchema();
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The default schema (BigQuery dataset ID).
-     * </pre>
-     *
-     * <code>string default_schema = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @return The bytes for defaultSchema.
-     */
-    com.google.protobuf.ByteString getDefaultSchemaBytes();
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The default BigQuery location to use. Defaults to "US".
-     * See the BigQuery docs for a full list of locations:
-     * https://cloud.google.com/bigquery/docs/locations.
-     * </pre>
-     *
-     * <code>string default_location = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @return The defaultLocation.
-     */
-    java.lang.String getDefaultLocation();
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The default BigQuery location to use. Defaults to "US".
-     * See the BigQuery docs for a full list of locations:
-     * https://cloud.google.com/bigquery/docs/locations.
-     * </pre>
-     *
-     * <code>string default_location = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @return The bytes for defaultLocation.
-     */
-    com.google.protobuf.ByteString getDefaultLocationBytes();
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The default schema (BigQuery dataset ID) for assertions.
-     * </pre>
-     *
-     * <code>string assertion_schema = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @return The assertionSchema.
-     */
-    java.lang.String getAssertionSchema();
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The default schema (BigQuery dataset ID) for assertions.
-     * </pre>
-     *
-     * <code>string assertion_schema = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @return The bytes for assertionSchema.
-     */
-    com.google.protobuf.ByteString getAssertionSchemaBytes();
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. User-defined variables that are made available to project code during
-     * compilation.
-     * </pre>
-     *
-     * <code>map&lt;string, string&gt; vars = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
-     */
-    int getVarsCount();
-    /**
-     *
-     *
-     * <pre>
-     * Optional. User-defined variables that are made available to project code during
-     * compilation.
-     * </pre>
-     *
-     * <code>map&lt;string, string&gt; vars = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
-     */
-    boolean containsVars(java.lang.String key);
-    /** Use {@link #getVarsMap()} instead. */
-    @java.lang.Deprecated
-    java.util.Map<java.lang.String, java.lang.String> getVars();
-    /**
-     *
-     *
-     * <pre>
-     * Optional. User-defined variables that are made available to project code during
-     * compilation.
-     * </pre>
-     *
-     * <code>map&lt;string, string&gt; vars = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
-     */
-    java.util.Map<java.lang.String, java.lang.String> getVarsMap();
-    /**
-     *
-     *
-     * <pre>
-     * Optional. User-defined variables that are made available to project code during
-     * compilation.
-     * </pre>
-     *
-     * <code>map&lt;string, string&gt; vars = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
-     */
-    /* nullable */
-    java.lang.String getVarsOrDefault(
-        java.lang.String key,
-        /* nullable */
-        java.lang.String defaultValue);
-    /**
-     *
-     *
-     * <pre>
-     * Optional. User-defined variables that are made available to project code during
-     * compilation.
-     * </pre>
-     *
-     * <code>map&lt;string, string&gt; vars = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
-     */
-    java.lang.String getVarsOrThrow(java.lang.String key);
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The suffix that should be appended to all database (Google Cloud project
-     * ID) names.
-     * </pre>
-     *
-     * <code>string database_suffix = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @return The databaseSuffix.
-     */
-    java.lang.String getDatabaseSuffix();
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The suffix that should be appended to all database (Google Cloud project
-     * ID) names.
-     * </pre>
-     *
-     * <code>string database_suffix = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @return The bytes for databaseSuffix.
-     */
-    com.google.protobuf.ByteString getDatabaseSuffixBytes();
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The suffix that should be appended to all schema (BigQuery dataset ID)
-     * names.
-     * </pre>
-     *
-     * <code>string schema_suffix = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @return The schemaSuffix.
-     */
-    java.lang.String getSchemaSuffix();
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The suffix that should be appended to all schema (BigQuery dataset ID)
-     * names.
-     * </pre>
-     *
-     * <code>string schema_suffix = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @return The bytes for schemaSuffix.
-     */
-    com.google.protobuf.ByteString getSchemaSuffixBytes();
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The prefix that should be prepended to all table names.
-     * </pre>
-     *
-     * <code>string table_prefix = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @return The tablePrefix.
-     */
-    java.lang.String getTablePrefix();
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The prefix that should be prepended to all table names.
-     * </pre>
-     *
-     * <code>string table_prefix = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @return The bytes for tablePrefix.
-     */
-    com.google.protobuf.ByteString getTablePrefixBytes();
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Configures various aspects of Dataform code compilation.
-   * </pre>
-   *
-   * Protobuf type {@code google.cloud.dataform.v1beta1.CompilationResult.CodeCompilationConfig}
-   */
-  public static final class CodeCompilationConfig extends com.google.protobuf.GeneratedMessageV3
-      implements
-      // @@protoc_insertion_point(message_implements:google.cloud.dataform.v1beta1.CompilationResult.CodeCompilationConfig)
-      CodeCompilationConfigOrBuilder {
-    private static final long serialVersionUID = 0L;
-    // Use CodeCompilationConfig.newBuilder() to construct.
-    private CodeCompilationConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-
-    private CodeCompilationConfig() {
-      defaultDatabase_ = "";
-      defaultSchema_ = "";
-      defaultLocation_ = "";
-      assertionSchema_ = "";
-      databaseSuffix_ = "";
-      schemaSuffix_ = "";
-      tablePrefix_ = "";
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-      return new CodeCompilationConfig();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
-    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.cloud.dataform.v1beta1.DataformProto
-          .internal_static_google_cloud_dataform_v1beta1_CompilationResult_CodeCompilationConfig_descriptor;
-    }
-
-    @SuppressWarnings({"rawtypes"})
-    @java.lang.Override
-    protected com.google.protobuf.MapField internalGetMapField(int number) {
-      switch (number) {
-        case 4:
-          return internalGetVars();
-        default:
-          throw new RuntimeException("Invalid map field number: " + number);
-      }
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.google.cloud.dataform.v1beta1.DataformProto
-          .internal_static_google_cloud_dataform_v1beta1_CompilationResult_CodeCompilationConfig_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.google.cloud.dataform.v1beta1.CompilationResult.CodeCompilationConfig.class,
-              com.google.cloud.dataform.v1beta1.CompilationResult.CodeCompilationConfig.Builder
-                  .class);
-    }
-
-    public static final int DEFAULT_DATABASE_FIELD_NUMBER = 1;
-
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object defaultDatabase_ = "";
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The default database (Google Cloud project ID).
-     * </pre>
-     *
-     * <code>string default_database = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @return The defaultDatabase.
-     */
-    @java.lang.Override
-    public java.lang.String getDefaultDatabase() {
-      java.lang.Object ref = defaultDatabase_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        defaultDatabase_ = s;
-        return s;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The default database (Google Cloud project ID).
-     * </pre>
-     *
-     * <code>string default_database = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @return The bytes for defaultDatabase.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString getDefaultDatabaseBytes() {
-      java.lang.Object ref = defaultDatabase_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        defaultDatabase_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int DEFAULT_SCHEMA_FIELD_NUMBER = 2;
-
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object defaultSchema_ = "";
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The default schema (BigQuery dataset ID).
-     * </pre>
-     *
-     * <code>string default_schema = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @return The defaultSchema.
-     */
-    @java.lang.Override
-    public java.lang.String getDefaultSchema() {
-      java.lang.Object ref = defaultSchema_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        defaultSchema_ = s;
-        return s;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The default schema (BigQuery dataset ID).
-     * </pre>
-     *
-     * <code>string default_schema = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @return The bytes for defaultSchema.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString getDefaultSchemaBytes() {
-      java.lang.Object ref = defaultSchema_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        defaultSchema_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int DEFAULT_LOCATION_FIELD_NUMBER = 8;
-
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object defaultLocation_ = "";
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The default BigQuery location to use. Defaults to "US".
-     * See the BigQuery docs for a full list of locations:
-     * https://cloud.google.com/bigquery/docs/locations.
-     * </pre>
-     *
-     * <code>string default_location = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @return The defaultLocation.
-     */
-    @java.lang.Override
-    public java.lang.String getDefaultLocation() {
-      java.lang.Object ref = defaultLocation_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        defaultLocation_ = s;
-        return s;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The default BigQuery location to use. Defaults to "US".
-     * See the BigQuery docs for a full list of locations:
-     * https://cloud.google.com/bigquery/docs/locations.
-     * </pre>
-     *
-     * <code>string default_location = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @return The bytes for defaultLocation.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString getDefaultLocationBytes() {
-      java.lang.Object ref = defaultLocation_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        defaultLocation_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int ASSERTION_SCHEMA_FIELD_NUMBER = 3;
-
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object assertionSchema_ = "";
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The default schema (BigQuery dataset ID) for assertions.
-     * </pre>
-     *
-     * <code>string assertion_schema = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @return The assertionSchema.
-     */
-    @java.lang.Override
-    public java.lang.String getAssertionSchema() {
-      java.lang.Object ref = assertionSchema_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        assertionSchema_ = s;
-        return s;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The default schema (BigQuery dataset ID) for assertions.
-     * </pre>
-     *
-     * <code>string assertion_schema = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @return The bytes for assertionSchema.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString getAssertionSchemaBytes() {
-      java.lang.Object ref = assertionSchema_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        assertionSchema_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int VARS_FIELD_NUMBER = 4;
-
-    private static final class VarsDefaultEntryHolder {
-      static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
-          com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
-              com.google.cloud.dataform.v1beta1.DataformProto
-                  .internal_static_google_cloud_dataform_v1beta1_CompilationResult_CodeCompilationConfig_VarsEntry_descriptor,
-              com.google.protobuf.WireFormat.FieldType.STRING,
-              "",
-              com.google.protobuf.WireFormat.FieldType.STRING,
-              "");
-    }
-
-    @SuppressWarnings("serial")
-    private com.google.protobuf.MapField<java.lang.String, java.lang.String> vars_;
-
-    private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetVars() {
-      if (vars_ == null) {
-        return com.google.protobuf.MapField.emptyMapField(VarsDefaultEntryHolder.defaultEntry);
-      }
-      return vars_;
-    }
-
-    public int getVarsCount() {
-      return internalGetVars().getMap().size();
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. User-defined variables that are made available to project code during
-     * compilation.
-     * </pre>
-     *
-     * <code>map&lt;string, string&gt; vars = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
-     */
-    @java.lang.Override
-    public boolean containsVars(java.lang.String key) {
-      if (key == null) {
-        throw new NullPointerException("map key");
-      }
-      return internalGetVars().getMap().containsKey(key);
-    }
-    /** Use {@link #getVarsMap()} instead. */
-    @java.lang.Override
-    @java.lang.Deprecated
-    public java.util.Map<java.lang.String, java.lang.String> getVars() {
-      return getVarsMap();
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. User-defined variables that are made available to project code during
-     * compilation.
-     * </pre>
-     *
-     * <code>map&lt;string, string&gt; vars = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
-     */
-    @java.lang.Override
-    public java.util.Map<java.lang.String, java.lang.String> getVarsMap() {
-      return internalGetVars().getMap();
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. User-defined variables that are made available to project code during
-     * compilation.
-     * </pre>
-     *
-     * <code>map&lt;string, string&gt; vars = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
-     */
-    @java.lang.Override
-    public /* nullable */ java.lang.String getVarsOrDefault(
-        java.lang.String key,
-        /* nullable */
-        java.lang.String defaultValue) {
-      if (key == null) {
-        throw new NullPointerException("map key");
-      }
-      java.util.Map<java.lang.String, java.lang.String> map = internalGetVars().getMap();
-      return map.containsKey(key) ? map.get(key) : defaultValue;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. User-defined variables that are made available to project code during
-     * compilation.
-     * </pre>
-     *
-     * <code>map&lt;string, string&gt; vars = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
-     */
-    @java.lang.Override
-    public java.lang.String getVarsOrThrow(java.lang.String key) {
-      if (key == null) {
-        throw new NullPointerException("map key");
-      }
-      java.util.Map<java.lang.String, java.lang.String> map = internalGetVars().getMap();
-      if (!map.containsKey(key)) {
-        throw new java.lang.IllegalArgumentException();
-      }
-      return map.get(key);
-    }
-
-    public static final int DATABASE_SUFFIX_FIELD_NUMBER = 5;
-
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object databaseSuffix_ = "";
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The suffix that should be appended to all database (Google Cloud project
-     * ID) names.
-     * </pre>
-     *
-     * <code>string database_suffix = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @return The databaseSuffix.
-     */
-    @java.lang.Override
-    public java.lang.String getDatabaseSuffix() {
-      java.lang.Object ref = databaseSuffix_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        databaseSuffix_ = s;
-        return s;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The suffix that should be appended to all database (Google Cloud project
-     * ID) names.
-     * </pre>
-     *
-     * <code>string database_suffix = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @return The bytes for databaseSuffix.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString getDatabaseSuffixBytes() {
-      java.lang.Object ref = databaseSuffix_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        databaseSuffix_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int SCHEMA_SUFFIX_FIELD_NUMBER = 6;
-
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object schemaSuffix_ = "";
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The suffix that should be appended to all schema (BigQuery dataset ID)
-     * names.
-     * </pre>
-     *
-     * <code>string schema_suffix = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @return The schemaSuffix.
-     */
-    @java.lang.Override
-    public java.lang.String getSchemaSuffix() {
-      java.lang.Object ref = schemaSuffix_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        schemaSuffix_ = s;
-        return s;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The suffix that should be appended to all schema (BigQuery dataset ID)
-     * names.
-     * </pre>
-     *
-     * <code>string schema_suffix = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @return The bytes for schemaSuffix.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString getSchemaSuffixBytes() {
-      java.lang.Object ref = schemaSuffix_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        schemaSuffix_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int TABLE_PREFIX_FIELD_NUMBER = 7;
-
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object tablePrefix_ = "";
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The prefix that should be prepended to all table names.
-     * </pre>
-     *
-     * <code>string table_prefix = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @return The tablePrefix.
-     */
-    @java.lang.Override
-    public java.lang.String getTablePrefix() {
-      java.lang.Object ref = tablePrefix_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        tablePrefix_ = s;
-        return s;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The prefix that should be prepended to all table names.
-     * </pre>
-     *
-     * <code>string table_prefix = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @return The bytes for tablePrefix.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString getTablePrefixBytes() {
-      java.lang.Object ref = tablePrefix_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        tablePrefix_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    private byte memoizedIsInitialized = -1;
-
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(defaultDatabase_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, defaultDatabase_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(defaultSchema_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, defaultSchema_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(assertionSchema_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, assertionSchema_);
-      }
-      com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
-          output, internalGetVars(), VarsDefaultEntryHolder.defaultEntry, 4);
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(databaseSuffix_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, databaseSuffix_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(schemaSuffix_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, schemaSuffix_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tablePrefix_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, tablePrefix_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(defaultLocation_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, defaultLocation_);
-      }
-      getUnknownFields().writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(defaultDatabase_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, defaultDatabase_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(defaultSchema_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, defaultSchema_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(assertionSchema_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, assertionSchema_);
-      }
-      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
-          internalGetVars().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<java.lang.String, java.lang.String> vars__ =
-            VarsDefaultEntryHolder.defaultEntry
-                .newBuilderForType()
-                .setKey(entry.getKey())
-                .setValue(entry.getValue())
-                .build();
-        size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, vars__);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(databaseSuffix_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, databaseSuffix_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(schemaSuffix_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, schemaSuffix_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tablePrefix_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, tablePrefix_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(defaultLocation_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, defaultLocation_);
-      }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-        return true;
-      }
-      if (!(obj
-          instanceof com.google.cloud.dataform.v1beta1.CompilationResult.CodeCompilationConfig)) {
-        return super.equals(obj);
-      }
-      com.google.cloud.dataform.v1beta1.CompilationResult.CodeCompilationConfig other =
-          (com.google.cloud.dataform.v1beta1.CompilationResult.CodeCompilationConfig) obj;
-
-      if (!getDefaultDatabase().equals(other.getDefaultDatabase())) return false;
-      if (!getDefaultSchema().equals(other.getDefaultSchema())) return false;
-      if (!getDefaultLocation().equals(other.getDefaultLocation())) return false;
-      if (!getAssertionSchema().equals(other.getAssertionSchema())) return false;
-      if (!internalGetVars().equals(other.internalGetVars())) return false;
-      if (!getDatabaseSuffix().equals(other.getDatabaseSuffix())) return false;
-      if (!getSchemaSuffix().equals(other.getSchemaSuffix())) return false;
-      if (!getTablePrefix().equals(other.getTablePrefix())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + DEFAULT_DATABASE_FIELD_NUMBER;
-      hash = (53 * hash) + getDefaultDatabase().hashCode();
-      hash = (37 * hash) + DEFAULT_SCHEMA_FIELD_NUMBER;
-      hash = (53 * hash) + getDefaultSchema().hashCode();
-      hash = (37 * hash) + DEFAULT_LOCATION_FIELD_NUMBER;
-      hash = (53 * hash) + getDefaultLocation().hashCode();
-      hash = (37 * hash) + ASSERTION_SCHEMA_FIELD_NUMBER;
-      hash = (53 * hash) + getAssertionSchema().hashCode();
-      if (!internalGetVars().getMap().isEmpty()) {
-        hash = (37 * hash) + VARS_FIELD_NUMBER;
-        hash = (53 * hash) + internalGetVars().hashCode();
-      }
-      hash = (37 * hash) + DATABASE_SUFFIX_FIELD_NUMBER;
-      hash = (53 * hash) + getDatabaseSuffix().hashCode();
-      hash = (37 * hash) + SCHEMA_SUFFIX_FIELD_NUMBER;
-      hash = (53 * hash) + getSchemaSuffix().hashCode();
-      hash = (37 * hash) + TABLE_PREFIX_FIELD_NUMBER;
-      hash = (53 * hash) + getTablePrefix().hashCode();
-      hash = (29 * hash) + getUnknownFields().hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.google.cloud.dataform.v1beta1.CompilationResult.CodeCompilationConfig
-        parseFrom(java.nio.ByteBuffer data)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-
-    public static com.google.cloud.dataform.v1beta1.CompilationResult.CodeCompilationConfig
-        parseFrom(
-            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-
-    public static com.google.cloud.dataform.v1beta1.CompilationResult.CodeCompilationConfig
-        parseFrom(com.google.protobuf.ByteString data)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-
-    public static com.google.cloud.dataform.v1beta1.CompilationResult.CodeCompilationConfig
-        parseFrom(
-            com.google.protobuf.ByteString data,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-
-    public static com.google.cloud.dataform.v1beta1.CompilationResult.CodeCompilationConfig
-        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-
-    public static com.google.cloud.dataform.v1beta1.CompilationResult.CodeCompilationConfig
-        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-
-    public static com.google.cloud.dataform.v1beta1.CompilationResult.CodeCompilationConfig
-        parseFrom(java.io.InputStream input) throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
-    }
-
-    public static com.google.cloud.dataform.v1beta1.CompilationResult.CodeCompilationConfig
-        parseFrom(
-            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-          PARSER, input, extensionRegistry);
-    }
-
-    public static com.google.cloud.dataform.v1beta1.CompilationResult.CodeCompilationConfig
-        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
-    }
-
-    public static com.google.cloud.dataform.v1beta1.CompilationResult.CodeCompilationConfig
-        parseDelimitedFrom(
-            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
-          PARSER, input, extensionRegistry);
-    }
-
-    public static com.google.cloud.dataform.v1beta1.CompilationResult.CodeCompilationConfig
-        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
-    }
-
-    public static com.google.cloud.dataform.v1beta1.CompilationResult.CodeCompilationConfig
-        parseFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-          PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() {
-      return newBuilder();
-    }
-
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-
-    public static Builder newBuilder(
-        com.google.cloud.dataform.v1beta1.CompilationResult.CodeCompilationConfig prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Configures various aspects of Dataform code compilation.
-     * </pre>
-     *
-     * Protobuf type {@code google.cloud.dataform.v1beta1.CompilationResult.CodeCompilationConfig}
-     */
-    public static final class Builder
-        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
-        implements
-        // @@protoc_insertion_point(builder_implements:google.cloud.dataform.v1beta1.CompilationResult.CodeCompilationConfig)
-        com.google.cloud.dataform.v1beta1.CompilationResult.CodeCompilationConfigOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-        return com.google.cloud.dataform.v1beta1.DataformProto
-            .internal_static_google_cloud_dataform_v1beta1_CompilationResult_CodeCompilationConfig_descriptor;
-      }
-
-      @SuppressWarnings({"rawtypes"})
-      protected com.google.protobuf.MapField internalGetMapField(int number) {
-        switch (number) {
-          case 4:
-            return internalGetVars();
-          default:
-            throw new RuntimeException("Invalid map field number: " + number);
-        }
-      }
-
-      @SuppressWarnings({"rawtypes"})
-      protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
-        switch (number) {
-          case 4:
-            return internalGetMutableVars();
-          default:
-            throw new RuntimeException("Invalid map field number: " + number);
-        }
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.google.cloud.dataform.v1beta1.DataformProto
-            .internal_static_google_cloud_dataform_v1beta1_CompilationResult_CodeCompilationConfig_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.google.cloud.dataform.v1beta1.CompilationResult.CodeCompilationConfig.class,
-                com.google.cloud.dataform.v1beta1.CompilationResult.CodeCompilationConfig.Builder
-                    .class);
-      }
-
-      // Construct using
-      // com.google.cloud.dataform.v1beta1.CompilationResult.CodeCompilationConfig.newBuilder()
-      private Builder() {}
-
-      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-      }
-
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        bitField0_ = 0;
-        defaultDatabase_ = "";
-        defaultSchema_ = "";
-        defaultLocation_ = "";
-        assertionSchema_ = "";
-        internalGetMutableVars().clear();
-        databaseSuffix_ = "";
-        schemaSuffix_ = "";
-        tablePrefix_ = "";
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-        return com.google.cloud.dataform.v1beta1.DataformProto
-            .internal_static_google_cloud_dataform_v1beta1_CompilationResult_CodeCompilationConfig_descriptor;
-      }
-
-      @java.lang.Override
-      public com.google.cloud.dataform.v1beta1.CompilationResult.CodeCompilationConfig
-          getDefaultInstanceForType() {
-        return com.google.cloud.dataform.v1beta1.CompilationResult.CodeCompilationConfig
-            .getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.google.cloud.dataform.v1beta1.CompilationResult.CodeCompilationConfig build() {
-        com.google.cloud.dataform.v1beta1.CompilationResult.CodeCompilationConfig result =
-            buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.google.cloud.dataform.v1beta1.CompilationResult.CodeCompilationConfig
-          buildPartial() {
-        com.google.cloud.dataform.v1beta1.CompilationResult.CodeCompilationConfig result =
-            new com.google.cloud.dataform.v1beta1.CompilationResult.CodeCompilationConfig(this);
-        if (bitField0_ != 0) {
-          buildPartial0(result);
-        }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartial0(
-          com.google.cloud.dataform.v1beta1.CompilationResult.CodeCompilationConfig result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.defaultDatabase_ = defaultDatabase_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.defaultSchema_ = defaultSchema_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.defaultLocation_ = defaultLocation_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.assertionSchema_ = assertionSchema_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.vars_ = internalGetVars();
-          result.vars_.makeImmutable();
-        }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.databaseSuffix_ = databaseSuffix_;
-        }
-        if (((from_bitField0_ & 0x00000040) != 0)) {
-          result.schemaSuffix_ = schemaSuffix_;
-        }
-        if (((from_bitField0_ & 0x00000080) != 0)) {
-          result.tablePrefix_ = tablePrefix_;
-        }
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return super.setField(field, value);
-      }
-
-      @java.lang.Override
-      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-
-      @java.lang.Override
-      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index,
-          java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other
-            instanceof com.google.cloud.dataform.v1beta1.CompilationResult.CodeCompilationConfig) {
-          return mergeFrom(
-              (com.google.cloud.dataform.v1beta1.CompilationResult.CodeCompilationConfig) other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(
-          com.google.cloud.dataform.v1beta1.CompilationResult.CodeCompilationConfig other) {
-        if (other
-            == com.google.cloud.dataform.v1beta1.CompilationResult.CodeCompilationConfig
-                .getDefaultInstance()) return this;
-        if (!other.getDefaultDatabase().isEmpty()) {
-          defaultDatabase_ = other.defaultDatabase_;
-          bitField0_ |= 0x00000001;
-          onChanged();
-        }
-        if (!other.getDefaultSchema().isEmpty()) {
-          defaultSchema_ = other.defaultSchema_;
-          bitField0_ |= 0x00000002;
-          onChanged();
-        }
-        if (!other.getDefaultLocation().isEmpty()) {
-          defaultLocation_ = other.defaultLocation_;
-          bitField0_ |= 0x00000004;
-          onChanged();
-        }
-        if (!other.getAssertionSchema().isEmpty()) {
-          assertionSchema_ = other.assertionSchema_;
-          bitField0_ |= 0x00000008;
-          onChanged();
-        }
-        internalGetMutableVars().mergeFrom(other.internalGetVars());
-        bitField0_ |= 0x00000010;
-        if (!other.getDatabaseSuffix().isEmpty()) {
-          databaseSuffix_ = other.databaseSuffix_;
-          bitField0_ |= 0x00000020;
-          onChanged();
-        }
-        if (!other.getSchemaSuffix().isEmpty()) {
-          schemaSuffix_ = other.schemaSuffix_;
-          bitField0_ |= 0x00000040;
-          onChanged();
-        }
-        if (!other.getTablePrefix().isEmpty()) {
-          tablePrefix_ = other.tablePrefix_;
-          bitField0_ |= 0x00000080;
-          onChanged();
-        }
-        this.mergeUnknownFields(other.getUnknownFields());
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10:
-                {
-                  defaultDatabase_ = input.readStringRequireUtf8();
-                  bitField0_ |= 0x00000001;
-                  break;
-                } // case 10
-              case 18:
-                {
-                  defaultSchema_ = input.readStringRequireUtf8();
-                  bitField0_ |= 0x00000002;
-                  break;
-                } // case 18
-              case 26:
-                {
-                  assertionSchema_ = input.readStringRequireUtf8();
-                  bitField0_ |= 0x00000008;
-                  break;
-                } // case 26
-              case 34:
-                {
-                  com.google.protobuf.MapEntry<java.lang.String, java.lang.String> vars__ =
-                      input.readMessage(
-                          VarsDefaultEntryHolder.defaultEntry.getParserForType(),
-                          extensionRegistry);
-                  internalGetMutableVars().getMutableMap().put(vars__.getKey(), vars__.getValue());
-                  bitField0_ |= 0x00000010;
-                  break;
-                } // case 34
-              case 42:
-                {
-                  databaseSuffix_ = input.readStringRequireUtf8();
-                  bitField0_ |= 0x00000020;
-                  break;
-                } // case 42
-              case 50:
-                {
-                  schemaSuffix_ = input.readStringRequireUtf8();
-                  bitField0_ |= 0x00000040;
-                  break;
-                } // case 50
-              case 58:
-                {
-                  tablePrefix_ = input.readStringRequireUtf8();
-                  bitField0_ |= 0x00000080;
-                  break;
-                } // case 58
-              case 66:
-                {
-                  defaultLocation_ = input.readStringRequireUtf8();
-                  bitField0_ |= 0x00000004;
-                  break;
-                } // case 66
-              default:
-                {
-                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                    done = true; // was an endgroup tag
-                  }
-                  break;
-                } // default:
-            } // switch (tag)
-          } // while (!done)
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.unwrapIOException();
-        } finally {
-          onChanged();
-        } // finally
-        return this;
-      }
-
-      private int bitField0_;
-
-      private java.lang.Object defaultDatabase_ = "";
-      /**
-       *
-       *
-       * <pre>
-       * Optional. The default database (Google Cloud project ID).
-       * </pre>
-       *
-       * <code>string default_database = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
-       *
-       * @return The defaultDatabase.
-       */
-      public java.lang.String getDefaultDatabase() {
-        java.lang.Object ref = defaultDatabase_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          defaultDatabase_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Optional. The default database (Google Cloud project ID).
-       * </pre>
-       *
-       * <code>string default_database = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
-       *
-       * @return The bytes for defaultDatabase.
-       */
-      public com.google.protobuf.ByteString getDefaultDatabaseBytes() {
-        java.lang.Object ref = defaultDatabase_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
-              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-          defaultDatabase_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Optional. The default database (Google Cloud project ID).
-       * </pre>
-       *
-       * <code>string default_database = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
-       *
-       * @param value The defaultDatabase to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDefaultDatabase(java.lang.String value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        defaultDatabase_ = value;
-        bitField0_ |= 0x00000001;
-        onChanged();
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Optional. The default database (Google Cloud project ID).
-       * </pre>
-       *
-       * <code>string default_database = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
-       *
-       * @return This builder for chaining.
-       */
-      public Builder clearDefaultDatabase() {
-        defaultDatabase_ = getDefaultInstance().getDefaultDatabase();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Optional. The default database (Google Cloud project ID).
-       * </pre>
-       *
-       * <code>string default_database = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
-       *
-       * @param value The bytes for defaultDatabase to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDefaultDatabaseBytes(com.google.protobuf.ByteString value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        checkByteStringIsUtf8(value);
-        defaultDatabase_ = value;
-        bitField0_ |= 0x00000001;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object defaultSchema_ = "";
-      /**
-       *
-       *
-       * <pre>
-       * Optional. The default schema (BigQuery dataset ID).
-       * </pre>
-       *
-       * <code>string default_schema = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
-       *
-       * @return The defaultSchema.
-       */
-      public java.lang.String getDefaultSchema() {
-        java.lang.Object ref = defaultSchema_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          defaultSchema_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Optional. The default schema (BigQuery dataset ID).
-       * </pre>
-       *
-       * <code>string default_schema = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
-       *
-       * @return The bytes for defaultSchema.
-       */
-      public com.google.protobuf.ByteString getDefaultSchemaBytes() {
-        java.lang.Object ref = defaultSchema_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
-              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-          defaultSchema_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Optional. The default schema (BigQuery dataset ID).
-       * </pre>
-       *
-       * <code>string default_schema = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
-       *
-       * @param value The defaultSchema to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDefaultSchema(java.lang.String value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        defaultSchema_ = value;
-        bitField0_ |= 0x00000002;
-        onChanged();
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Optional. The default schema (BigQuery dataset ID).
-       * </pre>
-       *
-       * <code>string default_schema = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
-       *
-       * @return This builder for chaining.
-       */
-      public Builder clearDefaultSchema() {
-        defaultSchema_ = getDefaultInstance().getDefaultSchema();
-        bitField0_ = (bitField0_ & ~0x00000002);
-        onChanged();
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Optional. The default schema (BigQuery dataset ID).
-       * </pre>
-       *
-       * <code>string default_schema = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
-       *
-       * @param value The bytes for defaultSchema to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDefaultSchemaBytes(com.google.protobuf.ByteString value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        checkByteStringIsUtf8(value);
-        defaultSchema_ = value;
-        bitField0_ |= 0x00000002;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object defaultLocation_ = "";
-      /**
-       *
-       *
-       * <pre>
-       * Optional. The default BigQuery location to use. Defaults to "US".
-       * See the BigQuery docs for a full list of locations:
-       * https://cloud.google.com/bigquery/docs/locations.
-       * </pre>
-       *
-       * <code>string default_location = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
-       *
-       * @return The defaultLocation.
-       */
-      public java.lang.String getDefaultLocation() {
-        java.lang.Object ref = defaultLocation_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          defaultLocation_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Optional. The default BigQuery location to use. Defaults to "US".
-       * See the BigQuery docs for a full list of locations:
-       * https://cloud.google.com/bigquery/docs/locations.
-       * </pre>
-       *
-       * <code>string default_location = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
-       *
-       * @return The bytes for defaultLocation.
-       */
-      public com.google.protobuf.ByteString getDefaultLocationBytes() {
-        java.lang.Object ref = defaultLocation_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
-              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-          defaultLocation_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Optional. The default BigQuery location to use. Defaults to "US".
-       * See the BigQuery docs for a full list of locations:
-       * https://cloud.google.com/bigquery/docs/locations.
-       * </pre>
-       *
-       * <code>string default_location = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
-       *
-       * @param value The defaultLocation to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDefaultLocation(java.lang.String value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        defaultLocation_ = value;
-        bitField0_ |= 0x00000004;
-        onChanged();
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Optional. The default BigQuery location to use. Defaults to "US".
-       * See the BigQuery docs for a full list of locations:
-       * https://cloud.google.com/bigquery/docs/locations.
-       * </pre>
-       *
-       * <code>string default_location = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
-       *
-       * @return This builder for chaining.
-       */
-      public Builder clearDefaultLocation() {
-        defaultLocation_ = getDefaultInstance().getDefaultLocation();
-        bitField0_ = (bitField0_ & ~0x00000004);
-        onChanged();
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Optional. The default BigQuery location to use. Defaults to "US".
-       * See the BigQuery docs for a full list of locations:
-       * https://cloud.google.com/bigquery/docs/locations.
-       * </pre>
-       *
-       * <code>string default_location = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
-       *
-       * @param value The bytes for defaultLocation to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDefaultLocationBytes(com.google.protobuf.ByteString value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        checkByteStringIsUtf8(value);
-        defaultLocation_ = value;
-        bitField0_ |= 0x00000004;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object assertionSchema_ = "";
-      /**
-       *
-       *
-       * <pre>
-       * Optional. The default schema (BigQuery dataset ID) for assertions.
-       * </pre>
-       *
-       * <code>string assertion_schema = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-       *
-       * @return The assertionSchema.
-       */
-      public java.lang.String getAssertionSchema() {
-        java.lang.Object ref = assertionSchema_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          assertionSchema_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Optional. The default schema (BigQuery dataset ID) for assertions.
-       * </pre>
-       *
-       * <code>string assertion_schema = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-       *
-       * @return The bytes for assertionSchema.
-       */
-      public com.google.protobuf.ByteString getAssertionSchemaBytes() {
-        java.lang.Object ref = assertionSchema_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
-              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-          assertionSchema_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Optional. The default schema (BigQuery dataset ID) for assertions.
-       * </pre>
-       *
-       * <code>string assertion_schema = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-       *
-       * @param value The assertionSchema to set.
-       * @return This builder for chaining.
-       */
-      public Builder setAssertionSchema(java.lang.String value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        assertionSchema_ = value;
-        bitField0_ |= 0x00000008;
-        onChanged();
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Optional. The default schema (BigQuery dataset ID) for assertions.
-       * </pre>
-       *
-       * <code>string assertion_schema = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-       *
-       * @return This builder for chaining.
-       */
-      public Builder clearAssertionSchema() {
-        assertionSchema_ = getDefaultInstance().getAssertionSchema();
-        bitField0_ = (bitField0_ & ~0x00000008);
-        onChanged();
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Optional. The default schema (BigQuery dataset ID) for assertions.
-       * </pre>
-       *
-       * <code>string assertion_schema = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
-       *
-       * @param value The bytes for assertionSchema to set.
-       * @return This builder for chaining.
-       */
-      public Builder setAssertionSchemaBytes(com.google.protobuf.ByteString value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        checkByteStringIsUtf8(value);
-        assertionSchema_ = value;
-        bitField0_ |= 0x00000008;
-        onChanged();
-        return this;
-      }
-
-      private com.google.protobuf.MapField<java.lang.String, java.lang.String> vars_;
-
-      private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetVars() {
-        if (vars_ == null) {
-          return com.google.protobuf.MapField.emptyMapField(VarsDefaultEntryHolder.defaultEntry);
-        }
-        return vars_;
-      }
-
-      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-          internalGetMutableVars() {
-        if (vars_ == null) {
-          vars_ = com.google.protobuf.MapField.newMapField(VarsDefaultEntryHolder.defaultEntry);
-        }
-        if (!vars_.isMutable()) {
-          vars_ = vars_.copy();
-        }
-        bitField0_ |= 0x00000010;
-        onChanged();
-        return vars_;
-      }
-
-      public int getVarsCount() {
-        return internalGetVars().getMap().size();
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Optional. User-defined variables that are made available to project code during
-       * compilation.
-       * </pre>
-       *
-       * <code>map&lt;string, string&gt; vars = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
-       */
-      @java.lang.Override
-      public boolean containsVars(java.lang.String key) {
-        if (key == null) {
-          throw new NullPointerException("map key");
-        }
-        return internalGetVars().getMap().containsKey(key);
-      }
-      /** Use {@link #getVarsMap()} instead. */
-      @java.lang.Override
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.String, java.lang.String> getVars() {
-        return getVarsMap();
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Optional. User-defined variables that are made available to project code during
-       * compilation.
-       * </pre>
-       *
-       * <code>map&lt;string, string&gt; vars = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
-       */
-      @java.lang.Override
-      public java.util.Map<java.lang.String, java.lang.String> getVarsMap() {
-        return internalGetVars().getMap();
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Optional. User-defined variables that are made available to project code during
-       * compilation.
-       * </pre>
-       *
-       * <code>map&lt;string, string&gt; vars = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
-       */
-      @java.lang.Override
-      public /* nullable */ java.lang.String getVarsOrDefault(
-          java.lang.String key,
-          /* nullable */
-          java.lang.String defaultValue) {
-        if (key == null) {
-          throw new NullPointerException("map key");
-        }
-        java.util.Map<java.lang.String, java.lang.String> map = internalGetVars().getMap();
-        return map.containsKey(key) ? map.get(key) : defaultValue;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Optional. User-defined variables that are made available to project code during
-       * compilation.
-       * </pre>
-       *
-       * <code>map&lt;string, string&gt; vars = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
-       */
-      @java.lang.Override
-      public java.lang.String getVarsOrThrow(java.lang.String key) {
-        if (key == null) {
-          throw new NullPointerException("map key");
-        }
-        java.util.Map<java.lang.String, java.lang.String> map = internalGetVars().getMap();
-        if (!map.containsKey(key)) {
-          throw new java.lang.IllegalArgumentException();
-        }
-        return map.get(key);
-      }
-
-      public Builder clearVars() {
-        bitField0_ = (bitField0_ & ~0x00000010);
-        internalGetMutableVars().getMutableMap().clear();
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Optional. User-defined variables that are made available to project code during
-       * compilation.
-       * </pre>
-       *
-       * <code>map&lt;string, string&gt; vars = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
-       */
-      public Builder removeVars(java.lang.String key) {
-        if (key == null) {
-          throw new NullPointerException("map key");
-        }
-        internalGetMutableVars().getMutableMap().remove(key);
-        return this;
-      }
-      /** Use alternate mutation accessors instead. */
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.String, java.lang.String> getMutableVars() {
-        bitField0_ |= 0x00000010;
-        return internalGetMutableVars().getMutableMap();
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Optional. User-defined variables that are made available to project code during
-       * compilation.
-       * </pre>
-       *
-       * <code>map&lt;string, string&gt; vars = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
-       */
-      public Builder putVars(java.lang.String key, java.lang.String value) {
-        if (key == null) {
-          throw new NullPointerException("map key");
-        }
-        if (value == null) {
-          throw new NullPointerException("map value");
-        }
-        internalGetMutableVars().getMutableMap().put(key, value);
-        bitField0_ |= 0x00000010;
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Optional. User-defined variables that are made available to project code during
-       * compilation.
-       * </pre>
-       *
-       * <code>map&lt;string, string&gt; vars = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
-       */
-      public Builder putAllVars(java.util.Map<java.lang.String, java.lang.String> values) {
-        internalGetMutableVars().getMutableMap().putAll(values);
-        bitField0_ |= 0x00000010;
-        return this;
-      }
-
-      private java.lang.Object databaseSuffix_ = "";
-      /**
-       *
-       *
-       * <pre>
-       * Optional. The suffix that should be appended to all database (Google Cloud project
-       * ID) names.
-       * </pre>
-       *
-       * <code>string database_suffix = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
-       *
-       * @return The databaseSuffix.
-       */
-      public java.lang.String getDatabaseSuffix() {
-        java.lang.Object ref = databaseSuffix_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          databaseSuffix_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Optional. The suffix that should be appended to all database (Google Cloud project
-       * ID) names.
-       * </pre>
-       *
-       * <code>string database_suffix = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
-       *
-       * @return The bytes for databaseSuffix.
-       */
-      public com.google.protobuf.ByteString getDatabaseSuffixBytes() {
-        java.lang.Object ref = databaseSuffix_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
-              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-          databaseSuffix_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Optional. The suffix that should be appended to all database (Google Cloud project
-       * ID) names.
-       * </pre>
-       *
-       * <code>string database_suffix = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
-       *
-       * @param value The databaseSuffix to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDatabaseSuffix(java.lang.String value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        databaseSuffix_ = value;
-        bitField0_ |= 0x00000020;
-        onChanged();
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Optional. The suffix that should be appended to all database (Google Cloud project
-       * ID) names.
-       * </pre>
-       *
-       * <code>string database_suffix = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
-       *
-       * @return This builder for chaining.
-       */
-      public Builder clearDatabaseSuffix() {
-        databaseSuffix_ = getDefaultInstance().getDatabaseSuffix();
-        bitField0_ = (bitField0_ & ~0x00000020);
-        onChanged();
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Optional. The suffix that should be appended to all database (Google Cloud project
-       * ID) names.
-       * </pre>
-       *
-       * <code>string database_suffix = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
-       *
-       * @param value The bytes for databaseSuffix to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDatabaseSuffixBytes(com.google.protobuf.ByteString value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        checkByteStringIsUtf8(value);
-        databaseSuffix_ = value;
-        bitField0_ |= 0x00000020;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object schemaSuffix_ = "";
-      /**
-       *
-       *
-       * <pre>
-       * Optional. The suffix that should be appended to all schema (BigQuery dataset ID)
-       * names.
-       * </pre>
-       *
-       * <code>string schema_suffix = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
-       *
-       * @return The schemaSuffix.
-       */
-      public java.lang.String getSchemaSuffix() {
-        java.lang.Object ref = schemaSuffix_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          schemaSuffix_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Optional. The suffix that should be appended to all schema (BigQuery dataset ID)
-       * names.
-       * </pre>
-       *
-       * <code>string schema_suffix = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
-       *
-       * @return The bytes for schemaSuffix.
-       */
-      public com.google.protobuf.ByteString getSchemaSuffixBytes() {
-        java.lang.Object ref = schemaSuffix_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
-              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-          schemaSuffix_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Optional. The suffix that should be appended to all schema (BigQuery dataset ID)
-       * names.
-       * </pre>
-       *
-       * <code>string schema_suffix = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
-       *
-       * @param value The schemaSuffix to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSchemaSuffix(java.lang.String value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        schemaSuffix_ = value;
-        bitField0_ |= 0x00000040;
-        onChanged();
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Optional. The suffix that should be appended to all schema (BigQuery dataset ID)
-       * names.
-       * </pre>
-       *
-       * <code>string schema_suffix = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
-       *
-       * @return This builder for chaining.
-       */
-      public Builder clearSchemaSuffix() {
-        schemaSuffix_ = getDefaultInstance().getSchemaSuffix();
-        bitField0_ = (bitField0_ & ~0x00000040);
-        onChanged();
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Optional. The suffix that should be appended to all schema (BigQuery dataset ID)
-       * names.
-       * </pre>
-       *
-       * <code>string schema_suffix = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
-       *
-       * @param value The bytes for schemaSuffix to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSchemaSuffixBytes(com.google.protobuf.ByteString value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        checkByteStringIsUtf8(value);
-        schemaSuffix_ = value;
-        bitField0_ |= 0x00000040;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object tablePrefix_ = "";
-      /**
-       *
-       *
-       * <pre>
-       * Optional. The prefix that should be prepended to all table names.
-       * </pre>
-       *
-       * <code>string table_prefix = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
-       *
-       * @return The tablePrefix.
-       */
-      public java.lang.String getTablePrefix() {
-        java.lang.Object ref = tablePrefix_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          tablePrefix_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Optional. The prefix that should be prepended to all table names.
-       * </pre>
-       *
-       * <code>string table_prefix = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
-       *
-       * @return The bytes for tablePrefix.
-       */
-      public com.google.protobuf.ByteString getTablePrefixBytes() {
-        java.lang.Object ref = tablePrefix_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
-              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-          tablePrefix_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Optional. The prefix that should be prepended to all table names.
-       * </pre>
-       *
-       * <code>string table_prefix = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
-       *
-       * @param value The tablePrefix to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTablePrefix(java.lang.String value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        tablePrefix_ = value;
-        bitField0_ |= 0x00000080;
-        onChanged();
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Optional. The prefix that should be prepended to all table names.
-       * </pre>
-       *
-       * <code>string table_prefix = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
-       *
-       * @return This builder for chaining.
-       */
-      public Builder clearTablePrefix() {
-        tablePrefix_ = getDefaultInstance().getTablePrefix();
-        bitField0_ = (bitField0_ & ~0x00000080);
-        onChanged();
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Optional. The prefix that should be prepended to all table names.
-       * </pre>
-       *
-       * <code>string table_prefix = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
-       *
-       * @param value The bytes for tablePrefix to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTablePrefixBytes(com.google.protobuf.ByteString value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        checkByteStringIsUtf8(value);
-        tablePrefix_ = value;
-        bitField0_ |= 0x00000080;
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-      // @@protoc_insertion_point(builder_scope:google.cloud.dataform.v1beta1.CompilationResult.CodeCompilationConfig)
-    }
-
-    // @@protoc_insertion_point(class_scope:google.cloud.dataform.v1beta1.CompilationResult.CodeCompilationConfig)
-    private static final com.google.cloud.dataform.v1beta1.CompilationResult.CodeCompilationConfig
-        DEFAULT_INSTANCE;
-
-    static {
-      DEFAULT_INSTANCE =
-          new com.google.cloud.dataform.v1beta1.CompilationResult.CodeCompilationConfig();
-    }
-
-    public static com.google.cloud.dataform.v1beta1.CompilationResult.CodeCompilationConfig
-        getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<CodeCompilationConfig> PARSER =
-        new com.google.protobuf.AbstractParser<CodeCompilationConfig>() {
-          @java.lang.Override
-          public CodeCompilationConfig parsePartialFrom(
-              com.google.protobuf.CodedInputStream input,
-              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-              throws com.google.protobuf.InvalidProtocolBufferException {
-            Builder builder = newBuilder();
-            try {
-              builder.mergeFrom(input, extensionRegistry);
-            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-              throw e.setUnfinishedMessage(builder.buildPartial());
-            } catch (com.google.protobuf.UninitializedMessageException e) {
-              throw e.asInvalidProtocolBufferException()
-                  .setUnfinishedMessage(builder.buildPartial());
-            } catch (java.io.IOException e) {
-              throw new com.google.protobuf.InvalidProtocolBufferException(e)
-                  .setUnfinishedMessage(builder.buildPartial());
-            }
-            return builder.buildPartial();
-          }
-        };
-
-    public static com.google.protobuf.Parser<CodeCompilationConfig> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<CodeCompilationConfig> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.cloud.dataform.v1beta1.CompilationResult.CodeCompilationConfig
-        getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
   }
 
   public interface CompilationErrorOrBuilder
@@ -2480,8 +124,8 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. The path of the file where this error occurred, if available, relative to
-     * the project root.
+     * Output only. The path of the file where this error occurred, if
+     * available, relative to the project root.
      * </pre>
      *
      * <code>string path = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2493,8 +137,8 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. The path of the file where this error occurred, if available, relative to
-     * the project root.
+     * Output only. The path of the file where this error occurred, if
+     * available, relative to the project root.
      * </pre>
      *
      * <code>string path = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2507,7 +151,8 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. The identifier of the action where this error occurred, if available.
+     * Output only. The identifier of the action where this error occurred, if
+     * available.
      * </pre>
      *
      * <code>
@@ -2521,7 +166,8 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. The identifier of the action where this error occurred, if available.
+     * Output only. The identifier of the action where this error occurred, if
+     * available.
      * </pre>
      *
      * <code>
@@ -2535,7 +181,8 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. The identifier of the action where this error occurred, if available.
+     * Output only. The identifier of the action where this error occurred, if
+     * available.
      * </pre>
      *
      * <code>
@@ -2573,11 +220,6 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new CompilationError();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2705,8 +347,8 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. The path of the file where this error occurred, if available, relative to
-     * the project root.
+     * Output only. The path of the file where this error occurred, if
+     * available, relative to the project root.
      * </pre>
      *
      * <code>string path = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2729,8 +371,8 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. The path of the file where this error occurred, if available, relative to
-     * the project root.
+     * Output only. The path of the file where this error occurred, if
+     * available, relative to the project root.
      * </pre>
      *
      * <code>string path = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2756,7 +398,8 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. The identifier of the action where this error occurred, if available.
+     * Output only. The identifier of the action where this error occurred, if
+     * available.
      * </pre>
      *
      * <code>
@@ -2773,7 +416,8 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. The identifier of the action where this error occurred, if available.
+     * Output only. The identifier of the action where this error occurred, if
+     * available.
      * </pre>
      *
      * <code>
@@ -2792,7 +436,8 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. The identifier of the action where this error occurred, if available.
+     * Output only. The identifier of the action where this error occurred, if
+     * available.
      * </pre>
      *
      * <code>
@@ -3459,8 +1104,8 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Output only. The path of the file where this error occurred, if available, relative to
-       * the project root.
+       * Output only. The path of the file where this error occurred, if
+       * available, relative to the project root.
        * </pre>
        *
        * <code>string path = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3482,8 +1127,8 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Output only. The path of the file where this error occurred, if available, relative to
-       * the project root.
+       * Output only. The path of the file where this error occurred, if
+       * available, relative to the project root.
        * </pre>
        *
        * <code>string path = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3505,8 +1150,8 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Output only. The path of the file where this error occurred, if available, relative to
-       * the project root.
+       * Output only. The path of the file where this error occurred, if
+       * available, relative to the project root.
        * </pre>
        *
        * <code>string path = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3527,8 +1172,8 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Output only. The path of the file where this error occurred, if available, relative to
-       * the project root.
+       * Output only. The path of the file where this error occurred, if
+       * available, relative to the project root.
        * </pre>
        *
        * <code>string path = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3545,8 +1190,8 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Output only. The path of the file where this error occurred, if available, relative to
-       * the project root.
+       * Output only. The path of the file where this error occurred, if
+       * available, relative to the project root.
        * </pre>
        *
        * <code>string path = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3575,7 +1220,8 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Output only. The identifier of the action where this error occurred, if available.
+       * Output only. The identifier of the action where this error occurred, if
+       * available.
        * </pre>
        *
        * <code>
@@ -3591,7 +1237,8 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Output only. The identifier of the action where this error occurred, if available.
+       * Output only. The identifier of the action where this error occurred, if
+       * available.
        * </pre>
        *
        * <code>
@@ -3613,7 +1260,8 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Output only. The identifier of the action where this error occurred, if available.
+       * Output only. The identifier of the action where this error occurred, if
+       * available.
        * </pre>
        *
        * <code>
@@ -3637,7 +1285,8 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Output only. The identifier of the action where this error occurred, if available.
+       * Output only. The identifier of the action where this error occurred, if
+       * available.
        * </pre>
        *
        * <code>
@@ -3659,7 +1308,8 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Output only. The identifier of the action where this error occurred, if available.
+       * Output only. The identifier of the action where this error occurred, if
+       * available.
        * </pre>
        *
        * <code>
@@ -3686,7 +1336,8 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Output only. The identifier of the action where this error occurred, if available.
+       * Output only. The identifier of the action where this error occurred, if
+       * available.
        * </pre>
        *
        * <code>
@@ -3707,7 +1358,8 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Output only. The identifier of the action where this error occurred, if available.
+       * Output only. The identifier of the action where this error occurred, if
+       * available.
        * </pre>
        *
        * <code>
@@ -3723,7 +1375,8 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Output only. The identifier of the action where this error occurred, if available.
+       * Output only. The identifier of the action where this error occurred, if
+       * available.
        * </pre>
        *
        * <code>
@@ -3743,7 +1396,8 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Output only. The identifier of the action where this error occurred, if available.
+       * Output only. The identifier of the action where this error occurred, if
+       * available.
        * </pre>
        *
        * <code>
@@ -3835,6 +1489,8 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
   }
 
   private int sourceCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object source_;
 
   public enum SourceCase
@@ -3843,6 +1499,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     GIT_COMMITISH(2),
     WORKSPACE(3),
+    RELEASE_CONFIG(7),
     SOURCE_NOT_SET(0);
     private final int value;
 
@@ -3865,6 +1522,8 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
           return GIT_COMMITISH;
         case 3:
           return WORKSPACE;
+        case 7:
+          return RELEASE_CONFIG;
         case 0:
           return SOURCE_NOT_SET;
         default:
@@ -3937,9 +1596,8 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Immutable. Git commit/tag/branch name at which the repository should be compiled.
-   * Must exist in the remote repository.
-   * Examples:
+   * Immutable. Git commit/tag/branch name at which the repository should be
+   * compiled. Must exist in the remote repository. Examples:
    * - a commit SHA: `12ade345`
    * - a tag: `tag1`
    * - a branch name: `branch1`
@@ -3956,9 +1614,8 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Immutable. Git commit/tag/branch name at which the repository should be compiled.
-   * Must exist in the remote repository.
-   * Examples:
+   * Immutable. Git commit/tag/branch name at which the repository should be
+   * compiled. Must exist in the remote repository. Examples:
    * - a commit SHA: `12ade345`
    * - a tag: `tag1`
    * - a branch name: `branch1`
@@ -3988,9 +1645,8 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Immutable. Git commit/tag/branch name at which the repository should be compiled.
-   * Must exist in the remote repository.
-   * Examples:
+   * Immutable. Git commit/tag/branch name at which the repository should be
+   * compiled. Must exist in the remote repository. Examples:
    * - a commit SHA: `12ade345`
    * - a tag: `tag1`
    * - a branch name: `branch1`
@@ -4096,19 +1752,103 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
     }
   }
 
-  public static final int CODE_COMPILATION_CONFIG_FIELD_NUMBER = 4;
-  private com.google.cloud.dataform.v1beta1.CompilationResult.CodeCompilationConfig
-      codeCompilationConfig_;
+  public static final int RELEASE_CONFIG_FIELD_NUMBER = 7;
   /**
    *
    *
    * <pre>
-   * Immutable. If set, fields of `code_compilation_overrides` override the default
+   * Immutable. The name of the release config to compile. The release
+   * config's 'current_compilation_result' field will be updated to this
+   * compilation result. Must be in the format
+   * `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;&#47;releaseConfigs/&#42;`.
+   * </pre>
+   *
+   * <code>
+   * string release_config = 7 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return Whether the releaseConfig field is set.
+   */
+  public boolean hasReleaseConfig() {
+    return sourceCase_ == 7;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The name of the release config to compile. The release
+   * config's 'current_compilation_result' field will be updated to this
+   * compilation result. Must be in the format
+   * `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;&#47;releaseConfigs/&#42;`.
+   * </pre>
+   *
+   * <code>
+   * string release_config = 7 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The releaseConfig.
+   */
+  public java.lang.String getReleaseConfig() {
+    java.lang.Object ref = "";
+    if (sourceCase_ == 7) {
+      ref = source_;
+    }
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      if (sourceCase_ == 7) {
+        source_ = s;
+      }
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The name of the release config to compile. The release
+   * config's 'current_compilation_result' field will be updated to this
+   * compilation result. Must be in the format
+   * `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;&#47;releaseConfigs/&#42;`.
+   * </pre>
+   *
+   * <code>
+   * string release_config = 7 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for releaseConfig.
+   */
+  public com.google.protobuf.ByteString getReleaseConfigBytes() {
+    java.lang.Object ref = "";
+    if (sourceCase_ == 7) {
+      ref = source_;
+    }
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      if (sourceCase_ == 7) {
+        source_ = b;
+      }
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int CODE_COMPILATION_CONFIG_FIELD_NUMBER = 4;
+  private com.google.cloud.dataform.v1beta1.CodeCompilationConfig codeCompilationConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. If set, fields of `code_compilation_config` override the default
    * compilation settings that are specified in dataform.json.
    * </pre>
    *
    * <code>
-   * .google.cloud.dataform.v1beta1.CompilationResult.CodeCompilationConfig code_compilation_config = 4 [(.google.api.field_behavior) = IMMUTABLE];
+   * .google.cloud.dataform.v1beta1.CodeCompilationConfig code_compilation_config = 4 [(.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return Whether the codeCompilationConfig field is set.
@@ -4121,43 +1861,93 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Immutable. If set, fields of `code_compilation_overrides` override the default
+   * Immutable. If set, fields of `code_compilation_config` override the default
    * compilation settings that are specified in dataform.json.
    * </pre>
    *
    * <code>
-   * .google.cloud.dataform.v1beta1.CompilationResult.CodeCompilationConfig code_compilation_config = 4 [(.google.api.field_behavior) = IMMUTABLE];
+   * .google.cloud.dataform.v1beta1.CodeCompilationConfig code_compilation_config = 4 [(.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return The codeCompilationConfig.
    */
   @java.lang.Override
-  public com.google.cloud.dataform.v1beta1.CompilationResult.CodeCompilationConfig
-      getCodeCompilationConfig() {
+  public com.google.cloud.dataform.v1beta1.CodeCompilationConfig getCodeCompilationConfig() {
     return codeCompilationConfig_ == null
-        ? com.google.cloud.dataform.v1beta1.CompilationResult.CodeCompilationConfig
-            .getDefaultInstance()
+        ? com.google.cloud.dataform.v1beta1.CodeCompilationConfig.getDefaultInstance()
         : codeCompilationConfig_;
   }
   /**
    *
    *
    * <pre>
-   * Immutable. If set, fields of `code_compilation_overrides` override the default
+   * Immutable. If set, fields of `code_compilation_config` override the default
    * compilation settings that are specified in dataform.json.
    * </pre>
    *
    * <code>
-   * .google.cloud.dataform.v1beta1.CompilationResult.CodeCompilationConfig code_compilation_config = 4 [(.google.api.field_behavior) = IMMUTABLE];
+   * .google.cloud.dataform.v1beta1.CodeCompilationConfig code_compilation_config = 4 [(.google.api.field_behavior) = IMMUTABLE];
    * </code>
    */
   @java.lang.Override
-  public com.google.cloud.dataform.v1beta1.CompilationResult.CodeCompilationConfigOrBuilder
+  public com.google.cloud.dataform.v1beta1.CodeCompilationConfigOrBuilder
       getCodeCompilationConfigOrBuilder() {
     return codeCompilationConfig_ == null
-        ? com.google.cloud.dataform.v1beta1.CompilationResult.CodeCompilationConfig
-            .getDefaultInstance()
+        ? com.google.cloud.dataform.v1beta1.CodeCompilationConfig.getDefaultInstance()
         : codeCompilationConfig_;
+  }
+
+  public static final int RESOLVED_GIT_COMMIT_SHA_FIELD_NUMBER = 8;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object resolvedGitCommitSha_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The fully resolved Git commit SHA of the code that was
+   * compiled. Not set for compilation results whose source is a workspace.
+   * </pre>
+   *
+   * <code>string resolved_git_commit_sha = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The resolvedGitCommitSha.
+   */
+  @java.lang.Override
+  public java.lang.String getResolvedGitCommitSha() {
+    java.lang.Object ref = resolvedGitCommitSha_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      resolvedGitCommitSha_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The fully resolved Git commit SHA of the code that was
+   * compiled. Not set for compilation results whose source is a workspace.
+   * </pre>
+   *
+   * <code>string resolved_git_commit_sha = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for resolvedGitCommitSha.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getResolvedGitCommitShaBytes() {
+    java.lang.Object ref = resolvedGitCommitSha_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      resolvedGitCommitSha_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int DATAFORM_CORE_VERSION_FIELD_NUMBER = 5;
@@ -4329,6 +2119,12 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
     for (int i = 0; i < compilationErrors_.size(); i++) {
       output.writeMessage(6, compilationErrors_.get(i));
     }
+    if (sourceCase_ == 7) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, source_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resolvedGitCommitSha_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, resolvedGitCommitSha_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -4358,6 +2154,12 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(6, compilationErrors_.get(i));
     }
+    if (sourceCase_ == 7) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, source_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resolvedGitCommitSha_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, resolvedGitCommitSha_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -4379,6 +2181,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
     if (hasCodeCompilationConfig()) {
       if (!getCodeCompilationConfig().equals(other.getCodeCompilationConfig())) return false;
     }
+    if (!getResolvedGitCommitSha().equals(other.getResolvedGitCommitSha())) return false;
     if (!getDataformCoreVersion().equals(other.getDataformCoreVersion())) return false;
     if (!getCompilationErrorsList().equals(other.getCompilationErrorsList())) return false;
     if (!getSourceCase().equals(other.getSourceCase())) return false;
@@ -4388,6 +2191,9 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
         break;
       case 3:
         if (!getWorkspace().equals(other.getWorkspace())) return false;
+        break;
+      case 7:
+        if (!getReleaseConfig().equals(other.getReleaseConfig())) return false;
         break;
       case 0:
       default:
@@ -4409,6 +2215,8 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
       hash = (37 * hash) + CODE_COMPILATION_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getCodeCompilationConfig().hashCode();
     }
+    hash = (37 * hash) + RESOLVED_GIT_COMMIT_SHA_FIELD_NUMBER;
+    hash = (53 * hash) + getResolvedGitCommitSha().hashCode();
     hash = (37 * hash) + DATAFORM_CORE_VERSION_FIELD_NUMBER;
     hash = (53 * hash) + getDataformCoreVersion().hashCode();
     if (getCompilationErrorsCount() > 0) {
@@ -4423,6 +2231,10 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
       case 3:
         hash = (37 * hash) + WORKSPACE_FIELD_NUMBER;
         hash = (53 * hash) + getWorkspace().hashCode();
+        break;
+      case 7:
+        hash = (37 * hash) + RELEASE_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getReleaseConfig().hashCode();
         break;
       case 0:
       default:
@@ -4572,6 +2384,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
         codeCompilationConfigBuilder_.dispose();
         codeCompilationConfigBuilder_ = null;
       }
+      resolvedGitCommitSha_ = "";
       dataformCoreVersion_ = "";
       if (compilationErrorsBuilder_ == null) {
         compilationErrors_ = java.util.Collections.emptyList();
@@ -4579,7 +2392,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
         compilationErrors_ = null;
         compilationErrorsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000080);
       sourceCase_ = 0;
       source_ = null;
       return this;
@@ -4621,9 +2434,9 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
     private void buildPartialRepeatedFields(
         com.google.cloud.dataform.v1beta1.CompilationResult result) {
       if (compilationErrorsBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)) {
+        if (((bitField0_ & 0x00000080) != 0)) {
           compilationErrors_ = java.util.Collections.unmodifiableList(compilationErrors_);
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000080);
         }
         result.compilationErrors_ = compilationErrors_;
       } else {
@@ -4636,13 +2449,16 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.name_ = name_;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.codeCompilationConfig_ =
             codeCompilationConfigBuilder_ == null
                 ? codeCompilationConfig_
                 : codeCompilationConfigBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.resolvedGitCommitSha_ = resolvedGitCommitSha_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.dataformCoreVersion_ = dataformCoreVersion_;
       }
     }
@@ -4706,16 +2522,21 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
       if (other.hasCodeCompilationConfig()) {
         mergeCodeCompilationConfig(other.getCodeCompilationConfig());
       }
+      if (!other.getResolvedGitCommitSha().isEmpty()) {
+        resolvedGitCommitSha_ = other.resolvedGitCommitSha_;
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
       if (!other.getDataformCoreVersion().isEmpty()) {
         dataformCoreVersion_ = other.dataformCoreVersion_;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (compilationErrorsBuilder_ == null) {
         if (!other.compilationErrors_.isEmpty()) {
           if (compilationErrors_.isEmpty()) {
             compilationErrors_ = other.compilationErrors_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000080);
           } else {
             ensureCompilationErrorsIsMutable();
             compilationErrors_.addAll(other.compilationErrors_);
@@ -4728,7 +2549,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
             compilationErrorsBuilder_.dispose();
             compilationErrorsBuilder_ = null;
             compilationErrors_ = other.compilationErrors_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000080);
             compilationErrorsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getCompilationErrorsFieldBuilder()
@@ -4749,6 +2570,13 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
         case WORKSPACE:
           {
             sourceCase_ = 3;
+            source_ = other.source_;
+            onChanged();
+            break;
+          }
+        case RELEASE_CONFIG:
+          {
+            sourceCase_ = 7;
             source_ = other.source_;
             onChanged();
             break;
@@ -4808,13 +2636,13 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
               {
                 input.readMessage(
                     getCodeCompilationConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 34
             case 42:
               {
                 dataformCoreVersion_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 42
             case 50:
@@ -4832,6 +2660,19 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
                 }
                 break;
               } // case 50
+            case 58:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                sourceCase_ = 7;
+                source_ = s;
+                break;
+              } // case 58
+            case 66:
+              {
+                resolvedGitCommitSha_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 66
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4975,9 +2816,8 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Immutable. Git commit/tag/branch name at which the repository should be compiled.
-     * Must exist in the remote repository.
-     * Examples:
+     * Immutable. Git commit/tag/branch name at which the repository should be
+     * compiled. Must exist in the remote repository. Examples:
      * - a commit SHA: `12ade345`
      * - a tag: `tag1`
      * - a branch name: `branch1`
@@ -4995,9 +2835,8 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Immutable. Git commit/tag/branch name at which the repository should be compiled.
-     * Must exist in the remote repository.
-     * Examples:
+     * Immutable. Git commit/tag/branch name at which the repository should be
+     * compiled. Must exist in the remote repository. Examples:
      * - a commit SHA: `12ade345`
      * - a tag: `tag1`
      * - a branch name: `branch1`
@@ -5028,9 +2867,8 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Immutable. Git commit/tag/branch name at which the repository should be compiled.
-     * Must exist in the remote repository.
-     * Examples:
+     * Immutable. Git commit/tag/branch name at which the repository should be
+     * compiled. Must exist in the remote repository. Examples:
      * - a commit SHA: `12ade345`
      * - a tag: `tag1`
      * - a branch name: `branch1`
@@ -5061,9 +2899,8 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Immutable. Git commit/tag/branch name at which the repository should be compiled.
-     * Must exist in the remote repository.
-     * Examples:
+     * Immutable. Git commit/tag/branch name at which the repository should be
+     * compiled. Must exist in the remote repository. Examples:
      * - a commit SHA: `12ade345`
      * - a tag: `tag1`
      * - a branch name: `branch1`
@@ -5087,9 +2924,8 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Immutable. Git commit/tag/branch name at which the repository should be compiled.
-     * Must exist in the remote repository.
-     * Examples:
+     * Immutable. Git commit/tag/branch name at which the repository should be
+     * compiled. Must exist in the remote repository. Examples:
      * - a commit SHA: `12ade345`
      * - a tag: `tag1`
      * - a branch name: `branch1`
@@ -5111,9 +2947,8 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Immutable. Git commit/tag/branch name at which the repository should be compiled.
-     * Must exist in the remote repository.
-     * Examples:
+     * Immutable. Git commit/tag/branch name at which the repository should be
+     * compiled. Must exist in the remote repository. Examples:
      * - a commit SHA: `12ade345`
      * - a tag: `tag1`
      * - a branch name: `branch1`
@@ -5287,50 +3122,211 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
       return this;
     }
 
-    private com.google.cloud.dataform.v1beta1.CompilationResult.CodeCompilationConfig
-        codeCompilationConfig_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.dataform.v1beta1.CompilationResult.CodeCompilationConfig,
-            com.google.cloud.dataform.v1beta1.CompilationResult.CodeCompilationConfig.Builder,
-            com.google.cloud.dataform.v1beta1.CompilationResult.CodeCompilationConfigOrBuilder>
-        codeCompilationConfigBuilder_;
     /**
      *
      *
      * <pre>
-     * Immutable. If set, fields of `code_compilation_overrides` override the default
-     * compilation settings that are specified in dataform.json.
+     * Immutable. The name of the release config to compile. The release
+     * config's 'current_compilation_result' field will be updated to this
+     * compilation result. Must be in the format
+     * `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;&#47;releaseConfigs/&#42;`.
      * </pre>
      *
      * <code>
-     * .google.cloud.dataform.v1beta1.CompilationResult.CodeCompilationConfig code_compilation_config = 4 [(.google.api.field_behavior) = IMMUTABLE];
+     * string release_config = 7 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
-     * @return Whether the codeCompilationConfig field is set.
+     * @return Whether the releaseConfig field is set.
      */
-    public boolean hasCodeCompilationConfig() {
-      return ((bitField0_ & 0x00000008) != 0);
+    @java.lang.Override
+    public boolean hasReleaseConfig() {
+      return sourceCase_ == 7;
     }
     /**
      *
      *
      * <pre>
-     * Immutable. If set, fields of `code_compilation_overrides` override the default
+     * Immutable. The name of the release config to compile. The release
+     * config's 'current_compilation_result' field will be updated to this
+     * compilation result. Must be in the format
+     * `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;&#47;releaseConfigs/&#42;`.
+     * </pre>
+     *
+     * <code>
+     * string release_config = 7 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The releaseConfig.
+     */
+    @java.lang.Override
+    public java.lang.String getReleaseConfig() {
+      java.lang.Object ref = "";
+      if (sourceCase_ == 7) {
+        ref = source_;
+      }
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (sourceCase_ == 7) {
+          source_ = s;
+        }
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The name of the release config to compile. The release
+     * config's 'current_compilation_result' field will be updated to this
+     * compilation result. Must be in the format
+     * `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;&#47;releaseConfigs/&#42;`.
+     * </pre>
+     *
+     * <code>
+     * string release_config = 7 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for releaseConfig.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getReleaseConfigBytes() {
+      java.lang.Object ref = "";
+      if (sourceCase_ == 7) {
+        ref = source_;
+      }
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        if (sourceCase_ == 7) {
+          source_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The name of the release config to compile. The release
+     * config's 'current_compilation_result' field will be updated to this
+     * compilation result. Must be in the format
+     * `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;&#47;releaseConfigs/&#42;`.
+     * </pre>
+     *
+     * <code>
+     * string release_config = 7 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The releaseConfig to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReleaseConfig(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      sourceCase_ = 7;
+      source_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The name of the release config to compile. The release
+     * config's 'current_compilation_result' field will be updated to this
+     * compilation result. Must be in the format
+     * `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;&#47;releaseConfigs/&#42;`.
+     * </pre>
+     *
+     * <code>
+     * string release_config = 7 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearReleaseConfig() {
+      if (sourceCase_ == 7) {
+        sourceCase_ = 0;
+        source_ = null;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The name of the release config to compile. The release
+     * config's 'current_compilation_result' field will be updated to this
+     * compilation result. Must be in the format
+     * `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;&#47;releaseConfigs/&#42;`.
+     * </pre>
+     *
+     * <code>
+     * string release_config = 7 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for releaseConfig to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReleaseConfigBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      sourceCase_ = 7;
+      source_ = value;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.dataform.v1beta1.CodeCompilationConfig codeCompilationConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataform.v1beta1.CodeCompilationConfig,
+            com.google.cloud.dataform.v1beta1.CodeCompilationConfig.Builder,
+            com.google.cloud.dataform.v1beta1.CodeCompilationConfigOrBuilder>
+        codeCompilationConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. If set, fields of `code_compilation_config` override the default
      * compilation settings that are specified in dataform.json.
      * </pre>
      *
      * <code>
-     * .google.cloud.dataform.v1beta1.CompilationResult.CodeCompilationConfig code_compilation_config = 4 [(.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.dataform.v1beta1.CodeCompilationConfig code_compilation_config = 4 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return Whether the codeCompilationConfig field is set.
+     */
+    public boolean hasCodeCompilationConfig() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. If set, fields of `code_compilation_config` override the default
+     * compilation settings that are specified in dataform.json.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.CodeCompilationConfig code_compilation_config = 4 [(.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return The codeCompilationConfig.
      */
-    public com.google.cloud.dataform.v1beta1.CompilationResult.CodeCompilationConfig
-        getCodeCompilationConfig() {
+    public com.google.cloud.dataform.v1beta1.CodeCompilationConfig getCodeCompilationConfig() {
       if (codeCompilationConfigBuilder_ == null) {
         return codeCompilationConfig_ == null
-            ? com.google.cloud.dataform.v1beta1.CompilationResult.CodeCompilationConfig
-                .getDefaultInstance()
+            ? com.google.cloud.dataform.v1beta1.CodeCompilationConfig.getDefaultInstance()
             : codeCompilationConfig_;
       } else {
         return codeCompilationConfigBuilder_.getMessage();
@@ -5340,16 +3336,16 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Immutable. If set, fields of `code_compilation_overrides` override the default
+     * Immutable. If set, fields of `code_compilation_config` override the default
      * compilation settings that are specified in dataform.json.
      * </pre>
      *
      * <code>
-     * .google.cloud.dataform.v1beta1.CompilationResult.CodeCompilationConfig code_compilation_config = 4 [(.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.dataform.v1beta1.CodeCompilationConfig code_compilation_config = 4 [(.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public Builder setCodeCompilationConfig(
-        com.google.cloud.dataform.v1beta1.CompilationResult.CodeCompilationConfig value) {
+        com.google.cloud.dataform.v1beta1.CodeCompilationConfig value) {
       if (codeCompilationConfigBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -5358,7 +3354,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
       } else {
         codeCompilationConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -5366,23 +3362,22 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Immutable. If set, fields of `code_compilation_overrides` override the default
+     * Immutable. If set, fields of `code_compilation_config` override the default
      * compilation settings that are specified in dataform.json.
      * </pre>
      *
      * <code>
-     * .google.cloud.dataform.v1beta1.CompilationResult.CodeCompilationConfig code_compilation_config = 4 [(.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.dataform.v1beta1.CodeCompilationConfig code_compilation_config = 4 [(.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public Builder setCodeCompilationConfig(
-        com.google.cloud.dataform.v1beta1.CompilationResult.CodeCompilationConfig.Builder
-            builderForValue) {
+        com.google.cloud.dataform.v1beta1.CodeCompilationConfig.Builder builderForValue) {
       if (codeCompilationConfigBuilder_ == null) {
         codeCompilationConfig_ = builderForValue.build();
       } else {
         codeCompilationConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -5390,22 +3385,21 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Immutable. If set, fields of `code_compilation_overrides` override the default
+     * Immutable. If set, fields of `code_compilation_config` override the default
      * compilation settings that are specified in dataform.json.
      * </pre>
      *
      * <code>
-     * .google.cloud.dataform.v1beta1.CompilationResult.CodeCompilationConfig code_compilation_config = 4 [(.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.dataform.v1beta1.CodeCompilationConfig code_compilation_config = 4 [(.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public Builder mergeCodeCompilationConfig(
-        com.google.cloud.dataform.v1beta1.CompilationResult.CodeCompilationConfig value) {
+        com.google.cloud.dataform.v1beta1.CodeCompilationConfig value) {
       if (codeCompilationConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)
+        if (((bitField0_ & 0x00000010) != 0)
             && codeCompilationConfig_ != null
             && codeCompilationConfig_
-                != com.google.cloud.dataform.v1beta1.CompilationResult.CodeCompilationConfig
-                    .getDefaultInstance()) {
+                != com.google.cloud.dataform.v1beta1.CodeCompilationConfig.getDefaultInstance()) {
           getCodeCompilationConfigBuilder().mergeFrom(value);
         } else {
           codeCompilationConfig_ = value;
@@ -5413,7 +3407,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
       } else {
         codeCompilationConfigBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -5421,16 +3415,16 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Immutable. If set, fields of `code_compilation_overrides` override the default
+     * Immutable. If set, fields of `code_compilation_config` override the default
      * compilation settings that are specified in dataform.json.
      * </pre>
      *
      * <code>
-     * .google.cloud.dataform.v1beta1.CompilationResult.CodeCompilationConfig code_compilation_config = 4 [(.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.dataform.v1beta1.CodeCompilationConfig code_compilation_config = 4 [(.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public Builder clearCodeCompilationConfig() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       codeCompilationConfig_ = null;
       if (codeCompilationConfigBuilder_ != null) {
         codeCompilationConfigBuilder_.dispose();
@@ -5443,17 +3437,17 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Immutable. If set, fields of `code_compilation_overrides` override the default
+     * Immutable. If set, fields of `code_compilation_config` override the default
      * compilation settings that are specified in dataform.json.
      * </pre>
      *
      * <code>
-     * .google.cloud.dataform.v1beta1.CompilationResult.CodeCompilationConfig code_compilation_config = 4 [(.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.dataform.v1beta1.CodeCompilationConfig code_compilation_config = 4 [(.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
-    public com.google.cloud.dataform.v1beta1.CompilationResult.CodeCompilationConfig.Builder
+    public com.google.cloud.dataform.v1beta1.CodeCompilationConfig.Builder
         getCodeCompilationConfigBuilder() {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return getCodeCompilationConfigFieldBuilder().getBuilder();
     }
@@ -5461,22 +3455,21 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Immutable. If set, fields of `code_compilation_overrides` override the default
+     * Immutable. If set, fields of `code_compilation_config` override the default
      * compilation settings that are specified in dataform.json.
      * </pre>
      *
      * <code>
-     * .google.cloud.dataform.v1beta1.CompilationResult.CodeCompilationConfig code_compilation_config = 4 [(.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.dataform.v1beta1.CodeCompilationConfig code_compilation_config = 4 [(.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
-    public com.google.cloud.dataform.v1beta1.CompilationResult.CodeCompilationConfigOrBuilder
+    public com.google.cloud.dataform.v1beta1.CodeCompilationConfigOrBuilder
         getCodeCompilationConfigOrBuilder() {
       if (codeCompilationConfigBuilder_ != null) {
         return codeCompilationConfigBuilder_.getMessageOrBuilder();
       } else {
         return codeCompilationConfig_ == null
-            ? com.google.cloud.dataform.v1beta1.CompilationResult.CodeCompilationConfig
-                .getDefaultInstance()
+            ? com.google.cloud.dataform.v1beta1.CodeCompilationConfig.getDefaultInstance()
             : codeCompilationConfig_;
       }
     }
@@ -5484,29 +3477,140 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Immutable. If set, fields of `code_compilation_overrides` override the default
+     * Immutable. If set, fields of `code_compilation_config` override the default
      * compilation settings that are specified in dataform.json.
      * </pre>
      *
      * <code>
-     * .google.cloud.dataform.v1beta1.CompilationResult.CodeCompilationConfig code_compilation_config = 4 [(.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.dataform.v1beta1.CodeCompilationConfig code_compilation_config = 4 [(.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.dataform.v1beta1.CompilationResult.CodeCompilationConfig,
-            com.google.cloud.dataform.v1beta1.CompilationResult.CodeCompilationConfig.Builder,
-            com.google.cloud.dataform.v1beta1.CompilationResult.CodeCompilationConfigOrBuilder>
+            com.google.cloud.dataform.v1beta1.CodeCompilationConfig,
+            com.google.cloud.dataform.v1beta1.CodeCompilationConfig.Builder,
+            com.google.cloud.dataform.v1beta1.CodeCompilationConfigOrBuilder>
         getCodeCompilationConfigFieldBuilder() {
       if (codeCompilationConfigBuilder_ == null) {
         codeCompilationConfigBuilder_ =
             new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.cloud.dataform.v1beta1.CompilationResult.CodeCompilationConfig,
-                com.google.cloud.dataform.v1beta1.CompilationResult.CodeCompilationConfig.Builder,
-                com.google.cloud.dataform.v1beta1.CompilationResult.CodeCompilationConfigOrBuilder>(
+                com.google.cloud.dataform.v1beta1.CodeCompilationConfig,
+                com.google.cloud.dataform.v1beta1.CodeCompilationConfig.Builder,
+                com.google.cloud.dataform.v1beta1.CodeCompilationConfigOrBuilder>(
                 getCodeCompilationConfig(), getParentForChildren(), isClean());
         codeCompilationConfig_ = null;
       }
       return codeCompilationConfigBuilder_;
+    }
+
+    private java.lang.Object resolvedGitCommitSha_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The fully resolved Git commit SHA of the code that was
+     * compiled. Not set for compilation results whose source is a workspace.
+     * </pre>
+     *
+     * <code>string resolved_git_commit_sha = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The resolvedGitCommitSha.
+     */
+    public java.lang.String getResolvedGitCommitSha() {
+      java.lang.Object ref = resolvedGitCommitSha_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        resolvedGitCommitSha_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The fully resolved Git commit SHA of the code that was
+     * compiled. Not set for compilation results whose source is a workspace.
+     * </pre>
+     *
+     * <code>string resolved_git_commit_sha = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for resolvedGitCommitSha.
+     */
+    public com.google.protobuf.ByteString getResolvedGitCommitShaBytes() {
+      java.lang.Object ref = resolvedGitCommitSha_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        resolvedGitCommitSha_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The fully resolved Git commit SHA of the code that was
+     * compiled. Not set for compilation results whose source is a workspace.
+     * </pre>
+     *
+     * <code>string resolved_git_commit_sha = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The resolvedGitCommitSha to set.
+     * @return This builder for chaining.
+     */
+    public Builder setResolvedGitCommitSha(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      resolvedGitCommitSha_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The fully resolved Git commit SHA of the code that was
+     * compiled. Not set for compilation results whose source is a workspace.
+     * </pre>
+     *
+     * <code>string resolved_git_commit_sha = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearResolvedGitCommitSha() {
+      resolvedGitCommitSha_ = getDefaultInstance().getResolvedGitCommitSha();
+      bitField0_ = (bitField0_ & ~0x00000020);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The fully resolved Git commit SHA of the code that was
+     * compiled. Not set for compilation results whose source is a workspace.
+     * </pre>
+     *
+     * <code>string resolved_git_commit_sha = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for resolvedGitCommitSha to set.
+     * @return This builder for chaining.
+     */
+    public Builder setResolvedGitCommitShaBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      resolvedGitCommitSha_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
     }
 
     private java.lang.Object dataformCoreVersion_ = "";
@@ -5571,7 +3675,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       dataformCoreVersion_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -5588,7 +3692,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearDataformCoreVersion() {
       dataformCoreVersion_ = getDefaultInstance().getDataformCoreVersion();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -5610,7 +3714,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       dataformCoreVersion_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -5619,12 +3723,12 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
         compilationErrors_ = java.util.Collections.emptyList();
 
     private void ensureCompilationErrorsIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!((bitField0_ & 0x00000080) != 0)) {
         compilationErrors_ =
             new java.util.ArrayList<
                 com.google.cloud.dataform.v1beta1.CompilationResult.CompilationError>(
                 compilationErrors_);
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000080;
       }
     }
 
@@ -5874,7 +3978,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
     public Builder clearCompilationErrors() {
       if (compilationErrorsBuilder_ == null) {
         compilationErrors_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000080);
         onChanged();
       } else {
         compilationErrorsBuilder_.clear();
@@ -6022,7 +4126,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
                 com.google.cloud.dataform.v1beta1.CompilationResult.CompilationError.Builder,
                 com.google.cloud.dataform.v1beta1.CompilationResult.CompilationErrorOrBuilder>(
                 compilationErrors_,
-                ((bitField0_ & 0x00000020) != 0),
+                ((bitField0_ & 0x00000080) != 0),
                 getParentForChildren(),
                 isClean());
         compilationErrors_ = null;

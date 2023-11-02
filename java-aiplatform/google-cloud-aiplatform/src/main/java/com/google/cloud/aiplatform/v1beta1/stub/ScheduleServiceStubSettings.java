@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -54,6 +54,7 @@ import com.google.cloud.aiplatform.v1beta1.ListSchedulesResponse;
 import com.google.cloud.aiplatform.v1beta1.PauseScheduleRequest;
 import com.google.cloud.aiplatform.v1beta1.ResumeScheduleRequest;
 import com.google.cloud.aiplatform.v1beta1.Schedule;
+import com.google.cloud.aiplatform.v1beta1.UpdateScheduleRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -128,6 +129,7 @@ public class ScheduleServiceStubSettings extends StubSettings<ScheduleServiceStu
       listSchedulesSettings;
   private final UnaryCallSettings<PauseScheduleRequest, Empty> pauseScheduleSettings;
   private final UnaryCallSettings<ResumeScheduleRequest, Empty> resumeScheduleSettings;
+  private final UnaryCallSettings<UpdateScheduleRequest, Schedule> updateScheduleSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -280,6 +282,11 @@ public class ScheduleServiceStubSettings extends StubSettings<ScheduleServiceStu
     return resumeScheduleSettings;
   }
 
+  /** Returns the object with the settings used for calls to updateSchedule. */
+  public UnaryCallSettings<UpdateScheduleRequest, Schedule> updateScheduleSettings() {
+    return updateScheduleSettings;
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -389,6 +396,7 @@ public class ScheduleServiceStubSettings extends StubSettings<ScheduleServiceStu
     listSchedulesSettings = settingsBuilder.listSchedulesSettings().build();
     pauseScheduleSettings = settingsBuilder.pauseScheduleSettings().build();
     resumeScheduleSettings = settingsBuilder.resumeScheduleSettings().build();
+    updateScheduleSettings = settingsBuilder.updateScheduleSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
@@ -411,6 +419,7 @@ public class ScheduleServiceStubSettings extends StubSettings<ScheduleServiceStu
         listSchedulesSettings;
     private final UnaryCallSettings.Builder<PauseScheduleRequest, Empty> pauseScheduleSettings;
     private final UnaryCallSettings.Builder<ResumeScheduleRequest, Empty> resumeScheduleSettings;
+    private final UnaryCallSettings.Builder<UpdateScheduleRequest, Schedule> updateScheduleSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -453,6 +462,7 @@ public class ScheduleServiceStubSettings extends StubSettings<ScheduleServiceStu
       listSchedulesSettings = PagedCallSettings.newBuilder(LIST_SCHEDULES_PAGE_STR_FACT);
       pauseScheduleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       resumeScheduleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateScheduleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -467,6 +477,7 @@ public class ScheduleServiceStubSettings extends StubSettings<ScheduleServiceStu
               listSchedulesSettings,
               pauseScheduleSettings,
               resumeScheduleSettings,
+              updateScheduleSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -485,6 +496,7 @@ public class ScheduleServiceStubSettings extends StubSettings<ScheduleServiceStu
       listSchedulesSettings = settings.listSchedulesSettings.toBuilder();
       pauseScheduleSettings = settings.pauseScheduleSettings.toBuilder();
       resumeScheduleSettings = settings.resumeScheduleSettings.toBuilder();
+      updateScheduleSettings = settings.updateScheduleSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
@@ -499,6 +511,7 @@ public class ScheduleServiceStubSettings extends StubSettings<ScheduleServiceStu
               listSchedulesSettings,
               pauseScheduleSettings,
               resumeScheduleSettings,
+              updateScheduleSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -547,6 +560,11 @@ public class ScheduleServiceStubSettings extends StubSettings<ScheduleServiceStu
 
       builder
           .resumeScheduleSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .updateScheduleSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -655,6 +673,11 @@ public class ScheduleServiceStubSettings extends StubSettings<ScheduleServiceStu
     /** Returns the builder for the settings used for calls to resumeSchedule. */
     public UnaryCallSettings.Builder<ResumeScheduleRequest, Empty> resumeScheduleSettings() {
       return resumeScheduleSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateSchedule. */
+    public UnaryCallSettings.Builder<UpdateScheduleRequest, Schedule> updateScheduleSettings() {
+      return updateScheduleSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ package com.google.cloud.aiplatform.v1;
  *
  * <pre>
  * Config for blur baseline.
+ *
  * When enabled, a linear path from the maximally blurred image to the input
  * image is created. Using a blurred baseline instead of zero (black image) is
  * motivated by the BlurIG approach explained here:
@@ -47,11 +48,6 @@ public final class BlurBaselineConfig extends com.google.protobuf.GeneratedMessa
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new BlurBaselineConfig();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -255,6 +251,7 @@ public final class BlurBaselineConfig extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Config for blur baseline.
+   *
    * When enabled, a linear path from the maximally blurred image to the input
    * image is created. Using a blurred baseline instead of zero (black image) is
    * motivated by the BlurIG approach explained here:

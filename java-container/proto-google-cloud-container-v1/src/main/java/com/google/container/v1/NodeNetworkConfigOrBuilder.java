@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,10 +30,13 @@ public interface NodeNetworkConfigOrBuilder
    * Input only. Whether to create a new range for pod IPs in this node pool.
    * Defaults are provided for `pod_range` and `pod_ipv4_cidr_block` if they
    * are not specified.
+   *
    * If neither `create_pod_range` or `pod_range` are specified, the
    * cluster-level default (`ip_allocation_policy.cluster_ipv4_cidr_block`) is
    * used.
+   *
    * Only applicable if `ip_allocation_policy.use_ip_aliases` is true.
+   *
    * This field cannot be changed after the node pool has been created.
    * </pre>
    *
@@ -51,7 +54,9 @@ public interface NodeNetworkConfigOrBuilder
    * If `create_pod_range` is true, this ID is used for the new range.
    * If `create_pod_range` is false, uses an existing secondary range with this
    * ID.
+   *
    * Only applicable if `ip_allocation_policy.use_ip_aliases` is true.
+   *
    * This field cannot be changed after the node pool has been created.
    * </pre>
    *
@@ -68,7 +73,9 @@ public interface NodeNetworkConfigOrBuilder
    * If `create_pod_range` is true, this ID is used for the new range.
    * If `create_pod_range` is false, uses an existing secondary range with this
    * ID.
+   *
    * Only applicable if `ip_allocation_policy.use_ip_aliases` is true.
+   *
    * This field cannot be changed after the node pool has been created.
    * </pre>
    *
@@ -83,14 +90,20 @@ public interface NodeNetworkConfigOrBuilder
    *
    * <pre>
    * The IP address range for pod IPs in this node pool.
+   *
    * Only applicable if `create_pod_range` is true.
+   *
    * Set to blank to have a range chosen with the default size.
+   *
    * Set to /netmask (e.g. `/14`) to have a range chosen with a specific
    * netmask.
+   *
    * Set to a
    * [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
    * notation (e.g. `10.96.0.0/14`) to pick a specific range to use.
+   *
    * Only applicable if `ip_allocation_policy.use_ip_aliases` is true.
+   *
    * This field cannot be changed after the node pool has been created.
    * </pre>
    *
@@ -104,14 +117,20 @@ public interface NodeNetworkConfigOrBuilder
    *
    * <pre>
    * The IP address range for pod IPs in this node pool.
+   *
    * Only applicable if `create_pod_range` is true.
+   *
    * Set to blank to have a range chosen with the default size.
+   *
    * Set to /netmask (e.g. `/14`) to have a range chosen with a specific
    * netmask.
+   *
    * Set to a
    * [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
    * notation (e.g. `10.96.0.0/14`) to pick a specific range to use.
+   *
    * Only applicable if `ip_allocation_policy.use_ip_aliases` is true.
+   *
    * This field cannot be changed after the node pool has been created.
    * </pre>
    *
@@ -198,10 +217,12 @@ public interface NodeNetworkConfigOrBuilder
    * <pre>
    * [PRIVATE FIELD]
    * Pod CIDR size overprovisioning config for the nodepool.
+   *
    * Pod CIDR size per node depends on max_pods_per_node. By default, the value
    * of max_pods_per_node is rounded off to next power of 2 and we then double
    * that to get the size of pod CIDR block per node.
    * Example: max_pods_per_node of 30 would result in 64 IPs (/26).
+   *
    * This config can disable the doubling of IPs (we still round off to next
    * power of 2)
    * Example: max_pods_per_node of 30 will result in 32 IPs (/27) when
@@ -220,10 +241,12 @@ public interface NodeNetworkConfigOrBuilder
    * <pre>
    * [PRIVATE FIELD]
    * Pod CIDR size overprovisioning config for the nodepool.
+   *
    * Pod CIDR size per node depends on max_pods_per_node. By default, the value
    * of max_pods_per_node is rounded off to next power of 2 and we then double
    * that to get the size of pod CIDR block per node.
    * Example: max_pods_per_node of 30 would result in 64 IPs (/26).
+   *
    * This config can disable the doubling of IPs (we still round off to next
    * power of 2)
    * Example: max_pods_per_node of 30 will result in 32 IPs (/27) when
@@ -242,10 +265,12 @@ public interface NodeNetworkConfigOrBuilder
    * <pre>
    * [PRIVATE FIELD]
    * Pod CIDR size overprovisioning config for the nodepool.
+   *
    * Pod CIDR size per node depends on max_pods_per_node. By default, the value
    * of max_pods_per_node is rounded off to next power of 2 and we then double
    * that to get the size of pod CIDR block per node.
    * Example: max_pods_per_node of 30 would result in 64 IPs (/26).
+   *
    * This config can disable the doubling of IPs (we still round off to next
    * power of 2)
    * Example: max_pods_per_node of 30 will result in 32 IPs (/27) when
@@ -257,4 +282,158 @@ public interface NodeNetworkConfigOrBuilder
    */
   com.google.container.v1.PodCIDROverprovisionConfigOrBuilder
       getPodCidrOverprovisionConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * We specify the additional node networks for this node pool using this list.
+   * Each node network corresponds to an additional interface
+   * </pre>
+   *
+   * <code>
+   * repeated .google.container.v1.AdditionalNodeNetworkConfig additional_node_network_configs = 14;
+   * </code>
+   */
+  java.util.List<com.google.container.v1.AdditionalNodeNetworkConfig>
+      getAdditionalNodeNetworkConfigsList();
+  /**
+   *
+   *
+   * <pre>
+   * We specify the additional node networks for this node pool using this list.
+   * Each node network corresponds to an additional interface
+   * </pre>
+   *
+   * <code>
+   * repeated .google.container.v1.AdditionalNodeNetworkConfig additional_node_network_configs = 14;
+   * </code>
+   */
+  com.google.container.v1.AdditionalNodeNetworkConfig getAdditionalNodeNetworkConfigs(int index);
+  /**
+   *
+   *
+   * <pre>
+   * We specify the additional node networks for this node pool using this list.
+   * Each node network corresponds to an additional interface
+   * </pre>
+   *
+   * <code>
+   * repeated .google.container.v1.AdditionalNodeNetworkConfig additional_node_network_configs = 14;
+   * </code>
+   */
+  int getAdditionalNodeNetworkConfigsCount();
+  /**
+   *
+   *
+   * <pre>
+   * We specify the additional node networks for this node pool using this list.
+   * Each node network corresponds to an additional interface
+   * </pre>
+   *
+   * <code>
+   * repeated .google.container.v1.AdditionalNodeNetworkConfig additional_node_network_configs = 14;
+   * </code>
+   */
+  java.util.List<? extends com.google.container.v1.AdditionalNodeNetworkConfigOrBuilder>
+      getAdditionalNodeNetworkConfigsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * We specify the additional node networks for this node pool using this list.
+   * Each node network corresponds to an additional interface
+   * </pre>
+   *
+   * <code>
+   * repeated .google.container.v1.AdditionalNodeNetworkConfig additional_node_network_configs = 14;
+   * </code>
+   */
+  com.google.container.v1.AdditionalNodeNetworkConfigOrBuilder
+      getAdditionalNodeNetworkConfigsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * We specify the additional pod networks for this node pool using this list.
+   * Each pod network corresponds to an additional alias IP range for the node
+   * </pre>
+   *
+   * <code>
+   * repeated .google.container.v1.AdditionalPodNetworkConfig additional_pod_network_configs = 15;
+   * </code>
+   */
+  java.util.List<com.google.container.v1.AdditionalPodNetworkConfig>
+      getAdditionalPodNetworkConfigsList();
+  /**
+   *
+   *
+   * <pre>
+   * We specify the additional pod networks for this node pool using this list.
+   * Each pod network corresponds to an additional alias IP range for the node
+   * </pre>
+   *
+   * <code>
+   * repeated .google.container.v1.AdditionalPodNetworkConfig additional_pod_network_configs = 15;
+   * </code>
+   */
+  com.google.container.v1.AdditionalPodNetworkConfig getAdditionalPodNetworkConfigs(int index);
+  /**
+   *
+   *
+   * <pre>
+   * We specify the additional pod networks for this node pool using this list.
+   * Each pod network corresponds to an additional alias IP range for the node
+   * </pre>
+   *
+   * <code>
+   * repeated .google.container.v1.AdditionalPodNetworkConfig additional_pod_network_configs = 15;
+   * </code>
+   */
+  int getAdditionalPodNetworkConfigsCount();
+  /**
+   *
+   *
+   * <pre>
+   * We specify the additional pod networks for this node pool using this list.
+   * Each pod network corresponds to an additional alias IP range for the node
+   * </pre>
+   *
+   * <code>
+   * repeated .google.container.v1.AdditionalPodNetworkConfig additional_pod_network_configs = 15;
+   * </code>
+   */
+  java.util.List<? extends com.google.container.v1.AdditionalPodNetworkConfigOrBuilder>
+      getAdditionalPodNetworkConfigsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * We specify the additional pod networks for this node pool using this list.
+   * Each pod network corresponds to an additional alias IP range for the node
+   * </pre>
+   *
+   * <code>
+   * repeated .google.container.v1.AdditionalPodNetworkConfig additional_pod_network_configs = 15;
+   * </code>
+   */
+  com.google.container.v1.AdditionalPodNetworkConfigOrBuilder
+      getAdditionalPodNetworkConfigsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output only] The utilization of the IPv4 range for the pod.
+   * The ratio is Usage/[Total number of IPs in the secondary range],
+   * Usage=numNodes*numZones*podIPsPerNode.
+   * </pre>
+   *
+   * <code>double pod_ipv4_range_utilization = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The podIpv4RangeUtilization.
+   */
+  double getPodIpv4RangeUtilization();
 }

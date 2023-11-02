@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,8 +29,10 @@ public interface CustomAttributeOrBuilder
    * <pre>
    * The textual values of this custom attribute. For example, `["yellow",
    * "green"]` when the key is "color".
+   *
    * Empty string is not allowed. Otherwise, an INVALID_ARGUMENT error is
    * returned.
+   *
    * Exactly one of [text][google.cloud.retail.v2beta.CustomAttribute.text] or
    * [numbers][google.cloud.retail.v2beta.CustomAttribute.numbers] should be
    * set. Otherwise, an INVALID_ARGUMENT error is returned.
@@ -47,8 +49,10 @@ public interface CustomAttributeOrBuilder
    * <pre>
    * The textual values of this custom attribute. For example, `["yellow",
    * "green"]` when the key is "color".
+   *
    * Empty string is not allowed. Otherwise, an INVALID_ARGUMENT error is
    * returned.
+   *
    * Exactly one of [text][google.cloud.retail.v2beta.CustomAttribute.text] or
    * [numbers][google.cloud.retail.v2beta.CustomAttribute.numbers] should be
    * set. Otherwise, an INVALID_ARGUMENT error is returned.
@@ -65,8 +69,10 @@ public interface CustomAttributeOrBuilder
    * <pre>
    * The textual values of this custom attribute. For example, `["yellow",
    * "green"]` when the key is "color".
+   *
    * Empty string is not allowed. Otherwise, an INVALID_ARGUMENT error is
    * returned.
+   *
    * Exactly one of [text][google.cloud.retail.v2beta.CustomAttribute.text] or
    * [numbers][google.cloud.retail.v2beta.CustomAttribute.numbers] should be
    * set. Otherwise, an INVALID_ARGUMENT error is returned.
@@ -84,8 +90,10 @@ public interface CustomAttributeOrBuilder
    * <pre>
    * The textual values of this custom attribute. For example, `["yellow",
    * "green"]` when the key is "color".
+   *
    * Empty string is not allowed. Otherwise, an INVALID_ARGUMENT error is
    * returned.
+   *
    * Exactly one of [text][google.cloud.retail.v2beta.CustomAttribute.text] or
    * [numbers][google.cloud.retail.v2beta.CustomAttribute.numbers] should be
    * set. Otherwise, an INVALID_ARGUMENT error is returned.
@@ -104,6 +112,7 @@ public interface CustomAttributeOrBuilder
    * <pre>
    * The numerical values of this custom attribute. For example, `[2.3, 15.4]`
    * when the key is "lengths_cm".
+   *
    * Exactly one of [text][google.cloud.retail.v2beta.CustomAttribute.text] or
    * [numbers][google.cloud.retail.v2beta.CustomAttribute.numbers] should be
    * set. Otherwise, an INVALID_ARGUMENT error is returned.
@@ -120,6 +129,7 @@ public interface CustomAttributeOrBuilder
    * <pre>
    * The numerical values of this custom attribute. For example, `[2.3, 15.4]`
    * when the key is "lengths_cm".
+   *
    * Exactly one of [text][google.cloud.retail.v2beta.CustomAttribute.text] or
    * [numbers][google.cloud.retail.v2beta.CustomAttribute.numbers] should be
    * set. Otherwise, an INVALID_ARGUMENT error is returned.
@@ -136,6 +146,7 @@ public interface CustomAttributeOrBuilder
    * <pre>
    * The numerical values of this custom attribute. For example, `[2.3, 15.4]`
    * when the key is "lengths_cm".
+   *
    * Exactly one of [text][google.cloud.retail.v2beta.CustomAttribute.text] or
    * [numbers][google.cloud.retail.v2beta.CustomAttribute.numbers] should be
    * set. Otherwise, an INVALID_ARGUMENT error is returned.
@@ -160,8 +171,10 @@ public interface CustomAttributeOrBuilder
    * modes](https://cloud.google.com/retail/docs/attribute-config#config-modes).
    * If true, custom attribute values are searchable by text queries in
    * [SearchService.Search][google.cloud.retail.v2beta.SearchService.Search].
+   *
    * This field is ignored in a
    * [UserEvent][google.cloud.retail.v2beta.UserEvent].
+   *
    * Only set if type [text][google.cloud.retail.v2beta.CustomAttribute.text] is
    * set. Otherwise, a INVALID_ARGUMENT error is returned.
    * </pre>
@@ -186,8 +199,10 @@ public interface CustomAttributeOrBuilder
    * modes](https://cloud.google.com/retail/docs/attribute-config#config-modes).
    * If true, custom attribute values are searchable by text queries in
    * [SearchService.Search][google.cloud.retail.v2beta.SearchService.Search].
+   *
    * This field is ignored in a
    * [UserEvent][google.cloud.retail.v2beta.UserEvent].
+   *
    * Only set if type [text][google.cloud.retail.v2beta.CustomAttribute.text] is
    * set. Otherwise, a INVALID_ARGUMENT error is returned.
    * </pre>
@@ -214,8 +229,10 @@ public interface CustomAttributeOrBuilder
    * If true, custom attribute values are indexed, so that they can be filtered,
    * faceted or boosted in
    * [SearchService.Search][google.cloud.retail.v2beta.SearchService.Search].
+   *
    * This field is ignored in a
    * [UserEvent][google.cloud.retail.v2beta.UserEvent].
+   *
    * See
    * [SearchRequest.filter][google.cloud.retail.v2beta.SearchRequest.filter],
    * [SearchRequest.facet_specs][google.cloud.retail.v2beta.SearchRequest.facet_specs]
@@ -245,8 +262,10 @@ public interface CustomAttributeOrBuilder
    * If true, custom attribute values are indexed, so that they can be filtered,
    * faceted or boosted in
    * [SearchService.Search][google.cloud.retail.v2beta.SearchService.Search].
+   *
    * This field is ignored in a
    * [UserEvent][google.cloud.retail.v2beta.UserEvent].
+   *
    * See
    * [SearchRequest.filter][google.cloud.retail.v2beta.SearchRequest.filter],
    * [SearchRequest.facet_specs][google.cloud.retail.v2beta.SearchRequest.facet_specs]

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,17 +43,13 @@ public final class PostgreSqlConnectionProfile extends com.google.protobuf.Gener
     username_ = "";
     password_ = "";
     cloudSqlId_ = "";
+    networkArchitecture_ = 0;
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new PostgreSqlConnectionProfile();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -69,6 +65,55 @@ public final class PostgreSqlConnectionProfile extends com.google.protobuf.Gener
         .ensureFieldAccessorsInitialized(
             com.google.cloud.clouddms.v1.PostgreSqlConnectionProfile.class,
             com.google.cloud.clouddms.v1.PostgreSqlConnectionProfile.Builder.class);
+  }
+
+  private int connectivityCase_ = 0;
+
+  @SuppressWarnings("serial")
+  private java.lang.Object connectivity_;
+
+  public enum ConnectivityCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    STATIC_IP_CONNECTIVITY(100),
+    PRIVATE_SERVICE_CONNECT_CONNECTIVITY(101),
+    CONNECTIVITY_NOT_SET(0);
+    private final int value;
+
+    private ConnectivityCase(int value) {
+      this.value = value;
+    }
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static ConnectivityCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static ConnectivityCase forNumber(int value) {
+      switch (value) {
+        case 100:
+          return STATIC_IP_CONNECTIVITY;
+        case 101:
+          return PRIVATE_SERVICE_CONNECT_CONNECTIVITY;
+        case 0:
+          return CONNECTIVITY_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public ConnectivityCase getConnectivityCase() {
+    return ConnectivityCase.forNumber(connectivityCase_);
   }
 
   public static final int HOST_FIELD_NUMBER = 1;
@@ -148,8 +193,9 @@ public final class PostgreSqlConnectionProfile extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Required. The username that Database Migration Service will use to connect to the
-   * database. The value is encrypted when stored in Database Migration Service.
+   * Required. The username that Database Migration Service will use to connect
+   * to the database. The value is encrypted when stored in Database Migration
+   * Service.
    * </pre>
    *
    * <code>string username = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -172,8 +218,9 @@ public final class PostgreSqlConnectionProfile extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Required. The username that Database Migration Service will use to connect to the
-   * database. The value is encrypted when stored in Database Migration Service.
+   * Required. The username that Database Migration Service will use to connect
+   * to the database. The value is encrypted when stored in Database Migration
+   * Service.
    * </pre>
    *
    * <code>string username = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -201,9 +248,10 @@ public final class PostgreSqlConnectionProfile extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Required. Input only. The password for the user that Database Migration Service will be using to
-   * connect to the database. This field is not returned on request, and the
-   * value is encrypted when stored in Database Migration Service.
+   * Required. Input only. The password for the user that Database Migration
+   * Service will be using to connect to the database. This field is not
+   * returned on request, and the value is encrypted when stored in Database
+   * Migration Service.
    * </pre>
    *
    * <code>
@@ -228,9 +276,10 @@ public final class PostgreSqlConnectionProfile extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Required. Input only. The password for the user that Database Migration Service will be using to
-   * connect to the database. This field is not returned on request, and the
-   * value is encrypted when stored in Database Migration Service.
+   * Required. Input only. The password for the user that Database Migration
+   * Service will be using to connect to the database. This field is not
+   * returned on request, and the value is encrypted when stored in Database
+   * Migration Service.
    * </pre>
    *
    * <code>
@@ -369,6 +418,158 @@ public final class PostgreSqlConnectionProfile extends com.google.protobuf.Gener
     }
   }
 
+  public static final int NETWORK_ARCHITECTURE_FIELD_NUMBER = 8;
+  private int networkArchitecture_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. If the source is a Cloud SQL database, this field indicates
+   * the network architecture it's associated with.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.clouddms.v1.NetworkArchitecture network_architecture = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for networkArchitecture.
+   */
+  @java.lang.Override
+  public int getNetworkArchitectureValue() {
+    return networkArchitecture_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. If the source is a Cloud SQL database, this field indicates
+   * the network architecture it's associated with.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.clouddms.v1.NetworkArchitecture network_architecture = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The networkArchitecture.
+   */
+  @java.lang.Override
+  public com.google.cloud.clouddms.v1.NetworkArchitecture getNetworkArchitecture() {
+    com.google.cloud.clouddms.v1.NetworkArchitecture result =
+        com.google.cloud.clouddms.v1.NetworkArchitecture.forNumber(networkArchitecture_);
+    return result == null ? com.google.cloud.clouddms.v1.NetworkArchitecture.UNRECOGNIZED : result;
+  }
+
+  public static final int STATIC_IP_CONNECTIVITY_FIELD_NUMBER = 100;
+  /**
+   *
+   *
+   * <pre>
+   * Static ip connectivity data (default, no additional details needed).
+   * </pre>
+   *
+   * <code>.google.cloud.clouddms.v1.StaticIpConnectivity static_ip_connectivity = 100;</code>
+   *
+   * @return Whether the staticIpConnectivity field is set.
+   */
+  @java.lang.Override
+  public boolean hasStaticIpConnectivity() {
+    return connectivityCase_ == 100;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Static ip connectivity data (default, no additional details needed).
+   * </pre>
+   *
+   * <code>.google.cloud.clouddms.v1.StaticIpConnectivity static_ip_connectivity = 100;</code>
+   *
+   * @return The staticIpConnectivity.
+   */
+  @java.lang.Override
+  public com.google.cloud.clouddms.v1.StaticIpConnectivity getStaticIpConnectivity() {
+    if (connectivityCase_ == 100) {
+      return (com.google.cloud.clouddms.v1.StaticIpConnectivity) connectivity_;
+    }
+    return com.google.cloud.clouddms.v1.StaticIpConnectivity.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Static ip connectivity data (default, no additional details needed).
+   * </pre>
+   *
+   * <code>.google.cloud.clouddms.v1.StaticIpConnectivity static_ip_connectivity = 100;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.clouddms.v1.StaticIpConnectivityOrBuilder
+      getStaticIpConnectivityOrBuilder() {
+    if (connectivityCase_ == 100) {
+      return (com.google.cloud.clouddms.v1.StaticIpConnectivity) connectivity_;
+    }
+    return com.google.cloud.clouddms.v1.StaticIpConnectivity.getDefaultInstance();
+  }
+
+  public static final int PRIVATE_SERVICE_CONNECT_CONNECTIVITY_FIELD_NUMBER = 101;
+  /**
+   *
+   *
+   * <pre>
+   * Private service connect connectivity.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.clouddms.v1.PrivateServiceConnectConnectivity private_service_connect_connectivity = 101;
+   * </code>
+   *
+   * @return Whether the privateServiceConnectConnectivity field is set.
+   */
+  @java.lang.Override
+  public boolean hasPrivateServiceConnectConnectivity() {
+    return connectivityCase_ == 101;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Private service connect connectivity.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.clouddms.v1.PrivateServiceConnectConnectivity private_service_connect_connectivity = 101;
+   * </code>
+   *
+   * @return The privateServiceConnectConnectivity.
+   */
+  @java.lang.Override
+  public com.google.cloud.clouddms.v1.PrivateServiceConnectConnectivity
+      getPrivateServiceConnectConnectivity() {
+    if (connectivityCase_ == 101) {
+      return (com.google.cloud.clouddms.v1.PrivateServiceConnectConnectivity) connectivity_;
+    }
+    return com.google.cloud.clouddms.v1.PrivateServiceConnectConnectivity.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Private service connect connectivity.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.clouddms.v1.PrivateServiceConnectConnectivity private_service_connect_connectivity = 101;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.clouddms.v1.PrivateServiceConnectConnectivityOrBuilder
+      getPrivateServiceConnectConnectivityOrBuilder() {
+    if (connectivityCase_ == 101) {
+      return (com.google.cloud.clouddms.v1.PrivateServiceConnectConnectivity) connectivity_;
+    }
+    return com.google.cloud.clouddms.v1.PrivateServiceConnectConnectivity.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -404,6 +605,18 @@ public final class PostgreSqlConnectionProfile extends com.google.protobuf.Gener
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cloudSqlId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, cloudSqlId_);
     }
+    if (networkArchitecture_
+        != com.google.cloud.clouddms.v1.NetworkArchitecture.NETWORK_ARCHITECTURE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(8, networkArchitecture_);
+    }
+    if (connectivityCase_ == 100) {
+      output.writeMessage(100, (com.google.cloud.clouddms.v1.StaticIpConnectivity) connectivity_);
+    }
+    if (connectivityCase_ == 101) {
+      output.writeMessage(
+          101, (com.google.cloud.clouddms.v1.PrivateServiceConnectConnectivity) connectivity_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -434,6 +647,21 @@ public final class PostgreSqlConnectionProfile extends com.google.protobuf.Gener
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cloudSqlId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, cloudSqlId_);
     }
+    if (networkArchitecture_
+        != com.google.cloud.clouddms.v1.NetworkArchitecture.NETWORK_ARCHITECTURE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(8, networkArchitecture_);
+    }
+    if (connectivityCase_ == 100) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              100, (com.google.cloud.clouddms.v1.StaticIpConnectivity) connectivity_);
+    }
+    if (connectivityCase_ == 101) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              101, (com.google.cloud.clouddms.v1.PrivateServiceConnectConnectivity) connectivity_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -460,6 +688,19 @@ public final class PostgreSqlConnectionProfile extends com.google.protobuf.Gener
       if (!getSsl().equals(other.getSsl())) return false;
     }
     if (!getCloudSqlId().equals(other.getCloudSqlId())) return false;
+    if (networkArchitecture_ != other.networkArchitecture_) return false;
+    if (!getConnectivityCase().equals(other.getConnectivityCase())) return false;
+    switch (connectivityCase_) {
+      case 100:
+        if (!getStaticIpConnectivity().equals(other.getStaticIpConnectivity())) return false;
+        break;
+      case 101:
+        if (!getPrivateServiceConnectConnectivity()
+            .equals(other.getPrivateServiceConnectConnectivity())) return false;
+        break;
+      case 0:
+      default:
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -487,6 +728,20 @@ public final class PostgreSqlConnectionProfile extends com.google.protobuf.Gener
     }
     hash = (37 * hash) + CLOUD_SQL_ID_FIELD_NUMBER;
     hash = (53 * hash) + getCloudSqlId().hashCode();
+    hash = (37 * hash) + NETWORK_ARCHITECTURE_FIELD_NUMBER;
+    hash = (53 * hash) + networkArchitecture_;
+    switch (connectivityCase_) {
+      case 100:
+        hash = (37 * hash) + STATIC_IP_CONNECTIVITY_FIELD_NUMBER;
+        hash = (53 * hash) + getStaticIpConnectivity().hashCode();
+        break;
+      case 101:
+        hash = (37 * hash) + PRIVATE_SERVICE_CONNECT_CONNECTIVITY_FIELD_NUMBER;
+        hash = (53 * hash) + getPrivateServiceConnectConnectivity().hashCode();
+        break;
+      case 0:
+      default:
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -639,6 +894,15 @@ public final class PostgreSqlConnectionProfile extends com.google.protobuf.Gener
         sslBuilder_ = null;
       }
       cloudSqlId_ = "";
+      networkArchitecture_ = 0;
+      if (staticIpConnectivityBuilder_ != null) {
+        staticIpConnectivityBuilder_.clear();
+      }
+      if (privateServiceConnectConnectivityBuilder_ != null) {
+        privateServiceConnectConnectivityBuilder_.clear();
+      }
+      connectivityCase_ = 0;
+      connectivity_ = null;
       return this;
     }
 
@@ -669,6 +933,7 @@ public final class PostgreSqlConnectionProfile extends com.google.protobuf.Gener
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
+      buildPartialOneofs(result);
       onBuilt();
       return result;
     }
@@ -695,6 +960,21 @@ public final class PostgreSqlConnectionProfile extends com.google.protobuf.Gener
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.cloudSqlId_ = cloudSqlId_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.networkArchitecture_ = networkArchitecture_;
+      }
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.clouddms.v1.PostgreSqlConnectionProfile result) {
+      result.connectivityCase_ = connectivityCase_;
+      result.connectivity_ = this.connectivity_;
+      if (connectivityCase_ == 100 && staticIpConnectivityBuilder_ != null) {
+        result.connectivity_ = staticIpConnectivityBuilder_.build();
+      }
+      if (connectivityCase_ == 101 && privateServiceConnectConnectivityBuilder_ != null) {
+        result.connectivity_ = privateServiceConnectConnectivityBuilder_.build();
       }
     }
 
@@ -773,6 +1053,25 @@ public final class PostgreSqlConnectionProfile extends com.google.protobuf.Gener
         bitField0_ |= 0x00000040;
         onChanged();
       }
+      if (other.networkArchitecture_ != 0) {
+        setNetworkArchitectureValue(other.getNetworkArchitectureValue());
+      }
+      switch (other.getConnectivityCase()) {
+        case STATIC_IP_CONNECTIVITY:
+          {
+            mergeStaticIpConnectivity(other.getStaticIpConnectivity());
+            break;
+          }
+        case PRIVATE_SERVICE_CONNECT_CONNECTIVITY:
+          {
+            mergePrivateServiceConnectConnectivity(other.getPrivateServiceConnectConnectivity());
+            break;
+          }
+        case CONNECTIVITY_NOT_SET:
+          {
+            break;
+          }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -841,6 +1140,27 @@ public final class PostgreSqlConnectionProfile extends com.google.protobuf.Gener
                 bitField0_ |= 0x00000040;
                 break;
               } // case 58
+            case 64:
+              {
+                networkArchitecture_ = input.readEnum();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 64
+            case 802:
+              {
+                input.readMessage(
+                    getStaticIpConnectivityFieldBuilder().getBuilder(), extensionRegistry);
+                connectivityCase_ = 100;
+                break;
+              } // case 802
+            case 810:
+              {
+                input.readMessage(
+                    getPrivateServiceConnectConnectivityFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                connectivityCase_ = 101;
+                break;
+              } // case 810
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -855,6 +1175,20 @@ public final class PostgreSqlConnectionProfile extends com.google.protobuf.Gener
       } finally {
         onChanged();
       } // finally
+      return this;
+    }
+
+    private int connectivityCase_ = 0;
+    private java.lang.Object connectivity_;
+
+    public ConnectivityCase getConnectivityCase() {
+      return ConnectivityCase.forNumber(connectivityCase_);
+    }
+
+    public Builder clearConnectivity() {
+      connectivityCase_ = 0;
+      connectivity_ = null;
+      onChanged();
       return this;
     }
 
@@ -1024,8 +1358,9 @@ public final class PostgreSqlConnectionProfile extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The username that Database Migration Service will use to connect to the
-     * database. The value is encrypted when stored in Database Migration Service.
+     * Required. The username that Database Migration Service will use to connect
+     * to the database. The value is encrypted when stored in Database Migration
+     * Service.
      * </pre>
      *
      * <code>string username = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1047,8 +1382,9 @@ public final class PostgreSqlConnectionProfile extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The username that Database Migration Service will use to connect to the
-     * database. The value is encrypted when stored in Database Migration Service.
+     * Required. The username that Database Migration Service will use to connect
+     * to the database. The value is encrypted when stored in Database Migration
+     * Service.
      * </pre>
      *
      * <code>string username = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1070,8 +1406,9 @@ public final class PostgreSqlConnectionProfile extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The username that Database Migration Service will use to connect to the
-     * database. The value is encrypted when stored in Database Migration Service.
+     * Required. The username that Database Migration Service will use to connect
+     * to the database. The value is encrypted when stored in Database Migration
+     * Service.
      * </pre>
      *
      * <code>string username = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1092,8 +1429,9 @@ public final class PostgreSqlConnectionProfile extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The username that Database Migration Service will use to connect to the
-     * database. The value is encrypted when stored in Database Migration Service.
+     * Required. The username that Database Migration Service will use to connect
+     * to the database. The value is encrypted when stored in Database Migration
+     * Service.
      * </pre>
      *
      * <code>string username = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1110,8 +1448,9 @@ public final class PostgreSqlConnectionProfile extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The username that Database Migration Service will use to connect to the
-     * database. The value is encrypted when stored in Database Migration Service.
+     * Required. The username that Database Migration Service will use to connect
+     * to the database. The value is encrypted when stored in Database Migration
+     * Service.
      * </pre>
      *
      * <code>string username = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1135,9 +1474,10 @@ public final class PostgreSqlConnectionProfile extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. Input only. The password for the user that Database Migration Service will be using to
-     * connect to the database. This field is not returned on request, and the
-     * value is encrypted when stored in Database Migration Service.
+     * Required. Input only. The password for the user that Database Migration
+     * Service will be using to connect to the database. This field is not
+     * returned on request, and the value is encrypted when stored in Database
+     * Migration Service.
      * </pre>
      *
      * <code>
@@ -1161,9 +1501,10 @@ public final class PostgreSqlConnectionProfile extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. Input only. The password for the user that Database Migration Service will be using to
-     * connect to the database. This field is not returned on request, and the
-     * value is encrypted when stored in Database Migration Service.
+     * Required. Input only. The password for the user that Database Migration
+     * Service will be using to connect to the database. This field is not
+     * returned on request, and the value is encrypted when stored in Database
+     * Migration Service.
      * </pre>
      *
      * <code>
@@ -1187,9 +1528,10 @@ public final class PostgreSqlConnectionProfile extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. Input only. The password for the user that Database Migration Service will be using to
-     * connect to the database. This field is not returned on request, and the
-     * value is encrypted when stored in Database Migration Service.
+     * Required. Input only. The password for the user that Database Migration
+     * Service will be using to connect to the database. This field is not
+     * returned on request, and the value is encrypted when stored in Database
+     * Migration Service.
      * </pre>
      *
      * <code>
@@ -1212,9 +1554,10 @@ public final class PostgreSqlConnectionProfile extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. Input only. The password for the user that Database Migration Service will be using to
-     * connect to the database. This field is not returned on request, and the
-     * value is encrypted when stored in Database Migration Service.
+     * Required. Input only. The password for the user that Database Migration
+     * Service will be using to connect to the database. This field is not
+     * returned on request, and the value is encrypted when stored in Database
+     * Migration Service.
      * </pre>
      *
      * <code>
@@ -1233,9 +1576,10 @@ public final class PostgreSqlConnectionProfile extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. Input only. The password for the user that Database Migration Service will be using to
-     * connect to the database. This field is not returned on request, and the
-     * value is encrypted when stored in Database Migration Service.
+     * Required. Input only. The password for the user that Database Migration
+     * Service will be using to connect to the database. This field is not
+     * returned on request, and the value is encrypted when stored in Database
+     * Migration Service.
      * </pre>
      *
      * <code>
@@ -1597,6 +1941,563 @@ public final class PostgreSqlConnectionProfile extends com.google.protobuf.Gener
       bitField0_ |= 0x00000040;
       onChanged();
       return this;
+    }
+
+    private int networkArchitecture_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If the source is a Cloud SQL database, this field indicates
+     * the network architecture it's associated with.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.clouddms.v1.NetworkArchitecture network_architecture = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for networkArchitecture.
+     */
+    @java.lang.Override
+    public int getNetworkArchitectureValue() {
+      return networkArchitecture_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If the source is a Cloud SQL database, this field indicates
+     * the network architecture it's associated with.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.clouddms.v1.NetworkArchitecture network_architecture = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for networkArchitecture to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNetworkArchitectureValue(int value) {
+      networkArchitecture_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If the source is a Cloud SQL database, this field indicates
+     * the network architecture it's associated with.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.clouddms.v1.NetworkArchitecture network_architecture = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The networkArchitecture.
+     */
+    @java.lang.Override
+    public com.google.cloud.clouddms.v1.NetworkArchitecture getNetworkArchitecture() {
+      com.google.cloud.clouddms.v1.NetworkArchitecture result =
+          com.google.cloud.clouddms.v1.NetworkArchitecture.forNumber(networkArchitecture_);
+      return result == null
+          ? com.google.cloud.clouddms.v1.NetworkArchitecture.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If the source is a Cloud SQL database, this field indicates
+     * the network architecture it's associated with.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.clouddms.v1.NetworkArchitecture network_architecture = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The networkArchitecture to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNetworkArchitecture(com.google.cloud.clouddms.v1.NetworkArchitecture value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000080;
+      networkArchitecture_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If the source is a Cloud SQL database, this field indicates
+     * the network architecture it's associated with.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.clouddms.v1.NetworkArchitecture network_architecture = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearNetworkArchitecture() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      networkArchitecture_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.clouddms.v1.StaticIpConnectivity,
+            com.google.cloud.clouddms.v1.StaticIpConnectivity.Builder,
+            com.google.cloud.clouddms.v1.StaticIpConnectivityOrBuilder>
+        staticIpConnectivityBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Static ip connectivity data (default, no additional details needed).
+     * </pre>
+     *
+     * <code>.google.cloud.clouddms.v1.StaticIpConnectivity static_ip_connectivity = 100;</code>
+     *
+     * @return Whether the staticIpConnectivity field is set.
+     */
+    @java.lang.Override
+    public boolean hasStaticIpConnectivity() {
+      return connectivityCase_ == 100;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Static ip connectivity data (default, no additional details needed).
+     * </pre>
+     *
+     * <code>.google.cloud.clouddms.v1.StaticIpConnectivity static_ip_connectivity = 100;</code>
+     *
+     * @return The staticIpConnectivity.
+     */
+    @java.lang.Override
+    public com.google.cloud.clouddms.v1.StaticIpConnectivity getStaticIpConnectivity() {
+      if (staticIpConnectivityBuilder_ == null) {
+        if (connectivityCase_ == 100) {
+          return (com.google.cloud.clouddms.v1.StaticIpConnectivity) connectivity_;
+        }
+        return com.google.cloud.clouddms.v1.StaticIpConnectivity.getDefaultInstance();
+      } else {
+        if (connectivityCase_ == 100) {
+          return staticIpConnectivityBuilder_.getMessage();
+        }
+        return com.google.cloud.clouddms.v1.StaticIpConnectivity.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Static ip connectivity data (default, no additional details needed).
+     * </pre>
+     *
+     * <code>.google.cloud.clouddms.v1.StaticIpConnectivity static_ip_connectivity = 100;</code>
+     */
+    public Builder setStaticIpConnectivity(
+        com.google.cloud.clouddms.v1.StaticIpConnectivity value) {
+      if (staticIpConnectivityBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        connectivity_ = value;
+        onChanged();
+      } else {
+        staticIpConnectivityBuilder_.setMessage(value);
+      }
+      connectivityCase_ = 100;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Static ip connectivity data (default, no additional details needed).
+     * </pre>
+     *
+     * <code>.google.cloud.clouddms.v1.StaticIpConnectivity static_ip_connectivity = 100;</code>
+     */
+    public Builder setStaticIpConnectivity(
+        com.google.cloud.clouddms.v1.StaticIpConnectivity.Builder builderForValue) {
+      if (staticIpConnectivityBuilder_ == null) {
+        connectivity_ = builderForValue.build();
+        onChanged();
+      } else {
+        staticIpConnectivityBuilder_.setMessage(builderForValue.build());
+      }
+      connectivityCase_ = 100;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Static ip connectivity data (default, no additional details needed).
+     * </pre>
+     *
+     * <code>.google.cloud.clouddms.v1.StaticIpConnectivity static_ip_connectivity = 100;</code>
+     */
+    public Builder mergeStaticIpConnectivity(
+        com.google.cloud.clouddms.v1.StaticIpConnectivity value) {
+      if (staticIpConnectivityBuilder_ == null) {
+        if (connectivityCase_ == 100
+            && connectivity_
+                != com.google.cloud.clouddms.v1.StaticIpConnectivity.getDefaultInstance()) {
+          connectivity_ =
+              com.google.cloud.clouddms.v1.StaticIpConnectivity.newBuilder(
+                      (com.google.cloud.clouddms.v1.StaticIpConnectivity) connectivity_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          connectivity_ = value;
+        }
+        onChanged();
+      } else {
+        if (connectivityCase_ == 100) {
+          staticIpConnectivityBuilder_.mergeFrom(value);
+        } else {
+          staticIpConnectivityBuilder_.setMessage(value);
+        }
+      }
+      connectivityCase_ = 100;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Static ip connectivity data (default, no additional details needed).
+     * </pre>
+     *
+     * <code>.google.cloud.clouddms.v1.StaticIpConnectivity static_ip_connectivity = 100;</code>
+     */
+    public Builder clearStaticIpConnectivity() {
+      if (staticIpConnectivityBuilder_ == null) {
+        if (connectivityCase_ == 100) {
+          connectivityCase_ = 0;
+          connectivity_ = null;
+          onChanged();
+        }
+      } else {
+        if (connectivityCase_ == 100) {
+          connectivityCase_ = 0;
+          connectivity_ = null;
+        }
+        staticIpConnectivityBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Static ip connectivity data (default, no additional details needed).
+     * </pre>
+     *
+     * <code>.google.cloud.clouddms.v1.StaticIpConnectivity static_ip_connectivity = 100;</code>
+     */
+    public com.google.cloud.clouddms.v1.StaticIpConnectivity.Builder
+        getStaticIpConnectivityBuilder() {
+      return getStaticIpConnectivityFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Static ip connectivity data (default, no additional details needed).
+     * </pre>
+     *
+     * <code>.google.cloud.clouddms.v1.StaticIpConnectivity static_ip_connectivity = 100;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.clouddms.v1.StaticIpConnectivityOrBuilder
+        getStaticIpConnectivityOrBuilder() {
+      if ((connectivityCase_ == 100) && (staticIpConnectivityBuilder_ != null)) {
+        return staticIpConnectivityBuilder_.getMessageOrBuilder();
+      } else {
+        if (connectivityCase_ == 100) {
+          return (com.google.cloud.clouddms.v1.StaticIpConnectivity) connectivity_;
+        }
+        return com.google.cloud.clouddms.v1.StaticIpConnectivity.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Static ip connectivity data (default, no additional details needed).
+     * </pre>
+     *
+     * <code>.google.cloud.clouddms.v1.StaticIpConnectivity static_ip_connectivity = 100;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.clouddms.v1.StaticIpConnectivity,
+            com.google.cloud.clouddms.v1.StaticIpConnectivity.Builder,
+            com.google.cloud.clouddms.v1.StaticIpConnectivityOrBuilder>
+        getStaticIpConnectivityFieldBuilder() {
+      if (staticIpConnectivityBuilder_ == null) {
+        if (!(connectivityCase_ == 100)) {
+          connectivity_ = com.google.cloud.clouddms.v1.StaticIpConnectivity.getDefaultInstance();
+        }
+        staticIpConnectivityBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.clouddms.v1.StaticIpConnectivity,
+                com.google.cloud.clouddms.v1.StaticIpConnectivity.Builder,
+                com.google.cloud.clouddms.v1.StaticIpConnectivityOrBuilder>(
+                (com.google.cloud.clouddms.v1.StaticIpConnectivity) connectivity_,
+                getParentForChildren(),
+                isClean());
+        connectivity_ = null;
+      }
+      connectivityCase_ = 100;
+      onChanged();
+      return staticIpConnectivityBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.clouddms.v1.PrivateServiceConnectConnectivity,
+            com.google.cloud.clouddms.v1.PrivateServiceConnectConnectivity.Builder,
+            com.google.cloud.clouddms.v1.PrivateServiceConnectConnectivityOrBuilder>
+        privateServiceConnectConnectivityBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Private service connect connectivity.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.clouddms.v1.PrivateServiceConnectConnectivity private_service_connect_connectivity = 101;
+     * </code>
+     *
+     * @return Whether the privateServiceConnectConnectivity field is set.
+     */
+    @java.lang.Override
+    public boolean hasPrivateServiceConnectConnectivity() {
+      return connectivityCase_ == 101;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Private service connect connectivity.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.clouddms.v1.PrivateServiceConnectConnectivity private_service_connect_connectivity = 101;
+     * </code>
+     *
+     * @return The privateServiceConnectConnectivity.
+     */
+    @java.lang.Override
+    public com.google.cloud.clouddms.v1.PrivateServiceConnectConnectivity
+        getPrivateServiceConnectConnectivity() {
+      if (privateServiceConnectConnectivityBuilder_ == null) {
+        if (connectivityCase_ == 101) {
+          return (com.google.cloud.clouddms.v1.PrivateServiceConnectConnectivity) connectivity_;
+        }
+        return com.google.cloud.clouddms.v1.PrivateServiceConnectConnectivity.getDefaultInstance();
+      } else {
+        if (connectivityCase_ == 101) {
+          return privateServiceConnectConnectivityBuilder_.getMessage();
+        }
+        return com.google.cloud.clouddms.v1.PrivateServiceConnectConnectivity.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Private service connect connectivity.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.clouddms.v1.PrivateServiceConnectConnectivity private_service_connect_connectivity = 101;
+     * </code>
+     */
+    public Builder setPrivateServiceConnectConnectivity(
+        com.google.cloud.clouddms.v1.PrivateServiceConnectConnectivity value) {
+      if (privateServiceConnectConnectivityBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        connectivity_ = value;
+        onChanged();
+      } else {
+        privateServiceConnectConnectivityBuilder_.setMessage(value);
+      }
+      connectivityCase_ = 101;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Private service connect connectivity.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.clouddms.v1.PrivateServiceConnectConnectivity private_service_connect_connectivity = 101;
+     * </code>
+     */
+    public Builder setPrivateServiceConnectConnectivity(
+        com.google.cloud.clouddms.v1.PrivateServiceConnectConnectivity.Builder builderForValue) {
+      if (privateServiceConnectConnectivityBuilder_ == null) {
+        connectivity_ = builderForValue.build();
+        onChanged();
+      } else {
+        privateServiceConnectConnectivityBuilder_.setMessage(builderForValue.build());
+      }
+      connectivityCase_ = 101;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Private service connect connectivity.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.clouddms.v1.PrivateServiceConnectConnectivity private_service_connect_connectivity = 101;
+     * </code>
+     */
+    public Builder mergePrivateServiceConnectConnectivity(
+        com.google.cloud.clouddms.v1.PrivateServiceConnectConnectivity value) {
+      if (privateServiceConnectConnectivityBuilder_ == null) {
+        if (connectivityCase_ == 101
+            && connectivity_
+                != com.google.cloud.clouddms.v1.PrivateServiceConnectConnectivity
+                    .getDefaultInstance()) {
+          connectivity_ =
+              com.google.cloud.clouddms.v1.PrivateServiceConnectConnectivity.newBuilder(
+                      (com.google.cloud.clouddms.v1.PrivateServiceConnectConnectivity)
+                          connectivity_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          connectivity_ = value;
+        }
+        onChanged();
+      } else {
+        if (connectivityCase_ == 101) {
+          privateServiceConnectConnectivityBuilder_.mergeFrom(value);
+        } else {
+          privateServiceConnectConnectivityBuilder_.setMessage(value);
+        }
+      }
+      connectivityCase_ = 101;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Private service connect connectivity.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.clouddms.v1.PrivateServiceConnectConnectivity private_service_connect_connectivity = 101;
+     * </code>
+     */
+    public Builder clearPrivateServiceConnectConnectivity() {
+      if (privateServiceConnectConnectivityBuilder_ == null) {
+        if (connectivityCase_ == 101) {
+          connectivityCase_ = 0;
+          connectivity_ = null;
+          onChanged();
+        }
+      } else {
+        if (connectivityCase_ == 101) {
+          connectivityCase_ = 0;
+          connectivity_ = null;
+        }
+        privateServiceConnectConnectivityBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Private service connect connectivity.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.clouddms.v1.PrivateServiceConnectConnectivity private_service_connect_connectivity = 101;
+     * </code>
+     */
+    public com.google.cloud.clouddms.v1.PrivateServiceConnectConnectivity.Builder
+        getPrivateServiceConnectConnectivityBuilder() {
+      return getPrivateServiceConnectConnectivityFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Private service connect connectivity.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.clouddms.v1.PrivateServiceConnectConnectivity private_service_connect_connectivity = 101;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.clouddms.v1.PrivateServiceConnectConnectivityOrBuilder
+        getPrivateServiceConnectConnectivityOrBuilder() {
+      if ((connectivityCase_ == 101) && (privateServiceConnectConnectivityBuilder_ != null)) {
+        return privateServiceConnectConnectivityBuilder_.getMessageOrBuilder();
+      } else {
+        if (connectivityCase_ == 101) {
+          return (com.google.cloud.clouddms.v1.PrivateServiceConnectConnectivity) connectivity_;
+        }
+        return com.google.cloud.clouddms.v1.PrivateServiceConnectConnectivity.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Private service connect connectivity.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.clouddms.v1.PrivateServiceConnectConnectivity private_service_connect_connectivity = 101;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.clouddms.v1.PrivateServiceConnectConnectivity,
+            com.google.cloud.clouddms.v1.PrivateServiceConnectConnectivity.Builder,
+            com.google.cloud.clouddms.v1.PrivateServiceConnectConnectivityOrBuilder>
+        getPrivateServiceConnectConnectivityFieldBuilder() {
+      if (privateServiceConnectConnectivityBuilder_ == null) {
+        if (!(connectivityCase_ == 101)) {
+          connectivity_ =
+              com.google.cloud.clouddms.v1.PrivateServiceConnectConnectivity.getDefaultInstance();
+        }
+        privateServiceConnectConnectivityBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.clouddms.v1.PrivateServiceConnectConnectivity,
+                com.google.cloud.clouddms.v1.PrivateServiceConnectConnectivity.Builder,
+                com.google.cloud.clouddms.v1.PrivateServiceConnectConnectivityOrBuilder>(
+                (com.google.cloud.clouddms.v1.PrivateServiceConnectConnectivity) connectivity_,
+                getParentForChildren(),
+                isClean());
+        connectivity_ = null;
+      }
+      connectivityCase_ = 101;
+      onChanged();
+      return privateServiceConnectConnectivityBuilder_;
     }
 
     @java.lang.Override

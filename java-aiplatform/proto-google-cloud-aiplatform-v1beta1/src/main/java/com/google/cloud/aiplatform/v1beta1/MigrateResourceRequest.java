@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,11 +46,6 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
     return new MigrateResourceRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1beta1.MigrationServiceProto
         .internal_static_google_cloud_aiplatform_v1beta1_MigrateResourceRequest_descriptor;
@@ -77,9 +72,13 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The ml.googleapis.com endpoint that this model version should
      * be migrated from. Example values:
+     *
      * * ml.googleapis.com
+     *
      * * us-centrall-ml.googleapis.com
+     *
      * * europe-west4-ml.googleapis.com
+     *
      * * asia-east1-ml.googleapis.com
      * </pre>
      *
@@ -94,9 +93,13 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The ml.googleapis.com endpoint that this model version should
      * be migrated from. Example values:
+     *
      * * ml.googleapis.com
+     *
      * * us-centrall-ml.googleapis.com
+     *
      * * europe-west4-ml.googleapis.com
+     *
      * * asia-east1-ml.googleapis.com
      * </pre>
      *
@@ -198,11 +201,6 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
       return new MigrateMlEngineModelVersionConfig();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.aiplatform.v1beta1.MigrationServiceProto
           .internal_static_google_cloud_aiplatform_v1beta1_MigrateResourceRequest_MigrateMlEngineModelVersionConfig_descriptor;
@@ -230,9 +228,13 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The ml.googleapis.com endpoint that this model version should
      * be migrated from. Example values:
+     *
      * * ml.googleapis.com
+     *
      * * us-centrall-ml.googleapis.com
+     *
      * * europe-west4-ml.googleapis.com
+     *
      * * asia-east1-ml.googleapis.com
      * </pre>
      *
@@ -258,9 +260,13 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The ml.googleapis.com endpoint that this model version should
      * be migrated from. Example values:
+     *
      * * ml.googleapis.com
+     *
      * * us-centrall-ml.googleapis.com
+     *
      * * europe-west4-ml.googleapis.com
+     *
      * * asia-east1-ml.googleapis.com
      * </pre>
      *
@@ -846,9 +852,13 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
        * <pre>
        * Required. The ml.googleapis.com endpoint that this model version should
        * be migrated from. Example values:
+       *
        * * ml.googleapis.com
+       *
        * * us-centrall-ml.googleapis.com
+       *
        * * europe-west4-ml.googleapis.com
+       *
        * * asia-east1-ml.googleapis.com
        * </pre>
        *
@@ -873,9 +883,13 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
        * <pre>
        * Required. The ml.googleapis.com endpoint that this model version should
        * be migrated from. Example values:
+       *
        * * ml.googleapis.com
+       *
        * * us-centrall-ml.googleapis.com
+       *
        * * europe-west4-ml.googleapis.com
+       *
        * * asia-east1-ml.googleapis.com
        * </pre>
        *
@@ -900,9 +914,13 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
        * <pre>
        * Required. The ml.googleapis.com endpoint that this model version should
        * be migrated from. Example values:
+       *
        * * ml.googleapis.com
+       *
        * * us-centrall-ml.googleapis.com
+       *
        * * europe-west4-ml.googleapis.com
+       *
        * * asia-east1-ml.googleapis.com
        * </pre>
        *
@@ -926,9 +944,13 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
        * <pre>
        * Required. The ml.googleapis.com endpoint that this model version should
        * be migrated from. Example values:
+       *
        * * ml.googleapis.com
+       *
        * * us-centrall-ml.googleapis.com
+       *
        * * europe-west4-ml.googleapis.com
+       *
        * * asia-east1-ml.googleapis.com
        * </pre>
        *
@@ -948,9 +970,13 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
        * <pre>
        * Required. The ml.googleapis.com endpoint that this model version should
        * be migrated from. Example values:
+       *
        * * ml.googleapis.com
+       *
        * * us-centrall-ml.googleapis.com
+       *
        * * europe-west4-ml.googleapis.com
+       *
        * * asia-east1-ml.googleapis.com
        * </pre>
        *
@@ -1368,11 +1394,6 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new MigrateAutomlModelConfig();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2319,11 +2340,6 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new MigrateAutomlDatasetConfig();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -3362,11 +3378,6 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
       return new MigrateDataLabelingDatasetConfig();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.aiplatform.v1beta1.MigrationServiceProto
           .internal_static_google_cloud_aiplatform_v1beta1_MigrateResourceRequest_MigrateDataLabelingDatasetConfig_descriptor;
@@ -3453,11 +3464,6 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new MigrateDataLabelingAnnotatedDatasetConfig();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -5697,6 +5703,8 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
   }
 
   private int requestCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object request_;
 
   public enum RequestCase

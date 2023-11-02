@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -112,6 +112,7 @@ public interface ContainerOrBuilder
    * <pre>
    * The root of the container.
    * Examples:
+   *
    * - For BigQuery table `project_id:dataset_id.table_id`, the root is
    *  `dataset_id`
    * - For Cloud Storage file `gs://bucket/folder/filename.txt`, the root
@@ -129,6 +130,7 @@ public interface ContainerOrBuilder
    * <pre>
    * The root of the container.
    * Examples:
+   *
    * - For BigQuery table `project_id:dataset_id.table_id`, the root is
    *  `dataset_id`
    * - For Cloud Storage file `gs://bucket/folder/filename.txt`, the root
@@ -147,6 +149,7 @@ public interface ContainerOrBuilder
    * <pre>
    * The rest of the path after the root.
    * Examples:
+   *
    * - For BigQuery table `project_id:dataset_id.table_id`, the relative path is
    *  `table_id`
    * - For Cloud Storage file `gs://bucket/folder/filename.txt`, the relative
@@ -164,6 +167,7 @@ public interface ContainerOrBuilder
    * <pre>
    * The rest of the path after the root.
    * Examples:
+   *
    * - For BigQuery table `project_id:dataset_id.table_id`, the relative path is
    *  `table_id`
    * - For Cloud Storage file `gs://bucket/folder/filename.txt`, the relative

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,11 +51,6 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
     return new SerializedPolicyTag();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datacatalog.v1.PolicyTagManagerSerializationProto
         .internal_static_google_cloud_datacatalog_v1_SerializedPolicyTag_descriptor;
@@ -80,6 +75,7 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Resource name of the policy tag.
+   *
    * This field is ignored when calling `ImportTaxonomies`.
    * </pre>
    *
@@ -104,6 +100,7 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Resource name of the policy tag.
+   *
    * This field is ignored when calling `ImportTaxonomies`.
    * </pre>
    *
@@ -775,6 +772,7 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Resource name of the policy tag.
+     *
      * This field is ignored when calling `ImportTaxonomies`.
      * </pre>
      *
@@ -798,6 +796,7 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Resource name of the policy tag.
+     *
      * This field is ignored when calling `ImportTaxonomies`.
      * </pre>
      *
@@ -821,6 +820,7 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Resource name of the policy tag.
+     *
      * This field is ignored when calling `ImportTaxonomies`.
      * </pre>
      *
@@ -843,6 +843,7 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Resource name of the policy tag.
+     *
      * This field is ignored when calling `ImportTaxonomies`.
      * </pre>
      *
@@ -861,6 +862,7 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Resource name of the policy tag.
+     *
      * This field is ignored when calling `ImportTaxonomies`.
      * </pre>
      *

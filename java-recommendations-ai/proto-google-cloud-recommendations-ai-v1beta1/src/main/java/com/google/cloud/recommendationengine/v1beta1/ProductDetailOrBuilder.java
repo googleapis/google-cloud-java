@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -160,6 +160,7 @@ public interface ProductDetailOrBuilder
    * Optional. Quantity of the products in stock when a user event happens.
    * Optional. If provided, this overrides the available quantity in Catalog for
    * this event. and can only be set if `stock_status` is set to `IN_STOCK`.
+   *
    * Note that if an item is out of stock, you must set the `stock_state` field
    * to be `OUT_OF_STOCK`. Leaving this field unspecified / as zero is not
    * sufficient to mark the item out of stock.

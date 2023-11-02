@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class CreateBatchRequest extends com.google.protobuf.GeneratedMessa
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new CreateBatchRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -183,6 +178,7 @@ public final class CreateBatchRequest extends com.google.protobuf.GeneratedMessa
    * <pre>
    * Optional. The ID to use for the batch, which will become the final
    * component of the batch's resource name.
+   *
    * This value must be 4-63 characters. Valid characters are `/[a-z][0-9]-/`.
    * </pre>
    *
@@ -208,6 +204,7 @@ public final class CreateBatchRequest extends com.google.protobuf.GeneratedMessa
    * <pre>
    * Optional. The ID to use for the batch, which will become the final
    * component of the batch's resource name.
+   *
    * This value must be 4-63 characters. Valid characters are `/[a-z][0-9]-/`.
    * </pre>
    *
@@ -242,8 +239,10 @@ public final class CreateBatchRequest extends com.google.protobuf.GeneratedMessa
    * with the same request_id, the second request is ignored and the
    * Operation that corresponds to the first Batch created and stored
    * in the backend is returned.
+   *
    * Recommendation: Set this value to a
    * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
+   *
    * The value must contain only letters (a-z, A-Z), numbers (0-9),
    * underscores (_), and hyphens (-). The maximum length is 40 characters.
    * </pre>
@@ -274,8 +273,10 @@ public final class CreateBatchRequest extends com.google.protobuf.GeneratedMessa
    * with the same request_id, the second request is ignored and the
    * Operation that corresponds to the first Batch created and stored
    * in the backend is returned.
+   *
    * Recommendation: Set this value to a
    * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
+   *
    * The value must contain only letters (a-z, A-Z), numbers (0-9),
    * underscores (_), and hyphens (-). The maximum length is 40 characters.
    * </pre>
@@ -1029,6 +1030,7 @@ public final class CreateBatchRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Optional. The ID to use for the batch, which will become the final
      * component of the batch's resource name.
+     *
      * This value must be 4-63 characters. Valid characters are `/[a-z][0-9]-/`.
      * </pre>
      *
@@ -1053,6 +1055,7 @@ public final class CreateBatchRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Optional. The ID to use for the batch, which will become the final
      * component of the batch's resource name.
+     *
      * This value must be 4-63 characters. Valid characters are `/[a-z][0-9]-/`.
      * </pre>
      *
@@ -1077,6 +1080,7 @@ public final class CreateBatchRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Optional. The ID to use for the batch, which will become the final
      * component of the batch's resource name.
+     *
      * This value must be 4-63 characters. Valid characters are `/[a-z][0-9]-/`.
      * </pre>
      *
@@ -1100,6 +1104,7 @@ public final class CreateBatchRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Optional. The ID to use for the batch, which will become the final
      * component of the batch's resource name.
+     *
      * This value must be 4-63 characters. Valid characters are `/[a-z][0-9]-/`.
      * </pre>
      *
@@ -1119,6 +1124,7 @@ public final class CreateBatchRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Optional. The ID to use for the batch, which will become the final
      * component of the batch's resource name.
+     *
      * This value must be 4-63 characters. Valid characters are `/[a-z][0-9]-/`.
      * </pre>
      *
@@ -1149,8 +1155,10 @@ public final class CreateBatchRequest extends com.google.protobuf.GeneratedMessa
      * with the same request_id, the second request is ignored and the
      * Operation that corresponds to the first Batch created and stored
      * in the backend is returned.
+     *
      * Recommendation: Set this value to a
      * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
+     *
      * The value must contain only letters (a-z, A-Z), numbers (0-9),
      * underscores (_), and hyphens (-). The maximum length is 40 characters.
      * </pre>
@@ -1180,8 +1188,10 @@ public final class CreateBatchRequest extends com.google.protobuf.GeneratedMessa
      * with the same request_id, the second request is ignored and the
      * Operation that corresponds to the first Batch created and stored
      * in the backend is returned.
+     *
      * Recommendation: Set this value to a
      * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
+     *
      * The value must contain only letters (a-z, A-Z), numbers (0-9),
      * underscores (_), and hyphens (-). The maximum length is 40 characters.
      * </pre>
@@ -1211,8 +1221,10 @@ public final class CreateBatchRequest extends com.google.protobuf.GeneratedMessa
      * with the same request_id, the second request is ignored and the
      * Operation that corresponds to the first Batch created and stored
      * in the backend is returned.
+     *
      * Recommendation: Set this value to a
      * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
+     *
      * The value must contain only letters (a-z, A-Z), numbers (0-9),
      * underscores (_), and hyphens (-). The maximum length is 40 characters.
      * </pre>
@@ -1241,8 +1253,10 @@ public final class CreateBatchRequest extends com.google.protobuf.GeneratedMessa
      * with the same request_id, the second request is ignored and the
      * Operation that corresponds to the first Batch created and stored
      * in the backend is returned.
+     *
      * Recommendation: Set this value to a
      * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
+     *
      * The value must contain only letters (a-z, A-Z), numbers (0-9),
      * underscores (_), and hyphens (-). The maximum length is 40 characters.
      * </pre>
@@ -1267,8 +1281,10 @@ public final class CreateBatchRequest extends com.google.protobuf.GeneratedMessa
      * with the same request_id, the second request is ignored and the
      * Operation that corresponds to the first Batch created and stored
      * in the backend is returned.
+     *
      * Recommendation: Set this value to a
      * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
+     *
      * The value must contain only letters (a-z, A-Z), numbers (0-9),
      * underscores (_), and hyphens (-). The maximum length is 40 characters.
      * </pre>

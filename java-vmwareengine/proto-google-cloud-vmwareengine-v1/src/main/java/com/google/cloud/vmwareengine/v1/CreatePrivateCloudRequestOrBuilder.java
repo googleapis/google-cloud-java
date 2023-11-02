@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -68,6 +68,7 @@ public interface CreatePrivateCloudRequestOrBuilder
    * This identifier must be unique among each `PrivateCloud` within the parent
    * and becomes the final token in the name URI.
    * The identifier must meet the following requirements:
+   *
    * * Only contains 1-63 alphanumeric characters and hyphens
    * * Begins with an alphabetical character
    * * Ends with a non-hyphen character
@@ -89,6 +90,7 @@ public interface CreatePrivateCloudRequestOrBuilder
    * This identifier must be unique among each `PrivateCloud` within the parent
    * and becomes the final token in the name URI.
    * The identifier must meet the following requirements:
+   *
    * * Only contains 1-63 alphanumeric characters and hyphens
    * * Begins with an alphabetical character
    * * Ends with a non-hyphen character

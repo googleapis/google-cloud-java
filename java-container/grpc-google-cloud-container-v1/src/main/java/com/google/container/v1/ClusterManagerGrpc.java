@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,7 +32,7 @@ public final class ClusterManagerGrpc {
 
   private ClusterManagerGrpc() {}
 
-  public static final String SERVICE_NAME = "google.container.v1.ClusterManager";
+  public static final java.lang.String SERVICE_NAME = "google.container.v1.ClusterManager";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -1463,6 +1463,58 @@ public final class ClusterManagerGrpc {
     return getListUsableSubnetworksMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.container.v1.CheckAutopilotCompatibilityRequest,
+          com.google.container.v1.CheckAutopilotCompatibilityResponse>
+      getCheckAutopilotCompatibilityMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CheckAutopilotCompatibility",
+      requestType = com.google.container.v1.CheckAutopilotCompatibilityRequest.class,
+      responseType = com.google.container.v1.CheckAutopilotCompatibilityResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.container.v1.CheckAutopilotCompatibilityRequest,
+          com.google.container.v1.CheckAutopilotCompatibilityResponse>
+      getCheckAutopilotCompatibilityMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.container.v1.CheckAutopilotCompatibilityRequest,
+            com.google.container.v1.CheckAutopilotCompatibilityResponse>
+        getCheckAutopilotCompatibilityMethod;
+    if ((getCheckAutopilotCompatibilityMethod =
+            ClusterManagerGrpc.getCheckAutopilotCompatibilityMethod)
+        == null) {
+      synchronized (ClusterManagerGrpc.class) {
+        if ((getCheckAutopilotCompatibilityMethod =
+                ClusterManagerGrpc.getCheckAutopilotCompatibilityMethod)
+            == null) {
+          ClusterManagerGrpc.getCheckAutopilotCompatibilityMethod =
+              getCheckAutopilotCompatibilityMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.container.v1.CheckAutopilotCompatibilityRequest,
+                          com.google.container.v1.CheckAutopilotCompatibilityResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "CheckAutopilotCompatibility"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.container.v1.CheckAutopilotCompatibilityRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.container.v1.CheckAutopilotCompatibilityResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ClusterManagerMethodDescriptorSupplier("CheckAutopilotCompatibility"))
+                      .build();
+        }
+      }
+    }
+    return getCheckAutopilotCompatibilityMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static ClusterManagerStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<ClusterManagerStub> factory =
@@ -2006,6 +2058,22 @@ public final class ClusterManagerGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getListUsableSubnetworksMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Checks the cluster compatibility with Autopilot mode, and returns a list of
+     * compatibility issues.
+     * </pre>
+     */
+    default void checkAutopilotCompatibility(
+        com.google.container.v1.CheckAutopilotCompatibilityRequest request,
+        io.grpc.stub.StreamObserver<com.google.container.v1.CheckAutopilotCompatibilityResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCheckAutopilotCompatibilityMethod(), responseObserver);
     }
   }
 
@@ -2601,6 +2669,24 @@ public final class ClusterManagerGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Checks the cluster compatibility with Autopilot mode, and returns a list of
+     * compatibility issues.
+     * </pre>
+     */
+    public void checkAutopilotCompatibility(
+        com.google.container.v1.CheckAutopilotCompatibilityRequest request,
+        io.grpc.stub.StreamObserver<com.google.container.v1.CheckAutopilotCompatibilityResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCheckAutopilotCompatibilityMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -3079,6 +3165,20 @@ public final class ClusterManagerGrpc {
         com.google.container.v1.ListUsableSubnetworksRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListUsableSubnetworksMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Checks the cluster compatibility with Autopilot mode, and returns a list of
+     * compatibility issues.
+     * </pre>
+     */
+    public com.google.container.v1.CheckAutopilotCompatibilityResponse checkAutopilotCompatibility(
+        com.google.container.v1.CheckAutopilotCompatibilityRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCheckAutopilotCompatibilityMethod(), getCallOptions(), request);
     }
   }
 
@@ -3564,6 +3664,22 @@ public final class ClusterManagerGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListUsableSubnetworksMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Checks the cluster compatibility with Autopilot mode, and returns a list of
+     * compatibility issues.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.container.v1.CheckAutopilotCompatibilityResponse>
+        checkAutopilotCompatibility(
+            com.google.container.v1.CheckAutopilotCompatibilityRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCheckAutopilotCompatibilityMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_CLUSTERS = 0;
@@ -3599,6 +3715,7 @@ public final class ClusterManagerGrpc {
   private static final int METHODID_SET_NETWORK_POLICY = 30;
   private static final int METHODID_SET_MAINTENANCE_POLICY = 31;
   private static final int METHODID_LIST_USABLE_SUBNETWORKS = 32;
+  private static final int METHODID_CHECK_AUTOPILOT_COMPATIBILITY = 33;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -3785,6 +3902,13 @@ public final class ClusterManagerGrpc {
           serviceImpl.listUsableSubnetworks(
               (com.google.container.v1.ListUsableSubnetworksRequest) request,
               (io.grpc.stub.StreamObserver<com.google.container.v1.ListUsableSubnetworksResponse>)
+                  responseObserver);
+          break;
+        case METHODID_CHECK_AUTOPILOT_COMPATIBILITY:
+          serviceImpl.checkAutopilotCompatibility(
+              (com.google.container.v1.CheckAutopilotCompatibilityRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.container.v1.CheckAutopilotCompatibilityResponse>)
                   responseObserver);
           break;
         default:
@@ -4009,6 +4133,13 @@ public final class ClusterManagerGrpc {
                     com.google.container.v1.ListUsableSubnetworksRequest,
                     com.google.container.v1.ListUsableSubnetworksResponse>(
                     service, METHODID_LIST_USABLE_SUBNETWORKS)))
+        .addMethod(
+            getCheckAutopilotCompatibilityMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.container.v1.CheckAutopilotCompatibilityRequest,
+                    com.google.container.v1.CheckAutopilotCompatibilityResponse>(
+                    service, METHODID_CHECK_AUTOPILOT_COMPATIBILITY)))
         .build();
   }
 
@@ -4036,9 +4167,9 @@ public final class ClusterManagerGrpc {
   private static final class ClusterManagerMethodDescriptorSupplier
       extends ClusterManagerBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    ClusterManagerMethodDescriptorSupplier(String methodName) {
+    ClusterManagerMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 
@@ -4093,6 +4224,7 @@ public final class ClusterManagerGrpc {
                       .addMethod(getSetNetworkPolicyMethod())
                       .addMethod(getSetMaintenancePolicyMethod())
                       .addMethod(getListUsableSubnetworksMethod())
+                      .addMethod(getCheckAutopilotCompatibilityMethod())
                       .build();
         }
       }

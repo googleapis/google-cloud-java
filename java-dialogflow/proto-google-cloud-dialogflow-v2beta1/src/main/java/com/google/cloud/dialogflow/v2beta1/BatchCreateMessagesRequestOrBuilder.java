@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -60,7 +60,7 @@ public interface BatchCreateMessagesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. A maximum of 1000 Messages can be created in a batch.
+   * Required. A maximum of 300 messages can be created in a batch.
    * [CreateMessageRequest.message.send_time][] is required. All created
    * messages will have identical
    * [Message.create_time][google.cloud.dialogflow.v2beta1.Message.create_time].
@@ -75,7 +75,7 @@ public interface BatchCreateMessagesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. A maximum of 1000 Messages can be created in a batch.
+   * Required. A maximum of 300 messages can be created in a batch.
    * [CreateMessageRequest.message.send_time][] is required. All created
    * messages will have identical
    * [Message.create_time][google.cloud.dialogflow.v2beta1.Message.create_time].
@@ -90,7 +90,7 @@ public interface BatchCreateMessagesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. A maximum of 1000 Messages can be created in a batch.
+   * Required. A maximum of 300 messages can be created in a batch.
    * [CreateMessageRequest.message.send_time][] is required. All created
    * messages will have identical
    * [Message.create_time][google.cloud.dialogflow.v2beta1.Message.create_time].
@@ -105,7 +105,7 @@ public interface BatchCreateMessagesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. A maximum of 1000 Messages can be created in a batch.
+   * Required. A maximum of 300 messages can be created in a batch.
    * [CreateMessageRequest.message.send_time][] is required. All created
    * messages will have identical
    * [Message.create_time][google.cloud.dialogflow.v2beta1.Message.create_time].
@@ -121,7 +121,7 @@ public interface BatchCreateMessagesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. A maximum of 1000 Messages can be created in a batch.
+   * Required. A maximum of 300 messages can be created in a batch.
    * [CreateMessageRequest.message.send_time][] is required. All created
    * messages will have identical
    * [Message.create_time][google.cloud.dialogflow.v2beta1.Message.create_time].

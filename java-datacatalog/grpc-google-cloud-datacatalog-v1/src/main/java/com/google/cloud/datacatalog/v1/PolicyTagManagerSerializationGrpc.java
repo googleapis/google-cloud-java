@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,7 +34,7 @@ public final class PolicyTagManagerSerializationGrpc {
 
   private PolicyTagManagerSerializationGrpc() {}
 
-  public static final String SERVICE_NAME =
+  public static final java.lang.String SERVICE_NAME =
       "google.cloud.datacatalog.v1.PolicyTagManagerSerialization";
 
   // Static method descriptors that strictly reflect the proto.
@@ -683,9 +683,9 @@ public final class PolicyTagManagerSerializationGrpc {
   private static final class PolicyTagManagerSerializationMethodDescriptorSupplier
       extends PolicyTagManagerSerializationBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    PolicyTagManagerSerializationMethodDescriptorSupplier(String methodName) {
+    PolicyTagManagerSerializationMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

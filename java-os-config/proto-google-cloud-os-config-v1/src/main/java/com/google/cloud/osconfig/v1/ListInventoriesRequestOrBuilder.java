@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,9 @@ public interface ListInventoriesRequestOrBuilder
    *
    * <pre>
    * Required. The parent resource name.
+   *
    * Format: `projects/{project}/locations/{location}/instances/-`
+   *
    * For `{project}`, either `project-number` or `project-id` can be provided.
    * </pre>
    *
@@ -44,7 +46,9 @@ public interface ListInventoriesRequestOrBuilder
    *
    * <pre>
    * Required. The parent resource name.
+   *
    * Format: `projects/{project}/locations/{location}/instances/-`
+   *
    * For `{project}`, either `project-number` or `project-id` can be provided.
    * </pre>
    *

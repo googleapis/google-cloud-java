@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,11 +46,6 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
     return new UpdateJobRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.scheduler.v1beta1.SchedulerProto
         .internal_static_google_cloud_scheduler_v1beta1_UpdateJobRequest_descriptor;
@@ -74,6 +69,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Required. The new job properties.
    * [name][google.cloud.scheduler.v1beta1.Job.name] must be specified.
+   *
    * Output only fields cannot be modified using UpdateJob.
    * Any value specified for an output only field will be ignored.
    * </pre>
@@ -93,6 +89,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Required. The new job properties.
    * [name][google.cloud.scheduler.v1beta1.Job.name] must be specified.
+   *
    * Output only fields cannot be modified using UpdateJob.
    * Any value specified for an output only field will be ignored.
    * </pre>
@@ -112,6 +109,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Required. The new job properties.
    * [name][google.cloud.scheduler.v1beta1.Job.name] must be specified.
+   *
    * Output only fields cannot be modified using UpdateJob.
    * Any value specified for an output only field will be ignored.
    * </pre>
@@ -563,6 +561,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Required. The new job properties.
      * [name][google.cloud.scheduler.v1beta1.Job.name] must be specified.
+     *
      * Output only fields cannot be modified using UpdateJob.
      * Any value specified for an output only field will be ignored.
      * </pre>
@@ -581,6 +580,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Required. The new job properties.
      * [name][google.cloud.scheduler.v1beta1.Job.name] must be specified.
+     *
      * Output only fields cannot be modified using UpdateJob.
      * Any value specified for an output only field will be ignored.
      * </pre>
@@ -603,6 +603,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Required. The new job properties.
      * [name][google.cloud.scheduler.v1beta1.Job.name] must be specified.
+     *
      * Output only fields cannot be modified using UpdateJob.
      * Any value specified for an output only field will be ignored.
      * </pre>
@@ -629,6 +630,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Required. The new job properties.
      * [name][google.cloud.scheduler.v1beta1.Job.name] must be specified.
+     *
      * Output only fields cannot be modified using UpdateJob.
      * Any value specified for an output only field will be ignored.
      * </pre>
@@ -652,6 +654,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Required. The new job properties.
      * [name][google.cloud.scheduler.v1beta1.Job.name] must be specified.
+     *
      * Output only fields cannot be modified using UpdateJob.
      * Any value specified for an output only field will be ignored.
      * </pre>
@@ -681,6 +684,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Required. The new job properties.
      * [name][google.cloud.scheduler.v1beta1.Job.name] must be specified.
+     *
      * Output only fields cannot be modified using UpdateJob.
      * Any value specified for an output only field will be ignored.
      * </pre>
@@ -704,6 +708,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Required. The new job properties.
      * [name][google.cloud.scheduler.v1beta1.Job.name] must be specified.
+     *
      * Output only fields cannot be modified using UpdateJob.
      * Any value specified for an output only field will be ignored.
      * </pre>
@@ -722,6 +727,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Required. The new job properties.
      * [name][google.cloud.scheduler.v1beta1.Job.name] must be specified.
+     *
      * Output only fields cannot be modified using UpdateJob.
      * Any value specified for an output only field will be ignored.
      * </pre>
@@ -742,6 +748,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Required. The new job properties.
      * [name][google.cloud.scheduler.v1beta1.Job.name] must be specified.
+     *
      * Output only fields cannot be modified using UpdateJob.
      * Any value specified for an output only field will be ignored.
      * </pre>

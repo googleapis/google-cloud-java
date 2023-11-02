@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,6 +39,7 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
 
   private SqlIpConfig() {
     privateNetwork_ = "";
+    allocatedIpRange_ = "";
     authorizedNetworks_ = java.util.Collections.emptyList();
   }
 
@@ -46,11 +47,6 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new SqlIpConfig();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -165,6 +161,67 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       privateNetwork_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int ALLOCATED_IP_RANGE_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object allocatedIpRange_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The name of the allocated IP address range for the private IP
+   * Cloud SQL instance. This name refers to an already allocated IP range
+   * address. If set, the instance IP address will be created in the allocated
+   * range. Note that this IP address range can't be modified after the instance
+   * is created. If you change the VPC when configuring connectivity settings
+   * for the migration job, this field is not relevant.
+   * </pre>
+   *
+   * <code>string allocated_ip_range = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The allocatedIpRange.
+   */
+  @java.lang.Override
+  public java.lang.String getAllocatedIpRange() {
+    java.lang.Object ref = allocatedIpRange_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      allocatedIpRange_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The name of the allocated IP address range for the private IP
+   * Cloud SQL instance. This name refers to an already allocated IP range
+   * address. If set, the instance IP address will be created in the allocated
+   * range. Note that this IP address range can't be modified after the instance
+   * is created. If you change the VPC when configuring connectivity settings
+   * for the migration job, this field is not relevant.
+   * </pre>
+   *
+   * <code>string allocated_ip_range = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for allocatedIpRange.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getAllocatedIpRangeBytes() {
+    java.lang.Object ref = allocatedIpRange_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      allocatedIpRange_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -330,6 +387,9 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < authorizedNetworks_.size(); i++) {
       output.writeMessage(4, authorizedNetworks_.get(i));
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(allocatedIpRange_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, allocatedIpRange_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -352,6 +412,9 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(4, authorizedNetworks_.get(i));
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(allocatedIpRange_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, allocatedIpRange_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -372,6 +435,7 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
       if (!getEnableIpv4().equals(other.getEnableIpv4())) return false;
     }
     if (!getPrivateNetwork().equals(other.getPrivateNetwork())) return false;
+    if (!getAllocatedIpRange().equals(other.getAllocatedIpRange())) return false;
     if (hasRequireSsl() != other.hasRequireSsl()) return false;
     if (hasRequireSsl()) {
       if (!getRequireSsl().equals(other.getRequireSsl())) return false;
@@ -394,6 +458,8 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + PRIVATE_NETWORK_FIELD_NUMBER;
     hash = (53 * hash) + getPrivateNetwork().hashCode();
+    hash = (37 * hash) + ALLOCATED_IP_RANGE_FIELD_NUMBER;
+    hash = (53 * hash) + getAllocatedIpRange().hashCode();
     if (hasRequireSsl()) {
       hash = (37 * hash) + REQUIRE_SSL_FIELD_NUMBER;
       hash = (53 * hash) + getRequireSsl().hashCode();
@@ -547,6 +613,7 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
         enableIpv4Builder_ = null;
       }
       privateNetwork_ = "";
+      allocatedIpRange_ = "";
       requireSsl_ = null;
       if (requireSslBuilder_ != null) {
         requireSslBuilder_.dispose();
@@ -558,7 +625,7 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
         authorizedNetworks_ = null;
         authorizedNetworksBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       return this;
     }
 
@@ -596,9 +663,9 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
 
     private void buildPartialRepeatedFields(com.google.cloud.clouddms.v1.SqlIpConfig result) {
       if (authorizedNetworksBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00000010) != 0)) {
           authorizedNetworks_ = java.util.Collections.unmodifiableList(authorizedNetworks_);
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000010);
         }
         result.authorizedNetworks_ = authorizedNetworks_;
       } else {
@@ -615,6 +682,9 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
         result.privateNetwork_ = privateNetwork_;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.allocatedIpRange_ = allocatedIpRange_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.requireSsl_ = requireSslBuilder_ == null ? requireSsl_ : requireSslBuilder_.build();
       }
     }
@@ -672,6 +742,11 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000002;
         onChanged();
       }
+      if (!other.getAllocatedIpRange().isEmpty()) {
+        allocatedIpRange_ = other.allocatedIpRange_;
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
       if (other.hasRequireSsl()) {
         mergeRequireSsl(other.getRequireSsl());
       }
@@ -679,7 +754,7 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
         if (!other.authorizedNetworks_.isEmpty()) {
           if (authorizedNetworks_.isEmpty()) {
             authorizedNetworks_ = other.authorizedNetworks_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             ensureAuthorizedNetworksIsMutable();
             authorizedNetworks_.addAll(other.authorizedNetworks_);
@@ -692,7 +767,7 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
             authorizedNetworksBuilder_.dispose();
             authorizedNetworksBuilder_ = null;
             authorizedNetworks_ = other.authorizedNetworks_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000010);
             authorizedNetworksBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getAuthorizedNetworksFieldBuilder()
@@ -743,7 +818,7 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
             case 26:
               {
                 input.readMessage(getRequireSslFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 26
             case 34:
@@ -759,6 +834,12 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
                 }
                 break;
               } // case 34
+            case 42:
+              {
+                allocatedIpRange_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1082,6 +1163,137 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private java.lang.Object allocatedIpRange_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the allocated IP address range for the private IP
+     * Cloud SQL instance. This name refers to an already allocated IP range
+     * address. If set, the instance IP address will be created in the allocated
+     * range. Note that this IP address range can't be modified after the instance
+     * is created. If you change the VPC when configuring connectivity settings
+     * for the migration job, this field is not relevant.
+     * </pre>
+     *
+     * <code>string allocated_ip_range = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The allocatedIpRange.
+     */
+    public java.lang.String getAllocatedIpRange() {
+      java.lang.Object ref = allocatedIpRange_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        allocatedIpRange_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the allocated IP address range for the private IP
+     * Cloud SQL instance. This name refers to an already allocated IP range
+     * address. If set, the instance IP address will be created in the allocated
+     * range. Note that this IP address range can't be modified after the instance
+     * is created. If you change the VPC when configuring connectivity settings
+     * for the migration job, this field is not relevant.
+     * </pre>
+     *
+     * <code>string allocated_ip_range = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for allocatedIpRange.
+     */
+    public com.google.protobuf.ByteString getAllocatedIpRangeBytes() {
+      java.lang.Object ref = allocatedIpRange_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        allocatedIpRange_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the allocated IP address range for the private IP
+     * Cloud SQL instance. This name refers to an already allocated IP range
+     * address. If set, the instance IP address will be created in the allocated
+     * range. Note that this IP address range can't be modified after the instance
+     * is created. If you change the VPC when configuring connectivity settings
+     * for the migration job, this field is not relevant.
+     * </pre>
+     *
+     * <code>string allocated_ip_range = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The allocatedIpRange to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAllocatedIpRange(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      allocatedIpRange_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the allocated IP address range for the private IP
+     * Cloud SQL instance. This name refers to an already allocated IP range
+     * address. If set, the instance IP address will be created in the allocated
+     * range. Note that this IP address range can't be modified after the instance
+     * is created. If you change the VPC when configuring connectivity settings
+     * for the migration job, this field is not relevant.
+     * </pre>
+     *
+     * <code>string allocated_ip_range = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAllocatedIpRange() {
+      allocatedIpRange_ = getDefaultInstance().getAllocatedIpRange();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the allocated IP address range for the private IP
+     * Cloud SQL instance. This name refers to an already allocated IP range
+     * address. If set, the instance IP address will be created in the allocated
+     * range. Note that this IP address range can't be modified after the instance
+     * is created. If you change the VPC when configuring connectivity settings
+     * for the migration job, this field is not relevant.
+     * </pre>
+     *
+     * <code>string allocated_ip_range = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for allocatedIpRange to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAllocatedIpRangeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      allocatedIpRange_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
     private com.google.protobuf.BoolValue requireSsl_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.BoolValue,
@@ -1100,7 +1312,7 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the requireSsl field is set.
      */
     public boolean hasRequireSsl() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1140,7 +1352,7 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
       } else {
         requireSslBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1159,7 +1371,7 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
       } else {
         requireSslBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1174,7 +1386,7 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeRequireSsl(com.google.protobuf.BoolValue value) {
       if (requireSslBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)
+        if (((bitField0_ & 0x00000008) != 0)
             && requireSsl_ != null
             && requireSsl_ != com.google.protobuf.BoolValue.getDefaultInstance()) {
           getRequireSslBuilder().mergeFrom(value);
@@ -1184,7 +1396,7 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
       } else {
         requireSslBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1198,7 +1410,7 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.BoolValue require_ssl = 3;</code>
      */
     public Builder clearRequireSsl() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       requireSsl_ = null;
       if (requireSslBuilder_ != null) {
         requireSslBuilder_.dispose();
@@ -1217,7 +1429,7 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.BoolValue require_ssl = 3;</code>
      */
     public com.google.protobuf.BoolValue.Builder getRequireSslBuilder() {
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return getRequireSslFieldBuilder().getBuilder();
     }
@@ -1269,10 +1481,10 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureAuthorizedNetworksIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         authorizedNetworks_ =
             new java.util.ArrayList<com.google.cloud.clouddms.v1.SqlAclEntry>(authorizedNetworks_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
       }
     }
 
@@ -1523,7 +1735,7 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder clearAuthorizedNetworks() {
       if (authorizedNetworksBuilder_ == null) {
         authorizedNetworks_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
       } else {
         authorizedNetworksBuilder_.clear();
@@ -1670,7 +1882,7 @@ public final class SqlIpConfig extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.clouddms.v1.SqlAclEntry.Builder,
                 com.google.cloud.clouddms.v1.SqlAclEntryOrBuilder>(
                 authorizedNetworks_,
-                ((bitField0_ & 0x00000008) != 0),
+                ((bitField0_ & 0x00000010) != 0),
                 getParentForChildren(),
                 isClean());
         authorizedNetworks_ = null;

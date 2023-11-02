@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,11 +43,6 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new FraudPreventionAssessment();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -111,11 +106,6 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new StolenInstrumentVerdict();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -727,11 +717,6 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
       return new CardTestingVerdict();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.recaptchaenterprise.v1beta1.RecaptchaEnterpriseProto
           .internal_static_google_cloud_recaptchaenterprise_v1beta1_FraudPreventionAssessment_CardTestingVerdict_descriptor;
@@ -1282,6 +1267,610 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
     }
   }
 
+  public interface BehavioralTrustVerdictOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.BehavioralTrustVerdict)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Probability (0-1) of this transaction attempt being executed in a
+     * behaviorally trustworthy way.
+     * </pre>
+     *
+     * <code>float trust = 1;</code>
+     *
+     * @return The trust.
+     */
+    float getTrust();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Information about behavioral trust of the transaction.
+   * </pre>
+   *
+   * Protobuf type {@code
+   * google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.BehavioralTrustVerdict}
+   */
+  public static final class BehavioralTrustVerdict extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.BehavioralTrustVerdict)
+      BehavioralTrustVerdictOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use BehavioralTrustVerdict.newBuilder() to construct.
+    private BehavioralTrustVerdict(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private BehavioralTrustVerdict() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new BehavioralTrustVerdict();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.recaptchaenterprise.v1beta1.RecaptchaEnterpriseProto
+          .internal_static_google_cloud_recaptchaenterprise_v1beta1_FraudPreventionAssessment_BehavioralTrustVerdict_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.recaptchaenterprise.v1beta1.RecaptchaEnterpriseProto
+          .internal_static_google_cloud_recaptchaenterprise_v1beta1_FraudPreventionAssessment_BehavioralTrustVerdict_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment
+                  .BehavioralTrustVerdict.class,
+              com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment
+                  .BehavioralTrustVerdict.Builder.class);
+    }
+
+    public static final int TRUST_FIELD_NUMBER = 1;
+    private float trust_ = 0F;
+    /**
+     *
+     *
+     * <pre>
+     * Probability (0-1) of this transaction attempt being executed in a
+     * behaviorally trustworthy way.
+     * </pre>
+     *
+     * <code>float trust = 1;</code>
+     *
+     * @return The trust.
+     */
+    @java.lang.Override
+    public float getTrust() {
+      return trust_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (java.lang.Float.floatToRawIntBits(trust_) != 0) {
+        output.writeFloat(1, trust_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (java.lang.Float.floatToRawIntBits(trust_) != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeFloatSize(1, trust_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof
+          com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment
+              .BehavioralTrustVerdict)) {
+        return super.equals(obj);
+      }
+      com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment.BehavioralTrustVerdict
+          other =
+              (com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment
+                      .BehavioralTrustVerdict)
+                  obj;
+
+      if (java.lang.Float.floatToIntBits(getTrust())
+          != java.lang.Float.floatToIntBits(other.getTrust())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + TRUST_FIELD_NUMBER;
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(getTrust());
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment
+            .BehavioralTrustVerdict
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment
+            .BehavioralTrustVerdict
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment
+            .BehavioralTrustVerdict
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment
+            .BehavioralTrustVerdict
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment
+            .BehavioralTrustVerdict
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment
+            .BehavioralTrustVerdict
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment
+            .BehavioralTrustVerdict
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment
+            .BehavioralTrustVerdict
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment
+            .BehavioralTrustVerdict
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment
+            .BehavioralTrustVerdict
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment
+            .BehavioralTrustVerdict
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment
+            .BehavioralTrustVerdict
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment.BehavioralTrustVerdict
+            prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information about behavioral trust of the transaction.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.BehavioralTrustVerdict}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.BehavioralTrustVerdict)
+        com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment
+            .BehavioralTrustVerdictOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.recaptchaenterprise.v1beta1.RecaptchaEnterpriseProto
+            .internal_static_google_cloud_recaptchaenterprise_v1beta1_FraudPreventionAssessment_BehavioralTrustVerdict_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.recaptchaenterprise.v1beta1.RecaptchaEnterpriseProto
+            .internal_static_google_cloud_recaptchaenterprise_v1beta1_FraudPreventionAssessment_BehavioralTrustVerdict_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment
+                    .BehavioralTrustVerdict.class,
+                com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment
+                    .BehavioralTrustVerdict.Builder.class);
+      }
+
+      // Construct using
+      // com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment.BehavioralTrustVerdict.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        trust_ = 0F;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.recaptchaenterprise.v1beta1.RecaptchaEnterpriseProto
+            .internal_static_google_cloud_recaptchaenterprise_v1beta1_FraudPreventionAssessment_BehavioralTrustVerdict_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment.BehavioralTrustVerdict
+          getDefaultInstanceForType() {
+        return com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment
+            .BehavioralTrustVerdict.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment.BehavioralTrustVerdict
+          build() {
+        com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment.BehavioralTrustVerdict
+            result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment.BehavioralTrustVerdict
+          buildPartial() {
+        com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment.BehavioralTrustVerdict
+            result =
+                new com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment
+                    .BehavioralTrustVerdict(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment.BehavioralTrustVerdict
+              result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.trust_ = trust_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof
+            com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment
+                .BehavioralTrustVerdict) {
+          return mergeFrom(
+              (com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment
+                      .BehavioralTrustVerdict)
+                  other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment.BehavioralTrustVerdict
+              other) {
+        if (other
+            == com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment
+                .BehavioralTrustVerdict.getDefaultInstance()) return this;
+        if (other.getTrust() != 0F) {
+          setTrust(other.getTrust());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 13:
+                {
+                  trust_ = input.readFloat();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 13
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private float trust_;
+      /**
+       *
+       *
+       * <pre>
+       * Probability (0-1) of this transaction attempt being executed in a
+       * behaviorally trustworthy way.
+       * </pre>
+       *
+       * <code>float trust = 1;</code>
+       *
+       * @return The trust.
+       */
+      @java.lang.Override
+      public float getTrust() {
+        return trust_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Probability (0-1) of this transaction attempt being executed in a
+       * behaviorally trustworthy way.
+       * </pre>
+       *
+       * <code>float trust = 1;</code>
+       *
+       * @param value The trust to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTrust(float value) {
+
+        trust_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Probability (0-1) of this transaction attempt being executed in a
+       * behaviorally trustworthy way.
+       * </pre>
+       *
+       * <code>float trust = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearTrust() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        trust_ = 0F;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.BehavioralTrustVerdict)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.BehavioralTrustVerdict)
+    private static final com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment
+            .BehavioralTrustVerdict
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment
+              .BehavioralTrustVerdict();
+    }
+
+    public static com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment
+            .BehavioralTrustVerdict
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<BehavioralTrustVerdict> PARSER =
+        new com.google.protobuf.AbstractParser<BehavioralTrustVerdict>() {
+          @java.lang.Override
+          public BehavioralTrustVerdict parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<BehavioralTrustVerdict> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<BehavioralTrustVerdict> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment.BehavioralTrustVerdict
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public static final int TRANSACTION_RISK_FIELD_NUMBER = 1;
   private float transactionRisk_ = 0F;
   /**
@@ -1428,6 +2017,68 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
         : cardTestingVerdict_;
   }
 
+  public static final int BEHAVIORAL_TRUST_VERDICT_FIELD_NUMBER = 4;
+  private com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment.BehavioralTrustVerdict
+      behavioralTrustVerdict_;
+  /**
+   *
+   *
+   * <pre>
+   * Assessment of this transaction for behavioral trust.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.BehavioralTrustVerdict behavioral_trust_verdict = 4;
+   * </code>
+   *
+   * @return Whether the behavioralTrustVerdict field is set.
+   */
+  @java.lang.Override
+  public boolean hasBehavioralTrustVerdict() {
+    return behavioralTrustVerdict_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Assessment of this transaction for behavioral trust.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.BehavioralTrustVerdict behavioral_trust_verdict = 4;
+   * </code>
+   *
+   * @return The behavioralTrustVerdict.
+   */
+  @java.lang.Override
+  public com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment.BehavioralTrustVerdict
+      getBehavioralTrustVerdict() {
+    return behavioralTrustVerdict_ == null
+        ? com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment.BehavioralTrustVerdict
+            .getDefaultInstance()
+        : behavioralTrustVerdict_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Assessment of this transaction for behavioral trust.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.BehavioralTrustVerdict behavioral_trust_verdict = 4;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment
+          .BehavioralTrustVerdictOrBuilder
+      getBehavioralTrustVerdictOrBuilder() {
+    return behavioralTrustVerdict_ == null
+        ? com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment.BehavioralTrustVerdict
+            .getDefaultInstance()
+        : behavioralTrustVerdict_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1451,6 +2102,9 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
     if (cardTestingVerdict_ != null) {
       output.writeMessage(3, getCardTestingVerdict());
     }
+    if (behavioralTrustVerdict_ != null) {
+      output.writeMessage(4, getBehavioralTrustVerdict());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1469,6 +2123,10 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
     }
     if (cardTestingVerdict_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getCardTestingVerdict());
+    }
+    if (behavioralTrustVerdict_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(4, getBehavioralTrustVerdict());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1496,6 +2154,10 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
     if (hasCardTestingVerdict()) {
       if (!getCardTestingVerdict().equals(other.getCardTestingVerdict())) return false;
     }
+    if (hasBehavioralTrustVerdict() != other.hasBehavioralTrustVerdict()) return false;
+    if (hasBehavioralTrustVerdict()) {
+      if (!getBehavioralTrustVerdict().equals(other.getBehavioralTrustVerdict())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1516,6 +2178,10 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
     if (hasCardTestingVerdict()) {
       hash = (37 * hash) + CARD_TESTING_VERDICT_FIELD_NUMBER;
       hash = (53 * hash) + getCardTestingVerdict().hashCode();
+    }
+    if (hasBehavioralTrustVerdict()) {
+      hash = (37 * hash) + BEHAVIORAL_TRUST_VERDICT_FIELD_NUMBER;
+      hash = (53 * hash) + getBehavioralTrustVerdict().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1668,6 +2334,11 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
         cardTestingVerdictBuilder_.dispose();
         cardTestingVerdictBuilder_ = null;
       }
+      behavioralTrustVerdict_ = null;
+      if (behavioralTrustVerdictBuilder_ != null) {
+        behavioralTrustVerdictBuilder_.dispose();
+        behavioralTrustVerdictBuilder_ = null;
+      }
       return this;
     }
 
@@ -1720,6 +2391,12 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
             cardTestingVerdictBuilder_ == null
                 ? cardTestingVerdict_
                 : cardTestingVerdictBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.behavioralTrustVerdict_ =
+            behavioralTrustVerdictBuilder_ == null
+                ? behavioralTrustVerdict_
+                : behavioralTrustVerdictBuilder_.build();
       }
     }
 
@@ -1780,6 +2457,9 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
       if (other.hasCardTestingVerdict()) {
         mergeCardTestingVerdict(other.getCardTestingVerdict());
       }
+      if (other.hasBehavioralTrustVerdict()) {
+        mergeBehavioralTrustVerdict(other.getBehavioralTrustVerdict());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1826,6 +2506,13 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
+            case 34:
+              {
+                input.readMessage(
+                    getBehavioralTrustVerdictFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2356,6 +3043,231 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
         cardTestingVerdict_ = null;
       }
       return cardTestingVerdictBuilder_;
+    }
+
+    private com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment.BehavioralTrustVerdict
+        behavioralTrustVerdict_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment.BehavioralTrustVerdict,
+            com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment.BehavioralTrustVerdict
+                .Builder,
+            com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment
+                .BehavioralTrustVerdictOrBuilder>
+        behavioralTrustVerdictBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Assessment of this transaction for behavioral trust.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.BehavioralTrustVerdict behavioral_trust_verdict = 4;
+     * </code>
+     *
+     * @return Whether the behavioralTrustVerdict field is set.
+     */
+    public boolean hasBehavioralTrustVerdict() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Assessment of this transaction for behavioral trust.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.BehavioralTrustVerdict behavioral_trust_verdict = 4;
+     * </code>
+     *
+     * @return The behavioralTrustVerdict.
+     */
+    public com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment.BehavioralTrustVerdict
+        getBehavioralTrustVerdict() {
+      if (behavioralTrustVerdictBuilder_ == null) {
+        return behavioralTrustVerdict_ == null
+            ? com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment
+                .BehavioralTrustVerdict.getDefaultInstance()
+            : behavioralTrustVerdict_;
+      } else {
+        return behavioralTrustVerdictBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Assessment of this transaction for behavioral trust.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.BehavioralTrustVerdict behavioral_trust_verdict = 4;
+     * </code>
+     */
+    public Builder setBehavioralTrustVerdict(
+        com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment.BehavioralTrustVerdict
+            value) {
+      if (behavioralTrustVerdictBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        behavioralTrustVerdict_ = value;
+      } else {
+        behavioralTrustVerdictBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Assessment of this transaction for behavioral trust.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.BehavioralTrustVerdict behavioral_trust_verdict = 4;
+     * </code>
+     */
+    public Builder setBehavioralTrustVerdict(
+        com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment.BehavioralTrustVerdict
+                .Builder
+            builderForValue) {
+      if (behavioralTrustVerdictBuilder_ == null) {
+        behavioralTrustVerdict_ = builderForValue.build();
+      } else {
+        behavioralTrustVerdictBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Assessment of this transaction for behavioral trust.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.BehavioralTrustVerdict behavioral_trust_verdict = 4;
+     * </code>
+     */
+    public Builder mergeBehavioralTrustVerdict(
+        com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment.BehavioralTrustVerdict
+            value) {
+      if (behavioralTrustVerdictBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)
+            && behavioralTrustVerdict_ != null
+            && behavioralTrustVerdict_
+                != com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment
+                    .BehavioralTrustVerdict.getDefaultInstance()) {
+          getBehavioralTrustVerdictBuilder().mergeFrom(value);
+        } else {
+          behavioralTrustVerdict_ = value;
+        }
+      } else {
+        behavioralTrustVerdictBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Assessment of this transaction for behavioral trust.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.BehavioralTrustVerdict behavioral_trust_verdict = 4;
+     * </code>
+     */
+    public Builder clearBehavioralTrustVerdict() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      behavioralTrustVerdict_ = null;
+      if (behavioralTrustVerdictBuilder_ != null) {
+        behavioralTrustVerdictBuilder_.dispose();
+        behavioralTrustVerdictBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Assessment of this transaction for behavioral trust.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.BehavioralTrustVerdict behavioral_trust_verdict = 4;
+     * </code>
+     */
+    public com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment.BehavioralTrustVerdict
+            .Builder
+        getBehavioralTrustVerdictBuilder() {
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return getBehavioralTrustVerdictFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Assessment of this transaction for behavioral trust.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.BehavioralTrustVerdict behavioral_trust_verdict = 4;
+     * </code>
+     */
+    public com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment
+            .BehavioralTrustVerdictOrBuilder
+        getBehavioralTrustVerdictOrBuilder() {
+      if (behavioralTrustVerdictBuilder_ != null) {
+        return behavioralTrustVerdictBuilder_.getMessageOrBuilder();
+      } else {
+        return behavioralTrustVerdict_ == null
+            ? com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment
+                .BehavioralTrustVerdict.getDefaultInstance()
+            : behavioralTrustVerdict_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Assessment of this transaction for behavioral trust.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.BehavioralTrustVerdict behavioral_trust_verdict = 4;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment.BehavioralTrustVerdict,
+            com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment.BehavioralTrustVerdict
+                .Builder,
+            com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment
+                .BehavioralTrustVerdictOrBuilder>
+        getBehavioralTrustVerdictFieldBuilder() {
+      if (behavioralTrustVerdictBuilder_ == null) {
+        behavioralTrustVerdictBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment
+                    .BehavioralTrustVerdict,
+                com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment
+                    .BehavioralTrustVerdict.Builder,
+                com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment
+                    .BehavioralTrustVerdictOrBuilder>(
+                getBehavioralTrustVerdict(), getParentForChildren(), isClean());
+        behavioralTrustVerdict_ = null;
+      }
+      return behavioralTrustVerdictBuilder_;
     }
 
     @java.lang.Override

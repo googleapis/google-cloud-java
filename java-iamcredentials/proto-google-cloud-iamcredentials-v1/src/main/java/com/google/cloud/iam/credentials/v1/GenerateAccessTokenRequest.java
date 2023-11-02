@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,19 +31,14 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
 
   private GenerateAccessTokenRequest() {
     name_ = "";
-    delegates_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    scope_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    delegates_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    scope_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new GenerateAccessTokenRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -125,7 +120,8 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
   public static final int DELEGATES_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList delegates_;
+  private com.google.protobuf.LazyStringArrayList delegates_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -136,6 +132,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
    * chain must be granted the `roles/iam.serviceAccountTokenCreator` role
    * on the service account that is specified in the `name` field of the
    * request.
+   *
    * The delegates must have the following format:
    * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard
    * character is required; replacing it with a project ID is invalid.
@@ -158,6 +155,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
    * chain must be granted the `roles/iam.serviceAccountTokenCreator` role
    * on the service account that is specified in the `name` field of the
    * request.
+   *
    * The delegates must have the following format:
    * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard
    * character is required; replacing it with a project ID is invalid.
@@ -180,6 +178,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
    * chain must be granted the `roles/iam.serviceAccountTokenCreator` role
    * on the service account that is specified in the `name` field of the
    * request.
+   *
    * The delegates must have the following format:
    * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard
    * character is required; replacing it with a project ID is invalid.
@@ -203,6 +202,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
    * chain must be granted the `roles/iam.serviceAccountTokenCreator` role
    * on the service account that is specified in the `name` field of the
    * request.
+   *
    * The delegates must have the following format:
    * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard
    * character is required; replacing it with a project ID is invalid.
@@ -220,7 +220,8 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
   public static final int SCOPE_FIELD_NUMBER = 4;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList scope_;
+  private com.google.protobuf.LazyStringArrayList scope_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -585,10 +586,8 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
       super.clear();
       bitField0_ = 0;
       name_ = "";
-      delegates_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
-      scope_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      delegates_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      scope_ = com.google.protobuf.LazyStringArrayList.emptyList();
       lifetime_ = null;
       if (lifetimeBuilder_ != null) {
         lifetimeBuilder_.dispose();
@@ -622,7 +621,6 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
     public com.google.cloud.iam.credentials.v1.GenerateAccessTokenRequest buildPartial() {
       com.google.cloud.iam.credentials.v1.GenerateAccessTokenRequest result =
           new com.google.cloud.iam.credentials.v1.GenerateAccessTokenRequest(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -630,25 +628,19 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
       return result;
     }
 
-    private void buildPartialRepeatedFields(
-        com.google.cloud.iam.credentials.v1.GenerateAccessTokenRequest result) {
-      if (((bitField0_ & 0x00000002) != 0)) {
-        delegates_ = delegates_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.delegates_ = delegates_;
-      if (((bitField0_ & 0x00000004) != 0)) {
-        scope_ = scope_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.scope_ = scope_;
-    }
-
     private void buildPartial0(
         com.google.cloud.iam.credentials.v1.GenerateAccessTokenRequest result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        delegates_.makeImmutable();
+        result.delegates_ = delegates_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        scope_.makeImmutable();
+        result.scope_ = scope_;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.lifetime_ = lifetimeBuilder_ == null ? lifetime_ : lifetimeBuilder_.build();
@@ -710,7 +702,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
       if (!other.delegates_.isEmpty()) {
         if (delegates_.isEmpty()) {
           delegates_ = other.delegates_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureDelegatesIsMutable();
           delegates_.addAll(other.delegates_);
@@ -720,7 +712,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
       if (!other.scope_.isEmpty()) {
         if (scope_.isEmpty()) {
           scope_ = other.scope_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ |= 0x00000004;
         } else {
           ensureScopeIsMutable();
           scope_.addAll(other.scope_);
@@ -932,14 +924,14 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
       return this;
     }
 
-    private com.google.protobuf.LazyStringList delegates_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList delegates_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureDelegatesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!delegates_.isModifiable()) {
         delegates_ = new com.google.protobuf.LazyStringArrayList(delegates_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -951,6 +943,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
      * chain must be granted the `roles/iam.serviceAccountTokenCreator` role
      * on the service account that is specified in the `name` field of the
      * request.
+     *
      * The delegates must have the following format:
      * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard
      * character is required; replacing it with a project ID is invalid.
@@ -961,7 +954,8 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
      * @return A list containing the delegates.
      */
     public com.google.protobuf.ProtocolStringList getDelegatesList() {
-      return delegates_.getUnmodifiableView();
+      delegates_.makeImmutable();
+      return delegates_;
     }
     /**
      *
@@ -973,6 +967,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
      * chain must be granted the `roles/iam.serviceAccountTokenCreator` role
      * on the service account that is specified in the `name` field of the
      * request.
+     *
      * The delegates must have the following format:
      * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard
      * character is required; replacing it with a project ID is invalid.
@@ -995,6 +990,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
      * chain must be granted the `roles/iam.serviceAccountTokenCreator` role
      * on the service account that is specified in the `name` field of the
      * request.
+     *
      * The delegates must have the following format:
      * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard
      * character is required; replacing it with a project ID is invalid.
@@ -1018,6 +1014,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
      * chain must be granted the `roles/iam.serviceAccountTokenCreator` role
      * on the service account that is specified in the `name` field of the
      * request.
+     *
      * The delegates must have the following format:
      * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard
      * character is required; replacing it with a project ID is invalid.
@@ -1041,6 +1038,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
      * chain must be granted the `roles/iam.serviceAccountTokenCreator` role
      * on the service account that is specified in the `name` field of the
      * request.
+     *
      * The delegates must have the following format:
      * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard
      * character is required; replacing it with a project ID is invalid.
@@ -1058,6 +1056,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
       }
       ensureDelegatesIsMutable();
       delegates_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1071,6 +1070,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
      * chain must be granted the `roles/iam.serviceAccountTokenCreator` role
      * on the service account that is specified in the `name` field of the
      * request.
+     *
      * The delegates must have the following format:
      * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard
      * character is required; replacing it with a project ID is invalid.
@@ -1087,6 +1087,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
       }
       ensureDelegatesIsMutable();
       delegates_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1100,6 +1101,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
      * chain must be granted the `roles/iam.serviceAccountTokenCreator` role
      * on the service account that is specified in the `name` field of the
      * request.
+     *
      * The delegates must have the following format:
      * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard
      * character is required; replacing it with a project ID is invalid.
@@ -1113,6 +1115,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
     public Builder addAllDelegates(java.lang.Iterable<java.lang.String> values) {
       ensureDelegatesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, delegates_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1126,6 +1129,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
      * chain must be granted the `roles/iam.serviceAccountTokenCreator` role
      * on the service account that is specified in the `name` field of the
      * request.
+     *
      * The delegates must have the following format:
      * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard
      * character is required; replacing it with a project ID is invalid.
@@ -1136,8 +1140,9 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearDelegates() {
-      delegates_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      delegates_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -1151,6 +1156,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
      * chain must be granted the `roles/iam.serviceAccountTokenCreator` role
      * on the service account that is specified in the `name` field of the
      * request.
+     *
      * The delegates must have the following format:
      * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard
      * character is required; replacing it with a project ID is invalid.
@@ -1168,18 +1174,19 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
       checkByteStringIsUtf8(value);
       ensureDelegatesIsMutable();
       delegates_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList scope_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList scope_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureScopeIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!scope_.isModifiable()) {
         scope_ = new com.google.protobuf.LazyStringArrayList(scope_);
-        bitField0_ |= 0x00000004;
       }
+      bitField0_ |= 0x00000004;
     }
     /**
      *
@@ -1196,7 +1203,8 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
      * @return A list containing the scope.
      */
     public com.google.protobuf.ProtocolStringList getScopeList() {
-      return scope_.getUnmodifiableView();
+      scope_.makeImmutable();
+      return scope_;
     }
     /**
      *
@@ -1273,6 +1281,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
       }
       ensureScopeIsMutable();
       scope_.set(index, value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1297,6 +1306,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
       }
       ensureScopeIsMutable();
       scope_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1318,6 +1328,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
     public Builder addAllScope(java.lang.Iterable<java.lang.String> values) {
       ensureScopeIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, scope_);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1336,8 +1347,9 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearScope() {
-      scope_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      scope_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000004);
+      ;
       onChanged();
       return this;
     }
@@ -1363,6 +1375,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
       checkByteStringIsUtf8(value);
       ensureScopeIsMutable();
       scope_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

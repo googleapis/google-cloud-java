@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class ManagedCluster extends com.google.protobuf.GeneratedMessageV3
     return new ManagedCluster();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dataproc.v1.WorkflowTemplatesProto
         .internal_static_google_cloud_dataproc_v1_ManagedCluster_descriptor;
@@ -88,6 +83,7 @@ public final class ManagedCluster extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required. The cluster name prefix. A unique cluster name will be formed by
    * appending a random suffix.
+   *
    * The name must contain only lower-case letters (a-z), numbers (0-9),
    * and hyphens (-). Must begin with a letter. Cannot begin or end with
    * hyphen. Must consist of between 2 and 35 characters.
@@ -115,6 +111,7 @@ public final class ManagedCluster extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required. The cluster name prefix. A unique cluster name will be formed by
    * appending a random suffix.
+   *
    * The name must contain only lower-case letters (a-z), numbers (0-9),
    * and hyphens (-). Must begin with a letter. Cannot begin or end with
    * hyphen. Must consist of between 2 and 35 characters.
@@ -224,11 +221,14 @@ public final class ManagedCluster extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. The labels to associate with this cluster.
+   *
    * Label keys must be between 1 and 63 characters long, and must conform to
    * the following PCRE regular expression:
    * [&#92;p{Ll}&#92;p{Lo}][&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,62}
+   *
    * Label values must be between 1 and 63 characters long, and must conform to
    * the following PCRE regular expression: [&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,63}
+   *
    * No more than 32 labels can be associated with a given cluster.
    * </pre>
    *
@@ -252,11 +252,14 @@ public final class ManagedCluster extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. The labels to associate with this cluster.
+   *
    * Label keys must be between 1 and 63 characters long, and must conform to
    * the following PCRE regular expression:
    * [&#92;p{Ll}&#92;p{Lo}][&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,62}
+   *
    * Label values must be between 1 and 63 characters long, and must conform to
    * the following PCRE regular expression: [&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,63}
+   *
    * No more than 32 labels can be associated with a given cluster.
    * </pre>
    *
@@ -271,11 +274,14 @@ public final class ManagedCluster extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. The labels to associate with this cluster.
+   *
    * Label keys must be between 1 and 63 characters long, and must conform to
    * the following PCRE regular expression:
    * [&#92;p{Ll}&#92;p{Lo}][&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,62}
+   *
    * Label values must be between 1 and 63 characters long, and must conform to
    * the following PCRE regular expression: [&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,63}
+   *
    * No more than 32 labels can be associated with a given cluster.
    * </pre>
    *
@@ -297,11 +303,14 @@ public final class ManagedCluster extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. The labels to associate with this cluster.
+   *
    * Label keys must be between 1 and 63 characters long, and must conform to
    * the following PCRE regular expression:
    * [&#92;p{Ll}&#92;p{Lo}][&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,62}
+   *
    * Label values must be between 1 and 63 characters long, and must conform to
    * the following PCRE regular expression: [&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,63}
+   *
    * No more than 32 labels can be associated with a given cluster.
    * </pre>
    *
@@ -754,6 +763,7 @@ public final class ManagedCluster extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The cluster name prefix. A unique cluster name will be formed by
      * appending a random suffix.
+     *
      * The name must contain only lower-case letters (a-z), numbers (0-9),
      * and hyphens (-). Must begin with a letter. Cannot begin or end with
      * hyphen. Must consist of between 2 and 35 characters.
@@ -780,6 +790,7 @@ public final class ManagedCluster extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The cluster name prefix. A unique cluster name will be formed by
      * appending a random suffix.
+     *
      * The name must contain only lower-case letters (a-z), numbers (0-9),
      * and hyphens (-). Must begin with a letter. Cannot begin or end with
      * hyphen. Must consist of between 2 and 35 characters.
@@ -806,6 +817,7 @@ public final class ManagedCluster extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The cluster name prefix. A unique cluster name will be formed by
      * appending a random suffix.
+     *
      * The name must contain only lower-case letters (a-z), numbers (0-9),
      * and hyphens (-). Must begin with a letter. Cannot begin or end with
      * hyphen. Must consist of between 2 and 35 characters.
@@ -831,6 +843,7 @@ public final class ManagedCluster extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The cluster name prefix. A unique cluster name will be formed by
      * appending a random suffix.
+     *
      * The name must contain only lower-case letters (a-z), numbers (0-9),
      * and hyphens (-). Must begin with a letter. Cannot begin or end with
      * hyphen. Must consist of between 2 and 35 characters.
@@ -852,6 +865,7 @@ public final class ManagedCluster extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The cluster name prefix. A unique cluster name will be formed by
      * appending a random suffix.
+     *
      * The name must contain only lower-case letters (a-z), numbers (0-9),
      * and hyphens (-). Must begin with a letter. Cannot begin or end with
      * hyphen. Must consist of between 2 and 35 characters.
@@ -1104,11 +1118,14 @@ public final class ManagedCluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The labels to associate with this cluster.
+     *
      * Label keys must be between 1 and 63 characters long, and must conform to
      * the following PCRE regular expression:
      * [&#92;p{Ll}&#92;p{Lo}][&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,62}
+     *
      * Label values must be between 1 and 63 characters long, and must conform to
      * the following PCRE regular expression: [&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,63}
+     *
      * No more than 32 labels can be associated with a given cluster.
      * </pre>
      *
@@ -1132,11 +1149,14 @@ public final class ManagedCluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The labels to associate with this cluster.
+     *
      * Label keys must be between 1 and 63 characters long, and must conform to
      * the following PCRE regular expression:
      * [&#92;p{Ll}&#92;p{Lo}][&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,62}
+     *
      * Label values must be between 1 and 63 characters long, and must conform to
      * the following PCRE regular expression: [&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,63}
+     *
      * No more than 32 labels can be associated with a given cluster.
      * </pre>
      *
@@ -1151,11 +1171,14 @@ public final class ManagedCluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The labels to associate with this cluster.
+     *
      * Label keys must be between 1 and 63 characters long, and must conform to
      * the following PCRE regular expression:
      * [&#92;p{Ll}&#92;p{Lo}][&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,62}
+     *
      * Label values must be between 1 and 63 characters long, and must conform to
      * the following PCRE regular expression: [&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,63}
+     *
      * No more than 32 labels can be associated with a given cluster.
      * </pre>
      *
@@ -1177,11 +1200,14 @@ public final class ManagedCluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The labels to associate with this cluster.
+     *
      * Label keys must be between 1 and 63 characters long, and must conform to
      * the following PCRE regular expression:
      * [&#92;p{Ll}&#92;p{Lo}][&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,62}
+     *
      * Label values must be between 1 and 63 characters long, and must conform to
      * the following PCRE regular expression: [&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,63}
+     *
      * No more than 32 labels can be associated with a given cluster.
      * </pre>
      *
@@ -1209,11 +1235,14 @@ public final class ManagedCluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The labels to associate with this cluster.
+     *
      * Label keys must be between 1 and 63 characters long, and must conform to
      * the following PCRE regular expression:
      * [&#92;p{Ll}&#92;p{Lo}][&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,62}
+     *
      * Label values must be between 1 and 63 characters long, and must conform to
      * the following PCRE regular expression: [&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,63}
+     *
      * No more than 32 labels can be associated with a given cluster.
      * </pre>
      *
@@ -1237,11 +1266,14 @@ public final class ManagedCluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The labels to associate with this cluster.
+     *
      * Label keys must be between 1 and 63 characters long, and must conform to
      * the following PCRE regular expression:
      * [&#92;p{Ll}&#92;p{Lo}][&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,62}
+     *
      * Label values must be between 1 and 63 characters long, and must conform to
      * the following PCRE regular expression: [&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,63}
+     *
      * No more than 32 labels can be associated with a given cluster.
      * </pre>
      *
@@ -1263,11 +1295,14 @@ public final class ManagedCluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The labels to associate with this cluster.
+     *
      * Label keys must be between 1 and 63 characters long, and must conform to
      * the following PCRE regular expression:
      * [&#92;p{Ll}&#92;p{Lo}][&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,62}
+     *
      * Label values must be between 1 and 63 characters long, and must conform to
      * the following PCRE regular expression: [&#92;p{Ll}&#92;p{Lo}&#92;p{N}_-]{0,63}
+     *
      * No more than 32 labels can be associated with a given cluster.
      * </pre>
      *

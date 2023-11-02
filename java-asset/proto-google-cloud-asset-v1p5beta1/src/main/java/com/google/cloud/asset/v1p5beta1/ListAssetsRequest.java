@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,7 +39,7 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
 
   private ListAssetsRequest() {
     parent_ = "";
-    assetTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    assetTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
     contentType_ = 0;
     pageToken_ = "";
   }
@@ -48,11 +48,6 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ListAssetsRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -192,21 +187,26 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
   public static final int ASSET_TYPES_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList assetTypes_;
+  private com.google.protobuf.LazyStringArrayList assetTypes_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
    * <pre>
    * A list of asset types to take a snapshot for. For example:
    * "compute.googleapis.com/Disk".
+   *
    * Regular expression is also supported. For example:
+   *
    * * "compute.googleapis.com.*" snapshots resources whose asset type starts
    * with "compute.googleapis.com".
    * * ".*Instance" snapshots resources whose asset type ends with "Instance".
    * * ".*Instance.*" snapshots resources whose asset type contains "Instance".
+   *
    * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
    * regular expression syntax. If the regular expression does not match any
    * supported asset type, an INVALID_ARGUMENT error will be returned.
+   *
    * If specified, only matching assets will be returned, otherwise, it will
    * snapshot all asset types. See [Introduction to Cloud Asset
    * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
@@ -226,14 +226,18 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
    * <pre>
    * A list of asset types to take a snapshot for. For example:
    * "compute.googleapis.com/Disk".
+   *
    * Regular expression is also supported. For example:
+   *
    * * "compute.googleapis.com.*" snapshots resources whose asset type starts
    * with "compute.googleapis.com".
    * * ".*Instance" snapshots resources whose asset type ends with "Instance".
    * * ".*Instance.*" snapshots resources whose asset type contains "Instance".
+   *
    * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
    * regular expression syntax. If the regular expression does not match any
    * supported asset type, an INVALID_ARGUMENT error will be returned.
+   *
    * If specified, only matching assets will be returned, otherwise, it will
    * snapshot all asset types. See [Introduction to Cloud Asset
    * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
@@ -253,14 +257,18 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
    * <pre>
    * A list of asset types to take a snapshot for. For example:
    * "compute.googleapis.com/Disk".
+   *
    * Regular expression is also supported. For example:
+   *
    * * "compute.googleapis.com.*" snapshots resources whose asset type starts
    * with "compute.googleapis.com".
    * * ".*Instance" snapshots resources whose asset type ends with "Instance".
    * * ".*Instance.*" snapshots resources whose asset type contains "Instance".
+   *
    * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
    * regular expression syntax. If the regular expression does not match any
    * supported asset type, an INVALID_ARGUMENT error will be returned.
+   *
    * If specified, only matching assets will be returned, otherwise, it will
    * snapshot all asset types. See [Introduction to Cloud Asset
    * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
@@ -281,14 +289,18 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
    * <pre>
    * A list of asset types to take a snapshot for. For example:
    * "compute.googleapis.com/Disk".
+   *
    * Regular expression is also supported. For example:
+   *
    * * "compute.googleapis.com.*" snapshots resources whose asset type starts
    * with "compute.googleapis.com".
    * * ".*Instance" snapshots resources whose asset type ends with "Instance".
    * * ".*Instance.*" snapshots resources whose asset type contains "Instance".
+   *
    * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
    * regular expression syntax. If the regular expression does not match any
    * supported asset type, an INVALID_ARGUMENT error will be returned.
+   *
    * If specified, only matching assets will be returned, otherwise, it will
    * snapshot all asset types. See [Introduction to Cloud Asset
    * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
@@ -678,8 +690,7 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
         readTimeBuilder_.dispose();
         readTimeBuilder_ = null;
       }
-      assetTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      assetTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       contentType_ = 0;
       pageSize_ = 0;
       pageToken_ = "";
@@ -710,21 +721,11 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.asset.v1p5beta1.ListAssetsRequest buildPartial() {
       com.google.cloud.asset.v1p5beta1.ListAssetsRequest result =
           new com.google.cloud.asset.v1p5beta1.ListAssetsRequest(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(
-        com.google.cloud.asset.v1p5beta1.ListAssetsRequest result) {
-      if (((bitField0_ & 0x00000004) != 0)) {
-        assetTypes_ = assetTypes_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.assetTypes_ = assetTypes_;
     }
 
     private void buildPartial0(com.google.cloud.asset.v1p5beta1.ListAssetsRequest result) {
@@ -734,6 +735,10 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.readTime_ = readTimeBuilder_ == null ? readTime_ : readTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        assetTypes_.makeImmutable();
+        result.assetTypes_ = assetTypes_;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.contentType_ = contentType_;
@@ -803,7 +808,7 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
       if (!other.assetTypes_.isEmpty()) {
         if (assetTypes_.isEmpty()) {
           assetTypes_ = other.assetTypes_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ |= 0x00000004;
         } else {
           ensureAssetTypesIsMutable();
           assetTypes_.addAll(other.assetTypes_);
@@ -1249,14 +1254,14 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
       return readTimeBuilder_;
     }
 
-    private com.google.protobuf.LazyStringList assetTypes_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList assetTypes_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureAssetTypesIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!assetTypes_.isModifiable()) {
         assetTypes_ = new com.google.protobuf.LazyStringArrayList(assetTypes_);
-        bitField0_ |= 0x00000004;
       }
+      bitField0_ |= 0x00000004;
     }
     /**
      *
@@ -1264,14 +1269,18 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * A list of asset types to take a snapshot for. For example:
      * "compute.googleapis.com/Disk".
+     *
      * Regular expression is also supported. For example:
+     *
      * * "compute.googleapis.com.*" snapshots resources whose asset type starts
      * with "compute.googleapis.com".
      * * ".*Instance" snapshots resources whose asset type ends with "Instance".
      * * ".*Instance.*" snapshots resources whose asset type contains "Instance".
+     *
      * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
      * regular expression syntax. If the regular expression does not match any
      * supported asset type, an INVALID_ARGUMENT error will be returned.
+     *
      * If specified, only matching assets will be returned, otherwise, it will
      * snapshot all asset types. See [Introduction to Cloud Asset
      * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
@@ -1283,7 +1292,8 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      * @return A list containing the assetTypes.
      */
     public com.google.protobuf.ProtocolStringList getAssetTypesList() {
-      return assetTypes_.getUnmodifiableView();
+      assetTypes_.makeImmutable();
+      return assetTypes_;
     }
     /**
      *
@@ -1291,14 +1301,18 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * A list of asset types to take a snapshot for. For example:
      * "compute.googleapis.com/Disk".
+     *
      * Regular expression is also supported. For example:
+     *
      * * "compute.googleapis.com.*" snapshots resources whose asset type starts
      * with "compute.googleapis.com".
      * * ".*Instance" snapshots resources whose asset type ends with "Instance".
      * * ".*Instance.*" snapshots resources whose asset type contains "Instance".
+     *
      * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
      * regular expression syntax. If the regular expression does not match any
      * supported asset type, an INVALID_ARGUMENT error will be returned.
+     *
      * If specified, only matching assets will be returned, otherwise, it will
      * snapshot all asset types. See [Introduction to Cloud Asset
      * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
@@ -1318,14 +1332,18 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * A list of asset types to take a snapshot for. For example:
      * "compute.googleapis.com/Disk".
+     *
      * Regular expression is also supported. For example:
+     *
      * * "compute.googleapis.com.*" snapshots resources whose asset type starts
      * with "compute.googleapis.com".
      * * ".*Instance" snapshots resources whose asset type ends with "Instance".
      * * ".*Instance.*" snapshots resources whose asset type contains "Instance".
+     *
      * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
      * regular expression syntax. If the regular expression does not match any
      * supported asset type, an INVALID_ARGUMENT error will be returned.
+     *
      * If specified, only matching assets will be returned, otherwise, it will
      * snapshot all asset types. See [Introduction to Cloud Asset
      * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
@@ -1346,14 +1364,18 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * A list of asset types to take a snapshot for. For example:
      * "compute.googleapis.com/Disk".
+     *
      * Regular expression is also supported. For example:
+     *
      * * "compute.googleapis.com.*" snapshots resources whose asset type starts
      * with "compute.googleapis.com".
      * * ".*Instance" snapshots resources whose asset type ends with "Instance".
      * * ".*Instance.*" snapshots resources whose asset type contains "Instance".
+     *
      * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
      * regular expression syntax. If the regular expression does not match any
      * supported asset type, an INVALID_ARGUMENT error will be returned.
+     *
      * If specified, only matching assets will be returned, otherwise, it will
      * snapshot all asset types. See [Introduction to Cloud Asset
      * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
@@ -1374,14 +1396,18 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * A list of asset types to take a snapshot for. For example:
      * "compute.googleapis.com/Disk".
+     *
      * Regular expression is also supported. For example:
+     *
      * * "compute.googleapis.com.*" snapshots resources whose asset type starts
      * with "compute.googleapis.com".
      * * ".*Instance" snapshots resources whose asset type ends with "Instance".
      * * ".*Instance.*" snapshots resources whose asset type contains "Instance".
+     *
      * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
      * regular expression syntax. If the regular expression does not match any
      * supported asset type, an INVALID_ARGUMENT error will be returned.
+     *
      * If specified, only matching assets will be returned, otherwise, it will
      * snapshot all asset types. See [Introduction to Cloud Asset
      * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
@@ -1400,6 +1426,7 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
       }
       ensureAssetTypesIsMutable();
       assetTypes_.set(index, value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1409,14 +1436,18 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * A list of asset types to take a snapshot for. For example:
      * "compute.googleapis.com/Disk".
+     *
      * Regular expression is also supported. For example:
+     *
      * * "compute.googleapis.com.*" snapshots resources whose asset type starts
      * with "compute.googleapis.com".
      * * ".*Instance" snapshots resources whose asset type ends with "Instance".
      * * ".*Instance.*" snapshots resources whose asset type contains "Instance".
+     *
      * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
      * regular expression syntax. If the regular expression does not match any
      * supported asset type, an INVALID_ARGUMENT error will be returned.
+     *
      * If specified, only matching assets will be returned, otherwise, it will
      * snapshot all asset types. See [Introduction to Cloud Asset
      * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
@@ -1434,6 +1465,7 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
       }
       ensureAssetTypesIsMutable();
       assetTypes_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1443,14 +1475,18 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * A list of asset types to take a snapshot for. For example:
      * "compute.googleapis.com/Disk".
+     *
      * Regular expression is also supported. For example:
+     *
      * * "compute.googleapis.com.*" snapshots resources whose asset type starts
      * with "compute.googleapis.com".
      * * ".*Instance" snapshots resources whose asset type ends with "Instance".
      * * ".*Instance.*" snapshots resources whose asset type contains "Instance".
+     *
      * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
      * regular expression syntax. If the regular expression does not match any
      * supported asset type, an INVALID_ARGUMENT error will be returned.
+     *
      * If specified, only matching assets will be returned, otherwise, it will
      * snapshot all asset types. See [Introduction to Cloud Asset
      * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
@@ -1465,6 +1501,7 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
     public Builder addAllAssetTypes(java.lang.Iterable<java.lang.String> values) {
       ensureAssetTypesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, assetTypes_);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1474,14 +1511,18 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * A list of asset types to take a snapshot for. For example:
      * "compute.googleapis.com/Disk".
+     *
      * Regular expression is also supported. For example:
+     *
      * * "compute.googleapis.com.*" snapshots resources whose asset type starts
      * with "compute.googleapis.com".
      * * ".*Instance" snapshots resources whose asset type ends with "Instance".
      * * ".*Instance.*" snapshots resources whose asset type contains "Instance".
+     *
      * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
      * regular expression syntax. If the regular expression does not match any
      * supported asset type, an INVALID_ARGUMENT error will be returned.
+     *
      * If specified, only matching assets will be returned, otherwise, it will
      * snapshot all asset types. See [Introduction to Cloud Asset
      * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
@@ -1493,8 +1534,9 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearAssetTypes() {
-      assetTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      assetTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000004);
+      ;
       onChanged();
       return this;
     }
@@ -1504,14 +1546,18 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * A list of asset types to take a snapshot for. For example:
      * "compute.googleapis.com/Disk".
+     *
      * Regular expression is also supported. For example:
+     *
      * * "compute.googleapis.com.*" snapshots resources whose asset type starts
      * with "compute.googleapis.com".
      * * ".*Instance" snapshots resources whose asset type ends with "Instance".
      * * ".*Instance.*" snapshots resources whose asset type contains "Instance".
+     *
      * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
      * regular expression syntax. If the regular expression does not match any
      * supported asset type, an INVALID_ARGUMENT error will be returned.
+     *
      * If specified, only matching assets will be returned, otherwise, it will
      * snapshot all asset types. See [Introduction to Cloud Asset
      * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
@@ -1530,6 +1576,7 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
       checkByteStringIsUtf8(value);
       ensureAssetTypesIsMutable();
       assetTypes_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

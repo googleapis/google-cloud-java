@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,18 +38,13 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
   }
 
   private IOSKeySettings() {
-    allowedBundleIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    allowedBundleIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new IOSKeySettings();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -88,7 +83,8 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
   public static final int ALLOWED_BUNDLE_IDS_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList allowedBundleIds_;
+  private com.google.protobuf.LazyStringArrayList allowedBundleIds_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -152,6 +148,69 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
     return allowedBundleIds_.getByteString(index);
   }
 
+  public static final int APPLE_DEVELOPER_ID_FIELD_NUMBER = 3;
+  private com.google.recaptchaenterprise.v1.AppleDeveloperId appleDeveloperId_;
+  /**
+   *
+   *
+   * <pre>
+   * Apple Developer account details for the app that is protected by the
+   * reCAPTCHA Key. reCAPTCHA Enterprise leverages platform-specific checks like
+   * Apple App Attest and Apple DeviceCheck to protect your app from abuse.
+   * Providing these fields allows reCAPTCHA Enterprise to get a better
+   * assessment of the integrity of your app.
+   * </pre>
+   *
+   * <code>.google.cloud.recaptchaenterprise.v1.AppleDeveloperId apple_developer_id = 3;</code>
+   *
+   * @return Whether the appleDeveloperId field is set.
+   */
+  @java.lang.Override
+  public boolean hasAppleDeveloperId() {
+    return appleDeveloperId_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Apple Developer account details for the app that is protected by the
+   * reCAPTCHA Key. reCAPTCHA Enterprise leverages platform-specific checks like
+   * Apple App Attest and Apple DeviceCheck to protect your app from abuse.
+   * Providing these fields allows reCAPTCHA Enterprise to get a better
+   * assessment of the integrity of your app.
+   * </pre>
+   *
+   * <code>.google.cloud.recaptchaenterprise.v1.AppleDeveloperId apple_developer_id = 3;</code>
+   *
+   * @return The appleDeveloperId.
+   */
+  @java.lang.Override
+  public com.google.recaptchaenterprise.v1.AppleDeveloperId getAppleDeveloperId() {
+    return appleDeveloperId_ == null
+        ? com.google.recaptchaenterprise.v1.AppleDeveloperId.getDefaultInstance()
+        : appleDeveloperId_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Apple Developer account details for the app that is protected by the
+   * reCAPTCHA Key. reCAPTCHA Enterprise leverages platform-specific checks like
+   * Apple App Attest and Apple DeviceCheck to protect your app from abuse.
+   * Providing these fields allows reCAPTCHA Enterprise to get a better
+   * assessment of the integrity of your app.
+   * </pre>
+   *
+   * <code>.google.cloud.recaptchaenterprise.v1.AppleDeveloperId apple_developer_id = 3;</code>
+   */
+  @java.lang.Override
+  public com.google.recaptchaenterprise.v1.AppleDeveloperIdOrBuilder
+      getAppleDeveloperIdOrBuilder() {
+    return appleDeveloperId_ == null
+        ? com.google.recaptchaenterprise.v1.AppleDeveloperId.getDefaultInstance()
+        : appleDeveloperId_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -171,6 +230,9 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
     }
     if (allowAllBundleIds_ != false) {
       output.writeBool(2, allowAllBundleIds_);
+    }
+    if (appleDeveloperId_ != null) {
+      output.writeMessage(3, getAppleDeveloperId());
     }
     getUnknownFields().writeTo(output);
   }
@@ -192,6 +254,9 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
     if (allowAllBundleIds_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, allowAllBundleIds_);
     }
+    if (appleDeveloperId_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getAppleDeveloperId());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -210,6 +275,10 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
 
     if (getAllowAllBundleIds() != other.getAllowAllBundleIds()) return false;
     if (!getAllowedBundleIdsList().equals(other.getAllowedBundleIdsList())) return false;
+    if (hasAppleDeveloperId() != other.hasAppleDeveloperId()) return false;
+    if (hasAppleDeveloperId()) {
+      if (!getAppleDeveloperId().equals(other.getAppleDeveloperId())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -226,6 +295,10 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
     if (getAllowedBundleIdsCount() > 0) {
       hash = (37 * hash) + ALLOWED_BUNDLE_IDS_FIELD_NUMBER;
       hash = (53 * hash) + getAllowedBundleIdsList().hashCode();
+    }
+    if (hasAppleDeveloperId()) {
+      hash = (37 * hash) + APPLE_DEVELOPER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getAppleDeveloperId().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -367,8 +440,12 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       bitField0_ = 0;
       allowAllBundleIds_ = false;
-      allowedBundleIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      allowedBundleIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      appleDeveloperId_ = null;
+      if (appleDeveloperIdBuilder_ != null) {
+        appleDeveloperIdBuilder_.dispose();
+        appleDeveloperIdBuilder_ = null;
+      }
       return this;
     }
 
@@ -396,7 +473,6 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
     public com.google.recaptchaenterprise.v1.IOSKeySettings buildPartial() {
       com.google.recaptchaenterprise.v1.IOSKeySettings result =
           new com.google.recaptchaenterprise.v1.IOSKeySettings(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -404,19 +480,18 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
       return result;
     }
 
-    private void buildPartialRepeatedFields(
-        com.google.recaptchaenterprise.v1.IOSKeySettings result) {
-      if (((bitField0_ & 0x00000002) != 0)) {
-        allowedBundleIds_ = allowedBundleIds_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.allowedBundleIds_ = allowedBundleIds_;
-    }
-
     private void buildPartial0(com.google.recaptchaenterprise.v1.IOSKeySettings result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.allowAllBundleIds_ = allowAllBundleIds_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        allowedBundleIds_.makeImmutable();
+        result.allowedBundleIds_ = allowedBundleIds_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.appleDeveloperId_ =
+            appleDeveloperIdBuilder_ == null ? appleDeveloperId_ : appleDeveloperIdBuilder_.build();
       }
     }
 
@@ -472,12 +547,15 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
       if (!other.allowedBundleIds_.isEmpty()) {
         if (allowedBundleIds_.isEmpty()) {
           allowedBundleIds_ = other.allowedBundleIds_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureAllowedBundleIdsIsMutable();
           allowedBundleIds_.addAll(other.allowedBundleIds_);
         }
         onChanged();
+      }
+      if (other.hasAppleDeveloperId()) {
+        mergeAppleDeveloperId(other.getAppleDeveloperId());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -518,6 +596,13 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000001;
                 break;
               } // case 16
+            case 26:
+              {
+                input.readMessage(
+                    getAppleDeveloperIdFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -590,14 +675,14 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList allowedBundleIds_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList allowedBundleIds_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureAllowedBundleIdsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!allowedBundleIds_.isModifiable()) {
         allowedBundleIds_ = new com.google.protobuf.LazyStringArrayList(allowedBundleIds_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -612,7 +697,8 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the allowedBundleIds.
      */
     public com.google.protobuf.ProtocolStringList getAllowedBundleIdsList() {
-      return allowedBundleIds_.getUnmodifiableView();
+      allowedBundleIds_.makeImmutable();
+      return allowedBundleIds_;
     }
     /**
      *
@@ -681,6 +767,7 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
       }
       ensureAllowedBundleIdsIsMutable();
       allowedBundleIds_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -703,6 +790,7 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
       }
       ensureAllowedBundleIdsIsMutable();
       allowedBundleIds_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -722,6 +810,7 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllAllowedBundleIds(java.lang.Iterable<java.lang.String> values) {
       ensureAllowedBundleIdsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, allowedBundleIds_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -738,8 +827,9 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAllowedBundleIds() {
-      allowedBundleIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      allowedBundleIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -763,8 +853,231 @@ public final class IOSKeySettings extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureAllowedBundleIdsIsMutable();
       allowedBundleIds_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
+    }
+
+    private com.google.recaptchaenterprise.v1.AppleDeveloperId appleDeveloperId_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.recaptchaenterprise.v1.AppleDeveloperId,
+            com.google.recaptchaenterprise.v1.AppleDeveloperId.Builder,
+            com.google.recaptchaenterprise.v1.AppleDeveloperIdOrBuilder>
+        appleDeveloperIdBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Apple Developer account details for the app that is protected by the
+     * reCAPTCHA Key. reCAPTCHA Enterprise leverages platform-specific checks like
+     * Apple App Attest and Apple DeviceCheck to protect your app from abuse.
+     * Providing these fields allows reCAPTCHA Enterprise to get a better
+     * assessment of the integrity of your app.
+     * </pre>
+     *
+     * <code>.google.cloud.recaptchaenterprise.v1.AppleDeveloperId apple_developer_id = 3;</code>
+     *
+     * @return Whether the appleDeveloperId field is set.
+     */
+    public boolean hasAppleDeveloperId() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Apple Developer account details for the app that is protected by the
+     * reCAPTCHA Key. reCAPTCHA Enterprise leverages platform-specific checks like
+     * Apple App Attest and Apple DeviceCheck to protect your app from abuse.
+     * Providing these fields allows reCAPTCHA Enterprise to get a better
+     * assessment of the integrity of your app.
+     * </pre>
+     *
+     * <code>.google.cloud.recaptchaenterprise.v1.AppleDeveloperId apple_developer_id = 3;</code>
+     *
+     * @return The appleDeveloperId.
+     */
+    public com.google.recaptchaenterprise.v1.AppleDeveloperId getAppleDeveloperId() {
+      if (appleDeveloperIdBuilder_ == null) {
+        return appleDeveloperId_ == null
+            ? com.google.recaptchaenterprise.v1.AppleDeveloperId.getDefaultInstance()
+            : appleDeveloperId_;
+      } else {
+        return appleDeveloperIdBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Apple Developer account details for the app that is protected by the
+     * reCAPTCHA Key. reCAPTCHA Enterprise leverages platform-specific checks like
+     * Apple App Attest and Apple DeviceCheck to protect your app from abuse.
+     * Providing these fields allows reCAPTCHA Enterprise to get a better
+     * assessment of the integrity of your app.
+     * </pre>
+     *
+     * <code>.google.cloud.recaptchaenterprise.v1.AppleDeveloperId apple_developer_id = 3;</code>
+     */
+    public Builder setAppleDeveloperId(com.google.recaptchaenterprise.v1.AppleDeveloperId value) {
+      if (appleDeveloperIdBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        appleDeveloperId_ = value;
+      } else {
+        appleDeveloperIdBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Apple Developer account details for the app that is protected by the
+     * reCAPTCHA Key. reCAPTCHA Enterprise leverages platform-specific checks like
+     * Apple App Attest and Apple DeviceCheck to protect your app from abuse.
+     * Providing these fields allows reCAPTCHA Enterprise to get a better
+     * assessment of the integrity of your app.
+     * </pre>
+     *
+     * <code>.google.cloud.recaptchaenterprise.v1.AppleDeveloperId apple_developer_id = 3;</code>
+     */
+    public Builder setAppleDeveloperId(
+        com.google.recaptchaenterprise.v1.AppleDeveloperId.Builder builderForValue) {
+      if (appleDeveloperIdBuilder_ == null) {
+        appleDeveloperId_ = builderForValue.build();
+      } else {
+        appleDeveloperIdBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Apple Developer account details for the app that is protected by the
+     * reCAPTCHA Key. reCAPTCHA Enterprise leverages platform-specific checks like
+     * Apple App Attest and Apple DeviceCheck to protect your app from abuse.
+     * Providing these fields allows reCAPTCHA Enterprise to get a better
+     * assessment of the integrity of your app.
+     * </pre>
+     *
+     * <code>.google.cloud.recaptchaenterprise.v1.AppleDeveloperId apple_developer_id = 3;</code>
+     */
+    public Builder mergeAppleDeveloperId(com.google.recaptchaenterprise.v1.AppleDeveloperId value) {
+      if (appleDeveloperIdBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && appleDeveloperId_ != null
+            && appleDeveloperId_
+                != com.google.recaptchaenterprise.v1.AppleDeveloperId.getDefaultInstance()) {
+          getAppleDeveloperIdBuilder().mergeFrom(value);
+        } else {
+          appleDeveloperId_ = value;
+        }
+      } else {
+        appleDeveloperIdBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Apple Developer account details for the app that is protected by the
+     * reCAPTCHA Key. reCAPTCHA Enterprise leverages platform-specific checks like
+     * Apple App Attest and Apple DeviceCheck to protect your app from abuse.
+     * Providing these fields allows reCAPTCHA Enterprise to get a better
+     * assessment of the integrity of your app.
+     * </pre>
+     *
+     * <code>.google.cloud.recaptchaenterprise.v1.AppleDeveloperId apple_developer_id = 3;</code>
+     */
+    public Builder clearAppleDeveloperId() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      appleDeveloperId_ = null;
+      if (appleDeveloperIdBuilder_ != null) {
+        appleDeveloperIdBuilder_.dispose();
+        appleDeveloperIdBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Apple Developer account details for the app that is protected by the
+     * reCAPTCHA Key. reCAPTCHA Enterprise leverages platform-specific checks like
+     * Apple App Attest and Apple DeviceCheck to protect your app from abuse.
+     * Providing these fields allows reCAPTCHA Enterprise to get a better
+     * assessment of the integrity of your app.
+     * </pre>
+     *
+     * <code>.google.cloud.recaptchaenterprise.v1.AppleDeveloperId apple_developer_id = 3;</code>
+     */
+    public com.google.recaptchaenterprise.v1.AppleDeveloperId.Builder getAppleDeveloperIdBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return getAppleDeveloperIdFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Apple Developer account details for the app that is protected by the
+     * reCAPTCHA Key. reCAPTCHA Enterprise leverages platform-specific checks like
+     * Apple App Attest and Apple DeviceCheck to protect your app from abuse.
+     * Providing these fields allows reCAPTCHA Enterprise to get a better
+     * assessment of the integrity of your app.
+     * </pre>
+     *
+     * <code>.google.cloud.recaptchaenterprise.v1.AppleDeveloperId apple_developer_id = 3;</code>
+     */
+    public com.google.recaptchaenterprise.v1.AppleDeveloperIdOrBuilder
+        getAppleDeveloperIdOrBuilder() {
+      if (appleDeveloperIdBuilder_ != null) {
+        return appleDeveloperIdBuilder_.getMessageOrBuilder();
+      } else {
+        return appleDeveloperId_ == null
+            ? com.google.recaptchaenterprise.v1.AppleDeveloperId.getDefaultInstance()
+            : appleDeveloperId_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Apple Developer account details for the app that is protected by the
+     * reCAPTCHA Key. reCAPTCHA Enterprise leverages platform-specific checks like
+     * Apple App Attest and Apple DeviceCheck to protect your app from abuse.
+     * Providing these fields allows reCAPTCHA Enterprise to get a better
+     * assessment of the integrity of your app.
+     * </pre>
+     *
+     * <code>.google.cloud.recaptchaenterprise.v1.AppleDeveloperId apple_developer_id = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.recaptchaenterprise.v1.AppleDeveloperId,
+            com.google.recaptchaenterprise.v1.AppleDeveloperId.Builder,
+            com.google.recaptchaenterprise.v1.AppleDeveloperIdOrBuilder>
+        getAppleDeveloperIdFieldBuilder() {
+      if (appleDeveloperIdBuilder_ == null) {
+        appleDeveloperIdBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.recaptchaenterprise.v1.AppleDeveloperId,
+                com.google.recaptchaenterprise.v1.AppleDeveloperId.Builder,
+                com.google.recaptchaenterprise.v1.AppleDeveloperIdOrBuilder>(
+                getAppleDeveloperId(), getParentForChildren(), isClean());
+        appleDeveloperId_ = null;
+      }
+      return appleDeveloperIdBuilder_;
     }
 
     @java.lang.Override

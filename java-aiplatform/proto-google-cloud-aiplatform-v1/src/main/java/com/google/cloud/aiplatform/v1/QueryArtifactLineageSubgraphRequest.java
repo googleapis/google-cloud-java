@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,11 +51,6 @@ public final class QueryArtifactLineageSubgraphRequest
     return new QueryArtifactLineageSubgraphRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1.MetadataServiceProto
         .internal_static_google_cloud_aiplatform_v1_QueryArtifactLineageSubgraphRequest_descriptor;
@@ -82,6 +77,7 @@ public final class QueryArtifactLineageSubgraphRequest
    * Required. The resource name of the Artifact whose Lineage needs to be
    * retrieved as a LineageSubgraph. Format:
    * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}`
+   *
    * The request may error with FAILED_PRECONDITION if the number of Artifacts,
    * the number of Executions, or the number of Events that would be returned
    * for the Context exceeds 1000.
@@ -112,6 +108,7 @@ public final class QueryArtifactLineageSubgraphRequest
    * Required. The resource name of the Artifact whose Lineage needs to be
    * retrieved as a LineageSubgraph. Format:
    * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}`
+   *
    * The request may error with FAILED_PRECONDITION if the number of Artifacts,
    * the number of Executions, or the number of Events that would be returned
    * for the Context exceeds 1000.
@@ -170,6 +167,7 @@ public final class QueryArtifactLineageSubgraphRequest
    * order to be part of the Lineage Subgraph.
    * The syntax to define filter query is based on https://google.aip.dev/160.
    * The supported set of filters include the following:
+   *
    * *  **Attribute filtering**:
    *    For example: `display_name = "test"`
    *    Supported fields include: `name`, `display_name`, `uri`, `state`,
@@ -181,9 +179,14 @@ public final class QueryArtifactLineageSubgraphRequest
    *    To filter on metadata fields use traversal operation as follows:
    *    `metadata.&lt;field_name&gt;.&lt;type_value&gt;`.
    *    For example: `metadata.field_1.number_value = 10.0`
+   *    In case the field name contains special characters (such as colon), one
+   *    can embed it inside double quote.
+   *    For example: `metadata."field:1".number_value = 10.0`
+   *
    * Each of the above supported filter types can be combined together using
    * logical operators (`AND` &amp; `OR`). Maximum nested expression depth allowed
    * is 5.
+   *
    * For example: `display_name = "test" AND metadata.field1.bool_value = true`.
    * </pre>
    *
@@ -211,6 +214,7 @@ public final class QueryArtifactLineageSubgraphRequest
    * order to be part of the Lineage Subgraph.
    * The syntax to define filter query is based on https://google.aip.dev/160.
    * The supported set of filters include the following:
+   *
    * *  **Attribute filtering**:
    *    For example: `display_name = "test"`
    *    Supported fields include: `name`, `display_name`, `uri`, `state`,
@@ -222,9 +226,14 @@ public final class QueryArtifactLineageSubgraphRequest
    *    To filter on metadata fields use traversal operation as follows:
    *    `metadata.&lt;field_name&gt;.&lt;type_value&gt;`.
    *    For example: `metadata.field_1.number_value = 10.0`
+   *    In case the field name contains special characters (such as colon), one
+   *    can embed it inside double quote.
+   *    For example: `metadata."field:1".number_value = 10.0`
+   *
    * Each of the above supported filter types can be combined together using
    * logical operators (`AND` &amp; `OR`). Maximum nested expression depth allowed
    * is 5.
+   *
    * For example: `display_name = "test" AND metadata.field1.bool_value = true`.
    * </pre>
    *
@@ -651,6 +660,7 @@ public final class QueryArtifactLineageSubgraphRequest
      * Required. The resource name of the Artifact whose Lineage needs to be
      * retrieved as a LineageSubgraph. Format:
      * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}`
+     *
      * The request may error with FAILED_PRECONDITION if the number of Artifacts,
      * the number of Executions, or the number of Events that would be returned
      * for the Context exceeds 1000.
@@ -680,6 +690,7 @@ public final class QueryArtifactLineageSubgraphRequest
      * Required. The resource name of the Artifact whose Lineage needs to be
      * retrieved as a LineageSubgraph. Format:
      * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}`
+     *
      * The request may error with FAILED_PRECONDITION if the number of Artifacts,
      * the number of Executions, or the number of Events that would be returned
      * for the Context exceeds 1000.
@@ -709,6 +720,7 @@ public final class QueryArtifactLineageSubgraphRequest
      * Required. The resource name of the Artifact whose Lineage needs to be
      * retrieved as a LineageSubgraph. Format:
      * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}`
+     *
      * The request may error with FAILED_PRECONDITION if the number of Artifacts,
      * the number of Executions, or the number of Events that would be returned
      * for the Context exceeds 1000.
@@ -737,6 +749,7 @@ public final class QueryArtifactLineageSubgraphRequest
      * Required. The resource name of the Artifact whose Lineage needs to be
      * retrieved as a LineageSubgraph. Format:
      * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}`
+     *
      * The request may error with FAILED_PRECONDITION if the number of Artifacts,
      * the number of Executions, or the number of Events that would be returned
      * for the Context exceeds 1000.
@@ -761,6 +774,7 @@ public final class QueryArtifactLineageSubgraphRequest
      * Required. The resource name of the Artifact whose Lineage needs to be
      * retrieved as a LineageSubgraph. Format:
      * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}`
+     *
      * The request may error with FAILED_PRECONDITION if the number of Artifacts,
      * the number of Executions, or the number of Events that would be returned
      * for the Context exceeds 1000.
@@ -858,6 +872,7 @@ public final class QueryArtifactLineageSubgraphRequest
      * order to be part of the Lineage Subgraph.
      * The syntax to define filter query is based on https://google.aip.dev/160.
      * The supported set of filters include the following:
+     *
      * *  **Attribute filtering**:
      *    For example: `display_name = "test"`
      *    Supported fields include: `name`, `display_name`, `uri`, `state`,
@@ -869,9 +884,14 @@ public final class QueryArtifactLineageSubgraphRequest
      *    To filter on metadata fields use traversal operation as follows:
      *    `metadata.&lt;field_name&gt;.&lt;type_value&gt;`.
      *    For example: `metadata.field_1.number_value = 10.0`
+     *    In case the field name contains special characters (such as colon), one
+     *    can embed it inside double quote.
+     *    For example: `metadata."field:1".number_value = 10.0`
+     *
      * Each of the above supported filter types can be combined together using
      * logical operators (`AND` &amp; `OR`). Maximum nested expression depth allowed
      * is 5.
+     *
      * For example: `display_name = "test" AND metadata.field1.bool_value = true`.
      * </pre>
      *
@@ -898,6 +918,7 @@ public final class QueryArtifactLineageSubgraphRequest
      * order to be part of the Lineage Subgraph.
      * The syntax to define filter query is based on https://google.aip.dev/160.
      * The supported set of filters include the following:
+     *
      * *  **Attribute filtering**:
      *    For example: `display_name = "test"`
      *    Supported fields include: `name`, `display_name`, `uri`, `state`,
@@ -909,9 +930,14 @@ public final class QueryArtifactLineageSubgraphRequest
      *    To filter on metadata fields use traversal operation as follows:
      *    `metadata.&lt;field_name&gt;.&lt;type_value&gt;`.
      *    For example: `metadata.field_1.number_value = 10.0`
+     *    In case the field name contains special characters (such as colon), one
+     *    can embed it inside double quote.
+     *    For example: `metadata."field:1".number_value = 10.0`
+     *
      * Each of the above supported filter types can be combined together using
      * logical operators (`AND` &amp; `OR`). Maximum nested expression depth allowed
      * is 5.
+     *
      * For example: `display_name = "test" AND metadata.field1.bool_value = true`.
      * </pre>
      *
@@ -938,6 +964,7 @@ public final class QueryArtifactLineageSubgraphRequest
      * order to be part of the Lineage Subgraph.
      * The syntax to define filter query is based on https://google.aip.dev/160.
      * The supported set of filters include the following:
+     *
      * *  **Attribute filtering**:
      *    For example: `display_name = "test"`
      *    Supported fields include: `name`, `display_name`, `uri`, `state`,
@@ -949,9 +976,14 @@ public final class QueryArtifactLineageSubgraphRequest
      *    To filter on metadata fields use traversal operation as follows:
      *    `metadata.&lt;field_name&gt;.&lt;type_value&gt;`.
      *    For example: `metadata.field_1.number_value = 10.0`
+     *    In case the field name contains special characters (such as colon), one
+     *    can embed it inside double quote.
+     *    For example: `metadata."field:1".number_value = 10.0`
+     *
      * Each of the above supported filter types can be combined together using
      * logical operators (`AND` &amp; `OR`). Maximum nested expression depth allowed
      * is 5.
+     *
      * For example: `display_name = "test" AND metadata.field1.bool_value = true`.
      * </pre>
      *
@@ -977,6 +1009,7 @@ public final class QueryArtifactLineageSubgraphRequest
      * order to be part of the Lineage Subgraph.
      * The syntax to define filter query is based on https://google.aip.dev/160.
      * The supported set of filters include the following:
+     *
      * *  **Attribute filtering**:
      *    For example: `display_name = "test"`
      *    Supported fields include: `name`, `display_name`, `uri`, `state`,
@@ -988,9 +1021,14 @@ public final class QueryArtifactLineageSubgraphRequest
      *    To filter on metadata fields use traversal operation as follows:
      *    `metadata.&lt;field_name&gt;.&lt;type_value&gt;`.
      *    For example: `metadata.field_1.number_value = 10.0`
+     *    In case the field name contains special characters (such as colon), one
+     *    can embed it inside double quote.
+     *    For example: `metadata."field:1".number_value = 10.0`
+     *
      * Each of the above supported filter types can be combined together using
      * logical operators (`AND` &amp; `OR`). Maximum nested expression depth allowed
      * is 5.
+     *
      * For example: `display_name = "test" AND metadata.field1.bool_value = true`.
      * </pre>
      *
@@ -1012,6 +1050,7 @@ public final class QueryArtifactLineageSubgraphRequest
      * order to be part of the Lineage Subgraph.
      * The syntax to define filter query is based on https://google.aip.dev/160.
      * The supported set of filters include the following:
+     *
      * *  **Attribute filtering**:
      *    For example: `display_name = "test"`
      *    Supported fields include: `name`, `display_name`, `uri`, `state`,
@@ -1023,9 +1062,14 @@ public final class QueryArtifactLineageSubgraphRequest
      *    To filter on metadata fields use traversal operation as follows:
      *    `metadata.&lt;field_name&gt;.&lt;type_value&gt;`.
      *    For example: `metadata.field_1.number_value = 10.0`
+     *    In case the field name contains special characters (such as colon), one
+     *    can embed it inside double quote.
+     *    For example: `metadata."field:1".number_value = 10.0`
+     *
      * Each of the above supported filter types can be combined together using
      * logical operators (`AND` &amp; `OR`). Maximum nested expression depth allowed
      * is 5.
+     *
      * For example: `display_name = "test" AND metadata.field1.bool_value = true`.
      * </pre>
      *

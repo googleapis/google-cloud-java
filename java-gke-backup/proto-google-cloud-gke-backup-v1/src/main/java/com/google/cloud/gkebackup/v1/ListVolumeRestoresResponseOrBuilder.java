@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -80,10 +80,10 @@ public interface ListVolumeRestoresResponseOrBuilder
    *
    * <pre>
    * A token which may be sent as
-   * [page_token][google.cloud.gkebackup.v1.ListVolumeRestoresRequest.page_token] in a subsequent
-   * `ListVolumeRestores` call to retrieve the next page of results.
-   * If this field is omitted or empty, then there are no more results to
-   * return.
+   * [page_token][google.cloud.gkebackup.v1.ListVolumeRestoresRequest.page_token]
+   * in a subsequent `ListVolumeRestores` call to retrieve the next page of
+   * results. If this field is omitted or empty, then there are no more results
+   * to return.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -96,10 +96,10 @@ public interface ListVolumeRestoresResponseOrBuilder
    *
    * <pre>
    * A token which may be sent as
-   * [page_token][google.cloud.gkebackup.v1.ListVolumeRestoresRequest.page_token] in a subsequent
-   * `ListVolumeRestores` call to retrieve the next page of results.
-   * If this field is omitted or empty, then there are no more results to
-   * return.
+   * [page_token][google.cloud.gkebackup.v1.ListVolumeRestoresRequest.page_token]
+   * in a subsequent `ListVolumeRestores` call to retrieve the next page of
+   * results. If this field is omitted or empty, then there are no more results
+   * to return.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>

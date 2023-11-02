@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     return new Schema();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.discoveryengine.v1beta.SchemaProto
         .internal_static_google_cloud_discoveryengine_v1beta_Schema_descriptor;
@@ -68,6 +63,8 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int schemaCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object schema_;
 
   public enum SchemaCase
@@ -245,6 +242,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Immutable. The full resource name of the schema, in the format of
    * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/schemas/{schema}`.
+   *
    * This field must be a UTF-8 encoded string with a length limit of 1024
    * characters.
    * </pre>
@@ -271,6 +269,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Immutable. The full resource name of the schema, in the format of
    * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/schemas/{schema}`.
+   *
    * This field must be a UTF-8 encoded string with a length limit of 1024
    * characters.
    * </pre>
@@ -1074,6 +1073,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Immutable. The full resource name of the schema, in the format of
      * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/schemas/{schema}`.
+     *
      * This field must be a UTF-8 encoded string with a length limit of 1024
      * characters.
      * </pre>
@@ -1099,6 +1099,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Immutable. The full resource name of the schema, in the format of
      * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/schemas/{schema}`.
+     *
      * This field must be a UTF-8 encoded string with a length limit of 1024
      * characters.
      * </pre>
@@ -1124,6 +1125,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Immutable. The full resource name of the schema, in the format of
      * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/schemas/{schema}`.
+     *
      * This field must be a UTF-8 encoded string with a length limit of 1024
      * characters.
      * </pre>
@@ -1148,6 +1150,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Immutable. The full resource name of the schema, in the format of
      * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/schemas/{schema}`.
+     *
      * This field must be a UTF-8 encoded string with a length limit of 1024
      * characters.
      * </pre>
@@ -1168,6 +1171,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Immutable. The full resource name of the schema, in the format of
      * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/schemas/{schema}`.
+     *
      * This field must be a UTF-8 encoded string with a length limit of 1024
      * characters.
      * </pre>

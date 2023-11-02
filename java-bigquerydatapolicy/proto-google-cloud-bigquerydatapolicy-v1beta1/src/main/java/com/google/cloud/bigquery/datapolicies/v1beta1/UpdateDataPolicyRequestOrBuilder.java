@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ public interface UpdateDataPolicyRequestOrBuilder
    *
    * <pre>
    * Required. Update the data policy's metadata.
+   *
    * The target data policy is determined by the `name` field.
    * Other fields are updated to the specified values based on the field masks.
    * </pre>
@@ -44,6 +45,7 @@ public interface UpdateDataPolicyRequestOrBuilder
    *
    * <pre>
    * Required. Update the data policy's metadata.
+   *
    * The target data policy is determined by the `name` field.
    * Other fields are updated to the specified values based on the field masks.
    * </pre>
@@ -60,6 +62,7 @@ public interface UpdateDataPolicyRequestOrBuilder
    *
    * <pre>
    * Required. Update the data policy's metadata.
+   *
    * The target data policy is determined by the `name` field.
    * Other fields are updated to the specified values based on the field masks.
    * </pre>
@@ -78,6 +81,7 @@ public interface UpdateDataPolicyRequestOrBuilder
    * see
    * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
    * If not set, defaults to all of the fields that are allowed to update.
+   *
    * Updates to the `name` and `dataPolicyId` fields are not allowed.
    * </pre>
    *
@@ -94,6 +98,7 @@ public interface UpdateDataPolicyRequestOrBuilder
    * see
    * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
    * If not set, defaults to all of the fields that are allowed to update.
+   *
    * Updates to the `name` and `dataPolicyId` fields are not allowed.
    * </pre>
    *
@@ -110,6 +115,7 @@ public interface UpdateDataPolicyRequestOrBuilder
    * see
    * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
    * If not set, defaults to all of the fields that are allowed to update.
+   *
    * Updates to the `name` and `dataPolicyId` fields are not allowed.
    * </pre>
    *

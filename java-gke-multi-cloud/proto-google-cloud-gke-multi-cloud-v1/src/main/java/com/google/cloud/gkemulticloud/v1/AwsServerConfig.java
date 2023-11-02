@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,18 +40,13 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
   private AwsServerConfig() {
     name_ = "";
     validVersions_ = java.util.Collections.emptyList();
-    supportedAwsRegions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    supportedAwsRegions_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new AwsServerConfig();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -196,7 +191,8 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
   public static final int SUPPORTED_AWS_REGIONS_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList supportedAwsRegions_;
+  private com.google.protobuf.LazyStringArrayList supportedAwsRegions_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -489,8 +485,7 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
         validVersionsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000002);
-      supportedAwsRegions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      supportedAwsRegions_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -537,17 +532,16 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
       } else {
         result.validVersions_ = validVersionsBuilder_.build();
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
-        supportedAwsRegions_ = supportedAwsRegions_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.supportedAwsRegions_ = supportedAwsRegions_;
     }
 
     private void buildPartial0(com.google.cloud.gkemulticloud.v1.AwsServerConfig result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        supportedAwsRegions_.makeImmutable();
+        result.supportedAwsRegions_ = supportedAwsRegions_;
       }
     }
 
@@ -632,7 +626,7 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
       if (!other.supportedAwsRegions_.isEmpty()) {
         if (supportedAwsRegions_.isEmpty()) {
           supportedAwsRegions_ = other.supportedAwsRegions_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ |= 0x00000004;
         } else {
           ensureSupportedAwsRegionsIsMutable();
           supportedAwsRegions_.addAll(other.supportedAwsRegions_);
@@ -1179,14 +1173,14 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
       return validVersionsBuilder_;
     }
 
-    private com.google.protobuf.LazyStringList supportedAwsRegions_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList supportedAwsRegions_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureSupportedAwsRegionsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!supportedAwsRegions_.isModifiable()) {
         supportedAwsRegions_ = new com.google.protobuf.LazyStringArrayList(supportedAwsRegions_);
-        bitField0_ |= 0x00000004;
       }
+      bitField0_ |= 0x00000004;
     }
     /**
      *
@@ -1200,7 +1194,8 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
      * @return A list containing the supportedAwsRegions.
      */
     public com.google.protobuf.ProtocolStringList getSupportedAwsRegionsList() {
-      return supportedAwsRegions_.getUnmodifiableView();
+      supportedAwsRegions_.makeImmutable();
+      return supportedAwsRegions_;
     }
     /**
      *
@@ -1265,6 +1260,7 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
       }
       ensureSupportedAwsRegionsIsMutable();
       supportedAwsRegions_.set(index, value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1286,6 +1282,7 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
       }
       ensureSupportedAwsRegionsIsMutable();
       supportedAwsRegions_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1304,6 +1301,7 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
     public Builder addAllSupportedAwsRegions(java.lang.Iterable<java.lang.String> values) {
       ensureSupportedAwsRegionsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, supportedAwsRegions_);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1319,8 +1317,9 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearSupportedAwsRegions() {
-      supportedAwsRegions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      supportedAwsRegions_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000004);
+      ;
       onChanged();
       return this;
     }
@@ -1343,6 +1342,7 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
       checkByteStringIsUtf8(value);
       ensureSupportedAwsRegionsIsMutable();
       supportedAwsRegions_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

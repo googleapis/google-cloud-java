@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,9 +28,10 @@ public interface SecretVolumeOrBuilder
    *
    * <pre>
    * The path within the container to mount the secret volume. For example,
-   * setting the mount_path as `/etc/secrets` would mount the secret value files
-   * under the `/etc/secrets` directory. This directory will also be completely
+   * setting the mount_path as `/etc/secrets` mounts the secret value files
+   * under the `/etc/secrets` directory. This directory is also completely
    * shadowed and unavailable to mount any other secrets.
+   *
    * Recommended mount paths: /etc/secrets
    * Restricted mount paths: /cloudsql, /dev/log, /pod, /proc, /var/log
    * </pre>
@@ -45,9 +46,10 @@ public interface SecretVolumeOrBuilder
    *
    * <pre>
    * The path within the container to mount the secret volume. For example,
-   * setting the mount_path as `/etc/secrets` would mount the secret value files
-   * under the `/etc/secrets` directory. This directory will also be completely
+   * setting the mount_path as `/etc/secrets` mounts the secret value files
+   * under the `/etc/secrets` directory. This directory is also completely
    * shadowed and unavailable to mount any other secrets.
+   *
    * Recommended mount paths: /etc/secrets
    * Restricted mount paths: /cloudsql, /dev/log, /pod, /proc, /var/log
    * </pre>
@@ -63,9 +65,9 @@ public interface SecretVolumeOrBuilder
    *
    * <pre>
    * Project identifier (preferrably project number but can also be the project
-   * ID) of the project that contains the secret. If not set, it will be
-   * populated with the function's project assuming that the secret exists in
-   * the same project as of the function.
+   * ID) of the project that contains the secret. If not set, it is
+   * populated with the function's project, assuming that the secret exists in
+   * the same project as the function.
    * </pre>
    *
    * <code>string project_id = 2;</code>
@@ -78,9 +80,9 @@ public interface SecretVolumeOrBuilder
    *
    * <pre>
    * Project identifier (preferrably project number but can also be the project
-   * ID) of the project that contains the secret. If not set, it will be
-   * populated with the function's project assuming that the secret exists in
-   * the same project as of the function.
+   * ID) of the project that contains the secret. If not set, it is
+   * populated with the function's project, assuming that the secret exists in
+   * the same project as the function.
    * </pre>
    *
    * <code>string project_id = 2;</code>
@@ -93,7 +95,7 @@ public interface SecretVolumeOrBuilder
    *
    *
    * <pre>
-   * Name of the secret in secret manager (not the full resource name).
+   * Name of the secret in Secret Manager (not the full resource name).
    * </pre>
    *
    * <code>string secret = 3;</code>
@@ -105,7 +107,7 @@ public interface SecretVolumeOrBuilder
    *
    *
    * <pre>
-   * Name of the secret in secret manager (not the full resource name).
+   * Name of the secret in Secret Manager (not the full resource name).
    * </pre>
    *
    * <code>string secret = 3;</code>
@@ -119,7 +121,7 @@ public interface SecretVolumeOrBuilder
    *
    * <pre>
    * List of secret versions to mount for this secret. If empty, the `latest`
-   * version of the secret will be made available in a file named after the
+   * version of the secret is made available in a file named after the
    * secret under the mount point.
    * </pre>
    *
@@ -131,7 +133,7 @@ public interface SecretVolumeOrBuilder
    *
    * <pre>
    * List of secret versions to mount for this secret. If empty, the `latest`
-   * version of the secret will be made available in a file named after the
+   * version of the secret is made available in a file named after the
    * secret under the mount point.
    * </pre>
    *
@@ -143,7 +145,7 @@ public interface SecretVolumeOrBuilder
    *
    * <pre>
    * List of secret versions to mount for this secret. If empty, the `latest`
-   * version of the secret will be made available in a file named after the
+   * version of the secret is made available in a file named after the
    * secret under the mount point.
    * </pre>
    *
@@ -155,7 +157,7 @@ public interface SecretVolumeOrBuilder
    *
    * <pre>
    * List of secret versions to mount for this secret. If empty, the `latest`
-   * version of the secret will be made available in a file named after the
+   * version of the secret is made available in a file named after the
    * secret under the mount point.
    * </pre>
    *
@@ -168,7 +170,7 @@ public interface SecretVolumeOrBuilder
    *
    * <pre>
    * List of secret versions to mount for this secret. If empty, the `latest`
-   * version of the secret will be made available in a file named after the
+   * version of the secret is made available in a file named after the
    * secret under the mount point.
    * </pre>
    *

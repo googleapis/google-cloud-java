@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -176,7 +176,7 @@ public interface BackendBucketOrBuilder
    *
    *
    * <pre>
-   * Headers that the HTTP/S load balancer should add to proxied responses.
+   * Headers that the Application Load Balancer should add to proxied responses.
    * </pre>
    *
    * <code>repeated string custom_response_headers = 387539094;</code>
@@ -188,7 +188,7 @@ public interface BackendBucketOrBuilder
    *
    *
    * <pre>
-   * Headers that the HTTP/S load balancer should add to proxied responses.
+   * Headers that the Application Load Balancer should add to proxied responses.
    * </pre>
    *
    * <code>repeated string custom_response_headers = 387539094;</code>
@@ -200,7 +200,7 @@ public interface BackendBucketOrBuilder
    *
    *
    * <pre>
-   * Headers that the HTTP/S load balancer should add to proxied responses.
+   * Headers that the Application Load Balancer should add to proxied responses.
    * </pre>
    *
    * <code>repeated string custom_response_headers = 387539094;</code>
@@ -213,7 +213,7 @@ public interface BackendBucketOrBuilder
    *
    *
    * <pre>
-   * Headers that the HTTP/S load balancer should add to proxied responses.
+   * Headers that the Application Load Balancer should add to proxied responses.
    * </pre>
    *
    * <code>repeated string custom_response_headers = 387539094;</code>

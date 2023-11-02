@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ public interface GetEvaluationRequestOrBuilder
    *
    * <pre>
    * Required. Name of the evaluation. Format:
+   *
    * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/datasets/&lt;var&gt;{dataset_id}&lt;/var&gt;/evaluations/&lt;var&gt;{evaluation_id}&lt;/var&gt;'
    * </pre>
    *
@@ -43,6 +44,7 @@ public interface GetEvaluationRequestOrBuilder
    *
    * <pre>
    * Required. Name of the evaluation. Format:
+   *
    * "projects/&lt;var&gt;{project_id}&lt;/var&gt;/datasets/&lt;var&gt;{dataset_id}&lt;/var&gt;/evaluations/&lt;var&gt;{evaluation_id}&lt;/var&gt;'
    * </pre>
    *

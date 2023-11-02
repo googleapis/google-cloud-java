@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@ package com.google.privacy.dlp.v2;
  * Configuration for setting up a job to scan resources for profile generation.
  * Only one data profile configuration may exist per organization, folder,
  * or project.
+ *
  * The generated data profiles are retained according to the
  * [data retention policy]
  * (https://cloud.google.com/dlp/docs/data-profiles#retention).
@@ -44,7 +45,7 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
 
   private DataProfileJobConfig() {
     projectId_ = "";
-    inspectTemplates_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    inspectTemplates_ = com.google.protobuf.LazyStringArrayList.emptyList();
     dataProfileActions_ = java.util.Collections.emptyList();
   }
 
@@ -52,11 +53,6 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new DataProfileJobConfig();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -182,15 +178,18 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
   public static final int INSPECT_TEMPLATES_FIELD_NUMBER = 7;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList inspectTemplates_;
+  private com.google.protobuf.LazyStringArrayList inspectTemplates_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
    * <pre>
    * Detection logic for profile generation.
+   *
    * Not all template features are used by profiles. FindingLimits,
    * include_quote and exclude_info_types have no impact on
    * data profiling.
+   *
    * Multiple templates may be provided if there is data in multiple regions.
    * At most one template must be specified per-region (including "global").
    * Each region is scanned using the applicable template. If no region-specific
@@ -198,8 +197,9 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
    * copied to that region and used instead. If no global or region-specific
    * template is provided for a region with data, that region's data will not be
    * scanned.
+   *
    * For more information, see
-   * https://cloud.google.com/dlp/docs/data-profiles#data_residency.
+   * https://cloud.google.com/dlp/docs/data-profiles#data-residency.
    * </pre>
    *
    * <code>repeated string inspect_templates = 7;</code>
@@ -214,9 +214,11 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Detection logic for profile generation.
+   *
    * Not all template features are used by profiles. FindingLimits,
    * include_quote and exclude_info_types have no impact on
    * data profiling.
+   *
    * Multiple templates may be provided if there is data in multiple regions.
    * At most one template must be specified per-region (including "global").
    * Each region is scanned using the applicable template. If no region-specific
@@ -224,8 +226,9 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
    * copied to that region and used instead. If no global or region-specific
    * template is provided for a region with data, that region's data will not be
    * scanned.
+   *
    * For more information, see
-   * https://cloud.google.com/dlp/docs/data-profiles#data_residency.
+   * https://cloud.google.com/dlp/docs/data-profiles#data-residency.
    * </pre>
    *
    * <code>repeated string inspect_templates = 7;</code>
@@ -240,9 +243,11 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Detection logic for profile generation.
+   *
    * Not all template features are used by profiles. FindingLimits,
    * include_quote and exclude_info_types have no impact on
    * data profiling.
+   *
    * Multiple templates may be provided if there is data in multiple regions.
    * At most one template must be specified per-region (including "global").
    * Each region is scanned using the applicable template. If no region-specific
@@ -250,8 +255,9 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
    * copied to that region and used instead. If no global or region-specific
    * template is provided for a region with data, that region's data will not be
    * scanned.
+   *
    * For more information, see
-   * https://cloud.google.com/dlp/docs/data-profiles#data_residency.
+   * https://cloud.google.com/dlp/docs/data-profiles#data-residency.
    * </pre>
    *
    * <code>repeated string inspect_templates = 7;</code>
@@ -267,9 +273,11 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Detection logic for profile generation.
+   *
    * Not all template features are used by profiles. FindingLimits,
    * include_quote and exclude_info_types have no impact on
    * data profiling.
+   *
    * Multiple templates may be provided if there is data in multiple regions.
    * At most one template must be specified per-region (including "global").
    * Each region is scanned using the applicable template. If no region-specific
@@ -277,8 +285,9 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
    * copied to that region and used instead. If no global or region-specific
    * template is provided for a region with data, that region's data will not be
    * scanned.
+   *
    * For more information, see
-   * https://cloud.google.com/dlp/docs/data-profiles#data_residency.
+   * https://cloud.google.com/dlp/docs/data-profiles#data-residency.
    * </pre>
    *
    * <code>repeated string inspect_templates = 7;</code>
@@ -570,6 +579,7 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
    * Configuration for setting up a job to scan resources for profile generation.
    * Only one data profile configuration may exist per organization, folder,
    * or project.
+   *
    * The generated data profiles are retained according to the
    * [data retention policy]
    * (https://cloud.google.com/dlp/docs/data-profiles#retention).
@@ -613,8 +623,7 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
         locationBuilder_ = null;
       }
       projectId_ = "";
-      inspectTemplates_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      inspectTemplates_ = com.google.protobuf.LazyStringArrayList.emptyList();
       if (dataProfileActionsBuilder_ == null) {
         dataProfileActions_ = java.util.Collections.emptyList();
       } else {
@@ -658,11 +667,6 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
     }
 
     private void buildPartialRepeatedFields(com.google.privacy.dlp.v2.DataProfileJobConfig result) {
-      if (((bitField0_ & 0x00000004) != 0)) {
-        inspectTemplates_ = inspectTemplates_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.inspectTemplates_ = inspectTemplates_;
       if (dataProfileActionsBuilder_ == null) {
         if (((bitField0_ & 0x00000008) != 0)) {
           dataProfileActions_ = java.util.Collections.unmodifiableList(dataProfileActions_);
@@ -681,6 +685,10 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.projectId_ = projectId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        inspectTemplates_.makeImmutable();
+        result.inspectTemplates_ = inspectTemplates_;
       }
     }
 
@@ -740,7 +748,7 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
       if (!other.inspectTemplates_.isEmpty()) {
         if (inspectTemplates_.isEmpty()) {
           inspectTemplates_ = other.inspectTemplates_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ |= 0x00000004;
         } else {
           ensureInspectTemplatesIsMutable();
           inspectTemplates_.addAll(other.inspectTemplates_);
@@ -1151,23 +1159,25 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
       return this;
     }
 
-    private com.google.protobuf.LazyStringList inspectTemplates_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList inspectTemplates_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureInspectTemplatesIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!inspectTemplates_.isModifiable()) {
         inspectTemplates_ = new com.google.protobuf.LazyStringArrayList(inspectTemplates_);
-        bitField0_ |= 0x00000004;
       }
+      bitField0_ |= 0x00000004;
     }
     /**
      *
      *
      * <pre>
      * Detection logic for profile generation.
+     *
      * Not all template features are used by profiles. FindingLimits,
      * include_quote and exclude_info_types have no impact on
      * data profiling.
+     *
      * Multiple templates may be provided if there is data in multiple regions.
      * At most one template must be specified per-region (including "global").
      * Each region is scanned using the applicable template. If no region-specific
@@ -1175,8 +1185,9 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
      * copied to that region and used instead. If no global or region-specific
      * template is provided for a region with data, that region's data will not be
      * scanned.
+     *
      * For more information, see
-     * https://cloud.google.com/dlp/docs/data-profiles#data_residency.
+     * https://cloud.google.com/dlp/docs/data-profiles#data-residency.
      * </pre>
      *
      * <code>repeated string inspect_templates = 7;</code>
@@ -1184,16 +1195,19 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
      * @return A list containing the inspectTemplates.
      */
     public com.google.protobuf.ProtocolStringList getInspectTemplatesList() {
-      return inspectTemplates_.getUnmodifiableView();
+      inspectTemplates_.makeImmutable();
+      return inspectTemplates_;
     }
     /**
      *
      *
      * <pre>
      * Detection logic for profile generation.
+     *
      * Not all template features are used by profiles. FindingLimits,
      * include_quote and exclude_info_types have no impact on
      * data profiling.
+     *
      * Multiple templates may be provided if there is data in multiple regions.
      * At most one template must be specified per-region (including "global").
      * Each region is scanned using the applicable template. If no region-specific
@@ -1201,8 +1215,9 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
      * copied to that region and used instead. If no global or region-specific
      * template is provided for a region with data, that region's data will not be
      * scanned.
+     *
      * For more information, see
-     * https://cloud.google.com/dlp/docs/data-profiles#data_residency.
+     * https://cloud.google.com/dlp/docs/data-profiles#data-residency.
      * </pre>
      *
      * <code>repeated string inspect_templates = 7;</code>
@@ -1217,9 +1232,11 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Detection logic for profile generation.
+     *
      * Not all template features are used by profiles. FindingLimits,
      * include_quote and exclude_info_types have no impact on
      * data profiling.
+     *
      * Multiple templates may be provided if there is data in multiple regions.
      * At most one template must be specified per-region (including "global").
      * Each region is scanned using the applicable template. If no region-specific
@@ -1227,8 +1244,9 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
      * copied to that region and used instead. If no global or region-specific
      * template is provided for a region with data, that region's data will not be
      * scanned.
+     *
      * For more information, see
-     * https://cloud.google.com/dlp/docs/data-profiles#data_residency.
+     * https://cloud.google.com/dlp/docs/data-profiles#data-residency.
      * </pre>
      *
      * <code>repeated string inspect_templates = 7;</code>
@@ -1244,9 +1262,11 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Detection logic for profile generation.
+     *
      * Not all template features are used by profiles. FindingLimits,
      * include_quote and exclude_info_types have no impact on
      * data profiling.
+     *
      * Multiple templates may be provided if there is data in multiple regions.
      * At most one template must be specified per-region (including "global").
      * Each region is scanned using the applicable template. If no region-specific
@@ -1254,8 +1274,9 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
      * copied to that region and used instead. If no global or region-specific
      * template is provided for a region with data, that region's data will not be
      * scanned.
+     *
      * For more information, see
-     * https://cloud.google.com/dlp/docs/data-profiles#data_residency.
+     * https://cloud.google.com/dlp/docs/data-profiles#data-residency.
      * </pre>
      *
      * <code>repeated string inspect_templates = 7;</code>
@@ -1271,9 +1292,11 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Detection logic for profile generation.
+     *
      * Not all template features are used by profiles. FindingLimits,
      * include_quote and exclude_info_types have no impact on
      * data profiling.
+     *
      * Multiple templates may be provided if there is data in multiple regions.
      * At most one template must be specified per-region (including "global").
      * Each region is scanned using the applicable template. If no region-specific
@@ -1281,8 +1304,9 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
      * copied to that region and used instead. If no global or region-specific
      * template is provided for a region with data, that region's data will not be
      * scanned.
+     *
      * For more information, see
-     * https://cloud.google.com/dlp/docs/data-profiles#data_residency.
+     * https://cloud.google.com/dlp/docs/data-profiles#data-residency.
      * </pre>
      *
      * <code>repeated string inspect_templates = 7;</code>
@@ -1297,6 +1321,7 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
       }
       ensureInspectTemplatesIsMutable();
       inspectTemplates_.set(index, value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1305,9 +1330,11 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Detection logic for profile generation.
+     *
      * Not all template features are used by profiles. FindingLimits,
      * include_quote and exclude_info_types have no impact on
      * data profiling.
+     *
      * Multiple templates may be provided if there is data in multiple regions.
      * At most one template must be specified per-region (including "global").
      * Each region is scanned using the applicable template. If no region-specific
@@ -1315,8 +1342,9 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
      * copied to that region and used instead. If no global or region-specific
      * template is provided for a region with data, that region's data will not be
      * scanned.
+     *
      * For more information, see
-     * https://cloud.google.com/dlp/docs/data-profiles#data_residency.
+     * https://cloud.google.com/dlp/docs/data-profiles#data-residency.
      * </pre>
      *
      * <code>repeated string inspect_templates = 7;</code>
@@ -1330,6 +1358,7 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
       }
       ensureInspectTemplatesIsMutable();
       inspectTemplates_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1338,9 +1367,11 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Detection logic for profile generation.
+     *
      * Not all template features are used by profiles. FindingLimits,
      * include_quote and exclude_info_types have no impact on
      * data profiling.
+     *
      * Multiple templates may be provided if there is data in multiple regions.
      * At most one template must be specified per-region (including "global").
      * Each region is scanned using the applicable template. If no region-specific
@@ -1348,8 +1379,9 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
      * copied to that region and used instead. If no global or region-specific
      * template is provided for a region with data, that region's data will not be
      * scanned.
+     *
      * For more information, see
-     * https://cloud.google.com/dlp/docs/data-profiles#data_residency.
+     * https://cloud.google.com/dlp/docs/data-profiles#data-residency.
      * </pre>
      *
      * <code>repeated string inspect_templates = 7;</code>
@@ -1360,6 +1392,7 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
     public Builder addAllInspectTemplates(java.lang.Iterable<java.lang.String> values) {
       ensureInspectTemplatesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, inspectTemplates_);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1368,9 +1401,11 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Detection logic for profile generation.
+     *
      * Not all template features are used by profiles. FindingLimits,
      * include_quote and exclude_info_types have no impact on
      * data profiling.
+     *
      * Multiple templates may be provided if there is data in multiple regions.
      * At most one template must be specified per-region (including "global").
      * Each region is scanned using the applicable template. If no region-specific
@@ -1378,8 +1413,9 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
      * copied to that region and used instead. If no global or region-specific
      * template is provided for a region with data, that region's data will not be
      * scanned.
+     *
      * For more information, see
-     * https://cloud.google.com/dlp/docs/data-profiles#data_residency.
+     * https://cloud.google.com/dlp/docs/data-profiles#data-residency.
      * </pre>
      *
      * <code>repeated string inspect_templates = 7;</code>
@@ -1387,8 +1423,9 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearInspectTemplates() {
-      inspectTemplates_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      inspectTemplates_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000004);
+      ;
       onChanged();
       return this;
     }
@@ -1397,9 +1434,11 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Detection logic for profile generation.
+     *
      * Not all template features are used by profiles. FindingLimits,
      * include_quote and exclude_info_types have no impact on
      * data profiling.
+     *
      * Multiple templates may be provided if there is data in multiple regions.
      * At most one template must be specified per-region (including "global").
      * Each region is scanned using the applicable template. If no region-specific
@@ -1407,8 +1446,9 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
      * copied to that region and used instead. If no global or region-specific
      * template is provided for a region with data, that region's data will not be
      * scanned.
+     *
      * For more information, see
-     * https://cloud.google.com/dlp/docs/data-profiles#data_residency.
+     * https://cloud.google.com/dlp/docs/data-profiles#data-residency.
      * </pre>
      *
      * <code>repeated string inspect_templates = 7;</code>
@@ -1423,6 +1463,7 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
       checkByteStringIsUtf8(value);
       ensureInspectTemplatesIsMutable();
       inspectTemplates_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

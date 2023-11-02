@@ -40,6 +40,12 @@
             "GetBackupPlan": {
               "methods": ["getBackupPlan", "getBackupPlan", "getBackupPlan", "getBackupPlanCallable"]
             },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
             "GetRestore": {
               "methods": ["getRestore", "getRestore", "getRestore", "getRestoreCallable"]
             },
@@ -58,6 +64,9 @@
             "ListBackups": {
               "methods": ["listBackups", "listBackups", "listBackups", "listBackupsPagedCallable", "listBackupsCallable"]
             },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
             "ListRestorePlans": {
               "methods": ["listRestorePlans", "listRestorePlans", "listRestorePlans", "listRestorePlansPagedCallable", "listRestorePlansCallable"]
             },
@@ -69,6 +78,12 @@
             },
             "ListVolumeRestores": {
               "methods": ["listVolumeRestores", "listVolumeRestores", "listVolumeRestores", "listVolumeRestoresPagedCallable", "listVolumeRestoresCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
             },
             "UpdateBackup": {
               "methods": ["updateBackupAsync", "updateBackupAsync", "updateBackupOperationCallable", "updateBackupCallable"]

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,8 +27,9 @@ public interface ListEntryGroupsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the location that contains the entry groups, which can be
-   * provided in URL format. Example:
+   * Required. The name of the location that contains the entry groups, which
+   * can be provided in URL format. Example:
+   *
    * * projects/{project_id}/locations/{location}
    * </pre>
    *
@@ -43,8 +44,9 @@ public interface ListEntryGroupsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the location that contains the entry groups, which can be
-   * provided in URL format. Example:
+   * Required. The name of the location that contains the entry groups, which
+   * can be provided in URL format. Example:
+   *
    * * projects/{project_id}/locations/{location}
    * </pre>
    *
@@ -60,8 +62,8 @@ public interface ListEntryGroupsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The maximum number of items to return. Default is 10. Max limit is 1000.
-   * Throws an invalid argument for `page_size &gt; 1000`.
+   * Optional. The maximum number of items to return. Default is 10. Max limit
+   * is 1000. Throws an invalid argument for `page_size &gt; 1000`.
    * </pre>
    *
    * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -74,8 +76,8 @@ public interface ListEntryGroupsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Token that specifies which page is requested. If empty, the first page is
-   * returned.
+   * Optional. Token that specifies which page is requested. If empty, the first
+   * page is returned.
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -87,8 +89,8 @@ public interface ListEntryGroupsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Token that specifies which page is requested. If empty, the first page is
-   * returned.
+   * Optional. Token that specifies which page is requested. If empty, the first
+   * page is returned.
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>

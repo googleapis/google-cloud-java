@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class GitSource extends com.google.protobuf.GeneratedMessageV3
     return new GitSource();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.privatecatalog.v1beta1.PrivateCatalogProto
         .internal_static_google_cloud_privatecatalog_v1beta1_GitSource_descriptor;
@@ -69,6 +64,8 @@ public final class GitSource extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int refCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object ref_;
 
   public enum RefCase
@@ -178,6 +175,7 @@ public final class GitSource extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Directory, relative to the source root, in which to run the build.
+   *
    * This must be a relative path. If a step's `dir` is specified and is an
    * absolute path, this value is ignored for that step's execution.
    * </pre>
@@ -203,6 +201,7 @@ public final class GitSource extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Directory, relative to the source root, in which to run the build.
+   *
    * This must be a relative path. If a step's `dir` is specified and is an
    * absolute path, this value is ignored for that step's execution.
    * </pre>
@@ -1030,6 +1029,7 @@ public final class GitSource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Directory, relative to the source root, in which to run the build.
+     *
      * This must be a relative path. If a step's `dir` is specified and is an
      * absolute path, this value is ignored for that step's execution.
      * </pre>
@@ -1054,6 +1054,7 @@ public final class GitSource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Directory, relative to the source root, in which to run the build.
+     *
      * This must be a relative path. If a step's `dir` is specified and is an
      * absolute path, this value is ignored for that step's execution.
      * </pre>
@@ -1078,6 +1079,7 @@ public final class GitSource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Directory, relative to the source root, in which to run the build.
+     *
      * This must be a relative path. If a step's `dir` is specified and is an
      * absolute path, this value is ignored for that step's execution.
      * </pre>
@@ -1101,6 +1103,7 @@ public final class GitSource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Directory, relative to the source root, in which to run the build.
+     *
      * This must be a relative path. If a step's `dir` is specified and is an
      * absolute path, this value is ignored for that step's execution.
      * </pre>
@@ -1120,6 +1123,7 @@ public final class GitSource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Directory, relative to the source root, in which to run the build.
+     *
      * This must be a relative path. If a step's `dir` is specified and is an
      * absolute path, this value is ignored for that step's execution.
      * </pre>

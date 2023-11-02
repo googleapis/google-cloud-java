@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,19 +43,19 @@ public final class ResourceProto {
       "\n-google/cloud/securitycenter/v1/resourc"
           + "e.proto\022\036google.cloud.securitycenter.v1\032"
           + "\037google/api/field_behavior.proto\032+google"
-          + "/cloud/securitycenter/v1/folder.proto\"\326\001"
+          + "/cloud/securitycenter/v1/folder.proto\"\327\001"
           + "\n\010Resource\022\014\n\004name\030\001 \001(\t\022\024\n\014display_name"
           + "\030\010 \001(\t\022\014\n\004type\030\006 \001(\t\022\017\n\007project\030\002 \001(\t\022\034\n"
           + "\024project_display_name\030\003 \001(\t\022\016\n\006parent\030\004 "
-          + "\001(\t\022\033\n\023parent_display_name\030\005 \001(\t\022<\n\007fold"
+          + "\001(\t\022\033\n\023parent_display_name\030\005 \001(\t\022=\n\007fold"
           + "ers\030\007 \003(\0132&.google.cloud.securitycenter."
-          + "v1.FolderB\003\340A\003B\347\001\n\"com.google.cloud.secu"
-          + "ritycenter.v1B\rResourceProtoP\001ZJcloud.go"
-          + "ogle.com/go/securitycenter/apiv1/securit"
-          + "ycenterpb;securitycenterpb\252\002\036Google.Clou"
-          + "d.SecurityCenter.V1\312\002\036Google\\Cloud\\Secur"
-          + "ityCenter\\V1\352\002!Google::Cloud::SecurityCe"
-          + "nter::V1b\006proto3"
+          + "v1.FolderB\004\342A\001\003B\347\001\n\"com.google.cloud.sec"
+          + "uritycenter.v1B\rResourceProtoP\001ZJcloud.g"
+          + "oogle.com/go/securitycenter/apiv1/securi"
+          + "tycenterpb;securitycenterpb\252\002\036Google.Clo"
+          + "ud.SecurityCenter.V1\312\002\036Google\\Cloud\\Secu"
+          + "rityCenter\\V1\352\002!Google::Cloud::SecurityC"
+          + "enter::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

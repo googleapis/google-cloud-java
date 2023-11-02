@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,8 +56,8 @@ public interface QueryDirectoryContentsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The directory's full path including directory name, relative to the
-   * workspace root. If left unset, the workspace root is used.
+   * Optional. The directory's full path including directory name, relative to
+   * the workspace root. If left unset, the workspace root is used.
    * </pre>
    *
    * <code>string path = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -69,8 +69,8 @@ public interface QueryDirectoryContentsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The directory's full path including directory name, relative to the
-   * workspace root. If left unset, the workspace root is used.
+   * Optional. The directory's full path including directory name, relative to
+   * the workspace root. If left unset, the workspace root is used.
    * </pre>
    *
    * <code>string path = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -98,8 +98,9 @@ public interface QueryDirectoryContentsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Page token received from a previous `QueryDirectoryContents` call.
-   * Provide this to retrieve the subsequent page.
+   * Optional. Page token received from a previous `QueryDirectoryContents`
+   * call. Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to
    * `QueryDirectoryContents` must match the call that provided the page
    * token.
@@ -114,8 +115,9 @@ public interface QueryDirectoryContentsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Page token received from a previous `QueryDirectoryContents` call.
-   * Provide this to retrieve the subsequent page.
+   * Optional. Page token received from a previous `QueryDirectoryContents`
+   * call. Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to
    * `QueryDirectoryContents` must match the call that provided the page
    * token.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,10 +28,13 @@ public interface EnableServiceRequestOrBuilder
    *
    * <pre>
    * Name of the consumer and service to enable the service on.
+   *
    * The `EnableService` and `DisableService` methods currently only support
    * projects.
+   *
    * Enabling a service requires that the service is public or is shared with
    * the user enabling the service.
+   *
    * An example name would be:
    * `projects/123/services/serviceusage.googleapis.com`
    * where `123` is the project number (not project ID).
@@ -47,10 +50,13 @@ public interface EnableServiceRequestOrBuilder
    *
    * <pre>
    * Name of the consumer and service to enable the service on.
+   *
    * The `EnableService` and `DisableService` methods currently only support
    * projects.
+   *
    * Enabling a service requires that the service is public or is shared with
    * the user enabling the service.
+   *
    * An example name would be:
    * `projects/123/services/serviceusage.googleapis.com`
    * where `123` is the project number (not project ID).

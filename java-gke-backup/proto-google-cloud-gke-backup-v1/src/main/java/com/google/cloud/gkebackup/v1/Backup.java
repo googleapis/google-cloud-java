@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -54,11 +54,6 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Backup();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -327,8 +322,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The source cluster from which this Backup was created.
      * Valid formats:
-     *   - projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;
-     *   - projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;
+     *
+     *   - `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`
+     *   - `projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;`
+     *
      * This is inherited from the parent BackupPlan's
      * [cluster][google.cloud.gkebackup.v1.BackupPlan.cluster] field.
      * </pre>
@@ -344,8 +341,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The source cluster from which this Backup was created.
      * Valid formats:
-     *   - projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;
-     *   - projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;
+     *
+     *   - `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`
+     *   - `projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;`
+     *
      * This is inherited from the parent BackupPlan's
      * [cluster][google.cloud.gkebackup.v1.BackupPlan.cluster] field.
      * </pre>
@@ -513,7 +512,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getAnthosVersionBytes();
 
-    public com.google.cloud.gkebackup.v1.Backup.ClusterMetadata.PlatformVersionCase
+    com.google.cloud.gkebackup.v1.Backup.ClusterMetadata.PlatformVersionCase
         getPlatformVersionCase();
   }
   /**
@@ -546,11 +545,6 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
       return new ClusterMetadata();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.gkebackup.v1.BackupProto
           .internal_static_google_cloud_gkebackup_v1_Backup_ClusterMetadata_descriptor;
@@ -578,6 +572,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int platformVersionCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object platformVersion_;
 
     public enum PlatformVersionCase
@@ -634,8 +630,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The source cluster from which this Backup was created.
      * Valid formats:
-     *   - projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;
-     *   - projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;
+     *
+     *   - `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`
+     *   - `projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;`
+     *
      * This is inherited from the parent BackupPlan's
      * [cluster][google.cloud.gkebackup.v1.BackupPlan.cluster] field.
      * </pre>
@@ -662,8 +660,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The source cluster from which this Backup was created.
      * Valid formats:
-     *   - projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;
-     *   - projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;
+     *
+     *   - `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`
+     *   - `projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;`
+     *
      * This is inherited from the parent BackupPlan's
      * [cluster][google.cloud.gkebackup.v1.BackupPlan.cluster] field.
      * </pre>
@@ -1512,8 +1512,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * The source cluster from which this Backup was created.
        * Valid formats:
-       *   - projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;
-       *   - projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;
+       *
+       *   - `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`
+       *   - `projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;`
+       *
        * This is inherited from the parent BackupPlan's
        * [cluster][google.cloud.gkebackup.v1.BackupPlan.cluster] field.
        * </pre>
@@ -1539,8 +1541,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * The source cluster from which this Backup was created.
        * Valid formats:
-       *   - projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;
-       *   - projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;
+       *
+       *   - `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`
+       *   - `projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;`
+       *
        * This is inherited from the parent BackupPlan's
        * [cluster][google.cloud.gkebackup.v1.BackupPlan.cluster] field.
        * </pre>
@@ -1566,8 +1570,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * The source cluster from which this Backup was created.
        * Valid formats:
-       *   - projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;
-       *   - projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;
+       *
+       *   - `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`
+       *   - `projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;`
+       *
        * This is inherited from the parent BackupPlan's
        * [cluster][google.cloud.gkebackup.v1.BackupPlan.cluster] field.
        * </pre>
@@ -1592,8 +1598,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * The source cluster from which this Backup was created.
        * Valid formats:
-       *   - projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;
-       *   - projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;
+       *
+       *   - `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`
+       *   - `projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;`
+       *
        * This is inherited from the parent BackupPlan's
        * [cluster][google.cloud.gkebackup.v1.BackupPlan.cluster] field.
        * </pre>
@@ -1614,8 +1622,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * The source cluster from which this Backup was created.
        * Valid formats:
-       *   - projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;
-       *   - projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;
+       *
+       *   - `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`
+       *   - `projects/&#42;&#47;zones/&#42;&#47;clusters/&#42;`
+       *
        * This is inherited from the parent BackupPlan's
        * [cluster][google.cloud.gkebackup.v1.BackupPlan.cluster] field.
        * </pre>
@@ -2245,6 +2255,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int backupScopeCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object backupScope_;
 
   public enum BackupScopeCase
@@ -2303,7 +2315,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The fully qualified name of the Backup.
-   * projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;&#47;backups/&#42;
+   * `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;&#47;backups/&#42;`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2327,7 +2339,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The fully qualified name of the Backup.
-   * projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;&#47;backups/&#42;
+   * `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;&#47;backups/&#42;`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2504,9 +2516,9 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. This flag indicates whether this Backup resource was created manually
-   * by a user or via a schedule in the BackupPlan. A value of True means that
-   * the Backup was created manually.
+   * Output only. This flag indicates whether this Backup resource was created
+   * manually by a user or via a schedule in the BackupPlan. A value of True
+   * means that the Backup was created manually.
    * </pre>
    *
    * <code>bool manual = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2631,6 +2643,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
    * automatic deletion) for the number of days provided (measured from the
    * creation time of the Backup).  MUST be an integer value between 0-90
    * (inclusive).
+   *
    * Defaults to parent BackupPlan's
    * [backup_delete_lock_days][google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy.backup_delete_lock_days]
    * setting and may only be increased
@@ -2652,8 +2665,9 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The time at which an existing delete lock will expire for this backup
-   * (calculated from create_time + [delete_lock_days][google.cloud.gkebackup.v1.Backup.delete_lock_days]).
+   * Output only. The time at which an existing delete lock will expire for this
+   * backup (calculated from create_time +
+   * [delete_lock_days][google.cloud.gkebackup.v1.Backup.delete_lock_days]).
    * </pre>
    *
    * <code>
@@ -2670,8 +2684,9 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The time at which an existing delete lock will expire for this backup
-   * (calculated from create_time + [delete_lock_days][google.cloud.gkebackup.v1.Backup.delete_lock_days]).
+   * Output only. The time at which an existing delete lock will expire for this
+   * backup (calculated from create_time +
+   * [delete_lock_days][google.cloud.gkebackup.v1.Backup.delete_lock_days]).
    * </pre>
    *
    * <code>
@@ -2690,8 +2705,9 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The time at which an existing delete lock will expire for this backup
-   * (calculated from create_time + [delete_lock_days][google.cloud.gkebackup.v1.Backup.delete_lock_days]).
+   * Output only. The time at which an existing delete lock will expire for this
+   * backup (calculated from create_time +
+   * [delete_lock_days][google.cloud.gkebackup.v1.Backup.delete_lock_days]).
    * </pre>
    *
    * <code>
@@ -2713,11 +2729,17 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The age (in days) after which this Backup will be automatically deleted.
    * Must be an integer value &gt;= 0:
+   *
    * - If 0, no automatic deletion will occur for this Backup.
-   * - If not 0, this must be &gt;= [delete_lock_days][google.cloud.gkebackup.v1.Backup.delete_lock_days].
+   * - If not 0, this must be &gt;=
+   * [delete_lock_days][google.cloud.gkebackup.v1.Backup.delete_lock_days] and
+   * &lt;= 365.
+   *
    * Once a Backup is created, this value may only be increased.
+   *
    * Defaults to the parent BackupPlan's
-   * [backup_retain_days][google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy.backup_retain_days] value.
+   * [backup_retain_days][google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy.backup_retain_days]
+   * value.
    * </pre>
    *
    * <code>int32 retain_days = 9;</code>
@@ -2735,8 +2757,9 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The time at which this Backup will be automatically deleted (calculated
-   * from create_time + [retain_days][google.cloud.gkebackup.v1.Backup.retain_days]).
+   * Output only. The time at which this Backup will be automatically deleted
+   * (calculated from create_time +
+   * [retain_days][google.cloud.gkebackup.v1.Backup.retain_days]).
    * </pre>
    *
    * <code>
@@ -2753,8 +2776,9 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The time at which this Backup will be automatically deleted (calculated
-   * from create_time + [retain_days][google.cloud.gkebackup.v1.Backup.retain_days]).
+   * Output only. The time at which this Backup will be automatically deleted
+   * (calculated from create_time +
+   * [retain_days][google.cloud.gkebackup.v1.Backup.retain_days]).
    * </pre>
    *
    * <code>
@@ -2773,8 +2797,9 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The time at which this Backup will be automatically deleted (calculated
-   * from create_time + [retain_days][google.cloud.gkebackup.v1.Backup.retain_days]).
+   * Output only. The time at which this Backup will be automatically deleted
+   * (calculated from create_time +
+   * [retain_days][google.cloud.gkebackup.v1.Backup.retain_days]).
    * </pre>
    *
    * <code>
@@ -2794,9 +2819,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The customer managed encryption key that was used to encrypt the Backup's
-   * artifacts.  Inherited from the parent BackupPlan's
-   * [encryption_key][google.cloud.gkebackup.v1.BackupPlan.BackupConfig.encryption_key] value.
+   * Output only. The customer managed encryption key that was used to encrypt
+   * the Backup's artifacts.  Inherited from the parent BackupPlan's
+   * [encryption_key][google.cloud.gkebackup.v1.BackupPlan.BackupConfig.encryption_key]
+   * value.
    * </pre>
    *
    * <code>
@@ -2813,9 +2839,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The customer managed encryption key that was used to encrypt the Backup's
-   * artifacts.  Inherited from the parent BackupPlan's
-   * [encryption_key][google.cloud.gkebackup.v1.BackupPlan.BackupConfig.encryption_key] value.
+   * Output only. The customer managed encryption key that was used to encrypt
+   * the Backup's artifacts.  Inherited from the parent BackupPlan's
+   * [encryption_key][google.cloud.gkebackup.v1.BackupPlan.BackupConfig.encryption_key]
+   * value.
    * </pre>
    *
    * <code>
@@ -2834,9 +2861,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The customer managed encryption key that was used to encrypt the Backup's
-   * artifacts.  Inherited from the parent BackupPlan's
-   * [encryption_key][google.cloud.gkebackup.v1.BackupPlan.BackupConfig.encryption_key] value.
+   * Output only. The customer managed encryption key that was used to encrypt
+   * the Backup's artifacts.  Inherited from the parent BackupPlan's
+   * [encryption_key][google.cloud.gkebackup.v1.BackupPlan.BackupConfig.encryption_key]
+   * value.
    * </pre>
    *
    * <code>
@@ -2890,7 +2918,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. If set, the list of namespaces that were included in the Backup.
+   * Output only. If set, the list of namespaces that were included in the
+   * Backup.
    * </pre>
    *
    * <code>
@@ -2907,7 +2936,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. If set, the list of namespaces that were included in the Backup.
+   * Output only. If set, the list of namespaces that were included in the
+   * Backup.
    * </pre>
    *
    * <code>
@@ -2927,7 +2957,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. If set, the list of namespaces that were included in the Backup.
+   * Output only. If set, the list of namespaces that were included in the
+   * Backup.
    * </pre>
    *
    * <code>
@@ -2947,8 +2978,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. If set, the list of ProtectedApplications whose resources were included
-   * in the Backup.
+   * Output only. If set, the list of ProtectedApplications whose resources
+   * were included in the Backup.
    * </pre>
    *
    * <code>
@@ -2965,8 +2996,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. If set, the list of ProtectedApplications whose resources were included
-   * in the Backup.
+   * Output only. If set, the list of ProtectedApplications whose resources
+   * were included in the Backup.
    * </pre>
    *
    * <code>
@@ -2986,8 +3017,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. If set, the list of ProtectedApplications whose resources were included
-   * in the Backup.
+   * Output only. If set, the list of ProtectedApplications whose resources
+   * were included in the Backup.
    * </pre>
    *
    * <code>
@@ -3008,9 +3039,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Whether or not the Backup contains volume data.  Controlled by the parent
-   * BackupPlan's
-   * [include_volume_data][google.cloud.gkebackup.v1.BackupPlan.BackupConfig.include_volume_data] value.
+   * Output only. Whether or not the Backup contains volume data.  Controlled by
+   * the parent BackupPlan's
+   * [include_volume_data][google.cloud.gkebackup.v1.BackupPlan.BackupConfig.include_volume_data]
+   * value.
    * </pre>
    *
    * <code>bool contains_volume_data = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3028,9 +3060,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Whether or not the Backup contains Kubernetes Secrets.  Controlled by the
-   * parent BackupPlan's
-   * [include_secrets][google.cloud.gkebackup.v1.BackupPlan.BackupConfig.include_secrets] value.
+   * Output only. Whether or not the Backup contains Kubernetes Secrets.
+   * Controlled by the parent BackupPlan's
+   * [include_secrets][google.cloud.gkebackup.v1.BackupPlan.BackupConfig.include_secrets]
+   * value.
    * </pre>
    *
    * <code>bool contains_secrets = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3048,7 +3081,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Information about the GKE cluster from which this Backup was created.
+   * Output only. Information about the GKE cluster from which this Backup was
+   * created.
    * </pre>
    *
    * <code>
@@ -3065,7 +3099,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Information about the GKE cluster from which this Backup was created.
+   * Output only. Information about the GKE cluster from which this Backup was
+   * created.
    * </pre>
    *
    * <code>
@@ -3084,7 +3119,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Information about the GKE cluster from which this Backup was created.
+   * Output only. Information about the GKE cluster from which this Backup was
+   * created.
    * </pre>
    *
    * <code>
@@ -3146,7 +3182,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Human-readable description of why the backup is in the current `state`.
+   * Output only. Human-readable description of why the backup is in the current
+   * `state`.
    * </pre>
    *
    * <code>string state_reason = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3169,7 +3206,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Human-readable description of why the backup is in the current `state`.
+   * Output only. Human-readable description of why the backup is in the current
+   * `state`.
    * </pre>
    *
    * <code>string state_reason = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3251,7 +3289,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The total number of Kubernetes resources included in the Backup.
+   * Output only. The total number of Kubernetes resources included in the
+   * Backup.
    * </pre>
    *
    * <code>int32 resource_count = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3287,8 +3326,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The total size of the Backup in bytes = config backup size + sum(volume
-   * backup sizes)
+   * Output only. The total size of the Backup in bytes = config backup size +
+   * sum(volume backup sizes)
    * </pre>
    *
    * <code>int64 size_bytes = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3308,8 +3347,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. `etag` is used for optimistic concurrency control as a way to help
-   * prevent simultaneous updates of a backup from overwriting each other.
+   * Output only. `etag` is used for optimistic concurrency control as a way to
+   * help prevent simultaneous updates of a backup from overwriting each other.
    * It is strongly suggested that systems make use of the `etag` in the
    * read-modify-write cycle to perform backup updates in order to avoid
    * race conditions: An `etag` is returned in the response to `GetBackup`,
@@ -3338,8 +3377,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. `etag` is used for optimistic concurrency control as a way to help
-   * prevent simultaneous updates of a backup from overwriting each other.
+   * Output only. `etag` is used for optimistic concurrency control as a way to
+   * help prevent simultaneous updates of a backup from overwriting each other.
    * It is strongly suggested that systems make use of the `etag` in the
    * read-modify-write cycle to perform backup updates in order to avoid
    * race conditions: An `etag` is returned in the response to `GetBackup`,
@@ -4550,7 +4589,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The fully qualified name of the Backup.
-     * projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;&#47;backups/&#42;
+     * `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;&#47;backups/&#42;`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4573,7 +4612,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The fully qualified name of the Backup.
-     * projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;&#47;backups/&#42;
+     * `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;&#47;backups/&#42;`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4596,7 +4635,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The fully qualified name of the Backup.
-     * projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;&#47;backups/&#42;
+     * `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;&#47;backups/&#42;`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4618,7 +4657,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The fully qualified name of the Backup.
-     * projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;&#47;backups/&#42;
+     * `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;&#47;backups/&#42;`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4636,7 +4675,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The fully qualified name of the Backup.
-     * projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;&#47;backups/&#42;
+     * `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;&#47;backups/&#42;`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -5173,9 +5212,9 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. This flag indicates whether this Backup resource was created manually
-     * by a user or via a schedule in the BackupPlan. A value of True means that
-     * the Backup was created manually.
+     * Output only. This flag indicates whether this Backup resource was created
+     * manually by a user or via a schedule in the BackupPlan. A value of True
+     * means that the Backup was created manually.
      * </pre>
      *
      * <code>bool manual = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -5190,9 +5229,9 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. This flag indicates whether this Backup resource was created manually
-     * by a user or via a schedule in the BackupPlan. A value of True means that
-     * the Backup was created manually.
+     * Output only. This flag indicates whether this Backup resource was created
+     * manually by a user or via a schedule in the BackupPlan. A value of True
+     * means that the Backup was created manually.
      * </pre>
      *
      * <code>bool manual = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -5211,9 +5250,9 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. This flag indicates whether this Backup resource was created manually
-     * by a user or via a schedule in the BackupPlan. A value of True means that
-     * the Backup was created manually.
+     * Output only. This flag indicates whether this Backup resource was created
+     * manually by a user or via a schedule in the BackupPlan. A value of True
+     * means that the Backup was created manually.
      * </pre>
      *
      * <code>bool manual = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -5400,6 +5439,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      * automatic deletion) for the number of days provided (measured from the
      * creation time of the Backup).  MUST be an integer value between 0-90
      * (inclusive).
+     *
      * Defaults to parent BackupPlan's
      * [backup_delete_lock_days][google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy.backup_delete_lock_days]
      * setting and may only be increased
@@ -5423,6 +5463,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      * automatic deletion) for the number of days provided (measured from the
      * creation time of the Backup).  MUST be an integer value between 0-90
      * (inclusive).
+     *
      * Defaults to parent BackupPlan's
      * [backup_delete_lock_days][google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy.backup_delete_lock_days]
      * setting and may only be increased
@@ -5450,6 +5491,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      * automatic deletion) for the number of days provided (measured from the
      * creation time of the Backup).  MUST be an integer value between 0-90
      * (inclusive).
+     *
      * Defaults to parent BackupPlan's
      * [backup_delete_lock_days][google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy.backup_delete_lock_days]
      * setting and may only be increased
@@ -5477,8 +5519,9 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time at which an existing delete lock will expire for this backup
-     * (calculated from create_time + [delete_lock_days][google.cloud.gkebackup.v1.Backup.delete_lock_days]).
+     * Output only. The time at which an existing delete lock will expire for this
+     * backup (calculated from create_time +
+     * [delete_lock_days][google.cloud.gkebackup.v1.Backup.delete_lock_days]).
      * </pre>
      *
      * <code>
@@ -5494,8 +5537,9 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time at which an existing delete lock will expire for this backup
-     * (calculated from create_time + [delete_lock_days][google.cloud.gkebackup.v1.Backup.delete_lock_days]).
+     * Output only. The time at which an existing delete lock will expire for this
+     * backup (calculated from create_time +
+     * [delete_lock_days][google.cloud.gkebackup.v1.Backup.delete_lock_days]).
      * </pre>
      *
      * <code>
@@ -5517,8 +5561,9 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time at which an existing delete lock will expire for this backup
-     * (calculated from create_time + [delete_lock_days][google.cloud.gkebackup.v1.Backup.delete_lock_days]).
+     * Output only. The time at which an existing delete lock will expire for this
+     * backup (calculated from create_time +
+     * [delete_lock_days][google.cloud.gkebackup.v1.Backup.delete_lock_days]).
      * </pre>
      *
      * <code>
@@ -5542,8 +5587,9 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time at which an existing delete lock will expire for this backup
-     * (calculated from create_time + [delete_lock_days][google.cloud.gkebackup.v1.Backup.delete_lock_days]).
+     * Output only. The time at which an existing delete lock will expire for this
+     * backup (calculated from create_time +
+     * [delete_lock_days][google.cloud.gkebackup.v1.Backup.delete_lock_days]).
      * </pre>
      *
      * <code>
@@ -5564,8 +5610,9 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time at which an existing delete lock will expire for this backup
-     * (calculated from create_time + [delete_lock_days][google.cloud.gkebackup.v1.Backup.delete_lock_days]).
+     * Output only. The time at which an existing delete lock will expire for this
+     * backup (calculated from create_time +
+     * [delete_lock_days][google.cloud.gkebackup.v1.Backup.delete_lock_days]).
      * </pre>
      *
      * <code>
@@ -5592,8 +5639,9 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time at which an existing delete lock will expire for this backup
-     * (calculated from create_time + [delete_lock_days][google.cloud.gkebackup.v1.Backup.delete_lock_days]).
+     * Output only. The time at which an existing delete lock will expire for this
+     * backup (calculated from create_time +
+     * [delete_lock_days][google.cloud.gkebackup.v1.Backup.delete_lock_days]).
      * </pre>
      *
      * <code>
@@ -5614,8 +5662,9 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time at which an existing delete lock will expire for this backup
-     * (calculated from create_time + [delete_lock_days][google.cloud.gkebackup.v1.Backup.delete_lock_days]).
+     * Output only. The time at which an existing delete lock will expire for this
+     * backup (calculated from create_time +
+     * [delete_lock_days][google.cloud.gkebackup.v1.Backup.delete_lock_days]).
      * </pre>
      *
      * <code>
@@ -5631,8 +5680,9 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time at which an existing delete lock will expire for this backup
-     * (calculated from create_time + [delete_lock_days][google.cloud.gkebackup.v1.Backup.delete_lock_days]).
+     * Output only. The time at which an existing delete lock will expire for this
+     * backup (calculated from create_time +
+     * [delete_lock_days][google.cloud.gkebackup.v1.Backup.delete_lock_days]).
      * </pre>
      *
      * <code>
@@ -5652,8 +5702,9 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time at which an existing delete lock will expire for this backup
-     * (calculated from create_time + [delete_lock_days][google.cloud.gkebackup.v1.Backup.delete_lock_days]).
+     * Output only. The time at which an existing delete lock will expire for this
+     * backup (calculated from create_time +
+     * [delete_lock_days][google.cloud.gkebackup.v1.Backup.delete_lock_days]).
      * </pre>
      *
      * <code>
@@ -5684,11 +5735,17 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The age (in days) after which this Backup will be automatically deleted.
      * Must be an integer value &gt;= 0:
+     *
      * - If 0, no automatic deletion will occur for this Backup.
-     * - If not 0, this must be &gt;= [delete_lock_days][google.cloud.gkebackup.v1.Backup.delete_lock_days].
+     * - If not 0, this must be &gt;=
+     * [delete_lock_days][google.cloud.gkebackup.v1.Backup.delete_lock_days] and
+     * &lt;= 365.
+     *
      * Once a Backup is created, this value may only be increased.
+     *
      * Defaults to the parent BackupPlan's
-     * [backup_retain_days][google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy.backup_retain_days] value.
+     * [backup_retain_days][google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy.backup_retain_days]
+     * value.
      * </pre>
      *
      * <code>int32 retain_days = 9;</code>
@@ -5705,11 +5762,17 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The age (in days) after which this Backup will be automatically deleted.
      * Must be an integer value &gt;= 0:
+     *
      * - If 0, no automatic deletion will occur for this Backup.
-     * - If not 0, this must be &gt;= [delete_lock_days][google.cloud.gkebackup.v1.Backup.delete_lock_days].
+     * - If not 0, this must be &gt;=
+     * [delete_lock_days][google.cloud.gkebackup.v1.Backup.delete_lock_days] and
+     * &lt;= 365.
+     *
      * Once a Backup is created, this value may only be increased.
+     *
      * Defaults to the parent BackupPlan's
-     * [backup_retain_days][google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy.backup_retain_days] value.
+     * [backup_retain_days][google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy.backup_retain_days]
+     * value.
      * </pre>
      *
      * <code>int32 retain_days = 9;</code>
@@ -5730,11 +5793,17 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The age (in days) after which this Backup will be automatically deleted.
      * Must be an integer value &gt;= 0:
+     *
      * - If 0, no automatic deletion will occur for this Backup.
-     * - If not 0, this must be &gt;= [delete_lock_days][google.cloud.gkebackup.v1.Backup.delete_lock_days].
+     * - If not 0, this must be &gt;=
+     * [delete_lock_days][google.cloud.gkebackup.v1.Backup.delete_lock_days] and
+     * &lt;= 365.
+     *
      * Once a Backup is created, this value may only be increased.
+     *
      * Defaults to the parent BackupPlan's
-     * [backup_retain_days][google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy.backup_retain_days] value.
+     * [backup_retain_days][google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy.backup_retain_days]
+     * value.
      * </pre>
      *
      * <code>int32 retain_days = 9;</code>
@@ -5758,8 +5827,9 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time at which this Backup will be automatically deleted (calculated
-     * from create_time + [retain_days][google.cloud.gkebackup.v1.Backup.retain_days]).
+     * Output only. The time at which this Backup will be automatically deleted
+     * (calculated from create_time +
+     * [retain_days][google.cloud.gkebackup.v1.Backup.retain_days]).
      * </pre>
      *
      * <code>
@@ -5775,8 +5845,9 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time at which this Backup will be automatically deleted (calculated
-     * from create_time + [retain_days][google.cloud.gkebackup.v1.Backup.retain_days]).
+     * Output only. The time at which this Backup will be automatically deleted
+     * (calculated from create_time +
+     * [retain_days][google.cloud.gkebackup.v1.Backup.retain_days]).
      * </pre>
      *
      * <code>
@@ -5798,8 +5869,9 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time at which this Backup will be automatically deleted (calculated
-     * from create_time + [retain_days][google.cloud.gkebackup.v1.Backup.retain_days]).
+     * Output only. The time at which this Backup will be automatically deleted
+     * (calculated from create_time +
+     * [retain_days][google.cloud.gkebackup.v1.Backup.retain_days]).
      * </pre>
      *
      * <code>
@@ -5823,8 +5895,9 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time at which this Backup will be automatically deleted (calculated
-     * from create_time + [retain_days][google.cloud.gkebackup.v1.Backup.retain_days]).
+     * Output only. The time at which this Backup will be automatically deleted
+     * (calculated from create_time +
+     * [retain_days][google.cloud.gkebackup.v1.Backup.retain_days]).
      * </pre>
      *
      * <code>
@@ -5845,8 +5918,9 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time at which this Backup will be automatically deleted (calculated
-     * from create_time + [retain_days][google.cloud.gkebackup.v1.Backup.retain_days]).
+     * Output only. The time at which this Backup will be automatically deleted
+     * (calculated from create_time +
+     * [retain_days][google.cloud.gkebackup.v1.Backup.retain_days]).
      * </pre>
      *
      * <code>
@@ -5873,8 +5947,9 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time at which this Backup will be automatically deleted (calculated
-     * from create_time + [retain_days][google.cloud.gkebackup.v1.Backup.retain_days]).
+     * Output only. The time at which this Backup will be automatically deleted
+     * (calculated from create_time +
+     * [retain_days][google.cloud.gkebackup.v1.Backup.retain_days]).
      * </pre>
      *
      * <code>
@@ -5895,8 +5970,9 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time at which this Backup will be automatically deleted (calculated
-     * from create_time + [retain_days][google.cloud.gkebackup.v1.Backup.retain_days]).
+     * Output only. The time at which this Backup will be automatically deleted
+     * (calculated from create_time +
+     * [retain_days][google.cloud.gkebackup.v1.Backup.retain_days]).
      * </pre>
      *
      * <code>
@@ -5912,8 +5988,9 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time at which this Backup will be automatically deleted (calculated
-     * from create_time + [retain_days][google.cloud.gkebackup.v1.Backup.retain_days]).
+     * Output only. The time at which this Backup will be automatically deleted
+     * (calculated from create_time +
+     * [retain_days][google.cloud.gkebackup.v1.Backup.retain_days]).
      * </pre>
      *
      * <code>
@@ -5933,8 +6010,9 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time at which this Backup will be automatically deleted (calculated
-     * from create_time + [retain_days][google.cloud.gkebackup.v1.Backup.retain_days]).
+     * Output only. The time at which this Backup will be automatically deleted
+     * (calculated from create_time +
+     * [retain_days][google.cloud.gkebackup.v1.Backup.retain_days]).
      * </pre>
      *
      * <code>
@@ -5968,9 +6046,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The customer managed encryption key that was used to encrypt the Backup's
-     * artifacts.  Inherited from the parent BackupPlan's
-     * [encryption_key][google.cloud.gkebackup.v1.BackupPlan.BackupConfig.encryption_key] value.
+     * Output only. The customer managed encryption key that was used to encrypt
+     * the Backup's artifacts.  Inherited from the parent BackupPlan's
+     * [encryption_key][google.cloud.gkebackup.v1.BackupPlan.BackupConfig.encryption_key]
+     * value.
      * </pre>
      *
      * <code>
@@ -5986,9 +6065,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The customer managed encryption key that was used to encrypt the Backup's
-     * artifacts.  Inherited from the parent BackupPlan's
-     * [encryption_key][google.cloud.gkebackup.v1.BackupPlan.BackupConfig.encryption_key] value.
+     * Output only. The customer managed encryption key that was used to encrypt
+     * the Backup's artifacts.  Inherited from the parent BackupPlan's
+     * [encryption_key][google.cloud.gkebackup.v1.BackupPlan.BackupConfig.encryption_key]
+     * value.
      * </pre>
      *
      * <code>
@@ -6010,9 +6090,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The customer managed encryption key that was used to encrypt the Backup's
-     * artifacts.  Inherited from the parent BackupPlan's
-     * [encryption_key][google.cloud.gkebackup.v1.BackupPlan.BackupConfig.encryption_key] value.
+     * Output only. The customer managed encryption key that was used to encrypt
+     * the Backup's artifacts.  Inherited from the parent BackupPlan's
+     * [encryption_key][google.cloud.gkebackup.v1.BackupPlan.BackupConfig.encryption_key]
+     * value.
      * </pre>
      *
      * <code>
@@ -6036,9 +6117,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The customer managed encryption key that was used to encrypt the Backup's
-     * artifacts.  Inherited from the parent BackupPlan's
-     * [encryption_key][google.cloud.gkebackup.v1.BackupPlan.BackupConfig.encryption_key] value.
+     * Output only. The customer managed encryption key that was used to encrypt
+     * the Backup's artifacts.  Inherited from the parent BackupPlan's
+     * [encryption_key][google.cloud.gkebackup.v1.BackupPlan.BackupConfig.encryption_key]
+     * value.
      * </pre>
      *
      * <code>
@@ -6060,9 +6142,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The customer managed encryption key that was used to encrypt the Backup's
-     * artifacts.  Inherited from the parent BackupPlan's
-     * [encryption_key][google.cloud.gkebackup.v1.BackupPlan.BackupConfig.encryption_key] value.
+     * Output only. The customer managed encryption key that was used to encrypt
+     * the Backup's artifacts.  Inherited from the parent BackupPlan's
+     * [encryption_key][google.cloud.gkebackup.v1.BackupPlan.BackupConfig.encryption_key]
+     * value.
      * </pre>
      *
      * <code>
@@ -6089,9 +6172,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The customer managed encryption key that was used to encrypt the Backup's
-     * artifacts.  Inherited from the parent BackupPlan's
-     * [encryption_key][google.cloud.gkebackup.v1.BackupPlan.BackupConfig.encryption_key] value.
+     * Output only. The customer managed encryption key that was used to encrypt
+     * the Backup's artifacts.  Inherited from the parent BackupPlan's
+     * [encryption_key][google.cloud.gkebackup.v1.BackupPlan.BackupConfig.encryption_key]
+     * value.
      * </pre>
      *
      * <code>
@@ -6112,9 +6196,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The customer managed encryption key that was used to encrypt the Backup's
-     * artifacts.  Inherited from the parent BackupPlan's
-     * [encryption_key][google.cloud.gkebackup.v1.BackupPlan.BackupConfig.encryption_key] value.
+     * Output only. The customer managed encryption key that was used to encrypt
+     * the Backup's artifacts.  Inherited from the parent BackupPlan's
+     * [encryption_key][google.cloud.gkebackup.v1.BackupPlan.BackupConfig.encryption_key]
+     * value.
      * </pre>
      *
      * <code>
@@ -6130,9 +6215,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The customer managed encryption key that was used to encrypt the Backup's
-     * artifacts.  Inherited from the parent BackupPlan's
-     * [encryption_key][google.cloud.gkebackup.v1.BackupPlan.BackupConfig.encryption_key] value.
+     * Output only. The customer managed encryption key that was used to encrypt
+     * the Backup's artifacts.  Inherited from the parent BackupPlan's
+     * [encryption_key][google.cloud.gkebackup.v1.BackupPlan.BackupConfig.encryption_key]
+     * value.
      * </pre>
      *
      * <code>
@@ -6152,9 +6238,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The customer managed encryption key that was used to encrypt the Backup's
-     * artifacts.  Inherited from the parent BackupPlan's
-     * [encryption_key][google.cloud.gkebackup.v1.BackupPlan.BackupConfig.encryption_key] value.
+     * Output only. The customer managed encryption key that was used to encrypt
+     * the Backup's artifacts.  Inherited from the parent BackupPlan's
+     * [encryption_key][google.cloud.gkebackup.v1.BackupPlan.BackupConfig.encryption_key]
+     * value.
      * </pre>
      *
      * <code>
@@ -6257,7 +6344,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. If set, the list of namespaces that were included in the Backup.
+     * Output only. If set, the list of namespaces that were included in the
+     * Backup.
      * </pre>
      *
      * <code>
@@ -6274,7 +6362,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. If set, the list of namespaces that were included in the Backup.
+     * Output only. If set, the list of namespaces that were included in the
+     * Backup.
      * </pre>
      *
      * <code>
@@ -6301,7 +6390,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. If set, the list of namespaces that were included in the Backup.
+     * Output only. If set, the list of namespaces that were included in the
+     * Backup.
      * </pre>
      *
      * <code>
@@ -6325,7 +6415,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. If set, the list of namespaces that were included in the Backup.
+     * Output only. If set, the list of namespaces that were included in the
+     * Backup.
      * </pre>
      *
      * <code>
@@ -6347,7 +6438,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. If set, the list of namespaces that were included in the Backup.
+     * Output only. If set, the list of namespaces that were included in the
+     * Backup.
      * </pre>
      *
      * <code>
@@ -6381,7 +6473,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. If set, the list of namespaces that were included in the Backup.
+     * Output only. If set, the list of namespaces that were included in the
+     * Backup.
      * </pre>
      *
      * <code>
@@ -6408,7 +6501,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. If set, the list of namespaces that were included in the Backup.
+     * Output only. If set, the list of namespaces that were included in the
+     * Backup.
      * </pre>
      *
      * <code>
@@ -6422,7 +6516,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. If set, the list of namespaces that were included in the Backup.
+     * Output only. If set, the list of namespaces that were included in the
+     * Backup.
      * </pre>
      *
      * <code>
@@ -6444,7 +6539,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. If set, the list of namespaces that were included in the Backup.
+     * Output only. If set, the list of namespaces that were included in the
+     * Backup.
      * </pre>
      *
      * <code>
@@ -6484,8 +6580,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. If set, the list of ProtectedApplications whose resources were included
-     * in the Backup.
+     * Output only. If set, the list of ProtectedApplications whose resources
+     * were included in the Backup.
      * </pre>
      *
      * <code>
@@ -6502,8 +6598,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. If set, the list of ProtectedApplications whose resources were included
-     * in the Backup.
+     * Output only. If set, the list of ProtectedApplications whose resources
+     * were included in the Backup.
      * </pre>
      *
      * <code>
@@ -6530,8 +6626,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. If set, the list of ProtectedApplications whose resources were included
-     * in the Backup.
+     * Output only. If set, the list of ProtectedApplications whose resources
+     * were included in the Backup.
      * </pre>
      *
      * <code>
@@ -6555,8 +6651,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. If set, the list of ProtectedApplications whose resources were included
-     * in the Backup.
+     * Output only. If set, the list of ProtectedApplications whose resources
+     * were included in the Backup.
      * </pre>
      *
      * <code>
@@ -6578,8 +6674,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. If set, the list of ProtectedApplications whose resources were included
-     * in the Backup.
+     * Output only. If set, the list of ProtectedApplications whose resources
+     * were included in the Backup.
      * </pre>
      *
      * <code>
@@ -6613,8 +6709,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. If set, the list of ProtectedApplications whose resources were included
-     * in the Backup.
+     * Output only. If set, the list of ProtectedApplications whose resources
+     * were included in the Backup.
      * </pre>
      *
      * <code>
@@ -6641,8 +6737,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. If set, the list of ProtectedApplications whose resources were included
-     * in the Backup.
+     * Output only. If set, the list of ProtectedApplications whose resources
+     * were included in the Backup.
      * </pre>
      *
      * <code>
@@ -6656,8 +6752,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. If set, the list of ProtectedApplications whose resources were included
-     * in the Backup.
+     * Output only. If set, the list of ProtectedApplications whose resources
+     * were included in the Backup.
      * </pre>
      *
      * <code>
@@ -6680,8 +6776,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. If set, the list of ProtectedApplications whose resources were included
-     * in the Backup.
+     * Output only. If set, the list of ProtectedApplications whose resources
+     * were included in the Backup.
      * </pre>
      *
      * <code>
@@ -6717,9 +6813,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Whether or not the Backup contains volume data.  Controlled by the parent
-     * BackupPlan's
-     * [include_volume_data][google.cloud.gkebackup.v1.BackupPlan.BackupConfig.include_volume_data] value.
+     * Output only. Whether or not the Backup contains volume data.  Controlled by
+     * the parent BackupPlan's
+     * [include_volume_data][google.cloud.gkebackup.v1.BackupPlan.BackupConfig.include_volume_data]
+     * value.
      * </pre>
      *
      * <code>bool contains_volume_data = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -6734,9 +6831,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Whether or not the Backup contains volume data.  Controlled by the parent
-     * BackupPlan's
-     * [include_volume_data][google.cloud.gkebackup.v1.BackupPlan.BackupConfig.include_volume_data] value.
+     * Output only. Whether or not the Backup contains volume data.  Controlled by
+     * the parent BackupPlan's
+     * [include_volume_data][google.cloud.gkebackup.v1.BackupPlan.BackupConfig.include_volume_data]
+     * value.
      * </pre>
      *
      * <code>bool contains_volume_data = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -6755,9 +6853,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Whether or not the Backup contains volume data.  Controlled by the parent
-     * BackupPlan's
-     * [include_volume_data][google.cloud.gkebackup.v1.BackupPlan.BackupConfig.include_volume_data] value.
+     * Output only. Whether or not the Backup contains volume data.  Controlled by
+     * the parent BackupPlan's
+     * [include_volume_data][google.cloud.gkebackup.v1.BackupPlan.BackupConfig.include_volume_data]
+     * value.
      * </pre>
      *
      * <code>bool contains_volume_data = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -6776,9 +6875,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Whether or not the Backup contains Kubernetes Secrets.  Controlled by the
-     * parent BackupPlan's
-     * [include_secrets][google.cloud.gkebackup.v1.BackupPlan.BackupConfig.include_secrets] value.
+     * Output only. Whether or not the Backup contains Kubernetes Secrets.
+     * Controlled by the parent BackupPlan's
+     * [include_secrets][google.cloud.gkebackup.v1.BackupPlan.BackupConfig.include_secrets]
+     * value.
      * </pre>
      *
      * <code>bool contains_secrets = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -6793,9 +6893,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Whether or not the Backup contains Kubernetes Secrets.  Controlled by the
-     * parent BackupPlan's
-     * [include_secrets][google.cloud.gkebackup.v1.BackupPlan.BackupConfig.include_secrets] value.
+     * Output only. Whether or not the Backup contains Kubernetes Secrets.
+     * Controlled by the parent BackupPlan's
+     * [include_secrets][google.cloud.gkebackup.v1.BackupPlan.BackupConfig.include_secrets]
+     * value.
      * </pre>
      *
      * <code>bool contains_secrets = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -6814,9 +6915,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Whether or not the Backup contains Kubernetes Secrets.  Controlled by the
-     * parent BackupPlan's
-     * [include_secrets][google.cloud.gkebackup.v1.BackupPlan.BackupConfig.include_secrets] value.
+     * Output only. Whether or not the Backup contains Kubernetes Secrets.
+     * Controlled by the parent BackupPlan's
+     * [include_secrets][google.cloud.gkebackup.v1.BackupPlan.BackupConfig.include_secrets]
+     * value.
      * </pre>
      *
      * <code>bool contains_secrets = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -6840,7 +6942,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Information about the GKE cluster from which this Backup was created.
+     * Output only. Information about the GKE cluster from which this Backup was
+     * created.
      * </pre>
      *
      * <code>
@@ -6856,7 +6959,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Information about the GKE cluster from which this Backup was created.
+     * Output only. Information about the GKE cluster from which this Backup was
+     * created.
      * </pre>
      *
      * <code>
@@ -6878,7 +6982,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Information about the GKE cluster from which this Backup was created.
+     * Output only. Information about the GKE cluster from which this Backup was
+     * created.
      * </pre>
      *
      * <code>
@@ -6902,7 +7007,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Information about the GKE cluster from which this Backup was created.
+     * Output only. Information about the GKE cluster from which this Backup was
+     * created.
      * </pre>
      *
      * <code>
@@ -6924,7 +7030,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Information about the GKE cluster from which this Backup was created.
+     * Output only. Information about the GKE cluster from which this Backup was
+     * created.
      * </pre>
      *
      * <code>
@@ -6953,7 +7060,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Information about the GKE cluster from which this Backup was created.
+     * Output only. Information about the GKE cluster from which this Backup was
+     * created.
      * </pre>
      *
      * <code>
@@ -6974,7 +7082,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Information about the GKE cluster from which this Backup was created.
+     * Output only. Information about the GKE cluster from which this Backup was
+     * created.
      * </pre>
      *
      * <code>
@@ -6991,7 +7100,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Information about the GKE cluster from which this Backup was created.
+     * Output only. Information about the GKE cluster from which this Backup was
+     * created.
      * </pre>
      *
      * <code>
@@ -7012,7 +7122,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Information about the GKE cluster from which this Backup was created.
+     * Output only. Information about the GKE cluster from which this Backup was
+     * created.
      * </pre>
      *
      * <code>
@@ -7141,7 +7252,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Human-readable description of why the backup is in the current `state`.
+     * Output only. Human-readable description of why the backup is in the current
+     * `state`.
      * </pre>
      *
      * <code>string state_reason = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -7163,7 +7275,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Human-readable description of why the backup is in the current `state`.
+     * Output only. Human-readable description of why the backup is in the current
+     * `state`.
      * </pre>
      *
      * <code>string state_reason = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -7185,7 +7298,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Human-readable description of why the backup is in the current `state`.
+     * Output only. Human-readable description of why the backup is in the current
+     * `state`.
      * </pre>
      *
      * <code>string state_reason = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -7206,7 +7320,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Human-readable description of why the backup is in the current `state`.
+     * Output only. Human-readable description of why the backup is in the current
+     * `state`.
      * </pre>
      *
      * <code>string state_reason = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -7223,7 +7338,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Human-readable description of why the backup is in the current `state`.
+     * Output only. Human-readable description of why the backup is in the current
+     * `state`.
      * </pre>
      *
      * <code>string state_reason = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -7448,7 +7564,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The total number of Kubernetes resources included in the Backup.
+     * Output only. The total number of Kubernetes resources included in the
+     * Backup.
      * </pre>
      *
      * <code>int32 resource_count = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -7463,7 +7580,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The total number of Kubernetes resources included in the Backup.
+     * Output only. The total number of Kubernetes resources included in the
+     * Backup.
      * </pre>
      *
      * <code>int32 resource_count = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -7482,7 +7600,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The total number of Kubernetes resources included in the Backup.
+     * Output only. The total number of Kubernetes resources included in the
+     * Backup.
      * </pre>
      *
      * <code>int32 resource_count = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -7554,8 +7673,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The total size of the Backup in bytes = config backup size + sum(volume
-     * backup sizes)
+     * Output only. The total size of the Backup in bytes = config backup size +
+     * sum(volume backup sizes)
      * </pre>
      *
      * <code>int64 size_bytes = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -7570,8 +7689,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The total size of the Backup in bytes = config backup size + sum(volume
-     * backup sizes)
+     * Output only. The total size of the Backup in bytes = config backup size +
+     * sum(volume backup sizes)
      * </pre>
      *
      * <code>int64 size_bytes = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -7590,8 +7709,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The total size of the Backup in bytes = config backup size + sum(volume
-     * backup sizes)
+     * Output only. The total size of the Backup in bytes = config backup size +
+     * sum(volume backup sizes)
      * </pre>
      *
      * <code>int64 size_bytes = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -7610,8 +7729,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. `etag` is used for optimistic concurrency control as a way to help
-     * prevent simultaneous updates of a backup from overwriting each other.
+     * Output only. `etag` is used for optimistic concurrency control as a way to
+     * help prevent simultaneous updates of a backup from overwriting each other.
      * It is strongly suggested that systems make use of the `etag` in the
      * read-modify-write cycle to perform backup updates in order to avoid
      * race conditions: An `etag` is returned in the response to `GetBackup`,
@@ -7639,8 +7758,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. `etag` is used for optimistic concurrency control as a way to help
-     * prevent simultaneous updates of a backup from overwriting each other.
+     * Output only. `etag` is used for optimistic concurrency control as a way to
+     * help prevent simultaneous updates of a backup from overwriting each other.
      * It is strongly suggested that systems make use of the `etag` in the
      * read-modify-write cycle to perform backup updates in order to avoid
      * race conditions: An `etag` is returned in the response to `GetBackup`,
@@ -7668,8 +7787,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. `etag` is used for optimistic concurrency control as a way to help
-     * prevent simultaneous updates of a backup from overwriting each other.
+     * Output only. `etag` is used for optimistic concurrency control as a way to
+     * help prevent simultaneous updates of a backup from overwriting each other.
      * It is strongly suggested that systems make use of the `etag` in the
      * read-modify-write cycle to perform backup updates in order to avoid
      * race conditions: An `etag` is returned in the response to `GetBackup`,
@@ -7696,8 +7815,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. `etag` is used for optimistic concurrency control as a way to help
-     * prevent simultaneous updates of a backup from overwriting each other.
+     * Output only. `etag` is used for optimistic concurrency control as a way to
+     * help prevent simultaneous updates of a backup from overwriting each other.
      * It is strongly suggested that systems make use of the `etag` in the
      * read-modify-write cycle to perform backup updates in order to avoid
      * race conditions: An `etag` is returned in the response to `GetBackup`,
@@ -7720,8 +7839,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. `etag` is used for optimistic concurrency control as a way to help
-     * prevent simultaneous updates of a backup from overwriting each other.
+     * Output only. `etag` is used for optimistic concurrency control as a way to
+     * help prevent simultaneous updates of a backup from overwriting each other.
      * It is strongly suggested that systems make use of the `etag` in the
      * read-modify-write cycle to perform backup updates in order to avoid
      * race conditions: An `etag` is returned in the response to `GetBackup`,

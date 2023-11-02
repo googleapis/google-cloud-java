@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ package com.google.cloud.asset.v1;
  *
  * <pre>
  * Execution results of the query.
+ *
  * The result is formatted as rows represented by BigQuery compatible [schema].
  * When pagination is necessary, it will contains the page token to retrieve
  * the results of following pages.
@@ -49,11 +50,6 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new QueryResult();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -452,6 +448,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Execution results of the query.
+   *
    * The result is formatted as rows represented by BigQuery compatible [schema].
    * When pagination is necessary, it will contains the page token to retrieve
    * the results of following pages.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,9 +19,9 @@ package com.google.cloud.clouddms.v1.samples;
 // [START datamigration_v1_generated_DataMigrationService_CreateConnectionProfile_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.clouddms.v1.ConnectionProfile;
-import com.google.cloud.clouddms.v1.ConnectionProfileName;
 import com.google.cloud.clouddms.v1.CreateConnectionProfileRequest;
 import com.google.cloud.clouddms.v1.DataMigrationServiceClient;
+import com.google.cloud.clouddms.v1.LocationName;
 import com.google.longrunning.Operation;
 
 public class AsyncCreateConnectionProfile {
@@ -40,12 +40,12 @@ public class AsyncCreateConnectionProfile {
         DataMigrationServiceClient.create()) {
       CreateConnectionProfileRequest request =
           CreateConnectionProfileRequest.newBuilder()
-              .setParent(
-                  ConnectionProfileName.of("[PROJECT]", "[LOCATION]", "[CONNECTION_PROFILE]")
-                      .toString())
+              .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setConnectionProfileId("connectionProfileId597575526")
               .setConnectionProfile(ConnectionProfile.newBuilder().build())
               .setRequestId("requestId693933066")
+              .setValidateOnly(true)
+              .setSkipValidation(true)
               .build();
       ApiFuture<Operation> future =
           dataMigrationServiceClient.createConnectionProfileCallable().futureCall(request);

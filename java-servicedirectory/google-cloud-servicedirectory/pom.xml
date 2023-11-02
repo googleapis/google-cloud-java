@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-servicedirectory</artifactId>
-  <version>2.18.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-servicedirectory:current} -->
+  <version>2.31.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-servicedirectory:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Service Directory</name>
   <description>Java idiomatic client for Google Cloud Service Directory</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-servicedirectory-parent</artifactId>
-    <version>2.18.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-servicedirectory:current} -->
+    <version>2.31.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-servicedirectory:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-servicedirectory</site.installationModule>
@@ -108,6 +108,11 @@
       <groupId>com.google.api</groupId>
       <artifactId>gax-httpjson</artifactId>
       <classifier>testlib</classifier>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>grpc-google-common-protos</artifactId>
       <scope>test</scope>
     </dependency>
   </dependencies>

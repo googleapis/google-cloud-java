@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,8 +39,8 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
 
   private InterconnectAttachment() {
     bandwidth_ = "";
-    candidateIpv6Subnets_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    candidateSubnets_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    candidateIpv6Subnets_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    candidateSubnets_ = com.google.protobuf.LazyStringArrayList.emptyList();
     cloudRouterIpAddress_ = "";
     cloudRouterIpv6Address_ = "";
     cloudRouterIpv6InterfaceId_ = "";
@@ -53,12 +53,14 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
     encryption_ = "";
     googleReferenceId_ = "";
     interconnect_ = "";
-    ipsecInternalAddresses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    ipsecInternalAddresses_ = com.google.protobuf.LazyStringArrayList.emptyList();
     kind_ = "";
+    labelFingerprint_ = "";
     name_ = "";
     operationalStatus_ = "";
     pairingKey_ = "";
     region_ = "";
+    remoteService_ = "";
     router_ = "";
     selfLink_ = "";
     stackType_ = "";
@@ -72,14 +74,20 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
     return new InterconnectAttachment();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.compute.v1.Compute
         .internal_static_google_cloud_compute_v1_InterconnectAttachment_descriptor;
+  }
+
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapField internalGetMapField(int number) {
+    switch (number) {
+      case 500195327:
+        return internalGetLabels();
+      default:
+        throw new RuntimeException("Invalid map field number: " + number);
+    }
   }
 
   @java.lang.Override
@@ -1522,6 +1530,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
   }
 
   private int bitField0_;
+  private int bitField1_;
   public static final int ADMIN_ENABLED_FIELD_NUMBER = 445675089;
   private boolean adminEnabled_ = false;
   /**
@@ -1627,7 +1636,8 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
   public static final int CANDIDATE_IPV6_SUBNETS_FIELD_NUMBER = 70682522;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList candidateIpv6Subnets_;
+  private com.google.protobuf.LazyStringArrayList candidateIpv6Subnets_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -1690,7 +1700,8 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
   public static final int CANDIDATE_SUBNETS_FIELD_NUMBER = 237842938;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList candidateSubnets_;
+  private com.google.protobuf.LazyStringArrayList candidateSubnets_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -1948,6 +1959,67 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
     }
   }
 
+  public static final int CONFIGURATION_CONSTRAINTS_FIELD_NUMBER = 179681389;
+  private com.google.cloud.compute.v1.InterconnectAttachmentConfigurationConstraints
+      configurationConstraints_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Constraints for this attachment, if any. The attachment does not work if these constraints are not met.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.InterconnectAttachmentConfigurationConstraints configuration_constraints = 179681389;
+   * </code>
+   *
+   * @return Whether the configurationConstraints field is set.
+   */
+  @java.lang.Override
+  public boolean hasConfigurationConstraints() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Constraints for this attachment, if any. The attachment does not work if these constraints are not met.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.InterconnectAttachmentConfigurationConstraints configuration_constraints = 179681389;
+   * </code>
+   *
+   * @return The configurationConstraints.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.InterconnectAttachmentConfigurationConstraints
+      getConfigurationConstraints() {
+    return configurationConstraints_ == null
+        ? com.google.cloud.compute.v1.InterconnectAttachmentConfigurationConstraints
+            .getDefaultInstance()
+        : configurationConstraints_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Constraints for this attachment, if any. The attachment does not work if these constraints are not met.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.InterconnectAttachmentConfigurationConstraints configuration_constraints = 179681389;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.InterconnectAttachmentConfigurationConstraintsOrBuilder
+      getConfigurationConstraintsOrBuilder() {
+    return configurationConstraints_ == null
+        ? com.google.cloud.compute.v1.InterconnectAttachmentConfigurationConstraints
+            .getDefaultInstance()
+        : configurationConstraints_;
+  }
+
   public static final int CREATION_TIMESTAMP_FIELD_NUMBER = 30525366;
 
   @SuppressWarnings("serial")
@@ -1965,7 +2037,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public boolean hasCreationTimestamp() {
-    return ((bitField0_ & 0x00000020) != 0);
+    return ((bitField0_ & 0x00000040) != 0);
   }
   /**
    *
@@ -2031,7 +2103,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public boolean hasCustomerRouterIpAddress() {
-    return ((bitField0_ & 0x00000040) != 0);
+    return ((bitField0_ & 0x00000080) != 0);
   }
   /**
    *
@@ -2097,7 +2169,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public boolean hasCustomerRouterIpv6Address() {
-    return ((bitField0_ & 0x00000080) != 0);
+    return ((bitField0_ & 0x00000100) != 0);
   }
   /**
    *
@@ -2163,7 +2235,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public boolean hasCustomerRouterIpv6InterfaceId() {
-    return ((bitField0_ & 0x00000100) != 0);
+    return ((bitField0_ & 0x00000200) != 0);
   }
   /**
    *
@@ -2227,7 +2299,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public boolean hasDataplaneVersion() {
-    return ((bitField0_ & 0x00000200) != 0);
+    return ((bitField0_ & 0x00000400) != 0);
   }
   /**
    *
@@ -2262,7 +2334,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public boolean hasDescription() {
-    return ((bitField0_ & 0x00000400) != 0);
+    return ((bitField0_ & 0x00000800) != 0);
   }
   /**
    *
@@ -2329,7 +2401,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public boolean hasEdgeAvailabilityDomain() {
-    return ((bitField0_ & 0x00000800) != 0);
+    return ((bitField0_ & 0x00001000) != 0);
   }
   /**
    *
@@ -2398,7 +2470,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public boolean hasEncryption() {
-    return ((bitField0_ & 0x00001000) != 0);
+    return ((bitField0_ & 0x00002000) != 0);
   }
   /**
    *
@@ -2466,7 +2538,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public boolean hasGoogleReferenceId() {
-    return ((bitField0_ & 0x00002000) != 0);
+    return ((bitField0_ & 0x00004000) != 0);
   }
   /**
    *
@@ -2530,7 +2602,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public boolean hasId() {
-    return ((bitField0_ & 0x00004000) != 0);
+    return ((bitField0_ & 0x00008000) != 0);
   }
   /**
    *
@@ -2565,7 +2637,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public boolean hasInterconnect() {
-    return ((bitField0_ & 0x00008000) != 0);
+    return ((bitField0_ & 0x00010000) != 0);
   }
   /**
    *
@@ -2617,12 +2689,13 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
   public static final int IPSEC_INTERNAL_ADDRESSES_FIELD_NUMBER = 407648565;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList ipsecInternalAddresses_;
+  private com.google.protobuf.LazyStringArrayList ipsecInternalAddresses_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
    * <pre>
-   * A list of URLs of addresses that have been reserved for the VLAN attachment. Used only for the VLAN attachment that has the encryption option as IPSEC. The addresses must be regional internal IP address ranges. When creating an HA VPN gateway over the VLAN attachment, if the attachment is configured to use a regional internal IP address, then the VPN gateway's IP address is allocated from the IP address range specified here. For example, if the HA VPN gateway's interface 0 is paired to this VLAN attachment, then a regional internal IP address for the VPN gateway interface 0 will be allocated from the IP address specified for this VLAN attachment. If this field is not specified when creating the VLAN attachment, then later on when creating an HA VPN gateway on this VLAN attachment, the HA VPN gateway's IP address is allocated from the regional external IP address pool. Not currently available publicly.
+   * A list of URLs of addresses that have been reserved for the VLAN attachment. Used only for the VLAN attachment that has the encryption option as IPSEC. The addresses must be regional internal IP address ranges. When creating an HA VPN gateway over the VLAN attachment, if the attachment is configured to use a regional internal IP address, then the VPN gateway's IP address is allocated from the IP address range specified here. For example, if the HA VPN gateway's interface 0 is paired to this VLAN attachment, then a regional internal IP address for the VPN gateway interface 0 will be allocated from the IP address specified for this VLAN attachment. If this field is not specified when creating the VLAN attachment, then later on when creating an HA VPN gateway on this VLAN attachment, the HA VPN gateway's IP address is allocated from the regional external IP address pool.
    * </pre>
    *
    * <code>repeated string ipsec_internal_addresses = 407648565;</code>
@@ -2636,7 +2709,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * A list of URLs of addresses that have been reserved for the VLAN attachment. Used only for the VLAN attachment that has the encryption option as IPSEC. The addresses must be regional internal IP address ranges. When creating an HA VPN gateway over the VLAN attachment, if the attachment is configured to use a regional internal IP address, then the VPN gateway's IP address is allocated from the IP address range specified here. For example, if the HA VPN gateway's interface 0 is paired to this VLAN attachment, then a regional internal IP address for the VPN gateway interface 0 will be allocated from the IP address specified for this VLAN attachment. If this field is not specified when creating the VLAN attachment, then later on when creating an HA VPN gateway on this VLAN attachment, the HA VPN gateway's IP address is allocated from the regional external IP address pool. Not currently available publicly.
+   * A list of URLs of addresses that have been reserved for the VLAN attachment. Used only for the VLAN attachment that has the encryption option as IPSEC. The addresses must be regional internal IP address ranges. When creating an HA VPN gateway over the VLAN attachment, if the attachment is configured to use a regional internal IP address, then the VPN gateway's IP address is allocated from the IP address range specified here. For example, if the HA VPN gateway's interface 0 is paired to this VLAN attachment, then a regional internal IP address for the VPN gateway interface 0 will be allocated from the IP address specified for this VLAN attachment. If this field is not specified when creating the VLAN attachment, then later on when creating an HA VPN gateway on this VLAN attachment, the HA VPN gateway's IP address is allocated from the regional external IP address pool.
    * </pre>
    *
    * <code>repeated string ipsec_internal_addresses = 407648565;</code>
@@ -2650,7 +2723,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * A list of URLs of addresses that have been reserved for the VLAN attachment. Used only for the VLAN attachment that has the encryption option as IPSEC. The addresses must be regional internal IP address ranges. When creating an HA VPN gateway over the VLAN attachment, if the attachment is configured to use a regional internal IP address, then the VPN gateway's IP address is allocated from the IP address range specified here. For example, if the HA VPN gateway's interface 0 is paired to this VLAN attachment, then a regional internal IP address for the VPN gateway interface 0 will be allocated from the IP address specified for this VLAN attachment. If this field is not specified when creating the VLAN attachment, then later on when creating an HA VPN gateway on this VLAN attachment, the HA VPN gateway's IP address is allocated from the regional external IP address pool. Not currently available publicly.
+   * A list of URLs of addresses that have been reserved for the VLAN attachment. Used only for the VLAN attachment that has the encryption option as IPSEC. The addresses must be regional internal IP address ranges. When creating an HA VPN gateway over the VLAN attachment, if the attachment is configured to use a regional internal IP address, then the VPN gateway's IP address is allocated from the IP address range specified here. For example, if the HA VPN gateway's interface 0 is paired to this VLAN attachment, then a regional internal IP address for the VPN gateway interface 0 will be allocated from the IP address specified for this VLAN attachment. If this field is not specified when creating the VLAN attachment, then later on when creating an HA VPN gateway on this VLAN attachment, the HA VPN gateway's IP address is allocated from the regional external IP address pool.
    * </pre>
    *
    * <code>repeated string ipsec_internal_addresses = 407648565;</code>
@@ -2665,7 +2738,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * A list of URLs of addresses that have been reserved for the VLAN attachment. Used only for the VLAN attachment that has the encryption option as IPSEC. The addresses must be regional internal IP address ranges. When creating an HA VPN gateway over the VLAN attachment, if the attachment is configured to use a regional internal IP address, then the VPN gateway's IP address is allocated from the IP address range specified here. For example, if the HA VPN gateway's interface 0 is paired to this VLAN attachment, then a regional internal IP address for the VPN gateway interface 0 will be allocated from the IP address specified for this VLAN attachment. If this field is not specified when creating the VLAN attachment, then later on when creating an HA VPN gateway on this VLAN attachment, the HA VPN gateway's IP address is allocated from the regional external IP address pool. Not currently available publicly.
+   * A list of URLs of addresses that have been reserved for the VLAN attachment. Used only for the VLAN attachment that has the encryption option as IPSEC. The addresses must be regional internal IP address ranges. When creating an HA VPN gateway over the VLAN attachment, if the attachment is configured to use a regional internal IP address, then the VPN gateway's IP address is allocated from the IP address range specified here. For example, if the HA VPN gateway's interface 0 is paired to this VLAN attachment, then a regional internal IP address for the VPN gateway interface 0 will be allocated from the IP address specified for this VLAN attachment. If this field is not specified when creating the VLAN attachment, then later on when creating an HA VPN gateway on this VLAN attachment, the HA VPN gateway's IP address is allocated from the regional external IP address pool.
    * </pre>
    *
    * <code>repeated string ipsec_internal_addresses = 407648565;</code>
@@ -2694,7 +2767,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public boolean hasKind() {
-    return ((bitField0_ & 0x00010000) != 0);
+    return ((bitField0_ & 0x00020000) != 0);
   }
   /**
    *
@@ -2743,6 +2816,174 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
     }
   }
 
+  public static final int LABEL_FINGERPRINT_FIELD_NUMBER = 178124825;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object labelFingerprint_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * A fingerprint for the labels being applied to this InterconnectAttachment, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an InterconnectAttachment.
+   * </pre>
+   *
+   * <code>optional string label_fingerprint = 178124825;</code>
+   *
+   * @return Whether the labelFingerprint field is set.
+   */
+  @java.lang.Override
+  public boolean hasLabelFingerprint() {
+    return ((bitField0_ & 0x00040000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A fingerprint for the labels being applied to this InterconnectAttachment, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an InterconnectAttachment.
+   * </pre>
+   *
+   * <code>optional string label_fingerprint = 178124825;</code>
+   *
+   * @return The labelFingerprint.
+   */
+  @java.lang.Override
+  public java.lang.String getLabelFingerprint() {
+    java.lang.Object ref = labelFingerprint_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      labelFingerprint_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A fingerprint for the labels being applied to this InterconnectAttachment, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an InterconnectAttachment.
+   * </pre>
+   *
+   * <code>optional string label_fingerprint = 178124825;</code>
+   *
+   * @return The bytes for labelFingerprint.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getLabelFingerprintBytes() {
+    java.lang.Object ref = labelFingerprint_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      labelFingerprint_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int LABELS_FIELD_NUMBER = 500195327;
+
+  private static final class LabelsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.cloud.compute.v1.Compute
+                .internal_static_google_cloud_compute_v1_InterconnectAttachment_LabelsEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
+  }
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
+    if (labels_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(LabelsDefaultEntryHolder.defaultEntry);
+    }
+    return labels_;
+  }
+
+  public int getLabelsCount() {
+    return internalGetLabels().getMap().size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Labels for this resource. These can only be added or modified by the setLabels method. Each label key/value pair must comply with RFC1035. Label values may be empty.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 500195327;</code>
+   */
+  @java.lang.Override
+  public boolean containsLabels(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetLabels().getMap().containsKey(key);
+  }
+  /** Use {@link #getLabelsMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getLabels() {
+    return getLabelsMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Labels for this resource. These can only be added or modified by the setLabels method. Each label key/value pair must comply with RFC1035. Label values may be empty.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 500195327;</code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
+    return internalGetLabels().getMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Labels for this resource. These can only be added or modified by the setLabels method. Each label key/value pair must comply with RFC1035. Label values may be empty.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 500195327;</code>
+   */
+  @java.lang.Override
+  public /* nullable */ java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Labels for this resource. These can only be added or modified by the setLabels method. Each label key/value pair must comply with RFC1035. Label values may be empty.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 500195327;</code>
+   */
+  @java.lang.Override
+  public java.lang.String getLabelsOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   public static final int MTU_FIELD_NUMBER = 108462;
   private int mtu_ = 0;
   /**
@@ -2758,7 +2999,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public boolean hasMtu() {
-    return ((bitField0_ & 0x00020000) != 0);
+    return ((bitField0_ & 0x00080000) != 0);
   }
   /**
    *
@@ -2793,7 +3034,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public boolean hasName() {
-    return ((bitField0_ & 0x00040000) != 0);
+    return ((bitField0_ & 0x00100000) != 0);
   }
   /**
    *
@@ -2860,7 +3101,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public boolean hasOperationalStatus() {
-    return ((bitField0_ & 0x00080000) != 0);
+    return ((bitField0_ & 0x00200000) != 0);
   }
   /**
    *
@@ -2928,7 +3169,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public boolean hasPairingKey() {
-    return ((bitField0_ & 0x00100000) != 0);
+    return ((bitField0_ & 0x00400000) != 0);
   }
   /**
    *
@@ -2992,7 +3233,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public boolean hasPartnerAsn() {
-    return ((bitField0_ & 0x00200000) != 0);
+    return ((bitField0_ & 0x00800000) != 0);
   }
   /**
    *
@@ -3027,7 +3268,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public boolean hasPartnerMetadata() {
-    return ((bitField0_ & 0x00400000) != 0);
+    return ((bitField0_ & 0x01000000) != 0);
   }
   /**
    *
@@ -3084,7 +3325,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public boolean hasPrivateInterconnectInfo() {
-    return ((bitField0_ & 0x00800000) != 0);
+    return ((bitField0_ & 0x02000000) != 0);
   }
   /**
    *
@@ -3142,7 +3383,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public boolean hasRegion() {
-    return ((bitField0_ & 0x01000000) != 0);
+    return ((bitField0_ & 0x04000000) != 0);
   }
   /**
    *
@@ -3191,6 +3432,72 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
     }
   }
 
+  public static final int REMOTE_SERVICE_FIELD_NUMBER = 391954364;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object remoteService_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] If the attachment is on a Cross-Cloud Interconnect connection, this field contains the interconnect's remote location service provider. Example values: "Amazon Web Services" "Microsoft Azure". The field is set only for attachments on Cross-Cloud Interconnect connections. Its value is copied from the InterconnectRemoteLocation remoteService field.
+   * </pre>
+   *
+   * <code>optional string remote_service = 391954364;</code>
+   *
+   * @return Whether the remoteService field is set.
+   */
+  @java.lang.Override
+  public boolean hasRemoteService() {
+    return ((bitField0_ & 0x08000000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] If the attachment is on a Cross-Cloud Interconnect connection, this field contains the interconnect's remote location service provider. Example values: "Amazon Web Services" "Microsoft Azure". The field is set only for attachments on Cross-Cloud Interconnect connections. Its value is copied from the InterconnectRemoteLocation remoteService field.
+   * </pre>
+   *
+   * <code>optional string remote_service = 391954364;</code>
+   *
+   * @return The remoteService.
+   */
+  @java.lang.Override
+  public java.lang.String getRemoteService() {
+    java.lang.Object ref = remoteService_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      remoteService_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] If the attachment is on a Cross-Cloud Interconnect connection, this field contains the interconnect's remote location service provider. Example values: "Amazon Web Services" "Microsoft Azure". The field is set only for attachments on Cross-Cloud Interconnect connections. Its value is copied from the InterconnectRemoteLocation remoteService field.
+   * </pre>
+   *
+   * <code>optional string remote_service = 391954364;</code>
+   *
+   * @return The bytes for remoteService.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getRemoteServiceBytes() {
+    java.lang.Object ref = remoteService_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      remoteService_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int ROUTER_FIELD_NUMBER = 148608841;
 
   @SuppressWarnings("serial")
@@ -3208,7 +3515,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public boolean hasRouter() {
-    return ((bitField0_ & 0x02000000) != 0);
+    return ((bitField0_ & 0x10000000) != 0);
   }
   /**
    *
@@ -3272,7 +3579,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public boolean hasSatisfiesPzs() {
-    return ((bitField0_ & 0x04000000) != 0);
+    return ((bitField0_ & 0x20000000) != 0);
   }
   /**
    *
@@ -3307,7 +3614,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public boolean hasSelfLink() {
-    return ((bitField0_ & 0x08000000) != 0);
+    return ((bitField0_ & 0x40000000) != 0);
   }
   /**
    *
@@ -3374,7 +3681,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public boolean hasStackType() {
-    return ((bitField0_ & 0x10000000) != 0);
+    return ((bitField0_ & 0x80000000) != 0);
   }
   /**
    *
@@ -3443,7 +3750,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public boolean hasState() {
-    return ((bitField0_ & 0x20000000) != 0);
+    return ((bitField1_ & 0x00000001) != 0);
   }
   /**
    *
@@ -3494,6 +3801,39 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
     }
   }
 
+  public static final int SUBNET_LENGTH_FIELD_NUMBER = 279831048;
+  private int subnetLength_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Length of the IPv4 subnet mask. Allowed values: - 29 (default) - 30 The default value is 29, except for Cross-Cloud Interconnect connections that use an InterconnectRemoteLocation with a constraints.subnetLengthRange.min equal to 30. For example, connections that use an Azure remote location fall into this category. In these cases, the default value is 30, and requesting 29 returns an error. Where both 29 and 30 are allowed, 29 is preferred, because it gives Google Cloud Support more debugging visibility.
+   * </pre>
+   *
+   * <code>optional int32 subnet_length = 279831048;</code>
+   *
+   * @return Whether the subnetLength field is set.
+   */
+  @java.lang.Override
+  public boolean hasSubnetLength() {
+    return ((bitField1_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Length of the IPv4 subnet mask. Allowed values: - 29 (default) - 30 The default value is 29, except for Cross-Cloud Interconnect connections that use an InterconnectRemoteLocation with a constraints.subnetLengthRange.min equal to 30. For example, connections that use an Azure remote location fall into this category. In these cases, the default value is 30, and requesting 29 returns an error. Where both 29 and 30 are allowed, 29 is preferred, because it gives Google Cloud Support more debugging visibility.
+   * </pre>
+   *
+   * <code>optional int32 subnet_length = 279831048;</code>
+   *
+   * @return The subnetLength.
+   */
+  @java.lang.Override
+  public int getSubnetLength() {
+    return subnetLength_;
+  }
+
   public static final int TYPE_FIELD_NUMBER = 3575610;
 
   @SuppressWarnings("serial")
@@ -3512,7 +3852,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public boolean hasType() {
-    return ((bitField0_ & 0x40000000) != 0);
+    return ((bitField1_ & 0x00000004) != 0);
   }
   /**
    *
@@ -3578,7 +3918,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public boolean hasVlanTag8021Q() {
-    return ((bitField0_ & 0x80000000) != 0);
+    return ((bitField1_ & 0x00000008) != 0);
   }
   /**
    *
@@ -3610,97 +3950,109 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (((bitField0_ & 0x00004000) != 0)) {
+    if (((bitField0_ & 0x00008000) != 0)) {
       output.writeUInt64(3355, id_);
     }
-    if (((bitField0_ & 0x00020000) != 0)) {
+    if (((bitField0_ & 0x00080000) != 0)) {
       output.writeInt32(108462, mtu_);
     }
-    if (((bitField0_ & 0x00010000) != 0)) {
+    if (((bitField0_ & 0x00020000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3292052, kind_);
     }
-    if (((bitField0_ & 0x00040000) != 0)) {
+    if (((bitField0_ & 0x00100000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
-    if (((bitField0_ & 0x40000000) != 0)) {
+    if (((bitField1_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3575610, type_);
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       output.writeInt32(34920075, dataplaneVersion_);
     }
-    if (((bitField0_ & 0x00400000) != 0)) {
+    if (((bitField0_ & 0x01000000) != 0)) {
       output.writeMessage(65908934, getPartnerMetadata());
     }
     for (int i = 0; i < candidateIpv6Subnets_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 70682522, candidateIpv6Subnets_.getRaw(i));
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 71289510, edgeAvailabilityDomain_);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 97980291, encryption_);
     }
-    if (((bitField0_ & 0x20000000) != 0)) {
+    if (((bitField1_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 109757585, state_);
     }
-    if (((bitField0_ & 0x80000000) != 0)) {
+    if (((bitField1_ & 0x00000008) != 0)) {
       output.writeInt32(119927836, vlanTag8021Q_);
     }
-    if (((bitField0_ & 0x01000000) != 0)) {
+    if (((bitField0_ & 0x04000000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
-    if (((bitField0_ & 0x02000000) != 0)) {
+    if (((bitField0_ & 0x10000000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 148608841, router_);
+    }
+    if (((bitField0_ & 0x00040000) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 178124825, labelFingerprint_);
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      output.writeMessage(179681389, getConfigurationConstraints());
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 181715121, bandwidth_);
     }
-    if (((bitField0_ & 0x00080000) != 0)) {
+    if (((bitField0_ & 0x00200000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 201070847, operationalStatus_);
     }
-    if (((bitField0_ & 0x00008000) != 0)) {
+    if (((bitField0_ & 0x00010000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 224601230, interconnect_);
     }
-    if (((bitField0_ & 0x00800000) != 0)) {
+    if (((bitField0_ & 0x02000000) != 0)) {
       output.writeMessage(237270531, getPrivateInterconnectInfo());
     }
     for (int i = 0; i < candidateSubnets_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 237842938, candidateSubnets_.getRaw(i));
     }
+    if (((bitField1_ & 0x00000002) != 0)) {
+      output.writeInt32(279831048, subnetLength_);
+    }
     if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 287392776, cloudRouterIpAddress_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 290127089, customerRouterIpv6Address_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 332475761, customerRouterIpAddress_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 380994308, customerRouterIpv6InterfaceId_);
+    }
+    if (((bitField0_ & 0x08000000) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 391954364, remoteService_);
     }
     for (int i = 0; i < ipsecInternalAddresses_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 407648565, ipsecInternalAddresses_.getRaw(i));
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
     }
-    if (((bitField0_ & 0x10000000) != 0)) {
+    if (((bitField0_ & 0x80000000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 425908881, stackType_);
     }
-    if (((bitField0_ & 0x00200000) != 0)) {
+    if (((bitField0_ & 0x00800000) != 0)) {
       output.writeInt64(438166149, partnerAsn_);
     }
-    if (((bitField0_ & 0x00100000) != 0)) {
+    if (((bitField0_ & 0x00400000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 439695464, pairingKey_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
@@ -3710,17 +4062,19 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 451922376, cloudRouterIpv6Address_);
     }
-    if (((bitField0_ & 0x08000000) != 0)) {
+    if (((bitField0_ & 0x40000000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
     }
-    if (((bitField0_ & 0x04000000) != 0)) {
+    if (((bitField0_ & 0x20000000) != 0)) {
       output.writeBool(480964267, satisfiesPzs_);
     }
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 500195327);
     if (((bitField0_ & 0x00000010) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 521282701, cloudRouterIpv6InterfaceId_);
     }
-    if (((bitField0_ & 0x00002000) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 534944469, googleReferenceId_);
     }
     getUnknownFields().writeTo(output);
@@ -3732,29 +4086,29 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00004000) != 0)) {
+    if (((bitField0_ & 0x00008000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeUInt64Size(3355, id_);
     }
-    if (((bitField0_ & 0x00020000) != 0)) {
+    if (((bitField0_ & 0x00080000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(108462, mtu_);
     }
-    if (((bitField0_ & 0x00010000) != 0)) {
+    if (((bitField0_ & 0x00020000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3292052, kind_);
     }
-    if (((bitField0_ & 0x00040000) != 0)) {
+    if (((bitField0_ & 0x00100000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
-    if (((bitField0_ & 0x40000000) != 0)) {
+    if (((bitField1_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3575610, type_);
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(34920075, dataplaneVersion_);
     }
-    if (((bitField0_ & 0x00400000) != 0)) {
+    if (((bitField0_ & 0x01000000) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(65908934, getPartnerMetadata());
     }
@@ -3766,37 +4120,46 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       size += dataSize;
       size += 5 * getCandidateIpv6SubnetsList().size();
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(
               71289510, edgeAvailabilityDomain_);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(97980291, encryption_);
     }
-    if (((bitField0_ & 0x20000000) != 0)) {
+    if (((bitField1_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(109757585, state_);
     }
-    if (((bitField0_ & 0x80000000) != 0)) {
+    if (((bitField1_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(119927836, vlanTag8021Q_);
     }
-    if (((bitField0_ & 0x01000000) != 0)) {
+    if (((bitField0_ & 0x04000000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
-    if (((bitField0_ & 0x02000000) != 0)) {
+    if (((bitField0_ & 0x10000000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(148608841, router_);
+    }
+    if (((bitField0_ & 0x00040000) != 0)) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(178124825, labelFingerprint_);
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              179681389, getConfigurationConstraints());
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(181715121, bandwidth_);
     }
-    if (((bitField0_ & 0x00080000) != 0)) {
+    if (((bitField0_ & 0x00200000) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(201070847, operationalStatus_);
     }
-    if (((bitField0_ & 0x00008000) != 0)) {
+    if (((bitField0_ & 0x00010000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(224601230, interconnect_);
     }
-    if (((bitField0_ & 0x00800000) != 0)) {
+    if (((bitField0_ & 0x02000000) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               237270531, getPrivateInterconnectInfo());
@@ -3809,25 +4172,31 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       size += dataSize;
       size += 5 * getCandidateSubnetsList().size();
     }
+    if (((bitField1_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(279831048, subnetLength_);
+    }
     if (((bitField0_ & 0x00000004) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(
               287392776, cloudRouterIpAddress_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(
               290127089, customerRouterIpv6Address_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(
               332475761, customerRouterIpAddress_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(
               380994308, customerRouterIpv6InterfaceId_);
+    }
+    if (((bitField0_ & 0x08000000) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(391954364, remoteService_);
     }
     {
       int dataSize = 0;
@@ -3837,16 +4206,16 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       size += dataSize;
       size += 5 * getIpsecInternalAddressesList().size();
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
     }
-    if (((bitField0_ & 0x10000000) != 0)) {
+    if (((bitField0_ & 0x80000000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(425908881, stackType_);
     }
-    if (((bitField0_ & 0x00200000) != 0)) {
+    if (((bitField0_ & 0x00800000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(438166149, partnerAsn_);
     }
-    if (((bitField0_ & 0x00100000) != 0)) {
+    if (((bitField0_ & 0x00400000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(439695464, pairingKey_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
@@ -3857,18 +4226,28 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
           com.google.protobuf.GeneratedMessageV3.computeStringSize(
               451922376, cloudRouterIpv6Address_);
     }
-    if (((bitField0_ & 0x08000000) != 0)) {
+    if (((bitField0_ & 0x40000000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
     }
-    if (((bitField0_ & 0x04000000) != 0)) {
+    if (((bitField0_ & 0x20000000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(480964267, satisfiesPzs_);
+    }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetLabels().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
+          LabelsDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(500195327, labels__);
     }
     if (((bitField0_ & 0x00000010) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(
               521282701, cloudRouterIpv6InterfaceId_);
     }
-    if (((bitField0_ & 0x00002000) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(534944469, googleReferenceId_);
     }
@@ -3910,6 +4289,10 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
     if (hasCloudRouterIpv6InterfaceId()) {
       if (!getCloudRouterIpv6InterfaceId().equals(other.getCloudRouterIpv6InterfaceId()))
         return false;
+    }
+    if (hasConfigurationConstraints() != other.hasConfigurationConstraints()) return false;
+    if (hasConfigurationConstraints()) {
+      if (!getConfigurationConstraints().equals(other.getConfigurationConstraints())) return false;
     }
     if (hasCreationTimestamp() != other.hasCreationTimestamp()) return false;
     if (hasCreationTimestamp()) {
@@ -3964,6 +4347,11 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
     if (hasKind()) {
       if (!getKind().equals(other.getKind())) return false;
     }
+    if (hasLabelFingerprint() != other.hasLabelFingerprint()) return false;
+    if (hasLabelFingerprint()) {
+      if (!getLabelFingerprint().equals(other.getLabelFingerprint())) return false;
+    }
+    if (!internalGetLabels().equals(other.internalGetLabels())) return false;
     if (hasMtu() != other.hasMtu()) return false;
     if (hasMtu()) {
       if (getMtu() != other.getMtu()) return false;
@@ -3996,6 +4384,10 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
     if (hasRegion()) {
       if (!getRegion().equals(other.getRegion())) return false;
     }
+    if (hasRemoteService() != other.hasRemoteService()) return false;
+    if (hasRemoteService()) {
+      if (!getRemoteService().equals(other.getRemoteService())) return false;
+    }
     if (hasRouter() != other.hasRouter()) return false;
     if (hasRouter()) {
       if (!getRouter().equals(other.getRouter())) return false;
@@ -4015,6 +4407,10 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
     if (hasState() != other.hasState()) return false;
     if (hasState()) {
       if (!getState().equals(other.getState())) return false;
+    }
+    if (hasSubnetLength() != other.hasSubnetLength()) return false;
+    if (hasSubnetLength()) {
+      if (getSubnetLength() != other.getSubnetLength()) return false;
     }
     if (hasType() != other.hasType()) return false;
     if (hasType()) {
@@ -4062,6 +4458,10 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
     if (hasCloudRouterIpv6InterfaceId()) {
       hash = (37 * hash) + CLOUD_ROUTER_IPV6_INTERFACE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getCloudRouterIpv6InterfaceId().hashCode();
+    }
+    if (hasConfigurationConstraints()) {
+      hash = (37 * hash) + CONFIGURATION_CONSTRAINTS_FIELD_NUMBER;
+      hash = (53 * hash) + getConfigurationConstraints().hashCode();
     }
     if (hasCreationTimestamp()) {
       hash = (37 * hash) + CREATION_TIMESTAMP_FIELD_NUMBER;
@@ -4115,6 +4515,14 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       hash = (37 * hash) + KIND_FIELD_NUMBER;
       hash = (53 * hash) + getKind().hashCode();
     }
+    if (hasLabelFingerprint()) {
+      hash = (37 * hash) + LABEL_FINGERPRINT_FIELD_NUMBER;
+      hash = (53 * hash) + getLabelFingerprint().hashCode();
+    }
+    if (!internalGetLabels().getMap().isEmpty()) {
+      hash = (37 * hash) + LABELS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetLabels().hashCode();
+    }
     if (hasMtu()) {
       hash = (37 * hash) + MTU_FIELD_NUMBER;
       hash = (53 * hash) + getMtu();
@@ -4147,6 +4555,10 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       hash = (37 * hash) + REGION_FIELD_NUMBER;
       hash = (53 * hash) + getRegion().hashCode();
     }
+    if (hasRemoteService()) {
+      hash = (37 * hash) + REMOTE_SERVICE_FIELD_NUMBER;
+      hash = (53 * hash) + getRemoteService().hashCode();
+    }
     if (hasRouter()) {
       hash = (37 * hash) + ROUTER_FIELD_NUMBER;
       hash = (53 * hash) + getRouter().hashCode();
@@ -4166,6 +4578,10 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
     if (hasState()) {
       hash = (37 * hash) + STATE_FIELD_NUMBER;
       hash = (53 * hash) + getState().hashCode();
+    }
+    if (hasSubnetLength()) {
+      hash = (37 * hash) + SUBNET_LENGTH_FIELD_NUMBER;
+      hash = (53 * hash) + getSubnetLength();
     }
     if (hasType()) {
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
@@ -4293,6 +4709,26 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
           .internal_static_google_cloud_compute_v1_InterconnectAttachment_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMapField(int number) {
+      switch (number) {
+        case 500195327:
+          return internalGetLabels();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
+      switch (number) {
+        case 500195327:
+          return internalGetMutableLabels();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -4315,6 +4751,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
 
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getConfigurationConstraintsFieldBuilder();
         getPartnerMetadataFieldBuilder();
         getPrivateInterconnectInfoFieldBuilder();
       }
@@ -4327,13 +4764,16 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       bitField1_ = 0;
       adminEnabled_ = false;
       bandwidth_ = "";
-      candidateIpv6Subnets_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
-      candidateSubnets_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      candidateIpv6Subnets_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      candidateSubnets_ = com.google.protobuf.LazyStringArrayList.emptyList();
       cloudRouterIpAddress_ = "";
       cloudRouterIpv6Address_ = "";
       cloudRouterIpv6InterfaceId_ = "";
+      configurationConstraints_ = null;
+      if (configurationConstraintsBuilder_ != null) {
+        configurationConstraintsBuilder_.dispose();
+        configurationConstraintsBuilder_ = null;
+      }
       creationTimestamp_ = "";
       customerRouterIpAddress_ = "";
       customerRouterIpv6Address_ = "";
@@ -4345,9 +4785,10 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       googleReferenceId_ = "";
       id_ = 0L;
       interconnect_ = "";
-      ipsecInternalAddresses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00040000);
+      ipsecInternalAddresses_ = com.google.protobuf.LazyStringArrayList.emptyList();
       kind_ = "";
+      labelFingerprint_ = "";
+      internalGetMutableLabels().clear();
       mtu_ = 0;
       name_ = "";
       operationalStatus_ = "";
@@ -4364,11 +4805,13 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
         privateInterconnectInfoBuilder_ = null;
       }
       region_ = "";
+      remoteService_ = "";
       router_ = "";
       satisfiesPzs_ = false;
       selfLink_ = "";
       stackType_ = "";
       state_ = "";
+      subnetLength_ = 0;
       type_ = "";
       vlanTag8021Q_ = 0;
       return this;
@@ -4398,7 +4841,6 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
     public com.google.cloud.compute.v1.InterconnectAttachment buildPartial() {
       com.google.cloud.compute.v1.InterconnectAttachment result =
           new com.google.cloud.compute.v1.InterconnectAttachment(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -4407,25 +4849,6 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(
-        com.google.cloud.compute.v1.InterconnectAttachment result) {
-      if (((bitField0_ & 0x00000004) != 0)) {
-        candidateIpv6Subnets_ = candidateIpv6Subnets_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.candidateIpv6Subnets_ = candidateIpv6Subnets_;
-      if (((bitField0_ & 0x00000008) != 0)) {
-        candidateSubnets_ = candidateSubnets_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000008);
-      }
-      result.candidateSubnets_ = candidateSubnets_;
-      if (((bitField0_ & 0x00040000) != 0)) {
-        ipsecInternalAddresses_ = ipsecInternalAddresses_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00040000);
-      }
-      result.ipsecInternalAddresses_ = ipsecInternalAddresses_;
     }
 
     private void buildPartial0(com.google.cloud.compute.v1.InterconnectAttachment result) {
@@ -4438,6 +4861,14 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.bandwidth_ = bandwidth_;
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        candidateIpv6Subnets_.makeImmutable();
+        result.candidateIpv6Subnets_ = candidateIpv6Subnets_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        candidateSubnets_.makeImmutable();
+        result.candidateSubnets_ = candidateSubnets_;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.cloudRouterIpAddress_ = cloudRouterIpAddress_;
@@ -4452,104 +4883,111 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
         to_bitField0_ |= 0x00000010;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
-        result.creationTimestamp_ = creationTimestamp_;
+        result.configurationConstraints_ =
+            configurationConstraintsBuilder_ == null
+                ? configurationConstraints_
+                : configurationConstraintsBuilder_.build();
         to_bitField0_ |= 0x00000020;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
-        result.customerRouterIpAddress_ = customerRouterIpAddress_;
+        result.creationTimestamp_ = creationTimestamp_;
         to_bitField0_ |= 0x00000040;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
-        result.customerRouterIpv6Address_ = customerRouterIpv6Address_;
+        result.customerRouterIpAddress_ = customerRouterIpAddress_;
         to_bitField0_ |= 0x00000080;
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
-        result.customerRouterIpv6InterfaceId_ = customerRouterIpv6InterfaceId_;
+        result.customerRouterIpv6Address_ = customerRouterIpv6Address_;
         to_bitField0_ |= 0x00000100;
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
-        result.dataplaneVersion_ = dataplaneVersion_;
+        result.customerRouterIpv6InterfaceId_ = customerRouterIpv6InterfaceId_;
         to_bitField0_ |= 0x00000200;
       }
       if (((from_bitField0_ & 0x00001000) != 0)) {
-        result.description_ = description_;
+        result.dataplaneVersion_ = dataplaneVersion_;
         to_bitField0_ |= 0x00000400;
       }
       if (((from_bitField0_ & 0x00002000) != 0)) {
-        result.edgeAvailabilityDomain_ = edgeAvailabilityDomain_;
+        result.description_ = description_;
         to_bitField0_ |= 0x00000800;
       }
       if (((from_bitField0_ & 0x00004000) != 0)) {
-        result.encryption_ = encryption_;
+        result.edgeAvailabilityDomain_ = edgeAvailabilityDomain_;
         to_bitField0_ |= 0x00001000;
       }
       if (((from_bitField0_ & 0x00008000) != 0)) {
-        result.googleReferenceId_ = googleReferenceId_;
+        result.encryption_ = encryption_;
         to_bitField0_ |= 0x00002000;
       }
       if (((from_bitField0_ & 0x00010000) != 0)) {
-        result.id_ = id_;
+        result.googleReferenceId_ = googleReferenceId_;
         to_bitField0_ |= 0x00004000;
       }
       if (((from_bitField0_ & 0x00020000) != 0)) {
-        result.interconnect_ = interconnect_;
+        result.id_ = id_;
         to_bitField0_ |= 0x00008000;
       }
-      if (((from_bitField0_ & 0x00080000) != 0)) {
-        result.kind_ = kind_;
+      if (((from_bitField0_ & 0x00040000) != 0)) {
+        result.interconnect_ = interconnect_;
         to_bitField0_ |= 0x00010000;
       }
+      if (((from_bitField0_ & 0x00080000) != 0)) {
+        ipsecInternalAddresses_.makeImmutable();
+        result.ipsecInternalAddresses_ = ipsecInternalAddresses_;
+      }
       if (((from_bitField0_ & 0x00100000) != 0)) {
-        result.mtu_ = mtu_;
+        result.kind_ = kind_;
         to_bitField0_ |= 0x00020000;
       }
       if (((from_bitField0_ & 0x00200000) != 0)) {
-        result.name_ = name_;
+        result.labelFingerprint_ = labelFingerprint_;
         to_bitField0_ |= 0x00040000;
       }
       if (((from_bitField0_ & 0x00400000) != 0)) {
-        result.operationalStatus_ = operationalStatus_;
-        to_bitField0_ |= 0x00080000;
+        result.labels_ = internalGetLabels();
+        result.labels_.makeImmutable();
       }
       if (((from_bitField0_ & 0x00800000) != 0)) {
-        result.pairingKey_ = pairingKey_;
-        to_bitField0_ |= 0x00100000;
+        result.mtu_ = mtu_;
+        to_bitField0_ |= 0x00080000;
       }
       if (((from_bitField0_ & 0x01000000) != 0)) {
-        result.partnerAsn_ = partnerAsn_;
-        to_bitField0_ |= 0x00200000;
+        result.name_ = name_;
+        to_bitField0_ |= 0x00100000;
       }
       if (((from_bitField0_ & 0x02000000) != 0)) {
-        result.partnerMetadata_ =
-            partnerMetadataBuilder_ == null ? partnerMetadata_ : partnerMetadataBuilder_.build();
-        to_bitField0_ |= 0x00400000;
+        result.operationalStatus_ = operationalStatus_;
+        to_bitField0_ |= 0x00200000;
       }
       if (((from_bitField0_ & 0x04000000) != 0)) {
+        result.pairingKey_ = pairingKey_;
+        to_bitField0_ |= 0x00400000;
+      }
+      if (((from_bitField0_ & 0x08000000) != 0)) {
+        result.partnerAsn_ = partnerAsn_;
+        to_bitField0_ |= 0x00800000;
+      }
+      if (((from_bitField0_ & 0x10000000) != 0)) {
+        result.partnerMetadata_ =
+            partnerMetadataBuilder_ == null ? partnerMetadata_ : partnerMetadataBuilder_.build();
+        to_bitField0_ |= 0x01000000;
+      }
+      if (((from_bitField0_ & 0x20000000) != 0)) {
         result.privateInterconnectInfo_ =
             privateInterconnectInfoBuilder_ == null
                 ? privateInterconnectInfo_
                 : privateInterconnectInfoBuilder_.build();
-        to_bitField0_ |= 0x00800000;
-      }
-      if (((from_bitField0_ & 0x08000000) != 0)) {
-        result.region_ = region_;
-        to_bitField0_ |= 0x01000000;
-      }
-      if (((from_bitField0_ & 0x10000000) != 0)) {
-        result.router_ = router_;
         to_bitField0_ |= 0x02000000;
       }
-      if (((from_bitField0_ & 0x20000000) != 0)) {
-        result.satisfiesPzs_ = satisfiesPzs_;
+      if (((from_bitField0_ & 0x40000000) != 0)) {
+        result.region_ = region_;
         to_bitField0_ |= 0x04000000;
       }
-      if (((from_bitField0_ & 0x40000000) != 0)) {
-        result.selfLink_ = selfLink_;
-        to_bitField0_ |= 0x08000000;
-      }
       if (((from_bitField0_ & 0x80000000) != 0)) {
-        result.stackType_ = stackType_;
-        to_bitField0_ |= 0x10000000;
+        result.remoteService_ = remoteService_;
+        to_bitField0_ |= 0x08000000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -4558,18 +4996,40 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       int from_bitField1_ = bitField1_;
       int to_bitField0_ = 0;
       if (((from_bitField1_ & 0x00000001) != 0)) {
-        result.state_ = state_;
-        to_bitField0_ |= 0x20000000;
+        result.router_ = router_;
+        to_bitField0_ |= 0x10000000;
       }
       if (((from_bitField1_ & 0x00000002) != 0)) {
-        result.type_ = type_;
-        to_bitField0_ |= 0x40000000;
+        result.satisfiesPzs_ = satisfiesPzs_;
+        to_bitField0_ |= 0x20000000;
       }
       if (((from_bitField1_ & 0x00000004) != 0)) {
-        result.vlanTag8021Q_ = vlanTag8021Q_;
+        result.selfLink_ = selfLink_;
+        to_bitField0_ |= 0x40000000;
+      }
+      if (((from_bitField1_ & 0x00000008) != 0)) {
+        result.stackType_ = stackType_;
         to_bitField0_ |= 0x80000000;
       }
+      int to_bitField1_ = 0;
+      if (((from_bitField1_ & 0x00000010) != 0)) {
+        result.state_ = state_;
+        to_bitField1_ |= 0x00000001;
+      }
+      if (((from_bitField1_ & 0x00000020) != 0)) {
+        result.subnetLength_ = subnetLength_;
+        to_bitField1_ |= 0x00000002;
+      }
+      if (((from_bitField1_ & 0x00000040) != 0)) {
+        result.type_ = type_;
+        to_bitField1_ |= 0x00000004;
+      }
+      if (((from_bitField1_ & 0x00000080) != 0)) {
+        result.vlanTag8021Q_ = vlanTag8021Q_;
+        to_bitField1_ |= 0x00000008;
+      }
       result.bitField0_ |= to_bitField0_;
+      result.bitField1_ |= to_bitField1_;
     }
 
     @java.lang.Override
@@ -4629,7 +5089,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       if (!other.candidateIpv6Subnets_.isEmpty()) {
         if (candidateIpv6Subnets_.isEmpty()) {
           candidateIpv6Subnets_ = other.candidateIpv6Subnets_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ |= 0x00000004;
         } else {
           ensureCandidateIpv6SubnetsIsMutable();
           candidateIpv6Subnets_.addAll(other.candidateIpv6Subnets_);
@@ -4639,7 +5099,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       if (!other.candidateSubnets_.isEmpty()) {
         if (candidateSubnets_.isEmpty()) {
           candidateSubnets_ = other.candidateSubnets_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ |= 0x00000008;
         } else {
           ensureCandidateSubnetsIsMutable();
           candidateSubnets_.addAll(other.candidateSubnets_);
@@ -4661,24 +5121,27 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
         bitField0_ |= 0x00000040;
         onChanged();
       }
+      if (other.hasConfigurationConstraints()) {
+        mergeConfigurationConstraints(other.getConfigurationConstraints());
+      }
       if (other.hasCreationTimestamp()) {
         creationTimestamp_ = other.creationTimestamp_;
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       if (other.hasCustomerRouterIpAddress()) {
         customerRouterIpAddress_ = other.customerRouterIpAddress_;
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       if (other.hasCustomerRouterIpv6Address()) {
         customerRouterIpv6Address_ = other.customerRouterIpv6Address_;
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       if (other.hasCustomerRouterIpv6InterfaceId()) {
         customerRouterIpv6InterfaceId_ = other.customerRouterIpv6InterfaceId_;
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       if (other.hasDataplaneVersion()) {
@@ -4686,22 +5149,22 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       }
       if (other.hasDescription()) {
         description_ = other.description_;
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       if (other.hasEdgeAvailabilityDomain()) {
         edgeAvailabilityDomain_ = other.edgeAvailabilityDomain_;
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       if (other.hasEncryption()) {
         encryption_ = other.encryption_;
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00008000;
         onChanged();
       }
       if (other.hasGoogleReferenceId()) {
         googleReferenceId_ = other.googleReferenceId_;
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00010000;
         onChanged();
       }
       if (other.hasId()) {
@@ -4709,13 +5172,13 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       }
       if (other.hasInterconnect()) {
         interconnect_ = other.interconnect_;
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00040000;
         onChanged();
       }
       if (!other.ipsecInternalAddresses_.isEmpty()) {
         if (ipsecInternalAddresses_.isEmpty()) {
           ipsecInternalAddresses_ = other.ipsecInternalAddresses_;
-          bitField0_ = (bitField0_ & ~0x00040000);
+          bitField0_ |= 0x00080000;
         } else {
           ensureIpsecInternalAddressesIsMutable();
           ipsecInternalAddresses_.addAll(other.ipsecInternalAddresses_);
@@ -4724,25 +5187,32 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       }
       if (other.hasKind()) {
         kind_ = other.kind_;
-        bitField0_ |= 0x00080000;
+        bitField0_ |= 0x00100000;
         onChanged();
       }
+      if (other.hasLabelFingerprint()) {
+        labelFingerprint_ = other.labelFingerprint_;
+        bitField0_ |= 0x00200000;
+        onChanged();
+      }
+      internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      bitField0_ |= 0x00400000;
       if (other.hasMtu()) {
         setMtu(other.getMtu());
       }
       if (other.hasName()) {
         name_ = other.name_;
-        bitField0_ |= 0x00200000;
+        bitField0_ |= 0x01000000;
         onChanged();
       }
       if (other.hasOperationalStatus()) {
         operationalStatus_ = other.operationalStatus_;
-        bitField0_ |= 0x00400000;
+        bitField0_ |= 0x02000000;
         onChanged();
       }
       if (other.hasPairingKey()) {
         pairingKey_ = other.pairingKey_;
-        bitField0_ |= 0x00800000;
+        bitField0_ |= 0x04000000;
         onChanged();
       }
       if (other.hasPartnerAsn()) {
@@ -4756,12 +5226,17 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       }
       if (other.hasRegion()) {
         region_ = other.region_;
-        bitField0_ |= 0x08000000;
+        bitField0_ |= 0x40000000;
+        onChanged();
+      }
+      if (other.hasRemoteService()) {
+        remoteService_ = other.remoteService_;
+        bitField0_ |= 0x80000000;
         onChanged();
       }
       if (other.hasRouter()) {
         router_ = other.router_;
-        bitField0_ |= 0x10000000;
+        bitField1_ |= 0x00000001;
         onChanged();
       }
       if (other.hasSatisfiesPzs()) {
@@ -4769,22 +5244,25 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       }
       if (other.hasSelfLink()) {
         selfLink_ = other.selfLink_;
-        bitField0_ |= 0x40000000;
+        bitField1_ |= 0x00000004;
         onChanged();
       }
       if (other.hasStackType()) {
         stackType_ = other.stackType_;
-        bitField0_ |= 0x80000000;
+        bitField1_ |= 0x00000008;
         onChanged();
       }
       if (other.hasState()) {
         state_ = other.state_;
-        bitField1_ |= 0x00000001;
+        bitField1_ |= 0x00000010;
         onChanged();
+      }
+      if (other.hasSubnetLength()) {
+        setSubnetLength(other.getSubnetLength());
       }
       if (other.hasType()) {
         type_ = other.type_;
-        bitField1_ |= 0x00000002;
+        bitField1_ |= 0x00000040;
         onChanged();
       }
       if (other.hasVlanTag8021Q()) {
@@ -4819,49 +5297,49 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
             case 26840:
               {
                 id_ = input.readUInt64();
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case 26840
             case 867696:
               {
                 mtu_ = input.readInt32();
-                bitField0_ |= 0x00100000;
+                bitField0_ |= 0x00800000;
                 break;
               } // case 867696
             case 26336418:
               {
                 kind_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00080000;
+                bitField0_ |= 0x00100000;
                 break;
               } // case 26336418
             case 26989658:
               {
                 name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00200000;
+                bitField0_ |= 0x01000000;
                 break;
               } // case 26989658
             case 28604882:
               {
                 type_ = input.readStringRequireUtf8();
-                bitField1_ |= 0x00000002;
+                bitField1_ |= 0x00000040;
                 break;
               } // case 28604882
             case 244202930:
               {
                 creationTimestamp_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 244202930
             case 279360600:
               {
                 dataplaneVersion_ = input.readInt32();
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 279360600
             case 527271474:
               {
                 input.readMessage(getPartnerMetadataFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x02000000;
+                bitField0_ |= 0x10000000;
                 break;
               } // case 527271474
             case 565460178:
@@ -4874,39 +5352,52 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
             case 570316082:
               {
                 edgeAvailabilityDomain_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 570316082
             case 783842330:
               {
                 encryption_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 783842330
             case 878060682:
               {
                 state_ = input.readStringRequireUtf8();
-                bitField1_ |= 0x00000001;
+                bitField1_ |= 0x00000010;
                 break;
               } // case 878060682
             case 959422688:
               {
                 vlanTag8021Q_ = input.readInt32();
-                bitField1_ |= 0x00000004;
+                bitField1_ |= 0x00000080;
                 break;
               } // case 959422688
             case 1111570338:
               {
                 region_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x08000000;
+                bitField0_ |= 0x40000000;
                 break;
               } // case 1111570338
             case 1188870730:
               {
                 router_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x10000000;
+                bitField1_ |= 0x00000001;
                 break;
               } // case 1188870730
+            case 1424998602:
+              {
+                labelFingerprint_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00200000;
+                break;
+              } // case 1424998602
+            case 1437451114:
+              {
+                input.readMessage(
+                    getConfigurationConstraintsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 1437451114
             case 1453720970:
               {
                 bandwidth_ = input.readStringRequireUtf8();
@@ -4916,20 +5407,20 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
             case 1608566778:
               {
                 operationalStatus_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00400000;
+                bitField0_ |= 0x02000000;
                 break;
               } // case 1608566778
             case 1796809842:
               {
                 interconnect_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case 1796809842
             case 1898164250:
               {
                 input.readMessage(
                     getPrivateInterconnectInfoFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x04000000;
+                bitField0_ |= 0x20000000;
                 break;
               } // case 1898164250
             case 1902743506:
@@ -4939,6 +5430,12 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
                 candidateSubnets_.add(s);
                 break;
               } // case 1902743506
+            case -2056318912:
+              {
+                subnetLength_ = input.readInt32();
+                bitField1_ |= 0x00000020;
+                break;
+              } // case -2056318912
             case -1995825086:
               {
                 cloudRouterIpAddress_ = input.readStringRequireUtf8();
@@ -4948,21 +5445,27 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
             case -1973950582:
               {
                 customerRouterIpv6Address_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case -1973950582
             case -1635161206:
               {
                 customerRouterIpAddress_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case -1635161206
             case -1247012830:
               {
                 customerRouterIpv6InterfaceId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case -1247012830
+            case -1159332382:
+              {
+                remoteService_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x80000000;
+                break;
+              } // case -1159332382
             case -1033778774:
               {
                 java.lang.String s = input.readStringRequireUtf8();
@@ -4973,25 +5476,25 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
             case -911466526:
               {
                 description_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case -911466526
             case -887696246:
               {
                 stackType_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x80000000;
+                bitField1_ |= 0x00000008;
                 break;
               } // case -887696246
             case -789638104:
               {
                 partnerAsn_ = input.readInt64();
-                bitField0_ |= 0x01000000;
+                bitField0_ |= 0x08000000;
                 break;
               } // case -789638104
             case -777403582:
               {
                 pairingKey_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00800000;
+                bitField0_ |= 0x04000000;
                 break;
               } // case -777403582
             case -729566584:
@@ -5009,15 +5512,27 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
             case -645248918:
               {
                 selfLink_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x40000000;
+                bitField1_ |= 0x00000004;
                 break;
               } // case -645248918
             case -447253160:
               {
                 satisfiesPzs_ = input.readBool();
-                bitField0_ |= 0x20000000;
+                bitField1_ |= 0x00000002;
                 break;
               } // case -447253160
+            case -293404678:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
+                    input.readMessage(
+                        LabelsDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutableLabels()
+                    .getMutableMap()
+                    .put(labels__.getKey(), labels__.getValue());
+                bitField0_ |= 0x00400000;
+                break;
+              } // case -293404678
             case -124705686:
               {
                 cloudRouterIpv6InterfaceId_ = input.readStringRequireUtf8();
@@ -5027,7 +5542,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
             case -15411542:
               {
                 googleReferenceId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case -15411542
             default:
@@ -5244,14 +5759,14 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       return this;
     }
 
-    private com.google.protobuf.LazyStringList candidateIpv6Subnets_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList candidateIpv6Subnets_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureCandidateIpv6SubnetsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!candidateIpv6Subnets_.isModifiable()) {
         candidateIpv6Subnets_ = new com.google.protobuf.LazyStringArrayList(candidateIpv6Subnets_);
-        bitField0_ |= 0x00000004;
       }
+      bitField0_ |= 0x00000004;
     }
     /**
      *
@@ -5265,7 +5780,8 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return A list containing the candidateIpv6Subnets.
      */
     public com.google.protobuf.ProtocolStringList getCandidateIpv6SubnetsList() {
-      return candidateIpv6Subnets_.getUnmodifiableView();
+      candidateIpv6Subnets_.makeImmutable();
+      return candidateIpv6Subnets_;
     }
     /**
      *
@@ -5330,6 +5846,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       }
       ensureCandidateIpv6SubnetsIsMutable();
       candidateIpv6Subnets_.set(index, value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -5351,6 +5868,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       }
       ensureCandidateIpv6SubnetsIsMutable();
       candidateIpv6Subnets_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -5369,6 +5887,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
     public Builder addAllCandidateIpv6Subnets(java.lang.Iterable<java.lang.String> values) {
       ensureCandidateIpv6SubnetsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, candidateIpv6Subnets_);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -5384,8 +5903,9 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearCandidateIpv6Subnets() {
-      candidateIpv6Subnets_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      candidateIpv6Subnets_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000004);
+      ;
       onChanged();
       return this;
     }
@@ -5408,18 +5928,19 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       checkByteStringIsUtf8(value);
       ensureCandidateIpv6SubnetsIsMutable();
       candidateIpv6Subnets_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList candidateSubnets_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList candidateSubnets_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureCandidateSubnetsIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!candidateSubnets_.isModifiable()) {
         candidateSubnets_ = new com.google.protobuf.LazyStringArrayList(candidateSubnets_);
-        bitField0_ |= 0x00000008;
       }
+      bitField0_ |= 0x00000008;
     }
     /**
      *
@@ -5433,7 +5954,8 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return A list containing the candidateSubnets.
      */
     public com.google.protobuf.ProtocolStringList getCandidateSubnetsList() {
-      return candidateSubnets_.getUnmodifiableView();
+      candidateSubnets_.makeImmutable();
+      return candidateSubnets_;
     }
     /**
      *
@@ -5498,6 +6020,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       }
       ensureCandidateSubnetsIsMutable();
       candidateSubnets_.set(index, value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -5519,6 +6042,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       }
       ensureCandidateSubnetsIsMutable();
       candidateSubnets_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -5537,6 +6061,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
     public Builder addAllCandidateSubnets(java.lang.Iterable<java.lang.String> values) {
       ensureCandidateSubnetsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, candidateSubnets_);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -5552,8 +6077,9 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearCandidateSubnets() {
-      candidateSubnets_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      candidateSubnets_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000008);
+      ;
       onChanged();
       return this;
     }
@@ -5576,6 +6102,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       checkByteStringIsUtf8(value);
       ensureCandidateSubnetsIsMutable();
       candidateSubnets_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -5940,6 +6467,220 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       return this;
     }
 
+    private com.google.cloud.compute.v1.InterconnectAttachmentConfigurationConstraints
+        configurationConstraints_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.InterconnectAttachmentConfigurationConstraints,
+            com.google.cloud.compute.v1.InterconnectAttachmentConfigurationConstraints.Builder,
+            com.google.cloud.compute.v1.InterconnectAttachmentConfigurationConstraintsOrBuilder>
+        configurationConstraintsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Constraints for this attachment, if any. The attachment does not work if these constraints are not met.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.InterconnectAttachmentConfigurationConstraints configuration_constraints = 179681389;
+     * </code>
+     *
+     * @return Whether the configurationConstraints field is set.
+     */
+    public boolean hasConfigurationConstraints() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Constraints for this attachment, if any. The attachment does not work if these constraints are not met.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.InterconnectAttachmentConfigurationConstraints configuration_constraints = 179681389;
+     * </code>
+     *
+     * @return The configurationConstraints.
+     */
+    public com.google.cloud.compute.v1.InterconnectAttachmentConfigurationConstraints
+        getConfigurationConstraints() {
+      if (configurationConstraintsBuilder_ == null) {
+        return configurationConstraints_ == null
+            ? com.google.cloud.compute.v1.InterconnectAttachmentConfigurationConstraints
+                .getDefaultInstance()
+            : configurationConstraints_;
+      } else {
+        return configurationConstraintsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Constraints for this attachment, if any. The attachment does not work if these constraints are not met.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.InterconnectAttachmentConfigurationConstraints configuration_constraints = 179681389;
+     * </code>
+     */
+    public Builder setConfigurationConstraints(
+        com.google.cloud.compute.v1.InterconnectAttachmentConfigurationConstraints value) {
+      if (configurationConstraintsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        configurationConstraints_ = value;
+      } else {
+        configurationConstraintsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Constraints for this attachment, if any. The attachment does not work if these constraints are not met.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.InterconnectAttachmentConfigurationConstraints configuration_constraints = 179681389;
+     * </code>
+     */
+    public Builder setConfigurationConstraints(
+        com.google.cloud.compute.v1.InterconnectAttachmentConfigurationConstraints.Builder
+            builderForValue) {
+      if (configurationConstraintsBuilder_ == null) {
+        configurationConstraints_ = builderForValue.build();
+      } else {
+        configurationConstraintsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Constraints for this attachment, if any. The attachment does not work if these constraints are not met.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.InterconnectAttachmentConfigurationConstraints configuration_constraints = 179681389;
+     * </code>
+     */
+    public Builder mergeConfigurationConstraints(
+        com.google.cloud.compute.v1.InterconnectAttachmentConfigurationConstraints value) {
+      if (configurationConstraintsBuilder_ == null) {
+        if (((bitField0_ & 0x00000080) != 0)
+            && configurationConstraints_ != null
+            && configurationConstraints_
+                != com.google.cloud.compute.v1.InterconnectAttachmentConfigurationConstraints
+                    .getDefaultInstance()) {
+          getConfigurationConstraintsBuilder().mergeFrom(value);
+        } else {
+          configurationConstraints_ = value;
+        }
+      } else {
+        configurationConstraintsBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Constraints for this attachment, if any. The attachment does not work if these constraints are not met.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.InterconnectAttachmentConfigurationConstraints configuration_constraints = 179681389;
+     * </code>
+     */
+    public Builder clearConfigurationConstraints() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      configurationConstraints_ = null;
+      if (configurationConstraintsBuilder_ != null) {
+        configurationConstraintsBuilder_.dispose();
+        configurationConstraintsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Constraints for this attachment, if any. The attachment does not work if these constraints are not met.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.InterconnectAttachmentConfigurationConstraints configuration_constraints = 179681389;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.InterconnectAttachmentConfigurationConstraints.Builder
+        getConfigurationConstraintsBuilder() {
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return getConfigurationConstraintsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Constraints for this attachment, if any. The attachment does not work if these constraints are not met.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.InterconnectAttachmentConfigurationConstraints configuration_constraints = 179681389;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.InterconnectAttachmentConfigurationConstraintsOrBuilder
+        getConfigurationConstraintsOrBuilder() {
+      if (configurationConstraintsBuilder_ != null) {
+        return configurationConstraintsBuilder_.getMessageOrBuilder();
+      } else {
+        return configurationConstraints_ == null
+            ? com.google.cloud.compute.v1.InterconnectAttachmentConfigurationConstraints
+                .getDefaultInstance()
+            : configurationConstraints_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Constraints for this attachment, if any. The attachment does not work if these constraints are not met.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.InterconnectAttachmentConfigurationConstraints configuration_constraints = 179681389;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.InterconnectAttachmentConfigurationConstraints,
+            com.google.cloud.compute.v1.InterconnectAttachmentConfigurationConstraints.Builder,
+            com.google.cloud.compute.v1.InterconnectAttachmentConfigurationConstraintsOrBuilder>
+        getConfigurationConstraintsFieldBuilder() {
+      if (configurationConstraintsBuilder_ == null) {
+        configurationConstraintsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.compute.v1.InterconnectAttachmentConfigurationConstraints,
+                com.google.cloud.compute.v1.InterconnectAttachmentConfigurationConstraints.Builder,
+                com.google.cloud.compute.v1
+                    .InterconnectAttachmentConfigurationConstraintsOrBuilder>(
+                getConfigurationConstraints(), getParentForChildren(), isClean());
+        configurationConstraints_ = null;
+      }
+      return configurationConstraintsBuilder_;
+    }
+
     private java.lang.Object creationTimestamp_ = "";
     /**
      *
@@ -5953,7 +6694,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return Whether the creationTimestamp field is set.
      */
     public boolean hasCreationTimestamp() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -6016,7 +6757,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       creationTimestamp_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -6033,7 +6774,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      */
     public Builder clearCreationTimestamp() {
       creationTimestamp_ = getDefaultInstance().getCreationTimestamp();
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -6055,7 +6796,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       }
       checkByteStringIsUtf8(value);
       creationTimestamp_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -6073,7 +6814,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return Whether the customerRouterIpAddress field is set.
      */
     public boolean hasCustomerRouterIpAddress() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -6136,7 +6877,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       customerRouterIpAddress_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -6153,7 +6894,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      */
     public Builder clearCustomerRouterIpAddress() {
       customerRouterIpAddress_ = getDefaultInstance().getCustomerRouterIpAddress();
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -6175,7 +6916,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       }
       checkByteStringIsUtf8(value);
       customerRouterIpAddress_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -6193,7 +6934,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return Whether the customerRouterIpv6Address field is set.
      */
     public boolean hasCustomerRouterIpv6Address() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      *
@@ -6256,7 +6997,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       customerRouterIpv6Address_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -6273,7 +7014,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      */
     public Builder clearCustomerRouterIpv6Address() {
       customerRouterIpv6Address_ = getDefaultInstance().getCustomerRouterIpv6Address();
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -6295,7 +7036,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       }
       checkByteStringIsUtf8(value);
       customerRouterIpv6Address_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -6313,7 +7054,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return Whether the customerRouterIpv6InterfaceId field is set.
      */
     public boolean hasCustomerRouterIpv6InterfaceId() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
     /**
      *
@@ -6376,7 +7117,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       customerRouterIpv6InterfaceId_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -6393,7 +7134,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      */
     public Builder clearCustomerRouterIpv6InterfaceId() {
       customerRouterIpv6InterfaceId_ = getDefaultInstance().getCustomerRouterIpv6InterfaceId();
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -6415,7 +7156,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       }
       checkByteStringIsUtf8(value);
       customerRouterIpv6InterfaceId_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -6434,7 +7175,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      */
     @java.lang.Override
     public boolean hasDataplaneVersion() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
     /**
      *
@@ -6466,7 +7207,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
     public Builder setDataplaneVersion(int value) {
 
       dataplaneVersion_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -6482,7 +7223,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearDataplaneVersion() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       dataplaneVersion_ = 0;
       onChanged();
       return this;
@@ -6501,7 +7242,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return Whether the description field is set.
      */
     public boolean hasDescription() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
     /**
      *
@@ -6564,7 +7305,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       description_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -6581,7 +7322,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      */
     public Builder clearDescription() {
       description_ = getDefaultInstance().getDescription();
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       onChanged();
       return this;
     }
@@ -6603,7 +7344,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       }
       checkByteStringIsUtf8(value);
       description_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -6622,7 +7363,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return Whether the edgeAvailabilityDomain field is set.
      */
     public boolean hasEdgeAvailabilityDomain() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
     /**
      *
@@ -6688,7 +7429,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       edgeAvailabilityDomain_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -6706,7 +7447,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      */
     public Builder clearEdgeAvailabilityDomain() {
       edgeAvailabilityDomain_ = getDefaultInstance().getEdgeAvailabilityDomain();
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       onChanged();
       return this;
     }
@@ -6729,7 +7470,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       }
       checkByteStringIsUtf8(value);
       edgeAvailabilityDomain_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -6748,7 +7489,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return Whether the encryption field is set.
      */
     public boolean hasEncryption() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00008000) != 0);
     }
     /**
      *
@@ -6814,7 +7555,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       encryption_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -6832,7 +7573,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      */
     public Builder clearEncryption() {
       encryption_ = getDefaultInstance().getEncryption();
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       onChanged();
       return this;
     }
@@ -6855,7 +7596,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       }
       checkByteStringIsUtf8(value);
       encryption_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -6873,7 +7614,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return Whether the googleReferenceId field is set.
      */
     public boolean hasGoogleReferenceId() {
-      return ((bitField0_ & 0x00008000) != 0);
+      return ((bitField0_ & 0x00010000) != 0);
     }
     /**
      *
@@ -6936,7 +7677,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       googleReferenceId_ = value;
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -6953,7 +7694,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      */
     public Builder clearGoogleReferenceId() {
       googleReferenceId_ = getDefaultInstance().getGoogleReferenceId();
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       onChanged();
       return this;
     }
@@ -6975,7 +7716,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       }
       checkByteStringIsUtf8(value);
       googleReferenceId_ = value;
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -6994,7 +7735,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      */
     @java.lang.Override
     public boolean hasId() {
-      return ((bitField0_ & 0x00010000) != 0);
+      return ((bitField0_ & 0x00020000) != 0);
     }
     /**
      *
@@ -7026,7 +7767,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
     public Builder setId(long value) {
 
       id_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -7042,7 +7783,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearId() {
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       id_ = 0L;
       onChanged();
       return this;
@@ -7061,7 +7802,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return Whether the interconnect field is set.
      */
     public boolean hasInterconnect() {
-      return ((bitField0_ & 0x00020000) != 0);
+      return ((bitField0_ & 0x00040000) != 0);
     }
     /**
      *
@@ -7124,7 +7865,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       interconnect_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -7141,7 +7882,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      */
     public Builder clearInterconnect() {
       interconnect_ = getDefaultInstance().getInterconnect();
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       onChanged();
       return this;
     }
@@ -7163,26 +7904,26 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       }
       checkByteStringIsUtf8(value);
       interconnect_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList ipsecInternalAddresses_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList ipsecInternalAddresses_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureIpsecInternalAddressesIsMutable() {
-      if (!((bitField0_ & 0x00040000) != 0)) {
+      if (!ipsecInternalAddresses_.isModifiable()) {
         ipsecInternalAddresses_ =
             new com.google.protobuf.LazyStringArrayList(ipsecInternalAddresses_);
-        bitField0_ |= 0x00040000;
       }
+      bitField0_ |= 0x00080000;
     }
     /**
      *
      *
      * <pre>
-     * A list of URLs of addresses that have been reserved for the VLAN attachment. Used only for the VLAN attachment that has the encryption option as IPSEC. The addresses must be regional internal IP address ranges. When creating an HA VPN gateway over the VLAN attachment, if the attachment is configured to use a regional internal IP address, then the VPN gateway's IP address is allocated from the IP address range specified here. For example, if the HA VPN gateway's interface 0 is paired to this VLAN attachment, then a regional internal IP address for the VPN gateway interface 0 will be allocated from the IP address specified for this VLAN attachment. If this field is not specified when creating the VLAN attachment, then later on when creating an HA VPN gateway on this VLAN attachment, the HA VPN gateway's IP address is allocated from the regional external IP address pool. Not currently available publicly.
+     * A list of URLs of addresses that have been reserved for the VLAN attachment. Used only for the VLAN attachment that has the encryption option as IPSEC. The addresses must be regional internal IP address ranges. When creating an HA VPN gateway over the VLAN attachment, if the attachment is configured to use a regional internal IP address, then the VPN gateway's IP address is allocated from the IP address range specified here. For example, if the HA VPN gateway's interface 0 is paired to this VLAN attachment, then a regional internal IP address for the VPN gateway interface 0 will be allocated from the IP address specified for this VLAN attachment. If this field is not specified when creating the VLAN attachment, then later on when creating an HA VPN gateway on this VLAN attachment, the HA VPN gateway's IP address is allocated from the regional external IP address pool.
      * </pre>
      *
      * <code>repeated string ipsec_internal_addresses = 407648565;</code>
@@ -7190,13 +7931,14 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return A list containing the ipsecInternalAddresses.
      */
     public com.google.protobuf.ProtocolStringList getIpsecInternalAddressesList() {
-      return ipsecInternalAddresses_.getUnmodifiableView();
+      ipsecInternalAddresses_.makeImmutable();
+      return ipsecInternalAddresses_;
     }
     /**
      *
      *
      * <pre>
-     * A list of URLs of addresses that have been reserved for the VLAN attachment. Used only for the VLAN attachment that has the encryption option as IPSEC. The addresses must be regional internal IP address ranges. When creating an HA VPN gateway over the VLAN attachment, if the attachment is configured to use a regional internal IP address, then the VPN gateway's IP address is allocated from the IP address range specified here. For example, if the HA VPN gateway's interface 0 is paired to this VLAN attachment, then a regional internal IP address for the VPN gateway interface 0 will be allocated from the IP address specified for this VLAN attachment. If this field is not specified when creating the VLAN attachment, then later on when creating an HA VPN gateway on this VLAN attachment, the HA VPN gateway's IP address is allocated from the regional external IP address pool. Not currently available publicly.
+     * A list of URLs of addresses that have been reserved for the VLAN attachment. Used only for the VLAN attachment that has the encryption option as IPSEC. The addresses must be regional internal IP address ranges. When creating an HA VPN gateway over the VLAN attachment, if the attachment is configured to use a regional internal IP address, then the VPN gateway's IP address is allocated from the IP address range specified here. For example, if the HA VPN gateway's interface 0 is paired to this VLAN attachment, then a regional internal IP address for the VPN gateway interface 0 will be allocated from the IP address specified for this VLAN attachment. If this field is not specified when creating the VLAN attachment, then later on when creating an HA VPN gateway on this VLAN attachment, the HA VPN gateway's IP address is allocated from the regional external IP address pool.
      * </pre>
      *
      * <code>repeated string ipsec_internal_addresses = 407648565;</code>
@@ -7210,7 +7952,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * A list of URLs of addresses that have been reserved for the VLAN attachment. Used only for the VLAN attachment that has the encryption option as IPSEC. The addresses must be regional internal IP address ranges. When creating an HA VPN gateway over the VLAN attachment, if the attachment is configured to use a regional internal IP address, then the VPN gateway's IP address is allocated from the IP address range specified here. For example, if the HA VPN gateway's interface 0 is paired to this VLAN attachment, then a regional internal IP address for the VPN gateway interface 0 will be allocated from the IP address specified for this VLAN attachment. If this field is not specified when creating the VLAN attachment, then later on when creating an HA VPN gateway on this VLAN attachment, the HA VPN gateway's IP address is allocated from the regional external IP address pool. Not currently available publicly.
+     * A list of URLs of addresses that have been reserved for the VLAN attachment. Used only for the VLAN attachment that has the encryption option as IPSEC. The addresses must be regional internal IP address ranges. When creating an HA VPN gateway over the VLAN attachment, if the attachment is configured to use a regional internal IP address, then the VPN gateway's IP address is allocated from the IP address range specified here. For example, if the HA VPN gateway's interface 0 is paired to this VLAN attachment, then a regional internal IP address for the VPN gateway interface 0 will be allocated from the IP address specified for this VLAN attachment. If this field is not specified when creating the VLAN attachment, then later on when creating an HA VPN gateway on this VLAN attachment, the HA VPN gateway's IP address is allocated from the regional external IP address pool.
      * </pre>
      *
      * <code>repeated string ipsec_internal_addresses = 407648565;</code>
@@ -7225,7 +7967,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * A list of URLs of addresses that have been reserved for the VLAN attachment. Used only for the VLAN attachment that has the encryption option as IPSEC. The addresses must be regional internal IP address ranges. When creating an HA VPN gateway over the VLAN attachment, if the attachment is configured to use a regional internal IP address, then the VPN gateway's IP address is allocated from the IP address range specified here. For example, if the HA VPN gateway's interface 0 is paired to this VLAN attachment, then a regional internal IP address for the VPN gateway interface 0 will be allocated from the IP address specified for this VLAN attachment. If this field is not specified when creating the VLAN attachment, then later on when creating an HA VPN gateway on this VLAN attachment, the HA VPN gateway's IP address is allocated from the regional external IP address pool. Not currently available publicly.
+     * A list of URLs of addresses that have been reserved for the VLAN attachment. Used only for the VLAN attachment that has the encryption option as IPSEC. The addresses must be regional internal IP address ranges. When creating an HA VPN gateway over the VLAN attachment, if the attachment is configured to use a regional internal IP address, then the VPN gateway's IP address is allocated from the IP address range specified here. For example, if the HA VPN gateway's interface 0 is paired to this VLAN attachment, then a regional internal IP address for the VPN gateway interface 0 will be allocated from the IP address specified for this VLAN attachment. If this field is not specified when creating the VLAN attachment, then later on when creating an HA VPN gateway on this VLAN attachment, the HA VPN gateway's IP address is allocated from the regional external IP address pool.
      * </pre>
      *
      * <code>repeated string ipsec_internal_addresses = 407648565;</code>
@@ -7240,7 +7982,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * A list of URLs of addresses that have been reserved for the VLAN attachment. Used only for the VLAN attachment that has the encryption option as IPSEC. The addresses must be regional internal IP address ranges. When creating an HA VPN gateway over the VLAN attachment, if the attachment is configured to use a regional internal IP address, then the VPN gateway's IP address is allocated from the IP address range specified here. For example, if the HA VPN gateway's interface 0 is paired to this VLAN attachment, then a regional internal IP address for the VPN gateway interface 0 will be allocated from the IP address specified for this VLAN attachment. If this field is not specified when creating the VLAN attachment, then later on when creating an HA VPN gateway on this VLAN attachment, the HA VPN gateway's IP address is allocated from the regional external IP address pool. Not currently available publicly.
+     * A list of URLs of addresses that have been reserved for the VLAN attachment. Used only for the VLAN attachment that has the encryption option as IPSEC. The addresses must be regional internal IP address ranges. When creating an HA VPN gateway over the VLAN attachment, if the attachment is configured to use a regional internal IP address, then the VPN gateway's IP address is allocated from the IP address range specified here. For example, if the HA VPN gateway's interface 0 is paired to this VLAN attachment, then a regional internal IP address for the VPN gateway interface 0 will be allocated from the IP address specified for this VLAN attachment. If this field is not specified when creating the VLAN attachment, then later on when creating an HA VPN gateway on this VLAN attachment, the HA VPN gateway's IP address is allocated from the regional external IP address pool.
      * </pre>
      *
      * <code>repeated string ipsec_internal_addresses = 407648565;</code>
@@ -7255,6 +7997,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       }
       ensureIpsecInternalAddressesIsMutable();
       ipsecInternalAddresses_.set(index, value);
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -7262,7 +8005,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * A list of URLs of addresses that have been reserved for the VLAN attachment. Used only for the VLAN attachment that has the encryption option as IPSEC. The addresses must be regional internal IP address ranges. When creating an HA VPN gateway over the VLAN attachment, if the attachment is configured to use a regional internal IP address, then the VPN gateway's IP address is allocated from the IP address range specified here. For example, if the HA VPN gateway's interface 0 is paired to this VLAN attachment, then a regional internal IP address for the VPN gateway interface 0 will be allocated from the IP address specified for this VLAN attachment. If this field is not specified when creating the VLAN attachment, then later on when creating an HA VPN gateway on this VLAN attachment, the HA VPN gateway's IP address is allocated from the regional external IP address pool. Not currently available publicly.
+     * A list of URLs of addresses that have been reserved for the VLAN attachment. Used only for the VLAN attachment that has the encryption option as IPSEC. The addresses must be regional internal IP address ranges. When creating an HA VPN gateway over the VLAN attachment, if the attachment is configured to use a regional internal IP address, then the VPN gateway's IP address is allocated from the IP address range specified here. For example, if the HA VPN gateway's interface 0 is paired to this VLAN attachment, then a regional internal IP address for the VPN gateway interface 0 will be allocated from the IP address specified for this VLAN attachment. If this field is not specified when creating the VLAN attachment, then later on when creating an HA VPN gateway on this VLAN attachment, the HA VPN gateway's IP address is allocated from the regional external IP address pool.
      * </pre>
      *
      * <code>repeated string ipsec_internal_addresses = 407648565;</code>
@@ -7276,6 +8019,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       }
       ensureIpsecInternalAddressesIsMutable();
       ipsecInternalAddresses_.add(value);
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -7283,7 +8027,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * A list of URLs of addresses that have been reserved for the VLAN attachment. Used only for the VLAN attachment that has the encryption option as IPSEC. The addresses must be regional internal IP address ranges. When creating an HA VPN gateway over the VLAN attachment, if the attachment is configured to use a regional internal IP address, then the VPN gateway's IP address is allocated from the IP address range specified here. For example, if the HA VPN gateway's interface 0 is paired to this VLAN attachment, then a regional internal IP address for the VPN gateway interface 0 will be allocated from the IP address specified for this VLAN attachment. If this field is not specified when creating the VLAN attachment, then later on when creating an HA VPN gateway on this VLAN attachment, the HA VPN gateway's IP address is allocated from the regional external IP address pool. Not currently available publicly.
+     * A list of URLs of addresses that have been reserved for the VLAN attachment. Used only for the VLAN attachment that has the encryption option as IPSEC. The addresses must be regional internal IP address ranges. When creating an HA VPN gateway over the VLAN attachment, if the attachment is configured to use a regional internal IP address, then the VPN gateway's IP address is allocated from the IP address range specified here. For example, if the HA VPN gateway's interface 0 is paired to this VLAN attachment, then a regional internal IP address for the VPN gateway interface 0 will be allocated from the IP address specified for this VLAN attachment. If this field is not specified when creating the VLAN attachment, then later on when creating an HA VPN gateway on this VLAN attachment, the HA VPN gateway's IP address is allocated from the regional external IP address pool.
      * </pre>
      *
      * <code>repeated string ipsec_internal_addresses = 407648565;</code>
@@ -7294,6 +8038,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
     public Builder addAllIpsecInternalAddresses(java.lang.Iterable<java.lang.String> values) {
       ensureIpsecInternalAddressesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, ipsecInternalAddresses_);
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -7301,7 +8046,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * A list of URLs of addresses that have been reserved for the VLAN attachment. Used only for the VLAN attachment that has the encryption option as IPSEC. The addresses must be regional internal IP address ranges. When creating an HA VPN gateway over the VLAN attachment, if the attachment is configured to use a regional internal IP address, then the VPN gateway's IP address is allocated from the IP address range specified here. For example, if the HA VPN gateway's interface 0 is paired to this VLAN attachment, then a regional internal IP address for the VPN gateway interface 0 will be allocated from the IP address specified for this VLAN attachment. If this field is not specified when creating the VLAN attachment, then later on when creating an HA VPN gateway on this VLAN attachment, the HA VPN gateway's IP address is allocated from the regional external IP address pool. Not currently available publicly.
+     * A list of URLs of addresses that have been reserved for the VLAN attachment. Used only for the VLAN attachment that has the encryption option as IPSEC. The addresses must be regional internal IP address ranges. When creating an HA VPN gateway over the VLAN attachment, if the attachment is configured to use a regional internal IP address, then the VPN gateway's IP address is allocated from the IP address range specified here. For example, if the HA VPN gateway's interface 0 is paired to this VLAN attachment, then a regional internal IP address for the VPN gateway interface 0 will be allocated from the IP address specified for this VLAN attachment. If this field is not specified when creating the VLAN attachment, then later on when creating an HA VPN gateway on this VLAN attachment, the HA VPN gateway's IP address is allocated from the regional external IP address pool.
      * </pre>
      *
      * <code>repeated string ipsec_internal_addresses = 407648565;</code>
@@ -7309,8 +8054,9 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearIpsecInternalAddresses() {
-      ipsecInternalAddresses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00040000);
+      ipsecInternalAddresses_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00080000);
+      ;
       onChanged();
       return this;
     }
@@ -7318,7 +8064,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * A list of URLs of addresses that have been reserved for the VLAN attachment. Used only for the VLAN attachment that has the encryption option as IPSEC. The addresses must be regional internal IP address ranges. When creating an HA VPN gateway over the VLAN attachment, if the attachment is configured to use a regional internal IP address, then the VPN gateway's IP address is allocated from the IP address range specified here. For example, if the HA VPN gateway's interface 0 is paired to this VLAN attachment, then a regional internal IP address for the VPN gateway interface 0 will be allocated from the IP address specified for this VLAN attachment. If this field is not specified when creating the VLAN attachment, then later on when creating an HA VPN gateway on this VLAN attachment, the HA VPN gateway's IP address is allocated from the regional external IP address pool. Not currently available publicly.
+     * A list of URLs of addresses that have been reserved for the VLAN attachment. Used only for the VLAN attachment that has the encryption option as IPSEC. The addresses must be regional internal IP address ranges. When creating an HA VPN gateway over the VLAN attachment, if the attachment is configured to use a regional internal IP address, then the VPN gateway's IP address is allocated from the IP address range specified here. For example, if the HA VPN gateway's interface 0 is paired to this VLAN attachment, then a regional internal IP address for the VPN gateway interface 0 will be allocated from the IP address specified for this VLAN attachment. If this field is not specified when creating the VLAN attachment, then later on when creating an HA VPN gateway on this VLAN attachment, the HA VPN gateway's IP address is allocated from the regional external IP address pool.
      * </pre>
      *
      * <code>repeated string ipsec_internal_addresses = 407648565;</code>
@@ -7333,6 +8079,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       checkByteStringIsUtf8(value);
       ensureIpsecInternalAddressesIsMutable();
       ipsecInternalAddresses_.add(value);
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -7350,7 +8097,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return Whether the kind field is set.
      */
     public boolean hasKind() {
-      return ((bitField0_ & 0x00080000) != 0);
+      return ((bitField0_ & 0x00100000) != 0);
     }
     /**
      *
@@ -7413,7 +8160,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       kind_ = value;
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -7430,7 +8177,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      */
     public Builder clearKind() {
       kind_ = getDefaultInstance().getKind();
-      bitField0_ = (bitField0_ & ~0x00080000);
+      bitField0_ = (bitField0_ & ~0x00100000);
       onChanged();
       return this;
     }
@@ -7452,8 +8199,291 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       }
       checkByteStringIsUtf8(value);
       kind_ = value;
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
+      return this;
+    }
+
+    private java.lang.Object labelFingerprint_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * A fingerprint for the labels being applied to this InterconnectAttachment, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an InterconnectAttachment.
+     * </pre>
+     *
+     * <code>optional string label_fingerprint = 178124825;</code>
+     *
+     * @return Whether the labelFingerprint field is set.
+     */
+    public boolean hasLabelFingerprint() {
+      return ((bitField0_ & 0x00200000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A fingerprint for the labels being applied to this InterconnectAttachment, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an InterconnectAttachment.
+     * </pre>
+     *
+     * <code>optional string label_fingerprint = 178124825;</code>
+     *
+     * @return The labelFingerprint.
+     */
+    public java.lang.String getLabelFingerprint() {
+      java.lang.Object ref = labelFingerprint_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        labelFingerprint_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A fingerprint for the labels being applied to this InterconnectAttachment, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an InterconnectAttachment.
+     * </pre>
+     *
+     * <code>optional string label_fingerprint = 178124825;</code>
+     *
+     * @return The bytes for labelFingerprint.
+     */
+    public com.google.protobuf.ByteString getLabelFingerprintBytes() {
+      java.lang.Object ref = labelFingerprint_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        labelFingerprint_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A fingerprint for the labels being applied to this InterconnectAttachment, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an InterconnectAttachment.
+     * </pre>
+     *
+     * <code>optional string label_fingerprint = 178124825;</code>
+     *
+     * @param value The labelFingerprint to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLabelFingerprint(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      labelFingerprint_ = value;
+      bitField0_ |= 0x00200000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A fingerprint for the labels being applied to this InterconnectAttachment, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an InterconnectAttachment.
+     * </pre>
+     *
+     * <code>optional string label_fingerprint = 178124825;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearLabelFingerprint() {
+      labelFingerprint_ = getDefaultInstance().getLabelFingerprint();
+      bitField0_ = (bitField0_ & ~0x00200000);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A fingerprint for the labels being applied to this InterconnectAttachment, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an InterconnectAttachment.
+     * </pre>
+     *
+     * <code>optional string label_fingerprint = 178124825;</code>
+     *
+     * @param value The bytes for labelFingerprint to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLabelFingerprintBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      labelFingerprint_ = value;
+      bitField0_ |= 0x00200000;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
+      if (labels_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(LabelsDefaultEntryHolder.defaultEntry);
+      }
+      return labels_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableLabels() {
+      if (labels_ == null) {
+        labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
+      }
+      if (!labels_.isMutable()) {
+        labels_ = labels_.copy();
+      }
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return labels_;
+    }
+
+    public int getLabelsCount() {
+      return internalGetLabels().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Labels for this resource. These can only be added or modified by the setLabels method. Each label key/value pair must comply with RFC1035. Label values may be empty.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 500195327;</code>
+     */
+    @java.lang.Override
+    public boolean containsLabels(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetLabels().getMap().containsKey(key);
+    }
+    /** Use {@link #getLabelsMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getLabels() {
+      return getLabelsMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Labels for this resource. These can only be added or modified by the setLabels method. Each label key/value pair must comply with RFC1035. Label values may be empty.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 500195327;</code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
+      return internalGetLabels().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Labels for this resource. These can only be added or modified by the setLabels method. Each label key/value pair must comply with RFC1035. Label values may be empty.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 500195327;</code>
+     */
+    @java.lang.Override
+    public /* nullable */ java.lang.String getLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Labels for this resource. These can only be added or modified by the setLabels method. Each label key/value pair must comply with RFC1035. Label values may be empty.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 500195327;</code>
+     */
+    @java.lang.Override
+    public java.lang.String getLabelsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearLabels() {
+      bitField0_ = (bitField0_ & ~0x00400000);
+      internalGetMutableLabels().getMutableMap().clear();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Labels for this resource. These can only be added or modified by the setLabels method. Each label key/value pair must comply with RFC1035. Label values may be empty.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 500195327;</code>
+     */
+    public Builder removeLabels(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableLabels().getMutableMap().remove(key);
+      return this;
+    }
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+      bitField0_ |= 0x00400000;
+      return internalGetMutableLabels().getMutableMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Labels for this resource. These can only be added or modified by the setLabels method. Each label key/value pair must comply with RFC1035. Label values may be empty.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 500195327;</code>
+     */
+    public Builder putLabels(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+      internalGetMutableLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00400000;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Labels for this resource. These can only be added or modified by the setLabels method. Each label key/value pair must comply with RFC1035. Label values may be empty.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 500195327;</code>
+     */
+    public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00400000;
       return this;
     }
 
@@ -7471,7 +8501,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      */
     @java.lang.Override
     public boolean hasMtu() {
-      return ((bitField0_ & 0x00100000) != 0);
+      return ((bitField0_ & 0x00800000) != 0);
     }
     /**
      *
@@ -7503,7 +8533,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
     public Builder setMtu(int value) {
 
       mtu_ = value;
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -7519,7 +8549,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearMtu() {
-      bitField0_ = (bitField0_ & ~0x00100000);
+      bitField0_ = (bitField0_ & ~0x00800000);
       mtu_ = 0;
       onChanged();
       return this;
@@ -7538,7 +8568,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return Whether the name field is set.
      */
     public boolean hasName() {
-      return ((bitField0_ & 0x00200000) != 0);
+      return ((bitField0_ & 0x01000000) != 0);
     }
     /**
      *
@@ -7601,7 +8631,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       name_ = value;
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return this;
     }
@@ -7618,7 +8648,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      */
     public Builder clearName() {
       name_ = getDefaultInstance().getName();
-      bitField0_ = (bitField0_ & ~0x00200000);
+      bitField0_ = (bitField0_ & ~0x01000000);
       onChanged();
       return this;
     }
@@ -7640,7 +8670,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       }
       checkByteStringIsUtf8(value);
       name_ = value;
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return this;
     }
@@ -7659,7 +8689,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return Whether the operationalStatus field is set.
      */
     public boolean hasOperationalStatus() {
-      return ((bitField0_ & 0x00400000) != 0);
+      return ((bitField0_ & 0x02000000) != 0);
     }
     /**
      *
@@ -7725,7 +8755,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       operationalStatus_ = value;
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -7743,7 +8773,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      */
     public Builder clearOperationalStatus() {
       operationalStatus_ = getDefaultInstance().getOperationalStatus();
-      bitField0_ = (bitField0_ & ~0x00400000);
+      bitField0_ = (bitField0_ & ~0x02000000);
       onChanged();
       return this;
     }
@@ -7766,7 +8796,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       }
       checkByteStringIsUtf8(value);
       operationalStatus_ = value;
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -7784,7 +8814,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return Whether the pairingKey field is set.
      */
     public boolean hasPairingKey() {
-      return ((bitField0_ & 0x00800000) != 0);
+      return ((bitField0_ & 0x04000000) != 0);
     }
     /**
      *
@@ -7847,7 +8877,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       pairingKey_ = value;
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x04000000;
       onChanged();
       return this;
     }
@@ -7864,7 +8894,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      */
     public Builder clearPairingKey() {
       pairingKey_ = getDefaultInstance().getPairingKey();
-      bitField0_ = (bitField0_ & ~0x00800000);
+      bitField0_ = (bitField0_ & ~0x04000000);
       onChanged();
       return this;
     }
@@ -7886,7 +8916,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       }
       checkByteStringIsUtf8(value);
       pairingKey_ = value;
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x04000000;
       onChanged();
       return this;
     }
@@ -7905,7 +8935,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      */
     @java.lang.Override
     public boolean hasPartnerAsn() {
-      return ((bitField0_ & 0x01000000) != 0);
+      return ((bitField0_ & 0x08000000) != 0);
     }
     /**
      *
@@ -7937,7 +8967,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
     public Builder setPartnerAsn(long value) {
 
       partnerAsn_ = value;
-      bitField0_ |= 0x01000000;
+      bitField0_ |= 0x08000000;
       onChanged();
       return this;
     }
@@ -7953,7 +8983,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearPartnerAsn() {
-      bitField0_ = (bitField0_ & ~0x01000000);
+      bitField0_ = (bitField0_ & ~0x08000000);
       partnerAsn_ = 0L;
       onChanged();
       return this;
@@ -7979,7 +9009,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return Whether the partnerMetadata field is set.
      */
     public boolean hasPartnerMetadata() {
-      return ((bitField0_ & 0x02000000) != 0);
+      return ((bitField0_ & 0x10000000) != 0);
     }
     /**
      *
@@ -8024,7 +9054,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       } else {
         partnerMetadataBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x10000000;
       onChanged();
       return this;
     }
@@ -8046,7 +9076,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       } else {
         partnerMetadataBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x10000000;
       onChanged();
       return this;
     }
@@ -8064,7 +9094,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
     public Builder mergePartnerMetadata(
         com.google.cloud.compute.v1.InterconnectAttachmentPartnerMetadata value) {
       if (partnerMetadataBuilder_ == null) {
-        if (((bitField0_ & 0x02000000) != 0)
+        if (((bitField0_ & 0x10000000) != 0)
             && partnerMetadata_ != null
             && partnerMetadata_
                 != com.google.cloud.compute.v1.InterconnectAttachmentPartnerMetadata
@@ -8076,7 +9106,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       } else {
         partnerMetadataBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x10000000;
       onChanged();
       return this;
     }
@@ -8092,7 +9122,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * </code>
      */
     public Builder clearPartnerMetadata() {
-      bitField0_ = (bitField0_ & ~0x02000000);
+      bitField0_ = (bitField0_ & ~0x10000000);
       partnerMetadata_ = null;
       if (partnerMetadataBuilder_ != null) {
         partnerMetadataBuilder_.dispose();
@@ -8114,7 +9144,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      */
     public com.google.cloud.compute.v1.InterconnectAttachmentPartnerMetadata.Builder
         getPartnerMetadataBuilder() {
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x10000000;
       onChanged();
       return getPartnerMetadataFieldBuilder().getBuilder();
     }
@@ -8187,7 +9217,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return Whether the privateInterconnectInfo field is set.
      */
     public boolean hasPrivateInterconnectInfo() {
-      return ((bitField0_ & 0x04000000) != 0);
+      return ((bitField0_ & 0x20000000) != 0);
     }
     /**
      *
@@ -8233,7 +9263,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       } else {
         privateInterconnectInfoBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x20000000;
       onChanged();
       return this;
     }
@@ -8255,7 +9285,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       } else {
         privateInterconnectInfoBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x20000000;
       onChanged();
       return this;
     }
@@ -8273,7 +9303,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
     public Builder mergePrivateInterconnectInfo(
         com.google.cloud.compute.v1.InterconnectAttachmentPrivateInfo value) {
       if (privateInterconnectInfoBuilder_ == null) {
-        if (((bitField0_ & 0x04000000) != 0)
+        if (((bitField0_ & 0x20000000) != 0)
             && privateInterconnectInfo_ != null
             && privateInterconnectInfo_
                 != com.google.cloud.compute.v1.InterconnectAttachmentPrivateInfo
@@ -8285,7 +9315,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       } else {
         privateInterconnectInfoBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x20000000;
       onChanged();
       return this;
     }
@@ -8301,7 +9331,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * </code>
      */
     public Builder clearPrivateInterconnectInfo() {
-      bitField0_ = (bitField0_ & ~0x04000000);
+      bitField0_ = (bitField0_ & ~0x20000000);
       privateInterconnectInfo_ = null;
       if (privateInterconnectInfoBuilder_ != null) {
         privateInterconnectInfoBuilder_.dispose();
@@ -8323,7 +9353,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      */
     public com.google.cloud.compute.v1.InterconnectAttachmentPrivateInfo.Builder
         getPrivateInterconnectInfoBuilder() {
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x20000000;
       onChanged();
       return getPrivateInterconnectInfoFieldBuilder().getBuilder();
     }
@@ -8389,7 +9419,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return Whether the region field is set.
      */
     public boolean hasRegion() {
-      return ((bitField0_ & 0x08000000) != 0);
+      return ((bitField0_ & 0x40000000) != 0);
     }
     /**
      *
@@ -8452,7 +9482,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       region_ = value;
-      bitField0_ |= 0x08000000;
+      bitField0_ |= 0x40000000;
       onChanged();
       return this;
     }
@@ -8469,7 +9499,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      */
     public Builder clearRegion() {
       region_ = getDefaultInstance().getRegion();
-      bitField0_ = (bitField0_ & ~0x08000000);
+      bitField0_ = (bitField0_ & ~0x40000000);
       onChanged();
       return this;
     }
@@ -8491,7 +9521,127 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       }
       checkByteStringIsUtf8(value);
       region_ = value;
-      bitField0_ |= 0x08000000;
+      bitField0_ |= 0x40000000;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object remoteService_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] If the attachment is on a Cross-Cloud Interconnect connection, this field contains the interconnect's remote location service provider. Example values: "Amazon Web Services" "Microsoft Azure". The field is set only for attachments on Cross-Cloud Interconnect connections. Its value is copied from the InterconnectRemoteLocation remoteService field.
+     * </pre>
+     *
+     * <code>optional string remote_service = 391954364;</code>
+     *
+     * @return Whether the remoteService field is set.
+     */
+    public boolean hasRemoteService() {
+      return ((bitField0_ & 0x80000000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] If the attachment is on a Cross-Cloud Interconnect connection, this field contains the interconnect's remote location service provider. Example values: "Amazon Web Services" "Microsoft Azure". The field is set only for attachments on Cross-Cloud Interconnect connections. Its value is copied from the InterconnectRemoteLocation remoteService field.
+     * </pre>
+     *
+     * <code>optional string remote_service = 391954364;</code>
+     *
+     * @return The remoteService.
+     */
+    public java.lang.String getRemoteService() {
+      java.lang.Object ref = remoteService_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        remoteService_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] If the attachment is on a Cross-Cloud Interconnect connection, this field contains the interconnect's remote location service provider. Example values: "Amazon Web Services" "Microsoft Azure". The field is set only for attachments on Cross-Cloud Interconnect connections. Its value is copied from the InterconnectRemoteLocation remoteService field.
+     * </pre>
+     *
+     * <code>optional string remote_service = 391954364;</code>
+     *
+     * @return The bytes for remoteService.
+     */
+    public com.google.protobuf.ByteString getRemoteServiceBytes() {
+      java.lang.Object ref = remoteService_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        remoteService_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] If the attachment is on a Cross-Cloud Interconnect connection, this field contains the interconnect's remote location service provider. Example values: "Amazon Web Services" "Microsoft Azure". The field is set only for attachments on Cross-Cloud Interconnect connections. Its value is copied from the InterconnectRemoteLocation remoteService field.
+     * </pre>
+     *
+     * <code>optional string remote_service = 391954364;</code>
+     *
+     * @param value The remoteService to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRemoteService(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      remoteService_ = value;
+      bitField0_ |= 0x80000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] If the attachment is on a Cross-Cloud Interconnect connection, this field contains the interconnect's remote location service provider. Example values: "Amazon Web Services" "Microsoft Azure". The field is set only for attachments on Cross-Cloud Interconnect connections. Its value is copied from the InterconnectRemoteLocation remoteService field.
+     * </pre>
+     *
+     * <code>optional string remote_service = 391954364;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRemoteService() {
+      remoteService_ = getDefaultInstance().getRemoteService();
+      bitField0_ = (bitField0_ & ~0x80000000);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] If the attachment is on a Cross-Cloud Interconnect connection, this field contains the interconnect's remote location service provider. Example values: "Amazon Web Services" "Microsoft Azure". The field is set only for attachments on Cross-Cloud Interconnect connections. Its value is copied from the InterconnectRemoteLocation remoteService field.
+     * </pre>
+     *
+     * <code>optional string remote_service = 391954364;</code>
+     *
+     * @param value The bytes for remoteService to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRemoteServiceBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      remoteService_ = value;
+      bitField0_ |= 0x80000000;
       onChanged();
       return this;
     }
@@ -8509,7 +9659,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return Whether the router field is set.
      */
     public boolean hasRouter() {
-      return ((bitField0_ & 0x10000000) != 0);
+      return ((bitField1_ & 0x00000001) != 0);
     }
     /**
      *
@@ -8572,7 +9722,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       router_ = value;
-      bitField0_ |= 0x10000000;
+      bitField1_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -8589,7 +9739,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      */
     public Builder clearRouter() {
       router_ = getDefaultInstance().getRouter();
-      bitField0_ = (bitField0_ & ~0x10000000);
+      bitField1_ = (bitField1_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -8611,7 +9761,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       }
       checkByteStringIsUtf8(value);
       router_ = value;
-      bitField0_ |= 0x10000000;
+      bitField1_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -8630,7 +9780,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      */
     @java.lang.Override
     public boolean hasSatisfiesPzs() {
-      return ((bitField0_ & 0x20000000) != 0);
+      return ((bitField1_ & 0x00000002) != 0);
     }
     /**
      *
@@ -8662,7 +9812,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
     public Builder setSatisfiesPzs(boolean value) {
 
       satisfiesPzs_ = value;
-      bitField0_ |= 0x20000000;
+      bitField1_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -8678,7 +9828,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearSatisfiesPzs() {
-      bitField0_ = (bitField0_ & ~0x20000000);
+      bitField1_ = (bitField1_ & ~0x00000002);
       satisfiesPzs_ = false;
       onChanged();
       return this;
@@ -8697,7 +9847,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return Whether the selfLink field is set.
      */
     public boolean hasSelfLink() {
-      return ((bitField0_ & 0x40000000) != 0);
+      return ((bitField1_ & 0x00000004) != 0);
     }
     /**
      *
@@ -8760,7 +9910,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       selfLink_ = value;
-      bitField0_ |= 0x40000000;
+      bitField1_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -8777,7 +9927,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      */
     public Builder clearSelfLink() {
       selfLink_ = getDefaultInstance().getSelfLink();
-      bitField0_ = (bitField0_ & ~0x40000000);
+      bitField1_ = (bitField1_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -8799,7 +9949,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       }
       checkByteStringIsUtf8(value);
       selfLink_ = value;
-      bitField0_ |= 0x40000000;
+      bitField1_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -8818,7 +9968,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return Whether the stackType field is set.
      */
     public boolean hasStackType() {
-      return ((bitField0_ & 0x80000000) != 0);
+      return ((bitField1_ & 0x00000008) != 0);
     }
     /**
      *
@@ -8884,7 +10034,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       stackType_ = value;
-      bitField0_ |= 0x80000000;
+      bitField1_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -8902,7 +10052,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      */
     public Builder clearStackType() {
       stackType_ = getDefaultInstance().getStackType();
-      bitField0_ = (bitField0_ & ~0x80000000);
+      bitField1_ = (bitField1_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -8925,7 +10075,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       }
       checkByteStringIsUtf8(value);
       stackType_ = value;
-      bitField0_ |= 0x80000000;
+      bitField1_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -8944,7 +10094,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return Whether the state field is set.
      */
     public boolean hasState() {
-      return ((bitField1_ & 0x00000001) != 0);
+      return ((bitField1_ & 0x00000010) != 0);
     }
     /**
      *
@@ -9010,7 +10160,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       state_ = value;
-      bitField1_ |= 0x00000001;
+      bitField1_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -9028,7 +10178,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      */
     public Builder clearState() {
       state_ = getDefaultInstance().getState();
-      bitField1_ = (bitField1_ & ~0x00000001);
+      bitField1_ = (bitField1_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -9051,7 +10201,75 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       }
       checkByteStringIsUtf8(value);
       state_ = value;
-      bitField1_ |= 0x00000001;
+      bitField1_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    private int subnetLength_;
+    /**
+     *
+     *
+     * <pre>
+     * Length of the IPv4 subnet mask. Allowed values: - 29 (default) - 30 The default value is 29, except for Cross-Cloud Interconnect connections that use an InterconnectRemoteLocation with a constraints.subnetLengthRange.min equal to 30. For example, connections that use an Azure remote location fall into this category. In these cases, the default value is 30, and requesting 29 returns an error. Where both 29 and 30 are allowed, 29 is preferred, because it gives Google Cloud Support more debugging visibility.
+     * </pre>
+     *
+     * <code>optional int32 subnet_length = 279831048;</code>
+     *
+     * @return Whether the subnetLength field is set.
+     */
+    @java.lang.Override
+    public boolean hasSubnetLength() {
+      return ((bitField1_ & 0x00000020) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Length of the IPv4 subnet mask. Allowed values: - 29 (default) - 30 The default value is 29, except for Cross-Cloud Interconnect connections that use an InterconnectRemoteLocation with a constraints.subnetLengthRange.min equal to 30. For example, connections that use an Azure remote location fall into this category. In these cases, the default value is 30, and requesting 29 returns an error. Where both 29 and 30 are allowed, 29 is preferred, because it gives Google Cloud Support more debugging visibility.
+     * </pre>
+     *
+     * <code>optional int32 subnet_length = 279831048;</code>
+     *
+     * @return The subnetLength.
+     */
+    @java.lang.Override
+    public int getSubnetLength() {
+      return subnetLength_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Length of the IPv4 subnet mask. Allowed values: - 29 (default) - 30 The default value is 29, except for Cross-Cloud Interconnect connections that use an InterconnectRemoteLocation with a constraints.subnetLengthRange.min equal to 30. For example, connections that use an Azure remote location fall into this category. In these cases, the default value is 30, and requesting 29 returns an error. Where both 29 and 30 are allowed, 29 is preferred, because it gives Google Cloud Support more debugging visibility.
+     * </pre>
+     *
+     * <code>optional int32 subnet_length = 279831048;</code>
+     *
+     * @param value The subnetLength to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSubnetLength(int value) {
+
+      subnetLength_ = value;
+      bitField1_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Length of the IPv4 subnet mask. Allowed values: - 29 (default) - 30 The default value is 29, except for Cross-Cloud Interconnect connections that use an InterconnectRemoteLocation with a constraints.subnetLengthRange.min equal to 30. For example, connections that use an Azure remote location fall into this category. In these cases, the default value is 30, and requesting 29 returns an error. Where both 29 and 30 are allowed, 29 is preferred, because it gives Google Cloud Support more debugging visibility.
+     * </pre>
+     *
+     * <code>optional int32 subnet_length = 279831048;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSubnetLength() {
+      bitField1_ = (bitField1_ & ~0x00000020);
+      subnetLength_ = 0;
       onChanged();
       return this;
     }
@@ -9070,7 +10288,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return Whether the type field is set.
      */
     public boolean hasType() {
-      return ((bitField1_ & 0x00000002) != 0);
+      return ((bitField1_ & 0x00000040) != 0);
     }
     /**
      *
@@ -9136,7 +10354,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       type_ = value;
-      bitField1_ |= 0x00000002;
+      bitField1_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -9154,7 +10372,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      */
     public Builder clearType() {
       type_ = getDefaultInstance().getType();
-      bitField1_ = (bitField1_ & ~0x00000002);
+      bitField1_ = (bitField1_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -9177,7 +10395,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       }
       checkByteStringIsUtf8(value);
       type_ = value;
-      bitField1_ |= 0x00000002;
+      bitField1_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -9196,7 +10414,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      */
     @java.lang.Override
     public boolean hasVlanTag8021Q() {
-      return ((bitField1_ & 0x00000004) != 0);
+      return ((bitField1_ & 0x00000080) != 0);
     }
     /**
      *
@@ -9228,7 +10446,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
     public Builder setVlanTag8021Q(int value) {
 
       vlanTag8021Q_ = value;
-      bitField1_ |= 0x00000004;
+      bitField1_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -9244,7 +10462,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearVlanTag8021Q() {
-      bitField1_ = (bitField1_ & ~0x00000004);
+      bitField1_ = (bitField1_ & ~0x00000080);
       vlanTag8021Q_ = 0;
       onChanged();
       return this;

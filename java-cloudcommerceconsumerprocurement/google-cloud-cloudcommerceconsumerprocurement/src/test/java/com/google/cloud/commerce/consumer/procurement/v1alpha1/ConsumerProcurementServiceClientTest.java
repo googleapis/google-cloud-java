@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -166,16 +166,16 @@ public class ConsumerProcurementServiceClientTest {
             .build();
     mockConsumerProcurementService.addResponse(expectedResponse);
 
-    GetOrderRequest request = GetOrderRequest.newBuilder().setName("name3373707").build();
+    String name = "name3373707";
 
-    Order actualResponse = client.getOrder(request);
+    Order actualResponse = client.getOrder(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockConsumerProcurementService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetOrderRequest actualRequest = ((GetOrderRequest) actualRequests.get(0));
 
-    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(name, actualRequest.getName());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -188,8 +188,8 @@ public class ConsumerProcurementServiceClientTest {
     mockConsumerProcurementService.addException(exception);
 
     try {
-      GetOrderRequest request = GetOrderRequest.newBuilder().setName("name3373707").build();
-      client.getOrder(request);
+      String name = "name3373707";
+      client.getOrder(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
@@ -206,15 +206,9 @@ public class ConsumerProcurementServiceClientTest {
             .build();
     mockConsumerProcurementService.addResponse(expectedResponse);
 
-    ListOrdersRequest request =
-        ListOrdersRequest.newBuilder()
-            .setParent("parent-995424086")
-            .setPageSize(883849137)
-            .setPageToken("pageToken873572522")
-            .setFilter("filter-1274492040")
-            .build();
+    String parent = "parent-995424086";
 
-    ListOrdersPagedResponse pagedListResponse = client.listOrders(request);
+    ListOrdersPagedResponse pagedListResponse = client.listOrders(parent);
 
     List<Order> resources = Lists.newArrayList(pagedListResponse.iterateAll());
 
@@ -225,10 +219,7 @@ public class ConsumerProcurementServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     ListOrdersRequest actualRequest = ((ListOrdersRequest) actualRequests.get(0));
 
-    Assert.assertEquals(request.getParent(), actualRequest.getParent());
-    Assert.assertEquals(request.getPageSize(), actualRequest.getPageSize());
-    Assert.assertEquals(request.getPageToken(), actualRequest.getPageToken());
-    Assert.assertEquals(request.getFilter(), actualRequest.getFilter());
+    Assert.assertEquals(parent, actualRequest.getParent());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -241,14 +232,8 @@ public class ConsumerProcurementServiceClientTest {
     mockConsumerProcurementService.addException(exception);
 
     try {
-      ListOrdersRequest request =
-          ListOrdersRequest.newBuilder()
-              .setParent("parent-995424086")
-              .setPageSize(883849137)
-              .setPageToken("pageToken873572522")
-              .setFilter("filter-1274492040")
-              .build();
-      client.listOrders(request);
+      String parent = "parent-995424086";
+      client.listOrders(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

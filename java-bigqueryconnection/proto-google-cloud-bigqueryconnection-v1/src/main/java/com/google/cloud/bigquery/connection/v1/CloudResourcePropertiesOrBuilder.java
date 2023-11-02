@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,11 +29,13 @@ public interface CloudResourcePropertiesOrBuilder
    * <pre>
    * Output only. The account ID of the service created for the purpose of this
    * connection.
+   *
    * The service account does not have any permissions associated with it
    * when it is created. After creation, customers delegate permissions
    * to the service account. When the connection is used in the context of an
    * operation in BigQuery, the service account will be used to connect to the
    * desired resources in GCP.
+   *
    * The account ID is in the form of:
    *   &lt;service-1234&gt;&#64;gcp-sa-bigquery-cloudresource.iam.gserviceaccount.com
    * </pre>
@@ -49,11 +51,13 @@ public interface CloudResourcePropertiesOrBuilder
    * <pre>
    * Output only. The account ID of the service created for the purpose of this
    * connection.
+   *
    * The service account does not have any permissions associated with it
    * when it is created. After creation, customers delegate permissions
    * to the service account. When the connection is used in the context of an
    * operation in BigQuery, the service account will be used to connect to the
    * desired resources in GCP.
+   *
    * The account ID is in the form of:
    *   &lt;service-1234&gt;&#64;gcp-sa-bigquery-cloudresource.iam.gserviceaccount.com
    * </pre>

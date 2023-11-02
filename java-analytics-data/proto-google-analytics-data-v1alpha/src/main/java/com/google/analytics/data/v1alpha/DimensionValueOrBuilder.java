@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -60,5 +60,5 @@ public interface DimensionValueOrBuilder
    */
   com.google.protobuf.ByteString getValueBytes();
 
-  public com.google.analytics.data.v1alpha.DimensionValue.OneValueCase getOneValueCase();
+  com.google.analytics.data.v1alpha.DimensionValue.OneValueCase getOneValueCase();
 }

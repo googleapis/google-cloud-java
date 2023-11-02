@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,9 @@
 
 package com.google.cloud.dialogflow.cx.v3;
 
+import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
+import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
@@ -32,7 +34,12 @@ public class TransitionRouteGroupName implements ResourceName {
   private static final PathTemplate PROJECT_LOCATION_AGENT_FLOW_TRANSITION_ROUTE_GROUP =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/locations/{location}/agents/{agent}/flows/{flow}/transitionRouteGroups/{transition_route_group}");
+  private static final PathTemplate PROJECT_LOCATION_AGENT_TRANSITION_ROUTE_GROUP =
+      PathTemplate.createWithoutUrlEncoding(
+          "projects/{project}/locations/{location}/agents/{agent}/transitionRouteGroups/{transition_route_group}");
   private volatile Map<String, String> fieldValuesMap;
+  private PathTemplate pathTemplate;
+  private String fixedValue;
   private final String project;
   private final String location;
   private final String agent;
@@ -54,6 +61,16 @@ public class TransitionRouteGroupName implements ResourceName {
     agent = Preconditions.checkNotNull(builder.getAgent());
     flow = Preconditions.checkNotNull(builder.getFlow());
     transitionRouteGroup = Preconditions.checkNotNull(builder.getTransitionRouteGroup());
+    pathTemplate = PROJECT_LOCATION_AGENT_FLOW_TRANSITION_ROUTE_GROUP;
+  }
+
+  private TransitionRouteGroupName(ProjectLocationAgentTransitionRouteGroupBuilder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    location = Preconditions.checkNotNull(builder.getLocation());
+    agent = Preconditions.checkNotNull(builder.getAgent());
+    transitionRouteGroup = Preconditions.checkNotNull(builder.getTransitionRouteGroup());
+    flow = null;
+    pathTemplate = PROJECT_LOCATION_AGENT_TRANSITION_ROUTE_GROUP;
   }
 
   public String getProject() {
@@ -80,6 +97,17 @@ public class TransitionRouteGroupName implements ResourceName {
     return new Builder();
   }
 
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static Builder newProjectLocationAgentFlowTransitionRouteGroupBuilder() {
+    return new Builder();
+  }
+
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static ProjectLocationAgentTransitionRouteGroupBuilder
+      newProjectLocationAgentTransitionRouteGroupBuilder() {
+    return new ProjectLocationAgentTransitionRouteGroupBuilder();
+  }
+
   public Builder toBuilder() {
     return new Builder(this);
   }
@@ -91,6 +119,29 @@ public class TransitionRouteGroupName implements ResourceName {
         .setLocation(location)
         .setAgent(agent)
         .setFlow(flow)
+        .setTransitionRouteGroup(transitionRouteGroup)
+        .build();
+  }
+
+  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
+  public static TransitionRouteGroupName ofProjectLocationAgentFlowTransitionRouteGroupName(
+      String project, String location, String agent, String flow, String transitionRouteGroup) {
+    return newBuilder()
+        .setProject(project)
+        .setLocation(location)
+        .setAgent(agent)
+        .setFlow(flow)
+        .setTransitionRouteGroup(transitionRouteGroup)
+        .build();
+  }
+
+  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
+  public static TransitionRouteGroupName ofProjectLocationAgentTransitionRouteGroupName(
+      String project, String location, String agent, String transitionRouteGroup) {
+    return newProjectLocationAgentTransitionRouteGroupBuilder()
+        .setProject(project)
+        .setLocation(location)
+        .setAgent(agent)
         .setTransitionRouteGroup(transitionRouteGroup)
         .build();
   }
@@ -107,19 +158,55 @@ public class TransitionRouteGroupName implements ResourceName {
         .toString();
   }
 
+  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
+  public static String formatProjectLocationAgentFlowTransitionRouteGroupName(
+      String project, String location, String agent, String flow, String transitionRouteGroup) {
+    return newBuilder()
+        .setProject(project)
+        .setLocation(location)
+        .setAgent(agent)
+        .setFlow(flow)
+        .setTransitionRouteGroup(transitionRouteGroup)
+        .build()
+        .toString();
+  }
+
+  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
+  public static String formatProjectLocationAgentTransitionRouteGroupName(
+      String project, String location, String agent, String transitionRouteGroup) {
+    return newProjectLocationAgentTransitionRouteGroupBuilder()
+        .setProject(project)
+        .setLocation(location)
+        .setAgent(agent)
+        .setTransitionRouteGroup(transitionRouteGroup)
+        .build()
+        .toString();
+  }
+
   public static TransitionRouteGroupName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
-    Map<String, String> matchMap =
-        PROJECT_LOCATION_AGENT_FLOW_TRANSITION_ROUTE_GROUP.validatedMatch(
-            formattedString, "TransitionRouteGroupName.parse: formattedString not in valid format");
-    return of(
-        matchMap.get("project"),
-        matchMap.get("location"),
-        matchMap.get("agent"),
-        matchMap.get("flow"),
-        matchMap.get("transition_route_group"));
+    if (PROJECT_LOCATION_AGENT_FLOW_TRANSITION_ROUTE_GROUP.matches(formattedString)) {
+      Map<String, String> matchMap =
+          PROJECT_LOCATION_AGENT_FLOW_TRANSITION_ROUTE_GROUP.match(formattedString);
+      return ofProjectLocationAgentFlowTransitionRouteGroupName(
+          matchMap.get("project"),
+          matchMap.get("location"),
+          matchMap.get("agent"),
+          matchMap.get("flow"),
+          matchMap.get("transition_route_group"));
+    } else if (PROJECT_LOCATION_AGENT_TRANSITION_ROUTE_GROUP.matches(formattedString)) {
+      Map<String, String> matchMap =
+          PROJECT_LOCATION_AGENT_TRANSITION_ROUTE_GROUP.match(formattedString);
+      return ofProjectLocationAgentTransitionRouteGroupName(
+          matchMap.get("project"),
+          matchMap.get("location"),
+          matchMap.get("agent"),
+          matchMap.get("transition_route_group"));
+    }
+    throw new ValidationException(
+        "TransitionRouteGroupName.parse: formattedString not in valid format");
   }
 
   public static List<TransitionRouteGroupName> parseList(List<String> formattedStrings) {
@@ -143,7 +230,8 @@ public class TransitionRouteGroupName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PROJECT_LOCATION_AGENT_FLOW_TRANSITION_ROUTE_GROUP.matches(formattedString);
+    return PROJECT_LOCATION_AGENT_FLOW_TRANSITION_ROUTE_GROUP.matches(formattedString)
+        || PROJECT_LOCATION_AGENT_TRANSITION_ROUTE_GROUP.matches(formattedString);
   }
 
   @Override
@@ -180,17 +268,7 @@ public class TransitionRouteGroupName implements ResourceName {
 
   @Override
   public String toString() {
-    return PROJECT_LOCATION_AGENT_FLOW_TRANSITION_ROUTE_GROUP.instantiate(
-        "project",
-        project,
-        "location",
-        location,
-        "agent",
-        agent,
-        "flow",
-        flow,
-        "transition_route_group",
-        transitionRouteGroup);
+    return fixedValue != null ? fixedValue : pathTemplate.instantiate(getFieldValuesMap());
   }
 
   @Override
@@ -198,7 +276,7 @@ public class TransitionRouteGroupName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       TransitionRouteGroupName that = ((TransitionRouteGroupName) o);
       return Objects.equals(this.project, that.project)
           && Objects.equals(this.location, that.location)
@@ -212,6 +290,8 @@ public class TransitionRouteGroupName implements ResourceName {
   @Override
   public int hashCode() {
     int h = 1;
+    h *= 1000003;
+    h ^= Objects.hashCode(fixedValue);
     h *= 1000003;
     h ^= Objects.hashCode(project);
     h *= 1000003;
@@ -284,11 +364,71 @@ public class TransitionRouteGroupName implements ResourceName {
     }
 
     private Builder(TransitionRouteGroupName transitionRouteGroupName) {
+      Preconditions.checkArgument(
+          Objects.equals(
+              transitionRouteGroupName.pathTemplate,
+              PROJECT_LOCATION_AGENT_FLOW_TRANSITION_ROUTE_GROUP),
+          "toBuilder is only supported when TransitionRouteGroupName has the pattern of projects/{project}/locations/{location}/agents/{agent}/flows/{flow}/transitionRouteGroups/{transition_route_group}");
       this.project = transitionRouteGroupName.project;
       this.location = transitionRouteGroupName.location;
       this.agent = transitionRouteGroupName.agent;
       this.flow = transitionRouteGroupName.flow;
       this.transitionRouteGroup = transitionRouteGroupName.transitionRouteGroup;
+    }
+
+    public TransitionRouteGroupName build() {
+      return new TransitionRouteGroupName(this);
+    }
+  }
+
+  /**
+   * Builder for
+   * projects/{project}/locations/{location}/agents/{agent}/transitionRouteGroups/{transition_route_group}.
+   */
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static class ProjectLocationAgentTransitionRouteGroupBuilder {
+    private String project;
+    private String location;
+    private String agent;
+    private String transitionRouteGroup;
+
+    protected ProjectLocationAgentTransitionRouteGroupBuilder() {}
+
+    public String getProject() {
+      return project;
+    }
+
+    public String getLocation() {
+      return location;
+    }
+
+    public String getAgent() {
+      return agent;
+    }
+
+    public String getTransitionRouteGroup() {
+      return transitionRouteGroup;
+    }
+
+    public ProjectLocationAgentTransitionRouteGroupBuilder setProject(String project) {
+      this.project = project;
+      return this;
+    }
+
+    public ProjectLocationAgentTransitionRouteGroupBuilder setLocation(String location) {
+      this.location = location;
+      return this;
+    }
+
+    public ProjectLocationAgentTransitionRouteGroupBuilder setAgent(String agent) {
+      this.agent = agent;
+      return this;
+    }
+
+    public ProjectLocationAgentTransitionRouteGroupBuilder setTransitionRouteGroup(
+        String transitionRouteGroup) {
+      this.transitionRouteGroup = transitionRouteGroup;
+      return this;
     }
 
     public TransitionRouteGroupName build() {

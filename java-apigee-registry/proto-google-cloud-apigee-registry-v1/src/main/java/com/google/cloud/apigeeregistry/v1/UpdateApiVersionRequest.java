@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class UpdateApiVersionRequest extends com.google.protobuf.Generated
     return new UpdateApiVersionRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.apigeeregistry.v1.RegistryServiceProto
         .internal_static_google_cloud_apigeeregistry_v1_UpdateApiVersionRequest_descriptor;
@@ -72,6 +67,7 @@ public final class UpdateApiVersionRequest extends com.google.protobuf.Generated
    *
    * <pre>
    * Required. The version to update.
+   *
    * The `name` field is used to identify the version to update.
    * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;`
    * </pre>
@@ -91,6 +87,7 @@ public final class UpdateApiVersionRequest extends com.google.protobuf.Generated
    *
    * <pre>
    * Required. The version to update.
+   *
    * The `name` field is used to identify the version to update.
    * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;`
    * </pre>
@@ -112,6 +109,7 @@ public final class UpdateApiVersionRequest extends com.google.protobuf.Generated
    *
    * <pre>
    * Required. The version to update.
+   *
    * The `name` field is used to identify the version to update.
    * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;`
    * </pre>
@@ -615,6 +613,7 @@ public final class UpdateApiVersionRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The version to update.
+     *
      * The `name` field is used to identify the version to update.
      * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;`
      * </pre>
@@ -633,6 +632,7 @@ public final class UpdateApiVersionRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The version to update.
+     *
      * The `name` field is used to identify the version to update.
      * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;`
      * </pre>
@@ -657,6 +657,7 @@ public final class UpdateApiVersionRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The version to update.
+     *
      * The `name` field is used to identify the version to update.
      * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;`
      * </pre>
@@ -683,6 +684,7 @@ public final class UpdateApiVersionRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The version to update.
+     *
      * The `name` field is used to identify the version to update.
      * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;`
      * </pre>
@@ -707,6 +709,7 @@ public final class UpdateApiVersionRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The version to update.
+     *
      * The `name` field is used to identify the version to update.
      * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;`
      * </pre>
@@ -736,6 +739,7 @@ public final class UpdateApiVersionRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The version to update.
+     *
      * The `name` field is used to identify the version to update.
      * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;`
      * </pre>
@@ -759,6 +763,7 @@ public final class UpdateApiVersionRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The version to update.
+     *
      * The `name` field is used to identify the version to update.
      * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;`
      * </pre>
@@ -777,6 +782,7 @@ public final class UpdateApiVersionRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The version to update.
+     *
      * The `name` field is used to identify the version to update.
      * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;`
      * </pre>
@@ -799,6 +805,7 @@ public final class UpdateApiVersionRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The version to update.
+     *
      * The `name` field is used to identify the version to update.
      * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;`
      * </pre>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ package com.google.cloud.dataproc.v1;
  * <pre>
  * A YARN application created by a job. Application information is a subset of
  * &lt;code&gt;org.apache.hadoop.yarn.proto.YarnProtos.ApplicationReportProto&lt;/code&gt;.
+ *
  * **Beta Feature**: This report is available for testing purposes only. It may
  * be changed before final release.
  * </pre>
@@ -50,11 +51,6 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new YarnApplication();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -724,6 +720,7 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
    * <pre>
    * A YARN application created by a job. Application information is a subset of
    * &lt;code&gt;org.apache.hadoop.yarn.proto.YarnProtos.ApplicationReportProto&lt;/code&gt;.
+   *
    * **Beta Feature**: This report is available for testing purposes only. It may
    * be changed before final release.
    * </pre>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,11 +51,6 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
     return new BigQuerySource();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.retail.v2alpha.ImportConfigProto
         .internal_static_google_cloud_retail_v2alpha_BigQuerySource_descriptor;
@@ -72,6 +67,8 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int partitionCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object partition_;
 
   public enum PartitionCase
@@ -121,6 +118,7 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * BigQuery time partitioned table's _PARTITIONDATE in YYYY-MM-DD format.
+   *
    * Only supported in
    * [ImportProductsRequest][google.cloud.retail.v2alpha.ImportProductsRequest].
    * </pre>
@@ -138,6 +136,7 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * BigQuery time partitioned table's _PARTITIONDATE in YYYY-MM-DD format.
+   *
    * Only supported in
    * [ImportProductsRequest][google.cloud.retail.v2alpha.ImportProductsRequest].
    * </pre>
@@ -158,6 +157,7 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * BigQuery time partitioned table's _PARTITIONDATE in YYYY-MM-DD format.
+   *
    * Only supported in
    * [ImportProductsRequest][google.cloud.retail.v2alpha.ImportProductsRequest].
    * </pre>
@@ -397,13 +397,17 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The schema to use when parsing the data from the source.
+   *
    * Supported values for product imports:
+   *
    * * `product` (default): One JSON
    * [Product][google.cloud.retail.v2alpha.Product] per line. Each product must
    *   have a valid [Product.id][google.cloud.retail.v2alpha.Product.id].
    * * `product_merchant_center`: See [Importing catalog data from Merchant
    *   Center](https://cloud.google.com/retail/recommendations-ai/docs/upload-catalog#mc).
+   *
    * Supported values for user events imports:
+   *
    * * `user_event` (default): One JSON
    * [UserEvent][google.cloud.retail.v2alpha.UserEvent] per line.
    * * `user_event_ga360`:
@@ -412,7 +416,9 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
    * * `user_event_ga4`:
    *   The schema is available here:
    *   https://support.google.com/analytics/answer/7029846.
+   *
    * Supported values for autocomplete imports:
+   *
    * * `suggestions` (default): One JSON completion suggestion per line.
    * * `denylist`:  One JSON deny suggestion per line.
    * * `allowlist`:  One JSON allow suggestion per line.
@@ -439,13 +445,17 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The schema to use when parsing the data from the source.
+   *
    * Supported values for product imports:
+   *
    * * `product` (default): One JSON
    * [Product][google.cloud.retail.v2alpha.Product] per line. Each product must
    *   have a valid [Product.id][google.cloud.retail.v2alpha.Product.id].
    * * `product_merchant_center`: See [Importing catalog data from Merchant
    *   Center](https://cloud.google.com/retail/recommendations-ai/docs/upload-catalog#mc).
+   *
    * Supported values for user events imports:
+   *
    * * `user_event` (default): One JSON
    * [UserEvent][google.cloud.retail.v2alpha.UserEvent] per line.
    * * `user_event_ga360`:
@@ -454,7 +464,9 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
    * * `user_event_ga4`:
    *   The schema is available here:
    *   https://support.google.com/analytics/answer/7029846.
+   *
    * Supported values for autocomplete imports:
+   *
    * * `suggestions` (default): One JSON completion suggestion per line.
    * * `denylist`:  One JSON deny suggestion per line.
    * * `allowlist`:  One JSON allow suggestion per line.
@@ -991,6 +1003,7 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * BigQuery time partitioned table's _PARTITIONDATE in YYYY-MM-DD format.
+     *
      * Only supported in
      * [ImportProductsRequest][google.cloud.retail.v2alpha.ImportProductsRequest].
      * </pre>
@@ -1008,6 +1021,7 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * BigQuery time partitioned table's _PARTITIONDATE in YYYY-MM-DD format.
+     *
      * Only supported in
      * [ImportProductsRequest][google.cloud.retail.v2alpha.ImportProductsRequest].
      * </pre>
@@ -1035,6 +1049,7 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * BigQuery time partitioned table's _PARTITIONDATE in YYYY-MM-DD format.
+     *
      * Only supported in
      * [ImportProductsRequest][google.cloud.retail.v2alpha.ImportProductsRequest].
      * </pre>
@@ -1059,6 +1074,7 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * BigQuery time partitioned table's _PARTITIONDATE in YYYY-MM-DD format.
+     *
      * Only supported in
      * [ImportProductsRequest][google.cloud.retail.v2alpha.ImportProductsRequest].
      * </pre>
@@ -1080,6 +1096,7 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * BigQuery time partitioned table's _PARTITIONDATE in YYYY-MM-DD format.
+     *
      * Only supported in
      * [ImportProductsRequest][google.cloud.retail.v2alpha.ImportProductsRequest].
      * </pre>
@@ -1112,6 +1129,7 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * BigQuery time partitioned table's _PARTITIONDATE in YYYY-MM-DD format.
+     *
      * Only supported in
      * [ImportProductsRequest][google.cloud.retail.v2alpha.ImportProductsRequest].
      * </pre>
@@ -1139,6 +1157,7 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * BigQuery time partitioned table's _PARTITIONDATE in YYYY-MM-DD format.
+     *
      * Only supported in
      * [ImportProductsRequest][google.cloud.retail.v2alpha.ImportProductsRequest].
      * </pre>
@@ -1153,6 +1172,7 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * BigQuery time partitioned table's _PARTITIONDATE in YYYY-MM-DD format.
+     *
      * Only supported in
      * [ImportProductsRequest][google.cloud.retail.v2alpha.ImportProductsRequest].
      * </pre>
@@ -1175,6 +1195,7 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * BigQuery time partitioned table's _PARTITIONDATE in YYYY-MM-DD format.
+     *
      * Only supported in
      * [ImportProductsRequest][google.cloud.retail.v2alpha.ImportProductsRequest].
      * </pre>
@@ -1659,13 +1680,17 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The schema to use when parsing the data from the source.
+     *
      * Supported values for product imports:
+     *
      * * `product` (default): One JSON
      * [Product][google.cloud.retail.v2alpha.Product] per line. Each product must
      *   have a valid [Product.id][google.cloud.retail.v2alpha.Product.id].
      * * `product_merchant_center`: See [Importing catalog data from Merchant
      *   Center](https://cloud.google.com/retail/recommendations-ai/docs/upload-catalog#mc).
+     *
      * Supported values for user events imports:
+     *
      * * `user_event` (default): One JSON
      * [UserEvent][google.cloud.retail.v2alpha.UserEvent] per line.
      * * `user_event_ga360`:
@@ -1674,7 +1699,9 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
      * * `user_event_ga4`:
      *   The schema is available here:
      *   https://support.google.com/analytics/answer/7029846.
+     *
      * Supported values for autocomplete imports:
+     *
      * * `suggestions` (default): One JSON completion suggestion per line.
      * * `denylist`:  One JSON deny suggestion per line.
      * * `allowlist`:  One JSON allow suggestion per line.
@@ -1700,13 +1727,17 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The schema to use when parsing the data from the source.
+     *
      * Supported values for product imports:
+     *
      * * `product` (default): One JSON
      * [Product][google.cloud.retail.v2alpha.Product] per line. Each product must
      *   have a valid [Product.id][google.cloud.retail.v2alpha.Product.id].
      * * `product_merchant_center`: See [Importing catalog data from Merchant
      *   Center](https://cloud.google.com/retail/recommendations-ai/docs/upload-catalog#mc).
+     *
      * Supported values for user events imports:
+     *
      * * `user_event` (default): One JSON
      * [UserEvent][google.cloud.retail.v2alpha.UserEvent] per line.
      * * `user_event_ga360`:
@@ -1715,7 +1746,9 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
      * * `user_event_ga4`:
      *   The schema is available here:
      *   https://support.google.com/analytics/answer/7029846.
+     *
      * Supported values for autocomplete imports:
+     *
      * * `suggestions` (default): One JSON completion suggestion per line.
      * * `denylist`:  One JSON deny suggestion per line.
      * * `allowlist`:  One JSON allow suggestion per line.
@@ -1741,13 +1774,17 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The schema to use when parsing the data from the source.
+     *
      * Supported values for product imports:
+     *
      * * `product` (default): One JSON
      * [Product][google.cloud.retail.v2alpha.Product] per line. Each product must
      *   have a valid [Product.id][google.cloud.retail.v2alpha.Product.id].
      * * `product_merchant_center`: See [Importing catalog data from Merchant
      *   Center](https://cloud.google.com/retail/recommendations-ai/docs/upload-catalog#mc).
+     *
      * Supported values for user events imports:
+     *
      * * `user_event` (default): One JSON
      * [UserEvent][google.cloud.retail.v2alpha.UserEvent] per line.
      * * `user_event_ga360`:
@@ -1756,7 +1793,9 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
      * * `user_event_ga4`:
      *   The schema is available here:
      *   https://support.google.com/analytics/answer/7029846.
+     *
      * Supported values for autocomplete imports:
+     *
      * * `suggestions` (default): One JSON completion suggestion per line.
      * * `denylist`:  One JSON deny suggestion per line.
      * * `allowlist`:  One JSON allow suggestion per line.
@@ -1781,13 +1820,17 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The schema to use when parsing the data from the source.
+     *
      * Supported values for product imports:
+     *
      * * `product` (default): One JSON
      * [Product][google.cloud.retail.v2alpha.Product] per line. Each product must
      *   have a valid [Product.id][google.cloud.retail.v2alpha.Product.id].
      * * `product_merchant_center`: See [Importing catalog data from Merchant
      *   Center](https://cloud.google.com/retail/recommendations-ai/docs/upload-catalog#mc).
+     *
      * Supported values for user events imports:
+     *
      * * `user_event` (default): One JSON
      * [UserEvent][google.cloud.retail.v2alpha.UserEvent] per line.
      * * `user_event_ga360`:
@@ -1796,7 +1839,9 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
      * * `user_event_ga4`:
      *   The schema is available here:
      *   https://support.google.com/analytics/answer/7029846.
+     *
      * Supported values for autocomplete imports:
+     *
      * * `suggestions` (default): One JSON completion suggestion per line.
      * * `denylist`:  One JSON deny suggestion per line.
      * * `allowlist`:  One JSON allow suggestion per line.
@@ -1817,13 +1862,17 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The schema to use when parsing the data from the source.
+     *
      * Supported values for product imports:
+     *
      * * `product` (default): One JSON
      * [Product][google.cloud.retail.v2alpha.Product] per line. Each product must
      *   have a valid [Product.id][google.cloud.retail.v2alpha.Product.id].
      * * `product_merchant_center`: See [Importing catalog data from Merchant
      *   Center](https://cloud.google.com/retail/recommendations-ai/docs/upload-catalog#mc).
+     *
      * Supported values for user events imports:
+     *
      * * `user_event` (default): One JSON
      * [UserEvent][google.cloud.retail.v2alpha.UserEvent] per line.
      * * `user_event_ga360`:
@@ -1832,7 +1881,9 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
      * * `user_event_ga4`:
      *   The schema is available here:
      *   https://support.google.com/analytics/answer/7029846.
+     *
      * Supported values for autocomplete imports:
+     *
      * * `suggestions` (default): One JSON completion suggestion per line.
      * * `denylist`:  One JSON deny suggestion per line.
      * * `allowlist`:  One JSON allow suggestion per line.

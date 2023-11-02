@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class DeleteAzureNodePoolRequest extends com.google.protobuf.Genera
     return new DeleteAzureNodePoolRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gkemulticloud.v1.AzureServiceProto
         .internal_static_google_cloud_gkemulticloud_v1_DeleteAzureNodePoolRequest_descriptor;
@@ -78,8 +73,10 @@ public final class DeleteAzureNodePoolRequest extends com.google.protobuf.Genera
    * <pre>
    * Required. The resource name the
    * [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] to delete.
+   *
    * `AzureNodePool` names are formatted as
    * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClusters/&lt;cluster-id&gt;/azureNodePools/&lt;node-pool-id&gt;`.
+   *
    * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
    * for more details on Google Cloud resource names.
    * </pre>
@@ -108,8 +105,10 @@ public final class DeleteAzureNodePoolRequest extends com.google.protobuf.Genera
    * <pre>
    * Required. The resource name the
    * [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] to delete.
+   *
    * `AzureNodePool` names are formatted as
    * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClusters/&lt;cluster-id&gt;/azureNodePools/&lt;node-pool-id&gt;`.
+   *
    * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
    * for more details on Google Cloud resource names.
    * </pre>
@@ -163,6 +162,7 @@ public final class DeleteAzureNodePoolRequest extends com.google.protobuf.Genera
    * not found, the request will succeed but no action will be taken on the
    * server and a completed [Operation][google.longrunning.Operation] will be
    * returned.
+   *
    * Useful for idempotent deletion.
    * </pre>
    *
@@ -185,7 +185,9 @@ public final class DeleteAzureNodePoolRequest extends com.google.protobuf.Genera
    * <pre>
    * The current ETag of the
    * [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool].
+   *
    * Allows clients to perform deletions through optimistic concurrency control.
+   *
    * If the provided ETag does not match the current etag of the node pool,
    * the request will fail and an ABORTED error will be returned.
    * </pre>
@@ -212,7 +214,9 @@ public final class DeleteAzureNodePoolRequest extends com.google.protobuf.Genera
    * <pre>
    * The current ETag of the
    * [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool].
+   *
    * Allows clients to perform deletions through optimistic concurrency control.
+   *
    * If the provided ETag does not match the current etag of the node pool,
    * the request will fail and an ABORTED error will be returned.
    * </pre>
@@ -655,8 +659,10 @@ public final class DeleteAzureNodePoolRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. The resource name the
      * [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] to delete.
+     *
      * `AzureNodePool` names are formatted as
      * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClusters/&lt;cluster-id&gt;/azureNodePools/&lt;node-pool-id&gt;`.
+     *
      * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
      * for more details on Google Cloud resource names.
      * </pre>
@@ -684,8 +690,10 @@ public final class DeleteAzureNodePoolRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. The resource name the
      * [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] to delete.
+     *
      * `AzureNodePool` names are formatted as
      * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClusters/&lt;cluster-id&gt;/azureNodePools/&lt;node-pool-id&gt;`.
+     *
      * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
      * for more details on Google Cloud resource names.
      * </pre>
@@ -713,8 +721,10 @@ public final class DeleteAzureNodePoolRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. The resource name the
      * [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] to delete.
+     *
      * `AzureNodePool` names are formatted as
      * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClusters/&lt;cluster-id&gt;/azureNodePools/&lt;node-pool-id&gt;`.
+     *
      * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
      * for more details on Google Cloud resource names.
      * </pre>
@@ -741,8 +751,10 @@ public final class DeleteAzureNodePoolRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. The resource name the
      * [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] to delete.
+     *
      * `AzureNodePool` names are formatted as
      * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClusters/&lt;cluster-id&gt;/azureNodePools/&lt;node-pool-id&gt;`.
+     *
      * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
      * for more details on Google Cloud resource names.
      * </pre>
@@ -765,8 +777,10 @@ public final class DeleteAzureNodePoolRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. The resource name the
      * [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] to delete.
+     *
      * `AzureNodePool` names are formatted as
      * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClusters/&lt;cluster-id&gt;/azureNodePools/&lt;node-pool-id&gt;`.
+     *
      * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
      * for more details on Google Cloud resource names.
      * </pre>
@@ -855,6 +869,7 @@ public final class DeleteAzureNodePoolRequest extends com.google.protobuf.Genera
      * not found, the request will succeed but no action will be taken on the
      * server and a completed [Operation][google.longrunning.Operation] will be
      * returned.
+     *
      * Useful for idempotent deletion.
      * </pre>
      *
@@ -875,6 +890,7 @@ public final class DeleteAzureNodePoolRequest extends com.google.protobuf.Genera
      * not found, the request will succeed but no action will be taken on the
      * server and a completed [Operation][google.longrunning.Operation] will be
      * returned.
+     *
      * Useful for idempotent deletion.
      * </pre>
      *
@@ -899,6 +915,7 @@ public final class DeleteAzureNodePoolRequest extends com.google.protobuf.Genera
      * not found, the request will succeed but no action will be taken on the
      * server and a completed [Operation][google.longrunning.Operation] will be
      * returned.
+     *
      * Useful for idempotent deletion.
      * </pre>
      *
@@ -920,7 +937,9 @@ public final class DeleteAzureNodePoolRequest extends com.google.protobuf.Genera
      * <pre>
      * The current ETag of the
      * [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool].
+     *
      * Allows clients to perform deletions through optimistic concurrency control.
+     *
      * If the provided ETag does not match the current etag of the node pool,
      * the request will fail and an ABORTED error will be returned.
      * </pre>
@@ -946,7 +965,9 @@ public final class DeleteAzureNodePoolRequest extends com.google.protobuf.Genera
      * <pre>
      * The current ETag of the
      * [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool].
+     *
      * Allows clients to perform deletions through optimistic concurrency control.
+     *
      * If the provided ETag does not match the current etag of the node pool,
      * the request will fail and an ABORTED error will be returned.
      * </pre>
@@ -972,7 +993,9 @@ public final class DeleteAzureNodePoolRequest extends com.google.protobuf.Genera
      * <pre>
      * The current ETag of the
      * [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool].
+     *
      * Allows clients to perform deletions through optimistic concurrency control.
+     *
      * If the provided ETag does not match the current etag of the node pool,
      * the request will fail and an ABORTED error will be returned.
      * </pre>
@@ -997,7 +1020,9 @@ public final class DeleteAzureNodePoolRequest extends com.google.protobuf.Genera
      * <pre>
      * The current ETag of the
      * [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool].
+     *
      * Allows clients to perform deletions through optimistic concurrency control.
+     *
      * If the provided ETag does not match the current etag of the node pool,
      * the request will fail and an ABORTED error will be returned.
      * </pre>
@@ -1018,7 +1043,9 @@ public final class DeleteAzureNodePoolRequest extends com.google.protobuf.Genera
      * <pre>
      * The current ETag of the
      * [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool].
+     *
      * Allows clients to perform deletions through optimistic concurrency control.
+     *
      * If the provided ETag does not match the current etag of the node pool,
      * the request will fail and an ABORTED error will be returned.
      * </pre>

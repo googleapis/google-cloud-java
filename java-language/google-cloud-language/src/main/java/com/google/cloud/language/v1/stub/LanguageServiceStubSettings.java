@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,6 +46,8 @@ import com.google.cloud.language.v1.AnnotateTextRequest;
 import com.google.cloud.language.v1.AnnotateTextResponse;
 import com.google.cloud.language.v1.ClassifyTextRequest;
 import com.google.cloud.language.v1.ClassifyTextResponse;
+import com.google.cloud.language.v1.ModerateTextRequest;
+import com.google.cloud.language.v1.ModerateTextResponse;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -110,6 +112,7 @@ public class LanguageServiceStubSettings extends StubSettings<LanguageServiceStu
   private final UnaryCallSettings<AnalyzeSyntaxRequest, AnalyzeSyntaxResponse>
       analyzeSyntaxSettings;
   private final UnaryCallSettings<ClassifyTextRequest, ClassifyTextResponse> classifyTextSettings;
+  private final UnaryCallSettings<ModerateTextRequest, ModerateTextResponse> moderateTextSettings;
   private final UnaryCallSettings<AnnotateTextRequest, AnnotateTextResponse> annotateTextSettings;
 
   /** Returns the object with the settings used for calls to analyzeSentiment. */
@@ -138,6 +141,11 @@ public class LanguageServiceStubSettings extends StubSettings<LanguageServiceStu
   /** Returns the object with the settings used for calls to classifyText. */
   public UnaryCallSettings<ClassifyTextRequest, ClassifyTextResponse> classifyTextSettings() {
     return classifyTextSettings;
+  }
+
+  /** Returns the object with the settings used for calls to moderateText. */
+  public UnaryCallSettings<ModerateTextRequest, ModerateTextResponse> moderateTextSettings() {
+    return moderateTextSettings;
   }
 
   /** Returns the object with the settings used for calls to annotateText. */
@@ -256,6 +264,7 @@ public class LanguageServiceStubSettings extends StubSettings<LanguageServiceStu
     analyzeEntitySentimentSettings = settingsBuilder.analyzeEntitySentimentSettings().build();
     analyzeSyntaxSettings = settingsBuilder.analyzeSyntaxSettings().build();
     classifyTextSettings = settingsBuilder.classifyTextSettings().build();
+    moderateTextSettings = settingsBuilder.moderateTextSettings().build();
     annotateTextSettings = settingsBuilder.annotateTextSettings().build();
   }
 
@@ -273,6 +282,8 @@ public class LanguageServiceStubSettings extends StubSettings<LanguageServiceStu
         analyzeSyntaxSettings;
     private final UnaryCallSettings.Builder<ClassifyTextRequest, ClassifyTextResponse>
         classifyTextSettings;
+    private final UnaryCallSettings.Builder<ModerateTextRequest, ModerateTextResponse>
+        moderateTextSettings;
     private final UnaryCallSettings.Builder<AnnotateTextRequest, AnnotateTextResponse>
         annotateTextSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
@@ -286,6 +297,7 @@ public class LanguageServiceStubSettings extends StubSettings<LanguageServiceStu
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
+      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -305,6 +317,8 @@ public class LanguageServiceStubSettings extends StubSettings<LanguageServiceStu
               .setTotalTimeout(Duration.ofMillis(600000L))
               .build();
       definitions.put("retry_policy_0_params", settings);
+      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
+      definitions.put("no_retry_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -320,6 +334,7 @@ public class LanguageServiceStubSettings extends StubSettings<LanguageServiceStu
       analyzeEntitySentimentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       analyzeSyntaxSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       classifyTextSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      moderateTextSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       annotateTextSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
@@ -329,6 +344,7 @@ public class LanguageServiceStubSettings extends StubSettings<LanguageServiceStu
               analyzeEntitySentimentSettings,
               analyzeSyntaxSettings,
               classifyTextSettings,
+              moderateTextSettings,
               annotateTextSettings);
       initDefaults(this);
     }
@@ -341,6 +357,7 @@ public class LanguageServiceStubSettings extends StubSettings<LanguageServiceStu
       analyzeEntitySentimentSettings = settings.analyzeEntitySentimentSettings.toBuilder();
       analyzeSyntaxSettings = settings.analyzeSyntaxSettings.toBuilder();
       classifyTextSettings = settings.classifyTextSettings.toBuilder();
+      moderateTextSettings = settings.moderateTextSettings.toBuilder();
       annotateTextSettings = settings.annotateTextSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
@@ -350,6 +367,7 @@ public class LanguageServiceStubSettings extends StubSettings<LanguageServiceStu
               analyzeEntitySentimentSettings,
               analyzeSyntaxSettings,
               classifyTextSettings,
+              moderateTextSettings,
               annotateTextSettings);
     }
 
@@ -406,6 +424,11 @@ public class LanguageServiceStubSettings extends StubSettings<LanguageServiceStu
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
+          .moderateTextSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
           .annotateTextSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
@@ -456,6 +479,12 @@ public class LanguageServiceStubSettings extends StubSettings<LanguageServiceStu
     public UnaryCallSettings.Builder<ClassifyTextRequest, ClassifyTextResponse>
         classifyTextSettings() {
       return classifyTextSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to moderateText. */
+    public UnaryCallSettings.Builder<ModerateTextRequest, ModerateTextResponse>
+        moderateTextSettings() {
+      return moderateTextSettings;
     }
 
     /** Returns the builder for the settings used for calls to annotateText. */

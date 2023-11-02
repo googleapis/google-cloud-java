@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class InitializeHubResponse extends com.google.protobuf.GeneratedMe
     return new InitializeHubResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gkehub.v1alpha2.MembershipProto
         .internal_static_google_cloud_gkehub_v1alpha2_InitializeHubResponse_descriptor;
@@ -77,7 +72,9 @@ public final class InitializeHubResponse extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Name of the Hub default service identity, in the format:
+   *
    *     service-&lt;project-number&gt;&#64;gcp-sa-gkehub.iam.gserviceaccount.com
+   *
    * The service account has `roles/gkehub.serviceAgent` in the Hub project.
    * </pre>
    *
@@ -102,7 +99,9 @@ public final class InitializeHubResponse extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Name of the Hub default service identity, in the format:
+   *
    *     service-&lt;project-number&gt;&#64;gcp-sa-gkehub.iam.gserviceaccount.com
+   *
    * The service account has `roles/gkehub.serviceAgent` in the Hub project.
    * </pre>
    *
@@ -549,7 +548,9 @@ public final class InitializeHubResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Name of the Hub default service identity, in the format:
+     *
      *     service-&lt;project-number&gt;&#64;gcp-sa-gkehub.iam.gserviceaccount.com
+     *
      * The service account has `roles/gkehub.serviceAgent` in the Hub project.
      * </pre>
      *
@@ -573,7 +574,9 @@ public final class InitializeHubResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Name of the Hub default service identity, in the format:
+     *
      *     service-&lt;project-number&gt;&#64;gcp-sa-gkehub.iam.gserviceaccount.com
+     *
      * The service account has `roles/gkehub.serviceAgent` in the Hub project.
      * </pre>
      *
@@ -597,7 +600,9 @@ public final class InitializeHubResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Name of the Hub default service identity, in the format:
+     *
      *     service-&lt;project-number&gt;&#64;gcp-sa-gkehub.iam.gserviceaccount.com
+     *
      * The service account has `roles/gkehub.serviceAgent` in the Hub project.
      * </pre>
      *
@@ -620,7 +625,9 @@ public final class InitializeHubResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Name of the Hub default service identity, in the format:
+     *
      *     service-&lt;project-number&gt;&#64;gcp-sa-gkehub.iam.gserviceaccount.com
+     *
      * The service account has `roles/gkehub.serviceAgent` in the Hub project.
      * </pre>
      *
@@ -639,7 +646,9 @@ public final class InitializeHubResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Name of the Hub default service identity, in the format:
+     *
      *     service-&lt;project-number&gt;&#64;gcp-sa-gkehub.iam.gserviceaccount.com
+     *
      * The service account has `roles/gkehub.serviceAgent` in the Hub project.
      * </pre>
      *

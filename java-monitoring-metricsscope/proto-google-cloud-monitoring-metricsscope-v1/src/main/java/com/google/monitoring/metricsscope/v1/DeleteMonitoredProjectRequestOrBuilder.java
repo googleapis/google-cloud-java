@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,6 +30,7 @@ public interface DeleteMonitoredProjectRequestOrBuilder
    * Required. The resource name of the `MonitoredProject`.
    * Example:
    * `locations/global/metricsScopes/{SCOPING_PROJECT_ID_OR_NUMBER}/projects/{MONITORED_PROJECT_ID_OR_NUMBER}`
+   *
    * Authorization requires the following [Google
    * IAM](https://cloud.google.com/iam) permissions on both the `Metrics Scope`
    * and on the `MonitoredProject`: `monitoring.metricsScopes.link`
@@ -49,6 +50,7 @@ public interface DeleteMonitoredProjectRequestOrBuilder
    * Required. The resource name of the `MonitoredProject`.
    * Example:
    * `locations/global/metricsScopes/{SCOPING_PROJECT_ID_OR_NUMBER}/projects/{MONITORED_PROJECT_ID_OR_NUMBER}`
+   *
    * Authorization requires the following [Google
    * IAM](https://cloud.google.com/iam) permissions on both the `Metrics Scope`
    * and on the `MonitoredProject`: `monitoring.metricsScopes.link`

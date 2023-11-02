@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,7 @@ public interface DeleteBackupPlanRequestOrBuilder
    *
    * <pre>
    * Required. Fully qualified BackupPlan name.
-   * Format: projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;
+   * Format: `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;`
    * </pre>
    *
    * <code>
@@ -43,7 +43,7 @@ public interface DeleteBackupPlanRequestOrBuilder
    *
    * <pre>
    * Required. Fully qualified BackupPlan name.
-   * Format: projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;
+   * Format: `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;`
    * </pre>
    *
    * <code>
@@ -59,8 +59,8 @@ public interface DeleteBackupPlanRequestOrBuilder
    *
    * <pre>
    * If provided, this value must match the current value of the
-   * target BackupPlan's [etag][google.cloud.gkebackup.v1.BackupPlan.etag] field or the request is
-   * rejected.
+   * target BackupPlan's [etag][google.cloud.gkebackup.v1.BackupPlan.etag] field
+   * or the request is rejected.
    * </pre>
    *
    * <code>string etag = 2;</code>
@@ -73,8 +73,8 @@ public interface DeleteBackupPlanRequestOrBuilder
    *
    * <pre>
    * If provided, this value must match the current value of the
-   * target BackupPlan's [etag][google.cloud.gkebackup.v1.BackupPlan.etag] field or the request is
-   * rejected.
+   * target BackupPlan's [etag][google.cloud.gkebackup.v1.BackupPlan.etag] field
+   * or the request is rejected.
    * </pre>
    *
    * <code>string etag = 2;</code>

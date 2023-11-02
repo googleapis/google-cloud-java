@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ public interface ColumnSchemaOrBuilder
    *
    * <pre>
    * Required. Name of the column.
+   *
    * Must be a UTF-8 string without dots (.).
    * The maximum size is 64 bytes.
    * </pre>
@@ -42,6 +43,7 @@ public interface ColumnSchemaOrBuilder
    *
    * <pre>
    * Required. Name of the column.
+   *
    * Must be a UTF-8 string without dots (.).
    * The maximum size is 64 bytes.
    * </pre>
@@ -57,6 +59,7 @@ public interface ColumnSchemaOrBuilder
    *
    * <pre>
    * Required. Type of the column.
+   *
    * Must be a UTF-8 string with the maximum size of 128 bytes.
    * </pre>
    *
@@ -70,6 +73,7 @@ public interface ColumnSchemaOrBuilder
    *
    * <pre>
    * Required. Type of the column.
+   *
    * Must be a UTF-8 string with the maximum size of 128 bytes.
    * </pre>
    *
@@ -84,6 +88,7 @@ public interface ColumnSchemaOrBuilder
    *
    * <pre>
    * Optional. Description of the column. Default value is an empty string.
+   *
    * The description must be a UTF-8 string with the maximum size of 2000
    * bytes.
    * </pre>
@@ -98,6 +103,7 @@ public interface ColumnSchemaOrBuilder
    *
    * <pre>
    * Optional. Description of the column. Default value is an empty string.
+   *
    * The description must be a UTF-8 string with the maximum size of 2000
    * bytes.
    * </pre>
@@ -114,6 +120,7 @@ public interface ColumnSchemaOrBuilder
    * <pre>
    * Optional. A column's mode indicates whether values in this column are
    * required, nullable, or repeated.
+   *
    * Only `NULLABLE`, `REQUIRED`, and `REPEATED` values are supported.
    * Default mode is `NULLABLE`.
    * </pre>
@@ -129,6 +136,7 @@ public interface ColumnSchemaOrBuilder
    * <pre>
    * Optional. A column's mode indicates whether values in this column are
    * required, nullable, or repeated.
+   *
    * Only `NULLABLE`, `REQUIRED`, and `REPEATED` values are supported.
    * Default mode is `NULLABLE`.
    * </pre>
@@ -339,5 +347,5 @@ public interface ColumnSchemaOrBuilder
    */
   com.google.protobuf.ByteString getGcRuleBytes();
 
-  public com.google.cloud.datacatalog.v1.ColumnSchema.SystemSpecCase getSystemSpecCase();
+  com.google.cloud.datacatalog.v1.ColumnSchema.SystemSpecCase getSystemSpecCase();
 }

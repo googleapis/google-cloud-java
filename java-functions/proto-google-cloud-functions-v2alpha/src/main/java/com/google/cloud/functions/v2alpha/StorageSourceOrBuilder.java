@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -57,6 +57,7 @@ public interface StorageSourceOrBuilder
    *
    * <pre>
    * Google Cloud Storage object containing the source.
+   *
    * This object must be a gzipped archive file (`.tar.gz`) containing source to
    * build.
    * </pre>
@@ -71,6 +72,7 @@ public interface StorageSourceOrBuilder
    *
    * <pre>
    * Google Cloud Storage object containing the source.
+   *
    * This object must be a gzipped archive file (`.tar.gz`) containing source to
    * build.
    * </pre>

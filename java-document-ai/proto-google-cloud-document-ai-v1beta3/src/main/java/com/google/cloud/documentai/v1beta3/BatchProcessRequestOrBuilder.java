@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -146,7 +146,7 @@ public interface BatchProcessRequestOrBuilder
    * </code>
    *
    * @deprecated google.cloud.documentai.v1beta3.BatchProcessRequest.output_config is deprecated.
-   *     See google/cloud/documentai/v1beta3/document_processor_service.proto;l=478
+   *     See google/cloud/documentai/v1beta3/document_processor_service.proto;l=534
    * @return Whether the outputConfig field is set.
    */
   @java.lang.Deprecated
@@ -163,7 +163,7 @@ public interface BatchProcessRequestOrBuilder
    * </code>
    *
    * @deprecated google.cloud.documentai.v1beta3.BatchProcessRequest.output_config is deprecated.
-   *     See google/cloud/documentai/v1beta3/document_processor_service.proto;l=478
+   *     See google/cloud/documentai/v1beta3/document_processor_service.proto;l=534
    * @return The outputConfig.
    */
   @java.lang.Deprecated
@@ -187,7 +187,9 @@ public interface BatchProcessRequestOrBuilder
    *
    *
    * <pre>
-   * The input documents for batch process.
+   * The input documents for the
+   * [BatchProcessDocuments][google.cloud.documentai.v1beta3.DocumentProcessorService.BatchProcessDocuments]
+   * method.
    * </pre>
    *
    * <code>.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig input_documents = 5;</code>
@@ -199,7 +201,9 @@ public interface BatchProcessRequestOrBuilder
    *
    *
    * <pre>
-   * The input documents for batch process.
+   * The input documents for the
+   * [BatchProcessDocuments][google.cloud.documentai.v1beta3.DocumentProcessorService.BatchProcessDocuments]
+   * method.
    * </pre>
    *
    * <code>.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig input_documents = 5;</code>
@@ -211,7 +215,9 @@ public interface BatchProcessRequestOrBuilder
    *
    *
    * <pre>
-   * The input documents for batch process.
+   * The input documents for the
+   * [BatchProcessDocuments][google.cloud.documentai.v1beta3.DocumentProcessorService.BatchProcessDocuments]
+   * method.
    * </pre>
    *
    * <code>.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig input_documents = 5;</code>
@@ -223,7 +229,9 @@ public interface BatchProcessRequestOrBuilder
    *
    *
    * <pre>
-   * The overall output config for batch process.
+   * The output configuration for the
+   * [BatchProcessDocuments][google.cloud.documentai.v1beta3.DocumentProcessorService.BatchProcessDocuments]
+   * method.
    * </pre>
    *
    * <code>.google.cloud.documentai.v1beta3.DocumentOutputConfig document_output_config = 6;</code>
@@ -235,7 +243,9 @@ public interface BatchProcessRequestOrBuilder
    *
    *
    * <pre>
-   * The overall output config for batch process.
+   * The output configuration for the
+   * [BatchProcessDocuments][google.cloud.documentai.v1beta3.DocumentProcessorService.BatchProcessDocuments]
+   * method.
    * </pre>
    *
    * <code>.google.cloud.documentai.v1beta3.DocumentOutputConfig document_output_config = 6;</code>
@@ -247,7 +257,9 @@ public interface BatchProcessRequestOrBuilder
    *
    *
    * <pre>
-   * The overall output config for batch process.
+   * The output configuration for the
+   * [BatchProcessDocuments][google.cloud.documentai.v1beta3.DocumentProcessorService.BatchProcessDocuments]
+   * method.
    * </pre>
    *
    * <code>.google.cloud.documentai.v1beta3.DocumentOutputConfig document_output_config = 6;</code>
@@ -259,8 +271,8 @@ public interface BatchProcessRequestOrBuilder
    *
    *
    * <pre>
-   * Whether Human Review feature should be skipped for this request. Default to
-   * false.
+   * Whether human review should be skipped for this request. Default to
+   * `false`.
    * </pre>
    *
    * <code>bool skip_human_review = 4;</code>

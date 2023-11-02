@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,11 +46,6 @@ public final class InlineSecret extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new InlineSecret();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -166,6 +161,7 @@ public final class InlineSecret extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Map of environment variable name to its encrypted value.
+   *
    * Secret environment variables must be unique across all of a build's
    * secrets, and must be used by at least one build step. Values can be at most
    * 64 KB in size. There can be at most 100 secret values across all of a
@@ -192,6 +188,7 @@ public final class InlineSecret extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Map of environment variable name to its encrypted value.
+   *
    * Secret environment variables must be unique across all of a build's
    * secrets, and must be used by at least one build step. Values can be at most
    * 64 KB in size. There can be at most 100 secret values across all of a
@@ -209,6 +206,7 @@ public final class InlineSecret extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Map of environment variable name to its encrypted value.
+   *
    * Secret environment variables must be unique across all of a build's
    * secrets, and must be used by at least one build step. Values can be at most
    * 64 KB in size. There can be at most 100 secret values across all of a
@@ -234,6 +232,7 @@ public final class InlineSecret extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Map of environment variable name to its encrypted value.
+   *
    * Secret environment variables must be unique across all of a build's
    * secrets, and must be used by at least one build step. Values can be at most
    * 64 KB in size. There can be at most 100 secret values across all of a
@@ -794,6 +793,7 @@ public final class InlineSecret extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Map of environment variable name to its encrypted value.
+     *
      * Secret environment variables must be unique across all of a build's
      * secrets, and must be used by at least one build step. Values can be at most
      * 64 KB in size. There can be at most 100 secret values across all of a
@@ -820,6 +820,7 @@ public final class InlineSecret extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Map of environment variable name to its encrypted value.
+     *
      * Secret environment variables must be unique across all of a build's
      * secrets, and must be used by at least one build step. Values can be at most
      * 64 KB in size. There can be at most 100 secret values across all of a
@@ -837,6 +838,7 @@ public final class InlineSecret extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Map of environment variable name to its encrypted value.
+     *
      * Secret environment variables must be unique across all of a build's
      * secrets, and must be used by at least one build step. Values can be at most
      * 64 KB in size. There can be at most 100 secret values across all of a
@@ -862,6 +864,7 @@ public final class InlineSecret extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Map of environment variable name to its encrypted value.
+     *
      * Secret environment variables must be unique across all of a build's
      * secrets, and must be used by at least one build step. Values can be at most
      * 64 KB in size. There can be at most 100 secret values across all of a
@@ -893,6 +896,7 @@ public final class InlineSecret extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Map of environment variable name to its encrypted value.
+     *
      * Secret environment variables must be unique across all of a build's
      * secrets, and must be used by at least one build step. Values can be at most
      * 64 KB in size. There can be at most 100 secret values across all of a
@@ -919,6 +923,7 @@ public final class InlineSecret extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Map of environment variable name to its encrypted value.
+     *
      * Secret environment variables must be unique across all of a build's
      * secrets, and must be used by at least one build step. Values can be at most
      * 64 KB in size. There can be at most 100 secret values across all of a
@@ -943,6 +948,7 @@ public final class InlineSecret extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Map of environment variable name to its encrypted value.
+     *
      * Secret environment variables must be unique across all of a build's
      * secrets, and must be used by at least one build step. Values can be at most
      * 64 KB in size. There can be at most 100 secret values across all of a

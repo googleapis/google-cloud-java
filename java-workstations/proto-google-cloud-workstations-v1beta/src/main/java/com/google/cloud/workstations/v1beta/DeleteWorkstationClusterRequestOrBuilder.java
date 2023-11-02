@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,10 +56,11 @@ public interface DeleteWorkstationClusterRequestOrBuilder
    *
    *
    * <pre>
-   * If set, validate the request and preview the review, but do not apply it.
+   * Optional. If set, validate the request and preview the review, but do not
+   * apply it.
    * </pre>
    *
-   * <code>bool validate_only = 2;</code>
+   * <code>bool validate_only = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The validateOnly.
    */
@@ -69,11 +70,11 @@ public interface DeleteWorkstationClusterRequestOrBuilder
    *
    *
    * <pre>
-   * If set, the request will be rejected if the latest version of the
-   * workstation cluster on the server does not have this etag.
+   * Optional. If set, the request will be rejected if the latest version of the
+   * workstation cluster on the server does not have this ETag.
    * </pre>
    *
-   * <code>string etag = 3;</code>
+   * <code>string etag = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The etag.
    */
@@ -82,11 +83,11 @@ public interface DeleteWorkstationClusterRequestOrBuilder
    *
    *
    * <pre>
-   * If set, the request will be rejected if the latest version of the
-   * workstation cluster on the server does not have this etag.
+   * Optional. If set, the request will be rejected if the latest version of the
+   * workstation cluster on the server does not have this ETag.
    * </pre>
    *
-   * <code>string etag = 3;</code>
+   * <code>string etag = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for etag.
    */
@@ -96,12 +97,12 @@ public interface DeleteWorkstationClusterRequestOrBuilder
    *
    *
    * <pre>
-   * If set, any workstation configurations and workstations in the
+   * Optional. If set, any workstation configurations and workstations in the
    * workstation cluster are also deleted. Otherwise, the request only
    * works if the workstation cluster has no configurations or workstations.
    * </pre>
    *
-   * <code>bool force = 4;</code>
+   * <code>bool force = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The force.
    */

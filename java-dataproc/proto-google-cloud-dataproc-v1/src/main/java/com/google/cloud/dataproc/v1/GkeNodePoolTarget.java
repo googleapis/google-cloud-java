@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,11 +46,6 @@ public final class GkeNodePoolTarget extends com.google.protobuf.GeneratedMessag
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new GkeNodePoolTarget();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -456,13 +451,16 @@ public final class GkeNodePoolTarget extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Input only. The configuration for the GKE node pool.
+   *
    * If specified, Dataproc attempts to create a node pool with the
    * specified shape. If one with the same name already exists, it is
    * verified against all specified fields. If a field differs, the
    * virtual cluster creation will fail.
+   *
    * If omitted, any node pool with the specified name is used. If a
    * node pool with the specified name does not exist, Dataproc create a
    * node pool with default values.
+   *
    * This is an input only field. It will not be returned by the API.
    * </pre>
    *
@@ -481,13 +479,16 @@ public final class GkeNodePoolTarget extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Input only. The configuration for the GKE node pool.
+   *
    * If specified, Dataproc attempts to create a node pool with the
    * specified shape. If one with the same name already exists, it is
    * verified against all specified fields. If a field differs, the
    * virtual cluster creation will fail.
+   *
    * If omitted, any node pool with the specified name is used. If a
    * node pool with the specified name does not exist, Dataproc create a
    * node pool with default values.
+   *
    * This is an input only field. It will not be returned by the API.
    * </pre>
    *
@@ -508,13 +509,16 @@ public final class GkeNodePoolTarget extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Input only. The configuration for the GKE node pool.
+   *
    * If specified, Dataproc attempts to create a node pool with the
    * specified shape. If one with the same name already exists, it is
    * verified against all specified fields. If a field differs, the
    * virtual cluster creation will fail.
+   *
    * If omitted, any node pool with the specified name is used. If a
    * node pool with the specified name does not exist, Dataproc create a
    * node pool with default values.
+   *
    * This is an input only field. It will not be returned by the API.
    * </pre>
    *
@@ -1339,13 +1343,16 @@ public final class GkeNodePoolTarget extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Input only. The configuration for the GKE node pool.
+     *
      * If specified, Dataproc attempts to create a node pool with the
      * specified shape. If one with the same name already exists, it is
      * verified against all specified fields. If a field differs, the
      * virtual cluster creation will fail.
+     *
      * If omitted, any node pool with the specified name is used. If a
      * node pool with the specified name does not exist, Dataproc create a
      * node pool with default values.
+     *
      * This is an input only field. It will not be returned by the API.
      * </pre>
      *
@@ -1363,13 +1370,16 @@ public final class GkeNodePoolTarget extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Input only. The configuration for the GKE node pool.
+     *
      * If specified, Dataproc attempts to create a node pool with the
      * specified shape. If one with the same name already exists, it is
      * verified against all specified fields. If a field differs, the
      * virtual cluster creation will fail.
+     *
      * If omitted, any node pool with the specified name is used. If a
      * node pool with the specified name does not exist, Dataproc create a
      * node pool with default values.
+     *
      * This is an input only field. It will not be returned by the API.
      * </pre>
      *
@@ -1393,13 +1403,16 @@ public final class GkeNodePoolTarget extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Input only. The configuration for the GKE node pool.
+     *
      * If specified, Dataproc attempts to create a node pool with the
      * specified shape. If one with the same name already exists, it is
      * verified against all specified fields. If a field differs, the
      * virtual cluster creation will fail.
+     *
      * If omitted, any node pool with the specified name is used. If a
      * node pool with the specified name does not exist, Dataproc create a
      * node pool with default values.
+     *
      * This is an input only field. It will not be returned by the API.
      * </pre>
      *
@@ -1425,13 +1438,16 @@ public final class GkeNodePoolTarget extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Input only. The configuration for the GKE node pool.
+     *
      * If specified, Dataproc attempts to create a node pool with the
      * specified shape. If one with the same name already exists, it is
      * verified against all specified fields. If a field differs, the
      * virtual cluster creation will fail.
+     *
      * If omitted, any node pool with the specified name is used. If a
      * node pool with the specified name does not exist, Dataproc create a
      * node pool with default values.
+     *
      * This is an input only field. It will not be returned by the API.
      * </pre>
      *
@@ -1455,13 +1471,16 @@ public final class GkeNodePoolTarget extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Input only. The configuration for the GKE node pool.
+     *
      * If specified, Dataproc attempts to create a node pool with the
      * specified shape. If one with the same name already exists, it is
      * verified against all specified fields. If a field differs, the
      * virtual cluster creation will fail.
+     *
      * If omitted, any node pool with the specified name is used. If a
      * node pool with the specified name does not exist, Dataproc create a
      * node pool with default values.
+     *
      * This is an input only field. It will not be returned by the API.
      * </pre>
      *
@@ -1491,13 +1510,16 @@ public final class GkeNodePoolTarget extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Input only. The configuration for the GKE node pool.
+     *
      * If specified, Dataproc attempts to create a node pool with the
      * specified shape. If one with the same name already exists, it is
      * verified against all specified fields. If a field differs, the
      * virtual cluster creation will fail.
+     *
      * If omitted, any node pool with the specified name is used. If a
      * node pool with the specified name does not exist, Dataproc create a
      * node pool with default values.
+     *
      * This is an input only field. It will not be returned by the API.
      * </pre>
      *
@@ -1520,13 +1542,16 @@ public final class GkeNodePoolTarget extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Input only. The configuration for the GKE node pool.
+     *
      * If specified, Dataproc attempts to create a node pool with the
      * specified shape. If one with the same name already exists, it is
      * verified against all specified fields. If a field differs, the
      * virtual cluster creation will fail.
+     *
      * If omitted, any node pool with the specified name is used. If a
      * node pool with the specified name does not exist, Dataproc create a
      * node pool with default values.
+     *
      * This is an input only field. It will not be returned by the API.
      * </pre>
      *
@@ -1544,13 +1569,16 @@ public final class GkeNodePoolTarget extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Input only. The configuration for the GKE node pool.
+     *
      * If specified, Dataproc attempts to create a node pool with the
      * specified shape. If one with the same name already exists, it is
      * verified against all specified fields. If a field differs, the
      * virtual cluster creation will fail.
+     *
      * If omitted, any node pool with the specified name is used. If a
      * node pool with the specified name does not exist, Dataproc create a
      * node pool with default values.
+     *
      * This is an input only field. It will not be returned by the API.
      * </pre>
      *
@@ -1572,13 +1600,16 @@ public final class GkeNodePoolTarget extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Input only. The configuration for the GKE node pool.
+     *
      * If specified, Dataproc attempts to create a node pool with the
      * specified shape. If one with the same name already exists, it is
      * verified against all specified fields. If a field differs, the
      * virtual cluster creation will fail.
+     *
      * If omitted, any node pool with the specified name is used. If a
      * node pool with the specified name does not exist, Dataproc create a
      * node pool with default values.
+     *
      * This is an input only field. It will not be returned by the API.
      * </pre>
      *

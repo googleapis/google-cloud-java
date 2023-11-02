@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class HttpsTrigger extends com.google.protobuf.GeneratedMessageV3
     return new HttpsTrigger();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.functions.v1.FunctionsProto
         .internal_static_google_cloud_functions_v1_HttpsTrigger_descriptor;
@@ -72,9 +67,11 @@ public final class HttpsTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Available security level settings.
+   * Available security-level settings.
+   *
    * This controls the methods to enforce security (HTTPS) on a URL.
-   * If unspecified, SECURE_OPTIONAL will be used.
+   *
+   * If unspecified, SECURE_OPTIONAL is used.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.functions.v1.HttpsTrigger.SecurityLevel}
@@ -243,7 +240,7 @@ public final class HttpsTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The deployed url for the function.
+   * Output only. The deployed URL for the function.
    * </pre>
    *
    * <code>string url = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -266,7 +263,7 @@ public final class HttpsTrigger extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The deployed url for the function.
+   * Output only. The deployed URL for the function.
    * </pre>
    *
    * <code>string url = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -695,7 +692,7 @@ public final class HttpsTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The deployed url for the function.
+     * Output only. The deployed URL for the function.
      * </pre>
      *
      * <code>string url = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -717,7 +714,7 @@ public final class HttpsTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The deployed url for the function.
+     * Output only. The deployed URL for the function.
      * </pre>
      *
      * <code>string url = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -739,7 +736,7 @@ public final class HttpsTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The deployed url for the function.
+     * Output only. The deployed URL for the function.
      * </pre>
      *
      * <code>string url = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -760,7 +757,7 @@ public final class HttpsTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The deployed url for the function.
+     * Output only. The deployed URL for the function.
      * </pre>
      *
      * <code>string url = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -777,7 +774,7 @@ public final class HttpsTrigger extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The deployed url for the function.
+     * Output only. The deployed URL for the function.
      * </pre>
      *
      * <code>string url = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

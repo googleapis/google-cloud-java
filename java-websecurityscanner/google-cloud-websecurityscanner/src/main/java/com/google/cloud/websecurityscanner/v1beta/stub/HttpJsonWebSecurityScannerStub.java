@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,6 +32,7 @@ import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.websecurityscanner.v1beta.CreateScanConfigRequest;
 import com.google.cloud.websecurityscanner.v1beta.DeleteScanConfigRequest;
@@ -624,63 +625,136 @@ public class HttpJsonWebSecurityScannerStub extends WebSecurityScannerStub {
         HttpJsonCallSettings.<CreateScanConfigRequest, ScanConfig>newBuilder()
             .setMethodDescriptor(createScanConfigMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeleteScanConfigRequest, Empty> deleteScanConfigTransportSettings =
         HttpJsonCallSettings.<DeleteScanConfigRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteScanConfigMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetScanConfigRequest, ScanConfig> getScanConfigTransportSettings =
         HttpJsonCallSettings.<GetScanConfigRequest, ScanConfig>newBuilder()
             .setMethodDescriptor(getScanConfigMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListScanConfigsRequest, ListScanConfigsResponse>
         listScanConfigsTransportSettings =
             HttpJsonCallSettings.<ListScanConfigsRequest, ListScanConfigsResponse>newBuilder()
                 .setMethodDescriptor(listScanConfigsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<UpdateScanConfigRequest, ScanConfig> updateScanConfigTransportSettings =
         HttpJsonCallSettings.<UpdateScanConfigRequest, ScanConfig>newBuilder()
             .setMethodDescriptor(updateScanConfigMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "scan_config.name", String.valueOf(request.getScanConfig().getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<StartScanRunRequest, ScanRun> startScanRunTransportSettings =
         HttpJsonCallSettings.<StartScanRunRequest, ScanRun>newBuilder()
             .setMethodDescriptor(startScanRunMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetScanRunRequest, ScanRun> getScanRunTransportSettings =
         HttpJsonCallSettings.<GetScanRunRequest, ScanRun>newBuilder()
             .setMethodDescriptor(getScanRunMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListScanRunsRequest, ListScanRunsResponse> listScanRunsTransportSettings =
         HttpJsonCallSettings.<ListScanRunsRequest, ListScanRunsResponse>newBuilder()
             .setMethodDescriptor(listScanRunsMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<StopScanRunRequest, ScanRun> stopScanRunTransportSettings =
         HttpJsonCallSettings.<StopScanRunRequest, ScanRun>newBuilder()
             .setMethodDescriptor(stopScanRunMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListCrawledUrlsRequest, ListCrawledUrlsResponse>
         listCrawledUrlsTransportSettings =
             HttpJsonCallSettings.<ListCrawledUrlsRequest, ListCrawledUrlsResponse>newBuilder()
                 .setMethodDescriptor(listCrawledUrlsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetFindingRequest, Finding> getFindingTransportSettings =
         HttpJsonCallSettings.<GetFindingRequest, Finding>newBuilder()
             .setMethodDescriptor(getFindingMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListFindingsRequest, ListFindingsResponse> listFindingsTransportSettings =
         HttpJsonCallSettings.<ListFindingsRequest, ListFindingsResponse>newBuilder()
             .setMethodDescriptor(listFindingsMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListFindingTypeStatsRequest, ListFindingTypeStatsResponse>
         listFindingTypeStatsTransportSettings =
@@ -688,6 +762,12 @@ public class HttpJsonWebSecurityScannerStub extends WebSecurityScannerStub {
                 .<ListFindingTypeStatsRequest, ListFindingTypeStatsResponse>newBuilder()
                 .setMethodDescriptor(listFindingTypeStatsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
 
     this.createScanConfigCallable =

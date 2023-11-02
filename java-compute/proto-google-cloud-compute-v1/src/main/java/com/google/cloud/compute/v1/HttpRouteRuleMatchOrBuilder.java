@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -188,6 +188,43 @@ public interface HttpRouteRuleMatchOrBuilder
    * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 464725739;</code>
    */
   com.google.cloud.compute.v1.MetadataFilterOrBuilder getMetadataFiltersOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * If specified, the route is a pattern match expression that must match the :path header once the query string is removed. A pattern match allows you to match - The value must be between 1 and 1024 characters - The pattern must start with a leading slash ("/") - There may be no more than 5 operators in pattern Precisely one of prefix_match, full_path_match, regex_match or path_template_match must be set.
+   * </pre>
+   *
+   * <code>optional string path_template_match = 292348186;</code>
+   *
+   * @return Whether the pathTemplateMatch field is set.
+   */
+  boolean hasPathTemplateMatch();
+  /**
+   *
+   *
+   * <pre>
+   * If specified, the route is a pattern match expression that must match the :path header once the query string is removed. A pattern match allows you to match - The value must be between 1 and 1024 characters - The pattern must start with a leading slash ("/") - There may be no more than 5 operators in pattern Precisely one of prefix_match, full_path_match, regex_match or path_template_match must be set.
+   * </pre>
+   *
+   * <code>optional string path_template_match = 292348186;</code>
+   *
+   * @return The pathTemplateMatch.
+   */
+  java.lang.String getPathTemplateMatch();
+  /**
+   *
+   *
+   * <pre>
+   * If specified, the route is a pattern match expression that must match the :path header once the query string is removed. A pattern match allows you to match - The value must be between 1 and 1024 characters - The pattern must start with a leading slash ("/") - There may be no more than 5 operators in pattern Precisely one of prefix_match, full_path_match, regex_match or path_template_match must be set.
+   * </pre>
+   *
+   * <code>optional string path_template_match = 292348186;</code>
+   *
+   * @return The bytes for pathTemplateMatch.
+   */
+  com.google.protobuf.ByteString getPathTemplateMatchBytes();
 
   /**
    *

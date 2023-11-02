@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -55,11 +55,6 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ModelDeploymentMonitoringJob();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -379,11 +374,6 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new LatestMonitoringPipelineMetadata();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2089,6 +2079,7 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
    * <pre>
    * YAML schema file uri describing the format of a single instance that you
    * want Tensorflow Data Validation (TFDV) to analyze.
+   *
    * If this field is empty, all the feature data types are inferred from
    * [predict_instance_schema_uri][google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob.predict_instance_schema_uri],
    * meaning that TFDV will use the data in the exact format(data type) as
@@ -2121,6 +2112,7 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
    * <pre>
    * YAML schema file uri describing the format of a single instance that you
    * want Tensorflow Data Validation (TFDV) to analyze.
+   *
    * If this field is empty, all the feature data types are inferred from
    * [predict_instance_schema_uri][google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob.predict_instance_schema_uri],
    * meaning that TFDV will use the data in the exact format(data type) as
@@ -2338,9 +2330,11 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
    * <pre>
    * The labels with user-defined metadata to organize your
    * ModelDeploymentMonitoringJob.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
+   *
    * See https://goo.gl/xmQnxf for more information and examples of labels.
    * </pre>
    *
@@ -2365,9 +2359,11 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
    * <pre>
    * The labels with user-defined metadata to organize your
    * ModelDeploymentMonitoringJob.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
+   *
    * See https://goo.gl/xmQnxf for more information and examples of labels.
    * </pre>
    *
@@ -2383,9 +2379,11 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
    * <pre>
    * The labels with user-defined metadata to organize your
    * ModelDeploymentMonitoringJob.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
+   *
    * See https://goo.gl/xmQnxf for more information and examples of labels.
    * </pre>
    *
@@ -2408,9 +2406,11 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
    * <pre>
    * The labels with user-defined metadata to organize your
    * ModelDeploymentMonitoringJob.
+   *
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
+   *
    * See https://goo.gl/xmQnxf for more information and examples of labels.
    * </pre>
    *
@@ -6133,6 +6133,7 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
      * <pre>
      * YAML schema file uri describing the format of a single instance that you
      * want Tensorflow Data Validation (TFDV) to analyze.
+     *
      * If this field is empty, all the feature data types are inferred from
      * [predict_instance_schema_uri][google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob.predict_instance_schema_uri],
      * meaning that TFDV will use the data in the exact format(data type) as
@@ -6164,6 +6165,7 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
      * <pre>
      * YAML schema file uri describing the format of a single instance that you
      * want Tensorflow Data Validation (TFDV) to analyze.
+     *
      * If this field is empty, all the feature data types are inferred from
      * [predict_instance_schema_uri][google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob.predict_instance_schema_uri],
      * meaning that TFDV will use the data in the exact format(data type) as
@@ -6195,6 +6197,7 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
      * <pre>
      * YAML schema file uri describing the format of a single instance that you
      * want Tensorflow Data Validation (TFDV) to analyze.
+     *
      * If this field is empty, all the feature data types are inferred from
      * [predict_instance_schema_uri][google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob.predict_instance_schema_uri],
      * meaning that TFDV will use the data in the exact format(data type) as
@@ -6225,6 +6228,7 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
      * <pre>
      * YAML schema file uri describing the format of a single instance that you
      * want Tensorflow Data Validation (TFDV) to analyze.
+     *
      * If this field is empty, all the feature data types are inferred from
      * [predict_instance_schema_uri][google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob.predict_instance_schema_uri],
      * meaning that TFDV will use the data in the exact format(data type) as
@@ -6251,6 +6255,7 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
      * <pre>
      * YAML schema file uri describing the format of a single instance that you
      * want Tensorflow Data Validation (TFDV) to analyze.
+     *
      * If this field is empty, all the feature data types are inferred from
      * [predict_instance_schema_uri][google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob.predict_instance_schema_uri],
      * meaning that TFDV will use the data in the exact format(data type) as
@@ -6993,9 +6998,11 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
      * <pre>
      * The labels with user-defined metadata to organize your
      * ModelDeploymentMonitoringJob.
+     *
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
+     *
      * See https://goo.gl/xmQnxf for more information and examples of labels.
      * </pre>
      *
@@ -7020,9 +7027,11 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
      * <pre>
      * The labels with user-defined metadata to organize your
      * ModelDeploymentMonitoringJob.
+     *
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
+     *
      * See https://goo.gl/xmQnxf for more information and examples of labels.
      * </pre>
      *
@@ -7038,9 +7047,11 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
      * <pre>
      * The labels with user-defined metadata to organize your
      * ModelDeploymentMonitoringJob.
+     *
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
+     *
      * See https://goo.gl/xmQnxf for more information and examples of labels.
      * </pre>
      *
@@ -7063,9 +7074,11 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
      * <pre>
      * The labels with user-defined metadata to organize your
      * ModelDeploymentMonitoringJob.
+     *
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
+     *
      * See https://goo.gl/xmQnxf for more information and examples of labels.
      * </pre>
      *
@@ -7094,9 +7107,11 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
      * <pre>
      * The labels with user-defined metadata to organize your
      * ModelDeploymentMonitoringJob.
+     *
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
+     *
      * See https://goo.gl/xmQnxf for more information and examples of labels.
      * </pre>
      *
@@ -7121,9 +7136,11 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
      * <pre>
      * The labels with user-defined metadata to organize your
      * ModelDeploymentMonitoringJob.
+     *
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
+     *
      * See https://goo.gl/xmQnxf for more information and examples of labels.
      * </pre>
      *
@@ -7146,9 +7163,11 @@ public final class ModelDeploymentMonitoringJob extends com.google.protobuf.Gene
      * <pre>
      * The labels with user-defined metadata to organize your
      * ModelDeploymentMonitoringJob.
+     *
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
+     *
      * See https://goo.gl/xmQnxf for more information and examples of labels.
      * </pre>
      *

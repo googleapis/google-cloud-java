@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,8 +56,8 @@ public interface ResetWorkspaceChangesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Full file paths to reset back to their committed state including filename,
-   * rooted at workspace root. If left empty, all files will be reset.
+   * Optional. Full file paths to reset back to their committed state including
+   * filename, rooted at workspace root. If left empty, all files will be reset.
    * </pre>
    *
    * <code>repeated string paths = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -69,8 +69,8 @@ public interface ResetWorkspaceChangesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Full file paths to reset back to their committed state including filename,
-   * rooted at workspace root. If left empty, all files will be reset.
+   * Optional. Full file paths to reset back to their committed state including
+   * filename, rooted at workspace root. If left empty, all files will be reset.
    * </pre>
    *
    * <code>repeated string paths = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -82,8 +82,8 @@ public interface ResetWorkspaceChangesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Full file paths to reset back to their committed state including filename,
-   * rooted at workspace root. If left empty, all files will be reset.
+   * Optional. Full file paths to reset back to their committed state including
+   * filename, rooted at workspace root. If left empty, all files will be reset.
    * </pre>
    *
    * <code>repeated string paths = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -96,8 +96,8 @@ public interface ResetWorkspaceChangesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Full file paths to reset back to their committed state including filename,
-   * rooted at workspace root. If left empty, all files will be reset.
+   * Optional. Full file paths to reset back to their committed state including
+   * filename, rooted at workspace root. If left empty, all files will be reset.
    * </pre>
    *
    * <code>repeated string paths = 2 [(.google.api.field_behavior) = OPTIONAL];</code>

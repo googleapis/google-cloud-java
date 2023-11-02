@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,6 +62,7 @@ public interface GetPageRequestOrBuilder
    * <pre>
    * The language to retrieve the page for. The following fields are language
    * dependent:
+   *
    * *  `Page.entry_fulfillment.messages`
    * *  `Page.entry_fulfillment.conditional_cases`
    * *  `Page.event_handlers.trigger_fulfillment.messages`
@@ -74,6 +75,7 @@ public interface GetPageRequestOrBuilder
    * `Page.form.parameters.fill_behavior.reprompt_event_handlers.conditional_cases`
    * *  `Page.transition_routes.trigger_fulfillment.messages`
    * *  `Page.transition_routes.trigger_fulfillment.conditional_cases`
+   *
    * If not specified, the agent's default language is used.
    * [Many
    * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
@@ -92,6 +94,7 @@ public interface GetPageRequestOrBuilder
    * <pre>
    * The language to retrieve the page for. The following fields are language
    * dependent:
+   *
    * *  `Page.entry_fulfillment.messages`
    * *  `Page.entry_fulfillment.conditional_cases`
    * *  `Page.event_handlers.trigger_fulfillment.messages`
@@ -104,6 +107,7 @@ public interface GetPageRequestOrBuilder
    * `Page.form.parameters.fill_behavior.reprompt_event_handlers.conditional_cases`
    * *  `Page.transition_routes.trigger_fulfillment.messages`
    * *  `Page.transition_routes.trigger_fulfillment.conditional_cases`
+   *
    * If not specified, the agent's default language is used.
    * [Many
    * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)

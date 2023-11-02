@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,7 +29,9 @@ public interface LinuxNodeConfigOrBuilder
    * <pre>
    * The Linux kernel parameters to be applied to the nodes and all pods running
    * on the nodes.
+   *
    * The following parameters are supported.
+   *
    * net.core.busy_poll
    * net.core.busy_read
    * net.core.netdev_max_backlog
@@ -52,7 +54,9 @@ public interface LinuxNodeConfigOrBuilder
    * <pre>
    * The Linux kernel parameters to be applied to the nodes and all pods running
    * on the nodes.
+   *
    * The following parameters are supported.
+   *
    * net.core.busy_poll
    * net.core.busy_read
    * net.core.netdev_max_backlog
@@ -78,7 +82,9 @@ public interface LinuxNodeConfigOrBuilder
    * <pre>
    * The Linux kernel parameters to be applied to the nodes and all pods running
    * on the nodes.
+   *
    * The following parameters are supported.
+   *
    * net.core.busy_poll
    * net.core.busy_read
    * net.core.netdev_max_backlog
@@ -101,7 +107,9 @@ public interface LinuxNodeConfigOrBuilder
    * <pre>
    * The Linux kernel parameters to be applied to the nodes and all pods running
    * on the nodes.
+   *
    * The following parameters are supported.
+   *
    * net.core.busy_poll
    * net.core.busy_read
    * net.core.netdev_max_backlog
@@ -128,7 +136,9 @@ public interface LinuxNodeConfigOrBuilder
    * <pre>
    * The Linux kernel parameters to be applied to the nodes and all pods running
    * on the nodes.
+   *
    * The following parameters are supported.
+   *
    * net.core.busy_poll
    * net.core.busy_read
    * net.core.netdev_max_backlog

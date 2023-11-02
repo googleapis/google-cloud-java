@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,11 +51,6 @@ public final class CharacterMaskConfig extends com.google.protobuf.GeneratedMess
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new CharacterMaskConfig();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -138,14 +133,17 @@ public final class CharacterMaskConfig extends com.google.protobuf.GeneratedMess
    * <pre>
    * Number of characters to mask. If not set, all matching chars will be
    * masked. Skipped characters do not count towards this tally.
+   *
    * If `number_to_mask` is negative, this denotes inverse masking. Cloud DLP
    * masks all but a number of characters.
    * For example, suppose you have the following values:
+   *
    * - `masking_character` is `*`
    * - `number_to_mask` is `-4`
    * - `reverse_order` is `false`
    * - `CharsToIgnore` includes `-`
    * - Input string is `1234-5678-9012-3456`
+   *
    * The resulting de-identified string is
    * `****-****-****-3456`. Cloud DLP masks all but the last four characters.
    * If `reverse_order` is `true`, all but the first four characters are masked
@@ -860,14 +858,17 @@ public final class CharacterMaskConfig extends com.google.protobuf.GeneratedMess
      * <pre>
      * Number of characters to mask. If not set, all matching chars will be
      * masked. Skipped characters do not count towards this tally.
+     *
      * If `number_to_mask` is negative, this denotes inverse masking. Cloud DLP
      * masks all but a number of characters.
      * For example, suppose you have the following values:
+     *
      * - `masking_character` is `*`
      * - `number_to_mask` is `-4`
      * - `reverse_order` is `false`
      * - `CharsToIgnore` includes `-`
      * - Input string is `1234-5678-9012-3456`
+     *
      * The resulting de-identified string is
      * `****-****-****-3456`. Cloud DLP masks all but the last four characters.
      * If `reverse_order` is `true`, all but the first four characters are masked
@@ -888,14 +889,17 @@ public final class CharacterMaskConfig extends com.google.protobuf.GeneratedMess
      * <pre>
      * Number of characters to mask. If not set, all matching chars will be
      * masked. Skipped characters do not count towards this tally.
+     *
      * If `number_to_mask` is negative, this denotes inverse masking. Cloud DLP
      * masks all but a number of characters.
      * For example, suppose you have the following values:
+     *
      * - `masking_character` is `*`
      * - `number_to_mask` is `-4`
      * - `reverse_order` is `false`
      * - `CharsToIgnore` includes `-`
      * - Input string is `1234-5678-9012-3456`
+     *
      * The resulting de-identified string is
      * `****-****-****-3456`. Cloud DLP masks all but the last four characters.
      * If `reverse_order` is `true`, all but the first four characters are masked
@@ -920,14 +924,17 @@ public final class CharacterMaskConfig extends com.google.protobuf.GeneratedMess
      * <pre>
      * Number of characters to mask. If not set, all matching chars will be
      * masked. Skipped characters do not count towards this tally.
+     *
      * If `number_to_mask` is negative, this denotes inverse masking. Cloud DLP
      * masks all but a number of characters.
      * For example, suppose you have the following values:
+     *
      * - `masking_character` is `*`
      * - `number_to_mask` is `-4`
      * - `reverse_order` is `false`
      * - `CharsToIgnore` includes `-`
      * - Input string is `1234-5678-9012-3456`
+     *
      * The resulting de-identified string is
      * `****-****-****-3456`. Cloud DLP masks all but the last four characters.
      * If `reverse_order` is `true`, all but the first four characters are masked

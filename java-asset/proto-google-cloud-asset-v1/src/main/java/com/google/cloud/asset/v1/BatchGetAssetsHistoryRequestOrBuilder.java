@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -63,7 +63,9 @@ public interface BatchGetAssetsHistoryRequestOrBuilder
    * A list of the full names of the assets.
    * See: https://cloud.google.com/asset-inventory/docs/resource-name-format
    * Example:
+   *
    * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
+   *
    * The request becomes a no-op if the asset name list is empty, and the max
    * size of the asset name list is 100 in one request.
    * </pre>
@@ -80,7 +82,9 @@ public interface BatchGetAssetsHistoryRequestOrBuilder
    * A list of the full names of the assets.
    * See: https://cloud.google.com/asset-inventory/docs/resource-name-format
    * Example:
+   *
    * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
+   *
    * The request becomes a no-op if the asset name list is empty, and the max
    * size of the asset name list is 100 in one request.
    * </pre>
@@ -97,7 +101,9 @@ public interface BatchGetAssetsHistoryRequestOrBuilder
    * A list of the full names of the assets.
    * See: https://cloud.google.com/asset-inventory/docs/resource-name-format
    * Example:
+   *
    * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
+   *
    * The request becomes a no-op if the asset name list is empty, and the max
    * size of the asset name list is 100 in one request.
    * </pre>
@@ -115,7 +121,9 @@ public interface BatchGetAssetsHistoryRequestOrBuilder
    * A list of the full names of the assets.
    * See: https://cloud.google.com/asset-inventory/docs/resource-name-format
    * Example:
+   *
    * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
+   *
    * The request becomes a no-op if the asset name list is empty, and the max
    * size of the asset name list is 100 in one request.
    * </pre>

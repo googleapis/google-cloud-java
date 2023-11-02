@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,11 +43,6 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ResourceRequirements();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -107,6 +102,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Only ´memory´ and 'cpu' are supported.
+   *
    * &lt;p&gt;Notes:
    *  * The only supported values for CPU are '1', '2', '4', and '8'. Setting 4
    * CPU requires at least 2Gi of memory. For more information, go to
@@ -135,6 +131,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Only ´memory´ and 'cpu' are supported.
+   *
    * &lt;p&gt;Notes:
    *  * The only supported values for CPU are '1', '2', '4', and '8'. Setting 4
    * CPU requires at least 2Gi of memory. For more information, go to
@@ -154,6 +151,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Only ´memory´ and 'cpu' are supported.
+   *
    * &lt;p&gt;Notes:
    *  * The only supported values for CPU are '1', '2', '4', and '8'. Setting 4
    * CPU requires at least 2Gi of memory. For more information, go to
@@ -180,6 +178,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Only ´memory´ and 'cpu' are supported.
+   *
    * &lt;p&gt;Notes:
    *  * The only supported values for CPU are '1', '2', '4', and '8'. Setting 4
    * CPU requires at least 2Gi of memory. For more information, go to
@@ -687,6 +686,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Only ´memory´ and 'cpu' are supported.
+     *
      * &lt;p&gt;Notes:
      *  * The only supported values for CPU are '1', '2', '4', and '8'. Setting 4
      * CPU requires at least 2Gi of memory. For more information, go to
@@ -715,6 +715,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Only ´memory´ and 'cpu' are supported.
+     *
      * &lt;p&gt;Notes:
      *  * The only supported values for CPU are '1', '2', '4', and '8'. Setting 4
      * CPU requires at least 2Gi of memory. For more information, go to
@@ -734,6 +735,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Only ´memory´ and 'cpu' are supported.
+     *
      * &lt;p&gt;Notes:
      *  * The only supported values for CPU are '1', '2', '4', and '8'. Setting 4
      * CPU requires at least 2Gi of memory. For more information, go to
@@ -760,6 +762,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Only ´memory´ and 'cpu' are supported.
+     *
      * &lt;p&gt;Notes:
      *  * The only supported values for CPU are '1', '2', '4', and '8'. Setting 4
      * CPU requires at least 2Gi of memory. For more information, go to
@@ -792,6 +795,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Only ´memory´ and 'cpu' are supported.
+     *
      * &lt;p&gt;Notes:
      *  * The only supported values for CPU are '1', '2', '4', and '8'. Setting 4
      * CPU requires at least 2Gi of memory. For more information, go to
@@ -820,6 +824,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Only ´memory´ and 'cpu' are supported.
+     *
      * &lt;p&gt;Notes:
      *  * The only supported values for CPU are '1', '2', '4', and '8'. Setting 4
      * CPU requires at least 2Gi of memory. For more information, go to
@@ -846,6 +851,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Only ´memory´ and 'cpu' are supported.
+     *
      * &lt;p&gt;Notes:
      *  * The only supported values for CPU are '1', '2', '4', and '8'. Setting 4
      * CPU requires at least 2Gi of memory. For more information, go to

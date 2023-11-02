@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,11 +46,6 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ContinuousBackupInfo();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -290,6 +285,65 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
 
   private int scheduleMemoizedSerializedSize;
 
+  public static final int EARLIEST_RESTORABLE_TIME_FIELD_NUMBER = 4;
+  private com.google.protobuf.Timestamp earliestRestorableTime_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The earliest restorable time that can be restored to. Output
+   * only field.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp earliest_restorable_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the earliestRestorableTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasEarliestRestorableTime() {
+    return earliestRestorableTime_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The earliest restorable time that can be restored to. Output
+   * only field.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp earliest_restorable_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The earliestRestorableTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getEarliestRestorableTime() {
+    return earliestRestorableTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : earliestRestorableTime_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The earliest restorable time that can be restored to. Output
+   * only field.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp earliest_restorable_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getEarliestRestorableTimeOrBuilder() {
+    return earliestRestorableTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : earliestRestorableTime_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -318,6 +372,9 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
     for (int i = 0; i < schedule_.size(); i++) {
       output.writeEnumNoTag(schedule_.get(i));
     }
+    if (earliestRestorableTime_ != null) {
+      output.writeMessage(4, getEarliestRestorableTime());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -345,6 +402,10 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
       }
       scheduleMemoizedSerializedSize = dataSize;
     }
+    if (earliestRestorableTime_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(4, getEarliestRestorableTime());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -370,6 +431,10 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
       if (!getEnabledTime().equals(other.getEnabledTime())) return false;
     }
     if (!schedule_.equals(other.schedule_)) return false;
+    if (hasEarliestRestorableTime() != other.hasEarliestRestorableTime()) return false;
+    if (hasEarliestRestorableTime()) {
+      if (!getEarliestRestorableTime().equals(other.getEarliestRestorableTime())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -392,6 +457,10 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
     if (getScheduleCount() > 0) {
       hash = (37 * hash) + SCHEDULE_FIELD_NUMBER;
       hash = (53 * hash) + schedule_.hashCode();
+    }
+    if (hasEarliestRestorableTime()) {
+      hash = (37 * hash) + EARLIEST_RESTORABLE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getEarliestRestorableTime().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -545,6 +614,11 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
       }
       schedule_ = java.util.Collections.emptyList();
       bitField0_ = (bitField0_ & ~0x00000004);
+      earliestRestorableTime_ = null;
+      if (earliestRestorableTimeBuilder_ != null) {
+        earliestRestorableTimeBuilder_.dispose();
+        earliestRestorableTimeBuilder_ = null;
+      }
       return this;
     }
 
@@ -598,6 +672,12 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.enabledTime_ =
             enabledTimeBuilder_ == null ? enabledTime_ : enabledTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.earliestRestorableTime_ =
+            earliestRestorableTimeBuilder_ == null
+                ? earliestRestorableTime_
+                : earliestRestorableTimeBuilder_.build();
       }
     }
 
@@ -663,6 +743,9 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
         }
         onChanged();
       }
+      if (other.hasEarliestRestorableTime()) {
+        mergeEarliestRestorableTime(other.getEarliestRestorableTime());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -720,6 +803,13 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
                 input.popLimit(oldLimit);
                 break;
               } // case 26
+            case 34:
+              {
+                input.readMessage(
+                    getEarliestRestorableTimeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1414,6 +1504,217 @@ public final class ContinuousBackupInfo extends com.google.protobuf.GeneratedMes
       }
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.Timestamp earliestRestorableTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        earliestRestorableTimeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The earliest restorable time that can be restored to. Output
+     * only field.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp earliest_restorable_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the earliestRestorableTime field is set.
+     */
+    public boolean hasEarliestRestorableTime() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The earliest restorable time that can be restored to. Output
+     * only field.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp earliest_restorable_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The earliestRestorableTime.
+     */
+    public com.google.protobuf.Timestamp getEarliestRestorableTime() {
+      if (earliestRestorableTimeBuilder_ == null) {
+        return earliestRestorableTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : earliestRestorableTime_;
+      } else {
+        return earliestRestorableTimeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The earliest restorable time that can be restored to. Output
+     * only field.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp earliest_restorable_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setEarliestRestorableTime(com.google.protobuf.Timestamp value) {
+      if (earliestRestorableTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        earliestRestorableTime_ = value;
+      } else {
+        earliestRestorableTimeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The earliest restorable time that can be restored to. Output
+     * only field.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp earliest_restorable_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setEarliestRestorableTime(
+        com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (earliestRestorableTimeBuilder_ == null) {
+        earliestRestorableTime_ = builderForValue.build();
+      } else {
+        earliestRestorableTimeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The earliest restorable time that can be restored to. Output
+     * only field.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp earliest_restorable_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeEarliestRestorableTime(com.google.protobuf.Timestamp value) {
+      if (earliestRestorableTimeBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)
+            && earliestRestorableTime_ != null
+            && earliestRestorableTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getEarliestRestorableTimeBuilder().mergeFrom(value);
+        } else {
+          earliestRestorableTime_ = value;
+        }
+      } else {
+        earliestRestorableTimeBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The earliest restorable time that can be restored to. Output
+     * only field.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp earliest_restorable_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearEarliestRestorableTime() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      earliestRestorableTime_ = null;
+      if (earliestRestorableTimeBuilder_ != null) {
+        earliestRestorableTimeBuilder_.dispose();
+        earliestRestorableTimeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The earliest restorable time that can be restored to. Output
+     * only field.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp earliest_restorable_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.Timestamp.Builder getEarliestRestorableTimeBuilder() {
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return getEarliestRestorableTimeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The earliest restorable time that can be restored to. Output
+     * only field.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp earliest_restorable_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getEarliestRestorableTimeOrBuilder() {
+      if (earliestRestorableTimeBuilder_ != null) {
+        return earliestRestorableTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return earliestRestorableTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : earliestRestorableTime_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The earliest restorable time that can be restored to. Output
+     * only field.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp earliest_restorable_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getEarliestRestorableTimeFieldBuilder() {
+      if (earliestRestorableTimeBuilder_ == null) {
+        earliestRestorableTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getEarliestRestorableTime(), getParentForChildren(), isClean());
+        earliestRestorableTime_ = null;
+      }
+      return earliestRestorableTimeBuilder_;
     }
 
     @java.lang.Override

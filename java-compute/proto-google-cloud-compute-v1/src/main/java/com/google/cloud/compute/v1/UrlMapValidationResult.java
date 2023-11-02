@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,7 +38,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
   }
 
   private UrlMapValidationResult() {
-    loadErrors_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    loadErrors_ = com.google.protobuf.LazyStringArrayList.emptyList();
     testFailures_ = java.util.Collections.emptyList();
   }
 
@@ -46,11 +46,6 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new UrlMapValidationResult();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -72,7 +67,8 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
   public static final int LOAD_ERRORS_FIELD_NUMBER = 310147300;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList loadErrors_;
+  private com.google.protobuf.LazyStringArrayList loadErrors_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    * <code>repeated string load_errors = 310147300;</code>
    *
@@ -450,8 +446,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      loadErrors_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      loadErrors_ = com.google.protobuf.LazyStringArrayList.emptyList();
       loadSucceeded_ = false;
       if (testFailuresBuilder_ == null) {
         testFailures_ = java.util.Collections.emptyList();
@@ -498,11 +493,6 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
 
     private void buildPartialRepeatedFields(
         com.google.cloud.compute.v1.UrlMapValidationResult result) {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        loadErrors_ = loadErrors_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.loadErrors_ = loadErrors_;
       if (testFailuresBuilder_ == null) {
         if (((bitField0_ & 0x00000004) != 0)) {
           testFailures_ = java.util.Collections.unmodifiableList(testFailures_);
@@ -516,6 +506,10 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
 
     private void buildPartial0(com.google.cloud.compute.v1.UrlMapValidationResult result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        loadErrors_.makeImmutable();
+        result.loadErrors_ = loadErrors_;
+      }
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.loadSucceeded_ = loadSucceeded_;
@@ -577,7 +571,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
       if (!other.loadErrors_.isEmpty()) {
         if (loadErrors_.isEmpty()) {
           loadErrors_ = other.loadErrors_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ |= 0x00000001;
         } else {
           ensureLoadErrorsIsMutable();
           loadErrors_.addAll(other.loadErrors_);
@@ -694,14 +688,14 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList loadErrors_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList loadErrors_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureLoadErrorsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!loadErrors_.isModifiable()) {
         loadErrors_ = new com.google.protobuf.LazyStringArrayList(loadErrors_);
-        bitField0_ |= 0x00000001;
       }
+      bitField0_ |= 0x00000001;
     }
     /**
      * <code>repeated string load_errors = 310147300;</code>
@@ -709,7 +703,8 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
      * @return A list containing the loadErrors.
      */
     public com.google.protobuf.ProtocolStringList getLoadErrorsList() {
-      return loadErrors_.getUnmodifiableView();
+      loadErrors_.makeImmutable();
+      return loadErrors_;
     }
     /**
      * <code>repeated string load_errors = 310147300;</code>
@@ -750,6 +745,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
       }
       ensureLoadErrorsIsMutable();
       loadErrors_.set(index, value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -765,6 +761,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
       }
       ensureLoadErrorsIsMutable();
       loadErrors_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -777,6 +774,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
     public Builder addAllLoadErrors(java.lang.Iterable<java.lang.String> values) {
       ensureLoadErrorsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, loadErrors_);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -786,8 +784,9 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearLoadErrors() {
-      loadErrors_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      loadErrors_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      ;
       onChanged();
       return this;
     }
@@ -804,6 +803,7 @@ public final class UrlMapValidationResult extends com.google.protobuf.GeneratedM
       checkByteStringIsUtf8(value);
       ensureLoadErrorsIsMutable();
       loadErrors_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

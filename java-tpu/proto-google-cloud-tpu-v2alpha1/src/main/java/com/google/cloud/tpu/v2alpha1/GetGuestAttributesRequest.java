@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,18 +41,13 @@ public final class GetGuestAttributesRequest extends com.google.protobuf.Generat
   private GetGuestAttributesRequest() {
     name_ = "";
     queryPath_ = "";
-    workerIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    workerIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new GetGuestAttributesRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -179,7 +174,8 @@ public final class GetGuestAttributesRequest extends com.google.protobuf.Generat
   public static final int WORKER_IDS_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList workerIds_;
+  private com.google.protobuf.LazyStringArrayList workerIds_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -470,8 +466,7 @@ public final class GetGuestAttributesRequest extends com.google.protobuf.Generat
       bitField0_ = 0;
       name_ = "";
       queryPath_ = "";
-      workerIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      workerIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -499,21 +494,11 @@ public final class GetGuestAttributesRequest extends com.google.protobuf.Generat
     public com.google.cloud.tpu.v2alpha1.GetGuestAttributesRequest buildPartial() {
       com.google.cloud.tpu.v2alpha1.GetGuestAttributesRequest result =
           new com.google.cloud.tpu.v2alpha1.GetGuestAttributesRequest(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(
-        com.google.cloud.tpu.v2alpha1.GetGuestAttributesRequest result) {
-      if (((bitField0_ & 0x00000004) != 0)) {
-        workerIds_ = workerIds_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.workerIds_ = workerIds_;
     }
 
     private void buildPartial0(com.google.cloud.tpu.v2alpha1.GetGuestAttributesRequest result) {
@@ -523,6 +508,10 @@ public final class GetGuestAttributesRequest extends com.google.protobuf.Generat
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.queryPath_ = queryPath_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        workerIds_.makeImmutable();
+        result.workerIds_ = workerIds_;
       }
     }
 
@@ -585,7 +574,7 @@ public final class GetGuestAttributesRequest extends com.google.protobuf.Generat
       if (!other.workerIds_.isEmpty()) {
         if (workerIds_.isEmpty()) {
           workerIds_ = other.workerIds_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ |= 0x00000004;
         } else {
           ensureWorkerIdsIsMutable();
           workerIds_.addAll(other.workerIds_);
@@ -878,14 +867,14 @@ public final class GetGuestAttributesRequest extends com.google.protobuf.Generat
       return this;
     }
 
-    private com.google.protobuf.LazyStringList workerIds_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList workerIds_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureWorkerIdsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!workerIds_.isModifiable()) {
         workerIds_ = new com.google.protobuf.LazyStringArrayList(workerIds_);
-        bitField0_ |= 0x00000004;
       }
+      bitField0_ |= 0x00000004;
     }
     /**
      *
@@ -900,7 +889,8 @@ public final class GetGuestAttributesRequest extends com.google.protobuf.Generat
      * @return A list containing the workerIds.
      */
     public com.google.protobuf.ProtocolStringList getWorkerIdsList() {
-      return workerIds_.getUnmodifiableView();
+      workerIds_.makeImmutable();
+      return workerIds_;
     }
     /**
      *
@@ -969,6 +959,7 @@ public final class GetGuestAttributesRequest extends com.google.protobuf.Generat
       }
       ensureWorkerIdsIsMutable();
       workerIds_.set(index, value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -991,6 +982,7 @@ public final class GetGuestAttributesRequest extends com.google.protobuf.Generat
       }
       ensureWorkerIdsIsMutable();
       workerIds_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1010,6 +1002,7 @@ public final class GetGuestAttributesRequest extends com.google.protobuf.Generat
     public Builder addAllWorkerIds(java.lang.Iterable<java.lang.String> values) {
       ensureWorkerIdsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, workerIds_);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1026,8 +1019,9 @@ public final class GetGuestAttributesRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearWorkerIds() {
-      workerIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      workerIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000004);
+      ;
       onChanged();
       return this;
     }
@@ -1051,6 +1045,7 @@ public final class GetGuestAttributesRequest extends com.google.protobuf.Generat
       checkByteStringIsUtf8(value);
       ensureWorkerIdsIsMutable();
       workerIds_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

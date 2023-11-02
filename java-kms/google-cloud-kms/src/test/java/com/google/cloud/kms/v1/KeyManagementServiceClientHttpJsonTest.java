@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -2397,6 +2397,150 @@ public class KeyManagementServiceClientHttpJsonTest {
           "projects/project-5355/locations/location-5355/keyRings/keyRing-5355/cryptoKeys/cryptoKey-5355";
       ByteString ciphertext = ByteString.EMPTY;
       client.decrypt(name, ciphertext);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void rawEncryptTest() throws Exception {
+    RawEncryptResponse expectedResponse =
+        RawEncryptResponse.newBuilder()
+            .setCiphertext(ByteString.EMPTY)
+            .setInitializationVector(ByteString.EMPTY)
+            .setTagLength(172791595)
+            .setCiphertextCrc32C(Int64Value.newBuilder().build())
+            .setInitializationVectorCrc32C(Int64Value.newBuilder().build())
+            .setVerifiedPlaintextCrc32C(true)
+            .setVerifiedAdditionalAuthenticatedDataCrc32C(true)
+            .setVerifiedInitializationVectorCrc32C(true)
+            .setName("name3373707")
+            .setProtectionLevel(ProtectionLevel.forNumber(0))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    RawEncryptRequest request =
+        RawEncryptRequest.newBuilder()
+            .setName(
+                "projects/project-9504/locations/location-9504/keyRings/keyRing-9504/cryptoKeys/cryptoKey-9504/cryptoKeyVersions/cryptoKeyVersion-9504")
+            .setPlaintext(ByteString.EMPTY)
+            .setAdditionalAuthenticatedData(ByteString.EMPTY)
+            .setPlaintextCrc32C(Int64Value.newBuilder().build())
+            .setAdditionalAuthenticatedDataCrc32C(Int64Value.newBuilder().build())
+            .setInitializationVector(ByteString.EMPTY)
+            .setInitializationVectorCrc32C(Int64Value.newBuilder().build())
+            .build();
+
+    RawEncryptResponse actualResponse = client.rawEncrypt(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void rawEncryptExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      RawEncryptRequest request =
+          RawEncryptRequest.newBuilder()
+              .setName(
+                  "projects/project-9504/locations/location-9504/keyRings/keyRing-9504/cryptoKeys/cryptoKey-9504/cryptoKeyVersions/cryptoKeyVersion-9504")
+              .setPlaintext(ByteString.EMPTY)
+              .setAdditionalAuthenticatedData(ByteString.EMPTY)
+              .setPlaintextCrc32C(Int64Value.newBuilder().build())
+              .setAdditionalAuthenticatedDataCrc32C(Int64Value.newBuilder().build())
+              .setInitializationVector(ByteString.EMPTY)
+              .setInitializationVectorCrc32C(Int64Value.newBuilder().build())
+              .build();
+      client.rawEncrypt(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void rawDecryptTest() throws Exception {
+    RawDecryptResponse expectedResponse =
+        RawDecryptResponse.newBuilder()
+            .setPlaintext(ByteString.EMPTY)
+            .setPlaintextCrc32C(Int64Value.newBuilder().build())
+            .setProtectionLevel(ProtectionLevel.forNumber(0))
+            .setVerifiedCiphertextCrc32C(true)
+            .setVerifiedAdditionalAuthenticatedDataCrc32C(true)
+            .setVerifiedInitializationVectorCrc32C(true)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    RawDecryptRequest request =
+        RawDecryptRequest.newBuilder()
+            .setName(
+                "projects/project-9504/locations/location-9504/keyRings/keyRing-9504/cryptoKeys/cryptoKey-9504/cryptoKeyVersions/cryptoKeyVersion-9504")
+            .setCiphertext(ByteString.EMPTY)
+            .setAdditionalAuthenticatedData(ByteString.EMPTY)
+            .setInitializationVector(ByteString.EMPTY)
+            .setTagLength(172791595)
+            .setCiphertextCrc32C(Int64Value.newBuilder().build())
+            .setAdditionalAuthenticatedDataCrc32C(Int64Value.newBuilder().build())
+            .setInitializationVectorCrc32C(Int64Value.newBuilder().build())
+            .build();
+
+    RawDecryptResponse actualResponse = client.rawDecrypt(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void rawDecryptExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      RawDecryptRequest request =
+          RawDecryptRequest.newBuilder()
+              .setName(
+                  "projects/project-9504/locations/location-9504/keyRings/keyRing-9504/cryptoKeys/cryptoKey-9504/cryptoKeyVersions/cryptoKeyVersion-9504")
+              .setCiphertext(ByteString.EMPTY)
+              .setAdditionalAuthenticatedData(ByteString.EMPTY)
+              .setInitializationVector(ByteString.EMPTY)
+              .setTagLength(172791595)
+              .setCiphertextCrc32C(Int64Value.newBuilder().build())
+              .setAdditionalAuthenticatedDataCrc32C(Int64Value.newBuilder().build())
+              .setInitializationVectorCrc32C(Int64Value.newBuilder().build())
+              .build();
+      client.rawDecrypt(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ package com.google.cloud.datacatalog.v1;
  * <pre>
  * Specification for a group of BigQuery tables with the `[prefix]YYYYMMDD` name
  * pattern.
+ *
  * For more information, see [Introduction to partitioned tables]
  * (https://cloud.google.com/bigquery/docs/partitioned-tables#partitioning_versus_sharding).
  * </pre>
@@ -52,11 +53,6 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
     return new BigQueryDateShardedSpec();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datacatalog.v1.TableSpecOuterClass
         .internal_static_google_cloud_datacatalog_v1_BigQueryDateShardedSpec_descriptor;
@@ -82,6 +78,7 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
    * <pre>
    * Output only. The Data Catalog resource name of the dataset entry the
    * current table belongs to. For example:
+   *
    * `projects/{PROJECT_ID}/locations/{LOCATION}/entrygroups/{ENTRY_GROUP_ID}/entries/{ENTRY_ID}`.
    * </pre>
    *
@@ -109,6 +106,7 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
    * <pre>
    * Output only. The Data Catalog resource name of the dataset entry the
    * current table belongs to. For example:
+   *
    * `projects/{PROJECT_ID}/locations/{LOCATION}/entrygroups/{ENTRY_GROUP_ID}/entries/{ENTRY_ID}`.
    * </pre>
    *
@@ -140,6 +138,7 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
    *
    * <pre>
    * Output only. The table name prefix of the shards.
+   *
    * The name of any given shard is `[table_prefix]YYYYMMDD`.
    * For example, for the `MyTable20180101` shard, the
    * `table_prefix` is `MyTable`.
@@ -166,6 +165,7 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
    *
    * <pre>
    * Output only. The table name prefix of the shards.
+   *
    * The name of any given shard is `[table_prefix]YYYYMMDD`.
    * For example, for the `MyTable20180101` shard, the
    * `table_prefix` is `MyTable`.
@@ -450,6 +450,7 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
    * <pre>
    * Specification for a group of BigQuery tables with the `[prefix]YYYYMMDD` name
    * pattern.
+   *
    * For more information, see [Introduction to partitioned tables]
    * (https://cloud.google.com/bigquery/docs/partitioned-tables#partitioning_versus_sharding).
    * </pre>
@@ -680,6 +681,7 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
      * <pre>
      * Output only. The Data Catalog resource name of the dataset entry the
      * current table belongs to. For example:
+     *
      * `projects/{PROJECT_ID}/locations/{LOCATION}/entrygroups/{ENTRY_GROUP_ID}/entries/{ENTRY_ID}`.
      * </pre>
      *
@@ -706,6 +708,7 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
      * <pre>
      * Output only. The Data Catalog resource name of the dataset entry the
      * current table belongs to. For example:
+     *
      * `projects/{PROJECT_ID}/locations/{LOCATION}/entrygroups/{ENTRY_GROUP_ID}/entries/{ENTRY_ID}`.
      * </pre>
      *
@@ -732,6 +735,7 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
      * <pre>
      * Output only. The Data Catalog resource name of the dataset entry the
      * current table belongs to. For example:
+     *
      * `projects/{PROJECT_ID}/locations/{LOCATION}/entrygroups/{ENTRY_GROUP_ID}/entries/{ENTRY_ID}`.
      * </pre>
      *
@@ -757,6 +761,7 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
      * <pre>
      * Output only. The Data Catalog resource name of the dataset entry the
      * current table belongs to. For example:
+     *
      * `projects/{PROJECT_ID}/locations/{LOCATION}/entrygroups/{ENTRY_GROUP_ID}/entries/{ENTRY_ID}`.
      * </pre>
      *
@@ -778,6 +783,7 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
      * <pre>
      * Output only. The Data Catalog resource name of the dataset entry the
      * current table belongs to. For example:
+     *
      * `projects/{PROJECT_ID}/locations/{LOCATION}/entrygroups/{ENTRY_GROUP_ID}/entries/{ENTRY_ID}`.
      * </pre>
      *
@@ -805,6 +811,7 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
      *
      * <pre>
      * Output only. The table name prefix of the shards.
+     *
      * The name of any given shard is `[table_prefix]YYYYMMDD`.
      * For example, for the `MyTable20180101` shard, the
      * `table_prefix` is `MyTable`.
@@ -830,6 +837,7 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
      *
      * <pre>
      * Output only. The table name prefix of the shards.
+     *
      * The name of any given shard is `[table_prefix]YYYYMMDD`.
      * For example, for the `MyTable20180101` shard, the
      * `table_prefix` is `MyTable`.
@@ -855,6 +863,7 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
      *
      * <pre>
      * Output only. The table name prefix of the shards.
+     *
      * The name of any given shard is `[table_prefix]YYYYMMDD`.
      * For example, for the `MyTable20180101` shard, the
      * `table_prefix` is `MyTable`.
@@ -879,6 +888,7 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
      *
      * <pre>
      * Output only. The table name prefix of the shards.
+     *
      * The name of any given shard is `[table_prefix]YYYYMMDD`.
      * For example, for the `MyTable20180101` shard, the
      * `table_prefix` is `MyTable`.
@@ -899,6 +909,7 @@ public final class BigQueryDateShardedSpec extends com.google.protobuf.Generated
      *
      * <pre>
      * Output only. The table name prefix of the shards.
+     *
      * The name of any given shard is `[table_prefix]YYYYMMDD`.
      * For example, for the `MyTable20180101` shard, the
      * `table_prefix` is `MyTable`.

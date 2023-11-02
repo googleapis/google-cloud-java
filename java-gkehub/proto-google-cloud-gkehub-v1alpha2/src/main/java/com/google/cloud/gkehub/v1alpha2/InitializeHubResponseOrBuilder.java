@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,9 @@ public interface InitializeHubResponseOrBuilder
    *
    * <pre>
    * Name of the Hub default service identity, in the format:
+   *
    *     service-&lt;project-number&gt;&#64;gcp-sa-gkehub.iam.gserviceaccount.com
+   *
    * The service account has `roles/gkehub.serviceAgent` in the Hub project.
    * </pre>
    *
@@ -42,7 +44,9 @@ public interface InitializeHubResponseOrBuilder
    *
    * <pre>
    * Name of the Hub default service identity, in the format:
+   *
    *     service-&lt;project-number&gt;&#64;gcp-sa-gkehub.iam.gserviceaccount.com
+   *
    * The service account has `roles/gkehub.serviceAgent` in the Hub project.
    * </pre>
    *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ package com.google.cloud.dataproc.v1;
  *
  * <pre>
  * A request to delete a workflow template.
+ *
  * Currently started workflows will remain running.
  * </pre>
  *
@@ -46,11 +47,6 @@ public final class DeleteWorkflowTemplateRequest extends com.google.protobuf.Gen
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new DeleteWorkflowTemplateRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -78,9 +74,11 @@ public final class DeleteWorkflowTemplateRequest extends com.google.protobuf.Gen
    * <pre>
    * Required. The resource name of the workflow template, as described
    * in https://cloud.google.com/apis/design/resource_names.
+   *
    * * For `projects.regions.workflowTemplates.delete`, the resource name
    * of the template has the following format:
    *   `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
+   *
    * * For `projects.locations.workflowTemplates.instantiate`, the resource name
    *   of the template has the following format:
    *   `projects/{project_id}/locations/{location}/workflowTemplates/{template_id}`
@@ -110,9 +108,11 @@ public final class DeleteWorkflowTemplateRequest extends com.google.protobuf.Gen
    * <pre>
    * Required. The resource name of the workflow template, as described
    * in https://cloud.google.com/apis/design/resource_names.
+   *
    * * For `projects.regions.workflowTemplates.delete`, the resource name
    * of the template has the following format:
    *   `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
+   *
    * * For `projects.locations.workflowTemplates.instantiate`, the resource name
    *   of the template has the following format:
    *   `projects/{project_id}/locations/{location}/workflowTemplates/{template_id}`
@@ -331,6 +331,7 @@ public final class DeleteWorkflowTemplateRequest extends com.google.protobuf.Gen
    *
    * <pre>
    * A request to delete a workflow template.
+   *
    * Currently started workflows will remain running.
    * </pre>
    *
@@ -530,9 +531,11 @@ public final class DeleteWorkflowTemplateRequest extends com.google.protobuf.Gen
      * <pre>
      * Required. The resource name of the workflow template, as described
      * in https://cloud.google.com/apis/design/resource_names.
+     *
      * * For `projects.regions.workflowTemplates.delete`, the resource name
      * of the template has the following format:
      *   `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
+     *
      * * For `projects.locations.workflowTemplates.instantiate`, the resource name
      *   of the template has the following format:
      *   `projects/{project_id}/locations/{location}/workflowTemplates/{template_id}`
@@ -561,9 +564,11 @@ public final class DeleteWorkflowTemplateRequest extends com.google.protobuf.Gen
      * <pre>
      * Required. The resource name of the workflow template, as described
      * in https://cloud.google.com/apis/design/resource_names.
+     *
      * * For `projects.regions.workflowTemplates.delete`, the resource name
      * of the template has the following format:
      *   `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
+     *
      * * For `projects.locations.workflowTemplates.instantiate`, the resource name
      *   of the template has the following format:
      *   `projects/{project_id}/locations/{location}/workflowTemplates/{template_id}`
@@ -592,9 +597,11 @@ public final class DeleteWorkflowTemplateRequest extends com.google.protobuf.Gen
      * <pre>
      * Required. The resource name of the workflow template, as described
      * in https://cloud.google.com/apis/design/resource_names.
+     *
      * * For `projects.regions.workflowTemplates.delete`, the resource name
      * of the template has the following format:
      *   `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
+     *
      * * For `projects.locations.workflowTemplates.instantiate`, the resource name
      *   of the template has the following format:
      *   `projects/{project_id}/locations/{location}/workflowTemplates/{template_id}`
@@ -622,9 +629,11 @@ public final class DeleteWorkflowTemplateRequest extends com.google.protobuf.Gen
      * <pre>
      * Required. The resource name of the workflow template, as described
      * in https://cloud.google.com/apis/design/resource_names.
+     *
      * * For `projects.regions.workflowTemplates.delete`, the resource name
      * of the template has the following format:
      *   `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
+     *
      * * For `projects.locations.workflowTemplates.instantiate`, the resource name
      *   of the template has the following format:
      *   `projects/{project_id}/locations/{location}/workflowTemplates/{template_id}`
@@ -648,9 +657,11 @@ public final class DeleteWorkflowTemplateRequest extends com.google.protobuf.Gen
      * <pre>
      * Required. The resource name of the workflow template, as described
      * in https://cloud.google.com/apis/design/resource_names.
+     *
      * * For `projects.regions.workflowTemplates.delete`, the resource name
      * of the template has the following format:
      *   `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
+     *
      * * For `projects.locations.workflowTemplates.instantiate`, the resource name
      *   of the template has the following format:
      *   `projects/{project_id}/locations/{location}/workflowTemplates/{template_id}`

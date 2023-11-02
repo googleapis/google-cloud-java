@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,11 +49,6 @@ public final class SecurityMarks extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new SecurityMarks();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -173,6 +168,7 @@ public final class SecurityMarks extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Mutable user specified security marks belonging to the parent resource.
    * Constraints are as follows:
+   *
    *   * Keys and values are treated as case insensitive
    *   * Keys must be between 1 - 256 characters (inclusive)
    *   * Keys must be letters, numbers, underscores, or dashes
@@ -201,6 +197,7 @@ public final class SecurityMarks extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Mutable user specified security marks belonging to the parent resource.
    * Constraints are as follows:
+   *
    *   * Keys and values are treated as case insensitive
    *   * Keys must be between 1 - 256 characters (inclusive)
    *   * Keys must be letters, numbers, underscores, or dashes
@@ -220,6 +217,7 @@ public final class SecurityMarks extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Mutable user specified security marks belonging to the parent resource.
    * Constraints are as follows:
+   *
    *   * Keys and values are treated as case insensitive
    *   * Keys must be between 1 - 256 characters (inclusive)
    *   * Keys must be letters, numbers, underscores, or dashes
@@ -246,6 +244,7 @@ public final class SecurityMarks extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Mutable user specified security marks belonging to the parent resource.
    * Constraints are as follows:
+   *
    *   * Keys and values are treated as case insensitive
    *   * Keys must be between 1 - 256 characters (inclusive)
    *   * Keys must be letters, numbers, underscores, or dashes
@@ -912,6 +911,7 @@ public final class SecurityMarks extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Mutable user specified security marks belonging to the parent resource.
      * Constraints are as follows:
+     *
      *   * Keys and values are treated as case insensitive
      *   * Keys must be between 1 - 256 characters (inclusive)
      *   * Keys must be letters, numbers, underscores, or dashes
@@ -940,6 +940,7 @@ public final class SecurityMarks extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Mutable user specified security marks belonging to the parent resource.
      * Constraints are as follows:
+     *
      *   * Keys and values are treated as case insensitive
      *   * Keys must be between 1 - 256 characters (inclusive)
      *   * Keys must be letters, numbers, underscores, or dashes
@@ -959,6 +960,7 @@ public final class SecurityMarks extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Mutable user specified security marks belonging to the parent resource.
      * Constraints are as follows:
+     *
      *   * Keys and values are treated as case insensitive
      *   * Keys must be between 1 - 256 characters (inclusive)
      *   * Keys must be letters, numbers, underscores, or dashes
@@ -985,6 +987,7 @@ public final class SecurityMarks extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Mutable user specified security marks belonging to the parent resource.
      * Constraints are as follows:
+     *
      *   * Keys and values are treated as case insensitive
      *   * Keys must be between 1 - 256 characters (inclusive)
      *   * Keys must be letters, numbers, underscores, or dashes
@@ -1017,6 +1020,7 @@ public final class SecurityMarks extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Mutable user specified security marks belonging to the parent resource.
      * Constraints are as follows:
+     *
      *   * Keys and values are treated as case insensitive
      *   * Keys must be between 1 - 256 characters (inclusive)
      *   * Keys must be letters, numbers, underscores, or dashes
@@ -1045,6 +1049,7 @@ public final class SecurityMarks extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Mutable user specified security marks belonging to the parent resource.
      * Constraints are as follows:
+     *
      *   * Keys and values are treated as case insensitive
      *   * Keys must be between 1 - 256 characters (inclusive)
      *   * Keys must be letters, numbers, underscores, or dashes
@@ -1071,6 +1076,7 @@ public final class SecurityMarks extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Mutable user specified security marks belonging to the parent resource.
      * Constraints are as follows:
+     *
      *   * Keys and values are treated as case insensitive
      *   * Keys must be between 1 - 256 characters (inclusive)
      *   * Keys must be letters, numbers, underscores, or dashes

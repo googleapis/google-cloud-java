@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -73,6 +73,60 @@ public interface AdvancedSettingsOrBuilder
    */
   com.google.cloud.dialogflow.cx.v3beta1.GcsDestinationOrBuilder
       getAudioExportGcsDestinationOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Settings for DTMF.
+   * Exposed at the following levels:
+   * - Agent level
+   * - Flow level
+   * - Page level
+   * - Parameter level.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.DtmfSettings dtmf_settings = 5;
+   * </code>
+   *
+   * @return Whether the dtmfSettings field is set.
+   */
+  boolean hasDtmfSettings();
+  /**
+   *
+   *
+   * <pre>
+   * Settings for DTMF.
+   * Exposed at the following levels:
+   * - Agent level
+   * - Flow level
+   * - Page level
+   * - Parameter level.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.DtmfSettings dtmf_settings = 5;
+   * </code>
+   *
+   * @return The dtmfSettings.
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.DtmfSettings getDtmfSettings();
+  /**
+   *
+   *
+   * <pre>
+   * Settings for DTMF.
+   * Exposed at the following levels:
+   * - Agent level
+   * - Flow level
+   * - Page level
+   * - Parameter level.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.DtmfSettings dtmf_settings = 5;
+   * </code>
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.DtmfSettingsOrBuilder
+      getDtmfSettingsOrBuilder();
 
   /**
    *

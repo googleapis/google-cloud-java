@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ public interface UpdateSettingsRequestOrBuilder
    *
    * <pre>
    * Required. The settings to update.
+   *
    * The settings' `name` field is used to identify the settings to be updated.
    * Formats:
    *  * `organizations/{organization}/settings`
@@ -50,6 +51,7 @@ public interface UpdateSettingsRequestOrBuilder
    *
    * <pre>
    * Required. The settings to update.
+   *
    * The settings' `name` field is used to identify the settings to be updated.
    * Formats:
    *  * `organizations/{organization}/settings`
@@ -72,6 +74,7 @@ public interface UpdateSettingsRequestOrBuilder
    *
    * <pre>
    * Required. The settings to update.
+   *
    * The settings' `name` field is used to identify the settings to be updated.
    * Formats:
    *  * `organizations/{organization}/settings`

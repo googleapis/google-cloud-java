@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -299,6 +299,7 @@ public class DataCatalogClient implements BackgroundResource {
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setOrderBy("orderBy-1207110587")
+   *           .setAdminSearch(true)
    *           .build();
    *   for (SearchCatalogResult element : dataCatalogClient.searchCatalog(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -344,6 +345,7 @@ public class DataCatalogClient implements BackgroundResource {
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setOrderBy("orderBy-1207110587")
+   *           .setAdminSearch(true)
    *           .build();
    *   ApiFuture<SearchCatalogResult> future =
    *       dataCatalogClient.searchCatalogPagedCallable().futureCall(request);
@@ -390,6 +392,7 @@ public class DataCatalogClient implements BackgroundResource {
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setOrderBy("orderBy-1207110587")
+   *           .setAdminSearch(true)
    *           .build();
    *   while (true) {
    *     SearchCatalogResponse response = dataCatalogClient.searchCatalogCallable().call(request);
@@ -1844,7 +1847,11 @@ public class DataCatalogClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
-   *   LookupEntryRequest request = LookupEntryRequest.newBuilder().build();
+   *   LookupEntryRequest request =
+   *       LookupEntryRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setLocation("location1901043637")
+   *           .build();
    *   Entry response = dataCatalogClient.lookupEntry(request);
    * }
    * }</pre>
@@ -1871,7 +1878,11 @@ public class DataCatalogClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
-   *   LookupEntryRequest request = LookupEntryRequest.newBuilder().build();
+   *   LookupEntryRequest request =
+   *       LookupEntryRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setLocation("location1901043637")
+   *           .build();
    *   ApiFuture<Entry> future = dataCatalogClient.lookupEntryCallable().futureCall(request);
    *   // Do something.
    *   Entry response = future.get();
@@ -5078,6 +5089,7 @@ public class DataCatalogClient implements BackgroundResource {
    *   ImportEntriesRequest request =
    *       ImportEntriesRequest.newBuilder()
    *           .setParent(EntryGroupName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]").toString())
+   *           .setJobId("jobId101296568")
    *           .build();
    *   ImportEntriesResponse response = dataCatalogClient.importEntriesAsync(request).get();
    * }
@@ -5118,6 +5130,7 @@ public class DataCatalogClient implements BackgroundResource {
    *   ImportEntriesRequest request =
    *       ImportEntriesRequest.newBuilder()
    *           .setParent(EntryGroupName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]").toString())
+   *           .setJobId("jobId101296568")
    *           .build();
    *   OperationFuture<ImportEntriesResponse, ImportEntriesMetadata> future =
    *       dataCatalogClient.importEntriesOperationCallable().futureCall(request);
@@ -5158,6 +5171,7 @@ public class DataCatalogClient implements BackgroundResource {
    *   ImportEntriesRequest request =
    *       ImportEntriesRequest.newBuilder()
    *           .setParent(EntryGroupName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]").toString())
+   *           .setJobId("jobId101296568")
    *           .build();
    *   ApiFuture<Operation> future = dataCatalogClient.importEntriesCallable().futureCall(request);
    *   // Do something.

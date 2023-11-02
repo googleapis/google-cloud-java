@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,37 +22,6 @@ public interface GenerateAccessTokenRequestOrBuilder
     extends
     // @@protoc_insertion_point(interface_extends:google.cloud.workstations.v1beta.GenerateAccessTokenRequest)
     com.google.protobuf.MessageOrBuilder {
-
-  /**
-   *
-   *
-   * <pre>
-   * Required. Name of the workstation for which the access token should be
-   * generated.
-   * </pre>
-   *
-   * <code>
-   * string workstation = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-   * </code>
-   *
-   * @return The workstation.
-   */
-  java.lang.String getWorkstation();
-  /**
-   *
-   *
-   * <pre>
-   * Required. Name of the workstation for which the access token should be
-   * generated.
-   * </pre>
-   *
-   * <code>
-   * string workstation = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-   * </code>
-   *
-   * @return The bytes for workstation.
-   */
-  com.google.protobuf.ByteString getWorkstationBytes();
 
   /**
    *
@@ -139,6 +108,37 @@ public interface GenerateAccessTokenRequestOrBuilder
    */
   com.google.protobuf.DurationOrBuilder getTtlOrBuilder();
 
-  public com.google.cloud.workstations.v1beta.GenerateAccessTokenRequest.ExpirationCase
+  /**
+   *
+   *
+   * <pre>
+   * Required. Name of the workstation for which the access token should be
+   * generated.
+   * </pre>
+   *
+   * <code>
+   * string workstation = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The workstation.
+   */
+  java.lang.String getWorkstation();
+  /**
+   *
+   *
+   * <pre>
+   * Required. Name of the workstation for which the access token should be
+   * generated.
+   * </pre>
+   *
+   * <code>
+   * string workstation = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for workstation.
+   */
+  com.google.protobuf.ByteString getWorkstationBytes();
+
+  com.google.cloud.workstations.v1beta.GenerateAccessTokenRequest.ExpirationCase
       getExpirationCase();
 }

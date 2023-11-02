@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,6 +22,108 @@ public interface FirewallPolicyRuleMatcherOrBuilder
     extends
     // @@protoc_insertion_point(interface_extends:google.cloud.compute.v1.FirewallPolicyRuleMatcher)
     com.google.protobuf.MessageOrBuilder {
+
+  /**
+   *
+   *
+   * <pre>
+   * Address groups which should be matched against the traffic destination. Maximum number of destination address groups is 10.
+   * </pre>
+   *
+   * <code>repeated string dest_address_groups = 468760508;</code>
+   *
+   * @return A list containing the destAddressGroups.
+   */
+  java.util.List<java.lang.String> getDestAddressGroupsList();
+  /**
+   *
+   *
+   * <pre>
+   * Address groups which should be matched against the traffic destination. Maximum number of destination address groups is 10.
+   * </pre>
+   *
+   * <code>repeated string dest_address_groups = 468760508;</code>
+   *
+   * @return The count of destAddressGroups.
+   */
+  int getDestAddressGroupsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Address groups which should be matched against the traffic destination. Maximum number of destination address groups is 10.
+   * </pre>
+   *
+   * <code>repeated string dest_address_groups = 468760508;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The destAddressGroups at the given index.
+   */
+  java.lang.String getDestAddressGroups(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Address groups which should be matched against the traffic destination. Maximum number of destination address groups is 10.
+   * </pre>
+   *
+   * <code>repeated string dest_address_groups = 468760508;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the destAddressGroups at the given index.
+   */
+  com.google.protobuf.ByteString getDestAddressGroupsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Fully Qualified Domain Name (FQDN) which should be matched against traffic destination. Maximum number of destination fqdn allowed is 100.
+   * </pre>
+   *
+   * <code>repeated string dest_fqdns = 370712737;</code>
+   *
+   * @return A list containing the destFqdns.
+   */
+  java.util.List<java.lang.String> getDestFqdnsList();
+  /**
+   *
+   *
+   * <pre>
+   * Fully Qualified Domain Name (FQDN) which should be matched against traffic destination. Maximum number of destination fqdn allowed is 100.
+   * </pre>
+   *
+   * <code>repeated string dest_fqdns = 370712737;</code>
+   *
+   * @return The count of destFqdns.
+   */
+  int getDestFqdnsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Fully Qualified Domain Name (FQDN) which should be matched against traffic destination. Maximum number of destination fqdn allowed is 100.
+   * </pre>
+   *
+   * <code>repeated string dest_fqdns = 370712737;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The destFqdns at the given index.
+   */
+  java.lang.String getDestFqdns(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Fully Qualified Domain Name (FQDN) which should be matched against traffic destination. Maximum number of destination fqdn allowed is 100.
+   * </pre>
+   *
+   * <code>repeated string dest_fqdns = 370712737;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the destFqdns at the given index.
+   */
+  com.google.protobuf.ByteString getDestFqdnsBytes(int index);
 
   /**
    *
@@ -73,6 +175,108 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    * @return The bytes of the destIpRanges at the given index.
    */
   com.google.protobuf.ByteString getDestIpRangesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Region codes whose IP addresses will be used to match for destination of traffic. Should be specified as 2 letter country code defined as per ISO 3166 alpha-2 country codes. ex."US" Maximum number of dest region codes allowed is 5000.
+   * </pre>
+   *
+   * <code>repeated string dest_region_codes = 199120280;</code>
+   *
+   * @return A list containing the destRegionCodes.
+   */
+  java.util.List<java.lang.String> getDestRegionCodesList();
+  /**
+   *
+   *
+   * <pre>
+   * Region codes whose IP addresses will be used to match for destination of traffic. Should be specified as 2 letter country code defined as per ISO 3166 alpha-2 country codes. ex."US" Maximum number of dest region codes allowed is 5000.
+   * </pre>
+   *
+   * <code>repeated string dest_region_codes = 199120280;</code>
+   *
+   * @return The count of destRegionCodes.
+   */
+  int getDestRegionCodesCount();
+  /**
+   *
+   *
+   * <pre>
+   * Region codes whose IP addresses will be used to match for destination of traffic. Should be specified as 2 letter country code defined as per ISO 3166 alpha-2 country codes. ex."US" Maximum number of dest region codes allowed is 5000.
+   * </pre>
+   *
+   * <code>repeated string dest_region_codes = 199120280;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The destRegionCodes at the given index.
+   */
+  java.lang.String getDestRegionCodes(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Region codes whose IP addresses will be used to match for destination of traffic. Should be specified as 2 letter country code defined as per ISO 3166 alpha-2 country codes. ex."US" Maximum number of dest region codes allowed is 5000.
+   * </pre>
+   *
+   * <code>repeated string dest_region_codes = 199120280;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the destRegionCodes at the given index.
+   */
+  com.google.protobuf.ByteString getDestRegionCodesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Names of Network Threat Intelligence lists. The IPs in these lists will be matched against traffic destination.
+   * </pre>
+   *
+   * <code>repeated string dest_threat_intelligences = 119896492;</code>
+   *
+   * @return A list containing the destThreatIntelligences.
+   */
+  java.util.List<java.lang.String> getDestThreatIntelligencesList();
+  /**
+   *
+   *
+   * <pre>
+   * Names of Network Threat Intelligence lists. The IPs in these lists will be matched against traffic destination.
+   * </pre>
+   *
+   * <code>repeated string dest_threat_intelligences = 119896492;</code>
+   *
+   * @return The count of destThreatIntelligences.
+   */
+  int getDestThreatIntelligencesCount();
+  /**
+   *
+   *
+   * <pre>
+   * Names of Network Threat Intelligence lists. The IPs in these lists will be matched against traffic destination.
+   * </pre>
+   *
+   * <code>repeated string dest_threat_intelligences = 119896492;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The destThreatIntelligences at the given index.
+   */
+  java.lang.String getDestThreatIntelligences(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Names of Network Threat Intelligence lists. The IPs in these lists will be matched against traffic destination.
+   * </pre>
+   *
+   * <code>repeated string dest_threat_intelligences = 119896492;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the destThreatIntelligences at the given index.
+   */
+  com.google.protobuf.ByteString getDestThreatIntelligencesBytes(int index);
 
   /**
    *
@@ -143,6 +347,108 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    *
    *
    * <pre>
+   * Address groups which should be matched against the traffic source. Maximum number of source address groups is 10.
+   * </pre>
+   *
+   * <code>repeated string src_address_groups = 436423738;</code>
+   *
+   * @return A list containing the srcAddressGroups.
+   */
+  java.util.List<java.lang.String> getSrcAddressGroupsList();
+  /**
+   *
+   *
+   * <pre>
+   * Address groups which should be matched against the traffic source. Maximum number of source address groups is 10.
+   * </pre>
+   *
+   * <code>repeated string src_address_groups = 436423738;</code>
+   *
+   * @return The count of srcAddressGroups.
+   */
+  int getSrcAddressGroupsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Address groups which should be matched against the traffic source. Maximum number of source address groups is 10.
+   * </pre>
+   *
+   * <code>repeated string src_address_groups = 436423738;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The srcAddressGroups at the given index.
+   */
+  java.lang.String getSrcAddressGroups(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Address groups which should be matched against the traffic source. Maximum number of source address groups is 10.
+   * </pre>
+   *
+   * <code>repeated string src_address_groups = 436423738;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the srcAddressGroups at the given index.
+   */
+  com.google.protobuf.ByteString getSrcAddressGroupsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Fully Qualified Domain Name (FQDN) which should be matched against traffic source. Maximum number of source fqdn allowed is 100.
+   * </pre>
+   *
+   * <code>repeated string src_fqdns = 435906147;</code>
+   *
+   * @return A list containing the srcFqdns.
+   */
+  java.util.List<java.lang.String> getSrcFqdnsList();
+  /**
+   *
+   *
+   * <pre>
+   * Fully Qualified Domain Name (FQDN) which should be matched against traffic source. Maximum number of source fqdn allowed is 100.
+   * </pre>
+   *
+   * <code>repeated string src_fqdns = 435906147;</code>
+   *
+   * @return The count of srcFqdns.
+   */
+  int getSrcFqdnsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Fully Qualified Domain Name (FQDN) which should be matched against traffic source. Maximum number of source fqdn allowed is 100.
+   * </pre>
+   *
+   * <code>repeated string src_fqdns = 435906147;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The srcFqdns at the given index.
+   */
+  java.lang.String getSrcFqdns(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Fully Qualified Domain Name (FQDN) which should be matched against traffic source. Maximum number of source fqdn allowed is 100.
+   * </pre>
+   *
+   * <code>repeated string src_fqdns = 435906147;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the srcFqdns at the given index.
+   */
+  com.google.protobuf.ByteString getSrcFqdnsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * CIDR IP address range. Maximum number of source CIDR IP ranges allowed is 5000.
    * </pre>
    *
@@ -189,6 +495,57 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    * @return The bytes of the srcIpRanges at the given index.
    */
   com.google.protobuf.ByteString getSrcIpRangesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Region codes whose IP addresses will be used to match for source of traffic. Should be specified as 2 letter country code defined as per ISO 3166 alpha-2 country codes. ex."US" Maximum number of source region codes allowed is 5000.
+   * </pre>
+   *
+   * <code>repeated string src_region_codes = 99086742;</code>
+   *
+   * @return A list containing the srcRegionCodes.
+   */
+  java.util.List<java.lang.String> getSrcRegionCodesList();
+  /**
+   *
+   *
+   * <pre>
+   * Region codes whose IP addresses will be used to match for source of traffic. Should be specified as 2 letter country code defined as per ISO 3166 alpha-2 country codes. ex."US" Maximum number of source region codes allowed is 5000.
+   * </pre>
+   *
+   * <code>repeated string src_region_codes = 99086742;</code>
+   *
+   * @return The count of srcRegionCodes.
+   */
+  int getSrcRegionCodesCount();
+  /**
+   *
+   *
+   * <pre>
+   * Region codes whose IP addresses will be used to match for source of traffic. Should be specified as 2 letter country code defined as per ISO 3166 alpha-2 country codes. ex."US" Maximum number of source region codes allowed is 5000.
+   * </pre>
+   *
+   * <code>repeated string src_region_codes = 99086742;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The srcRegionCodes at the given index.
+   */
+  java.lang.String getSrcRegionCodes(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Region codes whose IP addresses will be used to match for source of traffic. Should be specified as 2 letter country code defined as per ISO 3166 alpha-2 country codes. ex."US" Maximum number of source region codes allowed is 5000.
+   * </pre>
+   *
+   * <code>repeated string src_region_codes = 99086742;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the srcRegionCodes at the given index.
+   */
+  com.google.protobuf.ByteString getSrcRegionCodesBytes(int index);
 
   /**
    *
@@ -252,4 +609,55 @@ public interface FirewallPolicyRuleMatcherOrBuilder
    */
   com.google.cloud.compute.v1.FirewallPolicyRuleSecureTagOrBuilder getSrcSecureTagsOrBuilder(
       int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Names of Network Threat Intelligence lists. The IPs in these lists will be matched against traffic source.
+   * </pre>
+   *
+   * <code>repeated string src_threat_intelligences = 323631018;</code>
+   *
+   * @return A list containing the srcThreatIntelligences.
+   */
+  java.util.List<java.lang.String> getSrcThreatIntelligencesList();
+  /**
+   *
+   *
+   * <pre>
+   * Names of Network Threat Intelligence lists. The IPs in these lists will be matched against traffic source.
+   * </pre>
+   *
+   * <code>repeated string src_threat_intelligences = 323631018;</code>
+   *
+   * @return The count of srcThreatIntelligences.
+   */
+  int getSrcThreatIntelligencesCount();
+  /**
+   *
+   *
+   * <pre>
+   * Names of Network Threat Intelligence lists. The IPs in these lists will be matched against traffic source.
+   * </pre>
+   *
+   * <code>repeated string src_threat_intelligences = 323631018;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The srcThreatIntelligences at the given index.
+   */
+  java.lang.String getSrcThreatIntelligences(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Names of Network Threat Intelligence lists. The IPs in these lists will be matched against traffic source.
+   * </pre>
+   *
+   * <code>repeated string src_threat_intelligences = 323631018;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the srcThreatIntelligences at the given index.
+   */
+  com.google.protobuf.ByteString getSrcThreatIntelligencesBytes(int index);
 }

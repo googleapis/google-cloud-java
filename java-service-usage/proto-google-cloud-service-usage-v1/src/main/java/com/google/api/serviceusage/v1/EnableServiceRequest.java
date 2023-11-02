@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class EnableServiceRequest extends com.google.protobuf.GeneratedMes
     return new EnableServiceRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.api.serviceusage.v1.ServiceUsageProto
         .internal_static_google_api_serviceusage_v1_EnableServiceRequest_descriptor;
@@ -76,10 +71,13 @@ public final class EnableServiceRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Name of the consumer and service to enable the service on.
+   *
    * The `EnableService` and `DisableService` methods currently only support
    * projects.
+   *
    * Enabling a service requires that the service is public or is shared with
    * the user enabling the service.
+   *
    * An example name would be:
    * `projects/123/services/serviceusage.googleapis.com` where `123` is the
    * project number.
@@ -106,10 +104,13 @@ public final class EnableServiceRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Name of the consumer and service to enable the service on.
+   *
    * The `EnableService` and `DisableService` methods currently only support
    * projects.
+   *
    * Enabling a service requires that the service is public or is shared with
    * the user enabling the service.
+   *
    * An example name would be:
    * `projects/123/services/serviceusage.googleapis.com` where `123` is the
    * project number.
@@ -480,10 +481,13 @@ public final class EnableServiceRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Name of the consumer and service to enable the service on.
+     *
      * The `EnableService` and `DisableService` methods currently only support
      * projects.
+     *
      * Enabling a service requires that the service is public or is shared with
      * the user enabling the service.
+     *
      * An example name would be:
      * `projects/123/services/serviceusage.googleapis.com` where `123` is the
      * project number.
@@ -509,10 +513,13 @@ public final class EnableServiceRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Name of the consumer and service to enable the service on.
+     *
      * The `EnableService` and `DisableService` methods currently only support
      * projects.
+     *
      * Enabling a service requires that the service is public or is shared with
      * the user enabling the service.
+     *
      * An example name would be:
      * `projects/123/services/serviceusage.googleapis.com` where `123` is the
      * project number.
@@ -538,10 +545,13 @@ public final class EnableServiceRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Name of the consumer and service to enable the service on.
+     *
      * The `EnableService` and `DisableService` methods currently only support
      * projects.
+     *
      * Enabling a service requires that the service is public or is shared with
      * the user enabling the service.
+     *
      * An example name would be:
      * `projects/123/services/serviceusage.googleapis.com` where `123` is the
      * project number.
@@ -566,10 +576,13 @@ public final class EnableServiceRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Name of the consumer and service to enable the service on.
+     *
      * The `EnableService` and `DisableService` methods currently only support
      * projects.
+     *
      * Enabling a service requires that the service is public or is shared with
      * the user enabling the service.
+     *
      * An example name would be:
      * `projects/123/services/serviceusage.googleapis.com` where `123` is the
      * project number.
@@ -590,10 +603,13 @@ public final class EnableServiceRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Name of the consumer and service to enable the service on.
+     *
      * The `EnableService` and `DisableService` methods currently only support
      * projects.
+     *
      * Enabling a service requires that the service is public or is shared with
      * the user enabling the service.
+     *
      * An example name would be:
      * `projects/123/services/serviceusage.googleapis.com` where `123` is the
      * project number.

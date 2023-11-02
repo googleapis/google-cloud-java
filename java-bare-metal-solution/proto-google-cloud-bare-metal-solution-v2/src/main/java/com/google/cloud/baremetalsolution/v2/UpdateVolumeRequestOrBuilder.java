@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ public interface UpdateVolumeRequestOrBuilder
    *
    * <pre>
    * Required. The volume to update.
+   *
    * The `name` field is used to identify the volume to update.
    * Format: projects/{project}/locations/{location}/volumes/{volume}
    * </pre>
@@ -44,6 +45,7 @@ public interface UpdateVolumeRequestOrBuilder
    *
    * <pre>
    * Required. The volume to update.
+   *
    * The `name` field is used to identify the volume to update.
    * Format: projects/{project}/locations/{location}/volumes/{volume}
    * </pre>
@@ -60,6 +62,7 @@ public interface UpdateVolumeRequestOrBuilder
    *
    * <pre>
    * Required. The volume to update.
+   *
    * The `name` field is used to identify the volume to update.
    * Format: projects/{project}/locations/{location}/volumes/{volume}
    * </pre>
@@ -76,11 +79,7 @@ public interface UpdateVolumeRequestOrBuilder
    * <pre>
    * The list of fields to update.
    * The only currently supported fields are:
-   *   `snapshot_auto_delete_behavior`
-   *   `snapshot_schedule_policy_name`
    *   'labels'
-   *   'snapshot_enabled'
-   *   'snapshot_reservation_detail.reserved_space_percent'
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -94,11 +93,7 @@ public interface UpdateVolumeRequestOrBuilder
    * <pre>
    * The list of fields to update.
    * The only currently supported fields are:
-   *   `snapshot_auto_delete_behavior`
-   *   `snapshot_schedule_policy_name`
    *   'labels'
-   *   'snapshot_enabled'
-   *   'snapshot_reservation_detail.reserved_space_percent'
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -112,11 +107,7 @@ public interface UpdateVolumeRequestOrBuilder
    * <pre>
    * The list of fields to update.
    * The only currently supported fields are:
-   *   `snapshot_auto_delete_behavior`
-   *   `snapshot_schedule_policy_name`
    *   'labels'
-   *   'snapshot_enabled'
-   *   'snapshot_reservation_detail.reserved_space_percent'
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>

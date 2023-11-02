@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,18 +41,13 @@ public final class AnalysisMessage extends com.google.protobuf.GeneratedMessageV
 
   private AnalysisMessage() {
     description_ = "";
-    resourcePaths_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    resourcePaths_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new AnalysisMessage();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -177,7 +172,8 @@ public final class AnalysisMessage extends com.google.protobuf.GeneratedMessageV
   public static final int RESOURCE_PATHS_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList resourcePaths_;
+  private com.google.protobuf.LazyStringArrayList resourcePaths_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -557,8 +553,7 @@ public final class AnalysisMessage extends com.google.protobuf.GeneratedMessageV
         messageBaseBuilder_ = null;
       }
       description_ = "";
-      resourcePaths_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      resourcePaths_ = com.google.protobuf.LazyStringArrayList.emptyList();
       args_ = null;
       if (argsBuilder_ != null) {
         argsBuilder_.dispose();
@@ -591,21 +586,11 @@ public final class AnalysisMessage extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.gkehub.servicemesh.v1alpha.AnalysisMessage buildPartial() {
       com.google.cloud.gkehub.servicemesh.v1alpha.AnalysisMessage result =
           new com.google.cloud.gkehub.servicemesh.v1alpha.AnalysisMessage(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(
-        com.google.cloud.gkehub.servicemesh.v1alpha.AnalysisMessage result) {
-      if (((bitField0_ & 0x00000004) != 0)) {
-        resourcePaths_ = resourcePaths_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.resourcePaths_ = resourcePaths_;
     }
 
     private void buildPartial0(com.google.cloud.gkehub.servicemesh.v1alpha.AnalysisMessage result) {
@@ -616,6 +601,10 @@ public final class AnalysisMessage extends com.google.protobuf.GeneratedMessageV
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        resourcePaths_.makeImmutable();
+        result.resourcePaths_ = resourcePaths_;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.args_ = argsBuilder_ == null ? args_ : argsBuilder_.build();
@@ -679,7 +668,7 @@ public final class AnalysisMessage extends com.google.protobuf.GeneratedMessageV
       if (!other.resourcePaths_.isEmpty()) {
         if (resourcePaths_.isEmpty()) {
           resourcePaths_ = other.resourcePaths_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ |= 0x00000004;
         } else {
           ensureResourcePathsIsMutable();
           resourcePaths_.addAll(other.resourcePaths_);
@@ -1060,14 +1049,14 @@ public final class AnalysisMessage extends com.google.protobuf.GeneratedMessageV
       return this;
     }
 
-    private com.google.protobuf.LazyStringList resourcePaths_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList resourcePaths_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureResourcePathsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!resourcePaths_.isModifiable()) {
         resourcePaths_ = new com.google.protobuf.LazyStringArrayList(resourcePaths_);
-        bitField0_ |= 0x00000004;
       }
+      bitField0_ |= 0x00000004;
     }
     /**
      *
@@ -1086,7 +1075,8 @@ public final class AnalysisMessage extends com.google.protobuf.GeneratedMessageV
      * @return A list containing the resourcePaths.
      */
     public com.google.protobuf.ProtocolStringList getResourcePathsList() {
-      return resourcePaths_.getUnmodifiableView();
+      resourcePaths_.makeImmutable();
+      return resourcePaths_;
     }
     /**
      *
@@ -1171,6 +1161,7 @@ public final class AnalysisMessage extends com.google.protobuf.GeneratedMessageV
       }
       ensureResourcePathsIsMutable();
       resourcePaths_.set(index, value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1197,6 +1188,7 @@ public final class AnalysisMessage extends com.google.protobuf.GeneratedMessageV
       }
       ensureResourcePathsIsMutable();
       resourcePaths_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1220,6 +1212,7 @@ public final class AnalysisMessage extends com.google.protobuf.GeneratedMessageV
     public Builder addAllResourcePaths(java.lang.Iterable<java.lang.String> values) {
       ensureResourcePathsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, resourcePaths_);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1240,8 +1233,9 @@ public final class AnalysisMessage extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearResourcePaths() {
-      resourcePaths_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      resourcePaths_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000004);
+      ;
       onChanged();
       return this;
     }
@@ -1269,6 +1263,7 @@ public final class AnalysisMessage extends com.google.protobuf.GeneratedMessageV
       checkByteStringIsUtf8(value);
       ensureResourcePathsIsMutable();
       resourcePaths_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

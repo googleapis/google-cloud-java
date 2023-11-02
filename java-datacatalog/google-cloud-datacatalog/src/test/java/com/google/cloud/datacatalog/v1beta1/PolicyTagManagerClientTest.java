@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -55,6 +55,7 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class PolicyTagManagerClientTest {
+  private static MockIAMPolicy mockIAMPolicy;
   private static MockPolicyTagManager mockPolicyTagManager;
   private static MockServiceHelper mockServiceHelper;
   private LocalChannelProvider channelProvider;
@@ -63,9 +64,11 @@ public class PolicyTagManagerClientTest {
   @BeforeClass
   public static void startStaticServer() {
     mockPolicyTagManager = new MockPolicyTagManager();
+    mockIAMPolicy = new MockIAMPolicy();
     mockServiceHelper =
         new MockServiceHelper(
-            UUID.randomUUID().toString(), Arrays.<MockGrpcService>asList(mockPolicyTagManager));
+            UUID.randomUUID().toString(),
+            Arrays.<MockGrpcService>asList(mockPolicyTagManager, mockIAMPolicy));
     mockServiceHelper.start();
   }
 
@@ -98,7 +101,10 @@ public class PolicyTagManagerClientTest {
             .setName(TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]").toString())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
+            .setPolicyTagCount(1074340189)
+            .setTaxonomyTimestamps(SystemTimestamps.newBuilder().build())
             .addAllActivatedPolicyTypes(new ArrayList<Taxonomy.PolicyType>())
+            .setService(Taxonomy.Service.newBuilder().build())
             .build();
     mockPolicyTagManager.addResponse(expectedResponse);
 
@@ -142,7 +148,10 @@ public class PolicyTagManagerClientTest {
             .setName(TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]").toString())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
+            .setPolicyTagCount(1074340189)
+            .setTaxonomyTimestamps(SystemTimestamps.newBuilder().build())
             .addAllActivatedPolicyTypes(new ArrayList<Taxonomy.PolicyType>())
+            .setService(Taxonomy.Service.newBuilder().build())
             .build();
     mockPolicyTagManager.addResponse(expectedResponse);
 
@@ -254,7 +263,10 @@ public class PolicyTagManagerClientTest {
             .setName(TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]").toString())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
+            .setPolicyTagCount(1074340189)
+            .setTaxonomyTimestamps(SystemTimestamps.newBuilder().build())
             .addAllActivatedPolicyTypes(new ArrayList<Taxonomy.PolicyType>())
+            .setService(Taxonomy.Service.newBuilder().build())
             .build();
     mockPolicyTagManager.addResponse(expectedResponse);
 
@@ -383,7 +395,10 @@ public class PolicyTagManagerClientTest {
             .setName(TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]").toString())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
+            .setPolicyTagCount(1074340189)
+            .setTaxonomyTimestamps(SystemTimestamps.newBuilder().build())
             .addAllActivatedPolicyTypes(new ArrayList<Taxonomy.PolicyType>())
+            .setService(Taxonomy.Service.newBuilder().build())
             .build();
     mockPolicyTagManager.addResponse(expectedResponse);
 
@@ -424,7 +439,10 @@ public class PolicyTagManagerClientTest {
             .setName(TaxonomyName.of("[PROJECT]", "[LOCATION]", "[TAXONOMY]").toString())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
+            .setPolicyTagCount(1074340189)
+            .setTaxonomyTimestamps(SystemTimestamps.newBuilder().build())
             .addAllActivatedPolicyTypes(new ArrayList<Taxonomy.PolicyType>())
+            .setService(Taxonomy.Service.newBuilder().build())
             .build();
     mockPolicyTagManager.addResponse(expectedResponse);
 

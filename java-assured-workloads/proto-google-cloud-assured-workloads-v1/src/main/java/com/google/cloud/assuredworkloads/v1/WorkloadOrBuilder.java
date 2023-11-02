@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,6 +30,7 @@ public interface WorkloadOrBuilder
    * Optional. The resource name of the workload.
    * Format:
    * organizations/{organization}/locations/{location}/workloads/{workload}
+   *
    * Read-only.
    * </pre>
    *
@@ -45,6 +46,7 @@ public interface WorkloadOrBuilder
    * Optional. The resource name of the workload.
    * Format:
    * organizations/{organization}/locations/{location}/workloads/{workload}
+   *
    * Read-only.
    * </pre>
    *
@@ -62,6 +64,7 @@ public interface WorkloadOrBuilder
    * When present it must be between 4 to 30 characters.
    * Allowed characters are: lowercase and uppercase letters, numbers,
    * hyphen, and spaces.
+   *
    * Example: My Workload
    * </pre>
    *
@@ -78,6 +81,7 @@ public interface WorkloadOrBuilder
    * When present it must be between 4 to 30 characters.
    * Allowed characters are: lowercase and uppercase letters, numbers,
    * hyphen, and spaces.
+   *
    * Example: My Workload
    * </pre>
    *

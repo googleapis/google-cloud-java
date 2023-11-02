@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -65,6 +65,7 @@ public interface MetricUpdateOrBuilder
    * Metric aggregation kind.  The possible metric aggregation kinds are
    * "Sum", "Max", "Min", "Mean", "Set", "And", "Or", and "Distribution".
    * The specified aggregation kind is case-insensitive.
+   *
    * If omitted, this is not an aggregated value but instead
    * a single metric sample value.
    * </pre>
@@ -81,6 +82,7 @@ public interface MetricUpdateOrBuilder
    * Metric aggregation kind.  The possible metric aggregation kinds are
    * "Sum", "Max", "Min", "Mean", "Set", "And", "Or", and "Distribution".
    * The specified aggregation kind is case-insensitive.
+   *
    * If omitted, this is not an aggregated value but instead
    * a single metric sample value.
    * </pre>

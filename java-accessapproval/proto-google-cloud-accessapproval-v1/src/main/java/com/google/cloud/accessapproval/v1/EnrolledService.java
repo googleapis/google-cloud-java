@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class EnrolledService extends com.google.protobuf.GeneratedMessageV
     return new EnrolledService();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.accessapproval.v1.AccessApprovalProto
         .internal_static_google_cloud_accessapproval_v1_EnrolledService_descriptor;
@@ -78,6 +73,7 @@ public final class EnrolledService extends com.google.protobuf.GeneratedMessageV
    * <pre>
    * The product for which Access Approval will be enrolled. Allowed values are
    * listed below (case-sensitive):
+   *
    *   * all
    *   * GA
    *   * App Engine
@@ -102,8 +98,10 @@ public final class EnrolledService extends com.google.protobuf.GeneratedMessageV
    *   * Resource Manager
    *   * Secret Manager
    *   * Speaker ID
+   *
    * Note: These values are supported as input for legacy purposes, but will not
    * be returned from the API.
+   *
    *   * all
    *   * ga-only
    *   * appengine.googleapis.com
@@ -125,11 +123,14 @@ public final class EnrolledService extends com.google.protobuf.GeneratedMessageV
    *   * secretmanager.googleapis.com
    *   * speakerid.googleapis.com
    *   * storage.googleapis.com
+   *
    * Calls to UpdateAccessApprovalSettings using 'all' or any of the
    * XXX.googleapis.com will be translated to the associated product name
    * ('all', 'App Engine', etc.).
+   *
    * Note: 'all' will enroll the resource in all products supported at both 'GA'
    * and 'Preview' levels.
+   *
    * More information about levels of support is available at
    * https://cloud.google.com/access-approval/docs/supported-services
    * </pre>
@@ -156,6 +157,7 @@ public final class EnrolledService extends com.google.protobuf.GeneratedMessageV
    * <pre>
    * The product for which Access Approval will be enrolled. Allowed values are
    * listed below (case-sensitive):
+   *
    *   * all
    *   * GA
    *   * App Engine
@@ -180,8 +182,10 @@ public final class EnrolledService extends com.google.protobuf.GeneratedMessageV
    *   * Resource Manager
    *   * Secret Manager
    *   * Speaker ID
+   *
    * Note: These values are supported as input for legacy purposes, but will not
    * be returned from the API.
+   *
    *   * all
    *   * ga-only
    *   * appengine.googleapis.com
@@ -203,11 +207,14 @@ public final class EnrolledService extends com.google.protobuf.GeneratedMessageV
    *   * secretmanager.googleapis.com
    *   * speakerid.googleapis.com
    *   * storage.googleapis.com
+   *
    * Calls to UpdateAccessApprovalSettings using 'all' or any of the
    * XXX.googleapis.com will be translated to the associated product name
    * ('all', 'App Engine', etc.).
+   *
    * Note: 'all' will enroll the resource in all products supported at both 'GA'
    * and 'Preview' levels.
+   *
    * More information about levels of support is available at
    * https://cloud.google.com/access-approval/docs/supported-services
    * </pre>
@@ -641,6 +648,7 @@ public final class EnrolledService extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * The product for which Access Approval will be enrolled. Allowed values are
      * listed below (case-sensitive):
+     *
      *   * all
      *   * GA
      *   * App Engine
@@ -665,8 +673,10 @@ public final class EnrolledService extends com.google.protobuf.GeneratedMessageV
      *   * Resource Manager
      *   * Secret Manager
      *   * Speaker ID
+     *
      * Note: These values are supported as input for legacy purposes, but will not
      * be returned from the API.
+     *
      *   * all
      *   * ga-only
      *   * appengine.googleapis.com
@@ -688,11 +698,14 @@ public final class EnrolledService extends com.google.protobuf.GeneratedMessageV
      *   * secretmanager.googleapis.com
      *   * speakerid.googleapis.com
      *   * storage.googleapis.com
+     *
      * Calls to UpdateAccessApprovalSettings using 'all' or any of the
      * XXX.googleapis.com will be translated to the associated product name
      * ('all', 'App Engine', etc.).
+     *
      * Note: 'all' will enroll the resource in all products supported at both 'GA'
      * and 'Preview' levels.
+     *
      * More information about levels of support is available at
      * https://cloud.google.com/access-approval/docs/supported-services
      * </pre>
@@ -718,6 +731,7 @@ public final class EnrolledService extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * The product for which Access Approval will be enrolled. Allowed values are
      * listed below (case-sensitive):
+     *
      *   * all
      *   * GA
      *   * App Engine
@@ -742,8 +756,10 @@ public final class EnrolledService extends com.google.protobuf.GeneratedMessageV
      *   * Resource Manager
      *   * Secret Manager
      *   * Speaker ID
+     *
      * Note: These values are supported as input for legacy purposes, but will not
      * be returned from the API.
+     *
      *   * all
      *   * ga-only
      *   * appengine.googleapis.com
@@ -765,11 +781,14 @@ public final class EnrolledService extends com.google.protobuf.GeneratedMessageV
      *   * secretmanager.googleapis.com
      *   * speakerid.googleapis.com
      *   * storage.googleapis.com
+     *
      * Calls to UpdateAccessApprovalSettings using 'all' or any of the
      * XXX.googleapis.com will be translated to the associated product name
      * ('all', 'App Engine', etc.).
+     *
      * Note: 'all' will enroll the resource in all products supported at both 'GA'
      * and 'Preview' levels.
+     *
      * More information about levels of support is available at
      * https://cloud.google.com/access-approval/docs/supported-services
      * </pre>
@@ -795,6 +814,7 @@ public final class EnrolledService extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * The product for which Access Approval will be enrolled. Allowed values are
      * listed below (case-sensitive):
+     *
      *   * all
      *   * GA
      *   * App Engine
@@ -819,8 +839,10 @@ public final class EnrolledService extends com.google.protobuf.GeneratedMessageV
      *   * Resource Manager
      *   * Secret Manager
      *   * Speaker ID
+     *
      * Note: These values are supported as input for legacy purposes, but will not
      * be returned from the API.
+     *
      *   * all
      *   * ga-only
      *   * appengine.googleapis.com
@@ -842,11 +864,14 @@ public final class EnrolledService extends com.google.protobuf.GeneratedMessageV
      *   * secretmanager.googleapis.com
      *   * speakerid.googleapis.com
      *   * storage.googleapis.com
+     *
      * Calls to UpdateAccessApprovalSettings using 'all' or any of the
      * XXX.googleapis.com will be translated to the associated product name
      * ('all', 'App Engine', etc.).
+     *
      * Note: 'all' will enroll the resource in all products supported at both 'GA'
      * and 'Preview' levels.
+     *
      * More information about levels of support is available at
      * https://cloud.google.com/access-approval/docs/supported-services
      * </pre>
@@ -871,6 +896,7 @@ public final class EnrolledService extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * The product for which Access Approval will be enrolled. Allowed values are
      * listed below (case-sensitive):
+     *
      *   * all
      *   * GA
      *   * App Engine
@@ -895,8 +921,10 @@ public final class EnrolledService extends com.google.protobuf.GeneratedMessageV
      *   * Resource Manager
      *   * Secret Manager
      *   * Speaker ID
+     *
      * Note: These values are supported as input for legacy purposes, but will not
      * be returned from the API.
+     *
      *   * all
      *   * ga-only
      *   * appengine.googleapis.com
@@ -918,11 +946,14 @@ public final class EnrolledService extends com.google.protobuf.GeneratedMessageV
      *   * secretmanager.googleapis.com
      *   * speakerid.googleapis.com
      *   * storage.googleapis.com
+     *
      * Calls to UpdateAccessApprovalSettings using 'all' or any of the
      * XXX.googleapis.com will be translated to the associated product name
      * ('all', 'App Engine', etc.).
+     *
      * Note: 'all' will enroll the resource in all products supported at both 'GA'
      * and 'Preview' levels.
+     *
      * More information about levels of support is available at
      * https://cloud.google.com/access-approval/docs/supported-services
      * </pre>
@@ -943,6 +974,7 @@ public final class EnrolledService extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * The product for which Access Approval will be enrolled. Allowed values are
      * listed below (case-sensitive):
+     *
      *   * all
      *   * GA
      *   * App Engine
@@ -967,8 +999,10 @@ public final class EnrolledService extends com.google.protobuf.GeneratedMessageV
      *   * Resource Manager
      *   * Secret Manager
      *   * Speaker ID
+     *
      * Note: These values are supported as input for legacy purposes, but will not
      * be returned from the API.
+     *
      *   * all
      *   * ga-only
      *   * appengine.googleapis.com
@@ -990,11 +1024,14 @@ public final class EnrolledService extends com.google.protobuf.GeneratedMessageV
      *   * secretmanager.googleapis.com
      *   * speakerid.googleapis.com
      *   * storage.googleapis.com
+     *
      * Calls to UpdateAccessApprovalSettings using 'all' or any of the
      * XXX.googleapis.com will be translated to the associated product name
      * ('all', 'App Engine', etc.).
+     *
      * Note: 'all' will enroll the resource in all products supported at both 'GA'
      * and 'Preview' levels.
+     *
      * More information about levels of support is available at
      * https://cloud.google.com/access-approval/docs/supported-services
      * </pre>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class AgentAssistantRecord extends com.google.protobuf.GeneratedMes
     return new AgentAssistantRecord();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.v2beta1.AnswerRecordsProto
         .internal_static_google_cloud_dialogflow_v2beta1_AgentAssistantRecord_descriptor;
@@ -66,6 +61,8 @@ public final class AgentAssistantRecord extends com.google.protobuf.GeneratedMes
   }
 
   private int answerCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object answer_;
 
   public enum AnswerCase
@@ -74,6 +71,7 @@ public final class AgentAssistantRecord extends com.google.protobuf.GeneratedMes
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     ARTICLE_SUGGESTION_ANSWER(5),
     FAQ_ANSWER(6),
+    DIALOGFLOW_ASSIST_ANSWER(7),
     ANSWER_NOT_SET(0);
     private final int value;
 
@@ -96,6 +94,8 @@ public final class AgentAssistantRecord extends com.google.protobuf.GeneratedMes
           return ARTICLE_SUGGESTION_ANSWER;
         case 6:
           return FAQ_ANSWER;
+        case 7:
+          return DIALOGFLOW_ASSIST_ANSWER;
         case 0:
           return ANSWER_NOT_SET;
         default:
@@ -227,6 +227,64 @@ public final class AgentAssistantRecord extends com.google.protobuf.GeneratedMes
     return com.google.cloud.dialogflow.v2beta1.FaqAnswer.getDefaultInstance();
   }
 
+  public static final int DIALOGFLOW_ASSIST_ANSWER_FIELD_NUMBER = 7;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The Dialogflow assist answer.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.DialogflowAssistAnswer dialogflow_assist_answer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the dialogflowAssistAnswer field is set.
+   */
+  @java.lang.Override
+  public boolean hasDialogflowAssistAnswer() {
+    return answerCase_ == 7;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The Dialogflow assist answer.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.DialogflowAssistAnswer dialogflow_assist_answer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The dialogflowAssistAnswer.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2beta1.DialogflowAssistAnswer getDialogflowAssistAnswer() {
+    if (answerCase_ == 7) {
+      return (com.google.cloud.dialogflow.v2beta1.DialogflowAssistAnswer) answer_;
+    }
+    return com.google.cloud.dialogflow.v2beta1.DialogflowAssistAnswer.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The Dialogflow assist answer.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.DialogflowAssistAnswer dialogflow_assist_answer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2beta1.DialogflowAssistAnswerOrBuilder
+      getDialogflowAssistAnswerOrBuilder() {
+    if (answerCase_ == 7) {
+      return (com.google.cloud.dialogflow.v2beta1.DialogflowAssistAnswer) answer_;
+    }
+    return com.google.cloud.dialogflow.v2beta1.DialogflowAssistAnswer.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -247,6 +305,9 @@ public final class AgentAssistantRecord extends com.google.protobuf.GeneratedMes
     if (answerCase_ == 6) {
       output.writeMessage(6, (com.google.cloud.dialogflow.v2beta1.FaqAnswer) answer_);
     }
+    if (answerCase_ == 7) {
+      output.writeMessage(7, (com.google.cloud.dialogflow.v2beta1.DialogflowAssistAnswer) answer_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -265,6 +326,11 @@ public final class AgentAssistantRecord extends com.google.protobuf.GeneratedMes
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               6, (com.google.cloud.dialogflow.v2beta1.FaqAnswer) answer_);
+    }
+    if (answerCase_ == 7) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              7, (com.google.cloud.dialogflow.v2beta1.DialogflowAssistAnswer) answer_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -290,6 +356,9 @@ public final class AgentAssistantRecord extends com.google.protobuf.GeneratedMes
       case 6:
         if (!getFaqAnswer().equals(other.getFaqAnswer())) return false;
         break;
+      case 7:
+        if (!getDialogflowAssistAnswer().equals(other.getDialogflowAssistAnswer())) return false;
+        break;
       case 0:
       default:
     }
@@ -312,6 +381,10 @@ public final class AgentAssistantRecord extends com.google.protobuf.GeneratedMes
       case 6:
         hash = (37 * hash) + FAQ_ANSWER_FIELD_NUMBER;
         hash = (53 * hash) + getFaqAnswer().hashCode();
+        break;
+      case 7:
+        hash = (37 * hash) + DIALOGFLOW_ASSIST_ANSWER_FIELD_NUMBER;
+        hash = (53 * hash) + getDialogflowAssistAnswer().hashCode();
         break;
       case 0:
       default:
@@ -462,6 +535,9 @@ public final class AgentAssistantRecord extends com.google.protobuf.GeneratedMes
       if (faqAnswerBuilder_ != null) {
         faqAnswerBuilder_.clear();
       }
+      if (dialogflowAssistAnswerBuilder_ != null) {
+        dialogflowAssistAnswerBuilder_.clear();
+      }
       answerCase_ = 0;
       answer_ = null;
       return this;
@@ -512,6 +588,9 @@ public final class AgentAssistantRecord extends com.google.protobuf.GeneratedMes
       }
       if (answerCase_ == 6 && faqAnswerBuilder_ != null) {
         result.answer_ = faqAnswerBuilder_.build();
+      }
+      if (answerCase_ == 7 && dialogflowAssistAnswerBuilder_ != null) {
+        result.answer_ = dialogflowAssistAnswerBuilder_.build();
       }
     }
 
@@ -572,6 +651,11 @@ public final class AgentAssistantRecord extends com.google.protobuf.GeneratedMes
             mergeFaqAnswer(other.getFaqAnswer());
             break;
           }
+        case DIALOGFLOW_ASSIST_ANSWER:
+          {
+            mergeDialogflowAssistAnswer(other.getDialogflowAssistAnswer());
+            break;
+          }
         case ANSWER_NOT_SET:
           {
             break;
@@ -616,6 +700,13 @@ public final class AgentAssistantRecord extends com.google.protobuf.GeneratedMes
                 answerCase_ = 6;
                 break;
               } // case 50
+            case 58:
+              {
+                input.readMessage(
+                    getDialogflowAssistAnswerFieldBuilder().getBuilder(), extensionRegistry);
+                answerCase_ = 7;
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1105,6 +1196,239 @@ public final class AgentAssistantRecord extends com.google.protobuf.GeneratedMes
       answerCase_ = 6;
       onChanged();
       return faqAnswerBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.v2beta1.DialogflowAssistAnswer,
+            com.google.cloud.dialogflow.v2beta1.DialogflowAssistAnswer.Builder,
+            com.google.cloud.dialogflow.v2beta1.DialogflowAssistAnswerOrBuilder>
+        dialogflowAssistAnswerBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The Dialogflow assist answer.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.DialogflowAssistAnswer dialogflow_assist_answer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the dialogflowAssistAnswer field is set.
+     */
+    @java.lang.Override
+    public boolean hasDialogflowAssistAnswer() {
+      return answerCase_ == 7;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The Dialogflow assist answer.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.DialogflowAssistAnswer dialogflow_assist_answer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The dialogflowAssistAnswer.
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2beta1.DialogflowAssistAnswer getDialogflowAssistAnswer() {
+      if (dialogflowAssistAnswerBuilder_ == null) {
+        if (answerCase_ == 7) {
+          return (com.google.cloud.dialogflow.v2beta1.DialogflowAssistAnswer) answer_;
+        }
+        return com.google.cloud.dialogflow.v2beta1.DialogflowAssistAnswer.getDefaultInstance();
+      } else {
+        if (answerCase_ == 7) {
+          return dialogflowAssistAnswerBuilder_.getMessage();
+        }
+        return com.google.cloud.dialogflow.v2beta1.DialogflowAssistAnswer.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The Dialogflow assist answer.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.DialogflowAssistAnswer dialogflow_assist_answer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setDialogflowAssistAnswer(
+        com.google.cloud.dialogflow.v2beta1.DialogflowAssistAnswer value) {
+      if (dialogflowAssistAnswerBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        answer_ = value;
+        onChanged();
+      } else {
+        dialogflowAssistAnswerBuilder_.setMessage(value);
+      }
+      answerCase_ = 7;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The Dialogflow assist answer.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.DialogflowAssistAnswer dialogflow_assist_answer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setDialogflowAssistAnswer(
+        com.google.cloud.dialogflow.v2beta1.DialogflowAssistAnswer.Builder builderForValue) {
+      if (dialogflowAssistAnswerBuilder_ == null) {
+        answer_ = builderForValue.build();
+        onChanged();
+      } else {
+        dialogflowAssistAnswerBuilder_.setMessage(builderForValue.build());
+      }
+      answerCase_ = 7;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The Dialogflow assist answer.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.DialogflowAssistAnswer dialogflow_assist_answer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeDialogflowAssistAnswer(
+        com.google.cloud.dialogflow.v2beta1.DialogflowAssistAnswer value) {
+      if (dialogflowAssistAnswerBuilder_ == null) {
+        if (answerCase_ == 7
+            && answer_
+                != com.google.cloud.dialogflow.v2beta1.DialogflowAssistAnswer
+                    .getDefaultInstance()) {
+          answer_ =
+              com.google.cloud.dialogflow.v2beta1.DialogflowAssistAnswer.newBuilder(
+                      (com.google.cloud.dialogflow.v2beta1.DialogflowAssistAnswer) answer_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          answer_ = value;
+        }
+        onChanged();
+      } else {
+        if (answerCase_ == 7) {
+          dialogflowAssistAnswerBuilder_.mergeFrom(value);
+        } else {
+          dialogflowAssistAnswerBuilder_.setMessage(value);
+        }
+      }
+      answerCase_ = 7;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The Dialogflow assist answer.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.DialogflowAssistAnswer dialogflow_assist_answer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearDialogflowAssistAnswer() {
+      if (dialogflowAssistAnswerBuilder_ == null) {
+        if (answerCase_ == 7) {
+          answerCase_ = 0;
+          answer_ = null;
+          onChanged();
+        }
+      } else {
+        if (answerCase_ == 7) {
+          answerCase_ = 0;
+          answer_ = null;
+        }
+        dialogflowAssistAnswerBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The Dialogflow assist answer.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.DialogflowAssistAnswer dialogflow_assist_answer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2beta1.DialogflowAssistAnswer.Builder
+        getDialogflowAssistAnswerBuilder() {
+      return getDialogflowAssistAnswerFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The Dialogflow assist answer.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.DialogflowAssistAnswer dialogflow_assist_answer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2beta1.DialogflowAssistAnswerOrBuilder
+        getDialogflowAssistAnswerOrBuilder() {
+      if ((answerCase_ == 7) && (dialogflowAssistAnswerBuilder_ != null)) {
+        return dialogflowAssistAnswerBuilder_.getMessageOrBuilder();
+      } else {
+        if (answerCase_ == 7) {
+          return (com.google.cloud.dialogflow.v2beta1.DialogflowAssistAnswer) answer_;
+        }
+        return com.google.cloud.dialogflow.v2beta1.DialogflowAssistAnswer.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The Dialogflow assist answer.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.DialogflowAssistAnswer dialogflow_assist_answer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.v2beta1.DialogflowAssistAnswer,
+            com.google.cloud.dialogflow.v2beta1.DialogflowAssistAnswer.Builder,
+            com.google.cloud.dialogflow.v2beta1.DialogflowAssistAnswerOrBuilder>
+        getDialogflowAssistAnswerFieldBuilder() {
+      if (dialogflowAssistAnswerBuilder_ == null) {
+        if (!(answerCase_ == 7)) {
+          answer_ = com.google.cloud.dialogflow.v2beta1.DialogflowAssistAnswer.getDefaultInstance();
+        }
+        dialogflowAssistAnswerBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.v2beta1.DialogflowAssistAnswer,
+                com.google.cloud.dialogflow.v2beta1.DialogflowAssistAnswer.Builder,
+                com.google.cloud.dialogflow.v2beta1.DialogflowAssistAnswerOrBuilder>(
+                (com.google.cloud.dialogflow.v2beta1.DialogflowAssistAnswer) answer_,
+                getParentForChildren(),
+                isClean());
+        answer_ = null;
+      }
+      answerCase_ = 7;
+      onChanged();
+      return dialogflowAssistAnswerBuilder_;
     }
 
     @java.lang.Override

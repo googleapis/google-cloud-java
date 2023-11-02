@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,11 +49,6 @@ public final class AttestorPublicKey extends com.google.protobuf.GeneratedMessag
     return new AttestorPublicKey();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.binaryauthorization.v1beta1.BinaryAuthorizationResourcesProto
         .internal_static_google_cloud_binaryauthorization_v1beta1_AttestorPublicKey_descriptor;
@@ -70,6 +65,8 @@ public final class AttestorPublicKey extends com.google.protobuf.GeneratedMessag
   }
 
   private int publicKeyCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object publicKey_;
 
   public enum PublicKeyCase
@@ -327,6 +324,7 @@ public final class AttestorPublicKey extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * A raw PKIX SubjectPublicKeyInfo format public key.
+   *
    * NOTE: `id` may be explicitly provided by the caller when using this
    * type of public key, but it MUST be a valid RFC3986 URI. If `id` is left
    * blank, a default one will be computed based on the digest of the DER
@@ -346,6 +344,7 @@ public final class AttestorPublicKey extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * A raw PKIX SubjectPublicKeyInfo format public key.
+   *
    * NOTE: `id` may be explicitly provided by the caller when using this
    * type of public key, but it MUST be a valid RFC3986 URI. If `id` is left
    * blank, a default one will be computed based on the digest of the DER
@@ -368,6 +367,7 @@ public final class AttestorPublicKey extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * A raw PKIX SubjectPublicKeyInfo format public key.
+   *
    * NOTE: `id` may be explicitly provided by the caller when using this
    * type of public key, but it MUST be a valid RFC3986 URI. If `id` is left
    * blank, a default one will be computed based on the digest of the DER
@@ -1283,6 +1283,7 @@ public final class AttestorPublicKey extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * A raw PKIX SubjectPublicKeyInfo format public key.
+     *
      * NOTE: `id` may be explicitly provided by the caller when using this
      * type of public key, but it MUST be a valid RFC3986 URI. If `id` is left
      * blank, a default one will be computed based on the digest of the DER
@@ -1302,6 +1303,7 @@ public final class AttestorPublicKey extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * A raw PKIX SubjectPublicKeyInfo format public key.
+     *
      * NOTE: `id` may be explicitly provided by the caller when using this
      * type of public key, but it MUST be a valid RFC3986 URI. If `id` is left
      * blank, a default one will be computed based on the digest of the DER
@@ -1331,6 +1333,7 @@ public final class AttestorPublicKey extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * A raw PKIX SubjectPublicKeyInfo format public key.
+     *
      * NOTE: `id` may be explicitly provided by the caller when using this
      * type of public key, but it MUST be a valid RFC3986 URI. If `id` is left
      * blank, a default one will be computed based on the digest of the DER
@@ -1358,6 +1361,7 @@ public final class AttestorPublicKey extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * A raw PKIX SubjectPublicKeyInfo format public key.
+     *
      * NOTE: `id` may be explicitly provided by the caller when using this
      * type of public key, but it MUST be a valid RFC3986 URI. If `id` is left
      * blank, a default one will be computed based on the digest of the DER
@@ -1382,6 +1386,7 @@ public final class AttestorPublicKey extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * A raw PKIX SubjectPublicKeyInfo format public key.
+     *
      * NOTE: `id` may be explicitly provided by the caller when using this
      * type of public key, but it MUST be a valid RFC3986 URI. If `id` is left
      * blank, a default one will be computed based on the digest of the DER
@@ -1421,6 +1426,7 @@ public final class AttestorPublicKey extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * A raw PKIX SubjectPublicKeyInfo format public key.
+     *
      * NOTE: `id` may be explicitly provided by the caller when using this
      * type of public key, but it MUST be a valid RFC3986 URI. If `id` is left
      * blank, a default one will be computed based on the digest of the DER
@@ -1450,6 +1456,7 @@ public final class AttestorPublicKey extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * A raw PKIX SubjectPublicKeyInfo format public key.
+     *
      * NOTE: `id` may be explicitly provided by the caller when using this
      * type of public key, but it MUST be a valid RFC3986 URI. If `id` is left
      * blank, a default one will be computed based on the digest of the DER
@@ -1467,6 +1474,7 @@ public final class AttestorPublicKey extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * A raw PKIX SubjectPublicKeyInfo format public key.
+     *
      * NOTE: `id` may be explicitly provided by the caller when using this
      * type of public key, but it MUST be a valid RFC3986 URI. If `id` is left
      * blank, a default one will be computed based on the digest of the DER
@@ -1492,6 +1500,7 @@ public final class AttestorPublicKey extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * A raw PKIX SubjectPublicKeyInfo format public key.
+     *
      * NOTE: `id` may be explicitly provided by the caller when using this
      * type of public key, but it MUST be a valid RFC3986 URI. If `id` is left
      * blank, a default one will be computed based on the digest of the DER

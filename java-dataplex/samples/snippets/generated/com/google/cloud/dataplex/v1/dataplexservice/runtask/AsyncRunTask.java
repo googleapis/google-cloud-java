@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,6 +22,7 @@ import com.google.cloud.dataplex.v1.DataplexServiceClient;
 import com.google.cloud.dataplex.v1.RunTaskRequest;
 import com.google.cloud.dataplex.v1.RunTaskResponse;
 import com.google.cloud.dataplex.v1.TaskName;
+import java.util.HashMap;
 
 public class AsyncRunTask {
 
@@ -39,6 +40,8 @@ public class AsyncRunTask {
       RunTaskRequest request =
           RunTaskRequest.newBuilder()
               .setName(TaskName.of("[PROJECT]", "[LOCATION]", "[LAKE]", "[TASK]").toString())
+              .putAllLabels(new HashMap<String, String>())
+              .putAllArgs(new HashMap<String, String>())
               .build();
       ApiFuture<RunTaskResponse> future =
           dataplexServiceClient.runTaskCallable().futureCall(request);

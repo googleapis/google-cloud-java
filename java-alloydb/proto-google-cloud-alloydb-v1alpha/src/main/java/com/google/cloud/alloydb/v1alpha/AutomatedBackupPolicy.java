@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ package com.google.cloud.alloydb.v1alpha;
  *
  * <pre>
  * Message describing the user-specified automated backup policy.
+ *
  * All fields in the automated backup policy are optional. Defaults for each
  * field are provided if they are not set.
  * </pre>
@@ -47,11 +48,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new AutomatedBackupPolicy();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -91,6 +87,7 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
      * <pre>
      * The times during the day to start a backup. The start times are assumed
      * to be in UTC and to be an exact hour (e.g., 04:00:00).
+     *
      * If no start times are provided, a single fixed start time is chosen
      * arbitrarily.
      * </pre>
@@ -104,6 +101,7 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
      * <pre>
      * The times during the day to start a backup. The start times are assumed
      * to be in UTC and to be an exact hour (e.g., 04:00:00).
+     *
      * If no start times are provided, a single fixed start time is chosen
      * arbitrarily.
      * </pre>
@@ -117,6 +115,7 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
      * <pre>
      * The times during the day to start a backup. The start times are assumed
      * to be in UTC and to be an exact hour (e.g., 04:00:00).
+     *
      * If no start times are provided, a single fixed start time is chosen
      * arbitrarily.
      * </pre>
@@ -130,6 +129,7 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
      * <pre>
      * The times during the day to start a backup. The start times are assumed
      * to be in UTC and to be an exact hour (e.g., 04:00:00).
+     *
      * If no start times are provided, a single fixed start time is chosen
      * arbitrarily.
      * </pre>
@@ -143,6 +143,7 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
      * <pre>
      * The times during the day to start a backup. The start times are assumed
      * to be in UTC and to be an exact hour (e.g., 04:00:00).
+     *
      * If no start times are provided, a single fixed start time is chosen
      * arbitrarily.
      * </pre>
@@ -156,6 +157,7 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The days of the week to perform a backup.
+     *
      * If this field is left empty, the default of every day of the week is
      * used.
      * </pre>
@@ -170,6 +172,7 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The days of the week to perform a backup.
+     *
      * If this field is left empty, the default of every day of the week is
      * used.
      * </pre>
@@ -184,6 +187,7 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The days of the week to perform a backup.
+     *
      * If this field is left empty, the default of every day of the week is
      * used.
      * </pre>
@@ -199,6 +203,7 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The days of the week to perform a backup.
+     *
      * If this field is left empty, the default of every day of the week is
      * used.
      * </pre>
@@ -213,6 +218,7 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The days of the week to perform a backup.
+     *
      * If this field is left empty, the default of every day of the week is
      * used.
      * </pre>
@@ -230,6 +236,7 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
    * <pre>
    * A weekly schedule starts a backup at prescribed start times within a
    * day, for the specified days of the week.
+   *
    * The weekly schedule message is flexible and can be used to create many
    * types of schedules. For example, to have a daily backup that starts at
    * 22:00, configure the `start_times` field to have one element "22:00" and
@@ -259,11 +266,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
       return new WeeklySchedule();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.alloydb.v1alpha.ResourcesProto
           .internal_static_google_cloud_alloydb_v1alpha_AutomatedBackupPolicy_WeeklySchedule_descriptor;
@@ -289,6 +291,7 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
      * <pre>
      * The times during the day to start a backup. The start times are assumed
      * to be in UTC and to be an exact hour (e.g., 04:00:00).
+     *
      * If no start times are provided, a single fixed start time is chosen
      * arbitrarily.
      * </pre>
@@ -305,6 +308,7 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
      * <pre>
      * The times during the day to start a backup. The start times are assumed
      * to be in UTC and to be an exact hour (e.g., 04:00:00).
+     *
      * If no start times are provided, a single fixed start time is chosen
      * arbitrarily.
      * </pre>
@@ -322,6 +326,7 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
      * <pre>
      * The times during the day to start a backup. The start times are assumed
      * to be in UTC and to be an exact hour (e.g., 04:00:00).
+     *
      * If no start times are provided, a single fixed start time is chosen
      * arbitrarily.
      * </pre>
@@ -338,6 +343,7 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
      * <pre>
      * The times during the day to start a backup. The start times are assumed
      * to be in UTC and to be an exact hour (e.g., 04:00:00).
+     *
      * If no start times are provided, a single fixed start time is chosen
      * arbitrarily.
      * </pre>
@@ -354,6 +360,7 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
      * <pre>
      * The times during the day to start a backup. The start times are assumed
      * to be in UTC and to be an exact hour (e.g., 04:00:00).
+     *
      * If no start times are provided, a single fixed start time is chosen
      * arbitrarily.
      * </pre>
@@ -385,6 +392,7 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The days of the week to perform a backup.
+     *
      * If this field is left empty, the default of every day of the week is
      * used.
      * </pre>
@@ -403,6 +411,7 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The days of the week to perform a backup.
+     *
      * If this field is left empty, the default of every day of the week is
      * used.
      * </pre>
@@ -420,6 +429,7 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The days of the week to perform a backup.
+     *
      * If this field is left empty, the default of every day of the week is
      * used.
      * </pre>
@@ -438,6 +448,7 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The days of the week to perform a backup.
+     *
      * If this field is left empty, the default of every day of the week is
      * used.
      * </pre>
@@ -455,6 +466,7 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The days of the week to perform a backup.
+     *
      * If this field is left empty, the default of every day of the week is
      * used.
      * </pre>
@@ -667,6 +679,7 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
      * <pre>
      * A weekly schedule starts a backup at prescribed start times within a
      * day, for the specified days of the week.
+     *
      * The weekly schedule message is flexible and can be used to create many
      * types of schedules. For example, to have a daily backup that starts at
      * 22:00, configure the `start_times` field to have one element "22:00" and
@@ -965,6 +978,7 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
        * <pre>
        * The times during the day to start a backup. The start times are assumed
        * to be in UTC and to be an exact hour (e.g., 04:00:00).
+       *
        * If no start times are provided, a single fixed start time is chosen
        * arbitrarily.
        * </pre>
@@ -984,6 +998,7 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
        * <pre>
        * The times during the day to start a backup. The start times are assumed
        * to be in UTC and to be an exact hour (e.g., 04:00:00).
+       *
        * If no start times are provided, a single fixed start time is chosen
        * arbitrarily.
        * </pre>
@@ -1003,6 +1018,7 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
        * <pre>
        * The times during the day to start a backup. The start times are assumed
        * to be in UTC and to be an exact hour (e.g., 04:00:00).
+       *
        * If no start times are provided, a single fixed start time is chosen
        * arbitrarily.
        * </pre>
@@ -1022,6 +1038,7 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
        * <pre>
        * The times during the day to start a backup. The start times are assumed
        * to be in UTC and to be an exact hour (e.g., 04:00:00).
+       *
        * If no start times are provided, a single fixed start time is chosen
        * arbitrarily.
        * </pre>
@@ -1047,6 +1064,7 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
        * <pre>
        * The times during the day to start a backup. The start times are assumed
        * to be in UTC and to be an exact hour (e.g., 04:00:00).
+       *
        * If no start times are provided, a single fixed start time is chosen
        * arbitrarily.
        * </pre>
@@ -1069,6 +1087,7 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
        * <pre>
        * The times during the day to start a backup. The start times are assumed
        * to be in UTC and to be an exact hour (e.g., 04:00:00).
+       *
        * If no start times are provided, a single fixed start time is chosen
        * arbitrarily.
        * </pre>
@@ -1094,6 +1113,7 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
        * <pre>
        * The times during the day to start a backup. The start times are assumed
        * to be in UTC and to be an exact hour (e.g., 04:00:00).
+       *
        * If no start times are provided, a single fixed start time is chosen
        * arbitrarily.
        * </pre>
@@ -1119,6 +1139,7 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
        * <pre>
        * The times during the day to start a backup. The start times are assumed
        * to be in UTC and to be an exact hour (e.g., 04:00:00).
+       *
        * If no start times are provided, a single fixed start time is chosen
        * arbitrarily.
        * </pre>
@@ -1141,6 +1162,7 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
        * <pre>
        * The times during the day to start a backup. The start times are assumed
        * to be in UTC and to be an exact hour (e.g., 04:00:00).
+       *
        * If no start times are provided, a single fixed start time is chosen
        * arbitrarily.
        * </pre>
@@ -1163,6 +1185,7 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
        * <pre>
        * The times during the day to start a backup. The start times are assumed
        * to be in UTC and to be an exact hour (e.g., 04:00:00).
+       *
        * If no start times are provided, a single fixed start time is chosen
        * arbitrarily.
        * </pre>
@@ -1186,6 +1209,7 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
        * <pre>
        * The times during the day to start a backup. The start times are assumed
        * to be in UTC and to be an exact hour (e.g., 04:00:00).
+       *
        * If no start times are provided, a single fixed start time is chosen
        * arbitrarily.
        * </pre>
@@ -1208,6 +1232,7 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
        * <pre>
        * The times during the day to start a backup. The start times are assumed
        * to be in UTC and to be an exact hour (e.g., 04:00:00).
+       *
        * If no start times are provided, a single fixed start time is chosen
        * arbitrarily.
        * </pre>
@@ -1230,6 +1255,7 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
        * <pre>
        * The times during the day to start a backup. The start times are assumed
        * to be in UTC and to be an exact hour (e.g., 04:00:00).
+       *
        * If no start times are provided, a single fixed start time is chosen
        * arbitrarily.
        * </pre>
@@ -1245,6 +1271,7 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
        * <pre>
        * The times during the day to start a backup. The start times are assumed
        * to be in UTC and to be an exact hour (e.g., 04:00:00).
+       *
        * If no start times are provided, a single fixed start time is chosen
        * arbitrarily.
        * </pre>
@@ -1264,6 +1291,7 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
        * <pre>
        * The times during the day to start a backup. The start times are assumed
        * to be in UTC and to be an exact hour (e.g., 04:00:00).
+       *
        * If no start times are provided, a single fixed start time is chosen
        * arbitrarily.
        * </pre>
@@ -1284,6 +1312,7 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
        * <pre>
        * The times during the day to start a backup. The start times are assumed
        * to be in UTC and to be an exact hour (e.g., 04:00:00).
+       *
        * If no start times are provided, a single fixed start time is chosen
        * arbitrarily.
        * </pre>
@@ -1300,6 +1329,7 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
        * <pre>
        * The times during the day to start a backup. The start times are assumed
        * to be in UTC and to be an exact hour (e.g., 04:00:00).
+       *
        * If no start times are provided, a single fixed start time is chosen
        * arbitrarily.
        * </pre>
@@ -1316,6 +1346,7 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
        * <pre>
        * The times during the day to start a backup. The start times are assumed
        * to be in UTC and to be an exact hour (e.g., 04:00:00).
+       *
        * If no start times are provided, a single fixed start time is chosen
        * arbitrarily.
        * </pre>
@@ -1356,6 +1387,7 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
        *
        * <pre>
        * The days of the week to perform a backup.
+       *
        * If this field is left empty, the default of every day of the week is
        * used.
        * </pre>
@@ -1373,6 +1405,7 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
        *
        * <pre>
        * The days of the week to perform a backup.
+       *
        * If this field is left empty, the default of every day of the week is
        * used.
        * </pre>
@@ -1389,6 +1422,7 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
        *
        * <pre>
        * The days of the week to perform a backup.
+       *
        * If this field is left empty, the default of every day of the week is
        * used.
        * </pre>
@@ -1406,6 +1440,7 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
        *
        * <pre>
        * The days of the week to perform a backup.
+       *
        * If this field is left empty, the default of every day of the week is
        * used.
        * </pre>
@@ -1430,6 +1465,7 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
        *
        * <pre>
        * The days of the week to perform a backup.
+       *
        * If this field is left empty, the default of every day of the week is
        * used.
        * </pre>
@@ -1453,6 +1489,7 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
        *
        * <pre>
        * The days of the week to perform a backup.
+       *
        * If this field is left empty, the default of every day of the week is
        * used.
        * </pre>
@@ -1476,6 +1513,7 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
        *
        * <pre>
        * The days of the week to perform a backup.
+       *
        * If this field is left empty, the default of every day of the week is
        * used.
        * </pre>
@@ -1495,6 +1533,7 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
        *
        * <pre>
        * The days of the week to perform a backup.
+       *
        * If this field is left empty, the default of every day of the week is
        * used.
        * </pre>
@@ -1511,6 +1550,7 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
        *
        * <pre>
        * The days of the week to perform a backup.
+       *
        * If this field is left empty, the default of every day of the week is
        * used.
        * </pre>
@@ -1528,6 +1568,7 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
        *
        * <pre>
        * The days of the week to perform a backup.
+       *
        * If this field is left empty, the default of every day of the week is
        * used.
        * </pre>
@@ -1549,6 +1590,7 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
        *
        * <pre>
        * The days of the week to perform a backup.
+       *
        * If this field is left empty, the default of every day of the week is
        * used.
        * </pre>
@@ -1569,6 +1611,7 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
        *
        * <pre>
        * The days of the week to perform a backup.
+       *
        * If this field is left empty, the default of every day of the week is
        * used.
        * </pre>
@@ -1721,11 +1764,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new TimeBasedRetention();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2466,11 +2504,6 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
       return new QuantityBasedRetention();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.alloydb.v1alpha.ResourcesProto
           .internal_static_google_cloud_alloydb_v1alpha_AutomatedBackupPolicy_QuantityBasedRetention_descriptor;
@@ -2997,6 +3030,8 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
 
   private int bitField0_;
   private int scheduleCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object schedule_;
 
   public enum ScheduleCase
@@ -3041,6 +3076,8 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
   }
 
   private int retentionCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object retention_;
 
   public enum RetentionCase
@@ -3312,6 +3349,7 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
    * The length of the time window during which a backup can be
    * taken. If a backup does not succeed within this time window, it will be
    * canceled and considered failed.
+   *
    * The backup window must be at least 5 minutes long. There is no upper bound
    * on the window. If not set, it defaults to 1 hour.
    * </pre>
@@ -3331,6 +3369,7 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
    * The length of the time window during which a backup can be
    * taken. If a backup does not succeed within this time window, it will be
    * canceled and considered failed.
+   *
    * The backup window must be at least 5 minutes long. There is no upper bound
    * on the window. If not set, it defaults to 1 hour.
    * </pre>
@@ -3352,6 +3391,7 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
    * The length of the time window during which a backup can be
    * taken. If a backup does not succeed within this time window, it will be
    * canceled and considered failed.
+   *
    * The backup window must be at least 5 minutes long. There is no upper bound
    * on the window. If not set, it defaults to 1 hour.
    * </pre>
@@ -3440,6 +3480,7 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
    * <pre>
    * The location where the backup will be stored. Currently, the only supported
    * option is to store the backup in the same region as the cluster.
+   *
    * If empty, defaults to the region of the cluster.
    * </pre>
    *
@@ -3465,6 +3506,7 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
    * <pre>
    * The location where the backup will be stored. Currently, the only supported
    * option is to store the backup in the same region as the cluster.
+   *
    * If empty, defaults to the region of the cluster.
    * </pre>
    *
@@ -3884,6 +3926,7 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Message describing the user-specified automated backup policy.
+   *
    * All fields in the automated backup policy are optional. Defaults for each
    * field are provided if they are not set.
    * </pre>
@@ -5070,6 +5113,7 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
      * The length of the time window during which a backup can be
      * taken. If a backup does not succeed within this time window, it will be
      * canceled and considered failed.
+     *
      * The backup window must be at least 5 minutes long. There is no upper bound
      * on the window. If not set, it defaults to 1 hour.
      * </pre>
@@ -5088,6 +5132,7 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
      * The length of the time window during which a backup can be
      * taken. If a backup does not succeed within this time window, it will be
      * canceled and considered failed.
+     *
      * The backup window must be at least 5 minutes long. There is no upper bound
      * on the window. If not set, it defaults to 1 hour.
      * </pre>
@@ -5112,6 +5157,7 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
      * The length of the time window during which a backup can be
      * taken. If a backup does not succeed within this time window, it will be
      * canceled and considered failed.
+     *
      * The backup window must be at least 5 minutes long. There is no upper bound
      * on the window. If not set, it defaults to 1 hour.
      * </pre>
@@ -5138,6 +5184,7 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
      * The length of the time window during which a backup can be
      * taken. If a backup does not succeed within this time window, it will be
      * canceled and considered failed.
+     *
      * The backup window must be at least 5 minutes long. There is no upper bound
      * on the window. If not set, it defaults to 1 hour.
      * </pre>
@@ -5161,6 +5208,7 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
      * The length of the time window during which a backup can be
      * taken. If a backup does not succeed within this time window, it will be
      * canceled and considered failed.
+     *
      * The backup window must be at least 5 minutes long. There is no upper bound
      * on the window. If not set, it defaults to 1 hour.
      * </pre>
@@ -5190,6 +5238,7 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
      * The length of the time window during which a backup can be
      * taken. If a backup does not succeed within this time window, it will be
      * canceled and considered failed.
+     *
      * The backup window must be at least 5 minutes long. There is no upper bound
      * on the window. If not set, it defaults to 1 hour.
      * </pre>
@@ -5213,6 +5262,7 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
      * The length of the time window during which a backup can be
      * taken. If a backup does not succeed within this time window, it will be
      * canceled and considered failed.
+     *
      * The backup window must be at least 5 minutes long. There is no upper bound
      * on the window. If not set, it defaults to 1 hour.
      * </pre>
@@ -5231,6 +5281,7 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
      * The length of the time window during which a backup can be
      * taken. If a backup does not succeed within this time window, it will be
      * canceled and considered failed.
+     *
      * The backup window must be at least 5 minutes long. There is no upper bound
      * on the window. If not set, it defaults to 1 hour.
      * </pre>
@@ -5253,6 +5304,7 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
      * The length of the time window during which a backup can be
      * taken. If a backup does not succeed within this time window, it will be
      * canceled and considered failed.
+     *
      * The backup window must be at least 5 minutes long. There is no upper bound
      * on the window. If not set, it defaults to 1 hour.
      * </pre>
@@ -5514,6 +5566,7 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
      * <pre>
      * The location where the backup will be stored. Currently, the only supported
      * option is to store the backup in the same region as the cluster.
+     *
      * If empty, defaults to the region of the cluster.
      * </pre>
      *
@@ -5538,6 +5591,7 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
      * <pre>
      * The location where the backup will be stored. Currently, the only supported
      * option is to store the backup in the same region as the cluster.
+     *
      * If empty, defaults to the region of the cluster.
      * </pre>
      *
@@ -5562,6 +5616,7 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
      * <pre>
      * The location where the backup will be stored. Currently, the only supported
      * option is to store the backup in the same region as the cluster.
+     *
      * If empty, defaults to the region of the cluster.
      * </pre>
      *
@@ -5585,6 +5640,7 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
      * <pre>
      * The location where the backup will be stored. Currently, the only supported
      * option is to store the backup in the same region as the cluster.
+     *
      * If empty, defaults to the region of the cluster.
      * </pre>
      *
@@ -5604,6 +5660,7 @@ public final class AutomatedBackupPolicy extends com.google.protobuf.GeneratedMe
      * <pre>
      * The location where the backup will be stored. Currently, the only supported
      * option is to store the backup in the same region as the cluster.
+     *
      * If empty, defaults to the region of the cluster.
      * </pre>
      *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,11 +30,14 @@ public interface InstanceOrBuilder
    * Required. Unique name of the resource in this scope including project and
    * location using the form:
    *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
+   *
    * Note: Redis instances are managed and addressed at regional level so
    * location_id here refers to a GCP region; however, users may choose which
    * specific zone (or collection of zones for cross-zone instances) an instance
-   * should be provisioned in. Refer to [location_id][google.cloud.redis.v1.Instance.location_id] and
-   * [alternative_location_id][google.cloud.redis.v1.Instance.alternative_location_id] fields for more details.
+   * should be provisioned in. Refer to
+   * [location_id][google.cloud.redis.v1.Instance.location_id] and
+   * [alternative_location_id][google.cloud.redis.v1.Instance.alternative_location_id]
+   * fields for more details.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -49,11 +52,14 @@ public interface InstanceOrBuilder
    * Required. Unique name of the resource in this scope including project and
    * location using the form:
    *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
+   *
    * Note: Redis instances are managed and addressed at regional level so
    * location_id here refers to a GCP region; however, users may choose which
    * specific zone (or collection of zones for cross-zone instances) an instance
-   * should be provisioned in. Refer to [location_id][google.cloud.redis.v1.Instance.location_id] and
-   * [alternative_location_id][google.cloud.redis.v1.Instance.alternative_location_id] fields for more details.
+   * should be provisioned in. Refer to
+   * [location_id][google.cloud.redis.v1.Instance.location_id] and
+   * [alternative_location_id][google.cloud.redis.v1.Instance.alternative_location_id]
+   * fields for more details.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -218,6 +224,7 @@ public interface InstanceOrBuilder
    * Optional. The version of Redis software.
    * If not provided, latest supported version will be used. Currently, the
    * supported values are:
+   *
    *  *   `REDIS_3_2` for Redis 3.2 compatibility
    *  *   `REDIS_4_0` for Redis 4.0 compatibility (default)
    *  *   `REDIS_5_0` for Redis 5.0 compatibility
@@ -236,6 +243,7 @@ public interface InstanceOrBuilder
    * Optional. The version of Redis software.
    * If not provided, latest supported version will be used. Currently, the
    * supported values are:
+   *
    *  *   `REDIS_3_2` for Redis 3.2 compatibility
    *  *   `REDIS_4_0` for Redis 4.0 compatibility (default)
    *  *   `REDIS_5_0` for Redis 5.0 compatibility
@@ -291,11 +299,11 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Optional. Additional IP range for node placement. Required when enabling read
-   * replicas on an existing instance. For DIRECT_PEERING mode value must be a
-   * CIDR range of size /28, or "auto". For PRIVATE_SERVICE_ACCESS mode value
-   * must be the name of an allocated address range associated with the private
-   * service access connection, or "auto".
+   * Optional. Additional IP range for node placement. Required when enabling
+   * read replicas on an existing instance. For DIRECT_PEERING mode value must
+   * be a CIDR range of size /28, or "auto". For PRIVATE_SERVICE_ACCESS mode
+   * value must be the name of an allocated address range associated with the
+   * private service access connection, or "auto".
    * </pre>
    *
    * <code>string secondary_ip_range = 30 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -307,11 +315,11 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Optional. Additional IP range for node placement. Required when enabling read
-   * replicas on an existing instance. For DIRECT_PEERING mode value must be a
-   * CIDR range of size /28, or "auto". For PRIVATE_SERVICE_ACCESS mode value
-   * must be the name of an allocated address range associated with the private
-   * service access connection, or "auto".
+   * Optional. Additional IP range for node placement. Required when enabling
+   * read replicas on an existing instance. For DIRECT_PEERING mode value must
+   * be a CIDR range of size /28, or "auto". For PRIVATE_SERVICE_ACCESS mode
+   * value must be the name of an allocated address range associated with the
+   * private service access connection, or "auto".
    * </pre>
    *
    * <code>string secondary_ip_range = 30 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -490,15 +498,21 @@ public interface InstanceOrBuilder
    * Optional. Redis configuration parameters, according to
    * http://redis.io/topics/config. Currently, the only supported parameters
    * are:
+   *
    *  Redis version 3.2 and newer:
+   *
    *  *   maxmemory-policy
    *  *   notify-keyspace-events
+   *
    *  Redis version 4.0 and newer:
+   *
    *  *   activedefrag
    *  *   lfu-decay-time
    *  *   lfu-log-factor
    *  *   maxmemory-gb
+   *
    *  Redis version 5.0 and newer:
+   *
    *  *   stream-node-max-bytes
    *  *   stream-node-max-entries
    * </pre>
@@ -514,15 +528,21 @@ public interface InstanceOrBuilder
    * Optional. Redis configuration parameters, according to
    * http://redis.io/topics/config. Currently, the only supported parameters
    * are:
+   *
    *  Redis version 3.2 and newer:
+   *
    *  *   maxmemory-policy
    *  *   notify-keyspace-events
+   *
    *  Redis version 4.0 and newer:
+   *
    *  *   activedefrag
    *  *   lfu-decay-time
    *  *   lfu-log-factor
    *  *   maxmemory-gb
+   *
    *  Redis version 5.0 and newer:
+   *
    *  *   stream-node-max-bytes
    *  *   stream-node-max-entries
    * </pre>
@@ -541,15 +561,21 @@ public interface InstanceOrBuilder
    * Optional. Redis configuration parameters, according to
    * http://redis.io/topics/config. Currently, the only supported parameters
    * are:
+   *
    *  Redis version 3.2 and newer:
+   *
    *  *   maxmemory-policy
    *  *   notify-keyspace-events
+   *
    *  Redis version 4.0 and newer:
+   *
    *  *   activedefrag
    *  *   lfu-decay-time
    *  *   lfu-log-factor
    *  *   maxmemory-gb
+   *
    *  Redis version 5.0 and newer:
+   *
    *  *   stream-node-max-bytes
    *  *   stream-node-max-entries
    * </pre>
@@ -565,15 +591,21 @@ public interface InstanceOrBuilder
    * Optional. Redis configuration parameters, according to
    * http://redis.io/topics/config. Currently, the only supported parameters
    * are:
+   *
    *  Redis version 3.2 and newer:
+   *
    *  *   maxmemory-policy
    *  *   notify-keyspace-events
+   *
    *  Redis version 4.0 and newer:
+   *
    *  *   activedefrag
    *  *   lfu-decay-time
    *  *   lfu-log-factor
    *  *   maxmemory-gb
+   *
    *  Redis version 5.0 and newer:
+   *
    *  *   stream-node-max-bytes
    *  *   stream-node-max-entries
    * </pre>
@@ -593,15 +625,21 @@ public interface InstanceOrBuilder
    * Optional. Redis configuration parameters, according to
    * http://redis.io/topics/config. Currently, the only supported parameters
    * are:
+   *
    *  Redis version 3.2 and newer:
+   *
    *  *   maxmemory-policy
    *  *   notify-keyspace-events
+   *
    *  Redis version 4.0 and newer:
+   *
    *  *   activedefrag
    *  *   lfu-decay-time
    *  *   lfu-log-factor
    *  *   maxmemory-gb
+   *
    *  Redis version 5.0 and newer:
+   *
    *  *   stream-node-max-bytes
    *  *   stream-node-max-entries
    * </pre>
@@ -750,9 +788,9 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Optional. Indicates whether OSS Redis AUTH is enabled for the instance. If set to
-   * "true" AUTH is enabled on the instance. Default value is "false" meaning
-   * AUTH is disabled.
+   * Optional. Indicates whether OSS Redis AUTH is enabled for the instance. If
+   * set to "true" AUTH is enabled on the instance. Default value is "false"
+   * meaning AUTH is disabled.
    * </pre>
    *
    * <code>bool auth_enabled = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -946,11 +984,11 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Optional. The number of replica nodes. The valid range for the Standard Tier with
-   * read replicas enabled is [1-5] and defaults to 2. If read replicas are not
-   * enabled for a Standard Tier instance, the only valid value is 1 and the
-   * default is 1. The valid value for basic tier is 0 and the default is also
-   * 0.
+   * Optional. The number of replica nodes. The valid range for the Standard
+   * Tier with read replicas enabled is [1-5] and defaults to 2. If read
+   * replicas are not enabled for a Standard Tier instance, the only valid value
+   * is 1 and the default is 1. The valid value for basic tier is 0 and the
+   * default is also 0.
    * </pre>
    *
    * <code>int32 replica_count = 31 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1069,7 +1107,8 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Optional. Read replicas mode for the instance. Defaults to READ_REPLICAS_DISABLED.
+   * Optional. Read replicas mode for the instance. Defaults to
+   * READ_REPLICAS_DISABLED.
    * </pre>
    *
    * <code>
@@ -1083,7 +1122,8 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Optional. Read replicas mode for the instance. Defaults to READ_REPLICAS_DISABLED.
+   * Optional. Read replicas mode for the instance. Defaults to
+   * READ_REPLICAS_DISABLED.
    * </pre>
    *
    * <code>
@@ -1093,4 +1133,235 @@ public interface InstanceOrBuilder
    * @return The readReplicasMode.
    */
   com.google.cloud.redis.v1.Instance.ReadReplicasMode getReadReplicasMode();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The KMS key reference that the customer provides when trying to
+   * create the instance.
+   * </pre>
+   *
+   * <code>string customer_managed_key = 36 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The customerManagedKey.
+   */
+  java.lang.String getCustomerManagedKey();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The KMS key reference that the customer provides when trying to
+   * create the instance.
+   * </pre>
+   *
+   * <code>string customer_managed_key = 36 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for customerManagedKey.
+   */
+  com.google.protobuf.ByteString getCustomerManagedKeyBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Persistence configuration parameters
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.v1.PersistenceConfig persistence_config = 37 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the persistenceConfig field is set.
+   */
+  boolean hasPersistenceConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Persistence configuration parameters
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.v1.PersistenceConfig persistence_config = 37 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The persistenceConfig.
+   */
+  com.google.cloud.redis.v1.PersistenceConfig getPersistenceConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Persistence configuration parameters
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.v1.PersistenceConfig persistence_config = 37 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.redis.v1.PersistenceConfigOrBuilder getPersistenceConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. reasons that causes instance in "SUSPENDED" state.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.redis.v1.Instance.SuspensionReason suspension_reasons = 38 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the suspensionReasons.
+   */
+  java.util.List<com.google.cloud.redis.v1.Instance.SuspensionReason> getSuspensionReasonsList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. reasons that causes instance in "SUSPENDED" state.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.redis.v1.Instance.SuspensionReason suspension_reasons = 38 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The count of suspensionReasons.
+   */
+  int getSuspensionReasonsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. reasons that causes instance in "SUSPENDED" state.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.redis.v1.Instance.SuspensionReason suspension_reasons = 38 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The suspensionReasons at the given index.
+   */
+  com.google.cloud.redis.v1.Instance.SuspensionReason getSuspensionReasons(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. reasons that causes instance in "SUSPENDED" state.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.redis.v1.Instance.SuspensionReason suspension_reasons = 38 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the enum numeric values on the wire for suspensionReasons.
+   */
+  java.util.List<java.lang.Integer> getSuspensionReasonsValueList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. reasons that causes instance in "SUSPENDED" state.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.redis.v1.Instance.SuspensionReason suspension_reasons = 38 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of suspensionReasons at the given index.
+   */
+  int getSuspensionReasonsValue(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The self service update maintenance version.
+   * The version is date based such as "20210712_00_00".
+   * </pre>
+   *
+   * <code>string maintenance_version = 39 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The maintenanceVersion.
+   */
+  java.lang.String getMaintenanceVersion();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The self service update maintenance version.
+   * The version is date based such as "20210712_00_00".
+   * </pre>
+   *
+   * <code>string maintenance_version = 39 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for maintenanceVersion.
+   */
+  com.google.protobuf.ByteString getMaintenanceVersionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The available maintenance versions that an instance could update
+   * to.
+   * </pre>
+   *
+   * <code>
+   * repeated string available_maintenance_versions = 40 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the availableMaintenanceVersions.
+   */
+  java.util.List<java.lang.String> getAvailableMaintenanceVersionsList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The available maintenance versions that an instance could update
+   * to.
+   * </pre>
+   *
+   * <code>
+   * repeated string available_maintenance_versions = 40 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The count of availableMaintenanceVersions.
+   */
+  int getAvailableMaintenanceVersionsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The available maintenance versions that an instance could update
+   * to.
+   * </pre>
+   *
+   * <code>
+   * repeated string available_maintenance_versions = 40 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The availableMaintenanceVersions at the given index.
+   */
+  java.lang.String getAvailableMaintenanceVersions(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The available maintenance versions that an instance could update
+   * to.
+   * </pre>
+   *
+   * <code>
+   * repeated string available_maintenance_versions = 40 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the availableMaintenanceVersions at the given index.
+   */
+  com.google.protobuf.ByteString getAvailableMaintenanceVersionsBytes(int index);
 }

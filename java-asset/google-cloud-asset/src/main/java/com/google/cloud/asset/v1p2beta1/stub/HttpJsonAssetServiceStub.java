@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,6 +27,7 @@ import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.asset.v1p2beta1.CreateFeedRequest;
 import com.google.cloud.asset.v1p2beta1.DeleteFeedRequest;
@@ -280,26 +281,56 @@ public class HttpJsonAssetServiceStub extends AssetServiceStub {
         HttpJsonCallSettings.<CreateFeedRequest, Feed>newBuilder()
             .setMethodDescriptor(createFeedMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetFeedRequest, Feed> getFeedTransportSettings =
         HttpJsonCallSettings.<GetFeedRequest, Feed>newBuilder()
             .setMethodDescriptor(getFeedMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListFeedsRequest, ListFeedsResponse> listFeedsTransportSettings =
         HttpJsonCallSettings.<ListFeedsRequest, ListFeedsResponse>newBuilder()
             .setMethodDescriptor(listFeedsMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateFeedRequest, Feed> updateFeedTransportSettings =
         HttpJsonCallSettings.<UpdateFeedRequest, Feed>newBuilder()
             .setMethodDescriptor(updateFeedMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("feed.name", String.valueOf(request.getFeed().getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeleteFeedRequest, Empty> deleteFeedTransportSettings =
         HttpJsonCallSettings.<DeleteFeedRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteFeedMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
 
     this.createFeedCallable =

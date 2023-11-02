@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,11 +46,6 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Deployment();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -227,9 +222,11 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
    * Validation regex for label names: `^[a-z0-9]([a-z0-9-]{0,61}[a-z0-9])?$`.
    * Value for an individual label must be &lt;= 512 bytes, the total
    * size of all label names and values must be &lt;= 1024 bytes.
+   *
    * Label named "language" can be used to record the programming language of
    * the profiled deployment. The standard choices for the value include "java",
    * "go", "python", "ruby", "nodejs", "php", "dotnet".
+   *
    * For deployments running on Google Cloud Platform, "zone" or "region" label
    * should be present describing the deployment location. An example of a zone
    * is "us-central1-a", an example of a region is "us-central1" or
@@ -259,9 +256,11 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
    * Validation regex for label names: `^[a-z0-9]([a-z0-9-]{0,61}[a-z0-9])?$`.
    * Value for an individual label must be &lt;= 512 bytes, the total
    * size of all label names and values must be &lt;= 1024 bytes.
+   *
    * Label named "language" can be used to record the programming language of
    * the profiled deployment. The standard choices for the value include "java",
    * "go", "python", "ruby", "nodejs", "php", "dotnet".
+   *
    * For deployments running on Google Cloud Platform, "zone" or "region" label
    * should be present describing the deployment location. An example of a zone
    * is "us-central1-a", an example of a region is "us-central1" or
@@ -282,9 +281,11 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
    * Validation regex for label names: `^[a-z0-9]([a-z0-9-]{0,61}[a-z0-9])?$`.
    * Value for an individual label must be &lt;= 512 bytes, the total
    * size of all label names and values must be &lt;= 1024 bytes.
+   *
    * Label named "language" can be used to record the programming language of
    * the profiled deployment. The standard choices for the value include "java",
    * "go", "python", "ruby", "nodejs", "php", "dotnet".
+   *
    * For deployments running on Google Cloud Platform, "zone" or "region" label
    * should be present describing the deployment location. An example of a zone
    * is "us-central1-a", an example of a region is "us-central1" or
@@ -312,9 +313,11 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
    * Validation regex for label names: `^[a-z0-9]([a-z0-9-]{0,61}[a-z0-9])?$`.
    * Value for an individual label must be &lt;= 512 bytes, the total
    * size of all label names and values must be &lt;= 1024 bytes.
+   *
    * Label named "language" can be used to record the programming language of
    * the profiled deployment. The standard choices for the value include "java",
    * "go", "python", "ruby", "nodejs", "php", "dotnet".
+   *
    * For deployments running on Google Cloud Platform, "zone" or "region" label
    * should be present describing the deployment location. An example of a zone
    * is "us-central1-a", an example of a region is "us-central1" or
@@ -1032,9 +1035,11 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
      * Validation regex for label names: `^[a-z0-9]([a-z0-9-]{0,61}[a-z0-9])?$`.
      * Value for an individual label must be &lt;= 512 bytes, the total
      * size of all label names and values must be &lt;= 1024 bytes.
+     *
      * Label named "language" can be used to record the programming language of
      * the profiled deployment. The standard choices for the value include "java",
      * "go", "python", "ruby", "nodejs", "php", "dotnet".
+     *
      * For deployments running on Google Cloud Platform, "zone" or "region" label
      * should be present describing the deployment location. An example of a zone
      * is "us-central1-a", an example of a region is "us-central1" or
@@ -1064,9 +1069,11 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
      * Validation regex for label names: `^[a-z0-9]([a-z0-9-]{0,61}[a-z0-9])?$`.
      * Value for an individual label must be &lt;= 512 bytes, the total
      * size of all label names and values must be &lt;= 1024 bytes.
+     *
      * Label named "language" can be used to record the programming language of
      * the profiled deployment. The standard choices for the value include "java",
      * "go", "python", "ruby", "nodejs", "php", "dotnet".
+     *
      * For deployments running on Google Cloud Platform, "zone" or "region" label
      * should be present describing the deployment location. An example of a zone
      * is "us-central1-a", an example of a region is "us-central1" or
@@ -1087,9 +1094,11 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
      * Validation regex for label names: `^[a-z0-9]([a-z0-9-]{0,61}[a-z0-9])?$`.
      * Value for an individual label must be &lt;= 512 bytes, the total
      * size of all label names and values must be &lt;= 1024 bytes.
+     *
      * Label named "language" can be used to record the programming language of
      * the profiled deployment. The standard choices for the value include "java",
      * "go", "python", "ruby", "nodejs", "php", "dotnet".
+     *
      * For deployments running on Google Cloud Platform, "zone" or "region" label
      * should be present describing the deployment location. An example of a zone
      * is "us-central1-a", an example of a region is "us-central1" or
@@ -1117,9 +1126,11 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
      * Validation regex for label names: `^[a-z0-9]([a-z0-9-]{0,61}[a-z0-9])?$`.
      * Value for an individual label must be &lt;= 512 bytes, the total
      * size of all label names and values must be &lt;= 1024 bytes.
+     *
      * Label named "language" can be used to record the programming language of
      * the profiled deployment. The standard choices for the value include "java",
      * "go", "python", "ruby", "nodejs", "php", "dotnet".
+     *
      * For deployments running on Google Cloud Platform, "zone" or "region" label
      * should be present describing the deployment location. An example of a zone
      * is "us-central1-a", an example of a region is "us-central1" or
@@ -1153,9 +1164,11 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
      * Validation regex for label names: `^[a-z0-9]([a-z0-9-]{0,61}[a-z0-9])?$`.
      * Value for an individual label must be &lt;= 512 bytes, the total
      * size of all label names and values must be &lt;= 1024 bytes.
+     *
      * Label named "language" can be used to record the programming language of
      * the profiled deployment. The standard choices for the value include "java",
      * "go", "python", "ruby", "nodejs", "php", "dotnet".
+     *
      * For deployments running on Google Cloud Platform, "zone" or "region" label
      * should be present describing the deployment location. An example of a zone
      * is "us-central1-a", an example of a region is "us-central1" or
@@ -1185,9 +1198,11 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
      * Validation regex for label names: `^[a-z0-9]([a-z0-9-]{0,61}[a-z0-9])?$`.
      * Value for an individual label must be &lt;= 512 bytes, the total
      * size of all label names and values must be &lt;= 1024 bytes.
+     *
      * Label named "language" can be used to record the programming language of
      * the profiled deployment. The standard choices for the value include "java",
      * "go", "python", "ruby", "nodejs", "php", "dotnet".
+     *
      * For deployments running on Google Cloud Platform, "zone" or "region" label
      * should be present describing the deployment location. An example of a zone
      * is "us-central1-a", an example of a region is "us-central1" or
@@ -1215,9 +1230,11 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
      * Validation regex for label names: `^[a-z0-9]([a-z0-9-]{0,61}[a-z0-9])?$`.
      * Value for an individual label must be &lt;= 512 bytes, the total
      * size of all label names and values must be &lt;= 1024 bytes.
+     *
      * Label named "language" can be used to record the programming language of
      * the profiled deployment. The standard choices for the value include "java",
      * "go", "python", "ruby", "nodejs", "php", "dotnet".
+     *
      * For deployments running on Google Cloud Platform, "zone" or "region" label
      * should be present describing the deployment location. An example of a zone
      * is "us-central1-a", an example of a region is "us-central1" or

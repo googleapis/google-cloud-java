@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -81,6 +81,7 @@ public interface ImportProductSetsResponseOrBuilder
    * <pre>
    * The rpc status for each ImportProductSet request, including both successes
    * and errors.
+   *
    * The number of statuses here matches the number of lines in the csv file,
    * and statuses[i] stores the success or failure status of processing the i-th
    * line of the csv, starting from line 0.
@@ -95,6 +96,7 @@ public interface ImportProductSetsResponseOrBuilder
    * <pre>
    * The rpc status for each ImportProductSet request, including both successes
    * and errors.
+   *
    * The number of statuses here matches the number of lines in the csv file,
    * and statuses[i] stores the success or failure status of processing the i-th
    * line of the csv, starting from line 0.
@@ -109,6 +111,7 @@ public interface ImportProductSetsResponseOrBuilder
    * <pre>
    * The rpc status for each ImportProductSet request, including both successes
    * and errors.
+   *
    * The number of statuses here matches the number of lines in the csv file,
    * and statuses[i] stores the success or failure status of processing the i-th
    * line of the csv, starting from line 0.
@@ -123,6 +126,7 @@ public interface ImportProductSetsResponseOrBuilder
    * <pre>
    * The rpc status for each ImportProductSet request, including both successes
    * and errors.
+   *
    * The number of statuses here matches the number of lines in the csv file,
    * and statuses[i] stores the success or failure status of processing the i-th
    * line of the csv, starting from line 0.
@@ -137,6 +141,7 @@ public interface ImportProductSetsResponseOrBuilder
    * <pre>
    * The rpc status for each ImportProductSet request, including both successes
    * and errors.
+   *
    * The number of statuses here matches the number of lines in the csv file,
    * and statuses[i] stores the success or failure status of processing the i-th
    * line of the csv, starting from line 0.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class DeleteCustomClassRequest extends com.google.protobuf.Generate
     return new DeleteCustomClassRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.speech.v1.SpeechAdaptationProto
         .internal_static_google_cloud_speech_v1_DeleteCustomClassRequest_descriptor;
@@ -76,7 +71,9 @@ public final class DeleteCustomClassRequest extends com.google.protobuf.Generate
    *
    * <pre>
    * Required. The name of the custom class to delete. Format:
+   *
    * `projects/{project}/locations/{location}/customClasses/{custom_class}`
+   *
    * Speech-to-Text supports three locations: `global`, `us` (US North America),
    * and `eu` (Europe). If you are calling the `speech.googleapis.com`
    * endpoint, use the `global` location. To specify a region, use a
@@ -107,7 +104,9 @@ public final class DeleteCustomClassRequest extends com.google.protobuf.Generate
    *
    * <pre>
    * Required. The name of the custom class to delete. Format:
+   *
    * `projects/{project}/locations/{location}/customClasses/{custom_class}`
+   *
    * Speech-to-Text supports three locations: `global`, `us` (US North America),
    * and `eu` (Europe). If you are calling the `speech.googleapis.com`
    * endpoint, use the `global` location. To specify a region, use a
@@ -482,7 +481,9 @@ public final class DeleteCustomClassRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. The name of the custom class to delete. Format:
+     *
      * `projects/{project}/locations/{location}/customClasses/{custom_class}`
+     *
      * Speech-to-Text supports three locations: `global`, `us` (US North America),
      * and `eu` (Europe). If you are calling the `speech.googleapis.com`
      * endpoint, use the `global` location. To specify a region, use a
@@ -512,7 +513,9 @@ public final class DeleteCustomClassRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. The name of the custom class to delete. Format:
+     *
      * `projects/{project}/locations/{location}/customClasses/{custom_class}`
+     *
      * Speech-to-Text supports three locations: `global`, `us` (US North America),
      * and `eu` (Europe). If you are calling the `speech.googleapis.com`
      * endpoint, use the `global` location. To specify a region, use a
@@ -542,7 +545,9 @@ public final class DeleteCustomClassRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. The name of the custom class to delete. Format:
+     *
      * `projects/{project}/locations/{location}/customClasses/{custom_class}`
+     *
      * Speech-to-Text supports three locations: `global`, `us` (US North America),
      * and `eu` (Europe). If you are calling the `speech.googleapis.com`
      * endpoint, use the `global` location. To specify a region, use a
@@ -571,7 +576,9 @@ public final class DeleteCustomClassRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. The name of the custom class to delete. Format:
+     *
      * `projects/{project}/locations/{location}/customClasses/{custom_class}`
+     *
      * Speech-to-Text supports three locations: `global`, `us` (US North America),
      * and `eu` (Europe). If you are calling the `speech.googleapis.com`
      * endpoint, use the `global` location. To specify a region, use a
@@ -596,7 +603,9 @@ public final class DeleteCustomClassRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. The name of the custom class to delete. Format:
+     *
      * `projects/{project}/locations/{location}/customClasses/{custom_class}`
+     *
      * Speech-to-Text supports three locations: `global`, `us` (US North America),
      * and `eu` (Europe). If you are calling the `speech.googleapis.com`
      * endpoint, use the `global` location. To specify a region, use a

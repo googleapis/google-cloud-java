@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,11 +50,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Conversation();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -300,11 +295,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new CallMetadata();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1009,11 +999,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
       return new Transcript();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.contactcenterinsights.v1.ResourcesProto
           .internal_static_google_cloud_contactcenterinsights_v1_Conversation_Transcript_descriptor;
@@ -1378,11 +1363,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         return new TranscriptSegment();
       }
 
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
-      }
-
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
         return com.google.cloud.contactcenterinsights.v1.ResourcesProto
             .internal_static_google_cloud_contactcenterinsights_v1_Conversation_Transcript_TranscriptSegment_descriptor;
@@ -1548,11 +1528,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         @SuppressWarnings({"unused"})
         protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
           return new WordInfo();
-        }
-
-        @java.lang.Override
-        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-          return this.unknownFields;
         }
 
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2910,11 +2885,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         @SuppressWarnings({"unused"})
         protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
           return new DialogflowSegmentMetadata();
-        }
-
-        @java.lang.Override
-        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-          return this.unknownFields;
         }
 
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -7313,6 +7283,8 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int metadataCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object metadata_;
 
   public enum MetadataCase
@@ -7357,6 +7329,8 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int expirationCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object expiration_;
 
   public enum ExpirationCase

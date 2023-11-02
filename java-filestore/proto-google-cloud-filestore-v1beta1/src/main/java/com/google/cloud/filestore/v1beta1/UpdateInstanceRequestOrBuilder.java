@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,9 +27,10 @@ public interface UpdateInstanceRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Mask of fields to update.  At least one path must be supplied in this
-   * field.  The elements of the repeated paths field may only include these
-   * fields:
+   * Required. Mask of fields to update.  At least one path must be supplied in
+   * this field.  The elements of the repeated paths field may only include
+   * these fields:
+   *
    * * "description"
    * * "file_shares"
    * * "labels"
@@ -45,9 +46,10 @@ public interface UpdateInstanceRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Mask of fields to update.  At least one path must be supplied in this
-   * field.  The elements of the repeated paths field may only include these
-   * fields:
+   * Required. Mask of fields to update.  At least one path must be supplied in
+   * this field.  The elements of the repeated paths field may only include
+   * these fields:
+   *
    * * "description"
    * * "file_shares"
    * * "labels"
@@ -63,9 +65,10 @@ public interface UpdateInstanceRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Mask of fields to update.  At least one path must be supplied in this
-   * field.  The elements of the repeated paths field may only include these
-   * fields:
+   * Required. Mask of fields to update.  At least one path must be supplied in
+   * this field.  The elements of the repeated paths field may only include
+   * these fields:
+   *
    * * "description"
    * * "file_shares"
    * * "labels"

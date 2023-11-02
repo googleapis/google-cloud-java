@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,8 +24,8 @@ package com.google.cloud.servicedirectory.v1;
  * <pre>
  * The request message for
  * [RegistrationService.GetService][google.cloud.servicedirectory.v1.RegistrationService.GetService].
- * This should not be used for looking up a service. Insead, use the `resolve`
- * method as it will contain all endpoints and associated metadata.
+ * This should not be used for looking up a service. Instead, use the `resolve`
+ * method as it contains all endpoints and associated annotations.
  * </pre>
  *
  * Protobuf type {@code google.cloud.servicedirectory.v1.GetServiceRequest}
@@ -48,11 +48,6 @@ public final class GetServiceRequest extends com.google.protobuf.GeneratedMessag
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new GetServiceRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -291,8 +286,8 @@ public final class GetServiceRequest extends com.google.protobuf.GeneratedMessag
    * <pre>
    * The request message for
    * [RegistrationService.GetService][google.cloud.servicedirectory.v1.RegistrationService.GetService].
-   * This should not be used for looking up a service. Insead, use the `resolve`
-   * method as it will contain all endpoints and associated metadata.
+   * This should not be used for looking up a service. Instead, use the `resolve`
+   * method as it contains all endpoints and associated annotations.
    * </pre>
    *
    * Protobuf type {@code google.cloud.servicedirectory.v1.GetServiceRequest}

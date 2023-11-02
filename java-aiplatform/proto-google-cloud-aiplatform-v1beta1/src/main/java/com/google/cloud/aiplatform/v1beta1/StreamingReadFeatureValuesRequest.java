@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,18 +41,13 @@ public final class StreamingReadFeatureValuesRequest extends com.google.protobuf
 
   private StreamingReadFeatureValuesRequest() {
     entityType_ = "";
-    entityIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    entityIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new StreamingReadFeatureValuesRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -138,7 +133,8 @@ public final class StreamingReadFeatureValuesRequest extends com.google.protobuf
   public static final int ENTITY_IDS_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList entityIds_;
+  private com.google.protobuf.LazyStringArrayList entityIds_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -499,8 +495,7 @@ public final class StreamingReadFeatureValuesRequest extends com.google.protobuf
       super.clear();
       bitField0_ = 0;
       entityType_ = "";
-      entityIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      entityIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
       featureSelector_ = null;
       if (featureSelectorBuilder_ != null) {
         featureSelectorBuilder_.dispose();
@@ -535,7 +530,6 @@ public final class StreamingReadFeatureValuesRequest extends com.google.protobuf
     public com.google.cloud.aiplatform.v1beta1.StreamingReadFeatureValuesRequest buildPartial() {
       com.google.cloud.aiplatform.v1beta1.StreamingReadFeatureValuesRequest result =
           new com.google.cloud.aiplatform.v1beta1.StreamingReadFeatureValuesRequest(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -543,20 +537,15 @@ public final class StreamingReadFeatureValuesRequest extends com.google.protobuf
       return result;
     }
 
-    private void buildPartialRepeatedFields(
-        com.google.cloud.aiplatform.v1beta1.StreamingReadFeatureValuesRequest result) {
-      if (((bitField0_ & 0x00000002) != 0)) {
-        entityIds_ = entityIds_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.entityIds_ = entityIds_;
-    }
-
     private void buildPartial0(
         com.google.cloud.aiplatform.v1beta1.StreamingReadFeatureValuesRequest result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.entityType_ = entityType_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        entityIds_.makeImmutable();
+        result.entityIds_ = entityIds_;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.featureSelector_ =
@@ -621,7 +610,7 @@ public final class StreamingReadFeatureValuesRequest extends com.google.protobuf
       if (!other.entityIds_.isEmpty()) {
         if (entityIds_.isEmpty()) {
           entityIds_ = other.entityIds_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureEntityIdsIsMutable();
           entityIds_.addAll(other.entityIds_);
@@ -836,14 +825,14 @@ public final class StreamingReadFeatureValuesRequest extends com.google.protobuf
       return this;
     }
 
-    private com.google.protobuf.LazyStringList entityIds_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList entityIds_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureEntityIdsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!entityIds_.isModifiable()) {
         entityIds_ = new com.google.protobuf.LazyStringArrayList(entityIds_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -859,7 +848,8 @@ public final class StreamingReadFeatureValuesRequest extends com.google.protobuf
      * @return A list containing the entityIds.
      */
     public com.google.protobuf.ProtocolStringList getEntityIdsList() {
-      return entityIds_.getUnmodifiableView();
+      entityIds_.makeImmutable();
+      return entityIds_;
     }
     /**
      *
@@ -932,6 +922,7 @@ public final class StreamingReadFeatureValuesRequest extends com.google.protobuf
       }
       ensureEntityIdsIsMutable();
       entityIds_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -955,6 +946,7 @@ public final class StreamingReadFeatureValuesRequest extends com.google.protobuf
       }
       ensureEntityIdsIsMutable();
       entityIds_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -975,6 +967,7 @@ public final class StreamingReadFeatureValuesRequest extends com.google.protobuf
     public Builder addAllEntityIds(java.lang.Iterable<java.lang.String> values) {
       ensureEntityIdsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, entityIds_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -992,8 +985,9 @@ public final class StreamingReadFeatureValuesRequest extends com.google.protobuf
      * @return This builder for chaining.
      */
     public Builder clearEntityIds() {
-      entityIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      entityIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -1018,6 +1012,7 @@ public final class StreamingReadFeatureValuesRequest extends com.google.protobuf
       checkByteStringIsUtf8(value);
       ensureEntityIdsIsMutable();
       entityIds_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ public interface ListEntryGroupsRequestOrBuilder
    *
    * <pre>
    * Required. The name of the location that contains the entry groups to list.
+   *
    * Can be provided as a URL.
    * </pre>
    *
@@ -43,6 +44,7 @@ public interface ListEntryGroupsRequestOrBuilder
    *
    * <pre>
    * Required. The name of the location that contains the entry groups to list.
+   *
    * Can be provided as a URL.
    * </pre>
    *
@@ -59,6 +61,7 @@ public interface ListEntryGroupsRequestOrBuilder
    *
    * <pre>
    * Optional. The maximum number of items to return.
+   *
    * Default is 10. Maximum limit is 1000.
    * Throws an invalid argument if `page_size` is greater than 1000.
    * </pre>

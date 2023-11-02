@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class ImportProductSetsRequest extends com.google.protobuf.Generate
     return new ImportProductSetsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.vision.v1.ProductSearchServiceProto
         .internal_static_google_cloud_vision_v1_ImportProductSetsRequest_descriptor;
@@ -76,6 +71,7 @@ public final class ImportProductSetsRequest extends com.google.protobuf.Generate
    *
    * <pre>
    * Required. The project in which the ProductSets should be imported.
+   *
    * Format is `projects/PROJECT_ID/locations/LOC_ID`.
    * </pre>
    *
@@ -102,6 +98,7 @@ public final class ImportProductSetsRequest extends com.google.protobuf.Generate
    *
    * <pre>
    * Required. The project in which the ProductSets should be imported.
+   *
    * Format is `projects/PROJECT_ID/locations/LOC_ID`.
    * </pre>
    *
@@ -561,6 +558,7 @@ public final class ImportProductSetsRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. The project in which the ProductSets should be imported.
+     *
      * Format is `projects/PROJECT_ID/locations/LOC_ID`.
      * </pre>
      *
@@ -586,6 +584,7 @@ public final class ImportProductSetsRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. The project in which the ProductSets should be imported.
+     *
      * Format is `projects/PROJECT_ID/locations/LOC_ID`.
      * </pre>
      *
@@ -611,6 +610,7 @@ public final class ImportProductSetsRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. The project in which the ProductSets should be imported.
+     *
      * Format is `projects/PROJECT_ID/locations/LOC_ID`.
      * </pre>
      *
@@ -635,6 +635,7 @@ public final class ImportProductSetsRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. The project in which the ProductSets should be imported.
+     *
      * Format is `projects/PROJECT_ID/locations/LOC_ID`.
      * </pre>
      *
@@ -655,6 +656,7 @@ public final class ImportProductSetsRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. The project in which the ProductSets should be imported.
+     *
      * Format is `projects/PROJECT_ID/locations/LOC_ID`.
      * </pre>
      *

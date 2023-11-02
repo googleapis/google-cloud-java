@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,7 +32,7 @@ public final class WebhooksGrpc {
 
   private WebhooksGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.dialogflow.cx.v3.Webhooks";
+  public static final java.lang.String SERVICE_NAME = "google.cloud.dialogflow.cx.v3.Webhooks";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -788,9 +788,9 @@ public final class WebhooksGrpc {
 
   private static final class WebhooksMethodDescriptorSupplier extends WebhooksBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    WebhooksMethodDescriptorSupplier(String methodName) {
+    WebhooksMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

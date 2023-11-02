@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ public interface ListJobsResponseOrBuilder
    *
    * <pre>
    * The Jobs for a given company.
+   *
    * The maximum number of items returned is based on the limit field
    * provided in the request.
    * </pre>
@@ -40,6 +41,7 @@ public interface ListJobsResponseOrBuilder
    *
    * <pre>
    * The Jobs for a given company.
+   *
    * The maximum number of items returned is based on the limit field
    * provided in the request.
    * </pre>
@@ -52,6 +54,7 @@ public interface ListJobsResponseOrBuilder
    *
    * <pre>
    * The Jobs for a given company.
+   *
    * The maximum number of items returned is based on the limit field
    * provided in the request.
    * </pre>
@@ -64,6 +67,7 @@ public interface ListJobsResponseOrBuilder
    *
    * <pre>
    * The Jobs for a given company.
+   *
    * The maximum number of items returned is based on the limit field
    * provided in the request.
    * </pre>
@@ -76,6 +80,7 @@ public interface ListJobsResponseOrBuilder
    *
    * <pre>
    * The Jobs for a given company.
+   *
    * The maximum number of items returned is based on the limit field
    * provided in the request.
    * </pre>

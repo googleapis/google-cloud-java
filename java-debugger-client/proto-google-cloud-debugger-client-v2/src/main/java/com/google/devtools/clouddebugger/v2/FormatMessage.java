@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,18 +39,13 @@ public final class FormatMessage extends com.google.protobuf.GeneratedMessageV3
 
   private FormatMessage() {
     format_ = "";
-    parameters_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    parameters_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new FormatMessage();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -79,7 +74,9 @@ public final class FormatMessage extends com.google.protobuf.GeneratedMessageV3
    * Format template for the message. The `format` uses placeholders `$0`,
    * `$1`, etc. to reference parameters. `$$` can be used to denote the `$`
    * character.
+   *
    * Examples:
+   *
    * *   `Failed to load '$0' which helps debug $1 the first time it
    *     is loaded.  Again, $0 is very important.`
    * *   `Please pay $$10 to use $0 instead of $1.`
@@ -108,7 +105,9 @@ public final class FormatMessage extends com.google.protobuf.GeneratedMessageV3
    * Format template for the message. The `format` uses placeholders `$0`,
    * `$1`, etc. to reference parameters. `$$` can be used to denote the `$`
    * character.
+   *
    * Examples:
+   *
    * *   `Failed to load '$0' which helps debug $1 the first time it
    *     is loaded.  Again, $0 is very important.`
    * *   `Please pay $$10 to use $0 instead of $1.`
@@ -134,7 +133,8 @@ public final class FormatMessage extends com.google.protobuf.GeneratedMessageV3
   public static final int PARAMETERS_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList parameters_;
+  private com.google.protobuf.LazyStringArrayList parameters_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -409,8 +409,7 @@ public final class FormatMessage extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       bitField0_ = 0;
       format_ = "";
-      parameters_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      parameters_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -438,7 +437,6 @@ public final class FormatMessage extends com.google.protobuf.GeneratedMessageV3
     public com.google.devtools.clouddebugger.v2.FormatMessage buildPartial() {
       com.google.devtools.clouddebugger.v2.FormatMessage result =
           new com.google.devtools.clouddebugger.v2.FormatMessage(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -446,19 +444,14 @@ public final class FormatMessage extends com.google.protobuf.GeneratedMessageV3
       return result;
     }
 
-    private void buildPartialRepeatedFields(
-        com.google.devtools.clouddebugger.v2.FormatMessage result) {
-      if (((bitField0_ & 0x00000002) != 0)) {
-        parameters_ = parameters_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.parameters_ = parameters_;
-    }
-
     private void buildPartial0(com.google.devtools.clouddebugger.v2.FormatMessage result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.format_ = format_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        parameters_.makeImmutable();
+        result.parameters_ = parameters_;
       }
     }
 
@@ -516,7 +509,7 @@ public final class FormatMessage extends com.google.protobuf.GeneratedMessageV3
       if (!other.parameters_.isEmpty()) {
         if (parameters_.isEmpty()) {
           parameters_ = other.parameters_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureParametersIsMutable();
           parameters_.addAll(other.parameters_);
@@ -589,7 +582,9 @@ public final class FormatMessage extends com.google.protobuf.GeneratedMessageV3
      * Format template for the message. The `format` uses placeholders `$0`,
      * `$1`, etc. to reference parameters. `$$` can be used to denote the `$`
      * character.
+     *
      * Examples:
+     *
      * *   `Failed to load '$0' which helps debug $1 the first time it
      *     is loaded.  Again, $0 is very important.`
      * *   `Please pay $$10 to use $0 instead of $1.`
@@ -617,7 +612,9 @@ public final class FormatMessage extends com.google.protobuf.GeneratedMessageV3
      * Format template for the message. The `format` uses placeholders `$0`,
      * `$1`, etc. to reference parameters. `$$` can be used to denote the `$`
      * character.
+     *
      * Examples:
+     *
      * *   `Failed to load '$0' which helps debug $1 the first time it
      *     is loaded.  Again, $0 is very important.`
      * *   `Please pay $$10 to use $0 instead of $1.`
@@ -645,7 +642,9 @@ public final class FormatMessage extends com.google.protobuf.GeneratedMessageV3
      * Format template for the message. The `format` uses placeholders `$0`,
      * `$1`, etc. to reference parameters. `$$` can be used to denote the `$`
      * character.
+     *
      * Examples:
+     *
      * *   `Failed to load '$0' which helps debug $1 the first time it
      *     is loaded.  Again, $0 is very important.`
      * *   `Please pay $$10 to use $0 instead of $1.`
@@ -672,7 +671,9 @@ public final class FormatMessage extends com.google.protobuf.GeneratedMessageV3
      * Format template for the message. The `format` uses placeholders `$0`,
      * `$1`, etc. to reference parameters. `$$` can be used to denote the `$`
      * character.
+     *
      * Examples:
+     *
      * *   `Failed to load '$0' which helps debug $1 the first time it
      *     is loaded.  Again, $0 is very important.`
      * *   `Please pay $$10 to use $0 instead of $1.`
@@ -695,7 +696,9 @@ public final class FormatMessage extends com.google.protobuf.GeneratedMessageV3
      * Format template for the message. The `format` uses placeholders `$0`,
      * `$1`, etc. to reference parameters. `$$` can be used to denote the `$`
      * character.
+     *
      * Examples:
+     *
      * *   `Failed to load '$0' which helps debug $1 the first time it
      *     is loaded.  Again, $0 is very important.`
      * *   `Please pay $$10 to use $0 instead of $1.`
@@ -717,14 +720,14 @@ public final class FormatMessage extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList parameters_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList parameters_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureParametersIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!parameters_.isModifiable()) {
         parameters_ = new com.google.protobuf.LazyStringArrayList(parameters_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -738,7 +741,8 @@ public final class FormatMessage extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the parameters.
      */
     public com.google.protobuf.ProtocolStringList getParametersList() {
-      return parameters_.getUnmodifiableView();
+      parameters_.makeImmutable();
+      return parameters_;
     }
     /**
      *
@@ -803,6 +807,7 @@ public final class FormatMessage extends com.google.protobuf.GeneratedMessageV3
       }
       ensureParametersIsMutable();
       parameters_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -824,6 +829,7 @@ public final class FormatMessage extends com.google.protobuf.GeneratedMessageV3
       }
       ensureParametersIsMutable();
       parameters_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -842,6 +848,7 @@ public final class FormatMessage extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllParameters(java.lang.Iterable<java.lang.String> values) {
       ensureParametersIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, parameters_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -857,8 +864,9 @@ public final class FormatMessage extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearParameters() {
-      parameters_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      parameters_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -881,6 +889,7 @@ public final class FormatMessage extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureParametersIsMutable();
       parameters_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

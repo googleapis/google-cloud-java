@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,18 +38,13 @@ public final class AnalyzeWorkloadMoveResponse extends com.google.protobuf.Gener
   }
 
   private AnalyzeWorkloadMoveResponse() {
-    blockers_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    blockers_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new AnalyzeWorkloadMoveResponse();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -70,7 +65,8 @@ public final class AnalyzeWorkloadMoveResponse extends com.google.protobuf.Gener
   public static final int BLOCKERS_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList blockers_;
+  private com.google.protobuf.LazyStringArrayList blockers_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -342,8 +338,7 @@ public final class AnalyzeWorkloadMoveResponse extends com.google.protobuf.Gener
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      blockers_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      blockers_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -373,7 +368,6 @@ public final class AnalyzeWorkloadMoveResponse extends com.google.protobuf.Gener
     public com.google.cloud.assuredworkloads.v1beta1.AnalyzeWorkloadMoveResponse buildPartial() {
       com.google.cloud.assuredworkloads.v1beta1.AnalyzeWorkloadMoveResponse result =
           new com.google.cloud.assuredworkloads.v1beta1.AnalyzeWorkloadMoveResponse(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -381,18 +375,13 @@ public final class AnalyzeWorkloadMoveResponse extends com.google.protobuf.Gener
       return result;
     }
 
-    private void buildPartialRepeatedFields(
-        com.google.cloud.assuredworkloads.v1beta1.AnalyzeWorkloadMoveResponse result) {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        blockers_ = blockers_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.blockers_ = blockers_;
-    }
-
     private void buildPartial0(
         com.google.cloud.assuredworkloads.v1beta1.AnalyzeWorkloadMoveResponse result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        blockers_.makeImmutable();
+        result.blockers_ = blockers_;
+      }
     }
 
     @java.lang.Override
@@ -447,7 +436,7 @@ public final class AnalyzeWorkloadMoveResponse extends com.google.protobuf.Gener
       if (!other.blockers_.isEmpty()) {
         if (blockers_.isEmpty()) {
           blockers_ = other.blockers_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ |= 0x00000001;
         } else {
           ensureBlockersIsMutable();
           blockers_.addAll(other.blockers_);
@@ -506,14 +495,14 @@ public final class AnalyzeWorkloadMoveResponse extends com.google.protobuf.Gener
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList blockers_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList blockers_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureBlockersIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!blockers_.isModifiable()) {
         blockers_ = new com.google.protobuf.LazyStringArrayList(blockers_);
-        bitField0_ |= 0x00000001;
       }
+      bitField0_ |= 0x00000001;
     }
     /**
      *
@@ -528,7 +517,8 @@ public final class AnalyzeWorkloadMoveResponse extends com.google.protobuf.Gener
      * @return A list containing the blockers.
      */
     public com.google.protobuf.ProtocolStringList getBlockersList() {
-      return blockers_.getUnmodifiableView();
+      blockers_.makeImmutable();
+      return blockers_;
     }
     /**
      *
@@ -597,6 +587,7 @@ public final class AnalyzeWorkloadMoveResponse extends com.google.protobuf.Gener
       }
       ensureBlockersIsMutable();
       blockers_.set(index, value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -619,6 +610,7 @@ public final class AnalyzeWorkloadMoveResponse extends com.google.protobuf.Gener
       }
       ensureBlockersIsMutable();
       blockers_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -638,6 +630,7 @@ public final class AnalyzeWorkloadMoveResponse extends com.google.protobuf.Gener
     public Builder addAllBlockers(java.lang.Iterable<java.lang.String> values) {
       ensureBlockersIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, blockers_);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -654,8 +647,9 @@ public final class AnalyzeWorkloadMoveResponse extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearBlockers() {
-      blockers_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      blockers_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      ;
       onChanged();
       return this;
     }
@@ -679,6 +673,7 @@ public final class AnalyzeWorkloadMoveResponse extends com.google.protobuf.Gener
       checkByteStringIsUtf8(value);
       ensureBlockersIsMutable();
       blockers_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

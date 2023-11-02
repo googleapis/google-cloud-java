@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,7 +31,16 @@ package com.google.cloud.billing.budgets.v1;
  * Protobuf enum {@code google.cloud.billing.budgets.v1.CalendarPeriod}
  */
 public enum CalendarPeriod implements com.google.protobuf.ProtocolMessageEnum {
-  /** <code>CALENDAR_PERIOD_UNSPECIFIED = 0;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Calendar period is unset. This is the default if the budget is for a
+   * custom time period (CustomPeriod).
+   * </pre>
+   *
+   * <code>CALENDAR_PERIOD_UNSPECIFIED = 0;</code>
+   */
   CALENDAR_PERIOD_UNSPECIFIED(0),
   /**
    *
@@ -68,7 +77,16 @@ public enum CalendarPeriod implements com.google.protobuf.ProtocolMessageEnum {
   UNRECOGNIZED(-1),
   ;
 
-  /** <code>CALENDAR_PERIOD_UNSPECIFIED = 0;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Calendar period is unset. This is the default if the budget is for a
+   * custom time period (CustomPeriod).
+   * </pre>
+   *
+   * <code>CALENDAR_PERIOD_UNSPECIFIED = 0;</code>
+   */
   public static final int CALENDAR_PERIOD_UNSPECIFIED_VALUE = 0;
   /**
    *

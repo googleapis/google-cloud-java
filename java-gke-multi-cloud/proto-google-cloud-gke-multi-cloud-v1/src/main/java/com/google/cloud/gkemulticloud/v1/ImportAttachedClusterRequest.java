@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,11 +50,6 @@ public final class ImportAttachedClusterRequest extends com.google.protobuf.Gene
     return new ImportAttachedClusterRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gkemulticloud.v1.AttachedServiceProto
         .internal_static_google_cloud_gkemulticloud_v1_ImportAttachedClusterRequest_descriptor;
@@ -81,7 +76,9 @@ public final class ImportAttachedClusterRequest extends com.google.protobuf.Gene
    * Required. The parent location where this
    * [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster] resource
    * will be created.
+   *
    * Location names are formatted as `projects/&lt;project-id&gt;/locations/&lt;region&gt;`.
+   *
    * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
    * for more details on Google Cloud resource names.
    * </pre>
@@ -111,7 +108,9 @@ public final class ImportAttachedClusterRequest extends com.google.protobuf.Gene
    * Required. The parent location where this
    * [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster] resource
    * will be created.
+   *
    * Location names are formatted as `projects/&lt;project-id&gt;/locations/&lt;region&gt;`.
+   *
    * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
    * for more details on Google Cloud resource names.
    * </pre>
@@ -213,6 +212,7 @@ public final class ImportAttachedClusterRequest extends com.google.protobuf.Gene
    *
    * <pre>
    * Required. The platform version for the cluster (e.g. `1.19.0-gke.1000`).
+   *
    * You can list all supported versions on a given Google Cloud region by
    * calling
    * [GetAttachedServerConfig][google.cloud.gkemulticloud.v1.AttachedClusters.GetAttachedServerConfig].
@@ -239,6 +239,7 @@ public final class ImportAttachedClusterRequest extends com.google.protobuf.Gene
    *
    * <pre>
    * Required. The platform version for the cluster (e.g. `1.19.0-gke.1000`).
+   *
    * You can list all supported versions on a given Google Cloud region by
    * calling
    * [GetAttachedServerConfig][google.cloud.gkemulticloud.v1.AttachedClusters.GetAttachedServerConfig].
@@ -270,6 +271,7 @@ public final class ImportAttachedClusterRequest extends com.google.protobuf.Gene
    *
    * <pre>
    * Required. The Kubernetes distribution of the underlying attached cluster.
+   *
    * Supported values: ["eks", "aks"].
    * </pre>
    *
@@ -294,6 +296,7 @@ public final class ImportAttachedClusterRequest extends com.google.protobuf.Gene
    *
    * <pre>
    * Required. The Kubernetes distribution of the underlying attached cluster.
+   *
    * Supported values: ["eks", "aks"].
    * </pre>
    *
@@ -762,7 +765,9 @@ public final class ImportAttachedClusterRequest extends com.google.protobuf.Gene
      * Required. The parent location where this
      * [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster] resource
      * will be created.
+     *
      * Location names are formatted as `projects/&lt;project-id&gt;/locations/&lt;region&gt;`.
+     *
      * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
      * for more details on Google Cloud resource names.
      * </pre>
@@ -791,7 +796,9 @@ public final class ImportAttachedClusterRequest extends com.google.protobuf.Gene
      * Required. The parent location where this
      * [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster] resource
      * will be created.
+     *
      * Location names are formatted as `projects/&lt;project-id&gt;/locations/&lt;region&gt;`.
+     *
      * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
      * for more details on Google Cloud resource names.
      * </pre>
@@ -820,7 +827,9 @@ public final class ImportAttachedClusterRequest extends com.google.protobuf.Gene
      * Required. The parent location where this
      * [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster] resource
      * will be created.
+     *
      * Location names are formatted as `projects/&lt;project-id&gt;/locations/&lt;region&gt;`.
+     *
      * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
      * for more details on Google Cloud resource names.
      * </pre>
@@ -848,7 +857,9 @@ public final class ImportAttachedClusterRequest extends com.google.protobuf.Gene
      * Required. The parent location where this
      * [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster] resource
      * will be created.
+     *
      * Location names are formatted as `projects/&lt;project-id&gt;/locations/&lt;region&gt;`.
+     *
      * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
      * for more details on Google Cloud resource names.
      * </pre>
@@ -872,7 +883,9 @@ public final class ImportAttachedClusterRequest extends com.google.protobuf.Gene
      * Required. The parent location where this
      * [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster] resource
      * will be created.
+     *
      * Location names are formatted as `projects/&lt;project-id&gt;/locations/&lt;region&gt;`.
+     *
      * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
      * for more details on Google Cloud resource names.
      * </pre>
@@ -1060,6 +1073,7 @@ public final class ImportAttachedClusterRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * Required. The platform version for the cluster (e.g. `1.19.0-gke.1000`).
+     *
      * You can list all supported versions on a given Google Cloud region by
      * calling
      * [GetAttachedServerConfig][google.cloud.gkemulticloud.v1.AttachedClusters.GetAttachedServerConfig].
@@ -1085,6 +1099,7 @@ public final class ImportAttachedClusterRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * Required. The platform version for the cluster (e.g. `1.19.0-gke.1000`).
+     *
      * You can list all supported versions on a given Google Cloud region by
      * calling
      * [GetAttachedServerConfig][google.cloud.gkemulticloud.v1.AttachedClusters.GetAttachedServerConfig].
@@ -1110,6 +1125,7 @@ public final class ImportAttachedClusterRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * Required. The platform version for the cluster (e.g. `1.19.0-gke.1000`).
+     *
      * You can list all supported versions on a given Google Cloud region by
      * calling
      * [GetAttachedServerConfig][google.cloud.gkemulticloud.v1.AttachedClusters.GetAttachedServerConfig].
@@ -1134,6 +1150,7 @@ public final class ImportAttachedClusterRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * Required. The platform version for the cluster (e.g. `1.19.0-gke.1000`).
+     *
      * You can list all supported versions on a given Google Cloud region by
      * calling
      * [GetAttachedServerConfig][google.cloud.gkemulticloud.v1.AttachedClusters.GetAttachedServerConfig].
@@ -1154,6 +1171,7 @@ public final class ImportAttachedClusterRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * Required. The platform version for the cluster (e.g. `1.19.0-gke.1000`).
+     *
      * You can list all supported versions on a given Google Cloud region by
      * calling
      * [GetAttachedServerConfig][google.cloud.gkemulticloud.v1.AttachedClusters.GetAttachedServerConfig].
@@ -1181,6 +1199,7 @@ public final class ImportAttachedClusterRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * Required. The Kubernetes distribution of the underlying attached cluster.
+     *
      * Supported values: ["eks", "aks"].
      * </pre>
      *
@@ -1204,6 +1223,7 @@ public final class ImportAttachedClusterRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * Required. The Kubernetes distribution of the underlying attached cluster.
+     *
      * Supported values: ["eks", "aks"].
      * </pre>
      *
@@ -1227,6 +1247,7 @@ public final class ImportAttachedClusterRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * Required. The Kubernetes distribution of the underlying attached cluster.
+     *
      * Supported values: ["eks", "aks"].
      * </pre>
      *
@@ -1249,6 +1270,7 @@ public final class ImportAttachedClusterRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * Required. The Kubernetes distribution of the underlying attached cluster.
+     *
      * Supported values: ["eks", "aks"].
      * </pre>
      *
@@ -1267,6 +1289,7 @@ public final class ImportAttachedClusterRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * Required. The Kubernetes distribution of the underlying attached cluster.
+     *
      * Supported values: ["eks", "aks"].
      * </pre>
      *

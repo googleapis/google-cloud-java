@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,17 +43,13 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
     state_ = 0;
     jobTriggerName_ = "";
     errors_ = java.util.Collections.emptyList();
+    actionDetails_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new DlpJob();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -324,6 +320,8 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int detailsCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object details_;
 
   public enum DetailsCase
@@ -731,6 +729,56 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
 
+  public static final int LAST_MODIFIED_FIELD_NUMBER = 15;
+  private com.google.protobuf.Timestamp lastModified_;
+  /**
+   *
+   *
+   * <pre>
+   * Time when the job was last modified by the system.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp last_modified = 15;</code>
+   *
+   * @return Whether the lastModified field is set.
+   */
+  @java.lang.Override
+  public boolean hasLastModified() {
+    return lastModified_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Time when the job was last modified by the system.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp last_modified = 15;</code>
+   *
+   * @return The lastModified.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getLastModified() {
+    return lastModified_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : lastModified_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Time when the job was last modified by the system.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp last_modified = 15;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getLastModifiedOrBuilder() {
+    return lastModified_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : lastModified_;
+  }
+
   public static final int JOB_TRIGGER_NAME_FIELD_NUMBER = 10;
 
   @SuppressWarnings("serial")
@@ -855,6 +903,77 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
     return errors_.get(index);
   }
 
+  public static final int ACTION_DETAILS_FIELD_NUMBER = 12;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.privacy.dlp.v2.ActionDetails> actionDetails_;
+  /**
+   *
+   *
+   * <pre>
+   * Events that should occur after the job has completed.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.ActionDetails action_details = 12;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.privacy.dlp.v2.ActionDetails> getActionDetailsList() {
+    return actionDetails_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Events that should occur after the job has completed.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.ActionDetails action_details = 12;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.privacy.dlp.v2.ActionDetailsOrBuilder>
+      getActionDetailsOrBuilderList() {
+    return actionDetails_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Events that should occur after the job has completed.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.ActionDetails action_details = 12;</code>
+   */
+  @java.lang.Override
+  public int getActionDetailsCount() {
+    return actionDetails_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Events that should occur after the job has completed.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.ActionDetails action_details = 12;</code>
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.ActionDetails getActionDetails(int index) {
+    return actionDetails_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Events that should occur after the job has completed.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.ActionDetails action_details = 12;</code>
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.ActionDetailsOrBuilder getActionDetailsOrBuilder(int index) {
+    return actionDetails_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -899,6 +1018,12 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < errors_.size(); i++) {
       output.writeMessage(11, errors_.get(i));
     }
+    for (int i = 0; i < actionDetails_.size(); i++) {
+      output.writeMessage(12, actionDetails_.get(i));
+    }
+    if (lastModified_ != null) {
+      output.writeMessage(15, getLastModified());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -942,6 +1067,12 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < errors_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, errors_.get(i));
     }
+    for (int i = 0; i < actionDetails_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, actionDetails_.get(i));
+    }
+    if (lastModified_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(15, getLastModified());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -972,8 +1103,13 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
     if (hasEndTime()) {
       if (!getEndTime().equals(other.getEndTime())) return false;
     }
+    if (hasLastModified() != other.hasLastModified()) return false;
+    if (hasLastModified()) {
+      if (!getLastModified().equals(other.getLastModified())) return false;
+    }
     if (!getJobTriggerName().equals(other.getJobTriggerName())) return false;
     if (!getErrorsList().equals(other.getErrorsList())) return false;
+    if (!getActionDetailsList().equals(other.getActionDetailsList())) return false;
     if (!getDetailsCase().equals(other.getDetailsCase())) return false;
     switch (detailsCase_) {
       case 4:
@@ -1014,11 +1150,19 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + END_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getEndTime().hashCode();
     }
+    if (hasLastModified()) {
+      hash = (37 * hash) + LAST_MODIFIED_FIELD_NUMBER;
+      hash = (53 * hash) + getLastModified().hashCode();
+    }
     hash = (37 * hash) + JOB_TRIGGER_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getJobTriggerName().hashCode();
     if (getErrorsCount() > 0) {
       hash = (37 * hash) + ERRORS_FIELD_NUMBER;
       hash = (53 * hash) + getErrorsList().hashCode();
+    }
+    if (getActionDetailsCount() > 0) {
+      hash = (37 * hash) + ACTION_DETAILS_FIELD_NUMBER;
+      hash = (53 * hash) + getActionDetailsList().hashCode();
     }
     switch (detailsCase_) {
       case 4:
@@ -1194,6 +1338,11 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
         endTimeBuilder_.dispose();
         endTimeBuilder_ = null;
       }
+      lastModified_ = null;
+      if (lastModifiedBuilder_ != null) {
+        lastModifiedBuilder_.dispose();
+        lastModifiedBuilder_ = null;
+      }
       jobTriggerName_ = "";
       if (errorsBuilder_ == null) {
         errors_ = java.util.Collections.emptyList();
@@ -1201,7 +1350,14 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
         errors_ = null;
         errorsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
+      if (actionDetailsBuilder_ == null) {
+        actionDetails_ = java.util.Collections.emptyList();
+      } else {
+        actionDetails_ = null;
+        actionDetailsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000800);
       detailsCase_ = 0;
       details_ = null;
       return this;
@@ -1241,13 +1397,22 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
 
     private void buildPartialRepeatedFields(com.google.privacy.dlp.v2.DlpJob result) {
       if (errorsBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) != 0)) {
+        if (((bitField0_ & 0x00000400) != 0)) {
           errors_ = java.util.Collections.unmodifiableList(errors_);
-          bitField0_ = (bitField0_ & ~0x00000200);
+          bitField0_ = (bitField0_ & ~0x00000400);
         }
         result.errors_ = errors_;
       } else {
         result.errors_ = errorsBuilder_.build();
+      }
+      if (actionDetailsBuilder_ == null) {
+        if (((bitField0_ & 0x00000800) != 0)) {
+          actionDetails_ = java.util.Collections.unmodifiableList(actionDetails_);
+          bitField0_ = (bitField0_ & ~0x00000800);
+        }
+        result.actionDetails_ = actionDetails_;
+      } else {
+        result.actionDetails_ = actionDetailsBuilder_.build();
       }
     }
 
@@ -1272,6 +1437,10 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
         result.endTime_ = endTimeBuilder_ == null ? endTime_ : endTimeBuilder_.build();
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.lastModified_ =
+            lastModifiedBuilder_ == null ? lastModified_ : lastModifiedBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.jobTriggerName_ = jobTriggerName_;
       }
     }
@@ -1352,16 +1521,19 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
       if (other.hasEndTime()) {
         mergeEndTime(other.getEndTime());
       }
+      if (other.hasLastModified()) {
+        mergeLastModified(other.getLastModified());
+      }
       if (!other.getJobTriggerName().isEmpty()) {
         jobTriggerName_ = other.jobTriggerName_;
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       if (errorsBuilder_ == null) {
         if (!other.errors_.isEmpty()) {
           if (errors_.isEmpty()) {
             errors_ = other.errors_;
-            bitField0_ = (bitField0_ & ~0x00000200);
+            bitField0_ = (bitField0_ & ~0x00000400);
           } else {
             ensureErrorsIsMutable();
             errors_.addAll(other.errors_);
@@ -1374,13 +1546,40 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
             errorsBuilder_.dispose();
             errorsBuilder_ = null;
             errors_ = other.errors_;
-            bitField0_ = (bitField0_ & ~0x00000200);
+            bitField0_ = (bitField0_ & ~0x00000400);
             errorsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getErrorsFieldBuilder()
                     : null;
           } else {
             errorsBuilder_.addAllMessages(other.errors_);
+          }
+        }
+      }
+      if (actionDetailsBuilder_ == null) {
+        if (!other.actionDetails_.isEmpty()) {
+          if (actionDetails_.isEmpty()) {
+            actionDetails_ = other.actionDetails_;
+            bitField0_ = (bitField0_ & ~0x00000800);
+          } else {
+            ensureActionDetailsIsMutable();
+            actionDetails_.addAll(other.actionDetails_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.actionDetails_.isEmpty()) {
+          if (actionDetailsBuilder_.isEmpty()) {
+            actionDetailsBuilder_.dispose();
+            actionDetailsBuilder_ = null;
+            actionDetails_ = other.actionDetails_;
+            bitField0_ = (bitField0_ & ~0x00000800);
+            actionDetailsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getActionDetailsFieldBuilder()
+                    : null;
+          } else {
+            actionDetailsBuilder_.addAllMessages(other.actionDetails_);
           }
         }
       }
@@ -1477,7 +1676,7 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
             case 82:
               {
                 jobTriggerName_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 82
             case 90:
@@ -1492,6 +1691,25 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
                 }
                 break;
               } // case 90
+            case 98:
+              {
+                com.google.privacy.dlp.v2.ActionDetails m =
+                    input.readMessage(
+                        com.google.privacy.dlp.v2.ActionDetails.parser(), extensionRegistry);
+                if (actionDetailsBuilder_ == null) {
+                  ensureActionDetailsIsMutable();
+                  actionDetails_.add(m);
+                } else {
+                  actionDetailsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 98
+            case 122:
+              {
+                input.readMessage(getLastModifiedFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 122
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2774,6 +2992,189 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
       return endTimeBuilder_;
     }
 
+    private com.google.protobuf.Timestamp lastModified_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        lastModifiedBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Time when the job was last modified by the system.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp last_modified = 15;</code>
+     *
+     * @return Whether the lastModified field is set.
+     */
+    public boolean hasLastModified() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Time when the job was last modified by the system.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp last_modified = 15;</code>
+     *
+     * @return The lastModified.
+     */
+    public com.google.protobuf.Timestamp getLastModified() {
+      if (lastModifiedBuilder_ == null) {
+        return lastModified_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : lastModified_;
+      } else {
+        return lastModifiedBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Time when the job was last modified by the system.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp last_modified = 15;</code>
+     */
+    public Builder setLastModified(com.google.protobuf.Timestamp value) {
+      if (lastModifiedBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        lastModified_ = value;
+      } else {
+        lastModifiedBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Time when the job was last modified by the system.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp last_modified = 15;</code>
+     */
+    public Builder setLastModified(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (lastModifiedBuilder_ == null) {
+        lastModified_ = builderForValue.build();
+      } else {
+        lastModifiedBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Time when the job was last modified by the system.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp last_modified = 15;</code>
+     */
+    public Builder mergeLastModified(com.google.protobuf.Timestamp value) {
+      if (lastModifiedBuilder_ == null) {
+        if (((bitField0_ & 0x00000100) != 0)
+            && lastModified_ != null
+            && lastModified_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getLastModifiedBuilder().mergeFrom(value);
+        } else {
+          lastModified_ = value;
+        }
+      } else {
+        lastModifiedBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Time when the job was last modified by the system.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp last_modified = 15;</code>
+     */
+    public Builder clearLastModified() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      lastModified_ = null;
+      if (lastModifiedBuilder_ != null) {
+        lastModifiedBuilder_.dispose();
+        lastModifiedBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Time when the job was last modified by the system.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp last_modified = 15;</code>
+     */
+    public com.google.protobuf.Timestamp.Builder getLastModifiedBuilder() {
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return getLastModifiedFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Time when the job was last modified by the system.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp last_modified = 15;</code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getLastModifiedOrBuilder() {
+      if (lastModifiedBuilder_ != null) {
+        return lastModifiedBuilder_.getMessageOrBuilder();
+      } else {
+        return lastModified_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : lastModified_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Time when the job was last modified by the system.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp last_modified = 15;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getLastModifiedFieldBuilder() {
+      if (lastModifiedBuilder_ == null) {
+        lastModifiedBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getLastModified(), getParentForChildren(), isClean());
+        lastModified_ = null;
+      }
+      return lastModifiedBuilder_;
+    }
+
     private java.lang.Object jobTriggerName_ = "";
     /**
      *
@@ -2839,7 +3240,7 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       jobTriggerName_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2857,7 +3258,7 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearJobTriggerName() {
       jobTriggerName_ = getDefaultInstance().getJobTriggerName();
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -2880,7 +3281,7 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       jobTriggerName_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2889,9 +3290,9 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureErrorsIsMutable() {
-      if (!((bitField0_ & 0x00000200) != 0)) {
+      if (!((bitField0_ & 0x00000400) != 0)) {
         errors_ = new java.util.ArrayList<com.google.privacy.dlp.v2.Error>(errors_);
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
       }
     }
 
@@ -3104,7 +3505,7 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
     public Builder clearErrors() {
       if (errorsBuilder_ == null) {
         errors_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000400);
         onChanged();
       } else {
         errorsBuilder_.clear();
@@ -3225,10 +3626,364 @@ public final class DlpJob extends com.google.protobuf.GeneratedMessageV3
                 com.google.privacy.dlp.v2.Error,
                 com.google.privacy.dlp.v2.Error.Builder,
                 com.google.privacy.dlp.v2.ErrorOrBuilder>(
-                errors_, ((bitField0_ & 0x00000200) != 0), getParentForChildren(), isClean());
+                errors_, ((bitField0_ & 0x00000400) != 0), getParentForChildren(), isClean());
         errors_ = null;
       }
       return errorsBuilder_;
+    }
+
+    private java.util.List<com.google.privacy.dlp.v2.ActionDetails> actionDetails_ =
+        java.util.Collections.emptyList();
+
+    private void ensureActionDetailsIsMutable() {
+      if (!((bitField0_ & 0x00000800) != 0)) {
+        actionDetails_ =
+            new java.util.ArrayList<com.google.privacy.dlp.v2.ActionDetails>(actionDetails_);
+        bitField0_ |= 0x00000800;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.privacy.dlp.v2.ActionDetails,
+            com.google.privacy.dlp.v2.ActionDetails.Builder,
+            com.google.privacy.dlp.v2.ActionDetailsOrBuilder>
+        actionDetailsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Events that should occur after the job has completed.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.ActionDetails action_details = 12;</code>
+     */
+    public java.util.List<com.google.privacy.dlp.v2.ActionDetails> getActionDetailsList() {
+      if (actionDetailsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(actionDetails_);
+      } else {
+        return actionDetailsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Events that should occur after the job has completed.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.ActionDetails action_details = 12;</code>
+     */
+    public int getActionDetailsCount() {
+      if (actionDetailsBuilder_ == null) {
+        return actionDetails_.size();
+      } else {
+        return actionDetailsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Events that should occur after the job has completed.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.ActionDetails action_details = 12;</code>
+     */
+    public com.google.privacy.dlp.v2.ActionDetails getActionDetails(int index) {
+      if (actionDetailsBuilder_ == null) {
+        return actionDetails_.get(index);
+      } else {
+        return actionDetailsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Events that should occur after the job has completed.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.ActionDetails action_details = 12;</code>
+     */
+    public Builder setActionDetails(int index, com.google.privacy.dlp.v2.ActionDetails value) {
+      if (actionDetailsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureActionDetailsIsMutable();
+        actionDetails_.set(index, value);
+        onChanged();
+      } else {
+        actionDetailsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Events that should occur after the job has completed.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.ActionDetails action_details = 12;</code>
+     */
+    public Builder setActionDetails(
+        int index, com.google.privacy.dlp.v2.ActionDetails.Builder builderForValue) {
+      if (actionDetailsBuilder_ == null) {
+        ensureActionDetailsIsMutable();
+        actionDetails_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        actionDetailsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Events that should occur after the job has completed.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.ActionDetails action_details = 12;</code>
+     */
+    public Builder addActionDetails(com.google.privacy.dlp.v2.ActionDetails value) {
+      if (actionDetailsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureActionDetailsIsMutable();
+        actionDetails_.add(value);
+        onChanged();
+      } else {
+        actionDetailsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Events that should occur after the job has completed.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.ActionDetails action_details = 12;</code>
+     */
+    public Builder addActionDetails(int index, com.google.privacy.dlp.v2.ActionDetails value) {
+      if (actionDetailsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureActionDetailsIsMutable();
+        actionDetails_.add(index, value);
+        onChanged();
+      } else {
+        actionDetailsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Events that should occur after the job has completed.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.ActionDetails action_details = 12;</code>
+     */
+    public Builder addActionDetails(
+        com.google.privacy.dlp.v2.ActionDetails.Builder builderForValue) {
+      if (actionDetailsBuilder_ == null) {
+        ensureActionDetailsIsMutable();
+        actionDetails_.add(builderForValue.build());
+        onChanged();
+      } else {
+        actionDetailsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Events that should occur after the job has completed.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.ActionDetails action_details = 12;</code>
+     */
+    public Builder addActionDetails(
+        int index, com.google.privacy.dlp.v2.ActionDetails.Builder builderForValue) {
+      if (actionDetailsBuilder_ == null) {
+        ensureActionDetailsIsMutable();
+        actionDetails_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        actionDetailsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Events that should occur after the job has completed.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.ActionDetails action_details = 12;</code>
+     */
+    public Builder addAllActionDetails(
+        java.lang.Iterable<? extends com.google.privacy.dlp.v2.ActionDetails> values) {
+      if (actionDetailsBuilder_ == null) {
+        ensureActionDetailsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, actionDetails_);
+        onChanged();
+      } else {
+        actionDetailsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Events that should occur after the job has completed.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.ActionDetails action_details = 12;</code>
+     */
+    public Builder clearActionDetails() {
+      if (actionDetailsBuilder_ == null) {
+        actionDetails_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000800);
+        onChanged();
+      } else {
+        actionDetailsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Events that should occur after the job has completed.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.ActionDetails action_details = 12;</code>
+     */
+    public Builder removeActionDetails(int index) {
+      if (actionDetailsBuilder_ == null) {
+        ensureActionDetailsIsMutable();
+        actionDetails_.remove(index);
+        onChanged();
+      } else {
+        actionDetailsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Events that should occur after the job has completed.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.ActionDetails action_details = 12;</code>
+     */
+    public com.google.privacy.dlp.v2.ActionDetails.Builder getActionDetailsBuilder(int index) {
+      return getActionDetailsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Events that should occur after the job has completed.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.ActionDetails action_details = 12;</code>
+     */
+    public com.google.privacy.dlp.v2.ActionDetailsOrBuilder getActionDetailsOrBuilder(int index) {
+      if (actionDetailsBuilder_ == null) {
+        return actionDetails_.get(index);
+      } else {
+        return actionDetailsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Events that should occur after the job has completed.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.ActionDetails action_details = 12;</code>
+     */
+    public java.util.List<? extends com.google.privacy.dlp.v2.ActionDetailsOrBuilder>
+        getActionDetailsOrBuilderList() {
+      if (actionDetailsBuilder_ != null) {
+        return actionDetailsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(actionDetails_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Events that should occur after the job has completed.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.ActionDetails action_details = 12;</code>
+     */
+    public com.google.privacy.dlp.v2.ActionDetails.Builder addActionDetailsBuilder() {
+      return getActionDetailsFieldBuilder()
+          .addBuilder(com.google.privacy.dlp.v2.ActionDetails.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Events that should occur after the job has completed.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.ActionDetails action_details = 12;</code>
+     */
+    public com.google.privacy.dlp.v2.ActionDetails.Builder addActionDetailsBuilder(int index) {
+      return getActionDetailsFieldBuilder()
+          .addBuilder(index, com.google.privacy.dlp.v2.ActionDetails.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Events that should occur after the job has completed.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.ActionDetails action_details = 12;</code>
+     */
+    public java.util.List<com.google.privacy.dlp.v2.ActionDetails.Builder>
+        getActionDetailsBuilderList() {
+      return getActionDetailsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.privacy.dlp.v2.ActionDetails,
+            com.google.privacy.dlp.v2.ActionDetails.Builder,
+            com.google.privacy.dlp.v2.ActionDetailsOrBuilder>
+        getActionDetailsFieldBuilder() {
+      if (actionDetailsBuilder_ == null) {
+        actionDetailsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.privacy.dlp.v2.ActionDetails,
+                com.google.privacy.dlp.v2.ActionDetails.Builder,
+                com.google.privacy.dlp.v2.ActionDetailsOrBuilder>(
+                actionDetails_,
+                ((bitField0_ & 0x00000800) != 0),
+                getParentForChildren(),
+                isClean());
+        actionDetails_ = null;
+      }
+      return actionDetailsBuilder_;
     }
 
     @java.lang.Override

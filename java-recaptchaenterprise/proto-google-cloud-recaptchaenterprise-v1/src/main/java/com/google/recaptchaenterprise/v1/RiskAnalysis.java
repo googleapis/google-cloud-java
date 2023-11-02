@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,17 +39,13 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
 
   private RiskAnalysis() {
     reasons_ = java.util.Collections.emptyList();
+    extendedVerdictReasons_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new RiskAnalysis();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -475,6 +471,74 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
 
   private int reasonsMemoizedSerializedSize;
 
+  public static final int EXTENDED_VERDICT_REASONS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList extendedVerdictReasons_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   *
+   *
+   * <pre>
+   * Extended verdict reasons to be used for experimentation only. The set of
+   * possible reasons is subject to change.
+   * </pre>
+   *
+   * <code>repeated string extended_verdict_reasons = 3;</code>
+   *
+   * @return A list containing the extendedVerdictReasons.
+   */
+  public com.google.protobuf.ProtocolStringList getExtendedVerdictReasonsList() {
+    return extendedVerdictReasons_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Extended verdict reasons to be used for experimentation only. The set of
+   * possible reasons is subject to change.
+   * </pre>
+   *
+   * <code>repeated string extended_verdict_reasons = 3;</code>
+   *
+   * @return The count of extendedVerdictReasons.
+   */
+  public int getExtendedVerdictReasonsCount() {
+    return extendedVerdictReasons_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Extended verdict reasons to be used for experimentation only. The set of
+   * possible reasons is subject to change.
+   * </pre>
+   *
+   * <code>repeated string extended_verdict_reasons = 3;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The extendedVerdictReasons at the given index.
+   */
+  public java.lang.String getExtendedVerdictReasons(int index) {
+    return extendedVerdictReasons_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Extended verdict reasons to be used for experimentation only. The set of
+   * possible reasons is subject to change.
+   * </pre>
+   *
+   * <code>repeated string extended_verdict_reasons = 3;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the extendedVerdictReasons at the given index.
+   */
+  public com.google.protobuf.ByteString getExtendedVerdictReasonsBytes(int index) {
+    return extendedVerdictReasons_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -500,6 +564,10 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < reasons_.size(); i++) {
       output.writeEnumNoTag(reasons_.get(i));
     }
+    for (int i = 0; i < extendedVerdictReasons_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 3, extendedVerdictReasons_.getRaw(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -524,6 +592,14 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
       }
       reasonsMemoizedSerializedSize = dataSize;
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < extendedVerdictReasons_.size(); i++) {
+        dataSize += computeStringSizeNoTag(extendedVerdictReasons_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getExtendedVerdictReasonsList().size();
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -543,6 +619,8 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
     if (java.lang.Float.floatToIntBits(getScore())
         != java.lang.Float.floatToIntBits(other.getScore())) return false;
     if (!reasons_.equals(other.reasons_)) return false;
+    if (!getExtendedVerdictReasonsList().equals(other.getExtendedVerdictReasonsList()))
+      return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -559,6 +637,10 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
     if (getReasonsCount() > 0) {
       hash = (37 * hash) + REASONS_FIELD_NUMBER;
       hash = (53 * hash) + reasons_.hashCode();
+    }
+    if (getExtendedVerdictReasonsCount() > 0) {
+      hash = (37 * hash) + EXTENDED_VERDICT_REASONS_FIELD_NUMBER;
+      hash = (53 * hash) + getExtendedVerdictReasonsList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -702,6 +784,7 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
       score_ = 0F;
       reasons_ = java.util.Collections.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      extendedVerdictReasons_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -749,6 +832,10 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.score_ = score_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        extendedVerdictReasons_.makeImmutable();
+        result.extendedVerdictReasons_ = extendedVerdictReasons_;
       }
     }
 
@@ -810,6 +897,16 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
         }
         onChanged();
       }
+      if (!other.extendedVerdictReasons_.isEmpty()) {
+        if (extendedVerdictReasons_.isEmpty()) {
+          extendedVerdictReasons_ = other.extendedVerdictReasons_;
+          bitField0_ |= 0x00000004;
+        } else {
+          ensureExtendedVerdictReasonsIsMutable();
+          extendedVerdictReasons_.addAll(other.extendedVerdictReasons_);
+        }
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -861,6 +958,13 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
                 input.popLimit(oldLimit);
                 break;
               } // case 18
+            case 26:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureExtendedVerdictReasonsIsMutable();
+                extendedVerdictReasons_.add(s);
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1186,6 +1290,190 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
       for (int value : values) {
         reasons_.add(value);
       }
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList extendedVerdictReasons_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureExtendedVerdictReasonsIsMutable() {
+      if (!extendedVerdictReasons_.isModifiable()) {
+        extendedVerdictReasons_ =
+            new com.google.protobuf.LazyStringArrayList(extendedVerdictReasons_);
+      }
+      bitField0_ |= 0x00000004;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Extended verdict reasons to be used for experimentation only. The set of
+     * possible reasons is subject to change.
+     * </pre>
+     *
+     * <code>repeated string extended_verdict_reasons = 3;</code>
+     *
+     * @return A list containing the extendedVerdictReasons.
+     */
+    public com.google.protobuf.ProtocolStringList getExtendedVerdictReasonsList() {
+      extendedVerdictReasons_.makeImmutable();
+      return extendedVerdictReasons_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Extended verdict reasons to be used for experimentation only. The set of
+     * possible reasons is subject to change.
+     * </pre>
+     *
+     * <code>repeated string extended_verdict_reasons = 3;</code>
+     *
+     * @return The count of extendedVerdictReasons.
+     */
+    public int getExtendedVerdictReasonsCount() {
+      return extendedVerdictReasons_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Extended verdict reasons to be used for experimentation only. The set of
+     * possible reasons is subject to change.
+     * </pre>
+     *
+     * <code>repeated string extended_verdict_reasons = 3;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The extendedVerdictReasons at the given index.
+     */
+    public java.lang.String getExtendedVerdictReasons(int index) {
+      return extendedVerdictReasons_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Extended verdict reasons to be used for experimentation only. The set of
+     * possible reasons is subject to change.
+     * </pre>
+     *
+     * <code>repeated string extended_verdict_reasons = 3;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the extendedVerdictReasons at the given index.
+     */
+    public com.google.protobuf.ByteString getExtendedVerdictReasonsBytes(int index) {
+      return extendedVerdictReasons_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Extended verdict reasons to be used for experimentation only. The set of
+     * possible reasons is subject to change.
+     * </pre>
+     *
+     * <code>repeated string extended_verdict_reasons = 3;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The extendedVerdictReasons to set.
+     * @return This builder for chaining.
+     */
+    public Builder setExtendedVerdictReasons(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureExtendedVerdictReasonsIsMutable();
+      extendedVerdictReasons_.set(index, value);
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Extended verdict reasons to be used for experimentation only. The set of
+     * possible reasons is subject to change.
+     * </pre>
+     *
+     * <code>repeated string extended_verdict_reasons = 3;</code>
+     *
+     * @param value The extendedVerdictReasons to add.
+     * @return This builder for chaining.
+     */
+    public Builder addExtendedVerdictReasons(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureExtendedVerdictReasonsIsMutable();
+      extendedVerdictReasons_.add(value);
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Extended verdict reasons to be used for experimentation only. The set of
+     * possible reasons is subject to change.
+     * </pre>
+     *
+     * <code>repeated string extended_verdict_reasons = 3;</code>
+     *
+     * @param values The extendedVerdictReasons to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllExtendedVerdictReasons(java.lang.Iterable<java.lang.String> values) {
+      ensureExtendedVerdictReasonsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, extendedVerdictReasons_);
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Extended verdict reasons to be used for experimentation only. The set of
+     * possible reasons is subject to change.
+     * </pre>
+     *
+     * <code>repeated string extended_verdict_reasons = 3;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearExtendedVerdictReasons() {
+      extendedVerdictReasons_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      ;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Extended verdict reasons to be used for experimentation only. The set of
+     * possible reasons is subject to change.
+     * </pre>
+     *
+     * <code>repeated string extended_verdict_reasons = 3;</code>
+     *
+     * @param value The bytes of the extendedVerdictReasons to add.
+     * @return This builder for chaining.
+     */
+    public Builder addExtendedVerdictReasonsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureExtendedVerdictReasonsIsMutable();
+      extendedVerdictReasons_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

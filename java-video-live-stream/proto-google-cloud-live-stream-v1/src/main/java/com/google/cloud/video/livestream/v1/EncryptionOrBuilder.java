@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -238,7 +238,7 @@ public interface EncryptionOrBuilder
   com.google.cloud.video.livestream.v1.Encryption.MpegCommonEncryptionOrBuilder
       getMpegCencOrBuilder();
 
-  public com.google.cloud.video.livestream.v1.Encryption.SecretSourceCase getSecretSourceCase();
+  com.google.cloud.video.livestream.v1.Encryption.SecretSourceCase getSecretSourceCase();
 
-  public com.google.cloud.video.livestream.v1.Encryption.EncryptionModeCase getEncryptionModeCase();
+  com.google.cloud.video.livestream.v1.Encryption.EncryptionModeCase getEncryptionModeCase();
 }

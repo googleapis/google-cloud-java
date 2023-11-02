@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,11 +52,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
     return new HealthStatus();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.compute.v1.Compute
         .internal_static_google_cloud_compute_v1_HealthStatus_descriptor;
@@ -87,7 +82,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Health state of the instance.
+   * Health state of the IPv4 address of the instance.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.HealthStatus.HealthState}
@@ -652,7 +647,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Health state of the instance.
+   * Health state of the IPv4 address of the instance.
    * Check the HealthState enum for the list of possible values.
    * </pre>
    *
@@ -668,7 +663,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Health state of the instance.
+   * Health state of the IPv4 address of the instance.
    * Check the HealthState enum for the list of possible values.
    * </pre>
    *
@@ -692,7 +687,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Health state of the instance.
+   * Health state of the IPv4 address of the instance.
    * Check the HealthState enum for the list of possible values.
    * </pre>
    *
@@ -2018,7 +2013,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Health state of the instance.
+     * Health state of the IPv4 address of the instance.
      * Check the HealthState enum for the list of possible values.
      * </pre>
      *
@@ -2033,7 +2028,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Health state of the instance.
+     * Health state of the IPv4 address of the instance.
      * Check the HealthState enum for the list of possible values.
      * </pre>
      *
@@ -2056,7 +2051,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Health state of the instance.
+     * Health state of the IPv4 address of the instance.
      * Check the HealthState enum for the list of possible values.
      * </pre>
      *
@@ -2079,7 +2074,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Health state of the instance.
+     * Health state of the IPv4 address of the instance.
      * Check the HealthState enum for the list of possible values.
      * </pre>
      *
@@ -2101,7 +2096,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Health state of the instance.
+     * Health state of the IPv4 address of the instance.
      * Check the HealthState enum for the list of possible values.
      * </pre>
      *
@@ -2119,7 +2114,7 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Health state of the instance.
+     * Health state of the IPv4 address of the instance.
      * Check the HealthState enum for the list of possible values.
      * </pre>
      *

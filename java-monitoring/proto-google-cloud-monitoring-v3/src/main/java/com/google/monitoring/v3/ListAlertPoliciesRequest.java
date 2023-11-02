@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,11 +50,6 @@ public final class ListAlertPoliciesRequest extends com.google.protobuf.Generate
     return new ListAlertPoliciesRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.monitoring.v3.AlertServiceProto
         .internal_static_google_monitoring_v3_ListAlertPoliciesRequest_descriptor;
@@ -78,9 +73,12 @@ public final class ListAlertPoliciesRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name)
-   * whose alert policies are to be listed. The format is:
+   * Required. The
+   * [project](https://cloud.google.com/monitoring/api/v3#project_name) whose
+   * alert policies are to be listed. The format is:
+   *
    *     projects/[PROJECT_ID_OR_NUMBER]
+   *
    * Note that this field names the parent container in which the alerting
    * policies to be listed are stored. To retrieve a single alerting policy
    * by name, use the
@@ -110,9 +108,12 @@ public final class ListAlertPoliciesRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name)
-   * whose alert policies are to be listed. The format is:
+   * Required. The
+   * [project](https://cloud.google.com/monitoring/api/v3#project_name) whose
+   * alert policies are to be listed. The format is:
+   *
    *     projects/[PROJECT_ID_OR_NUMBER]
+   *
    * Note that this field names the parent container in which the alerting
    * policies to be listed are stored. To retrieve a single alerting policy
    * by name, use the
@@ -149,6 +150,7 @@ public final class ListAlertPoliciesRequest extends com.google.protobuf.Generate
    * <pre>
    * If provided, this field specifies the criteria that must be met by
    * alert policies to be included in the response.
+   *
    * For more details, see [sorting and
    * filtering](https://cloud.google.com/monitoring/api/v3/sorting-and-filtering).
    * </pre>
@@ -175,6 +177,7 @@ public final class ListAlertPoliciesRequest extends com.google.protobuf.Generate
    * <pre>
    * If provided, this field specifies the criteria that must be met by
    * alert policies to be included in the response.
+   *
    * For more details, see [sorting and
    * filtering](https://cloud.google.com/monitoring/api/v3/sorting-and-filtering).
    * </pre>
@@ -207,6 +210,7 @@ public final class ListAlertPoliciesRequest extends com.google.protobuf.Generate
    * A comma-separated list of fields by which to sort the result. Supports
    * the same set of field references as the `filter` field. Entries can be
    * prefixed with a minus sign to sort by the field in descending order.
+   *
    * For more details, see [sorting and
    * filtering](https://cloud.google.com/monitoring/api/v3/sorting-and-filtering).
    * </pre>
@@ -234,6 +238,7 @@ public final class ListAlertPoliciesRequest extends com.google.protobuf.Generate
    * A comma-separated list of fields by which to sort the result. Supports
    * the same set of field references as the `filter` field. Entries can be
    * prefixed with a minus sign to sort by the field in descending order.
+   *
    * For more details, see [sorting and
    * filtering](https://cloud.google.com/monitoring/api/v3/sorting-and-filtering).
    * </pre>
@@ -769,9 +774,12 @@ public final class ListAlertPoliciesRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name)
-     * whose alert policies are to be listed. The format is:
+     * Required. The
+     * [project](https://cloud.google.com/monitoring/api/v3#project_name) whose
+     * alert policies are to be listed. The format is:
+     *
      *     projects/[PROJECT_ID_OR_NUMBER]
+     *
      * Note that this field names the parent container in which the alerting
      * policies to be listed are stored. To retrieve a single alerting policy
      * by name, use the
@@ -800,9 +808,12 @@ public final class ListAlertPoliciesRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name)
-     * whose alert policies are to be listed. The format is:
+     * Required. The
+     * [project](https://cloud.google.com/monitoring/api/v3#project_name) whose
+     * alert policies are to be listed. The format is:
+     *
      *     projects/[PROJECT_ID_OR_NUMBER]
+     *
      * Note that this field names the parent container in which the alerting
      * policies to be listed are stored. To retrieve a single alerting policy
      * by name, use the
@@ -831,9 +842,12 @@ public final class ListAlertPoliciesRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name)
-     * whose alert policies are to be listed. The format is:
+     * Required. The
+     * [project](https://cloud.google.com/monitoring/api/v3#project_name) whose
+     * alert policies are to be listed. The format is:
+     *
      *     projects/[PROJECT_ID_OR_NUMBER]
+     *
      * Note that this field names the parent container in which the alerting
      * policies to be listed are stored. To retrieve a single alerting policy
      * by name, use the
@@ -861,9 +875,12 @@ public final class ListAlertPoliciesRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name)
-     * whose alert policies are to be listed. The format is:
+     * Required. The
+     * [project](https://cloud.google.com/monitoring/api/v3#project_name) whose
+     * alert policies are to be listed. The format is:
+     *
      *     projects/[PROJECT_ID_OR_NUMBER]
+     *
      * Note that this field names the parent container in which the alerting
      * policies to be listed are stored. To retrieve a single alerting policy
      * by name, use the
@@ -887,9 +904,12 @@ public final class ListAlertPoliciesRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name)
-     * whose alert policies are to be listed. The format is:
+     * Required. The
+     * [project](https://cloud.google.com/monitoring/api/v3#project_name) whose
+     * alert policies are to be listed. The format is:
+     *
      *     projects/[PROJECT_ID_OR_NUMBER]
+     *
      * Note that this field names the parent container in which the alerting
      * policies to be listed are stored. To retrieve a single alerting policy
      * by name, use the
@@ -922,6 +942,7 @@ public final class ListAlertPoliciesRequest extends com.google.protobuf.Generate
      * <pre>
      * If provided, this field specifies the criteria that must be met by
      * alert policies to be included in the response.
+     *
      * For more details, see [sorting and
      * filtering](https://cloud.google.com/monitoring/api/v3/sorting-and-filtering).
      * </pre>
@@ -947,6 +968,7 @@ public final class ListAlertPoliciesRequest extends com.google.protobuf.Generate
      * <pre>
      * If provided, this field specifies the criteria that must be met by
      * alert policies to be included in the response.
+     *
      * For more details, see [sorting and
      * filtering](https://cloud.google.com/monitoring/api/v3/sorting-and-filtering).
      * </pre>
@@ -972,6 +994,7 @@ public final class ListAlertPoliciesRequest extends com.google.protobuf.Generate
      * <pre>
      * If provided, this field specifies the criteria that must be met by
      * alert policies to be included in the response.
+     *
      * For more details, see [sorting and
      * filtering](https://cloud.google.com/monitoring/api/v3/sorting-and-filtering).
      * </pre>
@@ -996,6 +1019,7 @@ public final class ListAlertPoliciesRequest extends com.google.protobuf.Generate
      * <pre>
      * If provided, this field specifies the criteria that must be met by
      * alert policies to be included in the response.
+     *
      * For more details, see [sorting and
      * filtering](https://cloud.google.com/monitoring/api/v3/sorting-and-filtering).
      * </pre>
@@ -1016,6 +1040,7 @@ public final class ListAlertPoliciesRequest extends com.google.protobuf.Generate
      * <pre>
      * If provided, this field specifies the criteria that must be met by
      * alert policies to be included in the response.
+     *
      * For more details, see [sorting and
      * filtering](https://cloud.google.com/monitoring/api/v3/sorting-and-filtering).
      * </pre>
@@ -1044,6 +1069,7 @@ public final class ListAlertPoliciesRequest extends com.google.protobuf.Generate
      * A comma-separated list of fields by which to sort the result. Supports
      * the same set of field references as the `filter` field. Entries can be
      * prefixed with a minus sign to sort by the field in descending order.
+     *
      * For more details, see [sorting and
      * filtering](https://cloud.google.com/monitoring/api/v3/sorting-and-filtering).
      * </pre>
@@ -1070,6 +1096,7 @@ public final class ListAlertPoliciesRequest extends com.google.protobuf.Generate
      * A comma-separated list of fields by which to sort the result. Supports
      * the same set of field references as the `filter` field. Entries can be
      * prefixed with a minus sign to sort by the field in descending order.
+     *
      * For more details, see [sorting and
      * filtering](https://cloud.google.com/monitoring/api/v3/sorting-and-filtering).
      * </pre>
@@ -1096,6 +1123,7 @@ public final class ListAlertPoliciesRequest extends com.google.protobuf.Generate
      * A comma-separated list of fields by which to sort the result. Supports
      * the same set of field references as the `filter` field. Entries can be
      * prefixed with a minus sign to sort by the field in descending order.
+     *
      * For more details, see [sorting and
      * filtering](https://cloud.google.com/monitoring/api/v3/sorting-and-filtering).
      * </pre>
@@ -1121,6 +1149,7 @@ public final class ListAlertPoliciesRequest extends com.google.protobuf.Generate
      * A comma-separated list of fields by which to sort the result. Supports
      * the same set of field references as the `filter` field. Entries can be
      * prefixed with a minus sign to sort by the field in descending order.
+     *
      * For more details, see [sorting and
      * filtering](https://cloud.google.com/monitoring/api/v3/sorting-and-filtering).
      * </pre>
@@ -1142,6 +1171,7 @@ public final class ListAlertPoliciesRequest extends com.google.protobuf.Generate
      * A comma-separated list of fields by which to sort the result. Supports
      * the same set of field references as the `filter` field. Entries can be
      * prefixed with a minus sign to sort by the field in descending order.
+     *
      * For more details, see [sorting and
      * filtering](https://cloud.google.com/monitoring/api/v3/sorting-and-filtering).
      * </pre>

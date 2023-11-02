@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class ManagedCertificate extends com.google.protobuf.GeneratedMessa
     return new ManagedCertificate();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.appengine.v1.CertificateProto
         .internal_static_google_appengine_v1_ManagedCertificate_descriptor;
@@ -76,6 +71,7 @@ public final class ManagedCertificate extends com.google.protobuf.GeneratedMessa
    * Time at which the certificate was last renewed. The renewal process is
    * fully managed. Certificate renewal will automatically occur before the
    * certificate expires. Renewal errors can be tracked via `ManagementStatus`.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -94,6 +90,7 @@ public final class ManagedCertificate extends com.google.protobuf.GeneratedMessa
    * Time at which the certificate was last renewed. The renewal process is
    * fully managed. Certificate renewal will automatically occur before the
    * certificate expires. Renewal errors can be tracked via `ManagementStatus`.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -114,6 +111,7 @@ public final class ManagedCertificate extends com.google.protobuf.GeneratedMessa
    * Time at which the certificate was last renewed. The renewal process is
    * fully managed. Certificate renewal will automatically occur before the
    * certificate expires. Renewal errors can be tracked via `ManagementStatus`.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -134,6 +132,7 @@ public final class ManagedCertificate extends com.google.protobuf.GeneratedMessa
    * <pre>
    * Status of certificate management. Refers to the most recent certificate
    * acquisition or renewal attempt.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -151,6 +150,7 @@ public final class ManagedCertificate extends com.google.protobuf.GeneratedMessa
    * <pre>
    * Status of certificate management. Refers to the most recent certificate
    * acquisition or renewal attempt.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -551,6 +551,7 @@ public final class ManagedCertificate extends com.google.protobuf.GeneratedMessa
      * Time at which the certificate was last renewed. The renewal process is
      * fully managed. Certificate renewal will automatically occur before the
      * certificate expires. Renewal errors can be tracked via `ManagementStatus`.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -568,6 +569,7 @@ public final class ManagedCertificate extends com.google.protobuf.GeneratedMessa
      * Time at which the certificate was last renewed. The renewal process is
      * fully managed. Certificate renewal will automatically occur before the
      * certificate expires. Renewal errors can be tracked via `ManagementStatus`.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -591,6 +593,7 @@ public final class ManagedCertificate extends com.google.protobuf.GeneratedMessa
      * Time at which the certificate was last renewed. The renewal process is
      * fully managed. Certificate renewal will automatically occur before the
      * certificate expires. Renewal errors can be tracked via `ManagementStatus`.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -616,6 +619,7 @@ public final class ManagedCertificate extends com.google.protobuf.GeneratedMessa
      * Time at which the certificate was last renewed. The renewal process is
      * fully managed. Certificate renewal will automatically occur before the
      * certificate expires. Renewal errors can be tracked via `ManagementStatus`.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -638,6 +642,7 @@ public final class ManagedCertificate extends com.google.protobuf.GeneratedMessa
      * Time at which the certificate was last renewed. The renewal process is
      * fully managed. Certificate renewal will automatically occur before the
      * certificate expires. Renewal errors can be tracked via `ManagementStatus`.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -666,6 +671,7 @@ public final class ManagedCertificate extends com.google.protobuf.GeneratedMessa
      * Time at which the certificate was last renewed. The renewal process is
      * fully managed. Certificate renewal will automatically occur before the
      * certificate expires. Renewal errors can be tracked via `ManagementStatus`.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -688,6 +694,7 @@ public final class ManagedCertificate extends com.google.protobuf.GeneratedMessa
      * Time at which the certificate was last renewed. The renewal process is
      * fully managed. Certificate renewal will automatically occur before the
      * certificate expires. Renewal errors can be tracked via `ManagementStatus`.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -705,6 +712,7 @@ public final class ManagedCertificate extends com.google.protobuf.GeneratedMessa
      * Time at which the certificate was last renewed. The renewal process is
      * fully managed. Certificate renewal will automatically occur before the
      * certificate expires. Renewal errors can be tracked via `ManagementStatus`.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -726,6 +734,7 @@ public final class ManagedCertificate extends com.google.protobuf.GeneratedMessa
      * Time at which the certificate was last renewed. The renewal process is
      * fully managed. Certificate renewal will automatically occur before the
      * certificate expires. Renewal errors can be tracked via `ManagementStatus`.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -755,6 +764,7 @@ public final class ManagedCertificate extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Status of certificate management. Refers to the most recent certificate
      * acquisition or renewal attempt.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -772,6 +782,7 @@ public final class ManagedCertificate extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Status of certificate management. Refers to the most recent certificate
      * acquisition or renewal attempt.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -792,6 +803,7 @@ public final class ManagedCertificate extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Status of certificate management. Refers to the most recent certificate
      * acquisition or renewal attempt.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -811,6 +823,7 @@ public final class ManagedCertificate extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Status of certificate management. Refers to the most recent certificate
      * acquisition or renewal attempt.
+     *
      * &#64;OutputOnly
      * </pre>
      *
@@ -834,6 +847,7 @@ public final class ManagedCertificate extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Status of certificate management. Refers to the most recent certificate
      * acquisition or renewal attempt.
+     *
      * &#64;OutputOnly
      * </pre>
      *

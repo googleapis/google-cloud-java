@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class ListPartitionsRequest extends com.google.protobuf.GeneratedMe
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ListPartitionsRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -214,14 +209,18 @@ public final class ListPartitionsRequest extends com.google.protobuf.GeneratedMe
    * <pre>
    * Optional. Filter the partitions returned to the caller using a key value
    * pair expression. Supported operators and syntax:
+   *
    * - logic operators: AND, OR
    * - comparison operators: &lt;, &gt;, &gt;=, &lt;= ,=, !=
    * - LIKE operators:
    *   - The right hand of a LIKE operator supports "." and
    *     "*" for wildcard searches, for example "value1 LIKE ".*oo.*"
    * - parenthetical grouping: ( )
+   *
    * Sample filter expression: `?filter="key1 &lt; value1 OR key2 &gt; value2"
+   *
    * **Notes:**
+   *
    * - Keys to the left of operators are case insensitive.
    * - Partition results are sorted first by creation time, then by
    *   lexicographic order.
@@ -251,14 +250,18 @@ public final class ListPartitionsRequest extends com.google.protobuf.GeneratedMe
    * <pre>
    * Optional. Filter the partitions returned to the caller using a key value
    * pair expression. Supported operators and syntax:
+   *
    * - logic operators: AND, OR
    * - comparison operators: &lt;, &gt;, &gt;=, &lt;= ,=, !=
    * - LIKE operators:
    *   - The right hand of a LIKE operator supports "." and
    *     "*" for wildcard searches, for example "value1 LIKE ".*oo.*"
    * - parenthetical grouping: ( )
+   *
    * Sample filter expression: `?filter="key1 &lt; value1 OR key2 &gt; value2"
+   *
    * **Notes:**
+   *
    * - Keys to the left of operators are case insensitive.
    * - Partition results are sorted first by creation time, then by
    *   lexicographic order.
@@ -1006,14 +1009,18 @@ public final class ListPartitionsRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Optional. Filter the partitions returned to the caller using a key value
      * pair expression. Supported operators and syntax:
+     *
      * - logic operators: AND, OR
      * - comparison operators: &lt;, &gt;, &gt;=, &lt;= ,=, !=
      * - LIKE operators:
      *   - The right hand of a LIKE operator supports "." and
      *     "*" for wildcard searches, for example "value1 LIKE ".*oo.*"
      * - parenthetical grouping: ( )
+     *
      * Sample filter expression: `?filter="key1 &lt; value1 OR key2 &gt; value2"
+     *
      * **Notes:**
+     *
      * - Keys to the left of operators are case insensitive.
      * - Partition results are sorted first by creation time, then by
      *   lexicographic order.
@@ -1042,14 +1049,18 @@ public final class ListPartitionsRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Optional. Filter the partitions returned to the caller using a key value
      * pair expression. Supported operators and syntax:
+     *
      * - logic operators: AND, OR
      * - comparison operators: &lt;, &gt;, &gt;=, &lt;= ,=, !=
      * - LIKE operators:
      *   - The right hand of a LIKE operator supports "." and
      *     "*" for wildcard searches, for example "value1 LIKE ".*oo.*"
      * - parenthetical grouping: ( )
+     *
      * Sample filter expression: `?filter="key1 &lt; value1 OR key2 &gt; value2"
+     *
      * **Notes:**
+     *
      * - Keys to the left of operators are case insensitive.
      * - Partition results are sorted first by creation time, then by
      *   lexicographic order.
@@ -1078,14 +1089,18 @@ public final class ListPartitionsRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Optional. Filter the partitions returned to the caller using a key value
      * pair expression. Supported operators and syntax:
+     *
      * - logic operators: AND, OR
      * - comparison operators: &lt;, &gt;, &gt;=, &lt;= ,=, !=
      * - LIKE operators:
      *   - The right hand of a LIKE operator supports "." and
      *     "*" for wildcard searches, for example "value1 LIKE ".*oo.*"
      * - parenthetical grouping: ( )
+     *
      * Sample filter expression: `?filter="key1 &lt; value1 OR key2 &gt; value2"
+     *
      * **Notes:**
+     *
      * - Keys to the left of operators are case insensitive.
      * - Partition results are sorted first by creation time, then by
      *   lexicographic order.
@@ -1113,14 +1128,18 @@ public final class ListPartitionsRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Optional. Filter the partitions returned to the caller using a key value
      * pair expression. Supported operators and syntax:
+     *
      * - logic operators: AND, OR
      * - comparison operators: &lt;, &gt;, &gt;=, &lt;= ,=, !=
      * - LIKE operators:
      *   - The right hand of a LIKE operator supports "." and
      *     "*" for wildcard searches, for example "value1 LIKE ".*oo.*"
      * - parenthetical grouping: ( )
+     *
      * Sample filter expression: `?filter="key1 &lt; value1 OR key2 &gt; value2"
+     *
      * **Notes:**
+     *
      * - Keys to the left of operators are case insensitive.
      * - Partition results are sorted first by creation time, then by
      *   lexicographic order.
@@ -1144,14 +1163,18 @@ public final class ListPartitionsRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Optional. Filter the partitions returned to the caller using a key value
      * pair expression. Supported operators and syntax:
+     *
      * - logic operators: AND, OR
      * - comparison operators: &lt;, &gt;, &gt;=, &lt;= ,=, !=
      * - LIKE operators:
      *   - The right hand of a LIKE operator supports "." and
      *     "*" for wildcard searches, for example "value1 LIKE ".*oo.*"
      * - parenthetical grouping: ( )
+     *
      * Sample filter expression: `?filter="key1 &lt; value1 OR key2 &gt; value2"
+     *
      * **Notes:**
+     *
      * - Keys to the left of operators are case insensitive.
      * - Partition results are sorted first by creation time, then by
      *   lexicographic order.

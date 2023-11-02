@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class UpdateDeidentifyTemplateRequest extends com.google.protobuf.G
     return new UpdateDeidentifyTemplateRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.privacy.dlp.v2.DlpProto
         .internal_static_google_privacy_dlp_v2_UpdateDeidentifyTemplateRequest_descriptor;
@@ -76,8 +71,9 @@ public final class UpdateDeidentifyTemplateRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Required. Resource name of organization and deidentify template to be updated, for
-   * example `organizations/433245324/deidentifyTemplates/432452342` or
+   * Required. Resource name of organization and deidentify template to be
+   * updated, for example
+   * `organizations/433245324/deidentifyTemplates/432452342` or
    * projects/project-id/deidentifyTemplates/432452342.
    * </pre>
    *
@@ -103,8 +99,9 @@ public final class UpdateDeidentifyTemplateRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Required. Resource name of organization and deidentify template to be updated, for
-   * example `organizations/433245324/deidentifyTemplates/432452342` or
+   * Required. Resource name of organization and deidentify template to be
+   * updated, for example
+   * `organizations/433245324/deidentifyTemplates/432452342` or
    * projects/project-id/deidentifyTemplates/432452342.
    * </pre>
    *
@@ -637,8 +634,9 @@ public final class UpdateDeidentifyTemplateRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. Resource name of organization and deidentify template to be updated, for
-     * example `organizations/433245324/deidentifyTemplates/432452342` or
+     * Required. Resource name of organization and deidentify template to be
+     * updated, for example
+     * `organizations/433245324/deidentifyTemplates/432452342` or
      * projects/project-id/deidentifyTemplates/432452342.
      * </pre>
      *
@@ -663,8 +661,9 @@ public final class UpdateDeidentifyTemplateRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. Resource name of organization and deidentify template to be updated, for
-     * example `organizations/433245324/deidentifyTemplates/432452342` or
+     * Required. Resource name of organization and deidentify template to be
+     * updated, for example
+     * `organizations/433245324/deidentifyTemplates/432452342` or
      * projects/project-id/deidentifyTemplates/432452342.
      * </pre>
      *
@@ -689,8 +688,9 @@ public final class UpdateDeidentifyTemplateRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. Resource name of organization and deidentify template to be updated, for
-     * example `organizations/433245324/deidentifyTemplates/432452342` or
+     * Required. Resource name of organization and deidentify template to be
+     * updated, for example
+     * `organizations/433245324/deidentifyTemplates/432452342` or
      * projects/project-id/deidentifyTemplates/432452342.
      * </pre>
      *
@@ -714,8 +714,9 @@ public final class UpdateDeidentifyTemplateRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. Resource name of organization and deidentify template to be updated, for
-     * example `organizations/433245324/deidentifyTemplates/432452342` or
+     * Required. Resource name of organization and deidentify template to be
+     * updated, for example
+     * `organizations/433245324/deidentifyTemplates/432452342` or
      * projects/project-id/deidentifyTemplates/432452342.
      * </pre>
      *
@@ -735,8 +736,9 @@ public final class UpdateDeidentifyTemplateRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. Resource name of organization and deidentify template to be updated, for
-     * example `organizations/433245324/deidentifyTemplates/432452342` or
+     * Required. Resource name of organization and deidentify template to be
+     * updated, for example
+     * `organizations/433245324/deidentifyTemplates/432452342` or
      * projects/project-id/deidentifyTemplates/432452342.
      * </pre>
      *

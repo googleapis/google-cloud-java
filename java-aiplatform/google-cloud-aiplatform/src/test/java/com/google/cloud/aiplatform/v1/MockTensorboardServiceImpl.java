@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -102,28 +102,6 @@ public class MockTensorboardServiceImpl extends TensorboardServiceImplBase {
   }
 
   @Override
-  public void readTensorboardUsage(
-      ReadTensorboardUsageRequest request,
-      StreamObserver<ReadTensorboardUsageResponse> responseObserver) {
-    Object response = responses.poll();
-    if (response instanceof ReadTensorboardUsageResponse) {
-      requests.add(request);
-      responseObserver.onNext(((ReadTensorboardUsageResponse) response));
-      responseObserver.onCompleted();
-    } else if (response instanceof Exception) {
-      responseObserver.onError(((Exception) response));
-    } else {
-      responseObserver.onError(
-          new IllegalArgumentException(
-              String.format(
-                  "Unrecognized response type %s for method ReadTensorboardUsage, expected %s or %s",
-                  response == null ? "null" : response.getClass().getName(),
-                  ReadTensorboardUsageResponse.class.getName(),
-                  Exception.class.getName())));
-    }
-  }
-
-  @Override
   public void updateTensorboard(
       UpdateTensorboardRequest request, StreamObserver<Operation> responseObserver) {
     Object response = responses.poll();
@@ -182,6 +160,50 @@ public class MockTensorboardServiceImpl extends TensorboardServiceImplBase {
                   "Unrecognized response type %s for method DeleteTensorboard, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void readTensorboardUsage(
+      ReadTensorboardUsageRequest request,
+      StreamObserver<ReadTensorboardUsageResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ReadTensorboardUsageResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ReadTensorboardUsageResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ReadTensorboardUsage, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ReadTensorboardUsageResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void readTensorboardSize(
+      ReadTensorboardSizeRequest request,
+      StreamObserver<ReadTensorboardSizeResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ReadTensorboardSizeResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ReadTensorboardSizeResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ReadTensorboardSize, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ReadTensorboardSizeResponse.class.getName(),
                   Exception.class.getName())));
     }
   }

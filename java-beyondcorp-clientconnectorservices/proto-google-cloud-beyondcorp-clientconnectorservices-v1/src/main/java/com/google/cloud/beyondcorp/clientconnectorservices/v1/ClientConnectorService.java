@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ClientConnectorService();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -375,7 +370,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
             .ConfigOrBuilder
         getConfigOrBuilder();
 
-    public com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Ingress
+    com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Ingress
             .IngressConfigCase
         getIngressConfigCase();
   }
@@ -406,11 +401,6 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Ingress();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -571,11 +561,6 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new Config();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -830,11 +815,6 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
         @SuppressWarnings({"unused"})
         protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
           return new DestinationRoute();
-        }
-
-        @java.lang.Override
-        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-          return this.unknownFields;
         }
 
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2968,6 +2948,8 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
     }
 
     private int ingressConfigCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object ingressConfig_;
 
     public enum IngressConfigCase
@@ -3913,7 +3895,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
             .PeeredVpcOrBuilder
         getPeeredVpcOrBuilder();
 
-    public com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Egress
+    com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Egress
             .DestinationTypeCase
         getDestinationTypeCase();
   }
@@ -3943,11 +3925,6 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Egress();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -4027,11 +4004,6 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new PeeredVpc();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -4692,6 +4664,8 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
     }
 
     private int destinationTypeCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object destinationType_;
 
     public enum DestinationTypeCase

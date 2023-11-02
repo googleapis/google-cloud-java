@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,9 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.run.v2.CreateJobRequest;
 import com.google.cloud.run.v2.DeleteJobRequest;
 import com.google.cloud.run.v2.Execution;
@@ -34,7 +36,6 @@ import com.google.cloud.run.v2.ListJobsRequest;
 import com.google.cloud.run.v2.ListJobsResponse;
 import com.google.cloud.run.v2.RunJobRequest;
 import com.google.cloud.run.v2.UpdateJobRequest;
-import com.google.common.collect.ImmutableMap;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -152,6 +153,19 @@ public class GrpcJobsStub extends JobsStub {
   private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
+  private static final PathTemplate CREATE_JOB_0_PATH_TEMPLATE =
+      PathTemplate.create("projects/*/locations/{location=*}");
+  private static final PathTemplate GET_JOB_0_PATH_TEMPLATE =
+      PathTemplate.create("projects/*/locations/{location=*}/**");
+  private static final PathTemplate LIST_JOBS_0_PATH_TEMPLATE =
+      PathTemplate.create("projects/*/locations/{location=*}");
+  private static final PathTemplate UPDATE_JOB_0_PATH_TEMPLATE =
+      PathTemplate.create("projects/*/locations/{location=*}/**");
+  private static final PathTemplate DELETE_JOB_0_PATH_TEMPLATE =
+      PathTemplate.create("projects/*/locations/{location=*}/**");
+  private static final PathTemplate RUN_JOB_0_PATH_TEMPLATE =
+      PathTemplate.create("projects/*/locations/{location=*}/**");
+
   public static final GrpcJobsStub create(JobsStubSettings settings) throws IOException {
     return new GrpcJobsStub(settings, ClientContext.create(settings));
   }
@@ -191,9 +205,9 @@ public class GrpcJobsStub extends JobsStub {
             .setMethodDescriptor(createJobMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(request.getParent(), "location", CREATE_JOB_0_PATH_TEMPLATE);
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetJobRequest, Job> getJobTransportSettings =
@@ -201,9 +215,9 @@ public class GrpcJobsStub extends JobsStub {
             .setMethodDescriptor(getJobMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(request.getName(), "location", GET_JOB_0_PATH_TEMPLATE);
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListJobsRequest, ListJobsResponse> listJobsTransportSettings =
@@ -211,9 +225,9 @@ public class GrpcJobsStub extends JobsStub {
             .setMethodDescriptor(listJobsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(request.getParent(), "location", LIST_JOBS_0_PATH_TEMPLATE);
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateJobRequest, Operation> updateJobTransportSettings =
@@ -221,9 +235,11 @@ public class GrpcJobsStub extends JobsStub {
             .setMethodDescriptor(updateJobMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("job.name", String.valueOf(request.getJob().getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  if (request.getJob() != null) {
+                    builder.add(request.getJob().getName(), "location", UPDATE_JOB_0_PATH_TEMPLATE);
+                  }
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteJobRequest, Operation> deleteJobTransportSettings =
@@ -231,9 +247,9 @@ public class GrpcJobsStub extends JobsStub {
             .setMethodDescriptor(deleteJobMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(request.getName(), "location", DELETE_JOB_0_PATH_TEMPLATE);
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<RunJobRequest, Operation> runJobTransportSettings =
@@ -241,9 +257,9 @@ public class GrpcJobsStub extends JobsStub {
             .setMethodDescriptor(runJobMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(request.getName(), "location", RUN_JOB_0_PATH_TEMPLATE);
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
@@ -251,9 +267,9 @@ public class GrpcJobsStub extends JobsStub {
             .setMethodDescriptor(getIamPolicyMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("resource", String.valueOf(request.getResource()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
@@ -261,9 +277,9 @@ public class GrpcJobsStub extends JobsStub {
             .setMethodDescriptor(setIamPolicyMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("resource", String.valueOf(request.getResource()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -272,9 +288,9 @@ public class GrpcJobsStub extends JobsStub {
                 .setMethodDescriptor(testIamPermissionsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("resource", String.valueOf(request.getResource()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      return builder.build();
                     })
                 .build();
 

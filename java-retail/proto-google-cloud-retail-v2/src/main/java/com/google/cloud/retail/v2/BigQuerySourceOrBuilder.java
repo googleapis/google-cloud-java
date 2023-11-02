@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ public interface BigQuerySourceOrBuilder
    *
    * <pre>
    * BigQuery time partitioned table's _PARTITIONDATE in YYYY-MM-DD format.
+   *
    * Only supported in
    * [ImportProductsRequest][google.cloud.retail.v2.ImportProductsRequest].
    * </pre>
@@ -42,6 +43,7 @@ public interface BigQuerySourceOrBuilder
    *
    * <pre>
    * BigQuery time partitioned table's _PARTITIONDATE in YYYY-MM-DD format.
+   *
    * Only supported in
    * [ImportProductsRequest][google.cloud.retail.v2.ImportProductsRequest].
    * </pre>
@@ -56,6 +58,7 @@ public interface BigQuerySourceOrBuilder
    *
    * <pre>
    * BigQuery time partitioned table's _PARTITIONDATE in YYYY-MM-DD format.
+   *
    * Only supported in
    * [ImportProductsRequest][google.cloud.retail.v2.ImportProductsRequest].
    * </pre>
@@ -181,13 +184,17 @@ public interface BigQuerySourceOrBuilder
    *
    * <pre>
    * The schema to use when parsing the data from the source.
+   *
    * Supported values for product imports:
+   *
    * * `product` (default): One JSON [Product][google.cloud.retail.v2.Product]
    * per line. Each product must
    *   have a valid [Product.id][google.cloud.retail.v2.Product.id].
    * * `product_merchant_center`: See [Importing catalog data from Merchant
    *   Center](https://cloud.google.com/retail/recommendations-ai/docs/upload-catalog#mc).
+   *
    * Supported values for user events imports:
+   *
    * * `user_event` (default): One JSON
    * [UserEvent][google.cloud.retail.v2.UserEvent] per line.
    * * `user_event_ga360`:
@@ -196,7 +203,9 @@ public interface BigQuerySourceOrBuilder
    * * `user_event_ga4`:
    *   The schema is available here:
    *   https://support.google.com/analytics/answer/7029846.
+   *
    * Supported values for autocomplete imports:
+   *
    * * `suggestions` (default): One JSON completion suggestion per line.
    * * `denylist`:  One JSON deny suggestion per line.
    * * `allowlist`:  One JSON allow suggestion per line.
@@ -212,13 +221,17 @@ public interface BigQuerySourceOrBuilder
    *
    * <pre>
    * The schema to use when parsing the data from the source.
+   *
    * Supported values for product imports:
+   *
    * * `product` (default): One JSON [Product][google.cloud.retail.v2.Product]
    * per line. Each product must
    *   have a valid [Product.id][google.cloud.retail.v2.Product.id].
    * * `product_merchant_center`: See [Importing catalog data from Merchant
    *   Center](https://cloud.google.com/retail/recommendations-ai/docs/upload-catalog#mc).
+   *
    * Supported values for user events imports:
+   *
    * * `user_event` (default): One JSON
    * [UserEvent][google.cloud.retail.v2.UserEvent] per line.
    * * `user_event_ga360`:
@@ -227,7 +240,9 @@ public interface BigQuerySourceOrBuilder
    * * `user_event_ga4`:
    *   The schema is available here:
    *   https://support.google.com/analytics/answer/7029846.
+   *
    * Supported values for autocomplete imports:
+   *
    * * `suggestions` (default): One JSON completion suggestion per line.
    * * `denylist`:  One JSON deny suggestion per line.
    * * `allowlist`:  One JSON allow suggestion per line.
@@ -239,5 +254,5 @@ public interface BigQuerySourceOrBuilder
    */
   com.google.protobuf.ByteString getDataSchemaBytes();
 
-  public com.google.cloud.retail.v2.BigQuerySource.PartitionCase getPartitionCase();
+  com.google.cloud.retail.v2.BigQuerySource.PartitionCase getPartitionCase();
 }

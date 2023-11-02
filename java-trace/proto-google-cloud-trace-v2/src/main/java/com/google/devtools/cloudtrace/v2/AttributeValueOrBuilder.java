@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -108,5 +108,5 @@ public interface AttributeValueOrBuilder
    */
   boolean getBoolValue();
 
-  public com.google.devtools.cloudtrace.v2.AttributeValue.ValueCase getValueCase();
+  com.google.devtools.cloudtrace.v2.AttributeValue.ValueCase getValueCase();
 }

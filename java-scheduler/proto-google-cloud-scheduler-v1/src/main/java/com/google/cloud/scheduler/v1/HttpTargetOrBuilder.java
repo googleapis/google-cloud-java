@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -105,6 +105,7 @@ public interface HttpTargetOrBuilder
    * * `X-CloudScheduler-ScheduleTime`: For Cloud Scheduler jobs specified in
    * the unix-cron format, this header will contain the job schedule time in
    * RFC3339 UTC "Zulu" format.
+   *
    * The total size of headers must be less than 80KB.
    * </pre>
    *
@@ -133,6 +134,7 @@ public interface HttpTargetOrBuilder
    * * `X-CloudScheduler-ScheduleTime`: For Cloud Scheduler jobs specified in
    * the unix-cron format, this header will contain the job schedule time in
    * RFC3339 UTC "Zulu" format.
+   *
    * The total size of headers must be less than 80KB.
    * </pre>
    *
@@ -164,6 +166,7 @@ public interface HttpTargetOrBuilder
    * * `X-CloudScheduler-ScheduleTime`: For Cloud Scheduler jobs specified in
    * the unix-cron format, this header will contain the job schedule time in
    * RFC3339 UTC "Zulu" format.
+   *
    * The total size of headers must be less than 80KB.
    * </pre>
    *
@@ -192,6 +195,7 @@ public interface HttpTargetOrBuilder
    * * `X-CloudScheduler-ScheduleTime`: For Cloud Scheduler jobs specified in
    * the unix-cron format, this header will contain the job schedule time in
    * RFC3339 UTC "Zulu" format.
+   *
    * The total size of headers must be less than 80KB.
    * </pre>
    *
@@ -224,6 +228,7 @@ public interface HttpTargetOrBuilder
    * * `X-CloudScheduler-ScheduleTime`: For Cloud Scheduler jobs specified in
    * the unix-cron format, this header will contain the job schedule time in
    * RFC3339 UTC "Zulu" format.
+   *
    * The total size of headers must be less than 80KB.
    * </pre>
    *
@@ -254,6 +259,7 @@ public interface HttpTargetOrBuilder
    * [OAuth token](https://developers.google.com/identity/protocols/OAuth2)
    * will be generated and attached as an `Authorization` header in the HTTP
    * request.
+   *
    * This type of authorization should generally only be used when calling
    * Google APIs hosted on *.googleapis.com.
    * </pre>
@@ -271,6 +277,7 @@ public interface HttpTargetOrBuilder
    * [OAuth token](https://developers.google.com/identity/protocols/OAuth2)
    * will be generated and attached as an `Authorization` header in the HTTP
    * request.
+   *
    * This type of authorization should generally only be used when calling
    * Google APIs hosted on *.googleapis.com.
    * </pre>
@@ -288,6 +295,7 @@ public interface HttpTargetOrBuilder
    * [OAuth token](https://developers.google.com/identity/protocols/OAuth2)
    * will be generated and attached as an `Authorization` header in the HTTP
    * request.
+   *
    * This type of authorization should generally only be used when calling
    * Google APIs hosted on *.googleapis.com.
    * </pre>
@@ -304,6 +312,7 @@ public interface HttpTargetOrBuilder
    * [OIDC](https://developers.google.com/identity/protocols/OpenIDConnect)
    * token will be generated and attached as an `Authorization` header in the
    * HTTP request.
+   *
    * This type of authorization can be used for many scenarios, including
    * calling Cloud Run, or endpoints where you intend to validate the token
    * yourself.
@@ -322,6 +331,7 @@ public interface HttpTargetOrBuilder
    * [OIDC](https://developers.google.com/identity/protocols/OpenIDConnect)
    * token will be generated and attached as an `Authorization` header in the
    * HTTP request.
+   *
    * This type of authorization can be used for many scenarios, including
    * calling Cloud Run, or endpoints where you intend to validate the token
    * yourself.
@@ -340,6 +350,7 @@ public interface HttpTargetOrBuilder
    * [OIDC](https://developers.google.com/identity/protocols/OpenIDConnect)
    * token will be generated and attached as an `Authorization` header in the
    * HTTP request.
+   *
    * This type of authorization can be used for many scenarios, including
    * calling Cloud Run, or endpoints where you intend to validate the token
    * yourself.
@@ -349,6 +360,5 @@ public interface HttpTargetOrBuilder
    */
   com.google.cloud.scheduler.v1.OidcTokenOrBuilder getOidcTokenOrBuilder();
 
-  public com.google.cloud.scheduler.v1.HttpTarget.AuthorizationHeaderCase
-      getAuthorizationHeaderCase();
+  com.google.cloud.scheduler.v1.HttpTarget.AuthorizationHeaderCase getAuthorizationHeaderCase();
 }

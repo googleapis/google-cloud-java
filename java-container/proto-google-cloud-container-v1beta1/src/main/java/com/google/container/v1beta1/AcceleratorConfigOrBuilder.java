@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -102,7 +102,7 @@ public interface AcceleratorConfigOrBuilder
    * <code>int64 max_time_shared_clients_per_gpu = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.AcceleratorConfig.max_time_shared_clients_per_gpu is
-   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=4237
+   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=4619
    * @return The maxTimeSharedClientsPerGpu.
    */
   @java.lang.Deprecated
@@ -142,4 +142,46 @@ public interface AcceleratorConfigOrBuilder
    * <code>optional .google.container.v1beta1.GPUSharingConfig gpu_sharing_config = 5;</code>
    */
   com.google.container.v1beta1.GPUSharingConfigOrBuilder getGpuSharingConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The configuration for auto installation of GPU driver.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1beta1.GPUDriverInstallationConfig gpu_driver_installation_config = 6;
+   * </code>
+   *
+   * @return Whether the gpuDriverInstallationConfig field is set.
+   */
+  boolean hasGpuDriverInstallationConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The configuration for auto installation of GPU driver.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1beta1.GPUDriverInstallationConfig gpu_driver_installation_config = 6;
+   * </code>
+   *
+   * @return The gpuDriverInstallationConfig.
+   */
+  com.google.container.v1beta1.GPUDriverInstallationConfig getGpuDriverInstallationConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The configuration for auto installation of GPU driver.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1beta1.GPUDriverInstallationConfig gpu_driver_installation_config = 6;
+   * </code>
+   */
+  com.google.container.v1beta1.GPUDriverInstallationConfigOrBuilder
+      getGpuDriverInstallationConfigOrBuilder();
 }

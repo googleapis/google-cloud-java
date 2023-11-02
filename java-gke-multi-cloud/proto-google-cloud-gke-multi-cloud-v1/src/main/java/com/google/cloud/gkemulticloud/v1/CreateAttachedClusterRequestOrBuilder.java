@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,7 +30,9 @@ public interface CreateAttachedClusterRequestOrBuilder
    * Required. The parent location where this
    * [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster] resource
    * will be created.
+   *
    * Location names are formatted as `projects/&lt;project-id&gt;/locations/&lt;region&gt;`.
+   *
    * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
    * for more details on Google Cloud resource names.
    * </pre>
@@ -49,7 +51,9 @@ public interface CreateAttachedClusterRequestOrBuilder
    * Required. The parent location where this
    * [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster] resource
    * will be created.
+   *
    * Location names are formatted as `projects/&lt;project-id&gt;/locations/&lt;region&gt;`.
+   *
    * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
    * for more details on Google Cloud resource names.
    * </pre>
@@ -112,10 +116,12 @@ public interface CreateAttachedClusterRequestOrBuilder
    * <pre>
    * Required. A client provided ID the resource. Must be unique within the
    * parent resource.
+   *
    * The provided ID will be part of the
    * [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster] resource
    * name formatted as
    * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/attachedClusters/&lt;cluster-id&gt;`.
+   *
    * Valid characters are `/[a-z][0-9]-/`. Cannot be longer than 63 characters.
    * </pre>
    *
@@ -130,10 +136,12 @@ public interface CreateAttachedClusterRequestOrBuilder
    * <pre>
    * Required. A client provided ID the resource. Must be unique within the
    * parent resource.
+   *
    * The provided ID will be part of the
    * [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster] resource
    * name formatted as
    * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/attachedClusters/&lt;cluster-id&gt;`.
+   *
    * Valid characters are `/[a-z][0-9]-/`. Cannot be longer than 63 characters.
    * </pre>
    *

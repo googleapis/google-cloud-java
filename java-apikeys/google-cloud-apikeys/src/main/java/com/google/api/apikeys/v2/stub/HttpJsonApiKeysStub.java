@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,6 +45,7 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.httpjson.longrunning.stub.HttpJsonOperationsStub;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
@@ -430,36 +431,78 @@ public class HttpJsonApiKeysStub extends ApiKeysStub {
         HttpJsonCallSettings.<CreateKeyRequest, Operation>newBuilder()
             .setMethodDescriptor(createKeyMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListKeysRequest, ListKeysResponse> listKeysTransportSettings =
         HttpJsonCallSettings.<ListKeysRequest, ListKeysResponse>newBuilder()
             .setMethodDescriptor(listKeysMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetKeyRequest, Key> getKeyTransportSettings =
         HttpJsonCallSettings.<GetKeyRequest, Key>newBuilder()
             .setMethodDescriptor(getKeyMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetKeyStringRequest, GetKeyStringResponse> getKeyStringTransportSettings =
         HttpJsonCallSettings.<GetKeyStringRequest, GetKeyStringResponse>newBuilder()
             .setMethodDescriptor(getKeyStringMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateKeyRequest, Operation> updateKeyTransportSettings =
         HttpJsonCallSettings.<UpdateKeyRequest, Operation>newBuilder()
             .setMethodDescriptor(updateKeyMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("key.name", String.valueOf(request.getKey().getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeleteKeyRequest, Operation> deleteKeyTransportSettings =
         HttpJsonCallSettings.<DeleteKeyRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteKeyMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UndeleteKeyRequest, Operation> undeleteKeyTransportSettings =
         HttpJsonCallSettings.<UndeleteKeyRequest, Operation>newBuilder()
             .setMethodDescriptor(undeleteKeyMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<LookupKeyRequest, LookupKeyResponse> lookupKeyTransportSettings =
         HttpJsonCallSettings.<LookupKeyRequest, LookupKeyResponse>newBuilder()

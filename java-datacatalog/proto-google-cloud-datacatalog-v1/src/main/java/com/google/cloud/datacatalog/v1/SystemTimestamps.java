@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,11 +43,6 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new SystemTimestamps();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -119,6 +114,7 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Timestamp of the last modification of the resource or its metadata within
    * a given system.
+   *
    * Note: Depending on the source system, not every modification updates this
    * timestamp.
    * For example, BigQuery timestamps every metadata modification but not data
@@ -139,6 +135,7 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Timestamp of the last modification of the resource or its metadata within
    * a given system.
+   *
    * Note: Depending on the source system, not every modification updates this
    * timestamp.
    * For example, BigQuery timestamps every metadata modification but not data
@@ -159,6 +156,7 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Timestamp of the last modification of the resource or its metadata within
    * a given system.
+   *
    * Note: Depending on the source system, not every modification updates this
    * timestamp.
    * For example, BigQuery timestamps every metadata modification but not data
@@ -179,6 +177,7 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Output only. Expiration timestamp of the resource within the given system.
+   *
    * Currently only applicable to BigQuery resources.
    * </pre>
    *
@@ -196,6 +195,7 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Output only. Expiration timestamp of the resource within the given system.
+   *
    * Currently only applicable to BigQuery resources.
    * </pre>
    *
@@ -213,6 +213,7 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Output only. Expiration timestamp of the resource within the given system.
+   *
    * Currently only applicable to BigQuery resources.
    * </pre>
    *
@@ -830,6 +831,7 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Timestamp of the last modification of the resource or its metadata within
      * a given system.
+     *
      * Note: Depending on the source system, not every modification updates this
      * timestamp.
      * For example, BigQuery timestamps every metadata modification but not data
@@ -849,6 +851,7 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Timestamp of the last modification of the resource or its metadata within
      * a given system.
+     *
      * Note: Depending on the source system, not every modification updates this
      * timestamp.
      * For example, BigQuery timestamps every metadata modification but not data
@@ -874,6 +877,7 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Timestamp of the last modification of the resource or its metadata within
      * a given system.
+     *
      * Note: Depending on the source system, not every modification updates this
      * timestamp.
      * For example, BigQuery timestamps every metadata modification but not data
@@ -901,6 +905,7 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Timestamp of the last modification of the resource or its metadata within
      * a given system.
+     *
      * Note: Depending on the source system, not every modification updates this
      * timestamp.
      * For example, BigQuery timestamps every metadata modification but not data
@@ -925,6 +930,7 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Timestamp of the last modification of the resource or its metadata within
      * a given system.
+     *
      * Note: Depending on the source system, not every modification updates this
      * timestamp.
      * For example, BigQuery timestamps every metadata modification but not data
@@ -955,6 +961,7 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Timestamp of the last modification of the resource or its metadata within
      * a given system.
+     *
      * Note: Depending on the source system, not every modification updates this
      * timestamp.
      * For example, BigQuery timestamps every metadata modification but not data
@@ -979,6 +986,7 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Timestamp of the last modification of the resource or its metadata within
      * a given system.
+     *
      * Note: Depending on the source system, not every modification updates this
      * timestamp.
      * For example, BigQuery timestamps every metadata modification but not data
@@ -998,6 +1006,7 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Timestamp of the last modification of the resource or its metadata within
      * a given system.
+     *
      * Note: Depending on the source system, not every modification updates this
      * timestamp.
      * For example, BigQuery timestamps every metadata modification but not data
@@ -1021,6 +1030,7 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Timestamp of the last modification of the resource or its metadata within
      * a given system.
+     *
      * Note: Depending on the source system, not every modification updates this
      * timestamp.
      * For example, BigQuery timestamps every metadata modification but not data
@@ -1057,6 +1067,7 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. Expiration timestamp of the resource within the given system.
+     *
      * Currently only applicable to BigQuery resources.
      * </pre>
      *
@@ -1074,6 +1085,7 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. Expiration timestamp of the resource within the given system.
+     *
      * Currently only applicable to BigQuery resources.
      * </pre>
      *
@@ -1097,6 +1109,7 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. Expiration timestamp of the resource within the given system.
+     *
      * Currently only applicable to BigQuery resources.
      * </pre>
      *
@@ -1122,6 +1135,7 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. Expiration timestamp of the resource within the given system.
+     *
      * Currently only applicable to BigQuery resources.
      * </pre>
      *
@@ -1144,6 +1158,7 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. Expiration timestamp of the resource within the given system.
+     *
      * Currently only applicable to BigQuery resources.
      * </pre>
      *
@@ -1172,6 +1187,7 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. Expiration timestamp of the resource within the given system.
+     *
      * Currently only applicable to BigQuery resources.
      * </pre>
      *
@@ -1194,6 +1210,7 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. Expiration timestamp of the resource within the given system.
+     *
      * Currently only applicable to BigQuery resources.
      * </pre>
      *
@@ -1211,6 +1228,7 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. Expiration timestamp of the resource within the given system.
+     *
      * Currently only applicable to BigQuery resources.
      * </pre>
      *
@@ -1232,6 +1250,7 @@ public final class SystemTimestamps extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. Expiration timestamp of the resource within the given system.
+     *
      * Currently only applicable to BigQuery resources.
      * </pre>
      *

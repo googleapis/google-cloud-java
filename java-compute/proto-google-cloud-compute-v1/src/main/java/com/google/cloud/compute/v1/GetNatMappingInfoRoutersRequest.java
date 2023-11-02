@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,6 +40,7 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
 
   private GetNatMappingInfoRoutersRequest() {
     filter_ = "";
+    natName_ = "";
     orderBy_ = "";
     pageToken_ = "";
     project_ = "";
@@ -51,11 +52,6 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new GetNatMappingInfoRoutersRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -173,6 +169,72 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
     return maxResults_;
   }
 
+  public static final int NAT_NAME_FIELD_NUMBER = 425596649;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object natName_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Name of the nat service to filter the Nat Mapping information. If it is omitted, all nats for this router will be returned. Name should conform to RFC1035.
+   * </pre>
+   *
+   * <code>optional string nat_name = 425596649;</code>
+   *
+   * @return Whether the natName field is set.
+   */
+  @java.lang.Override
+  public boolean hasNatName() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Name of the nat service to filter the Nat Mapping information. If it is omitted, all nats for this router will be returned. Name should conform to RFC1035.
+   * </pre>
+   *
+   * <code>optional string nat_name = 425596649;</code>
+   *
+   * @return The natName.
+   */
+  @java.lang.Override
+  public java.lang.String getNatName() {
+    java.lang.Object ref = natName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      natName_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Name of the nat service to filter the Nat Mapping information. If it is omitted, all nats for this router will be returned. Name should conform to RFC1035.
+   * </pre>
+   *
+   * <code>optional string nat_name = 425596649;</code>
+   *
+   * @return The bytes for natName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getNatNameBytes() {
+    java.lang.Object ref = natName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      natName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int ORDER_BY_FIELD_NUMBER = 160562920;
 
   @SuppressWarnings("serial")
@@ -190,7 +252,7 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
    */
   @java.lang.Override
   public boolean hasOrderBy() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
   /**
    *
@@ -256,7 +318,7 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
    */
   @java.lang.Override
   public boolean hasPageToken() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
   /**
    *
@@ -422,7 +484,7 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
    */
   @java.lang.Override
   public boolean hasReturnPartialSuccess() {
-    return ((bitField0_ & 0x00000010) != 0);
+    return ((bitField0_ & 0x00000020) != 0);
   }
   /**
    *
@@ -505,7 +567,7 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 19994697, pageToken_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
@@ -517,7 +579,7 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(router_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 148608841, router_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 160562920, orderBy_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(project_)) {
@@ -526,7 +588,10 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 336120696, filter_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 425596649, natName_);
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
       output.writeBool(517198390, returnPartialSuccess_);
     }
     getUnknownFields().writeTo(output);
@@ -538,7 +603,7 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(19994697, pageToken_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
@@ -550,7 +615,7 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(router_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(148608841, router_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(160562920, orderBy_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(project_)) {
@@ -559,7 +624,10 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(336120696, filter_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(425596649, natName_);
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeBoolSize(517198390, returnPartialSuccess_);
     }
@@ -586,6 +654,10 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
     if (hasMaxResults() != other.hasMaxResults()) return false;
     if (hasMaxResults()) {
       if (getMaxResults() != other.getMaxResults()) return false;
+    }
+    if (hasNatName() != other.hasNatName()) return false;
+    if (hasNatName()) {
+      if (!getNatName().equals(other.getNatName())) return false;
     }
     if (hasOrderBy() != other.hasOrderBy()) return false;
     if (hasOrderBy()) {
@@ -620,6 +692,10 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
     if (hasMaxResults()) {
       hash = (37 * hash) + MAX_RESULTS_FIELD_NUMBER;
       hash = (53 * hash) + getMaxResults();
+    }
+    if (hasNatName()) {
+      hash = (37 * hash) + NAT_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getNatName().hashCode();
     }
     if (hasOrderBy()) {
       hash = (37 * hash) + ORDER_BY_FIELD_NUMBER;
@@ -781,6 +857,7 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
       bitField0_ = 0;
       filter_ = "";
       maxResults_ = 0;
+      natName_ = "";
       orderBy_ = "";
       pageToken_ = "";
       project_ = "";
@@ -833,24 +910,28 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.orderBy_ = orderBy_;
+        result.natName_ = natName_;
         to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.pageToken_ = pageToken_;
+        result.orderBy_ = orderBy_;
         to_bitField0_ |= 0x00000008;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.project_ = project_;
-      }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.region_ = region_;
-      }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.returnPartialSuccess_ = returnPartialSuccess_;
+        result.pageToken_ = pageToken_;
         to_bitField0_ |= 0x00000010;
       }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.project_ = project_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.region_ = region_;
+      }
       if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.returnPartialSuccess_ = returnPartialSuccess_;
+        to_bitField0_ |= 0x00000020;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.router_ = router_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -910,24 +991,29 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
       if (other.hasMaxResults()) {
         setMaxResults(other.getMaxResults());
       }
+      if (other.hasNatName()) {
+        natName_ = other.natName_;
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
       if (other.hasOrderBy()) {
         orderBy_ = other.orderBy_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasPageToken()) {
         pageToken_ = other.pageToken_;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (!other.getRegion().isEmpty()) {
         region_ = other.region_;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (other.hasReturnPartialSuccess()) {
@@ -935,7 +1021,7 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
       }
       if (!other.getRouter().isEmpty()) {
         router_ = other.router_;
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -967,7 +1053,7 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
             case 159957578:
               {
                 pageToken_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 159957578
             case 437723352:
@@ -979,25 +1065,25 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
             case 1111570338:
               {
                 region_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 1111570338
             case 1188870730:
               {
                 router_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 1188870730
             case 1284503362:
               {
                 orderBy_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 1284503362
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 1820481738
             case -1606001726:
@@ -1006,10 +1092,16 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
                 bitField0_ |= 0x00000001;
                 break;
               } // case -1606001726
+            case -890194102:
+              {
+                natName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case -890194102
             case -157380176:
               {
                 returnPartialSuccess_ = input.readBool();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case -157380176
             default:
@@ -1219,6 +1311,126 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
       return this;
     }
 
+    private java.lang.Object natName_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Name of the nat service to filter the Nat Mapping information. If it is omitted, all nats for this router will be returned. Name should conform to RFC1035.
+     * </pre>
+     *
+     * <code>optional string nat_name = 425596649;</code>
+     *
+     * @return Whether the natName field is set.
+     */
+    public boolean hasNatName() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Name of the nat service to filter the Nat Mapping information. If it is omitted, all nats for this router will be returned. Name should conform to RFC1035.
+     * </pre>
+     *
+     * <code>optional string nat_name = 425596649;</code>
+     *
+     * @return The natName.
+     */
+    public java.lang.String getNatName() {
+      java.lang.Object ref = natName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        natName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Name of the nat service to filter the Nat Mapping information. If it is omitted, all nats for this router will be returned. Name should conform to RFC1035.
+     * </pre>
+     *
+     * <code>optional string nat_name = 425596649;</code>
+     *
+     * @return The bytes for natName.
+     */
+    public com.google.protobuf.ByteString getNatNameBytes() {
+      java.lang.Object ref = natName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        natName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Name of the nat service to filter the Nat Mapping information. If it is omitted, all nats for this router will be returned. Name should conform to RFC1035.
+     * </pre>
+     *
+     * <code>optional string nat_name = 425596649;</code>
+     *
+     * @param value The natName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNatName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      natName_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Name of the nat service to filter the Nat Mapping information. If it is omitted, all nats for this router will be returned. Name should conform to RFC1035.
+     * </pre>
+     *
+     * <code>optional string nat_name = 425596649;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearNatName() {
+      natName_ = getDefaultInstance().getNatName();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Name of the nat service to filter the Nat Mapping information. If it is omitted, all nats for this router will be returned. Name should conform to RFC1035.
+     * </pre>
+     *
+     * <code>optional string nat_name = 425596649;</code>
+     *
+     * @param value The bytes for natName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNatNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      natName_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object orderBy_ = "";
     /**
      *
@@ -1232,7 +1444,7 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
      * @return Whether the orderBy field is set.
      */
     public boolean hasOrderBy() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1295,7 +1507,7 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
         throw new NullPointerException();
       }
       orderBy_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1312,7 +1524,7 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
      */
     public Builder clearOrderBy() {
       orderBy_ = getDefaultInstance().getOrderBy();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1334,7 +1546,7 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
       }
       checkByteStringIsUtf8(value);
       orderBy_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1352,7 +1564,7 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
      * @return Whether the pageToken field is set.
      */
     public boolean hasPageToken() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1415,7 +1627,7 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
         throw new NullPointerException();
       }
       pageToken_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1432,7 +1644,7 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
      */
     public Builder clearPageToken() {
       pageToken_ = getDefaultInstance().getPageToken();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1454,7 +1666,7 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
       }
       checkByteStringIsUtf8(value);
       pageToken_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1521,7 +1733,7 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
         throw new NullPointerException();
       }
       project_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1538,7 +1750,7 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
      */
     public Builder clearProject() {
       project_ = getDefaultInstance().getProject();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1560,7 +1772,7 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
       }
       checkByteStringIsUtf8(value);
       project_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1627,7 +1839,7 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
         throw new NullPointerException();
       }
       region_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1644,7 +1856,7 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
      */
     public Builder clearRegion() {
       region_ = getDefaultInstance().getRegion();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -1666,7 +1878,7 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
       }
       checkByteStringIsUtf8(value);
       region_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1685,7 +1897,7 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
      */
     @java.lang.Override
     public boolean hasReturnPartialSuccess() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -1717,7 +1929,7 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
     public Builder setReturnPartialSuccess(boolean value) {
 
       returnPartialSuccess_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -1733,7 +1945,7 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
      * @return This builder for chaining.
      */
     public Builder clearReturnPartialSuccess() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       returnPartialSuccess_ = false;
       onChanged();
       return this;
@@ -1801,7 +2013,7 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
         throw new NullPointerException();
       }
       router_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -1818,7 +2030,7 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
      */
     public Builder clearRouter() {
       router_ = getDefaultInstance().getRouter();
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -1840,7 +2052,7 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
       }
       checkByteStringIsUtf8(value);
       router_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }

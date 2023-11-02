@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,7 @@ public interface BasicYarnAutoscalingConfigOrBuilder
    * Specifies the duration to wait for jobs to complete before forcefully
    * removing workers (and potentially interrupting jobs). Only applicable to
    * downscaling operations.
+   *
    * Bounds: [0s, 1d].
    * </pre>
    *
@@ -49,6 +50,7 @@ public interface BasicYarnAutoscalingConfigOrBuilder
    * Specifies the duration to wait for jobs to complete before forcefully
    * removing workers (and potentially interrupting jobs). Only applicable to
    * downscaling operations.
+   *
    * Bounds: [0s, 1d].
    * </pre>
    *
@@ -67,6 +69,7 @@ public interface BasicYarnAutoscalingConfigOrBuilder
    * Specifies the duration to wait for jobs to complete before forcefully
    * removing workers (and potentially interrupting jobs). Only applicable to
    * downscaling operations.
+   *
    * Bounds: [0s, 1d].
    * </pre>
    *
@@ -88,6 +91,7 @@ public interface BasicYarnAutoscalingConfigOrBuilder
    * autoscaling
    * works](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/autoscaling#how_autoscaling_works)
    * for more information.
+   *
    * Bounds: [0.0, 1.0].
    * </pre>
    *
@@ -109,6 +113,7 @@ public interface BasicYarnAutoscalingConfigOrBuilder
    * See [How autoscaling
    * works](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/autoscaling#how_autoscaling_works)
    * for more information.
+   *
    * Bounds: [0.0, 1.0].
    * </pre>
    *
@@ -127,6 +132,7 @@ public interface BasicYarnAutoscalingConfigOrBuilder
    * 0.1 means the autoscaler must recommend at least a 2-worker scale-up for
    * the cluster to scale. A threshold of 0 means the autoscaler will scale up
    * on any recommended change.
+   *
    * Bounds: [0.0, 1.0]. Default: 0.0.
    * </pre>
    *
@@ -145,6 +151,7 @@ public interface BasicYarnAutoscalingConfigOrBuilder
    * 0.1 means the autoscaler must recommend at least a 2 worker scale-down for
    * the cluster to scale. A threshold of 0 means the autoscaler will scale down
    * on any recommended change.
+   *
    * Bounds: [0.0, 1.0]. Default: 0.0.
    * </pre>
    *

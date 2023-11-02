@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class SearchCasesRequest extends com.google.protobuf.GeneratedMessa
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new SearchCasesRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -129,8 +124,10 @@ public final class SearchCasesRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * An expression written in filter language.
+   *
    * A query uses the following fields with the operators equals (`=`) and
    * `AND`:
+   *
    * - `organization`: An organization name in the form
    * `organizations/&lt;organization_id&gt;`.
    * - `project`: A project name in the form `projects/&lt;project_id&gt;`.
@@ -141,14 +138,19 @@ public final class SearchCasesRequest extends com.google.protobuf.GeneratedMessa
    * - `creator.email`: The email address of the case creator.
    * - `billingAccount`: A billing account in the form
    * `billingAccounts/&lt;billing_account_id&gt;`
+   *
    * You must specify either `organization` or `project`.
+   *
    * To search across `displayName`, `description`, and comments, use a global
    * restriction with no keyword or operator. For example, `"my search"`.
+   *
    * To search only cases updated after a certain date, use `update_time`
    * restricted with that particular date, time, and timezone in ISO datetime
    * format. For example, `update_time&gt;"2020-01-01T00:00:00-05:00"`.
    * `update_time` only supports the greater than operator (`&gt;`).
+   *
    * Examples:
+   *
    * - `organization="organizations/123456789"`
    * - `project="projects/my-project-id"`
    * - `project="projects/123456789"`
@@ -179,8 +181,10 @@ public final class SearchCasesRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * An expression written in filter language.
+   *
    * A query uses the following fields with the operators equals (`=`) and
    * `AND`:
+   *
    * - `organization`: An organization name in the form
    * `organizations/&lt;organization_id&gt;`.
    * - `project`: A project name in the form `projects/&lt;project_id&gt;`.
@@ -191,14 +195,19 @@ public final class SearchCasesRequest extends com.google.protobuf.GeneratedMessa
    * - `creator.email`: The email address of the case creator.
    * - `billingAccount`: A billing account in the form
    * `billingAccounts/&lt;billing_account_id&gt;`
+   *
    * You must specify either `organization` or `project`.
+   *
    * To search across `displayName`, `description`, and comments, use a global
    * restriction with no keyword or operator. For example, `"my search"`.
+   *
    * To search only cases updated after a certain date, use `update_time`
    * restricted with that particular date, time, and timezone in ISO datetime
    * format. For example, `update_time&gt;"2020-01-01T00:00:00-05:00"`.
    * `update_time` only supports the greater than operator (`&gt;`).
+   *
    * Examples:
+   *
    * - `organization="organizations/123456789"`
    * - `project="projects/my-project-id"`
    * - `project="projects/123456789"`
@@ -820,8 +829,10 @@ public final class SearchCasesRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * An expression written in filter language.
+     *
      * A query uses the following fields with the operators equals (`=`) and
      * `AND`:
+     *
      * - `organization`: An organization name in the form
      * `organizations/&lt;organization_id&gt;`.
      * - `project`: A project name in the form `projects/&lt;project_id&gt;`.
@@ -832,14 +843,19 @@ public final class SearchCasesRequest extends com.google.protobuf.GeneratedMessa
      * - `creator.email`: The email address of the case creator.
      * - `billingAccount`: A billing account in the form
      * `billingAccounts/&lt;billing_account_id&gt;`
+     *
      * You must specify either `organization` or `project`.
+     *
      * To search across `displayName`, `description`, and comments, use a global
      * restriction with no keyword or operator. For example, `"my search"`.
+     *
      * To search only cases updated after a certain date, use `update_time`
      * restricted with that particular date, time, and timezone in ISO datetime
      * format. For example, `update_time&gt;"2020-01-01T00:00:00-05:00"`.
      * `update_time` only supports the greater than operator (`&gt;`).
+     *
      * Examples:
+     *
      * - `organization="organizations/123456789"`
      * - `project="projects/my-project-id"`
      * - `project="projects/123456789"`
@@ -869,8 +885,10 @@ public final class SearchCasesRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * An expression written in filter language.
+     *
      * A query uses the following fields with the operators equals (`=`) and
      * `AND`:
+     *
      * - `organization`: An organization name in the form
      * `organizations/&lt;organization_id&gt;`.
      * - `project`: A project name in the form `projects/&lt;project_id&gt;`.
@@ -881,14 +899,19 @@ public final class SearchCasesRequest extends com.google.protobuf.GeneratedMessa
      * - `creator.email`: The email address of the case creator.
      * - `billingAccount`: A billing account in the form
      * `billingAccounts/&lt;billing_account_id&gt;`
+     *
      * You must specify either `organization` or `project`.
+     *
      * To search across `displayName`, `description`, and comments, use a global
      * restriction with no keyword or operator. For example, `"my search"`.
+     *
      * To search only cases updated after a certain date, use `update_time`
      * restricted with that particular date, time, and timezone in ISO datetime
      * format. For example, `update_time&gt;"2020-01-01T00:00:00-05:00"`.
      * `update_time` only supports the greater than operator (`&gt;`).
+     *
      * Examples:
+     *
      * - `organization="organizations/123456789"`
      * - `project="projects/my-project-id"`
      * - `project="projects/123456789"`
@@ -918,8 +941,10 @@ public final class SearchCasesRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * An expression written in filter language.
+     *
      * A query uses the following fields with the operators equals (`=`) and
      * `AND`:
+     *
      * - `organization`: An organization name in the form
      * `organizations/&lt;organization_id&gt;`.
      * - `project`: A project name in the form `projects/&lt;project_id&gt;`.
@@ -930,14 +955,19 @@ public final class SearchCasesRequest extends com.google.protobuf.GeneratedMessa
      * - `creator.email`: The email address of the case creator.
      * - `billingAccount`: A billing account in the form
      * `billingAccounts/&lt;billing_account_id&gt;`
+     *
      * You must specify either `organization` or `project`.
+     *
      * To search across `displayName`, `description`, and comments, use a global
      * restriction with no keyword or operator. For example, `"my search"`.
+     *
      * To search only cases updated after a certain date, use `update_time`
      * restricted with that particular date, time, and timezone in ISO datetime
      * format. For example, `update_time&gt;"2020-01-01T00:00:00-05:00"`.
      * `update_time` only supports the greater than operator (`&gt;`).
+     *
      * Examples:
+     *
      * - `organization="organizations/123456789"`
      * - `project="projects/my-project-id"`
      * - `project="projects/123456789"`
@@ -966,8 +996,10 @@ public final class SearchCasesRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * An expression written in filter language.
+     *
      * A query uses the following fields with the operators equals (`=`) and
      * `AND`:
+     *
      * - `organization`: An organization name in the form
      * `organizations/&lt;organization_id&gt;`.
      * - `project`: A project name in the form `projects/&lt;project_id&gt;`.
@@ -978,14 +1010,19 @@ public final class SearchCasesRequest extends com.google.protobuf.GeneratedMessa
      * - `creator.email`: The email address of the case creator.
      * - `billingAccount`: A billing account in the form
      * `billingAccounts/&lt;billing_account_id&gt;`
+     *
      * You must specify either `organization` or `project`.
+     *
      * To search across `displayName`, `description`, and comments, use a global
      * restriction with no keyword or operator. For example, `"my search"`.
+     *
      * To search only cases updated after a certain date, use `update_time`
      * restricted with that particular date, time, and timezone in ISO datetime
      * format. For example, `update_time&gt;"2020-01-01T00:00:00-05:00"`.
      * `update_time` only supports the greater than operator (`&gt;`).
+     *
      * Examples:
+     *
      * - `organization="organizations/123456789"`
      * - `project="projects/my-project-id"`
      * - `project="projects/123456789"`
@@ -1010,8 +1047,10 @@ public final class SearchCasesRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * An expression written in filter language.
+     *
      * A query uses the following fields with the operators equals (`=`) and
      * `AND`:
+     *
      * - `organization`: An organization name in the form
      * `organizations/&lt;organization_id&gt;`.
      * - `project`: A project name in the form `projects/&lt;project_id&gt;`.
@@ -1022,14 +1061,19 @@ public final class SearchCasesRequest extends com.google.protobuf.GeneratedMessa
      * - `creator.email`: The email address of the case creator.
      * - `billingAccount`: A billing account in the form
      * `billingAccounts/&lt;billing_account_id&gt;`
+     *
      * You must specify either `organization` or `project`.
+     *
      * To search across `displayName`, `description`, and comments, use a global
      * restriction with no keyword or operator. For example, `"my search"`.
+     *
      * To search only cases updated after a certain date, use `update_time`
      * restricted with that particular date, time, and timezone in ISO datetime
      * format. For example, `update_time&gt;"2020-01-01T00:00:00-05:00"`.
      * `update_time` only supports the greater than operator (`&gt;`).
+     *
      * Examples:
+     *
      * - `organization="organizations/123456789"`
      * - `project="projects/my-project-id"`
      * - `project="projects/123456789"`

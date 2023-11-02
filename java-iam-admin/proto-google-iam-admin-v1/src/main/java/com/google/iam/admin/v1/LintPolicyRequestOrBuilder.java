@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,9 +28,11 @@ public interface LintPolicyRequestOrBuilder
    *
    * <pre>
    * The full resource name of the policy this lint request is about.
+   *
    * The name follows the Google Cloud Platform (GCP) resource format.
    * For example, a GCP project with ID `my-project` will be named
    * `//cloudresourcemanager.googleapis.com/projects/my-project`.
+   *
    * The resource name is not used to read the policy instance from the Cloud
    * IAM database. The candidate policy for lint has to be provided in the same
    * request object.
@@ -46,9 +48,11 @@ public interface LintPolicyRequestOrBuilder
    *
    * <pre>
    * The full resource name of the policy this lint request is about.
+   *
    * The name follows the Google Cloud Platform (GCP) resource format.
    * For example, a GCP project with ID `my-project` will be named
    * `//cloudresourcemanager.googleapis.com/projects/my-project`.
+   *
    * The resource name is not used to read the policy instance from the Cloud
    * IAM database. The candidate policy for lint has to be provided in the same
    * request object.
@@ -95,5 +99,5 @@ public interface LintPolicyRequestOrBuilder
    */
   com.google.type.ExprOrBuilder getConditionOrBuilder();
 
-  public com.google.iam.admin.v1.LintPolicyRequest.LintObjectCase getLintObjectCase();
+  com.google.iam.admin.v1.LintPolicyRequest.LintObjectCase getLintObjectCase();
 }

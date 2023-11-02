@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class GetUptimeCheckConfigRequest extends com.google.protobuf.Gener
     return new GetUptimeCheckConfigRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.monitoring.v3.UptimeServiceProto
         .internal_static_google_monitoring_v3_GetUptimeCheckConfigRequest_descriptor;
@@ -76,6 +71,7 @@ public final class GetUptimeCheckConfigRequest extends com.google.protobuf.Gener
    *
    * <pre>
    * Required. The Uptime check configuration to retrieve. The format is:
+   *
    *     projects/[PROJECT_ID_OR_NUMBER]/uptimeCheckConfigs/[UPTIME_CHECK_ID]
    * </pre>
    *
@@ -102,6 +98,7 @@ public final class GetUptimeCheckConfigRequest extends com.google.protobuf.Gener
    *
    * <pre>
    * Required. The Uptime check configuration to retrieve. The format is:
+   *
    *     projects/[PROJECT_ID_OR_NUMBER]/uptimeCheckConfigs/[UPTIME_CHECK_ID]
    * </pre>
    *
@@ -472,6 +469,7 @@ public final class GetUptimeCheckConfigRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. The Uptime check configuration to retrieve. The format is:
+     *
      *     projects/[PROJECT_ID_OR_NUMBER]/uptimeCheckConfigs/[UPTIME_CHECK_ID]
      * </pre>
      *
@@ -497,6 +495,7 @@ public final class GetUptimeCheckConfigRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. The Uptime check configuration to retrieve. The format is:
+     *
      *     projects/[PROJECT_ID_OR_NUMBER]/uptimeCheckConfigs/[UPTIME_CHECK_ID]
      * </pre>
      *
@@ -522,6 +521,7 @@ public final class GetUptimeCheckConfigRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. The Uptime check configuration to retrieve. The format is:
+     *
      *     projects/[PROJECT_ID_OR_NUMBER]/uptimeCheckConfigs/[UPTIME_CHECK_ID]
      * </pre>
      *
@@ -546,6 +546,7 @@ public final class GetUptimeCheckConfigRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. The Uptime check configuration to retrieve. The format is:
+     *
      *     projects/[PROJECT_ID_OR_NUMBER]/uptimeCheckConfigs/[UPTIME_CHECK_ID]
      * </pre>
      *
@@ -566,6 +567,7 @@ public final class GetUptimeCheckConfigRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. The Uptime check configuration to retrieve. The format is:
+     *
      *     projects/[PROJECT_ID_OR_NUMBER]/uptimeCheckConfigs/[UPTIME_CHECK_ID]
      * </pre>
      *

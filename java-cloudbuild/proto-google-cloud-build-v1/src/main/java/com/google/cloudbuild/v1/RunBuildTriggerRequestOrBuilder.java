@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -105,6 +105,7 @@ public interface RunBuildTriggerRequestOrBuilder
    *
    * <pre>
    * Source to build against this trigger.
+   * Branch and tag names cannot consist of regular expressions.
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.RepoSource source = 3;</code>
@@ -117,6 +118,7 @@ public interface RunBuildTriggerRequestOrBuilder
    *
    * <pre>
    * Source to build against this trigger.
+   * Branch and tag names cannot consist of regular expressions.
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.RepoSource source = 3;</code>
@@ -129,6 +131,7 @@ public interface RunBuildTriggerRequestOrBuilder
    *
    * <pre>
    * Source to build against this trigger.
+   * Branch and tag names cannot consist of regular expressions.
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.RepoSource source = 3;</code>

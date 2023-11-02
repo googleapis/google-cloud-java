@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,6 +35,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ExecutionException;
@@ -212,6 +213,8 @@ public class VpnTunnelsClientTest {
             .setId(3355)
             .setIkeVersion(1292118044)
             .setKind("kind3292052")
+            .setLabelFingerprint("labelFingerprint379449680")
+            .putAllLabels(new HashMap<String, String>())
             .addAllLocalTrafficSelector(new ArrayList<String>())
             .setName("name3373707")
             .setPeerExternalGateway("peerExternalGateway-1595423177")

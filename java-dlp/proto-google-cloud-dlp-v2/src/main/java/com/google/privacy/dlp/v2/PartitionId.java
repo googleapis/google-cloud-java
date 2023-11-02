@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@ package com.google.privacy.dlp.v2;
  * Datastore partition ID.
  * A partition ID identifies a grouping of entities. The grouping is always
  * by project and namespace, however the namespace ID may be empty.
+ *
  * A partition ID contains several dimensions:
  * project ID and namespace ID.
  * </pre>
@@ -50,11 +51,6 @@ public final class PartitionId extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new PartitionId();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -347,6 +343,7 @@ public final class PartitionId extends com.google.protobuf.GeneratedMessageV3
    * Datastore partition ID.
    * A partition ID identifies a grouping of entities. The grouping is always
    * by project and namespace, however the namespace ID may be empty.
+   *
    * A partition ID contains several dimensions:
    * project ID and namespace ID.
    * </pre>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -63,8 +63,8 @@ public interface SentenceOrBuilder
    *
    * <pre>
    * For calls to [AnalyzeSentiment][] or if
-   * [AnnotateTextRequest.Features.extract_document_sentiment][google.cloud.language.v1beta2.AnnotateTextRequest.Features.extract_document_sentiment] is set to
-   * true, this field will contain the sentiment for the sentence.
+   * [AnnotateTextRequest.Features.extract_document_sentiment][google.cloud.language.v1beta2.AnnotateTextRequest.Features.extract_document_sentiment]
+   * is set to true, this field will contain the sentiment for the sentence.
    * </pre>
    *
    * <code>.google.cloud.language.v1beta2.Sentiment sentiment = 2;</code>
@@ -77,8 +77,8 @@ public interface SentenceOrBuilder
    *
    * <pre>
    * For calls to [AnalyzeSentiment][] or if
-   * [AnnotateTextRequest.Features.extract_document_sentiment][google.cloud.language.v1beta2.AnnotateTextRequest.Features.extract_document_sentiment] is set to
-   * true, this field will contain the sentiment for the sentence.
+   * [AnnotateTextRequest.Features.extract_document_sentiment][google.cloud.language.v1beta2.AnnotateTextRequest.Features.extract_document_sentiment]
+   * is set to true, this field will contain the sentiment for the sentence.
    * </pre>
    *
    * <code>.google.cloud.language.v1beta2.Sentiment sentiment = 2;</code>
@@ -91,8 +91,8 @@ public interface SentenceOrBuilder
    *
    * <pre>
    * For calls to [AnalyzeSentiment][] or if
-   * [AnnotateTextRequest.Features.extract_document_sentiment][google.cloud.language.v1beta2.AnnotateTextRequest.Features.extract_document_sentiment] is set to
-   * true, this field will contain the sentiment for the sentence.
+   * [AnnotateTextRequest.Features.extract_document_sentiment][google.cloud.language.v1beta2.AnnotateTextRequest.Features.extract_document_sentiment]
+   * is set to true, this field will contain the sentiment for the sentence.
    * </pre>
    *
    * <code>.google.cloud.language.v1beta2.Sentiment sentiment = 2;</code>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,24 +24,33 @@ package com.google.devtools.clouddebugger.v2;
  * <pre>
  * Represents a variable or an argument possibly of a compound object type.
  * Note how the following variables are represented:
+ *
  * 1) A simple variable:
+ *
  *     int x = 5
+ *
  *     { name: "x", value: "5", type: "int" }  // Captured variable
+ *
  * 2) A compound object:
+ *
  *     struct T {
  *         int m1;
  *         int m2;
  *     };
  *     T x = { 3, 7 };
+ *
  *     {  // Captured variable
  *         name: "x",
  *         type: "T",
  *         members { name: "m1", value: "3", type: "int" },
  *         members { name: "m2", value: "7", type: "int" }
  *     }
+ *
  * 3) A pointer where the pointee was captured:
+ *
  *     T x = { 3, 7 };
  *     T* p = &amp;x;
+ *
  *     {   // Captured variable
  *         name: "p",
  *         type: "T*",
@@ -49,27 +58,38 @@ package com.google.devtools.clouddebugger.v2;
  *         members { name: "m1", value: "3", type: "int" },
  *         members { name: "m2", value: "7", type: "int" }
  *     }
+ *
  * 4) A pointer where the pointee was not captured:
+ *
  *     T* p = new T;
+ *
  *     {   // Captured variable
  *         name: "p",
  *         type: "T*",
  *         value: "0x00400400"
  *         status { is_error: true, description { format: "unavailable" } }
  *     }
+ *
  * The status should describe the reason for the missing value,
  * such as `&lt;optimized out&gt;`, `&lt;inaccessible&gt;`, `&lt;pointers limit reached&gt;`.
+ *
  * Note that a null pointer should not have members.
+ *
  * 5) An unnamed value:
+ *
  *     int* p = new int(7);
+ *
  *     {   // Captured variable
  *         name: "p",
  *         value: "0x00500500",
  *         type: "int*",
  *         members { value: "7", type: "int" } }
+ *
  * 6) An unnamed pointer where the pointee was not captured:
+ *
  *     int* p = new int(7);
  *     int** pp = &amp;p;
+ *
  *     {  // Captured variable
  *         name: "pp",
  *         value: "0x00500500",
@@ -83,26 +103,33 @@ package com.google.devtools.clouddebugger.v2;
  *             }
  *         }
  *     }
+ *
  * To optimize computation, memory and network traffic, variables that
  * repeat in the output multiple times can be stored once in a shared
  * variable table and be referenced using the `var_table_index` field.  The
  * variables stored in the shared table are nameless and are essentially
  * a partition of the complete variable. To reconstruct the complete
  * variable, merge the referencing variable with the referenced variable.
+ *
  * When using the shared variable table, the following variables:
+ *
  *     T x = { 3, 7 };
  *     T* p = &amp;x;
  *     T&amp; r = x;
+ *
  *     { name: "x", var_table_index: 3, type: "T" }  // Captured variables
  *     { name: "p", value "0x00500500", type="T*", var_table_index: 3 }
  *     { name: "r", type="T&amp;", var_table_index: 3 }
+ *
  *     {  // Shared variable table entry #3:
  *         members { name: "m1", value: "3", type: "int" },
  *         members { name: "m2", value: "7", type: "int" }
  *     }
+ *
  * Note that the pointer address is stored with the referencing variable
  * and not with the referenced variable. This allows the referenced variable
  * to be shared between pointers and references.
+ *
  * The type field is optional. The debugger agent may or may not support it.
  * </pre>
  *
@@ -129,11 +156,6 @@ public final class Variable extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Variable();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -448,12 +470,17 @@ public final class Variable extends com.google.protobuf.GeneratedMessageV3
    * expression. The rest of breakpoint data still remains valid. Variables
    * might be reported in error state even when breakpoint is not in final
    * state.
+   *
    * The message may refer to variable name with `refers_to` set to
    * `VARIABLE_NAME`. Alternatively `refers_to` will be set to `VARIABLE_VALUE`.
    * In either case variable value and members will be unset.
+   *
    * Example of error message applied to name: `Invalid expression syntax`.
+   *
    * Example of information message applied to value: `Not captured`.
+   *
    * Examples of error message applied to value:
+   *
    * *   `Malformed string`,
    * *   `Field f not found in class C`
    * *   `Null pointer dereference`
@@ -476,12 +503,17 @@ public final class Variable extends com.google.protobuf.GeneratedMessageV3
    * expression. The rest of breakpoint data still remains valid. Variables
    * might be reported in error state even when breakpoint is not in final
    * state.
+   *
    * The message may refer to variable name with `refers_to` set to
    * `VARIABLE_NAME`. Alternatively `refers_to` will be set to `VARIABLE_VALUE`.
    * In either case variable value and members will be unset.
+   *
    * Example of error message applied to name: `Invalid expression syntax`.
+   *
    * Example of information message applied to value: `Not captured`.
+   *
    * Examples of error message applied to value:
+   *
    * *   `Malformed string`,
    * *   `Field f not found in class C`
    * *   `Null pointer dereference`
@@ -506,12 +538,17 @@ public final class Variable extends com.google.protobuf.GeneratedMessageV3
    * expression. The rest of breakpoint data still remains valid. Variables
    * might be reported in error state even when breakpoint is not in final
    * state.
+   *
    * The message may refer to variable name with `refers_to` set to
    * `VARIABLE_NAME`. Alternatively `refers_to` will be set to `VARIABLE_VALUE`.
    * In either case variable value and members will be unset.
+   *
    * Example of error message applied to name: `Invalid expression syntax`.
+   *
    * Example of information message applied to value: `Not captured`.
+   *
    * Examples of error message applied to value:
+   *
    * *   `Malformed string`,
    * *   `Field f not found in class C`
    * *   `Null pointer dereference`
@@ -748,24 +785,33 @@ public final class Variable extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Represents a variable or an argument possibly of a compound object type.
    * Note how the following variables are represented:
+   *
    * 1) A simple variable:
+   *
    *     int x = 5
+   *
    *     { name: "x", value: "5", type: "int" }  // Captured variable
+   *
    * 2) A compound object:
+   *
    *     struct T {
    *         int m1;
    *         int m2;
    *     };
    *     T x = { 3, 7 };
+   *
    *     {  // Captured variable
    *         name: "x",
    *         type: "T",
    *         members { name: "m1", value: "3", type: "int" },
    *         members { name: "m2", value: "7", type: "int" }
    *     }
+   *
    * 3) A pointer where the pointee was captured:
+   *
    *     T x = { 3, 7 };
    *     T* p = &amp;x;
+   *
    *     {   // Captured variable
    *         name: "p",
    *         type: "T*",
@@ -773,27 +819,38 @@ public final class Variable extends com.google.protobuf.GeneratedMessageV3
    *         members { name: "m1", value: "3", type: "int" },
    *         members { name: "m2", value: "7", type: "int" }
    *     }
+   *
    * 4) A pointer where the pointee was not captured:
+   *
    *     T* p = new T;
+   *
    *     {   // Captured variable
    *         name: "p",
    *         type: "T*",
    *         value: "0x00400400"
    *         status { is_error: true, description { format: "unavailable" } }
    *     }
+   *
    * The status should describe the reason for the missing value,
    * such as `&lt;optimized out&gt;`, `&lt;inaccessible&gt;`, `&lt;pointers limit reached&gt;`.
+   *
    * Note that a null pointer should not have members.
+   *
    * 5) An unnamed value:
+   *
    *     int* p = new int(7);
+   *
    *     {   // Captured variable
    *         name: "p",
    *         value: "0x00500500",
    *         type: "int*",
    *         members { value: "7", type: "int" } }
+   *
    * 6) An unnamed pointer where the pointee was not captured:
+   *
    *     int* p = new int(7);
    *     int** pp = &amp;p;
+   *
    *     {  // Captured variable
    *         name: "pp",
    *         value: "0x00500500",
@@ -807,26 +864,33 @@ public final class Variable extends com.google.protobuf.GeneratedMessageV3
    *             }
    *         }
    *     }
+   *
    * To optimize computation, memory and network traffic, variables that
    * repeat in the output multiple times can be stored once in a shared
    * variable table and be referenced using the `var_table_index` field.  The
    * variables stored in the shared table are nameless and are essentially
    * a partition of the complete variable. To reconstruct the complete
    * variable, merge the referencing variable with the referenced variable.
+   *
    * When using the shared variable table, the following variables:
+   *
    *     T x = { 3, 7 };
    *     T* p = &amp;x;
    *     T&amp; r = x;
+   *
    *     { name: "x", var_table_index: 3, type: "T" }  // Captured variables
    *     { name: "p", value "0x00500500", type="T*", var_table_index: 3 }
    *     { name: "r", type="T&amp;", var_table_index: 3 }
+   *
    *     {  // Shared variable table entry #3:
    *         members { name: "m1", value: "3", type: "int" },
    *         members { name: "m2", value: "7", type: "int" }
    *     }
+   *
    * Note that the pointer address is stored with the referencing variable
    * and not with the referenced variable. This allows the referenced variable
    * to be shared between pointers and references.
+   *
    * The type field is optional. The debugger agent may or may not support it.
    * </pre>
    *
@@ -2029,12 +2093,17 @@ public final class Variable extends com.google.protobuf.GeneratedMessageV3
      * expression. The rest of breakpoint data still remains valid. Variables
      * might be reported in error state even when breakpoint is not in final
      * state.
+     *
      * The message may refer to variable name with `refers_to` set to
      * `VARIABLE_NAME`. Alternatively `refers_to` will be set to `VARIABLE_VALUE`.
      * In either case variable value and members will be unset.
+     *
      * Example of error message applied to name: `Invalid expression syntax`.
+     *
      * Example of information message applied to value: `Not captured`.
+     *
      * Examples of error message applied to value:
+     *
      * *   `Malformed string`,
      * *   `Field f not found in class C`
      * *   `Null pointer dereference`
@@ -2056,12 +2125,17 @@ public final class Variable extends com.google.protobuf.GeneratedMessageV3
      * expression. The rest of breakpoint data still remains valid. Variables
      * might be reported in error state even when breakpoint is not in final
      * state.
+     *
      * The message may refer to variable name with `refers_to` set to
      * `VARIABLE_NAME`. Alternatively `refers_to` will be set to `VARIABLE_VALUE`.
      * In either case variable value and members will be unset.
+     *
      * Example of error message applied to name: `Invalid expression syntax`.
+     *
      * Example of information message applied to value: `Not captured`.
+     *
      * Examples of error message applied to value:
+     *
      * *   `Malformed string`,
      * *   `Field f not found in class C`
      * *   `Null pointer dereference`
@@ -2089,12 +2163,17 @@ public final class Variable extends com.google.protobuf.GeneratedMessageV3
      * expression. The rest of breakpoint data still remains valid. Variables
      * might be reported in error state even when breakpoint is not in final
      * state.
+     *
      * The message may refer to variable name with `refers_to` set to
      * `VARIABLE_NAME`. Alternatively `refers_to` will be set to `VARIABLE_VALUE`.
      * In either case variable value and members will be unset.
+     *
      * Example of error message applied to name: `Invalid expression syntax`.
+     *
      * Example of information message applied to value: `Not captured`.
+     *
      * Examples of error message applied to value:
+     *
      * *   `Malformed string`,
      * *   `Field f not found in class C`
      * *   `Null pointer dereference`
@@ -2124,12 +2203,17 @@ public final class Variable extends com.google.protobuf.GeneratedMessageV3
      * expression. The rest of breakpoint data still remains valid. Variables
      * might be reported in error state even when breakpoint is not in final
      * state.
+     *
      * The message may refer to variable name with `refers_to` set to
      * `VARIABLE_NAME`. Alternatively `refers_to` will be set to `VARIABLE_VALUE`.
      * In either case variable value and members will be unset.
+     *
      * Example of error message applied to name: `Invalid expression syntax`.
+     *
      * Example of information message applied to value: `Not captured`.
+     *
      * Examples of error message applied to value:
+     *
      * *   `Malformed string`,
      * *   `Field f not found in class C`
      * *   `Null pointer dereference`
@@ -2157,12 +2241,17 @@ public final class Variable extends com.google.protobuf.GeneratedMessageV3
      * expression. The rest of breakpoint data still remains valid. Variables
      * might be reported in error state even when breakpoint is not in final
      * state.
+     *
      * The message may refer to variable name with `refers_to` set to
      * `VARIABLE_NAME`. Alternatively `refers_to` will be set to `VARIABLE_VALUE`.
      * In either case variable value and members will be unset.
+     *
      * Example of error message applied to name: `Invalid expression syntax`.
+     *
      * Example of information message applied to value: `Not captured`.
+     *
      * Examples of error message applied to value:
+     *
      * *   `Malformed string`,
      * *   `Field f not found in class C`
      * *   `Null pointer dereference`
@@ -2195,12 +2284,17 @@ public final class Variable extends com.google.protobuf.GeneratedMessageV3
      * expression. The rest of breakpoint data still remains valid. Variables
      * might be reported in error state even when breakpoint is not in final
      * state.
+     *
      * The message may refer to variable name with `refers_to` set to
      * `VARIABLE_NAME`. Alternatively `refers_to` will be set to `VARIABLE_VALUE`.
      * In either case variable value and members will be unset.
+     *
      * Example of error message applied to name: `Invalid expression syntax`.
+     *
      * Example of information message applied to value: `Not captured`.
+     *
      * Examples of error message applied to value:
+     *
      * *   `Malformed string`,
      * *   `Field f not found in class C`
      * *   `Null pointer dereference`
@@ -2227,12 +2321,17 @@ public final class Variable extends com.google.protobuf.GeneratedMessageV3
      * expression. The rest of breakpoint data still remains valid. Variables
      * might be reported in error state even when breakpoint is not in final
      * state.
+     *
      * The message may refer to variable name with `refers_to` set to
      * `VARIABLE_NAME`. Alternatively `refers_to` will be set to `VARIABLE_VALUE`.
      * In either case variable value and members will be unset.
+     *
      * Example of error message applied to name: `Invalid expression syntax`.
+     *
      * Example of information message applied to value: `Not captured`.
+     *
      * Examples of error message applied to value:
+     *
      * *   `Malformed string`,
      * *   `Field f not found in class C`
      * *   `Null pointer dereference`
@@ -2254,12 +2353,17 @@ public final class Variable extends com.google.protobuf.GeneratedMessageV3
      * expression. The rest of breakpoint data still remains valid. Variables
      * might be reported in error state even when breakpoint is not in final
      * state.
+     *
      * The message may refer to variable name with `refers_to` set to
      * `VARIABLE_NAME`. Alternatively `refers_to` will be set to `VARIABLE_VALUE`.
      * In either case variable value and members will be unset.
+     *
      * Example of error message applied to name: `Invalid expression syntax`.
+     *
      * Example of information message applied to value: `Not captured`.
+     *
      * Examples of error message applied to value:
+     *
      * *   `Malformed string`,
      * *   `Field f not found in class C`
      * *   `Null pointer dereference`
@@ -2285,12 +2389,17 @@ public final class Variable extends com.google.protobuf.GeneratedMessageV3
      * expression. The rest of breakpoint data still remains valid. Variables
      * might be reported in error state even when breakpoint is not in final
      * state.
+     *
      * The message may refer to variable name with `refers_to` set to
      * `VARIABLE_NAME`. Alternatively `refers_to` will be set to `VARIABLE_VALUE`.
      * In either case variable value and members will be unset.
+     *
      * Example of error message applied to name: `Invalid expression syntax`.
+     *
      * Example of information message applied to value: `Not captured`.
+     *
      * Examples of error message applied to value:
+     *
      * *   `Malformed string`,
      * *   `Field f not found in class C`
      * *   `Null pointer dereference`

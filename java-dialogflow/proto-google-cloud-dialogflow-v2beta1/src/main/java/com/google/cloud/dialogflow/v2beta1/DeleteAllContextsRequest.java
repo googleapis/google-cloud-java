@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class DeleteAllContextsRequest extends com.google.protobuf.Generate
     return new DeleteAllContextsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.v2beta1.ContextProto
         .internal_static_google_cloud_dialogflow_v2beta1_DeleteAllContextsRequest_descriptor;
@@ -86,6 +81,7 @@ public final class DeleteAllContextsRequest extends com.google.protobuf.Generate
    * - `projects/&lt;Project ID&gt;/locations/&lt;Location
    *   ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User ID&gt;/sessions/&lt;Session
    *   ID&gt;`,
+   *
    * If `Location ID` is not specified we assume default 'us' location. If
    * `Environment ID` is not specified we assume default 'draft' environment. If
    * `User ID` is not specified, we assume default '-' user.
@@ -123,6 +119,7 @@ public final class DeleteAllContextsRequest extends com.google.protobuf.Generate
    * - `projects/&lt;Project ID&gt;/locations/&lt;Location
    *   ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User ID&gt;/sessions/&lt;Session
    *   ID&gt;`,
+   *
    * If `Location ID` is not specified we assume default 'us' location. If
    * `Environment ID` is not specified we assume default 'draft' environment. If
    * `User ID` is not specified, we assume default '-' user.
@@ -509,6 +506,7 @@ public final class DeleteAllContextsRequest extends com.google.protobuf.Generate
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location
      *   ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User ID&gt;/sessions/&lt;Session
      *   ID&gt;`,
+     *
      * If `Location ID` is not specified we assume default 'us' location. If
      * `Environment ID` is not specified we assume default 'draft' environment. If
      * `User ID` is not specified, we assume default '-' user.
@@ -545,6 +543,7 @@ public final class DeleteAllContextsRequest extends com.google.protobuf.Generate
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location
      *   ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User ID&gt;/sessions/&lt;Session
      *   ID&gt;`,
+     *
      * If `Location ID` is not specified we assume default 'us' location. If
      * `Environment ID` is not specified we assume default 'draft' environment. If
      * `User ID` is not specified, we assume default '-' user.
@@ -581,6 +580,7 @@ public final class DeleteAllContextsRequest extends com.google.protobuf.Generate
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location
      *   ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User ID&gt;/sessions/&lt;Session
      *   ID&gt;`,
+     *
      * If `Location ID` is not specified we assume default 'us' location. If
      * `Environment ID` is not specified we assume default 'draft' environment. If
      * `User ID` is not specified, we assume default '-' user.
@@ -616,6 +616,7 @@ public final class DeleteAllContextsRequest extends com.google.protobuf.Generate
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location
      *   ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User ID&gt;/sessions/&lt;Session
      *   ID&gt;`,
+     *
      * If `Location ID` is not specified we assume default 'us' location. If
      * `Environment ID` is not specified we assume default 'draft' environment. If
      * `User ID` is not specified, we assume default '-' user.
@@ -647,6 +648,7 @@ public final class DeleteAllContextsRequest extends com.google.protobuf.Generate
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location
      *   ID&gt;/agent/environments/&lt;Environment ID&gt;/users/&lt;User ID&gt;/sessions/&lt;Session
      *   ID&gt;`,
+     *
      * If `Location ID` is not specified we assume default 'us' location. If
      * `Environment ID` is not specified we assume default 'draft' environment. If
      * `User ID` is not specified, we assume default '-' user.

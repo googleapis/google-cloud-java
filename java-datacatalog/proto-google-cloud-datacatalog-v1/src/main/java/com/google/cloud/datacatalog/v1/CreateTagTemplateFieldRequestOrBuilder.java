@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -59,7 +59,9 @@ public interface CreateTagTemplateFieldRequestOrBuilder
    *
    * <pre>
    * Required. The ID of the tag template field to create.
+   *
    * Note: Adding a required field to an existing template is *not* allowed.
+   *
    * Field IDs can contain letters (both uppercase and lowercase), numbers
    * (0-9), underscores (_) and dashes (-). Field IDs must be at least 1
    * character long and at most 128 characters long. Field IDs must also be
@@ -76,7 +78,9 @@ public interface CreateTagTemplateFieldRequestOrBuilder
    *
    * <pre>
    * Required. The ID of the tag template field to create.
+   *
    * Note: Adding a required field to an existing template is *not* allowed.
+   *
    * Field IDs can contain letters (both uppercase and lowercase), numbers
    * (0-9), underscores (_) and dashes (-). Field IDs must be at least 1
    * character long and at most 128 characters long. Field IDs must also be

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,11 +50,6 @@ public final class ListWorkflowsRequest extends com.google.protobuf.GeneratedMes
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ListWorkflowsRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -135,10 +130,10 @@ public final class ListWorkflowsRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Maximum number of workflows to return per call. The service may return
-   * fewer than this value. If the value is not specified, a default value of
-   * 500 will be used. The maximum permitted value is 1000 and values greater
-   * than 1000 will be coerced down to 1000.
+   * Maximum number of workflows to return per call. The service might return
+   * fewer than this value even if not at the end of the collection. If a value
+   * is not specified, a default value of 500 is used. The maximum permitted
+   * value is 1000 and values greater than 1000 are coerced down to 1000.
    * </pre>
    *
    * <code>int32 page_size = 2;</code>
@@ -160,6 +155,7 @@ public final class ListWorkflowsRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * A page token, received from a previous `ListWorkflows` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListWorkflows` must
    * match the call that provided the page token.
    * </pre>
@@ -186,6 +182,7 @@ public final class ListWorkflowsRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * A page token, received from a previous `ListWorkflows` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListWorkflows` must
    * match the call that provided the page token.
    * </pre>
@@ -266,10 +263,10 @@ public final class ListWorkflowsRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Comma-separated list of fields that that specify the order of the results.
+   * Comma-separated list of fields that specify the order of the results.
    * Default sorting order for a field is ascending. To specify descending order
-   * for a field, append a " desc" suffix.
-   * If not specified, the results will be returned in an unspecified order.
+   * for a field, append a "desc" suffix.
+   * If not specified, the results are returned in an unspecified order.
    * </pre>
    *
    * <code>string order_by = 5;</code>
@@ -292,10 +289,10 @@ public final class ListWorkflowsRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Comma-separated list of fields that that specify the order of the results.
+   * Comma-separated list of fields that specify the order of the results.
    * Default sorting order for a field is ascending. To specify descending order
-   * for a field, append a " desc" suffix.
-   * If not specified, the results will be returned in an unspecified order.
+   * for a field, append a "desc" suffix.
+   * If not specified, the results are returned in an unspecified order.
    * </pre>
    *
    * <code>string order_by = 5;</code>
@@ -879,10 +876,10 @@ public final class ListWorkflowsRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Maximum number of workflows to return per call. The service may return
-     * fewer than this value. If the value is not specified, a default value of
-     * 500 will be used. The maximum permitted value is 1000 and values greater
-     * than 1000 will be coerced down to 1000.
+     * Maximum number of workflows to return per call. The service might return
+     * fewer than this value even if not at the end of the collection. If a value
+     * is not specified, a default value of 500 is used. The maximum permitted
+     * value is 1000 and values greater than 1000 are coerced down to 1000.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>
@@ -897,10 +894,10 @@ public final class ListWorkflowsRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Maximum number of workflows to return per call. The service may return
-     * fewer than this value. If the value is not specified, a default value of
-     * 500 will be used. The maximum permitted value is 1000 and values greater
-     * than 1000 will be coerced down to 1000.
+     * Maximum number of workflows to return per call. The service might return
+     * fewer than this value even if not at the end of the collection. If a value
+     * is not specified, a default value of 500 is used. The maximum permitted
+     * value is 1000 and values greater than 1000 are coerced down to 1000.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>
@@ -919,10 +916,10 @@ public final class ListWorkflowsRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Maximum number of workflows to return per call. The service may return
-     * fewer than this value. If the value is not specified, a default value of
-     * 500 will be used. The maximum permitted value is 1000 and values greater
-     * than 1000 will be coerced down to 1000.
+     * Maximum number of workflows to return per call. The service might return
+     * fewer than this value even if not at the end of the collection. If a value
+     * is not specified, a default value of 500 is used. The maximum permitted
+     * value is 1000 and values greater than 1000 are coerced down to 1000.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>
@@ -943,6 +940,7 @@ public final class ListWorkflowsRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * A page token, received from a previous `ListWorkflows` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListWorkflows` must
      * match the call that provided the page token.
      * </pre>
@@ -968,6 +966,7 @@ public final class ListWorkflowsRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * A page token, received from a previous `ListWorkflows` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListWorkflows` must
      * match the call that provided the page token.
      * </pre>
@@ -993,6 +992,7 @@ public final class ListWorkflowsRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * A page token, received from a previous `ListWorkflows` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListWorkflows` must
      * match the call that provided the page token.
      * </pre>
@@ -1017,6 +1017,7 @@ public final class ListWorkflowsRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * A page token, received from a previous `ListWorkflows` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListWorkflows` must
      * match the call that provided the page token.
      * </pre>
@@ -1037,6 +1038,7 @@ public final class ListWorkflowsRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * A page token, received from a previous `ListWorkflows` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListWorkflows` must
      * match the call that provided the page token.
      * </pre>
@@ -1168,10 +1170,10 @@ public final class ListWorkflowsRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Comma-separated list of fields that that specify the order of the results.
+     * Comma-separated list of fields that specify the order of the results.
      * Default sorting order for a field is ascending. To specify descending order
-     * for a field, append a " desc" suffix.
-     * If not specified, the results will be returned in an unspecified order.
+     * for a field, append a "desc" suffix.
+     * If not specified, the results are returned in an unspecified order.
      * </pre>
      *
      * <code>string order_by = 5;</code>
@@ -1193,10 +1195,10 @@ public final class ListWorkflowsRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Comma-separated list of fields that that specify the order of the results.
+     * Comma-separated list of fields that specify the order of the results.
      * Default sorting order for a field is ascending. To specify descending order
-     * for a field, append a " desc" suffix.
-     * If not specified, the results will be returned in an unspecified order.
+     * for a field, append a "desc" suffix.
+     * If not specified, the results are returned in an unspecified order.
      * </pre>
      *
      * <code>string order_by = 5;</code>
@@ -1218,10 +1220,10 @@ public final class ListWorkflowsRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Comma-separated list of fields that that specify the order of the results.
+     * Comma-separated list of fields that specify the order of the results.
      * Default sorting order for a field is ascending. To specify descending order
-     * for a field, append a " desc" suffix.
-     * If not specified, the results will be returned in an unspecified order.
+     * for a field, append a "desc" suffix.
+     * If not specified, the results are returned in an unspecified order.
      * </pre>
      *
      * <code>string order_by = 5;</code>
@@ -1242,10 +1244,10 @@ public final class ListWorkflowsRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Comma-separated list of fields that that specify the order of the results.
+     * Comma-separated list of fields that specify the order of the results.
      * Default sorting order for a field is ascending. To specify descending order
-     * for a field, append a " desc" suffix.
-     * If not specified, the results will be returned in an unspecified order.
+     * for a field, append a "desc" suffix.
+     * If not specified, the results are returned in an unspecified order.
      * </pre>
      *
      * <code>string order_by = 5;</code>
@@ -1262,10 +1264,10 @@ public final class ListWorkflowsRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Comma-separated list of fields that that specify the order of the results.
+     * Comma-separated list of fields that specify the order of the results.
      * Default sorting order for a field is ascending. To specify descending order
-     * for a field, append a " desc" suffix.
-     * If not specified, the results will be returned in an unspecified order.
+     * for a field, append a "desc" suffix.
+     * If not specified, the results are returned in an unspecified order.
      * </pre>
      *
      * <code>string order_by = 5;</code>

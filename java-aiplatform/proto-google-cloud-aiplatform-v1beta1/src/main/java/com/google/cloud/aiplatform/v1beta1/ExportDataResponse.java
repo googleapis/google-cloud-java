@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,18 +39,13 @@ public final class ExportDataResponse extends com.google.protobuf.GeneratedMessa
   }
 
   private ExportDataResponse() {
-    exportedFiles_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    exportedFiles_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ExportDataResponse();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -71,7 +66,8 @@ public final class ExportDataResponse extends com.google.protobuf.GeneratedMessa
   public static final int EXPORTED_FILES_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList exportedFiles_;
+  private com.google.protobuf.LazyStringArrayList exportedFiles_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -338,8 +334,7 @@ public final class ExportDataResponse extends com.google.protobuf.GeneratedMessa
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      exportedFiles_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      exportedFiles_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -367,7 +362,6 @@ public final class ExportDataResponse extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.aiplatform.v1beta1.ExportDataResponse buildPartial() {
       com.google.cloud.aiplatform.v1beta1.ExportDataResponse result =
           new com.google.cloud.aiplatform.v1beta1.ExportDataResponse(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -375,17 +369,12 @@ public final class ExportDataResponse extends com.google.protobuf.GeneratedMessa
       return result;
     }
 
-    private void buildPartialRepeatedFields(
-        com.google.cloud.aiplatform.v1beta1.ExportDataResponse result) {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        exportedFiles_ = exportedFiles_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.exportedFiles_ = exportedFiles_;
-    }
-
     private void buildPartial0(com.google.cloud.aiplatform.v1beta1.ExportDataResponse result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        exportedFiles_.makeImmutable();
+        result.exportedFiles_ = exportedFiles_;
+      }
     }
 
     @java.lang.Override
@@ -437,7 +426,7 @@ public final class ExportDataResponse extends com.google.protobuf.GeneratedMessa
       if (!other.exportedFiles_.isEmpty()) {
         if (exportedFiles_.isEmpty()) {
           exportedFiles_ = other.exportedFiles_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ |= 0x00000001;
         } else {
           ensureExportedFilesIsMutable();
           exportedFiles_.addAll(other.exportedFiles_);
@@ -496,14 +485,14 @@ public final class ExportDataResponse extends com.google.protobuf.GeneratedMessa
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList exportedFiles_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList exportedFiles_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureExportedFilesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!exportedFiles_.isModifiable()) {
         exportedFiles_ = new com.google.protobuf.LazyStringArrayList(exportedFiles_);
-        bitField0_ |= 0x00000001;
       }
+      bitField0_ |= 0x00000001;
     }
     /**
      *
@@ -517,7 +506,8 @@ public final class ExportDataResponse extends com.google.protobuf.GeneratedMessa
      * @return A list containing the exportedFiles.
      */
     public com.google.protobuf.ProtocolStringList getExportedFilesList() {
-      return exportedFiles_.getUnmodifiableView();
+      exportedFiles_.makeImmutable();
+      return exportedFiles_;
     }
     /**
      *
@@ -582,6 +572,7 @@ public final class ExportDataResponse extends com.google.protobuf.GeneratedMessa
       }
       ensureExportedFilesIsMutable();
       exportedFiles_.set(index, value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -603,6 +594,7 @@ public final class ExportDataResponse extends com.google.protobuf.GeneratedMessa
       }
       ensureExportedFilesIsMutable();
       exportedFiles_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -621,6 +613,7 @@ public final class ExportDataResponse extends com.google.protobuf.GeneratedMessa
     public Builder addAllExportedFiles(java.lang.Iterable<java.lang.String> values) {
       ensureExportedFilesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, exportedFiles_);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -636,8 +629,9 @@ public final class ExportDataResponse extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearExportedFiles() {
-      exportedFiles_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      exportedFiles_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      ;
       onChanged();
       return this;
     }
@@ -660,6 +654,7 @@ public final class ExportDataResponse extends com.google.protobuf.GeneratedMessa
       checkByteStringIsUtf8(value);
       ensureExportedFilesIsMutable();
       exportedFiles_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

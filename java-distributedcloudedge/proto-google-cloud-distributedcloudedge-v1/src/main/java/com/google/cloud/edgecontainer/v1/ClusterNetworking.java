@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,19 +38,14 @@ public final class ClusterNetworking extends com.google.protobuf.GeneratedMessag
   }
 
   private ClusterNetworking() {
-    clusterIpv4CidrBlocks_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    servicesIpv4CidrBlocks_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    clusterIpv4CidrBlocks_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    servicesIpv4CidrBlocks_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ClusterNetworking();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -71,7 +66,8 @@ public final class ClusterNetworking extends com.google.protobuf.GeneratedMessag
   public static final int CLUSTER_IPV4_CIDR_BLOCKS_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList clusterIpv4CidrBlocks_;
+  private com.google.protobuf.LazyStringArrayList clusterIpv4CidrBlocks_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -146,7 +142,8 @@ public final class ClusterNetworking extends com.google.protobuf.GeneratedMessag
   public static final int SERVICES_IPV4_CIDR_BLOCKS_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList servicesIpv4CidrBlocks_;
+  private com.google.protobuf.LazyStringArrayList servicesIpv4CidrBlocks_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -442,10 +439,8 @@ public final class ClusterNetworking extends com.google.protobuf.GeneratedMessag
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      clusterIpv4CidrBlocks_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
-      servicesIpv4CidrBlocks_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      clusterIpv4CidrBlocks_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      servicesIpv4CidrBlocks_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -473,7 +468,6 @@ public final class ClusterNetworking extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.edgecontainer.v1.ClusterNetworking buildPartial() {
       com.google.cloud.edgecontainer.v1.ClusterNetworking result =
           new com.google.cloud.edgecontainer.v1.ClusterNetworking(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -481,22 +475,16 @@ public final class ClusterNetworking extends com.google.protobuf.GeneratedMessag
       return result;
     }
 
-    private void buildPartialRepeatedFields(
-        com.google.cloud.edgecontainer.v1.ClusterNetworking result) {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        clusterIpv4CidrBlocks_ = clusterIpv4CidrBlocks_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.clusterIpv4CidrBlocks_ = clusterIpv4CidrBlocks_;
-      if (((bitField0_ & 0x00000002) != 0)) {
-        servicesIpv4CidrBlocks_ = servicesIpv4CidrBlocks_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.servicesIpv4CidrBlocks_ = servicesIpv4CidrBlocks_;
-    }
-
     private void buildPartial0(com.google.cloud.edgecontainer.v1.ClusterNetworking result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        clusterIpv4CidrBlocks_.makeImmutable();
+        result.clusterIpv4CidrBlocks_ = clusterIpv4CidrBlocks_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        servicesIpv4CidrBlocks_.makeImmutable();
+        result.servicesIpv4CidrBlocks_ = servicesIpv4CidrBlocks_;
+      }
     }
 
     @java.lang.Override
@@ -548,7 +536,7 @@ public final class ClusterNetworking extends com.google.protobuf.GeneratedMessag
       if (!other.clusterIpv4CidrBlocks_.isEmpty()) {
         if (clusterIpv4CidrBlocks_.isEmpty()) {
           clusterIpv4CidrBlocks_ = other.clusterIpv4CidrBlocks_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ |= 0x00000001;
         } else {
           ensureClusterIpv4CidrBlocksIsMutable();
           clusterIpv4CidrBlocks_.addAll(other.clusterIpv4CidrBlocks_);
@@ -558,7 +546,7 @@ public final class ClusterNetworking extends com.google.protobuf.GeneratedMessag
       if (!other.servicesIpv4CidrBlocks_.isEmpty()) {
         if (servicesIpv4CidrBlocks_.isEmpty()) {
           servicesIpv4CidrBlocks_ = other.servicesIpv4CidrBlocks_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureServicesIpv4CidrBlocksIsMutable();
           servicesIpv4CidrBlocks_.addAll(other.servicesIpv4CidrBlocks_);
@@ -624,15 +612,15 @@ public final class ClusterNetworking extends com.google.protobuf.GeneratedMessag
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList clusterIpv4CidrBlocks_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList clusterIpv4CidrBlocks_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureClusterIpv4CidrBlocksIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!clusterIpv4CidrBlocks_.isModifiable()) {
         clusterIpv4CidrBlocks_ =
             new com.google.protobuf.LazyStringArrayList(clusterIpv4CidrBlocks_);
-        bitField0_ |= 0x00000001;
       }
+      bitField0_ |= 0x00000001;
     }
     /**
      *
@@ -649,7 +637,8 @@ public final class ClusterNetworking extends com.google.protobuf.GeneratedMessag
      * @return A list containing the clusterIpv4CidrBlocks.
      */
     public com.google.protobuf.ProtocolStringList getClusterIpv4CidrBlocksList() {
-      return clusterIpv4CidrBlocks_.getUnmodifiableView();
+      clusterIpv4CidrBlocks_.makeImmutable();
+      return clusterIpv4CidrBlocks_;
     }
     /**
      *
@@ -726,6 +715,7 @@ public final class ClusterNetworking extends com.google.protobuf.GeneratedMessag
       }
       ensureClusterIpv4CidrBlocksIsMutable();
       clusterIpv4CidrBlocks_.set(index, value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -750,6 +740,7 @@ public final class ClusterNetworking extends com.google.protobuf.GeneratedMessag
       }
       ensureClusterIpv4CidrBlocksIsMutable();
       clusterIpv4CidrBlocks_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -771,6 +762,7 @@ public final class ClusterNetworking extends com.google.protobuf.GeneratedMessag
     public Builder addAllClusterIpv4CidrBlocks(java.lang.Iterable<java.lang.String> values) {
       ensureClusterIpv4CidrBlocksIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, clusterIpv4CidrBlocks_);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -789,8 +781,9 @@ public final class ClusterNetworking extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearClusterIpv4CidrBlocks() {
-      clusterIpv4CidrBlocks_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      clusterIpv4CidrBlocks_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      ;
       onChanged();
       return this;
     }
@@ -816,19 +809,20 @@ public final class ClusterNetworking extends com.google.protobuf.GeneratedMessag
       checkByteStringIsUtf8(value);
       ensureClusterIpv4CidrBlocksIsMutable();
       clusterIpv4CidrBlocks_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList servicesIpv4CidrBlocks_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList servicesIpv4CidrBlocks_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureServicesIpv4CidrBlocksIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!servicesIpv4CidrBlocks_.isModifiable()) {
         servicesIpv4CidrBlocks_ =
             new com.google.protobuf.LazyStringArrayList(servicesIpv4CidrBlocks_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -846,7 +840,8 @@ public final class ClusterNetworking extends com.google.protobuf.GeneratedMessag
      * @return A list containing the servicesIpv4CidrBlocks.
      */
     public com.google.protobuf.ProtocolStringList getServicesIpv4CidrBlocksList() {
-      return servicesIpv4CidrBlocks_.getUnmodifiableView();
+      servicesIpv4CidrBlocks_.makeImmutable();
+      return servicesIpv4CidrBlocks_;
     }
     /**
      *
@@ -927,6 +922,7 @@ public final class ClusterNetworking extends com.google.protobuf.GeneratedMessag
       }
       ensureServicesIpv4CidrBlocksIsMutable();
       servicesIpv4CidrBlocks_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -952,6 +948,7 @@ public final class ClusterNetworking extends com.google.protobuf.GeneratedMessag
       }
       ensureServicesIpv4CidrBlocksIsMutable();
       servicesIpv4CidrBlocks_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -974,6 +971,7 @@ public final class ClusterNetworking extends com.google.protobuf.GeneratedMessag
     public Builder addAllServicesIpv4CidrBlocks(java.lang.Iterable<java.lang.String> values) {
       ensureServicesIpv4CidrBlocksIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, servicesIpv4CidrBlocks_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -993,8 +991,9 @@ public final class ClusterNetworking extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearServicesIpv4CidrBlocks() {
-      servicesIpv4CidrBlocks_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      servicesIpv4CidrBlocks_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -1021,6 +1020,7 @@ public final class ClusterNetworking extends com.google.protobuf.GeneratedMessag
       checkByteStringIsUtf8(value);
       ensureServicesIpv4CidrBlocksIsMutable();
       servicesIpv4CidrBlocks_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

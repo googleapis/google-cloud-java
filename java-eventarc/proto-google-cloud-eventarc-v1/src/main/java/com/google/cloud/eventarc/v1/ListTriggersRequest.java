@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class ListTriggersRequest extends com.google.protobuf.GeneratedMess
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ListTriggersRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -132,6 +127,7 @@ public final class ListTriggersRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * The maximum number of triggers to return on each page.
+   *
    * Note: The service may send fewer.
    * </pre>
    *
@@ -154,6 +150,7 @@ public final class ListTriggersRequest extends com.google.protobuf.GeneratedMess
    * <pre>
    * The page token; provide the value from the `next_page_token` field in a
    * previous `ListTriggers` call to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListTriggers` must match
    * the call that provided the page token.
    * </pre>
@@ -180,6 +177,7 @@ public final class ListTriggersRequest extends com.google.protobuf.GeneratedMess
    * <pre>
    * The page token; provide the value from the `next_page_token` field in a
    * previous `ListTriggers` call to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListTriggers` must match
    * the call that provided the page token.
    * </pre>
@@ -871,6 +869,7 @@ public final class ListTriggersRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The maximum number of triggers to return on each page.
+     *
      * Note: The service may send fewer.
      * </pre>
      *
@@ -887,6 +886,7 @@ public final class ListTriggersRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The maximum number of triggers to return on each page.
+     *
      * Note: The service may send fewer.
      * </pre>
      *
@@ -907,6 +907,7 @@ public final class ListTriggersRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The maximum number of triggers to return on each page.
+     *
      * Note: The service may send fewer.
      * </pre>
      *
@@ -928,6 +929,7 @@ public final class ListTriggersRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * The page token; provide the value from the `next_page_token` field in a
      * previous `ListTriggers` call to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListTriggers` must match
      * the call that provided the page token.
      * </pre>
@@ -953,6 +955,7 @@ public final class ListTriggersRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * The page token; provide the value from the `next_page_token` field in a
      * previous `ListTriggers` call to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListTriggers` must match
      * the call that provided the page token.
      * </pre>
@@ -978,6 +981,7 @@ public final class ListTriggersRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * The page token; provide the value from the `next_page_token` field in a
      * previous `ListTriggers` call to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListTriggers` must match
      * the call that provided the page token.
      * </pre>
@@ -1002,6 +1006,7 @@ public final class ListTriggersRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * The page token; provide the value from the `next_page_token` field in a
      * previous `ListTriggers` call to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListTriggers` must match
      * the call that provided the page token.
      * </pre>
@@ -1022,6 +1027,7 @@ public final class ListTriggersRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * The page token; provide the value from the `next_page_token` field in a
      * previous `ListTriggers` call to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListTriggers` must match
      * the call that provided the page token.
      * </pre>

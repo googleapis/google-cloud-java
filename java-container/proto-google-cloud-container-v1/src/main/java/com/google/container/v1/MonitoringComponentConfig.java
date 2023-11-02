@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class MonitoringComponentConfig extends com.google.protobuf.Generat
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new MonitoringComponentConfig();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -127,6 +122,66 @@ public final class MonitoringComponentConfig extends com.google.protobuf.Generat
      * <code>CONTROLLER_MANAGER = 5;</code>
      */
     CONTROLLER_MANAGER(5),
+    /**
+     *
+     *
+     * <pre>
+     * Storage
+     * </pre>
+     *
+     * <code>STORAGE = 7;</code>
+     */
+    STORAGE(7),
+    /**
+     *
+     *
+     * <pre>
+     * Horizontal Pod Autoscaling
+     * </pre>
+     *
+     * <code>HPA = 8;</code>
+     */
+    HPA(8),
+    /**
+     *
+     *
+     * <pre>
+     * Pod
+     * </pre>
+     *
+     * <code>POD = 9;</code>
+     */
+    POD(9),
+    /**
+     *
+     *
+     * <pre>
+     * DaemonSet
+     * </pre>
+     *
+     * <code>DAEMONSET = 10;</code>
+     */
+    DAEMONSET(10),
+    /**
+     *
+     *
+     * <pre>
+     * Deployment
+     * </pre>
+     *
+     * <code>DEPLOYMENT = 11;</code>
+     */
+    DEPLOYMENT(11),
+    /**
+     *
+     *
+     * <pre>
+     * Statefulset
+     * </pre>
+     *
+     * <code>STATEFULSET = 12;</code>
+     */
+    STATEFULSET(12),
     UNRECOGNIZED(-1),
     ;
 
@@ -180,6 +235,66 @@ public final class MonitoringComponentConfig extends com.google.protobuf.Generat
      * <code>CONTROLLER_MANAGER = 5;</code>
      */
     public static final int CONTROLLER_MANAGER_VALUE = 5;
+    /**
+     *
+     *
+     * <pre>
+     * Storage
+     * </pre>
+     *
+     * <code>STORAGE = 7;</code>
+     */
+    public static final int STORAGE_VALUE = 7;
+    /**
+     *
+     *
+     * <pre>
+     * Horizontal Pod Autoscaling
+     * </pre>
+     *
+     * <code>HPA = 8;</code>
+     */
+    public static final int HPA_VALUE = 8;
+    /**
+     *
+     *
+     * <pre>
+     * Pod
+     * </pre>
+     *
+     * <code>POD = 9;</code>
+     */
+    public static final int POD_VALUE = 9;
+    /**
+     *
+     *
+     * <pre>
+     * DaemonSet
+     * </pre>
+     *
+     * <code>DAEMONSET = 10;</code>
+     */
+    public static final int DAEMONSET_VALUE = 10;
+    /**
+     *
+     *
+     * <pre>
+     * Deployment
+     * </pre>
+     *
+     * <code>DEPLOYMENT = 11;</code>
+     */
+    public static final int DEPLOYMENT_VALUE = 11;
+    /**
+     *
+     *
+     * <pre>
+     * Statefulset
+     * </pre>
+     *
+     * <code>STATEFULSET = 12;</code>
+     */
+    public static final int STATEFULSET_VALUE = 12;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -215,6 +330,18 @@ public final class MonitoringComponentConfig extends com.google.protobuf.Generat
           return SCHEDULER;
         case 5:
           return CONTROLLER_MANAGER;
+        case 7:
+          return STORAGE;
+        case 8:
+          return HPA;
+        case 9:
+          return POD;
+        case 10:
+          return DAEMONSET;
+        case 11:
+          return DEPLOYMENT;
+        case 12:
+          return STATEFULSET;
         default:
           return null;
       }

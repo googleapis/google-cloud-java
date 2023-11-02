@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class BackendMetastore extends com.google.protobuf.GeneratedMessage
     return new BackendMetastore();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.metastore.v1.MetastoreFederationProto
         .internal_static_google_cloud_metastore_v1_BackendMetastore_descriptor;
@@ -92,6 +87,16 @@ public final class BackendMetastore extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * The backend metastore is BigQuery.
+     * </pre>
+     *
+     * <code>BIGQUERY = 2;</code>
+     */
+    BIGQUERY(2),
+    /**
+     *
+     *
+     * <pre>
      * The backend metastore is Dataproc Metastore.
      * </pre>
      *
@@ -111,6 +116,16 @@ public final class BackendMetastore extends com.google.protobuf.GeneratedMessage
      * <code>METASTORE_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int METASTORE_TYPE_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The backend metastore is BigQuery.
+     * </pre>
+     *
+     * <code>BIGQUERY = 2;</code>
+     */
+    public static final int BIGQUERY_VALUE = 2;
     /**
      *
      *
@@ -148,6 +163,8 @@ public final class BackendMetastore extends com.google.protobuf.GeneratedMessage
       switch (value) {
         case 0:
           return METASTORE_TYPE_UNSPECIFIED;
+        case 2:
+          return BIGQUERY;
         case 3:
           return DATAPROC_METASTORE;
         default:
@@ -214,6 +231,7 @@ public final class BackendMetastore extends com.google.protobuf.GeneratedMessage
    * The relative resource name of the metastore that is being federated.
    * The formats of the relative resource names for the currently supported
    * metastores are listed below:
+   *
    * * BigQuery
    *     * `projects/{project_id}`
    * * Dataproc Metastore
@@ -243,6 +261,7 @@ public final class BackendMetastore extends com.google.protobuf.GeneratedMessage
    * The relative resource name of the metastore that is being federated.
    * The formats of the relative resource names for the currently supported
    * metastores are listed below:
+   *
    * * BigQuery
    *     * `projects/{project_id}`
    * * Dataproc Metastore
@@ -678,6 +697,7 @@ public final class BackendMetastore extends com.google.protobuf.GeneratedMessage
      * The relative resource name of the metastore that is being federated.
      * The formats of the relative resource names for the currently supported
      * metastores are listed below:
+     *
      * * BigQuery
      *     * `projects/{project_id}`
      * * Dataproc Metastore
@@ -706,6 +726,7 @@ public final class BackendMetastore extends com.google.protobuf.GeneratedMessage
      * The relative resource name of the metastore that is being federated.
      * The formats of the relative resource names for the currently supported
      * metastores are listed below:
+     *
      * * BigQuery
      *     * `projects/{project_id}`
      * * Dataproc Metastore
@@ -734,6 +755,7 @@ public final class BackendMetastore extends com.google.protobuf.GeneratedMessage
      * The relative resource name of the metastore that is being federated.
      * The formats of the relative resource names for the currently supported
      * metastores are listed below:
+     *
      * * BigQuery
      *     * `projects/{project_id}`
      * * Dataproc Metastore
@@ -761,6 +783,7 @@ public final class BackendMetastore extends com.google.protobuf.GeneratedMessage
      * The relative resource name of the metastore that is being federated.
      * The formats of the relative resource names for the currently supported
      * metastores are listed below:
+     *
      * * BigQuery
      *     * `projects/{project_id}`
      * * Dataproc Metastore
@@ -784,6 +807,7 @@ public final class BackendMetastore extends com.google.protobuf.GeneratedMessage
      * The relative resource name of the metastore that is being federated.
      * The formats of the relative resource names for the currently supported
      * metastores are listed below:
+     *
      * * BigQuery
      *     * `projects/{project_id}`
      * * Dataproc Metastore

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,9 +29,11 @@ public interface EnvironmentOrBuilder
    * <pre>
    * Output only. The unique identifier of this agent environment.
    * Supported formats:
+   *
    * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
    * - `projects/&lt;Project ID&gt;/locations/&lt;Location
    *   ID&gt;/agent/environments/&lt;Environment ID&gt;`
+   *
    * The environment ID for the default environment is `-`.
    * </pre>
    *
@@ -46,9 +48,11 @@ public interface EnvironmentOrBuilder
    * <pre>
    * Output only. The unique identifier of this agent environment.
    * Supported formats:
+   *
    * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
    * - `projects/&lt;Project ID&gt;/locations/&lt;Location
    *   ID&gt;/agent/environments/&lt;Environment ID&gt;`
+   *
    * The environment ID for the default environment is `-`.
    * </pre>
    *
@@ -91,6 +95,7 @@ public interface EnvironmentOrBuilder
    * <pre>
    * Optional. The agent version loaded into this environment.
    * Supported formats:
+   *
    * - `projects/&lt;Project ID&gt;/agent/versions/&lt;Version ID&gt;`
    * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/versions/&lt;Version
    *   ID&gt;`
@@ -109,6 +114,7 @@ public interface EnvironmentOrBuilder
    * <pre>
    * Optional. The agent version loaded into this environment.
    * Supported formats:
+   *
    * - `projects/&lt;Project ID&gt;/agent/versions/&lt;Version ID&gt;`
    * - `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agent/versions/&lt;Version
    *   ID&gt;`

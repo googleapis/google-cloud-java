@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,29 +48,29 @@ public final class NotificationConfigOuterClass {
           + "notification_config.proto\022%google.cloud."
           + "securitycenter.v1p1beta1\032\037google/api/fie"
           + "ld_behavior.proto\032\031google/api/resource.p"
-          + "roto\"\266\004\n\022NotificationConfig\022\014\n\004name\030\001 \001("
+          + "roto\"\267\004\n\022NotificationConfig\022\014\n\004name\030\001 \001("
           + "\t\022\023\n\013description\030\002 \001(\t\022W\n\nevent_type\030\003 \001"
           + "(\0162C.google.cloud.securitycenter.v1p1bet"
           + "a1.NotificationConfig.EventType\0226\n\014pubsu"
           + "b_topic\030\004 \001(\tB \372A\035\n\033pubsub.googleapis.co"
-          + "m/Topic\022\034\n\017service_account\030\005 \001(\tB\003\340A\003\022e\n"
-          + "\020streaming_config\030\006 \001(\0132I.google.cloud.s"
-          + "ecuritycenter.v1p1beta1.NotificationConf"
-          + "ig.StreamingConfigH\000\032!\n\017StreamingConfig\022"
-          + "\016\n\006filter\030\001 \001(\t\"4\n\tEventType\022\032\n\026EVENT_TY"
-          + "PE_UNSPECIFIED\020\000\022\013\n\007FINDING\020\001:}\352Az\n0secu"
-          + "ritycenter.googleapis.com/NotificationCo"
-          + "nfig\022Forganizations/{organization}/notif"
-          + "icationConfigs/{notification_config}B\017\n\r"
-          + "notify_configB\276\002\n)com.google.cloud.secur"
-          + "itycenter.v1p1beta1P\001ZQcloud.google.com/"
-          + "go/securitycenter/apiv1p1beta1/securityc"
-          + "enterpb;securitycenterpb\252\002%Google.Cloud."
-          + "SecurityCenter.V1P1Beta1\312\002%Google\\Cloud\\"
-          + "SecurityCenter\\V1p1beta1\352\002(Google::Cloud"
-          + "::SecurityCenter::V1p1beta1\352A@\n\033pubsub.g"
-          + "oogleapis.com/Topic\022!projects/{project}/"
-          + "topics/{topic}b\006proto3"
+          + "m/Topic\022\035\n\017service_account\030\005 \001(\tB\004\342A\001\003\022e"
+          + "\n\020streaming_config\030\006 \001(\0132I.google.cloud."
+          + "securitycenter.v1p1beta1.NotificationCon"
+          + "fig.StreamingConfigH\000\032!\n\017StreamingConfig"
+          + "\022\016\n\006filter\030\001 \001(\t\"4\n\tEventType\022\032\n\026EVENT_T"
+          + "YPE_UNSPECIFIED\020\000\022\013\n\007FINDING\020\001:}\352Az\n0sec"
+          + "uritycenter.googleapis.com/NotificationC"
+          + "onfig\022Forganizations/{organization}/noti"
+          + "ficationConfigs/{notification_config}B\017\n"
+          + "\rnotify_configB\276\002\n)com.google.cloud.secu"
+          + "ritycenter.v1p1beta1P\001ZQcloud.google.com"
+          + "/go/securitycenter/apiv1p1beta1/security"
+          + "centerpb;securitycenterpb\252\002%Google.Cloud"
+          + ".SecurityCenter.V1P1Beta1\312\002%Google\\Cloud"
+          + "\\SecurityCenter\\V1p1beta1\352\002(Google::Clou"
+          + "d::SecurityCenter::V1p1beta1\352A@\n\033pubsub."
+          + "googleapis.com/Topic\022!projects/{project}"
+          + "/topics/{topic}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

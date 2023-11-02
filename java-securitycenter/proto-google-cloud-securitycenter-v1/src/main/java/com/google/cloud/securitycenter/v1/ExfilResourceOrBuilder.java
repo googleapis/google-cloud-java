@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,8 @@ public interface ExfilResourceOrBuilder
    *
    *
    * <pre>
-   * Resource's URI (https://google.aip.dev/122#full-resource-names)
+   * The resource's [full resource
+   * name](https://cloud.google.com/apis/design/resource_names#full_resource_name).
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -39,7 +40,8 @@ public interface ExfilResourceOrBuilder
    *
    *
    * <pre>
-   * Resource's URI (https://google.aip.dev/122#full-resource-names)
+   * The resource's [full resource
+   * name](https://cloud.google.com/apis/design/resource_names#full_resource_name).
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -52,10 +54,11 @@ public interface ExfilResourceOrBuilder
    *
    *
    * <pre>
-   * Subcomponents of the asset that is exfiltrated - these could be
-   * URIs used during exfiltration, table names, databases, filenames, etc.
-   * For example, multiple tables may be exfiltrated from the same CloudSQL
-   * instance, or multiple files from the same Cloud Storage bucket.
+   * Subcomponents of the asset that was exfiltrated, like URIs used during
+   * exfiltration, table names, databases, and filenames. For example, multiple
+   * tables might have been exfiltrated from the same Cloud SQL instance, or
+   * multiple files might have been exfiltrated from the same Cloud Storage
+   * bucket.
    * </pre>
    *
    * <code>repeated string components = 2;</code>
@@ -67,10 +70,11 @@ public interface ExfilResourceOrBuilder
    *
    *
    * <pre>
-   * Subcomponents of the asset that is exfiltrated - these could be
-   * URIs used during exfiltration, table names, databases, filenames, etc.
-   * For example, multiple tables may be exfiltrated from the same CloudSQL
-   * instance, or multiple files from the same Cloud Storage bucket.
+   * Subcomponents of the asset that was exfiltrated, like URIs used during
+   * exfiltration, table names, databases, and filenames. For example, multiple
+   * tables might have been exfiltrated from the same Cloud SQL instance, or
+   * multiple files might have been exfiltrated from the same Cloud Storage
+   * bucket.
    * </pre>
    *
    * <code>repeated string components = 2;</code>
@@ -82,10 +86,11 @@ public interface ExfilResourceOrBuilder
    *
    *
    * <pre>
-   * Subcomponents of the asset that is exfiltrated - these could be
-   * URIs used during exfiltration, table names, databases, filenames, etc.
-   * For example, multiple tables may be exfiltrated from the same CloudSQL
-   * instance, or multiple files from the same Cloud Storage bucket.
+   * Subcomponents of the asset that was exfiltrated, like URIs used during
+   * exfiltration, table names, databases, and filenames. For example, multiple
+   * tables might have been exfiltrated from the same Cloud SQL instance, or
+   * multiple files might have been exfiltrated from the same Cloud Storage
+   * bucket.
    * </pre>
    *
    * <code>repeated string components = 2;</code>
@@ -98,10 +103,11 @@ public interface ExfilResourceOrBuilder
    *
    *
    * <pre>
-   * Subcomponents of the asset that is exfiltrated - these could be
-   * URIs used during exfiltration, table names, databases, filenames, etc.
-   * For example, multiple tables may be exfiltrated from the same CloudSQL
-   * instance, or multiple files from the same Cloud Storage bucket.
+   * Subcomponents of the asset that was exfiltrated, like URIs used during
+   * exfiltration, table names, databases, and filenames. For example, multiple
+   * tables might have been exfiltrated from the same Cloud SQL instance, or
+   * multiple files might have been exfiltrated from the same Cloud Storage
+   * bucket.
    * </pre>
    *
    * <code>repeated string components = 2;</code>

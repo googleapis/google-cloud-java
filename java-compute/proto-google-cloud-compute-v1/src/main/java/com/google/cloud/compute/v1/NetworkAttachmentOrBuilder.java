@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -205,7 +205,7 @@ public interface NetworkAttachmentOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. An up-to-date fingerprint must be provided in order to patch.
+   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. An up-to-date fingerprint must be provided in order to patch.
    * </pre>
    *
    * <code>optional string fingerprint = 234678500;</code>
@@ -217,7 +217,7 @@ public interface NetworkAttachmentOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. An up-to-date fingerprint must be provided in order to patch.
+   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. An up-to-date fingerprint must be provided in order to patch.
    * </pre>
    *
    * <code>optional string fingerprint = 234678500;</code>
@@ -229,7 +229,7 @@ public interface NetworkAttachmentOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. An up-to-date fingerprint must be provided in order to patch.
+   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. An up-to-date fingerprint must be provided in order to patch.
    * </pre>
    *
    * <code>optional string fingerprint = 234678500;</code>
@@ -341,7 +341,7 @@ public interface NetworkAttachmentOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The URL of the network which the Network Attachment belongs to.
+   * [Output Only] The URL of the network which the Network Attachment belongs to. Practically it is inferred by fetching the network of the first subnetwork associated. Because it is required that all the subnetworks must be from the same network, it is assured that the Network Attachment belongs to the same network as all the subnetworks.
    * </pre>
    *
    * <code>optional string network = 232872494;</code>
@@ -353,7 +353,7 @@ public interface NetworkAttachmentOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The URL of the network which the Network Attachment belongs to.
+   * [Output Only] The URL of the network which the Network Attachment belongs to. Practically it is inferred by fetching the network of the first subnetwork associated. Because it is required that all the subnetworks must be from the same network, it is assured that the Network Attachment belongs to the same network as all the subnetworks.
    * </pre>
    *
    * <code>optional string network = 232872494;</code>
@@ -365,7 +365,7 @@ public interface NetworkAttachmentOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The URL of the network which the Network Attachment belongs to.
+   * [Output Only] The URL of the network which the Network Attachment belongs to. Practically it is inferred by fetching the network of the first subnetwork associated. Because it is required that all the subnetworks must be from the same network, it is assured that the Network Attachment belongs to the same network as all the subnetworks.
    * </pre>
    *
    * <code>optional string network = 232872494;</code>

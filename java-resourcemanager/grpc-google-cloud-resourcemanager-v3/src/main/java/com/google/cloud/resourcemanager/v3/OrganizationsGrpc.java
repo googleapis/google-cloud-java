@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,7 +32,8 @@ public final class OrganizationsGrpc {
 
   private OrganizationsGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.resourcemanager.v3.Organizations";
+  public static final java.lang.String SERVICE_NAME =
+      "google.cloud.resourcemanager.v3.Organizations";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -858,9 +859,9 @@ public final class OrganizationsGrpc {
   private static final class OrganizationsMethodDescriptorSupplier
       extends OrganizationsBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    OrganizationsMethodDescriptorSupplier(String methodName) {
+    OrganizationsMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

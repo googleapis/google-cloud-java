@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -65,6 +65,7 @@ public interface JobEventOrBuilder
    * seeker. If this was a
    * [view][google.cloud.talent.v4beta1.JobEvent.JobEventType.VIEW] event, this
    * field contains the identifier of the viewed job.
+   *
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
    * example, "projects/foo/tenants/bar/jobs/baz".
@@ -86,6 +87,7 @@ public interface JobEventOrBuilder
    * seeker. If this was a
    * [view][google.cloud.talent.v4beta1.JobEvent.JobEventType.VIEW] event, this
    * field contains the identifier of the viewed job.
+   *
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
    * example, "projects/foo/tenants/bar/jobs/baz".
@@ -107,6 +109,7 @@ public interface JobEventOrBuilder
    * seeker. If this was a
    * [view][google.cloud.talent.v4beta1.JobEvent.JobEventType.VIEW] event, this
    * field contains the identifier of the viewed job.
+   *
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
    * example, "projects/foo/tenants/bar/jobs/baz".
@@ -129,6 +132,7 @@ public interface JobEventOrBuilder
    * seeker. If this was a
    * [view][google.cloud.talent.v4beta1.JobEvent.JobEventType.VIEW] event, this
    * field contains the identifier of the viewed job.
+   *
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
    * example, "projects/foo/tenants/bar/jobs/baz".
@@ -147,6 +151,7 @@ public interface JobEventOrBuilder
    * <pre>
    * The [profile name][google.cloud.talent.v4beta1.Profile.name] associated
    * with this client event.
+   *
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
    * for example, "projects/foo/tenants/bar/profiles/baz".
@@ -163,6 +168,7 @@ public interface JobEventOrBuilder
    * <pre>
    * The [profile name][google.cloud.talent.v4beta1.Profile.name] associated
    * with this client event.
+   *
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}",
    * for example, "projects/foo/tenants/bar/profiles/baz".

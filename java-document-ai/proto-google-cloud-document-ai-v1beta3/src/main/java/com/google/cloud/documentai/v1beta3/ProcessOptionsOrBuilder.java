@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,102 @@ public interface ProcessOptionsOrBuilder
    *
    *
    * <pre>
-   * Only applicable to "Document OCR Processor". Returns error if set on other
+   * Which pages to process (1-indexed).
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.documentai.v1beta3.ProcessOptions.IndividualPageSelector individual_page_selector = 5;
+   * </code>
+   *
+   * @return Whether the individualPageSelector field is set.
+   */
+  boolean hasIndividualPageSelector();
+  /**
+   *
+   *
+   * <pre>
+   * Which pages to process (1-indexed).
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.documentai.v1beta3.ProcessOptions.IndividualPageSelector individual_page_selector = 5;
+   * </code>
+   *
+   * @return The individualPageSelector.
+   */
+  com.google.cloud.documentai.v1beta3.ProcessOptions.IndividualPageSelector
+      getIndividualPageSelector();
+  /**
+   *
+   *
+   * <pre>
+   * Which pages to process (1-indexed).
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.documentai.v1beta3.ProcessOptions.IndividualPageSelector individual_page_selector = 5;
+   * </code>
+   */
+  com.google.cloud.documentai.v1beta3.ProcessOptions.IndividualPageSelectorOrBuilder
+      getIndividualPageSelectorOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Only process certain pages from the start. Process all if the document
+   * has fewer pages.
+   * </pre>
+   *
+   * <code>int32 from_start = 6;</code>
+   *
+   * @return Whether the fromStart field is set.
+   */
+  boolean hasFromStart();
+  /**
+   *
+   *
+   * <pre>
+   * Only process certain pages from the start. Process all if the document
+   * has fewer pages.
+   * </pre>
+   *
+   * <code>int32 from_start = 6;</code>
+   *
+   * @return The fromStart.
+   */
+  int getFromStart();
+
+  /**
+   *
+   *
+   * <pre>
+   * Only process certain pages from the end, same as above.
+   * </pre>
+   *
+   * <code>int32 from_end = 7;</code>
+   *
+   * @return Whether the fromEnd field is set.
+   */
+  boolean hasFromEnd();
+  /**
+   *
+   *
+   * <pre>
+   * Only process certain pages from the end, same as above.
+   * </pre>
+   *
+   * <code>int32 from_end = 7;</code>
+   *
+   * @return The fromEnd.
+   */
+  int getFromEnd();
+
+  /**
+   *
+   *
+   * <pre>
+   * Only applicable to `OCR_PROCESSOR`. Returns error if set on other
    * processor types.
    * </pre>
    *
@@ -40,7 +135,7 @@ public interface ProcessOptionsOrBuilder
    *
    *
    * <pre>
-   * Only applicable to "Document OCR Processor". Returns error if set on other
+   * Only applicable to `OCR_PROCESSOR`. Returns error if set on other
    * processor types.
    * </pre>
    *
@@ -53,11 +148,66 @@ public interface ProcessOptionsOrBuilder
    *
    *
    * <pre>
-   * Only applicable to "Document OCR Processor". Returns error if set on other
+   * Only applicable to `OCR_PROCESSOR`. Returns error if set on other
    * processor types.
    * </pre>
    *
    * <code>.google.cloud.documentai.v1beta3.OcrConfig ocr_config = 1;</code>
    */
   com.google.cloud.documentai.v1beta3.OcrConfigOrBuilder getOcrConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Override the schema of the
+   * [ProcessorVersion][google.cloud.documentai.v1beta3.ProcessorVersion]. Will
+   * return an Invalid Argument error if this field is set when the underlying
+   * [ProcessorVersion][google.cloud.documentai.v1beta3.ProcessorVersion]
+   * doesn't support schema override.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.documentai.v1beta3.DocumentSchema schema_override = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the schemaOverride field is set.
+   */
+  boolean hasSchemaOverride();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Override the schema of the
+   * [ProcessorVersion][google.cloud.documentai.v1beta3.ProcessorVersion]. Will
+   * return an Invalid Argument error if this field is set when the underlying
+   * [ProcessorVersion][google.cloud.documentai.v1beta3.ProcessorVersion]
+   * doesn't support schema override.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.documentai.v1beta3.DocumentSchema schema_override = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The schemaOverride.
+   */
+  com.google.cloud.documentai.v1beta3.DocumentSchema getSchemaOverride();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Override the schema of the
+   * [ProcessorVersion][google.cloud.documentai.v1beta3.ProcessorVersion]. Will
+   * return an Invalid Argument error if this field is set when the underlying
+   * [ProcessorVersion][google.cloud.documentai.v1beta3.ProcessorVersion]
+   * doesn't support schema override.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.documentai.v1beta3.DocumentSchema schema_override = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.documentai.v1beta3.DocumentSchemaOrBuilder getSchemaOverrideOrBuilder();
+
+  com.google.cloud.documentai.v1beta3.ProcessOptions.PageRangeCase getPageRangeCase();
 }

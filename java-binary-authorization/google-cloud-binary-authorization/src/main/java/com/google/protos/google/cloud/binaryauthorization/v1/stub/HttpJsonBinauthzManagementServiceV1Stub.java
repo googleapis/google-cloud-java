@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.protobuf.Empty;
 import com.google.protobuf.TypeRegistry;
@@ -376,30 +377,60 @@ public class HttpJsonBinauthzManagementServiceV1Stub extends BinauthzManagementS
         HttpJsonCallSettings.<Service.GetPolicyRequest, Resources.Policy>newBuilder()
             .setMethodDescriptor(getPolicyMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<Service.UpdatePolicyRequest, Resources.Policy>
         updatePolicyTransportSettings =
             HttpJsonCallSettings.<Service.UpdatePolicyRequest, Resources.Policy>newBuilder()
                 .setMethodDescriptor(updatePolicyMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("policy.name", String.valueOf(request.getPolicy().getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<Service.CreateAttestorRequest, Resources.Attestor>
         createAttestorTransportSettings =
             HttpJsonCallSettings.<Service.CreateAttestorRequest, Resources.Attestor>newBuilder()
                 .setMethodDescriptor(createAttestorMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<Service.GetAttestorRequest, Resources.Attestor>
         getAttestorTransportSettings =
             HttpJsonCallSettings.<Service.GetAttestorRequest, Resources.Attestor>newBuilder()
                 .setMethodDescriptor(getAttestorMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<Service.UpdateAttestorRequest, Resources.Attestor>
         updateAttestorTransportSettings =
             HttpJsonCallSettings.<Service.UpdateAttestorRequest, Resources.Attestor>newBuilder()
                 .setMethodDescriptor(updateAttestorMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("attestor.name", String.valueOf(request.getAttestor().getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<Service.ListAttestorsRequest, Service.ListAttestorsResponse>
         listAttestorsTransportSettings =
@@ -407,11 +438,23 @@ public class HttpJsonBinauthzManagementServiceV1Stub extends BinauthzManagementS
                 .<Service.ListAttestorsRequest, Service.ListAttestorsResponse>newBuilder()
                 .setMethodDescriptor(listAttestorsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<Service.DeleteAttestorRequest, Empty> deleteAttestorTransportSettings =
         HttpJsonCallSettings.<Service.DeleteAttestorRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteAttestorMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
 
     this.getPolicyCallable =

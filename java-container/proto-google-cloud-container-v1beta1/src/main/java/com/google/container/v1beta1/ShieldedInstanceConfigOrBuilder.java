@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ public interface ShieldedInstanceConfigOrBuilder
    *
    * <pre>
    * Defines whether the instance has Secure Boot enabled.
+   *
    * Secure Boot helps ensure that the system only runs authentic software by
    * verifying the digital signature of all boot components, and halting the
    * boot process if signature verification fails.
@@ -44,6 +45,7 @@ public interface ShieldedInstanceConfigOrBuilder
    *
    * <pre>
    * Defines whether the instance has integrity monitoring enabled.
+   *
    * Enables monitoring and attestation of the boot integrity of the instance.
    * The attestation is performed against the integrity policy baseline. This
    * baseline is initially derived from the implicitly trusted boot image when

@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,6 +33,7 @@ import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AggregatedListRoutersRequest;
 import com.google.cloud.compute.v1.DeleteRouterRequest;
@@ -245,6 +246,9 @@ public class HttpJsonRoutersStub extends RoutersStub {
                             if (request.hasMaxResults()) {
                               serializer.putQueryParam(
                                   fields, "maxResults", request.getMaxResults());
+                            }
+                            if (request.hasNatName()) {
+                              serializer.putQueryParam(fields, "natName", request.getNatName());
                             }
                             if (request.hasOrderBy()) {
                               serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
@@ -622,16 +626,38 @@ public class HttpJsonRoutersStub extends RoutersStub {
             HttpJsonCallSettings.<AggregatedListRoutersRequest, RouterAggregatedList>newBuilder()
                 .setMethodDescriptor(aggregatedListMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteRouterRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeleteRouterRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("region", String.valueOf(request.getRegion()));
+                  builder.add("router", String.valueOf(request.getRouter()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetRouterRequest, Router> getTransportSettings =
         HttpJsonCallSettings.<GetRouterRequest, Router>newBuilder()
             .setMethodDescriptor(getMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("region", String.valueOf(request.getRegion()));
+                  builder.add("router", String.valueOf(request.getRouter()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetNatMappingInfoRoutersRequest, VmEndpointNatMappingsList>
         getNatMappingInfoTransportSettings =
@@ -639,37 +665,91 @@ public class HttpJsonRoutersStub extends RoutersStub {
                 .<GetNatMappingInfoRoutersRequest, VmEndpointNatMappingsList>newBuilder()
                 .setMethodDescriptor(getNatMappingInfoMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      builder.add("router", String.valueOf(request.getRouter()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetRouterStatusRouterRequest, RouterStatusResponse>
         getRouterStatusTransportSettings =
             HttpJsonCallSettings.<GetRouterStatusRouterRequest, RouterStatusResponse>newBuilder()
                 .setMethodDescriptor(getRouterStatusMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      builder.add("router", String.valueOf(request.getRouter()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<InsertRouterRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertRouterRequest, Operation>newBuilder()
             .setMethodDescriptor(insertMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("region", String.valueOf(request.getRegion()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListRoutersRequest, RouterList> listTransportSettings =
         HttpJsonCallSettings.<ListRoutersRequest, RouterList>newBuilder()
             .setMethodDescriptor(listMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("region", String.valueOf(request.getRegion()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<PatchRouterRequest, Operation> patchTransportSettings =
         HttpJsonCallSettings.<PatchRouterRequest, Operation>newBuilder()
             .setMethodDescriptor(patchMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("region", String.valueOf(request.getRegion()));
+                  builder.add("router", String.valueOf(request.getRouter()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<PreviewRouterRequest, RoutersPreviewResponse> previewTransportSettings =
         HttpJsonCallSettings.<PreviewRouterRequest, RoutersPreviewResponse>newBuilder()
             .setMethodDescriptor(previewMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("region", String.valueOf(request.getRegion()));
+                  builder.add("router", String.valueOf(request.getRouter()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateRouterRequest, Operation> updateTransportSettings =
         HttpJsonCallSettings.<UpdateRouterRequest, Operation>newBuilder()
             .setMethodDescriptor(updateMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("region", String.valueOf(request.getRegion()));
+                  builder.add("router", String.valueOf(request.getRouter()));
+                  return builder.build();
+                })
             .build();
 
     this.aggregatedListCallable =

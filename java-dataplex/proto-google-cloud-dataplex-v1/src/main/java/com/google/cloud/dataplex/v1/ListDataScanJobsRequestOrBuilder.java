@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -104,4 +104,61 @@ public interface ListDataScanJobsRequestOrBuilder
    * @return The bytes for pageToken.
    */
   com.google.protobuf.ByteString getPageTokenBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An expression for filtering the results of the ListDataScanJobs
+   * request.
+   *
+   * If unspecified, all datascan jobs will be returned. Multiple filters can be
+   * applied (with `AND`, `OR` logical operators). Filters are case-sensitive.
+   *
+   * Allowed fields are:
+   *
+   * - `start_time`
+   * - `end_time`
+   *
+   * `start_time` and `end_time` expect RFC-3339 formatted strings (e.g.
+   * 2018-10-08T18:30:00-07:00).
+   *
+   * For instance, 'start_time &gt; 2018-10-08T00:00:00.123456789Z AND end_time &lt;
+   * 2018-10-09T00:00:00.123456789Z' limits results to DataScanJobs between
+   * specified start and end times.
+   * </pre>
+   *
+   * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The filter.
+   */
+  java.lang.String getFilter();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An expression for filtering the results of the ListDataScanJobs
+   * request.
+   *
+   * If unspecified, all datascan jobs will be returned. Multiple filters can be
+   * applied (with `AND`, `OR` logical operators). Filters are case-sensitive.
+   *
+   * Allowed fields are:
+   *
+   * - `start_time`
+   * - `end_time`
+   *
+   * `start_time` and `end_time` expect RFC-3339 formatted strings (e.g.
+   * 2018-10-08T18:30:00-07:00).
+   *
+   * For instance, 'start_time &gt; 2018-10-08T00:00:00.123456789Z AND end_time &lt;
+   * 2018-10-09T00:00:00.123456789Z' limits results to DataScanJobs between
+   * specified start and end times.
+   * </pre>
+   *
+   * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for filter.
+   */
+  com.google.protobuf.ByteString getFilterBytes();
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
     return new VoiceSelectionParams();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.cx.v3.AudioConfigProto
         .internal_static_google_cloud_dialogflow_cx_v3_VoiceSelectionParams_descriptor;
@@ -79,6 +74,7 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
    * Optional. The name of the voice. If not set, the service will choose a
    * voice based on the other parameters such as language_code and
    * [ssml_gender][google.cloud.dialogflow.cx.v3.VoiceSelectionParams.ssml_gender].
+   *
    * For the list of available voices, please refer to [Supported voices and
    * languages](https://cloud.google.com/text-to-speech/docs/voices).
    * </pre>
@@ -106,6 +102,7 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
    * Optional. The name of the voice. If not set, the service will choose a
    * voice based on the other parameters such as language_code and
    * [ssml_gender][google.cloud.dialogflow.cx.v3.VoiceSelectionParams.ssml_gender].
+   *
    * For the list of available voices, please refer to [Supported voices and
    * languages](https://cloud.google.com/text-to-speech/docs/voices).
    * </pre>
@@ -549,6 +546,7 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
      * Optional. The name of the voice. If not set, the service will choose a
      * voice based on the other parameters such as language_code and
      * [ssml_gender][google.cloud.dialogflow.cx.v3.VoiceSelectionParams.ssml_gender].
+     *
      * For the list of available voices, please refer to [Supported voices and
      * languages](https://cloud.google.com/text-to-speech/docs/voices).
      * </pre>
@@ -575,6 +573,7 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
      * Optional. The name of the voice. If not set, the service will choose a
      * voice based on the other parameters such as language_code and
      * [ssml_gender][google.cloud.dialogflow.cx.v3.VoiceSelectionParams.ssml_gender].
+     *
      * For the list of available voices, please refer to [Supported voices and
      * languages](https://cloud.google.com/text-to-speech/docs/voices).
      * </pre>
@@ -601,6 +600,7 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
      * Optional. The name of the voice. If not set, the service will choose a
      * voice based on the other parameters such as language_code and
      * [ssml_gender][google.cloud.dialogflow.cx.v3.VoiceSelectionParams.ssml_gender].
+     *
      * For the list of available voices, please refer to [Supported voices and
      * languages](https://cloud.google.com/text-to-speech/docs/voices).
      * </pre>
@@ -626,6 +626,7 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
      * Optional. The name of the voice. If not set, the service will choose a
      * voice based on the other parameters such as language_code and
      * [ssml_gender][google.cloud.dialogflow.cx.v3.VoiceSelectionParams.ssml_gender].
+     *
      * For the list of available voices, please refer to [Supported voices and
      * languages](https://cloud.google.com/text-to-speech/docs/voices).
      * </pre>
@@ -647,6 +648,7 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
      * Optional. The name of the voice. If not set, the service will choose a
      * voice based on the other parameters such as language_code and
      * [ssml_gender][google.cloud.dialogflow.cx.v3.VoiceSelectionParams.ssml_gender].
+     *
      * For the list of available voices, please refer to [Supported voices and
      * languages](https://cloud.google.com/text-to-speech/docs/voices).
      * </pre>

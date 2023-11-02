@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,6 +33,7 @@ import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AddInstancesInstanceGroupRequest;
 import com.google.cloud.compute.v1.AggregatedListInstanceGroupsRequest;
@@ -639,6 +640,14 @@ public class HttpJsonInstanceGroupsStub extends InstanceGroupsStub {
             HttpJsonCallSettings.<AddInstancesInstanceGroupRequest, Operation>newBuilder()
                 .setMethodDescriptor(addInstancesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("instance_group", String.valueOf(request.getInstanceGroup()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("zone", String.valueOf(request.getZone()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<AggregatedListInstanceGroupsRequest, InstanceGroupAggregatedList>
         aggregatedListTransportSettings =
@@ -646,26 +655,62 @@ public class HttpJsonInstanceGroupsStub extends InstanceGroupsStub {
                 .<AggregatedListInstanceGroupsRequest, InstanceGroupAggregatedList>newBuilder()
                 .setMethodDescriptor(aggregatedListMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteInstanceGroupRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeleteInstanceGroupRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("instance_group", String.valueOf(request.getInstanceGroup()));
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("zone", String.valueOf(request.getZone()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetInstanceGroupRequest, InstanceGroup> getTransportSettings =
         HttpJsonCallSettings.<GetInstanceGroupRequest, InstanceGroup>newBuilder()
             .setMethodDescriptor(getMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("instance_group", String.valueOf(request.getInstanceGroup()));
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("zone", String.valueOf(request.getZone()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<InsertInstanceGroupRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertInstanceGroupRequest, Operation>newBuilder()
             .setMethodDescriptor(insertMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("zone", String.valueOf(request.getZone()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListInstanceGroupsRequest, InstanceGroupList> listTransportSettings =
         HttpJsonCallSettings.<ListInstanceGroupsRequest, InstanceGroupList>newBuilder()
             .setMethodDescriptor(listMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("zone", String.valueOf(request.getZone()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListInstancesInstanceGroupsRequest, InstanceGroupsListInstances>
         listInstancesTransportSettings =
@@ -673,18 +718,42 @@ public class HttpJsonInstanceGroupsStub extends InstanceGroupsStub {
                 .<ListInstancesInstanceGroupsRequest, InstanceGroupsListInstances>newBuilder()
                 .setMethodDescriptor(listInstancesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("instance_group", String.valueOf(request.getInstanceGroup()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("zone", String.valueOf(request.getZone()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<RemoveInstancesInstanceGroupRequest, Operation>
         removeInstancesTransportSettings =
             HttpJsonCallSettings.<RemoveInstancesInstanceGroupRequest, Operation>newBuilder()
                 .setMethodDescriptor(removeInstancesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("instance_group", String.valueOf(request.getInstanceGroup()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("zone", String.valueOf(request.getZone()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<SetNamedPortsInstanceGroupRequest, Operation>
         setNamedPortsTransportSettings =
             HttpJsonCallSettings.<SetNamedPortsInstanceGroupRequest, Operation>newBuilder()
                 .setMethodDescriptor(setNamedPortsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("instance_group", String.valueOf(request.getInstanceGroup()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("zone", String.valueOf(request.getZone()));
+                      return builder.build();
+                    })
                 .build();
 
     this.addInstancesCallable =

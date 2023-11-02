@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,7 +33,7 @@ public final class MetricServiceGrpc {
 
   private MetricServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "google.monitoring.v3.MetricService";
+  public static final java.lang.String SERVICE_NAME = "google.monitoring.v3.MetricService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -1360,9 +1360,9 @@ public final class MetricServiceGrpc {
   private static final class MetricServiceMethodDescriptorSupplier
       extends MetricServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    MetricServiceMethodDescriptorSupplier(String methodName) {
+    MetricServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

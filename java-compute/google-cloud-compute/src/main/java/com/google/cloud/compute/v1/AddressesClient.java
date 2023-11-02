@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -806,6 +806,152 @@ public class AddressesClient implements BackgroundResource {
    */
   public final UnaryCallable<ListAddressesRequest, AddressList> listCallable() {
     return stub.listCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Moves the specified address resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AddressesClient addressesClient = AddressesClient.create()) {
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String address = "address-1147692044";
+   *   RegionAddressesMoveRequest regionAddressesMoveRequestResource =
+   *       RegionAddressesMoveRequest.newBuilder().build();
+   *   Operation response =
+   *       addressesClient
+   *           .moveAsync(project, region, address, regionAddressesMoveRequestResource)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param project Source project ID which the Address is moved from.
+   * @param region Name of the region for this request.
+   * @param address Name of the address resource to move.
+   * @param regionAddressesMoveRequestResource The body resource for this request
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> moveAsync(
+      String project,
+      String region,
+      String address,
+      RegionAddressesMoveRequest regionAddressesMoveRequestResource) {
+    MoveAddressRequest request =
+        MoveAddressRequest.newBuilder()
+            .setProject(project)
+            .setRegion(region)
+            .setAddress(address)
+            .setRegionAddressesMoveRequestResource(regionAddressesMoveRequestResource)
+            .build();
+    return moveAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Moves the specified address resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AddressesClient addressesClient = AddressesClient.create()) {
+   *   MoveAddressRequest request =
+   *       MoveAddressRequest.newBuilder()
+   *           .setAddress("address-1147692044")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRegionAddressesMoveRequestResource(
+   *               RegionAddressesMoveRequest.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   Operation response = addressesClient.moveAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> moveAsync(MoveAddressRequest request) {
+    return moveOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Moves the specified address resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AddressesClient addressesClient = AddressesClient.create()) {
+   *   MoveAddressRequest request =
+   *       MoveAddressRequest.newBuilder()
+   *           .setAddress("address-1147692044")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRegionAddressesMoveRequestResource(
+   *               RegionAddressesMoveRequest.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       addressesClient.moveOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<MoveAddressRequest, Operation, Operation> moveOperationCallable() {
+    return stub.moveOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Moves the specified address resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AddressesClient addressesClient = AddressesClient.create()) {
+   *   MoveAddressRequest request =
+   *       MoveAddressRequest.newBuilder()
+   *           .setAddress("address-1147692044")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRegionAddressesMoveRequestResource(
+   *               RegionAddressesMoveRequest.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future = addressesClient.moveCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<MoveAddressRequest, Operation> moveCallable() {
+    return stub.moveCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

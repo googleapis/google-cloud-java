@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,7 +42,7 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
     network_ = "";
     ipCidrRange_ = "";
     state_ = 0;
-    connectedProjects_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    connectedProjects_ = com.google.protobuf.LazyStringArrayList.emptyList();
     machineType_ = "";
   }
 
@@ -50,11 +50,6 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Connector();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -388,11 +383,6 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Subnet();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1426,7 +1416,8 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
   public static final int CONNECTED_PROJECTS_FIELD_NUMBER = 7;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList connectedProjects_;
+  private com.google.protobuf.LazyStringArrayList connectedProjects_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -1932,8 +1923,7 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
       state_ = 0;
       minThroughput_ = 0;
       maxThroughput_ = 0;
-      connectedProjects_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000040);
+      connectedProjects_ = com.google.protobuf.LazyStringArrayList.emptyList();
       subnet_ = null;
       if (subnetBuilder_ != null) {
         subnetBuilder_.dispose();
@@ -1969,20 +1959,11 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.vpcaccess.v1.Connector buildPartial() {
       com.google.cloud.vpcaccess.v1.Connector result =
           new com.google.cloud.vpcaccess.v1.Connector(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(com.google.cloud.vpcaccess.v1.Connector result) {
-      if (((bitField0_ & 0x00000040) != 0)) {
-        connectedProjects_ = connectedProjects_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000040);
-      }
-      result.connectedProjects_ = connectedProjects_;
     }
 
     private void buildPartial0(com.google.cloud.vpcaccess.v1.Connector result) {
@@ -2004,6 +1985,10 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.maxThroughput_ = maxThroughput_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        connectedProjects_.makeImmutable();
+        result.connectedProjects_ = connectedProjects_;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
         result.subnet_ = subnetBuilder_ == null ? subnet_ : subnetBuilder_.build();
@@ -2091,7 +2076,7 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
       if (!other.connectedProjects_.isEmpty()) {
         if (connectedProjects_.isEmpty()) {
           connectedProjects_ = other.connectedProjects_;
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ |= 0x00000040;
         } else {
           ensureConnectedProjectsIsMutable();
           connectedProjects_.addAll(other.connectedProjects_);
@@ -2753,14 +2738,14 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList connectedProjects_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList connectedProjects_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureConnectedProjectsIsMutable() {
-      if (!((bitField0_ & 0x00000040) != 0)) {
+      if (!connectedProjects_.isModifiable()) {
         connectedProjects_ = new com.google.protobuf.LazyStringArrayList(connectedProjects_);
-        bitField0_ |= 0x00000040;
       }
+      bitField0_ |= 0x00000040;
     }
     /**
      *
@@ -2775,7 +2760,8 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the connectedProjects.
      */
     public com.google.protobuf.ProtocolStringList getConnectedProjectsList() {
-      return connectedProjects_.getUnmodifiableView();
+      connectedProjects_.makeImmutable();
+      return connectedProjects_;
     }
     /**
      *
@@ -2844,6 +2830,7 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
       }
       ensureConnectedProjectsIsMutable();
       connectedProjects_.set(index, value);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2866,6 +2853,7 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
       }
       ensureConnectedProjectsIsMutable();
       connectedProjects_.add(value);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2885,6 +2873,7 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllConnectedProjects(java.lang.Iterable<java.lang.String> values) {
       ensureConnectedProjectsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, connectedProjects_);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2901,8 +2890,9 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearConnectedProjects() {
-      connectedProjects_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      connectedProjects_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000040);
+      ;
       onChanged();
       return this;
     }
@@ -2926,6 +2916,7 @@ public final class Connector extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureConnectedProjectsIsMutable();
       connectedProjects_.add(value);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }

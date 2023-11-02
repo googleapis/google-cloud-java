@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class AsymmetricSignRequest extends com.google.protobuf.GeneratedMe
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new AsymmetricSignRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -137,6 +132,7 @@ public final class AsymmetricSignRequest extends com.google.protobuf.GeneratedMe
    * Optional. The digest of the data to sign. The digest must be produced with
    * the same digest algorithm as specified by the key version's
    * [algorithm][google.cloud.kms.v1.CryptoKeyVersion.algorithm].
+   *
    * This field may not be supplied if
    * [AsymmetricSignRequest.data][google.cloud.kms.v1.AsymmetricSignRequest.data]
    * is supplied.
@@ -157,6 +153,7 @@ public final class AsymmetricSignRequest extends com.google.protobuf.GeneratedMe
    * Optional. The digest of the data to sign. The digest must be produced with
    * the same digest algorithm as specified by the key version's
    * [algorithm][google.cloud.kms.v1.CryptoKeyVersion.algorithm].
+   *
    * This field may not be supplied if
    * [AsymmetricSignRequest.data][google.cloud.kms.v1.AsymmetricSignRequest.data]
    * is supplied.
@@ -177,6 +174,7 @@ public final class AsymmetricSignRequest extends com.google.protobuf.GeneratedMe
    * Optional. The digest of the data to sign. The digest must be produced with
    * the same digest algorithm as specified by the key version's
    * [algorithm][google.cloud.kms.v1.CryptoKeyVersion.algorithm].
+   *
    * This field may not be supplied if
    * [AsymmetricSignRequest.data][google.cloud.kms.v1.AsymmetricSignRequest.data]
    * is supplied.
@@ -1017,6 +1015,7 @@ public final class AsymmetricSignRequest extends com.google.protobuf.GeneratedMe
      * Optional. The digest of the data to sign. The digest must be produced with
      * the same digest algorithm as specified by the key version's
      * [algorithm][google.cloud.kms.v1.CryptoKeyVersion.algorithm].
+     *
      * This field may not be supplied if
      * [AsymmetricSignRequest.data][google.cloud.kms.v1.AsymmetricSignRequest.data]
      * is supplied.
@@ -1037,6 +1036,7 @@ public final class AsymmetricSignRequest extends com.google.protobuf.GeneratedMe
      * Optional. The digest of the data to sign. The digest must be produced with
      * the same digest algorithm as specified by the key version's
      * [algorithm][google.cloud.kms.v1.CryptoKeyVersion.algorithm].
+     *
      * This field may not be supplied if
      * [AsymmetricSignRequest.data][google.cloud.kms.v1.AsymmetricSignRequest.data]
      * is supplied.
@@ -1061,6 +1061,7 @@ public final class AsymmetricSignRequest extends com.google.protobuf.GeneratedMe
      * Optional. The digest of the data to sign. The digest must be produced with
      * the same digest algorithm as specified by the key version's
      * [algorithm][google.cloud.kms.v1.CryptoKeyVersion.algorithm].
+     *
      * This field may not be supplied if
      * [AsymmetricSignRequest.data][google.cloud.kms.v1.AsymmetricSignRequest.data]
      * is supplied.
@@ -1089,6 +1090,7 @@ public final class AsymmetricSignRequest extends com.google.protobuf.GeneratedMe
      * Optional. The digest of the data to sign. The digest must be produced with
      * the same digest algorithm as specified by the key version's
      * [algorithm][google.cloud.kms.v1.CryptoKeyVersion.algorithm].
+     *
      * This field may not be supplied if
      * [AsymmetricSignRequest.data][google.cloud.kms.v1.AsymmetricSignRequest.data]
      * is supplied.
@@ -1114,6 +1116,7 @@ public final class AsymmetricSignRequest extends com.google.protobuf.GeneratedMe
      * Optional. The digest of the data to sign. The digest must be produced with
      * the same digest algorithm as specified by the key version's
      * [algorithm][google.cloud.kms.v1.CryptoKeyVersion.algorithm].
+     *
      * This field may not be supplied if
      * [AsymmetricSignRequest.data][google.cloud.kms.v1.AsymmetricSignRequest.data]
      * is supplied.
@@ -1145,6 +1148,7 @@ public final class AsymmetricSignRequest extends com.google.protobuf.GeneratedMe
      * Optional. The digest of the data to sign. The digest must be produced with
      * the same digest algorithm as specified by the key version's
      * [algorithm][google.cloud.kms.v1.CryptoKeyVersion.algorithm].
+     *
      * This field may not be supplied if
      * [AsymmetricSignRequest.data][google.cloud.kms.v1.AsymmetricSignRequest.data]
      * is supplied.
@@ -1170,6 +1174,7 @@ public final class AsymmetricSignRequest extends com.google.protobuf.GeneratedMe
      * Optional. The digest of the data to sign. The digest must be produced with
      * the same digest algorithm as specified by the key version's
      * [algorithm][google.cloud.kms.v1.CryptoKeyVersion.algorithm].
+     *
      * This field may not be supplied if
      * [AsymmetricSignRequest.data][google.cloud.kms.v1.AsymmetricSignRequest.data]
      * is supplied.
@@ -1190,6 +1195,7 @@ public final class AsymmetricSignRequest extends com.google.protobuf.GeneratedMe
      * Optional. The digest of the data to sign. The digest must be produced with
      * the same digest algorithm as specified by the key version's
      * [algorithm][google.cloud.kms.v1.CryptoKeyVersion.algorithm].
+     *
      * This field may not be supplied if
      * [AsymmetricSignRequest.data][google.cloud.kms.v1.AsymmetricSignRequest.data]
      * is supplied.
@@ -1212,6 +1218,7 @@ public final class AsymmetricSignRequest extends com.google.protobuf.GeneratedMe
      * Optional. The digest of the data to sign. The digest must be produced with
      * the same digest algorithm as specified by the key version's
      * [algorithm][google.cloud.kms.v1.CryptoKeyVersion.algorithm].
+     *
      * This field may not be supplied if
      * [AsymmetricSignRequest.data][google.cloud.kms.v1.AsymmetricSignRequest.data]
      * is supplied.

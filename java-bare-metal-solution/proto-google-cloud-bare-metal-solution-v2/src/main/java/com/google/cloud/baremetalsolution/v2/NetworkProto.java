@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -87,6 +87,14 @@ public final class NetworkProto {
       internal_static_google_cloud_baremetalsolution_v2_ListNetworkUsageResponse_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_baremetalsolution_v2_ListNetworkUsageResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_baremetalsolution_v2_NetworkMountPoint_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_baremetalsolution_v2_NetworkMountPoint_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_baremetalsolution_v2_RenameNetworkRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_baremetalsolution_v2_RenameNetworkRequest_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -100,73 +108,93 @@ public final class NetworkProto {
           + "ork.proto\022!google.cloud.baremetalsolutio"
           + "n.v2\032\037google/api/field_behavior.proto\032\031g"
           + "oogle/api/resource.proto\032 google/protobu"
-          + "f/field_mask.proto\"\354\005\n\007Network\022\021\n\004name\030\005"
-          + " \001(\tB\003\340A\003\022\n\n\002id\030\n \001(\t\022=\n\004type\030\002 \001(\0162/.go"
-          + "ogle.cloud.baremetalsolution.v2.Network."
-          + "Type\022\022\n\nip_address\030\003 \001(\t\022\023\n\013mac_address\030"
-          + "\004 \003(\t\022?\n\005state\030\006 \001(\01620.google.cloud.bare"
-          + "metalsolution.v2.Network.State\022\017\n\007vlan_i"
-          + "d\030\007 \001(\t\022\014\n\004cidr\030\010 \001(\t\0223\n\003vrf\030\t \001(\0132&.goo"
-          + "gle.cloud.baremetalsolution.v2.VRF\022F\n\006la"
-          + "bels\030\013 \003(\01326.google.cloud.baremetalsolut"
-          + "ion.v2.Network.LabelsEntry\022\025\n\rservices_c"
-          + "idr\030\014 \001(\t\022R\n\014reservations\030\r \003(\0132<.google"
-          + ".cloud.baremetalsolution.v2.NetworkAddre"
-          + "ssReservation\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001("
-          + "\t\022\r\n\005value\030\002 \001(\t:\0028\001\"5\n\004Type\022\024\n\020TYPE_UNS"
-          + "PECIFIED\020\000\022\n\n\006CLIENT\020\001\022\013\n\007PRIVATE\020\002\"A\n\005S"
-          + "tate\022\025\n\021STATE_UNSPECIFIED\020\000\022\020\n\014PROVISION"
-          + "ING\020\001\022\017\n\013PROVISIONED\020\002:i\352Af\n(baremetalso"
-          + "lution.googleapis.com/Network\022:projects/"
-          + "{project}/locations/{location}/networks/"
-          + "{network}\"U\n\031NetworkAddressReservation\022\025"
-          + "\n\rstart_address\030\001 \001(\t\022\023\n\013end_address\030\002 \001"
-          + "(\t\022\014\n\004note\030\003 \001(\t\"\233\003\n\003VRF\022\014\n\004name\030\001 \001(\t\022;"
-          + "\n\005state\030\005 \001(\0162,.google.cloud.baremetalso"
-          + "lution.v2.VRF.State\022D\n\nqos_policy\030\006 \001(\0132"
-          + "0.google.cloud.baremetalsolution.v2.VRF."
-          + "QosPolicy\022O\n\020vlan_attachments\030\007 \003(\01325.go"
-          + "ogle.cloud.baremetalsolution.v2.VRF.Vlan"
-          + "Attachment\032#\n\tQosPolicy\022\026\n\016bandwidth_gbp"
-          + "s\030\001 \001(\001\032J\n\016VlanAttachment\022\024\n\014peer_vlan_i"
-          + "d\030\001 \001(\003\022\017\n\007peer_ip\030\002 \001(\t\022\021\n\trouter_ip\030\003 "
-          + "\001(\t\"A\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\020\n\014P"
-          + "ROVISIONING\020\001\022\017\n\013PROVISIONED\020\002\"\327\002\n\020Logic"
-          + "alInterface\022o\n\032logical_network_interface"
-          + "s\030\001 \003(\0132K.google.cloud.baremetalsolution"
-          + ".v2.LogicalInterface.LogicalNetworkInter"
-          + "face\022\014\n\004name\030\002 \001(\t\022\027\n\017interface_index\030\003 "
-          + "\001(\005\032\252\001\n\027LogicalNetworkInterface\022\017\n\007netwo"
-          + "rk\030\001 \001(\t\022\022\n\nip_address\030\002 \001(\t\022\027\n\017default_"
-          + "gateway\030\003 \001(\010\022E\n\014network_type\030\004 \001(\0162/.go"
-          + "ogle.cloud.baremetalsolution.v2.Network."
-          + "Type\022\n\n\002id\030\005 \001(\t\"S\n\021GetNetworkRequest\022>\n"
-          + "\004name\030\001 \001(\tB0\340A\002\372A*\n(baremetalsolution.g"
-          + "oogleapis.com/Network\"\207\001\n\023ListNetworksRe"
-          + "quest\0229\n\006parent\030\001 \001(\tB)\340A\002\372A#\n!locations"
-          + ".googleapis.com/Location\022\021\n\tpage_size\030\002 "
-          + "\001(\005\022\022\n\npage_token\030\003 \001(\t\022\016\n\006filter\030\004 \001(\t\""
-          + "\202\001\n\024ListNetworksResponse\022<\n\010networks\030\001 \003"
-          + "(\0132*.google.cloud.baremetalsolution.v2.N"
-          + "etwork\022\027\n\017next_page_token\030\002 \001(\t\022\023\n\013unrea"
-          + "chable\030\003 \003(\t\"\211\001\n\024UpdateNetworkRequest\022@\n"
-          + "\007network\030\001 \001(\0132*.google.cloud.baremetals"
-          + "olution.v2.NetworkB\003\340A\002\022/\n\013update_mask\030\002"
-          + " \001(\0132\032.google.protobuf.FieldMask\"]\n\014Netw"
-          + "orkUsage\022;\n\007network\030\001 \001(\0132*.google.cloud"
-          + ".baremetalsolution.v2.Network\022\020\n\010used_ip"
-          + "s\030\002 \003(\t\"V\n\027ListNetworkUsageRequest\022;\n\010lo"
-          + "cation\030\001 \001(\tB)\340A\002\372A#\n!locations.googleap"
-          + "is.com/Location\"]\n\030ListNetworkUsageRespo"
-          + "nse\022A\n\010networks\030\001 \003(\0132/.google.cloud.bar"
-          + "emetalsolution.v2.NetworkUsageB\373\001\n%com.g"
-          + "oogle.cloud.baremetalsolution.v2B\014Networ"
-          + "kProtoP\001ZScloud.google.com/go/baremetals"
-          + "olution/apiv2/baremetalsolutionpb;bareme"
-          + "talsolutionpb\252\002!Google.Cloud.BareMetalSo"
-          + "lution.V2\312\002!Google\\Cloud\\BareMetalSoluti"
-          + "on\\V2\352\002$Google::Cloud::BareMetalSolution"
-          + "::V2b\006proto3"
+          + "f/field_mask.proto\"\254\007\n\007Network\022\022\n\004name\030\005"
+          + " \001(\tB\004\342A\001\003\022\n\n\002id\030\n \001(\t\022=\n\004type\030\002 \001(\0162/.g"
+          + "oogle.cloud.baremetalsolution.v2.Network"
+          + ".Type\022\022\n\nip_address\030\003 \001(\t\022\023\n\013mac_address"
+          + "\030\004 \003(\t\022?\n\005state\030\006 \001(\01620.google.cloud.bar"
+          + "emetalsolution.v2.Network.State\022\017\n\007vlan_"
+          + "id\030\007 \001(\t\022\014\n\004cidr\030\010 \001(\t\0223\n\003vrf\030\t \001(\0132&.go"
+          + "ogle.cloud.baremetalsolution.v2.VRF\022F\n\006l"
+          + "abels\030\013 \003(\01326.google.cloud.baremetalsolu"
+          + "tion.v2.Network.LabelsEntry\022\025\n\rservices_"
+          + "cidr\030\014 \001(\t\022R\n\014reservations\030\r \003(\0132<.googl"
+          + "e.cloud.baremetalsolution.v2.NetworkAddr"
+          + "essReservation\022\021\n\003pod\030\016 \001(\tB\004\342A\001\003\022P\n\014mou"
+          + "nt_points\030\017 \003(\01324.google.cloud.baremetal"
+          + "solution.v2.NetworkMountPointB\004\342A\001\004\022\034\n\024j"
+          + "umbo_frames_enabled\030\020 \001(\010\022\030\n\ngateway_ip\030"
+          + "\021 \001(\tB\004\342A\001\003\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022"
+          + "\r\n\005value\030\002 \001(\t:\0028\001\"5\n\004Type\022\024\n\020TYPE_UNSPE"
+          + "CIFIED\020\000\022\n\n\006CLIENT\020\001\022\013\n\007PRIVATE\020\002\"c\n\005Sta"
+          + "te\022\025\n\021STATE_UNSPECIFIED\020\000\022\020\n\014PROVISIONIN"
+          + "G\020\001\022\017\n\013PROVISIONED\020\002\022\022\n\016DEPROVISIONING\020\003"
+          + "\022\014\n\010UPDATING\020\004:i\352Af\n(baremetalsolution.g"
+          + "oogleapis.com/Network\022:projects/{project"
+          + "}/locations/{location}/networks/{network"
+          + "}\"U\n\031NetworkAddressReservation\022\025\n\rstart_"
+          + "address\030\001 \001(\t\022\023\n\013end_address\030\002 \001(\t\022\014\n\004no"
+          + "te\030\003 \001(\t\"\350\004\n\003VRF\022\014\n\004name\030\001 \001(\t\022;\n\005state\030"
+          + "\005 \001(\0162,.google.cloud.baremetalsolution.v"
+          + "2.VRF.State\022D\n\nqos_policy\030\006 \001(\01320.google"
+          + ".cloud.baremetalsolution.v2.VRF.QosPolic"
+          + "y\022O\n\020vlan_attachments\030\007 \003(\01325.google.clo"
+          + "ud.baremetalsolution.v2.VRF.VlanAttachme"
+          + "nt\032#\n\tQosPolicy\022\026\n\016bandwidth_gbps\030\001 \001(\001\032"
+          + "\226\002\n\016VlanAttachment\022\024\n\014peer_vlan_id\030\001 \001(\003"
+          + "\022\017\n\007peer_ip\030\002 \001(\t\022\021\n\trouter_ip\030\003 \001(\t\022\031\n\013"
+          + "pairing_key\030\004 \001(\tB\004\342A\001\004\022D\n\nqos_policy\030\005 "
+          + "\001(\01320.google.cloud.baremetalsolution.v2."
+          + "VRF.QosPolicy\022\020\n\002id\030\006 \001(\tB\004\342A\001\005\022W\n\027inter"
+          + "connect_attachment\030\007 \001(\tB6\342A\001\001\372A/\n-compu"
+          + "te.googleapis.com/InterconnectAttachment"
+          + "\"A\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\020\n\014PROV"
+          + "ISIONING\020\001\022\017\n\013PROVISIONED\020\002\"\333\002\n\020LogicalI"
+          + "nterface\022o\n\032logical_network_interfaces\030\001"
+          + " \003(\0132K.google.cloud.baremetalsolution.v2"
+          + ".LogicalInterface.LogicalNetworkInterfac"
+          + "e\022\014\n\004name\030\002 \001(\t\022\033\n\017interface_index\030\003 \001(\005"
+          + "B\002\030\001\032\252\001\n\027LogicalNetworkInterface\022\017\n\007netw"
+          + "ork\030\001 \001(\t\022\022\n\nip_address\030\002 \001(\t\022\027\n\017default"
+          + "_gateway\030\003 \001(\010\022E\n\014network_type\030\004 \001(\0162/.g"
+          + "oogle.cloud.baremetalsolution.v2.Network"
+          + ".Type\022\n\n\002id\030\005 \001(\t\"T\n\021GetNetworkRequest\022?"
+          + "\n\004name\030\001 \001(\tB1\342A\001\002\372A*\n(baremetalsolution"
+          + ".googleapis.com/Network\"\210\001\n\023ListNetworks"
+          + "Request\022:\n\006parent\030\001 \001(\tB*\342A\001\002\372A#\n!locati"
+          + "ons.googleapis.com/Location\022\021\n\tpage_size"
+          + "\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\022\016\n\006filter\030\004 \001"
+          + "(\t\"\202\001\n\024ListNetworksResponse\022<\n\010networks\030"
+          + "\001 \003(\0132*.google.cloud.baremetalsolution.v"
+          + "2.Network\022\027\n\017next_page_token\030\002 \001(\t\022\023\n\013un"
+          + "reachable\030\003 \003(\t\"\212\001\n\024UpdateNetworkRequest"
+          + "\022A\n\007network\030\001 \001(\0132*.google.cloud.baremet"
+          + "alsolution.v2.NetworkB\004\342A\001\002\022/\n\013update_ma"
+          + "sk\030\002 \001(\0132\032.google.protobuf.FieldMask\"]\n\014"
+          + "NetworkUsage\022;\n\007network\030\001 \001(\0132*.google.c"
+          + "loud.baremetalsolution.v2.Network\022\020\n\010use"
+          + "d_ips\030\002 \003(\t\"W\n\027ListNetworkUsageRequest\022<"
+          + "\n\010location\030\001 \001(\tB*\342A\001\002\372A#\n!locations.goo"
+          + "gleapis.com/Location\"]\n\030ListNetworkUsage"
+          + "Response\022A\n\010networks\030\001 \003(\0132/.google.clou"
+          + "d.baremetalsolution.v2.NetworkUsage\"\235\001\n\021"
+          + "NetworkMountPoint\022@\n\010instance\030\001 \001(\tB.\372A+"
+          + "\n)baremetalsolution.googleapis.com/Insta"
+          + "nce\022\031\n\021logical_interface\030\002 \001(\t\022\027\n\017defaul"
+          + "t_gateway\030\003 \001(\010\022\022\n\nip_address\030\004 \001(\t\"u\n\024R"
+          + "enameNetworkRequest\022?\n\004name\030\001 \001(\tB1\342A\001\002\372"
+          + "A*\n(baremetalsolution.googleapis.com/Net"
+          + "work\022\034\n\016new_network_id\030\002 \001(\tB\004\342A\001\002B\205\003\n%c"
+          + "om.google.cloud.baremetalsolution.v2B\014Ne"
+          + "tworkProtoP\001ZScloud.google.com/go/bareme"
+          + "talsolution/apiv2/baremetalsolutionpb;ba"
+          + "remetalsolutionpb\252\002!Google.Cloud.BareMet"
+          + "alSolution.V2\312\002!Google\\Cloud\\BareMetalSo"
+          + "lution\\V2\352\002$Google::Cloud::BareMetalSolu"
+          + "tion::V2\352A\206\001\n-compute.googleapis.com/Int"
+          + "erconnectAttachment\022Uprojects/{project}/"
+          + "regions/{region}/interconnectAttachments"
+          + "/{interconnect_attachment}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -194,6 +222,10 @@ public final class NetworkProto {
               "Labels",
               "ServicesCidr",
               "Reservations",
+              "Pod",
+              "MountPoints",
+              "JumboFramesEnabled",
+              "GatewayIp",
             });
     internal_static_google_cloud_baremetalsolution_v2_Network_LabelsEntry_descriptor =
         internal_static_google_cloud_baremetalsolution_v2_Network_descriptor
@@ -235,7 +267,13 @@ public final class NetworkProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_baremetalsolution_v2_VRF_VlanAttachment_descriptor,
             new java.lang.String[] {
-              "PeerVlanId", "PeerIp", "RouterIp",
+              "PeerVlanId",
+              "PeerIp",
+              "RouterIp",
+              "PairingKey",
+              "QosPolicy",
+              "Id",
+              "InterconnectAttachment",
             });
     internal_static_google_cloud_baremetalsolution_v2_LogicalInterface_descriptor =
         getDescriptor().getMessageTypes().get(3);
@@ -311,10 +349,27 @@ public final class NetworkProto {
             new java.lang.String[] {
               "Networks",
             });
+    internal_static_google_cloud_baremetalsolution_v2_NetworkMountPoint_descriptor =
+        getDescriptor().getMessageTypes().get(11);
+    internal_static_google_cloud_baremetalsolution_v2_NetworkMountPoint_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_baremetalsolution_v2_NetworkMountPoint_descriptor,
+            new java.lang.String[] {
+              "Instance", "LogicalInterface", "DefaultGateway", "IpAddress",
+            });
+    internal_static_google_cloud_baremetalsolution_v2_RenameNetworkRequest_descriptor =
+        getDescriptor().getMessageTypes().get(12);
+    internal_static_google_cloud_baremetalsolution_v2_RenameNetworkRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_baremetalsolution_v2_RenameNetworkRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "NewNetworkId",
+            });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.google.api.ResourceProto.resource);
+    registry.add(com.google.api.ResourceProto.resourceDefinition);
     registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);

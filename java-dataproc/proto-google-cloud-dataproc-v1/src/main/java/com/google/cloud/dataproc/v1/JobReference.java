@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,11 +46,6 @@ public final class JobReference extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new JobReference();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -130,8 +125,10 @@ public final class JobReference extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. The job ID, which must be unique within the project.
+   *
    * The ID must contain only letters (a-z, A-Z), numbers (0-9),
    * underscores (_), or hyphens (-). The maximum length is 100 characters.
+   *
    * If not specified by the caller, the job ID will be provided by the server.
    * </pre>
    *
@@ -156,8 +153,10 @@ public final class JobReference extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. The job ID, which must be unique within the project.
+   *
    * The ID must contain only letters (a-z, A-Z), numbers (0-9),
    * underscores (_), or hyphens (-). The maximum length is 100 characters.
+   *
    * If not specified by the caller, the job ID will be provided by the server.
    * </pre>
    *
@@ -660,8 +659,10 @@ public final class JobReference extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The job ID, which must be unique within the project.
+     *
      * The ID must contain only letters (a-z, A-Z), numbers (0-9),
      * underscores (_), or hyphens (-). The maximum length is 100 characters.
+     *
      * If not specified by the caller, the job ID will be provided by the server.
      * </pre>
      *
@@ -685,8 +686,10 @@ public final class JobReference extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The job ID, which must be unique within the project.
+     *
      * The ID must contain only letters (a-z, A-Z), numbers (0-9),
      * underscores (_), or hyphens (-). The maximum length is 100 characters.
+     *
      * If not specified by the caller, the job ID will be provided by the server.
      * </pre>
      *
@@ -710,8 +713,10 @@ public final class JobReference extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The job ID, which must be unique within the project.
+     *
      * The ID must contain only letters (a-z, A-Z), numbers (0-9),
      * underscores (_), or hyphens (-). The maximum length is 100 characters.
+     *
      * If not specified by the caller, the job ID will be provided by the server.
      * </pre>
      *
@@ -734,8 +739,10 @@ public final class JobReference extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The job ID, which must be unique within the project.
+     *
      * The ID must contain only letters (a-z, A-Z), numbers (0-9),
      * underscores (_), or hyphens (-). The maximum length is 100 characters.
+     *
      * If not specified by the caller, the job ID will be provided by the server.
      * </pre>
      *
@@ -754,8 +761,10 @@ public final class JobReference extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The job ID, which must be unique within the project.
+     *
      * The ID must contain only letters (a-z, A-Z), numbers (0-9),
      * underscores (_), or hyphens (-). The maximum length is 100 characters.
+     *
      * If not specified by the caller, the job ID will be provided by the server.
      * </pre>
      *

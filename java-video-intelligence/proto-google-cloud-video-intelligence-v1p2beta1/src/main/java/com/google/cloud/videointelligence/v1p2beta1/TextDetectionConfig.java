@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,18 +38,13 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
   }
 
   private TextDetectionConfig() {
-    languageHints_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    languageHints_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new TextDetectionConfig();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -70,7 +65,8 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
   public static final int LANGUAGE_HINTS_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList languageHints_;
+  private com.google.protobuf.LazyStringArrayList languageHints_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -78,6 +74,7 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
    * Language hint can be specified if the language to be detected is known a
    * priori. It can increase the accuracy of the detection. Language hint must
    * be language code in BCP-47 format.
+   *
    * Automatic language detection is performed if no hint is provided.
    * </pre>
    *
@@ -95,6 +92,7 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
    * Language hint can be specified if the language to be detected is known a
    * priori. It can increase the accuracy of the detection. Language hint must
    * be language code in BCP-47 format.
+   *
    * Automatic language detection is performed if no hint is provided.
    * </pre>
    *
@@ -112,6 +110,7 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
    * Language hint can be specified if the language to be detected is known a
    * priori. It can increase the accuracy of the detection. Language hint must
    * be language code in BCP-47 format.
+   *
    * Automatic language detection is performed if no hint is provided.
    * </pre>
    *
@@ -130,6 +129,7 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
    * Language hint can be specified if the language to be detected is known a
    * priori. It can increase the accuracy of the detection. Language hint must
    * be language code in BCP-47 format.
+   *
    * Automatic language detection is performed if no hint is provided.
    * </pre>
    *
@@ -348,8 +348,7 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      languageHints_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      languageHints_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -378,7 +377,6 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
     public com.google.cloud.videointelligence.v1p2beta1.TextDetectionConfig buildPartial() {
       com.google.cloud.videointelligence.v1p2beta1.TextDetectionConfig result =
           new com.google.cloud.videointelligence.v1p2beta1.TextDetectionConfig(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -386,18 +384,13 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
       return result;
     }
 
-    private void buildPartialRepeatedFields(
-        com.google.cloud.videointelligence.v1p2beta1.TextDetectionConfig result) {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        languageHints_ = languageHints_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.languageHints_ = languageHints_;
-    }
-
     private void buildPartial0(
         com.google.cloud.videointelligence.v1p2beta1.TextDetectionConfig result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        languageHints_.makeImmutable();
+        result.languageHints_ = languageHints_;
+      }
     }
 
     @java.lang.Override
@@ -451,7 +444,7 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
       if (!other.languageHints_.isEmpty()) {
         if (languageHints_.isEmpty()) {
           languageHints_ = other.languageHints_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ |= 0x00000001;
         } else {
           ensureLanguageHintsIsMutable();
           languageHints_.addAll(other.languageHints_);
@@ -510,14 +503,14 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList languageHints_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList languageHints_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureLanguageHintsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!languageHints_.isModifiable()) {
         languageHints_ = new com.google.protobuf.LazyStringArrayList(languageHints_);
-        bitField0_ |= 0x00000001;
       }
+      bitField0_ |= 0x00000001;
     }
     /**
      *
@@ -526,6 +519,7 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
      * Language hint can be specified if the language to be detected is known a
      * priori. It can increase the accuracy of the detection. Language hint must
      * be language code in BCP-47 format.
+     *
      * Automatic language detection is performed if no hint is provided.
      * </pre>
      *
@@ -534,7 +528,8 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
      * @return A list containing the languageHints.
      */
     public com.google.protobuf.ProtocolStringList getLanguageHintsList() {
-      return languageHints_.getUnmodifiableView();
+      languageHints_.makeImmutable();
+      return languageHints_;
     }
     /**
      *
@@ -543,6 +538,7 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
      * Language hint can be specified if the language to be detected is known a
      * priori. It can increase the accuracy of the detection. Language hint must
      * be language code in BCP-47 format.
+     *
      * Automatic language detection is performed if no hint is provided.
      * </pre>
      *
@@ -560,6 +556,7 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
      * Language hint can be specified if the language to be detected is known a
      * priori. It can increase the accuracy of the detection. Language hint must
      * be language code in BCP-47 format.
+     *
      * Automatic language detection is performed if no hint is provided.
      * </pre>
      *
@@ -578,6 +575,7 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
      * Language hint can be specified if the language to be detected is known a
      * priori. It can increase the accuracy of the detection. Language hint must
      * be language code in BCP-47 format.
+     *
      * Automatic language detection is performed if no hint is provided.
      * </pre>
      *
@@ -596,6 +594,7 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
      * Language hint can be specified if the language to be detected is known a
      * priori. It can increase the accuracy of the detection. Language hint must
      * be language code in BCP-47 format.
+     *
      * Automatic language detection is performed if no hint is provided.
      * </pre>
      *
@@ -611,6 +610,7 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
       }
       ensureLanguageHintsIsMutable();
       languageHints_.set(index, value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -621,6 +621,7 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
      * Language hint can be specified if the language to be detected is known a
      * priori. It can increase the accuracy of the detection. Language hint must
      * be language code in BCP-47 format.
+     *
      * Automatic language detection is performed if no hint is provided.
      * </pre>
      *
@@ -635,6 +636,7 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
       }
       ensureLanguageHintsIsMutable();
       languageHints_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -645,6 +647,7 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
      * Language hint can be specified if the language to be detected is known a
      * priori. It can increase the accuracy of the detection. Language hint must
      * be language code in BCP-47 format.
+     *
      * Automatic language detection is performed if no hint is provided.
      * </pre>
      *
@@ -656,6 +659,7 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
     public Builder addAllLanguageHints(java.lang.Iterable<java.lang.String> values) {
       ensureLanguageHintsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, languageHints_);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -666,6 +670,7 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
      * Language hint can be specified if the language to be detected is known a
      * priori. It can increase the accuracy of the detection. Language hint must
      * be language code in BCP-47 format.
+     *
      * Automatic language detection is performed if no hint is provided.
      * </pre>
      *
@@ -674,8 +679,9 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearLanguageHints() {
-      languageHints_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      languageHints_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      ;
       onChanged();
       return this;
     }
@@ -686,6 +692,7 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
      * Language hint can be specified if the language to be detected is known a
      * priori. It can increase the accuracy of the detection. Language hint must
      * be language code in BCP-47 format.
+     *
      * Automatic language detection is performed if no hint is provided.
      * </pre>
      *
@@ -701,6 +708,7 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
       checkByteStringIsUtf8(value);
       ensureLanguageHintsIsMutable();
       languageHints_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

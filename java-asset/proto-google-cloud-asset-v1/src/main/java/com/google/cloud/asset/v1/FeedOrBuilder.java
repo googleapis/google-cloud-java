@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,7 @@ public interface FeedOrBuilder
    * projects/{project_number}/feeds/{client-assigned_feed_identifier} or
    * folders/{folder_number}/feeds/{client-assigned_feed_identifier} or
    * organizations/{organization_number}/feeds/{client-assigned_feed_identifier}
+   *
    * The client-assigned feed identifier must be unique within the parent
    * project/folder/organization.
    * </pre>
@@ -48,6 +49,7 @@ public interface FeedOrBuilder
    * projects/{project_number}/feeds/{client-assigned_feed_identifier} or
    * folders/{folder_number}/feeds/{client-assigned_feed_identifier} or
    * organizations/{organization_number}/feeds/{client-assigned_feed_identifier}
+   *
    * The client-assigned feed identifier must be unique within the parent
    * project/folder/organization.
    * </pre>
@@ -141,6 +143,7 @@ public interface FeedOrBuilder
    * or both of asset_names and asset_types. Only asset updates matching
    * specified asset_names or asset_types are exported to the feed.
    * Example: `"compute.googleapis.com/Disk"`
+   *
    * For a list of all supported asset types, see
    * [Supported asset types](/asset-inventory/docs/supported-asset-types).
    * </pre>
@@ -158,6 +161,7 @@ public interface FeedOrBuilder
    * or both of asset_names and asset_types. Only asset updates matching
    * specified asset_names or asset_types are exported to the feed.
    * Example: `"compute.googleapis.com/Disk"`
+   *
    * For a list of all supported asset types, see
    * [Supported asset types](/asset-inventory/docs/supported-asset-types).
    * </pre>
@@ -175,6 +179,7 @@ public interface FeedOrBuilder
    * or both of asset_names and asset_types. Only asset updates matching
    * specified asset_names or asset_types are exported to the feed.
    * Example: `"compute.googleapis.com/Disk"`
+   *
    * For a list of all supported asset types, see
    * [Supported asset types](/asset-inventory/docs/supported-asset-types).
    * </pre>
@@ -193,6 +198,7 @@ public interface FeedOrBuilder
    * or both of asset_names and asset_types. Only asset updates matching
    * specified asset_names or asset_types are exported to the feed.
    * Example: `"compute.googleapis.com/Disk"`
+   *
    * For a list of all supported asset types, see
    * [Supported asset types](/asset-inventory/docs/supported-asset-types).
    * </pre>
@@ -287,6 +293,7 @@ public interface FeedOrBuilder
    * `temporal_asset`. Example: a Feed with expression ("temporal_asset.deleted
    * == true") will only publish Asset deletions. Other fields of `Expr` are
    * optional.
+   *
    * See our [user
    * guide](https://cloud.google.com/asset-inventory/docs/monitoring-asset-changes-with-condition)
    * for detailed instructions.
@@ -309,6 +316,7 @@ public interface FeedOrBuilder
    * `temporal_asset`. Example: a Feed with expression ("temporal_asset.deleted
    * == true") will only publish Asset deletions. Other fields of `Expr` are
    * optional.
+   *
    * See our [user
    * guide](https://cloud.google.com/asset-inventory/docs/monitoring-asset-changes-with-condition)
    * for detailed instructions.
@@ -331,6 +339,7 @@ public interface FeedOrBuilder
    * `temporal_asset`. Example: a Feed with expression ("temporal_asset.deleted
    * == true") will only publish Asset deletions. Other fields of `Expr` are
    * optional.
+   *
    * See our [user
    * guide](https://cloud.google.com/asset-inventory/docs/monitoring-asset-changes-with-condition)
    * for detailed instructions.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,6 +52,9 @@ public class AsyncBatchTranslateDocumentLRO {
               .putAllModels(new HashMap<String, String>())
               .putAllGlossaries(new HashMap<String, TranslateTextGlossaryConfig>())
               .putAllFormatConversions(new HashMap<String, String>())
+              .setCustomizedAttribution("customizedAttribution557650238")
+              .setEnableShadowRemovalNativePdf(true)
+              .setEnableRotationCorrection(true)
               .build();
       OperationFuture<BatchTranslateDocumentResponse, BatchTranslateDocumentMetadata> future =
           translationServiceClient.batchTranslateDocumentOperationCallable().futureCall(request);

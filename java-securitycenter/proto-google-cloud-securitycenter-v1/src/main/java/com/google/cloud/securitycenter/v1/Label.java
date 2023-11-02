@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,8 +22,10 @@ package com.google.cloud.securitycenter.v1;
  *
  *
  * <pre>
- * Label represents a generic name=value label. Label has separate name and
- * value fields to support filtering with contains().
+ * Represents a generic name-value label. A label has separate name and value
+ * fields to support filtering with the `contains()` function. For more
+ * information, see [Filtering on array-type
+ * fields](https://cloud.google.com/security-command-center/docs/how-to-api-list-findings#array-contains-filtering).
  * </pre>
  *
  * Protobuf type {@code google.cloud.securitycenter.v1.Label}
@@ -49,11 +51,6 @@ public final class Label extends com.google.protobuf.GeneratedMessageV3
     return new Label();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.securitycenter.v1.LabelProto
         .internal_static_google_cloud_securitycenter_v1_Label_descriptor;
@@ -77,7 +74,7 @@ public final class Label extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Label name.
+   * Name of the label.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -100,7 +97,7 @@ public final class Label extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Label name.
+   * Name of the label.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -128,7 +125,7 @@ public final class Label extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Label value.
+   * Value that corresponds to the label's name.
    * </pre>
    *
    * <code>string value = 2;</code>
@@ -151,7 +148,7 @@ public final class Label extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Label value.
+   * Value that corresponds to the label's name.
    * </pre>
    *
    * <code>string value = 2;</code>
@@ -342,8 +339,10 @@ public final class Label extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Label represents a generic name=value label. Label has separate name and
-   * value fields to support filtering with contains().
+   * Represents a generic name-value label. A label has separate name and value
+   * fields to support filtering with the `contains()` function. For more
+   * information, see [Filtering on array-type
+   * fields](https://cloud.google.com/security-command-center/docs/how-to-api-list-findings#array-contains-filtering).
    * </pre>
    *
    * Protobuf type {@code google.cloud.securitycenter.v1.Label}
@@ -541,7 +540,7 @@ public final class Label extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Label name.
+     * Name of the label.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -563,7 +562,7 @@ public final class Label extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Label name.
+     * Name of the label.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -585,7 +584,7 @@ public final class Label extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Label name.
+     * Name of the label.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -606,7 +605,7 @@ public final class Label extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Label name.
+     * Name of the label.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -623,7 +622,7 @@ public final class Label extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Label name.
+     * Name of the label.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -647,7 +646,7 @@ public final class Label extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Label value.
+     * Value that corresponds to the label's name.
      * </pre>
      *
      * <code>string value = 2;</code>
@@ -669,7 +668,7 @@ public final class Label extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Label value.
+     * Value that corresponds to the label's name.
      * </pre>
      *
      * <code>string value = 2;</code>
@@ -691,7 +690,7 @@ public final class Label extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Label value.
+     * Value that corresponds to the label's name.
      * </pre>
      *
      * <code>string value = 2;</code>
@@ -712,7 +711,7 @@ public final class Label extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Label value.
+     * Value that corresponds to the label's name.
      * </pre>
      *
      * <code>string value = 2;</code>
@@ -729,7 +728,7 @@ public final class Label extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Label value.
+     * Value that corresponds to the label's name.
      * </pre>
      *
      * <code>string value = 2;</code>

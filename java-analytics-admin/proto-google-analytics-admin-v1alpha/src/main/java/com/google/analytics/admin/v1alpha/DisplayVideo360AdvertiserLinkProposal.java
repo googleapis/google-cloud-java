@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ package com.google.analytics.admin.v1alpha;
  * <pre>
  * A proposal for a link between a GA4 property and a Display &amp; Video 360
  * advertiser.
+ *
  * A proposal is converted to a DisplayVideo360AdvertiserLink once approved.
  * Google Analytics admins approve inbound proposals while Display &amp; Video 360
  * admins approve outbound proposals.
@@ -56,11 +57,6 @@ public final class DisplayVideo360AdvertiserLinkProposal
     return new DisplayVideo360AdvertiserLinkProposal();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.analytics.admin.v1alpha.ResourcesProto
         .internal_static_google_analytics_admin_v1alpha_DisplayVideo360AdvertiserLinkProposal_descriptor;
@@ -87,6 +83,7 @@ public final class DisplayVideo360AdvertiserLinkProposal
    * Output only. The resource name for this
    * DisplayVideo360AdvertiserLinkProposal resource. Format:
    * properties/{propertyId}/displayVideo360AdvertiserLinkProposals/{proposalId}
+   *
    * Note: proposalId is not the Display &amp; Video 360 Advertiser ID
    * </pre>
    *
@@ -113,6 +110,7 @@ public final class DisplayVideo360AdvertiserLinkProposal
    * Output only. The resource name for this
    * DisplayVideo360AdvertiserLinkProposal resource. Format:
    * properties/{propertyId}/displayVideo360AdvertiserLinkProposals/{proposalId}
+   *
    * Note: proposalId is not the Display &amp; Video 360 Advertiser ID
    * </pre>
    *
@@ -797,6 +795,7 @@ public final class DisplayVideo360AdvertiserLinkProposal
    * <pre>
    * A proposal for a link between a GA4 property and a Display &amp; Video 360
    * advertiser.
+   *
    * A proposal is converted to a DisplayVideo360AdvertiserLink once approved.
    * Google Analytics admins approve inbound proposals while Display &amp; Video 360
    * admins approve outbound proposals.
@@ -1125,6 +1124,7 @@ public final class DisplayVideo360AdvertiserLinkProposal
      * Output only. The resource name for this
      * DisplayVideo360AdvertiserLinkProposal resource. Format:
      * properties/{propertyId}/displayVideo360AdvertiserLinkProposals/{proposalId}
+     *
      * Note: proposalId is not the Display &amp; Video 360 Advertiser ID
      * </pre>
      *
@@ -1150,6 +1150,7 @@ public final class DisplayVideo360AdvertiserLinkProposal
      * Output only. The resource name for this
      * DisplayVideo360AdvertiserLinkProposal resource. Format:
      * properties/{propertyId}/displayVideo360AdvertiserLinkProposals/{proposalId}
+     *
      * Note: proposalId is not the Display &amp; Video 360 Advertiser ID
      * </pre>
      *
@@ -1175,6 +1176,7 @@ public final class DisplayVideo360AdvertiserLinkProposal
      * Output only. The resource name for this
      * DisplayVideo360AdvertiserLinkProposal resource. Format:
      * properties/{propertyId}/displayVideo360AdvertiserLinkProposals/{proposalId}
+     *
      * Note: proposalId is not the Display &amp; Video 360 Advertiser ID
      * </pre>
      *
@@ -1199,6 +1201,7 @@ public final class DisplayVideo360AdvertiserLinkProposal
      * Output only. The resource name for this
      * DisplayVideo360AdvertiserLinkProposal resource. Format:
      * properties/{propertyId}/displayVideo360AdvertiserLinkProposals/{proposalId}
+     *
      * Note: proposalId is not the Display &amp; Video 360 Advertiser ID
      * </pre>
      *
@@ -1219,6 +1222,7 @@ public final class DisplayVideo360AdvertiserLinkProposal
      * Output only. The resource name for this
      * DisplayVideo360AdvertiserLinkProposal resource. Format:
      * properties/{propertyId}/displayVideo360AdvertiserLinkProposals/{proposalId}
+     *
      * Note: proposalId is not the Display &amp; Video 360 Advertiser ID
      * </pre>
      *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,18 +45,13 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
     quotas_ = java.util.Collections.emptyList();
     selfLink_ = "";
     status_ = "";
-    zones_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    zones_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Region();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -789,7 +784,8 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
   public static final int ZONES_FIELD_NUMBER = 116085319;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList zones_;
+  private com.google.protobuf.LazyStringArrayList zones_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -1220,8 +1216,7 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
       selfLink_ = "";
       status_ = "";
       supportsPzs_ = false;
-      zones_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000400);
+      zones_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -1266,11 +1261,6 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.quotas_ = quotasBuilder_.build();
       }
-      if (((bitField0_ & 0x00000400) != 0)) {
-        zones_ = zones_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000400);
-      }
-      result.zones_ = zones_;
     }
 
     private void buildPartial0(com.google.cloud.compute.v1.Region result) {
@@ -1311,6 +1301,10 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000200) != 0)) {
         result.supportsPzs_ = supportsPzs_;
         to_bitField0_ |= 0x00000100;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        zones_.makeImmutable();
+        result.zones_ = zones_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1429,7 +1423,7 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
       if (!other.zones_.isEmpty()) {
         if (zones_.isEmpty()) {
           zones_ = other.zones_;
-          bitField0_ = (bitField0_ & ~0x00000400);
+          bitField0_ |= 0x00000400;
         } else {
           ensureZonesIsMutable();
           zones_.addAll(other.zones_);
@@ -2947,14 +2941,14 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList zones_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList zones_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureZonesIsMutable() {
-      if (!((bitField0_ & 0x00000400) != 0)) {
+      if (!zones_.isModifiable()) {
         zones_ = new com.google.protobuf.LazyStringArrayList(zones_);
-        bitField0_ |= 0x00000400;
       }
+      bitField0_ |= 0x00000400;
     }
     /**
      *
@@ -2968,7 +2962,8 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the zones.
      */
     public com.google.protobuf.ProtocolStringList getZonesList() {
-      return zones_.getUnmodifiableView();
+      zones_.makeImmutable();
+      return zones_;
     }
     /**
      *
@@ -3033,6 +3028,7 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
       }
       ensureZonesIsMutable();
       zones_.set(index, value);
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3054,6 +3050,7 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
       }
       ensureZonesIsMutable();
       zones_.add(value);
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3072,6 +3069,7 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllZones(java.lang.Iterable<java.lang.String> values) {
       ensureZonesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, zones_);
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3087,8 +3085,9 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearZones() {
-      zones_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      zones_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000400);
+      ;
       onChanged();
       return this;
     }
@@ -3111,6 +3110,7 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureZonesIsMutable();
       zones_.add(value);
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class AwsProxyConfig extends com.google.protobuf.GeneratedMessageV3
     return new AwsProxyConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gkemulticloud.v1.AwsResourcesProto
         .internal_static_google_cloud_gkemulticloud_v1_AwsProxyConfig_descriptor;
@@ -78,6 +73,7 @@ public final class AwsProxyConfig extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The ARN of the AWS Secret Manager secret that contains the HTTP(S) proxy
    * configuration.
+   *
    * The secret must be a JSON encoded proxy configuration
    * as described in
    * https://cloud.google.com/anthos/clusters/docs/multi-cloud/aws/how-to/use-a-proxy#create_a_proxy_configuration_file
@@ -105,6 +101,7 @@ public final class AwsProxyConfig extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The ARN of the AWS Secret Manager secret that contains the HTTP(S) proxy
    * configuration.
+   *
    * The secret must be a JSON encoded proxy configuration
    * as described in
    * https://cloud.google.com/anthos/clusters/docs/multi-cloud/aws/how-to/use-a-proxy#create_a_proxy_configuration_file
@@ -553,6 +550,7 @@ public final class AwsProxyConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The ARN of the AWS Secret Manager secret that contains the HTTP(S) proxy
      * configuration.
+     *
      * The secret must be a JSON encoded proxy configuration
      * as described in
      * https://cloud.google.com/anthos/clusters/docs/multi-cloud/aws/how-to/use-a-proxy#create_a_proxy_configuration_file
@@ -579,6 +577,7 @@ public final class AwsProxyConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The ARN of the AWS Secret Manager secret that contains the HTTP(S) proxy
      * configuration.
+     *
      * The secret must be a JSON encoded proxy configuration
      * as described in
      * https://cloud.google.com/anthos/clusters/docs/multi-cloud/aws/how-to/use-a-proxy#create_a_proxy_configuration_file
@@ -605,6 +604,7 @@ public final class AwsProxyConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The ARN of the AWS Secret Manager secret that contains the HTTP(S) proxy
      * configuration.
+     *
      * The secret must be a JSON encoded proxy configuration
      * as described in
      * https://cloud.google.com/anthos/clusters/docs/multi-cloud/aws/how-to/use-a-proxy#create_a_proxy_configuration_file
@@ -630,6 +630,7 @@ public final class AwsProxyConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The ARN of the AWS Secret Manager secret that contains the HTTP(S) proxy
      * configuration.
+     *
      * The secret must be a JSON encoded proxy configuration
      * as described in
      * https://cloud.google.com/anthos/clusters/docs/multi-cloud/aws/how-to/use-a-proxy#create_a_proxy_configuration_file
@@ -651,6 +652,7 @@ public final class AwsProxyConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The ARN of the AWS Secret Manager secret that contains the HTTP(S) proxy
      * configuration.
+     *
      * The secret must be a JSON encoded proxy configuration
      * as described in
      * https://cloud.google.com/anthos/clusters/docs/multi-cloud/aws/how-to/use-a-proxy#create_a_proxy_configuration_file

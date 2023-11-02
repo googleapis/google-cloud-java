@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,8 +27,10 @@ package com.google.privacy.dlp.v2;
  * Authorization requires the following IAM permissions when sending a request
  * to perform a crypto transformation using a KMS-wrapped crypto key:
  * dlp.kms.encrypt
+ *
  * For more information, see [Creating a wrapped key]
  * (https://cloud.google.com/dlp/docs/create-wrapped-key).
+ *
  * Note: When you use Cloud KMS for cryptographic operations,
  * [charges apply](https://cloud.google.com/kms/pricing).
  * </pre>
@@ -54,11 +56,6 @@ public final class KmsWrappedCryptoKey extends com.google.protobuf.GeneratedMess
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new KmsWrappedCryptoKey();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -322,8 +319,10 @@ public final class KmsWrappedCryptoKey extends com.google.protobuf.GeneratedMess
    * Authorization requires the following IAM permissions when sending a request
    * to perform a crypto transformation using a KMS-wrapped crypto key:
    * dlp.kms.encrypt
+   *
    * For more information, see [Creating a wrapped key]
    * (https://cloud.google.com/dlp/docs/create-wrapped-key).
+   *
    * Note: When you use Cloud KMS for cryptographic operations,
    * [charges apply](https://cloud.google.com/kms/pricing).
    * </pre>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,6 +32,7 @@ import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AggregatedListPublicDelegatedPrefixesRequest;
 import com.google.cloud.compute.v1.DeletePublicDelegatedPrefixeRequest;
@@ -463,11 +464,27 @@ public class HttpJsonPublicDelegatedPrefixesStub extends PublicDelegatedPrefixes
                     newBuilder()
                 .setMethodDescriptor(aggregatedListMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeletePublicDelegatedPrefixeRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeletePublicDelegatedPrefixeRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add(
+                      "public_delegated_prefix",
+                      String.valueOf(request.getPublicDelegatedPrefix()));
+                  builder.add("region", String.valueOf(request.getRegion()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetPublicDelegatedPrefixeRequest, PublicDelegatedPrefix>
         getTransportSettings =
@@ -475,11 +492,28 @@ public class HttpJsonPublicDelegatedPrefixesStub extends PublicDelegatedPrefixes
                 .<GetPublicDelegatedPrefixeRequest, PublicDelegatedPrefix>newBuilder()
                 .setMethodDescriptor(getMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add(
+                          "public_delegated_prefix",
+                          String.valueOf(request.getPublicDelegatedPrefix()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<InsertPublicDelegatedPrefixeRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertPublicDelegatedPrefixeRequest, Operation>newBuilder()
             .setMethodDescriptor(insertMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("region", String.valueOf(request.getRegion()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListPublicDelegatedPrefixesRequest, PublicDelegatedPrefixList>
         listTransportSettings =
@@ -487,11 +521,28 @@ public class HttpJsonPublicDelegatedPrefixesStub extends PublicDelegatedPrefixes
                 .<ListPublicDelegatedPrefixesRequest, PublicDelegatedPrefixList>newBuilder()
                 .setMethodDescriptor(listMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<PatchPublicDelegatedPrefixeRequest, Operation> patchTransportSettings =
         HttpJsonCallSettings.<PatchPublicDelegatedPrefixeRequest, Operation>newBuilder()
             .setMethodDescriptor(patchMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add(
+                      "public_delegated_prefix",
+                      String.valueOf(request.getPublicDelegatedPrefix()));
+                  builder.add("region", String.valueOf(request.getRegion()));
+                  return builder.build();
+                })
             .build();
 
     this.aggregatedListCallable =

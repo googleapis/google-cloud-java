@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -58,9 +58,11 @@ public interface CreateProcessorRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The processor to be created, requires [processor_type] and
-   * [display_name] to be set. Also, the processor is under CMEK if CMEK fields
-   * are set.
+   * Required. The processor to be created, requires
+   * [Processor.type][google.cloud.documentai.v1.Processor.type] and
+   * [Processor.display_name]][] to be set. Also, the
+   * [Processor.kms_key_name][google.cloud.documentai.v1.Processor.kms_key_name]
+   * field must be set if the processor is under CMEK.
    * </pre>
    *
    * <code>
@@ -74,9 +76,11 @@ public interface CreateProcessorRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The processor to be created, requires [processor_type] and
-   * [display_name] to be set. Also, the processor is under CMEK if CMEK fields
-   * are set.
+   * Required. The processor to be created, requires
+   * [Processor.type][google.cloud.documentai.v1.Processor.type] and
+   * [Processor.display_name]][] to be set. Also, the
+   * [Processor.kms_key_name][google.cloud.documentai.v1.Processor.kms_key_name]
+   * field must be set if the processor is under CMEK.
    * </pre>
    *
    * <code>
@@ -90,9 +94,11 @@ public interface CreateProcessorRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The processor to be created, requires [processor_type] and
-   * [display_name] to be set. Also, the processor is under CMEK if CMEK fields
-   * are set.
+   * Required. The processor to be created, requires
+   * [Processor.type][google.cloud.documentai.v1.Processor.type] and
+   * [Processor.display_name]][] to be set. Also, the
+   * [Processor.kms_key_name][google.cloud.documentai.v1.Processor.kms_key_name]
+   * field must be set if the processor is under CMEK.
    * </pre>
    *
    * <code>

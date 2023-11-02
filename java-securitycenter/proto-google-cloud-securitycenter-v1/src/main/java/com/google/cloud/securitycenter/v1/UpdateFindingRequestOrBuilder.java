@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ public interface UpdateFindingRequestOrBuilder
    * <pre>
    * Required. The finding resource to update or create if it does not already
    * exist. parent, security_marks, and update_time will be ignored.
+   *
    * In the case of creation, the finding id portion of the name must be
    * alphanumeric and less than or equal to 32 characters and greater than 0
    * characters in length.
@@ -47,6 +48,7 @@ public interface UpdateFindingRequestOrBuilder
    * <pre>
    * Required. The finding resource to update or create if it does not already
    * exist. parent, security_marks, and update_time will be ignored.
+   *
    * In the case of creation, the finding id portion of the name must be
    * alphanumeric and less than or equal to 32 characters and greater than 0
    * characters in length.
@@ -65,6 +67,7 @@ public interface UpdateFindingRequestOrBuilder
    * <pre>
    * Required. The finding resource to update or create if it does not already
    * exist. parent, security_marks, and update_time will be ignored.
+   *
    * In the case of creation, the finding id portion of the name must be
    * alphanumeric and less than or equal to 32 characters and greater than 0
    * characters in length.
@@ -82,6 +85,7 @@ public interface UpdateFindingRequestOrBuilder
    * <pre>
    * The FieldMask to use when updating the finding resource. This field should
    * not be specified when creating a finding.
+   *
    * When updating a finding, an empty mask is treated as updating all mutable
    * fields and replacing source_properties.  Individual source_properties can
    * be added/updated by using "source_properties.&lt;property key&gt;" in the field
@@ -99,6 +103,7 @@ public interface UpdateFindingRequestOrBuilder
    * <pre>
    * The FieldMask to use when updating the finding resource. This field should
    * not be specified when creating a finding.
+   *
    * When updating a finding, an empty mask is treated as updating all mutable
    * fields and replacing source_properties.  Individual source_properties can
    * be added/updated by using "source_properties.&lt;property key&gt;" in the field
@@ -116,6 +121,7 @@ public interface UpdateFindingRequestOrBuilder
    * <pre>
    * The FieldMask to use when updating the finding resource. This field should
    * not be specified when creating a finding.
+   *
    * When updating a finding, an empty mask is treated as updating all mutable
    * fields and replacing source_properties.  Individual source_properties can
    * be added/updated by using "source_properties.&lt;property key&gt;" in the field

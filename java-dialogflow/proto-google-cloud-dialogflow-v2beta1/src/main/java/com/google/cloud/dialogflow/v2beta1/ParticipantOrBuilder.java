@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -89,25 +89,32 @@ public interface ParticipantOrBuilder
    * <pre>
    * Optional. Obfuscated user id that should be associated with the created
    * participant.
+   *
    * You can specify a user id as follows:
+   *
    * 1. If you set this field in
    *    [CreateParticipantRequest][google.cloud.dialogflow.v2beta1.CreateParticipantRequest.participant]
    *    or
    *    [UpdateParticipantRequest][google.cloud.dialogflow.v2beta1.UpdateParticipantRequest.participant],
    *    Dialogflow adds the obfuscated user id with the participant.
+   *
    * 2. If you set this field in
    *    [AnalyzeContent][google.cloud.dialogflow.v2beta1.AnalyzeContentRequest.obfuscated_external_user_id]
    *    or
    *    [StreamingAnalyzeContent][google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentRequest.obfuscated_external_user_id],
    *    Dialogflow will update
    *    [Participant.obfuscated_external_user_id][google.cloud.dialogflow.v2beta1.Participant.obfuscated_external_user_id].
-   * Dialogflow uses this user id for following purposes:
-   * 1) Billing and measurement. If user with the same
-   * obfuscated_external_user_id is created in a later conversation, dialogflow
-   * will know it's the same user. 2) Agent assist suggestion personalization.
-   * For example, Dialogflow can use it to provide personalized smart reply
-   * suggestions for this user.
+   *
+   * Dialogflow uses this user id for billing and measurement. If a user with
+   * the same obfuscated_external_user_id is created in a later conversation,
+   * Dialogflow will know it's the same user.
+   *
+   * Dialogflow also uses this user id for Agent Assist suggestion
+   * personalization. For example, Dialogflow can use it to provide personalized
+   * smart reply suggestions for this user.
+   *
    * Note:
+   *
    * * Please never pass raw user ids to Dialogflow. Always obfuscate your user
    *   id first.
    * * Dialogflow only accepts a UTF-8 encoded string, e.g., a hex digest of a
@@ -126,25 +133,32 @@ public interface ParticipantOrBuilder
    * <pre>
    * Optional. Obfuscated user id that should be associated with the created
    * participant.
+   *
    * You can specify a user id as follows:
+   *
    * 1. If you set this field in
    *    [CreateParticipantRequest][google.cloud.dialogflow.v2beta1.CreateParticipantRequest.participant]
    *    or
    *    [UpdateParticipantRequest][google.cloud.dialogflow.v2beta1.UpdateParticipantRequest.participant],
    *    Dialogflow adds the obfuscated user id with the participant.
+   *
    * 2. If you set this field in
    *    [AnalyzeContent][google.cloud.dialogflow.v2beta1.AnalyzeContentRequest.obfuscated_external_user_id]
    *    or
    *    [StreamingAnalyzeContent][google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentRequest.obfuscated_external_user_id],
    *    Dialogflow will update
    *    [Participant.obfuscated_external_user_id][google.cloud.dialogflow.v2beta1.Participant.obfuscated_external_user_id].
-   * Dialogflow uses this user id for following purposes:
-   * 1) Billing and measurement. If user with the same
-   * obfuscated_external_user_id is created in a later conversation, dialogflow
-   * will know it's the same user. 2) Agent assist suggestion personalization.
-   * For example, Dialogflow can use it to provide personalized smart reply
-   * suggestions for this user.
+   *
+   * Dialogflow uses this user id for billing and measurement. If a user with
+   * the same obfuscated_external_user_id is created in a later conversation,
+   * Dialogflow will know it's the same user.
+   *
+   * Dialogflow also uses this user id for Agent Assist suggestion
+   * personalization. For example, Dialogflow can use it to provide personalized
+   * smart reply suggestions for this user.
+   *
    * Note:
+   *
    * * Please never pass raw user ids to Dialogflow. Always obfuscate your user
    *   id first.
    * * Dialogflow only accepts a UTF-8 encoded string, e.g., a hex digest of a

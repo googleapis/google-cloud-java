@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,8 +27,8 @@ public interface ListOrgDataExchangesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The organization resource path of the projects containing DataExchanges.
-   * e.g. `organizations/myorg/locations/US`.
+   * Required. The organization resource path of the projects containing
+   * DataExchanges. e.g. `organizations/myorg/locations/US`.
    * </pre>
    *
    * <code>string organization = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -40,8 +40,8 @@ public interface ListOrgDataExchangesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The organization resource path of the projects containing DataExchanges.
-   * e.g. `organizations/myorg/locations/US`.
+   * Required. The organization resource path of the projects containing
+   * DataExchanges. e.g. `organizations/myorg/locations/US`.
    * </pre>
    *
    * <code>string organization = 1 [(.google.api.field_behavior) = REQUIRED];</code>

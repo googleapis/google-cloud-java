@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,11 +46,6 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new DnsSettings();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -379,7 +374,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
     }
 
     private CustomDns() {
-      nameServers_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      nameServers_ = com.google.protobuf.LazyStringArrayList.emptyList();
       dsRecords_ = java.util.Collections.emptyList();
     }
 
@@ -387,11 +382,6 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new CustomDns();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -412,7 +402,8 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
     public static final int NAME_SERVERS_FIELD_NUMBER = 1;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList nameServers_;
+    private com.google.protobuf.LazyStringArrayList nameServers_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -780,8 +771,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        nameServers_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        nameServers_ = com.google.protobuf.LazyStringArrayList.emptyList();
         if (dsRecordsBuilder_ == null) {
           dsRecords_ = java.util.Collections.emptyList();
         } else {
@@ -826,11 +816,6 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
 
       private void buildPartialRepeatedFields(
           com.google.cloud.domains.v1.DnsSettings.CustomDns result) {
-        if (((bitField0_ & 0x00000001) != 0)) {
-          nameServers_ = nameServers_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.nameServers_ = nameServers_;
         if (dsRecordsBuilder_ == null) {
           if (((bitField0_ & 0x00000002) != 0)) {
             dsRecords_ = java.util.Collections.unmodifiableList(dsRecords_);
@@ -844,6 +829,10 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
 
       private void buildPartial0(com.google.cloud.domains.v1.DnsSettings.CustomDns result) {
         int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          nameServers_.makeImmutable();
+          result.nameServers_ = nameServers_;
+        }
       }
 
       @java.lang.Override
@@ -897,7 +886,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         if (!other.nameServers_.isEmpty()) {
           if (nameServers_.isEmpty()) {
             nameServers_ = other.nameServers_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ |= 0x00000001;
           } else {
             ensureNameServersIsMutable();
             nameServers_.addAll(other.nameServers_);
@@ -997,14 +986,14 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
 
       private int bitField0_;
 
-      private com.google.protobuf.LazyStringList nameServers_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList nameServers_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureNameServersIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!nameServers_.isModifiable()) {
           nameServers_ = new com.google.protobuf.LazyStringArrayList(nameServers_);
-          bitField0_ |= 0x00000001;
         }
+        bitField0_ |= 0x00000001;
       }
       /**
        *
@@ -1020,7 +1009,8 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
        * @return A list containing the nameServers.
        */
       public com.google.protobuf.ProtocolStringList getNameServersList() {
-        return nameServers_.getUnmodifiableView();
+        nameServers_.makeImmutable();
+        return nameServers_;
       }
       /**
        *
@@ -1093,6 +1083,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         }
         ensureNameServersIsMutable();
         nameServers_.set(index, value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1116,6 +1107,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         }
         ensureNameServersIsMutable();
         nameServers_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1136,6 +1128,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
       public Builder addAllNameServers(java.lang.Iterable<java.lang.String> values) {
         ensureNameServersIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, nameServers_);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1153,8 +1146,9 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearNameServers() {
-        nameServers_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        nameServers_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
+        ;
         onChanged();
         return this;
       }
@@ -1179,6 +1173,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         checkByteStringIsUtf8(value);
         ensureNameServersIsMutable();
         nameServers_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1834,7 +1829,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
     }
 
     private GoogleDomainsDns() {
-      nameServers_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      nameServers_ = com.google.protobuf.LazyStringArrayList.emptyList();
       dsState_ = 0;
       dsRecords_ = java.util.Collections.emptyList();
     }
@@ -1843,11 +1838,6 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new GoogleDomainsDns();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1868,7 +1858,8 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
     public static final int NAME_SERVERS_FIELD_NUMBER = 1;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList nameServers_;
+    private com.google.protobuf.LazyStringArrayList nameServers_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -2306,8 +2297,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        nameServers_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        nameServers_ = com.google.protobuf.LazyStringArrayList.emptyList();
         dsState_ = 0;
         if (dsRecordsBuilder_ == null) {
           dsRecords_ = java.util.Collections.emptyList();
@@ -2353,11 +2343,6 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
 
       private void buildPartialRepeatedFields(
           com.google.cloud.domains.v1.DnsSettings.GoogleDomainsDns result) {
-        if (((bitField0_ & 0x00000001) != 0)) {
-          nameServers_ = nameServers_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.nameServers_ = nameServers_;
         if (dsRecordsBuilder_ == null) {
           if (((bitField0_ & 0x00000004) != 0)) {
             dsRecords_ = java.util.Collections.unmodifiableList(dsRecords_);
@@ -2371,6 +2356,10 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
 
       private void buildPartial0(com.google.cloud.domains.v1.DnsSettings.GoogleDomainsDns result) {
         int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          nameServers_.makeImmutable();
+          result.nameServers_ = nameServers_;
+        }
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.dsState_ = dsState_;
         }
@@ -2427,7 +2416,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         if (!other.nameServers_.isEmpty()) {
           if (nameServers_.isEmpty()) {
             nameServers_ = other.nameServers_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ |= 0x00000001;
           } else {
             ensureNameServersIsMutable();
             nameServers_.addAll(other.nameServers_);
@@ -2536,14 +2525,14 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
 
       private int bitField0_;
 
-      private com.google.protobuf.LazyStringList nameServers_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList nameServers_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureNameServersIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!nameServers_.isModifiable()) {
           nameServers_ = new com.google.protobuf.LazyStringArrayList(nameServers_);
-          bitField0_ |= 0x00000001;
         }
+        bitField0_ |= 0x00000001;
       }
       /**
        *
@@ -2560,7 +2549,8 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
        * @return A list containing the nameServers.
        */
       public com.google.protobuf.ProtocolStringList getNameServersList() {
-        return nameServers_.getUnmodifiableView();
+        nameServers_.makeImmutable();
+        return nameServers_;
       }
       /**
        *
@@ -2637,6 +2627,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         }
         ensureNameServersIsMutable();
         nameServers_.set(index, value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2661,6 +2652,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         }
         ensureNameServersIsMutable();
         nameServers_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2682,6 +2674,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
       public Builder addAllNameServers(java.lang.Iterable<java.lang.String> values) {
         ensureNameServersIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, nameServers_);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2700,8 +2693,9 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearNameServers() {
-        nameServers_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        nameServers_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
+        ;
         onChanged();
         return this;
       }
@@ -2727,6 +2721,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         checkByteStringIsUtf8(value);
         ensureNameServersIsMutable();
         nameServers_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -3455,11 +3450,6 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new DsRecord();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -5319,19 +5309,14 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
 
     private GlueRecord() {
       hostName_ = "";
-      ipv4Addresses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      ipv6Addresses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      ipv4Addresses_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      ipv6Addresses_ = com.google.protobuf.LazyStringArrayList.emptyList();
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new GlueRecord();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -5403,7 +5388,8 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
     public static final int IPV4_ADDRESSES_FIELD_NUMBER = 2;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList ipv4Addresses_;
+    private com.google.protobuf.LazyStringArrayList ipv4Addresses_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -5474,7 +5460,8 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
     public static final int IPV6_ADDRESSES_FIELD_NUMBER = 3;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList ipv6Addresses_;
+    private com.google.protobuf.LazyStringArrayList ipv6Addresses_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -5780,10 +5767,8 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         super.clear();
         bitField0_ = 0;
         hostName_ = "";
-        ipv4Addresses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000002);
-        ipv6Addresses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000004);
+        ipv4Addresses_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        ipv6Addresses_ = com.google.protobuf.LazyStringArrayList.emptyList();
         return this;
       }
 
@@ -5811,7 +5796,6 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.domains.v1.DnsSettings.GlueRecord buildPartial() {
         com.google.cloud.domains.v1.DnsSettings.GlueRecord result =
             new com.google.cloud.domains.v1.DnsSettings.GlueRecord(this);
-        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
@@ -5819,24 +5803,18 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         return result;
       }
 
-      private void buildPartialRepeatedFields(
-          com.google.cloud.domains.v1.DnsSettings.GlueRecord result) {
-        if (((bitField0_ & 0x00000002) != 0)) {
-          ipv4Addresses_ = ipv4Addresses_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000002);
-        }
-        result.ipv4Addresses_ = ipv4Addresses_;
-        if (((bitField0_ & 0x00000004) != 0)) {
-          ipv6Addresses_ = ipv6Addresses_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000004);
-        }
-        result.ipv6Addresses_ = ipv6Addresses_;
-      }
-
       private void buildPartial0(com.google.cloud.domains.v1.DnsSettings.GlueRecord result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.hostName_ = hostName_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          ipv4Addresses_.makeImmutable();
+          result.ipv4Addresses_ = ipv4Addresses_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          ipv6Addresses_.makeImmutable();
+          result.ipv6Addresses_ = ipv6Addresses_;
         }
       }
 
@@ -5896,7 +5874,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         if (!other.ipv4Addresses_.isEmpty()) {
           if (ipv4Addresses_.isEmpty()) {
             ipv4Addresses_ = other.ipv4Addresses_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ |= 0x00000002;
           } else {
             ensureIpv4AddressesIsMutable();
             ipv4Addresses_.addAll(other.ipv4Addresses_);
@@ -5906,7 +5884,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         if (!other.ipv6Addresses_.isEmpty()) {
           if (ipv6Addresses_.isEmpty()) {
             ipv6Addresses_ = other.ipv6Addresses_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ |= 0x00000004;
           } else {
             ensureIpv6AddressesIsMutable();
             ipv6Addresses_.addAll(other.ipv6Addresses_);
@@ -6084,14 +6062,14 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         return this;
       }
 
-      private com.google.protobuf.LazyStringList ipv4Addresses_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList ipv4Addresses_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureIpv4AddressesIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!ipv4Addresses_.isModifiable()) {
           ipv4Addresses_ = new com.google.protobuf.LazyStringArrayList(ipv4Addresses_);
-          bitField0_ |= 0x00000002;
         }
+        bitField0_ |= 0x00000002;
       }
       /**
        *
@@ -6107,7 +6085,8 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
        * @return A list containing the ipv4Addresses.
        */
       public com.google.protobuf.ProtocolStringList getIpv4AddressesList() {
-        return ipv4Addresses_.getUnmodifiableView();
+        ipv4Addresses_.makeImmutable();
+        return ipv4Addresses_;
       }
       /**
        *
@@ -6180,6 +6159,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         }
         ensureIpv4AddressesIsMutable();
         ipv4Addresses_.set(index, value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -6203,6 +6183,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         }
         ensureIpv4AddressesIsMutable();
         ipv4Addresses_.add(value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -6223,6 +6204,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
       public Builder addAllIpv4Addresses(java.lang.Iterable<java.lang.String> values) {
         ensureIpv4AddressesIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, ipv4Addresses_);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -6240,8 +6222,9 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearIpv4Addresses() {
-        ipv4Addresses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        ipv4Addresses_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000002);
+        ;
         onChanged();
         return this;
       }
@@ -6266,18 +6249,19 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         checkByteStringIsUtf8(value);
         ensureIpv4AddressesIsMutable();
         ipv4Addresses_.add(value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
 
-      private com.google.protobuf.LazyStringList ipv6Addresses_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList ipv6Addresses_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureIpv6AddressesIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!ipv6Addresses_.isModifiable()) {
           ipv6Addresses_ = new com.google.protobuf.LazyStringArrayList(ipv6Addresses_);
-          bitField0_ |= 0x00000004;
         }
+        bitField0_ |= 0x00000004;
       }
       /**
        *
@@ -6293,7 +6277,8 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
        * @return A list containing the ipv6Addresses.
        */
       public com.google.protobuf.ProtocolStringList getIpv6AddressesList() {
-        return ipv6Addresses_.getUnmodifiableView();
+        ipv6Addresses_.makeImmutable();
+        return ipv6Addresses_;
       }
       /**
        *
@@ -6366,6 +6351,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         }
         ensureIpv6AddressesIsMutable();
         ipv6Addresses_.set(index, value);
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -6389,6 +6375,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         }
         ensureIpv6AddressesIsMutable();
         ipv6Addresses_.add(value);
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -6409,6 +6396,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
       public Builder addAllIpv6Addresses(java.lang.Iterable<java.lang.String> values) {
         ensureIpv6AddressesIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, ipv6Addresses_);
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -6426,8 +6414,9 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearIpv6Addresses() {
-        ipv6Addresses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        ipv6Addresses_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000004);
+        ;
         onChanged();
         return this;
       }
@@ -6452,6 +6441,7 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
         checkByteStringIsUtf8(value);
         ensureIpv6AddressesIsMutable();
         ipv6Addresses_.add(value);
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -6521,6 +6511,8 @@ public final class DnsSettings extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int dnsProviderCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object dnsProvider_;
 
   public enum DnsProviderCase

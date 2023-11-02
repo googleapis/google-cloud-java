@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,11 +56,6 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Shipment();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -328,10 +323,13 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      * arrival time + duration do not need to be inside a time window. This can
      * result in waiting time if the vehicle arrives before
      * [TimeWindow.start_time][google.cloud.optimization.v1.TimeWindow.start_time].
+     *
      * The absence of `TimeWindow` means that the vehicle can perform this visit
      * at any time.
+     *
      * Time windows must be disjoint, i.e. no time window must overlap with or
      * be adjacent to another, and they must be in increasing order.
+     *
      * `cost_per_hour_after_soft_end_time` and `soft_end_time` can only
      * be set if there is a single time window.
      * </pre>
@@ -348,10 +346,13 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      * arrival time + duration do not need to be inside a time window. This can
      * result in waiting time if the vehicle arrives before
      * [TimeWindow.start_time][google.cloud.optimization.v1.TimeWindow.start_time].
+     *
      * The absence of `TimeWindow` means that the vehicle can perform this visit
      * at any time.
+     *
      * Time windows must be disjoint, i.e. no time window must overlap with or
      * be adjacent to another, and they must be in increasing order.
+     *
      * `cost_per_hour_after_soft_end_time` and `soft_end_time` can only
      * be set if there is a single time window.
      * </pre>
@@ -368,10 +369,13 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      * arrival time + duration do not need to be inside a time window. This can
      * result in waiting time if the vehicle arrives before
      * [TimeWindow.start_time][google.cloud.optimization.v1.TimeWindow.start_time].
+     *
      * The absence of `TimeWindow` means that the vehicle can perform this visit
      * at any time.
+     *
      * Time windows must be disjoint, i.e. no time window must overlap with or
      * be adjacent to another, and they must be in increasing order.
+     *
      * `cost_per_hour_after_soft_end_time` and `soft_end_time` can only
      * be set if there is a single time window.
      * </pre>
@@ -388,10 +392,13 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      * arrival time + duration do not need to be inside a time window. This can
      * result in waiting time if the vehicle arrives before
      * [TimeWindow.start_time][google.cloud.optimization.v1.TimeWindow.start_time].
+     *
      * The absence of `TimeWindow` means that the vehicle can perform this visit
      * at any time.
+     *
      * Time windows must be disjoint, i.e. no time window must overlap with or
      * be adjacent to another, and they must be in increasing order.
+     *
      * `cost_per_hour_after_soft_end_time` and `soft_end_time` can only
      * be set if there is a single time window.
      * </pre>
@@ -409,10 +416,13 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      * arrival time + duration do not need to be inside a time window. This can
      * result in waiting time if the vehicle arrives before
      * [TimeWindow.start_time][google.cloud.optimization.v1.TimeWindow.start_time].
+     *
      * The absence of `TimeWindow` means that the vehicle can perform this visit
      * at any time.
+     *
      * Time windows must be disjoint, i.e. no time window must overlap with or
      * be adjacent to another, and they must be in increasing order.
+     *
      * `cost_per_hour_after_soft_end_time` and `soft_end_time` can only
      * be set if there is a single time window.
      * </pre>
@@ -580,6 +590,7 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      * Specifies the types of the visit. This may be used to allocate additional
      * time required for a vehicle to complete this visit (see
      * [Vehicle.extra_visit_duration_for_visit_type][google.cloud.optimization.v1.Vehicle.extra_visit_duration_for_visit_type]).
+     *
      * A type can only appear once.
      * </pre>
      *
@@ -595,6 +606,7 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      * Specifies the types of the visit. This may be used to allocate additional
      * time required for a vehicle to complete this visit (see
      * [Vehicle.extra_visit_duration_for_visit_type][google.cloud.optimization.v1.Vehicle.extra_visit_duration_for_visit_type]).
+     *
      * A type can only appear once.
      * </pre>
      *
@@ -610,6 +622,7 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      * Specifies the types of the visit. This may be used to allocate additional
      * time required for a vehicle to complete this visit (see
      * [Vehicle.extra_visit_duration_for_visit_type][google.cloud.optimization.v1.Vehicle.extra_visit_duration_for_visit_type]).
+     *
      * A type can only appear once.
      * </pre>
      *
@@ -626,6 +639,7 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      * Specifies the types of the visit. This may be used to allocate additional
      * time required for a vehicle to complete this visit (see
      * [Vehicle.extra_visit_duration_for_visit_type][google.cloud.optimization.v1.Vehicle.extra_visit_duration_for_visit_type]).
+     *
      * A type can only appear once.
      * </pre>
      *
@@ -765,9 +779,9 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
     }
 
     private VisitRequest() {
-      tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      tags_ = com.google.protobuf.LazyStringArrayList.emptyList();
       timeWindows_ = java.util.Collections.emptyList();
-      visitTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      visitTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       label_ = "";
       demands_ = java.util.Collections.emptyList();
     }
@@ -776,11 +790,6 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new VisitRequest();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1042,7 +1051,8 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
     public static final int TAGS_FIELD_NUMBER = 5;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList tags_;
+    private com.google.protobuf.LazyStringArrayList tags_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -1119,10 +1129,13 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      * arrival time + duration do not need to be inside a time window. This can
      * result in waiting time if the vehicle arrives before
      * [TimeWindow.start_time][google.cloud.optimization.v1.TimeWindow.start_time].
+     *
      * The absence of `TimeWindow` means that the vehicle can perform this visit
      * at any time.
+     *
      * Time windows must be disjoint, i.e. no time window must overlap with or
      * be adjacent to another, and they must be in increasing order.
+     *
      * `cost_per_hour_after_soft_end_time` and `soft_end_time` can only
      * be set if there is a single time window.
      * </pre>
@@ -1142,10 +1155,13 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      * arrival time + duration do not need to be inside a time window. This can
      * result in waiting time if the vehicle arrives before
      * [TimeWindow.start_time][google.cloud.optimization.v1.TimeWindow.start_time].
+     *
      * The absence of `TimeWindow` means that the vehicle can perform this visit
      * at any time.
+     *
      * Time windows must be disjoint, i.e. no time window must overlap with or
      * be adjacent to another, and they must be in increasing order.
+     *
      * `cost_per_hour_after_soft_end_time` and `soft_end_time` can only
      * be set if there is a single time window.
      * </pre>
@@ -1166,10 +1182,13 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      * arrival time + duration do not need to be inside a time window. This can
      * result in waiting time if the vehicle arrives before
      * [TimeWindow.start_time][google.cloud.optimization.v1.TimeWindow.start_time].
+     *
      * The absence of `TimeWindow` means that the vehicle can perform this visit
      * at any time.
+     *
      * Time windows must be disjoint, i.e. no time window must overlap with or
      * be adjacent to another, and they must be in increasing order.
+     *
      * `cost_per_hour_after_soft_end_time` and `soft_end_time` can only
      * be set if there is a single time window.
      * </pre>
@@ -1189,10 +1208,13 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      * arrival time + duration do not need to be inside a time window. This can
      * result in waiting time if the vehicle arrives before
      * [TimeWindow.start_time][google.cloud.optimization.v1.TimeWindow.start_time].
+     *
      * The absence of `TimeWindow` means that the vehicle can perform this visit
      * at any time.
+     *
      * Time windows must be disjoint, i.e. no time window must overlap with or
      * be adjacent to another, and they must be in increasing order.
+     *
      * `cost_per_hour_after_soft_end_time` and `soft_end_time` can only
      * be set if there is a single time window.
      * </pre>
@@ -1212,10 +1234,13 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      * arrival time + duration do not need to be inside a time window. This can
      * result in waiting time if the vehicle arrives before
      * [TimeWindow.start_time][google.cloud.optimization.v1.TimeWindow.start_time].
+     *
      * The absence of `TimeWindow` means that the vehicle can perform this visit
      * at any time.
+     *
      * Time windows must be disjoint, i.e. no time window must overlap with or
      * be adjacent to another, and they must be in increasing order.
+     *
      * `cost_per_hour_after_soft_end_time` and `soft_end_time` can only
      * be set if there is a single time window.
      * </pre>
@@ -1447,7 +1472,8 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
     public static final int VISIT_TYPES_FIELD_NUMBER = 10;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList visitTypes_;
+    private com.google.protobuf.LazyStringArrayList visitTypes_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -1455,6 +1481,7 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      * Specifies the types of the visit. This may be used to allocate additional
      * time required for a vehicle to complete this visit (see
      * [Vehicle.extra_visit_duration_for_visit_type][google.cloud.optimization.v1.Vehicle.extra_visit_duration_for_visit_type]).
+     *
      * A type can only appear once.
      * </pre>
      *
@@ -1472,6 +1499,7 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      * Specifies the types of the visit. This may be used to allocate additional
      * time required for a vehicle to complete this visit (see
      * [Vehicle.extra_visit_duration_for_visit_type][google.cloud.optimization.v1.Vehicle.extra_visit_duration_for_visit_type]).
+     *
      * A type can only appear once.
      * </pre>
      *
@@ -1489,6 +1517,7 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      * Specifies the types of the visit. This may be used to allocate additional
      * time required for a vehicle to complete this visit (see
      * [Vehicle.extra_visit_duration_for_visit_type][google.cloud.optimization.v1.Vehicle.extra_visit_duration_for_visit_type]).
+     *
      * A type can only appear once.
      * </pre>
      *
@@ -1507,6 +1536,7 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      * Specifies the types of the visit. This may be used to allocate additional
      * time required for a vehicle to complete this visit (see
      * [Vehicle.extra_visit_duration_for_visit_type][google.cloud.optimization.v1.Vehicle.extra_visit_duration_for_visit_type]).
+     *
      * A type can only appear once.
      * </pre>
      *
@@ -2070,8 +2100,7 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
           departureWaypointBuilder_.dispose();
           departureWaypointBuilder_ = null;
         }
-        tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000010);
+        tags_ = com.google.protobuf.LazyStringArrayList.emptyList();
         if (timeWindowsBuilder_ == null) {
           timeWindows_ = java.util.Collections.emptyList();
         } else {
@@ -2086,8 +2115,7 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
         }
         cost_ = 0D;
         internalGetMutableLoadDemands().clear();
-        visitTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000200);
+        visitTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
         label_ = "";
         if (demandsBuilder_ == null) {
           demands_ = java.util.Collections.emptyList();
@@ -2133,11 +2161,6 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
 
       private void buildPartialRepeatedFields(
           com.google.cloud.optimization.v1.Shipment.VisitRequest result) {
-        if (((bitField0_ & 0x00000010) != 0)) {
-          tags_ = tags_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000010);
-        }
-        result.tags_ = tags_;
         if (timeWindowsBuilder_ == null) {
           if (((bitField0_ & 0x00000020) != 0)) {
             timeWindows_ = java.util.Collections.unmodifiableList(timeWindows_);
@@ -2147,11 +2170,6 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
         } else {
           result.timeWindows_ = timeWindowsBuilder_.build();
         }
-        if (((bitField0_ & 0x00000200) != 0)) {
-          visitTypes_ = visitTypes_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000200);
-        }
-        result.visitTypes_ = visitTypes_;
         if (demandsBuilder_ == null) {
           if (((bitField0_ & 0x00000800) != 0)) {
             demands_ = java.util.Collections.unmodifiableList(demands_);
@@ -2185,6 +2203,10 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
                   ? departureWaypoint_
                   : departureWaypointBuilder_.build();
         }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          tags_.makeImmutable();
+          result.tags_ = tags_;
+        }
         if (((from_bitField0_ & 0x00000040) != 0)) {
           result.duration_ = durationBuilder_ == null ? duration_ : durationBuilder_.build();
         }
@@ -2194,6 +2216,10 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
         if (((from_bitField0_ & 0x00000100) != 0)) {
           result.loadDemands_ = internalGetLoadDemands();
           result.loadDemands_.makeImmutable();
+        }
+        if (((from_bitField0_ & 0x00000200) != 0)) {
+          visitTypes_.makeImmutable();
+          result.visitTypes_ = visitTypes_;
         }
         if (((from_bitField0_ & 0x00000400) != 0)) {
           result.label_ = label_;
@@ -2263,7 +2289,7 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
         if (!other.tags_.isEmpty()) {
           if (tags_.isEmpty()) {
             tags_ = other.tags_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ |= 0x00000010;
           } else {
             ensureTagsIsMutable();
             tags_.addAll(other.tags_);
@@ -2308,7 +2334,7 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
         if (!other.visitTypes_.isEmpty()) {
           if (visitTypes_.isEmpty()) {
             visitTypes_ = other.visitTypes_;
-            bitField0_ = (bitField0_ & ~0x00000200);
+            bitField0_ |= 0x00000200;
           } else {
             ensureVisitTypesIsMutable();
             visitTypes_.addAll(other.visitTypes_);
@@ -3319,14 +3345,14 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
         return departureWaypointBuilder_;
       }
 
-      private com.google.protobuf.LazyStringList tags_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList tags_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureTagsIsMutable() {
-        if (!((bitField0_ & 0x00000010) != 0)) {
+        if (!tags_.isModifiable()) {
           tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
-          bitField0_ |= 0x00000010;
         }
+        bitField0_ |= 0x00000010;
       }
       /**
        *
@@ -3341,7 +3367,8 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
        * @return A list containing the tags.
        */
       public com.google.protobuf.ProtocolStringList getTagsList() {
-        return tags_.getUnmodifiableView();
+        tags_.makeImmutable();
+        return tags_;
       }
       /**
        *
@@ -3410,6 +3437,7 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
         }
         ensureTagsIsMutable();
         tags_.set(index, value);
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -3432,6 +3460,7 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
         }
         ensureTagsIsMutable();
         tags_.add(value);
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -3451,6 +3480,7 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
       public Builder addAllTags(java.lang.Iterable<java.lang.String> values) {
         ensureTagsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, tags_);
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -3467,8 +3497,9 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearTags() {
-        tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        tags_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000010);
+        ;
         onChanged();
         return this;
       }
@@ -3492,6 +3523,7 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
         checkByteStringIsUtf8(value);
         ensureTagsIsMutable();
         tags_.add(value);
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -3522,10 +3554,13 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
        * arrival time + duration do not need to be inside a time window. This can
        * result in waiting time if the vehicle arrives before
        * [TimeWindow.start_time][google.cloud.optimization.v1.TimeWindow.start_time].
+       *
        * The absence of `TimeWindow` means that the vehicle can perform this visit
        * at any time.
+       *
        * Time windows must be disjoint, i.e. no time window must overlap with or
        * be adjacent to another, and they must be in increasing order.
+       *
        * `cost_per_hour_after_soft_end_time` and `soft_end_time` can only
        * be set if there is a single time window.
        * </pre>
@@ -3548,10 +3583,13 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
        * arrival time + duration do not need to be inside a time window. This can
        * result in waiting time if the vehicle arrives before
        * [TimeWindow.start_time][google.cloud.optimization.v1.TimeWindow.start_time].
+       *
        * The absence of `TimeWindow` means that the vehicle can perform this visit
        * at any time.
+       *
        * Time windows must be disjoint, i.e. no time window must overlap with or
        * be adjacent to another, and they must be in increasing order.
+       *
        * `cost_per_hour_after_soft_end_time` and `soft_end_time` can only
        * be set if there is a single time window.
        * </pre>
@@ -3574,10 +3612,13 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
        * arrival time + duration do not need to be inside a time window. This can
        * result in waiting time if the vehicle arrives before
        * [TimeWindow.start_time][google.cloud.optimization.v1.TimeWindow.start_time].
+       *
        * The absence of `TimeWindow` means that the vehicle can perform this visit
        * at any time.
+       *
        * Time windows must be disjoint, i.e. no time window must overlap with or
        * be adjacent to another, and they must be in increasing order.
+       *
        * `cost_per_hour_after_soft_end_time` and `soft_end_time` can only
        * be set if there is a single time window.
        * </pre>
@@ -3600,10 +3641,13 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
        * arrival time + duration do not need to be inside a time window. This can
        * result in waiting time if the vehicle arrives before
        * [TimeWindow.start_time][google.cloud.optimization.v1.TimeWindow.start_time].
+       *
        * The absence of `TimeWindow` means that the vehicle can perform this visit
        * at any time.
+       *
        * Time windows must be disjoint, i.e. no time window must overlap with or
        * be adjacent to another, and they must be in increasing order.
+       *
        * `cost_per_hour_after_soft_end_time` and `soft_end_time` can only
        * be set if there is a single time window.
        * </pre>
@@ -3632,10 +3676,13 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
        * arrival time + duration do not need to be inside a time window. This can
        * result in waiting time if the vehicle arrives before
        * [TimeWindow.start_time][google.cloud.optimization.v1.TimeWindow.start_time].
+       *
        * The absence of `TimeWindow` means that the vehicle can perform this visit
        * at any time.
+       *
        * Time windows must be disjoint, i.e. no time window must overlap with or
        * be adjacent to another, and they must be in increasing order.
+       *
        * `cost_per_hour_after_soft_end_time` and `soft_end_time` can only
        * be set if there is a single time window.
        * </pre>
@@ -3662,10 +3709,13 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
        * arrival time + duration do not need to be inside a time window. This can
        * result in waiting time if the vehicle arrives before
        * [TimeWindow.start_time][google.cloud.optimization.v1.TimeWindow.start_time].
+       *
        * The absence of `TimeWindow` means that the vehicle can perform this visit
        * at any time.
+       *
        * Time windows must be disjoint, i.e. no time window must overlap with or
        * be adjacent to another, and they must be in increasing order.
+       *
        * `cost_per_hour_after_soft_end_time` and `soft_end_time` can only
        * be set if there is a single time window.
        * </pre>
@@ -3694,10 +3744,13 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
        * arrival time + duration do not need to be inside a time window. This can
        * result in waiting time if the vehicle arrives before
        * [TimeWindow.start_time][google.cloud.optimization.v1.TimeWindow.start_time].
+       *
        * The absence of `TimeWindow` means that the vehicle can perform this visit
        * at any time.
+       *
        * Time windows must be disjoint, i.e. no time window must overlap with or
        * be adjacent to another, and they must be in increasing order.
+       *
        * `cost_per_hour_after_soft_end_time` and `soft_end_time` can only
        * be set if there is a single time window.
        * </pre>
@@ -3726,10 +3779,13 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
        * arrival time + duration do not need to be inside a time window. This can
        * result in waiting time if the vehicle arrives before
        * [TimeWindow.start_time][google.cloud.optimization.v1.TimeWindow.start_time].
+       *
        * The absence of `TimeWindow` means that the vehicle can perform this visit
        * at any time.
+       *
        * Time windows must be disjoint, i.e. no time window must overlap with or
        * be adjacent to another, and they must be in increasing order.
+       *
        * `cost_per_hour_after_soft_end_time` and `soft_end_time` can only
        * be set if there is a single time window.
        * </pre>
@@ -3756,10 +3812,13 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
        * arrival time + duration do not need to be inside a time window. This can
        * result in waiting time if the vehicle arrives before
        * [TimeWindow.start_time][google.cloud.optimization.v1.TimeWindow.start_time].
+       *
        * The absence of `TimeWindow` means that the vehicle can perform this visit
        * at any time.
+       *
        * Time windows must be disjoint, i.e. no time window must overlap with or
        * be adjacent to another, and they must be in increasing order.
+       *
        * `cost_per_hour_after_soft_end_time` and `soft_end_time` can only
        * be set if there is a single time window.
        * </pre>
@@ -3786,10 +3845,13 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
        * arrival time + duration do not need to be inside a time window. This can
        * result in waiting time if the vehicle arrives before
        * [TimeWindow.start_time][google.cloud.optimization.v1.TimeWindow.start_time].
+       *
        * The absence of `TimeWindow` means that the vehicle can perform this visit
        * at any time.
+       *
        * Time windows must be disjoint, i.e. no time window must overlap with or
        * be adjacent to another, and they must be in increasing order.
+       *
        * `cost_per_hour_after_soft_end_time` and `soft_end_time` can only
        * be set if there is a single time window.
        * </pre>
@@ -3816,10 +3878,13 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
        * arrival time + duration do not need to be inside a time window. This can
        * result in waiting time if the vehicle arrives before
        * [TimeWindow.start_time][google.cloud.optimization.v1.TimeWindow.start_time].
+       *
        * The absence of `TimeWindow` means that the vehicle can perform this visit
        * at any time.
+       *
        * Time windows must be disjoint, i.e. no time window must overlap with or
        * be adjacent to another, and they must be in increasing order.
+       *
        * `cost_per_hour_after_soft_end_time` and `soft_end_time` can only
        * be set if there is a single time window.
        * </pre>
@@ -3845,10 +3910,13 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
        * arrival time + duration do not need to be inside a time window. This can
        * result in waiting time if the vehicle arrives before
        * [TimeWindow.start_time][google.cloud.optimization.v1.TimeWindow.start_time].
+       *
        * The absence of `TimeWindow` means that the vehicle can perform this visit
        * at any time.
+       *
        * Time windows must be disjoint, i.e. no time window must overlap with or
        * be adjacent to another, and they must be in increasing order.
+       *
        * `cost_per_hour_after_soft_end_time` and `soft_end_time` can only
        * be set if there is a single time window.
        * </pre>
@@ -3874,10 +3942,13 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
        * arrival time + duration do not need to be inside a time window. This can
        * result in waiting time if the vehicle arrives before
        * [TimeWindow.start_time][google.cloud.optimization.v1.TimeWindow.start_time].
+       *
        * The absence of `TimeWindow` means that the vehicle can perform this visit
        * at any time.
+       *
        * Time windows must be disjoint, i.e. no time window must overlap with or
        * be adjacent to another, and they must be in increasing order.
+       *
        * `cost_per_hour_after_soft_end_time` and `soft_end_time` can only
        * be set if there is a single time window.
        * </pre>
@@ -3896,10 +3967,13 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
        * arrival time + duration do not need to be inside a time window. This can
        * result in waiting time if the vehicle arrives before
        * [TimeWindow.start_time][google.cloud.optimization.v1.TimeWindow.start_time].
+       *
        * The absence of `TimeWindow` means that the vehicle can perform this visit
        * at any time.
+       *
        * Time windows must be disjoint, i.e. no time window must overlap with or
        * be adjacent to another, and they must be in increasing order.
+       *
        * `cost_per_hour_after_soft_end_time` and `soft_end_time` can only
        * be set if there is a single time window.
        * </pre>
@@ -3923,10 +3997,13 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
        * arrival time + duration do not need to be inside a time window. This can
        * result in waiting time if the vehicle arrives before
        * [TimeWindow.start_time][google.cloud.optimization.v1.TimeWindow.start_time].
+       *
        * The absence of `TimeWindow` means that the vehicle can perform this visit
        * at any time.
+       *
        * Time windows must be disjoint, i.e. no time window must overlap with or
        * be adjacent to another, and they must be in increasing order.
+       *
        * `cost_per_hour_after_soft_end_time` and `soft_end_time` can only
        * be set if there is a single time window.
        * </pre>
@@ -3950,10 +4027,13 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
        * arrival time + duration do not need to be inside a time window. This can
        * result in waiting time if the vehicle arrives before
        * [TimeWindow.start_time][google.cloud.optimization.v1.TimeWindow.start_time].
+       *
        * The absence of `TimeWindow` means that the vehicle can perform this visit
        * at any time.
+       *
        * Time windows must be disjoint, i.e. no time window must overlap with or
        * be adjacent to another, and they must be in increasing order.
+       *
        * `cost_per_hour_after_soft_end_time` and `soft_end_time` can only
        * be set if there is a single time window.
        * </pre>
@@ -3973,10 +4053,13 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
        * arrival time + duration do not need to be inside a time window. This can
        * result in waiting time if the vehicle arrives before
        * [TimeWindow.start_time][google.cloud.optimization.v1.TimeWindow.start_time].
+       *
        * The absence of `TimeWindow` means that the vehicle can perform this visit
        * at any time.
+       *
        * Time windows must be disjoint, i.e. no time window must overlap with or
        * be adjacent to another, and they must be in increasing order.
+       *
        * `cost_per_hour_after_soft_end_time` and `soft_end_time` can only
        * be set if there is a single time window.
        * </pre>
@@ -3996,10 +4079,13 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
        * arrival time + duration do not need to be inside a time window. This can
        * result in waiting time if the vehicle arrives before
        * [TimeWindow.start_time][google.cloud.optimization.v1.TimeWindow.start_time].
+       *
        * The absence of `TimeWindow` means that the vehicle can perform this visit
        * at any time.
+       *
        * Time windows must be disjoint, i.e. no time window must overlap with or
        * be adjacent to another, and they must be in increasing order.
+       *
        * `cost_per_hour_after_soft_end_time` and `soft_end_time` can only
        * be set if there is a single time window.
        * </pre>
@@ -4517,14 +4603,14 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
         return this;
       }
 
-      private com.google.protobuf.LazyStringList visitTypes_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList visitTypes_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureVisitTypesIsMutable() {
-        if (!((bitField0_ & 0x00000200) != 0)) {
+        if (!visitTypes_.isModifiable()) {
           visitTypes_ = new com.google.protobuf.LazyStringArrayList(visitTypes_);
-          bitField0_ |= 0x00000200;
         }
+        bitField0_ |= 0x00000200;
       }
       /**
        *
@@ -4533,6 +4619,7 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
        * Specifies the types of the visit. This may be used to allocate additional
        * time required for a vehicle to complete this visit (see
        * [Vehicle.extra_visit_duration_for_visit_type][google.cloud.optimization.v1.Vehicle.extra_visit_duration_for_visit_type]).
+       *
        * A type can only appear once.
        * </pre>
        *
@@ -4541,7 +4628,8 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
        * @return A list containing the visitTypes.
        */
       public com.google.protobuf.ProtocolStringList getVisitTypesList() {
-        return visitTypes_.getUnmodifiableView();
+        visitTypes_.makeImmutable();
+        return visitTypes_;
       }
       /**
        *
@@ -4550,6 +4638,7 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
        * Specifies the types of the visit. This may be used to allocate additional
        * time required for a vehicle to complete this visit (see
        * [Vehicle.extra_visit_duration_for_visit_type][google.cloud.optimization.v1.Vehicle.extra_visit_duration_for_visit_type]).
+       *
        * A type can only appear once.
        * </pre>
        *
@@ -4567,6 +4656,7 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
        * Specifies the types of the visit. This may be used to allocate additional
        * time required for a vehicle to complete this visit (see
        * [Vehicle.extra_visit_duration_for_visit_type][google.cloud.optimization.v1.Vehicle.extra_visit_duration_for_visit_type]).
+       *
        * A type can only appear once.
        * </pre>
        *
@@ -4585,6 +4675,7 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
        * Specifies the types of the visit. This may be used to allocate additional
        * time required for a vehicle to complete this visit (see
        * [Vehicle.extra_visit_duration_for_visit_type][google.cloud.optimization.v1.Vehicle.extra_visit_duration_for_visit_type]).
+       *
        * A type can only appear once.
        * </pre>
        *
@@ -4603,6 +4694,7 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
        * Specifies the types of the visit. This may be used to allocate additional
        * time required for a vehicle to complete this visit (see
        * [Vehicle.extra_visit_duration_for_visit_type][google.cloud.optimization.v1.Vehicle.extra_visit_duration_for_visit_type]).
+       *
        * A type can only appear once.
        * </pre>
        *
@@ -4618,6 +4710,7 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
         }
         ensureVisitTypesIsMutable();
         visitTypes_.set(index, value);
+        bitField0_ |= 0x00000200;
         onChanged();
         return this;
       }
@@ -4628,6 +4721,7 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
        * Specifies the types of the visit. This may be used to allocate additional
        * time required for a vehicle to complete this visit (see
        * [Vehicle.extra_visit_duration_for_visit_type][google.cloud.optimization.v1.Vehicle.extra_visit_duration_for_visit_type]).
+       *
        * A type can only appear once.
        * </pre>
        *
@@ -4642,6 +4736,7 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
         }
         ensureVisitTypesIsMutable();
         visitTypes_.add(value);
+        bitField0_ |= 0x00000200;
         onChanged();
         return this;
       }
@@ -4652,6 +4747,7 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
        * Specifies the types of the visit. This may be used to allocate additional
        * time required for a vehicle to complete this visit (see
        * [Vehicle.extra_visit_duration_for_visit_type][google.cloud.optimization.v1.Vehicle.extra_visit_duration_for_visit_type]).
+       *
        * A type can only appear once.
        * </pre>
        *
@@ -4663,6 +4759,7 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
       public Builder addAllVisitTypes(java.lang.Iterable<java.lang.String> values) {
         ensureVisitTypesIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, visitTypes_);
+        bitField0_ |= 0x00000200;
         onChanged();
         return this;
       }
@@ -4673,6 +4770,7 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
        * Specifies the types of the visit. This may be used to allocate additional
        * time required for a vehicle to complete this visit (see
        * [Vehicle.extra_visit_duration_for_visit_type][google.cloud.optimization.v1.Vehicle.extra_visit_duration_for_visit_type]).
+       *
        * A type can only appear once.
        * </pre>
        *
@@ -4681,8 +4779,9 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearVisitTypes() {
-        visitTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        visitTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000200);
+        ;
         onChanged();
         return this;
       }
@@ -4693,6 +4792,7 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
        * Specifies the types of the visit. This may be used to allocate additional
        * time required for a vehicle to complete this visit (see
        * [Vehicle.extra_visit_duration_for_visit_type][google.cloud.optimization.v1.Vehicle.extra_visit_duration_for_visit_type]).
+       *
        * A type can only appear once.
        * </pre>
        *
@@ -4708,6 +4808,7 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
         checkByteStringIsUtf8(value);
         ensureVisitTypesIsMutable();
         visitTypes_.add(value);
+        bitField0_ |= 0x00000200;
         onChanged();
         return this;
       }
@@ -5387,11 +5488,6 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Load();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -6201,6 +6297,7 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
    * and delivery alternatives is visited. The cost may be expressed in the
    * same unit used for all other cost-related fields in the model and must be
    * positive.
+   *
    * *IMPORTANT*: If this penalty is not specified, it is considered infinite,
    * i.e. the shipment must be completed.
    * </pre>
@@ -6222,6 +6319,7 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
    * and delivery alternatives is visited. The cost may be expressed in the
    * same unit used for all other cost-related fields in the model and must be
    * positive.
+   *
    * *IMPORTANT*: If this penalty is not specified, it is considered infinite,
    * i.e. the shipment must be completed.
    * </pre>
@@ -6302,11 +6400,13 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Specifies the cost that is incurred when this shipment is delivered by each
    * vehicle. If specified, it must have EITHER:
+   *
    *   * the same number of elements as `costs_per_vehicle_indices`.
    *     `costs_per_vehicle[i]` corresponds to vehicle
    *     `costs_per_vehicle_indices[i]` of the model.
    *   * the same number of elements as there are vehicles in the model. The
    *     i-th element corresponds to vehicle #i of the model.
+   *
    * These costs must be in the same unit as `penalty_cost` and must not be
    * negative. Leave this field empty, if there are no such costs.
    * </pre>
@@ -6325,11 +6425,13 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Specifies the cost that is incurred when this shipment is delivered by each
    * vehicle. If specified, it must have EITHER:
+   *
    *   * the same number of elements as `costs_per_vehicle_indices`.
    *     `costs_per_vehicle[i]` corresponds to vehicle
    *     `costs_per_vehicle_indices[i]` of the model.
    *   * the same number of elements as there are vehicles in the model. The
    *     i-th element corresponds to vehicle #i of the model.
+   *
    * These costs must be in the same unit as `penalty_cost` and must not be
    * negative. Leave this field empty, if there are no such costs.
    * </pre>
@@ -6347,11 +6449,13 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Specifies the cost that is incurred when this shipment is delivered by each
    * vehicle. If specified, it must have EITHER:
+   *
    *   * the same number of elements as `costs_per_vehicle_indices`.
    *     `costs_per_vehicle[i]` corresponds to vehicle
    *     `costs_per_vehicle_indices[i]` of the model.
    *   * the same number of elements as there are vehicles in the model. The
    *     i-th element corresponds to vehicle #i of the model.
+   *
    * These costs must be in the same unit as `penalty_cost` and must not be
    * negative. Leave this field empty, if there are no such costs.
    * </pre>
@@ -6436,13 +6540,16 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
    * Specifies the maximum relative detour time compared to the shortest path
    * from pickup to delivery. If specified, it must be nonnegative, and the
    * shipment must contain at least a pickup and a delivery.
+   *
    * For example, let t be the shortest time taken to go from the selected
    * pickup alternative directly to the selected delivery alternative. Then
    * setting `pickup_to_delivery_relative_detour_limit` enforces:
+   *
    * ```
    * start_time(delivery) - start_time(pickup) &lt;=
    * std::ceil(t * (1.0 + pickup_to_delivery_relative_detour_limit))
    * ```
+   *
    * If both relative and absolute limits are specified on the same shipment,
    * the more constraining limit is used for each possible pickup/delivery pair.
    * As of 2017/10, detours are only supported when travel durations do not
@@ -6464,13 +6571,16 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
    * Specifies the maximum relative detour time compared to the shortest path
    * from pickup to delivery. If specified, it must be nonnegative, and the
    * shipment must contain at least a pickup and a delivery.
+   *
    * For example, let t be the shortest time taken to go from the selected
    * pickup alternative directly to the selected delivery alternative. Then
    * setting `pickup_to_delivery_relative_detour_limit` enforces:
+   *
    * ```
    * start_time(delivery) - start_time(pickup) &lt;=
    * std::ceil(t * (1.0 + pickup_to_delivery_relative_detour_limit))
    * ```
+   *
    * If both relative and absolute limits are specified on the same shipment,
    * the more constraining limit is used for each possible pickup/delivery pair.
    * As of 2017/10, detours are only supported when travel durations do not
@@ -6495,13 +6605,16 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
    * Specifies the maximum absolute detour time compared to the shortest path
    * from pickup to delivery. If specified, it must be nonnegative, and the
    * shipment must contain at least a pickup and a delivery.
+   *
    * For example, let t be the shortest time taken to go from the selected
    * pickup alternative directly to the selected delivery alternative. Then
    * setting `pickup_to_delivery_absolute_detour_limit` enforces:
+   *
    * ```
    * start_time(delivery) - start_time(pickup) &lt;=
    * t + pickup_to_delivery_absolute_detour_limit
    * ```
+   *
    * If both relative and absolute limits are specified on the same shipment,
    * the more constraining limit is used for each possible pickup/delivery pair.
    * As of 2017/10, detours are only supported when travel durations do not
@@ -6523,13 +6636,16 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
    * Specifies the maximum absolute detour time compared to the shortest path
    * from pickup to delivery. If specified, it must be nonnegative, and the
    * shipment must contain at least a pickup and a delivery.
+   *
    * For example, let t be the shortest time taken to go from the selected
    * pickup alternative directly to the selected delivery alternative. Then
    * setting `pickup_to_delivery_absolute_detour_limit` enforces:
+   *
    * ```
    * start_time(delivery) - start_time(pickup) &lt;=
    * t + pickup_to_delivery_absolute_detour_limit
    * ```
+   *
    * If both relative and absolute limits are specified on the same shipment,
    * the more constraining limit is used for each possible pickup/delivery pair.
    * As of 2017/10, detours are only supported when travel durations do not
@@ -6553,13 +6669,16 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
    * Specifies the maximum absolute detour time compared to the shortest path
    * from pickup to delivery. If specified, it must be nonnegative, and the
    * shipment must contain at least a pickup and a delivery.
+   *
    * For example, let t be the shortest time taken to go from the selected
    * pickup alternative directly to the selected delivery alternative. Then
    * setting `pickup_to_delivery_absolute_detour_limit` enforces:
+   *
    * ```
    * start_time(delivery) - start_time(pickup) &lt;=
    * t + pickup_to_delivery_absolute_detour_limit
    * ```
+   *
    * If both relative and absolute limits are specified on the same shipment,
    * the more constraining limit is used for each possible pickup/delivery pair.
    * As of 2017/10, detours are only supported when travel durations do not
@@ -6652,6 +6771,7 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
    * This feature can be used to define incompatibilities or requirements
    * between `shipment_types` (see `shipment_type_incompatibilities` and
    * `shipment_type_requirements` in `ShipmentModel`).
+   *
    * Differs from `visit_types` which is specified for a single visit: All
    * pickup/deliveries belonging to the same shipment share the same
    * `shipment_type`.
@@ -6681,6 +6801,7 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
    * This feature can be used to define incompatibilities or requirements
    * between `shipment_types` (see `shipment_type_incompatibilities` and
    * `shipment_type_requirements` in `ShipmentModel`).
+   *
    * Differs from `visit_types` which is specified for a single visit: All
    * pickup/deliveries belonging to the same shipment share the same
    * `shipment_type`.
@@ -6765,8 +6886,10 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * If true, skip this shipment, but don't apply a `penalty_cost`.
+   *
    * Ignoring a shipment results in a validation error when there are any
    * `shipment_type_requirements` in the model.
+   *
    * Ignoring a shipment that is performed in `injected_first_solution_routes`
    * or `injected_solution_constraint` is permitted; the solver removes the
    * related pickup/delivery visits from the performing route.
@@ -8842,6 +8965,7 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      * and delivery alternatives is visited. The cost may be expressed in the
      * same unit used for all other cost-related fields in the model and must be
      * positive.
+     *
      * *IMPORTANT*: If this penalty is not specified, it is considered infinite,
      * i.e. the shipment must be completed.
      * </pre>
@@ -8863,6 +8987,7 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      * and delivery alternatives is visited. The cost may be expressed in the
      * same unit used for all other cost-related fields in the model and must be
      * positive.
+     *
      * *IMPORTANT*: If this penalty is not specified, it is considered infinite,
      * i.e. the shipment must be completed.
      * </pre>
@@ -8884,6 +9009,7 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      * and delivery alternatives is visited. The cost may be expressed in the
      * same unit used for all other cost-related fields in the model and must be
      * positive.
+     *
      * *IMPORTANT*: If this penalty is not specified, it is considered infinite,
      * i.e. the shipment must be completed.
      * </pre>
@@ -8909,6 +9035,7 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      * and delivery alternatives is visited. The cost may be expressed in the
      * same unit used for all other cost-related fields in the model and must be
      * positive.
+     *
      * *IMPORTANT*: If this penalty is not specified, it is considered infinite,
      * i.e. the shipment must be completed.
      * </pre>
@@ -9081,11 +9208,13 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Specifies the cost that is incurred when this shipment is delivered by each
      * vehicle. If specified, it must have EITHER:
+     *
      *   * the same number of elements as `costs_per_vehicle_indices`.
      *     `costs_per_vehicle[i]` corresponds to vehicle
      *     `costs_per_vehicle_indices[i]` of the model.
      *   * the same number of elements as there are vehicles in the model. The
      *     i-th element corresponds to vehicle #i of the model.
+     *
      * These costs must be in the same unit as `penalty_cost` and must not be
      * negative. Leave this field empty, if there are no such costs.
      * </pre>
@@ -9105,11 +9234,13 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Specifies the cost that is incurred when this shipment is delivered by each
      * vehicle. If specified, it must have EITHER:
+     *
      *   * the same number of elements as `costs_per_vehicle_indices`.
      *     `costs_per_vehicle[i]` corresponds to vehicle
      *     `costs_per_vehicle_indices[i]` of the model.
      *   * the same number of elements as there are vehicles in the model. The
      *     i-th element corresponds to vehicle #i of the model.
+     *
      * These costs must be in the same unit as `penalty_cost` and must not be
      * negative. Leave this field empty, if there are no such costs.
      * </pre>
@@ -9127,11 +9258,13 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Specifies the cost that is incurred when this shipment is delivered by each
      * vehicle. If specified, it must have EITHER:
+     *
      *   * the same number of elements as `costs_per_vehicle_indices`.
      *     `costs_per_vehicle[i]` corresponds to vehicle
      *     `costs_per_vehicle_indices[i]` of the model.
      *   * the same number of elements as there are vehicles in the model. The
      *     i-th element corresponds to vehicle #i of the model.
+     *
      * These costs must be in the same unit as `penalty_cost` and must not be
      * negative. Leave this field empty, if there are no such costs.
      * </pre>
@@ -9150,11 +9283,13 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Specifies the cost that is incurred when this shipment is delivered by each
      * vehicle. If specified, it must have EITHER:
+     *
      *   * the same number of elements as `costs_per_vehicle_indices`.
      *     `costs_per_vehicle[i]` corresponds to vehicle
      *     `costs_per_vehicle_indices[i]` of the model.
      *   * the same number of elements as there are vehicles in the model. The
      *     i-th element corresponds to vehicle #i of the model.
+     *
      * These costs must be in the same unit as `penalty_cost` and must not be
      * negative. Leave this field empty, if there are no such costs.
      * </pre>
@@ -9178,11 +9313,13 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Specifies the cost that is incurred when this shipment is delivered by each
      * vehicle. If specified, it must have EITHER:
+     *
      *   * the same number of elements as `costs_per_vehicle_indices`.
      *     `costs_per_vehicle[i]` corresponds to vehicle
      *     `costs_per_vehicle_indices[i]` of the model.
      *   * the same number of elements as there are vehicles in the model. The
      *     i-th element corresponds to vehicle #i of the model.
+     *
      * These costs must be in the same unit as `penalty_cost` and must not be
      * negative. Leave this field empty, if there are no such costs.
      * </pre>
@@ -9205,11 +9342,13 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Specifies the cost that is incurred when this shipment is delivered by each
      * vehicle. If specified, it must have EITHER:
+     *
      *   * the same number of elements as `costs_per_vehicle_indices`.
      *     `costs_per_vehicle[i]` corresponds to vehicle
      *     `costs_per_vehicle_indices[i]` of the model.
      *   * the same number of elements as there are vehicles in the model. The
      *     i-th element corresponds to vehicle #i of the model.
+     *
      * These costs must be in the same unit as `penalty_cost` and must not be
      * negative. Leave this field empty, if there are no such costs.
      * </pre>
@@ -9231,11 +9370,13 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Specifies the cost that is incurred when this shipment is delivered by each
      * vehicle. If specified, it must have EITHER:
+     *
      *   * the same number of elements as `costs_per_vehicle_indices`.
      *     `costs_per_vehicle[i]` corresponds to vehicle
      *     `costs_per_vehicle_indices[i]` of the model.
      *   * the same number of elements as there are vehicles in the model. The
      *     i-th element corresponds to vehicle #i of the model.
+     *
      * These costs must be in the same unit as `penalty_cost` and must not be
      * negative. Leave this field empty, if there are no such costs.
      * </pre>
@@ -9409,13 +9550,16 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      * Specifies the maximum relative detour time compared to the shortest path
      * from pickup to delivery. If specified, it must be nonnegative, and the
      * shipment must contain at least a pickup and a delivery.
+     *
      * For example, let t be the shortest time taken to go from the selected
      * pickup alternative directly to the selected delivery alternative. Then
      * setting `pickup_to_delivery_relative_detour_limit` enforces:
+     *
      * ```
      * start_time(delivery) - start_time(pickup) &lt;=
      * std::ceil(t * (1.0 + pickup_to_delivery_relative_detour_limit))
      * ```
+     *
      * If both relative and absolute limits are specified on the same shipment,
      * the more constraining limit is used for each possible pickup/delivery pair.
      * As of 2017/10, detours are only supported when travel durations do not
@@ -9437,13 +9581,16 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      * Specifies the maximum relative detour time compared to the shortest path
      * from pickup to delivery. If specified, it must be nonnegative, and the
      * shipment must contain at least a pickup and a delivery.
+     *
      * For example, let t be the shortest time taken to go from the selected
      * pickup alternative directly to the selected delivery alternative. Then
      * setting `pickup_to_delivery_relative_detour_limit` enforces:
+     *
      * ```
      * start_time(delivery) - start_time(pickup) &lt;=
      * std::ceil(t * (1.0 + pickup_to_delivery_relative_detour_limit))
      * ```
+     *
      * If both relative and absolute limits are specified on the same shipment,
      * the more constraining limit is used for each possible pickup/delivery pair.
      * As of 2017/10, detours are only supported when travel durations do not
@@ -9465,13 +9612,16 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      * Specifies the maximum relative detour time compared to the shortest path
      * from pickup to delivery. If specified, it must be nonnegative, and the
      * shipment must contain at least a pickup and a delivery.
+     *
      * For example, let t be the shortest time taken to go from the selected
      * pickup alternative directly to the selected delivery alternative. Then
      * setting `pickup_to_delivery_relative_detour_limit` enforces:
+     *
      * ```
      * start_time(delivery) - start_time(pickup) &lt;=
      * std::ceil(t * (1.0 + pickup_to_delivery_relative_detour_limit))
      * ```
+     *
      * If both relative and absolute limits are specified on the same shipment,
      * the more constraining limit is used for each possible pickup/delivery pair.
      * As of 2017/10, detours are only supported when travel durations do not
@@ -9497,13 +9647,16 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      * Specifies the maximum relative detour time compared to the shortest path
      * from pickup to delivery. If specified, it must be nonnegative, and the
      * shipment must contain at least a pickup and a delivery.
+     *
      * For example, let t be the shortest time taken to go from the selected
      * pickup alternative directly to the selected delivery alternative. Then
      * setting `pickup_to_delivery_relative_detour_limit` enforces:
+     *
      * ```
      * start_time(delivery) - start_time(pickup) &lt;=
      * std::ceil(t * (1.0 + pickup_to_delivery_relative_detour_limit))
      * ```
+     *
      * If both relative and absolute limits are specified on the same shipment,
      * the more constraining limit is used for each possible pickup/delivery pair.
      * As of 2017/10, detours are only supported when travel durations do not
@@ -9534,13 +9687,16 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      * Specifies the maximum absolute detour time compared to the shortest path
      * from pickup to delivery. If specified, it must be nonnegative, and the
      * shipment must contain at least a pickup and a delivery.
+     *
      * For example, let t be the shortest time taken to go from the selected
      * pickup alternative directly to the selected delivery alternative. Then
      * setting `pickup_to_delivery_absolute_detour_limit` enforces:
+     *
      * ```
      * start_time(delivery) - start_time(pickup) &lt;=
      * t + pickup_to_delivery_absolute_detour_limit
      * ```
+     *
      * If both relative and absolute limits are specified on the same shipment,
      * the more constraining limit is used for each possible pickup/delivery pair.
      * As of 2017/10, detours are only supported when travel durations do not
@@ -9561,13 +9717,16 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      * Specifies the maximum absolute detour time compared to the shortest path
      * from pickup to delivery. If specified, it must be nonnegative, and the
      * shipment must contain at least a pickup and a delivery.
+     *
      * For example, let t be the shortest time taken to go from the selected
      * pickup alternative directly to the selected delivery alternative. Then
      * setting `pickup_to_delivery_absolute_detour_limit` enforces:
+     *
      * ```
      * start_time(delivery) - start_time(pickup) &lt;=
      * t + pickup_to_delivery_absolute_detour_limit
      * ```
+     *
      * If both relative and absolute limits are specified on the same shipment,
      * the more constraining limit is used for each possible pickup/delivery pair.
      * As of 2017/10, detours are only supported when travel durations do not
@@ -9594,13 +9753,16 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      * Specifies the maximum absolute detour time compared to the shortest path
      * from pickup to delivery. If specified, it must be nonnegative, and the
      * shipment must contain at least a pickup and a delivery.
+     *
      * For example, let t be the shortest time taken to go from the selected
      * pickup alternative directly to the selected delivery alternative. Then
      * setting `pickup_to_delivery_absolute_detour_limit` enforces:
+     *
      * ```
      * start_time(delivery) - start_time(pickup) &lt;=
      * t + pickup_to_delivery_absolute_detour_limit
      * ```
+     *
      * If both relative and absolute limits are specified on the same shipment,
      * the more constraining limit is used for each possible pickup/delivery pair.
      * As of 2017/10, detours are only supported when travel durations do not
@@ -9629,13 +9791,16 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      * Specifies the maximum absolute detour time compared to the shortest path
      * from pickup to delivery. If specified, it must be nonnegative, and the
      * shipment must contain at least a pickup and a delivery.
+     *
      * For example, let t be the shortest time taken to go from the selected
      * pickup alternative directly to the selected delivery alternative. Then
      * setting `pickup_to_delivery_absolute_detour_limit` enforces:
+     *
      * ```
      * start_time(delivery) - start_time(pickup) &lt;=
      * t + pickup_to_delivery_absolute_detour_limit
      * ```
+     *
      * If both relative and absolute limits are specified on the same shipment,
      * the more constraining limit is used for each possible pickup/delivery pair.
      * As of 2017/10, detours are only supported when travel durations do not
@@ -9662,13 +9827,16 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      * Specifies the maximum absolute detour time compared to the shortest path
      * from pickup to delivery. If specified, it must be nonnegative, and the
      * shipment must contain at least a pickup and a delivery.
+     *
      * For example, let t be the shortest time taken to go from the selected
      * pickup alternative directly to the selected delivery alternative. Then
      * setting `pickup_to_delivery_absolute_detour_limit` enforces:
+     *
      * ```
      * start_time(delivery) - start_time(pickup) &lt;=
      * t + pickup_to_delivery_absolute_detour_limit
      * ```
+     *
      * If both relative and absolute limits are specified on the same shipment,
      * the more constraining limit is used for each possible pickup/delivery pair.
      * As of 2017/10, detours are only supported when travel durations do not
@@ -9701,13 +9869,16 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      * Specifies the maximum absolute detour time compared to the shortest path
      * from pickup to delivery. If specified, it must be nonnegative, and the
      * shipment must contain at least a pickup and a delivery.
+     *
      * For example, let t be the shortest time taken to go from the selected
      * pickup alternative directly to the selected delivery alternative. Then
      * setting `pickup_to_delivery_absolute_detour_limit` enforces:
+     *
      * ```
      * start_time(delivery) - start_time(pickup) &lt;=
      * t + pickup_to_delivery_absolute_detour_limit
      * ```
+     *
      * If both relative and absolute limits are specified on the same shipment,
      * the more constraining limit is used for each possible pickup/delivery pair.
      * As of 2017/10, detours are only supported when travel durations do not
@@ -9733,13 +9904,16 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      * Specifies the maximum absolute detour time compared to the shortest path
      * from pickup to delivery. If specified, it must be nonnegative, and the
      * shipment must contain at least a pickup and a delivery.
+     *
      * For example, let t be the shortest time taken to go from the selected
      * pickup alternative directly to the selected delivery alternative. Then
      * setting `pickup_to_delivery_absolute_detour_limit` enforces:
+     *
      * ```
      * start_time(delivery) - start_time(pickup) &lt;=
      * t + pickup_to_delivery_absolute_detour_limit
      * ```
+     *
      * If both relative and absolute limits are specified on the same shipment,
      * the more constraining limit is used for each possible pickup/delivery pair.
      * As of 2017/10, detours are only supported when travel durations do not
@@ -9760,13 +9934,16 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      * Specifies the maximum absolute detour time compared to the shortest path
      * from pickup to delivery. If specified, it must be nonnegative, and the
      * shipment must contain at least a pickup and a delivery.
+     *
      * For example, let t be the shortest time taken to go from the selected
      * pickup alternative directly to the selected delivery alternative. Then
      * setting `pickup_to_delivery_absolute_detour_limit` enforces:
+     *
      * ```
      * start_time(delivery) - start_time(pickup) &lt;=
      * t + pickup_to_delivery_absolute_detour_limit
      * ```
+     *
      * If both relative and absolute limits are specified on the same shipment,
      * the more constraining limit is used for each possible pickup/delivery pair.
      * As of 2017/10, detours are only supported when travel durations do not
@@ -9791,13 +9968,16 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      * Specifies the maximum absolute detour time compared to the shortest path
      * from pickup to delivery. If specified, it must be nonnegative, and the
      * shipment must contain at least a pickup and a delivery.
+     *
      * For example, let t be the shortest time taken to go from the selected
      * pickup alternative directly to the selected delivery alternative. Then
      * setting `pickup_to_delivery_absolute_detour_limit` enforces:
+     *
      * ```
      * start_time(delivery) - start_time(pickup) &lt;=
      * t + pickup_to_delivery_absolute_detour_limit
      * ```
+     *
      * If both relative and absolute limits are specified on the same shipment,
      * the more constraining limit is used for each possible pickup/delivery pair.
      * As of 2017/10, detours are only supported when travel durations do not
@@ -10061,6 +10241,7 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      * This feature can be used to define incompatibilities or requirements
      * between `shipment_types` (see `shipment_type_incompatibilities` and
      * `shipment_type_requirements` in `ShipmentModel`).
+     *
      * Differs from `visit_types` which is specified for a single visit: All
      * pickup/deliveries belonging to the same shipment share the same
      * `shipment_type`.
@@ -10089,6 +10270,7 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      * This feature can be used to define incompatibilities or requirements
      * between `shipment_types` (see `shipment_type_incompatibilities` and
      * `shipment_type_requirements` in `ShipmentModel`).
+     *
      * Differs from `visit_types` which is specified for a single visit: All
      * pickup/deliveries belonging to the same shipment share the same
      * `shipment_type`.
@@ -10117,6 +10299,7 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      * This feature can be used to define incompatibilities or requirements
      * between `shipment_types` (see `shipment_type_incompatibilities` and
      * `shipment_type_requirements` in `ShipmentModel`).
+     *
      * Differs from `visit_types` which is specified for a single visit: All
      * pickup/deliveries belonging to the same shipment share the same
      * `shipment_type`.
@@ -10144,6 +10327,7 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      * This feature can be used to define incompatibilities or requirements
      * between `shipment_types` (see `shipment_type_incompatibilities` and
      * `shipment_type_requirements` in `ShipmentModel`).
+     *
      * Differs from `visit_types` which is specified for a single visit: All
      * pickup/deliveries belonging to the same shipment share the same
      * `shipment_type`.
@@ -10167,6 +10351,7 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      * This feature can be used to define incompatibilities or requirements
      * between `shipment_types` (see `shipment_type_incompatibilities` and
      * `shipment_type_requirements` in `ShipmentModel`).
+     *
      * Differs from `visit_types` which is specified for a single visit: All
      * pickup/deliveries belonging to the same shipment share the same
      * `shipment_type`.
@@ -10310,8 +10495,10 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * If true, skip this shipment, but don't apply a `penalty_cost`.
+     *
      * Ignoring a shipment results in a validation error when there are any
      * `shipment_type_requirements` in the model.
+     *
      * Ignoring a shipment that is performed in `injected_first_solution_routes`
      * or `injected_solution_constraint` is permitted; the solver removes the
      * related pickup/delivery visits from the performing route.
@@ -10331,8 +10518,10 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * If true, skip this shipment, but don't apply a `penalty_cost`.
+     *
      * Ignoring a shipment results in a validation error when there are any
      * `shipment_type_requirements` in the model.
+     *
      * Ignoring a shipment that is performed in `injected_first_solution_routes`
      * or `injected_solution_constraint` is permitted; the solver removes the
      * related pickup/delivery visits from the performing route.
@@ -10356,8 +10545,10 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * If true, skip this shipment, but don't apply a `penalty_cost`.
+     *
      * Ignoring a shipment results in a validation error when there are any
      * `shipment_type_requirements` in the model.
+     *
      * Ignoring a shipment that is performed in `injected_first_solution_routes`
      * or `injected_solution_constraint` is permitted; the solver removes the
      * related pickup/delivery visits from the performing route.

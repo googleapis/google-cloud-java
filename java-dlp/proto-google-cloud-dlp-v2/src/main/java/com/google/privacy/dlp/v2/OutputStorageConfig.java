@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new OutputStorageConfig();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -294,6 +289,8 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
   }
 
   private int typeCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object type_;
 
   public enum TypeCase
@@ -347,8 +344,10 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
    * for you with the following format:
    * dlp_googleapis_yyyy_mm_dd_[dlp_job_id]. Pacific time zone will be used
    * for generating the date details.
+   *
    * For Inspect, each column in an existing output table must have the same
    * name, type, and mode of a field in the `Finding` object.
+   *
    * For Risk, an existing output table should be the output of a previous
    * Risk analysis job run on the same source table, with the same privacy
    * metric and quasi-identifiers. Risk jobs that analyze the same table but
@@ -373,8 +372,10 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
    * for you with the following format:
    * dlp_googleapis_yyyy_mm_dd_[dlp_job_id]. Pacific time zone will be used
    * for generating the date details.
+   *
    * For Inspect, each column in an existing output table must have the same
    * name, type, and mode of a field in the `Finding` object.
+   *
    * For Risk, an existing output table should be the output of a previous
    * Risk analysis job run on the same source table, with the same privacy
    * metric and quasi-identifiers. Risk jobs that analyze the same table but
@@ -402,8 +403,10 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
    * for you with the following format:
    * dlp_googleapis_yyyy_mm_dd_[dlp_job_id]. Pacific time zone will be used
    * for generating the date details.
+   *
    * For Inspect, each column in an existing output table must have the same
    * name, type, and mode of a field in the `Finding` object.
+   *
    * For Risk, an existing output table should be the output of a previous
    * Risk analysis job run on the same source table, with the same privacy
    * metric and quasi-identifiers. Risk jobs that analyze the same table but
@@ -432,6 +435,7 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
    * from the `Finding` object. If appending to an existing table, any columns
    * from the predefined schema that are missing will be added. No columns in
    * the existing table will be deleted.
+   *
    * If unspecified, then all available columns will be used for a new table or
    * an (existing) table with no schema, and no changes will be made to an
    * existing table that has a schema.
@@ -455,6 +459,7 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
    * from the `Finding` object. If appending to an existing table, any columns
    * from the predefined schema that are missing will be added. No columns in
    * the existing table will be deleted.
+   *
    * If unspecified, then all available columns will be used for a new table or
    * an (existing) table with no schema, and no changes will be made to an
    * existing table that has a schema.
@@ -900,8 +905,10 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
      * for you with the following format:
      * dlp_googleapis_yyyy_mm_dd_[dlp_job_id]. Pacific time zone will be used
      * for generating the date details.
+     *
      * For Inspect, each column in an existing output table must have the same
      * name, type, and mode of a field in the `Finding` object.
+     *
      * For Risk, an existing output table should be the output of a previous
      * Risk analysis job run on the same source table, with the same privacy
      * metric and quasi-identifiers. Risk jobs that analyze the same table but
@@ -926,8 +933,10 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
      * for you with the following format:
      * dlp_googleapis_yyyy_mm_dd_[dlp_job_id]. Pacific time zone will be used
      * for generating the date details.
+     *
      * For Inspect, each column in an existing output table must have the same
      * name, type, and mode of a field in the `Finding` object.
+     *
      * For Risk, an existing output table should be the output of a previous
      * Risk analysis job run on the same source table, with the same privacy
      * metric and quasi-identifiers. Risk jobs that analyze the same table but
@@ -962,8 +971,10 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
      * for you with the following format:
      * dlp_googleapis_yyyy_mm_dd_[dlp_job_id]. Pacific time zone will be used
      * for generating the date details.
+     *
      * For Inspect, each column in an existing output table must have the same
      * name, type, and mode of a field in the `Finding` object.
+     *
      * For Risk, an existing output table should be the output of a previous
      * Risk analysis job run on the same source table, with the same privacy
      * metric and quasi-identifiers. Risk jobs that analyze the same table but
@@ -995,8 +1006,10 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
      * for you with the following format:
      * dlp_googleapis_yyyy_mm_dd_[dlp_job_id]. Pacific time zone will be used
      * for generating the date details.
+     *
      * For Inspect, each column in an existing output table must have the same
      * name, type, and mode of a field in the `Finding` object.
+     *
      * For Risk, an existing output table should be the output of a previous
      * Risk analysis job run on the same source table, with the same privacy
      * metric and quasi-identifiers. Risk jobs that analyze the same table but
@@ -1025,8 +1038,10 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
      * for you with the following format:
      * dlp_googleapis_yyyy_mm_dd_[dlp_job_id]. Pacific time zone will be used
      * for generating the date details.
+     *
      * For Inspect, each column in an existing output table must have the same
      * name, type, and mode of a field in the `Finding` object.
+     *
      * For Risk, an existing output table should be the output of a previous
      * Risk analysis job run on the same source table, with the same privacy
      * metric and quasi-identifiers. Risk jobs that analyze the same table but
@@ -1068,8 +1083,10 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
      * for you with the following format:
      * dlp_googleapis_yyyy_mm_dd_[dlp_job_id]. Pacific time zone will be used
      * for generating the date details.
+     *
      * For Inspect, each column in an existing output table must have the same
      * name, type, and mode of a field in the `Finding` object.
+     *
      * For Risk, an existing output table should be the output of a previous
      * Risk analysis job run on the same source table, with the same privacy
      * metric and quasi-identifiers. Risk jobs that analyze the same table but
@@ -1104,8 +1121,10 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
      * for you with the following format:
      * dlp_googleapis_yyyy_mm_dd_[dlp_job_id]. Pacific time zone will be used
      * for generating the date details.
+     *
      * For Inspect, each column in an existing output table must have the same
      * name, type, and mode of a field in the `Finding` object.
+     *
      * For Risk, an existing output table should be the output of a previous
      * Risk analysis job run on the same source table, with the same privacy
      * metric and quasi-identifiers. Risk jobs that analyze the same table but
@@ -1127,8 +1146,10 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
      * for you with the following format:
      * dlp_googleapis_yyyy_mm_dd_[dlp_job_id]. Pacific time zone will be used
      * for generating the date details.
+     *
      * For Inspect, each column in an existing output table must have the same
      * name, type, and mode of a field in the `Finding` object.
+     *
      * For Risk, an existing output table should be the output of a previous
      * Risk analysis job run on the same source table, with the same privacy
      * metric and quasi-identifiers. Risk jobs that analyze the same table but
@@ -1158,8 +1179,10 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
      * for you with the following format:
      * dlp_googleapis_yyyy_mm_dd_[dlp_job_id]. Pacific time zone will be used
      * for generating the date details.
+     *
      * For Inspect, each column in an existing output table must have the same
      * name, type, and mode of a field in the `Finding` object.
+     *
      * For Risk, an existing output table should be the output of a previous
      * Risk analysis job run on the same source table, with the same privacy
      * metric and quasi-identifiers. Risk jobs that analyze the same table but
@@ -1201,6 +1224,7 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
      * from the `Finding` object. If appending to an existing table, any columns
      * from the predefined schema that are missing will be added. No columns in
      * the existing table will be deleted.
+     *
      * If unspecified, then all available columns will be used for a new table or
      * an (existing) table with no schema, and no changes will be made to an
      * existing table that has a schema.
@@ -1224,6 +1248,7 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
      * from the `Finding` object. If appending to an existing table, any columns
      * from the predefined schema that are missing will be added. No columns in
      * the existing table will be deleted.
+     *
      * If unspecified, then all available columns will be used for a new table or
      * an (existing) table with no schema, and no changes will be made to an
      * existing table that has a schema.
@@ -1250,6 +1275,7 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
      * from the `Finding` object. If appending to an existing table, any columns
      * from the predefined schema that are missing will be added. No columns in
      * the existing table will be deleted.
+     *
      * If unspecified, then all available columns will be used for a new table or
      * an (existing) table with no schema, and no changes will be made to an
      * existing table that has a schema.
@@ -1277,6 +1303,7 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
      * from the `Finding` object. If appending to an existing table, any columns
      * from the predefined schema that are missing will be added. No columns in
      * the existing table will be deleted.
+     *
      * If unspecified, then all available columns will be used for a new table or
      * an (existing) table with no schema, and no changes will be made to an
      * existing table that has a schema.
@@ -1307,6 +1334,7 @@ public final class OutputStorageConfig extends com.google.protobuf.GeneratedMess
      * from the `Finding` object. If appending to an existing table, any columns
      * from the predefined schema that are missing will be added. No columns in
      * the existing table will be deleted.
+     *
      * If unspecified, then all available columns will be used for a new table or
      * an (existing) table with no schema, and no changes will be made to an
      * existing table that has a schema.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,11 +43,6 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new QuotaBucket();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -264,6 +259,57 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
         : adminOverride_;
   }
 
+  public static final int PRODUCER_QUOTA_POLICY_FIELD_NUMBER = 7;
+  private com.google.api.serviceusage.v1beta1.ProducerQuotaPolicy producerQuotaPolicy_;
+  /**
+   *
+   *
+   * <pre>
+   * Producer policy inherited from the closet ancestor of the current consumer.
+   * </pre>
+   *
+   * <code>.google.api.serviceusage.v1beta1.ProducerQuotaPolicy producer_quota_policy = 7;</code>
+   *
+   * @return Whether the producerQuotaPolicy field is set.
+   */
+  @java.lang.Override
+  public boolean hasProducerQuotaPolicy() {
+    return producerQuotaPolicy_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Producer policy inherited from the closet ancestor of the current consumer.
+   * </pre>
+   *
+   * <code>.google.api.serviceusage.v1beta1.ProducerQuotaPolicy producer_quota_policy = 7;</code>
+   *
+   * @return The producerQuotaPolicy.
+   */
+  @java.lang.Override
+  public com.google.api.serviceusage.v1beta1.ProducerQuotaPolicy getProducerQuotaPolicy() {
+    return producerQuotaPolicy_ == null
+        ? com.google.api.serviceusage.v1beta1.ProducerQuotaPolicy.getDefaultInstance()
+        : producerQuotaPolicy_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Producer policy inherited from the closet ancestor of the current consumer.
+   * </pre>
+   *
+   * <code>.google.api.serviceusage.v1beta1.ProducerQuotaPolicy producer_quota_policy = 7;</code>
+   */
+  @java.lang.Override
+  public com.google.api.serviceusage.v1beta1.ProducerQuotaPolicyOrBuilder
+      getProducerQuotaPolicyOrBuilder() {
+    return producerQuotaPolicy_ == null
+        ? com.google.api.serviceusage.v1beta1.ProducerQuotaPolicy.getDefaultInstance()
+        : producerQuotaPolicy_;
+  }
+
   public static final int DIMENSIONS_FIELD_NUMBER = 6;
 
   private static final class DimensionsDefaultEntryHolder {
@@ -295,10 +341,13 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The dimensions of this quota bucket.
+   *
    * If this map is empty, this is the global bucket, which is the default quota
    * value applied to all requests that do not have a more specific override.
+   *
    * If this map is nonempty, the default limit, effective limit, and quota
    * overrides apply only to requests that have the dimensions given in the map.
+   *
    * For example, if the map has key `region` and value `us-east-1`, then the
    * specified effective limit is only effective in that region, and the
    * specified overrides apply only in that region.
@@ -324,10 +373,13 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The dimensions of this quota bucket.
+   *
    * If this map is empty, this is the global bucket, which is the default quota
    * value applied to all requests that do not have a more specific override.
+   *
    * If this map is nonempty, the default limit, effective limit, and quota
    * overrides apply only to requests that have the dimensions given in the map.
+   *
    * For example, if the map has key `region` and value `us-east-1`, then the
    * specified effective limit is only effective in that region, and the
    * specified overrides apply only in that region.
@@ -344,10 +396,13 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The dimensions of this quota bucket.
+   *
    * If this map is empty, this is the global bucket, which is the default quota
    * value applied to all requests that do not have a more specific override.
+   *
    * If this map is nonempty, the default limit, effective limit, and quota
    * overrides apply only to requests that have the dimensions given in the map.
+   *
    * For example, if the map has key `region` and value `us-east-1`, then the
    * specified effective limit is only effective in that region, and the
    * specified overrides apply only in that region.
@@ -371,10 +426,13 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The dimensions of this quota bucket.
+   *
    * If this map is empty, this is the global bucket, which is the default quota
    * value applied to all requests that do not have a more specific override.
+   *
    * If this map is nonempty, the default limit, effective limit, and quota
    * overrides apply only to requests that have the dimensions given in the map.
+   *
    * For example, if the map has key `region` and value `us-east-1`, then the
    * specified effective limit is only effective in that region, and the
    * specified overrides apply only in that region.
@@ -425,6 +483,9 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetDimensions(), DimensionsDefaultEntryHolder.defaultEntry, 6);
+    if (producerQuotaPolicy_ != null) {
+      output.writeMessage(7, getProducerQuotaPolicy());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -459,6 +520,9 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, dimensions__);
     }
+    if (producerQuotaPolicy_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getProducerQuotaPolicy());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -489,6 +553,10 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
     if (hasAdminOverride()) {
       if (!getAdminOverride().equals(other.getAdminOverride())) return false;
     }
+    if (hasProducerQuotaPolicy() != other.hasProducerQuotaPolicy()) return false;
+    if (hasProducerQuotaPolicy()) {
+      if (!getProducerQuotaPolicy().equals(other.getProducerQuotaPolicy())) return false;
+    }
     if (!internalGetDimensions().equals(other.internalGetDimensions())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -516,6 +584,10 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
     if (hasAdminOverride()) {
       hash = (37 * hash) + ADMIN_OVERRIDE_FIELD_NUMBER;
       hash = (53 * hash) + getAdminOverride().hashCode();
+    }
+    if (hasProducerQuotaPolicy()) {
+      hash = (37 * hash) + PRODUCER_QUOTA_POLICY_FIELD_NUMBER;
+      hash = (53 * hash) + getProducerQuotaPolicy().hashCode();
     }
     if (!internalGetDimensions().getMap().isEmpty()) {
       hash = (37 * hash) + DIMENSIONS_FIELD_NUMBER;
@@ -697,6 +769,11 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
         adminOverrideBuilder_.dispose();
         adminOverrideBuilder_ = null;
       }
+      producerQuotaPolicy_ = null;
+      if (producerQuotaPolicyBuilder_ != null) {
+        producerQuotaPolicyBuilder_.dispose();
+        producerQuotaPolicyBuilder_ = null;
+      }
       internalGetMutableDimensions().clear();
       return this;
     }
@@ -753,6 +830,12 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
             adminOverrideBuilder_ == null ? adminOverride_ : adminOverrideBuilder_.build();
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.producerQuotaPolicy_ =
+            producerQuotaPolicyBuilder_ == null
+                ? producerQuotaPolicy_
+                : producerQuotaPolicyBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.dimensions_ = internalGetDimensions();
         result.dimensions_.makeImmutable();
       }
@@ -819,8 +902,11 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
       if (other.hasAdminOverride()) {
         mergeAdminOverride(other.getAdminOverride());
       }
+      if (other.hasProducerQuotaPolicy()) {
+        mergeProducerQuotaPolicy(other.getProducerQuotaPolicy());
+      }
       internalGetMutableDimensions().mergeFrom(other.internalGetDimensions());
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -888,9 +974,16 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableDimensions()
                     .getMutableMap()
                     .put(dimensions__.getKey(), dimensions__.getValue());
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 50
+            case 58:
+              {
+                input.readMessage(
+                    getProducerQuotaPolicyFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1579,6 +1672,195 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
       return adminOverrideBuilder_;
     }
 
+    private com.google.api.serviceusage.v1beta1.ProducerQuotaPolicy producerQuotaPolicy_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.api.serviceusage.v1beta1.ProducerQuotaPolicy,
+            com.google.api.serviceusage.v1beta1.ProducerQuotaPolicy.Builder,
+            com.google.api.serviceusage.v1beta1.ProducerQuotaPolicyOrBuilder>
+        producerQuotaPolicyBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Producer policy inherited from the closet ancestor of the current consumer.
+     * </pre>
+     *
+     * <code>.google.api.serviceusage.v1beta1.ProducerQuotaPolicy producer_quota_policy = 7;</code>
+     *
+     * @return Whether the producerQuotaPolicy field is set.
+     */
+    public boolean hasProducerQuotaPolicy() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Producer policy inherited from the closet ancestor of the current consumer.
+     * </pre>
+     *
+     * <code>.google.api.serviceusage.v1beta1.ProducerQuotaPolicy producer_quota_policy = 7;</code>
+     *
+     * @return The producerQuotaPolicy.
+     */
+    public com.google.api.serviceusage.v1beta1.ProducerQuotaPolicy getProducerQuotaPolicy() {
+      if (producerQuotaPolicyBuilder_ == null) {
+        return producerQuotaPolicy_ == null
+            ? com.google.api.serviceusage.v1beta1.ProducerQuotaPolicy.getDefaultInstance()
+            : producerQuotaPolicy_;
+      } else {
+        return producerQuotaPolicyBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Producer policy inherited from the closet ancestor of the current consumer.
+     * </pre>
+     *
+     * <code>.google.api.serviceusage.v1beta1.ProducerQuotaPolicy producer_quota_policy = 7;</code>
+     */
+    public Builder setProducerQuotaPolicy(
+        com.google.api.serviceusage.v1beta1.ProducerQuotaPolicy value) {
+      if (producerQuotaPolicyBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        producerQuotaPolicy_ = value;
+      } else {
+        producerQuotaPolicyBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Producer policy inherited from the closet ancestor of the current consumer.
+     * </pre>
+     *
+     * <code>.google.api.serviceusage.v1beta1.ProducerQuotaPolicy producer_quota_policy = 7;</code>
+     */
+    public Builder setProducerQuotaPolicy(
+        com.google.api.serviceusage.v1beta1.ProducerQuotaPolicy.Builder builderForValue) {
+      if (producerQuotaPolicyBuilder_ == null) {
+        producerQuotaPolicy_ = builderForValue.build();
+      } else {
+        producerQuotaPolicyBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Producer policy inherited from the closet ancestor of the current consumer.
+     * </pre>
+     *
+     * <code>.google.api.serviceusage.v1beta1.ProducerQuotaPolicy producer_quota_policy = 7;</code>
+     */
+    public Builder mergeProducerQuotaPolicy(
+        com.google.api.serviceusage.v1beta1.ProducerQuotaPolicy value) {
+      if (producerQuotaPolicyBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) != 0)
+            && producerQuotaPolicy_ != null
+            && producerQuotaPolicy_
+                != com.google.api.serviceusage.v1beta1.ProducerQuotaPolicy.getDefaultInstance()) {
+          getProducerQuotaPolicyBuilder().mergeFrom(value);
+        } else {
+          producerQuotaPolicy_ = value;
+        }
+      } else {
+        producerQuotaPolicyBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Producer policy inherited from the closet ancestor of the current consumer.
+     * </pre>
+     *
+     * <code>.google.api.serviceusage.v1beta1.ProducerQuotaPolicy producer_quota_policy = 7;</code>
+     */
+    public Builder clearProducerQuotaPolicy() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      producerQuotaPolicy_ = null;
+      if (producerQuotaPolicyBuilder_ != null) {
+        producerQuotaPolicyBuilder_.dispose();
+        producerQuotaPolicyBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Producer policy inherited from the closet ancestor of the current consumer.
+     * </pre>
+     *
+     * <code>.google.api.serviceusage.v1beta1.ProducerQuotaPolicy producer_quota_policy = 7;</code>
+     */
+    public com.google.api.serviceusage.v1beta1.ProducerQuotaPolicy.Builder
+        getProducerQuotaPolicyBuilder() {
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return getProducerQuotaPolicyFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Producer policy inherited from the closet ancestor of the current consumer.
+     * </pre>
+     *
+     * <code>.google.api.serviceusage.v1beta1.ProducerQuotaPolicy producer_quota_policy = 7;</code>
+     */
+    public com.google.api.serviceusage.v1beta1.ProducerQuotaPolicyOrBuilder
+        getProducerQuotaPolicyOrBuilder() {
+      if (producerQuotaPolicyBuilder_ != null) {
+        return producerQuotaPolicyBuilder_.getMessageOrBuilder();
+      } else {
+        return producerQuotaPolicy_ == null
+            ? com.google.api.serviceusage.v1beta1.ProducerQuotaPolicy.getDefaultInstance()
+            : producerQuotaPolicy_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Producer policy inherited from the closet ancestor of the current consumer.
+     * </pre>
+     *
+     * <code>.google.api.serviceusage.v1beta1.ProducerQuotaPolicy producer_quota_policy = 7;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.api.serviceusage.v1beta1.ProducerQuotaPolicy,
+            com.google.api.serviceusage.v1beta1.ProducerQuotaPolicy.Builder,
+            com.google.api.serviceusage.v1beta1.ProducerQuotaPolicyOrBuilder>
+        getProducerQuotaPolicyFieldBuilder() {
+      if (producerQuotaPolicyBuilder_ == null) {
+        producerQuotaPolicyBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.api.serviceusage.v1beta1.ProducerQuotaPolicy,
+                com.google.api.serviceusage.v1beta1.ProducerQuotaPolicy.Builder,
+                com.google.api.serviceusage.v1beta1.ProducerQuotaPolicyOrBuilder>(
+                getProducerQuotaPolicy(), getParentForChildren(), isClean());
+        producerQuotaPolicy_ = null;
+      }
+      return producerQuotaPolicyBuilder_;
+    }
+
     private com.google.protobuf.MapField<java.lang.String, java.lang.String> dimensions_;
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
@@ -1599,7 +1881,7 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
       if (!dimensions_.isMutable()) {
         dimensions_ = dimensions_.copy();
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return dimensions_;
     }
@@ -1612,10 +1894,13 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The dimensions of this quota bucket.
+     *
      * If this map is empty, this is the global bucket, which is the default quota
      * value applied to all requests that do not have a more specific override.
+     *
      * If this map is nonempty, the default limit, effective limit, and quota
      * overrides apply only to requests that have the dimensions given in the map.
+     *
      * For example, if the map has key `region` and value `us-east-1`, then the
      * specified effective limit is only effective in that region, and the
      * specified overrides apply only in that region.
@@ -1641,10 +1926,13 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The dimensions of this quota bucket.
+     *
      * If this map is empty, this is the global bucket, which is the default quota
      * value applied to all requests that do not have a more specific override.
+     *
      * If this map is nonempty, the default limit, effective limit, and quota
      * overrides apply only to requests that have the dimensions given in the map.
+     *
      * For example, if the map has key `region` and value `us-east-1`, then the
      * specified effective limit is only effective in that region, and the
      * specified overrides apply only in that region.
@@ -1661,10 +1949,13 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The dimensions of this quota bucket.
+     *
      * If this map is empty, this is the global bucket, which is the default quota
      * value applied to all requests that do not have a more specific override.
+     *
      * If this map is nonempty, the default limit, effective limit, and quota
      * overrides apply only to requests that have the dimensions given in the map.
+     *
      * For example, if the map has key `region` and value `us-east-1`, then the
      * specified effective limit is only effective in that region, and the
      * specified overrides apply only in that region.
@@ -1688,10 +1979,13 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The dimensions of this quota bucket.
+     *
      * If this map is empty, this is the global bucket, which is the default quota
      * value applied to all requests that do not have a more specific override.
+     *
      * If this map is nonempty, the default limit, effective limit, and quota
      * overrides apply only to requests that have the dimensions given in the map.
+     *
      * For example, if the map has key `region` and value `us-east-1`, then the
      * specified effective limit is only effective in that region, and the
      * specified overrides apply only in that region.
@@ -1712,7 +2006,7 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearDimensions() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       internalGetMutableDimensions().getMutableMap().clear();
       return this;
     }
@@ -1721,10 +2015,13 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The dimensions of this quota bucket.
+     *
      * If this map is empty, this is the global bucket, which is the default quota
      * value applied to all requests that do not have a more specific override.
+     *
      * If this map is nonempty, the default limit, effective limit, and quota
      * overrides apply only to requests that have the dimensions given in the map.
+     *
      * For example, if the map has key `region` and value `us-east-1`, then the
      * specified effective limit is only effective in that region, and the
      * specified overrides apply only in that region.
@@ -1742,7 +2039,7 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableDimensions() {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       return internalGetMutableDimensions().getMutableMap();
     }
     /**
@@ -1750,10 +2047,13 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The dimensions of this quota bucket.
+     *
      * If this map is empty, this is the global bucket, which is the default quota
      * value applied to all requests that do not have a more specific override.
+     *
      * If this map is nonempty, the default limit, effective limit, and quota
      * overrides apply only to requests that have the dimensions given in the map.
+     *
      * For example, if the map has key `region` and value `us-east-1`, then the
      * specified effective limit is only effective in that region, and the
      * specified overrides apply only in that region.
@@ -1769,7 +2069,7 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException("map value");
       }
       internalGetMutableDimensions().getMutableMap().put(key, value);
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       return this;
     }
     /**
@@ -1777,10 +2077,13 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The dimensions of this quota bucket.
+     *
      * If this map is empty, this is the global bucket, which is the default quota
      * value applied to all requests that do not have a more specific override.
+     *
      * If this map is nonempty, the default limit, effective limit, and quota
      * overrides apply only to requests that have the dimensions given in the map.
+     *
      * For example, if the map has key `region` and value `us-east-1`, then the
      * specified effective limit is only effective in that region, and the
      * specified overrides apply only in that region.
@@ -1790,7 +2093,7 @@ public final class QuotaBucket extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllDimensions(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableDimensions().getMutableMap().putAll(values);
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       return this;
     }
 

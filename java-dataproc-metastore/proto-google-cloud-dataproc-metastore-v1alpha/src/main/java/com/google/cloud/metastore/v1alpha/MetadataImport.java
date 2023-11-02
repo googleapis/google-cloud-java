@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new MetadataImport();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -291,7 +286,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.database_type is
-     *     deprecated. See google/cloud/metastore/v1alpha/metastore.proto;l=699
+     *     deprecated. See google/cloud/metastore/v1alpha/metastore.proto;l=712
      * @return The enum numeric value on the wire for databaseType.
      */
     @java.lang.Deprecated
@@ -308,7 +303,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.database_type is
-     *     deprecated. See google/cloud/metastore/v1alpha/metastore.proto;l=699
+     *     deprecated. See google/cloud/metastore/v1alpha/metastore.proto;l=712
      * @return The databaseType.
      */
     @java.lang.Deprecated
@@ -351,7 +346,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
      * <code>string source_database = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.source_database is
-     *     deprecated. See google/cloud/metastore/v1alpha/metastore.proto;l=706
+     *     deprecated. See google/cloud/metastore/v1alpha/metastore.proto;l=719
      * @return The sourceDatabase.
      */
     @java.lang.Deprecated
@@ -366,7 +361,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
      * <code>string source_database = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.source_database is
-     *     deprecated. See google/cloud/metastore/v1alpha/metastore.proto;l=706
+     *     deprecated. See google/cloud/metastore/v1alpha/metastore.proto;l=719
      * @return The bytes for sourceDatabase.
      */
     @java.lang.Deprecated
@@ -434,11 +429,6 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new DatabaseDump();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -607,7 +597,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.database_type is
-     *     deprecated. See google/cloud/metastore/v1alpha/metastore.proto;l=699
+     *     deprecated. See google/cloud/metastore/v1alpha/metastore.proto;l=712
      * @return The enum numeric value on the wire for databaseType.
      */
     @java.lang.Override
@@ -627,7 +617,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.database_type is
-     *     deprecated. See google/cloud/metastore/v1alpha/metastore.proto;l=699
+     *     deprecated. See google/cloud/metastore/v1alpha/metastore.proto;l=712
      * @return The databaseType.
      */
     @java.lang.Override
@@ -709,7 +699,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
      * <code>string source_database = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.source_database is
-     *     deprecated. See google/cloud/metastore/v1alpha/metastore.proto;l=706
+     *     deprecated. See google/cloud/metastore/v1alpha/metastore.proto;l=719
      * @return The sourceDatabase.
      */
     @java.lang.Override
@@ -735,7 +725,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
      * <code>string source_database = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.source_database is
-     *     deprecated. See google/cloud/metastore/v1alpha/metastore.proto;l=706
+     *     deprecated. See google/cloud/metastore/v1alpha/metastore.proto;l=719
      * @return The bytes for sourceDatabase.
      */
     @java.lang.Override
@@ -1238,7 +1228,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.database_type is
-       *     deprecated. See google/cloud/metastore/v1alpha/metastore.proto;l=699
+       *     deprecated. See google/cloud/metastore/v1alpha/metastore.proto;l=712
        * @return The enum numeric value on the wire for databaseType.
        */
       @java.lang.Override
@@ -1258,7 +1248,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.database_type is
-       *     deprecated. See google/cloud/metastore/v1alpha/metastore.proto;l=699
+       *     deprecated. See google/cloud/metastore/v1alpha/metastore.proto;l=712
        * @param value The enum numeric value on the wire for databaseType to set.
        * @return This builder for chaining.
        */
@@ -1281,7 +1271,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.database_type is
-       *     deprecated. See google/cloud/metastore/v1alpha/metastore.proto;l=699
+       *     deprecated. See google/cloud/metastore/v1alpha/metastore.proto;l=712
        * @return The databaseType.
        */
       @java.lang.Override
@@ -1308,7 +1298,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.database_type is
-       *     deprecated. See google/cloud/metastore/v1alpha/metastore.proto;l=699
+       *     deprecated. See google/cloud/metastore/v1alpha/metastore.proto;l=712
        * @param value The databaseType to set.
        * @return This builder for chaining.
        */
@@ -1335,7 +1325,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.database_type is
-       *     deprecated. See google/cloud/metastore/v1alpha/metastore.proto;l=699
+       *     deprecated. See google/cloud/metastore/v1alpha/metastore.proto;l=712
        * @return This builder for chaining.
        */
       @java.lang.Deprecated
@@ -1468,7 +1458,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
        * <code>string source_database = 3 [deprecated = true];</code>
        *
        * @deprecated google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.source_database is
-       *     deprecated. See google/cloud/metastore/v1alpha/metastore.proto;l=706
+       *     deprecated. See google/cloud/metastore/v1alpha/metastore.proto;l=719
        * @return The sourceDatabase.
        */
       @java.lang.Deprecated
@@ -1493,7 +1483,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
        * <code>string source_database = 3 [deprecated = true];</code>
        *
        * @deprecated google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.source_database is
-       *     deprecated. See google/cloud/metastore/v1alpha/metastore.proto;l=706
+       *     deprecated. See google/cloud/metastore/v1alpha/metastore.proto;l=719
        * @return The bytes for sourceDatabase.
        */
       @java.lang.Deprecated
@@ -1518,7 +1508,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
        * <code>string source_database = 3 [deprecated = true];</code>
        *
        * @deprecated google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.source_database is
-       *     deprecated. See google/cloud/metastore/v1alpha/metastore.proto;l=706
+       *     deprecated. See google/cloud/metastore/v1alpha/metastore.proto;l=719
        * @param value The sourceDatabase to set.
        * @return This builder for chaining.
        */
@@ -1542,7 +1532,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
        * <code>string source_database = 3 [deprecated = true];</code>
        *
        * @deprecated google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.source_database is
-       *     deprecated. See google/cloud/metastore/v1alpha/metastore.proto;l=706
+       *     deprecated. See google/cloud/metastore/v1alpha/metastore.proto;l=719
        * @return This builder for chaining.
        */
       @java.lang.Deprecated
@@ -1562,7 +1552,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
        * <code>string source_database = 3 [deprecated = true];</code>
        *
        * @deprecated google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.source_database is
-       *     deprecated. See google/cloud/metastore/v1alpha/metastore.proto;l=706
+       *     deprecated. See google/cloud/metastore/v1alpha/metastore.proto;l=719
        * @param value The bytes for sourceDatabase to set.
        * @return This builder for chaining.
        */
@@ -1753,6 +1743,8 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int metadataCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object metadata_;
 
   public enum MetadataCase
@@ -1863,6 +1855,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Immutable. The relative resource name of the metadata import, of the form:
+   *
    * `projects/{project_number}/locations/{location_id}/services/{service_id}/metadataImports/{metadata_import_id}`.
    * </pre>
    *
@@ -1887,6 +1880,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Immutable. The relative resource name of the metadata import, of the form:
+   *
    * `projects/{project_number}/locations/{location_id}/services/{service_id}/metadataImports/{metadata_import_id}`.
    * </pre>
    *
@@ -2939,6 +2933,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Immutable. The relative resource name of the metadata import, of the form:
+     *
      * `projects/{project_number}/locations/{location_id}/services/{service_id}/metadataImports/{metadata_import_id}`.
      * </pre>
      *
@@ -2962,6 +2957,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Immutable. The relative resource name of the metadata import, of the form:
+     *
      * `projects/{project_number}/locations/{location_id}/services/{service_id}/metadataImports/{metadata_import_id}`.
      * </pre>
      *
@@ -2985,6 +2981,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Immutable. The relative resource name of the metadata import, of the form:
+     *
      * `projects/{project_number}/locations/{location_id}/services/{service_id}/metadataImports/{metadata_import_id}`.
      * </pre>
      *
@@ -3007,6 +3004,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Immutable. The relative resource name of the metadata import, of the form:
+     *
      * `projects/{project_number}/locations/{location_id}/services/{service_id}/metadataImports/{metadata_import_id}`.
      * </pre>
      *
@@ -3025,6 +3023,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Immutable. The relative resource name of the metadata import, of the form:
+     *
      * `projects/{project_number}/locations/{location_id}/services/{service_id}/metadataImports/{metadata_import_id}`.
      * </pre>
      *

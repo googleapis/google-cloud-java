@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,6 +30,7 @@ public interface DisplayVideo360AdvertiserLinkProposalOrBuilder
    * Output only. The resource name for this
    * DisplayVideo360AdvertiserLinkProposal resource. Format:
    * properties/{propertyId}/displayVideo360AdvertiserLinkProposals/{proposalId}
+   *
    * Note: proposalId is not the Display &amp; Video 360 Advertiser ID
    * </pre>
    *
@@ -45,6 +46,7 @@ public interface DisplayVideo360AdvertiserLinkProposalOrBuilder
    * Output only. The resource name for this
    * DisplayVideo360AdvertiserLinkProposal resource. Format:
    * properties/{propertyId}/displayVideo360AdvertiserLinkProposals/{proposalId}
+   *
    * Note: proposalId is not the Display &amp; Video 360 Advertiser ID
    * </pre>
    *

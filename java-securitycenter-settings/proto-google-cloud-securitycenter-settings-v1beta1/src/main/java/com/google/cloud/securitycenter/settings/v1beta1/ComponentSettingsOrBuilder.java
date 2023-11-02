@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -457,6 +457,6 @@ public interface ComponentSettingsOrBuilder
   com.google.cloud.securitycenter.settings.v1beta1.WebSecurityScannerOrBuilder
       getWebSecurityScannerSettingsOrBuilder();
 
-  public com.google.cloud.securitycenter.settings.v1beta1.ComponentSettings.SpecificSettingsCase
+  com.google.cloud.securitycenter.settings.v1beta1.ComponentSettings.SpecificSettingsCase
       getSpecificSettingsCase();
 }

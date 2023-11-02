@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,7 +38,7 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
   }
 
   private Pivot() {
-    fieldNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    fieldNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
     orderBys_ = java.util.Collections.emptyList();
     metricAggregations_ = java.util.Collections.emptyList();
   }
@@ -47,11 +47,6 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Pivot();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -72,7 +67,8 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
   public static final int FIELD_NAMES_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList fieldNames_;
+  private com.google.protobuf.LazyStringArrayList fieldNames_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -262,8 +258,9 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
    * The number of unique combinations of dimension values to return in this
    * pivot. The `limit` parameter is required. A `limit` of 10,000 is common for
    * single pivot requests.
+   *
    * The product of the `limit` for each `pivot` in a `RunPivotReportRequest`
-   * must not exceed 100,000. For example, a two pivot request with `limit:
+   * must not exceed 250,000. For example, a two pivot request with `limit:
    * 1000` in each pivot will fail because the product is `1,000,000`.
    * </pre>
    *
@@ -642,8 +639,7 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      fieldNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      fieldNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
       if (orderBysBuilder_ == null) {
         orderBys_ = java.util.Collections.emptyList();
       } else {
@@ -691,11 +687,6 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
     }
 
     private void buildPartialRepeatedFields(com.google.analytics.data.v1beta.Pivot result) {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        fieldNames_ = fieldNames_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.fieldNames_ = fieldNames_;
       if (orderBysBuilder_ == null) {
         if (((bitField0_ & 0x00000002) != 0)) {
           orderBys_ = java.util.Collections.unmodifiableList(orderBys_);
@@ -714,6 +705,10 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
 
     private void buildPartial0(com.google.analytics.data.v1beta.Pivot result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        fieldNames_.makeImmutable();
+        result.fieldNames_ = fieldNames_;
+      }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.offset_ = offset_;
       }
@@ -770,7 +765,7 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
       if (!other.fieldNames_.isEmpty()) {
         if (fieldNames_.isEmpty()) {
           fieldNames_ = other.fieldNames_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ |= 0x00000001;
         } else {
           ensureFieldNamesIsMutable();
           fieldNames_.addAll(other.fieldNames_);
@@ -916,14 +911,14 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList fieldNames_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList fieldNames_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureFieldNamesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!fieldNames_.isModifiable()) {
         fieldNames_ = new com.google.protobuf.LazyStringArrayList(fieldNames_);
-        bitField0_ |= 0x00000001;
       }
+      bitField0_ |= 0x00000001;
     }
     /**
      *
@@ -940,7 +935,8 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the fieldNames.
      */
     public com.google.protobuf.ProtocolStringList getFieldNamesList() {
-      return fieldNames_.getUnmodifiableView();
+      fieldNames_.makeImmutable();
+      return fieldNames_;
     }
     /**
      *
@@ -1017,6 +1013,7 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
       }
       ensureFieldNamesIsMutable();
       fieldNames_.set(index, value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1041,6 +1038,7 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
       }
       ensureFieldNamesIsMutable();
       fieldNames_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1062,6 +1060,7 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllFieldNames(java.lang.Iterable<java.lang.String> values) {
       ensureFieldNamesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, fieldNames_);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1080,8 +1079,9 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearFieldNames() {
-      fieldNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      fieldNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      ;
       onChanged();
       return this;
     }
@@ -1107,6 +1107,7 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureFieldNamesIsMutable();
       fieldNames_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1593,8 +1594,9 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
      * The number of unique combinations of dimension values to return in this
      * pivot. The `limit` parameter is required. A `limit` of 10,000 is common for
      * single pivot requests.
+     *
      * The product of the `limit` for each `pivot` in a `RunPivotReportRequest`
-     * must not exceed 100,000. For example, a two pivot request with `limit:
+     * must not exceed 250,000. For example, a two pivot request with `limit:
      * 1000` in each pivot will fail because the product is `1,000,000`.
      * </pre>
      *
@@ -1613,8 +1615,9 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
      * The number of unique combinations of dimension values to return in this
      * pivot. The `limit` parameter is required. A `limit` of 10,000 is common for
      * single pivot requests.
+     *
      * The product of the `limit` for each `pivot` in a `RunPivotReportRequest`
-     * must not exceed 100,000. For example, a two pivot request with `limit:
+     * must not exceed 250,000. For example, a two pivot request with `limit:
      * 1000` in each pivot will fail because the product is `1,000,000`.
      * </pre>
      *
@@ -1637,8 +1640,9 @@ public final class Pivot extends com.google.protobuf.GeneratedMessageV3
      * The number of unique combinations of dimension values to return in this
      * pivot. The `limit` parameter is required. A `limit` of 10,000 is common for
      * single pivot requests.
+     *
      * The product of the `limit` for each `pivot` in a `RunPivotReportRequest`
-     * must not exceed 100,000. For example, a two pivot request with `limit:
+     * must not exceed 250,000. For example, a two pivot request with `limit:
      * 1000` in each pivot will fail because the product is `1,000,000`.
      * </pre>
      *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,11 +44,6 @@ public final class UpdateDatasetRequest extends com.google.protobuf.GeneratedMes
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new UpdateDatasetRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -131,6 +126,7 @@ public final class UpdateDatasetRequest extends com.google.protobuf.GeneratedMes
    * Required. The update mask applies to the resource.
    * For the `FieldMask` definition, see
    * [google.protobuf.FieldMask][google.protobuf.FieldMask]. Updatable fields:
+   *
    *   * `display_name`
    *   * `description`
    *   * `labels`
@@ -152,6 +148,7 @@ public final class UpdateDatasetRequest extends com.google.protobuf.GeneratedMes
    * Required. The update mask applies to the resource.
    * For the `FieldMask` definition, see
    * [google.protobuf.FieldMask][google.protobuf.FieldMask]. Updatable fields:
+   *
    *   * `display_name`
    *   * `description`
    *   * `labels`
@@ -173,6 +170,7 @@ public final class UpdateDatasetRequest extends com.google.protobuf.GeneratedMes
    * Required. The update mask applies to the resource.
    * For the `FieldMask` definition, see
    * [google.protobuf.FieldMask][google.protobuf.FieldMask]. Updatable fields:
+   *
    *   * `display_name`
    *   * `description`
    *   * `labels`
@@ -782,6 +780,7 @@ public final class UpdateDatasetRequest extends com.google.protobuf.GeneratedMes
      * Required. The update mask applies to the resource.
      * For the `FieldMask` definition, see
      * [google.protobuf.FieldMask][google.protobuf.FieldMask]. Updatable fields:
+     *
      *   * `display_name`
      *   * `description`
      *   * `labels`
@@ -802,6 +801,7 @@ public final class UpdateDatasetRequest extends com.google.protobuf.GeneratedMes
      * Required. The update mask applies to the resource.
      * For the `FieldMask` definition, see
      * [google.protobuf.FieldMask][google.protobuf.FieldMask]. Updatable fields:
+     *
      *   * `display_name`
      *   * `description`
      *   * `labels`
@@ -828,6 +828,7 @@ public final class UpdateDatasetRequest extends com.google.protobuf.GeneratedMes
      * Required. The update mask applies to the resource.
      * For the `FieldMask` definition, see
      * [google.protobuf.FieldMask][google.protobuf.FieldMask]. Updatable fields:
+     *
      *   * `display_name`
      *   * `description`
      *   * `labels`
@@ -856,6 +857,7 @@ public final class UpdateDatasetRequest extends com.google.protobuf.GeneratedMes
      * Required. The update mask applies to the resource.
      * For the `FieldMask` definition, see
      * [google.protobuf.FieldMask][google.protobuf.FieldMask]. Updatable fields:
+     *
      *   * `display_name`
      *   * `description`
      *   * `labels`
@@ -881,6 +883,7 @@ public final class UpdateDatasetRequest extends com.google.protobuf.GeneratedMes
      * Required. The update mask applies to the resource.
      * For the `FieldMask` definition, see
      * [google.protobuf.FieldMask][google.protobuf.FieldMask]. Updatable fields:
+     *
      *   * `display_name`
      *   * `description`
      *   * `labels`
@@ -912,6 +915,7 @@ public final class UpdateDatasetRequest extends com.google.protobuf.GeneratedMes
      * Required. The update mask applies to the resource.
      * For the `FieldMask` definition, see
      * [google.protobuf.FieldMask][google.protobuf.FieldMask]. Updatable fields:
+     *
      *   * `display_name`
      *   * `description`
      *   * `labels`
@@ -937,6 +941,7 @@ public final class UpdateDatasetRequest extends com.google.protobuf.GeneratedMes
      * Required. The update mask applies to the resource.
      * For the `FieldMask` definition, see
      * [google.protobuf.FieldMask][google.protobuf.FieldMask]. Updatable fields:
+     *
      *   * `display_name`
      *   * `description`
      *   * `labels`
@@ -957,6 +962,7 @@ public final class UpdateDatasetRequest extends com.google.protobuf.GeneratedMes
      * Required. The update mask applies to the resource.
      * For the `FieldMask` definition, see
      * [google.protobuf.FieldMask][google.protobuf.FieldMask]. Updatable fields:
+     *
      *   * `display_name`
      *   * `description`
      *   * `labels`
@@ -981,6 +987,7 @@ public final class UpdateDatasetRequest extends com.google.protobuf.GeneratedMes
      * Required. The update mask applies to the resource.
      * For the `FieldMask` definition, see
      * [google.protobuf.FieldMask][google.protobuf.FieldMask]. Updatable fields:
+     *
      *   * `display_name`
      *   * `description`
      *   * `labels`

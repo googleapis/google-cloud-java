@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class AudioInput extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new AudioInput();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -134,6 +129,7 @@ public final class AudioInput extends com.google.protobuf.GeneratedMessageV3
    * The [transcribed
    * text][google.cloud.dialogflow.cx.v3beta1.QueryResult.transcript] cannot
    * contain more than 256 bytes.
+   *
    * For non-streaming audio detect intent, both `config` and `audio` must be
    * provided.
    * For streaming audio detect intent, `config` must be provided in
@@ -733,6 +729,7 @@ public final class AudioInput extends com.google.protobuf.GeneratedMessageV3
      * The [transcribed
      * text][google.cloud.dialogflow.cx.v3beta1.QueryResult.transcript] cannot
      * contain more than 256 bytes.
+     *
      * For non-streaming audio detect intent, both `config` and `audio` must be
      * provided.
      * For streaming audio detect intent, `config` must be provided in
@@ -756,6 +753,7 @@ public final class AudioInput extends com.google.protobuf.GeneratedMessageV3
      * The [transcribed
      * text][google.cloud.dialogflow.cx.v3beta1.QueryResult.transcript] cannot
      * contain more than 256 bytes.
+     *
      * For non-streaming audio detect intent, both `config` and `audio` must be
      * provided.
      * For streaming audio detect intent, `config` must be provided in
@@ -785,6 +783,7 @@ public final class AudioInput extends com.google.protobuf.GeneratedMessageV3
      * The [transcribed
      * text][google.cloud.dialogflow.cx.v3beta1.QueryResult.transcript] cannot
      * contain more than 256 bytes.
+     *
      * For non-streaming audio detect intent, both `config` and `audio` must be
      * provided.
      * For streaming audio detect intent, `config` must be provided in

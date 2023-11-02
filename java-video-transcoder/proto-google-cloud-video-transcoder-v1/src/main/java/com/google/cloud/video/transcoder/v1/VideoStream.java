@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
     return new VideoStream();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.video.transcoder.v1.ResourcesProto
         .internal_static_google_cloud_video_transcoder_v1_VideoStream_descriptor;
@@ -77,6 +72,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * The width of the video in pixels. Must be an even integer.
      * When not specified, the width is adjusted to match the specified height
      * and input aspect ratio. If both are omitted, the input width is used.
+     *
      * For portrait videos that contain horizontal ASR and rotation metadata,
      * provide the width, in pixels, per the horizontal ASR. The API calculates
      * the height per the horizontal ASR. The API detects any rotation metadata
@@ -96,6 +92,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * The height of the video in pixels. Must be an even integer.
      * When not specified, the height is adjusted to match the specified width
      * and input aspect ratio. If both are omitted, the input height is used.
+     *
      * For portrait videos that contain horizontal ASR and rotation metadata,
      * provide the height, in pixels, per the horizontal ASR. The API calculates
      * the width per the horizontal ASR. The API detects any rotation metadata
@@ -146,7 +143,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Pixel format to use. The default is `yuv420p`.
+     *
      * Supported pixel formats:
+     *
      * - `yuv420p` pixel format
      * - `yuv422p` pixel format
      * - `yuv444p` pixel format
@@ -168,7 +167,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Pixel format to use. The default is `yuv420p`.
+     *
      * Supported pixel formats:
+     *
      * - `yuv420p` pixel format
      * - `yuv422p` pixel format
      * - `yuv444p` pixel format
@@ -191,7 +192,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Specify the `rate_control_mode`. The default is `vbr`.
+     *
      * Supported rate control modes:
+     *
      * - `vbr` - variable bitrate
      * - `crf` - constant rate factor
      * </pre>
@@ -206,7 +209,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Specify the `rate_control_mode`. The default is `vbr`.
+     *
      * Supported rate control modes:
+     *
      * - `vbr` - variable bitrate
      * - `crf` - constant rate factor
      * </pre>
@@ -367,7 +372,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The entropy coder to use. The default is `cabac`.
+     *
      * Supported entropy coders:
+     *
      * - `cavlc`
      * - `cabac`
      * </pre>
@@ -382,7 +389,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The entropy coder to use. The default is `cabac`.
+     *
      * Supported entropy coders:
+     *
      * - `cavlc`
      * - `cabac`
      * </pre>
@@ -443,9 +452,11 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Enforces the specified codec profile. The following profiles are
      * supported:
+     *
      * *   `baseline`
      * *   `main`
      * *   `high` (default)
+     *
      * The available options are
      * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.264#Tune).
      * Note that certain values for this field may cause the
@@ -464,9 +475,11 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Enforces the specified codec profile. The following profiles are
      * supported:
+     *
      * *   `baseline`
      * *   `main`
      * *   `high` (default)
+     *
      * The available options are
      * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.264#Tune).
      * Note that certain values for this field may cause the
@@ -548,8 +561,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getPresetBytes();
 
-    public com.google.cloud.video.transcoder.v1.VideoStream.H264CodecSettings.GopModeCase
-        getGopModeCase();
+    com.google.cloud.video.transcoder.v1.VideoStream.H264CodecSettings.GopModeCase getGopModeCase();
   }
   /**
    *
@@ -585,11 +597,6 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       return new H264CodecSettings();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.video.transcoder.v1.ResourcesProto
           .internal_static_google_cloud_video_transcoder_v1_VideoStream_H264CodecSettings_descriptor;
@@ -606,6 +613,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int gopModeCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object gopMode_;
 
     public enum GopModeCase
@@ -661,6 +670,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * The width of the video in pixels. Must be an even integer.
      * When not specified, the width is adjusted to match the specified height
      * and input aspect ratio. If both are omitted, the input width is used.
+     *
      * For portrait videos that contain horizontal ASR and rotation metadata,
      * provide the width, in pixels, per the horizontal ASR. The API calculates
      * the height per the horizontal ASR. The API detects any rotation metadata
@@ -685,6 +695,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * The height of the video in pixels. Must be an even integer.
      * When not specified, the height is adjusted to match the specified width
      * and input aspect ratio. If both are omitted, the input height is used.
+     *
      * For portrait videos that contain horizontal ASR and rotation metadata,
      * provide the height, in pixels, per the horizontal ASR. The API calculates
      * the width per the horizontal ASR. The API detects any rotation metadata
@@ -752,7 +763,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Pixel format to use. The default is `yuv420p`.
+     *
      * Supported pixel formats:
+     *
      * - `yuv420p` pixel format
      * - `yuv422p` pixel format
      * - `yuv444p` pixel format
@@ -785,7 +798,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Pixel format to use. The default is `yuv420p`.
+     *
      * Supported pixel formats:
+     *
      * - `yuv420p` pixel format
      * - `yuv422p` pixel format
      * - `yuv444p` pixel format
@@ -823,7 +838,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Specify the `rate_control_mode`. The default is `vbr`.
+     *
      * Supported rate control modes:
+     *
      * - `vbr` - variable bitrate
      * - `crf` - constant rate factor
      * </pre>
@@ -849,7 +866,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Specify the `rate_control_mode`. The default is `vbr`.
+     *
      * Supported rate control modes:
+     *
      * - `vbr` - variable bitrate
      * - `crf` - constant rate factor
      * </pre>
@@ -1076,7 +1095,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The entropy coder to use. The default is `cabac`.
+     *
      * Supported entropy coders:
+     *
      * - `cavlc`
      * - `cabac`
      * </pre>
@@ -1102,7 +1123,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The entropy coder to use. The default is `cabac`.
+     *
      * Supported entropy coders:
+     *
      * - `cavlc`
      * - `cabac`
      * </pre>
@@ -1193,9 +1216,11 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Enforces the specified codec profile. The following profiles are
      * supported:
+     *
      * *   `baseline`
      * *   `main`
      * *   `high` (default)
+     *
      * The available options are
      * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.264#Tune).
      * Note that certain values for this field may cause the
@@ -1225,9 +1250,11 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Enforces the specified codec profile. The following profiles are
      * supported:
+     *
      * *   `baseline`
      * *   `main`
      * *   `high` (default)
+     *
      * The available options are
      * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.264#Tune).
      * Note that certain values for this field may cause the
@@ -2223,6 +2250,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * The width of the video in pixels. Must be an even integer.
        * When not specified, the width is adjusted to match the specified height
        * and input aspect ratio. If both are omitted, the input width is used.
+       *
        * For portrait videos that contain horizontal ASR and rotation metadata,
        * provide the width, in pixels, per the horizontal ASR. The API calculates
        * the height per the horizontal ASR. The API detects any rotation metadata
@@ -2244,6 +2272,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * The width of the video in pixels. Must be an even integer.
        * When not specified, the width is adjusted to match the specified height
        * and input aspect ratio. If both are omitted, the input width is used.
+       *
        * For portrait videos that contain horizontal ASR and rotation metadata,
        * provide the width, in pixels, per the horizontal ASR. The API calculates
        * the height per the horizontal ASR. The API detects any rotation metadata
@@ -2269,6 +2298,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * The width of the video in pixels. Must be an even integer.
        * When not specified, the width is adjusted to match the specified height
        * and input aspect ratio. If both are omitted, the input width is used.
+       *
        * For portrait videos that contain horizontal ASR and rotation metadata,
        * provide the width, in pixels, per the horizontal ASR. The API calculates
        * the height per the horizontal ASR. The API detects any rotation metadata
@@ -2294,6 +2324,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * The height of the video in pixels. Must be an even integer.
        * When not specified, the height is adjusted to match the specified width
        * and input aspect ratio. If both are omitted, the input height is used.
+       *
        * For portrait videos that contain horizontal ASR and rotation metadata,
        * provide the height, in pixels, per the horizontal ASR. The API calculates
        * the width per the horizontal ASR. The API detects any rotation metadata
@@ -2315,6 +2346,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * The height of the video in pixels. Must be an even integer.
        * When not specified, the height is adjusted to match the specified width
        * and input aspect ratio. If both are omitted, the input height is used.
+       *
        * For portrait videos that contain horizontal ASR and rotation metadata,
        * provide the height, in pixels, per the horizontal ASR. The API calculates
        * the width per the horizontal ASR. The API detects any rotation metadata
@@ -2340,6 +2372,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * The height of the video in pixels. Must be an even integer.
        * When not specified, the height is adjusted to match the specified width
        * and input aspect ratio. If both are omitted, the input height is used.
+       *
        * For portrait videos that contain horizontal ASR and rotation metadata,
        * provide the height, in pixels, per the horizontal ASR. The API calculates
        * the width per the horizontal ASR. The API detects any rotation metadata
@@ -2490,7 +2523,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Pixel format to use. The default is `yuv420p`.
+       *
        * Supported pixel formats:
+       *
        * - `yuv420p` pixel format
        * - `yuv422p` pixel format
        * - `yuv444p` pixel format
@@ -2522,7 +2557,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Pixel format to use. The default is `yuv420p`.
+       *
        * Supported pixel formats:
+       *
        * - `yuv420p` pixel format
        * - `yuv422p` pixel format
        * - `yuv444p` pixel format
@@ -2554,7 +2591,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Pixel format to use. The default is `yuv420p`.
+       *
        * Supported pixel formats:
+       *
        * - `yuv420p` pixel format
        * - `yuv422p` pixel format
        * - `yuv444p` pixel format
@@ -2585,7 +2624,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Pixel format to use. The default is `yuv420p`.
+       *
        * Supported pixel formats:
+       *
        * - `yuv420p` pixel format
        * - `yuv422p` pixel format
        * - `yuv444p` pixel format
@@ -2612,7 +2653,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Pixel format to use. The default is `yuv420p`.
+       *
        * Supported pixel formats:
+       *
        * - `yuv420p` pixel format
        * - `yuv422p` pixel format
        * - `yuv444p` pixel format
@@ -2646,7 +2689,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Specify the `rate_control_mode`. The default is `vbr`.
+       *
        * Supported rate control modes:
+       *
        * - `vbr` - variable bitrate
        * - `crf` - constant rate factor
        * </pre>
@@ -2671,7 +2716,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Specify the `rate_control_mode`. The default is `vbr`.
+       *
        * Supported rate control modes:
+       *
        * - `vbr` - variable bitrate
        * - `crf` - constant rate factor
        * </pre>
@@ -2696,7 +2743,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Specify the `rate_control_mode`. The default is `vbr`.
+       *
        * Supported rate control modes:
+       *
        * - `vbr` - variable bitrate
        * - `crf` - constant rate factor
        * </pre>
@@ -2720,7 +2769,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Specify the `rate_control_mode`. The default is `vbr`.
+       *
        * Supported rate control modes:
+       *
        * - `vbr` - variable bitrate
        * - `crf` - constant rate factor
        * </pre>
@@ -2740,7 +2791,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Specify the `rate_control_mode`. The default is `vbr`.
+       *
        * Supported rate control modes:
+       *
        * - `vbr` - variable bitrate
        * - `crf` - constant rate factor
        * </pre>
@@ -3364,7 +3417,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The entropy coder to use. The default is `cabac`.
+       *
        * Supported entropy coders:
+       *
        * - `cavlc`
        * - `cabac`
        * </pre>
@@ -3389,7 +3444,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The entropy coder to use. The default is `cabac`.
+       *
        * Supported entropy coders:
+       *
        * - `cavlc`
        * - `cabac`
        * </pre>
@@ -3414,7 +3471,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The entropy coder to use. The default is `cabac`.
+       *
        * Supported entropy coders:
+       *
        * - `cavlc`
        * - `cabac`
        * </pre>
@@ -3438,7 +3497,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The entropy coder to use. The default is `cabac`.
+       *
        * Supported entropy coders:
+       *
        * - `cavlc`
        * - `cabac`
        * </pre>
@@ -3458,7 +3519,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The entropy coder to use. The default is `cabac`.
+       *
        * Supported entropy coders:
+       *
        * - `cavlc`
        * - `cabac`
        * </pre>
@@ -3660,9 +3723,11 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Enforces the specified codec profile. The following profiles are
        * supported:
+       *
        * *   `baseline`
        * *   `main`
        * *   `high` (default)
+       *
        * The available options are
        * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.264#Tune).
        * Note that certain values for this field may cause the
@@ -3691,9 +3756,11 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Enforces the specified codec profile. The following profiles are
        * supported:
+       *
        * *   `baseline`
        * *   `main`
        * *   `high` (default)
+       *
        * The available options are
        * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.264#Tune).
        * Note that certain values for this field may cause the
@@ -3722,9 +3789,11 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Enforces the specified codec profile. The following profiles are
        * supported:
+       *
        * *   `baseline`
        * *   `main`
        * *   `high` (default)
+       *
        * The available options are
        * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.264#Tune).
        * Note that certain values for this field may cause the
@@ -3752,9 +3821,11 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Enforces the specified codec profile. The following profiles are
        * supported:
+       *
        * *   `baseline`
        * *   `main`
        * *   `high` (default)
+       *
        * The available options are
        * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.264#Tune).
        * Note that certain values for this field may cause the
@@ -3778,9 +3849,11 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Enforces the specified codec profile. The following profiles are
        * supported:
+       *
        * *   `baseline`
        * *   `main`
        * *   `high` (default)
+       *
        * The available options are
        * [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.264#Tune).
        * Note that certain values for this field may cause the
@@ -4140,6 +4213,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * The width of the video in pixels. Must be an even integer.
      * When not specified, the width is adjusted to match the specified height
      * and input aspect ratio. If both are omitted, the input width is used.
+     *
      * For portrait videos that contain horizontal ASR and rotation metadata,
      * provide the width, in pixels, per the horizontal ASR. The API calculates
      * the height per the horizontal ASR. The API detects any rotation metadata
@@ -4159,6 +4233,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * The height of the video in pixels. Must be an even integer.
      * When not specified, the height is adjusted to match the specified width
      * and input aspect ratio. If both are omitted, the input height is used.
+     *
      * For portrait videos that contain horizontal ASR and rotation metadata,
      * provide the height, in pixels, per the horizontal ASR. The API calculates
      * the width per the horizontal ASR. The API detects any rotation metadata
@@ -4209,7 +4284,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Pixel format to use. The default is `yuv420p`.
+     *
      * Supported pixel formats:
+     *
      * - `yuv420p` pixel format
      * - `yuv422p` pixel format
      * - `yuv444p` pixel format
@@ -4231,7 +4308,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Pixel format to use. The default is `yuv420p`.
+     *
      * Supported pixel formats:
+     *
      * - `yuv420p` pixel format
      * - `yuv422p` pixel format
      * - `yuv444p` pixel format
@@ -4254,7 +4333,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Specify the `rate_control_mode`. The default is `vbr`.
+     *
      * Supported rate control modes:
+     *
      * - `vbr` - variable bitrate
      * - `crf` - constant rate factor
      * </pre>
@@ -4269,7 +4350,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Specify the `rate_control_mode`. The default is `vbr`.
+     *
      * Supported rate control modes:
+     *
      * - `vbr` - variable bitrate
      * - `crf` - constant rate factor
      * </pre>
@@ -4475,6 +4558,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Enforces the specified codec profile. The following profiles are
      * supported:
+     *
      * *   8-bit profiles
      *     *   `main` (default)
      *     *   `main-intra`
@@ -4493,6 +4577,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *     *   `main422-12-intra`
      *     *   `main444-12`
      *     *   `main444-12-intra`
+     *
      * The available options are
      * [FFmpeg-compatible](https://x265.readthedocs.io/).
      * Note that certain values for this field may cause the
@@ -4511,6 +4596,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Enforces the specified codec profile. The following profiles are
      * supported:
+     *
      * *   8-bit profiles
      *     *   `main` (default)
      *     *   `main-intra`
@@ -4529,6 +4615,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *     *   `main422-12-intra`
      *     *   `main444-12`
      *     *   `main444-12-intra`
+     *
      * The available options are
      * [FFmpeg-compatible](https://x265.readthedocs.io/).
      * Note that certain values for this field may cause the
@@ -4610,8 +4697,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getPresetBytes();
 
-    public com.google.cloud.video.transcoder.v1.VideoStream.H265CodecSettings.GopModeCase
-        getGopModeCase();
+    com.google.cloud.video.transcoder.v1.VideoStream.H265CodecSettings.GopModeCase getGopModeCase();
   }
   /**
    *
@@ -4646,11 +4732,6 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       return new H265CodecSettings();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.video.transcoder.v1.ResourcesProto
           .internal_static_google_cloud_video_transcoder_v1_VideoStream_H265CodecSettings_descriptor;
@@ -4667,6 +4748,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int gopModeCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object gopMode_;
 
     public enum GopModeCase
@@ -4722,6 +4805,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * The width of the video in pixels. Must be an even integer.
      * When not specified, the width is adjusted to match the specified height
      * and input aspect ratio. If both are omitted, the input width is used.
+     *
      * For portrait videos that contain horizontal ASR and rotation metadata,
      * provide the width, in pixels, per the horizontal ASR. The API calculates
      * the height per the horizontal ASR. The API detects any rotation metadata
@@ -4746,6 +4830,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * The height of the video in pixels. Must be an even integer.
      * When not specified, the height is adjusted to match the specified width
      * and input aspect ratio. If both are omitted, the input height is used.
+     *
      * For portrait videos that contain horizontal ASR and rotation metadata,
      * provide the height, in pixels, per the horizontal ASR. The API calculates
      * the width per the horizontal ASR. The API detects any rotation metadata
@@ -4813,7 +4898,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Pixel format to use. The default is `yuv420p`.
+     *
      * Supported pixel formats:
+     *
      * - `yuv420p` pixel format
      * - `yuv422p` pixel format
      * - `yuv444p` pixel format
@@ -4846,7 +4933,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Pixel format to use. The default is `yuv420p`.
+     *
      * Supported pixel formats:
+     *
      * - `yuv420p` pixel format
      * - `yuv422p` pixel format
      * - `yuv444p` pixel format
@@ -4884,7 +4973,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Specify the `rate_control_mode`. The default is `vbr`.
+     *
      * Supported rate control modes:
+     *
      * - `vbr` - variable bitrate
      * - `crf` - constant rate factor
      * </pre>
@@ -4910,7 +5001,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Specify the `rate_control_mode`. The default is `vbr`.
+     *
      * Supported rate control modes:
+     *
      * - `vbr` - variable bitrate
      * - `crf` - constant rate factor
      * </pre>
@@ -5197,6 +5290,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Enforces the specified codec profile. The following profiles are
      * supported:
+     *
      * *   8-bit profiles
      *     *   `main` (default)
      *     *   `main-intra`
@@ -5215,6 +5309,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *     *   `main422-12-intra`
      *     *   `main444-12`
      *     *   `main444-12-intra`
+     *
      * The available options are
      * [FFmpeg-compatible](https://x265.readthedocs.io/).
      * Note that certain values for this field may cause the
@@ -5244,6 +5339,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Enforces the specified codec profile. The following profiles are
      * supported:
+     *
      * *   8-bit profiles
      *     *   `main` (default)
      *     *   `main-intra`
@@ -5262,6 +5358,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *     *   `main422-12-intra`
      *     *   `main444-12`
      *     *   `main444-12-intra`
+     *
      * The available options are
      * [FFmpeg-compatible](https://x265.readthedocs.io/).
      * Note that certain values for this field may cause the
@@ -6233,6 +6330,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * The width of the video in pixels. Must be an even integer.
        * When not specified, the width is adjusted to match the specified height
        * and input aspect ratio. If both are omitted, the input width is used.
+       *
        * For portrait videos that contain horizontal ASR and rotation metadata,
        * provide the width, in pixels, per the horizontal ASR. The API calculates
        * the height per the horizontal ASR. The API detects any rotation metadata
@@ -6254,6 +6352,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * The width of the video in pixels. Must be an even integer.
        * When not specified, the width is adjusted to match the specified height
        * and input aspect ratio. If both are omitted, the input width is used.
+       *
        * For portrait videos that contain horizontal ASR and rotation metadata,
        * provide the width, in pixels, per the horizontal ASR. The API calculates
        * the height per the horizontal ASR. The API detects any rotation metadata
@@ -6279,6 +6378,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * The width of the video in pixels. Must be an even integer.
        * When not specified, the width is adjusted to match the specified height
        * and input aspect ratio. If both are omitted, the input width is used.
+       *
        * For portrait videos that contain horizontal ASR and rotation metadata,
        * provide the width, in pixels, per the horizontal ASR. The API calculates
        * the height per the horizontal ASR. The API detects any rotation metadata
@@ -6304,6 +6404,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * The height of the video in pixels. Must be an even integer.
        * When not specified, the height is adjusted to match the specified width
        * and input aspect ratio. If both are omitted, the input height is used.
+       *
        * For portrait videos that contain horizontal ASR and rotation metadata,
        * provide the height, in pixels, per the horizontal ASR. The API calculates
        * the width per the horizontal ASR. The API detects any rotation metadata
@@ -6325,6 +6426,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * The height of the video in pixels. Must be an even integer.
        * When not specified, the height is adjusted to match the specified width
        * and input aspect ratio. If both are omitted, the input height is used.
+       *
        * For portrait videos that contain horizontal ASR and rotation metadata,
        * provide the height, in pixels, per the horizontal ASR. The API calculates
        * the width per the horizontal ASR. The API detects any rotation metadata
@@ -6350,6 +6452,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * The height of the video in pixels. Must be an even integer.
        * When not specified, the height is adjusted to match the specified width
        * and input aspect ratio. If both are omitted, the input height is used.
+       *
        * For portrait videos that contain horizontal ASR and rotation metadata,
        * provide the height, in pixels, per the horizontal ASR. The API calculates
        * the width per the horizontal ASR. The API detects any rotation metadata
@@ -6500,7 +6603,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Pixel format to use. The default is `yuv420p`.
+       *
        * Supported pixel formats:
+       *
        * - `yuv420p` pixel format
        * - `yuv422p` pixel format
        * - `yuv444p` pixel format
@@ -6532,7 +6637,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Pixel format to use. The default is `yuv420p`.
+       *
        * Supported pixel formats:
+       *
        * - `yuv420p` pixel format
        * - `yuv422p` pixel format
        * - `yuv444p` pixel format
@@ -6564,7 +6671,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Pixel format to use. The default is `yuv420p`.
+       *
        * Supported pixel formats:
+       *
        * - `yuv420p` pixel format
        * - `yuv422p` pixel format
        * - `yuv444p` pixel format
@@ -6595,7 +6704,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Pixel format to use. The default is `yuv420p`.
+       *
        * Supported pixel formats:
+       *
        * - `yuv420p` pixel format
        * - `yuv422p` pixel format
        * - `yuv444p` pixel format
@@ -6622,7 +6733,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Pixel format to use. The default is `yuv420p`.
+       *
        * Supported pixel formats:
+       *
        * - `yuv420p` pixel format
        * - `yuv422p` pixel format
        * - `yuv444p` pixel format
@@ -6656,7 +6769,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Specify the `rate_control_mode`. The default is `vbr`.
+       *
        * Supported rate control modes:
+       *
        * - `vbr` - variable bitrate
        * - `crf` - constant rate factor
        * </pre>
@@ -6681,7 +6796,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Specify the `rate_control_mode`. The default is `vbr`.
+       *
        * Supported rate control modes:
+       *
        * - `vbr` - variable bitrate
        * - `crf` - constant rate factor
        * </pre>
@@ -6706,7 +6823,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Specify the `rate_control_mode`. The default is `vbr`.
+       *
        * Supported rate control modes:
+       *
        * - `vbr` - variable bitrate
        * - `crf` - constant rate factor
        * </pre>
@@ -6730,7 +6849,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Specify the `rate_control_mode`. The default is `vbr`.
+       *
        * Supported rate control modes:
+       *
        * - `vbr` - variable bitrate
        * - `crf` - constant rate factor
        * </pre>
@@ -6750,7 +6871,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Specify the `rate_control_mode`. The default is `vbr`.
+       *
        * Supported rate control modes:
+       *
        * - `vbr` - variable bitrate
        * - `crf` - constant rate factor
        * </pre>
@@ -7549,6 +7672,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Enforces the specified codec profile. The following profiles are
        * supported:
+       *
        * *   8-bit profiles
        *     *   `main` (default)
        *     *   `main-intra`
@@ -7567,6 +7691,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *     *   `main422-12-intra`
        *     *   `main444-12`
        *     *   `main444-12-intra`
+       *
        * The available options are
        * [FFmpeg-compatible](https://x265.readthedocs.io/).
        * Note that certain values for this field may cause the
@@ -7595,6 +7720,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Enforces the specified codec profile. The following profiles are
        * supported:
+       *
        * *   8-bit profiles
        *     *   `main` (default)
        *     *   `main-intra`
@@ -7613,6 +7739,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *     *   `main422-12-intra`
        *     *   `main444-12`
        *     *   `main444-12-intra`
+       *
        * The available options are
        * [FFmpeg-compatible](https://x265.readthedocs.io/).
        * Note that certain values for this field may cause the
@@ -7641,6 +7768,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Enforces the specified codec profile. The following profiles are
        * supported:
+       *
        * *   8-bit profiles
        *     *   `main` (default)
        *     *   `main-intra`
@@ -7659,6 +7787,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *     *   `main422-12-intra`
        *     *   `main444-12`
        *     *   `main444-12-intra`
+       *
        * The available options are
        * [FFmpeg-compatible](https://x265.readthedocs.io/).
        * Note that certain values for this field may cause the
@@ -7686,6 +7815,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Enforces the specified codec profile. The following profiles are
        * supported:
+       *
        * *   8-bit profiles
        *     *   `main` (default)
        *     *   `main-intra`
@@ -7704,6 +7834,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *     *   `main422-12-intra`
        *     *   `main444-12`
        *     *   `main444-12-intra`
+       *
        * The available options are
        * [FFmpeg-compatible](https://x265.readthedocs.io/).
        * Note that certain values for this field may cause the
@@ -7727,6 +7858,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Enforces the specified codec profile. The following profiles are
        * supported:
+       *
        * *   8-bit profiles
        *     *   `main` (default)
        *     *   `main-intra`
@@ -7745,6 +7877,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *     *   `main422-12-intra`
        *     *   `main444-12`
        *     *   `main444-12-intra`
+       *
        * The available options are
        * [FFmpeg-compatible](https://x265.readthedocs.io/).
        * Note that certain values for this field may cause the
@@ -8104,6 +8237,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * The width of the video in pixels. Must be an even integer.
      * When not specified, the width is adjusted to match the specified height
      * and input aspect ratio. If both are omitted, the input width is used.
+     *
      * For portrait videos that contain horizontal ASR and rotation metadata,
      * provide the width, in pixels, per the horizontal ASR. The API calculates
      * the height per the horizontal ASR. The API detects any rotation metadata
@@ -8123,6 +8257,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * The height of the video in pixels. Must be an even integer.
      * When not specified, the height is adjusted to match the specified width
      * and input aspect ratio. If both are omitted, the input height is used.
+     *
      * For portrait videos that contain horizontal ASR and rotation metadata,
      * provide the height, in pixels, per the horizontal ASR. The API calculates
      * the width per the horizontal ASR. The API detects any rotation metadata
@@ -8173,7 +8308,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Pixel format to use. The default is `yuv420p`.
+     *
      * Supported pixel formats:
+     *
      * - `yuv420p` pixel format
      * - `yuv422p` pixel format
      * - `yuv444p` pixel format
@@ -8195,7 +8332,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Pixel format to use. The default is `yuv420p`.
+     *
      * Supported pixel formats:
+     *
      * - `yuv420p` pixel format
      * - `yuv422p` pixel format
      * - `yuv444p` pixel format
@@ -8218,7 +8357,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Specify the `rate_control_mode`. The default is `vbr`.
+     *
      * Supported rate control modes:
+     *
      * - `vbr` - variable bitrate
      * </pre>
      *
@@ -8232,7 +8373,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Specify the `rate_control_mode`. The default is `vbr`.
+     *
      * Supported rate control modes:
+     *
      * - `vbr` - variable bitrate
      * </pre>
      *
@@ -8248,6 +8391,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Target CRF level. Must be between 10 and 36, where 10 is the highest
      * quality and 36 is the most efficient compression. The default is 21.
+     *
      * **Note:** This field is not supported.
      * </pre>
      *
@@ -8337,10 +8481,12 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Enforces the specified codec profile. The following profiles are
      * supported:
+     *
      * *   `profile0` (default)
      * *   `profile1`
      * *   `profile2`
      * *   `profile3`
+     *
      * The available options are
      * [WebM-compatible](https://www.webmproject.org/vp9/profiles/).
      * Note that certain values for this field may cause the
@@ -8359,10 +8505,12 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Enforces the specified codec profile. The following profiles are
      * supported:
+     *
      * *   `profile0` (default)
      * *   `profile1`
      * *   `profile2`
      * *   `profile3`
+     *
      * The available options are
      * [WebM-compatible](https://www.webmproject.org/vp9/profiles/).
      * Note that certain values for this field may cause the
@@ -8376,8 +8524,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getProfileBytes();
 
-    public com.google.cloud.video.transcoder.v1.VideoStream.Vp9CodecSettings.GopModeCase
-        getGopModeCase();
+    com.google.cloud.video.transcoder.v1.VideoStream.Vp9CodecSettings.GopModeCase getGopModeCase();
   }
   /**
    *
@@ -8410,11 +8557,6 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       return new Vp9CodecSettings();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.video.transcoder.v1.ResourcesProto
           .internal_static_google_cloud_video_transcoder_v1_VideoStream_Vp9CodecSettings_descriptor;
@@ -8431,6 +8573,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int gopModeCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object gopMode_;
 
     public enum GopModeCase
@@ -8486,6 +8630,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * The width of the video in pixels. Must be an even integer.
      * When not specified, the width is adjusted to match the specified height
      * and input aspect ratio. If both are omitted, the input width is used.
+     *
      * For portrait videos that contain horizontal ASR and rotation metadata,
      * provide the width, in pixels, per the horizontal ASR. The API calculates
      * the height per the horizontal ASR. The API detects any rotation metadata
@@ -8510,6 +8655,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * The height of the video in pixels. Must be an even integer.
      * When not specified, the height is adjusted to match the specified width
      * and input aspect ratio. If both are omitted, the input height is used.
+     *
      * For portrait videos that contain horizontal ASR and rotation metadata,
      * provide the height, in pixels, per the horizontal ASR. The API calculates
      * the width per the horizontal ASR. The API detects any rotation metadata
@@ -8577,7 +8723,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Pixel format to use. The default is `yuv420p`.
+     *
      * Supported pixel formats:
+     *
      * - `yuv420p` pixel format
      * - `yuv422p` pixel format
      * - `yuv444p` pixel format
@@ -8610,7 +8758,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Pixel format to use. The default is `yuv420p`.
+     *
      * Supported pixel formats:
+     *
      * - `yuv420p` pixel format
      * - `yuv422p` pixel format
      * - `yuv444p` pixel format
@@ -8648,7 +8798,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Specify the `rate_control_mode`. The default is `vbr`.
+     *
      * Supported rate control modes:
+     *
      * - `vbr` - variable bitrate
      * </pre>
      *
@@ -8673,7 +8825,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Specify the `rate_control_mode`. The default is `vbr`.
+     *
      * Supported rate control modes:
+     *
      * - `vbr` - variable bitrate
      * </pre>
      *
@@ -8702,6 +8856,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Target CRF level. Must be between 10 and 36, where 10 is the highest
      * quality and 36 is the most efficient compression. The default is 21.
+     *
      * **Note:** This field is not supported.
      * </pre>
      *
@@ -8824,10 +8979,12 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Enforces the specified codec profile. The following profiles are
      * supported:
+     *
      * *   `profile0` (default)
      * *   `profile1`
      * *   `profile2`
      * *   `profile3`
+     *
      * The available options are
      * [WebM-compatible](https://www.webmproject.org/vp9/profiles/).
      * Note that certain values for this field may cause the
@@ -8857,10 +9014,12 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Enforces the specified codec profile. The following profiles are
      * supported:
+     *
      * *   `profile0` (default)
      * *   `profile1`
      * *   `profile2`
      * *   `profile3`
+     *
      * The available options are
      * [WebM-compatible](https://www.webmproject.org/vp9/profiles/).
      * Note that certain values for this field may cause the
@@ -9506,6 +9665,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * The width of the video in pixels. Must be an even integer.
        * When not specified, the width is adjusted to match the specified height
        * and input aspect ratio. If both are omitted, the input width is used.
+       *
        * For portrait videos that contain horizontal ASR and rotation metadata,
        * provide the width, in pixels, per the horizontal ASR. The API calculates
        * the height per the horizontal ASR. The API detects any rotation metadata
@@ -9527,6 +9687,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * The width of the video in pixels. Must be an even integer.
        * When not specified, the width is adjusted to match the specified height
        * and input aspect ratio. If both are omitted, the input width is used.
+       *
        * For portrait videos that contain horizontal ASR and rotation metadata,
        * provide the width, in pixels, per the horizontal ASR. The API calculates
        * the height per the horizontal ASR. The API detects any rotation metadata
@@ -9552,6 +9713,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * The width of the video in pixels. Must be an even integer.
        * When not specified, the width is adjusted to match the specified height
        * and input aspect ratio. If both are omitted, the input width is used.
+       *
        * For portrait videos that contain horizontal ASR and rotation metadata,
        * provide the width, in pixels, per the horizontal ASR. The API calculates
        * the height per the horizontal ASR. The API detects any rotation metadata
@@ -9577,6 +9739,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * The height of the video in pixels. Must be an even integer.
        * When not specified, the height is adjusted to match the specified width
        * and input aspect ratio. If both are omitted, the input height is used.
+       *
        * For portrait videos that contain horizontal ASR and rotation metadata,
        * provide the height, in pixels, per the horizontal ASR. The API calculates
        * the width per the horizontal ASR. The API detects any rotation metadata
@@ -9598,6 +9761,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * The height of the video in pixels. Must be an even integer.
        * When not specified, the height is adjusted to match the specified width
        * and input aspect ratio. If both are omitted, the input height is used.
+       *
        * For portrait videos that contain horizontal ASR and rotation metadata,
        * provide the height, in pixels, per the horizontal ASR. The API calculates
        * the width per the horizontal ASR. The API detects any rotation metadata
@@ -9623,6 +9787,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * The height of the video in pixels. Must be an even integer.
        * When not specified, the height is adjusted to match the specified width
        * and input aspect ratio. If both are omitted, the input height is used.
+       *
        * For portrait videos that contain horizontal ASR and rotation metadata,
        * provide the height, in pixels, per the horizontal ASR. The API calculates
        * the width per the horizontal ASR. The API detects any rotation metadata
@@ -9773,7 +9938,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Pixel format to use. The default is `yuv420p`.
+       *
        * Supported pixel formats:
+       *
        * - `yuv420p` pixel format
        * - `yuv422p` pixel format
        * - `yuv444p` pixel format
@@ -9805,7 +9972,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Pixel format to use. The default is `yuv420p`.
+       *
        * Supported pixel formats:
+       *
        * - `yuv420p` pixel format
        * - `yuv422p` pixel format
        * - `yuv444p` pixel format
@@ -9837,7 +10006,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Pixel format to use. The default is `yuv420p`.
+       *
        * Supported pixel formats:
+       *
        * - `yuv420p` pixel format
        * - `yuv422p` pixel format
        * - `yuv444p` pixel format
@@ -9868,7 +10039,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Pixel format to use. The default is `yuv420p`.
+       *
        * Supported pixel formats:
+       *
        * - `yuv420p` pixel format
        * - `yuv422p` pixel format
        * - `yuv444p` pixel format
@@ -9895,7 +10068,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Pixel format to use. The default is `yuv420p`.
+       *
        * Supported pixel formats:
+       *
        * - `yuv420p` pixel format
        * - `yuv422p` pixel format
        * - `yuv444p` pixel format
@@ -9929,7 +10104,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Specify the `rate_control_mode`. The default is `vbr`.
+       *
        * Supported rate control modes:
+       *
        * - `vbr` - variable bitrate
        * </pre>
        *
@@ -9953,7 +10130,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Specify the `rate_control_mode`. The default is `vbr`.
+       *
        * Supported rate control modes:
+       *
        * - `vbr` - variable bitrate
        * </pre>
        *
@@ -9977,7 +10156,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Specify the `rate_control_mode`. The default is `vbr`.
+       *
        * Supported rate control modes:
+       *
        * - `vbr` - variable bitrate
        * </pre>
        *
@@ -10000,7 +10181,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Specify the `rate_control_mode`. The default is `vbr`.
+       *
        * Supported rate control modes:
+       *
        * - `vbr` - variable bitrate
        * </pre>
        *
@@ -10019,7 +10202,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Specify the `rate_control_mode`. The default is `vbr`.
+       *
        * Supported rate control modes:
+       *
        * - `vbr` - variable bitrate
        * </pre>
        *
@@ -10046,6 +10231,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Target CRF level. Must be between 10 and 36, where 10 is the highest
        * quality and 36 is the most efficient compression. The default is 21.
+       *
        * **Note:** This field is not supported.
        * </pre>
        *
@@ -10063,6 +10249,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Target CRF level. Must be between 10 and 36, where 10 is the highest
        * quality and 36 is the most efficient compression. The default is 21.
+       *
        * **Note:** This field is not supported.
        * </pre>
        *
@@ -10084,6 +10271,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Target CRF level. Must be between 10 and 36, where 10 is the highest
        * quality and 36 is the most efficient compression. The default is 21.
+       *
        * **Note:** This field is not supported.
        * </pre>
        *
@@ -10419,10 +10607,12 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Enforces the specified codec profile. The following profiles are
        * supported:
+       *
        * *   `profile0` (default)
        * *   `profile1`
        * *   `profile2`
        * *   `profile3`
+       *
        * The available options are
        * [WebM-compatible](https://www.webmproject.org/vp9/profiles/).
        * Note that certain values for this field may cause the
@@ -10451,10 +10641,12 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Enforces the specified codec profile. The following profiles are
        * supported:
+       *
        * *   `profile0` (default)
        * *   `profile1`
        * *   `profile2`
        * *   `profile3`
+       *
        * The available options are
        * [WebM-compatible](https://www.webmproject.org/vp9/profiles/).
        * Note that certain values for this field may cause the
@@ -10483,10 +10675,12 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Enforces the specified codec profile. The following profiles are
        * supported:
+       *
        * *   `profile0` (default)
        * *   `profile1`
        * *   `profile2`
        * *   `profile3`
+       *
        * The available options are
        * [WebM-compatible](https://www.webmproject.org/vp9/profiles/).
        * Note that certain values for this field may cause the
@@ -10514,10 +10708,12 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Enforces the specified codec profile. The following profiles are
        * supported:
+       *
        * *   `profile0` (default)
        * *   `profile1`
        * *   `profile2`
        * *   `profile3`
+       *
        * The available options are
        * [WebM-compatible](https://www.webmproject.org/vp9/profiles/).
        * Note that certain values for this field may cause the
@@ -10541,10 +10737,12 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Enforces the specified codec profile. The following profiles are
        * supported:
+       *
        * *   `profile0` (default)
        * *   `profile1`
        * *   `profile2`
        * *   `profile3`
+       *
        * The available options are
        * [WebM-compatible](https://www.webmproject.org/vp9/profiles/).
        * Note that certain values for this field may cause the
@@ -10636,6 +10834,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int codecSettingsCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object codecSettings_;
 
   public enum CodecSettingsCase

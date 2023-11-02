@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,6 @@ package com.google.cloudbuild.v1;
  * <pre>
  * GitHubEventsConfig describes the configuration of a trigger that creates a
  * build whenever a GitHub event is received.
- * This message is experimental.
  * </pre>
  *
  * Protobuf type {@code google.devtools.cloudbuild.v1.GitHubEventsConfig}
@@ -50,11 +49,6 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
     return new GitHubEventsConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloudbuild.v1.Cloudbuild
         .internal_static_google_devtools_cloudbuild_v1_GitHubEventsConfig_descriptor;
@@ -71,6 +65,8 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
   }
 
   private int eventCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object event_;
 
   public enum EventCase
@@ -129,7 +125,7 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
    * <code>int64 installation_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.devtools.cloudbuild.v1.GitHubEventsConfig.installation_id is deprecated. See
-   *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=1585
+   *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=1876
    * @return The installationId.
    */
   @java.lang.Override
@@ -570,7 +566,6 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
    * <pre>
    * GitHubEventsConfig describes the configuration of a trigger that creates a
    * build whenever a GitHub event is received.
-   * This message is experimental.
    * </pre>
    *
    * Protobuf type {@code google.devtools.cloudbuild.v1.GitHubEventsConfig}
@@ -849,7 +844,7 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
      * <code>int64 installation_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.devtools.cloudbuild.v1.GitHubEventsConfig.installation_id is deprecated.
-     *     See google/devtools/cloudbuild/v1/cloudbuild.proto;l=1585
+     *     See google/devtools/cloudbuild/v1/cloudbuild.proto;l=1876
      * @return The installationId.
      */
     @java.lang.Override
@@ -867,7 +862,7 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
      * <code>int64 installation_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.devtools.cloudbuild.v1.GitHubEventsConfig.installation_id is deprecated.
-     *     See google/devtools/cloudbuild/v1/cloudbuild.proto;l=1585
+     *     See google/devtools/cloudbuild/v1/cloudbuild.proto;l=1876
      * @param value The installationId to set.
      * @return This builder for chaining.
      */
@@ -889,7 +884,7 @@ public final class GitHubEventsConfig extends com.google.protobuf.GeneratedMessa
      * <code>int64 installation_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.devtools.cloudbuild.v1.GitHubEventsConfig.installation_id is deprecated.
-     *     See google/devtools/cloudbuild/v1/cloudbuild.proto;l=1585
+     *     See google/devtools/cloudbuild/v1/cloudbuild.proto;l=1876
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

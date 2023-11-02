@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -113,6 +113,7 @@ public interface ReportResultsMetadataOrBuilder
    * The usage dates immediately preceding `date_range` with the same duration.
    * Use this to calculate trending usage and costs. This is only populated if
    * you request trending data.
+   *
    * For example, if `date_range` is July 1-15, `preceding_date_range` will be
    * June 16-30.
    * </pre>
@@ -129,6 +130,7 @@ public interface ReportResultsMetadataOrBuilder
    * The usage dates immediately preceding `date_range` with the same duration.
    * Use this to calculate trending usage and costs. This is only populated if
    * you request trending data.
+   *
    * For example, if `date_range` is July 1-15, `preceding_date_range` will be
    * June 16-30.
    * </pre>
@@ -145,6 +147,7 @@ public interface ReportResultsMetadataOrBuilder
    * The usage dates immediately preceding `date_range` with the same duration.
    * Use this to calculate trending usage and costs. This is only populated if
    * you request trending data.
+   *
    * For example, if `date_range` is July 1-15, `preceding_date_range` will be
    * June 16-30.
    * </pre>

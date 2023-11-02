@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,7 +47,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
     type_ = 0;
     tier_ = 0;
     state_ = 0;
-    pemCaCertificates_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    pemCaCertificates_ = com.google.protobuf.LazyStringArrayList.emptyList();
     caCertificateDescriptions_ = java.util.Collections.emptyList();
     gcsBucket_ = "";
   }
@@ -56,11 +56,6 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new CertificateAuthority();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -953,18 +948,13 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
 
     private AccessUrls() {
       caCertificateAccessUrl_ = "";
-      crlAccessUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      crlAccessUrls_ = com.google.protobuf.LazyStringArrayList.emptyList();
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new AccessUrls();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1042,7 +1032,8 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
     public static final int CRL_ACCESS_URLS_FIELD_NUMBER = 2;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList crlAccessUrls_;
+    private com.google.protobuf.LazyStringArrayList crlAccessUrls_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -1339,8 +1330,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
         super.clear();
         bitField0_ = 0;
         caCertificateAccessUrl_ = "";
-        crlAccessUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000002);
+        crlAccessUrls_ = com.google.protobuf.LazyStringArrayList.emptyList();
         return this;
       }
 
@@ -1371,7 +1361,6 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
       public com.google.cloud.security.privateca.v1.CertificateAuthority.AccessUrls buildPartial() {
         com.google.cloud.security.privateca.v1.CertificateAuthority.AccessUrls result =
             new com.google.cloud.security.privateca.v1.CertificateAuthority.AccessUrls(this);
-        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
@@ -1379,20 +1368,15 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
         return result;
       }
 
-      private void buildPartialRepeatedFields(
-          com.google.cloud.security.privateca.v1.CertificateAuthority.AccessUrls result) {
-        if (((bitField0_ & 0x00000002) != 0)) {
-          crlAccessUrls_ = crlAccessUrls_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000002);
-        }
-        result.crlAccessUrls_ = crlAccessUrls_;
-      }
-
       private void buildPartial0(
           com.google.cloud.security.privateca.v1.CertificateAuthority.AccessUrls result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.caCertificateAccessUrl_ = caCertificateAccessUrl_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          crlAccessUrls_.makeImmutable();
+          result.crlAccessUrls_ = crlAccessUrls_;
         }
       }
 
@@ -1456,7 +1440,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
         if (!other.crlAccessUrls_.isEmpty()) {
           if (crlAccessUrls_.isEmpty()) {
             crlAccessUrls_ = other.crlAccessUrls_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ |= 0x00000002;
           } else {
             ensureCrlAccessUrlsIsMutable();
             crlAccessUrls_.addAll(other.crlAccessUrls_);
@@ -1642,14 +1626,14 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
         return this;
       }
 
-      private com.google.protobuf.LazyStringList crlAccessUrls_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList crlAccessUrls_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureCrlAccessUrlsIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!crlAccessUrls_.isModifiable()) {
           crlAccessUrls_ = new com.google.protobuf.LazyStringArrayList(crlAccessUrls_);
-          bitField0_ |= 0x00000002;
         }
+        bitField0_ |= 0x00000002;
       }
       /**
        *
@@ -1666,7 +1650,8 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
        * @return A list containing the crlAccessUrls.
        */
       public com.google.protobuf.ProtocolStringList getCrlAccessUrlsList() {
-        return crlAccessUrls_.getUnmodifiableView();
+        crlAccessUrls_.makeImmutable();
+        return crlAccessUrls_;
       }
       /**
        *
@@ -1743,6 +1728,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
         }
         ensureCrlAccessUrlsIsMutable();
         crlAccessUrls_.set(index, value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1767,6 +1753,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
         }
         ensureCrlAccessUrlsIsMutable();
         crlAccessUrls_.add(value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1788,6 +1775,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
       public Builder addAllCrlAccessUrls(java.lang.Iterable<java.lang.String> values) {
         ensureCrlAccessUrlsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, crlAccessUrls_);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1806,8 +1794,9 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
        * @return This builder for chaining.
        */
       public Builder clearCrlAccessUrls() {
-        crlAccessUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        crlAccessUrls_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000002);
+        ;
         onChanged();
         return this;
       }
@@ -1833,6 +1822,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
         checkByteStringIsUtf8(value);
         ensureCrlAccessUrlsIsMutable();
         crlAccessUrls_.add(value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -2008,7 +1998,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      */
     com.google.cloud.security.privateca.v1.CertificateAuthority.SignHashAlgorithm getAlgorithm();
 
-    public com.google.cloud.security.privateca.v1.CertificateAuthority.KeyVersionSpec.KeyVersionCase
+    com.google.cloud.security.privateca.v1.CertificateAuthority.KeyVersionSpec.KeyVersionCase
         getKeyVersionCase();
   }
   /**
@@ -2040,11 +2030,6 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
       return new KeyVersionSpec();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.security.privateca.v1.PrivateCaResourcesProto
           .internal_static_google_cloud_security_privateca_v1_CertificateAuthority_KeyVersionSpec_descriptor;
@@ -2062,6 +2047,8 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
     }
 
     private int keyVersionCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object keyVersion_;
 
     public enum KeyVersionCase
@@ -3526,7 +3513,8 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
   public static final int PEM_CA_CERTIFICATES_FIELD_NUMBER = 9;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList pemCaCertificates_;
+  private com.google.protobuf.LazyStringArrayList pemCaCertificates_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -4642,8 +4630,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
       }
       tier_ = 0;
       state_ = 0;
-      pemCaCertificates_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000100);
+      pemCaCertificates_ = com.google.protobuf.LazyStringArrayList.emptyList();
       if (caCertificateDescriptionsBuilder_ == null) {
         caCertificateDescriptions_ = java.util.Collections.emptyList();
       } else {
@@ -4715,11 +4702,6 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
 
     private void buildPartialRepeatedFields(
         com.google.cloud.security.privateca.v1.CertificateAuthority result) {
-      if (((bitField0_ & 0x00000100) != 0)) {
-        pemCaCertificates_ = pemCaCertificates_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000100);
-      }
-      result.pemCaCertificates_ = pemCaCertificates_;
       if (caCertificateDescriptionsBuilder_ == null) {
         if (((bitField0_ & 0x00000200) != 0)) {
           caCertificateDescriptions_ =
@@ -4760,6 +4742,10 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
         result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        pemCaCertificates_.makeImmutable();
+        result.pemCaCertificates_ = pemCaCertificates_;
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
         result.gcsBucket_ = gcsBucket_;
@@ -4860,7 +4846,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
       if (!other.pemCaCertificates_.isEmpty()) {
         if (pemCaCertificates_.isEmpty()) {
           pemCaCertificates_ = other.pemCaCertificates_;
-          bitField0_ = (bitField0_ & ~0x00000100);
+          bitField0_ |= 0x00000100;
         } else {
           ensurePemCaCertificatesIsMutable();
           pemCaCertificates_.addAll(other.pemCaCertificates_);
@@ -6482,14 +6468,14 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
       return this;
     }
 
-    private com.google.protobuf.LazyStringList pemCaCertificates_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList pemCaCertificates_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensurePemCaCertificatesIsMutable() {
-      if (!((bitField0_ & 0x00000100) != 0)) {
+      if (!pemCaCertificates_.isModifiable()) {
         pemCaCertificates_ = new com.google.protobuf.LazyStringArrayList(pemCaCertificates_);
-        bitField0_ |= 0x00000100;
       }
+      bitField0_ |= 0x00000100;
     }
     /**
      *
@@ -6512,7 +6498,8 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      * @return A list containing the pemCaCertificates.
      */
     public com.google.protobuf.ProtocolStringList getPemCaCertificatesList() {
-      return pemCaCertificates_.getUnmodifiableView();
+      pemCaCertificates_.makeImmutable();
+      return pemCaCertificates_;
     }
     /**
      *
@@ -6613,6 +6600,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
       }
       ensurePemCaCertificatesIsMutable();
       pemCaCertificates_.set(index, value);
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -6643,6 +6631,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
       }
       ensurePemCaCertificatesIsMutable();
       pemCaCertificates_.add(value);
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -6670,6 +6659,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
     public Builder addAllPemCaCertificates(java.lang.Iterable<java.lang.String> values) {
       ensurePemCaCertificatesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, pemCaCertificates_);
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -6694,8 +6684,9 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearPemCaCertificates() {
-      pemCaCertificates_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      pemCaCertificates_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000100);
+      ;
       onChanged();
       return this;
     }
@@ -6727,6 +6718,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
       checkByteStringIsUtf8(value);
       ensurePemCaCertificatesIsMutable();
       pemCaCertificates_.add(value);
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }

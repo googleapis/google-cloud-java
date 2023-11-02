@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -67,8 +67,10 @@ public interface ExecutionTemplateOrBuilder
    * Specifies the type of virtual machine to use for your training
    * job's master worker. You must specify this field when `scaleTier` is set to
    * `CUSTOM`.
+   *
    * You can use certain Compute Engine machine types directly in this field.
    * The following types are supported:
+   *
    * - `n1-standard-4`
    * - `n1-standard-8`
    * - `n1-standard-16`
@@ -86,7 +88,10 @@ public interface ExecutionTemplateOrBuilder
    * - `n1-highcpu-32`
    * - `n1-highcpu-64`
    * - `n1-highcpu-96`
+   *
+   *
    * Alternatively, you can use the following legacy machine types:
+   *
    * - `standard`
    * - `large_model`
    * - `complex_model_s`
@@ -101,6 +106,8 @@ public interface ExecutionTemplateOrBuilder
    * - `large_model_v100`
    * - `complex_model_m_v100`
    * - `complex_model_l_v100`
+   *
+   *
    * Finally, if you want to use a TPU for training, specify `cloud_tpu` in this
    * field. Learn more about the [special configuration options for training
    * with
@@ -119,8 +126,10 @@ public interface ExecutionTemplateOrBuilder
    * Specifies the type of virtual machine to use for your training
    * job's master worker. You must specify this field when `scaleTier` is set to
    * `CUSTOM`.
+   *
    * You can use certain Compute Engine machine types directly in this field.
    * The following types are supported:
+   *
    * - `n1-standard-4`
    * - `n1-standard-8`
    * - `n1-standard-16`
@@ -138,7 +147,10 @@ public interface ExecutionTemplateOrBuilder
    * - `n1-highcpu-32`
    * - `n1-highcpu-64`
    * - `n1-highcpu-96`
+   *
+   *
    * Alternatively, you can use the following legacy machine types:
+   *
    * - `standard`
    * - `large_model`
    * - `complex_model_s`
@@ -153,6 +165,8 @@ public interface ExecutionTemplateOrBuilder
    * - `large_model_v100`
    * - `complex_model_m_v100`
    * - `complex_model_l_v100`
+   *
+   *
    * Finally, if you want to use a TPU for training, specify `cloud_tpu` in this
    * field. Learn more about the [special configuration options for training
    * with
@@ -634,5 +648,5 @@ public interface ExecutionTemplateOrBuilder
    */
   com.google.protobuf.ByteString getTensorboardBytes();
 
-  public com.google.cloud.notebooks.v1.ExecutionTemplate.JobParametersCase getJobParametersCase();
+  com.google.cloud.notebooks.v1.ExecutionTemplate.JobParametersCase getJobParametersCase();
 }

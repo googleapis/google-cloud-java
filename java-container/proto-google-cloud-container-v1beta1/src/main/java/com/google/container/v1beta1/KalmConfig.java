@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class KalmConfig extends com.google.protobuf.GeneratedMessageV3
     return new KalmConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.container.v1beta1.ClusterServiceProto
         .internal_static_google_container_v1beta1_KalmConfig_descriptor;
@@ -77,7 +72,7 @@ public final class KalmConfig extends com.google.protobuf.GeneratedMessageV3
    * <code>bool enabled = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.KalmConfig.enabled is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1227
+   *     google/container/v1beta1/cluster_service.proto;l=1416
    * @return The enabled.
    */
   @java.lang.Override
@@ -435,7 +430,7 @@ public final class KalmConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>bool enabled = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.KalmConfig.enabled is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1227
+     *     google/container/v1beta1/cluster_service.proto;l=1416
      * @return The enabled.
      */
     @java.lang.Override
@@ -453,7 +448,7 @@ public final class KalmConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>bool enabled = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.KalmConfig.enabled is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1227
+     *     google/container/v1beta1/cluster_service.proto;l=1416
      * @param value The enabled to set.
      * @return This builder for chaining.
      */
@@ -475,7 +470,7 @@ public final class KalmConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>bool enabled = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.KalmConfig.enabled is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1227
+     *     google/container/v1beta1/cluster_service.proto;l=1416
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

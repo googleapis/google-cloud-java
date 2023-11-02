@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -145,9 +145,10 @@ public interface LineItemOrBuilder
    *
    *
    * <pre>
-   * Output only. Changes made on the item that are not pending anymore which might be
-   * because they already took effect, were reverted by the customer, or were
-   * rejected by the partner. No more operations are allowed on these changes.
+   * Output only. Changes made on the item that are not pending anymore which
+   * might be because they already took effect, were reverted by the customer,
+   * or were rejected by the partner. No more operations are allowed on these
+   * changes.
    * </pre>
    *
    * <code>
@@ -160,9 +161,10 @@ public interface LineItemOrBuilder
    *
    *
    * <pre>
-   * Output only. Changes made on the item that are not pending anymore which might be
-   * because they already took effect, were reverted by the customer, or were
-   * rejected by the partner. No more operations are allowed on these changes.
+   * Output only. Changes made on the item that are not pending anymore which
+   * might be because they already took effect, were reverted by the customer,
+   * or were rejected by the partner. No more operations are allowed on these
+   * changes.
    * </pre>
    *
    * <code>
@@ -175,9 +177,10 @@ public interface LineItemOrBuilder
    *
    *
    * <pre>
-   * Output only. Changes made on the item that are not pending anymore which might be
-   * because they already took effect, were reverted by the customer, or were
-   * rejected by the partner. No more operations are allowed on these changes.
+   * Output only. Changes made on the item that are not pending anymore which
+   * might be because they already took effect, were reverted by the customer,
+   * or were rejected by the partner. No more operations are allowed on these
+   * changes.
    * </pre>
    *
    * <code>
@@ -189,9 +192,10 @@ public interface LineItemOrBuilder
    *
    *
    * <pre>
-   * Output only. Changes made on the item that are not pending anymore which might be
-   * because they already took effect, were reverted by the customer, or were
-   * rejected by the partner. No more operations are allowed on these changes.
+   * Output only. Changes made on the item that are not pending anymore which
+   * might be because they already took effect, were reverted by the customer,
+   * or were rejected by the partner. No more operations are allowed on these
+   * changes.
    * </pre>
    *
    * <code>
@@ -205,9 +209,10 @@ public interface LineItemOrBuilder
    *
    *
    * <pre>
-   * Output only. Changes made on the item that are not pending anymore which might be
-   * because they already took effect, were reverted by the customer, or were
-   * rejected by the partner. No more operations are allowed on these changes.
+   * Output only. Changes made on the item that are not pending anymore which
+   * might be because they already took effect, were reverted by the customer,
+   * or were rejected by the partner. No more operations are allowed on these
+   * changes.
    * </pre>
    *
    * <code>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ package com.google.cloud.tasks.v2beta3;
  *
  * <pre>
  * Pull Message.
+ *
  * This proto can only be used for tasks in a queue which has
  * [PULL][google.cloud.tasks.v2beta3.Queue.type] type. It currently exists for
  * backwards compatibility with the App Engine Task Queue SDK. This message type
@@ -53,11 +54,6 @@ public final class PullMessage extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new PullMessage();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -102,7 +98,9 @@ public final class PullMessage extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The tasks's tag.
+   *
    * The tag is less than 500 characters.
+   *
    * SDK compatibility: Although the SDK allows tags to be either
    * string or
    * [bytes](https://cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/taskqueue/TaskOptions.html#tag-byte:A-),
@@ -131,7 +129,9 @@ public final class PullMessage extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The tasks's tag.
+   *
    * The tag is less than 500 characters.
+   *
    * SDK compatibility: Although the SDK allows tags to be either
    * string or
    * [bytes](https://cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/taskqueue/TaskOptions.html#tag-byte:A-),
@@ -329,6 +329,7 @@ public final class PullMessage extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Pull Message.
+   *
    * This proto can only be used for tasks in a queue which has
    * [PULL][google.cloud.tasks.v2beta3.Queue.type] type. It currently exists for
    * backwards compatibility with the App Engine Task Queue SDK. This message type
@@ -587,7 +588,9 @@ public final class PullMessage extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The tasks's tag.
+     *
      * The tag is less than 500 characters.
+     *
      * SDK compatibility: Although the SDK allows tags to be either
      * string or
      * [bytes](https://cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/taskqueue/TaskOptions.html#tag-byte:A-),
@@ -615,7 +618,9 @@ public final class PullMessage extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The tasks's tag.
+     *
      * The tag is less than 500 characters.
+     *
      * SDK compatibility: Although the SDK allows tags to be either
      * string or
      * [bytes](https://cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/taskqueue/TaskOptions.html#tag-byte:A-),
@@ -643,7 +648,9 @@ public final class PullMessage extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The tasks's tag.
+     *
      * The tag is less than 500 characters.
+     *
      * SDK compatibility: Although the SDK allows tags to be either
      * string or
      * [bytes](https://cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/taskqueue/TaskOptions.html#tag-byte:A-),
@@ -670,7 +677,9 @@ public final class PullMessage extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The tasks's tag.
+     *
      * The tag is less than 500 characters.
+     *
      * SDK compatibility: Although the SDK allows tags to be either
      * string or
      * [bytes](https://cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/taskqueue/TaskOptions.html#tag-byte:A-),
@@ -693,7 +702,9 @@ public final class PullMessage extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The tasks's tag.
+     *
      * The tag is less than 500 characters.
+     *
      * SDK compatibility: Although the SDK allows tags to be either
      * string or
      * [bytes](https://cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/taskqueue/TaskOptions.html#tag-byte:A-),

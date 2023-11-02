@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -63,7 +63,9 @@ public interface ListQueuesRequestOrBuilder
    * several operators as supported. For example: `&lt;=, &lt;, &gt;=, &gt;, !=, =, :`. The
    * filter syntax is the same as described in [Stackdriver's Advanced Logs
    * Filters](https://cloud.google.com/logging/docs/view/advanced_filters).
+   *
    * Sample filter "app_engine_http_target: *".
+   *
    * Note that using filters might cause fewer queues than the
    * requested_page size to be returned.
    * </pre>
@@ -82,7 +84,9 @@ public interface ListQueuesRequestOrBuilder
    * several operators as supported. For example: `&lt;=, &lt;, &gt;=, &gt;, !=, =, :`. The
    * filter syntax is the same as described in [Stackdriver's Advanced Logs
    * Filters](https://cloud.google.com/logging/docs/view/advanced_filters).
+   *
    * Sample filter "app_engine_http_target: *".
+   *
    * Note that using filters might cause fewer queues than the
    * requested_page size to be returned.
    * </pre>
@@ -98,6 +102,7 @@ public interface ListQueuesRequestOrBuilder
    *
    * <pre>
    * Requested page size.
+   *
    * The maximum page size is 9800. If unspecified, the page size will
    * be the maximum. Fewer queues than requested might be returned,
    * even if more queues exist; use the
@@ -116,6 +121,7 @@ public interface ListQueuesRequestOrBuilder
    *
    * <pre>
    * A token identifying the page of results to return.
+   *
    * To request the first page results, page_token must be empty. To
    * request the next page of results, page_token must be the value of
    * [next_page_token][google.cloud.tasks.v2beta2.ListQueuesResponse.next_page_token]
@@ -136,6 +142,7 @@ public interface ListQueuesRequestOrBuilder
    *
    * <pre>
    * A token identifying the page of results to return.
+   *
    * To request the first page results, page_token must be empty. To
    * request the next page of results, page_token must be the value of
    * [next_page_token][google.cloud.tasks.v2beta2.ListQueuesResponse.next_page_token]

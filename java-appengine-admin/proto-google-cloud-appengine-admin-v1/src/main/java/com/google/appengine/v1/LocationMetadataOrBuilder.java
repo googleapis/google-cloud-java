@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ public interface LocationMetadataOrBuilder
    *
    * <pre>
    * App Engine standard environment is available in the given location.
+   *
    * &#64;OutputOnly
    * </pre>
    *
@@ -42,6 +43,7 @@ public interface LocationMetadataOrBuilder
    *
    * <pre>
    * App Engine flexible environment is available in the given location.
+   *
    * &#64;OutputOnly
    * </pre>
    *

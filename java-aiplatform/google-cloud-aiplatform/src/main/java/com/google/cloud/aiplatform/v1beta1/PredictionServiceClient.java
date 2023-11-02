@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@ import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
 import com.google.api.gax.rpc.PageContext;
+import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.aiplatform.v1beta1.stub.PredictionServiceStub;
 import com.google.cloud.aiplatform.v1beta1.stub.PredictionServiceStubSettings;
@@ -545,6 +546,41 @@ public class PredictionServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Perform a server-side streaming online prediction request for Vertex LLM streaming.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
+   *   StreamingPredictRequest request =
+   *       StreamingPredictRequest.newBuilder()
+   *           .setEndpoint(
+   *               EndpointName.ofProjectLocationEndpointName(
+   *                       "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+   *                   .toString())
+   *           .addAllInputs(new ArrayList<Tensor>())
+   *           .setParameters(Tensor.newBuilder().build())
+   *           .build();
+   *   ServerStream<StreamingPredictResponse> stream =
+   *       predictionServiceClient.serverStreamingPredictCallable().call(request);
+   *   for (StreamingPredictResponse response : stream) {
+   *     // Do something when a response is received.
+   *   }
+   * }
+   * }</pre>
+   */
+  public final ServerStreamingCallable<StreamingPredictRequest, StreamingPredictResponse>
+      serverStreamingPredictCallable() {
+    return stub.serverStreamingPredictCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Perform an online explanation.
    *
    * <p>If [deployed_model_id][google.cloud.aiplatform.v1beta1.ExplainRequest.deployed_model_id] is
@@ -553,7 +589,6 @@ public class PredictionServiceClient implements BackgroundResource {
    * If [deployed_model_id][google.cloud.aiplatform.v1beta1.ExplainRequest.deployed_model_id] is not
    * specified, all DeployedModels must have
    * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec] populated.
-   * Only deployed AutoML tabular Models have explanation_spec.
    *
    * <p>Sample code:
    *
@@ -616,7 +651,6 @@ public class PredictionServiceClient implements BackgroundResource {
    * If [deployed_model_id][google.cloud.aiplatform.v1beta1.ExplainRequest.deployed_model_id] is not
    * specified, all DeployedModels must have
    * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec] populated.
-   * Only deployed AutoML tabular Models have explanation_spec.
    *
    * <p>Sample code:
    *
@@ -680,7 +714,6 @@ public class PredictionServiceClient implements BackgroundResource {
    * If [deployed_model_id][google.cloud.aiplatform.v1beta1.ExplainRequest.deployed_model_id] is not
    * specified, all DeployedModels must have
    * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec] populated.
-   * Only deployed AutoML tabular Models have explanation_spec.
    *
    * <p>Sample code:
    *
@@ -700,6 +733,8 @@ public class PredictionServiceClient implements BackgroundResource {
    *           .addAllInstances(new ArrayList<Value>())
    *           .setParameters(Value.newBuilder().setBoolValue(true).build())
    *           .setExplanationSpecOverride(ExplanationSpecOverride.newBuilder().build())
+   *           .putAllConcurrentExplanationSpecOverride(
+   *               new HashMap<String, ExplanationSpecOverride>())
    *           .setDeployedModelId("deployedModelId-1817547906")
    *           .build();
    *   ExplainResponse response = predictionServiceClient.explain(request);
@@ -723,7 +758,6 @@ public class PredictionServiceClient implements BackgroundResource {
    * If [deployed_model_id][google.cloud.aiplatform.v1beta1.ExplainRequest.deployed_model_id] is not
    * specified, all DeployedModels must have
    * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec] populated.
-   * Only deployed AutoML tabular Models have explanation_spec.
    *
    * <p>Sample code:
    *
@@ -743,6 +777,8 @@ public class PredictionServiceClient implements BackgroundResource {
    *           .addAllInstances(new ArrayList<Value>())
    *           .setParameters(Value.newBuilder().setBoolValue(true).build())
    *           .setExplanationSpecOverride(ExplanationSpecOverride.newBuilder().build())
+   *           .putAllConcurrentExplanationSpecOverride(
+   *               new HashMap<String, ExplanationSpecOverride>())
    *           .setDeployedModelId("deployedModelId-1817547906")
    *           .build();
    *   ApiFuture<ExplainResponse> future =
@@ -754,6 +790,138 @@ public class PredictionServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<ExplainRequest, ExplainResponse> explainCallable() {
     return stub.explainCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Perform a token counting.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
+   *   EndpointName endpoint =
+   *       EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
+   *   List<Value> instances = new ArrayList<>();
+   *   CountTokensResponse response = predictionServiceClient.countTokens(endpoint, instances);
+   * }
+   * }</pre>
+   *
+   * @param endpoint Required. The name of the Endpoint requested to perform token counting. Format:
+   *     `projects/{project}/locations/{location}/endpoints/{endpoint}`
+   * @param instances Required. The instances that are the input to token counting call. Schema is
+   *     identical to the prediction schema of the underlying model.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CountTokensResponse countTokens(EndpointName endpoint, List<Value> instances) {
+    CountTokensRequest request =
+        CountTokensRequest.newBuilder()
+            .setEndpoint(endpoint == null ? null : endpoint.toString())
+            .addAllInstances(instances)
+            .build();
+    return countTokens(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Perform a token counting.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
+   *   String endpoint =
+   *       EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+   *           .toString();
+   *   List<Value> instances = new ArrayList<>();
+   *   CountTokensResponse response = predictionServiceClient.countTokens(endpoint, instances);
+   * }
+   * }</pre>
+   *
+   * @param endpoint Required. The name of the Endpoint requested to perform token counting. Format:
+   *     `projects/{project}/locations/{location}/endpoints/{endpoint}`
+   * @param instances Required. The instances that are the input to token counting call. Schema is
+   *     identical to the prediction schema of the underlying model.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CountTokensResponse countTokens(String endpoint, List<Value> instances) {
+    CountTokensRequest request =
+        CountTokensRequest.newBuilder().setEndpoint(endpoint).addAllInstances(instances).build();
+    return countTokens(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Perform a token counting.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
+   *   CountTokensRequest request =
+   *       CountTokensRequest.newBuilder()
+   *           .setEndpoint(
+   *               EndpointName.ofProjectLocationEndpointName(
+   *                       "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+   *                   .toString())
+   *           .addAllInstances(new ArrayList<Value>())
+   *           .build();
+   *   CountTokensResponse response = predictionServiceClient.countTokens(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CountTokensResponse countTokens(CountTokensRequest request) {
+    return countTokensCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Perform a token counting.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
+   *   CountTokensRequest request =
+   *       CountTokensRequest.newBuilder()
+   *           .setEndpoint(
+   *               EndpointName.ofProjectLocationEndpointName(
+   *                       "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+   *                   .toString())
+   *           .addAllInstances(new ArrayList<Value>())
+   *           .build();
+   *   ApiFuture<CountTokensResponse> future =
+   *       predictionServiceClient.countTokensCallable().futureCall(request);
+   *   // Do something.
+   *   CountTokensResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CountTokensRequest, CountTokensResponse> countTokensCallable() {
+    return stub.countTokensCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

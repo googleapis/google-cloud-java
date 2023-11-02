@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,7 +32,7 @@ public interface VoiceSelectionParamsOrBuilder
    * [ssml_gender][google.cloud.dialogflow.v2.VoiceSelectionParams.ssml_gender].
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The name.
    */
@@ -46,7 +46,7 @@ public interface VoiceSelectionParamsOrBuilder
    * [ssml_gender][google.cloud.dialogflow.v2.VoiceSelectionParams.ssml_gender].
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for name.
    */
@@ -64,7 +64,9 @@ public interface VoiceSelectionParamsOrBuilder
    * different gender rather than failing the request.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.SsmlVoiceGender ssml_gender = 2;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2.SsmlVoiceGender ssml_gender = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The enum numeric value on the wire for ssmlGender.
    */
@@ -81,7 +83,9 @@ public interface VoiceSelectionParamsOrBuilder
    * different gender rather than failing the request.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.SsmlVoiceGender ssml_gender = 2;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2.SsmlVoiceGender ssml_gender = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The ssmlGender.
    */

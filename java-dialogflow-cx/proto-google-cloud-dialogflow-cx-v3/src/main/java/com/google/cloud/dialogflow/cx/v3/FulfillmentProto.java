@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -58,42 +58,47 @@ public final class FulfillmentProto {
     java.lang.String[] descriptorData = {
       "\n/google/cloud/dialogflow/cx/v3/fulfillm"
           + "ent.proto\022\035google.cloud.dialogflow.cx.v3"
-          + "\032\031google/api/resource.proto\0324google/clou"
-          + "d/dialogflow/cx/v3/response_message.prot"
-          + "o\032\034google/protobuf/struct.proto\"\343\006\n\013Fulf"
-          + "illment\022@\n\010messages\030\001 \003(\0132..google.cloud"
-          + ".dialogflow.cx.v3.ResponseMessage\0227\n\007web"
-          + "hook\030\002 \001(\tB&\372A#\n!dialogflow.googleapis.c"
-          + "om/Webhook\022 \n\030return_partial_responses\030\010"
-          + " \001(\010\022\013\n\003tag\030\003 \001(\t\022\\\n\025set_parameter_actio"
-          + "ns\030\004 \003(\0132=.google.cloud.dialogflow.cx.v3"
-          + ".Fulfillment.SetParameterAction\022V\n\021condi"
-          + "tional_cases\030\005 \003(\0132;.google.cloud.dialog"
-          + "flow.cx.v3.Fulfillment.ConditionalCases\032"
-          + "N\n\022SetParameterAction\022\021\n\tparameter\030\001 \001(\t"
-          + "\022%\n\005value\030\002 \001(\0132\026.google.protobuf.Value\032"
-          + "\243\003\n\020ConditionalCases\022O\n\005cases\030\001 \003(\0132@.go"
-          + "ogle.cloud.dialogflow.cx.v3.Fulfillment."
-          + "ConditionalCases.Case\032\275\002\n\004Case\022\021\n\tcondit"
-          + "ion\030\001 \001(\t\022b\n\014case_content\030\002 \003(\0132L.google"
-          + ".cloud.dialogflow.cx.v3.Fulfillment.Cond"
-          + "itionalCases.Case.CaseContent\032\275\001\n\013CaseCo"
-          + "ntent\022A\n\007message\030\001 \001(\0132..google.cloud.di"
-          + "alogflow.cx.v3.ResponseMessageH\000\022W\n\020addi"
-          + "tional_cases\030\002 \001(\0132;.google.cloud.dialog"
-          + "flow.cx.v3.Fulfillment.ConditionalCasesH"
-          + "\000B\022\n\020cases_or_messageB\266\001\n!com.google.clo"
-          + "ud.dialogflow.cx.v3B\020FulfillmentProtoP\001Z"
-          + "1cloud.google.com/go/dialogflow/cx/apiv3"
-          + "/cxpb;cxpb\370\001\001\242\002\002DF\252\002\035Google.Cloud.Dialog"
-          + "flow.Cx.V3\352\002!Google::Cloud::Dialogflow::"
-          + "CX::V3b\006proto3"
+          + "\032\031google/api/resource.proto\0325google/clou"
+          + "d/dialogflow/cx/v3/advanced_settings.pro"
+          + "to\0324google/cloud/dialogflow/cx/v3/respon"
+          + "se_message.proto\032\034google/protobuf/struct"
+          + ".proto\"\323\007\n\013Fulfillment\022@\n\010messages\030\001 \003(\013"
+          + "2..google.cloud.dialogflow.cx.v3.Respons"
+          + "eMessage\0227\n\007webhook\030\002 \001(\tB&\372A#\n!dialogfl"
+          + "ow.googleapis.com/Webhook\022 \n\030return_part"
+          + "ial_responses\030\010 \001(\010\022\013\n\003tag\030\003 \001(\t\022\\\n\025set_"
+          + "parameter_actions\030\004 \003(\0132=.google.cloud.d"
+          + "ialogflow.cx.v3.Fulfillment.SetParameter"
+          + "Action\022V\n\021conditional_cases\030\005 \003(\0132;.goog"
+          + "le.cloud.dialogflow.cx.v3.Fulfillment.Co"
+          + "nditionalCases\022J\n\021advanced_settings\030\007 \001("
+          + "\0132/.google.cloud.dialogflow.cx.v3.Advanc"
+          + "edSettings\022\"\n\032enable_generative_fallback"
+          + "\030\014 \001(\010\032N\n\022SetParameterAction\022\021\n\tparamete"
+          + "r\030\001 \001(\t\022%\n\005value\030\002 \001(\0132\026.google.protobuf"
+          + ".Value\032\243\003\n\020ConditionalCases\022O\n\005cases\030\001 \003"
+          + "(\0132@.google.cloud.dialogflow.cx.v3.Fulfi"
+          + "llment.ConditionalCases.Case\032\275\002\n\004Case\022\021\n"
+          + "\tcondition\030\001 \001(\t\022b\n\014case_content\030\002 \003(\0132L"
+          + ".google.cloud.dialogflow.cx.v3.Fulfillme"
+          + "nt.ConditionalCases.Case.CaseContent\032\275\001\n"
+          + "\013CaseContent\022A\n\007message\030\001 \001(\0132..google.c"
+          + "loud.dialogflow.cx.v3.ResponseMessageH\000\022"
+          + "W\n\020additional_cases\030\002 \001(\0132;.google.cloud"
+          + ".dialogflow.cx.v3.Fulfillment.Conditiona"
+          + "lCasesH\000B\022\n\020cases_or_messageB\266\001\n!com.goo"
+          + "gle.cloud.dialogflow.cx.v3B\020FulfillmentP"
+          + "rotoP\001Z1cloud.google.com/go/dialogflow/c"
+          + "x/apiv3/cxpb;cxpb\370\001\001\242\002\002DF\252\002\035Google.Cloud"
+          + ".Dialogflow.Cx.V3\352\002!Google::Cloud::Dialo"
+          + "gflow::CX::V3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.cloud.dialogflow.cx.v3.AdvancedSettingsProto.getDescriptor(),
               com.google.cloud.dialogflow.cx.v3.ResponseMessageProto.getDescriptor(),
               com.google.protobuf.StructProto.getDescriptor(),
             });
@@ -109,6 +114,8 @@ public final class FulfillmentProto {
               "Tag",
               "SetParameterActions",
               "ConditionalCases",
+              "AdvancedSettings",
+              "EnableGenerativeFallback",
             });
     internal_static_google_cloud_dialogflow_cx_v3_Fulfillment_SetParameterAction_descriptor =
         internal_static_google_cloud_dialogflow_cx_v3_Fulfillment_descriptor
@@ -156,6 +163,7 @@ public final class FulfillmentProto {
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.ResourceProto.getDescriptor();
+    com.google.cloud.dialogflow.cx.v3.AdvancedSettingsProto.getDescriptor();
     com.google.cloud.dialogflow.cx.v3.ResponseMessageProto.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
   }

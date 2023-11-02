@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new PredictRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -224,10 +219,13 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Additional domain-specific parameters, any string must be up to 25000
    * characters long.
+   *
    * *  For Image Classification:
+   *
    *    `score_threshold` - (float) A value from 0.0 to 1.0. When the model
    *     makes predictions for an image, it will only produce results that have
    *     at least this confidence score. The default is 0.5.
+   *
    *  *  For Image Object Detection:
    *    `score_threshold` - (float) When Model detects objects on the image,
    *        it will only produce bounding boxes which have at least this
@@ -262,10 +260,13 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Additional domain-specific parameters, any string must be up to 25000
    * characters long.
+   *
    * *  For Image Classification:
+   *
    *    `score_threshold` - (float) A value from 0.0 to 1.0. When the model
    *     makes predictions for an image, it will only produce results that have
    *     at least this confidence score. The default is 0.5.
+   *
    *  *  For Image Object Detection:
    *    `score_threshold` - (float) When Model detects objects on the image,
    *        it will only produce bounding boxes which have at least this
@@ -291,10 +292,13 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Additional domain-specific parameters, any string must be up to 25000
    * characters long.
+   *
    * *  For Image Classification:
+   *
    *    `score_threshold` - (float) A value from 0.0 to 1.0. When the model
    *     makes predictions for an image, it will only produce results that have
    *     at least this confidence score. The default is 0.5.
+   *
    *  *  For Image Object Detection:
    *    `score_threshold` - (float) When Model detects objects on the image,
    *        it will only produce bounding boxes which have at least this
@@ -327,10 +331,13 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Additional domain-specific parameters, any string must be up to 25000
    * characters long.
+   *
    * *  For Image Classification:
+   *
    *    `score_threshold` - (float) A value from 0.0 to 1.0. When the model
    *     makes predictions for an image, it will only produce results that have
    *     at least this confidence score. The default is 0.5.
+   *
    *  *  For Image Object Detection:
    *    `score_threshold` - (float) When Model detects objects on the image,
    *        it will only produce bounding boxes which have at least this
@@ -1144,10 +1151,13 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Additional domain-specific parameters, any string must be up to 25000
      * characters long.
+     *
      * *  For Image Classification:
+     *
      *    `score_threshold` - (float) A value from 0.0 to 1.0. When the model
      *     makes predictions for an image, it will only produce results that have
      *     at least this confidence score. The default is 0.5.
+     *
      *  *  For Image Object Detection:
      *    `score_threshold` - (float) When Model detects objects on the image,
      *        it will only produce bounding boxes which have at least this
@@ -1182,10 +1192,13 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Additional domain-specific parameters, any string must be up to 25000
      * characters long.
+     *
      * *  For Image Classification:
+     *
      *    `score_threshold` - (float) A value from 0.0 to 1.0. When the model
      *     makes predictions for an image, it will only produce results that have
      *     at least this confidence score. The default is 0.5.
+     *
      *  *  For Image Object Detection:
      *    `score_threshold` - (float) When Model detects objects on the image,
      *        it will only produce bounding boxes which have at least this
@@ -1211,10 +1224,13 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Additional domain-specific parameters, any string must be up to 25000
      * characters long.
+     *
      * *  For Image Classification:
+     *
      *    `score_threshold` - (float) A value from 0.0 to 1.0. When the model
      *     makes predictions for an image, it will only produce results that have
      *     at least this confidence score. The default is 0.5.
+     *
      *  *  For Image Object Detection:
      *    `score_threshold` - (float) When Model detects objects on the image,
      *        it will only produce bounding boxes which have at least this
@@ -1247,10 +1263,13 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Additional domain-specific parameters, any string must be up to 25000
      * characters long.
+     *
      * *  For Image Classification:
+     *
      *    `score_threshold` - (float) A value from 0.0 to 1.0. When the model
      *     makes predictions for an image, it will only produce results that have
      *     at least this confidence score. The default is 0.5.
+     *
      *  *  For Image Object Detection:
      *    `score_threshold` - (float) When Model detects objects on the image,
      *        it will only produce bounding boxes which have at least this
@@ -1289,10 +1308,13 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Additional domain-specific parameters, any string must be up to 25000
      * characters long.
+     *
      * *  For Image Classification:
+     *
      *    `score_threshold` - (float) A value from 0.0 to 1.0. When the model
      *     makes predictions for an image, it will only produce results that have
      *     at least this confidence score. The default is 0.5.
+     *
      *  *  For Image Object Detection:
      *    `score_threshold` - (float) When Model detects objects on the image,
      *        it will only produce bounding boxes which have at least this
@@ -1327,10 +1349,13 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Additional domain-specific parameters, any string must be up to 25000
      * characters long.
+     *
      * *  For Image Classification:
+     *
      *    `score_threshold` - (float) A value from 0.0 to 1.0. When the model
      *     makes predictions for an image, it will only produce results that have
      *     at least this confidence score. The default is 0.5.
+     *
      *  *  For Image Object Detection:
      *    `score_threshold` - (float) When Model detects objects on the image,
      *        it will only produce bounding boxes which have at least this
@@ -1363,10 +1388,13 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Additional domain-specific parameters, any string must be up to 25000
      * characters long.
+     *
      * *  For Image Classification:
+     *
      *    `score_threshold` - (float) A value from 0.0 to 1.0. When the model
      *     makes predictions for an image, it will only produce results that have
      *     at least this confidence score. The default is 0.5.
+     *
      *  *  For Image Object Detection:
      *    `score_threshold` - (float) When Model detects objects on the image,
      *        it will only produce bounding boxes which have at least this

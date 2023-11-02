@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,11 +46,6 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Quota();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -138,6 +133,8 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
     COMMITTED_NVIDIA_A100_GPUS(375799445),
     /** <code>COMMITTED_NVIDIA_K80_GPUS = 3857188;</code> */
     COMMITTED_NVIDIA_K80_GPUS(3857188),
+    /** <code>COMMITTED_NVIDIA_L4_GPUS = 19163645;</code> */
+    COMMITTED_NVIDIA_L4_GPUS(19163645),
     /** <code>COMMITTED_NVIDIA_P100_GPUS = 107528100;</code> */
     COMMITTED_NVIDIA_P100_GPUS(107528100),
     /** <code>COMMITTED_NVIDIA_P4_GPUS = 347952897;</code> */
@@ -248,6 +245,12 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
     NETWORK_ENDPOINT_GROUPS(102144909),
     /** <code>NETWORK_FIREWALL_POLICIES = 101117374;</code> */
     NETWORK_FIREWALL_POLICIES(101117374),
+    /** <code>NET_LB_SECURITY_POLICIES_PER_REGION = 157892269;</code> */
+    NET_LB_SECURITY_POLICIES_PER_REGION(157892269),
+    /** <code>NET_LB_SECURITY_POLICY_RULES_PER_REGION = 356090931;</code> */
+    NET_LB_SECURITY_POLICY_RULES_PER_REGION(356090931),
+    /** <code>NET_LB_SECURITY_POLICY_RULE_ATTRIBUTES_PER_REGION = 311243888;</code> */
+    NET_LB_SECURITY_POLICY_RULE_ATTRIBUTES_PER_REGION(311243888),
     /** <code>NODE_GROUPS = 24624817;</code> */
     NODE_GROUPS(24624817),
     /** <code>NODE_TEMPLATES = 474896668;</code> */
@@ -258,6 +261,8 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
     NVIDIA_A100_GPUS(504872978),
     /** <code>NVIDIA_K80_GPUS = 163886599;</code> */
     NVIDIA_K80_GPUS(163886599),
+    /** <code>NVIDIA_L4_GPUS = 491923130;</code> */
+    NVIDIA_L4_GPUS(491923130),
     /** <code>NVIDIA_P100_GPUS = 236601633;</code> */
     NVIDIA_P100_GPUS(236601633),
     /** <code>NVIDIA_P100_VWS_GPUS = 213970574;</code> */
@@ -286,6 +291,8 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
     PREEMPTIBLE_NVIDIA_A100_GPUS(68832784),
     /** <code>PREEMPTIBLE_NVIDIA_K80_GPUS = 374960201;</code> */
     PREEMPTIBLE_NVIDIA_K80_GPUS(374960201),
+    /** <code>PREEMPTIBLE_NVIDIA_L4_GPUS = 100408376;</code> */
+    PREEMPTIBLE_NVIDIA_L4_GPUS(100408376),
     /** <code>PREEMPTIBLE_NVIDIA_P100_GPUS = 337432351;</code> */
     PREEMPTIBLE_NVIDIA_P100_GPUS(337432351),
     /** <code>PREEMPTIBLE_NVIDIA_P100_VWS_GPUS = 313544076;</code> */
@@ -332,6 +339,8 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
     SECURITY_POLICIES(189518703),
     /** <code>SECURITY_POLICIES_PER_REGION = 249041734;</code> */
     SECURITY_POLICIES_PER_REGION(249041734),
+    /** <code>SECURITY_POLICY_ADVANCED_RULES_PER_REGION = 371815341;</code> */
+    SECURITY_POLICY_ADVANCED_RULES_PER_REGION(371815341),
     /** <code>SECURITY_POLICY_CEVAL_RULES = 470815689;</code> */
     SECURITY_POLICY_CEVAL_RULES(470815689),
     /** <code>SECURITY_POLICY_RULES = 203549225;</code> */
@@ -451,6 +460,8 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
     public static final int COMMITTED_NVIDIA_A100_GPUS_VALUE = 375799445;
     /** <code>COMMITTED_NVIDIA_K80_GPUS = 3857188;</code> */
     public static final int COMMITTED_NVIDIA_K80_GPUS_VALUE = 3857188;
+    /** <code>COMMITTED_NVIDIA_L4_GPUS = 19163645;</code> */
+    public static final int COMMITTED_NVIDIA_L4_GPUS_VALUE = 19163645;
     /** <code>COMMITTED_NVIDIA_P100_GPUS = 107528100;</code> */
     public static final int COMMITTED_NVIDIA_P100_GPUS_VALUE = 107528100;
     /** <code>COMMITTED_NVIDIA_P4_GPUS = 347952897;</code> */
@@ -561,6 +572,12 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
     public static final int NETWORK_ENDPOINT_GROUPS_VALUE = 102144909;
     /** <code>NETWORK_FIREWALL_POLICIES = 101117374;</code> */
     public static final int NETWORK_FIREWALL_POLICIES_VALUE = 101117374;
+    /** <code>NET_LB_SECURITY_POLICIES_PER_REGION = 157892269;</code> */
+    public static final int NET_LB_SECURITY_POLICIES_PER_REGION_VALUE = 157892269;
+    /** <code>NET_LB_SECURITY_POLICY_RULES_PER_REGION = 356090931;</code> */
+    public static final int NET_LB_SECURITY_POLICY_RULES_PER_REGION_VALUE = 356090931;
+    /** <code>NET_LB_SECURITY_POLICY_RULE_ATTRIBUTES_PER_REGION = 311243888;</code> */
+    public static final int NET_LB_SECURITY_POLICY_RULE_ATTRIBUTES_PER_REGION_VALUE = 311243888;
     /** <code>NODE_GROUPS = 24624817;</code> */
     public static final int NODE_GROUPS_VALUE = 24624817;
     /** <code>NODE_TEMPLATES = 474896668;</code> */
@@ -571,6 +588,8 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
     public static final int NVIDIA_A100_GPUS_VALUE = 504872978;
     /** <code>NVIDIA_K80_GPUS = 163886599;</code> */
     public static final int NVIDIA_K80_GPUS_VALUE = 163886599;
+    /** <code>NVIDIA_L4_GPUS = 491923130;</code> */
+    public static final int NVIDIA_L4_GPUS_VALUE = 491923130;
     /** <code>NVIDIA_P100_GPUS = 236601633;</code> */
     public static final int NVIDIA_P100_GPUS_VALUE = 236601633;
     /** <code>NVIDIA_P100_VWS_GPUS = 213970574;</code> */
@@ -599,6 +618,8 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
     public static final int PREEMPTIBLE_NVIDIA_A100_GPUS_VALUE = 68832784;
     /** <code>PREEMPTIBLE_NVIDIA_K80_GPUS = 374960201;</code> */
     public static final int PREEMPTIBLE_NVIDIA_K80_GPUS_VALUE = 374960201;
+    /** <code>PREEMPTIBLE_NVIDIA_L4_GPUS = 100408376;</code> */
+    public static final int PREEMPTIBLE_NVIDIA_L4_GPUS_VALUE = 100408376;
     /** <code>PREEMPTIBLE_NVIDIA_P100_GPUS = 337432351;</code> */
     public static final int PREEMPTIBLE_NVIDIA_P100_GPUS_VALUE = 337432351;
     /** <code>PREEMPTIBLE_NVIDIA_P100_VWS_GPUS = 313544076;</code> */
@@ -646,6 +667,8 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
     public static final int SECURITY_POLICIES_VALUE = 189518703;
     /** <code>SECURITY_POLICIES_PER_REGION = 249041734;</code> */
     public static final int SECURITY_POLICIES_PER_REGION_VALUE = 249041734;
+    /** <code>SECURITY_POLICY_ADVANCED_RULES_PER_REGION = 371815341;</code> */
+    public static final int SECURITY_POLICY_ADVANCED_RULES_PER_REGION_VALUE = 371815341;
     /** <code>SECURITY_POLICY_CEVAL_RULES = 470815689;</code> */
     public static final int SECURITY_POLICY_CEVAL_RULES_VALUE = 470815689;
     /** <code>SECURITY_POLICY_RULES = 203549225;</code> */
@@ -779,6 +802,8 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
           return COMMITTED_NVIDIA_A100_GPUS;
         case 3857188:
           return COMMITTED_NVIDIA_K80_GPUS;
+        case 19163645:
+          return COMMITTED_NVIDIA_L4_GPUS;
         case 107528100:
           return COMMITTED_NVIDIA_P100_GPUS;
         case 347952897:
@@ -881,6 +906,12 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
           return NETWORK_ENDPOINT_GROUPS;
         case 101117374:
           return NETWORK_FIREWALL_POLICIES;
+        case 157892269:
+          return NET_LB_SECURITY_POLICIES_PER_REGION;
+        case 356090931:
+          return NET_LB_SECURITY_POLICY_RULES_PER_REGION;
+        case 311243888:
+          return NET_LB_SECURITY_POLICY_RULE_ATTRIBUTES_PER_REGION;
         case 24624817:
           return NODE_GROUPS;
         case 474896668:
@@ -891,6 +922,8 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
           return NVIDIA_A100_GPUS;
         case 163886599:
           return NVIDIA_K80_GPUS;
+        case 491923130:
+          return NVIDIA_L4_GPUS;
         case 236601633:
           return NVIDIA_P100_GPUS;
         case 213970574:
@@ -919,6 +952,8 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
           return PREEMPTIBLE_NVIDIA_A100_GPUS;
         case 374960201:
           return PREEMPTIBLE_NVIDIA_K80_GPUS;
+        case 100408376:
+          return PREEMPTIBLE_NVIDIA_L4_GPUS;
         case 337432351:
           return PREEMPTIBLE_NVIDIA_P100_GPUS;
         case 313544076:
@@ -965,6 +1000,8 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
           return SECURITY_POLICIES;
         case 249041734:
           return SECURITY_POLICIES_PER_REGION;
+        case 371815341:
+          return SECURITY_POLICY_ADVANCED_RULES_PER_REGION;
         case 470815689:
           return SECURITY_POLICY_CEVAL_RULES;
         case 203549225:

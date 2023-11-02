@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -179,5 +179,5 @@ public interface StoredInfoTypeConfigOrBuilder
    */
   com.google.privacy.dlp.v2.CustomInfoType.RegexOrBuilder getRegexOrBuilder();
 
-  public com.google.privacy.dlp.v2.StoredInfoTypeConfig.TypeCase getTypeCase();
+  com.google.privacy.dlp.v2.StoredInfoTypeConfig.TypeCase getTypeCase();
 }

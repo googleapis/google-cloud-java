@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,6 +32,7 @@ public interface AccessLocationsOrBuilder
    * limited situations Google systems may refer refer to a region code instead
    * of a country code.
    * Possible Region Codes:
+   *
    *   * ASI: Asia
    *   * EUR: Europe
    *   * OCE: Oceania
@@ -56,6 +57,7 @@ public interface AccessLocationsOrBuilder
    * limited situations Google systems may refer refer to a region code instead
    * of a country code.
    * Possible Region Codes:
+   *
    *   * ASI: Asia
    *   * EUR: Europe
    *   * OCE: Oceania
@@ -81,6 +83,7 @@ public interface AccessLocationsOrBuilder
    * a region code. In some limited situations Google systems may refer refer to
    * a region code instead of a country code.
    * Possible Region Codes:
+   *
    *   * ASI: Asia
    *   * EUR: Europe
    *   * OCE: Oceania
@@ -105,6 +108,7 @@ public interface AccessLocationsOrBuilder
    * a region code. In some limited situations Google systems may refer refer to
    * a region code instead of a country code.
    * Possible Region Codes:
+   *
    *   * ASI: Asia
    *   * EUR: Europe
    *   * OCE: Oceania

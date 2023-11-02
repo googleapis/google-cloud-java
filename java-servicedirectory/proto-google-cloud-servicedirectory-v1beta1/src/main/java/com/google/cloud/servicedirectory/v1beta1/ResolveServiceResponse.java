@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,8 @@ package com.google.cloud.servicedirectory.v1beta1;
  *
  *
  * <pre>
- * The response message for [LookupService.ResolveService][google.cloud.servicedirectory.v1beta1.LookupService.ResolveService].
+ * The response message for
+ * [LookupService.ResolveService][google.cloud.servicedirectory.v1beta1.LookupService.ResolveService].
  * </pre>
  *
  * Protobuf type {@code google.cloud.servicedirectory.v1beta1.ResolveServiceResponse}
@@ -43,11 +44,6 @@ public final class ResolveServiceResponse extends com.google.protobuf.GeneratedM
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ResolveServiceResponse();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -264,7 +260,8 @@ public final class ResolveServiceResponse extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The response message for [LookupService.ResolveService][google.cloud.servicedirectory.v1beta1.LookupService.ResolveService].
+   * The response message for
+   * [LookupService.ResolveService][google.cloud.servicedirectory.v1beta1.LookupService.ResolveService].
    * </pre>
    *
    * Protobuf type {@code google.cloud.servicedirectory.v1beta1.ResolveServiceResponse}

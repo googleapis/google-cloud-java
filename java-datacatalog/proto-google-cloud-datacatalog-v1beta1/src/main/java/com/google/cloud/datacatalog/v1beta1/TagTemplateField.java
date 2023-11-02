@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,17 +40,13 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
   private TagTemplateField() {
     name_ = "";
     displayName_ = "";
+    description_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new TagTemplateField();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -76,8 +72,11 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The resource name of the tag template field in URL format. Example:
+   * Output only. The resource name of the tag template field in URL format.
+   * Example:
+   *
    * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template}/fields/{field}
+   *
    * Note that this TagTemplateField may not actually be stored in the location
    * in this name.
    * </pre>
@@ -102,8 +101,11 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The resource name of the tag template field in URL format. Example:
+   * Output only. The resource name of the tag template field in URL format.
+   * Example:
+   *
    * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template}/fields/{field}
+   *
    * Note that this TagTemplateField may not actually be stored in the location
    * in this name.
    * </pre>
@@ -250,6 +252,57 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
     return isRequired_;
   }
 
+  public static final int DESCRIPTION_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * The description for this field. Defaults to an empty string.
+   * </pre>
+   *
+   * <code>string description = 4;</code>
+   *
+   * @return The description.
+   */
+  @java.lang.Override
+  public java.lang.String getDescription() {
+    java.lang.Object ref = description_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      description_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The description for this field. Defaults to an empty string.
+   * </pre>
+   *
+   * <code>string description = 4;</code>
+   *
+   * @return The bytes for description.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getDescriptionBytes() {
+    java.lang.Object ref = description_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      description_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int ORDER_FIELD_NUMBER = 5;
   private int order_ = 0;
   /**
@@ -294,6 +347,9 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
     if (isRequired_ != false) {
       output.writeBool(3, isRequired_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, description_);
+    }
     if (order_ != 0) {
       output.writeInt32(5, order_);
     }
@@ -317,6 +373,9 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
     }
     if (isRequired_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, isRequired_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, description_);
     }
     if (order_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(5, order_);
@@ -347,6 +406,7 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
       if (!getType().equals(other.getType())) return false;
     }
     if (getIsRequired() != other.getIsRequired()) return false;
+    if (!getDescription().equals(other.getDescription())) return false;
     if (getOrder() != other.getOrder()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -369,6 +429,8 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
     }
     hash = (37 * hash) + IS_REQUIRED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIsRequired());
+    hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+    hash = (53 * hash) + getDescription().hashCode();
     hash = (37 * hash) + ORDER_FIELD_NUMBER;
     hash = (53 * hash) + getOrder();
     hash = (29 * hash) + getUnknownFields().hashCode();
@@ -519,6 +581,7 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
         typeBuilder_ = null;
       }
       isRequired_ = false;
+      description_ = "";
       order_ = 0;
       return this;
     }
@@ -569,6 +632,9 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
         result.isRequired_ = isRequired_;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.order_ = order_;
       }
     }
@@ -635,6 +701,11 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
       if (other.getIsRequired() != false) {
         setIsRequired(other.getIsRequired());
       }
+      if (!other.getDescription().isEmpty()) {
+        description_ = other.description_;
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
       if (other.getOrder() != 0) {
         setOrder(other.getOrder());
       }
@@ -682,10 +753,16 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000008;
                 break;
               } // case 24
+            case 34:
+              {
+                description_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 34
             case 40:
               {
                 order_ = input.readInt32();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 40
             case 50:
@@ -718,8 +795,11 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The resource name of the tag template field in URL format. Example:
+     * Output only. The resource name of the tag template field in URL format.
+     * Example:
+     *
      * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template}/fields/{field}
+     *
      * Note that this TagTemplateField may not actually be stored in the location
      * in this name.
      * </pre>
@@ -743,8 +823,11 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The resource name of the tag template field in URL format. Example:
+     * Output only. The resource name of the tag template field in URL format.
+     * Example:
+     *
      * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template}/fields/{field}
+     *
      * Note that this TagTemplateField may not actually be stored in the location
      * in this name.
      * </pre>
@@ -768,8 +851,11 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The resource name of the tag template field in URL format. Example:
+     * Output only. The resource name of the tag template field in URL format.
+     * Example:
+     *
      * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template}/fields/{field}
+     *
      * Note that this TagTemplateField may not actually be stored in the location
      * in this name.
      * </pre>
@@ -792,8 +878,11 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The resource name of the tag template field in URL format. Example:
+     * Output only. The resource name of the tag template field in URL format.
+     * Example:
+     *
      * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template}/fields/{field}
+     *
      * Note that this TagTemplateField may not actually be stored in the location
      * in this name.
      * </pre>
@@ -812,8 +901,11 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The resource name of the tag template field in URL format. Example:
+     * Output only. The resource name of the tag template field in URL format.
+     * Example:
+     *
      * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template}/fields/{field}
+     *
      * Note that this TagTemplateField may not actually be stored in the location
      * in this name.
      * </pre>
@@ -1194,6 +1286,112 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private java.lang.Object description_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The description for this field. Defaults to an empty string.
+     * </pre>
+     *
+     * <code>string description = 4;</code>
+     *
+     * @return The description.
+     */
+    public java.lang.String getDescription() {
+      java.lang.Object ref = description_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        description_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The description for this field. Defaults to an empty string.
+     * </pre>
+     *
+     * <code>string description = 4;</code>
+     *
+     * @return The bytes for description.
+     */
+    public com.google.protobuf.ByteString getDescriptionBytes() {
+      java.lang.Object ref = description_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        description_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The description for this field. Defaults to an empty string.
+     * </pre>
+     *
+     * <code>string description = 4;</code>
+     *
+     * @param value The description to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDescription(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      description_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The description for this field. Defaults to an empty string.
+     * </pre>
+     *
+     * <code>string description = 4;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDescription() {
+      description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000010);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The description for this field. Defaults to an empty string.
+     * </pre>
+     *
+     * <code>string description = 4;</code>
+     *
+     * @param value The bytes for description to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      description_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
     private int order_;
     /**
      *
@@ -1231,7 +1429,7 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
     public Builder setOrder(int value) {
 
       order_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1250,7 +1448,7 @@ public final class TagTemplateField extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearOrder() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       order_ = 0;
       onChanged();
       return this;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,6 +27,7 @@ import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.bigquery.connection.v1beta1.ConnectionProto;
 import com.google.iam.v1.GetIamPolicyRequest;
@@ -470,6 +471,12 @@ public class HttpJsonConnectionServiceStub extends ConnectionServiceStub {
                 .<ConnectionProto.CreateConnectionRequest, ConnectionProto.Connection>newBuilder()
                 .setMethodDescriptor(createConnectionMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ConnectionProto.GetConnectionRequest, ConnectionProto.Connection>
         getConnectionTransportSettings =
@@ -477,6 +484,12 @@ public class HttpJsonConnectionServiceStub extends ConnectionServiceStub {
                 .<ConnectionProto.GetConnectionRequest, ConnectionProto.Connection>newBuilder()
                 .setMethodDescriptor(getConnectionMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<
             ConnectionProto.ListConnectionsRequest, ConnectionProto.ListConnectionsResponse>
@@ -486,6 +499,12 @@ public class HttpJsonConnectionServiceStub extends ConnectionServiceStub {
                     newBuilder()
                 .setMethodDescriptor(listConnectionsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ConnectionProto.UpdateConnectionRequest, ConnectionProto.Connection>
         updateConnectionTransportSettings =
@@ -493,6 +512,12 @@ public class HttpJsonConnectionServiceStub extends ConnectionServiceStub {
                 .<ConnectionProto.UpdateConnectionRequest, ConnectionProto.Connection>newBuilder()
                 .setMethodDescriptor(updateConnectionMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ConnectionProto.UpdateConnectionCredentialRequest, Empty>
         updateConnectionCredentialTransportSettings =
@@ -500,28 +525,58 @@ public class HttpJsonConnectionServiceStub extends ConnectionServiceStub {
                 .<ConnectionProto.UpdateConnectionCredentialRequest, Empty>newBuilder()
                 .setMethodDescriptor(updateConnectionCredentialMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ConnectionProto.DeleteConnectionRequest, Empty>
         deleteConnectionTransportSettings =
             HttpJsonCallSettings.<ConnectionProto.DeleteConnectionRequest, Empty>newBuilder()
                 .setMethodDescriptor(deleteConnectionMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
             .setMethodDescriptor(getIamPolicyMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         HttpJsonCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
             .setMethodDescriptor(setIamPolicyMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
             HttpJsonCallSettings.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
                 .setMethodDescriptor(testIamPermissionsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      return builder.build();
+                    })
                 .build();
 
     this.createConnectionCallable =

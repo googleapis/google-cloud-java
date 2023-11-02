@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -378,6 +378,49 @@ public interface InstanceGroupManagerOrBuilder
    * @return The bytes for instanceGroup.
    */
   com.google.protobuf.ByteString getInstanceGroupBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The repair policy for this managed instance group.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.InstanceGroupManagerInstanceLifecyclePolicy instance_lifecycle_policy = 447961617;
+   * </code>
+   *
+   * @return Whether the instanceLifecyclePolicy field is set.
+   */
+  boolean hasInstanceLifecyclePolicy();
+  /**
+   *
+   *
+   * <pre>
+   * The repair policy for this managed instance group.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.InstanceGroupManagerInstanceLifecyclePolicy instance_lifecycle_policy = 447961617;
+   * </code>
+   *
+   * @return The instanceLifecyclePolicy.
+   */
+  com.google.cloud.compute.v1.InstanceGroupManagerInstanceLifecyclePolicy
+      getInstanceLifecyclePolicy();
+  /**
+   *
+   *
+   * <pre>
+   * The repair policy for this managed instance group.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.InstanceGroupManagerInstanceLifecyclePolicy instance_lifecycle_policy = 447961617;
+   * </code>
+   */
+  com.google.cloud.compute.v1.InstanceGroupManagerInstanceLifecyclePolicyOrBuilder
+      getInstanceLifecyclePolicyOrBuilder();
 
   /**
    *

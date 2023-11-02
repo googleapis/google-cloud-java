@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,11 +44,6 @@ public final class ContinuousBackupConfig extends com.google.protobuf.GeneratedM
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ContinuousBackupConfig();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -106,9 +101,9 @@ public final class ContinuousBackupConfig extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The number of days backups and logs will be retained, which determines the
-   * window of time that data is recoverable for. If not set, it defaults to 14
-   * days.
+   * The number of days that are eligible to restore from using PITR. To support
+   * the entire recovery window, backups and logs are retained for one day more
+   * than the recovery window. If not set, defaults to 14 days.
    * </pre>
    *
    * <code>int32 recovery_window_days = 4;</code>
@@ -657,9 +652,9 @@ public final class ContinuousBackupConfig extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The number of days backups and logs will be retained, which determines the
-     * window of time that data is recoverable for. If not set, it defaults to 14
-     * days.
+     * The number of days that are eligible to restore from using PITR. To support
+     * the entire recovery window, backups and logs are retained for one day more
+     * than the recovery window. If not set, defaults to 14 days.
      * </pre>
      *
      * <code>int32 recovery_window_days = 4;</code>
@@ -674,9 +669,9 @@ public final class ContinuousBackupConfig extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The number of days backups and logs will be retained, which determines the
-     * window of time that data is recoverable for. If not set, it defaults to 14
-     * days.
+     * The number of days that are eligible to restore from using PITR. To support
+     * the entire recovery window, backups and logs are retained for one day more
+     * than the recovery window. If not set, defaults to 14 days.
      * </pre>
      *
      * <code>int32 recovery_window_days = 4;</code>
@@ -695,9 +690,9 @@ public final class ContinuousBackupConfig extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The number of days backups and logs will be retained, which determines the
-     * window of time that data is recoverable for. If not set, it defaults to 14
-     * days.
+     * The number of days that are eligible to restore from using PITR. To support
+     * the entire recovery window, backups and logs are retained for one day more
+     * than the recovery window. If not set, defaults to 14 days.
      * </pre>
      *
      * <code>int32 recovery_window_days = 4;</code>

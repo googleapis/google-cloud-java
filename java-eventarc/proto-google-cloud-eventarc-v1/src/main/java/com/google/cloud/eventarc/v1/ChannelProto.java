@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,26 +44,26 @@ public final class ChannelProto {
           + "\022\030google.cloud.eventarc.v1\032\037google/api/f"
           + "ield_behavior.proto\032\031google/api/resource"
           + ".proto\032\037google/protobuf/timestamp.proto\""
-          + "\262\004\n\007Channel\022\021\n\004name\030\001 \001(\tB\003\340A\002\022\020\n\003uid\030\002 "
-          + "\001(\tB\003\340A\003\0224\n\013create_time\030\005 \001(\0132\032.google.p"
-          + "rotobuf.TimestampB\003\340A\003\0224\n\013update_time\030\006 "
-          + "\001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\020\n\010"
-          + "provider\030\007 \001(\t\022\033\n\014pubsub_topic\030\010 \001(\tB\003\340A"
-          + "\003H\000\022;\n\005state\030\t \001(\0162\'.google.cloud.eventa"
-          + "rc.v1.Channel.StateB\003\340A\003\022\035\n\020activation_t"
-          + "oken\030\n \001(\tB\003\340A\003\022B\n\017crypto_key_name\030\013 \001(\t"
-          + "B)\340A\001\372A#\n!cloudkms.googleapis.com/Crypto"
-          + "Key\"E\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\013\n\007P"
-          + "ENDING\020\001\022\n\n\006ACTIVE\020\002\022\014\n\010INACTIVE\020\003:s\352Ap\n"
-          + "\037eventarc.googleapis.com/Channel\022:projec"
-          + "ts/{project}/locations/{location}/channe"
-          + "ls/{channel}*\010channels2\007channelB\013\n\ttrans"
-          + "portB\274\001\n\034com.google.cloud.eventarc.v1B\014C"
-          + "hannelProtoP\001Z8cloud.google.com/go/event"
-          + "arc/apiv1/eventarcpb;eventarcpb\252\002\030Google"
-          + ".Cloud.Eventarc.V1\312\002\030Google\\Cloud\\Eventa"
-          + "rc\\V1\352\002\033Google::Cloud::Eventarc::V1b\006pro"
-          + "to3"
+          + "\272\004\n\007Channel\022\022\n\004name\030\001 \001(\tB\004\342A\001\002\022\021\n\003uid\030\002"
+          + " \001(\tB\004\342A\001\003\0225\n\013create_time\030\005 \001(\0132\032.google"
+          + ".protobuf.TimestampB\004\342A\001\003\0225\n\013update_time"
+          + "\030\006 \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003"
+          + "\022\020\n\010provider\030\007 \001(\t\022\034\n\014pubsub_topic\030\010 \001(\t"
+          + "B\004\342A\001\003H\000\022<\n\005state\030\t \001(\0162\'.google.cloud.e"
+          + "ventarc.v1.Channel.StateB\004\342A\001\003\022\036\n\020activa"
+          + "tion_token\030\n \001(\tB\004\342A\001\003\022C\n\017crypto_key_nam"
+          + "e\030\013 \001(\tB*\342A\001\001\372A#\n!cloudkms.googleapis.co"
+          + "m/CryptoKey\"E\n\005State\022\025\n\021STATE_UNSPECIFIE"
+          + "D\020\000\022\013\n\007PENDING\020\001\022\n\n\006ACTIVE\020\002\022\014\n\010INACTIVE"
+          + "\020\003:s\352Ap\n\037eventarc.googleapis.com/Channel"
+          + "\022:projects/{project}/locations/{location"
+          + "}/channels/{channel}*\010channels2\007channelB"
+          + "\013\n\ttransportB\274\001\n\034com.google.cloud.eventa"
+          + "rc.v1B\014ChannelProtoP\001Z8cloud.google.com/"
+          + "go/eventarc/apiv1/eventarcpb;eventarcpb\252"
+          + "\002\030Google.Cloud.Eventarc.V1\312\002\030Google\\Clou"
+          + "d\\Eventarc\\V1\352\002\033Google::Cloud::Eventarc:"
+          + ":V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

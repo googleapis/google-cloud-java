@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ public interface NetworkAttachmentConnectedEndpointOrBuilder
    *
    *
    * <pre>
-   * The IP address assigned to the producer instance network interface. This value will be a range in case of Serverless.
+   * The IPv4 address assigned to the producer instance network interface. This value will be a range in case of Serverless.
    * </pre>
    *
    * <code>optional string ip_address = 406272220;</code>
@@ -39,7 +39,7 @@ public interface NetworkAttachmentConnectedEndpointOrBuilder
    *
    *
    * <pre>
-   * The IP address assigned to the producer instance network interface. This value will be a range in case of Serverless.
+   * The IPv4 address assigned to the producer instance network interface. This value will be a range in case of Serverless.
    * </pre>
    *
    * <code>optional string ip_address = 406272220;</code>
@@ -51,7 +51,7 @@ public interface NetworkAttachmentConnectedEndpointOrBuilder
    *
    *
    * <pre>
-   * The IP address assigned to the producer instance network interface. This value will be a range in case of Serverless.
+   * The IPv4 address assigned to the producer instance network interface. This value will be a range in case of Serverless.
    * </pre>
    *
    * <code>optional string ip_address = 406272220;</code>
@@ -101,7 +101,7 @@ public interface NetworkAttachmentConnectedEndpointOrBuilder
    *
    *
    * <pre>
-   * Alias IP ranges from the same subnetwork
+   * Alias IP ranges from the same subnetwork.
    * </pre>
    *
    * <code>repeated string secondary_ip_cidr_ranges = 117184788;</code>
@@ -113,7 +113,7 @@ public interface NetworkAttachmentConnectedEndpointOrBuilder
    *
    *
    * <pre>
-   * Alias IP ranges from the same subnetwork
+   * Alias IP ranges from the same subnetwork.
    * </pre>
    *
    * <code>repeated string secondary_ip_cidr_ranges = 117184788;</code>
@@ -125,7 +125,7 @@ public interface NetworkAttachmentConnectedEndpointOrBuilder
    *
    *
    * <pre>
-   * Alias IP ranges from the same subnetwork
+   * Alias IP ranges from the same subnetwork.
    * </pre>
    *
    * <code>repeated string secondary_ip_cidr_ranges = 117184788;</code>
@@ -138,7 +138,7 @@ public interface NetworkAttachmentConnectedEndpointOrBuilder
    *
    *
    * <pre>
-   * Alias IP ranges from the same subnetwork
+   * Alias IP ranges from the same subnetwork.
    * </pre>
    *
    * <code>repeated string secondary_ip_cidr_ranges = 117184788;</code>

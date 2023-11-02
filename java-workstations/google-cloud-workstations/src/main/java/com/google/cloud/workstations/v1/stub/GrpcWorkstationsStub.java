@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.workstations.v1.CreateWorkstationClusterRequest;
 import com.google.cloud.workstations.v1.CreateWorkstationConfigRequest;
@@ -59,7 +60,6 @@ import com.google.cloud.workstations.v1.UpdateWorkstationRequest;
 import com.google.cloud.workstations.v1.Workstation;
 import com.google.cloud.workstations.v1.WorkstationCluster;
 import com.google.cloud.workstations.v1.WorkstationConfig;
-import com.google.common.collect.ImmutableMap;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -458,9 +458,9 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
                 .setMethodDescriptor(getWorkstationClusterMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<ListWorkstationClustersRequest, ListWorkstationClustersResponse>
@@ -470,9 +470,9 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
                 .setMethodDescriptor(listWorkstationClustersMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<CreateWorkstationClusterRequest, Operation>
@@ -481,9 +481,9 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
                 .setMethodDescriptor(createWorkstationClusterMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<UpdateWorkstationClusterRequest, Operation>
@@ -492,11 +492,11 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
                 .setMethodDescriptor(updateWorkstationClusterMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put(
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
                           "workstation_cluster.name",
                           String.valueOf(request.getWorkstationCluster().getName()));
-                      return params.build();
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<DeleteWorkstationClusterRequest, Operation>
@@ -505,9 +505,9 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
                 .setMethodDescriptor(deleteWorkstationClusterMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetWorkstationConfigRequest, WorkstationConfig>
@@ -516,9 +516,9 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
                 .setMethodDescriptor(getWorkstationConfigMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<ListWorkstationConfigsRequest, ListWorkstationConfigsResponse>
@@ -528,9 +528,9 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
                 .setMethodDescriptor(listWorkstationConfigsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<ListUsableWorkstationConfigsRequest, ListUsableWorkstationConfigsResponse>
@@ -541,9 +541,9 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
                 .setMethodDescriptor(listUsableWorkstationConfigsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<CreateWorkstationConfigRequest, Operation>
@@ -552,9 +552,9 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
                 .setMethodDescriptor(createWorkstationConfigMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<UpdateWorkstationConfigRequest, Operation>
@@ -563,11 +563,11 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
                 .setMethodDescriptor(updateWorkstationConfigMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put(
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
                           "workstation_config.name",
                           String.valueOf(request.getWorkstationConfig().getName()));
-                      return params.build();
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<DeleteWorkstationConfigRequest, Operation>
@@ -576,9 +576,9 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
                 .setMethodDescriptor(deleteWorkstationConfigMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetWorkstationRequest, Workstation> getWorkstationTransportSettings =
@@ -586,9 +586,9 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
             .setMethodDescriptor(getWorkstationMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListWorkstationsRequest, ListWorkstationsResponse>
@@ -597,9 +597,9 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
                 .setMethodDescriptor(listWorkstationsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<ListUsableWorkstationsRequest, ListUsableWorkstationsResponse>
@@ -609,9 +609,9 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
                 .setMethodDescriptor(listUsableWorkstationsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<CreateWorkstationRequest, Operation> createWorkstationTransportSettings =
@@ -619,9 +619,9 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
             .setMethodDescriptor(createWorkstationMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateWorkstationRequest, Operation> updateWorkstationTransportSettings =
@@ -629,10 +629,10 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
             .setMethodDescriptor(updateWorkstationMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put(
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
                       "workstation.name", String.valueOf(request.getWorkstation().getName()));
-                  return params.build();
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteWorkstationRequest, Operation> deleteWorkstationTransportSettings =
@@ -640,9 +640,9 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
             .setMethodDescriptor(deleteWorkstationMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<StartWorkstationRequest, Operation> startWorkstationTransportSettings =
@@ -650,9 +650,9 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
             .setMethodDescriptor(startWorkstationMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<StopWorkstationRequest, Operation> stopWorkstationTransportSettings =
@@ -660,9 +660,9 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
             .setMethodDescriptor(stopWorkstationMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GenerateAccessTokenRequest, GenerateAccessTokenResponse>
@@ -671,9 +671,9 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
                 .setMethodDescriptor(generateAccessTokenMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("workstation", String.valueOf(request.getWorkstation()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("workstation", String.valueOf(request.getWorkstation()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
@@ -681,9 +681,9 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
             .setMethodDescriptor(setIamPolicyMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("resource", String.valueOf(request.getResource()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
@@ -691,9 +691,9 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
             .setMethodDescriptor(getIamPolicyMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("resource", String.valueOf(request.getResource()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -702,9 +702,9 @@ public class GrpcWorkstationsStub extends WorkstationsStub {
                 .setMethodDescriptor(testIamPermissionsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("resource", String.valueOf(request.getResource()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      return builder.build();
                     })
                 .build();
 

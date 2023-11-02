@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -53,11 +53,6 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
     return new QueryResult();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.v2beta1.SessionProto
         .internal_static_google_cloud_dialogflow_v2beta1_QueryResult_descriptor;
@@ -82,6 +77,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The original conversational query text:
+   *
    * - If natural language text was provided as input, `query_text` contains
    *   a copy of the input.
    * - If natural language speech audio was provided as input, `query_text`
@@ -112,6 +108,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The original conversational query text:
+   *
    * - If natural language text was provided as input, `query_text` contains
    *   a copy of the input.
    * - If natural language speech audio was provided as input, `query_text`
@@ -205,6 +202,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    * indicates an estimated greater likelihood that the recognized words are
    * correct. The default of 0.0 is a sentinel value indicating that confidence
    * was not set.
+   *
    * This field is not guaranteed to be accurate or set. In particular this
    * field isn't set for StreamingDetectIntent since the streaming endpoint has
    * separate confidence estimates per portion of the audio in
@@ -278,19 +276,19 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The collection of extracted parameters.
+   *
    * Depending on your protocol or client library language, this is a
    * map, associative array, symbol table, dictionary, or JSON object
    * composed of a collection of (MapKey, MapValue) pairs:
-   * -   MapKey type: string
-   * -   MapKey value: parameter name
-   * -   MapValue type:
-   *     -   If parameter's entity type is a composite entity: map
-   *     -   Else: depending on parameter value type, could be one of string,
-   *         number, boolean, null, list or map
-   * -   MapValue value:
-   *     -   If parameter's entity type is a composite entity:
-   *         map from composite entity property names to property values
-   *     -   Else: parameter value
+   *
+   * * MapKey type: string
+   * * MapKey value: parameter name
+   * * MapValue type: If parameter's entity type is a composite entity then use
+   * map, otherwise, depending on the parameter value type, it could be one of
+   * string, number, boolean, null, list or map.
+   * * MapValue value: If parameter's entity type is a composite entity then use
+   * map from composite entity property names to property values, otherwise,
+   * use parameter value.
    * </pre>
    *
    * <code>.google.protobuf.Struct parameters = 4;</code>
@@ -306,19 +304,19 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The collection of extracted parameters.
+   *
    * Depending on your protocol or client library language, this is a
    * map, associative array, symbol table, dictionary, or JSON object
    * composed of a collection of (MapKey, MapValue) pairs:
-   * -   MapKey type: string
-   * -   MapKey value: parameter name
-   * -   MapValue type:
-   *     -   If parameter's entity type is a composite entity: map
-   *     -   Else: depending on parameter value type, could be one of string,
-   *         number, boolean, null, list or map
-   * -   MapValue value:
-   *     -   If parameter's entity type is a composite entity:
-   *         map from composite entity property names to property values
-   *     -   Else: parameter value
+   *
+   * * MapKey type: string
+   * * MapKey value: parameter name
+   * * MapValue type: If parameter's entity type is a composite entity then use
+   * map, otherwise, depending on the parameter value type, it could be one of
+   * string, number, boolean, null, list or map.
+   * * MapValue value: If parameter's entity type is a composite entity then use
+   * map from composite entity property names to property values, otherwise,
+   * use parameter value.
    * </pre>
    *
    * <code>.google.protobuf.Struct parameters = 4;</code>
@@ -334,19 +332,19 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The collection of extracted parameters.
+   *
    * Depending on your protocol or client library language, this is a
    * map, associative array, symbol table, dictionary, or JSON object
    * composed of a collection of (MapKey, MapValue) pairs:
-   * -   MapKey type: string
-   * -   MapKey value: parameter name
-   * -   MapValue type:
-   *     -   If parameter's entity type is a composite entity: map
-   *     -   Else: depending on parameter value type, could be one of string,
-   *         number, boolean, null, list or map
-   * -   MapValue value:
-   *     -   If parameter's entity type is a composite entity:
-   *         map from composite entity property names to property values
-   *     -   Else: parameter value
+   *
+   * * MapKey type: string
+   * * MapKey value: parameter name
+   * * MapValue type: If parameter's entity type is a composite entity then use
+   * map, otherwise, depending on the parameter value type, it could be one of
+   * string, number, boolean, null, list or map.
+   * * MapValue value: If parameter's entity type is a composite entity then use
+   * map from composite entity property names to property values, otherwise,
+   * use parameter value.
    * </pre>
    *
    * <code>.google.protobuf.Struct parameters = 4;</code>
@@ -363,6 +361,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * This field is set to:
+   *
    * - `false` if the matched intent has required parameters and not all of
    *    the required parameter values have been collected.
    * - `true` if all required parameter values have been collected, or if the
@@ -808,6 +807,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    * The fields of this data can change without notice, so you should not write
    * code that depends on its structure.
    * The data may contain:
+   *
    * - webhook call latency
    * - webhook errors
    * </pre>
@@ -828,6 +828,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    * The fields of this data can change without notice, so you should not write
    * code that depends on its structure.
    * The data may contain:
+   *
    * - webhook call latency
    * - webhook errors
    * </pre>
@@ -850,6 +851,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    * The fields of this data can change without notice, so you should not write
    * code that depends on its structure.
    * The data may contain:
+   *
    * - webhook call latency
    * - webhook errors
    * </pre>
@@ -1847,6 +1849,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The original conversational query text:
+     *
      * - If natural language text was provided as input, `query_text` contains
      *   a copy of the input.
      * - If natural language speech audio was provided as input, `query_text`
@@ -1876,6 +1879,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The original conversational query text:
+     *
      * - If natural language text was provided as input, `query_text` contains
      *   a copy of the input.
      * - If natural language speech audio was provided as input, `query_text`
@@ -1905,6 +1909,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The original conversational query text:
+     *
      * - If natural language text was provided as input, `query_text` contains
      *   a copy of the input.
      * - If natural language speech audio was provided as input, `query_text`
@@ -1933,6 +1938,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The original conversational query text:
+     *
      * - If natural language text was provided as input, `query_text` contains
      *   a copy of the input.
      * - If natural language speech audio was provided as input, `query_text`
@@ -1957,6 +1963,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The original conversational query text:
+     *
      * - If natural language text was provided as input, `query_text` contains
      *   a copy of the input.
      * - If natural language speech audio was provided as input, `query_text`
@@ -2112,6 +2119,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * indicates an estimated greater likelihood that the recognized words are
      * correct. The default of 0.0 is a sentinel value indicating that confidence
      * was not set.
+     *
      * This field is not guaranteed to be accurate or set. In particular this
      * field isn't set for StreamingDetectIntent since the streaming endpoint has
      * separate confidence estimates per portion of the audio in
@@ -2134,6 +2142,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * indicates an estimated greater likelihood that the recognized words are
      * correct. The default of 0.0 is a sentinel value indicating that confidence
      * was not set.
+     *
      * This field is not guaranteed to be accurate or set. In particular this
      * field isn't set for StreamingDetectIntent since the streaming endpoint has
      * separate confidence estimates per portion of the audio in
@@ -2160,6 +2169,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * indicates an estimated greater likelihood that the recognized words are
      * correct. The default of 0.0 is a sentinel value indicating that confidence
      * was not set.
+     *
      * This field is not guaranteed to be accurate or set. In particular this
      * field isn't set for StreamingDetectIntent since the streaming endpoint has
      * separate confidence estimates per portion of the audio in
@@ -2294,19 +2304,19 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The collection of extracted parameters.
+     *
      * Depending on your protocol or client library language, this is a
      * map, associative array, symbol table, dictionary, or JSON object
      * composed of a collection of (MapKey, MapValue) pairs:
-     * -   MapKey type: string
-     * -   MapKey value: parameter name
-     * -   MapValue type:
-     *     -   If parameter's entity type is a composite entity: map
-     *     -   Else: depending on parameter value type, could be one of string,
-     *         number, boolean, null, list or map
-     * -   MapValue value:
-     *     -   If parameter's entity type is a composite entity:
-     *         map from composite entity property names to property values
-     *     -   Else: parameter value
+     *
+     * * MapKey type: string
+     * * MapKey value: parameter name
+     * * MapValue type: If parameter's entity type is a composite entity then use
+     * map, otherwise, depending on the parameter value type, it could be one of
+     * string, number, boolean, null, list or map.
+     * * MapValue value: If parameter's entity type is a composite entity then use
+     * map from composite entity property names to property values, otherwise,
+     * use parameter value.
      * </pre>
      *
      * <code>.google.protobuf.Struct parameters = 4;</code>
@@ -2321,19 +2331,19 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The collection of extracted parameters.
+     *
      * Depending on your protocol or client library language, this is a
      * map, associative array, symbol table, dictionary, or JSON object
      * composed of a collection of (MapKey, MapValue) pairs:
-     * -   MapKey type: string
-     * -   MapKey value: parameter name
-     * -   MapValue type:
-     *     -   If parameter's entity type is a composite entity: map
-     *     -   Else: depending on parameter value type, could be one of string,
-     *         number, boolean, null, list or map
-     * -   MapValue value:
-     *     -   If parameter's entity type is a composite entity:
-     *         map from composite entity property names to property values
-     *     -   Else: parameter value
+     *
+     * * MapKey type: string
+     * * MapKey value: parameter name
+     * * MapValue type: If parameter's entity type is a composite entity then use
+     * map, otherwise, depending on the parameter value type, it could be one of
+     * string, number, boolean, null, list or map.
+     * * MapValue value: If parameter's entity type is a composite entity then use
+     * map from composite entity property names to property values, otherwise,
+     * use parameter value.
      * </pre>
      *
      * <code>.google.protobuf.Struct parameters = 4;</code>
@@ -2352,19 +2362,19 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The collection of extracted parameters.
+     *
      * Depending on your protocol or client library language, this is a
      * map, associative array, symbol table, dictionary, or JSON object
      * composed of a collection of (MapKey, MapValue) pairs:
-     * -   MapKey type: string
-     * -   MapKey value: parameter name
-     * -   MapValue type:
-     *     -   If parameter's entity type is a composite entity: map
-     *     -   Else: depending on parameter value type, could be one of string,
-     *         number, boolean, null, list or map
-     * -   MapValue value:
-     *     -   If parameter's entity type is a composite entity:
-     *         map from composite entity property names to property values
-     *     -   Else: parameter value
+     *
+     * * MapKey type: string
+     * * MapKey value: parameter name
+     * * MapValue type: If parameter's entity type is a composite entity then use
+     * map, otherwise, depending on the parameter value type, it could be one of
+     * string, number, boolean, null, list or map.
+     * * MapValue value: If parameter's entity type is a composite entity then use
+     * map from composite entity property names to property values, otherwise,
+     * use parameter value.
      * </pre>
      *
      * <code>.google.protobuf.Struct parameters = 4;</code>
@@ -2387,19 +2397,19 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The collection of extracted parameters.
+     *
      * Depending on your protocol or client library language, this is a
      * map, associative array, symbol table, dictionary, or JSON object
      * composed of a collection of (MapKey, MapValue) pairs:
-     * -   MapKey type: string
-     * -   MapKey value: parameter name
-     * -   MapValue type:
-     *     -   If parameter's entity type is a composite entity: map
-     *     -   Else: depending on parameter value type, could be one of string,
-     *         number, boolean, null, list or map
-     * -   MapValue value:
-     *     -   If parameter's entity type is a composite entity:
-     *         map from composite entity property names to property values
-     *     -   Else: parameter value
+     *
+     * * MapKey type: string
+     * * MapKey value: parameter name
+     * * MapValue type: If parameter's entity type is a composite entity then use
+     * map, otherwise, depending on the parameter value type, it could be one of
+     * string, number, boolean, null, list or map.
+     * * MapValue value: If parameter's entity type is a composite entity then use
+     * map from composite entity property names to property values, otherwise,
+     * use parameter value.
      * </pre>
      *
      * <code>.google.protobuf.Struct parameters = 4;</code>
@@ -2419,19 +2429,19 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The collection of extracted parameters.
+     *
      * Depending on your protocol or client library language, this is a
      * map, associative array, symbol table, dictionary, or JSON object
      * composed of a collection of (MapKey, MapValue) pairs:
-     * -   MapKey type: string
-     * -   MapKey value: parameter name
-     * -   MapValue type:
-     *     -   If parameter's entity type is a composite entity: map
-     *     -   Else: depending on parameter value type, could be one of string,
-     *         number, boolean, null, list or map
-     * -   MapValue value:
-     *     -   If parameter's entity type is a composite entity:
-     *         map from composite entity property names to property values
-     *     -   Else: parameter value
+     *
+     * * MapKey type: string
+     * * MapKey value: parameter name
+     * * MapValue type: If parameter's entity type is a composite entity then use
+     * map, otherwise, depending on the parameter value type, it could be one of
+     * string, number, boolean, null, list or map.
+     * * MapValue value: If parameter's entity type is a composite entity then use
+     * map from composite entity property names to property values, otherwise,
+     * use parameter value.
      * </pre>
      *
      * <code>.google.protobuf.Struct parameters = 4;</code>
@@ -2457,19 +2467,19 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The collection of extracted parameters.
+     *
      * Depending on your protocol or client library language, this is a
      * map, associative array, symbol table, dictionary, or JSON object
      * composed of a collection of (MapKey, MapValue) pairs:
-     * -   MapKey type: string
-     * -   MapKey value: parameter name
-     * -   MapValue type:
-     *     -   If parameter's entity type is a composite entity: map
-     *     -   Else: depending on parameter value type, could be one of string,
-     *         number, boolean, null, list or map
-     * -   MapValue value:
-     *     -   If parameter's entity type is a composite entity:
-     *         map from composite entity property names to property values
-     *     -   Else: parameter value
+     *
+     * * MapKey type: string
+     * * MapKey value: parameter name
+     * * MapValue type: If parameter's entity type is a composite entity then use
+     * map, otherwise, depending on the parameter value type, it could be one of
+     * string, number, boolean, null, list or map.
+     * * MapValue value: If parameter's entity type is a composite entity then use
+     * map from composite entity property names to property values, otherwise,
+     * use parameter value.
      * </pre>
      *
      * <code>.google.protobuf.Struct parameters = 4;</code>
@@ -2489,19 +2499,19 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The collection of extracted parameters.
+     *
      * Depending on your protocol or client library language, this is a
      * map, associative array, symbol table, dictionary, or JSON object
      * composed of a collection of (MapKey, MapValue) pairs:
-     * -   MapKey type: string
-     * -   MapKey value: parameter name
-     * -   MapValue type:
-     *     -   If parameter's entity type is a composite entity: map
-     *     -   Else: depending on parameter value type, could be one of string,
-     *         number, boolean, null, list or map
-     * -   MapValue value:
-     *     -   If parameter's entity type is a composite entity:
-     *         map from composite entity property names to property values
-     *     -   Else: parameter value
+     *
+     * * MapKey type: string
+     * * MapKey value: parameter name
+     * * MapValue type: If parameter's entity type is a composite entity then use
+     * map, otherwise, depending on the parameter value type, it could be one of
+     * string, number, boolean, null, list or map.
+     * * MapValue value: If parameter's entity type is a composite entity then use
+     * map from composite entity property names to property values, otherwise,
+     * use parameter value.
      * </pre>
      *
      * <code>.google.protobuf.Struct parameters = 4;</code>
@@ -2516,19 +2526,19 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The collection of extracted parameters.
+     *
      * Depending on your protocol or client library language, this is a
      * map, associative array, symbol table, dictionary, or JSON object
      * composed of a collection of (MapKey, MapValue) pairs:
-     * -   MapKey type: string
-     * -   MapKey value: parameter name
-     * -   MapValue type:
-     *     -   If parameter's entity type is a composite entity: map
-     *     -   Else: depending on parameter value type, could be one of string,
-     *         number, boolean, null, list or map
-     * -   MapValue value:
-     *     -   If parameter's entity type is a composite entity:
-     *         map from composite entity property names to property values
-     *     -   Else: parameter value
+     *
+     * * MapKey type: string
+     * * MapKey value: parameter name
+     * * MapValue type: If parameter's entity type is a composite entity then use
+     * map, otherwise, depending on the parameter value type, it could be one of
+     * string, number, boolean, null, list or map.
+     * * MapValue value: If parameter's entity type is a composite entity then use
+     * map from composite entity property names to property values, otherwise,
+     * use parameter value.
      * </pre>
      *
      * <code>.google.protobuf.Struct parameters = 4;</code>
@@ -2545,19 +2555,19 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The collection of extracted parameters.
+     *
      * Depending on your protocol or client library language, this is a
      * map, associative array, symbol table, dictionary, or JSON object
      * composed of a collection of (MapKey, MapValue) pairs:
-     * -   MapKey type: string
-     * -   MapKey value: parameter name
-     * -   MapValue type:
-     *     -   If parameter's entity type is a composite entity: map
-     *     -   Else: depending on parameter value type, could be one of string,
-     *         number, boolean, null, list or map
-     * -   MapValue value:
-     *     -   If parameter's entity type is a composite entity:
-     *         map from composite entity property names to property values
-     *     -   Else: parameter value
+     *
+     * * MapKey type: string
+     * * MapKey value: parameter name
+     * * MapValue type: If parameter's entity type is a composite entity then use
+     * map, otherwise, depending on the parameter value type, it could be one of
+     * string, number, boolean, null, list or map.
+     * * MapValue value: If parameter's entity type is a composite entity then use
+     * map from composite entity property names to property values, otherwise,
+     * use parameter value.
      * </pre>
      *
      * <code>.google.protobuf.Struct parameters = 4;</code>
@@ -2585,6 +2595,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This field is set to:
+     *
      * - `false` if the matched intent has required parameters and not all of
      *    the required parameter values have been collected.
      * - `true` if all required parameter values have been collected, or if the
@@ -2604,6 +2615,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This field is set to:
+     *
      * - `false` if the matched intent has required parameters and not all of
      *    the required parameter values have been collected.
      * - `true` if all required parameter values have been collected, or if the
@@ -2627,6 +2639,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This field is set to:
+     *
      * - `false` if the matched intent has required parameters and not all of
      *    the required parameter values have been collected.
      * - `true` if all required parameter values have been collected, or if the
@@ -4197,6 +4210,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * The fields of this data can change without notice, so you should not write
      * code that depends on its structure.
      * The data may contain:
+     *
      * - webhook call latency
      * - webhook errors
      * </pre>
@@ -4216,6 +4230,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * The fields of this data can change without notice, so you should not write
      * code that depends on its structure.
      * The data may contain:
+     *
      * - webhook call latency
      * - webhook errors
      * </pre>
@@ -4241,6 +4256,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * The fields of this data can change without notice, so you should not write
      * code that depends on its structure.
      * The data may contain:
+     *
      * - webhook call latency
      * - webhook errors
      * </pre>
@@ -4268,6 +4284,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * The fields of this data can change without notice, so you should not write
      * code that depends on its structure.
      * The data may contain:
+     *
      * - webhook call latency
      * - webhook errors
      * </pre>
@@ -4292,6 +4309,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * The fields of this data can change without notice, so you should not write
      * code that depends on its structure.
      * The data may contain:
+     *
      * - webhook call latency
      * - webhook errors
      * </pre>
@@ -4322,6 +4340,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * The fields of this data can change without notice, so you should not write
      * code that depends on its structure.
      * The data may contain:
+     *
      * - webhook call latency
      * - webhook errors
      * </pre>
@@ -4346,6 +4365,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * The fields of this data can change without notice, so you should not write
      * code that depends on its structure.
      * The data may contain:
+     *
      * - webhook call latency
      * - webhook errors
      * </pre>
@@ -4365,6 +4385,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * The fields of this data can change without notice, so you should not write
      * code that depends on its structure.
      * The data may contain:
+     *
      * - webhook call latency
      * - webhook errors
      * </pre>
@@ -4388,6 +4409,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * The fields of this data can change without notice, so you should not write
      * code that depends on its structure.
      * The data may contain:
+     *
      * - webhook call latency
      * - webhook errors
      * </pre>

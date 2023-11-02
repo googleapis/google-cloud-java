@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,35 +52,37 @@ public final class TaskProto {
           + "\032google.cloud.tasks.v2beta2\032\031google/api/"
           + "resource.proto\032\'google/cloud/tasks/v2bet"
           + "a2/target.proto\032\037google/protobuf/timesta"
-          + "mp.proto\032\027google/rpc/status.proto\"\250\004\n\004Ta"
+          + "mp.proto\032\027google/rpc/status.proto\"\351\004\n\004Ta"
           + "sk\022\014\n\004name\030\001 \001(\t\022S\n\027app_engine_http_requ"
           + "est\030\003 \001(\01320.google.cloud.tasks.v2beta2.A"
           + "ppEngineHttpRequestH\000\022?\n\014pull_message\030\004 "
           + "\001(\0132\'.google.cloud.tasks.v2beta2.PullMes"
-          + "sageH\000\0221\n\rschedule_time\030\005 \001(\0132\032.google.p"
-          + "rotobuf.Timestamp\022/\n\013create_time\030\006 \001(\0132\032"
-          + ".google.protobuf.Timestamp\0226\n\006status\030\007 \001"
-          + "(\0132&.google.cloud.tasks.v2beta2.TaskStat"
-          + "us\0223\n\004view\030\010 \001(\0162%.google.cloud.tasks.v2"
-          + "beta2.Task.View\"1\n\004View\022\024\n\020VIEW_UNSPECIF"
-          + "IED\020\000\022\t\n\005BASIC\020\001\022\010\n\004FULL\020\002:h\352Ae\n\036cloudta"
-          + "sks.googleapis.com/Task\022Cprojects/{proje"
-          + "ct}/locations/{location}/queues/{queue}/"
-          + "tasks/{task}B\016\n\014payload_type\"\335\001\n\nTaskSta"
-          + "tus\022\036\n\026attempt_dispatch_count\030\001 \001(\005\022\036\n\026a"
-          + "ttempt_response_count\030\002 \001(\005\022G\n\024first_att"
-          + "empt_status\030\003 \001(\0132).google.cloud.tasks.v"
-          + "2beta2.AttemptStatus\022F\n\023last_attempt_sta"
-          + "tus\030\004 \001(\0132).google.cloud.tasks.v2beta2.A"
-          + "ttemptStatus\"\325\001\n\rAttemptStatus\0221\n\rschedu"
-          + "le_time\030\001 \001(\0132\032.google.protobuf.Timestam"
-          + "p\0221\n\rdispatch_time\030\002 \001(\0132\032.google.protob"
-          + "uf.Timestamp\0221\n\rresponse_time\030\003 \001(\0132\032.go"
-          + "ogle.protobuf.Timestamp\022+\n\017response_stat"
-          + "us\030\004 \001(\0132\022.google.rpc.StatusBr\n\036com.goog"
-          + "le.cloud.tasks.v2beta2B\tTaskProtoP\001ZCclo"
-          + "ud.google.com/go/cloudtasks/apiv2beta2/c"
-          + "loudtaskspb;cloudtaskspbb\006proto3"
+          + "sageH\000\022?\n\014http_request\030\r \001(\0132\'.google.cl"
+          + "oud.tasks.v2beta2.HttpRequestH\000\0221\n\rsched"
+          + "ule_time\030\005 \001(\0132\032.google.protobuf.Timesta"
+          + "mp\022/\n\013create_time\030\006 \001(\0132\032.google.protobu"
+          + "f.Timestamp\0226\n\006status\030\007 \001(\0132&.google.clo"
+          + "ud.tasks.v2beta2.TaskStatus\0223\n\004view\030\010 \001("
+          + "\0162%.google.cloud.tasks.v2beta2.Task.View"
+          + "\"1\n\004View\022\024\n\020VIEW_UNSPECIFIED\020\000\022\t\n\005BASIC\020"
+          + "\001\022\010\n\004FULL\020\002:h\352Ae\n\036cloudtasks.googleapis."
+          + "com/Task\022Cprojects/{project}/locations/{"
+          + "location}/queues/{queue}/tasks/{task}B\016\n"
+          + "\014payload_type\"\335\001\n\nTaskStatus\022\036\n\026attempt_"
+          + "dispatch_count\030\001 \001(\005\022\036\n\026attempt_response"
+          + "_count\030\002 \001(\005\022G\n\024first_attempt_status\030\003 \001"
+          + "(\0132).google.cloud.tasks.v2beta2.AttemptS"
+          + "tatus\022F\n\023last_attempt_status\030\004 \001(\0132).goo"
+          + "gle.cloud.tasks.v2beta2.AttemptStatus\"\325\001"
+          + "\n\rAttemptStatus\0221\n\rschedule_time\030\001 \001(\0132\032"
+          + ".google.protobuf.Timestamp\0221\n\rdispatch_t"
+          + "ime\030\002 \001(\0132\032.google.protobuf.Timestamp\0221\n"
+          + "\rresponse_time\030\003 \001(\0132\032.google.protobuf.T"
+          + "imestamp\022+\n\017response_status\030\004 \001(\0132\022.goog"
+          + "le.rpc.StatusBr\n\036com.google.cloud.tasks."
+          + "v2beta2B\tTaskProtoP\001ZCcloud.google.com/g"
+          + "o/cloudtasks/apiv2beta2/cloudtaskspb;clo"
+          + "udtaskspbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -100,6 +102,7 @@ public final class TaskProto {
               "Name",
               "AppEngineHttpRequest",
               "PullMessage",
+              "HttpRequest",
               "ScheduleTime",
               "CreateTime",
               "Status",

@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,6 +20,7 @@ import com.google.api.core.BetaApi;
 import com.google.cloud.alloydb.v1.AlloyDBAdminGrpc.AlloyDBAdminImplBase;
 import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
+import com.google.protobuf.Empty;
 import io.grpc.stub.StreamObserver;
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -164,6 +165,27 @@ public class MockAlloyDBAdminImpl extends AlloyDBAdminImplBase {
   }
 
   @Override
+  public void promoteCluster(
+      PromoteClusterRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method PromoteCluster, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void restoreCluster(
       RestoreClusterRequest request, StreamObserver<Operation> responseObserver) {
     Object response = responses.poll();
@@ -178,6 +200,27 @@ public class MockAlloyDBAdminImpl extends AlloyDBAdminImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method RestoreCluster, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createSecondaryCluster(
+      CreateSecondaryClusterRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateSecondaryCluster, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -240,6 +283,27 @@ public class MockAlloyDBAdminImpl extends AlloyDBAdminImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateInstance, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createSecondaryInstance(
+      CreateSecondaryInstanceRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateSecondaryInstance, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -324,6 +388,26 @@ public class MockAlloyDBAdminImpl extends AlloyDBAdminImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method FailoverInstance, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void injectFault(InjectFaultRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method InjectFault, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -473,6 +557,150 @@ public class MockAlloyDBAdminImpl extends AlloyDBAdminImplBase {
                   "Unrecognized response type %s for method ListSupportedDatabaseFlags, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListSupportedDatabaseFlagsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void generateClientCertificate(
+      GenerateClientCertificateRequest request,
+      StreamObserver<GenerateClientCertificateResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof GenerateClientCertificateResponse) {
+      requests.add(request);
+      responseObserver.onNext(((GenerateClientCertificateResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GenerateClientCertificate, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  GenerateClientCertificateResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getConnectionInfo(
+      GetConnectionInfoRequest request, StreamObserver<ConnectionInfo> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ConnectionInfo) {
+      requests.add(request);
+      responseObserver.onNext(((ConnectionInfo) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetConnectionInfo, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ConnectionInfo.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listUsers(
+      ListUsersRequest request, StreamObserver<ListUsersResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListUsersResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListUsersResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListUsers, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListUsersResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getUser(GetUserRequest request, StreamObserver<User> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof User) {
+      requests.add(request);
+      responseObserver.onNext(((User) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetUser, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  User.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createUser(CreateUserRequest request, StreamObserver<User> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof User) {
+      requests.add(request);
+      responseObserver.onNext(((User) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateUser, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  User.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateUser(UpdateUserRequest request, StreamObserver<User> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof User) {
+      requests.add(request);
+      responseObserver.onNext(((User) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateUser, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  User.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteUser(DeleteUserRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteUser, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
                   Exception.class.getName())));
     }
   }

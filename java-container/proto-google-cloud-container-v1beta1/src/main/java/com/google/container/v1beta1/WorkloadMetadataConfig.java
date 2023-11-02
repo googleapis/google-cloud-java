@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,11 +49,6 @@ public final class WorkloadMetadataConfig extends com.google.protobuf.GeneratedM
     return new WorkloadMetadataConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.container.v1beta1.ClusterServiceProto
         .internal_static_google_container_v1beta1_WorkloadMetadataConfig_descriptor;
@@ -97,6 +92,7 @@ public final class WorkloadMetadataConfig extends com.google.protobuf.GeneratedM
      * Prevent workloads not in hostNetwork from accessing certain VM metadata,
      * specifically kube-env, which contains Kubelet credentials, and the
      * instance identity token.
+     *
      * Metadata concealment is a temporary security solution available while the
      * bootstrapping process for cluster nodes is being redesigned with
      * significant security improvements.  This feature is scheduled to be
@@ -150,6 +146,7 @@ public final class WorkloadMetadataConfig extends com.google.protobuf.GeneratedM
      * Prevent workloads not in hostNetwork from accessing certain VM metadata,
      * specifically kube-env, which contains Kubelet credentials, and the
      * instance identity token.
+     *
      * Metadata concealment is a temporary security solution available while the
      * bootstrapping process for cluster nodes is being redesigned with
      * significant security improvements.  This feature is scheduled to be
@@ -454,7 +451,7 @@ public final class WorkloadMetadataConfig extends com.google.protobuf.GeneratedM
    * </code>
    *
    * @deprecated google.container.v1beta1.WorkloadMetadataConfig.node_metadata is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=4318
+   *     google/container/v1beta1/cluster_service.proto;l=4725
    * @return The enum numeric value on the wire for nodeMetadata.
    */
   @java.lang.Override
@@ -475,7 +472,7 @@ public final class WorkloadMetadataConfig extends com.google.protobuf.GeneratedM
    * </code>
    *
    * @deprecated google.container.v1beta1.WorkloadMetadataConfig.node_metadata is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=4318
+   *     google/container/v1beta1/cluster_service.proto;l=4725
    * @return The nodeMetadata.
    */
   @java.lang.Override
@@ -910,7 +907,7 @@ public final class WorkloadMetadataConfig extends com.google.protobuf.GeneratedM
      * </code>
      *
      * @deprecated google.container.v1beta1.WorkloadMetadataConfig.node_metadata is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4318
+     *     google/container/v1beta1/cluster_service.proto;l=4725
      * @return The enum numeric value on the wire for nodeMetadata.
      */
     @java.lang.Override
@@ -931,7 +928,7 @@ public final class WorkloadMetadataConfig extends com.google.protobuf.GeneratedM
      * </code>
      *
      * @deprecated google.container.v1beta1.WorkloadMetadataConfig.node_metadata is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4318
+     *     google/container/v1beta1/cluster_service.proto;l=4725
      * @param value The enum numeric value on the wire for nodeMetadata to set.
      * @return This builder for chaining.
      */
@@ -955,7 +952,7 @@ public final class WorkloadMetadataConfig extends com.google.protobuf.GeneratedM
      * </code>
      *
      * @deprecated google.container.v1beta1.WorkloadMetadataConfig.node_metadata is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4318
+     *     google/container/v1beta1/cluster_service.proto;l=4725
      * @return The nodeMetadata.
      */
     @java.lang.Override
@@ -980,7 +977,7 @@ public final class WorkloadMetadataConfig extends com.google.protobuf.GeneratedM
      * </code>
      *
      * @deprecated google.container.v1beta1.WorkloadMetadataConfig.node_metadata is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4318
+     *     google/container/v1beta1/cluster_service.proto;l=4725
      * @param value The nodeMetadata to set.
      * @return This builder for chaining.
      */
@@ -1008,7 +1005,7 @@ public final class WorkloadMetadataConfig extends com.google.protobuf.GeneratedM
      * </code>
      *
      * @deprecated google.container.v1beta1.WorkloadMetadataConfig.node_metadata is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=4318
+     *     google/container/v1beta1/cluster_service.proto;l=4725
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

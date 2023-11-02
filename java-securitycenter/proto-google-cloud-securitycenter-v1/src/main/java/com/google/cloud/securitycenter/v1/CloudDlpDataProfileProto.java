@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,9 +43,13 @@ public final class CloudDlpDataProfileProto {
       "\n;google/cloud/securitycenter/v1/cloud_d"
           + "lp_data_profile.proto\022\036google.cloud.secu"
           + "ritycenter.v1\032\031google/api/resource.proto"
-          + "\"U\n\023CloudDlpDataProfile\022>\n\014data_profile\030"
-          + "\001 \001(\tB(\372A%\n#dlp.googleapis.com/TableData"
-          + "ProfileB\224\003\n\"com.google.cloud.securitycen"
+          + "\"\364\001\n\023CloudDlpDataProfile\022>\n\014data_profile"
+          + "\030\001 \001(\tB(\372A%\n#dlp.googleapis.com/TableDat"
+          + "aProfile\022S\n\013parent_type\030\002 \001(\0162>.google.c"
+          + "loud.securitycenter.v1.CloudDlpDataProfi"
+          + "le.ParentType\"H\n\nParentType\022\033\n\027PARENT_TY"
+          + "PE_UNSPECIFIED\020\000\022\020\n\014ORGANIZATION\020\001\022\013\n\007PR"
+          + "OJECT\020\002B\224\003\n\"com.google.cloud.securitycen"
           + "ter.v1B\030CloudDlpDataProfileProtoP\001ZJclou"
           + "d.google.com/go/securitycenter/apiv1/sec"
           + "uritycenterpb;securitycenterpb\252\002\036Google."
@@ -69,7 +73,7 @@ public final class CloudDlpDataProfileProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securitycenter_v1_CloudDlpDataProfile_descriptor,
             new java.lang.String[] {
-              "DataProfile",
+              "DataProfile", "ParentType",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

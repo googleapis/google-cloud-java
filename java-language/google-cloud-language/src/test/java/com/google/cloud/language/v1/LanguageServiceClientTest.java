@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -446,6 +446,44 @@ public class LanguageServiceClientTest {
   }
 
   @Test
+  public void moderateTextTest() throws Exception {
+    ModerateTextResponse expectedResponse =
+        ModerateTextResponse.newBuilder()
+            .addAllModerationCategories(new ArrayList<ClassificationCategory>())
+            .build();
+    mockLanguageService.addResponse(expectedResponse);
+
+    Document document = Document.newBuilder().build();
+
+    ModerateTextResponse actualResponse = client.moderateText(document);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockLanguageService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ModerateTextRequest actualRequest = ((ModerateTextRequest) actualRequests.get(0));
+
+    Assert.assertEquals(document, actualRequest.getDocument());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void moderateTextExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockLanguageService.addException(exception);
+
+    try {
+      Document document = Document.newBuilder().build();
+      client.moderateText(document);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void annotateTextTest() throws Exception {
     AnnotateTextResponse expectedResponse =
         AnnotateTextResponse.newBuilder()
@@ -455,6 +493,7 @@ public class LanguageServiceClientTest {
             .setDocumentSentiment(Sentiment.newBuilder().build())
             .setLanguage("language-1613589672")
             .addAllCategories(new ArrayList<ClassificationCategory>())
+            .addAllModerationCategories(new ArrayList<ClassificationCategory>())
             .build();
     mockLanguageService.addResponse(expectedResponse);
 
@@ -501,6 +540,7 @@ public class LanguageServiceClientTest {
             .setDocumentSentiment(Sentiment.newBuilder().build())
             .setLanguage("language-1613589672")
             .addAllCategories(new ArrayList<ClassificationCategory>())
+            .addAllModerationCategories(new ArrayList<ClassificationCategory>())
             .build();
     mockLanguageService.addResponse(expectedResponse);
 

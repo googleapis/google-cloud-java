@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -60,14 +60,17 @@ public interface ImportDocumentsRequestOrBuilder
    *
    *
    * <pre>
-   * The Google Cloud Storage location for the documents.
+   * Optional. The Google Cloud Storage location for the documents.
    * The path can include a wildcard.
+   *
    * These URIs may have the forms
    * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
    * `gs://&lt;bucket-name&gt;/&lt;object-path&gt;/&#42;.&lt;extension&gt;`.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.GcsSources gcs_source = 2;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2.GcsSources gcs_source = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the gcsSource field is set.
    */
@@ -76,14 +79,17 @@ public interface ImportDocumentsRequestOrBuilder
    *
    *
    * <pre>
-   * The Google Cloud Storage location for the documents.
+   * Optional. The Google Cloud Storage location for the documents.
    * The path can include a wildcard.
+   *
    * These URIs may have the forms
    * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
    * `gs://&lt;bucket-name&gt;/&lt;object-path&gt;/&#42;.&lt;extension&gt;`.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.GcsSources gcs_source = 2;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2.GcsSources gcs_source = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The gcsSource.
    */
@@ -92,14 +98,17 @@ public interface ImportDocumentsRequestOrBuilder
    *
    *
    * <pre>
-   * The Google Cloud Storage location for the documents.
+   * Optional. The Google Cloud Storage location for the documents.
    * The path can include a wildcard.
+   *
    * These URIs may have the forms
    * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
    * `gs://&lt;bucket-name&gt;/&lt;object-path&gt;/&#42;.&lt;extension&gt;`.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.GcsSources gcs_source = 2;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2.GcsSources gcs_source = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.dialogflow.v2.GcsSourcesOrBuilder getGcsSourceOrBuilder();
 
@@ -158,5 +167,5 @@ public interface ImportDocumentsRequestOrBuilder
    */
   boolean getImportGcsCustomMetadata();
 
-  public com.google.cloud.dialogflow.v2.ImportDocumentsRequest.SourceCase getSourceCase();
+  com.google.cloud.dialogflow.v2.ImportDocumentsRequest.SourceCase getSourceCase();
 }

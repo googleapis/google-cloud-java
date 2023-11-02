@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,7 @@ public interface TaskSpecOrBuilder
    * this TaskSpec executes its list of runnables in order. The Task succeeds if
    * all of its runnables either exit with a zero status or any that exit with a
    * non-zero status have the ignore_exit_status flag.
+   *
    * Background runnables are killed automatically (if they have not already
    * exited) a short time after all foreground runnables have completed. Even
    * though this is likely to result in a non-zero exit status for the
@@ -49,6 +50,7 @@ public interface TaskSpecOrBuilder
    * this TaskSpec executes its list of runnables in order. The Task succeeds if
    * all of its runnables either exit with a zero status or any that exit with a
    * non-zero status have the ignore_exit_status flag.
+   *
    * Background runnables are killed automatically (if they have not already
    * exited) a short time after all foreground runnables have completed. Even
    * though this is likely to result in a non-zero exit status for the
@@ -67,6 +69,7 @@ public interface TaskSpecOrBuilder
    * this TaskSpec executes its list of runnables in order. The Task succeeds if
    * all of its runnables either exit with a zero status or any that exit with a
    * non-zero status have the ignore_exit_status flag.
+   *
    * Background runnables are killed automatically (if they have not already
    * exited) a short time after all foreground runnables have completed. Even
    * though this is likely to result in a non-zero exit status for the
@@ -85,6 +88,7 @@ public interface TaskSpecOrBuilder
    * this TaskSpec executes its list of runnables in order. The Task succeeds if
    * all of its runnables either exit with a zero status or any that exit with a
    * non-zero status have the ignore_exit_status flag.
+   *
    * Background runnables are killed automatically (if they have not already
    * exited) a short time after all foreground runnables have completed. Even
    * though this is likely to result in a non-zero exit status for the
@@ -104,6 +108,7 @@ public interface TaskSpecOrBuilder
    * this TaskSpec executes its list of runnables in order. The Task succeeds if
    * all of its runnables either exit with a zero status or any that exit with a
    * non-zero status have the ignore_exit_status flag.
+   *
    * Background runnables are killed automatically (if they have not already
    * exited) a short time after all foreground runnables have completed. Even
    * though this is likely to result in a non-zero exit status for the

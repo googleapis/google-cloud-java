@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,8 @@ package com.google.cloud.aiplatform.v1beta1;
  * <pre>
  * Request message for
  * [FeaturestoreService.CreateFeature][google.cloud.aiplatform.v1beta1.FeaturestoreService.CreateFeature].
+ * Request message for
+ * [FeatureRegistryService.CreateFeature][google.cloud.aiplatform.v1beta1.FeatureRegistryService.CreateFeature].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.CreateFeatureRequest}
@@ -49,11 +51,6 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
     return new CreateFeatureRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1beta1.FeaturestoreServiceProto
         .internal_static_google_cloud_aiplatform_v1beta1_CreateFeatureRequest_descriptor;
@@ -74,14 +71,6 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
   /**
-   *
-   *
-   * <pre>
-   * Required. The resource name of the EntityType to create a Feature.
-   * Format:
-   * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
-   * </pre>
-   *
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
@@ -101,14 +90,6 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
     }
   }
   /**
-   *
-   *
-   * <pre>
-   * Required. The resource name of the EntityType to create a Feature.
-   * Format:
-   * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
-   * </pre>
-   *
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
@@ -194,9 +175,11 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Required. The ID to use for the Feature, which will become the final
    * component of the Feature's resource name.
+   *
    * This value may be up to 128 characters, and valid characters are
    * `[a-z0-9_]`. The first character cannot be a number.
-   * The value must be unique within an EntityType.
+   *
+   * The value must be unique within an EntityType/FeatureGroup.
    * </pre>
    *
    * <code>string feature_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -221,9 +204,11 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Required. The ID to use for the Feature, which will become the final
    * component of the Feature's resource name.
+   *
    * This value may be up to 128 characters, and valid characters are
    * `[a-z0-9_]`. The first character cannot be a number.
-   * The value must be unique within an EntityType.
+   *
+   * The value must be unique within an EntityType/FeatureGroup.
    * </pre>
    *
    * <code>string feature_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -432,6 +417,8 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Request message for
    * [FeaturestoreService.CreateFeature][google.cloud.aiplatform.v1beta1.FeaturestoreService.CreateFeature].
+   * Request message for
+   * [FeatureRegistryService.CreateFeature][google.cloud.aiplatform.v1beta1.FeatureRegistryService.CreateFeature].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.CreateFeatureRequest}
@@ -644,14 +631,6 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
 
     private java.lang.Object parent_ = "";
     /**
-     *
-     *
-     * <pre>
-     * Required. The resource name of the EntityType to create a Feature.
-     * Format:
-     * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
-     * </pre>
-     *
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
@@ -670,14 +649,6 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
       }
     }
     /**
-     *
-     *
-     * <pre>
-     * Required. The resource name of the EntityType to create a Feature.
-     * Format:
-     * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
-     * </pre>
-     *
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
@@ -696,14 +667,6 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
       }
     }
     /**
-     *
-     *
-     * <pre>
-     * Required. The resource name of the EntityType to create a Feature.
-     * Format:
-     * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
-     * </pre>
-     *
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
@@ -721,14 +684,6 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
       return this;
     }
     /**
-     *
-     *
-     * <pre>
-     * Required. The resource name of the EntityType to create a Feature.
-     * Format:
-     * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
-     * </pre>
-     *
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
@@ -742,14 +697,6 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
       return this;
     }
     /**
-     *
-     *
-     * <pre>
-     * Required. The resource name of the EntityType to create a Feature.
-     * Format:
-     * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
-     * </pre>
-     *
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
@@ -976,9 +923,11 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. The ID to use for the Feature, which will become the final
      * component of the Feature's resource name.
+     *
      * This value may be up to 128 characters, and valid characters are
      * `[a-z0-9_]`. The first character cannot be a number.
-     * The value must be unique within an EntityType.
+     *
+     * The value must be unique within an EntityType/FeatureGroup.
      * </pre>
      *
      * <code>string feature_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1002,9 +951,11 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. The ID to use for the Feature, which will become the final
      * component of the Feature's resource name.
+     *
      * This value may be up to 128 characters, and valid characters are
      * `[a-z0-9_]`. The first character cannot be a number.
-     * The value must be unique within an EntityType.
+     *
+     * The value must be unique within an EntityType/FeatureGroup.
      * </pre>
      *
      * <code>string feature_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1028,9 +979,11 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. The ID to use for the Feature, which will become the final
      * component of the Feature's resource name.
+     *
      * This value may be up to 128 characters, and valid characters are
      * `[a-z0-9_]`. The first character cannot be a number.
-     * The value must be unique within an EntityType.
+     *
+     * The value must be unique within an EntityType/FeatureGroup.
      * </pre>
      *
      * <code>string feature_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1053,9 +1006,11 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. The ID to use for the Feature, which will become the final
      * component of the Feature's resource name.
+     *
      * This value may be up to 128 characters, and valid characters are
      * `[a-z0-9_]`. The first character cannot be a number.
-     * The value must be unique within an EntityType.
+     *
+     * The value must be unique within an EntityType/FeatureGroup.
      * </pre>
      *
      * <code>string feature_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1074,9 +1029,11 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. The ID to use for the Feature, which will become the final
      * component of the Feature's resource name.
+     *
      * This value may be up to 128 characters, and valid characters are
      * `[a-z0-9_]`. The first character cannot be a number.
-     * The value must be unique within an EntityType.
+     *
+     * The value must be unique within an EntityType/FeatureGroup.
      * </pre>
      *
      * <code>string feature_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>

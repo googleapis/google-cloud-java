@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,8 @@ package com.google.cloud.deploy.v1;
  *
  *
  * <pre>
- * A `JobRun` resource in the Google Cloud Deploy API.
+ * A `JobRun` resource in the Cloud Deploy API.
+ *
  * A `JobRun` contains information of a single `Rollout` job evaluation.
  * </pre>
  *
@@ -51,11 +52,6 @@ public final class JobRun extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new JobRun();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -297,6 +293,8 @@ public final class JobRun extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int jobRunCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object jobRun_;
 
   public enum JobRunCase
@@ -305,6 +303,8 @@ public final class JobRun extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     DEPLOY_JOB_RUN(9),
     VERIFY_JOB_RUN(10),
+    PREDEPLOY_JOB_RUN(14),
+    POSTDEPLOY_JOB_RUN(15),
     CREATE_CHILD_ROLLOUT_JOB_RUN(12),
     ADVANCE_CHILD_ROLLOUT_JOB_RUN(13),
     JOBRUN_NOT_SET(0);
@@ -329,6 +329,10 @@ public final class JobRun extends com.google.protobuf.GeneratedMessageV3
           return DEPLOY_JOB_RUN;
         case 10:
           return VERIFY_JOB_RUN;
+        case 14:
+          return PREDEPLOY_JOB_RUN;
+        case 15:
+          return POSTDEPLOY_JOB_RUN;
         case 12:
           return CREATE_CHILD_ROLLOUT_JOB_RUN;
         case 13:
@@ -358,9 +362,7 @@ public final class JobRun extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Name of the `JobRun`. Format is
-   * projects/{project}/locations/{location}/
-   * deliveryPipelines/{deliveryPipeline}/releases/{releases}/rollouts/
-   * {rollouts}/jobRuns/{uuid}.
+   * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{releases}/rollouts/{rollouts}/jobRuns/{uuid}`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -384,9 +386,7 @@ public final class JobRun extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Name of the `JobRun`. Format is
-   * projects/{project}/locations/{location}/
-   * deliveryPipelines/{deliveryPipeline}/releases/{releases}/rollouts/
-   * {rollouts}/jobRuns/{uuid}.
+   * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{releases}/rollouts/{rollouts}/jobRuns/{uuid}`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -859,6 +859,120 @@ public final class JobRun extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.deploy.v1.VerifyJobRun.getDefaultInstance();
   }
 
+  public static final int PREDEPLOY_JOB_RUN_FIELD_NUMBER = 14;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Information specific to a predeploy `JobRun`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.PredeployJobRun predeploy_job_run = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the predeployJobRun field is set.
+   */
+  @java.lang.Override
+  public boolean hasPredeployJobRun() {
+    return jobRunCase_ == 14;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Information specific to a predeploy `JobRun`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.PredeployJobRun predeploy_job_run = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The predeployJobRun.
+   */
+  @java.lang.Override
+  public com.google.cloud.deploy.v1.PredeployJobRun getPredeployJobRun() {
+    if (jobRunCase_ == 14) {
+      return (com.google.cloud.deploy.v1.PredeployJobRun) jobRun_;
+    }
+    return com.google.cloud.deploy.v1.PredeployJobRun.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Information specific to a predeploy `JobRun`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.PredeployJobRun predeploy_job_run = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.deploy.v1.PredeployJobRunOrBuilder getPredeployJobRunOrBuilder() {
+    if (jobRunCase_ == 14) {
+      return (com.google.cloud.deploy.v1.PredeployJobRun) jobRun_;
+    }
+    return com.google.cloud.deploy.v1.PredeployJobRun.getDefaultInstance();
+  }
+
+  public static final int POSTDEPLOY_JOB_RUN_FIELD_NUMBER = 15;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Information specific to a postdeploy `JobRun`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.PostdeployJobRun postdeploy_job_run = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the postdeployJobRun field is set.
+   */
+  @java.lang.Override
+  public boolean hasPostdeployJobRun() {
+    return jobRunCase_ == 15;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Information specific to a postdeploy `JobRun`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.PostdeployJobRun postdeploy_job_run = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The postdeployJobRun.
+   */
+  @java.lang.Override
+  public com.google.cloud.deploy.v1.PostdeployJobRun getPostdeployJobRun() {
+    if (jobRunCase_ == 15) {
+      return (com.google.cloud.deploy.v1.PostdeployJobRun) jobRun_;
+    }
+    return com.google.cloud.deploy.v1.PostdeployJobRun.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Information specific to a postdeploy `JobRun`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.PostdeployJobRun postdeploy_job_run = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.deploy.v1.PostdeployJobRunOrBuilder getPostdeployJobRunOrBuilder() {
+    if (jobRunCase_ == 15) {
+      return (com.google.cloud.deploy.v1.PostdeployJobRun) jobRun_;
+    }
+    return com.google.cloud.deploy.v1.PostdeployJobRun.getDefaultInstance();
+  }
+
   public static final int CREATE_CHILD_ROLLOUT_JOB_RUN_FIELD_NUMBER = 12;
   /**
    *
@@ -1083,6 +1197,12 @@ public final class JobRun extends com.google.protobuf.GeneratedMessageV3
     if (jobRunCase_ == 13) {
       output.writeMessage(13, (com.google.cloud.deploy.v1.AdvanceChildRolloutJobRun) jobRun_);
     }
+    if (jobRunCase_ == 14) {
+      output.writeMessage(14, (com.google.cloud.deploy.v1.PredeployJobRun) jobRun_);
+    }
+    if (jobRunCase_ == 15) {
+      output.writeMessage(15, (com.google.cloud.deploy.v1.PostdeployJobRun) jobRun_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1139,6 +1259,16 @@ public final class JobRun extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               13, (com.google.cloud.deploy.v1.AdvanceChildRolloutJobRun) jobRun_);
     }
+    if (jobRunCase_ == 14) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              14, (com.google.cloud.deploy.v1.PredeployJobRun) jobRun_);
+    }
+    if (jobRunCase_ == 15) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              15, (com.google.cloud.deploy.v1.PostdeployJobRun) jobRun_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1179,6 +1309,12 @@ public final class JobRun extends com.google.protobuf.GeneratedMessageV3
         break;
       case 10:
         if (!getVerifyJobRun().equals(other.getVerifyJobRun())) return false;
+        break;
+      case 14:
+        if (!getPredeployJobRun().equals(other.getPredeployJobRun())) return false;
+        break;
+      case 15:
+        if (!getPostdeployJobRun().equals(other.getPostdeployJobRun())) return false;
         break;
       case 12:
         if (!getCreateChildRolloutJobRun().equals(other.getCreateChildRolloutJobRun()))
@@ -1234,6 +1370,14 @@ public final class JobRun extends com.google.protobuf.GeneratedMessageV3
       case 10:
         hash = (37 * hash) + VERIFY_JOB_RUN_FIELD_NUMBER;
         hash = (53 * hash) + getVerifyJobRun().hashCode();
+        break;
+      case 14:
+        hash = (37 * hash) + PREDEPLOY_JOB_RUN_FIELD_NUMBER;
+        hash = (53 * hash) + getPredeployJobRun().hashCode();
+        break;
+      case 15:
+        hash = (37 * hash) + POSTDEPLOY_JOB_RUN_FIELD_NUMBER;
+        hash = (53 * hash) + getPostdeployJobRun().hashCode();
         break;
       case 12:
         hash = (37 * hash) + CREATE_CHILD_ROLLOUT_JOB_RUN_FIELD_NUMBER;
@@ -1349,7 +1493,8 @@ public final class JobRun extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A `JobRun` resource in the Google Cloud Deploy API.
+   * A `JobRun` resource in the Cloud Deploy API.
+   *
    * A `JobRun` contains information of a single `Rollout` job evaluation.
    * </pre>
    *
@@ -1410,6 +1555,12 @@ public final class JobRun extends com.google.protobuf.GeneratedMessageV3
       }
       if (verifyJobRunBuilder_ != null) {
         verifyJobRunBuilder_.clear();
+      }
+      if (predeployJobRunBuilder_ != null) {
+        predeployJobRunBuilder_.clear();
+      }
+      if (postdeployJobRunBuilder_ != null) {
+        postdeployJobRunBuilder_.clear();
       }
       if (createChildRolloutJobRunBuilder_ != null) {
         createChildRolloutJobRunBuilder_.clear();
@@ -1480,7 +1631,7 @@ public final class JobRun extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000080) != 0)) {
         result.state_ = state_;
       }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         result.etag_ = etag_;
       }
     }
@@ -1493,6 +1644,12 @@ public final class JobRun extends com.google.protobuf.GeneratedMessageV3
       }
       if (jobRunCase_ == 10 && verifyJobRunBuilder_ != null) {
         result.jobRun_ = verifyJobRunBuilder_.build();
+      }
+      if (jobRunCase_ == 14 && predeployJobRunBuilder_ != null) {
+        result.jobRun_ = predeployJobRunBuilder_.build();
+      }
+      if (jobRunCase_ == 15 && postdeployJobRunBuilder_ != null) {
+        result.jobRun_ = postdeployJobRunBuilder_.build();
       }
       if (jobRunCase_ == 12 && createChildRolloutJobRunBuilder_ != null) {
         result.jobRun_ = createChildRolloutJobRunBuilder_.build();
@@ -1581,7 +1738,7 @@ public final class JobRun extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       switch (other.getJobRunCase()) {
@@ -1593,6 +1750,16 @@ public final class JobRun extends com.google.protobuf.GeneratedMessageV3
         case VERIFY_JOB_RUN:
           {
             mergeVerifyJobRun(other.getVerifyJobRun());
+            break;
+          }
+        case PREDEPLOY_JOB_RUN:
+          {
+            mergePredeployJobRun(other.getPredeployJobRun());
+            break;
+          }
+        case POSTDEPLOY_JOB_RUN:
+          {
+            mergePostdeployJobRun(other.getPostdeployJobRun());
             break;
           }
         case CREATE_CHILD_ROLLOUT_JOB_RUN:
@@ -1699,7 +1866,7 @@ public final class JobRun extends com.google.protobuf.GeneratedMessageV3
             case 90:
               {
                 etag_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 90
             case 98:
@@ -1716,6 +1883,19 @@ public final class JobRun extends com.google.protobuf.GeneratedMessageV3
                 jobRunCase_ = 13;
                 break;
               } // case 106
+            case 114:
+              {
+                input.readMessage(getPredeployJobRunFieldBuilder().getBuilder(), extensionRegistry);
+                jobRunCase_ = 14;
+                break;
+              } // case 114
+            case 122:
+              {
+                input.readMessage(
+                    getPostdeployJobRunFieldBuilder().getBuilder(), extensionRegistry);
+                jobRunCase_ = 15;
+                break;
+              } // case 122
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1755,9 +1935,7 @@ public final class JobRun extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Name of the `JobRun`. Format is
-     * projects/{project}/locations/{location}/
-     * deliveryPipelines/{deliveryPipeline}/releases/{releases}/rollouts/
-     * {rollouts}/jobRuns/{uuid}.
+     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{releases}/rollouts/{rollouts}/jobRuns/{uuid}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1780,9 +1958,7 @@ public final class JobRun extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Name of the `JobRun`. Format is
-     * projects/{project}/locations/{location}/
-     * deliveryPipelines/{deliveryPipeline}/releases/{releases}/rollouts/
-     * {rollouts}/jobRuns/{uuid}.
+     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{releases}/rollouts/{rollouts}/jobRuns/{uuid}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1805,9 +1981,7 @@ public final class JobRun extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Name of the `JobRun`. Format is
-     * projects/{project}/locations/{location}/
-     * deliveryPipelines/{deliveryPipeline}/releases/{releases}/rollouts/
-     * {rollouts}/jobRuns/{uuid}.
+     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{releases}/rollouts/{rollouts}/jobRuns/{uuid}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1829,9 +2003,7 @@ public final class JobRun extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Name of the `JobRun`. Format is
-     * projects/{project}/locations/{location}/
-     * deliveryPipelines/{deliveryPipeline}/releases/{releases}/rollouts/
-     * {rollouts}/jobRuns/{uuid}.
+     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{releases}/rollouts/{rollouts}/jobRuns/{uuid}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1849,9 +2021,7 @@ public final class JobRun extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Name of the `JobRun`. Format is
-     * projects/{project}/locations/{location}/
-     * deliveryPipelines/{deliveryPipeline}/releases/{releases}/rollouts/
-     * {rollouts}/jobRuns/{uuid}.
+     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{releases}/rollouts/{rollouts}/jobRuns/{uuid}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3320,6 +3490,460 @@ public final class JobRun extends com.google.protobuf.GeneratedMessageV3
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.deploy.v1.PredeployJobRun,
+            com.google.cloud.deploy.v1.PredeployJobRun.Builder,
+            com.google.cloud.deploy.v1.PredeployJobRunOrBuilder>
+        predeployJobRunBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information specific to a predeploy `JobRun`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.PredeployJobRun predeploy_job_run = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the predeployJobRun field is set.
+     */
+    @java.lang.Override
+    public boolean hasPredeployJobRun() {
+      return jobRunCase_ == 14;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information specific to a predeploy `JobRun`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.PredeployJobRun predeploy_job_run = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The predeployJobRun.
+     */
+    @java.lang.Override
+    public com.google.cloud.deploy.v1.PredeployJobRun getPredeployJobRun() {
+      if (predeployJobRunBuilder_ == null) {
+        if (jobRunCase_ == 14) {
+          return (com.google.cloud.deploy.v1.PredeployJobRun) jobRun_;
+        }
+        return com.google.cloud.deploy.v1.PredeployJobRun.getDefaultInstance();
+      } else {
+        if (jobRunCase_ == 14) {
+          return predeployJobRunBuilder_.getMessage();
+        }
+        return com.google.cloud.deploy.v1.PredeployJobRun.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information specific to a predeploy `JobRun`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.PredeployJobRun predeploy_job_run = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setPredeployJobRun(com.google.cloud.deploy.v1.PredeployJobRun value) {
+      if (predeployJobRunBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        jobRun_ = value;
+        onChanged();
+      } else {
+        predeployJobRunBuilder_.setMessage(value);
+      }
+      jobRunCase_ = 14;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information specific to a predeploy `JobRun`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.PredeployJobRun predeploy_job_run = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setPredeployJobRun(
+        com.google.cloud.deploy.v1.PredeployJobRun.Builder builderForValue) {
+      if (predeployJobRunBuilder_ == null) {
+        jobRun_ = builderForValue.build();
+        onChanged();
+      } else {
+        predeployJobRunBuilder_.setMessage(builderForValue.build());
+      }
+      jobRunCase_ = 14;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information specific to a predeploy `JobRun`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.PredeployJobRun predeploy_job_run = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergePredeployJobRun(com.google.cloud.deploy.v1.PredeployJobRun value) {
+      if (predeployJobRunBuilder_ == null) {
+        if (jobRunCase_ == 14
+            && jobRun_ != com.google.cloud.deploy.v1.PredeployJobRun.getDefaultInstance()) {
+          jobRun_ =
+              com.google.cloud.deploy.v1.PredeployJobRun.newBuilder(
+                      (com.google.cloud.deploy.v1.PredeployJobRun) jobRun_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          jobRun_ = value;
+        }
+        onChanged();
+      } else {
+        if (jobRunCase_ == 14) {
+          predeployJobRunBuilder_.mergeFrom(value);
+        } else {
+          predeployJobRunBuilder_.setMessage(value);
+        }
+      }
+      jobRunCase_ = 14;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information specific to a predeploy `JobRun`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.PredeployJobRun predeploy_job_run = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearPredeployJobRun() {
+      if (predeployJobRunBuilder_ == null) {
+        if (jobRunCase_ == 14) {
+          jobRunCase_ = 0;
+          jobRun_ = null;
+          onChanged();
+        }
+      } else {
+        if (jobRunCase_ == 14) {
+          jobRunCase_ = 0;
+          jobRun_ = null;
+        }
+        predeployJobRunBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information specific to a predeploy `JobRun`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.PredeployJobRun predeploy_job_run = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.deploy.v1.PredeployJobRun.Builder getPredeployJobRunBuilder() {
+      return getPredeployJobRunFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information specific to a predeploy `JobRun`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.PredeployJobRun predeploy_job_run = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.deploy.v1.PredeployJobRunOrBuilder getPredeployJobRunOrBuilder() {
+      if ((jobRunCase_ == 14) && (predeployJobRunBuilder_ != null)) {
+        return predeployJobRunBuilder_.getMessageOrBuilder();
+      } else {
+        if (jobRunCase_ == 14) {
+          return (com.google.cloud.deploy.v1.PredeployJobRun) jobRun_;
+        }
+        return com.google.cloud.deploy.v1.PredeployJobRun.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information specific to a predeploy `JobRun`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.PredeployJobRun predeploy_job_run = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.deploy.v1.PredeployJobRun,
+            com.google.cloud.deploy.v1.PredeployJobRun.Builder,
+            com.google.cloud.deploy.v1.PredeployJobRunOrBuilder>
+        getPredeployJobRunFieldBuilder() {
+      if (predeployJobRunBuilder_ == null) {
+        if (!(jobRunCase_ == 14)) {
+          jobRun_ = com.google.cloud.deploy.v1.PredeployJobRun.getDefaultInstance();
+        }
+        predeployJobRunBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.deploy.v1.PredeployJobRun,
+                com.google.cloud.deploy.v1.PredeployJobRun.Builder,
+                com.google.cloud.deploy.v1.PredeployJobRunOrBuilder>(
+                (com.google.cloud.deploy.v1.PredeployJobRun) jobRun_,
+                getParentForChildren(),
+                isClean());
+        jobRun_ = null;
+      }
+      jobRunCase_ = 14;
+      onChanged();
+      return predeployJobRunBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.deploy.v1.PostdeployJobRun,
+            com.google.cloud.deploy.v1.PostdeployJobRun.Builder,
+            com.google.cloud.deploy.v1.PostdeployJobRunOrBuilder>
+        postdeployJobRunBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information specific to a postdeploy `JobRun`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.PostdeployJobRun postdeploy_job_run = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the postdeployJobRun field is set.
+     */
+    @java.lang.Override
+    public boolean hasPostdeployJobRun() {
+      return jobRunCase_ == 15;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information specific to a postdeploy `JobRun`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.PostdeployJobRun postdeploy_job_run = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The postdeployJobRun.
+     */
+    @java.lang.Override
+    public com.google.cloud.deploy.v1.PostdeployJobRun getPostdeployJobRun() {
+      if (postdeployJobRunBuilder_ == null) {
+        if (jobRunCase_ == 15) {
+          return (com.google.cloud.deploy.v1.PostdeployJobRun) jobRun_;
+        }
+        return com.google.cloud.deploy.v1.PostdeployJobRun.getDefaultInstance();
+      } else {
+        if (jobRunCase_ == 15) {
+          return postdeployJobRunBuilder_.getMessage();
+        }
+        return com.google.cloud.deploy.v1.PostdeployJobRun.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information specific to a postdeploy `JobRun`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.PostdeployJobRun postdeploy_job_run = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setPostdeployJobRun(com.google.cloud.deploy.v1.PostdeployJobRun value) {
+      if (postdeployJobRunBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        jobRun_ = value;
+        onChanged();
+      } else {
+        postdeployJobRunBuilder_.setMessage(value);
+      }
+      jobRunCase_ = 15;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information specific to a postdeploy `JobRun`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.PostdeployJobRun postdeploy_job_run = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setPostdeployJobRun(
+        com.google.cloud.deploy.v1.PostdeployJobRun.Builder builderForValue) {
+      if (postdeployJobRunBuilder_ == null) {
+        jobRun_ = builderForValue.build();
+        onChanged();
+      } else {
+        postdeployJobRunBuilder_.setMessage(builderForValue.build());
+      }
+      jobRunCase_ = 15;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information specific to a postdeploy `JobRun`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.PostdeployJobRun postdeploy_job_run = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergePostdeployJobRun(com.google.cloud.deploy.v1.PostdeployJobRun value) {
+      if (postdeployJobRunBuilder_ == null) {
+        if (jobRunCase_ == 15
+            && jobRun_ != com.google.cloud.deploy.v1.PostdeployJobRun.getDefaultInstance()) {
+          jobRun_ =
+              com.google.cloud.deploy.v1.PostdeployJobRun.newBuilder(
+                      (com.google.cloud.deploy.v1.PostdeployJobRun) jobRun_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          jobRun_ = value;
+        }
+        onChanged();
+      } else {
+        if (jobRunCase_ == 15) {
+          postdeployJobRunBuilder_.mergeFrom(value);
+        } else {
+          postdeployJobRunBuilder_.setMessage(value);
+        }
+      }
+      jobRunCase_ = 15;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information specific to a postdeploy `JobRun`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.PostdeployJobRun postdeploy_job_run = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearPostdeployJobRun() {
+      if (postdeployJobRunBuilder_ == null) {
+        if (jobRunCase_ == 15) {
+          jobRunCase_ = 0;
+          jobRun_ = null;
+          onChanged();
+        }
+      } else {
+        if (jobRunCase_ == 15) {
+          jobRunCase_ = 0;
+          jobRun_ = null;
+        }
+        postdeployJobRunBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information specific to a postdeploy `JobRun`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.PostdeployJobRun postdeploy_job_run = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.deploy.v1.PostdeployJobRun.Builder getPostdeployJobRunBuilder() {
+      return getPostdeployJobRunFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information specific to a postdeploy `JobRun`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.PostdeployJobRun postdeploy_job_run = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.deploy.v1.PostdeployJobRunOrBuilder getPostdeployJobRunOrBuilder() {
+      if ((jobRunCase_ == 15) && (postdeployJobRunBuilder_ != null)) {
+        return postdeployJobRunBuilder_.getMessageOrBuilder();
+      } else {
+        if (jobRunCase_ == 15) {
+          return (com.google.cloud.deploy.v1.PostdeployJobRun) jobRun_;
+        }
+        return com.google.cloud.deploy.v1.PostdeployJobRun.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information specific to a postdeploy `JobRun`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.PostdeployJobRun postdeploy_job_run = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.deploy.v1.PostdeployJobRun,
+            com.google.cloud.deploy.v1.PostdeployJobRun.Builder,
+            com.google.cloud.deploy.v1.PostdeployJobRunOrBuilder>
+        getPostdeployJobRunFieldBuilder() {
+      if (postdeployJobRunBuilder_ == null) {
+        if (!(jobRunCase_ == 15)) {
+          jobRun_ = com.google.cloud.deploy.v1.PostdeployJobRun.getDefaultInstance();
+        }
+        postdeployJobRunBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.deploy.v1.PostdeployJobRun,
+                com.google.cloud.deploy.v1.PostdeployJobRun.Builder,
+                com.google.cloud.deploy.v1.PostdeployJobRunOrBuilder>(
+                (com.google.cloud.deploy.v1.PostdeployJobRun) jobRun_,
+                getParentForChildren(),
+                isClean());
+        jobRun_ = null;
+      }
+      jobRunCase_ = 15;
+      onChanged();
+      return postdeployJobRunBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.deploy.v1.CreateChildRolloutJobRun,
             com.google.cloud.deploy.v1.CreateChildRolloutJobRun.Builder,
             com.google.cloud.deploy.v1.CreateChildRolloutJobRunOrBuilder>
@@ -3851,7 +4475,7 @@ public final class JobRun extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       etag_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -3870,7 +4494,7 @@ public final class JobRun extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearEtag() {
       etag_ = getDefaultInstance().getEtag();
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       onChanged();
       return this;
     }
@@ -3894,7 +4518,7 @@ public final class JobRun extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       etag_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }

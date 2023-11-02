@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class TransitionCoverage extends com.google.protobuf.GeneratedMessa
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new TransitionCoverage();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -150,8 +145,7 @@ public final class TransitionCoverage extends com.google.protobuf.GeneratedMessa
      */
     com.google.cloud.dialogflow.cx.v3.FlowOrBuilder getFlowOrBuilder();
 
-    public com.google.cloud.dialogflow.cx.v3.TransitionCoverage.TransitionNode.KindCase
-        getKindCase();
+    com.google.cloud.dialogflow.cx.v3.TransitionCoverage.TransitionNode.KindCase getKindCase();
   }
   /**
    *
@@ -180,11 +174,6 @@ public final class TransitionCoverage extends com.google.protobuf.GeneratedMessa
       return new TransitionNode();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.dialogflow.cx.v3.TestCaseProto
           .internal_static_google_cloud_dialogflow_cx_v3_TransitionCoverage_TransitionNode_descriptor;
@@ -201,6 +190,8 @@ public final class TransitionCoverage extends com.google.protobuf.GeneratedMessa
     }
 
     private int kindCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object kind_;
 
     public enum KindCase
@@ -1463,8 +1454,7 @@ public final class TransitionCoverage extends com.google.protobuf.GeneratedMessa
      */
     com.google.cloud.dialogflow.cx.v3.EventHandlerOrBuilder getEventHandlerOrBuilder();
 
-    public com.google.cloud.dialogflow.cx.v3.TransitionCoverage.Transition.DetailCase
-        getDetailCase();
+    com.google.cloud.dialogflow.cx.v3.TransitionCoverage.Transition.DetailCase getDetailCase();
   }
   /**
    *
@@ -1493,11 +1483,6 @@ public final class TransitionCoverage extends com.google.protobuf.GeneratedMessa
       return new Transition();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.dialogflow.cx.v3.TestCaseProto
           .internal_static_google_cloud_dialogflow_cx_v3_TransitionCoverage_Transition_descriptor;
@@ -1514,6 +1499,8 @@ public final class TransitionCoverage extends com.google.protobuf.GeneratedMessa
     }
 
     private int detailCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object detail_;
 
     public enum DetailCase

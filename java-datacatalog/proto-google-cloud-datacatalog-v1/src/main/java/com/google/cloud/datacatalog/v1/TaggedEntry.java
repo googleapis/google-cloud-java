@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,11 +49,6 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
     return new TaggedEntry();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datacatalog.v1.DumpContentProto
         .internal_static_google_cloud_datacatalog_v1_TaggedEntry_descriptor;
@@ -70,6 +65,8 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int entryCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object entry_;
 
   public enum EntryCase
@@ -172,11 +169,13 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Tags that should be ingested into the Data Catalog.
+   * Optional. Tags that should be ingested into the Data Catalog.
    * Caller should populate template name, column and fields.
    * </pre>
    *
-   * <code>repeated .google.cloud.datacatalog.v1.Tag present_tags = 2;</code>
+   * <code>
+   * repeated .google.cloud.datacatalog.v1.Tag present_tags = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public java.util.List<com.google.cloud.datacatalog.v1.Tag> getPresentTagsList() {
@@ -186,11 +185,13 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Tags that should be ingested into the Data Catalog.
+   * Optional. Tags that should be ingested into the Data Catalog.
    * Caller should populate template name, column and fields.
    * </pre>
    *
-   * <code>repeated .google.cloud.datacatalog.v1.Tag present_tags = 2;</code>
+   * <code>
+   * repeated .google.cloud.datacatalog.v1.Tag present_tags = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.cloud.datacatalog.v1.TagOrBuilder>
@@ -201,11 +202,13 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Tags that should be ingested into the Data Catalog.
+   * Optional. Tags that should be ingested into the Data Catalog.
    * Caller should populate template name, column and fields.
    * </pre>
    *
-   * <code>repeated .google.cloud.datacatalog.v1.Tag present_tags = 2;</code>
+   * <code>
+   * repeated .google.cloud.datacatalog.v1.Tag present_tags = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public int getPresentTagsCount() {
@@ -215,11 +218,13 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Tags that should be ingested into the Data Catalog.
+   * Optional. Tags that should be ingested into the Data Catalog.
    * Caller should populate template name, column and fields.
    * </pre>
    *
-   * <code>repeated .google.cloud.datacatalog.v1.Tag present_tags = 2;</code>
+   * <code>
+   * repeated .google.cloud.datacatalog.v1.Tag present_tags = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.datacatalog.v1.Tag getPresentTags(int index) {
@@ -229,11 +234,13 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Tags that should be ingested into the Data Catalog.
+   * Optional. Tags that should be ingested into the Data Catalog.
    * Caller should populate template name, column and fields.
    * </pre>
    *
-   * <code>repeated .google.cloud.datacatalog.v1.Tag present_tags = 2;</code>
+   * <code>
+   * repeated .google.cloud.datacatalog.v1.Tag present_tags = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.datacatalog.v1.TagOrBuilder getPresentTagsOrBuilder(int index) {
@@ -248,11 +255,13 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Tags that should be deleted from the Data Catalog.
+   * Optional. Tags that should be deleted from the Data Catalog.
    * Caller should populate template name and column only.
    * </pre>
    *
-   * <code>repeated .google.cloud.datacatalog.v1.Tag absent_tags = 3;</code>
+   * <code>
+   * repeated .google.cloud.datacatalog.v1.Tag absent_tags = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public java.util.List<com.google.cloud.datacatalog.v1.Tag> getAbsentTagsList() {
@@ -262,11 +271,13 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Tags that should be deleted from the Data Catalog.
+   * Optional. Tags that should be deleted from the Data Catalog.
    * Caller should populate template name and column only.
    * </pre>
    *
-   * <code>repeated .google.cloud.datacatalog.v1.Tag absent_tags = 3;</code>
+   * <code>
+   * repeated .google.cloud.datacatalog.v1.Tag absent_tags = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.cloud.datacatalog.v1.TagOrBuilder>
@@ -277,11 +288,13 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Tags that should be deleted from the Data Catalog.
+   * Optional. Tags that should be deleted from the Data Catalog.
    * Caller should populate template name and column only.
    * </pre>
    *
-   * <code>repeated .google.cloud.datacatalog.v1.Tag absent_tags = 3;</code>
+   * <code>
+   * repeated .google.cloud.datacatalog.v1.Tag absent_tags = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public int getAbsentTagsCount() {
@@ -291,11 +304,13 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Tags that should be deleted from the Data Catalog.
+   * Optional. Tags that should be deleted from the Data Catalog.
    * Caller should populate template name and column only.
    * </pre>
    *
-   * <code>repeated .google.cloud.datacatalog.v1.Tag absent_tags = 3;</code>
+   * <code>
+   * repeated .google.cloud.datacatalog.v1.Tag absent_tags = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.datacatalog.v1.Tag getAbsentTags(int index) {
@@ -305,11 +320,13 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Tags that should be deleted from the Data Catalog.
+   * Optional. Tags that should be deleted from the Data Catalog.
    * Caller should populate template name and column only.
    * </pre>
    *
-   * <code>repeated .google.cloud.datacatalog.v1.Tag absent_tags = 3;</code>
+   * <code>
+   * repeated .google.cloud.datacatalog.v1.Tag absent_tags = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.datacatalog.v1.TagOrBuilder getAbsentTagsOrBuilder(int index) {
@@ -1067,11 +1084,13 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Tags that should be ingested into the Data Catalog.
+     * Optional. Tags that should be ingested into the Data Catalog.
      * Caller should populate template name, column and fields.
      * </pre>
      *
-     * <code>repeated .google.cloud.datacatalog.v1.Tag present_tags = 2;</code>
+     * <code>
+     * repeated .google.cloud.datacatalog.v1.Tag present_tags = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<com.google.cloud.datacatalog.v1.Tag> getPresentTagsList() {
       if (presentTagsBuilder_ == null) {
@@ -1084,11 +1103,13 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Tags that should be ingested into the Data Catalog.
+     * Optional. Tags that should be ingested into the Data Catalog.
      * Caller should populate template name, column and fields.
      * </pre>
      *
-     * <code>repeated .google.cloud.datacatalog.v1.Tag present_tags = 2;</code>
+     * <code>
+     * repeated .google.cloud.datacatalog.v1.Tag present_tags = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public int getPresentTagsCount() {
       if (presentTagsBuilder_ == null) {
@@ -1101,11 +1122,13 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Tags that should be ingested into the Data Catalog.
+     * Optional. Tags that should be ingested into the Data Catalog.
      * Caller should populate template name, column and fields.
      * </pre>
      *
-     * <code>repeated .google.cloud.datacatalog.v1.Tag present_tags = 2;</code>
+     * <code>
+     * repeated .google.cloud.datacatalog.v1.Tag present_tags = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.datacatalog.v1.Tag getPresentTags(int index) {
       if (presentTagsBuilder_ == null) {
@@ -1118,11 +1141,13 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Tags that should be ingested into the Data Catalog.
+     * Optional. Tags that should be ingested into the Data Catalog.
      * Caller should populate template name, column and fields.
      * </pre>
      *
-     * <code>repeated .google.cloud.datacatalog.v1.Tag present_tags = 2;</code>
+     * <code>
+     * repeated .google.cloud.datacatalog.v1.Tag present_tags = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setPresentTags(int index, com.google.cloud.datacatalog.v1.Tag value) {
       if (presentTagsBuilder_ == null) {
@@ -1141,11 +1166,13 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Tags that should be ingested into the Data Catalog.
+     * Optional. Tags that should be ingested into the Data Catalog.
      * Caller should populate template name, column and fields.
      * </pre>
      *
-     * <code>repeated .google.cloud.datacatalog.v1.Tag present_tags = 2;</code>
+     * <code>
+     * repeated .google.cloud.datacatalog.v1.Tag present_tags = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setPresentTags(
         int index, com.google.cloud.datacatalog.v1.Tag.Builder builderForValue) {
@@ -1162,11 +1189,13 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Tags that should be ingested into the Data Catalog.
+     * Optional. Tags that should be ingested into the Data Catalog.
      * Caller should populate template name, column and fields.
      * </pre>
      *
-     * <code>repeated .google.cloud.datacatalog.v1.Tag present_tags = 2;</code>
+     * <code>
+     * repeated .google.cloud.datacatalog.v1.Tag present_tags = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addPresentTags(com.google.cloud.datacatalog.v1.Tag value) {
       if (presentTagsBuilder_ == null) {
@@ -1185,11 +1214,13 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Tags that should be ingested into the Data Catalog.
+     * Optional. Tags that should be ingested into the Data Catalog.
      * Caller should populate template name, column and fields.
      * </pre>
      *
-     * <code>repeated .google.cloud.datacatalog.v1.Tag present_tags = 2;</code>
+     * <code>
+     * repeated .google.cloud.datacatalog.v1.Tag present_tags = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addPresentTags(int index, com.google.cloud.datacatalog.v1.Tag value) {
       if (presentTagsBuilder_ == null) {
@@ -1208,11 +1239,13 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Tags that should be ingested into the Data Catalog.
+     * Optional. Tags that should be ingested into the Data Catalog.
      * Caller should populate template name, column and fields.
      * </pre>
      *
-     * <code>repeated .google.cloud.datacatalog.v1.Tag present_tags = 2;</code>
+     * <code>
+     * repeated .google.cloud.datacatalog.v1.Tag present_tags = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addPresentTags(com.google.cloud.datacatalog.v1.Tag.Builder builderForValue) {
       if (presentTagsBuilder_ == null) {
@@ -1228,11 +1261,13 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Tags that should be ingested into the Data Catalog.
+     * Optional. Tags that should be ingested into the Data Catalog.
      * Caller should populate template name, column and fields.
      * </pre>
      *
-     * <code>repeated .google.cloud.datacatalog.v1.Tag present_tags = 2;</code>
+     * <code>
+     * repeated .google.cloud.datacatalog.v1.Tag present_tags = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addPresentTags(
         int index, com.google.cloud.datacatalog.v1.Tag.Builder builderForValue) {
@@ -1249,11 +1284,13 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Tags that should be ingested into the Data Catalog.
+     * Optional. Tags that should be ingested into the Data Catalog.
      * Caller should populate template name, column and fields.
      * </pre>
      *
-     * <code>repeated .google.cloud.datacatalog.v1.Tag present_tags = 2;</code>
+     * <code>
+     * repeated .google.cloud.datacatalog.v1.Tag present_tags = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addAllPresentTags(
         java.lang.Iterable<? extends com.google.cloud.datacatalog.v1.Tag> values) {
@@ -1270,11 +1307,13 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Tags that should be ingested into the Data Catalog.
+     * Optional. Tags that should be ingested into the Data Catalog.
      * Caller should populate template name, column and fields.
      * </pre>
      *
-     * <code>repeated .google.cloud.datacatalog.v1.Tag present_tags = 2;</code>
+     * <code>
+     * repeated .google.cloud.datacatalog.v1.Tag present_tags = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearPresentTags() {
       if (presentTagsBuilder_ == null) {
@@ -1290,11 +1329,13 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Tags that should be ingested into the Data Catalog.
+     * Optional. Tags that should be ingested into the Data Catalog.
      * Caller should populate template name, column and fields.
      * </pre>
      *
-     * <code>repeated .google.cloud.datacatalog.v1.Tag present_tags = 2;</code>
+     * <code>
+     * repeated .google.cloud.datacatalog.v1.Tag present_tags = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder removePresentTags(int index) {
       if (presentTagsBuilder_ == null) {
@@ -1310,11 +1351,13 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Tags that should be ingested into the Data Catalog.
+     * Optional. Tags that should be ingested into the Data Catalog.
      * Caller should populate template name, column and fields.
      * </pre>
      *
-     * <code>repeated .google.cloud.datacatalog.v1.Tag present_tags = 2;</code>
+     * <code>
+     * repeated .google.cloud.datacatalog.v1.Tag present_tags = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.datacatalog.v1.Tag.Builder getPresentTagsBuilder(int index) {
       return getPresentTagsFieldBuilder().getBuilder(index);
@@ -1323,11 +1366,13 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Tags that should be ingested into the Data Catalog.
+     * Optional. Tags that should be ingested into the Data Catalog.
      * Caller should populate template name, column and fields.
      * </pre>
      *
-     * <code>repeated .google.cloud.datacatalog.v1.Tag present_tags = 2;</code>
+     * <code>
+     * repeated .google.cloud.datacatalog.v1.Tag present_tags = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.datacatalog.v1.TagOrBuilder getPresentTagsOrBuilder(int index) {
       if (presentTagsBuilder_ == null) {
@@ -1340,11 +1385,13 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Tags that should be ingested into the Data Catalog.
+     * Optional. Tags that should be ingested into the Data Catalog.
      * Caller should populate template name, column and fields.
      * </pre>
      *
-     * <code>repeated .google.cloud.datacatalog.v1.Tag present_tags = 2;</code>
+     * <code>
+     * repeated .google.cloud.datacatalog.v1.Tag present_tags = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<? extends com.google.cloud.datacatalog.v1.TagOrBuilder>
         getPresentTagsOrBuilderList() {
@@ -1358,11 +1405,13 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Tags that should be ingested into the Data Catalog.
+     * Optional. Tags that should be ingested into the Data Catalog.
      * Caller should populate template name, column and fields.
      * </pre>
      *
-     * <code>repeated .google.cloud.datacatalog.v1.Tag present_tags = 2;</code>
+     * <code>
+     * repeated .google.cloud.datacatalog.v1.Tag present_tags = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.datacatalog.v1.Tag.Builder addPresentTagsBuilder() {
       return getPresentTagsFieldBuilder()
@@ -1372,11 +1421,13 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Tags that should be ingested into the Data Catalog.
+     * Optional. Tags that should be ingested into the Data Catalog.
      * Caller should populate template name, column and fields.
      * </pre>
      *
-     * <code>repeated .google.cloud.datacatalog.v1.Tag present_tags = 2;</code>
+     * <code>
+     * repeated .google.cloud.datacatalog.v1.Tag present_tags = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.datacatalog.v1.Tag.Builder addPresentTagsBuilder(int index) {
       return getPresentTagsFieldBuilder()
@@ -1386,11 +1437,13 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Tags that should be ingested into the Data Catalog.
+     * Optional. Tags that should be ingested into the Data Catalog.
      * Caller should populate template name, column and fields.
      * </pre>
      *
-     * <code>repeated .google.cloud.datacatalog.v1.Tag present_tags = 2;</code>
+     * <code>
+     * repeated .google.cloud.datacatalog.v1.Tag present_tags = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<com.google.cloud.datacatalog.v1.Tag.Builder> getPresentTagsBuilderList() {
       return getPresentTagsFieldBuilder().getBuilderList();
@@ -1433,11 +1486,13 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Tags that should be deleted from the Data Catalog.
+     * Optional. Tags that should be deleted from the Data Catalog.
      * Caller should populate template name and column only.
      * </pre>
      *
-     * <code>repeated .google.cloud.datacatalog.v1.Tag absent_tags = 3;</code>
+     * <code>
+     * repeated .google.cloud.datacatalog.v1.Tag absent_tags = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<com.google.cloud.datacatalog.v1.Tag> getAbsentTagsList() {
       if (absentTagsBuilder_ == null) {
@@ -1450,11 +1505,13 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Tags that should be deleted from the Data Catalog.
+     * Optional. Tags that should be deleted from the Data Catalog.
      * Caller should populate template name and column only.
      * </pre>
      *
-     * <code>repeated .google.cloud.datacatalog.v1.Tag absent_tags = 3;</code>
+     * <code>
+     * repeated .google.cloud.datacatalog.v1.Tag absent_tags = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public int getAbsentTagsCount() {
       if (absentTagsBuilder_ == null) {
@@ -1467,11 +1524,13 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Tags that should be deleted from the Data Catalog.
+     * Optional. Tags that should be deleted from the Data Catalog.
      * Caller should populate template name and column only.
      * </pre>
      *
-     * <code>repeated .google.cloud.datacatalog.v1.Tag absent_tags = 3;</code>
+     * <code>
+     * repeated .google.cloud.datacatalog.v1.Tag absent_tags = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.datacatalog.v1.Tag getAbsentTags(int index) {
       if (absentTagsBuilder_ == null) {
@@ -1484,11 +1543,13 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Tags that should be deleted from the Data Catalog.
+     * Optional. Tags that should be deleted from the Data Catalog.
      * Caller should populate template name and column only.
      * </pre>
      *
-     * <code>repeated .google.cloud.datacatalog.v1.Tag absent_tags = 3;</code>
+     * <code>
+     * repeated .google.cloud.datacatalog.v1.Tag absent_tags = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setAbsentTags(int index, com.google.cloud.datacatalog.v1.Tag value) {
       if (absentTagsBuilder_ == null) {
@@ -1507,11 +1568,13 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Tags that should be deleted from the Data Catalog.
+     * Optional. Tags that should be deleted from the Data Catalog.
      * Caller should populate template name and column only.
      * </pre>
      *
-     * <code>repeated .google.cloud.datacatalog.v1.Tag absent_tags = 3;</code>
+     * <code>
+     * repeated .google.cloud.datacatalog.v1.Tag absent_tags = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setAbsentTags(
         int index, com.google.cloud.datacatalog.v1.Tag.Builder builderForValue) {
@@ -1528,11 +1591,13 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Tags that should be deleted from the Data Catalog.
+     * Optional. Tags that should be deleted from the Data Catalog.
      * Caller should populate template name and column only.
      * </pre>
      *
-     * <code>repeated .google.cloud.datacatalog.v1.Tag absent_tags = 3;</code>
+     * <code>
+     * repeated .google.cloud.datacatalog.v1.Tag absent_tags = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addAbsentTags(com.google.cloud.datacatalog.v1.Tag value) {
       if (absentTagsBuilder_ == null) {
@@ -1551,11 +1616,13 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Tags that should be deleted from the Data Catalog.
+     * Optional. Tags that should be deleted from the Data Catalog.
      * Caller should populate template name and column only.
      * </pre>
      *
-     * <code>repeated .google.cloud.datacatalog.v1.Tag absent_tags = 3;</code>
+     * <code>
+     * repeated .google.cloud.datacatalog.v1.Tag absent_tags = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addAbsentTags(int index, com.google.cloud.datacatalog.v1.Tag value) {
       if (absentTagsBuilder_ == null) {
@@ -1574,11 +1641,13 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Tags that should be deleted from the Data Catalog.
+     * Optional. Tags that should be deleted from the Data Catalog.
      * Caller should populate template name and column only.
      * </pre>
      *
-     * <code>repeated .google.cloud.datacatalog.v1.Tag absent_tags = 3;</code>
+     * <code>
+     * repeated .google.cloud.datacatalog.v1.Tag absent_tags = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addAbsentTags(com.google.cloud.datacatalog.v1.Tag.Builder builderForValue) {
       if (absentTagsBuilder_ == null) {
@@ -1594,11 +1663,13 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Tags that should be deleted from the Data Catalog.
+     * Optional. Tags that should be deleted from the Data Catalog.
      * Caller should populate template name and column only.
      * </pre>
      *
-     * <code>repeated .google.cloud.datacatalog.v1.Tag absent_tags = 3;</code>
+     * <code>
+     * repeated .google.cloud.datacatalog.v1.Tag absent_tags = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addAbsentTags(
         int index, com.google.cloud.datacatalog.v1.Tag.Builder builderForValue) {
@@ -1615,11 +1686,13 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Tags that should be deleted from the Data Catalog.
+     * Optional. Tags that should be deleted from the Data Catalog.
      * Caller should populate template name and column only.
      * </pre>
      *
-     * <code>repeated .google.cloud.datacatalog.v1.Tag absent_tags = 3;</code>
+     * <code>
+     * repeated .google.cloud.datacatalog.v1.Tag absent_tags = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addAllAbsentTags(
         java.lang.Iterable<? extends com.google.cloud.datacatalog.v1.Tag> values) {
@@ -1636,11 +1709,13 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Tags that should be deleted from the Data Catalog.
+     * Optional. Tags that should be deleted from the Data Catalog.
      * Caller should populate template name and column only.
      * </pre>
      *
-     * <code>repeated .google.cloud.datacatalog.v1.Tag absent_tags = 3;</code>
+     * <code>
+     * repeated .google.cloud.datacatalog.v1.Tag absent_tags = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearAbsentTags() {
       if (absentTagsBuilder_ == null) {
@@ -1656,11 +1731,13 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Tags that should be deleted from the Data Catalog.
+     * Optional. Tags that should be deleted from the Data Catalog.
      * Caller should populate template name and column only.
      * </pre>
      *
-     * <code>repeated .google.cloud.datacatalog.v1.Tag absent_tags = 3;</code>
+     * <code>
+     * repeated .google.cloud.datacatalog.v1.Tag absent_tags = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder removeAbsentTags(int index) {
       if (absentTagsBuilder_ == null) {
@@ -1676,11 +1753,13 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Tags that should be deleted from the Data Catalog.
+     * Optional. Tags that should be deleted from the Data Catalog.
      * Caller should populate template name and column only.
      * </pre>
      *
-     * <code>repeated .google.cloud.datacatalog.v1.Tag absent_tags = 3;</code>
+     * <code>
+     * repeated .google.cloud.datacatalog.v1.Tag absent_tags = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.datacatalog.v1.Tag.Builder getAbsentTagsBuilder(int index) {
       return getAbsentTagsFieldBuilder().getBuilder(index);
@@ -1689,11 +1768,13 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Tags that should be deleted from the Data Catalog.
+     * Optional. Tags that should be deleted from the Data Catalog.
      * Caller should populate template name and column only.
      * </pre>
      *
-     * <code>repeated .google.cloud.datacatalog.v1.Tag absent_tags = 3;</code>
+     * <code>
+     * repeated .google.cloud.datacatalog.v1.Tag absent_tags = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.datacatalog.v1.TagOrBuilder getAbsentTagsOrBuilder(int index) {
       if (absentTagsBuilder_ == null) {
@@ -1706,11 +1787,13 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Tags that should be deleted from the Data Catalog.
+     * Optional. Tags that should be deleted from the Data Catalog.
      * Caller should populate template name and column only.
      * </pre>
      *
-     * <code>repeated .google.cloud.datacatalog.v1.Tag absent_tags = 3;</code>
+     * <code>
+     * repeated .google.cloud.datacatalog.v1.Tag absent_tags = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<? extends com.google.cloud.datacatalog.v1.TagOrBuilder>
         getAbsentTagsOrBuilderList() {
@@ -1724,11 +1807,13 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Tags that should be deleted from the Data Catalog.
+     * Optional. Tags that should be deleted from the Data Catalog.
      * Caller should populate template name and column only.
      * </pre>
      *
-     * <code>repeated .google.cloud.datacatalog.v1.Tag absent_tags = 3;</code>
+     * <code>
+     * repeated .google.cloud.datacatalog.v1.Tag absent_tags = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.datacatalog.v1.Tag.Builder addAbsentTagsBuilder() {
       return getAbsentTagsFieldBuilder()
@@ -1738,11 +1823,13 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Tags that should be deleted from the Data Catalog.
+     * Optional. Tags that should be deleted from the Data Catalog.
      * Caller should populate template name and column only.
      * </pre>
      *
-     * <code>repeated .google.cloud.datacatalog.v1.Tag absent_tags = 3;</code>
+     * <code>
+     * repeated .google.cloud.datacatalog.v1.Tag absent_tags = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.datacatalog.v1.Tag.Builder addAbsentTagsBuilder(int index) {
       return getAbsentTagsFieldBuilder()
@@ -1752,11 +1839,13 @@ public final class TaggedEntry extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Tags that should be deleted from the Data Catalog.
+     * Optional. Tags that should be deleted from the Data Catalog.
      * Caller should populate template name and column only.
      * </pre>
      *
-     * <code>repeated .google.cloud.datacatalog.v1.Tag absent_tags = 3;</code>
+     * <code>
+     * repeated .google.cloud.datacatalog.v1.Tag absent_tags = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<com.google.cloud.datacatalog.v1.Tag.Builder> getAbsentTagsBuilderList() {
       return getAbsentTagsFieldBuilder().getBuilderList();

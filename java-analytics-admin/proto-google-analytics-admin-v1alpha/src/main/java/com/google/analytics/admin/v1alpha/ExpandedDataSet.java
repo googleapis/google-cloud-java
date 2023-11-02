@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,19 +41,14 @@ public final class ExpandedDataSet extends com.google.protobuf.GeneratedMessageV
     name_ = "";
     displayName_ = "";
     description_ = "";
-    dimensionNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    metricNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    dimensionNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    metricNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ExpandedDataSet();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -233,7 +228,8 @@ public final class ExpandedDataSet extends com.google.protobuf.GeneratedMessageV
   public static final int DIMENSION_NAMES_FIELD_NUMBER = 4;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList dimensionNames_;
+  private com.google.protobuf.LazyStringArrayList dimensionNames_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -308,7 +304,8 @@ public final class ExpandedDataSet extends com.google.protobuf.GeneratedMessageV
   public static final int METRIC_NAMES_FIELD_NUMBER = 5;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList metricNames_;
+  private com.google.protobuf.LazyStringArrayList metricNames_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -787,10 +784,8 @@ public final class ExpandedDataSet extends com.google.protobuf.GeneratedMessageV
       name_ = "";
       displayName_ = "";
       description_ = "";
-      dimensionNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
-      metricNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000010);
+      dimensionNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      metricNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
       dimensionFilterExpression_ = null;
       if (dimensionFilterExpressionBuilder_ != null) {
         dimensionFilterExpressionBuilder_.dispose();
@@ -828,26 +823,11 @@ public final class ExpandedDataSet extends com.google.protobuf.GeneratedMessageV
     public com.google.analytics.admin.v1alpha.ExpandedDataSet buildPartial() {
       com.google.analytics.admin.v1alpha.ExpandedDataSet result =
           new com.google.analytics.admin.v1alpha.ExpandedDataSet(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(
-        com.google.analytics.admin.v1alpha.ExpandedDataSet result) {
-      if (((bitField0_ & 0x00000008) != 0)) {
-        dimensionNames_ = dimensionNames_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000008);
-      }
-      result.dimensionNames_ = dimensionNames_;
-      if (((bitField0_ & 0x00000010) != 0)) {
-        metricNames_ = metricNames_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000010);
-      }
-      result.metricNames_ = metricNames_;
     }
 
     private void buildPartial0(com.google.analytics.admin.v1alpha.ExpandedDataSet result) {
@@ -860,6 +840,14 @@ public final class ExpandedDataSet extends com.google.protobuf.GeneratedMessageV
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        dimensionNames_.makeImmutable();
+        result.dimensionNames_ = dimensionNames_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        metricNames_.makeImmutable();
+        result.metricNames_ = metricNames_;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.dimensionFilterExpression_ =
@@ -939,7 +927,7 @@ public final class ExpandedDataSet extends com.google.protobuf.GeneratedMessageV
       if (!other.dimensionNames_.isEmpty()) {
         if (dimensionNames_.isEmpty()) {
           dimensionNames_ = other.dimensionNames_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ |= 0x00000008;
         } else {
           ensureDimensionNamesIsMutable();
           dimensionNames_.addAll(other.dimensionNames_);
@@ -949,7 +937,7 @@ public final class ExpandedDataSet extends com.google.protobuf.GeneratedMessageV
       if (!other.metricNames_.isEmpty()) {
         if (metricNames_.isEmpty()) {
           metricNames_ = other.metricNames_;
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ |= 0x00000010;
         } else {
           ensureMetricNamesIsMutable();
           metricNames_.addAll(other.metricNames_);
@@ -1386,14 +1374,14 @@ public final class ExpandedDataSet extends com.google.protobuf.GeneratedMessageV
       return this;
     }
 
-    private com.google.protobuf.LazyStringList dimensionNames_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList dimensionNames_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureDimensionNamesIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!dimensionNames_.isModifiable()) {
         dimensionNames_ = new com.google.protobuf.LazyStringArrayList(dimensionNames_);
-        bitField0_ |= 0x00000008;
       }
+      bitField0_ |= 0x00000008;
     }
     /**
      *
@@ -1410,7 +1398,8 @@ public final class ExpandedDataSet extends com.google.protobuf.GeneratedMessageV
      * @return A list containing the dimensionNames.
      */
     public com.google.protobuf.ProtocolStringList getDimensionNamesList() {
-      return dimensionNames_.getUnmodifiableView();
+      dimensionNames_.makeImmutable();
+      return dimensionNames_;
     }
     /**
      *
@@ -1487,6 +1476,7 @@ public final class ExpandedDataSet extends com.google.protobuf.GeneratedMessageV
       }
       ensureDimensionNamesIsMutable();
       dimensionNames_.set(index, value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1511,6 +1501,7 @@ public final class ExpandedDataSet extends com.google.protobuf.GeneratedMessageV
       }
       ensureDimensionNamesIsMutable();
       dimensionNames_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1532,6 +1523,7 @@ public final class ExpandedDataSet extends com.google.protobuf.GeneratedMessageV
     public Builder addAllDimensionNames(java.lang.Iterable<java.lang.String> values) {
       ensureDimensionNamesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, dimensionNames_);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1550,8 +1542,9 @@ public final class ExpandedDataSet extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearDimensionNames() {
-      dimensionNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      dimensionNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000008);
+      ;
       onChanged();
       return this;
     }
@@ -1577,18 +1570,19 @@ public final class ExpandedDataSet extends com.google.protobuf.GeneratedMessageV
       checkByteStringIsUtf8(value);
       ensureDimensionNamesIsMutable();
       dimensionNames_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList metricNames_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList metricNames_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureMetricNamesIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!metricNames_.isModifiable()) {
         metricNames_ = new com.google.protobuf.LazyStringArrayList(metricNames_);
-        bitField0_ |= 0x00000010;
       }
+      bitField0_ |= 0x00000010;
     }
     /**
      *
@@ -1605,7 +1599,8 @@ public final class ExpandedDataSet extends com.google.protobuf.GeneratedMessageV
      * @return A list containing the metricNames.
      */
     public com.google.protobuf.ProtocolStringList getMetricNamesList() {
-      return metricNames_.getUnmodifiableView();
+      metricNames_.makeImmutable();
+      return metricNames_;
     }
     /**
      *
@@ -1682,6 +1677,7 @@ public final class ExpandedDataSet extends com.google.protobuf.GeneratedMessageV
       }
       ensureMetricNamesIsMutable();
       metricNames_.set(index, value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1706,6 +1702,7 @@ public final class ExpandedDataSet extends com.google.protobuf.GeneratedMessageV
       }
       ensureMetricNamesIsMutable();
       metricNames_.add(value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1727,6 +1724,7 @@ public final class ExpandedDataSet extends com.google.protobuf.GeneratedMessageV
     public Builder addAllMetricNames(java.lang.Iterable<java.lang.String> values) {
       ensureMetricNamesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, metricNames_);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1745,8 +1743,9 @@ public final class ExpandedDataSet extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearMetricNames() {
-      metricNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      metricNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000010);
+      ;
       onChanged();
       return this;
     }
@@ -1772,6 +1771,7 @@ public final class ExpandedDataSet extends com.google.protobuf.GeneratedMessageV
       checkByteStringIsUtf8(value);
       ensureMetricNamesIsMutable();
       metricNames_.add(value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

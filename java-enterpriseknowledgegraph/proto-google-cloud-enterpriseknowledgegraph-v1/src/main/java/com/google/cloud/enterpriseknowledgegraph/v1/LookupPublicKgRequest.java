@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,19 +40,14 @@ public final class LookupPublicKgRequest extends com.google.protobuf.GeneratedMe
 
   private LookupPublicKgRequest() {
     parent_ = "";
-    ids_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    languages_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    ids_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    languages_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new LookupPublicKgRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -132,7 +127,8 @@ public final class LookupPublicKgRequest extends com.google.protobuf.GeneratedMe
   public static final int IDS_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList ids_;
+  private com.google.protobuf.LazyStringArrayList ids_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -195,7 +191,8 @@ public final class LookupPublicKgRequest extends com.google.protobuf.GeneratedMe
   public static final int LANGUAGES_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList languages_;
+  private com.google.protobuf.LazyStringArrayList languages_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -494,10 +491,8 @@ public final class LookupPublicKgRequest extends com.google.protobuf.GeneratedMe
       super.clear();
       bitField0_ = 0;
       parent_ = "";
-      ids_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
-      languages_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      ids_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      languages_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -527,7 +522,6 @@ public final class LookupPublicKgRequest extends com.google.protobuf.GeneratedMe
     public com.google.cloud.enterpriseknowledgegraph.v1.LookupPublicKgRequest buildPartial() {
       com.google.cloud.enterpriseknowledgegraph.v1.LookupPublicKgRequest result =
           new com.google.cloud.enterpriseknowledgegraph.v1.LookupPublicKgRequest(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -535,25 +529,19 @@ public final class LookupPublicKgRequest extends com.google.protobuf.GeneratedMe
       return result;
     }
 
-    private void buildPartialRepeatedFields(
-        com.google.cloud.enterpriseknowledgegraph.v1.LookupPublicKgRequest result) {
-      if (((bitField0_ & 0x00000002) != 0)) {
-        ids_ = ids_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.ids_ = ids_;
-      if (((bitField0_ & 0x00000004) != 0)) {
-        languages_ = languages_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.languages_ = languages_;
-    }
-
     private void buildPartial0(
         com.google.cloud.enterpriseknowledgegraph.v1.LookupPublicKgRequest result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        ids_.makeImmutable();
+        result.ids_ = ids_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        languages_.makeImmutable();
+        result.languages_ = languages_;
       }
     }
 
@@ -614,7 +602,7 @@ public final class LookupPublicKgRequest extends com.google.protobuf.GeneratedMe
       if (!other.ids_.isEmpty()) {
         if (ids_.isEmpty()) {
           ids_ = other.ids_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureIdsIsMutable();
           ids_.addAll(other.ids_);
@@ -624,7 +612,7 @@ public final class LookupPublicKgRequest extends com.google.protobuf.GeneratedMe
       if (!other.languages_.isEmpty()) {
         if (languages_.isEmpty()) {
           languages_ = other.languages_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ |= 0x00000004;
         } else {
           ensureLanguagesIsMutable();
           languages_.addAll(other.languages_);
@@ -822,13 +810,14 @@ public final class LookupPublicKgRequest extends com.google.protobuf.GeneratedMe
       return this;
     }
 
-    private com.google.protobuf.LazyStringList ids_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList ids_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureIdsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!ids_.isModifiable()) {
         ids_ = new com.google.protobuf.LazyStringArrayList(ids_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -842,7 +831,8 @@ public final class LookupPublicKgRequest extends com.google.protobuf.GeneratedMe
      * @return A list containing the ids.
      */
     public com.google.protobuf.ProtocolStringList getIdsList() {
-      return ids_.getUnmodifiableView();
+      ids_.makeImmutable();
+      return ids_;
     }
     /**
      *
@@ -907,6 +897,7 @@ public final class LookupPublicKgRequest extends com.google.protobuf.GeneratedMe
       }
       ensureIdsIsMutable();
       ids_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -928,6 +919,7 @@ public final class LookupPublicKgRequest extends com.google.protobuf.GeneratedMe
       }
       ensureIdsIsMutable();
       ids_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -946,6 +938,7 @@ public final class LookupPublicKgRequest extends com.google.protobuf.GeneratedMe
     public Builder addAllIds(java.lang.Iterable<java.lang.String> values) {
       ensureIdsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, ids_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -961,8 +954,9 @@ public final class LookupPublicKgRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearIds() {
-      ids_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      ids_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -985,18 +979,19 @@ public final class LookupPublicKgRequest extends com.google.protobuf.GeneratedMe
       checkByteStringIsUtf8(value);
       ensureIdsIsMutable();
       ids_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList languages_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList languages_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureLanguagesIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!languages_.isModifiable()) {
         languages_ = new com.google.protobuf.LazyStringArrayList(languages_);
-        bitField0_ |= 0x00000004;
       }
+      bitField0_ |= 0x00000004;
     }
     /**
      *
@@ -1011,7 +1006,8 @@ public final class LookupPublicKgRequest extends com.google.protobuf.GeneratedMe
      * @return A list containing the languages.
      */
     public com.google.protobuf.ProtocolStringList getLanguagesList() {
-      return languages_.getUnmodifiableView();
+      languages_.makeImmutable();
+      return languages_;
     }
     /**
      *
@@ -1080,6 +1076,7 @@ public final class LookupPublicKgRequest extends com.google.protobuf.GeneratedMe
       }
       ensureLanguagesIsMutable();
       languages_.set(index, value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1102,6 +1099,7 @@ public final class LookupPublicKgRequest extends com.google.protobuf.GeneratedMe
       }
       ensureLanguagesIsMutable();
       languages_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1121,6 +1119,7 @@ public final class LookupPublicKgRequest extends com.google.protobuf.GeneratedMe
     public Builder addAllLanguages(java.lang.Iterable<java.lang.String> values) {
       ensureLanguagesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, languages_);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1137,8 +1136,9 @@ public final class LookupPublicKgRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearLanguages() {
-      languages_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      languages_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000004);
+      ;
       onChanged();
       return this;
     }
@@ -1162,6 +1162,7 @@ public final class LookupPublicKgRequest extends com.google.protobuf.GeneratedMe
       checkByteStringIsUtf8(value);
       ensureLanguagesIsMutable();
       languages_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

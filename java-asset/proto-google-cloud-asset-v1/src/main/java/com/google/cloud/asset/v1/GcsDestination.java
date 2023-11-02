@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
     return new GcsDestination();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.asset.v1.AssetServiceProto
         .internal_static_google_cloud_asset_v1_GcsDestination_descriptor;
@@ -66,6 +61,8 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int objectUriCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object objectUri_;
 
   public enum ObjectUriCase
@@ -122,6 +119,7 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
    * Editing Object
    * Metadata](https://cloud.google.com/storage/docs/viewing-editing-metadata)
    * for more information.
+   *
    * If the specified Cloud Storage object already exists and there is no
    * [hold](https://cloud.google.com/storage/docs/object-holds), it will be
    * overwritten with the exported result.
@@ -143,6 +141,7 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
    * Editing Object
    * Metadata](https://cloud.google.com/storage/docs/viewing-editing-metadata)
    * for more information.
+   *
    * If the specified Cloud Storage object already exists and there is no
    * [hold](https://cloud.google.com/storage/docs/object-holds), it will be
    * overwritten with the exported result.
@@ -177,6 +176,7 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
    * Editing Object
    * Metadata](https://cloud.google.com/storage/docs/viewing-editing-metadata)
    * for more information.
+   *
    * If the specified Cloud Storage object already exists and there is no
    * [hold](https://cloud.google.com/storage/docs/object-holds), it will be
    * overwritten with the exported result.
@@ -713,6 +713,7 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
      * Editing Object
      * Metadata](https://cloud.google.com/storage/docs/viewing-editing-metadata)
      * for more information.
+     *
      * If the specified Cloud Storage object already exists and there is no
      * [hold](https://cloud.google.com/storage/docs/object-holds), it will be
      * overwritten with the exported result.
@@ -735,6 +736,7 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
      * Editing Object
      * Metadata](https://cloud.google.com/storage/docs/viewing-editing-metadata)
      * for more information.
+     *
      * If the specified Cloud Storage object already exists and there is no
      * [hold](https://cloud.google.com/storage/docs/object-holds), it will be
      * overwritten with the exported result.
@@ -770,6 +772,7 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
      * Editing Object
      * Metadata](https://cloud.google.com/storage/docs/viewing-editing-metadata)
      * for more information.
+     *
      * If the specified Cloud Storage object already exists and there is no
      * [hold](https://cloud.google.com/storage/docs/object-holds), it will be
      * overwritten with the exported result.
@@ -805,6 +808,7 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
      * Editing Object
      * Metadata](https://cloud.google.com/storage/docs/viewing-editing-metadata)
      * for more information.
+     *
      * If the specified Cloud Storage object already exists and there is no
      * [hold](https://cloud.google.com/storage/docs/object-holds), it will be
      * overwritten with the exported result.
@@ -833,6 +837,7 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
      * Editing Object
      * Metadata](https://cloud.google.com/storage/docs/viewing-editing-metadata)
      * for more information.
+     *
      * If the specified Cloud Storage object already exists and there is no
      * [hold](https://cloud.google.com/storage/docs/object-holds), it will be
      * overwritten with the exported result.
@@ -859,6 +864,7 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
      * Editing Object
      * Metadata](https://cloud.google.com/storage/docs/viewing-editing-metadata)
      * for more information.
+     *
      * If the specified Cloud Storage object already exists and there is no
      * [hold](https://cloud.google.com/storage/docs/object-holds), it will be
      * overwritten with the exported result.

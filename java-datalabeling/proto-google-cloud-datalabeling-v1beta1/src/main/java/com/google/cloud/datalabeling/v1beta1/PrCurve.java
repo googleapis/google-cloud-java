@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,11 +39,6 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
     return new PrCurve();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datalabeling.v1beta1.EvaluationOuterClass
         .internal_static_google_cloud_datalabeling_v1beta1_PrCurve_descriptor;
@@ -69,12 +64,15 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Threshold used for this entry.
+     *
      * For classification tasks, this is a classification threshold: a
      * predicted label is categorized as positive or negative (in the context of
      * this point on the PR curve) based on whether the label's score meets this
      * threshold.
+     *
      * For image object detection (bounding box) tasks, this is the
      * [intersection-over-union
+     *
      * (IOU)](/vision/automl/object-detection/docs/evaluate#intersection-over-union)
      * threshold for the context of this point on the PR curve.
      * </pre>
@@ -221,11 +219,6 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
       return new ConfidenceMetricsEntry();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.datalabeling.v1beta1.EvaluationOuterClass
           .internal_static_google_cloud_datalabeling_v1beta1_PrCurve_ConfidenceMetricsEntry_descriptor;
@@ -248,12 +241,15 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Threshold used for this entry.
+     *
      * For classification tasks, this is a classification threshold: a
      * predicted label is categorized as positive or negative (in the context of
      * this point on the PR curve) based on whether the label's score meets this
      * threshold.
+     *
      * For image object detection (bounding box) tasks, this is the
      * [intersection-over-union
+     *
      * (IOU)](/vision/automl/object-detection/docs/evaluate#intersection-over-union)
      * threshold for the context of this point on the PR curve.
      * </pre>
@@ -989,12 +985,15 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Threshold used for this entry.
+       *
        * For classification tasks, this is a classification threshold: a
        * predicted label is categorized as positive or negative (in the context of
        * this point on the PR curve) based on whether the label's score meets this
        * threshold.
+       *
        * For image object detection (bounding box) tasks, this is the
        * [intersection-over-union
+       *
        * (IOU)](/vision/automl/object-detection/docs/evaluate#intersection-over-union)
        * threshold for the context of this point on the PR curve.
        * </pre>
@@ -1012,12 +1011,15 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Threshold used for this entry.
+       *
        * For classification tasks, this is a classification threshold: a
        * predicted label is categorized as positive or negative (in the context of
        * this point on the PR curve) based on whether the label's score meets this
        * threshold.
+       *
        * For image object detection (bounding box) tasks, this is the
        * [intersection-over-union
+       *
        * (IOU)](/vision/automl/object-detection/docs/evaluate#intersection-over-union)
        * threshold for the context of this point on the PR curve.
        * </pre>
@@ -1039,12 +1041,15 @@ public final class PrCurve extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Threshold used for this entry.
+       *
        * For classification tasks, this is a classification threshold: a
        * predicted label is categorized as positive or negative (in the context of
        * this point on the PR curve) based on whether the label's score meets this
        * threshold.
+       *
        * For image object detection (bounding box) tasks, this is the
        * [intersection-over-union
+       *
        * (IOU)](/vision/automl/object-detection/docs/evaluate#intersection-over-union)
        * threshold for the context of this point on the PR curve.
        * </pre>

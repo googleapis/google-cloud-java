@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -115,6 +115,7 @@ public interface NetworkOrBuilder
    * <pre>
    * Google Compute Engine network where the virtual machines are created.
    * Specify the short name, not the resource path.
+   *
    * Defaults to `default`.
    * </pre>
    *
@@ -129,6 +130,7 @@ public interface NetworkOrBuilder
    * <pre>
    * Google Compute Engine network where the virtual machines are created.
    * Specify the short name, not the resource path.
+   *
    * Defaults to `default`.
    * </pre>
    *
@@ -144,8 +146,10 @@ public interface NetworkOrBuilder
    * <pre>
    * Google Cloud Platform sub-network where the virtual machines are created.
    * Specify the short name, not the resource path.
+   *
    * If a subnetwork name is specified, a network name will also be required
    * unless it is for the default network.
+   *
    * * If the network that the instance is being created in is a Legacy network,
    * then the IP address is allocated from the IPv4Range.
    * * If the network that the instance is being created in is an auto Subnet
@@ -155,6 +159,7 @@ public interface NetworkOrBuilder
    * * If the network that the instance is being created in is a custom Subnet
    * Mode Network, then the subnetwork_name must be specified and the
    * IP address is created from the IPCidrRange of the subnetwork.
+   *
    * If specified, the subnetwork must exist in the same region as the
    * App Engine flexible environment application.
    * </pre>
@@ -170,8 +175,10 @@ public interface NetworkOrBuilder
    * <pre>
    * Google Cloud Platform sub-network where the virtual machines are created.
    * Specify the short name, not the resource path.
+   *
    * If a subnetwork name is specified, a network name will also be required
    * unless it is for the default network.
+   *
    * * If the network that the instance is being created in is a Legacy network,
    * then the IP address is allocated from the IPv4Range.
    * * If the network that the instance is being created in is an auto Subnet
@@ -181,6 +188,7 @@ public interface NetworkOrBuilder
    * * If the network that the instance is being created in is a custom Subnet
    * Mode Network, then the subnetwork_name must be specified and the
    * IP address is created from the IPCidrRange of the subnetwork.
+   *
    * If specified, the subnetwork must exist in the same region as the
    * App Engine flexible environment application.
    * </pre>

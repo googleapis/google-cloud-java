@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,17 +40,13 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
   private ConversionEvent() {
     name_ = "";
     eventName_ = "";
+    countingMethod_ = 0;
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ConversionEvent();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -66,6 +62,171 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
         .ensureFieldAccessorsInitialized(
             com.google.analytics.admin.v1beta.ConversionEvent.class,
             com.google.analytics.admin.v1beta.ConversionEvent.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The method by which conversions will be counted across multiple events
+   * within a session.
+   * </pre>
+   *
+   * Protobuf enum {@code google.analytics.admin.v1beta.ConversionEvent.ConversionCountingMethod}
+   */
+  public enum ConversionCountingMethod implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Counting method not specified.
+     * </pre>
+     *
+     * <code>CONVERSION_COUNTING_METHOD_UNSPECIFIED = 0;</code>
+     */
+    CONVERSION_COUNTING_METHOD_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Each Event instance is considered a Conversion.
+     * </pre>
+     *
+     * <code>ONCE_PER_EVENT = 1;</code>
+     */
+    ONCE_PER_EVENT(1),
+    /**
+     *
+     *
+     * <pre>
+     * An Event instance is considered a Conversion at most once per session per
+     * user.
+     * </pre>
+     *
+     * <code>ONCE_PER_SESSION = 2;</code>
+     */
+    ONCE_PER_SESSION(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Counting method not specified.
+     * </pre>
+     *
+     * <code>CONVERSION_COUNTING_METHOD_UNSPECIFIED = 0;</code>
+     */
+    public static final int CONVERSION_COUNTING_METHOD_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Each Event instance is considered a Conversion.
+     * </pre>
+     *
+     * <code>ONCE_PER_EVENT = 1;</code>
+     */
+    public static final int ONCE_PER_EVENT_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * An Event instance is considered a Conversion at most once per session per
+     * user.
+     * </pre>
+     *
+     * <code>ONCE_PER_SESSION = 2;</code>
+     */
+    public static final int ONCE_PER_SESSION_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static ConversionCountingMethod valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static ConversionCountingMethod forNumber(int value) {
+      switch (value) {
+        case 0:
+          return CONVERSION_COUNTING_METHOD_UNSPECIFIED;
+        case 1:
+          return ONCE_PER_EVENT;
+        case 2:
+          return ONCE_PER_SESSION;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<ConversionCountingMethod>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<ConversionCountingMethod>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<ConversionCountingMethod>() {
+              public ConversionCountingMethod findValueByNumber(int number) {
+                return ConversionCountingMethod.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.analytics.admin.v1beta.ConversionEvent.getDescriptor()
+          .getEnumTypes()
+          .get(0);
+    }
+
+    private static final ConversionCountingMethod[] VALUES = values();
+
+    public static ConversionCountingMethod valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private ConversionCountingMethod(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.analytics.admin.v1beta.ConversionEvent.ConversionCountingMethod)
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
@@ -265,6 +426,53 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
     return custom_;
   }
 
+  public static final int COUNTING_METHOD_FIELD_NUMBER = 6;
+  private int countingMethod_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The method by which conversions will be counted across multiple
+   * events within a session. If this value is not provided, it will be set to
+   * `ONCE_PER_EVENT`.
+   * </pre>
+   *
+   * <code>
+   * .google.analytics.admin.v1beta.ConversionEvent.ConversionCountingMethod counting_method = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for countingMethod.
+   */
+  @java.lang.Override
+  public int getCountingMethodValue() {
+    return countingMethod_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The method by which conversions will be counted across multiple
+   * events within a session. If this value is not provided, it will be set to
+   * `ONCE_PER_EVENT`.
+   * </pre>
+   *
+   * <code>
+   * .google.analytics.admin.v1beta.ConversionEvent.ConversionCountingMethod counting_method = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The countingMethod.
+   */
+  @java.lang.Override
+  public com.google.analytics.admin.v1beta.ConversionEvent.ConversionCountingMethod
+      getCountingMethod() {
+    com.google.analytics.admin.v1beta.ConversionEvent.ConversionCountingMethod result =
+        com.google.analytics.admin.v1beta.ConversionEvent.ConversionCountingMethod.forNumber(
+            countingMethod_);
+    return result == null
+        ? com.google.analytics.admin.v1beta.ConversionEvent.ConversionCountingMethod.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -294,6 +502,12 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
     if (custom_ != false) {
       output.writeBool(5, custom_);
     }
+    if (countingMethod_
+        != com.google.analytics.admin.v1beta.ConversionEvent.ConversionCountingMethod
+            .CONVERSION_COUNTING_METHOD_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(6, countingMethod_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -317,6 +531,12 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
     }
     if (custom_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(5, custom_);
+    }
+    if (countingMethod_
+        != com.google.analytics.admin.v1beta.ConversionEvent.ConversionCountingMethod
+            .CONVERSION_COUNTING_METHOD_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(6, countingMethod_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -342,6 +562,7 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
     }
     if (getDeletable() != other.getDeletable()) return false;
     if (getCustom() != other.getCustom()) return false;
+    if (countingMethod_ != other.countingMethod_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -365,6 +586,8 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDeletable());
     hash = (37 * hash) + CUSTOM_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getCustom());
+    hash = (37 * hash) + COUNTING_METHOD_FIELD_NUMBER;
+    hash = (53 * hash) + countingMethod_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -513,6 +736,7 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
       }
       deletable_ = false;
       custom_ = false;
+      countingMethod_ = 0;
       return this;
     }
 
@@ -563,6 +787,9 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.custom_ = custom_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.countingMethod_ = countingMethod_;
       }
     }
 
@@ -631,6 +858,9 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
       if (other.getCustom() != false) {
         setCustom(other.getCustom());
       }
+      if (other.countingMethod_ != 0) {
+        setCountingMethodValue(other.getCountingMethodValue());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -687,6 +917,12 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
                 bitField0_ |= 0x00000010;
                 break;
               } // case 40
+            case 48:
+              {
+                countingMethod_ = input.readEnum();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 48
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1249,6 +1485,121 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
     public Builder clearCustom() {
       bitField0_ = (bitField0_ & ~0x00000010);
       custom_ = false;
+      onChanged();
+      return this;
+    }
+
+    private int countingMethod_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The method by which conversions will be counted across multiple
+     * events within a session. If this value is not provided, it will be set to
+     * `ONCE_PER_EVENT`.
+     * </pre>
+     *
+     * <code>
+     * .google.analytics.admin.v1beta.ConversionEvent.ConversionCountingMethod counting_method = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for countingMethod.
+     */
+    @java.lang.Override
+    public int getCountingMethodValue() {
+      return countingMethod_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The method by which conversions will be counted across multiple
+     * events within a session. If this value is not provided, it will be set to
+     * `ONCE_PER_EVENT`.
+     * </pre>
+     *
+     * <code>
+     * .google.analytics.admin.v1beta.ConversionEvent.ConversionCountingMethod counting_method = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for countingMethod to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCountingMethodValue(int value) {
+      countingMethod_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The method by which conversions will be counted across multiple
+     * events within a session. If this value is not provided, it will be set to
+     * `ONCE_PER_EVENT`.
+     * </pre>
+     *
+     * <code>
+     * .google.analytics.admin.v1beta.ConversionEvent.ConversionCountingMethod counting_method = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The countingMethod.
+     */
+    @java.lang.Override
+    public com.google.analytics.admin.v1beta.ConversionEvent.ConversionCountingMethod
+        getCountingMethod() {
+      com.google.analytics.admin.v1beta.ConversionEvent.ConversionCountingMethod result =
+          com.google.analytics.admin.v1beta.ConversionEvent.ConversionCountingMethod.forNumber(
+              countingMethod_);
+      return result == null
+          ? com.google.analytics.admin.v1beta.ConversionEvent.ConversionCountingMethod.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The method by which conversions will be counted across multiple
+     * events within a session. If this value is not provided, it will be set to
+     * `ONCE_PER_EVENT`.
+     * </pre>
+     *
+     * <code>
+     * .google.analytics.admin.v1beta.ConversionEvent.ConversionCountingMethod counting_method = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The countingMethod to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCountingMethod(
+        com.google.analytics.admin.v1beta.ConversionEvent.ConversionCountingMethod value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000020;
+      countingMethod_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The method by which conversions will be counted across multiple
+     * events within a session. If this value is not provided, it will be set to
+     * `ONCE_PER_EVENT`.
+     * </pre>
+     *
+     * <code>
+     * .google.analytics.admin.v1beta.ConversionEvent.ConversionCountingMethod counting_method = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCountingMethod() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      countingMethod_ = 0;
       onChanged();
       return this;
     }

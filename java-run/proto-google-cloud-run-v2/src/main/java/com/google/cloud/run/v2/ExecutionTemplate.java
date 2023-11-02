@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,11 +44,6 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ExecutionTemplate();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -116,6 +111,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
    * environment, state, etc. For more information, visit
    * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
    * https://cloud.google.com/run/docs/configuring/labels.
+   *
    * &lt;p&gt;Cloud Run API v2 does not support labels with `run.googleapis.com`,
    * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
    * namespaces, and they will be rejected. All system labels in v1 now have a
@@ -148,6 +144,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
    * environment, state, etc. For more information, visit
    * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
    * https://cloud.google.com/run/docs/configuring/labels.
+   *
    * &lt;p&gt;Cloud Run API v2 does not support labels with `run.googleapis.com`,
    * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
    * namespaces, and they will be rejected. All system labels in v1 now have a
@@ -171,6 +168,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
    * environment, state, etc. For more information, visit
    * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
    * https://cloud.google.com/run/docs/configuring/labels.
+   *
    * &lt;p&gt;Cloud Run API v2 does not support labels with `run.googleapis.com`,
    * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
    * namespaces, and they will be rejected. All system labels in v1 now have a
@@ -201,6 +199,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
    * environment, state, etc. For more information, visit
    * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
    * https://cloud.google.com/run/docs/configuring/labels.
+   *
    * &lt;p&gt;Cloud Run API v2 does not support labels with `run.googleapis.com`,
    * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
    * namespaces, and they will be rejected. All system labels in v1 now have a
@@ -255,10 +254,12 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
    * Unstructured key value map that may be set by external tools to store and
    * arbitrary metadata. They are not queryable and should be preserved
    * when modifying objects.
+   *
    * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
    * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
    * namespaces, and they will be rejected. All system annotations in v1 now
    * have a corresponding field in v2 ExecutionTemplate.
+   *
    * &lt;p&gt;This field follows Kubernetes annotations' namespacing, limits, and
    * rules.
    * </pre>
@@ -285,10 +286,12 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
    * Unstructured key value map that may be set by external tools to store and
    * arbitrary metadata. They are not queryable and should be preserved
    * when modifying objects.
+   *
    * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
    * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
    * namespaces, and they will be rejected. All system annotations in v1 now
    * have a corresponding field in v2 ExecutionTemplate.
+   *
    * &lt;p&gt;This field follows Kubernetes annotations' namespacing, limits, and
    * rules.
    * </pre>
@@ -306,10 +309,12 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
    * Unstructured key value map that may be set by external tools to store and
    * arbitrary metadata. They are not queryable and should be preserved
    * when modifying objects.
+   *
    * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
    * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
    * namespaces, and they will be rejected. All system annotations in v1 now
    * have a corresponding field in v2 ExecutionTemplate.
+   *
    * &lt;p&gt;This field follows Kubernetes annotations' namespacing, limits, and
    * rules.
    * </pre>
@@ -334,10 +339,12 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
    * Unstructured key value map that may be set by external tools to store and
    * arbitrary metadata. They are not queryable and should be preserved
    * when modifying objects.
+   *
    * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
    * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
    * namespaces, and they will be rejected. All system annotations in v1 now
    * have a corresponding field in v2 ExecutionTemplate.
+   *
    * &lt;p&gt;This field follows Kubernetes annotations' namespacing, limits, and
    * rules.
    * </pre>
@@ -981,6 +988,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      * environment, state, etc. For more information, visit
      * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
      * https://cloud.google.com/run/docs/configuring/labels.
+     *
      * &lt;p&gt;Cloud Run API v2 does not support labels with `run.googleapis.com`,
      * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
      * namespaces, and they will be rejected. All system labels in v1 now have a
@@ -1013,6 +1021,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      * environment, state, etc. For more information, visit
      * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
      * https://cloud.google.com/run/docs/configuring/labels.
+     *
      * &lt;p&gt;Cloud Run API v2 does not support labels with `run.googleapis.com`,
      * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
      * namespaces, and they will be rejected. All system labels in v1 now have a
@@ -1036,6 +1045,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      * environment, state, etc. For more information, visit
      * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
      * https://cloud.google.com/run/docs/configuring/labels.
+     *
      * &lt;p&gt;Cloud Run API v2 does not support labels with `run.googleapis.com`,
      * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
      * namespaces, and they will be rejected. All system labels in v1 now have a
@@ -1066,6 +1076,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      * environment, state, etc. For more information, visit
      * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
      * https://cloud.google.com/run/docs/configuring/labels.
+     *
      * &lt;p&gt;Cloud Run API v2 does not support labels with `run.googleapis.com`,
      * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
      * namespaces, and they will be rejected. All system labels in v1 now have a
@@ -1102,6 +1113,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      * environment, state, etc. For more information, visit
      * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
      * https://cloud.google.com/run/docs/configuring/labels.
+     *
      * &lt;p&gt;Cloud Run API v2 does not support labels with `run.googleapis.com`,
      * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
      * namespaces, and they will be rejected. All system labels in v1 now have a
@@ -1134,6 +1146,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      * environment, state, etc. For more information, visit
      * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
      * https://cloud.google.com/run/docs/configuring/labels.
+     *
      * &lt;p&gt;Cloud Run API v2 does not support labels with `run.googleapis.com`,
      * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
      * namespaces, and they will be rejected. All system labels in v1 now have a
@@ -1164,6 +1177,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      * environment, state, etc. For more information, visit
      * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
      * https://cloud.google.com/run/docs/configuring/labels.
+     *
      * &lt;p&gt;Cloud Run API v2 does not support labels with `run.googleapis.com`,
      * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
      * namespaces, and they will be rejected. All system labels in v1 now have a
@@ -1213,10 +1227,12 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      * Unstructured key value map that may be set by external tools to store and
      * arbitrary metadata. They are not queryable and should be preserved
      * when modifying objects.
+     *
      * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
      * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
      * namespaces, and they will be rejected. All system annotations in v1 now
      * have a corresponding field in v2 ExecutionTemplate.
+     *
      * &lt;p&gt;This field follows Kubernetes annotations' namespacing, limits, and
      * rules.
      * </pre>
@@ -1243,10 +1259,12 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      * Unstructured key value map that may be set by external tools to store and
      * arbitrary metadata. They are not queryable and should be preserved
      * when modifying objects.
+     *
      * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
      * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
      * namespaces, and they will be rejected. All system annotations in v1 now
      * have a corresponding field in v2 ExecutionTemplate.
+     *
      * &lt;p&gt;This field follows Kubernetes annotations' namespacing, limits, and
      * rules.
      * </pre>
@@ -1264,10 +1282,12 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      * Unstructured key value map that may be set by external tools to store and
      * arbitrary metadata. They are not queryable and should be preserved
      * when modifying objects.
+     *
      * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
      * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
      * namespaces, and they will be rejected. All system annotations in v1 now
      * have a corresponding field in v2 ExecutionTemplate.
+     *
      * &lt;p&gt;This field follows Kubernetes annotations' namespacing, limits, and
      * rules.
      * </pre>
@@ -1292,10 +1312,12 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      * Unstructured key value map that may be set by external tools to store and
      * arbitrary metadata. They are not queryable and should be preserved
      * when modifying objects.
+     *
      * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
      * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
      * namespaces, and they will be rejected. All system annotations in v1 now
      * have a corresponding field in v2 ExecutionTemplate.
+     *
      * &lt;p&gt;This field follows Kubernetes annotations' namespacing, limits, and
      * rules.
      * </pre>
@@ -1326,10 +1348,12 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      * Unstructured key value map that may be set by external tools to store and
      * arbitrary metadata. They are not queryable and should be preserved
      * when modifying objects.
+     *
      * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
      * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
      * namespaces, and they will be rejected. All system annotations in v1 now
      * have a corresponding field in v2 ExecutionTemplate.
+     *
      * &lt;p&gt;This field follows Kubernetes annotations' namespacing, limits, and
      * rules.
      * </pre>
@@ -1356,10 +1380,12 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      * Unstructured key value map that may be set by external tools to store and
      * arbitrary metadata. They are not queryable and should be preserved
      * when modifying objects.
+     *
      * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
      * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
      * namespaces, and they will be rejected. All system annotations in v1 now
      * have a corresponding field in v2 ExecutionTemplate.
+     *
      * &lt;p&gt;This field follows Kubernetes annotations' namespacing, limits, and
      * rules.
      * </pre>
@@ -1384,10 +1410,12 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      * Unstructured key value map that may be set by external tools to store and
      * arbitrary metadata. They are not queryable and should be preserved
      * when modifying objects.
+     *
      * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
      * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
      * namespaces, and they will be rejected. All system annotations in v1 now
      * have a corresponding field in v2 ExecutionTemplate.
+     *
      * &lt;p&gt;This field follows Kubernetes annotations' namespacing, limits, and
      * rules.
      * </pre>

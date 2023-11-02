@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ package com.google.monitoring.v3;
  *
  * <pre>
  * A closed time interval. It extends from the start time to the end time, and includes both: `[startTime, endTime]`. Valid time intervals depend on the [`MetricKind`](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.metricDescriptors#MetricKind) of the metric value. The end time must not be earlier than the start time. When writing data points, the start time must not be more than 25 hours in the past and the end time must not be more than five minutes in the future.
+ *
  * * For `GAUGE` metrics, the `startTime` value is technically optional; if
  *   no value is specified, the start time defaults to the value of the
  *   end time, and the interval represents a single point in time. If both
@@ -30,17 +31,20 @@ package com.google.monitoring.v3;
  *   interval is valid only for `GAUGE` metrics, which are point-in-time
  *   measurements. The end time of a new interval must be at least a
  *   millisecond after the end time of the previous interval.
+ *
  * * For `DELTA` metrics, the start time and end time must specify a
  *   non-zero interval, with subsequent points specifying contiguous and
  *   non-overlapping intervals. For `DELTA` metrics, the start time of
  *   the next interval must be at least a millisecond after the end time
  *   of the previous interval.
+ *
  * * For `CUMULATIVE` metrics, the start time and end time must specify a
  *   non-zero interval, with subsequent points specifying the same
  *   start time and increasing end times, until an event resets the
  *   cumulative value to zero and sets a new start time for the following
  *   points. The new start time must be at least a millisecond after the
  *   end time of the previous interval.
+ *
  * * The start time of a new interval must be at least a millisecond after the
  *   end time of the previous interval because intervals are closed. If the
  *   start time of a new interval is the same as the end time of the previous
@@ -66,11 +70,6 @@ public final class TimeInterval extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new TimeInterval();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -367,6 +366,7 @@ public final class TimeInterval extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A closed time interval. It extends from the start time to the end time, and includes both: `[startTime, endTime]`. Valid time intervals depend on the [`MetricKind`](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.metricDescriptors#MetricKind) of the metric value. The end time must not be earlier than the start time. When writing data points, the start time must not be more than 25 hours in the past and the end time must not be more than five minutes in the future.
+   *
    * * For `GAUGE` metrics, the `startTime` value is technically optional; if
    *   no value is specified, the start time defaults to the value of the
    *   end time, and the interval represents a single point in time. If both
@@ -374,17 +374,20 @@ public final class TimeInterval extends com.google.protobuf.GeneratedMessageV3
    *   interval is valid only for `GAUGE` metrics, which are point-in-time
    *   measurements. The end time of a new interval must be at least a
    *   millisecond after the end time of the previous interval.
+   *
    * * For `DELTA` metrics, the start time and end time must specify a
    *   non-zero interval, with subsequent points specifying contiguous and
    *   non-overlapping intervals. For `DELTA` metrics, the start time of
    *   the next interval must be at least a millisecond after the end time
    *   of the previous interval.
+   *
    * * For `CUMULATIVE` metrics, the start time and end time must specify a
    *   non-zero interval, with subsequent points specifying the same
    *   start time and increasing end times, until an event resets the
    *   cumulative value to zero and sets a new start time for the following
    *   points. The new start time must be at least a millisecond after the
    *   end time of the previous interval.
+   *
    * * The start time of a new interval must be at least a millisecond after the
    *   end time of the previous interval because intervals are closed. If the
    *   start time of a new interval is the same as the end time of the previous

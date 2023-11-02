@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -55,8 +55,10 @@ public interface DebugInstanceRequestOrBuilder
    *
    * <pre>
    * Public SSH key to add to the instance. Examples:
+   *
    * * `[USERNAME]:ssh-rsa [KEY_VALUE] [USERNAME]`
    * * `[USERNAME]:ssh-rsa [KEY_VALUE] google-ssh {"userName":"[USERNAME]","expireOn":"[EXPIRE_TIME]"}`
+   *
    * For more information, see
    * [Adding and Removing SSH Keys](https://cloud.google.com/compute/docs/instances/adding-removing-ssh-keys).
    * </pre>
@@ -71,8 +73,10 @@ public interface DebugInstanceRequestOrBuilder
    *
    * <pre>
    * Public SSH key to add to the instance. Examples:
+   *
    * * `[USERNAME]:ssh-rsa [KEY_VALUE] [USERNAME]`
    * * `[USERNAME]:ssh-rsa [KEY_VALUE] google-ssh {"userName":"[USERNAME]","expireOn":"[EXPIRE_TIME]"}`
+   *
    * For more information, see
    * [Adding and Removing SSH Keys](https://cloud.google.com/compute/docs/instances/adding-removing-ssh-keys).
    * </pre>

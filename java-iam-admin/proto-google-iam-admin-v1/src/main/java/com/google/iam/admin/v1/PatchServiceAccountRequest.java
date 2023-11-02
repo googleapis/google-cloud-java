@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,8 +23,10 @@ package com.google.iam.admin.v1;
  *
  * <pre>
  * The service account patch request.
+ *
  * You can patch only the `display_name` and `description` fields. You must use
  * the `update_mask` field to specify which of these fields you want to patch.
+ *
  * Only the fields specified in the request are guaranteed to be returned in
  * the response. Other fields may be empty in the response.
  * </pre>
@@ -47,11 +49,6 @@ public final class PatchServiceAccountRequest extends com.google.protobuf.Genera
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new PatchServiceAccountRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -308,8 +305,10 @@ public final class PatchServiceAccountRequest extends com.google.protobuf.Genera
    *
    * <pre>
    * The service account patch request.
+   *
    * You can patch only the `display_name` and `description` fields. You must use
    * the `update_mask` field to specify which of these fields you want to patch.
+   *
    * Only the fields specified in the request are guaranteed to be returned in
    * the response. Other fields may be empty in the response.
    * </pre>

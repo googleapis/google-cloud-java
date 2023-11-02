@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,31 +22,6 @@ public interface BatchRecognizeFileResultOrBuilder
     extends
     // @@protoc_insertion_point(interface_extends:google.cloud.speech.v2.BatchRecognizeFileResult)
     com.google.protobuf.MessageOrBuilder {
-
-  /**
-   *
-   *
-   * <pre>
-   * The Cloud Storage URI to which recognition results were written.
-   * </pre>
-   *
-   * <code>string uri = 1;</code>
-   *
-   * @return The uri.
-   */
-  java.lang.String getUri();
-  /**
-   *
-   *
-   * <pre>
-   * The Cloud Storage URI to which recognition results were written.
-   * </pre>
-   *
-   * <code>string uri = 1;</code>
-   *
-   * @return The bytes for uri.
-   */
-  com.google.protobuf.ByteString getUriBytes();
 
   /**
    *
@@ -102,43 +77,165 @@ public interface BatchRecognizeFileResultOrBuilder
    *
    *
    * <pre>
-   * The transcript for the audio file. This is populated only when
+   * Recognition results written to Cloud Storage. This is
+   * populated only when
+   * [GcsOutputConfig][google.cloud.speech.v2.GcsOutputConfig] is set in
+   * the
+   * [RecognitionOutputConfig][[google.cloud.speech.v2.RecognitionOutputConfig].
+   * </pre>
+   *
+   * <code>.google.cloud.speech.v2.CloudStorageResult cloud_storage_result = 5;</code>
+   *
+   * @return Whether the cloudStorageResult field is set.
+   */
+  boolean hasCloudStorageResult();
+  /**
+   *
+   *
+   * <pre>
+   * Recognition results written to Cloud Storage. This is
+   * populated only when
+   * [GcsOutputConfig][google.cloud.speech.v2.GcsOutputConfig] is set in
+   * the
+   * [RecognitionOutputConfig][[google.cloud.speech.v2.RecognitionOutputConfig].
+   * </pre>
+   *
+   * <code>.google.cloud.speech.v2.CloudStorageResult cloud_storage_result = 5;</code>
+   *
+   * @return The cloudStorageResult.
+   */
+  com.google.cloud.speech.v2.CloudStorageResult getCloudStorageResult();
+  /**
+   *
+   *
+   * <pre>
+   * Recognition results written to Cloud Storage. This is
+   * populated only when
+   * [GcsOutputConfig][google.cloud.speech.v2.GcsOutputConfig] is set in
+   * the
+   * [RecognitionOutputConfig][[google.cloud.speech.v2.RecognitionOutputConfig].
+   * </pre>
+   *
+   * <code>.google.cloud.speech.v2.CloudStorageResult cloud_storage_result = 5;</code>
+   */
+  com.google.cloud.speech.v2.CloudStorageResultOrBuilder getCloudStorageResultOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Recognition results. This is populated only when
    * [InlineOutputConfig][google.cloud.speech.v2.InlineOutputConfig] is set in
    * the
    * [RecognitionOutputConfig][[google.cloud.speech.v2.RecognitionOutputConfig].
    * </pre>
    *
-   * <code>.google.cloud.speech.v2.BatchRecognizeResults transcript = 4;</code>
+   * <code>.google.cloud.speech.v2.InlineResult inline_result = 6;</code>
    *
+   * @return Whether the inlineResult field is set.
+   */
+  boolean hasInlineResult();
+  /**
+   *
+   *
+   * <pre>
+   * Recognition results. This is populated only when
+   * [InlineOutputConfig][google.cloud.speech.v2.InlineOutputConfig] is set in
+   * the
+   * [RecognitionOutputConfig][[google.cloud.speech.v2.RecognitionOutputConfig].
+   * </pre>
+   *
+   * <code>.google.cloud.speech.v2.InlineResult inline_result = 6;</code>
+   *
+   * @return The inlineResult.
+   */
+  com.google.cloud.speech.v2.InlineResult getInlineResult();
+  /**
+   *
+   *
+   * <pre>
+   * Recognition results. This is populated only when
+   * [InlineOutputConfig][google.cloud.speech.v2.InlineOutputConfig] is set in
+   * the
+   * [RecognitionOutputConfig][[google.cloud.speech.v2.RecognitionOutputConfig].
+   * </pre>
+   *
+   * <code>.google.cloud.speech.v2.InlineResult inline_result = 6;</code>
+   */
+  com.google.cloud.speech.v2.InlineResultOrBuilder getInlineResultOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Deprecated. Use `cloud_storage_result.native_format_uri` instead.
+   * </pre>
+   *
+   * <code>string uri = 1 [deprecated = true];</code>
+   *
+   * @deprecated google.cloud.speech.v2.BatchRecognizeFileResult.uri is deprecated. See
+   *     google/cloud/speech/v2/cloud_speech.proto;l=1354
+   * @return The uri.
+   */
+  @java.lang.Deprecated
+  java.lang.String getUri();
+  /**
+   *
+   *
+   * <pre>
+   * Deprecated. Use `cloud_storage_result.native_format_uri` instead.
+   * </pre>
+   *
+   * <code>string uri = 1 [deprecated = true];</code>
+   *
+   * @deprecated google.cloud.speech.v2.BatchRecognizeFileResult.uri is deprecated. See
+   *     google/cloud/speech/v2/cloud_speech.proto;l=1354
+   * @return The bytes for uri.
+   */
+  @java.lang.Deprecated
+  com.google.protobuf.ByteString getUriBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Deprecated. Use `inline_result.transcript` instead.
+   * </pre>
+   *
+   * <code>.google.cloud.speech.v2.BatchRecognizeResults transcript = 4 [deprecated = true];</code>
+   *
+   * @deprecated google.cloud.speech.v2.BatchRecognizeFileResult.transcript is deprecated. See
+   *     google/cloud/speech/v2/cloud_speech.proto;l=1357
    * @return Whether the transcript field is set.
    */
+  @java.lang.Deprecated
   boolean hasTranscript();
   /**
    *
    *
    * <pre>
-   * The transcript for the audio file. This is populated only when
-   * [InlineOutputConfig][google.cloud.speech.v2.InlineOutputConfig] is set in
-   * the
-   * [RecognitionOutputConfig][[google.cloud.speech.v2.RecognitionOutputConfig].
+   * Deprecated. Use `inline_result.transcript` instead.
    * </pre>
    *
-   * <code>.google.cloud.speech.v2.BatchRecognizeResults transcript = 4;</code>
+   * <code>.google.cloud.speech.v2.BatchRecognizeResults transcript = 4 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.speech.v2.BatchRecognizeFileResult.transcript is deprecated. See
+   *     google/cloud/speech/v2/cloud_speech.proto;l=1357
    * @return The transcript.
    */
+  @java.lang.Deprecated
   com.google.cloud.speech.v2.BatchRecognizeResults getTranscript();
   /**
    *
    *
    * <pre>
-   * The transcript for the audio file. This is populated only when
-   * [InlineOutputConfig][google.cloud.speech.v2.InlineOutputConfig] is set in
-   * the
-   * [RecognitionOutputConfig][[google.cloud.speech.v2.RecognitionOutputConfig].
+   * Deprecated. Use `inline_result.transcript` instead.
    * </pre>
    *
-   * <code>.google.cloud.speech.v2.BatchRecognizeResults transcript = 4;</code>
+   * <code>.google.cloud.speech.v2.BatchRecognizeResults transcript = 4 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   com.google.cloud.speech.v2.BatchRecognizeResultsOrBuilder getTranscriptOrBuilder();
+
+  com.google.cloud.speech.v2.BatchRecognizeFileResult.ResultCase getResultCase();
 }

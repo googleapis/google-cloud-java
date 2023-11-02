@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class ListCasesRequest extends com.google.protobuf.GeneratedMessage
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ListCasesRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -134,14 +129,18 @@ public final class ListCasesRequest extends com.google.protobuf.GeneratedMessage
    * <pre>
    * An expression written in filter language. If non-empty, the query returns
    * the cases that match the filter. Else, the query doesn't filter the cases.
+   *
    * Filter expressions use the following fields with the operators equals (`=`)
    * and `AND`:
+   *
    * - `state`: The accepted values are `OPEN` or `CLOSED`.
    * - `priority`: The accepted values are `P0`, `P1`, `P2`, `P3`, or `P4`. You
    * can specify multiple values for priority using the `OR` operator. For
    * example, `priority=P1 OR priority=P2`.
    * - `creator.email`: The email address of the case creator.
+   *
    * Examples:
+   *
    * - `state=CLOSED`
    * - `state=OPEN AND creator.email="tester&#64;example.com"`
    * - `state=OPEN AND (priority=P0 OR priority=P1)`
@@ -169,14 +168,18 @@ public final class ListCasesRequest extends com.google.protobuf.GeneratedMessage
    * <pre>
    * An expression written in filter language. If non-empty, the query returns
    * the cases that match the filter. Else, the query doesn't filter the cases.
+   *
    * Filter expressions use the following fields with the operators equals (`=`)
    * and `AND`:
+   *
    * - `state`: The accepted values are `OPEN` or `CLOSED`.
    * - `priority`: The accepted values are `P0`, `P1`, `P2`, `P3`, or `P4`. You
    * can specify multiple values for priority using the `OR` operator. For
    * example, `priority=P1 OR priority=P2`.
    * - `creator.email`: The email address of the case creator.
+   *
    * Examples:
+   *
    * - `state=CLOSED`
    * - `state=OPEN AND creator.email="tester&#64;example.com"`
    * - `state=OPEN AND (priority=P0 OR priority=P1)`
@@ -804,14 +807,18 @@ public final class ListCasesRequest extends com.google.protobuf.GeneratedMessage
      * <pre>
      * An expression written in filter language. If non-empty, the query returns
      * the cases that match the filter. Else, the query doesn't filter the cases.
+     *
      * Filter expressions use the following fields with the operators equals (`=`)
      * and `AND`:
+     *
      * - `state`: The accepted values are `OPEN` or `CLOSED`.
      * - `priority`: The accepted values are `P0`, `P1`, `P2`, `P3`, or `P4`. You
      * can specify multiple values for priority using the `OR` operator. For
      * example, `priority=P1 OR priority=P2`.
      * - `creator.email`: The email address of the case creator.
+     *
      * Examples:
+     *
      * - `state=CLOSED`
      * - `state=OPEN AND creator.email="tester&#64;example.com"`
      * - `state=OPEN AND (priority=P0 OR priority=P1)`
@@ -838,14 +845,18 @@ public final class ListCasesRequest extends com.google.protobuf.GeneratedMessage
      * <pre>
      * An expression written in filter language. If non-empty, the query returns
      * the cases that match the filter. Else, the query doesn't filter the cases.
+     *
      * Filter expressions use the following fields with the operators equals (`=`)
      * and `AND`:
+     *
      * - `state`: The accepted values are `OPEN` or `CLOSED`.
      * - `priority`: The accepted values are `P0`, `P1`, `P2`, `P3`, or `P4`. You
      * can specify multiple values for priority using the `OR` operator. For
      * example, `priority=P1 OR priority=P2`.
      * - `creator.email`: The email address of the case creator.
+     *
      * Examples:
+     *
      * - `state=CLOSED`
      * - `state=OPEN AND creator.email="tester&#64;example.com"`
      * - `state=OPEN AND (priority=P0 OR priority=P1)`
@@ -872,14 +883,18 @@ public final class ListCasesRequest extends com.google.protobuf.GeneratedMessage
      * <pre>
      * An expression written in filter language. If non-empty, the query returns
      * the cases that match the filter. Else, the query doesn't filter the cases.
+     *
      * Filter expressions use the following fields with the operators equals (`=`)
      * and `AND`:
+     *
      * - `state`: The accepted values are `OPEN` or `CLOSED`.
      * - `priority`: The accepted values are `P0`, `P1`, `P2`, `P3`, or `P4`. You
      * can specify multiple values for priority using the `OR` operator. For
      * example, `priority=P1 OR priority=P2`.
      * - `creator.email`: The email address of the case creator.
+     *
      * Examples:
+     *
      * - `state=CLOSED`
      * - `state=OPEN AND creator.email="tester&#64;example.com"`
      * - `state=OPEN AND (priority=P0 OR priority=P1)`
@@ -905,14 +920,18 @@ public final class ListCasesRequest extends com.google.protobuf.GeneratedMessage
      * <pre>
      * An expression written in filter language. If non-empty, the query returns
      * the cases that match the filter. Else, the query doesn't filter the cases.
+     *
      * Filter expressions use the following fields with the operators equals (`=`)
      * and `AND`:
+     *
      * - `state`: The accepted values are `OPEN` or `CLOSED`.
      * - `priority`: The accepted values are `P0`, `P1`, `P2`, `P3`, or `P4`. You
      * can specify multiple values for priority using the `OR` operator. For
      * example, `priority=P1 OR priority=P2`.
      * - `creator.email`: The email address of the case creator.
+     *
      * Examples:
+     *
      * - `state=CLOSED`
      * - `state=OPEN AND creator.email="tester&#64;example.com"`
      * - `state=OPEN AND (priority=P0 OR priority=P1)`
@@ -934,14 +953,18 @@ public final class ListCasesRequest extends com.google.protobuf.GeneratedMessage
      * <pre>
      * An expression written in filter language. If non-empty, the query returns
      * the cases that match the filter. Else, the query doesn't filter the cases.
+     *
      * Filter expressions use the following fields with the operators equals (`=`)
      * and `AND`:
+     *
      * - `state`: The accepted values are `OPEN` or `CLOSED`.
      * - `priority`: The accepted values are `P0`, `P1`, `P2`, `P3`, or `P4`. You
      * can specify multiple values for priority using the `OR` operator. For
      * example, `priority=P1 OR priority=P2`.
      * - `creator.email`: The email address of the case creator.
+     *
      * Examples:
+     *
      * - `state=CLOSED`
      * - `state=OPEN AND creator.email="tester&#64;example.com"`
      * - `state=OPEN AND (priority=P0 OR priority=P1)`

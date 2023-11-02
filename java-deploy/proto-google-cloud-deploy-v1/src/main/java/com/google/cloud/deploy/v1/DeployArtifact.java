@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,18 +39,13 @@ public final class DeployArtifact extends com.google.protobuf.GeneratedMessageV3
 
   private DeployArtifact() {
     artifactUri_ = "";
-    manifestPaths_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    manifestPaths_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new DeployArtifact();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -124,7 +119,8 @@ public final class DeployArtifact extends com.google.protobuf.GeneratedMessageV3
   public static final int MANIFEST_PATHS_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList manifestPaths_;
+  private com.google.protobuf.LazyStringArrayList manifestPaths_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -403,8 +399,7 @@ public final class DeployArtifact extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       bitField0_ = 0;
       artifactUri_ = "";
-      manifestPaths_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      manifestPaths_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -432,7 +427,6 @@ public final class DeployArtifact extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.deploy.v1.DeployArtifact buildPartial() {
       com.google.cloud.deploy.v1.DeployArtifact result =
           new com.google.cloud.deploy.v1.DeployArtifact(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -440,18 +434,14 @@ public final class DeployArtifact extends com.google.protobuf.GeneratedMessageV3
       return result;
     }
 
-    private void buildPartialRepeatedFields(com.google.cloud.deploy.v1.DeployArtifact result) {
-      if (((bitField0_ & 0x00000002) != 0)) {
-        manifestPaths_ = manifestPaths_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.manifestPaths_ = manifestPaths_;
-    }
-
     private void buildPartial0(com.google.cloud.deploy.v1.DeployArtifact result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.artifactUri_ = artifactUri_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        manifestPaths_.makeImmutable();
+        result.manifestPaths_ = manifestPaths_;
       }
     }
 
@@ -508,7 +498,7 @@ public final class DeployArtifact extends com.google.protobuf.GeneratedMessageV3
       if (!other.manifestPaths_.isEmpty()) {
         if (manifestPaths_.isEmpty()) {
           manifestPaths_ = other.manifestPaths_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureManifestPathsIsMutable();
           manifestPaths_.addAll(other.manifestPaths_);
@@ -684,14 +674,14 @@ public final class DeployArtifact extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList manifestPaths_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList manifestPaths_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureManifestPathsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!manifestPaths_.isModifiable()) {
         manifestPaths_ = new com.google.protobuf.LazyStringArrayList(manifestPaths_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -706,7 +696,8 @@ public final class DeployArtifact extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the manifestPaths.
      */
     public com.google.protobuf.ProtocolStringList getManifestPathsList() {
-      return manifestPaths_.getUnmodifiableView();
+      manifestPaths_.makeImmutable();
+      return manifestPaths_;
     }
     /**
      *
@@ -775,6 +766,7 @@ public final class DeployArtifact extends com.google.protobuf.GeneratedMessageV3
       }
       ensureManifestPathsIsMutable();
       manifestPaths_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -797,6 +789,7 @@ public final class DeployArtifact extends com.google.protobuf.GeneratedMessageV3
       }
       ensureManifestPathsIsMutable();
       manifestPaths_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -816,6 +809,7 @@ public final class DeployArtifact extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllManifestPaths(java.lang.Iterable<java.lang.String> values) {
       ensureManifestPathsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, manifestPaths_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -832,8 +826,9 @@ public final class DeployArtifact extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearManifestPaths() {
-      manifestPaths_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      manifestPaths_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -857,6 +852,7 @@ public final class DeployArtifact extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureManifestPathsIsMutable();
       manifestPaths_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

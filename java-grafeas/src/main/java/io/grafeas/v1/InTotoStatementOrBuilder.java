@@ -130,5 +130,5 @@ public interface InTotoStatementOrBuilder
   /** <code>.grafeas.v1.SlsaProvenanceZeroTwo slsa_provenance_zero_two = 6;</code> */
   io.grafeas.v1.SlsaProvenanceZeroTwoOrBuilder getSlsaProvenanceZeroTwoOrBuilder();
 
-  public io.grafeas.v1.InTotoStatement.PredicateCase getPredicateCase();
+  io.grafeas.v1.InTotoStatement.PredicateCase getPredicateCase();
 }

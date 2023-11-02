@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class GetProductSetRequest extends com.google.protobuf.GeneratedMes
     return new GetProductSetRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.vision.v1p4beta1.ProductSearchServiceProto
         .internal_static_google_cloud_vision_v1p4beta1_GetProductSetRequest_descriptor;
@@ -76,6 +71,7 @@ public final class GetProductSetRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. Resource name of the ProductSet to get.
+   *
    * Format is:
    * `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`
    * </pre>
@@ -103,6 +99,7 @@ public final class GetProductSetRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. Resource name of the ProductSet to get.
+   *
    * Format is:
    * `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`
    * </pre>
@@ -475,6 +472,7 @@ public final class GetProductSetRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. Resource name of the ProductSet to get.
+     *
      * Format is:
      * `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`
      * </pre>
@@ -501,6 +499,7 @@ public final class GetProductSetRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. Resource name of the ProductSet to get.
+     *
      * Format is:
      * `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`
      * </pre>
@@ -527,6 +526,7 @@ public final class GetProductSetRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. Resource name of the ProductSet to get.
+     *
      * Format is:
      * `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`
      * </pre>
@@ -552,6 +552,7 @@ public final class GetProductSetRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. Resource name of the ProductSet to get.
+     *
      * Format is:
      * `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`
      * </pre>
@@ -573,6 +574,7 @@ public final class GetProductSetRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. Resource name of the ProductSet to get.
+     *
      * Format is:
      * `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`
      * </pre>

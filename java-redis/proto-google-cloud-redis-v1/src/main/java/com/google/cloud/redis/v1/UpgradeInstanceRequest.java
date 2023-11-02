@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,8 @@ package com.google.cloud.redis.v1;
  *
  *
  * <pre>
- * Request for [UpgradeInstance][google.cloud.redis.v1.CloudRedis.UpgradeInstance].
+ * Request for
+ * [UpgradeInstance][google.cloud.redis.v1.CloudRedis.UpgradeInstance].
  * </pre>
  *
  * Protobuf type {@code google.cloud.redis.v1.UpgradeInstanceRequest}
@@ -46,11 +47,6 @@ public final class UpgradeInstanceRequest extends com.google.protobuf.GeneratedM
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new UpgradeInstanceRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -350,7 +346,8 @@ public final class UpgradeInstanceRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Request for [UpgradeInstance][google.cloud.redis.v1.CloudRedis.UpgradeInstance].
+   * Request for
+   * [UpgradeInstance][google.cloud.redis.v1.CloudRedis.UpgradeInstance].
    * </pre>
    *
    * Protobuf type {@code google.cloud.redis.v1.UpgradeInstanceRequest}

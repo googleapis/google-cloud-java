@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,6 +34,7 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.httpjson.longrunning.stub.HttpJsonOperationsStub;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.v2.ClearSuggestionFeatureConfigOperationMetadata;
 import com.google.cloud.dialogflow.v2.ClearSuggestionFeatureConfigRequest;
@@ -562,53 +563,111 @@ public class HttpJsonConversationProfilesStub extends ConversationProfilesStub {
                 .<ListConversationProfilesRequest, ListConversationProfilesResponse>newBuilder()
                 .setMethodDescriptor(listConversationProfilesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetConversationProfileRequest, ConversationProfile>
         getConversationProfileTransportSettings =
             HttpJsonCallSettings.<GetConversationProfileRequest, ConversationProfile>newBuilder()
                 .setMethodDescriptor(getConversationProfileMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<CreateConversationProfileRequest, ConversationProfile>
         createConversationProfileTransportSettings =
             HttpJsonCallSettings.<CreateConversationProfileRequest, ConversationProfile>newBuilder()
                 .setMethodDescriptor(createConversationProfileMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<UpdateConversationProfileRequest, ConversationProfile>
         updateConversationProfileTransportSettings =
             HttpJsonCallSettings.<UpdateConversationProfileRequest, ConversationProfile>newBuilder()
                 .setMethodDescriptor(updateConversationProfileMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "conversation_profile.name",
+                          String.valueOf(request.getConversationProfile().getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteConversationProfileRequest, Empty>
         deleteConversationProfileTransportSettings =
             HttpJsonCallSettings.<DeleteConversationProfileRequest, Empty>newBuilder()
                 .setMethodDescriptor(deleteConversationProfileMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<SetSuggestionFeatureConfigRequest, Operation>
         setSuggestionFeatureConfigTransportSettings =
             HttpJsonCallSettings.<SetSuggestionFeatureConfigRequest, Operation>newBuilder()
                 .setMethodDescriptor(setSuggestionFeatureConfigMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "conversation_profile", String.valueOf(request.getConversationProfile()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ClearSuggestionFeatureConfigRequest, Operation>
         clearSuggestionFeatureConfigTransportSettings =
             HttpJsonCallSettings.<ClearSuggestionFeatureConfigRequest, Operation>newBuilder()
                 .setMethodDescriptor(clearSuggestionFeatureConfigMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "conversation_profile", String.valueOf(request.getConversationProfile()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
                 .setMethodDescriptor(listLocationsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetLocationRequest, Location> getLocationTransportSettings =
         HttpJsonCallSettings.<GetLocationRequest, Location>newBuilder()
             .setMethodDescriptor(getLocationMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
 
     this.listConversationProfilesCallable =

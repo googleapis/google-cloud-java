@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -185,5 +185,5 @@ public interface DestinationOrBuilder
    */
   com.google.protobuf.ByteString getWorkflowBytes();
 
-  public com.google.cloud.eventarc.v1.Destination.DescriptorCase getDescriptorCase();
+  com.google.cloud.eventarc.v1.Destination.DescriptorCase getDescriptorCase();
 }

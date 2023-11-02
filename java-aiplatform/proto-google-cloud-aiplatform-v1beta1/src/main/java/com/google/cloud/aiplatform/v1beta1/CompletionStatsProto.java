@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,17 +43,17 @@ public final class CompletionStatsProto {
       "\n6google/cloud/aiplatform/v1beta1/comple"
           + "tion_stats.proto\022\037google.cloud.aiplatfor"
           + "m.v1beta1\032\037google/api/field_behavior.pro"
-          + "to\"\230\001\n\017CompletionStats\022\035\n\020successful_cou"
-          + "nt\030\001 \001(\003B\003\340A\003\022\031\n\014failed_count\030\002 \001(\003B\003\340A\003"
-          + "\022\035\n\020incomplete_count\030\003 \001(\003B\003\340A\003\022,\n\037succe"
-          + "ssful_forecast_point_count\030\005 \001(\003B\003\340A\003B\353\001"
-          + "\n#com.google.cloud.aiplatform.v1beta1B\024C"
-          + "ompletionStatsProtoP\001ZCcloud.google.com/"
-          + "go/aiplatform/apiv1beta1/aiplatformpb;ai"
-          + "platformpb\252\002\037Google.Cloud.AIPlatform.V1B"
-          + "eta1\312\002\037Google\\Cloud\\AIPlatform\\V1beta1\352\002"
-          + "\"Google::Cloud::AIPlatform::V1beta1b\006pro"
-          + "to3"
+          + "to\"\234\001\n\017CompletionStats\022\036\n\020successful_cou"
+          + "nt\030\001 \001(\003B\004\342A\001\003\022\032\n\014failed_count\030\002 \001(\003B\004\342A"
+          + "\001\003\022\036\n\020incomplete_count\030\003 \001(\003B\004\342A\001\003\022-\n\037su"
+          + "ccessful_forecast_point_count\030\005 \001(\003B\004\342A\001"
+          + "\003B\353\001\n#com.google.cloud.aiplatform.v1beta"
+          + "1B\024CompletionStatsProtoP\001ZCcloud.google."
+          + "com/go/aiplatform/apiv1beta1/aiplatformp"
+          + "b;aiplatformpb\252\002\037Google.Cloud.AIPlatform"
+          + ".V1Beta1\312\002\037Google\\Cloud\\AIPlatform\\V1bet"
+          + "a1\352\002\"Google::Cloud::AIPlatform::V1beta1b"
+          + "\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

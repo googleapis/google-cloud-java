@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,11 +50,6 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
     return new ProductSet();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.vision.v1p3beta1.ProductSearchServiceProto
         .internal_static_google_cloud_vision_v1p3beta1_ProductSet_descriptor;
@@ -79,8 +74,10 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The resource name of the ProductSet.
+   *
    * Format is:
    * `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`.
+   *
    * This field is ignored when creating a ProductSet.
    * </pre>
    *
@@ -105,8 +102,10 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The resource name of the ProductSet.
+   *
    * Format is:
    * `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`.
+   *
    * This field is ignored when creating a ProductSet.
    * </pre>
    *
@@ -189,6 +188,7 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
    * Output only. The time at which this ProductSet was last indexed. Query
    * results will reflect all updates before this time. If this ProductSet has
    * never been indexed, this field is 0.
+   *
    * This field is ignored when creating a ProductSet.
    * </pre>
    *
@@ -208,6 +208,7 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
    * Output only. The time at which this ProductSet was last indexed. Query
    * results will reflect all updates before this time. If this ProductSet has
    * never been indexed, this field is 0.
+   *
    * This field is ignored when creating a ProductSet.
    * </pre>
    *
@@ -227,6 +228,7 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
    * Output only. The time at which this ProductSet was last indexed. Query
    * results will reflect all updates before this time. If this ProductSet has
    * never been indexed, this field is 0.
+   *
    * This field is ignored when creating a ProductSet.
    * </pre>
    *
@@ -246,6 +248,7 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. If there was an error with indexing the product set, the field
    * is populated.
+   *
    * This field is ignored when creating a ProductSet.
    * </pre>
    *
@@ -263,6 +266,7 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. If there was an error with indexing the product set, the field
    * is populated.
+   *
    * This field is ignored when creating a ProductSet.
    * </pre>
    *
@@ -280,6 +284,7 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. If there was an error with indexing the product set, the field
    * is populated.
+   *
    * This field is ignored when creating a ProductSet.
    * </pre>
    *
@@ -725,8 +730,10 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name of the ProductSet.
+     *
      * Format is:
      * `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`.
+     *
      * This field is ignored when creating a ProductSet.
      * </pre>
      *
@@ -750,8 +757,10 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name of the ProductSet.
+     *
      * Format is:
      * `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`.
+     *
      * This field is ignored when creating a ProductSet.
      * </pre>
      *
@@ -775,8 +784,10 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name of the ProductSet.
+     *
      * Format is:
      * `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`.
+     *
      * This field is ignored when creating a ProductSet.
      * </pre>
      *
@@ -799,8 +810,10 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name of the ProductSet.
+     *
      * Format is:
      * `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`.
+     *
      * This field is ignored when creating a ProductSet.
      * </pre>
      *
@@ -819,8 +832,10 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name of the ProductSet.
+     *
      * Format is:
      * `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`.
+     *
      * This field is ignored when creating a ProductSet.
      * </pre>
      *
@@ -964,6 +979,7 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
      * Output only. The time at which this ProductSet was last indexed. Query
      * results will reflect all updates before this time. If this ProductSet has
      * never been indexed, this field is 0.
+     *
      * This field is ignored when creating a ProductSet.
      * </pre>
      *
@@ -982,6 +998,7 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
      * Output only. The time at which this ProductSet was last indexed. Query
      * results will reflect all updates before this time. If this ProductSet has
      * never been indexed, this field is 0.
+     *
      * This field is ignored when creating a ProductSet.
      * </pre>
      *
@@ -1004,6 +1021,7 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
      * Output only. The time at which this ProductSet was last indexed. Query
      * results will reflect all updates before this time. If this ProductSet has
      * never been indexed, this field is 0.
+     *
      * This field is ignored when creating a ProductSet.
      * </pre>
      *
@@ -1030,6 +1048,7 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
      * Output only. The time at which this ProductSet was last indexed. Query
      * results will reflect all updates before this time. If this ProductSet has
      * never been indexed, this field is 0.
+     *
      * This field is ignored when creating a ProductSet.
      * </pre>
      *
@@ -1053,6 +1072,7 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
      * Output only. The time at which this ProductSet was last indexed. Query
      * results will reflect all updates before this time. If this ProductSet has
      * never been indexed, this field is 0.
+     *
      * This field is ignored when creating a ProductSet.
      * </pre>
      *
@@ -1082,6 +1102,7 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
      * Output only. The time at which this ProductSet was last indexed. Query
      * results will reflect all updates before this time. If this ProductSet has
      * never been indexed, this field is 0.
+     *
      * This field is ignored when creating a ProductSet.
      * </pre>
      *
@@ -1105,6 +1126,7 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
      * Output only. The time at which this ProductSet was last indexed. Query
      * results will reflect all updates before this time. If this ProductSet has
      * never been indexed, this field is 0.
+     *
      * This field is ignored when creating a ProductSet.
      * </pre>
      *
@@ -1123,6 +1145,7 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
      * Output only. The time at which this ProductSet was last indexed. Query
      * results will reflect all updates before this time. If this ProductSet has
      * never been indexed, this field is 0.
+     *
      * This field is ignored when creating a ProductSet.
      * </pre>
      *
@@ -1143,6 +1166,7 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
      * Output only. The time at which this ProductSet was last indexed. Query
      * results will reflect all updates before this time. If this ProductSet has
      * never been indexed, this field is 0.
+     *
      * This field is ignored when creating a ProductSet.
      * </pre>
      *
@@ -1176,6 +1200,7 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. If there was an error with indexing the product set, the field
      * is populated.
+     *
      * This field is ignored when creating a ProductSet.
      * </pre>
      *
@@ -1192,6 +1217,7 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. If there was an error with indexing the product set, the field
      * is populated.
+     *
      * This field is ignored when creating a ProductSet.
      * </pre>
      *
@@ -1212,6 +1238,7 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. If there was an error with indexing the product set, the field
      * is populated.
+     *
      * This field is ignored when creating a ProductSet.
      * </pre>
      *
@@ -1236,6 +1263,7 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. If there was an error with indexing the product set, the field
      * is populated.
+     *
      * This field is ignored when creating a ProductSet.
      * </pre>
      *
@@ -1257,6 +1285,7 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. If there was an error with indexing the product set, the field
      * is populated.
+     *
      * This field is ignored when creating a ProductSet.
      * </pre>
      *
@@ -1284,6 +1313,7 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. If there was an error with indexing the product set, the field
      * is populated.
+     *
      * This field is ignored when creating a ProductSet.
      * </pre>
      *
@@ -1305,6 +1335,7 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. If there was an error with indexing the product set, the field
      * is populated.
+     *
      * This field is ignored when creating a ProductSet.
      * </pre>
      *
@@ -1321,6 +1352,7 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. If there was an error with indexing the product set, the field
      * is populated.
+     *
      * This field is ignored when creating a ProductSet.
      * </pre>
      *
@@ -1339,6 +1371,7 @@ public final class ProductSet extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. If there was an error with indexing the product set, the field
      * is populated.
+     *
      * This field is ignored when creating a ProductSet.
      * </pre>
      *

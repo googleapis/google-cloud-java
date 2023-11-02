@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,11 +49,6 @@ public final class QueryMetadataRequest extends com.google.protobuf.GeneratedMes
     return new QueryMetadataRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.metastore.v1alpha.MetastoreProto
         .internal_static_google_cloud_metastore_v1alpha_QueryMetadataRequest_descriptor;
@@ -79,6 +74,7 @@ public final class QueryMetadataRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Required. The relative resource name of the metastore service to query
    * metadata, in the following format:
+   *
    * `projects/{project_id}/locations/{location_id}/services/{service_id}`.
    * </pre>
    *
@@ -106,6 +102,7 @@ public final class QueryMetadataRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Required. The relative resource name of the metastore service to query
    * metadata, in the following format:
+   *
    * `projects/{project_id}/locations/{location_id}/services/{service_id}`.
    * </pre>
    *
@@ -556,6 +553,7 @@ public final class QueryMetadataRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. The relative resource name of the metastore service to query
      * metadata, in the following format:
+     *
      * `projects/{project_id}/locations/{location_id}/services/{service_id}`.
      * </pre>
      *
@@ -582,6 +580,7 @@ public final class QueryMetadataRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. The relative resource name of the metastore service to query
      * metadata, in the following format:
+     *
      * `projects/{project_id}/locations/{location_id}/services/{service_id}`.
      * </pre>
      *
@@ -608,6 +607,7 @@ public final class QueryMetadataRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. The relative resource name of the metastore service to query
      * metadata, in the following format:
+     *
      * `projects/{project_id}/locations/{location_id}/services/{service_id}`.
      * </pre>
      *
@@ -633,6 +633,7 @@ public final class QueryMetadataRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. The relative resource name of the metastore service to query
      * metadata, in the following format:
+     *
      * `projects/{project_id}/locations/{location_id}/services/{service_id}`.
      * </pre>
      *
@@ -654,6 +655,7 @@ public final class QueryMetadataRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. The relative resource name of the metastore service to query
      * metadata, in the following format:
+     *
      * `projects/{project_id}/locations/{location_id}/services/{service_id}`.
      * </pre>
      *

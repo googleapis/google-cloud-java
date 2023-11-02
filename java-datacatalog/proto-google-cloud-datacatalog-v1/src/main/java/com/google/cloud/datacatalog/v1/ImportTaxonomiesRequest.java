@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class ImportTaxonomiesRequest extends com.google.protobuf.Generated
     return new ImportTaxonomiesRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datacatalog.v1.PolicyTagManagerSerializationProto
         .internal_static_google_cloud_datacatalog_v1_ImportTaxonomiesRequest_descriptor;
@@ -69,6 +64,8 @@ public final class ImportTaxonomiesRequest extends com.google.protobuf.Generated
   }
 
   private int sourceCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object source_;
 
   public enum SourceCase

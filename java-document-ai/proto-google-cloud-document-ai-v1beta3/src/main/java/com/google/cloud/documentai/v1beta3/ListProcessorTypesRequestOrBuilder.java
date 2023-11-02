@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,9 +27,8 @@ public interface ListProcessorTypesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The location of processor type to list.
-   * The available processor types may depend on the allow-listing on projects.
-   * Format: `projects/{project}/locations/{location}`
+   * Required. The location of processor types to list.
+   * Format: `projects/{project}/locations/{location}`.
    * </pre>
    *
    * <code>
@@ -43,9 +42,8 @@ public interface ListProcessorTypesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The location of processor type to list.
-   * The available processor types may depend on the allow-listing on projects.
-   * Format: `projects/{project}/locations/{location}`
+   * Required. The location of processor types to list.
+   * Format: `projects/{project}/locations/{location}`.
    * </pre>
    *
    * <code>
@@ -61,8 +59,8 @@ public interface ListProcessorTypesRequestOrBuilder
    *
    * <pre>
    * The maximum number of processor types to return.
-   * If unspecified, at most 100 processor types will be returned.
-   * The maximum value is 500; values above 500 will be coerced to 500.
+   * If unspecified, at most `100` processor types will be returned.
+   * The maximum value is `500`. Values above `500` will be coerced to `500`.
    * </pre>
    *
    * <code>int32 page_size = 2;</code>

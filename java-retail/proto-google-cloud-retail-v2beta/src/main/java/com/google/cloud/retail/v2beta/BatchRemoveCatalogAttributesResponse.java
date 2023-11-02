@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,19 +41,14 @@ public final class BatchRemoveCatalogAttributesResponse
   }
 
   private BatchRemoveCatalogAttributesResponse() {
-    deletedCatalogAttributes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    resetCatalogAttributes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    deletedCatalogAttributes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    resetCatalogAttributes_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new BatchRemoveCatalogAttributesResponse();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -74,7 +69,8 @@ public final class BatchRemoveCatalogAttributesResponse
   public static final int DELETED_CATALOG_ATTRIBUTES_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList deletedCatalogAttributes_;
+  private com.google.protobuf.LazyStringArrayList deletedCatalogAttributes_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -153,7 +149,8 @@ public final class BatchRemoveCatalogAttributesResponse
   public static final int RESET_CATALOG_ATTRIBUTES_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList resetCatalogAttributes_;
+  private com.google.protobuf.LazyStringArrayList resetCatalogAttributes_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -458,10 +455,8 @@ public final class BatchRemoveCatalogAttributesResponse
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      deletedCatalogAttributes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
-      resetCatalogAttributes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      deletedCatalogAttributes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      resetCatalogAttributes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -491,7 +486,6 @@ public final class BatchRemoveCatalogAttributesResponse
     public com.google.cloud.retail.v2beta.BatchRemoveCatalogAttributesResponse buildPartial() {
       com.google.cloud.retail.v2beta.BatchRemoveCatalogAttributesResponse result =
           new com.google.cloud.retail.v2beta.BatchRemoveCatalogAttributesResponse(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -499,23 +493,17 @@ public final class BatchRemoveCatalogAttributesResponse
       return result;
     }
 
-    private void buildPartialRepeatedFields(
-        com.google.cloud.retail.v2beta.BatchRemoveCatalogAttributesResponse result) {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        deletedCatalogAttributes_ = deletedCatalogAttributes_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.deletedCatalogAttributes_ = deletedCatalogAttributes_;
-      if (((bitField0_ & 0x00000002) != 0)) {
-        resetCatalogAttributes_ = resetCatalogAttributes_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.resetCatalogAttributes_ = resetCatalogAttributes_;
-    }
-
     private void buildPartial0(
         com.google.cloud.retail.v2beta.BatchRemoveCatalogAttributesResponse result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        deletedCatalogAttributes_.makeImmutable();
+        result.deletedCatalogAttributes_ = deletedCatalogAttributes_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        resetCatalogAttributes_.makeImmutable();
+        result.resetCatalogAttributes_ = resetCatalogAttributes_;
+      }
     }
 
     @java.lang.Override
@@ -570,7 +558,7 @@ public final class BatchRemoveCatalogAttributesResponse
       if (!other.deletedCatalogAttributes_.isEmpty()) {
         if (deletedCatalogAttributes_.isEmpty()) {
           deletedCatalogAttributes_ = other.deletedCatalogAttributes_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ |= 0x00000001;
         } else {
           ensureDeletedCatalogAttributesIsMutable();
           deletedCatalogAttributes_.addAll(other.deletedCatalogAttributes_);
@@ -580,7 +568,7 @@ public final class BatchRemoveCatalogAttributesResponse
       if (!other.resetCatalogAttributes_.isEmpty()) {
         if (resetCatalogAttributes_.isEmpty()) {
           resetCatalogAttributes_ = other.resetCatalogAttributes_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureResetCatalogAttributesIsMutable();
           resetCatalogAttributes_.addAll(other.resetCatalogAttributes_);
@@ -646,15 +634,15 @@ public final class BatchRemoveCatalogAttributesResponse
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList deletedCatalogAttributes_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList deletedCatalogAttributes_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureDeletedCatalogAttributesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!deletedCatalogAttributes_.isModifiable()) {
         deletedCatalogAttributes_ =
             new com.google.protobuf.LazyStringArrayList(deletedCatalogAttributes_);
-        bitField0_ |= 0x00000001;
       }
+      bitField0_ |= 0x00000001;
     }
     /**
      *
@@ -672,7 +660,8 @@ public final class BatchRemoveCatalogAttributesResponse
      * @return A list containing the deletedCatalogAttributes.
      */
     public com.google.protobuf.ProtocolStringList getDeletedCatalogAttributesList() {
-      return deletedCatalogAttributes_.getUnmodifiableView();
+      deletedCatalogAttributes_.makeImmutable();
+      return deletedCatalogAttributes_;
     }
     /**
      *
@@ -753,6 +742,7 @@ public final class BatchRemoveCatalogAttributesResponse
       }
       ensureDeletedCatalogAttributesIsMutable();
       deletedCatalogAttributes_.set(index, value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -778,6 +768,7 @@ public final class BatchRemoveCatalogAttributesResponse
       }
       ensureDeletedCatalogAttributesIsMutable();
       deletedCatalogAttributes_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -800,6 +791,7 @@ public final class BatchRemoveCatalogAttributesResponse
     public Builder addAllDeletedCatalogAttributes(java.lang.Iterable<java.lang.String> values) {
       ensureDeletedCatalogAttributesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, deletedCatalogAttributes_);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -819,8 +811,9 @@ public final class BatchRemoveCatalogAttributesResponse
      * @return This builder for chaining.
      */
     public Builder clearDeletedCatalogAttributes() {
-      deletedCatalogAttributes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      deletedCatalogAttributes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      ;
       onChanged();
       return this;
     }
@@ -847,19 +840,20 @@ public final class BatchRemoveCatalogAttributesResponse
       checkByteStringIsUtf8(value);
       ensureDeletedCatalogAttributesIsMutable();
       deletedCatalogAttributes_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList resetCatalogAttributes_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList resetCatalogAttributes_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureResetCatalogAttributesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!resetCatalogAttributes_.isModifiable()) {
         resetCatalogAttributes_ =
             new com.google.protobuf.LazyStringArrayList(resetCatalogAttributes_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -877,7 +871,8 @@ public final class BatchRemoveCatalogAttributesResponse
      * @return A list containing the resetCatalogAttributes.
      */
     public com.google.protobuf.ProtocolStringList getResetCatalogAttributesList() {
-      return resetCatalogAttributes_.getUnmodifiableView();
+      resetCatalogAttributes_.makeImmutable();
+      return resetCatalogAttributes_;
     }
     /**
      *
@@ -958,6 +953,7 @@ public final class BatchRemoveCatalogAttributesResponse
       }
       ensureResetCatalogAttributesIsMutable();
       resetCatalogAttributes_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -983,6 +979,7 @@ public final class BatchRemoveCatalogAttributesResponse
       }
       ensureResetCatalogAttributesIsMutable();
       resetCatalogAttributes_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1005,6 +1002,7 @@ public final class BatchRemoveCatalogAttributesResponse
     public Builder addAllResetCatalogAttributes(java.lang.Iterable<java.lang.String> values) {
       ensureResetCatalogAttributesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, resetCatalogAttributes_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1024,8 +1022,9 @@ public final class BatchRemoveCatalogAttributesResponse
      * @return This builder for chaining.
      */
     public Builder clearResetCatalogAttributes() {
-      resetCatalogAttributes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      resetCatalogAttributes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -1052,6 +1051,7 @@ public final class BatchRemoveCatalogAttributesResponse
       checkByteStringIsUtf8(value);
       ensureResetCatalogAttributesIsMutable();
       resetCatalogAttributes_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

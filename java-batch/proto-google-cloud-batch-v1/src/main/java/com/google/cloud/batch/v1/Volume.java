@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,18 +39,13 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
 
   private Volume() {
     mountPath_ = "";
-    mountOptions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    mountOptions_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Volume();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -68,6 +63,8 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int sourceCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object source_;
 
   public enum SourceCase
@@ -358,7 +355,8 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
   public static final int MOUNT_OPTIONS_FIELD_NUMBER = 5;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList mountOptions_;
+  private com.google.protobuf.LazyStringArrayList mountOptions_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -721,8 +719,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         gcsBuilder_.clear();
       }
       mountPath_ = "";
-      mountOptions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000010);
+      mountOptions_ = com.google.protobuf.LazyStringArrayList.emptyList();
       sourceCase_ = 0;
       source_ = null;
       return this;
@@ -751,7 +748,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.batch.v1.Volume buildPartial() {
       com.google.cloud.batch.v1.Volume result = new com.google.cloud.batch.v1.Volume(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -760,18 +756,14 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       return result;
     }
 
-    private void buildPartialRepeatedFields(com.google.cloud.batch.v1.Volume result) {
-      if (((bitField0_ & 0x00000010) != 0)) {
-        mountOptions_ = mountOptions_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000010);
-      }
-      result.mountOptions_ = mountOptions_;
-    }
-
     private void buildPartial0(com.google.cloud.batch.v1.Volume result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.mountPath_ = mountPath_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        mountOptions_.makeImmutable();
+        result.mountOptions_ = mountOptions_;
       }
     }
 
@@ -839,7 +831,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       if (!other.mountOptions_.isEmpty()) {
         if (mountOptions_.isEmpty()) {
           mountOptions_ = other.mountOptions_;
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ |= 0x00000010;
         } else {
           ensureMountOptionsIsMutable();
           mountOptions_.addAll(other.mountOptions_);
@@ -1651,14 +1643,14 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList mountOptions_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList mountOptions_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureMountOptionsIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!mountOptions_.isModifiable()) {
         mountOptions_ = new com.google.protobuf.LazyStringArrayList(mountOptions_);
-        bitField0_ |= 0x00000010;
       }
+      bitField0_ |= 0x00000010;
     }
     /**
      *
@@ -1680,7 +1672,8 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the mountOptions.
      */
     public com.google.protobuf.ProtocolStringList getMountOptionsList() {
-      return mountOptions_.getUnmodifiableView();
+      mountOptions_.makeImmutable();
+      return mountOptions_;
     }
     /**
      *
@@ -1777,6 +1770,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       }
       ensureMountOptionsIsMutable();
       mountOptions_.set(index, value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1806,6 +1800,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       }
       ensureMountOptionsIsMutable();
       mountOptions_.add(value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1832,6 +1827,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllMountOptions(java.lang.Iterable<java.lang.String> values) {
       ensureMountOptionsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, mountOptions_);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1855,8 +1851,9 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMountOptions() {
-      mountOptions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      mountOptions_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000010);
+      ;
       onChanged();
       return this;
     }
@@ -1887,6 +1884,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureMountOptionsIsMutable();
       mountOptions_.add(value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

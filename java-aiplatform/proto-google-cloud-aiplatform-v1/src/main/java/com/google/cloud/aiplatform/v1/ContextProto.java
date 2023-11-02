@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,28 +48,28 @@ public final class ContextProto {
           + "to\022\032google.cloud.aiplatform.v1\032\037google/a"
           + "pi/field_behavior.proto\032\031google/api/reso"
           + "urce.proto\032\034google/protobuf/struct.proto"
-          + "\032\037google/protobuf/timestamp.proto\"\323\004\n\007Co"
-          + "ntext\022\021\n\004name\030\001 \001(\tB\003\340A\003\022\024\n\014display_name"
-          + "\030\002 \001(\t\022\014\n\004etag\030\010 \001(\t\022?\n\006labels\030\t \003(\0132/.g"
-          + "oogle.cloud.aiplatform.v1.Context.Labels"
-          + "Entry\0224\n\013create_time\030\n \001(\0132\032.google.prot"
-          + "obuf.TimestampB\003\340A\003\0224\n\013update_time\030\013 \001(\013"
-          + "2\032.google.protobuf.TimestampB\003\340A\003\022B\n\017par"
-          + "ent_contexts\030\014 \003(\tB)\340A\003\372A#\n!aiplatform.g"
-          + "oogleapis.com/Context\022\024\n\014schema_title\030\r "
-          + "\001(\t\022\026\n\016schema_version\030\016 \001(\t\022)\n\010metadata\030"
-          + "\017 \001(\0132\027.google.protobuf.Struct\022\023\n\013descri"
-          + "ption\030\020 \001(\t\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022"
-          + "\r\n\005value\030\002 \001(\t:\0028\001:\202\001\352A\177\n!aiplatform.goo"
-          + "gleapis.com/Context\022Zprojects/{project}/"
-          + "locations/{location}/metadataStores/{met"
-          + "adata_store}/contexts/{context}B\312\001\n\036com."
-          + "google.cloud.aiplatform.v1B\014ContextProto"
-          + "P\001Z>cloud.google.com/go/aiplatform/apiv1"
-          + "/aiplatformpb;aiplatformpb\252\002\032Google.Clou"
-          + "d.AIPlatform.V1\312\002\032Google\\Cloud\\AIPlatfor"
-          + "m\\V1\352\002\035Google::Cloud::AIPlatform::V1b\006pr"
-          + "oto3"
+          + "\032\037google/protobuf/timestamp.proto\"\327\004\n\007Co"
+          + "ntext\022\022\n\004name\030\001 \001(\tB\004\342A\001\005\022\024\n\014display_nam"
+          + "e\030\002 \001(\t\022\014\n\004etag\030\010 \001(\t\022?\n\006labels\030\t \003(\0132/."
+          + "google.cloud.aiplatform.v1.Context.Label"
+          + "sEntry\0225\n\013create_time\030\n \001(\0132\032.google.pro"
+          + "tobuf.TimestampB\004\342A\001\003\0225\n\013update_time\030\013 \001"
+          + "(\0132\032.google.protobuf.TimestampB\004\342A\001\003\022C\n\017"
+          + "parent_contexts\030\014 \003(\tB*\342A\001\003\372A#\n!aiplatfo"
+          + "rm.googleapis.com/Context\022\024\n\014schema_titl"
+          + "e\030\r \001(\t\022\026\n\016schema_version\030\016 \001(\t\022)\n\010metad"
+          + "ata\030\017 \001(\0132\027.google.protobuf.Struct\022\023\n\013de"
+          + "scription\030\020 \001(\t\032-\n\013LabelsEntry\022\013\n\003key\030\001 "
+          + "\001(\t\022\r\n\005value\030\002 \001(\t:\0028\001:\202\001\352A\177\n!aiplatform"
+          + ".googleapis.com/Context\022Zprojects/{proje"
+          + "ct}/locations/{location}/metadataStores/"
+          + "{metadata_store}/contexts/{context}B\312\001\n\036"
+          + "com.google.cloud.aiplatform.v1B\014ContextP"
+          + "rotoP\001Z>cloud.google.com/go/aiplatform/a"
+          + "piv1/aiplatformpb;aiplatformpb\252\002\032Google."
+          + "Cloud.AIPlatform.V1\312\002\032Google\\Cloud\\AIPla"
+          + "tform\\V1\352\002\035Google::Cloud::AIPlatform::V1"
+          + "b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

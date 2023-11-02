@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,8 +27,8 @@ public interface UpdateMigrationJobRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Field mask is used to specify the fields to be overwritten in the
-   * migration job resource by the update.
+   * Required. Field mask is used to specify the fields to be overwritten by the
+   * update in the conversion workspace resource.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -41,8 +41,8 @@ public interface UpdateMigrationJobRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Field mask is used to specify the fields to be overwritten in the
-   * migration job resource by the update.
+   * Required. Field mask is used to specify the fields to be overwritten by the
+   * update in the conversion workspace resource.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -55,8 +55,8 @@ public interface UpdateMigrationJobRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Field mask is used to specify the fields to be overwritten in the
-   * migration job resource by the update.
+   * Required. Field mask is used to specify the fields to be overwritten by the
+   * update in the conversion workspace resource.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -109,10 +109,12 @@ public interface UpdateMigrationJobRequestOrBuilder
    *
    *
    * <pre>
-   * A unique id used to identify the request. If the server receives two
-   * requests with the same id, then the second request will be ignored.
+   * A unique ID used to identify the request. If the server receives two
+   * requests with the same ID, then the second request is ignored.
+   *
    * It is recommended to always set this value to a UUID.
-   * The id must contain only letters (a-z, A-Z), numbers (0-9), underscores
+   *
+   * The ID must contain only letters (a-z, A-Z), numbers (0-9), underscores
    * (_), and hyphens (-). The maximum length is 40 characters.
    * </pre>
    *
@@ -125,10 +127,12 @@ public interface UpdateMigrationJobRequestOrBuilder
    *
    *
    * <pre>
-   * A unique id used to identify the request. If the server receives two
-   * requests with the same id, then the second request will be ignored.
+   * A unique ID used to identify the request. If the server receives two
+   * requests with the same ID, then the second request is ignored.
+   *
    * It is recommended to always set this value to a UUID.
-   * The id must contain only letters (a-z, A-Z), numbers (0-9), underscores
+   *
+   * The ID must contain only letters (a-z, A-Z), numbers (0-9), underscores
    * (_), and hyphens (-). The maximum length is 40 characters.
    * </pre>
    *

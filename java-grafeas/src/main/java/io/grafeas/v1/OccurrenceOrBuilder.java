@@ -619,5 +619,5 @@ public interface OccurrenceOrBuilder
    */
   io.grafeas.v1.EnvelopeOrBuilder getEnvelopeOrBuilder();
 
-  public io.grafeas.v1.Occurrence.DetailsCase getDetailsCase();
+  io.grafeas.v1.Occurrence.DetailsCase getDetailsCase();
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -78,6 +78,7 @@ public interface EntityOrBuilder
    *
    * <pre>
    * Metadata associated with the entity.
+   *
    * For most entity types, the metadata is a Wikipedia URL (`wikipedia_url`)
    * and Knowledge Graph MID (`mid`), if they are available. For the metadata
    * associated with other entity types, see the Type table below.
@@ -91,6 +92,7 @@ public interface EntityOrBuilder
    *
    * <pre>
    * Metadata associated with the entity.
+   *
    * For most entity types, the metadata is a Wikipedia URL (`wikipedia_url`)
    * and Knowledge Graph MID (`mid`), if they are available. For the metadata
    * associated with other entity types, see the Type table below.
@@ -107,6 +109,7 @@ public interface EntityOrBuilder
    *
    * <pre>
    * Metadata associated with the entity.
+   *
    * For most entity types, the metadata is a Wikipedia URL (`wikipedia_url`)
    * and Knowledge Graph MID (`mid`), if they are available. For the metadata
    * associated with other entity types, see the Type table below.
@@ -120,6 +123,7 @@ public interface EntityOrBuilder
    *
    * <pre>
    * Metadata associated with the entity.
+   *
    * For most entity types, the metadata is a Wikipedia URL (`wikipedia_url`)
    * and Knowledge Graph MID (`mid`), if they are available. For the metadata
    * associated with other entity types, see the Type table below.
@@ -137,6 +141,7 @@ public interface EntityOrBuilder
    *
    * <pre>
    * Metadata associated with the entity.
+   *
    * For most entity types, the metadata is a Wikipedia URL (`wikipedia_url`)
    * and Knowledge Graph MID (`mid`), if they are available. For the metadata
    * associated with other entity types, see the Type table below.
@@ -151,6 +156,7 @@ public interface EntityOrBuilder
    *
    * <pre>
    * The salience score associated with the entity in the [0, 1.0] range.
+   *
    * The salience score for an entity provides information about the
    * importance or centrality of that entity to the entire document text.
    * Scores closer to 0 are less salient, while scores closer to 1.0 are highly

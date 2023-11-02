@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -58,6 +58,16 @@ public enum DatabaseEngine implements com.google.protobuf.ProtocolMessageEnum {
    * <code>POSTGRESQL = 2;</code>
    */
   POSTGRESQL(2),
+  /**
+   *
+   *
+   * <pre>
+   * The source engine is Oracle.
+   * </pre>
+   *
+   * <code>ORACLE = 4;</code>
+   */
+  ORACLE(4),
   UNRECOGNIZED(-1),
   ;
 
@@ -91,6 +101,16 @@ public enum DatabaseEngine implements com.google.protobuf.ProtocolMessageEnum {
    * <code>POSTGRESQL = 2;</code>
    */
   public static final int POSTGRESQL_VALUE = 2;
+  /**
+   *
+   *
+   * <pre>
+   * The source engine is Oracle.
+   * </pre>
+   *
+   * <code>ORACLE = 4;</code>
+   */
+  public static final int ORACLE_VALUE = 4;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -122,6 +142,8 @@ public enum DatabaseEngine implements com.google.protobuf.ProtocolMessageEnum {
         return MYSQL;
       case 2:
         return POSTGRESQL;
+      case 4:
+        return ORACLE;
       default:
         return null;
     }
@@ -153,7 +175,7 @@ public enum DatabaseEngine implements com.google.protobuf.ProtocolMessageEnum {
   public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
     return com.google.cloud.clouddms.v1.ClouddmsResourcesProto.getDescriptor()
         .getEnumTypes()
-        .get(0);
+        .get(1);
   }
 
   private static final DatabaseEngine[] VALUES = values();

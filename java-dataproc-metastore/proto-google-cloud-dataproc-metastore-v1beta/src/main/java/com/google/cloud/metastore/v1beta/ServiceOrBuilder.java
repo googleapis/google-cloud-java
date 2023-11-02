@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -67,6 +67,7 @@ public interface ServiceOrBuilder
    * <pre>
    * Immutable. The relative resource name of the metastore service, in the
    * following format:
+   *
    * `projects/{project_number}/locations/{location_id}/services/{service_id}`.
    * </pre>
    *
@@ -81,6 +82,7 @@ public interface ServiceOrBuilder
    * <pre>
    * Immutable. The relative resource name of the metastore service, in the
    * following format:
+   *
    * `projects/{project_number}/locations/{location_id}/services/{service_id}`.
    * </pre>
    *
@@ -230,6 +232,7 @@ public interface ServiceOrBuilder
    * <pre>
    * Immutable. The relative resource name of the VPC network on which the
    * instance can be accessed. It is specified in the following form:
+   *
    * `projects/{project_number}/global/networks/{network_id}`.
    * </pre>
    *
@@ -246,6 +249,7 @@ public interface ServiceOrBuilder
    * <pre>
    * Immutable. The relative resource name of the VPC network on which the
    * instance can be accessed. It is specified in the following form:
+   *
    * `projects/{project_number}/global/networks/{network_id}`.
    * </pre>
    *
@@ -769,5 +773,5 @@ public interface ServiceOrBuilder
    */
   com.google.cloud.metastore.v1beta.ScalingConfigOrBuilder getScalingConfigOrBuilder();
 
-  public com.google.cloud.metastore.v1beta.Service.MetastoreConfigCase getMetastoreConfigCase();
+  com.google.cloud.metastore.v1beta.Service.MetastoreConfigCase getMetastoreConfigCase();
 }

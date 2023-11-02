@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ public interface BoundingBoxEvaluationOptionsOrBuilder
    * <pre>
    * Minimum
    * [intersection-over-union
+   *
    * (IOU)](/vision/automl/object-detection/docs/evaluate#intersection-over-union)
    * required for 2 bounding boxes to be considered a match. This must be a
    * number between 0 and 1.

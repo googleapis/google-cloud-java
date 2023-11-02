@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -57,6 +57,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     latestCreatedRevision_ = "";
     trafficStatuses_ = java.util.Collections.emptyList();
     uri_ = "";
+    customAudiences_ = com.google.protobuf.LazyStringArrayList.emptyList();
     etag_ = "";
   }
 
@@ -64,11 +65,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Service();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -109,6 +105,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    * The fully qualified name of this Service. In CreateServiceRequest, this
    * field is ignored, and instead composed from CreateServiceRequest.parent and
    * CreateServiceRequest.service_id.
+   *
    * Format:
    * projects/{project}/locations/{location}/services/{service_id}
    * </pre>
@@ -136,6 +133,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    * The fully qualified name of this Service. In CreateServiceRequest, this
    * field is ignored, and instead composed from CreateServiceRequest.parent and
    * CreateServiceRequest.service_id.
+   *
    * Format:
    * projects/{project}/locations/{location}/services/{service_id}
    * </pre>
@@ -323,6 +321,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    * environment, state, etc. For more information, visit
    * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
    * https://cloud.google.com/run/docs/configuring/labels.
+   *
    * &lt;p&gt;Cloud Run API v2 does not support labels with  `run.googleapis.com`,
    * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
    * namespaces, and they will be rejected. All system labels in v1 now have a
@@ -355,6 +354,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    * environment, state, etc. For more information, visit
    * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
    * https://cloud.google.com/run/docs/configuring/labels.
+   *
    * &lt;p&gt;Cloud Run API v2 does not support labels with  `run.googleapis.com`,
    * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
    * namespaces, and they will be rejected. All system labels in v1 now have a
@@ -378,6 +378,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    * environment, state, etc. For more information, visit
    * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
    * https://cloud.google.com/run/docs/configuring/labels.
+   *
    * &lt;p&gt;Cloud Run API v2 does not support labels with  `run.googleapis.com`,
    * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
    * namespaces, and they will be rejected. All system labels in v1 now have a
@@ -408,6 +409,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    * environment, state, etc. For more information, visit
    * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
    * https://cloud.google.com/run/docs/configuring/labels.
+   *
    * &lt;p&gt;Cloud Run API v2 does not support labels with  `run.googleapis.com`,
    * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
    * namespaces, and they will be rejected. All system labels in v1 now have a
@@ -462,10 +464,12 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    * Unstructured key value map that may be set by external tools to store and
    * arbitrary metadata. They are not queryable and should be preserved
    * when modifying objects.
+   *
    * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
    * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
    * namespaces, and they will be rejected in new resources. All system
    * annotations in v1 now have a corresponding field in v2 Service.
+   *
    * &lt;p&gt;This field follows Kubernetes
    * annotations' namespacing, limits, and rules.
    * </pre>
@@ -492,10 +496,12 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    * Unstructured key value map that may be set by external tools to store and
    * arbitrary metadata. They are not queryable and should be preserved
    * when modifying objects.
+   *
    * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
    * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
    * namespaces, and they will be rejected in new resources. All system
    * annotations in v1 now have a corresponding field in v2 Service.
+   *
    * &lt;p&gt;This field follows Kubernetes
    * annotations' namespacing, limits, and rules.
    * </pre>
@@ -513,10 +519,12 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    * Unstructured key value map that may be set by external tools to store and
    * arbitrary metadata. They are not queryable and should be preserved
    * when modifying objects.
+   *
    * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
    * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
    * namespaces, and they will be rejected in new resources. All system
    * annotations in v1 now have a corresponding field in v2 Service.
+   *
    * &lt;p&gt;This field follows Kubernetes
    * annotations' namespacing, limits, and rules.
    * </pre>
@@ -541,10 +549,12 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    * Unstructured key value map that may be set by external tools to store and
    * arbitrary metadata. They are not queryable and should be preserved
    * when modifying objects.
+   *
    * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
    * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
    * namespaces, and they will be rejected in new resources. All system
    * annotations in v1 now have a corresponding field in v2 Service.
+   *
    * &lt;p&gt;This field follows Kubernetes
    * annotations' namespacing, limits, and rules.
    * </pre>
@@ -1688,6 +1698,86 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int CUSTOM_AUDIENCES_FIELD_NUMBER = 37;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList customAudiences_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   *
+   *
+   * <pre>
+   * One or more custom audiences that you want this service to support. Specify
+   * each custom audience as the full URL in a string. The custom audiences are
+   * encoded in the token and used to authenticate requests. For more
+   * information, see
+   * https://cloud.google.com/run/docs/configuring/custom-audiences.
+   * </pre>
+   *
+   * <code>repeated string custom_audiences = 37;</code>
+   *
+   * @return A list containing the customAudiences.
+   */
+  public com.google.protobuf.ProtocolStringList getCustomAudiencesList() {
+    return customAudiences_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * One or more custom audiences that you want this service to support. Specify
+   * each custom audience as the full URL in a string. The custom audiences are
+   * encoded in the token and used to authenticate requests. For more
+   * information, see
+   * https://cloud.google.com/run/docs/configuring/custom-audiences.
+   * </pre>
+   *
+   * <code>repeated string custom_audiences = 37;</code>
+   *
+   * @return The count of customAudiences.
+   */
+  public int getCustomAudiencesCount() {
+    return customAudiences_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * One or more custom audiences that you want this service to support. Specify
+   * each custom audience as the full URL in a string. The custom audiences are
+   * encoded in the token and used to authenticate requests. For more
+   * information, see
+   * https://cloud.google.com/run/docs/configuring/custom-audiences.
+   * </pre>
+   *
+   * <code>repeated string custom_audiences = 37;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The customAudiences at the given index.
+   */
+  public java.lang.String getCustomAudiences(int index) {
+    return customAudiences_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * One or more custom audiences that you want this service to support. Specify
+   * each custom audience as the full URL in a string. The custom audiences are
+   * encoded in the token and used to authenticate requests. For more
+   * information, see
+   * https://cloud.google.com/run/docs/configuring/custom-audiences.
+   * </pre>
+   *
+   * <code>repeated string custom_audiences = 37;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the customAudiences at the given index.
+   */
+  public com.google.protobuf.ByteString getCustomAudiencesBytes(int index) {
+    return customAudiences_.getByteString(index);
+  }
+
   public static final int SATISFIES_PZS_FIELD_NUMBER = 38;
   private boolean satisfiesPzs_ = false;
   /**
@@ -1714,6 +1804,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. Returns true if the Service is currently being acted upon by
    * the system to bring it into the desired state.
+   *
    * When a new Service is created, or an existing one is updated, Cloud Run
    * will asynchronously perform all necessary steps to bring the Service to the
    * desired serving state. This process is called reconciliation.
@@ -1724,9 +1815,11 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    * succeeded and the serving state matches the Service, or there was an error,
    * and reconciliation failed. This state can be found in
    * `terminal_condition.state`.
+   *
    * If reconciliation succeeded, the following fields will match: `traffic` and
    * `traffic_statuses`, `observed_generation` and `generation`,
    * `latest_ready_revision` and `latest_created_revision`.
+   *
    * If reconciliation failed, `traffic_statuses`, `observed_generation`, and
    * `latest_ready_revision` will have the state of the last serving revision,
    * or empty for newly created Services. Additional information on the failure
@@ -1886,6 +1979,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 36, uri_);
     }
+    for (int i = 0; i < customAudiences_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 37, customAudiences_.getRaw(i));
+    }
     if (satisfiesPzs_ != false) {
       output.writeBool(38, satisfiesPzs_);
     }
@@ -1998,6 +2094,14 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(36, uri_);
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < customAudiences_.size(); i++) {
+        dataSize += computeStringSizeNoTag(customAudiences_.getRaw(i));
+      }
+      size += dataSize;
+      size += 2 * getCustomAudiencesList().size();
+    }
     if (satisfiesPzs_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(38, satisfiesPzs_);
     }
@@ -2069,6 +2173,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     if (!getLatestCreatedRevision().equals(other.getLatestCreatedRevision())) return false;
     if (!getTrafficStatusesList().equals(other.getTrafficStatusesList())) return false;
     if (!getUri().equals(other.getUri())) return false;
+    if (!getCustomAudiencesList().equals(other.getCustomAudiencesList())) return false;
     if (getSatisfiesPzs() != other.getSatisfiesPzs()) return false;
     if (getReconciling() != other.getReconciling()) return false;
     if (!getEtag().equals(other.getEtag())) return false;
@@ -2159,6 +2264,10 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + URI_FIELD_NUMBER;
     hash = (53 * hash) + getUri().hashCode();
+    if (getCustomAudiencesCount() > 0) {
+      hash = (37 * hash) + CUSTOM_AUDIENCES_FIELD_NUMBER;
+      hash = (53 * hash) + getCustomAudiencesList().hashCode();
+    }
     hash = (37 * hash) + SATISFIES_PZS_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzs());
     hash = (37 * hash) + RECONCILING_FIELD_NUMBER;
@@ -2402,6 +2511,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ = (bitField0_ & ~0x01000000);
       uri_ = "";
+      customAudiences_ = com.google.protobuf.LazyStringArrayList.emptyList();
       satisfiesPzs_ = false;
       reconciling_ = false;
       etag_ = "";
@@ -2549,12 +2659,16 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         result.uri_ = uri_;
       }
       if (((from_bitField0_ & 0x04000000) != 0)) {
-        result.satisfiesPzs_ = satisfiesPzs_;
+        customAudiences_.makeImmutable();
+        result.customAudiences_ = customAudiences_;
       }
       if (((from_bitField0_ & 0x08000000) != 0)) {
-        result.reconciling_ = reconciling_;
+        result.satisfiesPzs_ = satisfiesPzs_;
       }
       if (((from_bitField0_ & 0x10000000) != 0)) {
+        result.reconciling_ = reconciling_;
+      }
+      if (((from_bitField0_ & 0x20000000) != 0)) {
         result.etag_ = etag_;
       }
     }
@@ -2772,6 +2886,16 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x02000000;
         onChanged();
       }
+      if (!other.customAudiences_.isEmpty()) {
+        if (customAudiences_.isEmpty()) {
+          customAudiences_ = other.customAudiences_;
+          bitField0_ |= 0x04000000;
+        } else {
+          ensureCustomAudiencesIsMutable();
+          customAudiences_.addAll(other.customAudiences_);
+        }
+        onChanged();
+      }
       if (other.getSatisfiesPzs() != false) {
         setSatisfiesPzs(other.getSatisfiesPzs());
       }
@@ -2780,7 +2904,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
-        bitField0_ |= 0x10000000;
+        bitField0_ |= 0x20000000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -3000,22 +3124,29 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x02000000;
                 break;
               } // case 290
+            case 298:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureCustomAudiencesIsMutable();
+                customAudiences_.add(s);
+                break;
+              } // case 298
             case 304:
               {
                 satisfiesPzs_ = input.readBool();
-                bitField0_ |= 0x04000000;
+                bitField0_ |= 0x08000000;
                 break;
               } // case 304
             case 784:
               {
                 reconciling_ = input.readBool();
-                bitField0_ |= 0x08000000;
+                bitField0_ |= 0x10000000;
                 break;
               } // case 784
             case 794:
               {
                 etag_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x10000000;
+                bitField0_ |= 0x20000000;
                 break;
               } // case 794
             default:
@@ -3045,6 +3176,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * The fully qualified name of this Service. In CreateServiceRequest, this
      * field is ignored, and instead composed from CreateServiceRequest.parent and
      * CreateServiceRequest.service_id.
+     *
      * Format:
      * projects/{project}/locations/{location}/services/{service_id}
      * </pre>
@@ -3071,6 +3203,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * The fully qualified name of this Service. In CreateServiceRequest, this
      * field is ignored, and instead composed from CreateServiceRequest.parent and
      * CreateServiceRequest.service_id.
+     *
      * Format:
      * projects/{project}/locations/{location}/services/{service_id}
      * </pre>
@@ -3097,6 +3230,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * The fully qualified name of this Service. In CreateServiceRequest, this
      * field is ignored, and instead composed from CreateServiceRequest.parent and
      * CreateServiceRequest.service_id.
+     *
      * Format:
      * projects/{project}/locations/{location}/services/{service_id}
      * </pre>
@@ -3122,6 +3256,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * The fully qualified name of this Service. In CreateServiceRequest, this
      * field is ignored, and instead composed from CreateServiceRequest.parent and
      * CreateServiceRequest.service_id.
+     *
      * Format:
      * projects/{project}/locations/{location}/services/{service_id}
      * </pre>
@@ -3143,6 +3278,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * The fully qualified name of this Service. In CreateServiceRequest, this
      * field is ignored, and instead composed from CreateServiceRequest.parent and
      * CreateServiceRequest.service_id.
+     *
      * Format:
      * projects/{project}/locations/{location}/services/{service_id}
      * </pre>
@@ -3488,6 +3624,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * environment, state, etc. For more information, visit
      * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
      * https://cloud.google.com/run/docs/configuring/labels.
+     *
      * &lt;p&gt;Cloud Run API v2 does not support labels with  `run.googleapis.com`,
      * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
      * namespaces, and they will be rejected. All system labels in v1 now have a
@@ -3520,6 +3657,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * environment, state, etc. For more information, visit
      * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
      * https://cloud.google.com/run/docs/configuring/labels.
+     *
      * &lt;p&gt;Cloud Run API v2 does not support labels with  `run.googleapis.com`,
      * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
      * namespaces, and they will be rejected. All system labels in v1 now have a
@@ -3543,6 +3681,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * environment, state, etc. For more information, visit
      * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
      * https://cloud.google.com/run/docs/configuring/labels.
+     *
      * &lt;p&gt;Cloud Run API v2 does not support labels with  `run.googleapis.com`,
      * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
      * namespaces, and they will be rejected. All system labels in v1 now have a
@@ -3573,6 +3712,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * environment, state, etc. For more information, visit
      * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
      * https://cloud.google.com/run/docs/configuring/labels.
+     *
      * &lt;p&gt;Cloud Run API v2 does not support labels with  `run.googleapis.com`,
      * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
      * namespaces, and they will be rejected. All system labels in v1 now have a
@@ -3609,6 +3749,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * environment, state, etc. For more information, visit
      * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
      * https://cloud.google.com/run/docs/configuring/labels.
+     *
      * &lt;p&gt;Cloud Run API v2 does not support labels with  `run.googleapis.com`,
      * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
      * namespaces, and they will be rejected. All system labels in v1 now have a
@@ -3641,6 +3782,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * environment, state, etc. For more information, visit
      * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
      * https://cloud.google.com/run/docs/configuring/labels.
+     *
      * &lt;p&gt;Cloud Run API v2 does not support labels with  `run.googleapis.com`,
      * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
      * namespaces, and they will be rejected. All system labels in v1 now have a
@@ -3671,6 +3813,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * environment, state, etc. For more information, visit
      * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
      * https://cloud.google.com/run/docs/configuring/labels.
+     *
      * &lt;p&gt;Cloud Run API v2 does not support labels with  `run.googleapis.com`,
      * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
      * namespaces, and they will be rejected. All system labels in v1 now have a
@@ -3720,10 +3863,12 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * Unstructured key value map that may be set by external tools to store and
      * arbitrary metadata. They are not queryable and should be preserved
      * when modifying objects.
+     *
      * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
      * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
      * namespaces, and they will be rejected in new resources. All system
      * annotations in v1 now have a corresponding field in v2 Service.
+     *
      * &lt;p&gt;This field follows Kubernetes
      * annotations' namespacing, limits, and rules.
      * </pre>
@@ -3750,10 +3895,12 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * Unstructured key value map that may be set by external tools to store and
      * arbitrary metadata. They are not queryable and should be preserved
      * when modifying objects.
+     *
      * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
      * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
      * namespaces, and they will be rejected in new resources. All system
      * annotations in v1 now have a corresponding field in v2 Service.
+     *
      * &lt;p&gt;This field follows Kubernetes
      * annotations' namespacing, limits, and rules.
      * </pre>
@@ -3771,10 +3918,12 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * Unstructured key value map that may be set by external tools to store and
      * arbitrary metadata. They are not queryable and should be preserved
      * when modifying objects.
+     *
      * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
      * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
      * namespaces, and they will be rejected in new resources. All system
      * annotations in v1 now have a corresponding field in v2 Service.
+     *
      * &lt;p&gt;This field follows Kubernetes
      * annotations' namespacing, limits, and rules.
      * </pre>
@@ -3799,10 +3948,12 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * Unstructured key value map that may be set by external tools to store and
      * arbitrary metadata. They are not queryable and should be preserved
      * when modifying objects.
+     *
      * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
      * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
      * namespaces, and they will be rejected in new resources. All system
      * annotations in v1 now have a corresponding field in v2 Service.
+     *
      * &lt;p&gt;This field follows Kubernetes
      * annotations' namespacing, limits, and rules.
      * </pre>
@@ -3833,10 +3984,12 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * Unstructured key value map that may be set by external tools to store and
      * arbitrary metadata. They are not queryable and should be preserved
      * when modifying objects.
+     *
      * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
      * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
      * namespaces, and they will be rejected in new resources. All system
      * annotations in v1 now have a corresponding field in v2 Service.
+     *
      * &lt;p&gt;This field follows Kubernetes
      * annotations' namespacing, limits, and rules.
      * </pre>
@@ -3863,10 +4016,12 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * Unstructured key value map that may be set by external tools to store and
      * arbitrary metadata. They are not queryable and should be preserved
      * when modifying objects.
+     *
      * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
      * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
      * namespaces, and they will be rejected in new resources. All system
      * annotations in v1 now have a corresponding field in v2 Service.
+     *
      * &lt;p&gt;This field follows Kubernetes
      * annotations' namespacing, limits, and rules.
      * </pre>
@@ -3891,10 +4046,12 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * Unstructured key value map that may be set by external tools to store and
      * arbitrary metadata. They are not queryable and should be preserved
      * when modifying objects.
+     *
      * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
      * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
      * namespaces, and they will be rejected in new resources. All system
      * annotations in v1 now have a corresponding field in v2 Service.
+     *
      * &lt;p&gt;This field follows Kubernetes
      * annotations' namespacing, limits, and rules.
      * </pre>
@@ -7668,6 +7825,216 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private com.google.protobuf.LazyStringArrayList customAudiences_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureCustomAudiencesIsMutable() {
+      if (!customAudiences_.isModifiable()) {
+        customAudiences_ = new com.google.protobuf.LazyStringArrayList(customAudiences_);
+      }
+      bitField0_ |= 0x04000000;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * One or more custom audiences that you want this service to support. Specify
+     * each custom audience as the full URL in a string. The custom audiences are
+     * encoded in the token and used to authenticate requests. For more
+     * information, see
+     * https://cloud.google.com/run/docs/configuring/custom-audiences.
+     * </pre>
+     *
+     * <code>repeated string custom_audiences = 37;</code>
+     *
+     * @return A list containing the customAudiences.
+     */
+    public com.google.protobuf.ProtocolStringList getCustomAudiencesList() {
+      customAudiences_.makeImmutable();
+      return customAudiences_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * One or more custom audiences that you want this service to support. Specify
+     * each custom audience as the full URL in a string. The custom audiences are
+     * encoded in the token and used to authenticate requests. For more
+     * information, see
+     * https://cloud.google.com/run/docs/configuring/custom-audiences.
+     * </pre>
+     *
+     * <code>repeated string custom_audiences = 37;</code>
+     *
+     * @return The count of customAudiences.
+     */
+    public int getCustomAudiencesCount() {
+      return customAudiences_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * One or more custom audiences that you want this service to support. Specify
+     * each custom audience as the full URL in a string. The custom audiences are
+     * encoded in the token and used to authenticate requests. For more
+     * information, see
+     * https://cloud.google.com/run/docs/configuring/custom-audiences.
+     * </pre>
+     *
+     * <code>repeated string custom_audiences = 37;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The customAudiences at the given index.
+     */
+    public java.lang.String getCustomAudiences(int index) {
+      return customAudiences_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * One or more custom audiences that you want this service to support. Specify
+     * each custom audience as the full URL in a string. The custom audiences are
+     * encoded in the token and used to authenticate requests. For more
+     * information, see
+     * https://cloud.google.com/run/docs/configuring/custom-audiences.
+     * </pre>
+     *
+     * <code>repeated string custom_audiences = 37;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the customAudiences at the given index.
+     */
+    public com.google.protobuf.ByteString getCustomAudiencesBytes(int index) {
+      return customAudiences_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * One or more custom audiences that you want this service to support. Specify
+     * each custom audience as the full URL in a string. The custom audiences are
+     * encoded in the token and used to authenticate requests. For more
+     * information, see
+     * https://cloud.google.com/run/docs/configuring/custom-audiences.
+     * </pre>
+     *
+     * <code>repeated string custom_audiences = 37;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The customAudiences to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCustomAudiences(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureCustomAudiencesIsMutable();
+      customAudiences_.set(index, value);
+      bitField0_ |= 0x04000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * One or more custom audiences that you want this service to support. Specify
+     * each custom audience as the full URL in a string. The custom audiences are
+     * encoded in the token and used to authenticate requests. For more
+     * information, see
+     * https://cloud.google.com/run/docs/configuring/custom-audiences.
+     * </pre>
+     *
+     * <code>repeated string custom_audiences = 37;</code>
+     *
+     * @param value The customAudiences to add.
+     * @return This builder for chaining.
+     */
+    public Builder addCustomAudiences(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureCustomAudiencesIsMutable();
+      customAudiences_.add(value);
+      bitField0_ |= 0x04000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * One or more custom audiences that you want this service to support. Specify
+     * each custom audience as the full URL in a string. The custom audiences are
+     * encoded in the token and used to authenticate requests. For more
+     * information, see
+     * https://cloud.google.com/run/docs/configuring/custom-audiences.
+     * </pre>
+     *
+     * <code>repeated string custom_audiences = 37;</code>
+     *
+     * @param values The customAudiences to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllCustomAudiences(java.lang.Iterable<java.lang.String> values) {
+      ensureCustomAudiencesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, customAudiences_);
+      bitField0_ |= 0x04000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * One or more custom audiences that you want this service to support. Specify
+     * each custom audience as the full URL in a string. The custom audiences are
+     * encoded in the token and used to authenticate requests. For more
+     * information, see
+     * https://cloud.google.com/run/docs/configuring/custom-audiences.
+     * </pre>
+     *
+     * <code>repeated string custom_audiences = 37;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCustomAudiences() {
+      customAudiences_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x04000000);
+      ;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * One or more custom audiences that you want this service to support. Specify
+     * each custom audience as the full URL in a string. The custom audiences are
+     * encoded in the token and used to authenticate requests. For more
+     * information, see
+     * https://cloud.google.com/run/docs/configuring/custom-audiences.
+     * </pre>
+     *
+     * <code>repeated string custom_audiences = 37;</code>
+     *
+     * @param value The bytes of the customAudiences to add.
+     * @return This builder for chaining.
+     */
+    public Builder addCustomAudiencesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureCustomAudiencesIsMutable();
+      customAudiences_.add(value);
+      bitField0_ |= 0x04000000;
+      onChanged();
+      return this;
+    }
+
     private boolean satisfiesPzs_;
     /**
      *
@@ -7699,7 +8066,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     public Builder setSatisfiesPzs(boolean value) {
 
       satisfiesPzs_ = value;
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x08000000;
       onChanged();
       return this;
     }
@@ -7715,7 +8082,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSatisfiesPzs() {
-      bitField0_ = (bitField0_ & ~0x04000000);
+      bitField0_ = (bitField0_ & ~0x08000000);
       satisfiesPzs_ = false;
       onChanged();
       return this;
@@ -7728,6 +8095,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Returns true if the Service is currently being acted upon by
      * the system to bring it into the desired state.
+     *
      * When a new Service is created, or an existing one is updated, Cloud Run
      * will asynchronously perform all necessary steps to bring the Service to the
      * desired serving state. This process is called reconciliation.
@@ -7738,9 +8106,11 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * succeeded and the serving state matches the Service, or there was an error,
      * and reconciliation failed. This state can be found in
      * `terminal_condition.state`.
+     *
      * If reconciliation succeeded, the following fields will match: `traffic` and
      * `traffic_statuses`, `observed_generation` and `generation`,
      * `latest_ready_revision` and `latest_created_revision`.
+     *
      * If reconciliation failed, `traffic_statuses`, `observed_generation`, and
      * `latest_ready_revision` will have the state of the last serving revision,
      * or empty for newly created Services. Additional information on the failure
@@ -7761,6 +8131,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Returns true if the Service is currently being acted upon by
      * the system to bring it into the desired state.
+     *
      * When a new Service is created, or an existing one is updated, Cloud Run
      * will asynchronously perform all necessary steps to bring the Service to the
      * desired serving state. This process is called reconciliation.
@@ -7771,9 +8142,11 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * succeeded and the serving state matches the Service, or there was an error,
      * and reconciliation failed. This state can be found in
      * `terminal_condition.state`.
+     *
      * If reconciliation succeeded, the following fields will match: `traffic` and
      * `traffic_statuses`, `observed_generation` and `generation`,
      * `latest_ready_revision` and `latest_created_revision`.
+     *
      * If reconciliation failed, `traffic_statuses`, `observed_generation`, and
      * `latest_ready_revision` will have the state of the last serving revision,
      * or empty for newly created Services. Additional information on the failure
@@ -7788,7 +8161,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     public Builder setReconciling(boolean value) {
 
       reconciling_ = value;
-      bitField0_ |= 0x08000000;
+      bitField0_ |= 0x10000000;
       onChanged();
       return this;
     }
@@ -7798,6 +8171,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Returns true if the Service is currently being acted upon by
      * the system to bring it into the desired state.
+     *
      * When a new Service is created, or an existing one is updated, Cloud Run
      * will asynchronously perform all necessary steps to bring the Service to the
      * desired serving state. This process is called reconciliation.
@@ -7808,9 +8182,11 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * succeeded and the serving state matches the Service, or there was an error,
      * and reconciliation failed. This state can be found in
      * `terminal_condition.state`.
+     *
      * If reconciliation succeeded, the following fields will match: `traffic` and
      * `traffic_statuses`, `observed_generation` and `generation`,
      * `latest_ready_revision` and `latest_created_revision`.
+     *
      * If reconciliation failed, `traffic_statuses`, `observed_generation`, and
      * `latest_ready_revision` will have the state of the last serving revision,
      * or empty for newly created Services. Additional information on the failure
@@ -7822,7 +8198,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearReconciling() {
-      bitField0_ = (bitField0_ & ~0x08000000);
+      bitField0_ = (bitField0_ & ~0x10000000);
       reconciling_ = false;
       onChanged();
       return this;
@@ -7893,7 +8269,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       etag_ = value;
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x20000000;
       onChanged();
       return this;
     }
@@ -7911,7 +8287,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearEtag() {
       etag_ = getDefaultInstance().getEtag();
-      bitField0_ = (bitField0_ & ~0x10000000);
+      bitField0_ = (bitField0_ & ~0x20000000);
       onChanged();
       return this;
     }
@@ -7934,7 +8310,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       etag_ = value;
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x20000000;
       onChanged();
       return this;
     }

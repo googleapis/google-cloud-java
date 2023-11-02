@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -118,5 +118,5 @@ public interface VmUtilizationInfoOrBuilder
    */
   com.google.cloud.vmmigration.v1.VmUtilizationMetricsOrBuilder getUtilizationOrBuilder();
 
-  public com.google.cloud.vmmigration.v1.VmUtilizationInfo.VmDetailsCase getVmDetailsCase();
+  com.google.cloud.vmmigration.v1.VmUtilizationInfo.VmDetailsCase getVmDetailsCase();
 }

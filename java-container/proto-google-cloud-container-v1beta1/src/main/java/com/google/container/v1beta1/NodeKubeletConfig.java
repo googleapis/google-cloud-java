@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
     return new NodeKubeletConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.container.v1beta1.ClusterServiceProto
         .internal_static_google_container_v1beta1_NodeKubeletConfig_descriptor;
@@ -68,6 +63,7 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
             com.google.container.v1beta1.NodeKubeletConfig.Builder.class);
   }
 
+  private int bitField0_;
   public static final int CPU_MANAGER_POLICY_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -79,6 +75,7 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
    * Control the CPU management policy on the node.
    * See
    * https://kubernetes.io/docs/tasks/administer-cluster/cpu-management-policies/
+   *
    * The following values are allowed.
    * * "none": the default, which represents the existing scheduling behavior.
    * * "static": allows pods with certain resource characteristics to be granted
@@ -109,6 +106,7 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
    * Control the CPU management policy on the node.
    * See
    * https://kubernetes.io/docs/tasks/administer-cluster/cpu-management-policies/
+   *
    * The following values are allowed.
    * * "none": the default, which represents the existing scheduling behavior.
    * * "static": allows pods with certain resource characteristics to be granted
@@ -140,12 +138,15 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Enable CPU CFS quota enforcement for containers that specify CPU limits.
+   *
    * This option is enabled by default which makes kubelet use CFS quota
    * (https://www.kernel.org/doc/Documentation/scheduler/sched-bwc.txt) to
    * enforce container CPU limits. Otherwise, CPU limits will not be enforced at
    * all.
+   *
    * Disable this option to mitigate CPU throttling problems while still having
    * your pods to be in Guaranteed QoS class by specifying the CPU limits.
+   *
    * The default value is 'true' if unspecified.
    * </pre>
    *
@@ -162,12 +163,15 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Enable CPU CFS quota enforcement for containers that specify CPU limits.
+   *
    * This option is enabled by default which makes kubelet use CFS quota
    * (https://www.kernel.org/doc/Documentation/scheduler/sched-bwc.txt) to
    * enforce container CPU limits. Otherwise, CPU limits will not be enforced at
    * all.
+   *
    * Disable this option to mitigate CPU throttling problems while still having
    * your pods to be in Guaranteed QoS class by specifying the CPU limits.
+   *
    * The default value is 'true' if unspecified.
    * </pre>
    *
@@ -184,12 +188,15 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Enable CPU CFS quota enforcement for containers that specify CPU limits.
+   *
    * This option is enabled by default which makes kubelet use CFS quota
    * (https://www.kernel.org/doc/Documentation/scheduler/sched-bwc.txt) to
    * enforce container CPU limits. Otherwise, CPU limits will not be enforced at
    * all.
+   *
    * Disable this option to mitigate CPU throttling problems while still having
    * your pods to be in Guaranteed QoS class by specifying the CPU limits.
+   *
    * The default value is 'true' if unspecified.
    * </pre>
    *
@@ -209,6 +216,7 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Set the CPU CFS quota period value 'cpu.cfs_period_us'.
+   *
    * The string must be a sequence of decimal numbers, each with optional
    * fraction and a unit suffix, such as "300ms".
    * Valid time units are "ns", "us" (or "µs"), "ms", "s", "m", "h".
@@ -236,6 +244,7 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Set the CPU CFS quota period value 'cpu.cfs_period_us'.
+   *
    * The string must be a sequence of decimal numbers, each with optional
    * fraction and a unit suffix, such as "300ms".
    * Valid time units are "ns", "us" (or "µs"), "ms", "s", "m", "h".
@@ -267,6 +276,7 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Set the Pod PID limits. See
    * https://kubernetes.io/docs/concepts/policy/pid-limiting/#pod-pid-limits
+   *
    * Controls the maximum number of processes allowed to run in a pod. The value
    * must be greater than or equal to 1024 and less than 4194304.
    * </pre>
@@ -278,6 +288,39 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
   @java.lang.Override
   public long getPodPidsLimit() {
     return podPidsLimit_;
+  }
+
+  public static final int INSECURE_KUBELET_READONLY_PORT_ENABLED_FIELD_NUMBER = 7;
+  private boolean insecureKubeletReadonlyPortEnabled_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Enable or disable Kubelet read only port.
+   * </pre>
+   *
+   * <code>optional bool insecure_kubelet_readonly_port_enabled = 7;</code>
+   *
+   * @return Whether the insecureKubeletReadonlyPortEnabled field is set.
+   */
+  @java.lang.Override
+  public boolean hasInsecureKubeletReadonlyPortEnabled() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Enable or disable Kubelet read only port.
+   * </pre>
+   *
+   * <code>optional bool insecure_kubelet_readonly_port_enabled = 7;</code>
+   *
+   * @return The insecureKubeletReadonlyPortEnabled.
+   */
+  @java.lang.Override
+  public boolean getInsecureKubeletReadonlyPortEnabled() {
+    return insecureKubeletReadonlyPortEnabled_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -306,6 +349,9 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
     if (podPidsLimit_ != 0L) {
       output.writeInt64(4, podPidsLimit_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeBool(7, insecureKubeletReadonlyPortEnabled_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -326,6 +372,11 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
     }
     if (podPidsLimit_ != 0L) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(4, podPidsLimit_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(
+              7, insecureKubeletReadonlyPortEnabled_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -350,6 +401,12 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
     }
     if (!getCpuCfsQuotaPeriod().equals(other.getCpuCfsQuotaPeriod())) return false;
     if (getPodPidsLimit() != other.getPodPidsLimit()) return false;
+    if (hasInsecureKubeletReadonlyPortEnabled() != other.hasInsecureKubeletReadonlyPortEnabled())
+      return false;
+    if (hasInsecureKubeletReadonlyPortEnabled()) {
+      if (getInsecureKubeletReadonlyPortEnabled() != other.getInsecureKubeletReadonlyPortEnabled())
+        return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -371,6 +428,12 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
     hash = (53 * hash) + getCpuCfsQuotaPeriod().hashCode();
     hash = (37 * hash) + POD_PIDS_LIMIT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getPodPidsLimit());
+    if (hasInsecureKubeletReadonlyPortEnabled()) {
+      hash = (37 * hash) + INSECURE_KUBELET_READONLY_PORT_ENABLED_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashBoolean(getInsecureKubeletReadonlyPortEnabled());
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -518,6 +581,7 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
       }
       cpuCfsQuotaPeriod_ = "";
       podPidsLimit_ = 0L;
+      insecureKubeletReadonlyPortEnabled_ = false;
       return this;
     }
 
@@ -567,6 +631,12 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.podPidsLimit_ = podPidsLimit_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.insecureKubeletReadonlyPortEnabled_ = insecureKubeletReadonlyPortEnabled_;
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -630,6 +700,9 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
       if (other.getPodPidsLimit() != 0L) {
         setPodPidsLimit(other.getPodPidsLimit());
       }
+      if (other.hasInsecureKubeletReadonlyPortEnabled()) {
+        setInsecureKubeletReadonlyPortEnabled(other.getInsecureKubeletReadonlyPortEnabled());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -680,6 +753,12 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
                 bitField0_ |= 0x00000008;
                 break;
               } // case 32
+            case 56:
+              {
+                insecureKubeletReadonlyPortEnabled_ = input.readBool();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 56
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -707,6 +786,7 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
      * Control the CPU management policy on the node.
      * See
      * https://kubernetes.io/docs/tasks/administer-cluster/cpu-management-policies/
+     *
      * The following values are allowed.
      * * "none": the default, which represents the existing scheduling behavior.
      * * "static": allows pods with certain resource characteristics to be granted
@@ -736,6 +816,7 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
      * Control the CPU management policy on the node.
      * See
      * https://kubernetes.io/docs/tasks/administer-cluster/cpu-management-policies/
+     *
      * The following values are allowed.
      * * "none": the default, which represents the existing scheduling behavior.
      * * "static": allows pods with certain resource characteristics to be granted
@@ -765,6 +846,7 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
      * Control the CPU management policy on the node.
      * See
      * https://kubernetes.io/docs/tasks/administer-cluster/cpu-management-policies/
+     *
      * The following values are allowed.
      * * "none": the default, which represents the existing scheduling behavior.
      * * "static": allows pods with certain resource characteristics to be granted
@@ -793,6 +875,7 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
      * Control the CPU management policy on the node.
      * See
      * https://kubernetes.io/docs/tasks/administer-cluster/cpu-management-policies/
+     *
      * The following values are allowed.
      * * "none": the default, which represents the existing scheduling behavior.
      * * "static": allows pods with certain resource characteristics to be granted
@@ -817,6 +900,7 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
      * Control the CPU management policy on the node.
      * See
      * https://kubernetes.io/docs/tasks/administer-cluster/cpu-management-policies/
+     *
      * The following values are allowed.
      * * "none": the default, which represents the existing scheduling behavior.
      * * "static": allows pods with certain resource characteristics to be granted
@@ -851,12 +935,15 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Enable CPU CFS quota enforcement for containers that specify CPU limits.
+     *
      * This option is enabled by default which makes kubelet use CFS quota
      * (https://www.kernel.org/doc/Documentation/scheduler/sched-bwc.txt) to
      * enforce container CPU limits. Otherwise, CPU limits will not be enforced at
      * all.
+     *
      * Disable this option to mitigate CPU throttling problems while still having
      * your pods to be in Guaranteed QoS class by specifying the CPU limits.
+     *
      * The default value is 'true' if unspecified.
      * </pre>
      *
@@ -872,12 +959,15 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Enable CPU CFS quota enforcement for containers that specify CPU limits.
+     *
      * This option is enabled by default which makes kubelet use CFS quota
      * (https://www.kernel.org/doc/Documentation/scheduler/sched-bwc.txt) to
      * enforce container CPU limits. Otherwise, CPU limits will not be enforced at
      * all.
+     *
      * Disable this option to mitigate CPU throttling problems while still having
      * your pods to be in Guaranteed QoS class by specifying the CPU limits.
+     *
      * The default value is 'true' if unspecified.
      * </pre>
      *
@@ -899,12 +989,15 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Enable CPU CFS quota enforcement for containers that specify CPU limits.
+     *
      * This option is enabled by default which makes kubelet use CFS quota
      * (https://www.kernel.org/doc/Documentation/scheduler/sched-bwc.txt) to
      * enforce container CPU limits. Otherwise, CPU limits will not be enforced at
      * all.
+     *
      * Disable this option to mitigate CPU throttling problems while still having
      * your pods to be in Guaranteed QoS class by specifying the CPU limits.
+     *
      * The default value is 'true' if unspecified.
      * </pre>
      *
@@ -928,12 +1021,15 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Enable CPU CFS quota enforcement for containers that specify CPU limits.
+     *
      * This option is enabled by default which makes kubelet use CFS quota
      * (https://www.kernel.org/doc/Documentation/scheduler/sched-bwc.txt) to
      * enforce container CPU limits. Otherwise, CPU limits will not be enforced at
      * all.
+     *
      * Disable this option to mitigate CPU throttling problems while still having
      * your pods to be in Guaranteed QoS class by specifying the CPU limits.
+     *
      * The default value is 'true' if unspecified.
      * </pre>
      *
@@ -954,12 +1050,15 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Enable CPU CFS quota enforcement for containers that specify CPU limits.
+     *
      * This option is enabled by default which makes kubelet use CFS quota
      * (https://www.kernel.org/doc/Documentation/scheduler/sched-bwc.txt) to
      * enforce container CPU limits. Otherwise, CPU limits will not be enforced at
      * all.
+     *
      * Disable this option to mitigate CPU throttling problems while still having
      * your pods to be in Guaranteed QoS class by specifying the CPU limits.
+     *
      * The default value is 'true' if unspecified.
      * </pre>
      *
@@ -986,12 +1085,15 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Enable CPU CFS quota enforcement for containers that specify CPU limits.
+     *
      * This option is enabled by default which makes kubelet use CFS quota
      * (https://www.kernel.org/doc/Documentation/scheduler/sched-bwc.txt) to
      * enforce container CPU limits. Otherwise, CPU limits will not be enforced at
      * all.
+     *
      * Disable this option to mitigate CPU throttling problems while still having
      * your pods to be in Guaranteed QoS class by specifying the CPU limits.
+     *
      * The default value is 'true' if unspecified.
      * </pre>
      *
@@ -1012,12 +1114,15 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Enable CPU CFS quota enforcement for containers that specify CPU limits.
+     *
      * This option is enabled by default which makes kubelet use CFS quota
      * (https://www.kernel.org/doc/Documentation/scheduler/sched-bwc.txt) to
      * enforce container CPU limits. Otherwise, CPU limits will not be enforced at
      * all.
+     *
      * Disable this option to mitigate CPU throttling problems while still having
      * your pods to be in Guaranteed QoS class by specifying the CPU limits.
+     *
      * The default value is 'true' if unspecified.
      * </pre>
      *
@@ -1033,12 +1138,15 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Enable CPU CFS quota enforcement for containers that specify CPU limits.
+     *
      * This option is enabled by default which makes kubelet use CFS quota
      * (https://www.kernel.org/doc/Documentation/scheduler/sched-bwc.txt) to
      * enforce container CPU limits. Otherwise, CPU limits will not be enforced at
      * all.
+     *
      * Disable this option to mitigate CPU throttling problems while still having
      * your pods to be in Guaranteed QoS class by specifying the CPU limits.
+     *
      * The default value is 'true' if unspecified.
      * </pre>
      *
@@ -1058,12 +1166,15 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Enable CPU CFS quota enforcement for containers that specify CPU limits.
+     *
      * This option is enabled by default which makes kubelet use CFS quota
      * (https://www.kernel.org/doc/Documentation/scheduler/sched-bwc.txt) to
      * enforce container CPU limits. Otherwise, CPU limits will not be enforced at
      * all.
+     *
      * Disable this option to mitigate CPU throttling problems while still having
      * your pods to be in Guaranteed QoS class by specifying the CPU limits.
+     *
      * The default value is 'true' if unspecified.
      * </pre>
      *
@@ -1092,6 +1203,7 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Set the CPU CFS quota period value 'cpu.cfs_period_us'.
+     *
      * The string must be a sequence of decimal numbers, each with optional
      * fraction and a unit suffix, such as "300ms".
      * Valid time units are "ns", "us" (or "µs"), "ms", "s", "m", "h".
@@ -1118,6 +1230,7 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Set the CPU CFS quota period value 'cpu.cfs_period_us'.
+     *
      * The string must be a sequence of decimal numbers, each with optional
      * fraction and a unit suffix, such as "300ms".
      * Valid time units are "ns", "us" (or "µs"), "ms", "s", "m", "h".
@@ -1144,6 +1257,7 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Set the CPU CFS quota period value 'cpu.cfs_period_us'.
+     *
      * The string must be a sequence of decimal numbers, each with optional
      * fraction and a unit suffix, such as "300ms".
      * Valid time units are "ns", "us" (or "µs"), "ms", "s", "m", "h".
@@ -1169,6 +1283,7 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Set the CPU CFS quota period value 'cpu.cfs_period_us'.
+     *
      * The string must be a sequence of decimal numbers, each with optional
      * fraction and a unit suffix, such as "300ms".
      * Valid time units are "ns", "us" (or "µs"), "ms", "s", "m", "h".
@@ -1190,6 +1305,7 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Set the CPU CFS quota period value 'cpu.cfs_period_us'.
+     *
      * The string must be a sequence of decimal numbers, each with optional
      * fraction and a unit suffix, such as "300ms".
      * Valid time units are "ns", "us" (or "µs"), "ms", "s", "m", "h".
@@ -1219,6 +1335,7 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Set the Pod PID limits. See
      * https://kubernetes.io/docs/concepts/policy/pid-limiting/#pod-pid-limits
+     *
      * Controls the maximum number of processes allowed to run in a pod. The value
      * must be greater than or equal to 1024 and less than 4194304.
      * </pre>
@@ -1237,6 +1354,7 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Set the Pod PID limits. See
      * https://kubernetes.io/docs/concepts/policy/pid-limiting/#pod-pid-limits
+     *
      * Controls the maximum number of processes allowed to run in a pod. The value
      * must be greater than or equal to 1024 and less than 4194304.
      * </pre>
@@ -1259,6 +1377,7 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Set the Pod PID limits. See
      * https://kubernetes.io/docs/concepts/policy/pid-limiting/#pod-pid-limits
+     *
      * Controls the maximum number of processes allowed to run in a pod. The value
      * must be greater than or equal to 1024 and less than 4194304.
      * </pre>
@@ -1270,6 +1389,74 @@ public final class NodeKubeletConfig extends com.google.protobuf.GeneratedMessag
     public Builder clearPodPidsLimit() {
       bitField0_ = (bitField0_ & ~0x00000008);
       podPidsLimit_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private boolean insecureKubeletReadonlyPortEnabled_;
+    /**
+     *
+     *
+     * <pre>
+     * Enable or disable Kubelet read only port.
+     * </pre>
+     *
+     * <code>optional bool insecure_kubelet_readonly_port_enabled = 7;</code>
+     *
+     * @return Whether the insecureKubeletReadonlyPortEnabled field is set.
+     */
+    @java.lang.Override
+    public boolean hasInsecureKubeletReadonlyPortEnabled() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable or disable Kubelet read only port.
+     * </pre>
+     *
+     * <code>optional bool insecure_kubelet_readonly_port_enabled = 7;</code>
+     *
+     * @return The insecureKubeletReadonlyPortEnabled.
+     */
+    @java.lang.Override
+    public boolean getInsecureKubeletReadonlyPortEnabled() {
+      return insecureKubeletReadonlyPortEnabled_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable or disable Kubelet read only port.
+     * </pre>
+     *
+     * <code>optional bool insecure_kubelet_readonly_port_enabled = 7;</code>
+     *
+     * @param value The insecureKubeletReadonlyPortEnabled to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInsecureKubeletReadonlyPortEnabled(boolean value) {
+
+      insecureKubeletReadonlyPortEnabled_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable or disable Kubelet read only port.
+     * </pre>
+     *
+     * <code>optional bool insecure_kubelet_readonly_port_enabled = 7;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearInsecureKubeletReadonlyPortEnabled() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      insecureKubeletReadonlyPortEnabled_ = false;
       onChanged();
       return this;
     }

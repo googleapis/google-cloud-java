@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,6 +44,7 @@ public interface IPAllocationPolicyOrBuilder
    *
    * <pre>
    * Whether a new subnetwork will be created automatically for the cluster.
+   *
    * This field is only applicable when `use_ip_aliases` is true.
    * </pre>
    *
@@ -92,7 +93,7 @@ public interface IPAllocationPolicyOrBuilder
    * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.IPAllocationPolicy.cluster_ipv4_cidr is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1377
+   *     google/container/v1/cluster_service.proto;l=1476
    * @return The clusterIpv4Cidr.
    */
   @java.lang.Deprecated
@@ -107,7 +108,7 @@ public interface IPAllocationPolicyOrBuilder
    * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.IPAllocationPolicy.cluster_ipv4_cidr is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1377
+   *     google/container/v1/cluster_service.proto;l=1476
    * @return The bytes for clusterIpv4Cidr.
    */
   @java.lang.Deprecated
@@ -123,7 +124,7 @@ public interface IPAllocationPolicyOrBuilder
    * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.IPAllocationPolicy.node_ipv4_cidr is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1380
+   *     google/container/v1/cluster_service.proto;l=1479
    * @return The nodeIpv4Cidr.
    */
   @java.lang.Deprecated
@@ -138,7 +139,7 @@ public interface IPAllocationPolicyOrBuilder
    * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.IPAllocationPolicy.node_ipv4_cidr is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1380
+   *     google/container/v1/cluster_service.proto;l=1479
    * @return The bytes for nodeIpv4Cidr.
    */
   @java.lang.Deprecated
@@ -154,7 +155,7 @@ public interface IPAllocationPolicyOrBuilder
    * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.IPAllocationPolicy.services_ipv4_cidr is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1383
+   *     google/container/v1/cluster_service.proto;l=1482
    * @return The servicesIpv4Cidr.
    */
   @java.lang.Deprecated
@@ -169,7 +170,7 @@ public interface IPAllocationPolicyOrBuilder
    * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.IPAllocationPolicy.services_ipv4_cidr is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1383
+   *     google/container/v1/cluster_service.proto;l=1482
    * @return The bytes for servicesIpv4Cidr.
    */
   @java.lang.Deprecated
@@ -183,6 +184,7 @@ public interface IPAllocationPolicyOrBuilder
    * block.  The secondary range will be used for pod IP
    * addresses. This must be an existing secondary range associated
    * with the cluster subnetwork.
+   *
    * This field is only applicable with use_ip_aliases is true and
    * create_subnetwork is false.
    * </pre>
@@ -200,6 +202,7 @@ public interface IPAllocationPolicyOrBuilder
    * block.  The secondary range will be used for pod IP
    * addresses. This must be an existing secondary range associated
    * with the cluster subnetwork.
+   *
    * This field is only applicable with use_ip_aliases is true and
    * create_subnetwork is false.
    * </pre>
@@ -218,6 +221,7 @@ public interface IPAllocationPolicyOrBuilder
    * CIDR block.  The secondary range will be used for service
    * ClusterIPs. This must be an existing secondary range associated
    * with the cluster subnetwork.
+   *
    * This field is only applicable with use_ip_aliases is true and
    * create_subnetwork is false.
    * </pre>
@@ -235,6 +239,7 @@ public interface IPAllocationPolicyOrBuilder
    * CIDR block.  The secondary range will be used for service
    * ClusterIPs. This must be an existing secondary range associated
    * with the cluster subnetwork.
+   *
    * This field is only applicable with use_ip_aliases is true and
    * create_subnetwork is false.
    * </pre>
@@ -251,10 +256,14 @@ public interface IPAllocationPolicyOrBuilder
    * <pre>
    * The IP address range for the cluster pod IPs. If this field is set, then
    * `cluster.cluster_ipv4_cidr` must be left blank.
+   *
    * This field is only applicable when `use_ip_aliases` is true.
+   *
    * Set to blank to have a range chosen with the default size.
+   *
    * Set to /netmask (e.g. `/14`) to have a range chosen with a specific
    * netmask.
+   *
    * Set to a
    * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
    * notation (e.g. `10.96.0.0/14`) from the RFC-1918 private networks (e.g.
@@ -273,10 +282,14 @@ public interface IPAllocationPolicyOrBuilder
    * <pre>
    * The IP address range for the cluster pod IPs. If this field is set, then
    * `cluster.cluster_ipv4_cidr` must be left blank.
+   *
    * This field is only applicable when `use_ip_aliases` is true.
+   *
    * Set to blank to have a range chosen with the default size.
+   *
    * Set to /netmask (e.g. `/14`) to have a range chosen with a specific
    * netmask.
+   *
    * Set to a
    * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
    * notation (e.g. `10.96.0.0/14`) from the RFC-1918 private networks (e.g.
@@ -295,10 +308,14 @@ public interface IPAllocationPolicyOrBuilder
    *
    * <pre>
    * The IP address range of the instance IPs in this cluster.
+   *
    * This is applicable only if `create_subnetwork` is true.
+   *
    * Set to blank to have a range chosen with the default size.
+   *
    * Set to /netmask (e.g. `/14`) to have a range chosen with a specific
    * netmask.
+   *
    * Set to a
    * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
    * notation (e.g. `10.96.0.0/14`) from the RFC-1918 private networks (e.g.
@@ -316,10 +333,14 @@ public interface IPAllocationPolicyOrBuilder
    *
    * <pre>
    * The IP address range of the instance IPs in this cluster.
+   *
    * This is applicable only if `create_subnetwork` is true.
+   *
    * Set to blank to have a range chosen with the default size.
+   *
    * Set to /netmask (e.g. `/14`) to have a range chosen with a specific
    * netmask.
+   *
    * Set to a
    * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
    * notation (e.g. `10.96.0.0/14`) from the RFC-1918 private networks (e.g.
@@ -339,10 +360,14 @@ public interface IPAllocationPolicyOrBuilder
    * <pre>
    * The IP address range of the services IPs in this cluster. If blank, a range
    * will be automatically chosen with the default size.
+   *
    * This field is only applicable when `use_ip_aliases` is true.
+   *
    * Set to blank to have a range chosen with the default size.
+   *
    * Set to /netmask (e.g. `/14`) to have a range chosen with a specific
    * netmask.
+   *
    * Set to a
    * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
    * notation (e.g. `10.96.0.0/14`) from the RFC-1918 private networks (e.g.
@@ -361,10 +386,14 @@ public interface IPAllocationPolicyOrBuilder
    * <pre>
    * The IP address range of the services IPs in this cluster. If blank, a range
    * will be automatically chosen with the default size.
+   *
    * This field is only applicable when `use_ip_aliases` is true.
+   *
    * Set to blank to have a range chosen with the default size.
+   *
    * Set to /netmask (e.g. `/14`) to have a range chosen with a specific
    * netmask.
+   *
    * Set to a
    * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
    * notation (e.g. `10.96.0.0/14`) from the RFC-1918 private networks (e.g.
@@ -384,10 +413,14 @@ public interface IPAllocationPolicyOrBuilder
    * <pre>
    * The IP address range of the Cloud TPUs in this cluster. If unspecified, a
    * range will be automatically chosen with the default size.
+   *
    * This field is only applicable when `use_ip_aliases` is true.
+   *
    * If unspecified, the range will use the default size.
+   *
    * Set to /netmask (e.g. `/14`) to have a range chosen with a specific
    * netmask.
+   *
    * Set to a
    * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
    * notation (e.g. `10.96.0.0/14`) from the RFC-1918 private networks (e.g.
@@ -406,10 +439,14 @@ public interface IPAllocationPolicyOrBuilder
    * <pre>
    * The IP address range of the Cloud TPUs in this cluster. If unspecified, a
    * range will be automatically chosen with the default size.
+   *
    * This field is only applicable when `use_ip_aliases` is true.
+   *
    * If unspecified, the range will use the default size.
+   *
    * Set to /netmask (e.g. `/14`) to have a range chosen with a specific
    * netmask.
+   *
    * Set to a
    * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
    * notation (e.g. `10.96.0.0/14`) from the RFC-1918 private networks (e.g.
@@ -495,10 +532,12 @@ public interface IPAllocationPolicyOrBuilder
    * <pre>
    * [PRIVATE FIELD]
    * Pod CIDR size overprovisioning config for the cluster.
+   *
    * Pod CIDR size per node depends on max_pods_per_node. By default, the value
    * of max_pods_per_node is doubled and then rounded off to next power of 2 to
    * get the size of pod CIDR block per node.
    * Example: max_pods_per_node of 30 would result in 64 IPs (/26).
+   *
    * This config can disable the doubling of IPs (we still round off to next
    * power of 2)
    * Example: max_pods_per_node of 30 will result in 32 IPs (/27) when
@@ -517,10 +556,12 @@ public interface IPAllocationPolicyOrBuilder
    * <pre>
    * [PRIVATE FIELD]
    * Pod CIDR size overprovisioning config for the cluster.
+   *
    * Pod CIDR size per node depends on max_pods_per_node. By default, the value
    * of max_pods_per_node is doubled and then rounded off to next power of 2 to
    * get the size of pod CIDR block per node.
    * Example: max_pods_per_node of 30 would result in 64 IPs (/26).
+   *
    * This config can disable the doubling of IPs (we still round off to next
    * power of 2)
    * Example: max_pods_per_node of 30 will result in 32 IPs (/27) when
@@ -539,10 +580,12 @@ public interface IPAllocationPolicyOrBuilder
    * <pre>
    * [PRIVATE FIELD]
    * Pod CIDR size overprovisioning config for the cluster.
+   *
    * Pod CIDR size per node depends on max_pods_per_node. By default, the value
    * of max_pods_per_node is doubled and then rounded off to next power of 2 to
    * get the size of pod CIDR block per node.
    * Example: max_pods_per_node of 30 would result in 64 IPs (/26).
+   *
    * This config can disable the doubling of IPs (we still round off to next
    * power of 2)
    * Example: max_pods_per_node of 30 will result in 32 IPs (/27) when
@@ -657,4 +700,21 @@ public interface IPAllocationPolicyOrBuilder
    */
   com.google.container.v1.AdditionalPodRangesConfigOrBuilder
       getAdditionalPodRangesConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output only] The utilization of the cluster default IPv4
+   * range for the pod. The ratio is Usage/[Total number of IPs in the secondary
+   * range], Usage=numNodes*numZones*podIPsPerNode.
+   * </pre>
+   *
+   * <code>
+   * double default_pod_ipv4_range_utilization = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The defaultPodIpv4RangeUtilization.
+   */
+  double getDefaultPodIpv4RangeUtilization();
 }

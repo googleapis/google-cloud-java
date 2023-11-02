@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,7 +36,7 @@ public final class BinauthzManagementServiceV1Grpc {
 
   private BinauthzManagementServiceV1Grpc() {}
 
-  public static final String SERVICE_NAME =
+  public static final java.lang.String SERVICE_NAME =
       "google.cloud.binaryauthorization.v1.BinauthzManagementServiceV1";
 
   // Static method descriptors that strictly reflect the proto.
@@ -1224,9 +1224,9 @@ public final class BinauthzManagementServiceV1Grpc {
   private static final class BinauthzManagementServiceV1MethodDescriptorSupplier
       extends BinauthzManagementServiceV1BaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    BinauthzManagementServiceV1MethodDescriptorSupplier(String methodName) {
+    BinauthzManagementServiceV1MethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

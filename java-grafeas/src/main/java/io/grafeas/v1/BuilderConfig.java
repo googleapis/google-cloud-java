@@ -40,11 +40,6 @@ public final class BuilderConfig extends com.google.protobuf.GeneratedMessageV3
     return new BuilderConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return io.grafeas.v1.InTotoProvenanceProto.internal_static_grafeas_v1_BuilderConfig_descriptor;
   }

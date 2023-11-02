@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,6 +30,7 @@ public interface MasterAuthOrBuilder
    * The username to use for HTTP basic authentication to the master endpoint.
    * For clusters v1.6.0 and later, basic authentication can be disabled by
    * leaving username unspecified (or setting it to the empty string).
+   *
    * Warning: basic authentication is deprecated, and will be removed in GKE
    * control plane versions 1.19 and newer. For a list of recommended
    * authentication methods, see:
@@ -39,7 +40,7 @@ public interface MasterAuthOrBuilder
    * <code>string username = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.MasterAuth.username is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1054
+   *     google/container/v1/cluster_service.proto;l=1144
    * @return The username.
    */
   @java.lang.Deprecated
@@ -51,6 +52,7 @@ public interface MasterAuthOrBuilder
    * The username to use for HTTP basic authentication to the master endpoint.
    * For clusters v1.6.0 and later, basic authentication can be disabled by
    * leaving username unspecified (or setting it to the empty string).
+   *
    * Warning: basic authentication is deprecated, and will be removed in GKE
    * control plane versions 1.19 and newer. For a list of recommended
    * authentication methods, see:
@@ -60,7 +62,7 @@ public interface MasterAuthOrBuilder
    * <code>string username = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.MasterAuth.username is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1054
+   *     google/container/v1/cluster_service.proto;l=1144
    * @return The bytes for username.
    */
   @java.lang.Deprecated
@@ -74,6 +76,7 @@ public interface MasterAuthOrBuilder
    * Because the master endpoint is open to the Internet, you should create a
    * strong password.  If a password is provided for cluster creation, username
    * must be non-empty.
+   *
    * Warning: basic authentication is deprecated, and will be removed in GKE
    * control plane versions 1.19 and newer. For a list of recommended
    * authentication methods, see:
@@ -83,7 +86,7 @@ public interface MasterAuthOrBuilder
    * <code>string password = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.MasterAuth.password is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1065
+   *     google/container/v1/cluster_service.proto;l=1155
    * @return The password.
    */
   @java.lang.Deprecated
@@ -96,6 +99,7 @@ public interface MasterAuthOrBuilder
    * Because the master endpoint is open to the Internet, you should create a
    * strong password.  If a password is provided for cluster creation, username
    * must be non-empty.
+   *
    * Warning: basic authentication is deprecated, and will be removed in GKE
    * control plane versions 1.19 and newer. For a list of recommended
    * authentication methods, see:
@@ -105,7 +109,7 @@ public interface MasterAuthOrBuilder
    * <code>string password = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.MasterAuth.password is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1065
+   *     google/container/v1/cluster_service.proto;l=1155
    * @return The bytes for password.
    */
   @java.lang.Deprecated

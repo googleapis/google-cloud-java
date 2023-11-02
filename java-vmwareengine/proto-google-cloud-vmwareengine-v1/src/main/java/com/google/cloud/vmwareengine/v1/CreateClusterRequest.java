@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new CreateClusterRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -145,6 +140,7 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
    * This identifier must be unique among clusters within the parent and becomes
    * the final token in the name URI.
    * The identifier must meet the following requirements:
+   *
    * * Only contains 1-63 alphanumeric characters and hyphens
    * * Begins with an alphabetical character
    * * Ends with a non-hyphen character
@@ -177,6 +173,7 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
    * This identifier must be unique among clusters within the parent and becomes
    * the final token in the name URI.
    * The identifier must meet the following requirements:
+   *
    * * Only contains 1-63 alphanumeric characters and hyphens
    * * Begins with an alphabetical character
    * * Ends with a non-hyphen character
@@ -920,6 +917,7 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
      * This identifier must be unique among clusters within the parent and becomes
      * the final token in the name URI.
      * The identifier must meet the following requirements:
+     *
      * * Only contains 1-63 alphanumeric characters and hyphens
      * * Begins with an alphabetical character
      * * Ends with a non-hyphen character
@@ -951,6 +949,7 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
      * This identifier must be unique among clusters within the parent and becomes
      * the final token in the name URI.
      * The identifier must meet the following requirements:
+     *
      * * Only contains 1-63 alphanumeric characters and hyphens
      * * Begins with an alphabetical character
      * * Ends with a non-hyphen character
@@ -982,6 +981,7 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
      * This identifier must be unique among clusters within the parent and becomes
      * the final token in the name URI.
      * The identifier must meet the following requirements:
+     *
      * * Only contains 1-63 alphanumeric characters and hyphens
      * * Begins with an alphabetical character
      * * Ends with a non-hyphen character
@@ -1012,6 +1012,7 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
      * This identifier must be unique among clusters within the parent and becomes
      * the final token in the name URI.
      * The identifier must meet the following requirements:
+     *
      * * Only contains 1-63 alphanumeric characters and hyphens
      * * Begins with an alphabetical character
      * * Ends with a non-hyphen character
@@ -1038,6 +1039,7 @@ public final class CreateClusterRequest extends com.google.protobuf.GeneratedMes
      * This identifier must be unique among clusters within the parent and becomes
      * the final token in the name URI.
      * The identifier must meet the following requirements:
+     *
      * * Only contains 1-63 alphanumeric characters and hyphens
      * * Begins with an alphabetical character
      * * Ends with a non-hyphen character

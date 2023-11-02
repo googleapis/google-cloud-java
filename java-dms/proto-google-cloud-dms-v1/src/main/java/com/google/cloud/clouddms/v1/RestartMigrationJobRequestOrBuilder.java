@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,4 +47,18 @@ public interface RestartMigrationJobRequestOrBuilder
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Restart the migration job without running prior configuration
+   * verification. Defaults to `false`.
+   * </pre>
+   *
+   * <code>bool skip_validation = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The skipValidation.
+   */
+  boolean getSkipValidation();
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -441,6 +441,150 @@ public class ExecutionsClientTest {
     try {
       String name = "name3373707";
       client.deleteExecutionAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void cancelExecutionTest() throws Exception {
+    Execution expectedResponse =
+        Execution.newBuilder()
+            .setName(ExecutionName.of("[PROJECT]", "[LOCATION]", "[JOB]", "[EXECUTION]").toString())
+            .setUid("uid115792")
+            .setGeneration(305703192)
+            .putAllLabels(new HashMap<String, String>())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setStartTime(Timestamp.newBuilder().build())
+            .setCompletionTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDeleteTime(Timestamp.newBuilder().build())
+            .setExpireTime(Timestamp.newBuilder().build())
+            .setLaunchStage(LaunchStage.forNumber(0))
+            .setJob(JobName.of("[PROJECT]", "[LOCATION]", "[JOB]").toString())
+            .setParallelism(635164956)
+            .setTaskCount(1297805781)
+            .setTemplate(TaskTemplate.newBuilder().build())
+            .setReconciling(true)
+            .addAllConditions(new ArrayList<Condition>())
+            .setObservedGeneration(900833007)
+            .setRunningCount(261439119)
+            .setSucceededCount(633694641)
+            .setFailedCount(-2013829491)
+            .setCancelledCount(1921113249)
+            .setRetriedCount(-1654679545)
+            .setLogUri("logUri-1097354360")
+            .setSatisfiesPzs(true)
+            .setEtag("etag3123477")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("cancelExecutionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockExecutions.addResponse(resultOperation);
+
+    ExecutionName name = ExecutionName.of("[PROJECT]", "[LOCATION]", "[JOB]", "[EXECUTION]");
+
+    Execution actualResponse = client.cancelExecutionAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockExecutions.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CancelExecutionRequest actualRequest = ((CancelExecutionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void cancelExecutionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockExecutions.addException(exception);
+
+    try {
+      ExecutionName name = ExecutionName.of("[PROJECT]", "[LOCATION]", "[JOB]", "[EXECUTION]");
+      client.cancelExecutionAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void cancelExecutionTest2() throws Exception {
+    Execution expectedResponse =
+        Execution.newBuilder()
+            .setName(ExecutionName.of("[PROJECT]", "[LOCATION]", "[JOB]", "[EXECUTION]").toString())
+            .setUid("uid115792")
+            .setGeneration(305703192)
+            .putAllLabels(new HashMap<String, String>())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setStartTime(Timestamp.newBuilder().build())
+            .setCompletionTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDeleteTime(Timestamp.newBuilder().build())
+            .setExpireTime(Timestamp.newBuilder().build())
+            .setLaunchStage(LaunchStage.forNumber(0))
+            .setJob(JobName.of("[PROJECT]", "[LOCATION]", "[JOB]").toString())
+            .setParallelism(635164956)
+            .setTaskCount(1297805781)
+            .setTemplate(TaskTemplate.newBuilder().build())
+            .setReconciling(true)
+            .addAllConditions(new ArrayList<Condition>())
+            .setObservedGeneration(900833007)
+            .setRunningCount(261439119)
+            .setSucceededCount(633694641)
+            .setFailedCount(-2013829491)
+            .setCancelledCount(1921113249)
+            .setRetriedCount(-1654679545)
+            .setLogUri("logUri-1097354360")
+            .setSatisfiesPzs(true)
+            .setEtag("etag3123477")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("cancelExecutionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockExecutions.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    Execution actualResponse = client.cancelExecutionAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockExecutions.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CancelExecutionRequest actualRequest = ((CancelExecutionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void cancelExecutionExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockExecutions.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.cancelExecutionAsync(name).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());

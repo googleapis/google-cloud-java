@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,12 +32,15 @@ public interface UpdateAlertPolicyRequestOrBuilder
    * value of the corresponding field in the supplied policy (`alert_policy`),
    * or to the field's default value if the field is not in the supplied
    * alerting policy.  Fields not listed retain their previous value.
+   *
    * Examples of valid field masks include `display_name`, `documentation`,
    * `documentation.content`, `documentation.mime_type`, `user_labels`,
    * `user_label.nameofkey`, `enabled`, `conditions`, `combiner`, etc.
+   *
    * If this field is empty, then the supplied alerting policy replaces the
    * existing policy. It is the same as deleting the existing policy and
    * adding the supplied policy, except for the following:
+   *
    * +   The new policy will have the same `[ALERT_POLICY_ID]` as the former
    *     policy. This gives you continuity with the former policy in your
    *     notifications and incidents.
@@ -61,12 +64,15 @@ public interface UpdateAlertPolicyRequestOrBuilder
    * value of the corresponding field in the supplied policy (`alert_policy`),
    * or to the field's default value if the field is not in the supplied
    * alerting policy.  Fields not listed retain their previous value.
+   *
    * Examples of valid field masks include `display_name`, `documentation`,
    * `documentation.content`, `documentation.mime_type`, `user_labels`,
    * `user_label.nameofkey`, `enabled`, `conditions`, `combiner`, etc.
+   *
    * If this field is empty, then the supplied alerting policy replaces the
    * existing policy. It is the same as deleting the existing policy and
    * adding the supplied policy, except for the following:
+   *
    * +   The new policy will have the same `[ALERT_POLICY_ID]` as the former
    *     policy. This gives you continuity with the former policy in your
    *     notifications and incidents.
@@ -90,12 +96,15 @@ public interface UpdateAlertPolicyRequestOrBuilder
    * value of the corresponding field in the supplied policy (`alert_policy`),
    * or to the field's default value if the field is not in the supplied
    * alerting policy.  Fields not listed retain their previous value.
+   *
    * Examples of valid field masks include `display_name`, `documentation`,
    * `documentation.content`, `documentation.mime_type`, `user_labels`,
    * `user_label.nameofkey`, `enabled`, `conditions`, `combiner`, etc.
+   *
    * If this field is empty, then the supplied alerting policy replaces the
    * existing policy. It is the same as deleting the existing policy and
    * adding the supplied policy, except for the following:
+   *
    * +   The new policy will have the same `[ALERT_POLICY_ID]` as the former
    *     policy. This gives you continuity with the former policy in your
    *     notifications and incidents.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
     return new ListGroupsRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.monitoring.v3.GroupServiceProto
         .internal_static_google_monitoring_v3_ListGroupsRequest_descriptor;
@@ -69,6 +64,8 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
   }
 
   private int filterCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object filter_;
 
   public enum FilterCase
@@ -128,6 +125,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name)
    * whose groups are to be listed. The format is:
+   *
    *     projects/[PROJECT_ID_OR_NUMBER]
    * </pre>
    *
@@ -155,6 +153,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name)
    * whose groups are to be listed. The format is:
+   *
    *     projects/[PROJECT_ID_OR_NUMBER]
    * </pre>
    *
@@ -183,7 +182,9 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * A group name. The format is:
+   *
    *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
+   *
    * Returns groups whose `parent_name` field contains the group
    * name.  If no groups have this parent, the results are empty.
    * </pre>
@@ -200,7 +201,9 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * A group name. The format is:
+   *
    *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
+   *
    * Returns groups whose `parent_name` field contains the group
    * name.  If no groups have this parent, the results are empty.
    * </pre>
@@ -230,7 +233,9 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * A group name. The format is:
+   *
    *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
+   *
    * Returns groups whose `parent_name` field contains the group
    * name.  If no groups have this parent, the results are empty.
    * </pre>
@@ -262,7 +267,9 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * A group name. The format is:
+   *
    *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
+   *
    * Returns groups that are ancestors of the specified group.
    * The groups are returned in order, starting with the immediate parent and
    * ending with the most distant ancestor.  If the specified group has no
@@ -281,7 +288,9 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * A group name. The format is:
+   *
    *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
+   *
    * Returns groups that are ancestors of the specified group.
    * The groups are returned in order, starting with the immediate parent and
    * ending with the most distant ancestor.  If the specified group has no
@@ -313,7 +322,9 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * A group name. The format is:
+   *
    *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
+   *
    * Returns groups that are ancestors of the specified group.
    * The groups are returned in order, starting with the immediate parent and
    * ending with the most distant ancestor.  If the specified group has no
@@ -347,7 +358,9 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * A group name. The format is:
+   *
    *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
+   *
    * Returns the descendants of the specified group.  This is a superset of
    * the results returned by the `children_of_group` filter, and includes
    * children-of-children, and so forth.
@@ -365,7 +378,9 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * A group name. The format is:
+   *
    *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
+   *
    * Returns the descendants of the specified group.  This is a superset of
    * the results returned by the `children_of_group` filter, and includes
    * children-of-children, and so forth.
@@ -396,7 +411,9 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * A group name. The format is:
+   *
    *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
+   *
    * Returns the descendants of the specified group.  This is a superset of
    * the results returned by the `children_of_group` filter, and includes
    * children-of-children, and so forth.
@@ -1008,6 +1025,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name)
      * whose groups are to be listed. The format is:
+     *
      *     projects/[PROJECT_ID_OR_NUMBER]
      * </pre>
      *
@@ -1034,6 +1052,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name)
      * whose groups are to be listed. The format is:
+     *
      *     projects/[PROJECT_ID_OR_NUMBER]
      * </pre>
      *
@@ -1060,6 +1079,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name)
      * whose groups are to be listed. The format is:
+     *
      *     projects/[PROJECT_ID_OR_NUMBER]
      * </pre>
      *
@@ -1085,6 +1105,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name)
      * whose groups are to be listed. The format is:
+     *
      *     projects/[PROJECT_ID_OR_NUMBER]
      * </pre>
      *
@@ -1106,6 +1127,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name)
      * whose groups are to be listed. The format is:
+     *
      *     projects/[PROJECT_ID_OR_NUMBER]
      * </pre>
      *
@@ -1132,7 +1154,9 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * A group name. The format is:
+     *
      *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
+     *
      * Returns groups whose `parent_name` field contains the group
      * name.  If no groups have this parent, the results are empty.
      * </pre>
@@ -1150,7 +1174,9 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * A group name. The format is:
+     *
      *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
+     *
      * Returns groups whose `parent_name` field contains the group
      * name.  If no groups have this parent, the results are empty.
      * </pre>
@@ -1181,7 +1207,9 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * A group name. The format is:
+     *
      *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
+     *
      * Returns groups whose `parent_name` field contains the group
      * name.  If no groups have this parent, the results are empty.
      * </pre>
@@ -1212,7 +1240,9 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * A group name. The format is:
+     *
      *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
+     *
      * Returns groups whose `parent_name` field contains the group
      * name.  If no groups have this parent, the results are empty.
      * </pre>
@@ -1236,7 +1266,9 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * A group name. The format is:
+     *
      *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
+     *
      * Returns groups whose `parent_name` field contains the group
      * name.  If no groups have this parent, the results are empty.
      * </pre>
@@ -1258,7 +1290,9 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * A group name. The format is:
+     *
      *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
+     *
      * Returns groups whose `parent_name` field contains the group
      * name.  If no groups have this parent, the results are empty.
      * </pre>
@@ -1284,7 +1318,9 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * A group name. The format is:
+     *
      *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
+     *
      * Returns groups that are ancestors of the specified group.
      * The groups are returned in order, starting with the immediate parent and
      * ending with the most distant ancestor.  If the specified group has no
@@ -1304,7 +1340,9 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * A group name. The format is:
+     *
      *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
+     *
      * Returns groups that are ancestors of the specified group.
      * The groups are returned in order, starting with the immediate parent and
      * ending with the most distant ancestor.  If the specified group has no
@@ -1337,7 +1375,9 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * A group name. The format is:
+     *
      *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
+     *
      * Returns groups that are ancestors of the specified group.
      * The groups are returned in order, starting with the immediate parent and
      * ending with the most distant ancestor.  If the specified group has no
@@ -1370,7 +1410,9 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * A group name. The format is:
+     *
      *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
+     *
      * Returns groups that are ancestors of the specified group.
      * The groups are returned in order, starting with the immediate parent and
      * ending with the most distant ancestor.  If the specified group has no
@@ -1396,7 +1438,9 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * A group name. The format is:
+     *
      *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
+     *
      * Returns groups that are ancestors of the specified group.
      * The groups are returned in order, starting with the immediate parent and
      * ending with the most distant ancestor.  If the specified group has no
@@ -1420,7 +1464,9 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * A group name. The format is:
+     *
      *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
+     *
      * Returns groups that are ancestors of the specified group.
      * The groups are returned in order, starting with the immediate parent and
      * ending with the most distant ancestor.  If the specified group has no
@@ -1448,7 +1494,9 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * A group name. The format is:
+     *
      *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
+     *
      * Returns the descendants of the specified group.  This is a superset of
      * the results returned by the `children_of_group` filter, and includes
      * children-of-children, and so forth.
@@ -1467,7 +1515,9 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * A group name. The format is:
+     *
      *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
+     *
      * Returns the descendants of the specified group.  This is a superset of
      * the results returned by the `children_of_group` filter, and includes
      * children-of-children, and so forth.
@@ -1499,7 +1549,9 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * A group name. The format is:
+     *
      *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
+     *
      * Returns the descendants of the specified group.  This is a superset of
      * the results returned by the `children_of_group` filter, and includes
      * children-of-children, and so forth.
@@ -1531,7 +1583,9 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * A group name. The format is:
+     *
      *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
+     *
      * Returns the descendants of the specified group.  This is a superset of
      * the results returned by the `children_of_group` filter, and includes
      * children-of-children, and so forth.
@@ -1556,7 +1610,9 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * A group name. The format is:
+     *
      *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
+     *
      * Returns the descendants of the specified group.  This is a superset of
      * the results returned by the `children_of_group` filter, and includes
      * children-of-children, and so forth.
@@ -1579,7 +1635,9 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * A group name. The format is:
+     *
      *     projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
+     *
      * Returns the descendants of the specified group.  This is a superset of
      * the results returned by the `children_of_group` filter, and includes
      * children-of-children, and so forth.

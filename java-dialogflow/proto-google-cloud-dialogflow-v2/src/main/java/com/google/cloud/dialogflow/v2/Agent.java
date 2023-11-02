@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ package com.google.cloud.dialogflow.v2;
  * during a conversation to structured data that your apps and services can
  * understand. You design and build a Dialogflow agent to handle the types of
  * conversations required for your system.
+ *
  * For more information about agents, see the
  * [Agent guide](https://cloud.google.com/dialogflow/docs/agents-overview).
  * </pre>
@@ -48,7 +49,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
     parent_ = "";
     displayName_ = "";
     defaultLanguageCode_ = "";
-    supportedLanguageCodes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    supportedLanguageCodes_ = com.google.protobuf.LazyStringArrayList.emptyList();
     timeZone_ = "";
     description_ = "";
     avatarUri_ = "";
@@ -61,11 +62,6 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Agent();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -775,7 +771,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
   public static final int SUPPORTED_LANGUAGE_CODES_FIELD_NUMBER = 4;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList supportedLanguageCodes_;
+  private com.google.protobuf.LazyStringArrayList supportedLanguageCodes_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -1461,6 +1458,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    * during a conversation to structured data that your apps and services can
    * understand. You design and build a Dialogflow agent to handle the types of
    * conversations required for your system.
+   *
    * For more information about agents, see the
    * [Agent guide](https://cloud.google.com/dialogflow/docs/agents-overview).
    * </pre>
@@ -1500,8 +1498,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       parent_ = "";
       displayName_ = "";
       defaultLanguageCode_ = "";
-      supportedLanguageCodes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      supportedLanguageCodes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       timeZone_ = "";
       description_ = "";
       avatarUri_ = "";
@@ -1536,20 +1533,11 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.dialogflow.v2.Agent buildPartial() {
       com.google.cloud.dialogflow.v2.Agent result = new com.google.cloud.dialogflow.v2.Agent(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(com.google.cloud.dialogflow.v2.Agent result) {
-      if (((bitField0_ & 0x00000008) != 0)) {
-        supportedLanguageCodes_ = supportedLanguageCodes_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000008);
-      }
-      result.supportedLanguageCodes_ = supportedLanguageCodes_;
     }
 
     private void buildPartial0(com.google.cloud.dialogflow.v2.Agent result) {
@@ -1562,6 +1550,10 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.defaultLanguageCode_ = defaultLanguageCode_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        supportedLanguageCodes_.makeImmutable();
+        result.supportedLanguageCodes_ = supportedLanguageCodes_;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.timeZone_ = timeZone_;
@@ -1652,7 +1644,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       if (!other.supportedLanguageCodes_.isEmpty()) {
         if (supportedLanguageCodes_.isEmpty()) {
           supportedLanguageCodes_ = other.supportedLanguageCodes_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ |= 0x00000008;
         } else {
           ensureSupportedLanguageCodesIsMutable();
           supportedLanguageCodes_.addAll(other.supportedLanguageCodes_);
@@ -2160,15 +2152,15 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList supportedLanguageCodes_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList supportedLanguageCodes_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureSupportedLanguageCodesIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!supportedLanguageCodes_.isModifiable()) {
         supportedLanguageCodes_ =
             new com.google.protobuf.LazyStringArrayList(supportedLanguageCodes_);
-        bitField0_ |= 0x00000008;
       }
+      bitField0_ |= 0x00000008;
     }
     /**
      *
@@ -2184,7 +2176,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the supportedLanguageCodes.
      */
     public com.google.protobuf.ProtocolStringList getSupportedLanguageCodesList() {
-      return supportedLanguageCodes_.getUnmodifiableView();
+      supportedLanguageCodes_.makeImmutable();
+      return supportedLanguageCodes_;
     }
     /**
      *
@@ -2257,6 +2250,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       }
       ensureSupportedLanguageCodesIsMutable();
       supportedLanguageCodes_.set(index, value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2280,6 +2274,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       }
       ensureSupportedLanguageCodesIsMutable();
       supportedLanguageCodes_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2300,6 +2295,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllSupportedLanguageCodes(java.lang.Iterable<java.lang.String> values) {
       ensureSupportedLanguageCodesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, supportedLanguageCodes_);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2317,8 +2313,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSupportedLanguageCodes() {
-      supportedLanguageCodes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      supportedLanguageCodes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000008);
+      ;
       onChanged();
       return this;
     }
@@ -2343,6 +2340,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureSupportedLanguageCodesIsMutable();
       supportedLanguageCodes_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

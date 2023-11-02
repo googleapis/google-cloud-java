@@ -13,5 +13,7 @@
   "api_id": "eventarc.googleapis.com",
   "library_type": "GAPIC_AUTO",
   "requires_billing": true,
-  "codeowner_team": "@googleapis/aap-dpes"
+  "codeowner_team": "@googleapis/aap-dpes",
+  "rest_documentation": "https://cloud.google.com/eventarc/docs/reference/rest",
+  "rpc_documentation": "https://cloud.google.com/eventarc/docs/reference/rpc"
 }

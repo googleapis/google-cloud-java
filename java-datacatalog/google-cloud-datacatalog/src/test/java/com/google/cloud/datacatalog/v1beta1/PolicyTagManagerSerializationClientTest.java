@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,6 +40,7 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class PolicyTagManagerSerializationClientTest {
+  private static MockIAMPolicy mockIAMPolicy;
   private static MockPolicyTagManagerSerialization mockPolicyTagManagerSerialization;
   private static MockServiceHelper mockServiceHelper;
   private LocalChannelProvider channelProvider;
@@ -48,10 +49,11 @@ public class PolicyTagManagerSerializationClientTest {
   @BeforeClass
   public static void startStaticServer() {
     mockPolicyTagManagerSerialization = new MockPolicyTagManagerSerialization();
+    mockIAMPolicy = new MockIAMPolicy();
     mockServiceHelper =
         new MockServiceHelper(
             UUID.randomUUID().toString(),
-            Arrays.<MockGrpcService>asList(mockPolicyTagManagerSerialization));
+            Arrays.<MockGrpcService>asList(mockPolicyTagManagerSerialization, mockIAMPolicy));
     mockServiceHelper.start();
   }
 

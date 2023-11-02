@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -66,4 +66,42 @@ public interface NodePoolAutoConfigOrBuilder
    * <code>.google.container.v1.NetworkTags network_tags = 1;</code>
    */
   com.google.container.v1.NetworkTagsOrBuilder getNetworkTagsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Resource manager tag keys and values to be attached to the nodes
+   * for managing Compute Engine firewalls using Network Firewall Policies.
+   * </pre>
+   *
+   * <code>.google.container.v1.ResourceManagerTags resource_manager_tags = 2;</code>
+   *
+   * @return Whether the resourceManagerTags field is set.
+   */
+  boolean hasResourceManagerTags();
+  /**
+   *
+   *
+   * <pre>
+   * Resource manager tag keys and values to be attached to the nodes
+   * for managing Compute Engine firewalls using Network Firewall Policies.
+   * </pre>
+   *
+   * <code>.google.container.v1.ResourceManagerTags resource_manager_tags = 2;</code>
+   *
+   * @return The resourceManagerTags.
+   */
+  com.google.container.v1.ResourceManagerTags getResourceManagerTags();
+  /**
+   *
+   *
+   * <pre>
+   * Resource manager tag keys and values to be attached to the nodes
+   * for managing Compute Engine firewalls using Network Firewall Policies.
+   * </pre>
+   *
+   * <code>.google.container.v1.ResourceManagerTags resource_manager_tags = 2;</code>
+   */
+  com.google.container.v1.ResourceManagerTagsOrBuilder getResourceManagerTagsOrBuilder();
 }

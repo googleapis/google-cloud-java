@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class ImageClassificationModelDeploymentMetadata
     return new ImageClassificationModelDeploymentMetadata();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.automl.v1beta1.ImageProto
         .internal_static_google_cloud_automl_v1beta1_ImageClassificationModelDeploymentMetadata_descriptor;
@@ -77,6 +72,7 @@ public final class ImageClassificationModelDeploymentMetadata
    * Input only. The number of nodes to deploy the model on. A node is an
    * abstraction of a machine resource, which can handle online prediction QPS
    * as given in the model's
+   *
    * [node_qps][google.cloud.automl.v1beta1.ImageClassificationModelMetadata.node_qps].
    * Must be between 1 and 100, inclusive on both ends.
    * </pre>
@@ -457,6 +453,7 @@ public final class ImageClassificationModelDeploymentMetadata
      * Input only. The number of nodes to deploy the model on. A node is an
      * abstraction of a machine resource, which can handle online prediction QPS
      * as given in the model's
+     *
      * [node_qps][google.cloud.automl.v1beta1.ImageClassificationModelMetadata.node_qps].
      * Must be between 1 and 100, inclusive on both ends.
      * </pre>
@@ -476,6 +473,7 @@ public final class ImageClassificationModelDeploymentMetadata
      * Input only. The number of nodes to deploy the model on. A node is an
      * abstraction of a machine resource, which can handle online prediction QPS
      * as given in the model's
+     *
      * [node_qps][google.cloud.automl.v1beta1.ImageClassificationModelMetadata.node_qps].
      * Must be between 1 and 100, inclusive on both ends.
      * </pre>
@@ -499,6 +497,7 @@ public final class ImageClassificationModelDeploymentMetadata
      * Input only. The number of nodes to deploy the model on. A node is an
      * abstraction of a machine resource, which can handle online prediction QPS
      * as given in the model's
+     *
      * [node_qps][google.cloud.automl.v1beta1.ImageClassificationModelMetadata.node_qps].
      * Must be between 1 and 100, inclusive on both ends.
      * </pre>

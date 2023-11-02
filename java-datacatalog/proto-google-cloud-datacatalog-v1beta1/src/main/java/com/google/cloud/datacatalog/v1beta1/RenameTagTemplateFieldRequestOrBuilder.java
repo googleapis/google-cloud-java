@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ public interface RenameTagTemplateFieldRequestOrBuilder
    *
    * <pre>
    * Required. The name of the tag template. Example:
+   *
    * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}
    * </pre>
    *
@@ -43,6 +44,7 @@ public interface RenameTagTemplateFieldRequestOrBuilder
    *
    * <pre>
    * Required. The name of the tag template. Example:
+   *
    * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}
    * </pre>
    *
@@ -58,7 +60,8 @@ public interface RenameTagTemplateFieldRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The new ID of this tag template field. For example, `my_new_field`.
+   * Required. The new ID of this tag template field. For example,
+   * `my_new_field`.
    * </pre>
    *
    * <code>string new_tag_template_field_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -70,7 +73,8 @@ public interface RenameTagTemplateFieldRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The new ID of this tag template field. For example, `my_new_field`.
+   * Required. The new ID of this tag template field. For example,
+   * `my_new_field`.
    * </pre>
    *
    * <code>string new_tag_template_field_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>

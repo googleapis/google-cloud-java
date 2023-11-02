@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,7 +39,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
 
   private Partition() {
     name_ = "";
-    values_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    values_ = com.google.protobuf.LazyStringArrayList.emptyList();
     location_ = "";
     etag_ = "";
   }
@@ -48,11 +48,6 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Partition();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -136,7 +131,8 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
   public static final int VALUES_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList values_;
+  private com.google.protobuf.LazyStringArrayList values_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -556,8 +552,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       bitField0_ = 0;
       name_ = "";
-      values_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      values_ = com.google.protobuf.LazyStringArrayList.emptyList();
       location_ = "";
       etag_ = "";
       return this;
@@ -587,7 +582,6 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dataplex.v1.Partition buildPartial() {
       com.google.cloud.dataplex.v1.Partition result =
           new com.google.cloud.dataplex.v1.Partition(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -595,18 +589,14 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
       return result;
     }
 
-    private void buildPartialRepeatedFields(com.google.cloud.dataplex.v1.Partition result) {
-      if (((bitField0_ & 0x00000002) != 0)) {
-        values_ = values_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.values_ = values_;
-    }
-
     private void buildPartial0(com.google.cloud.dataplex.v1.Partition result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        values_.makeImmutable();
+        result.values_ = values_;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.location_ = location_;
@@ -669,7 +659,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
       if (!other.values_.isEmpty()) {
         if (values_.isEmpty()) {
           values_ = other.values_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureValuesIsMutable();
           values_.addAll(other.values_);
@@ -892,14 +882,14 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList values_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList values_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureValuesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!values_.isModifiable()) {
         values_ = new com.google.protobuf.LazyStringArrayList(values_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -916,7 +906,8 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the values.
      */
     public com.google.protobuf.ProtocolStringList getValuesList() {
-      return values_.getUnmodifiableView();
+      values_.makeImmutable();
+      return values_;
     }
     /**
      *
@@ -993,6 +984,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
       }
       ensureValuesIsMutable();
       values_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1017,6 +1009,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
       }
       ensureValuesIsMutable();
       values_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1038,6 +1031,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllValues(java.lang.Iterable<java.lang.String> values) {
       ensureValuesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, values_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1056,8 +1050,9 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearValues() {
-      values_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      values_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -1083,6 +1078,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureValuesIsMutable();
       values_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

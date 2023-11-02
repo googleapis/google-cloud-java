@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,16 +36,21 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.PagedListDescriptor;
 import com.google.api.gax.rpc.PagedListResponseFactory;
+import com.google.api.gax.rpc.ServerStreamingCallSettings;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.aiplatform.v1beta1.CountTokensRequest;
+import com.google.cloud.aiplatform.v1beta1.CountTokensResponse;
 import com.google.cloud.aiplatform.v1beta1.ExplainRequest;
 import com.google.cloud.aiplatform.v1beta1.ExplainResponse;
 import com.google.cloud.aiplatform.v1beta1.PredictRequest;
 import com.google.cloud.aiplatform.v1beta1.PredictResponse;
 import com.google.cloud.aiplatform.v1beta1.RawPredictRequest;
+import com.google.cloud.aiplatform.v1beta1.StreamingPredictRequest;
+import com.google.cloud.aiplatform.v1beta1.StreamingPredictResponse;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -111,7 +116,10 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
 
   private final UnaryCallSettings<PredictRequest, PredictResponse> predictSettings;
   private final UnaryCallSettings<RawPredictRequest, HttpBody> rawPredictSettings;
+  private final ServerStreamingCallSettings<StreamingPredictRequest, StreamingPredictResponse>
+      serverStreamingPredictSettings;
   private final UnaryCallSettings<ExplainRequest, ExplainResponse> explainSettings;
+  private final UnaryCallSettings<CountTokensRequest, CountTokensResponse> countTokensSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -184,9 +192,20 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
     return rawPredictSettings;
   }
 
+  /** Returns the object with the settings used for calls to serverStreamingPredict. */
+  public ServerStreamingCallSettings<StreamingPredictRequest, StreamingPredictResponse>
+      serverStreamingPredictSettings() {
+    return serverStreamingPredictSettings;
+  }
+
   /** Returns the object with the settings used for calls to explain. */
   public UnaryCallSettings<ExplainRequest, ExplainResponse> explainSettings() {
     return explainSettings;
+  }
+
+  /** Returns the object with the settings used for calls to countTokens. */
+  public UnaryCallSettings<CountTokensRequest, CountTokensResponse> countTokensSettings() {
+    return countTokensSettings;
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -293,7 +312,9 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
 
     predictSettings = settingsBuilder.predictSettings().build();
     rawPredictSettings = settingsBuilder.rawPredictSettings().build();
+    serverStreamingPredictSettings = settingsBuilder.serverStreamingPredictSettings().build();
     explainSettings = settingsBuilder.explainSettings().build();
+    countTokensSettings = settingsBuilder.countTokensSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
@@ -306,7 +327,12 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
     private final UnaryCallSettings.Builder<PredictRequest, PredictResponse> predictSettings;
     private final UnaryCallSettings.Builder<RawPredictRequest, HttpBody> rawPredictSettings;
+    private final ServerStreamingCallSettings.Builder<
+            StreamingPredictRequest, StreamingPredictResponse>
+        serverStreamingPredictSettings;
     private final UnaryCallSettings.Builder<ExplainRequest, ExplainResponse> explainSettings;
+    private final UnaryCallSettings.Builder<CountTokensRequest, CountTokensResponse>
+        countTokensSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -354,7 +380,9 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
 
       predictSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       rawPredictSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      serverStreamingPredictSettings = ServerStreamingCallSettings.newBuilder();
       explainSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      countTokensSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -366,6 +394,7 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
               predictSettings,
               rawPredictSettings,
               explainSettings,
+              countTokensSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -379,7 +408,9 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
 
       predictSettings = settings.predictSettings.toBuilder();
       rawPredictSettings = settings.rawPredictSettings.toBuilder();
+      serverStreamingPredictSettings = settings.serverStreamingPredictSettings.toBuilder();
       explainSettings = settings.explainSettings.toBuilder();
+      countTokensSettings = settings.countTokensSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
@@ -391,6 +422,7 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
               predictSettings,
               rawPredictSettings,
               explainSettings,
+              countTokensSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -423,9 +455,19 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
+          .serverStreamingPredictSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
           .explainSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_9_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_9_params"));
+
+      builder
+          .countTokensSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .listLocationsSettings()
@@ -480,9 +522,21 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
       return rawPredictSettings;
     }
 
+    /** Returns the builder for the settings used for calls to serverStreamingPredict. */
+    public ServerStreamingCallSettings.Builder<StreamingPredictRequest, StreamingPredictResponse>
+        serverStreamingPredictSettings() {
+      return serverStreamingPredictSettings;
+    }
+
     /** Returns the builder for the settings used for calls to explain. */
     public UnaryCallSettings.Builder<ExplainRequest, ExplainResponse> explainSettings() {
       return explainSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to countTokens. */
+    public UnaryCallSettings.Builder<CountTokensRequest, CountTokensResponse>
+        countTokensSettings() {
+      return countTokensSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

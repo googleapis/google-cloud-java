@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ public interface GetCompanyRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of the company to be retrieved.
+   *
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
    * example, "projects/api-test-project/tenants/foo/companies/bar".
@@ -45,6 +46,7 @@ public interface GetCompanyRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of the company to be retrieved.
+   *
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
    * example, "projects/api-test-project/tenants/foo/companies/bar".

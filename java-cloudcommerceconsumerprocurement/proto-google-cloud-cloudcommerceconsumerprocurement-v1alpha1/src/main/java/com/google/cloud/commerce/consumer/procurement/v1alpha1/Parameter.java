@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Parameter();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -159,8 +154,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
      */
     double getDoubleValue();
 
-    public com.google.cloud.commerce.consumer.procurement.v1alpha1.Parameter.Value.KindCase
-        getKindCase();
+    com.google.cloud.commerce.consumer.procurement.v1alpha1.Parameter.Value.KindCase getKindCase();
   }
   /** Protobuf type {@code google.cloud.commerce.consumer.procurement.v1alpha1.Parameter.Value} */
   public static final class Value extends com.google.protobuf.GeneratedMessageV3
@@ -181,11 +175,6 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
       return new Value();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.commerce.consumer.procurement.v1alpha1.OrderOuterClass
           .internal_static_google_cloud_commerce_consumer_procurement_v1alpha1_Parameter_Value_descriptor;
@@ -203,6 +192,8 @@ public final class Parameter extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int kindCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object kind_;
 
     public enum KindCase

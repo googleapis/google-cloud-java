@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,6 +64,8 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
+import com.google.devtools.artifactregistry.v1.BatchDeleteVersionsMetadata;
+import com.google.devtools.artifactregistry.v1.BatchDeleteVersionsRequest;
 import com.google.devtools.artifactregistry.v1.CreateRepositoryRequest;
 import com.google.devtools.artifactregistry.v1.CreateTagRequest;
 import com.google.devtools.artifactregistry.v1.DeletePackageRequest;
@@ -229,6 +231,11 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
   private final UnaryCallSettings<DeleteVersionRequest, Operation> deleteVersionSettings;
   private final OperationCallSettings<DeleteVersionRequest, Empty, OperationMetadata>
       deleteVersionOperationSettings;
+  private final UnaryCallSettings<BatchDeleteVersionsRequest, Operation>
+      batchDeleteVersionsSettings;
+  private final OperationCallSettings<
+          BatchDeleteVersionsRequest, Empty, BatchDeleteVersionsMetadata>
+      batchDeleteVersionsOperationSettings;
   private final PagedCallSettings<ListFilesRequest, ListFilesResponse, ListFilesPagedResponse>
       listFilesSettings;
   private final UnaryCallSettings<GetFileRequest, File> getFileSettings;
@@ -967,6 +974,17 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
     return deleteVersionOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to batchDeleteVersions. */
+  public UnaryCallSettings<BatchDeleteVersionsRequest, Operation> batchDeleteVersionsSettings() {
+    return batchDeleteVersionsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchDeleteVersions. */
+  public OperationCallSettings<BatchDeleteVersionsRequest, Empty, BatchDeleteVersionsMetadata>
+      batchDeleteVersionsOperationSettings() {
+    return batchDeleteVersionsOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to listFiles. */
   public PagedCallSettings<ListFilesRequest, ListFilesResponse, ListFilesPagedResponse>
       listFilesSettings() {
@@ -1188,6 +1206,9 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
     getVersionSettings = settingsBuilder.getVersionSettings().build();
     deleteVersionSettings = settingsBuilder.deleteVersionSettings().build();
     deleteVersionOperationSettings = settingsBuilder.deleteVersionOperationSettings().build();
+    batchDeleteVersionsSettings = settingsBuilder.batchDeleteVersionsSettings().build();
+    batchDeleteVersionsOperationSettings =
+        settingsBuilder.batchDeleteVersionsOperationSettings().build();
     listFilesSettings = settingsBuilder.listFilesSettings().build();
     getFileSettings = settingsBuilder.getFileSettings().build();
     listTagsSettings = settingsBuilder.listTagsSettings().build();
@@ -1267,6 +1288,11 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
     private final UnaryCallSettings.Builder<DeleteVersionRequest, Operation> deleteVersionSettings;
     private final OperationCallSettings.Builder<DeleteVersionRequest, Empty, OperationMetadata>
         deleteVersionOperationSettings;
+    private final UnaryCallSettings.Builder<BatchDeleteVersionsRequest, Operation>
+        batchDeleteVersionsSettings;
+    private final OperationCallSettings.Builder<
+            BatchDeleteVersionsRequest, Empty, BatchDeleteVersionsMetadata>
+        batchDeleteVersionsOperationSettings;
     private final PagedCallSettings.Builder<
             ListFilesRequest, ListFilesResponse, ListFilesPagedResponse>
         listFilesSettings;
@@ -1355,6 +1381,8 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
       getVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteVersionOperationSettings = OperationCallSettings.newBuilder();
+      batchDeleteVersionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchDeleteVersionsOperationSettings = OperationCallSettings.newBuilder();
       listFilesSettings = PagedCallSettings.newBuilder(LIST_FILES_PAGE_STR_FACT);
       getFileSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listTagsSettings = PagedCallSettings.newBuilder(LIST_TAGS_PAGE_STR_FACT);
@@ -1395,6 +1423,7 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
               listVersionsSettings,
               getVersionSettings,
               deleteVersionSettings,
+              batchDeleteVersionsSettings,
               listFilesSettings,
               getFileSettings,
               listTagsSettings,
@@ -1446,6 +1475,9 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
       getVersionSettings = settings.getVersionSettings.toBuilder();
       deleteVersionSettings = settings.deleteVersionSettings.toBuilder();
       deleteVersionOperationSettings = settings.deleteVersionOperationSettings.toBuilder();
+      batchDeleteVersionsSettings = settings.batchDeleteVersionsSettings.toBuilder();
+      batchDeleteVersionsOperationSettings =
+          settings.batchDeleteVersionsOperationSettings.toBuilder();
       listFilesSettings = settings.listFilesSettings.toBuilder();
       getFileSettings = settings.getFileSettings.toBuilder();
       listTagsSettings = settings.listTagsSettings.toBuilder();
@@ -1486,6 +1518,7 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
               listVersionsSettings,
               getVersionSettings,
               deleteVersionSettings,
+              batchDeleteVersionsSettings,
               listFilesSettings,
               getFileSettings,
               listTagsSettings,
@@ -1633,6 +1666,11 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
 
       builder
           .deleteVersionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .batchDeleteVersionsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
 
@@ -1864,6 +1902,31 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
                       .setTotalTimeout(Duration.ofMillis(300000L))
                       .build()));
 
+      builder
+          .batchDeleteVersionsOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<BatchDeleteVersionsRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(
+                  BatchDeleteVersionsMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
       return builder;
     }
 
@@ -2056,6 +2119,21 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
     public OperationCallSettings.Builder<DeleteVersionRequest, Empty, OperationMetadata>
         deleteVersionOperationSettings() {
       return deleteVersionOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchDeleteVersions. */
+    public UnaryCallSettings.Builder<BatchDeleteVersionsRequest, Operation>
+        batchDeleteVersionsSettings() {
+      return batchDeleteVersionsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchDeleteVersions. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            BatchDeleteVersionsRequest, Empty, BatchDeleteVersionsMetadata>
+        batchDeleteVersionsOperationSettings() {
+      return batchDeleteVersionsOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to listFiles. */

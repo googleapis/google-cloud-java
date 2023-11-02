@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,6 +30,7 @@ public interface AccessMetricOrBuilder
    * The API name of the metric. See [Data Access
    * Schema](https://developers.google.com/analytics/devguides/config/admin/v1/access-api-schema)
    * for the list of metrics supported in this API.
+   *
    * Metrics are referenced by name in `metricFilter` &amp; `orderBys`.
    * </pre>
    *
@@ -45,6 +46,7 @@ public interface AccessMetricOrBuilder
    * The API name of the metric. See [Data Access
    * Schema](https://developers.google.com/analytics/devguides/config/admin/v1/access-api-schema)
    * for the list of metrics supported in this API.
+   *
    * Metrics are referenced by name in `metricFilter` &amp; `orderBys`.
    * </pre>
    *

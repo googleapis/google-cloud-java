@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class EndpointVerificationInfo extends com.google.protobuf.Generate
     return new EndpointVerificationInfo();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.recaptchaenterprise.v1.RecaptchaEnterpriseProto
         .internal_static_google_cloud_recaptchaenterprise_v1_EndpointVerificationInfo_descriptor;
@@ -68,6 +63,8 @@ public final class EndpointVerificationInfo extends com.google.protobuf.Generate
   }
 
   private int endpointCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object endpoint_;
 
   public enum EndpointCase

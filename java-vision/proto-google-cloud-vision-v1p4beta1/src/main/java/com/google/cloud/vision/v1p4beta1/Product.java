@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,11 +49,6 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Product();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -158,11 +153,6 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new KeyValue();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -951,8 +941,10 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The resource name of the product.
+   *
    * Format is:
    * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`.
+   *
    * This field is ignored when creating a product.
    * </pre>
    *
@@ -977,8 +969,10 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The resource name of the product.
+   *
    * Format is:
    * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`.
+   *
    * This field is ignored when creating a product.
    * </pre>
    *
@@ -1172,11 +1166,14 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Key-value pairs that can be attached to a product. At query time,
    * constraints can be specified based on the product_labels.
+   *
    * Note that integer values can be provided as strings, e.g. "1199". Only
    * strings with integer values can match a range-based restriction which is
    * to be supported soon.
+   *
    * Multiple values can be assigned to the same key. One product may have up to
    * 500 product_labels.
+   *
    * Notice that the total number of distinct product_labels over all products
    * in one ProductSet cannot exceed 1M, otherwise the product search pipeline
    * will refuse to work for that ProductSet.
@@ -1194,11 +1191,14 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Key-value pairs that can be attached to a product. At query time,
    * constraints can be specified based on the product_labels.
+   *
    * Note that integer values can be provided as strings, e.g. "1199". Only
    * strings with integer values can match a range-based restriction which is
    * to be supported soon.
+   *
    * Multiple values can be assigned to the same key. One product may have up to
    * 500 product_labels.
+   *
    * Notice that the total number of distinct product_labels over all products
    * in one ProductSet cannot exceed 1M, otherwise the product search pipeline
    * will refuse to work for that ProductSet.
@@ -1217,11 +1217,14 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Key-value pairs that can be attached to a product. At query time,
    * constraints can be specified based on the product_labels.
+   *
    * Note that integer values can be provided as strings, e.g. "1199". Only
    * strings with integer values can match a range-based restriction which is
    * to be supported soon.
+   *
    * Multiple values can be assigned to the same key. One product may have up to
    * 500 product_labels.
+   *
    * Notice that the total number of distinct product_labels over all products
    * in one ProductSet cannot exceed 1M, otherwise the product search pipeline
    * will refuse to work for that ProductSet.
@@ -1239,11 +1242,14 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Key-value pairs that can be attached to a product. At query time,
    * constraints can be specified based on the product_labels.
+   *
    * Note that integer values can be provided as strings, e.g. "1199". Only
    * strings with integer values can match a range-based restriction which is
    * to be supported soon.
+   *
    * Multiple values can be assigned to the same key. One product may have up to
    * 500 product_labels.
+   *
    * Notice that the total number of distinct product_labels over all products
    * in one ProductSet cannot exceed 1M, otherwise the product search pipeline
    * will refuse to work for that ProductSet.
@@ -1261,11 +1267,14 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Key-value pairs that can be attached to a product. At query time,
    * constraints can be specified based on the product_labels.
+   *
    * Note that integer values can be provided as strings, e.g. "1199". Only
    * strings with integer values can match a range-based restriction which is
    * to be supported soon.
+   *
    * Multiple values can be assigned to the same key. One product may have up to
    * 500 product_labels.
+   *
    * Notice that the total number of distinct product_labels over all products
    * in one ProductSet cannot exceed 1M, otherwise the product search pipeline
    * will refuse to work for that ProductSet.
@@ -1770,8 +1779,10 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name of the product.
+     *
      * Format is:
      * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`.
+     *
      * This field is ignored when creating a product.
      * </pre>
      *
@@ -1795,8 +1806,10 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name of the product.
+     *
      * Format is:
      * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`.
+     *
      * This field is ignored when creating a product.
      * </pre>
      *
@@ -1820,8 +1833,10 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name of the product.
+     *
      * Format is:
      * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`.
+     *
      * This field is ignored when creating a product.
      * </pre>
      *
@@ -1844,8 +1859,10 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name of the product.
+     *
      * Format is:
      * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`.
+     *
      * This field is ignored when creating a product.
      * </pre>
      *
@@ -1864,8 +1881,10 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name of the product.
+     *
      * Format is:
      * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`.
+     *
      * This field is ignored when creating a product.
      * </pre>
      *
@@ -2252,11 +2271,14 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Key-value pairs that can be attached to a product. At query time,
      * constraints can be specified based on the product_labels.
+     *
      * Note that integer values can be provided as strings, e.g. "1199". Only
      * strings with integer values can match a range-based restriction which is
      * to be supported soon.
+     *
      * Multiple values can be assigned to the same key. One product may have up to
      * 500 product_labels.
+     *
      * Notice that the total number of distinct product_labels over all products
      * in one ProductSet cannot exceed 1M, otherwise the product search pipeline
      * will refuse to work for that ProductSet.
@@ -2278,11 +2300,14 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Key-value pairs that can be attached to a product. At query time,
      * constraints can be specified based on the product_labels.
+     *
      * Note that integer values can be provided as strings, e.g. "1199". Only
      * strings with integer values can match a range-based restriction which is
      * to be supported soon.
+     *
      * Multiple values can be assigned to the same key. One product may have up to
      * 500 product_labels.
+     *
      * Notice that the total number of distinct product_labels over all products
      * in one ProductSet cannot exceed 1M, otherwise the product search pipeline
      * will refuse to work for that ProductSet.
@@ -2303,11 +2328,14 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Key-value pairs that can be attached to a product. At query time,
      * constraints can be specified based on the product_labels.
+     *
      * Note that integer values can be provided as strings, e.g. "1199". Only
      * strings with integer values can match a range-based restriction which is
      * to be supported soon.
+     *
      * Multiple values can be assigned to the same key. One product may have up to
      * 500 product_labels.
+     *
      * Notice that the total number of distinct product_labels over all products
      * in one ProductSet cannot exceed 1M, otherwise the product search pipeline
      * will refuse to work for that ProductSet.
@@ -2328,11 +2356,14 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Key-value pairs that can be attached to a product. At query time,
      * constraints can be specified based on the product_labels.
+     *
      * Note that integer values can be provided as strings, e.g. "1199". Only
      * strings with integer values can match a range-based restriction which is
      * to be supported soon.
+     *
      * Multiple values can be assigned to the same key. One product may have up to
      * 500 product_labels.
+     *
      * Notice that the total number of distinct product_labels over all products
      * in one ProductSet cannot exceed 1M, otherwise the product search pipeline
      * will refuse to work for that ProductSet.
@@ -2360,11 +2391,14 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Key-value pairs that can be attached to a product. At query time,
      * constraints can be specified based on the product_labels.
+     *
      * Note that integer values can be provided as strings, e.g. "1199". Only
      * strings with integer values can match a range-based restriction which is
      * to be supported soon.
+     *
      * Multiple values can be assigned to the same key. One product may have up to
      * 500 product_labels.
+     *
      * Notice that the total number of distinct product_labels over all products
      * in one ProductSet cannot exceed 1M, otherwise the product search pipeline
      * will refuse to work for that ProductSet.
@@ -2389,11 +2423,14 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Key-value pairs that can be attached to a product. At query time,
      * constraints can be specified based on the product_labels.
+     *
      * Note that integer values can be provided as strings, e.g. "1199". Only
      * strings with integer values can match a range-based restriction which is
      * to be supported soon.
+     *
      * Multiple values can be assigned to the same key. One product may have up to
      * 500 product_labels.
+     *
      * Notice that the total number of distinct product_labels over all products
      * in one ProductSet cannot exceed 1M, otherwise the product search pipeline
      * will refuse to work for that ProductSet.
@@ -2420,11 +2457,14 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Key-value pairs that can be attached to a product. At query time,
      * constraints can be specified based on the product_labels.
+     *
      * Note that integer values can be provided as strings, e.g. "1199". Only
      * strings with integer values can match a range-based restriction which is
      * to be supported soon.
+     *
      * Multiple values can be assigned to the same key. One product may have up to
      * 500 product_labels.
+     *
      * Notice that the total number of distinct product_labels over all products
      * in one ProductSet cannot exceed 1M, otherwise the product search pipeline
      * will refuse to work for that ProductSet.
@@ -2452,11 +2492,14 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Key-value pairs that can be attached to a product. At query time,
      * constraints can be specified based on the product_labels.
+     *
      * Note that integer values can be provided as strings, e.g. "1199". Only
      * strings with integer values can match a range-based restriction which is
      * to be supported soon.
+     *
      * Multiple values can be assigned to the same key. One product may have up to
      * 500 product_labels.
+     *
      * Notice that the total number of distinct product_labels over all products
      * in one ProductSet cannot exceed 1M, otherwise the product search pipeline
      * will refuse to work for that ProductSet.
@@ -2481,11 +2524,14 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Key-value pairs that can be attached to a product. At query time,
      * constraints can be specified based on the product_labels.
+     *
      * Note that integer values can be provided as strings, e.g. "1199". Only
      * strings with integer values can match a range-based restriction which is
      * to be supported soon.
+     *
      * Multiple values can be assigned to the same key. One product may have up to
      * 500 product_labels.
+     *
      * Notice that the total number of distinct product_labels over all products
      * in one ProductSet cannot exceed 1M, otherwise the product search pipeline
      * will refuse to work for that ProductSet.
@@ -2510,11 +2556,14 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Key-value pairs that can be attached to a product. At query time,
      * constraints can be specified based on the product_labels.
+     *
      * Note that integer values can be provided as strings, e.g. "1199". Only
      * strings with integer values can match a range-based restriction which is
      * to be supported soon.
+     *
      * Multiple values can be assigned to the same key. One product may have up to
      * 500 product_labels.
+     *
      * Notice that the total number of distinct product_labels over all products
      * in one ProductSet cannot exceed 1M, otherwise the product search pipeline
      * will refuse to work for that ProductSet.
@@ -2539,11 +2588,14 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Key-value pairs that can be attached to a product. At query time,
      * constraints can be specified based on the product_labels.
+     *
      * Note that integer values can be provided as strings, e.g. "1199". Only
      * strings with integer values can match a range-based restriction which is
      * to be supported soon.
+     *
      * Multiple values can be assigned to the same key. One product may have up to
      * 500 product_labels.
+     *
      * Notice that the total number of distinct product_labels over all products
      * in one ProductSet cannot exceed 1M, otherwise the product search pipeline
      * will refuse to work for that ProductSet.
@@ -2567,11 +2619,14 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Key-value pairs that can be attached to a product. At query time,
      * constraints can be specified based on the product_labels.
+     *
      * Note that integer values can be provided as strings, e.g. "1199". Only
      * strings with integer values can match a range-based restriction which is
      * to be supported soon.
+     *
      * Multiple values can be assigned to the same key. One product may have up to
      * 500 product_labels.
+     *
      * Notice that the total number of distinct product_labels over all products
      * in one ProductSet cannot exceed 1M, otherwise the product search pipeline
      * will refuse to work for that ProductSet.
@@ -2595,11 +2650,14 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Key-value pairs that can be attached to a product. At query time,
      * constraints can be specified based on the product_labels.
+     *
      * Note that integer values can be provided as strings, e.g. "1199". Only
      * strings with integer values can match a range-based restriction which is
      * to be supported soon.
+     *
      * Multiple values can be assigned to the same key. One product may have up to
      * 500 product_labels.
+     *
      * Notice that the total number of distinct product_labels over all products
      * in one ProductSet cannot exceed 1M, otherwise the product search pipeline
      * will refuse to work for that ProductSet.
@@ -2617,11 +2675,14 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Key-value pairs that can be attached to a product. At query time,
      * constraints can be specified based on the product_labels.
+     *
      * Note that integer values can be provided as strings, e.g. "1199". Only
      * strings with integer values can match a range-based restriction which is
      * to be supported soon.
+     *
      * Multiple values can be assigned to the same key. One product may have up to
      * 500 product_labels.
+     *
      * Notice that the total number of distinct product_labels over all products
      * in one ProductSet cannot exceed 1M, otherwise the product search pipeline
      * will refuse to work for that ProductSet.
@@ -2643,11 +2704,14 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Key-value pairs that can be attached to a product. At query time,
      * constraints can be specified based on the product_labels.
+     *
      * Note that integer values can be provided as strings, e.g. "1199". Only
      * strings with integer values can match a range-based restriction which is
      * to be supported soon.
+     *
      * Multiple values can be assigned to the same key. One product may have up to
      * 500 product_labels.
+     *
      * Notice that the total number of distinct product_labels over all products
      * in one ProductSet cannot exceed 1M, otherwise the product search pipeline
      * will refuse to work for that ProductSet.
@@ -2669,11 +2733,14 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Key-value pairs that can be attached to a product. At query time,
      * constraints can be specified based on the product_labels.
+     *
      * Note that integer values can be provided as strings, e.g. "1199". Only
      * strings with integer values can match a range-based restriction which is
      * to be supported soon.
+     *
      * Multiple values can be assigned to the same key. One product may have up to
      * 500 product_labels.
+     *
      * Notice that the total number of distinct product_labels over all products
      * in one ProductSet cannot exceed 1M, otherwise the product search pipeline
      * will refuse to work for that ProductSet.
@@ -2691,11 +2758,14 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Key-value pairs that can be attached to a product. At query time,
      * constraints can be specified based on the product_labels.
+     *
      * Note that integer values can be provided as strings, e.g. "1199". Only
      * strings with integer values can match a range-based restriction which is
      * to be supported soon.
+     *
      * Multiple values can be assigned to the same key. One product may have up to
      * 500 product_labels.
+     *
      * Notice that the total number of distinct product_labels over all products
      * in one ProductSet cannot exceed 1M, otherwise the product search pipeline
      * will refuse to work for that ProductSet.
@@ -2715,11 +2785,14 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Key-value pairs that can be attached to a product. At query time,
      * constraints can be specified based on the product_labels.
+     *
      * Note that integer values can be provided as strings, e.g. "1199". Only
      * strings with integer values can match a range-based restriction which is
      * to be supported soon.
+     *
      * Multiple values can be assigned to the same key. One product may have up to
      * 500 product_labels.
+     *
      * Notice that the total number of distinct product_labels over all products
      * in one ProductSet cannot exceed 1M, otherwise the product search pipeline
      * will refuse to work for that ProductSet.

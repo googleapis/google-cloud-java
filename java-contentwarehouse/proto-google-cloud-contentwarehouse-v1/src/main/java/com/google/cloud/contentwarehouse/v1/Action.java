@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     return new Action();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.contentwarehouse.v1.RuleEngineProto
         .internal_static_google_cloud_contentwarehouse_v1_Action_descriptor;
@@ -68,6 +63,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int actionCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object action_;
 
   public enum ActionCase

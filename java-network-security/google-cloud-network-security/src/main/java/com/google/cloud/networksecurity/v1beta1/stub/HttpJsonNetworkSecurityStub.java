@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,6 +36,7 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.httpjson.longrunning.stub.HttpJsonOperationsStub;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -1033,30 +1034,62 @@ public class HttpJsonNetworkSecurityStub extends NetworkSecurityStub {
                 .<ListAuthorizationPoliciesRequest, ListAuthorizationPoliciesResponse>newBuilder()
                 .setMethodDescriptor(listAuthorizationPoliciesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetAuthorizationPolicyRequest, AuthorizationPolicy>
         getAuthorizationPolicyTransportSettings =
             HttpJsonCallSettings.<GetAuthorizationPolicyRequest, AuthorizationPolicy>newBuilder()
                 .setMethodDescriptor(getAuthorizationPolicyMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<CreateAuthorizationPolicyRequest, Operation>
         createAuthorizationPolicyTransportSettings =
             HttpJsonCallSettings.<CreateAuthorizationPolicyRequest, Operation>newBuilder()
                 .setMethodDescriptor(createAuthorizationPolicyMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<UpdateAuthorizationPolicyRequest, Operation>
         updateAuthorizationPolicyTransportSettings =
             HttpJsonCallSettings.<UpdateAuthorizationPolicyRequest, Operation>newBuilder()
                 .setMethodDescriptor(updateAuthorizationPolicyMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "authorization_policy.name",
+                          String.valueOf(request.getAuthorizationPolicy().getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteAuthorizationPolicyRequest, Operation>
         deleteAuthorizationPolicyTransportSettings =
             HttpJsonCallSettings.<DeleteAuthorizationPolicyRequest, Operation>newBuilder()
                 .setMethodDescriptor(deleteAuthorizationPolicyMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ListServerTlsPoliciesRequest, ListServerTlsPoliciesResponse>
         listServerTlsPoliciesTransportSettings =
@@ -1064,30 +1097,62 @@ public class HttpJsonNetworkSecurityStub extends NetworkSecurityStub {
                 .<ListServerTlsPoliciesRequest, ListServerTlsPoliciesResponse>newBuilder()
                 .setMethodDescriptor(listServerTlsPoliciesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetServerTlsPolicyRequest, ServerTlsPolicy>
         getServerTlsPolicyTransportSettings =
             HttpJsonCallSettings.<GetServerTlsPolicyRequest, ServerTlsPolicy>newBuilder()
                 .setMethodDescriptor(getServerTlsPolicyMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<CreateServerTlsPolicyRequest, Operation>
         createServerTlsPolicyTransportSettings =
             HttpJsonCallSettings.<CreateServerTlsPolicyRequest, Operation>newBuilder()
                 .setMethodDescriptor(createServerTlsPolicyMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<UpdateServerTlsPolicyRequest, Operation>
         updateServerTlsPolicyTransportSettings =
             HttpJsonCallSettings.<UpdateServerTlsPolicyRequest, Operation>newBuilder()
                 .setMethodDescriptor(updateServerTlsPolicyMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "server_tls_policy.name",
+                          String.valueOf(request.getServerTlsPolicy().getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteServerTlsPolicyRequest, Operation>
         deleteServerTlsPolicyTransportSettings =
             HttpJsonCallSettings.<DeleteServerTlsPolicyRequest, Operation>newBuilder()
                 .setMethodDescriptor(deleteServerTlsPolicyMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ListClientTlsPoliciesRequest, ListClientTlsPoliciesResponse>
         listClientTlsPoliciesTransportSettings =
@@ -1095,57 +1160,119 @@ public class HttpJsonNetworkSecurityStub extends NetworkSecurityStub {
                 .<ListClientTlsPoliciesRequest, ListClientTlsPoliciesResponse>newBuilder()
                 .setMethodDescriptor(listClientTlsPoliciesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetClientTlsPolicyRequest, ClientTlsPolicy>
         getClientTlsPolicyTransportSettings =
             HttpJsonCallSettings.<GetClientTlsPolicyRequest, ClientTlsPolicy>newBuilder()
                 .setMethodDescriptor(getClientTlsPolicyMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<CreateClientTlsPolicyRequest, Operation>
         createClientTlsPolicyTransportSettings =
             HttpJsonCallSettings.<CreateClientTlsPolicyRequest, Operation>newBuilder()
                 .setMethodDescriptor(createClientTlsPolicyMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<UpdateClientTlsPolicyRequest, Operation>
         updateClientTlsPolicyTransportSettings =
             HttpJsonCallSettings.<UpdateClientTlsPolicyRequest, Operation>newBuilder()
                 .setMethodDescriptor(updateClientTlsPolicyMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "client_tls_policy.name",
+                          String.valueOf(request.getClientTlsPolicy().getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteClientTlsPolicyRequest, Operation>
         deleteClientTlsPolicyTransportSettings =
             HttpJsonCallSettings.<DeleteClientTlsPolicyRequest, Operation>newBuilder()
                 .setMethodDescriptor(deleteClientTlsPolicyMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
                 .setMethodDescriptor(listLocationsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetLocationRequest, Location> getLocationTransportSettings =
         HttpJsonCallSettings.<GetLocationRequest, Location>newBuilder()
             .setMethodDescriptor(getLocationMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         HttpJsonCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
             .setMethodDescriptor(setIamPolicyMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
             .setMethodDescriptor(getIamPolicyMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
             HttpJsonCallSettings.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
                 .setMethodDescriptor(testIamPermissionsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      return builder.build();
+                    })
                 .build();
 
     this.listAuthorizationPoliciesCallable =

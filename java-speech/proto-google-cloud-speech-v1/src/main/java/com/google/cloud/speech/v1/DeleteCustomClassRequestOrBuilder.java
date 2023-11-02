@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,9 @@ public interface DeleteCustomClassRequestOrBuilder
    *
    * <pre>
    * Required. The name of the custom class to delete. Format:
+   *
    * `projects/{project}/locations/{location}/customClasses/{custom_class}`
+   *
    * Speech-to-Text supports three locations: `global`, `us` (US North America),
    * and `eu` (Europe). If you are calling the `speech.googleapis.com`
    * endpoint, use the `global` location. To specify a region, use a
@@ -48,7 +50,9 @@ public interface DeleteCustomClassRequestOrBuilder
    *
    * <pre>
    * Required. The name of the custom class to delete. Format:
+   *
    * `projects/{project}/locations/{location}/customClasses/{custom_class}`
+   *
    * Speech-to-Text supports three locations: `global`, `us` (US North America),
    * and `eu` (Europe). If you are calling the `speech.googleapis.com`
    * endpoint, use the `global` location. To specify a region, use a

@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,6 +26,7 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.cx.v3beta1.Agent;
 import com.google.cloud.dialogflow.cx.v3beta1.AgentValidationResult;
@@ -33,18 +34,20 @@ import com.google.cloud.dialogflow.cx.v3beta1.CreateAgentRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.DeleteAgentRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.ExportAgentResponse;
+import com.google.cloud.dialogflow.cx.v3beta1.GenerativeSettings;
 import com.google.cloud.dialogflow.cx.v3beta1.GetAgentRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.GetAgentValidationResultRequest;
+import com.google.cloud.dialogflow.cx.v3beta1.GetGenerativeSettingsRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.ListAgentsRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.ListAgentsResponse;
 import com.google.cloud.dialogflow.cx.v3beta1.RestoreAgentRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.UpdateAgentRequest;
+import com.google.cloud.dialogflow.cx.v3beta1.UpdateGenerativeSettingsRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.ValidateAgentRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
-import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
@@ -145,6 +148,27 @@ public class GrpcAgentsStub extends AgentsStub {
                   ProtoUtils.marshaller(AgentValidationResult.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<GetGenerativeSettingsRequest, GenerativeSettings>
+      getGenerativeSettingsMethodDescriptor =
+          MethodDescriptor.<GetGenerativeSettingsRequest, GenerativeSettings>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.dialogflow.cx.v3beta1.Agents/GetGenerativeSettings")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetGenerativeSettingsRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(GenerativeSettings.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UpdateGenerativeSettingsRequest, GenerativeSettings>
+      updateGenerativeSettingsMethodDescriptor =
+          MethodDescriptor.<UpdateGenerativeSettingsRequest, GenerativeSettings>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.dialogflow.cx.v3beta1.Agents/UpdateGenerativeSettings")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateGenerativeSettingsRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(GenerativeSettings.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -178,6 +202,10 @@ public class GrpcAgentsStub extends AgentsStub {
   private final UnaryCallable<ValidateAgentRequest, AgentValidationResult> validateAgentCallable;
   private final UnaryCallable<GetAgentValidationResultRequest, AgentValidationResult>
       getAgentValidationResultCallable;
+  private final UnaryCallable<GetGenerativeSettingsRequest, GenerativeSettings>
+      getGenerativeSettingsCallable;
+  private final UnaryCallable<UpdateGenerativeSettingsRequest, GenerativeSettings>
+      updateGenerativeSettingsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -227,9 +255,9 @@ public class GrpcAgentsStub extends AgentsStub {
             .setMethodDescriptor(listAgentsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetAgentRequest, Agent> getAgentTransportSettings =
@@ -237,9 +265,9 @@ public class GrpcAgentsStub extends AgentsStub {
             .setMethodDescriptor(getAgentMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CreateAgentRequest, Agent> createAgentTransportSettings =
@@ -247,9 +275,9 @@ public class GrpcAgentsStub extends AgentsStub {
             .setMethodDescriptor(createAgentMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateAgentRequest, Agent> updateAgentTransportSettings =
@@ -257,9 +285,9 @@ public class GrpcAgentsStub extends AgentsStub {
             .setMethodDescriptor(updateAgentMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("agent.name", String.valueOf(request.getAgent().getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("agent.name", String.valueOf(request.getAgent().getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteAgentRequest, Empty> deleteAgentTransportSettings =
@@ -267,9 +295,9 @@ public class GrpcAgentsStub extends AgentsStub {
             .setMethodDescriptor(deleteAgentMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ExportAgentRequest, Operation> exportAgentTransportSettings =
@@ -277,9 +305,9 @@ public class GrpcAgentsStub extends AgentsStub {
             .setMethodDescriptor(exportAgentMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<RestoreAgentRequest, Operation> restoreAgentTransportSettings =
@@ -287,9 +315,9 @@ public class GrpcAgentsStub extends AgentsStub {
             .setMethodDescriptor(restoreAgentMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ValidateAgentRequest, AgentValidationResult> validateAgentTransportSettings =
@@ -297,9 +325,9 @@ public class GrpcAgentsStub extends AgentsStub {
             .setMethodDescriptor(validateAgentMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetAgentValidationResultRequest, AgentValidationResult>
@@ -308,9 +336,33 @@ public class GrpcAgentsStub extends AgentsStub {
                 .setMethodDescriptor(getAgentValidationResultMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<GetGenerativeSettingsRequest, GenerativeSettings>
+        getGenerativeSettingsTransportSettings =
+            GrpcCallSettings.<GetGenerativeSettingsRequest, GenerativeSettings>newBuilder()
+                .setMethodDescriptor(getGenerativeSettingsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<UpdateGenerativeSettingsRequest, GenerativeSettings>
+        updateGenerativeSettingsTransportSettings =
+            GrpcCallSettings.<UpdateGenerativeSettingsRequest, GenerativeSettings>newBuilder()
+                .setMethodDescriptor(updateGenerativeSettingsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "generative_settings.name",
+                          String.valueOf(request.getGenerativeSettings().getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
@@ -318,9 +370,9 @@ public class GrpcAgentsStub extends AgentsStub {
             .setMethodDescriptor(listLocationsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetLocationRequest, Location> getLocationTransportSettings =
@@ -328,9 +380,9 @@ public class GrpcAgentsStub extends AgentsStub {
             .setMethodDescriptor(getLocationMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
 
@@ -377,6 +429,16 @@ public class GrpcAgentsStub extends AgentsStub {
         callableFactory.createUnaryCallable(
             getAgentValidationResultTransportSettings,
             settings.getAgentValidationResultSettings(),
+            clientContext);
+    this.getGenerativeSettingsCallable =
+        callableFactory.createUnaryCallable(
+            getGenerativeSettingsTransportSettings,
+            settings.getGenerativeSettingsSettings(),
+            clientContext);
+    this.updateGenerativeSettingsCallable =
+        callableFactory.createUnaryCallable(
+            updateGenerativeSettingsTransportSettings,
+            settings.updateGenerativeSettingsSettings(),
             clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
@@ -456,6 +518,18 @@ public class GrpcAgentsStub extends AgentsStub {
   public UnaryCallable<GetAgentValidationResultRequest, AgentValidationResult>
       getAgentValidationResultCallable() {
     return getAgentValidationResultCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetGenerativeSettingsRequest, GenerativeSettings>
+      getGenerativeSettingsCallable() {
+    return getGenerativeSettingsCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateGenerativeSettingsRequest, GenerativeSettings>
+      updateGenerativeSettingsCallable() {
+    return updateGenerativeSettingsCallable;
   }
 
   @Override

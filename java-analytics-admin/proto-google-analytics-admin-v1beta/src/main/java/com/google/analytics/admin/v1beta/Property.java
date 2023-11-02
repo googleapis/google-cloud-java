@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -53,11 +53,6 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Property();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -282,6 +277,7 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Immutable. Resource name of this property's logical parent.
+   *
    * Note: The Property-Moving UI can be used to change the parent.
    * Format: accounts/{account}, properties/{property}
    * Example: "accounts/100", "properties/101"
@@ -308,6 +304,7 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Immutable. Resource name of this property's logical parent.
+   *
    * Note: The Property-Moving UI can be used to change the parent.
    * Format: accounts/{account}, properties/{property}
    * Example: "accounts/100", "properties/101"
@@ -339,6 +336,7 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. Human-readable display name for this property.
+   *
    * The max allowed display name length is 100 UTF-16 code units.
    * </pre>
    *
@@ -363,6 +361,7 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. Human-readable display name for this property.
+   *
    * The max allowed display name length is 100 UTF-16 code units.
    * </pre>
    *
@@ -433,8 +432,10 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
    * Required. Reporting Time Zone, used as the day boundary for reports,
    * regardless of where the data originates. If the time zone honors DST,
    * Analytics will automatically adjust for the changes.
+   *
    * NOTE: Changing the time zone only affects data going forward, and is not
    * applied retroactively.
+   *
    * Format: https://www.iana.org/time-zones
    * Example: "America/Los_Angeles"
    * </pre>
@@ -462,8 +463,10 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
    * Required. Reporting Time Zone, used as the day boundary for reports,
    * regardless of where the data originates. If the time zone honors DST,
    * Analytics will automatically adjust for the changes.
+   *
    * NOTE: Changing the time zone only affects data going forward, and is not
    * applied retroactively.
+   *
    * Format: https://www.iana.org/time-zones
    * Example: "America/Los_Angeles"
    * </pre>
@@ -494,6 +497,8 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The currency type used in reports involving monetary values.
+   *
+   *
    * Format: https://en.wikipedia.org/wiki/ISO_4217
    * Examples: "USD", "EUR", "JPY"
    * </pre>
@@ -519,6 +524,8 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The currency type used in reports involving monetary values.
+   *
+   *
    * Format: https://en.wikipedia.org/wiki/ISO_4217
    * Examples: "USD", "EUR", "JPY"
    * </pre>
@@ -2045,6 +2052,7 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Immutable. Resource name of this property's logical parent.
+     *
      * Note: The Property-Moving UI can be used to change the parent.
      * Format: accounts/{account}, properties/{property}
      * Example: "accounts/100", "properties/101"
@@ -2070,6 +2078,7 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Immutable. Resource name of this property's logical parent.
+     *
      * Note: The Property-Moving UI can be used to change the parent.
      * Format: accounts/{account}, properties/{property}
      * Example: "accounts/100", "properties/101"
@@ -2095,6 +2104,7 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Immutable. Resource name of this property's logical parent.
+     *
      * Note: The Property-Moving UI can be used to change the parent.
      * Format: accounts/{account}, properties/{property}
      * Example: "accounts/100", "properties/101"
@@ -2119,6 +2129,7 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Immutable. Resource name of this property's logical parent.
+     *
      * Note: The Property-Moving UI can be used to change the parent.
      * Format: accounts/{account}, properties/{property}
      * Example: "accounts/100", "properties/101"
@@ -2139,6 +2150,7 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Immutable. Resource name of this property's logical parent.
+     *
      * Note: The Property-Moving UI can be used to change the parent.
      * Format: accounts/{account}, properties/{property}
      * Example: "accounts/100", "properties/101"
@@ -2166,6 +2178,7 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. Human-readable display name for this property.
+     *
      * The max allowed display name length is 100 UTF-16 code units.
      * </pre>
      *
@@ -2189,6 +2202,7 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. Human-readable display name for this property.
+     *
      * The max allowed display name length is 100 UTF-16 code units.
      * </pre>
      *
@@ -2212,6 +2226,7 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. Human-readable display name for this property.
+     *
      * The max allowed display name length is 100 UTF-16 code units.
      * </pre>
      *
@@ -2234,6 +2249,7 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. Human-readable display name for this property.
+     *
      * The max allowed display name length is 100 UTF-16 code units.
      * </pre>
      *
@@ -2252,6 +2268,7 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. Human-readable display name for this property.
+     *
      * The max allowed display name length is 100 UTF-16 code units.
      * </pre>
      *
@@ -2376,8 +2393,10 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      * Required. Reporting Time Zone, used as the day boundary for reports,
      * regardless of where the data originates. If the time zone honors DST,
      * Analytics will automatically adjust for the changes.
+     *
      * NOTE: Changing the time zone only affects data going forward, and is not
      * applied retroactively.
+     *
      * Format: https://www.iana.org/time-zones
      * Example: "America/Los_Angeles"
      * </pre>
@@ -2404,8 +2423,10 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      * Required. Reporting Time Zone, used as the day boundary for reports,
      * regardless of where the data originates. If the time zone honors DST,
      * Analytics will automatically adjust for the changes.
+     *
      * NOTE: Changing the time zone only affects data going forward, and is not
      * applied retroactively.
+     *
      * Format: https://www.iana.org/time-zones
      * Example: "America/Los_Angeles"
      * </pre>
@@ -2432,8 +2453,10 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      * Required. Reporting Time Zone, used as the day boundary for reports,
      * regardless of where the data originates. If the time zone honors DST,
      * Analytics will automatically adjust for the changes.
+     *
      * NOTE: Changing the time zone only affects data going forward, and is not
      * applied retroactively.
+     *
      * Format: https://www.iana.org/time-zones
      * Example: "America/Los_Angeles"
      * </pre>
@@ -2459,8 +2482,10 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      * Required. Reporting Time Zone, used as the day boundary for reports,
      * regardless of where the data originates. If the time zone honors DST,
      * Analytics will automatically adjust for the changes.
+     *
      * NOTE: Changing the time zone only affects data going forward, and is not
      * applied retroactively.
+     *
      * Format: https://www.iana.org/time-zones
      * Example: "America/Los_Angeles"
      * </pre>
@@ -2482,8 +2507,10 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      * Required. Reporting Time Zone, used as the day boundary for reports,
      * regardless of where the data originates. If the time zone honors DST,
      * Analytics will automatically adjust for the changes.
+     *
      * NOTE: Changing the time zone only affects data going forward, and is not
      * applied retroactively.
+     *
      * Format: https://www.iana.org/time-zones
      * Example: "America/Los_Angeles"
      * </pre>
@@ -2510,6 +2537,8 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The currency type used in reports involving monetary values.
+     *
+     *
      * Format: https://en.wikipedia.org/wiki/ISO_4217
      * Examples: "USD", "EUR", "JPY"
      * </pre>
@@ -2534,6 +2563,8 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The currency type used in reports involving monetary values.
+     *
+     *
      * Format: https://en.wikipedia.org/wiki/ISO_4217
      * Examples: "USD", "EUR", "JPY"
      * </pre>
@@ -2558,6 +2589,8 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The currency type used in reports involving monetary values.
+     *
+     *
      * Format: https://en.wikipedia.org/wiki/ISO_4217
      * Examples: "USD", "EUR", "JPY"
      * </pre>
@@ -2581,6 +2614,8 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The currency type used in reports involving monetary values.
+     *
+     *
      * Format: https://en.wikipedia.org/wiki/ISO_4217
      * Examples: "USD", "EUR", "JPY"
      * </pre>
@@ -2600,6 +2635,8 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The currency type used in reports involving monetary values.
+     *
+     *
      * Format: https://en.wikipedia.org/wiki/ISO_4217
      * Examples: "USD", "EUR", "JPY"
      * </pre>

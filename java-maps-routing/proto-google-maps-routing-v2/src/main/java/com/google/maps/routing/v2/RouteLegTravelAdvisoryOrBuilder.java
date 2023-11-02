@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,11 +27,12 @@ public interface RouteLegTravelAdvisoryOrBuilder
    *
    *
    * <pre>
-   * Encapsulates information about tolls on the specific RouteLeg.
-   * This field is only populated if we expect there are tolls on the RouteLeg.
-   * If this field is set but the estimated_price subfield is not populated,
-   * we expect that road contains tolls but we do not know an estimated price.
-   * If this field does not exist, then there is no toll on the RouteLeg.
+   * Contains information about tolls on the specific `RouteLeg`.
+   * This field is only populated if we expect there are tolls on the
+   * `RouteLeg`. If this field is set but the estimated_price subfield is not
+   * populated, we expect that road contains tolls but we do not know an
+   * estimated price. If this field does not exist, then there is no toll on the
+   * `RouteLeg`.
    * </pre>
    *
    * <code>.google.maps.routing.v2.TollInfo toll_info = 1;</code>
@@ -43,11 +44,12 @@ public interface RouteLegTravelAdvisoryOrBuilder
    *
    *
    * <pre>
-   * Encapsulates information about tolls on the specific RouteLeg.
-   * This field is only populated if we expect there are tolls on the RouteLeg.
-   * If this field is set but the estimated_price subfield is not populated,
-   * we expect that road contains tolls but we do not know an estimated price.
-   * If this field does not exist, then there is no toll on the RouteLeg.
+   * Contains information about tolls on the specific `RouteLeg`.
+   * This field is only populated if we expect there are tolls on the
+   * `RouteLeg`. If this field is set but the estimated_price subfield is not
+   * populated, we expect that road contains tolls but we do not know an
+   * estimated price. If this field does not exist, then there is no toll on the
+   * `RouteLeg`.
    * </pre>
    *
    * <code>.google.maps.routing.v2.TollInfo toll_info = 1;</code>
@@ -59,11 +61,12 @@ public interface RouteLegTravelAdvisoryOrBuilder
    *
    *
    * <pre>
-   * Encapsulates information about tolls on the specific RouteLeg.
-   * This field is only populated if we expect there are tolls on the RouteLeg.
-   * If this field is set but the estimated_price subfield is not populated,
-   * we expect that road contains tolls but we do not know an estimated price.
-   * If this field does not exist, then there is no toll on the RouteLeg.
+   * Contains information about tolls on the specific `RouteLeg`.
+   * This field is only populated if we expect there are tolls on the
+   * `RouteLeg`. If this field is set but the estimated_price subfield is not
+   * populated, we expect that road contains tolls but we do not know an
+   * estimated price. If this field does not exist, then there is no toll on the
+   * `RouteLeg`.
    * </pre>
    *
    * <code>.google.maps.routing.v2.TollInfo toll_info = 1;</code>
@@ -76,10 +79,12 @@ public interface RouteLegTravelAdvisoryOrBuilder
    * <pre>
    * Speed reading intervals detailing traffic density. Applicable in case of
    * `TRAFFIC_AWARE` and `TRAFFIC_AWARE_OPTIMAL` routing preferences.
-   * The intervals cover the entire polyline of the RouteLg without overlap.
+   * The intervals cover the entire polyline of the `RouteLeg` without overlap.
    * The start point of a specified interval is the same as the end point of the
    * preceding interval.
+   *
    * Example:
+   *
    *     polyline: A ---- B ---- C ---- D ---- E ---- F ---- G
    *     speed_reading_intervals: [A,C), [C,D), [D,G).
    * </pre>
@@ -93,10 +98,12 @@ public interface RouteLegTravelAdvisoryOrBuilder
    * <pre>
    * Speed reading intervals detailing traffic density. Applicable in case of
    * `TRAFFIC_AWARE` and `TRAFFIC_AWARE_OPTIMAL` routing preferences.
-   * The intervals cover the entire polyline of the RouteLg without overlap.
+   * The intervals cover the entire polyline of the `RouteLeg` without overlap.
    * The start point of a specified interval is the same as the end point of the
    * preceding interval.
+   *
    * Example:
+   *
    *     polyline: A ---- B ---- C ---- D ---- E ---- F ---- G
    *     speed_reading_intervals: [A,C), [C,D), [D,G).
    * </pre>
@@ -110,10 +117,12 @@ public interface RouteLegTravelAdvisoryOrBuilder
    * <pre>
    * Speed reading intervals detailing traffic density. Applicable in case of
    * `TRAFFIC_AWARE` and `TRAFFIC_AWARE_OPTIMAL` routing preferences.
-   * The intervals cover the entire polyline of the RouteLg without overlap.
+   * The intervals cover the entire polyline of the `RouteLeg` without overlap.
    * The start point of a specified interval is the same as the end point of the
    * preceding interval.
+   *
    * Example:
+   *
    *     polyline: A ---- B ---- C ---- D ---- E ---- F ---- G
    *     speed_reading_intervals: [A,C), [C,D), [D,G).
    * </pre>
@@ -127,10 +136,12 @@ public interface RouteLegTravelAdvisoryOrBuilder
    * <pre>
    * Speed reading intervals detailing traffic density. Applicable in case of
    * `TRAFFIC_AWARE` and `TRAFFIC_AWARE_OPTIMAL` routing preferences.
-   * The intervals cover the entire polyline of the RouteLg without overlap.
+   * The intervals cover the entire polyline of the `RouteLeg` without overlap.
    * The start point of a specified interval is the same as the end point of the
    * preceding interval.
+   *
    * Example:
+   *
    *     polyline: A ---- B ---- C ---- D ---- E ---- F ---- G
    *     speed_reading_intervals: [A,C), [C,D), [D,G).
    * </pre>
@@ -145,10 +156,12 @@ public interface RouteLegTravelAdvisoryOrBuilder
    * <pre>
    * Speed reading intervals detailing traffic density. Applicable in case of
    * `TRAFFIC_AWARE` and `TRAFFIC_AWARE_OPTIMAL` routing preferences.
-   * The intervals cover the entire polyline of the RouteLg without overlap.
+   * The intervals cover the entire polyline of the `RouteLeg` without overlap.
    * The start point of a specified interval is the same as the end point of the
    * preceding interval.
+   *
    * Example:
+   *
    *     polyline: A ---- B ---- C ---- D ---- E ---- F ---- G
    *     speed_reading_intervals: [A,C), [C,D), [D,G).
    * </pre>

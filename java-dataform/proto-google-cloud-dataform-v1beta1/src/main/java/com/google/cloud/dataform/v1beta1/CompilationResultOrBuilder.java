@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,9 +52,8 @@ public interface CompilationResultOrBuilder
    *
    *
    * <pre>
-   * Immutable. Git commit/tag/branch name at which the repository should be compiled.
-   * Must exist in the remote repository.
-   * Examples:
+   * Immutable. Git commit/tag/branch name at which the repository should be
+   * compiled. Must exist in the remote repository. Examples:
    * - a commit SHA: `12ade345`
    * - a tag: `tag1`
    * - a branch name: `branch1`
@@ -69,9 +68,8 @@ public interface CompilationResultOrBuilder
    *
    *
    * <pre>
-   * Immutable. Git commit/tag/branch name at which the repository should be compiled.
-   * Must exist in the remote repository.
-   * Examples:
+   * Immutable. Git commit/tag/branch name at which the repository should be
+   * compiled. Must exist in the remote repository. Examples:
    * - a commit SHA: `12ade345`
    * - a tag: `tag1`
    * - a branch name: `branch1`
@@ -86,9 +84,8 @@ public interface CompilationResultOrBuilder
    *
    *
    * <pre>
-   * Immutable. Git commit/tag/branch name at which the repository should be compiled.
-   * Must exist in the remote repository.
-   * Examples:
+   * Immutable. Git commit/tag/branch name at which the repository should be
+   * compiled. Must exist in the remote repository. Examples:
    * - a commit SHA: `12ade345`
    * - a tag: `tag1`
    * - a branch name: `branch1`
@@ -150,12 +147,64 @@ public interface CompilationResultOrBuilder
    *
    *
    * <pre>
-   * Immutable. If set, fields of `code_compilation_overrides` override the default
+   * Immutable. The name of the release config to compile. The release
+   * config's 'current_compilation_result' field will be updated to this
+   * compilation result. Must be in the format
+   * `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;&#47;releaseConfigs/&#42;`.
+   * </pre>
+   *
+   * <code>
+   * string release_config = 7 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return Whether the releaseConfig field is set.
+   */
+  boolean hasReleaseConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The name of the release config to compile. The release
+   * config's 'current_compilation_result' field will be updated to this
+   * compilation result. Must be in the format
+   * `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;&#47;releaseConfigs/&#42;`.
+   * </pre>
+   *
+   * <code>
+   * string release_config = 7 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The releaseConfig.
+   */
+  java.lang.String getReleaseConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The name of the release config to compile. The release
+   * config's 'current_compilation_result' field will be updated to this
+   * compilation result. Must be in the format
+   * `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;&#47;releaseConfigs/&#42;`.
+   * </pre>
+   *
+   * <code>
+   * string release_config = 7 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for releaseConfig.
+   */
+  com.google.protobuf.ByteString getReleaseConfigBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. If set, fields of `code_compilation_config` override the default
    * compilation settings that are specified in dataform.json.
    * </pre>
    *
    * <code>
-   * .google.cloud.dataform.v1beta1.CompilationResult.CodeCompilationConfig code_compilation_config = 4 [(.google.api.field_behavior) = IMMUTABLE];
+   * .google.cloud.dataform.v1beta1.CodeCompilationConfig code_compilation_config = 4 [(.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return Whether the codeCompilationConfig field is set.
@@ -165,32 +214,58 @@ public interface CompilationResultOrBuilder
    *
    *
    * <pre>
-   * Immutable. If set, fields of `code_compilation_overrides` override the default
+   * Immutable. If set, fields of `code_compilation_config` override the default
    * compilation settings that are specified in dataform.json.
    * </pre>
    *
    * <code>
-   * .google.cloud.dataform.v1beta1.CompilationResult.CodeCompilationConfig code_compilation_config = 4 [(.google.api.field_behavior) = IMMUTABLE];
+   * .google.cloud.dataform.v1beta1.CodeCompilationConfig code_compilation_config = 4 [(.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return The codeCompilationConfig.
    */
-  com.google.cloud.dataform.v1beta1.CompilationResult.CodeCompilationConfig
-      getCodeCompilationConfig();
+  com.google.cloud.dataform.v1beta1.CodeCompilationConfig getCodeCompilationConfig();
   /**
    *
    *
    * <pre>
-   * Immutable. If set, fields of `code_compilation_overrides` override the default
+   * Immutable. If set, fields of `code_compilation_config` override the default
    * compilation settings that are specified in dataform.json.
    * </pre>
    *
    * <code>
-   * .google.cloud.dataform.v1beta1.CompilationResult.CodeCompilationConfig code_compilation_config = 4 [(.google.api.field_behavior) = IMMUTABLE];
+   * .google.cloud.dataform.v1beta1.CodeCompilationConfig code_compilation_config = 4 [(.google.api.field_behavior) = IMMUTABLE];
    * </code>
    */
-  com.google.cloud.dataform.v1beta1.CompilationResult.CodeCompilationConfigOrBuilder
+  com.google.cloud.dataform.v1beta1.CodeCompilationConfigOrBuilder
       getCodeCompilationConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The fully resolved Git commit SHA of the code that was
+   * compiled. Not set for compilation results whose source is a workspace.
+   * </pre>
+   *
+   * <code>string resolved_git_commit_sha = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The resolvedGitCommitSha.
+   */
+  java.lang.String getResolvedGitCommitSha();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The fully resolved Git commit SHA of the code that was
+   * compiled. Not set for compilation results whose source is a workspace.
+   * </pre>
+   *
+   * <code>string resolved_git_commit_sha = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for resolvedGitCommitSha.
+   */
+  com.google.protobuf.ByteString getResolvedGitCommitShaBytes();
 
   /**
    *
@@ -283,5 +358,5 @@ public interface CompilationResultOrBuilder
   com.google.cloud.dataform.v1beta1.CompilationResult.CompilationErrorOrBuilder
       getCompilationErrorsOrBuilder(int index);
 
-  public com.google.cloud.dataform.v1beta1.CompilationResult.SourceCase getSourceCase();
+  com.google.cloud.dataform.v1beta1.CompilationResult.SourceCase getSourceCase();
 }

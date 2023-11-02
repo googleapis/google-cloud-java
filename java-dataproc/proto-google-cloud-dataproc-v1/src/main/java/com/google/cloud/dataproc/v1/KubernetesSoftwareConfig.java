@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,11 +43,6 @@ public final class KubernetesSoftwareConfig extends com.google.protobuf.Generate
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new KubernetesSoftwareConfig();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -225,10 +220,13 @@ public final class KubernetesSoftwareConfig extends com.google.protobuf.Generate
    *
    * <pre>
    * The properties to set on daemon config files.
+   *
    * Property keys are specified in `prefix:property` format, for example
    * `spark:spark.kubernetes.container.image`. The following are supported
    * prefixes and their mappings:
+   *
    * * spark:  `spark-defaults.conf`
+   *
    * For more information, see [Cluster
    * properties](https://cloud.google.com/dataproc/docs/concepts/cluster-properties).
    * </pre>
@@ -253,10 +251,13 @@ public final class KubernetesSoftwareConfig extends com.google.protobuf.Generate
    *
    * <pre>
    * The properties to set on daemon config files.
+   *
    * Property keys are specified in `prefix:property` format, for example
    * `spark:spark.kubernetes.container.image`. The following are supported
    * prefixes and their mappings:
+   *
    * * spark:  `spark-defaults.conf`
+   *
    * For more information, see [Cluster
    * properties](https://cloud.google.com/dataproc/docs/concepts/cluster-properties).
    * </pre>
@@ -272,10 +273,13 @@ public final class KubernetesSoftwareConfig extends com.google.protobuf.Generate
    *
    * <pre>
    * The properties to set on daemon config files.
+   *
    * Property keys are specified in `prefix:property` format, for example
    * `spark:spark.kubernetes.container.image`. The following are supported
    * prefixes and their mappings:
+   *
    * * spark:  `spark-defaults.conf`
+   *
    * For more information, see [Cluster
    * properties](https://cloud.google.com/dataproc/docs/concepts/cluster-properties).
    * </pre>
@@ -298,10 +302,13 @@ public final class KubernetesSoftwareConfig extends com.google.protobuf.Generate
    *
    * <pre>
    * The properties to set on daemon config files.
+   *
    * Property keys are specified in `prefix:property` format, for example
    * `spark:spark.kubernetes.container.image`. The following are supported
    * prefixes and their mappings:
+   *
    * * spark:  `spark-defaults.conf`
+   *
    * For more information, see [Cluster
    * properties](https://cloud.google.com/dataproc/docs/concepts/cluster-properties).
    * </pre>
@@ -960,10 +967,13 @@ public final class KubernetesSoftwareConfig extends com.google.protobuf.Generate
      *
      * <pre>
      * The properties to set on daemon config files.
+     *
      * Property keys are specified in `prefix:property` format, for example
      * `spark:spark.kubernetes.container.image`. The following are supported
      * prefixes and their mappings:
+     *
      * * spark:  `spark-defaults.conf`
+     *
      * For more information, see [Cluster
      * properties](https://cloud.google.com/dataproc/docs/concepts/cluster-properties).
      * </pre>
@@ -988,10 +998,13 @@ public final class KubernetesSoftwareConfig extends com.google.protobuf.Generate
      *
      * <pre>
      * The properties to set on daemon config files.
+     *
      * Property keys are specified in `prefix:property` format, for example
      * `spark:spark.kubernetes.container.image`. The following are supported
      * prefixes and their mappings:
+     *
      * * spark:  `spark-defaults.conf`
+     *
      * For more information, see [Cluster
      * properties](https://cloud.google.com/dataproc/docs/concepts/cluster-properties).
      * </pre>
@@ -1007,10 +1020,13 @@ public final class KubernetesSoftwareConfig extends com.google.protobuf.Generate
      *
      * <pre>
      * The properties to set on daemon config files.
+     *
      * Property keys are specified in `prefix:property` format, for example
      * `spark:spark.kubernetes.container.image`. The following are supported
      * prefixes and their mappings:
+     *
      * * spark:  `spark-defaults.conf`
+     *
      * For more information, see [Cluster
      * properties](https://cloud.google.com/dataproc/docs/concepts/cluster-properties).
      * </pre>
@@ -1033,10 +1049,13 @@ public final class KubernetesSoftwareConfig extends com.google.protobuf.Generate
      *
      * <pre>
      * The properties to set on daemon config files.
+     *
      * Property keys are specified in `prefix:property` format, for example
      * `spark:spark.kubernetes.container.image`. The following are supported
      * prefixes and their mappings:
+     *
      * * spark:  `spark-defaults.conf`
+     *
      * For more information, see [Cluster
      * properties](https://cloud.google.com/dataproc/docs/concepts/cluster-properties).
      * </pre>
@@ -1065,10 +1084,13 @@ public final class KubernetesSoftwareConfig extends com.google.protobuf.Generate
      *
      * <pre>
      * The properties to set on daemon config files.
+     *
      * Property keys are specified in `prefix:property` format, for example
      * `spark:spark.kubernetes.container.image`. The following are supported
      * prefixes and their mappings:
+     *
      * * spark:  `spark-defaults.conf`
+     *
      * For more information, see [Cluster
      * properties](https://cloud.google.com/dataproc/docs/concepts/cluster-properties).
      * </pre>
@@ -1093,10 +1115,13 @@ public final class KubernetesSoftwareConfig extends com.google.protobuf.Generate
      *
      * <pre>
      * The properties to set on daemon config files.
+     *
      * Property keys are specified in `prefix:property` format, for example
      * `spark:spark.kubernetes.container.image`. The following are supported
      * prefixes and their mappings:
+     *
      * * spark:  `spark-defaults.conf`
+     *
      * For more information, see [Cluster
      * properties](https://cloud.google.com/dataproc/docs/concepts/cluster-properties).
      * </pre>
@@ -1119,10 +1144,13 @@ public final class KubernetesSoftwareConfig extends com.google.protobuf.Generate
      *
      * <pre>
      * The properties to set on daemon config files.
+     *
      * Property keys are specified in `prefix:property` format, for example
      * `spark:spark.kubernetes.container.image`. The following are supported
      * prefixes and their mappings:
+     *
      * * spark:  `spark-defaults.conf`
+     *
      * For more information, see [Cluster
      * properties](https://cloud.google.com/dataproc/docs/concepts/cluster-properties).
      * </pre>

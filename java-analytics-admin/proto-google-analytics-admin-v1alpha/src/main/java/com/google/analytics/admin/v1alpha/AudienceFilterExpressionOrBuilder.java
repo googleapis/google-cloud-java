@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -106,9 +106,9 @@ public interface AudienceFilterExpressionOrBuilder
    *
    *
    * <pre>
-   * A filter expression to be NOT'ed (i.e., inverted, complemented). It
-   * can only include a dimension_or_metric_filter. This cannot be set on the
-   * top level AudienceFilterExpression.
+   * A filter expression to be NOT'ed (For example, inverted, complemented).
+   * It can only include a dimension_or_metric_filter. This cannot be set on
+   * the top level AudienceFilterExpression.
    * </pre>
    *
    * <code>.google.analytics.admin.v1alpha.AudienceFilterExpression not_expression = 3;</code>
@@ -120,9 +120,9 @@ public interface AudienceFilterExpressionOrBuilder
    *
    *
    * <pre>
-   * A filter expression to be NOT'ed (i.e., inverted, complemented). It
-   * can only include a dimension_or_metric_filter. This cannot be set on the
-   * top level AudienceFilterExpression.
+   * A filter expression to be NOT'ed (For example, inverted, complemented).
+   * It can only include a dimension_or_metric_filter. This cannot be set on
+   * the top level AudienceFilterExpression.
    * </pre>
    *
    * <code>.google.analytics.admin.v1alpha.AudienceFilterExpression not_expression = 3;</code>
@@ -134,9 +134,9 @@ public interface AudienceFilterExpressionOrBuilder
    *
    *
    * <pre>
-   * A filter expression to be NOT'ed (i.e., inverted, complemented). It
-   * can only include a dimension_or_metric_filter. This cannot be set on the
-   * top level AudienceFilterExpression.
+   * A filter expression to be NOT'ed (For example, inverted, complemented).
+   * It can only include a dimension_or_metric_filter. This cannot be set on
+   * the top level AudienceFilterExpression.
    * </pre>
    *
    * <code>.google.analytics.admin.v1alpha.AudienceFilterExpression not_expression = 3;</code>
@@ -226,5 +226,5 @@ public interface AudienceFilterExpressionOrBuilder
    */
   com.google.analytics.admin.v1alpha.AudienceEventFilterOrBuilder getEventFilterOrBuilder();
 
-  public com.google.analytics.admin.v1alpha.AudienceFilterExpression.ExprCase getExprCase();
+  com.google.analytics.admin.v1alpha.AudienceFilterExpression.ExprCase getExprCase();
 }

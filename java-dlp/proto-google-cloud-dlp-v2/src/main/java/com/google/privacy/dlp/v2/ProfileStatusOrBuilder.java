@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,8 @@ public interface ProfileStatusOrBuilder
    *
    *
    * <pre>
-   * Profiling status code and optional message
+   * Profiling status code and optional message. The `status.code` value is 0
+   * (default value) for OK.
    * </pre>
    *
    * <code>.google.rpc.Status status = 1;</code>
@@ -39,7 +40,8 @@ public interface ProfileStatusOrBuilder
    *
    *
    * <pre>
-   * Profiling status code and optional message
+   * Profiling status code and optional message. The `status.code` value is 0
+   * (default value) for OK.
    * </pre>
    *
    * <code>.google.rpc.Status status = 1;</code>
@@ -51,7 +53,8 @@ public interface ProfileStatusOrBuilder
    *
    *
    * <pre>
-   * Profiling status code and optional message
+   * Profiling status code and optional message. The `status.code` value is 0
+   * (default value) for OK.
    * </pre>
    *
    * <code>.google.rpc.Status status = 1;</code>

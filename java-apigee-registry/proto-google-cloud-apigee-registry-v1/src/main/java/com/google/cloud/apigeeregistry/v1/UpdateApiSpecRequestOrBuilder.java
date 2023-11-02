@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ public interface UpdateApiSpecRequestOrBuilder
    *
    * <pre>
    * Required. The spec to update.
+   *
    * The `name` field is used to identify the spec to update.
    * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;&#47;specs/&#42;`
    * </pre>
@@ -44,6 +45,7 @@ public interface UpdateApiSpecRequestOrBuilder
    *
    * <pre>
    * Required. The spec to update.
+   *
    * The `name` field is used to identify the spec to update.
    * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;&#47;specs/&#42;`
    * </pre>
@@ -60,6 +62,7 @@ public interface UpdateApiSpecRequestOrBuilder
    *
    * <pre>
    * Required. The spec to update.
+   *
    * The `name` field is used to identify the spec to update.
    * Format: `projects/&#42;&#47;locations/&#42;&#47;apis/&#42;&#47;versions/&#42;&#47;specs/&#42;`
    * </pre>

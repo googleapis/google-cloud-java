@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,7 +32,8 @@ public final class SystemPolicyV1Grpc {
 
   private SystemPolicyV1Grpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.binaryauthorization.v1.SystemPolicyV1";
+  public static final java.lang.String SERVICE_NAME =
+      "google.cloud.binaryauthorization.v1.SystemPolicyV1";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -357,9 +358,9 @@ public final class SystemPolicyV1Grpc {
   private static final class SystemPolicyV1MethodDescriptorSupplier
       extends SystemPolicyV1BaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    SystemPolicyV1MethodDescriptorSupplier(String methodName) {
+    SystemPolicyV1MethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

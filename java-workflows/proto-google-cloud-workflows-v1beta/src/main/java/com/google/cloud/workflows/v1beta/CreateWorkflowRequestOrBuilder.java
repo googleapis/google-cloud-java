@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -101,6 +101,7 @@ public interface CreateWorkflowRequestOrBuilder
    * <pre>
    * Required. The ID of the workflow to be created. It has to fulfill the
    * following requirements:
+   *
    * * Must contain only letters, numbers, underscores and hyphens.
    * * Must start with a letter.
    * * Must be between 1-64 characters.
@@ -119,6 +120,7 @@ public interface CreateWorkflowRequestOrBuilder
    * <pre>
    * Required. The ID of the workflow to be created. It has to fulfill the
    * following requirements:
+   *
    * * Must contain only letters, numbers, underscores and hyphens.
    * * Must start with a letter.
    * * Must be between 1-64 characters.

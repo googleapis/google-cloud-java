@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -229,7 +229,7 @@ public enum OutputAudioEncoding implements com.google.protobuf.ProtocolMessageEn
   public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
     return com.google.cloud.dialogflow.v2beta1.AudioConfigProto.getDescriptor()
         .getEnumTypes()
-        .get(3);
+        .get(4);
   }
 
   private static final OutputAudioEncoding[] VALUES = values();

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,7 +29,7 @@ public interface CloudRunMetadataOrBuilder
    * <pre>
    * Output only. The name of the Cloud Run Service that is associated with a
    * `Rollout`. Format is
-   * projects/{project}/locations/{location}/services/{service}.
+   * `projects/{project}/locations/{location}/services/{service}`.
    * </pre>
    *
    * <code>
@@ -45,7 +45,7 @@ public interface CloudRunMetadataOrBuilder
    * <pre>
    * Output only. The name of the Cloud Run Service that is associated with a
    * `Rollout`. Format is
-   * projects/{project}/locations/{location}/services/{service}.
+   * `projects/{project}/locations/{location}/services/{service}`.
    * </pre>
    *
    * <code>
@@ -135,4 +135,37 @@ public interface CloudRunMetadataOrBuilder
    * @return The bytes for revision.
    */
   com.google.protobuf.ByteString getRevisionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The name of the Cloud Run job that is associated with a
+   * `Rollout`. Format is
+   * `projects/{project}/locations/{location}/jobs/{job_name}`.
+   * </pre>
+   *
+   * <code>
+   * string job = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The job.
+   */
+  java.lang.String getJob();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The name of the Cloud Run job that is associated with a
+   * `Rollout`. Format is
+   * `projects/{project}/locations/{location}/jobs/{job_name}`.
+   * </pre>
+   *
+   * <code>
+   * string job = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for job.
+   */
+  com.google.protobuf.ByteString getJobBytes();
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,9 +29,12 @@ public interface TaskOrBuilder
    * <pre>
    * Optionally caller-specified in
    * [CreateTask][google.cloud.tasks.v2beta2.CloudTasks.CreateTask].
+   *
    * The task name.
+   *
    * The task name must have the following format:
    * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`
+   *
    * * `PROJECT_ID` can contain letters ([A-Za-z]), numbers ([0-9]),
    *    hyphens (-), colons (:), or periods (.).
    *    For more information, see
@@ -58,9 +61,12 @@ public interface TaskOrBuilder
    * <pre>
    * Optionally caller-specified in
    * [CreateTask][google.cloud.tasks.v2beta2.CloudTasks.CreateTask].
+   *
    * The task name.
+   *
    * The task name must have the following format:
    * `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`
+   *
    * * `PROJECT_ID` can contain letters ([A-Za-z]), numbers ([0-9]),
    *    hyphens (-), colons (:), or periods (.).
    *    For more information, see
@@ -90,6 +96,7 @@ public interface TaskOrBuilder
    * be set only if
    * [app_engine_http_target][google.cloud.tasks.v2beta2.Queue.app_engine_http_target]
    * is set on the queue.
+   *
    * An App Engine task is a task that has
    * [AppEngineHttpRequest][google.cloud.tasks.v2beta2.AppEngineHttpRequest]
    * set.
@@ -108,6 +115,7 @@ public interface TaskOrBuilder
    * be set only if
    * [app_engine_http_target][google.cloud.tasks.v2beta2.Queue.app_engine_http_target]
    * is set on the queue.
+   *
    * An App Engine task is a task that has
    * [AppEngineHttpRequest][google.cloud.tasks.v2beta2.AppEngineHttpRequest]
    * set.
@@ -126,6 +134,7 @@ public interface TaskOrBuilder
    * be set only if
    * [app_engine_http_target][google.cloud.tasks.v2beta2.Queue.app_engine_http_target]
    * is set on the queue.
+   *
    * An App Engine task is a task that has
    * [AppEngineHttpRequest][google.cloud.tasks.v2beta2.AppEngineHttpRequest]
    * set.
@@ -143,6 +152,7 @@ public interface TaskOrBuilder
    * the task. Can be set only if
    * [pull_target][google.cloud.tasks.v2beta2.Queue.pull_target] is set on the
    * queue.
+   *
    * A pull task is a task that has
    * [PullMessage][google.cloud.tasks.v2beta2.PullMessage] set.
    * </pre>
@@ -160,6 +170,7 @@ public interface TaskOrBuilder
    * the task. Can be set only if
    * [pull_target][google.cloud.tasks.v2beta2.Queue.pull_target] is set on the
    * queue.
+   *
    * A pull task is a task that has
    * [PullMessage][google.cloud.tasks.v2beta2.PullMessage] set.
    * </pre>
@@ -177,6 +188,7 @@ public interface TaskOrBuilder
    * the task. Can be set only if
    * [pull_target][google.cloud.tasks.v2beta2.Queue.pull_target] is set on the
    * queue.
+   *
    * A pull task is a task that has
    * [PullMessage][google.cloud.tasks.v2beta2.PullMessage] set.
    * </pre>
@@ -189,13 +201,60 @@ public interface TaskOrBuilder
    *
    *
    * <pre>
+   * HTTP request that is sent to the task's target.
+   *
+   * An HTTP task is a task that has
+   * [HttpRequest][google.cloud.tasks.v2beta2.HttpRequest] set.
+   * </pre>
+   *
+   * <code>.google.cloud.tasks.v2beta2.HttpRequest http_request = 13;</code>
+   *
+   * @return Whether the httpRequest field is set.
+   */
+  boolean hasHttpRequest();
+  /**
+   *
+   *
+   * <pre>
+   * HTTP request that is sent to the task's target.
+   *
+   * An HTTP task is a task that has
+   * [HttpRequest][google.cloud.tasks.v2beta2.HttpRequest] set.
+   * </pre>
+   *
+   * <code>.google.cloud.tasks.v2beta2.HttpRequest http_request = 13;</code>
+   *
+   * @return The httpRequest.
+   */
+  com.google.cloud.tasks.v2beta2.HttpRequest getHttpRequest();
+  /**
+   *
+   *
+   * <pre>
+   * HTTP request that is sent to the task's target.
+   *
+   * An HTTP task is a task that has
+   * [HttpRequest][google.cloud.tasks.v2beta2.HttpRequest] set.
+   * </pre>
+   *
+   * <code>.google.cloud.tasks.v2beta2.HttpRequest http_request = 13;</code>
+   */
+  com.google.cloud.tasks.v2beta2.HttpRequestOrBuilder getHttpRequestOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * The time when the task is scheduled to be attempted.
+   *
    * For App Engine queues, this is when the task will be attempted or retried.
+   *
    * For pull queues, this is the time when the task is available to
    * be leased; if a task is currently leased, this is the time when
    * the current lease expires, that is, the time that the task was
    * leased plus the
    * [lease_duration][google.cloud.tasks.v2beta2.LeaseTasksRequest.lease_duration].
+   *
    * `schedule_time` will be truncated to the nearest microsecond.
    * </pre>
    *
@@ -209,12 +268,15 @@ public interface TaskOrBuilder
    *
    * <pre>
    * The time when the task is scheduled to be attempted.
+   *
    * For App Engine queues, this is when the task will be attempted or retried.
+   *
    * For pull queues, this is the time when the task is available to
    * be leased; if a task is currently leased, this is the time when
    * the current lease expires, that is, the time that the task was
    * leased plus the
    * [lease_duration][google.cloud.tasks.v2beta2.LeaseTasksRequest.lease_duration].
+   *
    * `schedule_time` will be truncated to the nearest microsecond.
    * </pre>
    *
@@ -228,12 +290,15 @@ public interface TaskOrBuilder
    *
    * <pre>
    * The time when the task is scheduled to be attempted.
+   *
    * For App Engine queues, this is when the task will be attempted or retried.
+   *
    * For pull queues, this is the time when the task is available to
    * be leased; if a task is currently leased, this is the time when
    * the current lease expires, that is, the time that the task was
    * leased plus the
    * [lease_duration][google.cloud.tasks.v2beta2.LeaseTasksRequest.lease_duration].
+   *
    * `schedule_time` will be truncated to the nearest microsecond.
    * </pre>
    *
@@ -246,6 +311,7 @@ public interface TaskOrBuilder
    *
    * <pre>
    * Output only. The time that the task was created.
+   *
    * `create_time` will be truncated to the nearest second.
    * </pre>
    *
@@ -259,6 +325,7 @@ public interface TaskOrBuilder
    *
    * <pre>
    * Output only. The time that the task was created.
+   *
    * `create_time` will be truncated to the nearest second.
    * </pre>
    *
@@ -272,6 +339,7 @@ public interface TaskOrBuilder
    *
    * <pre>
    * Output only. The time that the task was created.
+   *
    * `create_time` will be truncated to the nearest second.
    * </pre>
    *
@@ -341,5 +409,5 @@ public interface TaskOrBuilder
    */
   com.google.cloud.tasks.v2beta2.Task.View getView();
 
-  public com.google.cloud.tasks.v2beta2.Task.PayloadTypeCase getPayloadTypeCase();
+  com.google.cloud.tasks.v2beta2.Task.PayloadTypeCase getPayloadTypeCase();
 }

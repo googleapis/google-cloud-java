@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -159,7 +159,7 @@ public interface HealthStatusOrBuilder
    *
    *
    * <pre>
-   * Health state of the instance.
+   * Health state of the IPv4 address of the instance.
    * Check the HealthState enum for the list of possible values.
    * </pre>
    *
@@ -172,7 +172,7 @@ public interface HealthStatusOrBuilder
    *
    *
    * <pre>
-   * Health state of the instance.
+   * Health state of the IPv4 address of the instance.
    * Check the HealthState enum for the list of possible values.
    * </pre>
    *
@@ -185,7 +185,7 @@ public interface HealthStatusOrBuilder
    *
    *
    * <pre>
-   * Health state of the instance.
+   * Health state of the IPv4 address of the instance.
    * Check the HealthState enum for the list of possible values.
    * </pre>
    *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,8 +37,10 @@ public interface StreamingDetectIntentRequestOrBuilder
    * a random number or some type of session identifiers (preferably hashed).
    * The length of the `Session ID` must not exceed 36 characters.
    * Note: session must be set in the first request.
+   *
    * For more information, see the [sessions
    * guide](https://cloud.google.com/dialogflow/cx/docs/concept/session).
+   *
    * Note: Always use agent versions for production traffic.
    * See [Versions and
    * environments](https://cloud.google.com/dialogflow/cx/docs/concept/version).
@@ -63,8 +65,10 @@ public interface StreamingDetectIntentRequestOrBuilder
    * a random number or some type of session identifiers (preferably hashed).
    * The length of the `Session ID` must not exceed 36 characters.
    * Note: session must be set in the first request.
+   *
    * For more information, see the [sessions
    * guide](https://cloud.google.com/dialogflow/cx/docs/concept/session).
+   *
    * Note: Always use agent versions for production traffic.
    * See [Versions and
    * environments](https://cloud.google.com/dialogflow/cx/docs/concept/version).

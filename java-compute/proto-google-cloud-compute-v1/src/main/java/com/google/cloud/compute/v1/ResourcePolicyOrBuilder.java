@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -78,6 +78,49 @@ public interface ResourcePolicyOrBuilder
    * @return The bytes for description.
    */
   com.google.protobuf.ByteString getDescriptionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Resource policy for disk consistency groups.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.ResourcePolicyDiskConsistencyGroupPolicy disk_consistency_group_policy = 473727515;
+   * </code>
+   *
+   * @return Whether the diskConsistencyGroupPolicy field is set.
+   */
+  boolean hasDiskConsistencyGroupPolicy();
+  /**
+   *
+   *
+   * <pre>
+   * Resource policy for disk consistency groups.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.ResourcePolicyDiskConsistencyGroupPolicy disk_consistency_group_policy = 473727515;
+   * </code>
+   *
+   * @return The diskConsistencyGroupPolicy.
+   */
+  com.google.cloud.compute.v1.ResourcePolicyDiskConsistencyGroupPolicy
+      getDiskConsistencyGroupPolicy();
+  /**
+   *
+   *
+   * <pre>
+   * Resource policy for disk consistency groups.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.ResourcePolicyDiskConsistencyGroupPolicy disk_consistency_group_policy = 473727515;
+   * </code>
+   */
+  com.google.cloud.compute.v1.ResourcePolicyDiskConsistencyGroupPolicyOrBuilder
+      getDiskConsistencyGroupPolicyOrBuilder();
 
   /**
    *

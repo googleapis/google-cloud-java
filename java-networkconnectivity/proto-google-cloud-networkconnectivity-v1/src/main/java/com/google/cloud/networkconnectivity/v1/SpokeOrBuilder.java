@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -132,8 +132,8 @@ public interface SpokeOrBuilder
    *
    *
    * <pre>
-   * Optional labels in key:value format. For more information about labels, see
-   * [Requirements for
+   * Optional labels in key-value pair format. For more information about
+   * labels, see [Requirements for
    * labels](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements).
    * </pre>
    *
@@ -144,8 +144,8 @@ public interface SpokeOrBuilder
    *
    *
    * <pre>
-   * Optional labels in key:value format. For more information about labels, see
-   * [Requirements for
+   * Optional labels in key-value pair format. For more information about
+   * labels, see [Requirements for
    * labels](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements).
    * </pre>
    *
@@ -159,8 +159,8 @@ public interface SpokeOrBuilder
    *
    *
    * <pre>
-   * Optional labels in key:value format. For more information about labels, see
-   * [Requirements for
+   * Optional labels in key-value pair format. For more information about
+   * labels, see [Requirements for
    * labels](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements).
    * </pre>
    *
@@ -171,8 +171,8 @@ public interface SpokeOrBuilder
    *
    *
    * <pre>
-   * Optional labels in key:value format. For more information about labels, see
-   * [Requirements for
+   * Optional labels in key-value pair format. For more information about
+   * labels, see [Requirements for
    * labels](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements).
    * </pre>
    *
@@ -187,8 +187,8 @@ public interface SpokeOrBuilder
    *
    *
    * <pre>
-   * Optional labels in key:value format. For more information about labels, see
-   * [Requirements for
+   * Optional labels in key-value pair format. For more information about
+   * labels, see [Requirements for
    * labels](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements).
    * </pre>
    *
@@ -249,6 +249,35 @@ public interface SpokeOrBuilder
    * @return The bytes for hub.
    */
   com.google.protobuf.ByteString getHubBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The name of the group that this spoke is associated with.
+   * </pre>
+   *
+   * <code>
+   * string group = 23 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The group.
+   */
+  java.lang.String getGroup();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The name of the group that this spoke is associated with.
+   * </pre>
+   *
+   * <code>
+   * string group = 23 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for group.
+   */
+  com.google.protobuf.ByteString getGroupBytes();
 
   /**
    *
@@ -375,9 +404,50 @@ public interface SpokeOrBuilder
    *
    *
    * <pre>
+   * Optional. VPC network that is associated with the spoke.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkconnectivity.v1.LinkedVpcNetwork linked_vpc_network = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the linkedVpcNetwork field is set.
+   */
+  boolean hasLinkedVpcNetwork();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. VPC network that is associated with the spoke.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkconnectivity.v1.LinkedVpcNetwork linked_vpc_network = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The linkedVpcNetwork.
+   */
+  com.google.cloud.networkconnectivity.v1.LinkedVpcNetwork getLinkedVpcNetwork();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. VPC network that is associated with the spoke.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkconnectivity.v1.LinkedVpcNetwork linked_vpc_network = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.networkconnectivity.v1.LinkedVpcNetworkOrBuilder getLinkedVpcNetworkOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. The Google-generated UUID for the spoke. This value is unique
    * across all spoke resources. If a spoke is deleted and another with the same
-   * name is created, the new spoke is assigned a different unique_id.
+   * name is created, the new spoke is assigned a different `unique_id`.
    * </pre>
    *
    * <code>string unique_id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -391,7 +461,7 @@ public interface SpokeOrBuilder
    * <pre>
    * Output only. The Google-generated UUID for the spoke. This value is unique
    * across all spoke resources. If a spoke is deleted and another with the same
-   * name is created, the new spoke is assigned a different unique_id.
+   * name is created, the new spoke is assigned a different `unique_id`.
    * </pre>
    *
    * <code>string unique_id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -428,4 +498,100 @@ public interface SpokeOrBuilder
    * @return The state.
    */
   com.google.cloud.networkconnectivity.v1.State getState();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The reasons for current state of the spoke. Only present when
+   * the spoke is in the `INACTIVE` state.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.networkconnectivity.v1.Spoke.StateReason reasons = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<com.google.cloud.networkconnectivity.v1.Spoke.StateReason> getReasonsList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The reasons for current state of the spoke. Only present when
+   * the spoke is in the `INACTIVE` state.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.networkconnectivity.v1.Spoke.StateReason reasons = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.networkconnectivity.v1.Spoke.StateReason getReasons(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The reasons for current state of the spoke. Only present when
+   * the spoke is in the `INACTIVE` state.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.networkconnectivity.v1.Spoke.StateReason reasons = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getReasonsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The reasons for current state of the spoke. Only present when
+   * the spoke is in the `INACTIVE` state.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.networkconnectivity.v1.Spoke.StateReason reasons = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.networkconnectivity.v1.Spoke.StateReasonOrBuilder>
+      getReasonsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The reasons for current state of the spoke. Only present when
+   * the spoke is in the `INACTIVE` state.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.networkconnectivity.v1.Spoke.StateReason reasons = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.networkconnectivity.v1.Spoke.StateReasonOrBuilder getReasonsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The type of resource associated with the spoke.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkconnectivity.v1.SpokeType spoke_type = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for spokeType.
+   */
+  int getSpokeTypeValue();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The type of resource associated with the spoke.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkconnectivity.v1.SpokeType spoke_type = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The spokeType.
+   */
+  com.google.cloud.networkconnectivity.v1.SpokeType getSpokeType();
 }

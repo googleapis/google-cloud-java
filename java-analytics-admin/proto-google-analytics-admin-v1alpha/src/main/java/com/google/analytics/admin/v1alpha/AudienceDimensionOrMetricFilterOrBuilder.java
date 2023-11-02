@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -203,7 +203,12 @@ public interface AudienceDimensionOrMetricFilterOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. The dimension name or metric name to filter.
+   * Required. Immutable. The dimension name or metric name to filter. If the
+   * field name refers to a custom dimension or metric, a scope prefix will be
+   * added to the front of the custom dimensions or metric name. For more on
+   * scope prefixes or custom dimensions/metrics, reference the [Google
+   * Analytics Data API documentation]
+   * (https://developers.google.com/analytics/devguides/reporting/data/v1/api-schema#custom_dimensions).
    * </pre>
    *
    * <code>
@@ -217,7 +222,12 @@ public interface AudienceDimensionOrMetricFilterOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. The dimension name or metric name to filter.
+   * Required. Immutable. The dimension name or metric name to filter. If the
+   * field name refers to a custom dimension or metric, a scope prefix will be
+   * added to the front of the custom dimensions or metric name. For more on
+   * scope prefixes or custom dimensions/metrics, reference the [Google
+   * Analytics Data API documentation]
+   * (https://developers.google.com/analytics/devguides/reporting/data/v1/api-schema#custom_dimensions).
    * </pre>
    *
    * <code>
@@ -237,6 +247,7 @@ public interface AudienceDimensionOrMetricFilterOrBuilder
    * evaluation). If unset or set to false, user evaluation for an Audience is
    * dynamic; users are added to an Audience when they meet the conditions and
    * then removed when they no longer meet them.
+   *
    * This can only be set when Audience scope is ACROSS_ALL_SESSIONS.
    * </pre>
    *
@@ -252,10 +263,12 @@ public interface AudienceDimensionOrMetricFilterOrBuilder
    * <pre>
    * Optional. If set, specifies the time window for which to evaluate data in
    * number of days. If not set, then audience data is evaluated against
-   * lifetime data (i.e., infinite time window).
+   * lifetime data (For example, infinite time window).
+   *
    * For example, if set to 1 day, only the current day's data is evaluated. The
    * reference point is the current day when at_any_point_in_time is unset or
    * false.
+   *
    * It can only be set when Audience scope is ACROSS_ALL_SESSIONS and cannot be
    * greater than 60 days.
    * </pre>
@@ -266,6 +279,6 @@ public interface AudienceDimensionOrMetricFilterOrBuilder
    */
   int getInAnyNDayPeriod();
 
-  public com.google.analytics.admin.v1alpha.AudienceDimensionOrMetricFilter.OneFilterCase
+  com.google.analytics.admin.v1alpha.AudienceDimensionOrMetricFilter.OneFilterCase
       getOneFilterCase();
 }

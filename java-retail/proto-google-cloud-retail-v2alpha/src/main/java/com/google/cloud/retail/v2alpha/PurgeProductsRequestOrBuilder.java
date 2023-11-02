@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,31 +62,41 @@ public interface PurgeProductsRequestOrBuilder
    * <pre>
    * Required. The filter string to specify the products to be deleted with a
    * length limit of 5,000 characters.
+   *
    * Empty string filter is not allowed. "*" implies delete all items in a
    * branch.
+   *
    * The eligible fields for filtering are:
+   *
    * * `availability`: Double quoted
    * [Product.availability][google.cloud.retail.v2alpha.Product.availability]
    * string.
    * * `create_time` : in ISO 8601 "zulu" format.
+   *
    * Supported syntax:
+   *
    * * Comparators ("&gt;", "&lt;", "&gt;=", "&lt;=", "=").
    *   Examples:
    *   * create_time &lt;= "2015-02-13T17:05:46Z"
    *   * availability = "IN_STOCK"
+   *
    * * Conjunctions ("AND")
    *   Examples:
    *   * create_time &lt;= "2015-02-13T17:05:46Z" AND availability = "PREORDER"
+   *
    * * Disjunctions ("OR")
    *   Examples:
    *   * create_time &lt;= "2015-02-13T17:05:46Z" OR availability = "IN_STOCK"
+   *
    * * Can support nested queries.
    *   Examples:
    *   * (create_time &lt;= "2015-02-13T17:05:46Z" AND availability = "PREORDER")
    *   OR (create_time &gt;= "2015-02-14T13:03:32Z" AND availability = "IN_STOCK")
+   *
    * * Filter Limits:
    *   * Filter should not contain more than 6 conditions.
    *   * Max nesting depth should not exceed 2 levels.
+   *
    * Examples queries:
    * * Delete back order products created before a timestamp.
    *   create_time &lt;= "2015-02-13T17:05:46Z" OR availability = "BACKORDER"
@@ -103,31 +113,41 @@ public interface PurgeProductsRequestOrBuilder
    * <pre>
    * Required. The filter string to specify the products to be deleted with a
    * length limit of 5,000 characters.
+   *
    * Empty string filter is not allowed. "*" implies delete all items in a
    * branch.
+   *
    * The eligible fields for filtering are:
+   *
    * * `availability`: Double quoted
    * [Product.availability][google.cloud.retail.v2alpha.Product.availability]
    * string.
    * * `create_time` : in ISO 8601 "zulu" format.
+   *
    * Supported syntax:
+   *
    * * Comparators ("&gt;", "&lt;", "&gt;=", "&lt;=", "=").
    *   Examples:
    *   * create_time &lt;= "2015-02-13T17:05:46Z"
    *   * availability = "IN_STOCK"
+   *
    * * Conjunctions ("AND")
    *   Examples:
    *   * create_time &lt;= "2015-02-13T17:05:46Z" AND availability = "PREORDER"
+   *
    * * Disjunctions ("OR")
    *   Examples:
    *   * create_time &lt;= "2015-02-13T17:05:46Z" OR availability = "IN_STOCK"
+   *
    * * Can support nested queries.
    *   Examples:
    *   * (create_time &lt;= "2015-02-13T17:05:46Z" AND availability = "PREORDER")
    *   OR (create_time &gt;= "2015-02-14T13:03:32Z" AND availability = "IN_STOCK")
+   *
    * * Filter Limits:
    *   * Filter should not contain more than 6 conditions.
    *   * Max nesting depth should not exceed 2 levels.
+   *
    * Examples queries:
    * * Delete back order products created before a timestamp.
    *   create_time &lt;= "2015-02-13T17:05:46Z" OR availability = "BACKORDER"

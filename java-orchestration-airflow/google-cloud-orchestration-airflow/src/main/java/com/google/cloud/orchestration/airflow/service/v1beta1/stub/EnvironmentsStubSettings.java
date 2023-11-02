@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,17 +50,27 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.orchestration.airflow.service.v1beta1.CheckUpgradeRequest;
 import com.google.cloud.orchestration.airflow.service.v1beta1.CheckUpgradeResponse;
 import com.google.cloud.orchestration.airflow.service.v1beta1.CreateEnvironmentRequest;
+import com.google.cloud.orchestration.airflow.service.v1beta1.DatabaseFailoverRequest;
+import com.google.cloud.orchestration.airflow.service.v1beta1.DatabaseFailoverResponse;
 import com.google.cloud.orchestration.airflow.service.v1beta1.DeleteEnvironmentRequest;
 import com.google.cloud.orchestration.airflow.service.v1beta1.Environment;
+import com.google.cloud.orchestration.airflow.service.v1beta1.ExecuteAirflowCommandRequest;
+import com.google.cloud.orchestration.airflow.service.v1beta1.ExecuteAirflowCommandResponse;
+import com.google.cloud.orchestration.airflow.service.v1beta1.FetchDatabasePropertiesRequest;
+import com.google.cloud.orchestration.airflow.service.v1beta1.FetchDatabasePropertiesResponse;
 import com.google.cloud.orchestration.airflow.service.v1beta1.GetEnvironmentRequest;
 import com.google.cloud.orchestration.airflow.service.v1beta1.ListEnvironmentsRequest;
 import com.google.cloud.orchestration.airflow.service.v1beta1.ListEnvironmentsResponse;
 import com.google.cloud.orchestration.airflow.service.v1beta1.LoadSnapshotRequest;
 import com.google.cloud.orchestration.airflow.service.v1beta1.LoadSnapshotResponse;
 import com.google.cloud.orchestration.airflow.service.v1beta1.OperationMetadata;
+import com.google.cloud.orchestration.airflow.service.v1beta1.PollAirflowCommandRequest;
+import com.google.cloud.orchestration.airflow.service.v1beta1.PollAirflowCommandResponse;
 import com.google.cloud.orchestration.airflow.service.v1beta1.RestartWebServerRequest;
 import com.google.cloud.orchestration.airflow.service.v1beta1.SaveSnapshotRequest;
 import com.google.cloud.orchestration.airflow.service.v1beta1.SaveSnapshotResponse;
+import com.google.cloud.orchestration.airflow.service.v1beta1.StopAirflowCommandRequest;
+import com.google.cloud.orchestration.airflow.service.v1beta1.StopAirflowCommandResponse;
 import com.google.cloud.orchestration.airflow.service.v1beta1.UpdateEnvironmentRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -136,12 +146,24 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
   private final UnaryCallSettings<CheckUpgradeRequest, Operation> checkUpgradeSettings;
   private final OperationCallSettings<CheckUpgradeRequest, CheckUpgradeResponse, OperationMetadata>
       checkUpgradeOperationSettings;
+  private final UnaryCallSettings<ExecuteAirflowCommandRequest, ExecuteAirflowCommandResponse>
+      executeAirflowCommandSettings;
+  private final UnaryCallSettings<StopAirflowCommandRequest, StopAirflowCommandResponse>
+      stopAirflowCommandSettings;
+  private final UnaryCallSettings<PollAirflowCommandRequest, PollAirflowCommandResponse>
+      pollAirflowCommandSettings;
   private final UnaryCallSettings<SaveSnapshotRequest, Operation> saveSnapshotSettings;
   private final OperationCallSettings<SaveSnapshotRequest, SaveSnapshotResponse, OperationMetadata>
       saveSnapshotOperationSettings;
   private final UnaryCallSettings<LoadSnapshotRequest, Operation> loadSnapshotSettings;
   private final OperationCallSettings<LoadSnapshotRequest, LoadSnapshotResponse, OperationMetadata>
       loadSnapshotOperationSettings;
+  private final UnaryCallSettings<DatabaseFailoverRequest, Operation> databaseFailoverSettings;
+  private final OperationCallSettings<
+          DatabaseFailoverRequest, DatabaseFailoverResponse, OperationMetadata>
+      databaseFailoverOperationSettings;
+  private final UnaryCallSettings<FetchDatabasePropertiesRequest, FetchDatabasePropertiesResponse>
+      fetchDatabasePropertiesSettings;
 
   private static final PagedListDescriptor<
           ListEnvironmentsRequest, ListEnvironmentsResponse, Environment>
@@ -269,6 +291,24 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
     return checkUpgradeOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to executeAirflowCommand. */
+  public UnaryCallSettings<ExecuteAirflowCommandRequest, ExecuteAirflowCommandResponse>
+      executeAirflowCommandSettings() {
+    return executeAirflowCommandSettings;
+  }
+
+  /** Returns the object with the settings used for calls to stopAirflowCommand. */
+  public UnaryCallSettings<StopAirflowCommandRequest, StopAirflowCommandResponse>
+      stopAirflowCommandSettings() {
+    return stopAirflowCommandSettings;
+  }
+
+  /** Returns the object with the settings used for calls to pollAirflowCommand. */
+  public UnaryCallSettings<PollAirflowCommandRequest, PollAirflowCommandResponse>
+      pollAirflowCommandSettings() {
+    return pollAirflowCommandSettings;
+  }
+
   /** Returns the object with the settings used for calls to saveSnapshot. */
   public UnaryCallSettings<SaveSnapshotRequest, Operation> saveSnapshotSettings() {
     return saveSnapshotSettings;
@@ -289,6 +329,23 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
   public OperationCallSettings<LoadSnapshotRequest, LoadSnapshotResponse, OperationMetadata>
       loadSnapshotOperationSettings() {
     return loadSnapshotOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to databaseFailover. */
+  public UnaryCallSettings<DatabaseFailoverRequest, Operation> databaseFailoverSettings() {
+    return databaseFailoverSettings;
+  }
+
+  /** Returns the object with the settings used for calls to databaseFailover. */
+  public OperationCallSettings<DatabaseFailoverRequest, DatabaseFailoverResponse, OperationMetadata>
+      databaseFailoverOperationSettings() {
+    return databaseFailoverOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to fetchDatabaseProperties. */
+  public UnaryCallSettings<FetchDatabasePropertiesRequest, FetchDatabasePropertiesResponse>
+      fetchDatabasePropertiesSettings() {
+    return fetchDatabasePropertiesSettings;
   }
 
   public EnvironmentsStub createStub() throws IOException {
@@ -412,10 +469,16 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
     restartWebServerOperationSettings = settingsBuilder.restartWebServerOperationSettings().build();
     checkUpgradeSettings = settingsBuilder.checkUpgradeSettings().build();
     checkUpgradeOperationSettings = settingsBuilder.checkUpgradeOperationSettings().build();
+    executeAirflowCommandSettings = settingsBuilder.executeAirflowCommandSettings().build();
+    stopAirflowCommandSettings = settingsBuilder.stopAirflowCommandSettings().build();
+    pollAirflowCommandSettings = settingsBuilder.pollAirflowCommandSettings().build();
     saveSnapshotSettings = settingsBuilder.saveSnapshotSettings().build();
     saveSnapshotOperationSettings = settingsBuilder.saveSnapshotOperationSettings().build();
     loadSnapshotSettings = settingsBuilder.loadSnapshotSettings().build();
     loadSnapshotOperationSettings = settingsBuilder.loadSnapshotOperationSettings().build();
+    databaseFailoverSettings = settingsBuilder.databaseFailoverSettings().build();
+    databaseFailoverOperationSettings = settingsBuilder.databaseFailoverOperationSettings().build();
+    fetchDatabasePropertiesSettings = settingsBuilder.fetchDatabasePropertiesSettings().build();
   }
 
   /** Builder for EnvironmentsStubSettings. */
@@ -449,6 +512,13 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
     private final OperationCallSettings.Builder<
             CheckUpgradeRequest, CheckUpgradeResponse, OperationMetadata>
         checkUpgradeOperationSettings;
+    private final UnaryCallSettings.Builder<
+            ExecuteAirflowCommandRequest, ExecuteAirflowCommandResponse>
+        executeAirflowCommandSettings;
+    private final UnaryCallSettings.Builder<StopAirflowCommandRequest, StopAirflowCommandResponse>
+        stopAirflowCommandSettings;
+    private final UnaryCallSettings.Builder<PollAirflowCommandRequest, PollAirflowCommandResponse>
+        pollAirflowCommandSettings;
     private final UnaryCallSettings.Builder<SaveSnapshotRequest, Operation> saveSnapshotSettings;
     private final OperationCallSettings.Builder<
             SaveSnapshotRequest, SaveSnapshotResponse, OperationMetadata>
@@ -457,6 +527,14 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
     private final OperationCallSettings.Builder<
             LoadSnapshotRequest, LoadSnapshotResponse, OperationMetadata>
         loadSnapshotOperationSettings;
+    private final UnaryCallSettings.Builder<DatabaseFailoverRequest, Operation>
+        databaseFailoverSettings;
+    private final OperationCallSettings.Builder<
+            DatabaseFailoverRequest, DatabaseFailoverResponse, OperationMetadata>
+        databaseFailoverOperationSettings;
+    private final UnaryCallSettings.Builder<
+            FetchDatabasePropertiesRequest, FetchDatabasePropertiesResponse>
+        fetchDatabasePropertiesSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -496,10 +574,16 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
       restartWebServerOperationSettings = OperationCallSettings.newBuilder();
       checkUpgradeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       checkUpgradeOperationSettings = OperationCallSettings.newBuilder();
+      executeAirflowCommandSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      stopAirflowCommandSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      pollAirflowCommandSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       saveSnapshotSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       saveSnapshotOperationSettings = OperationCallSettings.newBuilder();
       loadSnapshotSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       loadSnapshotOperationSettings = OperationCallSettings.newBuilder();
+      databaseFailoverSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      databaseFailoverOperationSettings = OperationCallSettings.newBuilder();
+      fetchDatabasePropertiesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -510,8 +594,13 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
               deleteEnvironmentSettings,
               restartWebServerSettings,
               checkUpgradeSettings,
+              executeAirflowCommandSettings,
+              stopAirflowCommandSettings,
+              pollAirflowCommandSettings,
               saveSnapshotSettings,
-              loadSnapshotSettings);
+              loadSnapshotSettings,
+              databaseFailoverSettings,
+              fetchDatabasePropertiesSettings);
       initDefaults(this);
     }
 
@@ -530,10 +619,16 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
       restartWebServerOperationSettings = settings.restartWebServerOperationSettings.toBuilder();
       checkUpgradeSettings = settings.checkUpgradeSettings.toBuilder();
       checkUpgradeOperationSettings = settings.checkUpgradeOperationSettings.toBuilder();
+      executeAirflowCommandSettings = settings.executeAirflowCommandSettings.toBuilder();
+      stopAirflowCommandSettings = settings.stopAirflowCommandSettings.toBuilder();
+      pollAirflowCommandSettings = settings.pollAirflowCommandSettings.toBuilder();
       saveSnapshotSettings = settings.saveSnapshotSettings.toBuilder();
       saveSnapshotOperationSettings = settings.saveSnapshotOperationSettings.toBuilder();
       loadSnapshotSettings = settings.loadSnapshotSettings.toBuilder();
       loadSnapshotOperationSettings = settings.loadSnapshotOperationSettings.toBuilder();
+      databaseFailoverSettings = settings.databaseFailoverSettings.toBuilder();
+      databaseFailoverOperationSettings = settings.databaseFailoverOperationSettings.toBuilder();
+      fetchDatabasePropertiesSettings = settings.fetchDatabasePropertiesSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -544,8 +639,13 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
               deleteEnvironmentSettings,
               restartWebServerSettings,
               checkUpgradeSettings,
+              executeAirflowCommandSettings,
+              stopAirflowCommandSettings,
+              pollAirflowCommandSettings,
               saveSnapshotSettings,
-              loadSnapshotSettings);
+              loadSnapshotSettings,
+              databaseFailoverSettings,
+              fetchDatabasePropertiesSettings);
     }
 
     private static Builder createDefault() {
@@ -611,12 +711,37 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
+          .executeAirflowCommandSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .stopAirflowCommandSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .pollAirflowCommandSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
           .saveSnapshotSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .loadSnapshotSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .databaseFailoverSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .fetchDatabasePropertiesSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -788,6 +913,30 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
                       .setTotalTimeout(Duration.ofMillis(300000L))
                       .build()));
 
+      builder
+          .databaseFailoverOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DatabaseFailoverRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(DatabaseFailoverResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
       return builder;
     }
 
@@ -888,6 +1037,24 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
       return checkUpgradeOperationSettings;
     }
 
+    /** Returns the builder for the settings used for calls to executeAirflowCommand. */
+    public UnaryCallSettings.Builder<ExecuteAirflowCommandRequest, ExecuteAirflowCommandResponse>
+        executeAirflowCommandSettings() {
+      return executeAirflowCommandSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to stopAirflowCommand. */
+    public UnaryCallSettings.Builder<StopAirflowCommandRequest, StopAirflowCommandResponse>
+        stopAirflowCommandSettings() {
+      return stopAirflowCommandSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to pollAirflowCommand. */
+    public UnaryCallSettings.Builder<PollAirflowCommandRequest, PollAirflowCommandResponse>
+        pollAirflowCommandSettings() {
+      return pollAirflowCommandSettings;
+    }
+
     /** Returns the builder for the settings used for calls to saveSnapshot. */
     public UnaryCallSettings.Builder<SaveSnapshotRequest, Operation> saveSnapshotSettings() {
       return saveSnapshotSettings;
@@ -914,6 +1081,28 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
             LoadSnapshotRequest, LoadSnapshotResponse, OperationMetadata>
         loadSnapshotOperationSettings() {
       return loadSnapshotOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to databaseFailover. */
+    public UnaryCallSettings.Builder<DatabaseFailoverRequest, Operation>
+        databaseFailoverSettings() {
+      return databaseFailoverSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to databaseFailover. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            DatabaseFailoverRequest, DatabaseFailoverResponse, OperationMetadata>
+        databaseFailoverOperationSettings() {
+      return databaseFailoverOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to fetchDatabaseProperties. */
+    public UnaryCallSettings.Builder<
+            FetchDatabasePropertiesRequest, FetchDatabasePropertiesResponse>
+        fetchDatabasePropertiesSettings() {
+      return fetchDatabasePropertiesSettings;
     }
 
     @Override

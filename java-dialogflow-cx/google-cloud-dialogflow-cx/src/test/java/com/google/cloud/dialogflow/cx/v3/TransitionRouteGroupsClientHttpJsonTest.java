@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -95,7 +95,7 @@ public class TransitionRouteGroupsClientHttpJsonTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    FlowName parent = FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]");
+    AgentName parent = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]");
 
     ListTransitionRouteGroupsPagedResponse pagedListResponse =
         client.listTransitionRouteGroups(parent);
@@ -128,7 +128,7 @@ public class TransitionRouteGroupsClientHttpJsonTest {
     mockService.addException(exception);
 
     try {
-      FlowName parent = FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]");
+      AgentName parent = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]");
       client.listTransitionRouteGroups(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -138,6 +138,57 @@ public class TransitionRouteGroupsClientHttpJsonTest {
 
   @Test
   public void listTransitionRouteGroupsTest2() throws Exception {
+    TransitionRouteGroup responsesElement = TransitionRouteGroup.newBuilder().build();
+    ListTransitionRouteGroupsResponse expectedResponse =
+        ListTransitionRouteGroupsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllTransitionRouteGroups(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    FlowName parent = FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]");
+
+    ListTransitionRouteGroupsPagedResponse pagedListResponse =
+        client.listTransitionRouteGroups(parent);
+
+    List<TransitionRouteGroup> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getTransitionRouteGroupsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listTransitionRouteGroupsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      FlowName parent = FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]");
+      client.listTransitionRouteGroups(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listTransitionRouteGroupsTest3() throws Exception {
     TransitionRouteGroup responsesElement = TransitionRouteGroup.newBuilder().build();
     ListTransitionRouteGroupsResponse expectedResponse =
         ListTransitionRouteGroupsResponse.newBuilder()
@@ -173,7 +224,7 @@ public class TransitionRouteGroupsClientHttpJsonTest {
   }
 
   @Test
-  public void listTransitionRouteGroupsExceptionTest2() throws Exception {
+  public void listTransitionRouteGroupsExceptionTest3() throws Exception {
     ApiException exception =
         ApiExceptionFactory.createException(
             new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
@@ -194,7 +245,7 @@ public class TransitionRouteGroupsClientHttpJsonTest {
     TransitionRouteGroup expectedResponse =
         TransitionRouteGroup.newBuilder()
             .setName(
-                TransitionRouteGroupName.of(
+                TransitionRouteGroupName.ofProjectLocationAgentFlowTransitionRouteGroupName(
                         "[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]", "[TRANSITION_ROUTE_GROUP]")
                     .toString())
             .setDisplayName("displayName1714148973")
@@ -203,7 +254,7 @@ public class TransitionRouteGroupsClientHttpJsonTest {
     mockService.addResponse(expectedResponse);
 
     TransitionRouteGroupName name =
-        TransitionRouteGroupName.of(
+        TransitionRouteGroupName.ofProjectLocationAgentFlowTransitionRouteGroupName(
             "[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]", "[TRANSITION_ROUTE_GROUP]");
 
     TransitionRouteGroup actualResponse = client.getTransitionRouteGroup(name);
@@ -233,7 +284,7 @@ public class TransitionRouteGroupsClientHttpJsonTest {
 
     try {
       TransitionRouteGroupName name =
-          TransitionRouteGroupName.of(
+          TransitionRouteGroupName.ofProjectLocationAgentFlowTransitionRouteGroupName(
               "[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]", "[TRANSITION_ROUTE_GROUP]");
       client.getTransitionRouteGroup(name);
       Assert.fail("No exception raised");
@@ -247,7 +298,7 @@ public class TransitionRouteGroupsClientHttpJsonTest {
     TransitionRouteGroup expectedResponse =
         TransitionRouteGroup.newBuilder()
             .setName(
-                TransitionRouteGroupName.of(
+                TransitionRouteGroupName.ofProjectLocationAgentFlowTransitionRouteGroupName(
                         "[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]", "[TRANSITION_ROUTE_GROUP]")
                     .toString())
             .setDisplayName("displayName1714148973")
@@ -298,7 +349,59 @@ public class TransitionRouteGroupsClientHttpJsonTest {
     TransitionRouteGroup expectedResponse =
         TransitionRouteGroup.newBuilder()
             .setName(
-                TransitionRouteGroupName.of(
+                TransitionRouteGroupName.ofProjectLocationAgentFlowTransitionRouteGroupName(
+                        "[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]", "[TRANSITION_ROUTE_GROUP]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .addAllTransitionRoutes(new ArrayList<TransitionRoute>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    AgentName parent = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]");
+    TransitionRouteGroup transitionRouteGroup = TransitionRouteGroup.newBuilder().build();
+
+    TransitionRouteGroup actualResponse =
+        client.createTransitionRouteGroup(parent, transitionRouteGroup);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createTransitionRouteGroupExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AgentName parent = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]");
+      TransitionRouteGroup transitionRouteGroup = TransitionRouteGroup.newBuilder().build();
+      client.createTransitionRouteGroup(parent, transitionRouteGroup);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createTransitionRouteGroupTest2() throws Exception {
+    TransitionRouteGroup expectedResponse =
+        TransitionRouteGroup.newBuilder()
+            .setName(
+                TransitionRouteGroupName.ofProjectLocationAgentFlowTransitionRouteGroupName(
                         "[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]", "[TRANSITION_ROUTE_GROUP]")
                     .toString())
             .setDisplayName("displayName1714148973")
@@ -329,7 +432,7 @@ public class TransitionRouteGroupsClientHttpJsonTest {
   }
 
   @Test
-  public void createTransitionRouteGroupExceptionTest() throws Exception {
+  public void createTransitionRouteGroupExceptionTest2() throws Exception {
     ApiException exception =
         ApiExceptionFactory.createException(
             new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
@@ -346,11 +449,11 @@ public class TransitionRouteGroupsClientHttpJsonTest {
   }
 
   @Test
-  public void createTransitionRouteGroupTest2() throws Exception {
+  public void createTransitionRouteGroupTest3() throws Exception {
     TransitionRouteGroup expectedResponse =
         TransitionRouteGroup.newBuilder()
             .setName(
-                TransitionRouteGroupName.of(
+                TransitionRouteGroupName.ofProjectLocationAgentFlowTransitionRouteGroupName(
                         "[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]", "[TRANSITION_ROUTE_GROUP]")
                     .toString())
             .setDisplayName("displayName1714148973")
@@ -382,7 +485,7 @@ public class TransitionRouteGroupsClientHttpJsonTest {
   }
 
   @Test
-  public void createTransitionRouteGroupExceptionTest2() throws Exception {
+  public void createTransitionRouteGroupExceptionTest3() throws Exception {
     ApiException exception =
         ApiExceptionFactory.createException(
             new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
@@ -404,7 +507,7 @@ public class TransitionRouteGroupsClientHttpJsonTest {
     TransitionRouteGroup expectedResponse =
         TransitionRouteGroup.newBuilder()
             .setName(
-                TransitionRouteGroupName.of(
+                TransitionRouteGroupName.ofProjectLocationAgentFlowTransitionRouteGroupName(
                         "[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]", "[TRANSITION_ROUTE_GROUP]")
                     .toString())
             .setDisplayName("displayName1714148973")
@@ -415,7 +518,7 @@ public class TransitionRouteGroupsClientHttpJsonTest {
     TransitionRouteGroup transitionRouteGroup =
         TransitionRouteGroup.newBuilder()
             .setName(
-                TransitionRouteGroupName.of(
+                TransitionRouteGroupName.ofProjectLocationAgentFlowTransitionRouteGroupName(
                         "[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]", "[TRANSITION_ROUTE_GROUP]")
                     .toString())
             .setDisplayName("displayName1714148973")
@@ -453,7 +556,7 @@ public class TransitionRouteGroupsClientHttpJsonTest {
       TransitionRouteGroup transitionRouteGroup =
           TransitionRouteGroup.newBuilder()
               .setName(
-                  TransitionRouteGroupName.of(
+                  TransitionRouteGroupName.ofProjectLocationAgentFlowTransitionRouteGroupName(
                           "[PROJECT]",
                           "[LOCATION]",
                           "[AGENT]",
@@ -477,7 +580,7 @@ public class TransitionRouteGroupsClientHttpJsonTest {
     mockService.addResponse(expectedResponse);
 
     TransitionRouteGroupName name =
-        TransitionRouteGroupName.of(
+        TransitionRouteGroupName.ofProjectLocationAgentFlowTransitionRouteGroupName(
             "[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]", "[TRANSITION_ROUTE_GROUP]");
 
     client.deleteTransitionRouteGroup(name);
@@ -506,7 +609,7 @@ public class TransitionRouteGroupsClientHttpJsonTest {
 
     try {
       TransitionRouteGroupName name =
-          TransitionRouteGroupName.of(
+          TransitionRouteGroupName.ofProjectLocationAgentFlowTransitionRouteGroupName(
               "[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]", "[TRANSITION_ROUTE_GROUP]");
       client.deleteTransitionRouteGroup(name);
       Assert.fail("No exception raised");

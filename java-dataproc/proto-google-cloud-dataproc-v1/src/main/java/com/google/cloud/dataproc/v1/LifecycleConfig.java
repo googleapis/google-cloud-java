@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
     return new LifecycleConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dataproc.v1.ClustersProto
         .internal_static_google_cloud_dataproc_v1_LifecycleConfig_descriptor;
@@ -66,6 +61,8 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
   }
 
   private int ttlCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object ttl_;
 
   public enum TtlCase

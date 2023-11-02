@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,21 +38,16 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
   }
 
   private CacheKeyPolicy() {
-    includeHttpHeaders_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    includeNamedCookies_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    queryStringBlacklist_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    queryStringWhitelist_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    includeHttpHeaders_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    includeNamedCookies_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    queryStringBlacklist_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    queryStringWhitelist_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new CacheKeyPolicy();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -107,7 +102,8 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
   public static final int INCLUDE_HTTP_HEADERS_FIELD_NUMBER = 2489606;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList includeHttpHeaders_;
+  private com.google.protobuf.LazyStringArrayList includeHttpHeaders_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -170,7 +166,8 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
   public static final int INCLUDE_NAMED_COOKIES_FIELD_NUMBER = 87316530;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList includeNamedCookies_;
+  private com.google.protobuf.LazyStringArrayList includeNamedCookies_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -299,7 +296,8 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
   public static final int QUERY_STRING_BLACKLIST_FIELD_NUMBER = 354964742;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList queryStringBlacklist_;
+  private com.google.protobuf.LazyStringArrayList queryStringBlacklist_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -362,7 +360,8 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
   public static final int QUERY_STRING_WHITELIST_FIELD_NUMBER = 52456496;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList queryStringWhitelist_;
+  private com.google.protobuf.LazyStringArrayList queryStringWhitelist_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -722,16 +721,12 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       bitField0_ = 0;
       includeHost_ = false;
-      includeHttpHeaders_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
-      includeNamedCookies_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      includeHttpHeaders_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      includeNamedCookies_ = com.google.protobuf.LazyStringArrayList.emptyList();
       includeProtocol_ = false;
       includeQueryString_ = false;
-      queryStringBlacklist_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000020);
-      queryStringWhitelist_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000040);
+      queryStringBlacklist_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      queryStringWhitelist_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -759,35 +754,11 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.CacheKeyPolicy buildPartial() {
       com.google.cloud.compute.v1.CacheKeyPolicy result =
           new com.google.cloud.compute.v1.CacheKeyPolicy(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(com.google.cloud.compute.v1.CacheKeyPolicy result) {
-      if (((bitField0_ & 0x00000002) != 0)) {
-        includeHttpHeaders_ = includeHttpHeaders_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.includeHttpHeaders_ = includeHttpHeaders_;
-      if (((bitField0_ & 0x00000004) != 0)) {
-        includeNamedCookies_ = includeNamedCookies_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.includeNamedCookies_ = includeNamedCookies_;
-      if (((bitField0_ & 0x00000020) != 0)) {
-        queryStringBlacklist_ = queryStringBlacklist_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000020);
-      }
-      result.queryStringBlacklist_ = queryStringBlacklist_;
-      if (((bitField0_ & 0x00000040) != 0)) {
-        queryStringWhitelist_ = queryStringWhitelist_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000040);
-      }
-      result.queryStringWhitelist_ = queryStringWhitelist_;
     }
 
     private void buildPartial0(com.google.cloud.compute.v1.CacheKeyPolicy result) {
@@ -797,6 +768,14 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
         result.includeHost_ = includeHost_;
         to_bitField0_ |= 0x00000001;
       }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        includeHttpHeaders_.makeImmutable();
+        result.includeHttpHeaders_ = includeHttpHeaders_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        includeNamedCookies_.makeImmutable();
+        result.includeNamedCookies_ = includeNamedCookies_;
+      }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.includeProtocol_ = includeProtocol_;
         to_bitField0_ |= 0x00000002;
@@ -804,6 +783,14 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.includeQueryString_ = includeQueryString_;
         to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        queryStringBlacklist_.makeImmutable();
+        result.queryStringBlacklist_ = queryStringBlacklist_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        queryStringWhitelist_.makeImmutable();
+        result.queryStringWhitelist_ = queryStringWhitelist_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -859,7 +846,7 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
       if (!other.includeHttpHeaders_.isEmpty()) {
         if (includeHttpHeaders_.isEmpty()) {
           includeHttpHeaders_ = other.includeHttpHeaders_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureIncludeHttpHeadersIsMutable();
           includeHttpHeaders_.addAll(other.includeHttpHeaders_);
@@ -869,7 +856,7 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
       if (!other.includeNamedCookies_.isEmpty()) {
         if (includeNamedCookies_.isEmpty()) {
           includeNamedCookies_ = other.includeNamedCookies_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ |= 0x00000004;
         } else {
           ensureIncludeNamedCookiesIsMutable();
           includeNamedCookies_.addAll(other.includeNamedCookies_);
@@ -885,7 +872,7 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
       if (!other.queryStringBlacklist_.isEmpty()) {
         if (queryStringBlacklist_.isEmpty()) {
           queryStringBlacklist_ = other.queryStringBlacklist_;
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ |= 0x00000020;
         } else {
           ensureQueryStringBlacklistIsMutable();
           queryStringBlacklist_.addAll(other.queryStringBlacklist_);
@@ -895,7 +882,7 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
       if (!other.queryStringWhitelist_.isEmpty()) {
         if (queryStringWhitelist_.isEmpty()) {
           queryStringWhitelist_ = other.queryStringWhitelist_;
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ |= 0x00000040;
         } else {
           ensureQueryStringWhitelistIsMutable();
           queryStringWhitelist_.addAll(other.queryStringWhitelist_);
@@ -1061,14 +1048,14 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList includeHttpHeaders_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList includeHttpHeaders_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureIncludeHttpHeadersIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!includeHttpHeaders_.isModifiable()) {
         includeHttpHeaders_ = new com.google.protobuf.LazyStringArrayList(includeHttpHeaders_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -1082,7 +1069,8 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the includeHttpHeaders.
      */
     public com.google.protobuf.ProtocolStringList getIncludeHttpHeadersList() {
-      return includeHttpHeaders_.getUnmodifiableView();
+      includeHttpHeaders_.makeImmutable();
+      return includeHttpHeaders_;
     }
     /**
      *
@@ -1147,6 +1135,7 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       ensureIncludeHttpHeadersIsMutable();
       includeHttpHeaders_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1168,6 +1157,7 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       ensureIncludeHttpHeadersIsMutable();
       includeHttpHeaders_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1186,6 +1176,7 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllIncludeHttpHeaders(java.lang.Iterable<java.lang.String> values) {
       ensureIncludeHttpHeadersIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, includeHttpHeaders_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1201,8 +1192,9 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearIncludeHttpHeaders() {
-      includeHttpHeaders_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      includeHttpHeaders_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -1225,18 +1217,19 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureIncludeHttpHeadersIsMutable();
       includeHttpHeaders_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList includeNamedCookies_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList includeNamedCookies_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureIncludeNamedCookiesIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!includeNamedCookies_.isModifiable()) {
         includeNamedCookies_ = new com.google.protobuf.LazyStringArrayList(includeNamedCookies_);
-        bitField0_ |= 0x00000004;
       }
+      bitField0_ |= 0x00000004;
     }
     /**
      *
@@ -1250,7 +1243,8 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the includeNamedCookies.
      */
     public com.google.protobuf.ProtocolStringList getIncludeNamedCookiesList() {
-      return includeNamedCookies_.getUnmodifiableView();
+      includeNamedCookies_.makeImmutable();
+      return includeNamedCookies_;
     }
     /**
      *
@@ -1315,6 +1309,7 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       ensureIncludeNamedCookiesIsMutable();
       includeNamedCookies_.set(index, value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1336,6 +1331,7 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       ensureIncludeNamedCookiesIsMutable();
       includeNamedCookies_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1354,6 +1350,7 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllIncludeNamedCookies(java.lang.Iterable<java.lang.String> values) {
       ensureIncludeNamedCookiesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, includeNamedCookies_);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1369,8 +1366,9 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearIncludeNamedCookies() {
-      includeNamedCookies_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      includeNamedCookies_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000004);
+      ;
       onChanged();
       return this;
     }
@@ -1393,6 +1391,7 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureIncludeNamedCookiesIsMutable();
       includeNamedCookies_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1533,14 +1532,14 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList queryStringBlacklist_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList queryStringBlacklist_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureQueryStringBlacklistIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!queryStringBlacklist_.isModifiable()) {
         queryStringBlacklist_ = new com.google.protobuf.LazyStringArrayList(queryStringBlacklist_);
-        bitField0_ |= 0x00000020;
       }
+      bitField0_ |= 0x00000020;
     }
     /**
      *
@@ -1554,7 +1553,8 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the queryStringBlacklist.
      */
     public com.google.protobuf.ProtocolStringList getQueryStringBlacklistList() {
-      return queryStringBlacklist_.getUnmodifiableView();
+      queryStringBlacklist_.makeImmutable();
+      return queryStringBlacklist_;
     }
     /**
      *
@@ -1619,6 +1619,7 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       ensureQueryStringBlacklistIsMutable();
       queryStringBlacklist_.set(index, value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1640,6 +1641,7 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       ensureQueryStringBlacklistIsMutable();
       queryStringBlacklist_.add(value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1658,6 +1660,7 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllQueryStringBlacklist(java.lang.Iterable<java.lang.String> values) {
       ensureQueryStringBlacklistIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, queryStringBlacklist_);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1673,8 +1676,9 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearQueryStringBlacklist() {
-      queryStringBlacklist_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      queryStringBlacklist_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000020);
+      ;
       onChanged();
       return this;
     }
@@ -1697,18 +1701,19 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureQueryStringBlacklistIsMutable();
       queryStringBlacklist_.add(value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList queryStringWhitelist_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList queryStringWhitelist_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureQueryStringWhitelistIsMutable() {
-      if (!((bitField0_ & 0x00000040) != 0)) {
+      if (!queryStringWhitelist_.isModifiable()) {
         queryStringWhitelist_ = new com.google.protobuf.LazyStringArrayList(queryStringWhitelist_);
-        bitField0_ |= 0x00000040;
       }
+      bitField0_ |= 0x00000040;
     }
     /**
      *
@@ -1722,7 +1727,8 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the queryStringWhitelist.
      */
     public com.google.protobuf.ProtocolStringList getQueryStringWhitelistList() {
-      return queryStringWhitelist_.getUnmodifiableView();
+      queryStringWhitelist_.makeImmutable();
+      return queryStringWhitelist_;
     }
     /**
      *
@@ -1787,6 +1793,7 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       ensureQueryStringWhitelistIsMutable();
       queryStringWhitelist_.set(index, value);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1808,6 +1815,7 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       ensureQueryStringWhitelistIsMutable();
       queryStringWhitelist_.add(value);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1826,6 +1834,7 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllQueryStringWhitelist(java.lang.Iterable<java.lang.String> values) {
       ensureQueryStringWhitelistIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, queryStringWhitelist_);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1841,8 +1850,9 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearQueryStringWhitelist() {
-      queryStringWhitelist_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      queryStringWhitelist_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000040);
+      ;
       onChanged();
       return this;
     }
@@ -1865,6 +1875,7 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureQueryStringWhitelistIsMutable();
       queryStringWhitelist_.add(value);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }

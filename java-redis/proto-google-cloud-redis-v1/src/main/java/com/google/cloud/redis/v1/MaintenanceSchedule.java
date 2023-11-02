@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,11 +46,6 @@ public final class MaintenanceSchedule extends com.google.protobuf.GeneratedMess
     return new MaintenanceSchedule();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.redis.v1.CloudRedisServiceV1Proto
         .internal_static_google_cloud_redis_v1_MaintenanceSchedule_descriptor;
@@ -72,7 +67,8 @@ public final class MaintenanceSchedule extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Output only. The start time of any upcoming scheduled maintenance for this instance.
+   * Output only. The start time of any upcoming scheduled maintenance for this
+   * instance.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -88,7 +84,8 @@ public final class MaintenanceSchedule extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Output only. The start time of any upcoming scheduled maintenance for this instance.
+   * Output only. The start time of any upcoming scheduled maintenance for this
+   * instance.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -104,7 +101,8 @@ public final class MaintenanceSchedule extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Output only. The start time of any upcoming scheduled maintenance for this instance.
+   * Output only. The start time of any upcoming scheduled maintenance for this
+   * instance.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -121,7 +119,8 @@ public final class MaintenanceSchedule extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Output only. The end time of any upcoming scheduled maintenance for this instance.
+   * Output only. The end time of any upcoming scheduled maintenance for this
+   * instance.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -137,7 +136,8 @@ public final class MaintenanceSchedule extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Output only. The end time of any upcoming scheduled maintenance for this instance.
+   * Output only. The end time of any upcoming scheduled maintenance for this
+   * instance.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -153,7 +153,8 @@ public final class MaintenanceSchedule extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Output only. The end time of any upcoming scheduled maintenance for this instance.
+   * Output only. The end time of any upcoming scheduled maintenance for this
+   * instance.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -176,7 +177,7 @@ public final class MaintenanceSchedule extends com.google.protobuf.GeneratedMess
    * <code>bool can_reschedule = 3 [deprecated = true];</code>
    *
    * @deprecated google.cloud.redis.v1.MaintenanceSchedule.can_reschedule is deprecated. See
-   *     google/cloud/redis/v1/cloud_redis.proto;l=576
+   *     google/cloud/redis/v1/cloud_redis.proto;l=690
    * @return The canReschedule.
    */
   @java.lang.Override
@@ -191,8 +192,8 @@ public final class MaintenanceSchedule extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Output only. The deadline that the maintenance schedule start time can not go beyond,
-   * including reschedule.
+   * Output only. The deadline that the maintenance schedule start time can not
+   * go beyond, including reschedule.
    * </pre>
    *
    * <code>
@@ -209,8 +210,8 @@ public final class MaintenanceSchedule extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Output only. The deadline that the maintenance schedule start time can not go beyond,
-   * including reschedule.
+   * Output only. The deadline that the maintenance schedule start time can not
+   * go beyond, including reschedule.
    * </pre>
    *
    * <code>
@@ -229,8 +230,8 @@ public final class MaintenanceSchedule extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Output only. The deadline that the maintenance schedule start time can not go beyond,
-   * including reschedule.
+   * Output only. The deadline that the maintenance schedule start time can not
+   * go beyond, including reschedule.
    * </pre>
    *
    * <code>
@@ -692,7 +693,8 @@ public final class MaintenanceSchedule extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The start time of any upcoming scheduled maintenance for this instance.
+     * Output only. The start time of any upcoming scheduled maintenance for this
+     * instance.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -707,7 +709,8 @@ public final class MaintenanceSchedule extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The start time of any upcoming scheduled maintenance for this instance.
+     * Output only. The start time of any upcoming scheduled maintenance for this
+     * instance.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -726,7 +729,8 @@ public final class MaintenanceSchedule extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The start time of any upcoming scheduled maintenance for this instance.
+     * Output only. The start time of any upcoming scheduled maintenance for this
+     * instance.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -749,7 +753,8 @@ public final class MaintenanceSchedule extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The start time of any upcoming scheduled maintenance for this instance.
+     * Output only. The start time of any upcoming scheduled maintenance for this
+     * instance.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -769,7 +774,8 @@ public final class MaintenanceSchedule extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The start time of any upcoming scheduled maintenance for this instance.
+     * Output only. The start time of any upcoming scheduled maintenance for this
+     * instance.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -795,7 +801,8 @@ public final class MaintenanceSchedule extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The start time of any upcoming scheduled maintenance for this instance.
+     * Output only. The start time of any upcoming scheduled maintenance for this
+     * instance.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -815,7 +822,8 @@ public final class MaintenanceSchedule extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The start time of any upcoming scheduled maintenance for this instance.
+     * Output only. The start time of any upcoming scheduled maintenance for this
+     * instance.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -830,7 +838,8 @@ public final class MaintenanceSchedule extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The start time of any upcoming scheduled maintenance for this instance.
+     * Output only. The start time of any upcoming scheduled maintenance for this
+     * instance.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -847,7 +856,8 @@ public final class MaintenanceSchedule extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The start time of any upcoming scheduled maintenance for this instance.
+     * Output only. The start time of any upcoming scheduled maintenance for this
+     * instance.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -880,7 +890,8 @@ public final class MaintenanceSchedule extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The end time of any upcoming scheduled maintenance for this instance.
+     * Output only. The end time of any upcoming scheduled maintenance for this
+     * instance.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -895,7 +906,8 @@ public final class MaintenanceSchedule extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The end time of any upcoming scheduled maintenance for this instance.
+     * Output only. The end time of any upcoming scheduled maintenance for this
+     * instance.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -914,7 +926,8 @@ public final class MaintenanceSchedule extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The end time of any upcoming scheduled maintenance for this instance.
+     * Output only. The end time of any upcoming scheduled maintenance for this
+     * instance.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -937,7 +950,8 @@ public final class MaintenanceSchedule extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The end time of any upcoming scheduled maintenance for this instance.
+     * Output only. The end time of any upcoming scheduled maintenance for this
+     * instance.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -957,7 +971,8 @@ public final class MaintenanceSchedule extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The end time of any upcoming scheduled maintenance for this instance.
+     * Output only. The end time of any upcoming scheduled maintenance for this
+     * instance.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -983,7 +998,8 @@ public final class MaintenanceSchedule extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The end time of any upcoming scheduled maintenance for this instance.
+     * Output only. The end time of any upcoming scheduled maintenance for this
+     * instance.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1003,7 +1019,8 @@ public final class MaintenanceSchedule extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The end time of any upcoming scheduled maintenance for this instance.
+     * Output only. The end time of any upcoming scheduled maintenance for this
+     * instance.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1018,7 +1035,8 @@ public final class MaintenanceSchedule extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The end time of any upcoming scheduled maintenance for this instance.
+     * Output only. The end time of any upcoming scheduled maintenance for this
+     * instance.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1035,7 +1053,8 @@ public final class MaintenanceSchedule extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The end time of any upcoming scheduled maintenance for this instance.
+     * Output only. The end time of any upcoming scheduled maintenance for this
+     * instance.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1069,7 +1088,7 @@ public final class MaintenanceSchedule extends com.google.protobuf.GeneratedMess
      * <code>bool can_reschedule = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.redis.v1.MaintenanceSchedule.can_reschedule is deprecated. See
-     *     google/cloud/redis/v1/cloud_redis.proto;l=576
+     *     google/cloud/redis/v1/cloud_redis.proto;l=690
      * @return The canReschedule.
      */
     @java.lang.Override
@@ -1087,7 +1106,7 @@ public final class MaintenanceSchedule extends com.google.protobuf.GeneratedMess
      * <code>bool can_reschedule = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.redis.v1.MaintenanceSchedule.can_reschedule is deprecated. See
-     *     google/cloud/redis/v1/cloud_redis.proto;l=576
+     *     google/cloud/redis/v1/cloud_redis.proto;l=690
      * @param value The canReschedule to set.
      * @return This builder for chaining.
      */
@@ -1109,7 +1128,7 @@ public final class MaintenanceSchedule extends com.google.protobuf.GeneratedMess
      * <code>bool can_reschedule = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.redis.v1.MaintenanceSchedule.can_reschedule is deprecated. See
-     *     google/cloud/redis/v1/cloud_redis.proto;l=576
+     *     google/cloud/redis/v1/cloud_redis.proto;l=690
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1130,8 +1149,8 @@ public final class MaintenanceSchedule extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The deadline that the maintenance schedule start time can not go beyond,
-     * including reschedule.
+     * Output only. The deadline that the maintenance schedule start time can not
+     * go beyond, including reschedule.
      * </pre>
      *
      * <code>
@@ -1147,8 +1166,8 @@ public final class MaintenanceSchedule extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The deadline that the maintenance schedule start time can not go beyond,
-     * including reschedule.
+     * Output only. The deadline that the maintenance schedule start time can not
+     * go beyond, including reschedule.
      * </pre>
      *
      * <code>
@@ -1170,8 +1189,8 @@ public final class MaintenanceSchedule extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The deadline that the maintenance schedule start time can not go beyond,
-     * including reschedule.
+     * Output only. The deadline that the maintenance schedule start time can not
+     * go beyond, including reschedule.
      * </pre>
      *
      * <code>
@@ -1195,8 +1214,8 @@ public final class MaintenanceSchedule extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The deadline that the maintenance schedule start time can not go beyond,
-     * including reschedule.
+     * Output only. The deadline that the maintenance schedule start time can not
+     * go beyond, including reschedule.
      * </pre>
      *
      * <code>
@@ -1217,8 +1236,8 @@ public final class MaintenanceSchedule extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The deadline that the maintenance schedule start time can not go beyond,
-     * including reschedule.
+     * Output only. The deadline that the maintenance schedule start time can not
+     * go beyond, including reschedule.
      * </pre>
      *
      * <code>
@@ -1245,8 +1264,8 @@ public final class MaintenanceSchedule extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The deadline that the maintenance schedule start time can not go beyond,
-     * including reschedule.
+     * Output only. The deadline that the maintenance schedule start time can not
+     * go beyond, including reschedule.
      * </pre>
      *
      * <code>
@@ -1267,8 +1286,8 @@ public final class MaintenanceSchedule extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The deadline that the maintenance schedule start time can not go beyond,
-     * including reschedule.
+     * Output only. The deadline that the maintenance schedule start time can not
+     * go beyond, including reschedule.
      * </pre>
      *
      * <code>
@@ -1284,8 +1303,8 @@ public final class MaintenanceSchedule extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The deadline that the maintenance schedule start time can not go beyond,
-     * including reschedule.
+     * Output only. The deadline that the maintenance schedule start time can not
+     * go beyond, including reschedule.
      * </pre>
      *
      * <code>
@@ -1305,8 +1324,8 @@ public final class MaintenanceSchedule extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The deadline that the maintenance schedule start time can not go beyond,
-     * including reschedule.
+     * Output only. The deadline that the maintenance schedule start time can not
+     * go beyond, including reschedule.
      * </pre>
      *
      * <code>

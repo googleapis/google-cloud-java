@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,20 +23,28 @@ package com.google.dataflow.v1beta3;
  *
  * <pre>
  * Defines a particular step within a Cloud Dataflow job.
+ *
  * A job consists of multiple steps, each of which performs some
  * specific operation as part of the overall job.  Data is typically
  * passed from one step to another as part of the job.
+ *
  * Here's an example of a sequence of steps which together implement a
  * Map-Reduce job:
+ *
  *   * Read a collection of data from some source, parsing the
  *     collection's elements.
+ *
  *   * Validate the elements.
+ *
  *   * Apply a user-defined function to map each element to some value
  *     and extract an element-specific key value.
+ *
  *   * Group elements with the same key into a single element with
  *     that key, transforming a multiply-keyed collection into a
  *     uniquely-keyed collection.
+ *
  *   * Write the elements out to some data sink.
+ *
  * Note that the Cloud Dataflow service may be used to run many different
  * types of jobs, not just Map-Reduce.
  * </pre>
@@ -62,11 +70,6 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Step();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -424,20 +427,28 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Defines a particular step within a Cloud Dataflow job.
+   *
    * A job consists of multiple steps, each of which performs some
    * specific operation as part of the overall job.  Data is typically
    * passed from one step to another as part of the job.
+   *
    * Here's an example of a sequence of steps which together implement a
    * Map-Reduce job:
+   *
    *   * Read a collection of data from some source, parsing the
    *     collection's elements.
+   *
    *   * Validate the elements.
+   *
    *   * Apply a user-defined function to map each element to some value
    *     and extract an element-specific key value.
+   *
    *   * Group elements with the same key into a single element with
    *     that key, transforming a multiply-keyed collection into a
    *     uniquely-keyed collection.
+   *
    *   * Write the elements out to some data sink.
+   *
    * Note that the Cloud Dataflow service may be used to run many different
    * types of jobs, not just Map-Reduce.
    * </pre>

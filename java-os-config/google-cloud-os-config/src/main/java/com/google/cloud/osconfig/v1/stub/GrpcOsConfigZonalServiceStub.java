@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.osconfig.v1.CreateOSPolicyAssignmentRequest;
 import com.google.cloud.osconfig.v1.DeleteOSPolicyAssignmentRequest;
@@ -51,7 +52,6 @@ import com.google.cloud.osconfig.v1.OSPolicyAssignmentOperationMetadata;
 import com.google.cloud.osconfig.v1.OSPolicyAssignmentReport;
 import com.google.cloud.osconfig.v1.UpdateOSPolicyAssignmentRequest;
 import com.google.cloud.osconfig.v1.VulnerabilityReport;
-import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
@@ -317,9 +317,9 @@ public class GrpcOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
                 .setMethodDescriptor(createOSPolicyAssignmentMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<UpdateOSPolicyAssignmentRequest, Operation>
@@ -328,11 +328,11 @@ public class GrpcOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
                 .setMethodDescriptor(updateOSPolicyAssignmentMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put(
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
                           "os_policy_assignment.name",
                           String.valueOf(request.getOsPolicyAssignment().getName()));
-                      return params.build();
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetOSPolicyAssignmentRequest, OSPolicyAssignment>
@@ -341,9 +341,9 @@ public class GrpcOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
                 .setMethodDescriptor(getOSPolicyAssignmentMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<ListOSPolicyAssignmentsRequest, ListOSPolicyAssignmentsResponse>
@@ -353,9 +353,9 @@ public class GrpcOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
                 .setMethodDescriptor(listOSPolicyAssignmentsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<
@@ -367,9 +367,9 @@ public class GrpcOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
                 .setMethodDescriptor(listOSPolicyAssignmentRevisionsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<DeleteOSPolicyAssignmentRequest, Operation>
@@ -378,9 +378,9 @@ public class GrpcOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
                 .setMethodDescriptor(deleteOSPolicyAssignmentMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetOSPolicyAssignmentReportRequest, OSPolicyAssignmentReport>
@@ -390,9 +390,9 @@ public class GrpcOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
                 .setMethodDescriptor(getOSPolicyAssignmentReportMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<ListOSPolicyAssignmentReportsRequest, ListOSPolicyAssignmentReportsResponse>
@@ -403,9 +403,9 @@ public class GrpcOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
                 .setMethodDescriptor(listOSPolicyAssignmentReportsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetInventoryRequest, Inventory> getInventoryTransportSettings =
@@ -413,9 +413,9 @@ public class GrpcOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
             .setMethodDescriptor(getInventoryMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListInventoriesRequest, ListInventoriesResponse>
@@ -424,9 +424,9 @@ public class GrpcOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
                 .setMethodDescriptor(listInventoriesMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetVulnerabilityReportRequest, VulnerabilityReport>
@@ -435,9 +435,9 @@ public class GrpcOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
                 .setMethodDescriptor(getVulnerabilityReportMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<ListVulnerabilityReportsRequest, ListVulnerabilityReportsResponse>
@@ -447,9 +447,9 @@ public class GrpcOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
                 .setMethodDescriptor(listVulnerabilityReportsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
 

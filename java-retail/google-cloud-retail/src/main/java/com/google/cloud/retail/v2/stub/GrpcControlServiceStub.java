@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.retail.v2.Control;
 import com.google.cloud.retail.v2.CreateControlRequest;
@@ -31,7 +32,6 @@ import com.google.cloud.retail.v2.GetControlRequest;
 import com.google.cloud.retail.v2.ListControlsRequest;
 import com.google.cloud.retail.v2.ListControlsResponse;
 import com.google.cloud.retail.v2.UpdateControlRequest;
-import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
@@ -151,9 +151,9 @@ public class GrpcControlServiceStub extends ControlServiceStub {
             .setMethodDescriptor(createControlMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteControlRequest, Empty> deleteControlTransportSettings =
@@ -161,9 +161,9 @@ public class GrpcControlServiceStub extends ControlServiceStub {
             .setMethodDescriptor(deleteControlMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateControlRequest, Control> updateControlTransportSettings =
@@ -171,9 +171,9 @@ public class GrpcControlServiceStub extends ControlServiceStub {
             .setMethodDescriptor(updateControlMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("control.name", String.valueOf(request.getControl().getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("control.name", String.valueOf(request.getControl().getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetControlRequest, Control> getControlTransportSettings =
@@ -181,9 +181,9 @@ public class GrpcControlServiceStub extends ControlServiceStub {
             .setMethodDescriptor(getControlMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListControlsRequest, ListControlsResponse> listControlsTransportSettings =
@@ -191,9 +191,9 @@ public class GrpcControlServiceStub extends ControlServiceStub {
             .setMethodDescriptor(listControlsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
 

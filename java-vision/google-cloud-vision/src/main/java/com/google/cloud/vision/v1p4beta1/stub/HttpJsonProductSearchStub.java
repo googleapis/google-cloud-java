@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,6 +35,7 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.httpjson.longrunning.stub.HttpJsonOperationsStub;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.vision.v1p4beta1.AddProductToProductSetRequest;
 import com.google.cloud.vision.v1p4beta1.BatchOperationMetadata;
@@ -879,63 +880,136 @@ public class HttpJsonProductSearchStub extends ProductSearchStub {
         HttpJsonCallSettings.<CreateProductSetRequest, ProductSet>newBuilder()
             .setMethodDescriptor(createProductSetMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListProductSetsRequest, ListProductSetsResponse>
         listProductSetsTransportSettings =
             HttpJsonCallSettings.<ListProductSetsRequest, ListProductSetsResponse>newBuilder()
                 .setMethodDescriptor(listProductSetsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetProductSetRequest, ProductSet> getProductSetTransportSettings =
         HttpJsonCallSettings.<GetProductSetRequest, ProductSet>newBuilder()
             .setMethodDescriptor(getProductSetMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateProductSetRequest, ProductSet> updateProductSetTransportSettings =
         HttpJsonCallSettings.<UpdateProductSetRequest, ProductSet>newBuilder()
             .setMethodDescriptor(updateProductSetMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "product_set.name", String.valueOf(request.getProductSet().getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeleteProductSetRequest, Empty> deleteProductSetTransportSettings =
         HttpJsonCallSettings.<DeleteProductSetRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteProductSetMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<CreateProductRequest, Product> createProductTransportSettings =
         HttpJsonCallSettings.<CreateProductRequest, Product>newBuilder()
             .setMethodDescriptor(createProductMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListProductsRequest, ListProductsResponse> listProductsTransportSettings =
         HttpJsonCallSettings.<ListProductsRequest, ListProductsResponse>newBuilder()
             .setMethodDescriptor(listProductsMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetProductRequest, Product> getProductTransportSettings =
         HttpJsonCallSettings.<GetProductRequest, Product>newBuilder()
             .setMethodDescriptor(getProductMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateProductRequest, Product> updateProductTransportSettings =
         HttpJsonCallSettings.<UpdateProductRequest, Product>newBuilder()
             .setMethodDescriptor(updateProductMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("product.name", String.valueOf(request.getProduct().getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeleteProductRequest, Empty> deleteProductTransportSettings =
         HttpJsonCallSettings.<DeleteProductRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteProductMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<CreateReferenceImageRequest, ReferenceImage>
         createReferenceImageTransportSettings =
             HttpJsonCallSettings.<CreateReferenceImageRequest, ReferenceImage>newBuilder()
                 .setMethodDescriptor(createReferenceImageMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteReferenceImageRequest, Empty> deleteReferenceImageTransportSettings =
         HttpJsonCallSettings.<DeleteReferenceImageRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteReferenceImageMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListReferenceImagesRequest, ListReferenceImagesResponse>
         listReferenceImagesTransportSettings =
@@ -943,24 +1017,48 @@ public class HttpJsonProductSearchStub extends ProductSearchStub {
                 .<ListReferenceImagesRequest, ListReferenceImagesResponse>newBuilder()
                 .setMethodDescriptor(listReferenceImagesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetReferenceImageRequest, ReferenceImage>
         getReferenceImageTransportSettings =
             HttpJsonCallSettings.<GetReferenceImageRequest, ReferenceImage>newBuilder()
                 .setMethodDescriptor(getReferenceImageMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<AddProductToProductSetRequest, Empty>
         addProductToProductSetTransportSettings =
             HttpJsonCallSettings.<AddProductToProductSetRequest, Empty>newBuilder()
                 .setMethodDescriptor(addProductToProductSetMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<RemoveProductFromProductSetRequest, Empty>
         removeProductFromProductSetTransportSettings =
             HttpJsonCallSettings.<RemoveProductFromProductSetRequest, Empty>newBuilder()
                 .setMethodDescriptor(removeProductFromProductSetMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ListProductsInProductSetRequest, ListProductsInProductSetResponse>
         listProductsInProductSetTransportSettings =
@@ -968,16 +1066,34 @@ public class HttpJsonProductSearchStub extends ProductSearchStub {
                 .<ListProductsInProductSetRequest, ListProductsInProductSetResponse>newBuilder()
                 .setMethodDescriptor(listProductsInProductSetMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ImportProductSetsRequest, Operation> importProductSetsTransportSettings =
         HttpJsonCallSettings.<ImportProductSetsRequest, Operation>newBuilder()
             .setMethodDescriptor(importProductSetsMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<PurgeProductsRequest, Operation> purgeProductsTransportSettings =
         HttpJsonCallSettings.<PurgeProductsRequest, Operation>newBuilder()
             .setMethodDescriptor(purgeProductsMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
 
     this.createProductSetCallable =

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -378,7 +378,7 @@ public interface ContentOrBuilder
    */
   com.google.cloud.dataplex.v1.Content.NotebookOrBuilder getNotebookOrBuilder();
 
-  public com.google.cloud.dataplex.v1.Content.DataCase getDataCase();
+  com.google.cloud.dataplex.v1.Content.DataCase getDataCase();
 
-  public com.google.cloud.dataplex.v1.Content.ContentCase getContentCase();
+  com.google.cloud.dataplex.v1.Content.ContentCase getContentCase();
 }

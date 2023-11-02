@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,11 +52,6 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
     return new ConsumerQuotaMetric();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.api.serviceusage.v1beta1.ResourcesProto
         .internal_static_google_api_serviceusage_v1beta1_ConsumerQuotaMetric_descriptor;
@@ -81,8 +76,10 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * The resource name of the quota settings on this metric for this consumer.
+   *
    * An example name would be:
    * `projects/123/services/compute.googleapis.com/consumerQuotaMetrics/compute.googleapis.com%2Fcpus`
+   *
    * The resource name is intended to be opaque and should not be parsed for
    * its component strings, since its representation could change in the future.
    * </pre>
@@ -108,8 +105,10 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * The resource name of the quota settings on this metric for this consumer.
+   *
    * An example name would be:
    * `projects/123/services/compute.googleapis.com/consumerQuotaMetrics/compute.googleapis.com%2Fcpus`
+   *
    * The resource name is intended to be opaque and should not be parsed for
    * its component strings, since its representation could change in the future.
    * </pre>
@@ -140,6 +139,7 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * The name of the metric.
+   *
    * An example name would be:
    * `compute.googleapis.com/cpus`
    * </pre>
@@ -165,6 +165,7 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * The name of the metric.
+   *
    * An example name would be:
    * `compute.googleapis.com/cpus`
    * </pre>
@@ -195,6 +196,7 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * The display name of the metric.
+   *
    * An example name would be:
    * `CPUs`
    * </pre>
@@ -220,6 +222,7 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * The display name of the metric.
+   *
    * An example name would be:
    * `CPUs`
    * </pre>
@@ -331,9 +334,11 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
    * <pre>
    * The quota limits targeting the descendant containers of the
    * consumer in request.
+   *
    * If the consumer in request is of type `organizations`
    * or `folders`, the field will list per-project limits in the metric; if the
    * consumer in request is of type `project`, the field will be empty.
+   *
    * The `quota_buckets` field of each descendant consumer quota limit will not
    * be populated.
    * </pre>
@@ -353,9 +358,11 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
    * <pre>
    * The quota limits targeting the descendant containers of the
    * consumer in request.
+   *
    * If the consumer in request is of type `organizations`
    * or `folders`, the field will list per-project limits in the metric; if the
    * consumer in request is of type `project`, the field will be empty.
+   *
    * The `quota_buckets` field of each descendant consumer quota limit will not
    * be populated.
    * </pre>
@@ -375,9 +382,11 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
    * <pre>
    * The quota limits targeting the descendant containers of the
    * consumer in request.
+   *
    * If the consumer in request is of type `organizations`
    * or `folders`, the field will list per-project limits in the metric; if the
    * consumer in request is of type `project`, the field will be empty.
+   *
    * The `quota_buckets` field of each descendant consumer quota limit will not
    * be populated.
    * </pre>
@@ -396,9 +405,11 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
    * <pre>
    * The quota limits targeting the descendant containers of the
    * consumer in request.
+   *
    * If the consumer in request is of type `organizations`
    * or `folders`, the field will list per-project limits in the metric; if the
    * consumer in request is of type `project`, the field will be empty.
+   *
    * The `quota_buckets` field of each descendant consumer quota limit will not
    * be populated.
    * </pre>
@@ -418,9 +429,11 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
    * <pre>
    * The quota limits targeting the descendant containers of the
    * consumer in request.
+   *
    * If the consumer in request is of type `organizations`
    * or `folders`, the field will list per-project limits in the metric; if the
    * consumer in request is of type `project`, the field will be empty.
+   *
    * The `quota_buckets` field of each descendant consumer quota limit will not
    * be populated.
    * </pre>
@@ -1054,8 +1067,10 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The resource name of the quota settings on this metric for this consumer.
+     *
      * An example name would be:
      * `projects/123/services/compute.googleapis.com/consumerQuotaMetrics/compute.googleapis.com%2Fcpus`
+     *
      * The resource name is intended to be opaque and should not be parsed for
      * its component strings, since its representation could change in the future.
      * </pre>
@@ -1080,8 +1095,10 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The resource name of the quota settings on this metric for this consumer.
+     *
      * An example name would be:
      * `projects/123/services/compute.googleapis.com/consumerQuotaMetrics/compute.googleapis.com%2Fcpus`
+     *
      * The resource name is intended to be opaque and should not be parsed for
      * its component strings, since its representation could change in the future.
      * </pre>
@@ -1106,8 +1123,10 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The resource name of the quota settings on this metric for this consumer.
+     *
      * An example name would be:
      * `projects/123/services/compute.googleapis.com/consumerQuotaMetrics/compute.googleapis.com%2Fcpus`
+     *
      * The resource name is intended to be opaque and should not be parsed for
      * its component strings, since its representation could change in the future.
      * </pre>
@@ -1131,8 +1150,10 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The resource name of the quota settings on this metric for this consumer.
+     *
      * An example name would be:
      * `projects/123/services/compute.googleapis.com/consumerQuotaMetrics/compute.googleapis.com%2Fcpus`
+     *
      * The resource name is intended to be opaque and should not be parsed for
      * its component strings, since its representation could change in the future.
      * </pre>
@@ -1152,8 +1173,10 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The resource name of the quota settings on this metric for this consumer.
+     *
      * An example name would be:
      * `projects/123/services/compute.googleapis.com/consumerQuotaMetrics/compute.googleapis.com%2Fcpus`
+     *
      * The resource name is intended to be opaque and should not be parsed for
      * its component strings, since its representation could change in the future.
      * </pre>
@@ -1180,6 +1203,7 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The name of the metric.
+     *
      * An example name would be:
      * `compute.googleapis.com/cpus`
      * </pre>
@@ -1204,6 +1228,7 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The name of the metric.
+     *
      * An example name would be:
      * `compute.googleapis.com/cpus`
      * </pre>
@@ -1228,6 +1253,7 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The name of the metric.
+     *
      * An example name would be:
      * `compute.googleapis.com/cpus`
      * </pre>
@@ -1251,6 +1277,7 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The name of the metric.
+     *
      * An example name would be:
      * `compute.googleapis.com/cpus`
      * </pre>
@@ -1270,6 +1297,7 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The name of the metric.
+     *
      * An example name would be:
      * `compute.googleapis.com/cpus`
      * </pre>
@@ -1296,6 +1324,7 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The display name of the metric.
+     *
      * An example name would be:
      * `CPUs`
      * </pre>
@@ -1320,6 +1349,7 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The display name of the metric.
+     *
      * An example name would be:
      * `CPUs`
      * </pre>
@@ -1344,6 +1374,7 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The display name of the metric.
+     *
      * An example name would be:
      * `CPUs`
      * </pre>
@@ -1367,6 +1398,7 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The display name of the metric.
+     *
      * An example name would be:
      * `CPUs`
      * </pre>
@@ -1386,6 +1418,7 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The display name of the metric.
+     *
      * An example name would be:
      * `CPUs`
      * </pre>
@@ -1814,9 +1847,11 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
      * <pre>
      * The quota limits targeting the descendant containers of the
      * consumer in request.
+     *
      * If the consumer in request is of type `organizations`
      * or `folders`, the field will list per-project limits in the metric; if the
      * consumer in request is of type `project`, the field will be empty.
+     *
      * The `quota_buckets` field of each descendant consumer quota limit will not
      * be populated.
      * </pre>
@@ -1839,9 +1874,11 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
      * <pre>
      * The quota limits targeting the descendant containers of the
      * consumer in request.
+     *
      * If the consumer in request is of type `organizations`
      * or `folders`, the field will list per-project limits in the metric; if the
      * consumer in request is of type `project`, the field will be empty.
+     *
      * The `quota_buckets` field of each descendant consumer quota limit will not
      * be populated.
      * </pre>
@@ -1863,9 +1900,11 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
      * <pre>
      * The quota limits targeting the descendant containers of the
      * consumer in request.
+     *
      * If the consumer in request is of type `organizations`
      * or `folders`, the field will list per-project limits in the metric; if the
      * consumer in request is of type `project`, the field will be empty.
+     *
      * The `quota_buckets` field of each descendant consumer quota limit will not
      * be populated.
      * </pre>
@@ -1888,9 +1927,11 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
      * <pre>
      * The quota limits targeting the descendant containers of the
      * consumer in request.
+     *
      * If the consumer in request is of type `organizations`
      * or `folders`, the field will list per-project limits in the metric; if the
      * consumer in request is of type `project`, the field will be empty.
+     *
      * The `quota_buckets` field of each descendant consumer quota limit will not
      * be populated.
      * </pre>
@@ -1919,9 +1960,11 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
      * <pre>
      * The quota limits targeting the descendant containers of the
      * consumer in request.
+     *
      * If the consumer in request is of type `organizations`
      * or `folders`, the field will list per-project limits in the metric; if the
      * consumer in request is of type `project`, the field will be empty.
+     *
      * The `quota_buckets` field of each descendant consumer quota limit will not
      * be populated.
      * </pre>
@@ -1947,9 +1990,11 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
      * <pre>
      * The quota limits targeting the descendant containers of the
      * consumer in request.
+     *
      * If the consumer in request is of type `organizations`
      * or `folders`, the field will list per-project limits in the metric; if the
      * consumer in request is of type `project`, the field will be empty.
+     *
      * The `quota_buckets` field of each descendant consumer quota limit will not
      * be populated.
      * </pre>
@@ -1978,9 +2023,11 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
      * <pre>
      * The quota limits targeting the descendant containers of the
      * consumer in request.
+     *
      * If the consumer in request is of type `organizations`
      * or `folders`, the field will list per-project limits in the metric; if the
      * consumer in request is of type `project`, the field will be empty.
+     *
      * The `quota_buckets` field of each descendant consumer quota limit will not
      * be populated.
      * </pre>
@@ -2009,9 +2056,11 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
      * <pre>
      * The quota limits targeting the descendant containers of the
      * consumer in request.
+     *
      * If the consumer in request is of type `organizations`
      * or `folders`, the field will list per-project limits in the metric; if the
      * consumer in request is of type `project`, the field will be empty.
+     *
      * The `quota_buckets` field of each descendant consumer quota limit will not
      * be populated.
      * </pre>
@@ -2037,9 +2086,11 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
      * <pre>
      * The quota limits targeting the descendant containers of the
      * consumer in request.
+     *
      * If the consumer in request is of type `organizations`
      * or `folders`, the field will list per-project limits in the metric; if the
      * consumer in request is of type `project`, the field will be empty.
+     *
      * The `quota_buckets` field of each descendant consumer quota limit will not
      * be populated.
      * </pre>
@@ -2065,9 +2116,11 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
      * <pre>
      * The quota limits targeting the descendant containers of the
      * consumer in request.
+     *
      * If the consumer in request is of type `organizations`
      * or `folders`, the field will list per-project limits in the metric; if the
      * consumer in request is of type `project`, the field will be empty.
+     *
      * The `quota_buckets` field of each descendant consumer quota limit will not
      * be populated.
      * </pre>
@@ -2095,9 +2148,11 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
      * <pre>
      * The quota limits targeting the descendant containers of the
      * consumer in request.
+     *
      * If the consumer in request is of type `organizations`
      * or `folders`, the field will list per-project limits in the metric; if the
      * consumer in request is of type `project`, the field will be empty.
+     *
      * The `quota_buckets` field of each descendant consumer quota limit will not
      * be populated.
      * </pre>
@@ -2122,9 +2177,11 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
      * <pre>
      * The quota limits targeting the descendant containers of the
      * consumer in request.
+     *
      * If the consumer in request is of type `organizations`
      * or `folders`, the field will list per-project limits in the metric; if the
      * consumer in request is of type `project`, the field will be empty.
+     *
      * The `quota_buckets` field of each descendant consumer quota limit will not
      * be populated.
      * </pre>
@@ -2149,9 +2206,11 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
      * <pre>
      * The quota limits targeting the descendant containers of the
      * consumer in request.
+     *
      * If the consumer in request is of type `organizations`
      * or `folders`, the field will list per-project limits in the metric; if the
      * consumer in request is of type `project`, the field will be empty.
+     *
      * The `quota_buckets` field of each descendant consumer quota limit will not
      * be populated.
      * </pre>
@@ -2170,9 +2229,11 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
      * <pre>
      * The quota limits targeting the descendant containers of the
      * consumer in request.
+     *
      * If the consumer in request is of type `organizations`
      * or `folders`, the field will list per-project limits in the metric; if the
      * consumer in request is of type `project`, the field will be empty.
+     *
      * The `quota_buckets` field of each descendant consumer quota limit will not
      * be populated.
      * </pre>
@@ -2195,9 +2256,11 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
      * <pre>
      * The quota limits targeting the descendant containers of the
      * consumer in request.
+     *
      * If the consumer in request is of type `organizations`
      * or `folders`, the field will list per-project limits in the metric; if the
      * consumer in request is of type `project`, the field will be empty.
+     *
      * The `quota_buckets` field of each descendant consumer quota limit will not
      * be populated.
      * </pre>
@@ -2220,9 +2283,11 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
      * <pre>
      * The quota limits targeting the descendant containers of the
      * consumer in request.
+     *
      * If the consumer in request is of type `organizations`
      * or `folders`, the field will list per-project limits in the metric; if the
      * consumer in request is of type `project`, the field will be empty.
+     *
      * The `quota_buckets` field of each descendant consumer quota limit will not
      * be populated.
      * </pre>
@@ -2242,9 +2307,11 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
      * <pre>
      * The quota limits targeting the descendant containers of the
      * consumer in request.
+     *
      * If the consumer in request is of type `organizations`
      * or `folders`, the field will list per-project limits in the metric; if the
      * consumer in request is of type `project`, the field will be empty.
+     *
      * The `quota_buckets` field of each descendant consumer quota limit will not
      * be populated.
      * </pre>
@@ -2265,9 +2332,11 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
      * <pre>
      * The quota limits targeting the descendant containers of the
      * consumer in request.
+     *
      * If the consumer in request is of type `organizations`
      * or `folders`, the field will list per-project limits in the metric; if the
      * consumer in request is of type `project`, the field will be empty.
+     *
      * The `quota_buckets` field of each descendant consumer quota limit will not
      * be populated.
      * </pre>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,7 +38,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
   }
 
   private OperationMetadata() {
-    resourceNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    resourceNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
     steps_ = java.util.Collections.emptyList();
   }
 
@@ -46,11 +46,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new OperationMetadata();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -378,11 +373,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Step();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1130,7 +1120,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
   public static final int RESOURCE_NAMES_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList resourceNames_;
+  private com.google.protobuf.LazyStringArrayList resourceNames_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -1571,8 +1562,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      resourceNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      resourceNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
       if (stepsBuilder_ == null) {
         steps_ = java.util.Collections.emptyList();
       } else {
@@ -1623,11 +1613,6 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
 
     private void buildPartialRepeatedFields(
         com.google.api.servicemanagement.v1.OperationMetadata result) {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        resourceNames_ = resourceNames_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.resourceNames_ = resourceNames_;
       if (stepsBuilder_ == null) {
         if (((bitField0_ & 0x00000002) != 0)) {
           steps_ = java.util.Collections.unmodifiableList(steps_);
@@ -1641,6 +1626,10 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
 
     private void buildPartial0(com.google.api.servicemanagement.v1.OperationMetadata result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        resourceNames_.makeImmutable();
+        result.resourceNames_ = resourceNames_;
+      }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.progressPercentage_ = progressPercentage_;
       }
@@ -1698,7 +1687,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       if (!other.resourceNames_.isEmpty()) {
         if (resourceNames_.isEmpty()) {
           resourceNames_ = other.resourceNames_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ |= 0x00000001;
         } else {
           ensureResourceNamesIsMutable();
           resourceNames_.addAll(other.resourceNames_);
@@ -1816,14 +1805,14 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList resourceNames_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList resourceNames_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureResourceNamesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!resourceNames_.isModifiable()) {
         resourceNames_ = new com.google.protobuf.LazyStringArrayList(resourceNames_);
-        bitField0_ |= 0x00000001;
       }
+      bitField0_ |= 0x00000001;
     }
     /**
      *
@@ -1838,7 +1827,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * @return A list containing the resourceNames.
      */
     public com.google.protobuf.ProtocolStringList getResourceNamesList() {
-      return resourceNames_.getUnmodifiableView();
+      resourceNames_.makeImmutable();
+      return resourceNames_;
     }
     /**
      *
@@ -1907,6 +1897,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       }
       ensureResourceNamesIsMutable();
       resourceNames_.set(index, value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1929,6 +1920,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       }
       ensureResourceNamesIsMutable();
       resourceNames_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1948,6 +1940,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     public Builder addAllResourceNames(java.lang.Iterable<java.lang.String> values) {
       ensureResourceNamesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, resourceNames_);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1964,8 +1957,9 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearResourceNames() {
-      resourceNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      resourceNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      ;
       onChanged();
       return this;
     }
@@ -1989,6 +1983,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       checkByteStringIsUtf8(value);
       ensureResourceNamesIsMutable();
       resourceNames_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

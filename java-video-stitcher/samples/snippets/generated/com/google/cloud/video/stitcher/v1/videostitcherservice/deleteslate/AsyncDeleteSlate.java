@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,7 +21,7 @@ import com.google.api.core.ApiFuture;
 import com.google.cloud.video.stitcher.v1.DeleteSlateRequest;
 import com.google.cloud.video.stitcher.v1.SlateName;
 import com.google.cloud.video.stitcher.v1.VideoStitcherServiceClient;
-import com.google.protobuf.Empty;
+import com.google.longrunning.Operation;
 
 public class AsyncDeleteSlate {
 
@@ -41,7 +41,7 @@ public class AsyncDeleteSlate {
           DeleteSlateRequest.newBuilder()
               .setName(SlateName.of("[PROJECT]", "[LOCATION]", "[SLATE]").toString())
               .build();
-      ApiFuture<Empty> future =
+      ApiFuture<Operation> future =
           videoStitcherServiceClient.deleteSlateCallable().futureCall(request);
       // Do something.
       future.get();

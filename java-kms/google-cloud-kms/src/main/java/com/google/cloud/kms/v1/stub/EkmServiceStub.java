@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,6 +30,8 @@ import com.google.cloud.kms.v1.ListEkmConnectionsRequest;
 import com.google.cloud.kms.v1.ListEkmConnectionsResponse;
 import com.google.cloud.kms.v1.UpdateEkmConfigRequest;
 import com.google.cloud.kms.v1.UpdateEkmConnectionRequest;
+import com.google.cloud.kms.v1.VerifyConnectivityRequest;
+import com.google.cloud.kms.v1.VerifyConnectivityResponse;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -78,6 +80,11 @@ public abstract class EkmServiceStub implements BackgroundResource {
 
   public UnaryCallable<UpdateEkmConfigRequest, EkmConfig> updateEkmConfigCallable() {
     throw new UnsupportedOperationException("Not implemented: updateEkmConfigCallable()");
+  }
+
+  public UnaryCallable<VerifyConnectivityRequest, VerifyConnectivityResponse>
+      verifyConnectivityCallable() {
+    throw new UnsupportedOperationException("Not implemented: verifyConnectivityCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

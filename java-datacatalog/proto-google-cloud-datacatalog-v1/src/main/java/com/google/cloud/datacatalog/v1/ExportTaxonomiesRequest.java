@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,18 +40,13 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
 
   private ExportTaxonomiesRequest() {
     parent_ = "";
-    taxonomies_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    taxonomies_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ExportTaxonomiesRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -70,6 +65,8 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
   }
 
   private int destinationCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object destination_;
 
   public enum DestinationCase
@@ -173,7 +170,8 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
   public static final int TAXONOMIES_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList taxonomies_;
+  private com.google.protobuf.LazyStringArrayList taxonomies_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -519,8 +517,7 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
       super.clear();
       bitField0_ = 0;
       parent_ = "";
-      taxonomies_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      taxonomies_ = com.google.protobuf.LazyStringArrayList.emptyList();
       destinationCase_ = 0;
       destination_ = null;
       return this;
@@ -550,7 +547,6 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
     public com.google.cloud.datacatalog.v1.ExportTaxonomiesRequest buildPartial() {
       com.google.cloud.datacatalog.v1.ExportTaxonomiesRequest result =
           new com.google.cloud.datacatalog.v1.ExportTaxonomiesRequest(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -559,19 +555,14 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
       return result;
     }
 
-    private void buildPartialRepeatedFields(
-        com.google.cloud.datacatalog.v1.ExportTaxonomiesRequest result) {
-      if (((bitField0_ & 0x00000002) != 0)) {
-        taxonomies_ = taxonomies_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.taxonomies_ = taxonomies_;
-    }
-
     private void buildPartial0(com.google.cloud.datacatalog.v1.ExportTaxonomiesRequest result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        taxonomies_.makeImmutable();
+        result.taxonomies_ = taxonomies_;
       }
     }
 
@@ -635,7 +626,7 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
       if (!other.taxonomies_.isEmpty()) {
         if (taxonomies_.isEmpty()) {
           taxonomies_ = other.taxonomies_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureTaxonomiesIsMutable();
           taxonomies_.addAll(other.taxonomies_);
@@ -852,14 +843,14 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
       return this;
     }
 
-    private com.google.protobuf.LazyStringList taxonomies_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList taxonomies_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureTaxonomiesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!taxonomies_.isModifiable()) {
         taxonomies_ = new com.google.protobuf.LazyStringArrayList(taxonomies_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -875,7 +866,8 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
      * @return A list containing the taxonomies.
      */
     public com.google.protobuf.ProtocolStringList getTaxonomiesList() {
-      return taxonomies_.getUnmodifiableView();
+      taxonomies_.makeImmutable();
+      return taxonomies_;
     }
     /**
      *
@@ -948,6 +940,7 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
       }
       ensureTaxonomiesIsMutable();
       taxonomies_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -971,6 +964,7 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
       }
       ensureTaxonomiesIsMutable();
       taxonomies_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -991,6 +985,7 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
     public Builder addAllTaxonomies(java.lang.Iterable<java.lang.String> values) {
       ensureTaxonomiesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, taxonomies_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1008,8 +1003,9 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearTaxonomies() {
-      taxonomies_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      taxonomies_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -1034,6 +1030,7 @@ public final class ExportTaxonomiesRequest extends com.google.protobuf.Generated
       checkByteStringIsUtf8(value);
       ensureTaxonomiesIsMutable();
       taxonomies_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

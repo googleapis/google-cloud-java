@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
     return new SpeakerDiarizationConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.speech.v2.CloudSpeechProto
         .internal_static_google_cloud_speech_v2_SpeakerDiarizationConfig_descriptor;
@@ -74,6 +69,7 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
    * Required. Minimum number of speakers in the conversation. This range gives
    * you more flexibility by allowing the system to automatically determine the
    * correct number of speakers.
+   *
    * To fix the number of speakers detected in the audio, set
    * `min_speaker_count` = `max_speaker_count`.
    * </pre>
@@ -478,6 +474,7 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
      * Required. Minimum number of speakers in the conversation. This range gives
      * you more flexibility by allowing the system to automatically determine the
      * correct number of speakers.
+     *
      * To fix the number of speakers detected in the audio, set
      * `min_speaker_count` = `max_speaker_count`.
      * </pre>
@@ -497,6 +494,7 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
      * Required. Minimum number of speakers in the conversation. This range gives
      * you more flexibility by allowing the system to automatically determine the
      * correct number of speakers.
+     *
      * To fix the number of speakers detected in the audio, set
      * `min_speaker_count` = `max_speaker_count`.
      * </pre>
@@ -520,6 +518,7 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
      * Required. Minimum number of speakers in the conversation. This range gives
      * you more flexibility by allowing the system to automatically determine the
      * correct number of speakers.
+     *
      * To fix the number of speakers detected in the audio, set
      * `min_speaker_count` = `max_speaker_count`.
      * </pre>

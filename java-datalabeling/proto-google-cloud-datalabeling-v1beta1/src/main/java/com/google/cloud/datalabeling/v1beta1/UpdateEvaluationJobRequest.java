@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,11 +43,6 @@ public final class UpdateEvaluationJobRequest extends com.google.protobuf.Genera
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new UpdateEvaluationJobRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -129,9 +124,11 @@ public final class UpdateEvaluationJobRequest extends com.google.protobuf.Genera
    * <pre>
    * Optional. Mask for which fields to update. You can only provide the
    * following fields:
+   *
    * * `evaluationJobConfig.humanAnnotationConfig.instruction`
    * * `evaluationJobConfig.exampleCount`
    * * `evaluationJobConfig.exampleSamplePercentage`
+   *
    * You can provide more than one of these fields by separating them with
    * commas.
    * </pre>
@@ -151,9 +148,11 @@ public final class UpdateEvaluationJobRequest extends com.google.protobuf.Genera
    * <pre>
    * Optional. Mask for which fields to update. You can only provide the
    * following fields:
+   *
    * * `evaluationJobConfig.humanAnnotationConfig.instruction`
    * * `evaluationJobConfig.exampleCount`
    * * `evaluationJobConfig.exampleSamplePercentage`
+   *
    * You can provide more than one of these fields by separating them with
    * commas.
    * </pre>
@@ -173,9 +172,11 @@ public final class UpdateEvaluationJobRequest extends com.google.protobuf.Genera
    * <pre>
    * Optional. Mask for which fields to update. You can only provide the
    * following fields:
+   *
    * * `evaluationJobConfig.humanAnnotationConfig.instruction`
    * * `evaluationJobConfig.exampleCount`
    * * `evaluationJobConfig.exampleSamplePercentage`
+   *
    * You can provide more than one of these fields by separating them with
    * commas.
    * </pre>
@@ -790,9 +791,11 @@ public final class UpdateEvaluationJobRequest extends com.google.protobuf.Genera
      * <pre>
      * Optional. Mask for which fields to update. You can only provide the
      * following fields:
+     *
      * * `evaluationJobConfig.humanAnnotationConfig.instruction`
      * * `evaluationJobConfig.exampleCount`
      * * `evaluationJobConfig.exampleSamplePercentage`
+     *
      * You can provide more than one of these fields by separating them with
      * commas.
      * </pre>
@@ -811,9 +814,11 @@ public final class UpdateEvaluationJobRequest extends com.google.protobuf.Genera
      * <pre>
      * Optional. Mask for which fields to update. You can only provide the
      * following fields:
+     *
      * * `evaluationJobConfig.humanAnnotationConfig.instruction`
      * * `evaluationJobConfig.exampleCount`
      * * `evaluationJobConfig.exampleSamplePercentage`
+     *
      * You can provide more than one of these fields by separating them with
      * commas.
      * </pre>
@@ -838,9 +843,11 @@ public final class UpdateEvaluationJobRequest extends com.google.protobuf.Genera
      * <pre>
      * Optional. Mask for which fields to update. You can only provide the
      * following fields:
+     *
      * * `evaluationJobConfig.humanAnnotationConfig.instruction`
      * * `evaluationJobConfig.exampleCount`
      * * `evaluationJobConfig.exampleSamplePercentage`
+     *
      * You can provide more than one of these fields by separating them with
      * commas.
      * </pre>
@@ -867,9 +874,11 @@ public final class UpdateEvaluationJobRequest extends com.google.protobuf.Genera
      * <pre>
      * Optional. Mask for which fields to update. You can only provide the
      * following fields:
+     *
      * * `evaluationJobConfig.humanAnnotationConfig.instruction`
      * * `evaluationJobConfig.exampleCount`
      * * `evaluationJobConfig.exampleSamplePercentage`
+     *
      * You can provide more than one of these fields by separating them with
      * commas.
      * </pre>
@@ -893,9 +902,11 @@ public final class UpdateEvaluationJobRequest extends com.google.protobuf.Genera
      * <pre>
      * Optional. Mask for which fields to update. You can only provide the
      * following fields:
+     *
      * * `evaluationJobConfig.humanAnnotationConfig.instruction`
      * * `evaluationJobConfig.exampleCount`
      * * `evaluationJobConfig.exampleSamplePercentage`
+     *
      * You can provide more than one of these fields by separating them with
      * commas.
      * </pre>
@@ -925,9 +936,11 @@ public final class UpdateEvaluationJobRequest extends com.google.protobuf.Genera
      * <pre>
      * Optional. Mask for which fields to update. You can only provide the
      * following fields:
+     *
      * * `evaluationJobConfig.humanAnnotationConfig.instruction`
      * * `evaluationJobConfig.exampleCount`
      * * `evaluationJobConfig.exampleSamplePercentage`
+     *
      * You can provide more than one of these fields by separating them with
      * commas.
      * </pre>
@@ -951,9 +964,11 @@ public final class UpdateEvaluationJobRequest extends com.google.protobuf.Genera
      * <pre>
      * Optional. Mask for which fields to update. You can only provide the
      * following fields:
+     *
      * * `evaluationJobConfig.humanAnnotationConfig.instruction`
      * * `evaluationJobConfig.exampleCount`
      * * `evaluationJobConfig.exampleSamplePercentage`
+     *
      * You can provide more than one of these fields by separating them with
      * commas.
      * </pre>
@@ -972,9 +987,11 @@ public final class UpdateEvaluationJobRequest extends com.google.protobuf.Genera
      * <pre>
      * Optional. Mask for which fields to update. You can only provide the
      * following fields:
+     *
      * * `evaluationJobConfig.humanAnnotationConfig.instruction`
      * * `evaluationJobConfig.exampleCount`
      * * `evaluationJobConfig.exampleSamplePercentage`
+     *
      * You can provide more than one of these fields by separating them with
      * commas.
      * </pre>
@@ -997,9 +1014,11 @@ public final class UpdateEvaluationJobRequest extends com.google.protobuf.Genera
      * <pre>
      * Optional. Mask for which fields to update. You can only provide the
      * following fields:
+     *
      * * `evaluationJobConfig.humanAnnotationConfig.instruction`
      * * `evaluationJobConfig.exampleCount`
      * * `evaluationJobConfig.exampleSamplePercentage`
+     *
      * You can provide more than one of these fields by separating them with
      * commas.
      * </pre>

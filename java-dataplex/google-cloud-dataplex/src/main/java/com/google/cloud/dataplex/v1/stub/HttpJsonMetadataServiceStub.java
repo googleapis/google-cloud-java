@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,7 @@ import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dataplex.v1.CreateEntityRequest;
 import com.google.cloud.dataplex.v1.CreatePartitionRequest;
@@ -533,58 +534,124 @@ public class HttpJsonMetadataServiceStub extends MetadataServiceStub {
         HttpJsonCallSettings.<CreateEntityRequest, Entity>newBuilder()
             .setMethodDescriptor(createEntityMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateEntityRequest, Entity> updateEntityTransportSettings =
         HttpJsonCallSettings.<UpdateEntityRequest, Entity>newBuilder()
             .setMethodDescriptor(updateEntityMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("entity.name", String.valueOf(request.getEntity().getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeleteEntityRequest, Empty> deleteEntityTransportSettings =
         HttpJsonCallSettings.<DeleteEntityRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteEntityMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetEntityRequest, Entity> getEntityTransportSettings =
         HttpJsonCallSettings.<GetEntityRequest, Entity>newBuilder()
             .setMethodDescriptor(getEntityMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListEntitiesRequest, ListEntitiesResponse> listEntitiesTransportSettings =
         HttpJsonCallSettings.<ListEntitiesRequest, ListEntitiesResponse>newBuilder()
             .setMethodDescriptor(listEntitiesMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<CreatePartitionRequest, Partition> createPartitionTransportSettings =
         HttpJsonCallSettings.<CreatePartitionRequest, Partition>newBuilder()
             .setMethodDescriptor(createPartitionMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeletePartitionRequest, Empty> deletePartitionTransportSettings =
         HttpJsonCallSettings.<DeletePartitionRequest, Empty>newBuilder()
             .setMethodDescriptor(deletePartitionMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetPartitionRequest, Partition> getPartitionTransportSettings =
         HttpJsonCallSettings.<GetPartitionRequest, Partition>newBuilder()
             .setMethodDescriptor(getPartitionMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListPartitionsRequest, ListPartitionsResponse>
         listPartitionsTransportSettings =
             HttpJsonCallSettings.<ListPartitionsRequest, ListPartitionsResponse>newBuilder()
                 .setMethodDescriptor(listPartitionsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
                 .setMethodDescriptor(listLocationsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetLocationRequest, Location> getLocationTransportSettings =
         HttpJsonCallSettings.<GetLocationRequest, Location>newBuilder()
             .setMethodDescriptor(getLocationMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
 
     this.createEntityCallable =

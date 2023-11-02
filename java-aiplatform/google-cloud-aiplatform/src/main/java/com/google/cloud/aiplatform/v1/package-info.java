@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,8 +21,7 @@
  *
  * <p>======================= DatasetServiceClient =======================
  *
- * <p>Service Description: The service that handles the CRUD of Vertex AI Dataset and its child
- * resources.
+ * <p>Service Description: The service that manages Vertex AI Dataset and its child resources.
  *
  * <p>Sample for DatasetServiceClient:
  *
@@ -152,6 +151,32 @@
  * }
  * }</pre>
  *
+ * <p>======================= MatchServiceClient =======================
+ *
+ * <p>Service Description: MatchService is a Google managed service for efficient vector similarity
+ * search at scale.
+ *
+ * <p>Sample for MatchServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (MatchServiceClient matchServiceClient = MatchServiceClient.create()) {
+ *   FindNeighborsRequest request =
+ *       FindNeighborsRequest.newBuilder()
+ *           .setIndexEndpoint(
+ *               IndexEndpointName.of("[PROJECT]", "[LOCATION]", "[INDEX_ENDPOINT]").toString())
+ *           .setDeployedIndexId("deployedIndexId-1101212953")
+ *           .addAllQueries(new ArrayList<FindNeighborsRequest.Query>())
+ *           .setReturnFullDatapoint(true)
+ *           .build();
+ *   FindNeighborsResponse response = matchServiceClient.findNeighbors(request);
+ * }
+ * }</pre>
+ *
  * <p>======================= MetadataServiceClient =======================
  *
  * <p>Service Description: Service for reading and writing metadata entries.
@@ -207,6 +232,24 @@
  * }
  * }</pre>
  *
+ * <p>======================= ModelGardenServiceClient =======================
+ *
+ * <p>Service Description: The interface of Model Garden Service.
+ *
+ * <p>Sample for ModelGardenServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (ModelGardenServiceClient modelGardenServiceClient = ModelGardenServiceClient.create()) {
+ *   PublisherModelName name = PublisherModelName.of("[PUBLISHER]", "[MODEL]");
+ *   PublisherModel response = modelGardenServiceClient.getPublisherModel(name);
+ * }
+ * }</pre>
+ *
  * <p>======================= PipelineServiceClient =======================
  *
  * <p>Service Description: A service for creating and managing Vertex AI's pipelines. This includes
@@ -247,6 +290,26 @@
  *   List<Value> instances = new ArrayList<>();
  *   Value parameters = Value.newBuilder().setBoolValue(true).build();
  *   PredictResponse response = predictionServiceClient.predict(endpoint, instances, parameters);
+ * }
+ * }</pre>
+ *
+ * <p>======================= ScheduleServiceClient =======================
+ *
+ * <p>Service Description: A service for creating and managing Vertex AI's Schedule resources to
+ * periodically launch shceudled runs to make API calls.
+ *
+ * <p>Sample for ScheduleServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (ScheduleServiceClient scheduleServiceClient = ScheduleServiceClient.create()) {
+ *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+ *   Schedule schedule = Schedule.newBuilder().build();
+ *   Schedule response = scheduleServiceClient.createSchedule(parent, schedule);
  * }
  * }</pre>
  *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class GetProjectBillingInfoRequest extends com.google.protobuf.Gene
     return new GetProjectBillingInfoRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.billing.v1.CloudBillingProto
         .internal_static_google_cloud_billing_v1_GetProjectBillingInfoRequest_descriptor;
@@ -79,7 +74,9 @@ public final class GetProjectBillingInfoRequest extends com.google.protobuf.Gene
    * retrieved. For example, `projects/tokyo-rain-123`.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -103,7 +100,9 @@ public final class GetProjectBillingInfoRequest extends com.google.protobuf.Gene
    * retrieved. For example, `projects/tokyo-rain-123`.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -472,7 +471,9 @@ public final class GetProjectBillingInfoRequest extends com.google.protobuf.Gene
      * retrieved. For example, `projects/tokyo-rain-123`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The name.
      */
@@ -495,7 +496,9 @@ public final class GetProjectBillingInfoRequest extends com.google.protobuf.Gene
      * retrieved. For example, `projects/tokyo-rain-123`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for name.
      */
@@ -518,7 +521,9 @@ public final class GetProjectBillingInfoRequest extends com.google.protobuf.Gene
      * retrieved. For example, `projects/tokyo-rain-123`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -540,7 +545,9 @@ public final class GetProjectBillingInfoRequest extends com.google.protobuf.Gene
      * retrieved. For example, `projects/tokyo-rain-123`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -558,7 +565,9 @@ public final class GetProjectBillingInfoRequest extends com.google.protobuf.Gene
      * retrieved. For example, `projects/tokyo-rain-123`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.

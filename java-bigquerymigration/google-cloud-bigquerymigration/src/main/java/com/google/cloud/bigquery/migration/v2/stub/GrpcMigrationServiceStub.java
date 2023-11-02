@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.bigquery.migration.v2.CreateMigrationWorkflowRequest;
 import com.google.cloud.bigquery.migration.v2.DeleteMigrationWorkflowRequest;
@@ -36,7 +37,6 @@ import com.google.cloud.bigquery.migration.v2.ListMigrationWorkflowsResponse;
 import com.google.cloud.bigquery.migration.v2.MigrationSubtask;
 import com.google.cloud.bigquery.migration.v2.MigrationWorkflow;
 import com.google.cloud.bigquery.migration.v2.StartMigrationWorkflowRequest;
-import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
@@ -202,9 +202,9 @@ public class GrpcMigrationServiceStub extends MigrationServiceStub {
                 .setMethodDescriptor(createMigrationWorkflowMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetMigrationWorkflowRequest, MigrationWorkflow>
@@ -213,9 +213,9 @@ public class GrpcMigrationServiceStub extends MigrationServiceStub {
                 .setMethodDescriptor(getMigrationWorkflowMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<ListMigrationWorkflowsRequest, ListMigrationWorkflowsResponse>
@@ -225,9 +225,9 @@ public class GrpcMigrationServiceStub extends MigrationServiceStub {
                 .setMethodDescriptor(listMigrationWorkflowsMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<DeleteMigrationWorkflowRequest, Empty>
@@ -236,9 +236,9 @@ public class GrpcMigrationServiceStub extends MigrationServiceStub {
                 .setMethodDescriptor(deleteMigrationWorkflowMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<StartMigrationWorkflowRequest, Empty> startMigrationWorkflowTransportSettings =
@@ -246,9 +246,9 @@ public class GrpcMigrationServiceStub extends MigrationServiceStub {
             .setMethodDescriptor(startMigrationWorkflowMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetMigrationSubtaskRequest, MigrationSubtask>
@@ -257,9 +257,9 @@ public class GrpcMigrationServiceStub extends MigrationServiceStub {
                 .setMethodDescriptor(getMigrationSubtaskMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<ListMigrationSubtasksRequest, ListMigrationSubtasksResponse>
@@ -269,9 +269,9 @@ public class GrpcMigrationServiceStub extends MigrationServiceStub {
                 .setMethodDescriptor(listMigrationSubtasksMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
 

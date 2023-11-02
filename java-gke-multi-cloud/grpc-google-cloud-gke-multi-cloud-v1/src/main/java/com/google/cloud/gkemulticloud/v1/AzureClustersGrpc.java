@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,7 +33,7 @@ public final class AzureClustersGrpc {
 
   private AzureClustersGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.gkemulticloud.v1.AzureClusters";
+  public static final java.lang.String SERVICE_NAME = "google.cloud.gkemulticloud.v1.AzureClusters";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -2284,9 +2284,9 @@ public final class AzureClustersGrpc {
   private static final class AzureClustersMethodDescriptorSupplier
       extends AzureClustersBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    AzureClustersMethodDescriptorSupplier(String methodName) {
+    AzureClustersMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

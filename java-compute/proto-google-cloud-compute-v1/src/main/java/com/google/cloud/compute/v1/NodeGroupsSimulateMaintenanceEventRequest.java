@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,18 +39,13 @@ public final class NodeGroupsSimulateMaintenanceEventRequest
   }
 
   private NodeGroupsSimulateMaintenanceEventRequest() {
-    nodes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    nodes_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new NodeGroupsSimulateMaintenanceEventRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -71,7 +66,8 @@ public final class NodeGroupsSimulateMaintenanceEventRequest
   public static final int NODES_FIELD_NUMBER = 104993457;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList nodes_;
+  private com.google.protobuf.LazyStringArrayList nodes_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -338,8 +334,7 @@ public final class NodeGroupsSimulateMaintenanceEventRequest
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      nodes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      nodes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -369,7 +364,6 @@ public final class NodeGroupsSimulateMaintenanceEventRequest
     public com.google.cloud.compute.v1.NodeGroupsSimulateMaintenanceEventRequest buildPartial() {
       com.google.cloud.compute.v1.NodeGroupsSimulateMaintenanceEventRequest result =
           new com.google.cloud.compute.v1.NodeGroupsSimulateMaintenanceEventRequest(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -377,18 +371,13 @@ public final class NodeGroupsSimulateMaintenanceEventRequest
       return result;
     }
 
-    private void buildPartialRepeatedFields(
-        com.google.cloud.compute.v1.NodeGroupsSimulateMaintenanceEventRequest result) {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        nodes_ = nodes_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.nodes_ = nodes_;
-    }
-
     private void buildPartial0(
         com.google.cloud.compute.v1.NodeGroupsSimulateMaintenanceEventRequest result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        nodes_.makeImmutable();
+        result.nodes_ = nodes_;
+      }
     }
 
     @java.lang.Override
@@ -443,7 +432,7 @@ public final class NodeGroupsSimulateMaintenanceEventRequest
       if (!other.nodes_.isEmpty()) {
         if (nodes_.isEmpty()) {
           nodes_ = other.nodes_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ |= 0x00000001;
         } else {
           ensureNodesIsMutable();
           nodes_.addAll(other.nodes_);
@@ -502,14 +491,14 @@ public final class NodeGroupsSimulateMaintenanceEventRequest
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList nodes_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList nodes_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureNodesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!nodes_.isModifiable()) {
         nodes_ = new com.google.protobuf.LazyStringArrayList(nodes_);
-        bitField0_ |= 0x00000001;
       }
+      bitField0_ |= 0x00000001;
     }
     /**
      *
@@ -523,7 +512,8 @@ public final class NodeGroupsSimulateMaintenanceEventRequest
      * @return A list containing the nodes.
      */
     public com.google.protobuf.ProtocolStringList getNodesList() {
-      return nodes_.getUnmodifiableView();
+      nodes_.makeImmutable();
+      return nodes_;
     }
     /**
      *
@@ -588,6 +578,7 @@ public final class NodeGroupsSimulateMaintenanceEventRequest
       }
       ensureNodesIsMutable();
       nodes_.set(index, value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -609,6 +600,7 @@ public final class NodeGroupsSimulateMaintenanceEventRequest
       }
       ensureNodesIsMutable();
       nodes_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -627,6 +619,7 @@ public final class NodeGroupsSimulateMaintenanceEventRequest
     public Builder addAllNodes(java.lang.Iterable<java.lang.String> values) {
       ensureNodesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, nodes_);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -642,8 +635,9 @@ public final class NodeGroupsSimulateMaintenanceEventRequest
      * @return This builder for chaining.
      */
     public Builder clearNodes() {
-      nodes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      nodes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      ;
       onChanged();
       return this;
     }
@@ -666,6 +660,7 @@ public final class NodeGroupsSimulateMaintenanceEventRequest
       checkByteStringIsUtf8(value);
       ensureNodesIsMutable();
       nodes_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

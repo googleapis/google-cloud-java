@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new AnalyzeContentResponse();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -133,10 +128,12 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
    * <pre>
    * Optional. The audio data bytes encoded as specified in the request.
    * This field is set if:
+   *
    *  - `reply_audio_config` was specified in the request, or
    *  - The automated agent responded with audio to play to the user. In such
    *    case, `reply_audio.config` contains settings used to synthesize the
    *    speech.
+   *
    * In some scenarios, multiple output audio fields may be present in the
    * response structure. In these cases, only the top-most-level audio output
    * has content.
@@ -156,10 +153,12 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
    * <pre>
    * Optional. The audio data bytes encoded as specified in the request.
    * This field is set if:
+   *
    *  - `reply_audio_config` was specified in the request, or
    *  - The automated agent responded with audio to play to the user. In such
    *    case, `reply_audio.config` contains settings used to synthesize the
    *    speech.
+   *
    * In some scenarios, multiple output audio fields may be present in the
    * response structure. In these cases, only the top-most-level audio output
    * has content.
@@ -181,10 +180,12 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
    * <pre>
    * Optional. The audio data bytes encoded as specified in the request.
    * This field is set if:
+   *
    *  - `reply_audio_config` was specified in the request, or
    *  - The automated agent responded with audio to play to the user. In such
    *    case, `reply_audio.config` contains settings used to synthesize the
    *    speech.
+   *
    * In some scenarios, multiple output audio fields may be present in the
    * response structure. In these cases, only the top-most-level audio output
    * has content.
@@ -328,6 +329,7 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
    * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig.feature_configs]
    * of
    * [HumanAgentAssistantConfig.human_agent_suggestion_config][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.human_agent_suggestion_config].
+   *
    * Note that any failure of Agent Assist features will not lead to the overall
    * failure of an AnalyzeContent API call. Instead, the features will
    * fail silently with the error field set in the corresponding
@@ -351,6 +353,7 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
    * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig.feature_configs]
    * of
    * [HumanAgentAssistantConfig.human_agent_suggestion_config][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.human_agent_suggestion_config].
+   *
    * Note that any failure of Agent Assist features will not lead to the overall
    * failure of an AnalyzeContent API call. Instead, the features will
    * fail silently with the error field set in the corresponding
@@ -374,6 +377,7 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
    * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig.feature_configs]
    * of
    * [HumanAgentAssistantConfig.human_agent_suggestion_config][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.human_agent_suggestion_config].
+   *
    * Note that any failure of Agent Assist features will not lead to the overall
    * failure of an AnalyzeContent API call. Instead, the features will
    * fail silently with the error field set in the corresponding
@@ -396,6 +400,7 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
    * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig.feature_configs]
    * of
    * [HumanAgentAssistantConfig.human_agent_suggestion_config][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.human_agent_suggestion_config].
+   *
    * Note that any failure of Agent Assist features will not lead to the overall
    * failure of an AnalyzeContent API call. Instead, the features will
    * fail silently with the error field set in the corresponding
@@ -419,6 +424,7 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
    * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig.feature_configs]
    * of
    * [HumanAgentAssistantConfig.human_agent_suggestion_config][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.human_agent_suggestion_config].
+   *
    * Note that any failure of Agent Assist features will not lead to the overall
    * failure of an AnalyzeContent API call. Instead, the features will
    * fail silently with the error field set in the corresponding
@@ -448,6 +454,7 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
    * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig.feature_configs]
    * of
    * [HumanAgentAssistantConfig.end_user_suggestion_config][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.end_user_suggestion_config].
+   *
    * Same as human_agent_suggestion_results, any failure of Agent Assist
    * features will not lead to the overall failure of an AnalyzeContent API
    * call. Instead, the features will fail silently with the error field set in
@@ -471,6 +478,7 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
    * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig.feature_configs]
    * of
    * [HumanAgentAssistantConfig.end_user_suggestion_config][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.end_user_suggestion_config].
+   *
    * Same as human_agent_suggestion_results, any failure of Agent Assist
    * features will not lead to the overall failure of an AnalyzeContent API
    * call. Instead, the features will fail silently with the error field set in
@@ -494,6 +502,7 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
    * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig.feature_configs]
    * of
    * [HumanAgentAssistantConfig.end_user_suggestion_config][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.end_user_suggestion_config].
+   *
    * Same as human_agent_suggestion_results, any failure of Agent Assist
    * features will not lead to the overall failure of an AnalyzeContent API
    * call. Instead, the features will fail silently with the error field set in
@@ -516,6 +525,7 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
    * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig.feature_configs]
    * of
    * [HumanAgentAssistantConfig.end_user_suggestion_config][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.end_user_suggestion_config].
+   *
    * Same as human_agent_suggestion_results, any failure of Agent Assist
    * features will not lead to the overall failure of an AnalyzeContent API
    * call. Instead, the features will fail silently with the error field set in
@@ -539,6 +549,7 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
    * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig.feature_configs]
    * of
    * [HumanAgentAssistantConfig.end_user_suggestion_config][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.end_user_suggestion_config].
+   *
    * Same as human_agent_suggestion_results, any failure of Agent Assist
    * features will not lead to the overall failure of an AnalyzeContent API
    * call. Instead, the features will fail silently with the error field set in
@@ -1355,10 +1366,12 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
      * <pre>
      * Optional. The audio data bytes encoded as specified in the request.
      * This field is set if:
+     *
      *  - `reply_audio_config` was specified in the request, or
      *  - The automated agent responded with audio to play to the user. In such
      *    case, `reply_audio.config` contains settings used to synthesize the
      *    speech.
+     *
      * In some scenarios, multiple output audio fields may be present in the
      * response structure. In these cases, only the top-most-level audio output
      * has content.
@@ -1377,10 +1390,12 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
      * <pre>
      * Optional. The audio data bytes encoded as specified in the request.
      * This field is set if:
+     *
      *  - `reply_audio_config` was specified in the request, or
      *  - The automated agent responded with audio to play to the user. In such
      *    case, `reply_audio.config` contains settings used to synthesize the
      *    speech.
+     *
      * In some scenarios, multiple output audio fields may be present in the
      * response structure. In these cases, only the top-most-level audio output
      * has content.
@@ -1405,10 +1420,12 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
      * <pre>
      * Optional. The audio data bytes encoded as specified in the request.
      * This field is set if:
+     *
      *  - `reply_audio_config` was specified in the request, or
      *  - The automated agent responded with audio to play to the user. In such
      *    case, `reply_audio.config` contains settings used to synthesize the
      *    speech.
+     *
      * In some scenarios, multiple output audio fields may be present in the
      * response structure. In these cases, only the top-most-level audio output
      * has content.
@@ -1435,10 +1452,12 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
      * <pre>
      * Optional. The audio data bytes encoded as specified in the request.
      * This field is set if:
+     *
      *  - `reply_audio_config` was specified in the request, or
      *  - The automated agent responded with audio to play to the user. In such
      *    case, `reply_audio.config` contains settings used to synthesize the
      *    speech.
+     *
      * In some scenarios, multiple output audio fields may be present in the
      * response structure. In these cases, only the top-most-level audio output
      * has content.
@@ -1463,10 +1482,12 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
      * <pre>
      * Optional. The audio data bytes encoded as specified in the request.
      * This field is set if:
+     *
      *  - `reply_audio_config` was specified in the request, or
      *  - The automated agent responded with audio to play to the user. In such
      *    case, `reply_audio.config` contains settings used to synthesize the
      *    speech.
+     *
      * In some scenarios, multiple output audio fields may be present in the
      * response structure. In these cases, only the top-most-level audio output
      * has content.
@@ -1497,10 +1518,12 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
      * <pre>
      * Optional. The audio data bytes encoded as specified in the request.
      * This field is set if:
+     *
      *  - `reply_audio_config` was specified in the request, or
      *  - The automated agent responded with audio to play to the user. In such
      *    case, `reply_audio.config` contains settings used to synthesize the
      *    speech.
+     *
      * In some scenarios, multiple output audio fields may be present in the
      * response structure. In these cases, only the top-most-level audio output
      * has content.
@@ -1524,10 +1547,12 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
      * <pre>
      * Optional. The audio data bytes encoded as specified in the request.
      * This field is set if:
+     *
      *  - `reply_audio_config` was specified in the request, or
      *  - The automated agent responded with audio to play to the user. In such
      *    case, `reply_audio.config` contains settings used to synthesize the
      *    speech.
+     *
      * In some scenarios, multiple output audio fields may be present in the
      * response structure. In these cases, only the top-most-level audio output
      * has content.
@@ -1546,10 +1571,12 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
      * <pre>
      * Optional. The audio data bytes encoded as specified in the request.
      * This field is set if:
+     *
      *  - `reply_audio_config` was specified in the request, or
      *  - The automated agent responded with audio to play to the user. In such
      *    case, `reply_audio.config` contains settings used to synthesize the
      *    speech.
+     *
      * In some scenarios, multiple output audio fields may be present in the
      * response structure. In these cases, only the top-most-level audio output
      * has content.
@@ -1572,10 +1599,12 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
      * <pre>
      * Optional. The audio data bytes encoded as specified in the request.
      * This field is set if:
+     *
      *  - `reply_audio_config` was specified in the request, or
      *  - The automated agent responded with audio to play to the user. In such
      *    case, `reply_audio.config` contains settings used to synthesize the
      *    speech.
+     *
      * In some scenarios, multiple output audio fields may be present in the
      * response structure. In these cases, only the top-most-level audio output
      * has content.
@@ -2043,6 +2072,7 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
      * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig.feature_configs]
      * of
      * [HumanAgentAssistantConfig.human_agent_suggestion_config][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.human_agent_suggestion_config].
+     *
      * Note that any failure of Agent Assist features will not lead to the overall
      * failure of an AnalyzeContent API call. Instead, the features will
      * fail silently with the error field set in the corresponding
@@ -2069,6 +2099,7 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
      * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig.feature_configs]
      * of
      * [HumanAgentAssistantConfig.human_agent_suggestion_config][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.human_agent_suggestion_config].
+     *
      * Note that any failure of Agent Assist features will not lead to the overall
      * failure of an AnalyzeContent API call. Instead, the features will
      * fail silently with the error field set in the corresponding
@@ -2094,6 +2125,7 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
      * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig.feature_configs]
      * of
      * [HumanAgentAssistantConfig.human_agent_suggestion_config][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.human_agent_suggestion_config].
+     *
      * Note that any failure of Agent Assist features will not lead to the overall
      * failure of an AnalyzeContent API call. Instead, the features will
      * fail silently with the error field set in the corresponding
@@ -2120,6 +2152,7 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
      * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig.feature_configs]
      * of
      * [HumanAgentAssistantConfig.human_agent_suggestion_config][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.human_agent_suggestion_config].
+     *
      * Note that any failure of Agent Assist features will not lead to the overall
      * failure of an AnalyzeContent API call. Instead, the features will
      * fail silently with the error field set in the corresponding
@@ -2152,6 +2185,7 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
      * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig.feature_configs]
      * of
      * [HumanAgentAssistantConfig.human_agent_suggestion_config][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.human_agent_suggestion_config].
+     *
      * Note that any failure of Agent Assist features will not lead to the overall
      * failure of an AnalyzeContent API call. Instead, the features will
      * fail silently with the error field set in the corresponding
@@ -2181,6 +2215,7 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
      * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig.feature_configs]
      * of
      * [HumanAgentAssistantConfig.human_agent_suggestion_config][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.human_agent_suggestion_config].
+     *
      * Note that any failure of Agent Assist features will not lead to the overall
      * failure of an AnalyzeContent API call. Instead, the features will
      * fail silently with the error field set in the corresponding
@@ -2213,6 +2248,7 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
      * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig.feature_configs]
      * of
      * [HumanAgentAssistantConfig.human_agent_suggestion_config][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.human_agent_suggestion_config].
+     *
      * Note that any failure of Agent Assist features will not lead to the overall
      * failure of an AnalyzeContent API call. Instead, the features will
      * fail silently with the error field set in the corresponding
@@ -2245,6 +2281,7 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
      * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig.feature_configs]
      * of
      * [HumanAgentAssistantConfig.human_agent_suggestion_config][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.human_agent_suggestion_config].
+     *
      * Note that any failure of Agent Assist features will not lead to the overall
      * failure of an AnalyzeContent API call. Instead, the features will
      * fail silently with the error field set in the corresponding
@@ -2274,6 +2311,7 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
      * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig.feature_configs]
      * of
      * [HumanAgentAssistantConfig.human_agent_suggestion_config][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.human_agent_suggestion_config].
+     *
      * Note that any failure of Agent Assist features will not lead to the overall
      * failure of an AnalyzeContent API call. Instead, the features will
      * fail silently with the error field set in the corresponding
@@ -2303,6 +2341,7 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
      * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig.feature_configs]
      * of
      * [HumanAgentAssistantConfig.human_agent_suggestion_config][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.human_agent_suggestion_config].
+     *
      * Note that any failure of Agent Assist features will not lead to the overall
      * failure of an AnalyzeContent API call. Instead, the features will
      * fail silently with the error field set in the corresponding
@@ -2333,6 +2372,7 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
      * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig.feature_configs]
      * of
      * [HumanAgentAssistantConfig.human_agent_suggestion_config][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.human_agent_suggestion_config].
+     *
      * Note that any failure of Agent Assist features will not lead to the overall
      * failure of an AnalyzeContent API call. Instead, the features will
      * fail silently with the error field set in the corresponding
@@ -2361,6 +2401,7 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
      * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig.feature_configs]
      * of
      * [HumanAgentAssistantConfig.human_agent_suggestion_config][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.human_agent_suggestion_config].
+     *
      * Note that any failure of Agent Assist features will not lead to the overall
      * failure of an AnalyzeContent API call. Instead, the features will
      * fail silently with the error field set in the corresponding
@@ -2389,6 +2430,7 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
      * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig.feature_configs]
      * of
      * [HumanAgentAssistantConfig.human_agent_suggestion_config][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.human_agent_suggestion_config].
+     *
      * Note that any failure of Agent Assist features will not lead to the overall
      * failure of an AnalyzeContent API call. Instead, the features will
      * fail silently with the error field set in the corresponding
@@ -2411,6 +2453,7 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
      * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig.feature_configs]
      * of
      * [HumanAgentAssistantConfig.human_agent_suggestion_config][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.human_agent_suggestion_config].
+     *
      * Note that any failure of Agent Assist features will not lead to the overall
      * failure of an AnalyzeContent API call. Instead, the features will
      * fail silently with the error field set in the corresponding
@@ -2437,6 +2480,7 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
      * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig.feature_configs]
      * of
      * [HumanAgentAssistantConfig.human_agent_suggestion_config][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.human_agent_suggestion_config].
+     *
      * Note that any failure of Agent Assist features will not lead to the overall
      * failure of an AnalyzeContent API call. Instead, the features will
      * fail silently with the error field set in the corresponding
@@ -2463,6 +2507,7 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
      * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig.feature_configs]
      * of
      * [HumanAgentAssistantConfig.human_agent_suggestion_config][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.human_agent_suggestion_config].
+     *
      * Note that any failure of Agent Assist features will not lead to the overall
      * failure of an AnalyzeContent API call. Instead, the features will
      * fail silently with the error field set in the corresponding
@@ -2486,6 +2531,7 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
      * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig.feature_configs]
      * of
      * [HumanAgentAssistantConfig.human_agent_suggestion_config][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.human_agent_suggestion_config].
+     *
      * Note that any failure of Agent Assist features will not lead to the overall
      * failure of an AnalyzeContent API call. Instead, the features will
      * fail silently with the error field set in the corresponding
@@ -2510,6 +2556,7 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
      * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig.feature_configs]
      * of
      * [HumanAgentAssistantConfig.human_agent_suggestion_config][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.human_agent_suggestion_config].
+     *
      * Note that any failure of Agent Assist features will not lead to the overall
      * failure of an AnalyzeContent API call. Instead, the features will
      * fail silently with the error field set in the corresponding
@@ -2571,6 +2618,7 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
      * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig.feature_configs]
      * of
      * [HumanAgentAssistantConfig.end_user_suggestion_config][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.end_user_suggestion_config].
+     *
      * Same as human_agent_suggestion_results, any failure of Agent Assist
      * features will not lead to the overall failure of an AnalyzeContent API
      * call. Instead, the features will fail silently with the error field set in
@@ -2597,6 +2645,7 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
      * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig.feature_configs]
      * of
      * [HumanAgentAssistantConfig.end_user_suggestion_config][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.end_user_suggestion_config].
+     *
      * Same as human_agent_suggestion_results, any failure of Agent Assist
      * features will not lead to the overall failure of an AnalyzeContent API
      * call. Instead, the features will fail silently with the error field set in
@@ -2622,6 +2671,7 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
      * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig.feature_configs]
      * of
      * [HumanAgentAssistantConfig.end_user_suggestion_config][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.end_user_suggestion_config].
+     *
      * Same as human_agent_suggestion_results, any failure of Agent Assist
      * features will not lead to the overall failure of an AnalyzeContent API
      * call. Instead, the features will fail silently with the error field set in
@@ -2648,6 +2698,7 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
      * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig.feature_configs]
      * of
      * [HumanAgentAssistantConfig.end_user_suggestion_config][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.end_user_suggestion_config].
+     *
      * Same as human_agent_suggestion_results, any failure of Agent Assist
      * features will not lead to the overall failure of an AnalyzeContent API
      * call. Instead, the features will fail silently with the error field set in
@@ -2680,6 +2731,7 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
      * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig.feature_configs]
      * of
      * [HumanAgentAssistantConfig.end_user_suggestion_config][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.end_user_suggestion_config].
+     *
      * Same as human_agent_suggestion_results, any failure of Agent Assist
      * features will not lead to the overall failure of an AnalyzeContent API
      * call. Instead, the features will fail silently with the error field set in
@@ -2709,6 +2761,7 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
      * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig.feature_configs]
      * of
      * [HumanAgentAssistantConfig.end_user_suggestion_config][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.end_user_suggestion_config].
+     *
      * Same as human_agent_suggestion_results, any failure of Agent Assist
      * features will not lead to the overall failure of an AnalyzeContent API
      * call. Instead, the features will fail silently with the error field set in
@@ -2741,6 +2794,7 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
      * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig.feature_configs]
      * of
      * [HumanAgentAssistantConfig.end_user_suggestion_config][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.end_user_suggestion_config].
+     *
      * Same as human_agent_suggestion_results, any failure of Agent Assist
      * features will not lead to the overall failure of an AnalyzeContent API
      * call. Instead, the features will fail silently with the error field set in
@@ -2773,6 +2827,7 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
      * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig.feature_configs]
      * of
      * [HumanAgentAssistantConfig.end_user_suggestion_config][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.end_user_suggestion_config].
+     *
      * Same as human_agent_suggestion_results, any failure of Agent Assist
      * features will not lead to the overall failure of an AnalyzeContent API
      * call. Instead, the features will fail silently with the error field set in
@@ -2802,6 +2857,7 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
      * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig.feature_configs]
      * of
      * [HumanAgentAssistantConfig.end_user_suggestion_config][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.end_user_suggestion_config].
+     *
      * Same as human_agent_suggestion_results, any failure of Agent Assist
      * features will not lead to the overall failure of an AnalyzeContent API
      * call. Instead, the features will fail silently with the error field set in
@@ -2831,6 +2887,7 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
      * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig.feature_configs]
      * of
      * [HumanAgentAssistantConfig.end_user_suggestion_config][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.end_user_suggestion_config].
+     *
      * Same as human_agent_suggestion_results, any failure of Agent Assist
      * features will not lead to the overall failure of an AnalyzeContent API
      * call. Instead, the features will fail silently with the error field set in
@@ -2860,6 +2917,7 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
      * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig.feature_configs]
      * of
      * [HumanAgentAssistantConfig.end_user_suggestion_config][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.end_user_suggestion_config].
+     *
      * Same as human_agent_suggestion_results, any failure of Agent Assist
      * features will not lead to the overall failure of an AnalyzeContent API
      * call. Instead, the features will fail silently with the error field set in
@@ -2888,6 +2946,7 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
      * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig.feature_configs]
      * of
      * [HumanAgentAssistantConfig.end_user_suggestion_config][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.end_user_suggestion_config].
+     *
      * Same as human_agent_suggestion_results, any failure of Agent Assist
      * features will not lead to the overall failure of an AnalyzeContent API
      * call. Instead, the features will fail silently with the error field set in
@@ -2916,6 +2975,7 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
      * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig.feature_configs]
      * of
      * [HumanAgentAssistantConfig.end_user_suggestion_config][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.end_user_suggestion_config].
+     *
      * Same as human_agent_suggestion_results, any failure of Agent Assist
      * features will not lead to the overall failure of an AnalyzeContent API
      * call. Instead, the features will fail silently with the error field set in
@@ -2938,6 +2998,7 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
      * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig.feature_configs]
      * of
      * [HumanAgentAssistantConfig.end_user_suggestion_config][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.end_user_suggestion_config].
+     *
      * Same as human_agent_suggestion_results, any failure of Agent Assist
      * features will not lead to the overall failure of an AnalyzeContent API
      * call. Instead, the features will fail silently with the error field set in
@@ -2964,6 +3025,7 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
      * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig.feature_configs]
      * of
      * [HumanAgentAssistantConfig.end_user_suggestion_config][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.end_user_suggestion_config].
+     *
      * Same as human_agent_suggestion_results, any failure of Agent Assist
      * features will not lead to the overall failure of an AnalyzeContent API
      * call. Instead, the features will fail silently with the error field set in
@@ -2990,6 +3052,7 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
      * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig.feature_configs]
      * of
      * [HumanAgentAssistantConfig.end_user_suggestion_config][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.end_user_suggestion_config].
+     *
      * Same as human_agent_suggestion_results, any failure of Agent Assist
      * features will not lead to the overall failure of an AnalyzeContent API
      * call. Instead, the features will fail silently with the error field set in
@@ -3013,6 +3076,7 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
      * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig.feature_configs]
      * of
      * [HumanAgentAssistantConfig.end_user_suggestion_config][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.end_user_suggestion_config].
+     *
      * Same as human_agent_suggestion_results, any failure of Agent Assist
      * features will not lead to the overall failure of an AnalyzeContent API
      * call. Instead, the features will fail silently with the error field set in
@@ -3037,6 +3101,7 @@ public final class AnalyzeContentResponse extends com.google.protobuf.GeneratedM
      * [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig.feature_configs]
      * of
      * [HumanAgentAssistantConfig.end_user_suggestion_config][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.end_user_suggestion_config].
+     *
      * Same as human_agent_suggestion_results, any failure of Agent Assist
      * features will not lead to the overall failure of an AnalyzeContent API
      * call. Instead, the features will fail silently with the error field set in

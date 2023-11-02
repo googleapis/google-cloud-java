@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -582,8 +582,8 @@ public class CloudBillingClient implements BackgroundResource {
    * <p>When creating a subaccount, the current authenticated user must have the
    * `billing.accounts.update` IAM permission on the parent account, which is typically given to
    * billing account [administrators](https://cloud.google.com/billing/docs/how-to/billing-access).
-   * This method will return an error if the parent account has not been provisioned as a reseller
-   * account.
+   * This method will return an error if the parent account has not been provisioned for
+   * subaccounts.
    *
    * <p>Sample code:
    *
@@ -623,8 +623,8 @@ public class CloudBillingClient implements BackgroundResource {
    * <p>When creating a subaccount, the current authenticated user must have the
    * `billing.accounts.update` IAM permission on the parent account, which is typically given to
    * billing account [administrators](https://cloud.google.com/billing/docs/how-to/billing-access).
-   * This method will return an error if the parent account has not been provisioned as a reseller
-   * account.
+   * This method will return an error if the parent account has not been provisioned for
+   * subaccounts.
    *
    * <p>Sample code:
    *
@@ -663,8 +663,8 @@ public class CloudBillingClient implements BackgroundResource {
    * <p>When creating a subaccount, the current authenticated user must have the
    * `billing.accounts.update` IAM permission on the parent account, which is typically given to
    * billing account [administrators](https://cloud.google.com/billing/docs/how-to/billing-access).
-   * This method will return an error if the parent account has not been provisioned as a reseller
-   * account.
+   * This method will return an error if the parent account has not been provisioned for
+   * subaccounts.
    *
    * <p>Sample code:
    *
@@ -888,7 +888,40 @@ public class CloudBillingClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
-   *   String name = "name3373707";
+   *   ProjectName name = ProjectName.of("[PROJECT]");
+   *   ProjectBillingInfo response = cloudBillingClient.getProjectBillingInfo(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the project for which billing information is
+   *     retrieved. For example, `projects/tokyo-rain-123`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ProjectBillingInfo getProjectBillingInfo(ProjectName name) {
+    GetProjectBillingInfoRequest request =
+        GetProjectBillingInfoRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getProjectBillingInfo(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the billing information for a project. The current authenticated user must have the
+   * `resourcemanager.projects.get` permission for the project, which can be granted by assigning
+   * the [Project Viewer](https://cloud.google.com/iam/docs/understanding-roles#predefined_roles)
+   * role.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
+   *   String name = ProjectName.of("[PROJECT]").toString();
    *   ProjectBillingInfo response = cloudBillingClient.getProjectBillingInfo(name);
    * }
    * }</pre>
@@ -920,7 +953,9 @@ public class CloudBillingClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
    *   GetProjectBillingInfoRequest request =
-   *       GetProjectBillingInfoRequest.newBuilder().setName("name3373707").build();
+   *       GetProjectBillingInfoRequest.newBuilder()
+   *           .setName(ProjectName.of("[PROJECT]").toString())
+   *           .build();
    *   ProjectBillingInfo response = cloudBillingClient.getProjectBillingInfo(request);
    * }
    * }</pre>
@@ -949,7 +984,9 @@ public class CloudBillingClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
    *   GetProjectBillingInfoRequest request =
-   *       GetProjectBillingInfoRequest.newBuilder().setName("name3373707").build();
+   *       GetProjectBillingInfoRequest.newBuilder()
+   *           .setName(ProjectName.of("[PROJECT]").toString())
+   *           .build();
    *   ApiFuture<ProjectBillingInfo> future =
    *       cloudBillingClient.getProjectBillingInfoCallable().futureCall(request);
    *   // Do something.
@@ -1012,7 +1049,7 @@ public class CloudBillingClient implements BackgroundResource {
    *
    * @param name Required. The resource name of the project associated with the billing information
    *     that you want to update. For example, `projects/tokyo-rain-123`.
-   * @param projectBillingInfo The new billing information for the project. Read-only fields are
+   * @param projectBillingInfo The new billing information for the project. Output-only fields are
    *     ignored; thus, you can leave empty all fields except `billing_account_name`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,7 +21,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *
  *
  * <pre>
- * Manages connections to source code repostiories.
+ * Manages connections to source code repositories.
  * </pre>
  */
 @javax.annotation.Generated(
@@ -32,7 +32,8 @@ public final class RepositoryManagerGrpc {
 
   private RepositoryManagerGrpc() {}
 
-  public static final String SERVICE_NAME = "google.devtools.cloudbuild.v2.RepositoryManager";
+  public static final java.lang.String SERVICE_NAME =
+      "google.devtools.cloudbuild.v2.RepositoryManager";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -623,6 +624,51 @@ public final class RepositoryManagerGrpc {
     return getFetchLinkableRepositoriesMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloudbuild.v2.FetchGitRefsRequest,
+          com.google.cloudbuild.v2.FetchGitRefsResponse>
+      getFetchGitRefsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "FetchGitRefs",
+      requestType = com.google.cloudbuild.v2.FetchGitRefsRequest.class,
+      responseType = com.google.cloudbuild.v2.FetchGitRefsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloudbuild.v2.FetchGitRefsRequest,
+          com.google.cloudbuild.v2.FetchGitRefsResponse>
+      getFetchGitRefsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloudbuild.v2.FetchGitRefsRequest,
+            com.google.cloudbuild.v2.FetchGitRefsResponse>
+        getFetchGitRefsMethod;
+    if ((getFetchGitRefsMethod = RepositoryManagerGrpc.getFetchGitRefsMethod) == null) {
+      synchronized (RepositoryManagerGrpc.class) {
+        if ((getFetchGitRefsMethod = RepositoryManagerGrpc.getFetchGitRefsMethod) == null) {
+          RepositoryManagerGrpc.getFetchGitRefsMethod =
+              getFetchGitRefsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloudbuild.v2.FetchGitRefsRequest,
+                          com.google.cloudbuild.v2.FetchGitRefsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "FetchGitRefs"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloudbuild.v2.FetchGitRefsRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloudbuild.v2.FetchGitRefsResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new RepositoryManagerMethodDescriptorSupplier("FetchGitRefs"))
+                      .build();
+        }
+      }
+    }
+    return getFetchGitRefsMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static RepositoryManagerStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<RepositoryManagerStub> factory =
@@ -668,7 +714,7 @@ public final class RepositoryManagerGrpc {
    *
    *
    * <pre>
-   * Manages connections to source code repostiories.
+   * Manages connections to source code repositories.
    * </pre>
    */
   public interface AsyncService {
@@ -860,13 +906,28 @@ public final class RepositoryManagerGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getFetchLinkableRepositoriesMethod(), responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetch the list of branches or tags for a given repository.
+     * </pre>
+     */
+    default void fetchGitRefs(
+        com.google.cloudbuild.v2.FetchGitRefsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloudbuild.v2.FetchGitRefsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getFetchGitRefsMethod(), responseObserver);
+    }
   }
 
   /**
    * Base class for the server implementation of the service RepositoryManager.
    *
    * <pre>
-   * Manages connections to source code repostiories.
+   * Manages connections to source code repositories.
    * </pre>
    */
   public abstract static class RepositoryManagerImplBase
@@ -882,7 +943,7 @@ public final class RepositoryManagerGrpc {
    * A stub to allow clients to do asynchronous rpc calls to service RepositoryManager.
    *
    * <pre>
-   * Manages connections to source code repostiories.
+   * Manages connections to source code repositories.
    * </pre>
    */
   public static final class RepositoryManagerStub
@@ -1110,13 +1171,30 @@ public final class RepositoryManagerGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetch the list of branches or tags for a given repository.
+     * </pre>
+     */
+    public void fetchGitRefs(
+        com.google.cloudbuild.v2.FetchGitRefsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloudbuild.v2.FetchGitRefsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getFetchGitRefsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service RepositoryManager.
    *
    * <pre>
-   * Manages connections to source code repostiories.
+   * Manages connections to source code repositories.
    * </pre>
    */
   public static final class RepositoryManagerBlockingStub
@@ -1301,13 +1379,26 @@ public final class RepositoryManagerGrpc {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getFetchLinkableRepositoriesMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetch the list of branches or tags for a given repository.
+     * </pre>
+     */
+    public com.google.cloudbuild.v2.FetchGitRefsResponse fetchGitRefs(
+        com.google.cloudbuild.v2.FetchGitRefsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFetchGitRefsMethod(), getCallOptions(), request);
+    }
   }
 
   /**
    * A stub to allow clients to do ListenableFuture-style rpc calls to service RepositoryManager.
    *
    * <pre>
-   * Manages connections to source code repostiories.
+   * Manages connections to source code repositories.
    * </pre>
    */
   public static final class RepositoryManagerFutureStub
@@ -1497,6 +1588,20 @@ public final class RepositoryManagerGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getFetchLinkableRepositoriesMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetch the list of branches or tags for a given repository.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloudbuild.v2.FetchGitRefsResponse>
+        fetchGitRefs(com.google.cloudbuild.v2.FetchGitRefsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getFetchGitRefsMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_CONNECTION = 0;
@@ -1512,6 +1617,7 @@ public final class RepositoryManagerGrpc {
   private static final int METHODID_FETCH_READ_WRITE_TOKEN = 10;
   private static final int METHODID_FETCH_READ_TOKEN = 11;
   private static final int METHODID_FETCH_LINKABLE_REPOSITORIES = 12;
+  private static final int METHODID_FETCH_GIT_REFS = 13;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1599,6 +1705,12 @@ public final class RepositoryManagerGrpc {
               (com.google.cloudbuild.v2.FetchLinkableRepositoriesRequest) request,
               (io.grpc.stub.StreamObserver<
                       com.google.cloudbuild.v2.FetchLinkableRepositoriesResponse>)
+                  responseObserver);
+          break;
+        case METHODID_FETCH_GIT_REFS:
+          serviceImpl.fetchGitRefs(
+              (com.google.cloudbuild.v2.FetchGitRefsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloudbuild.v2.FetchGitRefsResponse>)
                   responseObserver);
           break;
         default:
@@ -1702,6 +1814,13 @@ public final class RepositoryManagerGrpc {
                     com.google.cloudbuild.v2.FetchLinkableRepositoriesRequest,
                     com.google.cloudbuild.v2.FetchLinkableRepositoriesResponse>(
                     service, METHODID_FETCH_LINKABLE_REPOSITORIES)))
+        .addMethod(
+            getFetchGitRefsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloudbuild.v2.FetchGitRefsRequest,
+                    com.google.cloudbuild.v2.FetchGitRefsResponse>(
+                    service, METHODID_FETCH_GIT_REFS)))
         .build();
   }
 
@@ -1729,9 +1848,9 @@ public final class RepositoryManagerGrpc {
   private static final class RepositoryManagerMethodDescriptorSupplier
       extends RepositoryManagerBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    RepositoryManagerMethodDescriptorSupplier(String methodName) {
+    RepositoryManagerMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 
@@ -1766,6 +1885,7 @@ public final class RepositoryManagerGrpc {
                       .addMethod(getFetchReadWriteTokenMethod())
                       .addMethod(getFetchReadTokenMethod())
                       .addMethod(getFetchLinkableRepositoriesMethod())
+                      .addMethod(getFetchGitRefsMethod())
                       .build();
         }
       }

@@ -726,5 +726,5 @@ public interface NoteOrBuilder
    */
   io.grafeas.v1.VulnerabilityAssessmentNoteOrBuilder getVulnerabilityAssessmentOrBuilder();
 
-  public io.grafeas.v1.Note.TypeCase getTypeCase();
+  io.grafeas.v1.Note.TypeCase getTypeCase();
 }

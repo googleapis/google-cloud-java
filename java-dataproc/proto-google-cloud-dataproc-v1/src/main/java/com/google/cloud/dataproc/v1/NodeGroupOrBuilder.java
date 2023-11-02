@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -167,6 +167,7 @@ public interface NodeGroupOrBuilder
    *
    * <pre>
    * Optional. Node group labels.
+   *
    * * Label **keys** must consist of from 1 to 63 characters and conform to
    *   [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
    * * Label **values** can be empty. If specified, they must consist of from
@@ -183,6 +184,7 @@ public interface NodeGroupOrBuilder
    *
    * <pre>
    * Optional. Node group labels.
+   *
    * * Label **keys** must consist of from 1 to 63 characters and conform to
    *   [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
    * * Label **values** can be empty. If specified, they must consist of from
@@ -202,6 +204,7 @@ public interface NodeGroupOrBuilder
    *
    * <pre>
    * Optional. Node group labels.
+   *
    * * Label **keys** must consist of from 1 to 63 characters and conform to
    *   [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
    * * Label **values** can be empty. If specified, they must consist of from
@@ -218,6 +221,7 @@ public interface NodeGroupOrBuilder
    *
    * <pre>
    * Optional. Node group labels.
+   *
    * * Label **keys** must consist of from 1 to 63 characters and conform to
    *   [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
    * * Label **values** can be empty. If specified, they must consist of from
@@ -238,6 +242,7 @@ public interface NodeGroupOrBuilder
    *
    * <pre>
    * Optional. Node group labels.
+   *
    * * Label **keys** must consist of from 1 to 63 characters and conform to
    *   [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
    * * Label **values** can be empty. If specified, they must consist of from

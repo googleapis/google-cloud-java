@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,9 +21,12 @@ import static com.google.cloud.advisorynotifications.v1.AdvisoryNotificationsSer
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.advisorynotifications.v1.GetNotificationRequest;
+import com.google.cloud.advisorynotifications.v1.GetSettingsRequest;
 import com.google.cloud.advisorynotifications.v1.ListNotificationsRequest;
 import com.google.cloud.advisorynotifications.v1.ListNotificationsResponse;
 import com.google.cloud.advisorynotifications.v1.Notification;
+import com.google.cloud.advisorynotifications.v1.Settings;
+import com.google.cloud.advisorynotifications.v1.UpdateSettingsRequest;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
@@ -47,6 +50,14 @@ public abstract class AdvisoryNotificationsServiceStub implements BackgroundReso
 
   public UnaryCallable<GetNotificationRequest, Notification> getNotificationCallable() {
     throw new UnsupportedOperationException("Not implemented: getNotificationCallable()");
+  }
+
+  public UnaryCallable<GetSettingsRequest, Settings> getSettingsCallable() {
+    throw new UnsupportedOperationException("Not implemented: getSettingsCallable()");
+  }
+
+  public UnaryCallable<UpdateSettingsRequest, Settings> updateSettingsCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateSettingsCallable()");
   }
 
   @Override

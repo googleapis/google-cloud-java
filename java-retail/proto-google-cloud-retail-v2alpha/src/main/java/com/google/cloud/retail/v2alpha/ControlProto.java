@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,26 +45,26 @@ public final class ControlProto {
           + "/api/field_behavior.proto\032\031google/api/re"
           + "source.proto\032(google/cloud/retail/v2alph"
           + "a/common.proto\0320google/cloud/retail/v2al"
-          + "pha/search_service.proto\"\205\004\n\007Control\022N\n\n"
+          + "pha/search_service.proto\"\207\004\n\007Control\022N\n\n"
           + "facet_spec\030\003 \001(\01324.google.cloud.retail.v"
           + "2alpha.SearchRequest.FacetSpecB\002\030\001H\000\0221\n\004"
           + "rule\030\004 \001(\0132!.google.cloud.retail.v2alpha"
-          + ".RuleH\000\022\021\n\004name\030\001 \001(\tB\003\340A\005\022\031\n\014display_na"
-          + "me\030\002 \001(\tB\003\340A\002\022*\n\035associated_serving_conf"
-          + "ig_ids\030\005 \003(\tB\003\340A\003\022I\n\016solution_types\030\006 \003("
-          + "\0162).google.cloud.retail.v2alpha.Solution"
-          + "TypeB\006\340A\002\340A\005\022T\n\030search_solution_use_case"
-          + "\030\007 \003(\01622.google.cloud.retail.v2alpha.Sea"
-          + "rchSolutionUseCase:q\352An\n\035retail.googleap"
-          + "is.com/Control\022Mprojects/{project}/locat"
-          + "ions/{location}/catalogs/{catalog}/contr"
-          + "ols/{control}B\t\n\007controlB\320\001\n\037com.google."
-          + "cloud.retail.v2alphaB\014ControlProtoP\001Z7cl"
-          + "oud.google.com/go/retail/apiv2alpha/reta"
-          + "ilpb;retailpb\242\002\006RETAIL\252\002\033Google.Cloud.Re"
-          + "tail.V2Alpha\312\002\033Google\\Cloud\\Retail\\V2alp"
-          + "ha\352\002\036Google::Cloud::Retail::V2alphab\006pro"
-          + "to3"
+          + ".RuleH\000\022\022\n\004name\030\001 \001(\tB\004\342A\001\005\022\032\n\014display_n"
+          + "ame\030\002 \001(\tB\004\342A\001\002\022+\n\035associated_serving_co"
+          + "nfig_ids\030\005 \003(\tB\004\342A\001\003\022H\n\016solution_types\030\006"
+          + " \003(\0162).google.cloud.retail.v2alpha.Solut"
+          + "ionTypeB\005\342A\002\002\005\022T\n\030search_solution_use_ca"
+          + "se\030\007 \003(\01622.google.cloud.retail.v2alpha.S"
+          + "earchSolutionUseCase:q\352An\n\035retail.google"
+          + "apis.com/Control\022Mprojects/{project}/loc"
+          + "ations/{location}/catalogs/{catalog}/con"
+          + "trols/{control}B\t\n\007controlB\320\001\n\037com.googl"
+          + "e.cloud.retail.v2alphaB\014ControlProtoP\001Z7"
+          + "cloud.google.com/go/retail/apiv2alpha/re"
+          + "tailpb;retailpb\242\002\006RETAIL\252\002\033Google.Cloud."
+          + "Retail.V2Alpha\312\002\033Google\\Cloud\\Retail\\V2a"
+          + "lpha\352\002\036Google::Cloud::Retail::V2alphab\006p"
+          + "roto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,18 +38,13 @@ public final class FetchRemoteBranchesResponse extends com.google.protobuf.Gener
   }
 
   private FetchRemoteBranchesResponse() {
-    branches_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    branches_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new FetchRemoteBranchesResponse();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -70,7 +65,8 @@ public final class FetchRemoteBranchesResponse extends com.google.protobuf.Gener
   public static final int BRANCHES_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList branches_;
+  private com.google.protobuf.LazyStringArrayList branches_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -336,8 +332,7 @@ public final class FetchRemoteBranchesResponse extends com.google.protobuf.Gener
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      branches_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      branches_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -366,7 +361,6 @@ public final class FetchRemoteBranchesResponse extends com.google.protobuf.Gener
     public com.google.cloud.dataform.v1alpha2.FetchRemoteBranchesResponse buildPartial() {
       com.google.cloud.dataform.v1alpha2.FetchRemoteBranchesResponse result =
           new com.google.cloud.dataform.v1alpha2.FetchRemoteBranchesResponse(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -374,18 +368,13 @@ public final class FetchRemoteBranchesResponse extends com.google.protobuf.Gener
       return result;
     }
 
-    private void buildPartialRepeatedFields(
-        com.google.cloud.dataform.v1alpha2.FetchRemoteBranchesResponse result) {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        branches_ = branches_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.branches_ = branches_;
-    }
-
     private void buildPartial0(
         com.google.cloud.dataform.v1alpha2.FetchRemoteBranchesResponse result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        branches_.makeImmutable();
+        result.branches_ = branches_;
+      }
     }
 
     @java.lang.Override
@@ -438,7 +427,7 @@ public final class FetchRemoteBranchesResponse extends com.google.protobuf.Gener
       if (!other.branches_.isEmpty()) {
         if (branches_.isEmpty()) {
           branches_ = other.branches_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ |= 0x00000001;
         } else {
           ensureBranchesIsMutable();
           branches_.addAll(other.branches_);
@@ -497,14 +486,14 @@ public final class FetchRemoteBranchesResponse extends com.google.protobuf.Gener
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList branches_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList branches_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureBranchesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!branches_.isModifiable()) {
         branches_ = new com.google.protobuf.LazyStringArrayList(branches_);
-        bitField0_ |= 0x00000001;
       }
+      bitField0_ |= 0x00000001;
     }
     /**
      *
@@ -518,7 +507,8 @@ public final class FetchRemoteBranchesResponse extends com.google.protobuf.Gener
      * @return A list containing the branches.
      */
     public com.google.protobuf.ProtocolStringList getBranchesList() {
-      return branches_.getUnmodifiableView();
+      branches_.makeImmutable();
+      return branches_;
     }
     /**
      *
@@ -583,6 +573,7 @@ public final class FetchRemoteBranchesResponse extends com.google.protobuf.Gener
       }
       ensureBranchesIsMutable();
       branches_.set(index, value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -604,6 +595,7 @@ public final class FetchRemoteBranchesResponse extends com.google.protobuf.Gener
       }
       ensureBranchesIsMutable();
       branches_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -622,6 +614,7 @@ public final class FetchRemoteBranchesResponse extends com.google.protobuf.Gener
     public Builder addAllBranches(java.lang.Iterable<java.lang.String> values) {
       ensureBranchesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, branches_);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -637,8 +630,9 @@ public final class FetchRemoteBranchesResponse extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearBranches() {
-      branches_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      branches_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      ;
       onChanged();
       return this;
     }
@@ -661,6 +655,7 @@ public final class FetchRemoteBranchesResponse extends com.google.protobuf.Gener
       checkByteStringIsUtf8(value);
       ensureBranchesIsMutable();
       branches_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

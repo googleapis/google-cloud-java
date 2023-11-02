@@ -1,0 +1,20 @@
+name: CHANGELOG.md generation test
+
+on:
+  pull_request:
+    branches: [ main ]
+    paths:
+    - .github/release-note-generation/**
+
+jobs:
+  changelog-generation-test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+    - name: Unit Test
+      run: |
+        python3 .github/release-note-generation/unit_test.py
+    - name: Golden Test
+      run: |
+        sh .github/release-note-generation/golden_test.sh

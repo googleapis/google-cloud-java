@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,18 +40,13 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
   private OutdatedLibrary() {
     libraryName_ = "";
     version_ = "";
-    learnMoreUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    learnMoreUrls_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new OutdatedLibrary();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -174,7 +169,8 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
   public static final int LEARN_MORE_URLS_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList learnMoreUrls_;
+  private com.google.protobuf.LazyStringArrayList learnMoreUrls_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -460,8 +456,7 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
       bitField0_ = 0;
       libraryName_ = "";
       version_ = "";
-      learnMoreUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      learnMoreUrls_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -489,21 +484,11 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.websecurityscanner.v1.OutdatedLibrary buildPartial() {
       com.google.cloud.websecurityscanner.v1.OutdatedLibrary result =
           new com.google.cloud.websecurityscanner.v1.OutdatedLibrary(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(
-        com.google.cloud.websecurityscanner.v1.OutdatedLibrary result) {
-      if (((bitField0_ & 0x00000004) != 0)) {
-        learnMoreUrls_ = learnMoreUrls_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.learnMoreUrls_ = learnMoreUrls_;
     }
 
     private void buildPartial0(com.google.cloud.websecurityscanner.v1.OutdatedLibrary result) {
@@ -513,6 +498,10 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.version_ = version_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        learnMoreUrls_.makeImmutable();
+        result.learnMoreUrls_ = learnMoreUrls_;
       }
     }
 
@@ -575,7 +564,7 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
       if (!other.learnMoreUrls_.isEmpty()) {
         if (learnMoreUrls_.isEmpty()) {
           learnMoreUrls_ = other.learnMoreUrls_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ |= 0x00000004;
         } else {
           ensureLearnMoreUrlsIsMutable();
           learnMoreUrls_.addAll(other.learnMoreUrls_);
@@ -858,14 +847,14 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
       return this;
     }
 
-    private com.google.protobuf.LazyStringList learnMoreUrls_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList learnMoreUrls_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureLearnMoreUrlsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!learnMoreUrls_.isModifiable()) {
         learnMoreUrls_ = new com.google.protobuf.LazyStringArrayList(learnMoreUrls_);
-        bitField0_ |= 0x00000004;
       }
+      bitField0_ |= 0x00000004;
     }
     /**
      *
@@ -879,7 +868,8 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
      * @return A list containing the learnMoreUrls.
      */
     public com.google.protobuf.ProtocolStringList getLearnMoreUrlsList() {
-      return learnMoreUrls_.getUnmodifiableView();
+      learnMoreUrls_.makeImmutable();
+      return learnMoreUrls_;
     }
     /**
      *
@@ -944,6 +934,7 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
       }
       ensureLearnMoreUrlsIsMutable();
       learnMoreUrls_.set(index, value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -965,6 +956,7 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
       }
       ensureLearnMoreUrlsIsMutable();
       learnMoreUrls_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -983,6 +975,7 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
     public Builder addAllLearnMoreUrls(java.lang.Iterable<java.lang.String> values) {
       ensureLearnMoreUrlsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, learnMoreUrls_);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -998,8 +991,9 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearLearnMoreUrls() {
-      learnMoreUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      learnMoreUrls_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000004);
+      ;
       onChanged();
       return this;
     }
@@ -1022,6 +1016,7 @@ public final class OutdatedLibrary extends com.google.protobuf.GeneratedMessageV
       checkByteStringIsUtf8(value);
       ensureLearnMoreUrlsIsMutable();
       learnMoreUrls_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

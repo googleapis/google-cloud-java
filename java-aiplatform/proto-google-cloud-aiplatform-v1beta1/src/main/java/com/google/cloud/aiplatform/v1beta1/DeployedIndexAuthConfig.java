@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,11 +43,6 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new DeployedIndexAuthConfig();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -139,6 +134,7 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
      * <pre>
      * A list of allowed JWT issuers. Each entry must be a valid Google
      * service account, in the following format:
+     *
      * `service-account-name&#64;project-id.iam.gserviceaccount.com`
      * </pre>
      *
@@ -153,6 +149,7 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
      * <pre>
      * A list of allowed JWT issuers. Each entry must be a valid Google
      * service account, in the following format:
+     *
      * `service-account-name&#64;project-id.iam.gserviceaccount.com`
      * </pre>
      *
@@ -167,6 +164,7 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
      * <pre>
      * A list of allowed JWT issuers. Each entry must be a valid Google
      * service account, in the following format:
+     *
      * `service-account-name&#64;project-id.iam.gserviceaccount.com`
      * </pre>
      *
@@ -182,6 +180,7 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
      * <pre>
      * A list of allowed JWT issuers. Each entry must be a valid Google
      * service account, in the following format:
+     *
      * `service-account-name&#64;project-id.iam.gserviceaccount.com`
      * </pre>
      *
@@ -214,19 +213,14 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
     }
 
     private AuthProvider() {
-      audiences_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      allowedIssuers_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      audiences_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      allowedIssuers_ = com.google.protobuf.LazyStringArrayList.emptyList();
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new AuthProvider();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -248,7 +242,8 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
     public static final int AUDIENCES_FIELD_NUMBER = 1;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList audiences_;
+    private com.google.protobuf.LazyStringArrayList audiences_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -323,13 +318,15 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
     public static final int ALLOWED_ISSUERS_FIELD_NUMBER = 2;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList allowedIssuers_;
+    private com.google.protobuf.LazyStringArrayList allowedIssuers_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
      * <pre>
      * A list of allowed JWT issuers. Each entry must be a valid Google
      * service account, in the following format:
+     *
      * `service-account-name&#64;project-id.iam.gserviceaccount.com`
      * </pre>
      *
@@ -346,6 +343,7 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
      * <pre>
      * A list of allowed JWT issuers. Each entry must be a valid Google
      * service account, in the following format:
+     *
      * `service-account-name&#64;project-id.iam.gserviceaccount.com`
      * </pre>
      *
@@ -362,6 +360,7 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
      * <pre>
      * A list of allowed JWT issuers. Each entry must be a valid Google
      * service account, in the following format:
+     *
      * `service-account-name&#64;project-id.iam.gserviceaccount.com`
      * </pre>
      *
@@ -379,6 +378,7 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
      * <pre>
      * A list of allowed JWT issuers. Each entry must be a valid Google
      * service account, in the following format:
+     *
      * `service-account-name&#64;project-id.iam.gserviceaccount.com`
      * </pre>
      *
@@ -626,10 +626,8 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        audiences_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        allowedIssuers_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000002);
+        audiences_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        allowedIssuers_ = com.google.protobuf.LazyStringArrayList.emptyList();
         return this;
       }
 
@@ -661,7 +659,6 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
           buildPartial() {
         com.google.cloud.aiplatform.v1beta1.DeployedIndexAuthConfig.AuthProvider result =
             new com.google.cloud.aiplatform.v1beta1.DeployedIndexAuthConfig.AuthProvider(this);
-        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
@@ -669,23 +666,17 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
         return result;
       }
 
-      private void buildPartialRepeatedFields(
-          com.google.cloud.aiplatform.v1beta1.DeployedIndexAuthConfig.AuthProvider result) {
-        if (((bitField0_ & 0x00000001) != 0)) {
-          audiences_ = audiences_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.audiences_ = audiences_;
-        if (((bitField0_ & 0x00000002) != 0)) {
-          allowedIssuers_ = allowedIssuers_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000002);
-        }
-        result.allowedIssuers_ = allowedIssuers_;
-      }
-
       private void buildPartial0(
           com.google.cloud.aiplatform.v1beta1.DeployedIndexAuthConfig.AuthProvider result) {
         int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          audiences_.makeImmutable();
+          result.audiences_ = audiences_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          allowedIssuers_.makeImmutable();
+          result.allowedIssuers_ = allowedIssuers_;
+        }
       }
 
       @java.lang.Override
@@ -743,7 +734,7 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
         if (!other.audiences_.isEmpty()) {
           if (audiences_.isEmpty()) {
             audiences_ = other.audiences_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ |= 0x00000001;
           } else {
             ensureAudiencesIsMutable();
             audiences_.addAll(other.audiences_);
@@ -753,7 +744,7 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
         if (!other.allowedIssuers_.isEmpty()) {
           if (allowedIssuers_.isEmpty()) {
             allowedIssuers_ = other.allowedIssuers_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ |= 0x00000002;
           } else {
             ensureAllowedIssuersIsMutable();
             allowedIssuers_.addAll(other.allowedIssuers_);
@@ -819,14 +810,14 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
 
       private int bitField0_;
 
-      private com.google.protobuf.LazyStringList audiences_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList audiences_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureAudiencesIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!audiences_.isModifiable()) {
           audiences_ = new com.google.protobuf.LazyStringArrayList(audiences_);
-          bitField0_ |= 0x00000001;
         }
+        bitField0_ |= 0x00000001;
       }
       /**
        *
@@ -843,7 +834,8 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
        * @return A list containing the audiences.
        */
       public com.google.protobuf.ProtocolStringList getAudiencesList() {
-        return audiences_.getUnmodifiableView();
+        audiences_.makeImmutable();
+        return audiences_;
       }
       /**
        *
@@ -920,6 +912,7 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
         }
         ensureAudiencesIsMutable();
         audiences_.set(index, value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -944,6 +937,7 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
         }
         ensureAudiencesIsMutable();
         audiences_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -965,6 +959,7 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
       public Builder addAllAudiences(java.lang.Iterable<java.lang.String> values) {
         ensureAudiencesIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, audiences_);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -983,8 +978,9 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
        * @return This builder for chaining.
        */
       public Builder clearAudiences() {
-        audiences_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        audiences_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
+        ;
         onChanged();
         return this;
       }
@@ -1010,18 +1006,19 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
         checkByteStringIsUtf8(value);
         ensureAudiencesIsMutable();
         audiences_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
 
-      private com.google.protobuf.LazyStringList allowedIssuers_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList allowedIssuers_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureAllowedIssuersIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!allowedIssuers_.isModifiable()) {
           allowedIssuers_ = new com.google.protobuf.LazyStringArrayList(allowedIssuers_);
-          bitField0_ |= 0x00000002;
         }
+        bitField0_ |= 0x00000002;
       }
       /**
        *
@@ -1029,6 +1026,7 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
        * <pre>
        * A list of allowed JWT issuers. Each entry must be a valid Google
        * service account, in the following format:
+       *
        * `service-account-name&#64;project-id.iam.gserviceaccount.com`
        * </pre>
        *
@@ -1037,7 +1035,8 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
        * @return A list containing the allowedIssuers.
        */
       public com.google.protobuf.ProtocolStringList getAllowedIssuersList() {
-        return allowedIssuers_.getUnmodifiableView();
+        allowedIssuers_.makeImmutable();
+        return allowedIssuers_;
       }
       /**
        *
@@ -1045,6 +1044,7 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
        * <pre>
        * A list of allowed JWT issuers. Each entry must be a valid Google
        * service account, in the following format:
+       *
        * `service-account-name&#64;project-id.iam.gserviceaccount.com`
        * </pre>
        *
@@ -1061,6 +1061,7 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
        * <pre>
        * A list of allowed JWT issuers. Each entry must be a valid Google
        * service account, in the following format:
+       *
        * `service-account-name&#64;project-id.iam.gserviceaccount.com`
        * </pre>
        *
@@ -1078,6 +1079,7 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
        * <pre>
        * A list of allowed JWT issuers. Each entry must be a valid Google
        * service account, in the following format:
+       *
        * `service-account-name&#64;project-id.iam.gserviceaccount.com`
        * </pre>
        *
@@ -1095,6 +1097,7 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
        * <pre>
        * A list of allowed JWT issuers. Each entry must be a valid Google
        * service account, in the following format:
+       *
        * `service-account-name&#64;project-id.iam.gserviceaccount.com`
        * </pre>
        *
@@ -1110,6 +1113,7 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
         }
         ensureAllowedIssuersIsMutable();
         allowedIssuers_.set(index, value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1119,6 +1123,7 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
        * <pre>
        * A list of allowed JWT issuers. Each entry must be a valid Google
        * service account, in the following format:
+       *
        * `service-account-name&#64;project-id.iam.gserviceaccount.com`
        * </pre>
        *
@@ -1133,6 +1138,7 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
         }
         ensureAllowedIssuersIsMutable();
         allowedIssuers_.add(value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1142,6 +1148,7 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
        * <pre>
        * A list of allowed JWT issuers. Each entry must be a valid Google
        * service account, in the following format:
+       *
        * `service-account-name&#64;project-id.iam.gserviceaccount.com`
        * </pre>
        *
@@ -1153,6 +1160,7 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
       public Builder addAllAllowedIssuers(java.lang.Iterable<java.lang.String> values) {
         ensureAllowedIssuersIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, allowedIssuers_);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1162,6 +1170,7 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
        * <pre>
        * A list of allowed JWT issuers. Each entry must be a valid Google
        * service account, in the following format:
+       *
        * `service-account-name&#64;project-id.iam.gserviceaccount.com`
        * </pre>
        *
@@ -1170,8 +1179,9 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
        * @return This builder for chaining.
        */
       public Builder clearAllowedIssuers() {
-        allowedIssuers_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        allowedIssuers_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000002);
+        ;
         onChanged();
         return this;
       }
@@ -1181,6 +1191,7 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
        * <pre>
        * A list of allowed JWT issuers. Each entry must be a valid Google
        * service account, in the following format:
+       *
        * `service-account-name&#64;project-id.iam.gserviceaccount.com`
        * </pre>
        *
@@ -1196,6 +1207,7 @@ public final class DeployedIndexAuthConfig extends com.google.protobuf.Generated
         checkByteStringIsUtf8(value);
         ensureAllowedIssuersIsMutable();
         allowedIssuers_.add(value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }

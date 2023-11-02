@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,18 +40,13 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
 
   private LocalInventory() {
     placeId_ = "";
-    fulfillmentTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    fulfillmentTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new LocalInventory();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -138,6 +133,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Product price and cost information.
+   *
    * Google Merchant Center property
    * [price](https://support.google.com/merchants/answer/6324371).
    * </pre>
@@ -155,6 +151,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Product price and cost information.
+   *
    * Google Merchant Center property
    * [price](https://support.google.com/merchants/answer/6324371).
    * </pre>
@@ -174,6 +171,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Product price and cost information.
+   *
    * Google Merchant Center property
    * [price](https://support.google.com/merchants/answer/6324371).
    * </pre>
@@ -227,8 +225,10 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Additional local inventory attributes, for example, store name, promotion
    * tags, etc.
+   *
    * This field needs to pass all below criteria, otherwise an INVALID_ARGUMENT
    * error is returned:
+   *
    * * At most 30 attributes are allowed.
    * * The key must be a UTF-8 encoded string with a length limit of 32
    *   characters.
@@ -265,8 +265,10 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Additional local inventory attributes, for example, store name, promotion
    * tags, etc.
+   *
    * This field needs to pass all below criteria, otherwise an INVALID_ARGUMENT
    * error is returned:
+   *
    * * At most 30 attributes are allowed.
    * * The key must be a UTF-8 encoded string with a length limit of 32
    *   characters.
@@ -294,8 +296,10 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Additional local inventory attributes, for example, store name, promotion
    * tags, etc.
+   *
    * This field needs to pass all below criteria, otherwise an INVALID_ARGUMENT
    * error is returned:
+   *
    * * At most 30 attributes are allowed.
    * * The key must be a UTF-8 encoded string with a length limit of 32
    *   characters.
@@ -330,8 +334,10 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Additional local inventory attributes, for example, store name, promotion
    * tags, etc.
+   *
    * This field needs to pass all below criteria, otherwise an INVALID_ARGUMENT
    * error is returned:
+   *
    * * At most 30 attributes are allowed.
    * * The key must be a UTF-8 encoded string with a length limit of 32
    *   characters.
@@ -364,7 +370,8 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
   public static final int FULFILLMENT_TYPES_FIELD_NUMBER = 4;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList fulfillmentTypes_;
+  private com.google.protobuf.LazyStringArrayList fulfillmentTypes_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -373,7 +380,9 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
    * include commonly used types (such as pickup in store and same day
    * delivery), and custom types. Customers have to map custom types to their
    * display names before rendering UI.
+   *
    * Supported values:
+   *
    * * "pickup-in-store"
    * * "ship-to-store"
    * * "same-day-delivery"
@@ -383,8 +392,10 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
    * * "custom-type-3"
    * * "custom-type-4"
    * * "custom-type-5"
+   *
    * If this field is set to an invalid value other than these, an
    * INVALID_ARGUMENT error is returned.
+   *
    * All the elements must be distinct. Otherwise, an INVALID_ARGUMENT error is
    * returned.
    * </pre>
@@ -404,7 +415,9 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
    * include commonly used types (such as pickup in store and same day
    * delivery), and custom types. Customers have to map custom types to their
    * display names before rendering UI.
+   *
    * Supported values:
+   *
    * * "pickup-in-store"
    * * "ship-to-store"
    * * "same-day-delivery"
@@ -414,8 +427,10 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
    * * "custom-type-3"
    * * "custom-type-4"
    * * "custom-type-5"
+   *
    * If this field is set to an invalid value other than these, an
    * INVALID_ARGUMENT error is returned.
+   *
    * All the elements must be distinct. Otherwise, an INVALID_ARGUMENT error is
    * returned.
    * </pre>
@@ -435,7 +450,9 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
    * include commonly used types (such as pickup in store and same day
    * delivery), and custom types. Customers have to map custom types to their
    * display names before rendering UI.
+   *
    * Supported values:
+   *
    * * "pickup-in-store"
    * * "ship-to-store"
    * * "same-day-delivery"
@@ -445,8 +462,10 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
    * * "custom-type-3"
    * * "custom-type-4"
    * * "custom-type-5"
+   *
    * If this field is set to an invalid value other than these, an
    * INVALID_ARGUMENT error is returned.
+   *
    * All the elements must be distinct. Otherwise, an INVALID_ARGUMENT error is
    * returned.
    * </pre>
@@ -467,7 +486,9 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
    * include commonly used types (such as pickup in store and same day
    * delivery), and custom types. Customers have to map custom types to their
    * display names before rendering UI.
+   *
    * Supported values:
+   *
    * * "pickup-in-store"
    * * "ship-to-store"
    * * "same-day-delivery"
@@ -477,8 +498,10 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
    * * "custom-type-3"
    * * "custom-type-4"
    * * "custom-type-5"
+   *
    * If this field is set to an invalid value other than these, an
    * INVALID_ARGUMENT error is returned.
+   *
    * All the elements must be distinct. Otherwise, an INVALID_ARGUMENT error is
    * returned.
    * </pre>
@@ -766,8 +789,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
         priceInfoBuilder_ = null;
       }
       internalGetMutableAttributes().clear();
-      fulfillmentTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      fulfillmentTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -795,20 +817,11 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.retail.v2beta.LocalInventory buildPartial() {
       com.google.cloud.retail.v2beta.LocalInventory result =
           new com.google.cloud.retail.v2beta.LocalInventory(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(com.google.cloud.retail.v2beta.LocalInventory result) {
-      if (((bitField0_ & 0x00000008) != 0)) {
-        fulfillmentTypes_ = fulfillmentTypes_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000008);
-      }
-      result.fulfillmentTypes_ = fulfillmentTypes_;
     }
 
     private void buildPartial0(com.google.cloud.retail.v2beta.LocalInventory result) {
@@ -822,6 +835,10 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.attributes_ = internalGetAttributes();
         result.attributes_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        fulfillmentTypes_.makeImmutable();
+        result.fulfillmentTypes_ = fulfillmentTypes_;
       }
     }
 
@@ -883,7 +900,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
       if (!other.fulfillmentTypes_.isEmpty()) {
         if (fulfillmentTypes_.isEmpty()) {
           fulfillmentTypes_ = other.fulfillmentTypes_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ |= 0x00000008;
         } else {
           ensureFulfillmentTypesIsMutable();
           fulfillmentTypes_.addAll(other.fulfillmentTypes_);
@@ -1085,6 +1102,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Product price and cost information.
+     *
      * Google Merchant Center property
      * [price](https://support.google.com/merchants/answer/6324371).
      * </pre>
@@ -1101,6 +1119,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Product price and cost information.
+     *
      * Google Merchant Center property
      * [price](https://support.google.com/merchants/answer/6324371).
      * </pre>
@@ -1123,6 +1142,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Product price and cost information.
+     *
      * Google Merchant Center property
      * [price](https://support.google.com/merchants/answer/6324371).
      * </pre>
@@ -1147,6 +1167,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Product price and cost information.
+     *
      * Google Merchant Center property
      * [price](https://support.google.com/merchants/answer/6324371).
      * </pre>
@@ -1168,6 +1189,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Product price and cost information.
+     *
      * Google Merchant Center property
      * [price](https://support.google.com/merchants/answer/6324371).
      * </pre>
@@ -1195,6 +1217,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Product price and cost information.
+     *
      * Google Merchant Center property
      * [price](https://support.google.com/merchants/answer/6324371).
      * </pre>
@@ -1216,6 +1239,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Product price and cost information.
+     *
      * Google Merchant Center property
      * [price](https://support.google.com/merchants/answer/6324371).
      * </pre>
@@ -1232,6 +1256,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Product price and cost information.
+     *
      * Google Merchant Center property
      * [price](https://support.google.com/merchants/answer/6324371).
      * </pre>
@@ -1252,6 +1277,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Product price and cost information.
+     *
      * Google Merchant Center property
      * [price](https://support.google.com/merchants/answer/6324371).
      * </pre>
@@ -1313,8 +1339,10 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Additional local inventory attributes, for example, store name, promotion
      * tags, etc.
+     *
      * This field needs to pass all below criteria, otherwise an INVALID_ARGUMENT
      * error is returned:
+     *
      * * At most 30 attributes are allowed.
      * * The key must be a UTF-8 encoded string with a length limit of 32
      *   characters.
@@ -1351,8 +1379,10 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Additional local inventory attributes, for example, store name, promotion
      * tags, etc.
+     *
      * This field needs to pass all below criteria, otherwise an INVALID_ARGUMENT
      * error is returned:
+     *
      * * At most 30 attributes are allowed.
      * * The key must be a UTF-8 encoded string with a length limit of 32
      *   characters.
@@ -1380,8 +1410,10 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Additional local inventory attributes, for example, store name, promotion
      * tags, etc.
+     *
      * This field needs to pass all below criteria, otherwise an INVALID_ARGUMENT
      * error is returned:
+     *
      * * At most 30 attributes are allowed.
      * * The key must be a UTF-8 encoded string with a length limit of 32
      *   characters.
@@ -1416,8 +1448,10 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Additional local inventory attributes, for example, store name, promotion
      * tags, etc.
+     *
      * This field needs to pass all below criteria, otherwise an INVALID_ARGUMENT
      * error is returned:
+     *
      * * At most 30 attributes are allowed.
      * * The key must be a UTF-8 encoded string with a length limit of 32
      *   characters.
@@ -1459,8 +1493,10 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Additional local inventory attributes, for example, store name, promotion
      * tags, etc.
+     *
      * This field needs to pass all below criteria, otherwise an INVALID_ARGUMENT
      * error is returned:
+     *
      * * At most 30 attributes are allowed.
      * * The key must be a UTF-8 encoded string with a length limit of 32
      *   characters.
@@ -1497,8 +1533,10 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Additional local inventory attributes, for example, store name, promotion
      * tags, etc.
+     *
      * This field needs to pass all below criteria, otherwise an INVALID_ARGUMENT
      * error is returned:
+     *
      * * At most 30 attributes are allowed.
      * * The key must be a UTF-8 encoded string with a length limit of 32
      *   characters.
@@ -1533,8 +1571,10 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Additional local inventory attributes, for example, store name, promotion
      * tags, etc.
+     *
      * This field needs to pass all below criteria, otherwise an INVALID_ARGUMENT
      * error is returned:
+     *
      * * At most 30 attributes are allowed.
      * * The key must be a UTF-8 encoded string with a length limit of 32
      *   characters.
@@ -1558,14 +1598,14 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList fulfillmentTypes_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList fulfillmentTypes_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureFulfillmentTypesIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!fulfillmentTypes_.isModifiable()) {
         fulfillmentTypes_ = new com.google.protobuf.LazyStringArrayList(fulfillmentTypes_);
-        bitField0_ |= 0x00000008;
       }
+      bitField0_ |= 0x00000008;
     }
     /**
      *
@@ -1575,7 +1615,9 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      * include commonly used types (such as pickup in store and same day
      * delivery), and custom types. Customers have to map custom types to their
      * display names before rendering UI.
+     *
      * Supported values:
+     *
      * * "pickup-in-store"
      * * "ship-to-store"
      * * "same-day-delivery"
@@ -1585,8 +1627,10 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      * * "custom-type-3"
      * * "custom-type-4"
      * * "custom-type-5"
+     *
      * If this field is set to an invalid value other than these, an
      * INVALID_ARGUMENT error is returned.
+     *
      * All the elements must be distinct. Otherwise, an INVALID_ARGUMENT error is
      * returned.
      * </pre>
@@ -1597,7 +1641,8 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the fulfillmentTypes.
      */
     public com.google.protobuf.ProtocolStringList getFulfillmentTypesList() {
-      return fulfillmentTypes_.getUnmodifiableView();
+      fulfillmentTypes_.makeImmutable();
+      return fulfillmentTypes_;
     }
     /**
      *
@@ -1607,7 +1652,9 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      * include commonly used types (such as pickup in store and same day
      * delivery), and custom types. Customers have to map custom types to their
      * display names before rendering UI.
+     *
      * Supported values:
+     *
      * * "pickup-in-store"
      * * "ship-to-store"
      * * "same-day-delivery"
@@ -1617,8 +1664,10 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      * * "custom-type-3"
      * * "custom-type-4"
      * * "custom-type-5"
+     *
      * If this field is set to an invalid value other than these, an
      * INVALID_ARGUMENT error is returned.
+     *
      * All the elements must be distinct. Otherwise, an INVALID_ARGUMENT error is
      * returned.
      * </pre>
@@ -1639,7 +1688,9 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      * include commonly used types (such as pickup in store and same day
      * delivery), and custom types. Customers have to map custom types to their
      * display names before rendering UI.
+     *
      * Supported values:
+     *
      * * "pickup-in-store"
      * * "ship-to-store"
      * * "same-day-delivery"
@@ -1649,8 +1700,10 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      * * "custom-type-3"
      * * "custom-type-4"
      * * "custom-type-5"
+     *
      * If this field is set to an invalid value other than these, an
      * INVALID_ARGUMENT error is returned.
+     *
      * All the elements must be distinct. Otherwise, an INVALID_ARGUMENT error is
      * returned.
      * </pre>
@@ -1672,7 +1725,9 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      * include commonly used types (such as pickup in store and same day
      * delivery), and custom types. Customers have to map custom types to their
      * display names before rendering UI.
+     *
      * Supported values:
+     *
      * * "pickup-in-store"
      * * "ship-to-store"
      * * "same-day-delivery"
@@ -1682,8 +1737,10 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      * * "custom-type-3"
      * * "custom-type-4"
      * * "custom-type-5"
+     *
      * If this field is set to an invalid value other than these, an
      * INVALID_ARGUMENT error is returned.
+     *
      * All the elements must be distinct. Otherwise, an INVALID_ARGUMENT error is
      * returned.
      * </pre>
@@ -1705,7 +1762,9 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      * include commonly used types (such as pickup in store and same day
      * delivery), and custom types. Customers have to map custom types to their
      * display names before rendering UI.
+     *
      * Supported values:
+     *
      * * "pickup-in-store"
      * * "ship-to-store"
      * * "same-day-delivery"
@@ -1715,8 +1774,10 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      * * "custom-type-3"
      * * "custom-type-4"
      * * "custom-type-5"
+     *
      * If this field is set to an invalid value other than these, an
      * INVALID_ARGUMENT error is returned.
+     *
      * All the elements must be distinct. Otherwise, an INVALID_ARGUMENT error is
      * returned.
      * </pre>
@@ -1734,6 +1795,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
       }
       ensureFulfillmentTypesIsMutable();
       fulfillmentTypes_.set(index, value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1745,7 +1807,9 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      * include commonly used types (such as pickup in store and same day
      * delivery), and custom types. Customers have to map custom types to their
      * display names before rendering UI.
+     *
      * Supported values:
+     *
      * * "pickup-in-store"
      * * "ship-to-store"
      * * "same-day-delivery"
@@ -1755,8 +1819,10 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      * * "custom-type-3"
      * * "custom-type-4"
      * * "custom-type-5"
+     *
      * If this field is set to an invalid value other than these, an
      * INVALID_ARGUMENT error is returned.
+     *
      * All the elements must be distinct. Otherwise, an INVALID_ARGUMENT error is
      * returned.
      * </pre>
@@ -1773,6 +1839,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
       }
       ensureFulfillmentTypesIsMutable();
       fulfillmentTypes_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1784,7 +1851,9 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      * include commonly used types (such as pickup in store and same day
      * delivery), and custom types. Customers have to map custom types to their
      * display names before rendering UI.
+     *
      * Supported values:
+     *
      * * "pickup-in-store"
      * * "ship-to-store"
      * * "same-day-delivery"
@@ -1794,8 +1863,10 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      * * "custom-type-3"
      * * "custom-type-4"
      * * "custom-type-5"
+     *
      * If this field is set to an invalid value other than these, an
      * INVALID_ARGUMENT error is returned.
+     *
      * All the elements must be distinct. Otherwise, an INVALID_ARGUMENT error is
      * returned.
      * </pre>
@@ -1809,6 +1880,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllFulfillmentTypes(java.lang.Iterable<java.lang.String> values) {
       ensureFulfillmentTypesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, fulfillmentTypes_);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1820,7 +1892,9 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      * include commonly used types (such as pickup in store and same day
      * delivery), and custom types. Customers have to map custom types to their
      * display names before rendering UI.
+     *
      * Supported values:
+     *
      * * "pickup-in-store"
      * * "ship-to-store"
      * * "same-day-delivery"
@@ -1830,8 +1904,10 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      * * "custom-type-3"
      * * "custom-type-4"
      * * "custom-type-5"
+     *
      * If this field is set to an invalid value other than these, an
      * INVALID_ARGUMENT error is returned.
+     *
      * All the elements must be distinct. Otherwise, an INVALID_ARGUMENT error is
      * returned.
      * </pre>
@@ -1842,8 +1918,9 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearFulfillmentTypes() {
-      fulfillmentTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      fulfillmentTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000008);
+      ;
       onChanged();
       return this;
     }
@@ -1855,7 +1932,9 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      * include commonly used types (such as pickup in store and same day
      * delivery), and custom types. Customers have to map custom types to their
      * display names before rendering UI.
+     *
      * Supported values:
+     *
      * * "pickup-in-store"
      * * "ship-to-store"
      * * "same-day-delivery"
@@ -1865,8 +1944,10 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      * * "custom-type-3"
      * * "custom-type-4"
      * * "custom-type-5"
+     *
      * If this field is set to an invalid value other than these, an
      * INVALID_ARGUMENT error is returned.
+     *
      * All the elements must be distinct. Otherwise, an INVALID_ARGUMENT error is
      * returned.
      * </pre>
@@ -1884,6 +1965,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureFulfillmentTypesIsMutable();
       fulfillmentTypes_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

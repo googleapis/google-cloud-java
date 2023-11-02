@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,7 +33,7 @@ public interface SandboxConfigOrBuilder
    * <code>string sandbox_type = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.SandboxConfig.sandbox_type is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=940
+   *     google/container/v1beta1/cluster_service.proto;l=1006
    * @return The sandboxType.
    */
   @java.lang.Deprecated
@@ -48,7 +48,7 @@ public interface SandboxConfigOrBuilder
    * <code>string sandbox_type = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.SandboxConfig.sandbox_type is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=940
+   *     google/container/v1beta1/cluster_service.proto;l=1006
    * @return The bytes for sandboxType.
    */
   @java.lang.Deprecated

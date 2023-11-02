@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new SslConfig();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -235,8 +230,8 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The ssl config type according to 'client_key', 'client_certificate' and
-   * 'ca_certificate'.
+   * Output only. The ssl config type according to 'client_key',
+   * 'client_certificate' and 'ca_certificate'.
    * </pre>
    *
    * <code>
@@ -253,8 +248,8 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The ssl config type according to 'client_key', 'client_certificate' and
-   * 'ca_certificate'.
+   * Output only. The ssl config type according to 'client_key',
+   * 'client_certificate' and 'ca_certificate'.
    * </pre>
    *
    * <code>
@@ -278,9 +273,9 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Input only. The unencrypted PKCS#1 or PKCS#8 PEM-encoded private key associated with
-   * the Client Certificate. If this field is used then the 'client_certificate'
-   * field is mandatory.
+   * Input only. The unencrypted PKCS#1 or PKCS#8 PEM-encoded private key
+   * associated with the Client Certificate. If this field is used then the
+   * 'client_certificate' field is mandatory.
    * </pre>
    *
    * <code>string client_key = 2 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -303,9 +298,9 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Input only. The unencrypted PKCS#1 or PKCS#8 PEM-encoded private key associated with
-   * the Client Certificate. If this field is used then the 'client_certificate'
-   * field is mandatory.
+   * Input only. The unencrypted PKCS#1 or PKCS#8 PEM-encoded private key
+   * associated with the Client Certificate. If this field is used then the
+   * 'client_certificate' field is mandatory.
    * </pre>
    *
    * <code>string client_key = 2 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -333,9 +328,9 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Input only. The x509 PEM-encoded certificate that will be used by the replica to
-   * authenticate against the source database server.If this field is used then
-   * the 'client_key' field is mandatory.
+   * Input only. The x509 PEM-encoded certificate that will be used by the
+   * replica to authenticate against the source database server.If this field is
+   * used then the 'client_key' field is mandatory.
    * </pre>
    *
    * <code>string client_certificate = 3 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -358,9 +353,9 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Input only. The x509 PEM-encoded certificate that will be used by the replica to
-   * authenticate against the source database server.If this field is used then
-   * the 'client_key' field is mandatory.
+   * Input only. The x509 PEM-encoded certificate that will be used by the
+   * replica to authenticate against the source database server.If this field is
+   * used then the 'client_key' field is mandatory.
    * </pre>
    *
    * <code>string client_certificate = 3 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -388,9 +383,9 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Input only. The x509 PEM-encoded certificate of the CA that signed the source database
-   * server's certificate. The replica will use this certificate to verify
-   * it's connecting to the right host.
+   * Required. Input only. The x509 PEM-encoded certificate of the CA that
+   * signed the source database server's certificate. The replica will use this
+   * certificate to verify it's connecting to the right host.
    * </pre>
    *
    * <code>
@@ -415,9 +410,9 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Input only. The x509 PEM-encoded certificate of the CA that signed the source database
-   * server's certificate. The replica will use this certificate to verify
-   * it's connecting to the right host.
+   * Required. Input only. The x509 PEM-encoded certificate of the CA that
+   * signed the source database server's certificate. The replica will use this
+   * certificate to verify it's connecting to the right host.
    * </pre>
    *
    * <code>
@@ -854,8 +849,8 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The ssl config type according to 'client_key', 'client_certificate' and
-     * 'ca_certificate'.
+     * Output only. The ssl config type according to 'client_key',
+     * 'client_certificate' and 'ca_certificate'.
      * </pre>
      *
      * <code>
@@ -872,8 +867,8 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The ssl config type according to 'client_key', 'client_certificate' and
-     * 'ca_certificate'.
+     * Output only. The ssl config type according to 'client_key',
+     * 'client_certificate' and 'ca_certificate'.
      * </pre>
      *
      * <code>
@@ -893,8 +888,8 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The ssl config type according to 'client_key', 'client_certificate' and
-     * 'ca_certificate'.
+     * Output only. The ssl config type according to 'client_key',
+     * 'client_certificate' and 'ca_certificate'.
      * </pre>
      *
      * <code>
@@ -913,8 +908,8 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The ssl config type according to 'client_key', 'client_certificate' and
-     * 'ca_certificate'.
+     * Output only. The ssl config type according to 'client_key',
+     * 'client_certificate' and 'ca_certificate'.
      * </pre>
      *
      * <code>
@@ -937,8 +932,8 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The ssl config type according to 'client_key', 'client_certificate' and
-     * 'ca_certificate'.
+     * Output only. The ssl config type according to 'client_key',
+     * 'client_certificate' and 'ca_certificate'.
      * </pre>
      *
      * <code>
@@ -959,9 +954,9 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. The unencrypted PKCS#1 or PKCS#8 PEM-encoded private key associated with
-     * the Client Certificate. If this field is used then the 'client_certificate'
-     * field is mandatory.
+     * Input only. The unencrypted PKCS#1 or PKCS#8 PEM-encoded private key
+     * associated with the Client Certificate. If this field is used then the
+     * 'client_certificate' field is mandatory.
      * </pre>
      *
      * <code>string client_key = 2 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -983,9 +978,9 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. The unencrypted PKCS#1 or PKCS#8 PEM-encoded private key associated with
-     * the Client Certificate. If this field is used then the 'client_certificate'
-     * field is mandatory.
+     * Input only. The unencrypted PKCS#1 or PKCS#8 PEM-encoded private key
+     * associated with the Client Certificate. If this field is used then the
+     * 'client_certificate' field is mandatory.
      * </pre>
      *
      * <code>string client_key = 2 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -1007,9 +1002,9 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. The unencrypted PKCS#1 or PKCS#8 PEM-encoded private key associated with
-     * the Client Certificate. If this field is used then the 'client_certificate'
-     * field is mandatory.
+     * Input only. The unencrypted PKCS#1 or PKCS#8 PEM-encoded private key
+     * associated with the Client Certificate. If this field is used then the
+     * 'client_certificate' field is mandatory.
      * </pre>
      *
      * <code>string client_key = 2 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -1030,9 +1025,9 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. The unencrypted PKCS#1 or PKCS#8 PEM-encoded private key associated with
-     * the Client Certificate. If this field is used then the 'client_certificate'
-     * field is mandatory.
+     * Input only. The unencrypted PKCS#1 or PKCS#8 PEM-encoded private key
+     * associated with the Client Certificate. If this field is used then the
+     * 'client_certificate' field is mandatory.
      * </pre>
      *
      * <code>string client_key = 2 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -1049,9 +1044,9 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. The unencrypted PKCS#1 or PKCS#8 PEM-encoded private key associated with
-     * the Client Certificate. If this field is used then the 'client_certificate'
-     * field is mandatory.
+     * Input only. The unencrypted PKCS#1 or PKCS#8 PEM-encoded private key
+     * associated with the Client Certificate. If this field is used then the
+     * 'client_certificate' field is mandatory.
      * </pre>
      *
      * <code>string client_key = 2 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -1075,9 +1070,9 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. The x509 PEM-encoded certificate that will be used by the replica to
-     * authenticate against the source database server.If this field is used then
-     * the 'client_key' field is mandatory.
+     * Input only. The x509 PEM-encoded certificate that will be used by the
+     * replica to authenticate against the source database server.If this field is
+     * used then the 'client_key' field is mandatory.
      * </pre>
      *
      * <code>string client_certificate = 3 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -1099,9 +1094,9 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. The x509 PEM-encoded certificate that will be used by the replica to
-     * authenticate against the source database server.If this field is used then
-     * the 'client_key' field is mandatory.
+     * Input only. The x509 PEM-encoded certificate that will be used by the
+     * replica to authenticate against the source database server.If this field is
+     * used then the 'client_key' field is mandatory.
      * </pre>
      *
      * <code>string client_certificate = 3 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -1123,9 +1118,9 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. The x509 PEM-encoded certificate that will be used by the replica to
-     * authenticate against the source database server.If this field is used then
-     * the 'client_key' field is mandatory.
+     * Input only. The x509 PEM-encoded certificate that will be used by the
+     * replica to authenticate against the source database server.If this field is
+     * used then the 'client_key' field is mandatory.
      * </pre>
      *
      * <code>string client_certificate = 3 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -1146,9 +1141,9 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. The x509 PEM-encoded certificate that will be used by the replica to
-     * authenticate against the source database server.If this field is used then
-     * the 'client_key' field is mandatory.
+     * Input only. The x509 PEM-encoded certificate that will be used by the
+     * replica to authenticate against the source database server.If this field is
+     * used then the 'client_key' field is mandatory.
      * </pre>
      *
      * <code>string client_certificate = 3 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -1165,9 +1160,9 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. The x509 PEM-encoded certificate that will be used by the replica to
-     * authenticate against the source database server.If this field is used then
-     * the 'client_key' field is mandatory.
+     * Input only. The x509 PEM-encoded certificate that will be used by the
+     * replica to authenticate against the source database server.If this field is
+     * used then the 'client_key' field is mandatory.
      * </pre>
      *
      * <code>string client_certificate = 3 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -1191,9 +1186,9 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. The x509 PEM-encoded certificate of the CA that signed the source database
-     * server's certificate. The replica will use this certificate to verify
-     * it's connecting to the right host.
+     * Required. Input only. The x509 PEM-encoded certificate of the CA that
+     * signed the source database server's certificate. The replica will use this
+     * certificate to verify it's connecting to the right host.
      * </pre>
      *
      * <code>
@@ -1217,9 +1212,9 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. The x509 PEM-encoded certificate of the CA that signed the source database
-     * server's certificate. The replica will use this certificate to verify
-     * it's connecting to the right host.
+     * Required. Input only. The x509 PEM-encoded certificate of the CA that
+     * signed the source database server's certificate. The replica will use this
+     * certificate to verify it's connecting to the right host.
      * </pre>
      *
      * <code>
@@ -1243,9 +1238,9 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. The x509 PEM-encoded certificate of the CA that signed the source database
-     * server's certificate. The replica will use this certificate to verify
-     * it's connecting to the right host.
+     * Required. Input only. The x509 PEM-encoded certificate of the CA that
+     * signed the source database server's certificate. The replica will use this
+     * certificate to verify it's connecting to the right host.
      * </pre>
      *
      * <code>
@@ -1268,9 +1263,9 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. The x509 PEM-encoded certificate of the CA that signed the source database
-     * server's certificate. The replica will use this certificate to verify
-     * it's connecting to the right host.
+     * Required. Input only. The x509 PEM-encoded certificate of the CA that
+     * signed the source database server's certificate. The replica will use this
+     * certificate to verify it's connecting to the right host.
      * </pre>
      *
      * <code>
@@ -1289,9 +1284,9 @@ public final class SslConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. The x509 PEM-encoded certificate of the CA that signed the source database
-     * server's certificate. The replica will use this certificate to verify
-     * it's connecting to the right host.
+     * Required. Input only. The x509 PEM-encoded certificate of the CA that
+     * signed the source database server's certificate. The replica will use this
+     * certificate to verify it's connecting to the right host.
      * </pre>
      *
      * <code>

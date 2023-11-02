@@ -187,5 +187,5 @@ public interface SourceContextOrBuilder
    */
   java.lang.String getLabelsOrThrow(java.lang.String key);
 
-  public io.grafeas.v1.SourceContext.ContextCase getContextCase();
+  io.grafeas.v1.SourceContext.ContextCase getContextCase();
 }

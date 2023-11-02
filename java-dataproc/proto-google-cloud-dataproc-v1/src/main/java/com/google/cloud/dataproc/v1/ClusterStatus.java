@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ClusterStatus();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -104,6 +99,7 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The cluster is currently running and healthy. It is ready for use.
+     *
      * **Note:** The cluster state changes from "creating" to "running" status
      * after the master node(s), first two primary worker nodes (and the last
      * primary worker node if primary workers &gt; 2) are running.
@@ -183,6 +179,16 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>STARTING = 8;</code>
      */
     STARTING(8),
+    /**
+     *
+     *
+     * <pre>
+     * The cluster is being repaired. It is not ready for use.
+     * </pre>
+     *
+     * <code>REPAIRING = 10;</code>
+     */
+    REPAIRING(10),
     UNRECOGNIZED(-1),
     ;
 
@@ -211,6 +217,7 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The cluster is currently running and healthy. It is ready for use.
+     *
      * **Note:** The cluster state changes from "creating" to "running" status
      * after the master node(s), first two primary worker nodes (and the last
      * primary worker node if primary workers &gt; 2) are running.
@@ -290,6 +297,16 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>STARTING = 8;</code>
      */
     public static final int STARTING_VALUE = 8;
+    /**
+     *
+     *
+     * <pre>
+     * The cluster is being repaired. It is not ready for use.
+     * </pre>
+     *
+     * <code>REPAIRING = 10;</code>
+     */
+    public static final int REPAIRING_VALUE = 10;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -335,6 +352,8 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
           return STOPPED;
         case 8:
           return STARTING;
+        case 10:
+          return REPAIRING;
         default:
           return null;
       }
@@ -415,6 +434,7 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
      * The cluster is known to be in an unhealthy state
      * (for example, critical daemons are not running or HDFS capacity is
      * exhausted).
+     *
      * Applies to RUNNING state.
      * </pre>
      *
@@ -427,6 +447,7 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The agent-reported status is out of date (may occur if
      * Dataproc loses communication with Agent).
+     *
      * Applies to RUNNING state.
      * </pre>
      *
@@ -453,6 +474,7 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
      * The cluster is known to be in an unhealthy state
      * (for example, critical daemons are not running or HDFS capacity is
      * exhausted).
+     *
      * Applies to RUNNING state.
      * </pre>
      *
@@ -465,6 +487,7 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The agent-reported status is out of date (may occur if
      * Dataproc loses communication with Agent).
+     *
      * Applies to RUNNING state.
      * </pre>
      *

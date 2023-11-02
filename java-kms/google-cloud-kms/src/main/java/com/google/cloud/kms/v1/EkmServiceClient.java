@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -918,6 +918,135 @@ public class EkmServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<UpdateEkmConfigRequest, EkmConfig> updateEkmConfigCallable() {
     return stub.updateEkmConfigCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Verifies that Cloud KMS can successfully connect to the external key manager specified by an
+   * [EkmConnection][google.cloud.kms.v1.EkmConnection]. If there is an error connecting to the EKM,
+   * this method returns a FAILED_PRECONDITION status containing structured information as described
+   * at https://cloud.google.com/kms/docs/reference/ekm_errors.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EkmServiceClient ekmServiceClient = EkmServiceClient.create()) {
+   *   EkmConnectionName name = EkmConnectionName.of("[PROJECT]", "[LOCATION]", "[EKM_CONNECTION]");
+   *   VerifyConnectivityResponse response = ekmServiceClient.verifyConnectivity(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The [name][google.cloud.kms.v1.EkmConnection.name] of the
+   *     [EkmConnection][google.cloud.kms.v1.EkmConnection] to verify.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final VerifyConnectivityResponse verifyConnectivity(EkmConnectionName name) {
+    VerifyConnectivityRequest request =
+        VerifyConnectivityRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return verifyConnectivity(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Verifies that Cloud KMS can successfully connect to the external key manager specified by an
+   * [EkmConnection][google.cloud.kms.v1.EkmConnection]. If there is an error connecting to the EKM,
+   * this method returns a FAILED_PRECONDITION status containing structured information as described
+   * at https://cloud.google.com/kms/docs/reference/ekm_errors.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EkmServiceClient ekmServiceClient = EkmServiceClient.create()) {
+   *   String name = EkmConnectionName.of("[PROJECT]", "[LOCATION]", "[EKM_CONNECTION]").toString();
+   *   VerifyConnectivityResponse response = ekmServiceClient.verifyConnectivity(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The [name][google.cloud.kms.v1.EkmConnection.name] of the
+   *     [EkmConnection][google.cloud.kms.v1.EkmConnection] to verify.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final VerifyConnectivityResponse verifyConnectivity(String name) {
+    VerifyConnectivityRequest request =
+        VerifyConnectivityRequest.newBuilder().setName(name).build();
+    return verifyConnectivity(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Verifies that Cloud KMS can successfully connect to the external key manager specified by an
+   * [EkmConnection][google.cloud.kms.v1.EkmConnection]. If there is an error connecting to the EKM,
+   * this method returns a FAILED_PRECONDITION status containing structured information as described
+   * at https://cloud.google.com/kms/docs/reference/ekm_errors.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EkmServiceClient ekmServiceClient = EkmServiceClient.create()) {
+   *   VerifyConnectivityRequest request =
+   *       VerifyConnectivityRequest.newBuilder()
+   *           .setName(
+   *               EkmConnectionName.of("[PROJECT]", "[LOCATION]", "[EKM_CONNECTION]").toString())
+   *           .build();
+   *   VerifyConnectivityResponse response = ekmServiceClient.verifyConnectivity(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final VerifyConnectivityResponse verifyConnectivity(VerifyConnectivityRequest request) {
+    return verifyConnectivityCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Verifies that Cloud KMS can successfully connect to the external key manager specified by an
+   * [EkmConnection][google.cloud.kms.v1.EkmConnection]. If there is an error connecting to the EKM,
+   * this method returns a FAILED_PRECONDITION status containing structured information as described
+   * at https://cloud.google.com/kms/docs/reference/ekm_errors.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EkmServiceClient ekmServiceClient = EkmServiceClient.create()) {
+   *   VerifyConnectivityRequest request =
+   *       VerifyConnectivityRequest.newBuilder()
+   *           .setName(
+   *               EkmConnectionName.of("[PROJECT]", "[LOCATION]", "[EKM_CONNECTION]").toString())
+   *           .build();
+   *   ApiFuture<VerifyConnectivityResponse> future =
+   *       ekmServiceClient.verifyConnectivityCallable().futureCall(request);
+   *   // Do something.
+   *   VerifyConnectivityResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<VerifyConnectivityRequest, VerifyConnectivityResponse>
+      verifyConnectivityCallable() {
+    return stub.verifyConnectivityCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

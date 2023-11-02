@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class GetBackupRequest extends com.google.protobuf.GeneratedMessage
     return new GetBackupRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gkebackup.v1.GKEBackupProto
         .internal_static_google_cloud_gkebackup_v1_GetBackupRequest_descriptor;
@@ -76,7 +71,7 @@ public final class GetBackupRequest extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Required. Full name of the Backup resource.
-   * Format: projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;&#47;backups/&#42;
+   * Format: `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;&#47;backups/&#42;`
    * </pre>
    *
    * <code>
@@ -102,7 +97,7 @@ public final class GetBackupRequest extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Required. Full name of the Backup resource.
-   * Format: projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;&#47;backups/&#42;
+   * Format: `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;&#47;backups/&#42;`
    * </pre>
    *
    * <code>
@@ -471,7 +466,7 @@ public final class GetBackupRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. Full name of the Backup resource.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;&#47;backups/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;&#47;backups/&#42;`
      * </pre>
      *
      * <code>
@@ -496,7 +491,7 @@ public final class GetBackupRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. Full name of the Backup resource.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;&#47;backups/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;&#47;backups/&#42;`
      * </pre>
      *
      * <code>
@@ -521,7 +516,7 @@ public final class GetBackupRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. Full name of the Backup resource.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;&#47;backups/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;&#47;backups/&#42;`
      * </pre>
      *
      * <code>
@@ -545,7 +540,7 @@ public final class GetBackupRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. Full name of the Backup resource.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;&#47;backups/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;&#47;backups/&#42;`
      * </pre>
      *
      * <code>
@@ -565,7 +560,7 @@ public final class GetBackupRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. Full name of the Backup resource.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;&#47;backups/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;backupPlans/&#42;&#47;backups/&#42;`
      * </pre>
      *
      * <code>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -94,6 +94,7 @@ public interface GoogleChannelConfigOrBuilder
    * <pre>
    * Optional. Resource name of a KMS crypto key (managed by the user) used to
    * encrypt/decrypt their event data.
+   *
    * It must match the pattern
    * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
    * </pre>
@@ -111,6 +112,7 @@ public interface GoogleChannelConfigOrBuilder
    * <pre>
    * Optional. Resource name of a KMS crypto key (managed by the user) used to
    * encrypt/decrypt their event data.
+   *
    * It must match the pattern
    * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
    * </pre>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,9 +29,11 @@ public interface DeleteAzureClientRequestOrBuilder
    * <pre>
    * Required. The resource name the
    * [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] to delete.
+   *
    * [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] names are
    * formatted as
    * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClients/&lt;client-id&gt;`.
+   *
    * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
    * for more details on Google Cloud resource names.
    * </pre>
@@ -49,9 +51,11 @@ public interface DeleteAzureClientRequestOrBuilder
    * <pre>
    * Required. The resource name the
    * [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] to delete.
+   *
    * [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] names are
    * formatted as
    * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClients/&lt;client-id&gt;`.
+   *
    * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
    * for more details on Google Cloud resource names.
    * </pre>
@@ -72,6 +76,7 @@ public interface DeleteAzureClientRequestOrBuilder
    * [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] resource is not
    * found, the request will succeed but no action will be taken on the server
    * and a completed [Operation][google.longrunning.Operation] will be returned.
+   *
    * Useful for idempotent deletion.
    * </pre>
    *

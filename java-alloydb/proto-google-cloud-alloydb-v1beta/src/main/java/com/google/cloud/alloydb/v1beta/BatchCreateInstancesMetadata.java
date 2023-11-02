@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ package com.google.cloud.alloydb.v1beta;
  *
  * <pre>
  * Message for metadata that is specific to BatchCreateInstances API.
+ * NEXT_ID: 3
  * </pre>
  *
  * Protobuf type {@code google.cloud.alloydb.v1beta.BatchCreateInstancesMetadata}
@@ -38,18 +39,13 @@ public final class BatchCreateInstancesMetadata extends com.google.protobuf.Gene
   }
 
   private BatchCreateInstancesMetadata() {
-    instanceTargets_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    instanceTargets_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new BatchCreateInstancesMetadata();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -81,7 +77,8 @@ public final class BatchCreateInstancesMetadata extends com.google.protobuf.Gene
   public static final int INSTANCE_TARGETS_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList instanceTargets_;
+  private com.google.protobuf.LazyStringArrayList instanceTargets_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -491,6 +488,7 @@ public final class BatchCreateInstancesMetadata extends com.google.protobuf.Gene
    *
    * <pre>
    * Message for metadata that is specific to BatchCreateInstances API.
+   * NEXT_ID: 3
    * </pre>
    *
    * Protobuf type {@code google.cloud.alloydb.v1beta.BatchCreateInstancesMetadata}
@@ -545,8 +543,7 @@ public final class BatchCreateInstancesMetadata extends com.google.protobuf.Gene
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      instanceTargets_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      instanceTargets_ = com.google.protobuf.LazyStringArrayList.emptyList();
       internalGetMutableInstanceStatuses().clear();
       return this;
     }
@@ -576,7 +573,6 @@ public final class BatchCreateInstancesMetadata extends com.google.protobuf.Gene
     public com.google.cloud.alloydb.v1beta.BatchCreateInstancesMetadata buildPartial() {
       com.google.cloud.alloydb.v1beta.BatchCreateInstancesMetadata result =
           new com.google.cloud.alloydb.v1beta.BatchCreateInstancesMetadata(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -584,18 +580,13 @@ public final class BatchCreateInstancesMetadata extends com.google.protobuf.Gene
       return result;
     }
 
-    private void buildPartialRepeatedFields(
-        com.google.cloud.alloydb.v1beta.BatchCreateInstancesMetadata result) {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        instanceTargets_ = instanceTargets_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.instanceTargets_ = instanceTargets_;
-    }
-
     private void buildPartial0(
         com.google.cloud.alloydb.v1beta.BatchCreateInstancesMetadata result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        instanceTargets_.makeImmutable();
+        result.instanceTargets_ = instanceTargets_;
+      }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.instanceStatuses_ = internalGetInstanceStatuses();
         result.instanceStatuses_.makeImmutable();
@@ -652,7 +643,7 @@ public final class BatchCreateInstancesMetadata extends com.google.protobuf.Gene
       if (!other.instanceTargets_.isEmpty()) {
         if (instanceTargets_.isEmpty()) {
           instanceTargets_ = other.instanceTargets_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ |= 0x00000001;
         } else {
           ensureInstanceTargetsIsMutable();
           instanceTargets_.addAll(other.instanceTargets_);
@@ -727,14 +718,14 @@ public final class BatchCreateInstancesMetadata extends com.google.protobuf.Gene
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList instanceTargets_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList instanceTargets_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureInstanceTargetsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!instanceTargets_.isModifiable()) {
         instanceTargets_ = new com.google.protobuf.LazyStringArrayList(instanceTargets_);
-        bitField0_ |= 0x00000001;
       }
+      bitField0_ |= 0x00000001;
     }
     /**
      *
@@ -751,7 +742,8 @@ public final class BatchCreateInstancesMetadata extends com.google.protobuf.Gene
      * @return A list containing the instanceTargets.
      */
     public com.google.protobuf.ProtocolStringList getInstanceTargetsList() {
-      return instanceTargets_.getUnmodifiableView();
+      instanceTargets_.makeImmutable();
+      return instanceTargets_;
     }
     /**
      *
@@ -828,6 +820,7 @@ public final class BatchCreateInstancesMetadata extends com.google.protobuf.Gene
       }
       ensureInstanceTargetsIsMutable();
       instanceTargets_.set(index, value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -852,6 +845,7 @@ public final class BatchCreateInstancesMetadata extends com.google.protobuf.Gene
       }
       ensureInstanceTargetsIsMutable();
       instanceTargets_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -873,6 +867,7 @@ public final class BatchCreateInstancesMetadata extends com.google.protobuf.Gene
     public Builder addAllInstanceTargets(java.lang.Iterable<java.lang.String> values) {
       ensureInstanceTargetsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, instanceTargets_);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -891,8 +886,9 @@ public final class BatchCreateInstancesMetadata extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearInstanceTargets() {
-      instanceTargets_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      instanceTargets_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      ;
       onChanged();
       return this;
     }
@@ -918,6 +914,7 @@ public final class BatchCreateInstancesMetadata extends com.google.protobuf.Gene
       checkByteStringIsUtf8(value);
       ensureInstanceTargetsIsMutable();
       instanceTargets_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

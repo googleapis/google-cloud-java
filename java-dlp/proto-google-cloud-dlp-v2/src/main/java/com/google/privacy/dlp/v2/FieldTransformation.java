@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
     return new FieldTransformation();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.privacy.dlp.v2.DlpProto
         .internal_static_google_privacy_dlp_v2_FieldTransformation_descriptor;
@@ -68,6 +63,8 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
   }
 
   private int transformationCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object transformation_;
 
   public enum TransformationCase
@@ -219,7 +216,9 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
    * Only apply the transformation if the condition evaluates to true for the
    * given `RecordCondition`. The conditions are allowed to reference fields
    * that are not used in the actual transformation.
+   *
    * Example Use Cases:
+   *
    * - Apply a different bucket transformation to an age column if the zip code
    * column for the same record is within a specific range.
    * - Redact a field if the date of birth field is greater than 85.
@@ -240,7 +239,9 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
    * Only apply the transformation if the condition evaluates to true for the
    * given `RecordCondition`. The conditions are allowed to reference fields
    * that are not used in the actual transformation.
+   *
    * Example Use Cases:
+   *
    * - Apply a different bucket transformation to an age column if the zip code
    * column for the same record is within a specific range.
    * - Redact a field if the date of birth field is greater than 85.
@@ -263,7 +264,9 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
    * Only apply the transformation if the condition evaluates to true for the
    * given `RecordCondition`. The conditions are allowed to reference fields
    * that are not used in the actual transformation.
+   *
    * Example Use Cases:
+   *
    * - Apply a different bucket transformation to an age column if the zip code
    * column for the same record is within a specific range.
    * - Redact a field if the date of birth field is greater than 85.
@@ -1356,7 +1359,9 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
      * Only apply the transformation if the condition evaluates to true for the
      * given `RecordCondition`. The conditions are allowed to reference fields
      * that are not used in the actual transformation.
+     *
      * Example Use Cases:
+     *
      * - Apply a different bucket transformation to an age column if the zip code
      * column for the same record is within a specific range.
      * - Redact a field if the date of birth field is greater than 85.
@@ -1376,7 +1381,9 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
      * Only apply the transformation if the condition evaluates to true for the
      * given `RecordCondition`. The conditions are allowed to reference fields
      * that are not used in the actual transformation.
+     *
      * Example Use Cases:
+     *
      * - Apply a different bucket transformation to an age column if the zip code
      * column for the same record is within a specific range.
      * - Redact a field if the date of birth field is greater than 85.
@@ -1402,7 +1409,9 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
      * Only apply the transformation if the condition evaluates to true for the
      * given `RecordCondition`. The conditions are allowed to reference fields
      * that are not used in the actual transformation.
+     *
      * Example Use Cases:
+     *
      * - Apply a different bucket transformation to an age column if the zip code
      * column for the same record is within a specific range.
      * - Redact a field if the date of birth field is greater than 85.
@@ -1430,7 +1439,9 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
      * Only apply the transformation if the condition evaluates to true for the
      * given `RecordCondition`. The conditions are allowed to reference fields
      * that are not used in the actual transformation.
+     *
      * Example Use Cases:
+     *
      * - Apply a different bucket transformation to an age column if the zip code
      * column for the same record is within a specific range.
      * - Redact a field if the date of birth field is greater than 85.
@@ -1455,7 +1466,9 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
      * Only apply the transformation if the condition evaluates to true for the
      * given `RecordCondition`. The conditions are allowed to reference fields
      * that are not used in the actual transformation.
+     *
      * Example Use Cases:
+     *
      * - Apply a different bucket transformation to an age column if the zip code
      * column for the same record is within a specific range.
      * - Redact a field if the date of birth field is greater than 85.
@@ -1486,7 +1499,9 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
      * Only apply the transformation if the condition evaluates to true for the
      * given `RecordCondition`. The conditions are allowed to reference fields
      * that are not used in the actual transformation.
+     *
      * Example Use Cases:
+     *
      * - Apply a different bucket transformation to an age column if the zip code
      * column for the same record is within a specific range.
      * - Redact a field if the date of birth field is greater than 85.
@@ -1511,7 +1526,9 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
      * Only apply the transformation if the condition evaluates to true for the
      * given `RecordCondition`. The conditions are allowed to reference fields
      * that are not used in the actual transformation.
+     *
      * Example Use Cases:
+     *
      * - Apply a different bucket transformation to an age column if the zip code
      * column for the same record is within a specific range.
      * - Redact a field if the date of birth field is greater than 85.
@@ -1531,7 +1548,9 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
      * Only apply the transformation if the condition evaluates to true for the
      * given `RecordCondition`. The conditions are allowed to reference fields
      * that are not used in the actual transformation.
+     *
      * Example Use Cases:
+     *
      * - Apply a different bucket transformation to an age column if the zip code
      * column for the same record is within a specific range.
      * - Redact a field if the date of birth field is greater than 85.
@@ -1555,7 +1574,9 @@ public final class FieldTransformation extends com.google.protobuf.GeneratedMess
      * Only apply the transformation if the condition evaluates to true for the
      * given `RecordCondition`. The conditions are allowed to reference fields
      * that are not used in the actual transformation.
+     *
      * Example Use Cases:
+     *
      * - Apply a different bucket transformation to an age column if the zip code
      * column for the same record is within a specific range.
      * - Redact a field if the date of birth field is greater than 85.

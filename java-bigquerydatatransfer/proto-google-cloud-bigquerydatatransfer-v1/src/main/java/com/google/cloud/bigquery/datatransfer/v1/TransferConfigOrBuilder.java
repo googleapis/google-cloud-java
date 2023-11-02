@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,9 +28,10 @@ public interface TransferConfigOrBuilder
    *
    * <pre>
    * The resource name of the transfer config.
-   * Transfer config names have the form
-   * `projects/{project_id}/locations/{region}/transferConfigs/{config_id}`.
-   * Where `config_id` is usually a uuid, even though it is not
+   * Transfer config names have the form either
+   * `projects/{project_id}/locations/{region}/transferConfigs/{config_id}` or
+   * `projects/{project_id}/transferConfigs/{config_id}`,
+   * where `config_id` is usually a UUID, even though it is not
    * guaranteed or required. The name is ignored when creating a transfer
    * config.
    * </pre>
@@ -45,9 +46,10 @@ public interface TransferConfigOrBuilder
    *
    * <pre>
    * The resource name of the transfer config.
-   * Transfer config names have the form
-   * `projects/{project_id}/locations/{region}/transferConfigs/{config_id}`.
-   * Where `config_id` is usually a uuid, even though it is not
+   * Transfer config names have the form either
+   * `projects/{project_id}/locations/{region}/transferConfigs/{config_id}` or
+   * `projects/{project_id}/transferConfigs/{config_id}`,
+   * where `config_id` is usually a UUID, even though it is not
    * guaranteed or required. The name is ignored when creating a transfer
    * config.
    * </pre>
@@ -208,6 +210,7 @@ public interface TransferConfigOrBuilder
    * `first sunday of quarter 00:00`.
    * See more explanation about the format here:
    * https://cloud.google.com/appengine/docs/flexible/python/scheduling-jobs-with-cron-yaml#the_schedule_format
+   *
    * NOTE: The minimum interval time between recurring transfers depends on the
    * data source; refer to the documentation for your data source.
    * </pre>
@@ -232,6 +235,7 @@ public interface TransferConfigOrBuilder
    * `first sunday of quarter 00:00`.
    * See more explanation about the format here:
    * https://cloud.google.com/appengine/docs/flexible/python/scheduling-jobs-with-cron-yaml#the_schedule_format
+   *
    * NOTE: The minimum interval time between recurring transfers depends on the
    * data source; refer to the documentation for your data source.
    * </pre>
@@ -461,6 +465,7 @@ public interface TransferConfigOrBuilder
    * <pre>
    * Pub/Sub topic where notifications will be sent after transfer runs
    * associated with this transfer config finish.
+   *
    * The format for specifying a pubsub topic is:
    * `projects/{project}/topics/{topic}`
    * </pre>
@@ -476,6 +481,7 @@ public interface TransferConfigOrBuilder
    * <pre>
    * Pub/Sub topic where notifications will be sent after transfer runs
    * associated with this transfer config finish.
+   *
    * The format for specifying a pubsub topic is:
    * `projects/{project}/topics/{topic}`
    * </pre>
@@ -572,6 +578,59 @@ public interface TransferConfigOrBuilder
    */
   com.google.cloud.bigquery.datatransfer.v1.UserInfoOrBuilder getOwnerInfoOrBuilder();
 
-  public com.google.cloud.bigquery.datatransfer.v1.TransferConfig.DestinationCase
-      getDestinationCase();
+  /**
+   *
+   *
+   * <pre>
+   * The encryption configuration part. Currently, it is only used for the
+   * optional KMS key name. The BigQuery service account of your project must be
+   * granted permissions to use the key. Read methods will return the key name
+   * applied in effect. Write methods will apply the key if it is present, or
+   * otherwise try to apply project default keys if it is absent.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.datatransfer.v1.EncryptionConfiguration encryption_configuration = 28;
+   * </code>
+   *
+   * @return Whether the encryptionConfiguration field is set.
+   */
+  boolean hasEncryptionConfiguration();
+  /**
+   *
+   *
+   * <pre>
+   * The encryption configuration part. Currently, it is only used for the
+   * optional KMS key name. The BigQuery service account of your project must be
+   * granted permissions to use the key. Read methods will return the key name
+   * applied in effect. Write methods will apply the key if it is present, or
+   * otherwise try to apply project default keys if it is absent.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.datatransfer.v1.EncryptionConfiguration encryption_configuration = 28;
+   * </code>
+   *
+   * @return The encryptionConfiguration.
+   */
+  com.google.cloud.bigquery.datatransfer.v1.EncryptionConfiguration getEncryptionConfiguration();
+  /**
+   *
+   *
+   * <pre>
+   * The encryption configuration part. Currently, it is only used for the
+   * optional KMS key name. The BigQuery service account of your project must be
+   * granted permissions to use the key. Read methods will return the key name
+   * applied in effect. Write methods will apply the key if it is present, or
+   * otherwise try to apply project default keys if it is absent.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.datatransfer.v1.EncryptionConfiguration encryption_configuration = 28;
+   * </code>
+   */
+  com.google.cloud.bigquery.datatransfer.v1.EncryptionConfigurationOrBuilder
+      getEncryptionConfigurationOrBuilder();
+
+  com.google.cloud.bigquery.datatransfer.v1.TransferConfig.DestinationCase getDestinationCase();
 }

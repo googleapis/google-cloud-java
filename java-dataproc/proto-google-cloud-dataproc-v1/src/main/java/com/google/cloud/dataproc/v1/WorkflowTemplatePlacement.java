@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ package com.google.cloud.dataproc.v1;
  *
  * <pre>
  * Specifies workflow execution target.
+ *
  * Either `managed_cluster` or `cluster_selector` is required.
  * </pre>
  *
@@ -46,11 +47,6 @@ public final class WorkflowTemplatePlacement extends com.google.protobuf.Generat
     return new WorkflowTemplatePlacement();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dataproc.v1.WorkflowTemplatesProto
         .internal_static_google_cloud_dataproc_v1_WorkflowTemplatePlacement_descriptor;
@@ -67,6 +63,8 @@ public final class WorkflowTemplatePlacement extends com.google.protobuf.Generat
   }
 
   private int placementCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object placement_;
 
   public enum PlacementCase
@@ -171,6 +169,7 @@ public final class WorkflowTemplatePlacement extends com.google.protobuf.Generat
    * <pre>
    * Optional. A selector that chooses target cluster for jobs based
    * on metadata.
+   *
    * The selector is evaluated at the time each job is submitted.
    * </pre>
    *
@@ -188,6 +187,7 @@ public final class WorkflowTemplatePlacement extends com.google.protobuf.Generat
    * <pre>
    * Optional. A selector that chooses target cluster for jobs based
    * on metadata.
+   *
    * The selector is evaluated at the time each job is submitted.
    * </pre>
    *
@@ -208,6 +208,7 @@ public final class WorkflowTemplatePlacement extends com.google.protobuf.Generat
    * <pre>
    * Optional. A selector that chooses target cluster for jobs based
    * on metadata.
+   *
    * The selector is evaluated at the time each job is submitted.
    * </pre>
    *
@@ -416,6 +417,7 @@ public final class WorkflowTemplatePlacement extends com.google.protobuf.Generat
    *
    * <pre>
    * Specifies workflow execution target.
+   *
    * Either `managed_cluster` or `cluster_selector` is required.
    * </pre>
    *
@@ -862,6 +864,7 @@ public final class WorkflowTemplatePlacement extends com.google.protobuf.Generat
      * <pre>
      * Optional. A selector that chooses target cluster for jobs based
      * on metadata.
+     *
      * The selector is evaluated at the time each job is submitted.
      * </pre>
      *
@@ -879,6 +882,7 @@ public final class WorkflowTemplatePlacement extends com.google.protobuf.Generat
      * <pre>
      * Optional. A selector that chooses target cluster for jobs based
      * on metadata.
+     *
      * The selector is evaluated at the time each job is submitted.
      * </pre>
      *
@@ -906,6 +910,7 @@ public final class WorkflowTemplatePlacement extends com.google.protobuf.Generat
      * <pre>
      * Optional. A selector that chooses target cluster for jobs based
      * on metadata.
+     *
      * The selector is evaluated at the time each job is submitted.
      * </pre>
      *
@@ -930,6 +935,7 @@ public final class WorkflowTemplatePlacement extends com.google.protobuf.Generat
      * <pre>
      * Optional. A selector that chooses target cluster for jobs based
      * on metadata.
+     *
      * The selector is evaluated at the time each job is submitted.
      * </pre>
      *
@@ -952,6 +958,7 @@ public final class WorkflowTemplatePlacement extends com.google.protobuf.Generat
      * <pre>
      * Optional. A selector that chooses target cluster for jobs based
      * on metadata.
+     *
      * The selector is evaluated at the time each job is submitted.
      * </pre>
      *
@@ -986,6 +993,7 @@ public final class WorkflowTemplatePlacement extends com.google.protobuf.Generat
      * <pre>
      * Optional. A selector that chooses target cluster for jobs based
      * on metadata.
+     *
      * The selector is evaluated at the time each job is submitted.
      * </pre>
      *
@@ -1013,6 +1021,7 @@ public final class WorkflowTemplatePlacement extends com.google.protobuf.Generat
      * <pre>
      * Optional. A selector that chooses target cluster for jobs based
      * on metadata.
+     *
      * The selector is evaluated at the time each job is submitted.
      * </pre>
      *
@@ -1027,6 +1036,7 @@ public final class WorkflowTemplatePlacement extends com.google.protobuf.Generat
      * <pre>
      * Optional. A selector that chooses target cluster for jobs based
      * on metadata.
+     *
      * The selector is evaluated at the time each job is submitted.
      * </pre>
      *
@@ -1049,6 +1059,7 @@ public final class WorkflowTemplatePlacement extends com.google.protobuf.Generat
      * <pre>
      * Optional. A selector that chooses target cluster for jobs based
      * on metadata.
+     *
      * The selector is evaluated at the time each job is submitted.
      * </pre>
      *

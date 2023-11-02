@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,8 +30,10 @@ public interface GetAzureServerConfigRequestOrBuilder
    * Required. The name of the
    * [AzureServerConfig][google.cloud.gkemulticloud.v1.AzureServerConfig]
    * resource to describe.
+   *
    * `AzureServerConfig` names are formatted as
    * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureServerConfig`.
+   *
    * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
    * for more details on Google Cloud resource names.
    * </pre>
@@ -50,8 +52,10 @@ public interface GetAzureServerConfigRequestOrBuilder
    * Required. The name of the
    * [AzureServerConfig][google.cloud.gkemulticloud.v1.AzureServerConfig]
    * resource to describe.
+   *
    * `AzureServerConfig` names are formatted as
    * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureServerConfig`.
+   *
    * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
    * for more details on Google Cloud resource names.
    * </pre>

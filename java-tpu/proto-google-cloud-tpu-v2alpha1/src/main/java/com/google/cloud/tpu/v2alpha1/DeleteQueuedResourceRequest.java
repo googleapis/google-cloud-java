@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class DeleteQueuedResourceRequest extends com.google.protobuf.Gener
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new DeleteQueuedResourceRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -175,6 +170,28 @@ public final class DeleteQueuedResourceRequest extends com.google.protobuf.Gener
     }
   }
 
+  public static final int FORCE_FIELD_NUMBER = 3;
+  private boolean force_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * If set to true, all running nodes belonging to this queued resource will
+   * be deleted first and then the queued resource will be deleted.
+   * Otherwise (i.e. force=false), the queued resource will only be deleted if
+   * its nodes have already been deleted or the queued resource is in the
+   * ACCEPTED, FAILED, or SUSPENDED state.
+   * </pre>
+   *
+   * <code>bool force = 3;</code>
+   *
+   * @return The force.
+   */
+  @java.lang.Override
+  public boolean getForce() {
+    return force_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -195,6 +212,9 @@ public final class DeleteQueuedResourceRequest extends com.google.protobuf.Gener
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, requestId_);
     }
+    if (force_ != false) {
+      output.writeBool(3, force_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -209,6 +229,9 @@ public final class DeleteQueuedResourceRequest extends com.google.protobuf.Gener
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, requestId_);
+    }
+    if (force_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, force_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -228,6 +251,7 @@ public final class DeleteQueuedResourceRequest extends com.google.protobuf.Gener
 
     if (!getName().equals(other.getName())) return false;
     if (!getRequestId().equals(other.getRequestId())) return false;
+    if (getForce() != other.getForce()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -243,6 +267,8 @@ public final class DeleteQueuedResourceRequest extends com.google.protobuf.Gener
     hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
     hash = (53 * hash) + getRequestId().hashCode();
+    hash = (37 * hash) + FORCE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getForce());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -386,6 +412,7 @@ public final class DeleteQueuedResourceRequest extends com.google.protobuf.Gener
       bitField0_ = 0;
       name_ = "";
       requestId_ = "";
+      force_ = false;
       return this;
     }
 
@@ -427,6 +454,9 @@ public final class DeleteQueuedResourceRequest extends com.google.protobuf.Gener
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.requestId_ = requestId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.force_ = force_;
       }
     }
 
@@ -486,6 +516,9 @@ public final class DeleteQueuedResourceRequest extends com.google.protobuf.Gener
         bitField0_ |= 0x00000002;
         onChanged();
       }
+      if (other.getForce() != false) {
+        setForce(other.getForce());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -524,6 +557,12 @@ public final class DeleteQueuedResourceRequest extends com.google.protobuf.Gener
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
+            case 24:
+              {
+                force_ = input.readBool();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -761,6 +800,71 @@ public final class DeleteQueuedResourceRequest extends com.google.protobuf.Gener
       checkByteStringIsUtf8(value);
       requestId_ = value;
       bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    private boolean force_;
+    /**
+     *
+     *
+     * <pre>
+     * If set to true, all running nodes belonging to this queued resource will
+     * be deleted first and then the queued resource will be deleted.
+     * Otherwise (i.e. force=false), the queued resource will only be deleted if
+     * its nodes have already been deleted or the queued resource is in the
+     * ACCEPTED, FAILED, or SUSPENDED state.
+     * </pre>
+     *
+     * <code>bool force = 3;</code>
+     *
+     * @return The force.
+     */
+    @java.lang.Override
+    public boolean getForce() {
+      return force_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If set to true, all running nodes belonging to this queued resource will
+     * be deleted first and then the queued resource will be deleted.
+     * Otherwise (i.e. force=false), the queued resource will only be deleted if
+     * its nodes have already been deleted or the queued resource is in the
+     * ACCEPTED, FAILED, or SUSPENDED state.
+     * </pre>
+     *
+     * <code>bool force = 3;</code>
+     *
+     * @param value The force to set.
+     * @return This builder for chaining.
+     */
+    public Builder setForce(boolean value) {
+
+      force_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If set to true, all running nodes belonging to this queued resource will
+     * be deleted first and then the queued resource will be deleted.
+     * Otherwise (i.e. force=false), the queued resource will only be deleted if
+     * its nodes have already been deleted or the queued resource is in the
+     * ACCEPTED, FAILED, or SUSPENDED state.
+     * </pre>
+     *
+     * <code>bool force = 3;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearForce() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      force_ = false;
       onChanged();
       return this;
     }

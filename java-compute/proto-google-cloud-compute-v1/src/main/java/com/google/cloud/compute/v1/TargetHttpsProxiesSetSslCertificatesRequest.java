@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,18 +39,13 @@ public final class TargetHttpsProxiesSetSslCertificatesRequest
   }
 
   private TargetHttpsProxiesSetSslCertificatesRequest() {
-    sslCertificates_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    sslCertificates_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new TargetHttpsProxiesSetSslCertificatesRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -71,7 +66,8 @@ public final class TargetHttpsProxiesSetSslCertificatesRequest
   public static final int SSL_CERTIFICATES_FIELD_NUMBER = 366006543;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList sslCertificates_;
+  private com.google.protobuf.LazyStringArrayList sslCertificates_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -340,8 +336,7 @@ public final class TargetHttpsProxiesSetSslCertificatesRequest
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      sslCertificates_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      sslCertificates_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -372,7 +367,6 @@ public final class TargetHttpsProxiesSetSslCertificatesRequest
     public com.google.cloud.compute.v1.TargetHttpsProxiesSetSslCertificatesRequest buildPartial() {
       com.google.cloud.compute.v1.TargetHttpsProxiesSetSslCertificatesRequest result =
           new com.google.cloud.compute.v1.TargetHttpsProxiesSetSslCertificatesRequest(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -380,18 +374,13 @@ public final class TargetHttpsProxiesSetSslCertificatesRequest
       return result;
     }
 
-    private void buildPartialRepeatedFields(
-        com.google.cloud.compute.v1.TargetHttpsProxiesSetSslCertificatesRequest result) {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        sslCertificates_ = sslCertificates_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.sslCertificates_ = sslCertificates_;
-    }
-
     private void buildPartial0(
         com.google.cloud.compute.v1.TargetHttpsProxiesSetSslCertificatesRequest result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        sslCertificates_.makeImmutable();
+        result.sslCertificates_ = sslCertificates_;
+      }
     }
 
     @java.lang.Override
@@ -447,7 +436,7 @@ public final class TargetHttpsProxiesSetSslCertificatesRequest
       if (!other.sslCertificates_.isEmpty()) {
         if (sslCertificates_.isEmpty()) {
           sslCertificates_ = other.sslCertificates_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ |= 0x00000001;
         } else {
           ensureSslCertificatesIsMutable();
           sslCertificates_.addAll(other.sslCertificates_);
@@ -506,14 +495,14 @@ public final class TargetHttpsProxiesSetSslCertificatesRequest
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList sslCertificates_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList sslCertificates_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureSslCertificatesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!sslCertificates_.isModifiable()) {
         sslCertificates_ = new com.google.protobuf.LazyStringArrayList(sslCertificates_);
-        bitField0_ |= 0x00000001;
       }
+      bitField0_ |= 0x00000001;
     }
     /**
      *
@@ -527,7 +516,8 @@ public final class TargetHttpsProxiesSetSslCertificatesRequest
      * @return A list containing the sslCertificates.
      */
     public com.google.protobuf.ProtocolStringList getSslCertificatesList() {
-      return sslCertificates_.getUnmodifiableView();
+      sslCertificates_.makeImmutable();
+      return sslCertificates_;
     }
     /**
      *
@@ -592,6 +582,7 @@ public final class TargetHttpsProxiesSetSslCertificatesRequest
       }
       ensureSslCertificatesIsMutable();
       sslCertificates_.set(index, value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -613,6 +604,7 @@ public final class TargetHttpsProxiesSetSslCertificatesRequest
       }
       ensureSslCertificatesIsMutable();
       sslCertificates_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -631,6 +623,7 @@ public final class TargetHttpsProxiesSetSslCertificatesRequest
     public Builder addAllSslCertificates(java.lang.Iterable<java.lang.String> values) {
       ensureSslCertificatesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, sslCertificates_);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -646,8 +639,9 @@ public final class TargetHttpsProxiesSetSslCertificatesRequest
      * @return This builder for chaining.
      */
     public Builder clearSslCertificates() {
-      sslCertificates_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      sslCertificates_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      ;
       onChanged();
       return this;
     }
@@ -670,6 +664,7 @@ public final class TargetHttpsProxiesSetSslCertificatesRequest
       checkByteStringIsUtf8(value);
       ensureSslCertificatesIsMutable();
       sslCertificates_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

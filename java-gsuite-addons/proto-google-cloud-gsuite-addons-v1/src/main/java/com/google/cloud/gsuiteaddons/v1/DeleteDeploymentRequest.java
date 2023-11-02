@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class DeleteDeploymentRequest extends com.google.protobuf.Generated
     return new DeleteDeploymentRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gsuiteaddons.v1.GSuiteAddOnsProto
         .internal_static_google_cloud_gsuiteaddons_v1_DeleteDeploymentRequest_descriptor;
@@ -77,6 +72,7 @@ public final class DeleteDeploymentRequest extends com.google.protobuf.Generated
    *
    * <pre>
    * Required. The full resource name of the deployment to delete.
+   *
    * Example:  `projects/my_project/deployments/my_deployment`.
    * </pre>
    *
@@ -103,6 +99,7 @@ public final class DeleteDeploymentRequest extends com.google.protobuf.Generated
    *
    * <pre>
    * Required. The full resource name of the deployment to delete.
+   *
    * Example:  `projects/my_project/deployments/my_deployment`.
    * </pre>
    *
@@ -551,6 +548,7 @@ public final class DeleteDeploymentRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The full resource name of the deployment to delete.
+     *
      * Example:  `projects/my_project/deployments/my_deployment`.
      * </pre>
      *
@@ -576,6 +574,7 @@ public final class DeleteDeploymentRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The full resource name of the deployment to delete.
+     *
      * Example:  `projects/my_project/deployments/my_deployment`.
      * </pre>
      *
@@ -601,6 +600,7 @@ public final class DeleteDeploymentRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The full resource name of the deployment to delete.
+     *
      * Example:  `projects/my_project/deployments/my_deployment`.
      * </pre>
      *
@@ -625,6 +625,7 @@ public final class DeleteDeploymentRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The full resource name of the deployment to delete.
+     *
      * Example:  `projects/my_project/deployments/my_deployment`.
      * </pre>
      *
@@ -645,6 +646,7 @@ public final class DeleteDeploymentRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The full resource name of the deployment to delete.
+     *
      * Example:  `projects/my_project/deployments/my_deployment`.
      * </pre>
      *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -90,4 +90,51 @@ public interface IOSKeySettingsOrBuilder
    * @return The bytes of the allowedBundleIds at the given index.
    */
   com.google.protobuf.ByteString getAllowedBundleIdsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Apple Developer account details for the app that is protected by the
+   * reCAPTCHA Key. reCAPTCHA Enterprise leverages platform-specific checks like
+   * Apple App Attest and Apple DeviceCheck to protect your app from abuse.
+   * Providing these fields allows reCAPTCHA Enterprise to get a better
+   * assessment of the integrity of your app.
+   * </pre>
+   *
+   * <code>.google.cloud.recaptchaenterprise.v1.AppleDeveloperId apple_developer_id = 3;</code>
+   *
+   * @return Whether the appleDeveloperId field is set.
+   */
+  boolean hasAppleDeveloperId();
+  /**
+   *
+   *
+   * <pre>
+   * Apple Developer account details for the app that is protected by the
+   * reCAPTCHA Key. reCAPTCHA Enterprise leverages platform-specific checks like
+   * Apple App Attest and Apple DeviceCheck to protect your app from abuse.
+   * Providing these fields allows reCAPTCHA Enterprise to get a better
+   * assessment of the integrity of your app.
+   * </pre>
+   *
+   * <code>.google.cloud.recaptchaenterprise.v1.AppleDeveloperId apple_developer_id = 3;</code>
+   *
+   * @return The appleDeveloperId.
+   */
+  com.google.recaptchaenterprise.v1.AppleDeveloperId getAppleDeveloperId();
+  /**
+   *
+   *
+   * <pre>
+   * Apple Developer account details for the app that is protected by the
+   * reCAPTCHA Key. reCAPTCHA Enterprise leverages platform-specific checks like
+   * Apple App Attest and Apple DeviceCheck to protect your app from abuse.
+   * Providing these fields allows reCAPTCHA Enterprise to get a better
+   * assessment of the integrity of your app.
+   * </pre>
+   *
+   * <code>.google.cloud.recaptchaenterprise.v1.AppleDeveloperId apple_developer_id = 3;</code>
+   */
+  com.google.recaptchaenterprise.v1.AppleDeveloperIdOrBuilder getAppleDeveloperIdOrBuilder();
 }

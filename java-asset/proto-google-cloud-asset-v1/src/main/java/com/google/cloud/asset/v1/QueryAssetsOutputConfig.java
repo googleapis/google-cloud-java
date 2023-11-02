@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,11 +43,6 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new QueryAssetsOutputConfig();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -132,12 +127,14 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
      * <pre>
      * Specifies the action that occurs if the destination table or partition
      * already exists. The following values are supported:
+     *
      * * WRITE_TRUNCATE: If the table or partition already exists, BigQuery
      * overwrites the entire table or all the partitions data.
      * * WRITE_APPEND: If the table or partition already exists, BigQuery
      * appends the data to the table or the latest partition.
      * * WRITE_EMPTY: If the table already exists and contains data, a
      * 'duplicate' error is returned in the job result.
+     *
      * The default value is WRITE_EMPTY.
      * </pre>
      *
@@ -152,12 +149,14 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
      * <pre>
      * Specifies the action that occurs if the destination table or partition
      * already exists. The following values are supported:
+     *
      * * WRITE_TRUNCATE: If the table or partition already exists, BigQuery
      * overwrites the entire table or all the partitions data.
      * * WRITE_APPEND: If the table or partition already exists, BigQuery
      * appends the data to the table or the latest partition.
      * * WRITE_EMPTY: If the table already exists and contains data, a
      * 'duplicate' error is returned in the job result.
+     *
      * The default value is WRITE_EMPTY.
      * </pre>
      *
@@ -196,11 +195,6 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new BigQueryDestination();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -336,12 +330,14 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
      * <pre>
      * Specifies the action that occurs if the destination table or partition
      * already exists. The following values are supported:
+     *
      * * WRITE_TRUNCATE: If the table or partition already exists, BigQuery
      * overwrites the entire table or all the partitions data.
      * * WRITE_APPEND: If the table or partition already exists, BigQuery
      * appends the data to the table or the latest partition.
      * * WRITE_EMPTY: If the table already exists and contains data, a
      * 'duplicate' error is returned in the job result.
+     *
      * The default value is WRITE_EMPTY.
      * </pre>
      *
@@ -367,12 +363,14 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
      * <pre>
      * Specifies the action that occurs if the destination table or partition
      * already exists. The following values are supported:
+     *
      * * WRITE_TRUNCATE: If the table or partition already exists, BigQuery
      * overwrites the entire table or all the partitions data.
      * * WRITE_APPEND: If the table or partition already exists, BigQuery
      * appends the data to the table or the latest partition.
      * * WRITE_EMPTY: If the table already exists and contains data, a
      * 'duplicate' error is returned in the job result.
+     *
      * The default value is WRITE_EMPTY.
      * </pre>
      *
@@ -1033,12 +1031,14 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
        * <pre>
        * Specifies the action that occurs if the destination table or partition
        * already exists. The following values are supported:
+       *
        * * WRITE_TRUNCATE: If the table or partition already exists, BigQuery
        * overwrites the entire table or all the partitions data.
        * * WRITE_APPEND: If the table or partition already exists, BigQuery
        * appends the data to the table or the latest partition.
        * * WRITE_EMPTY: If the table already exists and contains data, a
        * 'duplicate' error is returned in the job result.
+       *
        * The default value is WRITE_EMPTY.
        * </pre>
        *
@@ -1063,12 +1063,14 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
        * <pre>
        * Specifies the action that occurs if the destination table or partition
        * already exists. The following values are supported:
+       *
        * * WRITE_TRUNCATE: If the table or partition already exists, BigQuery
        * overwrites the entire table or all the partitions data.
        * * WRITE_APPEND: If the table or partition already exists, BigQuery
        * appends the data to the table or the latest partition.
        * * WRITE_EMPTY: If the table already exists and contains data, a
        * 'duplicate' error is returned in the job result.
+       *
        * The default value is WRITE_EMPTY.
        * </pre>
        *
@@ -1093,12 +1095,14 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
        * <pre>
        * Specifies the action that occurs if the destination table or partition
        * already exists. The following values are supported:
+       *
        * * WRITE_TRUNCATE: If the table or partition already exists, BigQuery
        * overwrites the entire table or all the partitions data.
        * * WRITE_APPEND: If the table or partition already exists, BigQuery
        * appends the data to the table or the latest partition.
        * * WRITE_EMPTY: If the table already exists and contains data, a
        * 'duplicate' error is returned in the job result.
+       *
        * The default value is WRITE_EMPTY.
        * </pre>
        *
@@ -1122,12 +1126,14 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
        * <pre>
        * Specifies the action that occurs if the destination table or partition
        * already exists. The following values are supported:
+       *
        * * WRITE_TRUNCATE: If the table or partition already exists, BigQuery
        * overwrites the entire table or all the partitions data.
        * * WRITE_APPEND: If the table or partition already exists, BigQuery
        * appends the data to the table or the latest partition.
        * * WRITE_EMPTY: If the table already exists and contains data, a
        * 'duplicate' error is returned in the job result.
+       *
        * The default value is WRITE_EMPTY.
        * </pre>
        *
@@ -1147,12 +1153,14 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
        * <pre>
        * Specifies the action that occurs if the destination table or partition
        * already exists. The following values are supported:
+       *
        * * WRITE_TRUNCATE: If the table or partition already exists, BigQuery
        * overwrites the entire table or all the partitions data.
        * * WRITE_APPEND: If the table or partition already exists, BigQuery
        * appends the data to the table or the latest partition.
        * * WRITE_EMPTY: If the table already exists and contains data, a
        * 'duplicate' error is returned in the job result.
+       *
        * The default value is WRITE_EMPTY.
        * </pre>
        *

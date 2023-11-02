@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -74,6 +74,7 @@ public interface ListRunsRequestOrBuilder
    * <pre>
    * The page token received from a previous `ListRuns` call. Specify
    * it to get the next page.
+   *
    * When paginating, all other parameters specified in this call must
    * match the parameters of the call that provided the page token.
    * </pre>
@@ -89,6 +90,7 @@ public interface ListRunsRequestOrBuilder
    * <pre>
    * The page token received from a previous `ListRuns` call. Specify
    * it to get the next page.
+   *
    * When paginating, all other parameters specified in this call must
    * match the parameters of the call that provided the page token.
    * </pre>

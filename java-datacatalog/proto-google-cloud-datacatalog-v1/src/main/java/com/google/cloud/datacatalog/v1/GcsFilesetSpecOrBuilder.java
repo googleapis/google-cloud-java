@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,10 +28,14 @@ public interface GcsFilesetSpecOrBuilder
    *
    * <pre>
    * Required. Patterns to identify a set of files in Google Cloud Storage.
+   *
    * For more information, see [Wildcard Names]
    * (https://cloud.google.com/storage/docs/gsutil/addlhelp/WildcardNames).
+   *
    * Note: Currently, bucket wildcards are not supported.
+   *
    * Examples of valid `file_patterns`:
+   *
    *  * `gs://bucket_name/dir/&#42;`: matches all files in `bucket_name/dir`
    *                              directory
    *  * `gs://bucket_name/dir/&#42;*`: matches all files in `bucket_name/dir`
@@ -48,7 +52,9 @@ public interface GcsFilesetSpecOrBuilder
    *  * `gs://bucket_name/a/&#42;&#47;b`: matches all files in `bucket_name` that match
    *                              the `a/&#42;&#47;b` pattern, such as `a/c/b`, `a/d/b`
    *  * `gs://another_bucket/a.txt`: matches `gs://another_bucket/a.txt`
+   *
    * You can combine wildcards to match complex sets of files, for example:
+   *
    * `gs://bucket_name/[a-m]??.j*g`
    * </pre>
    *
@@ -62,10 +68,14 @@ public interface GcsFilesetSpecOrBuilder
    *
    * <pre>
    * Required. Patterns to identify a set of files in Google Cloud Storage.
+   *
    * For more information, see [Wildcard Names]
    * (https://cloud.google.com/storage/docs/gsutil/addlhelp/WildcardNames).
+   *
    * Note: Currently, bucket wildcards are not supported.
+   *
    * Examples of valid `file_patterns`:
+   *
    *  * `gs://bucket_name/dir/&#42;`: matches all files in `bucket_name/dir`
    *                              directory
    *  * `gs://bucket_name/dir/&#42;*`: matches all files in `bucket_name/dir`
@@ -82,7 +92,9 @@ public interface GcsFilesetSpecOrBuilder
    *  * `gs://bucket_name/a/&#42;&#47;b`: matches all files in `bucket_name` that match
    *                              the `a/&#42;&#47;b` pattern, such as `a/c/b`, `a/d/b`
    *  * `gs://another_bucket/a.txt`: matches `gs://another_bucket/a.txt`
+   *
    * You can combine wildcards to match complex sets of files, for example:
+   *
    * `gs://bucket_name/[a-m]??.j*g`
    * </pre>
    *
@@ -96,10 +108,14 @@ public interface GcsFilesetSpecOrBuilder
    *
    * <pre>
    * Required. Patterns to identify a set of files in Google Cloud Storage.
+   *
    * For more information, see [Wildcard Names]
    * (https://cloud.google.com/storage/docs/gsutil/addlhelp/WildcardNames).
+   *
    * Note: Currently, bucket wildcards are not supported.
+   *
    * Examples of valid `file_patterns`:
+   *
    *  * `gs://bucket_name/dir/&#42;`: matches all files in `bucket_name/dir`
    *                              directory
    *  * `gs://bucket_name/dir/&#42;*`: matches all files in `bucket_name/dir`
@@ -116,7 +132,9 @@ public interface GcsFilesetSpecOrBuilder
    *  * `gs://bucket_name/a/&#42;&#47;b`: matches all files in `bucket_name` that match
    *                              the `a/&#42;&#47;b` pattern, such as `a/c/b`, `a/d/b`
    *  * `gs://another_bucket/a.txt`: matches `gs://another_bucket/a.txt`
+   *
    * You can combine wildcards to match complex sets of files, for example:
+   *
    * `gs://bucket_name/[a-m]??.j*g`
    * </pre>
    *
@@ -131,10 +149,14 @@ public interface GcsFilesetSpecOrBuilder
    *
    * <pre>
    * Required. Patterns to identify a set of files in Google Cloud Storage.
+   *
    * For more information, see [Wildcard Names]
    * (https://cloud.google.com/storage/docs/gsutil/addlhelp/WildcardNames).
+   *
    * Note: Currently, bucket wildcards are not supported.
+   *
    * Examples of valid `file_patterns`:
+   *
    *  * `gs://bucket_name/dir/&#42;`: matches all files in `bucket_name/dir`
    *                              directory
    *  * `gs://bucket_name/dir/&#42;*`: matches all files in `bucket_name/dir`
@@ -151,7 +173,9 @@ public interface GcsFilesetSpecOrBuilder
    *  * `gs://bucket_name/a/&#42;&#47;b`: matches all files in `bucket_name` that match
    *                              the `a/&#42;&#47;b` pattern, such as `a/c/b`, `a/d/b`
    *  * `gs://another_bucket/a.txt`: matches `gs://another_bucket/a.txt`
+   *
    * You can combine wildcards to match complex sets of files, for example:
+   *
    * `gs://bucket_name/[a-m]??.j*g`
    * </pre>
    *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,25 +27,35 @@ package com.google.cloud.dialogflow.v2beta1;
  * response audio from a previous request. When the client sees the
  * utterance, it should stop the playback and immediately get ready for
  * receiving the responses for the current request.
+ *
  * The barge-in handling requires the client to start streaming audio input
  * as soon as it starts playing back the audio from the previous response. The
  * playback is modeled into two phases:
+ *
  * * No barge-in phase: which goes first and during which speech detection
  *   should not be carried out.
+ *
  * * Barge-in phase: which follows the no barge-in phase and during which
  *   the API starts speech detection and may inform the client that an utterance
  *   has been detected. Note that no-speech event is not expected in this
  *   phase.
+ *
  * The client provides this configuration in terms of the durations of those
  * two phases. The durations are measured in terms of the audio length fromt the
  * the start of the input audio.
+ *
  * The flow goes like below:
+ *
+ * ```
  * --&gt; Time
+ *
  * without speech detection  | utterance only | utterance or no-speech event
  *                           |                |
  *           +-------------+ | +------------+ | +---------------+
  * ----------+ no barge-in +-|-+  barge-in  +-|-+ normal period +-----------
  *           +-------------+ | +------------+ | +---------------+
+ * ```
+ *
  * No-speech event is a response with END_OF_UTTERANCE without any transcript
  * following up.
  * </pre>
@@ -68,11 +78,6 @@ public final class BargeInConfig extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new BargeInConfig();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -380,25 +385,35 @@ public final class BargeInConfig extends com.google.protobuf.GeneratedMessageV3
    * response audio from a previous request. When the client sees the
    * utterance, it should stop the playback and immediately get ready for
    * receiving the responses for the current request.
+   *
    * The barge-in handling requires the client to start streaming audio input
    * as soon as it starts playing back the audio from the previous response. The
    * playback is modeled into two phases:
+   *
    * * No barge-in phase: which goes first and during which speech detection
    *   should not be carried out.
+   *
    * * Barge-in phase: which follows the no barge-in phase and during which
    *   the API starts speech detection and may inform the client that an utterance
    *   has been detected. Note that no-speech event is not expected in this
    *   phase.
+   *
    * The client provides this configuration in terms of the durations of those
    * two phases. The durations are measured in terms of the audio length fromt the
    * the start of the input audio.
+   *
    * The flow goes like below:
+   *
+   * ```
    * --&gt; Time
+   *
    * without speech detection  | utterance only | utterance or no-speech event
    *                           |                |
    *           +-------------+ | +------------+ | +---------------+
    * ----------+ no barge-in +-|-+  barge-in  +-|-+ normal period +-----------
    *           +-------------+ | +------------+ | +---------------+
+   * ```
+   *
    * No-speech event is a response with END_OF_UTTERANCE without any transcript
    * following up.
    * </pre>

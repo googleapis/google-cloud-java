@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -676,6 +676,7 @@ public class InstancesClientTest {
             .addAllGuestAccelerators(new ArrayList<AcceleratorConfig>())
             .setHostname("hostname-299803597")
             .setId(3355)
+            .setInstanceEncryptionKey(CustomerEncryptionKey.newBuilder().build())
             .setKeyRevocationActionType("keyRevocationActionType-1643749939")
             .setKind("kind3292052")
             .setLabelFingerprint("labelFingerprint379449680")

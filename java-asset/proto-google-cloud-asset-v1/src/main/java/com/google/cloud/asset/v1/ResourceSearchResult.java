@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ package com.google.cloud.asset.v1;
  *
  * <pre>
  * A result of Resource Search, containing information of a cloud resource.
- * Next ID: 32
+ * Next ID: 34
  * </pre>
  *
  * Protobuf type {@code google.cloud.asset.v1.ResourceSearchResult}
@@ -42,21 +42,23 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     name_ = "";
     assetType_ = "";
     project_ = "";
-    folders_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    folders_ = com.google.protobuf.LazyStringArrayList.emptyList();
     organization_ = "";
     displayName_ = "";
     description_ = "";
     location_ = "";
-    networkTags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    networkTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
     kmsKey_ = "";
-    kmsKeys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    kmsKeys_ = com.google.protobuf.LazyStringArrayList.emptyList();
     state_ = "";
     parentFullResourceName_ = "";
     versionedResources_ = java.util.Collections.emptyList();
     attachedResources_ = java.util.Collections.emptyList();
-    tagKeys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    tagValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    tagValueIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    tagKeys_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    tagValues_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    tagValueIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    tags_ = java.util.Collections.emptyList();
+    effectiveTags_ = java.util.Collections.emptyList();
     parentAssetType_ = "";
   }
 
@@ -64,11 +66,6 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ResourceSearchResult();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -84,6 +81,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         return internalGetLabels();
       case 21:
         return internalGetRelationships();
+      case 32:
+        return internalGetSccSecurityMarks();
       default:
         throw new RuntimeException("Invalid map field number: " + number);
     }
@@ -112,7 +111,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * See [Cloud Asset Inventory Resource Name
    * Format](https://cloud.google.com/asset-inventory/docs/resource-name-format)
    * for more information.
+   *
    * To search against the `name`:
+   *
    * * Use a field query. Example: `name:instance1`
    * * Use a free text query. Example: `instance1`
    * </pre>
@@ -142,7 +143,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * See [Cloud Asset Inventory Resource Name
    * Format](https://cloud.google.com/asset-inventory/docs/resource-name-format)
    * for more information.
+   *
    * To search against the `name`:
+   *
    * * Use a field query. Example: `name:instance1`
    * * Use a free text query. Example: `instance1`
    * </pre>
@@ -173,7 +176,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * The type of this resource. Example: `compute.googleapis.com/Disk`.
+   *
    * To search against the `asset_type`:
+   *
    * * Specify the `asset_type` field in your search request.
    * </pre>
    *
@@ -198,7 +203,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * The type of this resource. Example: `compute.googleapis.com/Disk`.
+   *
    * To search against the `asset_type`:
+   *
    * * Specify the `asset_type` field in your search request.
    * </pre>
    *
@@ -230,7 +237,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * The project that this resource belongs to, in the form of
    * projects/{PROJECT_NUMBER}. This field is available when the resource
    * belongs to a project.
+   *
    * To search against `project`:
+   *
    * * Use a field query. Example: `project:12345`
    * * Use a free text query. Example: `12345`
    * * Specify the `scope` field as this project in your search request.
@@ -259,7 +268,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * The project that this resource belongs to, in the form of
    * projects/{PROJECT_NUMBER}. This field is available when the resource
    * belongs to a project.
+   *
    * To search against `project`:
+   *
    * * Use a field query. Example: `project:12345`
    * * Use a free text query. Example: `12345`
    * * Specify the `scope` field as this project in your search request.
@@ -285,7 +296,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   public static final int FOLDERS_FIELD_NUMBER = 17;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList folders_;
+  private com.google.protobuf.LazyStringArrayList folders_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -293,7 +305,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * The folder(s) that this resource belongs to, in the form of
    * folders/{FOLDER_NUMBER}. This field is available when the resource
    * belongs to one or more folders.
+   *
    * To search against `folders`:
+   *
    * * Use a field query. Example: `folders:(123 OR 456)`
    * * Use a free text query. Example: `123`
    * * Specify the `scope` field as this folder in your search request.
@@ -313,7 +327,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * The folder(s) that this resource belongs to, in the form of
    * folders/{FOLDER_NUMBER}. This field is available when the resource
    * belongs to one or more folders.
+   *
    * To search against `folders`:
+   *
    * * Use a field query. Example: `folders:(123 OR 456)`
    * * Use a free text query. Example: `123`
    * * Specify the `scope` field as this folder in your search request.
@@ -333,7 +349,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * The folder(s) that this resource belongs to, in the form of
    * folders/{FOLDER_NUMBER}. This field is available when the resource
    * belongs to one or more folders.
+   *
    * To search against `folders`:
+   *
    * * Use a field query. Example: `folders:(123 OR 456)`
    * * Use a free text query. Example: `123`
    * * Specify the `scope` field as this folder in your search request.
@@ -354,7 +372,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * The folder(s) that this resource belongs to, in the form of
    * folders/{FOLDER_NUMBER}. This field is available when the resource
    * belongs to one or more folders.
+   *
    * To search against `folders`:
+   *
    * * Use a field query. Example: `folders:(123 OR 456)`
    * * Use a free text query. Example: `123`
    * * Specify the `scope` field as this folder in your search request.
@@ -380,7 +400,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * The organization that this resource belongs to, in the form of
    * organizations/{ORGANIZATION_NUMBER}. This field is available when the
    * resource belongs to an organization.
+   *
    * To search against `organization`:
+   *
    * * Use a field query. Example: `organization:123`
    * * Use a free text query. Example: `123`
    * * Specify the `scope` field as this organization in your search request.
@@ -409,7 +431,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * The organization that this resource belongs to, in the form of
    * organizations/{ORGANIZATION_NUMBER}. This field is available when the
    * resource belongs to an organization.
+   *
    * To search against `organization`:
+   *
    * * Use a field query. Example: `organization:123`
    * * Use a free text query. Example: `123`
    * * Specify the `scope` field as this organization in your search request.
@@ -442,7 +466,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * <pre>
    * The display name of this resource. This field is available only when the
    * resource's Protobuf contains it.
+   *
    * To search against the `display_name`:
+   *
    * * Use a field query. Example: `displayName:"My Instance"`
    * * Use a free text query. Example: `"My Instance"`
    * </pre>
@@ -469,7 +495,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * <pre>
    * The display name of this resource. This field is available only when the
    * resource's Protobuf contains it.
+   *
    * To search against the `display_name`:
+   *
    * * Use a field query. Example: `displayName:"My Instance"`
    * * Use a free text query. Example: `"My Instance"`
    * </pre>
@@ -502,7 +530,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * One or more paragraphs of text description of this resource. Maximum length
    * could be up to 1M bytes. This field is available only when the resource's
    * Protobuf contains it.
+   *
    * To search against the `description`:
+   *
    * * Use a field query. Example: `description:"important instance"`
    * * Use a free text query. Example: `"important instance"`
    * </pre>
@@ -530,7 +560,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * One or more paragraphs of text description of this resource. Maximum length
    * could be up to 1M bytes. This field is available only when the resource's
    * Protobuf contains it.
+   *
    * To search against the `description`:
+   *
    * * Use a field query. Example: `description:"important instance"`
    * * Use a free text query. Example: `"important instance"`
    * </pre>
@@ -563,7 +595,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * Location can be `global`, regional like `us-east1`, or zonal like
    * `us-west1-b`. This field is available only when the resource's Protobuf
    * contains it.
+   *
    * To search against the `location`:
+   *
    * * Use a field query. Example: `location:us-west*`
    * * Use a free text query. Example: `us-west*`
    * </pre>
@@ -591,7 +625,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * Location can be `global`, regional like `us-east1`, or zonal like
    * `us-west1-b`. This field is available only when the resource's Protobuf
    * contains it.
+   *
    * To search against the `location`:
+   *
    * * Use a field query. Example: `location:us-west*`
    * * Use a free text query. Example: `us-west*`
    * </pre>
@@ -648,7 +684,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
    * for more information. This field is available only when the resource's
    * Protobuf contains it.
+   *
    * To search against the `labels`:
+   *
    * * Use a field query:
    *     - query on any label's key or value. Example: `labels:prod`
    *     - query by a given label. Example: `labels.env:prod`
@@ -680,7 +718,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
    * for more information. This field is available only when the resource's
    * Protobuf contains it.
+   *
    * To search against the `labels`:
+   *
    * * Use a field query:
    *     - query on any label's key or value. Example: `labels:prod`
    *     - query by a given label. Example: `labels.env:prod`
@@ -703,7 +743,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
    * for more information. This field is available only when the resource's
    * Protobuf contains it.
+   *
    * To search against the `labels`:
+   *
    * * Use a field query:
    *     - query on any label's key or value. Example: `labels:prod`
    *     - query by a given label. Example: `labels.env:prod`
@@ -733,7 +775,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
    * for more information. This field is available only when the resource's
    * Protobuf contains it.
+   *
    * To search against the `labels`:
+   *
    * * Use a field query:
    *     - query on any label's key or value. Example: `labels:prod`
    *     - query by a given label. Example: `labels.env:prod`
@@ -758,7 +802,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   public static final int NETWORK_TAGS_FIELD_NUMBER = 8;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList networkTags_;
+  private com.google.protobuf.LazyStringArrayList networkTags_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -769,7 +814,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
    * for more information. This field is available only when the resource's
    * Protobuf contains it.
+   *
    * To search against the `network_tags`:
+   *
    * * Use a field query. Example: `networkTags:internal`
    * * Use a free text query. Example: `internal`
    * </pre>
@@ -791,7 +838,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
    * for more information. This field is available only when the resource's
    * Protobuf contains it.
+   *
    * To search against the `network_tags`:
+   *
    * * Use a field query. Example: `networkTags:internal`
    * * Use a free text query. Example: `internal`
    * </pre>
@@ -813,7 +862,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
    * for more information. This field is available only when the resource's
    * Protobuf contains it.
+   *
    * To search against the `network_tags`:
+   *
    * * Use a field query. Example: `networkTags:internal`
    * * Use a free text query. Example: `internal`
    * </pre>
@@ -836,7 +887,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
    * for more information. This field is available only when the resource's
    * Protobuf contains it.
+   *
    * To search against the `network_tags`:
+   *
    * * Use a field query. Example: `networkTags:internal`
    * * Use a free text query. Example: `internal`
    * </pre>
@@ -863,13 +916,16 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * name or
    * [CryptoKeyVersion](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions)
    * name.
+   *
    * This field only presents for the purpose of backward compatibility. Please
    * use the `kms_keys` field to retrieve Cloud KMS key information. This field
    * is available only when the resource's Protobuf contains it and will only be
    * populated for [these resource
    * types](https://cloud.google.com/asset-inventory/docs/legacy-field-names#resource_types_with_the_to_be_deprecated_kmskey_field)
    * for backward compatible purposes.
+   *
    * To search against the `kms_key`:
+   *
    * * Use a field query. Example: `kmsKey:key`
    * * Use a free text query. Example: `key`
    * </pre>
@@ -877,7 +933,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * <code>string kms_key = 10 [deprecated = true];</code>
    *
    * @deprecated google.cloud.asset.v1.ResourceSearchResult.kms_key is deprecated. See
-   *     google/cloud/asset/v1/assets.proto;l=437
+   *     google/cloud/asset/v1/assets.proto;l=471
    * @return The kmsKey.
    */
   @java.lang.Override
@@ -902,13 +958,16 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * name or
    * [CryptoKeyVersion](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions)
    * name.
+   *
    * This field only presents for the purpose of backward compatibility. Please
    * use the `kms_keys` field to retrieve Cloud KMS key information. This field
    * is available only when the resource's Protobuf contains it and will only be
    * populated for [these resource
    * types](https://cloud.google.com/asset-inventory/docs/legacy-field-names#resource_types_with_the_to_be_deprecated_kmskey_field)
    * for backward compatible purposes.
+   *
    * To search against the `kms_key`:
+   *
    * * Use a field query. Example: `kmsKey:key`
    * * Use a free text query. Example: `key`
    * </pre>
@@ -916,7 +975,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * <code>string kms_key = 10 [deprecated = true];</code>
    *
    * @deprecated google.cloud.asset.v1.ResourceSearchResult.kms_key is deprecated. See
-   *     google/cloud/asset/v1/assets.proto;l=437
+   *     google/cloud/asset/v1/assets.proto;l=471
    * @return The bytes for kmsKey.
    */
   @java.lang.Override
@@ -936,7 +995,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   public static final int KMS_KEYS_FIELD_NUMBER = 28;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList kmsKeys_;
+  private com.google.protobuf.LazyStringArrayList kmsKeys_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -947,7 +1007,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * [CryptoKeyVersion](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions)
    * names. This field is available only when the resource's Protobuf contains
    * it.
+   *
    * To search against the `kms_keys`:
+   *
    * * Use a field query. Example: `kmsKeys:key`
    * * Use a free text query. Example: `key`
    * </pre>
@@ -969,7 +1031,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * [CryptoKeyVersion](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions)
    * names. This field is available only when the resource's Protobuf contains
    * it.
+   *
    * To search against the `kms_keys`:
+   *
    * * Use a field query. Example: `kmsKeys:key`
    * * Use a free text query. Example: `key`
    * </pre>
@@ -991,7 +1055,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * [CryptoKeyVersion](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions)
    * names. This field is available only when the resource's Protobuf contains
    * it.
+   *
    * To search against the `kms_keys`:
+   *
    * * Use a field query. Example: `kmsKeys:key`
    * * Use a free text query. Example: `key`
    * </pre>
@@ -1014,7 +1080,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * [CryptoKeyVersion](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions)
    * names. This field is available only when the resource's Protobuf contains
    * it.
+   *
    * To search against the `kms_keys`:
+   *
    * * Use a field query. Example: `kmsKeys:key`
    * * Use a free text query. Example: `key`
    * </pre>
@@ -1037,7 +1105,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * The create timestamp of this resource, at which the resource was created.
    * The granularity is in seconds. Timestamp.nanos will always be 0. This field
    * is available only when the resource's Protobuf contains it.
+   *
    * To search against `create_time`:
+   *
    * * Use a field query.
    *     - value in seconds since unix epoch. Example: `createTime &gt; 1609459200`
    *     - value in date string. Example: `createTime &gt; 2021-01-01`
@@ -1060,7 +1130,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * The create timestamp of this resource, at which the resource was created.
    * The granularity is in seconds. Timestamp.nanos will always be 0. This field
    * is available only when the resource's Protobuf contains it.
+   *
    * To search against `create_time`:
+   *
    * * Use a field query.
    *     - value in seconds since unix epoch. Example: `createTime &gt; 1609459200`
    *     - value in date string. Example: `createTime &gt; 2021-01-01`
@@ -1083,7 +1155,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * The create timestamp of this resource, at which the resource was created.
    * The granularity is in seconds. Timestamp.nanos will always be 0. This field
    * is available only when the resource's Protobuf contains it.
+   *
    * To search against `create_time`:
+   *
    * * Use a field query.
    *     - value in seconds since unix epoch. Example: `createTime &gt; 1609459200`
    *     - value in date string. Example: `createTime &gt; 2021-01-01`
@@ -1108,7 +1182,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * modified or deleted. The granularity is in seconds. Timestamp.nanos will
    * always be 0. This field is available only when the resource's Protobuf
    * contains it.
+   *
    * To search against `update_time`:
+   *
    * * Use a field query.
    *     - value in seconds since unix epoch. Example: `updateTime &lt; 1609459200`
    *     - value in date string. Example: `updateTime &lt; 2021-01-01`
@@ -1132,7 +1208,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * modified or deleted. The granularity is in seconds. Timestamp.nanos will
    * always be 0. This field is available only when the resource's Protobuf
    * contains it.
+   *
    * To search against `update_time`:
+   *
    * * Use a field query.
    *     - value in seconds since unix epoch. Example: `updateTime &lt; 1609459200`
    *     - value in date string. Example: `updateTime &lt; 2021-01-01`
@@ -1156,7 +1234,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * modified or deleted. The granularity is in seconds. Timestamp.nanos will
    * always be 0. This field is available only when the resource's Protobuf
    * contains it.
+   *
    * To search against `update_time`:
+   *
    * * Use a field query.
    *     - value in seconds since unix epoch. Example: `updateTime &lt; 1609459200`
    *     - value in date string. Example: `updateTime &lt; 2021-01-01`
@@ -1183,6 +1263,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * definitions that are mapped from various fields of different resource
    * types. This field is available only when the resource's Protobuf contains
    * it.
+   *
    * Example:
    * If the resource is an instance provided by Compute Engine,
    * its state will include PROVISIONING, STAGING, RUNNING, STOPPING,
@@ -1193,7 +1274,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * will include LIFECYCLE_STATE_UNSPECIFIED, ACTIVE, DELETE_REQUESTED and
    * DELETE_IN_PROGRESS. See `lifecycleState` definition in [API
    * Reference](https://cloud.google.com/resource-manager/reference/rest/v1/projects).
+   *
    * To search against the `state`:
+   *
    * * Use a field query. Example: `state:RUNNING`
    * * Use a free text query. Example: `RUNNING`
    * </pre>
@@ -1222,6 +1305,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * definitions that are mapped from various fields of different resource
    * types. This field is available only when the resource's Protobuf contains
    * it.
+   *
    * Example:
    * If the resource is an instance provided by Compute Engine,
    * its state will include PROVISIONING, STAGING, RUNNING, STOPPING,
@@ -1232,7 +1316,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * will include LIFECYCLE_STATE_UNSPECIFIED, ACTIVE, DELETE_REQUESTED and
    * DELETE_IN_PROGRESS. See `lifecycleState` definition in [API
    * Reference](https://cloud.google.com/resource-manager/reference/rest/v1/projects).
+   *
    * To search against the `state`:
+   *
    * * Use a field query. Example: `state:RUNNING`
    * * Use a free text query. Example: `RUNNING`
    * </pre>
@@ -1268,11 +1354,14 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * references and supported searchable
    * attributes](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types)
    * to see which fields are included.
+   *
    * You can search values of these fields through free text search. However,
    * you should not consume the field programically as the field names and
    * values may change as the Google Cloud service updates to a new incompatible
    * API version.
+   *
    * To search against the `additional_attributes`:
+   *
    * * Use a free text query to match the attributes values. Example: to search
    *   `additional_attributes = { dnsName: "foobar" }`, you can issue a query
    *   `foobar`.
@@ -1298,11 +1387,14 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * references and supported searchable
    * attributes](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types)
    * to see which fields are included.
+   *
    * You can search values of these fields through free text search. However,
    * you should not consume the field programically as the field names and
    * values may change as the Google Cloud service updates to a new incompatible
    * API version.
+   *
    * To search against the `additional_attributes`:
+   *
    * * Use a free text query to match the attributes values. Example: to search
    *   `additional_attributes = { dnsName: "foobar" }`, you can issue a query
    *   `foobar`.
@@ -1330,11 +1422,14 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * references and supported searchable
    * attributes](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types)
    * to see which fields are included.
+   *
    * You can search values of these fields through free text search. However,
    * you should not consume the field programically as the field names and
    * values may change as the Google Cloud service updates to a new incompatible
    * API version.
+   *
    * To search against the `additional_attributes`:
+   *
    * * Use a free text query to match the attributes values. Example: to search
    *   `additional_attributes = { dnsName: "foobar" }`, you can issue a query
    *   `foobar`.
@@ -1359,6 +1454,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * <pre>
    * The full resource name of this resource's parent, if it has one.
    * To search against the `parent_full_resource_name`:
+   *
    * * Use a field query. Example:
    * `parentFullResourceName:"project-name"`
    * * Use a free text query. Example:
@@ -1387,6 +1483,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * <pre>
    * The full resource name of this resource's parent, if it has one.
    * To search against the `parent_full_resource_name`:
+   *
    * * Use a field query. Example:
    * `parentFullResourceName:"project-name"`
    * * Use a free text query. Example:
@@ -1421,6 +1518,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * Versioned resource representations of this resource. This is repeated
    * because there could be multiple versions of resource representations during
    * version migration.
+   *
    * This `versioned_resources` field is not searchable. Some attributes of the
    * resource representations are exposed in `additional_attributes` field, so
    * as to allow users to search on them.
@@ -1439,6 +1537,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * Versioned resource representations of this resource. This is repeated
    * because there could be multiple versions of resource representations during
    * version migration.
+   *
    * This `versioned_resources` field is not searchable. Some attributes of the
    * resource representations are exposed in `additional_attributes` field, so
    * as to allow users to search on them.
@@ -1458,6 +1557,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * Versioned resource representations of this resource. This is repeated
    * because there could be multiple versions of resource representations during
    * version migration.
+   *
    * This `versioned_resources` field is not searchable. Some attributes of the
    * resource representations are exposed in `additional_attributes` field, so
    * as to allow users to search on them.
@@ -1476,6 +1576,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * Versioned resource representations of this resource. This is repeated
    * because there could be multiple versions of resource representations during
    * version migration.
+   *
    * This `versioned_resources` field is not searchable. Some attributes of the
    * resource representations are exposed in `additional_attributes` field, so
    * as to allow users to search on them.
@@ -1494,6 +1595,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * Versioned resource representations of this resource. This is repeated
    * because there could be multiple versions of resource representations during
    * version migration.
+   *
    * This `versioned_resources` field is not searchable. Some attributes of the
    * resource representations are exposed in `additional_attributes` field, so
    * as to allow users to search on them.
@@ -1518,6 +1620,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * Attached resources of this resource. For example, an OSConfig
    * Inventory is an attached resource of a Compute Instance. This field is
    * repeated because a resource could have multiple attached resources.
+   *
    * This `attached_resources` field is not searchable. Some attributes
    * of the attached resources are exposed in `additional_attributes` field, so
    * as to allow users to search on them.
@@ -1536,6 +1639,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * Attached resources of this resource. For example, an OSConfig
    * Inventory is an attached resource of a Compute Instance. This field is
    * repeated because a resource could have multiple attached resources.
+   *
    * This `attached_resources` field is not searchable. Some attributes
    * of the attached resources are exposed in `additional_attributes` field, so
    * as to allow users to search on them.
@@ -1555,6 +1659,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * Attached resources of this resource. For example, an OSConfig
    * Inventory is an attached resource of a Compute Instance. This field is
    * repeated because a resource could have multiple attached resources.
+   *
    * This `attached_resources` field is not searchable. Some attributes
    * of the attached resources are exposed in `additional_attributes` field, so
    * as to allow users to search on them.
@@ -1573,6 +1678,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * Attached resources of this resource. For example, an OSConfig
    * Inventory is an attached resource of a Compute Instance. This field is
    * repeated because a resource could have multiple attached resources.
+   *
    * This `attached_resources` field is not searchable. Some attributes
    * of the attached resources are exposed in `additional_attributes` field, so
    * as to allow users to search on them.
@@ -1591,6 +1697,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * Attached resources of this resource. For example, an OSConfig
    * Inventory is an attached resource of a Compute Instance. This field is
    * repeated because a resource could have multiple attached resources.
+   *
    * This `attached_resources` field is not searchable. Some attributes
    * of the attached resources are exposed in `additional_attributes` field, so
    * as to allow users to search on them.
@@ -1739,25 +1846,34 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   public static final int TAG_KEYS_FIELD_NUMBER = 23;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList tagKeys_;
+  private com.google.protobuf.LazyStringArrayList tagKeys_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
    * <pre>
+   * This field is only present for the purpose of backward compatibility.
+   * Please use the `tags` field instead.
+   *
    * TagKey namespaced names, in the format of {ORG_ID}/{TAG_KEY_SHORT_NAME}.
    * To search against the `tagKeys`:
+   *
    * * Use a field query. Example:
    *     - `tagKeys:"123456789/env*"`
    *     - `tagKeys="123456789/env"`
    *     - `tagKeys:"env"`
+   *
    * * Use a free text query. Example:
    *     - `env`
    * </pre>
    *
-   * <code>repeated string tag_keys = 23;</code>
+   * <code>repeated string tag_keys = 23 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_keys is deprecated. See
+   *     google/cloud/asset/v1/assets.proto;l=604
    * @return A list containing the tagKeys.
    */
+  @java.lang.Deprecated
   public com.google.protobuf.ProtocolStringList getTagKeysList() {
     return tagKeys_;
   }
@@ -1765,20 +1881,28 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
+   * This field is only present for the purpose of backward compatibility.
+   * Please use the `tags` field instead.
+   *
    * TagKey namespaced names, in the format of {ORG_ID}/{TAG_KEY_SHORT_NAME}.
    * To search against the `tagKeys`:
+   *
    * * Use a field query. Example:
    *     - `tagKeys:"123456789/env*"`
    *     - `tagKeys="123456789/env"`
    *     - `tagKeys:"env"`
+   *
    * * Use a free text query. Example:
    *     - `env`
    * </pre>
    *
-   * <code>repeated string tag_keys = 23;</code>
+   * <code>repeated string tag_keys = 23 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_keys is deprecated. See
+   *     google/cloud/asset/v1/assets.proto;l=604
    * @return The count of tagKeys.
    */
+  @java.lang.Deprecated
   public int getTagKeysCount() {
     return tagKeys_.size();
   }
@@ -1786,21 +1910,29 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
+   * This field is only present for the purpose of backward compatibility.
+   * Please use the `tags` field instead.
+   *
    * TagKey namespaced names, in the format of {ORG_ID}/{TAG_KEY_SHORT_NAME}.
    * To search against the `tagKeys`:
+   *
    * * Use a field query. Example:
    *     - `tagKeys:"123456789/env*"`
    *     - `tagKeys="123456789/env"`
    *     - `tagKeys:"env"`
+   *
    * * Use a free text query. Example:
    *     - `env`
    * </pre>
    *
-   * <code>repeated string tag_keys = 23;</code>
+   * <code>repeated string tag_keys = 23 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_keys is deprecated. See
+   *     google/cloud/asset/v1/assets.proto;l=604
    * @param index The index of the element to return.
    * @return The tagKeys at the given index.
    */
+  @java.lang.Deprecated
   public java.lang.String getTagKeys(int index) {
     return tagKeys_.get(index);
   }
@@ -1808,21 +1940,29 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
+   * This field is only present for the purpose of backward compatibility.
+   * Please use the `tags` field instead.
+   *
    * TagKey namespaced names, in the format of {ORG_ID}/{TAG_KEY_SHORT_NAME}.
    * To search against the `tagKeys`:
+   *
    * * Use a field query. Example:
    *     - `tagKeys:"123456789/env*"`
    *     - `tagKeys="123456789/env"`
    *     - `tagKeys:"env"`
+   *
    * * Use a free text query. Example:
    *     - `env`
    * </pre>
    *
-   * <code>repeated string tag_keys = 23;</code>
+   * <code>repeated string tag_keys = 23 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_keys is deprecated. See
+   *     google/cloud/asset/v1/assets.proto;l=604
    * @param index The index of the value to return.
    * @return The bytes of the tagKeys at the given index.
    */
+  @java.lang.Deprecated
   public com.google.protobuf.ByteString getTagKeysBytes(int index) {
     return tagKeys_.getByteString(index);
   }
@@ -1830,27 +1970,36 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   public static final int TAG_VALUES_FIELD_NUMBER = 25;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList tagValues_;
+  private com.google.protobuf.LazyStringArrayList tagValues_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
    * <pre>
+   * This field is only present for the purpose of backward compatibility.
+   * Please use the `tags` field instead.
+   *
    * TagValue namespaced names, in the format of
    * {ORG_ID}/{TAG_KEY_SHORT_NAME}/{TAG_VALUE_SHORT_NAME}.
    * To search against the `tagValues`:
+   *
    * * Use a field query. Example:
    *     - `tagValues:"env"`
    *     - `tagValues:"env/prod"`
    *     - `tagValues:"123456789/env/prod*"`
    *     - `tagValues="123456789/env/prod"`
+   *
    * * Use a free text query. Example:
    *     - `prod`
    * </pre>
    *
-   * <code>repeated string tag_values = 25;</code>
+   * <code>repeated string tag_values = 25 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_values is deprecated. See
+   *     google/cloud/asset/v1/assets.proto;l=621
    * @return A list containing the tagValues.
    */
+  @java.lang.Deprecated
   public com.google.protobuf.ProtocolStringList getTagValuesList() {
     return tagValues_;
   }
@@ -1858,22 +2007,30 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
+   * This field is only present for the purpose of backward compatibility.
+   * Please use the `tags` field instead.
+   *
    * TagValue namespaced names, in the format of
    * {ORG_ID}/{TAG_KEY_SHORT_NAME}/{TAG_VALUE_SHORT_NAME}.
    * To search against the `tagValues`:
+   *
    * * Use a field query. Example:
    *     - `tagValues:"env"`
    *     - `tagValues:"env/prod"`
    *     - `tagValues:"123456789/env/prod*"`
    *     - `tagValues="123456789/env/prod"`
+   *
    * * Use a free text query. Example:
    *     - `prod`
    * </pre>
    *
-   * <code>repeated string tag_values = 25;</code>
+   * <code>repeated string tag_values = 25 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_values is deprecated. See
+   *     google/cloud/asset/v1/assets.proto;l=621
    * @return The count of tagValues.
    */
+  @java.lang.Deprecated
   public int getTagValuesCount() {
     return tagValues_.size();
   }
@@ -1881,23 +2038,31 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
+   * This field is only present for the purpose of backward compatibility.
+   * Please use the `tags` field instead.
+   *
    * TagValue namespaced names, in the format of
    * {ORG_ID}/{TAG_KEY_SHORT_NAME}/{TAG_VALUE_SHORT_NAME}.
    * To search against the `tagValues`:
+   *
    * * Use a field query. Example:
    *     - `tagValues:"env"`
    *     - `tagValues:"env/prod"`
    *     - `tagValues:"123456789/env/prod*"`
    *     - `tagValues="123456789/env/prod"`
+   *
    * * Use a free text query. Example:
    *     - `prod`
    * </pre>
    *
-   * <code>repeated string tag_values = 25;</code>
+   * <code>repeated string tag_values = 25 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_values is deprecated. See
+   *     google/cloud/asset/v1/assets.proto;l=621
    * @param index The index of the element to return.
    * @return The tagValues at the given index.
    */
+  @java.lang.Deprecated
   public java.lang.String getTagValues(int index) {
     return tagValues_.get(index);
   }
@@ -1905,23 +2070,31 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
+   * This field is only present for the purpose of backward compatibility.
+   * Please use the `tags` field instead.
+   *
    * TagValue namespaced names, in the format of
    * {ORG_ID}/{TAG_KEY_SHORT_NAME}/{TAG_VALUE_SHORT_NAME}.
    * To search against the `tagValues`:
+   *
    * * Use a field query. Example:
    *     - `tagValues:"env"`
    *     - `tagValues:"env/prod"`
    *     - `tagValues:"123456789/env/prod*"`
    *     - `tagValues="123456789/env/prod"`
+   *
    * * Use a free text query. Example:
    *     - `prod`
    * </pre>
    *
-   * <code>repeated string tag_values = 25;</code>
+   * <code>repeated string tag_values = 25 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_values is deprecated. See
+   *     google/cloud/asset/v1/assets.proto;l=621
    * @param index The index of the value to return.
    * @return The bytes of the tagValues at the given index.
    */
+  @java.lang.Deprecated
   public com.google.protobuf.ByteString getTagValuesBytes(int index) {
     return tagValues_.getByteString(index);
   }
@@ -1929,24 +2102,32 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   public static final int TAG_VALUE_IDS_FIELD_NUMBER = 26;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList tagValueIds_;
+  private com.google.protobuf.LazyStringArrayList tagValueIds_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
    * <pre>
+   * This field is only present for the purpose of backward compatibility.
+   * Please use the `tags` field instead.
+   *
    * TagValue IDs, in the format of tagValues/{TAG_VALUE_ID}.
    * To search against the `tagValueIds`:
+   *
    * * Use a field query. Example:
-   *     - `tagValueIds:"456"`
    *     - `tagValueIds="tagValues/456"`
+   *
    * * Use a free text query. Example:
    *     - `456`
    * </pre>
    *
-   * <code>repeated string tag_value_ids = 26;</code>
+   * <code>repeated string tag_value_ids = 26 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_value_ids is deprecated. See
+   *     google/cloud/asset/v1/assets.proto;l=634
    * @return A list containing the tagValueIds.
    */
+  @java.lang.Deprecated
   public com.google.protobuf.ProtocolStringList getTagValueIdsList() {
     return tagValueIds_;
   }
@@ -1954,19 +2135,26 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
+   * This field is only present for the purpose of backward compatibility.
+   * Please use the `tags` field instead.
+   *
    * TagValue IDs, in the format of tagValues/{TAG_VALUE_ID}.
    * To search against the `tagValueIds`:
+   *
    * * Use a field query. Example:
-   *     - `tagValueIds:"456"`
    *     - `tagValueIds="tagValues/456"`
+   *
    * * Use a free text query. Example:
    *     - `456`
    * </pre>
    *
-   * <code>repeated string tag_value_ids = 26;</code>
+   * <code>repeated string tag_value_ids = 26 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_value_ids is deprecated. See
+   *     google/cloud/asset/v1/assets.proto;l=634
    * @return The count of tagValueIds.
    */
+  @java.lang.Deprecated
   public int getTagValueIdsCount() {
     return tagValueIds_.size();
   }
@@ -1974,20 +2162,27 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
+   * This field is only present for the purpose of backward compatibility.
+   * Please use the `tags` field instead.
+   *
    * TagValue IDs, in the format of tagValues/{TAG_VALUE_ID}.
    * To search against the `tagValueIds`:
+   *
    * * Use a field query. Example:
-   *     - `tagValueIds:"456"`
    *     - `tagValueIds="tagValues/456"`
+   *
    * * Use a free text query. Example:
    *     - `456`
    * </pre>
    *
-   * <code>repeated string tag_value_ids = 26;</code>
+   * <code>repeated string tag_value_ids = 26 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_value_ids is deprecated. See
+   *     google/cloud/asset/v1/assets.proto;l=634
    * @param index The index of the element to return.
    * @return The tagValueIds at the given index.
    */
+  @java.lang.Deprecated
   public java.lang.String getTagValueIds(int index) {
     return tagValueIds_.get(index);
   }
@@ -1995,22 +2190,321 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
+   * This field is only present for the purpose of backward compatibility.
+   * Please use the `tags` field instead.
+   *
    * TagValue IDs, in the format of tagValues/{TAG_VALUE_ID}.
    * To search against the `tagValueIds`:
+   *
    * * Use a field query. Example:
-   *     - `tagValueIds:"456"`
    *     - `tagValueIds="tagValues/456"`
+   *
    * * Use a free text query. Example:
    *     - `456`
    * </pre>
    *
-   * <code>repeated string tag_value_ids = 26;</code>
+   * <code>repeated string tag_value_ids = 26 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_value_ids is deprecated. See
+   *     google/cloud/asset/v1/assets.proto;l=634
    * @param index The index of the value to return.
    * @return The bytes of the tagValueIds at the given index.
    */
+  @java.lang.Deprecated
   public com.google.protobuf.ByteString getTagValueIdsBytes(int index) {
     return tagValueIds_.getByteString(index);
+  }
+
+  public static final int TAGS_FIELD_NUMBER = 29;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.asset.v1.Tag> tags_;
+  /**
+   *
+   *
+   * <pre>
+   * The tags directly attached to this resource.
+   *
+   * To search against the `tags`:
+   *
+   * * Use a field query. Example:
+   *     - `tagKeys:"123456789/env*"`
+   *     - `tagKeys="123456789/env"`
+   *     - `tagKeys:"env"`
+   *     - `tagValues:"env"`
+   *     - `tagValues:"env/prod"`
+   *     - `tagValues:"123456789/env/prod*"`
+   *     - `tagValues="123456789/env/prod"`
+   *     - `tagValueIds="tagValues/456"`
+   *
+   * * Use a free text query. Example:
+   *     - `env/prod`
+   * </pre>
+   *
+   * <code>repeated .google.cloud.asset.v1.Tag tags = 29;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.asset.v1.Tag> getTagsList() {
+    return tags_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The tags directly attached to this resource.
+   *
+   * To search against the `tags`:
+   *
+   * * Use a field query. Example:
+   *     - `tagKeys:"123456789/env*"`
+   *     - `tagKeys="123456789/env"`
+   *     - `tagKeys:"env"`
+   *     - `tagValues:"env"`
+   *     - `tagValues:"env/prod"`
+   *     - `tagValues:"123456789/env/prod*"`
+   *     - `tagValues="123456789/env/prod"`
+   *     - `tagValueIds="tagValues/456"`
+   *
+   * * Use a free text query. Example:
+   *     - `env/prod`
+   * </pre>
+   *
+   * <code>repeated .google.cloud.asset.v1.Tag tags = 29;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.asset.v1.TagOrBuilder> getTagsOrBuilderList() {
+    return tags_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The tags directly attached to this resource.
+   *
+   * To search against the `tags`:
+   *
+   * * Use a field query. Example:
+   *     - `tagKeys:"123456789/env*"`
+   *     - `tagKeys="123456789/env"`
+   *     - `tagKeys:"env"`
+   *     - `tagValues:"env"`
+   *     - `tagValues:"env/prod"`
+   *     - `tagValues:"123456789/env/prod*"`
+   *     - `tagValues="123456789/env/prod"`
+   *     - `tagValueIds="tagValues/456"`
+   *
+   * * Use a free text query. Example:
+   *     - `env/prod`
+   * </pre>
+   *
+   * <code>repeated .google.cloud.asset.v1.Tag tags = 29;</code>
+   */
+  @java.lang.Override
+  public int getTagsCount() {
+    return tags_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The tags directly attached to this resource.
+   *
+   * To search against the `tags`:
+   *
+   * * Use a field query. Example:
+   *     - `tagKeys:"123456789/env*"`
+   *     - `tagKeys="123456789/env"`
+   *     - `tagKeys:"env"`
+   *     - `tagValues:"env"`
+   *     - `tagValues:"env/prod"`
+   *     - `tagValues:"123456789/env/prod*"`
+   *     - `tagValues="123456789/env/prod"`
+   *     - `tagValueIds="tagValues/456"`
+   *
+   * * Use a free text query. Example:
+   *     - `env/prod`
+   * </pre>
+   *
+   * <code>repeated .google.cloud.asset.v1.Tag tags = 29;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.asset.v1.Tag getTags(int index) {
+    return tags_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The tags directly attached to this resource.
+   *
+   * To search against the `tags`:
+   *
+   * * Use a field query. Example:
+   *     - `tagKeys:"123456789/env*"`
+   *     - `tagKeys="123456789/env"`
+   *     - `tagKeys:"env"`
+   *     - `tagValues:"env"`
+   *     - `tagValues:"env/prod"`
+   *     - `tagValues:"123456789/env/prod*"`
+   *     - `tagValues="123456789/env/prod"`
+   *     - `tagValueIds="tagValues/456"`
+   *
+   * * Use a free text query. Example:
+   *     - `env/prod`
+   * </pre>
+   *
+   * <code>repeated .google.cloud.asset.v1.Tag tags = 29;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.asset.v1.TagOrBuilder getTagsOrBuilder(int index) {
+    return tags_.get(index);
+  }
+
+  public static final int EFFECTIVE_TAGS_FIELD_NUMBER = 30;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.asset.v1.EffectiveTagDetails> effectiveTags_;
+  /**
+   *
+   *
+   * <pre>
+   * The effective tags on this resource. All of the tags that are both attached
+   * to and inherited by a resource are collectively called the effective
+   * tags. For more information, see [tag
+   * inheritance](https://cloud.google.com/resource-manager/docs/tags/tags-overview#inheritance).
+   *
+   * To search against the `effective_tags`:
+   *
+   * * Use a field query. Example:
+   *     - `effectiveTagKeys:"123456789/env*"`
+   *     - `effectiveTagKeys="123456789/env"`
+   *     - `effectiveTagKeys:"env"`
+   *     - `effectiveTagValues:"env"`
+   *     - `effectiveTagValues:"env/prod"`
+   *     - `effectiveTagValues:"123456789/env/prod*"`
+   *     - `effectiveTagValues="123456789/env/prod"`
+   *     - `effectiveTagValueIds="tagValues/456"`
+   * </pre>
+   *
+   * <code>repeated .google.cloud.asset.v1.EffectiveTagDetails effective_tags = 30;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.asset.v1.EffectiveTagDetails> getEffectiveTagsList() {
+    return effectiveTags_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The effective tags on this resource. All of the tags that are both attached
+   * to and inherited by a resource are collectively called the effective
+   * tags. For more information, see [tag
+   * inheritance](https://cloud.google.com/resource-manager/docs/tags/tags-overview#inheritance).
+   *
+   * To search against the `effective_tags`:
+   *
+   * * Use a field query. Example:
+   *     - `effectiveTagKeys:"123456789/env*"`
+   *     - `effectiveTagKeys="123456789/env"`
+   *     - `effectiveTagKeys:"env"`
+   *     - `effectiveTagValues:"env"`
+   *     - `effectiveTagValues:"env/prod"`
+   *     - `effectiveTagValues:"123456789/env/prod*"`
+   *     - `effectiveTagValues="123456789/env/prod"`
+   *     - `effectiveTagValueIds="tagValues/456"`
+   * </pre>
+   *
+   * <code>repeated .google.cloud.asset.v1.EffectiveTagDetails effective_tags = 30;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.asset.v1.EffectiveTagDetailsOrBuilder>
+      getEffectiveTagsOrBuilderList() {
+    return effectiveTags_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The effective tags on this resource. All of the tags that are both attached
+   * to and inherited by a resource are collectively called the effective
+   * tags. For more information, see [tag
+   * inheritance](https://cloud.google.com/resource-manager/docs/tags/tags-overview#inheritance).
+   *
+   * To search against the `effective_tags`:
+   *
+   * * Use a field query. Example:
+   *     - `effectiveTagKeys:"123456789/env*"`
+   *     - `effectiveTagKeys="123456789/env"`
+   *     - `effectiveTagKeys:"env"`
+   *     - `effectiveTagValues:"env"`
+   *     - `effectiveTagValues:"env/prod"`
+   *     - `effectiveTagValues:"123456789/env/prod*"`
+   *     - `effectiveTagValues="123456789/env/prod"`
+   *     - `effectiveTagValueIds="tagValues/456"`
+   * </pre>
+   *
+   * <code>repeated .google.cloud.asset.v1.EffectiveTagDetails effective_tags = 30;</code>
+   */
+  @java.lang.Override
+  public int getEffectiveTagsCount() {
+    return effectiveTags_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The effective tags on this resource. All of the tags that are both attached
+   * to and inherited by a resource are collectively called the effective
+   * tags. For more information, see [tag
+   * inheritance](https://cloud.google.com/resource-manager/docs/tags/tags-overview#inheritance).
+   *
+   * To search against the `effective_tags`:
+   *
+   * * Use a field query. Example:
+   *     - `effectiveTagKeys:"123456789/env*"`
+   *     - `effectiveTagKeys="123456789/env"`
+   *     - `effectiveTagKeys:"env"`
+   *     - `effectiveTagValues:"env"`
+   *     - `effectiveTagValues:"env/prod"`
+   *     - `effectiveTagValues:"123456789/env/prod*"`
+   *     - `effectiveTagValues="123456789/env/prod"`
+   *     - `effectiveTagValueIds="tagValues/456"`
+   * </pre>
+   *
+   * <code>repeated .google.cloud.asset.v1.EffectiveTagDetails effective_tags = 30;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.asset.v1.EffectiveTagDetails getEffectiveTags(int index) {
+    return effectiveTags_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The effective tags on this resource. All of the tags that are both attached
+   * to and inherited by a resource are collectively called the effective
+   * tags. For more information, see [tag
+   * inheritance](https://cloud.google.com/resource-manager/docs/tags/tags-overview#inheritance).
+   *
+   * To search against the `effective_tags`:
+   *
+   * * Use a field query. Example:
+   *     - `effectiveTagKeys:"123456789/env*"`
+   *     - `effectiveTagKeys="123456789/env"`
+   *     - `effectiveTagKeys:"env"`
+   *     - `effectiveTagValues:"env"`
+   *     - `effectiveTagValues:"env/prod"`
+   *     - `effectiveTagValues:"123456789/env/prod*"`
+   *     - `effectiveTagValues="123456789/env/prod"`
+   *     - `effectiveTagValueIds="tagValues/456"`
+   * </pre>
+   *
+   * <code>repeated .google.cloud.asset.v1.EffectiveTagDetails effective_tags = 30;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.asset.v1.EffectiveTagDetailsOrBuilder getEffectiveTagsOrBuilder(
+      int index) {
+    return effectiveTags_.get(index);
   }
 
   public static final int PARENT_ASSET_TYPE_FIELD_NUMBER = 103;
@@ -2022,7 +2516,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * The type of this resource's immediate parent, if there is one.
+   *
    * To search against the `parent_asset_type`:
+   *
    * * Use a field query. Example:
    * `parentAssetType:"cloudresourcemanager.googleapis.com/Project"`
    * * Use a free text query. Example:
@@ -2050,7 +2546,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * The type of this resource's immediate parent, if there is one.
+   *
    * To search against the `parent_asset_type`:
+   *
    * * Use a field query. Example:
    * `parentAssetType:"cloudresourcemanager.googleapis.com/Project"`
    * * Use a free text query. Example:
@@ -2072,6 +2570,158 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int SCC_SECURITY_MARKS_FIELD_NUMBER = 32;
+
+  private static final class SccSecurityMarksDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.cloud.asset.v1.AssetProto
+                .internal_static_google_cloud_asset_v1_ResourceSearchResult_SccSecurityMarksEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
+  }
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> sccSecurityMarks_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetSccSecurityMarks() {
+    if (sccSecurityMarks_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          SccSecurityMarksDefaultEntryHolder.defaultEntry);
+    }
+    return sccSecurityMarks_;
+  }
+
+  public int getSccSecurityMarksCount() {
+    return internalGetSccSecurityMarks().getMap().size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The actual content of Security Command Center security marks associated
+   * with the asset.
+   *
+   *
+   * Note that both staging &amp; prod SecurityMarks are attached on prod resources.
+   * In CAS preprod/prod, both staging &amp; prod SecurityMarks are ingested and
+   * returned in the following `security_marks` map. In that case, the prefix
+   * "staging." will be added to the keys of all the staging marks.
+   * To search against SCC SecurityMarks field:
+   *
+   *   * Use a field query:
+   *     - query by a given key value pair. Example: `sccSecurityMarks.foo=bar`
+   *     - query by a given key's existence. Example: `sccSecurityMarks.foo:*`
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; scc_security_marks = 32;</code>
+   */
+  @java.lang.Override
+  public boolean containsSccSecurityMarks(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetSccSecurityMarks().getMap().containsKey(key);
+  }
+  /** Use {@link #getSccSecurityMarksMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getSccSecurityMarks() {
+    return getSccSecurityMarksMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The actual content of Security Command Center security marks associated
+   * with the asset.
+   *
+   *
+   * Note that both staging &amp; prod SecurityMarks are attached on prod resources.
+   * In CAS preprod/prod, both staging &amp; prod SecurityMarks are ingested and
+   * returned in the following `security_marks` map. In that case, the prefix
+   * "staging." will be added to the keys of all the staging marks.
+   * To search against SCC SecurityMarks field:
+   *
+   *   * Use a field query:
+   *     - query by a given key value pair. Example: `sccSecurityMarks.foo=bar`
+   *     - query by a given key's existence. Example: `sccSecurityMarks.foo:*`
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; scc_security_marks = 32;</code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.String> getSccSecurityMarksMap() {
+    return internalGetSccSecurityMarks().getMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The actual content of Security Command Center security marks associated
+   * with the asset.
+   *
+   *
+   * Note that both staging &amp; prod SecurityMarks are attached on prod resources.
+   * In CAS preprod/prod, both staging &amp; prod SecurityMarks are ingested and
+   * returned in the following `security_marks` map. In that case, the prefix
+   * "staging." will be added to the keys of all the staging marks.
+   * To search against SCC SecurityMarks field:
+   *
+   *   * Use a field query:
+   *     - query by a given key value pair. Example: `sccSecurityMarks.foo=bar`
+   *     - query by a given key's existence. Example: `sccSecurityMarks.foo:*`
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; scc_security_marks = 32;</code>
+   */
+  @java.lang.Override
+  public /* nullable */ java.lang.String getSccSecurityMarksOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetSccSecurityMarks().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The actual content of Security Command Center security marks associated
+   * with the asset.
+   *
+   *
+   * Note that both staging &amp; prod SecurityMarks are attached on prod resources.
+   * In CAS preprod/prod, both staging &amp; prod SecurityMarks are ingested and
+   * returned in the following `security_marks` map. In that case, the prefix
+   * "staging." will be added to the keys of all the staging marks.
+   * To search against SCC SecurityMarks field:
+   *
+   *   * Use a field query:
+   *     - query by a given key value pair. Example: `sccSecurityMarks.foo=bar`
+   *     - query by a given key's existence. Example: `sccSecurityMarks.foo:*`
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; scc_security_marks = 32;</code>
+   */
+  @java.lang.Override
+  public java.lang.String getSccSecurityMarksOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetSccSecurityMarks().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -2155,6 +2805,14 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     for (int i = 0; i < kmsKeys_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 28, kmsKeys_.getRaw(i));
     }
+    for (int i = 0; i < tags_.size(); i++) {
+      output.writeMessage(29, tags_.get(i));
+    }
+    for (int i = 0; i < effectiveTags_.size(); i++) {
+      output.writeMessage(30, effectiveTags_.get(i));
+    }
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetSccSecurityMarks(), SccSecurityMarksDefaultEntryHolder.defaultEntry, 32);
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parentAssetType_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 103, parentAssetType_);
     }
@@ -2284,6 +2942,22 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       size += dataSize;
       size += 2 * getKmsKeysList().size();
     }
+    for (int i = 0; i < tags_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(29, tags_.get(i));
+    }
+    for (int i = 0; i < effectiveTags_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(30, effectiveTags_.get(i));
+    }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetSccSecurityMarks().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> sccSecurityMarks__ =
+          SccSecurityMarksDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(32, sccSecurityMarks__);
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parentAssetType_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(103, parentAssetType_);
     }
@@ -2335,7 +3009,10 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     if (!getTagKeysList().equals(other.getTagKeysList())) return false;
     if (!getTagValuesList().equals(other.getTagValuesList())) return false;
     if (!getTagValueIdsList().equals(other.getTagValueIdsList())) return false;
+    if (!getTagsList().equals(other.getTagsList())) return false;
+    if (!getEffectiveTagsList().equals(other.getEffectiveTagsList())) return false;
     if (!getParentAssetType().equals(other.getParentAssetType())) return false;
+    if (!internalGetSccSecurityMarks().equals(other.internalGetSccSecurityMarks())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2419,8 +3096,20 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       hash = (37 * hash) + TAG_VALUE_IDS_FIELD_NUMBER;
       hash = (53 * hash) + getTagValueIdsList().hashCode();
     }
+    if (getTagsCount() > 0) {
+      hash = (37 * hash) + TAGS_FIELD_NUMBER;
+      hash = (53 * hash) + getTagsList().hashCode();
+    }
+    if (getEffectiveTagsCount() > 0) {
+      hash = (37 * hash) + EFFECTIVE_TAGS_FIELD_NUMBER;
+      hash = (53 * hash) + getEffectiveTagsList().hashCode();
+    }
     hash = (37 * hash) + PARENT_ASSET_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + getParentAssetType().hashCode();
+    if (!internalGetSccSecurityMarks().getMap().isEmpty()) {
+      hash = (37 * hash) + SCC_SECURITY_MARKS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetSccSecurityMarks().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2526,7 +3215,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * A result of Resource Search, containing information of a cloud resource.
-   * Next ID: 32
+   * Next ID: 34
    * </pre>
    *
    * Protobuf type {@code google.cloud.asset.v1.ResourceSearchResult}
@@ -2547,6 +3236,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
           return internalGetLabels();
         case 21:
           return internalGetRelationships();
+        case 32:
+          return internalGetSccSecurityMarks();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -2559,6 +3250,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
           return internalGetMutableLabels();
         case 21:
           return internalGetMutableRelationships();
+        case 32:
+          return internalGetMutableSccSecurityMarks();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -2588,18 +3281,15 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       name_ = "";
       assetType_ = "";
       project_ = "";
-      folders_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      folders_ = com.google.protobuf.LazyStringArrayList.emptyList();
       organization_ = "";
       displayName_ = "";
       description_ = "";
       location_ = "";
       internalGetMutableLabels().clear();
-      networkTags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000200);
+      networkTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
       kmsKey_ = "";
-      kmsKeys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000800);
+      kmsKeys_ = com.google.protobuf.LazyStringArrayList.emptyList();
       createTime_ = null;
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
@@ -2632,13 +3322,25 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       bitField0_ = (bitField0_ & ~0x00040000);
       internalGetMutableRelationships().clear();
-      tagKeys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00100000);
-      tagValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00200000);
-      tagValueIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00400000);
+      tagKeys_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      tagValues_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      tagValueIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      if (tagsBuilder_ == null) {
+        tags_ = java.util.Collections.emptyList();
+      } else {
+        tags_ = null;
+        tagsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00800000);
+      if (effectiveTagsBuilder_ == null) {
+        effectiveTags_ = java.util.Collections.emptyList();
+      } else {
+        effectiveTags_ = null;
+        effectiveTagsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x01000000);
       parentAssetType_ = "";
+      internalGetMutableSccSecurityMarks().clear();
       return this;
     }
 
@@ -2675,21 +3377,6 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     }
 
     private void buildPartialRepeatedFields(com.google.cloud.asset.v1.ResourceSearchResult result) {
-      if (((bitField0_ & 0x00000008) != 0)) {
-        folders_ = folders_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000008);
-      }
-      result.folders_ = folders_;
-      if (((bitField0_ & 0x00000200) != 0)) {
-        networkTags_ = networkTags_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000200);
-      }
-      result.networkTags_ = networkTags_;
-      if (((bitField0_ & 0x00000800) != 0)) {
-        kmsKeys_ = kmsKeys_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000800);
-      }
-      result.kmsKeys_ = kmsKeys_;
       if (versionedResourcesBuilder_ == null) {
         if (((bitField0_ & 0x00020000) != 0)) {
           versionedResources_ = java.util.Collections.unmodifiableList(versionedResources_);
@@ -2708,21 +3395,24 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       } else {
         result.attachedResources_ = attachedResourcesBuilder_.build();
       }
-      if (((bitField0_ & 0x00100000) != 0)) {
-        tagKeys_ = tagKeys_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00100000);
+      if (tagsBuilder_ == null) {
+        if (((bitField0_ & 0x00800000) != 0)) {
+          tags_ = java.util.Collections.unmodifiableList(tags_);
+          bitField0_ = (bitField0_ & ~0x00800000);
+        }
+        result.tags_ = tags_;
+      } else {
+        result.tags_ = tagsBuilder_.build();
       }
-      result.tagKeys_ = tagKeys_;
-      if (((bitField0_ & 0x00200000) != 0)) {
-        tagValues_ = tagValues_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00200000);
+      if (effectiveTagsBuilder_ == null) {
+        if (((bitField0_ & 0x01000000) != 0)) {
+          effectiveTags_ = java.util.Collections.unmodifiableList(effectiveTags_);
+          bitField0_ = (bitField0_ & ~0x01000000);
+        }
+        result.effectiveTags_ = effectiveTags_;
+      } else {
+        result.effectiveTags_ = effectiveTagsBuilder_.build();
       }
-      result.tagValues_ = tagValues_;
-      if (((bitField0_ & 0x00400000) != 0)) {
-        tagValueIds_ = tagValueIds_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00400000);
-      }
-      result.tagValueIds_ = tagValueIds_;
     }
 
     private void buildPartial0(com.google.cloud.asset.v1.ResourceSearchResult result) {
@@ -2735,6 +3425,10 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.project_ = project_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        folders_.makeImmutable();
+        result.folders_ = folders_;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.organization_ = organization_;
@@ -2752,8 +3446,16 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         result.labels_ = internalGetLabels();
         result.labels_.makeImmutable();
       }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        networkTags_.makeImmutable();
+        result.networkTags_ = networkTags_;
+      }
       if (((from_bitField0_ & 0x00000400) != 0)) {
         result.kmsKey_ = kmsKey_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        kmsKeys_.makeImmutable();
+        result.kmsKeys_ = kmsKeys_;
       }
       if (((from_bitField0_ & 0x00001000) != 0)) {
         result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
@@ -2777,8 +3479,24 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         result.relationships_ = internalGetRelationships();
         result.relationships_.makeImmutable();
       }
-      if (((from_bitField0_ & 0x00800000) != 0)) {
+      if (((from_bitField0_ & 0x00100000) != 0)) {
+        tagKeys_.makeImmutable();
+        result.tagKeys_ = tagKeys_;
+      }
+      if (((from_bitField0_ & 0x00200000) != 0)) {
+        tagValues_.makeImmutable();
+        result.tagValues_ = tagValues_;
+      }
+      if (((from_bitField0_ & 0x00400000) != 0)) {
+        tagValueIds_.makeImmutable();
+        result.tagValueIds_ = tagValueIds_;
+      }
+      if (((from_bitField0_ & 0x02000000) != 0)) {
         result.parentAssetType_ = parentAssetType_;
+      }
+      if (((from_bitField0_ & 0x04000000) != 0)) {
+        result.sccSecurityMarks_ = internalGetSccSecurityMarks();
+        result.sccSecurityMarks_.makeImmutable();
       }
     }
 
@@ -2845,7 +3563,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       if (!other.folders_.isEmpty()) {
         if (folders_.isEmpty()) {
           folders_ = other.folders_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ |= 0x00000008;
         } else {
           ensureFoldersIsMutable();
           folders_.addAll(other.folders_);
@@ -2877,7 +3595,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       if (!other.networkTags_.isEmpty()) {
         if (networkTags_.isEmpty()) {
           networkTags_ = other.networkTags_;
-          bitField0_ = (bitField0_ & ~0x00000200);
+          bitField0_ |= 0x00000200;
         } else {
           ensureNetworkTagsIsMutable();
           networkTags_.addAll(other.networkTags_);
@@ -2892,7 +3610,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       if (!other.kmsKeys_.isEmpty()) {
         if (kmsKeys_.isEmpty()) {
           kmsKeys_ = other.kmsKeys_;
-          bitField0_ = (bitField0_ & ~0x00000800);
+          bitField0_ |= 0x00000800;
         } else {
           ensureKmsKeysIsMutable();
           kmsKeys_.addAll(other.kmsKeys_);
@@ -2977,7 +3695,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       if (!other.tagKeys_.isEmpty()) {
         if (tagKeys_.isEmpty()) {
           tagKeys_ = other.tagKeys_;
-          bitField0_ = (bitField0_ & ~0x00100000);
+          bitField0_ |= 0x00100000;
         } else {
           ensureTagKeysIsMutable();
           tagKeys_.addAll(other.tagKeys_);
@@ -2987,7 +3705,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       if (!other.tagValues_.isEmpty()) {
         if (tagValues_.isEmpty()) {
           tagValues_ = other.tagValues_;
-          bitField0_ = (bitField0_ & ~0x00200000);
+          bitField0_ |= 0x00200000;
         } else {
           ensureTagValuesIsMutable();
           tagValues_.addAll(other.tagValues_);
@@ -2997,18 +3715,74 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       if (!other.tagValueIds_.isEmpty()) {
         if (tagValueIds_.isEmpty()) {
           tagValueIds_ = other.tagValueIds_;
-          bitField0_ = (bitField0_ & ~0x00400000);
+          bitField0_ |= 0x00400000;
         } else {
           ensureTagValueIdsIsMutable();
           tagValueIds_.addAll(other.tagValueIds_);
         }
         onChanged();
       }
+      if (tagsBuilder_ == null) {
+        if (!other.tags_.isEmpty()) {
+          if (tags_.isEmpty()) {
+            tags_ = other.tags_;
+            bitField0_ = (bitField0_ & ~0x00800000);
+          } else {
+            ensureTagsIsMutable();
+            tags_.addAll(other.tags_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.tags_.isEmpty()) {
+          if (tagsBuilder_.isEmpty()) {
+            tagsBuilder_.dispose();
+            tagsBuilder_ = null;
+            tags_ = other.tags_;
+            bitField0_ = (bitField0_ & ~0x00800000);
+            tagsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getTagsFieldBuilder()
+                    : null;
+          } else {
+            tagsBuilder_.addAllMessages(other.tags_);
+          }
+        }
+      }
+      if (effectiveTagsBuilder_ == null) {
+        if (!other.effectiveTags_.isEmpty()) {
+          if (effectiveTags_.isEmpty()) {
+            effectiveTags_ = other.effectiveTags_;
+            bitField0_ = (bitField0_ & ~0x01000000);
+          } else {
+            ensureEffectiveTagsIsMutable();
+            effectiveTags_.addAll(other.effectiveTags_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.effectiveTags_.isEmpty()) {
+          if (effectiveTagsBuilder_.isEmpty()) {
+            effectiveTagsBuilder_.dispose();
+            effectiveTagsBuilder_ = null;
+            effectiveTags_ = other.effectiveTags_;
+            bitField0_ = (bitField0_ & ~0x01000000);
+            effectiveTagsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getEffectiveTagsFieldBuilder()
+                    : null;
+          } else {
+            effectiveTagsBuilder_.addAllMessages(other.effectiveTags_);
+          }
+        }
+      }
       if (!other.getParentAssetType().isEmpty()) {
         parentAssetType_ = other.parentAssetType_;
-        bitField0_ |= 0x00800000;
+        bitField0_ |= 0x02000000;
         onChanged();
       }
+      internalGetMutableSccSecurityMarks().mergeFrom(other.internalGetSccSecurityMarks());
+      bitField0_ |= 0x04000000;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -3208,10 +3982,48 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
                 kmsKeys_.add(s);
                 break;
               } // case 226
+            case 234:
+              {
+                com.google.cloud.asset.v1.Tag m =
+                    input.readMessage(com.google.cloud.asset.v1.Tag.parser(), extensionRegistry);
+                if (tagsBuilder_ == null) {
+                  ensureTagsIsMutable();
+                  tags_.add(m);
+                } else {
+                  tagsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 234
+            case 242:
+              {
+                com.google.cloud.asset.v1.EffectiveTagDetails m =
+                    input.readMessage(
+                        com.google.cloud.asset.v1.EffectiveTagDetails.parser(), extensionRegistry);
+                if (effectiveTagsBuilder_ == null) {
+                  ensureEffectiveTagsIsMutable();
+                  effectiveTags_.add(m);
+                } else {
+                  effectiveTagsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 242
+            case 258:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+                    sccSecurityMarks__ =
+                        input.readMessage(
+                            SccSecurityMarksDefaultEntryHolder.defaultEntry.getParserForType(),
+                            extensionRegistry);
+                internalGetMutableSccSecurityMarks()
+                    .getMutableMap()
+                    .put(sccSecurityMarks__.getKey(), sccSecurityMarks__.getValue());
+                bitField0_ |= 0x04000000;
+                break;
+              } // case 258
             case 826:
               {
                 parentAssetType_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00800000;
+                bitField0_ |= 0x02000000;
                 break;
               } // case 826
             default:
@@ -3243,7 +4055,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * See [Cloud Asset Inventory Resource Name
      * Format](https://cloud.google.com/asset-inventory/docs/resource-name-format)
      * for more information.
+     *
      * To search against the `name`:
+     *
      * * Use a field query. Example: `name:instance1`
      * * Use a free text query. Example: `instance1`
      * </pre>
@@ -3272,7 +4086,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * See [Cloud Asset Inventory Resource Name
      * Format](https://cloud.google.com/asset-inventory/docs/resource-name-format)
      * for more information.
+     *
      * To search against the `name`:
+     *
      * * Use a field query. Example: `name:instance1`
      * * Use a free text query. Example: `instance1`
      * </pre>
@@ -3301,7 +4117,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * See [Cloud Asset Inventory Resource Name
      * Format](https://cloud.google.com/asset-inventory/docs/resource-name-format)
      * for more information.
+     *
      * To search against the `name`:
+     *
      * * Use a field query. Example: `name:instance1`
      * * Use a free text query. Example: `instance1`
      * </pre>
@@ -3329,7 +4147,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * See [Cloud Asset Inventory Resource Name
      * Format](https://cloud.google.com/asset-inventory/docs/resource-name-format)
      * for more information.
+     *
      * To search against the `name`:
+     *
      * * Use a field query. Example: `name:instance1`
      * * Use a free text query. Example: `instance1`
      * </pre>
@@ -3353,7 +4173,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * See [Cloud Asset Inventory Resource Name
      * Format](https://cloud.google.com/asset-inventory/docs/resource-name-format)
      * for more information.
+     *
      * To search against the `name`:
+     *
      * * Use a field query. Example: `name:instance1`
      * * Use a free text query. Example: `instance1`
      * </pre>
@@ -3380,7 +4202,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The type of this resource. Example: `compute.googleapis.com/Disk`.
+     *
      * To search against the `asset_type`:
+     *
      * * Specify the `asset_type` field in your search request.
      * </pre>
      *
@@ -3404,7 +4228,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The type of this resource. Example: `compute.googleapis.com/Disk`.
+     *
      * To search against the `asset_type`:
+     *
      * * Specify the `asset_type` field in your search request.
      * </pre>
      *
@@ -3428,7 +4254,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The type of this resource. Example: `compute.googleapis.com/Disk`.
+     *
      * To search against the `asset_type`:
+     *
      * * Specify the `asset_type` field in your search request.
      * </pre>
      *
@@ -3451,7 +4279,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The type of this resource. Example: `compute.googleapis.com/Disk`.
+     *
      * To search against the `asset_type`:
+     *
      * * Specify the `asset_type` field in your search request.
      * </pre>
      *
@@ -3470,7 +4300,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The type of this resource. Example: `compute.googleapis.com/Disk`.
+     *
      * To search against the `asset_type`:
+     *
      * * Specify the `asset_type` field in your search request.
      * </pre>
      *
@@ -3498,7 +4330,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * The project that this resource belongs to, in the form of
      * projects/{PROJECT_NUMBER}. This field is available when the resource
      * belongs to a project.
+     *
      * To search against `project`:
+     *
      * * Use a field query. Example: `project:12345`
      * * Use a free text query. Example: `12345`
      * * Specify the `scope` field as this project in your search request.
@@ -3526,7 +4360,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * The project that this resource belongs to, in the form of
      * projects/{PROJECT_NUMBER}. This field is available when the resource
      * belongs to a project.
+     *
      * To search against `project`:
+     *
      * * Use a field query. Example: `project:12345`
      * * Use a free text query. Example: `12345`
      * * Specify the `scope` field as this project in your search request.
@@ -3554,7 +4390,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * The project that this resource belongs to, in the form of
      * projects/{PROJECT_NUMBER}. This field is available when the resource
      * belongs to a project.
+     *
      * To search against `project`:
+     *
      * * Use a field query. Example: `project:12345`
      * * Use a free text query. Example: `12345`
      * * Specify the `scope` field as this project in your search request.
@@ -3581,7 +4419,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * The project that this resource belongs to, in the form of
      * projects/{PROJECT_NUMBER}. This field is available when the resource
      * belongs to a project.
+     *
      * To search against `project`:
+     *
      * * Use a field query. Example: `project:12345`
      * * Use a free text query. Example: `12345`
      * * Specify the `scope` field as this project in your search request.
@@ -3604,7 +4444,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * The project that this resource belongs to, in the form of
      * projects/{PROJECT_NUMBER}. This field is available when the resource
      * belongs to a project.
+     *
      * To search against `project`:
+     *
      * * Use a field query. Example: `project:12345`
      * * Use a free text query. Example: `12345`
      * * Specify the `scope` field as this project in your search request.
@@ -3626,14 +4468,14 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       return this;
     }
 
-    private com.google.protobuf.LazyStringList folders_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList folders_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureFoldersIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!folders_.isModifiable()) {
         folders_ = new com.google.protobuf.LazyStringArrayList(folders_);
-        bitField0_ |= 0x00000008;
       }
+      bitField0_ |= 0x00000008;
     }
     /**
      *
@@ -3642,7 +4484,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * The folder(s) that this resource belongs to, in the form of
      * folders/{FOLDER_NUMBER}. This field is available when the resource
      * belongs to one or more folders.
+     *
      * To search against `folders`:
+     *
      * * Use a field query. Example: `folders:(123 OR 456)`
      * * Use a free text query. Example: `123`
      * * Specify the `scope` field as this folder in your search request.
@@ -3653,7 +4497,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * @return A list containing the folders.
      */
     public com.google.protobuf.ProtocolStringList getFoldersList() {
-      return folders_.getUnmodifiableView();
+      folders_.makeImmutable();
+      return folders_;
     }
     /**
      *
@@ -3662,7 +4507,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * The folder(s) that this resource belongs to, in the form of
      * folders/{FOLDER_NUMBER}. This field is available when the resource
      * belongs to one or more folders.
+     *
      * To search against `folders`:
+     *
      * * Use a field query. Example: `folders:(123 OR 456)`
      * * Use a free text query. Example: `123`
      * * Specify the `scope` field as this folder in your search request.
@@ -3682,7 +4529,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * The folder(s) that this resource belongs to, in the form of
      * folders/{FOLDER_NUMBER}. This field is available when the resource
      * belongs to one or more folders.
+     *
      * To search against `folders`:
+     *
      * * Use a field query. Example: `folders:(123 OR 456)`
      * * Use a free text query. Example: `123`
      * * Specify the `scope` field as this folder in your search request.
@@ -3703,7 +4552,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * The folder(s) that this resource belongs to, in the form of
      * folders/{FOLDER_NUMBER}. This field is available when the resource
      * belongs to one or more folders.
+     *
      * To search against `folders`:
+     *
      * * Use a field query. Example: `folders:(123 OR 456)`
      * * Use a free text query. Example: `123`
      * * Specify the `scope` field as this folder in your search request.
@@ -3724,7 +4575,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * The folder(s) that this resource belongs to, in the form of
      * folders/{FOLDER_NUMBER}. This field is available when the resource
      * belongs to one or more folders.
+     *
      * To search against `folders`:
+     *
      * * Use a field query. Example: `folders:(123 OR 456)`
      * * Use a free text query. Example: `123`
      * * Specify the `scope` field as this folder in your search request.
@@ -3742,6 +4595,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       ensureFoldersIsMutable();
       folders_.set(index, value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -3752,7 +4606,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * The folder(s) that this resource belongs to, in the form of
      * folders/{FOLDER_NUMBER}. This field is available when the resource
      * belongs to one or more folders.
+     *
      * To search against `folders`:
+     *
      * * Use a field query. Example: `folders:(123 OR 456)`
      * * Use a free text query. Example: `123`
      * * Specify the `scope` field as this folder in your search request.
@@ -3769,6 +4625,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       ensureFoldersIsMutable();
       folders_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -3779,7 +4636,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * The folder(s) that this resource belongs to, in the form of
      * folders/{FOLDER_NUMBER}. This field is available when the resource
      * belongs to one or more folders.
+     *
      * To search against `folders`:
+     *
      * * Use a field query. Example: `folders:(123 OR 456)`
      * * Use a free text query. Example: `123`
      * * Specify the `scope` field as this folder in your search request.
@@ -3793,6 +4652,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     public Builder addAllFolders(java.lang.Iterable<java.lang.String> values) {
       ensureFoldersIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, folders_);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -3803,7 +4663,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * The folder(s) that this resource belongs to, in the form of
      * folders/{FOLDER_NUMBER}. This field is available when the resource
      * belongs to one or more folders.
+     *
      * To search against `folders`:
+     *
      * * Use a field query. Example: `folders:(123 OR 456)`
      * * Use a free text query. Example: `123`
      * * Specify the `scope` field as this folder in your search request.
@@ -3814,8 +4676,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearFolders() {
-      folders_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      folders_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000008);
+      ;
       onChanged();
       return this;
     }
@@ -3826,7 +4689,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * The folder(s) that this resource belongs to, in the form of
      * folders/{FOLDER_NUMBER}. This field is available when the resource
      * belongs to one or more folders.
+     *
      * To search against `folders`:
+     *
      * * Use a field query. Example: `folders:(123 OR 456)`
      * * Use a free text query. Example: `123`
      * * Specify the `scope` field as this folder in your search request.
@@ -3844,6 +4709,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       checkByteStringIsUtf8(value);
       ensureFoldersIsMutable();
       folders_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -3856,7 +4722,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * The organization that this resource belongs to, in the form of
      * organizations/{ORGANIZATION_NUMBER}. This field is available when the
      * resource belongs to an organization.
+     *
      * To search against `organization`:
+     *
      * * Use a field query. Example: `organization:123`
      * * Use a free text query. Example: `123`
      * * Specify the `scope` field as this organization in your search request.
@@ -3884,7 +4752,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * The organization that this resource belongs to, in the form of
      * organizations/{ORGANIZATION_NUMBER}. This field is available when the
      * resource belongs to an organization.
+     *
      * To search against `organization`:
+     *
      * * Use a field query. Example: `organization:123`
      * * Use a free text query. Example: `123`
      * * Specify the `scope` field as this organization in your search request.
@@ -3912,7 +4782,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * The organization that this resource belongs to, in the form of
      * organizations/{ORGANIZATION_NUMBER}. This field is available when the
      * resource belongs to an organization.
+     *
      * To search against `organization`:
+     *
      * * Use a field query. Example: `organization:123`
      * * Use a free text query. Example: `123`
      * * Specify the `scope` field as this organization in your search request.
@@ -3939,7 +4811,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * The organization that this resource belongs to, in the form of
      * organizations/{ORGANIZATION_NUMBER}. This field is available when the
      * resource belongs to an organization.
+     *
      * To search against `organization`:
+     *
      * * Use a field query. Example: `organization:123`
      * * Use a free text query. Example: `123`
      * * Specify the `scope` field as this organization in your search request.
@@ -3962,7 +4836,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * The organization that this resource belongs to, in the form of
      * organizations/{ORGANIZATION_NUMBER}. This field is available when the
      * resource belongs to an organization.
+     *
      * To search against `organization`:
+     *
      * * Use a field query. Example: `organization:123`
      * * Use a free text query. Example: `123`
      * * Specify the `scope` field as this organization in your search request.
@@ -3991,7 +4867,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <pre>
      * The display name of this resource. This field is available only when the
      * resource's Protobuf contains it.
+     *
      * To search against the `display_name`:
+     *
      * * Use a field query. Example: `displayName:"My Instance"`
      * * Use a free text query. Example: `"My Instance"`
      * </pre>
@@ -4017,7 +4895,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <pre>
      * The display name of this resource. This field is available only when the
      * resource's Protobuf contains it.
+     *
      * To search against the `display_name`:
+     *
      * * Use a field query. Example: `displayName:"My Instance"`
      * * Use a free text query. Example: `"My Instance"`
      * </pre>
@@ -4043,7 +4923,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <pre>
      * The display name of this resource. This field is available only when the
      * resource's Protobuf contains it.
+     *
      * To search against the `display_name`:
+     *
      * * Use a field query. Example: `displayName:"My Instance"`
      * * Use a free text query. Example: `"My Instance"`
      * </pre>
@@ -4068,7 +4950,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <pre>
      * The display name of this resource. This field is available only when the
      * resource's Protobuf contains it.
+     *
      * To search against the `display_name`:
+     *
      * * Use a field query. Example: `displayName:"My Instance"`
      * * Use a free text query. Example: `"My Instance"`
      * </pre>
@@ -4089,7 +4973,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <pre>
      * The display name of this resource. This field is available only when the
      * resource's Protobuf contains it.
+     *
      * To search against the `display_name`:
+     *
      * * Use a field query. Example: `displayName:"My Instance"`
      * * Use a free text query. Example: `"My Instance"`
      * </pre>
@@ -4118,7 +5004,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * One or more paragraphs of text description of this resource. Maximum length
      * could be up to 1M bytes. This field is available only when the resource's
      * Protobuf contains it.
+     *
      * To search against the `description`:
+     *
      * * Use a field query. Example: `description:"important instance"`
      * * Use a free text query. Example: `"important instance"`
      * </pre>
@@ -4145,7 +5033,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * One or more paragraphs of text description of this resource. Maximum length
      * could be up to 1M bytes. This field is available only when the resource's
      * Protobuf contains it.
+     *
      * To search against the `description`:
+     *
      * * Use a field query. Example: `description:"important instance"`
      * * Use a free text query. Example: `"important instance"`
      * </pre>
@@ -4172,7 +5062,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * One or more paragraphs of text description of this resource. Maximum length
      * could be up to 1M bytes. This field is available only when the resource's
      * Protobuf contains it.
+     *
      * To search against the `description`:
+     *
      * * Use a field query. Example: `description:"important instance"`
      * * Use a free text query. Example: `"important instance"`
      * </pre>
@@ -4198,7 +5090,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * One or more paragraphs of text description of this resource. Maximum length
      * could be up to 1M bytes. This field is available only when the resource's
      * Protobuf contains it.
+     *
      * To search against the `description`:
+     *
      * * Use a field query. Example: `description:"important instance"`
      * * Use a free text query. Example: `"important instance"`
      * </pre>
@@ -4220,7 +5114,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * One or more paragraphs of text description of this resource. Maximum length
      * could be up to 1M bytes. This field is available only when the resource's
      * Protobuf contains it.
+     *
      * To search against the `description`:
+     *
      * * Use a field query. Example: `description:"important instance"`
      * * Use a free text query. Example: `"important instance"`
      * </pre>
@@ -4249,7 +5145,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * Location can be `global`, regional like `us-east1`, or zonal like
      * `us-west1-b`. This field is available only when the resource's Protobuf
      * contains it.
+     *
      * To search against the `location`:
+     *
      * * Use a field query. Example: `location:us-west*`
      * * Use a free text query. Example: `us-west*`
      * </pre>
@@ -4276,7 +5174,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * Location can be `global`, regional like `us-east1`, or zonal like
      * `us-west1-b`. This field is available only when the resource's Protobuf
      * contains it.
+     *
      * To search against the `location`:
+     *
      * * Use a field query. Example: `location:us-west*`
      * * Use a free text query. Example: `us-west*`
      * </pre>
@@ -4303,7 +5203,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * Location can be `global`, regional like `us-east1`, or zonal like
      * `us-west1-b`. This field is available only when the resource's Protobuf
      * contains it.
+     *
      * To search against the `location`:
+     *
      * * Use a field query. Example: `location:us-west*`
      * * Use a free text query. Example: `us-west*`
      * </pre>
@@ -4329,7 +5231,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * Location can be `global`, regional like `us-east1`, or zonal like
      * `us-west1-b`. This field is available only when the resource's Protobuf
      * contains it.
+     *
      * To search against the `location`:
+     *
      * * Use a field query. Example: `location:us-west*`
      * * Use a free text query. Example: `us-west*`
      * </pre>
@@ -4351,7 +5255,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * Location can be `global`, regional like `us-east1`, or zonal like
      * `us-west1-b`. This field is available only when the resource's Protobuf
      * contains it.
+     *
      * To search against the `location`:
+     *
      * * Use a field query. Example: `location:us-west*`
      * * Use a free text query. Example: `us-west*`
      * </pre>
@@ -4406,7 +5312,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information. This field is available only when the resource's
      * Protobuf contains it.
+     *
      * To search against the `labels`:
+     *
      * * Use a field query:
      *     - query on any label's key or value. Example: `labels:prod`
      *     - query by a given label. Example: `labels.env:prod`
@@ -4438,7 +5346,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information. This field is available only when the resource's
      * Protobuf contains it.
+     *
      * To search against the `labels`:
+     *
      * * Use a field query:
      *     - query on any label's key or value. Example: `labels:prod`
      *     - query by a given label. Example: `labels.env:prod`
@@ -4461,7 +5371,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information. This field is available only when the resource's
      * Protobuf contains it.
+     *
      * To search against the `labels`:
+     *
      * * Use a field query:
      *     - query on any label's key or value. Example: `labels:prod`
      *     - query by a given label. Example: `labels.env:prod`
@@ -4491,7 +5403,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information. This field is available only when the resource's
      * Protobuf contains it.
+     *
      * To search against the `labels`:
+     *
      * * Use a field query:
      *     - query on any label's key or value. Example: `labels:prod`
      *     - query by a given label. Example: `labels.env:prod`
@@ -4527,7 +5441,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information. This field is available only when the resource's
      * Protobuf contains it.
+     *
      * To search against the `labels`:
+     *
      * * Use a field query:
      *     - query on any label's key or value. Example: `labels:prod`
      *     - query by a given label. Example: `labels.env:prod`
@@ -4559,7 +5475,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information. This field is available only when the resource's
      * Protobuf contains it.
+     *
      * To search against the `labels`:
+     *
      * * Use a field query:
      *     - query on any label's key or value. Example: `labels:prod`
      *     - query by a given label. Example: `labels.env:prod`
@@ -4589,7 +5507,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information. This field is available only when the resource's
      * Protobuf contains it.
+     *
      * To search against the `labels`:
+     *
      * * Use a field query:
      *     - query on any label's key or value. Example: `labels:prod`
      *     - query by a given label. Example: `labels.env:prod`
@@ -4605,14 +5525,14 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       return this;
     }
 
-    private com.google.protobuf.LazyStringList networkTags_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList networkTags_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureNetworkTagsIsMutable() {
-      if (!((bitField0_ & 0x00000200) != 0)) {
+      if (!networkTags_.isModifiable()) {
         networkTags_ = new com.google.protobuf.LazyStringArrayList(networkTags_);
-        bitField0_ |= 0x00000200;
       }
+      bitField0_ |= 0x00000200;
     }
     /**
      *
@@ -4624,7 +5544,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information. This field is available only when the resource's
      * Protobuf contains it.
+     *
      * To search against the `network_tags`:
+     *
      * * Use a field query. Example: `networkTags:internal`
      * * Use a free text query. Example: `internal`
      * </pre>
@@ -4634,7 +5556,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * @return A list containing the networkTags.
      */
     public com.google.protobuf.ProtocolStringList getNetworkTagsList() {
-      return networkTags_.getUnmodifiableView();
+      networkTags_.makeImmutable();
+      return networkTags_;
     }
     /**
      *
@@ -4646,7 +5569,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information. This field is available only when the resource's
      * Protobuf contains it.
+     *
      * To search against the `network_tags`:
+     *
      * * Use a field query. Example: `networkTags:internal`
      * * Use a free text query. Example: `internal`
      * </pre>
@@ -4668,7 +5593,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information. This field is available only when the resource's
      * Protobuf contains it.
+     *
      * To search against the `network_tags`:
+     *
      * * Use a field query. Example: `networkTags:internal`
      * * Use a free text query. Example: `internal`
      * </pre>
@@ -4691,7 +5618,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information. This field is available only when the resource's
      * Protobuf contains it.
+     *
      * To search against the `network_tags`:
+     *
      * * Use a field query. Example: `networkTags:internal`
      * * Use a free text query. Example: `internal`
      * </pre>
@@ -4714,7 +5643,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information. This field is available only when the resource's
      * Protobuf contains it.
+     *
      * To search against the `network_tags`:
+     *
      * * Use a field query. Example: `networkTags:internal`
      * * Use a free text query. Example: `internal`
      * </pre>
@@ -4731,6 +5662,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       ensureNetworkTagsIsMutable();
       networkTags_.set(index, value);
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -4744,7 +5676,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information. This field is available only when the resource's
      * Protobuf contains it.
+     *
      * To search against the `network_tags`:
+     *
      * * Use a field query. Example: `networkTags:internal`
      * * Use a free text query. Example: `internal`
      * </pre>
@@ -4760,6 +5694,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       ensureNetworkTagsIsMutable();
       networkTags_.add(value);
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -4773,7 +5708,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information. This field is available only when the resource's
      * Protobuf contains it.
+     *
      * To search against the `network_tags`:
+     *
      * * Use a field query. Example: `networkTags:internal`
      * * Use a free text query. Example: `internal`
      * </pre>
@@ -4786,6 +5723,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     public Builder addAllNetworkTags(java.lang.Iterable<java.lang.String> values) {
       ensureNetworkTagsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, networkTags_);
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -4799,7 +5737,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information. This field is available only when the resource's
      * Protobuf contains it.
+     *
      * To search against the `network_tags`:
+     *
      * * Use a field query. Example: `networkTags:internal`
      * * Use a free text query. Example: `internal`
      * </pre>
@@ -4809,8 +5749,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearNetworkTags() {
-      networkTags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      networkTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000200);
+      ;
       onChanged();
       return this;
     }
@@ -4824,7 +5765,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information. This field is available only when the resource's
      * Protobuf contains it.
+     *
      * To search against the `network_tags`:
+     *
      * * Use a field query. Example: `networkTags:internal`
      * * Use a free text query. Example: `internal`
      * </pre>
@@ -4841,6 +5784,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       checkByteStringIsUtf8(value);
       ensureNetworkTagsIsMutable();
       networkTags_.add(value);
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -4855,13 +5799,16 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * name or
      * [CryptoKeyVersion](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions)
      * name.
+     *
      * This field only presents for the purpose of backward compatibility. Please
      * use the `kms_keys` field to retrieve Cloud KMS key information. This field
      * is available only when the resource's Protobuf contains it and will only be
      * populated for [these resource
      * types](https://cloud.google.com/asset-inventory/docs/legacy-field-names#resource_types_with_the_to_be_deprecated_kmskey_field)
      * for backward compatible purposes.
+     *
      * To search against the `kms_key`:
+     *
      * * Use a field query. Example: `kmsKey:key`
      * * Use a free text query. Example: `key`
      * </pre>
@@ -4869,7 +5816,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>string kms_key = 10 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.kms_key is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=437
+     *     google/cloud/asset/v1/assets.proto;l=471
      * @return The kmsKey.
      */
     @java.lang.Deprecated
@@ -4893,13 +5840,16 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * name or
      * [CryptoKeyVersion](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions)
      * name.
+     *
      * This field only presents for the purpose of backward compatibility. Please
      * use the `kms_keys` field to retrieve Cloud KMS key information. This field
      * is available only when the resource's Protobuf contains it and will only be
      * populated for [these resource
      * types](https://cloud.google.com/asset-inventory/docs/legacy-field-names#resource_types_with_the_to_be_deprecated_kmskey_field)
      * for backward compatible purposes.
+     *
      * To search against the `kms_key`:
+     *
      * * Use a field query. Example: `kmsKey:key`
      * * Use a free text query. Example: `key`
      * </pre>
@@ -4907,7 +5857,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>string kms_key = 10 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.kms_key is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=437
+     *     google/cloud/asset/v1/assets.proto;l=471
      * @return The bytes for kmsKey.
      */
     @java.lang.Deprecated
@@ -4931,13 +5881,16 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * name or
      * [CryptoKeyVersion](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions)
      * name.
+     *
      * This field only presents for the purpose of backward compatibility. Please
      * use the `kms_keys` field to retrieve Cloud KMS key information. This field
      * is available only when the resource's Protobuf contains it and will only be
      * populated for [these resource
      * types](https://cloud.google.com/asset-inventory/docs/legacy-field-names#resource_types_with_the_to_be_deprecated_kmskey_field)
      * for backward compatible purposes.
+     *
      * To search against the `kms_key`:
+     *
      * * Use a field query. Example: `kmsKey:key`
      * * Use a free text query. Example: `key`
      * </pre>
@@ -4945,7 +5898,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>string kms_key = 10 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.kms_key is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=437
+     *     google/cloud/asset/v1/assets.proto;l=471
      * @param value The kmsKey to set.
      * @return This builder for chaining.
      */
@@ -4968,13 +5921,16 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * name or
      * [CryptoKeyVersion](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions)
      * name.
+     *
      * This field only presents for the purpose of backward compatibility. Please
      * use the `kms_keys` field to retrieve Cloud KMS key information. This field
      * is available only when the resource's Protobuf contains it and will only be
      * populated for [these resource
      * types](https://cloud.google.com/asset-inventory/docs/legacy-field-names#resource_types_with_the_to_be_deprecated_kmskey_field)
      * for backward compatible purposes.
+     *
      * To search against the `kms_key`:
+     *
      * * Use a field query. Example: `kmsKey:key`
      * * Use a free text query. Example: `key`
      * </pre>
@@ -4982,7 +5938,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>string kms_key = 10 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.kms_key is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=437
+     *     google/cloud/asset/v1/assets.proto;l=471
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -5001,13 +5957,16 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * name or
      * [CryptoKeyVersion](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions)
      * name.
+     *
      * This field only presents for the purpose of backward compatibility. Please
      * use the `kms_keys` field to retrieve Cloud KMS key information. This field
      * is available only when the resource's Protobuf contains it and will only be
      * populated for [these resource
      * types](https://cloud.google.com/asset-inventory/docs/legacy-field-names#resource_types_with_the_to_be_deprecated_kmskey_field)
      * for backward compatible purposes.
+     *
      * To search against the `kms_key`:
+     *
      * * Use a field query. Example: `kmsKey:key`
      * * Use a free text query. Example: `key`
      * </pre>
@@ -5015,7 +5974,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>string kms_key = 10 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.kms_key is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=437
+     *     google/cloud/asset/v1/assets.proto;l=471
      * @param value The bytes for kmsKey to set.
      * @return This builder for chaining.
      */
@@ -5031,14 +5990,14 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       return this;
     }
 
-    private com.google.protobuf.LazyStringList kmsKeys_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList kmsKeys_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureKmsKeysIsMutable() {
-      if (!((bitField0_ & 0x00000800) != 0)) {
+      if (!kmsKeys_.isModifiable()) {
         kmsKeys_ = new com.google.protobuf.LazyStringArrayList(kmsKeys_);
-        bitField0_ |= 0x00000800;
       }
+      bitField0_ |= 0x00000800;
     }
     /**
      *
@@ -5050,7 +6009,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * [CryptoKeyVersion](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions)
      * names. This field is available only when the resource's Protobuf contains
      * it.
+     *
      * To search against the `kms_keys`:
+     *
      * * Use a field query. Example: `kmsKeys:key`
      * * Use a free text query. Example: `key`
      * </pre>
@@ -5060,7 +6021,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * @return A list containing the kmsKeys.
      */
     public com.google.protobuf.ProtocolStringList getKmsKeysList() {
-      return kmsKeys_.getUnmodifiableView();
+      kmsKeys_.makeImmutable();
+      return kmsKeys_;
     }
     /**
      *
@@ -5072,7 +6034,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * [CryptoKeyVersion](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions)
      * names. This field is available only when the resource's Protobuf contains
      * it.
+     *
      * To search against the `kms_keys`:
+     *
      * * Use a field query. Example: `kmsKeys:key`
      * * Use a free text query. Example: `key`
      * </pre>
@@ -5094,7 +6058,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * [CryptoKeyVersion](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions)
      * names. This field is available only when the resource's Protobuf contains
      * it.
+     *
      * To search against the `kms_keys`:
+     *
      * * Use a field query. Example: `kmsKeys:key`
      * * Use a free text query. Example: `key`
      * </pre>
@@ -5117,7 +6083,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * [CryptoKeyVersion](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions)
      * names. This field is available only when the resource's Protobuf contains
      * it.
+     *
      * To search against the `kms_keys`:
+     *
      * * Use a field query. Example: `kmsKeys:key`
      * * Use a free text query. Example: `key`
      * </pre>
@@ -5140,7 +6108,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * [CryptoKeyVersion](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions)
      * names. This field is available only when the resource's Protobuf contains
      * it.
+     *
      * To search against the `kms_keys`:
+     *
      * * Use a field query. Example: `kmsKeys:key`
      * * Use a free text query. Example: `key`
      * </pre>
@@ -5157,6 +6127,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       ensureKmsKeysIsMutable();
       kmsKeys_.set(index, value);
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -5170,7 +6141,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * [CryptoKeyVersion](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions)
      * names. This field is available only when the resource's Protobuf contains
      * it.
+     *
      * To search against the `kms_keys`:
+     *
      * * Use a field query. Example: `kmsKeys:key`
      * * Use a free text query. Example: `key`
      * </pre>
@@ -5186,6 +6159,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       ensureKmsKeysIsMutable();
       kmsKeys_.add(value);
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -5199,7 +6173,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * [CryptoKeyVersion](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions)
      * names. This field is available only when the resource's Protobuf contains
      * it.
+     *
      * To search against the `kms_keys`:
+     *
      * * Use a field query. Example: `kmsKeys:key`
      * * Use a free text query. Example: `key`
      * </pre>
@@ -5212,6 +6188,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     public Builder addAllKmsKeys(java.lang.Iterable<java.lang.String> values) {
       ensureKmsKeysIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, kmsKeys_);
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -5225,7 +6202,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * [CryptoKeyVersion](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions)
      * names. This field is available only when the resource's Protobuf contains
      * it.
+     *
      * To search against the `kms_keys`:
+     *
      * * Use a field query. Example: `kmsKeys:key`
      * * Use a free text query. Example: `key`
      * </pre>
@@ -5235,8 +6214,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearKmsKeys() {
-      kmsKeys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      kmsKeys_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000800);
+      ;
       onChanged();
       return this;
     }
@@ -5250,7 +6230,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * [CryptoKeyVersion](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions)
      * names. This field is available only when the resource's Protobuf contains
      * it.
+     *
      * To search against the `kms_keys`:
+     *
      * * Use a field query. Example: `kmsKeys:key`
      * * Use a free text query. Example: `key`
      * </pre>
@@ -5267,6 +6249,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       checkByteStringIsUtf8(value);
       ensureKmsKeysIsMutable();
       kmsKeys_.add(value);
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -5284,7 +6267,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * The create timestamp of this resource, at which the resource was created.
      * The granularity is in seconds. Timestamp.nanos will always be 0. This field
      * is available only when the resource's Protobuf contains it.
+     *
      * To search against `create_time`:
+     *
      * * Use a field query.
      *     - value in seconds since unix epoch. Example: `createTime &gt; 1609459200`
      *     - value in date string. Example: `createTime &gt; 2021-01-01`
@@ -5306,7 +6291,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * The create timestamp of this resource, at which the resource was created.
      * The granularity is in seconds. Timestamp.nanos will always be 0. This field
      * is available only when the resource's Protobuf contains it.
+     *
      * To search against `create_time`:
+     *
      * * Use a field query.
      *     - value in seconds since unix epoch. Example: `createTime &gt; 1609459200`
      *     - value in date string. Example: `createTime &gt; 2021-01-01`
@@ -5334,7 +6321,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * The create timestamp of this resource, at which the resource was created.
      * The granularity is in seconds. Timestamp.nanos will always be 0. This field
      * is available only when the resource's Protobuf contains it.
+     *
      * To search against `create_time`:
+     *
      * * Use a field query.
      *     - value in seconds since unix epoch. Example: `createTime &gt; 1609459200`
      *     - value in date string. Example: `createTime &gt; 2021-01-01`
@@ -5364,7 +6353,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * The create timestamp of this resource, at which the resource was created.
      * The granularity is in seconds. Timestamp.nanos will always be 0. This field
      * is available only when the resource's Protobuf contains it.
+     *
      * To search against `create_time`:
+     *
      * * Use a field query.
      *     - value in seconds since unix epoch. Example: `createTime &gt; 1609459200`
      *     - value in date string. Example: `createTime &gt; 2021-01-01`
@@ -5391,7 +6382,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * The create timestamp of this resource, at which the resource was created.
      * The granularity is in seconds. Timestamp.nanos will always be 0. This field
      * is available only when the resource's Protobuf contains it.
+     *
      * To search against `create_time`:
+     *
      * * Use a field query.
      *     - value in seconds since unix epoch. Example: `createTime &gt; 1609459200`
      *     - value in date string. Example: `createTime &gt; 2021-01-01`
@@ -5424,7 +6417,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * The create timestamp of this resource, at which the resource was created.
      * The granularity is in seconds. Timestamp.nanos will always be 0. This field
      * is available only when the resource's Protobuf contains it.
+     *
      * To search against `create_time`:
+     *
      * * Use a field query.
      *     - value in seconds since unix epoch. Example: `createTime &gt; 1609459200`
      *     - value in date string. Example: `createTime &gt; 2021-01-01`
@@ -5451,7 +6446,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * The create timestamp of this resource, at which the resource was created.
      * The granularity is in seconds. Timestamp.nanos will always be 0. This field
      * is available only when the resource's Protobuf contains it.
+     *
      * To search against `create_time`:
+     *
      * * Use a field query.
      *     - value in seconds since unix epoch. Example: `createTime &gt; 1609459200`
      *     - value in date string. Example: `createTime &gt; 2021-01-01`
@@ -5473,7 +6470,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * The create timestamp of this resource, at which the resource was created.
      * The granularity is in seconds. Timestamp.nanos will always be 0. This field
      * is available only when the resource's Protobuf contains it.
+     *
      * To search against `create_time`:
+     *
      * * Use a field query.
      *     - value in seconds since unix epoch. Example: `createTime &gt; 1609459200`
      *     - value in date string. Example: `createTime &gt; 2021-01-01`
@@ -5499,7 +6498,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * The create timestamp of this resource, at which the resource was created.
      * The granularity is in seconds. Timestamp.nanos will always be 0. This field
      * is available only when the resource's Protobuf contains it.
+     *
      * To search against `create_time`:
+     *
      * * Use a field query.
      *     - value in seconds since unix epoch. Example: `createTime &gt; 1609459200`
      *     - value in date string. Example: `createTime &gt; 2021-01-01`
@@ -5540,7 +6541,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * modified or deleted. The granularity is in seconds. Timestamp.nanos will
      * always be 0. This field is available only when the resource's Protobuf
      * contains it.
+     *
      * To search against `update_time`:
+     *
      * * Use a field query.
      *     - value in seconds since unix epoch. Example: `updateTime &lt; 1609459200`
      *     - value in date string. Example: `updateTime &lt; 2021-01-01`
@@ -5563,7 +6566,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * modified or deleted. The granularity is in seconds. Timestamp.nanos will
      * always be 0. This field is available only when the resource's Protobuf
      * contains it.
+     *
      * To search against `update_time`:
+     *
      * * Use a field query.
      *     - value in seconds since unix epoch. Example: `updateTime &lt; 1609459200`
      *     - value in date string. Example: `updateTime &lt; 2021-01-01`
@@ -5592,7 +6597,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * modified or deleted. The granularity is in seconds. Timestamp.nanos will
      * always be 0. This field is available only when the resource's Protobuf
      * contains it.
+     *
      * To search against `update_time`:
+     *
      * * Use a field query.
      *     - value in seconds since unix epoch. Example: `updateTime &lt; 1609459200`
      *     - value in date string. Example: `updateTime &lt; 2021-01-01`
@@ -5623,7 +6630,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * modified or deleted. The granularity is in seconds. Timestamp.nanos will
      * always be 0. This field is available only when the resource's Protobuf
      * contains it.
+     *
      * To search against `update_time`:
+     *
      * * Use a field query.
      *     - value in seconds since unix epoch. Example: `updateTime &lt; 1609459200`
      *     - value in date string. Example: `updateTime &lt; 2021-01-01`
@@ -5651,7 +6660,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * modified or deleted. The granularity is in seconds. Timestamp.nanos will
      * always be 0. This field is available only when the resource's Protobuf
      * contains it.
+     *
      * To search against `update_time`:
+     *
      * * Use a field query.
      *     - value in seconds since unix epoch. Example: `updateTime &lt; 1609459200`
      *     - value in date string. Example: `updateTime &lt; 2021-01-01`
@@ -5685,7 +6696,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * modified or deleted. The granularity is in seconds. Timestamp.nanos will
      * always be 0. This field is available only when the resource's Protobuf
      * contains it.
+     *
      * To search against `update_time`:
+     *
      * * Use a field query.
      *     - value in seconds since unix epoch. Example: `updateTime &lt; 1609459200`
      *     - value in date string. Example: `updateTime &lt; 2021-01-01`
@@ -5713,7 +6726,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * modified or deleted. The granularity is in seconds. Timestamp.nanos will
      * always be 0. This field is available only when the resource's Protobuf
      * contains it.
+     *
      * To search against `update_time`:
+     *
      * * Use a field query.
      *     - value in seconds since unix epoch. Example: `updateTime &lt; 1609459200`
      *     - value in date string. Example: `updateTime &lt; 2021-01-01`
@@ -5736,7 +6751,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * modified or deleted. The granularity is in seconds. Timestamp.nanos will
      * always be 0. This field is available only when the resource's Protobuf
      * contains it.
+     *
      * To search against `update_time`:
+     *
      * * Use a field query.
      *     - value in seconds since unix epoch. Example: `updateTime &lt; 1609459200`
      *     - value in date string. Example: `updateTime &lt; 2021-01-01`
@@ -5763,7 +6780,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * modified or deleted. The granularity is in seconds. Timestamp.nanos will
      * always be 0. This field is available only when the resource's Protobuf
      * contains it.
+     *
      * To search against `update_time`:
+     *
      * * Use a field query.
      *     - value in seconds since unix epoch. Example: `updateTime &lt; 1609459200`
      *     - value in date string. Example: `updateTime &lt; 2021-01-01`
@@ -5799,6 +6818,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * definitions that are mapped from various fields of different resource
      * types. This field is available only when the resource's Protobuf contains
      * it.
+     *
      * Example:
      * If the resource is an instance provided by Compute Engine,
      * its state will include PROVISIONING, STAGING, RUNNING, STOPPING,
@@ -5809,7 +6829,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * will include LIFECYCLE_STATE_UNSPECIFIED, ACTIVE, DELETE_REQUESTED and
      * DELETE_IN_PROGRESS. See `lifecycleState` definition in [API
      * Reference](https://cloud.google.com/resource-manager/reference/rest/v1/projects).
+     *
      * To search against the `state`:
+     *
      * * Use a field query. Example: `state:RUNNING`
      * * Use a free text query. Example: `RUNNING`
      * </pre>
@@ -5837,6 +6859,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * definitions that are mapped from various fields of different resource
      * types. This field is available only when the resource's Protobuf contains
      * it.
+     *
      * Example:
      * If the resource is an instance provided by Compute Engine,
      * its state will include PROVISIONING, STAGING, RUNNING, STOPPING,
@@ -5847,7 +6870,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * will include LIFECYCLE_STATE_UNSPECIFIED, ACTIVE, DELETE_REQUESTED and
      * DELETE_IN_PROGRESS. See `lifecycleState` definition in [API
      * Reference](https://cloud.google.com/resource-manager/reference/rest/v1/projects).
+     *
      * To search against the `state`:
+     *
      * * Use a field query. Example: `state:RUNNING`
      * * Use a free text query. Example: `RUNNING`
      * </pre>
@@ -5875,6 +6900,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * definitions that are mapped from various fields of different resource
      * types. This field is available only when the resource's Protobuf contains
      * it.
+     *
      * Example:
      * If the resource is an instance provided by Compute Engine,
      * its state will include PROVISIONING, STAGING, RUNNING, STOPPING,
@@ -5885,7 +6911,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * will include LIFECYCLE_STATE_UNSPECIFIED, ACTIVE, DELETE_REQUESTED and
      * DELETE_IN_PROGRESS. See `lifecycleState` definition in [API
      * Reference](https://cloud.google.com/resource-manager/reference/rest/v1/projects).
+     *
      * To search against the `state`:
+     *
      * * Use a field query. Example: `state:RUNNING`
      * * Use a free text query. Example: `RUNNING`
      * </pre>
@@ -5912,6 +6940,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * definitions that are mapped from various fields of different resource
      * types. This field is available only when the resource's Protobuf contains
      * it.
+     *
      * Example:
      * If the resource is an instance provided by Compute Engine,
      * its state will include PROVISIONING, STAGING, RUNNING, STOPPING,
@@ -5922,7 +6951,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * will include LIFECYCLE_STATE_UNSPECIFIED, ACTIVE, DELETE_REQUESTED and
      * DELETE_IN_PROGRESS. See `lifecycleState` definition in [API
      * Reference](https://cloud.google.com/resource-manager/reference/rest/v1/projects).
+     *
      * To search against the `state`:
+     *
      * * Use a field query. Example: `state:RUNNING`
      * * Use a free text query. Example: `RUNNING`
      * </pre>
@@ -5945,6 +6976,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * definitions that are mapped from various fields of different resource
      * types. This field is available only when the resource's Protobuf contains
      * it.
+     *
      * Example:
      * If the resource is an instance provided by Compute Engine,
      * its state will include PROVISIONING, STAGING, RUNNING, STOPPING,
@@ -5955,7 +6987,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * will include LIFECYCLE_STATE_UNSPECIFIED, ACTIVE, DELETE_REQUESTED and
      * DELETE_IN_PROGRESS. See `lifecycleState` definition in [API
      * Reference](https://cloud.google.com/resource-manager/reference/rest/v1/projects).
+     *
      * To search against the `state`:
+     *
      * * Use a field query. Example: `state:RUNNING`
      * * Use a free text query. Example: `RUNNING`
      * </pre>
@@ -5994,11 +7028,14 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * references and supported searchable
      * attributes](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types)
      * to see which fields are included.
+     *
      * You can search values of these fields through free text search. However,
      * you should not consume the field programically as the field names and
      * values may change as the Google Cloud service updates to a new incompatible
      * API version.
+     *
      * To search against the `additional_attributes`:
+     *
      * * Use a free text query to match the attributes values. Example: to search
      *   `additional_attributes = { dnsName: "foobar" }`, you can issue a query
      *   `foobar`.
@@ -6023,11 +7060,14 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * references and supported searchable
      * attributes](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types)
      * to see which fields are included.
+     *
      * You can search values of these fields through free text search. However,
      * you should not consume the field programically as the field names and
      * values may change as the Google Cloud service updates to a new incompatible
      * API version.
+     *
      * To search against the `additional_attributes`:
+     *
      * * Use a free text query to match the attributes values. Example: to search
      *   `additional_attributes = { dnsName: "foobar" }`, you can issue a query
      *   `foobar`.
@@ -6058,11 +7098,14 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * references and supported searchable
      * attributes](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types)
      * to see which fields are included.
+     *
      * You can search values of these fields through free text search. However,
      * you should not consume the field programically as the field names and
      * values may change as the Google Cloud service updates to a new incompatible
      * API version.
+     *
      * To search against the `additional_attributes`:
+     *
      * * Use a free text query to match the attributes values. Example: to search
      *   `additional_attributes = { dnsName: "foobar" }`, you can issue a query
      *   `foobar`.
@@ -6095,11 +7138,14 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * references and supported searchable
      * attributes](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types)
      * to see which fields are included.
+     *
      * You can search values of these fields through free text search. However,
      * you should not consume the field programically as the field names and
      * values may change as the Google Cloud service updates to a new incompatible
      * API version.
+     *
      * To search against the `additional_attributes`:
+     *
      * * Use a free text query to match the attributes values. Example: to search
      *   `additional_attributes = { dnsName: "foobar" }`, you can issue a query
      *   `foobar`.
@@ -6129,11 +7175,14 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * references and supported searchable
      * attributes](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types)
      * to see which fields are included.
+     *
      * You can search values of these fields through free text search. However,
      * you should not consume the field programically as the field names and
      * values may change as the Google Cloud service updates to a new incompatible
      * API version.
+     *
      * To search against the `additional_attributes`:
+     *
      * * Use a free text query to match the attributes values. Example: to search
      *   `additional_attributes = { dnsName: "foobar" }`, you can issue a query
      *   `foobar`.
@@ -6169,11 +7218,14 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * references and supported searchable
      * attributes](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types)
      * to see which fields are included.
+     *
      * You can search values of these fields through free text search. However,
      * you should not consume the field programically as the field names and
      * values may change as the Google Cloud service updates to a new incompatible
      * API version.
+     *
      * To search against the `additional_attributes`:
+     *
      * * Use a free text query to match the attributes values. Example: to search
      *   `additional_attributes = { dnsName: "foobar" }`, you can issue a query
      *   `foobar`.
@@ -6203,11 +7255,14 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * references and supported searchable
      * attributes](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types)
      * to see which fields are included.
+     *
      * You can search values of these fields through free text search. However,
      * you should not consume the field programically as the field names and
      * values may change as the Google Cloud service updates to a new incompatible
      * API version.
+     *
      * To search against the `additional_attributes`:
+     *
      * * Use a free text query to match the attributes values. Example: to search
      *   `additional_attributes = { dnsName: "foobar" }`, you can issue a query
      *   `foobar`.
@@ -6232,11 +7287,14 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * references and supported searchable
      * attributes](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types)
      * to see which fields are included.
+     *
      * You can search values of these fields through free text search. However,
      * you should not consume the field programically as the field names and
      * values may change as the Google Cloud service updates to a new incompatible
      * API version.
+     *
      * To search against the `additional_attributes`:
+     *
      * * Use a free text query to match the attributes values. Example: to search
      *   `additional_attributes = { dnsName: "foobar" }`, you can issue a query
      *   `foobar`.
@@ -6265,11 +7323,14 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * references and supported searchable
      * attributes](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types)
      * to see which fields are included.
+     *
      * You can search values of these fields through free text search. However,
      * you should not consume the field programically as the field names and
      * values may change as the Google Cloud service updates to a new incompatible
      * API version.
+     *
      * To search against the `additional_attributes`:
+     *
      * * Use a free text query to match the attributes values. Example: to search
      *   `additional_attributes = { dnsName: "foobar" }`, you can issue a query
      *   `foobar`.
@@ -6301,6 +7362,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <pre>
      * The full resource name of this resource's parent, if it has one.
      * To search against the `parent_full_resource_name`:
+     *
      * * Use a field query. Example:
      * `parentFullResourceName:"project-name"`
      * * Use a free text query. Example:
@@ -6328,6 +7390,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <pre>
      * The full resource name of this resource's parent, if it has one.
      * To search against the `parent_full_resource_name`:
+     *
      * * Use a field query. Example:
      * `parentFullResourceName:"project-name"`
      * * Use a free text query. Example:
@@ -6355,6 +7418,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <pre>
      * The full resource name of this resource's parent, if it has one.
      * To search against the `parent_full_resource_name`:
+     *
      * * Use a field query. Example:
      * `parentFullResourceName:"project-name"`
      * * Use a free text query. Example:
@@ -6381,6 +7445,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <pre>
      * The full resource name of this resource's parent, if it has one.
      * To search against the `parent_full_resource_name`:
+     *
      * * Use a field query. Example:
      * `parentFullResourceName:"project-name"`
      * * Use a free text query. Example:
@@ -6403,6 +7468,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <pre>
      * The full resource name of this resource's parent, if it has one.
      * To search against the `parent_full_resource_name`:
+     *
      * * Use a field query. Example:
      * `parentFullResourceName:"project-name"`
      * * Use a free text query. Example:
@@ -6450,6 +7516,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * Versioned resource representations of this resource. This is repeated
      * because there could be multiple versions of resource representations during
      * version migration.
+     *
      * This `versioned_resources` field is not searchable. Some attributes of the
      * resource representations are exposed in `additional_attributes` field, so
      * as to allow users to search on them.
@@ -6471,6 +7538,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * Versioned resource representations of this resource. This is repeated
      * because there could be multiple versions of resource representations during
      * version migration.
+     *
      * This `versioned_resources` field is not searchable. Some attributes of the
      * resource representations are exposed in `additional_attributes` field, so
      * as to allow users to search on them.
@@ -6492,6 +7560,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * Versioned resource representations of this resource. This is repeated
      * because there could be multiple versions of resource representations during
      * version migration.
+     *
      * This `versioned_resources` field is not searchable. Some attributes of the
      * resource representations are exposed in `additional_attributes` field, so
      * as to allow users to search on them.
@@ -6513,6 +7582,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * Versioned resource representations of this resource. This is repeated
      * because there could be multiple versions of resource representations during
      * version migration.
+     *
      * This `versioned_resources` field is not searchable. Some attributes of the
      * resource representations are exposed in `additional_attributes` field, so
      * as to allow users to search on them.
@@ -6541,6 +7611,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * Versioned resource representations of this resource. This is repeated
      * because there could be multiple versions of resource representations during
      * version migration.
+     *
      * This `versioned_resources` field is not searchable. Some attributes of the
      * resource representations are exposed in `additional_attributes` field, so
      * as to allow users to search on them.
@@ -6566,6 +7637,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * Versioned resource representations of this resource. This is repeated
      * because there could be multiple versions of resource representations during
      * version migration.
+     *
      * This `versioned_resources` field is not searchable. Some attributes of the
      * resource representations are exposed in `additional_attributes` field, so
      * as to allow users to search on them.
@@ -6593,6 +7665,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * Versioned resource representations of this resource. This is repeated
      * because there could be multiple versions of resource representations during
      * version migration.
+     *
      * This `versioned_resources` field is not searchable. Some attributes of the
      * resource representations are exposed in `additional_attributes` field, so
      * as to allow users to search on them.
@@ -6621,6 +7694,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * Versioned resource representations of this resource. This is repeated
      * because there could be multiple versions of resource representations during
      * version migration.
+     *
      * This `versioned_resources` field is not searchable. Some attributes of the
      * resource representations are exposed in `additional_attributes` field, so
      * as to allow users to search on them.
@@ -6646,6 +7720,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * Versioned resource representations of this resource. This is repeated
      * because there could be multiple versions of resource representations during
      * version migration.
+     *
      * This `versioned_resources` field is not searchable. Some attributes of the
      * resource representations are exposed in `additional_attributes` field, so
      * as to allow users to search on them.
@@ -6671,6 +7746,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * Versioned resource representations of this resource. This is repeated
      * because there could be multiple versions of resource representations during
      * version migration.
+     *
      * This `versioned_resources` field is not searchable. Some attributes of the
      * resource representations are exposed in `additional_attributes` field, so
      * as to allow users to search on them.
@@ -6696,6 +7772,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * Versioned resource representations of this resource. This is repeated
      * because there could be multiple versions of resource representations during
      * version migration.
+     *
      * This `versioned_resources` field is not searchable. Some attributes of the
      * resource representations are exposed in `additional_attributes` field, so
      * as to allow users to search on them.
@@ -6720,6 +7797,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * Versioned resource representations of this resource. This is repeated
      * because there could be multiple versions of resource representations during
      * version migration.
+     *
      * This `versioned_resources` field is not searchable. Some attributes of the
      * resource representations are exposed in `additional_attributes` field, so
      * as to allow users to search on them.
@@ -6744,6 +7822,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * Versioned resource representations of this resource. This is repeated
      * because there could be multiple versions of resource representations during
      * version migration.
+     *
      * This `versioned_resources` field is not searchable. Some attributes of the
      * resource representations are exposed in `additional_attributes` field, so
      * as to allow users to search on them.
@@ -6762,6 +7841,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * Versioned resource representations of this resource. This is repeated
      * because there could be multiple versions of resource representations during
      * version migration.
+     *
      * This `versioned_resources` field is not searchable. Some attributes of the
      * resource representations are exposed in `additional_attributes` field, so
      * as to allow users to search on them.
@@ -6784,6 +7864,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * Versioned resource representations of this resource. This is repeated
      * because there could be multiple versions of resource representations during
      * version migration.
+     *
      * This `versioned_resources` field is not searchable. Some attributes of the
      * resource representations are exposed in `additional_attributes` field, so
      * as to allow users to search on them.
@@ -6806,6 +7887,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * Versioned resource representations of this resource. This is repeated
      * because there could be multiple versions of resource representations during
      * version migration.
+     *
      * This `versioned_resources` field is not searchable. Some attributes of the
      * resource representations are exposed in `additional_attributes` field, so
      * as to allow users to search on them.
@@ -6824,6 +7906,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * Versioned resource representations of this resource. This is repeated
      * because there could be multiple versions of resource representations during
      * version migration.
+     *
      * This `versioned_resources` field is not searchable. Some attributes of the
      * resource representations are exposed in `additional_attributes` field, so
      * as to allow users to search on them.
@@ -6843,6 +7926,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * Versioned resource representations of this resource. This is repeated
      * because there could be multiple versions of resource representations during
      * version migration.
+     *
      * This `versioned_resources` field is not searchable. Some attributes of the
      * resource representations are exposed in `additional_attributes` field, so
      * as to allow users to search on them.
@@ -6899,6 +7983,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * Attached resources of this resource. For example, an OSConfig
      * Inventory is an attached resource of a Compute Instance. This field is
      * repeated because a resource could have multiple attached resources.
+     *
      * This `attached_resources` field is not searchable. Some attributes
      * of the attached resources are exposed in `additional_attributes` field, so
      * as to allow users to search on them.
@@ -6920,6 +8005,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * Attached resources of this resource. For example, an OSConfig
      * Inventory is an attached resource of a Compute Instance. This field is
      * repeated because a resource could have multiple attached resources.
+     *
      * This `attached_resources` field is not searchable. Some attributes
      * of the attached resources are exposed in `additional_attributes` field, so
      * as to allow users to search on them.
@@ -6941,6 +8027,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * Attached resources of this resource. For example, an OSConfig
      * Inventory is an attached resource of a Compute Instance. This field is
      * repeated because a resource could have multiple attached resources.
+     *
      * This `attached_resources` field is not searchable. Some attributes
      * of the attached resources are exposed in `additional_attributes` field, so
      * as to allow users to search on them.
@@ -6962,6 +8049,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * Attached resources of this resource. For example, an OSConfig
      * Inventory is an attached resource of a Compute Instance. This field is
      * repeated because a resource could have multiple attached resources.
+     *
      * This `attached_resources` field is not searchable. Some attributes
      * of the attached resources are exposed in `additional_attributes` field, so
      * as to allow users to search on them.
@@ -6990,6 +8078,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * Attached resources of this resource. For example, an OSConfig
      * Inventory is an attached resource of a Compute Instance. This field is
      * repeated because a resource could have multiple attached resources.
+     *
      * This `attached_resources` field is not searchable. Some attributes
      * of the attached resources are exposed in `additional_attributes` field, so
      * as to allow users to search on them.
@@ -7015,6 +8104,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * Attached resources of this resource. For example, an OSConfig
      * Inventory is an attached resource of a Compute Instance. This field is
      * repeated because a resource could have multiple attached resources.
+     *
      * This `attached_resources` field is not searchable. Some attributes
      * of the attached resources are exposed in `additional_attributes` field, so
      * as to allow users to search on them.
@@ -7042,6 +8132,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * Attached resources of this resource. For example, an OSConfig
      * Inventory is an attached resource of a Compute Instance. This field is
      * repeated because a resource could have multiple attached resources.
+     *
      * This `attached_resources` field is not searchable. Some attributes
      * of the attached resources are exposed in `additional_attributes` field, so
      * as to allow users to search on them.
@@ -7070,6 +8161,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * Attached resources of this resource. For example, an OSConfig
      * Inventory is an attached resource of a Compute Instance. This field is
      * repeated because a resource could have multiple attached resources.
+     *
      * This `attached_resources` field is not searchable. Some attributes
      * of the attached resources are exposed in `additional_attributes` field, so
      * as to allow users to search on them.
@@ -7095,6 +8187,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * Attached resources of this resource. For example, an OSConfig
      * Inventory is an attached resource of a Compute Instance. This field is
      * repeated because a resource could have multiple attached resources.
+     *
      * This `attached_resources` field is not searchable. Some attributes
      * of the attached resources are exposed in `additional_attributes` field, so
      * as to allow users to search on them.
@@ -7120,6 +8213,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * Attached resources of this resource. For example, an OSConfig
      * Inventory is an attached resource of a Compute Instance. This field is
      * repeated because a resource could have multiple attached resources.
+     *
      * This `attached_resources` field is not searchable. Some attributes
      * of the attached resources are exposed in `additional_attributes` field, so
      * as to allow users to search on them.
@@ -7145,6 +8239,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * Attached resources of this resource. For example, an OSConfig
      * Inventory is an attached resource of a Compute Instance. This field is
      * repeated because a resource could have multiple attached resources.
+     *
      * This `attached_resources` field is not searchable. Some attributes
      * of the attached resources are exposed in `additional_attributes` field, so
      * as to allow users to search on them.
@@ -7169,6 +8264,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * Attached resources of this resource. For example, an OSConfig
      * Inventory is an attached resource of a Compute Instance. This field is
      * repeated because a resource could have multiple attached resources.
+     *
      * This `attached_resources` field is not searchable. Some attributes
      * of the attached resources are exposed in `additional_attributes` field, so
      * as to allow users to search on them.
@@ -7193,6 +8289,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * Attached resources of this resource. For example, an OSConfig
      * Inventory is an attached resource of a Compute Instance. This field is
      * repeated because a resource could have multiple attached resources.
+     *
      * This `attached_resources` field is not searchable. Some attributes
      * of the attached resources are exposed in `additional_attributes` field, so
      * as to allow users to search on them.
@@ -7211,6 +8308,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * Attached resources of this resource. For example, an OSConfig
      * Inventory is an attached resource of a Compute Instance. This field is
      * repeated because a resource could have multiple attached resources.
+     *
      * This `attached_resources` field is not searchable. Some attributes
      * of the attached resources are exposed in `additional_attributes` field, so
      * as to allow users to search on them.
@@ -7233,6 +8331,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * Attached resources of this resource. For example, an OSConfig
      * Inventory is an attached resource of a Compute Instance. This field is
      * repeated because a resource could have multiple attached resources.
+     *
      * This `attached_resources` field is not searchable. Some attributes
      * of the attached resources are exposed in `additional_attributes` field, so
      * as to allow users to search on them.
@@ -7255,6 +8354,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * Attached resources of this resource. For example, an OSConfig
      * Inventory is an attached resource of a Compute Instance. This field is
      * repeated because a resource could have multiple attached resources.
+     *
      * This `attached_resources` field is not searchable. Some attributes
      * of the attached resources are exposed in `additional_attributes` field, so
      * as to allow users to search on them.
@@ -7273,6 +8373,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * Attached resources of this resource. For example, an OSConfig
      * Inventory is an attached resource of a Compute Instance. This field is
      * repeated because a resource could have multiple attached resources.
+     *
      * This `attached_resources` field is not searchable. Some attributes
      * of the attached resources are exposed in `additional_attributes` field, so
      * as to allow users to search on them.
@@ -7292,6 +8393,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * Attached resources of this resource. For example, an OSConfig
      * Inventory is an attached resource of a Compute Instance. This field is
      * repeated because a resource could have multiple attached resources.
+     *
      * This `attached_resources` field is not searchable. Some attributes
      * of the attached resources are exposed in `additional_attributes` field, so
      * as to allow users to search on them.
@@ -7537,54 +8639,71 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       return this;
     }
 
-    private com.google.protobuf.LazyStringList tagKeys_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList tagKeys_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureTagKeysIsMutable() {
-      if (!((bitField0_ & 0x00100000) != 0)) {
+      if (!tagKeys_.isModifiable()) {
         tagKeys_ = new com.google.protobuf.LazyStringArrayList(tagKeys_);
-        bitField0_ |= 0x00100000;
       }
+      bitField0_ |= 0x00100000;
     }
     /**
      *
      *
      * <pre>
+     * This field is only present for the purpose of backward compatibility.
+     * Please use the `tags` field instead.
+     *
      * TagKey namespaced names, in the format of {ORG_ID}/{TAG_KEY_SHORT_NAME}.
      * To search against the `tagKeys`:
+     *
      * * Use a field query. Example:
      *     - `tagKeys:"123456789/env*"`
      *     - `tagKeys="123456789/env"`
      *     - `tagKeys:"env"`
+     *
      * * Use a free text query. Example:
      *     - `env`
      * </pre>
      *
-     * <code>repeated string tag_keys = 23;</code>
+     * <code>repeated string tag_keys = 23 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_keys is deprecated. See
+     *     google/cloud/asset/v1/assets.proto;l=604
      * @return A list containing the tagKeys.
      */
+    @java.lang.Deprecated
     public com.google.protobuf.ProtocolStringList getTagKeysList() {
-      return tagKeys_.getUnmodifiableView();
+      tagKeys_.makeImmutable();
+      return tagKeys_;
     }
     /**
      *
      *
      * <pre>
+     * This field is only present for the purpose of backward compatibility.
+     * Please use the `tags` field instead.
+     *
      * TagKey namespaced names, in the format of {ORG_ID}/{TAG_KEY_SHORT_NAME}.
      * To search against the `tagKeys`:
+     *
      * * Use a field query. Example:
      *     - `tagKeys:"123456789/env*"`
      *     - `tagKeys="123456789/env"`
      *     - `tagKeys:"env"`
+     *
      * * Use a free text query. Example:
      *     - `env`
      * </pre>
      *
-     * <code>repeated string tag_keys = 23;</code>
+     * <code>repeated string tag_keys = 23 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_keys is deprecated. See
+     *     google/cloud/asset/v1/assets.proto;l=604
      * @return The count of tagKeys.
      */
+    @java.lang.Deprecated
     public int getTagKeysCount() {
       return tagKeys_.size();
     }
@@ -7592,21 +8711,29 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
+     * This field is only present for the purpose of backward compatibility.
+     * Please use the `tags` field instead.
+     *
      * TagKey namespaced names, in the format of {ORG_ID}/{TAG_KEY_SHORT_NAME}.
      * To search against the `tagKeys`:
+     *
      * * Use a field query. Example:
      *     - `tagKeys:"123456789/env*"`
      *     - `tagKeys="123456789/env"`
      *     - `tagKeys:"env"`
+     *
      * * Use a free text query. Example:
      *     - `env`
      * </pre>
      *
-     * <code>repeated string tag_keys = 23;</code>
+     * <code>repeated string tag_keys = 23 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_keys is deprecated. See
+     *     google/cloud/asset/v1/assets.proto;l=604
      * @param index The index of the element to return.
      * @return The tagKeys at the given index.
      */
+    @java.lang.Deprecated
     public java.lang.String getTagKeys(int index) {
       return tagKeys_.get(index);
     }
@@ -7614,21 +8741,29 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
+     * This field is only present for the purpose of backward compatibility.
+     * Please use the `tags` field instead.
+     *
      * TagKey namespaced names, in the format of {ORG_ID}/{TAG_KEY_SHORT_NAME}.
      * To search against the `tagKeys`:
+     *
      * * Use a field query. Example:
      *     - `tagKeys:"123456789/env*"`
      *     - `tagKeys="123456789/env"`
      *     - `tagKeys:"env"`
+     *
      * * Use a free text query. Example:
      *     - `env`
      * </pre>
      *
-     * <code>repeated string tag_keys = 23;</code>
+     * <code>repeated string tag_keys = 23 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_keys is deprecated. See
+     *     google/cloud/asset/v1/assets.proto;l=604
      * @param index The index of the value to return.
      * @return The bytes of the tagKeys at the given index.
      */
+    @java.lang.Deprecated
     public com.google.protobuf.ByteString getTagKeysBytes(int index) {
       return tagKeys_.getByteString(index);
     }
@@ -7636,28 +8771,37 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
+     * This field is only present for the purpose of backward compatibility.
+     * Please use the `tags` field instead.
+     *
      * TagKey namespaced names, in the format of {ORG_ID}/{TAG_KEY_SHORT_NAME}.
      * To search against the `tagKeys`:
+     *
      * * Use a field query. Example:
      *     - `tagKeys:"123456789/env*"`
      *     - `tagKeys="123456789/env"`
      *     - `tagKeys:"env"`
+     *
      * * Use a free text query. Example:
      *     - `env`
      * </pre>
      *
-     * <code>repeated string tag_keys = 23;</code>
+     * <code>repeated string tag_keys = 23 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_keys is deprecated. See
+     *     google/cloud/asset/v1/assets.proto;l=604
      * @param index The index to set the value at.
      * @param value The tagKeys to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setTagKeys(int index, java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
       }
       ensureTagKeysIsMutable();
       tagKeys_.set(index, value);
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -7665,27 +8809,36 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
+     * This field is only present for the purpose of backward compatibility.
+     * Please use the `tags` field instead.
+     *
      * TagKey namespaced names, in the format of {ORG_ID}/{TAG_KEY_SHORT_NAME}.
      * To search against the `tagKeys`:
+     *
      * * Use a field query. Example:
      *     - `tagKeys:"123456789/env*"`
      *     - `tagKeys="123456789/env"`
      *     - `tagKeys:"env"`
+     *
      * * Use a free text query. Example:
      *     - `env`
      * </pre>
      *
-     * <code>repeated string tag_keys = 23;</code>
+     * <code>repeated string tag_keys = 23 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_keys is deprecated. See
+     *     google/cloud/asset/v1/assets.proto;l=604
      * @param value The tagKeys to add.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder addTagKeys(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
       }
       ensureTagKeysIsMutable();
       tagKeys_.add(value);
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -7693,24 +8846,33 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
+     * This field is only present for the purpose of backward compatibility.
+     * Please use the `tags` field instead.
+     *
      * TagKey namespaced names, in the format of {ORG_ID}/{TAG_KEY_SHORT_NAME}.
      * To search against the `tagKeys`:
+     *
      * * Use a field query. Example:
      *     - `tagKeys:"123456789/env*"`
      *     - `tagKeys="123456789/env"`
      *     - `tagKeys:"env"`
+     *
      * * Use a free text query. Example:
      *     - `env`
      * </pre>
      *
-     * <code>repeated string tag_keys = 23;</code>
+     * <code>repeated string tag_keys = 23 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_keys is deprecated. See
+     *     google/cloud/asset/v1/assets.proto;l=604
      * @param values The tagKeys to add.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder addAllTagKeys(java.lang.Iterable<java.lang.String> values) {
       ensureTagKeysIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, tagKeys_);
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -7718,23 +8880,32 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
+     * This field is only present for the purpose of backward compatibility.
+     * Please use the `tags` field instead.
+     *
      * TagKey namespaced names, in the format of {ORG_ID}/{TAG_KEY_SHORT_NAME}.
      * To search against the `tagKeys`:
+     *
      * * Use a field query. Example:
      *     - `tagKeys:"123456789/env*"`
      *     - `tagKeys="123456789/env"`
      *     - `tagKeys:"env"`
+     *
      * * Use a free text query. Example:
      *     - `env`
      * </pre>
      *
-     * <code>repeated string tag_keys = 23;</code>
+     * <code>repeated string tag_keys = 23 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_keys is deprecated. See
+     *     google/cloud/asset/v1/assets.proto;l=604
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearTagKeys() {
-      tagKeys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      tagKeys_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00100000);
+      ;
       onChanged();
       return this;
     }
@@ -7742,21 +8913,29 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
+     * This field is only present for the purpose of backward compatibility.
+     * Please use the `tags` field instead.
+     *
      * TagKey namespaced names, in the format of {ORG_ID}/{TAG_KEY_SHORT_NAME}.
      * To search against the `tagKeys`:
+     *
      * * Use a field query. Example:
      *     - `tagKeys:"123456789/env*"`
      *     - `tagKeys="123456789/env"`
      *     - `tagKeys:"env"`
+     *
      * * Use a free text query. Example:
      *     - `env`
      * </pre>
      *
-     * <code>repeated string tag_keys = 23;</code>
+     * <code>repeated string tag_keys = 23 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_keys is deprecated. See
+     *     google/cloud/asset/v1/assets.proto;l=604
      * @param value The bytes of the tagKeys to add.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder addTagKeysBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();
@@ -7764,62 +8943,80 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       checkByteStringIsUtf8(value);
       ensureTagKeysIsMutable();
       tagKeys_.add(value);
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList tagValues_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList tagValues_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureTagValuesIsMutable() {
-      if (!((bitField0_ & 0x00200000) != 0)) {
+      if (!tagValues_.isModifiable()) {
         tagValues_ = new com.google.protobuf.LazyStringArrayList(tagValues_);
-        bitField0_ |= 0x00200000;
       }
+      bitField0_ |= 0x00200000;
     }
     /**
      *
      *
      * <pre>
+     * This field is only present for the purpose of backward compatibility.
+     * Please use the `tags` field instead.
+     *
      * TagValue namespaced names, in the format of
      * {ORG_ID}/{TAG_KEY_SHORT_NAME}/{TAG_VALUE_SHORT_NAME}.
      * To search against the `tagValues`:
+     *
      * * Use a field query. Example:
      *     - `tagValues:"env"`
      *     - `tagValues:"env/prod"`
      *     - `tagValues:"123456789/env/prod*"`
      *     - `tagValues="123456789/env/prod"`
+     *
      * * Use a free text query. Example:
      *     - `prod`
      * </pre>
      *
-     * <code>repeated string tag_values = 25;</code>
+     * <code>repeated string tag_values = 25 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_values is deprecated. See
+     *     google/cloud/asset/v1/assets.proto;l=621
      * @return A list containing the tagValues.
      */
+    @java.lang.Deprecated
     public com.google.protobuf.ProtocolStringList getTagValuesList() {
-      return tagValues_.getUnmodifiableView();
+      tagValues_.makeImmutable();
+      return tagValues_;
     }
     /**
      *
      *
      * <pre>
+     * This field is only present for the purpose of backward compatibility.
+     * Please use the `tags` field instead.
+     *
      * TagValue namespaced names, in the format of
      * {ORG_ID}/{TAG_KEY_SHORT_NAME}/{TAG_VALUE_SHORT_NAME}.
      * To search against the `tagValues`:
+     *
      * * Use a field query. Example:
      *     - `tagValues:"env"`
      *     - `tagValues:"env/prod"`
      *     - `tagValues:"123456789/env/prod*"`
      *     - `tagValues="123456789/env/prod"`
+     *
      * * Use a free text query. Example:
      *     - `prod`
      * </pre>
      *
-     * <code>repeated string tag_values = 25;</code>
+     * <code>repeated string tag_values = 25 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_values is deprecated. See
+     *     google/cloud/asset/v1/assets.proto;l=621
      * @return The count of tagValues.
      */
+    @java.lang.Deprecated
     public int getTagValuesCount() {
       return tagValues_.size();
     }
@@ -7827,23 +9024,31 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
+     * This field is only present for the purpose of backward compatibility.
+     * Please use the `tags` field instead.
+     *
      * TagValue namespaced names, in the format of
      * {ORG_ID}/{TAG_KEY_SHORT_NAME}/{TAG_VALUE_SHORT_NAME}.
      * To search against the `tagValues`:
+     *
      * * Use a field query. Example:
      *     - `tagValues:"env"`
      *     - `tagValues:"env/prod"`
      *     - `tagValues:"123456789/env/prod*"`
      *     - `tagValues="123456789/env/prod"`
+     *
      * * Use a free text query. Example:
      *     - `prod`
      * </pre>
      *
-     * <code>repeated string tag_values = 25;</code>
+     * <code>repeated string tag_values = 25 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_values is deprecated. See
+     *     google/cloud/asset/v1/assets.proto;l=621
      * @param index The index of the element to return.
      * @return The tagValues at the given index.
      */
+    @java.lang.Deprecated
     public java.lang.String getTagValues(int index) {
       return tagValues_.get(index);
     }
@@ -7851,23 +9056,31 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
+     * This field is only present for the purpose of backward compatibility.
+     * Please use the `tags` field instead.
+     *
      * TagValue namespaced names, in the format of
      * {ORG_ID}/{TAG_KEY_SHORT_NAME}/{TAG_VALUE_SHORT_NAME}.
      * To search against the `tagValues`:
+     *
      * * Use a field query. Example:
      *     - `tagValues:"env"`
      *     - `tagValues:"env/prod"`
      *     - `tagValues:"123456789/env/prod*"`
      *     - `tagValues="123456789/env/prod"`
+     *
      * * Use a free text query. Example:
      *     - `prod`
      * </pre>
      *
-     * <code>repeated string tag_values = 25;</code>
+     * <code>repeated string tag_values = 25 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_values is deprecated. See
+     *     google/cloud/asset/v1/assets.proto;l=621
      * @param index The index of the value to return.
      * @return The bytes of the tagValues at the given index.
      */
+    @java.lang.Deprecated
     public com.google.protobuf.ByteString getTagValuesBytes(int index) {
       return tagValues_.getByteString(index);
     }
@@ -7875,30 +9088,39 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
+     * This field is only present for the purpose of backward compatibility.
+     * Please use the `tags` field instead.
+     *
      * TagValue namespaced names, in the format of
      * {ORG_ID}/{TAG_KEY_SHORT_NAME}/{TAG_VALUE_SHORT_NAME}.
      * To search against the `tagValues`:
+     *
      * * Use a field query. Example:
      *     - `tagValues:"env"`
      *     - `tagValues:"env/prod"`
      *     - `tagValues:"123456789/env/prod*"`
      *     - `tagValues="123456789/env/prod"`
+     *
      * * Use a free text query. Example:
      *     - `prod`
      * </pre>
      *
-     * <code>repeated string tag_values = 25;</code>
+     * <code>repeated string tag_values = 25 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_values is deprecated. See
+     *     google/cloud/asset/v1/assets.proto;l=621
      * @param index The index to set the value at.
      * @param value The tagValues to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setTagValues(int index, java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
       }
       ensureTagValuesIsMutable();
       tagValues_.set(index, value);
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -7906,29 +9128,38 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
+     * This field is only present for the purpose of backward compatibility.
+     * Please use the `tags` field instead.
+     *
      * TagValue namespaced names, in the format of
      * {ORG_ID}/{TAG_KEY_SHORT_NAME}/{TAG_VALUE_SHORT_NAME}.
      * To search against the `tagValues`:
+     *
      * * Use a field query. Example:
      *     - `tagValues:"env"`
      *     - `tagValues:"env/prod"`
      *     - `tagValues:"123456789/env/prod*"`
      *     - `tagValues="123456789/env/prod"`
+     *
      * * Use a free text query. Example:
      *     - `prod`
      * </pre>
      *
-     * <code>repeated string tag_values = 25;</code>
+     * <code>repeated string tag_values = 25 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_values is deprecated. See
+     *     google/cloud/asset/v1/assets.proto;l=621
      * @param value The tagValues to add.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder addTagValues(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
       }
       ensureTagValuesIsMutable();
       tagValues_.add(value);
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -7936,26 +9167,35 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
+     * This field is only present for the purpose of backward compatibility.
+     * Please use the `tags` field instead.
+     *
      * TagValue namespaced names, in the format of
      * {ORG_ID}/{TAG_KEY_SHORT_NAME}/{TAG_VALUE_SHORT_NAME}.
      * To search against the `tagValues`:
+     *
      * * Use a field query. Example:
      *     - `tagValues:"env"`
      *     - `tagValues:"env/prod"`
      *     - `tagValues:"123456789/env/prod*"`
      *     - `tagValues="123456789/env/prod"`
+     *
      * * Use a free text query. Example:
      *     - `prod`
      * </pre>
      *
-     * <code>repeated string tag_values = 25;</code>
+     * <code>repeated string tag_values = 25 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_values is deprecated. See
+     *     google/cloud/asset/v1/assets.proto;l=621
      * @param values The tagValues to add.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder addAllTagValues(java.lang.Iterable<java.lang.String> values) {
       ensureTagValuesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, tagValues_);
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -7963,25 +9203,34 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
+     * This field is only present for the purpose of backward compatibility.
+     * Please use the `tags` field instead.
+     *
      * TagValue namespaced names, in the format of
      * {ORG_ID}/{TAG_KEY_SHORT_NAME}/{TAG_VALUE_SHORT_NAME}.
      * To search against the `tagValues`:
+     *
      * * Use a field query. Example:
      *     - `tagValues:"env"`
      *     - `tagValues:"env/prod"`
      *     - `tagValues:"123456789/env/prod*"`
      *     - `tagValues="123456789/env/prod"`
+     *
      * * Use a free text query. Example:
      *     - `prod`
      * </pre>
      *
-     * <code>repeated string tag_values = 25;</code>
+     * <code>repeated string tag_values = 25 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_values is deprecated. See
+     *     google/cloud/asset/v1/assets.proto;l=621
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearTagValues() {
-      tagValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      tagValues_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00200000);
+      ;
       onChanged();
       return this;
     }
@@ -7989,23 +9238,31 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
+     * This field is only present for the purpose of backward compatibility.
+     * Please use the `tags` field instead.
+     *
      * TagValue namespaced names, in the format of
      * {ORG_ID}/{TAG_KEY_SHORT_NAME}/{TAG_VALUE_SHORT_NAME}.
      * To search against the `tagValues`:
+     *
      * * Use a field query. Example:
      *     - `tagValues:"env"`
      *     - `tagValues:"env/prod"`
      *     - `tagValues:"123456789/env/prod*"`
      *     - `tagValues="123456789/env/prod"`
+     *
      * * Use a free text query. Example:
      *     - `prod`
      * </pre>
      *
-     * <code>repeated string tag_values = 25;</code>
+     * <code>repeated string tag_values = 25 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_values is deprecated. See
+     *     google/cloud/asset/v1/assets.proto;l=621
      * @param value The bytes of the tagValues to add.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder addTagValuesBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();
@@ -8013,56 +9270,72 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       checkByteStringIsUtf8(value);
       ensureTagValuesIsMutable();
       tagValues_.add(value);
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList tagValueIds_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList tagValueIds_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureTagValueIdsIsMutable() {
-      if (!((bitField0_ & 0x00400000) != 0)) {
+      if (!tagValueIds_.isModifiable()) {
         tagValueIds_ = new com.google.protobuf.LazyStringArrayList(tagValueIds_);
-        bitField0_ |= 0x00400000;
       }
+      bitField0_ |= 0x00400000;
     }
     /**
      *
      *
      * <pre>
+     * This field is only present for the purpose of backward compatibility.
+     * Please use the `tags` field instead.
+     *
      * TagValue IDs, in the format of tagValues/{TAG_VALUE_ID}.
      * To search against the `tagValueIds`:
+     *
      * * Use a field query. Example:
-     *     - `tagValueIds:"456"`
      *     - `tagValueIds="tagValues/456"`
+     *
      * * Use a free text query. Example:
      *     - `456`
      * </pre>
      *
-     * <code>repeated string tag_value_ids = 26;</code>
+     * <code>repeated string tag_value_ids = 26 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_value_ids is deprecated. See
+     *     google/cloud/asset/v1/assets.proto;l=634
      * @return A list containing the tagValueIds.
      */
+    @java.lang.Deprecated
     public com.google.protobuf.ProtocolStringList getTagValueIdsList() {
-      return tagValueIds_.getUnmodifiableView();
+      tagValueIds_.makeImmutable();
+      return tagValueIds_;
     }
     /**
      *
      *
      * <pre>
+     * This field is only present for the purpose of backward compatibility.
+     * Please use the `tags` field instead.
+     *
      * TagValue IDs, in the format of tagValues/{TAG_VALUE_ID}.
      * To search against the `tagValueIds`:
+     *
      * * Use a field query. Example:
-     *     - `tagValueIds:"456"`
      *     - `tagValueIds="tagValues/456"`
+     *
      * * Use a free text query. Example:
      *     - `456`
      * </pre>
      *
-     * <code>repeated string tag_value_ids = 26;</code>
+     * <code>repeated string tag_value_ids = 26 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_value_ids is deprecated. See
+     *     google/cloud/asset/v1/assets.proto;l=634
      * @return The count of tagValueIds.
      */
+    @java.lang.Deprecated
     public int getTagValueIdsCount() {
       return tagValueIds_.size();
     }
@@ -8070,20 +9343,27 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
+     * This field is only present for the purpose of backward compatibility.
+     * Please use the `tags` field instead.
+     *
      * TagValue IDs, in the format of tagValues/{TAG_VALUE_ID}.
      * To search against the `tagValueIds`:
+     *
      * * Use a field query. Example:
-     *     - `tagValueIds:"456"`
      *     - `tagValueIds="tagValues/456"`
+     *
      * * Use a free text query. Example:
      *     - `456`
      * </pre>
      *
-     * <code>repeated string tag_value_ids = 26;</code>
+     * <code>repeated string tag_value_ids = 26 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_value_ids is deprecated. See
+     *     google/cloud/asset/v1/assets.proto;l=634
      * @param index The index of the element to return.
      * @return The tagValueIds at the given index.
      */
+    @java.lang.Deprecated
     public java.lang.String getTagValueIds(int index) {
       return tagValueIds_.get(index);
     }
@@ -8091,20 +9371,27 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
+     * This field is only present for the purpose of backward compatibility.
+     * Please use the `tags` field instead.
+     *
      * TagValue IDs, in the format of tagValues/{TAG_VALUE_ID}.
      * To search against the `tagValueIds`:
+     *
      * * Use a field query. Example:
-     *     - `tagValueIds:"456"`
      *     - `tagValueIds="tagValues/456"`
+     *
      * * Use a free text query. Example:
      *     - `456`
      * </pre>
      *
-     * <code>repeated string tag_value_ids = 26;</code>
+     * <code>repeated string tag_value_ids = 26 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_value_ids is deprecated. See
+     *     google/cloud/asset/v1/assets.proto;l=634
      * @param index The index of the value to return.
      * @return The bytes of the tagValueIds at the given index.
      */
+    @java.lang.Deprecated
     public com.google.protobuf.ByteString getTagValueIdsBytes(int index) {
       return tagValueIds_.getByteString(index);
     }
@@ -8112,27 +9399,35 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
+     * This field is only present for the purpose of backward compatibility.
+     * Please use the `tags` field instead.
+     *
      * TagValue IDs, in the format of tagValues/{TAG_VALUE_ID}.
      * To search against the `tagValueIds`:
+     *
      * * Use a field query. Example:
-     *     - `tagValueIds:"456"`
      *     - `tagValueIds="tagValues/456"`
+     *
      * * Use a free text query. Example:
      *     - `456`
      * </pre>
      *
-     * <code>repeated string tag_value_ids = 26;</code>
+     * <code>repeated string tag_value_ids = 26 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_value_ids is deprecated. See
+     *     google/cloud/asset/v1/assets.proto;l=634
      * @param index The index to set the value at.
      * @param value The tagValueIds to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setTagValueIds(int index, java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
       }
       ensureTagValueIdsIsMutable();
       tagValueIds_.set(index, value);
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -8140,26 +9435,34 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
+     * This field is only present for the purpose of backward compatibility.
+     * Please use the `tags` field instead.
+     *
      * TagValue IDs, in the format of tagValues/{TAG_VALUE_ID}.
      * To search against the `tagValueIds`:
+     *
      * * Use a field query. Example:
-     *     - `tagValueIds:"456"`
      *     - `tagValueIds="tagValues/456"`
+     *
      * * Use a free text query. Example:
      *     - `456`
      * </pre>
      *
-     * <code>repeated string tag_value_ids = 26;</code>
+     * <code>repeated string tag_value_ids = 26 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_value_ids is deprecated. See
+     *     google/cloud/asset/v1/assets.proto;l=634
      * @param value The tagValueIds to add.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder addTagValueIds(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
       }
       ensureTagValueIdsIsMutable();
       tagValueIds_.add(value);
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -8167,23 +9470,31 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
+     * This field is only present for the purpose of backward compatibility.
+     * Please use the `tags` field instead.
+     *
      * TagValue IDs, in the format of tagValues/{TAG_VALUE_ID}.
      * To search against the `tagValueIds`:
+     *
      * * Use a field query. Example:
-     *     - `tagValueIds:"456"`
      *     - `tagValueIds="tagValues/456"`
+     *
      * * Use a free text query. Example:
      *     - `456`
      * </pre>
      *
-     * <code>repeated string tag_value_ids = 26;</code>
+     * <code>repeated string tag_value_ids = 26 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_value_ids is deprecated. See
+     *     google/cloud/asset/v1/assets.proto;l=634
      * @param values The tagValueIds to add.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder addAllTagValueIds(java.lang.Iterable<java.lang.String> values) {
       ensureTagValueIdsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, tagValueIds_);
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -8191,22 +9502,30 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
+     * This field is only present for the purpose of backward compatibility.
+     * Please use the `tags` field instead.
+     *
      * TagValue IDs, in the format of tagValues/{TAG_VALUE_ID}.
      * To search against the `tagValueIds`:
+     *
      * * Use a field query. Example:
-     *     - `tagValueIds:"456"`
      *     - `tagValueIds="tagValues/456"`
+     *
      * * Use a free text query. Example:
      *     - `456`
      * </pre>
      *
-     * <code>repeated string tag_value_ids = 26;</code>
+     * <code>repeated string tag_value_ids = 26 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_value_ids is deprecated. See
+     *     google/cloud/asset/v1/assets.proto;l=634
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearTagValueIds() {
-      tagValueIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      tagValueIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00400000);
+      ;
       onChanged();
       return this;
     }
@@ -8214,20 +9533,27 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
+     * This field is only present for the purpose of backward compatibility.
+     * Please use the `tags` field instead.
+     *
      * TagValue IDs, in the format of tagValues/{TAG_VALUE_ID}.
      * To search against the `tagValueIds`:
+     *
      * * Use a field query. Example:
-     *     - `tagValueIds:"456"`
      *     - `tagValueIds="tagValues/456"`
+     *
      * * Use a free text query. Example:
      *     - `456`
      * </pre>
      *
-     * <code>repeated string tag_value_ids = 26;</code>
+     * <code>repeated string tag_value_ids = 26 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_value_ids is deprecated. See
+     *     google/cloud/asset/v1/assets.proto;l=634
      * @param value The bytes of the tagValueIds to add.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder addTagValueIdsBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();
@@ -8235,8 +9561,1250 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       checkByteStringIsUtf8(value);
       ensureTagValueIdsIsMutable();
       tagValueIds_.add(value);
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.google.cloud.asset.v1.Tag> tags_ = java.util.Collections.emptyList();
+
+    private void ensureTagsIsMutable() {
+      if (!((bitField0_ & 0x00800000) != 0)) {
+        tags_ = new java.util.ArrayList<com.google.cloud.asset.v1.Tag>(tags_);
+        bitField0_ |= 0x00800000;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.asset.v1.Tag,
+            com.google.cloud.asset.v1.Tag.Builder,
+            com.google.cloud.asset.v1.TagOrBuilder>
+        tagsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The tags directly attached to this resource.
+     *
+     * To search against the `tags`:
+     *
+     * * Use a field query. Example:
+     *     - `tagKeys:"123456789/env*"`
+     *     - `tagKeys="123456789/env"`
+     *     - `tagKeys:"env"`
+     *     - `tagValues:"env"`
+     *     - `tagValues:"env/prod"`
+     *     - `tagValues:"123456789/env/prod*"`
+     *     - `tagValues="123456789/env/prod"`
+     *     - `tagValueIds="tagValues/456"`
+     *
+     * * Use a free text query. Example:
+     *     - `env/prod`
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.Tag tags = 29;</code>
+     */
+    public java.util.List<com.google.cloud.asset.v1.Tag> getTagsList() {
+      if (tagsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(tags_);
+      } else {
+        return tagsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The tags directly attached to this resource.
+     *
+     * To search against the `tags`:
+     *
+     * * Use a field query. Example:
+     *     - `tagKeys:"123456789/env*"`
+     *     - `tagKeys="123456789/env"`
+     *     - `tagKeys:"env"`
+     *     - `tagValues:"env"`
+     *     - `tagValues:"env/prod"`
+     *     - `tagValues:"123456789/env/prod*"`
+     *     - `tagValues="123456789/env/prod"`
+     *     - `tagValueIds="tagValues/456"`
+     *
+     * * Use a free text query. Example:
+     *     - `env/prod`
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.Tag tags = 29;</code>
+     */
+    public int getTagsCount() {
+      if (tagsBuilder_ == null) {
+        return tags_.size();
+      } else {
+        return tagsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The tags directly attached to this resource.
+     *
+     * To search against the `tags`:
+     *
+     * * Use a field query. Example:
+     *     - `tagKeys:"123456789/env*"`
+     *     - `tagKeys="123456789/env"`
+     *     - `tagKeys:"env"`
+     *     - `tagValues:"env"`
+     *     - `tagValues:"env/prod"`
+     *     - `tagValues:"123456789/env/prod*"`
+     *     - `tagValues="123456789/env/prod"`
+     *     - `tagValueIds="tagValues/456"`
+     *
+     * * Use a free text query. Example:
+     *     - `env/prod`
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.Tag tags = 29;</code>
+     */
+    public com.google.cloud.asset.v1.Tag getTags(int index) {
+      if (tagsBuilder_ == null) {
+        return tags_.get(index);
+      } else {
+        return tagsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The tags directly attached to this resource.
+     *
+     * To search against the `tags`:
+     *
+     * * Use a field query. Example:
+     *     - `tagKeys:"123456789/env*"`
+     *     - `tagKeys="123456789/env"`
+     *     - `tagKeys:"env"`
+     *     - `tagValues:"env"`
+     *     - `tagValues:"env/prod"`
+     *     - `tagValues:"123456789/env/prod*"`
+     *     - `tagValues="123456789/env/prod"`
+     *     - `tagValueIds="tagValues/456"`
+     *
+     * * Use a free text query. Example:
+     *     - `env/prod`
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.Tag tags = 29;</code>
+     */
+    public Builder setTags(int index, com.google.cloud.asset.v1.Tag value) {
+      if (tagsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTagsIsMutable();
+        tags_.set(index, value);
+        onChanged();
+      } else {
+        tagsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The tags directly attached to this resource.
+     *
+     * To search against the `tags`:
+     *
+     * * Use a field query. Example:
+     *     - `tagKeys:"123456789/env*"`
+     *     - `tagKeys="123456789/env"`
+     *     - `tagKeys:"env"`
+     *     - `tagValues:"env"`
+     *     - `tagValues:"env/prod"`
+     *     - `tagValues:"123456789/env/prod*"`
+     *     - `tagValues="123456789/env/prod"`
+     *     - `tagValueIds="tagValues/456"`
+     *
+     * * Use a free text query. Example:
+     *     - `env/prod`
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.Tag tags = 29;</code>
+     */
+    public Builder setTags(int index, com.google.cloud.asset.v1.Tag.Builder builderForValue) {
+      if (tagsBuilder_ == null) {
+        ensureTagsIsMutable();
+        tags_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        tagsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The tags directly attached to this resource.
+     *
+     * To search against the `tags`:
+     *
+     * * Use a field query. Example:
+     *     - `tagKeys:"123456789/env*"`
+     *     - `tagKeys="123456789/env"`
+     *     - `tagKeys:"env"`
+     *     - `tagValues:"env"`
+     *     - `tagValues:"env/prod"`
+     *     - `tagValues:"123456789/env/prod*"`
+     *     - `tagValues="123456789/env/prod"`
+     *     - `tagValueIds="tagValues/456"`
+     *
+     * * Use a free text query. Example:
+     *     - `env/prod`
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.Tag tags = 29;</code>
+     */
+    public Builder addTags(com.google.cloud.asset.v1.Tag value) {
+      if (tagsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTagsIsMutable();
+        tags_.add(value);
+        onChanged();
+      } else {
+        tagsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The tags directly attached to this resource.
+     *
+     * To search against the `tags`:
+     *
+     * * Use a field query. Example:
+     *     - `tagKeys:"123456789/env*"`
+     *     - `tagKeys="123456789/env"`
+     *     - `tagKeys:"env"`
+     *     - `tagValues:"env"`
+     *     - `tagValues:"env/prod"`
+     *     - `tagValues:"123456789/env/prod*"`
+     *     - `tagValues="123456789/env/prod"`
+     *     - `tagValueIds="tagValues/456"`
+     *
+     * * Use a free text query. Example:
+     *     - `env/prod`
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.Tag tags = 29;</code>
+     */
+    public Builder addTags(int index, com.google.cloud.asset.v1.Tag value) {
+      if (tagsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTagsIsMutable();
+        tags_.add(index, value);
+        onChanged();
+      } else {
+        tagsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The tags directly attached to this resource.
+     *
+     * To search against the `tags`:
+     *
+     * * Use a field query. Example:
+     *     - `tagKeys:"123456789/env*"`
+     *     - `tagKeys="123456789/env"`
+     *     - `tagKeys:"env"`
+     *     - `tagValues:"env"`
+     *     - `tagValues:"env/prod"`
+     *     - `tagValues:"123456789/env/prod*"`
+     *     - `tagValues="123456789/env/prod"`
+     *     - `tagValueIds="tagValues/456"`
+     *
+     * * Use a free text query. Example:
+     *     - `env/prod`
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.Tag tags = 29;</code>
+     */
+    public Builder addTags(com.google.cloud.asset.v1.Tag.Builder builderForValue) {
+      if (tagsBuilder_ == null) {
+        ensureTagsIsMutable();
+        tags_.add(builderForValue.build());
+        onChanged();
+      } else {
+        tagsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The tags directly attached to this resource.
+     *
+     * To search against the `tags`:
+     *
+     * * Use a field query. Example:
+     *     - `tagKeys:"123456789/env*"`
+     *     - `tagKeys="123456789/env"`
+     *     - `tagKeys:"env"`
+     *     - `tagValues:"env"`
+     *     - `tagValues:"env/prod"`
+     *     - `tagValues:"123456789/env/prod*"`
+     *     - `tagValues="123456789/env/prod"`
+     *     - `tagValueIds="tagValues/456"`
+     *
+     * * Use a free text query. Example:
+     *     - `env/prod`
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.Tag tags = 29;</code>
+     */
+    public Builder addTags(int index, com.google.cloud.asset.v1.Tag.Builder builderForValue) {
+      if (tagsBuilder_ == null) {
+        ensureTagsIsMutable();
+        tags_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        tagsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The tags directly attached to this resource.
+     *
+     * To search against the `tags`:
+     *
+     * * Use a field query. Example:
+     *     - `tagKeys:"123456789/env*"`
+     *     - `tagKeys="123456789/env"`
+     *     - `tagKeys:"env"`
+     *     - `tagValues:"env"`
+     *     - `tagValues:"env/prod"`
+     *     - `tagValues:"123456789/env/prod*"`
+     *     - `tagValues="123456789/env/prod"`
+     *     - `tagValueIds="tagValues/456"`
+     *
+     * * Use a free text query. Example:
+     *     - `env/prod`
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.Tag tags = 29;</code>
+     */
+    public Builder addAllTags(java.lang.Iterable<? extends com.google.cloud.asset.v1.Tag> values) {
+      if (tagsBuilder_ == null) {
+        ensureTagsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, tags_);
+        onChanged();
+      } else {
+        tagsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The tags directly attached to this resource.
+     *
+     * To search against the `tags`:
+     *
+     * * Use a field query. Example:
+     *     - `tagKeys:"123456789/env*"`
+     *     - `tagKeys="123456789/env"`
+     *     - `tagKeys:"env"`
+     *     - `tagValues:"env"`
+     *     - `tagValues:"env/prod"`
+     *     - `tagValues:"123456789/env/prod*"`
+     *     - `tagValues="123456789/env/prod"`
+     *     - `tagValueIds="tagValues/456"`
+     *
+     * * Use a free text query. Example:
+     *     - `env/prod`
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.Tag tags = 29;</code>
+     */
+    public Builder clearTags() {
+      if (tagsBuilder_ == null) {
+        tags_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00800000);
+        onChanged();
+      } else {
+        tagsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The tags directly attached to this resource.
+     *
+     * To search against the `tags`:
+     *
+     * * Use a field query. Example:
+     *     - `tagKeys:"123456789/env*"`
+     *     - `tagKeys="123456789/env"`
+     *     - `tagKeys:"env"`
+     *     - `tagValues:"env"`
+     *     - `tagValues:"env/prod"`
+     *     - `tagValues:"123456789/env/prod*"`
+     *     - `tagValues="123456789/env/prod"`
+     *     - `tagValueIds="tagValues/456"`
+     *
+     * * Use a free text query. Example:
+     *     - `env/prod`
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.Tag tags = 29;</code>
+     */
+    public Builder removeTags(int index) {
+      if (tagsBuilder_ == null) {
+        ensureTagsIsMutable();
+        tags_.remove(index);
+        onChanged();
+      } else {
+        tagsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The tags directly attached to this resource.
+     *
+     * To search against the `tags`:
+     *
+     * * Use a field query. Example:
+     *     - `tagKeys:"123456789/env*"`
+     *     - `tagKeys="123456789/env"`
+     *     - `tagKeys:"env"`
+     *     - `tagValues:"env"`
+     *     - `tagValues:"env/prod"`
+     *     - `tagValues:"123456789/env/prod*"`
+     *     - `tagValues="123456789/env/prod"`
+     *     - `tagValueIds="tagValues/456"`
+     *
+     * * Use a free text query. Example:
+     *     - `env/prod`
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.Tag tags = 29;</code>
+     */
+    public com.google.cloud.asset.v1.Tag.Builder getTagsBuilder(int index) {
+      return getTagsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The tags directly attached to this resource.
+     *
+     * To search against the `tags`:
+     *
+     * * Use a field query. Example:
+     *     - `tagKeys:"123456789/env*"`
+     *     - `tagKeys="123456789/env"`
+     *     - `tagKeys:"env"`
+     *     - `tagValues:"env"`
+     *     - `tagValues:"env/prod"`
+     *     - `tagValues:"123456789/env/prod*"`
+     *     - `tagValues="123456789/env/prod"`
+     *     - `tagValueIds="tagValues/456"`
+     *
+     * * Use a free text query. Example:
+     *     - `env/prod`
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.Tag tags = 29;</code>
+     */
+    public com.google.cloud.asset.v1.TagOrBuilder getTagsOrBuilder(int index) {
+      if (tagsBuilder_ == null) {
+        return tags_.get(index);
+      } else {
+        return tagsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The tags directly attached to this resource.
+     *
+     * To search against the `tags`:
+     *
+     * * Use a field query. Example:
+     *     - `tagKeys:"123456789/env*"`
+     *     - `tagKeys="123456789/env"`
+     *     - `tagKeys:"env"`
+     *     - `tagValues:"env"`
+     *     - `tagValues:"env/prod"`
+     *     - `tagValues:"123456789/env/prod*"`
+     *     - `tagValues="123456789/env/prod"`
+     *     - `tagValueIds="tagValues/456"`
+     *
+     * * Use a free text query. Example:
+     *     - `env/prod`
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.Tag tags = 29;</code>
+     */
+    public java.util.List<? extends com.google.cloud.asset.v1.TagOrBuilder> getTagsOrBuilderList() {
+      if (tagsBuilder_ != null) {
+        return tagsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(tags_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The tags directly attached to this resource.
+     *
+     * To search against the `tags`:
+     *
+     * * Use a field query. Example:
+     *     - `tagKeys:"123456789/env*"`
+     *     - `tagKeys="123456789/env"`
+     *     - `tagKeys:"env"`
+     *     - `tagValues:"env"`
+     *     - `tagValues:"env/prod"`
+     *     - `tagValues:"123456789/env/prod*"`
+     *     - `tagValues="123456789/env/prod"`
+     *     - `tagValueIds="tagValues/456"`
+     *
+     * * Use a free text query. Example:
+     *     - `env/prod`
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.Tag tags = 29;</code>
+     */
+    public com.google.cloud.asset.v1.Tag.Builder addTagsBuilder() {
+      return getTagsFieldBuilder().addBuilder(com.google.cloud.asset.v1.Tag.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The tags directly attached to this resource.
+     *
+     * To search against the `tags`:
+     *
+     * * Use a field query. Example:
+     *     - `tagKeys:"123456789/env*"`
+     *     - `tagKeys="123456789/env"`
+     *     - `tagKeys:"env"`
+     *     - `tagValues:"env"`
+     *     - `tagValues:"env/prod"`
+     *     - `tagValues:"123456789/env/prod*"`
+     *     - `tagValues="123456789/env/prod"`
+     *     - `tagValueIds="tagValues/456"`
+     *
+     * * Use a free text query. Example:
+     *     - `env/prod`
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.Tag tags = 29;</code>
+     */
+    public com.google.cloud.asset.v1.Tag.Builder addTagsBuilder(int index) {
+      return getTagsFieldBuilder()
+          .addBuilder(index, com.google.cloud.asset.v1.Tag.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The tags directly attached to this resource.
+     *
+     * To search against the `tags`:
+     *
+     * * Use a field query. Example:
+     *     - `tagKeys:"123456789/env*"`
+     *     - `tagKeys="123456789/env"`
+     *     - `tagKeys:"env"`
+     *     - `tagValues:"env"`
+     *     - `tagValues:"env/prod"`
+     *     - `tagValues:"123456789/env/prod*"`
+     *     - `tagValues="123456789/env/prod"`
+     *     - `tagValueIds="tagValues/456"`
+     *
+     * * Use a free text query. Example:
+     *     - `env/prod`
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.Tag tags = 29;</code>
+     */
+    public java.util.List<com.google.cloud.asset.v1.Tag.Builder> getTagsBuilderList() {
+      return getTagsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.asset.v1.Tag,
+            com.google.cloud.asset.v1.Tag.Builder,
+            com.google.cloud.asset.v1.TagOrBuilder>
+        getTagsFieldBuilder() {
+      if (tagsBuilder_ == null) {
+        tagsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.asset.v1.Tag,
+                com.google.cloud.asset.v1.Tag.Builder,
+                com.google.cloud.asset.v1.TagOrBuilder>(
+                tags_, ((bitField0_ & 0x00800000) != 0), getParentForChildren(), isClean());
+        tags_ = null;
+      }
+      return tagsBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.asset.v1.EffectiveTagDetails> effectiveTags_ =
+        java.util.Collections.emptyList();
+
+    private void ensureEffectiveTagsIsMutable() {
+      if (!((bitField0_ & 0x01000000) != 0)) {
+        effectiveTags_ =
+            new java.util.ArrayList<com.google.cloud.asset.v1.EffectiveTagDetails>(effectiveTags_);
+        bitField0_ |= 0x01000000;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.asset.v1.EffectiveTagDetails,
+            com.google.cloud.asset.v1.EffectiveTagDetails.Builder,
+            com.google.cloud.asset.v1.EffectiveTagDetailsOrBuilder>
+        effectiveTagsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The effective tags on this resource. All of the tags that are both attached
+     * to and inherited by a resource are collectively called the effective
+     * tags. For more information, see [tag
+     * inheritance](https://cloud.google.com/resource-manager/docs/tags/tags-overview#inheritance).
+     *
+     * To search against the `effective_tags`:
+     *
+     * * Use a field query. Example:
+     *     - `effectiveTagKeys:"123456789/env*"`
+     *     - `effectiveTagKeys="123456789/env"`
+     *     - `effectiveTagKeys:"env"`
+     *     - `effectiveTagValues:"env"`
+     *     - `effectiveTagValues:"env/prod"`
+     *     - `effectiveTagValues:"123456789/env/prod*"`
+     *     - `effectiveTagValues="123456789/env/prod"`
+     *     - `effectiveTagValueIds="tagValues/456"`
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.EffectiveTagDetails effective_tags = 30;</code>
+     */
+    public java.util.List<com.google.cloud.asset.v1.EffectiveTagDetails> getEffectiveTagsList() {
+      if (effectiveTagsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(effectiveTags_);
+      } else {
+        return effectiveTagsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The effective tags on this resource. All of the tags that are both attached
+     * to and inherited by a resource are collectively called the effective
+     * tags. For more information, see [tag
+     * inheritance](https://cloud.google.com/resource-manager/docs/tags/tags-overview#inheritance).
+     *
+     * To search against the `effective_tags`:
+     *
+     * * Use a field query. Example:
+     *     - `effectiveTagKeys:"123456789/env*"`
+     *     - `effectiveTagKeys="123456789/env"`
+     *     - `effectiveTagKeys:"env"`
+     *     - `effectiveTagValues:"env"`
+     *     - `effectiveTagValues:"env/prod"`
+     *     - `effectiveTagValues:"123456789/env/prod*"`
+     *     - `effectiveTagValues="123456789/env/prod"`
+     *     - `effectiveTagValueIds="tagValues/456"`
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.EffectiveTagDetails effective_tags = 30;</code>
+     */
+    public int getEffectiveTagsCount() {
+      if (effectiveTagsBuilder_ == null) {
+        return effectiveTags_.size();
+      } else {
+        return effectiveTagsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The effective tags on this resource. All of the tags that are both attached
+     * to and inherited by a resource are collectively called the effective
+     * tags. For more information, see [tag
+     * inheritance](https://cloud.google.com/resource-manager/docs/tags/tags-overview#inheritance).
+     *
+     * To search against the `effective_tags`:
+     *
+     * * Use a field query. Example:
+     *     - `effectiveTagKeys:"123456789/env*"`
+     *     - `effectiveTagKeys="123456789/env"`
+     *     - `effectiveTagKeys:"env"`
+     *     - `effectiveTagValues:"env"`
+     *     - `effectiveTagValues:"env/prod"`
+     *     - `effectiveTagValues:"123456789/env/prod*"`
+     *     - `effectiveTagValues="123456789/env/prod"`
+     *     - `effectiveTagValueIds="tagValues/456"`
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.EffectiveTagDetails effective_tags = 30;</code>
+     */
+    public com.google.cloud.asset.v1.EffectiveTagDetails getEffectiveTags(int index) {
+      if (effectiveTagsBuilder_ == null) {
+        return effectiveTags_.get(index);
+      } else {
+        return effectiveTagsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The effective tags on this resource. All of the tags that are both attached
+     * to and inherited by a resource are collectively called the effective
+     * tags. For more information, see [tag
+     * inheritance](https://cloud.google.com/resource-manager/docs/tags/tags-overview#inheritance).
+     *
+     * To search against the `effective_tags`:
+     *
+     * * Use a field query. Example:
+     *     - `effectiveTagKeys:"123456789/env*"`
+     *     - `effectiveTagKeys="123456789/env"`
+     *     - `effectiveTagKeys:"env"`
+     *     - `effectiveTagValues:"env"`
+     *     - `effectiveTagValues:"env/prod"`
+     *     - `effectiveTagValues:"123456789/env/prod*"`
+     *     - `effectiveTagValues="123456789/env/prod"`
+     *     - `effectiveTagValueIds="tagValues/456"`
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.EffectiveTagDetails effective_tags = 30;</code>
+     */
+    public Builder setEffectiveTags(
+        int index, com.google.cloud.asset.v1.EffectiveTagDetails value) {
+      if (effectiveTagsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureEffectiveTagsIsMutable();
+        effectiveTags_.set(index, value);
+        onChanged();
+      } else {
+        effectiveTagsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The effective tags on this resource. All of the tags that are both attached
+     * to and inherited by a resource are collectively called the effective
+     * tags. For more information, see [tag
+     * inheritance](https://cloud.google.com/resource-manager/docs/tags/tags-overview#inheritance).
+     *
+     * To search against the `effective_tags`:
+     *
+     * * Use a field query. Example:
+     *     - `effectiveTagKeys:"123456789/env*"`
+     *     - `effectiveTagKeys="123456789/env"`
+     *     - `effectiveTagKeys:"env"`
+     *     - `effectiveTagValues:"env"`
+     *     - `effectiveTagValues:"env/prod"`
+     *     - `effectiveTagValues:"123456789/env/prod*"`
+     *     - `effectiveTagValues="123456789/env/prod"`
+     *     - `effectiveTagValueIds="tagValues/456"`
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.EffectiveTagDetails effective_tags = 30;</code>
+     */
+    public Builder setEffectiveTags(
+        int index, com.google.cloud.asset.v1.EffectiveTagDetails.Builder builderForValue) {
+      if (effectiveTagsBuilder_ == null) {
+        ensureEffectiveTagsIsMutable();
+        effectiveTags_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        effectiveTagsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The effective tags on this resource. All of the tags that are both attached
+     * to and inherited by a resource are collectively called the effective
+     * tags. For more information, see [tag
+     * inheritance](https://cloud.google.com/resource-manager/docs/tags/tags-overview#inheritance).
+     *
+     * To search against the `effective_tags`:
+     *
+     * * Use a field query. Example:
+     *     - `effectiveTagKeys:"123456789/env*"`
+     *     - `effectiveTagKeys="123456789/env"`
+     *     - `effectiveTagKeys:"env"`
+     *     - `effectiveTagValues:"env"`
+     *     - `effectiveTagValues:"env/prod"`
+     *     - `effectiveTagValues:"123456789/env/prod*"`
+     *     - `effectiveTagValues="123456789/env/prod"`
+     *     - `effectiveTagValueIds="tagValues/456"`
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.EffectiveTagDetails effective_tags = 30;</code>
+     */
+    public Builder addEffectiveTags(com.google.cloud.asset.v1.EffectiveTagDetails value) {
+      if (effectiveTagsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureEffectiveTagsIsMutable();
+        effectiveTags_.add(value);
+        onChanged();
+      } else {
+        effectiveTagsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The effective tags on this resource. All of the tags that are both attached
+     * to and inherited by a resource are collectively called the effective
+     * tags. For more information, see [tag
+     * inheritance](https://cloud.google.com/resource-manager/docs/tags/tags-overview#inheritance).
+     *
+     * To search against the `effective_tags`:
+     *
+     * * Use a field query. Example:
+     *     - `effectiveTagKeys:"123456789/env*"`
+     *     - `effectiveTagKeys="123456789/env"`
+     *     - `effectiveTagKeys:"env"`
+     *     - `effectiveTagValues:"env"`
+     *     - `effectiveTagValues:"env/prod"`
+     *     - `effectiveTagValues:"123456789/env/prod*"`
+     *     - `effectiveTagValues="123456789/env/prod"`
+     *     - `effectiveTagValueIds="tagValues/456"`
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.EffectiveTagDetails effective_tags = 30;</code>
+     */
+    public Builder addEffectiveTags(
+        int index, com.google.cloud.asset.v1.EffectiveTagDetails value) {
+      if (effectiveTagsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureEffectiveTagsIsMutable();
+        effectiveTags_.add(index, value);
+        onChanged();
+      } else {
+        effectiveTagsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The effective tags on this resource. All of the tags that are both attached
+     * to and inherited by a resource are collectively called the effective
+     * tags. For more information, see [tag
+     * inheritance](https://cloud.google.com/resource-manager/docs/tags/tags-overview#inheritance).
+     *
+     * To search against the `effective_tags`:
+     *
+     * * Use a field query. Example:
+     *     - `effectiveTagKeys:"123456789/env*"`
+     *     - `effectiveTagKeys="123456789/env"`
+     *     - `effectiveTagKeys:"env"`
+     *     - `effectiveTagValues:"env"`
+     *     - `effectiveTagValues:"env/prod"`
+     *     - `effectiveTagValues:"123456789/env/prod*"`
+     *     - `effectiveTagValues="123456789/env/prod"`
+     *     - `effectiveTagValueIds="tagValues/456"`
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.EffectiveTagDetails effective_tags = 30;</code>
+     */
+    public Builder addEffectiveTags(
+        com.google.cloud.asset.v1.EffectiveTagDetails.Builder builderForValue) {
+      if (effectiveTagsBuilder_ == null) {
+        ensureEffectiveTagsIsMutable();
+        effectiveTags_.add(builderForValue.build());
+        onChanged();
+      } else {
+        effectiveTagsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The effective tags on this resource. All of the tags that are both attached
+     * to and inherited by a resource are collectively called the effective
+     * tags. For more information, see [tag
+     * inheritance](https://cloud.google.com/resource-manager/docs/tags/tags-overview#inheritance).
+     *
+     * To search against the `effective_tags`:
+     *
+     * * Use a field query. Example:
+     *     - `effectiveTagKeys:"123456789/env*"`
+     *     - `effectiveTagKeys="123456789/env"`
+     *     - `effectiveTagKeys:"env"`
+     *     - `effectiveTagValues:"env"`
+     *     - `effectiveTagValues:"env/prod"`
+     *     - `effectiveTagValues:"123456789/env/prod*"`
+     *     - `effectiveTagValues="123456789/env/prod"`
+     *     - `effectiveTagValueIds="tagValues/456"`
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.EffectiveTagDetails effective_tags = 30;</code>
+     */
+    public Builder addEffectiveTags(
+        int index, com.google.cloud.asset.v1.EffectiveTagDetails.Builder builderForValue) {
+      if (effectiveTagsBuilder_ == null) {
+        ensureEffectiveTagsIsMutable();
+        effectiveTags_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        effectiveTagsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The effective tags on this resource. All of the tags that are both attached
+     * to and inherited by a resource are collectively called the effective
+     * tags. For more information, see [tag
+     * inheritance](https://cloud.google.com/resource-manager/docs/tags/tags-overview#inheritance).
+     *
+     * To search against the `effective_tags`:
+     *
+     * * Use a field query. Example:
+     *     - `effectiveTagKeys:"123456789/env*"`
+     *     - `effectiveTagKeys="123456789/env"`
+     *     - `effectiveTagKeys:"env"`
+     *     - `effectiveTagValues:"env"`
+     *     - `effectiveTagValues:"env/prod"`
+     *     - `effectiveTagValues:"123456789/env/prod*"`
+     *     - `effectiveTagValues="123456789/env/prod"`
+     *     - `effectiveTagValueIds="tagValues/456"`
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.EffectiveTagDetails effective_tags = 30;</code>
+     */
+    public Builder addAllEffectiveTags(
+        java.lang.Iterable<? extends com.google.cloud.asset.v1.EffectiveTagDetails> values) {
+      if (effectiveTagsBuilder_ == null) {
+        ensureEffectiveTagsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, effectiveTags_);
+        onChanged();
+      } else {
+        effectiveTagsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The effective tags on this resource. All of the tags that are both attached
+     * to and inherited by a resource are collectively called the effective
+     * tags. For more information, see [tag
+     * inheritance](https://cloud.google.com/resource-manager/docs/tags/tags-overview#inheritance).
+     *
+     * To search against the `effective_tags`:
+     *
+     * * Use a field query. Example:
+     *     - `effectiveTagKeys:"123456789/env*"`
+     *     - `effectiveTagKeys="123456789/env"`
+     *     - `effectiveTagKeys:"env"`
+     *     - `effectiveTagValues:"env"`
+     *     - `effectiveTagValues:"env/prod"`
+     *     - `effectiveTagValues:"123456789/env/prod*"`
+     *     - `effectiveTagValues="123456789/env/prod"`
+     *     - `effectiveTagValueIds="tagValues/456"`
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.EffectiveTagDetails effective_tags = 30;</code>
+     */
+    public Builder clearEffectiveTags() {
+      if (effectiveTagsBuilder_ == null) {
+        effectiveTags_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x01000000);
+        onChanged();
+      } else {
+        effectiveTagsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The effective tags on this resource. All of the tags that are both attached
+     * to and inherited by a resource are collectively called the effective
+     * tags. For more information, see [tag
+     * inheritance](https://cloud.google.com/resource-manager/docs/tags/tags-overview#inheritance).
+     *
+     * To search against the `effective_tags`:
+     *
+     * * Use a field query. Example:
+     *     - `effectiveTagKeys:"123456789/env*"`
+     *     - `effectiveTagKeys="123456789/env"`
+     *     - `effectiveTagKeys:"env"`
+     *     - `effectiveTagValues:"env"`
+     *     - `effectiveTagValues:"env/prod"`
+     *     - `effectiveTagValues:"123456789/env/prod*"`
+     *     - `effectiveTagValues="123456789/env/prod"`
+     *     - `effectiveTagValueIds="tagValues/456"`
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.EffectiveTagDetails effective_tags = 30;</code>
+     */
+    public Builder removeEffectiveTags(int index) {
+      if (effectiveTagsBuilder_ == null) {
+        ensureEffectiveTagsIsMutable();
+        effectiveTags_.remove(index);
+        onChanged();
+      } else {
+        effectiveTagsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The effective tags on this resource. All of the tags that are both attached
+     * to and inherited by a resource are collectively called the effective
+     * tags. For more information, see [tag
+     * inheritance](https://cloud.google.com/resource-manager/docs/tags/tags-overview#inheritance).
+     *
+     * To search against the `effective_tags`:
+     *
+     * * Use a field query. Example:
+     *     - `effectiveTagKeys:"123456789/env*"`
+     *     - `effectiveTagKeys="123456789/env"`
+     *     - `effectiveTagKeys:"env"`
+     *     - `effectiveTagValues:"env"`
+     *     - `effectiveTagValues:"env/prod"`
+     *     - `effectiveTagValues:"123456789/env/prod*"`
+     *     - `effectiveTagValues="123456789/env/prod"`
+     *     - `effectiveTagValueIds="tagValues/456"`
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.EffectiveTagDetails effective_tags = 30;</code>
+     */
+    public com.google.cloud.asset.v1.EffectiveTagDetails.Builder getEffectiveTagsBuilder(
+        int index) {
+      return getEffectiveTagsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The effective tags on this resource. All of the tags that are both attached
+     * to and inherited by a resource are collectively called the effective
+     * tags. For more information, see [tag
+     * inheritance](https://cloud.google.com/resource-manager/docs/tags/tags-overview#inheritance).
+     *
+     * To search against the `effective_tags`:
+     *
+     * * Use a field query. Example:
+     *     - `effectiveTagKeys:"123456789/env*"`
+     *     - `effectiveTagKeys="123456789/env"`
+     *     - `effectiveTagKeys:"env"`
+     *     - `effectiveTagValues:"env"`
+     *     - `effectiveTagValues:"env/prod"`
+     *     - `effectiveTagValues:"123456789/env/prod*"`
+     *     - `effectiveTagValues="123456789/env/prod"`
+     *     - `effectiveTagValueIds="tagValues/456"`
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.EffectiveTagDetails effective_tags = 30;</code>
+     */
+    public com.google.cloud.asset.v1.EffectiveTagDetailsOrBuilder getEffectiveTagsOrBuilder(
+        int index) {
+      if (effectiveTagsBuilder_ == null) {
+        return effectiveTags_.get(index);
+      } else {
+        return effectiveTagsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The effective tags on this resource. All of the tags that are both attached
+     * to and inherited by a resource are collectively called the effective
+     * tags. For more information, see [tag
+     * inheritance](https://cloud.google.com/resource-manager/docs/tags/tags-overview#inheritance).
+     *
+     * To search against the `effective_tags`:
+     *
+     * * Use a field query. Example:
+     *     - `effectiveTagKeys:"123456789/env*"`
+     *     - `effectiveTagKeys="123456789/env"`
+     *     - `effectiveTagKeys:"env"`
+     *     - `effectiveTagValues:"env"`
+     *     - `effectiveTagValues:"env/prod"`
+     *     - `effectiveTagValues:"123456789/env/prod*"`
+     *     - `effectiveTagValues="123456789/env/prod"`
+     *     - `effectiveTagValueIds="tagValues/456"`
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.EffectiveTagDetails effective_tags = 30;</code>
+     */
+    public java.util.List<? extends com.google.cloud.asset.v1.EffectiveTagDetailsOrBuilder>
+        getEffectiveTagsOrBuilderList() {
+      if (effectiveTagsBuilder_ != null) {
+        return effectiveTagsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(effectiveTags_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The effective tags on this resource. All of the tags that are both attached
+     * to and inherited by a resource are collectively called the effective
+     * tags. For more information, see [tag
+     * inheritance](https://cloud.google.com/resource-manager/docs/tags/tags-overview#inheritance).
+     *
+     * To search against the `effective_tags`:
+     *
+     * * Use a field query. Example:
+     *     - `effectiveTagKeys:"123456789/env*"`
+     *     - `effectiveTagKeys="123456789/env"`
+     *     - `effectiveTagKeys:"env"`
+     *     - `effectiveTagValues:"env"`
+     *     - `effectiveTagValues:"env/prod"`
+     *     - `effectiveTagValues:"123456789/env/prod*"`
+     *     - `effectiveTagValues="123456789/env/prod"`
+     *     - `effectiveTagValueIds="tagValues/456"`
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.EffectiveTagDetails effective_tags = 30;</code>
+     */
+    public com.google.cloud.asset.v1.EffectiveTagDetails.Builder addEffectiveTagsBuilder() {
+      return getEffectiveTagsFieldBuilder()
+          .addBuilder(com.google.cloud.asset.v1.EffectiveTagDetails.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The effective tags on this resource. All of the tags that are both attached
+     * to and inherited by a resource are collectively called the effective
+     * tags. For more information, see [tag
+     * inheritance](https://cloud.google.com/resource-manager/docs/tags/tags-overview#inheritance).
+     *
+     * To search against the `effective_tags`:
+     *
+     * * Use a field query. Example:
+     *     - `effectiveTagKeys:"123456789/env*"`
+     *     - `effectiveTagKeys="123456789/env"`
+     *     - `effectiveTagKeys:"env"`
+     *     - `effectiveTagValues:"env"`
+     *     - `effectiveTagValues:"env/prod"`
+     *     - `effectiveTagValues:"123456789/env/prod*"`
+     *     - `effectiveTagValues="123456789/env/prod"`
+     *     - `effectiveTagValueIds="tagValues/456"`
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.EffectiveTagDetails effective_tags = 30;</code>
+     */
+    public com.google.cloud.asset.v1.EffectiveTagDetails.Builder addEffectiveTagsBuilder(
+        int index) {
+      return getEffectiveTagsFieldBuilder()
+          .addBuilder(index, com.google.cloud.asset.v1.EffectiveTagDetails.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The effective tags on this resource. All of the tags that are both attached
+     * to and inherited by a resource are collectively called the effective
+     * tags. For more information, see [tag
+     * inheritance](https://cloud.google.com/resource-manager/docs/tags/tags-overview#inheritance).
+     *
+     * To search against the `effective_tags`:
+     *
+     * * Use a field query. Example:
+     *     - `effectiveTagKeys:"123456789/env*"`
+     *     - `effectiveTagKeys="123456789/env"`
+     *     - `effectiveTagKeys:"env"`
+     *     - `effectiveTagValues:"env"`
+     *     - `effectiveTagValues:"env/prod"`
+     *     - `effectiveTagValues:"123456789/env/prod*"`
+     *     - `effectiveTagValues="123456789/env/prod"`
+     *     - `effectiveTagValueIds="tagValues/456"`
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.EffectiveTagDetails effective_tags = 30;</code>
+     */
+    public java.util.List<com.google.cloud.asset.v1.EffectiveTagDetails.Builder>
+        getEffectiveTagsBuilderList() {
+      return getEffectiveTagsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.asset.v1.EffectiveTagDetails,
+            com.google.cloud.asset.v1.EffectiveTagDetails.Builder,
+            com.google.cloud.asset.v1.EffectiveTagDetailsOrBuilder>
+        getEffectiveTagsFieldBuilder() {
+      if (effectiveTagsBuilder_ == null) {
+        effectiveTagsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.asset.v1.EffectiveTagDetails,
+                com.google.cloud.asset.v1.EffectiveTagDetails.Builder,
+                com.google.cloud.asset.v1.EffectiveTagDetailsOrBuilder>(
+                effectiveTags_,
+                ((bitField0_ & 0x01000000) != 0),
+                getParentForChildren(),
+                isClean());
+        effectiveTags_ = null;
+      }
+      return effectiveTagsBuilder_;
     }
 
     private java.lang.Object parentAssetType_ = "";
@@ -8245,7 +10813,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The type of this resource's immediate parent, if there is one.
+     *
      * To search against the `parent_asset_type`:
+     *
      * * Use a field query. Example:
      * `parentAssetType:"cloudresourcemanager.googleapis.com/Project"`
      * * Use a free text query. Example:
@@ -8272,7 +10842,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The type of this resource's immediate parent, if there is one.
+     *
      * To search against the `parent_asset_type`:
+     *
      * * Use a field query. Example:
      * `parentAssetType:"cloudresourcemanager.googleapis.com/Project"`
      * * Use a free text query. Example:
@@ -8299,7 +10871,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The type of this resource's immediate parent, if there is one.
+     *
      * To search against the `parent_asset_type`:
+     *
      * * Use a field query. Example:
      * `parentAssetType:"cloudresourcemanager.googleapis.com/Project"`
      * * Use a free text query. Example:
@@ -8316,7 +10890,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       parentAssetType_ = value;
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -8325,7 +10899,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The type of this resource's immediate parent, if there is one.
+     *
      * To search against the `parent_asset_type`:
+     *
      * * Use a field query. Example:
      * `parentAssetType:"cloudresourcemanager.googleapis.com/Project"`
      * * Use a free text query. Example:
@@ -8338,7 +10914,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      */
     public Builder clearParentAssetType() {
       parentAssetType_ = getDefaultInstance().getParentAssetType();
-      bitField0_ = (bitField0_ & ~0x00800000);
+      bitField0_ = (bitField0_ & ~0x02000000);
       onChanged();
       return this;
     }
@@ -8347,7 +10923,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The type of this resource's immediate parent, if there is one.
+     *
      * To search against the `parent_asset_type`:
+     *
      * * Use a field query. Example:
      * `parentAssetType:"cloudresourcemanager.googleapis.com/Project"`
      * * Use a free text query. Example:
@@ -8365,8 +10943,262 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       checkByteStringIsUtf8(value);
       parentAssetType_ = value;
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x02000000;
       onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> sccSecurityMarks_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetSccSecurityMarks() {
+      if (sccSecurityMarks_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            SccSecurityMarksDefaultEntryHolder.defaultEntry);
+      }
+      return sccSecurityMarks_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableSccSecurityMarks() {
+      if (sccSecurityMarks_ == null) {
+        sccSecurityMarks_ =
+            com.google.protobuf.MapField.newMapField(
+                SccSecurityMarksDefaultEntryHolder.defaultEntry);
+      }
+      if (!sccSecurityMarks_.isMutable()) {
+        sccSecurityMarks_ = sccSecurityMarks_.copy();
+      }
+      bitField0_ |= 0x04000000;
+      onChanged();
+      return sccSecurityMarks_;
+    }
+
+    public int getSccSecurityMarksCount() {
+      return internalGetSccSecurityMarks().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The actual content of Security Command Center security marks associated
+     * with the asset.
+     *
+     *
+     * Note that both staging &amp; prod SecurityMarks are attached on prod resources.
+     * In CAS preprod/prod, both staging &amp; prod SecurityMarks are ingested and
+     * returned in the following `security_marks` map. In that case, the prefix
+     * "staging." will be added to the keys of all the staging marks.
+     * To search against SCC SecurityMarks field:
+     *
+     *   * Use a field query:
+     *     - query by a given key value pair. Example: `sccSecurityMarks.foo=bar`
+     *     - query by a given key's existence. Example: `sccSecurityMarks.foo:*`
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; scc_security_marks = 32;</code>
+     */
+    @java.lang.Override
+    public boolean containsSccSecurityMarks(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetSccSecurityMarks().getMap().containsKey(key);
+    }
+    /** Use {@link #getSccSecurityMarksMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getSccSecurityMarks() {
+      return getSccSecurityMarksMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The actual content of Security Command Center security marks associated
+     * with the asset.
+     *
+     *
+     * Note that both staging &amp; prod SecurityMarks are attached on prod resources.
+     * In CAS preprod/prod, both staging &amp; prod SecurityMarks are ingested and
+     * returned in the following `security_marks` map. In that case, the prefix
+     * "staging." will be added to the keys of all the staging marks.
+     * To search against SCC SecurityMarks field:
+     *
+     *   * Use a field query:
+     *     - query by a given key value pair. Example: `sccSecurityMarks.foo=bar`
+     *     - query by a given key's existence. Example: `sccSecurityMarks.foo:*`
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; scc_security_marks = 32;</code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getSccSecurityMarksMap() {
+      return internalGetSccSecurityMarks().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The actual content of Security Command Center security marks associated
+     * with the asset.
+     *
+     *
+     * Note that both staging &amp; prod SecurityMarks are attached on prod resources.
+     * In CAS preprod/prod, both staging &amp; prod SecurityMarks are ingested and
+     * returned in the following `security_marks` map. In that case, the prefix
+     * "staging." will be added to the keys of all the staging marks.
+     * To search against SCC SecurityMarks field:
+     *
+     *   * Use a field query:
+     *     - query by a given key value pair. Example: `sccSecurityMarks.foo=bar`
+     *     - query by a given key's existence. Example: `sccSecurityMarks.foo:*`
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; scc_security_marks = 32;</code>
+     */
+    @java.lang.Override
+    public /* nullable */ java.lang.String getSccSecurityMarksOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetSccSecurityMarks().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The actual content of Security Command Center security marks associated
+     * with the asset.
+     *
+     *
+     * Note that both staging &amp; prod SecurityMarks are attached on prod resources.
+     * In CAS preprod/prod, both staging &amp; prod SecurityMarks are ingested and
+     * returned in the following `security_marks` map. In that case, the prefix
+     * "staging." will be added to the keys of all the staging marks.
+     * To search against SCC SecurityMarks field:
+     *
+     *   * Use a field query:
+     *     - query by a given key value pair. Example: `sccSecurityMarks.foo=bar`
+     *     - query by a given key's existence. Example: `sccSecurityMarks.foo:*`
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; scc_security_marks = 32;</code>
+     */
+    @java.lang.Override
+    public java.lang.String getSccSecurityMarksOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetSccSecurityMarks().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearSccSecurityMarks() {
+      bitField0_ = (bitField0_ & ~0x04000000);
+      internalGetMutableSccSecurityMarks().getMutableMap().clear();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The actual content of Security Command Center security marks associated
+     * with the asset.
+     *
+     *
+     * Note that both staging &amp; prod SecurityMarks are attached on prod resources.
+     * In CAS preprod/prod, both staging &amp; prod SecurityMarks are ingested and
+     * returned in the following `security_marks` map. In that case, the prefix
+     * "staging." will be added to the keys of all the staging marks.
+     * To search against SCC SecurityMarks field:
+     *
+     *   * Use a field query:
+     *     - query by a given key value pair. Example: `sccSecurityMarks.foo=bar`
+     *     - query by a given key's existence. Example: `sccSecurityMarks.foo:*`
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; scc_security_marks = 32;</code>
+     */
+    public Builder removeSccSecurityMarks(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableSccSecurityMarks().getMutableMap().remove(key);
+      return this;
+    }
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMutableSccSecurityMarks() {
+      bitField0_ |= 0x04000000;
+      return internalGetMutableSccSecurityMarks().getMutableMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The actual content of Security Command Center security marks associated
+     * with the asset.
+     *
+     *
+     * Note that both staging &amp; prod SecurityMarks are attached on prod resources.
+     * In CAS preprod/prod, both staging &amp; prod SecurityMarks are ingested and
+     * returned in the following `security_marks` map. In that case, the prefix
+     * "staging." will be added to the keys of all the staging marks.
+     * To search against SCC SecurityMarks field:
+     *
+     *   * Use a field query:
+     *     - query by a given key value pair. Example: `sccSecurityMarks.foo=bar`
+     *     - query by a given key's existence. Example: `sccSecurityMarks.foo:*`
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; scc_security_marks = 32;</code>
+     */
+    public Builder putSccSecurityMarks(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+      internalGetMutableSccSecurityMarks().getMutableMap().put(key, value);
+      bitField0_ |= 0x04000000;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The actual content of Security Command Center security marks associated
+     * with the asset.
+     *
+     *
+     * Note that both staging &amp; prod SecurityMarks are attached on prod resources.
+     * In CAS preprod/prod, both staging &amp; prod SecurityMarks are ingested and
+     * returned in the following `security_marks` map. In that case, the prefix
+     * "staging." will be added to the keys of all the staging marks.
+     * To search against SCC SecurityMarks field:
+     *
+     *   * Use a field query:
+     *     - query by a given key value pair. Example: `sccSecurityMarks.foo=bar`
+     *     - query by a given key's existence. Example: `sccSecurityMarks.foo:*`
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; scc_security_marks = 32;</code>
+     */
+    public Builder putAllSccSecurityMarks(
+        java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableSccSecurityMarks().getMutableMap().putAll(values);
+      bitField0_ |= 0x04000000;
       return this;
     }
 

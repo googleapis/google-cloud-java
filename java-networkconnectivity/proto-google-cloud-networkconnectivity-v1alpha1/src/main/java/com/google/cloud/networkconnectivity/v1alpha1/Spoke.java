@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,8 +43,8 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
     name_ = "";
     description_ = "";
     hub_ = "";
-    linkedVpnTunnels_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    linkedInterconnectAttachments_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    linkedVpnTunnels_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    linkedInterconnectAttachments_ = com.google.protobuf.LazyStringArrayList.emptyList();
     linkedRouterApplianceInstances_ = java.util.Collections.emptyList();
     uniqueId_ = "";
     state_ = 0;
@@ -54,11 +54,6 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Spoke();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -437,7 +432,8 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
   public static final int LINKED_VPN_TUNNELS_FIELD_NUMBER = 12;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList linkedVpnTunnels_;
+  private com.google.protobuf.LazyStringArrayList linkedVpnTunnels_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -504,7 +500,8 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
   public static final int LINKED_INTERCONNECT_ATTACHMENTS_FIELD_NUMBER = 13;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList linkedInterconnectAttachments_;
+  private com.google.protobuf.LazyStringArrayList linkedInterconnectAttachments_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -1119,10 +1116,8 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().clear();
       description_ = "";
       hub_ = "";
-      linkedVpnTunnels_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000040);
-      linkedInterconnectAttachments_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000080);
+      linkedVpnTunnels_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      linkedInterconnectAttachments_ = com.google.protobuf.LazyStringArrayList.emptyList();
       if (linkedRouterApplianceInstancesBuilder_ == null) {
         linkedRouterApplianceInstances_ = java.util.Collections.emptyList();
       } else {
@@ -1169,16 +1164,6 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
 
     private void buildPartialRepeatedFields(
         com.google.cloud.networkconnectivity.v1alpha1.Spoke result) {
-      if (((bitField0_ & 0x00000040) != 0)) {
-        linkedVpnTunnels_ = linkedVpnTunnels_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000040);
-      }
-      result.linkedVpnTunnels_ = linkedVpnTunnels_;
-      if (((bitField0_ & 0x00000080) != 0)) {
-        linkedInterconnectAttachments_ = linkedInterconnectAttachments_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000080);
-      }
-      result.linkedInterconnectAttachments_ = linkedInterconnectAttachments_;
       if (linkedRouterApplianceInstancesBuilder_ == null) {
         if (((bitField0_ & 0x00000100) != 0)) {
           linkedRouterApplianceInstances_ =
@@ -1211,6 +1196,14 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.hub_ = hub_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        linkedVpnTunnels_.makeImmutable();
+        result.linkedVpnTunnels_ = linkedVpnTunnels_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        linkedInterconnectAttachments_.makeImmutable();
+        result.linkedInterconnectAttachments_ = linkedInterconnectAttachments_;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
         result.uniqueId_ = uniqueId_;
@@ -1292,7 +1285,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       if (!other.linkedVpnTunnels_.isEmpty()) {
         if (linkedVpnTunnels_.isEmpty()) {
           linkedVpnTunnels_ = other.linkedVpnTunnels_;
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ |= 0x00000040;
         } else {
           ensureLinkedVpnTunnelsIsMutable();
           linkedVpnTunnels_.addAll(other.linkedVpnTunnels_);
@@ -1302,7 +1295,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       if (!other.linkedInterconnectAttachments_.isEmpty()) {
         if (linkedInterconnectAttachments_.isEmpty()) {
           linkedInterconnectAttachments_ = other.linkedInterconnectAttachments_;
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ |= 0x00000080;
         } else {
           ensureLinkedInterconnectAttachmentsIsMutable();
           linkedInterconnectAttachments_.addAll(other.linkedInterconnectAttachments_);
@@ -2320,14 +2313,14 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList linkedVpnTunnels_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList linkedVpnTunnels_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureLinkedVpnTunnelsIsMutable() {
-      if (!((bitField0_ & 0x00000040) != 0)) {
+      if (!linkedVpnTunnels_.isModifiable()) {
         linkedVpnTunnels_ = new com.google.protobuf.LazyStringArrayList(linkedVpnTunnels_);
-        bitField0_ |= 0x00000040;
       }
+      bitField0_ |= 0x00000040;
     }
     /**
      *
@@ -2342,7 +2335,8 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the linkedVpnTunnels.
      */
     public com.google.protobuf.ProtocolStringList getLinkedVpnTunnelsList() {
-      return linkedVpnTunnels_.getUnmodifiableView();
+      linkedVpnTunnels_.makeImmutable();
+      return linkedVpnTunnels_;
     }
     /**
      *
@@ -2411,6 +2405,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       }
       ensureLinkedVpnTunnelsIsMutable();
       linkedVpnTunnels_.set(index, value);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2433,6 +2428,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       }
       ensureLinkedVpnTunnelsIsMutable();
       linkedVpnTunnels_.add(value);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2452,6 +2448,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllLinkedVpnTunnels(java.lang.Iterable<java.lang.String> values) {
       ensureLinkedVpnTunnelsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, linkedVpnTunnels_);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2468,8 +2465,9 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearLinkedVpnTunnels() {
-      linkedVpnTunnels_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      linkedVpnTunnels_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000040);
+      ;
       onChanged();
       return this;
     }
@@ -2493,19 +2491,20 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureLinkedVpnTunnelsIsMutable();
       linkedVpnTunnels_.add(value);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList linkedInterconnectAttachments_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList linkedInterconnectAttachments_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureLinkedInterconnectAttachmentsIsMutable() {
-      if (!((bitField0_ & 0x00000080) != 0)) {
+      if (!linkedInterconnectAttachments_.isModifiable()) {
         linkedInterconnectAttachments_ =
             new com.google.protobuf.LazyStringArrayList(linkedInterconnectAttachments_);
-        bitField0_ |= 0x00000080;
       }
+      bitField0_ |= 0x00000080;
     }
     /**
      *
@@ -2521,7 +2520,8 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the linkedInterconnectAttachments.
      */
     public com.google.protobuf.ProtocolStringList getLinkedInterconnectAttachmentsList() {
-      return linkedInterconnectAttachments_.getUnmodifiableView();
+      linkedInterconnectAttachments_.makeImmutable();
+      return linkedInterconnectAttachments_;
     }
     /**
      *
@@ -2594,6 +2594,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       }
       ensureLinkedInterconnectAttachmentsIsMutable();
       linkedInterconnectAttachments_.set(index, value);
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2617,6 +2618,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       }
       ensureLinkedInterconnectAttachmentsIsMutable();
       linkedInterconnectAttachments_.add(value);
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2639,6 +2641,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       ensureLinkedInterconnectAttachmentsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(
           values, linkedInterconnectAttachments_);
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2656,8 +2659,9 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearLinkedInterconnectAttachments() {
-      linkedInterconnectAttachments_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      linkedInterconnectAttachments_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000080);
+      ;
       onChanged();
       return this;
     }
@@ -2682,6 +2686,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureLinkedInterconnectAttachmentsIsMutable();
       linkedInterconnectAttachments_.add(value);
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }

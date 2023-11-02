@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,11 +51,6 @@ public final class AwsNodePool extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new AwsNodePool();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -344,8 +339,10 @@ public final class AwsNodePool extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The name of this resource.
+   *
    * Node pool names are formatted as
    * `projects/&lt;project-number&gt;/locations/&lt;region&gt;/awsClusters/&lt;cluster-id&gt;/awsNodePools/&lt;node-pool-id&gt;`.
+   *
    * For more details on Google Cloud resource names,
    * see [Resource Names](https://cloud.google.com/apis/design/resource_names)
    * </pre>
@@ -371,8 +368,10 @@ public final class AwsNodePool extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The name of this resource.
+   *
    * Node pool names are formatted as
    * `projects/&lt;project-number&gt;/locations/&lt;region&gt;/awsClusters/&lt;cluster-id&gt;/awsNodePools/&lt;node-pool-id&gt;`.
+   *
    * For more details on Google Cloud resource names,
    * see [Resource Names](https://cloud.google.com/apis/design/resource_names)
    * </pre>
@@ -404,6 +403,7 @@ public final class AwsNodePool extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required. The Kubernetes version to run on this node pool (e.g.
    * `1.19.10-gke.1000`).
+   *
    * You can list all supported versions on a given Google Cloud region by
    * calling
    * [GetAwsServerConfig][google.cloud.gkemulticloud.v1.AwsClusters.GetAwsServerConfig].
@@ -431,6 +431,7 @@ public final class AwsNodePool extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required. The Kubernetes version to run on this node pool (e.g.
    * `1.19.10-gke.1000`).
+   *
    * You can list all supported versions on a given Google Cloud region by
    * calling
    * [GetAwsServerConfig][google.cloud.gkemulticloud.v1.AwsClusters.GetAwsServerConfig].
@@ -836,6 +837,7 @@ public final class AwsNodePool extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Allows clients to perform consistent read-modify-writes
    * through optimistic concurrency control.
+   *
    * Can be sent on update and delete requests to ensure the
    * client has an up-to-date value before proceeding.
    * </pre>
@@ -862,6 +864,7 @@ public final class AwsNodePool extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Allows clients to perform consistent read-modify-writes
    * through optimistic concurrency control.
+   *
    * Can be sent on update and delete requests to ensure the
    * client has an up-to-date value before proceeding.
    * </pre>
@@ -915,6 +918,7 @@ public final class AwsNodePool extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Annotations on the node pool.
+   *
    * This field has the same restrictions as Kubernetes annotations.
    * The total size of all keys and values combined is limited to 256k.
    * Key can have 2 segments: prefix (optional) and name (required),
@@ -945,6 +949,7 @@ public final class AwsNodePool extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Annotations on the node pool.
+   *
    * This field has the same restrictions as Kubernetes annotations.
    * The total size of all keys and values combined is limited to 256k.
    * Key can have 2 segments: prefix (optional) and name (required),
@@ -966,6 +971,7 @@ public final class AwsNodePool extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Annotations on the node pool.
+   *
    * This field has the same restrictions as Kubernetes annotations.
    * The total size of all keys and values combined is limited to 256k.
    * Key can have 2 segments: prefix (optional) and name (required),
@@ -994,6 +1000,7 @@ public final class AwsNodePool extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Annotations on the node pool.
+   *
    * This field has the same restrictions as Kubernetes annotations.
    * The total size of all keys and values combined is limited to 256k.
    * Key can have 2 segments: prefix (optional) and name (required),
@@ -1936,8 +1943,10 @@ public final class AwsNodePool extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of this resource.
+     *
      * Node pool names are formatted as
      * `projects/&lt;project-number&gt;/locations/&lt;region&gt;/awsClusters/&lt;cluster-id&gt;/awsNodePools/&lt;node-pool-id&gt;`.
+     *
      * For more details on Google Cloud resource names,
      * see [Resource Names](https://cloud.google.com/apis/design/resource_names)
      * </pre>
@@ -1962,8 +1971,10 @@ public final class AwsNodePool extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of this resource.
+     *
      * Node pool names are formatted as
      * `projects/&lt;project-number&gt;/locations/&lt;region&gt;/awsClusters/&lt;cluster-id&gt;/awsNodePools/&lt;node-pool-id&gt;`.
+     *
      * For more details on Google Cloud resource names,
      * see [Resource Names](https://cloud.google.com/apis/design/resource_names)
      * </pre>
@@ -1988,8 +1999,10 @@ public final class AwsNodePool extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of this resource.
+     *
      * Node pool names are formatted as
      * `projects/&lt;project-number&gt;/locations/&lt;region&gt;/awsClusters/&lt;cluster-id&gt;/awsNodePools/&lt;node-pool-id&gt;`.
+     *
      * For more details on Google Cloud resource names,
      * see [Resource Names](https://cloud.google.com/apis/design/resource_names)
      * </pre>
@@ -2013,8 +2026,10 @@ public final class AwsNodePool extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of this resource.
+     *
      * Node pool names are formatted as
      * `projects/&lt;project-number&gt;/locations/&lt;region&gt;/awsClusters/&lt;cluster-id&gt;/awsNodePools/&lt;node-pool-id&gt;`.
+     *
      * For more details on Google Cloud resource names,
      * see [Resource Names](https://cloud.google.com/apis/design/resource_names)
      * </pre>
@@ -2034,8 +2049,10 @@ public final class AwsNodePool extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of this resource.
+     *
      * Node pool names are formatted as
      * `projects/&lt;project-number&gt;/locations/&lt;region&gt;/awsClusters/&lt;cluster-id&gt;/awsNodePools/&lt;node-pool-id&gt;`.
+     *
      * For more details on Google Cloud resource names,
      * see [Resource Names](https://cloud.google.com/apis/design/resource_names)
      * </pre>
@@ -2063,6 +2080,7 @@ public final class AwsNodePool extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The Kubernetes version to run on this node pool (e.g.
      * `1.19.10-gke.1000`).
+     *
      * You can list all supported versions on a given Google Cloud region by
      * calling
      * [GetAwsServerConfig][google.cloud.gkemulticloud.v1.AwsClusters.GetAwsServerConfig].
@@ -2089,6 +2107,7 @@ public final class AwsNodePool extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The Kubernetes version to run on this node pool (e.g.
      * `1.19.10-gke.1000`).
+     *
      * You can list all supported versions on a given Google Cloud region by
      * calling
      * [GetAwsServerConfig][google.cloud.gkemulticloud.v1.AwsClusters.GetAwsServerConfig].
@@ -2115,6 +2134,7 @@ public final class AwsNodePool extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The Kubernetes version to run on this node pool (e.g.
      * `1.19.10-gke.1000`).
+     *
      * You can list all supported versions on a given Google Cloud region by
      * calling
      * [GetAwsServerConfig][google.cloud.gkemulticloud.v1.AwsClusters.GetAwsServerConfig].
@@ -2140,6 +2160,7 @@ public final class AwsNodePool extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The Kubernetes version to run on this node pool (e.g.
      * `1.19.10-gke.1000`).
+     *
      * You can list all supported versions on a given Google Cloud region by
      * calling
      * [GetAwsServerConfig][google.cloud.gkemulticloud.v1.AwsClusters.GetAwsServerConfig].
@@ -2161,6 +2182,7 @@ public final class AwsNodePool extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The Kubernetes version to run on this node pool (e.g.
      * `1.19.10-gke.1000`).
+     *
      * You can list all supported versions on a given Google Cloud region by
      * calling
      * [GetAwsServerConfig][google.cloud.gkemulticloud.v1.AwsClusters.GetAwsServerConfig].
@@ -3369,6 +3391,7 @@ public final class AwsNodePool extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Allows clients to perform consistent read-modify-writes
      * through optimistic concurrency control.
+     *
      * Can be sent on update and delete requests to ensure the
      * client has an up-to-date value before proceeding.
      * </pre>
@@ -3394,6 +3417,7 @@ public final class AwsNodePool extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Allows clients to perform consistent read-modify-writes
      * through optimistic concurrency control.
+     *
      * Can be sent on update and delete requests to ensure the
      * client has an up-to-date value before proceeding.
      * </pre>
@@ -3419,6 +3443,7 @@ public final class AwsNodePool extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Allows clients to perform consistent read-modify-writes
      * through optimistic concurrency control.
+     *
      * Can be sent on update and delete requests to ensure the
      * client has an up-to-date value before proceeding.
      * </pre>
@@ -3443,6 +3468,7 @@ public final class AwsNodePool extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Allows clients to perform consistent read-modify-writes
      * through optimistic concurrency control.
+     *
      * Can be sent on update and delete requests to ensure the
      * client has an up-to-date value before proceeding.
      * </pre>
@@ -3463,6 +3489,7 @@ public final class AwsNodePool extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Allows clients to perform consistent read-modify-writes
      * through optimistic concurrency control.
+     *
      * Can be sent on update and delete requests to ensure the
      * client has an up-to-date value before proceeding.
      * </pre>
@@ -3516,6 +3543,7 @@ public final class AwsNodePool extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Annotations on the node pool.
+     *
      * This field has the same restrictions as Kubernetes annotations.
      * The total size of all keys and values combined is limited to 256k.
      * Key can have 2 segments: prefix (optional) and name (required),
@@ -3546,6 +3574,7 @@ public final class AwsNodePool extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Annotations on the node pool.
+     *
      * This field has the same restrictions as Kubernetes annotations.
      * The total size of all keys and values combined is limited to 256k.
      * Key can have 2 segments: prefix (optional) and name (required),
@@ -3567,6 +3596,7 @@ public final class AwsNodePool extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Annotations on the node pool.
+     *
      * This field has the same restrictions as Kubernetes annotations.
      * The total size of all keys and values combined is limited to 256k.
      * Key can have 2 segments: prefix (optional) and name (required),
@@ -3595,6 +3625,7 @@ public final class AwsNodePool extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Annotations on the node pool.
+     *
      * This field has the same restrictions as Kubernetes annotations.
      * The total size of all keys and values combined is limited to 256k.
      * Key can have 2 segments: prefix (optional) and name (required),
@@ -3629,6 +3660,7 @@ public final class AwsNodePool extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Annotations on the node pool.
+     *
      * This field has the same restrictions as Kubernetes annotations.
      * The total size of all keys and values combined is limited to 256k.
      * Key can have 2 segments: prefix (optional) and name (required),
@@ -3659,6 +3691,7 @@ public final class AwsNodePool extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Annotations on the node pool.
+     *
      * This field has the same restrictions as Kubernetes annotations.
      * The total size of all keys and values combined is limited to 256k.
      * Key can have 2 segments: prefix (optional) and name (required),
@@ -3687,6 +3720,7 @@ public final class AwsNodePool extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Annotations on the node pool.
+     *
      * This field has the same restrictions as Kubernetes annotations.
      * The total size of all keys and values combined is limited to 256k.
      * Key can have 2 segments: prefix (optional) and name (required),

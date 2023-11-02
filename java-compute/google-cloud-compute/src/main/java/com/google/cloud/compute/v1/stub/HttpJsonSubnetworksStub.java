@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,6 +33,7 @@ import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AggregatedListSubnetworksRequest;
 import com.google.cloud.compute.v1.DeleteSubnetworkRequest;
@@ -762,37 +763,89 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
                 .<AggregatedListSubnetworksRequest, SubnetworkAggregatedList>newBuilder()
                 .setMethodDescriptor(aggregatedListMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteSubnetworkRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeleteSubnetworkRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("region", String.valueOf(request.getRegion()));
+                  builder.add("subnetwork", String.valueOf(request.getSubnetwork()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ExpandIpCidrRangeSubnetworkRequest, Operation>
         expandIpCidrRangeTransportSettings =
             HttpJsonCallSettings.<ExpandIpCidrRangeSubnetworkRequest, Operation>newBuilder()
                 .setMethodDescriptor(expandIpCidrRangeMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      builder.add("subnetwork", String.valueOf(request.getSubnetwork()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetSubnetworkRequest, Subnetwork> getTransportSettings =
         HttpJsonCallSettings.<GetSubnetworkRequest, Subnetwork>newBuilder()
             .setMethodDescriptor(getMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("region", String.valueOf(request.getRegion()));
+                  builder.add("subnetwork", String.valueOf(request.getSubnetwork()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetIamPolicySubnetworkRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicySubnetworkRequest, Policy>newBuilder()
             .setMethodDescriptor(getIamPolicyMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("region", String.valueOf(request.getRegion()));
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<InsertSubnetworkRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertSubnetworkRequest, Operation>newBuilder()
             .setMethodDescriptor(insertMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("region", String.valueOf(request.getRegion()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListSubnetworksRequest, SubnetworkList> listTransportSettings =
         HttpJsonCallSettings.<ListSubnetworksRequest, SubnetworkList>newBuilder()
             .setMethodDescriptor(listMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("region", String.valueOf(request.getRegion()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListUsableSubnetworksRequest, UsableSubnetworksAggregatedList>
         listUsableTransportSettings =
@@ -800,22 +853,52 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
                 .<ListUsableSubnetworksRequest, UsableSubnetworksAggregatedList>newBuilder()
                 .setMethodDescriptor(listUsableMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<PatchSubnetworkRequest, Operation> patchTransportSettings =
         HttpJsonCallSettings.<PatchSubnetworkRequest, Operation>newBuilder()
             .setMethodDescriptor(patchMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("region", String.valueOf(request.getRegion()));
+                  builder.add("subnetwork", String.valueOf(request.getSubnetwork()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<SetIamPolicySubnetworkRequest, Policy> setIamPolicyTransportSettings =
         HttpJsonCallSettings.<SetIamPolicySubnetworkRequest, Policy>newBuilder()
             .setMethodDescriptor(setIamPolicyMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("region", String.valueOf(request.getRegion()));
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<SetPrivateIpGoogleAccessSubnetworkRequest, Operation>
         setPrivateIpGoogleAccessTransportSettings =
             HttpJsonCallSettings.<SetPrivateIpGoogleAccessSubnetworkRequest, Operation>newBuilder()
                 .setMethodDescriptor(setPrivateIpGoogleAccessMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      builder.add("subnetwork", String.valueOf(request.getSubnetwork()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<TestIamPermissionsSubnetworkRequest, TestPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -823,6 +906,14 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
                 .<TestIamPermissionsSubnetworkRequest, TestPermissionsResponse>newBuilder()
                 .setMethodDescriptor(testIamPermissionsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      return builder.build();
+                    })
                 .build();
 
     this.aggregatedListCallable =

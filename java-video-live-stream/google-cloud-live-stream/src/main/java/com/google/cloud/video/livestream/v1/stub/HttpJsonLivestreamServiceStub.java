@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 
 package com.google.cloud.video.livestream.v1.stub;
 
+import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListAssetsPagedResponse;
 import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListChannelsPagedResponse;
 import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListEventsPagedResponse;
 import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListInputsPagedResponse;
@@ -36,24 +37,32 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.httpjson.longrunning.stub.HttpJsonOperationsStub;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
+import com.google.cloud.video.livestream.v1.Asset;
 import com.google.cloud.video.livestream.v1.Channel;
 import com.google.cloud.video.livestream.v1.ChannelOperationResponse;
+import com.google.cloud.video.livestream.v1.CreateAssetRequest;
 import com.google.cloud.video.livestream.v1.CreateChannelRequest;
 import com.google.cloud.video.livestream.v1.CreateEventRequest;
 import com.google.cloud.video.livestream.v1.CreateInputRequest;
+import com.google.cloud.video.livestream.v1.DeleteAssetRequest;
 import com.google.cloud.video.livestream.v1.DeleteChannelRequest;
 import com.google.cloud.video.livestream.v1.DeleteEventRequest;
 import com.google.cloud.video.livestream.v1.DeleteInputRequest;
 import com.google.cloud.video.livestream.v1.Event;
+import com.google.cloud.video.livestream.v1.GetAssetRequest;
 import com.google.cloud.video.livestream.v1.GetChannelRequest;
 import com.google.cloud.video.livestream.v1.GetEventRequest;
 import com.google.cloud.video.livestream.v1.GetInputRequest;
+import com.google.cloud.video.livestream.v1.GetPoolRequest;
 import com.google.cloud.video.livestream.v1.Input;
+import com.google.cloud.video.livestream.v1.ListAssetsRequest;
+import com.google.cloud.video.livestream.v1.ListAssetsResponse;
 import com.google.cloud.video.livestream.v1.ListChannelsRequest;
 import com.google.cloud.video.livestream.v1.ListChannelsResponse;
 import com.google.cloud.video.livestream.v1.ListEventsRequest;
@@ -61,10 +70,12 @@ import com.google.cloud.video.livestream.v1.ListEventsResponse;
 import com.google.cloud.video.livestream.v1.ListInputsRequest;
 import com.google.cloud.video.livestream.v1.ListInputsResponse;
 import com.google.cloud.video.livestream.v1.OperationMetadata;
+import com.google.cloud.video.livestream.v1.Pool;
 import com.google.cloud.video.livestream.v1.StartChannelRequest;
 import com.google.cloud.video.livestream.v1.StopChannelRequest;
 import com.google.cloud.video.livestream.v1.UpdateChannelRequest;
 import com.google.cloud.video.livestream.v1.UpdateInputRequest;
+import com.google.cloud.video.livestream.v1.UpdatePoolRequest;
 import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
@@ -92,6 +103,8 @@ public class HttpJsonLivestreamServiceStub extends LivestreamServiceStub {
           .add(OperationMetadata.getDescriptor())
           .add(Channel.getDescriptor())
           .add(Input.getDescriptor())
+          .add(Asset.getDescriptor())
+          .add(Pool.getDescriptor())
           .add(ChannelOperationResponse.getDescriptor())
           .build();
 
@@ -706,6 +719,232 @@ public class HttpJsonLivestreamServiceStub extends LivestreamServiceStub {
                   .build())
           .build();
 
+  private static final ApiMethodDescriptor<CreateAssetRequest, Operation>
+      createAssetMethodDescriptor =
+          ApiMethodDescriptor.<CreateAssetRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.video.livestream.v1.LivestreamService/CreateAsset")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateAssetRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/assets",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateAssetRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateAssetRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "assetId", request.getAssetId());
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("asset", request.getAsset(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (CreateAssetRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteAssetRequest, Operation>
+      deleteAssetMethodDescriptor =
+          ApiMethodDescriptor.<DeleteAssetRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.video.livestream.v1.LivestreamService/DeleteAsset")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteAssetRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/assets/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteAssetRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteAssetRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (DeleteAssetRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<GetAssetRequest, Asset> getAssetMethodDescriptor =
+      ApiMethodDescriptor.<GetAssetRequest, Asset>newBuilder()
+          .setFullMethodName("google.cloud.video.livestream.v1.LivestreamService/GetAsset")
+          .setHttpMethod("GET")
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
+          .setRequestFormatter(
+              ProtoMessageRequestFormatter.<GetAssetRequest>newBuilder()
+                  .setPath(
+                      "/v1/{name=projects/*/locations/*/assets/*}",
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<GetAssetRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "name", request.getName());
+                        return fields;
+                      })
+                  .setQueryParamsExtractor(
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<GetAssetRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                        return fields;
+                      })
+                  .setRequestBodyExtractor(request -> null)
+                  .build())
+          .setResponseParser(
+              ProtoMessageResponseParser.<Asset>newBuilder()
+                  .setDefaultInstance(Asset.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
+                  .build())
+          .build();
+
+  private static final ApiMethodDescriptor<ListAssetsRequest, ListAssetsResponse>
+      listAssetsMethodDescriptor =
+          ApiMethodDescriptor.<ListAssetsRequest, ListAssetsResponse>newBuilder()
+              .setFullMethodName("google.cloud.video.livestream.v1.LivestreamService/ListAssets")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListAssetsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/assets",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListAssetsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListAssetsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListAssetsResponse>newBuilder()
+                      .setDefaultInstance(ListAssetsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetPoolRequest, Pool> getPoolMethodDescriptor =
+      ApiMethodDescriptor.<GetPoolRequest, Pool>newBuilder()
+          .setFullMethodName("google.cloud.video.livestream.v1.LivestreamService/GetPool")
+          .setHttpMethod("GET")
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
+          .setRequestFormatter(
+              ProtoMessageRequestFormatter.<GetPoolRequest>newBuilder()
+                  .setPath(
+                      "/v1/{name=projects/*/locations/*/pools/*}",
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<GetPoolRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "name", request.getName());
+                        return fields;
+                      })
+                  .setQueryParamsExtractor(
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<GetPoolRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                        return fields;
+                      })
+                  .setRequestBodyExtractor(request -> null)
+                  .build())
+          .setResponseParser(
+              ProtoMessageResponseParser.<Pool>newBuilder()
+                  .setDefaultInstance(Pool.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
+                  .build())
+          .build();
+
+  private static final ApiMethodDescriptor<UpdatePoolRequest, Operation>
+      updatePoolMethodDescriptor =
+          ApiMethodDescriptor.<UpdatePoolRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.video.livestream.v1.LivestreamService/UpdatePool")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdatePoolRequest>newBuilder()
+                      .setPath(
+                          "/v1/{pool.name=projects/*/locations/*/pools/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdatePoolRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "pool.name", request.getPool().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdatePoolRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create().toBody("pool", request.getPool(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (UpdatePoolRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
   private static final ApiMethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           ApiMethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -810,6 +1049,19 @@ public class HttpJsonLivestreamServiceStub extends LivestreamServiceStub {
   private final UnaryCallable<ListEventsRequest, ListEventsPagedResponse> listEventsPagedCallable;
   private final UnaryCallable<GetEventRequest, Event> getEventCallable;
   private final UnaryCallable<DeleteEventRequest, Empty> deleteEventCallable;
+  private final UnaryCallable<CreateAssetRequest, Operation> createAssetCallable;
+  private final OperationCallable<CreateAssetRequest, Asset, OperationMetadata>
+      createAssetOperationCallable;
+  private final UnaryCallable<DeleteAssetRequest, Operation> deleteAssetCallable;
+  private final OperationCallable<DeleteAssetRequest, Empty, OperationMetadata>
+      deleteAssetOperationCallable;
+  private final UnaryCallable<GetAssetRequest, Asset> getAssetCallable;
+  private final UnaryCallable<ListAssetsRequest, ListAssetsResponse> listAssetsCallable;
+  private final UnaryCallable<ListAssetsRequest, ListAssetsPagedResponse> listAssetsPagedCallable;
+  private final UnaryCallable<GetPoolRequest, Pool> getPoolCallable;
+  private final UnaryCallable<UpdatePoolRequest, Operation> updatePoolCallable;
+  private final OperationCallable<UpdatePoolRequest, Pool, OperationMetadata>
+      updatePoolOperationCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -889,92 +1141,266 @@ public class HttpJsonLivestreamServiceStub extends LivestreamServiceStub {
         HttpJsonCallSettings.<CreateChannelRequest, Operation>newBuilder()
             .setMethodDescriptor(createChannelMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListChannelsRequest, ListChannelsResponse> listChannelsTransportSettings =
         HttpJsonCallSettings.<ListChannelsRequest, ListChannelsResponse>newBuilder()
             .setMethodDescriptor(listChannelsMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetChannelRequest, Channel> getChannelTransportSettings =
         HttpJsonCallSettings.<GetChannelRequest, Channel>newBuilder()
             .setMethodDescriptor(getChannelMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeleteChannelRequest, Operation> deleteChannelTransportSettings =
         HttpJsonCallSettings.<DeleteChannelRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteChannelMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateChannelRequest, Operation> updateChannelTransportSettings =
         HttpJsonCallSettings.<UpdateChannelRequest, Operation>newBuilder()
             .setMethodDescriptor(updateChannelMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("channel.name", String.valueOf(request.getChannel().getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<StartChannelRequest, Operation> startChannelTransportSettings =
         HttpJsonCallSettings.<StartChannelRequest, Operation>newBuilder()
             .setMethodDescriptor(startChannelMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<StopChannelRequest, Operation> stopChannelTransportSettings =
         HttpJsonCallSettings.<StopChannelRequest, Operation>newBuilder()
             .setMethodDescriptor(stopChannelMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<CreateInputRequest, Operation> createInputTransportSettings =
         HttpJsonCallSettings.<CreateInputRequest, Operation>newBuilder()
             .setMethodDescriptor(createInputMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListInputsRequest, ListInputsResponse> listInputsTransportSettings =
         HttpJsonCallSettings.<ListInputsRequest, ListInputsResponse>newBuilder()
             .setMethodDescriptor(listInputsMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetInputRequest, Input> getInputTransportSettings =
         HttpJsonCallSettings.<GetInputRequest, Input>newBuilder()
             .setMethodDescriptor(getInputMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeleteInputRequest, Operation> deleteInputTransportSettings =
         HttpJsonCallSettings.<DeleteInputRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteInputMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateInputRequest, Operation> updateInputTransportSettings =
         HttpJsonCallSettings.<UpdateInputRequest, Operation>newBuilder()
             .setMethodDescriptor(updateInputMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("input.name", String.valueOf(request.getInput().getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<CreateEventRequest, Event> createEventTransportSettings =
         HttpJsonCallSettings.<CreateEventRequest, Event>newBuilder()
             .setMethodDescriptor(createEventMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListEventsRequest, ListEventsResponse> listEventsTransportSettings =
         HttpJsonCallSettings.<ListEventsRequest, ListEventsResponse>newBuilder()
             .setMethodDescriptor(listEventsMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetEventRequest, Event> getEventTransportSettings =
         HttpJsonCallSettings.<GetEventRequest, Event>newBuilder()
             .setMethodDescriptor(getEventMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeleteEventRequest, Empty> deleteEventTransportSettings =
         HttpJsonCallSettings.<DeleteEventRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteEventMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<CreateAssetRequest, Operation> createAssetTransportSettings =
+        HttpJsonCallSettings.<CreateAssetRequest, Operation>newBuilder()
+            .setMethodDescriptor(createAssetMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<DeleteAssetRequest, Operation> deleteAssetTransportSettings =
+        HttpJsonCallSettings.<DeleteAssetRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteAssetMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<GetAssetRequest, Asset> getAssetTransportSettings =
+        HttpJsonCallSettings.<GetAssetRequest, Asset>newBuilder()
+            .setMethodDescriptor(getAssetMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<ListAssetsRequest, ListAssetsResponse> listAssetsTransportSettings =
+        HttpJsonCallSettings.<ListAssetsRequest, ListAssetsResponse>newBuilder()
+            .setMethodDescriptor(listAssetsMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<GetPoolRequest, Pool> getPoolTransportSettings =
+        HttpJsonCallSettings.<GetPoolRequest, Pool>newBuilder()
+            .setMethodDescriptor(getPoolMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<UpdatePoolRequest, Operation> updatePoolTransportSettings =
+        HttpJsonCallSettings.<UpdatePoolRequest, Operation>newBuilder()
+            .setMethodDescriptor(updatePoolMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("pool.name", String.valueOf(request.getPool().getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
                 .setMethodDescriptor(listLocationsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetLocationRequest, Location> getLocationTransportSettings =
         HttpJsonCallSettings.<GetLocationRequest, Location>newBuilder()
             .setMethodDescriptor(getLocationMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
 
     this.createChannelCallable =
@@ -1082,6 +1508,45 @@ public class HttpJsonLivestreamServiceStub extends LivestreamServiceStub {
     this.deleteEventCallable =
         callableFactory.createUnaryCallable(
             deleteEventTransportSettings, settings.deleteEventSettings(), clientContext);
+    this.createAssetCallable =
+        callableFactory.createUnaryCallable(
+            createAssetTransportSettings, settings.createAssetSettings(), clientContext);
+    this.createAssetOperationCallable =
+        callableFactory.createOperationCallable(
+            createAssetTransportSettings,
+            settings.createAssetOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.deleteAssetCallable =
+        callableFactory.createUnaryCallable(
+            deleteAssetTransportSettings, settings.deleteAssetSettings(), clientContext);
+    this.deleteAssetOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteAssetTransportSettings,
+            settings.deleteAssetOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.getAssetCallable =
+        callableFactory.createUnaryCallable(
+            getAssetTransportSettings, settings.getAssetSettings(), clientContext);
+    this.listAssetsCallable =
+        callableFactory.createUnaryCallable(
+            listAssetsTransportSettings, settings.listAssetsSettings(), clientContext);
+    this.listAssetsPagedCallable =
+        callableFactory.createPagedCallable(
+            listAssetsTransportSettings, settings.listAssetsSettings(), clientContext);
+    this.getPoolCallable =
+        callableFactory.createUnaryCallable(
+            getPoolTransportSettings, settings.getPoolSettings(), clientContext);
+    this.updatePoolCallable =
+        callableFactory.createUnaryCallable(
+            updatePoolTransportSettings, settings.updatePoolSettings(), clientContext);
+    this.updatePoolOperationCallable =
+        callableFactory.createOperationCallable(
+            updatePoolTransportSettings,
+            settings.updatePoolOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -1115,6 +1580,12 @@ public class HttpJsonLivestreamServiceStub extends LivestreamServiceStub {
     methodDescriptors.add(listEventsMethodDescriptor);
     methodDescriptors.add(getEventMethodDescriptor);
     methodDescriptors.add(deleteEventMethodDescriptor);
+    methodDescriptors.add(createAssetMethodDescriptor);
+    methodDescriptors.add(deleteAssetMethodDescriptor);
+    methodDescriptors.add(getAssetMethodDescriptor);
+    methodDescriptors.add(listAssetsMethodDescriptor);
+    methodDescriptors.add(getPoolMethodDescriptor);
+    methodDescriptors.add(updatePoolMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
     return methodDescriptors;
@@ -1265,6 +1736,59 @@ public class HttpJsonLivestreamServiceStub extends LivestreamServiceStub {
   @Override
   public UnaryCallable<DeleteEventRequest, Empty> deleteEventCallable() {
     return deleteEventCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateAssetRequest, Operation> createAssetCallable() {
+    return createAssetCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateAssetRequest, Asset, OperationMetadata>
+      createAssetOperationCallable() {
+    return createAssetOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteAssetRequest, Operation> deleteAssetCallable() {
+    return deleteAssetCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteAssetRequest, Empty, OperationMetadata>
+      deleteAssetOperationCallable() {
+    return deleteAssetOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetAssetRequest, Asset> getAssetCallable() {
+    return getAssetCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAssetsRequest, ListAssetsResponse> listAssetsCallable() {
+    return listAssetsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAssetsRequest, ListAssetsPagedResponse> listAssetsPagedCallable() {
+    return listAssetsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetPoolRequest, Pool> getPoolCallable() {
+    return getPoolCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdatePoolRequest, Operation> updatePoolCallable() {
+    return updatePoolCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdatePoolRequest, Pool, OperationMetadata>
+      updatePoolOperationCallable() {
+    return updatePoolOperationCallable;
   }
 
   @Override

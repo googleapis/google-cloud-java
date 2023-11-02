@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -77,7 +77,7 @@ public interface TableDataProfileOrBuilder
    *
    *
    * <pre>
-   * The GCP project ID that owns the BigQuery dataset.
+   * The Google Cloud project ID that owns the BigQuery dataset.
    * </pre>
    *
    * <code>string dataset_project_id = 24;</code>
@@ -89,7 +89,7 @@ public interface TableDataProfileOrBuilder
    *
    *
    * <pre>
-   * The GCP project ID that owns the BigQuery dataset.
+   * The Google Cloud project ID that owns the BigQuery dataset.
    * </pre>
    *
    * <code>string dataset_project_id = 24;</code>

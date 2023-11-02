@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class EnableServiceAccountKeyRequest extends com.google.protobuf.Ge
     return new EnableServiceAccountKeyRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.iam.admin.v1.Iam
         .internal_static_google_iam_admin_v1_EnableServiceAccountKeyRequest_descriptor;
@@ -78,6 +73,7 @@ public final class EnableServiceAccountKeyRequest extends com.google.protobuf.Ge
    * <pre>
    * Required. The resource name of the service account key in the following format:
    * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}/keys/{key}`.
+   *
    * Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
    * the account. The `ACCOUNT` value can be the `email` address or the
    * `unique_id` of the service account.
@@ -107,6 +103,7 @@ public final class EnableServiceAccountKeyRequest extends com.google.protobuf.Ge
    * <pre>
    * Required. The resource name of the service account key in the following format:
    * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}/keys/{key}`.
+   *
    * Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
    * the account. The `ACCOUNT` value can be the `email` address or the
    * `unique_id` of the service account.
@@ -481,6 +478,7 @@ public final class EnableServiceAccountKeyRequest extends com.google.protobuf.Ge
      * <pre>
      * Required. The resource name of the service account key in the following format:
      * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}/keys/{key}`.
+     *
      * Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
      * the account. The `ACCOUNT` value can be the `email` address or the
      * `unique_id` of the service account.
@@ -509,6 +507,7 @@ public final class EnableServiceAccountKeyRequest extends com.google.protobuf.Ge
      * <pre>
      * Required. The resource name of the service account key in the following format:
      * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}/keys/{key}`.
+     *
      * Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
      * the account. The `ACCOUNT` value can be the `email` address or the
      * `unique_id` of the service account.
@@ -537,6 +536,7 @@ public final class EnableServiceAccountKeyRequest extends com.google.protobuf.Ge
      * <pre>
      * Required. The resource name of the service account key in the following format:
      * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}/keys/{key}`.
+     *
      * Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
      * the account. The `ACCOUNT` value can be the `email` address or the
      * `unique_id` of the service account.
@@ -564,6 +564,7 @@ public final class EnableServiceAccountKeyRequest extends com.google.protobuf.Ge
      * <pre>
      * Required. The resource name of the service account key in the following format:
      * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}/keys/{key}`.
+     *
      * Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
      * the account. The `ACCOUNT` value can be the `email` address or the
      * `unique_id` of the service account.
@@ -587,6 +588,7 @@ public final class EnableServiceAccountKeyRequest extends com.google.protobuf.Ge
      * <pre>
      * Required. The resource name of the service account key in the following format:
      * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}/keys/{key}`.
+     *
      * Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
      * the account. The `ACCOUNT` value can be the `email` address or the
      * `unique_id` of the service account.

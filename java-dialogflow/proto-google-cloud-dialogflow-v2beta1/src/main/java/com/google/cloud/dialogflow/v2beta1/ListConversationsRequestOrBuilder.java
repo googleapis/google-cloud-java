@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -109,7 +109,9 @@ public interface ListConversationsRequestOrBuilder
    * &lt;/ul&gt;
    * Only `lifecycle_state` can be filtered on in this way. For example,
    * the following expression only returns `COMPLETED` conversations:
+   *
    * `lifecycle_state = "COMPLETED"`
+   *
    * For more information about filtering, see
    * [API Filtering](https://aip.dev/160).
    * </pre>
@@ -135,7 +137,9 @@ public interface ListConversationsRequestOrBuilder
    * &lt;/ul&gt;
    * Only `lifecycle_state` can be filtered on in this way. For example,
    * the following expression only returns `COMPLETED` conversations:
+   *
    * `lifecycle_state = "COMPLETED"`
+   *
    * For more information about filtering, see
    * [API Filtering](https://aip.dev/160).
    * </pre>

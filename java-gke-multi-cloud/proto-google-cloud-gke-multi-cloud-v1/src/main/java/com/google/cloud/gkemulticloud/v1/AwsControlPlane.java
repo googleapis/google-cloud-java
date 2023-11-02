@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,8 +40,8 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
   private AwsControlPlane() {
     version_ = "";
     instanceType_ = "";
-    subnetIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    securityGroupIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    subnetIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    securityGroupIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
     iamInstanceProfile_ = "";
   }
 
@@ -49,11 +49,6 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new AwsControlPlane();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -92,6 +87,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
    * <pre>
    * Required. The Kubernetes version to run on control plane replicas
    * (e.g. `1.19.10-gke.1000`).
+   *
    * You can list all supported versions on a given Google Cloud region by
    * calling
    * [GetAwsServerConfig][google.cloud.gkemulticloud.v1.AwsClusters.GetAwsServerConfig].
@@ -119,6 +115,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
    * <pre>
    * Required. The Kubernetes version to run on control plane replicas
    * (e.g. `1.19.10-gke.1000`).
+   *
    * You can list all supported versions on a given Google Cloud region by
    * calling
    * [GetAwsServerConfig][google.cloud.gkemulticloud.v1.AwsClusters.GetAwsServerConfig].
@@ -150,6 +147,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Optional. The AWS instance type.
+   *
    * When unspecified, it uses a default based on the cluster's version.
    * </pre>
    *
@@ -174,6 +172,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Optional. The AWS instance type.
+   *
    * When unspecified, it uses a default based on the cluster's version.
    * </pre>
    *
@@ -256,7 +255,8 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
   public static final int SUBNET_IDS_FIELD_NUMBER = 4;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList subnetIds_;
+  private com.google.protobuf.LazyStringArrayList subnetIds_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -331,7 +331,8 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
   public static final int SECURITY_GROUP_IDS_FIELD_NUMBER = 5;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList securityGroupIds_;
+  private com.google.protobuf.LazyStringArrayList securityGroupIds_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -460,8 +461,10 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
    * <pre>
    * Optional. Configuration related to the root volume provisioned for each
    * control plane replica.
+   *
    * Volumes will be provisioned in the availability zone associated
    * with the corresponding subnet.
+   *
    * When unspecified, it defaults to 32 GiB with the GP2 volume type.
    * </pre>
    *
@@ -481,8 +484,10 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
    * <pre>
    * Optional. Configuration related to the root volume provisioned for each
    * control plane replica.
+   *
    * Volumes will be provisioned in the availability zone associated
    * with the corresponding subnet.
+   *
    * When unspecified, it defaults to 32 GiB with the GP2 volume type.
    * </pre>
    *
@@ -504,8 +509,10 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
    * <pre>
    * Optional. Configuration related to the root volume provisioned for each
    * control plane replica.
+   *
    * Volumes will be provisioned in the availability zone associated
    * with the corresponding subnet.
+   *
    * When unspecified, it defaults to 32 GiB with the GP2 volume type.
    * </pre>
    *
@@ -529,8 +536,10 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
    * Optional. Configuration related to the main volume provisioned for each
    * control plane replica.
    * The main volume is in charge of storing all of the cluster's etcd state.
+   *
    * Volumes will be provisioned in the availability zone associated
    * with the corresponding subnet.
+   *
    * When unspecified, it defaults to 8 GiB with the GP2 volume type.
    * </pre>
    *
@@ -551,8 +560,10 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
    * Optional. Configuration related to the main volume provisioned for each
    * control plane replica.
    * The main volume is in charge of storing all of the cluster's etcd state.
+   *
    * Volumes will be provisioned in the availability zone associated
    * with the corresponding subnet.
+   *
    * When unspecified, it defaults to 8 GiB with the GP2 volume type.
    * </pre>
    *
@@ -575,8 +586,10 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
    * Optional. Configuration related to the main volume provisioned for each
    * control plane replica.
    * The main volume is in charge of storing all of the cluster's etcd state.
+   *
    * Volumes will be provisioned in the availability zone associated
    * with the corresponding subnet.
+   *
    * When unspecified, it defaults to 8 GiB with the GP2 volume type.
    * </pre>
    *
@@ -680,6 +693,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
    * <pre>
    * Optional. A set of AWS resource tags to propagate to all underlying managed
    * AWS resources.
+   *
    * Specify at most 50 pairs containing alphanumerics, spaces, and symbols
    * (.+-=_:&#64;/). Keys can be up to 127 Unicode characters. Values can be up to
    * 255 Unicode characters.
@@ -706,6 +720,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
    * <pre>
    * Optional. A set of AWS resource tags to propagate to all underlying managed
    * AWS resources.
+   *
    * Specify at most 50 pairs containing alphanumerics, spaces, and symbols
    * (.+-=_:&#64;/). Keys can be up to 127 Unicode characters. Values can be up to
    * 255 Unicode characters.
@@ -723,6 +738,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
    * <pre>
    * Optional. A set of AWS resource tags to propagate to all underlying managed
    * AWS resources.
+   *
    * Specify at most 50 pairs containing alphanumerics, spaces, and symbols
    * (.+-=_:&#64;/). Keys can be up to 127 Unicode characters. Values can be up to
    * 255 Unicode characters.
@@ -747,6 +763,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
    * <pre>
    * Optional. A set of AWS resource tags to propagate to all underlying managed
    * AWS resources.
+   *
    * Specify at most 50 pairs containing alphanumerics, spaces, and symbols
    * (.+-=_:&#64;/). Keys can be up to 127 Unicode characters. Values can be up to
    * 255 Unicode characters.
@@ -1404,10 +1421,8 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
         sshConfigBuilder_.dispose();
         sshConfigBuilder_ = null;
       }
-      subnetIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
-      securityGroupIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000010);
+      subnetIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      securityGroupIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
       iamInstanceProfile_ = "";
       rootVolume_ = null;
       if (rootVolumeBuilder_ != null) {
@@ -1472,26 +1487,11 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.gkemulticloud.v1.AwsControlPlane buildPartial() {
       com.google.cloud.gkemulticloud.v1.AwsControlPlane result =
           new com.google.cloud.gkemulticloud.v1.AwsControlPlane(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(
-        com.google.cloud.gkemulticloud.v1.AwsControlPlane result) {
-      if (((bitField0_ & 0x00000008) != 0)) {
-        subnetIds_ = subnetIds_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000008);
-      }
-      result.subnetIds_ = subnetIds_;
-      if (((bitField0_ & 0x00000010) != 0)) {
-        securityGroupIds_ = securityGroupIds_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000010);
-      }
-      result.securityGroupIds_ = securityGroupIds_;
     }
 
     private void buildPartial0(com.google.cloud.gkemulticloud.v1.AwsControlPlane result) {
@@ -1504,6 +1504,14 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.sshConfig_ = sshConfigBuilder_ == null ? sshConfig_ : sshConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        subnetIds_.makeImmutable();
+        result.subnetIds_ = subnetIds_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        securityGroupIds_.makeImmutable();
+        result.securityGroupIds_ = securityGroupIds_;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.iamInstanceProfile_ = iamInstanceProfile_;
@@ -1608,7 +1616,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
       if (!other.subnetIds_.isEmpty()) {
         if (subnetIds_.isEmpty()) {
           subnetIds_ = other.subnetIds_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ |= 0x00000008;
         } else {
           ensureSubnetIdsIsMutable();
           subnetIds_.addAll(other.subnetIds_);
@@ -1618,7 +1626,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
       if (!other.securityGroupIds_.isEmpty()) {
         if (securityGroupIds_.isEmpty()) {
           securityGroupIds_ = other.securityGroupIds_;
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ |= 0x00000010;
         } else {
           ensureSecurityGroupIdsIsMutable();
           securityGroupIds_.addAll(other.securityGroupIds_);
@@ -1798,6 +1806,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Required. The Kubernetes version to run on control plane replicas
      * (e.g. `1.19.10-gke.1000`).
+     *
      * You can list all supported versions on a given Google Cloud region by
      * calling
      * [GetAwsServerConfig][google.cloud.gkemulticloud.v1.AwsClusters.GetAwsServerConfig].
@@ -1824,6 +1833,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Required. The Kubernetes version to run on control plane replicas
      * (e.g. `1.19.10-gke.1000`).
+     *
      * You can list all supported versions on a given Google Cloud region by
      * calling
      * [GetAwsServerConfig][google.cloud.gkemulticloud.v1.AwsClusters.GetAwsServerConfig].
@@ -1850,6 +1860,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Required. The Kubernetes version to run on control plane replicas
      * (e.g. `1.19.10-gke.1000`).
+     *
      * You can list all supported versions on a given Google Cloud region by
      * calling
      * [GetAwsServerConfig][google.cloud.gkemulticloud.v1.AwsClusters.GetAwsServerConfig].
@@ -1875,6 +1886,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Required. The Kubernetes version to run on control plane replicas
      * (e.g. `1.19.10-gke.1000`).
+     *
      * You can list all supported versions on a given Google Cloud region by
      * calling
      * [GetAwsServerConfig][google.cloud.gkemulticloud.v1.AwsClusters.GetAwsServerConfig].
@@ -1896,6 +1908,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Required. The Kubernetes version to run on control plane replicas
      * (e.g. `1.19.10-gke.1000`).
+     *
      * You can list all supported versions on a given Google Cloud region by
      * calling
      * [GetAwsServerConfig][google.cloud.gkemulticloud.v1.AwsClusters.GetAwsServerConfig].
@@ -1923,6 +1936,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Optional. The AWS instance type.
+     *
      * When unspecified, it uses a default based on the cluster's version.
      * </pre>
      *
@@ -1946,6 +1960,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Optional. The AWS instance type.
+     *
      * When unspecified, it uses a default based on the cluster's version.
      * </pre>
      *
@@ -1969,6 +1984,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Optional. The AWS instance type.
+     *
      * When unspecified, it uses a default based on the cluster's version.
      * </pre>
      *
@@ -1991,6 +2007,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Optional. The AWS instance type.
+     *
      * When unspecified, it uses a default based on the cluster's version.
      * </pre>
      *
@@ -2009,6 +2026,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Optional. The AWS instance type.
+     *
      * When unspecified, it uses a default based on the cluster's version.
      * </pre>
      *
@@ -2239,14 +2257,14 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
       return sshConfigBuilder_;
     }
 
-    private com.google.protobuf.LazyStringList subnetIds_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList subnetIds_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureSubnetIdsIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!subnetIds_.isModifiable()) {
         subnetIds_ = new com.google.protobuf.LazyStringArrayList(subnetIds_);
-        bitField0_ |= 0x00000008;
       }
+      bitField0_ |= 0x00000008;
     }
     /**
      *
@@ -2263,7 +2281,8 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
      * @return A list containing the subnetIds.
      */
     public com.google.protobuf.ProtocolStringList getSubnetIdsList() {
-      return subnetIds_.getUnmodifiableView();
+      subnetIds_.makeImmutable();
+      return subnetIds_;
     }
     /**
      *
@@ -2340,6 +2359,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
       }
       ensureSubnetIdsIsMutable();
       subnetIds_.set(index, value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2364,6 +2384,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
       }
       ensureSubnetIdsIsMutable();
       subnetIds_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2385,6 +2406,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
     public Builder addAllSubnetIds(java.lang.Iterable<java.lang.String> values) {
       ensureSubnetIdsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, subnetIds_);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2403,8 +2425,9 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearSubnetIds() {
-      subnetIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      subnetIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000008);
+      ;
       onChanged();
       return this;
     }
@@ -2430,18 +2453,19 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
       checkByteStringIsUtf8(value);
       ensureSubnetIdsIsMutable();
       subnetIds_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList securityGroupIds_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList securityGroupIds_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureSecurityGroupIdsIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!securityGroupIds_.isModifiable()) {
         securityGroupIds_ = new com.google.protobuf.LazyStringArrayList(securityGroupIds_);
-        bitField0_ |= 0x00000010;
       }
+      bitField0_ |= 0x00000010;
     }
     /**
      *
@@ -2458,7 +2482,8 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
      * @return A list containing the securityGroupIds.
      */
     public com.google.protobuf.ProtocolStringList getSecurityGroupIdsList() {
-      return securityGroupIds_.getUnmodifiableView();
+      securityGroupIds_.makeImmutable();
+      return securityGroupIds_;
     }
     /**
      *
@@ -2535,6 +2560,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
       }
       ensureSecurityGroupIdsIsMutable();
       securityGroupIds_.set(index, value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2559,6 +2585,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
       }
       ensureSecurityGroupIdsIsMutable();
       securityGroupIds_.add(value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2580,6 +2607,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
     public Builder addAllSecurityGroupIds(java.lang.Iterable<java.lang.String> values) {
       ensureSecurityGroupIdsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, securityGroupIds_);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2598,8 +2626,9 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearSecurityGroupIds() {
-      securityGroupIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      securityGroupIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000010);
+      ;
       onChanged();
       return this;
     }
@@ -2625,6 +2654,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
       checkByteStringIsUtf8(value);
       ensureSecurityGroupIdsIsMutable();
       securityGroupIds_.add(value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2752,8 +2782,10 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Optional. Configuration related to the root volume provisioned for each
      * control plane replica.
+     *
      * Volumes will be provisioned in the availability zone associated
      * with the corresponding subnet.
+     *
      * When unspecified, it defaults to 32 GiB with the GP2 volume type.
      * </pre>
      *
@@ -2772,8 +2804,10 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Optional. Configuration related to the root volume provisioned for each
      * control plane replica.
+     *
      * Volumes will be provisioned in the availability zone associated
      * with the corresponding subnet.
+     *
      * When unspecified, it defaults to 32 GiB with the GP2 volume type.
      * </pre>
      *
@@ -2798,8 +2832,10 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Optional. Configuration related to the root volume provisioned for each
      * control plane replica.
+     *
      * Volumes will be provisioned in the availability zone associated
      * with the corresponding subnet.
+     *
      * When unspecified, it defaults to 32 GiB with the GP2 volume type.
      * </pre>
      *
@@ -2826,8 +2862,10 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Optional. Configuration related to the root volume provisioned for each
      * control plane replica.
+     *
      * Volumes will be provisioned in the availability zone associated
      * with the corresponding subnet.
+     *
      * When unspecified, it defaults to 32 GiB with the GP2 volume type.
      * </pre>
      *
@@ -2852,8 +2890,10 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Optional. Configuration related to the root volume provisioned for each
      * control plane replica.
+     *
      * Volumes will be provisioned in the availability zone associated
      * with the corresponding subnet.
+     *
      * When unspecified, it defaults to 32 GiB with the GP2 volume type.
      * </pre>
      *
@@ -2884,8 +2924,10 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Optional. Configuration related to the root volume provisioned for each
      * control plane replica.
+     *
      * Volumes will be provisioned in the availability zone associated
      * with the corresponding subnet.
+     *
      * When unspecified, it defaults to 32 GiB with the GP2 volume type.
      * </pre>
      *
@@ -2909,8 +2951,10 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Optional. Configuration related to the root volume provisioned for each
      * control plane replica.
+     *
      * Volumes will be provisioned in the availability zone associated
      * with the corresponding subnet.
+     *
      * When unspecified, it defaults to 32 GiB with the GP2 volume type.
      * </pre>
      *
@@ -2929,8 +2973,10 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Optional. Configuration related to the root volume provisioned for each
      * control plane replica.
+     *
      * Volumes will be provisioned in the availability zone associated
      * with the corresponding subnet.
+     *
      * When unspecified, it defaults to 32 GiB with the GP2 volume type.
      * </pre>
      *
@@ -2953,8 +2999,10 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Optional. Configuration related to the root volume provisioned for each
      * control plane replica.
+     *
      * Volumes will be provisioned in the availability zone associated
      * with the corresponding subnet.
+     *
      * When unspecified, it defaults to 32 GiB with the GP2 volume type.
      * </pre>
      *
@@ -2992,8 +3040,10 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
      * Optional. Configuration related to the main volume provisioned for each
      * control plane replica.
      * The main volume is in charge of storing all of the cluster's etcd state.
+     *
      * Volumes will be provisioned in the availability zone associated
      * with the corresponding subnet.
+     *
      * When unspecified, it defaults to 8 GiB with the GP2 volume type.
      * </pre>
      *
@@ -3013,8 +3063,10 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
      * Optional. Configuration related to the main volume provisioned for each
      * control plane replica.
      * The main volume is in charge of storing all of the cluster's etcd state.
+     *
      * Volumes will be provisioned in the availability zone associated
      * with the corresponding subnet.
+     *
      * When unspecified, it defaults to 8 GiB with the GP2 volume type.
      * </pre>
      *
@@ -3040,8 +3092,10 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
      * Optional. Configuration related to the main volume provisioned for each
      * control plane replica.
      * The main volume is in charge of storing all of the cluster's etcd state.
+     *
      * Volumes will be provisioned in the availability zone associated
      * with the corresponding subnet.
+     *
      * When unspecified, it defaults to 8 GiB with the GP2 volume type.
      * </pre>
      *
@@ -3069,8 +3123,10 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
      * Optional. Configuration related to the main volume provisioned for each
      * control plane replica.
      * The main volume is in charge of storing all of the cluster's etcd state.
+     *
      * Volumes will be provisioned in the availability zone associated
      * with the corresponding subnet.
+     *
      * When unspecified, it defaults to 8 GiB with the GP2 volume type.
      * </pre>
      *
@@ -3096,8 +3152,10 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
      * Optional. Configuration related to the main volume provisioned for each
      * control plane replica.
      * The main volume is in charge of storing all of the cluster's etcd state.
+     *
      * Volumes will be provisioned in the availability zone associated
      * with the corresponding subnet.
+     *
      * When unspecified, it defaults to 8 GiB with the GP2 volume type.
      * </pre>
      *
@@ -3129,8 +3187,10 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
      * Optional. Configuration related to the main volume provisioned for each
      * control plane replica.
      * The main volume is in charge of storing all of the cluster's etcd state.
+     *
      * Volumes will be provisioned in the availability zone associated
      * with the corresponding subnet.
+     *
      * When unspecified, it defaults to 8 GiB with the GP2 volume type.
      * </pre>
      *
@@ -3155,8 +3215,10 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
      * Optional. Configuration related to the main volume provisioned for each
      * control plane replica.
      * The main volume is in charge of storing all of the cluster's etcd state.
+     *
      * Volumes will be provisioned in the availability zone associated
      * with the corresponding subnet.
+     *
      * When unspecified, it defaults to 8 GiB with the GP2 volume type.
      * </pre>
      *
@@ -3176,8 +3238,10 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
      * Optional. Configuration related to the main volume provisioned for each
      * control plane replica.
      * The main volume is in charge of storing all of the cluster's etcd state.
+     *
      * Volumes will be provisioned in the availability zone associated
      * with the corresponding subnet.
+     *
      * When unspecified, it defaults to 8 GiB with the GP2 volume type.
      * </pre>
      *
@@ -3201,8 +3265,10 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
      * Optional. Configuration related to the main volume provisioned for each
      * control plane replica.
      * The main volume is in charge of storing all of the cluster's etcd state.
+     *
      * Volumes will be provisioned in the availability zone associated
      * with the corresponding subnet.
+     *
      * When unspecified, it defaults to 8 GiB with the GP2 volume type.
      * </pre>
      *
@@ -3465,6 +3531,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Optional. A set of AWS resource tags to propagate to all underlying managed
      * AWS resources.
+     *
      * Specify at most 50 pairs containing alphanumerics, spaces, and symbols
      * (.+-=_:&#64;/). Keys can be up to 127 Unicode characters. Values can be up to
      * 255 Unicode characters.
@@ -3491,6 +3558,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Optional. A set of AWS resource tags to propagate to all underlying managed
      * AWS resources.
+     *
      * Specify at most 50 pairs containing alphanumerics, spaces, and symbols
      * (.+-=_:&#64;/). Keys can be up to 127 Unicode characters. Values can be up to
      * 255 Unicode characters.
@@ -3508,6 +3576,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Optional. A set of AWS resource tags to propagate to all underlying managed
      * AWS resources.
+     *
      * Specify at most 50 pairs containing alphanumerics, spaces, and symbols
      * (.+-=_:&#64;/). Keys can be up to 127 Unicode characters. Values can be up to
      * 255 Unicode characters.
@@ -3532,6 +3601,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Optional. A set of AWS resource tags to propagate to all underlying managed
      * AWS resources.
+     *
      * Specify at most 50 pairs containing alphanumerics, spaces, and symbols
      * (.+-=_:&#64;/). Keys can be up to 127 Unicode characters. Values can be up to
      * 255 Unicode characters.
@@ -3562,6 +3632,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Optional. A set of AWS resource tags to propagate to all underlying managed
      * AWS resources.
+     *
      * Specify at most 50 pairs containing alphanumerics, spaces, and symbols
      * (.+-=_:&#64;/). Keys can be up to 127 Unicode characters. Values can be up to
      * 255 Unicode characters.
@@ -3588,6 +3659,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Optional. A set of AWS resource tags to propagate to all underlying managed
      * AWS resources.
+     *
      * Specify at most 50 pairs containing alphanumerics, spaces, and symbols
      * (.+-=_:&#64;/). Keys can be up to 127 Unicode characters. Values can be up to
      * 255 Unicode characters.
@@ -3612,6 +3684,7 @@ public final class AwsControlPlane extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Optional. A set of AWS resource tags to propagate to all underlying managed
      * AWS resources.
+     *
      * Specify at most 50 pairs containing alphanumerics, spaces, and symbols
      * (.+-=_:&#64;/). Keys can be up to 127 Unicode characters. Values can be up to
      * 255 Unicode characters.

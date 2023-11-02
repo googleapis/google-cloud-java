@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -461,7 +461,8 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Output only. Field indicates all the reasons the instance is in "SUSPENDED" state.
+   * Output only. Field indicates all the reasons the instance is in "SUSPENDED"
+   * state.
    * </pre>
    *
    * <code>
@@ -476,7 +477,8 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Output only. Field indicates all the reasons the instance is in "SUSPENDED" state.
+   * Output only. Field indicates all the reasons the instance is in "SUSPENDED"
+   * state.
    * </pre>
    *
    * <code>
@@ -490,7 +492,8 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Output only. Field indicates all the reasons the instance is in "SUSPENDED" state.
+   * Output only. Field indicates all the reasons the instance is in "SUSPENDED"
+   * state.
    * </pre>
    *
    * <code>
@@ -505,7 +508,8 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Output only. Field indicates all the reasons the instance is in "SUSPENDED" state.
+   * Output only. Field indicates all the reasons the instance is in "SUSPENDED"
+   * state.
    * </pre>
    *
    * <code>
@@ -519,7 +523,8 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Output only. Field indicates all the reasons the instance is in "SUSPENDED" state.
+   * Output only. Field indicates all the reasons the instance is in "SUSPENDED"
+   * state.
    * </pre>
    *
    * <code>
@@ -561,10 +566,10 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Output only. The max number of shares allowed.
+   * The max number of shares allowed.
    * </pre>
    *
-   * <code>int64 max_share_count = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>int64 max_share_count = 18;</code>
    *
    * @return The maxShareCount.
    */
@@ -599,4 +604,76 @@ public interface InstanceOrBuilder
    * @return The multiShareEnabled.
    */
   boolean getMultiShareEnabled();
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The protocol indicates the access protocol for all shares in the
+   * instance. This field is immutable and it cannot be changed after the
+   * instance has been created. Default value: `NFS_V3`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.filestore.v1beta1.Instance.FileProtocol protocol = 21 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for protocol.
+   */
+  int getProtocolValue();
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The protocol indicates the access protocol for all shares in the
+   * instance. This field is immutable and it cannot be changed after the
+   * instance has been created. Default value: `NFS_V3`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.filestore.v1beta1.Instance.FileProtocol protocol = 21 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The protocol.
+   */
+  com.google.cloud.filestore.v1beta1.Instance.FileProtocol getProtocol();
+
+  /**
+   *
+   *
+   * <pre>
+   * Directory Services configuration for Kerberos-based authentication.
+   * Should only be set if protocol is "NFS_V4_1".
+   * </pre>
+   *
+   * <code>.google.cloud.filestore.v1beta1.DirectoryServicesConfig directory_services = 24;</code>
+   *
+   * @return Whether the directoryServices field is set.
+   */
+  boolean hasDirectoryServices();
+  /**
+   *
+   *
+   * <pre>
+   * Directory Services configuration for Kerberos-based authentication.
+   * Should only be set if protocol is "NFS_V4_1".
+   * </pre>
+   *
+   * <code>.google.cloud.filestore.v1beta1.DirectoryServicesConfig directory_services = 24;</code>
+   *
+   * @return The directoryServices.
+   */
+  com.google.cloud.filestore.v1beta1.DirectoryServicesConfig getDirectoryServices();
+  /**
+   *
+   *
+   * <pre>
+   * Directory Services configuration for Kerberos-based authentication.
+   * Should only be set if protocol is "NFS_V4_1".
+   * </pre>
+   *
+   * <code>.google.cloud.filestore.v1beta1.DirectoryServicesConfig directory_services = 24;</code>
+   */
+  com.google.cloud.filestore.v1beta1.DirectoryServicesConfigOrBuilder
+      getDirectoryServicesOrBuilder();
 }

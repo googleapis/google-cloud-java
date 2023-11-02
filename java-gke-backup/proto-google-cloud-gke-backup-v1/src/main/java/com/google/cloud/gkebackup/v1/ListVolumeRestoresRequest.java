@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,11 +50,6 @@ public final class ListVolumeRestoresRequest extends com.google.protobuf.Generat
     return new ListVolumeRestoresRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.gkebackup.v1.GKEBackupProto
         .internal_static_google_cloud_gkebackup_v1_ListVolumeRestoresRequest_descriptor;
@@ -79,7 +74,7 @@ public final class ListVolumeRestoresRequest extends com.google.protobuf.Generat
    *
    * <pre>
    * Required. The Restore that contains the VolumeRestores to list.
-   * Format: projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;&#47;restores/&#42;
+   * Format: `projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;&#47;restores/&#42;`
    * </pre>
    *
    * <code>
@@ -105,7 +100,7 @@ public final class ListVolumeRestoresRequest extends com.google.protobuf.Generat
    *
    * <pre>
    * Required. The Restore that contains the VolumeRestores to list.
-   * Format: projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;&#47;restores/&#42;
+   * Format: `projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;&#47;restores/&#42;`
    * </pre>
    *
    * <code>
@@ -756,7 +751,7 @@ public final class ListVolumeRestoresRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. The Restore that contains the VolumeRestores to list.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;&#47;restores/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;&#47;restores/&#42;`
      * </pre>
      *
      * <code>
@@ -781,7 +776,7 @@ public final class ListVolumeRestoresRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. The Restore that contains the VolumeRestores to list.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;&#47;restores/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;&#47;restores/&#42;`
      * </pre>
      *
      * <code>
@@ -806,7 +801,7 @@ public final class ListVolumeRestoresRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. The Restore that contains the VolumeRestores to list.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;&#47;restores/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;&#47;restores/&#42;`
      * </pre>
      *
      * <code>
@@ -830,7 +825,7 @@ public final class ListVolumeRestoresRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. The Restore that contains the VolumeRestores to list.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;&#47;restores/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;&#47;restores/&#42;`
      * </pre>
      *
      * <code>
@@ -850,7 +845,7 @@ public final class ListVolumeRestoresRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. The Restore that contains the VolumeRestores to list.
-     * Format: projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;&#47;restores/&#42;
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;restorePlans/&#42;&#47;restores/&#42;`
      * </pre>
      *
      * <code>

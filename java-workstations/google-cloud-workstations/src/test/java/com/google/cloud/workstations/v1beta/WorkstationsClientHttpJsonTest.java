@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -115,6 +115,7 @@ public class WorkstationsClientHttpJsonTest {
             .setEtag("etag3123477")
             .setNetwork("network1843485230")
             .setSubnetwork("subnetwork-1302785042")
+            .setControlPlaneIp("controlPlaneIp-1263362938")
             .setPrivateClusterConfig(WorkstationCluster.PrivateClusterConfig.newBuilder().build())
             .setDegraded(true)
             .addAllConditions(new ArrayList<Status>())
@@ -177,6 +178,7 @@ public class WorkstationsClientHttpJsonTest {
             .setEtag("etag3123477")
             .setNetwork("network1843485230")
             .setSubnetwork("subnetwork-1302785042")
+            .setControlPlaneIp("controlPlaneIp-1263362938")
             .setPrivateClusterConfig(WorkstationCluster.PrivateClusterConfig.newBuilder().build())
             .setDegraded(true)
             .addAllConditions(new ArrayList<Status>())
@@ -339,6 +341,7 @@ public class WorkstationsClientHttpJsonTest {
             .setEtag("etag3123477")
             .setNetwork("network1843485230")
             .setSubnetwork("subnetwork-1302785042")
+            .setControlPlaneIp("controlPlaneIp-1263362938")
             .setPrivateClusterConfig(WorkstationCluster.PrivateClusterConfig.newBuilder().build())
             .setDegraded(true)
             .addAllConditions(new ArrayList<Status>())
@@ -411,6 +414,7 @@ public class WorkstationsClientHttpJsonTest {
             .setEtag("etag3123477")
             .setNetwork("network1843485230")
             .setSubnetwork("subnetwork-1302785042")
+            .setControlPlaneIp("controlPlaneIp-1263362938")
             .setPrivateClusterConfig(WorkstationCluster.PrivateClusterConfig.newBuilder().build())
             .setDegraded(true)
             .addAllConditions(new ArrayList<Status>())
@@ -483,6 +487,7 @@ public class WorkstationsClientHttpJsonTest {
             .setEtag("etag3123477")
             .setNetwork("network1843485230")
             .setSubnetwork("subnetwork-1302785042")
+            .setControlPlaneIp("controlPlaneIp-1263362938")
             .setPrivateClusterConfig(WorkstationCluster.PrivateClusterConfig.newBuilder().build())
             .setDegraded(true)
             .addAllConditions(new ArrayList<Status>())
@@ -511,6 +516,7 @@ public class WorkstationsClientHttpJsonTest {
             .setEtag("etag3123477")
             .setNetwork("network1843485230")
             .setSubnetwork("subnetwork-1302785042")
+            .setControlPlaneIp("controlPlaneIp-1263362938")
             .setPrivateClusterConfig(WorkstationCluster.PrivateClusterConfig.newBuilder().build())
             .setDegraded(true)
             .addAllConditions(new ArrayList<Status>())
@@ -560,6 +566,7 @@ public class WorkstationsClientHttpJsonTest {
               .setEtag("etag3123477")
               .setNetwork("network1843485230")
               .setSubnetwork("subnetwork-1302785042")
+              .setControlPlaneIp("controlPlaneIp-1263362938")
               .setPrivateClusterConfig(WorkstationCluster.PrivateClusterConfig.newBuilder().build())
               .setDegraded(true)
               .addAllConditions(new ArrayList<Status>())
@@ -589,6 +596,7 @@ public class WorkstationsClientHttpJsonTest {
             .setEtag("etag3123477")
             .setNetwork("network1843485230")
             .setSubnetwork("subnetwork-1302785042")
+            .setControlPlaneIp("controlPlaneIp-1263362938")
             .setPrivateClusterConfig(WorkstationCluster.PrivateClusterConfig.newBuilder().build())
             .setDegraded(true)
             .addAllConditions(new ArrayList<Status>())
@@ -656,6 +664,7 @@ public class WorkstationsClientHttpJsonTest {
             .setEtag("etag3123477")
             .setNetwork("network1843485230")
             .setSubnetwork("subnetwork-1302785042")
+            .setControlPlaneIp("controlPlaneIp-1263362938")
             .setPrivateClusterConfig(WorkstationCluster.PrivateClusterConfig.newBuilder().build())
             .setDegraded(true)
             .addAllConditions(new ArrayList<Status>())
@@ -726,10 +735,14 @@ public class WorkstationsClientHttpJsonTest {
             .setRunningTimeout(Duration.newBuilder().build())
             .setHost(WorkstationConfig.Host.newBuilder().build())
             .addAllPersistentDirectories(new ArrayList<WorkstationConfig.PersistentDirectory>())
+            .addAllEphemeralDirectories(new ArrayList<WorkstationConfig.EphemeralDirectory>())
             .setContainer(WorkstationConfig.Container.newBuilder().build())
             .setEncryptionKey(WorkstationConfig.CustomerEncryptionKey.newBuilder().build())
+            .addAllReadinessChecks(new ArrayList<WorkstationConfig.ReadinessCheck>())
+            .addAllReplicaZones(new ArrayList<String>())
             .setDegraded(true)
             .addAllConditions(new ArrayList<Status>())
+            .setEnableAuditAgent(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -794,10 +807,14 @@ public class WorkstationsClientHttpJsonTest {
             .setRunningTimeout(Duration.newBuilder().build())
             .setHost(WorkstationConfig.Host.newBuilder().build())
             .addAllPersistentDirectories(new ArrayList<WorkstationConfig.PersistentDirectory>())
+            .addAllEphemeralDirectories(new ArrayList<WorkstationConfig.EphemeralDirectory>())
             .setContainer(WorkstationConfig.Container.newBuilder().build())
             .setEncryptionKey(WorkstationConfig.CustomerEncryptionKey.newBuilder().build())
+            .addAllReadinessChecks(new ArrayList<WorkstationConfig.ReadinessCheck>())
+            .addAllReplicaZones(new ArrayList<String>())
             .setDegraded(true)
             .addAllConditions(new ArrayList<Status>())
+            .setEnableAuditAgent(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1070,10 +1087,14 @@ public class WorkstationsClientHttpJsonTest {
             .setRunningTimeout(Duration.newBuilder().build())
             .setHost(WorkstationConfig.Host.newBuilder().build())
             .addAllPersistentDirectories(new ArrayList<WorkstationConfig.PersistentDirectory>())
+            .addAllEphemeralDirectories(new ArrayList<WorkstationConfig.EphemeralDirectory>())
             .setContainer(WorkstationConfig.Container.newBuilder().build())
             .setEncryptionKey(WorkstationConfig.CustomerEncryptionKey.newBuilder().build())
+            .addAllReadinessChecks(new ArrayList<WorkstationConfig.ReadinessCheck>())
+            .addAllReplicaZones(new ArrayList<String>())
             .setDegraded(true)
             .addAllConditions(new ArrayList<Status>())
+            .setEnableAuditAgent(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1146,10 +1167,14 @@ public class WorkstationsClientHttpJsonTest {
             .setRunningTimeout(Duration.newBuilder().build())
             .setHost(WorkstationConfig.Host.newBuilder().build())
             .addAllPersistentDirectories(new ArrayList<WorkstationConfig.PersistentDirectory>())
+            .addAllEphemeralDirectories(new ArrayList<WorkstationConfig.EphemeralDirectory>())
             .setContainer(WorkstationConfig.Container.newBuilder().build())
             .setEncryptionKey(WorkstationConfig.CustomerEncryptionKey.newBuilder().build())
+            .addAllReadinessChecks(new ArrayList<WorkstationConfig.ReadinessCheck>())
+            .addAllReplicaZones(new ArrayList<String>())
             .setDegraded(true)
             .addAllConditions(new ArrayList<Status>())
+            .setEnableAuditAgent(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1222,10 +1247,14 @@ public class WorkstationsClientHttpJsonTest {
             .setRunningTimeout(Duration.newBuilder().build())
             .setHost(WorkstationConfig.Host.newBuilder().build())
             .addAllPersistentDirectories(new ArrayList<WorkstationConfig.PersistentDirectory>())
+            .addAllEphemeralDirectories(new ArrayList<WorkstationConfig.EphemeralDirectory>())
             .setContainer(WorkstationConfig.Container.newBuilder().build())
             .setEncryptionKey(WorkstationConfig.CustomerEncryptionKey.newBuilder().build())
+            .addAllReadinessChecks(new ArrayList<WorkstationConfig.ReadinessCheck>())
+            .addAllReplicaZones(new ArrayList<String>())
             .setDegraded(true)
             .addAllConditions(new ArrayList<Status>())
+            .setEnableAuditAgent(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1254,10 +1283,14 @@ public class WorkstationsClientHttpJsonTest {
             .setRunningTimeout(Duration.newBuilder().build())
             .setHost(WorkstationConfig.Host.newBuilder().build())
             .addAllPersistentDirectories(new ArrayList<WorkstationConfig.PersistentDirectory>())
+            .addAllEphemeralDirectories(new ArrayList<WorkstationConfig.EphemeralDirectory>())
             .setContainer(WorkstationConfig.Container.newBuilder().build())
             .setEncryptionKey(WorkstationConfig.CustomerEncryptionKey.newBuilder().build())
+            .addAllReadinessChecks(new ArrayList<WorkstationConfig.ReadinessCheck>())
+            .addAllReplicaZones(new ArrayList<String>())
             .setDegraded(true)
             .addAllConditions(new ArrayList<Status>())
+            .setEnableAuditAgent(true)
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -1310,10 +1343,14 @@ public class WorkstationsClientHttpJsonTest {
               .setRunningTimeout(Duration.newBuilder().build())
               .setHost(WorkstationConfig.Host.newBuilder().build())
               .addAllPersistentDirectories(new ArrayList<WorkstationConfig.PersistentDirectory>())
+              .addAllEphemeralDirectories(new ArrayList<WorkstationConfig.EphemeralDirectory>())
               .setContainer(WorkstationConfig.Container.newBuilder().build())
               .setEncryptionKey(WorkstationConfig.CustomerEncryptionKey.newBuilder().build())
+              .addAllReadinessChecks(new ArrayList<WorkstationConfig.ReadinessCheck>())
+              .addAllReplicaZones(new ArrayList<String>())
               .setDegraded(true)
               .addAllConditions(new ArrayList<Status>())
+              .setEnableAuditAgent(true)
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateWorkstationConfigAsync(workstationConfig, updateMask).get();
@@ -1343,10 +1380,14 @@ public class WorkstationsClientHttpJsonTest {
             .setRunningTimeout(Duration.newBuilder().build())
             .setHost(WorkstationConfig.Host.newBuilder().build())
             .addAllPersistentDirectories(new ArrayList<WorkstationConfig.PersistentDirectory>())
+            .addAllEphemeralDirectories(new ArrayList<WorkstationConfig.EphemeralDirectory>())
             .setContainer(WorkstationConfig.Container.newBuilder().build())
             .setEncryptionKey(WorkstationConfig.CustomerEncryptionKey.newBuilder().build())
+            .addAllReadinessChecks(new ArrayList<WorkstationConfig.ReadinessCheck>())
+            .addAllReplicaZones(new ArrayList<String>())
             .setDegraded(true)
             .addAllConditions(new ArrayList<Status>())
+            .setEnableAuditAgent(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1416,10 +1457,14 @@ public class WorkstationsClientHttpJsonTest {
             .setRunningTimeout(Duration.newBuilder().build())
             .setHost(WorkstationConfig.Host.newBuilder().build())
             .addAllPersistentDirectories(new ArrayList<WorkstationConfig.PersistentDirectory>())
+            .addAllEphemeralDirectories(new ArrayList<WorkstationConfig.EphemeralDirectory>())
             .setContainer(WorkstationConfig.Container.newBuilder().build())
             .setEncryptionKey(WorkstationConfig.CustomerEncryptionKey.newBuilder().build())
+            .addAllReadinessChecks(new ArrayList<WorkstationConfig.ReadinessCheck>())
+            .addAllReplicaZones(new ArrayList<String>())
             .setDegraded(true)
             .addAllConditions(new ArrayList<Status>())
+            .setEnableAuditAgent(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1485,9 +1530,11 @@ public class WorkstationsClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setStartTime(Timestamp.newBuilder().build())
             .setDeleteTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
             .setHost("host3208616")
+            .putAllEnv(new HashMap<String, String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1558,9 +1605,11 @@ public class WorkstationsClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setStartTime(Timestamp.newBuilder().build())
             .setDeleteTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
             .setHost("host3208616")
+            .putAllEnv(new HashMap<String, String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1833,9 +1882,11 @@ public class WorkstationsClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setStartTime(Timestamp.newBuilder().build())
             .setDeleteTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
             .setHost("host3208616")
+            .putAllEnv(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1908,9 +1959,11 @@ public class WorkstationsClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setStartTime(Timestamp.newBuilder().build())
             .setDeleteTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
             .setHost("host3208616")
+            .putAllEnv(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1981,9 +2034,11 @@ public class WorkstationsClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setStartTime(Timestamp.newBuilder().build())
             .setDeleteTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
             .setHost("host3208616")
+            .putAllEnv(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2010,9 +2065,11 @@ public class WorkstationsClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setStartTime(Timestamp.newBuilder().build())
             .setDeleteTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
             .setHost("host3208616")
+            .putAllEnv(new HashMap<String, String>())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -2059,9 +2116,11 @@ public class WorkstationsClientHttpJsonTest {
               .putAllLabels(new HashMap<String, String>())
               .setCreateTime(Timestamp.newBuilder().build())
               .setUpdateTime(Timestamp.newBuilder().build())
+              .setStartTime(Timestamp.newBuilder().build())
               .setDeleteTime(Timestamp.newBuilder().build())
               .setEtag("etag3123477")
               .setHost("host3208616")
+              .putAllEnv(new HashMap<String, String>())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateWorkstationAsync(workstation, updateMask).get();
@@ -2089,9 +2148,11 @@ public class WorkstationsClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setStartTime(Timestamp.newBuilder().build())
             .setDeleteTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
             .setHost("host3208616")
+            .putAllEnv(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2167,9 +2228,11 @@ public class WorkstationsClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setStartTime(Timestamp.newBuilder().build())
             .setDeleteTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
             .setHost("host3208616")
+            .putAllEnv(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2235,9 +2298,11 @@ public class WorkstationsClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setStartTime(Timestamp.newBuilder().build())
             .setDeleteTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
             .setHost("host3208616")
+            .putAllEnv(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2313,9 +2378,11 @@ public class WorkstationsClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setStartTime(Timestamp.newBuilder().build())
             .setDeleteTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
             .setHost("host3208616")
+            .putAllEnv(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2381,9 +2448,11 @@ public class WorkstationsClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setStartTime(Timestamp.newBuilder().build())
             .setDeleteTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
             .setHost("host3208616")
+            .putAllEnv(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2459,9 +2528,11 @@ public class WorkstationsClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setStartTime(Timestamp.newBuilder().build())
             .setDeleteTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
             .setHost("host3208616")
+            .putAllEnv(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,8 +27,8 @@ public interface PropertyQuotaOrBuilder
    *
    *
    * <pre>
-   * Standard Analytics Properties can use up to 25,000 tokens per day;
-   * Analytics 360 Properties can use 250,000 tokens per day. Most requests
+   * Standard Analytics Properties can use up to 200,000 tokens per day;
+   * Analytics 360 Properties can use 2,000,000 tokens per day. Most requests
    * consume fewer than 10 tokens.
    * </pre>
    *
@@ -41,8 +41,8 @@ public interface PropertyQuotaOrBuilder
    *
    *
    * <pre>
-   * Standard Analytics Properties can use up to 25,000 tokens per day;
-   * Analytics 360 Properties can use 250,000 tokens per day. Most requests
+   * Standard Analytics Properties can use up to 200,000 tokens per day;
+   * Analytics 360 Properties can use 2,000,000 tokens per day. Most requests
    * consume fewer than 10 tokens.
    * </pre>
    *
@@ -55,8 +55,8 @@ public interface PropertyQuotaOrBuilder
    *
    *
    * <pre>
-   * Standard Analytics Properties can use up to 25,000 tokens per day;
-   * Analytics 360 Properties can use 250,000 tokens per day. Most requests
+   * Standard Analytics Properties can use up to 200,000 tokens per day;
+   * Analytics 360 Properties can use 2,000,000 tokens per day. Most requests
    * consume fewer than 10 tokens.
    * </pre>
    *
@@ -68,8 +68,8 @@ public interface PropertyQuotaOrBuilder
    *
    *
    * <pre>
-   * Standard Analytics Properties can use up to 5,000 tokens per hour;
-   * Analytics 360 Properties can use 50,000 tokens per hour. An API request
+   * Standard Analytics Properties can use up to 40,000 tokens per hour;
+   * Analytics 360 Properties can use 400,000 tokens per hour. An API request
    * consumes a single number of tokens, and that number is deducted from all of
    * the hourly, daily, and per project hourly quotas.
    * </pre>
@@ -83,8 +83,8 @@ public interface PropertyQuotaOrBuilder
    *
    *
    * <pre>
-   * Standard Analytics Properties can use up to 5,000 tokens per hour;
-   * Analytics 360 Properties can use 50,000 tokens per hour. An API request
+   * Standard Analytics Properties can use up to 40,000 tokens per hour;
+   * Analytics 360 Properties can use 400,000 tokens per hour. An API request
    * consumes a single number of tokens, and that number is deducted from all of
    * the hourly, daily, and per project hourly quotas.
    * </pre>
@@ -98,8 +98,8 @@ public interface PropertyQuotaOrBuilder
    *
    *
    * <pre>
-   * Standard Analytics Properties can use up to 5,000 tokens per hour;
-   * Analytics 360 Properties can use 50,000 tokens per hour. An API request
+   * Standard Analytics Properties can use up to 40,000 tokens per hour;
+   * Analytics 360 Properties can use 400,000 tokens per hour. An API request
    * consumes a single number of tokens, and that number is deducted from all of
    * the hourly, daily, and per project hourly quotas.
    * </pre>
@@ -239,9 +239,9 @@ public interface PropertyQuotaOrBuilder
    *
    *
    * <pre>
-   * Analytics Properties can use up to 25% of their tokens per project per
-   * hour. This amounts to standard Analytics Properties can use up to 1,250
-   * tokens per project per hour, and Analytics 360 Properties can use 12,500
+   * Analytics Properties can use up to 35% of their tokens per project per
+   * hour. This amounts to standard Analytics Properties can use up to 14,000
+   * tokens per project per hour, and Analytics 360 Properties can use 140,000
    * tokens per project per hour. An API request consumes a single number of
    * tokens, and that number is deducted from all of the hourly, daily, and per
    * project hourly quotas.
@@ -256,9 +256,9 @@ public interface PropertyQuotaOrBuilder
    *
    *
    * <pre>
-   * Analytics Properties can use up to 25% of their tokens per project per
-   * hour. This amounts to standard Analytics Properties can use up to 1,250
-   * tokens per project per hour, and Analytics 360 Properties can use 12,500
+   * Analytics Properties can use up to 35% of their tokens per project per
+   * hour. This amounts to standard Analytics Properties can use up to 14,000
+   * tokens per project per hour, and Analytics 360 Properties can use 140,000
    * tokens per project per hour. An API request consumes a single number of
    * tokens, and that number is deducted from all of the hourly, daily, and per
    * project hourly quotas.
@@ -273,9 +273,9 @@ public interface PropertyQuotaOrBuilder
    *
    *
    * <pre>
-   * Analytics Properties can use up to 25% of their tokens per project per
-   * hour. This amounts to standard Analytics Properties can use up to 1,250
-   * tokens per project per hour, and Analytics 360 Properties can use 12,500
+   * Analytics Properties can use up to 35% of their tokens per project per
+   * hour. This amounts to standard Analytics Properties can use up to 14,000
+   * tokens per project per hour, and Analytics 360 Properties can use 140,000
    * tokens per project per hour. An API request consumes a single number of
    * tokens, and that number is deducted from all of the hourly, daily, and per
    * project hourly quotas.

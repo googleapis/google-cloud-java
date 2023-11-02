@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,9 +39,9 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
 
   private SslPolicy() {
     creationTimestamp_ = "";
-    customFeatures_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    customFeatures_ = com.google.protobuf.LazyStringArrayList.emptyList();
     description_ = "";
-    enabledFeatures_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    enabledFeatures_ = com.google.protobuf.LazyStringArrayList.emptyList();
     fingerprint_ = "";
     kind_ = "";
     minTlsVersion_ = "";
@@ -56,11 +56,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new SslPolicy();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -528,7 +523,8 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
   public static final int CUSTOM_FEATURES_FIELD_NUMBER = 34789707;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList customFeatures_;
+  private com.google.protobuf.LazyStringArrayList customFeatures_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -657,7 +653,8 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
   public static final int ENABLED_FEATURES_FIELD_NUMBER = 469017467;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList enabledFeatures_;
+  private com.google.protobuf.LazyStringArrayList enabledFeatures_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -1663,11 +1660,9 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       bitField0_ = 0;
       creationTimestamp_ = "";
-      customFeatures_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      customFeatures_ = com.google.protobuf.LazyStringArrayList.emptyList();
       description_ = "";
-      enabledFeatures_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      enabledFeatures_ = com.google.protobuf.LazyStringArrayList.emptyList();
       fingerprint_ = "";
       id_ = 0L;
       kind_ = "";
@@ -1719,16 +1714,6 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
     }
 
     private void buildPartialRepeatedFields(com.google.cloud.compute.v1.SslPolicy result) {
-      if (((bitField0_ & 0x00000002) != 0)) {
-        customFeatures_ = customFeatures_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.customFeatures_ = customFeatures_;
-      if (((bitField0_ & 0x00000008) != 0)) {
-        enabledFeatures_ = enabledFeatures_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000008);
-      }
-      result.enabledFeatures_ = enabledFeatures_;
       if (warningsBuilder_ == null) {
         if (((bitField0_ & 0x00001000) != 0)) {
           warnings_ = java.util.Collections.unmodifiableList(warnings_);
@@ -1747,9 +1732,17 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
         result.creationTimestamp_ = creationTimestamp_;
         to_bitField0_ |= 0x00000001;
       }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        customFeatures_.makeImmutable();
+        result.customFeatures_ = customFeatures_;
+      }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.description_ = description_;
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        enabledFeatures_.makeImmutable();
+        result.enabledFeatures_ = enabledFeatures_;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.fingerprint_ = fingerprint_;
@@ -1839,7 +1832,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
       if (!other.customFeatures_.isEmpty()) {
         if (customFeatures_.isEmpty()) {
           customFeatures_ = other.customFeatures_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureCustomFeaturesIsMutable();
           customFeatures_.addAll(other.customFeatures_);
@@ -1854,7 +1847,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
       if (!other.enabledFeatures_.isEmpty()) {
         if (enabledFeatures_.isEmpty()) {
           enabledFeatures_ = other.enabledFeatures_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ |= 0x00000008;
         } else {
           ensureEnabledFeaturesIsMutable();
           enabledFeatures_.addAll(other.enabledFeatures_);
@@ -2178,14 +2171,14 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList customFeatures_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList customFeatures_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureCustomFeaturesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!customFeatures_.isModifiable()) {
         customFeatures_ = new com.google.protobuf.LazyStringArrayList(customFeatures_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -2199,7 +2192,8 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the customFeatures.
      */
     public com.google.protobuf.ProtocolStringList getCustomFeaturesList() {
-      return customFeatures_.getUnmodifiableView();
+      customFeatures_.makeImmutable();
+      return customFeatures_;
     }
     /**
      *
@@ -2264,6 +2258,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       ensureCustomFeaturesIsMutable();
       customFeatures_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2285,6 +2280,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       ensureCustomFeaturesIsMutable();
       customFeatures_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2303,6 +2299,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllCustomFeatures(java.lang.Iterable<java.lang.String> values) {
       ensureCustomFeaturesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, customFeatures_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2318,8 +2315,9 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCustomFeatures() {
-      customFeatures_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      customFeatures_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -2342,6 +2340,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureCustomFeaturesIsMutable();
       customFeatures_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2466,14 +2465,14 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList enabledFeatures_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList enabledFeatures_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureEnabledFeaturesIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!enabledFeatures_.isModifiable()) {
         enabledFeatures_ = new com.google.protobuf.LazyStringArrayList(enabledFeatures_);
-        bitField0_ |= 0x00000008;
       }
+      bitField0_ |= 0x00000008;
     }
     /**
      *
@@ -2487,7 +2486,8 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the enabledFeatures.
      */
     public com.google.protobuf.ProtocolStringList getEnabledFeaturesList() {
-      return enabledFeatures_.getUnmodifiableView();
+      enabledFeatures_.makeImmutable();
+      return enabledFeatures_;
     }
     /**
      *
@@ -2552,6 +2552,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       ensureEnabledFeaturesIsMutable();
       enabledFeatures_.set(index, value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2573,6 +2574,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       ensureEnabledFeaturesIsMutable();
       enabledFeatures_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2591,6 +2593,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllEnabledFeatures(java.lang.Iterable<java.lang.String> values) {
       ensureEnabledFeaturesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, enabledFeatures_);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2606,8 +2609,9 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEnabledFeatures() {
-      enabledFeatures_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      enabledFeatures_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000008);
+      ;
       onChanged();
       return this;
     }
@@ -2630,6 +2634,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureEnabledFeaturesIsMutable();
       enabledFeatures_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

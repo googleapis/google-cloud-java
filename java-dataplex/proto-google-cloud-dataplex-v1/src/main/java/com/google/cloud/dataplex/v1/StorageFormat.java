@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new StorageFormat();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -735,11 +730,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new CsvOptions();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1866,11 +1856,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
       return new JsonOptions();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.dataplex.v1.MetadataProto
           .internal_static_google_cloud_dataplex_v1_StorageFormat_JsonOptions_descriptor;
@@ -2522,11 +2507,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
       return new IcebergOptions();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.dataplex.v1.MetadataProto
           .internal_static_google_cloud_dataplex_v1_StorageFormat_IcebergOptions_descriptor;
@@ -3118,6 +3098,8 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int optionsCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object options_;
 
   public enum OptionsCase
@@ -3261,6 +3243,7 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required. The mime type descriptor for the data. Must match the pattern
    * {type}/{subtype}. Supported values:
+   *
    * - application/x-parquet
    * - application/x-avro
    * - application/x-orc
@@ -3299,6 +3282,7 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required. The mime type descriptor for the data. Must match the pattern
    * {type}/{subtype}. Supported values:
+   *
    * - application/x-parquet
    * - application/x-avro
    * - application/x-orc
@@ -4252,6 +4236,7 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The mime type descriptor for the data. Must match the pattern
      * {type}/{subtype}. Supported values:
+     *
      * - application/x-parquet
      * - application/x-avro
      * - application/x-orc
@@ -4289,6 +4274,7 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The mime type descriptor for the data. Must match the pattern
      * {type}/{subtype}. Supported values:
+     *
      * - application/x-parquet
      * - application/x-avro
      * - application/x-orc
@@ -4326,6 +4312,7 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The mime type descriptor for the data. Must match the pattern
      * {type}/{subtype}. Supported values:
+     *
      * - application/x-parquet
      * - application/x-avro
      * - application/x-orc
@@ -4362,6 +4349,7 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The mime type descriptor for the data. Must match the pattern
      * {type}/{subtype}. Supported values:
+     *
      * - application/x-parquet
      * - application/x-avro
      * - application/x-orc
@@ -4394,6 +4382,7 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The mime type descriptor for the data. Must match the pattern
      * {type}/{subtype}. Supported values:
+     *
      * - application/x-parquet
      * - application/x-avro
      * - application/x-orc

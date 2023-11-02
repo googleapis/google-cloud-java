@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,10 +31,13 @@ public interface GcsDestinationOrBuilder
    * be in JSON format and preceded by its corresponding input URI. This field
    * can either represent a single file, or a prefix for multiple outputs.
    * Prefixes must end in a `/`.
+   *
    * Examples:
+   *
    * *    File: gs://bucket-name/filename.json
    * *    Prefix: gs://bucket-name/prefix/here/
    * *    File: gs://bucket-name/prefix/here
+   *
    * If multiple outputs, each response is still AnnotateFileResponse, each of
    * which contains some subset of the full list of AnnotateImageResponse.
    * Multiple outputs can happen if, for example, the output JSON is too large
@@ -54,10 +57,13 @@ public interface GcsDestinationOrBuilder
    * be in JSON format and preceded by its corresponding input URI. This field
    * can either represent a single file, or a prefix for multiple outputs.
    * Prefixes must end in a `/`.
+   *
    * Examples:
+   *
    * *    File: gs://bucket-name/filename.json
    * *    Prefix: gs://bucket-name/prefix/here/
    * *    File: gs://bucket-name/prefix/here
+   *
    * If multiple outputs, each response is still AnnotateFileResponse, each of
    * which contains some subset of the full list of AnnotateImageResponse.
    * Multiple outputs can happen if, for example, the output JSON is too large

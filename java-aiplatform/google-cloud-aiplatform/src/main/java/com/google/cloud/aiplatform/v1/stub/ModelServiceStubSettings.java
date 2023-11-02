@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -77,6 +77,9 @@ import com.google.cloud.aiplatform.v1.MergeVersionAliasesRequest;
 import com.google.cloud.aiplatform.v1.Model;
 import com.google.cloud.aiplatform.v1.ModelEvaluation;
 import com.google.cloud.aiplatform.v1.ModelEvaluationSlice;
+import com.google.cloud.aiplatform.v1.UpdateExplanationDatasetOperationMetadata;
+import com.google.cloud.aiplatform.v1.UpdateExplanationDatasetRequest;
+import com.google.cloud.aiplatform.v1.UpdateExplanationDatasetResponse;
 import com.google.cloud.aiplatform.v1.UpdateModelRequest;
 import com.google.cloud.aiplatform.v1.UploadModelOperationMetadata;
 import com.google.cloud.aiplatform.v1.UploadModelRequest;
@@ -155,6 +158,13 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
           ListModelVersionsRequest, ListModelVersionsResponse, ListModelVersionsPagedResponse>
       listModelVersionsSettings;
   private final UnaryCallSettings<UpdateModelRequest, Model> updateModelSettings;
+  private final UnaryCallSettings<UpdateExplanationDatasetRequest, Operation>
+      updateExplanationDatasetSettings;
+  private final OperationCallSettings<
+          UpdateExplanationDatasetRequest,
+          UpdateExplanationDatasetResponse,
+          UpdateExplanationDatasetOperationMetadata>
+      updateExplanationDatasetOperationSettings;
   private final UnaryCallSettings<DeleteModelRequest, Operation> deleteModelSettings;
   private final OperationCallSettings<DeleteModelRequest, Empty, DeleteOperationMetadata>
       deleteModelOperationSettings;
@@ -540,6 +550,21 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
     return updateModelSettings;
   }
 
+  /** Returns the object with the settings used for calls to updateExplanationDataset. */
+  public UnaryCallSettings<UpdateExplanationDatasetRequest, Operation>
+      updateExplanationDatasetSettings() {
+    return updateExplanationDatasetSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateExplanationDataset. */
+  public OperationCallSettings<
+          UpdateExplanationDatasetRequest,
+          UpdateExplanationDatasetResponse,
+          UpdateExplanationDatasetOperationMetadata>
+      updateExplanationDatasetOperationSettings() {
+    return updateExplanationDatasetOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to deleteModel. */
   public UnaryCallSettings<DeleteModelRequest, Operation> deleteModelSettings() {
     return deleteModelSettings;
@@ -748,6 +773,9 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
     listModelsSettings = settingsBuilder.listModelsSettings().build();
     listModelVersionsSettings = settingsBuilder.listModelVersionsSettings().build();
     updateModelSettings = settingsBuilder.updateModelSettings().build();
+    updateExplanationDatasetSettings = settingsBuilder.updateExplanationDatasetSettings().build();
+    updateExplanationDatasetOperationSettings =
+        settingsBuilder.updateExplanationDatasetOperationSettings().build();
     deleteModelSettings = settingsBuilder.deleteModelSettings().build();
     deleteModelOperationSettings = settingsBuilder.deleteModelOperationSettings().build();
     deleteModelVersionSettings = settingsBuilder.deleteModelVersionSettings().build();
@@ -789,6 +817,13 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
             ListModelVersionsRequest, ListModelVersionsResponse, ListModelVersionsPagedResponse>
         listModelVersionsSettings;
     private final UnaryCallSettings.Builder<UpdateModelRequest, Model> updateModelSettings;
+    private final UnaryCallSettings.Builder<UpdateExplanationDatasetRequest, Operation>
+        updateExplanationDatasetSettings;
+    private final OperationCallSettings.Builder<
+            UpdateExplanationDatasetRequest,
+            UpdateExplanationDatasetResponse,
+            UpdateExplanationDatasetOperationMetadata>
+        updateExplanationDatasetOperationSettings;
     private final UnaryCallSettings.Builder<DeleteModelRequest, Operation> deleteModelSettings;
     private final OperationCallSettings.Builder<DeleteModelRequest, Empty, DeleteOperationMetadata>
         deleteModelOperationSettings;
@@ -870,6 +905,8 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
       listModelsSettings = PagedCallSettings.newBuilder(LIST_MODELS_PAGE_STR_FACT);
       listModelVersionsSettings = PagedCallSettings.newBuilder(LIST_MODEL_VERSIONS_PAGE_STR_FACT);
       updateModelSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateExplanationDatasetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateExplanationDatasetOperationSettings = OperationCallSettings.newBuilder();
       deleteModelSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteModelOperationSettings = OperationCallSettings.newBuilder();
       deleteModelVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -901,6 +938,7 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
               listModelsSettings,
               listModelVersionsSettings,
               updateModelSettings,
+              updateExplanationDatasetSettings,
               deleteModelSettings,
               deleteModelVersionSettings,
               mergeVersionAliasesSettings,
@@ -930,6 +968,9 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
       listModelsSettings = settings.listModelsSettings.toBuilder();
       listModelVersionsSettings = settings.listModelVersionsSettings.toBuilder();
       updateModelSettings = settings.updateModelSettings.toBuilder();
+      updateExplanationDatasetSettings = settings.updateExplanationDatasetSettings.toBuilder();
+      updateExplanationDatasetOperationSettings =
+          settings.updateExplanationDatasetOperationSettings.toBuilder();
       deleteModelSettings = settings.deleteModelSettings.toBuilder();
       deleteModelOperationSettings = settings.deleteModelOperationSettings.toBuilder();
       deleteModelVersionSettings = settings.deleteModelVersionSettings.toBuilder();
@@ -962,6 +1003,7 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
               listModelsSettings,
               listModelVersionsSettings,
               updateModelSettings,
+              updateExplanationDatasetSettings,
               deleteModelSettings,
               deleteModelVersionSettings,
               mergeVersionAliasesSettings,
@@ -1017,6 +1059,11 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
 
       builder
           .updateModelSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .updateExplanationDatasetSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -1117,6 +1164,32 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
           .setMetadataTransformer(
               ProtoOperationTransformers.MetadataTransformer.create(
                   UploadModelOperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .updateExplanationDatasetOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateExplanationDatasetRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(
+                  UpdateExplanationDatasetResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(
+                  UpdateExplanationDatasetOperationMetadata.class))
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
@@ -1277,6 +1350,23 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
     /** Returns the builder for the settings used for calls to updateModel. */
     public UnaryCallSettings.Builder<UpdateModelRequest, Model> updateModelSettings() {
       return updateModelSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateExplanationDataset. */
+    public UnaryCallSettings.Builder<UpdateExplanationDatasetRequest, Operation>
+        updateExplanationDatasetSettings() {
+      return updateExplanationDatasetSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateExplanationDataset. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            UpdateExplanationDatasetRequest,
+            UpdateExplanationDatasetResponse,
+            UpdateExplanationDatasetOperationMetadata>
+        updateExplanationDatasetOperationSettings() {
+      return updateExplanationDatasetOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to deleteModel. */

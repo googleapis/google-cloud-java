@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,8 +27,8 @@ public interface GenerateUploadUrlRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The project and location in which the Google Cloud Storage signed URL
-   * should be generated, specified in the format `projects/&#42;&#47;locations/&#42;`.
+   * Required. The project and location in which the Google Cloud Storage signed
+   * URL should be generated, specified in the format `projects/&#42;&#47;locations/&#42;`.
    * </pre>
    *
    * <code>
@@ -42,8 +42,8 @@ public interface GenerateUploadUrlRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The project and location in which the Google Cloud Storage signed URL
-   * should be generated, specified in the format `projects/&#42;&#47;locations/&#42;`.
+   * Required. The project and location in which the Google Cloud Storage signed
+   * URL should be generated, specified in the format `projects/&#42;&#47;locations/&#42;`.
    * </pre>
    *
    * <code>
@@ -53,4 +53,57 @@ public interface GenerateUploadUrlRequestOrBuilder
    * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * [Preview] Resource name of a KMS crypto key (managed by the user) used to
+   * encrypt/decrypt function source code objects in intermediate Cloud Storage
+   * buckets. When you generate an upload url and upload your source code, it
+   * gets copied to an intermediate Cloud Storage bucket. The source code is
+   * then copied to a versioned directory in the sources bucket in the consumer
+   * project during the function deployment.
+   *
+   * It must match the pattern
+   * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`.
+   *
+   * The Google Cloud Functions service account
+   * (service-{project_number}&#64;gcf-admin-robot.iam.gserviceaccount.com) must be
+   * granted the role 'Cloud KMS CryptoKey Encrypter/Decrypter
+   * (roles/cloudkms.cryptoKeyEncrypterDecrypter)' on the
+   * Key/KeyRing/Project/Organization (least access preferred).
+   * </pre>
+   *
+   * <code>string kms_key_name = 2 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The kmsKeyName.
+   */
+  java.lang.String getKmsKeyName();
+  /**
+   *
+   *
+   * <pre>
+   * [Preview] Resource name of a KMS crypto key (managed by the user) used to
+   * encrypt/decrypt function source code objects in intermediate Cloud Storage
+   * buckets. When you generate an upload url and upload your source code, it
+   * gets copied to an intermediate Cloud Storage bucket. The source code is
+   * then copied to a versioned directory in the sources bucket in the consumer
+   * project during the function deployment.
+   *
+   * It must match the pattern
+   * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`.
+   *
+   * The Google Cloud Functions service account
+   * (service-{project_number}&#64;gcf-admin-robot.iam.gserviceaccount.com) must be
+   * granted the role 'Cloud KMS CryptoKey Encrypter/Decrypter
+   * (roles/cloudkms.cryptoKeyEncrypterDecrypter)' on the
+   * Key/KeyRing/Project/Organization (least access preferred).
+   * </pre>
+   *
+   * <code>string kms_key_name = 2 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The bytes for kmsKeyName.
+   */
+  com.google.protobuf.ByteString getKmsKeyNameBytes();
 }

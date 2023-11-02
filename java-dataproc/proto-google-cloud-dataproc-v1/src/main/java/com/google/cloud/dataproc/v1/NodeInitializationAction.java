@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,11 +46,6 @@ public final class NodeInitializationAction extends com.google.protobuf.Generate
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new NodeInitializationAction();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -128,6 +123,7 @@ public final class NodeInitializationAction extends com.google.protobuf.Generate
    * Optional. Amount of time executable has to complete. Default is
    * 10 minutes (see JSON representation of
    * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+   *
    * Cluster creation fails with an explanatory error message (the
    * name of the executable that caused the error and the exceeded timeout
    * period) if the executable is not completed at end of the timeout period.
@@ -150,6 +146,7 @@ public final class NodeInitializationAction extends com.google.protobuf.Generate
    * Optional. Amount of time executable has to complete. Default is
    * 10 minutes (see JSON representation of
    * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+   *
    * Cluster creation fails with an explanatory error message (the
    * name of the executable that caused the error and the exceeded timeout
    * period) if the executable is not completed at end of the timeout period.
@@ -174,6 +171,7 @@ public final class NodeInitializationAction extends com.google.protobuf.Generate
    * Optional. Amount of time executable has to complete. Default is
    * 10 minutes (see JSON representation of
    * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+   *
    * Cluster creation fails with an explanatory error message (the
    * name of the executable that caused the error and the exceeded timeout
    * period) if the executable is not completed at end of the timeout period.
@@ -686,6 +684,7 @@ public final class NodeInitializationAction extends com.google.protobuf.Generate
      * Optional. Amount of time executable has to complete. Default is
      * 10 minutes (see JSON representation of
      * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+     *
      * Cluster creation fails with an explanatory error message (the
      * name of the executable that caused the error and the exceeded timeout
      * period) if the executable is not completed at end of the timeout period.
@@ -707,6 +706,7 @@ public final class NodeInitializationAction extends com.google.protobuf.Generate
      * Optional. Amount of time executable has to complete. Default is
      * 10 minutes (see JSON representation of
      * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+     *
      * Cluster creation fails with an explanatory error message (the
      * name of the executable that caused the error and the exceeded timeout
      * period) if the executable is not completed at end of the timeout period.
@@ -734,6 +734,7 @@ public final class NodeInitializationAction extends com.google.protobuf.Generate
      * Optional. Amount of time executable has to complete. Default is
      * 10 minutes (see JSON representation of
      * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+     *
      * Cluster creation fails with an explanatory error message (the
      * name of the executable that caused the error and the exceeded timeout
      * period) if the executable is not completed at end of the timeout period.
@@ -763,6 +764,7 @@ public final class NodeInitializationAction extends com.google.protobuf.Generate
      * Optional. Amount of time executable has to complete. Default is
      * 10 minutes (see JSON representation of
      * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+     *
      * Cluster creation fails with an explanatory error message (the
      * name of the executable that caused the error and the exceeded timeout
      * period) if the executable is not completed at end of the timeout period.
@@ -789,6 +791,7 @@ public final class NodeInitializationAction extends com.google.protobuf.Generate
      * Optional. Amount of time executable has to complete. Default is
      * 10 minutes (see JSON representation of
      * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+     *
      * Cluster creation fails with an explanatory error message (the
      * name of the executable that caused the error and the exceeded timeout
      * period) if the executable is not completed at end of the timeout period.
@@ -821,6 +824,7 @@ public final class NodeInitializationAction extends com.google.protobuf.Generate
      * Optional. Amount of time executable has to complete. Default is
      * 10 minutes (see JSON representation of
      * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+     *
      * Cluster creation fails with an explanatory error message (the
      * name of the executable that caused the error and the exceeded timeout
      * period) if the executable is not completed at end of the timeout period.
@@ -847,6 +851,7 @@ public final class NodeInitializationAction extends com.google.protobuf.Generate
      * Optional. Amount of time executable has to complete. Default is
      * 10 minutes (see JSON representation of
      * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+     *
      * Cluster creation fails with an explanatory error message (the
      * name of the executable that caused the error and the exceeded timeout
      * period) if the executable is not completed at end of the timeout period.
@@ -868,6 +873,7 @@ public final class NodeInitializationAction extends com.google.protobuf.Generate
      * Optional. Amount of time executable has to complete. Default is
      * 10 minutes (see JSON representation of
      * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+     *
      * Cluster creation fails with an explanatory error message (the
      * name of the executable that caused the error and the exceeded timeout
      * period) if the executable is not completed at end of the timeout period.
@@ -893,6 +899,7 @@ public final class NodeInitializationAction extends com.google.protobuf.Generate
      * Optional. Amount of time executable has to complete. Default is
      * 10 minutes (see JSON representation of
      * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+     *
      * Cluster creation fails with an explanatory error message (the
      * name of the executable that caused the error and the exceeded timeout
      * period) if the executable is not completed at end of the timeout period.

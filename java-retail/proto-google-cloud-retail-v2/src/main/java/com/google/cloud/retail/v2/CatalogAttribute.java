@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -54,11 +54,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
     return new CatalogAttribute();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.retail.v2.CatalogProto
         .internal_static_google_cloud_retail_v2_CatalogAttribute_descriptor;
@@ -89,6 +84,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The type of the attribute is unknown.
+     *
      * Used when type cannot be derived from attribute that is not
      * [in_use][google.cloud.retail.v2.CatalogAttribute.in_use].
      * </pre>
@@ -124,6 +120,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The type of the attribute is unknown.
+     *
      * Used when type cannot be derived from attribute that is not
      * [in_use][google.cloud.retail.v2.CatalogAttribute.in_use].
      * </pre>
@@ -1048,6 +1045,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
    * characters and underscores. For example, an attribute named
    * `attributes.abc_xyz` can be indexed, but an attribute named
    * `attributes.abc-xyz` cannot be indexed.
+   *
    * If the attribute key starts with `attributes.`, then the attribute is a
    * custom attribute. Attributes such as `brands`, `patterns`, and `title` are
    * built-in and called system attributes.
@@ -1080,6 +1078,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
    * characters and underscores. For example, an attribute named
    * `attributes.abc_xyz` can be indexed, but an attribute named
    * `attributes.abc-xyz` cannot be indexed.
+   *
    * If the attribute key starts with `attributes.`, then the attribute is a
    * custom attribute. Attributes such as `brands`, `patterns`, and `title` are
    * built-in and called system attributes.
@@ -1113,6 +1112,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
    * is using this attribute in
    * [Product.attributes][google.cloud.retail.v2.Product.attributes]. Otherwise,
    * this field is `False`.
+   *
    * [CatalogAttribute][google.cloud.retail.v2.CatalogAttribute] can be
    * pre-loaded by using
    * [CatalogService.AddCatalogAttribute][google.cloud.retail.v2.CatalogService.AddCatalogAttribute],
@@ -1120,6 +1120,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
    * [CatalogService.UpdateAttributesConfig][google.cloud.retail.v2.CatalogService.UpdateAttributesConfig]
    * APIs. This field is `False` for pre-loaded
    * [CatalogAttribute][google.cloud.retail.v2.CatalogAttribute]s.
+   *
    * Only pre-loaded [catalog
    * attributes][google.cloud.retail.v2.CatalogAttribute] that are neither in
    * use by products nor predefined can be deleted. [Catalog
@@ -1127,6 +1128,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
    * either in use by products or are predefined attributes cannot be deleted;
    * however, their configuration properties will reset to default values upon
    * removal request.
+   *
    * After catalog changes, it takes about 10 minutes for this field to update.
    * </pre>
    *
@@ -1193,6 +1195,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
    * is CATALOG_LEVEL_ATTRIBUTE_CONFIG, if INDEXABLE_ENABLED attribute values
    * are indexed so that it can be filtered, faceted, or boosted in
    * [SearchService.Search][google.cloud.retail.v2.SearchService.Search].
+   *
    * Must be specified, otherwise throws INVALID_FORMAT error.
    * </pre>
    *
@@ -1213,6 +1216,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
    * is CATALOG_LEVEL_ATTRIBUTE_CONFIG, if INDEXABLE_ENABLED attribute values
    * are indexed so that it can be filtered, faceted, or boosted in
    * [SearchService.Search][google.cloud.retail.v2.SearchService.Search].
+   *
    * Must be specified, otherwise throws INVALID_FORMAT error.
    * </pre>
    *
@@ -1239,6 +1243,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
    * facet. Could only be DYNAMIC_FACETABLE_DISABLED if
    * [CatalogAttribute.indexable_option][google.cloud.retail.v2.CatalogAttribute.indexable_option]
    * is INDEXABLE_DISABLED. Otherwise, an INVALID_ARGUMENT error is returned.
+   *
    * Must be specified, otherwise throws INVALID_FORMAT error.
    * </pre>
    *
@@ -1260,6 +1265,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
    * facet. Could only be DYNAMIC_FACETABLE_DISABLED if
    * [CatalogAttribute.indexable_option][google.cloud.retail.v2.CatalogAttribute.indexable_option]
    * is INDEXABLE_DISABLED. Otherwise, an INVALID_ARGUMENT error is returned.
+   *
    * Must be specified, otherwise throws INVALID_FORMAT error.
    * </pre>
    *
@@ -1291,10 +1297,12 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
    * is CATALOG_LEVEL_ATTRIBUTE_CONFIG, if SEARCHABLE_ENABLED, attribute values
    * are searchable by text queries in
    * [SearchService.Search][google.cloud.retail.v2.SearchService.Search].
+   *
    * If SEARCHABLE_ENABLED but attribute type is numerical, attribute values
    * will not be searchable by text queries in
    * [SearchService.Search][google.cloud.retail.v2.SearchService.Search], as
    * there are no text values associated to numerical attributes.
+   *
    * Must be specified, otherwise throws INVALID_FORMAT error.
    * </pre>
    *
@@ -1315,10 +1323,12 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
    * is CATALOG_LEVEL_ATTRIBUTE_CONFIG, if SEARCHABLE_ENABLED, attribute values
    * are searchable by text queries in
    * [SearchService.Search][google.cloud.retail.v2.SearchService.Search].
+   *
    * If SEARCHABLE_ENABLED but attribute type is numerical, attribute values
    * will not be searchable by text queries in
    * [SearchService.Search][google.cloud.retail.v2.SearchService.Search], as
    * there are no text values associated to numerical attributes.
+   *
    * Must be specified, otherwise throws INVALID_FORMAT error.
    * </pre>
    *
@@ -1965,6 +1975,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * characters and underscores. For example, an attribute named
      * `attributes.abc_xyz` can be indexed, but an attribute named
      * `attributes.abc-xyz` cannot be indexed.
+     *
      * If the attribute key starts with `attributes.`, then the attribute is a
      * custom attribute. Attributes such as `brands`, `patterns`, and `title` are
      * built-in and called system attributes.
@@ -1996,6 +2007,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * characters and underscores. For example, an attribute named
      * `attributes.abc_xyz` can be indexed, but an attribute named
      * `attributes.abc-xyz` cannot be indexed.
+     *
      * If the attribute key starts with `attributes.`, then the attribute is a
      * custom attribute. Attributes such as `brands`, `patterns`, and `title` are
      * built-in and called system attributes.
@@ -2027,6 +2039,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * characters and underscores. For example, an attribute named
      * `attributes.abc_xyz` can be indexed, but an attribute named
      * `attributes.abc-xyz` cannot be indexed.
+     *
      * If the attribute key starts with `attributes.`, then the attribute is a
      * custom attribute. Attributes such as `brands`, `patterns`, and `title` are
      * built-in and called system attributes.
@@ -2057,6 +2070,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * characters and underscores. For example, an attribute named
      * `attributes.abc_xyz` can be indexed, but an attribute named
      * `attributes.abc-xyz` cannot be indexed.
+     *
      * If the attribute key starts with `attributes.`, then the attribute is a
      * custom attribute. Attributes such as `brands`, `patterns`, and `title` are
      * built-in and called system attributes.
@@ -2083,6 +2097,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * characters and underscores. For example, an attribute named
      * `attributes.abc_xyz` can be indexed, but an attribute named
      * `attributes.abc-xyz` cannot be indexed.
+     *
      * If the attribute key starts with `attributes.`, then the attribute is a
      * custom attribute. Attributes such as `brands`, `patterns`, and `title` are
      * built-in and called system attributes.
@@ -2114,6 +2129,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * is using this attribute in
      * [Product.attributes][google.cloud.retail.v2.Product.attributes]. Otherwise,
      * this field is `False`.
+     *
      * [CatalogAttribute][google.cloud.retail.v2.CatalogAttribute] can be
      * pre-loaded by using
      * [CatalogService.AddCatalogAttribute][google.cloud.retail.v2.CatalogService.AddCatalogAttribute],
@@ -2121,6 +2137,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * [CatalogService.UpdateAttributesConfig][google.cloud.retail.v2.CatalogService.UpdateAttributesConfig]
      * APIs. This field is `False` for pre-loaded
      * [CatalogAttribute][google.cloud.retail.v2.CatalogAttribute]s.
+     *
      * Only pre-loaded [catalog
      * attributes][google.cloud.retail.v2.CatalogAttribute] that are neither in
      * use by products nor predefined can be deleted. [Catalog
@@ -2128,6 +2145,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * either in use by products or are predefined attributes cannot be deleted;
      * however, their configuration properties will reset to default values upon
      * removal request.
+     *
      * After catalog changes, it takes about 10 minutes for this field to update.
      * </pre>
      *
@@ -2148,6 +2166,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * is using this attribute in
      * [Product.attributes][google.cloud.retail.v2.Product.attributes]. Otherwise,
      * this field is `False`.
+     *
      * [CatalogAttribute][google.cloud.retail.v2.CatalogAttribute] can be
      * pre-loaded by using
      * [CatalogService.AddCatalogAttribute][google.cloud.retail.v2.CatalogService.AddCatalogAttribute],
@@ -2155,6 +2174,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * [CatalogService.UpdateAttributesConfig][google.cloud.retail.v2.CatalogService.UpdateAttributesConfig]
      * APIs. This field is `False` for pre-loaded
      * [CatalogAttribute][google.cloud.retail.v2.CatalogAttribute]s.
+     *
      * Only pre-loaded [catalog
      * attributes][google.cloud.retail.v2.CatalogAttribute] that are neither in
      * use by products nor predefined can be deleted. [Catalog
@@ -2162,6 +2182,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * either in use by products or are predefined attributes cannot be deleted;
      * however, their configuration properties will reset to default values upon
      * removal request.
+     *
      * After catalog changes, it takes about 10 minutes for this field to update.
      * </pre>
      *
@@ -2186,6 +2207,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * is using this attribute in
      * [Product.attributes][google.cloud.retail.v2.Product.attributes]. Otherwise,
      * this field is `False`.
+     *
      * [CatalogAttribute][google.cloud.retail.v2.CatalogAttribute] can be
      * pre-loaded by using
      * [CatalogService.AddCatalogAttribute][google.cloud.retail.v2.CatalogService.AddCatalogAttribute],
@@ -2193,6 +2215,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * [CatalogService.UpdateAttributesConfig][google.cloud.retail.v2.CatalogService.UpdateAttributesConfig]
      * APIs. This field is `False` for pre-loaded
      * [CatalogAttribute][google.cloud.retail.v2.CatalogAttribute]s.
+     *
      * Only pre-loaded [catalog
      * attributes][google.cloud.retail.v2.CatalogAttribute] that are neither in
      * use by products nor predefined can be deleted. [Catalog
@@ -2200,6 +2223,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * either in use by products or are predefined attributes cannot be deleted;
      * however, their configuration properties will reset to default values upon
      * removal request.
+     *
      * After catalog changes, it takes about 10 minutes for this field to update.
      * </pre>
      *
@@ -2331,6 +2355,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * is CATALOG_LEVEL_ATTRIBUTE_CONFIG, if INDEXABLE_ENABLED attribute values
      * are indexed so that it can be filtered, faceted, or boosted in
      * [SearchService.Search][google.cloud.retail.v2.SearchService.Search].
+     *
      * Must be specified, otherwise throws INVALID_FORMAT error.
      * </pre>
      *
@@ -2351,6 +2376,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * is CATALOG_LEVEL_ATTRIBUTE_CONFIG, if INDEXABLE_ENABLED attribute values
      * are indexed so that it can be filtered, faceted, or boosted in
      * [SearchService.Search][google.cloud.retail.v2.SearchService.Search].
+     *
      * Must be specified, otherwise throws INVALID_FORMAT error.
      * </pre>
      *
@@ -2374,6 +2400,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * is CATALOG_LEVEL_ATTRIBUTE_CONFIG, if INDEXABLE_ENABLED attribute values
      * are indexed so that it can be filtered, faceted, or boosted in
      * [SearchService.Search][google.cloud.retail.v2.SearchService.Search].
+     *
      * Must be specified, otherwise throws INVALID_FORMAT error.
      * </pre>
      *
@@ -2398,6 +2425,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * is CATALOG_LEVEL_ATTRIBUTE_CONFIG, if INDEXABLE_ENABLED attribute values
      * are indexed so that it can be filtered, faceted, or boosted in
      * [SearchService.Search][google.cloud.retail.v2.SearchService.Search].
+     *
      * Must be specified, otherwise throws INVALID_FORMAT error.
      * </pre>
      *
@@ -2425,6 +2453,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * is CATALOG_LEVEL_ATTRIBUTE_CONFIG, if INDEXABLE_ENABLED attribute values
      * are indexed so that it can be filtered, faceted, or boosted in
      * [SearchService.Search][google.cloud.retail.v2.SearchService.Search].
+     *
      * Must be specified, otherwise throws INVALID_FORMAT error.
      * </pre>
      *
@@ -2448,6 +2477,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * facet. Could only be DYNAMIC_FACETABLE_DISABLED if
      * [CatalogAttribute.indexable_option][google.cloud.retail.v2.CatalogAttribute.indexable_option]
      * is INDEXABLE_DISABLED. Otherwise, an INVALID_ARGUMENT error is returned.
+     *
      * Must be specified, otherwise throws INVALID_FORMAT error.
      * </pre>
      *
@@ -2469,6 +2499,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * facet. Could only be DYNAMIC_FACETABLE_DISABLED if
      * [CatalogAttribute.indexable_option][google.cloud.retail.v2.CatalogAttribute.indexable_option]
      * is INDEXABLE_DISABLED. Otherwise, an INVALID_ARGUMENT error is returned.
+     *
      * Must be specified, otherwise throws INVALID_FORMAT error.
      * </pre>
      *
@@ -2493,6 +2524,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * facet. Could only be DYNAMIC_FACETABLE_DISABLED if
      * [CatalogAttribute.indexable_option][google.cloud.retail.v2.CatalogAttribute.indexable_option]
      * is INDEXABLE_DISABLED. Otherwise, an INVALID_ARGUMENT error is returned.
+     *
      * Must be specified, otherwise throws INVALID_FORMAT error.
      * </pre>
      *
@@ -2520,6 +2552,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * facet. Could only be DYNAMIC_FACETABLE_DISABLED if
      * [CatalogAttribute.indexable_option][google.cloud.retail.v2.CatalogAttribute.indexable_option]
      * is INDEXABLE_DISABLED. Otherwise, an INVALID_ARGUMENT error is returned.
+     *
      * Must be specified, otherwise throws INVALID_FORMAT error.
      * </pre>
      *
@@ -2548,6 +2581,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * facet. Could only be DYNAMIC_FACETABLE_DISABLED if
      * [CatalogAttribute.indexable_option][google.cloud.retail.v2.CatalogAttribute.indexable_option]
      * is INDEXABLE_DISABLED. Otherwise, an INVALID_ARGUMENT error is returned.
+     *
      * Must be specified, otherwise throws INVALID_FORMAT error.
      * </pre>
      *
@@ -2574,10 +2608,12 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * is CATALOG_LEVEL_ATTRIBUTE_CONFIG, if SEARCHABLE_ENABLED, attribute values
      * are searchable by text queries in
      * [SearchService.Search][google.cloud.retail.v2.SearchService.Search].
+     *
      * If SEARCHABLE_ENABLED but attribute type is numerical, attribute values
      * will not be searchable by text queries in
      * [SearchService.Search][google.cloud.retail.v2.SearchService.Search], as
      * there are no text values associated to numerical attributes.
+     *
      * Must be specified, otherwise throws INVALID_FORMAT error.
      * </pre>
      *
@@ -2598,10 +2634,12 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * is CATALOG_LEVEL_ATTRIBUTE_CONFIG, if SEARCHABLE_ENABLED, attribute values
      * are searchable by text queries in
      * [SearchService.Search][google.cloud.retail.v2.SearchService.Search].
+     *
      * If SEARCHABLE_ENABLED but attribute type is numerical, attribute values
      * will not be searchable by text queries in
      * [SearchService.Search][google.cloud.retail.v2.SearchService.Search], as
      * there are no text values associated to numerical attributes.
+     *
      * Must be specified, otherwise throws INVALID_FORMAT error.
      * </pre>
      *
@@ -2625,10 +2663,12 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * is CATALOG_LEVEL_ATTRIBUTE_CONFIG, if SEARCHABLE_ENABLED, attribute values
      * are searchable by text queries in
      * [SearchService.Search][google.cloud.retail.v2.SearchService.Search].
+     *
      * If SEARCHABLE_ENABLED but attribute type is numerical, attribute values
      * will not be searchable by text queries in
      * [SearchService.Search][google.cloud.retail.v2.SearchService.Search], as
      * there are no text values associated to numerical attributes.
+     *
      * Must be specified, otherwise throws INVALID_FORMAT error.
      * </pre>
      *
@@ -2653,10 +2693,12 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * is CATALOG_LEVEL_ATTRIBUTE_CONFIG, if SEARCHABLE_ENABLED, attribute values
      * are searchable by text queries in
      * [SearchService.Search][google.cloud.retail.v2.SearchService.Search].
+     *
      * If SEARCHABLE_ENABLED but attribute type is numerical, attribute values
      * will not be searchable by text queries in
      * [SearchService.Search][google.cloud.retail.v2.SearchService.Search], as
      * there are no text values associated to numerical attributes.
+     *
      * Must be specified, otherwise throws INVALID_FORMAT error.
      * </pre>
      *
@@ -2684,10 +2726,12 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * is CATALOG_LEVEL_ATTRIBUTE_CONFIG, if SEARCHABLE_ENABLED, attribute values
      * are searchable by text queries in
      * [SearchService.Search][google.cloud.retail.v2.SearchService.Search].
+     *
      * If SEARCHABLE_ENABLED but attribute type is numerical, attribute values
      * will not be searchable by text queries in
      * [SearchService.Search][google.cloud.retail.v2.SearchService.Search], as
      * there are no text values associated to numerical attributes.
+     *
      * Must be specified, otherwise throws INVALID_FORMAT error.
      * </pre>
      *

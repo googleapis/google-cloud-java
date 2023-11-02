@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,7 +33,8 @@ public final class DataCatalogGrpc {
 
   private DataCatalogGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.datacatalog.v1beta1.DataCatalog";
+  public static final java.lang.String SERVICE_NAME =
+      "google.cloud.datacatalog.v1beta1.DataCatalog";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -913,6 +914,60 @@ public final class DataCatalogGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.datacatalog.v1beta1.RenameTagTemplateFieldEnumValueRequest,
+          com.google.cloud.datacatalog.v1beta1.TagTemplateField>
+      getRenameTagTemplateFieldEnumValueMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RenameTagTemplateFieldEnumValue",
+      requestType =
+          com.google.cloud.datacatalog.v1beta1.RenameTagTemplateFieldEnumValueRequest.class,
+      responseType = com.google.cloud.datacatalog.v1beta1.TagTemplateField.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.datacatalog.v1beta1.RenameTagTemplateFieldEnumValueRequest,
+          com.google.cloud.datacatalog.v1beta1.TagTemplateField>
+      getRenameTagTemplateFieldEnumValueMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.datacatalog.v1beta1.RenameTagTemplateFieldEnumValueRequest,
+            com.google.cloud.datacatalog.v1beta1.TagTemplateField>
+        getRenameTagTemplateFieldEnumValueMethod;
+    if ((getRenameTagTemplateFieldEnumValueMethod =
+            DataCatalogGrpc.getRenameTagTemplateFieldEnumValueMethod)
+        == null) {
+      synchronized (DataCatalogGrpc.class) {
+        if ((getRenameTagTemplateFieldEnumValueMethod =
+                DataCatalogGrpc.getRenameTagTemplateFieldEnumValueMethod)
+            == null) {
+          DataCatalogGrpc.getRenameTagTemplateFieldEnumValueMethod =
+              getRenameTagTemplateFieldEnumValueMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.datacatalog.v1beta1.RenameTagTemplateFieldEnumValueRequest,
+                          com.google.cloud.datacatalog.v1beta1.TagTemplateField>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "RenameTagTemplateFieldEnumValue"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.datacatalog.v1beta1
+                                  .RenameTagTemplateFieldEnumValueRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.datacatalog.v1beta1.TagTemplateField
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DataCatalogMethodDescriptorSupplier(
+                              "RenameTagTemplateFieldEnumValue"))
+                      .build();
+        }
+      }
+    }
+    return getRenameTagTemplateFieldEnumValueMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.datacatalog.v1beta1.DeleteTagTemplateFieldRequest,
           com.google.protobuf.Empty>
       getDeleteTagTemplateFieldMethod;
@@ -1317,7 +1372,7 @@ public final class DataCatalogGrpc {
      * This is a custom method
      * (https://cloud.google.com/apis/design/custom_methods) and does not return
      * the complete resource, only the resource identifier and high level
-     * fields. Clients can subsequentally call `Get` methods.
+     * fields. Clients can subsequently call `Get` methods.
      * Note that Data Catalog search queries do not guarantee full recall. Query
      * results that match your query may not be returned, even in subsequent
      * result pages. Also note that results returned (and not returned) can vary
@@ -1658,6 +1713,23 @@ public final class DataCatalogGrpc {
      *
      *
      * <pre>
+     * Renames an enum value in a tag template. The enum values have to be unique
+     * within one enum field. Thus, an enum value cannot be renamed with a name
+     * used in any other enum value within the same enum field.
+     * </pre>
+     */
+    default void renameTagTemplateFieldEnumValue(
+        com.google.cloud.datacatalog.v1beta1.RenameTagTemplateFieldEnumValueRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1beta1.TagTemplateField>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getRenameTagTemplateFieldEnumValueMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a field in a tag template and all uses of that field.
      * Users should enable the Data Catalog API in the project identified by
      * the `name` parameter (see [Data Catalog Resource Project]
@@ -1721,7 +1793,9 @@ public final class DataCatalogGrpc {
      *
      *
      * <pre>
-     * Lists the tags on an [Entry][google.cloud.datacatalog.v1beta1.Entry].
+     * Lists tags assigned to an [Entry][google.cloud.datacatalog.v1beta1.Entry].
+     * The [columns][google.cloud.datacatalog.v1beta1.Tag.column] in the response
+     * are lowercased.
      * </pre>
      */
     default void listTags(
@@ -1855,7 +1929,7 @@ public final class DataCatalogGrpc {
      * This is a custom method
      * (https://cloud.google.com/apis/design/custom_methods) and does not return
      * the complete resource, only the resource identifier and high level
-     * fields. Clients can subsequentally call `Get` methods.
+     * fields. Clients can subsequently call `Get` methods.
      * Note that Data Catalog search queries do not guarantee full recall. Query
      * results that match your query may not be returned, even in subsequent
      * result pages. Also note that results returned (and not returned) can vary
@@ -2233,6 +2307,25 @@ public final class DataCatalogGrpc {
      *
      *
      * <pre>
+     * Renames an enum value in a tag template. The enum values have to be unique
+     * within one enum field. Thus, an enum value cannot be renamed with a name
+     * used in any other enum value within the same enum field.
+     * </pre>
+     */
+    public void renameTagTemplateFieldEnumValue(
+        com.google.cloud.datacatalog.v1beta1.RenameTagTemplateFieldEnumValueRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1beta1.TagTemplateField>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRenameTagTemplateFieldEnumValueMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a field in a tag template and all uses of that field.
      * Users should enable the Data Catalog API in the project identified by
      * the `name` parameter (see [Data Catalog Resource Project]
@@ -2301,7 +2394,9 @@ public final class DataCatalogGrpc {
      *
      *
      * <pre>
-     * Lists the tags on an [Entry][google.cloud.datacatalog.v1beta1.Entry].
+     * Lists tags assigned to an [Entry][google.cloud.datacatalog.v1beta1.Entry].
+     * The [columns][google.cloud.datacatalog.v1beta1.Tag.column] in the response
+     * are lowercased.
      * </pre>
      */
     public void listTags(
@@ -2426,7 +2521,7 @@ public final class DataCatalogGrpc {
      * This is a custom method
      * (https://cloud.google.com/apis/design/custom_methods) and does not return
      * the complete resource, only the resource identifier and high level
-     * fields. Clients can subsequentally call `Get` methods.
+     * fields. Clients can subsequently call `Get` methods.
      * Note that Data Catalog search queries do not guarantee full recall. Query
      * results that match your query may not be returned, even in subsequent
      * result pages. Also note that results returned (and not returned) can vary
@@ -2737,6 +2832,21 @@ public final class DataCatalogGrpc {
      *
      *
      * <pre>
+     * Renames an enum value in a tag template. The enum values have to be unique
+     * within one enum field. Thus, an enum value cannot be renamed with a name
+     * used in any other enum value within the same enum field.
+     * </pre>
+     */
+    public com.google.cloud.datacatalog.v1beta1.TagTemplateField renameTagTemplateFieldEnumValue(
+        com.google.cloud.datacatalog.v1beta1.RenameTagTemplateFieldEnumValueRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRenameTagTemplateFieldEnumValueMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a field in a tag template and all uses of that field.
      * Users should enable the Data Catalog API in the project identified by
      * the `name` parameter (see [Data Catalog Resource Project]
@@ -2799,7 +2909,9 @@ public final class DataCatalogGrpc {
      *
      *
      * <pre>
-     * Lists the tags on an [Entry][google.cloud.datacatalog.v1beta1.Entry].
+     * Lists tags assigned to an [Entry][google.cloud.datacatalog.v1beta1.Entry].
+     * The [columns][google.cloud.datacatalog.v1beta1.Tag.column] in the response
+     * are lowercased.
      * </pre>
      */
     public com.google.cloud.datacatalog.v1beta1.ListTagsResponse listTags(
@@ -2910,7 +3022,7 @@ public final class DataCatalogGrpc {
      * This is a custom method
      * (https://cloud.google.com/apis/design/custom_methods) and does not return
      * the complete resource, only the resource identifier and high level
-     * fields. Clients can subsequentally call `Get` methods.
+     * fields. Clients can subsequently call `Get` methods.
      * Note that Data Catalog search queries do not guarantee full recall. Query
      * results that match your query may not be returned, even in subsequent
      * result pages. Also note that results returned (and not returned) can vary
@@ -3240,6 +3352,24 @@ public final class DataCatalogGrpc {
      *
      *
      * <pre>
+     * Renames an enum value in a tag template. The enum values have to be unique
+     * within one enum field. Thus, an enum value cannot be renamed with a name
+     * used in any other enum value within the same enum field.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.datacatalog.v1beta1.TagTemplateField>
+        renameTagTemplateFieldEnumValue(
+            com.google.cloud.datacatalog.v1beta1.RenameTagTemplateFieldEnumValueRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRenameTagTemplateFieldEnumValueMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a field in a tag template and all uses of that field.
      * Users should enable the Data Catalog API in the project identified by
      * the `name` parameter (see [Data Catalog Resource Project]
@@ -3305,7 +3435,9 @@ public final class DataCatalogGrpc {
      *
      *
      * <pre>
-     * Lists the tags on an [Entry][google.cloud.datacatalog.v1beta1.Entry].
+     * Lists tags assigned to an [Entry][google.cloud.datacatalog.v1beta1.Entry].
+     * The [columns][google.cloud.datacatalog.v1beta1.Tag.column] in the response
+     * are lowercased.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -3410,14 +3542,15 @@ public final class DataCatalogGrpc {
   private static final int METHODID_CREATE_TAG_TEMPLATE_FIELD = 16;
   private static final int METHODID_UPDATE_TAG_TEMPLATE_FIELD = 17;
   private static final int METHODID_RENAME_TAG_TEMPLATE_FIELD = 18;
-  private static final int METHODID_DELETE_TAG_TEMPLATE_FIELD = 19;
-  private static final int METHODID_CREATE_TAG = 20;
-  private static final int METHODID_UPDATE_TAG = 21;
-  private static final int METHODID_DELETE_TAG = 22;
-  private static final int METHODID_LIST_TAGS = 23;
-  private static final int METHODID_SET_IAM_POLICY = 24;
-  private static final int METHODID_GET_IAM_POLICY = 25;
-  private static final int METHODID_TEST_IAM_PERMISSIONS = 26;
+  private static final int METHODID_RENAME_TAG_TEMPLATE_FIELD_ENUM_VALUE = 19;
+  private static final int METHODID_DELETE_TAG_TEMPLATE_FIELD = 20;
+  private static final int METHODID_CREATE_TAG = 21;
+  private static final int METHODID_UPDATE_TAG = 22;
+  private static final int METHODID_DELETE_TAG = 23;
+  private static final int METHODID_LIST_TAGS = 24;
+  private static final int METHODID_SET_IAM_POLICY = 25;
+  private static final int METHODID_GET_IAM_POLICY = 26;
+  private static final int METHODID_TEST_IAM_PERMISSIONS = 27;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -3547,6 +3680,12 @@ public final class DataCatalogGrpc {
         case METHODID_RENAME_TAG_TEMPLATE_FIELD:
           serviceImpl.renameTagTemplateField(
               (com.google.cloud.datacatalog.v1beta1.RenameTagTemplateFieldRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1beta1.TagTemplateField>)
+                  responseObserver);
+          break;
+        case METHODID_RENAME_TAG_TEMPLATE_FIELD_ENUM_VALUE:
+          serviceImpl.renameTagTemplateFieldEnumValue(
+              (com.google.cloud.datacatalog.v1beta1.RenameTagTemplateFieldEnumValueRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1beta1.TagTemplateField>)
                   responseObserver);
           break;
@@ -3739,6 +3878,13 @@ public final class DataCatalogGrpc {
                     com.google.cloud.datacatalog.v1beta1.TagTemplateField>(
                     service, METHODID_RENAME_TAG_TEMPLATE_FIELD)))
         .addMethod(
+            getRenameTagTemplateFieldEnumValueMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datacatalog.v1beta1.RenameTagTemplateFieldEnumValueRequest,
+                    com.google.cloud.datacatalog.v1beta1.TagTemplateField>(
+                    service, METHODID_RENAME_TAG_TEMPLATE_FIELD_ENUM_VALUE)))
+        .addMethod(
             getDeleteTagTemplateFieldMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -3813,9 +3959,9 @@ public final class DataCatalogGrpc {
   private static final class DataCatalogMethodDescriptorSupplier
       extends DataCatalogBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    DataCatalogMethodDescriptorSupplier(String methodName) {
+    DataCatalogMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 
@@ -3856,6 +4002,7 @@ public final class DataCatalogGrpc {
                       .addMethod(getCreateTagTemplateFieldMethod())
                       .addMethod(getUpdateTagTemplateFieldMethod())
                       .addMethod(getRenameTagTemplateFieldMethod())
+                      .addMethod(getRenameTagTemplateFieldEnumValueMethod())
                       .addMethod(getDeleteTagTemplateFieldMethod())
                       .addMethod(getCreateTagMethod())
                       .addMethod(getUpdateTagMethod())

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,11 +46,6 @@ public final class ExportAgentResponse extends com.google.protobuf.GeneratedMess
     return new ExportAgentResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.cx.v3beta1.AgentProto
         .internal_static_google_cloud_dialogflow_cx_v3beta1_ExportAgentResponse_descriptor;
@@ -67,6 +62,8 @@ public final class ExportAgentResponse extends com.google.protobuf.GeneratedMess
   }
 
   private int agentCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object agent_;
 
   public enum AgentCase
@@ -75,6 +72,7 @@ public final class ExportAgentResponse extends com.google.protobuf.GeneratedMess
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     AGENT_URI(1),
     AGENT_CONTENT(2),
+    COMMIT_SHA(3),
     AGENT_NOT_SET(0);
     private final int value;
 
@@ -97,6 +95,8 @@ public final class ExportAgentResponse extends com.google.protobuf.GeneratedMess
           return AGENT_URI;
         case 2:
           return AGENT_CONTENT;
+        case 3:
+          return COMMIT_SHA;
         case 0:
           return AGENT_NOT_SET;
         default:
@@ -194,7 +194,9 @@ public final class ExportAgentResponse extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Uncompressed raw byte content for agent.
+   * Uncompressed raw byte content for agent. This field is populated
+   * if none of `agent_uri` and `git_destination` are specified in
+   * [ExportAgentRequest][google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest].
    * </pre>
    *
    * <code>bytes agent_content = 2;</code>
@@ -209,7 +211,9 @@ public final class ExportAgentResponse extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Uncompressed raw byte content for agent.
+   * Uncompressed raw byte content for agent. This field is populated
+   * if none of `agent_uri` and `git_destination` are specified in
+   * [ExportAgentRequest][google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest].
    * </pre>
    *
    * <code>bytes agent_content = 2;</code>
@@ -222,6 +226,82 @@ public final class ExportAgentResponse extends com.google.protobuf.GeneratedMess
       return (com.google.protobuf.ByteString) agent_;
     }
     return com.google.protobuf.ByteString.EMPTY;
+  }
+
+  public static final int COMMIT_SHA_FIELD_NUMBER = 3;
+  /**
+   *
+   *
+   * <pre>
+   * Commit SHA of the git push. This field is populated if
+   * `git_destination` is specified in
+   * [ExportAgentRequest][google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest].
+   * </pre>
+   *
+   * <code>string commit_sha = 3;</code>
+   *
+   * @return Whether the commitSha field is set.
+   */
+  public boolean hasCommitSha() {
+    return agentCase_ == 3;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Commit SHA of the git push. This field is populated if
+   * `git_destination` is specified in
+   * [ExportAgentRequest][google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest].
+   * </pre>
+   *
+   * <code>string commit_sha = 3;</code>
+   *
+   * @return The commitSha.
+   */
+  public java.lang.String getCommitSha() {
+    java.lang.Object ref = "";
+    if (agentCase_ == 3) {
+      ref = agent_;
+    }
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      if (agentCase_ == 3) {
+        agent_ = s;
+      }
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Commit SHA of the git push. This field is populated if
+   * `git_destination` is specified in
+   * [ExportAgentRequest][google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest].
+   * </pre>
+   *
+   * <code>string commit_sha = 3;</code>
+   *
+   * @return The bytes for commitSha.
+   */
+  public com.google.protobuf.ByteString getCommitShaBytes() {
+    java.lang.Object ref = "";
+    if (agentCase_ == 3) {
+      ref = agent_;
+    }
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      if (agentCase_ == 3) {
+        agent_ = b;
+      }
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -244,6 +324,9 @@ public final class ExportAgentResponse extends com.google.protobuf.GeneratedMess
     if (agentCase_ == 2) {
       output.writeBytes(2, (com.google.protobuf.ByteString) agent_);
     }
+    if (agentCase_ == 3) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, agent_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -260,6 +343,9 @@ public final class ExportAgentResponse extends com.google.protobuf.GeneratedMess
       size +=
           com.google.protobuf.CodedOutputStream.computeBytesSize(
               2, (com.google.protobuf.ByteString) agent_);
+    }
+    if (agentCase_ == 3) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, agent_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -285,6 +371,9 @@ public final class ExportAgentResponse extends com.google.protobuf.GeneratedMess
       case 2:
         if (!getAgentContent().equals(other.getAgentContent())) return false;
         break;
+      case 3:
+        if (!getCommitSha().equals(other.getCommitSha())) return false;
+        break;
       case 0:
       default:
     }
@@ -307,6 +396,10 @@ public final class ExportAgentResponse extends com.google.protobuf.GeneratedMess
       case 2:
         hash = (37 * hash) + AGENT_CONTENT_FIELD_NUMBER;
         hash = (53 * hash) + getAgentContent().hashCode();
+        break;
+      case 3:
+        hash = (37 * hash) + COMMIT_SHA_FIELD_NUMBER;
+        hash = (53 * hash) + getCommitSha().hashCode();
         break;
       case 0:
       default:
@@ -558,6 +651,13 @@ public final class ExportAgentResponse extends com.google.protobuf.GeneratedMess
             setAgentContent(other.getAgentContent());
             break;
           }
+        case COMMIT_SHA:
+          {
+            agentCase_ = 3;
+            agent_ = other.agent_;
+            onChanged();
+            break;
+          }
         case AGENT_NOT_SET:
           {
             break;
@@ -602,6 +702,13 @@ public final class ExportAgentResponse extends com.google.protobuf.GeneratedMess
                 agentCase_ = 2;
                 break;
               } // case 18
+            case 26:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                agentCase_ = 3;
+                agent_ = s;
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -785,7 +892,9 @@ public final class ExportAgentResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Uncompressed raw byte content for agent.
+     * Uncompressed raw byte content for agent. This field is populated
+     * if none of `agent_uri` and `git_destination` are specified in
+     * [ExportAgentRequest][google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest].
      * </pre>
      *
      * <code>bytes agent_content = 2;</code>
@@ -799,7 +908,9 @@ public final class ExportAgentResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Uncompressed raw byte content for agent.
+     * Uncompressed raw byte content for agent. This field is populated
+     * if none of `agent_uri` and `git_destination` are specified in
+     * [ExportAgentRequest][google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest].
      * </pre>
      *
      * <code>bytes agent_content = 2;</code>
@@ -816,7 +927,9 @@ public final class ExportAgentResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Uncompressed raw byte content for agent.
+     * Uncompressed raw byte content for agent. This field is populated
+     * if none of `agent_uri` and `git_destination` are specified in
+     * [ExportAgentRequest][google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest].
      * </pre>
      *
      * <code>bytes agent_content = 2;</code>
@@ -837,7 +950,9 @@ public final class ExportAgentResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Uncompressed raw byte content for agent.
+     * Uncompressed raw byte content for agent. This field is populated
+     * if none of `agent_uri` and `git_destination` are specified in
+     * [ExportAgentRequest][google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest].
      * </pre>
      *
      * <code>bytes agent_content = 2;</code>
@@ -850,6 +965,152 @@ public final class ExportAgentResponse extends com.google.protobuf.GeneratedMess
         agent_ = null;
         onChanged();
       }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Commit SHA of the git push. This field is populated if
+     * `git_destination` is specified in
+     * [ExportAgentRequest][google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest].
+     * </pre>
+     *
+     * <code>string commit_sha = 3;</code>
+     *
+     * @return Whether the commitSha field is set.
+     */
+    @java.lang.Override
+    public boolean hasCommitSha() {
+      return agentCase_ == 3;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Commit SHA of the git push. This field is populated if
+     * `git_destination` is specified in
+     * [ExportAgentRequest][google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest].
+     * </pre>
+     *
+     * <code>string commit_sha = 3;</code>
+     *
+     * @return The commitSha.
+     */
+    @java.lang.Override
+    public java.lang.String getCommitSha() {
+      java.lang.Object ref = "";
+      if (agentCase_ == 3) {
+        ref = agent_;
+      }
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (agentCase_ == 3) {
+          agent_ = s;
+        }
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Commit SHA of the git push. This field is populated if
+     * `git_destination` is specified in
+     * [ExportAgentRequest][google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest].
+     * </pre>
+     *
+     * <code>string commit_sha = 3;</code>
+     *
+     * @return The bytes for commitSha.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getCommitShaBytes() {
+      java.lang.Object ref = "";
+      if (agentCase_ == 3) {
+        ref = agent_;
+      }
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        if (agentCase_ == 3) {
+          agent_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Commit SHA of the git push. This field is populated if
+     * `git_destination` is specified in
+     * [ExportAgentRequest][google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest].
+     * </pre>
+     *
+     * <code>string commit_sha = 3;</code>
+     *
+     * @param value The commitSha to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCommitSha(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      agentCase_ = 3;
+      agent_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Commit SHA of the git push. This field is populated if
+     * `git_destination` is specified in
+     * [ExportAgentRequest][google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest].
+     * </pre>
+     *
+     * <code>string commit_sha = 3;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCommitSha() {
+      if (agentCase_ == 3) {
+        agentCase_ = 0;
+        agent_ = null;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Commit SHA of the git push. This field is populated if
+     * `git_destination` is specified in
+     * [ExportAgentRequest][google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest].
+     * </pre>
+     *
+     * <code>string commit_sha = 3;</code>
+     *
+     * @param value The bytes for commitSha to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCommitShaBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      agentCase_ = 3;
+      agent_ = value;
+      onChanged();
       return this;
     }
 

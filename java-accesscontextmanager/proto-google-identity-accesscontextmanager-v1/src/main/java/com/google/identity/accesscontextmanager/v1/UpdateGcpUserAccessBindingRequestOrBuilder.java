@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -74,6 +74,7 @@ public interface UpdateGcpUserAccessBindingRequestOrBuilder
    * <pre>
    * Required. Only the fields specified in this mask are updated. Because name and
    * group_key cannot be changed, update_mask is required and must always be:
+   *
    * update_mask {
    * paths: "access_levels"
    * }
@@ -91,6 +92,7 @@ public interface UpdateGcpUserAccessBindingRequestOrBuilder
    * <pre>
    * Required. Only the fields specified in this mask are updated. Because name and
    * group_key cannot be changed, update_mask is required and must always be:
+   *
    * update_mask {
    * paths: "access_levels"
    * }
@@ -108,6 +110,7 @@ public interface UpdateGcpUserAccessBindingRequestOrBuilder
    * <pre>
    * Required. Only the fields specified in this mask are updated. Because name and
    * group_key cannot be changed, update_mask is required and must always be:
+   *
    * update_mask {
    * paths: "access_levels"
    * }

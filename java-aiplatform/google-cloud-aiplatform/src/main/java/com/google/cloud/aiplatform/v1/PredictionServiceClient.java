@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
 import com.google.api.gax.rpc.PageContext;
+import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.aiplatform.v1.stub.PredictionServiceStub;
 import com.google.cloud.aiplatform.v1.stub.PredictionServiceStubSettings;
@@ -537,6 +538,41 @@ public class PredictionServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Perform a server-side streaming online prediction request for Vertex LLM streaming.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
+   *   StreamingPredictRequest request =
+   *       StreamingPredictRequest.newBuilder()
+   *           .setEndpoint(
+   *               EndpointName.ofProjectLocationEndpointName(
+   *                       "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+   *                   .toString())
+   *           .addAllInputs(new ArrayList<Tensor>())
+   *           .setParameters(Tensor.newBuilder().build())
+   *           .build();
+   *   ServerStream<StreamingPredictResponse> stream =
+   *       predictionServiceClient.serverStreamingPredictCallable().call(request);
+   *   for (StreamingPredictResponse response : stream) {
+   *     // Do something when a response is received.
+   *   }
+   * }
+   * }</pre>
+   */
+  public final ServerStreamingCallable<StreamingPredictRequest, StreamingPredictResponse>
+      serverStreamingPredictCallable() {
+    return stub.serverStreamingPredictCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Perform an online explanation.
    *
    * <p>If [deployed_model_id][google.cloud.aiplatform.v1.ExplainRequest.deployed_model_id] is
@@ -544,8 +580,7 @@ public class PredictionServiceClient implements BackgroundResource {
    * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] populated. If
    * [deployed_model_id][google.cloud.aiplatform.v1.ExplainRequest.deployed_model_id] is not
    * specified, all DeployedModels must have
-   * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] populated. Only
-   * deployed AutoML tabular Models have explanation_spec.
+   * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] populated.
    *
    * <p>Sample code:
    *
@@ -607,8 +642,7 @@ public class PredictionServiceClient implements BackgroundResource {
    * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] populated. If
    * [deployed_model_id][google.cloud.aiplatform.v1.ExplainRequest.deployed_model_id] is not
    * specified, all DeployedModels must have
-   * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] populated. Only
-   * deployed AutoML tabular Models have explanation_spec.
+   * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] populated.
    *
    * <p>Sample code:
    *
@@ -671,8 +705,7 @@ public class PredictionServiceClient implements BackgroundResource {
    * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] populated. If
    * [deployed_model_id][google.cloud.aiplatform.v1.ExplainRequest.deployed_model_id] is not
    * specified, all DeployedModels must have
-   * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] populated. Only
-   * deployed AutoML tabular Models have explanation_spec.
+   * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] populated.
    *
    * <p>Sample code:
    *
@@ -714,8 +747,7 @@ public class PredictionServiceClient implements BackgroundResource {
    * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] populated. If
    * [deployed_model_id][google.cloud.aiplatform.v1.ExplainRequest.deployed_model_id] is not
    * specified, all DeployedModels must have
-   * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] populated. Only
-   * deployed AutoML tabular Models have explanation_spec.
+   * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] populated.
    *
    * <p>Sample code:
    *

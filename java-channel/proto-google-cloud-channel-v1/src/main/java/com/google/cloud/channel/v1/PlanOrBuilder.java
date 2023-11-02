@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -166,7 +166,7 @@ public interface PlanOrBuilder
    *
    * <pre>
    * Reseller Billing account to charge after an offer transaction.
-   * Only present for Google Cloud Platform offers.
+   * Only present for Google Cloud offers.
    * </pre>
    *
    * <code>string billing_account = 5;</code>
@@ -179,7 +179,7 @@ public interface PlanOrBuilder
    *
    * <pre>
    * Reseller Billing account to charge after an offer transaction.
-   * Only present for Google Cloud Platform offers.
+   * Only present for Google Cloud offers.
    * </pre>
    *
    * <code>string billing_account = 5;</code>

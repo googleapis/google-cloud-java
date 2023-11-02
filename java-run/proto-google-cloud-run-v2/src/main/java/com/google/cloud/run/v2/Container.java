@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,7 @@ package com.google.cloud.run.v2;
  * A single application container.
  * This specifies both the container to run, the command to run in the container
  * and the arguments to supply to it.
- * Note that additional arguments may be supplied by the system to the container
+ * Note that additional arguments can be supplied by the system to the container
  * at runtime.
  * </pre>
  *
@@ -44,23 +44,19 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
   private Container() {
     name_ = "";
     image_ = "";
-    command_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    args_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    command_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    args_ = com.google.protobuf.LazyStringArrayList.emptyList();
     env_ = java.util.Collections.emptyList();
     ports_ = java.util.Collections.emptyList();
     volumeMounts_ = java.util.Collections.emptyList();
     workingDir_ = "";
+    dependsOn_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Container();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -187,7 +183,8 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
   public static final int COMMAND_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList command_;
+  private com.google.protobuf.LazyStringArrayList command_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -254,7 +251,8 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
   public static final int ARGS_FIELD_NUMBER = 4;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList args_;
+  private com.google.protobuf.LazyStringArrayList args_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -449,6 +447,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
    * List of ports to expose from the container. Only a single port can be
    * specified. The specified ports must be listening on all interfaces
    * (0.0.0.0) within the container to be accessible.
+   *
    * If omitted, a port number will be chosen and passed to the container
    * through the PORT environment variable for the container to listen on.
    * </pre>
@@ -466,6 +465,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
    * List of ports to expose from the container. Only a single port can be
    * specified. The specified ports must be listening on all interfaces
    * (0.0.0.0) within the container to be accessible.
+   *
    * If omitted, a port number will be chosen and passed to the container
    * through the PORT environment variable for the container to listen on.
    * </pre>
@@ -484,6 +484,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
    * List of ports to expose from the container. Only a single port can be
    * specified. The specified ports must be listening on all interfaces
    * (0.0.0.0) within the container to be accessible.
+   *
    * If omitted, a port number will be chosen and passed to the container
    * through the PORT environment variable for the container to listen on.
    * </pre>
@@ -501,6 +502,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
    * List of ports to expose from the container. Only a single port can be
    * specified. The specified ports must be listening on all interfaces
    * (0.0.0.0) within the container to be accessible.
+   *
    * If omitted, a port number will be chosen and passed to the container
    * through the PORT environment variable for the container to listen on.
    * </pre>
@@ -518,6 +520,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
    * List of ports to expose from the container. Only a single port can be
    * specified. The specified ports must be listening on all interfaces
    * (0.0.0.0) within the container to be accessible.
+   *
    * If omitted, a port number will be chosen and passed to the container
    * through the PORT environment variable for the container to listen on.
    * </pre>
@@ -767,6 +770,70 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
         : startupProbe_;
   }
 
+  public static final int DEPENDS_ON_FIELD_NUMBER = 12;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList dependsOn_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   *
+   *
+   * <pre>
+   * Names of the containers that must start before this container.
+   * </pre>
+   *
+   * <code>repeated string depends_on = 12;</code>
+   *
+   * @return A list containing the dependsOn.
+   */
+  public com.google.protobuf.ProtocolStringList getDependsOnList() {
+    return dependsOn_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Names of the containers that must start before this container.
+   * </pre>
+   *
+   * <code>repeated string depends_on = 12;</code>
+   *
+   * @return The count of dependsOn.
+   */
+  public int getDependsOnCount() {
+    return dependsOn_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Names of the containers that must start before this container.
+   * </pre>
+   *
+   * <code>repeated string depends_on = 12;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The dependsOn at the given index.
+   */
+  public java.lang.String getDependsOn(int index) {
+    return dependsOn_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Names of the containers that must start before this container.
+   * </pre>
+   *
+   * <code>repeated string depends_on = 12;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the dependsOn at the given index.
+   */
+  public com.google.protobuf.ByteString getDependsOnBytes(int index) {
+    return dependsOn_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -813,6 +880,9 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
     }
     if (startupProbe_ != null) {
       output.writeMessage(11, getStartupProbe());
+    }
+    for (int i = 0; i < dependsOn_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 12, dependsOn_.getRaw(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -866,6 +936,14 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
     if (startupProbe_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getStartupProbe());
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < dependsOn_.size(); i++) {
+        dataSize += computeStringSizeNoTag(dependsOn_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getDependsOnList().size();
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -901,6 +979,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
     if (hasStartupProbe()) {
       if (!getStartupProbe().equals(other.getStartupProbe())) return false;
     }
+    if (!getDependsOnList().equals(other.getDependsOnList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -949,6 +1028,10 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
     if (hasStartupProbe()) {
       hash = (37 * hash) + STARTUP_PROBE_FIELD_NUMBER;
       hash = (53 * hash) + getStartupProbe().hashCode();
+    }
+    if (getDependsOnCount() > 0) {
+      hash = (37 * hash) + DEPENDS_ON_FIELD_NUMBER;
+      hash = (53 * hash) + getDependsOnList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1056,7 +1139,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
    * A single application container.
    * This specifies both the container to run, the command to run in the container
    * and the arguments to supply to it.
-   * Note that additional arguments may be supplied by the system to the container
+   * Note that additional arguments can be supplied by the system to the container
    * at runtime.
    * </pre>
    *
@@ -1094,10 +1177,8 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = 0;
       name_ = "";
       image_ = "";
-      command_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
-      args_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      command_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      args_ = com.google.protobuf.LazyStringArrayList.emptyList();
       if (envBuilder_ == null) {
         env_ = java.util.Collections.emptyList();
       } else {
@@ -1135,6 +1216,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
         startupProbeBuilder_.dispose();
         startupProbeBuilder_ = null;
       }
+      dependsOn_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -1170,16 +1252,6 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
     }
 
     private void buildPartialRepeatedFields(com.google.cloud.run.v2.Container result) {
-      if (((bitField0_ & 0x00000004) != 0)) {
-        command_ = command_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.command_ = command_;
-      if (((bitField0_ & 0x00000008) != 0)) {
-        args_ = args_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000008);
-      }
-      result.args_ = args_;
       if (envBuilder_ == null) {
         if (((bitField0_ & 0x00000010) != 0)) {
           env_ = java.util.Collections.unmodifiableList(env_);
@@ -1217,6 +1289,14 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.image_ = image_;
       }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        command_.makeImmutable();
+        result.command_ = command_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        args_.makeImmutable();
+        result.args_ = args_;
+      }
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.resources_ = resourcesBuilder_ == null ? resources_ : resourcesBuilder_.build();
       }
@@ -1230,6 +1310,10 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000400) != 0)) {
         result.startupProbe_ =
             startupProbeBuilder_ == null ? startupProbe_ : startupProbeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        dependsOn_.makeImmutable();
+        result.dependsOn_ = dependsOn_;
       }
     }
 
@@ -1291,7 +1375,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
       if (!other.command_.isEmpty()) {
         if (command_.isEmpty()) {
           command_ = other.command_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ |= 0x00000004;
         } else {
           ensureCommandIsMutable();
           command_.addAll(other.command_);
@@ -1301,7 +1385,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
       if (!other.args_.isEmpty()) {
         if (args_.isEmpty()) {
           args_ = other.args_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ |= 0x00000008;
         } else {
           ensureArgsIsMutable();
           args_.addAll(other.args_);
@@ -1402,6 +1486,16 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasStartupProbe()) {
         mergeStartupProbe(other.getStartupProbe());
+      }
+      if (!other.dependsOn_.isEmpty()) {
+        if (dependsOn_.isEmpty()) {
+          dependsOn_ = other.dependsOn_;
+          bitField0_ |= 0x00000800;
+        } else {
+          ensureDependsOnIsMutable();
+          dependsOn_.addAll(other.dependsOn_);
+        }
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1517,6 +1611,13 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000400;
                 break;
               } // case 90
+            case 98:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureDependsOnIsMutable();
+                dependsOn_.add(s);
+                break;
+              } // case 98
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1758,14 +1859,14 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList command_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList command_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureCommandIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!command_.isModifiable()) {
         command_ = new com.google.protobuf.LazyStringArrayList(command_);
-        bitField0_ |= 0x00000004;
       }
+      bitField0_ |= 0x00000004;
     }
     /**
      *
@@ -1780,7 +1881,8 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the command.
      */
     public com.google.protobuf.ProtocolStringList getCommandList() {
-      return command_.getUnmodifiableView();
+      command_.makeImmutable();
+      return command_;
     }
     /**
      *
@@ -1849,6 +1951,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
       }
       ensureCommandIsMutable();
       command_.set(index, value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1871,6 +1974,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
       }
       ensureCommandIsMutable();
       command_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1890,6 +1994,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllCommand(java.lang.Iterable<java.lang.String> values) {
       ensureCommandIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, command_);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1906,8 +2011,9 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCommand() {
-      command_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      command_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000004);
+      ;
       onChanged();
       return this;
     }
@@ -1931,18 +2037,19 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureCommandIsMutable();
       command_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList args_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList args_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureArgsIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!args_.isModifiable()) {
         args_ = new com.google.protobuf.LazyStringArrayList(args_);
-        bitField0_ |= 0x00000008;
       }
+      bitField0_ |= 0x00000008;
     }
     /**
      *
@@ -1957,7 +2064,8 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the args.
      */
     public com.google.protobuf.ProtocolStringList getArgsList() {
-      return args_.getUnmodifiableView();
+      args_.makeImmutable();
+      return args_;
     }
     /**
      *
@@ -2026,6 +2134,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
       }
       ensureArgsIsMutable();
       args_.set(index, value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2048,6 +2157,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
       }
       ensureArgsIsMutable();
       args_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2067,6 +2177,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllArgs(java.lang.Iterable<java.lang.String> values) {
       ensureArgsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, args_);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2083,8 +2194,9 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearArgs() {
-      args_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      args_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000008);
+      ;
       onChanged();
       return this;
     }
@@ -2108,6 +2220,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureArgsIsMutable();
       args_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2661,6 +2774,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      * List of ports to expose from the container. Only a single port can be
      * specified. The specified ports must be listening on all interfaces
      * (0.0.0.0) within the container to be accessible.
+     *
      * If omitted, a port number will be chosen and passed to the container
      * through the PORT environment variable for the container to listen on.
      * </pre>
@@ -2681,6 +2795,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      * List of ports to expose from the container. Only a single port can be
      * specified. The specified ports must be listening on all interfaces
      * (0.0.0.0) within the container to be accessible.
+     *
      * If omitted, a port number will be chosen and passed to the container
      * through the PORT environment variable for the container to listen on.
      * </pre>
@@ -2701,6 +2816,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      * List of ports to expose from the container. Only a single port can be
      * specified. The specified ports must be listening on all interfaces
      * (0.0.0.0) within the container to be accessible.
+     *
      * If omitted, a port number will be chosen and passed to the container
      * through the PORT environment variable for the container to listen on.
      * </pre>
@@ -2721,6 +2837,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      * List of ports to expose from the container. Only a single port can be
      * specified. The specified ports must be listening on all interfaces
      * (0.0.0.0) within the container to be accessible.
+     *
      * If omitted, a port number will be chosen and passed to the container
      * through the PORT environment variable for the container to listen on.
      * </pre>
@@ -2747,6 +2864,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      * List of ports to expose from the container. Only a single port can be
      * specified. The specified ports must be listening on all interfaces
      * (0.0.0.0) within the container to be accessible.
+     *
      * If omitted, a port number will be chosen and passed to the container
      * through the PORT environment variable for the container to listen on.
      * </pre>
@@ -2771,6 +2889,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      * List of ports to expose from the container. Only a single port can be
      * specified. The specified ports must be listening on all interfaces
      * (0.0.0.0) within the container to be accessible.
+     *
      * If omitted, a port number will be chosen and passed to the container
      * through the PORT environment variable for the container to listen on.
      * </pre>
@@ -2797,6 +2916,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      * List of ports to expose from the container. Only a single port can be
      * specified. The specified ports must be listening on all interfaces
      * (0.0.0.0) within the container to be accessible.
+     *
      * If omitted, a port number will be chosen and passed to the container
      * through the PORT environment variable for the container to listen on.
      * </pre>
@@ -2823,6 +2943,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      * List of ports to expose from the container. Only a single port can be
      * specified. The specified ports must be listening on all interfaces
      * (0.0.0.0) within the container to be accessible.
+     *
      * If omitted, a port number will be chosen and passed to the container
      * through the PORT environment variable for the container to listen on.
      * </pre>
@@ -2846,6 +2967,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      * List of ports to expose from the container. Only a single port can be
      * specified. The specified ports must be listening on all interfaces
      * (0.0.0.0) within the container to be accessible.
+     *
      * If omitted, a port number will be chosen and passed to the container
      * through the PORT environment variable for the container to listen on.
      * </pre>
@@ -2870,6 +2992,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      * List of ports to expose from the container. Only a single port can be
      * specified. The specified ports must be listening on all interfaces
      * (0.0.0.0) within the container to be accessible.
+     *
      * If omitted, a port number will be chosen and passed to the container
      * through the PORT environment variable for the container to listen on.
      * </pre>
@@ -2894,6 +3017,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      * List of ports to expose from the container. Only a single port can be
      * specified. The specified ports must be listening on all interfaces
      * (0.0.0.0) within the container to be accessible.
+     *
      * If omitted, a port number will be chosen and passed to the container
      * through the PORT environment variable for the container to listen on.
      * </pre>
@@ -2917,6 +3041,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      * List of ports to expose from the container. Only a single port can be
      * specified. The specified ports must be listening on all interfaces
      * (0.0.0.0) within the container to be accessible.
+     *
      * If omitted, a port number will be chosen and passed to the container
      * through the PORT environment variable for the container to listen on.
      * </pre>
@@ -2940,6 +3065,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      * List of ports to expose from the container. Only a single port can be
      * specified. The specified ports must be listening on all interfaces
      * (0.0.0.0) within the container to be accessible.
+     *
      * If omitted, a port number will be chosen and passed to the container
      * through the PORT environment variable for the container to listen on.
      * </pre>
@@ -2956,6 +3082,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      * List of ports to expose from the container. Only a single port can be
      * specified. The specified ports must be listening on all interfaces
      * (0.0.0.0) within the container to be accessible.
+     *
      * If omitted, a port number will be chosen and passed to the container
      * through the PORT environment variable for the container to listen on.
      * </pre>
@@ -2976,6 +3103,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      * List of ports to expose from the container. Only a single port can be
      * specified. The specified ports must be listening on all interfaces
      * (0.0.0.0) within the container to be accessible.
+     *
      * If omitted, a port number will be chosen and passed to the container
      * through the PORT environment variable for the container to listen on.
      * </pre>
@@ -2997,6 +3125,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      * List of ports to expose from the container. Only a single port can be
      * specified. The specified ports must be listening on all interfaces
      * (0.0.0.0) within the container to be accessible.
+     *
      * If omitted, a port number will be chosen and passed to the container
      * through the PORT environment variable for the container to listen on.
      * </pre>
@@ -3014,6 +3143,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      * List of ports to expose from the container. Only a single port can be
      * specified. The specified ports must be listening on all interfaces
      * (0.0.0.0) within the container to be accessible.
+     *
      * If omitted, a port number will be chosen and passed to the container
      * through the PORT environment variable for the container to listen on.
      * </pre>
@@ -3031,6 +3161,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
      * List of ports to expose from the container. Only a single port can be
      * specified. The specified ports must be listening on all interfaces
      * (0.0.0.0) within the container to be accessible.
+     *
      * If omitted, a port number will be chosen and passed to the container
      * through the PORT environment variable for the container to listen on.
      * </pre>
@@ -3923,6 +4054,180 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
         startupProbe_ = null;
       }
       return startupProbeBuilder_;
+    }
+
+    private com.google.protobuf.LazyStringArrayList dependsOn_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureDependsOnIsMutable() {
+      if (!dependsOn_.isModifiable()) {
+        dependsOn_ = new com.google.protobuf.LazyStringArrayList(dependsOn_);
+      }
+      bitField0_ |= 0x00000800;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Names of the containers that must start before this container.
+     * </pre>
+     *
+     * <code>repeated string depends_on = 12;</code>
+     *
+     * @return A list containing the dependsOn.
+     */
+    public com.google.protobuf.ProtocolStringList getDependsOnList() {
+      dependsOn_.makeImmutable();
+      return dependsOn_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Names of the containers that must start before this container.
+     * </pre>
+     *
+     * <code>repeated string depends_on = 12;</code>
+     *
+     * @return The count of dependsOn.
+     */
+    public int getDependsOnCount() {
+      return dependsOn_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Names of the containers that must start before this container.
+     * </pre>
+     *
+     * <code>repeated string depends_on = 12;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The dependsOn at the given index.
+     */
+    public java.lang.String getDependsOn(int index) {
+      return dependsOn_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Names of the containers that must start before this container.
+     * </pre>
+     *
+     * <code>repeated string depends_on = 12;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the dependsOn at the given index.
+     */
+    public com.google.protobuf.ByteString getDependsOnBytes(int index) {
+      return dependsOn_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Names of the containers that must start before this container.
+     * </pre>
+     *
+     * <code>repeated string depends_on = 12;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The dependsOn to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDependsOn(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureDependsOnIsMutable();
+      dependsOn_.set(index, value);
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Names of the containers that must start before this container.
+     * </pre>
+     *
+     * <code>repeated string depends_on = 12;</code>
+     *
+     * @param value The dependsOn to add.
+     * @return This builder for chaining.
+     */
+    public Builder addDependsOn(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureDependsOnIsMutable();
+      dependsOn_.add(value);
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Names of the containers that must start before this container.
+     * </pre>
+     *
+     * <code>repeated string depends_on = 12;</code>
+     *
+     * @param values The dependsOn to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllDependsOn(java.lang.Iterable<java.lang.String> values) {
+      ensureDependsOnIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, dependsOn_);
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Names of the containers that must start before this container.
+     * </pre>
+     *
+     * <code>repeated string depends_on = 12;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDependsOn() {
+      dependsOn_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000800);
+      ;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Names of the containers that must start before this container.
+     * </pre>
+     *
+     * <code>repeated string depends_on = 12;</code>
+     *
+     * @param value The bytes of the dependsOn to add.
+     * @return This builder for chaining.
+     */
+    public Builder addDependsOnBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureDependsOnIsMutable();
+      dependsOn_.add(value);
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

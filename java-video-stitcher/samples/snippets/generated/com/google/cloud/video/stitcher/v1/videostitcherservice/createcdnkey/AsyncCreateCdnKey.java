@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,6 +22,7 @@ import com.google.cloud.video.stitcher.v1.CdnKey;
 import com.google.cloud.video.stitcher.v1.CreateCdnKeyRequest;
 import com.google.cloud.video.stitcher.v1.LocationName;
 import com.google.cloud.video.stitcher.v1.VideoStitcherServiceClient;
+import com.google.longrunning.Operation;
 
 public class AsyncCreateCdnKey {
 
@@ -43,10 +44,10 @@ public class AsyncCreateCdnKey {
               .setCdnKey(CdnKey.newBuilder().build())
               .setCdnKeyId("cdnKeyId-1777782867")
               .build();
-      ApiFuture<CdnKey> future =
+      ApiFuture<Operation> future =
           videoStitcherServiceClient.createCdnKeyCallable().futureCall(request);
       // Do something.
-      CdnKey response = future.get();
+      Operation response = future.get();
     }
   }
 }

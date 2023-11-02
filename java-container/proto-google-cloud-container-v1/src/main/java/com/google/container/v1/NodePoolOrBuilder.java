@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -106,9 +106,11 @@ public interface NodePoolOrBuilder
    * The list of Google Compute Engine
    * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
    * NodePool's nodes should be located.
+   *
    * If this value is unspecified during node pool creation, the
    * [Cluster.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters#Cluster.FIELDS.locations)
    * value will be used, instead.
+   *
    * Warning: changing node pool locations will result in nodes being added
    * and/or removed.
    * </pre>
@@ -125,9 +127,11 @@ public interface NodePoolOrBuilder
    * The list of Google Compute Engine
    * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
    * NodePool's nodes should be located.
+   *
    * If this value is unspecified during node pool creation, the
    * [Cluster.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters#Cluster.FIELDS.locations)
    * value will be used, instead.
+   *
    * Warning: changing node pool locations will result in nodes being added
    * and/or removed.
    * </pre>
@@ -144,9 +148,11 @@ public interface NodePoolOrBuilder
    * The list of Google Compute Engine
    * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
    * NodePool's nodes should be located.
+   *
    * If this value is unspecified during node pool creation, the
    * [Cluster.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters#Cluster.FIELDS.locations)
    * value will be used, instead.
+   *
    * Warning: changing node pool locations will result in nodes being added
    * and/or removed.
    * </pre>
@@ -164,9 +170,11 @@ public interface NodePoolOrBuilder
    * The list of Google Compute Engine
    * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
    * NodePool's nodes should be located.
+   *
    * If this value is unspecified during node pool creation, the
    * [Cluster.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters#Cluster.FIELDS.locations)
    * value will be used, instead.
+   *
    * Warning: changing node pool locations will result in nodes being added
    * and/or removed.
    * </pre>
@@ -374,7 +382,7 @@ public interface NodePoolOrBuilder
    * <code>string status_message = 104 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.NodePool.status_message is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3292
+   *     google/container/v1/cluster_service.proto;l=3529
    * @return The statusMessage.
    */
   @java.lang.Deprecated
@@ -391,7 +399,7 @@ public interface NodePoolOrBuilder
    * <code>string status_message = 104 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.NodePool.status_message is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3292
+   *     google/container/v1/cluster_service.proto;l=3529
    * @return The bytes for statusMessage.
    */
   @java.lang.Deprecated
@@ -715,4 +723,39 @@ public interface NodePoolOrBuilder
    * @return The bytes for etag.
    */
   com.google.protobuf.ByteString getEtagBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Enable best effort provisioning for nodes
+   * </pre>
+   *
+   * <code>.google.container.v1.BestEffortProvisioning best_effort_provisioning = 113;</code>
+   *
+   * @return Whether the bestEffortProvisioning field is set.
+   */
+  boolean hasBestEffortProvisioning();
+  /**
+   *
+   *
+   * <pre>
+   * Enable best effort provisioning for nodes
+   * </pre>
+   *
+   * <code>.google.container.v1.BestEffortProvisioning best_effort_provisioning = 113;</code>
+   *
+   * @return The bestEffortProvisioning.
+   */
+  com.google.container.v1.BestEffortProvisioning getBestEffortProvisioning();
+  /**
+   *
+   *
+   * <pre>
+   * Enable best effort provisioning for nodes
+   * </pre>
+   *
+   * <code>.google.container.v1.BestEffortProvisioning best_effort_provisioning = 113;</code>
+   */
+  com.google.container.v1.BestEffortProvisioningOrBuilder getBestEffortProvisioningOrBuilder();
 }

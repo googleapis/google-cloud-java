@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,18 +38,13 @@ public final class SecurityPolicyRuleMatcherConfig extends com.google.protobuf.G
   }
 
   private SecurityPolicyRuleMatcherConfig() {
-    srcIpRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    srcIpRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new SecurityPolicyRuleMatcherConfig();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -70,7 +65,8 @@ public final class SecurityPolicyRuleMatcherConfig extends com.google.protobuf.G
   public static final int SRC_IP_RANGES_FIELD_NUMBER = 432128083;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList srcIpRanges_;
+  private com.google.protobuf.LazyStringArrayList srcIpRanges_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -335,8 +331,7 @@ public final class SecurityPolicyRuleMatcherConfig extends com.google.protobuf.G
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      srcIpRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      srcIpRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -364,7 +359,6 @@ public final class SecurityPolicyRuleMatcherConfig extends com.google.protobuf.G
     public com.google.cloud.compute.v1.SecurityPolicyRuleMatcherConfig buildPartial() {
       com.google.cloud.compute.v1.SecurityPolicyRuleMatcherConfig result =
           new com.google.cloud.compute.v1.SecurityPolicyRuleMatcherConfig(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -372,17 +366,12 @@ public final class SecurityPolicyRuleMatcherConfig extends com.google.protobuf.G
       return result;
     }
 
-    private void buildPartialRepeatedFields(
-        com.google.cloud.compute.v1.SecurityPolicyRuleMatcherConfig result) {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        srcIpRanges_ = srcIpRanges_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.srcIpRanges_ = srcIpRanges_;
-    }
-
     private void buildPartial0(com.google.cloud.compute.v1.SecurityPolicyRuleMatcherConfig result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        srcIpRanges_.makeImmutable();
+        result.srcIpRanges_ = srcIpRanges_;
+      }
     }
 
     @java.lang.Override
@@ -434,7 +423,7 @@ public final class SecurityPolicyRuleMatcherConfig extends com.google.protobuf.G
       if (!other.srcIpRanges_.isEmpty()) {
         if (srcIpRanges_.isEmpty()) {
           srcIpRanges_ = other.srcIpRanges_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ |= 0x00000001;
         } else {
           ensureSrcIpRangesIsMutable();
           srcIpRanges_.addAll(other.srcIpRanges_);
@@ -493,14 +482,14 @@ public final class SecurityPolicyRuleMatcherConfig extends com.google.protobuf.G
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList srcIpRanges_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList srcIpRanges_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureSrcIpRangesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!srcIpRanges_.isModifiable()) {
         srcIpRanges_ = new com.google.protobuf.LazyStringArrayList(srcIpRanges_);
-        bitField0_ |= 0x00000001;
       }
+      bitField0_ |= 0x00000001;
     }
     /**
      *
@@ -514,7 +503,8 @@ public final class SecurityPolicyRuleMatcherConfig extends com.google.protobuf.G
      * @return A list containing the srcIpRanges.
      */
     public com.google.protobuf.ProtocolStringList getSrcIpRangesList() {
-      return srcIpRanges_.getUnmodifiableView();
+      srcIpRanges_.makeImmutable();
+      return srcIpRanges_;
     }
     /**
      *
@@ -579,6 +569,7 @@ public final class SecurityPolicyRuleMatcherConfig extends com.google.protobuf.G
       }
       ensureSrcIpRangesIsMutable();
       srcIpRanges_.set(index, value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -600,6 +591,7 @@ public final class SecurityPolicyRuleMatcherConfig extends com.google.protobuf.G
       }
       ensureSrcIpRangesIsMutable();
       srcIpRanges_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -618,6 +610,7 @@ public final class SecurityPolicyRuleMatcherConfig extends com.google.protobuf.G
     public Builder addAllSrcIpRanges(java.lang.Iterable<java.lang.String> values) {
       ensureSrcIpRangesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, srcIpRanges_);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -633,8 +626,9 @@ public final class SecurityPolicyRuleMatcherConfig extends com.google.protobuf.G
      * @return This builder for chaining.
      */
     public Builder clearSrcIpRanges() {
-      srcIpRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      srcIpRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      ;
       onChanged();
       return this;
     }
@@ -657,6 +651,7 @@ public final class SecurityPolicyRuleMatcherConfig extends com.google.protobuf.G
       checkByteStringIsUtf8(value);
       ensureSrcIpRangesIsMutable();
       srcIpRanges_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

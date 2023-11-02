@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,6 +61,7 @@ public interface AddContextArtifactsAndExecutionsRequestOrBuilder
    *
    * <pre>
    * The resource names of the Artifacts to attribute to the Context.
+   *
    * Format:
    * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}`
    * </pre>
@@ -75,6 +76,7 @@ public interface AddContextArtifactsAndExecutionsRequestOrBuilder
    *
    * <pre>
    * The resource names of the Artifacts to attribute to the Context.
+   *
    * Format:
    * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}`
    * </pre>
@@ -89,6 +91,7 @@ public interface AddContextArtifactsAndExecutionsRequestOrBuilder
    *
    * <pre>
    * The resource names of the Artifacts to attribute to the Context.
+   *
    * Format:
    * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}`
    * </pre>
@@ -104,6 +107,7 @@ public interface AddContextArtifactsAndExecutionsRequestOrBuilder
    *
    * <pre>
    * The resource names of the Artifacts to attribute to the Context.
+   *
    * Format:
    * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}`
    * </pre>
@@ -121,6 +125,7 @@ public interface AddContextArtifactsAndExecutionsRequestOrBuilder
    * <pre>
    * The resource names of the Executions to associate with the
    * Context.
+   *
    * Format:
    * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}`
    * </pre>
@@ -136,6 +141,7 @@ public interface AddContextArtifactsAndExecutionsRequestOrBuilder
    * <pre>
    * The resource names of the Executions to associate with the
    * Context.
+   *
    * Format:
    * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}`
    * </pre>
@@ -151,6 +157,7 @@ public interface AddContextArtifactsAndExecutionsRequestOrBuilder
    * <pre>
    * The resource names of the Executions to associate with the
    * Context.
+   *
    * Format:
    * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}`
    * </pre>
@@ -167,6 +174,7 @@ public interface AddContextArtifactsAndExecutionsRequestOrBuilder
    * <pre>
    * The resource names of the Executions to associate with the
    * Context.
+   *
    * Format:
    * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}`
    * </pre>

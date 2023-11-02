@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -318,4 +318,40 @@ public interface RouteMatrixElementOrBuilder
    * <code>.google.maps.routing.v2.FallbackInfo fallback_info = 8;</code>
    */
   com.google.maps.routing.v2.FallbackInfoOrBuilder getFallbackInfoOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Text representations of properties of the `RouteMatrixElement`.
+   * </pre>
+   *
+   * <code>.google.maps.routing.v2.RouteMatrixElement.LocalizedValues localized_values = 10;</code>
+   *
+   * @return Whether the localizedValues field is set.
+   */
+  boolean hasLocalizedValues();
+  /**
+   *
+   *
+   * <pre>
+   * Text representations of properties of the `RouteMatrixElement`.
+   * </pre>
+   *
+   * <code>.google.maps.routing.v2.RouteMatrixElement.LocalizedValues localized_values = 10;</code>
+   *
+   * @return The localizedValues.
+   */
+  com.google.maps.routing.v2.RouteMatrixElement.LocalizedValues getLocalizedValues();
+  /**
+   *
+   *
+   * <pre>
+   * Text representations of properties of the `RouteMatrixElement`.
+   * </pre>
+   *
+   * <code>.google.maps.routing.v2.RouteMatrixElement.LocalizedValues localized_values = 10;</code>
+   */
+  com.google.maps.routing.v2.RouteMatrixElement.LocalizedValuesOrBuilder
+      getLocalizedValuesOrBuilder();
 }

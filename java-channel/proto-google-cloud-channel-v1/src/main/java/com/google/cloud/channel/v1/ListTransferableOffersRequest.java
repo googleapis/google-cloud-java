@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,17 +43,13 @@ public final class ListTransferableOffersRequest extends com.google.protobuf.Gen
     pageToken_ = "";
     sku_ = "";
     languageCode_ = "";
+    billingAccount_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ListTransferableOffersRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -72,6 +68,8 @@ public final class ListTransferableOffersRequest extends com.google.protobuf.Gen
   }
 
   private int transferredCustomerIdentityCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object transferredCustomerIdentity_;
 
   public enum TransferredCustomerIdentityCase
@@ -499,6 +497,65 @@ public final class ListTransferableOffersRequest extends com.google.protobuf.Gen
     }
   }
 
+  public static final int BILLING_ACCOUNT_FIELD_NUMBER = 8;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object billingAccount_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Billing Account to look up Offers for. Format:
+   * accounts/{account_id}/billingAccounts/{billing_account_id}.
+   *
+   * This field is only relevant for multi-currency accounts. It should be left
+   * empty for single currency accounts.
+   * </pre>
+   *
+   * <code>string billing_account = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The billingAccount.
+   */
+  @java.lang.Override
+  public java.lang.String getBillingAccount() {
+    java.lang.Object ref = billingAccount_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      billingAccount_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Billing Account to look up Offers for. Format:
+   * accounts/{account_id}/billingAccounts/{billing_account_id}.
+   *
+   * This field is only relevant for multi-currency accounts. It should be left
+   * empty for single currency accounts.
+   * </pre>
+   *
+   * <code>string billing_account = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for billingAccount.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getBillingAccountBytes() {
+    java.lang.Object ref = billingAccount_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      billingAccount_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -534,6 +591,9 @@ public final class ListTransferableOffersRequest extends com.google.protobuf.Gen
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, languageCode_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(billingAccount_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, billingAccount_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -566,6 +626,9 @@ public final class ListTransferableOffersRequest extends com.google.protobuf.Gen
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, languageCode_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(billingAccount_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, billingAccount_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -587,6 +650,7 @@ public final class ListTransferableOffersRequest extends com.google.protobuf.Gen
     if (!getPageToken().equals(other.getPageToken())) return false;
     if (!getSku().equals(other.getSku())) return false;
     if (!getLanguageCode().equals(other.getLanguageCode())) return false;
+    if (!getBillingAccount().equals(other.getBillingAccount())) return false;
     if (!getTransferredCustomerIdentityCase().equals(other.getTransferredCustomerIdentityCase()))
       return false;
     switch (transferredCustomerIdentityCase_) {
@@ -620,6 +684,8 @@ public final class ListTransferableOffersRequest extends com.google.protobuf.Gen
     hash = (53 * hash) + getSku().hashCode();
     hash = (37 * hash) + LANGUAGE_CODE_FIELD_NUMBER;
     hash = (53 * hash) + getLanguageCode().hashCode();
+    hash = (37 * hash) + BILLING_ACCOUNT_FIELD_NUMBER;
+    hash = (53 * hash) + getBillingAccount().hashCode();
     switch (transferredCustomerIdentityCase_) {
       case 4:
         hash = (37 * hash) + CLOUD_IDENTITY_ID_FIELD_NUMBER;
@@ -778,6 +844,7 @@ public final class ListTransferableOffersRequest extends com.google.protobuf.Gen
       pageToken_ = "";
       sku_ = "";
       languageCode_ = "";
+      billingAccount_ = "";
       transferredCustomerIdentityCase_ = 0;
       transferredCustomerIdentity_ = null;
       return this;
@@ -831,6 +898,9 @@ public final class ListTransferableOffersRequest extends com.google.protobuf.Gen
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.languageCode_ = languageCode_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.billingAccount_ = billingAccount_;
       }
     }
 
@@ -907,6 +977,11 @@ public final class ListTransferableOffersRequest extends com.google.protobuf.Gen
       if (!other.getLanguageCode().isEmpty()) {
         languageCode_ = other.languageCode_;
         bitField0_ |= 0x00000040;
+        onChanged();
+      }
+      if (!other.getBillingAccount().isEmpty()) {
+        billingAccount_ = other.billingAccount_;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       switch (other.getTransferredCustomerIdentityCase()) {
@@ -999,6 +1074,12 @@ public final class ListTransferableOffersRequest extends com.google.protobuf.Gen
                 bitField0_ |= 0x00000040;
                 break;
               } // case 58
+            case 66:
+              {
+                billingAccount_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 66
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1820,6 +1901,132 @@ public final class ListTransferableOffersRequest extends com.google.protobuf.Gen
       checkByteStringIsUtf8(value);
       languageCode_ = value;
       bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object billingAccount_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Billing Account to look up Offers for. Format:
+     * accounts/{account_id}/billingAccounts/{billing_account_id}.
+     *
+     * This field is only relevant for multi-currency accounts. It should be left
+     * empty for single currency accounts.
+     * </pre>
+     *
+     * <code>string billing_account = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The billingAccount.
+     */
+    public java.lang.String getBillingAccount() {
+      java.lang.Object ref = billingAccount_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        billingAccount_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Billing Account to look up Offers for. Format:
+     * accounts/{account_id}/billingAccounts/{billing_account_id}.
+     *
+     * This field is only relevant for multi-currency accounts. It should be left
+     * empty for single currency accounts.
+     * </pre>
+     *
+     * <code>string billing_account = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for billingAccount.
+     */
+    public com.google.protobuf.ByteString getBillingAccountBytes() {
+      java.lang.Object ref = billingAccount_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        billingAccount_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Billing Account to look up Offers for. Format:
+     * accounts/{account_id}/billingAccounts/{billing_account_id}.
+     *
+     * This field is only relevant for multi-currency accounts. It should be left
+     * empty for single currency accounts.
+     * </pre>
+     *
+     * <code>string billing_account = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The billingAccount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBillingAccount(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      billingAccount_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Billing Account to look up Offers for. Format:
+     * accounts/{account_id}/billingAccounts/{billing_account_id}.
+     *
+     * This field is only relevant for multi-currency accounts. It should be left
+     * empty for single currency accounts.
+     * </pre>
+     *
+     * <code>string billing_account = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearBillingAccount() {
+      billingAccount_ = getDefaultInstance().getBillingAccount();
+      bitField0_ = (bitField0_ & ~0x00000080);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Billing Account to look up Offers for. Format:
+     * accounts/{account_id}/billingAccounts/{billing_account_id}.
+     *
+     * This field is only relevant for multi-currency accounts. It should be left
+     * empty for single currency accounts.
+     * </pre>
+     *
+     * <code>string billing_account = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for billingAccount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBillingAccountBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      billingAccount_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }

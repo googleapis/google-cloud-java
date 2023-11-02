@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ public interface CatalogItemOrBuilder
    * <pre>
    * Required. Catalog item identifier. UTF-8 encoded string with a length limit
    * of 128 bytes.
+   *
    * This id must be unique among all catalog items within the same catalog. It
    * should also be used when logging user events in order for the user events
    * to be joined with the Catalog.
@@ -45,6 +46,7 @@ public interface CatalogItemOrBuilder
    * <pre>
    * Required. Catalog item identifier. UTF-8 encoded string with a length limit
    * of 128 bytes.
+   *
    * This id must be unique among all catalog items within the same catalog. It
    * should also be used when logging user events in order for the user events
    * to be joined with the Catalog.
@@ -62,10 +64,12 @@ public interface CatalogItemOrBuilder
    * <pre>
    * Required. Catalog item categories. This field is repeated for supporting
    * one catalog item belonging to several parallel category hierarchies.
+   *
    * For example, if a shoes product belongs to both
    * ["Shoes &amp; Accessories" -&gt; "Shoes"] and
    * ["Sports &amp; Fitness" -&gt; "Athletic Clothing" -&gt; "Shoes"], it could be
    * represented as:
+   *
    *      "categoryHierarchies": [
    *        { "categories": ["Shoes &amp; Accessories", "Shoes"]},
    *        { "categories": ["Sports &amp; Fitness", "Athletic Clothing", "Shoes"] }
@@ -84,10 +88,12 @@ public interface CatalogItemOrBuilder
    * <pre>
    * Required. Catalog item categories. This field is repeated for supporting
    * one catalog item belonging to several parallel category hierarchies.
+   *
    * For example, if a shoes product belongs to both
    * ["Shoes &amp; Accessories" -&gt; "Shoes"] and
    * ["Sports &amp; Fitness" -&gt; "Athletic Clothing" -&gt; "Shoes"], it could be
    * represented as:
+   *
    *      "categoryHierarchies": [
    *        { "categories": ["Shoes &amp; Accessories", "Shoes"]},
    *        { "categories": ["Sports &amp; Fitness", "Athletic Clothing", "Shoes"] }
@@ -106,10 +112,12 @@ public interface CatalogItemOrBuilder
    * <pre>
    * Required. Catalog item categories. This field is repeated for supporting
    * one catalog item belonging to several parallel category hierarchies.
+   *
    * For example, if a shoes product belongs to both
    * ["Shoes &amp; Accessories" -&gt; "Shoes"] and
    * ["Sports &amp; Fitness" -&gt; "Athletic Clothing" -&gt; "Shoes"], it could be
    * represented as:
+   *
    *      "categoryHierarchies": [
    *        { "categories": ["Shoes &amp; Accessories", "Shoes"]},
    *        { "categories": ["Sports &amp; Fitness", "Athletic Clothing", "Shoes"] }
@@ -127,10 +135,12 @@ public interface CatalogItemOrBuilder
    * <pre>
    * Required. Catalog item categories. This field is repeated for supporting
    * one catalog item belonging to several parallel category hierarchies.
+   *
    * For example, if a shoes product belongs to both
    * ["Shoes &amp; Accessories" -&gt; "Shoes"] and
    * ["Sports &amp; Fitness" -&gt; "Athletic Clothing" -&gt; "Shoes"], it could be
    * represented as:
+   *
    *      "categoryHierarchies": [
    *        { "categories": ["Shoes &amp; Accessories", "Shoes"]},
    *        { "categories": ["Sports &amp; Fitness", "Athletic Clothing", "Shoes"] }
@@ -151,10 +161,12 @@ public interface CatalogItemOrBuilder
    * <pre>
    * Required. Catalog item categories. This field is repeated for supporting
    * one catalog item belonging to several parallel category hierarchies.
+   *
    * For example, if a shoes product belongs to both
    * ["Shoes &amp; Accessories" -&gt; "Shoes"] and
    * ["Sports &amp; Fitness" -&gt; "Athletic Clothing" -&gt; "Shoes"], it could be
    * represented as:
+   *
    *      "categoryHierarchies": [
    *        { "categories": ["Shoes &amp; Accessories", "Shoes"]},
    *        { "categories": ["Sports &amp; Fitness", "Athletic Clothing", "Shoes"] }
@@ -314,6 +326,7 @@ public interface CatalogItemOrBuilder
    * <pre>
    * Optional. Filtering tags associated with the catalog item. Each tag should
    * be a UTF-8 encoded string with a length limit of 1 KiB.
+   *
    * This tag can be used for filtering recommendation results by passing the
    * tag as part of the predict request filter.
    * </pre>
@@ -329,6 +342,7 @@ public interface CatalogItemOrBuilder
    * <pre>
    * Optional. Filtering tags associated with the catalog item. Each tag should
    * be a UTF-8 encoded string with a length limit of 1 KiB.
+   *
    * This tag can be used for filtering recommendation results by passing the
    * tag as part of the predict request filter.
    * </pre>
@@ -344,6 +358,7 @@ public interface CatalogItemOrBuilder
    * <pre>
    * Optional. Filtering tags associated with the catalog item. Each tag should
    * be a UTF-8 encoded string with a length limit of 1 KiB.
+   *
    * This tag can be used for filtering recommendation results by passing the
    * tag as part of the predict request filter.
    * </pre>
@@ -360,6 +375,7 @@ public interface CatalogItemOrBuilder
    * <pre>
    * Optional. Filtering tags associated with the catalog item. Each tag should
    * be a UTF-8 encoded string with a length limit of 1 KiB.
+   *
    * This tag can be used for filtering recommendation results by passing the
    * tag as part of the predict request filter.
    * </pre>
@@ -377,6 +393,7 @@ public interface CatalogItemOrBuilder
    * <pre>
    * Optional. Variant group identifier for prediction results. UTF-8 encoded
    * string with a length limit of 128 bytes.
+   *
    * This field must be enabled before it can be used. [Learn
    * more](/recommendations-ai/docs/catalog#item-group-id).
    * </pre>
@@ -392,6 +409,7 @@ public interface CatalogItemOrBuilder
    * <pre>
    * Optional. Variant group identifier for prediction results. UTF-8 encoded
    * string with a length limit of 128 bytes.
+   *
    * This field must be enabled before it can be used. [Learn
    * more](/recommendations-ai/docs/catalog#item-group-id).
    * </pre>
@@ -444,6 +462,6 @@ public interface CatalogItemOrBuilder
   com.google.cloud.recommendationengine.v1beta1.ProductCatalogItemOrBuilder
       getProductMetadataOrBuilder();
 
-  public com.google.cloud.recommendationengine.v1beta1.CatalogItem.RecommendationTypeCase
+  com.google.cloud.recommendationengine.v1beta1.CatalogItem.RecommendationTypeCase
       getRecommendationTypeCase();
 }

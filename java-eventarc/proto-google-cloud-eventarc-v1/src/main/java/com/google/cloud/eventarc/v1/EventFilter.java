@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,11 +49,6 @@ public final class EventFilter extends com.google.protobuf.GeneratedMessageV3
     return new EventFilter();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.eventarc.v1.TriggerProto
         .internal_static_google_cloud_eventarc_v1_EventFilter_descriptor;
@@ -79,6 +74,7 @@ public final class EventFilter extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required. The name of a CloudEvents attribute. Currently, only a subset of attributes
    * are supported for filtering.
+   *
    * All triggers MUST provide a filter for the 'type' attribute.
    * </pre>
    *
@@ -104,6 +100,7 @@ public final class EventFilter extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required. The name of a CloudEvents attribute. Currently, only a subset of attributes
    * are supported for filtering.
+   *
    * All triggers MUST provide a filter for the 'type' attribute.
    * </pre>
    *
@@ -627,6 +624,7 @@ public final class EventFilter extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The name of a CloudEvents attribute. Currently, only a subset of attributes
      * are supported for filtering.
+     *
      * All triggers MUST provide a filter for the 'type' attribute.
      * </pre>
      *
@@ -651,6 +649,7 @@ public final class EventFilter extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The name of a CloudEvents attribute. Currently, only a subset of attributes
      * are supported for filtering.
+     *
      * All triggers MUST provide a filter for the 'type' attribute.
      * </pre>
      *
@@ -675,6 +674,7 @@ public final class EventFilter extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The name of a CloudEvents attribute. Currently, only a subset of attributes
      * are supported for filtering.
+     *
      * All triggers MUST provide a filter for the 'type' attribute.
      * </pre>
      *
@@ -698,6 +698,7 @@ public final class EventFilter extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The name of a CloudEvents attribute. Currently, only a subset of attributes
      * are supported for filtering.
+     *
      * All triggers MUST provide a filter for the 'type' attribute.
      * </pre>
      *
@@ -717,6 +718,7 @@ public final class EventFilter extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The name of a CloudEvents attribute. Currently, only a subset of attributes
      * are supported for filtering.
+     *
      * All triggers MUST provide a filter for the 'type' attribute.
      * </pre>
      *

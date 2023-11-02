@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,21 +44,21 @@ public final class CommentProto {
           + "\027google.cloud.support.v2\032\037google/api/fie"
           + "ld_behavior.proto\032\031google/api/resource.p"
           + "roto\032#google/cloud/support/v2/actor.prot"
-          + "o\032\037google/protobuf/timestamp.proto\"\322\002\n\007C"
-          + "omment\022\021\n\004name\030\001 \001(\tB\003\340A\003\0224\n\013create_time"
-          + "\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022"
-          + "4\n\007creator\030\003 \001(\0132\036.google.cloud.support."
-          + "v2.ActorB\003\340A\003\022\014\n\004body\030\004 \001(\t\022\034\n\017plain_tex"
-          + "t_body\030\005 \001(\tB\003\340A\003:\233\001\352A\227\001\n#cloudsupport.g"
-          + "oogleapis.com/Comment\022<organizations/{or"
-          + "ganization}/cases/{case}/comments/{comme"
-          + "nt}\0222projects/{project}/cases/{case}/com"
-          + "ments/{comment}B\265\001\n\033com.google.cloud.sup"
-          + "port.v2B\014CommentProtoP\001Z5cloud.google.co"
-          + "m/go/support/apiv2/supportpb;supportpb\252\002"
-          + "\027Google.Cloud.Support.V2\312\002\027Google\\Cloud\\"
-          + "Support\\V2\352\002\032Google::Cloud::Support::V2b"
-          + "\006proto3"
+          + "o\032\037google/protobuf/timestamp.proto\"\326\002\n\007C"
+          + "omment\022\022\n\004name\030\001 \001(\tB\004\342A\001\003\0225\n\013create_tim"
+          + "e\030\002 \001(\0132\032.google.protobuf.TimestampB\004\342A\001"
+          + "\003\0225\n\007creator\030\003 \001(\0132\036.google.cloud.suppor"
+          + "t.v2.ActorB\004\342A\001\003\022\014\n\004body\030\004 \001(\t\022\035\n\017plain_"
+          + "text_body\030\005 \001(\tB\004\342A\001\003:\233\001\352A\227\001\n#cloudsuppo"
+          + "rt.googleapis.com/Comment\022<organizations"
+          + "/{organization}/cases/{case}/comments/{c"
+          + "omment}\0222projects/{project}/cases/{case}"
+          + "/comments/{comment}B\265\001\n\033com.google.cloud"
+          + ".support.v2B\014CommentProtoP\001Z5cloud.googl"
+          + "e.com/go/support/apiv2/supportpb;support"
+          + "pb\252\002\027Google.Cloud.Support.V2\312\002\027Google\\Cl"
+          + "oud\\Support\\V2\352\002\032Google::Cloud::Support:"
+          + ":V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

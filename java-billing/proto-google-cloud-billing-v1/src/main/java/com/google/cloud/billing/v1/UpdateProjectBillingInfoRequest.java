@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,11 +46,6 @@ public final class UpdateProjectBillingInfoRequest extends com.google.protobuf.G
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new UpdateProjectBillingInfoRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -129,8 +124,9 @@ public final class UpdateProjectBillingInfoRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * The new billing information for the project. Read-only fields are ignored;
-   * thus, you can leave empty all fields except `billing_account_name`.
+   * The new billing information for the project. Output-only fields are
+   * ignored; thus, you can leave empty all fields except
+   * `billing_account_name`.
    * </pre>
    *
    * <code>.google.cloud.billing.v1.ProjectBillingInfo project_billing_info = 2;</code>
@@ -145,8 +141,9 @@ public final class UpdateProjectBillingInfoRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * The new billing information for the project. Read-only fields are ignored;
-   * thus, you can leave empty all fields except `billing_account_name`.
+   * The new billing information for the project. Output-only fields are
+   * ignored; thus, you can leave empty all fields except
+   * `billing_account_name`.
    * </pre>
    *
    * <code>.google.cloud.billing.v1.ProjectBillingInfo project_billing_info = 2;</code>
@@ -163,8 +160,9 @@ public final class UpdateProjectBillingInfoRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * The new billing information for the project. Read-only fields are ignored;
-   * thus, you can leave empty all fields except `billing_account_name`.
+   * The new billing information for the project. Output-only fields are
+   * ignored; thus, you can leave empty all fields except
+   * `billing_account_name`.
    * </pre>
    *
    * <code>.google.cloud.billing.v1.ProjectBillingInfo project_billing_info = 2;</code>
@@ -680,8 +678,9 @@ public final class UpdateProjectBillingInfoRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * The new billing information for the project. Read-only fields are ignored;
-     * thus, you can leave empty all fields except `billing_account_name`.
+     * The new billing information for the project. Output-only fields are
+     * ignored; thus, you can leave empty all fields except
+     * `billing_account_name`.
      * </pre>
      *
      * <code>.google.cloud.billing.v1.ProjectBillingInfo project_billing_info = 2;</code>
@@ -695,8 +694,9 @@ public final class UpdateProjectBillingInfoRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * The new billing information for the project. Read-only fields are ignored;
-     * thus, you can leave empty all fields except `billing_account_name`.
+     * The new billing information for the project. Output-only fields are
+     * ignored; thus, you can leave empty all fields except
+     * `billing_account_name`.
      * </pre>
      *
      * <code>.google.cloud.billing.v1.ProjectBillingInfo project_billing_info = 2;</code>
@@ -716,8 +716,9 @@ public final class UpdateProjectBillingInfoRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * The new billing information for the project. Read-only fields are ignored;
-     * thus, you can leave empty all fields except `billing_account_name`.
+     * The new billing information for the project. Output-only fields are
+     * ignored; thus, you can leave empty all fields except
+     * `billing_account_name`.
      * </pre>
      *
      * <code>.google.cloud.billing.v1.ProjectBillingInfo project_billing_info = 2;</code>
@@ -739,8 +740,9 @@ public final class UpdateProjectBillingInfoRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * The new billing information for the project. Read-only fields are ignored;
-     * thus, you can leave empty all fields except `billing_account_name`.
+     * The new billing information for the project. Output-only fields are
+     * ignored; thus, you can leave empty all fields except
+     * `billing_account_name`.
      * </pre>
      *
      * <code>.google.cloud.billing.v1.ProjectBillingInfo project_billing_info = 2;</code>
@@ -760,8 +762,9 @@ public final class UpdateProjectBillingInfoRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * The new billing information for the project. Read-only fields are ignored;
-     * thus, you can leave empty all fields except `billing_account_name`.
+     * The new billing information for the project. Output-only fields are
+     * ignored; thus, you can leave empty all fields except
+     * `billing_account_name`.
      * </pre>
      *
      * <code>.google.cloud.billing.v1.ProjectBillingInfo project_billing_info = 2;</code>
@@ -787,8 +790,9 @@ public final class UpdateProjectBillingInfoRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * The new billing information for the project. Read-only fields are ignored;
-     * thus, you can leave empty all fields except `billing_account_name`.
+     * The new billing information for the project. Output-only fields are
+     * ignored; thus, you can leave empty all fields except
+     * `billing_account_name`.
      * </pre>
      *
      * <code>.google.cloud.billing.v1.ProjectBillingInfo project_billing_info = 2;</code>
@@ -807,8 +811,9 @@ public final class UpdateProjectBillingInfoRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * The new billing information for the project. Read-only fields are ignored;
-     * thus, you can leave empty all fields except `billing_account_name`.
+     * The new billing information for the project. Output-only fields are
+     * ignored; thus, you can leave empty all fields except
+     * `billing_account_name`.
      * </pre>
      *
      * <code>.google.cloud.billing.v1.ProjectBillingInfo project_billing_info = 2;</code>
@@ -822,8 +827,9 @@ public final class UpdateProjectBillingInfoRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * The new billing information for the project. Read-only fields are ignored;
-     * thus, you can leave empty all fields except `billing_account_name`.
+     * The new billing information for the project. Output-only fields are
+     * ignored; thus, you can leave empty all fields except
+     * `billing_account_name`.
      * </pre>
      *
      * <code>.google.cloud.billing.v1.ProjectBillingInfo project_billing_info = 2;</code>
@@ -842,8 +848,9 @@ public final class UpdateProjectBillingInfoRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * The new billing information for the project. Read-only fields are ignored;
-     * thus, you can leave empty all fields except `billing_account_name`.
+     * The new billing information for the project. Output-only fields are
+     * ignored; thus, you can leave empty all fields except
+     * `billing_account_name`.
      * </pre>
      *
      * <code>.google.cloud.billing.v1.ProjectBillingInfo project_billing_info = 2;</code>

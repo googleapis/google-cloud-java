@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,13 +49,17 @@ import javax.annotation.Generated;
  *           .setPolylineQuality(PolylineQuality.forNumber(0))
  *           .setPolylineEncoding(PolylineEncoding.forNumber(0))
  *           .setDepartureTime(Timestamp.newBuilder().build())
+ *           .setArrivalTime(Timestamp.newBuilder().build())
  *           .setComputeAlternativeRoutes(true)
  *           .setRouteModifiers(RouteModifiers.newBuilder().build())
  *           .setLanguageCode("languageCode-2092349083")
  *           .setRegionCode("regionCode-1991004415")
  *           .setUnits(Units.forNumber(0))
+ *           .setOptimizeWaypointOrder(true)
  *           .addAllRequestedReferenceRoutes(new ArrayList<ComputeRoutesRequest.ReferenceRoute>())
  *           .addAllExtraComputations(new ArrayList<ComputeRoutesRequest.ExtraComputation>())
+ *           .setTrafficModel(TrafficModel.forNumber(0))
+ *           .setTransitPreferences(TransitPreferences.newBuilder().build())
  *           .build();
  *   ComputeRoutesResponse response = routesClient.computeRoutes(request);
  * }
@@ -231,13 +235,17 @@ public class RoutesClient implements BackgroundResource {
    *           .setPolylineQuality(PolylineQuality.forNumber(0))
    *           .setPolylineEncoding(PolylineEncoding.forNumber(0))
    *           .setDepartureTime(Timestamp.newBuilder().build())
+   *           .setArrivalTime(Timestamp.newBuilder().build())
    *           .setComputeAlternativeRoutes(true)
    *           .setRouteModifiers(RouteModifiers.newBuilder().build())
    *           .setLanguageCode("languageCode-2092349083")
    *           .setRegionCode("regionCode-1991004415")
    *           .setUnits(Units.forNumber(0))
+   *           .setOptimizeWaypointOrder(true)
    *           .addAllRequestedReferenceRoutes(new ArrayList<ComputeRoutesRequest.ReferenceRoute>())
    *           .addAllExtraComputations(new ArrayList<ComputeRoutesRequest.ExtraComputation>())
+   *           .setTrafficModel(TrafficModel.forNumber(0))
+   *           .setTransitPreferences(TransitPreferences.newBuilder().build())
    *           .build();
    *   ComputeRoutesResponse response = routesClient.computeRoutes(request);
    * }
@@ -304,13 +312,17 @@ public class RoutesClient implements BackgroundResource {
    *           .setPolylineQuality(PolylineQuality.forNumber(0))
    *           .setPolylineEncoding(PolylineEncoding.forNumber(0))
    *           .setDepartureTime(Timestamp.newBuilder().build())
+   *           .setArrivalTime(Timestamp.newBuilder().build())
    *           .setComputeAlternativeRoutes(true)
    *           .setRouteModifiers(RouteModifiers.newBuilder().build())
    *           .setLanguageCode("languageCode-2092349083")
    *           .setRegionCode("regionCode-1991004415")
    *           .setUnits(Units.forNumber(0))
+   *           .setOptimizeWaypointOrder(true)
    *           .addAllRequestedReferenceRoutes(new ArrayList<ComputeRoutesRequest.ReferenceRoute>())
    *           .addAllExtraComputations(new ArrayList<ComputeRoutesRequest.ExtraComputation>())
+   *           .setTrafficModel(TrafficModel.forNumber(0))
+   *           .setTransitPreferences(TransitPreferences.newBuilder().build())
    *           .build();
    *   ApiFuture<ComputeRoutesResponse> future =
    *       routesClient.computeRoutesCallable().futureCall(request);
@@ -377,9 +389,12 @@ public class RoutesClient implements BackgroundResource {
    *           .setTravelMode(RouteTravelMode.forNumber(0))
    *           .setRoutingPreference(RoutingPreference.forNumber(0))
    *           .setDepartureTime(Timestamp.newBuilder().build())
+   *           .setArrivalTime(Timestamp.newBuilder().build())
    *           .setLanguageCode("languageCode-2092349083")
    *           .setRegionCode("regionCode-1991004415")
    *           .addAllExtraComputations(new ArrayList<ComputeRouteMatrixRequest.ExtraComputation>())
+   *           .setTrafficModel(TrafficModel.forNumber(0))
+   *           .setTransitPreferences(TransitPreferences.newBuilder().build())
    *           .build();
    *   ServerStream<RouteMatrixElement> stream =
    *       routesClient.computeRouteMatrixCallable().call(request);

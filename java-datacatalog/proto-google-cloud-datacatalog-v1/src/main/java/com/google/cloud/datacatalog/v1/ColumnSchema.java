@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -53,11 +53,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ColumnSchema();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -335,11 +330,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new LookerColumnSpec();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1152,6 +1142,8 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int systemSpecCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object systemSpec_;
 
   public enum SystemSpecCase
@@ -1204,6 +1196,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. Name of the column.
+   *
    * Must be a UTF-8 string without dots (.).
    * The maximum size is 64 bytes.
    * </pre>
@@ -1229,6 +1222,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. Name of the column.
+   *
    * Must be a UTF-8 string without dots (.).
    * The maximum size is 64 bytes.
    * </pre>
@@ -1259,6 +1253,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. Type of the column.
+   *
    * Must be a UTF-8 string with the maximum size of 128 bytes.
    * </pre>
    *
@@ -1283,6 +1278,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. Type of the column.
+   *
    * Must be a UTF-8 string with the maximum size of 128 bytes.
    * </pre>
    *
@@ -1312,6 +1308,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Description of the column. Default value is an empty string.
+   *
    * The description must be a UTF-8 string with the maximum size of 2000
    * bytes.
    * </pre>
@@ -1337,6 +1334,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Description of the column. Default value is an empty string.
+   *
    * The description must be a UTF-8 string with the maximum size of 2000
    * bytes.
    * </pre>
@@ -1368,6 +1366,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. A column's mode indicates whether values in this column are
    * required, nullable, or repeated.
+   *
    * Only `NULLABLE`, `REQUIRED`, and `REPEATED` values are supported.
    * Default mode is `NULLABLE`.
    * </pre>
@@ -1394,6 +1393,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. A column's mode indicates whether values in this column are
    * required, nullable, or repeated.
+   *
    * Only `NULLABLE`, `REQUIRED`, and `REPEATED` values are supported.
    * Default mode is `NULLABLE`.
    * </pre>
@@ -2377,6 +2377,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. Name of the column.
+     *
      * Must be a UTF-8 string without dots (.).
      * The maximum size is 64 bytes.
      * </pre>
@@ -2401,6 +2402,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. Name of the column.
+     *
      * Must be a UTF-8 string without dots (.).
      * The maximum size is 64 bytes.
      * </pre>
@@ -2425,6 +2427,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. Name of the column.
+     *
      * Must be a UTF-8 string without dots (.).
      * The maximum size is 64 bytes.
      * </pre>
@@ -2448,6 +2451,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. Name of the column.
+     *
      * Must be a UTF-8 string without dots (.).
      * The maximum size is 64 bytes.
      * </pre>
@@ -2467,6 +2471,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. Name of the column.
+     *
      * Must be a UTF-8 string without dots (.).
      * The maximum size is 64 bytes.
      * </pre>
@@ -2493,6 +2498,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. Type of the column.
+     *
      * Must be a UTF-8 string with the maximum size of 128 bytes.
      * </pre>
      *
@@ -2516,6 +2522,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. Type of the column.
+     *
      * Must be a UTF-8 string with the maximum size of 128 bytes.
      * </pre>
      *
@@ -2539,6 +2546,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. Type of the column.
+     *
      * Must be a UTF-8 string with the maximum size of 128 bytes.
      * </pre>
      *
@@ -2561,6 +2569,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. Type of the column.
+     *
      * Must be a UTF-8 string with the maximum size of 128 bytes.
      * </pre>
      *
@@ -2579,6 +2588,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. Type of the column.
+     *
      * Must be a UTF-8 string with the maximum size of 128 bytes.
      * </pre>
      *
@@ -2604,6 +2614,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Description of the column. Default value is an empty string.
+     *
      * The description must be a UTF-8 string with the maximum size of 2000
      * bytes.
      * </pre>
@@ -2628,6 +2639,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Description of the column. Default value is an empty string.
+     *
      * The description must be a UTF-8 string with the maximum size of 2000
      * bytes.
      * </pre>
@@ -2652,6 +2664,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Description of the column. Default value is an empty string.
+     *
      * The description must be a UTF-8 string with the maximum size of 2000
      * bytes.
      * </pre>
@@ -2675,6 +2688,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Description of the column. Default value is an empty string.
+     *
      * The description must be a UTF-8 string with the maximum size of 2000
      * bytes.
      * </pre>
@@ -2694,6 +2708,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Description of the column. Default value is an empty string.
+     *
      * The description must be a UTF-8 string with the maximum size of 2000
      * bytes.
      * </pre>
@@ -2721,6 +2736,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. A column's mode indicates whether values in this column are
      * required, nullable, or repeated.
+     *
      * Only `NULLABLE`, `REQUIRED`, and `REPEATED` values are supported.
      * Default mode is `NULLABLE`.
      * </pre>
@@ -2746,6 +2762,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. A column's mode indicates whether values in this column are
      * required, nullable, or repeated.
+     *
      * Only `NULLABLE`, `REQUIRED`, and `REPEATED` values are supported.
      * Default mode is `NULLABLE`.
      * </pre>
@@ -2771,6 +2788,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. A column's mode indicates whether values in this column are
      * required, nullable, or repeated.
+     *
      * Only `NULLABLE`, `REQUIRED`, and `REPEATED` values are supported.
      * Default mode is `NULLABLE`.
      * </pre>
@@ -2795,6 +2813,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. A column's mode indicates whether values in this column are
      * required, nullable, or repeated.
+     *
      * Only `NULLABLE`, `REQUIRED`, and `REPEATED` values are supported.
      * Default mode is `NULLABLE`.
      * </pre>
@@ -2815,6 +2834,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. A column's mode indicates whether values in this column are
      * required, nullable, or repeated.
+     *
      * Only `NULLABLE`, `REQUIRED`, and `REPEATED` values are supported.
      * Default mode is `NULLABLE`.
      * </pre>

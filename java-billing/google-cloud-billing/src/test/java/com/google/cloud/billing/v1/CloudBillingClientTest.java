@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -450,6 +450,48 @@ public class CloudBillingClientTest {
             .build();
     mockCloudBilling.addResponse(expectedResponse);
 
+    ProjectName name = ProjectName.of("[PROJECT]");
+
+    ProjectBillingInfo actualResponse = client.getProjectBillingInfo(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCloudBilling.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetProjectBillingInfoRequest actualRequest =
+        ((GetProjectBillingInfoRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getProjectBillingInfoExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudBilling.addException(exception);
+
+    try {
+      ProjectName name = ProjectName.of("[PROJECT]");
+      client.getProjectBillingInfo(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getProjectBillingInfoTest2() throws Exception {
+    ProjectBillingInfo expectedResponse =
+        ProjectBillingInfo.newBuilder()
+            .setName("name3373707")
+            .setProjectId("projectId-894832108")
+            .setBillingAccountName("billingAccountName929322205")
+            .setBillingEnabled(true)
+            .build();
+    mockCloudBilling.addResponse(expectedResponse);
+
     String name = "name3373707";
 
     ProjectBillingInfo actualResponse = client.getProjectBillingInfo(name);
@@ -468,7 +510,7 @@ public class CloudBillingClientTest {
   }
 
   @Test
-  public void getProjectBillingInfoExceptionTest() throws Exception {
+  public void getProjectBillingInfoExceptionTest2() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockCloudBilling.addException(exception);
 

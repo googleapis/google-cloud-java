@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,7 +43,7 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
     requestHeadersToExclude_ = java.util.Collections.emptyList();
     requestQueryParamsToExclude_ = java.util.Collections.emptyList();
     requestUrisToExclude_ = java.util.Collections.emptyList();
-    targetRuleIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    targetRuleIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
     targetRuleSet_ = "";
   }
 
@@ -51,11 +51,6 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new SecurityPolicyRulePreconfiguredWafConfigExclusion();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -442,7 +437,8 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
   public static final int TARGET_RULE_IDS_FIELD_NUMBER = 498430435;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList targetRuleIds_;
+  private com.google.protobuf.LazyStringArrayList targetRuleIds_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -880,8 +876,7 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
         requestUrisToExcludeBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000008);
-      targetRuleIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000010);
+      targetRuleIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
       targetRuleSet_ = "";
       return this;
     }
@@ -963,16 +958,15 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
       } else {
         result.requestUrisToExclude_ = requestUrisToExcludeBuilder_.build();
       }
-      if (((bitField0_ & 0x00000010) != 0)) {
-        targetRuleIds_ = targetRuleIds_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000010);
-      }
-      result.targetRuleIds_ = targetRuleIds_;
     }
 
     private void buildPartial0(
         com.google.cloud.compute.v1.SecurityPolicyRulePreconfiguredWafConfigExclusion result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        targetRuleIds_.makeImmutable();
+        result.targetRuleIds_ = targetRuleIds_;
+      }
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.targetRuleSet_ = targetRuleSet_;
@@ -1143,7 +1137,7 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
       if (!other.targetRuleIds_.isEmpty()) {
         if (targetRuleIds_.isEmpty()) {
           targetRuleIds_ = other.targetRuleIds_;
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ |= 0x00000010;
         } else {
           ensureTargetRuleIdsIsMutable();
           targetRuleIds_.addAll(other.targetRuleIds_);
@@ -3078,14 +3072,14 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
       return requestUrisToExcludeBuilder_;
     }
 
-    private com.google.protobuf.LazyStringList targetRuleIds_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList targetRuleIds_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureTargetRuleIdsIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!targetRuleIds_.isModifiable()) {
         targetRuleIds_ = new com.google.protobuf.LazyStringArrayList(targetRuleIds_);
-        bitField0_ |= 0x00000010;
       }
+      bitField0_ |= 0x00000010;
     }
     /**
      *
@@ -3099,7 +3093,8 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
      * @return A list containing the targetRuleIds.
      */
     public com.google.protobuf.ProtocolStringList getTargetRuleIdsList() {
-      return targetRuleIds_.getUnmodifiableView();
+      targetRuleIds_.makeImmutable();
+      return targetRuleIds_;
     }
     /**
      *
@@ -3164,6 +3159,7 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
       }
       ensureTargetRuleIdsIsMutable();
       targetRuleIds_.set(index, value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -3185,6 +3181,7 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
       }
       ensureTargetRuleIdsIsMutable();
       targetRuleIds_.add(value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -3203,6 +3200,7 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
     public Builder addAllTargetRuleIds(java.lang.Iterable<java.lang.String> values) {
       ensureTargetRuleIdsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, targetRuleIds_);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -3218,8 +3216,9 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
      * @return This builder for chaining.
      */
     public Builder clearTargetRuleIds() {
-      targetRuleIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      targetRuleIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000010);
+      ;
       onChanged();
       return this;
     }
@@ -3242,6 +3241,7 @@ public final class SecurityPolicyRulePreconfiguredWafConfigExclusion
       checkByteStringIsUtf8(value);
       ensureTargetRuleIdsIsMutable();
       targetRuleIds_.add(value);
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

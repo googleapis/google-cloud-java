@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -53,6 +53,8 @@ import com.google.cloud.kms.v1.ListEkmConnectionsRequest;
 import com.google.cloud.kms.v1.ListEkmConnectionsResponse;
 import com.google.cloud.kms.v1.UpdateEkmConfigRequest;
 import com.google.cloud.kms.v1.UpdateEkmConnectionRequest;
+import com.google.cloud.kms.v1.VerifyConnectivityRequest;
+import com.google.cloud.kms.v1.VerifyConnectivityResponse;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -126,6 +128,8 @@ public class EkmServiceStubSettings extends StubSettings<EkmServiceStubSettings>
       updateEkmConnectionSettings;
   private final UnaryCallSettings<GetEkmConfigRequest, EkmConfig> getEkmConfigSettings;
   private final UnaryCallSettings<UpdateEkmConfigRequest, EkmConfig> updateEkmConfigSettings;
+  private final UnaryCallSettings<VerifyConnectivityRequest, VerifyConnectivityResponse>
+      verifyConnectivitySettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -283,6 +287,12 @@ public class EkmServiceStubSettings extends StubSettings<EkmServiceStubSettings>
     return updateEkmConfigSettings;
   }
 
+  /** Returns the object with the settings used for calls to verifyConnectivity. */
+  public UnaryCallSettings<VerifyConnectivityRequest, VerifyConnectivityResponse>
+      verifyConnectivitySettings() {
+    return verifyConnectivitySettings;
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -422,6 +432,7 @@ public class EkmServiceStubSettings extends StubSettings<EkmServiceStubSettings>
     updateEkmConnectionSettings = settingsBuilder.updateEkmConnectionSettings().build();
     getEkmConfigSettings = settingsBuilder.getEkmConfigSettings().build();
     updateEkmConfigSettings = settingsBuilder.updateEkmConfigSettings().build();
+    verifyConnectivitySettings = settingsBuilder.verifyConnectivitySettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
@@ -444,6 +455,8 @@ public class EkmServiceStubSettings extends StubSettings<EkmServiceStubSettings>
     private final UnaryCallSettings.Builder<GetEkmConfigRequest, EkmConfig> getEkmConfigSettings;
     private final UnaryCallSettings.Builder<UpdateEkmConfigRequest, EkmConfig>
         updateEkmConfigSettings;
+    private final UnaryCallSettings.Builder<VerifyConnectivityRequest, VerifyConnectivityResponse>
+        verifyConnectivitySettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -501,6 +514,7 @@ public class EkmServiceStubSettings extends StubSettings<EkmServiceStubSettings>
       updateEkmConnectionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getEkmConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateEkmConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      verifyConnectivitySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -515,6 +529,7 @@ public class EkmServiceStubSettings extends StubSettings<EkmServiceStubSettings>
               updateEkmConnectionSettings,
               getEkmConfigSettings,
               updateEkmConfigSettings,
+              verifyConnectivitySettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -532,6 +547,7 @@ public class EkmServiceStubSettings extends StubSettings<EkmServiceStubSettings>
       updateEkmConnectionSettings = settings.updateEkmConnectionSettings.toBuilder();
       getEkmConfigSettings = settings.getEkmConfigSettings.toBuilder();
       updateEkmConfigSettings = settings.updateEkmConfigSettings.toBuilder();
+      verifyConnectivitySettings = settings.verifyConnectivitySettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
@@ -546,6 +562,7 @@ public class EkmServiceStubSettings extends StubSettings<EkmServiceStubSettings>
               updateEkmConnectionSettings,
               getEkmConfigSettings,
               updateEkmConfigSettings,
+              verifyConnectivitySettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -607,6 +624,11 @@ public class EkmServiceStubSettings extends StubSettings<EkmServiceStubSettings>
 
       builder
           .updateEkmConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .verifyConnectivitySettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -686,6 +708,12 @@ public class EkmServiceStubSettings extends StubSettings<EkmServiceStubSettings>
     /** Returns the builder for the settings used for calls to updateEkmConfig. */
     public UnaryCallSettings.Builder<UpdateEkmConfigRequest, EkmConfig> updateEkmConfigSettings() {
       return updateEkmConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to verifyConnectivity. */
+    public UnaryCallSettings.Builder<VerifyConnectivityRequest, VerifyConnectivityResponse>
+        verifyConnectivitySettings() {
+      return verifyConnectivitySettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

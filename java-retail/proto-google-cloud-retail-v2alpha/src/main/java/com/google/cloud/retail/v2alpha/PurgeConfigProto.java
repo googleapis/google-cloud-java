@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -68,23 +68,23 @@ public final class PurgeConfigProto {
           + "ductsMetadata\022/\n\013create_time\030\001 \001(\0132\032.goo"
           + "gle.protobuf.Timestamp\022/\n\013update_time\030\002 "
           + "\001(\0132\032.google.protobuf.Timestamp\022\025\n\rsucce"
-          + "ss_count\030\003 \001(\003\022\025\n\rfailure_count\030\004 \001(\003\"p\n"
-          + "\024PurgeProductsRequest\0224\n\006parent\030\001 \001(\tB$\340"
-          + "A\002\372A\036\n\034retail.googleapis.com/Branch\022\023\n\006f"
-          + "ilter\030\002 \001(\tB\003\340A\002\022\r\n\005force\030\003 \001(\010\"f\n\025Purge"
-          + "ProductsResponse\022\023\n\013purge_count\030\001 \001(\003\0228\n"
-          + "\014purge_sample\030\002 \003(\tB\"\372A\037\n\035retail.googlea"
-          + "pis.com/Product\"s\n\026PurgeUserEventsReques"
-          + "t\0225\n\006parent\030\001 \001(\tB%\340A\002\372A\037\n\035retail.google"
-          + "apis.com/Catalog\022\023\n\006filter\030\002 \001(\tB\003\340A\002\022\r\n"
-          + "\005force\030\003 \001(\010\"6\n\027PurgeUserEventsResponse\022"
-          + "\033\n\023purged_events_count\030\001 \001(\003B\324\001\n\037com.goo"
-          + "gle.cloud.retail.v2alphaB\020PurgeConfigPro"
-          + "toP\001Z7cloud.google.com/go/retail/apiv2al"
-          + "pha/retailpb;retailpb\242\002\006RETAIL\252\002\033Google."
-          + "Cloud.Retail.V2Alpha\312\002\033Google\\Cloud\\Reta"
-          + "il\\V2alpha\352\002\036Google::Cloud::Retail::V2al"
-          + "phab\006proto3"
+          + "ss_count\030\003 \001(\003\022\025\n\rfailure_count\030\004 \001(\003\"r\n"
+          + "\024PurgeProductsRequest\0225\n\006parent\030\001 \001(\tB%\342"
+          + "A\001\002\372A\036\n\034retail.googleapis.com/Branch\022\024\n\006"
+          + "filter\030\002 \001(\tB\004\342A\001\002\022\r\n\005force\030\003 \001(\010\"f\n\025Pur"
+          + "geProductsResponse\022\023\n\013purge_count\030\001 \001(\003\022"
+          + "8\n\014purge_sample\030\002 \003(\tB\"\372A\037\n\035retail.googl"
+          + "eapis.com/Product\"u\n\026PurgeUserEventsRequ"
+          + "est\0226\n\006parent\030\001 \001(\tB&\342A\001\002\372A\037\n\035retail.goo"
+          + "gleapis.com/Catalog\022\024\n\006filter\030\002 \001(\tB\004\342A\001"
+          + "\002\022\r\n\005force\030\003 \001(\010\"6\n\027PurgeUserEventsRespo"
+          + "nse\022\033\n\023purged_events_count\030\001 \001(\003B\324\001\n\037com"
+          + ".google.cloud.retail.v2alphaB\020PurgeConfi"
+          + "gProtoP\001Z7cloud.google.com/go/retail/api"
+          + "v2alpha/retailpb;retailpb\242\002\006RETAIL\252\002\033Goo"
+          + "gle.Cloud.Retail.V2Alpha\312\002\033Google\\Cloud\\"
+          + "Retail\\V2alpha\352\002\036Google::Cloud::Retail::"
+          + "V2alphab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

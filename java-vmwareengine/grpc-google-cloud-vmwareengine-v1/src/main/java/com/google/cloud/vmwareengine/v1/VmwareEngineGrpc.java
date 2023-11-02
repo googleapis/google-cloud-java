@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,7 +32,7 @@ public final class VmwareEngineGrpc {
 
   private VmwareEngineGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.vmwareengine.v1.VmwareEngine";
+  public static final java.lang.String SERVICE_NAME = "google.cloud.vmwareengine.v1.VmwareEngine";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -578,6 +578,93 @@ public final class VmwareEngineGrpc {
       }
     }
     return getListSubnetsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.vmwareengine.v1.GetSubnetRequest,
+          com.google.cloud.vmwareengine.v1.Subnet>
+      getGetSubnetMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetSubnet",
+      requestType = com.google.cloud.vmwareengine.v1.GetSubnetRequest.class,
+      responseType = com.google.cloud.vmwareengine.v1.Subnet.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.vmwareengine.v1.GetSubnetRequest,
+          com.google.cloud.vmwareengine.v1.Subnet>
+      getGetSubnetMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.vmwareengine.v1.GetSubnetRequest,
+            com.google.cloud.vmwareengine.v1.Subnet>
+        getGetSubnetMethod;
+    if ((getGetSubnetMethod = VmwareEngineGrpc.getGetSubnetMethod) == null) {
+      synchronized (VmwareEngineGrpc.class) {
+        if ((getGetSubnetMethod = VmwareEngineGrpc.getGetSubnetMethod) == null) {
+          VmwareEngineGrpc.getGetSubnetMethod =
+              getGetSubnetMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.vmwareengine.v1.GetSubnetRequest,
+                          com.google.cloud.vmwareengine.v1.Subnet>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetSubnet"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vmwareengine.v1.GetSubnetRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vmwareengine.v1.Subnet.getDefaultInstance()))
+                      .setSchemaDescriptor(new VmwareEngineMethodDescriptorSupplier("GetSubnet"))
+                      .build();
+        }
+      }
+    }
+    return getGetSubnetMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.vmwareengine.v1.UpdateSubnetRequest, com.google.longrunning.Operation>
+      getUpdateSubnetMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateSubnet",
+      requestType = com.google.cloud.vmwareengine.v1.UpdateSubnetRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.vmwareengine.v1.UpdateSubnetRequest, com.google.longrunning.Operation>
+      getUpdateSubnetMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.vmwareengine.v1.UpdateSubnetRequest, com.google.longrunning.Operation>
+        getUpdateSubnetMethod;
+    if ((getUpdateSubnetMethod = VmwareEngineGrpc.getUpdateSubnetMethod) == null) {
+      synchronized (VmwareEngineGrpc.class) {
+        if ((getUpdateSubnetMethod = VmwareEngineGrpc.getUpdateSubnetMethod) == null) {
+          VmwareEngineGrpc.getUpdateSubnetMethod =
+              getUpdateSubnetMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.vmwareengine.v1.UpdateSubnetRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateSubnet"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vmwareengine.v1.UpdateSubnetRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new VmwareEngineMethodDescriptorSupplier("UpdateSubnet"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateSubnetMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -1501,6 +1588,309 @@ public final class VmwareEngineGrpc {
     return getListVmwareEngineNetworksMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.vmwareengine.v1.CreatePrivateConnectionRequest,
+          com.google.longrunning.Operation>
+      getCreatePrivateConnectionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreatePrivateConnection",
+      requestType = com.google.cloud.vmwareengine.v1.CreatePrivateConnectionRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.vmwareengine.v1.CreatePrivateConnectionRequest,
+          com.google.longrunning.Operation>
+      getCreatePrivateConnectionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.vmwareengine.v1.CreatePrivateConnectionRequest,
+            com.google.longrunning.Operation>
+        getCreatePrivateConnectionMethod;
+    if ((getCreatePrivateConnectionMethod = VmwareEngineGrpc.getCreatePrivateConnectionMethod)
+        == null) {
+      synchronized (VmwareEngineGrpc.class) {
+        if ((getCreatePrivateConnectionMethod = VmwareEngineGrpc.getCreatePrivateConnectionMethod)
+            == null) {
+          VmwareEngineGrpc.getCreatePrivateConnectionMethod =
+              getCreatePrivateConnectionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.vmwareengine.v1.CreatePrivateConnectionRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "CreatePrivateConnection"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vmwareengine.v1.CreatePrivateConnectionRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new VmwareEngineMethodDescriptorSupplier("CreatePrivateConnection"))
+                      .build();
+        }
+      }
+    }
+    return getCreatePrivateConnectionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.vmwareengine.v1.GetPrivateConnectionRequest,
+          com.google.cloud.vmwareengine.v1.PrivateConnection>
+      getGetPrivateConnectionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetPrivateConnection",
+      requestType = com.google.cloud.vmwareengine.v1.GetPrivateConnectionRequest.class,
+      responseType = com.google.cloud.vmwareengine.v1.PrivateConnection.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.vmwareengine.v1.GetPrivateConnectionRequest,
+          com.google.cloud.vmwareengine.v1.PrivateConnection>
+      getGetPrivateConnectionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.vmwareengine.v1.GetPrivateConnectionRequest,
+            com.google.cloud.vmwareengine.v1.PrivateConnection>
+        getGetPrivateConnectionMethod;
+    if ((getGetPrivateConnectionMethod = VmwareEngineGrpc.getGetPrivateConnectionMethod) == null) {
+      synchronized (VmwareEngineGrpc.class) {
+        if ((getGetPrivateConnectionMethod = VmwareEngineGrpc.getGetPrivateConnectionMethod)
+            == null) {
+          VmwareEngineGrpc.getGetPrivateConnectionMethod =
+              getGetPrivateConnectionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.vmwareengine.v1.GetPrivateConnectionRequest,
+                          com.google.cloud.vmwareengine.v1.PrivateConnection>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetPrivateConnection"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vmwareengine.v1.GetPrivateConnectionRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vmwareengine.v1.PrivateConnection
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new VmwareEngineMethodDescriptorSupplier("GetPrivateConnection"))
+                      .build();
+        }
+      }
+    }
+    return getGetPrivateConnectionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.vmwareengine.v1.ListPrivateConnectionsRequest,
+          com.google.cloud.vmwareengine.v1.ListPrivateConnectionsResponse>
+      getListPrivateConnectionsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListPrivateConnections",
+      requestType = com.google.cloud.vmwareengine.v1.ListPrivateConnectionsRequest.class,
+      responseType = com.google.cloud.vmwareengine.v1.ListPrivateConnectionsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.vmwareengine.v1.ListPrivateConnectionsRequest,
+          com.google.cloud.vmwareengine.v1.ListPrivateConnectionsResponse>
+      getListPrivateConnectionsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.vmwareengine.v1.ListPrivateConnectionsRequest,
+            com.google.cloud.vmwareengine.v1.ListPrivateConnectionsResponse>
+        getListPrivateConnectionsMethod;
+    if ((getListPrivateConnectionsMethod = VmwareEngineGrpc.getListPrivateConnectionsMethod)
+        == null) {
+      synchronized (VmwareEngineGrpc.class) {
+        if ((getListPrivateConnectionsMethod = VmwareEngineGrpc.getListPrivateConnectionsMethod)
+            == null) {
+          VmwareEngineGrpc.getListPrivateConnectionsMethod =
+              getListPrivateConnectionsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.vmwareengine.v1.ListPrivateConnectionsRequest,
+                          com.google.cloud.vmwareengine.v1.ListPrivateConnectionsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListPrivateConnections"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vmwareengine.v1.ListPrivateConnectionsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vmwareengine.v1.ListPrivateConnectionsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new VmwareEngineMethodDescriptorSupplier("ListPrivateConnections"))
+                      .build();
+        }
+      }
+    }
+    return getListPrivateConnectionsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.vmwareengine.v1.UpdatePrivateConnectionRequest,
+          com.google.longrunning.Operation>
+      getUpdatePrivateConnectionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdatePrivateConnection",
+      requestType = com.google.cloud.vmwareengine.v1.UpdatePrivateConnectionRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.vmwareengine.v1.UpdatePrivateConnectionRequest,
+          com.google.longrunning.Operation>
+      getUpdatePrivateConnectionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.vmwareengine.v1.UpdatePrivateConnectionRequest,
+            com.google.longrunning.Operation>
+        getUpdatePrivateConnectionMethod;
+    if ((getUpdatePrivateConnectionMethod = VmwareEngineGrpc.getUpdatePrivateConnectionMethod)
+        == null) {
+      synchronized (VmwareEngineGrpc.class) {
+        if ((getUpdatePrivateConnectionMethod = VmwareEngineGrpc.getUpdatePrivateConnectionMethod)
+            == null) {
+          VmwareEngineGrpc.getUpdatePrivateConnectionMethod =
+              getUpdatePrivateConnectionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.vmwareengine.v1.UpdatePrivateConnectionRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdatePrivateConnection"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vmwareengine.v1.UpdatePrivateConnectionRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new VmwareEngineMethodDescriptorSupplier("UpdatePrivateConnection"))
+                      .build();
+        }
+      }
+    }
+    return getUpdatePrivateConnectionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.vmwareengine.v1.DeletePrivateConnectionRequest,
+          com.google.longrunning.Operation>
+      getDeletePrivateConnectionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeletePrivateConnection",
+      requestType = com.google.cloud.vmwareengine.v1.DeletePrivateConnectionRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.vmwareengine.v1.DeletePrivateConnectionRequest,
+          com.google.longrunning.Operation>
+      getDeletePrivateConnectionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.vmwareengine.v1.DeletePrivateConnectionRequest,
+            com.google.longrunning.Operation>
+        getDeletePrivateConnectionMethod;
+    if ((getDeletePrivateConnectionMethod = VmwareEngineGrpc.getDeletePrivateConnectionMethod)
+        == null) {
+      synchronized (VmwareEngineGrpc.class) {
+        if ((getDeletePrivateConnectionMethod = VmwareEngineGrpc.getDeletePrivateConnectionMethod)
+            == null) {
+          VmwareEngineGrpc.getDeletePrivateConnectionMethod =
+              getDeletePrivateConnectionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.vmwareengine.v1.DeletePrivateConnectionRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "DeletePrivateConnection"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vmwareengine.v1.DeletePrivateConnectionRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new VmwareEngineMethodDescriptorSupplier("DeletePrivateConnection"))
+                      .build();
+        }
+      }
+    }
+    return getDeletePrivateConnectionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.vmwareengine.v1.ListPrivateConnectionPeeringRoutesRequest,
+          com.google.cloud.vmwareengine.v1.ListPrivateConnectionPeeringRoutesResponse>
+      getListPrivateConnectionPeeringRoutesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListPrivateConnectionPeeringRoutes",
+      requestType =
+          com.google.cloud.vmwareengine.v1.ListPrivateConnectionPeeringRoutesRequest.class,
+      responseType =
+          com.google.cloud.vmwareengine.v1.ListPrivateConnectionPeeringRoutesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.vmwareengine.v1.ListPrivateConnectionPeeringRoutesRequest,
+          com.google.cloud.vmwareengine.v1.ListPrivateConnectionPeeringRoutesResponse>
+      getListPrivateConnectionPeeringRoutesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.vmwareengine.v1.ListPrivateConnectionPeeringRoutesRequest,
+            com.google.cloud.vmwareengine.v1.ListPrivateConnectionPeeringRoutesResponse>
+        getListPrivateConnectionPeeringRoutesMethod;
+    if ((getListPrivateConnectionPeeringRoutesMethod =
+            VmwareEngineGrpc.getListPrivateConnectionPeeringRoutesMethod)
+        == null) {
+      synchronized (VmwareEngineGrpc.class) {
+        if ((getListPrivateConnectionPeeringRoutesMethod =
+                VmwareEngineGrpc.getListPrivateConnectionPeeringRoutesMethod)
+            == null) {
+          VmwareEngineGrpc.getListPrivateConnectionPeeringRoutesMethod =
+              getListPrivateConnectionPeeringRoutesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.vmwareengine.v1.ListPrivateConnectionPeeringRoutesRequest,
+                          com.google.cloud.vmwareengine.v1
+                              .ListPrivateConnectionPeeringRoutesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              SERVICE_NAME, "ListPrivateConnectionPeeringRoutes"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vmwareengine.v1
+                                  .ListPrivateConnectionPeeringRoutesRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vmwareengine.v1
+                                  .ListPrivateConnectionPeeringRoutesResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new VmwareEngineMethodDescriptorSupplier(
+                              "ListPrivateConnectionPeeringRoutes"))
+                      .build();
+        }
+      }
+    }
+    return getListPrivateConnectionPeeringRoutesMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static VmwareEngineStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<VmwareEngineStub> factory =
@@ -1759,6 +2149,37 @@ public final class VmwareEngineGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getListSubnetsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single subnet.
+     * </pre>
+     */
+    default void getSubnet(
+        com.google.cloud.vmwareengine.v1.GetSubnetRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.vmwareengine.v1.Subnet> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetSubnetMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single subnet. Only fields specified in
+     * `update_mask` are applied.
+     * *Note*: This API is synchronous and always returns a successful
+     * `google.longrunning.Operation` (LRO). The returned LRO will only have
+     * `done` and `response` fields.
+     * </pre>
+     */
+    default void updateSubnet(
+        com.google.cloud.vmwareengine.v1.UpdateSubnetRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateSubnetMethod(), responseObserver);
     }
 
     /**
@@ -2058,6 +2479,101 @@ public final class VmwareEngineGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getListVmwareEngineNetworksMethod(), responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new private connection that can be used for accessing private
+     * Clouds.
+     * </pre>
+     */
+    default void createPrivateConnection(
+        com.google.cloud.vmwareengine.v1.CreatePrivateConnectionRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreatePrivateConnectionMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves a `PrivateConnection` resource by its resource name. The resource
+     * contains details of the private connection, such as connected
+     * network, routing mode and state.
+     * </pre>
+     */
+    default void getPrivateConnection(
+        com.google.cloud.vmwareengine.v1.GetPrivateConnectionRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.vmwareengine.v1.PrivateConnection>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetPrivateConnectionMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists `PrivateConnection` resources in a given project and location.
+     * </pre>
+     */
+    default void listPrivateConnections(
+        com.google.cloud.vmwareengine.v1.ListPrivateConnectionsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.vmwareengine.v1.ListPrivateConnectionsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListPrivateConnectionsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Modifies a `PrivateConnection` resource. Only `description` and
+     * `routing_mode` fields can be updated. Only fields specified in `updateMask`
+     * are applied.
+     * </pre>
+     */
+    default void updatePrivateConnection(
+        com.google.cloud.vmwareengine.v1.UpdatePrivateConnectionRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdatePrivateConnectionMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a `PrivateConnection` resource. When a private connection is
+     * deleted for a VMware Engine network, the connected network becomes
+     * inaccessible to that VMware Engine network.
+     * </pre>
+     */
+    default void deletePrivateConnection(
+        com.google.cloud.vmwareengine.v1.DeletePrivateConnectionRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeletePrivateConnectionMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the private connection routes exchanged over a peering connection.
+     * </pre>
+     */
+    default void listPrivateConnectionPeeringRoutes(
+        com.google.cloud.vmwareengine.v1.ListPrivateConnectionPeeringRoutesRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.vmwareengine.v1.ListPrivateConnectionPeeringRoutesResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListPrivateConnectionPeeringRoutesMethod(), responseObserver);
+    }
   }
 
   /**
@@ -2323,6 +2839,40 @@ public final class VmwareEngineGrpc {
             responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListSubnetsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single subnet.
+     * </pre>
+     */
+    public void getSubnet(
+        com.google.cloud.vmwareengine.v1.GetSubnetRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.vmwareengine.v1.Subnet> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetSubnetMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single subnet. Only fields specified in
+     * `update_mask` are applied.
+     * *Note*: This API is synchronous and always returns a successful
+     * `google.longrunning.Operation` (LRO). The returned LRO will only have
+     * `done` and `response` fields.
+     * </pre>
+     */
+    public void updateSubnet(
+        com.google.cloud.vmwareengine.v1.UpdateSubnetRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateSubnetMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2662,6 +3212,113 @@ public final class VmwareEngineGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new private connection that can be used for accessing private
+     * Clouds.
+     * </pre>
+     */
+    public void createPrivateConnection(
+        com.google.cloud.vmwareengine.v1.CreatePrivateConnectionRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreatePrivateConnectionMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves a `PrivateConnection` resource by its resource name. The resource
+     * contains details of the private connection, such as connected
+     * network, routing mode and state.
+     * </pre>
+     */
+    public void getPrivateConnection(
+        com.google.cloud.vmwareengine.v1.GetPrivateConnectionRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.vmwareengine.v1.PrivateConnection>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetPrivateConnectionMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists `PrivateConnection` resources in a given project and location.
+     * </pre>
+     */
+    public void listPrivateConnections(
+        com.google.cloud.vmwareengine.v1.ListPrivateConnectionsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.vmwareengine.v1.ListPrivateConnectionsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListPrivateConnectionsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Modifies a `PrivateConnection` resource. Only `description` and
+     * `routing_mode` fields can be updated. Only fields specified in `updateMask`
+     * are applied.
+     * </pre>
+     */
+    public void updatePrivateConnection(
+        com.google.cloud.vmwareengine.v1.UpdatePrivateConnectionRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdatePrivateConnectionMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a `PrivateConnection` resource. When a private connection is
+     * deleted for a VMware Engine network, the connected network becomes
+     * inaccessible to that VMware Engine network.
+     * </pre>
+     */
+    public void deletePrivateConnection(
+        com.google.cloud.vmwareengine.v1.DeletePrivateConnectionRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeletePrivateConnectionMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the private connection routes exchanged over a peering connection.
+     * </pre>
+     */
+    public void listPrivateConnectionPeeringRoutes(
+        com.google.cloud.vmwareengine.v1.ListPrivateConnectionPeeringRoutesRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.vmwareengine.v1.ListPrivateConnectionPeeringRoutesResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListPrivateConnectionPeeringRoutesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -2876,6 +3533,36 @@ public final class VmwareEngineGrpc {
         com.google.cloud.vmwareengine.v1.ListSubnetsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListSubnetsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single subnet.
+     * </pre>
+     */
+    public com.google.cloud.vmwareengine.v1.Subnet getSubnet(
+        com.google.cloud.vmwareengine.v1.GetSubnetRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetSubnetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single subnet. Only fields specified in
+     * `update_mask` are applied.
+     * *Note*: This API is synchronous and always returns a successful
+     * `google.longrunning.Operation` (LRO). The returned LRO will only have
+     * `done` and `response` fields.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateSubnet(
+        com.google.cloud.vmwareengine.v1.UpdateSubnetRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateSubnetMethod(), getCallOptions(), request);
     }
 
     /**
@@ -3147,6 +3834,92 @@ public final class VmwareEngineGrpc {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListVmwareEngineNetworksMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new private connection that can be used for accessing private
+     * Clouds.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createPrivateConnection(
+        com.google.cloud.vmwareengine.v1.CreatePrivateConnectionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreatePrivateConnectionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves a `PrivateConnection` resource by its resource name. The resource
+     * contains details of the private connection, such as connected
+     * network, routing mode and state.
+     * </pre>
+     */
+    public com.google.cloud.vmwareengine.v1.PrivateConnection getPrivateConnection(
+        com.google.cloud.vmwareengine.v1.GetPrivateConnectionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetPrivateConnectionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists `PrivateConnection` resources in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.vmwareengine.v1.ListPrivateConnectionsResponse listPrivateConnections(
+        com.google.cloud.vmwareengine.v1.ListPrivateConnectionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListPrivateConnectionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Modifies a `PrivateConnection` resource. Only `description` and
+     * `routing_mode` fields can be updated. Only fields specified in `updateMask`
+     * are applied.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updatePrivateConnection(
+        com.google.cloud.vmwareengine.v1.UpdatePrivateConnectionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdatePrivateConnectionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a `PrivateConnection` resource. When a private connection is
+     * deleted for a VMware Engine network, the connected network becomes
+     * inaccessible to that VMware Engine network.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deletePrivateConnection(
+        com.google.cloud.vmwareengine.v1.DeletePrivateConnectionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeletePrivateConnectionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the private connection routes exchanged over a peering connection.
+     * </pre>
+     */
+    public com.google.cloud.vmwareengine.v1.ListPrivateConnectionPeeringRoutesResponse
+        listPrivateConnectionPeeringRoutes(
+            com.google.cloud.vmwareengine.v1.ListPrivateConnectionPeeringRoutesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListPrivateConnectionPeeringRoutesMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -3366,6 +4139,37 @@ public final class VmwareEngineGrpc {
         listSubnets(com.google.cloud.vmwareengine.v1.ListSubnetsRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListSubnetsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single subnet.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.vmwareengine.v1.Subnet>
+        getSubnet(com.google.cloud.vmwareengine.v1.GetSubnetRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetSubnetMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single subnet. Only fields specified in
+     * `update_mask` are applied.
+     * *Note*: This API is synchronous and always returns a successful
+     * `google.longrunning.Operation` (LRO). The returned LRO will only have
+     * `done` and `response` fields.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateSubnet(com.google.cloud.vmwareengine.v1.UpdateSubnetRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateSubnetMethod(), getCallOptions()), request);
     }
 
     /**
@@ -3655,6 +4459,100 @@ public final class VmwareEngineGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListVmwareEngineNetworksMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new private connection that can be used for accessing private
+     * Clouds.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        createPrivateConnection(
+            com.google.cloud.vmwareengine.v1.CreatePrivateConnectionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreatePrivateConnectionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves a `PrivateConnection` resource by its resource name. The resource
+     * contains details of the private connection, such as connected
+     * network, routing mode and state.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.vmwareengine.v1.PrivateConnection>
+        getPrivateConnection(com.google.cloud.vmwareengine.v1.GetPrivateConnectionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetPrivateConnectionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists `PrivateConnection` resources in a given project and location.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.vmwareengine.v1.ListPrivateConnectionsResponse>
+        listPrivateConnections(
+            com.google.cloud.vmwareengine.v1.ListPrivateConnectionsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListPrivateConnectionsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Modifies a `PrivateConnection` resource. Only `description` and
+     * `routing_mode` fields can be updated. Only fields specified in `updateMask`
+     * are applied.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updatePrivateConnection(
+            com.google.cloud.vmwareengine.v1.UpdatePrivateConnectionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdatePrivateConnectionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a `PrivateConnection` resource. When a private connection is
+     * deleted for a VMware Engine network, the connected network becomes
+     * inaccessible to that VMware Engine network.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deletePrivateConnection(
+            com.google.cloud.vmwareengine.v1.DeletePrivateConnectionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeletePrivateConnectionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the private connection routes exchanged over a peering connection.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.vmwareengine.v1.ListPrivateConnectionPeeringRoutesResponse>
+        listPrivateConnectionPeeringRoutes(
+            com.google.cloud.vmwareengine.v1.ListPrivateConnectionPeeringRoutesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListPrivateConnectionPeeringRoutesMethod(), getCallOptions()),
+          request);
+    }
   }
 
   private static final int METHODID_LIST_PRIVATE_CLOUDS = 0;
@@ -3669,25 +4567,33 @@ public final class VmwareEngineGrpc {
   private static final int METHODID_UPDATE_CLUSTER = 9;
   private static final int METHODID_DELETE_CLUSTER = 10;
   private static final int METHODID_LIST_SUBNETS = 11;
-  private static final int METHODID_LIST_NODE_TYPES = 12;
-  private static final int METHODID_GET_NODE_TYPE = 13;
-  private static final int METHODID_SHOW_NSX_CREDENTIALS = 14;
-  private static final int METHODID_SHOW_VCENTER_CREDENTIALS = 15;
-  private static final int METHODID_RESET_NSX_CREDENTIALS = 16;
-  private static final int METHODID_RESET_VCENTER_CREDENTIALS = 17;
-  private static final int METHODID_CREATE_HCX_ACTIVATION_KEY = 18;
-  private static final int METHODID_LIST_HCX_ACTIVATION_KEYS = 19;
-  private static final int METHODID_GET_HCX_ACTIVATION_KEY = 20;
-  private static final int METHODID_GET_NETWORK_POLICY = 21;
-  private static final int METHODID_LIST_NETWORK_POLICIES = 22;
-  private static final int METHODID_CREATE_NETWORK_POLICY = 23;
-  private static final int METHODID_UPDATE_NETWORK_POLICY = 24;
-  private static final int METHODID_DELETE_NETWORK_POLICY = 25;
-  private static final int METHODID_CREATE_VMWARE_ENGINE_NETWORK = 26;
-  private static final int METHODID_UPDATE_VMWARE_ENGINE_NETWORK = 27;
-  private static final int METHODID_DELETE_VMWARE_ENGINE_NETWORK = 28;
-  private static final int METHODID_GET_VMWARE_ENGINE_NETWORK = 29;
-  private static final int METHODID_LIST_VMWARE_ENGINE_NETWORKS = 30;
+  private static final int METHODID_GET_SUBNET = 12;
+  private static final int METHODID_UPDATE_SUBNET = 13;
+  private static final int METHODID_LIST_NODE_TYPES = 14;
+  private static final int METHODID_GET_NODE_TYPE = 15;
+  private static final int METHODID_SHOW_NSX_CREDENTIALS = 16;
+  private static final int METHODID_SHOW_VCENTER_CREDENTIALS = 17;
+  private static final int METHODID_RESET_NSX_CREDENTIALS = 18;
+  private static final int METHODID_RESET_VCENTER_CREDENTIALS = 19;
+  private static final int METHODID_CREATE_HCX_ACTIVATION_KEY = 20;
+  private static final int METHODID_LIST_HCX_ACTIVATION_KEYS = 21;
+  private static final int METHODID_GET_HCX_ACTIVATION_KEY = 22;
+  private static final int METHODID_GET_NETWORK_POLICY = 23;
+  private static final int METHODID_LIST_NETWORK_POLICIES = 24;
+  private static final int METHODID_CREATE_NETWORK_POLICY = 25;
+  private static final int METHODID_UPDATE_NETWORK_POLICY = 26;
+  private static final int METHODID_DELETE_NETWORK_POLICY = 27;
+  private static final int METHODID_CREATE_VMWARE_ENGINE_NETWORK = 28;
+  private static final int METHODID_UPDATE_VMWARE_ENGINE_NETWORK = 29;
+  private static final int METHODID_DELETE_VMWARE_ENGINE_NETWORK = 30;
+  private static final int METHODID_GET_VMWARE_ENGINE_NETWORK = 31;
+  private static final int METHODID_LIST_VMWARE_ENGINE_NETWORKS = 32;
+  private static final int METHODID_CREATE_PRIVATE_CONNECTION = 33;
+  private static final int METHODID_GET_PRIVATE_CONNECTION = 34;
+  private static final int METHODID_LIST_PRIVATE_CONNECTIONS = 35;
+  private static final int METHODID_UPDATE_PRIVATE_CONNECTION = 36;
+  private static final int METHODID_DELETE_PRIVATE_CONNECTION = 37;
+  private static final int METHODID_LIST_PRIVATE_CONNECTION_PEERING_ROUTES = 38;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -3771,6 +4677,17 @@ public final class VmwareEngineGrpc {
               (com.google.cloud.vmwareengine.v1.ListSubnetsRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.vmwareengine.v1.ListSubnetsResponse>)
                   responseObserver);
+          break;
+        case METHODID_GET_SUBNET:
+          serviceImpl.getSubnet(
+              (com.google.cloud.vmwareengine.v1.GetSubnetRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.vmwareengine.v1.Subnet>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_SUBNET:
+          serviceImpl.updateSubnet(
+              (com.google.cloud.vmwareengine.v1.UpdateSubnetRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_LIST_NODE_TYPES:
           serviceImpl.listNodeTypes(
@@ -3880,6 +4797,41 @@ public final class VmwareEngineGrpc {
                       com.google.cloud.vmwareengine.v1.ListVmwareEngineNetworksResponse>)
                   responseObserver);
           break;
+        case METHODID_CREATE_PRIVATE_CONNECTION:
+          serviceImpl.createPrivateConnection(
+              (com.google.cloud.vmwareengine.v1.CreatePrivateConnectionRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_GET_PRIVATE_CONNECTION:
+          serviceImpl.getPrivateConnection(
+              (com.google.cloud.vmwareengine.v1.GetPrivateConnectionRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.vmwareengine.v1.PrivateConnection>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_PRIVATE_CONNECTIONS:
+          serviceImpl.listPrivateConnections(
+              (com.google.cloud.vmwareengine.v1.ListPrivateConnectionsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.vmwareengine.v1.ListPrivateConnectionsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_PRIVATE_CONNECTION:
+          serviceImpl.updatePrivateConnection(
+              (com.google.cloud.vmwareengine.v1.UpdatePrivateConnectionRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_DELETE_PRIVATE_CONNECTION:
+          serviceImpl.deletePrivateConnection(
+              (com.google.cloud.vmwareengine.v1.DeletePrivateConnectionRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_LIST_PRIVATE_CONNECTION_PEERING_ROUTES:
+          serviceImpl.listPrivateConnectionPeeringRoutes(
+              (com.google.cloud.vmwareengine.v1.ListPrivateConnectionPeeringRoutesRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.vmwareengine.v1.ListPrivateConnectionPeeringRoutesResponse>)
+                  responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -3974,6 +4926,18 @@ public final class VmwareEngineGrpc {
                     com.google.cloud.vmwareengine.v1.ListSubnetsRequest,
                     com.google.cloud.vmwareengine.v1.ListSubnetsResponse>(
                     service, METHODID_LIST_SUBNETS)))
+        .addMethod(
+            getGetSubnetMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmwareengine.v1.GetSubnetRequest,
+                    com.google.cloud.vmwareengine.v1.Subnet>(service, METHODID_GET_SUBNET)))
+        .addMethod(
+            getUpdateSubnetMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmwareengine.v1.UpdateSubnetRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_SUBNET)))
         .addMethod(
             getListNodeTypesMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -4100,6 +5064,45 @@ public final class VmwareEngineGrpc {
                     com.google.cloud.vmwareengine.v1.ListVmwareEngineNetworksRequest,
                     com.google.cloud.vmwareengine.v1.ListVmwareEngineNetworksResponse>(
                     service, METHODID_LIST_VMWARE_ENGINE_NETWORKS)))
+        .addMethod(
+            getCreatePrivateConnectionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmwareengine.v1.CreatePrivateConnectionRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_PRIVATE_CONNECTION)))
+        .addMethod(
+            getGetPrivateConnectionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmwareengine.v1.GetPrivateConnectionRequest,
+                    com.google.cloud.vmwareengine.v1.PrivateConnection>(
+                    service, METHODID_GET_PRIVATE_CONNECTION)))
+        .addMethod(
+            getListPrivateConnectionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmwareengine.v1.ListPrivateConnectionsRequest,
+                    com.google.cloud.vmwareengine.v1.ListPrivateConnectionsResponse>(
+                    service, METHODID_LIST_PRIVATE_CONNECTIONS)))
+        .addMethod(
+            getUpdatePrivateConnectionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmwareengine.v1.UpdatePrivateConnectionRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_PRIVATE_CONNECTION)))
+        .addMethod(
+            getDeletePrivateConnectionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmwareengine.v1.DeletePrivateConnectionRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_PRIVATE_CONNECTION)))
+        .addMethod(
+            getListPrivateConnectionPeeringRoutesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmwareengine.v1.ListPrivateConnectionPeeringRoutesRequest,
+                    com.google.cloud.vmwareengine.v1.ListPrivateConnectionPeeringRoutesResponse>(
+                    service, METHODID_LIST_PRIVATE_CONNECTION_PEERING_ROUTES)))
         .build();
   }
 
@@ -4127,9 +5130,9 @@ public final class VmwareEngineGrpc {
   private static final class VmwareEngineMethodDescriptorSupplier
       extends VmwareEngineBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    VmwareEngineMethodDescriptorSupplier(String methodName) {
+    VmwareEngineMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 
@@ -4163,6 +5166,8 @@ public final class VmwareEngineGrpc {
                       .addMethod(getUpdateClusterMethod())
                       .addMethod(getDeleteClusterMethod())
                       .addMethod(getListSubnetsMethod())
+                      .addMethod(getGetSubnetMethod())
+                      .addMethod(getUpdateSubnetMethod())
                       .addMethod(getListNodeTypesMethod())
                       .addMethod(getGetNodeTypeMethod())
                       .addMethod(getShowNsxCredentialsMethod())
@@ -4182,6 +5187,12 @@ public final class VmwareEngineGrpc {
                       .addMethod(getDeleteVmwareEngineNetworkMethod())
                       .addMethod(getGetVmwareEngineNetworkMethod())
                       .addMethod(getListVmwareEngineNetworksMethod())
+                      .addMethod(getCreatePrivateConnectionMethod())
+                      .addMethod(getGetPrivateConnectionMethod())
+                      .addMethod(getListPrivateConnectionsMethod())
+                      .addMethod(getUpdatePrivateConnectionMethod())
+                      .addMethod(getDeletePrivateConnectionMethod())
+                      .addMethod(getListPrivateConnectionPeeringRoutesMethod())
                       .build();
         }
       }

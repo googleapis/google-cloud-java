@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ public interface GeocodeOrBuilder
    *
    * <pre>
    * The geocoded location of the input.
+   *
    * Using place IDs is preferred over using addresses,
    * latitude/longitude coordinates, or plus codes. Using coordinates when
    * routing or calculating driving directions will always result in the point
@@ -48,6 +49,7 @@ public interface GeocodeOrBuilder
    *
    * <pre>
    * The geocoded location of the input.
+   *
    * Using place IDs is preferred over using addresses,
    * latitude/longitude coordinates, or plus codes. Using coordinates when
    * routing or calculating driving directions will always result in the point
@@ -68,6 +70,7 @@ public interface GeocodeOrBuilder
    *
    * <pre>
    * The geocoded location of the input.
+   *
    * Using place IDs is preferred over using addresses,
    * latitude/longitude coordinates, or plus codes. Using coordinates when
    * routing or calculating driving directions will always result in the point
@@ -172,6 +175,7 @@ public interface GeocodeOrBuilder
    *
    * <pre>
    * The PlaceID of the place this input geocodes to.
+   *
    * For more information about Place IDs see
    * [here](https://developers.google.com/maps/documentation/places/web-service/place-id).
    * </pre>
@@ -186,6 +190,7 @@ public interface GeocodeOrBuilder
    *
    * <pre>
    * The PlaceID of the place this input geocodes to.
+   *
    * For more information about Place IDs see
    * [here](https://developers.google.com/maps/documentation/places/web-service/place-id).
    * </pre>

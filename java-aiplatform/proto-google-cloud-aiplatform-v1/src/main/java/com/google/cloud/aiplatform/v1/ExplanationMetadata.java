@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
     return new ExplanationMetadata();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1.ExplanationMetadataProto
         .internal_static_google_cloud_aiplatform_v1_ExplanationMetadata_descriptor;
@@ -91,13 +86,16 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Baseline inputs for this feature.
+     *
      * If no baseline is specified, Vertex AI chooses the baseline for this
      * feature. If multiple baselines are specified, Vertex AI returns the
      * average attributions across them in
      * [Attribution.feature_attributions][google.cloud.aiplatform.v1.Attribution.feature_attributions].
+     *
      * For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
      * of each baseline must match the shape of the input tensor. If a scalar is
      * provided, we broadcast to the same shape as the input tensor.
+     *
      * For custom images, the element of the baselines must be in the same
      * format as the feature's input in the
      * [instance][google.cloud.aiplatform.v1.ExplainRequest.instances][]. The
@@ -115,13 +113,16 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Baseline inputs for this feature.
+     *
      * If no baseline is specified, Vertex AI chooses the baseline for this
      * feature. If multiple baselines are specified, Vertex AI returns the
      * average attributions across them in
      * [Attribution.feature_attributions][google.cloud.aiplatform.v1.Attribution.feature_attributions].
+     *
      * For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
      * of each baseline must match the shape of the input tensor. If a scalar is
      * provided, we broadcast to the same shape as the input tensor.
+     *
      * For custom images, the element of the baselines must be in the same
      * format as the feature's input in the
      * [instance][google.cloud.aiplatform.v1.ExplainRequest.instances][]. The
@@ -139,13 +140,16 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Baseline inputs for this feature.
+     *
      * If no baseline is specified, Vertex AI chooses the baseline for this
      * feature. If multiple baselines are specified, Vertex AI returns the
      * average attributions across them in
      * [Attribution.feature_attributions][google.cloud.aiplatform.v1.Attribution.feature_attributions].
+     *
      * For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
      * of each baseline must match the shape of the input tensor. If a scalar is
      * provided, we broadcast to the same shape as the input tensor.
+     *
      * For custom images, the element of the baselines must be in the same
      * format as the feature's input in the
      * [instance][google.cloud.aiplatform.v1.ExplainRequest.instances][]. The
@@ -163,13 +167,16 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Baseline inputs for this feature.
+     *
      * If no baseline is specified, Vertex AI chooses the baseline for this
      * feature. If multiple baselines are specified, Vertex AI returns the
      * average attributions across them in
      * [Attribution.feature_attributions][google.cloud.aiplatform.v1.Attribution.feature_attributions].
+     *
      * For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
      * of each baseline must match the shape of the input tensor. If a scalar is
      * provided, we broadcast to the same shape as the input tensor.
+     *
      * For custom images, the element of the baselines must be in the same
      * format as the feature's input in the
      * [instance][google.cloud.aiplatform.v1.ExplainRequest.instances][]. The
@@ -187,13 +194,16 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Baseline inputs for this feature.
+     *
      * If no baseline is specified, Vertex AI chooses the baseline for this
      * feature. If multiple baselines are specified, Vertex AI returns the
      * average attributions across them in
      * [Attribution.feature_attributions][google.cloud.aiplatform.v1.Attribution.feature_attributions].
+     *
      * For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
      * of each baseline must match the shape of the input tensor. If a scalar is
      * provided, we broadcast to the same shape as the input tensor.
+     *
      * For custom images, the element of the baselines must be in the same
      * format as the feature's input in the
      * [instance][google.cloud.aiplatform.v1.ExplainRequest.instances][]. The
@@ -470,6 +480,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      * or [XRAI
      * attribution][google.cloud.aiplatform.v1.ExplanationParameters.xrai_attribution]
      * and the input tensor is not differentiable.
+     *
      * An encoded tensor is generated if the input tensor is encoded by a lookup
      * table.
      * </pre>
@@ -490,6 +501,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      * or [XRAI
      * attribution][google.cloud.aiplatform.v1.ExplanationParameters.xrai_attribution]
      * and the input tensor is not differentiable.
+     *
      * An encoded tensor is generated if the input tensor is encoded by a lookup
      * table.
      * </pre>
@@ -505,6 +517,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * A list of baselines for the encoded tensor.
+     *
      * The shape of each baseline should match the shape of the encoded tensor.
      * If a scalar is provided, Vertex AI broadcasts to the same shape as the
      * encoded tensor.
@@ -518,6 +531,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * A list of baselines for the encoded tensor.
+     *
      * The shape of each baseline should match the shape of the encoded tensor.
      * If a scalar is provided, Vertex AI broadcasts to the same shape as the
      * encoded tensor.
@@ -531,6 +545,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * A list of baselines for the encoded tensor.
+     *
      * The shape of each baseline should match the shape of the encoded tensor.
      * If a scalar is provided, Vertex AI broadcasts to the same shape as the
      * encoded tensor.
@@ -544,6 +559,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * A list of baselines for the encoded tensor.
+     *
      * The shape of each baseline should match the shape of the encoded tensor.
      * If a scalar is provided, Vertex AI broadcasts to the same shape as the
      * encoded tensor.
@@ -557,6 +573,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * A list of baselines for the encoded tensor.
+     *
      * The shape of each baseline should match the shape of the encoded tensor.
      * If a scalar is provided, Vertex AI broadcasts to the same shape as the
      * encoded tensor.
@@ -649,6 +666,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Metadata of the input of a feature.
+   *
    * Fields other than
    * [InputMetadata.input_baselines][google.cloud.aiplatform.v1.ExplanationMetadata.InputMetadata.input_baselines]
    * are applicable only for Models that are using Vertex AI-provided images for
@@ -674,7 +692,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
       modality_ = "";
       indicesTensorName_ = "";
       denseShapeTensorName_ = "";
-      indexFeatureMapping_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      indexFeatureMapping_ = com.google.protobuf.LazyStringArrayList.emptyList();
       encodedTensorName_ = "";
       encodedBaselines_ = java.util.Collections.emptyList();
       groupName_ = "";
@@ -684,11 +702,6 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new InputMetadata();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1129,11 +1142,6 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new FeatureValueDomain();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2071,10 +2079,12 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * The color scheme used for the highlighted areas.
+       *
        * Defaults to PINK_GREEN for
        * [Integrated Gradients
        * attribution][google.cloud.aiplatform.v1.ExplanationParameters.integrated_gradients_attribution],
        * which shows positive attributions in green and negative in pink.
+       *
        * Defaults to VIRIDIS for
        * [XRAI
        * attribution][google.cloud.aiplatform.v1.ExplanationParameters.xrai_attribution],
@@ -2094,10 +2104,12 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * The color scheme used for the highlighted areas.
+       *
        * Defaults to PINK_GREEN for
        * [Integrated Gradients
        * attribution][google.cloud.aiplatform.v1.ExplanationParameters.integrated_gradients_attribution],
        * which shows positive attributions in green and negative in pink.
+       *
        * Defaults to VIRIDIS for
        * [XRAI
        * attribution][google.cloud.aiplatform.v1.ExplanationParameters.xrai_attribution],
@@ -2210,11 +2222,6 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new Visualization();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -3161,10 +3168,12 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * The color scheme used for the highlighted areas.
+       *
        * Defaults to PINK_GREEN for
        * [Integrated Gradients
        * attribution][google.cloud.aiplatform.v1.ExplanationParameters.integrated_gradients_attribution],
        * which shows positive attributions in green and negative in pink.
+       *
        * Defaults to VIRIDIS for
        * [XRAI
        * attribution][google.cloud.aiplatform.v1.ExplanationParameters.xrai_attribution],
@@ -3187,10 +3196,12 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * The color scheme used for the highlighted areas.
+       *
        * Defaults to PINK_GREEN for
        * [Integrated Gradients
        * attribution][google.cloud.aiplatform.v1.ExplanationParameters.integrated_gradients_attribution],
        * which shows positive attributions in green and negative in pink.
+       *
        * Defaults to VIRIDIS for
        * [XRAI
        * attribution][google.cloud.aiplatform.v1.ExplanationParameters.xrai_attribution],
@@ -4065,10 +4076,12 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
          *
          * <pre>
          * The color scheme used for the highlighted areas.
+         *
          * Defaults to PINK_GREEN for
          * [Integrated Gradients
          * attribution][google.cloud.aiplatform.v1.ExplanationParameters.integrated_gradients_attribution],
          * which shows positive attributions in green and negative in pink.
+         *
          * Defaults to VIRIDIS for
          * [XRAI
          * attribution][google.cloud.aiplatform.v1.ExplanationParameters.xrai_attribution],
@@ -4091,10 +4104,12 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
          *
          * <pre>
          * The color scheme used for the highlighted areas.
+         *
          * Defaults to PINK_GREEN for
          * [Integrated Gradients
          * attribution][google.cloud.aiplatform.v1.ExplanationParameters.integrated_gradients_attribution],
          * which shows positive attributions in green and negative in pink.
+         *
          * Defaults to VIRIDIS for
          * [XRAI
          * attribution][google.cloud.aiplatform.v1.ExplanationParameters.xrai_attribution],
@@ -4120,10 +4135,12 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
          *
          * <pre>
          * The color scheme used for the highlighted areas.
+         *
          * Defaults to PINK_GREEN for
          * [Integrated Gradients
          * attribution][google.cloud.aiplatform.v1.ExplanationParameters.integrated_gradients_attribution],
          * which shows positive attributions in green and negative in pink.
+         *
          * Defaults to VIRIDIS for
          * [XRAI
          * attribution][google.cloud.aiplatform.v1.ExplanationParameters.xrai_attribution],
@@ -4155,10 +4172,12 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
          *
          * <pre>
          * The color scheme used for the highlighted areas.
+         *
          * Defaults to PINK_GREEN for
          * [Integrated Gradients
          * attribution][google.cloud.aiplatform.v1.ExplanationParameters.integrated_gradients_attribution],
          * which shows positive attributions in green and negative in pink.
+         *
          * Defaults to VIRIDIS for
          * [XRAI
          * attribution][google.cloud.aiplatform.v1.ExplanationParameters.xrai_attribution],
@@ -4189,10 +4208,12 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
          *
          * <pre>
          * The color scheme used for the highlighted areas.
+         *
          * Defaults to PINK_GREEN for
          * [Integrated Gradients
          * attribution][google.cloud.aiplatform.v1.ExplanationParameters.integrated_gradients_attribution],
          * which shows positive attributions in green and negative in pink.
+         *
          * Defaults to VIRIDIS for
          * [XRAI
          * attribution][google.cloud.aiplatform.v1.ExplanationParameters.xrai_attribution],
@@ -4532,13 +4553,16 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Baseline inputs for this feature.
+     *
      * If no baseline is specified, Vertex AI chooses the baseline for this
      * feature. If multiple baselines are specified, Vertex AI returns the
      * average attributions across them in
      * [Attribution.feature_attributions][google.cloud.aiplatform.v1.Attribution.feature_attributions].
+     *
      * For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
      * of each baseline must match the shape of the input tensor. If a scalar is
      * provided, we broadcast to the same shape as the input tensor.
+     *
      * For custom images, the element of the baselines must be in the same
      * format as the feature's input in the
      * [instance][google.cloud.aiplatform.v1.ExplainRequest.instances][]. The
@@ -4559,13 +4583,16 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Baseline inputs for this feature.
+     *
      * If no baseline is specified, Vertex AI chooses the baseline for this
      * feature. If multiple baselines are specified, Vertex AI returns the
      * average attributions across them in
      * [Attribution.feature_attributions][google.cloud.aiplatform.v1.Attribution.feature_attributions].
+     *
      * For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
      * of each baseline must match the shape of the input tensor. If a scalar is
      * provided, we broadcast to the same shape as the input tensor.
+     *
      * For custom images, the element of the baselines must be in the same
      * format as the feature's input in the
      * [instance][google.cloud.aiplatform.v1.ExplainRequest.instances][]. The
@@ -4587,13 +4614,16 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Baseline inputs for this feature.
+     *
      * If no baseline is specified, Vertex AI chooses the baseline for this
      * feature. If multiple baselines are specified, Vertex AI returns the
      * average attributions across them in
      * [Attribution.feature_attributions][google.cloud.aiplatform.v1.Attribution.feature_attributions].
+     *
      * For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
      * of each baseline must match the shape of the input tensor. If a scalar is
      * provided, we broadcast to the same shape as the input tensor.
+     *
      * For custom images, the element of the baselines must be in the same
      * format as the feature's input in the
      * [instance][google.cloud.aiplatform.v1.ExplainRequest.instances][]. The
@@ -4614,13 +4644,16 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Baseline inputs for this feature.
+     *
      * If no baseline is specified, Vertex AI chooses the baseline for this
      * feature. If multiple baselines are specified, Vertex AI returns the
      * average attributions across them in
      * [Attribution.feature_attributions][google.cloud.aiplatform.v1.Attribution.feature_attributions].
+     *
      * For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
      * of each baseline must match the shape of the input tensor. If a scalar is
      * provided, we broadcast to the same shape as the input tensor.
+     *
      * For custom images, the element of the baselines must be in the same
      * format as the feature's input in the
      * [instance][google.cloud.aiplatform.v1.ExplainRequest.instances][]. The
@@ -4641,13 +4674,16 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Baseline inputs for this feature.
+     *
      * If no baseline is specified, Vertex AI chooses the baseline for this
      * feature. If multiple baselines are specified, Vertex AI returns the
      * average attributions across them in
      * [Attribution.feature_attributions][google.cloud.aiplatform.v1.Attribution.feature_attributions].
+     *
      * For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
      * of each baseline must match the shape of the input tensor. If a scalar is
      * provided, we broadcast to the same shape as the input tensor.
+     *
      * For custom images, the element of the baselines must be in the same
      * format as the feature's input in the
      * [instance][google.cloud.aiplatform.v1.ExplainRequest.instances][]. The
@@ -4992,7 +5028,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
     public static final int INDEX_FEATURE_MAPPING_FIELD_NUMBER = 8;
 
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringList indexFeatureMapping_;
+    private com.google.protobuf.LazyStringArrayList indexFeatureMapping_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
      *
      *
@@ -5079,6 +5116,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      * or [XRAI
      * attribution][google.cloud.aiplatform.v1.ExplanationParameters.xrai_attribution]
      * and the input tensor is not differentiable.
+     *
      * An encoded tensor is generated if the input tensor is encoded by a lookup
      * table.
      * </pre>
@@ -5110,6 +5148,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      * or [XRAI
      * attribution][google.cloud.aiplatform.v1.ExplanationParameters.xrai_attribution]
      * and the input tensor is not differentiable.
+     *
      * An encoded tensor is generated if the input tensor is encoded by a lookup
      * table.
      * </pre>
@@ -5140,6 +5179,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * A list of baselines for the encoded tensor.
+     *
      * The shape of each baseline should match the shape of the encoded tensor.
      * If a scalar is provided, Vertex AI broadcasts to the same shape as the
      * encoded tensor.
@@ -5156,6 +5196,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * A list of baselines for the encoded tensor.
+     *
      * The shape of each baseline should match the shape of the encoded tensor.
      * If a scalar is provided, Vertex AI broadcasts to the same shape as the
      * encoded tensor.
@@ -5173,6 +5214,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * A list of baselines for the encoded tensor.
+     *
      * The shape of each baseline should match the shape of the encoded tensor.
      * If a scalar is provided, Vertex AI broadcasts to the same shape as the
      * encoded tensor.
@@ -5189,6 +5231,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * A list of baselines for the encoded tensor.
+     *
      * The shape of each baseline should match the shape of the encoded tensor.
      * If a scalar is provided, Vertex AI broadcasts to the same shape as the
      * encoded tensor.
@@ -5205,6 +5248,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * A list of baselines for the encoded tensor.
+     *
      * The shape of each baseline should match the shape of the encoded tensor.
      * If a scalar is provided, Vertex AI broadcasts to the same shape as the
      * encoded tensor.
@@ -5635,6 +5679,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Metadata of the input of a feature.
+     *
      * Fields other than
      * [InputMetadata.input_baselines][google.cloud.aiplatform.v1.ExplanationMetadata.InputMetadata.input_baselines]
      * are applicable only for Models that are using Vertex AI-provided images for
@@ -5692,8 +5737,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
         }
         indicesTensorName_ = "";
         denseShapeTensorName_ = "";
-        indexFeatureMapping_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000080);
+        indexFeatureMapping_ = com.google.protobuf.LazyStringArrayList.emptyList();
         encodedTensorName_ = "";
         if (encodedBaselinesBuilder_ == null) {
           encodedBaselines_ = java.util.Collections.emptyList();
@@ -5756,11 +5800,6 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
         } else {
           result.inputBaselines_ = inputBaselinesBuilder_.build();
         }
-        if (((bitField0_ & 0x00000080) != 0)) {
-          indexFeatureMapping_ = indexFeatureMapping_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000080);
-        }
-        result.indexFeatureMapping_ = indexFeatureMapping_;
         if (encodedBaselinesBuilder_ == null) {
           if (((bitField0_ & 0x00000200) != 0)) {
             encodedBaselines_ = java.util.Collections.unmodifiableList(encodedBaselines_);
@@ -5795,6 +5834,10 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
         }
         if (((from_bitField0_ & 0x00000040) != 0)) {
           result.denseShapeTensorName_ = denseShapeTensorName_;
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          indexFeatureMapping_.makeImmutable();
+          result.indexFeatureMapping_ = indexFeatureMapping_;
         }
         if (((from_bitField0_ & 0x00000100) != 0)) {
           result.encodedTensorName_ = encodedTensorName_;
@@ -5915,7 +5958,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
         if (!other.indexFeatureMapping_.isEmpty()) {
           if (indexFeatureMapping_.isEmpty()) {
             indexFeatureMapping_ = other.indexFeatureMapping_;
-            bitField0_ = (bitField0_ & ~0x00000080);
+            bitField0_ |= 0x00000080;
           } else {
             ensureIndexFeatureMappingIsMutable();
             indexFeatureMapping_.addAll(other.indexFeatureMapping_);
@@ -6114,13 +6157,16 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * Baseline inputs for this feature.
+       *
        * If no baseline is specified, Vertex AI chooses the baseline for this
        * feature. If multiple baselines are specified, Vertex AI returns the
        * average attributions across them in
        * [Attribution.feature_attributions][google.cloud.aiplatform.v1.Attribution.feature_attributions].
+       *
        * For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
        * of each baseline must match the shape of the input tensor. If a scalar is
        * provided, we broadcast to the same shape as the input tensor.
+       *
        * For custom images, the element of the baselines must be in the same
        * format as the feature's input in the
        * [instance][google.cloud.aiplatform.v1.ExplainRequest.instances][]. The
@@ -6144,13 +6190,16 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * Baseline inputs for this feature.
+       *
        * If no baseline is specified, Vertex AI chooses the baseline for this
        * feature. If multiple baselines are specified, Vertex AI returns the
        * average attributions across them in
        * [Attribution.feature_attributions][google.cloud.aiplatform.v1.Attribution.feature_attributions].
+       *
        * For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
        * of each baseline must match the shape of the input tensor. If a scalar is
        * provided, we broadcast to the same shape as the input tensor.
+       *
        * For custom images, the element of the baselines must be in the same
        * format as the feature's input in the
        * [instance][google.cloud.aiplatform.v1.ExplainRequest.instances][]. The
@@ -6174,13 +6223,16 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * Baseline inputs for this feature.
+       *
        * If no baseline is specified, Vertex AI chooses the baseline for this
        * feature. If multiple baselines are specified, Vertex AI returns the
        * average attributions across them in
        * [Attribution.feature_attributions][google.cloud.aiplatform.v1.Attribution.feature_attributions].
+       *
        * For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
        * of each baseline must match the shape of the input tensor. If a scalar is
        * provided, we broadcast to the same shape as the input tensor.
+       *
        * For custom images, the element of the baselines must be in the same
        * format as the feature's input in the
        * [instance][google.cloud.aiplatform.v1.ExplainRequest.instances][]. The
@@ -6204,13 +6256,16 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * Baseline inputs for this feature.
+       *
        * If no baseline is specified, Vertex AI chooses the baseline for this
        * feature. If multiple baselines are specified, Vertex AI returns the
        * average attributions across them in
        * [Attribution.feature_attributions][google.cloud.aiplatform.v1.Attribution.feature_attributions].
+       *
        * For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
        * of each baseline must match the shape of the input tensor. If a scalar is
        * provided, we broadcast to the same shape as the input tensor.
+       *
        * For custom images, the element of the baselines must be in the same
        * format as the feature's input in the
        * [instance][google.cloud.aiplatform.v1.ExplainRequest.instances][]. The
@@ -6240,13 +6295,16 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * Baseline inputs for this feature.
+       *
        * If no baseline is specified, Vertex AI chooses the baseline for this
        * feature. If multiple baselines are specified, Vertex AI returns the
        * average attributions across them in
        * [Attribution.feature_attributions][google.cloud.aiplatform.v1.Attribution.feature_attributions].
+       *
        * For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
        * of each baseline must match the shape of the input tensor. If a scalar is
        * provided, we broadcast to the same shape as the input tensor.
+       *
        * For custom images, the element of the baselines must be in the same
        * format as the feature's input in the
        * [instance][google.cloud.aiplatform.v1.ExplainRequest.instances][]. The
@@ -6274,13 +6332,16 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * Baseline inputs for this feature.
+       *
        * If no baseline is specified, Vertex AI chooses the baseline for this
        * feature. If multiple baselines are specified, Vertex AI returns the
        * average attributions across them in
        * [Attribution.feature_attributions][google.cloud.aiplatform.v1.Attribution.feature_attributions].
+       *
        * For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
        * of each baseline must match the shape of the input tensor. If a scalar is
        * provided, we broadcast to the same shape as the input tensor.
+       *
        * For custom images, the element of the baselines must be in the same
        * format as the feature's input in the
        * [instance][google.cloud.aiplatform.v1.ExplainRequest.instances][]. The
@@ -6310,13 +6371,16 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * Baseline inputs for this feature.
+       *
        * If no baseline is specified, Vertex AI chooses the baseline for this
        * feature. If multiple baselines are specified, Vertex AI returns the
        * average attributions across them in
        * [Attribution.feature_attributions][google.cloud.aiplatform.v1.Attribution.feature_attributions].
+       *
        * For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
        * of each baseline must match the shape of the input tensor. If a scalar is
        * provided, we broadcast to the same shape as the input tensor.
+       *
        * For custom images, the element of the baselines must be in the same
        * format as the feature's input in the
        * [instance][google.cloud.aiplatform.v1.ExplainRequest.instances][]. The
@@ -6346,13 +6410,16 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * Baseline inputs for this feature.
+       *
        * If no baseline is specified, Vertex AI chooses the baseline for this
        * feature. If multiple baselines are specified, Vertex AI returns the
        * average attributions across them in
        * [Attribution.feature_attributions][google.cloud.aiplatform.v1.Attribution.feature_attributions].
+       *
        * For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
        * of each baseline must match the shape of the input tensor. If a scalar is
        * provided, we broadcast to the same shape as the input tensor.
+       *
        * For custom images, the element of the baselines must be in the same
        * format as the feature's input in the
        * [instance][google.cloud.aiplatform.v1.ExplainRequest.instances][]. The
@@ -6379,13 +6446,16 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * Baseline inputs for this feature.
+       *
        * If no baseline is specified, Vertex AI chooses the baseline for this
        * feature. If multiple baselines are specified, Vertex AI returns the
        * average attributions across them in
        * [Attribution.feature_attributions][google.cloud.aiplatform.v1.Attribution.feature_attributions].
+       *
        * For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
        * of each baseline must match the shape of the input tensor. If a scalar is
        * provided, we broadcast to the same shape as the input tensor.
+       *
        * For custom images, the element of the baselines must be in the same
        * format as the feature's input in the
        * [instance][google.cloud.aiplatform.v1.ExplainRequest.instances][]. The
@@ -6413,13 +6483,16 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * Baseline inputs for this feature.
+       *
        * If no baseline is specified, Vertex AI chooses the baseline for this
        * feature. If multiple baselines are specified, Vertex AI returns the
        * average attributions across them in
        * [Attribution.feature_attributions][google.cloud.aiplatform.v1.Attribution.feature_attributions].
+       *
        * For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
        * of each baseline must match the shape of the input tensor. If a scalar is
        * provided, we broadcast to the same shape as the input tensor.
+       *
        * For custom images, the element of the baselines must be in the same
        * format as the feature's input in the
        * [instance][google.cloud.aiplatform.v1.ExplainRequest.instances][]. The
@@ -6447,13 +6520,16 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * Baseline inputs for this feature.
+       *
        * If no baseline is specified, Vertex AI chooses the baseline for this
        * feature. If multiple baselines are specified, Vertex AI returns the
        * average attributions across them in
        * [Attribution.feature_attributions][google.cloud.aiplatform.v1.Attribution.feature_attributions].
+       *
        * For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
        * of each baseline must match the shape of the input tensor. If a scalar is
        * provided, we broadcast to the same shape as the input tensor.
+       *
        * For custom images, the element of the baselines must be in the same
        * format as the feature's input in the
        * [instance][google.cloud.aiplatform.v1.ExplainRequest.instances][]. The
@@ -6480,13 +6556,16 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * Baseline inputs for this feature.
+       *
        * If no baseline is specified, Vertex AI chooses the baseline for this
        * feature. If multiple baselines are specified, Vertex AI returns the
        * average attributions across them in
        * [Attribution.feature_attributions][google.cloud.aiplatform.v1.Attribution.feature_attributions].
+       *
        * For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
        * of each baseline must match the shape of the input tensor. If a scalar is
        * provided, we broadcast to the same shape as the input tensor.
+       *
        * For custom images, the element of the baselines must be in the same
        * format as the feature's input in the
        * [instance][google.cloud.aiplatform.v1.ExplainRequest.instances][]. The
@@ -6513,13 +6592,16 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * Baseline inputs for this feature.
+       *
        * If no baseline is specified, Vertex AI chooses the baseline for this
        * feature. If multiple baselines are specified, Vertex AI returns the
        * average attributions across them in
        * [Attribution.feature_attributions][google.cloud.aiplatform.v1.Attribution.feature_attributions].
+       *
        * For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
        * of each baseline must match the shape of the input tensor. If a scalar is
        * provided, we broadcast to the same shape as the input tensor.
+       *
        * For custom images, the element of the baselines must be in the same
        * format as the feature's input in the
        * [instance][google.cloud.aiplatform.v1.ExplainRequest.instances][]. The
@@ -6539,13 +6621,16 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * Baseline inputs for this feature.
+       *
        * If no baseline is specified, Vertex AI chooses the baseline for this
        * feature. If multiple baselines are specified, Vertex AI returns the
        * average attributions across them in
        * [Attribution.feature_attributions][google.cloud.aiplatform.v1.Attribution.feature_attributions].
+       *
        * For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
        * of each baseline must match the shape of the input tensor. If a scalar is
        * provided, we broadcast to the same shape as the input tensor.
+       *
        * For custom images, the element of the baselines must be in the same
        * format as the feature's input in the
        * [instance][google.cloud.aiplatform.v1.ExplainRequest.instances][]. The
@@ -6569,13 +6654,16 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * Baseline inputs for this feature.
+       *
        * If no baseline is specified, Vertex AI chooses the baseline for this
        * feature. If multiple baselines are specified, Vertex AI returns the
        * average attributions across them in
        * [Attribution.feature_attributions][google.cloud.aiplatform.v1.Attribution.feature_attributions].
+       *
        * For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
        * of each baseline must match the shape of the input tensor. If a scalar is
        * provided, we broadcast to the same shape as the input tensor.
+       *
        * For custom images, the element of the baselines must be in the same
        * format as the feature's input in the
        * [instance][google.cloud.aiplatform.v1.ExplainRequest.instances][]. The
@@ -6600,13 +6688,16 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * Baseline inputs for this feature.
+       *
        * If no baseline is specified, Vertex AI chooses the baseline for this
        * feature. If multiple baselines are specified, Vertex AI returns the
        * average attributions across them in
        * [Attribution.feature_attributions][google.cloud.aiplatform.v1.Attribution.feature_attributions].
+       *
        * For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
        * of each baseline must match the shape of the input tensor. If a scalar is
        * provided, we broadcast to the same shape as the input tensor.
+       *
        * For custom images, the element of the baselines must be in the same
        * format as the feature's input in the
        * [instance][google.cloud.aiplatform.v1.ExplainRequest.instances][]. The
@@ -6627,13 +6718,16 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * Baseline inputs for this feature.
+       *
        * If no baseline is specified, Vertex AI chooses the baseline for this
        * feature. If multiple baselines are specified, Vertex AI returns the
        * average attributions across them in
        * [Attribution.feature_attributions][google.cloud.aiplatform.v1.Attribution.feature_attributions].
+       *
        * For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
        * of each baseline must match the shape of the input tensor. If a scalar is
        * provided, we broadcast to the same shape as the input tensor.
+       *
        * For custom images, the element of the baselines must be in the same
        * format as the feature's input in the
        * [instance][google.cloud.aiplatform.v1.ExplainRequest.instances][]. The
@@ -6654,13 +6748,16 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * Baseline inputs for this feature.
+       *
        * If no baseline is specified, Vertex AI chooses the baseline for this
        * feature. If multiple baselines are specified, Vertex AI returns the
        * average attributions across them in
        * [Attribution.feature_attributions][google.cloud.aiplatform.v1.Attribution.feature_attributions].
+       *
        * For Vertex AI-provided Tensorflow images (both 1.x and 2.x), the shape
        * of each baseline must match the shape of the input tensor. If a scalar is
        * provided, we broadcast to the same shape as the input tensor.
+       *
        * For custom images, the element of the baselines must be in the same
        * format as the feature's input in the
        * [instance][google.cloud.aiplatform.v1.ExplainRequest.instances][]. The
@@ -7494,14 +7591,14 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
         return this;
       }
 
-      private com.google.protobuf.LazyStringList indexFeatureMapping_ =
-          com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringArrayList indexFeatureMapping_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
 
       private void ensureIndexFeatureMappingIsMutable() {
-        if (!((bitField0_ & 0x00000080) != 0)) {
+        if (!indexFeatureMapping_.isModifiable()) {
           indexFeatureMapping_ = new com.google.protobuf.LazyStringArrayList(indexFeatureMapping_);
-          bitField0_ |= 0x00000080;
         }
+        bitField0_ |= 0x00000080;
       }
       /**
        *
@@ -7518,7 +7615,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        * @return A list containing the indexFeatureMapping.
        */
       public com.google.protobuf.ProtocolStringList getIndexFeatureMappingList() {
-        return indexFeatureMapping_.getUnmodifiableView();
+        indexFeatureMapping_.makeImmutable();
+        return indexFeatureMapping_;
       }
       /**
        *
@@ -7595,6 +7693,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
         }
         ensureIndexFeatureMappingIsMutable();
         indexFeatureMapping_.set(index, value);
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -7619,6 +7718,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
         }
         ensureIndexFeatureMappingIsMutable();
         indexFeatureMapping_.add(value);
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -7640,6 +7740,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
       public Builder addAllIndexFeatureMapping(java.lang.Iterable<java.lang.String> values) {
         ensureIndexFeatureMappingIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(values, indexFeatureMapping_);
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -7658,8 +7759,9 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        * @return This builder for chaining.
        */
       public Builder clearIndexFeatureMapping() {
-        indexFeatureMapping_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        indexFeatureMapping_ = com.google.protobuf.LazyStringArrayList.emptyList();
         bitField0_ = (bitField0_ & ~0x00000080);
+        ;
         onChanged();
         return this;
       }
@@ -7685,6 +7787,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
         checkByteStringIsUtf8(value);
         ensureIndexFeatureMappingIsMutable();
         indexFeatureMapping_.add(value);
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -7701,6 +7804,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        * or [XRAI
        * attribution][google.cloud.aiplatform.v1.ExplanationParameters.xrai_attribution]
        * and the input tensor is not differentiable.
+       *
        * An encoded tensor is generated if the input tensor is encoded by a lookup
        * table.
        * </pre>
@@ -7731,6 +7835,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        * or [XRAI
        * attribution][google.cloud.aiplatform.v1.ExplanationParameters.xrai_attribution]
        * and the input tensor is not differentiable.
+       *
        * An encoded tensor is generated if the input tensor is encoded by a lookup
        * table.
        * </pre>
@@ -7761,6 +7866,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        * or [XRAI
        * attribution][google.cloud.aiplatform.v1.ExplanationParameters.xrai_attribution]
        * and the input tensor is not differentiable.
+       *
        * An encoded tensor is generated if the input tensor is encoded by a lookup
        * table.
        * </pre>
@@ -7790,6 +7896,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        * or [XRAI
        * attribution][google.cloud.aiplatform.v1.ExplanationParameters.xrai_attribution]
        * and the input tensor is not differentiable.
+       *
        * An encoded tensor is generated if the input tensor is encoded by a lookup
        * table.
        * </pre>
@@ -7815,6 +7922,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        * or [XRAI
        * attribution][google.cloud.aiplatform.v1.ExplanationParameters.xrai_attribution]
        * and the input tensor is not differentiable.
+       *
        * An encoded tensor is generated if the input tensor is encoded by a lookup
        * table.
        * </pre>
@@ -7856,6 +7964,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * A list of baselines for the encoded tensor.
+       *
        * The shape of each baseline should match the shape of the encoded tensor.
        * If a scalar is provided, Vertex AI broadcasts to the same shape as the
        * encoded tensor.
@@ -7875,6 +7984,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * A list of baselines for the encoded tensor.
+       *
        * The shape of each baseline should match the shape of the encoded tensor.
        * If a scalar is provided, Vertex AI broadcasts to the same shape as the
        * encoded tensor.
@@ -7894,6 +8004,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * A list of baselines for the encoded tensor.
+       *
        * The shape of each baseline should match the shape of the encoded tensor.
        * If a scalar is provided, Vertex AI broadcasts to the same shape as the
        * encoded tensor.
@@ -7913,6 +8024,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * A list of baselines for the encoded tensor.
+       *
        * The shape of each baseline should match the shape of the encoded tensor.
        * If a scalar is provided, Vertex AI broadcasts to the same shape as the
        * encoded tensor.
@@ -7938,6 +8050,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * A list of baselines for the encoded tensor.
+       *
        * The shape of each baseline should match the shape of the encoded tensor.
        * If a scalar is provided, Vertex AI broadcasts to the same shape as the
        * encoded tensor.
@@ -7961,6 +8074,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * A list of baselines for the encoded tensor.
+       *
        * The shape of each baseline should match the shape of the encoded tensor.
        * If a scalar is provided, Vertex AI broadcasts to the same shape as the
        * encoded tensor.
@@ -7986,6 +8100,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * A list of baselines for the encoded tensor.
+       *
        * The shape of each baseline should match the shape of the encoded tensor.
        * If a scalar is provided, Vertex AI broadcasts to the same shape as the
        * encoded tensor.
@@ -8011,6 +8126,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * A list of baselines for the encoded tensor.
+       *
        * The shape of each baseline should match the shape of the encoded tensor.
        * If a scalar is provided, Vertex AI broadcasts to the same shape as the
        * encoded tensor.
@@ -8033,6 +8149,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * A list of baselines for the encoded tensor.
+       *
        * The shape of each baseline should match the shape of the encoded tensor.
        * If a scalar is provided, Vertex AI broadcasts to the same shape as the
        * encoded tensor.
@@ -8056,6 +8173,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * A list of baselines for the encoded tensor.
+       *
        * The shape of each baseline should match the shape of the encoded tensor.
        * If a scalar is provided, Vertex AI broadcasts to the same shape as the
        * encoded tensor.
@@ -8079,6 +8197,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * A list of baselines for the encoded tensor.
+       *
        * The shape of each baseline should match the shape of the encoded tensor.
        * If a scalar is provided, Vertex AI broadcasts to the same shape as the
        * encoded tensor.
@@ -8101,6 +8220,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * A list of baselines for the encoded tensor.
+       *
        * The shape of each baseline should match the shape of the encoded tensor.
        * If a scalar is provided, Vertex AI broadcasts to the same shape as the
        * encoded tensor.
@@ -8123,6 +8243,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * A list of baselines for the encoded tensor.
+       *
        * The shape of each baseline should match the shape of the encoded tensor.
        * If a scalar is provided, Vertex AI broadcasts to the same shape as the
        * encoded tensor.
@@ -8138,6 +8259,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * A list of baselines for the encoded tensor.
+       *
        * The shape of each baseline should match the shape of the encoded tensor.
        * If a scalar is provided, Vertex AI broadcasts to the same shape as the
        * encoded tensor.
@@ -8157,6 +8279,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * A list of baselines for the encoded tensor.
+       *
        * The shape of each baseline should match the shape of the encoded tensor.
        * If a scalar is provided, Vertex AI broadcasts to the same shape as the
        * encoded tensor.
@@ -8177,6 +8300,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * A list of baselines for the encoded tensor.
+       *
        * The shape of each baseline should match the shape of the encoded tensor.
        * If a scalar is provided, Vertex AI broadcasts to the same shape as the
        * encoded tensor.
@@ -8193,6 +8317,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * A list of baselines for the encoded tensor.
+       *
        * The shape of each baseline should match the shape of the encoded tensor.
        * If a scalar is provided, Vertex AI broadcasts to the same shape as the
        * encoded tensor.
@@ -8209,6 +8334,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * A list of baselines for the encoded tensor.
+       *
        * The shape of each baseline should match the shape of the encoded tensor.
        * If a scalar is provided, Vertex AI broadcasts to the same shape as the
        * encoded tensor.
@@ -8667,11 +8793,13 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Static mapping between the index and display name.
+     *
      * Use this if the outputs are a deterministic n-dimensional array, e.g. a
      * list of scores of all the classes in a pre-defined order for a
      * multi-classification Model. It's not feasible if the outputs are
      * non-deterministic, e.g. the Model produces top-k classes or sort the
      * outputs by their values.
+     *
      * The shape of the value must be an n-dimensional array of strings. The
      * number of dimensions must match that of the outputs to be explained.
      * The
@@ -8690,11 +8818,13 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Static mapping between the index and display name.
+     *
      * Use this if the outputs are a deterministic n-dimensional array, e.g. a
      * list of scores of all the classes in a pre-defined order for a
      * multi-classification Model. It's not feasible if the outputs are
      * non-deterministic, e.g. the Model produces top-k classes or sort the
      * outputs by their values.
+     *
      * The shape of the value must be an n-dimensional array of strings. The
      * number of dimensions must match that of the outputs to be explained.
      * The
@@ -8713,11 +8843,13 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Static mapping between the index and display name.
+     *
      * Use this if the outputs are a deterministic n-dimensional array, e.g. a
      * list of scores of all the classes in a pre-defined order for a
      * multi-classification Model. It's not feasible if the outputs are
      * non-deterministic, e.g. the Model produces top-k classes or sort the
      * outputs by their values.
+     *
      * The shape of the value must be an n-dimensional array of strings. The
      * number of dimensions must match that of the outputs to be explained.
      * The
@@ -8735,7 +8867,9 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Specify a field name in the prediction to look for the display name.
+     *
      * Use this if the prediction contains the display names for the outputs.
+     *
      * The display names in the prediction must have the same shape of the
      * outputs, so that it can be located by
      * [Attribution.output_index][google.cloud.aiplatform.v1.Attribution.output_index]
@@ -8752,7 +8886,9 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Specify a field name in the prediction to look for the display name.
+     *
      * Use this if the prediction contains the display names for the outputs.
+     *
      * The display names in the prediction must have the same shape of the
      * outputs, so that it can be located by
      * [Attribution.output_index][google.cloud.aiplatform.v1.Attribution.output_index]
@@ -8769,7 +8905,9 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Specify a field name in the prediction to look for the display name.
+     *
      * Use this if the prediction contains the display names for the outputs.
+     *
      * The display names in the prediction must have the same shape of the
      * outputs, so that it can be located by
      * [Attribution.output_index][google.cloud.aiplatform.v1.Attribution.output_index]
@@ -8809,7 +8947,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      */
     com.google.protobuf.ByteString getOutputTensorNameBytes();
 
-    public com.google.cloud.aiplatform.v1.ExplanationMetadata.OutputMetadata.DisplayNameMappingCase
+    com.google.cloud.aiplatform.v1.ExplanationMetadata.OutputMetadata.DisplayNameMappingCase
         getDisplayNameMappingCase();
   }
   /**
@@ -8841,11 +8979,6 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
       return new OutputMetadata();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.aiplatform.v1.ExplanationMetadataProto
           .internal_static_google_cloud_aiplatform_v1_ExplanationMetadata_OutputMetadata_descriptor;
@@ -8862,6 +8995,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
     }
 
     private int displayNameMappingCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object displayNameMapping_;
 
     public enum DisplayNameMappingCase
@@ -8914,11 +9049,13 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Static mapping between the index and display name.
+     *
      * Use this if the outputs are a deterministic n-dimensional array, e.g. a
      * list of scores of all the classes in a pre-defined order for a
      * multi-classification Model. It's not feasible if the outputs are
      * non-deterministic, e.g. the Model produces top-k classes or sort the
      * outputs by their values.
+     *
      * The shape of the value must be an n-dimensional array of strings. The
      * number of dimensions must match that of the outputs to be explained.
      * The
@@ -8940,11 +9077,13 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Static mapping between the index and display name.
+     *
      * Use this if the outputs are a deterministic n-dimensional array, e.g. a
      * list of scores of all the classes in a pre-defined order for a
      * multi-classification Model. It's not feasible if the outputs are
      * non-deterministic, e.g. the Model produces top-k classes or sort the
      * outputs by their values.
+     *
      * The shape of the value must be an n-dimensional array of strings. The
      * number of dimensions must match that of the outputs to be explained.
      * The
@@ -8969,11 +9108,13 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Static mapping between the index and display name.
+     *
      * Use this if the outputs are a deterministic n-dimensional array, e.g. a
      * list of scores of all the classes in a pre-defined order for a
      * multi-classification Model. It's not feasible if the outputs are
      * non-deterministic, e.g. the Model produces top-k classes or sort the
      * outputs by their values.
+     *
      * The shape of the value must be an n-dimensional array of strings. The
      * number of dimensions must match that of the outputs to be explained.
      * The
@@ -8998,7 +9139,9 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Specify a field name in the prediction to look for the display name.
+     *
      * Use this if the prediction contains the display names for the outputs.
+     *
      * The display names in the prediction must have the same shape of the
      * outputs, so that it can be located by
      * [Attribution.output_index][google.cloud.aiplatform.v1.Attribution.output_index]
@@ -9017,7 +9160,9 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Specify a field name in the prediction to look for the display name.
+     *
      * Use this if the prediction contains the display names for the outputs.
+     *
      * The display names in the prediction must have the same shape of the
      * outputs, so that it can be located by
      * [Attribution.output_index][google.cloud.aiplatform.v1.Attribution.output_index]
@@ -9049,7 +9194,9 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Specify a field name in the prediction to look for the display name.
+     *
      * Use this if the prediction contains the display names for the outputs.
+     *
      * The display names in the prediction must have the same shape of the
      * outputs, so that it can be located by
      * [Attribution.output_index][google.cloud.aiplatform.v1.Attribution.output_index]
@@ -9594,11 +9741,13 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * Static mapping between the index and display name.
+       *
        * Use this if the outputs are a deterministic n-dimensional array, e.g. a
        * list of scores of all the classes in a pre-defined order for a
        * multi-classification Model. It's not feasible if the outputs are
        * non-deterministic, e.g. the Model produces top-k classes or sort the
        * outputs by their values.
+       *
        * The shape of the value must be an n-dimensional array of strings. The
        * number of dimensions must match that of the outputs to be explained.
        * The
@@ -9620,11 +9769,13 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * Static mapping between the index and display name.
+       *
        * Use this if the outputs are a deterministic n-dimensional array, e.g. a
        * list of scores of all the classes in a pre-defined order for a
        * multi-classification Model. It's not feasible if the outputs are
        * non-deterministic, e.g. the Model produces top-k classes or sort the
        * outputs by their values.
+       *
        * The shape of the value must be an n-dimensional array of strings. The
        * number of dimensions must match that of the outputs to be explained.
        * The
@@ -9656,11 +9807,13 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * Static mapping between the index and display name.
+       *
        * Use this if the outputs are a deterministic n-dimensional array, e.g. a
        * list of scores of all the classes in a pre-defined order for a
        * multi-classification Model. It's not feasible if the outputs are
        * non-deterministic, e.g. the Model produces top-k classes or sort the
        * outputs by their values.
+       *
        * The shape of the value must be an n-dimensional array of strings. The
        * number of dimensions must match that of the outputs to be explained.
        * The
@@ -9689,11 +9842,13 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * Static mapping between the index and display name.
+       *
        * Use this if the outputs are a deterministic n-dimensional array, e.g. a
        * list of scores of all the classes in a pre-defined order for a
        * multi-classification Model. It's not feasible if the outputs are
        * non-deterministic, e.g. the Model produces top-k classes or sort the
        * outputs by their values.
+       *
        * The shape of the value must be an n-dimensional array of strings. The
        * number of dimensions must match that of the outputs to be explained.
        * The
@@ -9719,11 +9874,13 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * Static mapping between the index and display name.
+       *
        * Use this if the outputs are a deterministic n-dimensional array, e.g. a
        * list of scores of all the classes in a pre-defined order for a
        * multi-classification Model. It's not feasible if the outputs are
        * non-deterministic, e.g. the Model produces top-k classes or sort the
        * outputs by their values.
+       *
        * The shape of the value must be an n-dimensional array of strings. The
        * number of dimensions must match that of the outputs to be explained.
        * The
@@ -9762,11 +9919,13 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * Static mapping between the index and display name.
+       *
        * Use this if the outputs are a deterministic n-dimensional array, e.g. a
        * list of scores of all the classes in a pre-defined order for a
        * multi-classification Model. It's not feasible if the outputs are
        * non-deterministic, e.g. the Model produces top-k classes or sort the
        * outputs by their values.
+       *
        * The shape of the value must be an n-dimensional array of strings. The
        * number of dimensions must match that of the outputs to be explained.
        * The
@@ -9798,11 +9957,13 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * Static mapping between the index and display name.
+       *
        * Use this if the outputs are a deterministic n-dimensional array, e.g. a
        * list of scores of all the classes in a pre-defined order for a
        * multi-classification Model. It's not feasible if the outputs are
        * non-deterministic, e.g. the Model produces top-k classes or sort the
        * outputs by their values.
+       *
        * The shape of the value must be an n-dimensional array of strings. The
        * number of dimensions must match that of the outputs to be explained.
        * The
@@ -9821,11 +9982,13 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * Static mapping between the index and display name.
+       *
        * Use this if the outputs are a deterministic n-dimensional array, e.g. a
        * list of scores of all the classes in a pre-defined order for a
        * multi-classification Model. It's not feasible if the outputs are
        * non-deterministic, e.g. the Model produces top-k classes or sort the
        * outputs by their values.
+       *
        * The shape of the value must be an n-dimensional array of strings. The
        * number of dimensions must match that of the outputs to be explained.
        * The
@@ -9852,11 +10015,13 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * Static mapping between the index and display name.
+       *
        * Use this if the outputs are a deterministic n-dimensional array, e.g. a
        * list of scores of all the classes in a pre-defined order for a
        * multi-classification Model. It's not feasible if the outputs are
        * non-deterministic, e.g. the Model produces top-k classes or sort the
        * outputs by their values.
+       *
        * The shape of the value must be an n-dimensional array of strings. The
        * number of dimensions must match that of the outputs to be explained.
        * The
@@ -9896,7 +10061,9 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * Specify a field name in the prediction to look for the display name.
+       *
        * Use this if the prediction contains the display names for the outputs.
+       *
        * The display names in the prediction must have the same shape of the
        * outputs, so that it can be located by
        * [Attribution.output_index][google.cloud.aiplatform.v1.Attribution.output_index]
@@ -9916,7 +10083,9 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * Specify a field name in the prediction to look for the display name.
+       *
        * Use this if the prediction contains the display names for the outputs.
+       *
        * The display names in the prediction must have the same shape of the
        * outputs, so that it can be located by
        * [Attribution.output_index][google.cloud.aiplatform.v1.Attribution.output_index]
@@ -9949,7 +10118,9 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * Specify a field name in the prediction to look for the display name.
+       *
        * Use this if the prediction contains the display names for the outputs.
+       *
        * The display names in the prediction must have the same shape of the
        * outputs, so that it can be located by
        * [Attribution.output_index][google.cloud.aiplatform.v1.Attribution.output_index]
@@ -9982,7 +10153,9 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * Specify a field name in the prediction to look for the display name.
+       *
        * Use this if the prediction contains the display names for the outputs.
+       *
        * The display names in the prediction must have the same shape of the
        * outputs, so that it can be located by
        * [Attribution.output_index][google.cloud.aiplatform.v1.Attribution.output_index]
@@ -10008,7 +10181,9 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * Specify a field name in the prediction to look for the display name.
+       *
        * Use this if the prediction contains the display names for the outputs.
+       *
        * The display names in the prediction must have the same shape of the
        * outputs, so that it can be located by
        * [Attribution.output_index][google.cloud.aiplatform.v1.Attribution.output_index]
@@ -10032,7 +10207,9 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * Specify a field name in the prediction to look for the display name.
+       *
        * Use this if the prediction contains the display names for the outputs.
+       *
        * The display names in the prediction must have the same shape of the
        * outputs, so that it can be located by
        * [Attribution.output_index][google.cloud.aiplatform.v1.Attribution.output_index]
@@ -10275,14 +10452,17 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
    * <pre>
    * Required. Map from feature names to feature input metadata. Keys are the
    * name of the features. Values are the specification of the feature.
+   *
    * An empty InputMetadata is valid. It describes a text feature which has the
    * name specified as the key in
    * [ExplanationMetadata.inputs][google.cloud.aiplatform.v1.ExplanationMetadata.inputs].
    * The baseline of the empty feature is chosen by Vertex AI.
+   *
    * For Vertex AI-provided Tensorflow images, the key can be any friendly
    * name of the feature. Once specified,
    * [featureAttributions][google.cloud.aiplatform.v1.Attribution.feature_attributions]
    * are keyed by this key (if not grouped with another feature).
+   *
    * For custom images, the key must match with the key in
    * [instance][google.cloud.aiplatform.v1.ExplainRequest.instances].
    * </pre>
@@ -10312,14 +10492,17 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
    * <pre>
    * Required. Map from feature names to feature input metadata. Keys are the
    * name of the features. Values are the specification of the feature.
+   *
    * An empty InputMetadata is valid. It describes a text feature which has the
    * name specified as the key in
    * [ExplanationMetadata.inputs][google.cloud.aiplatform.v1.ExplanationMetadata.inputs].
    * The baseline of the empty feature is chosen by Vertex AI.
+   *
    * For Vertex AI-provided Tensorflow images, the key can be any friendly
    * name of the feature. Once specified,
    * [featureAttributions][google.cloud.aiplatform.v1.Attribution.feature_attributions]
    * are keyed by this key (if not grouped with another feature).
+   *
    * For custom images, the key must match with the key in
    * [instance][google.cloud.aiplatform.v1.ExplainRequest.instances].
    * </pre>
@@ -10340,14 +10523,17 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
    * <pre>
    * Required. Map from feature names to feature input metadata. Keys are the
    * name of the features. Values are the specification of the feature.
+   *
    * An empty InputMetadata is valid. It describes a text feature which has the
    * name specified as the key in
    * [ExplanationMetadata.inputs][google.cloud.aiplatform.v1.ExplanationMetadata.inputs].
    * The baseline of the empty feature is chosen by Vertex AI.
+   *
    * For Vertex AI-provided Tensorflow images, the key can be any friendly
    * name of the feature. Once specified,
    * [featureAttributions][google.cloud.aiplatform.v1.Attribution.feature_attributions]
    * are keyed by this key (if not grouped with another feature).
+   *
    * For custom images, the key must match with the key in
    * [instance][google.cloud.aiplatform.v1.ExplainRequest.instances].
    * </pre>
@@ -10376,14 +10562,17 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
    * <pre>
    * Required. Map from feature names to feature input metadata. Keys are the
    * name of the features. Values are the specification of the feature.
+   *
    * An empty InputMetadata is valid. It describes a text feature which has the
    * name specified as the key in
    * [ExplanationMetadata.inputs][google.cloud.aiplatform.v1.ExplanationMetadata.inputs].
    * The baseline of the empty feature is chosen by Vertex AI.
+   *
    * For Vertex AI-provided Tensorflow images, the key can be any friendly
    * name of the feature. Once specified,
    * [featureAttributions][google.cloud.aiplatform.v1.Attribution.feature_attributions]
    * are keyed by this key (if not grouped with another feature).
+   *
    * For custom images, the key must match with the key in
    * [instance][google.cloud.aiplatform.v1.ExplainRequest.instances].
    * </pre>
@@ -10448,10 +10637,13 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. Map from output names to output metadata.
+   *
    * For Vertex AI-provided Tensorflow images, keys can be any user defined
    * string that consists of any UTF-8 characters.
+   *
    * For custom images, keys are the name of the output field in the prediction
    * to be explained.
+   *
    * Currently only one key is allowed.
    * </pre>
    *
@@ -10479,10 +10671,13 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. Map from output names to output metadata.
+   *
    * For Vertex AI-provided Tensorflow images, keys can be any user defined
    * string that consists of any UTF-8 characters.
+   *
    * For custom images, keys are the name of the output field in the prediction
    * to be explained.
+   *
    * Currently only one key is allowed.
    * </pre>
    *
@@ -10501,10 +10696,13 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. Map from output names to output metadata.
+   *
    * For Vertex AI-provided Tensorflow images, keys can be any user defined
    * string that consists of any UTF-8 characters.
+   *
    * For custom images, keys are the name of the output field in the prediction
    * to be explained.
+   *
    * Currently only one key is allowed.
    * </pre>
    *
@@ -10531,10 +10729,13 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. Map from output names to output metadata.
+   *
    * For Vertex AI-provided Tensorflow images, keys can be any user defined
    * string that consists of any UTF-8 characters.
+   *
    * For custom images, keys are the name of the output field in the prediction
    * to be explained.
+   *
    * Currently only one key is allowed.
    * </pre>
    *
@@ -11188,14 +11389,17 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. Map from feature names to feature input metadata. Keys are the
      * name of the features. Values are the specification of the feature.
+     *
      * An empty InputMetadata is valid. It describes a text feature which has the
      * name specified as the key in
      * [ExplanationMetadata.inputs][google.cloud.aiplatform.v1.ExplanationMetadata.inputs].
      * The baseline of the empty feature is chosen by Vertex AI.
+     *
      * For Vertex AI-provided Tensorflow images, the key can be any friendly
      * name of the feature. Once specified,
      * [featureAttributions][google.cloud.aiplatform.v1.Attribution.feature_attributions]
      * are keyed by this key (if not grouped with another feature).
+     *
      * For custom images, the key must match with the key in
      * [instance][google.cloud.aiplatform.v1.ExplainRequest.instances].
      * </pre>
@@ -11225,14 +11429,17 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. Map from feature names to feature input metadata. Keys are the
      * name of the features. Values are the specification of the feature.
+     *
      * An empty InputMetadata is valid. It describes a text feature which has the
      * name specified as the key in
      * [ExplanationMetadata.inputs][google.cloud.aiplatform.v1.ExplanationMetadata.inputs].
      * The baseline of the empty feature is chosen by Vertex AI.
+     *
      * For Vertex AI-provided Tensorflow images, the key can be any friendly
      * name of the feature. Once specified,
      * [featureAttributions][google.cloud.aiplatform.v1.Attribution.feature_attributions]
      * are keyed by this key (if not grouped with another feature).
+     *
      * For custom images, the key must match with the key in
      * [instance][google.cloud.aiplatform.v1.ExplainRequest.instances].
      * </pre>
@@ -11253,14 +11460,17 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. Map from feature names to feature input metadata. Keys are the
      * name of the features. Values are the specification of the feature.
+     *
      * An empty InputMetadata is valid. It describes a text feature which has the
      * name specified as the key in
      * [ExplanationMetadata.inputs][google.cloud.aiplatform.v1.ExplanationMetadata.inputs].
      * The baseline of the empty feature is chosen by Vertex AI.
+     *
      * For Vertex AI-provided Tensorflow images, the key can be any friendly
      * name of the feature. Once specified,
      * [featureAttributions][google.cloud.aiplatform.v1.Attribution.feature_attributions]
      * are keyed by this key (if not grouped with another feature).
+     *
      * For custom images, the key must match with the key in
      * [instance][google.cloud.aiplatform.v1.ExplainRequest.instances].
      * </pre>
@@ -11289,14 +11499,17 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. Map from feature names to feature input metadata. Keys are the
      * name of the features. Values are the specification of the feature.
+     *
      * An empty InputMetadata is valid. It describes a text feature which has the
      * name specified as the key in
      * [ExplanationMetadata.inputs][google.cloud.aiplatform.v1.ExplanationMetadata.inputs].
      * The baseline of the empty feature is chosen by Vertex AI.
+     *
      * For Vertex AI-provided Tensorflow images, the key can be any friendly
      * name of the feature. Once specified,
      * [featureAttributions][google.cloud.aiplatform.v1.Attribution.feature_attributions]
      * are keyed by this key (if not grouped with another feature).
+     *
      * For custom images, the key must match with the key in
      * [instance][google.cloud.aiplatform.v1.ExplainRequest.instances].
      * </pre>
@@ -11331,14 +11544,17 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. Map from feature names to feature input metadata. Keys are the
      * name of the features. Values are the specification of the feature.
+     *
      * An empty InputMetadata is valid. It describes a text feature which has the
      * name specified as the key in
      * [ExplanationMetadata.inputs][google.cloud.aiplatform.v1.ExplanationMetadata.inputs].
      * The baseline of the empty feature is chosen by Vertex AI.
+     *
      * For Vertex AI-provided Tensorflow images, the key can be any friendly
      * name of the feature. Once specified,
      * [featureAttributions][google.cloud.aiplatform.v1.Attribution.feature_attributions]
      * are keyed by this key (if not grouped with another feature).
+     *
      * For custom images, the key must match with the key in
      * [instance][google.cloud.aiplatform.v1.ExplainRequest.instances].
      * </pre>
@@ -11368,14 +11584,17 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. Map from feature names to feature input metadata. Keys are the
      * name of the features. Values are the specification of the feature.
+     *
      * An empty InputMetadata is valid. It describes a text feature which has the
      * name specified as the key in
      * [ExplanationMetadata.inputs][google.cloud.aiplatform.v1.ExplanationMetadata.inputs].
      * The baseline of the empty feature is chosen by Vertex AI.
+     *
      * For Vertex AI-provided Tensorflow images, the key can be any friendly
      * name of the feature. Once specified,
      * [featureAttributions][google.cloud.aiplatform.v1.Attribution.feature_attributions]
      * are keyed by this key (if not grouped with another feature).
+     *
      * For custom images, the key must match with the key in
      * [instance][google.cloud.aiplatform.v1.ExplainRequest.instances].
      * </pre>
@@ -11403,14 +11622,17 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. Map from feature names to feature input metadata. Keys are the
      * name of the features. Values are the specification of the feature.
+     *
      * An empty InputMetadata is valid. It describes a text feature which has the
      * name specified as the key in
      * [ExplanationMetadata.inputs][google.cloud.aiplatform.v1.ExplanationMetadata.inputs].
      * The baseline of the empty feature is chosen by Vertex AI.
+     *
      * For Vertex AI-provided Tensorflow images, the key can be any friendly
      * name of the feature. Once specified,
      * [featureAttributions][google.cloud.aiplatform.v1.Attribution.feature_attributions]
      * are keyed by this key (if not grouped with another feature).
+     *
      * For custom images, the key must match with the key in
      * [instance][google.cloud.aiplatform.v1.ExplainRequest.instances].
      * </pre>
@@ -11463,10 +11685,13 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. Map from output names to output metadata.
+     *
      * For Vertex AI-provided Tensorflow images, keys can be any user defined
      * string that consists of any UTF-8 characters.
+     *
      * For custom images, keys are the name of the output field in the prediction
      * to be explained.
+     *
      * Currently only one key is allowed.
      * </pre>
      *
@@ -11494,10 +11719,13 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. Map from output names to output metadata.
+     *
      * For Vertex AI-provided Tensorflow images, keys can be any user defined
      * string that consists of any UTF-8 characters.
+     *
      * For custom images, keys are the name of the output field in the prediction
      * to be explained.
+     *
      * Currently only one key is allowed.
      * </pre>
      *
@@ -11516,10 +11744,13 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. Map from output names to output metadata.
+     *
      * For Vertex AI-provided Tensorflow images, keys can be any user defined
      * string that consists of any UTF-8 characters.
+     *
      * For custom images, keys are the name of the output field in the prediction
      * to be explained.
+     *
      * Currently only one key is allowed.
      * </pre>
      *
@@ -11546,10 +11777,13 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. Map from output names to output metadata.
+     *
      * For Vertex AI-provided Tensorflow images, keys can be any user defined
      * string that consists of any UTF-8 characters.
+     *
      * For custom images, keys are the name of the output field in the prediction
      * to be explained.
+     *
      * Currently only one key is allowed.
      * </pre>
      *
@@ -11582,10 +11816,13 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. Map from output names to output metadata.
+     *
      * For Vertex AI-provided Tensorflow images, keys can be any user defined
      * string that consists of any UTF-8 characters.
+     *
      * For custom images, keys are the name of the output field in the prediction
      * to be explained.
+     *
      * Currently only one key is allowed.
      * </pre>
      *
@@ -11613,10 +11850,13 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. Map from output names to output metadata.
+     *
      * For Vertex AI-provided Tensorflow images, keys can be any user defined
      * string that consists of any UTF-8 characters.
+     *
      * For custom images, keys are the name of the output field in the prediction
      * to be explained.
+     *
      * Currently only one key is allowed.
      * </pre>
      *
@@ -11642,10 +11882,13 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. Map from output names to output metadata.
+     *
      * For Vertex AI-provided Tensorflow images, keys can be any user defined
      * string that consists of any UTF-8 characters.
+     *
      * For custom images, keys are the name of the output field in the prediction
      * to be explained.
+     *
      * Currently only one key is allowed.
      * </pre>
      *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,6 +30,7 @@ public interface ListEntitlementChangesRequestOrBuilder
    * Required. The resource name of the entitlement for which to list
    * entitlement changes. The `-` wildcard may be used to match entitlements
    * across a customer. Formats:
+   *
    *   * accounts/{account_id}/customers/{customer_id}/entitlements/{entitlement_id}
    *   * accounts/{account_id}/customers/{customer_id}/entitlements/-
    * </pre>
@@ -48,6 +49,7 @@ public interface ListEntitlementChangesRequestOrBuilder
    * Required. The resource name of the entitlement for which to list
    * entitlement changes. The `-` wildcard may be used to match entitlements
    * across a customer. Formats:
+   *
    *   * accounts/{account_id}/customers/{customer_id}/entitlements/{entitlement_id}
    *   * accounts/{account_id}/customers/{customer_id}/entitlements/-
    * </pre>
@@ -83,6 +85,7 @@ public interface ListEntitlementChangesRequestOrBuilder
    * Optional. A page token, received from a previous
    * [CloudChannelService.ListEntitlementChanges][google.cloud.channel.v1.CloudChannelService.ListEntitlementChanges]
    * call. Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to
    * [CloudChannelService.ListEntitlementChanges][google.cloud.channel.v1.CloudChannelService.ListEntitlementChanges]
    * must match the call that provided the page token.
@@ -100,6 +103,7 @@ public interface ListEntitlementChangesRequestOrBuilder
    * Optional. A page token, received from a previous
    * [CloudChannelService.ListEntitlementChanges][google.cloud.channel.v1.CloudChannelService.ListEntitlementChanges]
    * call. Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to
    * [CloudChannelService.ListEntitlementChanges][google.cloud.channel.v1.CloudChannelService.ListEntitlementChanges]
    * must match the call that provided the page token.

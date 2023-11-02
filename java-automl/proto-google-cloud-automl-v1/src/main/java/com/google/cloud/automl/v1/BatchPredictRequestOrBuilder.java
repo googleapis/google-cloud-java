@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -143,36 +143,47 @@ public interface BatchPredictRequestOrBuilder
    * <pre>
    * Additional domain-specific parameters for the predictions, any string must
    * be up to 25000 characters long.
+   *
    * AutoML Natural Language Classification
+   *
    * `score_threshold`
    * : (float) A value from 0.0 to 1.0. When the model
    *   makes predictions for a text snippet, it will only produce results
    *   that have at least this confidence score. The default is 0.5.
+   *
+   *
    * AutoML Vision Classification
+   *
    * `score_threshold`
    * : (float) A value from 0.0 to 1.0. When the model
    *   makes predictions for an image, it will only produce results that
    *   have at least this confidence score. The default is 0.5.
+   *
    * AutoML Vision Object Detection
+   *
    * `score_threshold`
    * : (float) When Model detects objects on the image,
    *   it will only produce bounding boxes which have at least this
    *   confidence score. Value in 0 to 1 range, default is 0.5.
+   *
    * `max_bounding_box_count`
    * : (int64) The maximum number of bounding
    *   boxes returned per image. The default is 100, the
    *   number of bounding boxes returned might be limited by the server.
    * AutoML Video Intelligence Classification
+   *
    * `score_threshold`
    * : (float) A value from 0.0 to 1.0. When the model
    *   makes predictions for a video, it will only produce results that
    *   have at least this confidence score. The default is 0.5.
+   *
    * `segment_classification`
    * : (boolean) Set to true to request
    *   segment-level classification. AutoML Video Intelligence returns
    *   labels and their confidence scores for the entire segment of the
    *   video that user specified in the request configuration.
    *   The default is true.
+   *
    * `shot_classification`
    * : (boolean) Set to true to request shot-level
    *   classification. AutoML Video Intelligence determines the boundaries
@@ -181,27 +192,34 @@ public interface BatchPredictRequestOrBuilder
    *   then returns labels and their confidence scores for each detected
    *   shot, along with the start and end time of the shot.
    *   The default is false.
+   *
    *   WARNING: Model evaluation is not done for this classification type,
    *   the quality of it depends on training data, but there are no metrics
    *   provided to describe that quality.
+   *
    * `1s_interval_classification`
    * : (boolean) Set to true to request
    *   classification for a video at one-second intervals. AutoML Video
    *   Intelligence returns labels and their confidence scores for each
    *   second of the entire segment of the video that user specified in the
    *   request configuration. The default is false.
+   *
    *   WARNING: Model evaluation is not done for this classification
    *   type, the quality of it depends on training data, but there are no
    *   metrics provided to describe that quality.
+   *
    * AutoML Video Intelligence Object Tracking
+   *
    * `score_threshold`
    * : (float) When Model detects objects on video frames,
    *   it will only produce bounding boxes which have at least this
    *   confidence score. Value in 0 to 1 range, default is 0.5.
+   *
    * `max_bounding_box_count`
    * : (int64) The maximum number of bounding
    *   boxes returned per image. The default is 100, the
    *   number of bounding boxes returned might be limited by the server.
+   *
    * `min_bounding_box_size`
    * : (float) Only bounding boxes with shortest edge
    *   at least that long as a relative value of video frame size are
@@ -217,36 +235,47 @@ public interface BatchPredictRequestOrBuilder
    * <pre>
    * Additional domain-specific parameters for the predictions, any string must
    * be up to 25000 characters long.
+   *
    * AutoML Natural Language Classification
+   *
    * `score_threshold`
    * : (float) A value from 0.0 to 1.0. When the model
    *   makes predictions for a text snippet, it will only produce results
    *   that have at least this confidence score. The default is 0.5.
+   *
+   *
    * AutoML Vision Classification
+   *
    * `score_threshold`
    * : (float) A value from 0.0 to 1.0. When the model
    *   makes predictions for an image, it will only produce results that
    *   have at least this confidence score. The default is 0.5.
+   *
    * AutoML Vision Object Detection
+   *
    * `score_threshold`
    * : (float) When Model detects objects on the image,
    *   it will only produce bounding boxes which have at least this
    *   confidence score. Value in 0 to 1 range, default is 0.5.
+   *
    * `max_bounding_box_count`
    * : (int64) The maximum number of bounding
    *   boxes returned per image. The default is 100, the
    *   number of bounding boxes returned might be limited by the server.
    * AutoML Video Intelligence Classification
+   *
    * `score_threshold`
    * : (float) A value from 0.0 to 1.0. When the model
    *   makes predictions for a video, it will only produce results that
    *   have at least this confidence score. The default is 0.5.
+   *
    * `segment_classification`
    * : (boolean) Set to true to request
    *   segment-level classification. AutoML Video Intelligence returns
    *   labels and their confidence scores for the entire segment of the
    *   video that user specified in the request configuration.
    *   The default is true.
+   *
    * `shot_classification`
    * : (boolean) Set to true to request shot-level
    *   classification. AutoML Video Intelligence determines the boundaries
@@ -255,27 +284,34 @@ public interface BatchPredictRequestOrBuilder
    *   then returns labels and their confidence scores for each detected
    *   shot, along with the start and end time of the shot.
    *   The default is false.
+   *
    *   WARNING: Model evaluation is not done for this classification type,
    *   the quality of it depends on training data, but there are no metrics
    *   provided to describe that quality.
+   *
    * `1s_interval_classification`
    * : (boolean) Set to true to request
    *   classification for a video at one-second intervals. AutoML Video
    *   Intelligence returns labels and their confidence scores for each
    *   second of the entire segment of the video that user specified in the
    *   request configuration. The default is false.
+   *
    *   WARNING: Model evaluation is not done for this classification
    *   type, the quality of it depends on training data, but there are no
    *   metrics provided to describe that quality.
+   *
    * AutoML Video Intelligence Object Tracking
+   *
    * `score_threshold`
    * : (float) When Model detects objects on video frames,
    *   it will only produce bounding boxes which have at least this
    *   confidence score. Value in 0 to 1 range, default is 0.5.
+   *
    * `max_bounding_box_count`
    * : (int64) The maximum number of bounding
    *   boxes returned per image. The default is 100, the
    *   number of bounding boxes returned might be limited by the server.
+   *
    * `min_bounding_box_size`
    * : (float) Only bounding boxes with shortest edge
    *   at least that long as a relative value of video frame size are
@@ -294,36 +330,47 @@ public interface BatchPredictRequestOrBuilder
    * <pre>
    * Additional domain-specific parameters for the predictions, any string must
    * be up to 25000 characters long.
+   *
    * AutoML Natural Language Classification
+   *
    * `score_threshold`
    * : (float) A value from 0.0 to 1.0. When the model
    *   makes predictions for a text snippet, it will only produce results
    *   that have at least this confidence score. The default is 0.5.
+   *
+   *
    * AutoML Vision Classification
+   *
    * `score_threshold`
    * : (float) A value from 0.0 to 1.0. When the model
    *   makes predictions for an image, it will only produce results that
    *   have at least this confidence score. The default is 0.5.
+   *
    * AutoML Vision Object Detection
+   *
    * `score_threshold`
    * : (float) When Model detects objects on the image,
    *   it will only produce bounding boxes which have at least this
    *   confidence score. Value in 0 to 1 range, default is 0.5.
+   *
    * `max_bounding_box_count`
    * : (int64) The maximum number of bounding
    *   boxes returned per image. The default is 100, the
    *   number of bounding boxes returned might be limited by the server.
    * AutoML Video Intelligence Classification
+   *
    * `score_threshold`
    * : (float) A value from 0.0 to 1.0. When the model
    *   makes predictions for a video, it will only produce results that
    *   have at least this confidence score. The default is 0.5.
+   *
    * `segment_classification`
    * : (boolean) Set to true to request
    *   segment-level classification. AutoML Video Intelligence returns
    *   labels and their confidence scores for the entire segment of the
    *   video that user specified in the request configuration.
    *   The default is true.
+   *
    * `shot_classification`
    * : (boolean) Set to true to request shot-level
    *   classification. AutoML Video Intelligence determines the boundaries
@@ -332,27 +379,34 @@ public interface BatchPredictRequestOrBuilder
    *   then returns labels and their confidence scores for each detected
    *   shot, along with the start and end time of the shot.
    *   The default is false.
+   *
    *   WARNING: Model evaluation is not done for this classification type,
    *   the quality of it depends on training data, but there are no metrics
    *   provided to describe that quality.
+   *
    * `1s_interval_classification`
    * : (boolean) Set to true to request
    *   classification for a video at one-second intervals. AutoML Video
    *   Intelligence returns labels and their confidence scores for each
    *   second of the entire segment of the video that user specified in the
    *   request configuration. The default is false.
+   *
    *   WARNING: Model evaluation is not done for this classification
    *   type, the quality of it depends on training data, but there are no
    *   metrics provided to describe that quality.
+   *
    * AutoML Video Intelligence Object Tracking
+   *
    * `score_threshold`
    * : (float) When Model detects objects on video frames,
    *   it will only produce bounding boxes which have at least this
    *   confidence score. Value in 0 to 1 range, default is 0.5.
+   *
    * `max_bounding_box_count`
    * : (int64) The maximum number of bounding
    *   boxes returned per image. The default is 100, the
    *   number of bounding boxes returned might be limited by the server.
+   *
    * `min_bounding_box_size`
    * : (float) Only bounding boxes with shortest edge
    *   at least that long as a relative value of video frame size are
@@ -368,36 +422,47 @@ public interface BatchPredictRequestOrBuilder
    * <pre>
    * Additional domain-specific parameters for the predictions, any string must
    * be up to 25000 characters long.
+   *
    * AutoML Natural Language Classification
+   *
    * `score_threshold`
    * : (float) A value from 0.0 to 1.0. When the model
    *   makes predictions for a text snippet, it will only produce results
    *   that have at least this confidence score. The default is 0.5.
+   *
+   *
    * AutoML Vision Classification
+   *
    * `score_threshold`
    * : (float) A value from 0.0 to 1.0. When the model
    *   makes predictions for an image, it will only produce results that
    *   have at least this confidence score. The default is 0.5.
+   *
    * AutoML Vision Object Detection
+   *
    * `score_threshold`
    * : (float) When Model detects objects on the image,
    *   it will only produce bounding boxes which have at least this
    *   confidence score. Value in 0 to 1 range, default is 0.5.
+   *
    * `max_bounding_box_count`
    * : (int64) The maximum number of bounding
    *   boxes returned per image. The default is 100, the
    *   number of bounding boxes returned might be limited by the server.
    * AutoML Video Intelligence Classification
+   *
    * `score_threshold`
    * : (float) A value from 0.0 to 1.0. When the model
    *   makes predictions for a video, it will only produce results that
    *   have at least this confidence score. The default is 0.5.
+   *
    * `segment_classification`
    * : (boolean) Set to true to request
    *   segment-level classification. AutoML Video Intelligence returns
    *   labels and their confidence scores for the entire segment of the
    *   video that user specified in the request configuration.
    *   The default is true.
+   *
    * `shot_classification`
    * : (boolean) Set to true to request shot-level
    *   classification. AutoML Video Intelligence determines the boundaries
@@ -406,27 +471,34 @@ public interface BatchPredictRequestOrBuilder
    *   then returns labels and their confidence scores for each detected
    *   shot, along with the start and end time of the shot.
    *   The default is false.
+   *
    *   WARNING: Model evaluation is not done for this classification type,
    *   the quality of it depends on training data, but there are no metrics
    *   provided to describe that quality.
+   *
    * `1s_interval_classification`
    * : (boolean) Set to true to request
    *   classification for a video at one-second intervals. AutoML Video
    *   Intelligence returns labels and their confidence scores for each
    *   second of the entire segment of the video that user specified in the
    *   request configuration. The default is false.
+   *
    *   WARNING: Model evaluation is not done for this classification
    *   type, the quality of it depends on training data, but there are no
    *   metrics provided to describe that quality.
+   *
    * AutoML Video Intelligence Object Tracking
+   *
    * `score_threshold`
    * : (float) When Model detects objects on video frames,
    *   it will only produce bounding boxes which have at least this
    *   confidence score. Value in 0 to 1 range, default is 0.5.
+   *
    * `max_bounding_box_count`
    * : (int64) The maximum number of bounding
    *   boxes returned per image. The default is 100, the
    *   number of bounding boxes returned might be limited by the server.
+   *
    * `min_bounding_box_size`
    * : (float) Only bounding boxes with shortest edge
    *   at least that long as a relative value of video frame size are
@@ -446,36 +518,47 @@ public interface BatchPredictRequestOrBuilder
    * <pre>
    * Additional domain-specific parameters for the predictions, any string must
    * be up to 25000 characters long.
+   *
    * AutoML Natural Language Classification
+   *
    * `score_threshold`
    * : (float) A value from 0.0 to 1.0. When the model
    *   makes predictions for a text snippet, it will only produce results
    *   that have at least this confidence score. The default is 0.5.
+   *
+   *
    * AutoML Vision Classification
+   *
    * `score_threshold`
    * : (float) A value from 0.0 to 1.0. When the model
    *   makes predictions for an image, it will only produce results that
    *   have at least this confidence score. The default is 0.5.
+   *
    * AutoML Vision Object Detection
+   *
    * `score_threshold`
    * : (float) When Model detects objects on the image,
    *   it will only produce bounding boxes which have at least this
    *   confidence score. Value in 0 to 1 range, default is 0.5.
+   *
    * `max_bounding_box_count`
    * : (int64) The maximum number of bounding
    *   boxes returned per image. The default is 100, the
    *   number of bounding boxes returned might be limited by the server.
    * AutoML Video Intelligence Classification
+   *
    * `score_threshold`
    * : (float) A value from 0.0 to 1.0. When the model
    *   makes predictions for a video, it will only produce results that
    *   have at least this confidence score. The default is 0.5.
+   *
    * `segment_classification`
    * : (boolean) Set to true to request
    *   segment-level classification. AutoML Video Intelligence returns
    *   labels and their confidence scores for the entire segment of the
    *   video that user specified in the request configuration.
    *   The default is true.
+   *
    * `shot_classification`
    * : (boolean) Set to true to request shot-level
    *   classification. AutoML Video Intelligence determines the boundaries
@@ -484,27 +567,34 @@ public interface BatchPredictRequestOrBuilder
    *   then returns labels and their confidence scores for each detected
    *   shot, along with the start and end time of the shot.
    *   The default is false.
+   *
    *   WARNING: Model evaluation is not done for this classification type,
    *   the quality of it depends on training data, but there are no metrics
    *   provided to describe that quality.
+   *
    * `1s_interval_classification`
    * : (boolean) Set to true to request
    *   classification for a video at one-second intervals. AutoML Video
    *   Intelligence returns labels and their confidence scores for each
    *   second of the entire segment of the video that user specified in the
    *   request configuration. The default is false.
+   *
    *   WARNING: Model evaluation is not done for this classification
    *   type, the quality of it depends on training data, but there are no
    *   metrics provided to describe that quality.
+   *
    * AutoML Video Intelligence Object Tracking
+   *
    * `score_threshold`
    * : (float) When Model detects objects on video frames,
    *   it will only produce bounding boxes which have at least this
    *   confidence score. Value in 0 to 1 range, default is 0.5.
+   *
    * `max_bounding_box_count`
    * : (int64) The maximum number of bounding
    *   boxes returned per image. The default is 100, the
    *   number of bounding boxes returned might be limited by the server.
+   *
    * `min_bounding_box_size`
    * : (float) Only bounding boxes with shortest edge
    *   at least that long as a relative value of video frame size are

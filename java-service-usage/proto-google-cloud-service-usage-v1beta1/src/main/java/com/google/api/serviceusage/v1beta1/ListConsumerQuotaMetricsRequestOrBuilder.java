@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ public interface ListConsumerQuotaMetricsRequestOrBuilder
    *
    * <pre>
    * Parent of the quotas resource.
+   *
    * Some example names would be:
    * `projects/123/services/serviceconsumermanagement.googleapis.com`
    * `folders/345/services/serviceconsumermanagement.googleapis.com`
@@ -44,6 +45,7 @@ public interface ListConsumerQuotaMetricsRequestOrBuilder
    *
    * <pre>
    * Parent of the quotas resource.
+   *
    * Some example names would be:
    * `projects/123/services/serviceconsumermanagement.googleapis.com`
    * `folders/345/services/serviceconsumermanagement.googleapis.com`

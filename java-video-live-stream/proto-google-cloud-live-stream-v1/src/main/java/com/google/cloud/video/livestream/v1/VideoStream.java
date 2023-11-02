@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,11 +43,6 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new VideoStream();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -122,6 +117,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The video bitrate in bits per second. Minimum value is 10,000.
+     *
      * - For SD resolution (&lt; 720p), must be &lt;= 3,000,000 (3 Mbps).
      * - For HD resolution (&lt;= 1080p), must be &lt;= 15,000,000 (15 Mbps).
      * </pre>
@@ -189,6 +185,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * and
      * [segment_duration][google.cloud.video.livestream.v1.SegmentSettings.segment_duration]
      * must be divisible by `gopDuration`. Valid range is [2s, 20s].
+     *
      * All video streams in the same channel must have the same GOP size.
      * </pre>
      *
@@ -207,6 +204,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * and
      * [segment_duration][google.cloud.video.livestream.v1.SegmentSettings.segment_duration]
      * must be divisible by `gopDuration`. Valid range is [2s, 20s].
+     *
      * All video streams in the same channel must have the same GOP size.
      * </pre>
      *
@@ -225,6 +223,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * and
      * [segment_duration][google.cloud.video.livestream.v1.SegmentSettings.segment_duration]
      * must be divisible by `gopDuration`. Valid range is [2s, 20s].
+     *
      * All video streams in the same channel must have the same GOP size.
      * </pre>
      *
@@ -267,7 +266,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The entropy coder to use. The default is `cabac`.
+     *
      * Supported entropy coders:
+     *
      * - `cavlc`
      * - `cabac`
      * </pre>
@@ -282,7 +283,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The entropy coder to use. The default is `cabac`.
+     *
      * Supported entropy coders:
+     *
      * - `cavlc`
      * - `cabac`
      * </pre>
@@ -344,9 +347,11 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Enforces the specified codec profile. The following profiles are
      * supported:
+     *
      * *   `baseline`
      * *   `main` (default)
      * *   `high`
+     *
      * The available options are [FFmpeg-compatible Profile
      * Options](https://trac.ffmpeg.org/wiki/Encode/H.264#Profile).
      * Note that certain values for this field may cause the
@@ -366,9 +371,11 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Enforces the specified codec profile. The following profiles are
      * supported:
+     *
      * *   `baseline`
      * *   `main` (default)
      * *   `high`
+     *
      * The available options are [FFmpeg-compatible Profile
      * Options](https://trac.ffmpeg.org/wiki/Encode/H.264#Profile).
      * Note that certain values for this field may cause the
@@ -420,8 +427,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getTuneBytes();
 
-    public com.google.cloud.video.livestream.v1.VideoStream.H264CodecSettings.GopModeCase
-        getGopModeCase();
+    com.google.cloud.video.livestream.v1.VideoStream.H264CodecSettings.GopModeCase getGopModeCase();
   }
   /**
    *
@@ -454,11 +460,6 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       return new H264CodecSettings();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.video.livestream.v1.OutputsProto
           .internal_static_google_cloud_video_livestream_v1_VideoStream_H264CodecSettings_descriptor;
@@ -475,6 +476,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int gopModeCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object gopMode_;
 
     public enum GopModeCase
@@ -590,6 +593,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The video bitrate in bits per second. Minimum value is 10,000.
+     *
      * - For SD resolution (&lt; 720p), must be &lt;= 3,000,000 (3 Mbps).
      * - For HD resolution (&lt;= 1080p), must be &lt;= 15,000,000 (15 Mbps).
      * </pre>
@@ -676,6 +680,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * and
      * [segment_duration][google.cloud.video.livestream.v1.SegmentSettings.segment_duration]
      * must be divisible by `gopDuration`. Valid range is [2s, 20s].
+     *
      * All video streams in the same channel must have the same GOP size.
      * </pre>
      *
@@ -697,6 +702,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * and
      * [segment_duration][google.cloud.video.livestream.v1.SegmentSettings.segment_duration]
      * must be divisible by `gopDuration`. Valid range is [2s, 20s].
+     *
      * All video streams in the same channel must have the same GOP size.
      * </pre>
      *
@@ -721,6 +727,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * and
      * [segment_duration][google.cloud.video.livestream.v1.SegmentSettings.segment_duration]
      * must be divisible by `gopDuration`. Valid range is [2s, 20s].
+     *
      * All video streams in the same channel must have the same GOP size.
      * </pre>
      *
@@ -783,7 +790,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The entropy coder to use. The default is `cabac`.
+     *
      * Supported entropy coders:
+     *
      * - `cavlc`
      * - `cabac`
      * </pre>
@@ -809,7 +818,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The entropy coder to use. The default is `cabac`.
+     *
      * Supported entropy coders:
+     *
      * - `cavlc`
      * - `cabac`
      * </pre>
@@ -901,9 +912,11 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Enforces the specified codec profile. The following profiles are
      * supported:
+     *
      * *   `baseline`
      * *   `main` (default)
      * *   `high`
+     *
      * The available options are [FFmpeg-compatible Profile
      * Options](https://trac.ffmpeg.org/wiki/Encode/H.264#Profile).
      * Note that certain values for this field may cause the
@@ -934,9 +947,11 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Enforces the specified codec profile. The following profiles are
      * supported:
+     *
      * *   `baseline`
      * *   `main` (default)
      * *   `high`
+     *
      * The available options are [FFmpeg-compatible Profile
      * Options](https://trac.ffmpeg.org/wiki/Encode/H.264#Profile).
      * Note that certain values for this field may cause the
@@ -1941,6 +1956,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required. The video bitrate in bits per second. Minimum value is 10,000.
+       *
        * - For SD resolution (&lt; 720p), must be &lt;= 3,000,000 (3 Mbps).
        * - For HD resolution (&lt;= 1080p), must be &lt;= 15,000,000 (15 Mbps).
        * </pre>
@@ -1958,6 +1974,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required. The video bitrate in bits per second. Minimum value is 10,000.
+       *
        * - For SD resolution (&lt; 720p), must be &lt;= 3,000,000 (3 Mbps).
        * - For HD resolution (&lt;= 1080p), must be &lt;= 15,000,000 (15 Mbps).
        * </pre>
@@ -1979,6 +1996,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required. The video bitrate in bits per second. Minimum value is 10,000.
+       *
        * - For SD resolution (&lt; 720p), must be &lt;= 3,000,000 (3 Mbps).
        * - For HD resolution (&lt;= 1080p), must be &lt;= 15,000,000 (15 Mbps).
        * </pre>
@@ -2151,6 +2169,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * and
        * [segment_duration][google.cloud.video.livestream.v1.SegmentSettings.segment_duration]
        * must be divisible by `gopDuration`. Valid range is [2s, 20s].
+       *
        * All video streams in the same channel must have the same GOP size.
        * </pre>
        *
@@ -2172,6 +2191,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * and
        * [segment_duration][google.cloud.video.livestream.v1.SegmentSettings.segment_duration]
        * must be divisible by `gopDuration`. Valid range is [2s, 20s].
+       *
        * All video streams in the same channel must have the same GOP size.
        * </pre>
        *
@@ -2203,6 +2223,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * and
        * [segment_duration][google.cloud.video.livestream.v1.SegmentSettings.segment_duration]
        * must be divisible by `gopDuration`. Valid range is [2s, 20s].
+       *
        * All video streams in the same channel must have the same GOP size.
        * </pre>
        *
@@ -2231,6 +2252,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * and
        * [segment_duration][google.cloud.video.livestream.v1.SegmentSettings.segment_duration]
        * must be divisible by `gopDuration`. Valid range is [2s, 20s].
+       *
        * All video streams in the same channel must have the same GOP size.
        * </pre>
        *
@@ -2256,6 +2278,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * and
        * [segment_duration][google.cloud.video.livestream.v1.SegmentSettings.segment_duration]
        * must be divisible by `gopDuration`. Valid range is [2s, 20s].
+       *
        * All video streams in the same channel must have the same GOP size.
        * </pre>
        *
@@ -2292,6 +2315,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * and
        * [segment_duration][google.cloud.video.livestream.v1.SegmentSettings.segment_duration]
        * must be divisible by `gopDuration`. Valid range is [2s, 20s].
+       *
        * All video streams in the same channel must have the same GOP size.
        * </pre>
        *
@@ -2323,6 +2347,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * and
        * [segment_duration][google.cloud.video.livestream.v1.SegmentSettings.segment_duration]
        * must be divisible by `gopDuration`. Valid range is [2s, 20s].
+       *
        * All video streams in the same channel must have the same GOP size.
        * </pre>
        *
@@ -2341,6 +2366,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * and
        * [segment_duration][google.cloud.video.livestream.v1.SegmentSettings.segment_duration]
        * must be divisible by `gopDuration`. Valid range is [2s, 20s].
+       *
        * All video streams in the same channel must have the same GOP size.
        * </pre>
        *
@@ -2367,6 +2393,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * and
        * [segment_duration][google.cloud.video.livestream.v1.SegmentSettings.segment_duration]
        * must be divisible by `gopDuration`. Valid range is [2s, 20s].
+       *
        * All video streams in the same channel must have the same GOP size.
        * </pre>
        *
@@ -2518,7 +2545,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The entropy coder to use. The default is `cabac`.
+       *
        * Supported entropy coders:
+       *
        * - `cavlc`
        * - `cabac`
        * </pre>
@@ -2543,7 +2572,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The entropy coder to use. The default is `cabac`.
+       *
        * Supported entropy coders:
+       *
        * - `cavlc`
        * - `cabac`
        * </pre>
@@ -2568,7 +2599,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The entropy coder to use. The default is `cabac`.
+       *
        * Supported entropy coders:
+       *
        * - `cavlc`
        * - `cabac`
        * </pre>
@@ -2592,7 +2625,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The entropy coder to use. The default is `cabac`.
+       *
        * Supported entropy coders:
+       *
        * - `cavlc`
        * - `cabac`
        * </pre>
@@ -2612,7 +2647,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The entropy coder to use. The default is `cabac`.
+       *
        * Supported entropy coders:
+       *
        * - `cavlc`
        * - `cabac`
        * </pre>
@@ -2817,9 +2854,11 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Enforces the specified codec profile. The following profiles are
        * supported:
+       *
        * *   `baseline`
        * *   `main` (default)
        * *   `high`
+       *
        * The available options are [FFmpeg-compatible Profile
        * Options](https://trac.ffmpeg.org/wiki/Encode/H.264#Profile).
        * Note that certain values for this field may cause the
@@ -2849,9 +2888,11 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Enforces the specified codec profile. The following profiles are
        * supported:
+       *
        * *   `baseline`
        * *   `main` (default)
        * *   `high`
+       *
        * The available options are [FFmpeg-compatible Profile
        * Options](https://trac.ffmpeg.org/wiki/Encode/H.264#Profile).
        * Note that certain values for this field may cause the
@@ -2881,9 +2922,11 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Enforces the specified codec profile. The following profiles are
        * supported:
+       *
        * *   `baseline`
        * *   `main` (default)
        * *   `high`
+       *
        * The available options are [FFmpeg-compatible Profile
        * Options](https://trac.ffmpeg.org/wiki/Encode/H.264#Profile).
        * Note that certain values for this field may cause the
@@ -2912,9 +2955,11 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Enforces the specified codec profile. The following profiles are
        * supported:
+       *
        * *   `baseline`
        * *   `main` (default)
        * *   `high`
+       *
        * The available options are [FFmpeg-compatible Profile
        * Options](https://trac.ffmpeg.org/wiki/Encode/H.264#Profile).
        * Note that certain values for this field may cause the
@@ -2939,9 +2984,11 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Enforces the specified codec profile. The following profiles are
        * supported:
+       *
        * *   `baseline`
        * *   `main` (default)
        * *   `high`
+       *
        * The available options are [FFmpeg-compatible Profile
        * Options](https://trac.ffmpeg.org/wiki/Encode/H.264#Profile).
        * Note that certain values for this field may cause the
@@ -3170,6 +3217,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int codecSettingsCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object codecSettings_;
 
   public enum CodecSettingsCase

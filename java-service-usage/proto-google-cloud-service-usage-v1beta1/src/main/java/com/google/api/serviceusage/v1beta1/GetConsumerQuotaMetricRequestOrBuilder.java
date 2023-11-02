@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ public interface GetConsumerQuotaMetricRequestOrBuilder
    *
    * <pre>
    * The resource name of the quota limit.
+   *
    * An example name would be:
    * `projects/123/services/serviceusage.googleapis.com/quotas/metrics/serviceusage.googleapis.com%2Fmutate_requests`
    * </pre>
@@ -42,6 +43,7 @@ public interface GetConsumerQuotaMetricRequestOrBuilder
    *
    * <pre>
    * The resource name of the quota limit.
+   *
    * An example name would be:
    * `projects/123/services/serviceusage.googleapis.com/quotas/metrics/serviceusage.googleapis.com%2Fmutate_requests`
    * </pre>

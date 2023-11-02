@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,23 +40,25 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
   private RouteInfo() {
     routeType_ = 0;
     nextHopType_ = 0;
+    routeScope_ = 0;
     displayName_ = "";
     uri_ = "";
     destIpRange_ = "";
     nextHop_ = "";
     networkUri_ = "";
-    instanceTags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    instanceTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    srcIpRange_ = "";
+    destPortRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    srcPortRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    protocols_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    nccHubUri_ = "";
+    nccSpokeUri_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new RouteInfo();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -155,6 +157,16 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>PEERING_DYNAMIC = 6;</code>
      */
     PEERING_DYNAMIC(6),
+    /**
+     *
+     *
+     * <pre>
+     * Policy based route.
+     * </pre>
+     *
+     * <code>POLICY_BASED = 7;</code>
+     */
+    POLICY_BASED(7),
     UNRECOGNIZED(-1),
     ;
 
@@ -229,6 +241,16 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>PEERING_DYNAMIC = 6;</code>
      */
     public static final int PEERING_DYNAMIC_VALUE = 6;
+    /**
+     *
+     *
+     * <pre>
+     * Policy based route.
+     * </pre>
+     *
+     * <code>POLICY_BASED = 7;</code>
+     */
+    public static final int POLICY_BASED_VALUE = 7;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -268,6 +290,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
           return PEERING_STATIC;
         case 6:
           return PEERING_DYNAMIC;
+        case 7:
+          return POLICY_BASED;
         default:
           return null;
       }
@@ -457,6 +481,16 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>NEXT_HOP_ROUTER_APPLIANCE = 11;</code>
      */
     NEXT_HOP_ROUTER_APPLIANCE(11),
+    /**
+     *
+     *
+     * <pre>
+     * Next hop is an NCC hub.
+     * </pre>
+     *
+     * <code>NEXT_HOP_NCC_HUB = 12;</code>
+     */
+    NEXT_HOP_NCC_HUB(12),
     UNRECOGNIZED(-1),
     ;
 
@@ -586,6 +620,16 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>NEXT_HOP_ROUTER_APPLIANCE = 11;</code>
      */
     public static final int NEXT_HOP_ROUTER_APPLIANCE_VALUE = 11;
+    /**
+     *
+     *
+     * <pre>
+     * Next hop is an NCC hub.
+     * </pre>
+     *
+     * <code>NEXT_HOP_NCC_HUB = 12;</code>
+     */
+    public static final int NEXT_HOP_NCC_HUB_VALUE = 12;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -635,6 +679,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
           return NEXT_HOP_ILB;
         case 11:
           return NEXT_HOP_ROUTER_APPLIANCE;
+        case 12:
+          return NEXT_HOP_NCC_HUB;
         default:
           return null;
       }
@@ -688,6 +734,164 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.networkmanagement.v1.RouteInfo.NextHopType)
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * Indicates where routes are applicable.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.networkmanagement.v1.RouteInfo.RouteScope}
+   */
+  public enum RouteScope implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified scope. Default value.
+     * </pre>
+     *
+     * <code>ROUTE_SCOPE_UNSPECIFIED = 0;</code>
+     */
+    ROUTE_SCOPE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Route is applicable to packets in Network.
+     * </pre>
+     *
+     * <code>NETWORK = 1;</code>
+     */
+    NETWORK(1),
+    /**
+     *
+     *
+     * <pre>
+     * Route is applicable to packets using NCC Hub's routing table.
+     * </pre>
+     *
+     * <code>NCC_HUB = 2;</code>
+     */
+    NCC_HUB(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified scope. Default value.
+     * </pre>
+     *
+     * <code>ROUTE_SCOPE_UNSPECIFIED = 0;</code>
+     */
+    public static final int ROUTE_SCOPE_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Route is applicable to packets in Network.
+     * </pre>
+     *
+     * <code>NETWORK = 1;</code>
+     */
+    public static final int NETWORK_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Route is applicable to packets using NCC Hub's routing table.
+     * </pre>
+     *
+     * <code>NCC_HUB = 2;</code>
+     */
+    public static final int NCC_HUB_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static RouteScope valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static RouteScope forNumber(int value) {
+      switch (value) {
+        case 0:
+          return ROUTE_SCOPE_UNSPECIFIED;
+        case 1:
+          return NETWORK;
+        case 2:
+          return NCC_HUB;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<RouteScope> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<RouteScope> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<RouteScope>() {
+          public RouteScope findValueByNumber(int number) {
+            return RouteScope.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.networkmanagement.v1.RouteInfo.getDescriptor().getEnumTypes().get(2);
+    }
+
+    private static final RouteScope[] VALUES = values();
+
+    public static RouteScope valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private RouteScope(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.networkmanagement.v1.RouteInfo.RouteScope)
+  }
+
+  private int bitField0_;
   public static final int ROUTE_TYPE_FIELD_NUMBER = 8;
   private int routeType_ = 0;
   /**
@@ -762,6 +966,43 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
         : result;
   }
 
+  public static final int ROUTE_SCOPE_FIELD_NUMBER = 14;
+  private int routeScope_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Indicates where route is applicable.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1.RouteInfo.RouteScope route_scope = 14;</code>
+   *
+   * @return The enum numeric value on the wire for routeScope.
+   */
+  @java.lang.Override
+  public int getRouteScopeValue() {
+    return routeScope_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Indicates where route is applicable.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1.RouteInfo.RouteScope route_scope = 14;</code>
+   *
+   * @return The routeScope.
+   */
+  @java.lang.Override
+  public com.google.cloud.networkmanagement.v1.RouteInfo.RouteScope getRouteScope() {
+    com.google.cloud.networkmanagement.v1.RouteInfo.RouteScope result =
+        com.google.cloud.networkmanagement.v1.RouteInfo.RouteScope.forNumber(routeScope_);
+    return result == null
+        ? com.google.cloud.networkmanagement.v1.RouteInfo.RouteScope.UNRECOGNIZED
+        : result;
+  }
+
   public static final int DISPLAY_NAME_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -770,7 +1011,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Name of a Compute Engine route.
+   * Name of a route.
    * </pre>
    *
    * <code>string display_name = 1;</code>
@@ -793,7 +1034,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Name of a Compute Engine route.
+   * Name of a route.
    * </pre>
    *
    * <code>string display_name = 1;</code>
@@ -821,10 +1062,10 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * URI of a Compute Engine route.
-   * Dynamic route from cloud router does not have a URI.
+   * URI of a route.
+   * Dynamic, peering static and peering dynamic routes do not have an URI.
    * Advertised route from Google Cloud VPC to on-premises network also does
-   * not have a URI.
+   * not have an URI.
    * </pre>
    *
    * <code>string uri = 2;</code>
@@ -847,10 +1088,10 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * URI of a Compute Engine route.
-   * Dynamic route from cloud router does not have a URI.
+   * URI of a route.
+   * Dynamic, peering static and peering dynamic routes do not have an URI.
    * Advertised route from Google Cloud VPC to on-premises network also does
-   * not have a URI.
+   * not have an URI.
    * </pre>
    *
    * <code>string uri = 2;</code>
@@ -980,7 +1221,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * URI of a Compute Engine network.
+   * URI of a Compute Engine network. NETWORK routes only.
    * </pre>
    *
    * <code>string network_uri = 5;</code>
@@ -1003,7 +1244,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * URI of a Compute Engine network.
+   * URI of a Compute Engine network. NETWORK routes only.
    * </pre>
    *
    * <code>string network_uri = 5;</code>
@@ -1044,7 +1285,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
   public static final int INSTANCE_TAGS_FIELD_NUMBER = 7;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList instanceTags_;
+  private com.google.protobuf.LazyStringArrayList instanceTags_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -1104,6 +1346,381 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
     return instanceTags_.getByteString(index);
   }
 
+  public static final int SRC_IP_RANGE_FIELD_NUMBER = 10;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object srcIpRange_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Source IP address range of the route. Policy based routes only.
+   * </pre>
+   *
+   * <code>string src_ip_range = 10;</code>
+   *
+   * @return The srcIpRange.
+   */
+  @java.lang.Override
+  public java.lang.String getSrcIpRange() {
+    java.lang.Object ref = srcIpRange_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      srcIpRange_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Source IP address range of the route. Policy based routes only.
+   * </pre>
+   *
+   * <code>string src_ip_range = 10;</code>
+   *
+   * @return The bytes for srcIpRange.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getSrcIpRangeBytes() {
+    java.lang.Object ref = srcIpRange_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      srcIpRange_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int DEST_PORT_RANGES_FIELD_NUMBER = 11;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList destPortRanges_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   *
+   *
+   * <pre>
+   * Destination port ranges of the route. Policy based routes only.
+   * </pre>
+   *
+   * <code>repeated string dest_port_ranges = 11;</code>
+   *
+   * @return A list containing the destPortRanges.
+   */
+  public com.google.protobuf.ProtocolStringList getDestPortRangesList() {
+    return destPortRanges_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Destination port ranges of the route. Policy based routes only.
+   * </pre>
+   *
+   * <code>repeated string dest_port_ranges = 11;</code>
+   *
+   * @return The count of destPortRanges.
+   */
+  public int getDestPortRangesCount() {
+    return destPortRanges_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Destination port ranges of the route. Policy based routes only.
+   * </pre>
+   *
+   * <code>repeated string dest_port_ranges = 11;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The destPortRanges at the given index.
+   */
+  public java.lang.String getDestPortRanges(int index) {
+    return destPortRanges_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Destination port ranges of the route. Policy based routes only.
+   * </pre>
+   *
+   * <code>repeated string dest_port_ranges = 11;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the destPortRanges at the given index.
+   */
+  public com.google.protobuf.ByteString getDestPortRangesBytes(int index) {
+    return destPortRanges_.getByteString(index);
+  }
+
+  public static final int SRC_PORT_RANGES_FIELD_NUMBER = 12;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList srcPortRanges_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   *
+   *
+   * <pre>
+   * Source port ranges of the route. Policy based routes only.
+   * </pre>
+   *
+   * <code>repeated string src_port_ranges = 12;</code>
+   *
+   * @return A list containing the srcPortRanges.
+   */
+  public com.google.protobuf.ProtocolStringList getSrcPortRangesList() {
+    return srcPortRanges_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Source port ranges of the route. Policy based routes only.
+   * </pre>
+   *
+   * <code>repeated string src_port_ranges = 12;</code>
+   *
+   * @return The count of srcPortRanges.
+   */
+  public int getSrcPortRangesCount() {
+    return srcPortRanges_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Source port ranges of the route. Policy based routes only.
+   * </pre>
+   *
+   * <code>repeated string src_port_ranges = 12;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The srcPortRanges at the given index.
+   */
+  public java.lang.String getSrcPortRanges(int index) {
+    return srcPortRanges_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Source port ranges of the route. Policy based routes only.
+   * </pre>
+   *
+   * <code>repeated string src_port_ranges = 12;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the srcPortRanges at the given index.
+   */
+  public com.google.protobuf.ByteString getSrcPortRangesBytes(int index) {
+    return srcPortRanges_.getByteString(index);
+  }
+
+  public static final int PROTOCOLS_FIELD_NUMBER = 13;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList protocols_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   *
+   *
+   * <pre>
+   * Protocols of the route. Policy based routes only.
+   * </pre>
+   *
+   * <code>repeated string protocols = 13;</code>
+   *
+   * @return A list containing the protocols.
+   */
+  public com.google.protobuf.ProtocolStringList getProtocolsList() {
+    return protocols_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Protocols of the route. Policy based routes only.
+   * </pre>
+   *
+   * <code>repeated string protocols = 13;</code>
+   *
+   * @return The count of protocols.
+   */
+  public int getProtocolsCount() {
+    return protocols_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Protocols of the route. Policy based routes only.
+   * </pre>
+   *
+   * <code>repeated string protocols = 13;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The protocols at the given index.
+   */
+  public java.lang.String getProtocols(int index) {
+    return protocols_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Protocols of the route. Policy based routes only.
+   * </pre>
+   *
+   * <code>repeated string protocols = 13;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the protocols at the given index.
+   */
+  public com.google.protobuf.ByteString getProtocolsBytes(int index) {
+    return protocols_.getByteString(index);
+  }
+
+  public static final int NCC_HUB_URI_FIELD_NUMBER = 15;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object nccHubUri_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * URI of a NCC Hub. NCC_HUB routes only.
+   * </pre>
+   *
+   * <code>optional string ncc_hub_uri = 15;</code>
+   *
+   * @return Whether the nccHubUri field is set.
+   */
+  @java.lang.Override
+  public boolean hasNccHubUri() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * URI of a NCC Hub. NCC_HUB routes only.
+   * </pre>
+   *
+   * <code>optional string ncc_hub_uri = 15;</code>
+   *
+   * @return The nccHubUri.
+   */
+  @java.lang.Override
+  public java.lang.String getNccHubUri() {
+    java.lang.Object ref = nccHubUri_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      nccHubUri_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * URI of a NCC Hub. NCC_HUB routes only.
+   * </pre>
+   *
+   * <code>optional string ncc_hub_uri = 15;</code>
+   *
+   * @return The bytes for nccHubUri.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getNccHubUriBytes() {
+    java.lang.Object ref = nccHubUri_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      nccHubUri_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int NCC_SPOKE_URI_FIELD_NUMBER = 16;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object nccSpokeUri_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * URI of a NCC Spoke. NCC_HUB routes only.
+   * </pre>
+   *
+   * <code>optional string ncc_spoke_uri = 16;</code>
+   *
+   * @return Whether the nccSpokeUri field is set.
+   */
+  @java.lang.Override
+  public boolean hasNccSpokeUri() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * URI of a NCC Spoke. NCC_HUB routes only.
+   * </pre>
+   *
+   * <code>optional string ncc_spoke_uri = 16;</code>
+   *
+   * @return The nccSpokeUri.
+   */
+  @java.lang.Override
+  public java.lang.String getNccSpokeUri() {
+    java.lang.Object ref = nccSpokeUri_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      nccSpokeUri_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * URI of a NCC Spoke. NCC_HUB routes only.
+   * </pre>
+   *
+   * <code>optional string ncc_spoke_uri = 16;</code>
+   *
+   * @return The bytes for nccSpokeUri.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getNccSpokeUriBytes() {
+    java.lang.Object ref = nccSpokeUri_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      nccSpokeUri_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1148,6 +1765,29 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
         != com.google.cloud.networkmanagement.v1.RouteInfo.NextHopType.NEXT_HOP_TYPE_UNSPECIFIED
             .getNumber()) {
       output.writeEnum(9, nextHopType_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(srcIpRange_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, srcIpRange_);
+    }
+    for (int i = 0; i < destPortRanges_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 11, destPortRanges_.getRaw(i));
+    }
+    for (int i = 0; i < srcPortRanges_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 12, srcPortRanges_.getRaw(i));
+    }
+    for (int i = 0; i < protocols_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 13, protocols_.getRaw(i));
+    }
+    if (routeScope_
+        != com.google.cloud.networkmanagement.v1.RouteInfo.RouteScope.ROUTE_SCOPE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(14, routeScope_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 15, nccHubUri_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 16, nccSpokeUri_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1194,6 +1834,44 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(9, nextHopType_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(srcIpRange_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, srcIpRange_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < destPortRanges_.size(); i++) {
+        dataSize += computeStringSizeNoTag(destPortRanges_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getDestPortRangesList().size();
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < srcPortRanges_.size(); i++) {
+        dataSize += computeStringSizeNoTag(srcPortRanges_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getSrcPortRangesList().size();
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < protocols_.size(); i++) {
+        dataSize += computeStringSizeNoTag(protocols_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getProtocolsList().size();
+    }
+    if (routeScope_
+        != com.google.cloud.networkmanagement.v1.RouteInfo.RouteScope.ROUTE_SCOPE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(14, routeScope_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, nccHubUri_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, nccSpokeUri_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1212,6 +1890,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
 
     if (routeType_ != other.routeType_) return false;
     if (nextHopType_ != other.nextHopType_) return false;
+    if (routeScope_ != other.routeScope_) return false;
     if (!getDisplayName().equals(other.getDisplayName())) return false;
     if (!getUri().equals(other.getUri())) return false;
     if (!getDestIpRange().equals(other.getDestIpRange())) return false;
@@ -1219,6 +1898,18 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
     if (!getNetworkUri().equals(other.getNetworkUri())) return false;
     if (getPriority() != other.getPriority()) return false;
     if (!getInstanceTagsList().equals(other.getInstanceTagsList())) return false;
+    if (!getSrcIpRange().equals(other.getSrcIpRange())) return false;
+    if (!getDestPortRangesList().equals(other.getDestPortRangesList())) return false;
+    if (!getSrcPortRangesList().equals(other.getSrcPortRangesList())) return false;
+    if (!getProtocolsList().equals(other.getProtocolsList())) return false;
+    if (hasNccHubUri() != other.hasNccHubUri()) return false;
+    if (hasNccHubUri()) {
+      if (!getNccHubUri().equals(other.getNccHubUri())) return false;
+    }
+    if (hasNccSpokeUri() != other.hasNccSpokeUri()) return false;
+    if (hasNccSpokeUri()) {
+      if (!getNccSpokeUri().equals(other.getNccSpokeUri())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1234,6 +1925,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + routeType_;
     hash = (37 * hash) + NEXT_HOP_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + nextHopType_;
+    hash = (37 * hash) + ROUTE_SCOPE_FIELD_NUMBER;
+    hash = (53 * hash) + routeScope_;
     hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getDisplayName().hashCode();
     hash = (37 * hash) + URI_FIELD_NUMBER;
@@ -1249,6 +1942,28 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
     if (getInstanceTagsCount() > 0) {
       hash = (37 * hash) + INSTANCE_TAGS_FIELD_NUMBER;
       hash = (53 * hash) + getInstanceTagsList().hashCode();
+    }
+    hash = (37 * hash) + SRC_IP_RANGE_FIELD_NUMBER;
+    hash = (53 * hash) + getSrcIpRange().hashCode();
+    if (getDestPortRangesCount() > 0) {
+      hash = (37 * hash) + DEST_PORT_RANGES_FIELD_NUMBER;
+      hash = (53 * hash) + getDestPortRangesList().hashCode();
+    }
+    if (getSrcPortRangesCount() > 0) {
+      hash = (37 * hash) + SRC_PORT_RANGES_FIELD_NUMBER;
+      hash = (53 * hash) + getSrcPortRangesList().hashCode();
+    }
+    if (getProtocolsCount() > 0) {
+      hash = (37 * hash) + PROTOCOLS_FIELD_NUMBER;
+      hash = (53 * hash) + getProtocolsList().hashCode();
+    }
+    if (hasNccHubUri()) {
+      hash = (37 * hash) + NCC_HUB_URI_FIELD_NUMBER;
+      hash = (53 * hash) + getNccHubUri().hashCode();
+    }
+    if (hasNccSpokeUri()) {
+      hash = (37 * hash) + NCC_SPOKE_URI_FIELD_NUMBER;
+      hash = (53 * hash) + getNccSpokeUri().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1391,14 +2106,20 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = 0;
       routeType_ = 0;
       nextHopType_ = 0;
+      routeScope_ = 0;
       displayName_ = "";
       uri_ = "";
       destIpRange_ = "";
       nextHop_ = "";
       networkUri_ = "";
       priority_ = 0;
-      instanceTags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000100);
+      instanceTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      srcIpRange_ = "";
+      destPortRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      srcPortRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      protocols_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      nccHubUri_ = "";
+      nccSpokeUri_ = "";
       return this;
     }
 
@@ -1426,21 +2147,11 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.networkmanagement.v1.RouteInfo buildPartial() {
       com.google.cloud.networkmanagement.v1.RouteInfo result =
           new com.google.cloud.networkmanagement.v1.RouteInfo(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(
-        com.google.cloud.networkmanagement.v1.RouteInfo result) {
-      if (((bitField0_ & 0x00000100) != 0)) {
-        instanceTags_ = instanceTags_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000100);
-      }
-      result.instanceTags_ = instanceTags_;
     }
 
     private void buildPartial0(com.google.cloud.networkmanagement.v1.RouteInfo result) {
@@ -1452,23 +2163,55 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
         result.nextHopType_ = nextHopType_;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.displayName_ = displayName_;
+        result.routeScope_ = routeScope_;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.uri_ = uri_;
+        result.displayName_ = displayName_;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.destIpRange_ = destIpRange_;
+        result.uri_ = uri_;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.nextHop_ = nextHop_;
+        result.destIpRange_ = destIpRange_;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.networkUri_ = networkUri_;
+        result.nextHop_ = nextHop_;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.networkUri_ = networkUri_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.priority_ = priority_;
       }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        instanceTags_.makeImmutable();
+        result.instanceTags_ = instanceTags_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.srcIpRange_ = srcIpRange_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        destPortRanges_.makeImmutable();
+        result.destPortRanges_ = destPortRanges_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        srcPortRanges_.makeImmutable();
+        result.srcPortRanges_ = srcPortRanges_;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        protocols_.makeImmutable();
+        result.protocols_ = protocols_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.nccHubUri_ = nccHubUri_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.nccSpokeUri_ = nccSpokeUri_;
+        to_bitField0_ |= 0x00000002;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -1523,29 +2266,32 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       if (other.nextHopType_ != 0) {
         setNextHopTypeValue(other.getNextHopTypeValue());
       }
+      if (other.routeScope_ != 0) {
+        setRouteScopeValue(other.getRouteScopeValue());
+      }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getUri().isEmpty()) {
         uri_ = other.uri_;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.getDestIpRange().isEmpty()) {
         destIpRange_ = other.destIpRange_;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (!other.getNextHop().isEmpty()) {
         nextHop_ = other.nextHop_;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (!other.getNetworkUri().isEmpty()) {
         networkUri_ = other.networkUri_;
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (other.getPriority() != 0) {
@@ -1554,11 +2300,56 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       if (!other.instanceTags_.isEmpty()) {
         if (instanceTags_.isEmpty()) {
           instanceTags_ = other.instanceTags_;
-          bitField0_ = (bitField0_ & ~0x00000100);
+          bitField0_ |= 0x00000200;
         } else {
           ensureInstanceTagsIsMutable();
           instanceTags_.addAll(other.instanceTags_);
         }
+        onChanged();
+      }
+      if (!other.getSrcIpRange().isEmpty()) {
+        srcIpRange_ = other.srcIpRange_;
+        bitField0_ |= 0x00000400;
+        onChanged();
+      }
+      if (!other.destPortRanges_.isEmpty()) {
+        if (destPortRanges_.isEmpty()) {
+          destPortRanges_ = other.destPortRanges_;
+          bitField0_ |= 0x00000800;
+        } else {
+          ensureDestPortRangesIsMutable();
+          destPortRanges_.addAll(other.destPortRanges_);
+        }
+        onChanged();
+      }
+      if (!other.srcPortRanges_.isEmpty()) {
+        if (srcPortRanges_.isEmpty()) {
+          srcPortRanges_ = other.srcPortRanges_;
+          bitField0_ |= 0x00001000;
+        } else {
+          ensureSrcPortRangesIsMutable();
+          srcPortRanges_.addAll(other.srcPortRanges_);
+        }
+        onChanged();
+      }
+      if (!other.protocols_.isEmpty()) {
+        if (protocols_.isEmpty()) {
+          protocols_ = other.protocols_;
+          bitField0_ |= 0x00002000;
+        } else {
+          ensureProtocolsIsMutable();
+          protocols_.addAll(other.protocols_);
+        }
+        onChanged();
+      }
+      if (other.hasNccHubUri()) {
+        nccHubUri_ = other.nccHubUri_;
+        bitField0_ |= 0x00004000;
+        onChanged();
+      }
+      if (other.hasNccSpokeUri()) {
+        nccSpokeUri_ = other.nccSpokeUri_;
+        bitField0_ |= 0x00008000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1590,37 +2381,37 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 displayName_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 10
             case 18:
               {
                 uri_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 18
             case 26:
               {
                 destIpRange_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 26
             case 34:
               {
                 nextHop_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 34
             case 42:
               {
                 networkUri_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 42
             case 48:
               {
                 priority_ = input.readInt32();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 48
             case 58:
@@ -1642,6 +2433,51 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000002;
                 break;
               } // case 72
+            case 82:
+              {
+                srcIpRange_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 82
+            case 90:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureDestPortRangesIsMutable();
+                destPortRanges_.add(s);
+                break;
+              } // case 90
+            case 98:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureSrcPortRangesIsMutable();
+                srcPortRanges_.add(s);
+                break;
+              } // case 98
+            case 106:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureProtocolsIsMutable();
+                protocols_.add(s);
+                break;
+              } // case 106
+            case 112:
+              {
+                routeScope_ = input.readEnum();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 112
+            case 122:
+              {
+                nccHubUri_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00004000;
+                break;
+              } // case 122
+            case 130:
+              {
+                nccSpokeUri_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00008000;
+                break;
+              } // case 130
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1846,12 +2682,104 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int routeScope_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Indicates where route is applicable.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1.RouteInfo.RouteScope route_scope = 14;</code>
+     *
+     * @return The enum numeric value on the wire for routeScope.
+     */
+    @java.lang.Override
+    public int getRouteScopeValue() {
+      return routeScope_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates where route is applicable.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1.RouteInfo.RouteScope route_scope = 14;</code>
+     *
+     * @param value The enum numeric value on the wire for routeScope to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRouteScopeValue(int value) {
+      routeScope_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates where route is applicable.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1.RouteInfo.RouteScope route_scope = 14;</code>
+     *
+     * @return The routeScope.
+     */
+    @java.lang.Override
+    public com.google.cloud.networkmanagement.v1.RouteInfo.RouteScope getRouteScope() {
+      com.google.cloud.networkmanagement.v1.RouteInfo.RouteScope result =
+          com.google.cloud.networkmanagement.v1.RouteInfo.RouteScope.forNumber(routeScope_);
+      return result == null
+          ? com.google.cloud.networkmanagement.v1.RouteInfo.RouteScope.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates where route is applicable.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1.RouteInfo.RouteScope route_scope = 14;</code>
+     *
+     * @param value The routeScope to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRouteScope(com.google.cloud.networkmanagement.v1.RouteInfo.RouteScope value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000004;
+      routeScope_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates where route is applicable.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1.RouteInfo.RouteScope route_scope = 14;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRouteScope() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      routeScope_ = 0;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object displayName_ = "";
     /**
      *
      *
      * <pre>
-     * Name of a Compute Engine route.
+     * Name of a route.
      * </pre>
      *
      * <code>string display_name = 1;</code>
@@ -1873,7 +2801,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of a Compute Engine route.
+     * Name of a route.
      * </pre>
      *
      * <code>string display_name = 1;</code>
@@ -1895,7 +2823,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of a Compute Engine route.
+     * Name of a route.
      * </pre>
      *
      * <code>string display_name = 1;</code>
@@ -1908,7 +2836,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       displayName_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1916,7 +2844,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of a Compute Engine route.
+     * Name of a route.
      * </pre>
      *
      * <code>string display_name = 1;</code>
@@ -1925,7 +2853,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearDisplayName() {
       displayName_ = getDefaultInstance().getDisplayName();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1933,7 +2861,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of a Compute Engine route.
+     * Name of a route.
      * </pre>
      *
      * <code>string display_name = 1;</code>
@@ -1947,7 +2875,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       displayName_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1957,10 +2885,10 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URI of a Compute Engine route.
-     * Dynamic route from cloud router does not have a URI.
+     * URI of a route.
+     * Dynamic, peering static and peering dynamic routes do not have an URI.
      * Advertised route from Google Cloud VPC to on-premises network also does
-     * not have a URI.
+     * not have an URI.
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -1982,10 +2910,10 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URI of a Compute Engine route.
-     * Dynamic route from cloud router does not have a URI.
+     * URI of a route.
+     * Dynamic, peering static and peering dynamic routes do not have an URI.
      * Advertised route from Google Cloud VPC to on-premises network also does
-     * not have a URI.
+     * not have an URI.
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -2007,10 +2935,10 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URI of a Compute Engine route.
-     * Dynamic route from cloud router does not have a URI.
+     * URI of a route.
+     * Dynamic, peering static and peering dynamic routes do not have an URI.
      * Advertised route from Google Cloud VPC to on-premises network also does
-     * not have a URI.
+     * not have an URI.
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -2023,7 +2951,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       uri_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2031,10 +2959,10 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URI of a Compute Engine route.
-     * Dynamic route from cloud router does not have a URI.
+     * URI of a route.
+     * Dynamic, peering static and peering dynamic routes do not have an URI.
      * Advertised route from Google Cloud VPC to on-premises network also does
-     * not have a URI.
+     * not have an URI.
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -2043,7 +2971,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearUri() {
       uri_ = getDefaultInstance().getUri();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -2051,10 +2979,10 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URI of a Compute Engine route.
-     * Dynamic route from cloud router does not have a URI.
+     * URI of a route.
+     * Dynamic, peering static and peering dynamic routes do not have an URI.
      * Advertised route from Google Cloud VPC to on-premises network also does
-     * not have a URI.
+     * not have an URI.
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -2068,7 +2996,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       uri_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2135,7 +3063,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       destIpRange_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2152,7 +3080,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearDestIpRange() {
       destIpRange_ = getDefaultInstance().getDestIpRange();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2174,7 +3102,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       destIpRange_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2241,7 +3169,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       nextHop_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2258,7 +3186,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearNextHop() {
       nextHop_ = getDefaultInstance().getNextHop();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -2280,7 +3208,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       nextHop_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2290,7 +3218,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URI of a Compute Engine network.
+     * URI of a Compute Engine network. NETWORK routes only.
      * </pre>
      *
      * <code>string network_uri = 5;</code>
@@ -2312,7 +3240,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URI of a Compute Engine network.
+     * URI of a Compute Engine network. NETWORK routes only.
      * </pre>
      *
      * <code>string network_uri = 5;</code>
@@ -2334,7 +3262,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URI of a Compute Engine network.
+     * URI of a Compute Engine network. NETWORK routes only.
      * </pre>
      *
      * <code>string network_uri = 5;</code>
@@ -2347,7 +3275,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       networkUri_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2355,7 +3283,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URI of a Compute Engine network.
+     * URI of a Compute Engine network. NETWORK routes only.
      * </pre>
      *
      * <code>string network_uri = 5;</code>
@@ -2364,7 +3292,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearNetworkUri() {
       networkUri_ = getDefaultInstance().getNetworkUri();
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -2372,7 +3300,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URI of a Compute Engine network.
+     * URI of a Compute Engine network. NETWORK routes only.
      * </pre>
      *
      * <code>string network_uri = 5;</code>
@@ -2386,7 +3314,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       networkUri_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2422,7 +3350,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
     public Builder setPriority(int value) {
 
       priority_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2438,20 +3366,20 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPriority() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       priority_ = 0;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList instanceTags_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList instanceTags_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureInstanceTagsIsMutable() {
-      if (!((bitField0_ & 0x00000100) != 0)) {
+      if (!instanceTags_.isModifiable()) {
         instanceTags_ = new com.google.protobuf.LazyStringArrayList(instanceTags_);
-        bitField0_ |= 0x00000100;
       }
+      bitField0_ |= 0x00000200;
     }
     /**
      *
@@ -2465,7 +3393,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the instanceTags.
      */
     public com.google.protobuf.ProtocolStringList getInstanceTagsList() {
-      return instanceTags_.getUnmodifiableView();
+      instanceTags_.makeImmutable();
+      return instanceTags_;
     }
     /**
      *
@@ -2530,6 +3459,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       }
       ensureInstanceTagsIsMutable();
       instanceTags_.set(index, value);
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2551,6 +3481,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       }
       ensureInstanceTagsIsMutable();
       instanceTags_.add(value);
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2569,6 +3500,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllInstanceTags(java.lang.Iterable<java.lang.String> values) {
       ensureInstanceTagsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, instanceTags_);
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2584,8 +3516,9 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearInstanceTags() {
-      instanceTags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000100);
+      instanceTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000200);
+      ;
       onChanged();
       return this;
     }
@@ -2608,6 +3541,875 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureInstanceTagsIsMutable();
       instanceTags_.add(value);
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object srcIpRange_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Source IP address range of the route. Policy based routes only.
+     * </pre>
+     *
+     * <code>string src_ip_range = 10;</code>
+     *
+     * @return The srcIpRange.
+     */
+    public java.lang.String getSrcIpRange() {
+      java.lang.Object ref = srcIpRange_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        srcIpRange_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Source IP address range of the route. Policy based routes only.
+     * </pre>
+     *
+     * <code>string src_ip_range = 10;</code>
+     *
+     * @return The bytes for srcIpRange.
+     */
+    public com.google.protobuf.ByteString getSrcIpRangeBytes() {
+      java.lang.Object ref = srcIpRange_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        srcIpRange_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Source IP address range of the route. Policy based routes only.
+     * </pre>
+     *
+     * <code>string src_ip_range = 10;</code>
+     *
+     * @param value The srcIpRange to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSrcIpRange(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      srcIpRange_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Source IP address range of the route. Policy based routes only.
+     * </pre>
+     *
+     * <code>string src_ip_range = 10;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSrcIpRange() {
+      srcIpRange_ = getDefaultInstance().getSrcIpRange();
+      bitField0_ = (bitField0_ & ~0x00000400);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Source IP address range of the route. Policy based routes only.
+     * </pre>
+     *
+     * <code>string src_ip_range = 10;</code>
+     *
+     * @param value The bytes for srcIpRange to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSrcIpRangeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      srcIpRange_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList destPortRanges_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureDestPortRangesIsMutable() {
+      if (!destPortRanges_.isModifiable()) {
+        destPortRanges_ = new com.google.protobuf.LazyStringArrayList(destPortRanges_);
+      }
+      bitField0_ |= 0x00000800;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Destination port ranges of the route. Policy based routes only.
+     * </pre>
+     *
+     * <code>repeated string dest_port_ranges = 11;</code>
+     *
+     * @return A list containing the destPortRanges.
+     */
+    public com.google.protobuf.ProtocolStringList getDestPortRangesList() {
+      destPortRanges_.makeImmutable();
+      return destPortRanges_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Destination port ranges of the route. Policy based routes only.
+     * </pre>
+     *
+     * <code>repeated string dest_port_ranges = 11;</code>
+     *
+     * @return The count of destPortRanges.
+     */
+    public int getDestPortRangesCount() {
+      return destPortRanges_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Destination port ranges of the route. Policy based routes only.
+     * </pre>
+     *
+     * <code>repeated string dest_port_ranges = 11;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The destPortRanges at the given index.
+     */
+    public java.lang.String getDestPortRanges(int index) {
+      return destPortRanges_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Destination port ranges of the route. Policy based routes only.
+     * </pre>
+     *
+     * <code>repeated string dest_port_ranges = 11;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the destPortRanges at the given index.
+     */
+    public com.google.protobuf.ByteString getDestPortRangesBytes(int index) {
+      return destPortRanges_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Destination port ranges of the route. Policy based routes only.
+     * </pre>
+     *
+     * <code>repeated string dest_port_ranges = 11;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The destPortRanges to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDestPortRanges(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureDestPortRangesIsMutable();
+      destPortRanges_.set(index, value);
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Destination port ranges of the route. Policy based routes only.
+     * </pre>
+     *
+     * <code>repeated string dest_port_ranges = 11;</code>
+     *
+     * @param value The destPortRanges to add.
+     * @return This builder for chaining.
+     */
+    public Builder addDestPortRanges(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureDestPortRangesIsMutable();
+      destPortRanges_.add(value);
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Destination port ranges of the route. Policy based routes only.
+     * </pre>
+     *
+     * <code>repeated string dest_port_ranges = 11;</code>
+     *
+     * @param values The destPortRanges to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllDestPortRanges(java.lang.Iterable<java.lang.String> values) {
+      ensureDestPortRangesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, destPortRanges_);
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Destination port ranges of the route. Policy based routes only.
+     * </pre>
+     *
+     * <code>repeated string dest_port_ranges = 11;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDestPortRanges() {
+      destPortRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000800);
+      ;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Destination port ranges of the route. Policy based routes only.
+     * </pre>
+     *
+     * <code>repeated string dest_port_ranges = 11;</code>
+     *
+     * @param value The bytes of the destPortRanges to add.
+     * @return This builder for chaining.
+     */
+    public Builder addDestPortRangesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureDestPortRangesIsMutable();
+      destPortRanges_.add(value);
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList srcPortRanges_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureSrcPortRangesIsMutable() {
+      if (!srcPortRanges_.isModifiable()) {
+        srcPortRanges_ = new com.google.protobuf.LazyStringArrayList(srcPortRanges_);
+      }
+      bitField0_ |= 0x00001000;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Source port ranges of the route. Policy based routes only.
+     * </pre>
+     *
+     * <code>repeated string src_port_ranges = 12;</code>
+     *
+     * @return A list containing the srcPortRanges.
+     */
+    public com.google.protobuf.ProtocolStringList getSrcPortRangesList() {
+      srcPortRanges_.makeImmutable();
+      return srcPortRanges_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Source port ranges of the route. Policy based routes only.
+     * </pre>
+     *
+     * <code>repeated string src_port_ranges = 12;</code>
+     *
+     * @return The count of srcPortRanges.
+     */
+    public int getSrcPortRangesCount() {
+      return srcPortRanges_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Source port ranges of the route. Policy based routes only.
+     * </pre>
+     *
+     * <code>repeated string src_port_ranges = 12;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The srcPortRanges at the given index.
+     */
+    public java.lang.String getSrcPortRanges(int index) {
+      return srcPortRanges_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Source port ranges of the route. Policy based routes only.
+     * </pre>
+     *
+     * <code>repeated string src_port_ranges = 12;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the srcPortRanges at the given index.
+     */
+    public com.google.protobuf.ByteString getSrcPortRangesBytes(int index) {
+      return srcPortRanges_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Source port ranges of the route. Policy based routes only.
+     * </pre>
+     *
+     * <code>repeated string src_port_ranges = 12;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The srcPortRanges to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSrcPortRanges(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureSrcPortRangesIsMutable();
+      srcPortRanges_.set(index, value);
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Source port ranges of the route. Policy based routes only.
+     * </pre>
+     *
+     * <code>repeated string src_port_ranges = 12;</code>
+     *
+     * @param value The srcPortRanges to add.
+     * @return This builder for chaining.
+     */
+    public Builder addSrcPortRanges(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureSrcPortRangesIsMutable();
+      srcPortRanges_.add(value);
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Source port ranges of the route. Policy based routes only.
+     * </pre>
+     *
+     * <code>repeated string src_port_ranges = 12;</code>
+     *
+     * @param values The srcPortRanges to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllSrcPortRanges(java.lang.Iterable<java.lang.String> values) {
+      ensureSrcPortRangesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, srcPortRanges_);
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Source port ranges of the route. Policy based routes only.
+     * </pre>
+     *
+     * <code>repeated string src_port_ranges = 12;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSrcPortRanges() {
+      srcPortRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00001000);
+      ;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Source port ranges of the route. Policy based routes only.
+     * </pre>
+     *
+     * <code>repeated string src_port_ranges = 12;</code>
+     *
+     * @param value The bytes of the srcPortRanges to add.
+     * @return This builder for chaining.
+     */
+    public Builder addSrcPortRangesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureSrcPortRangesIsMutable();
+      srcPortRanges_.add(value);
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList protocols_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureProtocolsIsMutable() {
+      if (!protocols_.isModifiable()) {
+        protocols_ = new com.google.protobuf.LazyStringArrayList(protocols_);
+      }
+      bitField0_ |= 0x00002000;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Protocols of the route. Policy based routes only.
+     * </pre>
+     *
+     * <code>repeated string protocols = 13;</code>
+     *
+     * @return A list containing the protocols.
+     */
+    public com.google.protobuf.ProtocolStringList getProtocolsList() {
+      protocols_.makeImmutable();
+      return protocols_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Protocols of the route. Policy based routes only.
+     * </pre>
+     *
+     * <code>repeated string protocols = 13;</code>
+     *
+     * @return The count of protocols.
+     */
+    public int getProtocolsCount() {
+      return protocols_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Protocols of the route. Policy based routes only.
+     * </pre>
+     *
+     * <code>repeated string protocols = 13;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The protocols at the given index.
+     */
+    public java.lang.String getProtocols(int index) {
+      return protocols_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Protocols of the route. Policy based routes only.
+     * </pre>
+     *
+     * <code>repeated string protocols = 13;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the protocols at the given index.
+     */
+    public com.google.protobuf.ByteString getProtocolsBytes(int index) {
+      return protocols_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Protocols of the route. Policy based routes only.
+     * </pre>
+     *
+     * <code>repeated string protocols = 13;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The protocols to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProtocols(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureProtocolsIsMutable();
+      protocols_.set(index, value);
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Protocols of the route. Policy based routes only.
+     * </pre>
+     *
+     * <code>repeated string protocols = 13;</code>
+     *
+     * @param value The protocols to add.
+     * @return This builder for chaining.
+     */
+    public Builder addProtocols(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureProtocolsIsMutable();
+      protocols_.add(value);
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Protocols of the route. Policy based routes only.
+     * </pre>
+     *
+     * <code>repeated string protocols = 13;</code>
+     *
+     * @param values The protocols to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllProtocols(java.lang.Iterable<java.lang.String> values) {
+      ensureProtocolsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, protocols_);
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Protocols of the route. Policy based routes only.
+     * </pre>
+     *
+     * <code>repeated string protocols = 13;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearProtocols() {
+      protocols_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00002000);
+      ;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Protocols of the route. Policy based routes only.
+     * </pre>
+     *
+     * <code>repeated string protocols = 13;</code>
+     *
+     * @param value The bytes of the protocols to add.
+     * @return This builder for chaining.
+     */
+    public Builder addProtocolsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureProtocolsIsMutable();
+      protocols_.add(value);
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object nccHubUri_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * URI of a NCC Hub. NCC_HUB routes only.
+     * </pre>
+     *
+     * <code>optional string ncc_hub_uri = 15;</code>
+     *
+     * @return Whether the nccHubUri field is set.
+     */
+    public boolean hasNccHubUri() {
+      return ((bitField0_ & 0x00004000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * URI of a NCC Hub. NCC_HUB routes only.
+     * </pre>
+     *
+     * <code>optional string ncc_hub_uri = 15;</code>
+     *
+     * @return The nccHubUri.
+     */
+    public java.lang.String getNccHubUri() {
+      java.lang.Object ref = nccHubUri_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        nccHubUri_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * URI of a NCC Hub. NCC_HUB routes only.
+     * </pre>
+     *
+     * <code>optional string ncc_hub_uri = 15;</code>
+     *
+     * @return The bytes for nccHubUri.
+     */
+    public com.google.protobuf.ByteString getNccHubUriBytes() {
+      java.lang.Object ref = nccHubUri_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        nccHubUri_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * URI of a NCC Hub. NCC_HUB routes only.
+     * </pre>
+     *
+     * <code>optional string ncc_hub_uri = 15;</code>
+     *
+     * @param value The nccHubUri to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNccHubUri(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      nccHubUri_ = value;
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * URI of a NCC Hub. NCC_HUB routes only.
+     * </pre>
+     *
+     * <code>optional string ncc_hub_uri = 15;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearNccHubUri() {
+      nccHubUri_ = getDefaultInstance().getNccHubUri();
+      bitField0_ = (bitField0_ & ~0x00004000);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * URI of a NCC Hub. NCC_HUB routes only.
+     * </pre>
+     *
+     * <code>optional string ncc_hub_uri = 15;</code>
+     *
+     * @param value The bytes for nccHubUri to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNccHubUriBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      nccHubUri_ = value;
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object nccSpokeUri_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * URI of a NCC Spoke. NCC_HUB routes only.
+     * </pre>
+     *
+     * <code>optional string ncc_spoke_uri = 16;</code>
+     *
+     * @return Whether the nccSpokeUri field is set.
+     */
+    public boolean hasNccSpokeUri() {
+      return ((bitField0_ & 0x00008000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * URI of a NCC Spoke. NCC_HUB routes only.
+     * </pre>
+     *
+     * <code>optional string ncc_spoke_uri = 16;</code>
+     *
+     * @return The nccSpokeUri.
+     */
+    public java.lang.String getNccSpokeUri() {
+      java.lang.Object ref = nccSpokeUri_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        nccSpokeUri_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * URI of a NCC Spoke. NCC_HUB routes only.
+     * </pre>
+     *
+     * <code>optional string ncc_spoke_uri = 16;</code>
+     *
+     * @return The bytes for nccSpokeUri.
+     */
+    public com.google.protobuf.ByteString getNccSpokeUriBytes() {
+      java.lang.Object ref = nccSpokeUri_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        nccSpokeUri_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * URI of a NCC Spoke. NCC_HUB routes only.
+     * </pre>
+     *
+     * <code>optional string ncc_spoke_uri = 16;</code>
+     *
+     * @param value The nccSpokeUri to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNccSpokeUri(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      nccSpokeUri_ = value;
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * URI of a NCC Spoke. NCC_HUB routes only.
+     * </pre>
+     *
+     * <code>optional string ncc_spoke_uri = 16;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearNccSpokeUri() {
+      nccSpokeUri_ = getDefaultInstance().getNccSpokeUri();
+      bitField0_ = (bitField0_ & ~0x00008000);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * URI of a NCC Spoke. NCC_HUB routes only.
+     * </pre>
+     *
+     * <code>optional string ncc_spoke_uri = 16;</code>
+     *
+     * @param value The bytes for nccSpokeUri to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNccSpokeUriBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      nccSpokeUri_ = value;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }

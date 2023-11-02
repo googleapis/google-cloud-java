@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,6 +33,7 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.httpjson.longrunning.stub.HttpJsonOperationsStub;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.retail.v2beta.AddFulfillmentPlacesMetadata;
 import com.google.cloud.retail.v2beta.AddFulfillmentPlacesRequest;
@@ -644,60 +645,126 @@ public class HttpJsonProductServiceStub extends ProductServiceStub {
         HttpJsonCallSettings.<CreateProductRequest, Product>newBuilder()
             .setMethodDescriptor(createProductMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetProductRequest, Product> getProductTransportSettings =
         HttpJsonCallSettings.<GetProductRequest, Product>newBuilder()
             .setMethodDescriptor(getProductMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListProductsRequest, ListProductsResponse> listProductsTransportSettings =
         HttpJsonCallSettings.<ListProductsRequest, ListProductsResponse>newBuilder()
             .setMethodDescriptor(listProductsMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateProductRequest, Product> updateProductTransportSettings =
         HttpJsonCallSettings.<UpdateProductRequest, Product>newBuilder()
             .setMethodDescriptor(updateProductMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("product.name", String.valueOf(request.getProduct().getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeleteProductRequest, Empty> deleteProductTransportSettings =
         HttpJsonCallSettings.<DeleteProductRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteProductMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ImportProductsRequest, Operation> importProductsTransportSettings =
         HttpJsonCallSettings.<ImportProductsRequest, Operation>newBuilder()
             .setMethodDescriptor(importProductsMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<SetInventoryRequest, Operation> setInventoryTransportSettings =
         HttpJsonCallSettings.<SetInventoryRequest, Operation>newBuilder()
             .setMethodDescriptor(setInventoryMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("inventory.name", String.valueOf(request.getInventory().getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<AddFulfillmentPlacesRequest, Operation>
         addFulfillmentPlacesTransportSettings =
             HttpJsonCallSettings.<AddFulfillmentPlacesRequest, Operation>newBuilder()
                 .setMethodDescriptor(addFulfillmentPlacesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("product", String.valueOf(request.getProduct()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<RemoveFulfillmentPlacesRequest, Operation>
         removeFulfillmentPlacesTransportSettings =
             HttpJsonCallSettings.<RemoveFulfillmentPlacesRequest, Operation>newBuilder()
                 .setMethodDescriptor(removeFulfillmentPlacesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("product", String.valueOf(request.getProduct()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<AddLocalInventoriesRequest, Operation>
         addLocalInventoriesTransportSettings =
             HttpJsonCallSettings.<AddLocalInventoriesRequest, Operation>newBuilder()
                 .setMethodDescriptor(addLocalInventoriesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("product", String.valueOf(request.getProduct()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<RemoveLocalInventoriesRequest, Operation>
         removeLocalInventoriesTransportSettings =
             HttpJsonCallSettings.<RemoveLocalInventoriesRequest, Operation>newBuilder()
                 .setMethodDescriptor(removeLocalInventoriesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("product", String.valueOf(request.getProduct()));
+                      return builder.build();
+                    })
                 .build();
 
     this.createProductCallable =

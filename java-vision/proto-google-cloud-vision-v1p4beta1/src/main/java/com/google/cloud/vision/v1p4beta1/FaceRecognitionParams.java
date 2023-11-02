@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,18 +38,13 @@ public final class FaceRecognitionParams extends com.google.protobuf.GeneratedMe
   }
 
   private FaceRecognitionParams() {
-    celebritySet_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    celebritySet_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new FaceRecognitionParams();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -70,7 +65,8 @@ public final class FaceRecognitionParams extends com.google.protobuf.GeneratedMe
   public static final int CELEBRITY_SET_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList celebritySet_;
+  private com.google.protobuf.LazyStringArrayList celebritySet_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -352,8 +348,7 @@ public final class FaceRecognitionParams extends com.google.protobuf.GeneratedMe
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      celebritySet_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      celebritySet_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -381,7 +376,6 @@ public final class FaceRecognitionParams extends com.google.protobuf.GeneratedMe
     public com.google.cloud.vision.v1p4beta1.FaceRecognitionParams buildPartial() {
       com.google.cloud.vision.v1p4beta1.FaceRecognitionParams result =
           new com.google.cloud.vision.v1p4beta1.FaceRecognitionParams(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -389,17 +383,12 @@ public final class FaceRecognitionParams extends com.google.protobuf.GeneratedMe
       return result;
     }
 
-    private void buildPartialRepeatedFields(
-        com.google.cloud.vision.v1p4beta1.FaceRecognitionParams result) {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        celebritySet_ = celebritySet_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.celebritySet_ = celebritySet_;
-    }
-
     private void buildPartial0(com.google.cloud.vision.v1p4beta1.FaceRecognitionParams result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        celebritySet_.makeImmutable();
+        result.celebritySet_ = celebritySet_;
+      }
     }
 
     @java.lang.Override
@@ -451,7 +440,7 @@ public final class FaceRecognitionParams extends com.google.protobuf.GeneratedMe
       if (!other.celebritySet_.isEmpty()) {
         if (celebritySet_.isEmpty()) {
           celebritySet_ = other.celebritySet_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ |= 0x00000001;
         } else {
           ensureCelebritySetIsMutable();
           celebritySet_.addAll(other.celebritySet_);
@@ -510,14 +499,14 @@ public final class FaceRecognitionParams extends com.google.protobuf.GeneratedMe
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList celebritySet_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList celebritySet_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureCelebritySetIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!celebritySet_.isModifiable()) {
         celebritySet_ = new com.google.protobuf.LazyStringArrayList(celebritySet_);
-        bitField0_ |= 0x00000001;
       }
+      bitField0_ |= 0x00000001;
     }
     /**
      *
@@ -535,7 +524,8 @@ public final class FaceRecognitionParams extends com.google.protobuf.GeneratedMe
      * @return A list containing the celebritySet.
      */
     public com.google.protobuf.ProtocolStringList getCelebritySetList() {
-      return celebritySet_.getUnmodifiableView();
+      celebritySet_.makeImmutable();
+      return celebritySet_;
     }
     /**
      *
@@ -616,6 +606,7 @@ public final class FaceRecognitionParams extends com.google.protobuf.GeneratedMe
       }
       ensureCelebritySetIsMutable();
       celebritySet_.set(index, value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -641,6 +632,7 @@ public final class FaceRecognitionParams extends com.google.protobuf.GeneratedMe
       }
       ensureCelebritySetIsMutable();
       celebritySet_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -663,6 +655,7 @@ public final class FaceRecognitionParams extends com.google.protobuf.GeneratedMe
     public Builder addAllCelebritySet(java.lang.Iterable<java.lang.String> values) {
       ensureCelebritySetIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, celebritySet_);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -682,8 +675,9 @@ public final class FaceRecognitionParams extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearCelebritySet() {
-      celebritySet_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      celebritySet_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      ;
       onChanged();
       return this;
     }
@@ -710,6 +704,7 @@ public final class FaceRecognitionParams extends com.google.protobuf.GeneratedMe
       checkByteStringIsUtf8(value);
       ensureCelebritySetIsMutable();
       celebritySet_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

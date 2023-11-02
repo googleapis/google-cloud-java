@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,7 +21,7 @@
  *
  * <p>======================= DocumentProcessorServiceClient =======================
  *
- * <p>Service Description: Service to call Cloud DocumentAI to process documents according to the
+ * <p>Service Description: Service to call Document AI to process documents according to the
  * processor's definition. Processors are built using state-of-the-art Google AI such as natural
  * language, computer vision, and translation to extract structured information from unstructured or
  * semi-structured documents.
@@ -38,6 +38,24 @@
  *     DocumentProcessorServiceClient.create()) {
  *   ResourceName name = ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]");
  *   ProcessResponse response = documentProcessorServiceClient.processDocument(name);
+ * }
+ * }</pre>
+ *
+ * <p>======================= DocumentServiceClient =======================
+ *
+ * <p>Service Description: Service to call Cloud DocumentAI to manage document collection (dataset).
+ *
+ * <p>Sample for DocumentServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (DocumentServiceClient documentServiceClient = DocumentServiceClient.create()) {
+ *   DatasetName dataset = DatasetName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]");
+ *   GetDocumentResponse response = documentServiceClient.getDocument(dataset);
  * }
  * }</pre>
  */

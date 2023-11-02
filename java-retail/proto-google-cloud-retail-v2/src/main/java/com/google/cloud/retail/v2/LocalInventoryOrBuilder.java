@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -53,6 +53,7 @@ public interface LocalInventoryOrBuilder
    *
    * <pre>
    * Product price and cost information.
+   *
    * Google Merchant Center property
    * [price](https://support.google.com/merchants/answer/6324371).
    * </pre>
@@ -67,6 +68,7 @@ public interface LocalInventoryOrBuilder
    *
    * <pre>
    * Product price and cost information.
+   *
    * Google Merchant Center property
    * [price](https://support.google.com/merchants/answer/6324371).
    * </pre>
@@ -81,6 +83,7 @@ public interface LocalInventoryOrBuilder
    *
    * <pre>
    * Product price and cost information.
+   *
    * Google Merchant Center property
    * [price](https://support.google.com/merchants/answer/6324371).
    * </pre>
@@ -95,8 +98,10 @@ public interface LocalInventoryOrBuilder
    * <pre>
    * Additional local inventory attributes, for example, store name, promotion
    * tags, etc.
+   *
    * This field needs to pass all below criteria, otherwise an INVALID_ARGUMENT
    * error is returned:
+   *
    * * At most 30 attributes are allowed.
    * * The key must be a UTF-8 encoded string with a length limit of 32
    *   characters.
@@ -120,8 +125,10 @@ public interface LocalInventoryOrBuilder
    * <pre>
    * Additional local inventory attributes, for example, store name, promotion
    * tags, etc.
+   *
    * This field needs to pass all below criteria, otherwise an INVALID_ARGUMENT
    * error is returned:
+   *
    * * At most 30 attributes are allowed.
    * * The key must be a UTF-8 encoded string with a length limit of 32
    *   characters.
@@ -148,8 +155,10 @@ public interface LocalInventoryOrBuilder
    * <pre>
    * Additional local inventory attributes, for example, store name, promotion
    * tags, etc.
+   *
    * This field needs to pass all below criteria, otherwise an INVALID_ARGUMENT
    * error is returned:
+   *
    * * At most 30 attributes are allowed.
    * * The key must be a UTF-8 encoded string with a length limit of 32
    *   characters.
@@ -173,8 +182,10 @@ public interface LocalInventoryOrBuilder
    * <pre>
    * Additional local inventory attributes, for example, store name, promotion
    * tags, etc.
+   *
    * This field needs to pass all below criteria, otherwise an INVALID_ARGUMENT
    * error is returned:
+   *
    * * At most 30 attributes are allowed.
    * * The key must be a UTF-8 encoded string with a length limit of 32
    *   characters.
@@ -202,8 +213,10 @@ public interface LocalInventoryOrBuilder
    * <pre>
    * Additional local inventory attributes, for example, store name, promotion
    * tags, etc.
+   *
    * This field needs to pass all below criteria, otherwise an INVALID_ARGUMENT
    * error is returned:
+   *
    * * At most 30 attributes are allowed.
    * * The key must be a UTF-8 encoded string with a length limit of 32
    *   characters.
@@ -230,7 +243,9 @@ public interface LocalInventoryOrBuilder
    * include commonly used types (such as pickup in store and same day
    * delivery), and custom types. Customers have to map custom types to their
    * display names before rendering UI.
+   *
    * Supported values:
+   *
    * * "pickup-in-store"
    * * "ship-to-store"
    * * "same-day-delivery"
@@ -240,8 +255,10 @@ public interface LocalInventoryOrBuilder
    * * "custom-type-3"
    * * "custom-type-4"
    * * "custom-type-5"
+   *
    * If this field is set to an invalid value other than these, an
    * INVALID_ARGUMENT error is returned.
+   *
    * All the elements must be distinct. Otherwise, an INVALID_ARGUMENT error is
    * returned.
    * </pre>
@@ -259,7 +276,9 @@ public interface LocalInventoryOrBuilder
    * include commonly used types (such as pickup in store and same day
    * delivery), and custom types. Customers have to map custom types to their
    * display names before rendering UI.
+   *
    * Supported values:
+   *
    * * "pickup-in-store"
    * * "ship-to-store"
    * * "same-day-delivery"
@@ -269,8 +288,10 @@ public interface LocalInventoryOrBuilder
    * * "custom-type-3"
    * * "custom-type-4"
    * * "custom-type-5"
+   *
    * If this field is set to an invalid value other than these, an
    * INVALID_ARGUMENT error is returned.
+   *
    * All the elements must be distinct. Otherwise, an INVALID_ARGUMENT error is
    * returned.
    * </pre>
@@ -288,7 +309,9 @@ public interface LocalInventoryOrBuilder
    * include commonly used types (such as pickup in store and same day
    * delivery), and custom types. Customers have to map custom types to their
    * display names before rendering UI.
+   *
    * Supported values:
+   *
    * * "pickup-in-store"
    * * "ship-to-store"
    * * "same-day-delivery"
@@ -298,8 +321,10 @@ public interface LocalInventoryOrBuilder
    * * "custom-type-3"
    * * "custom-type-4"
    * * "custom-type-5"
+   *
    * If this field is set to an invalid value other than these, an
    * INVALID_ARGUMENT error is returned.
+   *
    * All the elements must be distinct. Otherwise, an INVALID_ARGUMENT error is
    * returned.
    * </pre>
@@ -318,7 +343,9 @@ public interface LocalInventoryOrBuilder
    * include commonly used types (such as pickup in store and same day
    * delivery), and custom types. Customers have to map custom types to their
    * display names before rendering UI.
+   *
    * Supported values:
+   *
    * * "pickup-in-store"
    * * "ship-to-store"
    * * "same-day-delivery"
@@ -328,8 +355,10 @@ public interface LocalInventoryOrBuilder
    * * "custom-type-3"
    * * "custom-type-4"
    * * "custom-type-5"
+   *
    * If this field is set to an invalid value other than these, an
    * INVALID_ARGUMENT error is returned.
+   *
    * All the elements must be distinct. Otherwise, an INVALID_ARGUMENT error is
    * returned.
    * </pre>

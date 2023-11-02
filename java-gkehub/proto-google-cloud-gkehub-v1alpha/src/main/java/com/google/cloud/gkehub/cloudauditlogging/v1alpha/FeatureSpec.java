@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,18 +38,13 @@ public final class FeatureSpec extends com.google.protobuf.GeneratedMessageV3
   }
 
   private FeatureSpec() {
-    allowlistedServiceAccounts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    allowlistedServiceAccounts_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new FeatureSpec();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -70,7 +65,8 @@ public final class FeatureSpec extends com.google.protobuf.GeneratedMessageV3
   public static final int ALLOWLISTED_SERVICE_ACCOUNTS_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList allowlistedServiceAccounts_;
+  private com.google.protobuf.LazyStringArrayList allowlistedServiceAccounts_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -354,8 +350,7 @@ public final class FeatureSpec extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      allowlistedServiceAccounts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      allowlistedServiceAccounts_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -384,7 +379,6 @@ public final class FeatureSpec extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.gkehub.cloudauditlogging.v1alpha.FeatureSpec buildPartial() {
       com.google.cloud.gkehub.cloudauditlogging.v1alpha.FeatureSpec result =
           new com.google.cloud.gkehub.cloudauditlogging.v1alpha.FeatureSpec(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -392,18 +386,13 @@ public final class FeatureSpec extends com.google.protobuf.GeneratedMessageV3
       return result;
     }
 
-    private void buildPartialRepeatedFields(
-        com.google.cloud.gkehub.cloudauditlogging.v1alpha.FeatureSpec result) {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        allowlistedServiceAccounts_ = allowlistedServiceAccounts_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.allowlistedServiceAccounts_ = allowlistedServiceAccounts_;
-    }
-
     private void buildPartial0(
         com.google.cloud.gkehub.cloudauditlogging.v1alpha.FeatureSpec result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        allowlistedServiceAccounts_.makeImmutable();
+        result.allowlistedServiceAccounts_ = allowlistedServiceAccounts_;
+      }
     }
 
     @java.lang.Override
@@ -456,7 +445,7 @@ public final class FeatureSpec extends com.google.protobuf.GeneratedMessageV3
       if (!other.allowlistedServiceAccounts_.isEmpty()) {
         if (allowlistedServiceAccounts_.isEmpty()) {
           allowlistedServiceAccounts_ = other.allowlistedServiceAccounts_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ |= 0x00000001;
         } else {
           ensureAllowlistedServiceAccountsIsMutable();
           allowlistedServiceAccounts_.addAll(other.allowlistedServiceAccounts_);
@@ -515,15 +504,15 @@ public final class FeatureSpec extends com.google.protobuf.GeneratedMessageV3
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList allowlistedServiceAccounts_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList allowlistedServiceAccounts_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureAllowlistedServiceAccountsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!allowlistedServiceAccounts_.isModifiable()) {
         allowlistedServiceAccounts_ =
             new com.google.protobuf.LazyStringArrayList(allowlistedServiceAccounts_);
-        bitField0_ |= 0x00000001;
       }
+      bitField0_ |= 0x00000001;
     }
     /**
      *
@@ -541,7 +530,8 @@ public final class FeatureSpec extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the allowlistedServiceAccounts.
      */
     public com.google.protobuf.ProtocolStringList getAllowlistedServiceAccountsList() {
-      return allowlistedServiceAccounts_.getUnmodifiableView();
+      allowlistedServiceAccounts_.makeImmutable();
+      return allowlistedServiceAccounts_;
     }
     /**
      *
@@ -622,6 +612,7 @@ public final class FeatureSpec extends com.google.protobuf.GeneratedMessageV3
       }
       ensureAllowlistedServiceAccountsIsMutable();
       allowlistedServiceAccounts_.set(index, value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -647,6 +638,7 @@ public final class FeatureSpec extends com.google.protobuf.GeneratedMessageV3
       }
       ensureAllowlistedServiceAccountsIsMutable();
       allowlistedServiceAccounts_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -669,6 +661,7 @@ public final class FeatureSpec extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllAllowlistedServiceAccounts(java.lang.Iterable<java.lang.String> values) {
       ensureAllowlistedServiceAccountsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, allowlistedServiceAccounts_);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -688,8 +681,9 @@ public final class FeatureSpec extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAllowlistedServiceAccounts() {
-      allowlistedServiceAccounts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      allowlistedServiceAccounts_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      ;
       onChanged();
       return this;
     }
@@ -716,6 +710,7 @@ public final class FeatureSpec extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureAllowlistedServiceAccountsIsMutable();
       allowlistedServiceAccounts_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

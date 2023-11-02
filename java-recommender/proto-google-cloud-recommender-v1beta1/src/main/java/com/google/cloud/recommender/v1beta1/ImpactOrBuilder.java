@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -160,5 +160,5 @@ public interface ImpactOrBuilder
   com.google.cloud.recommender.v1beta1.SustainabilityProjectionOrBuilder
       getSustainabilityProjectionOrBuilder();
 
-  public com.google.cloud.recommender.v1beta1.Impact.ProjectionCase getProjectionCase();
+  com.google.cloud.recommender.v1beta1.Impact.ProjectionCase getProjectionCase();
 }

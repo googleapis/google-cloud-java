@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -234,5 +234,5 @@ public interface ReportValueOrBuilder
    */
   com.google.type.DateTimeOrBuilder getDateTimeValueOrBuilder();
 
-  public com.google.cloud.channel.v1.ReportValue.ValueCase getValueCase();
+  com.google.cloud.channel.v1.ReportValue.ValueCase getValueCase();
 }

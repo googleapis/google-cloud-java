@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -68,6 +68,14 @@ public final class ResourcesProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_api_serviceusage_v1beta1_OverrideInlineSource_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_api_serviceusage_v1beta1_ProducerQuotaPolicy_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_api_serviceusage_v1beta1_ProducerQuotaPolicy_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_api_serviceusage_v1beta1_ProducerQuotaPolicy_DimensionsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_api_serviceusage_v1beta1_ProducerQuotaPolicy_DimensionsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_api_serviceusage_v1beta1_AdminQuotaPolicy_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_api_serviceusage_v1beta1_AdminQuotaPolicy_fieldAccessorTable;
@@ -117,51 +125,60 @@ public final class ResourcesProto {
           + "serviceusage.v1beta1.ConsumerQuotaLimit\022"
           + "]\n descendant_consumer_quota_limits\030\006 \003("
           + "\01323.google.api.serviceusage.v1beta1.Cons"
-          + "umerQuotaLimit\022\014\n\004unit\030\005 \001(\t\"\271\001\n\022Consume"
+          + "umerQuotaLimit\022\014\n\004unit\030\005 \001(\t\"\326\001\n\022Consume"
           + "rQuotaLimit\022\014\n\004name\030\001 \001(\t\022\016\n\006metric\030\010 \001("
           + "\t\022\014\n\004unit\030\002 \001(\t\022\022\n\nis_precise\030\003 \001(\010\022\036\n\026a"
           + "llows_admin_overrides\030\007 \001(\010\022C\n\rquota_buc"
           + "kets\030\t \003(\0132,.google.api.serviceusage.v1b"
-          + "eta1.QuotaBucket\"\240\003\n\013QuotaBucket\022\027\n\017effe"
-          + "ctive_limit\030\001 \001(\003\022\025\n\rdefault_limit\030\002 \001(\003"
-          + "\022I\n\021producer_override\030\003 \001(\0132..google.api"
-          + ".serviceusage.v1beta1.QuotaOverride\022I\n\021c"
-          + "onsumer_override\030\004 \001(\0132..google.api.serv"
-          + "iceusage.v1beta1.QuotaOverride\022F\n\016admin_"
-          + "override\030\005 \001(\0132..google.api.serviceusage"
-          + ".v1beta1.QuotaOverride\022P\n\ndimensions\030\006 \003"
-          + "(\0132<.google.api.serviceusage.v1beta1.Quo"
-          + "taBucket.DimensionsEntry\0321\n\017DimensionsEn"
-          + "try\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\373\001\n\r"
-          + "QuotaOverride\022\014\n\004name\030\001 \001(\t\022\026\n\016override_"
-          + "value\030\002 \001(\003\022R\n\ndimensions\030\003 \003(\0132>.google"
-          + ".api.serviceusage.v1beta1.QuotaOverride."
-          + "DimensionsEntry\022\016\n\006metric\030\004 \001(\t\022\014\n\004unit\030"
-          + "\005 \001(\t\022\037\n\027admin_override_ancestor\030\006 \001(\t\0321"
-          + "\n\017DimensionsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030"
-          + "\002 \001(\t:\0028\001\"Y\n\024OverrideInlineSource\022A\n\tove"
-          + "rrides\030\001 \003(\0132..google.api.serviceusage.v"
-          + "1beta1.QuotaOverride\"\361\001\n\020AdminQuotaPolic"
-          + "y\022\014\n\004name\030\001 \001(\t\022\024\n\014policy_value\030\002 \001(\003\022U\n"
-          + "\ndimensions\030\003 \003(\0132A.google.api.serviceus"
-          + "age.v1beta1.AdminQuotaPolicy.DimensionsE"
+          + "eta1.QuotaBucket\022\033\n\023supported_locations\030"
+          + "\013 \003(\t\"\365\003\n\013QuotaBucket\022\027\n\017effective_limit"
+          + "\030\001 \001(\003\022\025\n\rdefault_limit\030\002 \001(\003\022I\n\021produce"
+          + "r_override\030\003 \001(\0132..google.api.serviceusa"
+          + "ge.v1beta1.QuotaOverride\022I\n\021consumer_ove"
+          + "rride\030\004 \001(\0132..google.api.serviceusage.v1"
+          + "beta1.QuotaOverride\022F\n\016admin_override\030\005 "
+          + "\001(\0132..google.api.serviceusage.v1beta1.Qu"
+          + "otaOverride\022S\n\025producer_quota_policy\030\007 \001"
+          + "(\01324.google.api.serviceusage.v1beta1.Pro"
+          + "ducerQuotaPolicy\022P\n\ndimensions\030\006 \003(\0132<.g"
+          + "oogle.api.serviceusage.v1beta1.QuotaBuck"
+          + "et.DimensionsEntry\0321\n\017DimensionsEntry\022\013\n"
+          + "\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\373\001\n\rQuotaO"
+          + "verride\022\014\n\004name\030\001 \001(\t\022\026\n\016override_value\030"
+          + "\002 \001(\003\022R\n\ndimensions\030\003 \003(\0132>.google.api.s"
+          + "erviceusage.v1beta1.QuotaOverride.Dimens"
+          + "ionsEntry\022\016\n\006metric\030\004 \001(\t\022\014\n\004unit\030\005 \001(\t\022"
+          + "\037\n\027admin_override_ancestor\030\006 \001(\t\0321\n\017Dime"
+          + "nsionsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:"
+          + "\0028\001\"Y\n\024OverrideInlineSource\022A\n\toverrides"
+          + "\030\001 \003(\0132..google.api.serviceusage.v1beta1"
+          + ".QuotaOverride\"\367\001\n\023ProducerQuotaPolicy\022\014"
+          + "\n\004name\030\001 \001(\t\022\024\n\014policy_value\030\002 \001(\003\022X\n\ndi"
+          + "mensions\030\003 \003(\0132D.google.api.serviceusage"
+          + ".v1beta1.ProducerQuotaPolicy.DimensionsE"
           + "ntry\022\016\n\006metric\030\004 \001(\t\022\014\n\004unit\030\005 \001(\t\022\021\n\tco"
           + "ntainer\030\006 \001(\t\0321\n\017DimensionsEntry\022\013\n\003key\030"
-          + "\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"3\n\017ServiceIdent"
-          + "ity\022\r\n\005email\030\001 \001(\t\022\021\n\tunique_id\030\002 \001(\t*9\n"
-          + "\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\014\n\010DISABLE"
-          + "D\020\001\022\013\n\007ENABLED\020\002*<\n\tQuotaView\022\032\n\026QUOTA_V"
-          + "IEW_UNSPECIFIED\020\000\022\t\n\005BASIC\020\001\022\010\n\004FULL\020\002*~"
-          + "\n\020QuotaSafetyCheck\022\"\n\036QUOTA_SAFETY_CHECK"
-          + "_UNSPECIFIED\020\000\022\036\n\032LIMIT_DECREASE_BELOW_U"
-          + "SAGE\020\001\022&\n\"LIMIT_DECREASE_PERCENTAGE_TOO_"
-          + "HIGH\020\002B\355\001\n#com.google.api.serviceusage.v"
-          + "1beta1B\016ResourcesProtoP\001ZKgoogle.golang."
-          + "org/genproto/googleapis/api/serviceusage"
-          + "/v1beta1;serviceusage\252\002\037Google.Api.Servi"
-          + "ceUsage.V1Beta1\312\002\037Google\\Api\\ServiceUsag"
-          + "e\\V1beta1\352\002\"Google::Api::ServiceUsage::V"
-          + "1beta1b\006proto3"
+          + "\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\361\001\n\020AdminQuotaP"
+          + "olicy\022\014\n\004name\030\001 \001(\t\022\024\n\014policy_value\030\002 \001("
+          + "\003\022U\n\ndimensions\030\003 \003(\0132A.google.api.servi"
+          + "ceusage.v1beta1.AdminQuotaPolicy.Dimensi"
+          + "onsEntry\022\016\n\006metric\030\004 \001(\t\022\014\n\004unit\030\005 \001(\t\022\021"
+          + "\n\tcontainer\030\006 \001(\t\0321\n\017DimensionsEntry\022\013\n\003"
+          + "key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"3\n\017ServiceI"
+          + "dentity\022\r\n\005email\030\001 \001(\t\022\021\n\tunique_id\030\002 \001("
+          + "\t*9\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\014\n\010DIS"
+          + "ABLED\020\001\022\013\n\007ENABLED\020\002*<\n\tQuotaView\022\032\n\026QUO"
+          + "TA_VIEW_UNSPECIFIED\020\000\022\t\n\005BASIC\020\001\022\010\n\004FULL"
+          + "\020\002*~\n\020QuotaSafetyCheck\022\"\n\036QUOTA_SAFETY_C"
+          + "HECK_UNSPECIFIED\020\000\022\036\n\032LIMIT_DECREASE_BEL"
+          + "OW_USAGE\020\001\022&\n\"LIMIT_DECREASE_PERCENTAGE_"
+          + "TOO_HIGH\020\002B\355\001\n#com.google.api.serviceusa"
+          + "ge.v1beta1B\016ResourcesProtoP\001ZKgoogle.gol"
+          + "ang.org/genproto/googleapis/api/serviceu"
+          + "sage/v1beta1;serviceusage\252\002\037Google.Api.S"
+          + "erviceUsage.V1Beta1\312\002\037Google\\Api\\Service"
+          + "Usage\\V1beta1\352\002\"Google::Api::ServiceUsag"
+          + "e::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -228,7 +245,13 @@ public final class ResourcesProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_api_serviceusage_v1beta1_ConsumerQuotaLimit_descriptor,
             new java.lang.String[] {
-              "Name", "Metric", "Unit", "IsPrecise", "AllowsAdminOverrides", "QuotaBuckets",
+              "Name",
+              "Metric",
+              "Unit",
+              "IsPrecise",
+              "AllowsAdminOverrides",
+              "QuotaBuckets",
+              "SupportedLocations",
             });
     internal_static_google_api_serviceusage_v1beta1_QuotaBucket_descriptor =
         getDescriptor().getMessageTypes().get(5);
@@ -241,6 +264,7 @@ public final class ResourcesProto {
               "ProducerOverride",
               "ConsumerOverride",
               "AdminOverride",
+              "ProducerQuotaPolicy",
               "Dimensions",
             });
     internal_static_google_api_serviceusage_v1beta1_QuotaBucket_DimensionsEntry_descriptor =
@@ -279,8 +303,26 @@ public final class ResourcesProto {
             new java.lang.String[] {
               "Overrides",
             });
-    internal_static_google_api_serviceusage_v1beta1_AdminQuotaPolicy_descriptor =
+    internal_static_google_api_serviceusage_v1beta1_ProducerQuotaPolicy_descriptor =
         getDescriptor().getMessageTypes().get(8);
+    internal_static_google_api_serviceusage_v1beta1_ProducerQuotaPolicy_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_api_serviceusage_v1beta1_ProducerQuotaPolicy_descriptor,
+            new java.lang.String[] {
+              "Name", "PolicyValue", "Dimensions", "Metric", "Unit", "Container",
+            });
+    internal_static_google_api_serviceusage_v1beta1_ProducerQuotaPolicy_DimensionsEntry_descriptor =
+        internal_static_google_api_serviceusage_v1beta1_ProducerQuotaPolicy_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_api_serviceusage_v1beta1_ProducerQuotaPolicy_DimensionsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_api_serviceusage_v1beta1_ProducerQuotaPolicy_DimensionsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    internal_static_google_api_serviceusage_v1beta1_AdminQuotaPolicy_descriptor =
+        getDescriptor().getMessageTypes().get(9);
     internal_static_google_api_serviceusage_v1beta1_AdminQuotaPolicy_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_api_serviceusage_v1beta1_AdminQuotaPolicy_descriptor,
@@ -298,7 +340,7 @@ public final class ResourcesProto {
               "Key", "Value",
             });
     internal_static_google_api_serviceusage_v1beta1_ServiceIdentity_descriptor =
-        getDescriptor().getMessageTypes().get(9);
+        getDescriptor().getMessageTypes().get(10);
     internal_static_google_api_serviceusage_v1beta1_ServiceIdentity_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_api_serviceusage_v1beta1_ServiceIdentity_descriptor,

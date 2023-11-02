@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class ListBuildsRequest extends com.google.protobuf.GeneratedMessag
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ListBuildsRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -201,10 +196,13 @@ public final class ListBuildsRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * The page token for the next page of Builds.
+   *
    * If unspecified, the first page of results is returned.
+   *
    * If the token is rejected for any reason, INVALID_ARGUMENT will be thrown.
    * In this case, the token should be discarded, and pagination should be
    * restarted from the first page of results.
+   *
    * See https://google.aip.dev/158 for more.
    * </pre>
    *
@@ -229,10 +227,13 @@ public final class ListBuildsRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * The page token for the next page of Builds.
+   *
    * If unspecified, the first page of results is returned.
+   *
    * If the token is rejected for any reason, INVALID_ARGUMENT will be thrown.
    * In this case, the token should be discarded, and pagination should be
    * restarted from the first page of results.
+   *
    * See https://google.aip.dev/158 for more.
    * </pre>
    *
@@ -1015,10 +1016,13 @@ public final class ListBuildsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The page token for the next page of Builds.
+     *
      * If unspecified, the first page of results is returned.
+     *
      * If the token is rejected for any reason, INVALID_ARGUMENT will be thrown.
      * In this case, the token should be discarded, and pagination should be
      * restarted from the first page of results.
+     *
      * See https://google.aip.dev/158 for more.
      * </pre>
      *
@@ -1042,10 +1046,13 @@ public final class ListBuildsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The page token for the next page of Builds.
+     *
      * If unspecified, the first page of results is returned.
+     *
      * If the token is rejected for any reason, INVALID_ARGUMENT will be thrown.
      * In this case, the token should be discarded, and pagination should be
      * restarted from the first page of results.
+     *
      * See https://google.aip.dev/158 for more.
      * </pre>
      *
@@ -1069,10 +1076,13 @@ public final class ListBuildsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The page token for the next page of Builds.
+     *
      * If unspecified, the first page of results is returned.
+     *
      * If the token is rejected for any reason, INVALID_ARGUMENT will be thrown.
      * In this case, the token should be discarded, and pagination should be
      * restarted from the first page of results.
+     *
      * See https://google.aip.dev/158 for more.
      * </pre>
      *
@@ -1095,10 +1105,13 @@ public final class ListBuildsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The page token for the next page of Builds.
+     *
      * If unspecified, the first page of results is returned.
+     *
      * If the token is rejected for any reason, INVALID_ARGUMENT will be thrown.
      * In this case, the token should be discarded, and pagination should be
      * restarted from the first page of results.
+     *
      * See https://google.aip.dev/158 for more.
      * </pre>
      *
@@ -1117,10 +1130,13 @@ public final class ListBuildsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The page token for the next page of Builds.
+     *
      * If unspecified, the first page of results is returned.
+     *
      * If the token is rejected for any reason, INVALID_ARGUMENT will be thrown.
      * In this case, the token should be discarded, and pagination should be
      * restarted from the first page of results.
+     *
      * See https://google.aip.dev/158 for more.
      * </pre>
      *

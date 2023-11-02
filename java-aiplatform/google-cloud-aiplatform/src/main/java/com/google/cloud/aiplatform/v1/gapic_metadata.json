@@ -13,8 +13,17 @@
             "CreateDataset": {
               "methods": ["createDatasetAsync", "createDatasetAsync", "createDatasetAsync", "createDatasetOperationCallable", "createDatasetCallable"]
             },
+            "CreateDatasetVersion": {
+              "methods": ["createDatasetVersionAsync", "createDatasetVersionAsync", "createDatasetVersionAsync", "createDatasetVersionOperationCallable", "createDatasetVersionCallable"]
+            },
             "DeleteDataset": {
               "methods": ["deleteDatasetAsync", "deleteDatasetAsync", "deleteDatasetAsync", "deleteDatasetOperationCallable", "deleteDatasetCallable"]
+            },
+            "DeleteDatasetVersion": {
+              "methods": ["deleteDatasetVersionAsync", "deleteDatasetVersionAsync", "deleteDatasetVersionAsync", "deleteDatasetVersionOperationCallable", "deleteDatasetVersionCallable"]
+            },
+            "DeleteSavedQuery": {
+              "methods": ["deleteSavedQueryAsync", "deleteSavedQueryAsync", "deleteSavedQueryAsync", "deleteSavedQueryOperationCallable", "deleteSavedQueryCallable"]
             },
             "ExportData": {
               "methods": ["exportDataAsync", "exportDataAsync", "exportDataAsync", "exportDataOperationCallable", "exportDataCallable"]
@@ -24,6 +33,9 @@
             },
             "GetDataset": {
               "methods": ["getDataset", "getDataset", "getDataset", "getDatasetCallable"]
+            },
+            "GetDatasetVersion": {
+              "methods": ["getDatasetVersion", "getDatasetVersion", "getDatasetVersion", "getDatasetVersionCallable"]
             },
             "GetIamPolicy": {
               "methods": ["getIamPolicy", "getIamPolicyCallable"]
@@ -40,6 +52,9 @@
             "ListDataItems": {
               "methods": ["listDataItems", "listDataItems", "listDataItems", "listDataItemsPagedCallable", "listDataItemsCallable"]
             },
+            "ListDatasetVersions": {
+              "methods": ["listDatasetVersions", "listDatasetVersions", "listDatasetVersions", "listDatasetVersionsPagedCallable", "listDatasetVersionsCallable"]
+            },
             "ListDatasets": {
               "methods": ["listDatasets", "listDatasets", "listDatasets", "listDatasetsPagedCallable", "listDatasetsCallable"]
             },
@@ -48,6 +63,9 @@
             },
             "ListSavedQueries": {
               "methods": ["listSavedQueries", "listSavedQueries", "listSavedQueries", "listSavedQueriesPagedCallable", "listSavedQueriesCallable"]
+            },
+            "RestoreDatasetVersion": {
+              "methods": ["restoreDatasetVersionAsync", "restoreDatasetVersionAsync", "restoreDatasetVersionAsync", "restoreDatasetVersionOperationCallable", "restoreDatasetVersionCallable"]
             },
             "SearchDataItems": {
               "methods": ["searchDataItems", "searchDataItemsPagedCallable", "searchDataItemsCallable"]
@@ -455,6 +473,36 @@
         }
       }
     },
+    "MatchService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "MatchServiceClient",
+          "rpcs": {
+            "FindNeighbors": {
+              "methods": ["findNeighbors", "findNeighborsCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ReadIndexDatapoints": {
+              "methods": ["readIndexDatapoints", "readIndexDatapointsCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            }
+          }
+        }
+      }
+    },
     "MetadataService": {
       "clients": {
         "grpc": {
@@ -670,11 +718,41 @@
             "TestIamPermissions": {
               "methods": ["testIamPermissions", "testIamPermissionsCallable"]
             },
+            "UpdateExplanationDataset": {
+              "methods": ["updateExplanationDatasetAsync", "updateExplanationDatasetAsync", "updateExplanationDatasetAsync", "updateExplanationDatasetOperationCallable", "updateExplanationDatasetCallable"]
+            },
             "UpdateModel": {
               "methods": ["updateModel", "updateModel", "updateModelCallable"]
             },
             "UploadModel": {
               "methods": ["uploadModelAsync", "uploadModelAsync", "uploadModelAsync", "uploadModelOperationCallable", "uploadModelCallable"]
+            }
+          }
+        }
+      }
+    },
+    "ModelGardenService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ModelGardenServiceClient",
+          "rpcs": {
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "GetPublisherModel": {
+              "methods": ["getPublisherModel", "getPublisherModel", "getPublisherModel", "getPublisherModelCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
             }
           }
         }
@@ -757,11 +835,59 @@
             "RawPredict": {
               "methods": ["rawPredict", "rawPredict", "rawPredict", "rawPredictCallable"]
             },
+            "ServerStreamingPredict": {
+              "methods": ["serverStreamingPredictCallable"]
+            },
             "SetIamPolicy": {
               "methods": ["setIamPolicy", "setIamPolicyCallable"]
             },
             "TestIamPermissions": {
               "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            }
+          }
+        }
+      }
+    },
+    "ScheduleService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ScheduleServiceClient",
+          "rpcs": {
+            "CreateSchedule": {
+              "methods": ["createSchedule", "createSchedule", "createSchedule", "createScheduleCallable"]
+            },
+            "DeleteSchedule": {
+              "methods": ["deleteScheduleAsync", "deleteScheduleAsync", "deleteScheduleAsync", "deleteScheduleOperationCallable", "deleteScheduleCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "GetSchedule": {
+              "methods": ["getSchedule", "getSchedule", "getSchedule", "getScheduleCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListSchedules": {
+              "methods": ["listSchedules", "listSchedules", "listSchedules", "listSchedulesPagedCallable", "listSchedulesCallable"]
+            },
+            "PauseSchedule": {
+              "methods": ["pauseSchedule", "pauseSchedule", "pauseSchedule", "pauseScheduleCallable"]
+            },
+            "ResumeSchedule": {
+              "methods": ["resumeSchedule", "resumeSchedule", "resumeSchedule", "resumeSchedule", "resumeSchedule", "resumeScheduleCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateSchedule": {
+              "methods": ["updateSchedule", "updateSchedule", "updateScheduleCallable"]
             }
           }
         }
@@ -882,6 +1008,9 @@
             },
             "ReadTensorboardBlobData": {
               "methods": ["readTensorboardBlobDataCallable"]
+            },
+            "ReadTensorboardSize": {
+              "methods": ["readTensorboardSize", "readTensorboardSize", "readTensorboardSize", "readTensorboardSizeCallable"]
             },
             "ReadTensorboardTimeSeriesData": {
               "methods": ["readTensorboardTimeSeriesData", "readTensorboardTimeSeriesData", "readTensorboardTimeSeriesData", "readTensorboardTimeSeriesDataCallable"]

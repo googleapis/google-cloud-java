@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class ListPhraseSetRequest extends com.google.protobuf.GeneratedMes
     return new ListPhraseSetRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.speech.v1.SpeechAdaptationProto
         .internal_static_google_cloud_speech_v1_ListPhraseSetRequest_descriptor;
@@ -77,7 +72,9 @@ public final class ListPhraseSetRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. The parent, which owns this collection of phrase set. Format:
+   *
    * `projects/{project}/locations/{location}`
+   *
    * Speech-to-Text supports three locations: `global`, `us` (US North America),
    * and `eu` (Europe). If you are calling the `speech.googleapis.com`
    * endpoint, use the `global` location. To specify a region, use a
@@ -108,7 +105,9 @@ public final class ListPhraseSetRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. The parent, which owns this collection of phrase set. Format:
+   *
    * `projects/{project}/locations/{location}`
+   *
    * Speech-to-Text supports three locations: `global`, `us` (US North America),
    * and `eu` (Europe). If you are calling the `speech.googleapis.com`
    * endpoint, use the `global` location. To specify a region, use a
@@ -166,6 +165,7 @@ public final class ListPhraseSetRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * A page token, received from a previous `ListPhraseSet` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListPhraseSet` must
    * match the call that provided the page token.
    * </pre>
@@ -192,6 +192,7 @@ public final class ListPhraseSetRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * A page token, received from a previous `ListPhraseSet` call.
    * Provide this to retrieve the subsequent page.
+   *
    * When paginating, all other parameters provided to `ListPhraseSet` must
    * match the call that provided the page token.
    * </pre>
@@ -607,7 +608,9 @@ public final class ListPhraseSetRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The parent, which owns this collection of phrase set. Format:
+     *
      * `projects/{project}/locations/{location}`
+     *
      * Speech-to-Text supports three locations: `global`, `us` (US North America),
      * and `eu` (Europe). If you are calling the `speech.googleapis.com`
      * endpoint, use the `global` location. To specify a region, use a
@@ -637,7 +640,9 @@ public final class ListPhraseSetRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The parent, which owns this collection of phrase set. Format:
+     *
      * `projects/{project}/locations/{location}`
+     *
      * Speech-to-Text supports three locations: `global`, `us` (US North America),
      * and `eu` (Europe). If you are calling the `speech.googleapis.com`
      * endpoint, use the `global` location. To specify a region, use a
@@ -667,7 +672,9 @@ public final class ListPhraseSetRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The parent, which owns this collection of phrase set. Format:
+     *
      * `projects/{project}/locations/{location}`
+     *
      * Speech-to-Text supports three locations: `global`, `us` (US North America),
      * and `eu` (Europe). If you are calling the `speech.googleapis.com`
      * endpoint, use the `global` location. To specify a region, use a
@@ -696,7 +703,9 @@ public final class ListPhraseSetRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The parent, which owns this collection of phrase set. Format:
+     *
      * `projects/{project}/locations/{location}`
+     *
      * Speech-to-Text supports three locations: `global`, `us` (US North America),
      * and `eu` (Europe). If you are calling the `speech.googleapis.com`
      * endpoint, use the `global` location. To specify a region, use a
@@ -721,7 +730,9 @@ public final class ListPhraseSetRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The parent, which owns this collection of phrase set. Format:
+     *
      * `projects/{project}/locations/{location}`
+     *
      * Speech-to-Text supports three locations: `global`, `us` (US North America),
      * and `eu` (Europe). If you are calling the `speech.googleapis.com`
      * endpoint, use the `global` location. To specify a region, use a
@@ -816,6 +827,7 @@ public final class ListPhraseSetRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * A page token, received from a previous `ListPhraseSet` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListPhraseSet` must
      * match the call that provided the page token.
      * </pre>
@@ -841,6 +853,7 @@ public final class ListPhraseSetRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * A page token, received from a previous `ListPhraseSet` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListPhraseSet` must
      * match the call that provided the page token.
      * </pre>
@@ -866,6 +879,7 @@ public final class ListPhraseSetRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * A page token, received from a previous `ListPhraseSet` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListPhraseSet` must
      * match the call that provided the page token.
      * </pre>
@@ -890,6 +904,7 @@ public final class ListPhraseSetRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * A page token, received from a previous `ListPhraseSet` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListPhraseSet` must
      * match the call that provided the page token.
      * </pre>
@@ -910,6 +925,7 @@ public final class ListPhraseSetRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * A page token, received from a previous `ListPhraseSet` call.
      * Provide this to retrieve the subsequent page.
+     *
      * When paginating, all other parameters provided to `ListPhraseSet` must
      * match the call that provided the page token.
      * </pre>

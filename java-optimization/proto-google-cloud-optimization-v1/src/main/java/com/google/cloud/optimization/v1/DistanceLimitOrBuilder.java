@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -57,6 +57,7 @@ public interface DistanceLimitOrBuilder
    * A soft limit not enforcing a maximum distance limit, but when violated
    * results in a cost which adds up to other costs defined in the model,
    * with the same unit.
+   *
    * If defined soft_max_meters must be less than max_meters and must be
    * nonnegative.
    * </pre>
@@ -73,6 +74,7 @@ public interface DistanceLimitOrBuilder
    * A soft limit not enforcing a maximum distance limit, but when violated
    * results in a cost which adds up to other costs defined in the model,
    * with the same unit.
+   *
    * If defined soft_max_meters must be less than max_meters and must be
    * nonnegative.
    * </pre>
@@ -82,6 +84,43 @@ public interface DistanceLimitOrBuilder
    * @return The softMaxMeters.
    */
   long getSoftMaxMeters();
+
+  /**
+   *
+   *
+   * <pre>
+   * Cost per kilometer incurred, increasing up to `soft_max_meters`, with
+   * formula:
+   * ```
+   *   min(distance_meters, soft_max_meters) / 1000.0 *
+   *   cost_per_kilometer_below_soft_max.
+   * ```
+   * This cost is not supported in `route_distance_limit`.
+   * </pre>
+   *
+   * <code>optional double cost_per_kilometer_below_soft_max = 4;</code>
+   *
+   * @return Whether the costPerKilometerBelowSoftMax field is set.
+   */
+  boolean hasCostPerKilometerBelowSoftMax();
+  /**
+   *
+   *
+   * <pre>
+   * Cost per kilometer incurred, increasing up to `soft_max_meters`, with
+   * formula:
+   * ```
+   *   min(distance_meters, soft_max_meters) / 1000.0 *
+   *   cost_per_kilometer_below_soft_max.
+   * ```
+   * This cost is not supported in `route_distance_limit`.
+   * </pre>
+   *
+   * <code>optional double cost_per_kilometer_below_soft_max = 4;</code>
+   *
+   * @return The costPerKilometerBelowSoftMax.
+   */
+  double getCostPerKilometerBelowSoftMax();
 
   /**
    *

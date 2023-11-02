@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,8 @@ package com.google.cloud.documentai.v1;
  *
  *
  * <pre>
- * The long running operation metadata for batch process method.
+ * The long-running operation metadata for
+ * [BatchProcessDocuments][google.cloud.documentai.v1.DocumentProcessorService.BatchProcessDocuments].
  * </pre>
  *
  * Protobuf type {@code google.cloud.documentai.v1.BatchProcessMetadata}
@@ -47,11 +48,6 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new BatchProcessMetadata();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -325,10 +321,9 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The source of the document, same as the [input_gcs_source] field in the
-     * request when the batch process started. The batch process is started by
-     * take snapshot of that document, since a user can move or change that
-     * document during the process.
+     * The source of the document, same as the
+     * [input_gcs_source][google.cloud.documentai.v1.BatchProcessMetadata.IndividualProcessStatus.input_gcs_source]
+     * field in the request when the batch process started.
      * </pre>
      *
      * <code>string input_gcs_source = 1;</code>
@@ -340,10 +335,9 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The source of the document, same as the [input_gcs_source] field in the
-     * request when the batch process started. The batch process is started by
-     * take snapshot of that document, since a user can move or change that
-     * document during the process.
+     * The source of the document, same as the
+     * [input_gcs_source][google.cloud.documentai.v1.BatchProcessMetadata.IndividualProcessStatus.input_gcs_source]
+     * field in the request when the batch process started.
      * </pre>
      *
      * <code>string input_gcs_source = 1;</code>
@@ -391,7 +385,8 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The output_gcs_destination (in the request as `output_gcs_destination`)
+     * The Cloud Storage output destination (in the request as
+     * [DocumentOutputConfig.GcsOutputConfig.gcs_uri][google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.gcs_uri])
      * of the processed document if it was successful, otherwise empty.
      * </pre>
      *
@@ -404,7 +399,8 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The output_gcs_destination (in the request as `output_gcs_destination`)
+     * The Cloud Storage output destination (in the request as
+     * [DocumentOutputConfig.GcsOutputConfig.gcs_uri][google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.gcs_uri])
      * of the processed document if it was successful, otherwise empty.
      * </pre>
      *
@@ -479,11 +475,6 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
       return new IndividualProcessStatus();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.documentai.v1.DocumentAiProcessorService
           .internal_static_google_cloud_documentai_v1_BatchProcessMetadata_IndividualProcessStatus_descriptor;
@@ -508,10 +499,9 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The source of the document, same as the [input_gcs_source] field in the
-     * request when the batch process started. The batch process is started by
-     * take snapshot of that document, since a user can move or change that
-     * document during the process.
+     * The source of the document, same as the
+     * [input_gcs_source][google.cloud.documentai.v1.BatchProcessMetadata.IndividualProcessStatus.input_gcs_source]
+     * field in the request when the batch process started.
      * </pre>
      *
      * <code>string input_gcs_source = 1;</code>
@@ -534,10 +524,9 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The source of the document, same as the [input_gcs_source] field in the
-     * request when the batch process started. The batch process is started by
-     * take snapshot of that document, since a user can move or change that
-     * document during the process.
+     * The source of the document, same as the
+     * [input_gcs_source][google.cloud.documentai.v1.BatchProcessMetadata.IndividualProcessStatus.input_gcs_source]
+     * field in the request when the batch process started.
      * </pre>
      *
      * <code>string input_gcs_source = 1;</code>
@@ -611,7 +600,8 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The output_gcs_destination (in the request as `output_gcs_destination`)
+     * The Cloud Storage output destination (in the request as
+     * [DocumentOutputConfig.GcsOutputConfig.gcs_uri][google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.gcs_uri])
      * of the processed document if it was successful, otherwise empty.
      * </pre>
      *
@@ -635,7 +625,8 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The output_gcs_destination (in the request as `output_gcs_destination`)
+     * The Cloud Storage output destination (in the request as
+     * [DocumentOutputConfig.GcsOutputConfig.gcs_uri][google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.gcs_uri])
      * of the processed document if it was successful, otherwise empty.
      * </pre>
      *
@@ -1168,10 +1159,9 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * The source of the document, same as the [input_gcs_source] field in the
-       * request when the batch process started. The batch process is started by
-       * take snapshot of that document, since a user can move or change that
-       * document during the process.
+       * The source of the document, same as the
+       * [input_gcs_source][google.cloud.documentai.v1.BatchProcessMetadata.IndividualProcessStatus.input_gcs_source]
+       * field in the request when the batch process started.
        * </pre>
        *
        * <code>string input_gcs_source = 1;</code>
@@ -1193,10 +1183,9 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * The source of the document, same as the [input_gcs_source] field in the
-       * request when the batch process started. The batch process is started by
-       * take snapshot of that document, since a user can move or change that
-       * document during the process.
+       * The source of the document, same as the
+       * [input_gcs_source][google.cloud.documentai.v1.BatchProcessMetadata.IndividualProcessStatus.input_gcs_source]
+       * field in the request when the batch process started.
        * </pre>
        *
        * <code>string input_gcs_source = 1;</code>
@@ -1218,10 +1207,9 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * The source of the document, same as the [input_gcs_source] field in the
-       * request when the batch process started. The batch process is started by
-       * take snapshot of that document, since a user can move or change that
-       * document during the process.
+       * The source of the document, same as the
+       * [input_gcs_source][google.cloud.documentai.v1.BatchProcessMetadata.IndividualProcessStatus.input_gcs_source]
+       * field in the request when the batch process started.
        * </pre>
        *
        * <code>string input_gcs_source = 1;</code>
@@ -1242,10 +1230,9 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * The source of the document, same as the [input_gcs_source] field in the
-       * request when the batch process started. The batch process is started by
-       * take snapshot of that document, since a user can move or change that
-       * document during the process.
+       * The source of the document, same as the
+       * [input_gcs_source][google.cloud.documentai.v1.BatchProcessMetadata.IndividualProcessStatus.input_gcs_source]
+       * field in the request when the batch process started.
        * </pre>
        *
        * <code>string input_gcs_source = 1;</code>
@@ -1262,10 +1249,9 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * The source of the document, same as the [input_gcs_source] field in the
-       * request when the batch process started. The batch process is started by
-       * take snapshot of that document, since a user can move or change that
-       * document during the process.
+       * The source of the document, same as the
+       * [input_gcs_source][google.cloud.documentai.v1.BatchProcessMetadata.IndividualProcessStatus.input_gcs_source]
+       * field in the request when the batch process started.
        * </pre>
        *
        * <code>string input_gcs_source = 1;</code>
@@ -1463,7 +1449,8 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * The output_gcs_destination (in the request as `output_gcs_destination`)
+       * The Cloud Storage output destination (in the request as
+       * [DocumentOutputConfig.GcsOutputConfig.gcs_uri][google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.gcs_uri])
        * of the processed document if it was successful, otherwise empty.
        * </pre>
        *
@@ -1486,7 +1473,8 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * The output_gcs_destination (in the request as `output_gcs_destination`)
+       * The Cloud Storage output destination (in the request as
+       * [DocumentOutputConfig.GcsOutputConfig.gcs_uri][google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.gcs_uri])
        * of the processed document if it was successful, otherwise empty.
        * </pre>
        *
@@ -1509,7 +1497,8 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * The output_gcs_destination (in the request as `output_gcs_destination`)
+       * The Cloud Storage output destination (in the request as
+       * [DocumentOutputConfig.GcsOutputConfig.gcs_uri][google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.gcs_uri])
        * of the processed document if it was successful, otherwise empty.
        * </pre>
        *
@@ -1531,7 +1520,8 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * The output_gcs_destination (in the request as `output_gcs_destination`)
+       * The Cloud Storage output destination (in the request as
+       * [DocumentOutputConfig.GcsOutputConfig.gcs_uri][google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.gcs_uri])
        * of the processed document if it was successful, otherwise empty.
        * </pre>
        *
@@ -1549,7 +1539,8 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
        *
        *
        * <pre>
-       * The output_gcs_destination (in the request as `output_gcs_destination`)
+       * The Cloud Storage output destination (in the request as
+       * [DocumentOutputConfig.GcsOutputConfig.gcs_uri][google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.gcs_uri])
        * of the processed document if it was successful, otherwise empty.
        * </pre>
        *
@@ -2313,7 +2304,8 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The long running operation metadata for batch process method.
+   * The long-running operation metadata for
+   * [BatchProcessDocuments][google.cloud.documentai.v1.DocumentProcessorService.BatchProcessDocuments].
    * </pre>
    *
    * Protobuf type {@code google.cloud.documentai.v1.BatchProcessMetadata}

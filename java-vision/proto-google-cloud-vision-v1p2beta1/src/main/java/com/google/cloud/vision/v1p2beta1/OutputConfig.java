@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,11 +43,6 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new OutputConfig();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -123,10 +118,12 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The max number of response protos to put into each output JSON file on GCS.
    * The valid range is [1, 100]. If not specified, the default value is 20.
+   *
    * For example, for one pdf file with 100 pages, 100 response protos will
    * be generated. If `batch_size` = 20, then 5 json files each
    * containing 20 response protos will be written under the prefix
    * `gcs_destination`.`uri`.
+   *
    * Currently, batch_size only applies to GcsDestination, with potential future
    * support for other output configurations.
    * </pre>
@@ -703,10 +700,12 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The max number of response protos to put into each output JSON file on GCS.
      * The valid range is [1, 100]. If not specified, the default value is 20.
+     *
      * For example, for one pdf file with 100 pages, 100 response protos will
      * be generated. If `batch_size` = 20, then 5 json files each
      * containing 20 response protos will be written under the prefix
      * `gcs_destination`.`uri`.
+     *
      * Currently, batch_size only applies to GcsDestination, with potential future
      * support for other output configurations.
      * </pre>
@@ -725,10 +724,12 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The max number of response protos to put into each output JSON file on GCS.
      * The valid range is [1, 100]. If not specified, the default value is 20.
+     *
      * For example, for one pdf file with 100 pages, 100 response protos will
      * be generated. If `batch_size` = 20, then 5 json files each
      * containing 20 response protos will be written under the prefix
      * `gcs_destination`.`uri`.
+     *
      * Currently, batch_size only applies to GcsDestination, with potential future
      * support for other output configurations.
      * </pre>
@@ -751,10 +752,12 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The max number of response protos to put into each output JSON file on GCS.
      * The valid range is [1, 100]. If not specified, the default value is 20.
+     *
      * For example, for one pdf file with 100 pages, 100 response protos will
      * be generated. If `batch_size` = 20, then 5 json files each
      * containing 20 response protos will be written under the prefix
      * `gcs_destination`.`uri`.
+     *
      * Currently, batch_size only applies to GcsDestination, with potential future
      * support for other output configurations.
      * </pre>

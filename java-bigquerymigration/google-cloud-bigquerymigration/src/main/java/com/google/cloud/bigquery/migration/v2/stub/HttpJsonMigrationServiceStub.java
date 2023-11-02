@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,6 +30,7 @@ import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.bigquery.migration.v2.CreateMigrationWorkflowRequest;
 import com.google.cloud.bigquery.migration.v2.DeleteMigrationWorkflowRequest;
@@ -386,12 +387,24 @@ public class HttpJsonMigrationServiceStub extends MigrationServiceStub {
             HttpJsonCallSettings.<CreateMigrationWorkflowRequest, MigrationWorkflow>newBuilder()
                 .setMethodDescriptor(createMigrationWorkflowMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetMigrationWorkflowRequest, MigrationWorkflow>
         getMigrationWorkflowTransportSettings =
             HttpJsonCallSettings.<GetMigrationWorkflowRequest, MigrationWorkflow>newBuilder()
                 .setMethodDescriptor(getMigrationWorkflowMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ListMigrationWorkflowsRequest, ListMigrationWorkflowsResponse>
         listMigrationWorkflowsTransportSettings =
@@ -399,24 +412,48 @@ public class HttpJsonMigrationServiceStub extends MigrationServiceStub {
                 .<ListMigrationWorkflowsRequest, ListMigrationWorkflowsResponse>newBuilder()
                 .setMethodDescriptor(listMigrationWorkflowsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteMigrationWorkflowRequest, Empty>
         deleteMigrationWorkflowTransportSettings =
             HttpJsonCallSettings.<DeleteMigrationWorkflowRequest, Empty>newBuilder()
                 .setMethodDescriptor(deleteMigrationWorkflowMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<StartMigrationWorkflowRequest, Empty>
         startMigrationWorkflowTransportSettings =
             HttpJsonCallSettings.<StartMigrationWorkflowRequest, Empty>newBuilder()
                 .setMethodDescriptor(startMigrationWorkflowMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetMigrationSubtaskRequest, MigrationSubtask>
         getMigrationSubtaskTransportSettings =
             HttpJsonCallSettings.<GetMigrationSubtaskRequest, MigrationSubtask>newBuilder()
                 .setMethodDescriptor(getMigrationSubtaskMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<ListMigrationSubtasksRequest, ListMigrationSubtasksResponse>
         listMigrationSubtasksTransportSettings =
@@ -424,6 +461,12 @@ public class HttpJsonMigrationServiceStub extends MigrationServiceStub {
                 .<ListMigrationSubtasksRequest, ListMigrationSubtasksResponse>newBuilder()
                 .setMethodDescriptor(listMigrationSubtasksMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
 
     this.createMigrationWorkflowCallable =

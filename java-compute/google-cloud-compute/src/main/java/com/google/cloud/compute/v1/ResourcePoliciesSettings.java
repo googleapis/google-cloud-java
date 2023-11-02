@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -121,6 +121,17 @@ public class ResourcePoliciesSettings extends ClientSettings<ResourcePoliciesSet
   public PagedCallSettings<ListResourcePoliciesRequest, ResourcePolicyList, ListPagedResponse>
       listSettings() {
     return ((ResourcePoliciesStubSettings) getStubSettings()).listSettings();
+  }
+
+  /** Returns the object with the settings used for calls to patch. */
+  public UnaryCallSettings<PatchResourcePolicyRequest, Operation> patchSettings() {
+    return ((ResourcePoliciesStubSettings) getStubSettings()).patchSettings();
+  }
+
+  /** Returns the object with the settings used for calls to patch. */
+  public OperationCallSettings<PatchResourcePolicyRequest, Operation, Operation>
+      patchOperationSettings() {
+    return ((ResourcePoliciesStubSettings) getStubSettings()).patchOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to setIamPolicy. */
@@ -279,6 +290,17 @@ public class ResourcePoliciesSettings extends ClientSettings<ResourcePoliciesSet
             ListResourcePoliciesRequest, ResourcePolicyList, ListPagedResponse>
         listSettings() {
       return getStubSettingsBuilder().listSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to patch. */
+    public UnaryCallSettings.Builder<PatchResourcePolicyRequest, Operation> patchSettings() {
+      return getStubSettingsBuilder().patchSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to patch. */
+    public OperationCallSettings.Builder<PatchResourcePolicyRequest, Operation, Operation>
+        patchOperationSettings() {
+      return getStubSettingsBuilder().patchOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to setIamPolicy. */

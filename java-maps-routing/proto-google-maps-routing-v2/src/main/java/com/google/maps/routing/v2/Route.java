@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,7 @@ package com.google.maps.routing.v2;
  *
  *
  * <pre>
- * Encapsulates a route, which consists of a series of connected road segments
+ * Contains a route, which consists of a series of connected road segments
  * that join beginning, ending, and intermediate waypoints.
  * </pre>
  *
@@ -42,7 +42,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     routeLabels_ = java.util.Collections.emptyList();
     legs_ = java.util.Collections.emptyList();
     description_ = "";
-    warnings_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    warnings_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    optimizedIntermediateWaypointIndex_ = emptyIntList();
     routeToken_ = "";
   }
 
@@ -50,11 +51,6 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Route();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -69,6 +65,1668 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
         .internal_static_google_maps_routing_v2_Route_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.maps.routing.v2.Route.class, com.google.maps.routing.v2.Route.Builder.class);
+  }
+
+  public interface RouteLocalizedValuesOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.maps.routing.v2.Route.RouteLocalizedValues)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Travel distance represented in text form.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText distance = 1;</code>
+     *
+     * @return Whether the distance field is set.
+     */
+    boolean hasDistance();
+    /**
+     *
+     *
+     * <pre>
+     * Travel distance represented in text form.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText distance = 1;</code>
+     *
+     * @return The distance.
+     */
+    com.google.type.LocalizedText getDistance();
+    /**
+     *
+     *
+     * <pre>
+     * Travel distance represented in text form.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText distance = 1;</code>
+     */
+    com.google.type.LocalizedTextOrBuilder getDistanceOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Duration taking traffic conditions into consideration, represented in
+     * text form. Note: If you did not request traffic information, this value
+     * will be the same value as static_duration.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText duration = 2;</code>
+     *
+     * @return Whether the duration field is set.
+     */
+    boolean hasDuration();
+    /**
+     *
+     *
+     * <pre>
+     * Duration taking traffic conditions into consideration, represented in
+     * text form. Note: If you did not request traffic information, this value
+     * will be the same value as static_duration.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText duration = 2;</code>
+     *
+     * @return The duration.
+     */
+    com.google.type.LocalizedText getDuration();
+    /**
+     *
+     *
+     * <pre>
+     * Duration taking traffic conditions into consideration, represented in
+     * text form. Note: If you did not request traffic information, this value
+     * will be the same value as static_duration.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText duration = 2;</code>
+     */
+    com.google.type.LocalizedTextOrBuilder getDurationOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Duration without taking traffic conditions into
+     * consideration, represented in text form.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText static_duration = 3;</code>
+     *
+     * @return Whether the staticDuration field is set.
+     */
+    boolean hasStaticDuration();
+    /**
+     *
+     *
+     * <pre>
+     * Duration without taking traffic conditions into
+     * consideration, represented in text form.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText static_duration = 3;</code>
+     *
+     * @return The staticDuration.
+     */
+    com.google.type.LocalizedText getStaticDuration();
+    /**
+     *
+     *
+     * <pre>
+     * Duration without taking traffic conditions into
+     * consideration, represented in text form.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText static_duration = 3;</code>
+     */
+    com.google.type.LocalizedTextOrBuilder getStaticDurationOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Transit fare represented in text form.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText transit_fare = 4;</code>
+     *
+     * @return Whether the transitFare field is set.
+     */
+    boolean hasTransitFare();
+    /**
+     *
+     *
+     * <pre>
+     * Transit fare represented in text form.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText transit_fare = 4;</code>
+     *
+     * @return The transitFare.
+     */
+    com.google.type.LocalizedText getTransitFare();
+    /**
+     *
+     *
+     * <pre>
+     * Transit fare represented in text form.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText transit_fare = 4;</code>
+     */
+    com.google.type.LocalizedTextOrBuilder getTransitFareOrBuilder();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Text representations of certain properties.
+   * </pre>
+   *
+   * Protobuf type {@code google.maps.routing.v2.Route.RouteLocalizedValues}
+   */
+  public static final class RouteLocalizedValues extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.maps.routing.v2.Route.RouteLocalizedValues)
+      RouteLocalizedValuesOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use RouteLocalizedValues.newBuilder() to construct.
+    private RouteLocalizedValues(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private RouteLocalizedValues() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new RouteLocalizedValues();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.maps.routing.v2.RouteProto
+          .internal_static_google_maps_routing_v2_Route_RouteLocalizedValues_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.maps.routing.v2.RouteProto
+          .internal_static_google_maps_routing_v2_Route_RouteLocalizedValues_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.maps.routing.v2.Route.RouteLocalizedValues.class,
+              com.google.maps.routing.v2.Route.RouteLocalizedValues.Builder.class);
+    }
+
+    public static final int DISTANCE_FIELD_NUMBER = 1;
+    private com.google.type.LocalizedText distance_;
+    /**
+     *
+     *
+     * <pre>
+     * Travel distance represented in text form.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText distance = 1;</code>
+     *
+     * @return Whether the distance field is set.
+     */
+    @java.lang.Override
+    public boolean hasDistance() {
+      return distance_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Travel distance represented in text form.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText distance = 1;</code>
+     *
+     * @return The distance.
+     */
+    @java.lang.Override
+    public com.google.type.LocalizedText getDistance() {
+      return distance_ == null ? com.google.type.LocalizedText.getDefaultInstance() : distance_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Travel distance represented in text form.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText distance = 1;</code>
+     */
+    @java.lang.Override
+    public com.google.type.LocalizedTextOrBuilder getDistanceOrBuilder() {
+      return distance_ == null ? com.google.type.LocalizedText.getDefaultInstance() : distance_;
+    }
+
+    public static final int DURATION_FIELD_NUMBER = 2;
+    private com.google.type.LocalizedText duration_;
+    /**
+     *
+     *
+     * <pre>
+     * Duration taking traffic conditions into consideration, represented in
+     * text form. Note: If you did not request traffic information, this value
+     * will be the same value as static_duration.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText duration = 2;</code>
+     *
+     * @return Whether the duration field is set.
+     */
+    @java.lang.Override
+    public boolean hasDuration() {
+      return duration_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Duration taking traffic conditions into consideration, represented in
+     * text form. Note: If you did not request traffic information, this value
+     * will be the same value as static_duration.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText duration = 2;</code>
+     *
+     * @return The duration.
+     */
+    @java.lang.Override
+    public com.google.type.LocalizedText getDuration() {
+      return duration_ == null ? com.google.type.LocalizedText.getDefaultInstance() : duration_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Duration taking traffic conditions into consideration, represented in
+     * text form. Note: If you did not request traffic information, this value
+     * will be the same value as static_duration.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText duration = 2;</code>
+     */
+    @java.lang.Override
+    public com.google.type.LocalizedTextOrBuilder getDurationOrBuilder() {
+      return duration_ == null ? com.google.type.LocalizedText.getDefaultInstance() : duration_;
+    }
+
+    public static final int STATIC_DURATION_FIELD_NUMBER = 3;
+    private com.google.type.LocalizedText staticDuration_;
+    /**
+     *
+     *
+     * <pre>
+     * Duration without taking traffic conditions into
+     * consideration, represented in text form.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText static_duration = 3;</code>
+     *
+     * @return Whether the staticDuration field is set.
+     */
+    @java.lang.Override
+    public boolean hasStaticDuration() {
+      return staticDuration_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Duration without taking traffic conditions into
+     * consideration, represented in text form.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText static_duration = 3;</code>
+     *
+     * @return The staticDuration.
+     */
+    @java.lang.Override
+    public com.google.type.LocalizedText getStaticDuration() {
+      return staticDuration_ == null
+          ? com.google.type.LocalizedText.getDefaultInstance()
+          : staticDuration_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Duration without taking traffic conditions into
+     * consideration, represented in text form.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText static_duration = 3;</code>
+     */
+    @java.lang.Override
+    public com.google.type.LocalizedTextOrBuilder getStaticDurationOrBuilder() {
+      return staticDuration_ == null
+          ? com.google.type.LocalizedText.getDefaultInstance()
+          : staticDuration_;
+    }
+
+    public static final int TRANSIT_FARE_FIELD_NUMBER = 4;
+    private com.google.type.LocalizedText transitFare_;
+    /**
+     *
+     *
+     * <pre>
+     * Transit fare represented in text form.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText transit_fare = 4;</code>
+     *
+     * @return Whether the transitFare field is set.
+     */
+    @java.lang.Override
+    public boolean hasTransitFare() {
+      return transitFare_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Transit fare represented in text form.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText transit_fare = 4;</code>
+     *
+     * @return The transitFare.
+     */
+    @java.lang.Override
+    public com.google.type.LocalizedText getTransitFare() {
+      return transitFare_ == null
+          ? com.google.type.LocalizedText.getDefaultInstance()
+          : transitFare_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Transit fare represented in text form.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText transit_fare = 4;</code>
+     */
+    @java.lang.Override
+    public com.google.type.LocalizedTextOrBuilder getTransitFareOrBuilder() {
+      return transitFare_ == null
+          ? com.google.type.LocalizedText.getDefaultInstance()
+          : transitFare_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (distance_ != null) {
+        output.writeMessage(1, getDistance());
+      }
+      if (duration_ != null) {
+        output.writeMessage(2, getDuration());
+      }
+      if (staticDuration_ != null) {
+        output.writeMessage(3, getStaticDuration());
+      }
+      if (transitFare_ != null) {
+        output.writeMessage(4, getTransitFare());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (distance_ != null) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getDistance());
+      }
+      if (duration_ != null) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getDuration());
+      }
+      if (staticDuration_ != null) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getStaticDuration());
+      }
+      if (transitFare_ != null) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getTransitFare());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.maps.routing.v2.Route.RouteLocalizedValues)) {
+        return super.equals(obj);
+      }
+      com.google.maps.routing.v2.Route.RouteLocalizedValues other =
+          (com.google.maps.routing.v2.Route.RouteLocalizedValues) obj;
+
+      if (hasDistance() != other.hasDistance()) return false;
+      if (hasDistance()) {
+        if (!getDistance().equals(other.getDistance())) return false;
+      }
+      if (hasDuration() != other.hasDuration()) return false;
+      if (hasDuration()) {
+        if (!getDuration().equals(other.getDuration())) return false;
+      }
+      if (hasStaticDuration() != other.hasStaticDuration()) return false;
+      if (hasStaticDuration()) {
+        if (!getStaticDuration().equals(other.getStaticDuration())) return false;
+      }
+      if (hasTransitFare() != other.hasTransitFare()) return false;
+      if (hasTransitFare()) {
+        if (!getTransitFare().equals(other.getTransitFare())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasDistance()) {
+        hash = (37 * hash) + DISTANCE_FIELD_NUMBER;
+        hash = (53 * hash) + getDistance().hashCode();
+      }
+      if (hasDuration()) {
+        hash = (37 * hash) + DURATION_FIELD_NUMBER;
+        hash = (53 * hash) + getDuration().hashCode();
+      }
+      if (hasStaticDuration()) {
+        hash = (37 * hash) + STATIC_DURATION_FIELD_NUMBER;
+        hash = (53 * hash) + getStaticDuration().hashCode();
+      }
+      if (hasTransitFare()) {
+        hash = (37 * hash) + TRANSIT_FARE_FIELD_NUMBER;
+        hash = (53 * hash) + getTransitFare().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.maps.routing.v2.Route.RouteLocalizedValues parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.maps.routing.v2.Route.RouteLocalizedValues parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.maps.routing.v2.Route.RouteLocalizedValues parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.maps.routing.v2.Route.RouteLocalizedValues parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.maps.routing.v2.Route.RouteLocalizedValues parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.maps.routing.v2.Route.RouteLocalizedValues parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.maps.routing.v2.Route.RouteLocalizedValues parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.maps.routing.v2.Route.RouteLocalizedValues parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.maps.routing.v2.Route.RouteLocalizedValues parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.maps.routing.v2.Route.RouteLocalizedValues parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.maps.routing.v2.Route.RouteLocalizedValues parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.maps.routing.v2.Route.RouteLocalizedValues parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.maps.routing.v2.Route.RouteLocalizedValues prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Text representations of certain properties.
+     * </pre>
+     *
+     * Protobuf type {@code google.maps.routing.v2.Route.RouteLocalizedValues}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.maps.routing.v2.Route.RouteLocalizedValues)
+        com.google.maps.routing.v2.Route.RouteLocalizedValuesOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.maps.routing.v2.RouteProto
+            .internal_static_google_maps_routing_v2_Route_RouteLocalizedValues_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.maps.routing.v2.RouteProto
+            .internal_static_google_maps_routing_v2_Route_RouteLocalizedValues_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.maps.routing.v2.Route.RouteLocalizedValues.class,
+                com.google.maps.routing.v2.Route.RouteLocalizedValues.Builder.class);
+      }
+
+      // Construct using com.google.maps.routing.v2.Route.RouteLocalizedValues.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        distance_ = null;
+        if (distanceBuilder_ != null) {
+          distanceBuilder_.dispose();
+          distanceBuilder_ = null;
+        }
+        duration_ = null;
+        if (durationBuilder_ != null) {
+          durationBuilder_.dispose();
+          durationBuilder_ = null;
+        }
+        staticDuration_ = null;
+        if (staticDurationBuilder_ != null) {
+          staticDurationBuilder_.dispose();
+          staticDurationBuilder_ = null;
+        }
+        transitFare_ = null;
+        if (transitFareBuilder_ != null) {
+          transitFareBuilder_.dispose();
+          transitFareBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.maps.routing.v2.RouteProto
+            .internal_static_google_maps_routing_v2_Route_RouteLocalizedValues_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.maps.routing.v2.Route.RouteLocalizedValues getDefaultInstanceForType() {
+        return com.google.maps.routing.v2.Route.RouteLocalizedValues.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.maps.routing.v2.Route.RouteLocalizedValues build() {
+        com.google.maps.routing.v2.Route.RouteLocalizedValues result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.maps.routing.v2.Route.RouteLocalizedValues buildPartial() {
+        com.google.maps.routing.v2.Route.RouteLocalizedValues result =
+            new com.google.maps.routing.v2.Route.RouteLocalizedValues(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.maps.routing.v2.Route.RouteLocalizedValues result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.distance_ = distanceBuilder_ == null ? distance_ : distanceBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.duration_ = durationBuilder_ == null ? duration_ : durationBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.staticDuration_ =
+              staticDurationBuilder_ == null ? staticDuration_ : staticDurationBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.transitFare_ =
+              transitFareBuilder_ == null ? transitFare_ : transitFareBuilder_.build();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.maps.routing.v2.Route.RouteLocalizedValues) {
+          return mergeFrom((com.google.maps.routing.v2.Route.RouteLocalizedValues) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.maps.routing.v2.Route.RouteLocalizedValues other) {
+        if (other == com.google.maps.routing.v2.Route.RouteLocalizedValues.getDefaultInstance())
+          return this;
+        if (other.hasDistance()) {
+          mergeDistance(other.getDistance());
+        }
+        if (other.hasDuration()) {
+          mergeDuration(other.getDuration());
+        }
+        if (other.hasStaticDuration()) {
+          mergeStaticDuration(other.getStaticDuration());
+        }
+        if (other.hasTransitFare()) {
+          mergeTransitFare(other.getTransitFare());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(getDistanceFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  input.readMessage(getDurationFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              case 26:
+                {
+                  input.readMessage(
+                      getStaticDurationFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
+              case 34:
+                {
+                  input.readMessage(getTransitFareFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 34
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.type.LocalizedText distance_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.type.LocalizedText,
+              com.google.type.LocalizedText.Builder,
+              com.google.type.LocalizedTextOrBuilder>
+          distanceBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Travel distance represented in text form.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText distance = 1;</code>
+       *
+       * @return Whether the distance field is set.
+       */
+      public boolean hasDistance() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Travel distance represented in text form.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText distance = 1;</code>
+       *
+       * @return The distance.
+       */
+      public com.google.type.LocalizedText getDistance() {
+        if (distanceBuilder_ == null) {
+          return distance_ == null ? com.google.type.LocalizedText.getDefaultInstance() : distance_;
+        } else {
+          return distanceBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Travel distance represented in text form.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText distance = 1;</code>
+       */
+      public Builder setDistance(com.google.type.LocalizedText value) {
+        if (distanceBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          distance_ = value;
+        } else {
+          distanceBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Travel distance represented in text form.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText distance = 1;</code>
+       */
+      public Builder setDistance(com.google.type.LocalizedText.Builder builderForValue) {
+        if (distanceBuilder_ == null) {
+          distance_ = builderForValue.build();
+        } else {
+          distanceBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Travel distance represented in text form.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText distance = 1;</code>
+       */
+      public Builder mergeDistance(com.google.type.LocalizedText value) {
+        if (distanceBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)
+              && distance_ != null
+              && distance_ != com.google.type.LocalizedText.getDefaultInstance()) {
+            getDistanceBuilder().mergeFrom(value);
+          } else {
+            distance_ = value;
+          }
+        } else {
+          distanceBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Travel distance represented in text form.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText distance = 1;</code>
+       */
+      public Builder clearDistance() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        distance_ = null;
+        if (distanceBuilder_ != null) {
+          distanceBuilder_.dispose();
+          distanceBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Travel distance represented in text form.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText distance = 1;</code>
+       */
+      public com.google.type.LocalizedText.Builder getDistanceBuilder() {
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return getDistanceFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Travel distance represented in text form.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText distance = 1;</code>
+       */
+      public com.google.type.LocalizedTextOrBuilder getDistanceOrBuilder() {
+        if (distanceBuilder_ != null) {
+          return distanceBuilder_.getMessageOrBuilder();
+        } else {
+          return distance_ == null ? com.google.type.LocalizedText.getDefaultInstance() : distance_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Travel distance represented in text form.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText distance = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.type.LocalizedText,
+              com.google.type.LocalizedText.Builder,
+              com.google.type.LocalizedTextOrBuilder>
+          getDistanceFieldBuilder() {
+        if (distanceBuilder_ == null) {
+          distanceBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.type.LocalizedText,
+                  com.google.type.LocalizedText.Builder,
+                  com.google.type.LocalizedTextOrBuilder>(
+                  getDistance(), getParentForChildren(), isClean());
+          distance_ = null;
+        }
+        return distanceBuilder_;
+      }
+
+      private com.google.type.LocalizedText duration_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.type.LocalizedText,
+              com.google.type.LocalizedText.Builder,
+              com.google.type.LocalizedTextOrBuilder>
+          durationBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Duration taking traffic conditions into consideration, represented in
+       * text form. Note: If you did not request traffic information, this value
+       * will be the same value as static_duration.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText duration = 2;</code>
+       *
+       * @return Whether the duration field is set.
+       */
+      public boolean hasDuration() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Duration taking traffic conditions into consideration, represented in
+       * text form. Note: If you did not request traffic information, this value
+       * will be the same value as static_duration.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText duration = 2;</code>
+       *
+       * @return The duration.
+       */
+      public com.google.type.LocalizedText getDuration() {
+        if (durationBuilder_ == null) {
+          return duration_ == null ? com.google.type.LocalizedText.getDefaultInstance() : duration_;
+        } else {
+          return durationBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Duration taking traffic conditions into consideration, represented in
+       * text form. Note: If you did not request traffic information, this value
+       * will be the same value as static_duration.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText duration = 2;</code>
+       */
+      public Builder setDuration(com.google.type.LocalizedText value) {
+        if (durationBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          duration_ = value;
+        } else {
+          durationBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Duration taking traffic conditions into consideration, represented in
+       * text form. Note: If you did not request traffic information, this value
+       * will be the same value as static_duration.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText duration = 2;</code>
+       */
+      public Builder setDuration(com.google.type.LocalizedText.Builder builderForValue) {
+        if (durationBuilder_ == null) {
+          duration_ = builderForValue.build();
+        } else {
+          durationBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Duration taking traffic conditions into consideration, represented in
+       * text form. Note: If you did not request traffic information, this value
+       * will be the same value as static_duration.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText duration = 2;</code>
+       */
+      public Builder mergeDuration(com.google.type.LocalizedText value) {
+        if (durationBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)
+              && duration_ != null
+              && duration_ != com.google.type.LocalizedText.getDefaultInstance()) {
+            getDurationBuilder().mergeFrom(value);
+          } else {
+            duration_ = value;
+          }
+        } else {
+          durationBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Duration taking traffic conditions into consideration, represented in
+       * text form. Note: If you did not request traffic information, this value
+       * will be the same value as static_duration.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText duration = 2;</code>
+       */
+      public Builder clearDuration() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        duration_ = null;
+        if (durationBuilder_ != null) {
+          durationBuilder_.dispose();
+          durationBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Duration taking traffic conditions into consideration, represented in
+       * text form. Note: If you did not request traffic information, this value
+       * will be the same value as static_duration.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText duration = 2;</code>
+       */
+      public com.google.type.LocalizedText.Builder getDurationBuilder() {
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return getDurationFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Duration taking traffic conditions into consideration, represented in
+       * text form. Note: If you did not request traffic information, this value
+       * will be the same value as static_duration.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText duration = 2;</code>
+       */
+      public com.google.type.LocalizedTextOrBuilder getDurationOrBuilder() {
+        if (durationBuilder_ != null) {
+          return durationBuilder_.getMessageOrBuilder();
+        } else {
+          return duration_ == null ? com.google.type.LocalizedText.getDefaultInstance() : duration_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Duration taking traffic conditions into consideration, represented in
+       * text form. Note: If you did not request traffic information, this value
+       * will be the same value as static_duration.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText duration = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.type.LocalizedText,
+              com.google.type.LocalizedText.Builder,
+              com.google.type.LocalizedTextOrBuilder>
+          getDurationFieldBuilder() {
+        if (durationBuilder_ == null) {
+          durationBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.type.LocalizedText,
+                  com.google.type.LocalizedText.Builder,
+                  com.google.type.LocalizedTextOrBuilder>(
+                  getDuration(), getParentForChildren(), isClean());
+          duration_ = null;
+        }
+        return durationBuilder_;
+      }
+
+      private com.google.type.LocalizedText staticDuration_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.type.LocalizedText,
+              com.google.type.LocalizedText.Builder,
+              com.google.type.LocalizedTextOrBuilder>
+          staticDurationBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Duration without taking traffic conditions into
+       * consideration, represented in text form.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText static_duration = 3;</code>
+       *
+       * @return Whether the staticDuration field is set.
+       */
+      public boolean hasStaticDuration() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Duration without taking traffic conditions into
+       * consideration, represented in text form.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText static_duration = 3;</code>
+       *
+       * @return The staticDuration.
+       */
+      public com.google.type.LocalizedText getStaticDuration() {
+        if (staticDurationBuilder_ == null) {
+          return staticDuration_ == null
+              ? com.google.type.LocalizedText.getDefaultInstance()
+              : staticDuration_;
+        } else {
+          return staticDurationBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Duration without taking traffic conditions into
+       * consideration, represented in text form.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText static_duration = 3;</code>
+       */
+      public Builder setStaticDuration(com.google.type.LocalizedText value) {
+        if (staticDurationBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          staticDuration_ = value;
+        } else {
+          staticDurationBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Duration without taking traffic conditions into
+       * consideration, represented in text form.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText static_duration = 3;</code>
+       */
+      public Builder setStaticDuration(com.google.type.LocalizedText.Builder builderForValue) {
+        if (staticDurationBuilder_ == null) {
+          staticDuration_ = builderForValue.build();
+        } else {
+          staticDurationBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Duration without taking traffic conditions into
+       * consideration, represented in text form.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText static_duration = 3;</code>
+       */
+      public Builder mergeStaticDuration(com.google.type.LocalizedText value) {
+        if (staticDurationBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) != 0)
+              && staticDuration_ != null
+              && staticDuration_ != com.google.type.LocalizedText.getDefaultInstance()) {
+            getStaticDurationBuilder().mergeFrom(value);
+          } else {
+            staticDuration_ = value;
+          }
+        } else {
+          staticDurationBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Duration without taking traffic conditions into
+       * consideration, represented in text form.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText static_duration = 3;</code>
+       */
+      public Builder clearStaticDuration() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        staticDuration_ = null;
+        if (staticDurationBuilder_ != null) {
+          staticDurationBuilder_.dispose();
+          staticDurationBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Duration without taking traffic conditions into
+       * consideration, represented in text form.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText static_duration = 3;</code>
+       */
+      public com.google.type.LocalizedText.Builder getStaticDurationBuilder() {
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return getStaticDurationFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Duration without taking traffic conditions into
+       * consideration, represented in text form.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText static_duration = 3;</code>
+       */
+      public com.google.type.LocalizedTextOrBuilder getStaticDurationOrBuilder() {
+        if (staticDurationBuilder_ != null) {
+          return staticDurationBuilder_.getMessageOrBuilder();
+        } else {
+          return staticDuration_ == null
+              ? com.google.type.LocalizedText.getDefaultInstance()
+              : staticDuration_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Duration without taking traffic conditions into
+       * consideration, represented in text form.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText static_duration = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.type.LocalizedText,
+              com.google.type.LocalizedText.Builder,
+              com.google.type.LocalizedTextOrBuilder>
+          getStaticDurationFieldBuilder() {
+        if (staticDurationBuilder_ == null) {
+          staticDurationBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.type.LocalizedText,
+                  com.google.type.LocalizedText.Builder,
+                  com.google.type.LocalizedTextOrBuilder>(
+                  getStaticDuration(), getParentForChildren(), isClean());
+          staticDuration_ = null;
+        }
+        return staticDurationBuilder_;
+      }
+
+      private com.google.type.LocalizedText transitFare_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.type.LocalizedText,
+              com.google.type.LocalizedText.Builder,
+              com.google.type.LocalizedTextOrBuilder>
+          transitFareBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Transit fare represented in text form.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText transit_fare = 4;</code>
+       *
+       * @return Whether the transitFare field is set.
+       */
+      public boolean hasTransitFare() {
+        return ((bitField0_ & 0x00000008) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Transit fare represented in text form.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText transit_fare = 4;</code>
+       *
+       * @return The transitFare.
+       */
+      public com.google.type.LocalizedText getTransitFare() {
+        if (transitFareBuilder_ == null) {
+          return transitFare_ == null
+              ? com.google.type.LocalizedText.getDefaultInstance()
+              : transitFare_;
+        } else {
+          return transitFareBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Transit fare represented in text form.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText transit_fare = 4;</code>
+       */
+      public Builder setTransitFare(com.google.type.LocalizedText value) {
+        if (transitFareBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          transitFare_ = value;
+        } else {
+          transitFareBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Transit fare represented in text form.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText transit_fare = 4;</code>
+       */
+      public Builder setTransitFare(com.google.type.LocalizedText.Builder builderForValue) {
+        if (transitFareBuilder_ == null) {
+          transitFare_ = builderForValue.build();
+        } else {
+          transitFareBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Transit fare represented in text form.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText transit_fare = 4;</code>
+       */
+      public Builder mergeTransitFare(com.google.type.LocalizedText value) {
+        if (transitFareBuilder_ == null) {
+          if (((bitField0_ & 0x00000008) != 0)
+              && transitFare_ != null
+              && transitFare_ != com.google.type.LocalizedText.getDefaultInstance()) {
+            getTransitFareBuilder().mergeFrom(value);
+          } else {
+            transitFare_ = value;
+          }
+        } else {
+          transitFareBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Transit fare represented in text form.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText transit_fare = 4;</code>
+       */
+      public Builder clearTransitFare() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        transitFare_ = null;
+        if (transitFareBuilder_ != null) {
+          transitFareBuilder_.dispose();
+          transitFareBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Transit fare represented in text form.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText transit_fare = 4;</code>
+       */
+      public com.google.type.LocalizedText.Builder getTransitFareBuilder() {
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return getTransitFareFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Transit fare represented in text form.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText transit_fare = 4;</code>
+       */
+      public com.google.type.LocalizedTextOrBuilder getTransitFareOrBuilder() {
+        if (transitFareBuilder_ != null) {
+          return transitFareBuilder_.getMessageOrBuilder();
+        } else {
+          return transitFare_ == null
+              ? com.google.type.LocalizedText.getDefaultInstance()
+              : transitFare_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Transit fare represented in text form.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText transit_fare = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.type.LocalizedText,
+              com.google.type.LocalizedText.Builder,
+              com.google.type.LocalizedTextOrBuilder>
+          getTransitFareFieldBuilder() {
+        if (transitFareBuilder_ == null) {
+          transitFareBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.type.LocalizedText,
+                  com.google.type.LocalizedText.Builder,
+                  com.google.type.LocalizedTextOrBuilder>(
+                  getTransitFare(), getParentForChildren(), isClean());
+          transitFare_ = null;
+        }
+        return transitFareBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.maps.routing.v2.Route.RouteLocalizedValues)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.maps.routing.v2.Route.RouteLocalizedValues)
+    private static final com.google.maps.routing.v2.Route.RouteLocalizedValues DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.maps.routing.v2.Route.RouteLocalizedValues();
+    }
+
+    public static com.google.maps.routing.v2.Route.RouteLocalizedValues getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<RouteLocalizedValues> PARSER =
+        new com.google.protobuf.AbstractParser<RouteLocalizedValues>() {
+          @java.lang.Override
+          public RouteLocalizedValues parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<RouteLocalizedValues> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<RouteLocalizedValues> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.maps.routing.v2.Route.RouteLocalizedValues getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
   }
 
   public static final int ROUTE_LABELS_FIELD_NUMBER = 13;
@@ -182,13 +1840,13 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A collection of legs (path segments between waypoints) that make-up the
+   * A collection of legs (path segments between waypoints) that make up the
    * route. Each leg corresponds to the trip between two non-`via`
    * [Waypoints][google.maps.routing.v2.Waypoint]. For example, a route with no
    * intermediate waypoints has only one leg. A route that includes one
    * non-`via` intermediate waypoint has two legs. A route that includes one
    * `via` intermediate waypoint has one leg. The order of the legs matches the
-   * order of Waypoints from `origin` to `intermediates` to `destination`.
+   * order of waypoints from `origin` to `intermediates` to `destination`.
    * </pre>
    *
    * <code>repeated .google.maps.routing.v2.RouteLeg legs = 1;</code>
@@ -201,13 +1859,13 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A collection of legs (path segments between waypoints) that make-up the
+   * A collection of legs (path segments between waypoints) that make up the
    * route. Each leg corresponds to the trip between two non-`via`
    * [Waypoints][google.maps.routing.v2.Waypoint]. For example, a route with no
    * intermediate waypoints has only one leg. A route that includes one
    * non-`via` intermediate waypoint has two legs. A route that includes one
    * `via` intermediate waypoint has one leg. The order of the legs matches the
-   * order of Waypoints from `origin` to `intermediates` to `destination`.
+   * order of waypoints from `origin` to `intermediates` to `destination`.
    * </pre>
    *
    * <code>repeated .google.maps.routing.v2.RouteLeg legs = 1;</code>
@@ -221,13 +1879,13 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A collection of legs (path segments between waypoints) that make-up the
+   * A collection of legs (path segments between waypoints) that make up the
    * route. Each leg corresponds to the trip between two non-`via`
    * [Waypoints][google.maps.routing.v2.Waypoint]. For example, a route with no
    * intermediate waypoints has only one leg. A route that includes one
    * non-`via` intermediate waypoint has two legs. A route that includes one
    * `via` intermediate waypoint has one leg. The order of the legs matches the
-   * order of Waypoints from `origin` to `intermediates` to `destination`.
+   * order of waypoints from `origin` to `intermediates` to `destination`.
    * </pre>
    *
    * <code>repeated .google.maps.routing.v2.RouteLeg legs = 1;</code>
@@ -240,13 +1898,13 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A collection of legs (path segments between waypoints) that make-up the
+   * A collection of legs (path segments between waypoints) that make up the
    * route. Each leg corresponds to the trip between two non-`via`
    * [Waypoints][google.maps.routing.v2.Waypoint]. For example, a route with no
    * intermediate waypoints has only one leg. A route that includes one
    * non-`via` intermediate waypoint has two legs. A route that includes one
    * `via` intermediate waypoint has one leg. The order of the legs matches the
-   * order of Waypoints from `origin` to `intermediates` to `destination`.
+   * order of waypoints from `origin` to `intermediates` to `destination`.
    * </pre>
    *
    * <code>repeated .google.maps.routing.v2.RouteLeg legs = 1;</code>
@@ -259,13 +1917,13 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A collection of legs (path segments between waypoints) that make-up the
+   * A collection of legs (path segments between waypoints) that make up the
    * route. Each leg corresponds to the trip between two non-`via`
    * [Waypoints][google.maps.routing.v2.Waypoint]. For example, a route with no
    * intermediate waypoints has only one leg. A route that includes one
    * non-`via` intermediate waypoint has two legs. A route that includes one
    * `via` intermediate waypoint has one leg. The order of the legs matches the
-   * order of Waypoints from `origin` to `intermediates` to `destination`.
+   * order of waypoints from `origin` to `intermediates` to `destination`.
    * </pre>
    *
    * <code>repeated .google.maps.routing.v2.RouteLeg legs = 1;</code>
@@ -357,7 +2015,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The duration of traveling through the route without taking traffic
+   * The duration of travel through the route without taking traffic
    * conditions into consideration.
    * </pre>
    *
@@ -373,7 +2031,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The duration of traveling through the route without taking traffic
+   * The duration of travel through the route without taking traffic
    * conditions into consideration.
    * </pre>
    *
@@ -391,7 +2049,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The duration of traveling through the route without taking traffic
+   * The duration of travel through the route without taking traffic
    * conditions into consideration.
    * </pre>
    *
@@ -410,7 +2068,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The overall route polyline. This polyline will be the combined polyline of
+   * The overall route polyline. This polyline is the combined polyline of
    * all `legs`.
    * </pre>
    *
@@ -426,7 +2084,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The overall route polyline. This polyline will be the combined polyline of
+   * The overall route polyline. This polyline is the combined polyline of
    * all `legs`.
    * </pre>
    *
@@ -442,7 +2100,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The overall route polyline. This polyline will be the combined polyline of
+   * The overall route polyline. This polyline is the combined polyline of
    * all `legs`.
    * </pre>
    *
@@ -507,7 +2165,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
   public static final int WARNINGS_FIELD_NUMBER = 7;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList warnings_;
+  private com.google.protobuf.LazyStringArrayList warnings_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -663,6 +2322,132 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
         : travelAdvisory_;
   }
 
+  public static final int OPTIMIZED_INTERMEDIATE_WAYPOINT_INDEX_FIELD_NUMBER = 10;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.Internal.IntList optimizedIntermediateWaypointIndex_;
+  /**
+   *
+   *
+   * <pre>
+   * If you set
+   * [optimize_waypoint_order][google.maps.routing.v2.ComputeRoutesRequest.optimize_waypoint_order]
+   * to true, this field contains the optimized ordering of intermediate
+   * waypoints. Otherwise, this field is empty.
+   * For example, if you give an input of Origin: LA; Intermediate waypoints:
+   * Dallas, Bangor, Phoenix; Destination: New York; and the optimized
+   * intermediate waypoint order is Phoenix, Dallas, Bangor, then this field
+   * contains the values [2, 0, 1]. The index starts with 0 for the first
+   * intermediate waypoint provided in the input.
+   * </pre>
+   *
+   * <code>repeated int32 optimized_intermediate_waypoint_index = 10;</code>
+   *
+   * @return A list containing the optimizedIntermediateWaypointIndex.
+   */
+  @java.lang.Override
+  public java.util.List<java.lang.Integer> getOptimizedIntermediateWaypointIndexList() {
+    return optimizedIntermediateWaypointIndex_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * If you set
+   * [optimize_waypoint_order][google.maps.routing.v2.ComputeRoutesRequest.optimize_waypoint_order]
+   * to true, this field contains the optimized ordering of intermediate
+   * waypoints. Otherwise, this field is empty.
+   * For example, if you give an input of Origin: LA; Intermediate waypoints:
+   * Dallas, Bangor, Phoenix; Destination: New York; and the optimized
+   * intermediate waypoint order is Phoenix, Dallas, Bangor, then this field
+   * contains the values [2, 0, 1]. The index starts with 0 for the first
+   * intermediate waypoint provided in the input.
+   * </pre>
+   *
+   * <code>repeated int32 optimized_intermediate_waypoint_index = 10;</code>
+   *
+   * @return The count of optimizedIntermediateWaypointIndex.
+   */
+  public int getOptimizedIntermediateWaypointIndexCount() {
+    return optimizedIntermediateWaypointIndex_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * If you set
+   * [optimize_waypoint_order][google.maps.routing.v2.ComputeRoutesRequest.optimize_waypoint_order]
+   * to true, this field contains the optimized ordering of intermediate
+   * waypoints. Otherwise, this field is empty.
+   * For example, if you give an input of Origin: LA; Intermediate waypoints:
+   * Dallas, Bangor, Phoenix; Destination: New York; and the optimized
+   * intermediate waypoint order is Phoenix, Dallas, Bangor, then this field
+   * contains the values [2, 0, 1]. The index starts with 0 for the first
+   * intermediate waypoint provided in the input.
+   * </pre>
+   *
+   * <code>repeated int32 optimized_intermediate_waypoint_index = 10;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The optimizedIntermediateWaypointIndex at the given index.
+   */
+  public int getOptimizedIntermediateWaypointIndex(int index) {
+    return optimizedIntermediateWaypointIndex_.getInt(index);
+  }
+
+  private int optimizedIntermediateWaypointIndexMemoizedSerializedSize = -1;
+
+  public static final int LOCALIZED_VALUES_FIELD_NUMBER = 11;
+  private com.google.maps.routing.v2.Route.RouteLocalizedValues localizedValues_;
+  /**
+   *
+   *
+   * <pre>
+   * Text representations of properties of the `Route`.
+   * </pre>
+   *
+   * <code>.google.maps.routing.v2.Route.RouteLocalizedValues localized_values = 11;</code>
+   *
+   * @return Whether the localizedValues field is set.
+   */
+  @java.lang.Override
+  public boolean hasLocalizedValues() {
+    return localizedValues_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Text representations of properties of the `Route`.
+   * </pre>
+   *
+   * <code>.google.maps.routing.v2.Route.RouteLocalizedValues localized_values = 11;</code>
+   *
+   * @return The localizedValues.
+   */
+  @java.lang.Override
+  public com.google.maps.routing.v2.Route.RouteLocalizedValues getLocalizedValues() {
+    return localizedValues_ == null
+        ? com.google.maps.routing.v2.Route.RouteLocalizedValues.getDefaultInstance()
+        : localizedValues_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Text representations of properties of the `Route`.
+   * </pre>
+   *
+   * <code>.google.maps.routing.v2.Route.RouteLocalizedValues localized_values = 11;</code>
+   */
+  @java.lang.Override
+  public com.google.maps.routing.v2.Route.RouteLocalizedValuesOrBuilder
+      getLocalizedValuesOrBuilder() {
+    return localizedValues_ == null
+        ? com.google.maps.routing.v2.Route.RouteLocalizedValues.getDefaultInstance()
+        : localizedValues_;
+  }
+
   public static final int ROUTE_TOKEN_FIELD_NUMBER = 12;
 
   @SuppressWarnings("serial")
@@ -671,15 +2456,15 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Web-safe base64 encoded route token that can be passed to NavigationSDK,
-   * which allows the Navigation SDK to reconstruct the route during navigation,
-   * and in the event of rerouting honor the original intention when Routes
-   * ComputeRoutes is called. Customers should treat this token as an
-   * opaque blob.
+   * A web-safe, base64-encoded route token that can be passed to the Navigation
+   * SDK, that allows the Navigation SDK to reconstruct the route during
+   * navigation, and, in the event of rerouting, honor the original intention
+   * when you created the route by calling ComputeRoutes. Customers should treat
+   * this token as an opaque blob. It is not meant for reading or mutating.
    * NOTE: `Route.route_token` is only available for requests that have set
    * `ComputeRoutesRequest.routing_preference` to `TRAFFIC_AWARE` or
-   * `TRAFFIC_AWARE_OPTIMAL`. `Route.route_token` is also not supported for
-   * requests that have Via waypoints.
+   * `TRAFFIC_AWARE_OPTIMAL`. `Route.route_token` is not supported for requests
+   * that have Via waypoints.
    * </pre>
    *
    * <code>string route_token = 12;</code>
@@ -702,15 +2487,15 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Web-safe base64 encoded route token that can be passed to NavigationSDK,
-   * which allows the Navigation SDK to reconstruct the route during navigation,
-   * and in the event of rerouting honor the original intention when Routes
-   * ComputeRoutes is called. Customers should treat this token as an
-   * opaque blob.
+   * A web-safe, base64-encoded route token that can be passed to the Navigation
+   * SDK, that allows the Navigation SDK to reconstruct the route during
+   * navigation, and, in the event of rerouting, honor the original intention
+   * when you created the route by calling ComputeRoutes. Customers should treat
+   * this token as an opaque blob. It is not meant for reading or mutating.
    * NOTE: `Route.route_token` is only available for requests that have set
    * `ComputeRoutesRequest.routing_preference` to `TRAFFIC_AWARE` or
-   * `TRAFFIC_AWARE_OPTIMAL`. `Route.route_token` is also not supported for
-   * requests that have Via waypoints.
+   * `TRAFFIC_AWARE_OPTIMAL`. `Route.route_token` is not supported for requests
+   * that have Via waypoints.
    * </pre>
    *
    * <code>string route_token = 12;</code>
@@ -772,6 +2557,16 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     if (travelAdvisory_ != null) {
       output.writeMessage(9, getTravelAdvisory());
     }
+    if (getOptimizedIntermediateWaypointIndexList().size() > 0) {
+      output.writeUInt32NoTag(82);
+      output.writeUInt32NoTag(optimizedIntermediateWaypointIndexMemoizedSerializedSize);
+    }
+    for (int i = 0; i < optimizedIntermediateWaypointIndex_.size(); i++) {
+      output.writeInt32NoTag(optimizedIntermediateWaypointIndex_.getInt(i));
+    }
+    if (localizedValues_ != null) {
+      output.writeMessage(11, getLocalizedValues());
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(routeToken_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 12, routeToken_);
     }
@@ -822,6 +2617,23 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     }
     if (travelAdvisory_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getTravelAdvisory());
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < optimizedIntermediateWaypointIndex_.size(); i++) {
+        dataSize +=
+            com.google.protobuf.CodedOutputStream.computeInt32SizeNoTag(
+                optimizedIntermediateWaypointIndex_.getInt(i));
+      }
+      size += dataSize;
+      if (!getOptimizedIntermediateWaypointIndexList().isEmpty()) {
+        size += 1;
+        size += com.google.protobuf.CodedOutputStream.computeInt32SizeNoTag(dataSize);
+      }
+      optimizedIntermediateWaypointIndexMemoizedSerializedSize = dataSize;
+    }
+    if (localizedValues_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getLocalizedValues());
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(routeToken_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, routeToken_);
@@ -878,6 +2690,12 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     if (hasTravelAdvisory()) {
       if (!getTravelAdvisory().equals(other.getTravelAdvisory())) return false;
     }
+    if (!getOptimizedIntermediateWaypointIndexList()
+        .equals(other.getOptimizedIntermediateWaypointIndexList())) return false;
+    if (hasLocalizedValues() != other.hasLocalizedValues()) return false;
+    if (hasLocalizedValues()) {
+      if (!getLocalizedValues().equals(other.getLocalizedValues())) return false;
+    }
     if (!getRouteToken().equals(other.getRouteToken())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -925,6 +2743,14 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     if (hasTravelAdvisory()) {
       hash = (37 * hash) + TRAVEL_ADVISORY_FIELD_NUMBER;
       hash = (53 * hash) + getTravelAdvisory().hashCode();
+    }
+    if (getOptimizedIntermediateWaypointIndexCount() > 0) {
+      hash = (37 * hash) + OPTIMIZED_INTERMEDIATE_WAYPOINT_INDEX_FIELD_NUMBER;
+      hash = (53 * hash) + getOptimizedIntermediateWaypointIndexList().hashCode();
+    }
+    if (hasLocalizedValues()) {
+      hash = (37 * hash) + LOCALIZED_VALUES_FIELD_NUMBER;
+      hash = (53 * hash) + getLocalizedValues().hashCode();
     }
     hash = (37 * hash) + ROUTE_TOKEN_FIELD_NUMBER;
     hash = (53 * hash) + getRouteToken().hashCode();
@@ -1031,7 +2857,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Encapsulates a route, which consists of a series of connected road segments
+   * Contains a route, which consists of a series of connected road segments
    * that join beginning, ending, and intermediate waypoints.
    * </pre>
    *
@@ -1093,8 +2919,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
         polylineBuilder_ = null;
       }
       description_ = "";
-      warnings_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000080);
+      warnings_ = com.google.protobuf.LazyStringArrayList.emptyList();
       viewport_ = null;
       if (viewportBuilder_ != null) {
         viewportBuilder_.dispose();
@@ -1104,6 +2929,12 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       if (travelAdvisoryBuilder_ != null) {
         travelAdvisoryBuilder_.dispose();
         travelAdvisoryBuilder_ = null;
+      }
+      optimizedIntermediateWaypointIndex_ = emptyIntList();
+      localizedValues_ = null;
+      if (localizedValuesBuilder_ != null) {
+        localizedValuesBuilder_.dispose();
+        localizedValuesBuilder_ = null;
       }
       routeToken_ = "";
       return this;
@@ -1155,11 +2986,11 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.legs_ = legsBuilder_.build();
       }
-      if (((bitField0_ & 0x00000080) != 0)) {
-        warnings_ = warnings_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000080);
+      if (((bitField0_ & 0x00000400) != 0)) {
+        optimizedIntermediateWaypointIndex_.makeImmutable();
+        bitField0_ = (bitField0_ & ~0x00000400);
       }
-      result.warnings_ = warnings_;
+      result.optimizedIntermediateWaypointIndex_ = optimizedIntermediateWaypointIndex_;
     }
 
     private void buildPartial0(com.google.maps.routing.v2.Route result) {
@@ -1180,6 +3011,10 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.description_ = description_;
       }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        warnings_.makeImmutable();
+        result.warnings_ = warnings_;
+      }
       if (((from_bitField0_ & 0x00000100) != 0)) {
         result.viewport_ = viewportBuilder_ == null ? viewport_ : viewportBuilder_.build();
       }
@@ -1187,7 +3022,11 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
         result.travelAdvisory_ =
             travelAdvisoryBuilder_ == null ? travelAdvisory_ : travelAdvisoryBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.localizedValues_ =
+            localizedValuesBuilder_ == null ? localizedValues_ : localizedValuesBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.routeToken_ = routeToken_;
       }
     }
@@ -1294,7 +3133,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       if (!other.warnings_.isEmpty()) {
         if (warnings_.isEmpty()) {
           warnings_ = other.warnings_;
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ |= 0x00000080;
         } else {
           ensureWarningsIsMutable();
           warnings_.addAll(other.warnings_);
@@ -1307,9 +3146,22 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       if (other.hasTravelAdvisory()) {
         mergeTravelAdvisory(other.getTravelAdvisory());
       }
+      if (!other.optimizedIntermediateWaypointIndex_.isEmpty()) {
+        if (optimizedIntermediateWaypointIndex_.isEmpty()) {
+          optimizedIntermediateWaypointIndex_ = other.optimizedIntermediateWaypointIndex_;
+          bitField0_ = (bitField0_ & ~0x00000400);
+        } else {
+          ensureOptimizedIntermediateWaypointIndexIsMutable();
+          optimizedIntermediateWaypointIndex_.addAll(other.optimizedIntermediateWaypointIndex_);
+        }
+        onChanged();
+      }
+      if (other.hasLocalizedValues()) {
+        mergeLocalizedValues(other.getLocalizedValues());
+      }
       if (!other.getRouteToken().isEmpty()) {
         routeToken_ = other.routeToken_;
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1400,10 +3252,34 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000200;
                 break;
               } // case 74
+            case 80:
+              {
+                int v = input.readInt32();
+                ensureOptimizedIntermediateWaypointIndexIsMutable();
+                optimizedIntermediateWaypointIndex_.addInt(v);
+                break;
+              } // case 80
+            case 82:
+              {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureOptimizedIntermediateWaypointIndexIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  optimizedIntermediateWaypointIndex_.addInt(input.readInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 82
+            case 90:
+              {
+                input.readMessage(getLocalizedValuesFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 90
             case 98:
               {
                 routeToken_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 98
             case 104:
@@ -1697,13 +3573,13 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A collection of legs (path segments between waypoints) that make-up the
+     * A collection of legs (path segments between waypoints) that make up the
      * route. Each leg corresponds to the trip between two non-`via`
      * [Waypoints][google.maps.routing.v2.Waypoint]. For example, a route with no
      * intermediate waypoints has only one leg. A route that includes one
      * non-`via` intermediate waypoint has two legs. A route that includes one
      * `via` intermediate waypoint has one leg. The order of the legs matches the
-     * order of Waypoints from `origin` to `intermediates` to `destination`.
+     * order of waypoints from `origin` to `intermediates` to `destination`.
      * </pre>
      *
      * <code>repeated .google.maps.routing.v2.RouteLeg legs = 1;</code>
@@ -1719,13 +3595,13 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A collection of legs (path segments between waypoints) that make-up the
+     * A collection of legs (path segments between waypoints) that make up the
      * route. Each leg corresponds to the trip between two non-`via`
      * [Waypoints][google.maps.routing.v2.Waypoint]. For example, a route with no
      * intermediate waypoints has only one leg. A route that includes one
      * non-`via` intermediate waypoint has two legs. A route that includes one
      * `via` intermediate waypoint has one leg. The order of the legs matches the
-     * order of Waypoints from `origin` to `intermediates` to `destination`.
+     * order of waypoints from `origin` to `intermediates` to `destination`.
      * </pre>
      *
      * <code>repeated .google.maps.routing.v2.RouteLeg legs = 1;</code>
@@ -1741,13 +3617,13 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A collection of legs (path segments between waypoints) that make-up the
+     * A collection of legs (path segments between waypoints) that make up the
      * route. Each leg corresponds to the trip between two non-`via`
      * [Waypoints][google.maps.routing.v2.Waypoint]. For example, a route with no
      * intermediate waypoints has only one leg. A route that includes one
      * non-`via` intermediate waypoint has two legs. A route that includes one
      * `via` intermediate waypoint has one leg. The order of the legs matches the
-     * order of Waypoints from `origin` to `intermediates` to `destination`.
+     * order of waypoints from `origin` to `intermediates` to `destination`.
      * </pre>
      *
      * <code>repeated .google.maps.routing.v2.RouteLeg legs = 1;</code>
@@ -1763,13 +3639,13 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A collection of legs (path segments between waypoints) that make-up the
+     * A collection of legs (path segments between waypoints) that make up the
      * route. Each leg corresponds to the trip between two non-`via`
      * [Waypoints][google.maps.routing.v2.Waypoint]. For example, a route with no
      * intermediate waypoints has only one leg. A route that includes one
      * non-`via` intermediate waypoint has two legs. A route that includes one
      * `via` intermediate waypoint has one leg. The order of the legs matches the
-     * order of Waypoints from `origin` to `intermediates` to `destination`.
+     * order of waypoints from `origin` to `intermediates` to `destination`.
      * </pre>
      *
      * <code>repeated .google.maps.routing.v2.RouteLeg legs = 1;</code>
@@ -1791,13 +3667,13 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A collection of legs (path segments between waypoints) that make-up the
+     * A collection of legs (path segments between waypoints) that make up the
      * route. Each leg corresponds to the trip between two non-`via`
      * [Waypoints][google.maps.routing.v2.Waypoint]. For example, a route with no
      * intermediate waypoints has only one leg. A route that includes one
      * non-`via` intermediate waypoint has two legs. A route that includes one
      * `via` intermediate waypoint has one leg. The order of the legs matches the
-     * order of Waypoints from `origin` to `intermediates` to `destination`.
+     * order of waypoints from `origin` to `intermediates` to `destination`.
      * </pre>
      *
      * <code>repeated .google.maps.routing.v2.RouteLeg legs = 1;</code>
@@ -1816,13 +3692,13 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A collection of legs (path segments between waypoints) that make-up the
+     * A collection of legs (path segments between waypoints) that make up the
      * route. Each leg corresponds to the trip between two non-`via`
      * [Waypoints][google.maps.routing.v2.Waypoint]. For example, a route with no
      * intermediate waypoints has only one leg. A route that includes one
      * non-`via` intermediate waypoint has two legs. A route that includes one
      * `via` intermediate waypoint has one leg. The order of the legs matches the
-     * order of Waypoints from `origin` to `intermediates` to `destination`.
+     * order of waypoints from `origin` to `intermediates` to `destination`.
      * </pre>
      *
      * <code>repeated .google.maps.routing.v2.RouteLeg legs = 1;</code>
@@ -1844,13 +3720,13 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A collection of legs (path segments between waypoints) that make-up the
+     * A collection of legs (path segments between waypoints) that make up the
      * route. Each leg corresponds to the trip between two non-`via`
      * [Waypoints][google.maps.routing.v2.Waypoint]. For example, a route with no
      * intermediate waypoints has only one leg. A route that includes one
      * non-`via` intermediate waypoint has two legs. A route that includes one
      * `via` intermediate waypoint has one leg. The order of the legs matches the
-     * order of Waypoints from `origin` to `intermediates` to `destination`.
+     * order of waypoints from `origin` to `intermediates` to `destination`.
      * </pre>
      *
      * <code>repeated .google.maps.routing.v2.RouteLeg legs = 1;</code>
@@ -1872,13 +3748,13 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A collection of legs (path segments between waypoints) that make-up the
+     * A collection of legs (path segments between waypoints) that make up the
      * route. Each leg corresponds to the trip between two non-`via`
      * [Waypoints][google.maps.routing.v2.Waypoint]. For example, a route with no
      * intermediate waypoints has only one leg. A route that includes one
      * non-`via` intermediate waypoint has two legs. A route that includes one
      * `via` intermediate waypoint has one leg. The order of the legs matches the
-     * order of Waypoints from `origin` to `intermediates` to `destination`.
+     * order of waypoints from `origin` to `intermediates` to `destination`.
      * </pre>
      *
      * <code>repeated .google.maps.routing.v2.RouteLeg legs = 1;</code>
@@ -1897,13 +3773,13 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A collection of legs (path segments between waypoints) that make-up the
+     * A collection of legs (path segments between waypoints) that make up the
      * route. Each leg corresponds to the trip between two non-`via`
      * [Waypoints][google.maps.routing.v2.Waypoint]. For example, a route with no
      * intermediate waypoints has only one leg. A route that includes one
      * non-`via` intermediate waypoint has two legs. A route that includes one
      * `via` intermediate waypoint has one leg. The order of the legs matches the
-     * order of Waypoints from `origin` to `intermediates` to `destination`.
+     * order of waypoints from `origin` to `intermediates` to `destination`.
      * </pre>
      *
      * <code>repeated .google.maps.routing.v2.RouteLeg legs = 1;</code>
@@ -1922,13 +3798,13 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A collection of legs (path segments between waypoints) that make-up the
+     * A collection of legs (path segments between waypoints) that make up the
      * route. Each leg corresponds to the trip between two non-`via`
      * [Waypoints][google.maps.routing.v2.Waypoint]. For example, a route with no
      * intermediate waypoints has only one leg. A route that includes one
      * non-`via` intermediate waypoint has two legs. A route that includes one
      * `via` intermediate waypoint has one leg. The order of the legs matches the
-     * order of Waypoints from `origin` to `intermediates` to `destination`.
+     * order of waypoints from `origin` to `intermediates` to `destination`.
      * </pre>
      *
      * <code>repeated .google.maps.routing.v2.RouteLeg legs = 1;</code>
@@ -1948,13 +3824,13 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A collection of legs (path segments between waypoints) that make-up the
+     * A collection of legs (path segments between waypoints) that make up the
      * route. Each leg corresponds to the trip between two non-`via`
      * [Waypoints][google.maps.routing.v2.Waypoint]. For example, a route with no
      * intermediate waypoints has only one leg. A route that includes one
      * non-`via` intermediate waypoint has two legs. A route that includes one
      * `via` intermediate waypoint has one leg. The order of the legs matches the
-     * order of Waypoints from `origin` to `intermediates` to `destination`.
+     * order of waypoints from `origin` to `intermediates` to `destination`.
      * </pre>
      *
      * <code>repeated .google.maps.routing.v2.RouteLeg legs = 1;</code>
@@ -1973,13 +3849,13 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A collection of legs (path segments between waypoints) that make-up the
+     * A collection of legs (path segments between waypoints) that make up the
      * route. Each leg corresponds to the trip between two non-`via`
      * [Waypoints][google.maps.routing.v2.Waypoint]. For example, a route with no
      * intermediate waypoints has only one leg. A route that includes one
      * non-`via` intermediate waypoint has two legs. A route that includes one
      * `via` intermediate waypoint has one leg. The order of the legs matches the
-     * order of Waypoints from `origin` to `intermediates` to `destination`.
+     * order of waypoints from `origin` to `intermediates` to `destination`.
      * </pre>
      *
      * <code>repeated .google.maps.routing.v2.RouteLeg legs = 1;</code>
@@ -1998,13 +3874,13 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A collection of legs (path segments between waypoints) that make-up the
+     * A collection of legs (path segments between waypoints) that make up the
      * route. Each leg corresponds to the trip between two non-`via`
      * [Waypoints][google.maps.routing.v2.Waypoint]. For example, a route with no
      * intermediate waypoints has only one leg. A route that includes one
      * non-`via` intermediate waypoint has two legs. A route that includes one
      * `via` intermediate waypoint has one leg. The order of the legs matches the
-     * order of Waypoints from `origin` to `intermediates` to `destination`.
+     * order of waypoints from `origin` to `intermediates` to `destination`.
      * </pre>
      *
      * <code>repeated .google.maps.routing.v2.RouteLeg legs = 1;</code>
@@ -2016,13 +3892,13 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A collection of legs (path segments between waypoints) that make-up the
+     * A collection of legs (path segments between waypoints) that make up the
      * route. Each leg corresponds to the trip between two non-`via`
      * [Waypoints][google.maps.routing.v2.Waypoint]. For example, a route with no
      * intermediate waypoints has only one leg. A route that includes one
      * non-`via` intermediate waypoint has two legs. A route that includes one
      * `via` intermediate waypoint has one leg. The order of the legs matches the
-     * order of Waypoints from `origin` to `intermediates` to `destination`.
+     * order of waypoints from `origin` to `intermediates` to `destination`.
      * </pre>
      *
      * <code>repeated .google.maps.routing.v2.RouteLeg legs = 1;</code>
@@ -2038,13 +3914,13 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A collection of legs (path segments between waypoints) that make-up the
+     * A collection of legs (path segments between waypoints) that make up the
      * route. Each leg corresponds to the trip between two non-`via`
      * [Waypoints][google.maps.routing.v2.Waypoint]. For example, a route with no
      * intermediate waypoints has only one leg. A route that includes one
      * non-`via` intermediate waypoint has two legs. A route that includes one
      * `via` intermediate waypoint has one leg. The order of the legs matches the
-     * order of Waypoints from `origin` to `intermediates` to `destination`.
+     * order of waypoints from `origin` to `intermediates` to `destination`.
      * </pre>
      *
      * <code>repeated .google.maps.routing.v2.RouteLeg legs = 1;</code>
@@ -2061,13 +3937,13 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A collection of legs (path segments between waypoints) that make-up the
+     * A collection of legs (path segments between waypoints) that make up the
      * route. Each leg corresponds to the trip between two non-`via`
      * [Waypoints][google.maps.routing.v2.Waypoint]. For example, a route with no
      * intermediate waypoints has only one leg. A route that includes one
      * non-`via` intermediate waypoint has two legs. A route that includes one
      * `via` intermediate waypoint has one leg. The order of the legs matches the
-     * order of Waypoints from `origin` to `intermediates` to `destination`.
+     * order of waypoints from `origin` to `intermediates` to `destination`.
      * </pre>
      *
      * <code>repeated .google.maps.routing.v2.RouteLeg legs = 1;</code>
@@ -2080,13 +3956,13 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A collection of legs (path segments between waypoints) that make-up the
+     * A collection of legs (path segments between waypoints) that make up the
      * route. Each leg corresponds to the trip between two non-`via`
      * [Waypoints][google.maps.routing.v2.Waypoint]. For example, a route with no
      * intermediate waypoints has only one leg. A route that includes one
      * non-`via` intermediate waypoint has two legs. A route that includes one
      * `via` intermediate waypoint has one leg. The order of the legs matches the
-     * order of Waypoints from `origin` to `intermediates` to `destination`.
+     * order of waypoints from `origin` to `intermediates` to `destination`.
      * </pre>
      *
      * <code>repeated .google.maps.routing.v2.RouteLeg legs = 1;</code>
@@ -2099,13 +3975,13 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A collection of legs (path segments between waypoints) that make-up the
+     * A collection of legs (path segments between waypoints) that make up the
      * route. Each leg corresponds to the trip between two non-`via`
      * [Waypoints][google.maps.routing.v2.Waypoint]. For example, a route with no
      * intermediate waypoints has only one leg. A route that includes one
      * non-`via` intermediate waypoint has two legs. A route that includes one
      * `via` intermediate waypoint has one leg. The order of the legs matches the
-     * order of Waypoints from `origin` to `intermediates` to `destination`.
+     * order of waypoints from `origin` to `intermediates` to `destination`.
      * </pre>
      *
      * <code>repeated .google.maps.routing.v2.RouteLeg legs = 1;</code>
@@ -2409,7 +4285,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The duration of traveling through the route without taking traffic
+     * The duration of travel through the route without taking traffic
      * conditions into consideration.
      * </pre>
      *
@@ -2424,7 +4300,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The duration of traveling through the route without taking traffic
+     * The duration of travel through the route without taking traffic
      * conditions into consideration.
      * </pre>
      *
@@ -2445,7 +4321,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The duration of traveling through the route without taking traffic
+     * The duration of travel through the route without taking traffic
      * conditions into consideration.
      * </pre>
      *
@@ -2468,7 +4344,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The duration of traveling through the route without taking traffic
+     * The duration of travel through the route without taking traffic
      * conditions into consideration.
      * </pre>
      *
@@ -2488,7 +4364,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The duration of traveling through the route without taking traffic
+     * The duration of travel through the route without taking traffic
      * conditions into consideration.
      * </pre>
      *
@@ -2514,7 +4390,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The duration of traveling through the route without taking traffic
+     * The duration of travel through the route without taking traffic
      * conditions into consideration.
      * </pre>
      *
@@ -2534,7 +4410,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The duration of traveling through the route without taking traffic
+     * The duration of travel through the route without taking traffic
      * conditions into consideration.
      * </pre>
      *
@@ -2549,7 +4425,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The duration of traveling through the route without taking traffic
+     * The duration of travel through the route without taking traffic
      * conditions into consideration.
      * </pre>
      *
@@ -2568,7 +4444,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The duration of traveling through the route without taking traffic
+     * The duration of travel through the route without taking traffic
      * conditions into consideration.
      * </pre>
      *
@@ -2601,7 +4477,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The overall route polyline. This polyline will be the combined polyline of
+     * The overall route polyline. This polyline is the combined polyline of
      * all `legs`.
      * </pre>
      *
@@ -2616,7 +4492,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The overall route polyline. This polyline will be the combined polyline of
+     * The overall route polyline. This polyline is the combined polyline of
      * all `legs`.
      * </pre>
      *
@@ -2637,7 +4513,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The overall route polyline. This polyline will be the combined polyline of
+     * The overall route polyline. This polyline is the combined polyline of
      * all `legs`.
      * </pre>
      *
@@ -2660,7 +4536,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The overall route polyline. This polyline will be the combined polyline of
+     * The overall route polyline. This polyline is the combined polyline of
      * all `legs`.
      * </pre>
      *
@@ -2680,7 +4556,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The overall route polyline. This polyline will be the combined polyline of
+     * The overall route polyline. This polyline is the combined polyline of
      * all `legs`.
      * </pre>
      *
@@ -2706,7 +4582,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The overall route polyline. This polyline will be the combined polyline of
+     * The overall route polyline. This polyline is the combined polyline of
      * all `legs`.
      * </pre>
      *
@@ -2726,7 +4602,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The overall route polyline. This polyline will be the combined polyline of
+     * The overall route polyline. This polyline is the combined polyline of
      * all `legs`.
      * </pre>
      *
@@ -2741,7 +4617,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The overall route polyline. This polyline will be the combined polyline of
+     * The overall route polyline. This polyline is the combined polyline of
      * all `legs`.
      * </pre>
      *
@@ -2760,7 +4636,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The overall route polyline. This polyline will be the combined polyline of
+     * The overall route polyline. This polyline is the combined polyline of
      * all `legs`.
      * </pre>
      *
@@ -2889,14 +4765,14 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList warnings_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList warnings_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureWarningsIsMutable() {
-      if (!((bitField0_ & 0x00000080) != 0)) {
+      if (!warnings_.isModifiable()) {
         warnings_ = new com.google.protobuf.LazyStringArrayList(warnings_);
-        bitField0_ |= 0x00000080;
       }
+      bitField0_ |= 0x00000080;
     }
     /**
      *
@@ -2910,7 +4786,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the warnings.
      */
     public com.google.protobuf.ProtocolStringList getWarningsList() {
-      return warnings_.getUnmodifiableView();
+      warnings_.makeImmutable();
+      return warnings_;
     }
     /**
      *
@@ -2975,6 +4852,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       }
       ensureWarningsIsMutable();
       warnings_.set(index, value);
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2996,6 +4874,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       }
       ensureWarningsIsMutable();
       warnings_.add(value);
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3014,6 +4893,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllWarnings(java.lang.Iterable<java.lang.String> values) {
       ensureWarningsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, warnings_);
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3029,8 +4909,9 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearWarnings() {
-      warnings_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      warnings_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000080);
+      ;
       onChanged();
       return this;
     }
@@ -3053,6 +4934,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureWarningsIsMutable();
       warnings_.add(value);
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3421,20 +5303,395 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       return travelAdvisoryBuilder_;
     }
 
+    private com.google.protobuf.Internal.IntList optimizedIntermediateWaypointIndex_ =
+        emptyIntList();
+
+    private void ensureOptimizedIntermediateWaypointIndexIsMutable() {
+      if (!((bitField0_ & 0x00000400) != 0)) {
+        optimizedIntermediateWaypointIndex_ = mutableCopy(optimizedIntermediateWaypointIndex_);
+        bitField0_ |= 0x00000400;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If you set
+     * [optimize_waypoint_order][google.maps.routing.v2.ComputeRoutesRequest.optimize_waypoint_order]
+     * to true, this field contains the optimized ordering of intermediate
+     * waypoints. Otherwise, this field is empty.
+     * For example, if you give an input of Origin: LA; Intermediate waypoints:
+     * Dallas, Bangor, Phoenix; Destination: New York; and the optimized
+     * intermediate waypoint order is Phoenix, Dallas, Bangor, then this field
+     * contains the values [2, 0, 1]. The index starts with 0 for the first
+     * intermediate waypoint provided in the input.
+     * </pre>
+     *
+     * <code>repeated int32 optimized_intermediate_waypoint_index = 10;</code>
+     *
+     * @return A list containing the optimizedIntermediateWaypointIndex.
+     */
+    public java.util.List<java.lang.Integer> getOptimizedIntermediateWaypointIndexList() {
+      return ((bitField0_ & 0x00000400) != 0)
+          ? java.util.Collections.unmodifiableList(optimizedIntermediateWaypointIndex_)
+          : optimizedIntermediateWaypointIndex_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If you set
+     * [optimize_waypoint_order][google.maps.routing.v2.ComputeRoutesRequest.optimize_waypoint_order]
+     * to true, this field contains the optimized ordering of intermediate
+     * waypoints. Otherwise, this field is empty.
+     * For example, if you give an input of Origin: LA; Intermediate waypoints:
+     * Dallas, Bangor, Phoenix; Destination: New York; and the optimized
+     * intermediate waypoint order is Phoenix, Dallas, Bangor, then this field
+     * contains the values [2, 0, 1]. The index starts with 0 for the first
+     * intermediate waypoint provided in the input.
+     * </pre>
+     *
+     * <code>repeated int32 optimized_intermediate_waypoint_index = 10;</code>
+     *
+     * @return The count of optimizedIntermediateWaypointIndex.
+     */
+    public int getOptimizedIntermediateWaypointIndexCount() {
+      return optimizedIntermediateWaypointIndex_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If you set
+     * [optimize_waypoint_order][google.maps.routing.v2.ComputeRoutesRequest.optimize_waypoint_order]
+     * to true, this field contains the optimized ordering of intermediate
+     * waypoints. Otherwise, this field is empty.
+     * For example, if you give an input of Origin: LA; Intermediate waypoints:
+     * Dallas, Bangor, Phoenix; Destination: New York; and the optimized
+     * intermediate waypoint order is Phoenix, Dallas, Bangor, then this field
+     * contains the values [2, 0, 1]. The index starts with 0 for the first
+     * intermediate waypoint provided in the input.
+     * </pre>
+     *
+     * <code>repeated int32 optimized_intermediate_waypoint_index = 10;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The optimizedIntermediateWaypointIndex at the given index.
+     */
+    public int getOptimizedIntermediateWaypointIndex(int index) {
+      return optimizedIntermediateWaypointIndex_.getInt(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If you set
+     * [optimize_waypoint_order][google.maps.routing.v2.ComputeRoutesRequest.optimize_waypoint_order]
+     * to true, this field contains the optimized ordering of intermediate
+     * waypoints. Otherwise, this field is empty.
+     * For example, if you give an input of Origin: LA; Intermediate waypoints:
+     * Dallas, Bangor, Phoenix; Destination: New York; and the optimized
+     * intermediate waypoint order is Phoenix, Dallas, Bangor, then this field
+     * contains the values [2, 0, 1]. The index starts with 0 for the first
+     * intermediate waypoint provided in the input.
+     * </pre>
+     *
+     * <code>repeated int32 optimized_intermediate_waypoint_index = 10;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The optimizedIntermediateWaypointIndex to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOptimizedIntermediateWaypointIndex(int index, int value) {
+
+      ensureOptimizedIntermediateWaypointIndexIsMutable();
+      optimizedIntermediateWaypointIndex_.setInt(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If you set
+     * [optimize_waypoint_order][google.maps.routing.v2.ComputeRoutesRequest.optimize_waypoint_order]
+     * to true, this field contains the optimized ordering of intermediate
+     * waypoints. Otherwise, this field is empty.
+     * For example, if you give an input of Origin: LA; Intermediate waypoints:
+     * Dallas, Bangor, Phoenix; Destination: New York; and the optimized
+     * intermediate waypoint order is Phoenix, Dallas, Bangor, then this field
+     * contains the values [2, 0, 1]. The index starts with 0 for the first
+     * intermediate waypoint provided in the input.
+     * </pre>
+     *
+     * <code>repeated int32 optimized_intermediate_waypoint_index = 10;</code>
+     *
+     * @param value The optimizedIntermediateWaypointIndex to add.
+     * @return This builder for chaining.
+     */
+    public Builder addOptimizedIntermediateWaypointIndex(int value) {
+
+      ensureOptimizedIntermediateWaypointIndexIsMutable();
+      optimizedIntermediateWaypointIndex_.addInt(value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If you set
+     * [optimize_waypoint_order][google.maps.routing.v2.ComputeRoutesRequest.optimize_waypoint_order]
+     * to true, this field contains the optimized ordering of intermediate
+     * waypoints. Otherwise, this field is empty.
+     * For example, if you give an input of Origin: LA; Intermediate waypoints:
+     * Dallas, Bangor, Phoenix; Destination: New York; and the optimized
+     * intermediate waypoint order is Phoenix, Dallas, Bangor, then this field
+     * contains the values [2, 0, 1]. The index starts with 0 for the first
+     * intermediate waypoint provided in the input.
+     * </pre>
+     *
+     * <code>repeated int32 optimized_intermediate_waypoint_index = 10;</code>
+     *
+     * @param values The optimizedIntermediateWaypointIndex to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllOptimizedIntermediateWaypointIndex(
+        java.lang.Iterable<? extends java.lang.Integer> values) {
+      ensureOptimizedIntermediateWaypointIndexIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, optimizedIntermediateWaypointIndex_);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If you set
+     * [optimize_waypoint_order][google.maps.routing.v2.ComputeRoutesRequest.optimize_waypoint_order]
+     * to true, this field contains the optimized ordering of intermediate
+     * waypoints. Otherwise, this field is empty.
+     * For example, if you give an input of Origin: LA; Intermediate waypoints:
+     * Dallas, Bangor, Phoenix; Destination: New York; and the optimized
+     * intermediate waypoint order is Phoenix, Dallas, Bangor, then this field
+     * contains the values [2, 0, 1]. The index starts with 0 for the first
+     * intermediate waypoint provided in the input.
+     * </pre>
+     *
+     * <code>repeated int32 optimized_intermediate_waypoint_index = 10;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearOptimizedIntermediateWaypointIndex() {
+      optimizedIntermediateWaypointIndex_ = emptyIntList();
+      bitField0_ = (bitField0_ & ~0x00000400);
+      onChanged();
+      return this;
+    }
+
+    private com.google.maps.routing.v2.Route.RouteLocalizedValues localizedValues_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.maps.routing.v2.Route.RouteLocalizedValues,
+            com.google.maps.routing.v2.Route.RouteLocalizedValues.Builder,
+            com.google.maps.routing.v2.Route.RouteLocalizedValuesOrBuilder>
+        localizedValuesBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Text representations of properties of the `Route`.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.Route.RouteLocalizedValues localized_values = 11;</code>
+     *
+     * @return Whether the localizedValues field is set.
+     */
+    public boolean hasLocalizedValues() {
+      return ((bitField0_ & 0x00000800) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Text representations of properties of the `Route`.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.Route.RouteLocalizedValues localized_values = 11;</code>
+     *
+     * @return The localizedValues.
+     */
+    public com.google.maps.routing.v2.Route.RouteLocalizedValues getLocalizedValues() {
+      if (localizedValuesBuilder_ == null) {
+        return localizedValues_ == null
+            ? com.google.maps.routing.v2.Route.RouteLocalizedValues.getDefaultInstance()
+            : localizedValues_;
+      } else {
+        return localizedValuesBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Text representations of properties of the `Route`.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.Route.RouteLocalizedValues localized_values = 11;</code>
+     */
+    public Builder setLocalizedValues(com.google.maps.routing.v2.Route.RouteLocalizedValues value) {
+      if (localizedValuesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        localizedValues_ = value;
+      } else {
+        localizedValuesBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Text representations of properties of the `Route`.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.Route.RouteLocalizedValues localized_values = 11;</code>
+     */
+    public Builder setLocalizedValues(
+        com.google.maps.routing.v2.Route.RouteLocalizedValues.Builder builderForValue) {
+      if (localizedValuesBuilder_ == null) {
+        localizedValues_ = builderForValue.build();
+      } else {
+        localizedValuesBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Text representations of properties of the `Route`.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.Route.RouteLocalizedValues localized_values = 11;</code>
+     */
+    public Builder mergeLocalizedValues(
+        com.google.maps.routing.v2.Route.RouteLocalizedValues value) {
+      if (localizedValuesBuilder_ == null) {
+        if (((bitField0_ & 0x00000800) != 0)
+            && localizedValues_ != null
+            && localizedValues_
+                != com.google.maps.routing.v2.Route.RouteLocalizedValues.getDefaultInstance()) {
+          getLocalizedValuesBuilder().mergeFrom(value);
+        } else {
+          localizedValues_ = value;
+        }
+      } else {
+        localizedValuesBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Text representations of properties of the `Route`.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.Route.RouteLocalizedValues localized_values = 11;</code>
+     */
+    public Builder clearLocalizedValues() {
+      bitField0_ = (bitField0_ & ~0x00000800);
+      localizedValues_ = null;
+      if (localizedValuesBuilder_ != null) {
+        localizedValuesBuilder_.dispose();
+        localizedValuesBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Text representations of properties of the `Route`.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.Route.RouteLocalizedValues localized_values = 11;</code>
+     */
+    public com.google.maps.routing.v2.Route.RouteLocalizedValues.Builder
+        getLocalizedValuesBuilder() {
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return getLocalizedValuesFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Text representations of properties of the `Route`.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.Route.RouteLocalizedValues localized_values = 11;</code>
+     */
+    public com.google.maps.routing.v2.Route.RouteLocalizedValuesOrBuilder
+        getLocalizedValuesOrBuilder() {
+      if (localizedValuesBuilder_ != null) {
+        return localizedValuesBuilder_.getMessageOrBuilder();
+      } else {
+        return localizedValues_ == null
+            ? com.google.maps.routing.v2.Route.RouteLocalizedValues.getDefaultInstance()
+            : localizedValues_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Text representations of properties of the `Route`.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.Route.RouteLocalizedValues localized_values = 11;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.maps.routing.v2.Route.RouteLocalizedValues,
+            com.google.maps.routing.v2.Route.RouteLocalizedValues.Builder,
+            com.google.maps.routing.v2.Route.RouteLocalizedValuesOrBuilder>
+        getLocalizedValuesFieldBuilder() {
+      if (localizedValuesBuilder_ == null) {
+        localizedValuesBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.maps.routing.v2.Route.RouteLocalizedValues,
+                com.google.maps.routing.v2.Route.RouteLocalizedValues.Builder,
+                com.google.maps.routing.v2.Route.RouteLocalizedValuesOrBuilder>(
+                getLocalizedValues(), getParentForChildren(), isClean());
+        localizedValues_ = null;
+      }
+      return localizedValuesBuilder_;
+    }
+
     private java.lang.Object routeToken_ = "";
     /**
      *
      *
      * <pre>
-     * Web-safe base64 encoded route token that can be passed to NavigationSDK,
-     * which allows the Navigation SDK to reconstruct the route during navigation,
-     * and in the event of rerouting honor the original intention when Routes
-     * ComputeRoutes is called. Customers should treat this token as an
-     * opaque blob.
+     * A web-safe, base64-encoded route token that can be passed to the Navigation
+     * SDK, that allows the Navigation SDK to reconstruct the route during
+     * navigation, and, in the event of rerouting, honor the original intention
+     * when you created the route by calling ComputeRoutes. Customers should treat
+     * this token as an opaque blob. It is not meant for reading or mutating.
      * NOTE: `Route.route_token` is only available for requests that have set
      * `ComputeRoutesRequest.routing_preference` to `TRAFFIC_AWARE` or
-     * `TRAFFIC_AWARE_OPTIMAL`. `Route.route_token` is also not supported for
-     * requests that have Via waypoints.
+     * `TRAFFIC_AWARE_OPTIMAL`. `Route.route_token` is not supported for requests
+     * that have Via waypoints.
      * </pre>
      *
      * <code>string route_token = 12;</code>
@@ -3456,15 +5713,15 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Web-safe base64 encoded route token that can be passed to NavigationSDK,
-     * which allows the Navigation SDK to reconstruct the route during navigation,
-     * and in the event of rerouting honor the original intention when Routes
-     * ComputeRoutes is called. Customers should treat this token as an
-     * opaque blob.
+     * A web-safe, base64-encoded route token that can be passed to the Navigation
+     * SDK, that allows the Navigation SDK to reconstruct the route during
+     * navigation, and, in the event of rerouting, honor the original intention
+     * when you created the route by calling ComputeRoutes. Customers should treat
+     * this token as an opaque blob. It is not meant for reading or mutating.
      * NOTE: `Route.route_token` is only available for requests that have set
      * `ComputeRoutesRequest.routing_preference` to `TRAFFIC_AWARE` or
-     * `TRAFFIC_AWARE_OPTIMAL`. `Route.route_token` is also not supported for
-     * requests that have Via waypoints.
+     * `TRAFFIC_AWARE_OPTIMAL`. `Route.route_token` is not supported for requests
+     * that have Via waypoints.
      * </pre>
      *
      * <code>string route_token = 12;</code>
@@ -3486,15 +5743,15 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Web-safe base64 encoded route token that can be passed to NavigationSDK,
-     * which allows the Navigation SDK to reconstruct the route during navigation,
-     * and in the event of rerouting honor the original intention when Routes
-     * ComputeRoutes is called. Customers should treat this token as an
-     * opaque blob.
+     * A web-safe, base64-encoded route token that can be passed to the Navigation
+     * SDK, that allows the Navigation SDK to reconstruct the route during
+     * navigation, and, in the event of rerouting, honor the original intention
+     * when you created the route by calling ComputeRoutes. Customers should treat
+     * this token as an opaque blob. It is not meant for reading or mutating.
      * NOTE: `Route.route_token` is only available for requests that have set
      * `ComputeRoutesRequest.routing_preference` to `TRAFFIC_AWARE` or
-     * `TRAFFIC_AWARE_OPTIMAL`. `Route.route_token` is also not supported for
-     * requests that have Via waypoints.
+     * `TRAFFIC_AWARE_OPTIMAL`. `Route.route_token` is not supported for requests
+     * that have Via waypoints.
      * </pre>
      *
      * <code>string route_token = 12;</code>
@@ -3507,7 +5764,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       routeToken_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3515,15 +5772,15 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Web-safe base64 encoded route token that can be passed to NavigationSDK,
-     * which allows the Navigation SDK to reconstruct the route during navigation,
-     * and in the event of rerouting honor the original intention when Routes
-     * ComputeRoutes is called. Customers should treat this token as an
-     * opaque blob.
+     * A web-safe, base64-encoded route token that can be passed to the Navigation
+     * SDK, that allows the Navigation SDK to reconstruct the route during
+     * navigation, and, in the event of rerouting, honor the original intention
+     * when you created the route by calling ComputeRoutes. Customers should treat
+     * this token as an opaque blob. It is not meant for reading or mutating.
      * NOTE: `Route.route_token` is only available for requests that have set
      * `ComputeRoutesRequest.routing_preference` to `TRAFFIC_AWARE` or
-     * `TRAFFIC_AWARE_OPTIMAL`. `Route.route_token` is also not supported for
-     * requests that have Via waypoints.
+     * `TRAFFIC_AWARE_OPTIMAL`. `Route.route_token` is not supported for requests
+     * that have Via waypoints.
      * </pre>
      *
      * <code>string route_token = 12;</code>
@@ -3532,7 +5789,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearRouteToken() {
       routeToken_ = getDefaultInstance().getRouteToken();
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00001000);
       onChanged();
       return this;
     }
@@ -3540,15 +5797,15 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Web-safe base64 encoded route token that can be passed to NavigationSDK,
-     * which allows the Navigation SDK to reconstruct the route during navigation,
-     * and in the event of rerouting honor the original intention when Routes
-     * ComputeRoutes is called. Customers should treat this token as an
-     * opaque blob.
+     * A web-safe, base64-encoded route token that can be passed to the Navigation
+     * SDK, that allows the Navigation SDK to reconstruct the route during
+     * navigation, and, in the event of rerouting, honor the original intention
+     * when you created the route by calling ComputeRoutes. Customers should treat
+     * this token as an opaque blob. It is not meant for reading or mutating.
      * NOTE: `Route.route_token` is only available for requests that have set
      * `ComputeRoutesRequest.routing_preference` to `TRAFFIC_AWARE` or
-     * `TRAFFIC_AWARE_OPTIMAL`. `Route.route_token` is also not supported for
-     * requests that have Via waypoints.
+     * `TRAFFIC_AWARE_OPTIMAL`. `Route.route_token` is not supported for requests
+     * that have Via waypoints.
      * </pre>
      *
      * <code>string route_token = 12;</code>
@@ -3562,7 +5819,7 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       routeToken_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }

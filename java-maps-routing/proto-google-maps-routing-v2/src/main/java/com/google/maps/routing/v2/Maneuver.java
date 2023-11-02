@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -219,6 +219,26 @@ public enum Maneuver implements com.google.protobuf.ProtocolMessageEnum {
    * <code>ROUNDABOUT_RIGHT = 18;</code>
    */
   ROUNDABOUT_RIGHT(18),
+  /**
+   *
+   *
+   * <pre>
+   * Initial maneuver.
+   * </pre>
+   *
+   * <code>DEPART = 19;</code>
+   */
+  DEPART(19),
+  /**
+   *
+   *
+   * <pre>
+   * Used to indicate a street name change.
+   * </pre>
+   *
+   * <code>NAME_CHANGE = 20;</code>
+   */
+  NAME_CHANGE(20),
   UNRECOGNIZED(-1),
   ;
 
@@ -412,6 +432,26 @@ public enum Maneuver implements com.google.protobuf.ProtocolMessageEnum {
    * <code>ROUNDABOUT_RIGHT = 18;</code>
    */
   public static final int ROUNDABOUT_RIGHT_VALUE = 18;
+  /**
+   *
+   *
+   * <pre>
+   * Initial maneuver.
+   * </pre>
+   *
+   * <code>DEPART = 19;</code>
+   */
+  public static final int DEPART_VALUE = 19;
+  /**
+   *
+   *
+   * <pre>
+   * Used to indicate a street name change.
+   * </pre>
+   *
+   * <code>NAME_CHANGE = 20;</code>
+   */
+  public static final int NAME_CHANGE_VALUE = 20;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -475,6 +515,10 @@ public enum Maneuver implements com.google.protobuf.ProtocolMessageEnum {
         return ROUNDABOUT_LEFT;
       case 18:
         return ROUNDABOUT_RIGHT;
+      case 19:
+        return DEPART;
+      case 20:
+        return NAME_CHANGE;
       default:
         return null;
     }

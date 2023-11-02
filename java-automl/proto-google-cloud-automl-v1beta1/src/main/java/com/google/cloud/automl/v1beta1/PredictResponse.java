@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new PredictResponse();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -247,9 +242,11 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Additional domain-specific prediction response metadata.
+   *
    * * For Image Object Detection:
    *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
    *      image could have been returned.
+   *
    * * For Text Sentiment:
    *  `sentiment_score` - (float, deprecated) A value between -1 and 1,
    *      -1 maps to least positive sentiment, while 1 maps to the most positive
@@ -281,9 +278,11 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Additional domain-specific prediction response metadata.
+   *
    * * For Image Object Detection:
    *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
    *      image could have been returned.
+   *
    * * For Text Sentiment:
    *  `sentiment_score` - (float, deprecated) A value between -1 and 1,
    *      -1 maps to least positive sentiment, while 1 maps to the most positive
@@ -306,9 +305,11 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Additional domain-specific prediction response metadata.
+   *
    * * For Image Object Detection:
    *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
    *      image could have been returned.
+   *
    * * For Text Sentiment:
    *  `sentiment_score` - (float, deprecated) A value between -1 and 1,
    *      -1 maps to least positive sentiment, while 1 maps to the most positive
@@ -338,9 +339,11 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Additional domain-specific prediction response metadata.
+   *
    * * For Image Object Detection:
    *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
    *      image could have been returned.
+   *
    * * For Text Sentiment:
    *  `sentiment_score` - (float, deprecated) A value between -1 and 1,
    *      -1 maps to least positive sentiment, while 1 maps to the most positive
@@ -1471,9 +1474,11 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Additional domain-specific prediction response metadata.
+     *
      * * For Image Object Detection:
      *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
      *      image could have been returned.
+     *
      * * For Text Sentiment:
      *  `sentiment_score` - (float, deprecated) A value between -1 and 1,
      *      -1 maps to least positive sentiment, while 1 maps to the most positive
@@ -1505,9 +1510,11 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Additional domain-specific prediction response metadata.
+     *
      * * For Image Object Detection:
      *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
      *      image could have been returned.
+     *
      * * For Text Sentiment:
      *  `sentiment_score` - (float, deprecated) A value between -1 and 1,
      *      -1 maps to least positive sentiment, while 1 maps to the most positive
@@ -1530,9 +1537,11 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Additional domain-specific prediction response metadata.
+     *
      * * For Image Object Detection:
      *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
      *      image could have been returned.
+     *
      * * For Text Sentiment:
      *  `sentiment_score` - (float, deprecated) A value between -1 and 1,
      *      -1 maps to least positive sentiment, while 1 maps to the most positive
@@ -1562,9 +1571,11 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Additional domain-specific prediction response metadata.
+     *
      * * For Image Object Detection:
      *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
      *      image could have been returned.
+     *
      * * For Text Sentiment:
      *  `sentiment_score` - (float, deprecated) A value between -1 and 1,
      *      -1 maps to least positive sentiment, while 1 maps to the most positive
@@ -1600,9 +1611,11 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Additional domain-specific prediction response metadata.
+     *
      * * For Image Object Detection:
      *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
      *      image could have been returned.
+     *
      * * For Text Sentiment:
      *  `sentiment_score` - (float, deprecated) A value between -1 and 1,
      *      -1 maps to least positive sentiment, while 1 maps to the most positive
@@ -1634,9 +1647,11 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Additional domain-specific prediction response metadata.
+     *
      * * For Image Object Detection:
      *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
      *      image could have been returned.
+     *
      * * For Text Sentiment:
      *  `sentiment_score` - (float, deprecated) A value between -1 and 1,
      *      -1 maps to least positive sentiment, while 1 maps to the most positive
@@ -1666,9 +1681,11 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Additional domain-specific prediction response metadata.
+     *
      * * For Image Object Detection:
      *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
      *      image could have been returned.
+     *
      * * For Text Sentiment:
      *  `sentiment_score` - (float, deprecated) A value between -1 and 1,
      *      -1 maps to least positive sentiment, while 1 maps to the most positive

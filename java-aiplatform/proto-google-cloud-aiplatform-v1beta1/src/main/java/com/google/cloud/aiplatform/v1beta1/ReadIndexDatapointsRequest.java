@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,18 +41,13 @@ public final class ReadIndexDatapointsRequest extends com.google.protobuf.Genera
   private ReadIndexDatapointsRequest() {
     indexEndpoint_ = "";
     deployedIndexId_ = "";
-    ids_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    ids_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ReadIndexDatapointsRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -183,7 +178,8 @@ public final class ReadIndexDatapointsRequest extends com.google.protobuf.Genera
   public static final int IDS_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList ids_;
+  private com.google.protobuf.LazyStringArrayList ids_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -470,8 +466,7 @@ public final class ReadIndexDatapointsRequest extends com.google.protobuf.Genera
       bitField0_ = 0;
       indexEndpoint_ = "";
       deployedIndexId_ = "";
-      ids_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      ids_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -500,21 +495,11 @@ public final class ReadIndexDatapointsRequest extends com.google.protobuf.Genera
     public com.google.cloud.aiplatform.v1beta1.ReadIndexDatapointsRequest buildPartial() {
       com.google.cloud.aiplatform.v1beta1.ReadIndexDatapointsRequest result =
           new com.google.cloud.aiplatform.v1beta1.ReadIndexDatapointsRequest(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(
-        com.google.cloud.aiplatform.v1beta1.ReadIndexDatapointsRequest result) {
-      if (((bitField0_ & 0x00000004) != 0)) {
-        ids_ = ids_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.ids_ = ids_;
     }
 
     private void buildPartial0(
@@ -525,6 +510,10 @@ public final class ReadIndexDatapointsRequest extends com.google.protobuf.Genera
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.deployedIndexId_ = deployedIndexId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        ids_.makeImmutable();
+        result.ids_ = ids_;
       }
     }
 
@@ -588,7 +577,7 @@ public final class ReadIndexDatapointsRequest extends com.google.protobuf.Genera
       if (!other.ids_.isEmpty()) {
         if (ids_.isEmpty()) {
           ids_ = other.ids_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ |= 0x00000004;
         } else {
           ensureIdsIsMutable();
           ids_.addAll(other.ids_);
@@ -891,13 +880,14 @@ public final class ReadIndexDatapointsRequest extends com.google.protobuf.Genera
       return this;
     }
 
-    private com.google.protobuf.LazyStringList ids_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList ids_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureIdsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!ids_.isModifiable()) {
         ids_ = new com.google.protobuf.LazyStringArrayList(ids_);
-        bitField0_ |= 0x00000004;
       }
+      bitField0_ |= 0x00000004;
     }
     /**
      *
@@ -911,7 +901,8 @@ public final class ReadIndexDatapointsRequest extends com.google.protobuf.Genera
      * @return A list containing the ids.
      */
     public com.google.protobuf.ProtocolStringList getIdsList() {
-      return ids_.getUnmodifiableView();
+      ids_.makeImmutable();
+      return ids_;
     }
     /**
      *
@@ -976,6 +967,7 @@ public final class ReadIndexDatapointsRequest extends com.google.protobuf.Genera
       }
       ensureIdsIsMutable();
       ids_.set(index, value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -997,6 +989,7 @@ public final class ReadIndexDatapointsRequest extends com.google.protobuf.Genera
       }
       ensureIdsIsMutable();
       ids_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1015,6 +1008,7 @@ public final class ReadIndexDatapointsRequest extends com.google.protobuf.Genera
     public Builder addAllIds(java.lang.Iterable<java.lang.String> values) {
       ensureIdsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, ids_);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1030,8 +1024,9 @@ public final class ReadIndexDatapointsRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearIds() {
-      ids_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      ids_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000004);
+      ;
       onChanged();
       return this;
     }
@@ -1054,6 +1049,7 @@ public final class ReadIndexDatapointsRequest extends com.google.protobuf.Genera
       checkByteStringIsUtf8(value);
       ensureIdsIsMutable();
       ids_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

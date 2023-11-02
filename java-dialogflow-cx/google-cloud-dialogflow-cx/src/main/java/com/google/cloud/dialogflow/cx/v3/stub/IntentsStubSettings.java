@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,13 +28,17 @@ import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.GrpcTransportChannel;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
+import com.google.api.gax.grpc.ProtoOperationTransformers;
 import com.google.api.gax.httpjson.GaxHttpJsonProperties;
 import com.google.api.gax.httpjson.HttpJsonTransportChannel;
 import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
+import com.google.api.gax.longrunning.OperationSnapshot;
+import com.google.api.gax.longrunning.OperationTimedPollAlgorithm;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.PagedListDescriptor;
@@ -46,7 +50,13 @@ import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.cx.v3.CreateIntentRequest;
 import com.google.cloud.dialogflow.cx.v3.DeleteIntentRequest;
+import com.google.cloud.dialogflow.cx.v3.ExportIntentsMetadata;
+import com.google.cloud.dialogflow.cx.v3.ExportIntentsRequest;
+import com.google.cloud.dialogflow.cx.v3.ExportIntentsResponse;
 import com.google.cloud.dialogflow.cx.v3.GetIntentRequest;
+import com.google.cloud.dialogflow.cx.v3.ImportIntentsMetadata;
+import com.google.cloud.dialogflow.cx.v3.ImportIntentsRequest;
+import com.google.cloud.dialogflow.cx.v3.ImportIntentsResponse;
 import com.google.cloud.dialogflow.cx.v3.Intent;
 import com.google.cloud.dialogflow.cx.v3.ListIntentsRequest;
 import com.google.cloud.dialogflow.cx.v3.ListIntentsResponse;
@@ -59,6 +69,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
+import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
@@ -116,6 +127,14 @@ public class IntentsStubSettings extends StubSettings<IntentsStubSettings> {
   private final UnaryCallSettings<CreateIntentRequest, Intent> createIntentSettings;
   private final UnaryCallSettings<UpdateIntentRequest, Intent> updateIntentSettings;
   private final UnaryCallSettings<DeleteIntentRequest, Empty> deleteIntentSettings;
+  private final UnaryCallSettings<ImportIntentsRequest, Operation> importIntentsSettings;
+  private final OperationCallSettings<
+          ImportIntentsRequest, ImportIntentsResponse, ImportIntentsMetadata>
+      importIntentsOperationSettings;
+  private final UnaryCallSettings<ExportIntentsRequest, Operation> exportIntentsSettings;
+  private final OperationCallSettings<
+          ExportIntentsRequest, ExportIntentsResponse, ExportIntentsMetadata>
+      exportIntentsOperationSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -253,6 +272,28 @@ public class IntentsStubSettings extends StubSettings<IntentsStubSettings> {
     return deleteIntentSettings;
   }
 
+  /** Returns the object with the settings used for calls to importIntents. */
+  public UnaryCallSettings<ImportIntentsRequest, Operation> importIntentsSettings() {
+    return importIntentsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to importIntents. */
+  public OperationCallSettings<ImportIntentsRequest, ImportIntentsResponse, ImportIntentsMetadata>
+      importIntentsOperationSettings() {
+    return importIntentsOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to exportIntents. */
+  public UnaryCallSettings<ExportIntentsRequest, Operation> exportIntentsSettings() {
+    return exportIntentsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to exportIntents. */
+  public OperationCallSettings<ExportIntentsRequest, ExportIntentsResponse, ExportIntentsMetadata>
+      exportIntentsOperationSettings() {
+    return exportIntentsOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -373,6 +414,10 @@ public class IntentsStubSettings extends StubSettings<IntentsStubSettings> {
     createIntentSettings = settingsBuilder.createIntentSettings().build();
     updateIntentSettings = settingsBuilder.updateIntentSettings().build();
     deleteIntentSettings = settingsBuilder.deleteIntentSettings().build();
+    importIntentsSettings = settingsBuilder.importIntentsSettings().build();
+    importIntentsOperationSettings = settingsBuilder.importIntentsOperationSettings().build();
+    exportIntentsSettings = settingsBuilder.exportIntentsSettings().build();
+    exportIntentsOperationSettings = settingsBuilder.exportIntentsOperationSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
@@ -387,6 +432,14 @@ public class IntentsStubSettings extends StubSettings<IntentsStubSettings> {
     private final UnaryCallSettings.Builder<CreateIntentRequest, Intent> createIntentSettings;
     private final UnaryCallSettings.Builder<UpdateIntentRequest, Intent> updateIntentSettings;
     private final UnaryCallSettings.Builder<DeleteIntentRequest, Empty> deleteIntentSettings;
+    private final UnaryCallSettings.Builder<ImportIntentsRequest, Operation> importIntentsSettings;
+    private final OperationCallSettings.Builder<
+            ImportIntentsRequest, ImportIntentsResponse, ImportIntentsMetadata>
+        importIntentsOperationSettings;
+    private final UnaryCallSettings.Builder<ExportIntentsRequest, Operation> exportIntentsSettings;
+    private final OperationCallSettings.Builder<
+            ExportIntentsRequest, ExportIntentsResponse, ExportIntentsMetadata>
+        exportIntentsOperationSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -434,6 +487,10 @@ public class IntentsStubSettings extends StubSettings<IntentsStubSettings> {
       createIntentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateIntentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteIntentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      importIntentsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      importIntentsOperationSettings = OperationCallSettings.newBuilder();
+      exportIntentsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      exportIntentsOperationSettings = OperationCallSettings.newBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -444,6 +501,8 @@ public class IntentsStubSettings extends StubSettings<IntentsStubSettings> {
               createIntentSettings,
               updateIntentSettings,
               deleteIntentSettings,
+              importIntentsSettings,
+              exportIntentsSettings,
               listLocationsSettings,
               getLocationSettings);
       initDefaults(this);
@@ -457,6 +516,10 @@ public class IntentsStubSettings extends StubSettings<IntentsStubSettings> {
       createIntentSettings = settings.createIntentSettings.toBuilder();
       updateIntentSettings = settings.updateIntentSettings.toBuilder();
       deleteIntentSettings = settings.deleteIntentSettings.toBuilder();
+      importIntentsSettings = settings.importIntentsSettings.toBuilder();
+      importIntentsOperationSettings = settings.importIntentsOperationSettings.toBuilder();
+      exportIntentsSettings = settings.exportIntentsSettings.toBuilder();
+      exportIntentsOperationSettings = settings.exportIntentsOperationSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
 
@@ -467,6 +530,8 @@ public class IntentsStubSettings extends StubSettings<IntentsStubSettings> {
               createIntentSettings,
               updateIntentSettings,
               deleteIntentSettings,
+              importIntentsSettings,
+              exportIntentsSettings,
               listLocationsSettings,
               getLocationSettings);
     }
@@ -524,6 +589,16 @@ public class IntentsStubSettings extends StubSettings<IntentsStubSettings> {
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
+          .importIntentsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .exportIntentsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
           .listLocationsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
@@ -532,6 +607,54 @@ public class IntentsStubSettings extends StubSettings<IntentsStubSettings> {
           .getLocationSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .importIntentsOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<ImportIntentsRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(ImportIntentsResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(ImportIntentsMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .exportIntentsOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<ExportIntentsRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(ExportIntentsResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(ExportIntentsMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
 
       return builder;
     }
@@ -576,6 +699,34 @@ public class IntentsStubSettings extends StubSettings<IntentsStubSettings> {
     /** Returns the builder for the settings used for calls to deleteIntent. */
     public UnaryCallSettings.Builder<DeleteIntentRequest, Empty> deleteIntentSettings() {
       return deleteIntentSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to importIntents. */
+    public UnaryCallSettings.Builder<ImportIntentsRequest, Operation> importIntentsSettings() {
+      return importIntentsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to importIntents. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            ImportIntentsRequest, ImportIntentsResponse, ImportIntentsMetadata>
+        importIntentsOperationSettings() {
+      return importIntentsOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to exportIntents. */
+    public UnaryCallSettings.Builder<ExportIntentsRequest, Operation> exportIntentsSettings() {
+      return exportIntentsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to exportIntents. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            ExportIntentsRequest, ExportIntentsResponse, ExportIntentsMetadata>
+        exportIntentsOperationSettings() {
+      return exportIntentsOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

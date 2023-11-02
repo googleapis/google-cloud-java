@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,18 +38,13 @@ public final class Namespaces extends com.google.protobuf.GeneratedMessageV3
   }
 
   private Namespaces() {
-    namespaces_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    namespaces_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Namespaces();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -70,7 +65,8 @@ public final class Namespaces extends com.google.protobuf.GeneratedMessageV3
   public static final int NAMESPACES_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList namespaces_;
+  private com.google.protobuf.LazyStringArrayList namespaces_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -334,8 +330,7 @@ public final class Namespaces extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      namespaces_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      namespaces_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -363,7 +358,6 @@ public final class Namespaces extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.gkebackup.v1.Namespaces buildPartial() {
       com.google.cloud.gkebackup.v1.Namespaces result =
           new com.google.cloud.gkebackup.v1.Namespaces(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -371,16 +365,12 @@ public final class Namespaces extends com.google.protobuf.GeneratedMessageV3
       return result;
     }
 
-    private void buildPartialRepeatedFields(com.google.cloud.gkebackup.v1.Namespaces result) {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        namespaces_ = namespaces_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.namespaces_ = namespaces_;
-    }
-
     private void buildPartial0(com.google.cloud.gkebackup.v1.Namespaces result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        namespaces_.makeImmutable();
+        result.namespaces_ = namespaces_;
+      }
     }
 
     @java.lang.Override
@@ -431,7 +421,7 @@ public final class Namespaces extends com.google.protobuf.GeneratedMessageV3
       if (!other.namespaces_.isEmpty()) {
         if (namespaces_.isEmpty()) {
           namespaces_ = other.namespaces_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ |= 0x00000001;
         } else {
           ensureNamespacesIsMutable();
           namespaces_.addAll(other.namespaces_);
@@ -490,14 +480,14 @@ public final class Namespaces extends com.google.protobuf.GeneratedMessageV3
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList namespaces_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList namespaces_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureNamespacesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!namespaces_.isModifiable()) {
         namespaces_ = new com.google.protobuf.LazyStringArrayList(namespaces_);
-        bitField0_ |= 0x00000001;
       }
+      bitField0_ |= 0x00000001;
     }
     /**
      *
@@ -511,7 +501,8 @@ public final class Namespaces extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the namespaces.
      */
     public com.google.protobuf.ProtocolStringList getNamespacesList() {
-      return namespaces_.getUnmodifiableView();
+      namespaces_.makeImmutable();
+      return namespaces_;
     }
     /**
      *
@@ -576,6 +567,7 @@ public final class Namespaces extends com.google.protobuf.GeneratedMessageV3
       }
       ensureNamespacesIsMutable();
       namespaces_.set(index, value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -597,6 +589,7 @@ public final class Namespaces extends com.google.protobuf.GeneratedMessageV3
       }
       ensureNamespacesIsMutable();
       namespaces_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -615,6 +608,7 @@ public final class Namespaces extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllNamespaces(java.lang.Iterable<java.lang.String> values) {
       ensureNamespacesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, namespaces_);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -630,8 +624,9 @@ public final class Namespaces extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearNamespaces() {
-      namespaces_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      namespaces_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      ;
       onChanged();
       return this;
     }
@@ -654,6 +649,7 @@ public final class Namespaces extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureNamespacesIsMutable();
       namespaces_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

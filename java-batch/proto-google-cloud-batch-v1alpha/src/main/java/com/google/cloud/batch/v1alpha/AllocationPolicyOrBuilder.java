@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -70,7 +70,7 @@ public interface AllocationPolicyOrBuilder
    * </code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=492
+   *     google/cloud/batch/v1alpha/job.proto;l=560
    * @return Whether the instance field is set.
    */
   @java.lang.Deprecated
@@ -87,7 +87,7 @@ public interface AllocationPolicyOrBuilder
    * </code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=492
+   *     google/cloud/batch/v1alpha/job.proto;l=560
    * @return The instance.
    */
   @java.lang.Deprecated
@@ -187,7 +187,7 @@ public interface AllocationPolicyOrBuilder
    * <code>repeated string instance_templates = 3 [deprecated = true];</code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance_templates is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=499
+   *     google/cloud/batch/v1alpha/job.proto;l=567
    * @return A list containing the instanceTemplates.
    */
   @java.lang.Deprecated
@@ -202,7 +202,7 @@ public interface AllocationPolicyOrBuilder
    * <code>repeated string instance_templates = 3 [deprecated = true];</code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance_templates is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=499
+   *     google/cloud/batch/v1alpha/job.proto;l=567
    * @return The count of instanceTemplates.
    */
   @java.lang.Deprecated
@@ -217,7 +217,7 @@ public interface AllocationPolicyOrBuilder
    * <code>repeated string instance_templates = 3 [deprecated = true];</code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance_templates is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=499
+   *     google/cloud/batch/v1alpha/job.proto;l=567
    * @param index The index of the element to return.
    * @return The instanceTemplates at the given index.
    */
@@ -233,7 +233,7 @@ public interface AllocationPolicyOrBuilder
    * <code>repeated string instance_templates = 3 [deprecated = true];</code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance_templates is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=499
+   *     google/cloud/batch/v1alpha/job.proto;l=567
    * @param index The index of the value to return.
    * @return The bytes of the instanceTemplates at the given index.
    */
@@ -252,7 +252,7 @@ public interface AllocationPolicyOrBuilder
    * </code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=502
+   *     google/cloud/batch/v1alpha/job.proto;l=570
    * @return A list containing the provisioningModels.
    */
   @java.lang.Deprecated
@@ -270,7 +270,7 @@ public interface AllocationPolicyOrBuilder
    * </code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=502
+   *     google/cloud/batch/v1alpha/job.proto;l=570
    * @return The count of provisioningModels.
    */
   @java.lang.Deprecated
@@ -287,7 +287,7 @@ public interface AllocationPolicyOrBuilder
    * </code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=502
+   *     google/cloud/batch/v1alpha/job.proto;l=570
    * @param index The index of the element to return.
    * @return The provisioningModels at the given index.
    */
@@ -306,7 +306,7 @@ public interface AllocationPolicyOrBuilder
    * </code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=502
+   *     google/cloud/batch/v1alpha/job.proto;l=570
    * @return A list containing the enum numeric values on the wire for provisioningModels.
    */
   @java.lang.Deprecated
@@ -323,7 +323,7 @@ public interface AllocationPolicyOrBuilder
    * </code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=502
+   *     google/cloud/batch/v1alpha/job.proto;l=570
    * @param index The index of the value to return.
    * @return The enum numeric value on the wire of provisioningModels at the given index.
    */
@@ -340,7 +340,7 @@ public interface AllocationPolicyOrBuilder
    * <code>string service_account_email = 5 [deprecated = true];</code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.service_account_email is deprecated.
-   *     See google/cloud/batch/v1alpha/job.proto;l=505
+   *     See google/cloud/batch/v1alpha/job.proto;l=573
    * @return The serviceAccountEmail.
    */
   @java.lang.Deprecated
@@ -355,7 +355,7 @@ public interface AllocationPolicyOrBuilder
    * <code>string service_account_email = 5 [deprecated = true];</code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.service_account_email is deprecated.
-   *     See google/cloud/batch/v1alpha/job.proto;l=505
+   *     See google/cloud/batch/v1alpha/job.proto;l=573
    * @return The bytes for serviceAccountEmail.
    */
   @java.lang.Deprecated
@@ -518,4 +518,39 @@ public interface AllocationPolicyOrBuilder
    * <code>.google.cloud.batch.v1alpha.AllocationPolicy.NetworkPolicy network = 7;</code>
    */
   com.google.cloud.batch.v1alpha.AllocationPolicy.NetworkPolicyOrBuilder getNetworkOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The placement policy.
+   * </pre>
+   *
+   * <code>.google.cloud.batch.v1alpha.AllocationPolicy.PlacementPolicy placement = 10;</code>
+   *
+   * @return Whether the placement field is set.
+   */
+  boolean hasPlacement();
+  /**
+   *
+   *
+   * <pre>
+   * The placement policy.
+   * </pre>
+   *
+   * <code>.google.cloud.batch.v1alpha.AllocationPolicy.PlacementPolicy placement = 10;</code>
+   *
+   * @return The placement.
+   */
+  com.google.cloud.batch.v1alpha.AllocationPolicy.PlacementPolicy getPlacement();
+  /**
+   *
+   *
+   * <pre>
+   * The placement policy.
+   * </pre>
+   *
+   * <code>.google.cloud.batch.v1alpha.AllocationPolicy.PlacementPolicy placement = 10;</code>
+   */
+  com.google.cloud.batch.v1alpha.AllocationPolicy.PlacementPolicyOrBuilder getPlacementOrBuilder();
 }

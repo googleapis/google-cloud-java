@@ -45,11 +45,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
     return new ComplianceNote();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return io.grafeas.v1.Compliance.internal_static_grafeas_v1_ComplianceNote_descriptor;
   }
@@ -114,11 +109,6 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new CisBenchmark();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -694,6 +684,8 @@ public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int complianceTypeCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object complianceType_;
 
   public enum ComplianceTypeCase

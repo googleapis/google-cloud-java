@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,11 +29,13 @@ package com.google.cloud.videointelligence.v1p3beta1;
  *         0----1
  *         |    |
  *         3----2
+ *
  * When it's clockwise rotated 180 degrees around the top-left corner it
  * becomes:
  *         2----3
  *         |    |
  *         1----0
+ *
  * and the vertex order will still be (0, 1, 2, 3). Note that values can be less
  * than 0, or greater than 1 due to trignometric calculations for location of
  * the box.
@@ -59,11 +61,6 @@ public final class NormalizedBoundingPoly extends com.google.protobuf.GeneratedM
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new NormalizedBoundingPoly();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -329,11 +326,13 @@ public final class NormalizedBoundingPoly extends com.google.protobuf.GeneratedM
    *         0----1
    *         |    |
    *         3----2
+   *
    * When it's clockwise rotated 180 degrees around the top-left corner it
    * becomes:
    *         2----3
    *         |    |
    *         1----0
+   *
    * and the vertex order will still be (0, 1, 2, 3). Note that values can be less
    * than 0, or greater than 1 due to trignometric calculations for location of
    * the box.

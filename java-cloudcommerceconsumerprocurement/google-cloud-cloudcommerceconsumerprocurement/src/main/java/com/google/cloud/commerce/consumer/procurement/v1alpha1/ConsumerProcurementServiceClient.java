@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -58,8 +58,8 @@ import javax.annotation.Generated;
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (ConsumerProcurementServiceClient consumerProcurementServiceClient =
  *     ConsumerProcurementServiceClient.create()) {
- *   GetOrderRequest request = GetOrderRequest.newBuilder().setName("name3373707").build();
- *   Order response = consumerProcurementServiceClient.getOrder(request);
+ *   String name = "name3373707";
+ *   Order response = consumerProcurementServiceClient.getOrder(name);
  * }
  * }</pre>
  *
@@ -219,6 +219,9 @@ public class ConsumerProcurementServiceClient implements BackgroundResource {
   /**
    * Creates a new [Order][google.cloud.commerce.consumer.procurement.v1alpha1.Order].
    *
+   * <p>This API only supports GCP spend-based committed use discounts specified by GCP
+   * documentation.
+   *
    * <p>The returned long-running operation is in-progress until the backend completes the creation
    * of the resource. Once completed, the order is in
    * [OrderState.ORDER_STATE_ACTIVE][google.cloud.commerce.consumer.procurement.v1alpha1.OrderState.ORDER_STATE_ACTIVE].
@@ -256,6 +259,9 @@ public class ConsumerProcurementServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new [Order][google.cloud.commerce.consumer.procurement.v1alpha1.Order].
+   *
+   * <p>This API only supports GCP spend-based committed use discounts specified by GCP
+   * documentation.
    *
    * <p>The returned long-running operation is in-progress until the backend completes the creation
    * of the resource. Once completed, the order is in
@@ -295,6 +301,9 @@ public class ConsumerProcurementServiceClient implements BackgroundResource {
   /**
    * Creates a new [Order][google.cloud.commerce.consumer.procurement.v1alpha1.Order].
    *
+   * <p>This API only supports GCP spend-based committed use discounts specified by GCP
+   * documentation.
+   *
    * <p>The returned long-running operation is in-progress until the backend completes the creation
    * of the resource. Once completed, the order is in
    * [OrderState.ORDER_STATE_ACTIVE][google.cloud.commerce.consumer.procurement.v1alpha1.OrderState.ORDER_STATE_ACTIVE].
@@ -326,6 +335,34 @@ public class ConsumerProcurementServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<PlaceOrderRequest, Operation> placeOrderCallable() {
     return stub.placeOrderCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the requested [Order][google.cloud.commerce.consumer.procurement.v1alpha1.Order]
+   * resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConsumerProcurementServiceClient consumerProcurementServiceClient =
+   *     ConsumerProcurementServiceClient.create()) {
+   *   String name = "name3373707";
+   *   Order response = consumerProcurementServiceClient.getOrder(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the order to retrieve.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Order getOrder(String name) {
+    GetOrderRequest request = GetOrderRequest.newBuilder().setName(name).build();
+    return getOrder(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -380,6 +417,37 @@ public class ConsumerProcurementServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<GetOrderRequest, Order> getOrderCallable() {
     return stub.getOrderCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists [Order][google.cloud.commerce.consumer.procurement.v1alpha1.Order] resources that the
+   * user has access to, within the scope of the parent resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConsumerProcurementServiceClient consumerProcurementServiceClient =
+   *     ConsumerProcurementServiceClient.create()) {
+   *   String parent = "parent-995424086";
+   *   for (Order element : consumerProcurementServiceClient.listOrders(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource to query for orders. This field has the form
+   *     `billingAccounts/{billing-account-id}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListOrdersPagedResponse listOrders(String parent) {
+    ListOrdersRequest request = ListOrdersRequest.newBuilder().setParent(parent).build();
+    return listOrders(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

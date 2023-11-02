@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,17 +41,13 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     name_ = "";
     remoteUri_ = "";
     etag_ = "";
+    webhookId_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Repository();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -440,6 +436,57 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int WEBHOOK_ID_FIELD_NUMBER = 8;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object webhookId_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Output only. External ID of the webhook created for the repository.
+   * </pre>
+   *
+   * <code>string webhook_id = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The webhookId.
+   */
+  @java.lang.Override
+  public java.lang.String getWebhookId() {
+    java.lang.Object ref = webhookId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      webhookId_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. External ID of the webhook created for the repository.
+   * </pre>
+   *
+   * <code>string webhook_id = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for webhookId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getWebhookIdBytes() {
+    java.lang.Object ref = webhookId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      webhookId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -470,6 +517,9 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         output, internalGetAnnotations(), AnnotationsDefaultEntryHolder.defaultEntry, 6);
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, etag_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(webhookId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, webhookId_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -505,6 +555,9 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, etag_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(webhookId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, webhookId_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -532,6 +585,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     }
     if (!internalGetAnnotations().equals(other.internalGetAnnotations())) return false;
     if (!getEtag().equals(other.getEtag())) return false;
+    if (!getWebhookId().equals(other.getWebhookId())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -561,6 +615,8 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + ETAG_FIELD_NUMBER;
     hash = (53 * hash) + getEtag().hashCode();
+    hash = (37 * hash) + WEBHOOK_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getWebhookId().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -733,6 +789,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       }
       internalGetMutableAnnotations().clear();
       etag_ = "";
+      webhookId_ = "";
       return this;
     }
 
@@ -786,6 +843,9 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.etag_ = etag_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.webhookId_ = webhookId_;
       }
     }
 
@@ -857,6 +917,11 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000020;
         onChanged();
       }
+      if (!other.getWebhookId().isEmpty()) {
+        webhookId_ = other.webhookId_;
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -925,6 +990,12 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000020;
                 break;
               } // case 58
+            case 66:
+              {
+                webhookId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 66
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1841,6 +1912,112 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       etag_ = value;
       bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object webhookId_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. External ID of the webhook created for the repository.
+     * </pre>
+     *
+     * <code>string webhook_id = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The webhookId.
+     */
+    public java.lang.String getWebhookId() {
+      java.lang.Object ref = webhookId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        webhookId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. External ID of the webhook created for the repository.
+     * </pre>
+     *
+     * <code>string webhook_id = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for webhookId.
+     */
+    public com.google.protobuf.ByteString getWebhookIdBytes() {
+      java.lang.Object ref = webhookId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        webhookId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. External ID of the webhook created for the repository.
+     * </pre>
+     *
+     * <code>string webhook_id = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The webhookId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setWebhookId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      webhookId_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. External ID of the webhook created for the repository.
+     * </pre>
+     *
+     * <code>string webhook_id = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearWebhookId() {
+      webhookId_ = getDefaultInstance().getWebhookId();
+      bitField0_ = (bitField0_ & ~0x00000040);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. External ID of the webhook created for the repository.
+     * </pre>
+     *
+     * <code>string webhook_id = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for webhookId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setWebhookIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      webhookId_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }

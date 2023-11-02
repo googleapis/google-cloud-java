@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,4 +21,40 @@ package com.google.cloud.bigquery.analyticshub.v1;
 public interface SubscribeListingResponseOrBuilder
     extends
     // @@protoc_insertion_point(interface_extends:google.cloud.bigquery.analyticshub.v1.SubscribeListingResponse)
-    com.google.protobuf.MessageOrBuilder {}
+    com.google.protobuf.MessageOrBuilder {
+
+  /**
+   *
+   *
+   * <pre>
+   * Subscription object created from this subscribe action.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.analyticshub.v1.Subscription subscription = 1;</code>
+   *
+   * @return Whether the subscription field is set.
+   */
+  boolean hasSubscription();
+  /**
+   *
+   *
+   * <pre>
+   * Subscription object created from this subscribe action.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.analyticshub.v1.Subscription subscription = 1;</code>
+   *
+   * @return The subscription.
+   */
+  com.google.cloud.bigquery.analyticshub.v1.Subscription getSubscription();
+  /**
+   *
+   *
+   * <pre>
+   * Subscription object created from this subscribe action.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.analyticshub.v1.Subscription subscription = 1;</code>
+   */
+  com.google.cloud.bigquery.analyticshub.v1.SubscriptionOrBuilder getSubscriptionOrBuilder();
+}

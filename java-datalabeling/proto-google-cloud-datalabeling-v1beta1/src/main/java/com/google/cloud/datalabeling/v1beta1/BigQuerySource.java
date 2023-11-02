@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,11 +49,6 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
     return new BigQuerySource();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datalabeling.v1beta1.DatasetOuterClass
         .internal_static_google_cloud_datalabeling_v1beta1_BigQuerySource_descriptor;
@@ -84,8 +79,11 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
    * it must have the
    * [correct
    * schema](/ml-engine/docs/continuous-evaluation/create-job#table-schema).
+   *
    * Provide the table URI in the following format:
+   *
    * "bq://&lt;var&gt;{your_project_id}&lt;/var&gt;/&lt;var&gt;{your_dataset_name}&lt;/var&gt;/&lt;var&gt;{your_table_name}&lt;/var&gt;"
+   *
    * [Learn
    * more](/ml-engine/docs/continuous-evaluation/create-job#table-schema).
    * </pre>
@@ -117,8 +115,11 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
    * it must have the
    * [correct
    * schema](/ml-engine/docs/continuous-evaluation/create-job#table-schema).
+   *
    * Provide the table URI in the following format:
+   *
    * "bq://&lt;var&gt;{your_project_id}&lt;/var&gt;/&lt;var&gt;{your_dataset_name}&lt;/var&gt;/&lt;var&gt;{your_table_name}&lt;/var&gt;"
+   *
    * [Learn
    * more](/ml-engine/docs/continuous-evaluation/create-job#table-schema).
    * </pre>
@@ -496,8 +497,11 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
      * it must have the
      * [correct
      * schema](/ml-engine/docs/continuous-evaluation/create-job#table-schema).
+     *
      * Provide the table URI in the following format:
+     *
      * "bq://&lt;var&gt;{your_project_id}&lt;/var&gt;/&lt;var&gt;{your_dataset_name}&lt;/var&gt;/&lt;var&gt;{your_table_name}&lt;/var&gt;"
+     *
      * [Learn
      * more](/ml-engine/docs/continuous-evaluation/create-job#table-schema).
      * </pre>
@@ -528,8 +532,11 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
      * it must have the
      * [correct
      * schema](/ml-engine/docs/continuous-evaluation/create-job#table-schema).
+     *
      * Provide the table URI in the following format:
+     *
      * "bq://&lt;var&gt;{your_project_id}&lt;/var&gt;/&lt;var&gt;{your_dataset_name}&lt;/var&gt;/&lt;var&gt;{your_table_name}&lt;/var&gt;"
+     *
      * [Learn
      * more](/ml-engine/docs/continuous-evaluation/create-job#table-schema).
      * </pre>
@@ -560,8 +567,11 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
      * it must have the
      * [correct
      * schema](/ml-engine/docs/continuous-evaluation/create-job#table-schema).
+     *
      * Provide the table URI in the following format:
+     *
      * "bq://&lt;var&gt;{your_project_id}&lt;/var&gt;/&lt;var&gt;{your_dataset_name}&lt;/var&gt;/&lt;var&gt;{your_table_name}&lt;/var&gt;"
+     *
      * [Learn
      * more](/ml-engine/docs/continuous-evaluation/create-job#table-schema).
      * </pre>
@@ -591,8 +601,11 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
      * it must have the
      * [correct
      * schema](/ml-engine/docs/continuous-evaluation/create-job#table-schema).
+     *
      * Provide the table URI in the following format:
+     *
      * "bq://&lt;var&gt;{your_project_id}&lt;/var&gt;/&lt;var&gt;{your_dataset_name}&lt;/var&gt;/&lt;var&gt;{your_table_name}&lt;/var&gt;"
+     *
      * [Learn
      * more](/ml-engine/docs/continuous-evaluation/create-job#table-schema).
      * </pre>
@@ -618,8 +631,11 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
      * it must have the
      * [correct
      * schema](/ml-engine/docs/continuous-evaluation/create-job#table-schema).
+     *
      * Provide the table URI in the following format:
+     *
      * "bq://&lt;var&gt;{your_project_id}&lt;/var&gt;/&lt;var&gt;{your_dataset_name}&lt;/var&gt;/&lt;var&gt;{your_table_name}&lt;/var&gt;"
+     *
      * [Learn
      * more](/ml-engine/docs/continuous-evaluation/create-job#table-schema).
      * </pre>

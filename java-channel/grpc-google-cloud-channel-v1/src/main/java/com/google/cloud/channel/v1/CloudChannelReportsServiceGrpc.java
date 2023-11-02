@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,8 +23,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * <pre>
  * CloudChannelReportsService lets Google Cloud resellers and
  * distributors retrieve and combine a variety of data in Cloud Channel for
- * multiple products (Google Cloud Platform (GCP), Google Voice, and
- * Google Workspace.)
+ * multiple products (Google Cloud, Google Voice, and Google Workspace.)
  * </pre>
  */
 @javax.annotation.Generated(
@@ -35,7 +34,8 @@ public final class CloudChannelReportsServiceGrpc {
 
   private CloudChannelReportsServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.channel.v1.CloudChannelReportsService";
+  public static final java.lang.String SERVICE_NAME =
+      "google.cloud.channel.v1.CloudChannelReportsService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -224,8 +224,7 @@ public final class CloudChannelReportsServiceGrpc {
    * <pre>
    * CloudChannelReportsService lets Google Cloud resellers and
    * distributors retrieve and combine a variety of data in Cloud Channel for
-   * multiple products (Google Cloud Platform (GCP), Google Voice, and
-   * Google Workspace.)
+   * multiple products (Google Cloud, Google Voice, and Google Workspace.)
    * </pre>
    */
   public interface AsyncService {
@@ -302,8 +301,7 @@ public final class CloudChannelReportsServiceGrpc {
    * <pre>
    * CloudChannelReportsService lets Google Cloud resellers and
    * distributors retrieve and combine a variety of data in Cloud Channel for
-   * multiple products (Google Cloud Platform (GCP), Google Voice, and
-   * Google Workspace.)
+   * multiple products (Google Cloud, Google Voice, and Google Workspace.)
    * </pre>
    */
   public abstract static class CloudChannelReportsServiceImplBase
@@ -321,8 +319,7 @@ public final class CloudChannelReportsServiceGrpc {
    * <pre>
    * CloudChannelReportsService lets Google Cloud resellers and
    * distributors retrieve and combine a variety of data in Cloud Channel for
-   * multiple products (Google Cloud Platform (GCP), Google Voice, and
-   * Google Workspace.)
+   * multiple products (Google Cloud, Google Voice, and Google Workspace.)
    * </pre>
    */
   public static final class CloudChannelReportsServiceStub
@@ -416,8 +413,7 @@ public final class CloudChannelReportsServiceGrpc {
    * <pre>
    * CloudChannelReportsService lets Google Cloud resellers and
    * distributors retrieve and combine a variety of data in Cloud Channel for
-   * multiple products (Google Cloud Platform (GCP), Google Voice, and
-   * Google Workspace.)
+   * multiple products (Google Cloud, Google Voice, and Google Workspace.)
    * </pre>
    */
   public static final class CloudChannelReportsServiceBlockingStub
@@ -501,8 +497,7 @@ public final class CloudChannelReportsServiceGrpc {
    * <pre>
    * CloudChannelReportsService lets Google Cloud resellers and
    * distributors retrieve and combine a variety of data in Cloud Channel for
-   * multiple products (Google Cloud Platform (GCP), Google Voice, and
-   * Google Workspace.)
+   * multiple products (Google Cloud, Google Voice, and Google Workspace.)
    * </pre>
    */
   public static final class CloudChannelReportsServiceFutureStub
@@ -684,9 +679,9 @@ public final class CloudChannelReportsServiceGrpc {
   private static final class CloudChannelReportsServiceMethodDescriptorSupplier
       extends CloudChannelReportsServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    CloudChannelReportsServiceMethodDescriptorSupplier(String methodName) {
+    CloudChannelReportsServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

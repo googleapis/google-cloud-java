@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,11 +50,6 @@ public final class ExportEvaluatedDataItemsConfig extends com.google.protobuf.Ge
     return new ExportEvaluatedDataItemsConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1.schema.trainingjob.definition
         .ExportEvaluatedDataItemsConfigProto
@@ -84,6 +79,7 @@ public final class ExportEvaluatedDataItemsConfig extends com.google.protobuf.Ge
    * <pre>
    * URI of desired destination BigQuery table. Expected format:
    * bq://&lt;project_id&gt;:&lt;dataset_id&gt;:&lt;table&gt;
+   *
    * If not specified, then results are exported to the following auto-created
    * BigQuery table:
    * &lt;project_id&gt;:export_evaluated_examples_&lt;model_name&gt;_&lt;yyyy_MM_dd'T'HH_mm_ss_SSS'Z'&gt;.evaluated_examples
@@ -111,6 +107,7 @@ public final class ExportEvaluatedDataItemsConfig extends com.google.protobuf.Ge
    * <pre>
    * URI of desired destination BigQuery table. Expected format:
    * bq://&lt;project_id&gt;:&lt;dataset_id&gt;:&lt;table&gt;
+   *
    * If not specified, then results are exported to the following auto-created
    * BigQuery table:
    * &lt;project_id&gt;:export_evaluated_examples_&lt;model_name&gt;_&lt;yyyy_MM_dd'T'HH_mm_ss_SSS'Z'&gt;.evaluated_examples
@@ -579,6 +576,7 @@ public final class ExportEvaluatedDataItemsConfig extends com.google.protobuf.Ge
      * <pre>
      * URI of desired destination BigQuery table. Expected format:
      * bq://&lt;project_id&gt;:&lt;dataset_id&gt;:&lt;table&gt;
+     *
      * If not specified, then results are exported to the following auto-created
      * BigQuery table:
      * &lt;project_id&gt;:export_evaluated_examples_&lt;model_name&gt;_&lt;yyyy_MM_dd'T'HH_mm_ss_SSS'Z'&gt;.evaluated_examples
@@ -605,6 +603,7 @@ public final class ExportEvaluatedDataItemsConfig extends com.google.protobuf.Ge
      * <pre>
      * URI of desired destination BigQuery table. Expected format:
      * bq://&lt;project_id&gt;:&lt;dataset_id&gt;:&lt;table&gt;
+     *
      * If not specified, then results are exported to the following auto-created
      * BigQuery table:
      * &lt;project_id&gt;:export_evaluated_examples_&lt;model_name&gt;_&lt;yyyy_MM_dd'T'HH_mm_ss_SSS'Z'&gt;.evaluated_examples
@@ -631,6 +630,7 @@ public final class ExportEvaluatedDataItemsConfig extends com.google.protobuf.Ge
      * <pre>
      * URI of desired destination BigQuery table. Expected format:
      * bq://&lt;project_id&gt;:&lt;dataset_id&gt;:&lt;table&gt;
+     *
      * If not specified, then results are exported to the following auto-created
      * BigQuery table:
      * &lt;project_id&gt;:export_evaluated_examples_&lt;model_name&gt;_&lt;yyyy_MM_dd'T'HH_mm_ss_SSS'Z'&gt;.evaluated_examples
@@ -656,6 +656,7 @@ public final class ExportEvaluatedDataItemsConfig extends com.google.protobuf.Ge
      * <pre>
      * URI of desired destination BigQuery table. Expected format:
      * bq://&lt;project_id&gt;:&lt;dataset_id&gt;:&lt;table&gt;
+     *
      * If not specified, then results are exported to the following auto-created
      * BigQuery table:
      * &lt;project_id&gt;:export_evaluated_examples_&lt;model_name&gt;_&lt;yyyy_MM_dd'T'HH_mm_ss_SSS'Z'&gt;.evaluated_examples
@@ -677,6 +678,7 @@ public final class ExportEvaluatedDataItemsConfig extends com.google.protobuf.Ge
      * <pre>
      * URI of desired destination BigQuery table. Expected format:
      * bq://&lt;project_id&gt;:&lt;dataset_id&gt;:&lt;table&gt;
+     *
      * If not specified, then results are exported to the following auto-created
      * BigQuery table:
      * &lt;project_id&gt;:export_evaluated_examples_&lt;model_name&gt;_&lt;yyyy_MM_dd'T'HH_mm_ss_SSS'Z'&gt;.evaluated_examples

@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -627,8 +627,9 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Possible error codes:
    *
    * <ul>
-   *   <li>PERMISSION_DENIED: The reseller account making the request is different from the reseller
-   *       account in the API request.
+   *   <li>PERMISSION_DENIED: &#42; The reseller account making the request is different from the
+   *       reseller account in the API request. &#42; You are not authorized to create a customer.
+   *       See https://support.google.com/channelservices/answer/9759265
    *   <li>INVALID_ARGUMENT: &#42; Required request parameters are missing or invalid. &#42; Domain
    *       field value doesn't match the primary email domain.
    * </ul>
@@ -668,8 +669,9 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Possible error codes:
    *
    * <ul>
-   *   <li>PERMISSION_DENIED: The reseller account making the request is different from the reseller
-   *       account in the API request.
+   *   <li>PERMISSION_DENIED: &#42; The reseller account making the request is different from the
+   *       reseller account in the API request. &#42; You are not authorized to create a customer.
+   *       See https://support.google.com/channelservices/answer/9759265
    *   <li>INVALID_ARGUMENT: &#42; Required request parameters are missing or invalid. &#42; Domain
    *       field value doesn't match the primary email domain.
    * </ul>
@@ -943,8 +945,9 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Possible error codes:
    *
    * <ul>
-   *   <li>PERMISSION_DENIED: The reseller account making the request is different from the reseller
-   *       account in the API request.
+   *   <li>PERMISSION_DENIED: &#42; The reseller account making the request is different from the
+   *       reseller account in the API request. &#42; You are not authorized to import the customer.
+   *       See https://support.google.com/channelservices/answer/9759265
    *   <li>NOT_FOUND: Cloud Identity doesn't exist or was deleted.
    *   <li>INVALID_ARGUMENT: Required parameters are missing, or the auth_token is expired or
    *       invalid.
@@ -991,8 +994,9 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Possible error codes:
    *
    * <ul>
-   *   <li>PERMISSION_DENIED: The reseller account making the request is different from the reseller
-   *       account in the API request.
+   *   <li>PERMISSION_DENIED: &#42; The reseller account making the request is different from the
+   *       reseller account in the API request. &#42; You are not authorized to import the customer.
+   *       See https://support.google.com/channelservices/answer/9759265
    *   <li>NOT_FOUND: Cloud Identity doesn't exist or was deleted.
    *   <li>INVALID_ARGUMENT: Required parameters are missing, or the auth_token is expired or
    *       invalid.
@@ -1038,7 +1042,9 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Possible error codes:
    *
    * <ul>
-   *   <li>PERMISSION_DENIED: The customer doesn't belong to the reseller.
+   *   <li>PERMISSION_DENIED: &#42; The customer doesn't belong to the reseller. &#42; You are not
+   *       authorized to provision cloud identity id. See
+   *       https://support.google.com/channelservices/answer/9759265
    *   <li>INVALID_ARGUMENT: Required request parameters are missing or invalid.
    *   <li>NOT_FOUND: The customer was not found.
    *   <li>ALREADY_EXISTS: The customer's primary email already exists. Retry after changing the
@@ -1091,7 +1097,9 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Possible error codes:
    *
    * <ul>
-   *   <li>PERMISSION_DENIED: The customer doesn't belong to the reseller.
+   *   <li>PERMISSION_DENIED: &#42; The customer doesn't belong to the reseller. &#42; You are not
+   *       authorized to provision cloud identity id. See
+   *       https://support.google.com/channelservices/answer/9759265
    *   <li>INVALID_ARGUMENT: Required request parameters are missing or invalid.
    *   <li>NOT_FOUND: The customer was not found.
    *   <li>ALREADY_EXISTS: The customer's primary email already exists. Retry after changing the
@@ -1144,7 +1152,9 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Possible error codes:
    *
    * <ul>
-   *   <li>PERMISSION_DENIED: The customer doesn't belong to the reseller.
+   *   <li>PERMISSION_DENIED: &#42; The customer doesn't belong to the reseller. &#42; You are not
+   *       authorized to provision cloud identity id. See
+   *       https://support.google.com/channelservices/answer/9759265
    *   <li>INVALID_ARGUMENT: Required request parameters are missing or invalid.
    *   <li>NOT_FOUND: The customer was not found.
    *   <li>ALREADY_EXISTS: The customer's primary email already exists. Retry after changing the
@@ -1496,7 +1506,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    *   <li>PERMISSION_DENIED: &#42; The customer doesn't belong to the reseller and has no auth
    *       token. &#42; The customer provided incorrect reseller information when generating auth
    *       token. &#42; The reseller account making the request is different from the reseller
-   *       account in the query.
+   *       account in the query. &#42; The reseller is not authorized to transact on this Product.
+   *       See https://support.google.com/channelservices/answer/9759265
    *   <li>INVALID_ARGUMENT: Required request parameters are missing or invalid.
    * </ul>
    *
@@ -1519,6 +1530,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setSku("sku113949")
    *           .setLanguageCode("languageCode-2092349083")
+   *           .setBillingAccount("billingAccount708726578")
    *           .build();
    *   for (TransferableOffer element :
    *       cloudChannelServiceClient.listTransferableOffers(request).iterateAll()) {
@@ -1549,7 +1561,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    *   <li>PERMISSION_DENIED: &#42; The customer doesn't belong to the reseller and has no auth
    *       token. &#42; The customer provided incorrect reseller information when generating auth
    *       token. &#42; The reseller account making the request is different from the reseller
-   *       account in the query.
+   *       account in the query. &#42; The reseller is not authorized to transact on this Product.
+   *       See https://support.google.com/channelservices/answer/9759265
    *   <li>INVALID_ARGUMENT: Required request parameters are missing or invalid.
    * </ul>
    *
@@ -1572,6 +1585,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setSku("sku113949")
    *           .setLanguageCode("languageCode-2092349083")
+   *           .setBillingAccount("billingAccount708726578")
    *           .build();
    *   ApiFuture<TransferableOffer> future =
    *       cloudChannelServiceClient.listTransferableOffersPagedCallable().futureCall(request);
@@ -1601,7 +1615,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    *   <li>PERMISSION_DENIED: &#42; The customer doesn't belong to the reseller and has no auth
    *       token. &#42; The customer provided incorrect reseller information when generating auth
    *       token. &#42; The reseller account making the request is different from the reseller
-   *       account in the query.
+   *       account in the query. &#42; The reseller is not authorized to transact on this Product.
+   *       See https://support.google.com/channelservices/answer/9759265
    *   <li>INVALID_ARGUMENT: Required request parameters are missing or invalid.
    * </ul>
    *
@@ -1624,6 +1639,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setSku("sku113949")
    *           .setLanguageCode("languageCode-2092349083")
+   *           .setBillingAccount("billingAccount708726578")
    *           .build();
    *   while (true) {
    *     ListTransferableOffersResponse response =
@@ -1729,7 +1745,9 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Possible error codes:
    *
    * <ul>
-   *   <li>PERMISSION_DENIED: The customer doesn't belong to the reseller.
+   *   <li>PERMISSION_DENIED: &#42; The customer doesn't belong to the reseller. &#42; The reseller
+   *       is not authorized to transact on this Product. See
+   *       https://support.google.com/channelservices/answer/9759265
    *   <li>INVALID_ARGUMENT: &#42; Required request parameters are missing or invalid. &#42; There
    *       is already a customer entitlement for a SKU from the same product family.
    *   <li>INVALID_VALUE: Make sure the OfferId is valid. If it is, contact Google Channel support
@@ -1790,7 +1808,9 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Possible error codes:
    *
    * <ul>
-   *   <li>PERMISSION_DENIED: The customer doesn't belong to the reseller.
+   *   <li>PERMISSION_DENIED: &#42; The customer doesn't belong to the reseller. &#42; The reseller
+   *       is not authorized to transact on this Product. See
+   *       https://support.google.com/channelservices/answer/9759265
    *   <li>INVALID_ARGUMENT: &#42; Required request parameters are missing or invalid. &#42; There
    *       is already a customer entitlement for a SKU from the same product family.
    *   <li>INVALID_VALUE: Make sure the OfferId is valid. If it is, contact Google Channel support
@@ -1851,7 +1871,9 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Possible error codes:
    *
    * <ul>
-   *   <li>PERMISSION_DENIED: The customer doesn't belong to the reseller.
+   *   <li>PERMISSION_DENIED: &#42; The customer doesn't belong to the reseller. &#42; The reseller
+   *       is not authorized to transact on this Product. See
+   *       https://support.google.com/channelservices/answer/9759265
    *   <li>INVALID_ARGUMENT: &#42; Required request parameters are missing or invalid. &#42; There
    *       is already a customer entitlement for a SKU from the same product family.
    *   <li>INVALID_VALUE: Make sure the OfferId is valid. If it is, contact Google Channel support
@@ -2271,6 +2293,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
    *           .addAllParameters(new ArrayList<Parameter>())
    *           .setPurchaseOrderId("purchaseOrderId2029917384")
    *           .setRequestId("requestId693933066")
+   *           .setBillingAccount("billingAccount708726578")
    *           .build();
    *   Entitlement response = cloudChannelServiceClient.changeOfferAsync(request).get();
    * }
@@ -2325,6 +2348,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
    *           .addAllParameters(new ArrayList<Parameter>())
    *           .setPurchaseOrderId("purchaseOrderId2029917384")
    *           .setRequestId("requestId693933066")
+   *           .setBillingAccount("billingAccount708726578")
    *           .build();
    *   OperationFuture<Entitlement, OperationMetadata> future =
    *       cloudChannelServiceClient.changeOfferOperationCallable().futureCall(request);
@@ -2379,6 +2403,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
    *           .addAllParameters(new ArrayList<Parameter>())
    *           .setPurchaseOrderId("purchaseOrderId2029917384")
    *           .setRequestId("requestId693933066")
+   *           .setBillingAccount("billingAccount708726578")
    *           .build();
    *   ApiFuture<Operation> future =
    *       cloudChannelServiceClient.changeOfferCallable().futureCall(request);
@@ -3039,7 +3064,9 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Possible error codes:
    *
    * <ul>
-   *   <li>PERMISSION_DENIED: The customer doesn't belong to the reseller.
+   *   <li>PERMISSION_DENIED: &#42; The customer doesn't belong to the reseller. &#42; The reseller
+   *       is not authorized to transact on this Product. See
+   *       https://support.google.com/channelservices/answer/9759265
    *   <li>INVALID_ARGUMENT: Required request parameters are missing or invalid.
    *   <li>NOT_FOUND: The customer or offer resource was not found.
    *   <li>ALREADY_EXISTS: The SKU was already transferred for the customer.
@@ -3097,7 +3124,9 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Possible error codes:
    *
    * <ul>
-   *   <li>PERMISSION_DENIED: The customer doesn't belong to the reseller.
+   *   <li>PERMISSION_DENIED: &#42; The customer doesn't belong to the reseller. &#42; The reseller
+   *       is not authorized to transact on this Product. See
+   *       https://support.google.com/channelservices/answer/9759265
    *   <li>INVALID_ARGUMENT: Required request parameters are missing or invalid.
    *   <li>NOT_FOUND: The customer or offer resource was not found.
    *   <li>ALREADY_EXISTS: The SKU was already transferred for the customer.
@@ -3155,7 +3184,9 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Possible error codes:
    *
    * <ul>
-   *   <li>PERMISSION_DENIED: The customer doesn't belong to the reseller.
+   *   <li>PERMISSION_DENIED: &#42; The customer doesn't belong to the reseller. &#42; The reseller
+   *       is not authorized to transact on this Product. See
+   *       https://support.google.com/channelservices/answer/9759265
    *   <li>INVALID_ARGUMENT: Required request parameters are missing or invalid.
    *   <li>NOT_FOUND: The customer or offer resource was not found.
    *   <li>ALREADY_EXISTS: The SKU was already transferred for the customer.
@@ -4315,12 +4346,12 @@ public class CloudChannelServiceClient implements BackgroundResource {
    *   <li>The new config will not modify exports used with other configs. Changes to the config may
    *       be immediate, but may take up to 24 hours.
    *   <li>There is a limit of ten configs for any
-   *       [RepricingConfig.EntitlementGranularity.entitlement][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity.entitlement]
-   *       or
+   *       [RepricingConfig.EntitlementGranularity.entitlement][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity.entitlement],
+   *       for any
    *       [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month].
    *   <li>The contained
    *       [CustomerRepricingConfig.repricing_config][google.cloud.channel.v1.CustomerRepricingConfig.repricing_config]
-   *       vaule must be different from the value used in the current config for a
+   *       value must be different from the value used in the current config for a
    *       [RepricingConfig.EntitlementGranularity.entitlement][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity.entitlement].
    * </ul>
    *
@@ -4392,12 +4423,12 @@ public class CloudChannelServiceClient implements BackgroundResource {
    *   <li>The new config will not modify exports used with other configs. Changes to the config may
    *       be immediate, but may take up to 24 hours.
    *   <li>There is a limit of ten configs for any
-   *       [RepricingConfig.EntitlementGranularity.entitlement][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity.entitlement]
-   *       or
+   *       [RepricingConfig.EntitlementGranularity.entitlement][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity.entitlement],
+   *       for any
    *       [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month].
    *   <li>The contained
    *       [CustomerRepricingConfig.repricing_config][google.cloud.channel.v1.CustomerRepricingConfig.repricing_config]
-   *       vaule must be different from the value used in the current config for a
+   *       value must be different from the value used in the current config for a
    *       [RepricingConfig.EntitlementGranularity.entitlement][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity.entitlement].
    * </ul>
    *
@@ -4469,12 +4500,12 @@ public class CloudChannelServiceClient implements BackgroundResource {
    *   <li>The new config will not modify exports used with other configs. Changes to the config may
    *       be immediate, but may take up to 24 hours.
    *   <li>There is a limit of ten configs for any
-   *       [RepricingConfig.EntitlementGranularity.entitlement][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity.entitlement]
-   *       or
+   *       [RepricingConfig.EntitlementGranularity.entitlement][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity.entitlement],
+   *       for any
    *       [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month].
    *   <li>The contained
    *       [CustomerRepricingConfig.repricing_config][google.cloud.channel.v1.CustomerRepricingConfig.repricing_config]
-   *       vaule must be different from the value used in the current config for a
+   *       value must be different from the value used in the current config for a
    *       [RepricingConfig.EntitlementGranularity.entitlement][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity.entitlement].
    * </ul>
    *
@@ -4541,12 +4572,12 @@ public class CloudChannelServiceClient implements BackgroundResource {
    *   <li>The new config will not modify exports used with other configs. Changes to the config may
    *       be immediate, but may take up to 24 hours.
    *   <li>There is a limit of ten configs for any
-   *       [RepricingConfig.EntitlementGranularity.entitlement][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity.entitlement]
-   *       or
+   *       [RepricingConfig.EntitlementGranularity.entitlement][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity.entitlement],
+   *       for any
    *       [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month].
    *   <li>The contained
    *       [CustomerRepricingConfig.repricing_config][google.cloud.channel.v1.CustomerRepricingConfig.repricing_config]
-   *       vaule must be different from the value used in the current config for a
+   *       value must be different from the value used in the current config for a
    *       [RepricingConfig.EntitlementGranularity.entitlement][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity.entitlement].
    * </ul>
    *
@@ -5494,10 +5525,12 @@ public class CloudChannelServiceClient implements BackgroundResource {
    *   <li>The new config will not modify exports used with other configs. Changes to the config may
    *       be immediate, but may take up to 24 hours.
    *   <li>There is a limit of ten configs for any ChannelPartner or
+   *       [RepricingConfig.EntitlementGranularity.entitlement][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity.entitlement],
+   *       for any
    *       [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month].
    *   <li>The contained
    *       [ChannelPartnerRepricingConfig.repricing_config][google.cloud.channel.v1.ChannelPartnerRepricingConfig.repricing_config]
-   *       vaule must be different from the value used in the current config for a ChannelPartner.
+   *       value must be different from the value used in the current config for a ChannelPartner.
    * </ul>
    *
    * <p>Possible Error Codes:
@@ -5573,10 +5606,12 @@ public class CloudChannelServiceClient implements BackgroundResource {
    *   <li>The new config will not modify exports used with other configs. Changes to the config may
    *       be immediate, but may take up to 24 hours.
    *   <li>There is a limit of ten configs for any ChannelPartner or
+   *       [RepricingConfig.EntitlementGranularity.entitlement][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity.entitlement],
+   *       for any
    *       [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month].
    *   <li>The contained
    *       [ChannelPartnerRepricingConfig.repricing_config][google.cloud.channel.v1.ChannelPartnerRepricingConfig.repricing_config]
-   *       vaule must be different from the value used in the current config for a ChannelPartner.
+   *       value must be different from the value used in the current config for a ChannelPartner.
    * </ul>
    *
    * <p>Possible Error Codes:
@@ -5651,10 +5686,12 @@ public class CloudChannelServiceClient implements BackgroundResource {
    *   <li>The new config will not modify exports used with other configs. Changes to the config may
    *       be immediate, but may take up to 24 hours.
    *   <li>There is a limit of ten configs for any ChannelPartner or
+   *       [RepricingConfig.EntitlementGranularity.entitlement][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity.entitlement],
+   *       for any
    *       [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month].
    *   <li>The contained
    *       [ChannelPartnerRepricingConfig.repricing_config][google.cloud.channel.v1.ChannelPartnerRepricingConfig.repricing_config]
-   *       vaule must be different from the value used in the current config for a ChannelPartner.
+   *       value must be different from the value used in the current config for a ChannelPartner.
    * </ul>
    *
    * <p>Possible Error Codes:
@@ -5722,10 +5759,12 @@ public class CloudChannelServiceClient implements BackgroundResource {
    *   <li>The new config will not modify exports used with other configs. Changes to the config may
    *       be immediate, but may take up to 24 hours.
    *   <li>There is a limit of ten configs for any ChannelPartner or
+   *       [RepricingConfig.EntitlementGranularity.entitlement][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity.entitlement],
+   *       for any
    *       [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month].
    *   <li>The contained
    *       [ChannelPartnerRepricingConfig.repricing_config][google.cloud.channel.v1.ChannelPartnerRepricingConfig.repricing_config]
-   *       vaule must be different from the value used in the current config for a ChannelPartner.
+   *       value must be different from the value used in the current config for a ChannelPartner.
    * </ul>
    *
    * <p>Possible Error Codes:
@@ -6161,6 +6200,453 @@ public class CloudChannelServiceClient implements BackgroundResource {
   public final UnaryCallable<DeleteChannelPartnerRepricingConfigRequest, Empty>
       deleteChannelPartnerRepricingConfigCallable() {
     return stub.deleteChannelPartnerRepricingConfigCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists the Rebilling supported SKU groups the account is authorized to sell. Reference:
+   * https://cloud.google.com/skus/sku-groups
+   *
+   * <p>Possible Error Codes:
+   *
+   * <ul>
+   *   <li>PERMISSION_DENIED: If the account making the request and the account being queried are
+   *       different, or the account doesn't exist.
+   *   <li>INTERNAL: Any non-user error related to technical issues in the backend. In this case,
+   *       contact Cloud Channel support.
+   * </ul>
+   *
+   * <p>Return Value: If successful, the [SkuGroup][google.cloud.channel.v1.SkuGroup] resources. The
+   * data for each resource is displayed in the alphabetical order of SKU group display name. The
+   * data for each resource is displayed in the ascending order of
+   * [SkuGroup.display_name][google.cloud.channel.v1.SkuGroup.display_name]
+   *
+   * <p>If unsuccessful, returns an error.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   String parent = "parent-995424086";
+   *   for (SkuGroup element : cloudChannelServiceClient.listSkuGroups(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the account from which to list SKU groups. Parent
+   *     uses the format: accounts/{account}.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSkuGroupsPagedResponse listSkuGroups(String parent) {
+    ListSkuGroupsRequest request = ListSkuGroupsRequest.newBuilder().setParent(parent).build();
+    return listSkuGroups(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists the Rebilling supported SKU groups the account is authorized to sell. Reference:
+   * https://cloud.google.com/skus/sku-groups
+   *
+   * <p>Possible Error Codes:
+   *
+   * <ul>
+   *   <li>PERMISSION_DENIED: If the account making the request and the account being queried are
+   *       different, or the account doesn't exist.
+   *   <li>INTERNAL: Any non-user error related to technical issues in the backend. In this case,
+   *       contact Cloud Channel support.
+   * </ul>
+   *
+   * <p>Return Value: If successful, the [SkuGroup][google.cloud.channel.v1.SkuGroup] resources. The
+   * data for each resource is displayed in the alphabetical order of SKU group display name. The
+   * data for each resource is displayed in the ascending order of
+   * [SkuGroup.display_name][google.cloud.channel.v1.SkuGroup.display_name]
+   *
+   * <p>If unsuccessful, returns an error.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   ListSkuGroupsRequest request =
+   *       ListSkuGroupsRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (SkuGroup element : cloudChannelServiceClient.listSkuGroups(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSkuGroupsPagedResponse listSkuGroups(ListSkuGroupsRequest request) {
+    return listSkuGroupsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists the Rebilling supported SKU groups the account is authorized to sell. Reference:
+   * https://cloud.google.com/skus/sku-groups
+   *
+   * <p>Possible Error Codes:
+   *
+   * <ul>
+   *   <li>PERMISSION_DENIED: If the account making the request and the account being queried are
+   *       different, or the account doesn't exist.
+   *   <li>INTERNAL: Any non-user error related to technical issues in the backend. In this case,
+   *       contact Cloud Channel support.
+   * </ul>
+   *
+   * <p>Return Value: If successful, the [SkuGroup][google.cloud.channel.v1.SkuGroup] resources. The
+   * data for each resource is displayed in the alphabetical order of SKU group display name. The
+   * data for each resource is displayed in the ascending order of
+   * [SkuGroup.display_name][google.cloud.channel.v1.SkuGroup.display_name]
+   *
+   * <p>If unsuccessful, returns an error.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   ListSkuGroupsRequest request =
+   *       ListSkuGroupsRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<SkuGroup> future =
+   *       cloudChannelServiceClient.listSkuGroupsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (SkuGroup element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListSkuGroupsRequest, ListSkuGroupsPagedResponse>
+      listSkuGroupsPagedCallable() {
+    return stub.listSkuGroupsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists the Rebilling supported SKU groups the account is authorized to sell. Reference:
+   * https://cloud.google.com/skus/sku-groups
+   *
+   * <p>Possible Error Codes:
+   *
+   * <ul>
+   *   <li>PERMISSION_DENIED: If the account making the request and the account being queried are
+   *       different, or the account doesn't exist.
+   *   <li>INTERNAL: Any non-user error related to technical issues in the backend. In this case,
+   *       contact Cloud Channel support.
+   * </ul>
+   *
+   * <p>Return Value: If successful, the [SkuGroup][google.cloud.channel.v1.SkuGroup] resources. The
+   * data for each resource is displayed in the alphabetical order of SKU group display name. The
+   * data for each resource is displayed in the ascending order of
+   * [SkuGroup.display_name][google.cloud.channel.v1.SkuGroup.display_name]
+   *
+   * <p>If unsuccessful, returns an error.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   ListSkuGroupsRequest request =
+   *       ListSkuGroupsRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListSkuGroupsResponse response =
+   *         cloudChannelServiceClient.listSkuGroupsCallable().call(request);
+   *     for (SkuGroup element : response.getSkuGroupsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListSkuGroupsRequest, ListSkuGroupsResponse> listSkuGroupsCallable() {
+    return stub.listSkuGroupsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists the Billable SKUs in a given SKU group.
+   *
+   * <p>Possible error codes: PERMISSION_DENIED: If the account making the request and the account
+   * being queried for are different, or the account doesn't exist. INVALID_ARGUMENT: Missing or
+   * invalid required parameters in the request. INTERNAL: Any non-user error related to technical
+   * issue in the backend. In this case, contact cloud channel support.
+   *
+   * <p>Return Value: If successful, the [BillableSku][google.cloud.channel.v1.BillableSku]
+   * resources. The data for each resource is displayed in the ascending order of:
+   *
+   * <ul>
+   *   <li>[BillableSku.service_display_name][google.cloud.channel.v1.BillableSku.service_display_name]
+   *   <li>[BillableSku.sku_display_name][google.cloud.channel.v1.BillableSku.sku_display_name]
+   * </ul>
+   *
+   * <p>If unsuccessful, returns an error.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   SkuGroupName parent = SkuGroupName.of("[ACCOUNT]", "[SKU_GROUP]");
+   *   for (BillableSku element :
+   *       cloudChannelServiceClient.listSkuGroupBillableSkus(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Resource name of the SKU group. Format:
+   *     accounts/{account}/skuGroups/{sku_group}.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSkuGroupBillableSkusPagedResponse listSkuGroupBillableSkus(SkuGroupName parent) {
+    ListSkuGroupBillableSkusRequest request =
+        ListSkuGroupBillableSkusRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listSkuGroupBillableSkus(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists the Billable SKUs in a given SKU group.
+   *
+   * <p>Possible error codes: PERMISSION_DENIED: If the account making the request and the account
+   * being queried for are different, or the account doesn't exist. INVALID_ARGUMENT: Missing or
+   * invalid required parameters in the request. INTERNAL: Any non-user error related to technical
+   * issue in the backend. In this case, contact cloud channel support.
+   *
+   * <p>Return Value: If successful, the [BillableSku][google.cloud.channel.v1.BillableSku]
+   * resources. The data for each resource is displayed in the ascending order of:
+   *
+   * <ul>
+   *   <li>[BillableSku.service_display_name][google.cloud.channel.v1.BillableSku.service_display_name]
+   *   <li>[BillableSku.sku_display_name][google.cloud.channel.v1.BillableSku.sku_display_name]
+   * </ul>
+   *
+   * <p>If unsuccessful, returns an error.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   String parent = SkuGroupName.of("[ACCOUNT]", "[SKU_GROUP]").toString();
+   *   for (BillableSku element :
+   *       cloudChannelServiceClient.listSkuGroupBillableSkus(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Resource name of the SKU group. Format:
+   *     accounts/{account}/skuGroups/{sku_group}.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSkuGroupBillableSkusPagedResponse listSkuGroupBillableSkus(String parent) {
+    ListSkuGroupBillableSkusRequest request =
+        ListSkuGroupBillableSkusRequest.newBuilder().setParent(parent).build();
+    return listSkuGroupBillableSkus(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists the Billable SKUs in a given SKU group.
+   *
+   * <p>Possible error codes: PERMISSION_DENIED: If the account making the request and the account
+   * being queried for are different, or the account doesn't exist. INVALID_ARGUMENT: Missing or
+   * invalid required parameters in the request. INTERNAL: Any non-user error related to technical
+   * issue in the backend. In this case, contact cloud channel support.
+   *
+   * <p>Return Value: If successful, the [BillableSku][google.cloud.channel.v1.BillableSku]
+   * resources. The data for each resource is displayed in the ascending order of:
+   *
+   * <ul>
+   *   <li>[BillableSku.service_display_name][google.cloud.channel.v1.BillableSku.service_display_name]
+   *   <li>[BillableSku.sku_display_name][google.cloud.channel.v1.BillableSku.sku_display_name]
+   * </ul>
+   *
+   * <p>If unsuccessful, returns an error.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   ListSkuGroupBillableSkusRequest request =
+   *       ListSkuGroupBillableSkusRequest.newBuilder()
+   *           .setParent(SkuGroupName.of("[ACCOUNT]", "[SKU_GROUP]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (BillableSku element :
+   *       cloudChannelServiceClient.listSkuGroupBillableSkus(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSkuGroupBillableSkusPagedResponse listSkuGroupBillableSkus(
+      ListSkuGroupBillableSkusRequest request) {
+    return listSkuGroupBillableSkusPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists the Billable SKUs in a given SKU group.
+   *
+   * <p>Possible error codes: PERMISSION_DENIED: If the account making the request and the account
+   * being queried for are different, or the account doesn't exist. INVALID_ARGUMENT: Missing or
+   * invalid required parameters in the request. INTERNAL: Any non-user error related to technical
+   * issue in the backend. In this case, contact cloud channel support.
+   *
+   * <p>Return Value: If successful, the [BillableSku][google.cloud.channel.v1.BillableSku]
+   * resources. The data for each resource is displayed in the ascending order of:
+   *
+   * <ul>
+   *   <li>[BillableSku.service_display_name][google.cloud.channel.v1.BillableSku.service_display_name]
+   *   <li>[BillableSku.sku_display_name][google.cloud.channel.v1.BillableSku.sku_display_name]
+   * </ul>
+   *
+   * <p>If unsuccessful, returns an error.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   ListSkuGroupBillableSkusRequest request =
+   *       ListSkuGroupBillableSkusRequest.newBuilder()
+   *           .setParent(SkuGroupName.of("[ACCOUNT]", "[SKU_GROUP]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<BillableSku> future =
+   *       cloudChannelServiceClient.listSkuGroupBillableSkusPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (BillableSku element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListSkuGroupBillableSkusRequest, ListSkuGroupBillableSkusPagedResponse>
+      listSkuGroupBillableSkusPagedCallable() {
+    return stub.listSkuGroupBillableSkusPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists the Billable SKUs in a given SKU group.
+   *
+   * <p>Possible error codes: PERMISSION_DENIED: If the account making the request and the account
+   * being queried for are different, or the account doesn't exist. INVALID_ARGUMENT: Missing or
+   * invalid required parameters in the request. INTERNAL: Any non-user error related to technical
+   * issue in the backend. In this case, contact cloud channel support.
+   *
+   * <p>Return Value: If successful, the [BillableSku][google.cloud.channel.v1.BillableSku]
+   * resources. The data for each resource is displayed in the ascending order of:
+   *
+   * <ul>
+   *   <li>[BillableSku.service_display_name][google.cloud.channel.v1.BillableSku.service_display_name]
+   *   <li>[BillableSku.sku_display_name][google.cloud.channel.v1.BillableSku.sku_display_name]
+   * </ul>
+   *
+   * <p>If unsuccessful, returns an error.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   ListSkuGroupBillableSkusRequest request =
+   *       ListSkuGroupBillableSkusRequest.newBuilder()
+   *           .setParent(SkuGroupName.of("[ACCOUNT]", "[SKU_GROUP]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListSkuGroupBillableSkusResponse response =
+   *         cloudChannelServiceClient.listSkuGroupBillableSkusCallable().call(request);
+   *     for (BillableSku element : response.getBillableSkusList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListSkuGroupBillableSkusRequest, ListSkuGroupBillableSkusResponse>
+      listSkuGroupBillableSkusCallable() {
+    return stub.listSkuGroupBillableSkusCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -6777,7 +7263,9 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Possible error codes:
    *
    * <ul>
-   *   <li>PERMISSION_DENIED: The customer doesn't belong to the reseller
+   *   <li>PERMISSION_DENIED: &#42; The customer doesn't belong to the reseller &#42; The reseller
+   *       is not authorized to transact on this Product. See
+   *       https://support.google.com/channelservices/answer/9759265
    *   <li>INVALID_ARGUMENT: Required request parameters are missing or invalid.
    * </ul>
    *
@@ -6824,7 +7312,9 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Possible error codes:
    *
    * <ul>
-   *   <li>PERMISSION_DENIED: The customer doesn't belong to the reseller
+   *   <li>PERMISSION_DENIED: &#42; The customer doesn't belong to the reseller &#42; The reseller
+   *       is not authorized to transact on this Product. See
+   *       https://support.google.com/channelservices/answer/9759265
    *   <li>INVALID_ARGUMENT: Required request parameters are missing or invalid.
    * </ul>
    *
@@ -6870,7 +7360,9 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Possible error codes:
    *
    * <ul>
-   *   <li>PERMISSION_DENIED: The customer doesn't belong to the reseller
+   *   <li>PERMISSION_DENIED: &#42; The customer doesn't belong to the reseller &#42; The reseller
+   *       is not authorized to transact on this Product. See
+   *       https://support.google.com/channelservices/answer/9759265
    *   <li>INVALID_ARGUMENT: Required request parameters are missing or invalid.
    * </ul>
    *
@@ -6909,6 +7401,90 @@ public class CloudChannelServiceClient implements BackgroundResource {
   public final UnaryCallable<ListPurchasableOffersRequest, ListPurchasableOffersResponse>
       listPurchasableOffersCallable() {
     return stub.listPurchasableOffersCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists the billing accounts that are eligible to purchase particular SKUs for a given customer.
+   *
+   * <p>Possible error codes:
+   *
+   * <ul>
+   *   <li>PERMISSION_DENIED: The customer doesn't belong to the reseller.
+   *   <li>INVALID_ARGUMENT: Required request parameters are missing or invalid.
+   * </ul>
+   *
+   * <p>Return value: Based on the provided list of SKUs, returns a list of SKU groups that must be
+   * purchased using the same billing account and the billing accounts eligible to purchase each SKU
+   * group.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   QueryEligibleBillingAccountsRequest request =
+   *       QueryEligibleBillingAccountsRequest.newBuilder()
+   *           .setCustomer(CustomerName.of("[ACCOUNT]", "[CUSTOMER]").toString())
+   *           .addAllSkus(new ArrayList<String>())
+   *           .build();
+   *   QueryEligibleBillingAccountsResponse response =
+   *       cloudChannelServiceClient.queryEligibleBillingAccounts(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final QueryEligibleBillingAccountsResponse queryEligibleBillingAccounts(
+      QueryEligibleBillingAccountsRequest request) {
+    return queryEligibleBillingAccountsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists the billing accounts that are eligible to purchase particular SKUs for a given customer.
+   *
+   * <p>Possible error codes:
+   *
+   * <ul>
+   *   <li>PERMISSION_DENIED: The customer doesn't belong to the reseller.
+   *   <li>INVALID_ARGUMENT: Required request parameters are missing or invalid.
+   * </ul>
+   *
+   * <p>Return value: Based on the provided list of SKUs, returns a list of SKU groups that must be
+   * purchased using the same billing account and the billing accounts eligible to purchase each SKU
+   * group.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   QueryEligibleBillingAccountsRequest request =
+   *       QueryEligibleBillingAccountsRequest.newBuilder()
+   *           .setCustomer(CustomerName.of("[ACCOUNT]", "[CUSTOMER]").toString())
+   *           .addAllSkus(new ArrayList<String>())
+   *           .build();
+   *   ApiFuture<QueryEligibleBillingAccountsResponse> future =
+   *       cloudChannelServiceClient.queryEligibleBillingAccountsCallable().futureCall(request);
+   *   // Do something.
+   *   QueryEligibleBillingAccountsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          QueryEligibleBillingAccountsRequest, QueryEligibleBillingAccountsResponse>
+      queryEligibleBillingAccountsCallable() {
+    return stub.queryEligibleBillingAccountsCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -8145,6 +8721,166 @@ public class CloudChannelServiceClient implements BackgroundResource {
     protected ListChannelPartnerRepricingConfigsFixedSizeCollection createCollection(
         List<ListChannelPartnerRepricingConfigsPage> pages, int collectionSize) {
       return new ListChannelPartnerRepricingConfigsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListSkuGroupsPagedResponse
+      extends AbstractPagedListResponse<
+          ListSkuGroupsRequest,
+          ListSkuGroupsResponse,
+          SkuGroup,
+          ListSkuGroupsPage,
+          ListSkuGroupsFixedSizeCollection> {
+
+    public static ApiFuture<ListSkuGroupsPagedResponse> createAsync(
+        PageContext<ListSkuGroupsRequest, ListSkuGroupsResponse, SkuGroup> context,
+        ApiFuture<ListSkuGroupsResponse> futureResponse) {
+      ApiFuture<ListSkuGroupsPage> futurePage =
+          ListSkuGroupsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListSkuGroupsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListSkuGroupsPagedResponse(ListSkuGroupsPage page) {
+      super(page, ListSkuGroupsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListSkuGroupsPage
+      extends AbstractPage<
+          ListSkuGroupsRequest, ListSkuGroupsResponse, SkuGroup, ListSkuGroupsPage> {
+
+    private ListSkuGroupsPage(
+        PageContext<ListSkuGroupsRequest, ListSkuGroupsResponse, SkuGroup> context,
+        ListSkuGroupsResponse response) {
+      super(context, response);
+    }
+
+    private static ListSkuGroupsPage createEmptyPage() {
+      return new ListSkuGroupsPage(null, null);
+    }
+
+    @Override
+    protected ListSkuGroupsPage createPage(
+        PageContext<ListSkuGroupsRequest, ListSkuGroupsResponse, SkuGroup> context,
+        ListSkuGroupsResponse response) {
+      return new ListSkuGroupsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListSkuGroupsPage> createPageAsync(
+        PageContext<ListSkuGroupsRequest, ListSkuGroupsResponse, SkuGroup> context,
+        ApiFuture<ListSkuGroupsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListSkuGroupsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListSkuGroupsRequest,
+          ListSkuGroupsResponse,
+          SkuGroup,
+          ListSkuGroupsPage,
+          ListSkuGroupsFixedSizeCollection> {
+
+    private ListSkuGroupsFixedSizeCollection(List<ListSkuGroupsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListSkuGroupsFixedSizeCollection createEmptyCollection() {
+      return new ListSkuGroupsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListSkuGroupsFixedSizeCollection createCollection(
+        List<ListSkuGroupsPage> pages, int collectionSize) {
+      return new ListSkuGroupsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListSkuGroupBillableSkusPagedResponse
+      extends AbstractPagedListResponse<
+          ListSkuGroupBillableSkusRequest,
+          ListSkuGroupBillableSkusResponse,
+          BillableSku,
+          ListSkuGroupBillableSkusPage,
+          ListSkuGroupBillableSkusFixedSizeCollection> {
+
+    public static ApiFuture<ListSkuGroupBillableSkusPagedResponse> createAsync(
+        PageContext<ListSkuGroupBillableSkusRequest, ListSkuGroupBillableSkusResponse, BillableSku>
+            context,
+        ApiFuture<ListSkuGroupBillableSkusResponse> futureResponse) {
+      ApiFuture<ListSkuGroupBillableSkusPage> futurePage =
+          ListSkuGroupBillableSkusPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListSkuGroupBillableSkusPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListSkuGroupBillableSkusPagedResponse(ListSkuGroupBillableSkusPage page) {
+      super(page, ListSkuGroupBillableSkusFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListSkuGroupBillableSkusPage
+      extends AbstractPage<
+          ListSkuGroupBillableSkusRequest,
+          ListSkuGroupBillableSkusResponse,
+          BillableSku,
+          ListSkuGroupBillableSkusPage> {
+
+    private ListSkuGroupBillableSkusPage(
+        PageContext<ListSkuGroupBillableSkusRequest, ListSkuGroupBillableSkusResponse, BillableSku>
+            context,
+        ListSkuGroupBillableSkusResponse response) {
+      super(context, response);
+    }
+
+    private static ListSkuGroupBillableSkusPage createEmptyPage() {
+      return new ListSkuGroupBillableSkusPage(null, null);
+    }
+
+    @Override
+    protected ListSkuGroupBillableSkusPage createPage(
+        PageContext<ListSkuGroupBillableSkusRequest, ListSkuGroupBillableSkusResponse, BillableSku>
+            context,
+        ListSkuGroupBillableSkusResponse response) {
+      return new ListSkuGroupBillableSkusPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListSkuGroupBillableSkusPage> createPageAsync(
+        PageContext<ListSkuGroupBillableSkusRequest, ListSkuGroupBillableSkusResponse, BillableSku>
+            context,
+        ApiFuture<ListSkuGroupBillableSkusResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListSkuGroupBillableSkusFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListSkuGroupBillableSkusRequest,
+          ListSkuGroupBillableSkusResponse,
+          BillableSku,
+          ListSkuGroupBillableSkusPage,
+          ListSkuGroupBillableSkusFixedSizeCollection> {
+
+    private ListSkuGroupBillableSkusFixedSizeCollection(
+        List<ListSkuGroupBillableSkusPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListSkuGroupBillableSkusFixedSizeCollection createEmptyCollection() {
+      return new ListSkuGroupBillableSkusFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListSkuGroupBillableSkusFixedSizeCollection createCollection(
+        List<ListSkuGroupBillableSkusPage> pages, int collectionSize) {
+      return new ListSkuGroupBillableSkusFixedSizeCollection(pages, collectionSize);
     }
   }
 

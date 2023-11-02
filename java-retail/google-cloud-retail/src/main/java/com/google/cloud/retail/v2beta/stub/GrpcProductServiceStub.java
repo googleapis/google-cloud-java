@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.retail.v2beta.AddFulfillmentPlacesMetadata;
 import com.google.cloud.retail.v2beta.AddFulfillmentPlacesRequest;
@@ -51,7 +52,6 @@ import com.google.cloud.retail.v2beta.SetInventoryMetadata;
 import com.google.cloud.retail.v2beta.SetInventoryRequest;
 import com.google.cloud.retail.v2beta.SetInventoryResponse;
 import com.google.cloud.retail.v2beta.UpdateProductRequest;
-import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
@@ -261,9 +261,9 @@ public class GrpcProductServiceStub extends ProductServiceStub {
             .setMethodDescriptor(createProductMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetProductRequest, Product> getProductTransportSettings =
@@ -271,9 +271,9 @@ public class GrpcProductServiceStub extends ProductServiceStub {
             .setMethodDescriptor(getProductMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListProductsRequest, ListProductsResponse> listProductsTransportSettings =
@@ -281,9 +281,9 @@ public class GrpcProductServiceStub extends ProductServiceStub {
             .setMethodDescriptor(listProductsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<UpdateProductRequest, Product> updateProductTransportSettings =
@@ -291,9 +291,9 @@ public class GrpcProductServiceStub extends ProductServiceStub {
             .setMethodDescriptor(updateProductMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("product.name", String.valueOf(request.getProduct().getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("product.name", String.valueOf(request.getProduct().getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteProductRequest, Empty> deleteProductTransportSettings =
@@ -301,9 +301,9 @@ public class GrpcProductServiceStub extends ProductServiceStub {
             .setMethodDescriptor(deleteProductMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ImportProductsRequest, Operation> importProductsTransportSettings =
@@ -311,9 +311,9 @@ public class GrpcProductServiceStub extends ProductServiceStub {
             .setMethodDescriptor(importProductsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("parent", String.valueOf(request.getParent()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<SetInventoryRequest, Operation> setInventoryTransportSettings =
@@ -321,9 +321,9 @@ public class GrpcProductServiceStub extends ProductServiceStub {
             .setMethodDescriptor(setInventoryMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("inventory.name", String.valueOf(request.getInventory().getName()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("inventory.name", String.valueOf(request.getInventory().getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<AddFulfillmentPlacesRequest, Operation> addFulfillmentPlacesTransportSettings =
@@ -331,9 +331,9 @@ public class GrpcProductServiceStub extends ProductServiceStub {
             .setMethodDescriptor(addFulfillmentPlacesMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("product", String.valueOf(request.getProduct()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("product", String.valueOf(request.getProduct()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<RemoveFulfillmentPlacesRequest, Operation>
@@ -342,9 +342,9 @@ public class GrpcProductServiceStub extends ProductServiceStub {
                 .setMethodDescriptor(removeFulfillmentPlacesMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("product", String.valueOf(request.getProduct()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("product", String.valueOf(request.getProduct()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<AddLocalInventoriesRequest, Operation> addLocalInventoriesTransportSettings =
@@ -352,9 +352,9 @@ public class GrpcProductServiceStub extends ProductServiceStub {
             .setMethodDescriptor(addLocalInventoriesMethodDescriptor)
             .setParamsExtractor(
                 request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("product", String.valueOf(request.getProduct()));
-                  return params.build();
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("product", String.valueOf(request.getProduct()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<RemoveLocalInventoriesRequest, Operation>
@@ -363,9 +363,9 @@ public class GrpcProductServiceStub extends ProductServiceStub {
                 .setMethodDescriptor(removeLocalInventoriesMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("product", String.valueOf(request.getProduct()));
-                      return params.build();
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("product", String.valueOf(request.getProduct()));
+                      return builder.build();
                     })
                 .build();
 

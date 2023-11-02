@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,10 @@ public final class SlatesProto {
       internal_static_google_cloud_video_stitcher_v1_Slate_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_video_stitcher_v1_Slate_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_video_stitcher_v1_Slate_GamSlate_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_video_stitcher_v1_Slate_GamSlate_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -43,14 +47,17 @@ public final class SlatesProto {
       "\n+google/cloud/video/stitcher/v1/slates."
           + "proto\022\036google.cloud.video.stitcher.v1\032\037g"
           + "oogle/api/field_behavior.proto\032\031google/a"
-          + "pi/resource.proto\"\210\001\n\005Slate\022\021\n\004name\030\001 \001("
-          + "\tB\003\340A\003\022\013\n\003uri\030\002 \001(\t:_\352A\\\n\"videostitcher."
-          + "googleapis.com/Slate\0226projects/{project}"
-          + "/locations/{location}/slates/{slate}Bs\n\""
-          + "com.google.cloud.video.stitcher.v1B\013Slat"
-          + "esProtoP\001Z>cloud.google.com/go/video/sti"
-          + "tcher/apiv1/stitcherpb;stitcherpbb\006proto"
-          + "3"
+          + "pi/resource.proto\"\220\002\n\005Slate\022\022\n\004name\030\001 \001("
+          + "\tB\004\342A\001\003\022\013\n\003uri\030\002 \001(\t\022A\n\tgam_slate\030\003 \001(\0132"
+          + "..google.cloud.video.stitcher.v1.Slate.G"
+          + "amSlate\032B\n\010GamSlate\022\032\n\014network_code\030\001 \001("
+          + "\tB\004\342A\001\002\022\032\n\014gam_slate_id\030\002 \001(\003B\004\342A\001\003:_\352A\\"
+          + "\n\"videostitcher.googleapis.com/Slate\0226pr"
+          + "ojects/{project}/locations/{location}/sl"
+          + "ates/{slate}Bs\n\"com.google.cloud.video.s"
+          + "titcher.v1B\013SlatesProtoP\001Z>cloud.google."
+          + "com/go/video/stitcher/apiv1/stitcherpb;s"
+          + "titcherpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -65,7 +72,15 @@ public final class SlatesProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_video_stitcher_v1_Slate_descriptor,
             new java.lang.String[] {
-              "Name", "Uri",
+              "Name", "Uri", "GamSlate",
+            });
+    internal_static_google_cloud_video_stitcher_v1_Slate_GamSlate_descriptor =
+        internal_static_google_cloud_video_stitcher_v1_Slate_descriptor.getNestedTypes().get(0);
+    internal_static_google_cloud_video_stitcher_v1_Slate_GamSlate_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_video_stitcher_v1_Slate_GamSlate_descriptor,
+            new java.lang.String[] {
+              "NetworkCode", "GamSlateId",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

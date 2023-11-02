@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,11 +51,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Conversation();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -623,11 +618,13 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The stage of a conversation. It indicates whether the virtual agent or a
    * human agent is handling the conversation.
+   *
    * If the conversation is created with the conversation profile that has
    * Dialogflow config set, defaults to
    * [ConversationStage.VIRTUAL_AGENT_STAGE][google.cloud.dialogflow.v2beta1.Conversation.ConversationStage.VIRTUAL_AGENT_STAGE];
    * Otherwise, defaults to
    * [ConversationStage.HUMAN_ASSIST_STAGE][google.cloud.dialogflow.v2beta1.Conversation.ConversationStage.HUMAN_ASSIST_STAGE].
+   *
    * If the conversation is created with the conversation profile that has
    * Dialogflow config set but explicitly sets conversation_stage to
    * [ConversationStage.HUMAN_ASSIST_STAGE][google.cloud.dialogflow.v2beta1.Conversation.ConversationStage.HUMAN_ASSIST_STAGE],
@@ -652,11 +649,13 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The stage of a conversation. It indicates whether the virtual agent or a
    * human agent is handling the conversation.
+   *
    * If the conversation is created with the conversation profile that has
    * Dialogflow config set, defaults to
    * [ConversationStage.VIRTUAL_AGENT_STAGE][google.cloud.dialogflow.v2beta1.Conversation.ConversationStage.VIRTUAL_AGENT_STAGE];
    * Otherwise, defaults to
    * [ConversationStage.HUMAN_ASSIST_STAGE][google.cloud.dialogflow.v2beta1.Conversation.ConversationStage.HUMAN_ASSIST_STAGE].
+   *
    * If the conversation is created with the conversation profile that has
    * Dialogflow config set but explicitly sets conversation_stage to
    * [ConversationStage.HUMAN_ASSIST_STAGE][google.cloud.dialogflow.v2beta1.Conversation.ConversationStage.HUMAN_ASSIST_STAGE],
@@ -1873,11 +1872,13 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The stage of a conversation. It indicates whether the virtual agent or a
      * human agent is handling the conversation.
+     *
      * If the conversation is created with the conversation profile that has
      * Dialogflow config set, defaults to
      * [ConversationStage.VIRTUAL_AGENT_STAGE][google.cloud.dialogflow.v2beta1.Conversation.ConversationStage.VIRTUAL_AGENT_STAGE];
      * Otherwise, defaults to
      * [ConversationStage.HUMAN_ASSIST_STAGE][google.cloud.dialogflow.v2beta1.Conversation.ConversationStage.HUMAN_ASSIST_STAGE].
+     *
      * If the conversation is created with the conversation profile that has
      * Dialogflow config set but explicitly sets conversation_stage to
      * [ConversationStage.HUMAN_ASSIST_STAGE][google.cloud.dialogflow.v2beta1.Conversation.ConversationStage.HUMAN_ASSIST_STAGE],
@@ -1902,11 +1903,13 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The stage of a conversation. It indicates whether the virtual agent or a
      * human agent is handling the conversation.
+     *
      * If the conversation is created with the conversation profile that has
      * Dialogflow config set, defaults to
      * [ConversationStage.VIRTUAL_AGENT_STAGE][google.cloud.dialogflow.v2beta1.Conversation.ConversationStage.VIRTUAL_AGENT_STAGE];
      * Otherwise, defaults to
      * [ConversationStage.HUMAN_ASSIST_STAGE][google.cloud.dialogflow.v2beta1.Conversation.ConversationStage.HUMAN_ASSIST_STAGE].
+     *
      * If the conversation is created with the conversation profile that has
      * Dialogflow config set but explicitly sets conversation_stage to
      * [ConversationStage.HUMAN_ASSIST_STAGE][google.cloud.dialogflow.v2beta1.Conversation.ConversationStage.HUMAN_ASSIST_STAGE],
@@ -1934,11 +1937,13 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The stage of a conversation. It indicates whether the virtual agent or a
      * human agent is handling the conversation.
+     *
      * If the conversation is created with the conversation profile that has
      * Dialogflow config set, defaults to
      * [ConversationStage.VIRTUAL_AGENT_STAGE][google.cloud.dialogflow.v2beta1.Conversation.ConversationStage.VIRTUAL_AGENT_STAGE];
      * Otherwise, defaults to
      * [ConversationStage.HUMAN_ASSIST_STAGE][google.cloud.dialogflow.v2beta1.Conversation.ConversationStage.HUMAN_ASSIST_STAGE].
+     *
      * If the conversation is created with the conversation profile that has
      * Dialogflow config set but explicitly sets conversation_stage to
      * [ConversationStage.HUMAN_ASSIST_STAGE][google.cloud.dialogflow.v2beta1.Conversation.ConversationStage.HUMAN_ASSIST_STAGE],
@@ -1969,11 +1974,13 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The stage of a conversation. It indicates whether the virtual agent or a
      * human agent is handling the conversation.
+     *
      * If the conversation is created with the conversation profile that has
      * Dialogflow config set, defaults to
      * [ConversationStage.VIRTUAL_AGENT_STAGE][google.cloud.dialogflow.v2beta1.Conversation.ConversationStage.VIRTUAL_AGENT_STAGE];
      * Otherwise, defaults to
      * [ConversationStage.HUMAN_ASSIST_STAGE][google.cloud.dialogflow.v2beta1.Conversation.ConversationStage.HUMAN_ASSIST_STAGE].
+     *
      * If the conversation is created with the conversation profile that has
      * Dialogflow config set but explicitly sets conversation_stage to
      * [ConversationStage.HUMAN_ASSIST_STAGE][google.cloud.dialogflow.v2beta1.Conversation.ConversationStage.HUMAN_ASSIST_STAGE],
@@ -2005,11 +2012,13 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The stage of a conversation. It indicates whether the virtual agent or a
      * human agent is handling the conversation.
+     *
      * If the conversation is created with the conversation profile that has
      * Dialogflow config set, defaults to
      * [ConversationStage.VIRTUAL_AGENT_STAGE][google.cloud.dialogflow.v2beta1.Conversation.ConversationStage.VIRTUAL_AGENT_STAGE];
      * Otherwise, defaults to
      * [ConversationStage.HUMAN_ASSIST_STAGE][google.cloud.dialogflow.v2beta1.Conversation.ConversationStage.HUMAN_ASSIST_STAGE].
+     *
      * If the conversation is created with the conversation profile that has
      * Dialogflow config set but explicitly sets conversation_stage to
      * [ConversationStage.HUMAN_ASSIST_STAGE][google.cloud.dialogflow.v2beta1.Conversation.ConversationStage.HUMAN_ASSIST_STAGE],

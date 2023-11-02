@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,6 +22,7 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AddResourcePoliciesRegionDiskRequest;
+import com.google.cloud.compute.v1.BulkInsertRegionDiskRequest;
 import com.google.cloud.compute.v1.CreateSnapshotRegionDiskRequest;
 import com.google.cloud.compute.v1.DeleteRegionDiskRequest;
 import com.google.cloud.compute.v1.Disk;
@@ -36,6 +37,9 @@ import com.google.cloud.compute.v1.RemoveResourcePoliciesRegionDiskRequest;
 import com.google.cloud.compute.v1.ResizeRegionDiskRequest;
 import com.google.cloud.compute.v1.SetIamPolicyRegionDiskRequest;
 import com.google.cloud.compute.v1.SetLabelsRegionDiskRequest;
+import com.google.cloud.compute.v1.StartAsyncReplicationRegionDiskRequest;
+import com.google.cloud.compute.v1.StopAsyncReplicationRegionDiskRequest;
+import com.google.cloud.compute.v1.StopGroupAsyncReplicationRegionDiskRequest;
 import com.google.cloud.compute.v1.TestIamPermissionsRegionDiskRequest;
 import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.cloud.compute.v1.UpdateRegionDiskRequest;
@@ -59,6 +63,15 @@ public abstract class RegionDisksStub implements BackgroundResource {
   public UnaryCallable<AddResourcePoliciesRegionDiskRequest, Operation>
       addResourcePoliciesCallable() {
     throw new UnsupportedOperationException("Not implemented: addResourcePoliciesCallable()");
+  }
+
+  public OperationCallable<BulkInsertRegionDiskRequest, Operation, Operation>
+      bulkInsertOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: bulkInsertOperationCallable()");
+  }
+
+  public UnaryCallable<BulkInsertRegionDiskRequest, Operation> bulkInsertCallable() {
+    throw new UnsupportedOperationException("Not implemented: bulkInsertCallable()");
   }
 
   public OperationCallable<CreateSnapshotRegionDiskRequest, Operation, Operation>
@@ -135,6 +148,39 @@ public abstract class RegionDisksStub implements BackgroundResource {
 
   public UnaryCallable<SetLabelsRegionDiskRequest, Operation> setLabelsCallable() {
     throw new UnsupportedOperationException("Not implemented: setLabelsCallable()");
+  }
+
+  public OperationCallable<StartAsyncReplicationRegionDiskRequest, Operation, Operation>
+      startAsyncReplicationOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: startAsyncReplicationOperationCallable()");
+  }
+
+  public UnaryCallable<StartAsyncReplicationRegionDiskRequest, Operation>
+      startAsyncReplicationCallable() {
+    throw new UnsupportedOperationException("Not implemented: startAsyncReplicationCallable()");
+  }
+
+  public OperationCallable<StopAsyncReplicationRegionDiskRequest, Operation, Operation>
+      stopAsyncReplicationOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: stopAsyncReplicationOperationCallable()");
+  }
+
+  public UnaryCallable<StopAsyncReplicationRegionDiskRequest, Operation>
+      stopAsyncReplicationCallable() {
+    throw new UnsupportedOperationException("Not implemented: stopAsyncReplicationCallable()");
+  }
+
+  public OperationCallable<StopGroupAsyncReplicationRegionDiskRequest, Operation, Operation>
+      stopGroupAsyncReplicationOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: stopGroupAsyncReplicationOperationCallable()");
+  }
+
+  public UnaryCallable<StopGroupAsyncReplicationRegionDiskRequest, Operation>
+      stopGroupAsyncReplicationCallable() {
+    throw new UnsupportedOperationException("Not implemented: stopGroupAsyncReplicationCallable()");
   }
 
   public UnaryCallable<TestIamPermissionsRegionDiskRequest, TestPermissionsResponse>

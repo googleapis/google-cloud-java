@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class DiagnosticConfig extends com.google.protobuf.GeneratedMessage
     return new DiagnosticConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.notebooks.v1.DiagnosticConfigProto
         .internal_static_google_cloud_notebooks_v1_DiagnosticConfig_descriptor;
@@ -78,6 +73,7 @@ public final class DiagnosticConfig extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Required. User Cloud Storage bucket location (REQUIRED).
    * Must be formatted with path prefix (`gs://$GCS_BUCKET`).
+   *
    * Permissions:
    * User Managed Notebooks:
    * - storage.buckets.writer: Must be given to the project's service account
@@ -85,6 +81,7 @@ public final class DiagnosticConfig extends com.google.protobuf.GeneratedMessage
    * Google Managed Notebooks:
    * - storage.buckets.writer: Must be given to the project's service account or
    *   user credentials attached to VM depending on authentication mode.
+   *
    * Cloud Storage bucket Log file will be written to
    * `gs://$GCS_BUCKET/$RELATIVE_PATH/$VM_DATE_$TIME.tar.gz`
    * </pre>
@@ -111,6 +108,7 @@ public final class DiagnosticConfig extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Required. User Cloud Storage bucket location (REQUIRED).
    * Must be formatted with path prefix (`gs://$GCS_BUCKET`).
+   *
    * Permissions:
    * User Managed Notebooks:
    * - storage.buckets.writer: Must be given to the project's service account
@@ -118,6 +116,7 @@ public final class DiagnosticConfig extends com.google.protobuf.GeneratedMessage
    * Google Managed Notebooks:
    * - storage.buckets.writer: Must be given to the project's service account or
    *   user credentials attached to VM depending on authentication mode.
+   *
    * Cloud Storage bucket Log file will be written to
    * `gs://$GCS_BUCKET/$RELATIVE_PATH/$VM_DATE_$TIME.tar.gz`
    * </pre>
@@ -692,6 +691,7 @@ public final class DiagnosticConfig extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Required. User Cloud Storage bucket location (REQUIRED).
      * Must be formatted with path prefix (`gs://$GCS_BUCKET`).
+     *
      * Permissions:
      * User Managed Notebooks:
      * - storage.buckets.writer: Must be given to the project's service account
@@ -699,6 +699,7 @@ public final class DiagnosticConfig extends com.google.protobuf.GeneratedMessage
      * Google Managed Notebooks:
      * - storage.buckets.writer: Must be given to the project's service account or
      *   user credentials attached to VM depending on authentication mode.
+     *
      * Cloud Storage bucket Log file will be written to
      * `gs://$GCS_BUCKET/$RELATIVE_PATH/$VM_DATE_$TIME.tar.gz`
      * </pre>
@@ -724,6 +725,7 @@ public final class DiagnosticConfig extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Required. User Cloud Storage bucket location (REQUIRED).
      * Must be formatted with path prefix (`gs://$GCS_BUCKET`).
+     *
      * Permissions:
      * User Managed Notebooks:
      * - storage.buckets.writer: Must be given to the project's service account
@@ -731,6 +733,7 @@ public final class DiagnosticConfig extends com.google.protobuf.GeneratedMessage
      * Google Managed Notebooks:
      * - storage.buckets.writer: Must be given to the project's service account or
      *   user credentials attached to VM depending on authentication mode.
+     *
      * Cloud Storage bucket Log file will be written to
      * `gs://$GCS_BUCKET/$RELATIVE_PATH/$VM_DATE_$TIME.tar.gz`
      * </pre>
@@ -756,6 +759,7 @@ public final class DiagnosticConfig extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Required. User Cloud Storage bucket location (REQUIRED).
      * Must be formatted with path prefix (`gs://$GCS_BUCKET`).
+     *
      * Permissions:
      * User Managed Notebooks:
      * - storage.buckets.writer: Must be given to the project's service account
@@ -763,6 +767,7 @@ public final class DiagnosticConfig extends com.google.protobuf.GeneratedMessage
      * Google Managed Notebooks:
      * - storage.buckets.writer: Must be given to the project's service account or
      *   user credentials attached to VM depending on authentication mode.
+     *
      * Cloud Storage bucket Log file will be written to
      * `gs://$GCS_BUCKET/$RELATIVE_PATH/$VM_DATE_$TIME.tar.gz`
      * </pre>
@@ -787,6 +792,7 @@ public final class DiagnosticConfig extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Required. User Cloud Storage bucket location (REQUIRED).
      * Must be formatted with path prefix (`gs://$GCS_BUCKET`).
+     *
      * Permissions:
      * User Managed Notebooks:
      * - storage.buckets.writer: Must be given to the project's service account
@@ -794,6 +800,7 @@ public final class DiagnosticConfig extends com.google.protobuf.GeneratedMessage
      * Google Managed Notebooks:
      * - storage.buckets.writer: Must be given to the project's service account or
      *   user credentials attached to VM depending on authentication mode.
+     *
      * Cloud Storage bucket Log file will be written to
      * `gs://$GCS_BUCKET/$RELATIVE_PATH/$VM_DATE_$TIME.tar.gz`
      * </pre>
@@ -814,6 +821,7 @@ public final class DiagnosticConfig extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Required. User Cloud Storage bucket location (REQUIRED).
      * Must be formatted with path prefix (`gs://$GCS_BUCKET`).
+     *
      * Permissions:
      * User Managed Notebooks:
      * - storage.buckets.writer: Must be given to the project's service account
@@ -821,6 +829,7 @@ public final class DiagnosticConfig extends com.google.protobuf.GeneratedMessage
      * Google Managed Notebooks:
      * - storage.buckets.writer: Must be given to the project's service account or
      *   user credentials attached to VM depending on authentication mode.
+     *
      * Cloud Storage bucket Log file will be written to
      * `gs://$GCS_BUCKET/$RELATIVE_PATH/$VM_DATE_$TIME.tar.gz`
      * </pre>

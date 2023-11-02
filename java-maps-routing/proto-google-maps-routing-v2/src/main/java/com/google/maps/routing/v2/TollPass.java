@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -628,11 +628,23 @@ public enum TollPass implements com.google.protobuf.ProtocolMessageEnum {
    *
    * <pre>
    * MI, USA.
+   * Deprecated as this pass type no longer exists.
    * </pre>
    *
-   * <code>US_MI_IQ_PROX_CARD = 38;</code>
+   * <code>US_MI_IQ_PROX_CARD = 38 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   US_MI_IQ_PROX_CARD(38),
+  /**
+   *
+   *
+   * <pre>
+   * MI, USA.
+   * </pre>
+   *
+   * <code>US_MI_IQ_TAG = 95;</code>
+   */
+  US_MI_IQ_TAG(95),
   /**
    *
    *
@@ -790,6 +802,16 @@ public enum TollPass implements com.google.protobuf.ProtocolMessageEnum {
    * TX, USA.
    * </pre>
    *
+   * <code>US_TX_AVI_TAG = 97;</code>
+   */
+  US_TX_AVI_TAG(97),
+  /**
+   *
+   *
+   * <pre>
+   * TX, USA.
+   * </pre>
+   *
    * <code>US_TX_BANCPASS = 48;</code>
    */
   US_TX_BANCPASS(48),
@@ -853,6 +875,16 @@ public enum TollPass implements com.google.protobuf.ProtocolMessageEnum {
    * <code>US_TX_EZTAG = 54;</code>
    */
   US_TX_EZTAG(54),
+  /**
+   *
+   *
+   * <pre>
+   * TX, USA.
+   * </pre>
+   *
+   * <code>US_TX_FUEGO_TAG = 96;</code>
+   */
+  US_TX_FUEGO_TAG(96),
   /**
    *
    *
@@ -1576,11 +1608,22 @@ public enum TollPass implements com.google.protobuf.ProtocolMessageEnum {
    *
    * <pre>
    * MI, USA.
+   * Deprecated as this pass type no longer exists.
    * </pre>
    *
-   * <code>US_MI_IQ_PROX_CARD = 38;</code>
+   * <code>US_MI_IQ_PROX_CARD = 38 [deprecated = true];</code>
    */
-  public static final int US_MI_IQ_PROX_CARD_VALUE = 38;
+  @java.lang.Deprecated public static final int US_MI_IQ_PROX_CARD_VALUE = 38;
+  /**
+   *
+   *
+   * <pre>
+   * MI, USA.
+   * </pre>
+   *
+   * <code>US_MI_IQ_TAG = 95;</code>
+   */
+  public static final int US_MI_IQ_TAG_VALUE = 95;
   /**
    *
    *
@@ -1738,6 +1781,16 @@ public enum TollPass implements com.google.protobuf.ProtocolMessageEnum {
    * TX, USA.
    * </pre>
    *
+   * <code>US_TX_AVI_TAG = 97;</code>
+   */
+  public static final int US_TX_AVI_TAG_VALUE = 97;
+  /**
+   *
+   *
+   * <pre>
+   * TX, USA.
+   * </pre>
+   *
    * <code>US_TX_BANCPASS = 48;</code>
    */
   public static final int US_TX_BANCPASS_VALUE = 48;
@@ -1801,6 +1854,16 @@ public enum TollPass implements com.google.protobuf.ProtocolMessageEnum {
    * <code>US_TX_EZTAG = 54;</code>
    */
   public static final int US_TX_EZTAG_VALUE = 54;
+  /**
+   *
+   *
+   * <pre>
+   * TX, USA.
+   * </pre>
+   *
+   * <code>US_TX_FUEGO_TAG = 96;</code>
+   */
+  public static final int US_TX_FUEGO_TAG_VALUE = 96;
   /**
    *
    *
@@ -2064,6 +2127,8 @@ public enum TollPass implements com.google.protobuf.ProtocolMessageEnum {
         return US_MI_GROSSE_ILE_TOLL_BRIDGE_PASS_TAG;
       case 38:
         return US_MI_IQ_PROX_CARD;
+      case 95:
+        return US_MI_IQ_TAG;
       case 39:
         return US_MI_MACKINAC_BRIDGE_MAC_PASS;
       case 40:
@@ -2094,6 +2159,8 @@ public enum TollPass implements com.google.protobuf.ProtocolMessageEnum {
         return US_RI_EZPASSRI;
       case 47:
         return US_SC_PALPASS;
+      case 97:
+        return US_TX_AVI_TAG;
       case 48:
         return US_TX_BANCPASS;
       case 49:
@@ -2108,6 +2175,8 @@ public enum TollPass implements com.google.protobuf.ProtocolMessageEnum {
         return US_TX_EZ_CROSS;
       case 54:
         return US_TX_EZTAG;
+      case 96:
+        return US_TX_FUEGO_TAG;
       case 55:
         return US_TX_LAREDO_TRADE_TAG;
       case 56:

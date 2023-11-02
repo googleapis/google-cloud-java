@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
     return new SpriteSheet();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.video.transcoder.v1.ResourcesProto
         .internal_static_google_cloud_video_transcoder_v1_SpriteSheet_descriptor;
@@ -69,6 +64,8 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int extractionStrategyCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object extractionStrategy_;
 
   public enum ExtractionStrategyCase
@@ -124,7 +121,9 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Format type. The default is `jpeg`.
+   *
    * Supported formats:
+   *
    * - `jpeg`
    * </pre>
    *
@@ -149,7 +148,9 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Format type. The default is `jpeg`.
+   *
    * Supported formats:
+   *
    * - `jpeg`
    * </pre>
    *
@@ -179,6 +180,7 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. File name prefix for the generated sprite sheets.
+   *
    * Each sprite sheet has an incremental 10-digit zero-padded suffix starting
    * from 0 before the extension, such as `sprite_sheet0000000123.jpeg`.
    * </pre>
@@ -204,6 +206,7 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. File name prefix for the generated sprite sheets.
+   *
    * Each sprite sheet has an incremental 10-digit zero-padded suffix starting
    * from 0 before the extension, such as `sprite_sheet0000000123.jpeg`.
    * </pre>
@@ -238,6 +241,7 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
    * [SpriteSheet.sprite_height_pixels][google.cloud.video.transcoder.v1.SpriteSheet.sprite_height_pixels]
    * field, but not both (the API will automatically calculate the missing
    * field).
+   *
    * For portrait videos that contain horizontal ASR and rotation metadata,
    * provide the width, in pixels, per the horizontal ASR. The API calculates
    * the height per the horizontal ASR. The API detects any rotation metadata
@@ -266,6 +270,7 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
    * [SpriteSheet.sprite_width_pixels][google.cloud.video.transcoder.v1.SpriteSheet.sprite_width_pixels]
    * field, but not both (the API will automatically calculate the missing
    * field).
+   *
    * For portrait videos that contain horizontal ASR and rotation metadata,
    * provide the height, in pixels, per the horizontal ASR. The API calculates
    * the width per the horizontal ASR. The API detects any rotation metadata
@@ -1184,7 +1189,9 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Format type. The default is `jpeg`.
+     *
      * Supported formats:
+     *
      * - `jpeg`
      * </pre>
      *
@@ -1208,7 +1215,9 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Format type. The default is `jpeg`.
+     *
      * Supported formats:
+     *
      * - `jpeg`
      * </pre>
      *
@@ -1232,7 +1241,9 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Format type. The default is `jpeg`.
+     *
      * Supported formats:
+     *
      * - `jpeg`
      * </pre>
      *
@@ -1255,7 +1266,9 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Format type. The default is `jpeg`.
+     *
      * Supported formats:
+     *
      * - `jpeg`
      * </pre>
      *
@@ -1274,7 +1287,9 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Format type. The default is `jpeg`.
+     *
      * Supported formats:
+     *
      * - `jpeg`
      * </pre>
      *
@@ -1300,6 +1315,7 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. File name prefix for the generated sprite sheets.
+     *
      * Each sprite sheet has an incremental 10-digit zero-padded suffix starting
      * from 0 before the extension, such as `sprite_sheet0000000123.jpeg`.
      * </pre>
@@ -1324,6 +1340,7 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. File name prefix for the generated sprite sheets.
+     *
      * Each sprite sheet has an incremental 10-digit zero-padded suffix starting
      * from 0 before the extension, such as `sprite_sheet0000000123.jpeg`.
      * </pre>
@@ -1348,6 +1365,7 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. File name prefix for the generated sprite sheets.
+     *
      * Each sprite sheet has an incremental 10-digit zero-padded suffix starting
      * from 0 before the extension, such as `sprite_sheet0000000123.jpeg`.
      * </pre>
@@ -1371,6 +1389,7 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. File name prefix for the generated sprite sheets.
+     *
      * Each sprite sheet has an incremental 10-digit zero-padded suffix starting
      * from 0 before the extension, such as `sprite_sheet0000000123.jpeg`.
      * </pre>
@@ -1390,6 +1409,7 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. File name prefix for the generated sprite sheets.
+     *
      * Each sprite sheet has an incremental 10-digit zero-padded suffix starting
      * from 0 before the extension, such as `sprite_sheet0000000123.jpeg`.
      * </pre>
@@ -1422,6 +1442,7 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
      * [SpriteSheet.sprite_height_pixels][google.cloud.video.transcoder.v1.SpriteSheet.sprite_height_pixels]
      * field, but not both (the API will automatically calculate the missing
      * field).
+     *
      * For portrait videos that contain horizontal ASR and rotation metadata,
      * provide the width, in pixels, per the horizontal ASR. The API calculates
      * the height per the horizontal ASR. The API detects any rotation metadata
@@ -1447,6 +1468,7 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
      * [SpriteSheet.sprite_height_pixels][google.cloud.video.transcoder.v1.SpriteSheet.sprite_height_pixels]
      * field, but not both (the API will automatically calculate the missing
      * field).
+     *
      * For portrait videos that contain horizontal ASR and rotation metadata,
      * provide the width, in pixels, per the horizontal ASR. The API calculates
      * the height per the horizontal ASR. The API detects any rotation metadata
@@ -1476,6 +1498,7 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
      * [SpriteSheet.sprite_height_pixels][google.cloud.video.transcoder.v1.SpriteSheet.sprite_height_pixels]
      * field, but not both (the API will automatically calculate the missing
      * field).
+     *
      * For portrait videos that contain horizontal ASR and rotation metadata,
      * provide the width, in pixels, per the horizontal ASR. The API calculates
      * the height per the horizontal ASR. The API detects any rotation metadata
@@ -1505,6 +1528,7 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
      * [SpriteSheet.sprite_width_pixels][google.cloud.video.transcoder.v1.SpriteSheet.sprite_width_pixels]
      * field, but not both (the API will automatically calculate the missing
      * field).
+     *
      * For portrait videos that contain horizontal ASR and rotation metadata,
      * provide the height, in pixels, per the horizontal ASR. The API calculates
      * the width per the horizontal ASR. The API detects any rotation metadata
@@ -1530,6 +1554,7 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
      * [SpriteSheet.sprite_width_pixels][google.cloud.video.transcoder.v1.SpriteSheet.sprite_width_pixels]
      * field, but not both (the API will automatically calculate the missing
      * field).
+     *
      * For portrait videos that contain horizontal ASR and rotation metadata,
      * provide the height, in pixels, per the horizontal ASR. The API calculates
      * the width per the horizontal ASR. The API detects any rotation metadata
@@ -1559,6 +1584,7 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
      * [SpriteSheet.sprite_width_pixels][google.cloud.video.transcoder.v1.SpriteSheet.sprite_width_pixels]
      * field, but not both (the API will automatically calculate the missing
      * field).
+     *
      * For portrait videos that contain horizontal ASR and rotation metadata,
      * provide the height, in pixels, per the horizontal ASR. The API calculates
      * the width per the horizontal ASR. The API detects any rotation metadata

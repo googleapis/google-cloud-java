@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,8 +56,8 @@ public interface ResolveServiceRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The maximum number of endpoints to return. Defaults to 25. Maximum is 100.
-   * If a value less than one is specified, the Default is used.
+   * Optional. The maximum number of endpoints to return. Defaults to 25.
+   * Maximum is 100. If a value less than one is specified, the Default is used.
    * If a value greater than the Maximum is specified, the Maximum is used.
    * </pre>
    *
@@ -72,15 +72,19 @@ public interface ResolveServiceRequestOrBuilder
    *
    * <pre>
    * Optional. The filter applied to the endpoints of the resolved service.
+   *
    * General `filter` string syntax:
    * `&lt;field&gt; &lt;operator&gt; &lt;value&gt; (&lt;logical connector&gt;)`
+   *
    * *   `&lt;field&gt;` can be `name`, `address`, `port`, or `metadata.&lt;key&gt;` for
    *     map field
    * *   `&lt;operator&gt;` can be `&lt;`, `&gt;`, `&lt;=`, `&gt;=`, `!=`, `=`, `:`. Of which `:`
    *     means `HAS`, and is roughly the same as `=`
    * *   `&lt;value&gt;` must be the same data type as field
    * *   `&lt;logical connector&gt;` can be `AND`, `OR`, `NOT`
+   *
    * Examples of valid filters:
+   *
    * *   `metadata.owner` returns endpoints that have a annotation with the key
    *     `owner`, this is the same as `metadata:owner`
    * *   `metadata.protocol=gRPC` returns endpoints that have key/value
@@ -91,12 +95,16 @@ public interface ResolveServiceRequestOrBuilder
    * `name&gt;projects/my-project/locations/us-east1/namespaces/my-namespace/services/my-service/endpoints/endpoint-c`
    *     returns endpoints that have name that is alphabetically later than the
    *     string, so "endpoint-e" is returned but "endpoint-a" is not
+   * *
+   * `name=projects/my-project/locations/us-central1/namespaces/my-namespace/services/my-service/endpoints/ep-1`
+   *      returns the endpoint that has an endpoint_id equal to `ep-1`
    * *   `metadata.owner!=sd AND metadata.foo=bar` returns endpoints that have
    *     `owner` in annotation key but value is not `sd` AND have key/value
    *      `foo=bar`
    * *   `doesnotexist.foo=bar` returns an empty list. Note that endpoint
    *     doesn't have a field called "doesnotexist". Since the filter does not
    *     match any endpoint, it returns no results
+   *
    * For more information about filtering, see
    * [API Filtering](https://aip.dev/160).
    * </pre>
@@ -111,15 +119,19 @@ public interface ResolveServiceRequestOrBuilder
    *
    * <pre>
    * Optional. The filter applied to the endpoints of the resolved service.
+   *
    * General `filter` string syntax:
    * `&lt;field&gt; &lt;operator&gt; &lt;value&gt; (&lt;logical connector&gt;)`
+   *
    * *   `&lt;field&gt;` can be `name`, `address`, `port`, or `metadata.&lt;key&gt;` for
    *     map field
    * *   `&lt;operator&gt;` can be `&lt;`, `&gt;`, `&lt;=`, `&gt;=`, `!=`, `=`, `:`. Of which `:`
    *     means `HAS`, and is roughly the same as `=`
    * *   `&lt;value&gt;` must be the same data type as field
    * *   `&lt;logical connector&gt;` can be `AND`, `OR`, `NOT`
+   *
    * Examples of valid filters:
+   *
    * *   `metadata.owner` returns endpoints that have a annotation with the key
    *     `owner`, this is the same as `metadata:owner`
    * *   `metadata.protocol=gRPC` returns endpoints that have key/value
@@ -130,12 +142,16 @@ public interface ResolveServiceRequestOrBuilder
    * `name&gt;projects/my-project/locations/us-east1/namespaces/my-namespace/services/my-service/endpoints/endpoint-c`
    *     returns endpoints that have name that is alphabetically later than the
    *     string, so "endpoint-e" is returned but "endpoint-a" is not
+   * *
+   * `name=projects/my-project/locations/us-central1/namespaces/my-namespace/services/my-service/endpoints/ep-1`
+   *      returns the endpoint that has an endpoint_id equal to `ep-1`
    * *   `metadata.owner!=sd AND metadata.foo=bar` returns endpoints that have
    *     `owner` in annotation key but value is not `sd` AND have key/value
    *      `foo=bar`
    * *   `doesnotexist.foo=bar` returns an empty list. Note that endpoint
    *     doesn't have a field called "doesnotexist". Since the filter does not
    *     match any endpoint, it returns no results
+   *
    * For more information about filtering, see
    * [API Filtering](https://aip.dev/160).
    * </pre>

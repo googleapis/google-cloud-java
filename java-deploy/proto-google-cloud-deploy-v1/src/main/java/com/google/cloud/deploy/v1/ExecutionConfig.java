@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ExecutionConfig();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -120,6 +115,26 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
      * <code>VERIFY = 3;</code>
      */
     VERIFY(3),
+    /**
+     *
+     *
+     * <pre>
+     * Use for predeploy job execution.
+     * </pre>
+     *
+     * <code>PREDEPLOY = 4;</code>
+     */
+    PREDEPLOY(4),
+    /**
+     *
+     *
+     * <pre>
+     * Use for postdeploy job execution.
+     * </pre>
+     *
+     * <code>POSTDEPLOY = 5;</code>
+     */
+    POSTDEPLOY(5),
     UNRECOGNIZED(-1),
     ;
 
@@ -163,6 +178,26 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
      * <code>VERIFY = 3;</code>
      */
     public static final int VERIFY_VALUE = 3;
+    /**
+     *
+     *
+     * <pre>
+     * Use for predeploy job execution.
+     * </pre>
+     *
+     * <code>PREDEPLOY = 4;</code>
+     */
+    public static final int PREDEPLOY_VALUE = 4;
+    /**
+     *
+     *
+     * <pre>
+     * Use for postdeploy job execution.
+     * </pre>
+     *
+     * <code>POSTDEPLOY = 5;</code>
+     */
+    public static final int POSTDEPLOY_VALUE = 5;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -196,6 +231,10 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
           return DEPLOY;
         case 3:
           return VERIFY;
+        case 4:
+          return PREDEPLOY;
+        case 5:
+          return POSTDEPLOY;
         default:
           return null;
       }
@@ -253,6 +292,8 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
   }
 
   private int executionEnvironmentCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object executionEnvironment_;
 
   public enum ExecutionEnvironmentCase

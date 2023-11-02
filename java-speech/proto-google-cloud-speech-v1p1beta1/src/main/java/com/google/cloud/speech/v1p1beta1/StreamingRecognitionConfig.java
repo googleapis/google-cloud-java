@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,11 +44,6 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new StreamingRecognitionConfig();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -167,11 +162,6 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new VoiceActivityTimeout();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1217,14 +1207,17 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
    * pauses speaking) until the client closes the input stream (gRPC API) or
    * until the maximum time limit has been reached. May return multiple
    * `StreamingRecognitionResult`s with the `is_final` flag set to `true`.
+   *
    * If `true`, the recognizer will detect a single spoken utterance. When it
    * detects that the user has paused or stopped speaking, it will return an
    * `END_OF_SINGLE_UTTERANCE` event and cease recognition. It will return no
    * more than one `StreamingRecognitionResult` with the `is_final` flag set to
    * `true`.
+   *
    * The `single_utterance` field can only be used with specified models,
    * otherwise an error is thrown. The `model` field in [`RecognitionConfig`][]
    * must be set to:
+   *
    * * `command_and_search`
    * * `phone_call` AND additional field `useEnhanced`=`true`
    * * The `model` field is left undefined. In this case the API auto-selects
@@ -2026,14 +2019,17 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
      * pauses speaking) until the client closes the input stream (gRPC API) or
      * until the maximum time limit has been reached. May return multiple
      * `StreamingRecognitionResult`s with the `is_final` flag set to `true`.
+     *
      * If `true`, the recognizer will detect a single spoken utterance. When it
      * detects that the user has paused or stopped speaking, it will return an
      * `END_OF_SINGLE_UTTERANCE` event and cease recognition. It will return no
      * more than one `StreamingRecognitionResult` with the `is_final` flag set to
      * `true`.
+     *
      * The `single_utterance` field can only be used with specified models,
      * otherwise an error is thrown. The `model` field in [`RecognitionConfig`][]
      * must be set to:
+     *
      * * `command_and_search`
      * * `phone_call` AND additional field `useEnhanced`=`true`
      * * The `model` field is left undefined. In this case the API auto-selects
@@ -2058,14 +2054,17 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
      * pauses speaking) until the client closes the input stream (gRPC API) or
      * until the maximum time limit has been reached. May return multiple
      * `StreamingRecognitionResult`s with the `is_final` flag set to `true`.
+     *
      * If `true`, the recognizer will detect a single spoken utterance. When it
      * detects that the user has paused or stopped speaking, it will return an
      * `END_OF_SINGLE_UTTERANCE` event and cease recognition. It will return no
      * more than one `StreamingRecognitionResult` with the `is_final` flag set to
      * `true`.
+     *
      * The `single_utterance` field can only be used with specified models,
      * otherwise an error is thrown. The `model` field in [`RecognitionConfig`][]
      * must be set to:
+     *
      * * `command_and_search`
      * * `phone_call` AND additional field `useEnhanced`=`true`
      * * The `model` field is left undefined. In this case the API auto-selects
@@ -2094,14 +2093,17 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
      * pauses speaking) until the client closes the input stream (gRPC API) or
      * until the maximum time limit has been reached. May return multiple
      * `StreamingRecognitionResult`s with the `is_final` flag set to `true`.
+     *
      * If `true`, the recognizer will detect a single spoken utterance. When it
      * detects that the user has paused or stopped speaking, it will return an
      * `END_OF_SINGLE_UTTERANCE` event and cease recognition. It will return no
      * more than one `StreamingRecognitionResult` with the `is_final` flag set to
      * `true`.
+     *
      * The `single_utterance` field can only be used with specified models,
      * otherwise an error is thrown. The `model` field in [`RecognitionConfig`][]
      * must be set to:
+     *
      * * `command_and_search`
      * * `phone_call` AND additional field `useEnhanced`=`true`
      * * The `model` field is left undefined. In this case the API auto-selects

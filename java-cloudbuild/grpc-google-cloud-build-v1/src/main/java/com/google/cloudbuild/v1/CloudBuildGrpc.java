@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,7 +37,7 @@ public final class CloudBuildGrpc {
 
   private CloudBuildGrpc() {}
 
-  public static final String SERVICE_NAME = "google.devtools.cloudbuild.v1.CloudBuild";
+  public static final java.lang.String SERVICE_NAME = "google.devtools.cloudbuild.v1.CloudBuild";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -943,7 +943,7 @@ public final class CloudBuildGrpc {
      * * If the original build specified a commit sha or revision ID, the retried
      * build will use the identical source.
      * For builds that specify `StorageSource`:
-     * * If the original build pulled source from Google Cloud Storage without
+     * * If the original build pulled source from Cloud Storage without
      * specifying the generation of the object, the new build will use the current
      * object, which may be different from the original build source.
      * * If the original build pulled source from Cloud Storage and specified the
@@ -1056,6 +1056,11 @@ public final class CloudBuildGrpc {
      *
      * <pre>
      * Runs a `BuildTrigger` at a particular source revision.
+     * To run a regional or global trigger, use the POST request
+     * that includes the location endpoint in the path (ex.
+     * v1/projects/{projectId}/locations/{region}/triggers/{triggerId}:run). The
+     * POST request that does not include the location endpoint in the path can
+     * only be used when running global triggers.
      * </pre>
      */
     default void runBuildTrigger(
@@ -1279,7 +1284,7 @@ public final class CloudBuildGrpc {
      * * If the original build specified a commit sha or revision ID, the retried
      * build will use the identical source.
      * For builds that specify `StorageSource`:
-     * * If the original build pulled source from Google Cloud Storage without
+     * * If the original build pulled source from Cloud Storage without
      * specifying the generation of the object, the new build will use the current
      * object, which may be different from the original build source.
      * * If the original build pulled source from Cloud Storage and specified the
@@ -1405,6 +1410,11 @@ public final class CloudBuildGrpc {
      *
      * <pre>
      * Runs a `BuildTrigger` at a particular source revision.
+     * To run a regional or global trigger, use the POST request
+     * that includes the location endpoint in the path (ex.
+     * v1/projects/{projectId}/locations/{region}/triggers/{triggerId}:run). The
+     * POST request that does not include the location endpoint in the path can
+     * only be used when running global triggers.
      * </pre>
      */
     public void runBuildTrigger(
@@ -1616,7 +1626,7 @@ public final class CloudBuildGrpc {
      * * If the original build specified a commit sha or revision ID, the retried
      * build will use the identical source.
      * For builds that specify `StorageSource`:
-     * * If the original build pulled source from Google Cloud Storage without
+     * * If the original build pulled source from Cloud Storage without
      * specifying the generation of the object, the new build will use the current
      * object, which may be different from the original build source.
      * * If the original build pulled source from Cloud Storage and specified the
@@ -1722,6 +1732,11 @@ public final class CloudBuildGrpc {
      *
      * <pre>
      * Runs a `BuildTrigger` at a particular source revision.
+     * To run a regional or global trigger, use the POST request
+     * that includes the location endpoint in the path (ex.
+     * v1/projects/{projectId}/locations/{region}/triggers/{triggerId}:run). The
+     * POST request that does not include the location endpoint in the path can
+     * only be used when running global triggers.
      * </pre>
      */
     public com.google.longrunning.Operation runBuildTrigger(
@@ -1910,7 +1925,7 @@ public final class CloudBuildGrpc {
      * * If the original build specified a commit sha or revision ID, the retried
      * build will use the identical source.
      * For builds that specify `StorageSource`:
-     * * If the original build pulled source from Google Cloud Storage without
+     * * If the original build pulled source from Cloud Storage without
      * specifying the generation of the object, the new build will use the current
      * object, which may be different from the original build source.
      * * If the original build pulled source from Cloud Storage and specified the
@@ -2017,6 +2032,11 @@ public final class CloudBuildGrpc {
      *
      * <pre>
      * Runs a `BuildTrigger` at a particular source revision.
+     * To run a regional or global trigger, use the POST request
+     * that includes the location endpoint in the path (ex.
+     * v1/projects/{projectId}/locations/{region}/triggers/{triggerId}:run). The
+     * POST request that does not include the location endpoint in the path can
+     * only be used when running global triggers.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -2396,9 +2416,9 @@ public final class CloudBuildGrpc {
   private static final class CloudBuildMethodDescriptorSupplier
       extends CloudBuildBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    CloudBuildMethodDescriptorSupplier(String methodName) {
+    CloudBuildMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

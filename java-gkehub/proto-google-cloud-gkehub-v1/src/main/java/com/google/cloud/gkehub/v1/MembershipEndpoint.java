@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,11 +44,6 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new MembershipEndpoint();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -186,6 +181,7 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
    * <pre>
    * Optional. The in-cluster Kubernetes Resources that should be applied for a
    * correctly registered cluster, in the steady state. These resources:
+   *
    *   * Ensure that the cluster is exclusively registered to one and only one
    *     Hub Membership.
    *   * Propagate Workload Pool Information available in the Membership
@@ -209,6 +205,7 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
    * <pre>
    * Optional. The in-cluster Kubernetes Resources that should be applied for a
    * correctly registered cluster, in the steady state. These resources:
+   *
    *   * Ensure that the cluster is exclusively registered to one and only one
    *     Hub Membership.
    *   * Propagate Workload Pool Information available in the Membership
@@ -234,6 +231,7 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
    * <pre>
    * Optional. The in-cluster Kubernetes Resources that should be applied for a
    * correctly registered cluster, in the steady state. These resources:
+   *
    *   * Ensure that the cluster is exclusively registered to one and only one
    *     Hub Membership.
    *   * Propagate Workload Pool Information available in the Membership
@@ -1128,6 +1126,7 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Optional. The in-cluster Kubernetes Resources that should be applied for a
      * correctly registered cluster, in the steady state. These resources:
+     *
      *   * Ensure that the cluster is exclusively registered to one and only one
      *     Hub Membership.
      *   * Propagate Workload Pool Information available in the Membership
@@ -1150,6 +1149,7 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Optional. The in-cluster Kubernetes Resources that should be applied for a
      * correctly registered cluster, in the steady state. These resources:
+     *
      *   * Ensure that the cluster is exclusively registered to one and only one
      *     Hub Membership.
      *   * Propagate Workload Pool Information available in the Membership
@@ -1178,6 +1178,7 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Optional. The in-cluster Kubernetes Resources that should be applied for a
      * correctly registered cluster, in the steady state. These resources:
+     *
      *   * Ensure that the cluster is exclusively registered to one and only one
      *     Hub Membership.
      *   * Propagate Workload Pool Information available in the Membership
@@ -1208,6 +1209,7 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Optional. The in-cluster Kubernetes Resources that should be applied for a
      * correctly registered cluster, in the steady state. These resources:
+     *
      *   * Ensure that the cluster is exclusively registered to one and only one
      *     Hub Membership.
      *   * Propagate Workload Pool Information available in the Membership
@@ -1236,6 +1238,7 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Optional. The in-cluster Kubernetes Resources that should be applied for a
      * correctly registered cluster, in the steady state. These resources:
+     *
      *   * Ensure that the cluster is exclusively registered to one and only one
      *     Hub Membership.
      *   * Propagate Workload Pool Information available in the Membership
@@ -1270,6 +1273,7 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Optional. The in-cluster Kubernetes Resources that should be applied for a
      * correctly registered cluster, in the steady state. These resources:
+     *
      *   * Ensure that the cluster is exclusively registered to one and only one
      *     Hub Membership.
      *   * Propagate Workload Pool Information available in the Membership
@@ -1297,6 +1301,7 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Optional. The in-cluster Kubernetes Resources that should be applied for a
      * correctly registered cluster, in the steady state. These resources:
+     *
      *   * Ensure that the cluster is exclusively registered to one and only one
      *     Hub Membership.
      *   * Propagate Workload Pool Information available in the Membership
@@ -1319,6 +1324,7 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Optional. The in-cluster Kubernetes Resources that should be applied for a
      * correctly registered cluster, in the steady state. These resources:
+     *
      *   * Ensure that the cluster is exclusively registered to one and only one
      *     Hub Membership.
      *   * Propagate Workload Pool Information available in the Membership
@@ -1345,6 +1351,7 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Optional. The in-cluster Kubernetes Resources that should be applied for a
      * correctly registered cluster, in the steady state. These resources:
+     *
      *   * Ensure that the cluster is exclusively registered to one and only one
      *     Hub Membership.
      *   * Propagate Workload Pool Information available in the Membership

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,6 @@ public final class EventSegmentConditionGroup extends com.google.protobuf.Genera
     return new EventSegmentConditionGroup();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.analytics.data.v1alpha.ReportingApiProto
         .internal_static_google_analytics_data_v1alpha_EventSegmentConditionGroup_descriptor;
@@ -75,6 +70,7 @@ public final class EventSegmentConditionGroup extends com.google.protobuf.Genera
    *
    * <pre>
    * `conditionScoping` should always be `EVENT_CRITERIA_WITHIN_SAME_EVENT`.
+   *
    * Optional. If unspecified, a `conditionScoping` of
    * `EVENT_CRITERIA_WITHIN_SAME_EVENT` is used.
    * </pre>
@@ -92,6 +88,7 @@ public final class EventSegmentConditionGroup extends com.google.protobuf.Genera
    *
    * <pre>
    * `conditionScoping` should always be `EVENT_CRITERIA_WITHIN_SAME_EVENT`.
+   *
    * Optional. If unspecified, a `conditionScoping` of
    * `EVENT_CRITERIA_WITHIN_SAME_EVENT` is used.
    * </pre>
@@ -560,6 +557,7 @@ public final class EventSegmentConditionGroup extends com.google.protobuf.Genera
      *
      * <pre>
      * `conditionScoping` should always be `EVENT_CRITERIA_WITHIN_SAME_EVENT`.
+     *
      * Optional. If unspecified, a `conditionScoping` of
      * `EVENT_CRITERIA_WITHIN_SAME_EVENT` is used.
      * </pre>
@@ -577,6 +575,7 @@ public final class EventSegmentConditionGroup extends com.google.protobuf.Genera
      *
      * <pre>
      * `conditionScoping` should always be `EVENT_CRITERIA_WITHIN_SAME_EVENT`.
+     *
      * Optional. If unspecified, a `conditionScoping` of
      * `EVENT_CRITERIA_WITHIN_SAME_EVENT` is used.
      * </pre>
@@ -597,6 +596,7 @@ public final class EventSegmentConditionGroup extends com.google.protobuf.Genera
      *
      * <pre>
      * `conditionScoping` should always be `EVENT_CRITERIA_WITHIN_SAME_EVENT`.
+     *
      * Optional. If unspecified, a `conditionScoping` of
      * `EVENT_CRITERIA_WITHIN_SAME_EVENT` is used.
      * </pre>
@@ -618,6 +618,7 @@ public final class EventSegmentConditionGroup extends com.google.protobuf.Genera
      *
      * <pre>
      * `conditionScoping` should always be `EVENT_CRITERIA_WITHIN_SAME_EVENT`.
+     *
      * Optional. If unspecified, a `conditionScoping` of
      * `EVENT_CRITERIA_WITHIN_SAME_EVENT` is used.
      * </pre>
@@ -642,6 +643,7 @@ public final class EventSegmentConditionGroup extends com.google.protobuf.Genera
      *
      * <pre>
      * `conditionScoping` should always be `EVENT_CRITERIA_WITHIN_SAME_EVENT`.
+     *
      * Optional. If unspecified, a `conditionScoping` of
      * `EVENT_CRITERIA_WITHIN_SAME_EVENT` is used.
      * </pre>

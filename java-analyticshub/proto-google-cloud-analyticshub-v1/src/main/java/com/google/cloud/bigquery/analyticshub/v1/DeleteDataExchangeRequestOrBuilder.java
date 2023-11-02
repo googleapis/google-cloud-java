@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,8 +27,8 @@ public interface DeleteDataExchangeRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The full name of the data exchange resource that you want to delete.
-   * For example, `projects/myproject/locations/US/dataExchanges/123`.
+   * Required. The full name of the data exchange resource that you want to
+   * delete. For example, `projects/myproject/locations/US/dataExchanges/123`.
    * </pre>
    *
    * <code>
@@ -42,8 +42,8 @@ public interface DeleteDataExchangeRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The full name of the data exchange resource that you want to delete.
-   * For example, `projects/myproject/locations/US/dataExchanges/123`.
+   * Required. The full name of the data exchange resource that you want to
+   * delete. For example, `projects/myproject/locations/US/dataExchanges/123`.
    * </pre>
    *
    * <code>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,7 +29,9 @@ public interface CloudBuildOptionsOrBuilder
    * <pre>
    * Path to the yaml file used in deployment, used to determine runtime
    * configuration details.
+   *
    * Required for flexible environment builds.
+   *
    * See https://cloud.google.com/appengine/docs/standard/python/config/appref
    * for more details.
    * </pre>
@@ -45,7 +47,9 @@ public interface CloudBuildOptionsOrBuilder
    * <pre>
    * Path to the yaml file used in deployment, used to determine runtime
    * configuration details.
+   *
    * Required for flexible environment builds.
+   *
    * See https://cloud.google.com/appengine/docs/standard/python/config/appref
    * for more details.
    * </pre>

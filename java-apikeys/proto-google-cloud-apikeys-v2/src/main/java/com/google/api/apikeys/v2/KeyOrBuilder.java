@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,6 +32,7 @@ public interface KeyOrBuilder
    * `projects/&lt;PROJECT_NUMBER&gt;/locations/global/keys/&lt;KEY_ID&gt;`.
    * For example:
    * `projects/123456867718/locations/global/keys/b7ff1f9f-8275-410a-94dd-3855ee9b5dd2`
+   *
    * NOTE: Key is a global resource; hence the only supported value for
    * location is `global`.
    * </pre>
@@ -50,6 +51,7 @@ public interface KeyOrBuilder
    * `projects/&lt;PROJECT_NUMBER&gt;/locations/global/keys/&lt;KEY_ID&gt;`.
    * For example:
    * `projects/123456867718/locations/global/keys/b7ff1f9f-8275-410a-94dd-3855ee9b5dd2`
+   *
    * NOTE: Key is a global resource; hence the only supported value for
    * location is `global`.
    * </pre>
@@ -225,8 +227,8 @@ public interface KeyOrBuilder
    *
    *
    * <pre>
-   * Output only. A timestamp when this key was deleted. If the resource is not deleted,
-   * this must be empty.
+   * Output only. A timestamp when this key was deleted. If the resource is not
+   * deleted, this must be empty.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp delete_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -239,8 +241,8 @@ public interface KeyOrBuilder
    *
    *
    * <pre>
-   * Output only. A timestamp when this key was deleted. If the resource is not deleted,
-   * this must be empty.
+   * Output only. A timestamp when this key was deleted. If the resource is not
+   * deleted, this must be empty.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp delete_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -253,8 +255,8 @@ public interface KeyOrBuilder
    *
    *
    * <pre>
-   * Output only. A timestamp when this key was deleted. If the resource is not deleted,
-   * this must be empty.
+   * Output only. A timestamp when this key was deleted. If the resource is not
+   * deleted, this must be empty.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp delete_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -369,10 +371,10 @@ public interface KeyOrBuilder
    *
    *
    * <pre>
-   * Output only. A checksum computed by the server based on the current value of the Key
-   * resource. This may be sent on update and delete requests to ensure the
-   * client has an up-to-date value before proceeding.
-   * See https://google.aip.dev/154.
+   * Output only. A checksum computed by the server based on the current value
+   * of the Key resource. This may be sent on update and delete requests to
+   * ensure the client has an up-to-date value before proceeding. See
+   * https://google.aip.dev/154.
    * </pre>
    *
    * <code>string etag = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -384,10 +386,10 @@ public interface KeyOrBuilder
    *
    *
    * <pre>
-   * Output only. A checksum computed by the server based on the current value of the Key
-   * resource. This may be sent on update and delete requests to ensure the
-   * client has an up-to-date value before proceeding.
-   * See https://google.aip.dev/154.
+   * Output only. A checksum computed by the server based on the current value
+   * of the Key resource. This may be sent on update and delete requests to
+   * ensure the client has an up-to-date value before proceeding. See
+   * https://google.aip.dev/154.
    * </pre>
    *
    * <code>string etag = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

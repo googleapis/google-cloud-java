@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,18 +42,13 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
 
   private ResourcePolicySnapshotSchedulePolicySnapshotProperties() {
     chainName_ = "";
-    storageLocations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    storageLocations_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ResourcePolicySnapshotSchedulePolicySnapshotProperties();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -289,7 +284,8 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
   public static final int STORAGE_LOCATIONS_FIELD_NUMBER = 328005274;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList storageLocations_;
+  private com.google.protobuf.LazyStringArrayList storageLocations_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -637,8 +633,7 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
       chainName_ = "";
       guestFlush_ = false;
       internalGetMutableLabels().clear();
-      storageLocations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      storageLocations_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -672,21 +667,11 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
       com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySnapshotProperties result =
           new com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySnapshotProperties(
               this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(
-        com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySnapshotProperties result) {
-      if (((bitField0_ & 0x00000008) != 0)) {
-        storageLocations_ = storageLocations_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000008);
-      }
-      result.storageLocations_ = storageLocations_;
     }
 
     private void buildPartial0(
@@ -704,6 +689,10 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.labels_ = internalGetLabels();
         result.labels_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        storageLocations_.makeImmutable();
+        result.storageLocations_ = storageLocations_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -773,7 +762,7 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
       if (!other.storageLocations_.isEmpty()) {
         if (storageLocations_.isEmpty()) {
           storageLocations_ = other.storageLocations_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ |= 0x00000008;
         } else {
           ensureStorageLocationsIsMutable();
           storageLocations_.addAll(other.storageLocations_);
@@ -1207,14 +1196,14 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
       return this;
     }
 
-    private com.google.protobuf.LazyStringList storageLocations_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList storageLocations_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureStorageLocationsIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!storageLocations_.isModifiable()) {
         storageLocations_ = new com.google.protobuf.LazyStringArrayList(storageLocations_);
-        bitField0_ |= 0x00000008;
       }
+      bitField0_ |= 0x00000008;
     }
     /**
      *
@@ -1228,7 +1217,8 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
      * @return A list containing the storageLocations.
      */
     public com.google.protobuf.ProtocolStringList getStorageLocationsList() {
-      return storageLocations_.getUnmodifiableView();
+      storageLocations_.makeImmutable();
+      return storageLocations_;
     }
     /**
      *
@@ -1293,6 +1283,7 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
       }
       ensureStorageLocationsIsMutable();
       storageLocations_.set(index, value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1314,6 +1305,7 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
       }
       ensureStorageLocationsIsMutable();
       storageLocations_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1332,6 +1324,7 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
     public Builder addAllStorageLocations(java.lang.Iterable<java.lang.String> values) {
       ensureStorageLocationsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, storageLocations_);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1347,8 +1340,9 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
      * @return This builder for chaining.
      */
     public Builder clearStorageLocations() {
-      storageLocations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      storageLocations_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000008);
+      ;
       onChanged();
       return this;
     }
@@ -1371,6 +1365,7 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
       checkByteStringIsUtf8(value);
       ensureStorageLocationsIsMutable();
       storageLocations_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,19 +41,14 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
   }
 
   private CertificateDescription() {
-    crlDistributionPoints_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    aiaIssuingCertificateUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    crlDistributionPoints_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    aiaIssuingCertificateUrls_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new CertificateDescription();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -317,11 +312,6 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new SubjectDescription();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2375,11 +2365,6 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
       return new KeyId();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.security.privateca.v1.PrivateCaResourcesProto
           .internal_static_google_cloud_security_privateca_v1_CertificateDescription_KeyId_descriptor;
@@ -3040,11 +3025,6 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new CertificateFingerprint();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -3964,7 +3944,8 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
   public static final int CRL_DISTRIBUTION_POINTS_FIELD_NUMBER = 6;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList crlDistributionPoints_;
+  private com.google.protobuf.LazyStringArrayList crlDistributionPoints_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -4035,7 +4016,8 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
   public static final int AIA_ISSUING_CERTIFICATE_URLS_FIELD_NUMBER = 7;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList aiaIssuingCertificateUrls_;
+  private com.google.protobuf.LazyStringArrayList aiaIssuingCertificateUrls_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -4498,10 +4480,8 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
         authorityKeyIdBuilder_.dispose();
         authorityKeyIdBuilder_ = null;
       }
-      crlDistributionPoints_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000020);
-      aiaIssuingCertificateUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000040);
+      crlDistributionPoints_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      aiaIssuingCertificateUrls_ = com.google.protobuf.LazyStringArrayList.emptyList();
       certFingerprint_ = null;
       if (certFingerprintBuilder_ != null) {
         certFingerprintBuilder_.dispose();
@@ -4535,26 +4515,11 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
     public com.google.cloud.security.privateca.v1.CertificateDescription buildPartial() {
       com.google.cloud.security.privateca.v1.CertificateDescription result =
           new com.google.cloud.security.privateca.v1.CertificateDescription(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(
-        com.google.cloud.security.privateca.v1.CertificateDescription result) {
-      if (((bitField0_ & 0x00000020) != 0)) {
-        crlDistributionPoints_ = crlDistributionPoints_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000020);
-      }
-      result.crlDistributionPoints_ = crlDistributionPoints_;
-      if (((bitField0_ & 0x00000040) != 0)) {
-        aiaIssuingCertificateUrls_ = aiaIssuingCertificateUrls_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000040);
-      }
-      result.aiaIssuingCertificateUrls_ = aiaIssuingCertificateUrls_;
     }
 
     private void buildPartial0(
@@ -4580,6 +4545,14 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.authorityKeyId_ =
             authorityKeyIdBuilder_ == null ? authorityKeyId_ : authorityKeyIdBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        crlDistributionPoints_.makeImmutable();
+        result.crlDistributionPoints_ = crlDistributionPoints_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        aiaIssuingCertificateUrls_.makeImmutable();
+        result.aiaIssuingCertificateUrls_ = aiaIssuingCertificateUrls_;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
         result.certFingerprint_ =
@@ -4652,7 +4625,7 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
       if (!other.crlDistributionPoints_.isEmpty()) {
         if (crlDistributionPoints_.isEmpty()) {
           crlDistributionPoints_ = other.crlDistributionPoints_;
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ |= 0x00000020;
         } else {
           ensureCrlDistributionPointsIsMutable();
           crlDistributionPoints_.addAll(other.crlDistributionPoints_);
@@ -4662,7 +4635,7 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
       if (!other.aiaIssuingCertificateUrls_.isEmpty()) {
         if (aiaIssuingCertificateUrls_.isEmpty()) {
           aiaIssuingCertificateUrls_ = other.aiaIssuingCertificateUrls_;
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ |= 0x00000040;
         } else {
           ensureAiaIssuingCertificateUrlsIsMutable();
           aiaIssuingCertificateUrls_.addAll(other.aiaIssuingCertificateUrls_);
@@ -5791,15 +5764,15 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
       return authorityKeyIdBuilder_;
     }
 
-    private com.google.protobuf.LazyStringList crlDistributionPoints_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList crlDistributionPoints_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureCrlDistributionPointsIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!crlDistributionPoints_.isModifiable()) {
         crlDistributionPoints_ =
             new com.google.protobuf.LazyStringArrayList(crlDistributionPoints_);
-        bitField0_ |= 0x00000020;
       }
+      bitField0_ |= 0x00000020;
     }
     /**
      *
@@ -5815,7 +5788,8 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
      * @return A list containing the crlDistributionPoints.
      */
     public com.google.protobuf.ProtocolStringList getCrlDistributionPointsList() {
-      return crlDistributionPoints_.getUnmodifiableView();
+      crlDistributionPoints_.makeImmutable();
+      return crlDistributionPoints_;
     }
     /**
      *
@@ -5888,6 +5862,7 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
       }
       ensureCrlDistributionPointsIsMutable();
       crlDistributionPoints_.set(index, value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -5911,6 +5886,7 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
       }
       ensureCrlDistributionPointsIsMutable();
       crlDistributionPoints_.add(value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -5931,6 +5907,7 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
     public Builder addAllCrlDistributionPoints(java.lang.Iterable<java.lang.String> values) {
       ensureCrlDistributionPointsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, crlDistributionPoints_);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -5948,8 +5925,9 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearCrlDistributionPoints() {
-      crlDistributionPoints_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      crlDistributionPoints_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000020);
+      ;
       onChanged();
       return this;
     }
@@ -5974,19 +5952,20 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
       checkByteStringIsUtf8(value);
       ensureCrlDistributionPointsIsMutable();
       crlDistributionPoints_.add(value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList aiaIssuingCertificateUrls_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList aiaIssuingCertificateUrls_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureAiaIssuingCertificateUrlsIsMutable() {
-      if (!((bitField0_ & 0x00000040) != 0)) {
+      if (!aiaIssuingCertificateUrls_.isModifiable()) {
         aiaIssuingCertificateUrls_ =
             new com.google.protobuf.LazyStringArrayList(aiaIssuingCertificateUrls_);
-        bitField0_ |= 0x00000040;
       }
+      bitField0_ |= 0x00000040;
     }
     /**
      *
@@ -6001,7 +5980,8 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
      * @return A list containing the aiaIssuingCertificateUrls.
      */
     public com.google.protobuf.ProtocolStringList getAiaIssuingCertificateUrlsList() {
-      return aiaIssuingCertificateUrls_.getUnmodifiableView();
+      aiaIssuingCertificateUrls_.makeImmutable();
+      return aiaIssuingCertificateUrls_;
     }
     /**
      *
@@ -6070,6 +6050,7 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
       }
       ensureAiaIssuingCertificateUrlsIsMutable();
       aiaIssuingCertificateUrls_.set(index, value);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -6092,6 +6073,7 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
       }
       ensureAiaIssuingCertificateUrlsIsMutable();
       aiaIssuingCertificateUrls_.add(value);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -6111,6 +6093,7 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
     public Builder addAllAiaIssuingCertificateUrls(java.lang.Iterable<java.lang.String> values) {
       ensureAiaIssuingCertificateUrlsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, aiaIssuingCertificateUrls_);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -6127,8 +6110,9 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearAiaIssuingCertificateUrls() {
-      aiaIssuingCertificateUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      aiaIssuingCertificateUrls_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000040);
+      ;
       onChanged();
       return this;
     }
@@ -6152,6 +6136,7 @@ public final class CertificateDescription extends com.google.protobuf.GeneratedM
       checkByteStringIsUtf8(value);
       ensureAiaIssuingCertificateUrlsIsMutable();
       aiaIssuingCertificateUrls_.add(value);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }

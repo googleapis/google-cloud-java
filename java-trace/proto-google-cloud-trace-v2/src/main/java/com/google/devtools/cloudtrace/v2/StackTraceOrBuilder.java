@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,9 +64,11 @@ public interface StackTraceOrBuilder
    * <pre>
    * The hash ID is used to conserve network bandwidth for duplicate
    * stack traces within a single trace.
+   *
    * Often multiple spans will have identical stack traces.
    * The first occurrence of a stack trace should contain both the
    * `stackFrame` content and a value in `stackTraceHashId`.
+   *
    * Subsequent spans within the same request can refer
    * to that stack trace by only setting `stackTraceHashId`.
    * </pre>

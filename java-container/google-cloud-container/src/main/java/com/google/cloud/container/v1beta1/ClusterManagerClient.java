@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,6 +30,8 @@ import com.google.cloud.container.v1beta1.stub.ClusterManagerStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.container.v1beta1.AddonsConfig;
 import com.google.container.v1beta1.CancelOperationRequest;
+import com.google.container.v1beta1.CheckAutopilotCompatibilityRequest;
+import com.google.container.v1beta1.CheckAutopilotCompatibilityResponse;
 import com.google.container.v1beta1.Cluster;
 import com.google.container.v1beta1.ClusterUpdate;
 import com.google.container.v1beta1.CompleteIPRotationRequest;
@@ -688,6 +690,10 @@ public class ClusterManagerClient implements BackgroundResource {
    *           .setLoggingConfig(NodePoolLoggingConfig.newBuilder().build())
    *           .setResourceLabels(ResourceLabels.newBuilder().build())
    *           .setWindowsNodeConfig(WindowsNodeConfig.newBuilder().build())
+   *           .setMachineType("machineType-218117087")
+   *           .setDiskType("diskType279771767")
+   *           .setDiskSizeGb(-757478089)
+   *           .setResourceManagerTags(ResourceManagerTags.newBuilder().build())
    *           .build();
    *   Operation response = clusterManagerClient.updateNodePool(request);
    * }
@@ -739,6 +745,10 @@ public class ClusterManagerClient implements BackgroundResource {
    *           .setLoggingConfig(NodePoolLoggingConfig.newBuilder().build())
    *           .setResourceLabels(ResourceLabels.newBuilder().build())
    *           .setWindowsNodeConfig(WindowsNodeConfig.newBuilder().build())
+   *           .setMachineType("machineType-218117087")
+   *           .setDiskType("diskType279771767")
+   *           .setDiskSizeGb(-757478089)
+   *           .setResourceManagerTags(ResourceManagerTags.newBuilder().build())
    *           .build();
    *   ApiFuture<Operation> future =
    *       clusterManagerClient.updateNodePoolCallable().futureCall(request);
@@ -3619,6 +3629,64 @@ public class ClusterManagerClient implements BackgroundResource {
   public final UnaryCallable<ListUsableSubnetworksRequest, ListUsableSubnetworksResponse>
       listUsableSubnetworksCallable() {
     return stub.listUsableSubnetworksCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Checks the cluster compatibility with Autopilot mode, and returns a list of compatibility
+   * issues.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   CheckAutopilotCompatibilityRequest request =
+   *       CheckAutopilotCompatibilityRequest.newBuilder().setName("name3373707").build();
+   *   CheckAutopilotCompatibilityResponse response =
+   *       clusterManagerClient.checkAutopilotCompatibility(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CheckAutopilotCompatibilityResponse checkAutopilotCompatibility(
+      CheckAutopilotCompatibilityRequest request) {
+    return checkAutopilotCompatibilityCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Checks the cluster compatibility with Autopilot mode, and returns a list of compatibility
+   * issues.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   CheckAutopilotCompatibilityRequest request =
+   *       CheckAutopilotCompatibilityRequest.newBuilder().setName("name3373707").build();
+   *   ApiFuture<CheckAutopilotCompatibilityResponse> future =
+   *       clusterManagerClient.checkAutopilotCompatibilityCallable().futureCall(request);
+   *   // Do something.
+   *   CheckAutopilotCompatibilityResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          CheckAutopilotCompatibilityRequest, CheckAutopilotCompatibilityResponse>
+      checkAutopilotCompatibilityCallable() {
+    return stub.checkAutopilotCompatibilityCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

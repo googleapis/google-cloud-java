@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,7 @@ import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.DeleteRegionTargetHttpsProxyRequest;
 import com.google.cloud.compute.v1.GetRegionTargetHttpsProxyRequest;
@@ -515,16 +516,39 @@ public class HttpJsonRegionTargetHttpsProxiesStub extends RegionTargetHttpsProxi
         HttpJsonCallSettings.<DeleteRegionTargetHttpsProxyRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("region", String.valueOf(request.getRegion()));
+                  builder.add("target_https_proxy", String.valueOf(request.getTargetHttpsProxy()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetRegionTargetHttpsProxyRequest, TargetHttpsProxy> getTransportSettings =
         HttpJsonCallSettings.<GetRegionTargetHttpsProxyRequest, TargetHttpsProxy>newBuilder()
             .setMethodDescriptor(getMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("region", String.valueOf(request.getRegion()));
+                  builder.add("target_https_proxy", String.valueOf(request.getTargetHttpsProxy()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<InsertRegionTargetHttpsProxyRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertRegionTargetHttpsProxyRequest, Operation>newBuilder()
             .setMethodDescriptor(insertMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("region", String.valueOf(request.getRegion()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListRegionTargetHttpsProxiesRequest, TargetHttpsProxyList>
         listTransportSettings =
@@ -532,11 +556,26 @@ public class HttpJsonRegionTargetHttpsProxiesStub extends RegionTargetHttpsProxi
                 .<ListRegionTargetHttpsProxiesRequest, TargetHttpsProxyList>newBuilder()
                 .setMethodDescriptor(listMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<PatchRegionTargetHttpsProxyRequest, Operation> patchTransportSettings =
         HttpJsonCallSettings.<PatchRegionTargetHttpsProxyRequest, Operation>newBuilder()
             .setMethodDescriptor(patchMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("region", String.valueOf(request.getRegion()));
+                  builder.add("target_https_proxy", String.valueOf(request.getTargetHttpsProxy()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<SetSslCertificatesRegionTargetHttpsProxyRequest, Operation>
         setSslCertificatesTransportSettings =
@@ -544,12 +583,30 @@ public class HttpJsonRegionTargetHttpsProxiesStub extends RegionTargetHttpsProxi
                 .<SetSslCertificatesRegionTargetHttpsProxyRequest, Operation>newBuilder()
                 .setMethodDescriptor(setSslCertificatesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      builder.add(
+                          "target_https_proxy", String.valueOf(request.getTargetHttpsProxy()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<SetUrlMapRegionTargetHttpsProxyRequest, Operation>
         setUrlMapTransportSettings =
             HttpJsonCallSettings.<SetUrlMapRegionTargetHttpsProxyRequest, Operation>newBuilder()
                 .setMethodDescriptor(setUrlMapMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      builder.add(
+                          "target_https_proxy", String.valueOf(request.getTargetHttpsProxy()));
+                      return builder.build();
+                    })
                 .build();
 
     this.deleteCallable =

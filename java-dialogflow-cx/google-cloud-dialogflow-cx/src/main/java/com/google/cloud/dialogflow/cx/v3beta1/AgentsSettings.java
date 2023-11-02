@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -140,6 +140,18 @@ public class AgentsSettings extends ClientSettings<AgentsSettings> {
   public UnaryCallSettings<GetAgentValidationResultRequest, AgentValidationResult>
       getAgentValidationResultSettings() {
     return ((AgentsStubSettings) getStubSettings()).getAgentValidationResultSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getGenerativeSettings. */
+  public UnaryCallSettings<GetGenerativeSettingsRequest, GenerativeSettings>
+      getGenerativeSettingsSettings() {
+    return ((AgentsStubSettings) getStubSettings()).getGenerativeSettingsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateGenerativeSettings. */
+  public UnaryCallSettings<UpdateGenerativeSettingsRequest, GenerativeSettings>
+      updateGenerativeSettingsSettings() {
+    return ((AgentsStubSettings) getStubSettings()).updateGenerativeSettingsSettings();
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -325,6 +337,18 @@ public class AgentsSettings extends ClientSettings<AgentsSettings> {
     public UnaryCallSettings.Builder<GetAgentValidationResultRequest, AgentValidationResult>
         getAgentValidationResultSettings() {
       return getStubSettingsBuilder().getAgentValidationResultSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getGenerativeSettings. */
+    public UnaryCallSettings.Builder<GetGenerativeSettingsRequest, GenerativeSettings>
+        getGenerativeSettingsSettings() {
+      return getStubSettingsBuilder().getGenerativeSettingsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateGenerativeSettings. */
+    public UnaryCallSettings.Builder<UpdateGenerativeSettingsRequest, GenerativeSettings>
+        updateGenerativeSettingsSettings() {
+      return getStubSettingsBuilder().updateGenerativeSettingsSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

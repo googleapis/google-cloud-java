@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,11 +49,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     return new Volume();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloudbuild.v1.Cloudbuild
         .internal_static_google_devtools_cloudbuild_v1_Volume_descriptor;
@@ -77,6 +72,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Name of the volume to mount.
+   *
    * Volume names must be unique per build step and must be valid names for
    * Docker volumes. Each named volume must be used by at least two build steps.
    * </pre>
@@ -102,6 +98,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Name of the volume to mount.
+   *
    * Volume names must be unique per build step and must be valid names for
    * Docker volumes. Each named volume must be used by at least two build steps.
    * </pre>
@@ -132,6 +129,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Path at which to mount the volume.
+   *
    * Paths must be absolute and cannot conflict with other volume paths on the
    * same build step or with certain reserved volume paths.
    * </pre>
@@ -157,6 +155,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Path at which to mount the volume.
+   *
    * Paths must be absolute and cannot conflict with other volume paths on the
    * same build step or with certain reserved volume paths.
    * </pre>
@@ -546,6 +545,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Name of the volume to mount.
+     *
      * Volume names must be unique per build step and must be valid names for
      * Docker volumes. Each named volume must be used by at least two build steps.
      * </pre>
@@ -570,6 +570,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Name of the volume to mount.
+     *
      * Volume names must be unique per build step and must be valid names for
      * Docker volumes. Each named volume must be used by at least two build steps.
      * </pre>
@@ -594,6 +595,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Name of the volume to mount.
+     *
      * Volume names must be unique per build step and must be valid names for
      * Docker volumes. Each named volume must be used by at least two build steps.
      * </pre>
@@ -617,6 +619,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Name of the volume to mount.
+     *
      * Volume names must be unique per build step and must be valid names for
      * Docker volumes. Each named volume must be used by at least two build steps.
      * </pre>
@@ -636,6 +639,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Name of the volume to mount.
+     *
      * Volume names must be unique per build step and must be valid names for
      * Docker volumes. Each named volume must be used by at least two build steps.
      * </pre>
@@ -662,6 +666,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Path at which to mount the volume.
+     *
      * Paths must be absolute and cannot conflict with other volume paths on the
      * same build step or with certain reserved volume paths.
      * </pre>
@@ -686,6 +691,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Path at which to mount the volume.
+     *
      * Paths must be absolute and cannot conflict with other volume paths on the
      * same build step or with certain reserved volume paths.
      * </pre>
@@ -710,6 +716,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Path at which to mount the volume.
+     *
      * Paths must be absolute and cannot conflict with other volume paths on the
      * same build step or with certain reserved volume paths.
      * </pre>
@@ -733,6 +740,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Path at which to mount the volume.
+     *
      * Paths must be absolute and cannot conflict with other volume paths on the
      * same build step or with certain reserved volume paths.
      * </pre>
@@ -752,6 +760,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Path at which to mount the volume.
+     *
      * Paths must be absolute and cannot conflict with other volume paths on the
      * same build step or with certain reserved volume paths.
      * </pre>

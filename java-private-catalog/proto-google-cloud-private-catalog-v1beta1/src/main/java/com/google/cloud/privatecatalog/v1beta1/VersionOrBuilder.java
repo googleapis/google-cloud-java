@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ public interface VersionOrBuilder
    * <pre>
    * Output only. The resource name of the version, in the format
    * `catalogs/{catalog}/products/{product}/versions/[a-z][-a-z0-9]*[a-z0-9]'.
+   *
    * A unique identifier for the version under a product.
    * </pre>
    *
@@ -43,6 +44,7 @@ public interface VersionOrBuilder
    * <pre>
    * Output only. The resource name of the version, in the format
    * `catalogs/{catalog}/products/{product}/versions/[a-z][-a-z0-9]*[a-z0-9]'.
+   *
    * A unique identifier for the version under a product.
    * </pre>
    *

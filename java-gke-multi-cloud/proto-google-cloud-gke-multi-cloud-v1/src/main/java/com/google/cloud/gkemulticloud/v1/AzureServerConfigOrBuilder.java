@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,8 +28,10 @@ public interface AzureServerConfigOrBuilder
    *
    * <pre>
    * The `AzureServerConfig` resource name.
+   *
    * `AzureServerConfig` names are formatted as
    * `projects/&lt;project-number&gt;/locations/&lt;region&gt;/azureServerConfig`.
+   *
    * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
    * for more details on Google Cloud Platform resource names.
    * </pre>
@@ -44,8 +46,10 @@ public interface AzureServerConfigOrBuilder
    *
    * <pre>
    * The `AzureServerConfig` resource name.
+   *
    * `AzureServerConfig` names are formatted as
    * `projects/&lt;project-number&gt;/locations/&lt;region&gt;/azureServerConfig`.
+   *
    * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
    * for more details on Google Cloud Platform resource names.
    * </pre>

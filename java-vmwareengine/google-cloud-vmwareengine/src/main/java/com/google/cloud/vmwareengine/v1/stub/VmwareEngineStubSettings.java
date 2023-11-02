@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,6 +22,8 @@ import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListLocationsP
 import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListNetworkPoliciesPagedResponse;
 import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListNodeTypesPagedResponse;
 import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListPrivateCloudsPagedResponse;
+import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListPrivateConnectionPeeringRoutesPagedResponse;
+import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListPrivateConnectionsPagedResponse;
 import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListSubnetsPagedResponse;
 import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListVmwareEngineNetworksPagedResponse;
 
@@ -63,17 +65,21 @@ import com.google.cloud.vmwareengine.v1.CreateClusterRequest;
 import com.google.cloud.vmwareengine.v1.CreateHcxActivationKeyRequest;
 import com.google.cloud.vmwareengine.v1.CreateNetworkPolicyRequest;
 import com.google.cloud.vmwareengine.v1.CreatePrivateCloudRequest;
+import com.google.cloud.vmwareengine.v1.CreatePrivateConnectionRequest;
 import com.google.cloud.vmwareengine.v1.CreateVmwareEngineNetworkRequest;
 import com.google.cloud.vmwareengine.v1.Credentials;
 import com.google.cloud.vmwareengine.v1.DeleteClusterRequest;
 import com.google.cloud.vmwareengine.v1.DeleteNetworkPolicyRequest;
 import com.google.cloud.vmwareengine.v1.DeletePrivateCloudRequest;
+import com.google.cloud.vmwareengine.v1.DeletePrivateConnectionRequest;
 import com.google.cloud.vmwareengine.v1.DeleteVmwareEngineNetworkRequest;
 import com.google.cloud.vmwareengine.v1.GetClusterRequest;
 import com.google.cloud.vmwareengine.v1.GetHcxActivationKeyRequest;
 import com.google.cloud.vmwareengine.v1.GetNetworkPolicyRequest;
 import com.google.cloud.vmwareengine.v1.GetNodeTypeRequest;
 import com.google.cloud.vmwareengine.v1.GetPrivateCloudRequest;
+import com.google.cloud.vmwareengine.v1.GetPrivateConnectionRequest;
+import com.google.cloud.vmwareengine.v1.GetSubnetRequest;
 import com.google.cloud.vmwareengine.v1.GetVmwareEngineNetworkRequest;
 import com.google.cloud.vmwareengine.v1.HcxActivationKey;
 import com.google.cloud.vmwareengine.v1.ListClustersRequest;
@@ -86,6 +92,10 @@ import com.google.cloud.vmwareengine.v1.ListNodeTypesRequest;
 import com.google.cloud.vmwareengine.v1.ListNodeTypesResponse;
 import com.google.cloud.vmwareengine.v1.ListPrivateCloudsRequest;
 import com.google.cloud.vmwareengine.v1.ListPrivateCloudsResponse;
+import com.google.cloud.vmwareengine.v1.ListPrivateConnectionPeeringRoutesRequest;
+import com.google.cloud.vmwareengine.v1.ListPrivateConnectionPeeringRoutesResponse;
+import com.google.cloud.vmwareengine.v1.ListPrivateConnectionsRequest;
+import com.google.cloud.vmwareengine.v1.ListPrivateConnectionsResponse;
 import com.google.cloud.vmwareengine.v1.ListSubnetsRequest;
 import com.google.cloud.vmwareengine.v1.ListSubnetsResponse;
 import com.google.cloud.vmwareengine.v1.ListVmwareEngineNetworksRequest;
@@ -93,7 +103,9 @@ import com.google.cloud.vmwareengine.v1.ListVmwareEngineNetworksResponse;
 import com.google.cloud.vmwareengine.v1.NetworkPolicy;
 import com.google.cloud.vmwareengine.v1.NodeType;
 import com.google.cloud.vmwareengine.v1.OperationMetadata;
+import com.google.cloud.vmwareengine.v1.PeeringRoute;
 import com.google.cloud.vmwareengine.v1.PrivateCloud;
+import com.google.cloud.vmwareengine.v1.PrivateConnection;
 import com.google.cloud.vmwareengine.v1.ResetNsxCredentialsRequest;
 import com.google.cloud.vmwareengine.v1.ResetVcenterCredentialsRequest;
 import com.google.cloud.vmwareengine.v1.ShowNsxCredentialsRequest;
@@ -103,6 +115,8 @@ import com.google.cloud.vmwareengine.v1.UndeletePrivateCloudRequest;
 import com.google.cloud.vmwareengine.v1.UpdateClusterRequest;
 import com.google.cloud.vmwareengine.v1.UpdateNetworkPolicyRequest;
 import com.google.cloud.vmwareengine.v1.UpdatePrivateCloudRequest;
+import com.google.cloud.vmwareengine.v1.UpdatePrivateConnectionRequest;
+import com.google.cloud.vmwareengine.v1.UpdateSubnetRequest;
 import com.google.cloud.vmwareengine.v1.UpdateVmwareEngineNetworkRequest;
 import com.google.cloud.vmwareengine.v1.VmwareEngineNetwork;
 import com.google.common.collect.ImmutableList;
@@ -196,6 +210,10 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
       deleteClusterOperationSettings;
   private final PagedCallSettings<ListSubnetsRequest, ListSubnetsResponse, ListSubnetsPagedResponse>
       listSubnetsSettings;
+  private final UnaryCallSettings<GetSubnetRequest, Subnet> getSubnetSettings;
+  private final UnaryCallSettings<UpdateSubnetRequest, Operation> updateSubnetSettings;
+  private final OperationCallSettings<UpdateSubnetRequest, Subnet, OperationMetadata>
+      updateSubnetOperationSettings;
   private final PagedCallSettings<
           ListNodeTypesRequest, ListNodeTypesResponse, ListNodeTypesPagedResponse>
       listNodeTypesSettings;
@@ -262,6 +280,32 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
           ListVmwareEngineNetworksResponse,
           ListVmwareEngineNetworksPagedResponse>
       listVmwareEngineNetworksSettings;
+  private final UnaryCallSettings<CreatePrivateConnectionRequest, Operation>
+      createPrivateConnectionSettings;
+  private final OperationCallSettings<
+          CreatePrivateConnectionRequest, PrivateConnection, OperationMetadata>
+      createPrivateConnectionOperationSettings;
+  private final UnaryCallSettings<GetPrivateConnectionRequest, PrivateConnection>
+      getPrivateConnectionSettings;
+  private final PagedCallSettings<
+          ListPrivateConnectionsRequest,
+          ListPrivateConnectionsResponse,
+          ListPrivateConnectionsPagedResponse>
+      listPrivateConnectionsSettings;
+  private final UnaryCallSettings<UpdatePrivateConnectionRequest, Operation>
+      updatePrivateConnectionSettings;
+  private final OperationCallSettings<
+          UpdatePrivateConnectionRequest, PrivateConnection, OperationMetadata>
+      updatePrivateConnectionOperationSettings;
+  private final UnaryCallSettings<DeletePrivateConnectionRequest, Operation>
+      deletePrivateConnectionSettings;
+  private final OperationCallSettings<DeletePrivateConnectionRequest, Empty, OperationMetadata>
+      deletePrivateConnectionOperationSettings;
+  private final PagedCallSettings<
+          ListPrivateConnectionPeeringRoutesRequest,
+          ListPrivateConnectionPeeringRoutesResponse,
+          ListPrivateConnectionPeeringRoutesPagedResponse>
+      listPrivateConnectionPeeringRoutesSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -547,6 +591,98 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
             }
           };
 
+  private static final PagedListDescriptor<
+          ListPrivateConnectionsRequest, ListPrivateConnectionsResponse, PrivateConnection>
+      LIST_PRIVATE_CONNECTIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListPrivateConnectionsRequest, ListPrivateConnectionsResponse, PrivateConnection>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListPrivateConnectionsRequest injectToken(
+                ListPrivateConnectionsRequest payload, String token) {
+              return ListPrivateConnectionsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListPrivateConnectionsRequest injectPageSize(
+                ListPrivateConnectionsRequest payload, int pageSize) {
+              return ListPrivateConnectionsRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListPrivateConnectionsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListPrivateConnectionsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<PrivateConnection> extractResources(
+                ListPrivateConnectionsResponse payload) {
+              return payload.getPrivateConnectionsList() == null
+                  ? ImmutableList.<PrivateConnection>of()
+                  : payload.getPrivateConnectionsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListPrivateConnectionPeeringRoutesRequest,
+          ListPrivateConnectionPeeringRoutesResponse,
+          PeeringRoute>
+      LIST_PRIVATE_CONNECTION_PEERING_ROUTES_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListPrivateConnectionPeeringRoutesRequest,
+              ListPrivateConnectionPeeringRoutesResponse,
+              PeeringRoute>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListPrivateConnectionPeeringRoutesRequest injectToken(
+                ListPrivateConnectionPeeringRoutesRequest payload, String token) {
+              return ListPrivateConnectionPeeringRoutesRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public ListPrivateConnectionPeeringRoutesRequest injectPageSize(
+                ListPrivateConnectionPeeringRoutesRequest payload, int pageSize) {
+              return ListPrivateConnectionPeeringRoutesRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListPrivateConnectionPeeringRoutesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListPrivateConnectionPeeringRoutesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<PeeringRoute> extractResources(
+                ListPrivateConnectionPeeringRoutesResponse payload) {
+              return payload.getPeeringRoutesList() == null
+                  ? ImmutableList.<PeeringRoute>of()
+                  : payload.getPeeringRoutesList();
+            }
+          };
+
   private static final PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>
       LIST_LOCATIONS_PAGE_STR_DESC =
           new PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>() {
@@ -728,6 +864,67 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
           };
 
   private static final PagedListResponseFactory<
+          ListPrivateConnectionsRequest,
+          ListPrivateConnectionsResponse,
+          ListPrivateConnectionsPagedResponse>
+      LIST_PRIVATE_CONNECTIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListPrivateConnectionsRequest,
+              ListPrivateConnectionsResponse,
+              ListPrivateConnectionsPagedResponse>() {
+            @Override
+            public ApiFuture<ListPrivateConnectionsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListPrivateConnectionsRequest, ListPrivateConnectionsResponse>
+                    callable,
+                ListPrivateConnectionsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListPrivateConnectionsResponse> futureResponse) {
+              PageContext<
+                      ListPrivateConnectionsRequest,
+                      ListPrivateConnectionsResponse,
+                      PrivateConnection>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_PRIVATE_CONNECTIONS_PAGE_STR_DESC, request, context);
+              return ListPrivateConnectionsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListPrivateConnectionPeeringRoutesRequest,
+          ListPrivateConnectionPeeringRoutesResponse,
+          ListPrivateConnectionPeeringRoutesPagedResponse>
+      LIST_PRIVATE_CONNECTION_PEERING_ROUTES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListPrivateConnectionPeeringRoutesRequest,
+              ListPrivateConnectionPeeringRoutesResponse,
+              ListPrivateConnectionPeeringRoutesPagedResponse>() {
+            @Override
+            public ApiFuture<ListPrivateConnectionPeeringRoutesPagedResponse>
+                getFuturePagedResponse(
+                    UnaryCallable<
+                            ListPrivateConnectionPeeringRoutesRequest,
+                            ListPrivateConnectionPeeringRoutesResponse>
+                        callable,
+                    ListPrivateConnectionPeeringRoutesRequest request,
+                    ApiCallContext context,
+                    ApiFuture<ListPrivateConnectionPeeringRoutesResponse> futureResponse) {
+              PageContext<
+                      ListPrivateConnectionPeeringRoutesRequest,
+                      ListPrivateConnectionPeeringRoutesResponse,
+                      PeeringRoute>
+                  pageContext =
+                      PageContext.create(
+                          callable,
+                          LIST_PRIVATE_CONNECTION_PEERING_ROUTES_PAGE_STR_DESC,
+                          request,
+                          context);
+              return ListPrivateConnectionPeeringRoutesPagedResponse.createAsync(
+                  pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       LIST_LOCATIONS_PAGE_STR_FACT =
           new PagedListResponseFactory<
@@ -848,6 +1045,22 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
   public PagedCallSettings<ListSubnetsRequest, ListSubnetsResponse, ListSubnetsPagedResponse>
       listSubnetsSettings() {
     return listSubnetsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getSubnet. */
+  public UnaryCallSettings<GetSubnetRequest, Subnet> getSubnetSettings() {
+    return getSubnetSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateSubnet. */
+  public UnaryCallSettings<UpdateSubnetRequest, Operation> updateSubnetSettings() {
+    return updateSubnetSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateSubnet. */
+  public OperationCallSettings<UpdateSubnetRequest, Subnet, OperationMetadata>
+      updateSubnetOperationSettings() {
+    return updateSubnetOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to listNodeTypes. */
@@ -1020,6 +1233,66 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
     return listVmwareEngineNetworksSettings;
   }
 
+  /** Returns the object with the settings used for calls to createPrivateConnection. */
+  public UnaryCallSettings<CreatePrivateConnectionRequest, Operation>
+      createPrivateConnectionSettings() {
+    return createPrivateConnectionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createPrivateConnection. */
+  public OperationCallSettings<CreatePrivateConnectionRequest, PrivateConnection, OperationMetadata>
+      createPrivateConnectionOperationSettings() {
+    return createPrivateConnectionOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getPrivateConnection. */
+  public UnaryCallSettings<GetPrivateConnectionRequest, PrivateConnection>
+      getPrivateConnectionSettings() {
+    return getPrivateConnectionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listPrivateConnections. */
+  public PagedCallSettings<
+          ListPrivateConnectionsRequest,
+          ListPrivateConnectionsResponse,
+          ListPrivateConnectionsPagedResponse>
+      listPrivateConnectionsSettings() {
+    return listPrivateConnectionsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updatePrivateConnection. */
+  public UnaryCallSettings<UpdatePrivateConnectionRequest, Operation>
+      updatePrivateConnectionSettings() {
+    return updatePrivateConnectionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updatePrivateConnection. */
+  public OperationCallSettings<UpdatePrivateConnectionRequest, PrivateConnection, OperationMetadata>
+      updatePrivateConnectionOperationSettings() {
+    return updatePrivateConnectionOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deletePrivateConnection. */
+  public UnaryCallSettings<DeletePrivateConnectionRequest, Operation>
+      deletePrivateConnectionSettings() {
+    return deletePrivateConnectionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deletePrivateConnection. */
+  public OperationCallSettings<DeletePrivateConnectionRequest, Empty, OperationMetadata>
+      deletePrivateConnectionOperationSettings() {
+    return deletePrivateConnectionOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listPrivateConnectionPeeringRoutes. */
+  public PagedCallSettings<
+          ListPrivateConnectionPeeringRoutesRequest,
+          ListPrivateConnectionPeeringRoutesResponse,
+          ListPrivateConnectionPeeringRoutesPagedResponse>
+      listPrivateConnectionPeeringRoutesSettings() {
+    return listPrivateConnectionPeeringRoutesSettings;
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -1176,6 +1449,9 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
     deleteClusterSettings = settingsBuilder.deleteClusterSettings().build();
     deleteClusterOperationSettings = settingsBuilder.deleteClusterOperationSettings().build();
     listSubnetsSettings = settingsBuilder.listSubnetsSettings().build();
+    getSubnetSettings = settingsBuilder.getSubnetSettings().build();
+    updateSubnetSettings = settingsBuilder.updateSubnetSettings().build();
+    updateSubnetOperationSettings = settingsBuilder.updateSubnetOperationSettings().build();
     listNodeTypesSettings = settingsBuilder.listNodeTypesSettings().build();
     getNodeTypeSettings = settingsBuilder.getNodeTypeSettings().build();
     showNsxCredentialsSettings = settingsBuilder.showNsxCredentialsSettings().build();
@@ -1213,6 +1489,19 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
         settingsBuilder.deleteVmwareEngineNetworkOperationSettings().build();
     getVmwareEngineNetworkSettings = settingsBuilder.getVmwareEngineNetworkSettings().build();
     listVmwareEngineNetworksSettings = settingsBuilder.listVmwareEngineNetworksSettings().build();
+    createPrivateConnectionSettings = settingsBuilder.createPrivateConnectionSettings().build();
+    createPrivateConnectionOperationSettings =
+        settingsBuilder.createPrivateConnectionOperationSettings().build();
+    getPrivateConnectionSettings = settingsBuilder.getPrivateConnectionSettings().build();
+    listPrivateConnectionsSettings = settingsBuilder.listPrivateConnectionsSettings().build();
+    updatePrivateConnectionSettings = settingsBuilder.updatePrivateConnectionSettings().build();
+    updatePrivateConnectionOperationSettings =
+        settingsBuilder.updatePrivateConnectionOperationSettings().build();
+    deletePrivateConnectionSettings = settingsBuilder.deletePrivateConnectionSettings().build();
+    deletePrivateConnectionOperationSettings =
+        settingsBuilder.deletePrivateConnectionOperationSettings().build();
+    listPrivateConnectionPeeringRoutesSettings =
+        settingsBuilder.listPrivateConnectionPeeringRoutesSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
@@ -1264,6 +1553,10 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
     private final PagedCallSettings.Builder<
             ListSubnetsRequest, ListSubnetsResponse, ListSubnetsPagedResponse>
         listSubnetsSettings;
+    private final UnaryCallSettings.Builder<GetSubnetRequest, Subnet> getSubnetSettings;
+    private final UnaryCallSettings.Builder<UpdateSubnetRequest, Operation> updateSubnetSettings;
+    private final OperationCallSettings.Builder<UpdateSubnetRequest, Subnet, OperationMetadata>
+        updateSubnetOperationSettings;
     private final PagedCallSettings.Builder<
             ListNodeTypesRequest, ListNodeTypesResponse, ListNodeTypesPagedResponse>
         listNodeTypesSettings;
@@ -1338,6 +1631,33 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
             ListVmwareEngineNetworksResponse,
             ListVmwareEngineNetworksPagedResponse>
         listVmwareEngineNetworksSettings;
+    private final UnaryCallSettings.Builder<CreatePrivateConnectionRequest, Operation>
+        createPrivateConnectionSettings;
+    private final OperationCallSettings.Builder<
+            CreatePrivateConnectionRequest, PrivateConnection, OperationMetadata>
+        createPrivateConnectionOperationSettings;
+    private final UnaryCallSettings.Builder<GetPrivateConnectionRequest, PrivateConnection>
+        getPrivateConnectionSettings;
+    private final PagedCallSettings.Builder<
+            ListPrivateConnectionsRequest,
+            ListPrivateConnectionsResponse,
+            ListPrivateConnectionsPagedResponse>
+        listPrivateConnectionsSettings;
+    private final UnaryCallSettings.Builder<UpdatePrivateConnectionRequest, Operation>
+        updatePrivateConnectionSettings;
+    private final OperationCallSettings.Builder<
+            UpdatePrivateConnectionRequest, PrivateConnection, OperationMetadata>
+        updatePrivateConnectionOperationSettings;
+    private final UnaryCallSettings.Builder<DeletePrivateConnectionRequest, Operation>
+        deletePrivateConnectionSettings;
+    private final OperationCallSettings.Builder<
+            DeletePrivateConnectionRequest, Empty, OperationMetadata>
+        deletePrivateConnectionOperationSettings;
+    private final PagedCallSettings.Builder<
+            ListPrivateConnectionPeeringRoutesRequest,
+            ListPrivateConnectionPeeringRoutesResponse,
+            ListPrivateConnectionPeeringRoutesPagedResponse>
+        listPrivateConnectionPeeringRoutesSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -1355,6 +1675,8 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
       definitions.put(
           "retry_policy_0_codes",
           ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
+      definitions.put(
+          "no_retry_2_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       definitions.put(
           "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
@@ -1382,6 +1704,14 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
               .setRpcTimeoutMultiplier(1.0)
               .setMaxRpcTimeout(Duration.ofMillis(120000L))
               .setTotalTimeout(Duration.ofMillis(120000L))
+              .build();
+      definitions.put("no_retry_2_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRpcTimeout(Duration.ofMillis(60000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(60000L))
+              .setTotalTimeout(Duration.ofMillis(60000L))
               .build();
       definitions.put("no_retry_1_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
@@ -1413,6 +1743,9 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
       deleteClusterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteClusterOperationSettings = OperationCallSettings.newBuilder();
       listSubnetsSettings = PagedCallSettings.newBuilder(LIST_SUBNETS_PAGE_STR_FACT);
+      getSubnetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateSubnetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateSubnetOperationSettings = OperationCallSettings.newBuilder();
       listNodeTypesSettings = PagedCallSettings.newBuilder(LIST_NODE_TYPES_PAGE_STR_FACT);
       getNodeTypeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       showNsxCredentialsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -1444,6 +1777,17 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
       getVmwareEngineNetworkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listVmwareEngineNetworksSettings =
           PagedCallSettings.newBuilder(LIST_VMWARE_ENGINE_NETWORKS_PAGE_STR_FACT);
+      createPrivateConnectionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createPrivateConnectionOperationSettings = OperationCallSettings.newBuilder();
+      getPrivateConnectionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listPrivateConnectionsSettings =
+          PagedCallSettings.newBuilder(LIST_PRIVATE_CONNECTIONS_PAGE_STR_FACT);
+      updatePrivateConnectionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updatePrivateConnectionOperationSettings = OperationCallSettings.newBuilder();
+      deletePrivateConnectionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deletePrivateConnectionOperationSettings = OperationCallSettings.newBuilder();
+      listPrivateConnectionPeeringRoutesSettings =
+          PagedCallSettings.newBuilder(LIST_PRIVATE_CONNECTION_PEERING_ROUTES_PAGE_STR_FACT);
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -1464,6 +1808,8 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
               updateClusterSettings,
               deleteClusterSettings,
               listSubnetsSettings,
+              getSubnetSettings,
+              updateSubnetSettings,
               listNodeTypesSettings,
               getNodeTypeSettings,
               showNsxCredentialsSettings,
@@ -1483,6 +1829,12 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
               deleteVmwareEngineNetworkSettings,
               getVmwareEngineNetworkSettings,
               listVmwareEngineNetworksSettings,
+              createPrivateConnectionSettings,
+              getPrivateConnectionSettings,
+              listPrivateConnectionsSettings,
+              updatePrivateConnectionSettings,
+              deletePrivateConnectionSettings,
+              listPrivateConnectionPeeringRoutesSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -1517,6 +1869,9 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
       deleteClusterSettings = settings.deleteClusterSettings.toBuilder();
       deleteClusterOperationSettings = settings.deleteClusterOperationSettings.toBuilder();
       listSubnetsSettings = settings.listSubnetsSettings.toBuilder();
+      getSubnetSettings = settings.getSubnetSettings.toBuilder();
+      updateSubnetSettings = settings.updateSubnetSettings.toBuilder();
+      updateSubnetOperationSettings = settings.updateSubnetOperationSettings.toBuilder();
       listNodeTypesSettings = settings.listNodeTypesSettings.toBuilder();
       getNodeTypeSettings = settings.getNodeTypeSettings.toBuilder();
       showNsxCredentialsSettings = settings.showNsxCredentialsSettings.toBuilder();
@@ -1554,6 +1909,19 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
           settings.deleteVmwareEngineNetworkOperationSettings.toBuilder();
       getVmwareEngineNetworkSettings = settings.getVmwareEngineNetworkSettings.toBuilder();
       listVmwareEngineNetworksSettings = settings.listVmwareEngineNetworksSettings.toBuilder();
+      createPrivateConnectionSettings = settings.createPrivateConnectionSettings.toBuilder();
+      createPrivateConnectionOperationSettings =
+          settings.createPrivateConnectionOperationSettings.toBuilder();
+      getPrivateConnectionSettings = settings.getPrivateConnectionSettings.toBuilder();
+      listPrivateConnectionsSettings = settings.listPrivateConnectionsSettings.toBuilder();
+      updatePrivateConnectionSettings = settings.updatePrivateConnectionSettings.toBuilder();
+      updatePrivateConnectionOperationSettings =
+          settings.updatePrivateConnectionOperationSettings.toBuilder();
+      deletePrivateConnectionSettings = settings.deletePrivateConnectionSettings.toBuilder();
+      deletePrivateConnectionOperationSettings =
+          settings.deletePrivateConnectionOperationSettings.toBuilder();
+      listPrivateConnectionPeeringRoutesSettings =
+          settings.listPrivateConnectionPeeringRoutesSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
@@ -1574,6 +1942,8 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
               updateClusterSettings,
               deleteClusterSettings,
               listSubnetsSettings,
+              getSubnetSettings,
+              updateSubnetSettings,
               listNodeTypesSettings,
               getNodeTypeSettings,
               showNsxCredentialsSettings,
@@ -1593,6 +1963,12 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
               deleteVmwareEngineNetworkSettings,
               getVmwareEngineNetworkSettings,
               listVmwareEngineNetworksSettings,
+              createPrivateConnectionSettings,
+              getPrivateConnectionSettings,
+              listPrivateConnectionsSettings,
+              updatePrivateConnectionSettings,
+              deletePrivateConnectionSettings,
+              listPrivateConnectionPeeringRoutesSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -1639,23 +2015,23 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
 
       builder
           .createPrivateCloudSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
 
       builder
           .updatePrivateCloudSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
 
       builder
           .deletePrivateCloudSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
 
       builder
           .undeletePrivateCloudSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
 
       builder
           .listClustersSettings()
@@ -1669,23 +2045,33 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
 
       builder
           .createClusterSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
 
       builder
           .updateClusterSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
 
       builder
           .deleteClusterSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
 
       builder
           .listSubnetsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getSubnetSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateSubnetSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .listNodeTypesSettings()
@@ -1709,18 +2095,18 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
 
       builder
           .resetNsxCredentialsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
 
       builder
           .resetVcenterCredentialsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
 
       builder
           .createHcxActivationKeySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
 
       builder
           .listHcxActivationKeysSettings()
@@ -1744,33 +2130,33 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
 
       builder
           .createNetworkPolicySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
 
       builder
           .updateNetworkPolicySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
 
       builder
           .deleteNetworkPolicySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
 
       builder
           .createVmwareEngineNetworkSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
 
       builder
           .updateVmwareEngineNetworkSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
 
       builder
           .deleteVmwareEngineNetworkSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
 
       builder
           .getVmwareEngineNetworkSettings()
@@ -1783,37 +2169,67 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
+          .createPrivateConnectionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
+
+      builder
+          .getPrivateConnectionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listPrivateConnectionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updatePrivateConnectionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
+
+      builder
+          .deletePrivateConnectionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
+
+      builder
+          .listPrivateConnectionPeeringRoutesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
           .listLocationsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
 
       builder
           .getLocationSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
 
       builder
           .setIamPolicySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
 
       builder
           .getIamPolicySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
 
       builder
           .testIamPermissionsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
 
       builder
           .createPrivateCloudOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings
                   .<CreatePrivateCloudRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(PrivateCloud.class))
@@ -1836,8 +2252,8 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
           .setInitialCallSettings(
               UnaryCallSettings
                   .<UpdatePrivateCloudRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(PrivateCloud.class))
@@ -1860,8 +2276,8 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
           .setInitialCallSettings(
               UnaryCallSettings
                   .<DeletePrivateCloudRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(PrivateCloud.class))
@@ -1884,8 +2300,8 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
           .setInitialCallSettings(
               UnaryCallSettings
                   .<UndeletePrivateCloudRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(PrivateCloud.class))
@@ -1908,8 +2324,8 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
           .setInitialCallSettings(
               UnaryCallSettings
                   .<CreateClusterRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(Cluster.class))
@@ -1932,8 +2348,8 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
           .setInitialCallSettings(
               UnaryCallSettings
                   .<UpdateClusterRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(Cluster.class))
@@ -1956,11 +2372,35 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
           .setInitialCallSettings(
               UnaryCallSettings
                   .<DeleteClusterRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .updateSubnetOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateSubnetRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
                   .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
                   .build())
           .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+              ProtoOperationTransformers.ResponseTransformer.create(Subnet.class))
           .setMetadataTransformer(
               ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
           .setPollingAlgorithm(
@@ -1980,8 +2420,8 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
           .setInitialCallSettings(
               UnaryCallSettings
                   .<ResetNsxCredentialsRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(PrivateCloud.class))
@@ -2004,8 +2444,8 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
           .setInitialCallSettings(
               UnaryCallSettings
                   .<ResetVcenterCredentialsRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(PrivateCloud.class))
@@ -2028,8 +2468,8 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
           .setInitialCallSettings(
               UnaryCallSettings
                   .<CreateHcxActivationKeyRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(HcxActivationKey.class))
@@ -2052,8 +2492,8 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
           .setInitialCallSettings(
               UnaryCallSettings
                   .<CreateNetworkPolicyRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(NetworkPolicy.class))
@@ -2076,8 +2516,8 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
           .setInitialCallSettings(
               UnaryCallSettings
                   .<UpdateNetworkPolicyRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(NetworkPolicy.class))
@@ -2100,8 +2540,8 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
           .setInitialCallSettings(
               UnaryCallSettings
                   .<DeleteNetworkPolicyRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
@@ -2125,8 +2565,8 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
               UnaryCallSettings
                   .<CreateVmwareEngineNetworkRequest, OperationSnapshot>
                       newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(VmwareEngineNetwork.class))
@@ -2150,8 +2590,8 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
               UnaryCallSettings
                   .<UpdateVmwareEngineNetworkRequest, OperationSnapshot>
                       newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(VmwareEngineNetwork.class))
@@ -2175,8 +2615,80 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
               UnaryCallSettings
                   .<DeleteVmwareEngineNetworkRequest, OperationSnapshot>
                       newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .createPrivateConnectionOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreatePrivateConnectionRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(PrivateConnection.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .updatePrivateConnectionOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdatePrivateConnectionRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(PrivateConnection.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deletePrivateConnectionOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeletePrivateConnectionRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
@@ -2338,6 +2850,24 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
             ListSubnetsRequest, ListSubnetsResponse, ListSubnetsPagedResponse>
         listSubnetsSettings() {
       return listSubnetsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getSubnet. */
+    public UnaryCallSettings.Builder<GetSubnetRequest, Subnet> getSubnetSettings() {
+      return getSubnetSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateSubnet. */
+    public UnaryCallSettings.Builder<UpdateSubnetRequest, Operation> updateSubnetSettings() {
+      return updateSubnetSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateSubnet. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<UpdateSubnetRequest, Subnet, OperationMetadata>
+        updateSubnetOperationSettings() {
+      return updateSubnetOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to listNodeTypes. */
@@ -2540,6 +3070,76 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
             ListVmwareEngineNetworksPagedResponse>
         listVmwareEngineNetworksSettings() {
       return listVmwareEngineNetworksSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createPrivateConnection. */
+    public UnaryCallSettings.Builder<CreatePrivateConnectionRequest, Operation>
+        createPrivateConnectionSettings() {
+      return createPrivateConnectionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createPrivateConnection. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            CreatePrivateConnectionRequest, PrivateConnection, OperationMetadata>
+        createPrivateConnectionOperationSettings() {
+      return createPrivateConnectionOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getPrivateConnection. */
+    public UnaryCallSettings.Builder<GetPrivateConnectionRequest, PrivateConnection>
+        getPrivateConnectionSettings() {
+      return getPrivateConnectionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listPrivateConnections. */
+    public PagedCallSettings.Builder<
+            ListPrivateConnectionsRequest,
+            ListPrivateConnectionsResponse,
+            ListPrivateConnectionsPagedResponse>
+        listPrivateConnectionsSettings() {
+      return listPrivateConnectionsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updatePrivateConnection. */
+    public UnaryCallSettings.Builder<UpdatePrivateConnectionRequest, Operation>
+        updatePrivateConnectionSettings() {
+      return updatePrivateConnectionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updatePrivateConnection. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            UpdatePrivateConnectionRequest, PrivateConnection, OperationMetadata>
+        updatePrivateConnectionOperationSettings() {
+      return updatePrivateConnectionOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deletePrivateConnection. */
+    public UnaryCallSettings.Builder<DeletePrivateConnectionRequest, Operation>
+        deletePrivateConnectionSettings() {
+      return deletePrivateConnectionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deletePrivateConnection. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<DeletePrivateConnectionRequest, Empty, OperationMetadata>
+        deletePrivateConnectionOperationSettings() {
+      return deletePrivateConnectionOperationSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to listPrivateConnectionPeeringRoutes.
+     */
+    public PagedCallSettings.Builder<
+            ListPrivateConnectionPeeringRoutesRequest,
+            ListPrivateConnectionPeeringRoutesResponse,
+            ListPrivateConnectionPeeringRoutesPagedResponse>
+        listPrivateConnectionPeeringRoutesSettings() {
+      return listPrivateConnectionPeeringRoutesSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

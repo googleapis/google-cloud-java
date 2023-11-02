@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -63,6 +63,11 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
@@ -137,6 +142,10 @@ public class ClusterControllerStubSettings extends StubSettings<ClusterControlle
   private final OperationCallSettings<
           DiagnoseClusterRequest, DiagnoseClusterResults, ClusterOperationMetadata>
       diagnoseClusterOperationSettings;
+  private final UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings;
+  private final UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings;
+  private final UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsSettings;
 
   private static final PagedListDescriptor<ListClustersRequest, ListClustersResponse, Cluster>
       LIST_CLUSTERS_PAGE_STR_DESC =
@@ -269,6 +278,22 @@ public class ClusterControllerStubSettings extends StubSettings<ClusterControlle
     return diagnoseClusterOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to setIamPolicy. */
+  public UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+    return setIamPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to getIamPolicy. */
+  public UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+    return getIamPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsSettings() {
+    return testIamPermissionsSettings;
+  }
+
   public ClusterControllerStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -389,6 +414,9 @@ public class ClusterControllerStubSettings extends StubSettings<ClusterControlle
     listClustersSettings = settingsBuilder.listClustersSettings().build();
     diagnoseClusterSettings = settingsBuilder.diagnoseClusterSettings().build();
     diagnoseClusterOperationSettings = settingsBuilder.diagnoseClusterOperationSettings().build();
+    setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
+    getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
+    testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
   }
 
   /** Builder for ClusterControllerStubSettings. */
@@ -423,6 +451,10 @@ public class ClusterControllerStubSettings extends StubSettings<ClusterControlle
     private final OperationCallSettings.Builder<
             DiagnoseClusterRequest, DiagnoseClusterResults, ClusterOperationMetadata>
         diagnoseClusterOperationSettings;
+    private final UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings;
+    private final UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings;
+    private final UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -496,6 +528,9 @@ public class ClusterControllerStubSettings extends StubSettings<ClusterControlle
       listClustersSettings = PagedCallSettings.newBuilder(LIST_CLUSTERS_PAGE_STR_FACT);
       diagnoseClusterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       diagnoseClusterOperationSettings = OperationCallSettings.newBuilder();
+      setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -506,7 +541,10 @@ public class ClusterControllerStubSettings extends StubSettings<ClusterControlle
               deleteClusterSettings,
               getClusterSettings,
               listClustersSettings,
-              diagnoseClusterSettings);
+              diagnoseClusterSettings,
+              setIamPolicySettings,
+              getIamPolicySettings,
+              testIamPermissionsSettings);
       initDefaults(this);
     }
 
@@ -527,6 +565,9 @@ public class ClusterControllerStubSettings extends StubSettings<ClusterControlle
       listClustersSettings = settings.listClustersSettings.toBuilder();
       diagnoseClusterSettings = settings.diagnoseClusterSettings.toBuilder();
       diagnoseClusterOperationSettings = settings.diagnoseClusterOperationSettings.toBuilder();
+      setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
+      getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
+      testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -537,7 +578,10 @@ public class ClusterControllerStubSettings extends StubSettings<ClusterControlle
               deleteClusterSettings,
               getClusterSettings,
               listClustersSettings,
-              diagnoseClusterSettings);
+              diagnoseClusterSettings,
+              setIamPolicySettings,
+              getIamPolicySettings,
+              testIamPermissionsSettings);
     }
 
     private static Builder createDefault() {
@@ -606,6 +650,21 @@ public class ClusterControllerStubSettings extends StubSettings<ClusterControlle
           .diagnoseClusterSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_5_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_5_params"));
+
+      builder
+          .setIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .testIamPermissionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .createClusterOperationSettings()
@@ -857,6 +916,22 @@ public class ClusterControllerStubSettings extends StubSettings<ClusterControlle
             DiagnoseClusterRequest, DiagnoseClusterResults, ClusterOperationMetadata>
         diagnoseClusterOperationSettings() {
       return diagnoseClusterOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setIamPolicy. */
+    public UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+      return setIamPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getIamPolicy. */
+    public UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+      return getIamPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsSettings() {
+      return testIamPermissionsSettings;
     }
 
     @Override

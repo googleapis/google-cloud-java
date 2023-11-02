@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,9 +28,11 @@ public interface BatchPredictResultOrBuilder
    *
    * <pre>
    * Additional domain-specific prediction response metadata.
+   *
    * *  For Image Object Detection:
    *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
    *      image could have been returned.
+   *
    * *  For Video Object Tracking:
    *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
    *      frame could have been returned.
@@ -44,9 +46,11 @@ public interface BatchPredictResultOrBuilder
    *
    * <pre>
    * Additional domain-specific prediction response metadata.
+   *
    * *  For Image Object Detection:
    *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
    *      image could have been returned.
+   *
    * *  For Video Object Tracking:
    *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
    *      frame could have been returned.
@@ -63,9 +67,11 @@ public interface BatchPredictResultOrBuilder
    *
    * <pre>
    * Additional domain-specific prediction response metadata.
+   *
    * *  For Image Object Detection:
    *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
    *      image could have been returned.
+   *
    * *  For Video Object Tracking:
    *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
    *      frame could have been returned.
@@ -79,9 +85,11 @@ public interface BatchPredictResultOrBuilder
    *
    * <pre>
    * Additional domain-specific prediction response metadata.
+   *
    * *  For Image Object Detection:
    *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
    *      image could have been returned.
+   *
    * *  For Video Object Tracking:
    *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
    *      frame could have been returned.
@@ -99,9 +107,11 @@ public interface BatchPredictResultOrBuilder
    *
    * <pre>
    * Additional domain-specific prediction response metadata.
+   *
    * *  For Image Object Detection:
    *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
    *      image could have been returned.
+   *
    * *  For Video Object Tracking:
    *  `max_bounding_box_count` - (int64) At most that many bounding boxes per
    *      frame could have been returned.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ public interface MergeVersionAliasesRequestOrBuilder
    * <pre>
    * Required. The name of the model version to merge aliases, with a version ID
    * explicitly included.
+   *
    * Example: `projects/{project}/locations/{location}/models/{model}&#64;1234`
    * </pre>
    *
@@ -45,6 +46,7 @@ public interface MergeVersionAliasesRequestOrBuilder
    * <pre>
    * Required. The name of the model version to merge aliases, with a version ID
    * explicitly included.
+   *
    * Example: `projects/{project}/locations/{location}/models/{model}&#64;1234`
    * </pre>
    *
@@ -66,6 +68,7 @@ public interface MergeVersionAliasesRequestOrBuilder
    * Add the `-` prefix to an alias means removing that alias from the version.
    * `-` is NOT counted in the 128 characters. Example: `-golden` means removing
    * the `golden` alias from the version.
+   *
    * There is NO ordering in aliases, which means
    * 1) The aliases returned from GetModel API might not have the exactly same
    * order from this MergeVersionAliases API. 2) Adding and deleting the same
@@ -88,6 +91,7 @@ public interface MergeVersionAliasesRequestOrBuilder
    * Add the `-` prefix to an alias means removing that alias from the version.
    * `-` is NOT counted in the 128 characters. Example: `-golden` means removing
    * the `golden` alias from the version.
+   *
    * There is NO ordering in aliases, which means
    * 1) The aliases returned from GetModel API might not have the exactly same
    * order from this MergeVersionAliases API. 2) Adding and deleting the same
@@ -110,6 +114,7 @@ public interface MergeVersionAliasesRequestOrBuilder
    * Add the `-` prefix to an alias means removing that alias from the version.
    * `-` is NOT counted in the 128 characters. Example: `-golden` means removing
    * the `golden` alias from the version.
+   *
    * There is NO ordering in aliases, which means
    * 1) The aliases returned from GetModel API might not have the exactly same
    * order from this MergeVersionAliases API. 2) Adding and deleting the same
@@ -133,6 +138,7 @@ public interface MergeVersionAliasesRequestOrBuilder
    * Add the `-` prefix to an alias means removing that alias from the version.
    * `-` is NOT counted in the 128 characters. Example: `-golden` means removing
    * the `golden` alias from the version.
+   *
    * There is NO ordering in aliases, which means
    * 1) The aliases returned from GetModel API might not have the exactly same
    * order from this MergeVersionAliases API. 2) Adding and deleting the same

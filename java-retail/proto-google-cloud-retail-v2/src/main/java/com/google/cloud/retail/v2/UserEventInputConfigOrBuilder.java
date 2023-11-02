@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -146,5 +146,5 @@ public interface UserEventInputConfigOrBuilder
    */
   com.google.cloud.retail.v2.BigQuerySourceOrBuilder getBigQuerySourceOrBuilder();
 
-  public com.google.cloud.retail.v2.UserEventInputConfig.SourceCase getSourceCase();
+  com.google.cloud.retail.v2.UserEventInputConfig.SourceCase getSourceCase();
 }

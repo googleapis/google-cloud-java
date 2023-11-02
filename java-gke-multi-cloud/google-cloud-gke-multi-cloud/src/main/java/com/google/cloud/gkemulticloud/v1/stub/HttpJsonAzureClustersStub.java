@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,6 +35,7 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.httpjson.longrunning.stub.HttpJsonOperationsStub;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.gkemulticloud.v1.AzureClient;
 import com.google.cloud.gkemulticloud.v1.AzureCluster;
@@ -820,48 +821,103 @@ public class HttpJsonAzureClustersStub extends AzureClustersStub {
         HttpJsonCallSettings.<CreateAzureClientRequest, Operation>newBuilder()
             .setMethodDescriptor(createAzureClientMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetAzureClientRequest, AzureClient> getAzureClientTransportSettings =
         HttpJsonCallSettings.<GetAzureClientRequest, AzureClient>newBuilder()
             .setMethodDescriptor(getAzureClientMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListAzureClientsRequest, ListAzureClientsResponse>
         listAzureClientsTransportSettings =
             HttpJsonCallSettings.<ListAzureClientsRequest, ListAzureClientsResponse>newBuilder()
                 .setMethodDescriptor(listAzureClientsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteAzureClientRequest, Operation> deleteAzureClientTransportSettings =
         HttpJsonCallSettings.<DeleteAzureClientRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteAzureClientMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<CreateAzureClusterRequest, Operation> createAzureClusterTransportSettings =
         HttpJsonCallSettings.<CreateAzureClusterRequest, Operation>newBuilder()
             .setMethodDescriptor(createAzureClusterMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<UpdateAzureClusterRequest, Operation> updateAzureClusterTransportSettings =
         HttpJsonCallSettings.<UpdateAzureClusterRequest, Operation>newBuilder()
             .setMethodDescriptor(updateAzureClusterMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "azure_cluster.name", String.valueOf(request.getAzureCluster().getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GetAzureClusterRequest, AzureCluster> getAzureClusterTransportSettings =
         HttpJsonCallSettings.<GetAzureClusterRequest, AzureCluster>newBuilder()
             .setMethodDescriptor(getAzureClusterMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListAzureClustersRequest, ListAzureClustersResponse>
         listAzureClustersTransportSettings =
             HttpJsonCallSettings.<ListAzureClustersRequest, ListAzureClustersResponse>newBuilder()
                 .setMethodDescriptor(listAzureClustersMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteAzureClusterRequest, Operation> deleteAzureClusterTransportSettings =
         HttpJsonCallSettings.<DeleteAzureClusterRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteAzureClusterMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<GenerateAzureAccessTokenRequest, GenerateAzureAccessTokenResponse>
         generateAzureAccessTokenTransportSettings =
@@ -869,41 +925,85 @@ public class HttpJsonAzureClustersStub extends AzureClustersStub {
                 .<GenerateAzureAccessTokenRequest, GenerateAzureAccessTokenResponse>newBuilder()
                 .setMethodDescriptor(generateAzureAccessTokenMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("azure_cluster", String.valueOf(request.getAzureCluster()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<CreateAzureNodePoolRequest, Operation>
         createAzureNodePoolTransportSettings =
             HttpJsonCallSettings.<CreateAzureNodePoolRequest, Operation>newBuilder()
                 .setMethodDescriptor(createAzureNodePoolMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<UpdateAzureNodePoolRequest, Operation>
         updateAzureNodePoolTransportSettings =
             HttpJsonCallSettings.<UpdateAzureNodePoolRequest, Operation>newBuilder()
                 .setMethodDescriptor(updateAzureNodePoolMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "azure_node_pool.name",
+                          String.valueOf(request.getAzureNodePool().getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetAzureNodePoolRequest, AzureNodePool> getAzureNodePoolTransportSettings =
         HttpJsonCallSettings.<GetAzureNodePoolRequest, AzureNodePool>newBuilder()
             .setMethodDescriptor(getAzureNodePoolMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<ListAzureNodePoolsRequest, ListAzureNodePoolsResponse>
         listAzureNodePoolsTransportSettings =
             HttpJsonCallSettings.<ListAzureNodePoolsRequest, ListAzureNodePoolsResponse>newBuilder()
                 .setMethodDescriptor(listAzureNodePoolsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<DeleteAzureNodePoolRequest, Operation>
         deleteAzureNodePoolTransportSettings =
             HttpJsonCallSettings.<DeleteAzureNodePoolRequest, Operation>newBuilder()
                 .setMethodDescriptor(deleteAzureNodePoolMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetAzureServerConfigRequest, AzureServerConfig>
         getAzureServerConfigTransportSettings =
             HttpJsonCallSettings.<GetAzureServerConfigRequest, AzureServerConfig>newBuilder()
                 .setMethodDescriptor(getAzureServerConfigMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
                 .build();
 
     this.createAzureClientCallable =

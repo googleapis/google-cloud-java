@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ public interface ClusterSelectorOrBuilder
    * <pre>
    * Optional. The zone where workflow process executes. This parameter does not
    * affect the selection of the cluster.
+   *
    * If unspecified, the zone of the first cluster matching the selector
    * is used.
    * </pre>
@@ -44,6 +45,7 @@ public interface ClusterSelectorOrBuilder
    * <pre>
    * Optional. The zone where workflow process executes. This parameter does not
    * affect the selection of the cluster.
+   *
    * If unspecified, the zone of the first cluster matching the selector
    * is used.
    * </pre>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -79,4 +79,92 @@ public interface CanaryDeploymentOrBuilder
    * @return The verify.
    */
   boolean getVerify();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for the predeploy job of the first phase. If this
+   * is not configured, there will be no predeploy job for this phase.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.Predeploy predeploy = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the predeploy field is set.
+   */
+  boolean hasPredeploy();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for the predeploy job of the first phase. If this
+   * is not configured, there will be no predeploy job for this phase.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.Predeploy predeploy = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The predeploy.
+   */
+  com.google.cloud.deploy.v1.Predeploy getPredeploy();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for the predeploy job of the first phase. If this
+   * is not configured, there will be no predeploy job for this phase.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.Predeploy predeploy = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.deploy.v1.PredeployOrBuilder getPredeployOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for the postdeploy job of the last phase. If this
+   * is not configured, there will be no postdeploy job for this phase.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.Postdeploy postdeploy = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the postdeploy field is set.
+   */
+  boolean hasPostdeploy();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for the postdeploy job of the last phase. If this
+   * is not configured, there will be no postdeploy job for this phase.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.Postdeploy postdeploy = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The postdeploy.
+   */
+  com.google.cloud.deploy.v1.Postdeploy getPostdeploy();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for the postdeploy job of the last phase. If this
+   * is not configured, there will be no postdeploy job for this phase.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.Postdeploy postdeploy = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.deploy.v1.PostdeployOrBuilder getPostdeployOrBuilder();
 }

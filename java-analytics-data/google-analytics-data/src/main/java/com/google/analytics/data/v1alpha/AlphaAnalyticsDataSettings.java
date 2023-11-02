@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,8 @@
 
 package com.google.analytics.data.v1alpha;
 
+import static com.google.analytics.data.v1alpha.AlphaAnalyticsDataClient.ListAudienceListsPagedResponse;
+
 import com.google.analytics.data.v1alpha.stub.AlphaAnalyticsDataStubSettings;
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
@@ -26,8 +28,11 @@ import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.OperationCallSettings;
+import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
+import com.google.longrunning.Operation;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
@@ -78,6 +83,36 @@ public class AlphaAnalyticsDataSettings extends ClientSettings<AlphaAnalyticsDat
   public UnaryCallSettings<RunFunnelReportRequest, RunFunnelReportResponse>
       runFunnelReportSettings() {
     return ((AlphaAnalyticsDataStubSettings) getStubSettings()).runFunnelReportSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createAudienceList. */
+  public UnaryCallSettings<CreateAudienceListRequest, Operation> createAudienceListSettings() {
+    return ((AlphaAnalyticsDataStubSettings) getStubSettings()).createAudienceListSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createAudienceList. */
+  public OperationCallSettings<CreateAudienceListRequest, AudienceList, AudienceListMetadata>
+      createAudienceListOperationSettings() {
+    return ((AlphaAnalyticsDataStubSettings) getStubSettings())
+        .createAudienceListOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to queryAudienceList. */
+  public UnaryCallSettings<QueryAudienceListRequest, QueryAudienceListResponse>
+      queryAudienceListSettings() {
+    return ((AlphaAnalyticsDataStubSettings) getStubSettings()).queryAudienceListSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getAudienceList. */
+  public UnaryCallSettings<GetAudienceListRequest, AudienceList> getAudienceListSettings() {
+    return ((AlphaAnalyticsDataStubSettings) getStubSettings()).getAudienceListSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listAudienceLists. */
+  public PagedCallSettings<
+          ListAudienceListsRequest, ListAudienceListsResponse, ListAudienceListsPagedResponse>
+      listAudienceListsSettings() {
+    return ((AlphaAnalyticsDataStubSettings) getStubSettings()).listAudienceListsSettings();
   }
 
   public static final AlphaAnalyticsDataSettings create(AlphaAnalyticsDataStubSettings stub)
@@ -199,6 +234,38 @@ public class AlphaAnalyticsDataSettings extends ClientSettings<AlphaAnalyticsDat
     public UnaryCallSettings.Builder<RunFunnelReportRequest, RunFunnelReportResponse>
         runFunnelReportSettings() {
       return getStubSettingsBuilder().runFunnelReportSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createAudienceList. */
+    public UnaryCallSettings.Builder<CreateAudienceListRequest, Operation>
+        createAudienceListSettings() {
+      return getStubSettingsBuilder().createAudienceListSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createAudienceList. */
+    public OperationCallSettings.Builder<
+            CreateAudienceListRequest, AudienceList, AudienceListMetadata>
+        createAudienceListOperationSettings() {
+      return getStubSettingsBuilder().createAudienceListOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to queryAudienceList. */
+    public UnaryCallSettings.Builder<QueryAudienceListRequest, QueryAudienceListResponse>
+        queryAudienceListSettings() {
+      return getStubSettingsBuilder().queryAudienceListSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getAudienceList. */
+    public UnaryCallSettings.Builder<GetAudienceListRequest, AudienceList>
+        getAudienceListSettings() {
+      return getStubSettingsBuilder().getAudienceListSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listAudienceLists. */
+    public PagedCallSettings.Builder<
+            ListAudienceListsRequest, ListAudienceListsResponse, ListAudienceListsPagedResponse>
+        listAudienceListsSettings() {
+      return getStubSettingsBuilder().listAudienceListsSettings();
     }
 
     @Override

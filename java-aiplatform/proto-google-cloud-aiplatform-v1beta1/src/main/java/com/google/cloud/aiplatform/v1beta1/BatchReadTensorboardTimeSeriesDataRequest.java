@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,18 +42,13 @@ public final class BatchReadTensorboardTimeSeriesDataRequest
 
   private BatchReadTensorboardTimeSeriesDataRequest() {
     tensorboard_ = "";
-    timeSeries_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    timeSeries_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new BatchReadTensorboardTimeSeriesDataRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -140,7 +135,8 @@ public final class BatchReadTensorboardTimeSeriesDataRequest
   public static final int TIME_SERIES_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList timeSeries_;
+  private com.google.protobuf.LazyStringArrayList timeSeries_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -442,8 +438,7 @@ public final class BatchReadTensorboardTimeSeriesDataRequest
       super.clear();
       bitField0_ = 0;
       tensorboard_ = "";
-      timeSeries_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      timeSeries_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -475,7 +470,6 @@ public final class BatchReadTensorboardTimeSeriesDataRequest
         buildPartial() {
       com.google.cloud.aiplatform.v1beta1.BatchReadTensorboardTimeSeriesDataRequest result =
           new com.google.cloud.aiplatform.v1beta1.BatchReadTensorboardTimeSeriesDataRequest(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -483,20 +477,15 @@ public final class BatchReadTensorboardTimeSeriesDataRequest
       return result;
     }
 
-    private void buildPartialRepeatedFields(
-        com.google.cloud.aiplatform.v1beta1.BatchReadTensorboardTimeSeriesDataRequest result) {
-      if (((bitField0_ & 0x00000002) != 0)) {
-        timeSeries_ = timeSeries_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.timeSeries_ = timeSeries_;
-    }
-
     private void buildPartial0(
         com.google.cloud.aiplatform.v1beta1.BatchReadTensorboardTimeSeriesDataRequest result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.tensorboard_ = tensorboard_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        timeSeries_.makeImmutable();
+        result.timeSeries_ = timeSeries_;
       }
     }
 
@@ -559,7 +548,7 @@ public final class BatchReadTensorboardTimeSeriesDataRequest
       if (!other.timeSeries_.isEmpty()) {
         if (timeSeries_.isEmpty()) {
           timeSeries_ = other.timeSeries_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureTimeSeriesIsMutable();
           timeSeries_.addAll(other.timeSeries_);
@@ -765,14 +754,14 @@ public final class BatchReadTensorboardTimeSeriesDataRequest
       return this;
     }
 
-    private com.google.protobuf.LazyStringList timeSeries_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList timeSeries_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureTimeSeriesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!timeSeries_.isModifiable()) {
         timeSeries_ = new com.google.protobuf.LazyStringArrayList(timeSeries_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -790,7 +779,8 @@ public final class BatchReadTensorboardTimeSeriesDataRequest
      * @return A list containing the timeSeries.
      */
     public com.google.protobuf.ProtocolStringList getTimeSeriesList() {
-      return timeSeries_.getUnmodifiableView();
+      timeSeries_.makeImmutable();
+      return timeSeries_;
     }
     /**
      *
@@ -871,6 +861,7 @@ public final class BatchReadTensorboardTimeSeriesDataRequest
       }
       ensureTimeSeriesIsMutable();
       timeSeries_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -896,6 +887,7 @@ public final class BatchReadTensorboardTimeSeriesDataRequest
       }
       ensureTimeSeriesIsMutable();
       timeSeries_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -918,6 +910,7 @@ public final class BatchReadTensorboardTimeSeriesDataRequest
     public Builder addAllTimeSeries(java.lang.Iterable<java.lang.String> values) {
       ensureTimeSeriesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, timeSeries_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -937,8 +930,9 @@ public final class BatchReadTensorboardTimeSeriesDataRequest
      * @return This builder for chaining.
      */
     public Builder clearTimeSeries() {
-      timeSeries_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      timeSeries_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -965,6 +959,7 @@ public final class BatchReadTensorboardTimeSeriesDataRequest
       checkByteStringIsUtf8(value);
       ensureTimeSeriesIsMutable();
       timeSeries_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

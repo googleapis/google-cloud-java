@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class GetCompanyRequest extends com.google.protobuf.GeneratedMessag
     return new GetCompanyRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.talent.v4.CompanyServiceProto
         .internal_static_google_cloud_talent_v4_GetCompanyRequest_descriptor;
@@ -76,6 +71,7 @@ public final class GetCompanyRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Required. The resource name of the company to be retrieved.
+   *
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
    * example, "projects/api-test-project/tenants/foo/companies/bar".
@@ -104,6 +100,7 @@ public final class GetCompanyRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Required. The resource name of the company to be retrieved.
+   *
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
    * example, "projects/api-test-project/tenants/foo/companies/bar".
@@ -475,6 +472,7 @@ public final class GetCompanyRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The resource name of the company to be retrieved.
+     *
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
      * example, "projects/api-test-project/tenants/foo/companies/bar".
@@ -502,6 +500,7 @@ public final class GetCompanyRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The resource name of the company to be retrieved.
+     *
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
      * example, "projects/api-test-project/tenants/foo/companies/bar".
@@ -529,6 +528,7 @@ public final class GetCompanyRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The resource name of the company to be retrieved.
+     *
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
      * example, "projects/api-test-project/tenants/foo/companies/bar".
@@ -555,6 +555,7 @@ public final class GetCompanyRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The resource name of the company to be retrieved.
+     *
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
      * example, "projects/api-test-project/tenants/foo/companies/bar".
@@ -577,6 +578,7 @@ public final class GetCompanyRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The resource name of the company to be retrieved.
+     *
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
      * example, "projects/api-test-project/tenants/foo/companies/bar".

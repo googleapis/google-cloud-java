@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new MetadataImport();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -289,7 +284,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.metastore.v1.MetadataImport.DatabaseDump.database_type is
-     *     deprecated. See google/cloud/metastore/v1/metastore.proto;l=588
+     *     deprecated. See google/cloud/metastore/v1/metastore.proto;l=659
      * @return The enum numeric value on the wire for databaseType.
      */
     @java.lang.Deprecated
@@ -306,7 +301,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.metastore.v1.MetadataImport.DatabaseDump.database_type is
-     *     deprecated. See google/cloud/metastore/v1/metastore.proto;l=588
+     *     deprecated. See google/cloud/metastore/v1/metastore.proto;l=659
      * @return The databaseType.
      */
     @java.lang.Deprecated
@@ -338,6 +333,37 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
      * @return The bytes for gcsUri.
      */
     com.google.protobuf.ByteString getGcsUriBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * The name of the source database.
+     * </pre>
+     *
+     * <code>string source_database = 3 [deprecated = true];</code>
+     *
+     * @deprecated google.cloud.metastore.v1.MetadataImport.DatabaseDump.source_database is
+     *     deprecated. See google/cloud/metastore/v1/metastore.proto;l=666
+     * @return The sourceDatabase.
+     */
+    @java.lang.Deprecated
+    java.lang.String getSourceDatabase();
+    /**
+     *
+     *
+     * <pre>
+     * The name of the source database.
+     * </pre>
+     *
+     * <code>string source_database = 3 [deprecated = true];</code>
+     *
+     * @deprecated google.cloud.metastore.v1.MetadataImport.DatabaseDump.source_database is
+     *     deprecated. See google/cloud/metastore/v1/metastore.proto;l=666
+     * @return The bytes for sourceDatabase.
+     */
+    @java.lang.Deprecated
+    com.google.protobuf.ByteString getSourceDatabaseBytes();
 
     /**
      *
@@ -393,6 +419,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
     private DatabaseDump() {
       databaseType_ = 0;
       gcsUri_ = "";
+      sourceDatabase_ = "";
       type_ = 0;
     }
 
@@ -400,11 +427,6 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new DatabaseDump();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -573,7 +595,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.metastore.v1.MetadataImport.DatabaseDump.database_type is
-     *     deprecated. See google/cloud/metastore/v1/metastore.proto;l=588
+     *     deprecated. See google/cloud/metastore/v1/metastore.proto;l=659
      * @return The enum numeric value on the wire for databaseType.
      */
     @java.lang.Override
@@ -593,7 +615,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.metastore.v1.MetadataImport.DatabaseDump.database_type is
-     *     deprecated. See google/cloud/metastore/v1/metastore.proto;l=588
+     *     deprecated. See google/cloud/metastore/v1/metastore.proto;l=659
      * @return The databaseType.
      */
     @java.lang.Override
@@ -655,6 +677,63 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         gcsUri_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SOURCE_DATABASE_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object sourceDatabase_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The name of the source database.
+     * </pre>
+     *
+     * <code>string source_database = 3 [deprecated = true];</code>
+     *
+     * @deprecated google.cloud.metastore.v1.MetadataImport.DatabaseDump.source_database is
+     *     deprecated. See google/cloud/metastore/v1/metastore.proto;l=666
+     * @return The sourceDatabase.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.lang.String getSourceDatabase() {
+      java.lang.Object ref = sourceDatabase_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        sourceDatabase_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The name of the source database.
+     * </pre>
+     *
+     * <code>string source_database = 3 [deprecated = true];</code>
+     *
+     * @deprecated google.cloud.metastore.v1.MetadataImport.DatabaseDump.source_database is
+     *     deprecated. See google/cloud/metastore/v1/metastore.proto;l=666
+     * @return The bytes for sourceDatabase.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public com.google.protobuf.ByteString getSourceDatabaseBytes() {
+      java.lang.Object ref = sourceDatabase_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        sourceDatabase_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -727,6 +806,9 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gcsUri_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, gcsUri_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceDatabase_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, sourceDatabase_);
+      }
       if (type_
           != com.google.cloud.metastore.v1.DatabaseDumpSpec.Type.TYPE_UNSPECIFIED.getNumber()) {
         output.writeEnum(4, type_);
@@ -748,6 +830,9 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gcsUri_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, gcsUri_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceDatabase_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, sourceDatabase_);
       }
       if (type_
           != com.google.cloud.metastore.v1.DatabaseDumpSpec.Type.TYPE_UNSPECIFIED.getNumber()) {
@@ -771,6 +856,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
 
       if (databaseType_ != other.databaseType_) return false;
       if (!getGcsUri().equals(other.getGcsUri())) return false;
+      if (!getSourceDatabase().equals(other.getSourceDatabase())) return false;
       if (type_ != other.type_) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
@@ -787,6 +873,8 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
       hash = (53 * hash) + databaseType_;
       hash = (37 * hash) + GCS_URI_FIELD_NUMBER;
       hash = (53 * hash) + getGcsUri().hashCode();
+      hash = (37 * hash) + SOURCE_DATABASE_FIELD_NUMBER;
+      hash = (53 * hash) + getSourceDatabase().hashCode();
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
       hash = (53 * hash) + type_;
       hash = (29 * hash) + getUnknownFields().hashCode();
@@ -934,6 +1022,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
         bitField0_ = 0;
         databaseType_ = 0;
         gcsUri_ = "";
+        sourceDatabase_ = "";
         type_ = 0;
         return this;
       }
@@ -978,6 +1067,9 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
           result.gcsUri_ = gcsUri_;
         }
         if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.sourceDatabase_ = sourceDatabase_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
           result.type_ = type_;
         }
       }
@@ -1038,6 +1130,11 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
           bitField0_ |= 0x00000002;
           onChanged();
         }
+        if (!other.getSourceDatabase().isEmpty()) {
+          sourceDatabase_ = other.sourceDatabase_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
         if (other.type_ != 0) {
           setTypeValue(other.getTypeValue());
         }
@@ -1079,10 +1176,16 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000002;
                   break;
                 } // case 18
+              case 26:
+                {
+                  sourceDatabase_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
               case 32:
                 {
                   type_ = input.readEnum();
-                  bitField0_ |= 0x00000004;
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 32
               default:
@@ -1117,7 +1220,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.metastore.v1.MetadataImport.DatabaseDump.database_type is
-       *     deprecated. See google/cloud/metastore/v1/metastore.proto;l=588
+       *     deprecated. See google/cloud/metastore/v1/metastore.proto;l=659
        * @return The enum numeric value on the wire for databaseType.
        */
       @java.lang.Override
@@ -1137,7 +1240,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.metastore.v1.MetadataImport.DatabaseDump.database_type is
-       *     deprecated. See google/cloud/metastore/v1/metastore.proto;l=588
+       *     deprecated. See google/cloud/metastore/v1/metastore.proto;l=659
        * @param value The enum numeric value on the wire for databaseType to set.
        * @return This builder for chaining.
        */
@@ -1160,7 +1263,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.metastore.v1.MetadataImport.DatabaseDump.database_type is
-       *     deprecated. See google/cloud/metastore/v1/metastore.proto;l=588
+       *     deprecated. See google/cloud/metastore/v1/metastore.proto;l=659
        * @return The databaseType.
        */
       @java.lang.Override
@@ -1186,7 +1289,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.metastore.v1.MetadataImport.DatabaseDump.database_type is
-       *     deprecated. See google/cloud/metastore/v1/metastore.proto;l=588
+       *     deprecated. See google/cloud/metastore/v1/metastore.proto;l=659
        * @param value The databaseType to set.
        * @return This builder for chaining.
        */
@@ -1213,7 +1316,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.metastore.v1.MetadataImport.DatabaseDump.database_type is
-       *     deprecated. See google/cloud/metastore/v1/metastore.proto;l=588
+       *     deprecated. See google/cloud/metastore/v1/metastore.proto;l=659
        * @return This builder for chaining.
        */
       @java.lang.Deprecated
@@ -1335,6 +1438,127 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
         return this;
       }
 
+      private java.lang.Object sourceDatabase_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The name of the source database.
+       * </pre>
+       *
+       * <code>string source_database = 3 [deprecated = true];</code>
+       *
+       * @deprecated google.cloud.metastore.v1.MetadataImport.DatabaseDump.source_database is
+       *     deprecated. See google/cloud/metastore/v1/metastore.proto;l=666
+       * @return The sourceDatabase.
+       */
+      @java.lang.Deprecated
+      public java.lang.String getSourceDatabase() {
+        java.lang.Object ref = sourceDatabase_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          sourceDatabase_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The name of the source database.
+       * </pre>
+       *
+       * <code>string source_database = 3 [deprecated = true];</code>
+       *
+       * @deprecated google.cloud.metastore.v1.MetadataImport.DatabaseDump.source_database is
+       *     deprecated. See google/cloud/metastore/v1/metastore.proto;l=666
+       * @return The bytes for sourceDatabase.
+       */
+      @java.lang.Deprecated
+      public com.google.protobuf.ByteString getSourceDatabaseBytes() {
+        java.lang.Object ref = sourceDatabase_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          sourceDatabase_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The name of the source database.
+       * </pre>
+       *
+       * <code>string source_database = 3 [deprecated = true];</code>
+       *
+       * @deprecated google.cloud.metastore.v1.MetadataImport.DatabaseDump.source_database is
+       *     deprecated. See google/cloud/metastore/v1/metastore.proto;l=666
+       * @param value The sourceDatabase to set.
+       * @return This builder for chaining.
+       */
+      @java.lang.Deprecated
+      public Builder setSourceDatabase(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        sourceDatabase_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The name of the source database.
+       * </pre>
+       *
+       * <code>string source_database = 3 [deprecated = true];</code>
+       *
+       * @deprecated google.cloud.metastore.v1.MetadataImport.DatabaseDump.source_database is
+       *     deprecated. See google/cloud/metastore/v1/metastore.proto;l=666
+       * @return This builder for chaining.
+       */
+      @java.lang.Deprecated
+      public Builder clearSourceDatabase() {
+        sourceDatabase_ = getDefaultInstance().getSourceDatabase();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The name of the source database.
+       * </pre>
+       *
+       * <code>string source_database = 3 [deprecated = true];</code>
+       *
+       * @deprecated google.cloud.metastore.v1.MetadataImport.DatabaseDump.source_database is
+       *     deprecated. See google/cloud/metastore/v1/metastore.proto;l=666
+       * @param value The bytes for sourceDatabase to set.
+       * @return This builder for chaining.
+       */
+      @java.lang.Deprecated
+      public Builder setSourceDatabaseBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        sourceDatabase_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
       private int type_ = 0;
       /**
        *
@@ -1371,7 +1595,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder setTypeValue(int value) {
         type_ = value;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1416,7 +1640,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         type_ = value.getNumber();
         onChanged();
         return this;
@@ -1436,7 +1660,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearType() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000008);
         type_ = 0;
         onChanged();
         return this;
@@ -1507,6 +1731,8 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int metadataCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object metadata_;
 
   public enum MetadataCase
@@ -1617,6 +1843,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Immutable. The relative resource name of the metadata import, of the form:
+   *
    * `projects/{project_number}/locations/{location_id}/services/{service_id}/metadataImports/{metadata_import_id}`.
    * </pre>
    *
@@ -1641,6 +1868,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Immutable. The relative resource name of the metadata import, of the form:
+   *
    * `projects/{project_number}/locations/{location_id}/services/{service_id}/metadataImports/{metadata_import_id}`.
    * </pre>
    *
@@ -2690,6 +2918,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Immutable. The relative resource name of the metadata import, of the form:
+     *
      * `projects/{project_number}/locations/{location_id}/services/{service_id}/metadataImports/{metadata_import_id}`.
      * </pre>
      *
@@ -2713,6 +2942,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Immutable. The relative resource name of the metadata import, of the form:
+     *
      * `projects/{project_number}/locations/{location_id}/services/{service_id}/metadataImports/{metadata_import_id}`.
      * </pre>
      *
@@ -2736,6 +2966,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Immutable. The relative resource name of the metadata import, of the form:
+     *
      * `projects/{project_number}/locations/{location_id}/services/{service_id}/metadataImports/{metadata_import_id}`.
      * </pre>
      *
@@ -2758,6 +2989,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Immutable. The relative resource name of the metadata import, of the form:
+     *
      * `projects/{project_number}/locations/{location_id}/services/{service_id}/metadataImports/{metadata_import_id}`.
      * </pre>
      *
@@ -2776,6 +3008,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Immutable. The relative resource name of the metadata import, of the form:
+     *
      * `projects/{project_number}/locations/{location_id}/services/{service_id}/metadataImports/{metadata_import_id}`.
      * </pre>
      *

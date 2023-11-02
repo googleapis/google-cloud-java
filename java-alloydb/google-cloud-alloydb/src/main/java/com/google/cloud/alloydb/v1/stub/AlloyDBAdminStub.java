@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@ import static com.google.cloud.alloydb.v1.AlloyDBAdminClient.ListClustersPagedRe
 import static com.google.cloud.alloydb.v1.AlloyDBAdminClient.ListInstancesPagedResponse;
 import static com.google.cloud.alloydb.v1.AlloyDBAdminClient.ListLocationsPagedResponse;
 import static com.google.cloud.alloydb.v1.AlloyDBAdminClient.ListSupportedDatabaseFlagsPagedResponse;
+import static com.google.cloud.alloydb.v1.AlloyDBAdminClient.ListUsersPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
@@ -29,16 +30,26 @@ import com.google.cloud.alloydb.v1.Backup;
 import com.google.cloud.alloydb.v1.BatchCreateInstancesRequest;
 import com.google.cloud.alloydb.v1.BatchCreateInstancesResponse;
 import com.google.cloud.alloydb.v1.Cluster;
+import com.google.cloud.alloydb.v1.ConnectionInfo;
 import com.google.cloud.alloydb.v1.CreateBackupRequest;
 import com.google.cloud.alloydb.v1.CreateClusterRequest;
 import com.google.cloud.alloydb.v1.CreateInstanceRequest;
+import com.google.cloud.alloydb.v1.CreateSecondaryClusterRequest;
+import com.google.cloud.alloydb.v1.CreateSecondaryInstanceRequest;
+import com.google.cloud.alloydb.v1.CreateUserRequest;
 import com.google.cloud.alloydb.v1.DeleteBackupRequest;
 import com.google.cloud.alloydb.v1.DeleteClusterRequest;
 import com.google.cloud.alloydb.v1.DeleteInstanceRequest;
+import com.google.cloud.alloydb.v1.DeleteUserRequest;
 import com.google.cloud.alloydb.v1.FailoverInstanceRequest;
+import com.google.cloud.alloydb.v1.GenerateClientCertificateRequest;
+import com.google.cloud.alloydb.v1.GenerateClientCertificateResponse;
 import com.google.cloud.alloydb.v1.GetBackupRequest;
 import com.google.cloud.alloydb.v1.GetClusterRequest;
+import com.google.cloud.alloydb.v1.GetConnectionInfoRequest;
 import com.google.cloud.alloydb.v1.GetInstanceRequest;
+import com.google.cloud.alloydb.v1.GetUserRequest;
+import com.google.cloud.alloydb.v1.InjectFaultRequest;
 import com.google.cloud.alloydb.v1.Instance;
 import com.google.cloud.alloydb.v1.ListBackupsRequest;
 import com.google.cloud.alloydb.v1.ListBackupsResponse;
@@ -48,12 +59,17 @@ import com.google.cloud.alloydb.v1.ListInstancesRequest;
 import com.google.cloud.alloydb.v1.ListInstancesResponse;
 import com.google.cloud.alloydb.v1.ListSupportedDatabaseFlagsRequest;
 import com.google.cloud.alloydb.v1.ListSupportedDatabaseFlagsResponse;
+import com.google.cloud.alloydb.v1.ListUsersRequest;
+import com.google.cloud.alloydb.v1.ListUsersResponse;
 import com.google.cloud.alloydb.v1.OperationMetadata;
+import com.google.cloud.alloydb.v1.PromoteClusterRequest;
 import com.google.cloud.alloydb.v1.RestartInstanceRequest;
 import com.google.cloud.alloydb.v1.RestoreClusterRequest;
 import com.google.cloud.alloydb.v1.UpdateBackupRequest;
 import com.google.cloud.alloydb.v1.UpdateClusterRequest;
 import com.google.cloud.alloydb.v1.UpdateInstanceRequest;
+import com.google.cloud.alloydb.v1.UpdateUserRequest;
+import com.google.cloud.alloydb.v1.User;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -119,6 +135,15 @@ public abstract class AlloyDBAdminStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: deleteClusterCallable()");
   }
 
+  public OperationCallable<PromoteClusterRequest, Cluster, OperationMetadata>
+      promoteClusterOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: promoteClusterOperationCallable()");
+  }
+
+  public UnaryCallable<PromoteClusterRequest, Operation> promoteClusterCallable() {
+    throw new UnsupportedOperationException("Not implemented: promoteClusterCallable()");
+  }
+
   public OperationCallable<RestoreClusterRequest, Cluster, OperationMetadata>
       restoreClusterOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: restoreClusterOperationCallable()");
@@ -126,6 +151,16 @@ public abstract class AlloyDBAdminStub implements BackgroundResource {
 
   public UnaryCallable<RestoreClusterRequest, Operation> restoreClusterCallable() {
     throw new UnsupportedOperationException("Not implemented: restoreClusterCallable()");
+  }
+
+  public OperationCallable<CreateSecondaryClusterRequest, Cluster, OperationMetadata>
+      createSecondaryClusterOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: createSecondaryClusterOperationCallable()");
+  }
+
+  public UnaryCallable<CreateSecondaryClusterRequest, Operation> createSecondaryClusterCallable() {
+    throw new UnsupportedOperationException("Not implemented: createSecondaryClusterCallable()");
   }
 
   public UnaryCallable<ListInstancesRequest, ListInstancesPagedResponse>
@@ -148,6 +183,17 @@ public abstract class AlloyDBAdminStub implements BackgroundResource {
 
   public UnaryCallable<CreateInstanceRequest, Operation> createInstanceCallable() {
     throw new UnsupportedOperationException("Not implemented: createInstanceCallable()");
+  }
+
+  public OperationCallable<CreateSecondaryInstanceRequest, Instance, OperationMetadata>
+      createSecondaryInstanceOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: createSecondaryInstanceOperationCallable()");
+  }
+
+  public UnaryCallable<CreateSecondaryInstanceRequest, Operation>
+      createSecondaryInstanceCallable() {
+    throw new UnsupportedOperationException("Not implemented: createSecondaryInstanceCallable()");
   }
 
   public OperationCallable<
@@ -186,6 +232,15 @@ public abstract class AlloyDBAdminStub implements BackgroundResource {
 
   public UnaryCallable<FailoverInstanceRequest, Operation> failoverInstanceCallable() {
     throw new UnsupportedOperationException("Not implemented: failoverInstanceCallable()");
+  }
+
+  public OperationCallable<InjectFaultRequest, Instance, OperationMetadata>
+      injectFaultOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: injectFaultOperationCallable()");
+  }
+
+  public UnaryCallable<InjectFaultRequest, Operation> injectFaultCallable() {
+    throw new UnsupportedOperationException("Not implemented: injectFaultCallable()");
   }
 
   public OperationCallable<RestartInstanceRequest, Instance, OperationMetadata>
@@ -246,6 +301,39 @@ public abstract class AlloyDBAdminStub implements BackgroundResource {
       listSupportedDatabaseFlagsCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: listSupportedDatabaseFlagsCallable()");
+  }
+
+  public UnaryCallable<GenerateClientCertificateRequest, GenerateClientCertificateResponse>
+      generateClientCertificateCallable() {
+    throw new UnsupportedOperationException("Not implemented: generateClientCertificateCallable()");
+  }
+
+  public UnaryCallable<GetConnectionInfoRequest, ConnectionInfo> getConnectionInfoCallable() {
+    throw new UnsupportedOperationException("Not implemented: getConnectionInfoCallable()");
+  }
+
+  public UnaryCallable<ListUsersRequest, ListUsersPagedResponse> listUsersPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listUsersPagedCallable()");
+  }
+
+  public UnaryCallable<ListUsersRequest, ListUsersResponse> listUsersCallable() {
+    throw new UnsupportedOperationException("Not implemented: listUsersCallable()");
+  }
+
+  public UnaryCallable<GetUserRequest, User> getUserCallable() {
+    throw new UnsupportedOperationException("Not implemented: getUserCallable()");
+  }
+
+  public UnaryCallable<CreateUserRequest, User> createUserCallable() {
+    throw new UnsupportedOperationException("Not implemented: createUserCallable()");
+  }
+
+  public UnaryCallable<UpdateUserRequest, User> updateUserCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateUserCallable()");
+  }
+
+  public UnaryCallable<DeleteUserRequest, Empty> deleteUserCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteUserCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

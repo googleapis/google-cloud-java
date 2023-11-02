@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class QueryAssetsResponse extends com.google.protobuf.GeneratedMess
     return new QueryAssetsResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.asset.v1.AssetServiceProto
         .internal_static_google_cloud_asset_v1_QueryAssetsResponse_descriptor;
@@ -68,6 +63,8 @@ public final class QueryAssetsResponse extends com.google.protobuf.GeneratedMess
   }
 
   private int responseCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object response_;
 
   public enum ResponseCase
@@ -175,6 +172,7 @@ public final class QueryAssetsResponse extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * The query response, which can be either an `error` or a valid `response`.
+   *
    * If `done` == `false` and the query result is being saved in a output, the
    * output_config field will be set.
    * If `done` == `true`, exactly one of
@@ -954,6 +952,7 @@ public final class QueryAssetsResponse extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The query response, which can be either an `error` or a valid `response`.
+     *
      * If `done` == `false` and the query result is being saved in a output, the
      * output_config field will be set.
      * If `done` == `true`, exactly one of
@@ -973,6 +972,7 @@ public final class QueryAssetsResponse extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The query response, which can be either an `error` or a valid `response`.
+     *
      * If `done` == `false` and the query result is being saved in a output, the
      * output_config field will be set.
      * If `done` == `true`, exactly one of
@@ -996,6 +996,7 @@ public final class QueryAssetsResponse extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The query response, which can be either an `error` or a valid `response`.
+     *
      * If `done` == `false` and the query result is being saved in a output, the
      * output_config field will be set.
      * If `done` == `true`, exactly one of

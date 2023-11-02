@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,7 +42,7 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
     guestOsFeatures_ = java.util.Collections.emptyList();
     interface_ = "";
     kind_ = "";
-    licenses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    licenses_ = com.google.protobuf.LazyStringArrayList.emptyList();
     mode_ = "";
     source_ = "";
     type_ = "";
@@ -52,11 +52,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new LocalDisk();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -86,7 +81,9 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
      * The ID of a supported feature. Read [Enabling guest operating system
      * features](https://cloud.google.com/compute/docs/images/create-delete-deprecate-private-images#guest-os-features)
      * to see a list of available options.
+     *
      * Valid values:
+     *
      * * `FEATURE_TYPE_UNSPECIFIED`
      * * `MULTI_IP_SUBNET`
      * * `SECURE_BOOT`
@@ -107,7 +104,9 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
      * The ID of a supported feature. Read [Enabling guest operating system
      * features](https://cloud.google.com/compute/docs/images/create-delete-deprecate-private-images#guest-os-features)
      * to see a list of available options.
+     *
      * Valid values:
+     *
      * * `FEATURE_TYPE_UNSPECIFIED`
      * * `MULTI_IP_SUBNET`
      * * `SECURE_BOOT`
@@ -156,11 +155,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
       return new RuntimeGuestOsFeature();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.notebooks.v1.RuntimeProto
           .internal_static_google_cloud_notebooks_v1_LocalDisk_RuntimeGuestOsFeature_descriptor;
@@ -187,7 +181,9 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
      * The ID of a supported feature. Read [Enabling guest operating system
      * features](https://cloud.google.com/compute/docs/images/create-delete-deprecate-private-images#guest-os-features)
      * to see a list of available options.
+     *
      * Valid values:
+     *
      * * `FEATURE_TYPE_UNSPECIFIED`
      * * `MULTI_IP_SUBNET`
      * * `SECURE_BOOT`
@@ -219,7 +215,9 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
      * The ID of a supported feature. Read [Enabling guest operating system
      * features](https://cloud.google.com/compute/docs/images/create-delete-deprecate-private-images#guest-os-features)
      * to see a list of available options.
+     *
      * Valid values:
+     *
      * * `FEATURE_TYPE_UNSPECIFIED`
      * * `MULTI_IP_SUBNET`
      * * `SECURE_BOOT`
@@ -609,7 +607,9 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
        * The ID of a supported feature. Read [Enabling guest operating system
        * features](https://cloud.google.com/compute/docs/images/create-delete-deprecate-private-images#guest-os-features)
        * to see a list of available options.
+       *
        * Valid values:
+       *
        * * `FEATURE_TYPE_UNSPECIFIED`
        * * `MULTI_IP_SUBNET`
        * * `SECURE_BOOT`
@@ -640,7 +640,9 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
        * The ID of a supported feature. Read [Enabling guest operating system
        * features](https://cloud.google.com/compute/docs/images/create-delete-deprecate-private-images#guest-os-features)
        * to see a list of available options.
+       *
        * Valid values:
+       *
        * * `FEATURE_TYPE_UNSPECIFIED`
        * * `MULTI_IP_SUBNET`
        * * `SECURE_BOOT`
@@ -671,7 +673,9 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
        * The ID of a supported feature. Read [Enabling guest operating system
        * features](https://cloud.google.com/compute/docs/images/create-delete-deprecate-private-images#guest-os-features)
        * to see a list of available options.
+       *
        * Valid values:
+       *
        * * `FEATURE_TYPE_UNSPECIFIED`
        * * `MULTI_IP_SUBNET`
        * * `SECURE_BOOT`
@@ -701,7 +705,9 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
        * The ID of a supported feature. Read [Enabling guest operating system
        * features](https://cloud.google.com/compute/docs/images/create-delete-deprecate-private-images#guest-os-features)
        * to see a list of available options.
+       *
        * Valid values:
+       *
        * * `FEATURE_TYPE_UNSPECIFIED`
        * * `MULTI_IP_SUBNET`
        * * `SECURE_BOOT`
@@ -727,7 +733,9 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
        * The ID of a supported feature. Read [Enabling guest operating system
        * features](https://cloud.google.com/compute/docs/images/create-delete-deprecate-private-images#guest-os-features)
        * to see a list of available options.
+       *
        * Valid values:
+       *
        * * `FEATURE_TYPE_UNSPECIFIED`
        * * `MULTI_IP_SUBNET`
        * * `SECURE_BOOT`
@@ -870,6 +878,7 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
    * `/dev/disk/by-id/google-*` tree of a Linux operating system running within
    * the instance. This name can be used to reference the device for mounting,
    * resizing, and so on, from within the instance.
+   *
    * If not specified, the server chooses a default device name to apply to this
    * disk, in the form persistent-disk-x, where x is a number assigned by Google
    * Compute Engine. This field is only applicable for persistent disks.
@@ -900,6 +909,7 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
    * `/dev/disk/by-id/google-*` tree of a Linux operating system running within
    * the instance. This name can be used to reference the device for mounting,
    * resizing, and so on, from within the instance.
+   *
    * If not specified, the server chooses a default device name to apply to this
    * disk, in the form persistent-disk-x, where x is a number assigned by Google
    * Compute Engine. This field is only applicable for persistent disks.
@@ -1047,6 +1057,7 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
    * Input only. Specifies the parameters for a new disk that will be created
    * alongside the new instance. Use initialization parameters to create boot
    * disks or local SSDs attached to the new instance.
+   *
    * This property is mutually exclusive with the source property; you can only
    * define one or the other, but not both.
    * </pre>
@@ -1068,6 +1079,7 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
    * Input only. Specifies the parameters for a new disk that will be created
    * alongside the new instance. Use initialization parameters to create boot
    * disks or local SSDs attached to the new instance.
+   *
    * This property is mutually exclusive with the source property; you can only
    * define one or the other, but not both.
    * </pre>
@@ -1091,6 +1103,7 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
    * Input only. Specifies the parameters for a new disk that will be created
    * alongside the new instance. Use initialization parameters to create boot
    * disks or local SSDs attached to the new instance.
+   *
    * This property is mutually exclusive with the source property; you can only
    * define one or the other, but not both.
    * </pre>
@@ -1121,6 +1134,7 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
    * in any other format than SCSI. Local SSDs can use either NVME or SCSI. For
    * performance characteristics of SCSI over NVMe, see Local SSD performance.
    * Valid values:
+   *
    * * `NVME`
    * * `SCSI`
    * </pre>
@@ -1151,6 +1165,7 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
    * in any other format than SCSI. Local SSDs can use either NVME or SCSI. For
    * performance characteristics of SCSI over NVMe, see Local SSD performance.
    * Valid values:
+   *
    * * `NVME`
    * * `SCSI`
    * </pre>
@@ -1226,7 +1241,8 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
   public static final int LICENSES_FIELD_NUMBER = 9;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList licenses_;
+  private com.google.protobuf.LazyStringArrayList licenses_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -1297,6 +1313,7 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
    * The mode in which to attach this disk, either `READ_WRITE` or `READ_ONLY`.
    * If not specified, the default is to attach the disk in `READ_WRITE` mode.
    * Valid values:
+   *
    * * `READ_ONLY`
    * * `READ_WRITE`
    * </pre>
@@ -1324,6 +1341,7 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
    * The mode in which to attach this disk, either `READ_WRITE` or `READ_ONLY`.
    * If not specified, the default is to attach the disk in `READ_WRITE` mode.
    * Valid values:
+   *
    * * `READ_ONLY`
    * * `READ_WRITE`
    * </pre>
@@ -1409,6 +1427,7 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
    * Specifies the type of the disk, either `SCRATCH` or `PERSISTENT`. If not
    * specified, the default is `PERSISTENT`.
    * Valid values:
+   *
    * * `PERSISTENT`
    * * `SCRATCH`
    * </pre>
@@ -1436,6 +1455,7 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
    * Specifies the type of the disk, either `SCRATCH` or `PERSISTENT`. If not
    * specified, the default is `PERSISTENT`.
    * Valid values:
+   *
    * * `PERSISTENT`
    * * `SCRATCH`
    * </pre>
@@ -1785,8 +1805,7 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
       }
       interface_ = "";
       kind_ = "";
-      licenses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000100);
+      licenses_ = com.google.protobuf.LazyStringArrayList.emptyList();
       mode_ = "";
       source_ = "";
       type_ = "";
@@ -1835,11 +1854,6 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.guestOsFeatures_ = guestOsFeaturesBuilder_.build();
       }
-      if (((bitField0_ & 0x00000100) != 0)) {
-        licenses_ = licenses_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000100);
-      }
-      result.licenses_ = licenses_;
     }
 
     private void buildPartial0(com.google.cloud.notebooks.v1.LocalDisk result) {
@@ -1865,6 +1879,10 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
         result.kind_ = kind_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        licenses_.makeImmutable();
+        result.licenses_ = licenses_;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
         result.mode_ = mode_;
@@ -1979,7 +1997,7 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
       if (!other.licenses_.isEmpty()) {
         if (licenses_.isEmpty()) {
           licenses_ = other.licenses_;
-          bitField0_ = (bitField0_ & ~0x00000100);
+          bitField0_ |= 0x00000100;
         } else {
           ensureLicensesIsMutable();
           licenses_.addAll(other.licenses_);
@@ -2250,6 +2268,7 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
      * `/dev/disk/by-id/google-*` tree of a Linux operating system running within
      * the instance. This name can be used to reference the device for mounting,
      * resizing, and so on, from within the instance.
+     *
      * If not specified, the server chooses a default device name to apply to this
      * disk, in the form persistent-disk-x, where x is a number assigned by Google
      * Compute Engine. This field is only applicable for persistent disks.
@@ -2279,6 +2298,7 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
      * `/dev/disk/by-id/google-*` tree of a Linux operating system running within
      * the instance. This name can be used to reference the device for mounting,
      * resizing, and so on, from within the instance.
+     *
      * If not specified, the server chooses a default device name to apply to this
      * disk, in the form persistent-disk-x, where x is a number assigned by Google
      * Compute Engine. This field is only applicable for persistent disks.
@@ -2308,6 +2328,7 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
      * `/dev/disk/by-id/google-*` tree of a Linux operating system running within
      * the instance. This name can be used to reference the device for mounting,
      * resizing, and so on, from within the instance.
+     *
      * If not specified, the server chooses a default device name to apply to this
      * disk, in the form persistent-disk-x, where x is a number assigned by Google
      * Compute Engine. This field is only applicable for persistent disks.
@@ -2336,6 +2357,7 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
      * `/dev/disk/by-id/google-*` tree of a Linux operating system running within
      * the instance. This name can be used to reference the device for mounting,
      * resizing, and so on, from within the instance.
+     *
      * If not specified, the server chooses a default device name to apply to this
      * disk, in the form persistent-disk-x, where x is a number assigned by Google
      * Compute Engine. This field is only applicable for persistent disks.
@@ -2360,6 +2382,7 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
      * `/dev/disk/by-id/google-*` tree of a Linux operating system running within
      * the instance. This name can be used to reference the device for mounting,
      * resizing, and so on, from within the instance.
+     *
      * If not specified, the server chooses a default device name to apply to this
      * disk, in the form persistent-disk-x, where x is a number assigned by Google
      * Compute Engine. This field is only applicable for persistent disks.
@@ -2896,6 +2919,7 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
      * Input only. Specifies the parameters for a new disk that will be created
      * alongside the new instance. Use initialization parameters to create boot
      * disks or local SSDs attached to the new instance.
+     *
      * This property is mutually exclusive with the source property; you can only
      * define one or the other, but not both.
      * </pre>
@@ -2916,6 +2940,7 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
      * Input only. Specifies the parameters for a new disk that will be created
      * alongside the new instance. Use initialization parameters to create boot
      * disks or local SSDs attached to the new instance.
+     *
      * This property is mutually exclusive with the source property; you can only
      * define one or the other, but not both.
      * </pre>
@@ -2942,6 +2967,7 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
      * Input only. Specifies the parameters for a new disk that will be created
      * alongside the new instance. Use initialization parameters to create boot
      * disks or local SSDs attached to the new instance.
+     *
      * This property is mutually exclusive with the source property; you can only
      * define one or the other, but not both.
      * </pre>
@@ -2971,6 +2997,7 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
      * Input only. Specifies the parameters for a new disk that will be created
      * alongside the new instance. Use initialization parameters to create boot
      * disks or local SSDs attached to the new instance.
+     *
      * This property is mutually exclusive with the source property; you can only
      * define one or the other, but not both.
      * </pre>
@@ -2997,6 +3024,7 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
      * Input only. Specifies the parameters for a new disk that will be created
      * alongside the new instance. Use initialization parameters to create boot
      * disks or local SSDs attached to the new instance.
+     *
      * This property is mutually exclusive with the source property; you can only
      * define one or the other, but not both.
      * </pre>
@@ -3030,6 +3058,7 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
      * Input only. Specifies the parameters for a new disk that will be created
      * alongside the new instance. Use initialization parameters to create boot
      * disks or local SSDs attached to the new instance.
+     *
      * This property is mutually exclusive with the source property; you can only
      * define one or the other, but not both.
      * </pre>
@@ -3055,6 +3084,7 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
      * Input only. Specifies the parameters for a new disk that will be created
      * alongside the new instance. Use initialization parameters to create boot
      * disks or local SSDs attached to the new instance.
+     *
      * This property is mutually exclusive with the source property; you can only
      * define one or the other, but not both.
      * </pre>
@@ -3076,6 +3106,7 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
      * Input only. Specifies the parameters for a new disk that will be created
      * alongside the new instance. Use initialization parameters to create boot
      * disks or local SSDs attached to the new instance.
+     *
      * This property is mutually exclusive with the source property; you can only
      * define one or the other, but not both.
      * </pre>
@@ -3101,6 +3132,7 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
      * Input only. Specifies the parameters for a new disk that will be created
      * alongside the new instance. Use initialization parameters to create boot
      * disks or local SSDs attached to the new instance.
+     *
      * This property is mutually exclusive with the source property; you can only
      * define one or the other, but not both.
      * </pre>
@@ -3137,6 +3169,7 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
      * in any other format than SCSI. Local SSDs can use either NVME or SCSI. For
      * performance characteristics of SCSI over NVMe, see Local SSD performance.
      * Valid values:
+     *
      * * `NVME`
      * * `SCSI`
      * </pre>
@@ -3166,6 +3199,7 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
      * in any other format than SCSI. Local SSDs can use either NVME or SCSI. For
      * performance characteristics of SCSI over NVMe, see Local SSD performance.
      * Valid values:
+     *
      * * `NVME`
      * * `SCSI`
      * </pre>
@@ -3195,6 +3229,7 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
      * in any other format than SCSI. Local SSDs can use either NVME or SCSI. For
      * performance characteristics of SCSI over NVMe, see Local SSD performance.
      * Valid values:
+     *
      * * `NVME`
      * * `SCSI`
      * </pre>
@@ -3223,6 +3258,7 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
      * in any other format than SCSI. Local SSDs can use either NVME or SCSI. For
      * performance characteristics of SCSI over NVMe, see Local SSD performance.
      * Valid values:
+     *
      * * `NVME`
      * * `SCSI`
      * </pre>
@@ -3247,6 +3283,7 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
      * in any other format than SCSI. Local SSDs can use either NVME or SCSI. For
      * performance characteristics of SCSI over NVMe, see Local SSD performance.
      * Valid values:
+     *
      * * `NVME`
      * * `SCSI`
      * </pre>
@@ -3373,14 +3410,14 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList licenses_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList licenses_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureLicensesIsMutable() {
-      if (!((bitField0_ & 0x00000100) != 0)) {
+      if (!licenses_.isModifiable()) {
         licenses_ = new com.google.protobuf.LazyStringArrayList(licenses_);
-        bitField0_ |= 0x00000100;
       }
+      bitField0_ |= 0x00000100;
     }
     /**
      *
@@ -3394,7 +3431,8 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the licenses.
      */
     public com.google.protobuf.ProtocolStringList getLicensesList() {
-      return licenses_.getUnmodifiableView();
+      licenses_.makeImmutable();
+      return licenses_;
     }
     /**
      *
@@ -3459,6 +3497,7 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
       }
       ensureLicensesIsMutable();
       licenses_.set(index, value);
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3480,6 +3519,7 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
       }
       ensureLicensesIsMutable();
       licenses_.add(value);
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3498,6 +3538,7 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllLicenses(java.lang.Iterable<java.lang.String> values) {
       ensureLicensesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, licenses_);
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3513,8 +3554,9 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearLicenses() {
-      licenses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      licenses_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000100);
+      ;
       onChanged();
       return this;
     }
@@ -3537,6 +3579,7 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureLicensesIsMutable();
       licenses_.add(value);
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3549,6 +3592,7 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
      * The mode in which to attach this disk, either `READ_WRITE` or `READ_ONLY`.
      * If not specified, the default is to attach the disk in `READ_WRITE` mode.
      * Valid values:
+     *
      * * `READ_ONLY`
      * * `READ_WRITE`
      * </pre>
@@ -3575,6 +3619,7 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
      * The mode in which to attach this disk, either `READ_WRITE` or `READ_ONLY`.
      * If not specified, the default is to attach the disk in `READ_WRITE` mode.
      * Valid values:
+     *
      * * `READ_ONLY`
      * * `READ_WRITE`
      * </pre>
@@ -3601,6 +3646,7 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
      * The mode in which to attach this disk, either `READ_WRITE` or `READ_ONLY`.
      * If not specified, the default is to attach the disk in `READ_WRITE` mode.
      * Valid values:
+     *
      * * `READ_ONLY`
      * * `READ_WRITE`
      * </pre>
@@ -3626,6 +3672,7 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
      * The mode in which to attach this disk, either `READ_WRITE` or `READ_ONLY`.
      * If not specified, the default is to attach the disk in `READ_WRITE` mode.
      * Valid values:
+     *
      * * `READ_ONLY`
      * * `READ_WRITE`
      * </pre>
@@ -3647,6 +3694,7 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
      * The mode in which to attach this disk, either `READ_WRITE` or `READ_ONLY`.
      * If not specified, the default is to attach the disk in `READ_WRITE` mode.
      * Valid values:
+     *
      * * `READ_ONLY`
      * * `READ_WRITE`
      * </pre>
@@ -3786,6 +3834,7 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
      * Specifies the type of the disk, either `SCRATCH` or `PERSISTENT`. If not
      * specified, the default is `PERSISTENT`.
      * Valid values:
+     *
      * * `PERSISTENT`
      * * `SCRATCH`
      * </pre>
@@ -3812,6 +3861,7 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
      * Specifies the type of the disk, either `SCRATCH` or `PERSISTENT`. If not
      * specified, the default is `PERSISTENT`.
      * Valid values:
+     *
      * * `PERSISTENT`
      * * `SCRATCH`
      * </pre>
@@ -3838,6 +3888,7 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
      * Specifies the type of the disk, either `SCRATCH` or `PERSISTENT`. If not
      * specified, the default is `PERSISTENT`.
      * Valid values:
+     *
      * * `PERSISTENT`
      * * `SCRATCH`
      * </pre>
@@ -3863,6 +3914,7 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
      * Specifies the type of the disk, either `SCRATCH` or `PERSISTENT`. If not
      * specified, the default is `PERSISTENT`.
      * Valid values:
+     *
      * * `PERSISTENT`
      * * `SCRATCH`
      * </pre>
@@ -3884,6 +3936,7 @@ public final class LocalDisk extends com.google.protobuf.GeneratedMessageV3
      * Specifies the type of the disk, either `SCRATCH` or `PERSISTENT`. If not
      * specified, the default is `PERSISTENT`.
      * Valid values:
+     *
      * * `PERSISTENT`
      * * `SCRATCH`
      * </pre>

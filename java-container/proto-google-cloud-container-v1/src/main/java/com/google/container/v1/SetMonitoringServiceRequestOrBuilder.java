@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,7 @@ public interface SetMonitoringServiceRequestOrBuilder
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetMonitoringServiceRequest.project_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2594
+   *     google/container/v1/cluster_service.proto;l=2822
    * @return The projectId.
    */
   @java.lang.Deprecated
@@ -52,7 +52,7 @@ public interface SetMonitoringServiceRequestOrBuilder
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetMonitoringServiceRequest.project_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2594
+   *     google/container/v1/cluster_service.proto;l=2822
    * @return The bytes for projectId.
    */
   @java.lang.Deprecated
@@ -71,7 +71,7 @@ public interface SetMonitoringServiceRequestOrBuilder
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetMonitoringServiceRequest.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2600
+   *     google/container/v1/cluster_service.proto;l=2828
    * @return The zone.
    */
   @java.lang.Deprecated
@@ -89,7 +89,7 @@ public interface SetMonitoringServiceRequestOrBuilder
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetMonitoringServiceRequest.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2600
+   *     google/container/v1/cluster_service.proto;l=2828
    * @return The bytes for zone.
    */
   @java.lang.Deprecated
@@ -106,7 +106,7 @@ public interface SetMonitoringServiceRequestOrBuilder
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetMonitoringServiceRequest.cluster_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2604
+   *     google/container/v1/cluster_service.proto;l=2832
    * @return The clusterId.
    */
   @java.lang.Deprecated
@@ -122,7 +122,7 @@ public interface SetMonitoringServiceRequestOrBuilder
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetMonitoringServiceRequest.cluster_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2604
+   *     google/container/v1/cluster_service.proto;l=2832
    * @return The bytes for clusterId.
    */
   @java.lang.Deprecated
@@ -134,11 +134,13 @@ public interface SetMonitoringServiceRequestOrBuilder
    * <pre>
    * Required. The monitoring service the cluster should use to write metrics.
    * Currently available options:
+   *
    * * "monitoring.googleapis.com/kubernetes" - The Cloud Monitoring
    * service with a Kubernetes-native resource model
    * * `monitoring.googleapis.com` - The legacy Cloud Monitoring service (no
    *   longer available as of GKE 1.15).
    * * `none` - No metrics will be exported from the cluster.
+   *
    * If left as an empty string,`monitoring.googleapis.com/kubernetes` will be
    * used for GKE 1.14+ or `monitoring.googleapis.com` for earlier versions.
    * </pre>
@@ -154,11 +156,13 @@ public interface SetMonitoringServiceRequestOrBuilder
    * <pre>
    * Required. The monitoring service the cluster should use to write metrics.
    * Currently available options:
+   *
    * * "monitoring.googleapis.com/kubernetes" - The Cloud Monitoring
    * service with a Kubernetes-native resource model
    * * `monitoring.googleapis.com` - The legacy Cloud Monitoring service (no
    *   longer available as of GKE 1.15).
    * * `none` - No metrics will be exported from the cluster.
+   *
    * If left as an empty string,`monitoring.googleapis.com/kubernetes` will be
    * used for GKE 1.14+ or `monitoring.googleapis.com` for earlier versions.
    * </pre>

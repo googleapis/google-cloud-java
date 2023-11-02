@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
     return new ExplanationParameters();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1.ExplanationProto
         .internal_static_google_cloud_aiplatform_v1_ExplanationParameters_descriptor;
@@ -66,6 +61,8 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
   }
 
   private int methodCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object method_;
 
   public enum MethodCase
@@ -75,6 +72,7 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
     SAMPLED_SHAPLEY_ATTRIBUTION(1),
     INTEGRATED_GRADIENTS_ATTRIBUTION(2),
     XRAI_ATTRIBUTION(3),
+    EXAMPLES(7),
     METHOD_NOT_SET(0);
     private final int value;
 
@@ -99,6 +97,8 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
           return INTEGRATED_GRADIENTS_ATTRIBUTION;
         case 3:
           return XRAI_ATTRIBUTION;
+        case 7:
+          return EXAMPLES;
         case 0:
           return METHOD_NOT_SET;
         default:
@@ -253,6 +253,7 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
    * attribution to segmented regions, taking advantage of the model's fully
    * differentiable structure. Refer to this paper for
    * more details: https://arxiv.org/abs/1906.02825
+   *
    * XRAI currently performs better on natural images, like a picture of a
    * house or an animal. If the images are taken in artificial environments,
    * like a lab or manufacturing line, or from diagnostic equipment, like
@@ -275,6 +276,7 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
    * attribution to segmented regions, taking advantage of the model's fully
    * differentiable structure. Refer to this paper for
    * more details: https://arxiv.org/abs/1906.02825
+   *
    * XRAI currently performs better on natural images, like a picture of a
    * house or an animal. If the images are taken in artificial environments,
    * like a lab or manufacturing line, or from diagnostic equipment, like
@@ -300,6 +302,7 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
    * attribution to segmented regions, taking advantage of the model's fully
    * differentiable structure. Refer to this paper for
    * more details: https://arxiv.org/abs/1906.02825
+   *
    * XRAI currently performs better on natural images, like a picture of a
    * house or an animal. If the images are taken in artificial environments,
    * like a lab or manufacturing line, or from diagnostic equipment, like
@@ -314,6 +317,60 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
       return (com.google.cloud.aiplatform.v1.XraiAttribution) method_;
     }
     return com.google.cloud.aiplatform.v1.XraiAttribution.getDefaultInstance();
+  }
+
+  public static final int EXAMPLES_FIELD_NUMBER = 7;
+  /**
+   *
+   *
+   * <pre>
+   * Example-based explanations that returns the nearest neighbors from the
+   * provided dataset.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.Examples examples = 7;</code>
+   *
+   * @return Whether the examples field is set.
+   */
+  @java.lang.Override
+  public boolean hasExamples() {
+    return methodCase_ == 7;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Example-based explanations that returns the nearest neighbors from the
+   * provided dataset.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.Examples examples = 7;</code>
+   *
+   * @return The examples.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.Examples getExamples() {
+    if (methodCase_ == 7) {
+      return (com.google.cloud.aiplatform.v1.Examples) method_;
+    }
+    return com.google.cloud.aiplatform.v1.Examples.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Example-based explanations that returns the nearest neighbors from the
+   * provided dataset.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.Examples examples = 7;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.ExamplesOrBuilder getExamplesOrBuilder() {
+    if (methodCase_ == 7) {
+      return (com.google.cloud.aiplatform.v1.Examples) method_;
+    }
+    return com.google.cloud.aiplatform.v1.Examples.getDefaultInstance();
   }
 
   public static final int TOP_K_FIELD_NUMBER = 4;
@@ -347,10 +404,12 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
    * [output_index][google.cloud.aiplatform.v1.Attribution.output_index]
    * contained in output_indices. It must be an ndarray of integers, with the
    * same shape of the output it's explaining.
+   *
    * If not populated, returns attributions for
    * [top_k][google.cloud.aiplatform.v1.ExplanationParameters.top_k] indices of
    * outputs. If neither top_k nor output_indices is populated, returns the
    * argmax index of the outputs.
+   *
    * Only applicable to Models that predict multiple outputs (e,g, multi-class
    * Models that predict multiple classes).
    * </pre>
@@ -371,10 +430,12 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
    * [output_index][google.cloud.aiplatform.v1.Attribution.output_index]
    * contained in output_indices. It must be an ndarray of integers, with the
    * same shape of the output it's explaining.
+   *
    * If not populated, returns attributions for
    * [top_k][google.cloud.aiplatform.v1.ExplanationParameters.top_k] indices of
    * outputs. If neither top_k nor output_indices is populated, returns the
    * argmax index of the outputs.
+   *
    * Only applicable to Models that predict multiple outputs (e,g, multi-class
    * Models that predict multiple classes).
    * </pre>
@@ -397,10 +458,12 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
    * [output_index][google.cloud.aiplatform.v1.Attribution.output_index]
    * contained in output_indices. It must be an ndarray of integers, with the
    * same shape of the output it's explaining.
+   *
    * If not populated, returns attributions for
    * [top_k][google.cloud.aiplatform.v1.ExplanationParameters.top_k] indices of
    * outputs. If neither top_k nor output_indices is populated, returns the
    * argmax index of the outputs.
+   *
    * Only applicable to Models that predict multiple outputs (e,g, multi-class
    * Models that predict multiple classes).
    * </pre>
@@ -444,6 +507,9 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
     if (outputIndices_ != null) {
       output.writeMessage(5, getOutputIndices());
     }
+    if (methodCase_ == 7) {
+      output.writeMessage(7, (com.google.cloud.aiplatform.v1.Examples) method_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -473,6 +539,11 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
     }
     if (outputIndices_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getOutputIndices());
+    }
+    if (methodCase_ == 7) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              7, (com.google.cloud.aiplatform.v1.Examples) method_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -508,6 +579,9 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
       case 3:
         if (!getXraiAttribution().equals(other.getXraiAttribution())) return false;
         break;
+      case 7:
+        if (!getExamples().equals(other.getExamples())) return false;
+        break;
       case 0:
       default:
     }
@@ -540,6 +614,10 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
       case 3:
         hash = (37 * hash) + XRAI_ATTRIBUTION_FIELD_NUMBER;
         hash = (53 * hash) + getXraiAttribution().hashCode();
+        break;
+      case 7:
+        hash = (37 * hash) + EXAMPLES_FIELD_NUMBER;
+        hash = (53 * hash) + getExamples().hashCode();
         break;
       case 0:
       default:
@@ -692,6 +770,9 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
       if (xraiAttributionBuilder_ != null) {
         xraiAttributionBuilder_.clear();
       }
+      if (examplesBuilder_ != null) {
+        examplesBuilder_.clear();
+      }
       topK_ = 0;
       outputIndices_ = null;
       if (outputIndicesBuilder_ != null) {
@@ -737,10 +818,10 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
 
     private void buildPartial0(com.google.cloud.aiplatform.v1.ExplanationParameters result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.topK_ = topK_;
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.outputIndices_ =
             outputIndicesBuilder_ == null ? outputIndices_ : outputIndicesBuilder_.build();
       }
@@ -757,6 +838,9 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
       }
       if (methodCase_ == 3 && xraiAttributionBuilder_ != null) {
         result.method_ = xraiAttributionBuilder_.build();
+      }
+      if (methodCase_ == 7 && examplesBuilder_ != null) {
+        result.method_ = examplesBuilder_.build();
       }
     }
 
@@ -828,6 +912,11 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
             mergeXraiAttribution(other.getXraiAttribution());
             break;
           }
+        case EXAMPLES:
+          {
+            mergeExamples(other.getExamples());
+            break;
+          }
         case METHOD_NOT_SET:
           {
             break;
@@ -883,15 +972,21 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
             case 32:
               {
                 topK_ = input.readInt32();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 32
             case 42:
               {
                 input.readMessage(getOutputIndicesFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 42
+            case 58:
+              {
+                input.readMessage(getExamplesFieldBuilder().getBuilder(), extensionRegistry);
+                methodCase_ = 7;
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1441,6 +1536,7 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
      * attribution to segmented regions, taking advantage of the model's fully
      * differentiable structure. Refer to this paper for
      * more details: https://arxiv.org/abs/1906.02825
+     *
      * XRAI currently performs better on natural images, like a picture of a
      * house or an animal. If the images are taken in artificial environments,
      * like a lab or manufacturing line, or from diagnostic equipment, like
@@ -1463,6 +1559,7 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
      * attribution to segmented regions, taking advantage of the model's fully
      * differentiable structure. Refer to this paper for
      * more details: https://arxiv.org/abs/1906.02825
+     *
      * XRAI currently performs better on natural images, like a picture of a
      * house or an animal. If the images are taken in artificial environments,
      * like a lab or manufacturing line, or from diagnostic equipment, like
@@ -1495,6 +1592,7 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
      * attribution to segmented regions, taking advantage of the model's fully
      * differentiable structure. Refer to this paper for
      * more details: https://arxiv.org/abs/1906.02825
+     *
      * XRAI currently performs better on natural images, like a picture of a
      * house or an animal. If the images are taken in artificial environments,
      * like a lab or manufacturing line, or from diagnostic equipment, like
@@ -1524,6 +1622,7 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
      * attribution to segmented regions, taking advantage of the model's fully
      * differentiable structure. Refer to this paper for
      * more details: https://arxiv.org/abs/1906.02825
+     *
      * XRAI currently performs better on natural images, like a picture of a
      * house or an animal. If the images are taken in artificial environments,
      * like a lab or manufacturing line, or from diagnostic equipment, like
@@ -1551,6 +1650,7 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
      * attribution to segmented regions, taking advantage of the model's fully
      * differentiable structure. Refer to this paper for
      * more details: https://arxiv.org/abs/1906.02825
+     *
      * XRAI currently performs better on natural images, like a picture of a
      * house or an animal. If the images are taken in artificial environments,
      * like a lab or manufacturing line, or from diagnostic equipment, like
@@ -1590,6 +1690,7 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
      * attribution to segmented regions, taking advantage of the model's fully
      * differentiable structure. Refer to this paper for
      * more details: https://arxiv.org/abs/1906.02825
+     *
      * XRAI currently performs better on natural images, like a picture of a
      * house or an animal. If the images are taken in artificial environments,
      * like a lab or manufacturing line, or from diagnostic equipment, like
@@ -1622,6 +1723,7 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
      * attribution to segmented regions, taking advantage of the model's fully
      * differentiable structure. Refer to this paper for
      * more details: https://arxiv.org/abs/1906.02825
+     *
      * XRAI currently performs better on natural images, like a picture of a
      * house or an animal. If the images are taken in artificial environments,
      * like a lab or manufacturing line, or from diagnostic equipment, like
@@ -1641,6 +1743,7 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
      * attribution to segmented regions, taking advantage of the model's fully
      * differentiable structure. Refer to this paper for
      * more details: https://arxiv.org/abs/1906.02825
+     *
      * XRAI currently performs better on natural images, like a picture of a
      * house or an animal. If the images are taken in artificial environments,
      * like a lab or manufacturing line, or from diagnostic equipment, like
@@ -1668,6 +1771,7 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
      * attribution to segmented regions, taking advantage of the model's fully
      * differentiable structure. Refer to this paper for
      * more details: https://arxiv.org/abs/1906.02825
+     *
      * XRAI currently performs better on natural images, like a picture of a
      * house or an animal. If the images are taken in artificial environments,
      * like a lab or manufacturing line, or from diagnostic equipment, like
@@ -1698,6 +1802,223 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
       methodCase_ = 3;
       onChanged();
       return xraiAttributionBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.Examples,
+            com.google.cloud.aiplatform.v1.Examples.Builder,
+            com.google.cloud.aiplatform.v1.ExamplesOrBuilder>
+        examplesBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Example-based explanations that returns the nearest neighbors from the
+     * provided dataset.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.Examples examples = 7;</code>
+     *
+     * @return Whether the examples field is set.
+     */
+    @java.lang.Override
+    public boolean hasExamples() {
+      return methodCase_ == 7;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Example-based explanations that returns the nearest neighbors from the
+     * provided dataset.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.Examples examples = 7;</code>
+     *
+     * @return The examples.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.Examples getExamples() {
+      if (examplesBuilder_ == null) {
+        if (methodCase_ == 7) {
+          return (com.google.cloud.aiplatform.v1.Examples) method_;
+        }
+        return com.google.cloud.aiplatform.v1.Examples.getDefaultInstance();
+      } else {
+        if (methodCase_ == 7) {
+          return examplesBuilder_.getMessage();
+        }
+        return com.google.cloud.aiplatform.v1.Examples.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Example-based explanations that returns the nearest neighbors from the
+     * provided dataset.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.Examples examples = 7;</code>
+     */
+    public Builder setExamples(com.google.cloud.aiplatform.v1.Examples value) {
+      if (examplesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        method_ = value;
+        onChanged();
+      } else {
+        examplesBuilder_.setMessage(value);
+      }
+      methodCase_ = 7;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Example-based explanations that returns the nearest neighbors from the
+     * provided dataset.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.Examples examples = 7;</code>
+     */
+    public Builder setExamples(com.google.cloud.aiplatform.v1.Examples.Builder builderForValue) {
+      if (examplesBuilder_ == null) {
+        method_ = builderForValue.build();
+        onChanged();
+      } else {
+        examplesBuilder_.setMessage(builderForValue.build());
+      }
+      methodCase_ = 7;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Example-based explanations that returns the nearest neighbors from the
+     * provided dataset.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.Examples examples = 7;</code>
+     */
+    public Builder mergeExamples(com.google.cloud.aiplatform.v1.Examples value) {
+      if (examplesBuilder_ == null) {
+        if (methodCase_ == 7
+            && method_ != com.google.cloud.aiplatform.v1.Examples.getDefaultInstance()) {
+          method_ =
+              com.google.cloud.aiplatform.v1.Examples.newBuilder(
+                      (com.google.cloud.aiplatform.v1.Examples) method_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          method_ = value;
+        }
+        onChanged();
+      } else {
+        if (methodCase_ == 7) {
+          examplesBuilder_.mergeFrom(value);
+        } else {
+          examplesBuilder_.setMessage(value);
+        }
+      }
+      methodCase_ = 7;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Example-based explanations that returns the nearest neighbors from the
+     * provided dataset.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.Examples examples = 7;</code>
+     */
+    public Builder clearExamples() {
+      if (examplesBuilder_ == null) {
+        if (methodCase_ == 7) {
+          methodCase_ = 0;
+          method_ = null;
+          onChanged();
+        }
+      } else {
+        if (methodCase_ == 7) {
+          methodCase_ = 0;
+          method_ = null;
+        }
+        examplesBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Example-based explanations that returns the nearest neighbors from the
+     * provided dataset.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.Examples examples = 7;</code>
+     */
+    public com.google.cloud.aiplatform.v1.Examples.Builder getExamplesBuilder() {
+      return getExamplesFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Example-based explanations that returns the nearest neighbors from the
+     * provided dataset.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.Examples examples = 7;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.ExamplesOrBuilder getExamplesOrBuilder() {
+      if ((methodCase_ == 7) && (examplesBuilder_ != null)) {
+        return examplesBuilder_.getMessageOrBuilder();
+      } else {
+        if (methodCase_ == 7) {
+          return (com.google.cloud.aiplatform.v1.Examples) method_;
+        }
+        return com.google.cloud.aiplatform.v1.Examples.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Example-based explanations that returns the nearest neighbors from the
+     * provided dataset.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.Examples examples = 7;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.Examples,
+            com.google.cloud.aiplatform.v1.Examples.Builder,
+            com.google.cloud.aiplatform.v1.ExamplesOrBuilder>
+        getExamplesFieldBuilder() {
+      if (examplesBuilder_ == null) {
+        if (!(methodCase_ == 7)) {
+          method_ = com.google.cloud.aiplatform.v1.Examples.getDefaultInstance();
+        }
+        examplesBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1.Examples,
+                com.google.cloud.aiplatform.v1.Examples.Builder,
+                com.google.cloud.aiplatform.v1.ExamplesOrBuilder>(
+                (com.google.cloud.aiplatform.v1.Examples) method_,
+                getParentForChildren(),
+                isClean());
+        method_ = null;
+      }
+      methodCase_ = 7;
+      onChanged();
+      return examplesBuilder_;
     }
 
     private int topK_;
@@ -1737,7 +2058,7 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
     public Builder setTopK(int value) {
 
       topK_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1756,7 +2077,7 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearTopK() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       topK_ = 0;
       onChanged();
       return this;
@@ -1776,10 +2097,12 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
      * [output_index][google.cloud.aiplatform.v1.Attribution.output_index]
      * contained in output_indices. It must be an ndarray of integers, with the
      * same shape of the output it's explaining.
+     *
      * If not populated, returns attributions for
      * [top_k][google.cloud.aiplatform.v1.ExplanationParameters.top_k] indices of
      * outputs. If neither top_k nor output_indices is populated, returns the
      * argmax index of the outputs.
+     *
      * Only applicable to Models that predict multiple outputs (e,g, multi-class
      * Models that predict multiple classes).
      * </pre>
@@ -1789,7 +2112,7 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
      * @return Whether the outputIndices field is set.
      */
     public boolean hasOutputIndices() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -1799,10 +2122,12 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
      * [output_index][google.cloud.aiplatform.v1.Attribution.output_index]
      * contained in output_indices. It must be an ndarray of integers, with the
      * same shape of the output it's explaining.
+     *
      * If not populated, returns attributions for
      * [top_k][google.cloud.aiplatform.v1.ExplanationParameters.top_k] indices of
      * outputs. If neither top_k nor output_indices is populated, returns the
      * argmax index of the outputs.
+     *
      * Only applicable to Models that predict multiple outputs (e,g, multi-class
      * Models that predict multiple classes).
      * </pre>
@@ -1828,10 +2153,12 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
      * [output_index][google.cloud.aiplatform.v1.Attribution.output_index]
      * contained in output_indices. It must be an ndarray of integers, with the
      * same shape of the output it's explaining.
+     *
      * If not populated, returns attributions for
      * [top_k][google.cloud.aiplatform.v1.ExplanationParameters.top_k] indices of
      * outputs. If neither top_k nor output_indices is populated, returns the
      * argmax index of the outputs.
+     *
      * Only applicable to Models that predict multiple outputs (e,g, multi-class
      * Models that predict multiple classes).
      * </pre>
@@ -1847,7 +2174,7 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
       } else {
         outputIndicesBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1859,10 +2186,12 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
      * [output_index][google.cloud.aiplatform.v1.Attribution.output_index]
      * contained in output_indices. It must be an ndarray of integers, with the
      * same shape of the output it's explaining.
+     *
      * If not populated, returns attributions for
      * [top_k][google.cloud.aiplatform.v1.ExplanationParameters.top_k] indices of
      * outputs. If neither top_k nor output_indices is populated, returns the
      * argmax index of the outputs.
+     *
      * Only applicable to Models that predict multiple outputs (e,g, multi-class
      * Models that predict multiple classes).
      * </pre>
@@ -1875,7 +2204,7 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
       } else {
         outputIndicesBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1887,10 +2216,12 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
      * [output_index][google.cloud.aiplatform.v1.Attribution.output_index]
      * contained in output_indices. It must be an ndarray of integers, with the
      * same shape of the output it's explaining.
+     *
      * If not populated, returns attributions for
      * [top_k][google.cloud.aiplatform.v1.ExplanationParameters.top_k] indices of
      * outputs. If neither top_k nor output_indices is populated, returns the
      * argmax index of the outputs.
+     *
      * Only applicable to Models that predict multiple outputs (e,g, multi-class
      * Models that predict multiple classes).
      * </pre>
@@ -1899,7 +2230,7 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeOutputIndices(com.google.protobuf.ListValue value) {
       if (outputIndicesBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)
+        if (((bitField0_ & 0x00000020) != 0)
             && outputIndices_ != null
             && outputIndices_ != com.google.protobuf.ListValue.getDefaultInstance()) {
           getOutputIndicesBuilder().mergeFrom(value);
@@ -1909,7 +2240,7 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
       } else {
         outputIndicesBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1921,10 +2252,12 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
      * [output_index][google.cloud.aiplatform.v1.Attribution.output_index]
      * contained in output_indices. It must be an ndarray of integers, with the
      * same shape of the output it's explaining.
+     *
      * If not populated, returns attributions for
      * [top_k][google.cloud.aiplatform.v1.ExplanationParameters.top_k] indices of
      * outputs. If neither top_k nor output_indices is populated, returns the
      * argmax index of the outputs.
+     *
      * Only applicable to Models that predict multiple outputs (e,g, multi-class
      * Models that predict multiple classes).
      * </pre>
@@ -1932,7 +2265,7 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
      * <code>.google.protobuf.ListValue output_indices = 5;</code>
      */
     public Builder clearOutputIndices() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       outputIndices_ = null;
       if (outputIndicesBuilder_ != null) {
         outputIndicesBuilder_.dispose();
@@ -1949,10 +2282,12 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
      * [output_index][google.cloud.aiplatform.v1.Attribution.output_index]
      * contained in output_indices. It must be an ndarray of integers, with the
      * same shape of the output it's explaining.
+     *
      * If not populated, returns attributions for
      * [top_k][google.cloud.aiplatform.v1.ExplanationParameters.top_k] indices of
      * outputs. If neither top_k nor output_indices is populated, returns the
      * argmax index of the outputs.
+     *
      * Only applicable to Models that predict multiple outputs (e,g, multi-class
      * Models that predict multiple classes).
      * </pre>
@@ -1960,7 +2295,7 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
      * <code>.google.protobuf.ListValue output_indices = 5;</code>
      */
     public com.google.protobuf.ListValue.Builder getOutputIndicesBuilder() {
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return getOutputIndicesFieldBuilder().getBuilder();
     }
@@ -1972,10 +2307,12 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
      * [output_index][google.cloud.aiplatform.v1.Attribution.output_index]
      * contained in output_indices. It must be an ndarray of integers, with the
      * same shape of the output it's explaining.
+     *
      * If not populated, returns attributions for
      * [top_k][google.cloud.aiplatform.v1.ExplanationParameters.top_k] indices of
      * outputs. If neither top_k nor output_indices is populated, returns the
      * argmax index of the outputs.
+     *
      * Only applicable to Models that predict multiple outputs (e,g, multi-class
      * Models that predict multiple classes).
      * </pre>
@@ -1999,10 +2336,12 @@ public final class ExplanationParameters extends com.google.protobuf.GeneratedMe
      * [output_index][google.cloud.aiplatform.v1.Attribution.output_index]
      * contained in output_indices. It must be an ndarray of integers, with the
      * same shape of the output it's explaining.
+     *
      * If not populated, returns attributions for
      * [top_k][google.cloud.aiplatform.v1.ExplanationParameters.top_k] indices of
      * outputs. If neither top_k nor output_indices is populated, returns the
      * argmax index of the outputs.
+     *
      * Only applicable to Models that predict multiple outputs (e,g, multi-class
      * Models that predict multiple classes).
      * </pre>

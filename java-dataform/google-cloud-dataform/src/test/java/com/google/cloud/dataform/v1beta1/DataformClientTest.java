@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,13 +16,17 @@
 
 package com.google.cloud.dataform.v1beta1;
 
+import static com.google.cloud.dataform.v1beta1.DataformClient.FetchRepositoryHistoryPagedResponse;
 import static com.google.cloud.dataform.v1beta1.DataformClient.ListCompilationResultsPagedResponse;
 import static com.google.cloud.dataform.v1beta1.DataformClient.ListLocationsPagedResponse;
+import static com.google.cloud.dataform.v1beta1.DataformClient.ListReleaseConfigsPagedResponse;
 import static com.google.cloud.dataform.v1beta1.DataformClient.ListRepositoriesPagedResponse;
+import static com.google.cloud.dataform.v1beta1.DataformClient.ListWorkflowConfigsPagedResponse;
 import static com.google.cloud.dataform.v1beta1.DataformClient.ListWorkflowInvocationsPagedResponse;
 import static com.google.cloud.dataform.v1beta1.DataformClient.ListWorkspacesPagedResponse;
 import static com.google.cloud.dataform.v1beta1.DataformClient.QueryCompilationResultActionsPagedResponse;
 import static com.google.cloud.dataform.v1beta1.DataformClient.QueryDirectoryContentsPagedResponse;
+import static com.google.cloud.dataform.v1beta1.DataformClient.QueryRepositoryDirectoryContentsPagedResponse;
 import static com.google.cloud.dataform.v1beta1.DataformClient.QueryWorkflowInvocationActionsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
@@ -37,6 +41,14 @@ import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
 import com.google.common.collect.Lists;
+import com.google.iam.v1.AuditConfig;
+import com.google.iam.v1.Binding;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.GetPolicyOptions;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
 import com.google.protobuf.ByteString;
@@ -194,7 +206,15 @@ public class DataformClientTest {
     Repository expectedResponse =
         Repository.newBuilder()
             .setName(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+            .setDisplayName("displayName1714148973")
             .setGitRemoteSettings(Repository.GitRemoteSettings.newBuilder().build())
+            .setNpmrcEnvironmentVariablesSecretVersion(
+                "npmrcEnvironmentVariablesSecretVersion-1472767288")
+            .setWorkspaceCompilationOverrides(
+                Repository.WorkspaceCompilationOverrides.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setSetAuthenticatedUserAdmin(true)
+            .setServiceAccount("serviceAccount1079137720")
             .build();
     mockDataform.addResponse(expectedResponse);
 
@@ -233,7 +253,15 @@ public class DataformClientTest {
     Repository expectedResponse =
         Repository.newBuilder()
             .setName(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+            .setDisplayName("displayName1714148973")
             .setGitRemoteSettings(Repository.GitRemoteSettings.newBuilder().build())
+            .setNpmrcEnvironmentVariablesSecretVersion(
+                "npmrcEnvironmentVariablesSecretVersion-1472767288")
+            .setWorkspaceCompilationOverrides(
+                Repository.WorkspaceCompilationOverrides.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setSetAuthenticatedUserAdmin(true)
+            .setServiceAccount("serviceAccount1079137720")
             .build();
     mockDataform.addResponse(expectedResponse);
 
@@ -272,7 +300,15 @@ public class DataformClientTest {
     Repository expectedResponse =
         Repository.newBuilder()
             .setName(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+            .setDisplayName("displayName1714148973")
             .setGitRemoteSettings(Repository.GitRemoteSettings.newBuilder().build())
+            .setNpmrcEnvironmentVariablesSecretVersion(
+                "npmrcEnvironmentVariablesSecretVersion-1472767288")
+            .setWorkspaceCompilationOverrides(
+                Repository.WorkspaceCompilationOverrides.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setSetAuthenticatedUserAdmin(true)
+            .setServiceAccount("serviceAccount1079137720")
             .build();
     mockDataform.addResponse(expectedResponse);
 
@@ -317,7 +353,15 @@ public class DataformClientTest {
     Repository expectedResponse =
         Repository.newBuilder()
             .setName(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+            .setDisplayName("displayName1714148973")
             .setGitRemoteSettings(Repository.GitRemoteSettings.newBuilder().build())
+            .setNpmrcEnvironmentVariablesSecretVersion(
+                "npmrcEnvironmentVariablesSecretVersion-1472767288")
+            .setWorkspaceCompilationOverrides(
+                Repository.WorkspaceCompilationOverrides.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setSetAuthenticatedUserAdmin(true)
+            .setServiceAccount("serviceAccount1079137720")
             .build();
     mockDataform.addResponse(expectedResponse);
 
@@ -362,7 +406,15 @@ public class DataformClientTest {
     Repository expectedResponse =
         Repository.newBuilder()
             .setName(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+            .setDisplayName("displayName1714148973")
             .setGitRemoteSettings(Repository.GitRemoteSettings.newBuilder().build())
+            .setNpmrcEnvironmentVariablesSecretVersion(
+                "npmrcEnvironmentVariablesSecretVersion-1472767288")
+            .setWorkspaceCompilationOverrides(
+                Repository.WorkspaceCompilationOverrides.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setSetAuthenticatedUserAdmin(true)
+            .setServiceAccount("serviceAccount1079137720")
             .build();
     mockDataform.addResponse(expectedResponse);
 
@@ -461,6 +513,272 @@ public class DataformClientTest {
     try {
       String name = "name3373707";
       client.deleteRepository(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void commitRepositoryChangesTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockDataform.addResponse(expectedResponse);
+
+    CommitRepositoryChangesRequest request =
+        CommitRepositoryChangesRequest.newBuilder()
+            .setName(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+            .setCommitMetadata(CommitMetadata.newBuilder().build())
+            .setRequiredHeadCommitSha("requiredHeadCommitSha-393901930")
+            .putAllFileOperations(
+                new HashMap<String, CommitRepositoryChangesRequest.FileOperation>())
+            .build();
+
+    client.commitRepositoryChanges(request);
+
+    List<AbstractMessage> actualRequests = mockDataform.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CommitRepositoryChangesRequest actualRequest =
+        ((CommitRepositoryChangesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(request.getCommitMetadata(), actualRequest.getCommitMetadata());
+    Assert.assertEquals(
+        request.getRequiredHeadCommitSha(), actualRequest.getRequiredHeadCommitSha());
+    Assert.assertEquals(request.getFileOperationsMap(), actualRequest.getFileOperationsMap());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void commitRepositoryChangesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataform.addException(exception);
+
+    try {
+      CommitRepositoryChangesRequest request =
+          CommitRepositoryChangesRequest.newBuilder()
+              .setName(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+              .setCommitMetadata(CommitMetadata.newBuilder().build())
+              .setRequiredHeadCommitSha("requiredHeadCommitSha-393901930")
+              .putAllFileOperations(
+                  new HashMap<String, CommitRepositoryChangesRequest.FileOperation>())
+              .build();
+      client.commitRepositoryChanges(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void readRepositoryFileTest() throws Exception {
+    ReadRepositoryFileResponse expectedResponse =
+        ReadRepositoryFileResponse.newBuilder().setContents(ByteString.EMPTY).build();
+    mockDataform.addResponse(expectedResponse);
+
+    ReadRepositoryFileRequest request =
+        ReadRepositoryFileRequest.newBuilder()
+            .setName(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+            .setCommitSha("commitSha-1491174411")
+            .setPath("path3433509")
+            .build();
+
+    ReadRepositoryFileResponse actualResponse = client.readRepositoryFile(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataform.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ReadRepositoryFileRequest actualRequest = ((ReadRepositoryFileRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(request.getCommitSha(), actualRequest.getCommitSha());
+    Assert.assertEquals(request.getPath(), actualRequest.getPath());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void readRepositoryFileExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataform.addException(exception);
+
+    try {
+      ReadRepositoryFileRequest request =
+          ReadRepositoryFileRequest.newBuilder()
+              .setName(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+              .setCommitSha("commitSha-1491174411")
+              .setPath("path3433509")
+              .build();
+      client.readRepositoryFile(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void queryRepositoryDirectoryContentsTest() throws Exception {
+    DirectoryEntry responsesElement = DirectoryEntry.newBuilder().build();
+    QueryRepositoryDirectoryContentsResponse expectedResponse =
+        QueryRepositoryDirectoryContentsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllDirectoryEntries(Arrays.asList(responsesElement))
+            .build();
+    mockDataform.addResponse(expectedResponse);
+
+    QueryRepositoryDirectoryContentsRequest request =
+        QueryRepositoryDirectoryContentsRequest.newBuilder()
+            .setName(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+            .setCommitSha("commitSha-1491174411")
+            .setPath("path3433509")
+            .setPageSize(883849137)
+            .setPageToken("pageToken873572522")
+            .build();
+
+    QueryRepositoryDirectoryContentsPagedResponse pagedListResponse =
+        client.queryRepositoryDirectoryContents(request);
+
+    List<DirectoryEntry> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getDirectoryEntriesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockDataform.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    QueryRepositoryDirectoryContentsRequest actualRequest =
+        ((QueryRepositoryDirectoryContentsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(request.getCommitSha(), actualRequest.getCommitSha());
+    Assert.assertEquals(request.getPath(), actualRequest.getPath());
+    Assert.assertEquals(request.getPageSize(), actualRequest.getPageSize());
+    Assert.assertEquals(request.getPageToken(), actualRequest.getPageToken());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void queryRepositoryDirectoryContentsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataform.addException(exception);
+
+    try {
+      QueryRepositoryDirectoryContentsRequest request =
+          QueryRepositoryDirectoryContentsRequest.newBuilder()
+              .setName(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+              .setCommitSha("commitSha-1491174411")
+              .setPath("path3433509")
+              .setPageSize(883849137)
+              .setPageToken("pageToken873572522")
+              .build();
+      client.queryRepositoryDirectoryContents(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void fetchRepositoryHistoryTest() throws Exception {
+    CommitLogEntry responsesElement = CommitLogEntry.newBuilder().build();
+    FetchRepositoryHistoryResponse expectedResponse =
+        FetchRepositoryHistoryResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllCommits(Arrays.asList(responsesElement))
+            .build();
+    mockDataform.addResponse(expectedResponse);
+
+    FetchRepositoryHistoryRequest request =
+        FetchRepositoryHistoryRequest.newBuilder()
+            .setName(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+            .setPageSize(883849137)
+            .setPageToken("pageToken873572522")
+            .build();
+
+    FetchRepositoryHistoryPagedResponse pagedListResponse = client.fetchRepositoryHistory(request);
+
+    List<CommitLogEntry> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getCommitsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockDataform.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    FetchRepositoryHistoryRequest actualRequest =
+        ((FetchRepositoryHistoryRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(request.getPageSize(), actualRequest.getPageSize());
+    Assert.assertEquals(request.getPageToken(), actualRequest.getPageToken());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void fetchRepositoryHistoryExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataform.addException(exception);
+
+    try {
+      FetchRepositoryHistoryRequest request =
+          FetchRepositoryHistoryRequest.newBuilder()
+              .setName(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+              .setPageSize(883849137)
+              .setPageToken("pageToken873572522")
+              .build();
+      client.fetchRepositoryHistory(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void computeRepositoryAccessTokenStatusTest() throws Exception {
+    ComputeRepositoryAccessTokenStatusResponse expectedResponse =
+        ComputeRepositoryAccessTokenStatusResponse.newBuilder().build();
+    mockDataform.addResponse(expectedResponse);
+
+    ComputeRepositoryAccessTokenStatusRequest request =
+        ComputeRepositoryAccessTokenStatusRequest.newBuilder()
+            .setName(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+            .build();
+
+    ComputeRepositoryAccessTokenStatusResponse actualResponse =
+        client.computeRepositoryAccessTokenStatus(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataform.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ComputeRepositoryAccessTokenStatusRequest actualRequest =
+        ((ComputeRepositoryAccessTokenStatusRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void computeRepositoryAccessTokenStatusExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataform.addException(exception);
+
+    try {
+      ComputeRepositoryAccessTokenStatusRequest request =
+          ComputeRepositoryAccessTokenStatusRequest.newBuilder()
+              .setName(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+              .build();
+      client.computeRepositoryAccessTokenStatus(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
@@ -1239,8 +1557,7 @@ public class DataformClientTest {
 
   @Test
   public void queryDirectoryContentsTest() throws Exception {
-    QueryDirectoryContentsResponse.DirectoryEntry responsesElement =
-        QueryDirectoryContentsResponse.DirectoryEntry.newBuilder().build();
+    DirectoryEntry responsesElement = DirectoryEntry.newBuilder().build();
     QueryDirectoryContentsResponse expectedResponse =
         QueryDirectoryContentsResponse.newBuilder()
             .setNextPageToken("")
@@ -1260,8 +1577,7 @@ public class DataformClientTest {
 
     QueryDirectoryContentsPagedResponse pagedListResponse = client.queryDirectoryContents(request);
 
-    List<QueryDirectoryContentsResponse.DirectoryEntry> resources =
-        Lists.newArrayList(pagedListResponse.iterateAll());
+    List<DirectoryEntry> resources = Lists.newArrayList(pagedListResponse.iterateAll());
 
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getDirectoryEntriesList().get(0), resources.get(0));
@@ -1648,6 +1964,433 @@ public class DataformClientTest {
   }
 
   @Test
+  public void listReleaseConfigsTest() throws Exception {
+    ReleaseConfig responsesElement = ReleaseConfig.newBuilder().build();
+    ListReleaseConfigsResponse expectedResponse =
+        ListReleaseConfigsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllReleaseConfigs(Arrays.asList(responsesElement))
+            .build();
+    mockDataform.addResponse(expectedResponse);
+
+    RepositoryName parent = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]");
+
+    ListReleaseConfigsPagedResponse pagedListResponse = client.listReleaseConfigs(parent);
+
+    List<ReleaseConfig> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getReleaseConfigsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockDataform.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListReleaseConfigsRequest actualRequest = ((ListReleaseConfigsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listReleaseConfigsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataform.addException(exception);
+
+    try {
+      RepositoryName parent = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]");
+      client.listReleaseConfigs(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listReleaseConfigsTest2() throws Exception {
+    ReleaseConfig responsesElement = ReleaseConfig.newBuilder().build();
+    ListReleaseConfigsResponse expectedResponse =
+        ListReleaseConfigsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllReleaseConfigs(Arrays.asList(responsesElement))
+            .build();
+    mockDataform.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListReleaseConfigsPagedResponse pagedListResponse = client.listReleaseConfigs(parent);
+
+    List<ReleaseConfig> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getReleaseConfigsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockDataform.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListReleaseConfigsRequest actualRequest = ((ListReleaseConfigsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listReleaseConfigsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataform.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listReleaseConfigs(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getReleaseConfigTest() throws Exception {
+    ReleaseConfig expectedResponse =
+        ReleaseConfig.newBuilder()
+            .setName(
+                ReleaseConfigName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[RELEASE_CONFIG]")
+                    .toString())
+            .setGitCommitish("gitCommitish-98628555")
+            .setCodeCompilationConfig(CodeCompilationConfig.newBuilder().build())
+            .setCronSchedule("cronSchedule-1022672059")
+            .setTimeZone("timeZone-2077180903")
+            .addAllRecentScheduledReleaseRecords(
+                new ArrayList<ReleaseConfig.ScheduledReleaseRecord>())
+            .setReleaseCompilationResult(
+                CompilationResultName.of(
+                        "[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[COMPILATION_RESULT]")
+                    .toString())
+            .build();
+    mockDataform.addResponse(expectedResponse);
+
+    ReleaseConfigName name =
+        ReleaseConfigName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[RELEASE_CONFIG]");
+
+    ReleaseConfig actualResponse = client.getReleaseConfig(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataform.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetReleaseConfigRequest actualRequest = ((GetReleaseConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getReleaseConfigExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataform.addException(exception);
+
+    try {
+      ReleaseConfigName name =
+          ReleaseConfigName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[RELEASE_CONFIG]");
+      client.getReleaseConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getReleaseConfigTest2() throws Exception {
+    ReleaseConfig expectedResponse =
+        ReleaseConfig.newBuilder()
+            .setName(
+                ReleaseConfigName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[RELEASE_CONFIG]")
+                    .toString())
+            .setGitCommitish("gitCommitish-98628555")
+            .setCodeCompilationConfig(CodeCompilationConfig.newBuilder().build())
+            .setCronSchedule("cronSchedule-1022672059")
+            .setTimeZone("timeZone-2077180903")
+            .addAllRecentScheduledReleaseRecords(
+                new ArrayList<ReleaseConfig.ScheduledReleaseRecord>())
+            .setReleaseCompilationResult(
+                CompilationResultName.of(
+                        "[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[COMPILATION_RESULT]")
+                    .toString())
+            .build();
+    mockDataform.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    ReleaseConfig actualResponse = client.getReleaseConfig(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataform.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetReleaseConfigRequest actualRequest = ((GetReleaseConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getReleaseConfigExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataform.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getReleaseConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createReleaseConfigTest() throws Exception {
+    ReleaseConfig expectedResponse =
+        ReleaseConfig.newBuilder()
+            .setName(
+                ReleaseConfigName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[RELEASE_CONFIG]")
+                    .toString())
+            .setGitCommitish("gitCommitish-98628555")
+            .setCodeCompilationConfig(CodeCompilationConfig.newBuilder().build())
+            .setCronSchedule("cronSchedule-1022672059")
+            .setTimeZone("timeZone-2077180903")
+            .addAllRecentScheduledReleaseRecords(
+                new ArrayList<ReleaseConfig.ScheduledReleaseRecord>())
+            .setReleaseCompilationResult(
+                CompilationResultName.of(
+                        "[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[COMPILATION_RESULT]")
+                    .toString())
+            .build();
+    mockDataform.addResponse(expectedResponse);
+
+    RepositoryName parent = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]");
+    ReleaseConfig releaseConfig = ReleaseConfig.newBuilder().build();
+    String releaseConfigId = "releaseConfigId1350457636";
+
+    ReleaseConfig actualResponse =
+        client.createReleaseConfig(parent, releaseConfig, releaseConfigId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataform.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateReleaseConfigRequest actualRequest = ((CreateReleaseConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(releaseConfig, actualRequest.getReleaseConfig());
+    Assert.assertEquals(releaseConfigId, actualRequest.getReleaseConfigId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createReleaseConfigExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataform.addException(exception);
+
+    try {
+      RepositoryName parent = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]");
+      ReleaseConfig releaseConfig = ReleaseConfig.newBuilder().build();
+      String releaseConfigId = "releaseConfigId1350457636";
+      client.createReleaseConfig(parent, releaseConfig, releaseConfigId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createReleaseConfigTest2() throws Exception {
+    ReleaseConfig expectedResponse =
+        ReleaseConfig.newBuilder()
+            .setName(
+                ReleaseConfigName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[RELEASE_CONFIG]")
+                    .toString())
+            .setGitCommitish("gitCommitish-98628555")
+            .setCodeCompilationConfig(CodeCompilationConfig.newBuilder().build())
+            .setCronSchedule("cronSchedule-1022672059")
+            .setTimeZone("timeZone-2077180903")
+            .addAllRecentScheduledReleaseRecords(
+                new ArrayList<ReleaseConfig.ScheduledReleaseRecord>())
+            .setReleaseCompilationResult(
+                CompilationResultName.of(
+                        "[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[COMPILATION_RESULT]")
+                    .toString())
+            .build();
+    mockDataform.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    ReleaseConfig releaseConfig = ReleaseConfig.newBuilder().build();
+    String releaseConfigId = "releaseConfigId1350457636";
+
+    ReleaseConfig actualResponse =
+        client.createReleaseConfig(parent, releaseConfig, releaseConfigId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataform.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateReleaseConfigRequest actualRequest = ((CreateReleaseConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(releaseConfig, actualRequest.getReleaseConfig());
+    Assert.assertEquals(releaseConfigId, actualRequest.getReleaseConfigId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createReleaseConfigExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataform.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      ReleaseConfig releaseConfig = ReleaseConfig.newBuilder().build();
+      String releaseConfigId = "releaseConfigId1350457636";
+      client.createReleaseConfig(parent, releaseConfig, releaseConfigId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateReleaseConfigTest() throws Exception {
+    ReleaseConfig expectedResponse =
+        ReleaseConfig.newBuilder()
+            .setName(
+                ReleaseConfigName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[RELEASE_CONFIG]")
+                    .toString())
+            .setGitCommitish("gitCommitish-98628555")
+            .setCodeCompilationConfig(CodeCompilationConfig.newBuilder().build())
+            .setCronSchedule("cronSchedule-1022672059")
+            .setTimeZone("timeZone-2077180903")
+            .addAllRecentScheduledReleaseRecords(
+                new ArrayList<ReleaseConfig.ScheduledReleaseRecord>())
+            .setReleaseCompilationResult(
+                CompilationResultName.of(
+                        "[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[COMPILATION_RESULT]")
+                    .toString())
+            .build();
+    mockDataform.addResponse(expectedResponse);
+
+    ReleaseConfig releaseConfig = ReleaseConfig.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    ReleaseConfig actualResponse = client.updateReleaseConfig(releaseConfig, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataform.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateReleaseConfigRequest actualRequest = ((UpdateReleaseConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(releaseConfig, actualRequest.getReleaseConfig());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateReleaseConfigExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataform.addException(exception);
+
+    try {
+      ReleaseConfig releaseConfig = ReleaseConfig.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateReleaseConfig(releaseConfig, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteReleaseConfigTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockDataform.addResponse(expectedResponse);
+
+    ReleaseConfigName name =
+        ReleaseConfigName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[RELEASE_CONFIG]");
+
+    client.deleteReleaseConfig(name);
+
+    List<AbstractMessage> actualRequests = mockDataform.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteReleaseConfigRequest actualRequest = ((DeleteReleaseConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteReleaseConfigExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataform.addException(exception);
+
+    try {
+      ReleaseConfigName name =
+          ReleaseConfigName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[RELEASE_CONFIG]");
+      client.deleteReleaseConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteReleaseConfigTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockDataform.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    client.deleteReleaseConfig(name);
+
+    List<AbstractMessage> actualRequests = mockDataform.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteReleaseConfigRequest actualRequest = ((DeleteReleaseConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteReleaseConfigExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataform.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteReleaseConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void listCompilationResultsTest() throws Exception {
     CompilationResult responsesElement = CompilationResult.newBuilder().build();
     ListCompilationResultsResponse expectedResponse =
@@ -1745,7 +2488,8 @@ public class DataformClientTest {
                 CompilationResultName.of(
                         "[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[COMPILATION_RESULT]")
                     .toString())
-            .setCodeCompilationConfig(CompilationResult.CodeCompilationConfig.newBuilder().build())
+            .setCodeCompilationConfig(CodeCompilationConfig.newBuilder().build())
+            .setResolvedGitCommitSha("resolvedGitCommitSha1908380763")
             .setDataformCoreVersion("dataformCoreVersion1859535851")
             .addAllCompilationErrors(new ArrayList<CompilationResult.CompilationError>())
             .build();
@@ -1793,7 +2537,8 @@ public class DataformClientTest {
                 CompilationResultName.of(
                         "[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[COMPILATION_RESULT]")
                     .toString())
-            .setCodeCompilationConfig(CompilationResult.CodeCompilationConfig.newBuilder().build())
+            .setCodeCompilationConfig(CodeCompilationConfig.newBuilder().build())
+            .setResolvedGitCommitSha("resolvedGitCommitSha1908380763")
             .setDataformCoreVersion("dataformCoreVersion1859535851")
             .addAllCompilationErrors(new ArrayList<CompilationResult.CompilationError>())
             .build();
@@ -1838,7 +2583,8 @@ public class DataformClientTest {
                 CompilationResultName.of(
                         "[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[COMPILATION_RESULT]")
                     .toString())
-            .setCodeCompilationConfig(CompilationResult.CodeCompilationConfig.newBuilder().build())
+            .setCodeCompilationConfig(CodeCompilationConfig.newBuilder().build())
+            .setResolvedGitCommitSha("resolvedGitCommitSha1908380763")
             .setDataformCoreVersion("dataformCoreVersion1859535851")
             .addAllCompilationErrors(new ArrayList<CompilationResult.CompilationError>())
             .build();
@@ -1886,7 +2632,8 @@ public class DataformClientTest {
                 CompilationResultName.of(
                         "[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[COMPILATION_RESULT]")
                     .toString())
-            .setCodeCompilationConfig(CompilationResult.CodeCompilationConfig.newBuilder().build())
+            .setCodeCompilationConfig(CodeCompilationConfig.newBuilder().build())
+            .setResolvedGitCommitSha("resolvedGitCommitSha1908380763")
             .setDataformCoreVersion("dataformCoreVersion1859535851")
             .addAllCompilationErrors(new ArrayList<CompilationResult.CompilationError>())
             .build();
@@ -1995,6 +2742,433 @@ public class DataformClientTest {
   }
 
   @Test
+  public void listWorkflowConfigsTest() throws Exception {
+    WorkflowConfig responsesElement = WorkflowConfig.newBuilder().build();
+    ListWorkflowConfigsResponse expectedResponse =
+        ListWorkflowConfigsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllWorkflowConfigs(Arrays.asList(responsesElement))
+            .build();
+    mockDataform.addResponse(expectedResponse);
+
+    RepositoryName parent = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]");
+
+    ListWorkflowConfigsPagedResponse pagedListResponse = client.listWorkflowConfigs(parent);
+
+    List<WorkflowConfig> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getWorkflowConfigsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockDataform.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListWorkflowConfigsRequest actualRequest = ((ListWorkflowConfigsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listWorkflowConfigsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataform.addException(exception);
+
+    try {
+      RepositoryName parent = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]");
+      client.listWorkflowConfigs(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listWorkflowConfigsTest2() throws Exception {
+    WorkflowConfig responsesElement = WorkflowConfig.newBuilder().build();
+    ListWorkflowConfigsResponse expectedResponse =
+        ListWorkflowConfigsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllWorkflowConfigs(Arrays.asList(responsesElement))
+            .build();
+    mockDataform.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListWorkflowConfigsPagedResponse pagedListResponse = client.listWorkflowConfigs(parent);
+
+    List<WorkflowConfig> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getWorkflowConfigsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockDataform.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListWorkflowConfigsRequest actualRequest = ((ListWorkflowConfigsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listWorkflowConfigsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataform.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listWorkflowConfigs(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getWorkflowConfigTest() throws Exception {
+    WorkflowConfig expectedResponse =
+        WorkflowConfig.newBuilder()
+            .setName(
+                WorkflowConfigName.of(
+                        "[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKFLOW_CONFIG]")
+                    .toString())
+            .setReleaseConfig(
+                ReleaseConfigName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[RELEASE_CONFIG]")
+                    .toString())
+            .setInvocationConfig(InvocationConfig.newBuilder().build())
+            .setCronSchedule("cronSchedule-1022672059")
+            .setTimeZone("timeZone-2077180903")
+            .addAllRecentScheduledExecutionRecords(
+                new ArrayList<WorkflowConfig.ScheduledExecutionRecord>())
+            .build();
+    mockDataform.addResponse(expectedResponse);
+
+    WorkflowConfigName name =
+        WorkflowConfigName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKFLOW_CONFIG]");
+
+    WorkflowConfig actualResponse = client.getWorkflowConfig(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataform.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetWorkflowConfigRequest actualRequest = ((GetWorkflowConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getWorkflowConfigExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataform.addException(exception);
+
+    try {
+      WorkflowConfigName name =
+          WorkflowConfigName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKFLOW_CONFIG]");
+      client.getWorkflowConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getWorkflowConfigTest2() throws Exception {
+    WorkflowConfig expectedResponse =
+        WorkflowConfig.newBuilder()
+            .setName(
+                WorkflowConfigName.of(
+                        "[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKFLOW_CONFIG]")
+                    .toString())
+            .setReleaseConfig(
+                ReleaseConfigName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[RELEASE_CONFIG]")
+                    .toString())
+            .setInvocationConfig(InvocationConfig.newBuilder().build())
+            .setCronSchedule("cronSchedule-1022672059")
+            .setTimeZone("timeZone-2077180903")
+            .addAllRecentScheduledExecutionRecords(
+                new ArrayList<WorkflowConfig.ScheduledExecutionRecord>())
+            .build();
+    mockDataform.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    WorkflowConfig actualResponse = client.getWorkflowConfig(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataform.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetWorkflowConfigRequest actualRequest = ((GetWorkflowConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getWorkflowConfigExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataform.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getWorkflowConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createWorkflowConfigTest() throws Exception {
+    WorkflowConfig expectedResponse =
+        WorkflowConfig.newBuilder()
+            .setName(
+                WorkflowConfigName.of(
+                        "[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKFLOW_CONFIG]")
+                    .toString())
+            .setReleaseConfig(
+                ReleaseConfigName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[RELEASE_CONFIG]")
+                    .toString())
+            .setInvocationConfig(InvocationConfig.newBuilder().build())
+            .setCronSchedule("cronSchedule-1022672059")
+            .setTimeZone("timeZone-2077180903")
+            .addAllRecentScheduledExecutionRecords(
+                new ArrayList<WorkflowConfig.ScheduledExecutionRecord>())
+            .build();
+    mockDataform.addResponse(expectedResponse);
+
+    RepositoryName parent = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]");
+    WorkflowConfig workflowConfig = WorkflowConfig.newBuilder().build();
+    String workflowConfigId = "workflowConfigId-1331048228";
+
+    WorkflowConfig actualResponse =
+        client.createWorkflowConfig(parent, workflowConfig, workflowConfigId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataform.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateWorkflowConfigRequest actualRequest =
+        ((CreateWorkflowConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(workflowConfig, actualRequest.getWorkflowConfig());
+    Assert.assertEquals(workflowConfigId, actualRequest.getWorkflowConfigId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createWorkflowConfigExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataform.addException(exception);
+
+    try {
+      RepositoryName parent = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]");
+      WorkflowConfig workflowConfig = WorkflowConfig.newBuilder().build();
+      String workflowConfigId = "workflowConfigId-1331048228";
+      client.createWorkflowConfig(parent, workflowConfig, workflowConfigId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createWorkflowConfigTest2() throws Exception {
+    WorkflowConfig expectedResponse =
+        WorkflowConfig.newBuilder()
+            .setName(
+                WorkflowConfigName.of(
+                        "[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKFLOW_CONFIG]")
+                    .toString())
+            .setReleaseConfig(
+                ReleaseConfigName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[RELEASE_CONFIG]")
+                    .toString())
+            .setInvocationConfig(InvocationConfig.newBuilder().build())
+            .setCronSchedule("cronSchedule-1022672059")
+            .setTimeZone("timeZone-2077180903")
+            .addAllRecentScheduledExecutionRecords(
+                new ArrayList<WorkflowConfig.ScheduledExecutionRecord>())
+            .build();
+    mockDataform.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    WorkflowConfig workflowConfig = WorkflowConfig.newBuilder().build();
+    String workflowConfigId = "workflowConfigId-1331048228";
+
+    WorkflowConfig actualResponse =
+        client.createWorkflowConfig(parent, workflowConfig, workflowConfigId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataform.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateWorkflowConfigRequest actualRequest =
+        ((CreateWorkflowConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(workflowConfig, actualRequest.getWorkflowConfig());
+    Assert.assertEquals(workflowConfigId, actualRequest.getWorkflowConfigId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createWorkflowConfigExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataform.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      WorkflowConfig workflowConfig = WorkflowConfig.newBuilder().build();
+      String workflowConfigId = "workflowConfigId-1331048228";
+      client.createWorkflowConfig(parent, workflowConfig, workflowConfigId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateWorkflowConfigTest() throws Exception {
+    WorkflowConfig expectedResponse =
+        WorkflowConfig.newBuilder()
+            .setName(
+                WorkflowConfigName.of(
+                        "[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKFLOW_CONFIG]")
+                    .toString())
+            .setReleaseConfig(
+                ReleaseConfigName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[RELEASE_CONFIG]")
+                    .toString())
+            .setInvocationConfig(InvocationConfig.newBuilder().build())
+            .setCronSchedule("cronSchedule-1022672059")
+            .setTimeZone("timeZone-2077180903")
+            .addAllRecentScheduledExecutionRecords(
+                new ArrayList<WorkflowConfig.ScheduledExecutionRecord>())
+            .build();
+    mockDataform.addResponse(expectedResponse);
+
+    WorkflowConfig workflowConfig = WorkflowConfig.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    WorkflowConfig actualResponse = client.updateWorkflowConfig(workflowConfig, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataform.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateWorkflowConfigRequest actualRequest =
+        ((UpdateWorkflowConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(workflowConfig, actualRequest.getWorkflowConfig());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateWorkflowConfigExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataform.addException(exception);
+
+    try {
+      WorkflowConfig workflowConfig = WorkflowConfig.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateWorkflowConfig(workflowConfig, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteWorkflowConfigTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockDataform.addResponse(expectedResponse);
+
+    WorkflowConfigName name =
+        WorkflowConfigName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKFLOW_CONFIG]");
+
+    client.deleteWorkflowConfig(name);
+
+    List<AbstractMessage> actualRequests = mockDataform.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteWorkflowConfigRequest actualRequest =
+        ((DeleteWorkflowConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteWorkflowConfigExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataform.addException(exception);
+
+    try {
+      WorkflowConfigName name =
+          WorkflowConfigName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKFLOW_CONFIG]");
+      client.deleteWorkflowConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteWorkflowConfigTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockDataform.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    client.deleteWorkflowConfig(name);
+
+    List<AbstractMessage> actualRequests = mockDataform.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteWorkflowConfigRequest actualRequest =
+        ((DeleteWorkflowConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteWorkflowConfigExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataform.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteWorkflowConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void listWorkflowInvocationsTest() throws Exception {
     WorkflowInvocation responsesElement = WorkflowInvocation.newBuilder().build();
     ListWorkflowInvocationsResponse expectedResponse =
@@ -2092,11 +3266,7 @@ public class DataformClientTest {
                 WorkflowInvocationName.of(
                         "[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKFLOW_INVOCATION]")
                     .toString())
-            .setCompilationResult(
-                CompilationResultName.of(
-                        "[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[COMPILATION_RESULT]")
-                    .toString())
-            .setInvocationConfig(WorkflowInvocation.InvocationConfig.newBuilder().build())
+            .setInvocationConfig(InvocationConfig.newBuilder().build())
             .setInvocationTiming(Interval.newBuilder().build())
             .build();
     mockDataform.addResponse(expectedResponse);
@@ -2144,11 +3314,7 @@ public class DataformClientTest {
                 WorkflowInvocationName.of(
                         "[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKFLOW_INVOCATION]")
                     .toString())
-            .setCompilationResult(
-                CompilationResultName.of(
-                        "[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[COMPILATION_RESULT]")
-                    .toString())
-            .setInvocationConfig(WorkflowInvocation.InvocationConfig.newBuilder().build())
+            .setInvocationConfig(InvocationConfig.newBuilder().build())
             .setInvocationTiming(Interval.newBuilder().build())
             .build();
     mockDataform.addResponse(expectedResponse);
@@ -2192,11 +3358,7 @@ public class DataformClientTest {
                 WorkflowInvocationName.of(
                         "[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKFLOW_INVOCATION]")
                     .toString())
-            .setCompilationResult(
-                CompilationResultName.of(
-                        "[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[COMPILATION_RESULT]")
-                    .toString())
-            .setInvocationConfig(WorkflowInvocation.InvocationConfig.newBuilder().build())
+            .setInvocationConfig(InvocationConfig.newBuilder().build())
             .setInvocationTiming(Interval.newBuilder().build())
             .build();
     mockDataform.addResponse(expectedResponse);
@@ -2243,11 +3405,7 @@ public class DataformClientTest {
                 WorkflowInvocationName.of(
                         "[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKFLOW_INVOCATION]")
                     .toString())
-            .setCompilationResult(
-                CompilationResultName.of(
-                        "[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[COMPILATION_RESULT]")
-                    .toString())
-            .setInvocationConfig(WorkflowInvocation.InvocationConfig.newBuilder().build())
+            .setInvocationConfig(InvocationConfig.newBuilder().build())
             .setInvocationTiming(Interval.newBuilder().build())
             .build();
     mockDataform.addResponse(expectedResponse);
@@ -2567,6 +3725,154 @@ public class DataformClientTest {
     try {
       GetLocationRequest request = GetLocationRequest.newBuilder().setName("name3373707").build();
       client.getLocation(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void setIamPolicyTest() throws Exception {
+    Policy expectedResponse =
+        Policy.newBuilder()
+            .setVersion(351608024)
+            .addAllBindings(new ArrayList<Binding>())
+            .addAllAuditConfigs(new ArrayList<AuditConfig>())
+            .setEtag(ByteString.EMPTY)
+            .build();
+    mockIAMPolicy.addResponse(expectedResponse);
+
+    SetIamPolicyRequest request =
+        SetIamPolicyRequest.newBuilder()
+            .setResource(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+            .setPolicy(Policy.newBuilder().build())
+            .setUpdateMask(FieldMask.newBuilder().build())
+            .build();
+
+    Policy actualResponse = client.setIamPolicy(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockIAMPolicy.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    SetIamPolicyRequest actualRequest = ((SetIamPolicyRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getResource(), actualRequest.getResource());
+    Assert.assertEquals(request.getPolicy(), actualRequest.getPolicy());
+    Assert.assertEquals(request.getUpdateMask(), actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void setIamPolicyExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockIAMPolicy.addException(exception);
+
+    try {
+      SetIamPolicyRequest request =
+          SetIamPolicyRequest.newBuilder()
+              .setResource(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+              .setPolicy(Policy.newBuilder().build())
+              .setUpdateMask(FieldMask.newBuilder().build())
+              .build();
+      client.setIamPolicy(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getIamPolicyTest() throws Exception {
+    Policy expectedResponse =
+        Policy.newBuilder()
+            .setVersion(351608024)
+            .addAllBindings(new ArrayList<Binding>())
+            .addAllAuditConfigs(new ArrayList<AuditConfig>())
+            .setEtag(ByteString.EMPTY)
+            .build();
+    mockIAMPolicy.addResponse(expectedResponse);
+
+    GetIamPolicyRequest request =
+        GetIamPolicyRequest.newBuilder()
+            .setResource(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+            .setOptions(GetPolicyOptions.newBuilder().build())
+            .build();
+
+    Policy actualResponse = client.getIamPolicy(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockIAMPolicy.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetIamPolicyRequest actualRequest = ((GetIamPolicyRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getResource(), actualRequest.getResource());
+    Assert.assertEquals(request.getOptions(), actualRequest.getOptions());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getIamPolicyExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockIAMPolicy.addException(exception);
+
+    try {
+      GetIamPolicyRequest request =
+          GetIamPolicyRequest.newBuilder()
+              .setResource(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+              .setOptions(GetPolicyOptions.newBuilder().build())
+              .build();
+      client.getIamPolicy(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void testIamPermissionsTest() throws Exception {
+    TestIamPermissionsResponse expectedResponse =
+        TestIamPermissionsResponse.newBuilder().addAllPermissions(new ArrayList<String>()).build();
+    mockIAMPolicy.addResponse(expectedResponse);
+
+    TestIamPermissionsRequest request =
+        TestIamPermissionsRequest.newBuilder()
+            .setResource(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+            .addAllPermissions(new ArrayList<String>())
+            .build();
+
+    TestIamPermissionsResponse actualResponse = client.testIamPermissions(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockIAMPolicy.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    TestIamPermissionsRequest actualRequest = ((TestIamPermissionsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getResource(), actualRequest.getResource());
+    Assert.assertEquals(request.getPermissionsList(), actualRequest.getPermissionsList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void testIamPermissionsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockIAMPolicy.addException(exception);
+
+    try {
+      TestIamPermissionsRequest request =
+          TestIamPermissionsRequest.newBuilder()
+              .setResource(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+              .addAllPermissions(new ArrayList<String>())
+              .build();
+      client.testIamPermissions(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

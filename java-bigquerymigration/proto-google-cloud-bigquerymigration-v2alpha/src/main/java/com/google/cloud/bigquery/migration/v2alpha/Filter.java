@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,18 +38,13 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
   }
 
   private Filter() {
-    inputFileExclusionPrefixes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    inputFileExclusionPrefixes_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Filter();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -70,7 +65,8 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
   public static final int INPUT_FILE_EXCLUSION_PREFIXES_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList inputFileExclusionPrefixes_;
+  private com.google.protobuf.LazyStringArrayList inputFileExclusionPrefixes_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -337,8 +333,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      inputFileExclusionPrefixes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      inputFileExclusionPrefixes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -366,7 +361,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.bigquery.migration.v2alpha.Filter buildPartial() {
       com.google.cloud.bigquery.migration.v2alpha.Filter result =
           new com.google.cloud.bigquery.migration.v2alpha.Filter(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -374,17 +368,12 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       return result;
     }
 
-    private void buildPartialRepeatedFields(
-        com.google.cloud.bigquery.migration.v2alpha.Filter result) {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        inputFileExclusionPrefixes_ = inputFileExclusionPrefixes_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.inputFileExclusionPrefixes_ = inputFileExclusionPrefixes_;
-    }
-
     private void buildPartial0(com.google.cloud.bigquery.migration.v2alpha.Filter result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        inputFileExclusionPrefixes_.makeImmutable();
+        result.inputFileExclusionPrefixes_ = inputFileExclusionPrefixes_;
+      }
     }
 
     @java.lang.Override
@@ -436,7 +425,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       if (!other.inputFileExclusionPrefixes_.isEmpty()) {
         if (inputFileExclusionPrefixes_.isEmpty()) {
           inputFileExclusionPrefixes_ = other.inputFileExclusionPrefixes_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ |= 0x00000001;
         } else {
           ensureInputFileExclusionPrefixesIsMutable();
           inputFileExclusionPrefixes_.addAll(other.inputFileExclusionPrefixes_);
@@ -495,15 +484,15 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
 
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList inputFileExclusionPrefixes_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList inputFileExclusionPrefixes_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureInputFileExclusionPrefixesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!inputFileExclusionPrefixes_.isModifiable()) {
         inputFileExclusionPrefixes_ =
             new com.google.protobuf.LazyStringArrayList(inputFileExclusionPrefixes_);
-        bitField0_ |= 0x00000001;
       }
+      bitField0_ |= 0x00000001;
     }
     /**
      *
@@ -517,7 +506,8 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the inputFileExclusionPrefixes.
      */
     public com.google.protobuf.ProtocolStringList getInputFileExclusionPrefixesList() {
-      return inputFileExclusionPrefixes_.getUnmodifiableView();
+      inputFileExclusionPrefixes_.makeImmutable();
+      return inputFileExclusionPrefixes_;
     }
     /**
      *
@@ -582,6 +572,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       }
       ensureInputFileExclusionPrefixesIsMutable();
       inputFileExclusionPrefixes_.set(index, value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -603,6 +594,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       }
       ensureInputFileExclusionPrefixesIsMutable();
       inputFileExclusionPrefixes_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -621,6 +613,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllInputFileExclusionPrefixes(java.lang.Iterable<java.lang.String> values) {
       ensureInputFileExclusionPrefixesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, inputFileExclusionPrefixes_);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -636,8 +629,9 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearInputFileExclusionPrefixes() {
-      inputFileExclusionPrefixes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      inputFileExclusionPrefixes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
+      ;
       onChanged();
       return this;
     }
@@ -660,6 +654,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureInputFileExclusionPrefixesIsMutable();
       inputFileExclusionPrefixes_.add(value);
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

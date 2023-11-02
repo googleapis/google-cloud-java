@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ public interface SignBlobRequestOrBuilder
    * <pre>
    * Required. Deprecated. [Migrate to Service Account Credentials
    * API](https://cloud.google.com/iam/help/credentials/migrate-api).
+   *
    * The resource name of the service account in the following format:
    * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
    * Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
@@ -52,6 +53,7 @@ public interface SignBlobRequestOrBuilder
    * <pre>
    * Required. Deprecated. [Migrate to Service Account Credentials
    * API](https://cloud.google.com/iam/help/credentials/migrate-api).
+   *
    * The resource name of the service account in the following format:
    * `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
    * Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
@@ -76,6 +78,7 @@ public interface SignBlobRequestOrBuilder
    * <pre>
    * Required. Deprecated. [Migrate to Service Account Credentials
    * API](https://cloud.google.com/iam/help/credentials/migrate-api).
+   *
    * The bytes to sign.
    * </pre>
    *

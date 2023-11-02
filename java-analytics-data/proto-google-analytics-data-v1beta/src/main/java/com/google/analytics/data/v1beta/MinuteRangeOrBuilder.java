@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,6 +30,7 @@ public interface MinuteRangeOrBuilder
    * The inclusive start minute for the query as a number of minutes before now.
    * For example, `"startMinutesAgo": 29` specifies the report should include
    * event data from 29 minutes ago and after. Cannot be after `endMinutesAgo`.
+   *
    * If unspecified, `startMinutesAgo` is defaulted to 29. Standard Analytics
    * properties can request up to the last 30 minutes of event data
    * (`startMinutesAgo &lt;= 29`), and 360 Analytics properties can request up to
@@ -48,6 +49,7 @@ public interface MinuteRangeOrBuilder
    * The inclusive start minute for the query as a number of minutes before now.
    * For example, `"startMinutesAgo": 29` specifies the report should include
    * event data from 29 minutes ago and after. Cannot be after `endMinutesAgo`.
+   *
    * If unspecified, `startMinutesAgo` is defaulted to 29. Standard Analytics
    * properties can request up to the last 30 minutes of event data
    * (`startMinutesAgo &lt;= 29`), and 360 Analytics properties can request up to
@@ -68,6 +70,7 @@ public interface MinuteRangeOrBuilder
    * Cannot be before `startMinutesAgo`. For example, `"endMinutesAgo": 15`
    * specifies the report should include event data from prior to 15 minutes
    * ago.
+   *
    * If unspecified, `endMinutesAgo` is defaulted to 0. Standard Analytics
    * properties can request any minute in the last 30 minutes of event data
    * (`endMinutesAgo &lt;= 29`), and 360 Analytics properties can request any
@@ -87,6 +90,7 @@ public interface MinuteRangeOrBuilder
    * Cannot be before `startMinutesAgo`. For example, `"endMinutesAgo": 15`
    * specifies the report should include event data from prior to 15 minutes
    * ago.
+   *
    * If unspecified, `endMinutesAgo` is defaulted to 0. Standard Analytics
    * properties can request any minute in the last 30 minutes of event data
    * (`endMinutesAgo &lt;= 29`), and 360 Analytics properties can request any

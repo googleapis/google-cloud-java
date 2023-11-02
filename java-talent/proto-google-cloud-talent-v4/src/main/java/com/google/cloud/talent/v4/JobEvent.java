@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,18 +40,13 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
 
   private JobEvent() {
     type_ = 0;
-    jobs_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    jobs_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new JobEvent();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -651,7 +646,8 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
   public static final int JOBS_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList jobs_;
+  private com.google.protobuf.LazyStringArrayList jobs_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -663,6 +659,7 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
    * seeker. If this was a
    * [view][google.cloud.talent.v4.JobEvent.JobEventType.VIEW] event, this field
    * contains the identifier of the viewed job.
+   *
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
    * example, "projects/foo/tenants/bar/jobs/baz".
@@ -686,6 +683,7 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
    * seeker. If this was a
    * [view][google.cloud.talent.v4.JobEvent.JobEventType.VIEW] event, this field
    * contains the identifier of the viewed job.
+   *
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
    * example, "projects/foo/tenants/bar/jobs/baz".
@@ -709,6 +707,7 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
    * seeker. If this was a
    * [view][google.cloud.talent.v4.JobEvent.JobEventType.VIEW] event, this field
    * contains the identifier of the viewed job.
+   *
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
    * example, "projects/foo/tenants/bar/jobs/baz".
@@ -733,6 +732,7 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
    * seeker. If this was a
    * [view][google.cloud.talent.v4.JobEvent.JobEventType.VIEW] event, this field
    * contains the identifier of the viewed job.
+   *
    * The format is
    * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
    * example, "projects/foo/tenants/bar/jobs/baz".
@@ -965,8 +965,7 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       bitField0_ = 0;
       type_ = 0;
-      jobs_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      jobs_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -993,7 +992,6 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.talent.v4.JobEvent buildPartial() {
       com.google.cloud.talent.v4.JobEvent result = new com.google.cloud.talent.v4.JobEvent(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -1001,18 +999,14 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
       return result;
     }
 
-    private void buildPartialRepeatedFields(com.google.cloud.talent.v4.JobEvent result) {
-      if (((bitField0_ & 0x00000002) != 0)) {
-        jobs_ = jobs_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.jobs_ = jobs_;
-    }
-
     private void buildPartial0(com.google.cloud.talent.v4.JobEvent result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.type_ = type_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        jobs_.makeImmutable();
+        result.jobs_ = jobs_;
       }
     }
 
@@ -1067,7 +1061,7 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
       if (!other.jobs_.isEmpty()) {
         if (jobs_.isEmpty()) {
           jobs_ = other.jobs_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensureJobsIsMutable();
           jobs_.addAll(other.jobs_);
@@ -1239,14 +1233,14 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList jobs_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList jobs_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureJobsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!jobs_.isModifiable()) {
         jobs_ = new com.google.protobuf.LazyStringArrayList(jobs_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -1259,6 +1253,7 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
      * seeker. If this was a
      * [view][google.cloud.talent.v4.JobEvent.JobEventType.VIEW] event, this field
      * contains the identifier of the viewed job.
+     *
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
      * example, "projects/foo/tenants/bar/jobs/baz".
@@ -1269,7 +1264,8 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the jobs.
      */
     public com.google.protobuf.ProtocolStringList getJobsList() {
-      return jobs_.getUnmodifiableView();
+      jobs_.makeImmutable();
+      return jobs_;
     }
     /**
      *
@@ -1282,6 +1278,7 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
      * seeker. If this was a
      * [view][google.cloud.talent.v4.JobEvent.JobEventType.VIEW] event, this field
      * contains the identifier of the viewed job.
+     *
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
      * example, "projects/foo/tenants/bar/jobs/baz".
@@ -1305,6 +1302,7 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
      * seeker. If this was a
      * [view][google.cloud.talent.v4.JobEvent.JobEventType.VIEW] event, this field
      * contains the identifier of the viewed job.
+     *
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
      * example, "projects/foo/tenants/bar/jobs/baz".
@@ -1329,6 +1327,7 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
      * seeker. If this was a
      * [view][google.cloud.talent.v4.JobEvent.JobEventType.VIEW] event, this field
      * contains the identifier of the viewed job.
+     *
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
      * example, "projects/foo/tenants/bar/jobs/baz".
@@ -1353,6 +1352,7 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
      * seeker. If this was a
      * [view][google.cloud.talent.v4.JobEvent.JobEventType.VIEW] event, this field
      * contains the identifier of the viewed job.
+     *
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
      * example, "projects/foo/tenants/bar/jobs/baz".
@@ -1370,6 +1370,7 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
       }
       ensureJobsIsMutable();
       jobs_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1384,6 +1385,7 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
      * seeker. If this was a
      * [view][google.cloud.talent.v4.JobEvent.JobEventType.VIEW] event, this field
      * contains the identifier of the viewed job.
+     *
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
      * example, "projects/foo/tenants/bar/jobs/baz".
@@ -1400,6 +1402,7 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
       }
       ensureJobsIsMutable();
       jobs_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1414,6 +1417,7 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
      * seeker. If this was a
      * [view][google.cloud.talent.v4.JobEvent.JobEventType.VIEW] event, this field
      * contains the identifier of the viewed job.
+     *
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
      * example, "projects/foo/tenants/bar/jobs/baz".
@@ -1427,6 +1431,7 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllJobs(java.lang.Iterable<java.lang.String> values) {
       ensureJobsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, jobs_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1441,6 +1446,7 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
      * seeker. If this was a
      * [view][google.cloud.talent.v4.JobEvent.JobEventType.VIEW] event, this field
      * contains the identifier of the viewed job.
+     *
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
      * example, "projects/foo/tenants/bar/jobs/baz".
@@ -1451,8 +1457,9 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearJobs() {
-      jobs_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      jobs_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -1467,6 +1474,7 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
      * seeker. If this was a
      * [view][google.cloud.talent.v4.JobEvent.JobEventType.VIEW] event, this field
      * contains the identifier of the viewed job.
+     *
      * The format is
      * "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}", for
      * example, "projects/foo/tenants/bar/jobs/baz".
@@ -1484,6 +1492,7 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureJobsIsMutable();
       jobs_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

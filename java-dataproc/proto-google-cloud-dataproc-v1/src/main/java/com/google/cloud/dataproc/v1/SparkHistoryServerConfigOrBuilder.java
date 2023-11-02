@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,7 +29,9 @@ public interface SparkHistoryServerConfigOrBuilder
    * <pre>
    * Optional. Resource name of an existing Dataproc Cluster to act as a Spark
    * History Server for the workload.
+   *
    * Example:
+   *
    * * `projects/[project_id]/regions/[region]/clusters/[cluster_name]`
    * </pre>
    *
@@ -44,7 +46,9 @@ public interface SparkHistoryServerConfigOrBuilder
    * <pre>
    * Optional. Resource name of an existing Dataproc Cluster to act as a Spark
    * History Server for the workload.
+   *
    * Example:
+   *
    * * `projects/[project_id]/regions/[region]/clusters/[cluster_name]`
    * </pre>
    *

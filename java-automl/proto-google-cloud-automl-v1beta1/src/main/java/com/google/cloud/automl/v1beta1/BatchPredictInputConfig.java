@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,13 +23,16 @@ package com.google.cloud.automl.v1beta1;
  *
  * <pre>
  * Input configuration for BatchPredict Action.
+ *
  * The format of input depends on the ML problem of the model used for
  * prediction. As input source the
  * [gcs_source][google.cloud.automl.v1beta1.InputConfig.gcs_source]
  * is expected, unless specified otherwise.
+ *
  * The formats are represented in EBNF with commas being literal and with
  * non-terminal symbols defined near the end of this comment. The formats
  * are:
+ *
  *  *  For Image Classification:
  *         CSV file(s) with each line having just a single column:
  *           GCS_FILE_PATH
@@ -40,6 +43,7 @@ package com.google.cloud.automl.v1beta1;
  *           gs://folder/image1.jpeg
  *           gs://folder/image2.gif
  *           gs://folder/image3.png
+ *
  *  *  For Image Object Detection:
  *         CSV file(s) with each line having just a single column:
  *           GCS_FILE_PATH
@@ -61,6 +65,7 @@ package com.google.cloud.automl.v1beta1;
  *           gs://folder/video1.mp4,10,40
  *           gs://folder/video1.mp4,20,60
  *           gs://folder/vid2.mov,0,inf
+ *
  *  *  For Video Object Tracking:
  *         CSV file(s) with each line in format:
  *           GCS_FILE_PATH,TIME_SEGMENT_START,TIME_SEGMENT_END
@@ -82,6 +87,7 @@ package com.google.cloud.automl.v1beta1;
  *           "Some text content to predict"
  *           gs://folder/text3.pdf
  *         Supported file extensions: .txt, .pdf
+ *
  *  *  For Text Sentiment:
  *         CSV file(s) with each line having just a single column:
  *           GCS_FILE_PATH | TEXT_SNIPPET
@@ -92,6 +98,7 @@ package com.google.cloud.automl.v1beta1;
  *           "Some text content to predict"
  *           gs://folder/text3.pdf
  *         Supported file extensions: .txt, .pdf
+ *
  *  * For Text Extraction
  *         .JSONL (i.e. JSON Lines) file(s) which either provide text in-line or
  *         as documents (for a single BatchPredict call only one of the these
@@ -153,9 +160,11 @@ package com.google.cloud.automl.v1beta1;
  *               }
  *             }
  *           }
+ *
  *  *  For Tables:
  *         Either
  *         [gcs_source][google.cloud.automl.v1beta1.InputConfig.gcs_source] or
+ *
  * [bigquery_source][google.cloud.automl.v1beta1.InputConfig.bigquery_source].
  *         GCS case:
  *           CSV file(s), each by itself 10GB or smaller and total size must be
@@ -164,34 +173,45 @@ package com.google.cloud.automl.v1beta1;
  *           the header, then it is also treated as a header. All other rows
  *           contain values for the corresponding columns.
  *           The column names must contain the model's
+ *
  * [input_feature_column_specs'][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
+ *
  * [display_name-s][google.cloud.automl.v1beta1.ColumnSpec.display_name]
  *           (order doesn't matter). The columns corresponding to the model's
  *           input feature column specs must contain values compatible with the
  *           column spec's data types. Prediction on all the rows, i.e. the CSV
  *           lines, will be attempted. For FORECASTING
+ *
  * [prediction_type][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type]:
  *           all columns having
+ *
  * [TIME_SERIES_AVAILABLE_PAST_ONLY][google.cloud.automl.v1beta1.ColumnSpec.ForecastingMetadata.ColumnType]
  *           type will be ignored.
  *           First three sample rows of a CSV file:
  *             "First Name","Last Name","Dob","Addresses"
+ *
  * "John","Doe","1968-01-22","[{"status":"current","address":"123_First_Avenue","city":"Seattle","state":"WA","zip":"11111","numberOfYears":"1"},{"status":"previous","address":"456_Main_Street","city":"Portland","state":"OR","zip":"22222","numberOfYears":"5"}]"
+ *
  * "Jane","Doe","1980-10-16","[{"status":"current","address":"789_Any_Avenue","city":"Albany","state":"NY","zip":"33333","numberOfYears":"2"},{"status":"previous","address":"321_Main_Street","city":"Hoboken","state":"NJ","zip":"44444","numberOfYears":"3"}]}
  *         BigQuery case:
  *           An URI of a BigQuery table. The user data size of the BigQuery
  *           table must be 100GB or smaller.
  *           The column names must contain the model's
+ *
  * [input_feature_column_specs'][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
+ *
  * [display_name-s][google.cloud.automl.v1beta1.ColumnSpec.display_name]
  *           (order doesn't matter). The columns corresponding to the model's
  *           input feature column specs must contain values compatible with the
  *           column spec's data types. Prediction on all the rows of the table
  *           will be attempted. For FORECASTING
+ *
  * [prediction_type][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type]:
  *           all columns having
+ *
  * [TIME_SERIES_AVAILABLE_PAST_ONLY][google.cloud.automl.v1beta1.ColumnSpec.ForecastingMetadata.ColumnType]
  *           type will be ignored.
+ *
  *  Definitions:
  *  GCS_FILE_PATH = A path to file on GCS, e.g. "gs://folder/video.avi".
  *  TEXT_SNIPPET = A content of a text snippet, UTF-8 encoded, enclosed within
@@ -207,6 +227,7 @@ package com.google.cloud.automl.v1beta1;
  *                example (e.g. video). Fractions are allowed, up to a
  *                microsecond precision. "inf" is allowed and it means the end
  *                of the example.
+ *
  *  Errors:
  *  If any of the provided CSV files can't be parsed or if more than certain
  *  percent of CSV rows cannot be processed then the operation fails and
@@ -235,11 +256,6 @@ public final class BatchPredictInputConfig extends com.google.protobuf.Generated
     return new BatchPredictInputConfig();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.automl.v1beta1.Io
         .internal_static_google_cloud_automl_v1beta1_BatchPredictInputConfig_descriptor;
@@ -256,6 +272,8 @@ public final class BatchPredictInputConfig extends com.google.protobuf.Generated
   }
 
   private int sourceCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object source_;
 
   public enum SourceCase
@@ -599,13 +617,16 @@ public final class BatchPredictInputConfig extends com.google.protobuf.Generated
    *
    * <pre>
    * Input configuration for BatchPredict Action.
+   *
    * The format of input depends on the ML problem of the model used for
    * prediction. As input source the
    * [gcs_source][google.cloud.automl.v1beta1.InputConfig.gcs_source]
    * is expected, unless specified otherwise.
+   *
    * The formats are represented in EBNF with commas being literal and with
    * non-terminal symbols defined near the end of this comment. The formats
    * are:
+   *
    *  *  For Image Classification:
    *         CSV file(s) with each line having just a single column:
    *           GCS_FILE_PATH
@@ -616,6 +637,7 @@ public final class BatchPredictInputConfig extends com.google.protobuf.Generated
    *           gs://folder/image1.jpeg
    *           gs://folder/image2.gif
    *           gs://folder/image3.png
+   *
    *  *  For Image Object Detection:
    *         CSV file(s) with each line having just a single column:
    *           GCS_FILE_PATH
@@ -637,6 +659,7 @@ public final class BatchPredictInputConfig extends com.google.protobuf.Generated
    *           gs://folder/video1.mp4,10,40
    *           gs://folder/video1.mp4,20,60
    *           gs://folder/vid2.mov,0,inf
+   *
    *  *  For Video Object Tracking:
    *         CSV file(s) with each line in format:
    *           GCS_FILE_PATH,TIME_SEGMENT_START,TIME_SEGMENT_END
@@ -658,6 +681,7 @@ public final class BatchPredictInputConfig extends com.google.protobuf.Generated
    *           "Some text content to predict"
    *           gs://folder/text3.pdf
    *         Supported file extensions: .txt, .pdf
+   *
    *  *  For Text Sentiment:
    *         CSV file(s) with each line having just a single column:
    *           GCS_FILE_PATH | TEXT_SNIPPET
@@ -668,6 +692,7 @@ public final class BatchPredictInputConfig extends com.google.protobuf.Generated
    *           "Some text content to predict"
    *           gs://folder/text3.pdf
    *         Supported file extensions: .txt, .pdf
+   *
    *  * For Text Extraction
    *         .JSONL (i.e. JSON Lines) file(s) which either provide text in-line or
    *         as documents (for a single BatchPredict call only one of the these
@@ -729,9 +754,11 @@ public final class BatchPredictInputConfig extends com.google.protobuf.Generated
    *               }
    *             }
    *           }
+   *
    *  *  For Tables:
    *         Either
    *         [gcs_source][google.cloud.automl.v1beta1.InputConfig.gcs_source] or
+   *
    * [bigquery_source][google.cloud.automl.v1beta1.InputConfig.bigquery_source].
    *         GCS case:
    *           CSV file(s), each by itself 10GB or smaller and total size must be
@@ -740,34 +767,45 @@ public final class BatchPredictInputConfig extends com.google.protobuf.Generated
    *           the header, then it is also treated as a header. All other rows
    *           contain values for the corresponding columns.
    *           The column names must contain the model's
+   *
    * [input_feature_column_specs'][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
+   *
    * [display_name-s][google.cloud.automl.v1beta1.ColumnSpec.display_name]
    *           (order doesn't matter). The columns corresponding to the model's
    *           input feature column specs must contain values compatible with the
    *           column spec's data types. Prediction on all the rows, i.e. the CSV
    *           lines, will be attempted. For FORECASTING
+   *
    * [prediction_type][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type]:
    *           all columns having
+   *
    * [TIME_SERIES_AVAILABLE_PAST_ONLY][google.cloud.automl.v1beta1.ColumnSpec.ForecastingMetadata.ColumnType]
    *           type will be ignored.
    *           First three sample rows of a CSV file:
    *             "First Name","Last Name","Dob","Addresses"
+   *
    * "John","Doe","1968-01-22","[{"status":"current","address":"123_First_Avenue","city":"Seattle","state":"WA","zip":"11111","numberOfYears":"1"},{"status":"previous","address":"456_Main_Street","city":"Portland","state":"OR","zip":"22222","numberOfYears":"5"}]"
+   *
    * "Jane","Doe","1980-10-16","[{"status":"current","address":"789_Any_Avenue","city":"Albany","state":"NY","zip":"33333","numberOfYears":"2"},{"status":"previous","address":"321_Main_Street","city":"Hoboken","state":"NJ","zip":"44444","numberOfYears":"3"}]}
    *         BigQuery case:
    *           An URI of a BigQuery table. The user data size of the BigQuery
    *           table must be 100GB or smaller.
    *           The column names must contain the model's
+   *
    * [input_feature_column_specs'][google.cloud.automl.v1beta1.TablesModelMetadata.input_feature_column_specs]
+   *
    * [display_name-s][google.cloud.automl.v1beta1.ColumnSpec.display_name]
    *           (order doesn't matter). The columns corresponding to the model's
    *           input feature column specs must contain values compatible with the
    *           column spec's data types. Prediction on all the rows of the table
    *           will be attempted. For FORECASTING
+   *
    * [prediction_type][google.cloud.automl.v1beta1.TablesModelMetadata.prediction_type]:
    *           all columns having
+   *
    * [TIME_SERIES_AVAILABLE_PAST_ONLY][google.cloud.automl.v1beta1.ColumnSpec.ForecastingMetadata.ColumnType]
    *           type will be ignored.
+   *
    *  Definitions:
    *  GCS_FILE_PATH = A path to file on GCS, e.g. "gs://folder/video.avi".
    *  TEXT_SNIPPET = A content of a text snippet, UTF-8 encoded, enclosed within
@@ -783,6 +821,7 @@ public final class BatchPredictInputConfig extends com.google.protobuf.Generated
    *                example (e.g. video). Fractions are allowed, up to a
    *                microsecond precision. "inf" is allowed and it means the end
    *                of the example.
+   *
    *  Errors:
    *  If any of the provided CSV files can't be parsed or if more than certain
    *  percent of CSV rows cannot be processed then the operation fails and

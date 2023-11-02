@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,11 +49,6 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
     return new DetectLanguageRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.translate.v3.TranslationServiceProto
         .internal_static_google_cloud_translation_v3_DetectLanguageRequest_descriptor;
@@ -81,6 +76,8 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
   }
 
   private int sourceCase_ = 0;
+
+  @SuppressWarnings("serial")
   private java.lang.Object source_;
 
   public enum SourceCase
@@ -134,10 +131,13 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
    * <pre>
    * Required. Project or location to make a call. Must refer to a caller's
    * project.
+   *
    * Format: `projects/{project-number-or-id}/locations/{location-id}` or
    * `projects/{project-number-or-id}`.
+   *
    * For global calls, use `projects/{project-number-or-id}/locations/global` or
    * `projects/{project-number-or-id}`.
+   *
    * Only models within the same region (has same location-id) can be used.
    * Otherwise an INVALID_ARGUMENT (400) error is returned.
    * </pre>
@@ -166,10 +166,13 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
    * <pre>
    * Required. Project or location to make a call. Must refer to a caller's
    * project.
+   *
    * Format: `projects/{project-number-or-id}/locations/{location-id}` or
    * `projects/{project-number-or-id}`.
+   *
    * For global calls, use `projects/{project-number-or-id}/locations/global` or
    * `projects/{project-number-or-id}`.
+   *
    * Only models within the same region (has same location-id) can be used.
    * Otherwise an INVALID_ARGUMENT (400) error is returned.
    * </pre>
@@ -202,10 +205,13 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Optional. The language detection model to be used.
+   *
    * Format:
    * `projects/{project-number-or-id}/locations/{location-id}/models/language-detection/{model-id}`
+   *
    * Only one language detection model is currently supported:
    * `projects/{project-number-or-id}/locations/{location-id}/models/language-detection/default`.
+   *
    * If not specified, the default model is used.
    * </pre>
    *
@@ -230,10 +236,13 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Optional. The language detection model to be used.
+   *
    * Format:
    * `projects/{project-number-or-id}/locations/{location-id}/models/language-detection/{model-id}`
+   *
    * Only one language detection model is currently supported:
    * `projects/{project-number-or-id}/locations/{location-id}/models/language-detection/default`.
+   *
    * If not specified, the default model is used.
    * </pre>
    *
@@ -408,10 +417,12 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Optional. The labels with user-defined metadata for the request.
+   *
    * Label keys and values can be no longer than 63 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
    * Label values are optional. Label keys must start with a letter.
+   *
    * See https://cloud.google.com/translate/docs/advanced/labels for more
    * information.
    * </pre>
@@ -436,10 +447,12 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Optional. The labels with user-defined metadata for the request.
+   *
    * Label keys and values can be no longer than 63 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
    * Label values are optional. Label keys must start with a letter.
+   *
    * See https://cloud.google.com/translate/docs/advanced/labels for more
    * information.
    * </pre>
@@ -455,10 +468,12 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Optional. The labels with user-defined metadata for the request.
+   *
    * Label keys and values can be no longer than 63 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
    * Label values are optional. Label keys must start with a letter.
+   *
    * See https://cloud.google.com/translate/docs/advanced/labels for more
    * information.
    * </pre>
@@ -481,10 +496,12 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Optional. The labels with user-defined metadata for the request.
+   *
    * Label keys and values can be no longer than 63 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
    * Label values are optional. Label keys must start with a letter.
+   *
    * See https://cloud.google.com/translate/docs/advanced/labels for more
    * information.
    * </pre>
@@ -1020,10 +1037,13 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. Project or location to make a call. Must refer to a caller's
      * project.
+     *
      * Format: `projects/{project-number-or-id}/locations/{location-id}` or
      * `projects/{project-number-or-id}`.
+     *
      * For global calls, use `projects/{project-number-or-id}/locations/global` or
      * `projects/{project-number-or-id}`.
+     *
      * Only models within the same region (has same location-id) can be used.
      * Otherwise an INVALID_ARGUMENT (400) error is returned.
      * </pre>
@@ -1051,10 +1071,13 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. Project or location to make a call. Must refer to a caller's
      * project.
+     *
      * Format: `projects/{project-number-or-id}/locations/{location-id}` or
      * `projects/{project-number-or-id}`.
+     *
      * For global calls, use `projects/{project-number-or-id}/locations/global` or
      * `projects/{project-number-or-id}`.
+     *
      * Only models within the same region (has same location-id) can be used.
      * Otherwise an INVALID_ARGUMENT (400) error is returned.
      * </pre>
@@ -1082,10 +1105,13 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. Project or location to make a call. Must refer to a caller's
      * project.
+     *
      * Format: `projects/{project-number-or-id}/locations/{location-id}` or
      * `projects/{project-number-or-id}`.
+     *
      * For global calls, use `projects/{project-number-or-id}/locations/global` or
      * `projects/{project-number-or-id}`.
+     *
      * Only models within the same region (has same location-id) can be used.
      * Otherwise an INVALID_ARGUMENT (400) error is returned.
      * </pre>
@@ -1112,10 +1138,13 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. Project or location to make a call. Must refer to a caller's
      * project.
+     *
      * Format: `projects/{project-number-or-id}/locations/{location-id}` or
      * `projects/{project-number-or-id}`.
+     *
      * For global calls, use `projects/{project-number-or-id}/locations/global` or
      * `projects/{project-number-or-id}`.
+     *
      * Only models within the same region (has same location-id) can be used.
      * Otherwise an INVALID_ARGUMENT (400) error is returned.
      * </pre>
@@ -1138,10 +1167,13 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. Project or location to make a call. Must refer to a caller's
      * project.
+     *
      * Format: `projects/{project-number-or-id}/locations/{location-id}` or
      * `projects/{project-number-or-id}`.
+     *
      * For global calls, use `projects/{project-number-or-id}/locations/global` or
      * `projects/{project-number-or-id}`.
+     *
      * Only models within the same region (has same location-id) can be used.
      * Otherwise an INVALID_ARGUMENT (400) error is returned.
      * </pre>
@@ -1170,10 +1202,13 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Optional. The language detection model to be used.
+     *
      * Format:
      * `projects/{project-number-or-id}/locations/{location-id}/models/language-detection/{model-id}`
+     *
      * Only one language detection model is currently supported:
      * `projects/{project-number-or-id}/locations/{location-id}/models/language-detection/default`.
+     *
      * If not specified, the default model is used.
      * </pre>
      *
@@ -1197,10 +1232,13 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Optional. The language detection model to be used.
+     *
      * Format:
      * `projects/{project-number-or-id}/locations/{location-id}/models/language-detection/{model-id}`
+     *
      * Only one language detection model is currently supported:
      * `projects/{project-number-or-id}/locations/{location-id}/models/language-detection/default`.
+     *
      * If not specified, the default model is used.
      * </pre>
      *
@@ -1224,10 +1262,13 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Optional. The language detection model to be used.
+     *
      * Format:
      * `projects/{project-number-or-id}/locations/{location-id}/models/language-detection/{model-id}`
+     *
      * Only one language detection model is currently supported:
      * `projects/{project-number-or-id}/locations/{location-id}/models/language-detection/default`.
+     *
      * If not specified, the default model is used.
      * </pre>
      *
@@ -1250,10 +1291,13 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Optional. The language detection model to be used.
+     *
      * Format:
      * `projects/{project-number-or-id}/locations/{location-id}/models/language-detection/{model-id}`
+     *
      * Only one language detection model is currently supported:
      * `projects/{project-number-or-id}/locations/{location-id}/models/language-detection/default`.
+     *
      * If not specified, the default model is used.
      * </pre>
      *
@@ -1272,10 +1316,13 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Optional. The language detection model to be used.
+     *
      * Format:
      * `projects/{project-number-or-id}/locations/{location-id}/models/language-detection/{model-id}`
+     *
      * Only one language detection model is currently supported:
      * `projects/{project-number-or-id}/locations/{location-id}/models/language-detection/default`.
+     *
      * If not specified, the default model is used.
      * </pre>
      *
@@ -1570,10 +1617,12 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Optional. The labels with user-defined metadata for the request.
+     *
      * Label keys and values can be no longer than 63 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
      * Label values are optional. Label keys must start with a letter.
+     *
      * See https://cloud.google.com/translate/docs/advanced/labels for more
      * information.
      * </pre>
@@ -1598,10 +1647,12 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Optional. The labels with user-defined metadata for the request.
+     *
      * Label keys and values can be no longer than 63 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
      * Label values are optional. Label keys must start with a letter.
+     *
      * See https://cloud.google.com/translate/docs/advanced/labels for more
      * information.
      * </pre>
@@ -1617,10 +1668,12 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Optional. The labels with user-defined metadata for the request.
+     *
      * Label keys and values can be no longer than 63 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
      * Label values are optional. Label keys must start with a letter.
+     *
      * See https://cloud.google.com/translate/docs/advanced/labels for more
      * information.
      * </pre>
@@ -1643,10 +1696,12 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Optional. The labels with user-defined metadata for the request.
+     *
      * Label keys and values can be no longer than 63 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
      * Label values are optional. Label keys must start with a letter.
+     *
      * See https://cloud.google.com/translate/docs/advanced/labels for more
      * information.
      * </pre>
@@ -1675,10 +1730,12 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Optional. The labels with user-defined metadata for the request.
+     *
      * Label keys and values can be no longer than 63 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
      * Label values are optional. Label keys must start with a letter.
+     *
      * See https://cloud.google.com/translate/docs/advanced/labels for more
      * information.
      * </pre>
@@ -1703,10 +1760,12 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Optional. The labels with user-defined metadata for the request.
+     *
      * Label keys and values can be no longer than 63 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
      * Label values are optional. Label keys must start with a letter.
+     *
      * See https://cloud.google.com/translate/docs/advanced/labels for more
      * information.
      * </pre>
@@ -1729,10 +1788,12 @@ public final class DetectLanguageRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Optional. The labels with user-defined metadata for the request.
+     *
      * Label keys and values can be no longer than 63 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
      * Label values are optional. Label keys must start with a letter.
+     *
      * See https://cloud.google.com/translate/docs/advanced/labels for more
      * information.
      * </pre>

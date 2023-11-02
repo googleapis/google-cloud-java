@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,7 +40,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
   private PredictResponse() {
     results_ = java.util.Collections.emptyList();
     recommendationToken_ = "";
-    itemsMissingInCatalog_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    itemsMissingInCatalog_ = com.google.protobuf.LazyStringArrayList.emptyList();
     nextPageToken_ = "";
   }
 
@@ -48,11 +48,6 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new PredictResponse();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -116,7 +111,9 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Additional item metadata / annotations.
+     *
      * Possible values:
+     *
      * * `catalogItem`: JSON representation of the catalogItem. Will be set if
      *   `returnCatalogItem` is set to true in `PredictRequest.params`.
      * * `score`: Prediction score in double value. Will be set if
@@ -131,7 +128,9 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Additional item metadata / annotations.
+     *
      * Possible values:
+     *
      * * `catalogItem`: JSON representation of the catalogItem. Will be set if
      *   `returnCatalogItem` is set to true in `PredictRequest.params`.
      * * `score`: Prediction score in double value. Will be set if
@@ -149,7 +148,9 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Additional item metadata / annotations.
+     *
      * Possible values:
+     *
      * * `catalogItem`: JSON representation of the catalogItem. Will be set if
      *   `returnCatalogItem` is set to true in `PredictRequest.params`.
      * * `score`: Prediction score in double value. Will be set if
@@ -164,7 +165,9 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Additional item metadata / annotations.
+     *
      * Possible values:
+     *
      * * `catalogItem`: JSON representation of the catalogItem. Will be set if
      *   `returnCatalogItem` is set to true in `PredictRequest.params`.
      * * `score`: Prediction score in double value. Will be set if
@@ -183,7 +186,9 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Additional item metadata / annotations.
+     *
      * Possible values:
+     *
      * * `catalogItem`: JSON representation of the catalogItem. Will be set if
      *   `returnCatalogItem` is set to true in `PredictRequest.params`.
      * * `score`: Prediction score in double value. Will be set if
@@ -222,11 +227,6 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new PredictionResult();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -342,7 +342,9 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Additional item metadata / annotations.
+     *
      * Possible values:
+     *
      * * `catalogItem`: JSON representation of the catalogItem. Will be set if
      *   `returnCatalogItem` is set to true in `PredictRequest.params`.
      * * `score`: Prediction score in double value. Will be set if
@@ -369,7 +371,9 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Additional item metadata / annotations.
+     *
      * Possible values:
+     *
      * * `catalogItem`: JSON representation of the catalogItem. Will be set if
      *   `returnCatalogItem` is set to true in `PredictRequest.params`.
      * * `score`: Prediction score in double value. Will be set if
@@ -387,7 +391,9 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Additional item metadata / annotations.
+     *
      * Possible values:
+     *
      * * `catalogItem`: JSON representation of the catalogItem. Will be set if
      *   `returnCatalogItem` is set to true in `PredictRequest.params`.
      * * `score`: Prediction score in double value. Will be set if
@@ -413,7 +419,9 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Additional item metadata / annotations.
+     *
      * Possible values:
+     *
      * * `catalogItem`: JSON representation of the catalogItem. Will be set if
      *   `returnCatalogItem` is set to true in `PredictRequest.params`.
      * * `score`: Prediction score in double value. Will be set if
@@ -1004,7 +1012,9 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
        *
        * <pre>
        * Additional item metadata / annotations.
+       *
        * Possible values:
+       *
        * * `catalogItem`: JSON representation of the catalogItem. Will be set if
        *   `returnCatalogItem` is set to true in `PredictRequest.params`.
        * * `score`: Prediction score in double value. Will be set if
@@ -1031,7 +1041,9 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
        *
        * <pre>
        * Additional item metadata / annotations.
+       *
        * Possible values:
+       *
        * * `catalogItem`: JSON representation of the catalogItem. Will be set if
        *   `returnCatalogItem` is set to true in `PredictRequest.params`.
        * * `score`: Prediction score in double value. Will be set if
@@ -1049,7 +1061,9 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
        *
        * <pre>
        * Additional item metadata / annotations.
+       *
        * Possible values:
+       *
        * * `catalogItem`: JSON representation of the catalogItem. Will be set if
        *   `returnCatalogItem` is set to true in `PredictRequest.params`.
        * * `score`: Prediction score in double value. Will be set if
@@ -1075,7 +1089,9 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
        *
        * <pre>
        * Additional item metadata / annotations.
+       *
        * Possible values:
+       *
        * * `catalogItem`: JSON representation of the catalogItem. Will be set if
        *   `returnCatalogItem` is set to true in `PredictRequest.params`.
        * * `score`: Prediction score in double value. Will be set if
@@ -1107,7 +1123,9 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
        *
        * <pre>
        * Additional item metadata / annotations.
+       *
        * Possible values:
+       *
        * * `catalogItem`: JSON representation of the catalogItem. Will be set if
        *   `returnCatalogItem` is set to true in `PredictRequest.params`.
        * * `score`: Prediction score in double value. Will be set if
@@ -1134,7 +1152,9 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
        *
        * <pre>
        * Additional item metadata / annotations.
+       *
        * Possible values:
+       *
        * * `catalogItem`: JSON representation of the catalogItem. Will be set if
        *   `returnCatalogItem` is set to true in `PredictRequest.params`.
        * * `score`: Prediction score in double value. Will be set if
@@ -1159,7 +1179,9 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
        *
        * <pre>
        * Additional item metadata / annotations.
+       *
        * Possible values:
+       *
        * * `catalogItem`: JSON representation of the catalogItem. Will be set if
        *   `returnCatalogItem` is set to true in `PredictRequest.params`.
        * * `score`: Prediction score in double value. Will be set if
@@ -1397,7 +1419,8 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
   public static final int ITEMS_MISSING_IN_CATALOG_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList itemsMissingInCatalog_;
+  private com.google.protobuf.LazyStringArrayList itemsMissingInCatalog_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -1923,8 +1946,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       }
       bitField0_ = (bitField0_ & ~0x00000001);
       recommendationToken_ = "";
-      itemsMissingInCatalog_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      itemsMissingInCatalog_ = com.google.protobuf.LazyStringArrayList.emptyList();
       dryRun_ = false;
       internalGetMutableMetadata().clear();
       nextPageToken_ = "";
@@ -1975,11 +1997,6 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       } else {
         result.results_ = resultsBuilder_.build();
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
-        itemsMissingInCatalog_ = itemsMissingInCatalog_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.itemsMissingInCatalog_ = itemsMissingInCatalog_;
     }
 
     private void buildPartial0(
@@ -1987,6 +2004,10 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.recommendationToken_ = recommendationToken_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        itemsMissingInCatalog_.makeImmutable();
+        result.itemsMissingInCatalog_ = itemsMissingInCatalog_;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.dryRun_ = dryRun_;
@@ -2082,7 +2103,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       if (!other.itemsMissingInCatalog_.isEmpty()) {
         if (itemsMissingInCatalog_.isEmpty()) {
           itemsMissingInCatalog_ = other.itemsMissingInCatalog_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ |= 0x00000004;
         } else {
           ensureItemsMissingInCatalogIsMutable();
           itemsMissingInCatalog_.addAll(other.itemsMissingInCatalog_);
@@ -2752,15 +2773,15 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       return this;
     }
 
-    private com.google.protobuf.LazyStringList itemsMissingInCatalog_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList itemsMissingInCatalog_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureItemsMissingInCatalogIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!itemsMissingInCatalog_.isModifiable()) {
         itemsMissingInCatalog_ =
             new com.google.protobuf.LazyStringArrayList(itemsMissingInCatalog_);
-        bitField0_ |= 0x00000004;
       }
+      bitField0_ |= 0x00000004;
     }
     /**
      *
@@ -2774,7 +2795,8 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      * @return A list containing the itemsMissingInCatalog.
      */
     public com.google.protobuf.ProtocolStringList getItemsMissingInCatalogList() {
-      return itemsMissingInCatalog_.getUnmodifiableView();
+      itemsMissingInCatalog_.makeImmutable();
+      return itemsMissingInCatalog_;
     }
     /**
      *
@@ -2839,6 +2861,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       }
       ensureItemsMissingInCatalogIsMutable();
       itemsMissingInCatalog_.set(index, value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2860,6 +2883,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       }
       ensureItemsMissingInCatalogIsMutable();
       itemsMissingInCatalog_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2878,6 +2902,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
     public Builder addAllItemsMissingInCatalog(java.lang.Iterable<java.lang.String> values) {
       ensureItemsMissingInCatalogIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, itemsMissingInCatalog_);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2893,8 +2918,9 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearItemsMissingInCatalog() {
-      itemsMissingInCatalog_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      itemsMissingInCatalog_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000004);
+      ;
       onChanged();
       return this;
     }
@@ -2917,6 +2943,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       checkByteStringIsUtf8(value);
       ensureItemsMissingInCatalogIsMutable();
       itemsMissingInCatalog_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

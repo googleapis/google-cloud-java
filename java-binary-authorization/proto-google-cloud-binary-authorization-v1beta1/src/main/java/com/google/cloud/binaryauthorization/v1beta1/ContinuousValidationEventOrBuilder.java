@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -72,46 +72,45 @@ public interface ContinuousValidationEventOrBuilder
    *
    *
    * <pre>
-   * Unsupported policy event.
+   * Config error event.
    * </pre>
    *
    * <code>
-   * .google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.UnsupportedPolicyEvent unsupported_policy_event = 2;
+   * .google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ConfigErrorEvent config_error_event = 4;
    * </code>
    *
-   * @return Whether the unsupportedPolicyEvent field is set.
+   * @return Whether the configErrorEvent field is set.
    */
-  boolean hasUnsupportedPolicyEvent();
+  boolean hasConfigErrorEvent();
   /**
    *
    *
    * <pre>
-   * Unsupported policy event.
+   * Config error event.
    * </pre>
    *
    * <code>
-   * .google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.UnsupportedPolicyEvent unsupported_policy_event = 2;
+   * .google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ConfigErrorEvent config_error_event = 4;
    * </code>
    *
-   * @return The unsupportedPolicyEvent.
+   * @return The configErrorEvent.
    */
-  com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.UnsupportedPolicyEvent
-      getUnsupportedPolicyEvent();
+  com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ConfigErrorEvent
+      getConfigErrorEvent();
   /**
    *
    *
    * <pre>
-   * Unsupported policy event.
+   * Config error event.
    * </pre>
    *
    * <code>
-   * .google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.UnsupportedPolicyEvent unsupported_policy_event = 2;
+   * .google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ConfigErrorEvent config_error_event = 4;
    * </code>
    */
-  com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
-          .UnsupportedPolicyEventOrBuilder
-      getUnsupportedPolicyEventOrBuilder();
+  com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ConfigErrorEventOrBuilder
+      getConfigErrorEventOrBuilder();
 
-  public com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.EventTypeCase
+  com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.EventTypeCase
       getEventTypeCase();
 }

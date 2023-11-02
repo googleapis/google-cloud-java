@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
     return new Image();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.vision.v1.ImageAnnotatorProto
         .internal_static_google_cloud_vision_v1_Image_descriptor;
@@ -75,6 +70,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    * Image content, represented as a stream of bytes.
    * Note: As with all `bytes` fields, protobuffers use a pure binary
    * representation, whereas JSON representations use base64.
+   *
    * Currently, this field only works for BatchAnnotateImages requests. It does
    * not work for AsyncBatchAnnotateImages requests.
    * </pre>
@@ -515,6 +511,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      * Image content, represented as a stream of bytes.
      * Note: As with all `bytes` fields, protobuffers use a pure binary
      * representation, whereas JSON representations use base64.
+     *
      * Currently, this field only works for BatchAnnotateImages requests. It does
      * not work for AsyncBatchAnnotateImages requests.
      * </pre>
@@ -534,6 +531,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      * Image content, represented as a stream of bytes.
      * Note: As with all `bytes` fields, protobuffers use a pure binary
      * representation, whereas JSON representations use base64.
+     *
      * Currently, this field only works for BatchAnnotateImages requests. It does
      * not work for AsyncBatchAnnotateImages requests.
      * </pre>
@@ -559,6 +557,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      * Image content, represented as a stream of bytes.
      * Note: As with all `bytes` fields, protobuffers use a pure binary
      * representation, whereas JSON representations use base64.
+     *
      * Currently, this field only works for BatchAnnotateImages requests. It does
      * not work for AsyncBatchAnnotateImages requests.
      * </pre>

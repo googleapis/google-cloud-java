@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,15 +42,16 @@ public final class ServiceNetworkingProto {
     java.lang.String[] descriptorData = {
       "\n3google/cloud/aiplatform/v1/service_net"
           + "working.proto\022\032google.cloud.aiplatform.v"
-          + "1\032\037google/api/field_behavior.proto\"e\n\033Pr"
-          + "ivateServiceConnectConfig\022+\n\036enable_priv"
-          + "ate_service_connect\030\001 \001(\010B\003\340A\002\022\031\n\021projec"
-          + "t_allowlist\030\002 \003(\tB\324\001\n\036com.google.cloud.a"
-          + "iplatform.v1B\026ServiceNetworkingProtoP\001Z>"
-          + "cloud.google.com/go/aiplatform/apiv1/aip"
-          + "latformpb;aiplatformpb\252\002\032Google.Cloud.AI"
-          + "Platform.V1\312\002\032Google\\Cloud\\AIPlatform\\V1"
-          + "\352\002\035Google::Cloud::AIPlatform::V1b\006proto3"
+          + "1\032\037google/api/field_behavior.proto\"f\n\033Pr"
+          + "ivateServiceConnectConfig\022,\n\036enable_priv"
+          + "ate_service_connect\030\001 \001(\010B\004\342A\001\002\022\031\n\021proje"
+          + "ct_allowlist\030\002 \003(\tB\324\001\n\036com.google.cloud."
+          + "aiplatform.v1B\026ServiceNetworkingProtoP\001Z"
+          + ">cloud.google.com/go/aiplatform/apiv1/ai"
+          + "platformpb;aiplatformpb\252\002\032Google.Cloud.A"
+          + "IPlatform.V1\312\002\032Google\\Cloud\\AIPlatform\\V"
+          + "1\352\002\035Google::Cloud::AIPlatform::V1b\006proto"
+          + "3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

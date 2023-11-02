@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,11 +47,6 @@ public final class CertificateIssuanceConfig extends com.google.protobuf.Generat
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new CertificateIssuanceConfig();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -289,8 +284,8 @@ public final class CertificateIssuanceConfig extends com.google.protobuf.Generat
             .CertificateAuthorityServiceConfigOrBuilder
         getCertificateAuthorityServiceConfigOrBuilder();
 
-    public com.google.cloud.certificatemanager.v1.CertificateIssuanceConfig
-            .CertificateAuthorityConfig.KindCase
+    com.google.cloud.certificatemanager.v1.CertificateIssuanceConfig.CertificateAuthorityConfig
+            .KindCase
         getKindCase();
   }
   /**
@@ -321,11 +316,6 @@ public final class CertificateIssuanceConfig extends com.google.protobuf.Generat
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new CertificateAuthorityConfig();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -413,11 +403,6 @@ public final class CertificateIssuanceConfig extends com.google.protobuf.Generat
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
         return new CertificateAuthorityServiceConfig();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-        return this.unknownFields;
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1102,6 +1087,8 @@ public final class CertificateIssuanceConfig extends com.google.protobuf.Generat
     }
 
     private int kindCase_ = 0;
+
+    @SuppressWarnings("serial")
     private java.lang.Object kind_;
 
     public enum KindCase

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ public interface ReportRequestOrBuilder
    * <pre>
    * The service name as specified in its service configuration. For example,
    * `"pubsub.googleapis.com"`.
+   *
    * See
    * [google.api.Service](https://cloud.google.com/service-management/reference/rpc/google.api#google.api.Service)
    * for the definition of a service name.
@@ -45,6 +46,7 @@ public interface ReportRequestOrBuilder
    * <pre>
    * The service name as specified in its service configuration. For example,
    * `"pubsub.googleapis.com"`.
+   *
    * See
    * [google.api.Service](https://cloud.google.com/service-management/reference/rpc/google.api#google.api.Service)
    * for the definition of a service name.

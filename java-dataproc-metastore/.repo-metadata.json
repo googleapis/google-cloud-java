@@ -12,5 +12,7 @@
   "distribution_name": "com.google.cloud:google-cloud-dataproc-metastore",
   "api_id": "metastore.googleapis.com",
   "requires_billing": true,
-  "library_type": "GAPIC_AUTO"
+  "library_type": "GAPIC_AUTO",
+  "rest_documentation": "https://cloud.google.com/dataproc-metastore/docs/reference/rest",
+  "rpc_documentation": "https://cloud.google.com/dataproc-metastore/docs/reference/rpc"
 }

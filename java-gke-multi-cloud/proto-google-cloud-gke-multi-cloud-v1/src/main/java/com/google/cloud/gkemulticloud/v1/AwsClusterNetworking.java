@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ package com.google.cloud.gkemulticloud.v1;
  *
  * <pre>
  * ClusterNetworking defines cluster-wide networking configuration.
+ *
  * Anthos clusters on AWS run on a single VPC. This includes control
  * plane replicas and node pool nodes.
  * </pre>
@@ -41,19 +42,14 @@ public final class AwsClusterNetworking extends com.google.protobuf.GeneratedMes
 
   private AwsClusterNetworking() {
     vpcId_ = "";
-    podAddressCidrBlocks_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    serviceAddressCidrBlocks_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    podAddressCidrBlocks_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    serviceAddressCidrBlocks_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new AwsClusterNetworking();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -81,6 +77,7 @@ public final class AwsClusterNetworking extends com.google.protobuf.GeneratedMes
    * <pre>
    * Required. The VPC associated with the cluster. All component clusters
    * (i.e. control plane and node pools) run on a single VPC.
+   *
    * This field cannot be changed after creation.
    * </pre>
    *
@@ -106,6 +103,7 @@ public final class AwsClusterNetworking extends com.google.protobuf.GeneratedMes
    * <pre>
    * Required. The VPC associated with the cluster. All component clusters
    * (i.e. control plane and node pools) run on a single VPC.
+   *
    * This field cannot be changed after creation.
    * </pre>
    *
@@ -129,7 +127,8 @@ public final class AwsClusterNetworking extends com.google.protobuf.GeneratedMes
   public static final int POD_ADDRESS_CIDR_BLOCKS_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList podAddressCidrBlocks_;
+  private com.google.protobuf.LazyStringArrayList podAddressCidrBlocks_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -204,7 +203,8 @@ public final class AwsClusterNetworking extends com.google.protobuf.GeneratedMes
   public static final int SERVICE_ADDRESS_CIDR_BLOCKS_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList serviceAddressCidrBlocks_;
+  private com.google.protobuf.LazyStringArrayList serviceAddressCidrBlocks_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    *
    *
@@ -480,6 +480,7 @@ public final class AwsClusterNetworking extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * ClusterNetworking defines cluster-wide networking configuration.
+   *
    * Anthos clusters on AWS run on a single VPC. This includes control
    * plane replicas and node pool nodes.
    * </pre>
@@ -517,10 +518,8 @@ public final class AwsClusterNetworking extends com.google.protobuf.GeneratedMes
       super.clear();
       bitField0_ = 0;
       vpcId_ = "";
-      podAddressCidrBlocks_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
-      serviceAddressCidrBlocks_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      podAddressCidrBlocks_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      serviceAddressCidrBlocks_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -548,7 +547,6 @@ public final class AwsClusterNetworking extends com.google.protobuf.GeneratedMes
     public com.google.cloud.gkemulticloud.v1.AwsClusterNetworking buildPartial() {
       com.google.cloud.gkemulticloud.v1.AwsClusterNetworking result =
           new com.google.cloud.gkemulticloud.v1.AwsClusterNetworking(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -556,24 +554,18 @@ public final class AwsClusterNetworking extends com.google.protobuf.GeneratedMes
       return result;
     }
 
-    private void buildPartialRepeatedFields(
-        com.google.cloud.gkemulticloud.v1.AwsClusterNetworking result) {
-      if (((bitField0_ & 0x00000002) != 0)) {
-        podAddressCidrBlocks_ = podAddressCidrBlocks_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.podAddressCidrBlocks_ = podAddressCidrBlocks_;
-      if (((bitField0_ & 0x00000004) != 0)) {
-        serviceAddressCidrBlocks_ = serviceAddressCidrBlocks_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.serviceAddressCidrBlocks_ = serviceAddressCidrBlocks_;
-    }
-
     private void buildPartial0(com.google.cloud.gkemulticloud.v1.AwsClusterNetworking result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.vpcId_ = vpcId_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        podAddressCidrBlocks_.makeImmutable();
+        result.podAddressCidrBlocks_ = podAddressCidrBlocks_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        serviceAddressCidrBlocks_.makeImmutable();
+        result.serviceAddressCidrBlocks_ = serviceAddressCidrBlocks_;
       }
     }
 
@@ -631,7 +623,7 @@ public final class AwsClusterNetworking extends com.google.protobuf.GeneratedMes
       if (!other.podAddressCidrBlocks_.isEmpty()) {
         if (podAddressCidrBlocks_.isEmpty()) {
           podAddressCidrBlocks_ = other.podAddressCidrBlocks_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ |= 0x00000002;
         } else {
           ensurePodAddressCidrBlocksIsMutable();
           podAddressCidrBlocks_.addAll(other.podAddressCidrBlocks_);
@@ -641,7 +633,7 @@ public final class AwsClusterNetworking extends com.google.protobuf.GeneratedMes
       if (!other.serviceAddressCidrBlocks_.isEmpty()) {
         if (serviceAddressCidrBlocks_.isEmpty()) {
           serviceAddressCidrBlocks_ = other.serviceAddressCidrBlocks_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ |= 0x00000004;
         } else {
           ensureServiceAddressCidrBlocksIsMutable();
           serviceAddressCidrBlocks_.addAll(other.serviceAddressCidrBlocks_);
@@ -720,6 +712,7 @@ public final class AwsClusterNetworking extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. The VPC associated with the cluster. All component clusters
      * (i.e. control plane and node pools) run on a single VPC.
+     *
      * This field cannot be changed after creation.
      * </pre>
      *
@@ -744,6 +737,7 @@ public final class AwsClusterNetworking extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. The VPC associated with the cluster. All component clusters
      * (i.e. control plane and node pools) run on a single VPC.
+     *
      * This field cannot be changed after creation.
      * </pre>
      *
@@ -768,6 +762,7 @@ public final class AwsClusterNetworking extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. The VPC associated with the cluster. All component clusters
      * (i.e. control plane and node pools) run on a single VPC.
+     *
      * This field cannot be changed after creation.
      * </pre>
      *
@@ -791,6 +786,7 @@ public final class AwsClusterNetworking extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. The VPC associated with the cluster. All component clusters
      * (i.e. control plane and node pools) run on a single VPC.
+     *
      * This field cannot be changed after creation.
      * </pre>
      *
@@ -810,6 +806,7 @@ public final class AwsClusterNetworking extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. The VPC associated with the cluster. All component clusters
      * (i.e. control plane and node pools) run on a single VPC.
+     *
      * This field cannot be changed after creation.
      * </pre>
      *
@@ -829,14 +826,14 @@ public final class AwsClusterNetworking extends com.google.protobuf.GeneratedMes
       return this;
     }
 
-    private com.google.protobuf.LazyStringList podAddressCidrBlocks_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList podAddressCidrBlocks_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensurePodAddressCidrBlocksIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!podAddressCidrBlocks_.isModifiable()) {
         podAddressCidrBlocks_ = new com.google.protobuf.LazyStringArrayList(podAddressCidrBlocks_);
-        bitField0_ |= 0x00000002;
       }
+      bitField0_ |= 0x00000002;
     }
     /**
      *
@@ -853,7 +850,8 @@ public final class AwsClusterNetworking extends com.google.protobuf.GeneratedMes
      * @return A list containing the podAddressCidrBlocks.
      */
     public com.google.protobuf.ProtocolStringList getPodAddressCidrBlocksList() {
-      return podAddressCidrBlocks_.getUnmodifiableView();
+      podAddressCidrBlocks_.makeImmutable();
+      return podAddressCidrBlocks_;
     }
     /**
      *
@@ -930,6 +928,7 @@ public final class AwsClusterNetworking extends com.google.protobuf.GeneratedMes
       }
       ensurePodAddressCidrBlocksIsMutable();
       podAddressCidrBlocks_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -954,6 +953,7 @@ public final class AwsClusterNetworking extends com.google.protobuf.GeneratedMes
       }
       ensurePodAddressCidrBlocksIsMutable();
       podAddressCidrBlocks_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -975,6 +975,7 @@ public final class AwsClusterNetworking extends com.google.protobuf.GeneratedMes
     public Builder addAllPodAddressCidrBlocks(java.lang.Iterable<java.lang.String> values) {
       ensurePodAddressCidrBlocksIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, podAddressCidrBlocks_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -993,8 +994,9 @@ public final class AwsClusterNetworking extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearPodAddressCidrBlocks() {
-      podAddressCidrBlocks_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      podAddressCidrBlocks_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      ;
       onChanged();
       return this;
     }
@@ -1020,19 +1022,20 @@ public final class AwsClusterNetworking extends com.google.protobuf.GeneratedMes
       checkByteStringIsUtf8(value);
       ensurePodAddressCidrBlocksIsMutable();
       podAddressCidrBlocks_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList serviceAddressCidrBlocks_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList serviceAddressCidrBlocks_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
 
     private void ensureServiceAddressCidrBlocksIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!serviceAddressCidrBlocks_.isModifiable()) {
         serviceAddressCidrBlocks_ =
             new com.google.protobuf.LazyStringArrayList(serviceAddressCidrBlocks_);
-        bitField0_ |= 0x00000004;
       }
+      bitField0_ |= 0x00000004;
     }
     /**
      *
@@ -1050,7 +1053,8 @@ public final class AwsClusterNetworking extends com.google.protobuf.GeneratedMes
      * @return A list containing the serviceAddressCidrBlocks.
      */
     public com.google.protobuf.ProtocolStringList getServiceAddressCidrBlocksList() {
-      return serviceAddressCidrBlocks_.getUnmodifiableView();
+      serviceAddressCidrBlocks_.makeImmutable();
+      return serviceAddressCidrBlocks_;
     }
     /**
      *
@@ -1131,6 +1135,7 @@ public final class AwsClusterNetworking extends com.google.protobuf.GeneratedMes
       }
       ensureServiceAddressCidrBlocksIsMutable();
       serviceAddressCidrBlocks_.set(index, value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1156,6 +1161,7 @@ public final class AwsClusterNetworking extends com.google.protobuf.GeneratedMes
       }
       ensureServiceAddressCidrBlocksIsMutable();
       serviceAddressCidrBlocks_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1178,6 +1184,7 @@ public final class AwsClusterNetworking extends com.google.protobuf.GeneratedMes
     public Builder addAllServiceAddressCidrBlocks(java.lang.Iterable<java.lang.String> values) {
       ensureServiceAddressCidrBlocksIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, serviceAddressCidrBlocks_);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1197,8 +1204,9 @@ public final class AwsClusterNetworking extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearServiceAddressCidrBlocks() {
-      serviceAddressCidrBlocks_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      serviceAddressCidrBlocks_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bitField0_ = (bitField0_ & ~0x00000004);
+      ;
       onChanged();
       return this;
     }
@@ -1225,6 +1233,7 @@ public final class AwsClusterNetworking extends com.google.protobuf.GeneratedMes
       checkByteStringIsUtf8(value);
       ensureServiceAddressCidrBlocksIsMutable();
       serviceAddressCidrBlocks_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

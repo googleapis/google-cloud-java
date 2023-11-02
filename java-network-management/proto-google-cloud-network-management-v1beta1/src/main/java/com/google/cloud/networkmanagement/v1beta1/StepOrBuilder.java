@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -259,6 +259,41 @@ public interface StepOrBuilder
    * <code>.google.cloud.networkmanagement.v1beta1.EndpointInfo endpoint = 8;</code>
    */
   com.google.cloud.networkmanagement.v1beta1.EndpointInfoOrBuilder getEndpointOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a Google service
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1beta1.GoogleServiceInfo google_service = 24;</code>
+   *
+   * @return Whether the googleService field is set.
+   */
+  boolean hasGoogleService();
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a Google service
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1beta1.GoogleServiceInfo google_service = 24;</code>
+   *
+   * @return The googleService.
+   */
+  com.google.cloud.networkmanagement.v1beta1.GoogleServiceInfo getGoogleService();
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a Google service
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1beta1.GoogleServiceInfo google_service = 24;</code>
+   */
+  com.google.cloud.networkmanagement.v1beta1.GoogleServiceInfoOrBuilder getGoogleServiceOrBuilder();
 
   /**
    *
@@ -689,7 +724,7 @@ public interface StepOrBuilder
    *
    *
    * <pre>
-   * Display information of a Cloud function.
+   * Display information of a Cloud Function.
    * </pre>
    *
    * <code>.google.cloud.networkmanagement.v1beta1.CloudFunctionInfo cloud_function = 20;</code>
@@ -701,7 +736,7 @@ public interface StepOrBuilder
    *
    *
    * <pre>
-   * Display information of a Cloud function.
+   * Display information of a Cloud Function.
    * </pre>
    *
    * <code>.google.cloud.networkmanagement.v1beta1.CloudFunctionInfo cloud_function = 20;</code>
@@ -713,12 +748,90 @@ public interface StepOrBuilder
    *
    *
    * <pre>
-   * Display information of a Cloud function.
+   * Display information of a Cloud Function.
    * </pre>
    *
    * <code>.google.cloud.networkmanagement.v1beta1.CloudFunctionInfo cloud_function = 20;</code>
    */
   com.google.cloud.networkmanagement.v1beta1.CloudFunctionInfoOrBuilder getCloudFunctionOrBuilder();
 
-  public com.google.cloud.networkmanagement.v1beta1.Step.StepInfoCase getStepInfoCase();
+  /**
+   *
+   *
+   * <pre>
+   * Display information of an App Engine service version.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1beta1.AppEngineVersionInfo app_engine_version = 22;
+   * </code>
+   *
+   * @return Whether the appEngineVersion field is set.
+   */
+  boolean hasAppEngineVersion();
+  /**
+   *
+   *
+   * <pre>
+   * Display information of an App Engine service version.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1beta1.AppEngineVersionInfo app_engine_version = 22;
+   * </code>
+   *
+   * @return The appEngineVersion.
+   */
+  com.google.cloud.networkmanagement.v1beta1.AppEngineVersionInfo getAppEngineVersion();
+  /**
+   *
+   *
+   * <pre>
+   * Display information of an App Engine service version.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1beta1.AppEngineVersionInfo app_engine_version = 22;
+   * </code>
+   */
+  com.google.cloud.networkmanagement.v1beta1.AppEngineVersionInfoOrBuilder
+      getAppEngineVersionOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a Cloud Run revision.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1beta1.CloudRunRevisionInfo cloud_run_revision = 23;
+   * </code>
+   *
+   * @return Whether the cloudRunRevision field is set.
+   */
+  boolean hasCloudRunRevision();
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a Cloud Run revision.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1beta1.CloudRunRevisionInfo cloud_run_revision = 23;
+   * </code>
+   *
+   * @return The cloudRunRevision.
+   */
+  com.google.cloud.networkmanagement.v1beta1.CloudRunRevisionInfo getCloudRunRevision();
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a Cloud Run revision.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1beta1.CloudRunRevisionInfo cloud_run_revision = 23;
+   * </code>
+   */
+  com.google.cloud.networkmanagement.v1beta1.CloudRunRevisionInfoOrBuilder
+      getCloudRunRevisionOrBuilder();
+
+  com.google.cloud.networkmanagement.v1beta1.Step.StepInfoCase getStepInfoCase();
 }

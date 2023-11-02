@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ public interface DeleteAccessLevelRequestOrBuilder
    * <pre>
    * Required. Resource name for the [Access Level]
    * [google.identity.accesscontextmanager.v1.AccessLevel].
+   *
    * Format:
    * `accessPolicies/{policy_id}/accessLevels/{access_level_id}`
    * </pre>
@@ -46,6 +47,7 @@ public interface DeleteAccessLevelRequestOrBuilder
    * <pre>
    * Required. Resource name for the [Access Level]
    * [google.identity.accesscontextmanager.v1.AccessLevel].
+   *
    * Format:
    * `accessPolicies/{policy_id}/accessLevels/{access_level_id}`
    * </pre>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,11 +49,6 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
     return new GetDocumentRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.discoveryengine.v1beta.DocumentServiceProto
         .internal_static_google_cloud_discoveryengine_v1beta_GetDocumentRequest_descriptor;
@@ -80,9 +75,11 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
    * Required. Full resource name of
    * [Document][google.cloud.discoveryengine.v1beta.Document], such as
    * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/branches/{branch}/documents/{document}`.
+   *
    * If the caller does not have permission to access the
    * [Document][google.cloud.discoveryengine.v1beta.Document], regardless of
    * whether or not it exists, a `PERMISSION_DENIED` error is returned.
+   *
    * If the requested [Document][google.cloud.discoveryengine.v1beta.Document]
    * does not exist, a `NOT_FOUND` error is returned.
    * </pre>
@@ -112,9 +109,11 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
    * Required. Full resource name of
    * [Document][google.cloud.discoveryengine.v1beta.Document], such as
    * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/branches/{branch}/documents/{document}`.
+   *
    * If the caller does not have permission to access the
    * [Document][google.cloud.discoveryengine.v1beta.Document], regardless of
    * whether or not it exists, a `PERMISSION_DENIED` error is returned.
+   *
    * If the requested [Document][google.cloud.discoveryengine.v1beta.Document]
    * does not exist, a `NOT_FOUND` error is returned.
    * </pre>
@@ -491,9 +490,11 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
      * Required. Full resource name of
      * [Document][google.cloud.discoveryengine.v1beta.Document], such as
      * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/branches/{branch}/documents/{document}`.
+     *
      * If the caller does not have permission to access the
      * [Document][google.cloud.discoveryengine.v1beta.Document], regardless of
      * whether or not it exists, a `PERMISSION_DENIED` error is returned.
+     *
      * If the requested [Document][google.cloud.discoveryengine.v1beta.Document]
      * does not exist, a `NOT_FOUND` error is returned.
      * </pre>
@@ -522,9 +523,11 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
      * Required. Full resource name of
      * [Document][google.cloud.discoveryengine.v1beta.Document], such as
      * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/branches/{branch}/documents/{document}`.
+     *
      * If the caller does not have permission to access the
      * [Document][google.cloud.discoveryengine.v1beta.Document], regardless of
      * whether or not it exists, a `PERMISSION_DENIED` error is returned.
+     *
      * If the requested [Document][google.cloud.discoveryengine.v1beta.Document]
      * does not exist, a `NOT_FOUND` error is returned.
      * </pre>
@@ -553,9 +556,11 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
      * Required. Full resource name of
      * [Document][google.cloud.discoveryengine.v1beta.Document], such as
      * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/branches/{branch}/documents/{document}`.
+     *
      * If the caller does not have permission to access the
      * [Document][google.cloud.discoveryengine.v1beta.Document], regardless of
      * whether or not it exists, a `PERMISSION_DENIED` error is returned.
+     *
      * If the requested [Document][google.cloud.discoveryengine.v1beta.Document]
      * does not exist, a `NOT_FOUND` error is returned.
      * </pre>
@@ -583,9 +588,11 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
      * Required. Full resource name of
      * [Document][google.cloud.discoveryengine.v1beta.Document], such as
      * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/branches/{branch}/documents/{document}`.
+     *
      * If the caller does not have permission to access the
      * [Document][google.cloud.discoveryengine.v1beta.Document], regardless of
      * whether or not it exists, a `PERMISSION_DENIED` error is returned.
+     *
      * If the requested [Document][google.cloud.discoveryengine.v1beta.Document]
      * does not exist, a `NOT_FOUND` error is returned.
      * </pre>
@@ -609,9 +616,11 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
      * Required. Full resource name of
      * [Document][google.cloud.discoveryengine.v1beta.Document], such as
      * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/branches/{branch}/documents/{document}`.
+     *
      * If the caller does not have permission to access the
      * [Document][google.cloud.discoveryengine.v1beta.Document], regardless of
      * whether or not it exists, a `PERMISSION_DENIED` error is returned.
+     *
      * If the requested [Document][google.cloud.discoveryengine.v1beta.Document]
      * does not exist, a `NOT_FOUND` error is returned.
      * </pre>

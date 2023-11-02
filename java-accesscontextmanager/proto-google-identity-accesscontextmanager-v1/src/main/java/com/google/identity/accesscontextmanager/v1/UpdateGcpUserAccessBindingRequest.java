@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,11 +45,6 @@ public final class UpdateGcpUserAccessBindingRequest extends com.google.protobuf
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new UpdateGcpUserAccessBindingRequest();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -137,6 +132,7 @@ public final class UpdateGcpUserAccessBindingRequest extends com.google.protobuf
    * <pre>
    * Required. Only the fields specified in this mask are updated. Because name and
    * group_key cannot be changed, update_mask is required and must always be:
+   *
    * update_mask {
    * paths: "access_levels"
    * }
@@ -157,6 +153,7 @@ public final class UpdateGcpUserAccessBindingRequest extends com.google.protobuf
    * <pre>
    * Required. Only the fields specified in this mask are updated. Because name and
    * group_key cannot be changed, update_mask is required and must always be:
+   *
    * update_mask {
    * paths: "access_levels"
    * }
@@ -177,6 +174,7 @@ public final class UpdateGcpUserAccessBindingRequest extends com.google.protobuf
    * <pre>
    * Required. Only the fields specified in this mask are updated. Because name and
    * group_key cannot be changed, update_mask is required and must always be:
+   *
    * update_mask {
    * paths: "access_levels"
    * }
@@ -826,6 +824,7 @@ public final class UpdateGcpUserAccessBindingRequest extends com.google.protobuf
      * <pre>
      * Required. Only the fields specified in this mask are updated. Because name and
      * group_key cannot be changed, update_mask is required and must always be:
+     *
      * update_mask {
      * paths: "access_levels"
      * }
@@ -845,6 +844,7 @@ public final class UpdateGcpUserAccessBindingRequest extends com.google.protobuf
      * <pre>
      * Required. Only the fields specified in this mask are updated. Because name and
      * group_key cannot be changed, update_mask is required and must always be:
+     *
      * update_mask {
      * paths: "access_levels"
      * }
@@ -870,6 +870,7 @@ public final class UpdateGcpUserAccessBindingRequest extends com.google.protobuf
      * <pre>
      * Required. Only the fields specified in this mask are updated. Because name and
      * group_key cannot be changed, update_mask is required and must always be:
+     *
      * update_mask {
      * paths: "access_levels"
      * }
@@ -897,6 +898,7 @@ public final class UpdateGcpUserAccessBindingRequest extends com.google.protobuf
      * <pre>
      * Required. Only the fields specified in this mask are updated. Because name and
      * group_key cannot be changed, update_mask is required and must always be:
+     *
      * update_mask {
      * paths: "access_levels"
      * }
@@ -921,6 +923,7 @@ public final class UpdateGcpUserAccessBindingRequest extends com.google.protobuf
      * <pre>
      * Required. Only the fields specified in this mask are updated. Because name and
      * group_key cannot be changed, update_mask is required and must always be:
+     *
      * update_mask {
      * paths: "access_levels"
      * }
@@ -951,6 +954,7 @@ public final class UpdateGcpUserAccessBindingRequest extends com.google.protobuf
      * <pre>
      * Required. Only the fields specified in this mask are updated. Because name and
      * group_key cannot be changed, update_mask is required and must always be:
+     *
      * update_mask {
      * paths: "access_levels"
      * }
@@ -975,6 +979,7 @@ public final class UpdateGcpUserAccessBindingRequest extends com.google.protobuf
      * <pre>
      * Required. Only the fields specified in this mask are updated. Because name and
      * group_key cannot be changed, update_mask is required and must always be:
+     *
      * update_mask {
      * paths: "access_levels"
      * }
@@ -994,6 +999,7 @@ public final class UpdateGcpUserAccessBindingRequest extends com.google.protobuf
      * <pre>
      * Required. Only the fields specified in this mask are updated. Because name and
      * group_key cannot be changed, update_mask is required and must always be:
+     *
      * update_mask {
      * paths: "access_levels"
      * }
@@ -1017,6 +1023,7 @@ public final class UpdateGcpUserAccessBindingRequest extends com.google.protobuf
      * <pre>
      * Required. Only the fields specified in this mask are updated. Because name and
      * group_key cannot be changed, update_mask is required and must always be:
+     *
      * update_mask {
      * paths: "access_levels"
      * }

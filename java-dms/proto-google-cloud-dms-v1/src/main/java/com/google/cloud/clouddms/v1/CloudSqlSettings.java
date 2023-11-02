@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,20 +43,19 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
     activationPolicy_ = 0;
     dataDiskType_ = 0;
     zone_ = "";
+    secondaryZone_ = "";
     sourceId_ = "";
     rootPassword_ = "";
     collation_ = "";
+    cmekKeyName_ = "";
+    availabilityType_ = 0;
+    edition_ = 0;
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new CloudSqlSettings();
-  }
-
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -506,6 +505,26 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
      * <code>POSTGRES_13 = 8;</code>
      */
     POSTGRES_13(8),
+    /**
+     *
+     *
+     * <pre>
+     * PostgreSQL 14.
+     * </pre>
+     *
+     * <code>POSTGRES_14 = 17;</code>
+     */
+    POSTGRES_14(17),
+    /**
+     *
+     *
+     * <pre>
+     * PostgreSQL 15.
+     * </pre>
+     *
+     * <code>POSTGRES_15 = 18;</code>
+     */
+    POSTGRES_15(18),
     UNRECOGNIZED(-1),
     ;
 
@@ -599,6 +618,26 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
      * <code>POSTGRES_13 = 8;</code>
      */
     public static final int POSTGRES_13_VALUE = 8;
+    /**
+     *
+     *
+     * <pre>
+     * PostgreSQL 14.
+     * </pre>
+     *
+     * <code>POSTGRES_14 = 17;</code>
+     */
+    public static final int POSTGRES_14_VALUE = 17;
+    /**
+     *
+     *
+     * <pre>
+     * PostgreSQL 15.
+     * </pre>
+     *
+     * <code>POSTGRES_15 = 18;</code>
+     */
+    public static final int POSTGRES_15_VALUE = 18;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -642,6 +681,10 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
           return POSTGRES_12;
         case 8:
           return POSTGRES_13;
+        case 17:
+          return POSTGRES_14;
+        case 18:
+          return POSTGRES_15;
         default:
           return null;
       }
@@ -696,6 +739,324 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
     }
 
     // @@protoc_insertion_point(enum_scope:google.cloud.clouddms.v1.CloudSqlSettings.SqlDatabaseVersion)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The availability type of the given Cloud SQL instance.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.clouddms.v1.CloudSqlSettings.SqlAvailabilityType}
+   */
+  public enum SqlAvailabilityType implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * This is an unknown Availability type.
+     * </pre>
+     *
+     * <code>SQL_AVAILABILITY_TYPE_UNSPECIFIED = 0;</code>
+     */
+    SQL_AVAILABILITY_TYPE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Zonal availablility instance.
+     * </pre>
+     *
+     * <code>ZONAL = 1;</code>
+     */
+    ZONAL(1),
+    /**
+     *
+     *
+     * <pre>
+     * Regional availability instance.
+     * </pre>
+     *
+     * <code>REGIONAL = 2;</code>
+     */
+    REGIONAL(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * This is an unknown Availability type.
+     * </pre>
+     *
+     * <code>SQL_AVAILABILITY_TYPE_UNSPECIFIED = 0;</code>
+     */
+    public static final int SQL_AVAILABILITY_TYPE_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Zonal availablility instance.
+     * </pre>
+     *
+     * <code>ZONAL = 1;</code>
+     */
+    public static final int ZONAL_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Regional availability instance.
+     * </pre>
+     *
+     * <code>REGIONAL = 2;</code>
+     */
+    public static final int REGIONAL_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static SqlAvailabilityType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static SqlAvailabilityType forNumber(int value) {
+      switch (value) {
+        case 0:
+          return SQL_AVAILABILITY_TYPE_UNSPECIFIED;
+        case 1:
+          return ZONAL;
+        case 2:
+          return REGIONAL;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<SqlAvailabilityType>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<SqlAvailabilityType>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<SqlAvailabilityType>() {
+              public SqlAvailabilityType findValueByNumber(int number) {
+                return SqlAvailabilityType.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.clouddms.v1.CloudSqlSettings.getDescriptor().getEnumTypes().get(3);
+    }
+
+    private static final SqlAvailabilityType[] VALUES = values();
+
+    public static SqlAvailabilityType valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private SqlAvailabilityType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.clouddms.v1.CloudSqlSettings.SqlAvailabilityType)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The edition of the given Cloud SQL instance.
+   * Can be ENTERPRISE or ENTERPRISE_PLUS.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.clouddms.v1.CloudSqlSettings.Edition}
+   */
+  public enum Edition implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * The instance did not specify the edition.
+     * </pre>
+     *
+     * <code>EDITION_UNSPECIFIED = 0;</code>
+     */
+    EDITION_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * The instance is an enterprise edition.
+     * </pre>
+     *
+     * <code>ENTERPRISE = 2;</code>
+     */
+    ENTERPRISE(2),
+    /**
+     *
+     *
+     * <pre>
+     * The instance is an enterprise plus edition.
+     * </pre>
+     *
+     * <code>ENTERPRISE_PLUS = 3;</code>
+     */
+    ENTERPRISE_PLUS(3),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * The instance did not specify the edition.
+     * </pre>
+     *
+     * <code>EDITION_UNSPECIFIED = 0;</code>
+     */
+    public static final int EDITION_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The instance is an enterprise edition.
+     * </pre>
+     *
+     * <code>ENTERPRISE = 2;</code>
+     */
+    public static final int ENTERPRISE_VALUE = 2;
+    /**
+     *
+     *
+     * <pre>
+     * The instance is an enterprise plus edition.
+     * </pre>
+     *
+     * <code>ENTERPRISE_PLUS = 3;</code>
+     */
+    public static final int ENTERPRISE_PLUS_VALUE = 3;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static Edition valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static Edition forNumber(int value) {
+      switch (value) {
+        case 0:
+          return EDITION_UNSPECIFIED;
+        case 2:
+          return ENTERPRISE;
+        case 3:
+          return ENTERPRISE_PLUS;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<Edition> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<Edition> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<Edition>() {
+          public Edition findValueByNumber(int number) {
+            return Edition.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.clouddms.v1.CloudSqlSettings.getDescriptor().getEnumTypes().get(4);
+    }
+
+    private static final Edition[] VALUES = values();
+
+    public static Edition valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private Edition(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.clouddms.v1.CloudSqlSettings.Edition)
   }
 
   public static final int DATABASE_VERSION_FIELD_NUMBER = 1;
@@ -771,6 +1132,7 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
    * The resource labels for a Cloud SQL instance to use to annotate any related
    * underlying resources such as Compute Engine VMs.
    * An object containing a list of "key": "value" pairs.
+   *
    * Example: `{ "name": "wrench", "mass": "18kg", "count": "3" }`.
    * </pre>
    *
@@ -796,6 +1158,7 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
    * The resource labels for a Cloud SQL instance to use to annotate any related
    * underlying resources such as Compute Engine VMs.
    * An object containing a list of "key": "value" pairs.
+   *
    * Example: `{ "name": "wrench", "mass": "18kg", "count": "3" }`.
    * </pre>
    *
@@ -812,6 +1175,7 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
    * The resource labels for a Cloud SQL instance to use to annotate any related
    * underlying resources such as Compute Engine VMs.
    * An object containing a list of "key": "value" pairs.
+   *
    * Example: `{ "name": "wrench", "mass": "18kg", "count": "3" }`.
    * </pre>
    *
@@ -835,6 +1199,7 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
    * The resource labels for a Cloud SQL instance to use to annotate any related
    * underlying resources such as Compute Engine VMs.
    * An object containing a list of "key": "value" pairs.
+   *
    * Example: `{ "name": "wrench", "mass": "18kg", "count": "3" }`.
    * </pre>
    *
@@ -974,8 +1339,10 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
    * <pre>
    * The activation policy specifies when the instance is activated; it is
    * applicable only when the instance state is 'RUNNABLE'. Valid values:
+   *
    * 'ALWAYS': The instance is on, and remains so even in
    * the absence of connection requests.
+   *
    * `NEVER`: The instance is off; it is not activated, even if a
    * connection request arrives.
    * </pre>
@@ -995,8 +1362,10 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
    * <pre>
    * The activation policy specifies when the instance is activated; it is
    * applicable only when the instance state is 'RUNNABLE'. Valid values:
+   *
    * 'ALWAYS': The instance is on, and remains so even in
    * the absence of connection requests.
+   *
    * `NEVER`: The instance is off; it is not activated, even if a
    * connection request arrives.
    * </pre>
@@ -1344,7 +1713,7 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The Google Cloud Platform zone where your Cloud SQL datdabse instance is
+   * The Google Cloud Platform zone where your Cloud SQL database instance is
    * located.
    * </pre>
    *
@@ -1368,7 +1737,7 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The Google Cloud Platform zone where your Cloud SQL datdabse instance is
+   * The Google Cloud Platform zone where your Cloud SQL database instance is
    * located.
    * </pre>
    *
@@ -1383,6 +1752,61 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       zone_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int SECONDARY_ZONE_FIELD_NUMBER = 18;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object secondaryZone_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Google Cloud Platform zone where the failover Cloud SQL
+   * database instance is located. Used when the Cloud SQL database availability
+   * type is REGIONAL (i.e. multiple zones / highly available).
+   * </pre>
+   *
+   * <code>string secondary_zone = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The secondaryZone.
+   */
+  @java.lang.Override
+  public java.lang.String getSecondaryZone() {
+    java.lang.Object ref = secondaryZone_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      secondaryZone_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Google Cloud Platform zone where the failover Cloud SQL
+   * database instance is located. Used when the Cloud SQL database availability
+   * type is REGIONAL (i.e. multiple zones / highly available).
+   * </pre>
+   *
+   * <code>string secondary_zone = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for secondaryZone.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getSecondaryZoneBytes() {
+    java.lang.Object ref = secondaryZone_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      secondaryZone_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -1564,6 +1988,148 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int CMEK_KEY_NAME_FIELD_NUMBER = 16;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object cmekKeyName_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * The KMS key name used for the csql instance.
+   * </pre>
+   *
+   * <code>string cmek_key_name = 16;</code>
+   *
+   * @return The cmekKeyName.
+   */
+  @java.lang.Override
+  public java.lang.String getCmekKeyName() {
+    java.lang.Object ref = cmekKeyName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      cmekKeyName_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The KMS key name used for the csql instance.
+   * </pre>
+   *
+   * <code>string cmek_key_name = 16;</code>
+   *
+   * @return The bytes for cmekKeyName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getCmekKeyNameBytes() {
+    java.lang.Object ref = cmekKeyName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      cmekKeyName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int AVAILABILITY_TYPE_FIELD_NUMBER = 17;
+  private int availabilityType_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Availability type. Potential values:
+   * *  `ZONAL`: The instance serves data from only one zone. Outages in that
+   * zone affect data availability.
+   * *  `REGIONAL`: The instance can serve data from more than one zone in a
+   * region (it is highly available).
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.clouddms.v1.CloudSqlSettings.SqlAvailabilityType availability_type = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for availabilityType.
+   */
+  @java.lang.Override
+  public int getAvailabilityTypeValue() {
+    return availabilityType_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Availability type. Potential values:
+   * *  `ZONAL`: The instance serves data from only one zone. Outages in that
+   * zone affect data availability.
+   * *  `REGIONAL`: The instance can serve data from more than one zone in a
+   * region (it is highly available).
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.clouddms.v1.CloudSqlSettings.SqlAvailabilityType availability_type = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The availabilityType.
+   */
+  @java.lang.Override
+  public com.google.cloud.clouddms.v1.CloudSqlSettings.SqlAvailabilityType getAvailabilityType() {
+    com.google.cloud.clouddms.v1.CloudSqlSettings.SqlAvailabilityType result =
+        com.google.cloud.clouddms.v1.CloudSqlSettings.SqlAvailabilityType.forNumber(
+            availabilityType_);
+    return result == null
+        ? com.google.cloud.clouddms.v1.CloudSqlSettings.SqlAvailabilityType.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int EDITION_FIELD_NUMBER = 19;
+  private int edition_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The edition of the given Cloud SQL instance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.clouddms.v1.CloudSqlSettings.Edition edition = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for edition.
+   */
+  @java.lang.Override
+  public int getEditionValue() {
+    return edition_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The edition of the given Cloud SQL instance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.clouddms.v1.CloudSqlSettings.Edition edition = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The edition.
+   */
+  @java.lang.Override
+  public com.google.cloud.clouddms.v1.CloudSqlSettings.Edition getEdition() {
+    com.google.cloud.clouddms.v1.CloudSqlSettings.Edition result =
+        com.google.cloud.clouddms.v1.CloudSqlSettings.Edition.forNumber(edition_);
+    return result == null
+        ? com.google.cloud.clouddms.v1.CloudSqlSettings.Edition.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1629,6 +2195,22 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(collation_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 15, collation_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cmekKeyName_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 16, cmekKeyName_);
+    }
+    if (availabilityType_
+        != com.google.cloud.clouddms.v1.CloudSqlSettings.SqlAvailabilityType
+            .SQL_AVAILABILITY_TYPE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(17, availabilityType_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(secondaryZone_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 18, secondaryZone_);
+    }
+    if (edition_
+        != com.google.cloud.clouddms.v1.CloudSqlSettings.Edition.EDITION_UNSPECIFIED.getNumber()) {
+      output.writeEnum(19, edition_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1708,6 +2290,22 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(collation_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, collation_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cmekKeyName_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, cmekKeyName_);
+    }
+    if (availabilityType_
+        != com.google.cloud.clouddms.v1.CloudSqlSettings.SqlAvailabilityType
+            .SQL_AVAILABILITY_TYPE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(17, availabilityType_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(secondaryZone_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, secondaryZone_);
+    }
+    if (edition_
+        != com.google.cloud.clouddms.v1.CloudSqlSettings.Edition.EDITION_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(19, edition_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1747,10 +2345,14 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
       if (!getDataDiskSizeGb().equals(other.getDataDiskSizeGb())) return false;
     }
     if (!getZone().equals(other.getZone())) return false;
+    if (!getSecondaryZone().equals(other.getSecondaryZone())) return false;
     if (!getSourceId().equals(other.getSourceId())) return false;
     if (!getRootPassword().equals(other.getRootPassword())) return false;
     if (getRootPasswordSet() != other.getRootPasswordSet()) return false;
     if (!getCollation().equals(other.getCollation())) return false;
+    if (!getCmekKeyName().equals(other.getCmekKeyName())) return false;
+    if (availabilityType_ != other.availabilityType_) return false;
+    if (edition_ != other.edition_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1796,6 +2398,8 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
     }
     hash = (37 * hash) + ZONE_FIELD_NUMBER;
     hash = (53 * hash) + getZone().hashCode();
+    hash = (37 * hash) + SECONDARY_ZONE_FIELD_NUMBER;
+    hash = (53 * hash) + getSecondaryZone().hashCode();
     hash = (37 * hash) + SOURCE_ID_FIELD_NUMBER;
     hash = (53 * hash) + getSourceId().hashCode();
     hash = (37 * hash) + ROOT_PASSWORD_FIELD_NUMBER;
@@ -1804,6 +2408,12 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getRootPasswordSet());
     hash = (37 * hash) + COLLATION_FIELD_NUMBER;
     hash = (53 * hash) + getCollation().hashCode();
+    hash = (37 * hash) + CMEK_KEY_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getCmekKeyName().hashCode();
+    hash = (37 * hash) + AVAILABILITY_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + availabilityType_;
+    hash = (37 * hash) + EDITION_FIELD_NUMBER;
+    hash = (53 * hash) + edition_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1994,10 +2604,14 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
         dataDiskSizeGbBuilder_ = null;
       }
       zone_ = "";
+      secondaryZone_ = "";
       sourceId_ = "";
       rootPassword_ = "";
       rootPasswordSet_ = false;
       collation_ = "";
+      cmekKeyName_ = "";
+      availabilityType_ = 0;
+      edition_ = 0;
       return this;
     }
 
@@ -2077,16 +2691,28 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
         result.zone_ = zone_;
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
-        result.sourceId_ = sourceId_;
+        result.secondaryZone_ = secondaryZone_;
       }
       if (((from_bitField0_ & 0x00001000) != 0)) {
-        result.rootPassword_ = rootPassword_;
+        result.sourceId_ = sourceId_;
       }
       if (((from_bitField0_ & 0x00002000) != 0)) {
-        result.rootPasswordSet_ = rootPasswordSet_;
+        result.rootPassword_ = rootPassword_;
       }
       if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.rootPasswordSet_ = rootPasswordSet_;
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
         result.collation_ = collation_;
+      }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.cmekKeyName_ = cmekKeyName_;
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.availabilityType_ = availabilityType_;
+      }
+      if (((from_bitField0_ & 0x00040000) != 0)) {
+        result.edition_ = edition_;
       }
     }
 
@@ -2170,14 +2796,19 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
         bitField0_ |= 0x00000400;
         onChanged();
       }
+      if (!other.getSecondaryZone().isEmpty()) {
+        secondaryZone_ = other.secondaryZone_;
+        bitField0_ |= 0x00000800;
+        onChanged();
+      }
       if (!other.getSourceId().isEmpty()) {
         sourceId_ = other.sourceId_;
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       if (!other.getRootPassword().isEmpty()) {
         rootPassword_ = other.rootPassword_;
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       if (other.getRootPasswordSet() != false) {
@@ -2185,8 +2816,19 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
       }
       if (!other.getCollation().isEmpty()) {
         collation_ = other.collation_;
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00008000;
         onChanged();
+      }
+      if (!other.getCmekKeyName().isEmpty()) {
+        cmekKeyName_ = other.cmekKeyName_;
+        bitField0_ |= 0x00010000;
+        onChanged();
+      }
+      if (other.availabilityType_ != 0) {
+        setAvailabilityTypeValue(other.getAvailabilityTypeValue());
+      }
+      if (other.edition_ != 0) {
+        setEditionValue(other.getEditionValue());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -2297,27 +2939,51 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
             case 98:
               {
                 sourceId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 98
             case 106:
               {
                 rootPassword_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 106
             case 112:
               {
                 rootPasswordSet_ = input.readBool();
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 112
             case 122:
               {
                 collation_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 122
+            case 130:
+              {
+                cmekKeyName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00010000;
+                break;
+              } // case 130
+            case 136:
+              {
+                availabilityType_ = input.readEnum();
+                bitField0_ |= 0x00020000;
+                break;
+              } // case 136
+            case 146:
+              {
+                secondaryZone_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 146
+            case 152:
+              {
+                edition_ = input.readEnum();
+                bitField0_ |= 0x00040000;
+                break;
+              } // case 152
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2471,6 +3137,7 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
      * The resource labels for a Cloud SQL instance to use to annotate any related
      * underlying resources such as Compute Engine VMs.
      * An object containing a list of "key": "value" pairs.
+     *
      * Example: `{ "name": "wrench", "mass": "18kg", "count": "3" }`.
      * </pre>
      *
@@ -2496,6 +3163,7 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
      * The resource labels for a Cloud SQL instance to use to annotate any related
      * underlying resources such as Compute Engine VMs.
      * An object containing a list of "key": "value" pairs.
+     *
      * Example: `{ "name": "wrench", "mass": "18kg", "count": "3" }`.
      * </pre>
      *
@@ -2512,6 +3180,7 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
      * The resource labels for a Cloud SQL instance to use to annotate any related
      * underlying resources such as Compute Engine VMs.
      * An object containing a list of "key": "value" pairs.
+     *
      * Example: `{ "name": "wrench", "mass": "18kg", "count": "3" }`.
      * </pre>
      *
@@ -2535,6 +3204,7 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
      * The resource labels for a Cloud SQL instance to use to annotate any related
      * underlying resources such as Compute Engine VMs.
      * An object containing a list of "key": "value" pairs.
+     *
      * Example: `{ "name": "wrench", "mass": "18kg", "count": "3" }`.
      * </pre>
      *
@@ -2564,6 +3234,7 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
      * The resource labels for a Cloud SQL instance to use to annotate any related
      * underlying resources such as Compute Engine VMs.
      * An object containing a list of "key": "value" pairs.
+     *
      * Example: `{ "name": "wrench", "mass": "18kg", "count": "3" }`.
      * </pre>
      *
@@ -2589,6 +3260,7 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
      * The resource labels for a Cloud SQL instance to use to annotate any related
      * underlying resources such as Compute Engine VMs.
      * An object containing a list of "key": "value" pairs.
+     *
      * Example: `{ "name": "wrench", "mass": "18kg", "count": "3" }`.
      * </pre>
      *
@@ -2612,6 +3284,7 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
      * The resource labels for a Cloud SQL instance to use to annotate any related
      * underlying resources such as Compute Engine VMs.
      * An object containing a list of "key": "value" pairs.
+     *
      * Example: `{ "name": "wrench", "mass": "18kg", "count": "3" }`.
      * </pre>
      *
@@ -2954,8 +3627,10 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
      * <pre>
      * The activation policy specifies when the instance is activated; it is
      * applicable only when the instance state is 'RUNNABLE'. Valid values:
+     *
      * 'ALWAYS': The instance is on, and remains so even in
      * the absence of connection requests.
+     *
      * `NEVER`: The instance is off; it is not activated, even if a
      * connection request arrives.
      * </pre>
@@ -2975,8 +3650,10 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
      * <pre>
      * The activation policy specifies when the instance is activated; it is
      * applicable only when the instance state is 'RUNNABLE'. Valid values:
+     *
      * 'ALWAYS': The instance is on, and remains so even in
      * the absence of connection requests.
+     *
      * `NEVER`: The instance is off; it is not activated, even if a
      * connection request arrives.
      * </pre>
@@ -2999,8 +3676,10 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
      * <pre>
      * The activation policy specifies when the instance is activated; it is
      * applicable only when the instance state is 'RUNNABLE'. Valid values:
+     *
      * 'ALWAYS': The instance is on, and remains so even in
      * the absence of connection requests.
+     *
      * `NEVER`: The instance is off; it is not activated, even if a
      * connection request arrives.
      * </pre>
@@ -3025,8 +3704,10 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
      * <pre>
      * The activation policy specifies when the instance is activated; it is
      * applicable only when the instance state is 'RUNNABLE'. Valid values:
+     *
      * 'ALWAYS': The instance is on, and remains so even in
      * the absence of connection requests.
+     *
      * `NEVER`: The instance is off; it is not activated, even if a
      * connection request arrives.
      * </pre>
@@ -3053,8 +3734,10 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
      * <pre>
      * The activation policy specifies when the instance is activated; it is
      * applicable only when the instance state is 'RUNNABLE'. Valid values:
+     *
      * 'ALWAYS': The instance is on, and remains so even in
      * the absence of connection requests.
+     *
      * `NEVER`: The instance is off; it is not activated, even if a
      * connection request arrives.
      * </pre>
@@ -3961,7 +4644,7 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The Google Cloud Platform zone where your Cloud SQL datdabse instance is
+     * The Google Cloud Platform zone where your Cloud SQL database instance is
      * located.
      * </pre>
      *
@@ -3984,7 +4667,7 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The Google Cloud Platform zone where your Cloud SQL datdabse instance is
+     * The Google Cloud Platform zone where your Cloud SQL database instance is
      * located.
      * </pre>
      *
@@ -4007,7 +4690,7 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The Google Cloud Platform zone where your Cloud SQL datdabse instance is
+     * The Google Cloud Platform zone where your Cloud SQL database instance is
      * located.
      * </pre>
      *
@@ -4029,7 +4712,7 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The Google Cloud Platform zone where your Cloud SQL datdabse instance is
+     * The Google Cloud Platform zone where your Cloud SQL database instance is
      * located.
      * </pre>
      *
@@ -4047,7 +4730,7 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The Google Cloud Platform zone where your Cloud SQL datdabse instance is
+     * The Google Cloud Platform zone where your Cloud SQL database instance is
      * located.
      * </pre>
      *
@@ -4063,6 +4746,122 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       zone_ = value;
       bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object secondaryZone_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Google Cloud Platform zone where the failover Cloud SQL
+     * database instance is located. Used when the Cloud SQL database availability
+     * type is REGIONAL (i.e. multiple zones / highly available).
+     * </pre>
+     *
+     * <code>string secondary_zone = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The secondaryZone.
+     */
+    public java.lang.String getSecondaryZone() {
+      java.lang.Object ref = secondaryZone_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        secondaryZone_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Google Cloud Platform zone where the failover Cloud SQL
+     * database instance is located. Used when the Cloud SQL database availability
+     * type is REGIONAL (i.e. multiple zones / highly available).
+     * </pre>
+     *
+     * <code>string secondary_zone = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for secondaryZone.
+     */
+    public com.google.protobuf.ByteString getSecondaryZoneBytes() {
+      java.lang.Object ref = secondaryZone_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        secondaryZone_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Google Cloud Platform zone where the failover Cloud SQL
+     * database instance is located. Used when the Cloud SQL database availability
+     * type is REGIONAL (i.e. multiple zones / highly available).
+     * </pre>
+     *
+     * <code>string secondary_zone = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The secondaryZone to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSecondaryZone(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      secondaryZone_ = value;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Google Cloud Platform zone where the failover Cloud SQL
+     * database instance is located. Used when the Cloud SQL database availability
+     * type is REGIONAL (i.e. multiple zones / highly available).
+     * </pre>
+     *
+     * <code>string secondary_zone = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSecondaryZone() {
+      secondaryZone_ = getDefaultInstance().getSecondaryZone();
+      bitField0_ = (bitField0_ & ~0x00000800);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Google Cloud Platform zone where the failover Cloud SQL
+     * database instance is located. Used when the Cloud SQL database availability
+     * type is REGIONAL (i.e. multiple zones / highly available).
+     * </pre>
+     *
+     * <code>string secondary_zone = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for secondaryZone to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSecondaryZoneBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      secondaryZone_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4135,7 +4934,7 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       sourceId_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4154,7 +4953,7 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearSourceId() {
       sourceId_ = getDefaultInstance().getSourceId();
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       onChanged();
       return this;
     }
@@ -4178,7 +4977,7 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       sourceId_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4245,7 +5044,7 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       rootPassword_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4262,7 +5061,7 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearRootPassword() {
       rootPassword_ = getDefaultInstance().getRootPassword();
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       onChanged();
       return this;
     }
@@ -4284,7 +5083,7 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       rootPassword_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4320,7 +5119,7 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
     public Builder setRootPasswordSet(boolean value) {
 
       rootPasswordSet_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4336,7 +5135,7 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearRootPasswordSet() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       rootPasswordSet_ = false;
       onChanged();
       return this;
@@ -4404,7 +5203,7 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       collation_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4421,7 +5220,7 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearCollation() {
       collation_ = getDefaultInstance().getCollation();
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       onChanged();
       return this;
     }
@@ -4443,7 +5242,339 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       collation_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object cmekKeyName_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The KMS key name used for the csql instance.
+     * </pre>
+     *
+     * <code>string cmek_key_name = 16;</code>
+     *
+     * @return The cmekKeyName.
+     */
+    public java.lang.String getCmekKeyName() {
+      java.lang.Object ref = cmekKeyName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        cmekKeyName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The KMS key name used for the csql instance.
+     * </pre>
+     *
+     * <code>string cmek_key_name = 16;</code>
+     *
+     * @return The bytes for cmekKeyName.
+     */
+    public com.google.protobuf.ByteString getCmekKeyNameBytes() {
+      java.lang.Object ref = cmekKeyName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        cmekKeyName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The KMS key name used for the csql instance.
+     * </pre>
+     *
+     * <code>string cmek_key_name = 16;</code>
+     *
+     * @param value The cmekKeyName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCmekKeyName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      cmekKeyName_ = value;
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The KMS key name used for the csql instance.
+     * </pre>
+     *
+     * <code>string cmek_key_name = 16;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCmekKeyName() {
+      cmekKeyName_ = getDefaultInstance().getCmekKeyName();
+      bitField0_ = (bitField0_ & ~0x00010000);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The KMS key name used for the csql instance.
+     * </pre>
+     *
+     * <code>string cmek_key_name = 16;</code>
+     *
+     * @param value The bytes for cmekKeyName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCmekKeyNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      cmekKeyName_ = value;
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+
+    private int availabilityType_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Availability type. Potential values:
+     * *  `ZONAL`: The instance serves data from only one zone. Outages in that
+     * zone affect data availability.
+     * *  `REGIONAL`: The instance can serve data from more than one zone in a
+     * region (it is highly available).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.clouddms.v1.CloudSqlSettings.SqlAvailabilityType availability_type = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for availabilityType.
+     */
+    @java.lang.Override
+    public int getAvailabilityTypeValue() {
+      return availabilityType_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Availability type. Potential values:
+     * *  `ZONAL`: The instance serves data from only one zone. Outages in that
+     * zone affect data availability.
+     * *  `REGIONAL`: The instance can serve data from more than one zone in a
+     * region (it is highly available).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.clouddms.v1.CloudSqlSettings.SqlAvailabilityType availability_type = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for availabilityType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAvailabilityTypeValue(int value) {
+      availabilityType_ = value;
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Availability type. Potential values:
+     * *  `ZONAL`: The instance serves data from only one zone. Outages in that
+     * zone affect data availability.
+     * *  `REGIONAL`: The instance can serve data from more than one zone in a
+     * region (it is highly available).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.clouddms.v1.CloudSqlSettings.SqlAvailabilityType availability_type = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The availabilityType.
+     */
+    @java.lang.Override
+    public com.google.cloud.clouddms.v1.CloudSqlSettings.SqlAvailabilityType getAvailabilityType() {
+      com.google.cloud.clouddms.v1.CloudSqlSettings.SqlAvailabilityType result =
+          com.google.cloud.clouddms.v1.CloudSqlSettings.SqlAvailabilityType.forNumber(
+              availabilityType_);
+      return result == null
+          ? com.google.cloud.clouddms.v1.CloudSqlSettings.SqlAvailabilityType.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Availability type. Potential values:
+     * *  `ZONAL`: The instance serves data from only one zone. Outages in that
+     * zone affect data availability.
+     * *  `REGIONAL`: The instance can serve data from more than one zone in a
+     * region (it is highly available).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.clouddms.v1.CloudSqlSettings.SqlAvailabilityType availability_type = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The availabilityType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAvailabilityType(
+        com.google.cloud.clouddms.v1.CloudSqlSettings.SqlAvailabilityType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00020000;
+      availabilityType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Availability type. Potential values:
+     * *  `ZONAL`: The instance serves data from only one zone. Outages in that
+     * zone affect data availability.
+     * *  `REGIONAL`: The instance can serve data from more than one zone in a
+     * region (it is highly available).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.clouddms.v1.CloudSqlSettings.SqlAvailabilityType availability_type = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAvailabilityType() {
+      bitField0_ = (bitField0_ & ~0x00020000);
+      availabilityType_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int edition_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The edition of the given Cloud SQL instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.clouddms.v1.CloudSqlSettings.Edition edition = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for edition.
+     */
+    @java.lang.Override
+    public int getEditionValue() {
+      return edition_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The edition of the given Cloud SQL instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.clouddms.v1.CloudSqlSettings.Edition edition = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for edition to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEditionValue(int value) {
+      edition_ = value;
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The edition of the given Cloud SQL instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.clouddms.v1.CloudSqlSettings.Edition edition = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The edition.
+     */
+    @java.lang.Override
+    public com.google.cloud.clouddms.v1.CloudSqlSettings.Edition getEdition() {
+      com.google.cloud.clouddms.v1.CloudSqlSettings.Edition result =
+          com.google.cloud.clouddms.v1.CloudSqlSettings.Edition.forNumber(edition_);
+      return result == null
+          ? com.google.cloud.clouddms.v1.CloudSqlSettings.Edition.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The edition of the given Cloud SQL instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.clouddms.v1.CloudSqlSettings.Edition edition = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The edition to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEdition(com.google.cloud.clouddms.v1.CloudSqlSettings.Edition value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00040000;
+      edition_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The edition of the given Cloud SQL instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.clouddms.v1.CloudSqlSettings.Edition edition = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEdition() {
+      bitField0_ = (bitField0_ & ~0x00040000);
+      edition_ = 0;
       onChanged();
       return this;
     }

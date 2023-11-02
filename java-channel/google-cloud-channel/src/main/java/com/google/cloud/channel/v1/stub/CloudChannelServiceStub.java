@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,6 +26,8 @@ import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListOffersPa
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListProductsPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListPurchasableOffersPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListPurchasableSkusPagedResponse;
+import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListSkuGroupBillableSkusPagedResponse;
+import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListSkuGroupsPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListSkusPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListSubscribersPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListTransferableOffersPagedResponse;
@@ -80,6 +82,10 @@ import com.google.cloud.channel.v1.ListPurchasableOffersRequest;
 import com.google.cloud.channel.v1.ListPurchasableOffersResponse;
 import com.google.cloud.channel.v1.ListPurchasableSkusRequest;
 import com.google.cloud.channel.v1.ListPurchasableSkusResponse;
+import com.google.cloud.channel.v1.ListSkuGroupBillableSkusRequest;
+import com.google.cloud.channel.v1.ListSkuGroupBillableSkusResponse;
+import com.google.cloud.channel.v1.ListSkuGroupsRequest;
+import com.google.cloud.channel.v1.ListSkuGroupsResponse;
 import com.google.cloud.channel.v1.ListSkusRequest;
 import com.google.cloud.channel.v1.ListSkusResponse;
 import com.google.cloud.channel.v1.ListSubscribersRequest;
@@ -92,6 +98,8 @@ import com.google.cloud.channel.v1.LookupOfferRequest;
 import com.google.cloud.channel.v1.Offer;
 import com.google.cloud.channel.v1.OperationMetadata;
 import com.google.cloud.channel.v1.ProvisionCloudIdentityRequest;
+import com.google.cloud.channel.v1.QueryEligibleBillingAccountsRequest;
+import com.google.cloud.channel.v1.QueryEligibleBillingAccountsResponse;
 import com.google.cloud.channel.v1.RegisterSubscriberRequest;
 import com.google.cloud.channel.v1.RegisterSubscriberResponse;
 import com.google.cloud.channel.v1.StartPaidServiceRequest;
@@ -410,6 +418,26 @@ public abstract class CloudChannelServiceStub implements BackgroundResource {
         "Not implemented: deleteChannelPartnerRepricingConfigCallable()");
   }
 
+  public UnaryCallable<ListSkuGroupsRequest, ListSkuGroupsPagedResponse>
+      listSkuGroupsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listSkuGroupsPagedCallable()");
+  }
+
+  public UnaryCallable<ListSkuGroupsRequest, ListSkuGroupsResponse> listSkuGroupsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listSkuGroupsCallable()");
+  }
+
+  public UnaryCallable<ListSkuGroupBillableSkusRequest, ListSkuGroupBillableSkusPagedResponse>
+      listSkuGroupBillableSkusPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listSkuGroupBillableSkusPagedCallable()");
+  }
+
+  public UnaryCallable<ListSkuGroupBillableSkusRequest, ListSkuGroupBillableSkusResponse>
+      listSkuGroupBillableSkusCallable() {
+    throw new UnsupportedOperationException("Not implemented: listSkuGroupBillableSkusCallable()");
+  }
+
   public UnaryCallable<LookupOfferRequest, Offer> lookupOfferCallable() {
     throw new UnsupportedOperationException("Not implemented: lookupOfferCallable()");
   }
@@ -457,6 +485,12 @@ public abstract class CloudChannelServiceStub implements BackgroundResource {
   public UnaryCallable<ListPurchasableOffersRequest, ListPurchasableOffersResponse>
       listPurchasableOffersCallable() {
     throw new UnsupportedOperationException("Not implemented: listPurchasableOffersCallable()");
+  }
+
+  public UnaryCallable<QueryEligibleBillingAccountsRequest, QueryEligibleBillingAccountsResponse>
+      queryEligibleBillingAccountsCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: queryEligibleBillingAccountsCallable()");
   }
 
   public UnaryCallable<RegisterSubscriberRequest, RegisterSubscriberResponse>

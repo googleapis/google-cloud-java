@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,11 +46,6 @@ public final class DataQualityDimensionResult extends com.google.protobuf.Genera
     return new DataQualityDimensionResult();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-    return this.unknownFields;
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dataplex.v1.DataQualityProto
         .internal_static_google_cloud_dataplex_v1_DataQualityDimensionResult_descriptor;
@@ -64,6 +59,62 @@ public final class DataQualityDimensionResult extends com.google.protobuf.Genera
         .ensureFieldAccessorsInitialized(
             com.google.cloud.dataplex.v1.DataQualityDimensionResult.class,
             com.google.cloud.dataplex.v1.DataQualityDimensionResult.Builder.class);
+  }
+
+  public static final int DIMENSION_FIELD_NUMBER = 1;
+  private com.google.cloud.dataplex.v1.DataQualityDimension dimension_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The dimension config specified in the DataQualitySpec, as is.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataQualityDimension dimension = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the dimension field is set.
+   */
+  @java.lang.Override
+  public boolean hasDimension() {
+    return dimension_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The dimension config specified in the DataQualitySpec, as is.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataQualityDimension dimension = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The dimension.
+   */
+  @java.lang.Override
+  public com.google.cloud.dataplex.v1.DataQualityDimension getDimension() {
+    return dimension_ == null
+        ? com.google.cloud.dataplex.v1.DataQualityDimension.getDefaultInstance()
+        : dimension_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The dimension config specified in the DataQualitySpec, as is.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataQualityDimension dimension = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dataplex.v1.DataQualityDimensionOrBuilder getDimensionOrBuilder() {
+    return dimension_ == null
+        ? com.google.cloud.dataplex.v1.DataQualityDimension.getDefaultInstance()
+        : dimension_;
   }
 
   public static final int PASSED_FIELD_NUMBER = 3;
@@ -98,6 +149,9 @@ public final class DataQualityDimensionResult extends com.google.protobuf.Genera
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (dimension_ != null) {
+      output.writeMessage(1, getDimension());
+    }
     if (passed_ != false) {
       output.writeBool(3, passed_);
     }
@@ -110,6 +164,9 @@ public final class DataQualityDimensionResult extends com.google.protobuf.Genera
     if (size != -1) return size;
 
     size = 0;
+    if (dimension_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getDimension());
+    }
     if (passed_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, passed_);
     }
@@ -129,6 +186,10 @@ public final class DataQualityDimensionResult extends com.google.protobuf.Genera
     com.google.cloud.dataplex.v1.DataQualityDimensionResult other =
         (com.google.cloud.dataplex.v1.DataQualityDimensionResult) obj;
 
+    if (hasDimension() != other.hasDimension()) return false;
+    if (hasDimension()) {
+      if (!getDimension().equals(other.getDimension())) return false;
+    }
     if (getPassed() != other.getPassed()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -141,6 +202,10 @@ public final class DataQualityDimensionResult extends com.google.protobuf.Genera
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (hasDimension()) {
+      hash = (37 * hash) + DIMENSION_FIELD_NUMBER;
+      hash = (53 * hash) + getDimension().hashCode();
+    }
     hash = (37 * hash) + PASSED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getPassed());
     hash = (29 * hash) + getUnknownFields().hashCode();
@@ -284,6 +349,11 @@ public final class DataQualityDimensionResult extends com.google.protobuf.Genera
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      dimension_ = null;
+      if (dimensionBuilder_ != null) {
+        dimensionBuilder_.dispose();
+        dimensionBuilder_ = null;
+      }
       passed_ = false;
       return this;
     }
@@ -322,6 +392,9 @@ public final class DataQualityDimensionResult extends com.google.protobuf.Genera
     private void buildPartial0(com.google.cloud.dataplex.v1.DataQualityDimensionResult result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.dimension_ = dimensionBuilder_ == null ? dimension_ : dimensionBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
         result.passed_ = passed_;
       }
     }
@@ -372,6 +445,9 @@ public final class DataQualityDimensionResult extends com.google.protobuf.Genera
     public Builder mergeFrom(com.google.cloud.dataplex.v1.DataQualityDimensionResult other) {
       if (other == com.google.cloud.dataplex.v1.DataQualityDimensionResult.getDefaultInstance())
         return this;
+      if (other.hasDimension()) {
+        mergeDimension(other.getDimension());
+      }
       if (other.getPassed() != false) {
         setPassed(other.getPassed());
       }
@@ -401,10 +477,16 @@ public final class DataQualityDimensionResult extends com.google.protobuf.Genera
             case 0:
               done = true;
               break;
+            case 10:
+              {
+                input.readMessage(getDimensionFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
             case 24:
               {
                 passed_ = input.readBool();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000002;
                 break;
               } // case 24
             default:
@@ -425,6 +507,209 @@ public final class DataQualityDimensionResult extends com.google.protobuf.Genera
     }
 
     private int bitField0_;
+
+    private com.google.cloud.dataplex.v1.DataQualityDimension dimension_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataplex.v1.DataQualityDimension,
+            com.google.cloud.dataplex.v1.DataQualityDimension.Builder,
+            com.google.cloud.dataplex.v1.DataQualityDimensionOrBuilder>
+        dimensionBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The dimension config specified in the DataQualitySpec, as is.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataQualityDimension dimension = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the dimension field is set.
+     */
+    public boolean hasDimension() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The dimension config specified in the DataQualitySpec, as is.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataQualityDimension dimension = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The dimension.
+     */
+    public com.google.cloud.dataplex.v1.DataQualityDimension getDimension() {
+      if (dimensionBuilder_ == null) {
+        return dimension_ == null
+            ? com.google.cloud.dataplex.v1.DataQualityDimension.getDefaultInstance()
+            : dimension_;
+      } else {
+        return dimensionBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The dimension config specified in the DataQualitySpec, as is.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataQualityDimension dimension = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setDimension(com.google.cloud.dataplex.v1.DataQualityDimension value) {
+      if (dimensionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        dimension_ = value;
+      } else {
+        dimensionBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The dimension config specified in the DataQualitySpec, as is.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataQualityDimension dimension = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setDimension(
+        com.google.cloud.dataplex.v1.DataQualityDimension.Builder builderForValue) {
+      if (dimensionBuilder_ == null) {
+        dimension_ = builderForValue.build();
+      } else {
+        dimensionBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The dimension config specified in the DataQualitySpec, as is.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataQualityDimension dimension = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeDimension(com.google.cloud.dataplex.v1.DataQualityDimension value) {
+      if (dimensionBuilder_ == null) {
+        if (((bitField0_ & 0x00000001) != 0)
+            && dimension_ != null
+            && dimension_
+                != com.google.cloud.dataplex.v1.DataQualityDimension.getDefaultInstance()) {
+          getDimensionBuilder().mergeFrom(value);
+        } else {
+          dimension_ = value;
+        }
+      } else {
+        dimensionBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The dimension config specified in the DataQualitySpec, as is.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataQualityDimension dimension = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearDimension() {
+      bitField0_ = (bitField0_ & ~0x00000001);
+      dimension_ = null;
+      if (dimensionBuilder_ != null) {
+        dimensionBuilder_.dispose();
+        dimensionBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The dimension config specified in the DataQualitySpec, as is.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataQualityDimension dimension = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.dataplex.v1.DataQualityDimension.Builder getDimensionBuilder() {
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return getDimensionFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The dimension config specified in the DataQualitySpec, as is.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataQualityDimension dimension = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.dataplex.v1.DataQualityDimensionOrBuilder getDimensionOrBuilder() {
+      if (dimensionBuilder_ != null) {
+        return dimensionBuilder_.getMessageOrBuilder();
+      } else {
+        return dimension_ == null
+            ? com.google.cloud.dataplex.v1.DataQualityDimension.getDefaultInstance()
+            : dimension_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The dimension config specified in the DataQualitySpec, as is.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataQualityDimension dimension = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataplex.v1.DataQualityDimension,
+            com.google.cloud.dataplex.v1.DataQualityDimension.Builder,
+            com.google.cloud.dataplex.v1.DataQualityDimensionOrBuilder>
+        getDimensionFieldBuilder() {
+      if (dimensionBuilder_ == null) {
+        dimensionBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataplex.v1.DataQualityDimension,
+                com.google.cloud.dataplex.v1.DataQualityDimension.Builder,
+                com.google.cloud.dataplex.v1.DataQualityDimensionOrBuilder>(
+                getDimension(), getParentForChildren(), isClean());
+        dimension_ = null;
+      }
+      return dimensionBuilder_;
+    }
 
     private boolean passed_;
     /**
@@ -457,7 +742,7 @@ public final class DataQualityDimensionResult extends com.google.protobuf.Genera
     public Builder setPassed(boolean value) {
 
       passed_ = value;
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -473,7 +758,7 @@ public final class DataQualityDimensionResult extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearPassed() {
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       passed_ = false;
       onChanged();
       return this;

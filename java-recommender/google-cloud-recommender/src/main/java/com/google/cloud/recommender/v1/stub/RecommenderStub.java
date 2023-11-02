@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,6 +33,7 @@ import com.google.cloud.recommender.v1.ListRecommendationsRequest;
 import com.google.cloud.recommender.v1.ListRecommendationsResponse;
 import com.google.cloud.recommender.v1.MarkInsightAcceptedRequest;
 import com.google.cloud.recommender.v1.MarkRecommendationClaimedRequest;
+import com.google.cloud.recommender.v1.MarkRecommendationDismissedRequest;
 import com.google.cloud.recommender.v1.MarkRecommendationFailedRequest;
 import com.google.cloud.recommender.v1.MarkRecommendationSucceededRequest;
 import com.google.cloud.recommender.v1.Recommendation;
@@ -78,6 +79,12 @@ public abstract class RecommenderStub implements BackgroundResource {
 
   public UnaryCallable<GetRecommendationRequest, Recommendation> getRecommendationCallable() {
     throw new UnsupportedOperationException("Not implemented: getRecommendationCallable()");
+  }
+
+  public UnaryCallable<MarkRecommendationDismissedRequest, Recommendation>
+      markRecommendationDismissedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: markRecommendationDismissedCallable()");
   }
 
   public UnaryCallable<MarkRecommendationClaimedRequest, Recommendation>
