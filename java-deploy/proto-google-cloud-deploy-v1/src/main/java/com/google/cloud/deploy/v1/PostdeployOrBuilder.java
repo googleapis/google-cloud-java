@@ -27,7 +27,7 @@ public interface PostdeployOrBuilder
    *
    *
    * <pre>
-   * Optional. A sequence of skaffold custom actions to invoke during execution
+   * Optional. A sequence of Skaffold custom actions to invoke during execution
    * of the postdeploy job.
    * </pre>
    *
@@ -40,7 +40,7 @@ public interface PostdeployOrBuilder
    *
    *
    * <pre>
-   * Optional. A sequence of skaffold custom actions to invoke during execution
+   * Optional. A sequence of Skaffold custom actions to invoke during execution
    * of the postdeploy job.
    * </pre>
    *
@@ -53,7 +53,7 @@ public interface PostdeployOrBuilder
    *
    *
    * <pre>
-   * Optional. A sequence of skaffold custom actions to invoke during execution
+   * Optional. A sequence of Skaffold custom actions to invoke during execution
    * of the postdeploy job.
    * </pre>
    *
@@ -67,7 +67,7 @@ public interface PostdeployOrBuilder
    *
    *
    * <pre>
-   * Optional. A sequence of skaffold custom actions to invoke during execution
+   * Optional. A sequence of Skaffold custom actions to invoke during execution
    * of the postdeploy job.
    * </pre>
    *

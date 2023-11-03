@@ -27,9 +27,8 @@ public interface ReleaseOrBuilder
    *
    *
    * <pre>
-   * Optional. Name of the `Release`. Format is projects/{project}/
-   * locations/{location}/deliveryPipelines/{deliveryPipeline}/
-   * releases/[a-z][a-z0-9&#92;-]{0,62}.
+   * Optional. Name of the `Release`. Format is
+   * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/[a-z][a-z0-9&#92;-]{0,62}`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -41,9 +40,8 @@ public interface ReleaseOrBuilder
    *
    *
    * <pre>
-   * Optional. Name of the `Release`. Format is projects/{project}/
-   * locations/{location}/deliveryPipelines/{deliveryPipeline}/
-   * releases/[a-z][a-z0-9&#92;-]{0,62}.
+   * Optional. Name of the `Release`. Format is
+   * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/[a-z][a-z0-9&#92;-]{0,62}`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>

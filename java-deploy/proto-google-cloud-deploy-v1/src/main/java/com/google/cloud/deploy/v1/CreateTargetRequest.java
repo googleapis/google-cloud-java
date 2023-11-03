@@ -74,7 +74,7 @@ public final class CreateTargetRequest extends com.google.protobuf.GeneratedMess
    * <pre>
    * Required. The parent collection in which the `Target` should be created.
    * Format should be
-   * projects/{project_id}/locations/{location_name}.
+   * `projects/{project_id}/locations/{location_name}`.
    * </pre>
    *
    * <code>
@@ -101,7 +101,7 @@ public final class CreateTargetRequest extends com.google.protobuf.GeneratedMess
    * <pre>
    * Required. The parent collection in which the `Target` should be created.
    * Format should be
-   * projects/{project_id}/locations/{location_name}.
+   * `projects/{project_id}/locations/{location_name}`.
    * </pre>
    *
    * <code>
@@ -766,7 +766,7 @@ public final class CreateTargetRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. The parent collection in which the `Target` should be created.
      * Format should be
-     * projects/{project_id}/locations/{location_name}.
+     * `projects/{project_id}/locations/{location_name}`.
      * </pre>
      *
      * <code>
@@ -792,7 +792,7 @@ public final class CreateTargetRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. The parent collection in which the `Target` should be created.
      * Format should be
-     * projects/{project_id}/locations/{location_name}.
+     * `projects/{project_id}/locations/{location_name}`.
      * </pre>
      *
      * <code>
@@ -818,7 +818,7 @@ public final class CreateTargetRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. The parent collection in which the `Target` should be created.
      * Format should be
-     * projects/{project_id}/locations/{location_name}.
+     * `projects/{project_id}/locations/{location_name}`.
      * </pre>
      *
      * <code>
@@ -843,7 +843,7 @@ public final class CreateTargetRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. The parent collection in which the `Target` should be created.
      * Format should be
-     * projects/{project_id}/locations/{location_name}.
+     * `projects/{project_id}/locations/{location_name}`.
      * </pre>
      *
      * <code>
@@ -864,7 +864,7 @@ public final class CreateTargetRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. The parent collection in which the `Target` should be created.
      * Format should be
-     * projects/{project_id}/locations/{location_name}.
+     * `projects/{project_id}/locations/{location_name}`.
      * </pre>
      *
      * <code>

@@ -73,8 +73,7 @@ public final class RetryJobRequest extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Required. Name of the Rollout. Format is
-   * projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/
-   * releases/{release}/rollouts/{rollout}.
+   * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/{rollout}`.
    * </pre>
    *
    * <code>
@@ -100,8 +99,7 @@ public final class RetryJobRequest extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Required. Name of the Rollout. Format is
-   * projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/
-   * releases/{release}/rollouts/{rollout}.
+   * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/{rollout}`.
    * </pre>
    *
    * <code>
@@ -620,8 +618,7 @@ public final class RetryJobRequest extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Required. Name of the Rollout. Format is
-     * projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/
-     * releases/{release}/rollouts/{rollout}.
+     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/{rollout}`.
      * </pre>
      *
      * <code>
@@ -646,8 +643,7 @@ public final class RetryJobRequest extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Required. Name of the Rollout. Format is
-     * projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/
-     * releases/{release}/rollouts/{rollout}.
+     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/{rollout}`.
      * </pre>
      *
      * <code>
@@ -672,8 +668,7 @@ public final class RetryJobRequest extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Required. Name of the Rollout. Format is
-     * projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/
-     * releases/{release}/rollouts/{rollout}.
+     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/{rollout}`.
      * </pre>
      *
      * <code>
@@ -697,8 +692,7 @@ public final class RetryJobRequest extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Required. Name of the Rollout. Format is
-     * projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/
-     * releases/{release}/rollouts/{rollout}.
+     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/{rollout}`.
      * </pre>
      *
      * <code>
@@ -718,8 +712,7 @@ public final class RetryJobRequest extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Required. Name of the Rollout. Format is
-     * projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/
-     * releases/{release}/rollouts/{rollout}.
+     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/{rollout}`.
      * </pre>
      *
      * <code>

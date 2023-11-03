@@ -16,6 +16,8 @@
 
 package com.google.cloud.deploy.v1.stub;
 
+import static com.google.cloud.deploy.v1.CloudDeployClient.ListAutomationRunsPagedResponse;
+import static com.google.cloud.deploy.v1.CloudDeployClient.ListAutomationsPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListDeliveryPipelinesPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListJobRunsPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListLocationsPagedResponse;
@@ -37,16 +39,24 @@ import com.google.cloud.deploy.v1.AdvanceRolloutRequest;
 import com.google.cloud.deploy.v1.AdvanceRolloutResponse;
 import com.google.cloud.deploy.v1.ApproveRolloutRequest;
 import com.google.cloud.deploy.v1.ApproveRolloutResponse;
+import com.google.cloud.deploy.v1.Automation;
+import com.google.cloud.deploy.v1.AutomationRun;
+import com.google.cloud.deploy.v1.CancelAutomationRunRequest;
+import com.google.cloud.deploy.v1.CancelAutomationRunResponse;
 import com.google.cloud.deploy.v1.CancelRolloutRequest;
 import com.google.cloud.deploy.v1.CancelRolloutResponse;
 import com.google.cloud.deploy.v1.Config;
+import com.google.cloud.deploy.v1.CreateAutomationRequest;
 import com.google.cloud.deploy.v1.CreateDeliveryPipelineRequest;
 import com.google.cloud.deploy.v1.CreateReleaseRequest;
 import com.google.cloud.deploy.v1.CreateRolloutRequest;
 import com.google.cloud.deploy.v1.CreateTargetRequest;
+import com.google.cloud.deploy.v1.DeleteAutomationRequest;
 import com.google.cloud.deploy.v1.DeleteDeliveryPipelineRequest;
 import com.google.cloud.deploy.v1.DeleteTargetRequest;
 import com.google.cloud.deploy.v1.DeliveryPipeline;
+import com.google.cloud.deploy.v1.GetAutomationRequest;
+import com.google.cloud.deploy.v1.GetAutomationRunRequest;
 import com.google.cloud.deploy.v1.GetConfigRequest;
 import com.google.cloud.deploy.v1.GetDeliveryPipelineRequest;
 import com.google.cloud.deploy.v1.GetJobRunRequest;
@@ -56,6 +66,10 @@ import com.google.cloud.deploy.v1.GetTargetRequest;
 import com.google.cloud.deploy.v1.IgnoreJobRequest;
 import com.google.cloud.deploy.v1.IgnoreJobResponse;
 import com.google.cloud.deploy.v1.JobRun;
+import com.google.cloud.deploy.v1.ListAutomationRunsRequest;
+import com.google.cloud.deploy.v1.ListAutomationRunsResponse;
+import com.google.cloud.deploy.v1.ListAutomationsRequest;
+import com.google.cloud.deploy.v1.ListAutomationsResponse;
 import com.google.cloud.deploy.v1.ListDeliveryPipelinesRequest;
 import com.google.cloud.deploy.v1.ListDeliveryPipelinesResponse;
 import com.google.cloud.deploy.v1.ListJobRunsRequest;
@@ -70,10 +84,13 @@ import com.google.cloud.deploy.v1.OperationMetadata;
 import com.google.cloud.deploy.v1.Release;
 import com.google.cloud.deploy.v1.RetryJobRequest;
 import com.google.cloud.deploy.v1.RetryJobResponse;
+import com.google.cloud.deploy.v1.RollbackTargetRequest;
+import com.google.cloud.deploy.v1.RollbackTargetResponse;
 import com.google.cloud.deploy.v1.Rollout;
 import com.google.cloud.deploy.v1.Target;
 import com.google.cloud.deploy.v1.TerminateJobRunRequest;
 import com.google.cloud.deploy.v1.TerminateJobRunResponse;
+import com.google.cloud.deploy.v1.UpdateAutomationRequest;
 import com.google.cloud.deploy.v1.UpdateDeliveryPipelineRequest;
 import com.google.cloud.deploy.v1.UpdateTargetRequest;
 import com.google.cloud.location.GetLocationRequest;
@@ -161,6 +178,17 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListTargetsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListTargetsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<RollbackTargetRequest, RollbackTargetResponse>
+      rollbackTargetMethodDescriptor =
+          MethodDescriptor.<RollbackTargetRequest, RollbackTargetResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.deploy.v1.CloudDeploy/RollbackTarget")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(RollbackTargetRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(RollbackTargetResponse.getDefaultInstance()))
               .build();
 
   private static final MethodDescriptor<GetTargetRequest, Target> getTargetMethodDescriptor =
@@ -353,6 +381,89 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
           .setResponseMarshaller(ProtoUtils.marshaller(Config.getDefaultInstance()))
           .build();
 
+  private static final MethodDescriptor<CreateAutomationRequest, Operation>
+      createAutomationMethodDescriptor =
+          MethodDescriptor.<CreateAutomationRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.deploy.v1.CloudDeploy/CreateAutomation")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateAutomationRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UpdateAutomationRequest, Operation>
+      updateAutomationMethodDescriptor =
+          MethodDescriptor.<UpdateAutomationRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.deploy.v1.CloudDeploy/UpdateAutomation")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateAutomationRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteAutomationRequest, Operation>
+      deleteAutomationMethodDescriptor =
+          MethodDescriptor.<DeleteAutomationRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.deploy.v1.CloudDeploy/DeleteAutomation")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteAutomationRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetAutomationRequest, Automation>
+      getAutomationMethodDescriptor =
+          MethodDescriptor.<GetAutomationRequest, Automation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.deploy.v1.CloudDeploy/GetAutomation")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetAutomationRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Automation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ListAutomationsRequest, ListAutomationsResponse>
+      listAutomationsMethodDescriptor =
+          MethodDescriptor.<ListAutomationsRequest, ListAutomationsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.deploy.v1.CloudDeploy/ListAutomations")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListAutomationsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListAutomationsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetAutomationRunRequest, AutomationRun>
+      getAutomationRunMethodDescriptor =
+          MethodDescriptor.<GetAutomationRunRequest, AutomationRun>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.deploy.v1.CloudDeploy/GetAutomationRun")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetAutomationRunRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(AutomationRun.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ListAutomationRunsRequest, ListAutomationRunsResponse>
+      listAutomationRunsMethodDescriptor =
+          MethodDescriptor.<ListAutomationRunsRequest, ListAutomationRunsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.deploy.v1.CloudDeploy/ListAutomationRuns")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListAutomationRunsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListAutomationRunsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<CancelAutomationRunRequest, CancelAutomationRunResponse>
+      cancelAutomationRunMethodDescriptor =
+          MethodDescriptor.<CancelAutomationRunRequest, CancelAutomationRunResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.deploy.v1.CloudDeploy/CancelAutomationRun")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CancelAutomationRunRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(CancelAutomationRunResponse.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -422,6 +533,7 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
   private final UnaryCallable<ListTargetsRequest, ListTargetsResponse> listTargetsCallable;
   private final UnaryCallable<ListTargetsRequest, ListTargetsPagedResponse>
       listTargetsPagedCallable;
+  private final UnaryCallable<RollbackTargetRequest, RollbackTargetResponse> rollbackTargetCallable;
   private final UnaryCallable<GetTargetRequest, Target> getTargetCallable;
   private final UnaryCallable<CreateTargetRequest, Operation> createTargetCallable;
   private final OperationCallable<CreateTargetRequest, Target, OperationMetadata>
@@ -459,6 +571,27 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
   private final UnaryCallable<TerminateJobRunRequest, TerminateJobRunResponse>
       terminateJobRunCallable;
   private final UnaryCallable<GetConfigRequest, Config> getConfigCallable;
+  private final UnaryCallable<CreateAutomationRequest, Operation> createAutomationCallable;
+  private final OperationCallable<CreateAutomationRequest, Automation, OperationMetadata>
+      createAutomationOperationCallable;
+  private final UnaryCallable<UpdateAutomationRequest, Operation> updateAutomationCallable;
+  private final OperationCallable<UpdateAutomationRequest, Automation, OperationMetadata>
+      updateAutomationOperationCallable;
+  private final UnaryCallable<DeleteAutomationRequest, Operation> deleteAutomationCallable;
+  private final OperationCallable<DeleteAutomationRequest, Empty, OperationMetadata>
+      deleteAutomationOperationCallable;
+  private final UnaryCallable<GetAutomationRequest, Automation> getAutomationCallable;
+  private final UnaryCallable<ListAutomationsRequest, ListAutomationsResponse>
+      listAutomationsCallable;
+  private final UnaryCallable<ListAutomationsRequest, ListAutomationsPagedResponse>
+      listAutomationsPagedCallable;
+  private final UnaryCallable<GetAutomationRunRequest, AutomationRun> getAutomationRunCallable;
+  private final UnaryCallable<ListAutomationRunsRequest, ListAutomationRunsResponse>
+      listAutomationRunsCallable;
+  private final UnaryCallable<ListAutomationRunsRequest, ListAutomationRunsPagedResponse>
+      listAutomationRunsPagedCallable;
+  private final UnaryCallable<CancelAutomationRunRequest, CancelAutomationRunResponse>
+      cancelAutomationRunCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -578,6 +711,17 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<RollbackTargetRequest, RollbackTargetResponse>
+        rollbackTargetTransportSettings =
+            GrpcCallSettings.<RollbackTargetRequest, RollbackTargetResponse>newBuilder()
+                .setMethodDescriptor(rollbackTargetMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<GetTargetRequest, Target> getTargetTransportSettings =
         GrpcCallSettings.<GetTargetRequest, Target>newBuilder()
             .setMethodDescriptor(getTargetMethodDescriptor)
@@ -782,6 +926,89 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<CreateAutomationRequest, Operation> createAutomationTransportSettings =
+        GrpcCallSettings.<CreateAutomationRequest, Operation>newBuilder()
+            .setMethodDescriptor(createAutomationMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<UpdateAutomationRequest, Operation> updateAutomationTransportSettings =
+        GrpcCallSettings.<UpdateAutomationRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateAutomationMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("automation.name", String.valueOf(request.getAutomation().getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<DeleteAutomationRequest, Operation> deleteAutomationTransportSettings =
+        GrpcCallSettings.<DeleteAutomationRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteAutomationMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<GetAutomationRequest, Automation> getAutomationTransportSettings =
+        GrpcCallSettings.<GetAutomationRequest, Automation>newBuilder()
+            .setMethodDescriptor(getAutomationMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<ListAutomationsRequest, ListAutomationsResponse>
+        listAutomationsTransportSettings =
+            GrpcCallSettings.<ListAutomationsRequest, ListAutomationsResponse>newBuilder()
+                .setMethodDescriptor(listAutomationsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<GetAutomationRunRequest, AutomationRun> getAutomationRunTransportSettings =
+        GrpcCallSettings.<GetAutomationRunRequest, AutomationRun>newBuilder()
+            .setMethodDescriptor(getAutomationRunMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<ListAutomationRunsRequest, ListAutomationRunsResponse>
+        listAutomationRunsTransportSettings =
+            GrpcCallSettings.<ListAutomationRunsRequest, ListAutomationRunsResponse>newBuilder()
+                .setMethodDescriptor(listAutomationRunsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<CancelAutomationRunRequest, CancelAutomationRunResponse>
+        cancelAutomationRunTransportSettings =
+            GrpcCallSettings.<CancelAutomationRunRequest, CancelAutomationRunResponse>newBuilder()
+                .setMethodDescriptor(cancelAutomationRunMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -888,6 +1115,9 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
     this.listTargetsPagedCallable =
         callableFactory.createPagedCallable(
             listTargetsTransportSettings, settings.listTargetsSettings(), clientContext);
+    this.rollbackTargetCallable =
+        callableFactory.createUnaryCallable(
+            rollbackTargetTransportSettings, settings.rollbackTargetSettings(), clientContext);
     this.getTargetCallable =
         callableFactory.createUnaryCallable(
             getTargetTransportSettings, settings.getTargetSettings(), clientContext);
@@ -987,6 +1217,60 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
     this.getConfigCallable =
         callableFactory.createUnaryCallable(
             getConfigTransportSettings, settings.getConfigSettings(), clientContext);
+    this.createAutomationCallable =
+        callableFactory.createUnaryCallable(
+            createAutomationTransportSettings, settings.createAutomationSettings(), clientContext);
+    this.createAutomationOperationCallable =
+        callableFactory.createOperationCallable(
+            createAutomationTransportSettings,
+            settings.createAutomationOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.updateAutomationCallable =
+        callableFactory.createUnaryCallable(
+            updateAutomationTransportSettings, settings.updateAutomationSettings(), clientContext);
+    this.updateAutomationOperationCallable =
+        callableFactory.createOperationCallable(
+            updateAutomationTransportSettings,
+            settings.updateAutomationOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.deleteAutomationCallable =
+        callableFactory.createUnaryCallable(
+            deleteAutomationTransportSettings, settings.deleteAutomationSettings(), clientContext);
+    this.deleteAutomationOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteAutomationTransportSettings,
+            settings.deleteAutomationOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.getAutomationCallable =
+        callableFactory.createUnaryCallable(
+            getAutomationTransportSettings, settings.getAutomationSettings(), clientContext);
+    this.listAutomationsCallable =
+        callableFactory.createUnaryCallable(
+            listAutomationsTransportSettings, settings.listAutomationsSettings(), clientContext);
+    this.listAutomationsPagedCallable =
+        callableFactory.createPagedCallable(
+            listAutomationsTransportSettings, settings.listAutomationsSettings(), clientContext);
+    this.getAutomationRunCallable =
+        callableFactory.createUnaryCallable(
+            getAutomationRunTransportSettings, settings.getAutomationRunSettings(), clientContext);
+    this.listAutomationRunsCallable =
+        callableFactory.createUnaryCallable(
+            listAutomationRunsTransportSettings,
+            settings.listAutomationRunsSettings(),
+            clientContext);
+    this.listAutomationRunsPagedCallable =
+        callableFactory.createPagedCallable(
+            listAutomationRunsTransportSettings,
+            settings.listAutomationRunsSettings(),
+            clientContext);
+    this.cancelAutomationRunCallable =
+        callableFactory.createUnaryCallable(
+            cancelAutomationRunTransportSettings,
+            settings.cancelAutomationRunSettings(),
+            clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -1074,6 +1358,11 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
   @Override
   public UnaryCallable<ListTargetsRequest, ListTargetsPagedResponse> listTargetsPagedCallable() {
     return listTargetsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<RollbackTargetRequest, RollbackTargetResponse> rollbackTargetCallable() {
+    return rollbackTargetCallable;
   }
 
   @Override
@@ -1219,6 +1508,78 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
   @Override
   public UnaryCallable<GetConfigRequest, Config> getConfigCallable() {
     return getConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateAutomationRequest, Operation> createAutomationCallable() {
+    return createAutomationCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateAutomationRequest, Automation, OperationMetadata>
+      createAutomationOperationCallable() {
+    return createAutomationOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateAutomationRequest, Operation> updateAutomationCallable() {
+    return updateAutomationCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateAutomationRequest, Automation, OperationMetadata>
+      updateAutomationOperationCallable() {
+    return updateAutomationOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteAutomationRequest, Operation> deleteAutomationCallable() {
+    return deleteAutomationCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteAutomationRequest, Empty, OperationMetadata>
+      deleteAutomationOperationCallable() {
+    return deleteAutomationOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetAutomationRequest, Automation> getAutomationCallable() {
+    return getAutomationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAutomationsRequest, ListAutomationsResponse> listAutomationsCallable() {
+    return listAutomationsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAutomationsRequest, ListAutomationsPagedResponse>
+      listAutomationsPagedCallable() {
+    return listAutomationsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetAutomationRunRequest, AutomationRun> getAutomationRunCallable() {
+    return getAutomationRunCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAutomationRunsRequest, ListAutomationRunsResponse>
+      listAutomationRunsCallable() {
+    return listAutomationRunsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAutomationRunsRequest, ListAutomationRunsPagedResponse>
+      listAutomationRunsPagedCallable() {
+    return listAutomationRunsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<CancelAutomationRunRequest, CancelAutomationRunResponse>
+      cancelAutomationRunCallable() {
+    return cancelAutomationRunCallable;
   }
 
   @Override

@@ -111,7 +111,7 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The deploy build did not complete within the alloted time.
+     * The deploy job run did not complete within the alloted time.
      * </pre>
      *
      * <code>DEADLINE_EXCEEDED = 3;</code>
@@ -179,7 +179,7 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The deploy build did not complete within the alloted time.
+     * The deploy job run did not complete within the alloted time.
      * </pre>
      *
      * <code>DEADLINE_EXCEEDED = 3;</code>
@@ -307,7 +307,7 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. The resource name of the Cloud Build `Build` object that is
    * used to deploy. Format is
-   * projects/{project}/locations/{location}/builds/{build}.
+   * `projects/{project}/locations/{location}/builds/{build}`.
    * </pre>
    *
    * <code>
@@ -334,7 +334,7 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. The resource name of the Cloud Build `Build` object that is
    * used to deploy. Format is
-   * projects/{project}/locations/{location}/builds/{build}.
+   * `projects/{project}/locations/{location}/builds/{build}`.
    * </pre>
    *
    * <code>
@@ -1021,7 +1021,7 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The resource name of the Cloud Build `Build` object that is
      * used to deploy. Format is
-     * projects/{project}/locations/{location}/builds/{build}.
+     * `projects/{project}/locations/{location}/builds/{build}`.
      * </pre>
      *
      * <code>
@@ -1047,7 +1047,7 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The resource name of the Cloud Build `Build` object that is
      * used to deploy. Format is
-     * projects/{project}/locations/{location}/builds/{build}.
+     * `projects/{project}/locations/{location}/builds/{build}`.
      * </pre>
      *
      * <code>
@@ -1073,7 +1073,7 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The resource name of the Cloud Build `Build` object that is
      * used to deploy. Format is
-     * projects/{project}/locations/{location}/builds/{build}.
+     * `projects/{project}/locations/{location}/builds/{build}`.
      * </pre>
      *
      * <code>
@@ -1098,7 +1098,7 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The resource name of the Cloud Build `Build` object that is
      * used to deploy. Format is
-     * projects/{project}/locations/{location}/builds/{build}.
+     * `projects/{project}/locations/{location}/builds/{build}`.
      * </pre>
      *
      * <code>
@@ -1119,7 +1119,7 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The resource name of the Cloud Build `Build` object that is
      * used to deploy. Format is
-     * projects/{project}/locations/{location}/builds/{build}.
+     * `projects/{project}/locations/{location}/builds/{build}`.
      * </pre>
      *
      * <code>

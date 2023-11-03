@@ -694,6 +694,9 @@ grpc-google-cloud-redis-cluster-v1beta1:0.1.0:0.2.0-SNAPSHOT
 google-maps-fleetengine-delivery:0.0.0:0.0.1-SNAPSHOT
 proto-google-maps-fleetengine-delivery-v1:0.0.0:0.0.1-SNAPSHOT
 grpc-google-maps-fleetengine-delivery-v1:0.0.0:0.0.1-SNAPSHOT
+google-maps-places:0.0.0:0.0.1-SNAPSHOT
+proto-google-maps-places-v1:0.0.0:0.0.1-SNAPSHOT
+grpc-google-maps-places-v1:0.0.0:0.0.1-SNAPSHOT
 google-maps-fleetengine:0.0.0:0.0.1-SNAPSHOT
 proto-google-maps-fleetengine-v1:0.0.0:0.0.1-SNAPSHOT
 grpc-google-maps-fleetengine-v1:0.0.0:0.0.1-SNAPSHOT

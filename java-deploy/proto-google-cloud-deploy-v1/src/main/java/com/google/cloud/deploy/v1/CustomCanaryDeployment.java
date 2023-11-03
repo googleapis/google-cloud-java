@@ -191,7 +191,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. Configuration for the predeploy job of this phase. If this is
-     * not configured, predeploy job will not be present for this phase.
+     * not configured, there will be no predeploy job for this phase.
      * </pre>
      *
      * <code>
@@ -206,7 +206,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. Configuration for the predeploy job of this phase. If this is
-     * not configured, predeploy job will not be present for this phase.
+     * not configured, there will be no predeploy job for this phase.
      * </pre>
      *
      * <code>
@@ -221,7 +221,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. Configuration for the predeploy job of this phase. If this is
-     * not configured, predeploy job will not be present for this phase.
+     * not configured, there will be no predeploy job for this phase.
      * </pre>
      *
      * <code>
@@ -235,7 +235,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. Configuration for the postdeploy job of this phase. If this is
-     * not configured, postdeploy job will not be present for this phase.
+     * not configured, there will be no postdeploy job for this phase.
      * </pre>
      *
      * <code>
@@ -250,7 +250,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. Configuration for the postdeploy job of this phase. If this is
-     * not configured, postdeploy job will not be present for this phase.
+     * not configured, there will be no postdeploy job for this phase.
      * </pre>
      *
      * <code>
@@ -265,7 +265,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. Configuration for the postdeploy job of this phase. If this is
-     * not configured, postdeploy job will not be present for this phase.
+     * not configured, there will be no postdeploy job for this phase.
      * </pre>
      *
      * <code>
@@ -494,7 +494,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. Configuration for the predeploy job of this phase. If this is
-     * not configured, predeploy job will not be present for this phase.
+     * not configured, there will be no predeploy job for this phase.
      * </pre>
      *
      * <code>
@@ -512,7 +512,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. Configuration for the predeploy job of this phase. If this is
-     * not configured, predeploy job will not be present for this phase.
+     * not configured, there will be no predeploy job for this phase.
      * </pre>
      *
      * <code>
@@ -532,7 +532,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. Configuration for the predeploy job of this phase. If this is
-     * not configured, predeploy job will not be present for this phase.
+     * not configured, there will be no predeploy job for this phase.
      * </pre>
      *
      * <code>
@@ -553,7 +553,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. Configuration for the postdeploy job of this phase. If this is
-     * not configured, postdeploy job will not be present for this phase.
+     * not configured, there will be no postdeploy job for this phase.
      * </pre>
      *
      * <code>
@@ -571,7 +571,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. Configuration for the postdeploy job of this phase. If this is
-     * not configured, postdeploy job will not be present for this phase.
+     * not configured, there will be no postdeploy job for this phase.
      * </pre>
      *
      * <code>
@@ -591,7 +591,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Optional. Configuration for the postdeploy job of this phase. If this is
-     * not configured, postdeploy job will not be present for this phase.
+     * not configured, there will be no postdeploy job for this phase.
      * </pre>
      *
      * <code>
@@ -1537,7 +1537,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
        *
        * <pre>
        * Optional. Configuration for the predeploy job of this phase. If this is
-       * not configured, predeploy job will not be present for this phase.
+       * not configured, there will be no predeploy job for this phase.
        * </pre>
        *
        * <code>
@@ -1554,7 +1554,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
        *
        * <pre>
        * Optional. Configuration for the predeploy job of this phase. If this is
-       * not configured, predeploy job will not be present for this phase.
+       * not configured, there will be no predeploy job for this phase.
        * </pre>
        *
        * <code>
@@ -1577,7 +1577,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
        *
        * <pre>
        * Optional. Configuration for the predeploy job of this phase. If this is
-       * not configured, predeploy job will not be present for this phase.
+       * not configured, there will be no predeploy job for this phase.
        * </pre>
        *
        * <code>
@@ -1602,7 +1602,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
        *
        * <pre>
        * Optional. Configuration for the predeploy job of this phase. If this is
-       * not configured, predeploy job will not be present for this phase.
+       * not configured, there will be no predeploy job for this phase.
        * </pre>
        *
        * <code>
@@ -1624,7 +1624,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
        *
        * <pre>
        * Optional. Configuration for the predeploy job of this phase. If this is
-       * not configured, predeploy job will not be present for this phase.
+       * not configured, there will be no predeploy job for this phase.
        * </pre>
        *
        * <code>
@@ -1652,7 +1652,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
        *
        * <pre>
        * Optional. Configuration for the predeploy job of this phase. If this is
-       * not configured, predeploy job will not be present for this phase.
+       * not configured, there will be no predeploy job for this phase.
        * </pre>
        *
        * <code>
@@ -1674,7 +1674,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
        *
        * <pre>
        * Optional. Configuration for the predeploy job of this phase. If this is
-       * not configured, predeploy job will not be present for this phase.
+       * not configured, there will be no predeploy job for this phase.
        * </pre>
        *
        * <code>
@@ -1691,7 +1691,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
        *
        * <pre>
        * Optional. Configuration for the predeploy job of this phase. If this is
-       * not configured, predeploy job will not be present for this phase.
+       * not configured, there will be no predeploy job for this phase.
        * </pre>
        *
        * <code>
@@ -1712,7 +1712,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
        *
        * <pre>
        * Optional. Configuration for the predeploy job of this phase. If this is
-       * not configured, predeploy job will not be present for this phase.
+       * not configured, there will be no predeploy job for this phase.
        * </pre>
        *
        * <code>
@@ -1747,7 +1747,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
        *
        * <pre>
        * Optional. Configuration for the postdeploy job of this phase. If this is
-       * not configured, postdeploy job will not be present for this phase.
+       * not configured, there will be no postdeploy job for this phase.
        * </pre>
        *
        * <code>
@@ -1764,7 +1764,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
        *
        * <pre>
        * Optional. Configuration for the postdeploy job of this phase. If this is
-       * not configured, postdeploy job will not be present for this phase.
+       * not configured, there will be no postdeploy job for this phase.
        * </pre>
        *
        * <code>
@@ -1787,7 +1787,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
        *
        * <pre>
        * Optional. Configuration for the postdeploy job of this phase. If this is
-       * not configured, postdeploy job will not be present for this phase.
+       * not configured, there will be no postdeploy job for this phase.
        * </pre>
        *
        * <code>
@@ -1812,7 +1812,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
        *
        * <pre>
        * Optional. Configuration for the postdeploy job of this phase. If this is
-       * not configured, postdeploy job will not be present for this phase.
+       * not configured, there will be no postdeploy job for this phase.
        * </pre>
        *
        * <code>
@@ -1834,7 +1834,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
        *
        * <pre>
        * Optional. Configuration for the postdeploy job of this phase. If this is
-       * not configured, postdeploy job will not be present for this phase.
+       * not configured, there will be no postdeploy job for this phase.
        * </pre>
        *
        * <code>
@@ -1862,7 +1862,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
        *
        * <pre>
        * Optional. Configuration for the postdeploy job of this phase. If this is
-       * not configured, postdeploy job will not be present for this phase.
+       * not configured, there will be no postdeploy job for this phase.
        * </pre>
        *
        * <code>
@@ -1884,7 +1884,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
        *
        * <pre>
        * Optional. Configuration for the postdeploy job of this phase. If this is
-       * not configured, postdeploy job will not be present for this phase.
+       * not configured, there will be no postdeploy job for this phase.
        * </pre>
        *
        * <code>
@@ -1901,7 +1901,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
        *
        * <pre>
        * Optional. Configuration for the postdeploy job of this phase. If this is
-       * not configured, postdeploy job will not be present for this phase.
+       * not configured, there will be no postdeploy job for this phase.
        * </pre>
        *
        * <code>
@@ -1922,7 +1922,7 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
        *
        * <pre>
        * Optional. Configuration for the postdeploy job of this phase. If this is
-       * not configured, postdeploy job will not be present for this phase.
+       * not configured, there will be no postdeploy job for this phase.
        * </pre>
        *
        * <code>

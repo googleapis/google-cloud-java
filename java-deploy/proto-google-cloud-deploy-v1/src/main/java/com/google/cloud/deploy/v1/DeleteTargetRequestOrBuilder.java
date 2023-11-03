@@ -28,7 +28,7 @@ public interface DeleteTargetRequestOrBuilder
    *
    * <pre>
    * Required. The name of the `Target` to delete. Format should be
-   * projects/{project_id}/locations/{location_name}/targets/{target_name}.
+   * `projects/{project_id}/locations/{location_name}/targets/{target_name}`.
    * </pre>
    *
    * <code>
@@ -43,7 +43,7 @@ public interface DeleteTargetRequestOrBuilder
    *
    * <pre>
    * Required. The name of the `Target` to delete. Format should be
-   * projects/{project_id}/locations/{location_name}/targets/{target_name}.
+   * `projects/{project_id}/locations/{location_name}/targets/{target_name}`.
    * </pre>
    *
    * <code>

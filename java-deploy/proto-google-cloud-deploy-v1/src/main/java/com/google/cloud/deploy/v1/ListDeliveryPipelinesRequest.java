@@ -74,7 +74,7 @@ public final class ListDeliveryPipelinesRequest extends com.google.protobuf.Gene
    *
    * <pre>
    * Required. The parent, which owns this collection of pipelines. Format must
-   * be projects/{project_id}/locations/{location_name}.
+   * be `projects/{project_id}/locations/{location_name}`.
    * </pre>
    *
    * <code>
@@ -100,7 +100,7 @@ public final class ListDeliveryPipelinesRequest extends com.google.protobuf.Gene
    *
    * <pre>
    * Required. The parent, which owns this collection of pipelines. Format must
-   * be projects/{project_id}/locations/{location_name}.
+   * be `projects/{project_id}/locations/{location_name}`.
    * </pre>
    *
    * <code>
@@ -749,7 +749,7 @@ public final class ListDeliveryPipelinesRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * Required. The parent, which owns this collection of pipelines. Format must
-     * be projects/{project_id}/locations/{location_name}.
+     * be `projects/{project_id}/locations/{location_name}`.
      * </pre>
      *
      * <code>
@@ -774,7 +774,7 @@ public final class ListDeliveryPipelinesRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * Required. The parent, which owns this collection of pipelines. Format must
-     * be projects/{project_id}/locations/{location_name}.
+     * be `projects/{project_id}/locations/{location_name}`.
      * </pre>
      *
      * <code>
@@ -799,7 +799,7 @@ public final class ListDeliveryPipelinesRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * Required. The parent, which owns this collection of pipelines. Format must
-     * be projects/{project_id}/locations/{location_name}.
+     * be `projects/{project_id}/locations/{location_name}`.
      * </pre>
      *
      * <code>
@@ -823,7 +823,7 @@ public final class ListDeliveryPipelinesRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * Required. The parent, which owns this collection of pipelines. Format must
-     * be projects/{project_id}/locations/{location_name}.
+     * be `projects/{project_id}/locations/{location_name}`.
      * </pre>
      *
      * <code>
@@ -843,7 +843,7 @@ public final class ListDeliveryPipelinesRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * Required. The parent, which owns this collection of pipelines. Format must
-     * be projects/{project_id}/locations/{location_name}.
+     * be `projects/{project_id}/locations/{location_name}`.
      * </pre>
      *
      * <code>

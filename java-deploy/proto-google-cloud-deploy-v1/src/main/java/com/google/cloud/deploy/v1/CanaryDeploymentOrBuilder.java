@@ -85,7 +85,7 @@ public interface CanaryDeploymentOrBuilder
    *
    * <pre>
    * Optional. Configuration for the predeploy job of the first phase. If this
-   * is not configured, predeploy job will not be present.
+   * is not configured, there will be no predeploy job for this phase.
    * </pre>
    *
    * <code>
@@ -100,7 +100,7 @@ public interface CanaryDeploymentOrBuilder
    *
    * <pre>
    * Optional. Configuration for the predeploy job of the first phase. If this
-   * is not configured, predeploy job will not be present.
+   * is not configured, there will be no predeploy job for this phase.
    * </pre>
    *
    * <code>
@@ -115,7 +115,7 @@ public interface CanaryDeploymentOrBuilder
    *
    * <pre>
    * Optional. Configuration for the predeploy job of the first phase. If this
-   * is not configured, predeploy job will not be present.
+   * is not configured, there will be no predeploy job for this phase.
    * </pre>
    *
    * <code>
@@ -129,7 +129,7 @@ public interface CanaryDeploymentOrBuilder
    *
    * <pre>
    * Optional. Configuration for the postdeploy job of the last phase. If this
-   * is not configured, postdeploy job will not be present.
+   * is not configured, there will be no postdeploy job for this phase.
    * </pre>
    *
    * <code>
@@ -144,7 +144,7 @@ public interface CanaryDeploymentOrBuilder
    *
    * <pre>
    * Optional. Configuration for the postdeploy job of the last phase. If this
-   * is not configured, postdeploy job will not be present.
+   * is not configured, there will be no postdeploy job for this phase.
    * </pre>
    *
    * <code>
@@ -159,7 +159,7 @@ public interface CanaryDeploymentOrBuilder
    *
    * <pre>
    * Optional. Configuration for the postdeploy job of the last phase. If this
-   * is not configured, postdeploy job will not be present.
+   * is not configured, there will be no postdeploy job for this phase.
    * </pre>
    *
    * <code>

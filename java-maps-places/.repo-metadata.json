@@ -1,0 +1,16 @@
+{
+  "api_shortname": "maps-places",
+  "name_pretty": "Places API (New)",
+  "product_documentation": "https://developers.google.com/maps/documentation/places/web-service/",
+  "api_description": "The Places API allows developers to access a variety of search and retrieval endpoints for a Place.",
+  "client_documentation": "https://cloud.google.com/java/docs/reference/google-maps-places/latest/overview",
+  "release_level": "preview",
+  "transport": "grpc",
+  "language": "java",
+  "repo": "googleapis/java-maps-places",
+  "repo_short": "java-maps-places",
+  "distribution_name": "com.google.maps:google-maps-places",
+  "api_id": "places.googleapis.com",
+  "library_type": "GAPIC_AUTO",
+  "requires_billing": true
+}

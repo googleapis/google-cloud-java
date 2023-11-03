@@ -72,8 +72,7 @@ public final class AdvanceRolloutRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Required. Name of the Rollout. Format is
-   * projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/
-   * releases/{release}/rollouts/{rollout}.
+   * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/{rollout}`.
    * </pre>
    *
    * <code>
@@ -99,8 +98,7 @@ public final class AdvanceRolloutRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Required. Name of the Rollout. Format is
-   * projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/
-   * releases/{release}/rollouts/{rollout}.
+   * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/{rollout}`.
    * </pre>
    *
    * <code>
@@ -545,8 +543,7 @@ public final class AdvanceRolloutRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. Name of the Rollout. Format is
-     * projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/
-     * releases/{release}/rollouts/{rollout}.
+     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/{rollout}`.
      * </pre>
      *
      * <code>
@@ -571,8 +568,7 @@ public final class AdvanceRolloutRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. Name of the Rollout. Format is
-     * projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/
-     * releases/{release}/rollouts/{rollout}.
+     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/{rollout}`.
      * </pre>
      *
      * <code>
@@ -597,8 +593,7 @@ public final class AdvanceRolloutRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. Name of the Rollout. Format is
-     * projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/
-     * releases/{release}/rollouts/{rollout}.
+     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/{rollout}`.
      * </pre>
      *
      * <code>
@@ -622,8 +617,7 @@ public final class AdvanceRolloutRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. Name of the Rollout. Format is
-     * projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/
-     * releases/{release}/rollouts/{rollout}.
+     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/{rollout}`.
      * </pre>
      *
      * <code>
@@ -643,8 +637,7 @@ public final class AdvanceRolloutRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. Name of the Rollout. Format is
-     * projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/
-     * releases/{release}/rollouts/{rollout}.
+     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/{rollout}`.
      * </pre>
      *
      * <code>

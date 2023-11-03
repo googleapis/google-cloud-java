@@ -71,8 +71,7 @@ public final class CancelRolloutRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. Name of the Rollout. Format is
-   * projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/
-   * releases/{release}/rollouts/{rollout}.
+   * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/{rollout}`.
    * </pre>
    *
    * <code>
@@ -98,8 +97,7 @@ public final class CancelRolloutRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. Name of the Rollout. Format is
-   * projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/
-   * releases/{release}/rollouts/{rollout}.
+   * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/{rollout}`.
    * </pre>
    *
    * <code>
@@ -469,8 +467,7 @@ public final class CancelRolloutRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. Name of the Rollout. Format is
-     * projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/
-     * releases/{release}/rollouts/{rollout}.
+     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/{rollout}`.
      * </pre>
      *
      * <code>
@@ -495,8 +492,7 @@ public final class CancelRolloutRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. Name of the Rollout. Format is
-     * projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/
-     * releases/{release}/rollouts/{rollout}.
+     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/{rollout}`.
      * </pre>
      *
      * <code>
@@ -521,8 +517,7 @@ public final class CancelRolloutRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. Name of the Rollout. Format is
-     * projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/
-     * releases/{release}/rollouts/{rollout}.
+     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/{rollout}`.
      * </pre>
      *
      * <code>
@@ -546,8 +541,7 @@ public final class CancelRolloutRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. Name of the Rollout. Format is
-     * projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/
-     * releases/{release}/rollouts/{rollout}.
+     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/{rollout}`.
      * </pre>
      *
      * <code>
@@ -567,8 +561,7 @@ public final class CancelRolloutRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. Name of the Rollout. Format is
-     * projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/
-     * releases/{release}/rollouts/{rollout}.
+     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/{rollout}`.
      * </pre>
      *
      * <code>

@@ -111,7 +111,7 @@ public final class PredeployJobRun extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The predeploy build did not complete within the alloted time.
+     * The predeploy job run did not complete within the alloted time.
      * </pre>
      *
      * <code>DEADLINE_EXCEEDED = 3;</code>
@@ -168,7 +168,7 @@ public final class PredeployJobRun extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The predeploy build did not complete within the alloted time.
+     * The predeploy job run did not complete within the alloted time.
      * </pre>
      *
      * <code>DEADLINE_EXCEEDED = 3;</code>
@@ -283,7 +283,7 @@ public final class PredeployJobRun extends com.google.protobuf.GeneratedMessageV
    * <pre>
    * Output only. The resource name of the Cloud Build `Build` object that is
    * used to execute the custom actions associated with the predeploy Job.
-   * Format is projects/{project}/locations/{location}/builds/{build}.
+   * Format is `projects/{project}/locations/{location}/builds/{build}`.
    * </pre>
    *
    * <code>
@@ -310,7 +310,7 @@ public final class PredeployJobRun extends com.google.protobuf.GeneratedMessageV
    * <pre>
    * Output only. The resource name of the Cloud Build `Build` object that is
    * used to execute the custom actions associated with the predeploy Job.
-   * Format is projects/{project}/locations/{location}/builds/{build}.
+   * Format is `projects/{project}/locations/{location}/builds/{build}`.
    * </pre>
    *
    * <code>
@@ -826,7 +826,7 @@ public final class PredeployJobRun extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Output only. The resource name of the Cloud Build `Build` object that is
      * used to execute the custom actions associated with the predeploy Job.
-     * Format is projects/{project}/locations/{location}/builds/{build}.
+     * Format is `projects/{project}/locations/{location}/builds/{build}`.
      * </pre>
      *
      * <code>
@@ -852,7 +852,7 @@ public final class PredeployJobRun extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Output only. The resource name of the Cloud Build `Build` object that is
      * used to execute the custom actions associated with the predeploy Job.
-     * Format is projects/{project}/locations/{location}/builds/{build}.
+     * Format is `projects/{project}/locations/{location}/builds/{build}`.
      * </pre>
      *
      * <code>
@@ -878,7 +878,7 @@ public final class PredeployJobRun extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Output only. The resource name of the Cloud Build `Build` object that is
      * used to execute the custom actions associated with the predeploy Job.
-     * Format is projects/{project}/locations/{location}/builds/{build}.
+     * Format is `projects/{project}/locations/{location}/builds/{build}`.
      * </pre>
      *
      * <code>
@@ -903,7 +903,7 @@ public final class PredeployJobRun extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Output only. The resource name of the Cloud Build `Build` object that is
      * used to execute the custom actions associated with the predeploy Job.
-     * Format is projects/{project}/locations/{location}/builds/{build}.
+     * Format is `projects/{project}/locations/{location}/builds/{build}`.
      * </pre>
      *
      * <code>
@@ -924,7 +924,7 @@ public final class PredeployJobRun extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Output only. The resource name of the Cloud Build `Build` object that is
      * used to execute the custom actions associated with the predeploy Job.
-     * Format is projects/{project}/locations/{location}/builds/{build}.
+     * Format is `projects/{project}/locations/{location}/builds/{build}`.
      * </pre>
      *
      * <code>
