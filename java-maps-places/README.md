@@ -23,7 +23,7 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>libraries-bom</artifactId>
-      <version>26.14.0</version>
+      <version>26.26.0</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
@@ -88,8 +88,7 @@ to add `google-maps-places` as a dependency in your code.
 ## About Places API (New)
 
 
-[Places API (New)][product-docs] The Places API allows developers to access a variety of search and
-    retrieval endpoints for a Place.
+[Places API (New)][product-docs] The Places API allows developers to access a variety of search and retrieval endpoints for a Place.
 
 See the [Places API (New) client library docs][javadocs] to learn how to
 use this Places API (New) Client Library.
