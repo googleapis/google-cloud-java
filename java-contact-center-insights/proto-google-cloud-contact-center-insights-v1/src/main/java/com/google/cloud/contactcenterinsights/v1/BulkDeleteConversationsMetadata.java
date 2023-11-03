@@ -22,45 +22,45 @@ package com.google.cloud.contactcenterinsights.v1;
  *
  *
  * <pre>
- * The metadata for a bulk analyze conversations operation.
+ * The metadata for a bulk delete conversations operation.
  * </pre>
  *
- * Protobuf type {@code google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsMetadata}
+ * Protobuf type {@code google.cloud.contactcenterinsights.v1.BulkDeleteConversationsMetadata}
  */
-public final class BulkAnalyzeConversationsMetadata extends com.google.protobuf.GeneratedMessageV3
+public final class BulkDeleteConversationsMetadata extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsMetadata)
-    BulkAnalyzeConversationsMetadataOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.BulkDeleteConversationsMetadata)
+    BulkDeleteConversationsMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use BulkAnalyzeConversationsMetadata.newBuilder() to construct.
-  private BulkAnalyzeConversationsMetadata(
+  // Use BulkDeleteConversationsMetadata.newBuilder() to construct.
+  private BulkDeleteConversationsMetadata(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private BulkAnalyzeConversationsMetadata() {
+  private BulkDeleteConversationsMetadata() {
     partialErrors_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new BulkAnalyzeConversationsMetadata();
+    return new BulkDeleteConversationsMetadata();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsProto
-        .internal_static_google_cloud_contactcenterinsights_v1_BulkAnalyzeConversationsMetadata_descriptor;
+        .internal_static_google_cloud_contactcenterinsights_v1_BulkDeleteConversationsMetadata_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsProto
-        .internal_static_google_cloud_contactcenterinsights_v1_BulkAnalyzeConversationsMetadata_fieldAccessorTable
+        .internal_static_google_cloud_contactcenterinsights_v1_BulkDeleteConversationsMetadata_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsMetadata.class,
-            com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsMetadata.Builder
+            com.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsMetadata.class,
+            com.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsMetadata.Builder
                 .class);
   }
 
@@ -157,16 +157,15 @@ public final class BulkAnalyzeConversationsMetadata extends com.google.protobuf.
   }
 
   public static final int REQUEST_FIELD_NUMBER = 3;
-  private com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsRequest request_;
+  private com.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsRequest request_;
   /**
    *
    *
    * <pre>
-   * The original request for bulk analyze.
+   * The original request for bulk delete.
    * </pre>
    *
-   * <code>.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsRequest request = 3;
-   * </code>
+   * <code>.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsRequest request = 3;</code>
    *
    * @return Whether the request field is set.
    */
@@ -178,18 +177,17 @@ public final class BulkAnalyzeConversationsMetadata extends com.google.protobuf.
    *
    *
    * <pre>
-   * The original request for bulk analyze.
+   * The original request for bulk delete.
    * </pre>
    *
-   * <code>.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsRequest request = 3;
-   * </code>
+   * <code>.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsRequest request = 3;</code>
    *
    * @return The request.
    */
   @java.lang.Override
-  public com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsRequest getRequest() {
+  public com.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsRequest getRequest() {
     return request_ == null
-        ? com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsRequest
+        ? com.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsRequest
             .getDefaultInstance()
         : request_;
   }
@@ -197,77 +195,21 @@ public final class BulkAnalyzeConversationsMetadata extends com.google.protobuf.
    *
    *
    * <pre>
-   * The original request for bulk analyze.
+   * The original request for bulk delete.
    * </pre>
    *
-   * <code>.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsRequest request = 3;
-   * </code>
+   * <code>.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsRequest request = 3;</code>
    */
   @java.lang.Override
-  public com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsRequestOrBuilder
+  public com.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsRequestOrBuilder
       getRequestOrBuilder() {
     return request_ == null
-        ? com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsRequest
+        ? com.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsRequest
             .getDefaultInstance()
         : request_;
   }
 
-  public static final int COMPLETED_ANALYSES_COUNT_FIELD_NUMBER = 4;
-  private int completedAnalysesCount_ = 0;
-  /**
-   *
-   *
-   * <pre>
-   * The number of requested analyses that have completed successfully so far.
-   * </pre>
-   *
-   * <code>int32 completed_analyses_count = 4;</code>
-   *
-   * @return The completedAnalysesCount.
-   */
-  @java.lang.Override
-  public int getCompletedAnalysesCount() {
-    return completedAnalysesCount_;
-  }
-
-  public static final int FAILED_ANALYSES_COUNT_FIELD_NUMBER = 5;
-  private int failedAnalysesCount_ = 0;
-  /**
-   *
-   *
-   * <pre>
-   * The number of requested analyses that have failed so far.
-   * </pre>
-   *
-   * <code>int32 failed_analyses_count = 5;</code>
-   *
-   * @return The failedAnalysesCount.
-   */
-  @java.lang.Override
-  public int getFailedAnalysesCount() {
-    return failedAnalysesCount_;
-  }
-
-  public static final int TOTAL_REQUESTED_ANALYSES_COUNT_FIELD_NUMBER = 6;
-  private int totalRequestedAnalysesCount_ = 0;
-  /**
-   *
-   *
-   * <pre>
-   * Total number of analyses requested. Computed by the number of conversations
-   * returned by `filter` multiplied by `analysis_percentage` in the request.
-   * </pre>
-   *
-   * <code>int32 total_requested_analyses_count = 6;</code>
-   *
-   * @return The totalRequestedAnalysesCount.
-   */
-  @java.lang.Override
-  public int getTotalRequestedAnalysesCount() {
-    return totalRequestedAnalysesCount_;
-  }
-
-  public static final int PARTIAL_ERRORS_FIELD_NUMBER = 7;
+  public static final int PARTIAL_ERRORS_FIELD_NUMBER = 4;
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.rpc.Status> partialErrors_;
@@ -275,13 +217,11 @@ public final class BulkAnalyzeConversationsMetadata extends com.google.protobuf.
    *
    *
    * <pre>
-   * Output only. Partial errors during bulk analyze operation that might cause
+   * Partial errors during bulk delete conversations operation that might cause
    * the operation output to be incomplete.
    * </pre>
    *
-   * <code>
-   * repeated .google.rpc.Status partial_errors = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>repeated .google.rpc.Status partial_errors = 4;</code>
    */
   @java.lang.Override
   public java.util.List<com.google.rpc.Status> getPartialErrorsList() {
@@ -291,13 +231,11 @@ public final class BulkAnalyzeConversationsMetadata extends com.google.protobuf.
    *
    *
    * <pre>
-   * Output only. Partial errors during bulk analyze operation that might cause
+   * Partial errors during bulk delete conversations operation that might cause
    * the operation output to be incomplete.
    * </pre>
    *
-   * <code>
-   * repeated .google.rpc.Status partial_errors = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>repeated .google.rpc.Status partial_errors = 4;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.rpc.StatusOrBuilder> getPartialErrorsOrBuilderList() {
@@ -307,13 +245,11 @@ public final class BulkAnalyzeConversationsMetadata extends com.google.protobuf.
    *
    *
    * <pre>
-   * Output only. Partial errors during bulk analyze operation that might cause
+   * Partial errors during bulk delete conversations operation that might cause
    * the operation output to be incomplete.
    * </pre>
    *
-   * <code>
-   * repeated .google.rpc.Status partial_errors = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>repeated .google.rpc.Status partial_errors = 4;</code>
    */
   @java.lang.Override
   public int getPartialErrorsCount() {
@@ -323,13 +259,11 @@ public final class BulkAnalyzeConversationsMetadata extends com.google.protobuf.
    *
    *
    * <pre>
-   * Output only. Partial errors during bulk analyze operation that might cause
+   * Partial errors during bulk delete conversations operation that might cause
    * the operation output to be incomplete.
    * </pre>
    *
-   * <code>
-   * repeated .google.rpc.Status partial_errors = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>repeated .google.rpc.Status partial_errors = 4;</code>
    */
   @java.lang.Override
   public com.google.rpc.Status getPartialErrors(int index) {
@@ -339,13 +273,11 @@ public final class BulkAnalyzeConversationsMetadata extends com.google.protobuf.
    *
    *
    * <pre>
-   * Output only. Partial errors during bulk analyze operation that might cause
+   * Partial errors during bulk delete conversations operation that might cause
    * the operation output to be incomplete.
    * </pre>
    *
-   * <code>
-   * repeated .google.rpc.Status partial_errors = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>repeated .google.rpc.Status partial_errors = 4;</code>
    */
   @java.lang.Override
   public com.google.rpc.StatusOrBuilder getPartialErrorsOrBuilder(int index) {
@@ -375,17 +307,8 @@ public final class BulkAnalyzeConversationsMetadata extends com.google.protobuf.
     if (request_ != null) {
       output.writeMessage(3, getRequest());
     }
-    if (completedAnalysesCount_ != 0) {
-      output.writeInt32(4, completedAnalysesCount_);
-    }
-    if (failedAnalysesCount_ != 0) {
-      output.writeInt32(5, failedAnalysesCount_);
-    }
-    if (totalRequestedAnalysesCount_ != 0) {
-      output.writeInt32(6, totalRequestedAnalysesCount_);
-    }
     for (int i = 0; i < partialErrors_.size(); i++) {
-      output.writeMessage(7, partialErrors_.get(i));
+      output.writeMessage(4, partialErrors_.get(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -405,18 +328,8 @@ public final class BulkAnalyzeConversationsMetadata extends com.google.protobuf.
     if (request_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getRequest());
     }
-    if (completedAnalysesCount_ != 0) {
-      size += com.google.protobuf.CodedOutputStream.computeInt32Size(4, completedAnalysesCount_);
-    }
-    if (failedAnalysesCount_ != 0) {
-      size += com.google.protobuf.CodedOutputStream.computeInt32Size(5, failedAnalysesCount_);
-    }
-    if (totalRequestedAnalysesCount_ != 0) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeInt32Size(6, totalRequestedAnalysesCount_);
-    }
     for (int i = 0; i < partialErrors_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, partialErrors_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, partialErrors_.get(i));
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -429,11 +342,11 @@ public final class BulkAnalyzeConversationsMetadata extends com.google.protobuf.
       return true;
     }
     if (!(obj
-        instanceof com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsMetadata)) {
+        instanceof com.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsMetadata)) {
       return super.equals(obj);
     }
-    com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsMetadata other =
-        (com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsMetadata) obj;
+    com.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsMetadata other =
+        (com.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsMetadata) obj;
 
     if (hasCreateTime() != other.hasCreateTime()) return false;
     if (hasCreateTime()) {
@@ -447,9 +360,6 @@ public final class BulkAnalyzeConversationsMetadata extends com.google.protobuf.
     if (hasRequest()) {
       if (!getRequest().equals(other.getRequest())) return false;
     }
-    if (getCompletedAnalysesCount() != other.getCompletedAnalysesCount()) return false;
-    if (getFailedAnalysesCount() != other.getFailedAnalysesCount()) return false;
-    if (getTotalRequestedAnalysesCount() != other.getTotalRequestedAnalysesCount()) return false;
     if (!getPartialErrorsList().equals(other.getPartialErrorsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -474,12 +384,6 @@ public final class BulkAnalyzeConversationsMetadata extends com.google.protobuf.
       hash = (37 * hash) + REQUEST_FIELD_NUMBER;
       hash = (53 * hash) + getRequest().hashCode();
     }
-    hash = (37 * hash) + COMPLETED_ANALYSES_COUNT_FIELD_NUMBER;
-    hash = (53 * hash) + getCompletedAnalysesCount();
-    hash = (37 * hash) + FAILED_ANALYSES_COUNT_FIELD_NUMBER;
-    hash = (53 * hash) + getFailedAnalysesCount();
-    hash = (37 * hash) + TOTAL_REQUESTED_ANALYSES_COUNT_FIELD_NUMBER;
-    hash = (53 * hash) + getTotalRequestedAnalysesCount();
     if (getPartialErrorsCount() > 0) {
       hash = (37 * hash) + PARTIAL_ERRORS_FIELD_NUMBER;
       hash = (53 * hash) + getPartialErrorsList().hashCode();
@@ -489,63 +393,59 @@ public final class BulkAnalyzeConversationsMetadata extends com.google.protobuf.
     return hash;
   }
 
-  public static com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsMetadata
-      parseFrom(java.nio.ByteBuffer data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
+  public static com.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsMetadata parseFrom(
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsMetadata
-      parseFrom(
-          java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
+  public static com.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsMetadata parseFrom(
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsMetadata
-      parseFrom(com.google.protobuf.ByteString data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
+  public static com.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsMetadata parseFrom(
+      com.google.protobuf.ByteString data)
+      throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsMetadata
-      parseFrom(
-          com.google.protobuf.ByteString data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
+  public static com.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsMetadata parseFrom(
+      com.google.protobuf.ByteString data,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsMetadata
-      parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+  public static com.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsMetadata parseFrom(
+      byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsMetadata
-      parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
+  public static com.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsMetadata parseFrom(
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsMetadata
-      parseFrom(java.io.InputStream input) throws java.io.IOException {
+  public static com.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsMetadata parseFrom(
+      java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsMetadata
-      parseFrom(
-          java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
+  public static com.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsMetadata parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsMetadata
+  public static com.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsMetadata
       parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsMetadata
+  public static com.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsMetadata
       parseDelimitedFrom(
           java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
@@ -553,16 +453,15 @@ public final class BulkAnalyzeConversationsMetadata extends com.google.protobuf.
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsMetadata
-      parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+  public static com.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsMetadata parseFrom(
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsMetadata
-      parseFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
+  public static com.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsMetadata parseFrom(
+      com.google.protobuf.CodedInputStream input,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
@@ -577,7 +476,7 @@ public final class BulkAnalyzeConversationsMetadata extends com.google.protobuf.
   }
 
   public static Builder newBuilder(
-      com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsMetadata prototype) {
+      com.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsMetadata prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -595,33 +494,33 @@ public final class BulkAnalyzeConversationsMetadata extends com.google.protobuf.
    *
    *
    * <pre>
-   * The metadata for a bulk analyze conversations operation.
+   * The metadata for a bulk delete conversations operation.
    * </pre>
    *
-   * Protobuf type {@code google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsMetadata}
+   * Protobuf type {@code google.cloud.contactcenterinsights.v1.BulkDeleteConversationsMetadata}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsMetadata)
-      com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsMetadataOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.cloud.contactcenterinsights.v1.BulkDeleteConversationsMetadata)
+      com.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsMetadataOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsProto
-          .internal_static_google_cloud_contactcenterinsights_v1_BulkAnalyzeConversationsMetadata_descriptor;
+          .internal_static_google_cloud_contactcenterinsights_v1_BulkDeleteConversationsMetadata_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsProto
-          .internal_static_google_cloud_contactcenterinsights_v1_BulkAnalyzeConversationsMetadata_fieldAccessorTable
+          .internal_static_google_cloud_contactcenterinsights_v1_BulkDeleteConversationsMetadata_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsMetadata.class,
-              com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsMetadata.Builder
+              com.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsMetadata.class,
+              com.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsMetadata.Builder
                   .class);
     }
 
     // Construct using
-    // com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsMetadata.newBuilder()
+    // com.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsMetadata.newBuilder()
     private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
@@ -647,35 +546,32 @@ public final class BulkAnalyzeConversationsMetadata extends com.google.protobuf.
         requestBuilder_.dispose();
         requestBuilder_ = null;
       }
-      completedAnalysesCount_ = 0;
-      failedAnalysesCount_ = 0;
-      totalRequestedAnalysesCount_ = 0;
       if (partialErrorsBuilder_ == null) {
         partialErrors_ = java.util.Collections.emptyList();
       } else {
         partialErrors_ = null;
         partialErrorsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsProto
-          .internal_static_google_cloud_contactcenterinsights_v1_BulkAnalyzeConversationsMetadata_descriptor;
+          .internal_static_google_cloud_contactcenterinsights_v1_BulkDeleteConversationsMetadata_descriptor;
     }
 
     @java.lang.Override
-    public com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsMetadata
+    public com.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsMetadata
         getDefaultInstanceForType() {
-      return com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsMetadata
+      return com.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsMetadata
           .getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsMetadata build() {
-      com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsMetadata result =
+    public com.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsMetadata build() {
+      com.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsMetadata result =
           buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
@@ -684,10 +580,10 @@ public final class BulkAnalyzeConversationsMetadata extends com.google.protobuf.
     }
 
     @java.lang.Override
-    public com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsMetadata
+    public com.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsMetadata
         buildPartial() {
-      com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsMetadata result =
-          new com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsMetadata(this);
+      com.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsMetadata result =
+          new com.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsMetadata(this);
       buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
@@ -697,11 +593,11 @@ public final class BulkAnalyzeConversationsMetadata extends com.google.protobuf.
     }
 
     private void buildPartialRepeatedFields(
-        com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsMetadata result) {
+        com.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsMetadata result) {
       if (partialErrorsBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           partialErrors_ = java.util.Collections.unmodifiableList(partialErrors_);
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.partialErrors_ = partialErrors_;
       } else {
@@ -710,7 +606,7 @@ public final class BulkAnalyzeConversationsMetadata extends com.google.protobuf.
     }
 
     private void buildPartial0(
-        com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsMetadata result) {
+        com.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsMetadata result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
@@ -720,15 +616,6 @@ public final class BulkAnalyzeConversationsMetadata extends com.google.protobuf.
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.request_ = requestBuilder_ == null ? request_ : requestBuilder_.build();
-      }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.completedAnalysesCount_ = completedAnalysesCount_;
-      }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.failedAnalysesCount_ = failedAnalysesCount_;
-      }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.totalRequestedAnalysesCount_ = totalRequestedAnalysesCount_;
       }
     }
 
@@ -768,9 +655,9 @@ public final class BulkAnalyzeConversationsMetadata extends com.google.protobuf.
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other
-          instanceof com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsMetadata) {
+          instanceof com.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsMetadata) {
         return mergeFrom(
-            (com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsMetadata) other);
+            (com.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsMetadata) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -778,9 +665,9 @@ public final class BulkAnalyzeConversationsMetadata extends com.google.protobuf.
     }
 
     public Builder mergeFrom(
-        com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsMetadata other) {
+        com.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsMetadata other) {
       if (other
-          == com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsMetadata
+          == com.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsMetadata
               .getDefaultInstance()) return this;
       if (other.hasCreateTime()) {
         mergeCreateTime(other.getCreateTime());
@@ -791,20 +678,11 @@ public final class BulkAnalyzeConversationsMetadata extends com.google.protobuf.
       if (other.hasRequest()) {
         mergeRequest(other.getRequest());
       }
-      if (other.getCompletedAnalysesCount() != 0) {
-        setCompletedAnalysesCount(other.getCompletedAnalysesCount());
-      }
-      if (other.getFailedAnalysesCount() != 0) {
-        setFailedAnalysesCount(other.getFailedAnalysesCount());
-      }
-      if (other.getTotalRequestedAnalysesCount() != 0) {
-        setTotalRequestedAnalysesCount(other.getTotalRequestedAnalysesCount());
-      }
       if (partialErrorsBuilder_ == null) {
         if (!other.partialErrors_.isEmpty()) {
           if (partialErrors_.isEmpty()) {
             partialErrors_ = other.partialErrors_;
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensurePartialErrorsIsMutable();
             partialErrors_.addAll(other.partialErrors_);
@@ -817,7 +695,7 @@ public final class BulkAnalyzeConversationsMetadata extends com.google.protobuf.
             partialErrorsBuilder_.dispose();
             partialErrorsBuilder_ = null;
             partialErrors_ = other.partialErrors_;
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000008);
             partialErrorsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getPartialErrorsFieldBuilder()
@@ -871,25 +749,7 @@ public final class BulkAnalyzeConversationsMetadata extends com.google.protobuf.
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
-            case 32:
-              {
-                completedAnalysesCount_ = input.readInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 32
-            case 40:
-              {
-                failedAnalysesCount_ = input.readInt32();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 40
-            case 48:
-              {
-                totalRequestedAnalysesCount_ = input.readInt32();
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 48
-            case 58:
+            case 34:
               {
                 com.google.rpc.Status m =
                     input.readMessage(com.google.rpc.Status.parser(), extensionRegistry);
@@ -900,7 +760,7 @@ public final class BulkAnalyzeConversationsMetadata extends com.google.protobuf.
                   partialErrorsBuilder_.addMessage(m);
                 }
                 break;
-              } // case 58
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1282,20 +1142,20 @@ public final class BulkAnalyzeConversationsMetadata extends com.google.protobuf.
       return endTimeBuilder_;
     }
 
-    private com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsRequest request_;
+    private com.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsRequest request_;
     private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsRequest,
-            com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsRequest.Builder,
-            com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsRequestOrBuilder>
+            com.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsRequest,
+            com.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsRequest.Builder,
+            com.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsRequestOrBuilder>
         requestBuilder_;
     /**
      *
      *
      * <pre>
-     * The original request for bulk analyze.
+     * The original request for bulk delete.
      * </pre>
      *
-     * <code>.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsRequest request = 3;
+     * <code>.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsRequest request = 3;
      * </code>
      *
      * @return Whether the request field is set.
@@ -1307,18 +1167,18 @@ public final class BulkAnalyzeConversationsMetadata extends com.google.protobuf.
      *
      *
      * <pre>
-     * The original request for bulk analyze.
+     * The original request for bulk delete.
      * </pre>
      *
-     * <code>.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsRequest request = 3;
+     * <code>.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsRequest request = 3;
      * </code>
      *
      * @return The request.
      */
-    public com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsRequest getRequest() {
+    public com.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsRequest getRequest() {
       if (requestBuilder_ == null) {
         return request_ == null
-            ? com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsRequest
+            ? com.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsRequest
                 .getDefaultInstance()
             : request_;
       } else {
@@ -1329,14 +1189,14 @@ public final class BulkAnalyzeConversationsMetadata extends com.google.protobuf.
      *
      *
      * <pre>
-     * The original request for bulk analyze.
+     * The original request for bulk delete.
      * </pre>
      *
-     * <code>.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsRequest request = 3;
+     * <code>.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsRequest request = 3;
      * </code>
      */
     public Builder setRequest(
-        com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsRequest value) {
+        com.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsRequest value) {
       if (requestBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1353,14 +1213,14 @@ public final class BulkAnalyzeConversationsMetadata extends com.google.protobuf.
      *
      *
      * <pre>
-     * The original request for bulk analyze.
+     * The original request for bulk delete.
      * </pre>
      *
-     * <code>.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsRequest request = 3;
+     * <code>.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsRequest request = 3;
      * </code>
      */
     public Builder setRequest(
-        com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsRequest.Builder
+        com.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsRequest.Builder
             builderForValue) {
       if (requestBuilder_ == null) {
         request_ = builderForValue.build();
@@ -1375,19 +1235,19 @@ public final class BulkAnalyzeConversationsMetadata extends com.google.protobuf.
      *
      *
      * <pre>
-     * The original request for bulk analyze.
+     * The original request for bulk delete.
      * </pre>
      *
-     * <code>.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsRequest request = 3;
+     * <code>.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsRequest request = 3;
      * </code>
      */
     public Builder mergeRequest(
-        com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsRequest value) {
+        com.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsRequest value) {
       if (requestBuilder_ == null) {
         if (((bitField0_ & 0x00000004) != 0)
             && request_ != null
             && request_
-                != com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsRequest
+                != com.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsRequest
                     .getDefaultInstance()) {
           getRequestBuilder().mergeFrom(value);
         } else {
@@ -1404,10 +1264,10 @@ public final class BulkAnalyzeConversationsMetadata extends com.google.protobuf.
      *
      *
      * <pre>
-     * The original request for bulk analyze.
+     * The original request for bulk delete.
      * </pre>
      *
-     * <code>.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsRequest request = 3;
+     * <code>.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsRequest request = 3;
      * </code>
      */
     public Builder clearRequest() {
@@ -1424,13 +1284,13 @@ public final class BulkAnalyzeConversationsMetadata extends com.google.protobuf.
      *
      *
      * <pre>
-     * The original request for bulk analyze.
+     * The original request for bulk delete.
      * </pre>
      *
-     * <code>.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsRequest request = 3;
+     * <code>.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsRequest request = 3;
      * </code>
      */
-    public com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsRequest.Builder
+    public com.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsRequest.Builder
         getRequestBuilder() {
       bitField0_ |= 0x00000004;
       onChanged();
@@ -1440,19 +1300,19 @@ public final class BulkAnalyzeConversationsMetadata extends com.google.protobuf.
      *
      *
      * <pre>
-     * The original request for bulk analyze.
+     * The original request for bulk delete.
      * </pre>
      *
-     * <code>.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsRequest request = 3;
+     * <code>.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsRequest request = 3;
      * </code>
      */
-    public com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsRequestOrBuilder
+    public com.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsRequestOrBuilder
         getRequestOrBuilder() {
       if (requestBuilder_ != null) {
         return requestBuilder_.getMessageOrBuilder();
       } else {
         return request_ == null
-            ? com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsRequest
+            ? com.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsRequest
                 .getDefaultInstance()
             : request_;
       }
@@ -1461,198 +1321,36 @@ public final class BulkAnalyzeConversationsMetadata extends com.google.protobuf.
      *
      *
      * <pre>
-     * The original request for bulk analyze.
+     * The original request for bulk delete.
      * </pre>
      *
-     * <code>.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsRequest request = 3;
+     * <code>.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsRequest request = 3;
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsRequest,
-            com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsRequest.Builder,
-            com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsRequestOrBuilder>
+            com.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsRequest,
+            com.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsRequest.Builder,
+            com.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsRequestOrBuilder>
         getRequestFieldBuilder() {
       if (requestBuilder_ == null) {
         requestBuilder_ =
             new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsRequest,
-                com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsRequest.Builder,
-                com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsRequestOrBuilder>(
+                com.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsRequest,
+                com.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsRequest.Builder,
+                com.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsRequestOrBuilder>(
                 getRequest(), getParentForChildren(), isClean());
         request_ = null;
       }
       return requestBuilder_;
     }
 
-    private int completedAnalysesCount_;
-    /**
-     *
-     *
-     * <pre>
-     * The number of requested analyses that have completed successfully so far.
-     * </pre>
-     *
-     * <code>int32 completed_analyses_count = 4;</code>
-     *
-     * @return The completedAnalysesCount.
-     */
-    @java.lang.Override
-    public int getCompletedAnalysesCount() {
-      return completedAnalysesCount_;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The number of requested analyses that have completed successfully so far.
-     * </pre>
-     *
-     * <code>int32 completed_analyses_count = 4;</code>
-     *
-     * @param value The completedAnalysesCount to set.
-     * @return This builder for chaining.
-     */
-    public Builder setCompletedAnalysesCount(int value) {
-
-      completedAnalysesCount_ = value;
-      bitField0_ |= 0x00000008;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The number of requested analyses that have completed successfully so far.
-     * </pre>
-     *
-     * <code>int32 completed_analyses_count = 4;</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearCompletedAnalysesCount() {
-      bitField0_ = (bitField0_ & ~0x00000008);
-      completedAnalysesCount_ = 0;
-      onChanged();
-      return this;
-    }
-
-    private int failedAnalysesCount_;
-    /**
-     *
-     *
-     * <pre>
-     * The number of requested analyses that have failed so far.
-     * </pre>
-     *
-     * <code>int32 failed_analyses_count = 5;</code>
-     *
-     * @return The failedAnalysesCount.
-     */
-    @java.lang.Override
-    public int getFailedAnalysesCount() {
-      return failedAnalysesCount_;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The number of requested analyses that have failed so far.
-     * </pre>
-     *
-     * <code>int32 failed_analyses_count = 5;</code>
-     *
-     * @param value The failedAnalysesCount to set.
-     * @return This builder for chaining.
-     */
-    public Builder setFailedAnalysesCount(int value) {
-
-      failedAnalysesCount_ = value;
-      bitField0_ |= 0x00000010;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The number of requested analyses that have failed so far.
-     * </pre>
-     *
-     * <code>int32 failed_analyses_count = 5;</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearFailedAnalysesCount() {
-      bitField0_ = (bitField0_ & ~0x00000010);
-      failedAnalysesCount_ = 0;
-      onChanged();
-      return this;
-    }
-
-    private int totalRequestedAnalysesCount_;
-    /**
-     *
-     *
-     * <pre>
-     * Total number of analyses requested. Computed by the number of conversations
-     * returned by `filter` multiplied by `analysis_percentage` in the request.
-     * </pre>
-     *
-     * <code>int32 total_requested_analyses_count = 6;</code>
-     *
-     * @return The totalRequestedAnalysesCount.
-     */
-    @java.lang.Override
-    public int getTotalRequestedAnalysesCount() {
-      return totalRequestedAnalysesCount_;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Total number of analyses requested. Computed by the number of conversations
-     * returned by `filter` multiplied by `analysis_percentage` in the request.
-     * </pre>
-     *
-     * <code>int32 total_requested_analyses_count = 6;</code>
-     *
-     * @param value The totalRequestedAnalysesCount to set.
-     * @return This builder for chaining.
-     */
-    public Builder setTotalRequestedAnalysesCount(int value) {
-
-      totalRequestedAnalysesCount_ = value;
-      bitField0_ |= 0x00000020;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Total number of analyses requested. Computed by the number of conversations
-     * returned by `filter` multiplied by `analysis_percentage` in the request.
-     * </pre>
-     *
-     * <code>int32 total_requested_analyses_count = 6;</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearTotalRequestedAnalysesCount() {
-      bitField0_ = (bitField0_ & ~0x00000020);
-      totalRequestedAnalysesCount_ = 0;
-      onChanged();
-      return this;
-    }
-
     private java.util.List<com.google.rpc.Status> partialErrors_ =
         java.util.Collections.emptyList();
 
     private void ensurePartialErrorsIsMutable() {
-      if (!((bitField0_ & 0x00000040) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         partialErrors_ = new java.util.ArrayList<com.google.rpc.Status>(partialErrors_);
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000008;
       }
     }
 
@@ -1664,13 +1362,11 @@ public final class BulkAnalyzeConversationsMetadata extends com.google.protobuf.
      *
      *
      * <pre>
-     * Output only. Partial errors during bulk analyze operation that might cause
+     * Partial errors during bulk delete conversations operation that might cause
      * the operation output to be incomplete.
      * </pre>
      *
-     * <code>
-     * repeated .google.rpc.Status partial_errors = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.rpc.Status partial_errors = 4;</code>
      */
     public java.util.List<com.google.rpc.Status> getPartialErrorsList() {
       if (partialErrorsBuilder_ == null) {
@@ -1683,13 +1379,11 @@ public final class BulkAnalyzeConversationsMetadata extends com.google.protobuf.
      *
      *
      * <pre>
-     * Output only. Partial errors during bulk analyze operation that might cause
+     * Partial errors during bulk delete conversations operation that might cause
      * the operation output to be incomplete.
      * </pre>
      *
-     * <code>
-     * repeated .google.rpc.Status partial_errors = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.rpc.Status partial_errors = 4;</code>
      */
     public int getPartialErrorsCount() {
       if (partialErrorsBuilder_ == null) {
@@ -1702,13 +1396,11 @@ public final class BulkAnalyzeConversationsMetadata extends com.google.protobuf.
      *
      *
      * <pre>
-     * Output only. Partial errors during bulk analyze operation that might cause
+     * Partial errors during bulk delete conversations operation that might cause
      * the operation output to be incomplete.
      * </pre>
      *
-     * <code>
-     * repeated .google.rpc.Status partial_errors = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.rpc.Status partial_errors = 4;</code>
      */
     public com.google.rpc.Status getPartialErrors(int index) {
       if (partialErrorsBuilder_ == null) {
@@ -1721,13 +1413,11 @@ public final class BulkAnalyzeConversationsMetadata extends com.google.protobuf.
      *
      *
      * <pre>
-     * Output only. Partial errors during bulk analyze operation that might cause
+     * Partial errors during bulk delete conversations operation that might cause
      * the operation output to be incomplete.
      * </pre>
      *
-     * <code>
-     * repeated .google.rpc.Status partial_errors = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.rpc.Status partial_errors = 4;</code>
      */
     public Builder setPartialErrors(int index, com.google.rpc.Status value) {
       if (partialErrorsBuilder_ == null) {
@@ -1746,13 +1436,11 @@ public final class BulkAnalyzeConversationsMetadata extends com.google.protobuf.
      *
      *
      * <pre>
-     * Output only. Partial errors during bulk analyze operation that might cause
+     * Partial errors during bulk delete conversations operation that might cause
      * the operation output to be incomplete.
      * </pre>
      *
-     * <code>
-     * repeated .google.rpc.Status partial_errors = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.rpc.Status partial_errors = 4;</code>
      */
     public Builder setPartialErrors(int index, com.google.rpc.Status.Builder builderForValue) {
       if (partialErrorsBuilder_ == null) {
@@ -1768,13 +1456,11 @@ public final class BulkAnalyzeConversationsMetadata extends com.google.protobuf.
      *
      *
      * <pre>
-     * Output only. Partial errors during bulk analyze operation that might cause
+     * Partial errors during bulk delete conversations operation that might cause
      * the operation output to be incomplete.
      * </pre>
      *
-     * <code>
-     * repeated .google.rpc.Status partial_errors = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.rpc.Status partial_errors = 4;</code>
      */
     public Builder addPartialErrors(com.google.rpc.Status value) {
       if (partialErrorsBuilder_ == null) {
@@ -1793,13 +1479,11 @@ public final class BulkAnalyzeConversationsMetadata extends com.google.protobuf.
      *
      *
      * <pre>
-     * Output only. Partial errors during bulk analyze operation that might cause
+     * Partial errors during bulk delete conversations operation that might cause
      * the operation output to be incomplete.
      * </pre>
      *
-     * <code>
-     * repeated .google.rpc.Status partial_errors = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.rpc.Status partial_errors = 4;</code>
      */
     public Builder addPartialErrors(int index, com.google.rpc.Status value) {
       if (partialErrorsBuilder_ == null) {
@@ -1818,13 +1502,11 @@ public final class BulkAnalyzeConversationsMetadata extends com.google.protobuf.
      *
      *
      * <pre>
-     * Output only. Partial errors during bulk analyze operation that might cause
+     * Partial errors during bulk delete conversations operation that might cause
      * the operation output to be incomplete.
      * </pre>
      *
-     * <code>
-     * repeated .google.rpc.Status partial_errors = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.rpc.Status partial_errors = 4;</code>
      */
     public Builder addPartialErrors(com.google.rpc.Status.Builder builderForValue) {
       if (partialErrorsBuilder_ == null) {
@@ -1840,13 +1522,11 @@ public final class BulkAnalyzeConversationsMetadata extends com.google.protobuf.
      *
      *
      * <pre>
-     * Output only. Partial errors during bulk analyze operation that might cause
+     * Partial errors during bulk delete conversations operation that might cause
      * the operation output to be incomplete.
      * </pre>
      *
-     * <code>
-     * repeated .google.rpc.Status partial_errors = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.rpc.Status partial_errors = 4;</code>
      */
     public Builder addPartialErrors(int index, com.google.rpc.Status.Builder builderForValue) {
       if (partialErrorsBuilder_ == null) {
@@ -1862,13 +1542,11 @@ public final class BulkAnalyzeConversationsMetadata extends com.google.protobuf.
      *
      *
      * <pre>
-     * Output only. Partial errors during bulk analyze operation that might cause
+     * Partial errors during bulk delete conversations operation that might cause
      * the operation output to be incomplete.
      * </pre>
      *
-     * <code>
-     * repeated .google.rpc.Status partial_errors = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.rpc.Status partial_errors = 4;</code>
      */
     public Builder addAllPartialErrors(java.lang.Iterable<? extends com.google.rpc.Status> values) {
       if (partialErrorsBuilder_ == null) {
@@ -1884,18 +1562,16 @@ public final class BulkAnalyzeConversationsMetadata extends com.google.protobuf.
      *
      *
      * <pre>
-     * Output only. Partial errors during bulk analyze operation that might cause
+     * Partial errors during bulk delete conversations operation that might cause
      * the operation output to be incomplete.
      * </pre>
      *
-     * <code>
-     * repeated .google.rpc.Status partial_errors = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.rpc.Status partial_errors = 4;</code>
      */
     public Builder clearPartialErrors() {
       if (partialErrorsBuilder_ == null) {
         partialErrors_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
       } else {
         partialErrorsBuilder_.clear();
@@ -1906,13 +1582,11 @@ public final class BulkAnalyzeConversationsMetadata extends com.google.protobuf.
      *
      *
      * <pre>
-     * Output only. Partial errors during bulk analyze operation that might cause
+     * Partial errors during bulk delete conversations operation that might cause
      * the operation output to be incomplete.
      * </pre>
      *
-     * <code>
-     * repeated .google.rpc.Status partial_errors = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.rpc.Status partial_errors = 4;</code>
      */
     public Builder removePartialErrors(int index) {
       if (partialErrorsBuilder_ == null) {
@@ -1928,13 +1602,11 @@ public final class BulkAnalyzeConversationsMetadata extends com.google.protobuf.
      *
      *
      * <pre>
-     * Output only. Partial errors during bulk analyze operation that might cause
+     * Partial errors during bulk delete conversations operation that might cause
      * the operation output to be incomplete.
      * </pre>
      *
-     * <code>
-     * repeated .google.rpc.Status partial_errors = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.rpc.Status partial_errors = 4;</code>
      */
     public com.google.rpc.Status.Builder getPartialErrorsBuilder(int index) {
       return getPartialErrorsFieldBuilder().getBuilder(index);
@@ -1943,13 +1615,11 @@ public final class BulkAnalyzeConversationsMetadata extends com.google.protobuf.
      *
      *
      * <pre>
-     * Output only. Partial errors during bulk analyze operation that might cause
+     * Partial errors during bulk delete conversations operation that might cause
      * the operation output to be incomplete.
      * </pre>
      *
-     * <code>
-     * repeated .google.rpc.Status partial_errors = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.rpc.Status partial_errors = 4;</code>
      */
     public com.google.rpc.StatusOrBuilder getPartialErrorsOrBuilder(int index) {
       if (partialErrorsBuilder_ == null) {
@@ -1962,13 +1632,11 @@ public final class BulkAnalyzeConversationsMetadata extends com.google.protobuf.
      *
      *
      * <pre>
-     * Output only. Partial errors during bulk analyze operation that might cause
+     * Partial errors during bulk delete conversations operation that might cause
      * the operation output to be incomplete.
      * </pre>
      *
-     * <code>
-     * repeated .google.rpc.Status partial_errors = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.rpc.Status partial_errors = 4;</code>
      */
     public java.util.List<? extends com.google.rpc.StatusOrBuilder>
         getPartialErrorsOrBuilderList() {
@@ -1982,13 +1650,11 @@ public final class BulkAnalyzeConversationsMetadata extends com.google.protobuf.
      *
      *
      * <pre>
-     * Output only. Partial errors during bulk analyze operation that might cause
+     * Partial errors during bulk delete conversations operation that might cause
      * the operation output to be incomplete.
      * </pre>
      *
-     * <code>
-     * repeated .google.rpc.Status partial_errors = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.rpc.Status partial_errors = 4;</code>
      */
     public com.google.rpc.Status.Builder addPartialErrorsBuilder() {
       return getPartialErrorsFieldBuilder().addBuilder(com.google.rpc.Status.getDefaultInstance());
@@ -1997,13 +1663,11 @@ public final class BulkAnalyzeConversationsMetadata extends com.google.protobuf.
      *
      *
      * <pre>
-     * Output only. Partial errors during bulk analyze operation that might cause
+     * Partial errors during bulk delete conversations operation that might cause
      * the operation output to be incomplete.
      * </pre>
      *
-     * <code>
-     * repeated .google.rpc.Status partial_errors = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.rpc.Status partial_errors = 4;</code>
      */
     public com.google.rpc.Status.Builder addPartialErrorsBuilder(int index) {
       return getPartialErrorsFieldBuilder()
@@ -2013,13 +1677,11 @@ public final class BulkAnalyzeConversationsMetadata extends com.google.protobuf.
      *
      *
      * <pre>
-     * Output only. Partial errors during bulk analyze operation that might cause
+     * Partial errors during bulk delete conversations operation that might cause
      * the operation output to be incomplete.
      * </pre>
      *
-     * <code>
-     * repeated .google.rpc.Status partial_errors = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.rpc.Status partial_errors = 4;</code>
      */
     public java.util.List<com.google.rpc.Status.Builder> getPartialErrorsBuilderList() {
       return getPartialErrorsFieldBuilder().getBuilderList();
@@ -2035,7 +1697,7 @@ public final class BulkAnalyzeConversationsMetadata extends com.google.protobuf.
                 com.google.rpc.Status.Builder,
                 com.google.rpc.StatusOrBuilder>(
                 partialErrors_,
-                ((bitField0_ & 0x00000040) != 0),
+                ((bitField0_ & 0x00000008) != 0),
                 getParentForChildren(),
                 isClean());
         partialErrors_ = null;
@@ -2054,27 +1716,27 @@ public final class BulkAnalyzeConversationsMetadata extends com.google.protobuf.
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsMetadata)
+    // @@protoc_insertion_point(builder_scope:google.cloud.contactcenterinsights.v1.BulkDeleteConversationsMetadata)
   }
 
-  // @@protoc_insertion_point(class_scope:google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsMetadata)
-  private static final com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsMetadata
+  // @@protoc_insertion_point(class_scope:google.cloud.contactcenterinsights.v1.BulkDeleteConversationsMetadata)
+  private static final com.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsMetadata
       DEFAULT_INSTANCE;
 
   static {
     DEFAULT_INSTANCE =
-        new com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsMetadata();
+        new com.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsMetadata();
   }
 
-  public static com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsMetadata
+  public static com.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsMetadata
       getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<BulkAnalyzeConversationsMetadata> PARSER =
-      new com.google.protobuf.AbstractParser<BulkAnalyzeConversationsMetadata>() {
+  private static final com.google.protobuf.Parser<BulkDeleteConversationsMetadata> PARSER =
+      new com.google.protobuf.AbstractParser<BulkDeleteConversationsMetadata>() {
         @java.lang.Override
-        public BulkAnalyzeConversationsMetadata parsePartialFrom(
+        public BulkDeleteConversationsMetadata parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
@@ -2093,17 +1755,17 @@ public final class BulkAnalyzeConversationsMetadata extends com.google.protobuf.
         }
       };
 
-  public static com.google.protobuf.Parser<BulkAnalyzeConversationsMetadata> parser() {
+  public static com.google.protobuf.Parser<BulkDeleteConversationsMetadata> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<BulkAnalyzeConversationsMetadata> getParserForType() {
+  public com.google.protobuf.Parser<BulkDeleteConversationsMetadata> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsMetadata
+  public com.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsMetadata
       getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }

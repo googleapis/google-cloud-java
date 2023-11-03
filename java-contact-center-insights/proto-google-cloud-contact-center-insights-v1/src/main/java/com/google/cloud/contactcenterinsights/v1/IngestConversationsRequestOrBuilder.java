@@ -184,6 +184,94 @@ public interface IngestConversationsRequestOrBuilder
   com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest.ConversationConfigOrBuilder
       getConversationConfigOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. DLP settings for transcript redaction. Optional, will default to
+   * the config specified in Settings.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.contactcenterinsights.v1.RedactionConfig redaction_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the redactionConfig field is set.
+   */
+  boolean hasRedactionConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. DLP settings for transcript redaction. Optional, will default to
+   * the config specified in Settings.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.contactcenterinsights.v1.RedactionConfig redaction_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The redactionConfig.
+   */
+  com.google.cloud.contactcenterinsights.v1.RedactionConfig getRedactionConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. DLP settings for transcript redaction. Optional, will default to
+   * the config specified in Settings.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.contactcenterinsights.v1.RedactionConfig redaction_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.contactcenterinsights.v1.RedactionConfigOrBuilder getRedactionConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Default Speech-to-Text configuration. Optional, will default to
+   * the config specified in Settings.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.contactcenterinsights.v1.SpeechConfig speech_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the speechConfig field is set.
+   */
+  boolean hasSpeechConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Default Speech-to-Text configuration. Optional, will default to
+   * the config specified in Settings.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.contactcenterinsights.v1.SpeechConfig speech_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The speechConfig.
+   */
+  com.google.cloud.contactcenterinsights.v1.SpeechConfig getSpeechConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Default Speech-to-Text configuration. Optional, will default to
+   * the config specified in Settings.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.contactcenterinsights.v1.SpeechConfig speech_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.contactcenterinsights.v1.SpeechConfigOrBuilder getSpeechConfigOrBuilder();
+
   com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest.SourceCase getSourceCase();
 
   com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest.ObjectConfigCase

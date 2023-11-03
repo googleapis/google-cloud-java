@@ -16,22 +16,18 @@
 
 package com.google.cloud.contactcenterinsights.v1.samples;
 
-// [START contactcenterinsights_v1_generated_ContactCenterInsights_IngestConversations_async]
-import com.google.api.core.ApiFuture;
+// [START contactcenterinsights_v1_generated_ContactCenterInsights_BulkDeleteConversations_StringString_sync]
+import com.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsResponse;
 import com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsClient;
-import com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest;
 import com.google.cloud.contactcenterinsights.v1.LocationName;
-import com.google.cloud.contactcenterinsights.v1.RedactionConfig;
-import com.google.cloud.contactcenterinsights.v1.SpeechConfig;
-import com.google.longrunning.Operation;
 
-public class AsyncIngestConversations {
+public class SyncBulkDeleteConversationsStringString {
 
   public static void main(String[] args) throws Exception {
-    asyncIngestConversations();
+    syncBulkDeleteConversationsStringString();
   }
 
-  public static void asyncIngestConversations() throws Exception {
+  public static void syncBulkDeleteConversationsStringString() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
@@ -39,19 +35,11 @@ public class AsyncIngestConversations {
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (ContactCenterInsightsClient contactCenterInsightsClient =
         ContactCenterInsightsClient.create()) {
-      IngestConversationsRequest request =
-          IngestConversationsRequest.newBuilder()
-              .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
-              .setConversationConfig(
-                  IngestConversationsRequest.ConversationConfig.newBuilder().build())
-              .setRedactionConfig(RedactionConfig.newBuilder().build())
-              .setSpeechConfig(SpeechConfig.newBuilder().build())
-              .build();
-      ApiFuture<Operation> future =
-          contactCenterInsightsClient.ingestConversationsCallable().futureCall(request);
-      // Do something.
-      Operation response = future.get();
+      String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+      String filter = "filter-1274492040";
+      BulkDeleteConversationsResponse response =
+          contactCenterInsightsClient.bulkDeleteConversationsAsync(parent, filter).get();
     }
   }
 }
-// [END contactcenterinsights_v1_generated_ContactCenterInsights_IngestConversations_async]
+// [END contactcenterinsights_v1_generated_ContactCenterInsights_BulkDeleteConversations_StringString_sync]

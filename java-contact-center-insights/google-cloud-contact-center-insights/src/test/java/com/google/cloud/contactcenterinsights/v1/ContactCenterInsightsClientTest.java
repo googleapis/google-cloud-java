@@ -1074,6 +1074,104 @@ public class ContactCenterInsightsClientTest {
   }
 
   @Test
+  public void bulkDeleteConversationsTest() throws Exception {
+    BulkDeleteConversationsResponse expectedResponse =
+        BulkDeleteConversationsResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("bulkDeleteConversationsTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockContactCenterInsights.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    String filter = "filter-1274492040";
+
+    BulkDeleteConversationsResponse actualResponse =
+        client.bulkDeleteConversationsAsync(parent, filter).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockContactCenterInsights.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    BulkDeleteConversationsRequest actualRequest =
+        ((BulkDeleteConversationsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(filter, actualRequest.getFilter());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void bulkDeleteConversationsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockContactCenterInsights.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      String filter = "filter-1274492040";
+      client.bulkDeleteConversationsAsync(parent, filter).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void bulkDeleteConversationsTest2() throws Exception {
+    BulkDeleteConversationsResponse expectedResponse =
+        BulkDeleteConversationsResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("bulkDeleteConversationsTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockContactCenterInsights.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    String filter = "filter-1274492040";
+
+    BulkDeleteConversationsResponse actualResponse =
+        client.bulkDeleteConversationsAsync(parent, filter).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockContactCenterInsights.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    BulkDeleteConversationsRequest actualRequest =
+        ((BulkDeleteConversationsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(filter, actualRequest.getFilter());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void bulkDeleteConversationsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockContactCenterInsights.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      String filter = "filter-1274492040";
+      client.bulkDeleteConversationsAsync(parent, filter).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
   public void ingestConversationsTest() throws Exception {
     IngestConversationsResponse expectedResponse = IngestConversationsResponse.newBuilder().build();
     Operation resultOperation =

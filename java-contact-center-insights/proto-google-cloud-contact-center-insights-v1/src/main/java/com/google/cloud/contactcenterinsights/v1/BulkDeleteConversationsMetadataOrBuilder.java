@@ -18,9 +18,9 @@
 
 package com.google.cloud.contactcenterinsights.v1;
 
-public interface BulkAnalyzeConversationsMetadataOrBuilder
+public interface BulkDeleteConversationsMetadataOrBuilder
     extends
-    // @@protoc_insertion_point(interface_extends:google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsMetadata)
+    // @@protoc_insertion_point(interface_extends:google.cloud.contactcenterinsights.v1.BulkDeleteConversationsMetadata)
     com.google.protobuf.MessageOrBuilder {
 
   /**
@@ -97,11 +97,10 @@ public interface BulkAnalyzeConversationsMetadataOrBuilder
    *
    *
    * <pre>
-   * The original request for bulk analyze.
+   * The original request for bulk delete.
    * </pre>
    *
-   * <code>.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsRequest request = 3;
-   * </code>
+   * <code>.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsRequest request = 3;</code>
    *
    * @return Whether the request field is set.
    */
@@ -110,131 +109,79 @@ public interface BulkAnalyzeConversationsMetadataOrBuilder
    *
    *
    * <pre>
-   * The original request for bulk analyze.
+   * The original request for bulk delete.
    * </pre>
    *
-   * <code>.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsRequest request = 3;
-   * </code>
+   * <code>.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsRequest request = 3;</code>
    *
    * @return The request.
    */
-  com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsRequest getRequest();
+  com.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsRequest getRequest();
   /**
    *
    *
    * <pre>
-   * The original request for bulk analyze.
+   * The original request for bulk delete.
    * </pre>
    *
-   * <code>.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsRequest request = 3;
-   * </code>
+   * <code>.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsRequest request = 3;</code>
    */
-  com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsRequestOrBuilder
+  com.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsRequestOrBuilder
       getRequestOrBuilder();
 
   /**
    *
    *
    * <pre>
-   * The number of requested analyses that have completed successfully so far.
-   * </pre>
-   *
-   * <code>int32 completed_analyses_count = 4;</code>
-   *
-   * @return The completedAnalysesCount.
-   */
-  int getCompletedAnalysesCount();
-
-  /**
-   *
-   *
-   * <pre>
-   * The number of requested analyses that have failed so far.
-   * </pre>
-   *
-   * <code>int32 failed_analyses_count = 5;</code>
-   *
-   * @return The failedAnalysesCount.
-   */
-  int getFailedAnalysesCount();
-
-  /**
-   *
-   *
-   * <pre>
-   * Total number of analyses requested. Computed by the number of conversations
-   * returned by `filter` multiplied by `analysis_percentage` in the request.
-   * </pre>
-   *
-   * <code>int32 total_requested_analyses_count = 6;</code>
-   *
-   * @return The totalRequestedAnalysesCount.
-   */
-  int getTotalRequestedAnalysesCount();
-
-  /**
-   *
-   *
-   * <pre>
-   * Output only. Partial errors during bulk analyze operation that might cause
+   * Partial errors during bulk delete conversations operation that might cause
    * the operation output to be incomplete.
    * </pre>
    *
-   * <code>
-   * repeated .google.rpc.Status partial_errors = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>repeated .google.rpc.Status partial_errors = 4;</code>
    */
   java.util.List<com.google.rpc.Status> getPartialErrorsList();
   /**
    *
    *
    * <pre>
-   * Output only. Partial errors during bulk analyze operation that might cause
+   * Partial errors during bulk delete conversations operation that might cause
    * the operation output to be incomplete.
    * </pre>
    *
-   * <code>
-   * repeated .google.rpc.Status partial_errors = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>repeated .google.rpc.Status partial_errors = 4;</code>
    */
   com.google.rpc.Status getPartialErrors(int index);
   /**
    *
    *
    * <pre>
-   * Output only. Partial errors during bulk analyze operation that might cause
+   * Partial errors during bulk delete conversations operation that might cause
    * the operation output to be incomplete.
    * </pre>
    *
-   * <code>
-   * repeated .google.rpc.Status partial_errors = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>repeated .google.rpc.Status partial_errors = 4;</code>
    */
   int getPartialErrorsCount();
   /**
    *
    *
    * <pre>
-   * Output only. Partial errors during bulk analyze operation that might cause
+   * Partial errors during bulk delete conversations operation that might cause
    * the operation output to be incomplete.
    * </pre>
    *
-   * <code>
-   * repeated .google.rpc.Status partial_errors = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>repeated .google.rpc.Status partial_errors = 4;</code>
    */
   java.util.List<? extends com.google.rpc.StatusOrBuilder> getPartialErrorsOrBuilderList();
   /**
    *
    *
    * <pre>
-   * Output only. Partial errors during bulk analyze operation that might cause
+   * Partial errors during bulk delete conversations operation that might cause
    * the operation output to be incomplete.
    * </pre>
    *
-   * <code>
-   * repeated .google.rpc.Status partial_errors = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>repeated .google.rpc.Status partial_errors = 4;</code>
    */
   com.google.rpc.StatusOrBuilder getPartialErrorsOrBuilder(int index);
 }

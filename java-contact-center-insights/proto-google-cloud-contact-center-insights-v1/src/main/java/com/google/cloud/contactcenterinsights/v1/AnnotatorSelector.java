@@ -228,7 +228,7 @@ public final class AnnotatorSelector extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * The Insights baseline model.
+       * The CCAI baseline model.
        * </pre>
        *
        * <code>BASELINE_MODEL = 1;</code>
@@ -251,7 +251,7 @@ public final class AnnotatorSelector extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * The Insights baseline model.
+       * The CCAI baseline model.
        * </pre>
        *
        * <code>BASELINE_MODEL = 1;</code>
