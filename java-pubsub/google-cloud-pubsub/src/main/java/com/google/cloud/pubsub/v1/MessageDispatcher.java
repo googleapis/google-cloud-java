@@ -31,7 +31,6 @@ import com.google.pubsub.v1.ReceivedMessage;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
-import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -92,8 +91,8 @@ class MessageDispatcher {
   private final LinkedBlockingQueue<AckRequestData> pendingAcks = new LinkedBlockingQueue<>();
   private final LinkedBlockingQueue<AckRequestData> pendingNacks = new LinkedBlockingQueue<>();
   private final LinkedBlockingQueue<AckRequestData> pendingReceipts = new LinkedBlockingQueue<>();
-  private final LinkedHashMap<String, ReceiptCompleteData> outstandingReceipts =
-      new LinkedHashMap<String, ReceiptCompleteData>();
+  private final ConcurrentMap<String, ReceiptCompleteData> outstandingReceipts =
+      new ConcurrentHashMap<String, ReceiptCompleteData>();
   private final AtomicInteger messageDeadlineSeconds = new AtomicInteger();
   private final AtomicBoolean extendDeadline = new AtomicBoolean(true);
   private final Lock jobLock;
@@ -411,7 +410,7 @@ class MessageDispatcher {
     processBatch(outstandingBatch);
   }
 
-  synchronized void notifyAckSuccess(AckRequestData ackRequestData) {
+  void notifyAckSuccess(AckRequestData ackRequestData) {
 
     if (outstandingReceipts.containsKey(ackRequestData.getAckId())) {
       outstandingReceipts.get(ackRequestData.getAckId()).notifyReceiptComplete();
@@ -437,7 +436,7 @@ class MessageDispatcher {
     }
   }
 
-  synchronized void notifyAckFailed(AckRequestData ackRequestData) {
+  void notifyAckFailed(AckRequestData ackRequestData) {
     outstandingReceipts.remove(ackRequestData.getAckId());
   }
 
