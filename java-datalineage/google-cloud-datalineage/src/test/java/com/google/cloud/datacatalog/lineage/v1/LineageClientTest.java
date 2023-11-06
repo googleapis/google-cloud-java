@@ -36,6 +36,7 @@ import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
+import com.google.protobuf.Struct;
 import com.google.protobuf.Timestamp;
 import com.google.protobuf.Value;
 import io.grpc.StatusRuntimeException;
@@ -90,6 +91,51 @@ public class LineageClientTest {
   @After
   public void tearDown() throws Exception {
     client.close();
+  }
+
+  @Test
+  public void processOpenLineageRunEventTest() throws Exception {
+    ProcessOpenLineageRunEventResponse expectedResponse =
+        ProcessOpenLineageRunEventResponse.newBuilder()
+            .setProcess(ProcessName.of("[PROJECT]", "[LOCATION]", "[PROCESS]").toString())
+            .setRun(RunName.of("[PROJECT]", "[LOCATION]", "[PROCESS]", "[RUN]").toString())
+            .addAllLineageEvents(new ArrayList<String>())
+            .build();
+    mockLineage.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    Struct openLineage = Struct.newBuilder().build();
+
+    ProcessOpenLineageRunEventResponse actualResponse =
+        client.processOpenLineageRunEvent(parent, openLineage);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockLineage.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ProcessOpenLineageRunEventRequest actualRequest =
+        ((ProcessOpenLineageRunEventRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(openLineage, actualRequest.getOpenLineage());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void processOpenLineageRunEventExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockLineage.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      Struct openLineage = Struct.newBuilder().build();
+      client.processOpenLineageRunEvent(parent, openLineage);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
   }
 
   @Test

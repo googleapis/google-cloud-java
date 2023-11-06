@@ -426,8 +426,10 @@ public final class Run extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The attributes of the run. Can be anything, for example, a string
-   * with an SQL request. Up to 100 attributes are allowed.
+   * Optional. The attributes of the run. Should only be used for the purpose of
+   * non-semantic management (classifying, describing or labeling the run).
+   *
+   * Up to 100 attributes are allowed.
    * </pre>
    *
    * <code>
@@ -451,8 +453,10 @@ public final class Run extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The attributes of the run. Can be anything, for example, a string
-   * with an SQL request. Up to 100 attributes are allowed.
+   * Optional. The attributes of the run. Should only be used for the purpose of
+   * non-semantic management (classifying, describing or labeling the run).
+   *
+   * Up to 100 attributes are allowed.
    * </pre>
    *
    * <code>
@@ -467,8 +471,10 @@ public final class Run extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The attributes of the run. Can be anything, for example, a string
-   * with an SQL request. Up to 100 attributes are allowed.
+   * Optional. The attributes of the run. Should only be used for the purpose of
+   * non-semantic management (classifying, describing or labeling the run).
+   *
+   * Up to 100 attributes are allowed.
    * </pre>
    *
    * <code>
@@ -491,8 +497,10 @@ public final class Run extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The attributes of the run. Can be anything, for example, a string
-   * with an SQL request. Up to 100 attributes are allowed.
+   * Optional. The attributes of the run. Should only be used for the purpose of
+   * non-semantic management (classifying, describing or labeling the run).
+   *
+   * Up to 100 attributes are allowed.
    * </pre>
    *
    * <code>
@@ -1427,8 +1435,10 @@ public final class Run extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The attributes of the run. Can be anything, for example, a string
-     * with an SQL request. Up to 100 attributes are allowed.
+     * Optional. The attributes of the run. Should only be used for the purpose of
+     * non-semantic management (classifying, describing or labeling the run).
+     *
+     * Up to 100 attributes are allowed.
      * </pre>
      *
      * <code>
@@ -1452,8 +1462,10 @@ public final class Run extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The attributes of the run. Can be anything, for example, a string
-     * with an SQL request. Up to 100 attributes are allowed.
+     * Optional. The attributes of the run. Should only be used for the purpose of
+     * non-semantic management (classifying, describing or labeling the run).
+     *
+     * Up to 100 attributes are allowed.
      * </pre>
      *
      * <code>
@@ -1468,8 +1480,10 @@ public final class Run extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The attributes of the run. Can be anything, for example, a string
-     * with an SQL request. Up to 100 attributes are allowed.
+     * Optional. The attributes of the run. Should only be used for the purpose of
+     * non-semantic management (classifying, describing or labeling the run).
+     *
+     * Up to 100 attributes are allowed.
      * </pre>
      *
      * <code>
@@ -1492,8 +1506,10 @@ public final class Run extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The attributes of the run. Can be anything, for example, a string
-     * with an SQL request. Up to 100 attributes are allowed.
+     * Optional. The attributes of the run. Should only be used for the purpose of
+     * non-semantic management (classifying, describing or labeling the run).
+     *
+     * Up to 100 attributes are allowed.
      * </pre>
      *
      * <code>
@@ -1522,8 +1538,10 @@ public final class Run extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The attributes of the run. Can be anything, for example, a string
-     * with an SQL request. Up to 100 attributes are allowed.
+     * Optional. The attributes of the run. Should only be used for the purpose of
+     * non-semantic management (classifying, describing or labeling the run).
+     *
+     * Up to 100 attributes are allowed.
      * </pre>
      *
      * <code>
@@ -1547,8 +1565,10 @@ public final class Run extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The attributes of the run. Can be anything, for example, a string
-     * with an SQL request. Up to 100 attributes are allowed.
+     * Optional. The attributes of the run. Should only be used for the purpose of
+     * non-semantic management (classifying, describing or labeling the run).
+     *
+     * Up to 100 attributes are allowed.
      * </pre>
      *
      * <code>
@@ -1570,8 +1590,10 @@ public final class Run extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The attributes of the run. Can be anything, for example, a string
-     * with an SQL request. Up to 100 attributes are allowed.
+     * Optional. The attributes of the run. Should only be used for the purpose of
+     * non-semantic management (classifying, describing or labeling the run).
+     *
+     * Up to 100 attributes are allowed.
      * </pre>
      *
      * <code>

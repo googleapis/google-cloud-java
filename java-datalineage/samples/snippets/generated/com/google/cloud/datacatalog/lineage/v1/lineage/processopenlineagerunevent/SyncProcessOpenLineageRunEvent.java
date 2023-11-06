@@ -16,33 +16,34 @@
 
 package com.google.cloud.datacatalog.lineage.v1.samples;
 
-// [START datalineage_v1_generated_LineageSettings_CreateProcess_sync]
-import com.google.cloud.datacatalog.lineage.v1.LineageSettings;
-import java.time.Duration;
+// [START datalineage_v1_generated_Lineage_ProcessOpenLineageRunEvent_sync]
+import com.google.cloud.datacatalog.lineage.v1.LineageClient;
+import com.google.cloud.datacatalog.lineage.v1.ProcessOpenLineageRunEventRequest;
+import com.google.cloud.datacatalog.lineage.v1.ProcessOpenLineageRunEventResponse;
+import com.google.protobuf.Struct;
 
-public class SyncCreateProcess {
+public class SyncProcessOpenLineageRunEvent {
 
   public static void main(String[] args) throws Exception {
-    syncCreateProcess();
+    syncProcessOpenLineageRunEvent();
   }
 
-  public static void syncCreateProcess() throws Exception {
+  public static void syncProcessOpenLineageRunEvent() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-    LineageSettings.Builder lineageSettingsBuilder = LineageSettings.newBuilder();
-    lineageSettingsBuilder
-        .createProcessSettings()
-        .setRetrySettings(
-            lineageSettingsBuilder
-                .createProcessSettings()
-                .getRetrySettings()
-                .toBuilder()
-                .setTotalTimeout(Duration.ofSeconds(30))
-                .build());
-    LineageSettings lineageSettings = lineageSettingsBuilder.build();
+    try (LineageClient lineageClient = LineageClient.create()) {
+      ProcessOpenLineageRunEventRequest request =
+          ProcessOpenLineageRunEventRequest.newBuilder()
+              .setParent("parent-995424086")
+              .setOpenLineage(Struct.newBuilder().build())
+              .setRequestId("requestId693933066")
+              .build();
+      ProcessOpenLineageRunEventResponse response =
+          lineageClient.processOpenLineageRunEvent(request);
+    }
   }
 }
-// [END datalineage_v1_generated_LineageSettings_CreateProcess_sync]
+// [END datalineage_v1_generated_Lineage_ProcessOpenLineageRunEvent_sync]

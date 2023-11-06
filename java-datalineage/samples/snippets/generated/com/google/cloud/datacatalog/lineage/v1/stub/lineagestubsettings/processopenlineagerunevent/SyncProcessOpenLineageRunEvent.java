@@ -16,17 +16,17 @@
 
 package com.google.cloud.datacatalog.lineage.v1.stub.samples;
 
-// [START datalineage_v1_generated_LineageStubSettings_CreateProcess_sync]
+// [START datalineage_v1_generated_LineageStubSettings_ProcessOpenLineageRunEvent_sync]
 import com.google.cloud.datacatalog.lineage.v1.stub.LineageStubSettings;
 import java.time.Duration;
 
-public class SyncCreateProcess {
+public class SyncProcessOpenLineageRunEvent {
 
   public static void main(String[] args) throws Exception {
-    syncCreateProcess();
+    syncProcessOpenLineageRunEvent();
   }
 
-  public static void syncCreateProcess() throws Exception {
+  public static void syncProcessOpenLineageRunEvent() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
@@ -34,10 +34,10 @@ public class SyncCreateProcess {
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     LineageStubSettings.Builder lineageSettingsBuilder = LineageStubSettings.newBuilder();
     lineageSettingsBuilder
-        .createProcessSettings()
+        .processOpenLineageRunEventSettings()
         .setRetrySettings(
             lineageSettingsBuilder
-                .createProcessSettings()
+                .processOpenLineageRunEventSettings()
                 .getRetrySettings()
                 .toBuilder()
                 .setTotalTimeout(Duration.ofSeconds(30))
@@ -45,4 +45,4 @@ public class SyncCreateProcess {
     LineageStubSettings lineageSettings = lineageSettingsBuilder.build();
   }
 }
-// [END datalineage_v1_generated_LineageStubSettings_CreateProcess_sync]
+// [END datalineage_v1_generated_LineageStubSettings_ProcessOpenLineageRunEvent_sync]

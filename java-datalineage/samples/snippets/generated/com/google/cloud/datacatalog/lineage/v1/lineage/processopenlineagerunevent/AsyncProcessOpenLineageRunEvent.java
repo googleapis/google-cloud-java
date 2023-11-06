@@ -16,33 +16,37 @@
 
 package com.google.cloud.datacatalog.lineage.v1.samples;
 
-// [START datalineage_v1_generated_Lineage_UpdateRun_sync]
+// [START datalineage_v1_generated_Lineage_ProcessOpenLineageRunEvent_async]
+import com.google.api.core.ApiFuture;
 import com.google.cloud.datacatalog.lineage.v1.LineageClient;
-import com.google.cloud.datacatalog.lineage.v1.Run;
-import com.google.cloud.datacatalog.lineage.v1.UpdateRunRequest;
-import com.google.protobuf.FieldMask;
+import com.google.cloud.datacatalog.lineage.v1.ProcessOpenLineageRunEventRequest;
+import com.google.cloud.datacatalog.lineage.v1.ProcessOpenLineageRunEventResponse;
+import com.google.protobuf.Struct;
 
-public class SyncUpdateRun {
+public class AsyncProcessOpenLineageRunEvent {
 
   public static void main(String[] args) throws Exception {
-    syncUpdateRun();
+    asyncProcessOpenLineageRunEvent();
   }
 
-  public static void syncUpdateRun() throws Exception {
+  public static void asyncProcessOpenLineageRunEvent() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (LineageClient lineageClient = LineageClient.create()) {
-      UpdateRunRequest request =
-          UpdateRunRequest.newBuilder()
-              .setRun(Run.newBuilder().build())
-              .setUpdateMask(FieldMask.newBuilder().build())
-              .setAllowMissing(true)
+      ProcessOpenLineageRunEventRequest request =
+          ProcessOpenLineageRunEventRequest.newBuilder()
+              .setParent("parent-995424086")
+              .setOpenLineage(Struct.newBuilder().build())
+              .setRequestId("requestId693933066")
               .build();
-      Run response = lineageClient.updateRun(request);
+      ApiFuture<ProcessOpenLineageRunEventResponse> future =
+          lineageClient.processOpenLineageRunEventCallable().futureCall(request);
+      // Do something.
+      ProcessOpenLineageRunEventResponse response = future.get();
     }
   }
 }
-// [END datalineage_v1_generated_Lineage_UpdateRun_sync]
+// [END datalineage_v1_generated_Lineage_ProcessOpenLineageRunEvent_async]
