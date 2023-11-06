@@ -1,5 +1,13 @@
 # Changelog
 
+## [3.15.13](https://github.com/googleapis/java-logging/compare/v3.15.12...v3.15.13) (2023-11-06)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.19.0 ([#1468](https://github.com/googleapis/java-logging/issues/1468)) ([5835a7d](https://github.com/googleapis/java-logging/commit/5835a7dc1c839eb3bc379470846451bd51fdfc24))
+* Update dependency org.junit.vintage:junit-vintage-engine to v5.10.1 ([#1471](https://github.com/googleapis/java-logging/issues/1471)) ([debc77f](https://github.com/googleapis/java-logging/commit/debc77f4ce57d768474c27eb6c056f7c10c7d743))
+
 ## [3.15.12](https://github.com/googleapis/java-logging/compare/v3.15.11...v3.15.12) (2023-10-25)
 
 
