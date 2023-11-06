@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.maps</groupId>
   <artifactId>google-maps-fleetengine</artifactId>
-  <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-maps-fleetengine:current} -->
+  <version>0.1.0</version><!-- {x-version-update:google-maps-fleetengine:current} -->
   <packaging>jar</packaging>
   <name>Google Local Rides and Deliveries API</name>
   <description>Local Rides and Deliveries API Enables Fleet Engine for access to the On Demand Rides and Deliveries and
@@ -13,7 +13,7 @@
   <parent>
     <groupId>com.google.maps</groupId>
     <artifactId>google-maps-fleetengine-parent</artifactId>
-    <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-maps-fleetengine:current} -->
+    <version>0.1.0</version><!-- {x-version-update:google-maps-fleetengine:current} -->
   </parent>
   <properties>
     <site.installationModule>google-maps-fleetengine</site.installationModule>

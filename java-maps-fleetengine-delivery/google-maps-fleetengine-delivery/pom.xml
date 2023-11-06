@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.maps</groupId>
   <artifactId>google-maps-fleetengine-delivery</artifactId>
-  <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-maps-fleetengine-delivery:current} -->
+  <version>0.1.0</version><!-- {x-version-update:google-maps-fleetengine-delivery:current} -->
   <packaging>jar</packaging>
   <name>Google Last Mile Fleet Solution Delivery API</name>
   <description>Last Mile Fleet Solution Delivery API Enables Fleet Engine for access to the On Demand Rides and Deliveries and
@@ -13,7 +13,7 @@
   <parent>
     <groupId>com.google.maps</groupId>
     <artifactId>google-maps-fleetengine-delivery-parent</artifactId>
-    <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-maps-fleetengine-delivery:current} -->
+    <version>0.1.0</version><!-- {x-version-update:google-maps-fleetengine-delivery:current} -->
   </parent>
   <properties>
     <site.installationModule>google-maps-fleetengine-delivery</site.installationModule>
