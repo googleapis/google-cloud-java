@@ -1,5 +1,17 @@
 # Changelog
 
+## 4.27.0 (2023-11-06)
+
+### Features
+
+* support required_registration_fraction for secondary workers ([#10031](https://github.com/googleapis/google-cloud-java/issues/10031)) ([bb0964c](https://github.com/googleapis/google-cloud-java/commit/bb0964c3b3a199884ee3d8f1a90d2cea2d22a8f9))
+
+### Dependencies
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-config to v1.6.1 ([#10014](https://github.com/googleapis/google-cloud-java/issues/10014)) ([7b1b742](https://github.com/googleapis/google-cloud-java/commit/7b1b742dab21139398032549fb03e127b1a03841))
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.19.0 ([#10018](https://github.com/googleapis/google-cloud-java/issues/10018)) ([d9b705a](https://github.com/googleapis/google-cloud-java/commit/d9b705aaed8ea4447c7a02d5c54300f8909a30b1))
+
+
 ## 4.26.0 (2023-10-25)
 
 ### Dependencies
