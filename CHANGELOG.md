@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.34.2](https://github.com/googleapis/java-bigquery/compare/v2.34.1...v2.34.2) (2023-11-07)
+
+
+### Dependencies
+
+* Update dependency com.google.api.grpc:proto-google-cloud-bigqueryconnection-v1 to v2.32.0 ([#2989](https://github.com/googleapis/java-bigquery/issues/2989)) ([47a61a7](https://github.com/googleapis/java-bigquery/commit/47a61a7c2cb5fed88937670bca7b15e38529dfaf))
+* Update dependency com.google.cloud:google-cloud-datacatalog-bom to v1.36.0 ([#2990](https://github.com/googleapis/java-bigquery/issues/2990)) ([81c0727](https://github.com/googleapis/java-bigquery/commit/81c07275809eadc4e7146bd080475e4775102339))
+
 ## [2.34.1](https://github.com/googleapis/java-bigquery/compare/v2.34.0...v2.34.1) (2023-11-06)
 
 
