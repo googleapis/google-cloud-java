@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.29.1](https://github.com/googleapis/java-bigtable/compare/v2.29.0...v2.29.1) (2023-11-07)
+
+
+### Bug Fixes
+
+* Add getPageSize() to QueryPaginator ([42a7e36](https://github.com/googleapis/java-bigtable/commit/42a7e36ae5902c08ed3a1b553bec645291f1778a))
+
+
+### Dependencies
+
+* Update shared dependencies ([#1985](https://github.com/googleapis/java-bigtable/issues/1985)) ([0d1f620](https://github.com/googleapis/java-bigtable/commit/0d1f6203dd2317fa877e31c113bdca1e8174a492))
+
 ## [2.29.0](https://github.com/googleapis/java-bigtable/compare/v2.28.0...v2.29.0) (2023-10-26)
 
 
