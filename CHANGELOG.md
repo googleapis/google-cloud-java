@@ -1,5 +1,25 @@
 # Changelog
 
+## [2.45.0](https://github.com/googleapis/java-bigquerystorage/compare/v2.44.1...v2.45.0) (2023-11-07)
+
+
+### Features
+
+* Add support for proto3 optional tag ([#2295](https://github.com/googleapis/java-bigquerystorage/issues/2295)) ([bc88aa5](https://github.com/googleapis/java-bigquerystorage/commit/bc88aa57f55b2c3605cbb9c66f2e66daa695c20c))
+
+
+### Bug Fixes
+
+* Add native image configurations for com.google.rpc classes ([#2305](https://github.com/googleapis/java-bigquerystorage/issues/2305)) ([3a771fd](https://github.com/googleapis/java-bigquerystorage/commit/3a771fded7c0f5243be1e4c76e7229f15eda95fa))
+* **bigquery:** Make exponential backoff retry second based ([#2212](https://github.com/googleapis/java-bigquerystorage/issues/2212)) ([eff4a09](https://github.com/googleapis/java-bigquerystorage/commit/eff4a09aece936dfee7fff46e7bd031ec780ab96))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.34.0 ([#2291](https://github.com/googleapis/java-bigquerystorage/issues/2291)) ([5377f79](https://github.com/googleapis/java-bigquerystorage/commit/5377f79300e38b192d36fe2e4ee42b34b8173aa1))
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.34.1 ([#2308](https://github.com/googleapis/java-bigquerystorage/issues/2308)) ([6aee78f](https://github.com/googleapis/java-bigquerystorage/commit/6aee78f9d0f1918056d8fd2dd74bd0934733d496))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.19.0 ([#2300](https://github.com/googleapis/java-bigquerystorage/issues/2300)) ([1ddd11c](https://github.com/googleapis/java-bigquerystorage/commit/1ddd11c8910df6fc277d7bdd6856f85695a43009))
+
 ## [2.44.1](https://github.com/googleapis/java-bigquerystorage/compare/v2.44.0...v2.44.1) (2023-10-25)
 
 
