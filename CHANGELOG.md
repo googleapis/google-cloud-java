@@ -1,6 +1,13 @@
 # Changelog
 
 
+## [0.130.27-alpha](https://github.com/googleapis/java-logging-logback/compare/v0.130.26-alpha...v0.130.27-alpha) (2023-11-07)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-logging to v3.15.13 ([#1206](https://github.com/googleapis/java-logging-logback/issues/1206)) ([6d8c31e](https://github.com/googleapis/java-logging-logback/commit/6d8c31ea6dab2491580cee0eaf2df2d2859fce7d))
+
 ## [0.130.26-alpha](https://github.com/googleapis/java-logging-logback/compare/v0.130.25-alpha...v0.130.26-alpha) (2023-11-06)
 
 
