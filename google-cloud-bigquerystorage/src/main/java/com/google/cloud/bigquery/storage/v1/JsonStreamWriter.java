@@ -348,10 +348,24 @@ public class JsonStreamWriter implements AutoCloseable {
     }
 
     /**
-     * Sets the RetrySettings to use for in-stream error retry.
+     * Enable client lib automatic retries on request level errors.
+     *
+     * <pre>
+     * Immeidate Retry code:
+     * ABORTED, UNAVAILABLE, CANCELLED, INTERNAL, DEADLINE_EXCEEDED
+     * Backoff Retry code:
+     * RESOURCE_EXHAUSTED
+     *
+     * Example:
+     * RetrySettings retrySettings = RetrySettings.newBuilder()
+     *      .setInitialRetryDelay(Duration.ofMillis(500)) // applies to backoff retry
+     *      .setRetryDelayMultiplier(1.1) // applies to backoff retry
+     *      .setMaxAttempts(5) // applies to both retries
+     *      .setMaxRetryDelay(Duration.ofMinutes(1)) // applies to backoff retry .build();
+     * </pre>
      *
      * @param retrySettings
-     * @return Builder
+     * @return
      */
     public Builder setRetrySettings(RetrySettings retrySettings) {
       this.schemaAwareStreamWriterBuilder.setRetrySettings(retrySettings);
