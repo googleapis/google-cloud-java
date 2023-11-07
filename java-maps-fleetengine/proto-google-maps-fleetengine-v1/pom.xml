@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.maps.api.grpc</groupId>
   <artifactId>proto-google-maps-fleetengine-v1</artifactId>
-  <version>0.1.0</version><!-- {x-version-update:proto-google-maps-fleetengine-v1:current} -->
+  <version>0.2.0-SNAPSHOT</version><!-- {x-version-update:proto-google-maps-fleetengine-v1:current} -->
   <name>proto-google-maps-fleetengine-v1</name>
   <description>Proto library for google-maps-fleetengine</description>
   <parent>
     <groupId>com.google.maps</groupId>
     <artifactId>google-maps-fleetengine-parent</artifactId>
-    <version>0.1.0</version><!-- {x-version-update:google-maps-fleetengine:current} -->
+    <version>0.2.0-SNAPSHOT</version><!-- {x-version-update:google-maps-fleetengine:current} -->
   </parent>
   <dependencies>
     <dependency>
