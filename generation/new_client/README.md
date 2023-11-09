@@ -136,7 +136,9 @@ The example in this README uses AlloyDB's [Cloud Drop](https://github.com/google
 
 ### API short name
 
-For convenience of the subsequent commands, define a variable for API short name. This will be used to generate the `distribution_name` as well as the sub-directory within this repo.
+For convenience of the subsequent commands, define a variable for API short name.
+This value will be used to generate the `distribution_name` as well as the sub-directory for the client library within this repo. It is also the default value for many additional parameters, so take care to select a unique and reasonable value.
+
 The corresponding value in the Cloud Drop page is `api_short_name`.
 
 > [!IMPORTANT]
@@ -303,10 +305,18 @@ generated Google Maps Routes API Java client library.
   --requires-billing=true \
   --distribution-name="com.google.maps:google-maps-routing"
 ```
+### Example with duplicate api_short_name
 
-If `maps-routing` was already in use by an existing client library as an `api_shortname`, you
-would determine a unique `destination_name` for the new library's subdirectory as well as a unique `distribution_name` for the artifact to be published (confirm with the service team).
-Let's say `maps-routing-gps` is the unique subdirectory and artifact name that has been decided
+Let's say you get a new library request where the Cloud Drop value for `api_short_name` is `maps-routing`.
+
+You discover that `maps-routing` is already in use by an existing client library!
+
+You need to determine a unique `destination_name` for the new library's subdirectory as well as a unique `distribution_name` for the artifact to be published (confirm these values with the service team on the buganizer ticket before proceeding).
+
+There is no hard and fast rule for determining a unique name, so some discussion will be necessary.
+
+Let's say that after some discussion, `maps-routing-gps` is selected as a suitable unique subdirectory name and artifact name.
+
 You would then use the following command:
 ```
 ~/google-cloud-java$ python3.9 generation/new_client/new-client.py generate \
