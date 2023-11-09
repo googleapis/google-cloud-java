@@ -67,7 +67,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Represents the current state of an workflow invocation action.
+   * Represents the current state of a workflow invocation action.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.dataform.v1beta1.WorkflowInvocationAction.State}
@@ -985,7 +985,8 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Output only. This action's identifier. Unique within the workflow invocation.
+   * Output only. This action's identifier. Unique within the workflow
+   * invocation.
    * </pre>
    *
    * <code>
@@ -1002,7 +1003,8 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Output only. This action's identifier. Unique within the workflow invocation.
+   * Output only. This action's identifier. Unique within the workflow
+   * invocation.
    * </pre>
    *
    * <code>
@@ -1021,7 +1023,8 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Output only. This action's identifier. Unique within the workflow invocation.
+   * Output only. This action's identifier. Unique within the workflow
+   * invocation.
    * </pre>
    *
    * <code>
@@ -1041,8 +1044,8 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Output only. The action's identifier if the project had been compiled without any
-   * overrides configured. Unique within the compilation result.
+   * Output only. The action's identifier if the project had been compiled
+   * without any overrides configured. Unique within the compilation result.
    * </pre>
    *
    * <code>
@@ -1059,8 +1062,8 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Output only. The action's identifier if the project had been compiled without any
-   * overrides configured. Unique within the compilation result.
+   * Output only. The action's identifier if the project had been compiled
+   * without any overrides configured. Unique within the compilation result.
    * </pre>
    *
    * <code>
@@ -1079,8 +1082,8 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Output only. The action's identifier if the project had been compiled without any
-   * overrides configured. Unique within the compilation result.
+   * Output only. The action's identifier if the project had been compiled
+   * without any overrides configured. Unique within the compilation result.
    * </pre>
    *
    * <code>
@@ -1143,7 +1146,8 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Output only. If and only if action's state is FAILED a failure reason is set.
+   * Output only. If and only if action's state is FAILED a failure reason is
+   * set.
    * </pre>
    *
    * <code>string failure_reason = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1166,7 +1170,8 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Output only. If and only if action's state is FAILED a failure reason is set.
+   * Output only. If and only if action's state is FAILED a failure reason is
+   * set.
    * </pre>
    *
    * <code>string failure_reason = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1816,7 +1821,8 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Output only. This action's identifier. Unique within the workflow invocation.
+     * Output only. This action's identifier. Unique within the workflow
+     * invocation.
      * </pre>
      *
      * <code>
@@ -1832,7 +1838,8 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Output only. This action's identifier. Unique within the workflow invocation.
+     * Output only. This action's identifier. Unique within the workflow
+     * invocation.
      * </pre>
      *
      * <code>
@@ -1854,7 +1861,8 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Output only. This action's identifier. Unique within the workflow invocation.
+     * Output only. This action's identifier. Unique within the workflow
+     * invocation.
      * </pre>
      *
      * <code>
@@ -1878,7 +1886,8 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Output only. This action's identifier. Unique within the workflow invocation.
+     * Output only. This action's identifier. Unique within the workflow
+     * invocation.
      * </pre>
      *
      * <code>
@@ -1899,7 +1908,8 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Output only. This action's identifier. Unique within the workflow invocation.
+     * Output only. This action's identifier. Unique within the workflow
+     * invocation.
      * </pre>
      *
      * <code>
@@ -1926,7 +1936,8 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Output only. This action's identifier. Unique within the workflow invocation.
+     * Output only. This action's identifier. Unique within the workflow
+     * invocation.
      * </pre>
      *
      * <code>
@@ -1947,7 +1958,8 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Output only. This action's identifier. Unique within the workflow invocation.
+     * Output only. This action's identifier. Unique within the workflow
+     * invocation.
      * </pre>
      *
      * <code>
@@ -1963,7 +1975,8 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Output only. This action's identifier. Unique within the workflow invocation.
+     * Output only. This action's identifier. Unique within the workflow
+     * invocation.
      * </pre>
      *
      * <code>
@@ -1983,7 +1996,8 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Output only. This action's identifier. Unique within the workflow invocation.
+     * Output only. This action's identifier. Unique within the workflow
+     * invocation.
      * </pre>
      *
      * <code>
@@ -2017,8 +2031,8 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Output only. The action's identifier if the project had been compiled without any
-     * overrides configured. Unique within the compilation result.
+     * Output only. The action's identifier if the project had been compiled
+     * without any overrides configured. Unique within the compilation result.
      * </pre>
      *
      * <code>
@@ -2034,8 +2048,8 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Output only. The action's identifier if the project had been compiled without any
-     * overrides configured. Unique within the compilation result.
+     * Output only. The action's identifier if the project had been compiled
+     * without any overrides configured. Unique within the compilation result.
      * </pre>
      *
      * <code>
@@ -2057,8 +2071,8 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Output only. The action's identifier if the project had been compiled without any
-     * overrides configured. Unique within the compilation result.
+     * Output only. The action's identifier if the project had been compiled
+     * without any overrides configured. Unique within the compilation result.
      * </pre>
      *
      * <code>
@@ -2082,8 +2096,8 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Output only. The action's identifier if the project had been compiled without any
-     * overrides configured. Unique within the compilation result.
+     * Output only. The action's identifier if the project had been compiled
+     * without any overrides configured. Unique within the compilation result.
      * </pre>
      *
      * <code>
@@ -2105,8 +2119,8 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Output only. The action's identifier if the project had been compiled without any
-     * overrides configured. Unique within the compilation result.
+     * Output only. The action's identifier if the project had been compiled
+     * without any overrides configured. Unique within the compilation result.
      * </pre>
      *
      * <code>
@@ -2133,8 +2147,8 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Output only. The action's identifier if the project had been compiled without any
-     * overrides configured. Unique within the compilation result.
+     * Output only. The action's identifier if the project had been compiled
+     * without any overrides configured. Unique within the compilation result.
      * </pre>
      *
      * <code>
@@ -2155,8 +2169,8 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Output only. The action's identifier if the project had been compiled without any
-     * overrides configured. Unique within the compilation result.
+     * Output only. The action's identifier if the project had been compiled
+     * without any overrides configured. Unique within the compilation result.
      * </pre>
      *
      * <code>
@@ -2172,8 +2186,8 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Output only. The action's identifier if the project had been compiled without any
-     * overrides configured. Unique within the compilation result.
+     * Output only. The action's identifier if the project had been compiled
+     * without any overrides configured. Unique within the compilation result.
      * </pre>
      *
      * <code>
@@ -2193,8 +2207,8 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Output only. The action's identifier if the project had been compiled without any
-     * overrides configured. Unique within the compilation result.
+     * Output only. The action's identifier if the project had been compiled
+     * without any overrides configured. Unique within the compilation result.
      * </pre>
      *
      * <code>
@@ -2326,7 +2340,8 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Output only. If and only if action's state is FAILED a failure reason is set.
+     * Output only. If and only if action's state is FAILED a failure reason is
+     * set.
      * </pre>
      *
      * <code>string failure_reason = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2348,7 +2363,8 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Output only. If and only if action's state is FAILED a failure reason is set.
+     * Output only. If and only if action's state is FAILED a failure reason is
+     * set.
      * </pre>
      *
      * <code>string failure_reason = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2370,7 +2386,8 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Output only. If and only if action's state is FAILED a failure reason is set.
+     * Output only. If and only if action's state is FAILED a failure reason is
+     * set.
      * </pre>
      *
      * <code>string failure_reason = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2391,7 +2408,8 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Output only. If and only if action's state is FAILED a failure reason is set.
+     * Output only. If and only if action's state is FAILED a failure reason is
+     * set.
      * </pre>
      *
      * <code>string failure_reason = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2408,7 +2426,8 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Output only. If and only if action's state is FAILED a failure reason is set.
+     * Output only. If and only if action's state is FAILED a failure reason is
+     * set.
      * </pre>
      *
      * <code>string failure_reason = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

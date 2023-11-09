@@ -112,6 +112,10 @@ public final class FleetRoutingProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_optimization_v1_ShipmentTypeRequirement_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_optimization_v1_RouteModifiers_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_optimization_v1_RouteModifiers_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_optimization_v1_Vehicle_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_optimization_v1_Vehicle_fieldAccessorTable;
@@ -440,274 +444,279 @@ public final class FleetRoutingProto {
           + "ode\022 \n\034REQUIREMENT_MODE_UNSPECIFIED\020\000\022\035\n"
           + "\031PERFORMED_BY_SAME_VEHICLE\020\001\022\"\n\036IN_SAME_"
           + "VEHICLE_AT_PICKUP_TIME\020\002\022$\n IN_SAME_VEHI"
-          + "CLE_AT_DELIVERY_TIME\020\003\"\316\024\n\007Vehicle\022E\n\013tr"
-          + "avel_mode\030\001 \001(\01620.google.cloud.optimizat"
-          + "ion.v1.Vehicle.TravelMode\022+\n\016start_locat"
-          + "ion\030\003 \001(\0132\023.google.type.LatLng\022>\n\016start_"
-          + "waypoint\030\004 \001(\0132&.google.cloud.optimizati"
-          + "on.v1.Waypoint\022)\n\014end_location\030\005 \001(\0132\023.g"
-          + "oogle.type.LatLng\022<\n\014end_waypoint\030\006 \001(\0132"
-          + "&.google.cloud.optimization.v1.Waypoint\022"
-          + "\022\n\nstart_tags\030\007 \003(\t\022\020\n\010end_tags\030\010 \003(\t\022D\n"
-          + "\022start_time_windows\030\t \003(\0132(.google.cloud"
-          + ".optimization.v1.TimeWindow\022B\n\020end_time_"
-          + "windows\030\n \003(\0132(.google.cloud.optimizatio"
-          + "n.v1.TimeWindow\022%\n\030travel_duration_multi"
-          + "ple\030\013 \001(\001H\000\210\001\001\022O\n\020unloading_policy\030\014 \001(\016"
-          + "25.google.cloud.optimization.v1.Vehicle."
-          + "UnloadingPolicy\022J\n\013load_limits\030\036 \003(\01325.g"
-          + "oogle.cloud.optimization.v1.Vehicle.Load"
-          + "LimitsEntry\022\025\n\rcost_per_hour\030\020 \001(\001\022\036\n\026co"
-          + "st_per_traveled_hour\030\021 \001(\001\022\032\n\022cost_per_k"
-          + "ilometer\030\022 \001(\001\022\022\n\nfixed_cost\030\023 \001(\001\022\036\n\026us"
-          + "ed_if_route_is_empty\030\024 \001(\010\022Q\n\024route_dura"
-          + "tion_limit\030\025 \001(\01323.google.cloud.optimiza"
-          + "tion.v1.Vehicle.DurationLimit\022R\n\025travel_"
-          + "duration_limit\030\026 \001(\01323.google.cloud.opti"
-          + "mization.v1.Vehicle.DurationLimit\022I\n\024rou"
-          + "te_distance_limit\030\027 \001(\0132+.google.cloud.o"
-          + "ptimization.v1.DistanceLimit\022v\n#extra_vi"
-          + "sit_duration_for_visit_type\030\030 \003(\0132I.goog"
-          + "le.cloud.optimization.v1.Vehicle.ExtraVi"
-          + "sitDurationForVisitTypeEntry\022;\n\nbreak_ru"
-          + "le\030\031 \001(\0132\'.google.cloud.optimization.v1."
-          + "BreakRule\022\r\n\005label\030\033 \001(\t\022\016\n\006ignore\030\034 \001(\010"
-          + "\022\036\n\022break_rule_indices\030\035 \003(\005B\002\030\001\022F\n\ncapa"
-          + "cities\030\r \003(\0132..google.cloud.optimization"
-          + ".v1.CapacityQuantityB\002\030\001\022X\n\024start_load_i"
-          + "ntervals\030\016 \003(\01326.google.cloud.optimizati"
-          + "on.v1.CapacityQuantityIntervalB\002\030\001\022V\n\022en"
-          + "d_load_intervals\030\017 \003(\01326.google.cloud.op"
-          + "timization.v1.CapacityQuantityIntervalB\002"
-          + "\030\001\032\313\002\n\tLoadLimit\022\025\n\010max_load\030\001 \001(\003H\000\210\001\001\022"
-          + "\025\n\rsoft_max_load\030\002 \001(\003\022$\n\034cost_per_unit_"
-          + "above_soft_max\030\003 \001(\001\022U\n\023start_load_inter"
-          + "val\030\004 \001(\01328.google.cloud.optimization.v1"
-          + ".Vehicle.LoadLimit.Interval\022S\n\021end_load_"
-          + "interval\030\005 \001(\01328.google.cloud.optimizati"
-          + "on.v1.Vehicle.LoadLimit.Interval\0321\n\010Inte"
-          + "rval\022\013\n\003min\030\001 \001(\003\022\020\n\003max\030\002 \001(\003H\000\210\001\001B\006\n\004_"
-          + "maxB\013\n\t_max_load\032\360\002\n\rDurationLimit\022/\n\014ma"
-          + "x_duration\030\001 \001(\0132\031.google.protobuf.Durat"
-          + "ion\0224\n\021soft_max_duration\030\002 \001(\0132\031.google."
-          + "protobuf.Duration\022)\n\034cost_per_hour_after"
-          + "_soft_max\030\003 \001(\001H\000\210\001\001\022>\n\033quadratic_soft_m"
-          + "ax_duration\030\004 \001(\0132\031.google.protobuf.Dura"
-          + "tion\022:\n-cost_per_square_hour_after_quadr"
-          + "atic_soft_max\030\005 \001(\001H\001\210\001\001B\037\n\035_cost_per_ho"
-          + "ur_after_soft_maxB0\n._cost_per_square_ho"
-          + "ur_after_quadratic_soft_max\032b\n\017LoadLimit"
-          + "sEntry\022\013\n\003key\030\001 \001(\t\022>\n\005value\030\002 \001(\0132/.goo"
-          + "gle.cloud.optimization.v1.Vehicle.LoadLi"
-          + "mit:\0028\001\032`\n#ExtraVisitDurationForVisitTyp"
-          + "eEntry\022\013\n\003key\030\001 \001(\t\022(\n\005value\030\002 \001(\0132\031.goo"
-          + "gle.protobuf.Duration:\0028\001\"C\n\nTravelMode\022"
-          + "\033\n\027TRAVEL_MODE_UNSPECIFIED\020\000\022\013\n\007DRIVING\020"
-          + "\001\022\013\n\007WALKING\020\002\"b\n\017UnloadingPolicy\022 \n\034UNL"
-          + "OADING_POLICY_UNSPECIFIED\020\000\022\025\n\021LAST_IN_F"
-          + "IRST_OUT\020\001\022\026\n\022FIRST_IN_FIRST_OUT\020\002B\033\n\031_t"
-          + "ravel_duration_multiple\"\204\003\n\nTimeWindow\022."
-          + "\n\nstart_time\030\001 \001(\0132\032.google.protobuf.Tim"
-          + "estamp\022,\n\010end_time\030\002 \001(\0132\032.google.protob"
-          + "uf.Timestamp\0223\n\017soft_start_time\030\003 \001(\0132\032."
-          + "google.protobuf.Timestamp\0221\n\rsoft_end_ti"
-          + "me\030\004 \001(\0132\032.google.protobuf.Timestamp\0221\n$"
-          + "cost_per_hour_before_soft_start_time\030\005 \001"
-          + "(\001H\000\210\001\001\022.\n!cost_per_hour_after_soft_end_"
-          + "time\030\006 \001(\001H\001\210\001\001B\'\n%_cost_per_hour_before"
-          + "_soft_start_timeB$\n\"_cost_per_hour_after"
-          + "_soft_end_time\"3\n\020CapacityQuantity\022\014\n\004ty"
-          + "pe\030\001 \001(\t\022\r\n\005value\030\002 \001(\003:\002\030\001\"x\n\030CapacityQ"
-          + "uantityInterval\022\014\n\004type\030\001 \001(\t\022\026\n\tmin_val"
-          + "ue\030\002 \001(\003H\000\210\001\001\022\026\n\tmax_value\030\003 \001(\003H\001\210\001\001:\002\030"
-          + "\001B\014\n\n_min_valueB\014\n\n_max_value\"\225\002\n\rDistan"
-          + "ceLimit\022\027\n\nmax_meters\030\001 \001(\003H\000\210\001\001\022\034\n\017soft"
-          + "_max_meters\030\002 \001(\003H\001\210\001\001\022.\n!cost_per_kilom"
-          + "eter_below_soft_max\030\004 \001(\001H\002\210\001\001\022.\n!cost_p"
-          + "er_kilometer_above_soft_max\030\003 \001(\001H\003\210\001\001B\r"
-          + "\n\013_max_metersB\022\n\020_soft_max_metersB$\n\"_co"
-          + "st_per_kilometer_below_soft_maxB$\n\"_cost"
-          + "_per_kilometer_above_soft_max\"\205\002\n\024Transi"
-          + "tionAttributes\022\017\n\007src_tag\030\001 \001(\t\022\030\n\020exclu"
-          + "ded_src_tag\030\002 \001(\t\022\017\n\007dst_tag\030\003 \001(\t\022\030\n\020ex"
-          + "cluded_dst_tag\030\004 \001(\t\022\014\n\004cost\030\005 \001(\001\022\032\n\022co"
-          + "st_per_kilometer\030\006 \001(\001\022C\n\016distance_limit"
-          + "\030\007 \001(\0132+.google.cloud.optimization.v1.Di"
-          + "stanceLimit\022(\n\005delay\030\010 \001(\0132\031.google.prot"
-          + "obuf.Duration\"\201\001\n\010Waypoint\022:\n\010location\030\001"
-          + " \001(\0132&.google.cloud.optimization.v1.Loca"
-          + "tionH\000\022\022\n\010place_id\030\002 \001(\tH\000\022\024\n\014side_of_ro"
-          + "ad\030\003 \001(\010B\017\n\rlocation_type\"R\n\010Location\022$\n"
-          + "\007lat_lng\030\001 \001(\0132\023.google.type.LatLng\022\024\n\007h"
-          + "eading\030\002 \001(\005H\000\210\001\001B\n\n\010_heading\"\221\004\n\tBreakR"
-          + "ule\022L\n\016break_requests\030\001 \003(\01324.google.clo"
-          + "ud.optimization.v1.BreakRule.BreakReques"
-          + "t\022Z\n\025frequency_constraints\030\002 \003(\0132;.googl"
-          + "e.cloud.optimization.v1.BreakRule.Freque"
-          + "ncyConstraint\032\301\001\n\014BreakRequest\022=\n\023earlie"
-          + "st_start_time\030\001 \001(\0132\032.google.protobuf.Ti"
-          + "mestampB\004\342A\001\002\022;\n\021latest_start_time\030\002 \001(\013"
-          + "2\032.google.protobuf.TimestampB\004\342A\001\002\0225\n\014mi"
-          + "n_duration\030\003 \001(\0132\031.google.protobuf.Durat"
-          + "ionB\004\342A\001\002\032\225\001\n\023FrequencyConstraint\022;\n\022min"
-          + "_break_duration\030\001 \001(\0132\031.google.protobuf."
-          + "DurationB\004\342A\001\002\022A\n\030max_inter_break_durati"
-          + "on\030\002 \001(\0132\031.google.protobuf.DurationB\004\342A\001"
-          + "\002\"\303\026\n\rShipmentRoute\022\025\n\rvehicle_index\030\001 \001"
-          + "(\005\022\025\n\rvehicle_label\030\002 \001(\t\0226\n\022vehicle_sta"
-          + "rt_time\030\005 \001(\0132\032.google.protobuf.Timestam"
-          + "p\0224\n\020vehicle_end_time\030\006 \001(\0132\032.google.pro"
-          + "tobuf.Timestamp\022A\n\006visits\030\007 \003(\01321.google"
-          + ".cloud.optimization.v1.ShipmentRoute.Vis"
-          + "it\022K\n\013transitions\030\010 \003(\01326.google.cloud.o"
-          + "ptimization.v1.ShipmentRoute.Transition\022"
-          + "#\n\033has_traffic_infeasibilities\030\t \001(\010\022S\n\016"
-          + "route_polyline\030\n \001(\0132;.google.cloud.opti"
-          + "mization.v1.ShipmentRoute.EncodedPolylin"
-          + "e\022A\n\006breaks\030\013 \003(\01321.google.cloud.optimiz"
-          + "ation.v1.ShipmentRoute.Break\022@\n\007metrics\030"
-          + "\014 \001(\0132/.google.cloud.optimization.v1.Agg"
-          + "regatedMetrics\022P\n\013route_costs\030\021 \003(\0132;.go"
+          + "CLE_AT_DELIVERY_TIME\020\003\"p\n\016RouteModifiers"
+          + "\022\023\n\013avoid_tolls\030\002 \001(\010\022\026\n\016avoid_highways\030"
+          + "\003 \001(\010\022\025\n\ravoid_ferries\030\004 \001(\010\022\032\n\014avoid_in"
+          + "door\030\005 \001(\010B\004\342A\001\001\"\233\025\n\007Vehicle\022E\n\013travel_m"
+          + "ode\030\001 \001(\01620.google.cloud.optimization.v1"
+          + ".Vehicle.TravelMode\022K\n\017route_modifiers\030\002"
+          + " \001(\0132,.google.cloud.optimization.v1.Rout"
+          + "eModifiersB\004\342A\001\001\022+\n\016start_location\030\003 \001(\013"
+          + "2\023.google.type.LatLng\022>\n\016start_waypoint\030"
+          + "\004 \001(\0132&.google.cloud.optimization.v1.Way"
+          + "point\022)\n\014end_location\030\005 \001(\0132\023.google.typ"
+          + "e.LatLng\022<\n\014end_waypoint\030\006 \001(\0132&.google."
+          + "cloud.optimization.v1.Waypoint\022\022\n\nstart_"
+          + "tags\030\007 \003(\t\022\020\n\010end_tags\030\010 \003(\t\022D\n\022start_ti"
+          + "me_windows\030\t \003(\0132(.google.cloud.optimiza"
+          + "tion.v1.TimeWindow\022B\n\020end_time_windows\030\n"
+          + " \003(\0132(.google.cloud.optimization.v1.Time"
+          + "Window\022%\n\030travel_duration_multiple\030\013 \001(\001"
+          + "H\000\210\001\001\022O\n\020unloading_policy\030\014 \001(\01625.google"
+          + ".cloud.optimization.v1.Vehicle.Unloading"
+          + "Policy\022J\n\013load_limits\030\036 \003(\01325.google.clo"
+          + "ud.optimization.v1.Vehicle.LoadLimitsEnt"
+          + "ry\022\025\n\rcost_per_hour\030\020 \001(\001\022\036\n\026cost_per_tr"
+          + "aveled_hour\030\021 \001(\001\022\032\n\022cost_per_kilometer\030"
+          + "\022 \001(\001\022\022\n\nfixed_cost\030\023 \001(\001\022\036\n\026used_if_rou"
+          + "te_is_empty\030\024 \001(\010\022Q\n\024route_duration_limi"
+          + "t\030\025 \001(\01323.google.cloud.optimization.v1.V"
+          + "ehicle.DurationLimit\022R\n\025travel_duration_"
+          + "limit\030\026 \001(\01323.google.cloud.optimization."
+          + "v1.Vehicle.DurationLimit\022I\n\024route_distan"
+          + "ce_limit\030\027 \001(\0132+.google.cloud.optimizati"
+          + "on.v1.DistanceLimit\022v\n#extra_visit_durat"
+          + "ion_for_visit_type\030\030 \003(\0132I.google.cloud."
+          + "optimization.v1.Vehicle.ExtraVisitDurati"
+          + "onForVisitTypeEntry\022;\n\nbreak_rule\030\031 \001(\0132"
+          + "\'.google.cloud.optimization.v1.BreakRule"
+          + "\022\r\n\005label\030\033 \001(\t\022\016\n\006ignore\030\034 \001(\010\022\036\n\022break"
+          + "_rule_indices\030\035 \003(\005B\002\030\001\022F\n\ncapacities\030\r "
+          + "\003(\0132..google.cloud.optimization.v1.Capac"
+          + "ityQuantityB\002\030\001\022X\n\024start_load_intervals\030"
+          + "\016 \003(\01326.google.cloud.optimization.v1.Cap"
+          + "acityQuantityIntervalB\002\030\001\022V\n\022end_load_in"
+          + "tervals\030\017 \003(\01326.google.cloud.optimizatio"
+          + "n.v1.CapacityQuantityIntervalB\002\030\001\032\313\002\n\tLo"
+          + "adLimit\022\025\n\010max_load\030\001 \001(\003H\000\210\001\001\022\025\n\rsoft_m"
+          + "ax_load\030\002 \001(\003\022$\n\034cost_per_unit_above_sof"
+          + "t_max\030\003 \001(\001\022U\n\023start_load_interval\030\004 \001(\013"
+          + "28.google.cloud.optimization.v1.Vehicle."
+          + "LoadLimit.Interval\022S\n\021end_load_interval\030"
+          + "\005 \001(\01328.google.cloud.optimization.v1.Veh"
+          + "icle.LoadLimit.Interval\0321\n\010Interval\022\013\n\003m"
+          + "in\030\001 \001(\003\022\020\n\003max\030\002 \001(\003H\000\210\001\001B\006\n\004_maxB\013\n\t_m"
+          + "ax_load\032\360\002\n\rDurationLimit\022/\n\014max_duratio"
+          + "n\030\001 \001(\0132\031.google.protobuf.Duration\0224\n\021so"
+          + "ft_max_duration\030\002 \001(\0132\031.google.protobuf."
+          + "Duration\022)\n\034cost_per_hour_after_soft_max"
+          + "\030\003 \001(\001H\000\210\001\001\022>\n\033quadratic_soft_max_durati"
+          + "on\030\004 \001(\0132\031.google.protobuf.Duration\022:\n-c"
+          + "ost_per_square_hour_after_quadratic_soft"
+          + "_max\030\005 \001(\001H\001\210\001\001B\037\n\035_cost_per_hour_after_"
+          + "soft_maxB0\n._cost_per_square_hour_after_"
+          + "quadratic_soft_max\032b\n\017LoadLimitsEntry\022\013\n"
+          + "\003key\030\001 \001(\t\022>\n\005value\030\002 \001(\0132/.google.cloud"
+          + ".optimization.v1.Vehicle.LoadLimit:\0028\001\032`"
+          + "\n#ExtraVisitDurationForVisitTypeEntry\022\013\n"
+          + "\003key\030\001 \001(\t\022(\n\005value\030\002 \001(\0132\031.google.proto"
+          + "buf.Duration:\0028\001\"C\n\nTravelMode\022\033\n\027TRAVEL"
+          + "_MODE_UNSPECIFIED\020\000\022\013\n\007DRIVING\020\001\022\013\n\007WALK"
+          + "ING\020\002\"b\n\017UnloadingPolicy\022 \n\034UNLOADING_PO"
+          + "LICY_UNSPECIFIED\020\000\022\025\n\021LAST_IN_FIRST_OUT\020"
+          + "\001\022\026\n\022FIRST_IN_FIRST_OUT\020\002B\033\n\031_travel_dur"
+          + "ation_multiple\"\204\003\n\nTimeWindow\022.\n\nstart_t"
+          + "ime\030\001 \001(\0132\032.google.protobuf.Timestamp\022,\n"
+          + "\010end_time\030\002 \001(\0132\032.google.protobuf.Timest"
+          + "amp\0223\n\017soft_start_time\030\003 \001(\0132\032.google.pr"
+          + "otobuf.Timestamp\0221\n\rsoft_end_time\030\004 \001(\0132"
+          + "\032.google.protobuf.Timestamp\0221\n$cost_per_"
+          + "hour_before_soft_start_time\030\005 \001(\001H\000\210\001\001\022."
+          + "\n!cost_per_hour_after_soft_end_time\030\006 \001("
+          + "\001H\001\210\001\001B\'\n%_cost_per_hour_before_soft_sta"
+          + "rt_timeB$\n\"_cost_per_hour_after_soft_end"
+          + "_time\"3\n\020CapacityQuantity\022\014\n\004type\030\001 \001(\t\022"
+          + "\r\n\005value\030\002 \001(\003:\002\030\001\"x\n\030CapacityQuantityIn"
+          + "terval\022\014\n\004type\030\001 \001(\t\022\026\n\tmin_value\030\002 \001(\003H"
+          + "\000\210\001\001\022\026\n\tmax_value\030\003 \001(\003H\001\210\001\001:\002\030\001B\014\n\n_min"
+          + "_valueB\014\n\n_max_value\"\225\002\n\rDistanceLimit\022\027"
+          + "\n\nmax_meters\030\001 \001(\003H\000\210\001\001\022\034\n\017soft_max_mete"
+          + "rs\030\002 \001(\003H\001\210\001\001\022.\n!cost_per_kilometer_belo"
+          + "w_soft_max\030\004 \001(\001H\002\210\001\001\022.\n!cost_per_kilome"
+          + "ter_above_soft_max\030\003 \001(\001H\003\210\001\001B\r\n\013_max_me"
+          + "tersB\022\n\020_soft_max_metersB$\n\"_cost_per_ki"
+          + "lometer_below_soft_maxB$\n\"_cost_per_kilo"
+          + "meter_above_soft_max\"\205\002\n\024TransitionAttri"
+          + "butes\022\017\n\007src_tag\030\001 \001(\t\022\030\n\020excluded_src_t"
+          + "ag\030\002 \001(\t\022\017\n\007dst_tag\030\003 \001(\t\022\030\n\020excluded_ds"
+          + "t_tag\030\004 \001(\t\022\014\n\004cost\030\005 \001(\001\022\032\n\022cost_per_ki"
+          + "lometer\030\006 \001(\001\022C\n\016distance_limit\030\007 \001(\0132+."
+          + "google.cloud.optimization.v1.DistanceLim"
+          + "it\022(\n\005delay\030\010 \001(\0132\031.google.protobuf.Dura"
+          + "tion\"\201\001\n\010Waypoint\022:\n\010location\030\001 \001(\0132&.go"
+          + "ogle.cloud.optimization.v1.LocationH\000\022\022\n"
+          + "\010place_id\030\002 \001(\tH\000\022\024\n\014side_of_road\030\003 \001(\010B"
+          + "\017\n\rlocation_type\"R\n\010Location\022$\n\007lat_lng\030"
+          + "\001 \001(\0132\023.google.type.LatLng\022\024\n\007heading\030\002 "
+          + "\001(\005H\000\210\001\001B\n\n\010_heading\"\221\004\n\tBreakRule\022L\n\016br"
+          + "eak_requests\030\001 \003(\01324.google.cloud.optimi"
+          + "zation.v1.BreakRule.BreakRequest\022Z\n\025freq"
+          + "uency_constraints\030\002 \003(\0132;.google.cloud.o"
+          + "ptimization.v1.BreakRule.FrequencyConstr"
+          + "aint\032\301\001\n\014BreakRequest\022=\n\023earliest_start_"
+          + "time\030\001 \001(\0132\032.google.protobuf.TimestampB\004"
+          + "\342A\001\002\022;\n\021latest_start_time\030\002 \001(\0132\032.google"
+          + ".protobuf.TimestampB\004\342A\001\002\0225\n\014min_duratio"
+          + "n\030\003 \001(\0132\031.google.protobuf.DurationB\004\342A\001\002"
+          + "\032\225\001\n\023FrequencyConstraint\022;\n\022min_break_du"
+          + "ration\030\001 \001(\0132\031.google.protobuf.DurationB"
+          + "\004\342A\001\002\022A\n\030max_inter_break_duration\030\002 \001(\0132"
+          + "\031.google.protobuf.DurationB\004\342A\001\002\"\303\026\n\rShi"
+          + "pmentRoute\022\025\n\rvehicle_index\030\001 \001(\005\022\025\n\rveh"
+          + "icle_label\030\002 \001(\t\0226\n\022vehicle_start_time\030\005"
+          + " \001(\0132\032.google.protobuf.Timestamp\0224\n\020vehi"
+          + "cle_end_time\030\006 \001(\0132\032.google.protobuf.Tim"
+          + "estamp\022A\n\006visits\030\007 \003(\01321.google.cloud.op"
+          + "timization.v1.ShipmentRoute.Visit\022K\n\013tra"
+          + "nsitions\030\010 \003(\01326.google.cloud.optimizati"
+          + "on.v1.ShipmentRoute.Transition\022#\n\033has_tr"
+          + "affic_infeasibilities\030\t \001(\010\022S\n\016route_pol"
+          + "yline\030\n \001(\0132;.google.cloud.optimization."
+          + "v1.ShipmentRoute.EncodedPolyline\022A\n\006brea"
+          + "ks\030\013 \003(\01321.google.cloud.optimization.v1."
+          + "ShipmentRoute.Break\022@\n\007metrics\030\014 \001(\0132/.g"
+          + "oogle.cloud.optimization.v1.AggregatedMe"
+          + "trics\022P\n\013route_costs\030\021 \003(\0132;.google.clou"
+          + "d.optimization.v1.ShipmentRoute.RouteCos"
+          + "tsEntry\022\030\n\020route_total_cost\030\022 \001(\001\022E\n\tend"
+          + "_loads\030\r \003(\0132..google.cloud.optimization"
+          + ".v1.CapacityQuantityB\002\030\001\022P\n\014travel_steps"
+          + "\030\016 \003(\01326.google.cloud.optimization.v1.Sh"
+          + "ipmentRoute.TravelStepB\002\030\001\0225\n\016vehicle_de"
+          + "tour\030\017 \001(\0132\031.google.protobuf.DurationB\002\030"
+          + "\001\022W\n\030delay_before_vehicle_end\030\020 \001(\01321.go"
           + "ogle.cloud.optimization.v1.ShipmentRoute"
-          + ".RouteCostsEntry\022\030\n\020route_total_cost\030\022 \001"
-          + "(\001\022E\n\tend_loads\030\r \003(\0132..google.cloud.opt"
-          + "imization.v1.CapacityQuantityB\002\030\001\022P\n\014tra"
-          + "vel_steps\030\016 \003(\01326.google.cloud.optimizat"
-          + "ion.v1.ShipmentRoute.TravelStepB\002\030\001\0225\n\016v"
-          + "ehicle_detour\030\017 \001(\0132\031.google.protobuf.Du"
-          + "rationB\002\030\001\022W\n\030delay_before_vehicle_end\030\020"
-          + " \001(\01321.google.cloud.optimization.v1.Ship"
-          + "mentRoute.DelayB\002\030\001\032h\n\005Delay\022.\n\nstart_ti"
-          + "me\030\001 \001(\0132\032.google.protobuf.Timestamp\022+\n\010"
-          + "duration\030\002 \001(\0132\031.google.protobuf.Duratio"
-          + "n:\002\030\001\032\365\004\n\005Visit\022\026\n\016shipment_index\030\001 \001(\005\022"
-          + "\021\n\tis_pickup\030\002 \001(\010\022\033\n\023visit_request_inde"
-          + "x\030\003 \001(\005\022.\n\nstart_time\030\004 \001(\0132\032.google.pro"
-          + "tobuf.Timestamp\022X\n\014load_demands\030\013 \003(\0132B."
-          + "google.cloud.optimization.v1.ShipmentRou"
-          + "te.Visit.LoadDemandsEntry\022)\n\006detour\030\006 \001("
-          + "\0132\031.google.protobuf.Duration\022\026\n\016shipment"
-          + "_label\030\007 \001(\t\022\023\n\013visit_label\030\010 \001(\t\022I\n\rarr"
-          + "ival_loads\030\t \003(\0132..google.cloud.optimiza"
-          + "tion.v1.CapacityQuantityB\002\030\001\022Q\n\022delay_be"
-          + "fore_start\030\n \001(\01321.google.cloud.optimiza"
-          + "tion.v1.ShipmentRoute.DelayB\002\030\001\022C\n\007deman"
-          + "ds\030\005 \003(\0132..google.cloud.optimization.v1."
-          + "CapacityQuantityB\002\030\001\032_\n\020LoadDemandsEntry"
-          + "\022\013\n\003key\030\001 \001(\t\022:\n\005value\030\002 \001(\0132+.google.cl"
-          + "oud.optimization.v1.Shipment.Load:\0028\001\032\344\005"
-          + "\n\nTransition\0222\n\017travel_duration\030\001 \001(\0132\031."
-          + "google.protobuf.Duration\022\036\n\026travel_dista"
-          + "nce_meters\030\002 \001(\001\022 \n\030traffic_info_unavail"
-          + "able\030\003 \001(\010\0221\n\016delay_duration\030\004 \001(\0132\031.goo"
-          + "gle.protobuf.Duration\0221\n\016break_duration\030"
-          + "\005 \001(\0132\031.google.protobuf.Duration\0220\n\rwait"
-          + "_duration\030\006 \001(\0132\031.google.protobuf.Durati"
-          + "on\0221\n\016total_duration\030\007 \001(\0132\031.google.prot"
-          + "obuf.Duration\022.\n\nstart_time\030\010 \001(\0132\032.goog"
-          + "le.protobuf.Timestamp\022S\n\016route_polyline\030"
-          + "\t \001(\0132;.google.cloud.optimization.v1.Shi"
-          + "pmentRoute.EncodedPolyline\022_\n\rvehicle_lo"
-          + "ads\030\013 \003(\0132H.google.cloud.optimization.v1"
-          + ".ShipmentRoute.Transition.VehicleLoadsEn"
-          + "try\022A\n\005loads\030\n \003(\0132..google.cloud.optimi"
-          + "zation.v1.CapacityQuantityB\002\030\001\032l\n\021Vehicl"
-          + "eLoadsEntry\022\013\n\003key\030\001 \001(\t\022F\n\005value\030\002 \001(\0132"
-          + "7.google.cloud.optimization.v1.ShipmentR"
-          + "oute.VehicleLoad:\0028\001\032\035\n\013VehicleLoad\022\016\n\006a"
-          + "mount\030\001 \001(\003\032!\n\017EncodedPolyline\022\016\n\006points"
-          + "\030\001 \001(\t\032d\n\005Break\022.\n\nstart_time\030\001 \001(\0132\032.go"
-          + "ogle.protobuf.Timestamp\022+\n\010duration\030\002 \001("
-          + "\0132\031.google.protobuf.Duration\032\315\001\n\nTravelS"
-          + "tep\022+\n\010duration\030\001 \001(\0132\031.google.protobuf."
-          + "Duration\022\027\n\017distance_meters\030\002 \001(\001\022 \n\030tra"
-          + "ffic_info_unavailable\030\003 \001(\010\022S\n\016route_pol"
-          + "yline\030\004 \001(\0132;.google.cloud.optimization."
-          + "v1.ShipmentRoute.EncodedPolyline:\002\030\001\0321\n\017"
-          + "RouteCostsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 "
-          + "\001(\001:\0028\001\"\376\004\n\017SkippedShipment\022\r\n\005index\030\001 \001"
-          + "(\005\022\r\n\005label\030\002 \001(\t\022E\n\007reasons\030\003 \003(\01324.goo"
-          + "gle.cloud.optimization.v1.SkippedShipmen"
-          + "t.Reason\032\205\004\n\006Reason\022G\n\004code\030\001 \001(\01629.goog"
-          + "le.cloud.optimization.v1.SkippedShipment"
-          + ".Reason.Code\022\"\n\025example_vehicle_index\030\002 "
-          + "\001(\005H\000\210\001\001\022&\n\036example_exceeded_capacity_ty"
-          + "pe\030\003 \001(\t\"\313\002\n\004Code\022\024\n\020CODE_UNSPECIFIED\020\000\022"
-          + "\016\n\nNO_VEHICLE\020\001\022#\n\037DEMAND_EXCEEDS_VEHICL"
-          + "E_CAPACITY\020\002\0225\n1CANNOT_BE_PERFORMED_WITH"
-          + "IN_VEHICLE_DISTANCE_LIMIT\020\003\0225\n1CANNOT_BE"
-          + "_PERFORMED_WITHIN_VEHICLE_DURATION_LIMIT"
-          + "\020\004\022<\n8CANNOT_BE_PERFORMED_WITHIN_VEHICLE"
-          + "_TRAVEL_DURATION_LIMIT\020\005\0223\n/CANNOT_BE_PE"
-          + "RFORMED_WITHIN_VEHICLE_TIME_WINDOWS\020\006\022\027\n"
-          + "\023VEHICLE_NOT_ALLOWED\020\007B\030\n\026_example_vehic"
-          + "le_index\"\330\005\n\021AggregatedMetrics\022 \n\030perfor"
-          + "med_shipment_count\030\001 \001(\005\0222\n\017travel_durat"
-          + "ion\030\002 \001(\0132\031.google.protobuf.Duration\0220\n\r"
-          + "wait_duration\030\003 \001(\0132\031.google.protobuf.Du"
-          + "ration\0221\n\016delay_duration\030\004 \001(\0132\031.google."
-          + "protobuf.Duration\0221\n\016break_duration\030\005 \001("
-          + "\0132\031.google.protobuf.Duration\0221\n\016visit_du"
-          + "ration\030\006 \001(\0132\031.google.protobuf.Duration\022"
-          + "1\n\016total_duration\030\007 \001(\0132\031.google.protobu"
-          + "f.Duration\022\036\n\026travel_distance_meters\030\010 \001"
-          + "(\001\022P\n\tmax_loads\030\t \003(\0132=.google.cloud.opt"
-          + "imization.v1.AggregatedMetrics.MaxLoadsE"
-          + "ntry\022M\n\005costs\030\n \003(\0132:.google.cloud.optim"
-          + "ization.v1.AggregatedMetrics.CostsEntryB"
-          + "\002\030\001\022\026\n\ntotal_cost\030\013 \001(\001B\002\030\001\032h\n\rMaxLoadsE"
-          + "ntry\022\013\n\003key\030\001 \001(\t\022F\n\005value\030\002 \001(\01327.googl"
-          + "e.cloud.optimization.v1.ShipmentRoute.Ve"
-          + "hicleLoad:\0028\001\032,\n\nCostsEntry\022\013\n\003key\030\001 \001(\t"
-          + "\022\r\n\005value\030\002 \001(\001:\0028\001\"\237\006\n\032InjectedSolution"
-          + "Constraint\022;\n\006routes\030\001 \003(\0132+.google.clou"
-          + "d.optimization.v1.ShipmentRoute\022H\n\021skipp"
-          + "ed_shipments\030\002 \003(\0132-.google.cloud.optimi"
-          + "zation.v1.SkippedShipment\022m\n\026constraint_"
-          + "relaxations\030\003 \003(\0132M.google.cloud.optimiz"
-          + "ation.v1.InjectedSolutionConstraint.Cons"
-          + "traintRelaxation\032\212\004\n\024ConstraintRelaxatio"
-          + "n\022m\n\013relaxations\030\001 \003(\0132X.google.cloud.op",
-      "timization.v1.InjectedSolutionConstraint"
-          + ".ConstraintRelaxation.Relaxation\022\027\n\017vehi"
-          + "cle_indices\030\002 \003(\005\032\351\002\n\nRelaxation\022m\n\005leve"
-          + "l\030\001 \001(\0162^.google.cloud.optimization.v1.I"
-          + "njectedSolutionConstraint.ConstraintRela"
-          + "xation.Relaxation.Level\0222\n\016threshold_tim"
-          + "e\030\002 \001(\0132\032.google.protobuf.Timestamp\022\035\n\025t"
-          + "hreshold_visit_count\030\003 \001(\005\"\230\001\n\005Level\022\025\n\021"
-          + "LEVEL_UNSPECIFIED\020\000\022%\n!RELAX_VISIT_TIMES"
-          + "_AFTER_THRESHOLD\020\001\0222\n.RELAX_VISIT_TIMES_"
-          + "AND_SEQUENCE_AFTER_THRESHOLD\020\002\022\035\n\031RELAX_"
-          + "ALL_AFTER_THRESHOLD\020\003\"\375\002\n\034OptimizeToursV"
-          + "alidationError\022\014\n\004code\030\001 \001(\005\022\024\n\014display_"
-          + "name\030\002 \001(\t\022Y\n\006fields\030\003 \003(\0132I.google.clou"
-          + "d.optimization.v1.OptimizeToursValidatio"
-          + "nError.FieldReference\022\025\n\rerror_message\030\004"
-          + " \001(\t\022\030\n\020offending_values\030\005 \001(\t\032\254\001\n\016Field"
-          + "Reference\022\014\n\004name\030\001 \001(\t\022\017\n\005index\030\002 \001(\005H\000"
-          + "\022\r\n\003key\030\004 \001(\tH\000\022\\\n\tsub_field\030\003 \001(\0132I.goo"
-          + "gle.cloud.optimization.v1.OptimizeToursV"
-          + "alidationError.FieldReferenceB\016\n\014index_o"
-          + "r_key2\340\004\n\014FleetRouting\022\342\001\n\rOptimizeTours"
-          + "\0222.google.cloud.optimization.v1.Optimize"
-          + "ToursRequest\0323.google.cloud.optimization"
-          + ".v1.OptimizeToursResponse\"h\202\323\344\223\002b\"1/v1/{"
-          + "parent=projects/*/locations/*}:optimizeT"
-          + "ours:\001*Z*\"%/v1/{parent=projects/*}:optim"
-          + "izeTours:\001*\022\224\002\n\022BatchOptimizeTours\0227.goo"
-          + "gle.cloud.optimization.v1.BatchOptimizeT"
-          + "oursRequest\032\035.google.longrunning.Operati"
-          + "on\"\245\001\312A0\n\032BatchOptimizeToursResponse\022\022As"
-          + "yncModelMetadata\202\323\344\223\002l\"6/v1/{parent=proj"
-          + "ects/*/locations/*}:batchOptimizeTours:\001"
-          + "*Z/\"*/v1/{parent=projects/*}:batchOptimi"
-          + "zeTours:\001*\032T\312A cloudoptimization.googlea"
-          + "pis.com\322A.https://www.googleapis.com/aut"
-          + "h/cloud-platformB}\n com.google.cloud.opt"
-          + "imization.v1B\021FleetRoutingProtoP\001ZDcloud"
-          + ".google.com/go/optimization/apiv1/optimi"
-          + "zationpb;optimizationpbb\006proto3"
+          + ".DelayB\002\030\001\032h\n\005Delay\022.\n\nstart_time\030\001 \001(\0132"
+          + "\032.google.protobuf.Timestamp\022+\n\010duration\030"
+          + "\002 \001(\0132\031.google.protobuf.Duration:\002\030\001\032\365\004\n"
+          + "\005Visit\022\026\n\016shipment_index\030\001 \001(\005\022\021\n\tis_pic"
+          + "kup\030\002 \001(\010\022\033\n\023visit_request_index\030\003 \001(\005\022."
+          + "\n\nstart_time\030\004 \001(\0132\032.google.protobuf.Tim"
+          + "estamp\022X\n\014load_demands\030\013 \003(\0132B.google.cl"
+          + "oud.optimization.v1.ShipmentRoute.Visit."
+          + "LoadDemandsEntry\022)\n\006detour\030\006 \001(\0132\031.googl"
+          + "e.protobuf.Duration\022\026\n\016shipment_label\030\007 "
+          + "\001(\t\022\023\n\013visit_label\030\010 \001(\t\022I\n\rarrival_load"
+          + "s\030\t \003(\0132..google.cloud.optimization.v1.C"
+          + "apacityQuantityB\002\030\001\022Q\n\022delay_before_star"
+          + "t\030\n \001(\01321.google.cloud.optimization.v1.S"
+          + "hipmentRoute.DelayB\002\030\001\022C\n\007demands\030\005 \003(\0132"
+          + "..google.cloud.optimization.v1.CapacityQ"
+          + "uantityB\002\030\001\032_\n\020LoadDemandsEntry\022\013\n\003key\030\001"
+          + " \001(\t\022:\n\005value\030\002 \001(\0132+.google.cloud.optim"
+          + "ization.v1.Shipment.Load:\0028\001\032\344\005\n\nTransit"
+          + "ion\0222\n\017travel_duration\030\001 \001(\0132\031.google.pr"
+          + "otobuf.Duration\022\036\n\026travel_distance_meter"
+          + "s\030\002 \001(\001\022 \n\030traffic_info_unavailable\030\003 \001("
+          + "\010\0221\n\016delay_duration\030\004 \001(\0132\031.google.proto"
+          + "buf.Duration\0221\n\016break_duration\030\005 \001(\0132\031.g"
+          + "oogle.protobuf.Duration\0220\n\rwait_duration"
+          + "\030\006 \001(\0132\031.google.protobuf.Duration\0221\n\016tot"
+          + "al_duration\030\007 \001(\0132\031.google.protobuf.Dura"
+          + "tion\022.\n\nstart_time\030\010 \001(\0132\032.google.protob"
+          + "uf.Timestamp\022S\n\016route_polyline\030\t \001(\0132;.g"
+          + "oogle.cloud.optimization.v1.ShipmentRout"
+          + "e.EncodedPolyline\022_\n\rvehicle_loads\030\013 \003(\013"
+          + "2H.google.cloud.optimization.v1.Shipment"
+          + "Route.Transition.VehicleLoadsEntry\022A\n\005lo"
+          + "ads\030\n \003(\0132..google.cloud.optimization.v1"
+          + ".CapacityQuantityB\002\030\001\032l\n\021VehicleLoadsEnt"
+          + "ry\022\013\n\003key\030\001 \001(\t\022F\n\005value\030\002 \001(\01327.google."
+          + "cloud.optimization.v1.ShipmentRoute.Vehi"
+          + "cleLoad:\0028\001\032\035\n\013VehicleLoad\022\016\n\006amount\030\001 \001"
+          + "(\003\032!\n\017EncodedPolyline\022\016\n\006points\030\001 \001(\t\032d\n"
+          + "\005Break\022.\n\nstart_time\030\001 \001(\0132\032.google.prot"
+          + "obuf.Timestamp\022+\n\010duration\030\002 \001(\0132\031.googl"
+          + "e.protobuf.Duration\032\315\001\n\nTravelStep\022+\n\010du"
+          + "ration\030\001 \001(\0132\031.google.protobuf.Duration\022"
+          + "\027\n\017distance_meters\030\002 \001(\001\022 \n\030traffic_info"
+          + "_unavailable\030\003 \001(\010\022S\n\016route_polyline\030\004 \001"
+          + "(\0132;.google.cloud.optimization.v1.Shipme"
+          + "ntRoute.EncodedPolyline:\002\030\001\0321\n\017RouteCost"
+          + "sEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\001:\0028\001\"\376"
+          + "\004\n\017SkippedShipment\022\r\n\005index\030\001 \001(\005\022\r\n\005lab"
+          + "el\030\002 \001(\t\022E\n\007reasons\030\003 \003(\01324.google.cloud"
+          + ".optimization.v1.SkippedShipment.Reason\032"
+          + "\205\004\n\006Reason\022G\n\004code\030\001 \001(\01629.google.cloud."
+          + "optimization.v1.SkippedShipment.Reason.C"
+          + "ode\022\"\n\025example_vehicle_index\030\002 \001(\005H\000\210\001\001\022"
+          + "&\n\036example_exceeded_capacity_type\030\003 \001(\t\""
+          + "\313\002\n\004Code\022\024\n\020CODE_UNSPECIFIED\020\000\022\016\n\nNO_VEH"
+          + "ICLE\020\001\022#\n\037DEMAND_EXCEEDS_VEHICLE_CAPACIT"
+          + "Y\020\002\0225\n1CANNOT_BE_PERFORMED_WITHIN_VEHICL"
+          + "E_DISTANCE_LIMIT\020\003\0225\n1CANNOT_BE_PERFORME"
+          + "D_WITHIN_VEHICLE_DURATION_LIMIT\020\004\022<\n8CAN"
+          + "NOT_BE_PERFORMED_WITHIN_VEHICLE_TRAVEL_D"
+          + "URATION_LIMIT\020\005\0223\n/CANNOT_BE_PERFORMED_W"
+          + "ITHIN_VEHICLE_TIME_WINDOWS\020\006\022\027\n\023VEHICLE_"
+          + "NOT_ALLOWED\020\007B\030\n\026_example_vehicle_index\""
+          + "\330\005\n\021AggregatedMetrics\022 \n\030performed_shipm"
+          + "ent_count\030\001 \001(\005\0222\n\017travel_duration\030\002 \001(\013"
+          + "2\031.google.protobuf.Duration\0220\n\rwait_dura"
+          + "tion\030\003 \001(\0132\031.google.protobuf.Duration\0221\n"
+          + "\016delay_duration\030\004 \001(\0132\031.google.protobuf."
+          + "Duration\0221\n\016break_duration\030\005 \001(\0132\031.googl"
+          + "e.protobuf.Duration\0221\n\016visit_duration\030\006 "
+          + "\001(\0132\031.google.protobuf.Duration\0221\n\016total_"
+          + "duration\030\007 \001(\0132\031.google.protobuf.Duratio"
+          + "n\022\036\n\026travel_distance_meters\030\010 \001(\001\022P\n\tmax"
+          + "_loads\030\t \003(\0132=.google.cloud.optimization"
+          + ".v1.AggregatedMetrics.MaxLoadsEntry\022M\n\005c"
+          + "osts\030\n \003(\0132:.google.cloud.optimization.v"
+          + "1.AggregatedMetrics.CostsEntryB\002\030\001\022\026\n\nto"
+          + "tal_cost\030\013 \001(\001B\002\030\001\032h\n\rMaxLoadsEntry\022\013\n\003k"
+          + "ey\030\001 \001(\t\022F\n\005value\030\002 \001(\01327.google.cloud.o"
+          + "ptimization.v1.ShipmentRoute.VehicleLoad"
+          + ":\0028\001\032,\n\nCostsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value"
+          + "\030\002 \001(\001:\0028\001\"\237\006\n\032InjectedSolutionConstrain"
+          + "t\022;\n\006routes\030\001 \003(\0132+.google.cloud.optimiz"
+          + "ation.v1.ShipmentRoute\022H\n\021skipped_shipme"
+          + "nts\030\002 \003(\0132-.google.cloud.optimization.v1",
+      ".SkippedShipment\022m\n\026constraint_relaxatio"
+          + "ns\030\003 \003(\0132M.google.cloud.optimization.v1."
+          + "InjectedSolutionConstraint.ConstraintRel"
+          + "axation\032\212\004\n\024ConstraintRelaxation\022m\n\013rela"
+          + "xations\030\001 \003(\0132X.google.cloud.optimizatio"
+          + "n.v1.InjectedSolutionConstraint.Constrai"
+          + "ntRelaxation.Relaxation\022\027\n\017vehicle_indic"
+          + "es\030\002 \003(\005\032\351\002\n\nRelaxation\022m\n\005level\030\001 \001(\0162^"
+          + ".google.cloud.optimization.v1.InjectedSo"
+          + "lutionConstraint.ConstraintRelaxation.Re"
+          + "laxation.Level\0222\n\016threshold_time\030\002 \001(\0132\032"
+          + ".google.protobuf.Timestamp\022\035\n\025threshold_"
+          + "visit_count\030\003 \001(\005\"\230\001\n\005Level\022\025\n\021LEVEL_UNS"
+          + "PECIFIED\020\000\022%\n!RELAX_VISIT_TIMES_AFTER_TH"
+          + "RESHOLD\020\001\0222\n.RELAX_VISIT_TIMES_AND_SEQUE"
+          + "NCE_AFTER_THRESHOLD\020\002\022\035\n\031RELAX_ALL_AFTER"
+          + "_THRESHOLD\020\003\"\375\002\n\034OptimizeToursValidation"
+          + "Error\022\014\n\004code\030\001 \001(\005\022\024\n\014display_name\030\002 \001("
+          + "\t\022Y\n\006fields\030\003 \003(\0132I.google.cloud.optimiz"
+          + "ation.v1.OptimizeToursValidationError.Fi"
+          + "eldReference\022\025\n\rerror_message\030\004 \001(\t\022\030\n\020o"
+          + "ffending_values\030\005 \001(\t\032\254\001\n\016FieldReference"
+          + "\022\014\n\004name\030\001 \001(\t\022\017\n\005index\030\002 \001(\005H\000\022\r\n\003key\030\004"
+          + " \001(\tH\000\022\\\n\tsub_field\030\003 \001(\0132I.google.cloud"
+          + ".optimization.v1.OptimizeToursValidation"
+          + "Error.FieldReferenceB\016\n\014index_or_key2\340\004\n"
+          + "\014FleetRouting\022\342\001\n\rOptimizeTours\0222.google"
+          + ".cloud.optimization.v1.OptimizeToursRequ"
+          + "est\0323.google.cloud.optimization.v1.Optim"
+          + "izeToursResponse\"h\202\323\344\223\002b\"1/v1/{parent=pr"
+          + "ojects/*/locations/*}:optimizeTours:\001*Z*"
+          + "\"%/v1/{parent=projects/*}:optimizeTours:"
+          + "\001*\022\224\002\n\022BatchOptimizeTours\0227.google.cloud"
+          + ".optimization.v1.BatchOptimizeToursReque"
+          + "st\032\035.google.longrunning.Operation\"\245\001\312A0\n"
+          + "\032BatchOptimizeToursResponse\022\022AsyncModelM"
+          + "etadata\202\323\344\223\002l\"6/v1/{parent=projects/*/lo"
+          + "cations/*}:batchOptimizeTours:\001*Z/\"*/v1/"
+          + "{parent=projects/*}:batchOptimizeTours:\001"
+          + "*\032T\312A cloudoptimization.googleapis.com\322A"
+          + ".https://www.googleapis.com/auth/cloud-p"
+          + "latformB}\n com.google.cloud.optimization"
+          + ".v1B\021FleetRoutingProtoP\001ZDcloud.google.c"
+          + "om/go/optimization/apiv1/optimizationpb;"
+          + "optimizationpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -984,13 +993,22 @@ public final class FleetRoutingProto {
             new java.lang.String[] {
               "RequiredShipmentTypeAlternatives", "DependentShipmentTypes", "RequirementMode",
             });
-    internal_static_google_cloud_optimization_v1_Vehicle_descriptor =
+    internal_static_google_cloud_optimization_v1_RouteModifiers_descriptor =
         getDescriptor().getMessageTypes().get(8);
+    internal_static_google_cloud_optimization_v1_RouteModifiers_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_optimization_v1_RouteModifiers_descriptor,
+            new java.lang.String[] {
+              "AvoidTolls", "AvoidHighways", "AvoidFerries", "AvoidIndoor",
+            });
+    internal_static_google_cloud_optimization_v1_Vehicle_descriptor =
+        getDescriptor().getMessageTypes().get(9);
     internal_static_google_cloud_optimization_v1_Vehicle_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_optimization_v1_Vehicle_descriptor,
             new java.lang.String[] {
               "TravelMode",
+              "RouteModifiers",
               "StartLocation",
               "StartWaypoint",
               "EndLocation",
@@ -1074,7 +1092,7 @@ public final class FleetRoutingProto {
               "Key", "Value",
             });
     internal_static_google_cloud_optimization_v1_TimeWindow_descriptor =
-        getDescriptor().getMessageTypes().get(9);
+        getDescriptor().getMessageTypes().get(10);
     internal_static_google_cloud_optimization_v1_TimeWindow_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_optimization_v1_TimeWindow_descriptor,
@@ -1089,7 +1107,7 @@ public final class FleetRoutingProto {
               "CostPerHourAfterSoftEndTime",
             });
     internal_static_google_cloud_optimization_v1_CapacityQuantity_descriptor =
-        getDescriptor().getMessageTypes().get(10);
+        getDescriptor().getMessageTypes().get(11);
     internal_static_google_cloud_optimization_v1_CapacityQuantity_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_optimization_v1_CapacityQuantity_descriptor,
@@ -1097,7 +1115,7 @@ public final class FleetRoutingProto {
               "Type", "Value",
             });
     internal_static_google_cloud_optimization_v1_CapacityQuantityInterval_descriptor =
-        getDescriptor().getMessageTypes().get(11);
+        getDescriptor().getMessageTypes().get(12);
     internal_static_google_cloud_optimization_v1_CapacityQuantityInterval_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_optimization_v1_CapacityQuantityInterval_descriptor,
@@ -1105,7 +1123,7 @@ public final class FleetRoutingProto {
               "Type", "MinValue", "MaxValue", "MinValue", "MaxValue",
             });
     internal_static_google_cloud_optimization_v1_DistanceLimit_descriptor =
-        getDescriptor().getMessageTypes().get(12);
+        getDescriptor().getMessageTypes().get(13);
     internal_static_google_cloud_optimization_v1_DistanceLimit_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_optimization_v1_DistanceLimit_descriptor,
@@ -1120,7 +1138,7 @@ public final class FleetRoutingProto {
               "CostPerKilometerAboveSoftMax",
             });
     internal_static_google_cloud_optimization_v1_TransitionAttributes_descriptor =
-        getDescriptor().getMessageTypes().get(13);
+        getDescriptor().getMessageTypes().get(14);
     internal_static_google_cloud_optimization_v1_TransitionAttributes_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_optimization_v1_TransitionAttributes_descriptor,
@@ -1135,7 +1153,7 @@ public final class FleetRoutingProto {
               "Delay",
             });
     internal_static_google_cloud_optimization_v1_Waypoint_descriptor =
-        getDescriptor().getMessageTypes().get(14);
+        getDescriptor().getMessageTypes().get(15);
     internal_static_google_cloud_optimization_v1_Waypoint_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_optimization_v1_Waypoint_descriptor,
@@ -1143,7 +1161,7 @@ public final class FleetRoutingProto {
               "Location", "PlaceId", "SideOfRoad", "LocationType",
             });
     internal_static_google_cloud_optimization_v1_Location_descriptor =
-        getDescriptor().getMessageTypes().get(15);
+        getDescriptor().getMessageTypes().get(16);
     internal_static_google_cloud_optimization_v1_Location_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_optimization_v1_Location_descriptor,
@@ -1151,7 +1169,7 @@ public final class FleetRoutingProto {
               "LatLng", "Heading", "Heading",
             });
     internal_static_google_cloud_optimization_v1_BreakRule_descriptor =
-        getDescriptor().getMessageTypes().get(16);
+        getDescriptor().getMessageTypes().get(17);
     internal_static_google_cloud_optimization_v1_BreakRule_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_optimization_v1_BreakRule_descriptor,
@@ -1175,7 +1193,7 @@ public final class FleetRoutingProto {
               "MinBreakDuration", "MaxInterBreakDuration",
             });
     internal_static_google_cloud_optimization_v1_ShipmentRoute_descriptor =
-        getDescriptor().getMessageTypes().get(17);
+        getDescriptor().getMessageTypes().get(18);
     internal_static_google_cloud_optimization_v1_ShipmentRoute_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_optimization_v1_ShipmentRoute_descriptor,
@@ -1318,7 +1336,7 @@ public final class FleetRoutingProto {
               "Key", "Value",
             });
     internal_static_google_cloud_optimization_v1_SkippedShipment_descriptor =
-        getDescriptor().getMessageTypes().get(18);
+        getDescriptor().getMessageTypes().get(19);
     internal_static_google_cloud_optimization_v1_SkippedShipment_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_optimization_v1_SkippedShipment_descriptor,
@@ -1336,7 +1354,7 @@ public final class FleetRoutingProto {
               "Code", "ExampleVehicleIndex", "ExampleExceededCapacityType", "ExampleVehicleIndex",
             });
     internal_static_google_cloud_optimization_v1_AggregatedMetrics_descriptor =
-        getDescriptor().getMessageTypes().get(19);
+        getDescriptor().getMessageTypes().get(20);
     internal_static_google_cloud_optimization_v1_AggregatedMetrics_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_optimization_v1_AggregatedMetrics_descriptor,
@@ -1374,7 +1392,7 @@ public final class FleetRoutingProto {
               "Key", "Value",
             });
     internal_static_google_cloud_optimization_v1_InjectedSolutionConstraint_descriptor =
-        getDescriptor().getMessageTypes().get(20);
+        getDescriptor().getMessageTypes().get(21);
     internal_static_google_cloud_optimization_v1_InjectedSolutionConstraint_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_optimization_v1_InjectedSolutionConstraint_descriptor,
@@ -1402,7 +1420,7 @@ public final class FleetRoutingProto {
               "Level", "ThresholdTime", "ThresholdVisitCount",
             });
     internal_static_google_cloud_optimization_v1_OptimizeToursValidationError_descriptor =
-        getDescriptor().getMessageTypes().get(21);
+        getDescriptor().getMessageTypes().get(22);
     internal_static_google_cloud_optimization_v1_OptimizeToursValidationError_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_optimization_v1_OptimizeToursValidationError_descriptor,

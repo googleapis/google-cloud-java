@@ -782,6 +782,45 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
+     * A snapshot of DataRedactionSettings resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.DataRedactionSettings data_redaction_settings = 25;
+     * </code>
+     *
+     * @return Whether the dataRedactionSettings field is set.
+     */
+    boolean hasDataRedactionSettings();
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of DataRedactionSettings resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.DataRedactionSettings data_redaction_settings = 25;
+     * </code>
+     *
+     * @return The dataRedactionSettings.
+     */
+    com.google.analytics.admin.v1alpha.DataRedactionSettings getDataRedactionSettings();
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of DataRedactionSettings resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.DataRedactionSettings data_redaction_settings = 25;
+     * </code>
+     */
+    com.google.analytics.admin.v1alpha.DataRedactionSettingsOrBuilder
+        getDataRedactionSettingsOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
      * A snapshot of SKAdNetworkConversionValueSchema resource in change
      * history.
      * </pre>
@@ -1004,6 +1043,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       CHANNEL_GROUP(22),
       BIGQUERY_LINK(23),
       ENHANCED_MEASUREMENT_SETTINGS(24),
+      DATA_REDACTION_SETTINGS(25),
       SKADNETWORK_CONVERSION_VALUE_SCHEMA(26),
       ADSENSE_LINK(27),
       AUDIENCE(28),
@@ -1064,6 +1104,8 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
             return BIGQUERY_LINK;
           case 24:
             return ENHANCED_MEASUREMENT_SETTINGS;
+          case 25:
+            return DATA_REDACTION_SETTINGS;
           case 26:
             return SKADNETWORK_CONVERSION_VALUE_SCHEMA;
           case 27:
@@ -2110,6 +2152,61 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       return com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings.getDefaultInstance();
     }
 
+    public static final int DATA_REDACTION_SETTINGS_FIELD_NUMBER = 25;
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of DataRedactionSettings resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.DataRedactionSettings data_redaction_settings = 25;
+     * </code>
+     *
+     * @return Whether the dataRedactionSettings field is set.
+     */
+    @java.lang.Override
+    public boolean hasDataRedactionSettings() {
+      return resourceCase_ == 25;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of DataRedactionSettings resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.DataRedactionSettings data_redaction_settings = 25;
+     * </code>
+     *
+     * @return The dataRedactionSettings.
+     */
+    @java.lang.Override
+    public com.google.analytics.admin.v1alpha.DataRedactionSettings getDataRedactionSettings() {
+      if (resourceCase_ == 25) {
+        return (com.google.analytics.admin.v1alpha.DataRedactionSettings) resource_;
+      }
+      return com.google.analytics.admin.v1alpha.DataRedactionSettings.getDefaultInstance();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of DataRedactionSettings resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.DataRedactionSettings data_redaction_settings = 25;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.analytics.admin.v1alpha.DataRedactionSettingsOrBuilder
+        getDataRedactionSettingsOrBuilder() {
+      if (resourceCase_ == 25) {
+        return (com.google.analytics.admin.v1alpha.DataRedactionSettings) resource_;
+      }
+      return com.google.analytics.admin.v1alpha.DataRedactionSettings.getDefaultInstance();
+    }
+
     public static final int SKADNETWORK_CONVERSION_VALUE_SCHEMA_FIELD_NUMBER = 26;
     /**
      *
@@ -2406,6 +2503,10 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         output.writeMessage(
             24, (com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings) resource_);
       }
+      if (resourceCase_ == 25) {
+        output.writeMessage(
+            25, (com.google.analytics.admin.v1alpha.DataRedactionSettings) resource_);
+      }
       if (resourceCase_ == 26) {
         output.writeMessage(
             26, (com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema) resource_);
@@ -2525,6 +2626,11 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
             com.google.protobuf.CodedOutputStream.computeMessageSize(
                 24, (com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings) resource_);
       }
+      if (resourceCase_ == 25) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                25, (com.google.analytics.admin.v1alpha.DataRedactionSettings) resource_);
+      }
       if (resourceCase_ == 26) {
         size +=
             com.google.protobuf.CodedOutputStream.computeMessageSize(
@@ -2626,6 +2732,9 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         case 24:
           if (!getEnhancedMeasurementSettings().equals(other.getEnhancedMeasurementSettings()))
             return false;
+          break;
+        case 25:
+          if (!getDataRedactionSettings().equals(other.getDataRedactionSettings())) return false;
           break;
         case 26:
           if (!getSkadnetworkConversionValueSchema()
@@ -2730,6 +2839,10 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         case 24:
           hash = (37 * hash) + ENHANCED_MEASUREMENT_SETTINGS_FIELD_NUMBER;
           hash = (53 * hash) + getEnhancedMeasurementSettings().hashCode();
+          break;
+        case 25:
+          hash = (37 * hash) + DATA_REDACTION_SETTINGS_FIELD_NUMBER;
+          hash = (53 * hash) + getDataRedactionSettings().hashCode();
           break;
         case 26:
           hash = (37 * hash) + SKADNETWORK_CONVERSION_VALUE_SCHEMA_FIELD_NUMBER;
@@ -2959,6 +3072,9 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         if (enhancedMeasurementSettingsBuilder_ != null) {
           enhancedMeasurementSettingsBuilder_.clear();
         }
+        if (dataRedactionSettingsBuilder_ != null) {
+          dataRedactionSettingsBuilder_.clear();
+        }
         if (skadnetworkConversionValueSchemaBuilder_ != null) {
           skadnetworkConversionValueSchemaBuilder_.clear();
         }
@@ -3077,6 +3193,9 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         }
         if (resourceCase_ == 24 && enhancedMeasurementSettingsBuilder_ != null) {
           result.resource_ = enhancedMeasurementSettingsBuilder_.build();
+        }
+        if (resourceCase_ == 25 && dataRedactionSettingsBuilder_ != null) {
+          result.resource_ = dataRedactionSettingsBuilder_.build();
         }
         if (resourceCase_ == 26 && skadnetworkConversionValueSchemaBuilder_ != null) {
           result.resource_ = skadnetworkConversionValueSchemaBuilder_.build();
@@ -3240,6 +3359,11 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
           case ENHANCED_MEASUREMENT_SETTINGS:
             {
               mergeEnhancedMeasurementSettings(other.getEnhancedMeasurementSettings());
+              break;
+            }
+          case DATA_REDACTION_SETTINGS:
+            {
+              mergeDataRedactionSettings(other.getDataRedactionSettings());
               break;
             }
           case SKADNETWORK_CONVERSION_VALUE_SCHEMA:
@@ -3420,6 +3544,13 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
                   resourceCase_ = 24;
                   break;
                 } // case 194
+              case 202:
+                {
+                  input.readMessage(
+                      getDataRedactionSettingsFieldBuilder().getBuilder(), extensionRegistry);
+                  resourceCase_ = 25;
+                  break;
+                } // case 202
               case 210:
                 {
                   input.readMessage(
@@ -7649,6 +7780,231 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         resourceCase_ = 24;
         onChanged();
         return enhancedMeasurementSettingsBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.analytics.admin.v1alpha.DataRedactionSettings,
+              com.google.analytics.admin.v1alpha.DataRedactionSettings.Builder,
+              com.google.analytics.admin.v1alpha.DataRedactionSettingsOrBuilder>
+          dataRedactionSettingsBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of DataRedactionSettings resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.DataRedactionSettings data_redaction_settings = 25;
+       * </code>
+       *
+       * @return Whether the dataRedactionSettings field is set.
+       */
+      @java.lang.Override
+      public boolean hasDataRedactionSettings() {
+        return resourceCase_ == 25;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of DataRedactionSettings resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.DataRedactionSettings data_redaction_settings = 25;
+       * </code>
+       *
+       * @return The dataRedactionSettings.
+       */
+      @java.lang.Override
+      public com.google.analytics.admin.v1alpha.DataRedactionSettings getDataRedactionSettings() {
+        if (dataRedactionSettingsBuilder_ == null) {
+          if (resourceCase_ == 25) {
+            return (com.google.analytics.admin.v1alpha.DataRedactionSettings) resource_;
+          }
+          return com.google.analytics.admin.v1alpha.DataRedactionSettings.getDefaultInstance();
+        } else {
+          if (resourceCase_ == 25) {
+            return dataRedactionSettingsBuilder_.getMessage();
+          }
+          return com.google.analytics.admin.v1alpha.DataRedactionSettings.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of DataRedactionSettings resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.DataRedactionSettings data_redaction_settings = 25;
+       * </code>
+       */
+      public Builder setDataRedactionSettings(
+          com.google.analytics.admin.v1alpha.DataRedactionSettings value) {
+        if (dataRedactionSettingsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          resource_ = value;
+          onChanged();
+        } else {
+          dataRedactionSettingsBuilder_.setMessage(value);
+        }
+        resourceCase_ = 25;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of DataRedactionSettings resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.DataRedactionSettings data_redaction_settings = 25;
+       * </code>
+       */
+      public Builder setDataRedactionSettings(
+          com.google.analytics.admin.v1alpha.DataRedactionSettings.Builder builderForValue) {
+        if (dataRedactionSettingsBuilder_ == null) {
+          resource_ = builderForValue.build();
+          onChanged();
+        } else {
+          dataRedactionSettingsBuilder_.setMessage(builderForValue.build());
+        }
+        resourceCase_ = 25;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of DataRedactionSettings resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.DataRedactionSettings data_redaction_settings = 25;
+       * </code>
+       */
+      public Builder mergeDataRedactionSettings(
+          com.google.analytics.admin.v1alpha.DataRedactionSettings value) {
+        if (dataRedactionSettingsBuilder_ == null) {
+          if (resourceCase_ == 25
+              && resource_
+                  != com.google.analytics.admin.v1alpha.DataRedactionSettings
+                      .getDefaultInstance()) {
+            resource_ =
+                com.google.analytics.admin.v1alpha.DataRedactionSettings.newBuilder(
+                        (com.google.analytics.admin.v1alpha.DataRedactionSettings) resource_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            resource_ = value;
+          }
+          onChanged();
+        } else {
+          if (resourceCase_ == 25) {
+            dataRedactionSettingsBuilder_.mergeFrom(value);
+          } else {
+            dataRedactionSettingsBuilder_.setMessage(value);
+          }
+        }
+        resourceCase_ = 25;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of DataRedactionSettings resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.DataRedactionSettings data_redaction_settings = 25;
+       * </code>
+       */
+      public Builder clearDataRedactionSettings() {
+        if (dataRedactionSettingsBuilder_ == null) {
+          if (resourceCase_ == 25) {
+            resourceCase_ = 0;
+            resource_ = null;
+            onChanged();
+          }
+        } else {
+          if (resourceCase_ == 25) {
+            resourceCase_ = 0;
+            resource_ = null;
+          }
+          dataRedactionSettingsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of DataRedactionSettings resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.DataRedactionSettings data_redaction_settings = 25;
+       * </code>
+       */
+      public com.google.analytics.admin.v1alpha.DataRedactionSettings.Builder
+          getDataRedactionSettingsBuilder() {
+        return getDataRedactionSettingsFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of DataRedactionSettings resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.DataRedactionSettings data_redaction_settings = 25;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.analytics.admin.v1alpha.DataRedactionSettingsOrBuilder
+          getDataRedactionSettingsOrBuilder() {
+        if ((resourceCase_ == 25) && (dataRedactionSettingsBuilder_ != null)) {
+          return dataRedactionSettingsBuilder_.getMessageOrBuilder();
+        } else {
+          if (resourceCase_ == 25) {
+            return (com.google.analytics.admin.v1alpha.DataRedactionSettings) resource_;
+          }
+          return com.google.analytics.admin.v1alpha.DataRedactionSettings.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of DataRedactionSettings resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.DataRedactionSettings data_redaction_settings = 25;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.analytics.admin.v1alpha.DataRedactionSettings,
+              com.google.analytics.admin.v1alpha.DataRedactionSettings.Builder,
+              com.google.analytics.admin.v1alpha.DataRedactionSettingsOrBuilder>
+          getDataRedactionSettingsFieldBuilder() {
+        if (dataRedactionSettingsBuilder_ == null) {
+          if (!(resourceCase_ == 25)) {
+            resource_ =
+                com.google.analytics.admin.v1alpha.DataRedactionSettings.getDefaultInstance();
+          }
+          dataRedactionSettingsBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.analytics.admin.v1alpha.DataRedactionSettings,
+                  com.google.analytics.admin.v1alpha.DataRedactionSettings.Builder,
+                  com.google.analytics.admin.v1alpha.DataRedactionSettingsOrBuilder>(
+                  (com.google.analytics.admin.v1alpha.DataRedactionSettings) resource_,
+                  getParentForChildren(),
+                  isClean());
+          resource_ = null;
+        }
+        resourceCase_ = 25;
+        onChanged();
+        return dataRedactionSettingsBuilder_;
       }
 
       private com.google.protobuf.SingleFieldBuilderV3<

@@ -118,7 +118,7 @@ public final class InfoTypeSummary extends com.google.protobuf.GeneratedMessageV
    * <code>int32 estimated_prevalence = 2 [deprecated = true];</code>
    *
    * @deprecated google.privacy.dlp.v2.InfoTypeSummary.estimated_prevalence is deprecated. See
-   *     google/privacy/dlp/v2/dlp.proto;l=5324
+   *     google/privacy/dlp/v2/dlp.proto;l=5965
    * @return The estimatedPrevalence.
    */
   @java.lang.Override
@@ -691,7 +691,7 @@ public final class InfoTypeSummary extends com.google.protobuf.GeneratedMessageV
      * <code>int32 estimated_prevalence = 2 [deprecated = true];</code>
      *
      * @deprecated google.privacy.dlp.v2.InfoTypeSummary.estimated_prevalence is deprecated. See
-     *     google/privacy/dlp/v2/dlp.proto;l=5324
+     *     google/privacy/dlp/v2/dlp.proto;l=5965
      * @return The estimatedPrevalence.
      */
     @java.lang.Override
@@ -709,7 +709,7 @@ public final class InfoTypeSummary extends com.google.protobuf.GeneratedMessageV
      * <code>int32 estimated_prevalence = 2 [deprecated = true];</code>
      *
      * @deprecated google.privacy.dlp.v2.InfoTypeSummary.estimated_prevalence is deprecated. See
-     *     google/privacy/dlp/v2/dlp.proto;l=5324
+     *     google/privacy/dlp/v2/dlp.proto;l=5965
      * @param value The estimatedPrevalence to set.
      * @return This builder for chaining.
      */
@@ -731,7 +731,7 @@ public final class InfoTypeSummary extends com.google.protobuf.GeneratedMessageV
      * <code>int32 estimated_prevalence = 2 [deprecated = true];</code>
      *
      * @deprecated google.privacy.dlp.v2.InfoTypeSummary.estimated_prevalence is deprecated. See
-     *     google/privacy/dlp/v2/dlp.proto;l=5324
+     *     google/privacy/dlp/v2/dlp.proto;l=5965
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

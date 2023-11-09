@@ -348,7 +348,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The resource name for the Assessment in the format
-   * "projects/{project_number}/assessments/{assessment_id}".
+   * `projects/{project_number}/assessments/{assessment_id}`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -372,7 +372,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The resource name for the Assessment in the format
-   * "projects/{project_number}/assessments/{assessment_id}".
+   * `projects/{project_number}/assessments/{assessment_id}`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1436,7 +1436,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The resource name for the Assessment in the format
-     * "projects/{project_number}/assessments/{assessment_id}".
+     * `projects/{project_number}/assessments/{assessment_id}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1459,7 +1459,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The resource name for the Assessment in the format
-     * "projects/{project_number}/assessments/{assessment_id}".
+     * `projects/{project_number}/assessments/{assessment_id}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1482,7 +1482,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The resource name for the Assessment in the format
-     * "projects/{project_number}/assessments/{assessment_id}".
+     * `projects/{project_number}/assessments/{assessment_id}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1504,7 +1504,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The resource name for the Assessment in the format
-     * "projects/{project_number}/assessments/{assessment_id}".
+     * `projects/{project_number}/assessments/{assessment_id}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1522,7 +1522,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The resource name for the Assessment in the format
-     * "projects/{project_number}/assessments/{assessment_id}".
+     * `projects/{project_number}/assessments/{assessment_id}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

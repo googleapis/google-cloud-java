@@ -5571,6 +5571,122 @@ public class SecurityCenterClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Simulates a given SecurityHealthAnalyticsCustomModule and Resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   String parent = "parent-995424086";
+   *   CustomConfig customConfig = CustomConfig.newBuilder().build();
+   *   SimulateSecurityHealthAnalyticsCustomModuleRequest.SimulatedResource resource =
+   *       SimulateSecurityHealthAnalyticsCustomModuleRequest.SimulatedResource.newBuilder().build();
+   *   SimulateSecurityHealthAnalyticsCustomModuleResponse response =
+   *       securityCenterClient.simulateSecurityHealthAnalyticsCustomModule(
+   *           parent, customConfig, resource);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The relative resource name of the organization, project, or folder.
+   *     See: https://cloud.google.com/apis/design/resource_names#relative_resource_name An example
+   *     is: "organizations/{organization_id}".
+   * @param customConfig Required. The user specified custom configuration to test.
+   * @param resource Required. Resource data to simulate custom module against.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SimulateSecurityHealthAnalyticsCustomModuleResponse
+      simulateSecurityHealthAnalyticsCustomModule(
+          String parent,
+          CustomConfig customConfig,
+          SimulateSecurityHealthAnalyticsCustomModuleRequest.SimulatedResource resource) {
+    SimulateSecurityHealthAnalyticsCustomModuleRequest request =
+        SimulateSecurityHealthAnalyticsCustomModuleRequest.newBuilder()
+            .setParent(parent)
+            .setCustomConfig(customConfig)
+            .setResource(resource)
+            .build();
+    return simulateSecurityHealthAnalyticsCustomModule(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Simulates a given SecurityHealthAnalyticsCustomModule and Resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   SimulateSecurityHealthAnalyticsCustomModuleRequest request =
+   *       SimulateSecurityHealthAnalyticsCustomModuleRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setCustomConfig(CustomConfig.newBuilder().build())
+   *           .setResource(
+   *               SimulateSecurityHealthAnalyticsCustomModuleRequest.SimulatedResource.newBuilder()
+   *                   .build())
+   *           .build();
+   *   SimulateSecurityHealthAnalyticsCustomModuleResponse response =
+   *       securityCenterClient.simulateSecurityHealthAnalyticsCustomModule(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SimulateSecurityHealthAnalyticsCustomModuleResponse
+      simulateSecurityHealthAnalyticsCustomModule(
+          SimulateSecurityHealthAnalyticsCustomModuleRequest request) {
+    return simulateSecurityHealthAnalyticsCustomModuleCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Simulates a given SecurityHealthAnalyticsCustomModule and Resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+   *   SimulateSecurityHealthAnalyticsCustomModuleRequest request =
+   *       SimulateSecurityHealthAnalyticsCustomModuleRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setCustomConfig(CustomConfig.newBuilder().build())
+   *           .setResource(
+   *               SimulateSecurityHealthAnalyticsCustomModuleRequest.SimulatedResource.newBuilder()
+   *                   .build())
+   *           .build();
+   *   ApiFuture<SimulateSecurityHealthAnalyticsCustomModuleResponse> future =
+   *       securityCenterClient
+   *           .simulateSecurityHealthAnalyticsCustomModuleCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   SimulateSecurityHealthAnalyticsCustomModuleResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          SimulateSecurityHealthAnalyticsCustomModuleRequest,
+          SimulateSecurityHealthAnalyticsCustomModuleResponse>
+      simulateSecurityHealthAnalyticsCustomModuleCallable() {
+    return stub.simulateSecurityHealthAnalyticsCustomModuleCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Updates external system. This is for a given finding.
    *
    * <p>Sample code:

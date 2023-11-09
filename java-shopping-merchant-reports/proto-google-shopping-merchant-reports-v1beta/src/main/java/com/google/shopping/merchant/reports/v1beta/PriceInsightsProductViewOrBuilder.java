@@ -27,8 +27,9 @@ public interface PriceInsightsProductViewOrBuilder
    *
    *
    * <pre>
-   * REST ID of the product, in the form of languageCode~feedLabel~offerId. Can
-   * be used to join data with the `product_view` table.
+   * REST ID of the product, in the form of
+   * `channel~languageCode~feedLabel~offerId`. Can be used to join data with the
+   * `product_view` table.
    *
    * Required in the `SELECT` clause.
    * </pre>
@@ -42,8 +43,9 @@ public interface PriceInsightsProductViewOrBuilder
    *
    *
    * <pre>
-   * REST ID of the product, in the form of languageCode~feedLabel~offerId. Can
-   * be used to join data with the `product_view` table.
+   * REST ID of the product, in the form of
+   * `channel~languageCode~feedLabel~offerId`. Can be used to join data with the
+   * `product_view` table.
    *
    * Required in the `SELECT` clause.
    * </pre>
@@ -57,8 +59,9 @@ public interface PriceInsightsProductViewOrBuilder
    *
    *
    * <pre>
-   * REST ID of the product, in the form of languageCode~feedLabel~offerId. Can
-   * be used to join data with the `product_view` table.
+   * REST ID of the product, in the form of
+   * `channel~languageCode~feedLabel~offerId`. Can be used to join data with the
+   * `product_view` table.
    *
    * Required in the `SELECT` clause.
    * </pre>
@@ -736,71 +739,4 @@ public interface PriceInsightsProductViewOrBuilder
    * @return The predictedConversionsChangeFraction.
    */
   double getPredictedConversionsChangeFraction();
-
-  /**
-   *
-   *
-   * <pre>
-   * Predicted change in gross profit as a fraction after introducing the
-   * suggested price compared to current active price. For example, 0.05 is a 5%
-   * predicted increase in gross profit.
-   * </pre>
-   *
-   * <code>optional double predicted_gross_profit_change_fraction = 20;</code>
-   *
-   * @return Whether the predictedGrossProfitChangeFraction field is set.
-   */
-  boolean hasPredictedGrossProfitChangeFraction();
-  /**
-   *
-   *
-   * <pre>
-   * Predicted change in gross profit as a fraction after introducing the
-   * suggested price compared to current active price. For example, 0.05 is a 5%
-   * predicted increase in gross profit.
-   * </pre>
-   *
-   * <code>optional double predicted_gross_profit_change_fraction = 20;</code>
-   *
-   * @return The predictedGrossProfitChangeFraction.
-   */
-  double getPredictedGrossProfitChangeFraction();
-
-  /**
-   *
-   *
-   * <pre>
-   * Predicted change in gross profit after introducing the suggested price
-   * for a month compared to current active price.
-   * </pre>
-   *
-   * <code>.google.shopping.type.Price predicted_monthly_gross_profit_change = 21;</code>
-   *
-   * @return Whether the predictedMonthlyGrossProfitChange field is set.
-   */
-  boolean hasPredictedMonthlyGrossProfitChange();
-  /**
-   *
-   *
-   * <pre>
-   * Predicted change in gross profit after introducing the suggested price
-   * for a month compared to current active price.
-   * </pre>
-   *
-   * <code>.google.shopping.type.Price predicted_monthly_gross_profit_change = 21;</code>
-   *
-   * @return The predictedMonthlyGrossProfitChange.
-   */
-  com.google.shopping.type.Price getPredictedMonthlyGrossProfitChange();
-  /**
-   *
-   *
-   * <pre>
-   * Predicted change in gross profit after introducing the suggested price
-   * for a month compared to current active price.
-   * </pre>
-   *
-   * <code>.google.shopping.type.Price predicted_monthly_gross_profit_change = 21;</code>
-   */
-  com.google.shopping.type.PriceOrBuilder getPredictedMonthlyGrossProfitChangeOrBuilder();
 }

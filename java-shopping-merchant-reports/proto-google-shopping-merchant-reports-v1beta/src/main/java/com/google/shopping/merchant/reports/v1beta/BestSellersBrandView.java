@@ -46,7 +46,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
   private BestSellersBrandView() {
     reportGranularity_ = 0;
     reportCountryCode_ = "";
-    id_ = "";
     brand_ = "";
     relativeDemand_ = 0;
     previousRelativeDemand_ = 0;
@@ -156,7 +155,7 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>
-   * optional .google.shopping.merchant.reports.v1beta.ReportGranularity report_granularity = 2;
+   * optional .google.shopping.merchant.reports.v1beta.ReportGranularity.ReportGranularityEnum report_granularity = 2;
    * </code>
    *
    * @return Whether the reportGranularity field is set.
@@ -177,7 +176,7 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>
-   * optional .google.shopping.merchant.reports.v1beta.ReportGranularity report_granularity = 2;
+   * optional .google.shopping.merchant.reports.v1beta.ReportGranularity.ReportGranularityEnum report_granularity = 2;
    * </code>
    *
    * @return The enum numeric value on the wire for reportGranularity.
@@ -198,17 +197,20 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>
-   * optional .google.shopping.merchant.reports.v1beta.ReportGranularity report_granularity = 2;
+   * optional .google.shopping.merchant.reports.v1beta.ReportGranularity.ReportGranularityEnum report_granularity = 2;
    * </code>
    *
    * @return The reportGranularity.
    */
   @java.lang.Override
-  public com.google.shopping.merchant.reports.v1beta.ReportGranularity getReportGranularity() {
-    com.google.shopping.merchant.reports.v1beta.ReportGranularity result =
-        com.google.shopping.merchant.reports.v1beta.ReportGranularity.forNumber(reportGranularity_);
+  public com.google.shopping.merchant.reports.v1beta.ReportGranularity.ReportGranularityEnum
+      getReportGranularity() {
+    com.google.shopping.merchant.reports.v1beta.ReportGranularity.ReportGranularityEnum result =
+        com.google.shopping.merchant.reports.v1beta.ReportGranularity.ReportGranularityEnum
+            .forNumber(reportGranularity_);
     return result == null
-        ? com.google.shopping.merchant.reports.v1beta.ReportGranularity.UNRECOGNIZED
+        ? com.google.shopping.merchant.reports.v1beta.ReportGranularity.ReportGranularityEnum
+            .UNRECOGNIZED
         : result;
   }
 
@@ -335,72 +337,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
     return reportCategoryId_;
   }
 
-  public static final int ID_FIELD_NUMBER = 5;
-
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object id_ = "";
-  /**
-   *
-   *
-   * <pre>
-   * Google-assigned id of the brand.
-   * </pre>
-   *
-   * <code>optional string id = 5;</code>
-   *
-   * @return Whether the id field is set.
-   */
-  @java.lang.Override
-  public boolean hasId() {
-    return ((bitField0_ & 0x00000008) != 0);
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Google-assigned id of the brand.
-   * </pre>
-   *
-   * <code>optional string id = 5;</code>
-   *
-   * @return The id.
-   */
-  @java.lang.Override
-  public java.lang.String getId() {
-    java.lang.Object ref = id_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      id_ = s;
-      return s;
-    }
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Google-assigned id of the brand.
-   * </pre>
-   *
-   * <code>optional string id = 5;</code>
-   *
-   * @return The bytes for id.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString getIdBytes() {
-    java.lang.Object ref = id_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      id_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
   public static final int BRAND_FIELD_NUMBER = 6;
 
   @SuppressWarnings("serial")
@@ -418,7 +354,7 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public boolean hasBrand() {
-    return ((bitField0_ & 0x00000010) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
   /**
    *
@@ -483,7 +419,7 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public boolean hasRank() {
-    return ((bitField0_ & 0x00000020) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
   /**
    *
@@ -517,7 +453,7 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public boolean hasPreviousRank() {
-    return ((bitField0_ & 0x00000040) != 0);
+    return ((bitField0_ & 0x00000020) != 0);
   }
   /**
    *
@@ -545,14 +481,15 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
    * in the same category and country.
    * </pre>
    *
-   * <code>optional .google.shopping.merchant.reports.v1beta.RelativeDemand relative_demand = 9;
+   * <code>
+   * optional .google.shopping.merchant.reports.v1beta.RelativeDemand.RelativeDemandEnum relative_demand = 9;
    * </code>
    *
    * @return Whether the relativeDemand field is set.
    */
   @java.lang.Override
   public boolean hasRelativeDemand() {
-    return ((bitField0_ & 0x00000080) != 0);
+    return ((bitField0_ & 0x00000040) != 0);
   }
   /**
    *
@@ -562,7 +499,8 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
    * in the same category and country.
    * </pre>
    *
-   * <code>optional .google.shopping.merchant.reports.v1beta.RelativeDemand relative_demand = 9;
+   * <code>
+   * optional .google.shopping.merchant.reports.v1beta.RelativeDemand.RelativeDemandEnum relative_demand = 9;
    * </code>
    *
    * @return The enum numeric value on the wire for relativeDemand.
@@ -579,17 +517,20 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
    * in the same category and country.
    * </pre>
    *
-   * <code>optional .google.shopping.merchant.reports.v1beta.RelativeDemand relative_demand = 9;
+   * <code>
+   * optional .google.shopping.merchant.reports.v1beta.RelativeDemand.RelativeDemandEnum relative_demand = 9;
    * </code>
    *
    * @return The relativeDemand.
    */
   @java.lang.Override
-  public com.google.shopping.merchant.reports.v1beta.RelativeDemand getRelativeDemand() {
-    com.google.shopping.merchant.reports.v1beta.RelativeDemand result =
-        com.google.shopping.merchant.reports.v1beta.RelativeDemand.forNumber(relativeDemand_);
+  public com.google.shopping.merchant.reports.v1beta.RelativeDemand.RelativeDemandEnum
+      getRelativeDemand() {
+    com.google.shopping.merchant.reports.v1beta.RelativeDemand.RelativeDemandEnum result =
+        com.google.shopping.merchant.reports.v1beta.RelativeDemand.RelativeDemandEnum.forNumber(
+            relativeDemand_);
     return result == null
-        ? com.google.shopping.merchant.reports.v1beta.RelativeDemand.UNRECOGNIZED
+        ? com.google.shopping.merchant.reports.v1beta.RelativeDemand.RelativeDemandEnum.UNRECOGNIZED
         : result;
   }
 
@@ -604,14 +545,14 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>
-   * optional .google.shopping.merchant.reports.v1beta.RelativeDemand previous_relative_demand = 10;
+   * optional .google.shopping.merchant.reports.v1beta.RelativeDemand.RelativeDemandEnum previous_relative_demand = 10;
    * </code>
    *
    * @return Whether the previousRelativeDemand field is set.
    */
   @java.lang.Override
   public boolean hasPreviousRelativeDemand() {
-    return ((bitField0_ & 0x00000100) != 0);
+    return ((bitField0_ & 0x00000080) != 0);
   }
   /**
    *
@@ -622,7 +563,7 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>
-   * optional .google.shopping.merchant.reports.v1beta.RelativeDemand previous_relative_demand = 10;
+   * optional .google.shopping.merchant.reports.v1beta.RelativeDemand.RelativeDemandEnum previous_relative_demand = 10;
    * </code>
    *
    * @return The enum numeric value on the wire for previousRelativeDemand.
@@ -640,18 +581,19 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>
-   * optional .google.shopping.merchant.reports.v1beta.RelativeDemand previous_relative_demand = 10;
+   * optional .google.shopping.merchant.reports.v1beta.RelativeDemand.RelativeDemandEnum previous_relative_demand = 10;
    * </code>
    *
    * @return The previousRelativeDemand.
    */
   @java.lang.Override
-  public com.google.shopping.merchant.reports.v1beta.RelativeDemand getPreviousRelativeDemand() {
-    com.google.shopping.merchant.reports.v1beta.RelativeDemand result =
-        com.google.shopping.merchant.reports.v1beta.RelativeDemand.forNumber(
+  public com.google.shopping.merchant.reports.v1beta.RelativeDemand.RelativeDemandEnum
+      getPreviousRelativeDemand() {
+    com.google.shopping.merchant.reports.v1beta.RelativeDemand.RelativeDemandEnum result =
+        com.google.shopping.merchant.reports.v1beta.RelativeDemand.RelativeDemandEnum.forNumber(
             previousRelativeDemand_);
     return result == null
-        ? com.google.shopping.merchant.reports.v1beta.RelativeDemand.UNRECOGNIZED
+        ? com.google.shopping.merchant.reports.v1beta.RelativeDemand.RelativeDemandEnum.UNRECOGNIZED
         : result;
   }
 
@@ -665,14 +607,14 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>
-   * optional .google.shopping.merchant.reports.v1beta.RelativeDemandChangeType relative_demand_change = 11;
+   * optional .google.shopping.merchant.reports.v1beta.RelativeDemandChangeType.RelativeDemandChangeTypeEnum relative_demand_change = 11;
    * </code>
    *
    * @return Whether the relativeDemandChange field is set.
    */
   @java.lang.Override
   public boolean hasRelativeDemandChange() {
-    return ((bitField0_ & 0x00000200) != 0);
+    return ((bitField0_ & 0x00000100) != 0);
   }
   /**
    *
@@ -682,7 +624,7 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>
-   * optional .google.shopping.merchant.reports.v1beta.RelativeDemandChangeType relative_demand_change = 11;
+   * optional .google.shopping.merchant.reports.v1beta.RelativeDemandChangeType.RelativeDemandChangeTypeEnum relative_demand_change = 11;
    * </code>
    *
    * @return The enum numeric value on the wire for relativeDemandChange.
@@ -699,19 +641,23 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>
-   * optional .google.shopping.merchant.reports.v1beta.RelativeDemandChangeType relative_demand_change = 11;
+   * optional .google.shopping.merchant.reports.v1beta.RelativeDemandChangeType.RelativeDemandChangeTypeEnum relative_demand_change = 11;
    * </code>
    *
    * @return The relativeDemandChange.
    */
   @java.lang.Override
   public com.google.shopping.merchant.reports.v1beta.RelativeDemandChangeType
+          .RelativeDemandChangeTypeEnum
       getRelativeDemandChange() {
-    com.google.shopping.merchant.reports.v1beta.RelativeDemandChangeType result =
-        com.google.shopping.merchant.reports.v1beta.RelativeDemandChangeType.forNumber(
-            relativeDemandChange_);
+    com.google.shopping.merchant.reports.v1beta.RelativeDemandChangeType
+            .RelativeDemandChangeTypeEnum
+        result =
+            com.google.shopping.merchant.reports.v1beta.RelativeDemandChangeType
+                .RelativeDemandChangeTypeEnum.forNumber(relativeDemandChange_);
     return result == null
-        ? com.google.shopping.merchant.reports.v1beta.RelativeDemandChangeType.UNRECOGNIZED
+        ? com.google.shopping.merchant.reports.v1beta.RelativeDemandChangeType
+            .RelativeDemandChangeTypeEnum.UNRECOGNIZED
         : result;
   }
 
@@ -742,24 +688,21 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
       output.writeInt64(4, reportCategoryId_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, id_);
-    }
-    if (((bitField0_ & 0x00000010) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, brand_);
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       output.writeInt64(7, rank_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       output.writeInt64(8, previousRank_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       output.writeEnum(9, relativeDemand_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       output.writeEnum(10, previousRelativeDemand_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       output.writeEnum(11, relativeDemandChange_);
     }
     getUnknownFields().writeTo(output);
@@ -784,24 +727,21 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(4, reportCategoryId_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, id_);
-    }
-    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, brand_);
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(7, rank_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(8, previousRank_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(9, relativeDemand_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(10, previousRelativeDemand_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(11, relativeDemandChange_);
     }
     size += getUnknownFields().getSerializedSize();
@@ -835,10 +775,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
     if (hasReportCategoryId() != other.hasReportCategoryId()) return false;
     if (hasReportCategoryId()) {
       if (getReportCategoryId() != other.getReportCategoryId()) return false;
-    }
-    if (hasId() != other.hasId()) return false;
-    if (hasId()) {
-      if (!getId().equals(other.getId())) return false;
     }
     if (hasBrand() != other.hasBrand()) return false;
     if (hasBrand()) {
@@ -890,10 +826,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
     if (hasReportCategoryId()) {
       hash = (37 * hash) + REPORT_CATEGORY_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getReportCategoryId());
-    }
-    if (hasId()) {
-      hash = (37 * hash) + ID_FIELD_NUMBER;
-      hash = (53 * hash) + getId().hashCode();
     }
     if (hasBrand()) {
       hash = (37 * hash) + BRAND_FIELD_NUMBER;
@@ -1073,7 +1005,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
       reportGranularity_ = 0;
       reportCountryCode_ = "";
       reportCategoryId_ = 0L;
-      id_ = "";
       brand_ = "";
       rank_ = 0L;
       previousRank_ = 0L;
@@ -1135,32 +1066,28 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
         to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.id_ = id_;
+        result.brand_ = brand_;
         to_bitField0_ |= 0x00000008;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.brand_ = brand_;
+        result.rank_ = rank_;
         to_bitField0_ |= 0x00000010;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.rank_ = rank_;
+        result.previousRank_ = previousRank_;
         to_bitField0_ |= 0x00000020;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
-        result.previousRank_ = previousRank_;
+        result.relativeDemand_ = relativeDemand_;
         to_bitField0_ |= 0x00000040;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
-        result.relativeDemand_ = relativeDemand_;
+        result.previousRelativeDemand_ = previousRelativeDemand_;
         to_bitField0_ |= 0x00000080;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
-        result.previousRelativeDemand_ = previousRelativeDemand_;
-        to_bitField0_ |= 0x00000100;
-      }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.relativeDemandChange_ = relativeDemandChange_;
-        to_bitField0_ |= 0x00000200;
+        to_bitField0_ |= 0x00000100;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1227,14 +1154,9 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
       if (other.hasReportCategoryId()) {
         setReportCategoryId(other.getReportCategoryId());
       }
-      if (other.hasId()) {
-        id_ = other.id_;
-        bitField0_ |= 0x00000010;
-        onChanged();
-      }
       if (other.hasBrand()) {
         brand_ = other.brand_;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.hasRank()) {
@@ -1302,46 +1224,40 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
                 bitField0_ |= 0x00000008;
                 break;
               } // case 32
-            case 42:
-              {
-                id_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 42
             case 50:
               {
                 brand_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 50
             case 56:
               {
                 rank_ = input.readInt64();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 56
             case 64:
               {
                 previousRank_ = input.readInt64();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 64
             case 72:
               {
                 relativeDemand_ = input.readEnum();
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 72
             case 80:
               {
                 previousRelativeDemand_ = input.readEnum();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 80
             case 88:
               {
                 relativeDemandChange_ = input.readEnum();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 88
             default:
@@ -1612,7 +1528,7 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * optional .google.shopping.merchant.reports.v1beta.ReportGranularity report_granularity = 2;
+     * optional .google.shopping.merchant.reports.v1beta.ReportGranularity.ReportGranularityEnum report_granularity = 2;
      * </code>
      *
      * @return Whether the reportGranularity field is set.
@@ -1633,7 +1549,7 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * optional .google.shopping.merchant.reports.v1beta.ReportGranularity report_granularity = 2;
+     * optional .google.shopping.merchant.reports.v1beta.ReportGranularity.ReportGranularityEnum report_granularity = 2;
      * </code>
      *
      * @return The enum numeric value on the wire for reportGranularity.
@@ -1654,7 +1570,7 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * optional .google.shopping.merchant.reports.v1beta.ReportGranularity report_granularity = 2;
+     * optional .google.shopping.merchant.reports.v1beta.ReportGranularity.ReportGranularityEnum report_granularity = 2;
      * </code>
      *
      * @param value The enum numeric value on the wire for reportGranularity to set.
@@ -1678,18 +1594,20 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * optional .google.shopping.merchant.reports.v1beta.ReportGranularity report_granularity = 2;
+     * optional .google.shopping.merchant.reports.v1beta.ReportGranularity.ReportGranularityEnum report_granularity = 2;
      * </code>
      *
      * @return The reportGranularity.
      */
     @java.lang.Override
-    public com.google.shopping.merchant.reports.v1beta.ReportGranularity getReportGranularity() {
-      com.google.shopping.merchant.reports.v1beta.ReportGranularity result =
-          com.google.shopping.merchant.reports.v1beta.ReportGranularity.forNumber(
-              reportGranularity_);
+    public com.google.shopping.merchant.reports.v1beta.ReportGranularity.ReportGranularityEnum
+        getReportGranularity() {
+      com.google.shopping.merchant.reports.v1beta.ReportGranularity.ReportGranularityEnum result =
+          com.google.shopping.merchant.reports.v1beta.ReportGranularity.ReportGranularityEnum
+              .forNumber(reportGranularity_);
       return result == null
-          ? com.google.shopping.merchant.reports.v1beta.ReportGranularity.UNRECOGNIZED
+          ? com.google.shopping.merchant.reports.v1beta.ReportGranularity.ReportGranularityEnum
+              .UNRECOGNIZED
           : result;
     }
     /**
@@ -1704,14 +1622,14 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * optional .google.shopping.merchant.reports.v1beta.ReportGranularity report_granularity = 2;
+     * optional .google.shopping.merchant.reports.v1beta.ReportGranularity.ReportGranularityEnum report_granularity = 2;
      * </code>
      *
      * @param value The reportGranularity to set.
      * @return This builder for chaining.
      */
     public Builder setReportGranularity(
-        com.google.shopping.merchant.reports.v1beta.ReportGranularity value) {
+        com.google.shopping.merchant.reports.v1beta.ReportGranularity.ReportGranularityEnum value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -1732,7 +1650,7 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * optional .google.shopping.merchant.reports.v1beta.ReportGranularity report_granularity = 2;
+     * optional .google.shopping.merchant.reports.v1beta.ReportGranularity.ReportGranularityEnum report_granularity = 2;
      * </code>
      *
      * @return This builder for chaining.
@@ -1980,126 +1898,6 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
       return this;
     }
 
-    private java.lang.Object id_ = "";
-    /**
-     *
-     *
-     * <pre>
-     * Google-assigned id of the brand.
-     * </pre>
-     *
-     * <code>optional string id = 5;</code>
-     *
-     * @return Whether the id field is set.
-     */
-    public boolean hasId() {
-      return ((bitField0_ & 0x00000010) != 0);
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Google-assigned id of the brand.
-     * </pre>
-     *
-     * <code>optional string id = 5;</code>
-     *
-     * @return The id.
-     */
-    public java.lang.String getId() {
-      java.lang.Object ref = id_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        id_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Google-assigned id of the brand.
-     * </pre>
-     *
-     * <code>optional string id = 5;</code>
-     *
-     * @return The bytes for id.
-     */
-    public com.google.protobuf.ByteString getIdBytes() {
-      java.lang.Object ref = id_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        id_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Google-assigned id of the brand.
-     * </pre>
-     *
-     * <code>optional string id = 5;</code>
-     *
-     * @param value The id to set.
-     * @return This builder for chaining.
-     */
-    public Builder setId(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      id_ = value;
-      bitField0_ |= 0x00000010;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Google-assigned id of the brand.
-     * </pre>
-     *
-     * <code>optional string id = 5;</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearId() {
-      id_ = getDefaultInstance().getId();
-      bitField0_ = (bitField0_ & ~0x00000010);
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Google-assigned id of the brand.
-     * </pre>
-     *
-     * <code>optional string id = 5;</code>
-     *
-     * @param value The bytes for id to set.
-     * @return This builder for chaining.
-     */
-    public Builder setIdBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-      id_ = value;
-      bitField0_ |= 0x00000010;
-      onChanged();
-      return this;
-    }
-
     private java.lang.Object brand_ = "";
     /**
      *
@@ -2113,7 +1911,7 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
      * @return Whether the brand field is set.
      */
     public boolean hasBrand() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -2176,7 +1974,7 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       brand_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2193,7 +1991,7 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
      */
     public Builder clearBrand() {
       brand_ = getDefaultInstance().getBrand();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -2215,7 +2013,7 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
       }
       checkByteStringIsUtf8(value);
       brand_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2235,7 +2033,7 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
      */
     @java.lang.Override
     public boolean hasRank() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -2269,7 +2067,7 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
     public Builder setRank(long value) {
 
       rank_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2286,7 +2084,7 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearRank() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000020);
       rank_ = 0L;
       onChanged();
       return this;
@@ -2306,7 +2104,7 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
      */
     @java.lang.Override
     public boolean hasPreviousRank() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -2338,7 +2136,7 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
     public Builder setPreviousRank(long value) {
 
       previousRank_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2354,7 +2152,7 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearPreviousRank() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000040);
       previousRank_ = 0L;
       onChanged();
       return this;
@@ -2369,14 +2167,15 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
      * in the same category and country.
      * </pre>
      *
-     * <code>optional .google.shopping.merchant.reports.v1beta.RelativeDemand relative_demand = 9;
+     * <code>
+     * optional .google.shopping.merchant.reports.v1beta.RelativeDemand.RelativeDemandEnum relative_demand = 9;
      * </code>
      *
      * @return Whether the relativeDemand field is set.
      */
     @java.lang.Override
     public boolean hasRelativeDemand() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -2386,7 +2185,8 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
      * in the same category and country.
      * </pre>
      *
-     * <code>optional .google.shopping.merchant.reports.v1beta.RelativeDemand relative_demand = 9;
+     * <code>
+     * optional .google.shopping.merchant.reports.v1beta.RelativeDemand.RelativeDemandEnum relative_demand = 9;
      * </code>
      *
      * @return The enum numeric value on the wire for relativeDemand.
@@ -2403,7 +2203,8 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
      * in the same category and country.
      * </pre>
      *
-     * <code>optional .google.shopping.merchant.reports.v1beta.RelativeDemand relative_demand = 9;
+     * <code>
+     * optional .google.shopping.merchant.reports.v1beta.RelativeDemand.RelativeDemandEnum relative_demand = 9;
      * </code>
      *
      * @param value The enum numeric value on the wire for relativeDemand to set.
@@ -2411,7 +2212,7 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
      */
     public Builder setRelativeDemandValue(int value) {
       relativeDemand_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2423,17 +2224,21 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
      * in the same category and country.
      * </pre>
      *
-     * <code>optional .google.shopping.merchant.reports.v1beta.RelativeDemand relative_demand = 9;
+     * <code>
+     * optional .google.shopping.merchant.reports.v1beta.RelativeDemand.RelativeDemandEnum relative_demand = 9;
      * </code>
      *
      * @return The relativeDemand.
      */
     @java.lang.Override
-    public com.google.shopping.merchant.reports.v1beta.RelativeDemand getRelativeDemand() {
-      com.google.shopping.merchant.reports.v1beta.RelativeDemand result =
-          com.google.shopping.merchant.reports.v1beta.RelativeDemand.forNumber(relativeDemand_);
+    public com.google.shopping.merchant.reports.v1beta.RelativeDemand.RelativeDemandEnum
+        getRelativeDemand() {
+      com.google.shopping.merchant.reports.v1beta.RelativeDemand.RelativeDemandEnum result =
+          com.google.shopping.merchant.reports.v1beta.RelativeDemand.RelativeDemandEnum.forNumber(
+              relativeDemand_);
       return result == null
-          ? com.google.shopping.merchant.reports.v1beta.RelativeDemand.UNRECOGNIZED
+          ? com.google.shopping.merchant.reports.v1beta.RelativeDemand.RelativeDemandEnum
+              .UNRECOGNIZED
           : result;
     }
     /**
@@ -2444,18 +2249,19 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
      * in the same category and country.
      * </pre>
      *
-     * <code>optional .google.shopping.merchant.reports.v1beta.RelativeDemand relative_demand = 9;
+     * <code>
+     * optional .google.shopping.merchant.reports.v1beta.RelativeDemand.RelativeDemandEnum relative_demand = 9;
      * </code>
      *
      * @param value The relativeDemand to set.
      * @return This builder for chaining.
      */
     public Builder setRelativeDemand(
-        com.google.shopping.merchant.reports.v1beta.RelativeDemand value) {
+        com.google.shopping.merchant.reports.v1beta.RelativeDemand.RelativeDemandEnum value) {
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000080;
       relativeDemand_ = value.getNumber();
       onChanged();
       return this;
@@ -2468,13 +2274,14 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
      * in the same category and country.
      * </pre>
      *
-     * <code>optional .google.shopping.merchant.reports.v1beta.RelativeDemand relative_demand = 9;
+     * <code>
+     * optional .google.shopping.merchant.reports.v1beta.RelativeDemand.RelativeDemandEnum relative_demand = 9;
      * </code>
      *
      * @return This builder for chaining.
      */
     public Builder clearRelativeDemand() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000080);
       relativeDemand_ = 0;
       onChanged();
       return this;
@@ -2490,14 +2297,14 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * optional .google.shopping.merchant.reports.v1beta.RelativeDemand previous_relative_demand = 10;
+     * optional .google.shopping.merchant.reports.v1beta.RelativeDemand.RelativeDemandEnum previous_relative_demand = 10;
      * </code>
      *
      * @return Whether the previousRelativeDemand field is set.
      */
     @java.lang.Override
     public boolean hasPreviousRelativeDemand() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -2508,7 +2315,7 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * optional .google.shopping.merchant.reports.v1beta.RelativeDemand previous_relative_demand = 10;
+     * optional .google.shopping.merchant.reports.v1beta.RelativeDemand.RelativeDemandEnum previous_relative_demand = 10;
      * </code>
      *
      * @return The enum numeric value on the wire for previousRelativeDemand.
@@ -2526,7 +2333,7 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * optional .google.shopping.merchant.reports.v1beta.RelativeDemand previous_relative_demand = 10;
+     * optional .google.shopping.merchant.reports.v1beta.RelativeDemand.RelativeDemandEnum previous_relative_demand = 10;
      * </code>
      *
      * @param value The enum numeric value on the wire for previousRelativeDemand to set.
@@ -2534,7 +2341,7 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
      */
     public Builder setPreviousRelativeDemandValue(int value) {
       previousRelativeDemand_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2547,18 +2354,20 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * optional .google.shopping.merchant.reports.v1beta.RelativeDemand previous_relative_demand = 10;
+     * optional .google.shopping.merchant.reports.v1beta.RelativeDemand.RelativeDemandEnum previous_relative_demand = 10;
      * </code>
      *
      * @return The previousRelativeDemand.
      */
     @java.lang.Override
-    public com.google.shopping.merchant.reports.v1beta.RelativeDemand getPreviousRelativeDemand() {
-      com.google.shopping.merchant.reports.v1beta.RelativeDemand result =
-          com.google.shopping.merchant.reports.v1beta.RelativeDemand.forNumber(
+    public com.google.shopping.merchant.reports.v1beta.RelativeDemand.RelativeDemandEnum
+        getPreviousRelativeDemand() {
+      com.google.shopping.merchant.reports.v1beta.RelativeDemand.RelativeDemandEnum result =
+          com.google.shopping.merchant.reports.v1beta.RelativeDemand.RelativeDemandEnum.forNumber(
               previousRelativeDemand_);
       return result == null
-          ? com.google.shopping.merchant.reports.v1beta.RelativeDemand.UNRECOGNIZED
+          ? com.google.shopping.merchant.reports.v1beta.RelativeDemand.RelativeDemandEnum
+              .UNRECOGNIZED
           : result;
     }
     /**
@@ -2570,18 +2379,18 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * optional .google.shopping.merchant.reports.v1beta.RelativeDemand previous_relative_demand = 10;
+     * optional .google.shopping.merchant.reports.v1beta.RelativeDemand.RelativeDemandEnum previous_relative_demand = 10;
      * </code>
      *
      * @param value The previousRelativeDemand to set.
      * @return This builder for chaining.
      */
     public Builder setPreviousRelativeDemand(
-        com.google.shopping.merchant.reports.v1beta.RelativeDemand value) {
+        com.google.shopping.merchant.reports.v1beta.RelativeDemand.RelativeDemandEnum value) {
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000100;
       previousRelativeDemand_ = value.getNumber();
       onChanged();
       return this;
@@ -2595,13 +2404,13 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * optional .google.shopping.merchant.reports.v1beta.RelativeDemand previous_relative_demand = 10;
+     * optional .google.shopping.merchant.reports.v1beta.RelativeDemand.RelativeDemandEnum previous_relative_demand = 10;
      * </code>
      *
      * @return This builder for chaining.
      */
     public Builder clearPreviousRelativeDemand() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000100);
       previousRelativeDemand_ = 0;
       onChanged();
       return this;
@@ -2616,14 +2425,14 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * optional .google.shopping.merchant.reports.v1beta.RelativeDemandChangeType relative_demand_change = 11;
+     * optional .google.shopping.merchant.reports.v1beta.RelativeDemandChangeType.RelativeDemandChangeTypeEnum relative_demand_change = 11;
      * </code>
      *
      * @return Whether the relativeDemandChange field is set.
      */
     @java.lang.Override
     public boolean hasRelativeDemandChange() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -2633,7 +2442,7 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * optional .google.shopping.merchant.reports.v1beta.RelativeDemandChangeType relative_demand_change = 11;
+     * optional .google.shopping.merchant.reports.v1beta.RelativeDemandChangeType.RelativeDemandChangeTypeEnum relative_demand_change = 11;
      * </code>
      *
      * @return The enum numeric value on the wire for relativeDemandChange.
@@ -2650,7 +2459,7 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * optional .google.shopping.merchant.reports.v1beta.RelativeDemandChangeType relative_demand_change = 11;
+     * optional .google.shopping.merchant.reports.v1beta.RelativeDemandChangeType.RelativeDemandChangeTypeEnum relative_demand_change = 11;
      * </code>
      *
      * @param value The enum numeric value on the wire for relativeDemandChange to set.
@@ -2658,7 +2467,7 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
      */
     public Builder setRelativeDemandChangeValue(int value) {
       relativeDemandChange_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2670,19 +2479,23 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * optional .google.shopping.merchant.reports.v1beta.RelativeDemandChangeType relative_demand_change = 11;
+     * optional .google.shopping.merchant.reports.v1beta.RelativeDemandChangeType.RelativeDemandChangeTypeEnum relative_demand_change = 11;
      * </code>
      *
      * @return The relativeDemandChange.
      */
     @java.lang.Override
     public com.google.shopping.merchant.reports.v1beta.RelativeDemandChangeType
+            .RelativeDemandChangeTypeEnum
         getRelativeDemandChange() {
-      com.google.shopping.merchant.reports.v1beta.RelativeDemandChangeType result =
-          com.google.shopping.merchant.reports.v1beta.RelativeDemandChangeType.forNumber(
-              relativeDemandChange_);
+      com.google.shopping.merchant.reports.v1beta.RelativeDemandChangeType
+              .RelativeDemandChangeTypeEnum
+          result =
+              com.google.shopping.merchant.reports.v1beta.RelativeDemandChangeType
+                  .RelativeDemandChangeTypeEnum.forNumber(relativeDemandChange_);
       return result == null
-          ? com.google.shopping.merchant.reports.v1beta.RelativeDemandChangeType.UNRECOGNIZED
+          ? com.google.shopping.merchant.reports.v1beta.RelativeDemandChangeType
+              .RelativeDemandChangeTypeEnum.UNRECOGNIZED
           : result;
     }
     /**
@@ -2693,18 +2506,20 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * optional .google.shopping.merchant.reports.v1beta.RelativeDemandChangeType relative_demand_change = 11;
+     * optional .google.shopping.merchant.reports.v1beta.RelativeDemandChangeType.RelativeDemandChangeTypeEnum relative_demand_change = 11;
      * </code>
      *
      * @param value The relativeDemandChange to set.
      * @return This builder for chaining.
      */
     public Builder setRelativeDemandChange(
-        com.google.shopping.merchant.reports.v1beta.RelativeDemandChangeType value) {
+        com.google.shopping.merchant.reports.v1beta.RelativeDemandChangeType
+                .RelativeDemandChangeTypeEnum
+            value) {
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000200;
       relativeDemandChange_ = value.getNumber();
       onChanged();
       return this;
@@ -2717,13 +2532,13 @@ public final class BestSellersBrandView extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * optional .google.shopping.merchant.reports.v1beta.RelativeDemandChangeType relative_demand_change = 11;
+     * optional .google.shopping.merchant.reports.v1beta.RelativeDemandChangeType.RelativeDemandChangeTypeEnum relative_demand_change = 11;
      * </code>
      *
      * @return This builder for chaining.
      */
     public Builder clearRelativeDemandChange() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000200);
       relativeDemandChange_ = 0;
       onChanged();
       return this;

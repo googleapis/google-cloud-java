@@ -575,4 +575,48 @@ public interface InstanceGroupConfigOrBuilder
    */
   com.google.cloud.dataproc.v1.InstanceFlexibilityPolicyOrBuilder
       getInstanceFlexibilityPolicyOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration to handle the startup of instances during cluster
+   * create and update process.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.StartupConfig startup_config = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the startupConfig field is set.
+   */
+  boolean hasStartupConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration to handle the startup of instances during cluster
+   * create and update process.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.StartupConfig startup_config = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The startupConfig.
+   */
+  com.google.cloud.dataproc.v1.StartupConfig getStartupConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration to handle the startup of instances during cluster
+   * create and update process.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.StartupConfig startup_config = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dataproc.v1.StartupConfigOrBuilder getStartupConfigOrBuilder();
 }

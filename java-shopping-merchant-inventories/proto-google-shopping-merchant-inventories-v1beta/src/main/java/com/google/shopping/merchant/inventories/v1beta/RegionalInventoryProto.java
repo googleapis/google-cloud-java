@@ -110,11 +110,11 @@ public final class RegionalInventoryProto {
           + "ame=accounts/*/products/*/regionalInvent"
           + "ories/*}\032G\312A\032merchantapi.googleapis.com\322"
           + "A\'https://www.googleapis.com/auth/conten"
-          + "tB\243\001\n/com.google.shopping.merchant.inven"
+          + "tB\244\001\n/com.google.shopping.merchant.inven"
           + "tories.v1betaB\026RegionalInventoryProtoP\001Z"
-          + "Vgoogle.golang.org/genproto/googleapis/s"
-          + "hopping/merchant/inventories/v1beta;inve"
-          + "ntoriesb\006proto3"
+          + "Wcloud.google.com/go/shopping/merchant/i"
+          + "nventories/apiv1beta/inventoriespb;inven"
+          + "toriespbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

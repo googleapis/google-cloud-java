@@ -71,8 +71,7 @@ public final class TerminateJobRunRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Required. Name of the `JobRun`. Format must be
-   * projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/
-   * releases/{release}/rollouts/{rollout}/jobRuns/{jobRun}.
+   * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/{rollout}/jobRuns/{jobRun}`.
    * </pre>
    *
    * <code>
@@ -98,8 +97,7 @@ public final class TerminateJobRunRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Required. Name of the `JobRun`. Format must be
-   * projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/
-   * releases/{release}/rollouts/{rollout}/jobRuns/{jobRun}.
+   * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/{rollout}/jobRuns/{jobRun}`.
    * </pre>
    *
    * <code>
@@ -469,8 +467,7 @@ public final class TerminateJobRunRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. Name of the `JobRun`. Format must be
-     * projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/
-     * releases/{release}/rollouts/{rollout}/jobRuns/{jobRun}.
+     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/{rollout}/jobRuns/{jobRun}`.
      * </pre>
      *
      * <code>
@@ -495,8 +492,7 @@ public final class TerminateJobRunRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. Name of the `JobRun`. Format must be
-     * projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/
-     * releases/{release}/rollouts/{rollout}/jobRuns/{jobRun}.
+     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/{rollout}/jobRuns/{jobRun}`.
      * </pre>
      *
      * <code>
@@ -521,8 +517,7 @@ public final class TerminateJobRunRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. Name of the `JobRun`. Format must be
-     * projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/
-     * releases/{release}/rollouts/{rollout}/jobRuns/{jobRun}.
+     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/{rollout}/jobRuns/{jobRun}`.
      * </pre>
      *
      * <code>
@@ -546,8 +541,7 @@ public final class TerminateJobRunRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. Name of the `JobRun`. Format must be
-     * projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/
-     * releases/{release}/rollouts/{rollout}/jobRuns/{jobRun}.
+     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/{rollout}/jobRuns/{jobRun}`.
      * </pre>
      *
      * <code>
@@ -567,8 +561,7 @@ public final class TerminateJobRunRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. Name of the `JobRun`. Format must be
-     * projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/
-     * releases/{release}/rollouts/{rollout}/jobRuns/{jobRun}.
+     * `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/{rollout}/jobRuns/{jobRun}`.
      * </pre>
      *
      * <code>

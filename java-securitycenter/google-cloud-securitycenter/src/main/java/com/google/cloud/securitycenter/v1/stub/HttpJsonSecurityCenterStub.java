@@ -99,6 +99,8 @@ import com.google.cloud.securitycenter.v1.SecurityHealthAnalyticsCustomModule;
 import com.google.cloud.securitycenter.v1.SecurityMarks;
 import com.google.cloud.securitycenter.v1.SetFindingStateRequest;
 import com.google.cloud.securitycenter.v1.SetMuteRequest;
+import com.google.cloud.securitycenter.v1.SimulateSecurityHealthAnalyticsCustomModuleRequest;
+import com.google.cloud.securitycenter.v1.SimulateSecurityHealthAnalyticsCustomModuleResponse;
 import com.google.cloud.securitycenter.v1.Source;
 import com.google.cloud.securitycenter.v1.UpdateBigQueryExportRequest;
 import com.google.cloud.securitycenter.v1.UpdateExternalSystemRequest;
@@ -1446,6 +1448,55 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<
+          SimulateSecurityHealthAnalyticsCustomModuleRequest,
+          SimulateSecurityHealthAnalyticsCustomModuleResponse>
+      simulateSecurityHealthAnalyticsCustomModuleMethodDescriptor =
+          ApiMethodDescriptor
+              .<SimulateSecurityHealthAnalyticsCustomModuleRequest,
+                  SimulateSecurityHealthAnalyticsCustomModuleResponse>
+                  newBuilder()
+              .setFullMethodName(
+                  "google.cloud.securitycenter.v1.SecurityCenter/SimulateSecurityHealthAnalyticsCustomModule")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<SimulateSecurityHealthAnalyticsCustomModuleRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=organizations/*/securityHealthAnalyticsSettings}/customModules:simulate",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SimulateSecurityHealthAnalyticsCustomModuleRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1/{parent=folders/*/securityHealthAnalyticsSettings}/customModules:simulate",
+                          "/v1/{parent=projects/*/securityHealthAnalyticsSettings}/customModules:simulate")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SimulateSecurityHealthAnalyticsCustomModuleRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser
+                      .<SimulateSecurityHealthAnalyticsCustomModuleResponse>newBuilder()
+                      .setDefaultInstance(
+                          SimulateSecurityHealthAnalyticsCustomModuleResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<UpdateExternalSystemRequest, ExternalSystem>
       updateExternalSystemMethodDescriptor =
           ApiMethodDescriptor.<UpdateExternalSystemRequest, ExternalSystem>newBuilder()
@@ -2056,6 +2107,10 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
   private final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable;
   private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable;
+  private final UnaryCallable<
+          SimulateSecurityHealthAnalyticsCustomModuleRequest,
+          SimulateSecurityHealthAnalyticsCustomModuleResponse>
+      simulateSecurityHealthAnalyticsCustomModuleCallable;
   private final UnaryCallable<UpdateExternalSystemRequest, ExternalSystem>
       updateExternalSystemCallable;
   private final UnaryCallable<UpdateFindingRequest, Finding> updateFindingCallable;
@@ -2547,6 +2602,23 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<
+            SimulateSecurityHealthAnalyticsCustomModuleRequest,
+            SimulateSecurityHealthAnalyticsCustomModuleResponse>
+        simulateSecurityHealthAnalyticsCustomModuleTransportSettings =
+            HttpJsonCallSettings
+                .<SimulateSecurityHealthAnalyticsCustomModuleRequest,
+                    SimulateSecurityHealthAnalyticsCustomModuleResponse>
+                    newBuilder()
+                .setMethodDescriptor(simulateSecurityHealthAnalyticsCustomModuleMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<UpdateExternalSystemRequest, ExternalSystem>
         updateExternalSystemTransportSettings =
             HttpJsonCallSettings.<UpdateExternalSystemRequest, ExternalSystem>newBuilder()
@@ -2884,6 +2956,11 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
             testIamPermissionsTransportSettings,
             settings.testIamPermissionsSettings(),
             clientContext);
+    this.simulateSecurityHealthAnalyticsCustomModuleCallable =
+        callableFactory.createUnaryCallable(
+            simulateSecurityHealthAnalyticsCustomModuleTransportSettings,
+            settings.simulateSecurityHealthAnalyticsCustomModuleSettings(),
+            clientContext);
     this.updateExternalSystemCallable =
         callableFactory.createUnaryCallable(
             updateExternalSystemTransportSettings,
@@ -2983,6 +3060,7 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
     methodDescriptors.add(setMuteMethodDescriptor);
     methodDescriptors.add(setIamPolicyMethodDescriptor);
     methodDescriptors.add(testIamPermissionsMethodDescriptor);
+    methodDescriptors.add(simulateSecurityHealthAnalyticsCustomModuleMethodDescriptor);
     methodDescriptors.add(updateExternalSystemMethodDescriptor);
     methodDescriptors.add(updateFindingMethodDescriptor);
     methodDescriptors.add(updateMuteConfigMethodDescriptor);
@@ -3256,6 +3334,14 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
   public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable() {
     return testIamPermissionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          SimulateSecurityHealthAnalyticsCustomModuleRequest,
+          SimulateSecurityHealthAnalyticsCustomModuleResponse>
+      simulateSecurityHealthAnalyticsCustomModuleCallable() {
+    return simulateSecurityHealthAnalyticsCustomModuleCallable;
   }
 
   @Override

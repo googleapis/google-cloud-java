@@ -58,8 +58,7 @@ public interface PropertyOrBuilder
    * <pre>
    * Immutable. The property type for this Property resource. When creating a
    * property, if the type is "PROPERTY_TYPE_UNSPECIFIED", then
-   * "ORDINARY_PROPERTY" will be implied. "SUBPROPERTY" and "ROLLUP_PROPERTY"
-   * types cannot yet be created with the Google Analytics Admin API.
+   * "ORDINARY_PROPERTY" will be implied.
    * </pre>
    *
    * <code>
@@ -75,8 +74,7 @@ public interface PropertyOrBuilder
    * <pre>
    * Immutable. The property type for this Property resource. When creating a
    * property, if the type is "PROPERTY_TYPE_UNSPECIFIED", then
-   * "ORDINARY_PROPERTY" will be implied. "SUBPROPERTY" and "ROLLUP_PROPERTY"
-   * types cannot yet be created with the Google Analytics Admin API.
+   * "ORDINARY_PROPERTY" will be implied.
    * </pre>
    *
    * <code>

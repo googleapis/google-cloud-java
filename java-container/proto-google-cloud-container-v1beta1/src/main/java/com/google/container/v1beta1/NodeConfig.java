@@ -2354,6 +2354,57 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
         : hostMaintenancePolicy_;
   }
 
+  public static final int RESOURCE_MANAGER_TAGS_FIELD_NUMBER = 45;
+  private com.google.container.v1beta1.ResourceManagerTags resourceManagerTags_;
+  /**
+   *
+   *
+   * <pre>
+   * A map of resource manager tag keys and values to be attached to the nodes.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.ResourceManagerTags resource_manager_tags = 45;</code>
+   *
+   * @return Whether the resourceManagerTags field is set.
+   */
+  @java.lang.Override
+  public boolean hasResourceManagerTags() {
+    return resourceManagerTags_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A map of resource manager tag keys and values to be attached to the nodes.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.ResourceManagerTags resource_manager_tags = 45;</code>
+   *
+   * @return The resourceManagerTags.
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.ResourceManagerTags getResourceManagerTags() {
+    return resourceManagerTags_ == null
+        ? com.google.container.v1beta1.ResourceManagerTags.getDefaultInstance()
+        : resourceManagerTags_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A map of resource manager tag keys and values to be attached to the nodes.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.ResourceManagerTags resource_manager_tags = 45;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.ResourceManagerTagsOrBuilder
+      getResourceManagerTagsOrBuilder() {
+    return resourceManagerTags_ == null
+        ? com.google.container.v1beta1.ResourceManagerTags.getDefaultInstance()
+        : resourceManagerTags_;
+  }
+
   public static final int ENABLE_CONFIDENTIAL_STORAGE_FIELD_NUMBER = 46;
   private boolean enableConfidentialStorage_ = false;
   /**
@@ -2492,6 +2543,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     }
     if (hostMaintenancePolicy_ != null) {
       output.writeMessage(44, getHostMaintenancePolicy());
+    }
+    if (resourceManagerTags_ != null) {
+      output.writeMessage(45, getResourceManagerTags());
     }
     if (enableConfidentialStorage_ != false) {
       output.writeBool(46, enableConfidentialStorage_);
@@ -2655,6 +2709,10 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(44, getHostMaintenancePolicy());
     }
+    if (resourceManagerTags_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(45, getResourceManagerTags());
+    }
     if (enableConfidentialStorage_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(46, enableConfidentialStorage_);
     }
@@ -2764,6 +2822,10 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     if (hasHostMaintenancePolicy() != other.hasHostMaintenancePolicy()) return false;
     if (hasHostMaintenancePolicy()) {
       if (!getHostMaintenancePolicy().equals(other.getHostMaintenancePolicy())) return false;
+    }
+    if (hasResourceManagerTags() != other.hasResourceManagerTags()) return false;
+    if (hasResourceManagerTags()) {
+      if (!getResourceManagerTags().equals(other.getResourceManagerTags())) return false;
     }
     if (getEnableConfidentialStorage() != other.getEnableConfidentialStorage()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
@@ -2898,6 +2960,10 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     if (hasHostMaintenancePolicy()) {
       hash = (37 * hash) + HOST_MAINTENANCE_POLICY_FIELD_NUMBER;
       hash = (53 * hash) + getHostMaintenancePolicy().hashCode();
+    }
+    if (hasResourceManagerTags()) {
+      hash = (37 * hash) + RESOURCE_MANAGER_TAGS_FIELD_NUMBER;
+      hash = (53 * hash) + getResourceManagerTags().hashCode();
     }
     hash = (37 * hash) + ENABLE_CONFIDENTIAL_STORAGE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableConfidentialStorage());
@@ -3094,6 +3160,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
         getEphemeralStorageLocalSsdConfigFieldBuilder();
         getSoleTenantConfigFieldBuilder();
         getHostMaintenancePolicyFieldBuilder();
+        getResourceManagerTagsFieldBuilder();
       }
     }
 
@@ -3221,6 +3288,11 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       if (hostMaintenancePolicyBuilder_ != null) {
         hostMaintenancePolicyBuilder_.dispose();
         hostMaintenancePolicyBuilder_ = null;
+      }
+      resourceManagerTags_ = null;
+      if (resourceManagerTagsBuilder_ != null) {
+        resourceManagerTagsBuilder_.dispose();
+        resourceManagerTagsBuilder_ = null;
       }
       enableConfidentialStorage_ = false;
       return this;
@@ -3434,6 +3506,12 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
                 : hostMaintenancePolicyBuilder_.build();
       }
       if (((from_bitField1_ & 0x00000010) != 0)) {
+        result.resourceManagerTags_ =
+            resourceManagerTagsBuilder_ == null
+                ? resourceManagerTags_
+                : resourceManagerTagsBuilder_.build();
+      }
+      if (((from_bitField1_ & 0x00000020) != 0)) {
         result.enableConfidentialStorage_ = enableConfidentialStorage_;
       }
     }
@@ -3663,6 +3741,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasHostMaintenancePolicy()) {
         mergeHostMaintenancePolicy(other.getHostMaintenancePolicy());
+      }
+      if (other.hasResourceManagerTags()) {
+        mergeResourceManagerTags(other.getResourceManagerTags());
       }
       if (other.getEnableConfidentialStorage() != false) {
         setEnableConfidentialStorage(other.getEnableConfidentialStorage());
@@ -3955,10 +4036,17 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
                 bitField1_ |= 0x00000008;
                 break;
               } // case 354
+            case 362:
+              {
+                input.readMessage(
+                    getResourceManagerTagsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField1_ |= 0x00000010;
+                break;
+              } // case 362
             case 368:
               {
                 enableConfidentialStorage_ = input.readBool();
-                bitField1_ |= 0x00000010;
+                bitField1_ |= 0x00000020;
                 break;
               } // case 368
             default:
@@ -10629,6 +10717,194 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       return hostMaintenancePolicyBuilder_;
     }
 
+    private com.google.container.v1beta1.ResourceManagerTags resourceManagerTags_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.ResourceManagerTags,
+            com.google.container.v1beta1.ResourceManagerTags.Builder,
+            com.google.container.v1beta1.ResourceManagerTagsOrBuilder>
+        resourceManagerTagsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * A map of resource manager tag keys and values to be attached to the nodes.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.ResourceManagerTags resource_manager_tags = 45;</code>
+     *
+     * @return Whether the resourceManagerTags field is set.
+     */
+    public boolean hasResourceManagerTags() {
+      return ((bitField1_ & 0x00000010) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A map of resource manager tag keys and values to be attached to the nodes.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.ResourceManagerTags resource_manager_tags = 45;</code>
+     *
+     * @return The resourceManagerTags.
+     */
+    public com.google.container.v1beta1.ResourceManagerTags getResourceManagerTags() {
+      if (resourceManagerTagsBuilder_ == null) {
+        return resourceManagerTags_ == null
+            ? com.google.container.v1beta1.ResourceManagerTags.getDefaultInstance()
+            : resourceManagerTags_;
+      } else {
+        return resourceManagerTagsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A map of resource manager tag keys and values to be attached to the nodes.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.ResourceManagerTags resource_manager_tags = 45;</code>
+     */
+    public Builder setResourceManagerTags(com.google.container.v1beta1.ResourceManagerTags value) {
+      if (resourceManagerTagsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        resourceManagerTags_ = value;
+      } else {
+        resourceManagerTagsBuilder_.setMessage(value);
+      }
+      bitField1_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A map of resource manager tag keys and values to be attached to the nodes.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.ResourceManagerTags resource_manager_tags = 45;</code>
+     */
+    public Builder setResourceManagerTags(
+        com.google.container.v1beta1.ResourceManagerTags.Builder builderForValue) {
+      if (resourceManagerTagsBuilder_ == null) {
+        resourceManagerTags_ = builderForValue.build();
+      } else {
+        resourceManagerTagsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField1_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A map of resource manager tag keys and values to be attached to the nodes.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.ResourceManagerTags resource_manager_tags = 45;</code>
+     */
+    public Builder mergeResourceManagerTags(
+        com.google.container.v1beta1.ResourceManagerTags value) {
+      if (resourceManagerTagsBuilder_ == null) {
+        if (((bitField1_ & 0x00000010) != 0)
+            && resourceManagerTags_ != null
+            && resourceManagerTags_
+                != com.google.container.v1beta1.ResourceManagerTags.getDefaultInstance()) {
+          getResourceManagerTagsBuilder().mergeFrom(value);
+        } else {
+          resourceManagerTags_ = value;
+        }
+      } else {
+        resourceManagerTagsBuilder_.mergeFrom(value);
+      }
+      bitField1_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A map of resource manager tag keys and values to be attached to the nodes.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.ResourceManagerTags resource_manager_tags = 45;</code>
+     */
+    public Builder clearResourceManagerTags() {
+      bitField1_ = (bitField1_ & ~0x00000010);
+      resourceManagerTags_ = null;
+      if (resourceManagerTagsBuilder_ != null) {
+        resourceManagerTagsBuilder_.dispose();
+        resourceManagerTagsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A map of resource manager tag keys and values to be attached to the nodes.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.ResourceManagerTags resource_manager_tags = 45;</code>
+     */
+    public com.google.container.v1beta1.ResourceManagerTags.Builder
+        getResourceManagerTagsBuilder() {
+      bitField1_ |= 0x00000010;
+      onChanged();
+      return getResourceManagerTagsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A map of resource manager tag keys and values to be attached to the nodes.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.ResourceManagerTags resource_manager_tags = 45;</code>
+     */
+    public com.google.container.v1beta1.ResourceManagerTagsOrBuilder
+        getResourceManagerTagsOrBuilder() {
+      if (resourceManagerTagsBuilder_ != null) {
+        return resourceManagerTagsBuilder_.getMessageOrBuilder();
+      } else {
+        return resourceManagerTags_ == null
+            ? com.google.container.v1beta1.ResourceManagerTags.getDefaultInstance()
+            : resourceManagerTags_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A map of resource manager tag keys and values to be attached to the nodes.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.ResourceManagerTags resource_manager_tags = 45;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.ResourceManagerTags,
+            com.google.container.v1beta1.ResourceManagerTags.Builder,
+            com.google.container.v1beta1.ResourceManagerTagsOrBuilder>
+        getResourceManagerTagsFieldBuilder() {
+      if (resourceManagerTagsBuilder_ == null) {
+        resourceManagerTagsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1beta1.ResourceManagerTags,
+                com.google.container.v1beta1.ResourceManagerTags.Builder,
+                com.google.container.v1beta1.ResourceManagerTagsOrBuilder>(
+                getResourceManagerTags(), getParentForChildren(), isClean());
+        resourceManagerTags_ = null;
+      }
+      return resourceManagerTagsBuilder_;
+    }
+
     private boolean enableConfidentialStorage_;
     /**
      *
@@ -10664,7 +10940,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder setEnableConfidentialStorage(boolean value) {
 
       enableConfidentialStorage_ = value;
-      bitField1_ |= 0x00000010;
+      bitField1_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -10682,7 +10958,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEnableConfidentialStorage() {
-      bitField1_ = (bitField1_ & ~0x00000010);
+      bitField1_ = (bitField1_ & ~0x00000020);
       enableConfidentialStorage_ = false;
       onChanged();
       return this;

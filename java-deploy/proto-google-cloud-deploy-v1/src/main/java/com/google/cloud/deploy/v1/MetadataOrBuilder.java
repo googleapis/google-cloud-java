@@ -66,4 +66,48 @@ public interface MetadataOrBuilder
    * </code>
    */
   com.google.cloud.deploy.v1.CloudRunMetadataOrBuilder getCloudRunOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. AutomationRolloutMetadata contains the information about the
+   * interactions between Automation service and this rollout.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.AutomationRolloutMetadata automation = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the automation field is set.
+   */
+  boolean hasAutomation();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. AutomationRolloutMetadata contains the information about the
+   * interactions between Automation service and this rollout.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.AutomationRolloutMetadata automation = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The automation.
+   */
+  com.google.cloud.deploy.v1.AutomationRolloutMetadata getAutomation();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. AutomationRolloutMetadata contains the information about the
+   * interactions between Automation service and this rollout.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.AutomationRolloutMetadata automation = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.deploy.v1.AutomationRolloutMetadataOrBuilder getAutomationOrBuilder();
 }

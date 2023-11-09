@@ -704,7 +704,7 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
    * <code>double total_cost = 11 [deprecated = true];</code>
    *
    * @deprecated google.cloud.optimization.v1.AggregatedMetrics.total_cost is deprecated. See
-   *     google/cloud/optimization/v1/fleet_routing.proto;l=2351
+   *     google/cloud/optimization/v1/fleet_routing.proto;l=2381
    * @return The totalCost.
    */
   @java.lang.Override
@@ -3087,7 +3087,7 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
      * <code>double total_cost = 11 [deprecated = true];</code>
      *
      * @deprecated google.cloud.optimization.v1.AggregatedMetrics.total_cost is deprecated. See
-     *     google/cloud/optimization/v1/fleet_routing.proto;l=2351
+     *     google/cloud/optimization/v1/fleet_routing.proto;l=2381
      * @return The totalCost.
      */
     @java.lang.Override
@@ -3109,7 +3109,7 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
      * <code>double total_cost = 11 [deprecated = true];</code>
      *
      * @deprecated google.cloud.optimization.v1.AggregatedMetrics.total_cost is deprecated. See
-     *     google/cloud/optimization/v1/fleet_routing.proto;l=2351
+     *     google/cloud/optimization/v1/fleet_routing.proto;l=2381
      * @param value The totalCost to set.
      * @return This builder for chaining.
      */
@@ -3135,7 +3135,7 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
      * <code>double total_cost = 11 [deprecated = true];</code>
      *
      * @deprecated google.cloud.optimization.v1.AggregatedMetrics.total_cost is deprecated. See
-     *     google/cloud/optimization/v1/fleet_routing.proto;l=2351
+     *     google/cloud/optimization/v1/fleet_routing.proto;l=2381
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

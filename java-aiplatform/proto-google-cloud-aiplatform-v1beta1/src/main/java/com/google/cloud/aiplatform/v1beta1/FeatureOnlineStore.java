@@ -1827,6 +1827,1762 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
     }
   }
 
+  public interface OptimizedOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized)
+      com.google.protobuf.MessageOrBuilder {}
+  /**
+   *
+   *
+   * <pre>
+   * Optimized storage type to replace lightning
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized}
+   */
+  public static final class Optimized extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized)
+      OptimizedOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use Optimized.newBuilder() to construct.
+    private Optimized(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private Optimized() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Optimized();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.aiplatform.v1beta1.FeatureOnlineStoreProto
+          .internal_static_google_cloud_aiplatform_v1beta1_FeatureOnlineStore_Optimized_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.aiplatform.v1beta1.FeatureOnlineStoreProto
+          .internal_static_google_cloud_aiplatform_v1beta1_FeatureOnlineStore_Optimized_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized.class,
+              com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized.Builder.class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized other =
+          (com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized) obj;
+
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optimized storage type to replace lightning
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized)
+        com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.OptimizedOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1beta1.FeatureOnlineStoreProto
+            .internal_static_google_cloud_aiplatform_v1beta1_FeatureOnlineStore_Optimized_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1beta1.FeatureOnlineStoreProto
+            .internal_static_google_cloud_aiplatform_v1beta1_FeatureOnlineStore_Optimized_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized.class,
+                com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.aiplatform.v1beta1.FeatureOnlineStoreProto
+            .internal_static_google_cloud_aiplatform_v1beta1_FeatureOnlineStore_Optimized_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized
+          getDefaultInstanceForType() {
+        return com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized build() {
+        com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized buildPartial() {
+        com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized result =
+            new com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized(this);
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized) {
+          return mergeFrom(
+              (com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized other) {
+        if (other
+            == com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized
+                .getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized)
+    private static final com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized();
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Optimized> PARSER =
+        new com.google.protobuf.AbstractParser<Optimized>() {
+          @java.lang.Override
+          public Optimized parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<Optimized> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Optimized> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface DedicatedServingEndpointOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. This field will be populated with the domain name to use for
+     * this FeatureOnlineStore
+     * </pre>
+     *
+     * <code>string public_endpoint_domain_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The publicEndpointDomainName.
+     */
+    java.lang.String getPublicEndpointDomainName();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. This field will be populated with the domain name to use for
+     * this FeatureOnlineStore
+     * </pre>
+     *
+     * <code>string public_endpoint_domain_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The bytes for publicEndpointDomainName.
+     */
+    com.google.protobuf.ByteString getPublicEndpointDomainNameBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Private service connect config.
+     * If
+     * [PrivateServiceConnectConfig.enable_private_service_connect][google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig.enable_private_service_connect]
+     * set to true, customers will use private service connection to send
+     * request. Otherwise, the connection will set to public endpoint.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig private_service_connect_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the privateServiceConnectConfig field is set.
+     */
+    boolean hasPrivateServiceConnectConfig();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Private service connect config.
+     * If
+     * [PrivateServiceConnectConfig.enable_private_service_connect][google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig.enable_private_service_connect]
+     * set to true, customers will use private service connection to send
+     * request. Otherwise, the connection will set to public endpoint.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig private_service_connect_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The privateServiceConnectConfig.
+     */
+    com.google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig
+        getPrivateServiceConnectConfig();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Private service connect config.
+     * If
+     * [PrivateServiceConnectConfig.enable_private_service_connect][google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig.enable_private_service_connect]
+     * set to true, customers will use private service connection to send
+     * request. Otherwise, the connection will set to public endpoint.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig private_service_connect_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfigOrBuilder
+        getPrivateServiceConnectConfigOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The name of the service attachment resource. Populated if
+     * private service connect is enabled and after FeatureViewSync is created.
+     * </pre>
+     *
+     * <code>string service_attachment = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The serviceAttachment.
+     */
+    java.lang.String getServiceAttachment();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The name of the service attachment resource. Populated if
+     * private service connect is enabled and after FeatureViewSync is created.
+     * </pre>
+     *
+     * <code>string service_attachment = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for serviceAttachment.
+     */
+    com.google.protobuf.ByteString getServiceAttachmentBytes();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The dedicated serving endpoint for this FeatureOnlineStore. Only need to
+   * set when you choose Optimized storage type or enable EmbeddingManagement.
+   * Will use public endpoint by default.
+   * </pre>
+   *
+   * Protobuf type {@code
+   * google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint}
+   */
+  public static final class DedicatedServingEndpoint extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint)
+      DedicatedServingEndpointOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use DedicatedServingEndpoint.newBuilder() to construct.
+    private DedicatedServingEndpoint(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private DedicatedServingEndpoint() {
+      publicEndpointDomainName_ = "";
+      serviceAttachment_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new DedicatedServingEndpoint();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.aiplatform.v1beta1.FeatureOnlineStoreProto
+          .internal_static_google_cloud_aiplatform_v1beta1_FeatureOnlineStore_DedicatedServingEndpoint_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.aiplatform.v1beta1.FeatureOnlineStoreProto
+          .internal_static_google_cloud_aiplatform_v1beta1_FeatureOnlineStore_DedicatedServingEndpoint_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint.class,
+              com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint
+                  .Builder.class);
+    }
+
+    public static final int PUBLIC_ENDPOINT_DOMAIN_NAME_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object publicEndpointDomainName_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. This field will be populated with the domain name to use for
+     * this FeatureOnlineStore
+     * </pre>
+     *
+     * <code>string public_endpoint_domain_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The publicEndpointDomainName.
+     */
+    @java.lang.Override
+    public java.lang.String getPublicEndpointDomainName() {
+      java.lang.Object ref = publicEndpointDomainName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        publicEndpointDomainName_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. This field will be populated with the domain name to use for
+     * this FeatureOnlineStore
+     * </pre>
+     *
+     * <code>string public_endpoint_domain_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The bytes for publicEndpointDomainName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getPublicEndpointDomainNameBytes() {
+      java.lang.Object ref = publicEndpointDomainName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        publicEndpointDomainName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PRIVATE_SERVICE_CONNECT_CONFIG_FIELD_NUMBER = 3;
+    private com.google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig
+        privateServiceConnectConfig_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Private service connect config.
+     * If
+     * [PrivateServiceConnectConfig.enable_private_service_connect][google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig.enable_private_service_connect]
+     * set to true, customers will use private service connection to send
+     * request. Otherwise, the connection will set to public endpoint.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig private_service_connect_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the privateServiceConnectConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasPrivateServiceConnectConfig() {
+      return privateServiceConnectConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Private service connect config.
+     * If
+     * [PrivateServiceConnectConfig.enable_private_service_connect][google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig.enable_private_service_connect]
+     * set to true, customers will use private service connection to send
+     * request. Otherwise, the connection will set to public endpoint.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig private_service_connect_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The privateServiceConnectConfig.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig
+        getPrivateServiceConnectConfig() {
+      return privateServiceConnectConfig_ == null
+          ? com.google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig.getDefaultInstance()
+          : privateServiceConnectConfig_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Private service connect config.
+     * If
+     * [PrivateServiceConnectConfig.enable_private_service_connect][google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig.enable_private_service_connect]
+     * set to true, customers will use private service connection to send
+     * request. Otherwise, the connection will set to public endpoint.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig private_service_connect_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfigOrBuilder
+        getPrivateServiceConnectConfigOrBuilder() {
+      return privateServiceConnectConfig_ == null
+          ? com.google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig.getDefaultInstance()
+          : privateServiceConnectConfig_;
+    }
+
+    public static final int SERVICE_ATTACHMENT_FIELD_NUMBER = 4;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object serviceAttachment_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The name of the service attachment resource. Populated if
+     * private service connect is enabled and after FeatureViewSync is created.
+     * </pre>
+     *
+     * <code>string service_attachment = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The serviceAttachment.
+     */
+    @java.lang.Override
+    public java.lang.String getServiceAttachment() {
+      java.lang.Object ref = serviceAttachment_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        serviceAttachment_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The name of the service attachment resource. Populated if
+     * private service connect is enabled and after FeatureViewSync is created.
+     * </pre>
+     *
+     * <code>string service_attachment = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for serviceAttachment.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getServiceAttachmentBytes() {
+      java.lang.Object ref = serviceAttachment_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        serviceAttachment_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(publicEndpointDomainName_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, publicEndpointDomainName_);
+      }
+      if (privateServiceConnectConfig_ != null) {
+        output.writeMessage(3, getPrivateServiceConnectConfig());
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceAttachment_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, serviceAttachment_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(publicEndpointDomainName_)) {
+        size +=
+            com.google.protobuf.GeneratedMessageV3.computeStringSize(2, publicEndpointDomainName_);
+      }
+      if (privateServiceConnectConfig_ != null) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                3, getPrivateServiceConnectConfig());
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceAttachment_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, serviceAttachment_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof
+          com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint other =
+          (com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint) obj;
+
+      if (!getPublicEndpointDomainName().equals(other.getPublicEndpointDomainName())) return false;
+      if (hasPrivateServiceConnectConfig() != other.hasPrivateServiceConnectConfig()) return false;
+      if (hasPrivateServiceConnectConfig()) {
+        if (!getPrivateServiceConnectConfig().equals(other.getPrivateServiceConnectConfig()))
+          return false;
+      }
+      if (!getServiceAttachment().equals(other.getServiceAttachment())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + PUBLIC_ENDPOINT_DOMAIN_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getPublicEndpointDomainName().hashCode();
+      if (hasPrivateServiceConnectConfig()) {
+        hash = (37 * hash) + PRIVATE_SERVICE_CONNECT_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getPrivateServiceConnectConfig().hashCode();
+      }
+      hash = (37 * hash) + SERVICE_ATTACHMENT_FIELD_NUMBER;
+      hash = (53 * hash) + getServiceAttachment().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The dedicated serving endpoint for this FeatureOnlineStore. Only need to
+     * set when you choose Optimized storage type or enable EmbeddingManagement.
+     * Will use public endpoint by default.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint)
+        com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpointOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1beta1.FeatureOnlineStoreProto
+            .internal_static_google_cloud_aiplatform_v1beta1_FeatureOnlineStore_DedicatedServingEndpoint_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1beta1.FeatureOnlineStoreProto
+            .internal_static_google_cloud_aiplatform_v1beta1_FeatureOnlineStore_DedicatedServingEndpoint_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint
+                    .class,
+                com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint
+                    .Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        publicEndpointDomainName_ = "";
+        privateServiceConnectConfig_ = null;
+        if (privateServiceConnectConfigBuilder_ != null) {
+          privateServiceConnectConfigBuilder_.dispose();
+          privateServiceConnectConfigBuilder_ = null;
+        }
+        serviceAttachment_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.aiplatform.v1beta1.FeatureOnlineStoreProto
+            .internal_static_google_cloud_aiplatform_v1beta1_FeatureOnlineStore_DedicatedServingEndpoint_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint
+          getDefaultInstanceForType() {
+        return com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint
+          build() {
+        com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint
+          buildPartial() {
+        com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint result =
+            new com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint(
+                this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.publicEndpointDomainName_ = publicEndpointDomainName_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.privateServiceConnectConfig_ =
+              privateServiceConnectConfigBuilder_ == null
+                  ? privateServiceConnectConfig_
+                  : privateServiceConnectConfigBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.serviceAttachment_ = serviceAttachment_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof
+            com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint) {
+          return mergeFrom(
+              (com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint)
+                  other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint other) {
+        if (other
+            == com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint
+                .getDefaultInstance()) return this;
+        if (!other.getPublicEndpointDomainName().isEmpty()) {
+          publicEndpointDomainName_ = other.publicEndpointDomainName_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (other.hasPrivateServiceConnectConfig()) {
+          mergePrivateServiceConnectConfig(other.getPrivateServiceConnectConfig());
+        }
+        if (!other.getServiceAttachment().isEmpty()) {
+          serviceAttachment_ = other.serviceAttachment_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 18:
+                {
+                  publicEndpointDomainName_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 18
+              case 26:
+                {
+                  input.readMessage(
+                      getPrivateServiceConnectConfigFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 26
+              case 34:
+                {
+                  serviceAttachment_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 34
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object publicEndpointDomainName_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Output only. This field will be populated with the domain name to use for
+       * this FeatureOnlineStore
+       * </pre>
+       *
+       * <code>string public_endpoint_domain_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The publicEndpointDomainName.
+       */
+      public java.lang.String getPublicEndpointDomainName() {
+        java.lang.Object ref = publicEndpointDomainName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          publicEndpointDomainName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. This field will be populated with the domain name to use for
+       * this FeatureOnlineStore
+       * </pre>
+       *
+       * <code>string public_endpoint_domain_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The bytes for publicEndpointDomainName.
+       */
+      public com.google.protobuf.ByteString getPublicEndpointDomainNameBytes() {
+        java.lang.Object ref = publicEndpointDomainName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          publicEndpointDomainName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. This field will be populated with the domain name to use for
+       * this FeatureOnlineStore
+       * </pre>
+       *
+       * <code>string public_endpoint_domain_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param value The publicEndpointDomainName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPublicEndpointDomainName(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        publicEndpointDomainName_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. This field will be populated with the domain name to use for
+       * this FeatureOnlineStore
+       * </pre>
+       *
+       * <code>string public_endpoint_domain_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearPublicEndpointDomainName() {
+        publicEndpointDomainName_ = getDefaultInstance().getPublicEndpointDomainName();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. This field will be populated with the domain name to use for
+       * this FeatureOnlineStore
+       * </pre>
+       *
+       * <code>string public_endpoint_domain_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param value The bytes for publicEndpointDomainName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPublicEndpointDomainNameBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        publicEndpointDomainName_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private com.google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig
+          privateServiceConnectConfig_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig,
+              com.google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig.Builder,
+              com.google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfigOrBuilder>
+          privateServiceConnectConfigBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Private service connect config.
+       * If
+       * [PrivateServiceConnectConfig.enable_private_service_connect][google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig.enable_private_service_connect]
+       * set to true, customers will use private service connection to send
+       * request. Otherwise, the connection will set to public endpoint.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig private_service_connect_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the privateServiceConnectConfig field is set.
+       */
+      public boolean hasPrivateServiceConnectConfig() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Private service connect config.
+       * If
+       * [PrivateServiceConnectConfig.enable_private_service_connect][google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig.enable_private_service_connect]
+       * set to true, customers will use private service connection to send
+       * request. Otherwise, the connection will set to public endpoint.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig private_service_connect_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The privateServiceConnectConfig.
+       */
+      public com.google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig
+          getPrivateServiceConnectConfig() {
+        if (privateServiceConnectConfigBuilder_ == null) {
+          return privateServiceConnectConfig_ == null
+              ? com.google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig.getDefaultInstance()
+              : privateServiceConnectConfig_;
+        } else {
+          return privateServiceConnectConfigBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Private service connect config.
+       * If
+       * [PrivateServiceConnectConfig.enable_private_service_connect][google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig.enable_private_service_connect]
+       * set to true, customers will use private service connection to send
+       * request. Otherwise, the connection will set to public endpoint.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig private_service_connect_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setPrivateServiceConnectConfig(
+          com.google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig value) {
+        if (privateServiceConnectConfigBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          privateServiceConnectConfig_ = value;
+        } else {
+          privateServiceConnectConfigBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Private service connect config.
+       * If
+       * [PrivateServiceConnectConfig.enable_private_service_connect][google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig.enable_private_service_connect]
+       * set to true, customers will use private service connection to send
+       * request. Otherwise, the connection will set to public endpoint.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig private_service_connect_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setPrivateServiceConnectConfig(
+          com.google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig.Builder builderForValue) {
+        if (privateServiceConnectConfigBuilder_ == null) {
+          privateServiceConnectConfig_ = builderForValue.build();
+        } else {
+          privateServiceConnectConfigBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Private service connect config.
+       * If
+       * [PrivateServiceConnectConfig.enable_private_service_connect][google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig.enable_private_service_connect]
+       * set to true, customers will use private service connection to send
+       * request. Otherwise, the connection will set to public endpoint.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig private_service_connect_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergePrivateServiceConnectConfig(
+          com.google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig value) {
+        if (privateServiceConnectConfigBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)
+              && privateServiceConnectConfig_ != null
+              && privateServiceConnectConfig_
+                  != com.google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig
+                      .getDefaultInstance()) {
+            getPrivateServiceConnectConfigBuilder().mergeFrom(value);
+          } else {
+            privateServiceConnectConfig_ = value;
+          }
+        } else {
+          privateServiceConnectConfigBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Private service connect config.
+       * If
+       * [PrivateServiceConnectConfig.enable_private_service_connect][google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig.enable_private_service_connect]
+       * set to true, customers will use private service connection to send
+       * request. Otherwise, the connection will set to public endpoint.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig private_service_connect_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearPrivateServiceConnectConfig() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        privateServiceConnectConfig_ = null;
+        if (privateServiceConnectConfigBuilder_ != null) {
+          privateServiceConnectConfigBuilder_.dispose();
+          privateServiceConnectConfigBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Private service connect config.
+       * If
+       * [PrivateServiceConnectConfig.enable_private_service_connect][google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig.enable_private_service_connect]
+       * set to true, customers will use private service connection to send
+       * request. Otherwise, the connection will set to public endpoint.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig private_service_connect_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig.Builder
+          getPrivateServiceConnectConfigBuilder() {
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return getPrivateServiceConnectConfigFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Private service connect config.
+       * If
+       * [PrivateServiceConnectConfig.enable_private_service_connect][google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig.enable_private_service_connect]
+       * set to true, customers will use private service connection to send
+       * request. Otherwise, the connection will set to public endpoint.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig private_service_connect_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfigOrBuilder
+          getPrivateServiceConnectConfigOrBuilder() {
+        if (privateServiceConnectConfigBuilder_ != null) {
+          return privateServiceConnectConfigBuilder_.getMessageOrBuilder();
+        } else {
+          return privateServiceConnectConfig_ == null
+              ? com.google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig.getDefaultInstance()
+              : privateServiceConnectConfig_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Private service connect config.
+       * If
+       * [PrivateServiceConnectConfig.enable_private_service_connect][google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig.enable_private_service_connect]
+       * set to true, customers will use private service connection to send
+       * request. Otherwise, the connection will set to public endpoint.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig private_service_connect_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig,
+              com.google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig.Builder,
+              com.google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfigOrBuilder>
+          getPrivateServiceConnectConfigFieldBuilder() {
+        if (privateServiceConnectConfigBuilder_ == null) {
+          privateServiceConnectConfigBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig,
+                  com.google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig.Builder,
+                  com.google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfigOrBuilder>(
+                  getPrivateServiceConnectConfig(), getParentForChildren(), isClean());
+          privateServiceConnectConfig_ = null;
+        }
+        return privateServiceConnectConfigBuilder_;
+      }
+
+      private java.lang.Object serviceAttachment_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The name of the service attachment resource. Populated if
+       * private service connect is enabled and after FeatureViewSync is created.
+       * </pre>
+       *
+       * <code>string service_attachment = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The serviceAttachment.
+       */
+      public java.lang.String getServiceAttachment() {
+        java.lang.Object ref = serviceAttachment_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          serviceAttachment_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The name of the service attachment resource. Populated if
+       * private service connect is enabled and after FeatureViewSync is created.
+       * </pre>
+       *
+       * <code>string service_attachment = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The bytes for serviceAttachment.
+       */
+      public com.google.protobuf.ByteString getServiceAttachmentBytes() {
+        java.lang.Object ref = serviceAttachment_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          serviceAttachment_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The name of the service attachment resource. Populated if
+       * private service connect is enabled and after FeatureViewSync is created.
+       * </pre>
+       *
+       * <code>string service_attachment = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The serviceAttachment to set.
+       * @return This builder for chaining.
+       */
+      public Builder setServiceAttachment(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        serviceAttachment_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The name of the service attachment resource. Populated if
+       * private service connect is enabled and after FeatureViewSync is created.
+       * </pre>
+       *
+       * <code>string service_attachment = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearServiceAttachment() {
+        serviceAttachment_ = getDefaultInstance().getServiceAttachment();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The name of the service attachment resource. Populated if
+       * private service connect is enabled and after FeatureViewSync is created.
+       * </pre>
+       *
+       * <code>string service_attachment = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The bytes for serviceAttachment to set.
+       * @return This builder for chaining.
+       */
+      public Builder setServiceAttachmentBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        serviceAttachment_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint)
+    private static final com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore
+            .DedicatedServingEndpoint
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint();
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<DedicatedServingEndpoint> PARSER =
+        new com.google.protobuf.AbstractParser<DedicatedServingEndpoint>() {
+          @java.lang.Override
+          public DedicatedServingEndpoint parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<DedicatedServingEndpoint> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<DedicatedServingEndpoint> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public interface EmbeddingManagementOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.FeatureOnlineStore.EmbeddingManagement)
@@ -2420,6 +4176,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     BIGTABLE(8),
+    OPTIMIZED(12),
     STORAGETYPE_NOT_SET(0);
     private final int value;
 
@@ -2440,6 +4197,8 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       switch (value) {
         case 8:
           return BIGTABLE;
+        case 12:
+          return OPTIMIZED;
         case 0:
           return STORAGETYPE_NOT_SET;
         default:
@@ -2512,6 +4271,70 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       return (com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Bigtable) storageType_;
     }
     return com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Bigtable.getDefaultInstance();
+  }
+
+  public static final int OPTIMIZED_FIELD_NUMBER = 12;
+  /**
+   *
+   *
+   * <pre>
+   * Contains settings for the Optimized store that will be created
+   * to serve featureValues for all FeatureViews under this
+   * FeatureOnlineStore. When choose Optimized storage type, need to set
+   * [PrivateServiceConnectConfig.enable_private_service_connect][google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig.enable_private_service_connect]
+   * to use private endpoint. Otherwise will use public endpoint by default.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized optimized = 12;</code>
+   *
+   * @return Whether the optimized field is set.
+   */
+  @java.lang.Override
+  public boolean hasOptimized() {
+    return storageTypeCase_ == 12;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Contains settings for the Optimized store that will be created
+   * to serve featureValues for all FeatureViews under this
+   * FeatureOnlineStore. When choose Optimized storage type, need to set
+   * [PrivateServiceConnectConfig.enable_private_service_connect][google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig.enable_private_service_connect]
+   * to use private endpoint. Otherwise will use public endpoint by default.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized optimized = 12;</code>
+   *
+   * @return The optimized.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized getOptimized() {
+    if (storageTypeCase_ == 12) {
+      return (com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized) storageType_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Contains settings for the Optimized store that will be created
+   * to serve featureValues for all FeatureViews under this
+   * FeatureOnlineStore. When choose Optimized storage type, need to set
+   * [PrivateServiceConnectConfig.enable_private_service_connect][google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig.enable_private_service_connect]
+   * to use private endpoint. Otherwise will use public endpoint by default.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized optimized = 12;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.OptimizedOrBuilder
+      getOptimizedOrBuilder() {
+    if (storageTypeCase_ == 12) {
+      return (com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized) storageType_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized.getDefaultInstance();
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
@@ -2901,6 +4724,70 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
         : result;
   }
 
+  public static final int DEDICATED_SERVING_ENDPOINT_FIELD_NUMBER = 10;
+  private com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint
+      dedicatedServingEndpoint_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The dedicated serving endpoint for this FeatureOnlineStore, which
+   * is different from common Vertex service endpoint.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint dedicated_serving_endpoint = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the dedicatedServingEndpoint field is set.
+   */
+  @java.lang.Override
+  public boolean hasDedicatedServingEndpoint() {
+    return dedicatedServingEndpoint_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The dedicated serving endpoint for this FeatureOnlineStore, which
+   * is different from common Vertex service endpoint.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint dedicated_serving_endpoint = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The dedicatedServingEndpoint.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint
+      getDedicatedServingEndpoint() {
+    return dedicatedServingEndpoint_ == null
+        ? com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint
+            .getDefaultInstance()
+        : dedicatedServingEndpoint_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The dedicated serving endpoint for this FeatureOnlineStore, which
+   * is different from common Vertex service endpoint.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint dedicated_serving_endpoint = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpointOrBuilder
+      getDedicatedServingEndpointOrBuilder() {
+    return dedicatedServingEndpoint_ == null
+        ? com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint
+            .getDefaultInstance()
+        : dedicatedServingEndpoint_;
+  }
+
   public static final int EMBEDDING_MANAGEMENT_FIELD_NUMBER = 11;
   private com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.EmbeddingManagement
       embeddingManagement_;
@@ -2999,8 +4886,15 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       output.writeMessage(
           8, (com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Bigtable) storageType_);
     }
+    if (dedicatedServingEndpoint_ != null) {
+      output.writeMessage(10, getDedicatedServingEndpoint());
+    }
     if (embeddingManagement_ != null) {
       output.writeMessage(11, getEmbeddingManagement());
+    }
+    if (storageTypeCase_ == 12) {
+      output.writeMessage(
+          12, (com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized) storageType_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -3043,9 +4937,19 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               8, (com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Bigtable) storageType_);
     }
+    if (dedicatedServingEndpoint_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              10, getDedicatedServingEndpoint());
+    }
     if (embeddingManagement_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(11, getEmbeddingManagement());
+    }
+    if (storageTypeCase_ == 12) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              12, (com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized) storageType_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -3075,6 +4979,10 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
     if (!getEtag().equals(other.getEtag())) return false;
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
     if (state_ != other.state_) return false;
+    if (hasDedicatedServingEndpoint() != other.hasDedicatedServingEndpoint()) return false;
+    if (hasDedicatedServingEndpoint()) {
+      if (!getDedicatedServingEndpoint().equals(other.getDedicatedServingEndpoint())) return false;
+    }
     if (hasEmbeddingManagement() != other.hasEmbeddingManagement()) return false;
     if (hasEmbeddingManagement()) {
       if (!getEmbeddingManagement().equals(other.getEmbeddingManagement())) return false;
@@ -3083,6 +4991,9 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
     switch (storageTypeCase_) {
       case 8:
         if (!getBigtable().equals(other.getBigtable())) return false;
+        break;
+      case 12:
+        if (!getOptimized().equals(other.getOptimized())) return false;
         break;
       case 0:
       default:
@@ -3116,6 +5027,10 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
     }
     hash = (37 * hash) + STATE_FIELD_NUMBER;
     hash = (53 * hash) + state_;
+    if (hasDedicatedServingEndpoint()) {
+      hash = (37 * hash) + DEDICATED_SERVING_ENDPOINT_FIELD_NUMBER;
+      hash = (53 * hash) + getDedicatedServingEndpoint().hashCode();
+    }
     if (hasEmbeddingManagement()) {
       hash = (37 * hash) + EMBEDDING_MANAGEMENT_FIELD_NUMBER;
       hash = (53 * hash) + getEmbeddingManagement().hashCode();
@@ -3124,6 +5039,10 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       case 8:
         hash = (37 * hash) + BIGTABLE_FIELD_NUMBER;
         hash = (53 * hash) + getBigtable().hashCode();
+        break;
+      case 12:
+        hash = (37 * hash) + OPTIMIZED_FIELD_NUMBER;
+        hash = (53 * hash) + getOptimized().hashCode();
         break;
       case 0:
       default:
@@ -3293,6 +5212,9 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       if (bigtableBuilder_ != null) {
         bigtableBuilder_.clear();
       }
+      if (optimizedBuilder_ != null) {
+        optimizedBuilder_.clear();
+      }
       name_ = "";
       createTime_ = null;
       if (createTimeBuilder_ != null) {
@@ -3307,6 +5229,11 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       etag_ = "";
       internalGetMutableLabels().clear();
       state_ = 0;
+      dedicatedServingEndpoint_ = null;
+      if (dedicatedServingEndpointBuilder_ != null) {
+        dedicatedServingEndpointBuilder_.dispose();
+        dedicatedServingEndpointBuilder_ = null;
+      }
       embeddingManagement_ = null;
       if (embeddingManagementBuilder_ != null) {
         embeddingManagementBuilder_.dispose();
@@ -3351,26 +5278,32 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
 
     private void buildPartial0(com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000002) != 0)) {
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.name_ = name_;
       }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.etag_ = etag_;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.labels_ = internalGetLabels();
         result.labels_.makeImmutable();
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.state_ = state_;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.dedicatedServingEndpoint_ =
+            dedicatedServingEndpointBuilder_ == null
+                ? dedicatedServingEndpoint_
+                : dedicatedServingEndpointBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.embeddingManagement_ =
             embeddingManagementBuilder_ == null
                 ? embeddingManagement_
@@ -3383,6 +5316,9 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       result.storageType_ = this.storageType_;
       if (storageTypeCase_ == 8 && bigtableBuilder_ != null) {
         result.storageType_ = bigtableBuilder_.build();
+      }
+      if (storageTypeCase_ == 12 && optimizedBuilder_ != null) {
+        result.storageType_ = optimizedBuilder_.build();
       }
     }
 
@@ -3434,7 +5370,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasCreateTime()) {
@@ -3445,13 +5381,16 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       }
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       if (other.state_ != 0) {
         setStateValue(other.getStateValue());
+      }
+      if (other.hasDedicatedServingEndpoint()) {
+        mergeDedicatedServingEndpoint(other.getDedicatedServingEndpoint());
       }
       if (other.hasEmbeddingManagement()) {
         mergeEmbeddingManagement(other.getEmbeddingManagement());
@@ -3460,6 +5399,11 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
         case BIGTABLE:
           {
             mergeBigtable(other.getBigtable());
+            break;
+          }
+        case OPTIMIZED:
+          {
+            mergeOptimized(other.getOptimized());
             break;
           }
         case STORAGETYPE_NOT_SET:
@@ -3496,25 +5440,25 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 10
             case 26:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 34
             case 42:
               {
                 etag_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 42
             case 50:
@@ -3526,13 +5470,13 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 50
             case 56:
               {
                 state_ = input.readEnum();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 56
             case 66:
@@ -3541,13 +5485,26 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
                 storageTypeCase_ = 8;
                 break;
               } // case 66
+            case 82:
+              {
+                input.readMessage(
+                    getDedicatedServingEndpointFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 82
             case 90:
               {
                 input.readMessage(
                     getEmbeddingManagementFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 90
+            case 98:
+              {
+                input.readMessage(getOptimizedFieldBuilder().getBuilder(), extensionRegistry);
+                storageTypeCase_ = 12;
+                break;
+              } // case 98
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3816,6 +5773,262 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       return bigtableBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized,
+            com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized.Builder,
+            com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.OptimizedOrBuilder>
+        optimizedBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Contains settings for the Optimized store that will be created
+     * to serve featureValues for all FeatureViews under this
+     * FeatureOnlineStore. When choose Optimized storage type, need to set
+     * [PrivateServiceConnectConfig.enable_private_service_connect][google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig.enable_private_service_connect]
+     * to use private endpoint. Otherwise will use public endpoint by default.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized optimized = 12;</code>
+     *
+     * @return Whether the optimized field is set.
+     */
+    @java.lang.Override
+    public boolean hasOptimized() {
+      return storageTypeCase_ == 12;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains settings for the Optimized store that will be created
+     * to serve featureValues for all FeatureViews under this
+     * FeatureOnlineStore. When choose Optimized storage type, need to set
+     * [PrivateServiceConnectConfig.enable_private_service_connect][google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig.enable_private_service_connect]
+     * to use private endpoint. Otherwise will use public endpoint by default.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized optimized = 12;</code>
+     *
+     * @return The optimized.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized getOptimized() {
+      if (optimizedBuilder_ == null) {
+        if (storageTypeCase_ == 12) {
+          return (com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized) storageType_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized
+            .getDefaultInstance();
+      } else {
+        if (storageTypeCase_ == 12) {
+          return optimizedBuilder_.getMessage();
+        }
+        return com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains settings for the Optimized store that will be created
+     * to serve featureValues for all FeatureViews under this
+     * FeatureOnlineStore. When choose Optimized storage type, need to set
+     * [PrivateServiceConnectConfig.enable_private_service_connect][google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig.enable_private_service_connect]
+     * to use private endpoint. Otherwise will use public endpoint by default.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized optimized = 12;</code>
+     */
+    public Builder setOptimized(
+        com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized value) {
+      if (optimizedBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        storageType_ = value;
+        onChanged();
+      } else {
+        optimizedBuilder_.setMessage(value);
+      }
+      storageTypeCase_ = 12;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains settings for the Optimized store that will be created
+     * to serve featureValues for all FeatureViews under this
+     * FeatureOnlineStore. When choose Optimized storage type, need to set
+     * [PrivateServiceConnectConfig.enable_private_service_connect][google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig.enable_private_service_connect]
+     * to use private endpoint. Otherwise will use public endpoint by default.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized optimized = 12;</code>
+     */
+    public Builder setOptimized(
+        com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized.Builder builderForValue) {
+      if (optimizedBuilder_ == null) {
+        storageType_ = builderForValue.build();
+        onChanged();
+      } else {
+        optimizedBuilder_.setMessage(builderForValue.build());
+      }
+      storageTypeCase_ = 12;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains settings for the Optimized store that will be created
+     * to serve featureValues for all FeatureViews under this
+     * FeatureOnlineStore. When choose Optimized storage type, need to set
+     * [PrivateServiceConnectConfig.enable_private_service_connect][google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig.enable_private_service_connect]
+     * to use private endpoint. Otherwise will use public endpoint by default.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized optimized = 12;</code>
+     */
+    public Builder mergeOptimized(
+        com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized value) {
+      if (optimizedBuilder_ == null) {
+        if (storageTypeCase_ == 12
+            && storageType_
+                != com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized
+                    .getDefaultInstance()) {
+          storageType_ =
+              com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized.newBuilder(
+                      (com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized)
+                          storageType_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          storageType_ = value;
+        }
+        onChanged();
+      } else {
+        if (storageTypeCase_ == 12) {
+          optimizedBuilder_.mergeFrom(value);
+        } else {
+          optimizedBuilder_.setMessage(value);
+        }
+      }
+      storageTypeCase_ = 12;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains settings for the Optimized store that will be created
+     * to serve featureValues for all FeatureViews under this
+     * FeatureOnlineStore. When choose Optimized storage type, need to set
+     * [PrivateServiceConnectConfig.enable_private_service_connect][google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig.enable_private_service_connect]
+     * to use private endpoint. Otherwise will use public endpoint by default.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized optimized = 12;</code>
+     */
+    public Builder clearOptimized() {
+      if (optimizedBuilder_ == null) {
+        if (storageTypeCase_ == 12) {
+          storageTypeCase_ = 0;
+          storageType_ = null;
+          onChanged();
+        }
+      } else {
+        if (storageTypeCase_ == 12) {
+          storageTypeCase_ = 0;
+          storageType_ = null;
+        }
+        optimizedBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains settings for the Optimized store that will be created
+     * to serve featureValues for all FeatureViews under this
+     * FeatureOnlineStore. When choose Optimized storage type, need to set
+     * [PrivateServiceConnectConfig.enable_private_service_connect][google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig.enable_private_service_connect]
+     * to use private endpoint. Otherwise will use public endpoint by default.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized optimized = 12;</code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized.Builder
+        getOptimizedBuilder() {
+      return getOptimizedFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains settings for the Optimized store that will be created
+     * to serve featureValues for all FeatureViews under this
+     * FeatureOnlineStore. When choose Optimized storage type, need to set
+     * [PrivateServiceConnectConfig.enable_private_service_connect][google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig.enable_private_service_connect]
+     * to use private endpoint. Otherwise will use public endpoint by default.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized optimized = 12;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.OptimizedOrBuilder
+        getOptimizedOrBuilder() {
+      if ((storageTypeCase_ == 12) && (optimizedBuilder_ != null)) {
+        return optimizedBuilder_.getMessageOrBuilder();
+      } else {
+        if (storageTypeCase_ == 12) {
+          return (com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized) storageType_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains settings for the Optimized store that will be created
+     * to serve featureValues for all FeatureViews under this
+     * FeatureOnlineStore. When choose Optimized storage type, need to set
+     * [PrivateServiceConnectConfig.enable_private_service_connect][google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig.enable_private_service_connect]
+     * to use private endpoint. Otherwise will use public endpoint by default.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized optimized = 12;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized,
+            com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized.Builder,
+            com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.OptimizedOrBuilder>
+        getOptimizedFieldBuilder() {
+      if (optimizedBuilder_ == null) {
+        if (!(storageTypeCase_ == 12)) {
+          storageType_ =
+              com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized.getDefaultInstance();
+        }
+        optimizedBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized,
+                com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized.Builder,
+                com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.OptimizedOrBuilder>(
+                (com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Optimized) storageType_,
+                getParentForChildren(),
+                isClean());
+        storageType_ = null;
+      }
+      storageTypeCase_ = 12;
+      onChanged();
+      return optimizedBuilder_;
+    }
+
     private java.lang.Object name_ = "";
     /**
      *
@@ -3881,7 +6094,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       name_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -3899,7 +6112,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
      */
     public Builder clearName() {
       name_ = getDefaultInstance().getName();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -3922,7 +6135,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       }
       checkByteStringIsUtf8(value);
       name_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -3947,7 +6160,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -3991,7 +6204,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       } else {
         createTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -4012,7 +6225,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -4029,7 +6242,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)
+        if (((bitField0_ & 0x00000008) != 0)
             && createTime_ != null
             && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getCreateTimeBuilder().mergeFrom(value);
@@ -4039,7 +6252,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -4055,7 +6268,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearCreateTime() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       createTime_ = null;
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
@@ -4076,7 +6289,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -4148,7 +6361,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -4192,7 +6405,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -4213,7 +6426,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -4230,7 +6443,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)
+        if (((bitField0_ & 0x00000010) != 0)
             && updateTime_ != null
             && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getUpdateTimeBuilder().mergeFrom(value);
@@ -4240,7 +6453,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       } else {
         updateTimeBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -4256,7 +6469,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearUpdateTime() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       updateTime_ = null;
       if (updateTimeBuilder_ != null) {
         updateTimeBuilder_.dispose();
@@ -4277,7 +6490,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
@@ -4394,7 +6607,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       etag_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -4412,7 +6625,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
      */
     public Builder clearEtag() {
       etag_ = getDefaultInstance().getEtag();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -4435,7 +6648,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       }
       checkByteStringIsUtf8(value);
       etag_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -4457,7 +6670,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return labels_;
     }
@@ -4582,7 +6795,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
     }
 
     public Builder clearLabels() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -4615,7 +6828,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -4645,7 +6858,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException("map value");
       }
       internalGetMutableLabels().getMutableMap().put(key, value);
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       return this;
     }
     /**
@@ -4669,7 +6882,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       return this;
     }
 
@@ -4707,7 +6920,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
      */
     public Builder setStateValue(int value) {
       state_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -4750,7 +6963,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -4769,10 +6982,236 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearState() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       state_ = 0;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint
+        dedicatedServingEndpoint_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint,
+            com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint.Builder,
+            com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore
+                .DedicatedServingEndpointOrBuilder>
+        dedicatedServingEndpointBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The dedicated serving endpoint for this FeatureOnlineStore, which
+     * is different from common Vertex service endpoint.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint dedicated_serving_endpoint = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the dedicatedServingEndpoint field is set.
+     */
+    public boolean hasDedicatedServingEndpoint() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The dedicated serving endpoint for this FeatureOnlineStore, which
+     * is different from common Vertex service endpoint.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint dedicated_serving_endpoint = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The dedicatedServingEndpoint.
+     */
+    public com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint
+        getDedicatedServingEndpoint() {
+      if (dedicatedServingEndpointBuilder_ == null) {
+        return dedicatedServingEndpoint_ == null
+            ? com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint
+                .getDefaultInstance()
+            : dedicatedServingEndpoint_;
+      } else {
+        return dedicatedServingEndpointBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The dedicated serving endpoint for this FeatureOnlineStore, which
+     * is different from common Vertex service endpoint.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint dedicated_serving_endpoint = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDedicatedServingEndpoint(
+        com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint value) {
+      if (dedicatedServingEndpointBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        dedicatedServingEndpoint_ = value;
+      } else {
+        dedicatedServingEndpointBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The dedicated serving endpoint for this FeatureOnlineStore, which
+     * is different from common Vertex service endpoint.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint dedicated_serving_endpoint = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDedicatedServingEndpoint(
+        com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint.Builder
+            builderForValue) {
+      if (dedicatedServingEndpointBuilder_ == null) {
+        dedicatedServingEndpoint_ = builderForValue.build();
+      } else {
+        dedicatedServingEndpointBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The dedicated serving endpoint for this FeatureOnlineStore, which
+     * is different from common Vertex service endpoint.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint dedicated_serving_endpoint = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeDedicatedServingEndpoint(
+        com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint value) {
+      if (dedicatedServingEndpointBuilder_ == null) {
+        if (((bitField0_ & 0x00000100) != 0)
+            && dedicatedServingEndpoint_ != null
+            && dedicatedServingEndpoint_
+                != com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint
+                    .getDefaultInstance()) {
+          getDedicatedServingEndpointBuilder().mergeFrom(value);
+        } else {
+          dedicatedServingEndpoint_ = value;
+        }
+      } else {
+        dedicatedServingEndpointBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The dedicated serving endpoint for this FeatureOnlineStore, which
+     * is different from common Vertex service endpoint.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint dedicated_serving_endpoint = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearDedicatedServingEndpoint() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      dedicatedServingEndpoint_ = null;
+      if (dedicatedServingEndpointBuilder_ != null) {
+        dedicatedServingEndpointBuilder_.dispose();
+        dedicatedServingEndpointBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The dedicated serving endpoint for this FeatureOnlineStore, which
+     * is different from common Vertex service endpoint.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint dedicated_serving_endpoint = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint.Builder
+        getDedicatedServingEndpointBuilder() {
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return getDedicatedServingEndpointFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The dedicated serving endpoint for this FeatureOnlineStore, which
+     * is different from common Vertex service endpoint.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint dedicated_serving_endpoint = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpointOrBuilder
+        getDedicatedServingEndpointOrBuilder() {
+      if (dedicatedServingEndpointBuilder_ != null) {
+        return dedicatedServingEndpointBuilder_.getMessageOrBuilder();
+      } else {
+        return dedicatedServingEndpoint_ == null
+            ? com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint
+                .getDefaultInstance()
+            : dedicatedServingEndpoint_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The dedicated serving endpoint for this FeatureOnlineStore, which
+     * is different from common Vertex service endpoint.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint dedicated_serving_endpoint = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint,
+            com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint.Builder,
+            com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore
+                .DedicatedServingEndpointOrBuilder>
+        getDedicatedServingEndpointFieldBuilder() {
+      if (dedicatedServingEndpointBuilder_ == null) {
+        dedicatedServingEndpointBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint,
+                com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint
+                    .Builder,
+                com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore
+                    .DedicatedServingEndpointOrBuilder>(
+                getDedicatedServingEndpoint(), getParentForChildren(), isClean());
+        dedicatedServingEndpoint_ = null;
+      }
+      return dedicatedServingEndpointBuilder_;
     }
 
     private com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.EmbeddingManagement
@@ -4796,7 +7235,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
      * @return Whether the embeddingManagement field is set.
      */
     public boolean hasEmbeddingManagement() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -4843,7 +7282,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       } else {
         embeddingManagementBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -4866,7 +7305,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       } else {
         embeddingManagementBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -4884,7 +7323,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
     public Builder mergeEmbeddingManagement(
         com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.EmbeddingManagement value) {
       if (embeddingManagementBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)
+        if (((bitField0_ & 0x00000200) != 0)
             && embeddingManagement_ != null
             && embeddingManagement_
                 != com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.EmbeddingManagement
@@ -4896,7 +7335,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       } else {
         embeddingManagementBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -4912,7 +7351,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearEmbeddingManagement() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000200);
       embeddingManagement_ = null;
       if (embeddingManagementBuilder_ != null) {
         embeddingManagementBuilder_.dispose();
@@ -4934,7 +7373,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
      */
     public com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.EmbeddingManagement.Builder
         getEmbeddingManagementBuilder() {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000200;
       onChanged();
       return getEmbeddingManagementFieldBuilder().getBuilder();
     }

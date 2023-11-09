@@ -27,9 +27,9 @@ public interface ProductViewOrBuilder
    *
    *
    * <pre>
-   * REST ID of the product, in the form of languageCode~feedLabel~offerId.
-   * Merchant API methods that operate on products take this as their `name`
-   * parameter.
+   * REST ID of the product, in the form of
+   * `channel~languageCode~feedLabel~offerId`. Merchant API methods that operate
+   * on products take this as their `name` parameter.
    *
    * Required in the `SELECT` clause.
    * </pre>
@@ -43,9 +43,9 @@ public interface ProductViewOrBuilder
    *
    *
    * <pre>
-   * REST ID of the product, in the form of languageCode~feedLabel~offerId.
-   * Merchant API methods that operate on products take this as their `name`
-   * parameter.
+   * REST ID of the product, in the form of
+   * `channel~languageCode~feedLabel~offerId`. Merchant API methods that operate
+   * on products take this as their `name` parameter.
    *
    * Required in the `SELECT` clause.
    * </pre>
@@ -59,9 +59,9 @@ public interface ProductViewOrBuilder
    *
    *
    * <pre>
-   * REST ID of the product, in the form of languageCode~feedLabel~offerId.
-   * Merchant API methods that operate on products take this as their `name`
-   * parameter.
+   * REST ID of the product, in the form of
+   * `channel~languageCode~feedLabel~offerId`. Merchant API methods that operate
+   * on products take this as their `name` parameter.
    *
    * Required in the `SELECT` clause.
    * </pre>
@@ -71,6 +71,43 @@ public interface ProductViewOrBuilder
    * @return The bytes for id.
    */
   com.google.protobuf.ByteString getIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Channel of the product. Can be `ONLINE` or `LOCAL`.
+   * </pre>
+   *
+   * <code>optional .google.shopping.type.Channel.ChannelEnum channel = 28;</code>
+   *
+   * @return Whether the channel field is set.
+   */
+  boolean hasChannel();
+  /**
+   *
+   *
+   * <pre>
+   * Channel of the product. Can be `ONLINE` or `LOCAL`.
+   * </pre>
+   *
+   * <code>optional .google.shopping.type.Channel.ChannelEnum channel = 28;</code>
+   *
+   * @return The enum numeric value on the wire for channel.
+   */
+  int getChannelValue();
+  /**
+   *
+   *
+   * <pre>
+   * Channel of the product. Can be `ONLINE` or `LOCAL`.
+   * </pre>
+   *
+   * <code>optional .google.shopping.type.Channel.ChannelEnum channel = 28;</code>
+   *
+   * @return The channel.
+   */
+  com.google.shopping.type.Channel.ChannelEnum getChannel();
 
   /**
    *
@@ -1020,45 +1057,45 @@ public interface ProductViewOrBuilder
    *
    *
    * <pre>
-   * Aggregated destination status.
+   * Aggregated status.
    * </pre>
    *
    * <code>
-   * optional .google.shopping.merchant.reports.v1beta.ProductView.AggregatedDestinationStatus aggregated_destination_status = 26;
+   * optional .google.shopping.merchant.reports.v1beta.ProductView.AggregatedReportingContextStatus aggregated_reporting_context_status = 26;
    * </code>
    *
-   * @return Whether the aggregatedDestinationStatus field is set.
+   * @return Whether the aggregatedReportingContextStatus field is set.
    */
-  boolean hasAggregatedDestinationStatus();
+  boolean hasAggregatedReportingContextStatus();
   /**
    *
    *
    * <pre>
-   * Aggregated destination status.
+   * Aggregated status.
    * </pre>
    *
    * <code>
-   * optional .google.shopping.merchant.reports.v1beta.ProductView.AggregatedDestinationStatus aggregated_destination_status = 26;
+   * optional .google.shopping.merchant.reports.v1beta.ProductView.AggregatedReportingContextStatus aggregated_reporting_context_status = 26;
    * </code>
    *
-   * @return The enum numeric value on the wire for aggregatedDestinationStatus.
+   * @return The enum numeric value on the wire for aggregatedReportingContextStatus.
    */
-  int getAggregatedDestinationStatusValue();
+  int getAggregatedReportingContextStatusValue();
   /**
    *
    *
    * <pre>
-   * Aggregated destination status.
+   * Aggregated status.
    * </pre>
    *
    * <code>
-   * optional .google.shopping.merchant.reports.v1beta.ProductView.AggregatedDestinationStatus aggregated_destination_status = 26;
+   * optional .google.shopping.merchant.reports.v1beta.ProductView.AggregatedReportingContextStatus aggregated_reporting_context_status = 26;
    * </code>
    *
-   * @return The aggregatedDestinationStatus.
+   * @return The aggregatedReportingContextStatus.
    */
-  com.google.shopping.merchant.reports.v1beta.ProductView.AggregatedDestinationStatus
-      getAggregatedDestinationStatus();
+  com.google.shopping.merchant.reports.v1beta.ProductView.AggregatedReportingContextStatus
+      getAggregatedReportingContextStatus();
 
   /**
    *

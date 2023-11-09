@@ -304,5 +304,55 @@ public interface RecognitionConfigOrBuilder
    */
   com.google.cloud.speech.v2.SpeechAdaptationOrBuilder getAdaptationOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Use transcription normalization to automatically replace parts of
+   * the transcript with phrases of your choosing. For StreamingRecognize, this
+   * normalization only applies to stable partial transcripts (stability &gt; 0.8)
+   * and final transcripts.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.speech.v2.TranscriptNormalization transcript_normalization = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the transcriptNormalization field is set.
+   */
+  boolean hasTranscriptNormalization();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Use transcription normalization to automatically replace parts of
+   * the transcript with phrases of your choosing. For StreamingRecognize, this
+   * normalization only applies to stable partial transcripts (stability &gt; 0.8)
+   * and final transcripts.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.speech.v2.TranscriptNormalization transcript_normalization = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The transcriptNormalization.
+   */
+  com.google.cloud.speech.v2.TranscriptNormalization getTranscriptNormalization();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Use transcription normalization to automatically replace parts of
+   * the transcript with phrases of your choosing. For StreamingRecognize, this
+   * normalization only applies to stable partial transcripts (stability &gt; 0.8)
+   * and final transcripts.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.speech.v2.TranscriptNormalization transcript_normalization = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.speech.v2.TranscriptNormalizationOrBuilder getTranscriptNormalizationOrBuilder();
+
   com.google.cloud.speech.v2.RecognitionConfig.DecodingConfigCase getDecodingConfigCase();
 }

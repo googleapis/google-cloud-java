@@ -71,8 +71,8 @@ public final class CreateWorkspaceRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. The repository in which to create the workspace. Must be in the format
-   * `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;`.
+   * Required. The repository in which to create the workspace. Must be in the
+   * format `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;`.
    * </pre>
    *
    * <code>
@@ -97,8 +97,8 @@ public final class CreateWorkspaceRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. The repository in which to create the workspace. Must be in the format
-   * `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;`.
+   * Required. The repository in which to create the workspace. Must be in the
+   * format `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;`.
    * </pre>
    *
    * <code>
@@ -184,8 +184,8 @@ public final class CreateWorkspaceRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. The ID to use for the workspace, which will become the final component of
-   * the workspace's resource name.
+   * Required. The ID to use for the workspace, which will become the final
+   * component of the workspace's resource name.
    * </pre>
    *
    * <code>string workspace_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -208,8 +208,8 @@ public final class CreateWorkspaceRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. The ID to use for the workspace, which will become the final component of
-   * the workspace's resource name.
+   * Required. The ID to use for the workspace, which will become the final
+   * component of the workspace's resource name.
    * </pre>
    *
    * <code>string workspace_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -632,8 +632,8 @@ public final class CreateWorkspaceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The repository in which to create the workspace. Must be in the format
-     * `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;`.
+     * Required. The repository in which to create the workspace. Must be in the
+     * format `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;`.
      * </pre>
      *
      * <code>
@@ -657,8 +657,8 @@ public final class CreateWorkspaceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The repository in which to create the workspace. Must be in the format
-     * `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;`.
+     * Required. The repository in which to create the workspace. Must be in the
+     * format `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;`.
      * </pre>
      *
      * <code>
@@ -682,8 +682,8 @@ public final class CreateWorkspaceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The repository in which to create the workspace. Must be in the format
-     * `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;`.
+     * Required. The repository in which to create the workspace. Must be in the
+     * format `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;`.
      * </pre>
      *
      * <code>
@@ -706,8 +706,8 @@ public final class CreateWorkspaceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The repository in which to create the workspace. Must be in the format
-     * `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;`.
+     * Required. The repository in which to create the workspace. Must be in the
+     * format `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;`.
      * </pre>
      *
      * <code>
@@ -726,8 +726,8 @@ public final class CreateWorkspaceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The repository in which to create the workspace. Must be in the format
-     * `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;`.
+     * Required. The repository in which to create the workspace. Must be in the
+     * format `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;`.
      * </pre>
      *
      * <code>
@@ -955,8 +955,8 @@ public final class CreateWorkspaceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The ID to use for the workspace, which will become the final component of
-     * the workspace's resource name.
+     * Required. The ID to use for the workspace, which will become the final
+     * component of the workspace's resource name.
      * </pre>
      *
      * <code>string workspace_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -978,8 +978,8 @@ public final class CreateWorkspaceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The ID to use for the workspace, which will become the final component of
-     * the workspace's resource name.
+     * Required. The ID to use for the workspace, which will become the final
+     * component of the workspace's resource name.
      * </pre>
      *
      * <code>string workspace_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1001,8 +1001,8 @@ public final class CreateWorkspaceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The ID to use for the workspace, which will become the final component of
-     * the workspace's resource name.
+     * Required. The ID to use for the workspace, which will become the final
+     * component of the workspace's resource name.
      * </pre>
      *
      * <code>string workspace_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1023,8 +1023,8 @@ public final class CreateWorkspaceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The ID to use for the workspace, which will become the final component of
-     * the workspace's resource name.
+     * Required. The ID to use for the workspace, which will become the final
+     * component of the workspace's resource name.
      * </pre>
      *
      * <code>string workspace_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1041,8 +1041,8 @@ public final class CreateWorkspaceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The ID to use for the workspace, which will become the final component of
-     * the workspace's resource name.
+     * Required. The ID to use for the workspace, which will become the final
+     * component of the workspace's resource name.
      * </pre>
      *
      * <code>string workspace_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>

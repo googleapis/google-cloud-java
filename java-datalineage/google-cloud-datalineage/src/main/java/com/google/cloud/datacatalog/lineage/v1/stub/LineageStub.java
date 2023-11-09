@@ -45,6 +45,8 @@ import com.google.cloud.datacatalog.lineage.v1.ListRunsRequest;
 import com.google.cloud.datacatalog.lineage.v1.ListRunsResponse;
 import com.google.cloud.datacatalog.lineage.v1.OperationMetadata;
 import com.google.cloud.datacatalog.lineage.v1.Process;
+import com.google.cloud.datacatalog.lineage.v1.ProcessOpenLineageRunEventRequest;
+import com.google.cloud.datacatalog.lineage.v1.ProcessOpenLineageRunEventResponse;
 import com.google.cloud.datacatalog.lineage.v1.Run;
 import com.google.cloud.datacatalog.lineage.v1.SearchLinksRequest;
 import com.google.cloud.datacatalog.lineage.v1.SearchLinksResponse;
@@ -70,6 +72,12 @@ public abstract class LineageStub implements BackgroundResource {
 
   public com.google.api.gax.httpjson.longrunning.stub.OperationsStub getHttpJsonOperationsStub() {
     return null;
+  }
+
+  public UnaryCallable<ProcessOpenLineageRunEventRequest, ProcessOpenLineageRunEventResponse>
+      processOpenLineageRunEventCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: processOpenLineageRunEventCallable()");
   }
 
   public UnaryCallable<CreateProcessRequest, Process> createProcessCallable() {

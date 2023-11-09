@@ -22,8 +22,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Represents the spec a group of resources of same type, e.g. machine, disk
- * and accelerators, in a PersistentResource.
+ * Represents the spec of a group of resources of the same type,
+ * for example machine type, disk, and accelerators, in a PersistentResource.
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.ResourcePool}
@@ -852,8 +852,8 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Immutable. The unique ID in a PersistentResource to refer the this resource
-   * pool. User can specify it if need to use it, otherwise we will generate it
+   * Immutable. The unique ID in a PersistentResource for referring to this
+   * resource pool. User can specify it if necessary. Otherwise, it's generated
    * automatically.
    * </pre>
    *
@@ -877,8 +877,8 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Immutable. The unique ID in a PersistentResource to refer the this resource
-   * pool. User can specify it if need to use it, otherwise we will generate it
+   * Immutable. The unique ID in a PersistentResource for referring to this
+   * resource pool. User can specify it if necessary. Otherwise, it's generated
    * automatically.
    * </pre>
    *
@@ -1348,8 +1348,8 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents the spec a group of resources of same type, e.g. machine, disk
-   * and accelerators, in a PersistentResource.
+   * Represents the spec of a group of resources of the same type,
+   * for example machine type, disk, and accelerators, in a PersistentResource.
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.ResourcePool}
@@ -1615,8 +1615,8 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The unique ID in a PersistentResource to refer the this resource
-     * pool. User can specify it if need to use it, otherwise we will generate it
+     * Immutable. The unique ID in a PersistentResource for referring to this
+     * resource pool. User can specify it if necessary. Otherwise, it's generated
      * automatically.
      * </pre>
      *
@@ -1639,8 +1639,8 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The unique ID in a PersistentResource to refer the this resource
-     * pool. User can specify it if need to use it, otherwise we will generate it
+     * Immutable. The unique ID in a PersistentResource for referring to this
+     * resource pool. User can specify it if necessary. Otherwise, it's generated
      * automatically.
      * </pre>
      *
@@ -1663,8 +1663,8 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The unique ID in a PersistentResource to refer the this resource
-     * pool. User can specify it if need to use it, otherwise we will generate it
+     * Immutable. The unique ID in a PersistentResource for referring to this
+     * resource pool. User can specify it if necessary. Otherwise, it's generated
      * automatically.
      * </pre>
      *
@@ -1686,8 +1686,8 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The unique ID in a PersistentResource to refer the this resource
-     * pool. User can specify it if need to use it, otherwise we will generate it
+     * Immutable. The unique ID in a PersistentResource for referring to this
+     * resource pool. User can specify it if necessary. Otherwise, it's generated
      * automatically.
      * </pre>
      *
@@ -1705,8 +1705,8 @@ public final class ResourcePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The unique ID in a PersistentResource to refer the this resource
-     * pool. User can specify it if need to use it, otherwise we will generate it
+     * Immutable. The unique ID in a PersistentResource for referring to this
+     * resource pool. User can specify it if necessary. Otherwise, it's generated
      * automatically.
      * </pre>
      *

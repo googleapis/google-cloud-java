@@ -165,8 +165,9 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
    *
    *
    * <pre>
-   * REST ID of the product, in the form of languageCode~feedLabel~offerId. Can
-   * be used to join data with the `product_view` table.
+   * REST ID of the product, in the form of
+   * `channel~languageCode~feedLabel~offerId`. Can be used to join data with the
+   * `product_view` table.
    *
    * Required in the `SELECT` clause.
    * </pre>
@@ -183,8 +184,9 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
    *
    *
    * <pre>
-   * REST ID of the product, in the form of languageCode~feedLabel~offerId. Can
-   * be used to join data with the `product_view` table.
+   * REST ID of the product, in the form of
+   * `channel~languageCode~feedLabel~offerId`. Can be used to join data with the
+   * `product_view` table.
    *
    * Required in the `SELECT` clause.
    * </pre>
@@ -209,8 +211,9 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
    *
    *
    * <pre>
-   * REST ID of the product, in the form of languageCode~feedLabel~offerId. Can
-   * be used to join data with the `product_view` table.
+   * REST ID of the product, in the form of
+   * `channel~languageCode~feedLabel~offerId`. Can be used to join data with the
+   * `product_view` table.
    *
    * Required in the `SELECT` clause.
    * </pre>
@@ -2214,8 +2217,9 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
      *
      *
      * <pre>
-     * REST ID of the product, in the form of languageCode~feedLabel~offerId. Can
-     * be used to join data with the `product_view` table.
+     * REST ID of the product, in the form of
+     * `channel~languageCode~feedLabel~offerId`. Can be used to join data with the
+     * `product_view` table.
      *
      * Required in the `SELECT` clause.
      * </pre>
@@ -2231,8 +2235,9 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
      *
      *
      * <pre>
-     * REST ID of the product, in the form of languageCode~feedLabel~offerId. Can
-     * be used to join data with the `product_view` table.
+     * REST ID of the product, in the form of
+     * `channel~languageCode~feedLabel~offerId`. Can be used to join data with the
+     * `product_view` table.
      *
      * Required in the `SELECT` clause.
      * </pre>
@@ -2256,8 +2261,9 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
      *
      *
      * <pre>
-     * REST ID of the product, in the form of languageCode~feedLabel~offerId. Can
-     * be used to join data with the `product_view` table.
+     * REST ID of the product, in the form of
+     * `channel~languageCode~feedLabel~offerId`. Can be used to join data with the
+     * `product_view` table.
      *
      * Required in the `SELECT` clause.
      * </pre>
@@ -2281,8 +2287,9 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
      *
      *
      * <pre>
-     * REST ID of the product, in the form of languageCode~feedLabel~offerId. Can
-     * be used to join data with the `product_view` table.
+     * REST ID of the product, in the form of
+     * `channel~languageCode~feedLabel~offerId`. Can be used to join data with the
+     * `product_view` table.
      *
      * Required in the `SELECT` clause.
      * </pre>
@@ -2305,8 +2312,9 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
      *
      *
      * <pre>
-     * REST ID of the product, in the form of languageCode~feedLabel~offerId. Can
-     * be used to join data with the `product_view` table.
+     * REST ID of the product, in the form of
+     * `channel~languageCode~feedLabel~offerId`. Can be used to join data with the
+     * `product_view` table.
      *
      * Required in the `SELECT` clause.
      * </pre>
@@ -2325,8 +2333,9 @@ public final class PriceCompetitivenessProductView extends com.google.protobuf.G
      *
      *
      * <pre>
-     * REST ID of the product, in the form of languageCode~feedLabel~offerId. Can
-     * be used to join data with the `product_view` table.
+     * REST ID of the product, in the form of
+     * `channel~languageCode~feedLabel~offerId`. Can be used to join data with the
+     * `product_view` table.
      *
      * Required in the `SELECT` clause.
      * </pre>

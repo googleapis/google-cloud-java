@@ -54,6 +54,8 @@ public class SyncRunAccessReport {
               .setTimeZone("timeZone-2077180903")
               .addAllOrderBys(new ArrayList<AccessOrderBy>())
               .setReturnEntityQuota(true)
+              .setIncludeAllUsers(true)
+              .setExpandGroups(true)
               .build();
       RunAccessReportResponse response = analyticsAdminServiceClient.runAccessReport(request);
     }

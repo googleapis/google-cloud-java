@@ -324,6 +324,53 @@ public final class CloudDeployGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.deploy.v1.RollbackTargetRequest,
+          com.google.cloud.deploy.v1.RollbackTargetResponse>
+      getRollbackTargetMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RollbackTarget",
+      requestType = com.google.cloud.deploy.v1.RollbackTargetRequest.class,
+      responseType = com.google.cloud.deploy.v1.RollbackTargetResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.deploy.v1.RollbackTargetRequest,
+          com.google.cloud.deploy.v1.RollbackTargetResponse>
+      getRollbackTargetMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.deploy.v1.RollbackTargetRequest,
+            com.google.cloud.deploy.v1.RollbackTargetResponse>
+        getRollbackTargetMethod;
+    if ((getRollbackTargetMethod = CloudDeployGrpc.getRollbackTargetMethod) == null) {
+      synchronized (CloudDeployGrpc.class) {
+        if ((getRollbackTargetMethod = CloudDeployGrpc.getRollbackTargetMethod) == null) {
+          CloudDeployGrpc.getRollbackTargetMethod =
+              getRollbackTargetMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.deploy.v1.RollbackTargetRequest,
+                          com.google.cloud.deploy.v1.RollbackTargetResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "RollbackTarget"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.deploy.v1.RollbackTargetRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.deploy.v1.RollbackTargetResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudDeployMethodDescriptorSupplier("RollbackTarget"))
+                      .build();
+        }
+      }
+    }
+    return getRollbackTargetMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.deploy.v1.GetTargetRequest, com.google.cloud.deploy.v1.Target>
       getGetTargetMethod;
 
@@ -1181,6 +1228,364 @@ public final class CloudDeployGrpc {
     return getGetConfigMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.deploy.v1.CreateAutomationRequest, com.google.longrunning.Operation>
+      getCreateAutomationMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateAutomation",
+      requestType = com.google.cloud.deploy.v1.CreateAutomationRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.deploy.v1.CreateAutomationRequest, com.google.longrunning.Operation>
+      getCreateAutomationMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.deploy.v1.CreateAutomationRequest, com.google.longrunning.Operation>
+        getCreateAutomationMethod;
+    if ((getCreateAutomationMethod = CloudDeployGrpc.getCreateAutomationMethod) == null) {
+      synchronized (CloudDeployGrpc.class) {
+        if ((getCreateAutomationMethod = CloudDeployGrpc.getCreateAutomationMethod) == null) {
+          CloudDeployGrpc.getCreateAutomationMethod =
+              getCreateAutomationMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.deploy.v1.CreateAutomationRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateAutomation"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.deploy.v1.CreateAutomationRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudDeployMethodDescriptorSupplier("CreateAutomation"))
+                      .build();
+        }
+      }
+    }
+    return getCreateAutomationMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.deploy.v1.UpdateAutomationRequest, com.google.longrunning.Operation>
+      getUpdateAutomationMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateAutomation",
+      requestType = com.google.cloud.deploy.v1.UpdateAutomationRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.deploy.v1.UpdateAutomationRequest, com.google.longrunning.Operation>
+      getUpdateAutomationMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.deploy.v1.UpdateAutomationRequest, com.google.longrunning.Operation>
+        getUpdateAutomationMethod;
+    if ((getUpdateAutomationMethod = CloudDeployGrpc.getUpdateAutomationMethod) == null) {
+      synchronized (CloudDeployGrpc.class) {
+        if ((getUpdateAutomationMethod = CloudDeployGrpc.getUpdateAutomationMethod) == null) {
+          CloudDeployGrpc.getUpdateAutomationMethod =
+              getUpdateAutomationMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.deploy.v1.UpdateAutomationRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateAutomation"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.deploy.v1.UpdateAutomationRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudDeployMethodDescriptorSupplier("UpdateAutomation"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateAutomationMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.deploy.v1.DeleteAutomationRequest, com.google.longrunning.Operation>
+      getDeleteAutomationMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteAutomation",
+      requestType = com.google.cloud.deploy.v1.DeleteAutomationRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.deploy.v1.DeleteAutomationRequest, com.google.longrunning.Operation>
+      getDeleteAutomationMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.deploy.v1.DeleteAutomationRequest, com.google.longrunning.Operation>
+        getDeleteAutomationMethod;
+    if ((getDeleteAutomationMethod = CloudDeployGrpc.getDeleteAutomationMethod) == null) {
+      synchronized (CloudDeployGrpc.class) {
+        if ((getDeleteAutomationMethod = CloudDeployGrpc.getDeleteAutomationMethod) == null) {
+          CloudDeployGrpc.getDeleteAutomationMethod =
+              getDeleteAutomationMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.deploy.v1.DeleteAutomationRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteAutomation"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.deploy.v1.DeleteAutomationRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudDeployMethodDescriptorSupplier("DeleteAutomation"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteAutomationMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.deploy.v1.GetAutomationRequest, com.google.cloud.deploy.v1.Automation>
+      getGetAutomationMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetAutomation",
+      requestType = com.google.cloud.deploy.v1.GetAutomationRequest.class,
+      responseType = com.google.cloud.deploy.v1.Automation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.deploy.v1.GetAutomationRequest, com.google.cloud.deploy.v1.Automation>
+      getGetAutomationMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.deploy.v1.GetAutomationRequest, com.google.cloud.deploy.v1.Automation>
+        getGetAutomationMethod;
+    if ((getGetAutomationMethod = CloudDeployGrpc.getGetAutomationMethod) == null) {
+      synchronized (CloudDeployGrpc.class) {
+        if ((getGetAutomationMethod = CloudDeployGrpc.getGetAutomationMethod) == null) {
+          CloudDeployGrpc.getGetAutomationMethod =
+              getGetAutomationMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.deploy.v1.GetAutomationRequest,
+                          com.google.cloud.deploy.v1.Automation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetAutomation"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.deploy.v1.GetAutomationRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.deploy.v1.Automation.getDefaultInstance()))
+                      .setSchemaDescriptor(new CloudDeployMethodDescriptorSupplier("GetAutomation"))
+                      .build();
+        }
+      }
+    }
+    return getGetAutomationMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.deploy.v1.ListAutomationsRequest,
+          com.google.cloud.deploy.v1.ListAutomationsResponse>
+      getListAutomationsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListAutomations",
+      requestType = com.google.cloud.deploy.v1.ListAutomationsRequest.class,
+      responseType = com.google.cloud.deploy.v1.ListAutomationsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.deploy.v1.ListAutomationsRequest,
+          com.google.cloud.deploy.v1.ListAutomationsResponse>
+      getListAutomationsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.deploy.v1.ListAutomationsRequest,
+            com.google.cloud.deploy.v1.ListAutomationsResponse>
+        getListAutomationsMethod;
+    if ((getListAutomationsMethod = CloudDeployGrpc.getListAutomationsMethod) == null) {
+      synchronized (CloudDeployGrpc.class) {
+        if ((getListAutomationsMethod = CloudDeployGrpc.getListAutomationsMethod) == null) {
+          CloudDeployGrpc.getListAutomationsMethod =
+              getListAutomationsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.deploy.v1.ListAutomationsRequest,
+                          com.google.cloud.deploy.v1.ListAutomationsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListAutomations"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.deploy.v1.ListAutomationsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.deploy.v1.ListAutomationsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudDeployMethodDescriptorSupplier("ListAutomations"))
+                      .build();
+        }
+      }
+    }
+    return getListAutomationsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.deploy.v1.GetAutomationRunRequest,
+          com.google.cloud.deploy.v1.AutomationRun>
+      getGetAutomationRunMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetAutomationRun",
+      requestType = com.google.cloud.deploy.v1.GetAutomationRunRequest.class,
+      responseType = com.google.cloud.deploy.v1.AutomationRun.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.deploy.v1.GetAutomationRunRequest,
+          com.google.cloud.deploy.v1.AutomationRun>
+      getGetAutomationRunMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.deploy.v1.GetAutomationRunRequest,
+            com.google.cloud.deploy.v1.AutomationRun>
+        getGetAutomationRunMethod;
+    if ((getGetAutomationRunMethod = CloudDeployGrpc.getGetAutomationRunMethod) == null) {
+      synchronized (CloudDeployGrpc.class) {
+        if ((getGetAutomationRunMethod = CloudDeployGrpc.getGetAutomationRunMethod) == null) {
+          CloudDeployGrpc.getGetAutomationRunMethod =
+              getGetAutomationRunMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.deploy.v1.GetAutomationRunRequest,
+                          com.google.cloud.deploy.v1.AutomationRun>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetAutomationRun"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.deploy.v1.GetAutomationRunRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.deploy.v1.AutomationRun.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudDeployMethodDescriptorSupplier("GetAutomationRun"))
+                      .build();
+        }
+      }
+    }
+    return getGetAutomationRunMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.deploy.v1.ListAutomationRunsRequest,
+          com.google.cloud.deploy.v1.ListAutomationRunsResponse>
+      getListAutomationRunsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListAutomationRuns",
+      requestType = com.google.cloud.deploy.v1.ListAutomationRunsRequest.class,
+      responseType = com.google.cloud.deploy.v1.ListAutomationRunsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.deploy.v1.ListAutomationRunsRequest,
+          com.google.cloud.deploy.v1.ListAutomationRunsResponse>
+      getListAutomationRunsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.deploy.v1.ListAutomationRunsRequest,
+            com.google.cloud.deploy.v1.ListAutomationRunsResponse>
+        getListAutomationRunsMethod;
+    if ((getListAutomationRunsMethod = CloudDeployGrpc.getListAutomationRunsMethod) == null) {
+      synchronized (CloudDeployGrpc.class) {
+        if ((getListAutomationRunsMethod = CloudDeployGrpc.getListAutomationRunsMethod) == null) {
+          CloudDeployGrpc.getListAutomationRunsMethod =
+              getListAutomationRunsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.deploy.v1.ListAutomationRunsRequest,
+                          com.google.cloud.deploy.v1.ListAutomationRunsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListAutomationRuns"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.deploy.v1.ListAutomationRunsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.deploy.v1.ListAutomationRunsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudDeployMethodDescriptorSupplier("ListAutomationRuns"))
+                      .build();
+        }
+      }
+    }
+    return getListAutomationRunsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.deploy.v1.CancelAutomationRunRequest,
+          com.google.cloud.deploy.v1.CancelAutomationRunResponse>
+      getCancelAutomationRunMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CancelAutomationRun",
+      requestType = com.google.cloud.deploy.v1.CancelAutomationRunRequest.class,
+      responseType = com.google.cloud.deploy.v1.CancelAutomationRunResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.deploy.v1.CancelAutomationRunRequest,
+          com.google.cloud.deploy.v1.CancelAutomationRunResponse>
+      getCancelAutomationRunMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.deploy.v1.CancelAutomationRunRequest,
+            com.google.cloud.deploy.v1.CancelAutomationRunResponse>
+        getCancelAutomationRunMethod;
+    if ((getCancelAutomationRunMethod = CloudDeployGrpc.getCancelAutomationRunMethod) == null) {
+      synchronized (CloudDeployGrpc.class) {
+        if ((getCancelAutomationRunMethod = CloudDeployGrpc.getCancelAutomationRunMethod) == null) {
+          CloudDeployGrpc.getCancelAutomationRunMethod =
+              getCancelAutomationRunMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.deploy.v1.CancelAutomationRunRequest,
+                          com.google.cloud.deploy.v1.CancelAutomationRunResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "CancelAutomationRun"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.deploy.v1.CancelAutomationRunRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.deploy.v1.CancelAutomationRunResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudDeployMethodDescriptorSupplier("CancelAutomationRun"))
+                      .build();
+        }
+      }
+    }
+    return getCancelAutomationRunMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static CloudDeployStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<CloudDeployStub> factory =
@@ -1315,6 +1720,21 @@ public final class CloudDeployGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getListTargetsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a `Rollout` to roll back the specified target.
+     * </pre>
+     */
+    default void rollbackTarget(
+        com.google.cloud.deploy.v1.RollbackTargetRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.deploy.v1.RollbackTargetResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getRollbackTargetMethod(), responseObserver);
     }
 
     /**
@@ -1598,6 +2018,124 @@ public final class CloudDeployGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.deploy.v1.Config> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetConfigMethod(), responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new Automation in a given project and location.
+     * </pre>
+     */
+    default void createAutomation(
+        com.google.cloud.deploy.v1.CreateAutomationRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateAutomationMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single Automation resource.
+     * </pre>
+     */
+    default void updateAutomation(
+        com.google.cloud.deploy.v1.UpdateAutomationRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateAutomationMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single Automation resource.
+     * </pre>
+     */
+    default void deleteAutomation(
+        com.google.cloud.deploy.v1.DeleteAutomationRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteAutomationMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single Automation.
+     * </pre>
+     */
+    default void getAutomation(
+        com.google.cloud.deploy.v1.GetAutomationRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.deploy.v1.Automation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetAutomationMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Automations in a given project and location.
+     * </pre>
+     */
+    default void listAutomations(
+        com.google.cloud.deploy.v1.ListAutomationsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.deploy.v1.ListAutomationsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListAutomationsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single AutomationRun.
+     * </pre>
+     */
+    default void getAutomationRun(
+        com.google.cloud.deploy.v1.GetAutomationRunRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.deploy.v1.AutomationRun> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetAutomationRunMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists AutomationRuns in a given project and location.
+     * </pre>
+     */
+    default void listAutomationRuns(
+        com.google.cloud.deploy.v1.ListAutomationRunsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.deploy.v1.ListAutomationRunsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListAutomationRunsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cancels an AutomationRun. The `state` of the `AutomationRun` after
+     * cancelling is `CANCELLED`. `CancelAutomationRun` can be called on
+     * AutomationRun in the state `IN_PROGRESS` and `PENDING`; AutomationRun
+     * in a different state returns an `FAILED_PRECONDITION` error.
+     * </pre>
+     */
+    default void cancelAutomationRun(
+        com.google.cloud.deploy.v1.CancelAutomationRunRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.deploy.v1.CancelAutomationRunResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCancelAutomationRunMethod(), responseObserver);
+    }
   }
 
   /**
@@ -1730,6 +2268,23 @@ public final class CloudDeployGrpc {
             responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListTargetsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a `Rollout` to roll back the specified target.
+     * </pre>
+     */
+    public void rollbackTarget(
+        com.google.cloud.deploy.v1.RollbackTargetRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.deploy.v1.RollbackTargetResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRollbackTargetMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2048,6 +2603,140 @@ public final class CloudDeployGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetConfigMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new Automation in a given project and location.
+     * </pre>
+     */
+    public void createAutomation(
+        com.google.cloud.deploy.v1.CreateAutomationRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateAutomationMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single Automation resource.
+     * </pre>
+     */
+    public void updateAutomation(
+        com.google.cloud.deploy.v1.UpdateAutomationRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateAutomationMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single Automation resource.
+     * </pre>
+     */
+    public void deleteAutomation(
+        com.google.cloud.deploy.v1.DeleteAutomationRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteAutomationMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single Automation.
+     * </pre>
+     */
+    public void getAutomation(
+        com.google.cloud.deploy.v1.GetAutomationRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.deploy.v1.Automation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetAutomationMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Automations in a given project and location.
+     * </pre>
+     */
+    public void listAutomations(
+        com.google.cloud.deploy.v1.ListAutomationsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.deploy.v1.ListAutomationsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListAutomationsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single AutomationRun.
+     * </pre>
+     */
+    public void getAutomationRun(
+        com.google.cloud.deploy.v1.GetAutomationRunRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.deploy.v1.AutomationRun> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetAutomationRunMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists AutomationRuns in a given project and location.
+     * </pre>
+     */
+    public void listAutomationRuns(
+        com.google.cloud.deploy.v1.ListAutomationRunsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.deploy.v1.ListAutomationRunsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListAutomationRunsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cancels an AutomationRun. The `state` of the `AutomationRun` after
+     * cancelling is `CANCELLED`. `CancelAutomationRun` can be called on
+     * AutomationRun in the state `IN_PROGRESS` and `PENDING`; AutomationRun
+     * in a different state returns an `FAILED_PRECONDITION` error.
+     * </pre>
+     */
+    public void cancelAutomationRun(
+        com.google.cloud.deploy.v1.CancelAutomationRunRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.deploy.v1.CancelAutomationRunResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCancelAutomationRunMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -2146,6 +2835,19 @@ public final class CloudDeployGrpc {
         com.google.cloud.deploy.v1.ListTargetsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListTargetsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a `Rollout` to roll back the specified target.
+     * </pre>
+     */
+    public com.google.cloud.deploy.v1.RollbackTargetResponse rollbackTarget(
+        com.google.cloud.deploy.v1.RollbackTargetRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRollbackTargetMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2407,6 +3109,113 @@ public final class CloudDeployGrpc {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetConfigMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new Automation in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createAutomation(
+        com.google.cloud.deploy.v1.CreateAutomationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateAutomationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single Automation resource.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateAutomation(
+        com.google.cloud.deploy.v1.UpdateAutomationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateAutomationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single Automation resource.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteAutomation(
+        com.google.cloud.deploy.v1.DeleteAutomationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteAutomationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single Automation.
+     * </pre>
+     */
+    public com.google.cloud.deploy.v1.Automation getAutomation(
+        com.google.cloud.deploy.v1.GetAutomationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAutomationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Automations in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.deploy.v1.ListAutomationsResponse listAutomations(
+        com.google.cloud.deploy.v1.ListAutomationsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAutomationsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single AutomationRun.
+     * </pre>
+     */
+    public com.google.cloud.deploy.v1.AutomationRun getAutomationRun(
+        com.google.cloud.deploy.v1.GetAutomationRunRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAutomationRunMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists AutomationRuns in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.deploy.v1.ListAutomationRunsResponse listAutomationRuns(
+        com.google.cloud.deploy.v1.ListAutomationRunsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAutomationRunsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cancels an AutomationRun. The `state` of the `AutomationRun` after
+     * cancelling is `CANCELLED`. `CancelAutomationRun` can be called on
+     * AutomationRun in the state `IN_PROGRESS` and `PENDING`; AutomationRun
+     * in a different state returns an `FAILED_PRECONDITION` error.
+     * </pre>
+     */
+    public com.google.cloud.deploy.v1.CancelAutomationRunResponse cancelAutomationRun(
+        com.google.cloud.deploy.v1.CancelAutomationRunRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCancelAutomationRunMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -2508,6 +3317,20 @@ public final class CloudDeployGrpc {
         listTargets(com.google.cloud.deploy.v1.ListTargetsRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListTargetsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a `Rollout` to roll back the specified target.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.deploy.v1.RollbackTargetResponse>
+        rollbackTarget(com.google.cloud.deploy.v1.RollbackTargetRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRollbackTargetMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2779,6 +3602,117 @@ public final class CloudDeployGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetConfigMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new Automation in a given project and location.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        createAutomation(com.google.cloud.deploy.v1.CreateAutomationRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateAutomationMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single Automation resource.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateAutomation(com.google.cloud.deploy.v1.UpdateAutomationRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateAutomationMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single Automation resource.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteAutomation(com.google.cloud.deploy.v1.DeleteAutomationRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteAutomationMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single Automation.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.deploy.v1.Automation>
+        getAutomation(com.google.cloud.deploy.v1.GetAutomationRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetAutomationMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Automations in a given project and location.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.deploy.v1.ListAutomationsResponse>
+        listAutomations(com.google.cloud.deploy.v1.ListAutomationsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListAutomationsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single AutomationRun.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.deploy.v1.AutomationRun>
+        getAutomationRun(com.google.cloud.deploy.v1.GetAutomationRunRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetAutomationRunMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists AutomationRuns in a given project and location.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.deploy.v1.ListAutomationRunsResponse>
+        listAutomationRuns(com.google.cloud.deploy.v1.ListAutomationRunsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListAutomationRunsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cancels an AutomationRun. The `state` of the `AutomationRun` after
+     * cancelling is `CANCELLED`. `CancelAutomationRun` can be called on
+     * AutomationRun in the state `IN_PROGRESS` and `PENDING`; AutomationRun
+     * in a different state returns an `FAILED_PRECONDITION` error.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.deploy.v1.CancelAutomationRunResponse>
+        cancelAutomationRun(com.google.cloud.deploy.v1.CancelAutomationRunRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCancelAutomationRunMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_DELIVERY_PIPELINES = 0;
@@ -2787,26 +3721,35 @@ public final class CloudDeployGrpc {
   private static final int METHODID_UPDATE_DELIVERY_PIPELINE = 3;
   private static final int METHODID_DELETE_DELIVERY_PIPELINE = 4;
   private static final int METHODID_LIST_TARGETS = 5;
-  private static final int METHODID_GET_TARGET = 6;
-  private static final int METHODID_CREATE_TARGET = 7;
-  private static final int METHODID_UPDATE_TARGET = 8;
-  private static final int METHODID_DELETE_TARGET = 9;
-  private static final int METHODID_LIST_RELEASES = 10;
-  private static final int METHODID_GET_RELEASE = 11;
-  private static final int METHODID_CREATE_RELEASE = 12;
-  private static final int METHODID_ABANDON_RELEASE = 13;
-  private static final int METHODID_APPROVE_ROLLOUT = 14;
-  private static final int METHODID_ADVANCE_ROLLOUT = 15;
-  private static final int METHODID_CANCEL_ROLLOUT = 16;
-  private static final int METHODID_LIST_ROLLOUTS = 17;
-  private static final int METHODID_GET_ROLLOUT = 18;
-  private static final int METHODID_CREATE_ROLLOUT = 19;
-  private static final int METHODID_IGNORE_JOB = 20;
-  private static final int METHODID_RETRY_JOB = 21;
-  private static final int METHODID_LIST_JOB_RUNS = 22;
-  private static final int METHODID_GET_JOB_RUN = 23;
-  private static final int METHODID_TERMINATE_JOB_RUN = 24;
-  private static final int METHODID_GET_CONFIG = 25;
+  private static final int METHODID_ROLLBACK_TARGET = 6;
+  private static final int METHODID_GET_TARGET = 7;
+  private static final int METHODID_CREATE_TARGET = 8;
+  private static final int METHODID_UPDATE_TARGET = 9;
+  private static final int METHODID_DELETE_TARGET = 10;
+  private static final int METHODID_LIST_RELEASES = 11;
+  private static final int METHODID_GET_RELEASE = 12;
+  private static final int METHODID_CREATE_RELEASE = 13;
+  private static final int METHODID_ABANDON_RELEASE = 14;
+  private static final int METHODID_APPROVE_ROLLOUT = 15;
+  private static final int METHODID_ADVANCE_ROLLOUT = 16;
+  private static final int METHODID_CANCEL_ROLLOUT = 17;
+  private static final int METHODID_LIST_ROLLOUTS = 18;
+  private static final int METHODID_GET_ROLLOUT = 19;
+  private static final int METHODID_CREATE_ROLLOUT = 20;
+  private static final int METHODID_IGNORE_JOB = 21;
+  private static final int METHODID_RETRY_JOB = 22;
+  private static final int METHODID_LIST_JOB_RUNS = 23;
+  private static final int METHODID_GET_JOB_RUN = 24;
+  private static final int METHODID_TERMINATE_JOB_RUN = 25;
+  private static final int METHODID_GET_CONFIG = 26;
+  private static final int METHODID_CREATE_AUTOMATION = 27;
+  private static final int METHODID_UPDATE_AUTOMATION = 28;
+  private static final int METHODID_DELETE_AUTOMATION = 29;
+  private static final int METHODID_GET_AUTOMATION = 30;
+  private static final int METHODID_LIST_AUTOMATIONS = 31;
+  private static final int METHODID_GET_AUTOMATION_RUN = 32;
+  private static final int METHODID_LIST_AUTOMATION_RUNS = 33;
+  private static final int METHODID_CANCEL_AUTOMATION_RUN = 34;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2857,6 +3800,12 @@ public final class CloudDeployGrpc {
           serviceImpl.listTargets(
               (com.google.cloud.deploy.v1.ListTargetsRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.deploy.v1.ListTargetsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_ROLLBACK_TARGET:
+          serviceImpl.rollbackTarget(
+              (com.google.cloud.deploy.v1.RollbackTargetRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.deploy.v1.RollbackTargetResponse>)
                   responseObserver);
           break;
         case METHODID_GET_TARGET:
@@ -2969,6 +3918,51 @@ public final class CloudDeployGrpc {
               (com.google.cloud.deploy.v1.GetConfigRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.deploy.v1.Config>) responseObserver);
           break;
+        case METHODID_CREATE_AUTOMATION:
+          serviceImpl.createAutomation(
+              (com.google.cloud.deploy.v1.CreateAutomationRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_UPDATE_AUTOMATION:
+          serviceImpl.updateAutomation(
+              (com.google.cloud.deploy.v1.UpdateAutomationRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_DELETE_AUTOMATION:
+          serviceImpl.deleteAutomation(
+              (com.google.cloud.deploy.v1.DeleteAutomationRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_GET_AUTOMATION:
+          serviceImpl.getAutomation(
+              (com.google.cloud.deploy.v1.GetAutomationRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.deploy.v1.Automation>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_AUTOMATIONS:
+          serviceImpl.listAutomations(
+              (com.google.cloud.deploy.v1.ListAutomationsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.deploy.v1.ListAutomationsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_AUTOMATION_RUN:
+          serviceImpl.getAutomationRun(
+              (com.google.cloud.deploy.v1.GetAutomationRunRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.deploy.v1.AutomationRun>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_AUTOMATION_RUNS:
+          serviceImpl.listAutomationRuns(
+              (com.google.cloud.deploy.v1.ListAutomationRunsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.deploy.v1.ListAutomationRunsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_CANCEL_AUTOMATION_RUN:
+          serviceImpl.cancelAutomationRun(
+              (com.google.cloud.deploy.v1.CancelAutomationRunRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.deploy.v1.CancelAutomationRunResponse>)
+                  responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -3026,6 +4020,13 @@ public final class CloudDeployGrpc {
                     com.google.cloud.deploy.v1.ListTargetsRequest,
                     com.google.cloud.deploy.v1.ListTargetsResponse>(
                     service, METHODID_LIST_TARGETS)))
+        .addMethod(
+            getRollbackTargetMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.deploy.v1.RollbackTargetRequest,
+                    com.google.cloud.deploy.v1.RollbackTargetResponse>(
+                    service, METHODID_ROLLBACK_TARGET)))
         .addMethod(
             getGetTargetMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -3154,6 +4155,58 @@ public final class CloudDeployGrpc {
                 new MethodHandlers<
                     com.google.cloud.deploy.v1.GetConfigRequest, com.google.cloud.deploy.v1.Config>(
                     service, METHODID_GET_CONFIG)))
+        .addMethod(
+            getCreateAutomationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.deploy.v1.CreateAutomationRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_AUTOMATION)))
+        .addMethod(
+            getUpdateAutomationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.deploy.v1.UpdateAutomationRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_AUTOMATION)))
+        .addMethod(
+            getDeleteAutomationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.deploy.v1.DeleteAutomationRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_AUTOMATION)))
+        .addMethod(
+            getGetAutomationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.deploy.v1.GetAutomationRequest,
+                    com.google.cloud.deploy.v1.Automation>(service, METHODID_GET_AUTOMATION)))
+        .addMethod(
+            getListAutomationsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.deploy.v1.ListAutomationsRequest,
+                    com.google.cloud.deploy.v1.ListAutomationsResponse>(
+                    service, METHODID_LIST_AUTOMATIONS)))
+        .addMethod(
+            getGetAutomationRunMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.deploy.v1.GetAutomationRunRequest,
+                    com.google.cloud.deploy.v1.AutomationRun>(
+                    service, METHODID_GET_AUTOMATION_RUN)))
+        .addMethod(
+            getListAutomationRunsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.deploy.v1.ListAutomationRunsRequest,
+                    com.google.cloud.deploy.v1.ListAutomationRunsResponse>(
+                    service, METHODID_LIST_AUTOMATION_RUNS)))
+        .addMethod(
+            getCancelAutomationRunMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.deploy.v1.CancelAutomationRunRequest,
+                    com.google.cloud.deploy.v1.CancelAutomationRunResponse>(
+                    service, METHODID_CANCEL_AUTOMATION_RUN)))
         .build();
   }
 
@@ -3211,6 +4264,7 @@ public final class CloudDeployGrpc {
                       .addMethod(getUpdateDeliveryPipelineMethod())
                       .addMethod(getDeleteDeliveryPipelineMethod())
                       .addMethod(getListTargetsMethod())
+                      .addMethod(getRollbackTargetMethod())
                       .addMethod(getGetTargetMethod())
                       .addMethod(getCreateTargetMethod())
                       .addMethod(getUpdateTargetMethod())
@@ -3231,6 +4285,14 @@ public final class CloudDeployGrpc {
                       .addMethod(getGetJobRunMethod())
                       .addMethod(getTerminateJobRunMethod())
                       .addMethod(getGetConfigMethod())
+                      .addMethod(getCreateAutomationMethod())
+                      .addMethod(getUpdateAutomationMethod())
+                      .addMethod(getDeleteAutomationMethod())
+                      .addMethod(getGetAutomationMethod())
+                      .addMethod(getListAutomationsMethod())
+                      .addMethod(getGetAutomationRunMethod())
+                      .addMethod(getListAutomationRunsMethod())
+                      .addMethod(getCancelAutomationRunMethod())
                       .build();
         }
       }

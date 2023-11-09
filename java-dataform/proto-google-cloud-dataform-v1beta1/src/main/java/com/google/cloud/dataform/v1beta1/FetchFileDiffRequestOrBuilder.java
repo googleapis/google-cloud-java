@@ -56,7 +56,8 @@ public interface FetchFileDiffRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The file's full path including filename, relative to the workspace root.
+   * Required. The file's full path including filename, relative to the
+   * workspace root.
    * </pre>
    *
    * <code>string path = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -68,7 +69,8 @@ public interface FetchFileDiffRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The file's full path including filename, relative to the workspace root.
+   * Required. The file's full path including filename, relative to the
+   * workspace root.
    * </pre>
    *
    * <code>string path = 2 [(.google.api.field_behavior) = REQUIRED];</code>

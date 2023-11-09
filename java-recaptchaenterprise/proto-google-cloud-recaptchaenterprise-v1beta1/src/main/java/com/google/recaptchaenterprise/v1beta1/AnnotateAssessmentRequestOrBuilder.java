@@ -28,7 +28,7 @@ public interface AnnotateAssessmentRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of the Assessment, in the format
-   * "projects/{project_number}/assessments/{assessment_id}".
+   * `projects/{project_number}/assessments/{assessment_id}`.
    * </pre>
    *
    * <code>
@@ -43,7 +43,7 @@ public interface AnnotateAssessmentRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of the Assessment, in the format
-   * "projects/{project_number}/assessments/{assessment_id}".
+   * `projects/{project_number}/assessments/{assessment_id}`.
    * </pre>
    *
    * <code>

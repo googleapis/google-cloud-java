@@ -47,7 +47,7 @@ public enum FileType implements com.google.protobuf.ProtocolMessageEnum {
    * scanning attempts to convert the content of the file to utf_8 to scan
    * the file.
    * If you wish to avoid this fall back, specify one or more of the other
-   * FileType's in your storage scan.
+   * file types in your storage scan.
    * </pre>
    *
    * <code>BINARY_FILE = 1;</code>
@@ -74,9 +74,12 @@ public enum FileType implements com.google.protobuf.ProtocolMessageEnum {
    *
    * <pre>
    * Included file extensions:
-   *   bmp, gif, jpg, jpeg, jpe, png.
-   * bytes_limit_per_file has no effect on image files.
-   * Image inspection is restricted to 'global', 'us', 'asia', and 'europe'.
+   *   bmp, gif, jpg, jpeg, jpe, png. Setting
+   * [bytes_limit_per_file][google.privacy.dlp.v2.CloudStorageOptions.bytes_limit_per_file]
+   * or
+   * [bytes_limit_per_file_percent][google.privacy.dlp.v2.CloudStorageOptions.bytes_limit_per_file]
+   * has no effect on image files. Image inspection is restricted to the
+   * `global`, `us`, `asia`, and `europe` regions.
    * </pre>
    *
    * <code>IMAGE = 3;</code>
@@ -86,9 +89,10 @@ public enum FileType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Word files &gt;30 MB will be scanned as binary files.
+   * Microsoft Word files larger than 30 MB will be scanned as binary files.
    * Included file extensions:
-   *   docx, dotx, docm, dotm
+   *   docx, dotx, docm, dotm. Setting `bytes_limit_per_file` or
+   *   `bytes_limit_per_file_percent` has no effect on Word files.
    * </pre>
    *
    * <code>WORD = 5;</code>
@@ -98,9 +102,10 @@ public enum FileType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * PDF files &gt;30 MB will be scanned as binary files.
+   * PDF files larger than 30 MB will be scanned as binary files.
    * Included file extensions:
-   *   pdf
+   *   pdf. Setting `bytes_limit_per_file` or `bytes_limit_per_file_percent`
+   * has no effect on PDF files.
    * </pre>
    *
    * <code>PDF = 6;</code>
@@ -143,9 +148,10 @@ public enum FileType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Powerpoint files &gt;30 MB will be scanned as binary files.
-   * Included file extensions:
-   *   pptx, pptm, potx, potm, pot
+   * Microsoft PowerPoint files larger than 30 MB will be scanned as binary
+   * files. Included file extensions:
+   *   pptx, pptm, potx, potm, pot. Setting `bytes_limit_per_file` or
+   *   `bytes_limit_per_file_percent` has no effect on PowerPoint files.
    * </pre>
    *
    * <code>POWERPOINT = 11;</code>
@@ -155,9 +161,10 @@ public enum FileType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Excel files &gt;30 MB will be scanned as binary files.
+   * Microsoft Excel files larger than 30 MB will be scanned as binary files.
    * Included file extensions:
-   *   xlsx, xlsm, xltx, xltm
+   *   xlsx, xlsm, xltx, xltm. Setting `bytes_limit_per_file` or
+   *   `bytes_limit_per_file_percent` has no effect on Excel files.
    * </pre>
    *
    * <code>EXCEL = 12;</code>
@@ -184,7 +191,7 @@ public enum FileType implements com.google.protobuf.ProtocolMessageEnum {
    * scanning attempts to convert the content of the file to utf_8 to scan
    * the file.
    * If you wish to avoid this fall back, specify one or more of the other
-   * FileType's in your storage scan.
+   * file types in your storage scan.
    * </pre>
    *
    * <code>BINARY_FILE = 1;</code>
@@ -211,9 +218,12 @@ public enum FileType implements com.google.protobuf.ProtocolMessageEnum {
    *
    * <pre>
    * Included file extensions:
-   *   bmp, gif, jpg, jpeg, jpe, png.
-   * bytes_limit_per_file has no effect on image files.
-   * Image inspection is restricted to 'global', 'us', 'asia', and 'europe'.
+   *   bmp, gif, jpg, jpeg, jpe, png. Setting
+   * [bytes_limit_per_file][google.privacy.dlp.v2.CloudStorageOptions.bytes_limit_per_file]
+   * or
+   * [bytes_limit_per_file_percent][google.privacy.dlp.v2.CloudStorageOptions.bytes_limit_per_file]
+   * has no effect on image files. Image inspection is restricted to the
+   * `global`, `us`, `asia`, and `europe` regions.
    * </pre>
    *
    * <code>IMAGE = 3;</code>
@@ -223,9 +233,10 @@ public enum FileType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Word files &gt;30 MB will be scanned as binary files.
+   * Microsoft Word files larger than 30 MB will be scanned as binary files.
    * Included file extensions:
-   *   docx, dotx, docm, dotm
+   *   docx, dotx, docm, dotm. Setting `bytes_limit_per_file` or
+   *   `bytes_limit_per_file_percent` has no effect on Word files.
    * </pre>
    *
    * <code>WORD = 5;</code>
@@ -235,9 +246,10 @@ public enum FileType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * PDF files &gt;30 MB will be scanned as binary files.
+   * PDF files larger than 30 MB will be scanned as binary files.
    * Included file extensions:
-   *   pdf
+   *   pdf. Setting `bytes_limit_per_file` or `bytes_limit_per_file_percent`
+   * has no effect on PDF files.
    * </pre>
    *
    * <code>PDF = 6;</code>
@@ -280,9 +292,10 @@ public enum FileType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Powerpoint files &gt;30 MB will be scanned as binary files.
-   * Included file extensions:
-   *   pptx, pptm, potx, potm, pot
+   * Microsoft PowerPoint files larger than 30 MB will be scanned as binary
+   * files. Included file extensions:
+   *   pptx, pptm, potx, potm, pot. Setting `bytes_limit_per_file` or
+   *   `bytes_limit_per_file_percent` has no effect on PowerPoint files.
    * </pre>
    *
    * <code>POWERPOINT = 11;</code>
@@ -292,9 +305,10 @@ public enum FileType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Excel files &gt;30 MB will be scanned as binary files.
+   * Microsoft Excel files larger than 30 MB will be scanned as binary files.
    * Included file extensions:
-   *   xlsx, xlsm, xltx, xltm
+   *   xlsx, xlsm, xltx, xltm. Setting `bytes_limit_per_file` or
+   *   `bytes_limit_per_file_percent` has no effect on Excel files.
    * </pre>
    *
    * <code>EXCEL = 12;</code>

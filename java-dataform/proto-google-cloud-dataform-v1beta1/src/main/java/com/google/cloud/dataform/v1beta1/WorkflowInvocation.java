@@ -39,7 +39,6 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
 
   private WorkflowInvocation() {
     name_ = "";
-    compilationResult_ = "";
     state_ = 0;
   }
 
@@ -291,1756 +290,53 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(enum_scope:google.cloud.dataform.v1beta1.WorkflowInvocation.State)
   }
 
-  public interface InvocationConfigOrBuilder
-      extends
-      // @@protoc_insertion_point(interface_extends:google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfig)
-      com.google.protobuf.MessageOrBuilder {
+  private int compilationSourceCase_ = 0;
 
-    /**
-     *
-     *
-     * <pre>
-     * Immutable. The set of action identifiers to include.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.dataform.v1beta1.Target included_targets = 1 [(.google.api.field_behavior) = IMMUTABLE];
-     * </code>
-     */
-    java.util.List<com.google.cloud.dataform.v1beta1.Target> getIncludedTargetsList();
-    /**
-     *
-     *
-     * <pre>
-     * Immutable. The set of action identifiers to include.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.dataform.v1beta1.Target included_targets = 1 [(.google.api.field_behavior) = IMMUTABLE];
-     * </code>
-     */
-    com.google.cloud.dataform.v1beta1.Target getIncludedTargets(int index);
-    /**
-     *
-     *
-     * <pre>
-     * Immutable. The set of action identifiers to include.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.dataform.v1beta1.Target included_targets = 1 [(.google.api.field_behavior) = IMMUTABLE];
-     * </code>
-     */
-    int getIncludedTargetsCount();
-    /**
-     *
-     *
-     * <pre>
-     * Immutable. The set of action identifiers to include.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.dataform.v1beta1.Target included_targets = 1 [(.google.api.field_behavior) = IMMUTABLE];
-     * </code>
-     */
-    java.util.List<? extends com.google.cloud.dataform.v1beta1.TargetOrBuilder>
-        getIncludedTargetsOrBuilderList();
-    /**
-     *
-     *
-     * <pre>
-     * Immutable. The set of action identifiers to include.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.dataform.v1beta1.Target included_targets = 1 [(.google.api.field_behavior) = IMMUTABLE];
-     * </code>
-     */
-    com.google.cloud.dataform.v1beta1.TargetOrBuilder getIncludedTargetsOrBuilder(int index);
+  @SuppressWarnings("serial")
+  private java.lang.Object compilationSource_;
 
-    /**
-     *
-     *
-     * <pre>
-     * Immutable. The set of tags to include.
-     * </pre>
-     *
-     * <code>repeated string included_tags = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     *
-     * @return A list containing the includedTags.
-     */
-    java.util.List<java.lang.String> getIncludedTagsList();
-    /**
-     *
-     *
-     * <pre>
-     * Immutable. The set of tags to include.
-     * </pre>
-     *
-     * <code>repeated string included_tags = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     *
-     * @return The count of includedTags.
-     */
-    int getIncludedTagsCount();
-    /**
-     *
-     *
-     * <pre>
-     * Immutable. The set of tags to include.
-     * </pre>
-     *
-     * <code>repeated string included_tags = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     *
-     * @param index The index of the element to return.
-     * @return The includedTags at the given index.
-     */
-    java.lang.String getIncludedTags(int index);
-    /**
-     *
-     *
-     * <pre>
-     * Immutable. The set of tags to include.
-     * </pre>
-     *
-     * <code>repeated string included_tags = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     *
-     * @param index The index of the value to return.
-     * @return The bytes of the includedTags at the given index.
-     */
-    com.google.protobuf.ByteString getIncludedTagsBytes(int index);
-
-    /**
-     *
-     *
-     * <pre>
-     * Immutable. When set to true, transitive dependencies of included actions will be
-     * executed.
-     * </pre>
-     *
-     * <code>bool transitive_dependencies_included = 3 [(.google.api.field_behavior) = IMMUTABLE];
-     * </code>
-     *
-     * @return The transitiveDependenciesIncluded.
-     */
-    boolean getTransitiveDependenciesIncluded();
-
-    /**
-     *
-     *
-     * <pre>
-     * Immutable. When set to true, transitive dependents of included actions will be
-     * executed.
-     * </pre>
-     *
-     * <code>bool transitive_dependents_included = 4 [(.google.api.field_behavior) = IMMUTABLE];
-     * </code>
-     *
-     * @return The transitiveDependentsIncluded.
-     */
-    boolean getTransitiveDependentsIncluded();
-
-    /**
-     *
-     *
-     * <pre>
-     * Immutable. When set to true, any incremental tables will be fully refreshed.
-     * </pre>
-     *
-     * <code>
-     * bool fully_refresh_incremental_tables_enabled = 5 [(.google.api.field_behavior) = IMMUTABLE];
-     * </code>
-     *
-     * @return The fullyRefreshIncrementalTablesEnabled.
-     */
-    boolean getFullyRefreshIncrementalTablesEnabled();
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Includes various configuration options for this workflow invocation.
-   * If both `included_targets` and `included_tags` are unset, all actions
-   * will be included.
-   * </pre>
-   *
-   * Protobuf type {@code google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfig}
-   */
-  public static final class InvocationConfig extends com.google.protobuf.GeneratedMessageV3
+  public enum CompilationSourceCase
       implements
-      // @@protoc_insertion_point(message_implements:google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfig)
-      InvocationConfigOrBuilder {
-    private static final long serialVersionUID = 0L;
-    // Use InvocationConfig.newBuilder() to construct.
-    private InvocationConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    COMPILATION_RESULT(2),
+    WORKFLOW_CONFIG(6),
+    COMPILATIONSOURCE_NOT_SET(0);
+    private final int value;
 
-    private InvocationConfig() {
-      includedTargets_ = java.util.Collections.emptyList();
-      includedTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-      return new InvocationConfig();
-    }
-
-    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.cloud.dataform.v1beta1.DataformProto
-          .internal_static_google_cloud_dataform_v1beta1_WorkflowInvocation_InvocationConfig_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.google.cloud.dataform.v1beta1.DataformProto
-          .internal_static_google_cloud_dataform_v1beta1_WorkflowInvocation_InvocationConfig_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfig.class,
-              com.google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfig.Builder.class);
-    }
-
-    public static final int INCLUDED_TARGETS_FIELD_NUMBER = 1;
-
-    @SuppressWarnings("serial")
-    private java.util.List<com.google.cloud.dataform.v1beta1.Target> includedTargets_;
-    /**
-     *
-     *
-     * <pre>
-     * Immutable. The set of action identifiers to include.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.dataform.v1beta1.Target included_targets = 1 [(.google.api.field_behavior) = IMMUTABLE];
-     * </code>
-     */
-    @java.lang.Override
-    public java.util.List<com.google.cloud.dataform.v1beta1.Target> getIncludedTargetsList() {
-      return includedTargets_;
+    private CompilationSourceCase(int value) {
+      this.value = value;
     }
     /**
-     *
-     *
-     * <pre>
-     * Immutable. The set of action identifiers to include.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.dataform.v1beta1.Target included_targets = 1 [(.google.api.field_behavior) = IMMUTABLE];
-     * </code>
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
      */
-    @java.lang.Override
-    public java.util.List<? extends com.google.cloud.dataform.v1beta1.TargetOrBuilder>
-        getIncludedTargetsOrBuilderList() {
-      return includedTargets_;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Immutable. The set of action identifiers to include.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.dataform.v1beta1.Target included_targets = 1 [(.google.api.field_behavior) = IMMUTABLE];
-     * </code>
-     */
-    @java.lang.Override
-    public int getIncludedTargetsCount() {
-      return includedTargets_.size();
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Immutable. The set of action identifiers to include.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.dataform.v1beta1.Target included_targets = 1 [(.google.api.field_behavior) = IMMUTABLE];
-     * </code>
-     */
-    @java.lang.Override
-    public com.google.cloud.dataform.v1beta1.Target getIncludedTargets(int index) {
-      return includedTargets_.get(index);
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Immutable. The set of action identifiers to include.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.dataform.v1beta1.Target included_targets = 1 [(.google.api.field_behavior) = IMMUTABLE];
-     * </code>
-     */
-    @java.lang.Override
-    public com.google.cloud.dataform.v1beta1.TargetOrBuilder getIncludedTargetsOrBuilder(
-        int index) {
-      return includedTargets_.get(index);
+    @java.lang.Deprecated
+    public static CompilationSourceCase valueOf(int value) {
+      return forNumber(value);
     }
 
-    public static final int INCLUDED_TAGS_FIELD_NUMBER = 2;
-
-    @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringArrayList includedTags_ =
-        com.google.protobuf.LazyStringArrayList.emptyList();
-    /**
-     *
-     *
-     * <pre>
-     * Immutable. The set of tags to include.
-     * </pre>
-     *
-     * <code>repeated string included_tags = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     *
-     * @return A list containing the includedTags.
-     */
-    public com.google.protobuf.ProtocolStringList getIncludedTagsList() {
-      return includedTags_;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Immutable. The set of tags to include.
-     * </pre>
-     *
-     * <code>repeated string included_tags = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     *
-     * @return The count of includedTags.
-     */
-    public int getIncludedTagsCount() {
-      return includedTags_.size();
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Immutable. The set of tags to include.
-     * </pre>
-     *
-     * <code>repeated string included_tags = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     *
-     * @param index The index of the element to return.
-     * @return The includedTags at the given index.
-     */
-    public java.lang.String getIncludedTags(int index) {
-      return includedTags_.get(index);
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Immutable. The set of tags to include.
-     * </pre>
-     *
-     * <code>repeated string included_tags = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     *
-     * @param index The index of the value to return.
-     * @return The bytes of the includedTags at the given index.
-     */
-    public com.google.protobuf.ByteString getIncludedTagsBytes(int index) {
-      return includedTags_.getByteString(index);
+    public static CompilationSourceCase forNumber(int value) {
+      switch (value) {
+        case 2:
+          return COMPILATION_RESULT;
+        case 6:
+          return WORKFLOW_CONFIG;
+        case 0:
+          return COMPILATIONSOURCE_NOT_SET;
+        default:
+          return null;
+      }
     }
 
-    public static final int TRANSITIVE_DEPENDENCIES_INCLUDED_FIELD_NUMBER = 3;
-    private boolean transitiveDependenciesIncluded_ = false;
-    /**
-     *
-     *
-     * <pre>
-     * Immutable. When set to true, transitive dependencies of included actions will be
-     * executed.
-     * </pre>
-     *
-     * <code>bool transitive_dependencies_included = 3 [(.google.api.field_behavior) = IMMUTABLE];
-     * </code>
-     *
-     * @return The transitiveDependenciesIncluded.
-     */
-    @java.lang.Override
-    public boolean getTransitiveDependenciesIncluded() {
-      return transitiveDependenciesIncluded_;
+    public int getNumber() {
+      return this.value;
     }
+  };
 
-    public static final int TRANSITIVE_DEPENDENTS_INCLUDED_FIELD_NUMBER = 4;
-    private boolean transitiveDependentsIncluded_ = false;
-    /**
-     *
-     *
-     * <pre>
-     * Immutable. When set to true, transitive dependents of included actions will be
-     * executed.
-     * </pre>
-     *
-     * <code>bool transitive_dependents_included = 4 [(.google.api.field_behavior) = IMMUTABLE];
-     * </code>
-     *
-     * @return The transitiveDependentsIncluded.
-     */
-    @java.lang.Override
-    public boolean getTransitiveDependentsIncluded() {
-      return transitiveDependentsIncluded_;
-    }
-
-    public static final int FULLY_REFRESH_INCREMENTAL_TABLES_ENABLED_FIELD_NUMBER = 5;
-    private boolean fullyRefreshIncrementalTablesEnabled_ = false;
-    /**
-     *
-     *
-     * <pre>
-     * Immutable. When set to true, any incremental tables will be fully refreshed.
-     * </pre>
-     *
-     * <code>
-     * bool fully_refresh_incremental_tables_enabled = 5 [(.google.api.field_behavior) = IMMUTABLE];
-     * </code>
-     *
-     * @return The fullyRefreshIncrementalTablesEnabled.
-     */
-    @java.lang.Override
-    public boolean getFullyRefreshIncrementalTablesEnabled() {
-      return fullyRefreshIncrementalTablesEnabled_;
-    }
-
-    private byte memoizedIsInitialized = -1;
-
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      for (int i = 0; i < includedTargets_.size(); i++) {
-        output.writeMessage(1, includedTargets_.get(i));
-      }
-      for (int i = 0; i < includedTags_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, includedTags_.getRaw(i));
-      }
-      if (transitiveDependenciesIncluded_ != false) {
-        output.writeBool(3, transitiveDependenciesIncluded_);
-      }
-      if (transitiveDependentsIncluded_ != false) {
-        output.writeBool(4, transitiveDependentsIncluded_);
-      }
-      if (fullyRefreshIncrementalTablesEnabled_ != false) {
-        output.writeBool(5, fullyRefreshIncrementalTablesEnabled_);
-      }
-      getUnknownFields().writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      for (int i = 0; i < includedTargets_.size(); i++) {
-        size +=
-            com.google.protobuf.CodedOutputStream.computeMessageSize(1, includedTargets_.get(i));
-      }
-      {
-        int dataSize = 0;
-        for (int i = 0; i < includedTags_.size(); i++) {
-          dataSize += computeStringSizeNoTag(includedTags_.getRaw(i));
-        }
-        size += dataSize;
-        size += 1 * getIncludedTagsList().size();
-      }
-      if (transitiveDependenciesIncluded_ != false) {
-        size +=
-            com.google.protobuf.CodedOutputStream.computeBoolSize(
-                3, transitiveDependenciesIncluded_);
-      }
-      if (transitiveDependentsIncluded_ != false) {
-        size +=
-            com.google.protobuf.CodedOutputStream.computeBoolSize(4, transitiveDependentsIncluded_);
-      }
-      if (fullyRefreshIncrementalTablesEnabled_ != false) {
-        size +=
-            com.google.protobuf.CodedOutputStream.computeBoolSize(
-                5, fullyRefreshIncrementalTablesEnabled_);
-      }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-        return true;
-      }
-      if (!(obj instanceof com.google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfig)) {
-        return super.equals(obj);
-      }
-      com.google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfig other =
-          (com.google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfig) obj;
-
-      if (!getIncludedTargetsList().equals(other.getIncludedTargetsList())) return false;
-      if (!getIncludedTagsList().equals(other.getIncludedTagsList())) return false;
-      if (getTransitiveDependenciesIncluded() != other.getTransitiveDependenciesIncluded())
-        return false;
-      if (getTransitiveDependentsIncluded() != other.getTransitiveDependentsIncluded())
-        return false;
-      if (getFullyRefreshIncrementalTablesEnabled()
-          != other.getFullyRefreshIncrementalTablesEnabled()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      if (getIncludedTargetsCount() > 0) {
-        hash = (37 * hash) + INCLUDED_TARGETS_FIELD_NUMBER;
-        hash = (53 * hash) + getIncludedTargetsList().hashCode();
-      }
-      if (getIncludedTagsCount() > 0) {
-        hash = (37 * hash) + INCLUDED_TAGS_FIELD_NUMBER;
-        hash = (53 * hash) + getIncludedTagsList().hashCode();
-      }
-      hash = (37 * hash) + TRANSITIVE_DEPENDENCIES_INCLUDED_FIELD_NUMBER;
-      hash =
-          (53 * hash)
-              + com.google.protobuf.Internal.hashBoolean(getTransitiveDependenciesIncluded());
-      hash = (37 * hash) + TRANSITIVE_DEPENDENTS_INCLUDED_FIELD_NUMBER;
-      hash =
-          (53 * hash) + com.google.protobuf.Internal.hashBoolean(getTransitiveDependentsIncluded());
-      hash = (37 * hash) + FULLY_REFRESH_INCREMENTAL_TABLES_ENABLED_FIELD_NUMBER;
-      hash =
-          (53 * hash)
-              + com.google.protobuf.Internal.hashBoolean(getFullyRefreshIncrementalTablesEnabled());
-      hash = (29 * hash) + getUnknownFields().hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfig parseFrom(
-        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-
-    public static com.google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfig parseFrom(
-        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-
-    public static com.google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfig parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-
-    public static com.google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfig parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-
-    public static com.google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfig parseFrom(
-        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-
-    public static com.google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfig parseFrom(
-        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-
-    public static com.google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfig parseFrom(
-        java.io.InputStream input) throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
-    }
-
-    public static com.google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfig parseFrom(
-        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-          PARSER, input, extensionRegistry);
-    }
-
-    public static com.google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfig
-        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
-    }
-
-    public static com.google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfig
-        parseDelimitedFrom(
-            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
-          PARSER, input, extensionRegistry);
-    }
-
-    public static com.google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfig parseFrom(
-        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
-    }
-
-    public static com.google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfig parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-          PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() {
-      return newBuilder();
-    }
-
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-
-    public static Builder newBuilder(
-        com.google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfig prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Includes various configuration options for this workflow invocation.
-     * If both `included_targets` and `included_tags` are unset, all actions
-     * will be included.
-     * </pre>
-     *
-     * Protobuf type {@code google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfig}
-     */
-    public static final class Builder
-        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
-        implements
-        // @@protoc_insertion_point(builder_implements:google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfig)
-        com.google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfigOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-        return com.google.cloud.dataform.v1beta1.DataformProto
-            .internal_static_google_cloud_dataform_v1beta1_WorkflowInvocation_InvocationConfig_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.google.cloud.dataform.v1beta1.DataformProto
-            .internal_static_google_cloud_dataform_v1beta1_WorkflowInvocation_InvocationConfig_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfig.class,
-                com.google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfig.Builder
-                    .class);
-      }
-
-      // Construct using
-      // com.google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfig.newBuilder()
-      private Builder() {}
-
-      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-      }
-
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        bitField0_ = 0;
-        if (includedTargetsBuilder_ == null) {
-          includedTargets_ = java.util.Collections.emptyList();
-        } else {
-          includedTargets_ = null;
-          includedTargetsBuilder_.clear();
-        }
-        bitField0_ = (bitField0_ & ~0x00000001);
-        includedTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
-        transitiveDependenciesIncluded_ = false;
-        transitiveDependentsIncluded_ = false;
-        fullyRefreshIncrementalTablesEnabled_ = false;
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-        return com.google.cloud.dataform.v1beta1.DataformProto
-            .internal_static_google_cloud_dataform_v1beta1_WorkflowInvocation_InvocationConfig_descriptor;
-      }
-
-      @java.lang.Override
-      public com.google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfig
-          getDefaultInstanceForType() {
-        return com.google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfig
-            .getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfig build() {
-        com.google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfig result =
-            buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfig buildPartial() {
-        com.google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfig result =
-            new com.google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfig(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) {
-          buildPartial0(result);
-        }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(
-          com.google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfig result) {
-        if (includedTargetsBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
-            includedTargets_ = java.util.Collections.unmodifiableList(includedTargets_);
-            bitField0_ = (bitField0_ & ~0x00000001);
-          }
-          result.includedTargets_ = includedTargets_;
-        } else {
-          result.includedTargets_ = includedTargetsBuilder_.build();
-        }
-      }
-
-      private void buildPartial0(
-          com.google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfig result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          includedTags_.makeImmutable();
-          result.includedTags_ = includedTags_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.transitiveDependenciesIncluded_ = transitiveDependenciesIncluded_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.transitiveDependentsIncluded_ = transitiveDependentsIncluded_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.fullyRefreshIncrementalTablesEnabled_ = fullyRefreshIncrementalTablesEnabled_;
-        }
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return super.setField(field, value);
-      }
-
-      @java.lang.Override
-      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-
-      @java.lang.Override
-      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index,
-          java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other
-            instanceof com.google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfig) {
-          return mergeFrom(
-              (com.google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfig) other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(
-          com.google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfig other) {
-        if (other
-            == com.google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfig
-                .getDefaultInstance()) return this;
-        if (includedTargetsBuilder_ == null) {
-          if (!other.includedTargets_.isEmpty()) {
-            if (includedTargets_.isEmpty()) {
-              includedTargets_ = other.includedTargets_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-            } else {
-              ensureIncludedTargetsIsMutable();
-              includedTargets_.addAll(other.includedTargets_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.includedTargets_.isEmpty()) {
-            if (includedTargetsBuilder_.isEmpty()) {
-              includedTargetsBuilder_.dispose();
-              includedTargetsBuilder_ = null;
-              includedTargets_ = other.includedTargets_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-              includedTargetsBuilder_ =
-                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
-                      ? getIncludedTargetsFieldBuilder()
-                      : null;
-            } else {
-              includedTargetsBuilder_.addAllMessages(other.includedTargets_);
-            }
-          }
-        }
-        if (!other.includedTags_.isEmpty()) {
-          if (includedTags_.isEmpty()) {
-            includedTags_ = other.includedTags_;
-            bitField0_ |= 0x00000002;
-          } else {
-            ensureIncludedTagsIsMutable();
-            includedTags_.addAll(other.includedTags_);
-          }
-          onChanged();
-        }
-        if (other.getTransitiveDependenciesIncluded() != false) {
-          setTransitiveDependenciesIncluded(other.getTransitiveDependenciesIncluded());
-        }
-        if (other.getTransitiveDependentsIncluded() != false) {
-          setTransitiveDependentsIncluded(other.getTransitiveDependentsIncluded());
-        }
-        if (other.getFullyRefreshIncrementalTablesEnabled() != false) {
-          setFullyRefreshIncrementalTablesEnabled(other.getFullyRefreshIncrementalTablesEnabled());
-        }
-        this.mergeUnknownFields(other.getUnknownFields());
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10:
-                {
-                  com.google.cloud.dataform.v1beta1.Target m =
-                      input.readMessage(
-                          com.google.cloud.dataform.v1beta1.Target.parser(), extensionRegistry);
-                  if (includedTargetsBuilder_ == null) {
-                    ensureIncludedTargetsIsMutable();
-                    includedTargets_.add(m);
-                  } else {
-                    includedTargetsBuilder_.addMessage(m);
-                  }
-                  break;
-                } // case 10
-              case 18:
-                {
-                  java.lang.String s = input.readStringRequireUtf8();
-                  ensureIncludedTagsIsMutable();
-                  includedTags_.add(s);
-                  break;
-                } // case 18
-              case 24:
-                {
-                  transitiveDependenciesIncluded_ = input.readBool();
-                  bitField0_ |= 0x00000004;
-                  break;
-                } // case 24
-              case 32:
-                {
-                  transitiveDependentsIncluded_ = input.readBool();
-                  bitField0_ |= 0x00000008;
-                  break;
-                } // case 32
-              case 40:
-                {
-                  fullyRefreshIncrementalTablesEnabled_ = input.readBool();
-                  bitField0_ |= 0x00000010;
-                  break;
-                } // case 40
-              default:
-                {
-                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                    done = true; // was an endgroup tag
-                  }
-                  break;
-                } // default:
-            } // switch (tag)
-          } // while (!done)
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.unwrapIOException();
-        } finally {
-          onChanged();
-        } // finally
-        return this;
-      }
-
-      private int bitField0_;
-
-      private java.util.List<com.google.cloud.dataform.v1beta1.Target> includedTargets_ =
-          java.util.Collections.emptyList();
-
-      private void ensureIncludedTargetsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          includedTargets_ =
-              new java.util.ArrayList<com.google.cloud.dataform.v1beta1.Target>(includedTargets_);
-          bitField0_ |= 0x00000001;
-        }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-              com.google.cloud.dataform.v1beta1.Target,
-              com.google.cloud.dataform.v1beta1.Target.Builder,
-              com.google.cloud.dataform.v1beta1.TargetOrBuilder>
-          includedTargetsBuilder_;
-
-      /**
-       *
-       *
-       * <pre>
-       * Immutable. The set of action identifiers to include.
-       * </pre>
-       *
-       * <code>
-       * repeated .google.cloud.dataform.v1beta1.Target included_targets = 1 [(.google.api.field_behavior) = IMMUTABLE];
-       * </code>
-       */
-      public java.util.List<com.google.cloud.dataform.v1beta1.Target> getIncludedTargetsList() {
-        if (includedTargetsBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(includedTargets_);
-        } else {
-          return includedTargetsBuilder_.getMessageList();
-        }
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Immutable. The set of action identifiers to include.
-       * </pre>
-       *
-       * <code>
-       * repeated .google.cloud.dataform.v1beta1.Target included_targets = 1 [(.google.api.field_behavior) = IMMUTABLE];
-       * </code>
-       */
-      public int getIncludedTargetsCount() {
-        if (includedTargetsBuilder_ == null) {
-          return includedTargets_.size();
-        } else {
-          return includedTargetsBuilder_.getCount();
-        }
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Immutable. The set of action identifiers to include.
-       * </pre>
-       *
-       * <code>
-       * repeated .google.cloud.dataform.v1beta1.Target included_targets = 1 [(.google.api.field_behavior) = IMMUTABLE];
-       * </code>
-       */
-      public com.google.cloud.dataform.v1beta1.Target getIncludedTargets(int index) {
-        if (includedTargetsBuilder_ == null) {
-          return includedTargets_.get(index);
-        } else {
-          return includedTargetsBuilder_.getMessage(index);
-        }
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Immutable. The set of action identifiers to include.
-       * </pre>
-       *
-       * <code>
-       * repeated .google.cloud.dataform.v1beta1.Target included_targets = 1 [(.google.api.field_behavior) = IMMUTABLE];
-       * </code>
-       */
-      public Builder setIncludedTargets(int index, com.google.cloud.dataform.v1beta1.Target value) {
-        if (includedTargetsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureIncludedTargetsIsMutable();
-          includedTargets_.set(index, value);
-          onChanged();
-        } else {
-          includedTargetsBuilder_.setMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Immutable. The set of action identifiers to include.
-       * </pre>
-       *
-       * <code>
-       * repeated .google.cloud.dataform.v1beta1.Target included_targets = 1 [(.google.api.field_behavior) = IMMUTABLE];
-       * </code>
-       */
-      public Builder setIncludedTargets(
-          int index, com.google.cloud.dataform.v1beta1.Target.Builder builderForValue) {
-        if (includedTargetsBuilder_ == null) {
-          ensureIncludedTargetsIsMutable();
-          includedTargets_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          includedTargetsBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Immutable. The set of action identifiers to include.
-       * </pre>
-       *
-       * <code>
-       * repeated .google.cloud.dataform.v1beta1.Target included_targets = 1 [(.google.api.field_behavior) = IMMUTABLE];
-       * </code>
-       */
-      public Builder addIncludedTargets(com.google.cloud.dataform.v1beta1.Target value) {
-        if (includedTargetsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureIncludedTargetsIsMutable();
-          includedTargets_.add(value);
-          onChanged();
-        } else {
-          includedTargetsBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Immutable. The set of action identifiers to include.
-       * </pre>
-       *
-       * <code>
-       * repeated .google.cloud.dataform.v1beta1.Target included_targets = 1 [(.google.api.field_behavior) = IMMUTABLE];
-       * </code>
-       */
-      public Builder addIncludedTargets(int index, com.google.cloud.dataform.v1beta1.Target value) {
-        if (includedTargetsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureIncludedTargetsIsMutable();
-          includedTargets_.add(index, value);
-          onChanged();
-        } else {
-          includedTargetsBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Immutable. The set of action identifiers to include.
-       * </pre>
-       *
-       * <code>
-       * repeated .google.cloud.dataform.v1beta1.Target included_targets = 1 [(.google.api.field_behavior) = IMMUTABLE];
-       * </code>
-       */
-      public Builder addIncludedTargets(
-          com.google.cloud.dataform.v1beta1.Target.Builder builderForValue) {
-        if (includedTargetsBuilder_ == null) {
-          ensureIncludedTargetsIsMutable();
-          includedTargets_.add(builderForValue.build());
-          onChanged();
-        } else {
-          includedTargetsBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Immutable. The set of action identifiers to include.
-       * </pre>
-       *
-       * <code>
-       * repeated .google.cloud.dataform.v1beta1.Target included_targets = 1 [(.google.api.field_behavior) = IMMUTABLE];
-       * </code>
-       */
-      public Builder addIncludedTargets(
-          int index, com.google.cloud.dataform.v1beta1.Target.Builder builderForValue) {
-        if (includedTargetsBuilder_ == null) {
-          ensureIncludedTargetsIsMutable();
-          includedTargets_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          includedTargetsBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Immutable. The set of action identifiers to include.
-       * </pre>
-       *
-       * <code>
-       * repeated .google.cloud.dataform.v1beta1.Target included_targets = 1 [(.google.api.field_behavior) = IMMUTABLE];
-       * </code>
-       */
-      public Builder addAllIncludedTargets(
-          java.lang.Iterable<? extends com.google.cloud.dataform.v1beta1.Target> values) {
-        if (includedTargetsBuilder_ == null) {
-          ensureIncludedTargetsIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, includedTargets_);
-          onChanged();
-        } else {
-          includedTargetsBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Immutable. The set of action identifiers to include.
-       * </pre>
-       *
-       * <code>
-       * repeated .google.cloud.dataform.v1beta1.Target included_targets = 1 [(.google.api.field_behavior) = IMMUTABLE];
-       * </code>
-       */
-      public Builder clearIncludedTargets() {
-        if (includedTargetsBuilder_ == null) {
-          includedTargets_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
-          onChanged();
-        } else {
-          includedTargetsBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Immutable. The set of action identifiers to include.
-       * </pre>
-       *
-       * <code>
-       * repeated .google.cloud.dataform.v1beta1.Target included_targets = 1 [(.google.api.field_behavior) = IMMUTABLE];
-       * </code>
-       */
-      public Builder removeIncludedTargets(int index) {
-        if (includedTargetsBuilder_ == null) {
-          ensureIncludedTargetsIsMutable();
-          includedTargets_.remove(index);
-          onChanged();
-        } else {
-          includedTargetsBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Immutable. The set of action identifiers to include.
-       * </pre>
-       *
-       * <code>
-       * repeated .google.cloud.dataform.v1beta1.Target included_targets = 1 [(.google.api.field_behavior) = IMMUTABLE];
-       * </code>
-       */
-      public com.google.cloud.dataform.v1beta1.Target.Builder getIncludedTargetsBuilder(int index) {
-        return getIncludedTargetsFieldBuilder().getBuilder(index);
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Immutable. The set of action identifiers to include.
-       * </pre>
-       *
-       * <code>
-       * repeated .google.cloud.dataform.v1beta1.Target included_targets = 1 [(.google.api.field_behavior) = IMMUTABLE];
-       * </code>
-       */
-      public com.google.cloud.dataform.v1beta1.TargetOrBuilder getIncludedTargetsOrBuilder(
-          int index) {
-        if (includedTargetsBuilder_ == null) {
-          return includedTargets_.get(index);
-        } else {
-          return includedTargetsBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Immutable. The set of action identifiers to include.
-       * </pre>
-       *
-       * <code>
-       * repeated .google.cloud.dataform.v1beta1.Target included_targets = 1 [(.google.api.field_behavior) = IMMUTABLE];
-       * </code>
-       */
-      public java.util.List<? extends com.google.cloud.dataform.v1beta1.TargetOrBuilder>
-          getIncludedTargetsOrBuilderList() {
-        if (includedTargetsBuilder_ != null) {
-          return includedTargetsBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(includedTargets_);
-        }
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Immutable. The set of action identifiers to include.
-       * </pre>
-       *
-       * <code>
-       * repeated .google.cloud.dataform.v1beta1.Target included_targets = 1 [(.google.api.field_behavior) = IMMUTABLE];
-       * </code>
-       */
-      public com.google.cloud.dataform.v1beta1.Target.Builder addIncludedTargetsBuilder() {
-        return getIncludedTargetsFieldBuilder()
-            .addBuilder(com.google.cloud.dataform.v1beta1.Target.getDefaultInstance());
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Immutable. The set of action identifiers to include.
-       * </pre>
-       *
-       * <code>
-       * repeated .google.cloud.dataform.v1beta1.Target included_targets = 1 [(.google.api.field_behavior) = IMMUTABLE];
-       * </code>
-       */
-      public com.google.cloud.dataform.v1beta1.Target.Builder addIncludedTargetsBuilder(int index) {
-        return getIncludedTargetsFieldBuilder()
-            .addBuilder(index, com.google.cloud.dataform.v1beta1.Target.getDefaultInstance());
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Immutable. The set of action identifiers to include.
-       * </pre>
-       *
-       * <code>
-       * repeated .google.cloud.dataform.v1beta1.Target included_targets = 1 [(.google.api.field_behavior) = IMMUTABLE];
-       * </code>
-       */
-      public java.util.List<com.google.cloud.dataform.v1beta1.Target.Builder>
-          getIncludedTargetsBuilderList() {
-        return getIncludedTargetsFieldBuilder().getBuilderList();
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-              com.google.cloud.dataform.v1beta1.Target,
-              com.google.cloud.dataform.v1beta1.Target.Builder,
-              com.google.cloud.dataform.v1beta1.TargetOrBuilder>
-          getIncludedTargetsFieldBuilder() {
-        if (includedTargetsBuilder_ == null) {
-          includedTargetsBuilder_ =
-              new com.google.protobuf.RepeatedFieldBuilderV3<
-                  com.google.cloud.dataform.v1beta1.Target,
-                  com.google.cloud.dataform.v1beta1.Target.Builder,
-                  com.google.cloud.dataform.v1beta1.TargetOrBuilder>(
-                  includedTargets_,
-                  ((bitField0_ & 0x00000001) != 0),
-                  getParentForChildren(),
-                  isClean());
-          includedTargets_ = null;
-        }
-        return includedTargetsBuilder_;
-      }
-
-      private com.google.protobuf.LazyStringArrayList includedTags_ =
-          com.google.protobuf.LazyStringArrayList.emptyList();
-
-      private void ensureIncludedTagsIsMutable() {
-        if (!includedTags_.isModifiable()) {
-          includedTags_ = new com.google.protobuf.LazyStringArrayList(includedTags_);
-        }
-        bitField0_ |= 0x00000002;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Immutable. The set of tags to include.
-       * </pre>
-       *
-       * <code>repeated string included_tags = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
-       *
-       * @return A list containing the includedTags.
-       */
-      public com.google.protobuf.ProtocolStringList getIncludedTagsList() {
-        includedTags_.makeImmutable();
-        return includedTags_;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Immutable. The set of tags to include.
-       * </pre>
-       *
-       * <code>repeated string included_tags = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
-       *
-       * @return The count of includedTags.
-       */
-      public int getIncludedTagsCount() {
-        return includedTags_.size();
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Immutable. The set of tags to include.
-       * </pre>
-       *
-       * <code>repeated string included_tags = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
-       *
-       * @param index The index of the element to return.
-       * @return The includedTags at the given index.
-       */
-      public java.lang.String getIncludedTags(int index) {
-        return includedTags_.get(index);
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Immutable. The set of tags to include.
-       * </pre>
-       *
-       * <code>repeated string included_tags = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
-       *
-       * @param index The index of the value to return.
-       * @return The bytes of the includedTags at the given index.
-       */
-      public com.google.protobuf.ByteString getIncludedTagsBytes(int index) {
-        return includedTags_.getByteString(index);
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Immutable. The set of tags to include.
-       * </pre>
-       *
-       * <code>repeated string included_tags = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
-       *
-       * @param index The index to set the value at.
-       * @param value The includedTags to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIncludedTags(int index, java.lang.String value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureIncludedTagsIsMutable();
-        includedTags_.set(index, value);
-        bitField0_ |= 0x00000002;
-        onChanged();
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Immutable. The set of tags to include.
-       * </pre>
-       *
-       * <code>repeated string included_tags = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
-       *
-       * @param value The includedTags to add.
-       * @return This builder for chaining.
-       */
-      public Builder addIncludedTags(java.lang.String value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureIncludedTagsIsMutable();
-        includedTags_.add(value);
-        bitField0_ |= 0x00000002;
-        onChanged();
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Immutable. The set of tags to include.
-       * </pre>
-       *
-       * <code>repeated string included_tags = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
-       *
-       * @param values The includedTags to add.
-       * @return This builder for chaining.
-       */
-      public Builder addAllIncludedTags(java.lang.Iterable<java.lang.String> values) {
-        ensureIncludedTagsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, includedTags_);
-        bitField0_ |= 0x00000002;
-        onChanged();
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Immutable. The set of tags to include.
-       * </pre>
-       *
-       * <code>repeated string included_tags = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
-       *
-       * @return This builder for chaining.
-       */
-      public Builder clearIncludedTags() {
-        includedTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
-        ;
-        onChanged();
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Immutable. The set of tags to include.
-       * </pre>
-       *
-       * <code>repeated string included_tags = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
-       *
-       * @param value The bytes of the includedTags to add.
-       * @return This builder for chaining.
-       */
-      public Builder addIncludedTagsBytes(com.google.protobuf.ByteString value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        checkByteStringIsUtf8(value);
-        ensureIncludedTagsIsMutable();
-        includedTags_.add(value);
-        bitField0_ |= 0x00000002;
-        onChanged();
-        return this;
-      }
-
-      private boolean transitiveDependenciesIncluded_;
-      /**
-       *
-       *
-       * <pre>
-       * Immutable. When set to true, transitive dependencies of included actions will be
-       * executed.
-       * </pre>
-       *
-       * <code>bool transitive_dependencies_included = 3 [(.google.api.field_behavior) = IMMUTABLE];
-       * </code>
-       *
-       * @return The transitiveDependenciesIncluded.
-       */
-      @java.lang.Override
-      public boolean getTransitiveDependenciesIncluded() {
-        return transitiveDependenciesIncluded_;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Immutable. When set to true, transitive dependencies of included actions will be
-       * executed.
-       * </pre>
-       *
-       * <code>bool transitive_dependencies_included = 3 [(.google.api.field_behavior) = IMMUTABLE];
-       * </code>
-       *
-       * @param value The transitiveDependenciesIncluded to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTransitiveDependenciesIncluded(boolean value) {
-
-        transitiveDependenciesIncluded_ = value;
-        bitField0_ |= 0x00000004;
-        onChanged();
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Immutable. When set to true, transitive dependencies of included actions will be
-       * executed.
-       * </pre>
-       *
-       * <code>bool transitive_dependencies_included = 3 [(.google.api.field_behavior) = IMMUTABLE];
-       * </code>
-       *
-       * @return This builder for chaining.
-       */
-      public Builder clearTransitiveDependenciesIncluded() {
-        bitField0_ = (bitField0_ & ~0x00000004);
-        transitiveDependenciesIncluded_ = false;
-        onChanged();
-        return this;
-      }
-
-      private boolean transitiveDependentsIncluded_;
-      /**
-       *
-       *
-       * <pre>
-       * Immutable. When set to true, transitive dependents of included actions will be
-       * executed.
-       * </pre>
-       *
-       * <code>bool transitive_dependents_included = 4 [(.google.api.field_behavior) = IMMUTABLE];
-       * </code>
-       *
-       * @return The transitiveDependentsIncluded.
-       */
-      @java.lang.Override
-      public boolean getTransitiveDependentsIncluded() {
-        return transitiveDependentsIncluded_;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Immutable. When set to true, transitive dependents of included actions will be
-       * executed.
-       * </pre>
-       *
-       * <code>bool transitive_dependents_included = 4 [(.google.api.field_behavior) = IMMUTABLE];
-       * </code>
-       *
-       * @param value The transitiveDependentsIncluded to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTransitiveDependentsIncluded(boolean value) {
-
-        transitiveDependentsIncluded_ = value;
-        bitField0_ |= 0x00000008;
-        onChanged();
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Immutable. When set to true, transitive dependents of included actions will be
-       * executed.
-       * </pre>
-       *
-       * <code>bool transitive_dependents_included = 4 [(.google.api.field_behavior) = IMMUTABLE];
-       * </code>
-       *
-       * @return This builder for chaining.
-       */
-      public Builder clearTransitiveDependentsIncluded() {
-        bitField0_ = (bitField0_ & ~0x00000008);
-        transitiveDependentsIncluded_ = false;
-        onChanged();
-        return this;
-      }
-
-      private boolean fullyRefreshIncrementalTablesEnabled_;
-      /**
-       *
-       *
-       * <pre>
-       * Immutable. When set to true, any incremental tables will be fully refreshed.
-       * </pre>
-       *
-       * <code>
-       * bool fully_refresh_incremental_tables_enabled = 5 [(.google.api.field_behavior) = IMMUTABLE];
-       * </code>
-       *
-       * @return The fullyRefreshIncrementalTablesEnabled.
-       */
-      @java.lang.Override
-      public boolean getFullyRefreshIncrementalTablesEnabled() {
-        return fullyRefreshIncrementalTablesEnabled_;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Immutable. When set to true, any incremental tables will be fully refreshed.
-       * </pre>
-       *
-       * <code>
-       * bool fully_refresh_incremental_tables_enabled = 5 [(.google.api.field_behavior) = IMMUTABLE];
-       * </code>
-       *
-       * @param value The fullyRefreshIncrementalTablesEnabled to set.
-       * @return This builder for chaining.
-       */
-      public Builder setFullyRefreshIncrementalTablesEnabled(boolean value) {
-
-        fullyRefreshIncrementalTablesEnabled_ = value;
-        bitField0_ |= 0x00000010;
-        onChanged();
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Immutable. When set to true, any incremental tables will be fully refreshed.
-       * </pre>
-       *
-       * <code>
-       * bool fully_refresh_incremental_tables_enabled = 5 [(.google.api.field_behavior) = IMMUTABLE];
-       * </code>
-       *
-       * @return This builder for chaining.
-       */
-      public Builder clearFullyRefreshIncrementalTablesEnabled() {
-        bitField0_ = (bitField0_ & ~0x00000010);
-        fullyRefreshIncrementalTablesEnabled_ = false;
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-      // @@protoc_insertion_point(builder_scope:google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfig)
-    }
-
-    // @@protoc_insertion_point(class_scope:google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfig)
-    private static final com.google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfig
-        DEFAULT_INSTANCE;
-
-    static {
-      DEFAULT_INSTANCE =
-          new com.google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfig();
-    }
-
-    public static com.google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfig
-        getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<InvocationConfig> PARSER =
-        new com.google.protobuf.AbstractParser<InvocationConfig>() {
-          @java.lang.Override
-          public InvocationConfig parsePartialFrom(
-              com.google.protobuf.CodedInputStream input,
-              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-              throws com.google.protobuf.InvalidProtocolBufferException {
-            Builder builder = newBuilder();
-            try {
-              builder.mergeFrom(input, extensionRegistry);
-            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-              throw e.setUnfinishedMessage(builder.buildPartial());
-            } catch (com.google.protobuf.UninitializedMessageException e) {
-              throw e.asInvalidProtocolBufferException()
-                  .setUnfinishedMessage(builder.buildPartial());
-            } catch (java.io.IOException e) {
-              throw new com.google.protobuf.InvalidProtocolBufferException(e)
-                  .setUnfinishedMessage(builder.buildPartial());
-            }
-            return builder.buildPartial();
-          }
-        };
-
-    public static com.google.protobuf.Parser<InvocationConfig> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<InvocationConfig> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfig
-        getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
+  public CompilationSourceCase getCompilationSourceCase() {
+    return CompilationSourceCase.forNumber(compilationSourceCase_);
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
@@ -2095,14 +391,30 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int COMPILATION_RESULT_FIELD_NUMBER = 2;
-
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object compilationResult_ = "";
   /**
    *
    *
    * <pre>
-   * Immutable. The name of the compilation result to compile. Must be in the format
+   * Immutable. The name of the compilation result to use for this invocation.
+   * Must be in the format
+   * `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;&#47;compilationResults/&#42;`.
+   * </pre>
+   *
+   * <code>
+   * string compilation_result = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return Whether the compilationResult field is set.
+   */
+  public boolean hasCompilationResult() {
+    return compilationSourceCase_ == 2;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The name of the compilation result to use for this invocation.
+   * Must be in the format
    * `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;&#47;compilationResults/&#42;`.
    * </pre>
    *
@@ -2112,15 +424,19 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
    *
    * @return The compilationResult.
    */
-  @java.lang.Override
   public java.lang.String getCompilationResult() {
-    java.lang.Object ref = compilationResult_;
+    java.lang.Object ref = "";
+    if (compilationSourceCase_ == 2) {
+      ref = compilationSource_;
+    }
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      compilationResult_ = s;
+      if (compilationSourceCase_ == 2) {
+        compilationSource_ = s;
+      }
       return s;
     }
   }
@@ -2128,7 +444,8 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Immutable. The name of the compilation result to compile. Must be in the format
+   * Immutable. The name of the compilation result to use for this invocation.
+   * Must be in the format
    * `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;&#47;compilationResults/&#42;`.
    * </pre>
    *
@@ -2138,13 +455,96 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
    *
    * @return The bytes for compilationResult.
    */
-  @java.lang.Override
   public com.google.protobuf.ByteString getCompilationResultBytes() {
-    java.lang.Object ref = compilationResult_;
+    java.lang.Object ref = "";
+    if (compilationSourceCase_ == 2) {
+      ref = compilationSource_;
+    }
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      compilationResult_ = b;
+      if (compilationSourceCase_ == 2) {
+        compilationSource_ = b;
+      }
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int WORKFLOW_CONFIG_FIELD_NUMBER = 6;
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The name of the workflow config to invoke. Must be in the
+   * format `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;&#47;workflowConfigs/&#42;`.
+   * </pre>
+   *
+   * <code>
+   * string workflow_config = 6 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return Whether the workflowConfig field is set.
+   */
+  public boolean hasWorkflowConfig() {
+    return compilationSourceCase_ == 6;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The name of the workflow config to invoke. Must be in the
+   * format `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;&#47;workflowConfigs/&#42;`.
+   * </pre>
+   *
+   * <code>
+   * string workflow_config = 6 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The workflowConfig.
+   */
+  public java.lang.String getWorkflowConfig() {
+    java.lang.Object ref = "";
+    if (compilationSourceCase_ == 6) {
+      ref = compilationSource_;
+    }
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      if (compilationSourceCase_ == 6) {
+        compilationSource_ = s;
+      }
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The name of the workflow config to invoke. Must be in the
+   * format `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;&#47;workflowConfigs/&#42;`.
+   * </pre>
+   *
+   * <code>
+   * string workflow_config = 6 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for workflowConfig.
+   */
+  public com.google.protobuf.ByteString getWorkflowConfigBytes() {
+    java.lang.Object ref = "";
+    if (compilationSourceCase_ == 6) {
+      ref = compilationSource_;
+    }
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      if (compilationSourceCase_ == 6) {
+        compilationSource_ = b;
+      }
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -2152,7 +552,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int INVOCATION_CONFIG_FIELD_NUMBER = 3;
-  private com.google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfig invocationConfig_;
+  private com.google.cloud.dataform.v1beta1.InvocationConfig invocationConfig_;
   /**
    *
    *
@@ -2161,7 +561,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>
-   * .google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfig invocation_config = 3 [(.google.api.field_behavior) = IMMUTABLE];
+   * .google.cloud.dataform.v1beta1.InvocationConfig invocation_config = 3 [(.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return Whether the invocationConfig field is set.
@@ -2178,16 +578,15 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>
-   * .google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfig invocation_config = 3 [(.google.api.field_behavior) = IMMUTABLE];
+   * .google.cloud.dataform.v1beta1.InvocationConfig invocation_config = 3 [(.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return The invocationConfig.
    */
   @java.lang.Override
-  public com.google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfig
-      getInvocationConfig() {
+  public com.google.cloud.dataform.v1beta1.InvocationConfig getInvocationConfig() {
     return invocationConfig_ == null
-        ? com.google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfig.getDefaultInstance()
+        ? com.google.cloud.dataform.v1beta1.InvocationConfig.getDefaultInstance()
         : invocationConfig_;
   }
   /**
@@ -2198,14 +597,14 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>
-   * .google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfig invocation_config = 3 [(.google.api.field_behavior) = IMMUTABLE];
+   * .google.cloud.dataform.v1beta1.InvocationConfig invocation_config = 3 [(.google.api.field_behavior) = IMMUTABLE];
    * </code>
    */
   @java.lang.Override
-  public com.google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfigOrBuilder
+  public com.google.cloud.dataform.v1beta1.InvocationConfigOrBuilder
       getInvocationConfigOrBuilder() {
     return invocationConfig_ == null
-        ? com.google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfig.getDefaultInstance()
+        ? com.google.cloud.dataform.v1beta1.InvocationConfig.getDefaultInstance()
         : invocationConfig_;
   }
 
@@ -2320,8 +719,8 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(compilationResult_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, compilationResult_);
+    if (compilationSourceCase_ == 2) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, compilationSource_);
     }
     if (invocationConfig_ != null) {
       output.writeMessage(3, getInvocationConfig());
@@ -2333,6 +732,9 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
     }
     if (invocationTiming_ != null) {
       output.writeMessage(5, getInvocationTiming());
+    }
+    if (compilationSourceCase_ == 6) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, compilationSource_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -2346,8 +748,8 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(compilationResult_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, compilationResult_);
+    if (compilationSourceCase_ == 2) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, compilationSource_);
     }
     if (invocationConfig_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getInvocationConfig());
@@ -2359,6 +761,9 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
     }
     if (invocationTiming_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getInvocationTiming());
+    }
+    if (compilationSourceCase_ == 6) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, compilationSource_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -2377,7 +782,6 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
         (com.google.cloud.dataform.v1beta1.WorkflowInvocation) obj;
 
     if (!getName().equals(other.getName())) return false;
-    if (!getCompilationResult().equals(other.getCompilationResult())) return false;
     if (hasInvocationConfig() != other.hasInvocationConfig()) return false;
     if (hasInvocationConfig()) {
       if (!getInvocationConfig().equals(other.getInvocationConfig())) return false;
@@ -2386,6 +790,17 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
     if (hasInvocationTiming() != other.hasInvocationTiming()) return false;
     if (hasInvocationTiming()) {
       if (!getInvocationTiming().equals(other.getInvocationTiming())) return false;
+    }
+    if (!getCompilationSourceCase().equals(other.getCompilationSourceCase())) return false;
+    switch (compilationSourceCase_) {
+      case 2:
+        if (!getCompilationResult().equals(other.getCompilationResult())) return false;
+        break;
+      case 6:
+        if (!getWorkflowConfig().equals(other.getWorkflowConfig())) return false;
+        break;
+      case 0:
+      default:
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -2400,8 +815,6 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
-    hash = (37 * hash) + COMPILATION_RESULT_FIELD_NUMBER;
-    hash = (53 * hash) + getCompilationResult().hashCode();
     if (hasInvocationConfig()) {
       hash = (37 * hash) + INVOCATION_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getInvocationConfig().hashCode();
@@ -2411,6 +824,18 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
     if (hasInvocationTiming()) {
       hash = (37 * hash) + INVOCATION_TIMING_FIELD_NUMBER;
       hash = (53 * hash) + getInvocationTiming().hashCode();
+    }
+    switch (compilationSourceCase_) {
+      case 2:
+        hash = (37 * hash) + COMPILATION_RESULT_FIELD_NUMBER;
+        hash = (53 * hash) + getCompilationResult().hashCode();
+        break;
+      case 6:
+        hash = (37 * hash) + WORKFLOW_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getWorkflowConfig().hashCode();
+        break;
+      case 0:
+      default:
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -2552,7 +977,6 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
       super.clear();
       bitField0_ = 0;
       name_ = "";
-      compilationResult_ = "";
       invocationConfig_ = null;
       if (invocationConfigBuilder_ != null) {
         invocationConfigBuilder_.dispose();
@@ -2564,6 +988,8 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
         invocationTimingBuilder_.dispose();
         invocationTimingBuilder_ = null;
       }
+      compilationSourceCase_ = 0;
+      compilationSource_ = null;
       return this;
     }
 
@@ -2594,6 +1020,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
+      buildPartialOneofs(result);
       onBuilt();
       return result;
     }
@@ -2603,20 +1030,22 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.name_ = name_;
       }
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.compilationResult_ = compilationResult_;
-      }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.invocationConfig_ =
             invocationConfigBuilder_ == null ? invocationConfig_ : invocationConfigBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.state_ = state_;
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.invocationTiming_ =
             invocationTimingBuilder_ == null ? invocationTiming_ : invocationTimingBuilder_.build();
       }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.dataform.v1beta1.WorkflowInvocation result) {
+      result.compilationSourceCase_ = compilationSourceCase_;
+      result.compilationSource_ = this.compilationSource_;
     }
 
     @java.lang.Override
@@ -2670,11 +1099,6 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
         bitField0_ |= 0x00000001;
         onChanged();
       }
-      if (!other.getCompilationResult().isEmpty()) {
-        compilationResult_ = other.compilationResult_;
-        bitField0_ |= 0x00000002;
-        onChanged();
-      }
       if (other.hasInvocationConfig()) {
         mergeInvocationConfig(other.getInvocationConfig());
       }
@@ -2683,6 +1107,26 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
       }
       if (other.hasInvocationTiming()) {
         mergeInvocationTiming(other.getInvocationTiming());
+      }
+      switch (other.getCompilationSourceCase()) {
+        case COMPILATION_RESULT:
+          {
+            compilationSourceCase_ = 2;
+            compilationSource_ = other.compilationSource_;
+            onChanged();
+            break;
+          }
+        case WORKFLOW_CONFIG:
+          {
+            compilationSourceCase_ = 6;
+            compilationSource_ = other.compilationSource_;
+            onChanged();
+            break;
+          }
+        case COMPILATIONSOURCE_NOT_SET:
+          {
+            break;
+          }
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -2718,30 +1162,38 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
               } // case 10
             case 18:
               {
-                compilationResult_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
+                java.lang.String s = input.readStringRequireUtf8();
+                compilationSourceCase_ = 2;
+                compilationSource_ = s;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(
                     getInvocationConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 26
             case 32:
               {
                 state_ = input.readEnum();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 32
             case 42:
               {
                 input.readMessage(
                     getInvocationTimingFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 42
+            case 50:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                compilationSourceCase_ = 6;
+                compilationSource_ = s;
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2756,6 +1208,20 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
       } finally {
         onChanged();
       } // finally
+      return this;
+    }
+
+    private int compilationSourceCase_ = 0;
+    private java.lang.Object compilationSource_;
+
+    public CompilationSourceCase getCompilationSourceCase() {
+      return CompilationSourceCase.forNumber(compilationSourceCase_);
+    }
+
+    public Builder clearCompilationSource() {
+      compilationSourceCase_ = 0;
+      compilationSource_ = null;
+      onChanged();
       return this;
     }
 
@@ -2867,12 +1333,31 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
       return this;
     }
 
-    private java.lang.Object compilationResult_ = "";
     /**
      *
      *
      * <pre>
-     * Immutable. The name of the compilation result to compile. Must be in the format
+     * Immutable. The name of the compilation result to use for this invocation.
+     * Must be in the format
+     * `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;&#47;compilationResults/&#42;`.
+     * </pre>
+     *
+     * <code>
+     * string compilation_result = 2 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return Whether the compilationResult field is set.
+     */
+    @java.lang.Override
+    public boolean hasCompilationResult() {
+      return compilationSourceCase_ == 2;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The name of the compilation result to use for this invocation.
+     * Must be in the format
      * `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;&#47;compilationResults/&#42;`.
      * </pre>
      *
@@ -2882,12 +1367,18 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
      *
      * @return The compilationResult.
      */
+    @java.lang.Override
     public java.lang.String getCompilationResult() {
-      java.lang.Object ref = compilationResult_;
+      java.lang.Object ref = "";
+      if (compilationSourceCase_ == 2) {
+        ref = compilationSource_;
+      }
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        compilationResult_ = s;
+        if (compilationSourceCase_ == 2) {
+          compilationSource_ = s;
+        }
         return s;
       } else {
         return (java.lang.String) ref;
@@ -2897,7 +1388,8 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Immutable. The name of the compilation result to compile. Must be in the format
+     * Immutable. The name of the compilation result to use for this invocation.
+     * Must be in the format
      * `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;&#47;compilationResults/&#42;`.
      * </pre>
      *
@@ -2907,12 +1399,18 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
      *
      * @return The bytes for compilationResult.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString getCompilationResultBytes() {
-      java.lang.Object ref = compilationResult_;
+      java.lang.Object ref = "";
+      if (compilationSourceCase_ == 2) {
+        ref = compilationSource_;
+      }
       if (ref instanceof String) {
         com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        compilationResult_ = b;
+        if (compilationSourceCase_ == 2) {
+          compilationSource_ = b;
+        }
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -2922,7 +1420,8 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Immutable. The name of the compilation result to compile. Must be in the format
+     * Immutable. The name of the compilation result to use for this invocation.
+     * Must be in the format
      * `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;&#47;compilationResults/&#42;`.
      * </pre>
      *
@@ -2937,8 +1436,8 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-      compilationResult_ = value;
-      bitField0_ |= 0x00000002;
+      compilationSourceCase_ = 2;
+      compilationSource_ = value;
       onChanged();
       return this;
     }
@@ -2946,7 +1445,8 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Immutable. The name of the compilation result to compile. Must be in the format
+     * Immutable. The name of the compilation result to use for this invocation.
+     * Must be in the format
      * `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;&#47;compilationResults/&#42;`.
      * </pre>
      *
@@ -2957,16 +1457,19 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearCompilationResult() {
-      compilationResult_ = getDefaultInstance().getCompilationResult();
-      bitField0_ = (bitField0_ & ~0x00000002);
-      onChanged();
+      if (compilationSourceCase_ == 2) {
+        compilationSourceCase_ = 0;
+        compilationSource_ = null;
+        onChanged();
+      }
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Immutable. The name of the compilation result to compile. Must be in the format
+     * Immutable. The name of the compilation result to use for this invocation.
+     * Must be in the format
      * `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;&#47;compilationResults/&#42;`.
      * </pre>
      *
@@ -2982,17 +1485,169 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      compilationResult_ = value;
-      bitField0_ |= 0x00000002;
+      compilationSourceCase_ = 2;
+      compilationSource_ = value;
       onChanged();
       return this;
     }
 
-    private com.google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfig invocationConfig_;
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The name of the workflow config to invoke. Must be in the
+     * format `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;&#47;workflowConfigs/&#42;`.
+     * </pre>
+     *
+     * <code>
+     * string workflow_config = 6 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return Whether the workflowConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasWorkflowConfig() {
+      return compilationSourceCase_ == 6;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The name of the workflow config to invoke. Must be in the
+     * format `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;&#47;workflowConfigs/&#42;`.
+     * </pre>
+     *
+     * <code>
+     * string workflow_config = 6 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The workflowConfig.
+     */
+    @java.lang.Override
+    public java.lang.String getWorkflowConfig() {
+      java.lang.Object ref = "";
+      if (compilationSourceCase_ == 6) {
+        ref = compilationSource_;
+      }
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (compilationSourceCase_ == 6) {
+          compilationSource_ = s;
+        }
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The name of the workflow config to invoke. Must be in the
+     * format `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;&#47;workflowConfigs/&#42;`.
+     * </pre>
+     *
+     * <code>
+     * string workflow_config = 6 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for workflowConfig.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getWorkflowConfigBytes() {
+      java.lang.Object ref = "";
+      if (compilationSourceCase_ == 6) {
+        ref = compilationSource_;
+      }
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        if (compilationSourceCase_ == 6) {
+          compilationSource_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The name of the workflow config to invoke. Must be in the
+     * format `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;&#47;workflowConfigs/&#42;`.
+     * </pre>
+     *
+     * <code>
+     * string workflow_config = 6 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The workflowConfig to set.
+     * @return This builder for chaining.
+     */
+    public Builder setWorkflowConfig(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      compilationSourceCase_ = 6;
+      compilationSource_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The name of the workflow config to invoke. Must be in the
+     * format `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;&#47;workflowConfigs/&#42;`.
+     * </pre>
+     *
+     * <code>
+     * string workflow_config = 6 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearWorkflowConfig() {
+      if (compilationSourceCase_ == 6) {
+        compilationSourceCase_ = 0;
+        compilationSource_ = null;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The name of the workflow config to invoke. Must be in the
+     * format `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;&#47;workflowConfigs/&#42;`.
+     * </pre>
+     *
+     * <code>
+     * string workflow_config = 6 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for workflowConfig to set.
+     * @return This builder for chaining.
+     */
+    public Builder setWorkflowConfigBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      compilationSourceCase_ = 6;
+      compilationSource_ = value;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.dataform.v1beta1.InvocationConfig invocationConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfig,
-            com.google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfig.Builder,
-            com.google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfigOrBuilder>
+            com.google.cloud.dataform.v1beta1.InvocationConfig,
+            com.google.cloud.dataform.v1beta1.InvocationConfig.Builder,
+            com.google.cloud.dataform.v1beta1.InvocationConfigOrBuilder>
         invocationConfigBuilder_;
     /**
      *
@@ -3002,13 +1657,13 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>
-     * .google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfig invocation_config = 3 [(.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.dataform.v1beta1.InvocationConfig invocation_config = 3 [(.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return Whether the invocationConfig field is set.
      */
     public boolean hasInvocationConfig() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -3018,17 +1673,15 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>
-     * .google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfig invocation_config = 3 [(.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.dataform.v1beta1.InvocationConfig invocation_config = 3 [(.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return The invocationConfig.
      */
-    public com.google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfig
-        getInvocationConfig() {
+    public com.google.cloud.dataform.v1beta1.InvocationConfig getInvocationConfig() {
       if (invocationConfigBuilder_ == null) {
         return invocationConfig_ == null
-            ? com.google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfig
-                .getDefaultInstance()
+            ? com.google.cloud.dataform.v1beta1.InvocationConfig.getDefaultInstance()
             : invocationConfig_;
       } else {
         return invocationConfigBuilder_.getMessage();
@@ -3042,11 +1695,10 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>
-     * .google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfig invocation_config = 3 [(.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.dataform.v1beta1.InvocationConfig invocation_config = 3 [(.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
-    public Builder setInvocationConfig(
-        com.google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfig value) {
+    public Builder setInvocationConfig(com.google.cloud.dataform.v1beta1.InvocationConfig value) {
       if (invocationConfigBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -3055,7 +1707,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
       } else {
         invocationConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -3067,18 +1719,17 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>
-     * .google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfig invocation_config = 3 [(.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.dataform.v1beta1.InvocationConfig invocation_config = 3 [(.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public Builder setInvocationConfig(
-        com.google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfig.Builder
-            builderForValue) {
+        com.google.cloud.dataform.v1beta1.InvocationConfig.Builder builderForValue) {
       if (invocationConfigBuilder_ == null) {
         invocationConfig_ = builderForValue.build();
       } else {
         invocationConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -3090,17 +1741,15 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>
-     * .google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfig invocation_config = 3 [(.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.dataform.v1beta1.InvocationConfig invocation_config = 3 [(.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
-    public Builder mergeInvocationConfig(
-        com.google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfig value) {
+    public Builder mergeInvocationConfig(com.google.cloud.dataform.v1beta1.InvocationConfig value) {
       if (invocationConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)
+        if (((bitField0_ & 0x00000008) != 0)
             && invocationConfig_ != null
             && invocationConfig_
-                != com.google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfig
-                    .getDefaultInstance()) {
+                != com.google.cloud.dataform.v1beta1.InvocationConfig.getDefaultInstance()) {
           getInvocationConfigBuilder().mergeFrom(value);
         } else {
           invocationConfig_ = value;
@@ -3108,7 +1757,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
       } else {
         invocationConfigBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -3120,11 +1769,11 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>
-     * .google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfig invocation_config = 3 [(.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.dataform.v1beta1.InvocationConfig invocation_config = 3 [(.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public Builder clearInvocationConfig() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       invocationConfig_ = null;
       if (invocationConfigBuilder_ != null) {
         invocationConfigBuilder_.dispose();
@@ -3141,12 +1790,11 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>
-     * .google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfig invocation_config = 3 [(.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.dataform.v1beta1.InvocationConfig invocation_config = 3 [(.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
-    public com.google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfig.Builder
-        getInvocationConfigBuilder() {
-      bitField0_ |= 0x00000004;
+    public com.google.cloud.dataform.v1beta1.InvocationConfig.Builder getInvocationConfigBuilder() {
+      bitField0_ |= 0x00000008;
       onChanged();
       return getInvocationConfigFieldBuilder().getBuilder();
     }
@@ -3158,17 +1806,16 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>
-     * .google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfig invocation_config = 3 [(.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.dataform.v1beta1.InvocationConfig invocation_config = 3 [(.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
-    public com.google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfigOrBuilder
+    public com.google.cloud.dataform.v1beta1.InvocationConfigOrBuilder
         getInvocationConfigOrBuilder() {
       if (invocationConfigBuilder_ != null) {
         return invocationConfigBuilder_.getMessageOrBuilder();
       } else {
         return invocationConfig_ == null
-            ? com.google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfig
-                .getDefaultInstance()
+            ? com.google.cloud.dataform.v1beta1.InvocationConfig.getDefaultInstance()
             : invocationConfig_;
       }
     }
@@ -3180,20 +1827,20 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>
-     * .google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfig invocation_config = 3 [(.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.dataform.v1beta1.InvocationConfig invocation_config = 3 [(.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfig,
-            com.google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfig.Builder,
-            com.google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfigOrBuilder>
+            com.google.cloud.dataform.v1beta1.InvocationConfig,
+            com.google.cloud.dataform.v1beta1.InvocationConfig.Builder,
+            com.google.cloud.dataform.v1beta1.InvocationConfigOrBuilder>
         getInvocationConfigFieldBuilder() {
       if (invocationConfigBuilder_ == null) {
         invocationConfigBuilder_ =
             new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfig,
-                com.google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfig.Builder,
-                com.google.cloud.dataform.v1beta1.WorkflowInvocation.InvocationConfigOrBuilder>(
+                com.google.cloud.dataform.v1beta1.InvocationConfig,
+                com.google.cloud.dataform.v1beta1.InvocationConfig.Builder,
+                com.google.cloud.dataform.v1beta1.InvocationConfigOrBuilder>(
                 getInvocationConfig(), getParentForChildren(), isClean());
         invocationConfig_ = null;
       }
@@ -3234,7 +1881,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
      */
     public Builder setStateValue(int value) {
       state_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -3277,7 +1924,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -3296,7 +1943,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearState() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       state_ = 0;
       onChanged();
       return this;
@@ -3322,7 +1969,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
      * @return Whether the invocationTiming field is set.
      */
     public boolean hasInvocationTiming() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -3366,7 +2013,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
       } else {
         invocationTimingBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3387,7 +2034,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
       } else {
         invocationTimingBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3404,7 +2051,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeInvocationTiming(com.google.type.Interval value) {
       if (invocationTimingBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)
+        if (((bitField0_ & 0x00000020) != 0)
             && invocationTiming_ != null
             && invocationTiming_ != com.google.type.Interval.getDefaultInstance()) {
           getInvocationTimingBuilder().mergeFrom(value);
@@ -3414,7 +2061,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
       } else {
         invocationTimingBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3430,7 +2077,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearInvocationTiming() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       invocationTiming_ = null;
       if (invocationTimingBuilder_ != null) {
         invocationTimingBuilder_.dispose();
@@ -3451,7 +2098,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public com.google.type.Interval.Builder getInvocationTimingBuilder() {
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return getInvocationTimingFieldBuilder().getBuilder();
     }

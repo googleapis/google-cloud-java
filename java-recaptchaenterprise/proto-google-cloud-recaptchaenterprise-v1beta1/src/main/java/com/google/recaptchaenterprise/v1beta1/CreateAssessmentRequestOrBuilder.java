@@ -28,7 +28,7 @@ public interface CreateAssessmentRequestOrBuilder
    *
    * <pre>
    * Required. The name of the project in which the assessment will be created,
-   * in the format "projects/{project_number}".
+   * in the format `projects/{project_number}`.
    * </pre>
    *
    * <code>
@@ -43,7 +43,7 @@ public interface CreateAssessmentRequestOrBuilder
    *
    * <pre>
    * Required. The name of the project in which the assessment will be created,
-   * in the format "projects/{project_number}".
+   * in the format `projects/{project_number}`.
    * </pre>
    *
    * <code>

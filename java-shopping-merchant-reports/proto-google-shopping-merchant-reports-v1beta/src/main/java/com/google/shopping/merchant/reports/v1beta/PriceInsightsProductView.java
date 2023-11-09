@@ -90,8 +90,9 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * REST ID of the product, in the form of languageCode~feedLabel~offerId. Can
-   * be used to join data with the `product_view` table.
+   * REST ID of the product, in the form of
+   * `channel~languageCode~feedLabel~offerId`. Can be used to join data with the
+   * `product_view` table.
    *
    * Required in the `SELECT` clause.
    * </pre>
@@ -108,8 +109,9 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * REST ID of the product, in the form of languageCode~feedLabel~offerId. Can
-   * be used to join data with the `product_view` table.
+   * REST ID of the product, in the form of
+   * `channel~languageCode~feedLabel~offerId`. Can be used to join data with the
+   * `product_view` table.
    *
    * Required in the `SELECT` clause.
    * </pre>
@@ -134,8 +136,9 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * REST ID of the product, in the form of languageCode~feedLabel~offerId. Can
-   * be used to join data with the `product_view` table.
+   * REST ID of the product, in the form of
+   * `channel~languageCode~feedLabel~offerId`. Can be used to join data with the
+   * `product_view` table.
    *
    * Required in the `SELECT` clause.
    * </pre>
@@ -1252,96 +1255,6 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
     return predictedConversionsChangeFraction_;
   }
 
-  public static final int PREDICTED_GROSS_PROFIT_CHANGE_FRACTION_FIELD_NUMBER = 20;
-  private double predictedGrossProfitChangeFraction_ = 0D;
-  /**
-   *
-   *
-   * <pre>
-   * Predicted change in gross profit as a fraction after introducing the
-   * suggested price compared to current active price. For example, 0.05 is a 5%
-   * predicted increase in gross profit.
-   * </pre>
-   *
-   * <code>optional double predicted_gross_profit_change_fraction = 20;</code>
-   *
-   * @return Whether the predictedGrossProfitChangeFraction field is set.
-   */
-  @java.lang.Override
-  public boolean hasPredictedGrossProfitChangeFraction() {
-    return ((bitField0_ & 0x00020000) != 0);
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Predicted change in gross profit as a fraction after introducing the
-   * suggested price compared to current active price. For example, 0.05 is a 5%
-   * predicted increase in gross profit.
-   * </pre>
-   *
-   * <code>optional double predicted_gross_profit_change_fraction = 20;</code>
-   *
-   * @return The predictedGrossProfitChangeFraction.
-   */
-  @java.lang.Override
-  public double getPredictedGrossProfitChangeFraction() {
-    return predictedGrossProfitChangeFraction_;
-  }
-
-  public static final int PREDICTED_MONTHLY_GROSS_PROFIT_CHANGE_FIELD_NUMBER = 21;
-  private com.google.shopping.type.Price predictedMonthlyGrossProfitChange_;
-  /**
-   *
-   *
-   * <pre>
-   * Predicted change in gross profit after introducing the suggested price
-   * for a month compared to current active price.
-   * </pre>
-   *
-   * <code>.google.shopping.type.Price predicted_monthly_gross_profit_change = 21;</code>
-   *
-   * @return Whether the predictedMonthlyGrossProfitChange field is set.
-   */
-  @java.lang.Override
-  public boolean hasPredictedMonthlyGrossProfitChange() {
-    return predictedMonthlyGrossProfitChange_ != null;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Predicted change in gross profit after introducing the suggested price
-   * for a month compared to current active price.
-   * </pre>
-   *
-   * <code>.google.shopping.type.Price predicted_monthly_gross_profit_change = 21;</code>
-   *
-   * @return The predictedMonthlyGrossProfitChange.
-   */
-  @java.lang.Override
-  public com.google.shopping.type.Price getPredictedMonthlyGrossProfitChange() {
-    return predictedMonthlyGrossProfitChange_ == null
-        ? com.google.shopping.type.Price.getDefaultInstance()
-        : predictedMonthlyGrossProfitChange_;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Predicted change in gross profit after introducing the suggested price
-   * for a month compared to current active price.
-   * </pre>
-   *
-   * <code>.google.shopping.type.Price predicted_monthly_gross_profit_change = 21;</code>
-   */
-  @java.lang.Override
-  public com.google.shopping.type.PriceOrBuilder getPredictedMonthlyGrossProfitChangeOrBuilder() {
-    return predictedMonthlyGrossProfitChange_ == null
-        ? com.google.shopping.type.Price.getDefaultInstance()
-        : predictedMonthlyGrossProfitChange_;
-  }
-
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1412,12 +1325,6 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
     }
     if (((bitField0_ & 0x00010000) != 0)) {
       output.writeDouble(19, predictedConversionsChangeFraction_);
-    }
-    if (((bitField0_ & 0x00020000) != 0)) {
-      output.writeDouble(20, predictedGrossProfitChangeFraction_);
-    }
-    if (predictedMonthlyGrossProfitChange_ != null) {
-      output.writeMessage(21, getPredictedMonthlyGrossProfitChange());
     }
     getUnknownFields().writeTo(output);
   }
@@ -1490,16 +1397,6 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
       size +=
           com.google.protobuf.CodedOutputStream.computeDoubleSize(
               19, predictedConversionsChangeFraction_);
-    }
-    if (((bitField0_ & 0x00020000) != 0)) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeDoubleSize(
-              20, predictedGrossProfitChangeFraction_);
-    }
-    if (predictedMonthlyGrossProfitChange_ != null) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              21, getPredictedMonthlyGrossProfitChange());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1602,19 +1499,6 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
           != java.lang.Double.doubleToLongBits(other.getPredictedConversionsChangeFraction()))
         return false;
     }
-    if (hasPredictedGrossProfitChangeFraction() != other.hasPredictedGrossProfitChangeFraction())
-      return false;
-    if (hasPredictedGrossProfitChangeFraction()) {
-      if (java.lang.Double.doubleToLongBits(getPredictedGrossProfitChangeFraction())
-          != java.lang.Double.doubleToLongBits(other.getPredictedGrossProfitChangeFraction()))
-        return false;
-    }
-    if (hasPredictedMonthlyGrossProfitChange() != other.hasPredictedMonthlyGrossProfitChange())
-      return false;
-    if (hasPredictedMonthlyGrossProfitChange()) {
-      if (!getPredictedMonthlyGrossProfitChange()
-          .equals(other.getPredictedMonthlyGrossProfitChange())) return false;
-    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1710,17 +1594,6 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
           (53 * hash)
               + com.google.protobuf.Internal.hashLong(
                   java.lang.Double.doubleToLongBits(getPredictedConversionsChangeFraction()));
-    }
-    if (hasPredictedGrossProfitChangeFraction()) {
-      hash = (37 * hash) + PREDICTED_GROSS_PROFIT_CHANGE_FRACTION_FIELD_NUMBER;
-      hash =
-          (53 * hash)
-              + com.google.protobuf.Internal.hashLong(
-                  java.lang.Double.doubleToLongBits(getPredictedGrossProfitChangeFraction()));
-    }
-    if (hasPredictedMonthlyGrossProfitChange()) {
-      hash = (37 * hash) + PREDICTED_MONTHLY_GROSS_PROFIT_CHANGE_FIELD_NUMBER;
-      hash = (53 * hash) + getPredictedMonthlyGrossProfitChange().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1897,12 +1770,6 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
       predictedImpressionsChangeFraction_ = 0D;
       predictedClicksChangeFraction_ = 0D;
       predictedConversionsChangeFraction_ = 0D;
-      predictedGrossProfitChangeFraction_ = 0D;
-      predictedMonthlyGrossProfitChange_ = null;
-      if (predictedMonthlyGrossProfitChangeBuilder_ != null) {
-        predictedMonthlyGrossProfitChangeBuilder_.dispose();
-        predictedMonthlyGrossProfitChangeBuilder_ = null;
-      }
       return this;
     }
 
@@ -2017,16 +1884,6 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
       if (((from_bitField0_ & 0x00040000) != 0)) {
         result.predictedConversionsChangeFraction_ = predictedConversionsChangeFraction_;
         to_bitField0_ |= 0x00010000;
-      }
-      if (((from_bitField0_ & 0x00080000) != 0)) {
-        result.predictedGrossProfitChangeFraction_ = predictedGrossProfitChangeFraction_;
-        to_bitField0_ |= 0x00020000;
-      }
-      if (((from_bitField0_ & 0x00100000) != 0)) {
-        result.predictedMonthlyGrossProfitChange_ =
-            predictedMonthlyGrossProfitChangeBuilder_ == null
-                ? predictedMonthlyGrossProfitChange_
-                : predictedMonthlyGrossProfitChangeBuilder_.build();
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2164,12 +2021,6 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
       }
       if (other.hasPredictedConversionsChangeFraction()) {
         setPredictedConversionsChangeFraction(other.getPredictedConversionsChangeFraction());
-      }
-      if (other.hasPredictedGrossProfitChangeFraction()) {
-        setPredictedGrossProfitChangeFraction(other.getPredictedGrossProfitChangeFraction());
-      }
-      if (other.hasPredictedMonthlyGrossProfitChange()) {
-        mergePredictedMonthlyGrossProfitChange(other.getPredictedMonthlyGrossProfitChange());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -2311,20 +2162,6 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
                 bitField0_ |= 0x00040000;
                 break;
               } // case 153
-            case 161:
-              {
-                predictedGrossProfitChangeFraction_ = input.readDouble();
-                bitField0_ |= 0x00080000;
-                break;
-              } // case 161
-            case 170:
-              {
-                input.readMessage(
-                    getPredictedMonthlyGrossProfitChangeFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00100000;
-                break;
-              } // case 170
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2349,8 +2186,9 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * REST ID of the product, in the form of languageCode~feedLabel~offerId. Can
-     * be used to join data with the `product_view` table.
+     * REST ID of the product, in the form of
+     * `channel~languageCode~feedLabel~offerId`. Can be used to join data with the
+     * `product_view` table.
      *
      * Required in the `SELECT` clause.
      * </pre>
@@ -2366,8 +2204,9 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * REST ID of the product, in the form of languageCode~feedLabel~offerId. Can
-     * be used to join data with the `product_view` table.
+     * REST ID of the product, in the form of
+     * `channel~languageCode~feedLabel~offerId`. Can be used to join data with the
+     * `product_view` table.
      *
      * Required in the `SELECT` clause.
      * </pre>
@@ -2391,8 +2230,9 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * REST ID of the product, in the form of languageCode~feedLabel~offerId. Can
-     * be used to join data with the `product_view` table.
+     * REST ID of the product, in the form of
+     * `channel~languageCode~feedLabel~offerId`. Can be used to join data with the
+     * `product_view` table.
      *
      * Required in the `SELECT` clause.
      * </pre>
@@ -2416,8 +2256,9 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * REST ID of the product, in the form of languageCode~feedLabel~offerId. Can
-     * be used to join data with the `product_view` table.
+     * REST ID of the product, in the form of
+     * `channel~languageCode~feedLabel~offerId`. Can be used to join data with the
+     * `product_view` table.
      *
      * Required in the `SELECT` clause.
      * </pre>
@@ -2440,8 +2281,9 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * REST ID of the product, in the form of languageCode~feedLabel~offerId. Can
-     * be used to join data with the `product_view` table.
+     * REST ID of the product, in the form of
+     * `channel~languageCode~feedLabel~offerId`. Can be used to join data with the
+     * `product_view` table.
      *
      * Required in the `SELECT` clause.
      * </pre>
@@ -2460,8 +2302,9 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * REST ID of the product, in the form of languageCode~feedLabel~offerId. Can
-     * be used to join data with the `product_view` table.
+     * REST ID of the product, in the form of
+     * `channel~languageCode~feedLabel~offerId`. Can be used to join data with the
+     * `product_view` table.
      *
      * Required in the `SELECT` clause.
      * </pre>
@@ -4690,276 +4533,6 @@ public final class PriceInsightsProductView extends com.google.protobuf.Generate
       predictedConversionsChangeFraction_ = 0D;
       onChanged();
       return this;
-    }
-
-    private double predictedGrossProfitChangeFraction_;
-    /**
-     *
-     *
-     * <pre>
-     * Predicted change in gross profit as a fraction after introducing the
-     * suggested price compared to current active price. For example, 0.05 is a 5%
-     * predicted increase in gross profit.
-     * </pre>
-     *
-     * <code>optional double predicted_gross_profit_change_fraction = 20;</code>
-     *
-     * @return Whether the predictedGrossProfitChangeFraction field is set.
-     */
-    @java.lang.Override
-    public boolean hasPredictedGrossProfitChangeFraction() {
-      return ((bitField0_ & 0x00080000) != 0);
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Predicted change in gross profit as a fraction after introducing the
-     * suggested price compared to current active price. For example, 0.05 is a 5%
-     * predicted increase in gross profit.
-     * </pre>
-     *
-     * <code>optional double predicted_gross_profit_change_fraction = 20;</code>
-     *
-     * @return The predictedGrossProfitChangeFraction.
-     */
-    @java.lang.Override
-    public double getPredictedGrossProfitChangeFraction() {
-      return predictedGrossProfitChangeFraction_;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Predicted change in gross profit as a fraction after introducing the
-     * suggested price compared to current active price. For example, 0.05 is a 5%
-     * predicted increase in gross profit.
-     * </pre>
-     *
-     * <code>optional double predicted_gross_profit_change_fraction = 20;</code>
-     *
-     * @param value The predictedGrossProfitChangeFraction to set.
-     * @return This builder for chaining.
-     */
-    public Builder setPredictedGrossProfitChangeFraction(double value) {
-
-      predictedGrossProfitChangeFraction_ = value;
-      bitField0_ |= 0x00080000;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Predicted change in gross profit as a fraction after introducing the
-     * suggested price compared to current active price. For example, 0.05 is a 5%
-     * predicted increase in gross profit.
-     * </pre>
-     *
-     * <code>optional double predicted_gross_profit_change_fraction = 20;</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearPredictedGrossProfitChangeFraction() {
-      bitField0_ = (bitField0_ & ~0x00080000);
-      predictedGrossProfitChangeFraction_ = 0D;
-      onChanged();
-      return this;
-    }
-
-    private com.google.shopping.type.Price predictedMonthlyGrossProfitChange_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.shopping.type.Price,
-            com.google.shopping.type.Price.Builder,
-            com.google.shopping.type.PriceOrBuilder>
-        predictedMonthlyGrossProfitChangeBuilder_;
-    /**
-     *
-     *
-     * <pre>
-     * Predicted change in gross profit after introducing the suggested price
-     * for a month compared to current active price.
-     * </pre>
-     *
-     * <code>.google.shopping.type.Price predicted_monthly_gross_profit_change = 21;</code>
-     *
-     * @return Whether the predictedMonthlyGrossProfitChange field is set.
-     */
-    public boolean hasPredictedMonthlyGrossProfitChange() {
-      return ((bitField0_ & 0x00100000) != 0);
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Predicted change in gross profit after introducing the suggested price
-     * for a month compared to current active price.
-     * </pre>
-     *
-     * <code>.google.shopping.type.Price predicted_monthly_gross_profit_change = 21;</code>
-     *
-     * @return The predictedMonthlyGrossProfitChange.
-     */
-    public com.google.shopping.type.Price getPredictedMonthlyGrossProfitChange() {
-      if (predictedMonthlyGrossProfitChangeBuilder_ == null) {
-        return predictedMonthlyGrossProfitChange_ == null
-            ? com.google.shopping.type.Price.getDefaultInstance()
-            : predictedMonthlyGrossProfitChange_;
-      } else {
-        return predictedMonthlyGrossProfitChangeBuilder_.getMessage();
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Predicted change in gross profit after introducing the suggested price
-     * for a month compared to current active price.
-     * </pre>
-     *
-     * <code>.google.shopping.type.Price predicted_monthly_gross_profit_change = 21;</code>
-     */
-    public Builder setPredictedMonthlyGrossProfitChange(com.google.shopping.type.Price value) {
-      if (predictedMonthlyGrossProfitChangeBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        predictedMonthlyGrossProfitChange_ = value;
-      } else {
-        predictedMonthlyGrossProfitChangeBuilder_.setMessage(value);
-      }
-      bitField0_ |= 0x00100000;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Predicted change in gross profit after introducing the suggested price
-     * for a month compared to current active price.
-     * </pre>
-     *
-     * <code>.google.shopping.type.Price predicted_monthly_gross_profit_change = 21;</code>
-     */
-    public Builder setPredictedMonthlyGrossProfitChange(
-        com.google.shopping.type.Price.Builder builderForValue) {
-      if (predictedMonthlyGrossProfitChangeBuilder_ == null) {
-        predictedMonthlyGrossProfitChange_ = builderForValue.build();
-      } else {
-        predictedMonthlyGrossProfitChangeBuilder_.setMessage(builderForValue.build());
-      }
-      bitField0_ |= 0x00100000;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Predicted change in gross profit after introducing the suggested price
-     * for a month compared to current active price.
-     * </pre>
-     *
-     * <code>.google.shopping.type.Price predicted_monthly_gross_profit_change = 21;</code>
-     */
-    public Builder mergePredictedMonthlyGrossProfitChange(com.google.shopping.type.Price value) {
-      if (predictedMonthlyGrossProfitChangeBuilder_ == null) {
-        if (((bitField0_ & 0x00100000) != 0)
-            && predictedMonthlyGrossProfitChange_ != null
-            && predictedMonthlyGrossProfitChange_
-                != com.google.shopping.type.Price.getDefaultInstance()) {
-          getPredictedMonthlyGrossProfitChangeBuilder().mergeFrom(value);
-        } else {
-          predictedMonthlyGrossProfitChange_ = value;
-        }
-      } else {
-        predictedMonthlyGrossProfitChangeBuilder_.mergeFrom(value);
-      }
-      bitField0_ |= 0x00100000;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Predicted change in gross profit after introducing the suggested price
-     * for a month compared to current active price.
-     * </pre>
-     *
-     * <code>.google.shopping.type.Price predicted_monthly_gross_profit_change = 21;</code>
-     */
-    public Builder clearPredictedMonthlyGrossProfitChange() {
-      bitField0_ = (bitField0_ & ~0x00100000);
-      predictedMonthlyGrossProfitChange_ = null;
-      if (predictedMonthlyGrossProfitChangeBuilder_ != null) {
-        predictedMonthlyGrossProfitChangeBuilder_.dispose();
-        predictedMonthlyGrossProfitChangeBuilder_ = null;
-      }
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Predicted change in gross profit after introducing the suggested price
-     * for a month compared to current active price.
-     * </pre>
-     *
-     * <code>.google.shopping.type.Price predicted_monthly_gross_profit_change = 21;</code>
-     */
-    public com.google.shopping.type.Price.Builder getPredictedMonthlyGrossProfitChangeBuilder() {
-      bitField0_ |= 0x00100000;
-      onChanged();
-      return getPredictedMonthlyGrossProfitChangeFieldBuilder().getBuilder();
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Predicted change in gross profit after introducing the suggested price
-     * for a month compared to current active price.
-     * </pre>
-     *
-     * <code>.google.shopping.type.Price predicted_monthly_gross_profit_change = 21;</code>
-     */
-    public com.google.shopping.type.PriceOrBuilder getPredictedMonthlyGrossProfitChangeOrBuilder() {
-      if (predictedMonthlyGrossProfitChangeBuilder_ != null) {
-        return predictedMonthlyGrossProfitChangeBuilder_.getMessageOrBuilder();
-      } else {
-        return predictedMonthlyGrossProfitChange_ == null
-            ? com.google.shopping.type.Price.getDefaultInstance()
-            : predictedMonthlyGrossProfitChange_;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Predicted change in gross profit after introducing the suggested price
-     * for a month compared to current active price.
-     * </pre>
-     *
-     * <code>.google.shopping.type.Price predicted_monthly_gross_profit_change = 21;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.shopping.type.Price,
-            com.google.shopping.type.Price.Builder,
-            com.google.shopping.type.PriceOrBuilder>
-        getPredictedMonthlyGrossProfitChangeFieldBuilder() {
-      if (predictedMonthlyGrossProfitChangeBuilder_ == null) {
-        predictedMonthlyGrossProfitChangeBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.shopping.type.Price,
-                com.google.shopping.type.Price.Builder,
-                com.google.shopping.type.PriceOrBuilder>(
-                getPredictedMonthlyGrossProfitChange(), getParentForChildren(), isClean());
-        predictedMonthlyGrossProfitChange_ = null;
-      }
-      return predictedMonthlyGrossProfitChangeBuilder_;
     }
 
     @java.lang.Override

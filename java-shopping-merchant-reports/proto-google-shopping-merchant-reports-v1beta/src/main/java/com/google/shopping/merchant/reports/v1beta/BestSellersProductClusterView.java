@@ -48,7 +48,6 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
   private BestSellersProductClusterView() {
     reportGranularity_ = 0;
     reportCountryCode_ = "";
-    id_ = "";
     title_ = "";
     brand_ = "";
     categoryL1_ = "";
@@ -355,7 +354,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
    * </pre>
    *
    * <code>
-   * optional .google.shopping.merchant.reports.v1beta.ReportGranularity report_granularity = 2;
+   * optional .google.shopping.merchant.reports.v1beta.ReportGranularity.ReportGranularityEnum report_granularity = 2;
    * </code>
    *
    * @return Whether the reportGranularity field is set.
@@ -376,7 +375,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
    * </pre>
    *
    * <code>
-   * optional .google.shopping.merchant.reports.v1beta.ReportGranularity report_granularity = 2;
+   * optional .google.shopping.merchant.reports.v1beta.ReportGranularity.ReportGranularityEnum report_granularity = 2;
    * </code>
    *
    * @return The enum numeric value on the wire for reportGranularity.
@@ -397,17 +396,20 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
    * </pre>
    *
    * <code>
-   * optional .google.shopping.merchant.reports.v1beta.ReportGranularity report_granularity = 2;
+   * optional .google.shopping.merchant.reports.v1beta.ReportGranularity.ReportGranularityEnum report_granularity = 2;
    * </code>
    *
    * @return The reportGranularity.
    */
   @java.lang.Override
-  public com.google.shopping.merchant.reports.v1beta.ReportGranularity getReportGranularity() {
-    com.google.shopping.merchant.reports.v1beta.ReportGranularity result =
-        com.google.shopping.merchant.reports.v1beta.ReportGranularity.forNumber(reportGranularity_);
+  public com.google.shopping.merchant.reports.v1beta.ReportGranularity.ReportGranularityEnum
+      getReportGranularity() {
+    com.google.shopping.merchant.reports.v1beta.ReportGranularity.ReportGranularityEnum result =
+        com.google.shopping.merchant.reports.v1beta.ReportGranularity.ReportGranularityEnum
+            .forNumber(reportGranularity_);
     return result == null
-        ? com.google.shopping.merchant.reports.v1beta.ReportGranularity.UNRECOGNIZED
+        ? com.google.shopping.merchant.reports.v1beta.ReportGranularity.ReportGranularityEnum
+            .UNRECOGNIZED
         : result;
   }
 
@@ -534,72 +536,6 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
     return reportCategoryId_;
   }
 
-  public static final int ID_FIELD_NUMBER = 5;
-
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object id_ = "";
-  /**
-   *
-   *
-   * <pre>
-   * Google-assigned id of the product cluster.
-   * </pre>
-   *
-   * <code>optional string id = 5;</code>
-   *
-   * @return Whether the id field is set.
-   */
-  @java.lang.Override
-  public boolean hasId() {
-    return ((bitField0_ & 0x00000008) != 0);
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Google-assigned id of the product cluster.
-   * </pre>
-   *
-   * <code>optional string id = 5;</code>
-   *
-   * @return The id.
-   */
-  @java.lang.Override
-  public java.lang.String getId() {
-    java.lang.Object ref = id_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      id_ = s;
-      return s;
-    }
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Google-assigned id of the product cluster.
-   * </pre>
-   *
-   * <code>optional string id = 5;</code>
-   *
-   * @return The bytes for id.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString getIdBytes() {
-    java.lang.Object ref = id_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      id_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
   public static final int TITLE_FIELD_NUMBER = 6;
 
   @SuppressWarnings("serial")
@@ -617,7 +553,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
    */
   @java.lang.Override
   public boolean hasTitle() {
-    return ((bitField0_ & 0x00000010) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
   /**
    *
@@ -683,7 +619,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
    */
   @java.lang.Override
   public boolean hasBrand() {
-    return ((bitField0_ & 0x00000020) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
   /**
    *
@@ -751,7 +687,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
    */
   @java.lang.Override
   public boolean hasCategoryL1() {
-    return ((bitField0_ & 0x00000040) != 0);
+    return ((bitField0_ & 0x00000020) != 0);
   }
   /**
    *
@@ -823,7 +759,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
    */
   @java.lang.Override
   public boolean hasCategoryL2() {
-    return ((bitField0_ & 0x00000080) != 0);
+    return ((bitField0_ & 0x00000040) != 0);
   }
   /**
    *
@@ -895,7 +831,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
    */
   @java.lang.Override
   public boolean hasCategoryL3() {
-    return ((bitField0_ & 0x00000100) != 0);
+    return ((bitField0_ & 0x00000080) != 0);
   }
   /**
    *
@@ -967,7 +903,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
    */
   @java.lang.Override
   public boolean hasCategoryL4() {
-    return ((bitField0_ & 0x00000200) != 0);
+    return ((bitField0_ & 0x00000100) != 0);
   }
   /**
    *
@@ -1039,7 +975,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
    */
   @java.lang.Override
   public boolean hasCategoryL5() {
-    return ((bitField0_ & 0x00000400) != 0);
+    return ((bitField0_ & 0x00000200) != 0);
   }
   /**
    *
@@ -1177,7 +1113,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
    */
   @java.lang.Override
   public boolean hasInventoryStatus() {
-    return ((bitField0_ & 0x00000800) != 0);
+    return ((bitField0_ & 0x00000400) != 0);
   }
   /**
    *
@@ -1252,7 +1188,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
    */
   @java.lang.Override
   public boolean hasBrandInventoryStatus() {
-    return ((bitField0_ & 0x00001000) != 0);
+    return ((bitField0_ & 0x00000800) != 0);
   }
   /**
    *
@@ -1323,7 +1259,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
    */
   @java.lang.Override
   public boolean hasRank() {
-    return ((bitField0_ & 0x00002000) != 0);
+    return ((bitField0_ & 0x00001000) != 0);
   }
   /**
    *
@@ -1357,7 +1293,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
    */
   @java.lang.Override
   public boolean hasPreviousRank() {
-    return ((bitField0_ & 0x00004000) != 0);
+    return ((bitField0_ & 0x00002000) != 0);
   }
   /**
    *
@@ -1385,14 +1321,15 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
    * popularity rank in the same category and country.
    * </pre>
    *
-   * <code>optional .google.shopping.merchant.reports.v1beta.RelativeDemand relative_demand = 18;
+   * <code>
+   * optional .google.shopping.merchant.reports.v1beta.RelativeDemand.RelativeDemandEnum relative_demand = 18;
    * </code>
    *
    * @return Whether the relativeDemand field is set.
    */
   @java.lang.Override
   public boolean hasRelativeDemand() {
-    return ((bitField0_ & 0x00008000) != 0);
+    return ((bitField0_ & 0x00004000) != 0);
   }
   /**
    *
@@ -1402,7 +1339,8 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
    * popularity rank in the same category and country.
    * </pre>
    *
-   * <code>optional .google.shopping.merchant.reports.v1beta.RelativeDemand relative_demand = 18;
+   * <code>
+   * optional .google.shopping.merchant.reports.v1beta.RelativeDemand.RelativeDemandEnum relative_demand = 18;
    * </code>
    *
    * @return The enum numeric value on the wire for relativeDemand.
@@ -1419,17 +1357,20 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
    * popularity rank in the same category and country.
    * </pre>
    *
-   * <code>optional .google.shopping.merchant.reports.v1beta.RelativeDemand relative_demand = 18;
+   * <code>
+   * optional .google.shopping.merchant.reports.v1beta.RelativeDemand.RelativeDemandEnum relative_demand = 18;
    * </code>
    *
    * @return The relativeDemand.
    */
   @java.lang.Override
-  public com.google.shopping.merchant.reports.v1beta.RelativeDemand getRelativeDemand() {
-    com.google.shopping.merchant.reports.v1beta.RelativeDemand result =
-        com.google.shopping.merchant.reports.v1beta.RelativeDemand.forNumber(relativeDemand_);
+  public com.google.shopping.merchant.reports.v1beta.RelativeDemand.RelativeDemandEnum
+      getRelativeDemand() {
+    com.google.shopping.merchant.reports.v1beta.RelativeDemand.RelativeDemandEnum result =
+        com.google.shopping.merchant.reports.v1beta.RelativeDemand.RelativeDemandEnum.forNumber(
+            relativeDemand_);
     return result == null
-        ? com.google.shopping.merchant.reports.v1beta.RelativeDemand.UNRECOGNIZED
+        ? com.google.shopping.merchant.reports.v1beta.RelativeDemand.RelativeDemandEnum.UNRECOGNIZED
         : result;
   }
 
@@ -1445,14 +1386,14 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
    * </pre>
    *
    * <code>
-   * optional .google.shopping.merchant.reports.v1beta.RelativeDemand previous_relative_demand = 19;
+   * optional .google.shopping.merchant.reports.v1beta.RelativeDemand.RelativeDemandEnum previous_relative_demand = 19;
    * </code>
    *
    * @return Whether the previousRelativeDemand field is set.
    */
   @java.lang.Override
   public boolean hasPreviousRelativeDemand() {
-    return ((bitField0_ & 0x00010000) != 0);
+    return ((bitField0_ & 0x00008000) != 0);
   }
   /**
    *
@@ -1464,7 +1405,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
    * </pre>
    *
    * <code>
-   * optional .google.shopping.merchant.reports.v1beta.RelativeDemand previous_relative_demand = 19;
+   * optional .google.shopping.merchant.reports.v1beta.RelativeDemand.RelativeDemandEnum previous_relative_demand = 19;
    * </code>
    *
    * @return The enum numeric value on the wire for previousRelativeDemand.
@@ -1483,18 +1424,19 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
    * </pre>
    *
    * <code>
-   * optional .google.shopping.merchant.reports.v1beta.RelativeDemand previous_relative_demand = 19;
+   * optional .google.shopping.merchant.reports.v1beta.RelativeDemand.RelativeDemandEnum previous_relative_demand = 19;
    * </code>
    *
    * @return The previousRelativeDemand.
    */
   @java.lang.Override
-  public com.google.shopping.merchant.reports.v1beta.RelativeDemand getPreviousRelativeDemand() {
-    com.google.shopping.merchant.reports.v1beta.RelativeDemand result =
-        com.google.shopping.merchant.reports.v1beta.RelativeDemand.forNumber(
+  public com.google.shopping.merchant.reports.v1beta.RelativeDemand.RelativeDemandEnum
+      getPreviousRelativeDemand() {
+    com.google.shopping.merchant.reports.v1beta.RelativeDemand.RelativeDemandEnum result =
+        com.google.shopping.merchant.reports.v1beta.RelativeDemand.RelativeDemandEnum.forNumber(
             previousRelativeDemand_);
     return result == null
-        ? com.google.shopping.merchant.reports.v1beta.RelativeDemand.UNRECOGNIZED
+        ? com.google.shopping.merchant.reports.v1beta.RelativeDemand.RelativeDemandEnum.UNRECOGNIZED
         : result;
   }
 
@@ -1508,14 +1450,14 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
    * </pre>
    *
    * <code>
-   * optional .google.shopping.merchant.reports.v1beta.RelativeDemandChangeType relative_demand_change = 20;
+   * optional .google.shopping.merchant.reports.v1beta.RelativeDemandChangeType.RelativeDemandChangeTypeEnum relative_demand_change = 20;
    * </code>
    *
    * @return Whether the relativeDemandChange field is set.
    */
   @java.lang.Override
   public boolean hasRelativeDemandChange() {
-    return ((bitField0_ & 0x00020000) != 0);
+    return ((bitField0_ & 0x00010000) != 0);
   }
   /**
    *
@@ -1525,7 +1467,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
    * </pre>
    *
    * <code>
-   * optional .google.shopping.merchant.reports.v1beta.RelativeDemandChangeType relative_demand_change = 20;
+   * optional .google.shopping.merchant.reports.v1beta.RelativeDemandChangeType.RelativeDemandChangeTypeEnum relative_demand_change = 20;
    * </code>
    *
    * @return The enum numeric value on the wire for relativeDemandChange.
@@ -1542,19 +1484,23 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
    * </pre>
    *
    * <code>
-   * optional .google.shopping.merchant.reports.v1beta.RelativeDemandChangeType relative_demand_change = 20;
+   * optional .google.shopping.merchant.reports.v1beta.RelativeDemandChangeType.RelativeDemandChangeTypeEnum relative_demand_change = 20;
    * </code>
    *
    * @return The relativeDemandChange.
    */
   @java.lang.Override
   public com.google.shopping.merchant.reports.v1beta.RelativeDemandChangeType
+          .RelativeDemandChangeTypeEnum
       getRelativeDemandChange() {
-    com.google.shopping.merchant.reports.v1beta.RelativeDemandChangeType result =
-        com.google.shopping.merchant.reports.v1beta.RelativeDemandChangeType.forNumber(
-            relativeDemandChange_);
+    com.google.shopping.merchant.reports.v1beta.RelativeDemandChangeType
+            .RelativeDemandChangeTypeEnum
+        result =
+            com.google.shopping.merchant.reports.v1beta.RelativeDemandChangeType
+                .RelativeDemandChangeTypeEnum.forNumber(relativeDemandChange_);
     return result == null
-        ? com.google.shopping.merchant.reports.v1beta.RelativeDemandChangeType.UNRECOGNIZED
+        ? com.google.shopping.merchant.reports.v1beta.RelativeDemandChangeType
+            .RelativeDemandChangeTypeEnum.UNRECOGNIZED
         : result;
   }
 
@@ -1585,51 +1531,48 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
       output.writeInt64(4, reportCategoryId_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, id_);
-    }
-    if (((bitField0_ & 0x00000010) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, title_);
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, brand_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, categoryL1_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, categoryL2_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, categoryL3_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 11, categoryL4_);
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 12, categoryL5_);
     }
     for (int i = 0; i < variantGtins_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 13, variantGtins_.getRaw(i));
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       output.writeEnum(14, inventoryStatus_);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       output.writeEnum(15, brandInventoryStatus_);
     }
-    if (((bitField0_ & 0x00002000) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       output.writeInt64(16, rank_);
     }
-    if (((bitField0_ & 0x00004000) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       output.writeInt64(17, previousRank_);
     }
-    if (((bitField0_ & 0x00008000) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       output.writeEnum(18, relativeDemand_);
     }
-    if (((bitField0_ & 0x00010000) != 0)) {
+    if (((bitField0_ & 0x00008000) != 0)) {
       output.writeEnum(19, previousRelativeDemand_);
     }
-    if (((bitField0_ & 0x00020000) != 0)) {
+    if (((bitField0_ & 0x00010000) != 0)) {
       output.writeEnum(20, relativeDemandChange_);
     }
     getUnknownFields().writeTo(output);
@@ -1654,27 +1597,24 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(4, reportCategoryId_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, id_);
-    }
-    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, title_);
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, brand_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, categoryL1_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, categoryL2_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, categoryL3_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, categoryL4_);
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, categoryL5_);
     }
     {
@@ -1685,25 +1625,25 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
       size += dataSize;
       size += 1 * getVariantGtinsList().size();
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(14, inventoryStatus_);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(15, brandInventoryStatus_);
     }
-    if (((bitField0_ & 0x00002000) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(16, rank_);
     }
-    if (((bitField0_ & 0x00004000) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(17, previousRank_);
     }
-    if (((bitField0_ & 0x00008000) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(18, relativeDemand_);
     }
-    if (((bitField0_ & 0x00010000) != 0)) {
+    if (((bitField0_ & 0x00008000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(19, previousRelativeDemand_);
     }
-    if (((bitField0_ & 0x00020000) != 0)) {
+    if (((bitField0_ & 0x00010000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(20, relativeDemandChange_);
     }
     size += getUnknownFields().getSerializedSize();
@@ -1738,10 +1678,6 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
     if (hasReportCategoryId() != other.hasReportCategoryId()) return false;
     if (hasReportCategoryId()) {
       if (getReportCategoryId() != other.getReportCategoryId()) return false;
-    }
-    if (hasId() != other.hasId()) return false;
-    if (hasId()) {
-      if (!getId().equals(other.getId())) return false;
     }
     if (hasTitle() != other.hasTitle()) return false;
     if (hasTitle()) {
@@ -1826,10 +1762,6 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
     if (hasReportCategoryId()) {
       hash = (37 * hash) + REPORT_CATEGORY_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getReportCategoryId());
-    }
-    if (hasId()) {
-      hash = (37 * hash) + ID_FIELD_NUMBER;
-      hash = (53 * hash) + getId().hashCode();
     }
     if (hasTitle()) {
       hash = (37 * hash) + TITLE_FIELD_NUMBER;
@@ -2050,7 +1982,6 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
       reportGranularity_ = 0;
       reportCountryCode_ = "";
       reportCategoryId_ = 0L;
-      id_ = "";
       title_ = "";
       brand_ = "";
       categoryL1_ = "";
@@ -2124,68 +2055,64 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
         to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.id_ = id_;
+        result.title_ = title_;
         to_bitField0_ |= 0x00000008;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.title_ = title_;
+        result.brand_ = brand_;
         to_bitField0_ |= 0x00000010;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.brand_ = brand_;
+        result.categoryL1_ = categoryL1_;
         to_bitField0_ |= 0x00000020;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
-        result.categoryL1_ = categoryL1_;
+        result.categoryL2_ = categoryL2_;
         to_bitField0_ |= 0x00000040;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
-        result.categoryL2_ = categoryL2_;
+        result.categoryL3_ = categoryL3_;
         to_bitField0_ |= 0x00000080;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
-        result.categoryL3_ = categoryL3_;
+        result.categoryL4_ = categoryL4_;
         to_bitField0_ |= 0x00000100;
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
-        result.categoryL4_ = categoryL4_;
+        result.categoryL5_ = categoryL5_;
         to_bitField0_ |= 0x00000200;
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
-        result.categoryL5_ = categoryL5_;
-        to_bitField0_ |= 0x00000400;
-      }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
         variantGtins_.makeImmutable();
         result.variantGtins_ = variantGtins_;
       }
-      if (((from_bitField0_ & 0x00002000) != 0)) {
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.inventoryStatus_ = inventoryStatus_;
+        to_bitField0_ |= 0x00000400;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.brandInventoryStatus_ = brandInventoryStatus_;
         to_bitField0_ |= 0x00000800;
       }
       if (((from_bitField0_ & 0x00004000) != 0)) {
-        result.brandInventoryStatus_ = brandInventoryStatus_;
+        result.rank_ = rank_;
         to_bitField0_ |= 0x00001000;
       }
       if (((from_bitField0_ & 0x00008000) != 0)) {
-        result.rank_ = rank_;
+        result.previousRank_ = previousRank_;
         to_bitField0_ |= 0x00002000;
       }
       if (((from_bitField0_ & 0x00010000) != 0)) {
-        result.previousRank_ = previousRank_;
+        result.relativeDemand_ = relativeDemand_;
         to_bitField0_ |= 0x00004000;
       }
       if (((from_bitField0_ & 0x00020000) != 0)) {
-        result.relativeDemand_ = relativeDemand_;
+        result.previousRelativeDemand_ = previousRelativeDemand_;
         to_bitField0_ |= 0x00008000;
       }
       if (((from_bitField0_ & 0x00040000) != 0)) {
-        result.previousRelativeDemand_ = previousRelativeDemand_;
-        to_bitField0_ |= 0x00010000;
-      }
-      if (((from_bitField0_ & 0x00080000) != 0)) {
         result.relativeDemandChange_ = relativeDemandChange_;
-        to_bitField0_ |= 0x00020000;
+        to_bitField0_ |= 0x00010000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2254,50 +2181,45 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
       if (other.hasReportCategoryId()) {
         setReportCategoryId(other.getReportCategoryId());
       }
-      if (other.hasId()) {
-        id_ = other.id_;
-        bitField0_ |= 0x00000010;
-        onChanged();
-      }
       if (other.hasTitle()) {
         title_ = other.title_;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.hasBrand()) {
         brand_ = other.brand_;
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.hasCategoryL1()) {
         categoryL1_ = other.categoryL1_;
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (other.hasCategoryL2()) {
         categoryL2_ = other.categoryL2_;
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (other.hasCategoryL3()) {
         categoryL3_ = other.categoryL3_;
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       if (other.hasCategoryL4()) {
         categoryL4_ = other.categoryL4_;
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       if (other.hasCategoryL5()) {
         categoryL5_ = other.categoryL5_;
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       if (!other.variantGtins_.isEmpty()) {
         if (variantGtins_.isEmpty()) {
           variantGtins_ = other.variantGtins_;
-          bitField0_ |= 0x00001000;
+          bitField0_ |= 0x00000800;
         } else {
           ensureVariantGtinsIsMutable();
           variantGtins_.addAll(other.variantGtins_);
@@ -2375,52 +2297,46 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
                 bitField0_ |= 0x00000008;
                 break;
               } // case 32
-            case 42:
-              {
-                id_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 42
             case 50:
               {
                 title_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 50
             case 58:
               {
                 brand_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 58
             case 66:
               {
                 categoryL1_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 66
             case 74:
               {
                 categoryL2_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 74
             case 82:
               {
                 categoryL3_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 82
             case 90:
               {
                 categoryL4_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 90
             case 98:
               {
                 categoryL5_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 98
             case 106:
@@ -2433,43 +2349,43 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
             case 112:
               {
                 inventoryStatus_ = input.readEnum();
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 112
             case 120:
               {
                 brandInventoryStatus_ = input.readEnum();
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 120
             case 128:
               {
                 rank_ = input.readInt64();
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 128
             case 136:
               {
                 previousRank_ = input.readInt64();
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 136
             case 144:
               {
                 relativeDemand_ = input.readEnum();
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case 144
             case 152:
               {
                 previousRelativeDemand_ = input.readEnum();
-                bitField0_ |= 0x00040000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case 152
             case 160:
               {
                 relativeDemandChange_ = input.readEnum();
-                bitField0_ |= 0x00080000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case 160
             default:
@@ -2740,7 +2656,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>
-     * optional .google.shopping.merchant.reports.v1beta.ReportGranularity report_granularity = 2;
+     * optional .google.shopping.merchant.reports.v1beta.ReportGranularity.ReportGranularityEnum report_granularity = 2;
      * </code>
      *
      * @return Whether the reportGranularity field is set.
@@ -2761,7 +2677,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>
-     * optional .google.shopping.merchant.reports.v1beta.ReportGranularity report_granularity = 2;
+     * optional .google.shopping.merchant.reports.v1beta.ReportGranularity.ReportGranularityEnum report_granularity = 2;
      * </code>
      *
      * @return The enum numeric value on the wire for reportGranularity.
@@ -2782,7 +2698,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>
-     * optional .google.shopping.merchant.reports.v1beta.ReportGranularity report_granularity = 2;
+     * optional .google.shopping.merchant.reports.v1beta.ReportGranularity.ReportGranularityEnum report_granularity = 2;
      * </code>
      *
      * @param value The enum numeric value on the wire for reportGranularity to set.
@@ -2806,18 +2722,20 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>
-     * optional .google.shopping.merchant.reports.v1beta.ReportGranularity report_granularity = 2;
+     * optional .google.shopping.merchant.reports.v1beta.ReportGranularity.ReportGranularityEnum report_granularity = 2;
      * </code>
      *
      * @return The reportGranularity.
      */
     @java.lang.Override
-    public com.google.shopping.merchant.reports.v1beta.ReportGranularity getReportGranularity() {
-      com.google.shopping.merchant.reports.v1beta.ReportGranularity result =
-          com.google.shopping.merchant.reports.v1beta.ReportGranularity.forNumber(
-              reportGranularity_);
+    public com.google.shopping.merchant.reports.v1beta.ReportGranularity.ReportGranularityEnum
+        getReportGranularity() {
+      com.google.shopping.merchant.reports.v1beta.ReportGranularity.ReportGranularityEnum result =
+          com.google.shopping.merchant.reports.v1beta.ReportGranularity.ReportGranularityEnum
+              .forNumber(reportGranularity_);
       return result == null
-          ? com.google.shopping.merchant.reports.v1beta.ReportGranularity.UNRECOGNIZED
+          ? com.google.shopping.merchant.reports.v1beta.ReportGranularity.ReportGranularityEnum
+              .UNRECOGNIZED
           : result;
     }
     /**
@@ -2832,14 +2750,14 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>
-     * optional .google.shopping.merchant.reports.v1beta.ReportGranularity report_granularity = 2;
+     * optional .google.shopping.merchant.reports.v1beta.ReportGranularity.ReportGranularityEnum report_granularity = 2;
      * </code>
      *
      * @param value The reportGranularity to set.
      * @return This builder for chaining.
      */
     public Builder setReportGranularity(
-        com.google.shopping.merchant.reports.v1beta.ReportGranularity value) {
+        com.google.shopping.merchant.reports.v1beta.ReportGranularity.ReportGranularityEnum value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -2860,7 +2778,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>
-     * optional .google.shopping.merchant.reports.v1beta.ReportGranularity report_granularity = 2;
+     * optional .google.shopping.merchant.reports.v1beta.ReportGranularity.ReportGranularityEnum report_granularity = 2;
      * </code>
      *
      * @return This builder for chaining.
@@ -3108,126 +3026,6 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
       return this;
     }
 
-    private java.lang.Object id_ = "";
-    /**
-     *
-     *
-     * <pre>
-     * Google-assigned id of the product cluster.
-     * </pre>
-     *
-     * <code>optional string id = 5;</code>
-     *
-     * @return Whether the id field is set.
-     */
-    public boolean hasId() {
-      return ((bitField0_ & 0x00000010) != 0);
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Google-assigned id of the product cluster.
-     * </pre>
-     *
-     * <code>optional string id = 5;</code>
-     *
-     * @return The id.
-     */
-    public java.lang.String getId() {
-      java.lang.Object ref = id_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        id_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Google-assigned id of the product cluster.
-     * </pre>
-     *
-     * <code>optional string id = 5;</code>
-     *
-     * @return The bytes for id.
-     */
-    public com.google.protobuf.ByteString getIdBytes() {
-      java.lang.Object ref = id_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        id_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Google-assigned id of the product cluster.
-     * </pre>
-     *
-     * <code>optional string id = 5;</code>
-     *
-     * @param value The id to set.
-     * @return This builder for chaining.
-     */
-    public Builder setId(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      id_ = value;
-      bitField0_ |= 0x00000010;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Google-assigned id of the product cluster.
-     * </pre>
-     *
-     * <code>optional string id = 5;</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearId() {
-      id_ = getDefaultInstance().getId();
-      bitField0_ = (bitField0_ & ~0x00000010);
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Google-assigned id of the product cluster.
-     * </pre>
-     *
-     * <code>optional string id = 5;</code>
-     *
-     * @param value The bytes for id to set.
-     * @return This builder for chaining.
-     */
-    public Builder setIdBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-      id_ = value;
-      bitField0_ |= 0x00000010;
-      onChanged();
-      return this;
-    }
-
     private java.lang.Object title_ = "";
     /**
      *
@@ -3241,7 +3039,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
      * @return Whether the title field is set.
      */
     public boolean hasTitle() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -3304,7 +3102,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       title_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -3321,7 +3119,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
      */
     public Builder clearTitle() {
       title_ = getDefaultInstance().getTitle();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -3343,7 +3141,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
       }
       checkByteStringIsUtf8(value);
       title_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -3361,7 +3159,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
      * @return Whether the brand field is set.
      */
     public boolean hasBrand() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -3424,7 +3222,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       brand_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3441,7 +3239,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
      */
     public Builder clearBrand() {
       brand_ = getDefaultInstance().getBrand();
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -3463,7 +3261,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
       }
       checkByteStringIsUtf8(value);
       brand_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3483,7 +3281,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
      * @return Whether the categoryL1 field is set.
      */
     public boolean hasCategoryL1() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -3552,7 +3350,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       categoryL1_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3571,7 +3369,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
      */
     public Builder clearCategoryL1() {
       categoryL1_ = getDefaultInstance().getCategoryL1();
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -3595,7 +3393,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
       }
       checkByteStringIsUtf8(value);
       categoryL1_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3615,7 +3413,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
      * @return Whether the categoryL2 field is set.
      */
     public boolean hasCategoryL2() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -3684,7 +3482,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       categoryL2_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3703,7 +3501,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
      */
     public Builder clearCategoryL2() {
       categoryL2_ = getDefaultInstance().getCategoryL2();
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -3727,7 +3525,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
       }
       checkByteStringIsUtf8(value);
       categoryL2_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3747,7 +3545,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
      * @return Whether the categoryL3 field is set.
      */
     public boolean hasCategoryL3() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -3816,7 +3614,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       categoryL3_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3835,7 +3633,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
      */
     public Builder clearCategoryL3() {
       categoryL3_ = getDefaultInstance().getCategoryL3();
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -3859,7 +3657,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
       }
       checkByteStringIsUtf8(value);
       categoryL3_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3879,7 +3677,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
      * @return Whether the categoryL4 field is set.
      */
     public boolean hasCategoryL4() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -3948,7 +3746,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       categoryL4_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3967,7 +3765,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
      */
     public Builder clearCategoryL4() {
       categoryL4_ = getDefaultInstance().getCategoryL4();
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -3991,7 +3789,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
       }
       checkByteStringIsUtf8(value);
       categoryL4_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -4011,7 +3809,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
      * @return Whether the categoryL5 field is set.
      */
     public boolean hasCategoryL5() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      *
@@ -4080,7 +3878,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       categoryL5_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -4099,7 +3897,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
      */
     public Builder clearCategoryL5() {
       categoryL5_ = getDefaultInstance().getCategoryL5();
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -4123,7 +3921,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
       }
       checkByteStringIsUtf8(value);
       categoryL5_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -4135,7 +3933,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
       if (!variantGtins_.isModifiable()) {
         variantGtins_ = new com.google.protobuf.LazyStringArrayList(variantGtins_);
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00000800;
     }
     /**
      *
@@ -4215,7 +4013,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
       }
       ensureVariantGtinsIsMutable();
       variantGtins_.set(index, value);
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4237,7 +4035,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
       }
       ensureVariantGtinsIsMutable();
       variantGtins_.add(value);
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4256,7 +4054,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
     public Builder addAllVariantGtins(java.lang.Iterable<java.lang.String> values) {
       ensureVariantGtinsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, variantGtins_);
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4273,7 +4071,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
      */
     public Builder clearVariantGtins() {
       variantGtins_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00000800);
       ;
       onChanged();
       return this;
@@ -4297,7 +4095,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
       checkByteStringIsUtf8(value);
       ensureVariantGtinsIsMutable();
       variantGtins_.add(value);
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4322,7 +4120,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
      */
     @java.lang.Override
     public boolean hasInventoryStatus() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
     /**
      *
@@ -4365,7 +4163,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
      */
     public Builder setInventoryStatusValue(int value) {
       inventoryStatus_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4422,7 +4220,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00001000;
       inventoryStatus_ = value.getNumber();
       onChanged();
       return this;
@@ -4445,7 +4243,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearInventoryStatus() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00001000);
       inventoryStatus_ = 0;
       onChanged();
       return this;
@@ -4472,7 +4270,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
      */
     @java.lang.Override
     public boolean hasBrandInventoryStatus() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
     /**
      *
@@ -4517,7 +4315,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
      */
     public Builder setBrandInventoryStatusValue(int value) {
       brandInventoryStatus_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4576,7 +4374,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00002000;
       brandInventoryStatus_ = value.getNumber();
       onChanged();
       return this;
@@ -4600,7 +4398,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearBrandInventoryStatus() {
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       brandInventoryStatus_ = 0;
       onChanged();
       return this;
@@ -4621,7 +4419,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
      */
     @java.lang.Override
     public boolean hasRank() {
-      return ((bitField0_ & 0x00008000) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
     /**
      *
@@ -4655,7 +4453,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
     public Builder setRank(long value) {
 
       rank_ = value;
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4672,7 +4470,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearRank() {
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       rank_ = 0L;
       onChanged();
       return this;
@@ -4692,7 +4490,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
      */
     @java.lang.Override
     public boolean hasPreviousRank() {
-      return ((bitField0_ & 0x00010000) != 0);
+      return ((bitField0_ & 0x00008000) != 0);
     }
     /**
      *
@@ -4724,7 +4522,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
     public Builder setPreviousRank(long value) {
 
       previousRank_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4740,7 +4538,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearPreviousRank() {
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       previousRank_ = 0L;
       onChanged();
       return this;
@@ -4755,14 +4553,15 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
      * popularity rank in the same category and country.
      * </pre>
      *
-     * <code>optional .google.shopping.merchant.reports.v1beta.RelativeDemand relative_demand = 18;
+     * <code>
+     * optional .google.shopping.merchant.reports.v1beta.RelativeDemand.RelativeDemandEnum relative_demand = 18;
      * </code>
      *
      * @return Whether the relativeDemand field is set.
      */
     @java.lang.Override
     public boolean hasRelativeDemand() {
-      return ((bitField0_ & 0x00020000) != 0);
+      return ((bitField0_ & 0x00010000) != 0);
     }
     /**
      *
@@ -4772,7 +4571,8 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
      * popularity rank in the same category and country.
      * </pre>
      *
-     * <code>optional .google.shopping.merchant.reports.v1beta.RelativeDemand relative_demand = 18;
+     * <code>
+     * optional .google.shopping.merchant.reports.v1beta.RelativeDemand.RelativeDemandEnum relative_demand = 18;
      * </code>
      *
      * @return The enum numeric value on the wire for relativeDemand.
@@ -4789,7 +4589,8 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
      * popularity rank in the same category and country.
      * </pre>
      *
-     * <code>optional .google.shopping.merchant.reports.v1beta.RelativeDemand relative_demand = 18;
+     * <code>
+     * optional .google.shopping.merchant.reports.v1beta.RelativeDemand.RelativeDemandEnum relative_demand = 18;
      * </code>
      *
      * @param value The enum numeric value on the wire for relativeDemand to set.
@@ -4797,7 +4598,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
      */
     public Builder setRelativeDemandValue(int value) {
       relativeDemand_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -4809,17 +4610,21 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
      * popularity rank in the same category and country.
      * </pre>
      *
-     * <code>optional .google.shopping.merchant.reports.v1beta.RelativeDemand relative_demand = 18;
+     * <code>
+     * optional .google.shopping.merchant.reports.v1beta.RelativeDemand.RelativeDemandEnum relative_demand = 18;
      * </code>
      *
      * @return The relativeDemand.
      */
     @java.lang.Override
-    public com.google.shopping.merchant.reports.v1beta.RelativeDemand getRelativeDemand() {
-      com.google.shopping.merchant.reports.v1beta.RelativeDemand result =
-          com.google.shopping.merchant.reports.v1beta.RelativeDemand.forNumber(relativeDemand_);
+    public com.google.shopping.merchant.reports.v1beta.RelativeDemand.RelativeDemandEnum
+        getRelativeDemand() {
+      com.google.shopping.merchant.reports.v1beta.RelativeDemand.RelativeDemandEnum result =
+          com.google.shopping.merchant.reports.v1beta.RelativeDemand.RelativeDemandEnum.forNumber(
+              relativeDemand_);
       return result == null
-          ? com.google.shopping.merchant.reports.v1beta.RelativeDemand.UNRECOGNIZED
+          ? com.google.shopping.merchant.reports.v1beta.RelativeDemand.RelativeDemandEnum
+              .UNRECOGNIZED
           : result;
     }
     /**
@@ -4830,18 +4635,19 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
      * popularity rank in the same category and country.
      * </pre>
      *
-     * <code>optional .google.shopping.merchant.reports.v1beta.RelativeDemand relative_demand = 18;
+     * <code>
+     * optional .google.shopping.merchant.reports.v1beta.RelativeDemand.RelativeDemandEnum relative_demand = 18;
      * </code>
      *
      * @param value The relativeDemand to set.
      * @return This builder for chaining.
      */
     public Builder setRelativeDemand(
-        com.google.shopping.merchant.reports.v1beta.RelativeDemand value) {
+        com.google.shopping.merchant.reports.v1beta.RelativeDemand.RelativeDemandEnum value) {
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00010000;
       relativeDemand_ = value.getNumber();
       onChanged();
       return this;
@@ -4854,13 +4660,14 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
      * popularity rank in the same category and country.
      * </pre>
      *
-     * <code>optional .google.shopping.merchant.reports.v1beta.RelativeDemand relative_demand = 18;
+     * <code>
+     * optional .google.shopping.merchant.reports.v1beta.RelativeDemand.RelativeDemandEnum relative_demand = 18;
      * </code>
      *
      * @return This builder for chaining.
      */
     public Builder clearRelativeDemand() {
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       relativeDemand_ = 0;
       onChanged();
       return this;
@@ -4877,14 +4684,14 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>
-     * optional .google.shopping.merchant.reports.v1beta.RelativeDemand previous_relative_demand = 19;
+     * optional .google.shopping.merchant.reports.v1beta.RelativeDemand.RelativeDemandEnum previous_relative_demand = 19;
      * </code>
      *
      * @return Whether the previousRelativeDemand field is set.
      */
     @java.lang.Override
     public boolean hasPreviousRelativeDemand() {
-      return ((bitField0_ & 0x00040000) != 0);
+      return ((bitField0_ & 0x00020000) != 0);
     }
     /**
      *
@@ -4896,7 +4703,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>
-     * optional .google.shopping.merchant.reports.v1beta.RelativeDemand previous_relative_demand = 19;
+     * optional .google.shopping.merchant.reports.v1beta.RelativeDemand.RelativeDemandEnum previous_relative_demand = 19;
      * </code>
      *
      * @return The enum numeric value on the wire for previousRelativeDemand.
@@ -4915,7 +4722,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>
-     * optional .google.shopping.merchant.reports.v1beta.RelativeDemand previous_relative_demand = 19;
+     * optional .google.shopping.merchant.reports.v1beta.RelativeDemand.RelativeDemandEnum previous_relative_demand = 19;
      * </code>
      *
      * @param value The enum numeric value on the wire for previousRelativeDemand to set.
@@ -4923,7 +4730,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
      */
     public Builder setPreviousRelativeDemandValue(int value) {
       previousRelativeDemand_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -4937,18 +4744,20 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>
-     * optional .google.shopping.merchant.reports.v1beta.RelativeDemand previous_relative_demand = 19;
+     * optional .google.shopping.merchant.reports.v1beta.RelativeDemand.RelativeDemandEnum previous_relative_demand = 19;
      * </code>
      *
      * @return The previousRelativeDemand.
      */
     @java.lang.Override
-    public com.google.shopping.merchant.reports.v1beta.RelativeDemand getPreviousRelativeDemand() {
-      com.google.shopping.merchant.reports.v1beta.RelativeDemand result =
-          com.google.shopping.merchant.reports.v1beta.RelativeDemand.forNumber(
+    public com.google.shopping.merchant.reports.v1beta.RelativeDemand.RelativeDemandEnum
+        getPreviousRelativeDemand() {
+      com.google.shopping.merchant.reports.v1beta.RelativeDemand.RelativeDemandEnum result =
+          com.google.shopping.merchant.reports.v1beta.RelativeDemand.RelativeDemandEnum.forNumber(
               previousRelativeDemand_);
       return result == null
-          ? com.google.shopping.merchant.reports.v1beta.RelativeDemand.UNRECOGNIZED
+          ? com.google.shopping.merchant.reports.v1beta.RelativeDemand.RelativeDemandEnum
+              .UNRECOGNIZED
           : result;
     }
     /**
@@ -4961,18 +4770,18 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>
-     * optional .google.shopping.merchant.reports.v1beta.RelativeDemand previous_relative_demand = 19;
+     * optional .google.shopping.merchant.reports.v1beta.RelativeDemand.RelativeDemandEnum previous_relative_demand = 19;
      * </code>
      *
      * @param value The previousRelativeDemand to set.
      * @return This builder for chaining.
      */
     public Builder setPreviousRelativeDemand(
-        com.google.shopping.merchant.reports.v1beta.RelativeDemand value) {
+        com.google.shopping.merchant.reports.v1beta.RelativeDemand.RelativeDemandEnum value) {
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00020000;
       previousRelativeDemand_ = value.getNumber();
       onChanged();
       return this;
@@ -4987,13 +4796,13 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>
-     * optional .google.shopping.merchant.reports.v1beta.RelativeDemand previous_relative_demand = 19;
+     * optional .google.shopping.merchant.reports.v1beta.RelativeDemand.RelativeDemandEnum previous_relative_demand = 19;
      * </code>
      *
      * @return This builder for chaining.
      */
     public Builder clearPreviousRelativeDemand() {
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       previousRelativeDemand_ = 0;
       onChanged();
       return this;
@@ -5008,14 +4817,14 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>
-     * optional .google.shopping.merchant.reports.v1beta.RelativeDemandChangeType relative_demand_change = 20;
+     * optional .google.shopping.merchant.reports.v1beta.RelativeDemandChangeType.RelativeDemandChangeTypeEnum relative_demand_change = 20;
      * </code>
      *
      * @return Whether the relativeDemandChange field is set.
      */
     @java.lang.Override
     public boolean hasRelativeDemandChange() {
-      return ((bitField0_ & 0x00080000) != 0);
+      return ((bitField0_ & 0x00040000) != 0);
     }
     /**
      *
@@ -5025,7 +4834,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>
-     * optional .google.shopping.merchant.reports.v1beta.RelativeDemandChangeType relative_demand_change = 20;
+     * optional .google.shopping.merchant.reports.v1beta.RelativeDemandChangeType.RelativeDemandChangeTypeEnum relative_demand_change = 20;
      * </code>
      *
      * @return The enum numeric value on the wire for relativeDemandChange.
@@ -5042,7 +4851,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>
-     * optional .google.shopping.merchant.reports.v1beta.RelativeDemandChangeType relative_demand_change = 20;
+     * optional .google.shopping.merchant.reports.v1beta.RelativeDemandChangeType.RelativeDemandChangeTypeEnum relative_demand_change = 20;
      * </code>
      *
      * @param value The enum numeric value on the wire for relativeDemandChange to set.
@@ -5050,7 +4859,7 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
      */
     public Builder setRelativeDemandChangeValue(int value) {
       relativeDemandChange_ = value;
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -5062,19 +4871,23 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>
-     * optional .google.shopping.merchant.reports.v1beta.RelativeDemandChangeType relative_demand_change = 20;
+     * optional .google.shopping.merchant.reports.v1beta.RelativeDemandChangeType.RelativeDemandChangeTypeEnum relative_demand_change = 20;
      * </code>
      *
      * @return The relativeDemandChange.
      */
     @java.lang.Override
     public com.google.shopping.merchant.reports.v1beta.RelativeDemandChangeType
+            .RelativeDemandChangeTypeEnum
         getRelativeDemandChange() {
-      com.google.shopping.merchant.reports.v1beta.RelativeDemandChangeType result =
-          com.google.shopping.merchant.reports.v1beta.RelativeDemandChangeType.forNumber(
-              relativeDemandChange_);
+      com.google.shopping.merchant.reports.v1beta.RelativeDemandChangeType
+              .RelativeDemandChangeTypeEnum
+          result =
+              com.google.shopping.merchant.reports.v1beta.RelativeDemandChangeType
+                  .RelativeDemandChangeTypeEnum.forNumber(relativeDemandChange_);
       return result == null
-          ? com.google.shopping.merchant.reports.v1beta.RelativeDemandChangeType.UNRECOGNIZED
+          ? com.google.shopping.merchant.reports.v1beta.RelativeDemandChangeType
+              .RelativeDemandChangeTypeEnum.UNRECOGNIZED
           : result;
     }
     /**
@@ -5085,18 +4898,20 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>
-     * optional .google.shopping.merchant.reports.v1beta.RelativeDemandChangeType relative_demand_change = 20;
+     * optional .google.shopping.merchant.reports.v1beta.RelativeDemandChangeType.RelativeDemandChangeTypeEnum relative_demand_change = 20;
      * </code>
      *
      * @param value The relativeDemandChange to set.
      * @return This builder for chaining.
      */
     public Builder setRelativeDemandChange(
-        com.google.shopping.merchant.reports.v1beta.RelativeDemandChangeType value) {
+        com.google.shopping.merchant.reports.v1beta.RelativeDemandChangeType
+                .RelativeDemandChangeTypeEnum
+            value) {
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00040000;
       relativeDemandChange_ = value.getNumber();
       onChanged();
       return this;
@@ -5109,13 +4924,13 @@ public final class BestSellersProductClusterView extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>
-     * optional .google.shopping.merchant.reports.v1beta.RelativeDemandChangeType relative_demand_change = 20;
+     * optional .google.shopping.merchant.reports.v1beta.RelativeDemandChangeType.RelativeDemandChangeTypeEnum relative_demand_change = 20;
      * </code>
      *
      * @return This builder for chaining.
      */
     public Builder clearRelativeDemandChange() {
-      bitField0_ = (bitField0_ & ~0x00080000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       relativeDemandChange_ = 0;
       onChanged();
       return this;

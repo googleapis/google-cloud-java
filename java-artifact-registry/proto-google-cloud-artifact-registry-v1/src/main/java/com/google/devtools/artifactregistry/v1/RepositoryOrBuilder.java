@@ -69,8 +69,137 @@ public interface RepositoryOrBuilder
    *
    *
    * <pre>
+   * Docker repository config contains repository level configuration
+   * for the repositories of docker type.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfig docker_config = 17;
+   * </code>
+   *
+   * @return Whether the dockerConfig field is set.
+   */
+  boolean hasDockerConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Docker repository config contains repository level configuration
+   * for the repositories of docker type.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfig docker_config = 17;
+   * </code>
+   *
+   * @return The dockerConfig.
+   */
+  com.google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfig getDockerConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Docker repository config contains repository level configuration
+   * for the repositories of docker type.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfig docker_config = 17;
+   * </code>
+   */
+  com.google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfigOrBuilder
+      getDockerConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration specific for a Virtual Repository.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.artifactregistry.v1.VirtualRepositoryConfig virtual_repository_config = 14;
+   * </code>
+   *
+   * @return Whether the virtualRepositoryConfig field is set.
+   */
+  boolean hasVirtualRepositoryConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration specific for a Virtual Repository.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.artifactregistry.v1.VirtualRepositoryConfig virtual_repository_config = 14;
+   * </code>
+   *
+   * @return The virtualRepositoryConfig.
+   */
+  com.google.devtools.artifactregistry.v1.VirtualRepositoryConfig getVirtualRepositoryConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration specific for a Virtual Repository.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.artifactregistry.v1.VirtualRepositoryConfig virtual_repository_config = 14;
+   * </code>
+   */
+  com.google.devtools.artifactregistry.v1.VirtualRepositoryConfigOrBuilder
+      getVirtualRepositoryConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration specific for a Remote Repository.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig remote_repository_config = 15;
+   * </code>
+   *
+   * @return Whether the remoteRepositoryConfig field is set.
+   */
+  boolean hasRemoteRepositoryConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration specific for a Remote Repository.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig remote_repository_config = 15;
+   * </code>
+   *
+   * @return The remoteRepositoryConfig.
+   */
+  com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig getRemoteRepositoryConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration specific for a Remote Repository.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.artifactregistry.v1.RemoteRepositoryConfig remote_repository_config = 15;
+   * </code>
+   */
+  com.google.devtools.artifactregistry.v1.RemoteRepositoryConfigOrBuilder
+      getRemoteRepositoryConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * The name of the repository, for example:
-   * "projects/p1/locations/us-central1/repositories/repo1".
+   * `projects/p1/locations/us-central1/repositories/repo1`.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -83,7 +212,7 @@ public interface RepositoryOrBuilder
    *
    * <pre>
    * The name of the repository, for example:
-   * "projects/p1/locations/us-central1/repositories/repo1".
+   * `projects/p1/locations/us-central1/repositories/repo1`.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -96,10 +225,12 @@ public interface RepositoryOrBuilder
    *
    *
    * <pre>
-   * The format of packages that are stored in the repository.
+   * Optional. The format of packages that are stored in the repository.
    * </pre>
    *
-   * <code>.google.devtools.artifactregistry.v1.Repository.Format format = 2;</code>
+   * <code>
+   * .google.devtools.artifactregistry.v1.Repository.Format format = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The enum numeric value on the wire for format.
    */
@@ -108,10 +239,12 @@ public interface RepositoryOrBuilder
    *
    *
    * <pre>
-   * The format of packages that are stored in the repository.
+   * Optional. The format of packages that are stored in the repository.
    * </pre>
    *
-   * <code>.google.devtools.artifactregistry.v1.Repository.Format format = 2;</code>
+   * <code>
+   * .google.devtools.artifactregistry.v1.Repository.Format format = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The format.
    */
@@ -224,10 +357,11 @@ public interface RepositoryOrBuilder
    *
    *
    * <pre>
-   * The time when the repository was created.
+   * Output only. The time when the repository was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 5;</code>
+   * <code>.google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the createTime field is set.
    */
@@ -236,10 +370,11 @@ public interface RepositoryOrBuilder
    *
    *
    * <pre>
-   * The time when the repository was created.
+   * Output only. The time when the repository was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 5;</code>
+   * <code>.google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The createTime.
    */
@@ -248,10 +383,11 @@ public interface RepositoryOrBuilder
    *
    *
    * <pre>
-   * The time when the repository was created.
+   * Output only. The time when the repository was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 5;</code>
+   * <code>.google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
 
@@ -259,10 +395,11 @@ public interface RepositoryOrBuilder
    *
    *
    * <pre>
-   * The time when the repository was last updated.
+   * Output only. The time when the repository was last updated.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 6;</code>
+   * <code>.google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the updateTime field is set.
    */
@@ -271,10 +408,11 @@ public interface RepositoryOrBuilder
    *
    *
    * <pre>
-   * The time when the repository was last updated.
+   * Output only. The time when the repository was last updated.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 6;</code>
+   * <code>.google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The updateTime.
    */
@@ -283,10 +421,11 @@ public interface RepositoryOrBuilder
    *
    *
    * <pre>
-   * The time when the repository was last updated.
+   * Output only. The time when the repository was last updated.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 6;</code>
+   * <code>.google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
 
@@ -321,5 +460,164 @@ public interface RepositoryOrBuilder
    */
   com.google.protobuf.ByteString getKmsKeyNameBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The mode of the repository.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.artifactregistry.v1.Repository.Mode mode = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for mode.
+   */
+  int getModeValue();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The mode of the repository.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.artifactregistry.v1.Repository.Mode mode = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The mode.
+   */
+  com.google.devtools.artifactregistry.v1.Repository.Mode getMode();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Cleanup policies for this repository. Cleanup policies indicate
+   * when certain package versions can be automatically deleted. Map keys are
+   * policy IDs supplied by users during policy creation. They must unique
+   * within a repository and be under 128 characters in length.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.devtools.artifactregistry.v1.CleanupPolicy&gt; cleanup_policies = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getCleanupPoliciesCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Cleanup policies for this repository. Cleanup policies indicate
+   * when certain package versions can be automatically deleted. Map keys are
+   * policy IDs supplied by users during policy creation. They must unique
+   * within a repository and be under 128 characters in length.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.devtools.artifactregistry.v1.CleanupPolicy&gt; cleanup_policies = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  boolean containsCleanupPolicies(java.lang.String key);
+  /** Use {@link #getCleanupPoliciesMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, com.google.devtools.artifactregistry.v1.CleanupPolicy>
+      getCleanupPolicies();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Cleanup policies for this repository. Cleanup policies indicate
+   * when certain package versions can be automatically deleted. Map keys are
+   * policy IDs supplied by users during policy creation. They must unique
+   * within a repository and be under 128 characters in length.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.devtools.artifactregistry.v1.CleanupPolicy&gt; cleanup_policies = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.Map<java.lang.String, com.google.devtools.artifactregistry.v1.CleanupPolicy>
+      getCleanupPoliciesMap();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Cleanup policies for this repository. Cleanup policies indicate
+   * when certain package versions can be automatically deleted. Map keys are
+   * policy IDs supplied by users during policy creation. They must unique
+   * within a repository and be under 128 characters in length.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.devtools.artifactregistry.v1.CleanupPolicy&gt; cleanup_policies = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  /* nullable */
+  com.google.devtools.artifactregistry.v1.CleanupPolicy getCleanupPoliciesOrDefault(
+      java.lang.String key,
+      /* nullable */
+      com.google.devtools.artifactregistry.v1.CleanupPolicy defaultValue);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Cleanup policies for this repository. Cleanup policies indicate
+   * when certain package versions can be automatically deleted. Map keys are
+   * policy IDs supplied by users during policy creation. They must unique
+   * within a repository and be under 128 characters in length.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.devtools.artifactregistry.v1.CleanupPolicy&gt; cleanup_policies = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.devtools.artifactregistry.v1.CleanupPolicy getCleanupPoliciesOrThrow(
+      java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The size, in bytes, of all artifact storage in this
+   * repository. Repositories that are generally available or in public preview
+   *  use this to calculate storage costs.
+   * </pre>
+   *
+   * <code>int64 size_bytes = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The sizeBytes.
+   */
+  long getSizeBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. If set, the repository satisfies physical zone separation.
+   * </pre>
+   *
+   * <code>bool satisfies_pzs = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzs.
+   */
+  boolean getSatisfiesPzs();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, the cleanup pipeline is prevented from deleting versions
+   * in this repository.
+   * </pre>
+   *
+   * <code>bool cleanup_policy_dry_run = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The cleanupPolicyDryRun.
+   */
+  boolean getCleanupPolicyDryRun();
+
   com.google.devtools.artifactregistry.v1.Repository.FormatConfigCase getFormatConfigCase();
+
+  com.google.devtools.artifactregistry.v1.Repository.ModeConfigCase getModeConfigCase();
 }

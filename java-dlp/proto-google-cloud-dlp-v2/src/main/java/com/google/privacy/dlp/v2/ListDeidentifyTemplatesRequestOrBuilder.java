@@ -94,7 +94,7 @@ public interface ListDeidentifyTemplatesRequestOrBuilder
    *
    *
    * <pre>
-   * Page token to continue retrieval. Comes from previous call
+   * Page token to continue retrieval. Comes from the previous call
    * to `ListDeidentifyTemplates`.
    * </pre>
    *
@@ -107,7 +107,7 @@ public interface ListDeidentifyTemplatesRequestOrBuilder
    *
    *
    * <pre>
-   * Page token to continue retrieval. Comes from previous call
+   * Page token to continue retrieval. Comes from the previous call
    * to `ListDeidentifyTemplates`.
    * </pre>
    *
@@ -121,8 +121,8 @@ public interface ListDeidentifyTemplatesRequestOrBuilder
    *
    *
    * <pre>
-   * Size of the page, can be limited by the server. If zero server returns
-   * a page of max size 100.
+   * Size of the page. This value can be limited by the server. If zero server
+   * returns a page of max size 100.
    * </pre>
    *
    * <code>int32 page_size = 3;</code>
@@ -136,8 +136,8 @@ public interface ListDeidentifyTemplatesRequestOrBuilder
    *
    * <pre>
    * Comma separated list of fields to order by,
-   * followed by `asc` or `desc` postfix. This list is case-insensitive,
-   * default sorting order is ascending, redundant space characters are
+   * followed by `asc` or `desc` postfix. This list is case insensitive. The
+   * default sorting order is ascending. Redundant space characters are
    * insignificant.
    *
    * Example: `name asc,update_time, create_time desc`
@@ -160,8 +160,8 @@ public interface ListDeidentifyTemplatesRequestOrBuilder
    *
    * <pre>
    * Comma separated list of fields to order by,
-   * followed by `asc` or `desc` postfix. This list is case-insensitive,
-   * default sorting order is ascending, redundant space characters are
+   * followed by `asc` or `desc` postfix. This list is case insensitive. The
+   * default sorting order is ascending. Redundant space characters are
    * insignificant.
    *
    * Example: `name asc,update_time, create_time desc`

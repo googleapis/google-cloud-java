@@ -17,6 +17,7 @@
 package com.google.cloud.dlp.v2;
 
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListDeidentifyTemplatesPagedResponse;
+import static com.google.cloud.dlp.v2.DlpServiceClient.ListDiscoveryConfigsPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListDlpJobsPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListInspectTemplatesPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListJobTriggersPagedResponse;
@@ -33,15 +34,20 @@ import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
 import com.google.cloud.dlp.v2.stub.HttpJsonDlpServiceStub;
 import com.google.common.collect.Lists;
+import com.google.privacy.dlp.v2.ActionDetails;
 import com.google.privacy.dlp.v2.ActivateJobTriggerRequest;
 import com.google.privacy.dlp.v2.ByteContentItem;
 import com.google.privacy.dlp.v2.CancelDlpJobRequest;
 import com.google.privacy.dlp.v2.ContentItem;
+import com.google.privacy.dlp.v2.DataProfileAction;
 import com.google.privacy.dlp.v2.DeidentifyConfig;
 import com.google.privacy.dlp.v2.DeidentifyContentRequest;
 import com.google.privacy.dlp.v2.DeidentifyContentResponse;
 import com.google.privacy.dlp.v2.DeidentifyTemplate;
 import com.google.privacy.dlp.v2.DeidentifyTemplateName;
+import com.google.privacy.dlp.v2.DiscoveryConfig;
+import com.google.privacy.dlp.v2.DiscoveryConfigName;
+import com.google.privacy.dlp.v2.DiscoveryTarget;
 import com.google.privacy.dlp.v2.DlpJob;
 import com.google.privacy.dlp.v2.DlpJobName;
 import com.google.privacy.dlp.v2.DlpJobType;
@@ -59,6 +65,7 @@ import com.google.privacy.dlp.v2.InspectTemplateName;
 import com.google.privacy.dlp.v2.JobTrigger;
 import com.google.privacy.dlp.v2.JobTriggerName;
 import com.google.privacy.dlp.v2.ListDeidentifyTemplatesResponse;
+import com.google.privacy.dlp.v2.ListDiscoveryConfigsResponse;
 import com.google.privacy.dlp.v2.ListDlpJobsResponse;
 import com.google.privacy.dlp.v2.ListInfoTypesResponse;
 import com.google.privacy.dlp.v2.ListInspectTemplatesResponse;
@@ -2778,8 +2785,10 @@ public class DlpServiceClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
+            .setLastModified(Timestamp.newBuilder().build())
             .setJobTriggerName("jobTriggerName494333030")
             .addAllErrors(new ArrayList<Error>())
+            .addAllActionDetails(new ArrayList<ActionDetails>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2828,6 +2837,536 @@ public class DlpServiceClientHttpJsonTest {
   }
 
   @Test
+  public void createDiscoveryConfigTest() throws Exception {
+    DiscoveryConfig expectedResponse =
+        DiscoveryConfig.newBuilder()
+            .setName(
+                DiscoveryConfigName.of("[PROJECT]", "[LOCATION]", "[DISCOVERY_CONFIG]").toString())
+            .setDisplayName("displayName1714148973")
+            .setOrgConfig(DiscoveryConfig.OrgConfig.newBuilder().build())
+            .addAllInspectTemplates(new ArrayList<String>())
+            .addAllActions(new ArrayList<DataProfileAction>())
+            .addAllTargets(new ArrayList<DiscoveryTarget>())
+            .addAllErrors(new ArrayList<Error>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setLastRunTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    DiscoveryConfig discoveryConfig = DiscoveryConfig.newBuilder().build();
+
+    DiscoveryConfig actualResponse = client.createDiscoveryConfig(parent, discoveryConfig);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createDiscoveryConfigExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      DiscoveryConfig discoveryConfig = DiscoveryConfig.newBuilder().build();
+      client.createDiscoveryConfig(parent, discoveryConfig);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createDiscoveryConfigTest2() throws Exception {
+    DiscoveryConfig expectedResponse =
+        DiscoveryConfig.newBuilder()
+            .setName(
+                DiscoveryConfigName.of("[PROJECT]", "[LOCATION]", "[DISCOVERY_CONFIG]").toString())
+            .setDisplayName("displayName1714148973")
+            .setOrgConfig(DiscoveryConfig.OrgConfig.newBuilder().build())
+            .addAllInspectTemplates(new ArrayList<String>())
+            .addAllActions(new ArrayList<DataProfileAction>())
+            .addAllTargets(new ArrayList<DiscoveryTarget>())
+            .addAllErrors(new ArrayList<Error>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setLastRunTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+    DiscoveryConfig discoveryConfig = DiscoveryConfig.newBuilder().build();
+
+    DiscoveryConfig actualResponse = client.createDiscoveryConfig(parent, discoveryConfig);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createDiscoveryConfigExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      DiscoveryConfig discoveryConfig = DiscoveryConfig.newBuilder().build();
+      client.createDiscoveryConfig(parent, discoveryConfig);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateDiscoveryConfigTest() throws Exception {
+    DiscoveryConfig expectedResponse =
+        DiscoveryConfig.newBuilder()
+            .setName(
+                DiscoveryConfigName.of("[PROJECT]", "[LOCATION]", "[DISCOVERY_CONFIG]").toString())
+            .setDisplayName("displayName1714148973")
+            .setOrgConfig(DiscoveryConfig.OrgConfig.newBuilder().build())
+            .addAllInspectTemplates(new ArrayList<String>())
+            .addAllActions(new ArrayList<DataProfileAction>())
+            .addAllTargets(new ArrayList<DiscoveryTarget>())
+            .addAllErrors(new ArrayList<Error>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setLastRunTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    DiscoveryConfigName name =
+        DiscoveryConfigName.of("[PROJECT]", "[LOCATION]", "[DISCOVERY_CONFIG]");
+    DiscoveryConfig discoveryConfig = DiscoveryConfig.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    DiscoveryConfig actualResponse =
+        client.updateDiscoveryConfig(name, discoveryConfig, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateDiscoveryConfigExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      DiscoveryConfigName name =
+          DiscoveryConfigName.of("[PROJECT]", "[LOCATION]", "[DISCOVERY_CONFIG]");
+      DiscoveryConfig discoveryConfig = DiscoveryConfig.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateDiscoveryConfig(name, discoveryConfig, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateDiscoveryConfigTest2() throws Exception {
+    DiscoveryConfig expectedResponse =
+        DiscoveryConfig.newBuilder()
+            .setName(
+                DiscoveryConfigName.of("[PROJECT]", "[LOCATION]", "[DISCOVERY_CONFIG]").toString())
+            .setDisplayName("displayName1714148973")
+            .setOrgConfig(DiscoveryConfig.OrgConfig.newBuilder().build())
+            .addAllInspectTemplates(new ArrayList<String>())
+            .addAllActions(new ArrayList<DataProfileAction>())
+            .addAllTargets(new ArrayList<DiscoveryTarget>())
+            .addAllErrors(new ArrayList<Error>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setLastRunTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-9409/locations/location-9409/discoveryConfigs/discoveryConfig-9409";
+    DiscoveryConfig discoveryConfig = DiscoveryConfig.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    DiscoveryConfig actualResponse =
+        client.updateDiscoveryConfig(name, discoveryConfig, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateDiscoveryConfigExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-9409/locations/location-9409/discoveryConfigs/discoveryConfig-9409";
+      DiscoveryConfig discoveryConfig = DiscoveryConfig.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateDiscoveryConfig(name, discoveryConfig, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getDiscoveryConfigTest() throws Exception {
+    DiscoveryConfig expectedResponse =
+        DiscoveryConfig.newBuilder()
+            .setName(
+                DiscoveryConfigName.of("[PROJECT]", "[LOCATION]", "[DISCOVERY_CONFIG]").toString())
+            .setDisplayName("displayName1714148973")
+            .setOrgConfig(DiscoveryConfig.OrgConfig.newBuilder().build())
+            .addAllInspectTemplates(new ArrayList<String>())
+            .addAllActions(new ArrayList<DataProfileAction>())
+            .addAllTargets(new ArrayList<DiscoveryTarget>())
+            .addAllErrors(new ArrayList<Error>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setLastRunTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    DiscoveryConfigName name =
+        DiscoveryConfigName.of("[PROJECT]", "[LOCATION]", "[DISCOVERY_CONFIG]");
+
+    DiscoveryConfig actualResponse = client.getDiscoveryConfig(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getDiscoveryConfigExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      DiscoveryConfigName name =
+          DiscoveryConfigName.of("[PROJECT]", "[LOCATION]", "[DISCOVERY_CONFIG]");
+      client.getDiscoveryConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getDiscoveryConfigTest2() throws Exception {
+    DiscoveryConfig expectedResponse =
+        DiscoveryConfig.newBuilder()
+            .setName(
+                DiscoveryConfigName.of("[PROJECT]", "[LOCATION]", "[DISCOVERY_CONFIG]").toString())
+            .setDisplayName("displayName1714148973")
+            .setOrgConfig(DiscoveryConfig.OrgConfig.newBuilder().build())
+            .addAllInspectTemplates(new ArrayList<String>())
+            .addAllActions(new ArrayList<DataProfileAction>())
+            .addAllTargets(new ArrayList<DiscoveryTarget>())
+            .addAllErrors(new ArrayList<Error>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setLastRunTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-9409/locations/location-9409/discoveryConfigs/discoveryConfig-9409";
+
+    DiscoveryConfig actualResponse = client.getDiscoveryConfig(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getDiscoveryConfigExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-9409/locations/location-9409/discoveryConfigs/discoveryConfig-9409";
+      client.getDiscoveryConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listDiscoveryConfigsTest() throws Exception {
+    DiscoveryConfig responsesElement = DiscoveryConfig.newBuilder().build();
+    ListDiscoveryConfigsResponse expectedResponse =
+        ListDiscoveryConfigsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllDiscoveryConfigs(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListDiscoveryConfigsPagedResponse pagedListResponse = client.listDiscoveryConfigs(parent);
+
+    List<DiscoveryConfig> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getDiscoveryConfigsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listDiscoveryConfigsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listDiscoveryConfigs(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listDiscoveryConfigsTest2() throws Exception {
+    DiscoveryConfig responsesElement = DiscoveryConfig.newBuilder().build();
+    ListDiscoveryConfigsResponse expectedResponse =
+        ListDiscoveryConfigsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllDiscoveryConfigs(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+
+    ListDiscoveryConfigsPagedResponse pagedListResponse = client.listDiscoveryConfigs(parent);
+
+    List<DiscoveryConfig> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getDiscoveryConfigsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listDiscoveryConfigsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      client.listDiscoveryConfigs(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteDiscoveryConfigTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    DiscoveryConfigName name =
+        DiscoveryConfigName.of("[PROJECT]", "[LOCATION]", "[DISCOVERY_CONFIG]");
+
+    client.deleteDiscoveryConfig(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteDiscoveryConfigExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      DiscoveryConfigName name =
+          DiscoveryConfigName.of("[PROJECT]", "[LOCATION]", "[DISCOVERY_CONFIG]");
+      client.deleteDiscoveryConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteDiscoveryConfigTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-9409/locations/location-9409/discoveryConfigs/discoveryConfig-9409";
+
+    client.deleteDiscoveryConfig(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteDiscoveryConfigExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-9409/locations/location-9409/discoveryConfigs/discoveryConfig-9409";
+      client.deleteDiscoveryConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void createDlpJobTest() throws Exception {
     DlpJob expectedResponse =
         DlpJob.newBuilder()
@@ -2836,8 +3375,10 @@ public class DlpServiceClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
+            .setLastModified(Timestamp.newBuilder().build())
             .setJobTriggerName("jobTriggerName494333030")
             .addAllErrors(new ArrayList<Error>())
+            .addAllActionDetails(new ArrayList<ActionDetails>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2888,8 +3429,10 @@ public class DlpServiceClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
+            .setLastModified(Timestamp.newBuilder().build())
             .setJobTriggerName("jobTriggerName494333030")
             .addAllErrors(new ArrayList<Error>())
+            .addAllActionDetails(new ArrayList<ActionDetails>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2940,8 +3483,10 @@ public class DlpServiceClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
+            .setLastModified(Timestamp.newBuilder().build())
             .setJobTriggerName("jobTriggerName494333030")
             .addAllErrors(new ArrayList<Error>())
+            .addAllActionDetails(new ArrayList<ActionDetails>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2992,8 +3537,10 @@ public class DlpServiceClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
+            .setLastModified(Timestamp.newBuilder().build())
             .setJobTriggerName("jobTriggerName494333030")
             .addAllErrors(new ArrayList<Error>())
+            .addAllActionDetails(new ArrayList<ActionDetails>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -3044,8 +3591,10 @@ public class DlpServiceClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
+            .setLastModified(Timestamp.newBuilder().build())
             .setJobTriggerName("jobTriggerName494333030")
             .addAllErrors(new ArrayList<Error>())
+            .addAllActionDetails(new ArrayList<ActionDetails>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -3096,8 +3645,10 @@ public class DlpServiceClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
+            .setLastModified(Timestamp.newBuilder().build())
             .setJobTriggerName("jobTriggerName494333030")
             .addAllErrors(new ArrayList<Error>())
+            .addAllActionDetails(new ArrayList<ActionDetails>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -3298,8 +3849,10 @@ public class DlpServiceClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
+            .setLastModified(Timestamp.newBuilder().build())
             .setJobTriggerName("jobTriggerName494333030")
             .addAllErrors(new ArrayList<Error>())
+            .addAllActionDetails(new ArrayList<ActionDetails>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -3348,8 +3901,10 @@ public class DlpServiceClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
+            .setLastModified(Timestamp.newBuilder().build())
             .setJobTriggerName("jobTriggerName494333030")
             .addAllErrors(new ArrayList<Error>())
+            .addAllActionDetails(new ArrayList<ActionDetails>())
             .build();
     mockService.addResponse(expectedResponse);
 

@@ -1,5 +1,41 @@
 # Changelog
 
+## 0.30.0 (2023-11-06)
+
+### Features
+
+* update default max parallel tasks per job ([#10011](https://github.com/googleapis/google-cloud-java/issues/10011)) ([4edc21b](https://github.com/googleapis/google-cloud-java/commit/4edc21bc0e54f9b52eb367beac2d438197f23432))
+
+### Dependencies
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-config to v1.6.1 ([#10014](https://github.com/googleapis/google-cloud-java/issues/10014)) ([7b1b742](https://github.com/googleapis/google-cloud-java/commit/7b1b742dab21139398032549fb03e127b1a03841))
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.19.0 ([#10018](https://github.com/googleapis/google-cloud-java/issues/10018)) ([d9b705a](https://github.com/googleapis/google-cloud-java/commit/d9b705aaed8ea4447c7a02d5c54300f8909a30b1))
+
+
+## 0.29.0 (2023-10-25)
+
+### Features
+
+* expose display_name to batch v1 API ([#9967](https://github.com/googleapis/google-cloud-java/issues/9967)) ([934c929](https://github.com/googleapis/google-cloud-java/commit/934c92940ec76f96aa71b13249a81cde58bab5ee))
+
+### Dependencies
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-config to v1.6.0 ([#9969](https://github.com/googleapis/google-cloud-java/issues/9969)) ([9e2be39](https://github.com/googleapis/google-cloud-java/commit/9e2be39c5b2d7764421325f65a6d0d06351fcda5))
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.18.0 ([#9984](https://github.com/googleapis/google-cloud-java/issues/9984)) ([9814dc0](https://github.com/googleapis/google-cloud-java/commit/9814dc092ad7edb7b1b21f87fa48d76a2423d731))
+
+
+## 0.28.0 (2023-10-11)
+
+### Features
+
+* add InstancePolicy.reservation field for restricting jobs to a specific reservation ([#9933](https://github.com/googleapis/google-cloud-java/issues/9933)) ([42f3ee5](https://github.com/googleapis/google-cloud-java/commit/42f3ee5cc0fc747bc79e183077bd8e6807e3f9b6))
+
+### Dependencies
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-config to v1.5.8 ([#9941](https://github.com/googleapis/google-cloud-java/issues/9941)) ([f818d26](https://github.com/googleapis/google-cloud-java/commit/f818d26968e1f19d302da1f1ea0145b2cc496ce0))
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.17.0 ([#9942](https://github.com/googleapis/google-cloud-java/issues/9942)) ([2cc7888](https://github.com/googleapis/google-cloud-java/commit/2cc78885d76ae5e7dfc4cc9f3034c25fa22c6cc1))
+
+
 ## 0.27.0 (2023-09-28)
 
 * No change

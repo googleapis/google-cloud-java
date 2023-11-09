@@ -19,6 +19,9 @@
             "CreateDeidentifyTemplate": {
               "methods": ["createDeidentifyTemplate", "createDeidentifyTemplate", "createDeidentifyTemplate", "createDeidentifyTemplate", "createDeidentifyTemplate", "createDeidentifyTemplate", "createDeidentifyTemplateCallable"]
             },
+            "CreateDiscoveryConfig": {
+              "methods": ["createDiscoveryConfig", "createDiscoveryConfig", "createDiscoveryConfig", "createDiscoveryConfigCallable"]
+            },
             "CreateDlpJob": {
               "methods": ["createDlpJob", "createDlpJob", "createDlpJob", "createDlpJob", "createDlpJob", "createDlpJob", "createDlpJob", "createDlpJobCallable"]
             },
@@ -37,6 +40,9 @@
             "DeleteDeidentifyTemplate": {
               "methods": ["deleteDeidentifyTemplate", "deleteDeidentifyTemplate", "deleteDeidentifyTemplate", "deleteDeidentifyTemplateCallable"]
             },
+            "DeleteDiscoveryConfig": {
+              "methods": ["deleteDiscoveryConfig", "deleteDiscoveryConfig", "deleteDiscoveryConfig", "deleteDiscoveryConfigCallable"]
+            },
             "DeleteDlpJob": {
               "methods": ["deleteDlpJob", "deleteDlpJob", "deleteDlpJob", "deleteDlpJobCallable"]
             },
@@ -54,6 +60,9 @@
             },
             "GetDeidentifyTemplate": {
               "methods": ["getDeidentifyTemplate", "getDeidentifyTemplate", "getDeidentifyTemplate", "getDeidentifyTemplateCallable"]
+            },
+            "GetDiscoveryConfig": {
+              "methods": ["getDiscoveryConfig", "getDiscoveryConfig", "getDiscoveryConfig", "getDiscoveryConfigCallable"]
             },
             "GetDlpJob": {
               "methods": ["getDlpJob", "getDlpJob", "getDlpJob", "getDlpJobCallable"]
@@ -79,6 +88,9 @@
             "ListDeidentifyTemplates": {
               "methods": ["listDeidentifyTemplates", "listDeidentifyTemplates", "listDeidentifyTemplates", "listDeidentifyTemplates", "listDeidentifyTemplates", "listDeidentifyTemplates", "listDeidentifyTemplatesPagedCallable", "listDeidentifyTemplatesCallable"]
             },
+            "ListDiscoveryConfigs": {
+              "methods": ["listDiscoveryConfigs", "listDiscoveryConfigs", "listDiscoveryConfigs", "listDiscoveryConfigsPagedCallable", "listDiscoveryConfigsCallable"]
+            },
             "ListDlpJobs": {
               "methods": ["listDlpJobs", "listDlpJobs", "listDlpJobs", "listDlpJobs", "listDlpJobsPagedCallable", "listDlpJobsCallable"]
             },
@@ -102,6 +114,9 @@
             },
             "UpdateDeidentifyTemplate": {
               "methods": ["updateDeidentifyTemplate", "updateDeidentifyTemplate", "updateDeidentifyTemplate", "updateDeidentifyTemplateCallable"]
+            },
+            "UpdateDiscoveryConfig": {
+              "methods": ["updateDiscoveryConfig", "updateDiscoveryConfig", "updateDiscoveryConfig", "updateDiscoveryConfigCallable"]
             },
             "UpdateInspectTemplate": {
               "methods": ["updateInspectTemplate", "updateInspectTemplate", "updateInspectTemplate", "updateInspectTemplateCallable"]

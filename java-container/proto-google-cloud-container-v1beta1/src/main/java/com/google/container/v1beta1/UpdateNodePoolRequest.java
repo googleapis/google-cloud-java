@@ -89,7 +89,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * </code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2933
+   *     google/container/v1beta1/cluster_service.proto;l=3016
    * @return The projectId.
    */
   @java.lang.Override
@@ -118,7 +118,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * </code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2933
+   *     google/container/v1beta1/cluster_service.proto;l=3016
    * @return The bytes for projectId.
    */
   @java.lang.Override
@@ -152,7 +152,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2940
+   *     google/container/v1beta1/cluster_service.proto;l=3023
    * @return The zone.
    */
   @java.lang.Override
@@ -181,7 +181,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2940
+   *     google/container/v1beta1/cluster_service.proto;l=3023
    * @return The bytes for zone.
    */
   @java.lang.Override
@@ -214,7 +214,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * </code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.cluster_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2944
+   *     google/container/v1beta1/cluster_service.proto;l=3027
    * @return The clusterId.
    */
   @java.lang.Override
@@ -242,7 +242,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * </code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.cluster_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2944
+   *     google/container/v1beta1/cluster_service.proto;l=3027
    * @return The bytes for clusterId.
    */
   @java.lang.Override
@@ -275,7 +275,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * </code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2949
+   *     google/container/v1beta1/cluster_service.proto;l=3032
    * @return The nodePoolId.
    */
   @java.lang.Override
@@ -303,7 +303,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * </code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2949
+   *     google/container/v1beta1/cluster_service.proto;l=3032
    * @return The bytes for nodePoolId.
    */
   @java.lang.Override
@@ -1526,6 +1526,63 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     return diskSizeGb_;
   }
 
+  public static final int RESOURCE_MANAGER_TAGS_FIELD_NUMBER = 39;
+  private com.google.container.v1beta1.ResourceManagerTags resourceManagerTags_;
+  /**
+   *
+   *
+   * <pre>
+   * Desired resource manager tag keys and values to be attached to the nodes
+   * for managing Compute Engine firewalls using Network Firewall Policies.
+   * Existing tags will be replaced with new values.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.ResourceManagerTags resource_manager_tags = 39;</code>
+   *
+   * @return Whether the resourceManagerTags field is set.
+   */
+  @java.lang.Override
+  public boolean hasResourceManagerTags() {
+    return resourceManagerTags_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Desired resource manager tag keys and values to be attached to the nodes
+   * for managing Compute Engine firewalls using Network Firewall Policies.
+   * Existing tags will be replaced with new values.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.ResourceManagerTags resource_manager_tags = 39;</code>
+   *
+   * @return The resourceManagerTags.
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.ResourceManagerTags getResourceManagerTags() {
+    return resourceManagerTags_ == null
+        ? com.google.container.v1beta1.ResourceManagerTags.getDefaultInstance()
+        : resourceManagerTags_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Desired resource manager tag keys and values to be attached to the nodes
+   * for managing Compute Engine firewalls using Network Firewall Policies.
+   * Existing tags will be replaced with new values.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.ResourceManagerTags resource_manager_tags = 39;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.ResourceManagerTagsOrBuilder
+      getResourceManagerTagsOrBuilder() {
+    return resourceManagerTags_ == null
+        ? com.google.container.v1beta1.ResourceManagerTags.getDefaultInstance()
+        : resourceManagerTags_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1620,6 +1677,9 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     }
     if (diskSizeGb_ != 0L) {
       output.writeInt64(38, diskSizeGb_);
+    }
+    if (resourceManagerTags_ != null) {
+      output.writeMessage(39, getResourceManagerTags());
     }
     getUnknownFields().writeTo(output);
   }
@@ -1717,6 +1777,10 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     if (diskSizeGb_ != 0L) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(38, diskSizeGb_);
     }
+    if (resourceManagerTags_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(39, getResourceManagerTags());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1805,6 +1869,10 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     if (!getMachineType().equals(other.getMachineType())) return false;
     if (!getDiskType().equals(other.getDiskType())) return false;
     if (getDiskSizeGb() != other.getDiskSizeGb()) return false;
+    if (hasResourceManagerTags() != other.hasResourceManagerTags()) return false;
+    if (hasResourceManagerTags()) {
+      if (!getResourceManagerTags().equals(other.getResourceManagerTags())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1902,6 +1970,10 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     hash = (53 * hash) + getDiskType().hashCode();
     hash = (37 * hash) + DISK_SIZE_GB_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getDiskSizeGb());
+    if (hasResourceManagerTags()) {
+      hash = (37 * hash) + RESOURCE_MANAGER_TAGS_FIELD_NUMBER;
+      hash = (53 * hash) + getResourceManagerTags().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2128,6 +2200,11 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       machineType_ = "";
       diskType_ = "";
       diskSizeGb_ = 0L;
+      resourceManagerTags_ = null;
+      if (resourceManagerTagsBuilder_ != null) {
+        resourceManagerTagsBuilder_.dispose();
+        resourceManagerTagsBuilder_ = null;
+      }
       return this;
     }
 
@@ -2262,6 +2339,12 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       }
       if (((from_bitField0_ & 0x04000000) != 0)) {
         result.diskSizeGb_ = diskSizeGb_;
+      }
+      if (((from_bitField0_ & 0x08000000) != 0)) {
+        result.resourceManagerTags_ =
+            resourceManagerTagsBuilder_ == null
+                ? resourceManagerTags_
+                : resourceManagerTagsBuilder_.build();
       }
     }
 
@@ -2418,6 +2501,9 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       }
       if (other.getDiskSizeGb() != 0L) {
         setDiskSizeGb(other.getDiskSizeGb());
+      }
+      if (other.hasResourceManagerTags()) {
+        mergeResourceManagerTags(other.getResourceManagerTags());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -2612,6 +2698,13 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
                 bitField0_ |= 0x04000000;
                 break;
               } // case 304
+            case 314:
+              {
+                input.readMessage(
+                    getResourceManagerTagsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x08000000;
+                break;
+              } // case 314
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2645,7 +2738,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2933
+     *     google/container/v1beta1/cluster_service.proto;l=3016
      * @return The projectId.
      */
     @java.lang.Deprecated
@@ -2673,7 +2766,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2933
+     *     google/container/v1beta1/cluster_service.proto;l=3016
      * @return The bytes for projectId.
      */
     @java.lang.Deprecated
@@ -2701,7 +2794,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2933
+     *     google/container/v1beta1/cluster_service.proto;l=3016
      * @param value The projectId to set.
      * @return This builder for chaining.
      */
@@ -2728,7 +2821,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2933
+     *     google/container/v1beta1/cluster_service.proto;l=3016
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -2751,7 +2844,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2933
+     *     google/container/v1beta1/cluster_service.proto;l=3016
      * @param value The bytes for projectId to set.
      * @return This builder for chaining.
      */
@@ -2781,7 +2874,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2940
+     *     google/container/v1beta1/cluster_service.proto;l=3023
      * @return The zone.
      */
     @java.lang.Deprecated
@@ -2809,7 +2902,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2940
+     *     google/container/v1beta1/cluster_service.proto;l=3023
      * @return The bytes for zone.
      */
     @java.lang.Deprecated
@@ -2837,7 +2930,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2940
+     *     google/container/v1beta1/cluster_service.proto;l=3023
      * @param value The zone to set.
      * @return This builder for chaining.
      */
@@ -2864,7 +2957,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2940
+     *     google/container/v1beta1/cluster_service.proto;l=3023
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -2887,7 +2980,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2940
+     *     google/container/v1beta1/cluster_service.proto;l=3023
      * @param value The bytes for zone to set.
      * @return This builder for chaining.
      */
@@ -2916,7 +3009,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.cluster_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2944
+     *     google/container/v1beta1/cluster_service.proto;l=3027
      * @return The clusterId.
      */
     @java.lang.Deprecated
@@ -2943,7 +3036,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.cluster_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2944
+     *     google/container/v1beta1/cluster_service.proto;l=3027
      * @return The bytes for clusterId.
      */
     @java.lang.Deprecated
@@ -2970,7 +3063,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.cluster_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2944
+     *     google/container/v1beta1/cluster_service.proto;l=3027
      * @param value The clusterId to set.
      * @return This builder for chaining.
      */
@@ -2996,7 +3089,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.cluster_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2944
+     *     google/container/v1beta1/cluster_service.proto;l=3027
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -3018,7 +3111,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.cluster_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2944
+     *     google/container/v1beta1/cluster_service.proto;l=3027
      * @param value The bytes for clusterId to set.
      * @return This builder for chaining.
      */
@@ -3047,7 +3140,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2949
+     *     google/container/v1beta1/cluster_service.proto;l=3032
      * @return The nodePoolId.
      */
     @java.lang.Deprecated
@@ -3074,7 +3167,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2949
+     *     google/container/v1beta1/cluster_service.proto;l=3032
      * @return The bytes for nodePoolId.
      */
     @java.lang.Deprecated
@@ -3101,7 +3194,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2949
+     *     google/container/v1beta1/cluster_service.proto;l=3032
      * @param value The nodePoolId to set.
      * @return This builder for chaining.
      */
@@ -3127,7 +3220,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2949
+     *     google/container/v1beta1/cluster_service.proto;l=3032
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -3149,7 +3242,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2949
+     *     google/container/v1beta1/cluster_service.proto;l=3032
      * @param value The bytes for nodePoolId to set.
      * @return This builder for chaining.
      */
@@ -7010,6 +7103,212 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       diskSizeGb_ = 0L;
       onChanged();
       return this;
+    }
+
+    private com.google.container.v1beta1.ResourceManagerTags resourceManagerTags_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.ResourceManagerTags,
+            com.google.container.v1beta1.ResourceManagerTags.Builder,
+            com.google.container.v1beta1.ResourceManagerTagsOrBuilder>
+        resourceManagerTagsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Desired resource manager tag keys and values to be attached to the nodes
+     * for managing Compute Engine firewalls using Network Firewall Policies.
+     * Existing tags will be replaced with new values.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.ResourceManagerTags resource_manager_tags = 39;</code>
+     *
+     * @return Whether the resourceManagerTags field is set.
+     */
+    public boolean hasResourceManagerTags() {
+      return ((bitField0_ & 0x08000000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Desired resource manager tag keys and values to be attached to the nodes
+     * for managing Compute Engine firewalls using Network Firewall Policies.
+     * Existing tags will be replaced with new values.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.ResourceManagerTags resource_manager_tags = 39;</code>
+     *
+     * @return The resourceManagerTags.
+     */
+    public com.google.container.v1beta1.ResourceManagerTags getResourceManagerTags() {
+      if (resourceManagerTagsBuilder_ == null) {
+        return resourceManagerTags_ == null
+            ? com.google.container.v1beta1.ResourceManagerTags.getDefaultInstance()
+            : resourceManagerTags_;
+      } else {
+        return resourceManagerTagsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Desired resource manager tag keys and values to be attached to the nodes
+     * for managing Compute Engine firewalls using Network Firewall Policies.
+     * Existing tags will be replaced with new values.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.ResourceManagerTags resource_manager_tags = 39;</code>
+     */
+    public Builder setResourceManagerTags(com.google.container.v1beta1.ResourceManagerTags value) {
+      if (resourceManagerTagsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        resourceManagerTags_ = value;
+      } else {
+        resourceManagerTagsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x08000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Desired resource manager tag keys and values to be attached to the nodes
+     * for managing Compute Engine firewalls using Network Firewall Policies.
+     * Existing tags will be replaced with new values.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.ResourceManagerTags resource_manager_tags = 39;</code>
+     */
+    public Builder setResourceManagerTags(
+        com.google.container.v1beta1.ResourceManagerTags.Builder builderForValue) {
+      if (resourceManagerTagsBuilder_ == null) {
+        resourceManagerTags_ = builderForValue.build();
+      } else {
+        resourceManagerTagsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x08000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Desired resource manager tag keys and values to be attached to the nodes
+     * for managing Compute Engine firewalls using Network Firewall Policies.
+     * Existing tags will be replaced with new values.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.ResourceManagerTags resource_manager_tags = 39;</code>
+     */
+    public Builder mergeResourceManagerTags(
+        com.google.container.v1beta1.ResourceManagerTags value) {
+      if (resourceManagerTagsBuilder_ == null) {
+        if (((bitField0_ & 0x08000000) != 0)
+            && resourceManagerTags_ != null
+            && resourceManagerTags_
+                != com.google.container.v1beta1.ResourceManagerTags.getDefaultInstance()) {
+          getResourceManagerTagsBuilder().mergeFrom(value);
+        } else {
+          resourceManagerTags_ = value;
+        }
+      } else {
+        resourceManagerTagsBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x08000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Desired resource manager tag keys and values to be attached to the nodes
+     * for managing Compute Engine firewalls using Network Firewall Policies.
+     * Existing tags will be replaced with new values.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.ResourceManagerTags resource_manager_tags = 39;</code>
+     */
+    public Builder clearResourceManagerTags() {
+      bitField0_ = (bitField0_ & ~0x08000000);
+      resourceManagerTags_ = null;
+      if (resourceManagerTagsBuilder_ != null) {
+        resourceManagerTagsBuilder_.dispose();
+        resourceManagerTagsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Desired resource manager tag keys and values to be attached to the nodes
+     * for managing Compute Engine firewalls using Network Firewall Policies.
+     * Existing tags will be replaced with new values.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.ResourceManagerTags resource_manager_tags = 39;</code>
+     */
+    public com.google.container.v1beta1.ResourceManagerTags.Builder
+        getResourceManagerTagsBuilder() {
+      bitField0_ |= 0x08000000;
+      onChanged();
+      return getResourceManagerTagsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Desired resource manager tag keys and values to be attached to the nodes
+     * for managing Compute Engine firewalls using Network Firewall Policies.
+     * Existing tags will be replaced with new values.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.ResourceManagerTags resource_manager_tags = 39;</code>
+     */
+    public com.google.container.v1beta1.ResourceManagerTagsOrBuilder
+        getResourceManagerTagsOrBuilder() {
+      if (resourceManagerTagsBuilder_ != null) {
+        return resourceManagerTagsBuilder_.getMessageOrBuilder();
+      } else {
+        return resourceManagerTags_ == null
+            ? com.google.container.v1beta1.ResourceManagerTags.getDefaultInstance()
+            : resourceManagerTags_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Desired resource manager tag keys and values to be attached to the nodes
+     * for managing Compute Engine firewalls using Network Firewall Policies.
+     * Existing tags will be replaced with new values.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.ResourceManagerTags resource_manager_tags = 39;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.ResourceManagerTags,
+            com.google.container.v1beta1.ResourceManagerTags.Builder,
+            com.google.container.v1beta1.ResourceManagerTagsOrBuilder>
+        getResourceManagerTagsFieldBuilder() {
+      if (resourceManagerTagsBuilder_ == null) {
+        resourceManagerTagsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1beta1.ResourceManagerTags,
+                com.google.container.v1beta1.ResourceManagerTags.Builder,
+                com.google.container.v1beta1.ResourceManagerTagsOrBuilder>(
+                getResourceManagerTags(), getParentForChildren(), isClean());
+        resourceManagerTags_ = null;
+      }
+      return resourceManagerTagsBuilder_;
     }
 
     @java.lang.Override

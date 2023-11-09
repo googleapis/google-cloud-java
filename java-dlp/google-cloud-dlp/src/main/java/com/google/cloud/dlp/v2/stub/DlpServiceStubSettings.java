@@ -17,6 +17,7 @@
 package com.google.cloud.dlp.v2.stub;
 
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListDeidentifyTemplatesPagedResponse;
+import static com.google.cloud.dlp.v2.DlpServiceClient.ListDiscoveryConfigsPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListDlpJobsPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListInspectTemplatesPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListJobTriggersPagedResponse;
@@ -54,6 +55,7 @@ import com.google.common.collect.Lists;
 import com.google.privacy.dlp.v2.ActivateJobTriggerRequest;
 import com.google.privacy.dlp.v2.CancelDlpJobRequest;
 import com.google.privacy.dlp.v2.CreateDeidentifyTemplateRequest;
+import com.google.privacy.dlp.v2.CreateDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.CreateDlpJobRequest;
 import com.google.privacy.dlp.v2.CreateInspectTemplateRequest;
 import com.google.privacy.dlp.v2.CreateJobTriggerRequest;
@@ -62,13 +64,16 @@ import com.google.privacy.dlp.v2.DeidentifyContentRequest;
 import com.google.privacy.dlp.v2.DeidentifyContentResponse;
 import com.google.privacy.dlp.v2.DeidentifyTemplate;
 import com.google.privacy.dlp.v2.DeleteDeidentifyTemplateRequest;
+import com.google.privacy.dlp.v2.DeleteDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.DeleteDlpJobRequest;
 import com.google.privacy.dlp.v2.DeleteInspectTemplateRequest;
 import com.google.privacy.dlp.v2.DeleteJobTriggerRequest;
 import com.google.privacy.dlp.v2.DeleteStoredInfoTypeRequest;
+import com.google.privacy.dlp.v2.DiscoveryConfig;
 import com.google.privacy.dlp.v2.DlpJob;
 import com.google.privacy.dlp.v2.FinishDlpJobRequest;
 import com.google.privacy.dlp.v2.GetDeidentifyTemplateRequest;
+import com.google.privacy.dlp.v2.GetDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.GetDlpJobRequest;
 import com.google.privacy.dlp.v2.GetInspectTemplateRequest;
 import com.google.privacy.dlp.v2.GetJobTriggerRequest;
@@ -82,6 +87,8 @@ import com.google.privacy.dlp.v2.InspectTemplate;
 import com.google.privacy.dlp.v2.JobTrigger;
 import com.google.privacy.dlp.v2.ListDeidentifyTemplatesRequest;
 import com.google.privacy.dlp.v2.ListDeidentifyTemplatesResponse;
+import com.google.privacy.dlp.v2.ListDiscoveryConfigsRequest;
+import com.google.privacy.dlp.v2.ListDiscoveryConfigsResponse;
 import com.google.privacy.dlp.v2.ListDlpJobsRequest;
 import com.google.privacy.dlp.v2.ListDlpJobsResponse;
 import com.google.privacy.dlp.v2.ListInfoTypesRequest;
@@ -98,6 +105,7 @@ import com.google.privacy.dlp.v2.ReidentifyContentRequest;
 import com.google.privacy.dlp.v2.ReidentifyContentResponse;
 import com.google.privacy.dlp.v2.StoredInfoType;
 import com.google.privacy.dlp.v2.UpdateDeidentifyTemplateRequest;
+import com.google.privacy.dlp.v2.UpdateDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.UpdateInspectTemplateRequest;
 import com.google.privacy.dlp.v2.UpdateJobTriggerRequest;
 import com.google.privacy.dlp.v2.UpdateStoredInfoTypeRequest;
@@ -194,6 +202,19 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
       listJobTriggersSettings;
   private final UnaryCallSettings<DeleteJobTriggerRequest, Empty> deleteJobTriggerSettings;
   private final UnaryCallSettings<ActivateJobTriggerRequest, DlpJob> activateJobTriggerSettings;
+  private final UnaryCallSettings<CreateDiscoveryConfigRequest, DiscoveryConfig>
+      createDiscoveryConfigSettings;
+  private final UnaryCallSettings<UpdateDiscoveryConfigRequest, DiscoveryConfig>
+      updateDiscoveryConfigSettings;
+  private final UnaryCallSettings<GetDiscoveryConfigRequest, DiscoveryConfig>
+      getDiscoveryConfigSettings;
+  private final PagedCallSettings<
+          ListDiscoveryConfigsRequest,
+          ListDiscoveryConfigsResponse,
+          ListDiscoveryConfigsPagedResponse>
+      listDiscoveryConfigsSettings;
+  private final UnaryCallSettings<DeleteDiscoveryConfigRequest, Empty>
+      deleteDiscoveryConfigSettings;
   private final UnaryCallSettings<CreateDlpJobRequest, DlpJob> createDlpJobSettings;
   private final PagedCallSettings<ListDlpJobsRequest, ListDlpJobsResponse, ListDlpJobsPagedResponse>
       listDlpJobsSettings;
@@ -339,6 +360,47 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
             }
           };
 
+  private static final PagedListDescriptor<
+          ListDiscoveryConfigsRequest, ListDiscoveryConfigsResponse, DiscoveryConfig>
+      LIST_DISCOVERY_CONFIGS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListDiscoveryConfigsRequest, ListDiscoveryConfigsResponse, DiscoveryConfig>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListDiscoveryConfigsRequest injectToken(
+                ListDiscoveryConfigsRequest payload, String token) {
+              return ListDiscoveryConfigsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListDiscoveryConfigsRequest injectPageSize(
+                ListDiscoveryConfigsRequest payload, int pageSize) {
+              return ListDiscoveryConfigsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListDiscoveryConfigsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListDiscoveryConfigsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<DiscoveryConfig> extractResources(
+                ListDiscoveryConfigsResponse payload) {
+              return payload.getDiscoveryConfigsList() == null
+                  ? ImmutableList.<DiscoveryConfig>of()
+                  : payload.getDiscoveryConfigsList();
+            }
+          };
+
   private static final PagedListDescriptor<ListDlpJobsRequest, ListDlpJobsResponse, DlpJob>
       LIST_DLP_JOBS_PAGE_STR_DESC =
           new PagedListDescriptor<ListDlpJobsRequest, ListDlpJobsResponse, DlpJob>() {
@@ -480,6 +542,30 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
               PageContext<ListJobTriggersRequest, ListJobTriggersResponse, JobTrigger> pageContext =
                   PageContext.create(callable, LIST_JOB_TRIGGERS_PAGE_STR_DESC, request, context);
               return ListJobTriggersPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListDiscoveryConfigsRequest,
+          ListDiscoveryConfigsResponse,
+          ListDiscoveryConfigsPagedResponse>
+      LIST_DISCOVERY_CONFIGS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListDiscoveryConfigsRequest,
+              ListDiscoveryConfigsResponse,
+              ListDiscoveryConfigsPagedResponse>() {
+            @Override
+            public ApiFuture<ListDiscoveryConfigsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListDiscoveryConfigsRequest, ListDiscoveryConfigsResponse> callable,
+                ListDiscoveryConfigsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListDiscoveryConfigsResponse> futureResponse) {
+              PageContext<
+                      ListDiscoveryConfigsRequest, ListDiscoveryConfigsResponse, DiscoveryConfig>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_DISCOVERY_CONFIGS_PAGE_STR_DESC, request, context);
+              return ListDiscoveryConfigsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -649,6 +735,38 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
   /** Returns the object with the settings used for calls to activateJobTrigger. */
   public UnaryCallSettings<ActivateJobTriggerRequest, DlpJob> activateJobTriggerSettings() {
     return activateJobTriggerSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createDiscoveryConfig. */
+  public UnaryCallSettings<CreateDiscoveryConfigRequest, DiscoveryConfig>
+      createDiscoveryConfigSettings() {
+    return createDiscoveryConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateDiscoveryConfig. */
+  public UnaryCallSettings<UpdateDiscoveryConfigRequest, DiscoveryConfig>
+      updateDiscoveryConfigSettings() {
+    return updateDiscoveryConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getDiscoveryConfig. */
+  public UnaryCallSettings<GetDiscoveryConfigRequest, DiscoveryConfig>
+      getDiscoveryConfigSettings() {
+    return getDiscoveryConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listDiscoveryConfigs. */
+  public PagedCallSettings<
+          ListDiscoveryConfigsRequest,
+          ListDiscoveryConfigsResponse,
+          ListDiscoveryConfigsPagedResponse>
+      listDiscoveryConfigsSettings() {
+    return listDiscoveryConfigsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteDiscoveryConfig. */
+  public UnaryCallSettings<DeleteDiscoveryConfigRequest, Empty> deleteDiscoveryConfigSettings() {
+    return deleteDiscoveryConfigSettings;
   }
 
   /** Returns the object with the settings used for calls to createDlpJob. */
@@ -845,6 +963,11 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
     listJobTriggersSettings = settingsBuilder.listJobTriggersSettings().build();
     deleteJobTriggerSettings = settingsBuilder.deleteJobTriggerSettings().build();
     activateJobTriggerSettings = settingsBuilder.activateJobTriggerSettings().build();
+    createDiscoveryConfigSettings = settingsBuilder.createDiscoveryConfigSettings().build();
+    updateDiscoveryConfigSettings = settingsBuilder.updateDiscoveryConfigSettings().build();
+    getDiscoveryConfigSettings = settingsBuilder.getDiscoveryConfigSettings().build();
+    listDiscoveryConfigsSettings = settingsBuilder.listDiscoveryConfigsSettings().build();
+    deleteDiscoveryConfigSettings = settingsBuilder.deleteDiscoveryConfigSettings().build();
     createDlpJobSettings = settingsBuilder.createDlpJobSettings().build();
     listDlpJobsSettings = settingsBuilder.listDlpJobsSettings().build();
     getDlpJobSettings = settingsBuilder.getDlpJobSettings().build();
@@ -912,6 +1035,19 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
         deleteJobTriggerSettings;
     private final UnaryCallSettings.Builder<ActivateJobTriggerRequest, DlpJob>
         activateJobTriggerSettings;
+    private final UnaryCallSettings.Builder<CreateDiscoveryConfigRequest, DiscoveryConfig>
+        createDiscoveryConfigSettings;
+    private final UnaryCallSettings.Builder<UpdateDiscoveryConfigRequest, DiscoveryConfig>
+        updateDiscoveryConfigSettings;
+    private final UnaryCallSettings.Builder<GetDiscoveryConfigRequest, DiscoveryConfig>
+        getDiscoveryConfigSettings;
+    private final PagedCallSettings.Builder<
+            ListDiscoveryConfigsRequest,
+            ListDiscoveryConfigsResponse,
+            ListDiscoveryConfigsPagedResponse>
+        listDiscoveryConfigsSettings;
+    private final UnaryCallSettings.Builder<DeleteDiscoveryConfigRequest, Empty>
+        deleteDiscoveryConfigSettings;
     private final UnaryCallSettings.Builder<CreateDlpJobRequest, DlpJob> createDlpJobSettings;
     private final PagedCallSettings.Builder<
             ListDlpJobsRequest, ListDlpJobsResponse, ListDlpJobsPagedResponse>
@@ -1009,6 +1145,12 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
       listJobTriggersSettings = PagedCallSettings.newBuilder(LIST_JOB_TRIGGERS_PAGE_STR_FACT);
       deleteJobTriggerSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       activateJobTriggerSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createDiscoveryConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateDiscoveryConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getDiscoveryConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listDiscoveryConfigsSettings =
+          PagedCallSettings.newBuilder(LIST_DISCOVERY_CONFIGS_PAGE_STR_FACT);
+      deleteDiscoveryConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createDlpJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listDlpJobsSettings = PagedCallSettings.newBuilder(LIST_DLP_JOBS_PAGE_STR_FACT);
       getDlpJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -1047,6 +1189,11 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
               listJobTriggersSettings,
               deleteJobTriggerSettings,
               activateJobTriggerSettings,
+              createDiscoveryConfigSettings,
+              updateDiscoveryConfigSettings,
+              getDiscoveryConfigSettings,
+              listDiscoveryConfigsSettings,
+              deleteDiscoveryConfigSettings,
               createDlpJobSettings,
               listDlpJobsSettings,
               getDlpJobSettings,
@@ -1087,6 +1234,11 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
       listJobTriggersSettings = settings.listJobTriggersSettings.toBuilder();
       deleteJobTriggerSettings = settings.deleteJobTriggerSettings.toBuilder();
       activateJobTriggerSettings = settings.activateJobTriggerSettings.toBuilder();
+      createDiscoveryConfigSettings = settings.createDiscoveryConfigSettings.toBuilder();
+      updateDiscoveryConfigSettings = settings.updateDiscoveryConfigSettings.toBuilder();
+      getDiscoveryConfigSettings = settings.getDiscoveryConfigSettings.toBuilder();
+      listDiscoveryConfigsSettings = settings.listDiscoveryConfigsSettings.toBuilder();
+      deleteDiscoveryConfigSettings = settings.deleteDiscoveryConfigSettings.toBuilder();
       createDlpJobSettings = settings.createDlpJobSettings.toBuilder();
       listDlpJobsSettings = settings.listDlpJobsSettings.toBuilder();
       getDlpJobSettings = settings.getDlpJobSettings.toBuilder();
@@ -1124,6 +1276,11 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
               listJobTriggersSettings,
               deleteJobTriggerSettings,
               activateJobTriggerSettings,
+              createDiscoveryConfigSettings,
+              updateDiscoveryConfigSettings,
+              getDiscoveryConfigSettings,
+              listDiscoveryConfigsSettings,
+              deleteDiscoveryConfigSettings,
               createDlpJobSettings,
               listDlpJobsSettings,
               getDlpJobSettings,
@@ -1274,6 +1431,31 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
           .activateJobTriggerSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .createDiscoveryConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .updateDiscoveryConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .getDiscoveryConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listDiscoveryConfigsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deleteDiscoveryConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .createDlpJobSettings()
@@ -1488,6 +1670,39 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
     public UnaryCallSettings.Builder<ActivateJobTriggerRequest, DlpJob>
         activateJobTriggerSettings() {
       return activateJobTriggerSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createDiscoveryConfig. */
+    public UnaryCallSettings.Builder<CreateDiscoveryConfigRequest, DiscoveryConfig>
+        createDiscoveryConfigSettings() {
+      return createDiscoveryConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateDiscoveryConfig. */
+    public UnaryCallSettings.Builder<UpdateDiscoveryConfigRequest, DiscoveryConfig>
+        updateDiscoveryConfigSettings() {
+      return updateDiscoveryConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getDiscoveryConfig. */
+    public UnaryCallSettings.Builder<GetDiscoveryConfigRequest, DiscoveryConfig>
+        getDiscoveryConfigSettings() {
+      return getDiscoveryConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listDiscoveryConfigs. */
+    public PagedCallSettings.Builder<
+            ListDiscoveryConfigsRequest,
+            ListDiscoveryConfigsResponse,
+            ListDiscoveryConfigsPagedResponse>
+        listDiscoveryConfigsSettings() {
+      return listDiscoveryConfigsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteDiscoveryConfig. */
+    public UnaryCallSettings.Builder<DeleteDiscoveryConfigRequest, Empty>
+        deleteDiscoveryConfigSettings() {
+      return deleteDiscoveryConfigSettings;
     }
 
     /** Returns the builder for the settings used for calls to createDlpJob. */

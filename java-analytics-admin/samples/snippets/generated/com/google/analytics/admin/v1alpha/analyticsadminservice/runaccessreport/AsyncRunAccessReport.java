@@ -55,6 +55,8 @@ public class AsyncRunAccessReport {
               .setTimeZone("timeZone-2077180903")
               .addAllOrderBys(new ArrayList<AccessOrderBy>())
               .setReturnEntityQuota(true)
+              .setIncludeAllUsers(true)
+              .setExpandGroups(true)
               .build();
       ApiFuture<RunAccessReportResponse> future =
           analyticsAdminServiceClient.runAccessReportCallable().futureCall(request);

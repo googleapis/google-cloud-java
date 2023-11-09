@@ -1107,7 +1107,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.shopping.merchant.reports.v1beta.NonProductPerformanceView",
+    "name": "com.google.shopping.merchant.reports.v1beta.MarketingMethod",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1116,7 +1116,16 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.shopping.merchant.reports.v1beta.NonProductPerformanceView$Builder",
+    "name": "com.google.shopping.merchant.reports.v1beta.MarketingMethod$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.shopping.merchant.reports.v1beta.MarketingMethod$MarketingMethodEnum",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1188,7 +1197,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.shopping.merchant.reports.v1beta.ProductView$AggregatedDestinationStatus",
+    "name": "com.google.shopping.merchant.reports.v1beta.ProductView$AggregatedReportingContextStatus",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1260,7 +1269,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.shopping.merchant.reports.v1beta.ProductView$ItemIssue$ItemIssueSeverity$IssueSeverityPerDestination",
+    "name": "com.google.shopping.merchant.reports.v1beta.ProductView$ItemIssue$ItemIssueSeverity$IssueSeverityPerReportingContext",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1269,7 +1278,7 @@
     "allPublicClasses": true
   },
   {
-    "name": "com.google.shopping.merchant.reports.v1beta.ProductView$ItemIssue$ItemIssueSeverity$IssueSeverityPerDestination$Builder",
+    "name": "com.google.shopping.merchant.reports.v1beta.ProductView$ItemIssue$ItemIssueSeverity$IssueSeverityPerReportingContext$Builder",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1305,6 +1314,24 @@
     "allPublicClasses": true
   },
   {
+    "name": "com.google.shopping.merchant.reports.v1beta.RelativeDemand$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.shopping.merchant.reports.v1beta.RelativeDemand$RelativeDemandEnum",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
     "name": "com.google.shopping.merchant.reports.v1beta.RelativeDemandChangeType",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
@@ -1314,7 +1341,43 @@
     "allPublicClasses": true
   },
   {
+    "name": "com.google.shopping.merchant.reports.v1beta.RelativeDemandChangeType$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.shopping.merchant.reports.v1beta.RelativeDemandChangeType$RelativeDemandChangeTypeEnum",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
     "name": "com.google.shopping.merchant.reports.v1beta.ReportGranularity",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.shopping.merchant.reports.v1beta.ReportGranularity$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.shopping.merchant.reports.v1beta.ReportGranularity$ReportGranularityEnum",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,
@@ -1386,6 +1449,51 @@
     "allPublicClasses": true
   },
   {
+    "name": "com.google.shopping.merchant.reports.v1beta.TrafficSource$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.shopping.merchant.reports.v1beta.TrafficSource$TrafficSourceEnum",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.shopping.type.Channel",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.shopping.type.Channel$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.shopping.type.Channel$ChannelEnum",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
     "name": "com.google.shopping.type.CustomAttribute",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
@@ -1413,6 +1521,24 @@
     "allPublicClasses": true
   },
   {
+    "name": "com.google.shopping.type.Destination$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.shopping.type.Destination$DestinationEnum",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
     "name": "com.google.shopping.type.Price",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
@@ -1423,6 +1549,33 @@
   },
   {
     "name": "com.google.shopping.type.Price$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.shopping.type.ReportingContext",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.shopping.type.ReportingContext$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.shopping.type.ReportingContext$ReportingContextEnum",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,

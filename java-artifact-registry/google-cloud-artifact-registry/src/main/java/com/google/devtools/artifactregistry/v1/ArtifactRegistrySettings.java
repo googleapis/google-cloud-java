@@ -252,6 +252,18 @@ public class ArtifactRegistrySettings extends ClientSettings<ArtifactRegistrySet
     return ((ArtifactRegistryStubSettings) getStubSettings()).deleteVersionOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to batchDeleteVersions. */
+  public UnaryCallSettings<BatchDeleteVersionsRequest, Operation> batchDeleteVersionsSettings() {
+    return ((ArtifactRegistryStubSettings) getStubSettings()).batchDeleteVersionsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchDeleteVersions. */
+  public OperationCallSettings<BatchDeleteVersionsRequest, Empty, BatchDeleteVersionsMetadata>
+      batchDeleteVersionsOperationSettings() {
+    return ((ArtifactRegistryStubSettings) getStubSettings())
+        .batchDeleteVersionsOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to listFiles. */
   public PagedCallSettings<ListFilesRequest, ListFilesResponse, ListFilesPagedResponse>
       listFilesSettings() {
@@ -615,6 +627,19 @@ public class ArtifactRegistrySettings extends ClientSettings<ArtifactRegistrySet
     public OperationCallSettings.Builder<DeleteVersionRequest, Empty, OperationMetadata>
         deleteVersionOperationSettings() {
       return getStubSettingsBuilder().deleteVersionOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchDeleteVersions. */
+    public UnaryCallSettings.Builder<BatchDeleteVersionsRequest, Operation>
+        batchDeleteVersionsSettings() {
+      return getStubSettingsBuilder().batchDeleteVersionsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchDeleteVersions. */
+    public OperationCallSettings.Builder<
+            BatchDeleteVersionsRequest, Empty, BatchDeleteVersionsMetadata>
+        batchDeleteVersionsOperationSettings() {
+      return getStubSettingsBuilder().batchDeleteVersionsOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listFiles. */

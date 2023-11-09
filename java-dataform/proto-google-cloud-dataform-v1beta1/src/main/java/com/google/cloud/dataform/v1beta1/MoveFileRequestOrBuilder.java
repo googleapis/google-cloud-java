@@ -56,7 +56,8 @@ public interface MoveFileRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The file's full path including filename, relative to the workspace root.
+   * Required. The file's full path including filename, relative to the
+   * workspace root.
    * </pre>
    *
    * <code>string path = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -68,7 +69,8 @@ public interface MoveFileRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The file's full path including filename, relative to the workspace root.
+   * Required. The file's full path including filename, relative to the
+   * workspace root.
    * </pre>
    *
    * <code>string path = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -81,7 +83,8 @@ public interface MoveFileRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The file's new path including filename, relative to the workspace root.
+   * Required. The file's new path including filename, relative to the workspace
+   * root.
    * </pre>
    *
    * <code>string new_path = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -93,7 +96,8 @@ public interface MoveFileRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The file's new path including filename, relative to the workspace root.
+   * Required. The file's new path including filename, relative to the workspace
+   * root.
    * </pre>
    *
    * <code>string new_path = 3 [(.google.api.field_behavior) = REQUIRED];</code>

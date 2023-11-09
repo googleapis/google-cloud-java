@@ -54,6 +54,9 @@ import com.google.cloud.contactcenterinsights.v1.Analysis;
 import com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsMetadata;
 import com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsRequest;
 import com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsResponse;
+import com.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsMetadata;
+import com.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsRequest;
+import com.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsResponse;
 import com.google.cloud.contactcenterinsights.v1.CalculateIssueModelStatsRequest;
 import com.google.cloud.contactcenterinsights.v1.CalculateIssueModelStatsResponse;
 import com.google.cloud.contactcenterinsights.v1.CalculateStatsRequest;
@@ -203,6 +206,13 @@ public class ContactCenterInsightsStubSettings
           BulkAnalyzeConversationsResponse,
           BulkAnalyzeConversationsMetadata>
       bulkAnalyzeConversationsOperationSettings;
+  private final UnaryCallSettings<BulkDeleteConversationsRequest, Operation>
+      bulkDeleteConversationsSettings;
+  private final OperationCallSettings<
+          BulkDeleteConversationsRequest,
+          BulkDeleteConversationsResponse,
+          BulkDeleteConversationsMetadata>
+      bulkDeleteConversationsOperationSettings;
   private final UnaryCallSettings<IngestConversationsRequest, Operation>
       ingestConversationsSettings;
   private final OperationCallSettings<
@@ -564,6 +574,21 @@ public class ContactCenterInsightsStubSettings
     return bulkAnalyzeConversationsOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to bulkDeleteConversations. */
+  public UnaryCallSettings<BulkDeleteConversationsRequest, Operation>
+      bulkDeleteConversationsSettings() {
+    return bulkDeleteConversationsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to bulkDeleteConversations. */
+  public OperationCallSettings<
+          BulkDeleteConversationsRequest,
+          BulkDeleteConversationsResponse,
+          BulkDeleteConversationsMetadata>
+      bulkDeleteConversationsOperationSettings() {
+    return bulkDeleteConversationsOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to ingestConversations. */
   public UnaryCallSettings<IngestConversationsRequest, Operation> ingestConversationsSettings() {
     return ingestConversationsSettings;
@@ -868,6 +893,9 @@ public class ContactCenterInsightsStubSettings
     bulkAnalyzeConversationsSettings = settingsBuilder.bulkAnalyzeConversationsSettings().build();
     bulkAnalyzeConversationsOperationSettings =
         settingsBuilder.bulkAnalyzeConversationsOperationSettings().build();
+    bulkDeleteConversationsSettings = settingsBuilder.bulkDeleteConversationsSettings().build();
+    bulkDeleteConversationsOperationSettings =
+        settingsBuilder.bulkDeleteConversationsOperationSettings().build();
     ingestConversationsSettings = settingsBuilder.ingestConversationsSettings().build();
     ingestConversationsOperationSettings =
         settingsBuilder.ingestConversationsOperationSettings().build();
@@ -943,6 +971,13 @@ public class ContactCenterInsightsStubSettings
             BulkAnalyzeConversationsResponse,
             BulkAnalyzeConversationsMetadata>
         bulkAnalyzeConversationsOperationSettings;
+    private final UnaryCallSettings.Builder<BulkDeleteConversationsRequest, Operation>
+        bulkDeleteConversationsSettings;
+    private final OperationCallSettings.Builder<
+            BulkDeleteConversationsRequest,
+            BulkDeleteConversationsResponse,
+            BulkDeleteConversationsMetadata>
+        bulkDeleteConversationsOperationSettings;
     private final UnaryCallSettings.Builder<IngestConversationsRequest, Operation>
         ingestConversationsSettings;
     private final OperationCallSettings.Builder<
@@ -1060,6 +1095,8 @@ public class ContactCenterInsightsStubSettings
       deleteAnalysisSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       bulkAnalyzeConversationsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       bulkAnalyzeConversationsOperationSettings = OperationCallSettings.newBuilder();
+      bulkDeleteConversationsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      bulkDeleteConversationsOperationSettings = OperationCallSettings.newBuilder();
       ingestConversationsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       ingestConversationsOperationSettings = OperationCallSettings.newBuilder();
       exportInsightsDataSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -1107,6 +1144,7 @@ public class ContactCenterInsightsStubSettings
               listAnalysesSettings,
               deleteAnalysisSettings,
               bulkAnalyzeConversationsSettings,
+              bulkDeleteConversationsSettings,
               ingestConversationsSettings,
               exportInsightsDataSettings,
               createIssueModelSettings,
@@ -1156,6 +1194,9 @@ public class ContactCenterInsightsStubSettings
       bulkAnalyzeConversationsSettings = settings.bulkAnalyzeConversationsSettings.toBuilder();
       bulkAnalyzeConversationsOperationSettings =
           settings.bulkAnalyzeConversationsOperationSettings.toBuilder();
+      bulkDeleteConversationsSettings = settings.bulkDeleteConversationsSettings.toBuilder();
+      bulkDeleteConversationsOperationSettings =
+          settings.bulkDeleteConversationsOperationSettings.toBuilder();
       ingestConversationsSettings = settings.ingestConversationsSettings.toBuilder();
       ingestConversationsOperationSettings =
           settings.ingestConversationsOperationSettings.toBuilder();
@@ -1206,6 +1247,7 @@ public class ContactCenterInsightsStubSettings
               listAnalysesSettings,
               deleteAnalysisSettings,
               bulkAnalyzeConversationsSettings,
+              bulkDeleteConversationsSettings,
               ingestConversationsSettings,
               exportInsightsDataSettings,
               createIssueModelSettings,
@@ -1314,6 +1356,11 @@ public class ContactCenterInsightsStubSettings
 
       builder
           .bulkAnalyzeConversationsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .bulkDeleteConversationsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -1516,6 +1563,32 @@ public class ContactCenterInsightsStubSettings
           .setMetadataTransformer(
               ProtoOperationTransformers.MetadataTransformer.create(
                   BulkAnalyzeConversationsMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .bulkDeleteConversationsOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<BulkDeleteConversationsRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(
+                  BulkDeleteConversationsResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(
+                  BulkDeleteConversationsMetadata.class))
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
@@ -1788,6 +1861,23 @@ public class ContactCenterInsightsStubSettings
             BulkAnalyzeConversationsMetadata>
         bulkAnalyzeConversationsOperationSettings() {
       return bulkAnalyzeConversationsOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to bulkDeleteConversations. */
+    public UnaryCallSettings.Builder<BulkDeleteConversationsRequest, Operation>
+        bulkDeleteConversationsSettings() {
+      return bulkDeleteConversationsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to bulkDeleteConversations. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            BulkDeleteConversationsRequest,
+            BulkDeleteConversationsResponse,
+            BulkDeleteConversationsMetadata>
+        bulkDeleteConversationsOperationSettings() {
+      return bulkDeleteConversationsOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to ingestConversations. */

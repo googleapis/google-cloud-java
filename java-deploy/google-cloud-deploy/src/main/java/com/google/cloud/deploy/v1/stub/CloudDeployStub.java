@@ -16,6 +16,8 @@
 
 package com.google.cloud.deploy.v1.stub;
 
+import static com.google.cloud.deploy.v1.CloudDeployClient.ListAutomationRunsPagedResponse;
+import static com.google.cloud.deploy.v1.CloudDeployClient.ListAutomationsPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListDeliveryPipelinesPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListJobRunsPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListLocationsPagedResponse;
@@ -32,16 +34,24 @@ import com.google.cloud.deploy.v1.AdvanceRolloutRequest;
 import com.google.cloud.deploy.v1.AdvanceRolloutResponse;
 import com.google.cloud.deploy.v1.ApproveRolloutRequest;
 import com.google.cloud.deploy.v1.ApproveRolloutResponse;
+import com.google.cloud.deploy.v1.Automation;
+import com.google.cloud.deploy.v1.AutomationRun;
+import com.google.cloud.deploy.v1.CancelAutomationRunRequest;
+import com.google.cloud.deploy.v1.CancelAutomationRunResponse;
 import com.google.cloud.deploy.v1.CancelRolloutRequest;
 import com.google.cloud.deploy.v1.CancelRolloutResponse;
 import com.google.cloud.deploy.v1.Config;
+import com.google.cloud.deploy.v1.CreateAutomationRequest;
 import com.google.cloud.deploy.v1.CreateDeliveryPipelineRequest;
 import com.google.cloud.deploy.v1.CreateReleaseRequest;
 import com.google.cloud.deploy.v1.CreateRolloutRequest;
 import com.google.cloud.deploy.v1.CreateTargetRequest;
+import com.google.cloud.deploy.v1.DeleteAutomationRequest;
 import com.google.cloud.deploy.v1.DeleteDeliveryPipelineRequest;
 import com.google.cloud.deploy.v1.DeleteTargetRequest;
 import com.google.cloud.deploy.v1.DeliveryPipeline;
+import com.google.cloud.deploy.v1.GetAutomationRequest;
+import com.google.cloud.deploy.v1.GetAutomationRunRequest;
 import com.google.cloud.deploy.v1.GetConfigRequest;
 import com.google.cloud.deploy.v1.GetDeliveryPipelineRequest;
 import com.google.cloud.deploy.v1.GetJobRunRequest;
@@ -51,6 +61,10 @@ import com.google.cloud.deploy.v1.GetTargetRequest;
 import com.google.cloud.deploy.v1.IgnoreJobRequest;
 import com.google.cloud.deploy.v1.IgnoreJobResponse;
 import com.google.cloud.deploy.v1.JobRun;
+import com.google.cloud.deploy.v1.ListAutomationRunsRequest;
+import com.google.cloud.deploy.v1.ListAutomationRunsResponse;
+import com.google.cloud.deploy.v1.ListAutomationsRequest;
+import com.google.cloud.deploy.v1.ListAutomationsResponse;
 import com.google.cloud.deploy.v1.ListDeliveryPipelinesRequest;
 import com.google.cloud.deploy.v1.ListDeliveryPipelinesResponse;
 import com.google.cloud.deploy.v1.ListJobRunsRequest;
@@ -65,10 +79,13 @@ import com.google.cloud.deploy.v1.OperationMetadata;
 import com.google.cloud.deploy.v1.Release;
 import com.google.cloud.deploy.v1.RetryJobRequest;
 import com.google.cloud.deploy.v1.RetryJobResponse;
+import com.google.cloud.deploy.v1.RollbackTargetRequest;
+import com.google.cloud.deploy.v1.RollbackTargetResponse;
 import com.google.cloud.deploy.v1.Rollout;
 import com.google.cloud.deploy.v1.Target;
 import com.google.cloud.deploy.v1.TerminateJobRunRequest;
 import com.google.cloud.deploy.v1.TerminateJobRunResponse;
+import com.google.cloud.deploy.v1.UpdateAutomationRequest;
 import com.google.cloud.deploy.v1.UpdateDeliveryPipelineRequest;
 import com.google.cloud.deploy.v1.UpdateTargetRequest;
 import com.google.cloud.location.GetLocationRequest;
@@ -153,6 +170,10 @@ public abstract class CloudDeployStub implements BackgroundResource {
 
   public UnaryCallable<ListTargetsRequest, ListTargetsResponse> listTargetsCallable() {
     throw new UnsupportedOperationException("Not implemented: listTargetsCallable()");
+  }
+
+  public UnaryCallable<RollbackTargetRequest, RollbackTargetResponse> rollbackTargetCallable() {
+    throw new UnsupportedOperationException("Not implemented: rollbackTargetCallable()");
   }
 
   public UnaryCallable<GetTargetRequest, Target> getTargetCallable() {
@@ -270,6 +291,65 @@ public abstract class CloudDeployStub implements BackgroundResource {
 
   public UnaryCallable<GetConfigRequest, Config> getConfigCallable() {
     throw new UnsupportedOperationException("Not implemented: getConfigCallable()");
+  }
+
+  public OperationCallable<CreateAutomationRequest, Automation, OperationMetadata>
+      createAutomationOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: createAutomationOperationCallable()");
+  }
+
+  public UnaryCallable<CreateAutomationRequest, Operation> createAutomationCallable() {
+    throw new UnsupportedOperationException("Not implemented: createAutomationCallable()");
+  }
+
+  public OperationCallable<UpdateAutomationRequest, Automation, OperationMetadata>
+      updateAutomationOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateAutomationOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateAutomationRequest, Operation> updateAutomationCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateAutomationCallable()");
+  }
+
+  public OperationCallable<DeleteAutomationRequest, Empty, OperationMetadata>
+      deleteAutomationOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteAutomationOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteAutomationRequest, Operation> deleteAutomationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteAutomationCallable()");
+  }
+
+  public UnaryCallable<GetAutomationRequest, Automation> getAutomationCallable() {
+    throw new UnsupportedOperationException("Not implemented: getAutomationCallable()");
+  }
+
+  public UnaryCallable<ListAutomationsRequest, ListAutomationsPagedResponse>
+      listAutomationsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listAutomationsPagedCallable()");
+  }
+
+  public UnaryCallable<ListAutomationsRequest, ListAutomationsResponse> listAutomationsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listAutomationsCallable()");
+  }
+
+  public UnaryCallable<GetAutomationRunRequest, AutomationRun> getAutomationRunCallable() {
+    throw new UnsupportedOperationException("Not implemented: getAutomationRunCallable()");
+  }
+
+  public UnaryCallable<ListAutomationRunsRequest, ListAutomationRunsPagedResponse>
+      listAutomationRunsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listAutomationRunsPagedCallable()");
+  }
+
+  public UnaryCallable<ListAutomationRunsRequest, ListAutomationRunsResponse>
+      listAutomationRunsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listAutomationRunsCallable()");
+  }
+
+  public UnaryCallable<CancelAutomationRunRequest, CancelAutomationRunResponse>
+      cancelAutomationRunCallable() {
+    throw new UnsupportedOperationException("Not implemented: cancelAutomationRunCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

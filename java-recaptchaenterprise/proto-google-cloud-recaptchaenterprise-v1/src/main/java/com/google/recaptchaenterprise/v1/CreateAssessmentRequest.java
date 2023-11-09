@@ -71,7 +71,7 @@ public final class CreateAssessmentRequest extends com.google.protobuf.Generated
    *
    * <pre>
    * Required. The name of the project in which the assessment will be created,
-   * in the format "projects/{project}".
+   * in the format `projects/{project}`.
    * </pre>
    *
    * <code>
@@ -97,7 +97,7 @@ public final class CreateAssessmentRequest extends com.google.protobuf.Generated
    *
    * <pre>
    * Required. The name of the project in which the assessment will be created,
-   * in the format "projects/{project}".
+   * in the format `projects/{project}`.
    * </pre>
    *
    * <code>
@@ -555,7 +555,7 @@ public final class CreateAssessmentRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The name of the project in which the assessment will be created,
-     * in the format "projects/{project}".
+     * in the format `projects/{project}`.
      * </pre>
      *
      * <code>
@@ -580,7 +580,7 @@ public final class CreateAssessmentRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The name of the project in which the assessment will be created,
-     * in the format "projects/{project}".
+     * in the format `projects/{project}`.
      * </pre>
      *
      * <code>
@@ -605,7 +605,7 @@ public final class CreateAssessmentRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The name of the project in which the assessment will be created,
-     * in the format "projects/{project}".
+     * in the format `projects/{project}`.
      * </pre>
      *
      * <code>
@@ -629,7 +629,7 @@ public final class CreateAssessmentRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The name of the project in which the assessment will be created,
-     * in the format "projects/{project}".
+     * in the format `projects/{project}`.
      * </pre>
      *
      * <code>
@@ -649,7 +649,7 @@ public final class CreateAssessmentRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The name of the project in which the assessment will be created,
-     * in the format "projects/{project}".
+     * in the format `projects/{project}`.
      * </pre>
      *
      * <code>

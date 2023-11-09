@@ -978,6 +978,7 @@ public class ParticipantsClient implements BackgroundResource {
    *           .setQueryParams(QueryParameters.newBuilder().build())
    *           .setAssistQueryParams(AssistQueryParameters.newBuilder().build())
    *           .setCxParameters(Struct.newBuilder().build())
+   *           .setEnableExtendedStreaming(true)
    *           .setEnablePartialAutomatedAgentReply(true)
    *           .setEnableDebuggingInfo(true)
    *           .build();

@@ -114,9 +114,9 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Required. Range of shift in days. Actual shift will be selected at random within this
-   * range (inclusive ends). Negative means shift to earlier in time. Must not
-   * be more than 365250 days (1000 years) each direction.
+   * Required. Range of shift in days. Actual shift will be selected at random
+   * within this range (inclusive ends). Negative means shift to earlier in
+   * time. Must not be more than 365250 days (1000 years) each direction.
    *
    * For example, 3 means shift date to at most 3 days into the future.
    * </pre>
@@ -136,7 +136,8 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Required. For example, -5 means shift date to at most 5 days back in the past.
+   * Required. For example, -5 means shift date to at most 5 days back in the
+   * past.
    * </pre>
    *
    * <code>int32 lower_bound_days = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -725,9 +726,9 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. Range of shift in days. Actual shift will be selected at random within this
-     * range (inclusive ends). Negative means shift to earlier in time. Must not
-     * be more than 365250 days (1000 years) each direction.
+     * Required. Range of shift in days. Actual shift will be selected at random
+     * within this range (inclusive ends). Negative means shift to earlier in
+     * time. Must not be more than 365250 days (1000 years) each direction.
      *
      * For example, 3 means shift date to at most 3 days into the future.
      * </pre>
@@ -744,9 +745,9 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. Range of shift in days. Actual shift will be selected at random within this
-     * range (inclusive ends). Negative means shift to earlier in time. Must not
-     * be more than 365250 days (1000 years) each direction.
+     * Required. Range of shift in days. Actual shift will be selected at random
+     * within this range (inclusive ends). Negative means shift to earlier in
+     * time. Must not be more than 365250 days (1000 years) each direction.
      *
      * For example, 3 means shift date to at most 3 days into the future.
      * </pre>
@@ -767,9 +768,9 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. Range of shift in days. Actual shift will be selected at random within this
-     * range (inclusive ends). Negative means shift to earlier in time. Must not
-     * be more than 365250 days (1000 years) each direction.
+     * Required. Range of shift in days. Actual shift will be selected at random
+     * within this range (inclusive ends). Negative means shift to earlier in
+     * time. Must not be more than 365250 days (1000 years) each direction.
      *
      * For example, 3 means shift date to at most 3 days into the future.
      * </pre>
@@ -790,7 +791,8 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. For example, -5 means shift date to at most 5 days back in the past.
+     * Required. For example, -5 means shift date to at most 5 days back in the
+     * past.
      * </pre>
      *
      * <code>int32 lower_bound_days = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -805,7 +807,8 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. For example, -5 means shift date to at most 5 days back in the past.
+     * Required. For example, -5 means shift date to at most 5 days back in the
+     * past.
      * </pre>
      *
      * <code>int32 lower_bound_days = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -824,7 +827,8 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. For example, -5 means shift date to at most 5 days back in the past.
+     * Required. For example, -5 means shift date to at most 5 days back in the
+     * past.
      * </pre>
      *
      * <code>int32 lower_bound_days = 2 [(.google.api.field_behavior) = REQUIRED];</code>

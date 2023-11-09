@@ -122,8 +122,8 @@ public interface CommitWorkspaceChangesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Full file paths to commit including filename, rooted at workspace root. If
-   * left empty, all files will be committed.
+   * Optional. Full file paths to commit including filename, rooted at workspace
+   * root. If left empty, all files will be committed.
    * </pre>
    *
    * <code>repeated string paths = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -135,8 +135,8 @@ public interface CommitWorkspaceChangesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Full file paths to commit including filename, rooted at workspace root. If
-   * left empty, all files will be committed.
+   * Optional. Full file paths to commit including filename, rooted at workspace
+   * root. If left empty, all files will be committed.
    * </pre>
    *
    * <code>repeated string paths = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -148,8 +148,8 @@ public interface CommitWorkspaceChangesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Full file paths to commit including filename, rooted at workspace root. If
-   * left empty, all files will be committed.
+   * Optional. Full file paths to commit including filename, rooted at workspace
+   * root. If left empty, all files will be committed.
    * </pre>
    *
    * <code>repeated string paths = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -162,8 +162,8 @@ public interface CommitWorkspaceChangesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Full file paths to commit including filename, rooted at workspace root. If
-   * left empty, all files will be committed.
+   * Optional. Full file paths to commit including filename, rooted at workspace
+   * root. If left empty, all files will be committed.
    * </pre>
    *
    * <code>repeated string paths = 3 [(.google.api.field_behavior) = OPTIONAL];</code>

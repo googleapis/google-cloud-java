@@ -113,11 +113,11 @@ public final class LocalInventoryProto {
           + "/{name=accounts/*/products/*/localInvent"
           + "ories/*}\032G\312A\032merchantapi.googleapis.com\322"
           + "A\'https://www.googleapis.com/auth/conten"
-          + "tB\240\001\n/com.google.shopping.merchant.inven"
-          + "tories.v1betaB\023LocalInventoryProtoP\001ZVgo"
-          + "ogle.golang.org/genproto/googleapis/shop"
-          + "ping/merchant/inventories/v1beta;invento"
-          + "riesb\006proto3"
+          + "tB\241\001\n/com.google.shopping.merchant.inven"
+          + "tories.v1betaB\023LocalInventoryProtoP\001ZWcl"
+          + "oud.google.com/go/shopping/merchant/inve"
+          + "ntories/apiv1beta/inventoriespb;inventor"
+          + "iespbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

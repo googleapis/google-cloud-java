@@ -23,7 +23,7 @@ google_api_core==2.8.2
 google-cloud-storage==2.0.0
 google-cloud-core==2.3.1
 typing-extensions==4.1.1
-urllib3==1.26.12
+urllib3==1.26.18
 zipp==3.6.0
 rsa==4.9
 six==1.16.0

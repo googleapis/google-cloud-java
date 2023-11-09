@@ -32,6 +32,7 @@ import com.google.container.v1.NodePoolLoggingConfig;
 import com.google.container.v1.NodeTaints;
 import com.google.container.v1.Operation;
 import com.google.container.v1.ResourceLabels;
+import com.google.container.v1.ResourceManagerTags;
 import com.google.container.v1.UpdateNodePoolRequest;
 import com.google.container.v1.VirtualNIC;
 import com.google.container.v1.WindowsNodeConfig;
@@ -80,6 +81,7 @@ public class AsyncUpdateNodePool {
               .setMachineType("machineType-218117087")
               .setDiskType("diskType279771767")
               .setDiskSizeGb(-757478089)
+              .setResourceManagerTags(ResourceManagerTags.newBuilder().build())
               .build();
       ApiFuture<Operation> future =
           clusterManagerClient.updateNodePoolCallable().futureCall(request);

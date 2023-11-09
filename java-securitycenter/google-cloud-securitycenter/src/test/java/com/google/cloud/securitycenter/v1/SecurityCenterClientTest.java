@@ -4032,6 +4032,56 @@ public class SecurityCenterClientTest {
   }
 
   @Test
+  public void simulateSecurityHealthAnalyticsCustomModuleTest() throws Exception {
+    SimulateSecurityHealthAnalyticsCustomModuleResponse expectedResponse =
+        SimulateSecurityHealthAnalyticsCustomModuleResponse.newBuilder()
+            .setResult(
+                SimulateSecurityHealthAnalyticsCustomModuleResponse.SimulatedResult.newBuilder()
+                    .build())
+            .build();
+    mockSecurityCenter.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    CustomConfig customConfig = CustomConfig.newBuilder().build();
+    SimulateSecurityHealthAnalyticsCustomModuleRequest.SimulatedResource resource =
+        SimulateSecurityHealthAnalyticsCustomModuleRequest.SimulatedResource.newBuilder().build();
+
+    SimulateSecurityHealthAnalyticsCustomModuleResponse actualResponse =
+        client.simulateSecurityHealthAnalyticsCustomModule(parent, customConfig, resource);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSecurityCenter.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    SimulateSecurityHealthAnalyticsCustomModuleRequest actualRequest =
+        ((SimulateSecurityHealthAnalyticsCustomModuleRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(customConfig, actualRequest.getCustomConfig());
+    Assert.assertEquals(resource, actualRequest.getResource());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void simulateSecurityHealthAnalyticsCustomModuleExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecurityCenter.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      CustomConfig customConfig = CustomConfig.newBuilder().build();
+      SimulateSecurityHealthAnalyticsCustomModuleRequest.SimulatedResource resource =
+          SimulateSecurityHealthAnalyticsCustomModuleRequest.SimulatedResource.newBuilder().build();
+      client.simulateSecurityHealthAnalyticsCustomModule(parent, customConfig, resource);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void updateExternalSystemTest() throws Exception {
     ExternalSystem expectedResponse =
         ExternalSystem.newBuilder()

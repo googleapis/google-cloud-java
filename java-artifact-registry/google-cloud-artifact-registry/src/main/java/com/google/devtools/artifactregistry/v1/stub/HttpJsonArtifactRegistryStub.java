@@ -49,6 +49,8 @@ import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
 import com.google.common.collect.ImmutableMap;
+import com.google.devtools.artifactregistry.v1.BatchDeleteVersionsMetadata;
+import com.google.devtools.artifactregistry.v1.BatchDeleteVersionsRequest;
 import com.google.devtools.artifactregistry.v1.CreateRepositoryRequest;
 import com.google.devtools.artifactregistry.v1.CreateTagRequest;
 import com.google.devtools.artifactregistry.v1.DeletePackageRequest;
@@ -133,6 +135,7 @@ import javax.annotation.Generated;
 public class HttpJsonArtifactRegistryStub extends ArtifactRegistryStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder()
+          .add(BatchDeleteVersionsMetadata.getDescriptor())
           .add(Empty.getDescriptor())
           .add(ImportYumArtifactsResponse.getDescriptor())
           .add(ImportAptArtifactsResponse.getDescriptor())
@@ -926,6 +929,47 @@ public class HttpJsonArtifactRegistryStub extends ArtifactRegistryStub {
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
+  private static final ApiMethodDescriptor<BatchDeleteVersionsRequest, Operation>
+      batchDeleteVersionsMethodDescriptor =
+          ApiMethodDescriptor.<BatchDeleteVersionsRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.devtools.artifactregistry.v1.ArtifactRegistry/BatchDeleteVersions")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<BatchDeleteVersionsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/repositories/*/packages/*}/versions:batchDelete",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchDeleteVersionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchDeleteVersionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (BatchDeleteVersionsRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
   private static final ApiMethodDescriptor<ListFilesRequest, ListFilesResponse>
       listFilesMethodDescriptor =
           ApiMethodDescriptor.<ListFilesRequest, ListFilesResponse>newBuilder()
@@ -1556,6 +1600,9 @@ public class HttpJsonArtifactRegistryStub extends ArtifactRegistryStub {
   private final UnaryCallable<DeleteVersionRequest, Operation> deleteVersionCallable;
   private final OperationCallable<DeleteVersionRequest, Empty, OperationMetadata>
       deleteVersionOperationCallable;
+  private final UnaryCallable<BatchDeleteVersionsRequest, Operation> batchDeleteVersionsCallable;
+  private final OperationCallable<BatchDeleteVersionsRequest, Empty, BatchDeleteVersionsMetadata>
+      batchDeleteVersionsOperationCallable;
   private final UnaryCallable<ListFilesRequest, ListFilesResponse> listFilesCallable;
   private final UnaryCallable<ListFilesRequest, ListFilesPagedResponse> listFilesPagedCallable;
   private final UnaryCallable<GetFileRequest, File> getFileCallable;
@@ -1871,6 +1918,18 @@ public class HttpJsonArtifactRegistryStub extends ArtifactRegistryStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<BatchDeleteVersionsRequest, Operation>
+        batchDeleteVersionsTransportSettings =
+            HttpJsonCallSettings.<BatchDeleteVersionsRequest, Operation>newBuilder()
+                .setMethodDescriptor(batchDeleteVersionsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<ListFilesRequest, ListFilesResponse> listFilesTransportSettings =
         HttpJsonCallSettings.<ListFilesRequest, ListFilesResponse>newBuilder()
             .setMethodDescriptor(listFilesMethodDescriptor)
@@ -2187,6 +2246,17 @@ public class HttpJsonArtifactRegistryStub extends ArtifactRegistryStub {
             settings.deleteVersionOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.batchDeleteVersionsCallable =
+        callableFactory.createUnaryCallable(
+            batchDeleteVersionsTransportSettings,
+            settings.batchDeleteVersionsSettings(),
+            clientContext);
+    this.batchDeleteVersionsOperationCallable =
+        callableFactory.createOperationCallable(
+            batchDeleteVersionsTransportSettings,
+            settings.batchDeleteVersionsOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listFilesCallable =
         callableFactory.createUnaryCallable(
             listFilesTransportSettings, settings.listFilesSettings(), clientContext);
@@ -2281,6 +2351,7 @@ public class HttpJsonArtifactRegistryStub extends ArtifactRegistryStub {
     methodDescriptors.add(listVersionsMethodDescriptor);
     methodDescriptors.add(getVersionMethodDescriptor);
     methodDescriptors.add(deleteVersionMethodDescriptor);
+    methodDescriptors.add(batchDeleteVersionsMethodDescriptor);
     methodDescriptors.add(listFilesMethodDescriptor);
     methodDescriptors.add(getFileMethodDescriptor);
     methodDescriptors.add(listTagsMethodDescriptor);
@@ -2489,6 +2560,17 @@ public class HttpJsonArtifactRegistryStub extends ArtifactRegistryStub {
   public OperationCallable<DeleteVersionRequest, Empty, OperationMetadata>
       deleteVersionOperationCallable() {
     return deleteVersionOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<BatchDeleteVersionsRequest, Operation> batchDeleteVersionsCallable() {
+    return batchDeleteVersionsCallable;
+  }
+
+  @Override
+  public OperationCallable<BatchDeleteVersionsRequest, Empty, BatchDeleteVersionsMetadata>
+      batchDeleteVersionsOperationCallable() {
+    return batchDeleteVersionsOperationCallable;
   }
 
   @Override

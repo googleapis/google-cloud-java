@@ -105,7 +105,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * BatchUpdate: user can call UpdateIndex with files on Cloud Storage of
-     * datapoints to update.
+     * Datapoints to update.
      * </pre>
      *
      * <code>BATCH_UPDATE = 1;</code>
@@ -141,7 +141,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * BatchUpdate: user can call UpdateIndex with files on Cloud Storage of
-     * datapoints to update.
+     * Datapoints to update.
      * </pre>
      *
      * <code>BATCH_UPDATE = 1;</code>

@@ -27,16 +27,9 @@ public interface EntityReferenceOrBuilder
    *
    *
    * <pre>
-   * Required. Fully Qualified Name of the entity. Useful for referencing
-   * entities that aren't represented as GCP resources, for example, tables in
-   * Dataproc Metastore API.
-   *
-   * Examples:
-   *
-   *   * `bigquery:dataset.project_id.dataset_id`
-   *   * `bigquery:table.project_id.dataset_id.table_id`
-   *   * `pubsub:project_id.topic_id`
-   *   * `dataproc_metastore:projectId.locationId.instanceId.databaseId.tableId`
+   * Required. [Fully Qualified Name
+   * (FQN)](https://cloud.google.com/data-catalog/docs/fully-qualified-names)
+   * of the entity.
    * </pre>
    *
    * <code>string fully_qualified_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -48,16 +41,9 @@ public interface EntityReferenceOrBuilder
    *
    *
    * <pre>
-   * Required. Fully Qualified Name of the entity. Useful for referencing
-   * entities that aren't represented as GCP resources, for example, tables in
-   * Dataproc Metastore API.
-   *
-   * Examples:
-   *
-   *   * `bigquery:dataset.project_id.dataset_id`
-   *   * `bigquery:table.project_id.dataset_id.table_id`
-   *   * `pubsub:project_id.topic_id`
-   *   * `dataproc_metastore:projectId.locationId.instanceId.databaseId.tableId`
+   * Required. [Fully Qualified Name
+   * (FQN)](https://cloud.google.com/data-catalog/docs/fully-qualified-names)
+   * of the entity.
    * </pre>
    *
    * <code>string fully_qualified_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>

@@ -232,7 +232,8 @@ public interface CompetitiveVisibilityTopMerchantViewOrBuilder
    * Required in the `SELECT` clause.
    * </pre>
    *
-   * <code>optional .google.shopping.merchant.reports.v1beta.TrafficSource traffic_source = 6;
+   * <code>
+   * optional .google.shopping.merchant.reports.v1beta.TrafficSource.TrafficSourceEnum traffic_source = 6;
    * </code>
    *
    * @return Whether the trafficSource field is set.
@@ -247,7 +248,8 @@ public interface CompetitiveVisibilityTopMerchantViewOrBuilder
    * Required in the `SELECT` clause.
    * </pre>
    *
-   * <code>optional .google.shopping.merchant.reports.v1beta.TrafficSource traffic_source = 6;
+   * <code>
+   * optional .google.shopping.merchant.reports.v1beta.TrafficSource.TrafficSourceEnum traffic_source = 6;
    * </code>
    *
    * @return The enum numeric value on the wire for trafficSource.
@@ -262,12 +264,13 @@ public interface CompetitiveVisibilityTopMerchantViewOrBuilder
    * Required in the `SELECT` clause.
    * </pre>
    *
-   * <code>optional .google.shopping.merchant.reports.v1beta.TrafficSource traffic_source = 6;
+   * <code>
+   * optional .google.shopping.merchant.reports.v1beta.TrafficSource.TrafficSourceEnum traffic_source = 6;
    * </code>
    *
    * @return The trafficSource.
    */
-  com.google.shopping.merchant.reports.v1beta.TrafficSource getTrafficSource();
+  com.google.shopping.merchant.reports.v1beta.TrafficSource.TrafficSourceEnum getTrafficSource();
 
   /**
    *

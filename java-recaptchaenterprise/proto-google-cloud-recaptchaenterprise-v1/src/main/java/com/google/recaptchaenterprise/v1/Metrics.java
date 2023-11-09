@@ -73,7 +73,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The name of the metrics, in the format
-   * "projects/{project}/keys/{key}/metrics".
+   * `projects/{project}/keys/{key}/metrics`.
    * </pre>
    *
    * <code>string name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -97,7 +97,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The name of the metrics, in the format
-   * "projects/{project}/keys/{key}/metrics".
+   * `projects/{project}/keys/{key}/metrics`.
    * </pre>
    *
    * <code>string name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -845,7 +845,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The name of the metrics, in the format
-     * "projects/{project}/keys/{key}/metrics".
+     * `projects/{project}/keys/{key}/metrics`.
      * </pre>
      *
      * <code>string name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -868,7 +868,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The name of the metrics, in the format
-     * "projects/{project}/keys/{key}/metrics".
+     * `projects/{project}/keys/{key}/metrics`.
      * </pre>
      *
      * <code>string name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -891,7 +891,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The name of the metrics, in the format
-     * "projects/{project}/keys/{key}/metrics".
+     * `projects/{project}/keys/{key}/metrics`.
      * </pre>
      *
      * <code>string name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -913,7 +913,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The name of the metrics, in the format
-     * "projects/{project}/keys/{key}/metrics".
+     * `projects/{project}/keys/{key}/metrics`.
      * </pre>
      *
      * <code>string name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -931,7 +931,7 @@ public final class Metrics extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The name of the metrics, in the format
-     * "projects/{project}/keys/{key}/metrics".
+     * `projects/{project}/keys/{key}/metrics`.
      * </pre>
      *
      * <code>string name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

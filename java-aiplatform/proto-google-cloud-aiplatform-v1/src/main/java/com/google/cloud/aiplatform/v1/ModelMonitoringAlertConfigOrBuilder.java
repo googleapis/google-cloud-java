@@ -82,5 +82,68 @@ public interface ModelMonitoringAlertConfigOrBuilder
    */
   boolean getEnableLogging();
 
+  /**
+   *
+   *
+   * <pre>
+   * Resource names of the NotificationChannels to send alert.
+   * Must be of the format
+   * `projects/&lt;project_id_or_number&gt;/notificationChannels/&lt;channel_id&gt;`
+   * </pre>
+   *
+   * <code>repeated string notification_channels = 3 [(.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return A list containing the notificationChannels.
+   */
+  java.util.List<java.lang.String> getNotificationChannelsList();
+  /**
+   *
+   *
+   * <pre>
+   * Resource names of the NotificationChannels to send alert.
+   * Must be of the format
+   * `projects/&lt;project_id_or_number&gt;/notificationChannels/&lt;channel_id&gt;`
+   * </pre>
+   *
+   * <code>repeated string notification_channels = 3 [(.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The count of notificationChannels.
+   */
+  int getNotificationChannelsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Resource names of the NotificationChannels to send alert.
+   * Must be of the format
+   * `projects/&lt;project_id_or_number&gt;/notificationChannels/&lt;channel_id&gt;`
+   * </pre>
+   *
+   * <code>repeated string notification_channels = 3 [(.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The notificationChannels at the given index.
+   */
+  java.lang.String getNotificationChannels(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Resource names of the NotificationChannels to send alert.
+   * Must be of the format
+   * `projects/&lt;project_id_or_number&gt;/notificationChannels/&lt;channel_id&gt;`
+   * </pre>
+   *
+   * <code>repeated string notification_channels = 3 [(.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the notificationChannels at the given index.
+   */
+  com.google.protobuf.ByteString getNotificationChannelsBytes(int index);
+
   com.google.cloud.aiplatform.v1.ModelMonitoringAlertConfig.AlertCase getAlertCase();
 }

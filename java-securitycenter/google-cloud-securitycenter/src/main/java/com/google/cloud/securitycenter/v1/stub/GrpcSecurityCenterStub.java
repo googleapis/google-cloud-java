@@ -90,6 +90,8 @@ import com.google.cloud.securitycenter.v1.SecurityHealthAnalyticsCustomModule;
 import com.google.cloud.securitycenter.v1.SecurityMarks;
 import com.google.cloud.securitycenter.v1.SetFindingStateRequest;
 import com.google.cloud.securitycenter.v1.SetMuteRequest;
+import com.google.cloud.securitycenter.v1.SimulateSecurityHealthAnalyticsCustomModuleRequest;
+import com.google.cloud.securitycenter.v1.SimulateSecurityHealthAnalyticsCustomModuleResponse;
 import com.google.cloud.securitycenter.v1.Source;
 import com.google.cloud.securitycenter.v1.UpdateBigQueryExportRequest;
 import com.google.cloud.securitycenter.v1.UpdateExternalSystemRequest;
@@ -498,6 +500,25 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<
+          SimulateSecurityHealthAnalyticsCustomModuleRequest,
+          SimulateSecurityHealthAnalyticsCustomModuleResponse>
+      simulateSecurityHealthAnalyticsCustomModuleMethodDescriptor =
+          MethodDescriptor
+              .<SimulateSecurityHealthAnalyticsCustomModuleRequest,
+                  SimulateSecurityHealthAnalyticsCustomModuleResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.securitycenter.v1.SecurityCenter/SimulateSecurityHealthAnalyticsCustomModule")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      SimulateSecurityHealthAnalyticsCustomModuleRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(
+                      SimulateSecurityHealthAnalyticsCustomModuleResponse.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<UpdateExternalSystemRequest, ExternalSystem>
       updateExternalSystemMethodDescriptor =
           MethodDescriptor.<UpdateExternalSystemRequest, ExternalSystem>newBuilder()
@@ -718,6 +739,10 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
   private final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable;
   private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable;
+  private final UnaryCallable<
+          SimulateSecurityHealthAnalyticsCustomModuleRequest,
+          SimulateSecurityHealthAnalyticsCustomModuleResponse>
+      simulateSecurityHealthAnalyticsCustomModuleCallable;
   private final UnaryCallable<UpdateExternalSystemRequest, ExternalSystem>
       updateExternalSystemCallable;
   private final UnaryCallable<UpdateFindingRequest, Finding> updateFindingCallable;
@@ -1152,6 +1177,22 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                       return builder.build();
                     })
                 .build();
+    GrpcCallSettings<
+            SimulateSecurityHealthAnalyticsCustomModuleRequest,
+            SimulateSecurityHealthAnalyticsCustomModuleResponse>
+        simulateSecurityHealthAnalyticsCustomModuleTransportSettings =
+            GrpcCallSettings
+                .<SimulateSecurityHealthAnalyticsCustomModuleRequest,
+                    SimulateSecurityHealthAnalyticsCustomModuleResponse>
+                    newBuilder()
+                .setMethodDescriptor(simulateSecurityHealthAnalyticsCustomModuleMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<UpdateExternalSystemRequest, ExternalSystem>
         updateExternalSystemTransportSettings =
             GrpcCallSettings.<UpdateExternalSystemRequest, ExternalSystem>newBuilder()
@@ -1475,6 +1516,11 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
             testIamPermissionsTransportSettings,
             settings.testIamPermissionsSettings(),
             clientContext);
+    this.simulateSecurityHealthAnalyticsCustomModuleCallable =
+        callableFactory.createUnaryCallable(
+            simulateSecurityHealthAnalyticsCustomModuleTransportSettings,
+            settings.simulateSecurityHealthAnalyticsCustomModuleSettings(),
+            clientContext);
     this.updateExternalSystemCallable =
         callableFactory.createUnaryCallable(
             updateExternalSystemTransportSettings,
@@ -1797,6 +1843,14 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
   public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable() {
     return testIamPermissionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          SimulateSecurityHealthAnalyticsCustomModuleRequest,
+          SimulateSecurityHealthAnalyticsCustomModuleResponse>
+      simulateSecurityHealthAnalyticsCustomModuleCallable() {
+    return simulateSecurityHealthAnalyticsCustomModuleCallable;
   }
 
   @Override

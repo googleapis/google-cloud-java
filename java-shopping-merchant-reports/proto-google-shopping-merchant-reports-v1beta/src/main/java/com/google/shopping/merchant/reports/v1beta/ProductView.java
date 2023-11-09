@@ -49,6 +49,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
 
   private ProductView() {
     id_ = "";
+    channel_ = 0;
     languageCode_ = "";
     feedLabel_ = "";
     offerId_ = "";
@@ -70,7 +71,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
     gtin_ = com.google.protobuf.LazyStringArrayList.emptyList();
     itemGroupId_ = "";
     thumbnailLink_ = "";
-    aggregatedDestinationStatus_ = 0;
+    aggregatedReportingContextStatus_ = 0;
     itemIssues_ = java.util.Collections.emptyList();
   }
 
@@ -99,9 +100,9 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Status of the product aggregated for all destinations.
+   * Status of the product aggregated for all reporting contexts.
    *
-   * Here's an example of how the aggregated destination status is computed:
+   * Here's an example of how the aggregated status is computed:
    *
    * Free listings | Shopping Ads | Status
    * --------------|--------------|------------------------------
@@ -113,9 +114,9 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * Protobuf enum {@code
-   * google.shopping.merchant.reports.v1beta.ProductView.AggregatedDestinationStatus}
+   * google.shopping.merchant.reports.v1beta.ProductView.AggregatedReportingContextStatus}
    */
-  public enum AggregatedDestinationStatus implements com.google.protobuf.ProtocolMessageEnum {
+  public enum AggregatedReportingContextStatus implements com.google.protobuf.ProtocolMessageEnum {
     /**
      *
      *
@@ -123,14 +124,14 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
      * Not specified.
      * </pre>
      *
-     * <code>AGGREGATED_DESTINATION_STATUS_UNSPECIFIED = 0;</code>
+     * <code>AGGREGATED_REPORTING_CONTEXT_STATUS_UNSPECIFIED = 0;</code>
      */
-    AGGREGATED_DESTINATION_STATUS_UNSPECIFIED(0),
+    AGGREGATED_REPORTING_CONTEXT_STATUS_UNSPECIFIED(0),
     /**
      *
      *
      * <pre>
-     * Product is not eligible or is disapproved for all destinations.
+     * Product is not eligible or is disapproved for all reporting contexts.
      * </pre>
      *
      * <code>NOT_ELIGIBLE_OR_DISAPPROVED = 1;</code>
@@ -140,7 +141,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Product's status is pending in all destinations.
+     * Product's status is pending in all reporting contexts.
      * </pre>
      *
      * <code>PENDING = 2;</code>
@@ -150,7 +151,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Product is eligible for some (but not all) destinations.
+     * Product is eligible for some (but not all) reporting contexts.
      * </pre>
      *
      * <code>ELIGIBLE_LIMITED = 3;</code>
@@ -160,7 +161,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Product is eligible for all destinations.
+     * Product is eligible for all reporting contexts.
      * </pre>
      *
      * <code>ELIGIBLE = 4;</code>
@@ -176,14 +177,14 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
      * Not specified.
      * </pre>
      *
-     * <code>AGGREGATED_DESTINATION_STATUS_UNSPECIFIED = 0;</code>
+     * <code>AGGREGATED_REPORTING_CONTEXT_STATUS_UNSPECIFIED = 0;</code>
      */
-    public static final int AGGREGATED_DESTINATION_STATUS_UNSPECIFIED_VALUE = 0;
+    public static final int AGGREGATED_REPORTING_CONTEXT_STATUS_UNSPECIFIED_VALUE = 0;
     /**
      *
      *
      * <pre>
-     * Product is not eligible or is disapproved for all destinations.
+     * Product is not eligible or is disapproved for all reporting contexts.
      * </pre>
      *
      * <code>NOT_ELIGIBLE_OR_DISAPPROVED = 1;</code>
@@ -193,7 +194,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Product's status is pending in all destinations.
+     * Product's status is pending in all reporting contexts.
      * </pre>
      *
      * <code>PENDING = 2;</code>
@@ -203,7 +204,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Product is eligible for some (but not all) destinations.
+     * Product is eligible for some (but not all) reporting contexts.
      * </pre>
      *
      * <code>ELIGIBLE_LIMITED = 3;</code>
@@ -213,7 +214,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Product is eligible for all destinations.
+     * Product is eligible for all reporting contexts.
      * </pre>
      *
      * <code>ELIGIBLE = 4;</code>
@@ -234,7 +235,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
-    public static AggregatedDestinationStatus valueOf(int value) {
+    public static AggregatedReportingContextStatus valueOf(int value) {
       return forNumber(value);
     }
 
@@ -242,10 +243,10 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
      * @param value The numeric wire value of the corresponding enum entry.
      * @return The enum associated with the given numeric wire value.
      */
-    public static AggregatedDestinationStatus forNumber(int value) {
+    public static AggregatedReportingContextStatus forNumber(int value) {
       switch (value) {
         case 0:
-          return AGGREGATED_DESTINATION_STATUS_UNSPECIFIED;
+          return AGGREGATED_REPORTING_CONTEXT_STATUS_UNSPECIFIED;
         case 1:
           return NOT_ELIGIBLE_OR_DISAPPROVED;
         case 2:
@@ -259,16 +260,16 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<AggregatedDestinationStatus>
+    public static com.google.protobuf.Internal.EnumLiteMap<AggregatedReportingContextStatus>
         internalGetValueMap() {
       return internalValueMap;
     }
 
-    private static final com.google.protobuf.Internal.EnumLiteMap<AggregatedDestinationStatus>
+    private static final com.google.protobuf.Internal.EnumLiteMap<AggregatedReportingContextStatus>
         internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<AggregatedDestinationStatus>() {
-              public AggregatedDestinationStatus findValueByNumber(int number) {
-                return AggregatedDestinationStatus.forNumber(number);
+            new com.google.protobuf.Internal.EnumLiteMap<AggregatedReportingContextStatus>() {
+              public AggregatedReportingContextStatus findValueByNumber(int number) {
+                return AggregatedReportingContextStatus.forNumber(number);
               }
             };
 
@@ -290,9 +291,9 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
           .get(0);
     }
 
-    private static final AggregatedDestinationStatus[] VALUES = values();
+    private static final AggregatedReportingContextStatus[] VALUES = values();
 
-    public static AggregatedDestinationStatus valueOf(
+    public static AggregatedReportingContextStatus valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
         throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
@@ -305,11 +306,11 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
 
     private final int value;
 
-    private AggregatedDestinationStatus(int value) {
+    private AggregatedReportingContextStatus(int value) {
       this.value = value;
     }
 
-    // @@protoc_insertion_point(enum_scope:google.shopping.merchant.reports.v1beta.ProductView.AggregatedDestinationStatus)
+    // @@protoc_insertion_point(enum_scope:google.shopping.merchant.reports.v1beta.ProductView.AggregatedReportingContextStatus)
   }
 
   public interface ItemIssueOrBuilder
@@ -1658,79 +1659,79 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Issue severity per destination.
+       * Issue severity per reporting context.
        * </pre>
        *
        * <code>
-       * repeated .google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity.IssueSeverityPerDestination severity_per_destination = 1;
+       * repeated .google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity.IssueSeverityPerReportingContext severity_per_reporting_context = 1;
        * </code>
        */
       java.util.List<
               com.google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity
-                  .IssueSeverityPerDestination>
-          getSeverityPerDestinationList();
+                  .IssueSeverityPerReportingContext>
+          getSeverityPerReportingContextList();
       /**
        *
        *
        * <pre>
-       * Issue severity per destination.
+       * Issue severity per reporting context.
        * </pre>
        *
        * <code>
-       * repeated .google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity.IssueSeverityPerDestination severity_per_destination = 1;
+       * repeated .google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity.IssueSeverityPerReportingContext severity_per_reporting_context = 1;
        * </code>
        */
       com.google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity
-              .IssueSeverityPerDestination
-          getSeverityPerDestination(int index);
+              .IssueSeverityPerReportingContext
+          getSeverityPerReportingContext(int index);
       /**
        *
        *
        * <pre>
-       * Issue severity per destination.
+       * Issue severity per reporting context.
        * </pre>
        *
        * <code>
-       * repeated .google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity.IssueSeverityPerDestination severity_per_destination = 1;
+       * repeated .google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity.IssueSeverityPerReportingContext severity_per_reporting_context = 1;
        * </code>
        */
-      int getSeverityPerDestinationCount();
+      int getSeverityPerReportingContextCount();
       /**
        *
        *
        * <pre>
-       * Issue severity per destination.
+       * Issue severity per reporting context.
        * </pre>
        *
        * <code>
-       * repeated .google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity.IssueSeverityPerDestination severity_per_destination = 1;
+       * repeated .google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity.IssueSeverityPerReportingContext severity_per_reporting_context = 1;
        * </code>
        */
       java.util.List<
               ? extends
                   com.google.shopping.merchant.reports.v1beta.ProductView.ItemIssue
-                      .ItemIssueSeverity.IssueSeverityPerDestinationOrBuilder>
-          getSeverityPerDestinationOrBuilderList();
+                      .ItemIssueSeverity.IssueSeverityPerReportingContextOrBuilder>
+          getSeverityPerReportingContextOrBuilderList();
       /**
        *
        *
        * <pre>
-       * Issue severity per destination.
+       * Issue severity per reporting context.
        * </pre>
        *
        * <code>
-       * repeated .google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity.IssueSeverityPerDestination severity_per_destination = 1;
+       * repeated .google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity.IssueSeverityPerReportingContext severity_per_reporting_context = 1;
        * </code>
        */
       com.google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity
-              .IssueSeverityPerDestinationOrBuilder
-          getSeverityPerDestinationOrBuilder(int index);
+              .IssueSeverityPerReportingContextOrBuilder
+          getSeverityPerReportingContextOrBuilder(int index);
 
       /**
        *
        *
        * <pre>
-       * Aggregated severity of the issue for all destinations it affects.
+       * Aggregated severity of the issue for all reporting contexts it affects.
        *
        * **This field can be used for filtering the results.**
        * </pre>
@@ -1746,7 +1747,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Aggregated severity of the issue for all destinations it affects.
+       * Aggregated severity of the issue for all reporting contexts it affects.
        *
        * **This field can be used for filtering the results.**
        * </pre>
@@ -1762,7 +1763,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Aggregated severity of the issue for all destinations it affects.
+       * Aggregated severity of the issue for all reporting contexts it affects.
        *
        * **This field can be used for filtering the results.**
        * </pre>
@@ -1798,7 +1799,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
       }
 
       private ItemIssueSeverity() {
-        severityPerDestination_ = java.util.Collections.emptyList();
+        severityPerReportingContext_ = java.util.Collections.emptyList();
         aggregatedSeverity_ = 0;
       }
 
@@ -1829,7 +1830,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Issue severity aggregated for all destinations.
+       * Issue severity aggregated for all reporting contexts.
        * </pre>
        *
        * Protobuf enum {@code
@@ -1850,7 +1851,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Issue disapproves the product in at least one destination.
+         * Issue disapproves the product in at least one reporting context.
          * </pre>
          *
          * <code>DISAPPROVED = 1;</code>
@@ -1860,7 +1861,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Issue demotes the product in all destinations it affects.
+         * Issue demotes the product in all reporting contexts it affects.
          * </pre>
          *
          * <code>DEMOTED = 2;</code>
@@ -1893,7 +1894,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Issue disapproves the product in at least one destination.
+         * Issue disapproves the product in at least one reporting context.
          * </pre>
          *
          * <code>DISAPPROVED = 1;</code>
@@ -1903,7 +1904,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Issue demotes the product in all destinations it affects.
+         * Issue demotes the product in all reporting contexts it affects.
          * </pre>
          *
          * <code>DEMOTED = 2;</code>
@@ -2012,54 +2013,60 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(enum_scope:google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity.AggregatedIssueSeverity)
       }
 
-      public interface IssueSeverityPerDestinationOrBuilder
+      public interface IssueSeverityPerReportingContextOrBuilder
           extends
-          // @@protoc_insertion_point(interface_extends:google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity.IssueSeverityPerDestination)
+          // @@protoc_insertion_point(interface_extends:google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity.IssueSeverityPerReportingContext)
           com.google.protobuf.MessageOrBuilder {
 
         /**
          *
          *
          * <pre>
-         * Destination the issue applies to.
+         * Reporting context the issue applies to.
          * </pre>
          *
-         * <code>optional .google.shopping.type.Destination destination = 1;</code>
+         * <code>
+         * optional .google.shopping.type.ReportingContext.ReportingContextEnum reporting_context = 1;
+         * </code>
          *
-         * @return Whether the destination field is set.
+         * @return Whether the reportingContext field is set.
          */
-        boolean hasDestination();
+        boolean hasReportingContext();
         /**
          *
          *
          * <pre>
-         * Destination the issue applies to.
+         * Reporting context the issue applies to.
          * </pre>
          *
-         * <code>optional .google.shopping.type.Destination destination = 1;</code>
+         * <code>
+         * optional .google.shopping.type.ReportingContext.ReportingContextEnum reporting_context = 1;
+         * </code>
          *
-         * @return The enum numeric value on the wire for destination.
+         * @return The enum numeric value on the wire for reportingContext.
          */
-        int getDestinationValue();
+        int getReportingContextValue();
         /**
          *
          *
          * <pre>
-         * Destination the issue applies to.
+         * Reporting context the issue applies to.
          * </pre>
          *
-         * <code>optional .google.shopping.type.Destination destination = 1;</code>
+         * <code>
+         * optional .google.shopping.type.ReportingContext.ReportingContextEnum reporting_context = 1;
+         * </code>
          *
-         * @return The destination.
+         * @return The reportingContext.
          */
-        com.google.shopping.type.Destination getDestination();
+        com.google.shopping.type.ReportingContext.ReportingContextEnum getReportingContext();
 
         /**
          *
          *
          * <pre>
-         * List of disapproved countries in the destination, represented in ISO
-         * 3166 format.
+         * List of disapproved countries in the reporting context, represented
+         * in ISO 3166 format.
          * </pre>
          *
          * <code>repeated string disapproved_countries = 2;</code>
@@ -2071,8 +2078,8 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * List of disapproved countries in the destination, represented in ISO
-         * 3166 format.
+         * List of disapproved countries in the reporting context, represented
+         * in ISO 3166 format.
          * </pre>
          *
          * <code>repeated string disapproved_countries = 2;</code>
@@ -2084,8 +2091,8 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * List of disapproved countries in the destination, represented in ISO
-         * 3166 format.
+         * List of disapproved countries in the reporting context, represented
+         * in ISO 3166 format.
          * </pre>
          *
          * <code>repeated string disapproved_countries = 2;</code>
@@ -2098,8 +2105,8 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * List of disapproved countries in the destination, represented in ISO
-         * 3166 format.
+         * List of disapproved countries in the reporting context, represented
+         * in ISO 3166 format.
          * </pre>
          *
          * <code>repeated string disapproved_countries = 2;</code>
@@ -2113,8 +2120,8 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * List of demoted countries in the destination, represented in ISO 3166
-         * format.
+         * List of demoted countries in the reporting context, represented in
+         * ISO 3166 format.
          * </pre>
          *
          * <code>repeated string demoted_countries = 3;</code>
@@ -2126,8 +2133,8 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * List of demoted countries in the destination, represented in ISO 3166
-         * format.
+         * List of demoted countries in the reporting context, represented in
+         * ISO 3166 format.
          * </pre>
          *
          * <code>repeated string demoted_countries = 3;</code>
@@ -2139,8 +2146,8 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * List of demoted countries in the destination, represented in ISO 3166
-         * format.
+         * List of demoted countries in the reporting context, represented in
+         * ISO 3166 format.
          * </pre>
          *
          * <code>repeated string demoted_countries = 3;</code>
@@ -2153,8 +2160,8 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * List of demoted countries in the destination, represented in ISO 3166
-         * format.
+         * List of demoted countries in the reporting context, represented in
+         * ISO 3166 format.
          * </pre>
          *
          * <code>repeated string demoted_countries = 3;</code>
@@ -2168,26 +2175,26 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Issue severity per destination.
+       * Issue severity per reporting context.
        * </pre>
        *
        * Protobuf type {@code
-       * google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity.IssueSeverityPerDestination}
+       * google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity.IssueSeverityPerReportingContext}
        */
-      public static final class IssueSeverityPerDestination
+      public static final class IssueSeverityPerReportingContext
           extends com.google.protobuf.GeneratedMessageV3
           implements
-          // @@protoc_insertion_point(message_implements:google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity.IssueSeverityPerDestination)
-          IssueSeverityPerDestinationOrBuilder {
+          // @@protoc_insertion_point(message_implements:google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity.IssueSeverityPerReportingContext)
+          IssueSeverityPerReportingContextOrBuilder {
         private static final long serialVersionUID = 0L;
-        // Use IssueSeverityPerDestination.newBuilder() to construct.
-        private IssueSeverityPerDestination(
+        // Use IssueSeverityPerReportingContext.newBuilder() to construct.
+        private IssueSeverityPerReportingContext(
             com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
           super(builder);
         }
 
-        private IssueSeverityPerDestination() {
-          destination_ = 0;
+        private IssueSeverityPerReportingContext() {
+          reportingContext_ = 0;
           disapprovedCountries_ = com.google.protobuf.LazyStringArrayList.emptyList();
           demotedCountries_ = com.google.protobuf.LazyStringArrayList.emptyList();
         }
@@ -2195,75 +2202,85 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         @SuppressWarnings({"unused"})
         protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-          return new IssueSeverityPerDestination();
+          return new IssueSeverityPerReportingContext();
         }
 
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
           return com.google.shopping.merchant.reports.v1beta.ReportsProto
-              .internal_static_google_shopping_merchant_reports_v1beta_ProductView_ItemIssue_ItemIssueSeverity_IssueSeverityPerDestination_descriptor;
+              .internal_static_google_shopping_merchant_reports_v1beta_ProductView_ItemIssue_ItemIssueSeverity_IssueSeverityPerReportingContext_descriptor;
         }
 
         @java.lang.Override
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
           return com.google.shopping.merchant.reports.v1beta.ReportsProto
-              .internal_static_google_shopping_merchant_reports_v1beta_ProductView_ItemIssue_ItemIssueSeverity_IssueSeverityPerDestination_fieldAccessorTable
+              .internal_static_google_shopping_merchant_reports_v1beta_ProductView_ItemIssue_ItemIssueSeverity_IssueSeverityPerReportingContext_fieldAccessorTable
               .ensureFieldAccessorsInitialized(
                   com.google.shopping.merchant.reports.v1beta.ProductView.ItemIssue
-                      .ItemIssueSeverity.IssueSeverityPerDestination.class,
+                      .ItemIssueSeverity.IssueSeverityPerReportingContext.class,
                   com.google.shopping.merchant.reports.v1beta.ProductView.ItemIssue
-                      .ItemIssueSeverity.IssueSeverityPerDestination.Builder.class);
+                      .ItemIssueSeverity.IssueSeverityPerReportingContext.Builder.class);
         }
 
         private int bitField0_;
-        public static final int DESTINATION_FIELD_NUMBER = 1;
-        private int destination_ = 0;
+        public static final int REPORTING_CONTEXT_FIELD_NUMBER = 1;
+        private int reportingContext_ = 0;
         /**
          *
          *
          * <pre>
-         * Destination the issue applies to.
+         * Reporting context the issue applies to.
          * </pre>
          *
-         * <code>optional .google.shopping.type.Destination destination = 1;</code>
+         * <code>
+         * optional .google.shopping.type.ReportingContext.ReportingContextEnum reporting_context = 1;
+         * </code>
          *
-         * @return Whether the destination field is set.
+         * @return Whether the reportingContext field is set.
          */
         @java.lang.Override
-        public boolean hasDestination() {
+        public boolean hasReportingContext() {
           return ((bitField0_ & 0x00000001) != 0);
         }
         /**
          *
          *
          * <pre>
-         * Destination the issue applies to.
+         * Reporting context the issue applies to.
          * </pre>
          *
-         * <code>optional .google.shopping.type.Destination destination = 1;</code>
+         * <code>
+         * optional .google.shopping.type.ReportingContext.ReportingContextEnum reporting_context = 1;
+         * </code>
          *
-         * @return The enum numeric value on the wire for destination.
+         * @return The enum numeric value on the wire for reportingContext.
          */
         @java.lang.Override
-        public int getDestinationValue() {
-          return destination_;
+        public int getReportingContextValue() {
+          return reportingContext_;
         }
         /**
          *
          *
          * <pre>
-         * Destination the issue applies to.
+         * Reporting context the issue applies to.
          * </pre>
          *
-         * <code>optional .google.shopping.type.Destination destination = 1;</code>
+         * <code>
+         * optional .google.shopping.type.ReportingContext.ReportingContextEnum reporting_context = 1;
+         * </code>
          *
-         * @return The destination.
+         * @return The reportingContext.
          */
         @java.lang.Override
-        public com.google.shopping.type.Destination getDestination() {
-          com.google.shopping.type.Destination result =
-              com.google.shopping.type.Destination.forNumber(destination_);
-          return result == null ? com.google.shopping.type.Destination.UNRECOGNIZED : result;
+        public com.google.shopping.type.ReportingContext.ReportingContextEnum
+            getReportingContext() {
+          com.google.shopping.type.ReportingContext.ReportingContextEnum result =
+              com.google.shopping.type.ReportingContext.ReportingContextEnum.forNumber(
+                  reportingContext_);
+          return result == null
+              ? com.google.shopping.type.ReportingContext.ReportingContextEnum.UNRECOGNIZED
+              : result;
         }
 
         public static final int DISAPPROVED_COUNTRIES_FIELD_NUMBER = 2;
@@ -2275,8 +2292,8 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * List of disapproved countries in the destination, represented in ISO
-         * 3166 format.
+         * List of disapproved countries in the reporting context, represented
+         * in ISO 3166 format.
          * </pre>
          *
          * <code>repeated string disapproved_countries = 2;</code>
@@ -2290,8 +2307,8 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * List of disapproved countries in the destination, represented in ISO
-         * 3166 format.
+         * List of disapproved countries in the reporting context, represented
+         * in ISO 3166 format.
          * </pre>
          *
          * <code>repeated string disapproved_countries = 2;</code>
@@ -2305,8 +2322,8 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * List of disapproved countries in the destination, represented in ISO
-         * 3166 format.
+         * List of disapproved countries in the reporting context, represented
+         * in ISO 3166 format.
          * </pre>
          *
          * <code>repeated string disapproved_countries = 2;</code>
@@ -2321,8 +2338,8 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * List of disapproved countries in the destination, represented in ISO
-         * 3166 format.
+         * List of disapproved countries in the reporting context, represented
+         * in ISO 3166 format.
          * </pre>
          *
          * <code>repeated string disapproved_countries = 2;</code>
@@ -2343,8 +2360,8 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * List of demoted countries in the destination, represented in ISO 3166
-         * format.
+         * List of demoted countries in the reporting context, represented in
+         * ISO 3166 format.
          * </pre>
          *
          * <code>repeated string demoted_countries = 3;</code>
@@ -2358,8 +2375,8 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * List of demoted countries in the destination, represented in ISO 3166
-         * format.
+         * List of demoted countries in the reporting context, represented in
+         * ISO 3166 format.
          * </pre>
          *
          * <code>repeated string demoted_countries = 3;</code>
@@ -2373,8 +2390,8 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * List of demoted countries in the destination, represented in ISO 3166
-         * format.
+         * List of demoted countries in the reporting context, represented in
+         * ISO 3166 format.
          * </pre>
          *
          * <code>repeated string demoted_countries = 3;</code>
@@ -2389,8 +2406,8 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * List of demoted countries in the destination, represented in ISO 3166
-         * format.
+         * List of demoted countries in the reporting context, represented in
+         * ISO 3166 format.
          * </pre>
          *
          * <code>repeated string demoted_countries = 3;</code>
@@ -2418,7 +2435,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
         public void writeTo(com.google.protobuf.CodedOutputStream output)
             throws java.io.IOException {
           if (((bitField0_ & 0x00000001) != 0)) {
-            output.writeEnum(1, destination_);
+            output.writeEnum(1, reportingContext_);
           }
           for (int i = 0; i < disapprovedCountries_.size(); i++) {
             com.google.protobuf.GeneratedMessageV3.writeString(
@@ -2438,7 +2455,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
 
           size = 0;
           if (((bitField0_ & 0x00000001) != 0)) {
-            size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, destination_);
+            size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, reportingContext_);
           }
           {
             int dataSize = 0;
@@ -2469,19 +2486,19 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
           if (!(obj
               instanceof
               com.google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity
-                  .IssueSeverityPerDestination)) {
+                  .IssueSeverityPerReportingContext)) {
             return super.equals(obj);
           }
           com.google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity
-                  .IssueSeverityPerDestination
+                  .IssueSeverityPerReportingContext
               other =
                   (com.google.shopping.merchant.reports.v1beta.ProductView.ItemIssue
-                          .ItemIssueSeverity.IssueSeverityPerDestination)
+                          .ItemIssueSeverity.IssueSeverityPerReportingContext)
                       obj;
 
-          if (hasDestination() != other.hasDestination()) return false;
-          if (hasDestination()) {
-            if (destination_ != other.destination_) return false;
+          if (hasReportingContext() != other.hasReportingContext()) return false;
+          if (hasReportingContext()) {
+            if (reportingContext_ != other.reportingContext_) return false;
           }
           if (!getDisapprovedCountriesList().equals(other.getDisapprovedCountriesList()))
             return false;
@@ -2497,9 +2514,9 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
           }
           int hash = 41;
           hash = (19 * hash) + getDescriptor().hashCode();
-          if (hasDestination()) {
-            hash = (37 * hash) + DESTINATION_FIELD_NUMBER;
-            hash = (53 * hash) + destination_;
+          if (hasReportingContext()) {
+            hash = (37 * hash) + REPORTING_CONTEXT_FIELD_NUMBER;
+            hash = (53 * hash) + reportingContext_;
           }
           if (getDisapprovedCountriesCount() > 0) {
             hash = (37 * hash) + DISAPPROVED_COUNTRIES_FIELD_NUMBER;
@@ -2515,14 +2532,14 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
         }
 
         public static com.google.shopping.merchant.reports.v1beta.ProductView.ItemIssue
-                .ItemIssueSeverity.IssueSeverityPerDestination
+                .ItemIssueSeverity.IssueSeverityPerReportingContext
             parseFrom(java.nio.ByteBuffer data)
                 throws com.google.protobuf.InvalidProtocolBufferException {
           return PARSER.parseFrom(data);
         }
 
         public static com.google.shopping.merchant.reports.v1beta.ProductView.ItemIssue
-                .ItemIssueSeverity.IssueSeverityPerDestination
+                .ItemIssueSeverity.IssueSeverityPerReportingContext
             parseFrom(
                 java.nio.ByteBuffer data,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -2531,14 +2548,14 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
         }
 
         public static com.google.shopping.merchant.reports.v1beta.ProductView.ItemIssue
-                .ItemIssueSeverity.IssueSeverityPerDestination
+                .ItemIssueSeverity.IssueSeverityPerReportingContext
             parseFrom(com.google.protobuf.ByteString data)
                 throws com.google.protobuf.InvalidProtocolBufferException {
           return PARSER.parseFrom(data);
         }
 
         public static com.google.shopping.merchant.reports.v1beta.ProductView.ItemIssue
-                .ItemIssueSeverity.IssueSeverityPerDestination
+                .ItemIssueSeverity.IssueSeverityPerReportingContext
             parseFrom(
                 com.google.protobuf.ByteString data,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -2547,26 +2564,26 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
         }
 
         public static com.google.shopping.merchant.reports.v1beta.ProductView.ItemIssue
-                .ItemIssueSeverity.IssueSeverityPerDestination
+                .ItemIssueSeverity.IssueSeverityPerReportingContext
             parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
           return PARSER.parseFrom(data);
         }
 
         public static com.google.shopping.merchant.reports.v1beta.ProductView.ItemIssue
-                .ItemIssueSeverity.IssueSeverityPerDestination
+                .ItemIssueSeverity.IssueSeverityPerReportingContext
             parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
           return PARSER.parseFrom(data, extensionRegistry);
         }
 
         public static com.google.shopping.merchant.reports.v1beta.ProductView.ItemIssue
-                .ItemIssueSeverity.IssueSeverityPerDestination
+                .ItemIssueSeverity.IssueSeverityPerReportingContext
             parseFrom(java.io.InputStream input) throws java.io.IOException {
           return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
         }
 
         public static com.google.shopping.merchant.reports.v1beta.ProductView.ItemIssue
-                .ItemIssueSeverity.IssueSeverityPerDestination
+                .ItemIssueSeverity.IssueSeverityPerReportingContext
             parseFrom(
                 java.io.InputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -2576,14 +2593,14 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
         }
 
         public static com.google.shopping.merchant.reports.v1beta.ProductView.ItemIssue
-                .ItemIssueSeverity.IssueSeverityPerDestination
+                .ItemIssueSeverity.IssueSeverityPerReportingContext
             parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
           return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
               PARSER, input);
         }
 
         public static com.google.shopping.merchant.reports.v1beta.ProductView.ItemIssue
-                .ItemIssueSeverity.IssueSeverityPerDestination
+                .ItemIssueSeverity.IssueSeverityPerReportingContext
             parseDelimitedFrom(
                 java.io.InputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -2593,13 +2610,13 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
         }
 
         public static com.google.shopping.merchant.reports.v1beta.ProductView.ItemIssue
-                .ItemIssueSeverity.IssueSeverityPerDestination
+                .ItemIssueSeverity.IssueSeverityPerReportingContext
             parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
           return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
         }
 
         public static com.google.shopping.merchant.reports.v1beta.ProductView.ItemIssue
-                .ItemIssueSeverity.IssueSeverityPerDestination
+                .ItemIssueSeverity.IssueSeverityPerReportingContext
             parseFrom(
                 com.google.protobuf.CodedInputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -2619,7 +2636,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
 
         public static Builder newBuilder(
             com.google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity
-                    .IssueSeverityPerDestination
+                    .IssueSeverityPerReportingContext
                 prototype) {
           return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
         }
@@ -2639,37 +2656,37 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Issue severity per destination.
+         * Issue severity per reporting context.
          * </pre>
          *
          * Protobuf type {@code
-         * google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity.IssueSeverityPerDestination}
+         * google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity.IssueSeverityPerReportingContext}
          */
         public static final class Builder
             extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
             implements
-            // @@protoc_insertion_point(builder_implements:google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity.IssueSeverityPerDestination)
+            // @@protoc_insertion_point(builder_implements:google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity.IssueSeverityPerReportingContext)
             com.google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity
-                .IssueSeverityPerDestinationOrBuilder {
+                .IssueSeverityPerReportingContextOrBuilder {
           public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
             return com.google.shopping.merchant.reports.v1beta.ReportsProto
-                .internal_static_google_shopping_merchant_reports_v1beta_ProductView_ItemIssue_ItemIssueSeverity_IssueSeverityPerDestination_descriptor;
+                .internal_static_google_shopping_merchant_reports_v1beta_ProductView_ItemIssue_ItemIssueSeverity_IssueSeverityPerReportingContext_descriptor;
           }
 
           @java.lang.Override
           protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
               internalGetFieldAccessorTable() {
             return com.google.shopping.merchant.reports.v1beta.ReportsProto
-                .internal_static_google_shopping_merchant_reports_v1beta_ProductView_ItemIssue_ItemIssueSeverity_IssueSeverityPerDestination_fieldAccessorTable
+                .internal_static_google_shopping_merchant_reports_v1beta_ProductView_ItemIssue_ItemIssueSeverity_IssueSeverityPerReportingContext_fieldAccessorTable
                 .ensureFieldAccessorsInitialized(
                     com.google.shopping.merchant.reports.v1beta.ProductView.ItemIssue
-                        .ItemIssueSeverity.IssueSeverityPerDestination.class,
+                        .ItemIssueSeverity.IssueSeverityPerReportingContext.class,
                     com.google.shopping.merchant.reports.v1beta.ProductView.ItemIssue
-                        .ItemIssueSeverity.IssueSeverityPerDestination.Builder.class);
+                        .ItemIssueSeverity.IssueSeverityPerReportingContext.Builder.class);
           }
 
           // Construct using
-          // com.google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity.IssueSeverityPerDestination.newBuilder()
+          // com.google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity.IssueSeverityPerReportingContext.newBuilder()
           private Builder() {}
 
           private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
@@ -2680,7 +2697,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
           public Builder clear() {
             super.clear();
             bitField0_ = 0;
-            destination_ = 0;
+            reportingContext_ = 0;
             disapprovedCountries_ = com.google.protobuf.LazyStringArrayList.emptyList();
             demotedCountries_ = com.google.protobuf.LazyStringArrayList.emptyList();
             return this;
@@ -2689,23 +2706,23 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
           @java.lang.Override
           public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
             return com.google.shopping.merchant.reports.v1beta.ReportsProto
-                .internal_static_google_shopping_merchant_reports_v1beta_ProductView_ItemIssue_ItemIssueSeverity_IssueSeverityPerDestination_descriptor;
+                .internal_static_google_shopping_merchant_reports_v1beta_ProductView_ItemIssue_ItemIssueSeverity_IssueSeverityPerReportingContext_descriptor;
           }
 
           @java.lang.Override
           public com.google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity
-                  .IssueSeverityPerDestination
+                  .IssueSeverityPerReportingContext
               getDefaultInstanceForType() {
             return com.google.shopping.merchant.reports.v1beta.ProductView.ItemIssue
-                .ItemIssueSeverity.IssueSeverityPerDestination.getDefaultInstance();
+                .ItemIssueSeverity.IssueSeverityPerReportingContext.getDefaultInstance();
           }
 
           @java.lang.Override
           public com.google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity
-                  .IssueSeverityPerDestination
+                  .IssueSeverityPerReportingContext
               build() {
             com.google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity
-                    .IssueSeverityPerDestination
+                    .IssueSeverityPerReportingContext
                 result = buildPartial();
             if (!result.isInitialized()) {
               throw newUninitializedMessageException(result);
@@ -2715,13 +2732,13 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
 
           @java.lang.Override
           public com.google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity
-                  .IssueSeverityPerDestination
+                  .IssueSeverityPerReportingContext
               buildPartial() {
             com.google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity
-                    .IssueSeverityPerDestination
+                    .IssueSeverityPerReportingContext
                 result =
                     new com.google.shopping.merchant.reports.v1beta.ProductView.ItemIssue
-                        .ItemIssueSeverity.IssueSeverityPerDestination(this);
+                        .ItemIssueSeverity.IssueSeverityPerReportingContext(this);
             if (bitField0_ != 0) {
               buildPartial0(result);
             }
@@ -2731,12 +2748,12 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
 
           private void buildPartial0(
               com.google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity
-                      .IssueSeverityPerDestination
+                      .IssueSeverityPerReportingContext
                   result) {
             int from_bitField0_ = bitField0_;
             int to_bitField0_ = 0;
             if (((from_bitField0_ & 0x00000001) != 0)) {
-              result.destination_ = destination_;
+              result.reportingContext_ = reportingContext_;
               to_bitField0_ |= 0x00000001;
             }
             if (((from_bitField0_ & 0x00000002) != 0)) {
@@ -2790,10 +2807,10 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
             if (other
                 instanceof
                 com.google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity
-                    .IssueSeverityPerDestination) {
+                    .IssueSeverityPerReportingContext) {
               return mergeFrom(
                   (com.google.shopping.merchant.reports.v1beta.ProductView.ItemIssue
-                          .ItemIssueSeverity.IssueSeverityPerDestination)
+                          .ItemIssueSeverity.IssueSeverityPerReportingContext)
                       other);
             } else {
               super.mergeFrom(other);
@@ -2803,14 +2820,14 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
 
           public Builder mergeFrom(
               com.google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity
-                      .IssueSeverityPerDestination
+                      .IssueSeverityPerReportingContext
                   other) {
             if (other
                 == com.google.shopping.merchant.reports.v1beta.ProductView.ItemIssue
-                    .ItemIssueSeverity.IssueSeverityPerDestination.getDefaultInstance())
+                    .ItemIssueSeverity.IssueSeverityPerReportingContext.getDefaultInstance())
               return this;
-            if (other.hasDestination()) {
-              setDestination(other.getDestination());
+            if (other.hasReportingContext()) {
+              setReportingContext(other.getReportingContext());
             }
             if (!other.disapprovedCountries_.isEmpty()) {
               if (disapprovedCountries_.isEmpty()) {
@@ -2860,7 +2877,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
                     break;
                   case 8:
                     {
-                      destination_ = input.readEnum();
+                      reportingContext_ = input.readEnum();
                       bitField0_ |= 0x00000001;
                       break;
                     } // case 8
@@ -2897,51 +2914,57 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
 
           private int bitField0_;
 
-          private int destination_ = 0;
+          private int reportingContext_ = 0;
           /**
            *
            *
            * <pre>
-           * Destination the issue applies to.
+           * Reporting context the issue applies to.
            * </pre>
            *
-           * <code>optional .google.shopping.type.Destination destination = 1;</code>
+           * <code>
+           * optional .google.shopping.type.ReportingContext.ReportingContextEnum reporting_context = 1;
+           * </code>
            *
-           * @return Whether the destination field is set.
+           * @return Whether the reportingContext field is set.
            */
           @java.lang.Override
-          public boolean hasDestination() {
+          public boolean hasReportingContext() {
             return ((bitField0_ & 0x00000001) != 0);
           }
           /**
            *
            *
            * <pre>
-           * Destination the issue applies to.
+           * Reporting context the issue applies to.
            * </pre>
            *
-           * <code>optional .google.shopping.type.Destination destination = 1;</code>
+           * <code>
+           * optional .google.shopping.type.ReportingContext.ReportingContextEnum reporting_context = 1;
+           * </code>
            *
-           * @return The enum numeric value on the wire for destination.
+           * @return The enum numeric value on the wire for reportingContext.
            */
           @java.lang.Override
-          public int getDestinationValue() {
-            return destination_;
+          public int getReportingContextValue() {
+            return reportingContext_;
           }
           /**
            *
            *
            * <pre>
-           * Destination the issue applies to.
+           * Reporting context the issue applies to.
            * </pre>
            *
-           * <code>optional .google.shopping.type.Destination destination = 1;</code>
+           * <code>
+           * optional .google.shopping.type.ReportingContext.ReportingContextEnum reporting_context = 1;
+           * </code>
            *
-           * @param value The enum numeric value on the wire for destination to set.
+           * @param value The enum numeric value on the wire for reportingContext to set.
            * @return This builder for chaining.
            */
-          public Builder setDestinationValue(int value) {
-            destination_ = value;
+          public Builder setReportingContextValue(int value) {
+            reportingContext_ = value;
             bitField0_ |= 0x00000001;
             onChanged();
             return this;
@@ -2950,37 +2973,46 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Destination the issue applies to.
+           * Reporting context the issue applies to.
            * </pre>
            *
-           * <code>optional .google.shopping.type.Destination destination = 1;</code>
+           * <code>
+           * optional .google.shopping.type.ReportingContext.ReportingContextEnum reporting_context = 1;
+           * </code>
            *
-           * @return The destination.
+           * @return The reportingContext.
            */
           @java.lang.Override
-          public com.google.shopping.type.Destination getDestination() {
-            com.google.shopping.type.Destination result =
-                com.google.shopping.type.Destination.forNumber(destination_);
-            return result == null ? com.google.shopping.type.Destination.UNRECOGNIZED : result;
+          public com.google.shopping.type.ReportingContext.ReportingContextEnum
+              getReportingContext() {
+            com.google.shopping.type.ReportingContext.ReportingContextEnum result =
+                com.google.shopping.type.ReportingContext.ReportingContextEnum.forNumber(
+                    reportingContext_);
+            return result == null
+                ? com.google.shopping.type.ReportingContext.ReportingContextEnum.UNRECOGNIZED
+                : result;
           }
           /**
            *
            *
            * <pre>
-           * Destination the issue applies to.
+           * Reporting context the issue applies to.
            * </pre>
            *
-           * <code>optional .google.shopping.type.Destination destination = 1;</code>
+           * <code>
+           * optional .google.shopping.type.ReportingContext.ReportingContextEnum reporting_context = 1;
+           * </code>
            *
-           * @param value The destination to set.
+           * @param value The reportingContext to set.
            * @return This builder for chaining.
            */
-          public Builder setDestination(com.google.shopping.type.Destination value) {
+          public Builder setReportingContext(
+              com.google.shopping.type.ReportingContext.ReportingContextEnum value) {
             if (value == null) {
               throw new NullPointerException();
             }
             bitField0_ |= 0x00000001;
-            destination_ = value.getNumber();
+            reportingContext_ = value.getNumber();
             onChanged();
             return this;
           }
@@ -2988,16 +3020,18 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Destination the issue applies to.
+           * Reporting context the issue applies to.
            * </pre>
            *
-           * <code>optional .google.shopping.type.Destination destination = 1;</code>
+           * <code>
+           * optional .google.shopping.type.ReportingContext.ReportingContextEnum reporting_context = 1;
+           * </code>
            *
            * @return This builder for chaining.
            */
-          public Builder clearDestination() {
+          public Builder clearReportingContext() {
             bitField0_ = (bitField0_ & ~0x00000001);
-            destination_ = 0;
+            reportingContext_ = 0;
             onChanged();
             return this;
           }
@@ -3016,8 +3050,8 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * List of disapproved countries in the destination, represented in ISO
-           * 3166 format.
+           * List of disapproved countries in the reporting context, represented
+           * in ISO 3166 format.
            * </pre>
            *
            * <code>repeated string disapproved_countries = 2;</code>
@@ -3032,8 +3066,8 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * List of disapproved countries in the destination, represented in ISO
-           * 3166 format.
+           * List of disapproved countries in the reporting context, represented
+           * in ISO 3166 format.
            * </pre>
            *
            * <code>repeated string disapproved_countries = 2;</code>
@@ -3047,8 +3081,8 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * List of disapproved countries in the destination, represented in ISO
-           * 3166 format.
+           * List of disapproved countries in the reporting context, represented
+           * in ISO 3166 format.
            * </pre>
            *
            * <code>repeated string disapproved_countries = 2;</code>
@@ -3063,8 +3097,8 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * List of disapproved countries in the destination, represented in ISO
-           * 3166 format.
+           * List of disapproved countries in the reporting context, represented
+           * in ISO 3166 format.
            * </pre>
            *
            * <code>repeated string disapproved_countries = 2;</code>
@@ -3079,8 +3113,8 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * List of disapproved countries in the destination, represented in ISO
-           * 3166 format.
+           * List of disapproved countries in the reporting context, represented
+           * in ISO 3166 format.
            * </pre>
            *
            * <code>repeated string disapproved_countries = 2;</code>
@@ -3103,8 +3137,8 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * List of disapproved countries in the destination, represented in ISO
-           * 3166 format.
+           * List of disapproved countries in the reporting context, represented
+           * in ISO 3166 format.
            * </pre>
            *
            * <code>repeated string disapproved_countries = 2;</code>
@@ -3126,8 +3160,8 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * List of disapproved countries in the destination, represented in ISO
-           * 3166 format.
+           * List of disapproved countries in the reporting context, represented
+           * in ISO 3166 format.
            * </pre>
            *
            * <code>repeated string disapproved_countries = 2;</code>
@@ -3146,8 +3180,8 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * List of disapproved countries in the destination, represented in ISO
-           * 3166 format.
+           * List of disapproved countries in the reporting context, represented
+           * in ISO 3166 format.
            * </pre>
            *
            * <code>repeated string disapproved_countries = 2;</code>
@@ -3165,8 +3199,8 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * List of disapproved countries in the destination, represented in ISO
-           * 3166 format.
+           * List of disapproved countries in the reporting context, represented
+           * in ISO 3166 format.
            * </pre>
            *
            * <code>repeated string disapproved_countries = 2;</code>
@@ -3199,8 +3233,8 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * List of demoted countries in the destination, represented in ISO 3166
-           * format.
+           * List of demoted countries in the reporting context, represented in
+           * ISO 3166 format.
            * </pre>
            *
            * <code>repeated string demoted_countries = 3;</code>
@@ -3215,8 +3249,8 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * List of demoted countries in the destination, represented in ISO 3166
-           * format.
+           * List of demoted countries in the reporting context, represented in
+           * ISO 3166 format.
            * </pre>
            *
            * <code>repeated string demoted_countries = 3;</code>
@@ -3230,8 +3264,8 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * List of demoted countries in the destination, represented in ISO 3166
-           * format.
+           * List of demoted countries in the reporting context, represented in
+           * ISO 3166 format.
            * </pre>
            *
            * <code>repeated string demoted_countries = 3;</code>
@@ -3246,8 +3280,8 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * List of demoted countries in the destination, represented in ISO 3166
-           * format.
+           * List of demoted countries in the reporting context, represented in
+           * ISO 3166 format.
            * </pre>
            *
            * <code>repeated string demoted_countries = 3;</code>
@@ -3262,8 +3296,8 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * List of demoted countries in the destination, represented in ISO 3166
-           * format.
+           * List of demoted countries in the reporting context, represented in
+           * ISO 3166 format.
            * </pre>
            *
            * <code>repeated string demoted_countries = 3;</code>
@@ -3286,8 +3320,8 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * List of demoted countries in the destination, represented in ISO 3166
-           * format.
+           * List of demoted countries in the reporting context, represented in
+           * ISO 3166 format.
            * </pre>
            *
            * <code>repeated string demoted_countries = 3;</code>
@@ -3309,8 +3343,8 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * List of demoted countries in the destination, represented in ISO 3166
-           * format.
+           * List of demoted countries in the reporting context, represented in
+           * ISO 3166 format.
            * </pre>
            *
            * <code>repeated string demoted_countries = 3;</code>
@@ -3329,8 +3363,8 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * List of demoted countries in the destination, represented in ISO 3166
-           * format.
+           * List of demoted countries in the reporting context, represented in
+           * ISO 3166 format.
            * </pre>
            *
            * <code>repeated string demoted_countries = 3;</code>
@@ -3348,8 +3382,8 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * List of demoted countries in the destination, represented in ISO 3166
-           * format.
+           * List of demoted countries in the reporting context, represented in
+           * ISO 3166 format.
            * </pre>
            *
            * <code>repeated string demoted_countries = 3;</code>
@@ -3381,30 +3415,30 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
             return super.mergeUnknownFields(unknownFields);
           }
 
-          // @@protoc_insertion_point(builder_scope:google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity.IssueSeverityPerDestination)
+          // @@protoc_insertion_point(builder_scope:google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity.IssueSeverityPerReportingContext)
         }
 
-        // @@protoc_insertion_point(class_scope:google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity.IssueSeverityPerDestination)
+        // @@protoc_insertion_point(class_scope:google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity.IssueSeverityPerReportingContext)
         private static final com.google.shopping.merchant.reports.v1beta.ProductView.ItemIssue
-                .ItemIssueSeverity.IssueSeverityPerDestination
+                .ItemIssueSeverity.IssueSeverityPerReportingContext
             DEFAULT_INSTANCE;
 
         static {
           DEFAULT_INSTANCE =
               new com.google.shopping.merchant.reports.v1beta.ProductView.ItemIssue
-                  .ItemIssueSeverity.IssueSeverityPerDestination();
+                  .ItemIssueSeverity.IssueSeverityPerReportingContext();
         }
 
         public static com.google.shopping.merchant.reports.v1beta.ProductView.ItemIssue
-                .ItemIssueSeverity.IssueSeverityPerDestination
+                .ItemIssueSeverity.IssueSeverityPerReportingContext
             getDefaultInstance() {
           return DEFAULT_INSTANCE;
         }
 
-        private static final com.google.protobuf.Parser<IssueSeverityPerDestination> PARSER =
-            new com.google.protobuf.AbstractParser<IssueSeverityPerDestination>() {
+        private static final com.google.protobuf.Parser<IssueSeverityPerReportingContext> PARSER =
+            new com.google.protobuf.AbstractParser<IssueSeverityPerReportingContext>() {
               @java.lang.Override
-              public IssueSeverityPerDestination parsePartialFrom(
+              public IssueSeverityPerReportingContext parsePartialFrom(
                   com.google.protobuf.CodedInputStream input,
                   com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                   throws com.google.protobuf.InvalidProtocolBufferException {
@@ -3424,116 +3458,116 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
               }
             };
 
-        public static com.google.protobuf.Parser<IssueSeverityPerDestination> parser() {
+        public static com.google.protobuf.Parser<IssueSeverityPerReportingContext> parser() {
           return PARSER;
         }
 
         @java.lang.Override
-        public com.google.protobuf.Parser<IssueSeverityPerDestination> getParserForType() {
+        public com.google.protobuf.Parser<IssueSeverityPerReportingContext> getParserForType() {
           return PARSER;
         }
 
         @java.lang.Override
         public com.google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity
-                .IssueSeverityPerDestination
+                .IssueSeverityPerReportingContext
             getDefaultInstanceForType() {
           return DEFAULT_INSTANCE;
         }
       }
 
       private int bitField0_;
-      public static final int SEVERITY_PER_DESTINATION_FIELD_NUMBER = 1;
+      public static final int SEVERITY_PER_REPORTING_CONTEXT_FIELD_NUMBER = 1;
 
       @SuppressWarnings("serial")
       private java.util.List<
               com.google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity
-                  .IssueSeverityPerDestination>
-          severityPerDestination_;
+                  .IssueSeverityPerReportingContext>
+          severityPerReportingContext_;
       /**
        *
        *
        * <pre>
-       * Issue severity per destination.
+       * Issue severity per reporting context.
        * </pre>
        *
        * <code>
-       * repeated .google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity.IssueSeverityPerDestination severity_per_destination = 1;
+       * repeated .google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity.IssueSeverityPerReportingContext severity_per_reporting_context = 1;
        * </code>
        */
       @java.lang.Override
       public java.util.List<
               com.google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity
-                  .IssueSeverityPerDestination>
-          getSeverityPerDestinationList() {
-        return severityPerDestination_;
+                  .IssueSeverityPerReportingContext>
+          getSeverityPerReportingContextList() {
+        return severityPerReportingContext_;
       }
       /**
        *
        *
        * <pre>
-       * Issue severity per destination.
+       * Issue severity per reporting context.
        * </pre>
        *
        * <code>
-       * repeated .google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity.IssueSeverityPerDestination severity_per_destination = 1;
+       * repeated .google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity.IssueSeverityPerReportingContext severity_per_reporting_context = 1;
        * </code>
        */
       @java.lang.Override
       public java.util.List<
               ? extends
                   com.google.shopping.merchant.reports.v1beta.ProductView.ItemIssue
-                      .ItemIssueSeverity.IssueSeverityPerDestinationOrBuilder>
-          getSeverityPerDestinationOrBuilderList() {
-        return severityPerDestination_;
+                      .ItemIssueSeverity.IssueSeverityPerReportingContextOrBuilder>
+          getSeverityPerReportingContextOrBuilderList() {
+        return severityPerReportingContext_;
       }
       /**
        *
        *
        * <pre>
-       * Issue severity per destination.
+       * Issue severity per reporting context.
        * </pre>
        *
        * <code>
-       * repeated .google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity.IssueSeverityPerDestination severity_per_destination = 1;
+       * repeated .google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity.IssueSeverityPerReportingContext severity_per_reporting_context = 1;
        * </code>
        */
       @java.lang.Override
-      public int getSeverityPerDestinationCount() {
-        return severityPerDestination_.size();
+      public int getSeverityPerReportingContextCount() {
+        return severityPerReportingContext_.size();
       }
       /**
        *
        *
        * <pre>
-       * Issue severity per destination.
+       * Issue severity per reporting context.
        * </pre>
        *
        * <code>
-       * repeated .google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity.IssueSeverityPerDestination severity_per_destination = 1;
-       * </code>
-       */
-      @java.lang.Override
-      public com.google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity
-              .IssueSeverityPerDestination
-          getSeverityPerDestination(int index) {
-        return severityPerDestination_.get(index);
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Issue severity per destination.
-       * </pre>
-       *
-       * <code>
-       * repeated .google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity.IssueSeverityPerDestination severity_per_destination = 1;
+       * repeated .google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity.IssueSeverityPerReportingContext severity_per_reporting_context = 1;
        * </code>
        */
       @java.lang.Override
       public com.google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity
-              .IssueSeverityPerDestinationOrBuilder
-          getSeverityPerDestinationOrBuilder(int index) {
-        return severityPerDestination_.get(index);
+              .IssueSeverityPerReportingContext
+          getSeverityPerReportingContext(int index) {
+        return severityPerReportingContext_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Issue severity per reporting context.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity.IssueSeverityPerReportingContext severity_per_reporting_context = 1;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity
+              .IssueSeverityPerReportingContextOrBuilder
+          getSeverityPerReportingContextOrBuilder(int index) {
+        return severityPerReportingContext_.get(index);
       }
 
       public static final int AGGREGATED_SEVERITY_FIELD_NUMBER = 2;
@@ -3542,7 +3576,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Aggregated severity of the issue for all destinations it affects.
+       * Aggregated severity of the issue for all reporting contexts it affects.
        *
        * **This field can be used for filtering the results.**
        * </pre>
@@ -3561,7 +3595,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Aggregated severity of the issue for all destinations it affects.
+       * Aggregated severity of the issue for all reporting contexts it affects.
        *
        * **This field can be used for filtering the results.**
        * </pre>
@@ -3580,7 +3614,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Aggregated severity of the issue for all destinations it affects.
+       * Aggregated severity of the issue for all reporting contexts it affects.
        *
        * **This field can be used for filtering the results.**
        * </pre>
@@ -3620,8 +3654,8 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
 
       @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-        for (int i = 0; i < severityPerDestination_.size(); i++) {
-          output.writeMessage(1, severityPerDestination_.get(i));
+        for (int i = 0; i < severityPerReportingContext_.size(); i++) {
+          output.writeMessage(1, severityPerReportingContext_.get(i));
         }
         if (((bitField0_ & 0x00000001) != 0)) {
           output.writeEnum(2, aggregatedSeverity_);
@@ -3635,10 +3669,10 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
         if (size != -1) return size;
 
         size = 0;
-        for (int i = 0; i < severityPerDestination_.size(); i++) {
+        for (int i = 0; i < severityPerReportingContext_.size(); i++) {
           size +=
               com.google.protobuf.CodedOutputStream.computeMessageSize(
-                  1, severityPerDestination_.get(i));
+                  1, severityPerReportingContext_.get(i));
         }
         if (((bitField0_ & 0x00000001) != 0)) {
           size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, aggregatedSeverity_);
@@ -3662,8 +3696,8 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
             (com.google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity)
                 obj;
 
-        if (!getSeverityPerDestinationList().equals(other.getSeverityPerDestinationList()))
-          return false;
+        if (!getSeverityPerReportingContextList()
+            .equals(other.getSeverityPerReportingContextList())) return false;
         if (hasAggregatedSeverity() != other.hasAggregatedSeverity()) return false;
         if (hasAggregatedSeverity()) {
           if (aggregatedSeverity_ != other.aggregatedSeverity_) return false;
@@ -3679,9 +3713,9 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
         }
         int hash = 41;
         hash = (19 * hash) + getDescriptor().hashCode();
-        if (getSeverityPerDestinationCount() > 0) {
-          hash = (37 * hash) + SEVERITY_PER_DESTINATION_FIELD_NUMBER;
-          hash = (53 * hash) + getSeverityPerDestinationList().hashCode();
+        if (getSeverityPerReportingContextCount() > 0) {
+          hash = (37 * hash) + SEVERITY_PER_REPORTING_CONTEXT_FIELD_NUMBER;
+          hash = (53 * hash) + getSeverityPerReportingContextList().hashCode();
         }
         if (hasAggregatedSeverity()) {
           hash = (37 * hash) + AGGREGATED_SEVERITY_FIELD_NUMBER;
@@ -3855,11 +3889,11 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
         public Builder clear() {
           super.clear();
           bitField0_ = 0;
-          if (severityPerDestinationBuilder_ == null) {
-            severityPerDestination_ = java.util.Collections.emptyList();
+          if (severityPerReportingContextBuilder_ == null) {
+            severityPerReportingContext_ = java.util.Collections.emptyList();
           } else {
-            severityPerDestination_ = null;
-            severityPerDestinationBuilder_.clear();
+            severityPerReportingContext_ = null;
+            severityPerReportingContextBuilder_.clear();
           }
           bitField0_ = (bitField0_ & ~0x00000001);
           aggregatedSeverity_ = 0;
@@ -3908,15 +3942,15 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
         private void buildPartialRepeatedFields(
             com.google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity
                 result) {
-          if (severityPerDestinationBuilder_ == null) {
+          if (severityPerReportingContextBuilder_ == null) {
             if (((bitField0_ & 0x00000001) != 0)) {
-              severityPerDestination_ =
-                  java.util.Collections.unmodifiableList(severityPerDestination_);
+              severityPerReportingContext_ =
+                  java.util.Collections.unmodifiableList(severityPerReportingContext_);
               bitField0_ = (bitField0_ & ~0x00000001);
             }
-            result.severityPerDestination_ = severityPerDestination_;
+            result.severityPerReportingContext_ = severityPerReportingContext_;
           } else {
-            result.severityPerDestination_ = severityPerDestinationBuilder_.build();
+            result.severityPerReportingContext_ = severityPerReportingContextBuilder_.build();
           }
         }
 
@@ -3988,30 +4022,31 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
           if (other
               == com.google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity
                   .getDefaultInstance()) return this;
-          if (severityPerDestinationBuilder_ == null) {
-            if (!other.severityPerDestination_.isEmpty()) {
-              if (severityPerDestination_.isEmpty()) {
-                severityPerDestination_ = other.severityPerDestination_;
+          if (severityPerReportingContextBuilder_ == null) {
+            if (!other.severityPerReportingContext_.isEmpty()) {
+              if (severityPerReportingContext_.isEmpty()) {
+                severityPerReportingContext_ = other.severityPerReportingContext_;
                 bitField0_ = (bitField0_ & ~0x00000001);
               } else {
-                ensureSeverityPerDestinationIsMutable();
-                severityPerDestination_.addAll(other.severityPerDestination_);
+                ensureSeverityPerReportingContextIsMutable();
+                severityPerReportingContext_.addAll(other.severityPerReportingContext_);
               }
               onChanged();
             }
           } else {
-            if (!other.severityPerDestination_.isEmpty()) {
-              if (severityPerDestinationBuilder_.isEmpty()) {
-                severityPerDestinationBuilder_.dispose();
-                severityPerDestinationBuilder_ = null;
-                severityPerDestination_ = other.severityPerDestination_;
+            if (!other.severityPerReportingContext_.isEmpty()) {
+              if (severityPerReportingContextBuilder_.isEmpty()) {
+                severityPerReportingContextBuilder_.dispose();
+                severityPerReportingContextBuilder_ = null;
+                severityPerReportingContext_ = other.severityPerReportingContext_;
                 bitField0_ = (bitField0_ & ~0x00000001);
-                severityPerDestinationBuilder_ =
+                severityPerReportingContextBuilder_ =
                     com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
-                        ? getSeverityPerDestinationFieldBuilder()
+                        ? getSeverityPerReportingContextFieldBuilder()
                         : null;
               } else {
-                severityPerDestinationBuilder_.addAllMessages(other.severityPerDestination_);
+                severityPerReportingContextBuilder_.addAllMessages(
+                    other.severityPerReportingContext_);
               }
             }
           }
@@ -4047,17 +4082,17 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
                 case 10:
                   {
                     com.google.shopping.merchant.reports.v1beta.ProductView.ItemIssue
-                            .ItemIssueSeverity.IssueSeverityPerDestination
+                            .ItemIssueSeverity.IssueSeverityPerReportingContext
                         m =
                             input.readMessage(
                                 com.google.shopping.merchant.reports.v1beta.ProductView.ItemIssue
-                                    .ItemIssueSeverity.IssueSeverityPerDestination.parser(),
+                                    .ItemIssueSeverity.IssueSeverityPerReportingContext.parser(),
                                 extensionRegistry);
-                    if (severityPerDestinationBuilder_ == null) {
-                      ensureSeverityPerDestinationIsMutable();
-                      severityPerDestination_.add(m);
+                    if (severityPerReportingContextBuilder_ == null) {
+                      ensureSeverityPerReportingContextIsMutable();
+                      severityPerReportingContext_.add(m);
                     } else {
-                      severityPerDestinationBuilder_.addMessage(m);
+                      severityPerReportingContextBuilder_.addMessage(m);
                     }
                     break;
                   } // case 10
@@ -4088,112 +4123,113 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
 
         private java.util.List<
                 com.google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity
-                    .IssueSeverityPerDestination>
-            severityPerDestination_ = java.util.Collections.emptyList();
+                    .IssueSeverityPerReportingContext>
+            severityPerReportingContext_ = java.util.Collections.emptyList();
 
-        private void ensureSeverityPerDestinationIsMutable() {
+        private void ensureSeverityPerReportingContextIsMutable() {
           if (!((bitField0_ & 0x00000001) != 0)) {
-            severityPerDestination_ =
+            severityPerReportingContext_ =
                 new java.util.ArrayList<
                     com.google.shopping.merchant.reports.v1beta.ProductView.ItemIssue
-                        .ItemIssueSeverity.IssueSeverityPerDestination>(severityPerDestination_);
+                        .ItemIssueSeverity.IssueSeverityPerReportingContext>(
+                    severityPerReportingContext_);
             bitField0_ |= 0x00000001;
           }
         }
 
         private com.google.protobuf.RepeatedFieldBuilderV3<
                 com.google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity
-                    .IssueSeverityPerDestination,
+                    .IssueSeverityPerReportingContext,
                 com.google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity
-                    .IssueSeverityPerDestination.Builder,
+                    .IssueSeverityPerReportingContext.Builder,
                 com.google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity
-                    .IssueSeverityPerDestinationOrBuilder>
-            severityPerDestinationBuilder_;
+                    .IssueSeverityPerReportingContextOrBuilder>
+            severityPerReportingContextBuilder_;
 
         /**
          *
          *
          * <pre>
-         * Issue severity per destination.
+         * Issue severity per reporting context.
          * </pre>
          *
          * <code>
-         * repeated .google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity.IssueSeverityPerDestination severity_per_destination = 1;
+         * repeated .google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity.IssueSeverityPerReportingContext severity_per_reporting_context = 1;
          * </code>
          */
         public java.util.List<
                 com.google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity
-                    .IssueSeverityPerDestination>
-            getSeverityPerDestinationList() {
-          if (severityPerDestinationBuilder_ == null) {
-            return java.util.Collections.unmodifiableList(severityPerDestination_);
+                    .IssueSeverityPerReportingContext>
+            getSeverityPerReportingContextList() {
+          if (severityPerReportingContextBuilder_ == null) {
+            return java.util.Collections.unmodifiableList(severityPerReportingContext_);
           } else {
-            return severityPerDestinationBuilder_.getMessageList();
+            return severityPerReportingContextBuilder_.getMessageList();
           }
         }
         /**
          *
          *
          * <pre>
-         * Issue severity per destination.
+         * Issue severity per reporting context.
          * </pre>
          *
          * <code>
-         * repeated .google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity.IssueSeverityPerDestination severity_per_destination = 1;
+         * repeated .google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity.IssueSeverityPerReportingContext severity_per_reporting_context = 1;
          * </code>
          */
-        public int getSeverityPerDestinationCount() {
-          if (severityPerDestinationBuilder_ == null) {
-            return severityPerDestination_.size();
+        public int getSeverityPerReportingContextCount() {
+          if (severityPerReportingContextBuilder_ == null) {
+            return severityPerReportingContext_.size();
           } else {
-            return severityPerDestinationBuilder_.getCount();
+            return severityPerReportingContextBuilder_.getCount();
           }
         }
         /**
          *
          *
          * <pre>
-         * Issue severity per destination.
+         * Issue severity per reporting context.
          * </pre>
          *
          * <code>
-         * repeated .google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity.IssueSeverityPerDestination severity_per_destination = 1;
+         * repeated .google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity.IssueSeverityPerReportingContext severity_per_reporting_context = 1;
          * </code>
          */
         public com.google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity
-                .IssueSeverityPerDestination
-            getSeverityPerDestination(int index) {
-          if (severityPerDestinationBuilder_ == null) {
-            return severityPerDestination_.get(index);
+                .IssueSeverityPerReportingContext
+            getSeverityPerReportingContext(int index) {
+          if (severityPerReportingContextBuilder_ == null) {
+            return severityPerReportingContext_.get(index);
           } else {
-            return severityPerDestinationBuilder_.getMessage(index);
+            return severityPerReportingContextBuilder_.getMessage(index);
           }
         }
         /**
          *
          *
          * <pre>
-         * Issue severity per destination.
+         * Issue severity per reporting context.
          * </pre>
          *
          * <code>
-         * repeated .google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity.IssueSeverityPerDestination severity_per_destination = 1;
+         * repeated .google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity.IssueSeverityPerReportingContext severity_per_reporting_context = 1;
          * </code>
          */
-        public Builder setSeverityPerDestination(
+        public Builder setSeverityPerReportingContext(
             int index,
             com.google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity
-                    .IssueSeverityPerDestination
+                    .IssueSeverityPerReportingContext
                 value) {
-          if (severityPerDestinationBuilder_ == null) {
+          if (severityPerReportingContextBuilder_ == null) {
             if (value == null) {
               throw new NullPointerException();
             }
-            ensureSeverityPerDestinationIsMutable();
-            severityPerDestination_.set(index, value);
+            ensureSeverityPerReportingContextIsMutable();
+            severityPerReportingContext_.set(index, value);
             onChanged();
           } else {
-            severityPerDestinationBuilder_.setMessage(index, value);
+            severityPerReportingContextBuilder_.setMessage(index, value);
           }
           return this;
         }
@@ -4201,24 +4237,24 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Issue severity per destination.
+         * Issue severity per reporting context.
          * </pre>
          *
          * <code>
-         * repeated .google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity.IssueSeverityPerDestination severity_per_destination = 1;
+         * repeated .google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity.IssueSeverityPerReportingContext severity_per_reporting_context = 1;
          * </code>
          */
-        public Builder setSeverityPerDestination(
+        public Builder setSeverityPerReportingContext(
             int index,
             com.google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity
-                    .IssueSeverityPerDestination.Builder
+                    .IssueSeverityPerReportingContext.Builder
                 builderForValue) {
-          if (severityPerDestinationBuilder_ == null) {
-            ensureSeverityPerDestinationIsMutable();
-            severityPerDestination_.set(index, builderForValue.build());
+          if (severityPerReportingContextBuilder_ == null) {
+            ensureSeverityPerReportingContextIsMutable();
+            severityPerReportingContext_.set(index, builderForValue.build());
             onChanged();
           } else {
-            severityPerDestinationBuilder_.setMessage(index, builderForValue.build());
+            severityPerReportingContextBuilder_.setMessage(index, builderForValue.build());
           }
           return this;
         }
@@ -4226,26 +4262,26 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Issue severity per destination.
+         * Issue severity per reporting context.
          * </pre>
          *
          * <code>
-         * repeated .google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity.IssueSeverityPerDestination severity_per_destination = 1;
+         * repeated .google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity.IssueSeverityPerReportingContext severity_per_reporting_context = 1;
          * </code>
          */
-        public Builder addSeverityPerDestination(
+        public Builder addSeverityPerReportingContext(
             com.google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity
-                    .IssueSeverityPerDestination
+                    .IssueSeverityPerReportingContext
                 value) {
-          if (severityPerDestinationBuilder_ == null) {
+          if (severityPerReportingContextBuilder_ == null) {
             if (value == null) {
               throw new NullPointerException();
             }
-            ensureSeverityPerDestinationIsMutable();
-            severityPerDestination_.add(value);
+            ensureSeverityPerReportingContextIsMutable();
+            severityPerReportingContext_.add(value);
             onChanged();
           } else {
-            severityPerDestinationBuilder_.addMessage(value);
+            severityPerReportingContextBuilder_.addMessage(value);
           }
           return this;
         }
@@ -4253,27 +4289,27 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Issue severity per destination.
+         * Issue severity per reporting context.
          * </pre>
          *
          * <code>
-         * repeated .google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity.IssueSeverityPerDestination severity_per_destination = 1;
+         * repeated .google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity.IssueSeverityPerReportingContext severity_per_reporting_context = 1;
          * </code>
          */
-        public Builder addSeverityPerDestination(
+        public Builder addSeverityPerReportingContext(
             int index,
             com.google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity
-                    .IssueSeverityPerDestination
+                    .IssueSeverityPerReportingContext
                 value) {
-          if (severityPerDestinationBuilder_ == null) {
+          if (severityPerReportingContextBuilder_ == null) {
             if (value == null) {
               throw new NullPointerException();
             }
-            ensureSeverityPerDestinationIsMutable();
-            severityPerDestination_.add(index, value);
+            ensureSeverityPerReportingContextIsMutable();
+            severityPerReportingContext_.add(index, value);
             onChanged();
           } else {
-            severityPerDestinationBuilder_.addMessage(index, value);
+            severityPerReportingContextBuilder_.addMessage(index, value);
           }
           return this;
         }
@@ -4281,23 +4317,23 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Issue severity per destination.
+         * Issue severity per reporting context.
          * </pre>
          *
          * <code>
-         * repeated .google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity.IssueSeverityPerDestination severity_per_destination = 1;
+         * repeated .google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity.IssueSeverityPerReportingContext severity_per_reporting_context = 1;
          * </code>
          */
-        public Builder addSeverityPerDestination(
+        public Builder addSeverityPerReportingContext(
             com.google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity
-                    .IssueSeverityPerDestination.Builder
+                    .IssueSeverityPerReportingContext.Builder
                 builderForValue) {
-          if (severityPerDestinationBuilder_ == null) {
-            ensureSeverityPerDestinationIsMutable();
-            severityPerDestination_.add(builderForValue.build());
+          if (severityPerReportingContextBuilder_ == null) {
+            ensureSeverityPerReportingContextIsMutable();
+            severityPerReportingContext_.add(builderForValue.build());
             onChanged();
           } else {
-            severityPerDestinationBuilder_.addMessage(builderForValue.build());
+            severityPerReportingContextBuilder_.addMessage(builderForValue.build());
           }
           return this;
         }
@@ -4305,24 +4341,24 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Issue severity per destination.
+         * Issue severity per reporting context.
          * </pre>
          *
          * <code>
-         * repeated .google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity.IssueSeverityPerDestination severity_per_destination = 1;
+         * repeated .google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity.IssueSeverityPerReportingContext severity_per_reporting_context = 1;
          * </code>
          */
-        public Builder addSeverityPerDestination(
+        public Builder addSeverityPerReportingContext(
             int index,
             com.google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity
-                    .IssueSeverityPerDestination.Builder
+                    .IssueSeverityPerReportingContext.Builder
                 builderForValue) {
-          if (severityPerDestinationBuilder_ == null) {
-            ensureSeverityPerDestinationIsMutable();
-            severityPerDestination_.add(index, builderForValue.build());
+          if (severityPerReportingContextBuilder_ == null) {
+            ensureSeverityPerReportingContextIsMutable();
+            severityPerReportingContext_.add(index, builderForValue.build());
             onChanged();
           } else {
-            severityPerDestinationBuilder_.addMessage(index, builderForValue.build());
+            severityPerReportingContextBuilder_.addMessage(index, builderForValue.build());
           }
           return this;
         }
@@ -4330,25 +4366,26 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Issue severity per destination.
+         * Issue severity per reporting context.
          * </pre>
          *
          * <code>
-         * repeated .google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity.IssueSeverityPerDestination severity_per_destination = 1;
+         * repeated .google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity.IssueSeverityPerReportingContext severity_per_reporting_context = 1;
          * </code>
          */
-        public Builder addAllSeverityPerDestination(
+        public Builder addAllSeverityPerReportingContext(
             java.lang.Iterable<
                     ? extends
                         com.google.shopping.merchant.reports.v1beta.ProductView.ItemIssue
-                            .ItemIssueSeverity.IssueSeverityPerDestination>
+                            .ItemIssueSeverity.IssueSeverityPerReportingContext>
                 values) {
-          if (severityPerDestinationBuilder_ == null) {
-            ensureSeverityPerDestinationIsMutable();
-            com.google.protobuf.AbstractMessageLite.Builder.addAll(values, severityPerDestination_);
+          if (severityPerReportingContextBuilder_ == null) {
+            ensureSeverityPerReportingContextIsMutable();
+            com.google.protobuf.AbstractMessageLite.Builder.addAll(
+                values, severityPerReportingContext_);
             onChanged();
           } else {
-            severityPerDestinationBuilder_.addAllMessages(values);
+            severityPerReportingContextBuilder_.addAllMessages(values);
           }
           return this;
         }
@@ -4356,20 +4393,20 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Issue severity per destination.
+         * Issue severity per reporting context.
          * </pre>
          *
          * <code>
-         * repeated .google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity.IssueSeverityPerDestination severity_per_destination = 1;
+         * repeated .google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity.IssueSeverityPerReportingContext severity_per_reporting_context = 1;
          * </code>
          */
-        public Builder clearSeverityPerDestination() {
-          if (severityPerDestinationBuilder_ == null) {
-            severityPerDestination_ = java.util.Collections.emptyList();
+        public Builder clearSeverityPerReportingContext() {
+          if (severityPerReportingContextBuilder_ == null) {
+            severityPerReportingContext_ = java.util.Collections.emptyList();
             bitField0_ = (bitField0_ & ~0x00000001);
             onChanged();
           } else {
-            severityPerDestinationBuilder_.clear();
+            severityPerReportingContextBuilder_.clear();
           }
           return this;
         }
@@ -4377,20 +4414,20 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Issue severity per destination.
+         * Issue severity per reporting context.
          * </pre>
          *
          * <code>
-         * repeated .google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity.IssueSeverityPerDestination severity_per_destination = 1;
+         * repeated .google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity.IssueSeverityPerReportingContext severity_per_reporting_context = 1;
          * </code>
          */
-        public Builder removeSeverityPerDestination(int index) {
-          if (severityPerDestinationBuilder_ == null) {
-            ensureSeverityPerDestinationIsMutable();
-            severityPerDestination_.remove(index);
+        public Builder removeSeverityPerReportingContext(int index) {
+          if (severityPerReportingContextBuilder_ == null) {
+            ensureSeverityPerReportingContextIsMutable();
+            severityPerReportingContext_.remove(index);
             onChanged();
           } else {
-            severityPerDestinationBuilder_.remove(index);
+            severityPerReportingContextBuilder_.remove(index);
           }
           return this;
         }
@@ -4398,141 +4435,141 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Issue severity per destination.
+         * Issue severity per reporting context.
          * </pre>
          *
          * <code>
-         * repeated .google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity.IssueSeverityPerDestination severity_per_destination = 1;
+         * repeated .google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity.IssueSeverityPerReportingContext severity_per_reporting_context = 1;
          * </code>
          */
         public com.google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity
-                .IssueSeverityPerDestination.Builder
-            getSeverityPerDestinationBuilder(int index) {
-          return getSeverityPerDestinationFieldBuilder().getBuilder(index);
+                .IssueSeverityPerReportingContext.Builder
+            getSeverityPerReportingContextBuilder(int index) {
+          return getSeverityPerReportingContextFieldBuilder().getBuilder(index);
         }
         /**
          *
          *
          * <pre>
-         * Issue severity per destination.
+         * Issue severity per reporting context.
          * </pre>
          *
          * <code>
-         * repeated .google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity.IssueSeverityPerDestination severity_per_destination = 1;
+         * repeated .google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity.IssueSeverityPerReportingContext severity_per_reporting_context = 1;
          * </code>
          */
         public com.google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity
-                .IssueSeverityPerDestinationOrBuilder
-            getSeverityPerDestinationOrBuilder(int index) {
-          if (severityPerDestinationBuilder_ == null) {
-            return severityPerDestination_.get(index);
+                .IssueSeverityPerReportingContextOrBuilder
+            getSeverityPerReportingContextOrBuilder(int index) {
+          if (severityPerReportingContextBuilder_ == null) {
+            return severityPerReportingContext_.get(index);
           } else {
-            return severityPerDestinationBuilder_.getMessageOrBuilder(index);
+            return severityPerReportingContextBuilder_.getMessageOrBuilder(index);
           }
         }
         /**
          *
          *
          * <pre>
-         * Issue severity per destination.
+         * Issue severity per reporting context.
          * </pre>
          *
          * <code>
-         * repeated .google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity.IssueSeverityPerDestination severity_per_destination = 1;
+         * repeated .google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity.IssueSeverityPerReportingContext severity_per_reporting_context = 1;
          * </code>
          */
         public java.util.List<
                 ? extends
                     com.google.shopping.merchant.reports.v1beta.ProductView.ItemIssue
-                        .ItemIssueSeverity.IssueSeverityPerDestinationOrBuilder>
-            getSeverityPerDestinationOrBuilderList() {
-          if (severityPerDestinationBuilder_ != null) {
-            return severityPerDestinationBuilder_.getMessageOrBuilderList();
+                        .ItemIssueSeverity.IssueSeverityPerReportingContextOrBuilder>
+            getSeverityPerReportingContextOrBuilderList() {
+          if (severityPerReportingContextBuilder_ != null) {
+            return severityPerReportingContextBuilder_.getMessageOrBuilderList();
           } else {
-            return java.util.Collections.unmodifiableList(severityPerDestination_);
+            return java.util.Collections.unmodifiableList(severityPerReportingContext_);
           }
         }
         /**
          *
          *
          * <pre>
-         * Issue severity per destination.
+         * Issue severity per reporting context.
          * </pre>
          *
          * <code>
-         * repeated .google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity.IssueSeverityPerDestination severity_per_destination = 1;
+         * repeated .google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity.IssueSeverityPerReportingContext severity_per_reporting_context = 1;
          * </code>
          */
         public com.google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity
-                .IssueSeverityPerDestination.Builder
-            addSeverityPerDestinationBuilder() {
-          return getSeverityPerDestinationFieldBuilder()
+                .IssueSeverityPerReportingContext.Builder
+            addSeverityPerReportingContextBuilder() {
+          return getSeverityPerReportingContextFieldBuilder()
               .addBuilder(
                   com.google.shopping.merchant.reports.v1beta.ProductView.ItemIssue
-                      .ItemIssueSeverity.IssueSeverityPerDestination.getDefaultInstance());
+                      .ItemIssueSeverity.IssueSeverityPerReportingContext.getDefaultInstance());
         }
         /**
          *
          *
          * <pre>
-         * Issue severity per destination.
+         * Issue severity per reporting context.
          * </pre>
          *
          * <code>
-         * repeated .google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity.IssueSeverityPerDestination severity_per_destination = 1;
+         * repeated .google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity.IssueSeverityPerReportingContext severity_per_reporting_context = 1;
          * </code>
          */
         public com.google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity
-                .IssueSeverityPerDestination.Builder
-            addSeverityPerDestinationBuilder(int index) {
-          return getSeverityPerDestinationFieldBuilder()
+                .IssueSeverityPerReportingContext.Builder
+            addSeverityPerReportingContextBuilder(int index) {
+          return getSeverityPerReportingContextFieldBuilder()
               .addBuilder(
                   index,
                   com.google.shopping.merchant.reports.v1beta.ProductView.ItemIssue
-                      .ItemIssueSeverity.IssueSeverityPerDestination.getDefaultInstance());
+                      .ItemIssueSeverity.IssueSeverityPerReportingContext.getDefaultInstance());
         }
         /**
          *
          *
          * <pre>
-         * Issue severity per destination.
+         * Issue severity per reporting context.
          * </pre>
          *
          * <code>
-         * repeated .google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity.IssueSeverityPerDestination severity_per_destination = 1;
+         * repeated .google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity.IssueSeverityPerReportingContext severity_per_reporting_context = 1;
          * </code>
          */
         public java.util.List<
                 com.google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity
-                    .IssueSeverityPerDestination.Builder>
-            getSeverityPerDestinationBuilderList() {
-          return getSeverityPerDestinationFieldBuilder().getBuilderList();
+                    .IssueSeverityPerReportingContext.Builder>
+            getSeverityPerReportingContextBuilderList() {
+          return getSeverityPerReportingContextFieldBuilder().getBuilderList();
         }
 
         private com.google.protobuf.RepeatedFieldBuilderV3<
                 com.google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity
-                    .IssueSeverityPerDestination,
+                    .IssueSeverityPerReportingContext,
                 com.google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity
-                    .IssueSeverityPerDestination.Builder,
+                    .IssueSeverityPerReportingContext.Builder,
                 com.google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.ItemIssueSeverity
-                    .IssueSeverityPerDestinationOrBuilder>
-            getSeverityPerDestinationFieldBuilder() {
-          if (severityPerDestinationBuilder_ == null) {
-            severityPerDestinationBuilder_ =
+                    .IssueSeverityPerReportingContextOrBuilder>
+            getSeverityPerReportingContextFieldBuilder() {
+          if (severityPerReportingContextBuilder_ == null) {
+            severityPerReportingContextBuilder_ =
                 new com.google.protobuf.RepeatedFieldBuilderV3<
                     com.google.shopping.merchant.reports.v1beta.ProductView.ItemIssue
-                        .ItemIssueSeverity.IssueSeverityPerDestination,
+                        .ItemIssueSeverity.IssueSeverityPerReportingContext,
                     com.google.shopping.merchant.reports.v1beta.ProductView.ItemIssue
-                        .ItemIssueSeverity.IssueSeverityPerDestination.Builder,
+                        .ItemIssueSeverity.IssueSeverityPerReportingContext.Builder,
                     com.google.shopping.merchant.reports.v1beta.ProductView.ItemIssue
-                        .ItemIssueSeverity.IssueSeverityPerDestinationOrBuilder>(
-                    severityPerDestination_,
+                        .ItemIssueSeverity.IssueSeverityPerReportingContextOrBuilder>(
+                    severityPerReportingContext_,
                     ((bitField0_ & 0x00000001) != 0),
                     getParentForChildren(),
                     isClean());
-            severityPerDestination_ = null;
+            severityPerReportingContext_ = null;
           }
-          return severityPerDestinationBuilder_;
+          return severityPerReportingContextBuilder_;
         }
 
         private int aggregatedSeverity_ = 0;
@@ -4540,7 +4577,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Aggregated severity of the issue for all destinations it affects.
+         * Aggregated severity of the issue for all reporting contexts it affects.
          *
          * **This field can be used for filtering the results.**
          * </pre>
@@ -4559,7 +4596,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Aggregated severity of the issue for all destinations it affects.
+         * Aggregated severity of the issue for all reporting contexts it affects.
          *
          * **This field can be used for filtering the results.**
          * </pre>
@@ -4578,7 +4615,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Aggregated severity of the issue for all destinations it affects.
+         * Aggregated severity of the issue for all reporting contexts it affects.
          *
          * **This field can be used for filtering the results.**
          * </pre>
@@ -4600,7 +4637,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Aggregated severity of the issue for all destinations it affects.
+         * Aggregated severity of the issue for all reporting contexts it affects.
          *
          * **This field can be used for filtering the results.**
          * </pre>
@@ -4629,7 +4666,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Aggregated severity of the issue for all destinations it affects.
+         * Aggregated severity of the issue for all reporting contexts it affects.
          *
          * **This field can be used for filtering the results.**
          * </pre>
@@ -4657,7 +4694,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Aggregated severity of the issue for all destinations it affects.
+         * Aggregated severity of the issue for all reporting contexts it affects.
          *
          * **This field can be used for filtering the results.**
          * </pre>
@@ -5994,9 +6031,9 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * REST ID of the product, in the form of languageCode~feedLabel~offerId.
-   * Merchant API methods that operate on products take this as their `name`
-   * parameter.
+   * REST ID of the product, in the form of
+   * `channel~languageCode~feedLabel~offerId`. Merchant API methods that operate
+   * on products take this as their `name` parameter.
    *
    * Required in the `SELECT` clause.
    * </pre>
@@ -6013,9 +6050,9 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * REST ID of the product, in the form of languageCode~feedLabel~offerId.
-   * Merchant API methods that operate on products take this as their `name`
-   * parameter.
+   * REST ID of the product, in the form of
+   * `channel~languageCode~feedLabel~offerId`. Merchant API methods that operate
+   * on products take this as their `name` parameter.
    *
    * Required in the `SELECT` clause.
    * </pre>
@@ -6040,9 +6077,9 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * REST ID of the product, in the form of languageCode~feedLabel~offerId.
-   * Merchant API methods that operate on products take this as their `name`
-   * parameter.
+   * REST ID of the product, in the form of
+   * `channel~languageCode~feedLabel~offerId`. Merchant API methods that operate
+   * on products take this as their `name` parameter.
    *
    * Required in the `SELECT` clause.
    * </pre>
@@ -6064,6 +6101,56 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int CHANNEL_FIELD_NUMBER = 28;
+  private int channel_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Channel of the product. Can be `ONLINE` or `LOCAL`.
+   * </pre>
+   *
+   * <code>optional .google.shopping.type.Channel.ChannelEnum channel = 28;</code>
+   *
+   * @return Whether the channel field is set.
+   */
+  @java.lang.Override
+  public boolean hasChannel() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Channel of the product. Can be `ONLINE` or `LOCAL`.
+   * </pre>
+   *
+   * <code>optional .google.shopping.type.Channel.ChannelEnum channel = 28;</code>
+   *
+   * @return The enum numeric value on the wire for channel.
+   */
+  @java.lang.Override
+  public int getChannelValue() {
+    return channel_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Channel of the product. Can be `ONLINE` or `LOCAL`.
+   * </pre>
+   *
+   * <code>optional .google.shopping.type.Channel.ChannelEnum channel = 28;</code>
+   *
+   * @return The channel.
+   */
+  @java.lang.Override
+  public com.google.shopping.type.Channel.ChannelEnum getChannel() {
+    com.google.shopping.type.Channel.ChannelEnum result =
+        com.google.shopping.type.Channel.ChannelEnum.forNumber(channel_);
+    return result == null ? com.google.shopping.type.Channel.ChannelEnum.UNRECOGNIZED : result;
+  }
+
   public static final int LANGUAGE_CODE_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
@@ -6081,7 +6168,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasLanguageCode() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
   /**
    *
@@ -6147,7 +6234,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasFeedLabel() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
   /**
    *
@@ -6213,7 +6300,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasOfferId() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
   /**
    *
@@ -6279,7 +6366,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasTitle() {
-    return ((bitField0_ & 0x00000010) != 0);
+    return ((bitField0_ & 0x00000020) != 0);
   }
   /**
    *
@@ -6345,7 +6432,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasBrand() {
-    return ((bitField0_ & 0x00000020) != 0);
+    return ((bitField0_ & 0x00000040) != 0);
   }
   /**
    *
@@ -6412,7 +6499,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasCategoryL1() {
-    return ((bitField0_ & 0x00000040) != 0);
+    return ((bitField0_ & 0x00000080) != 0);
   }
   /**
    *
@@ -6481,7 +6568,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasCategoryL2() {
-    return ((bitField0_ & 0x00000080) != 0);
+    return ((bitField0_ & 0x00000100) != 0);
   }
   /**
    *
@@ -6550,7 +6637,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasCategoryL3() {
-    return ((bitField0_ & 0x00000100) != 0);
+    return ((bitField0_ & 0x00000200) != 0);
   }
   /**
    *
@@ -6619,7 +6706,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasCategoryL4() {
-    return ((bitField0_ & 0x00000200) != 0);
+    return ((bitField0_ & 0x00000400) != 0);
   }
   /**
    *
@@ -6688,7 +6775,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasCategoryL5() {
-    return ((bitField0_ & 0x00000400) != 0);
+    return ((bitField0_ & 0x00000800) != 0);
   }
   /**
    *
@@ -6757,7 +6844,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasProductTypeL1() {
-    return ((bitField0_ & 0x00000800) != 0);
+    return ((bitField0_ & 0x00001000) != 0);
   }
   /**
    *
@@ -6826,7 +6913,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasProductTypeL2() {
-    return ((bitField0_ & 0x00001000) != 0);
+    return ((bitField0_ & 0x00002000) != 0);
   }
   /**
    *
@@ -6895,7 +6982,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasProductTypeL3() {
-    return ((bitField0_ & 0x00002000) != 0);
+    return ((bitField0_ & 0x00004000) != 0);
   }
   /**
    *
@@ -6964,7 +7051,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasProductTypeL4() {
-    return ((bitField0_ & 0x00004000) != 0);
+    return ((bitField0_ & 0x00008000) != 0);
   }
   /**
    *
@@ -7033,7 +7120,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasProductTypeL5() {
-    return ((bitField0_ & 0x00008000) != 0);
+    return ((bitField0_ & 0x00010000) != 0);
   }
   /**
    *
@@ -7151,7 +7238,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasCondition() {
-    return ((bitField0_ & 0x00010000) != 0);
+    return ((bitField0_ & 0x00020000) != 0);
   }
   /**
    *
@@ -7220,7 +7307,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasAvailability() {
-    return ((bitField0_ & 0x00020000) != 0);
+    return ((bitField0_ & 0x00040000) != 0);
   }
   /**
    *
@@ -7290,7 +7377,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasShippingLabel() {
-    return ((bitField0_ & 0x00040000) != 0);
+    return ((bitField0_ & 0x00080000) != 0);
   }
   /**
    *
@@ -7424,7 +7511,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasItemGroupId() {
-    return ((bitField0_ & 0x00080000) != 0);
+    return ((bitField0_ & 0x00100000) != 0);
   }
   /**
    *
@@ -7491,7 +7578,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasThumbnailLink() {
-    return ((bitField0_ & 0x00100000) != 0);
+    return ((bitField0_ & 0x00200000) != 0);
   }
   /**
    *
@@ -7638,63 +7725,64 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
     return expirationDate_ == null ? com.google.type.Date.getDefaultInstance() : expirationDate_;
   }
 
-  public static final int AGGREGATED_DESTINATION_STATUS_FIELD_NUMBER = 26;
-  private int aggregatedDestinationStatus_ = 0;
+  public static final int AGGREGATED_REPORTING_CONTEXT_STATUS_FIELD_NUMBER = 26;
+  private int aggregatedReportingContextStatus_ = 0;
   /**
    *
    *
    * <pre>
-   * Aggregated destination status.
+   * Aggregated status.
    * </pre>
    *
    * <code>
-   * optional .google.shopping.merchant.reports.v1beta.ProductView.AggregatedDestinationStatus aggregated_destination_status = 26;
+   * optional .google.shopping.merchant.reports.v1beta.ProductView.AggregatedReportingContextStatus aggregated_reporting_context_status = 26;
    * </code>
    *
-   * @return Whether the aggregatedDestinationStatus field is set.
+   * @return Whether the aggregatedReportingContextStatus field is set.
    */
   @java.lang.Override
-  public boolean hasAggregatedDestinationStatus() {
-    return ((bitField0_ & 0x00200000) != 0);
+  public boolean hasAggregatedReportingContextStatus() {
+    return ((bitField0_ & 0x00400000) != 0);
   }
   /**
    *
    *
    * <pre>
-   * Aggregated destination status.
+   * Aggregated status.
    * </pre>
    *
    * <code>
-   * optional .google.shopping.merchant.reports.v1beta.ProductView.AggregatedDestinationStatus aggregated_destination_status = 26;
+   * optional .google.shopping.merchant.reports.v1beta.ProductView.AggregatedReportingContextStatus aggregated_reporting_context_status = 26;
    * </code>
    *
-   * @return The enum numeric value on the wire for aggregatedDestinationStatus.
+   * @return The enum numeric value on the wire for aggregatedReportingContextStatus.
    */
   @java.lang.Override
-  public int getAggregatedDestinationStatusValue() {
-    return aggregatedDestinationStatus_;
+  public int getAggregatedReportingContextStatusValue() {
+    return aggregatedReportingContextStatus_;
   }
   /**
    *
    *
    * <pre>
-   * Aggregated destination status.
+   * Aggregated status.
    * </pre>
    *
    * <code>
-   * optional .google.shopping.merchant.reports.v1beta.ProductView.AggregatedDestinationStatus aggregated_destination_status = 26;
+   * optional .google.shopping.merchant.reports.v1beta.ProductView.AggregatedReportingContextStatus aggregated_reporting_context_status = 26;
    * </code>
    *
-   * @return The aggregatedDestinationStatus.
+   * @return The aggregatedReportingContextStatus.
    */
   @java.lang.Override
-  public com.google.shopping.merchant.reports.v1beta.ProductView.AggregatedDestinationStatus
-      getAggregatedDestinationStatus() {
-    com.google.shopping.merchant.reports.v1beta.ProductView.AggregatedDestinationStatus result =
-        com.google.shopping.merchant.reports.v1beta.ProductView.AggregatedDestinationStatus
-            .forNumber(aggregatedDestinationStatus_);
+  public com.google.shopping.merchant.reports.v1beta.ProductView.AggregatedReportingContextStatus
+      getAggregatedReportingContextStatus() {
+    com.google.shopping.merchant.reports.v1beta.ProductView.AggregatedReportingContextStatus
+        result =
+            com.google.shopping.merchant.reports.v1beta.ProductView.AggregatedReportingContextStatus
+                .forNumber(aggregatedReportingContextStatus_);
     return result == null
-        ? com.google.shopping.merchant.reports.v1beta.ProductView.AggregatedDestinationStatus
+        ? com.google.shopping.merchant.reports.v1beta.ProductView.AggregatedReportingContextStatus
             .UNRECOGNIZED
         : result;
   }
@@ -7827,70 +7915,70 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, languageCode_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, feedLabel_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, offerId_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, title_);
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, brand_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, categoryL1_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, categoryL2_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, categoryL3_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, categoryL4_);
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 11, categoryL5_);
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 12, productTypeL1_);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 13, productTypeL2_);
     }
-    if (((bitField0_ & 0x00002000) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 14, productTypeL3_);
     }
-    if (((bitField0_ & 0x00004000) != 0)) {
+    if (((bitField0_ & 0x00008000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 15, productTypeL4_);
     }
-    if (((bitField0_ & 0x00008000) != 0)) {
+    if (((bitField0_ & 0x00010000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 16, productTypeL5_);
     }
     if (price_ != null) {
       output.writeMessage(17, getPrice());
     }
-    if (((bitField0_ & 0x00010000) != 0)) {
+    if (((bitField0_ & 0x00020000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 18, condition_);
     }
-    if (((bitField0_ & 0x00020000) != 0)) {
+    if (((bitField0_ & 0x00040000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 19, availability_);
     }
-    if (((bitField0_ & 0x00040000) != 0)) {
+    if (((bitField0_ & 0x00080000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 20, shippingLabel_);
     }
     for (int i = 0; i < gtin_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 21, gtin_.getRaw(i));
     }
-    if (((bitField0_ & 0x00080000) != 0)) {
+    if (((bitField0_ & 0x00100000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 22, itemGroupId_);
     }
-    if (((bitField0_ & 0x00100000) != 0)) {
+    if (((bitField0_ & 0x00200000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 23, thumbnailLink_);
     }
     if (creationTime_ != null) {
@@ -7899,11 +7987,14 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
     if (expirationDate_ != null) {
       output.writeMessage(25, getExpirationDate());
     }
-    if (((bitField0_ & 0x00200000) != 0)) {
-      output.writeEnum(26, aggregatedDestinationStatus_);
+    if (((bitField0_ & 0x00400000) != 0)) {
+      output.writeEnum(26, aggregatedReportingContextStatus_);
     }
     for (int i = 0; i < itemIssues_.size(); i++) {
       output.writeMessage(27, itemIssues_.get(i));
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeEnum(28, channel_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -7917,61 +8008,61 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, languageCode_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, feedLabel_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, offerId_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, title_);
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, brand_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, categoryL1_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, categoryL2_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, categoryL3_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, categoryL4_);
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, categoryL5_);
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, productTypeL1_);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, productTypeL2_);
     }
-    if (((bitField0_ & 0x00002000) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, productTypeL3_);
     }
-    if (((bitField0_ & 0x00004000) != 0)) {
+    if (((bitField0_ & 0x00008000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, productTypeL4_);
     }
-    if (((bitField0_ & 0x00008000) != 0)) {
+    if (((bitField0_ & 0x00010000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, productTypeL5_);
     }
     if (price_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(17, getPrice());
     }
-    if (((bitField0_ & 0x00010000) != 0)) {
+    if (((bitField0_ & 0x00020000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, condition_);
     }
-    if (((bitField0_ & 0x00020000) != 0)) {
+    if (((bitField0_ & 0x00040000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(19, availability_);
     }
-    if (((bitField0_ & 0x00040000) != 0)) {
+    if (((bitField0_ & 0x00080000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(20, shippingLabel_);
     }
     {
@@ -7982,10 +8073,10 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 2 * getGtinList().size();
     }
-    if (((bitField0_ & 0x00080000) != 0)) {
+    if (((bitField0_ & 0x00100000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(22, itemGroupId_);
     }
-    if (((bitField0_ & 0x00100000) != 0)) {
+    if (((bitField0_ & 0x00200000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(23, thumbnailLink_);
     }
     if (creationTime_ != null) {
@@ -7994,12 +8085,16 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
     if (expirationDate_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(25, getExpirationDate());
     }
-    if (((bitField0_ & 0x00200000) != 0)) {
+    if (((bitField0_ & 0x00400000) != 0)) {
       size +=
-          com.google.protobuf.CodedOutputStream.computeEnumSize(26, aggregatedDestinationStatus_);
+          com.google.protobuf.CodedOutputStream.computeEnumSize(
+              26, aggregatedReportingContextStatus_);
     }
     for (int i = 0; i < itemIssues_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(27, itemIssues_.get(i));
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(28, channel_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -8020,6 +8115,10 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
     if (hasId() != other.hasId()) return false;
     if (hasId()) {
       if (!getId().equals(other.getId())) return false;
+    }
+    if (hasChannel() != other.hasChannel()) return false;
+    if (hasChannel()) {
+      if (channel_ != other.channel_) return false;
     }
     if (hasLanguageCode() != other.hasLanguageCode()) return false;
     if (hasLanguageCode()) {
@@ -8114,9 +8213,11 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
     if (hasExpirationDate()) {
       if (!getExpirationDate().equals(other.getExpirationDate())) return false;
     }
-    if (hasAggregatedDestinationStatus() != other.hasAggregatedDestinationStatus()) return false;
-    if (hasAggregatedDestinationStatus()) {
-      if (aggregatedDestinationStatus_ != other.aggregatedDestinationStatus_) return false;
+    if (hasAggregatedReportingContextStatus() != other.hasAggregatedReportingContextStatus())
+      return false;
+    if (hasAggregatedReportingContextStatus()) {
+      if (aggregatedReportingContextStatus_ != other.aggregatedReportingContextStatus_)
+        return false;
     }
     if (!getItemIssuesList().equals(other.getItemIssuesList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
@@ -8133,6 +8234,10 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
     if (hasId()) {
       hash = (37 * hash) + ID_FIELD_NUMBER;
       hash = (53 * hash) + getId().hashCode();
+    }
+    if (hasChannel()) {
+      hash = (37 * hash) + CHANNEL_FIELD_NUMBER;
+      hash = (53 * hash) + channel_;
     }
     if (hasLanguageCode()) {
       hash = (37 * hash) + LANGUAGE_CODE_FIELD_NUMBER;
@@ -8230,9 +8335,9 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + EXPIRATION_DATE_FIELD_NUMBER;
       hash = (53 * hash) + getExpirationDate().hashCode();
     }
-    if (hasAggregatedDestinationStatus()) {
-      hash = (37 * hash) + AGGREGATED_DESTINATION_STATUS_FIELD_NUMBER;
-      hash = (53 * hash) + aggregatedDestinationStatus_;
+    if (hasAggregatedReportingContextStatus()) {
+      hash = (37 * hash) + AGGREGATED_REPORTING_CONTEXT_STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + aggregatedReportingContextStatus_;
     }
     if (getItemIssuesCount() > 0) {
       hash = (37 * hash) + ITEM_ISSUES_FIELD_NUMBER;
@@ -8389,6 +8494,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       bitField0_ = 0;
       id_ = "";
+      channel_ = 0;
       languageCode_ = "";
       feedLabel_ = "";
       offerId_ = "";
@@ -8425,14 +8531,14 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
         expirationDateBuilder_.dispose();
         expirationDateBuilder_ = null;
       }
-      aggregatedDestinationStatus_ = 0;
+      aggregatedReportingContextStatus_ = 0;
       if (itemIssuesBuilder_ == null) {
         itemIssues_ = java.util.Collections.emptyList();
       } else {
         itemIssues_ = null;
         itemIssuesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x04000000);
+      bitField0_ = (bitField0_ & ~0x08000000);
       return this;
     }
 
@@ -8471,9 +8577,9 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
     private void buildPartialRepeatedFields(
         com.google.shopping.merchant.reports.v1beta.ProductView result) {
       if (itemIssuesBuilder_ == null) {
-        if (((bitField0_ & 0x04000000) != 0)) {
+        if (((bitField0_ & 0x08000000) != 0)) {
           itemIssues_ = java.util.Collections.unmodifiableList(itemIssues_);
-          bitField0_ = (bitField0_ & ~0x04000000);
+          bitField0_ = (bitField0_ & ~0x08000000);
         }
         result.itemIssues_ = itemIssues_;
       } else {
@@ -8489,103 +8595,107 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.languageCode_ = languageCode_;
+        result.channel_ = channel_;
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.feedLabel_ = feedLabel_;
+        result.languageCode_ = languageCode_;
         to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.offerId_ = offerId_;
+        result.feedLabel_ = feedLabel_;
         to_bitField0_ |= 0x00000008;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.title_ = title_;
+        result.offerId_ = offerId_;
         to_bitField0_ |= 0x00000010;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.brand_ = brand_;
+        result.title_ = title_;
         to_bitField0_ |= 0x00000020;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.categoryL1_ = categoryL1_;
+        result.brand_ = brand_;
         to_bitField0_ |= 0x00000040;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
-        result.categoryL2_ = categoryL2_;
+        result.categoryL1_ = categoryL1_;
         to_bitField0_ |= 0x00000080;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
-        result.categoryL3_ = categoryL3_;
+        result.categoryL2_ = categoryL2_;
         to_bitField0_ |= 0x00000100;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
-        result.categoryL4_ = categoryL4_;
+        result.categoryL3_ = categoryL3_;
         to_bitField0_ |= 0x00000200;
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
-        result.categoryL5_ = categoryL5_;
+        result.categoryL4_ = categoryL4_;
         to_bitField0_ |= 0x00000400;
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
-        result.productTypeL1_ = productTypeL1_;
+        result.categoryL5_ = categoryL5_;
         to_bitField0_ |= 0x00000800;
       }
       if (((from_bitField0_ & 0x00001000) != 0)) {
-        result.productTypeL2_ = productTypeL2_;
+        result.productTypeL1_ = productTypeL1_;
         to_bitField0_ |= 0x00001000;
       }
       if (((from_bitField0_ & 0x00002000) != 0)) {
-        result.productTypeL3_ = productTypeL3_;
+        result.productTypeL2_ = productTypeL2_;
         to_bitField0_ |= 0x00002000;
       }
       if (((from_bitField0_ & 0x00004000) != 0)) {
-        result.productTypeL4_ = productTypeL4_;
+        result.productTypeL3_ = productTypeL3_;
         to_bitField0_ |= 0x00004000;
       }
       if (((from_bitField0_ & 0x00008000) != 0)) {
-        result.productTypeL5_ = productTypeL5_;
+        result.productTypeL4_ = productTypeL4_;
         to_bitField0_ |= 0x00008000;
       }
       if (((from_bitField0_ & 0x00010000) != 0)) {
-        result.price_ = priceBuilder_ == null ? price_ : priceBuilder_.build();
-      }
-      if (((from_bitField0_ & 0x00020000) != 0)) {
-        result.condition_ = condition_;
+        result.productTypeL5_ = productTypeL5_;
         to_bitField0_ |= 0x00010000;
       }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.price_ = priceBuilder_ == null ? price_ : priceBuilder_.build();
+      }
       if (((from_bitField0_ & 0x00040000) != 0)) {
-        result.availability_ = availability_;
+        result.condition_ = condition_;
         to_bitField0_ |= 0x00020000;
       }
       if (((from_bitField0_ & 0x00080000) != 0)) {
-        result.shippingLabel_ = shippingLabel_;
+        result.availability_ = availability_;
         to_bitField0_ |= 0x00040000;
       }
       if (((from_bitField0_ & 0x00100000) != 0)) {
+        result.shippingLabel_ = shippingLabel_;
+        to_bitField0_ |= 0x00080000;
+      }
+      if (((from_bitField0_ & 0x00200000) != 0)) {
         gtin_.makeImmutable();
         result.gtin_ = gtin_;
       }
-      if (((from_bitField0_ & 0x00200000) != 0)) {
-        result.itemGroupId_ = itemGroupId_;
-        to_bitField0_ |= 0x00080000;
-      }
       if (((from_bitField0_ & 0x00400000) != 0)) {
-        result.thumbnailLink_ = thumbnailLink_;
+        result.itemGroupId_ = itemGroupId_;
         to_bitField0_ |= 0x00100000;
       }
       if (((from_bitField0_ & 0x00800000) != 0)) {
+        result.thumbnailLink_ = thumbnailLink_;
+        to_bitField0_ |= 0x00200000;
+      }
+      if (((from_bitField0_ & 0x01000000) != 0)) {
         result.creationTime_ =
             creationTimeBuilder_ == null ? creationTime_ : creationTimeBuilder_.build();
       }
-      if (((from_bitField0_ & 0x01000000) != 0)) {
+      if (((from_bitField0_ & 0x02000000) != 0)) {
         result.expirationDate_ =
             expirationDateBuilder_ == null ? expirationDate_ : expirationDateBuilder_.build();
       }
-      if (((from_bitField0_ & 0x02000000) != 0)) {
-        result.aggregatedDestinationStatus_ = aggregatedDestinationStatus_;
-        to_bitField0_ |= 0x00200000;
+      if (((from_bitField0_ & 0x04000000) != 0)) {
+        result.aggregatedReportingContextStatus_ = aggregatedReportingContextStatus_;
+        to_bitField0_ |= 0x00400000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -8641,79 +8751,82 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000001;
         onChanged();
       }
+      if (other.hasChannel()) {
+        setChannel(other.getChannel());
+      }
       if (other.hasLanguageCode()) {
         languageCode_ = other.languageCode_;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasFeedLabel()) {
         feedLabel_ = other.feedLabel_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasOfferId()) {
         offerId_ = other.offerId_;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.hasTitle()) {
         title_ = other.title_;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.hasBrand()) {
         brand_ = other.brand_;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (other.hasCategoryL1()) {
         categoryL1_ = other.categoryL1_;
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (other.hasCategoryL2()) {
         categoryL2_ = other.categoryL2_;
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       if (other.hasCategoryL3()) {
         categoryL3_ = other.categoryL3_;
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       if (other.hasCategoryL4()) {
         categoryL4_ = other.categoryL4_;
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       if (other.hasCategoryL5()) {
         categoryL5_ = other.categoryL5_;
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       if (other.hasProductTypeL1()) {
         productTypeL1_ = other.productTypeL1_;
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       if (other.hasProductTypeL2()) {
         productTypeL2_ = other.productTypeL2_;
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       if (other.hasProductTypeL3()) {
         productTypeL3_ = other.productTypeL3_;
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       if (other.hasProductTypeL4()) {
         productTypeL4_ = other.productTypeL4_;
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00008000;
         onChanged();
       }
       if (other.hasProductTypeL5()) {
         productTypeL5_ = other.productTypeL5_;
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00010000;
         onChanged();
       }
       if (other.hasPrice()) {
@@ -8721,23 +8834,23 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasCondition()) {
         condition_ = other.condition_;
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00040000;
         onChanged();
       }
       if (other.hasAvailability()) {
         availability_ = other.availability_;
-        bitField0_ |= 0x00040000;
+        bitField0_ |= 0x00080000;
         onChanged();
       }
       if (other.hasShippingLabel()) {
         shippingLabel_ = other.shippingLabel_;
-        bitField0_ |= 0x00080000;
+        bitField0_ |= 0x00100000;
         onChanged();
       }
       if (!other.gtin_.isEmpty()) {
         if (gtin_.isEmpty()) {
           gtin_ = other.gtin_;
-          bitField0_ |= 0x00100000;
+          bitField0_ |= 0x00200000;
         } else {
           ensureGtinIsMutable();
           gtin_.addAll(other.gtin_);
@@ -8746,12 +8859,12 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasItemGroupId()) {
         itemGroupId_ = other.itemGroupId_;
-        bitField0_ |= 0x00200000;
+        bitField0_ |= 0x00400000;
         onChanged();
       }
       if (other.hasThumbnailLink()) {
         thumbnailLink_ = other.thumbnailLink_;
-        bitField0_ |= 0x00400000;
+        bitField0_ |= 0x00800000;
         onChanged();
       }
       if (other.hasCreationTime()) {
@@ -8760,14 +8873,14 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
       if (other.hasExpirationDate()) {
         mergeExpirationDate(other.getExpirationDate());
       }
-      if (other.hasAggregatedDestinationStatus()) {
-        setAggregatedDestinationStatus(other.getAggregatedDestinationStatus());
+      if (other.hasAggregatedReportingContextStatus()) {
+        setAggregatedReportingContextStatus(other.getAggregatedReportingContextStatus());
       }
       if (itemIssuesBuilder_ == null) {
         if (!other.itemIssues_.isEmpty()) {
           if (itemIssues_.isEmpty()) {
             itemIssues_ = other.itemIssues_;
-            bitField0_ = (bitField0_ & ~0x04000000);
+            bitField0_ = (bitField0_ & ~0x08000000);
           } else {
             ensureItemIssuesIsMutable();
             itemIssues_.addAll(other.itemIssues_);
@@ -8780,7 +8893,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
             itemIssuesBuilder_.dispose();
             itemIssuesBuilder_ = null;
             itemIssues_ = other.itemIssues_;
-            bitField0_ = (bitField0_ & ~0x04000000);
+            bitField0_ = (bitField0_ & ~0x08000000);
             itemIssuesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getItemIssuesFieldBuilder()
@@ -8825,115 +8938,115 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
             case 18:
               {
                 languageCode_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 18
             case 26:
               {
                 feedLabel_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 26
             case 34:
               {
                 offerId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 34
             case 42:
               {
                 title_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 42
             case 50:
               {
                 brand_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 50
             case 58:
               {
                 categoryL1_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 58
             case 66:
               {
                 categoryL2_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 66
             case 74:
               {
                 categoryL3_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 74
             case 82:
               {
                 categoryL4_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 82
             case 90:
               {
                 categoryL5_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 90
             case 98:
               {
                 productTypeL1_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 98
             case 106:
               {
                 productTypeL2_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 106
             case 114:
               {
                 productTypeL3_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 114
             case 122:
               {
                 productTypeL4_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 122
             case 130:
               {
                 productTypeL5_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case 130
             case 138:
               {
                 input.readMessage(getPriceFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case 138
             case 146:
               {
                 condition_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case 146
             case 154:
               {
                 availability_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00040000;
+                bitField0_ |= 0x00080000;
                 break;
               } // case 154
             case 162:
               {
                 shippingLabel_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00080000;
+                bitField0_ |= 0x00100000;
                 break;
               } // case 162
             case 170:
@@ -8946,31 +9059,31 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
             case 178:
               {
                 itemGroupId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00200000;
+                bitField0_ |= 0x00400000;
                 break;
               } // case 178
             case 186:
               {
                 thumbnailLink_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00400000;
+                bitField0_ |= 0x00800000;
                 break;
               } // case 186
             case 194:
               {
                 input.readMessage(getCreationTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00800000;
+                bitField0_ |= 0x01000000;
                 break;
               } // case 194
             case 202:
               {
                 input.readMessage(getExpirationDateFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x01000000;
+                bitField0_ |= 0x02000000;
                 break;
               } // case 202
             case 208:
               {
-                aggregatedDestinationStatus_ = input.readEnum();
-                bitField0_ |= 0x02000000;
+                aggregatedReportingContextStatus_ = input.readEnum();
+                bitField0_ |= 0x04000000;
                 break;
               } // case 208
             case 218:
@@ -8987,6 +9100,12 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
                 }
                 break;
               } // case 218
+            case 224:
+              {
+                channel_ = input.readEnum();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 224
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -9011,9 +9130,9 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * REST ID of the product, in the form of languageCode~feedLabel~offerId.
-     * Merchant API methods that operate on products take this as their `name`
-     * parameter.
+     * REST ID of the product, in the form of
+     * `channel~languageCode~feedLabel~offerId`. Merchant API methods that operate
+     * on products take this as their `name` parameter.
      *
      * Required in the `SELECT` clause.
      * </pre>
@@ -9029,9 +9148,9 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * REST ID of the product, in the form of languageCode~feedLabel~offerId.
-     * Merchant API methods that operate on products take this as their `name`
-     * parameter.
+     * REST ID of the product, in the form of
+     * `channel~languageCode~feedLabel~offerId`. Merchant API methods that operate
+     * on products take this as their `name` parameter.
      *
      * Required in the `SELECT` clause.
      * </pre>
@@ -9055,9 +9174,9 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * REST ID of the product, in the form of languageCode~feedLabel~offerId.
-     * Merchant API methods that operate on products take this as their `name`
-     * parameter.
+     * REST ID of the product, in the form of
+     * `channel~languageCode~feedLabel~offerId`. Merchant API methods that operate
+     * on products take this as their `name` parameter.
      *
      * Required in the `SELECT` clause.
      * </pre>
@@ -9081,9 +9200,9 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * REST ID of the product, in the form of languageCode~feedLabel~offerId.
-     * Merchant API methods that operate on products take this as their `name`
-     * parameter.
+     * REST ID of the product, in the form of
+     * `channel~languageCode~feedLabel~offerId`. Merchant API methods that operate
+     * on products take this as their `name` parameter.
      *
      * Required in the `SELECT` clause.
      * </pre>
@@ -9106,9 +9225,9 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * REST ID of the product, in the form of languageCode~feedLabel~offerId.
-     * Merchant API methods that operate on products take this as their `name`
-     * parameter.
+     * REST ID of the product, in the form of
+     * `channel~languageCode~feedLabel~offerId`. Merchant API methods that operate
+     * on products take this as their `name` parameter.
      *
      * Required in the `SELECT` clause.
      * </pre>
@@ -9127,9 +9246,9 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * REST ID of the product, in the form of languageCode~feedLabel~offerId.
-     * Merchant API methods that operate on products take this as their `name`
-     * parameter.
+     * REST ID of the product, in the form of
+     * `channel~languageCode~feedLabel~offerId`. Merchant API methods that operate
+     * on products take this as their `name` parameter.
      *
      * Required in the `SELECT` clause.
      * </pre>
@@ -9150,6 +9269,111 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int channel_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Channel of the product. Can be `ONLINE` or `LOCAL`.
+     * </pre>
+     *
+     * <code>optional .google.shopping.type.Channel.ChannelEnum channel = 28;</code>
+     *
+     * @return Whether the channel field is set.
+     */
+    @java.lang.Override
+    public boolean hasChannel() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Channel of the product. Can be `ONLINE` or `LOCAL`.
+     * </pre>
+     *
+     * <code>optional .google.shopping.type.Channel.ChannelEnum channel = 28;</code>
+     *
+     * @return The enum numeric value on the wire for channel.
+     */
+    @java.lang.Override
+    public int getChannelValue() {
+      return channel_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Channel of the product. Can be `ONLINE` or `LOCAL`.
+     * </pre>
+     *
+     * <code>optional .google.shopping.type.Channel.ChannelEnum channel = 28;</code>
+     *
+     * @param value The enum numeric value on the wire for channel to set.
+     * @return This builder for chaining.
+     */
+    public Builder setChannelValue(int value) {
+      channel_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Channel of the product. Can be `ONLINE` or `LOCAL`.
+     * </pre>
+     *
+     * <code>optional .google.shopping.type.Channel.ChannelEnum channel = 28;</code>
+     *
+     * @return The channel.
+     */
+    @java.lang.Override
+    public com.google.shopping.type.Channel.ChannelEnum getChannel() {
+      com.google.shopping.type.Channel.ChannelEnum result =
+          com.google.shopping.type.Channel.ChannelEnum.forNumber(channel_);
+      return result == null ? com.google.shopping.type.Channel.ChannelEnum.UNRECOGNIZED : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Channel of the product. Can be `ONLINE` or `LOCAL`.
+     * </pre>
+     *
+     * <code>optional .google.shopping.type.Channel.ChannelEnum channel = 28;</code>
+     *
+     * @param value The channel to set.
+     * @return This builder for chaining.
+     */
+    public Builder setChannel(com.google.shopping.type.Channel.ChannelEnum value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000002;
+      channel_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Channel of the product. Can be `ONLINE` or `LOCAL`.
+     * </pre>
+     *
+     * <code>optional .google.shopping.type.Channel.ChannelEnum channel = 28;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearChannel() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      channel_ = 0;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object languageCode_ = "";
     /**
      *
@@ -9163,7 +9387,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the languageCode field is set.
      */
     public boolean hasLanguageCode() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -9226,7 +9450,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       languageCode_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -9243,7 +9467,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearLanguageCode() {
       languageCode_ = getDefaultInstance().getLanguageCode();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -9265,7 +9489,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       languageCode_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -9283,7 +9507,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the feedLabel field is set.
      */
     public boolean hasFeedLabel() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -9346,7 +9570,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       feedLabel_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -9363,7 +9587,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearFeedLabel() {
       feedLabel_ = getDefaultInstance().getFeedLabel();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -9385,7 +9609,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       feedLabel_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -9403,7 +9627,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the offerId field is set.
      */
     public boolean hasOfferId() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -9466,7 +9690,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       offerId_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -9483,7 +9707,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearOfferId() {
       offerId_ = getDefaultInstance().getOfferId();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -9505,7 +9729,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       offerId_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -9523,7 +9747,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the title field is set.
      */
     public boolean hasTitle() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -9586,7 +9810,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       title_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -9603,7 +9827,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearTitle() {
       title_ = getDefaultInstance().getTitle();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -9625,7 +9849,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       title_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -9643,7 +9867,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the brand field is set.
      */
     public boolean hasBrand() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -9706,7 +9930,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       brand_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -9723,7 +9947,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearBrand() {
       brand_ = getDefaultInstance().getBrand();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -9745,7 +9969,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       brand_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -9764,7 +9988,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the categoryL1 field is set.
      */
     public boolean hasCategoryL1() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -9830,7 +10054,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       categoryL1_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -9848,7 +10072,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearCategoryL1() {
       categoryL1_ = getDefaultInstance().getCategoryL1();
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -9871,7 +10095,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       categoryL1_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -9890,7 +10114,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the categoryL2 field is set.
      */
     public boolean hasCategoryL2() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -9956,7 +10180,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       categoryL2_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -9974,7 +10198,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearCategoryL2() {
       categoryL2_ = getDefaultInstance().getCategoryL2();
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -9997,7 +10221,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       categoryL2_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -10016,7 +10240,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the categoryL3 field is set.
      */
     public boolean hasCategoryL3() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -10082,7 +10306,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       categoryL3_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -10100,7 +10324,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearCategoryL3() {
       categoryL3_ = getDefaultInstance().getCategoryL3();
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -10123,7 +10347,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       categoryL3_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -10142,7 +10366,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the categoryL4 field is set.
      */
     public boolean hasCategoryL4() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      *
@@ -10208,7 +10432,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       categoryL4_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -10226,7 +10450,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearCategoryL4() {
       categoryL4_ = getDefaultInstance().getCategoryL4();
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -10249,7 +10473,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       categoryL4_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -10268,7 +10492,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the categoryL5 field is set.
      */
     public boolean hasCategoryL5() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
     /**
      *
@@ -10334,7 +10558,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       categoryL5_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -10352,7 +10576,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearCategoryL5() {
       categoryL5_ = getDefaultInstance().getCategoryL5();
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -10375,7 +10599,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       categoryL5_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -10394,7 +10618,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the productTypeL1 field is set.
      */
     public boolean hasProductTypeL1() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
     /**
      *
@@ -10460,7 +10684,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       productTypeL1_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -10478,7 +10702,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearProductTypeL1() {
       productTypeL1_ = getDefaultInstance().getProductTypeL1();
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       onChanged();
       return this;
     }
@@ -10501,7 +10725,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       productTypeL1_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -10520,7 +10744,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the productTypeL2 field is set.
      */
     public boolean hasProductTypeL2() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
     /**
      *
@@ -10586,7 +10810,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       productTypeL2_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -10604,7 +10828,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearProductTypeL2() {
       productTypeL2_ = getDefaultInstance().getProductTypeL2();
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       onChanged();
       return this;
     }
@@ -10627,7 +10851,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       productTypeL2_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -10646,7 +10870,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the productTypeL3 field is set.
      */
     public boolean hasProductTypeL3() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
     /**
      *
@@ -10712,7 +10936,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       productTypeL3_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -10730,7 +10954,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearProductTypeL3() {
       productTypeL3_ = getDefaultInstance().getProductTypeL3();
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       onChanged();
       return this;
     }
@@ -10753,7 +10977,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       productTypeL3_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -10772,7 +10996,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the productTypeL4 field is set.
      */
     public boolean hasProductTypeL4() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00008000) != 0);
     }
     /**
      *
@@ -10838,7 +11062,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       productTypeL4_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -10856,7 +11080,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearProductTypeL4() {
       productTypeL4_ = getDefaultInstance().getProductTypeL4();
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       onChanged();
       return this;
     }
@@ -10879,7 +11103,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       productTypeL4_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -10898,7 +11122,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the productTypeL5 field is set.
      */
     public boolean hasProductTypeL5() {
-      return ((bitField0_ & 0x00008000) != 0);
+      return ((bitField0_ & 0x00010000) != 0);
     }
     /**
      *
@@ -10964,7 +11188,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       productTypeL5_ = value;
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -10982,7 +11206,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearProductTypeL5() {
       productTypeL5_ = getDefaultInstance().getProductTypeL5();
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       onChanged();
       return this;
     }
@@ -11005,7 +11229,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       productTypeL5_ = value;
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -11029,7 +11253,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the price field is set.
      */
     public boolean hasPrice() {
-      return ((bitField0_ & 0x00010000) != 0);
+      return ((bitField0_ & 0x00020000) != 0);
     }
     /**
      *
@@ -11069,7 +11293,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
       } else {
         priceBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -11089,7 +11313,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
       } else {
         priceBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -11105,7 +11329,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergePrice(com.google.shopping.type.Price value) {
       if (priceBuilder_ == null) {
-        if (((bitField0_ & 0x00010000) != 0)
+        if (((bitField0_ & 0x00020000) != 0)
             && price_ != null
             && price_ != com.google.shopping.type.Price.getDefaultInstance()) {
           getPriceBuilder().mergeFrom(value);
@@ -11115,7 +11339,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
       } else {
         priceBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -11130,7 +11354,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.shopping.type.Price price = 17;</code>
      */
     public Builder clearPrice() {
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       price_ = null;
       if (priceBuilder_ != null) {
         priceBuilder_.dispose();
@@ -11150,7 +11374,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.shopping.type.Price price = 17;</code>
      */
     public com.google.shopping.type.Price.Builder getPriceBuilder() {
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return getPriceFieldBuilder().getBuilder();
     }
@@ -11212,7 +11436,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the condition field is set.
      */
     public boolean hasCondition() {
-      return ((bitField0_ & 0x00020000) != 0);
+      return ((bitField0_ & 0x00040000) != 0);
     }
     /**
      *
@@ -11278,7 +11502,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       condition_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -11296,7 +11520,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearCondition() {
       condition_ = getDefaultInstance().getCondition();
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       onChanged();
       return this;
     }
@@ -11319,7 +11543,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       condition_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -11338,7 +11562,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the availability field is set.
      */
     public boolean hasAvailability() {
-      return ((bitField0_ & 0x00040000) != 0);
+      return ((bitField0_ & 0x00080000) != 0);
     }
     /**
      *
@@ -11404,7 +11628,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       availability_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -11422,7 +11646,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearAvailability() {
       availability_ = getDefaultInstance().getAvailability();
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       onChanged();
       return this;
     }
@@ -11445,7 +11669,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       availability_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -11465,7 +11689,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the shippingLabel field is set.
      */
     public boolean hasShippingLabel() {
-      return ((bitField0_ & 0x00080000) != 0);
+      return ((bitField0_ & 0x00100000) != 0);
     }
     /**
      *
@@ -11534,7 +11758,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       shippingLabel_ = value;
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -11553,7 +11777,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearShippingLabel() {
       shippingLabel_ = getDefaultInstance().getShippingLabel();
-      bitField0_ = (bitField0_ & ~0x00080000);
+      bitField0_ = (bitField0_ & ~0x00100000);
       onChanged();
       return this;
     }
@@ -11577,7 +11801,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       shippingLabel_ = value;
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -11589,7 +11813,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
       if (!gtin_.isModifiable()) {
         gtin_ = new com.google.protobuf.LazyStringArrayList(gtin_);
       }
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
     }
     /**
      *
@@ -11669,7 +11893,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
       }
       ensureGtinIsMutable();
       gtin_.set(index, value);
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -11691,7 +11915,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
       }
       ensureGtinIsMutable();
       gtin_.add(value);
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -11710,7 +11934,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllGtin(java.lang.Iterable<java.lang.String> values) {
       ensureGtinIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, gtin_);
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -11727,7 +11951,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearGtin() {
       gtin_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00100000);
+      bitField0_ = (bitField0_ & ~0x00200000);
       ;
       onChanged();
       return this;
@@ -11751,7 +11975,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureGtinIsMutable();
       gtin_.add(value);
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -11769,7 +11993,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the itemGroupId field is set.
      */
     public boolean hasItemGroupId() {
-      return ((bitField0_ & 0x00200000) != 0);
+      return ((bitField0_ & 0x00400000) != 0);
     }
     /**
      *
@@ -11832,7 +12056,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       itemGroupId_ = value;
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -11849,7 +12073,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearItemGroupId() {
       itemGroupId_ = getDefaultInstance().getItemGroupId();
-      bitField0_ = (bitField0_ & ~0x00200000);
+      bitField0_ = (bitField0_ & ~0x00400000);
       onChanged();
       return this;
     }
@@ -11871,7 +12095,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       itemGroupId_ = value;
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -11890,7 +12114,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the thumbnailLink field is set.
      */
     public boolean hasThumbnailLink() {
-      return ((bitField0_ & 0x00400000) != 0);
+      return ((bitField0_ & 0x00800000) != 0);
     }
     /**
      *
@@ -11956,7 +12180,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       thumbnailLink_ = value;
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -11974,7 +12198,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearThumbnailLink() {
       thumbnailLink_ = getDefaultInstance().getThumbnailLink();
-      bitField0_ = (bitField0_ & ~0x00400000);
+      bitField0_ = (bitField0_ & ~0x00800000);
       onChanged();
       return this;
     }
@@ -11997,7 +12221,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       thumbnailLink_ = value;
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -12020,7 +12244,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the creationTime field is set.
      */
     public boolean hasCreationTime() {
-      return ((bitField0_ & 0x00800000) != 0);
+      return ((bitField0_ & 0x01000000) != 0);
     }
     /**
      *
@@ -12060,7 +12284,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
       } else {
         creationTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return this;
     }
@@ -12079,7 +12303,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
       } else {
         creationTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return this;
     }
@@ -12094,7 +12318,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreationTime(com.google.protobuf.Timestamp value) {
       if (creationTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00800000) != 0)
+        if (((bitField0_ & 0x01000000) != 0)
             && creationTime_ != null
             && creationTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getCreationTimeBuilder().mergeFrom(value);
@@ -12104,7 +12328,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
       } else {
         creationTimeBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return this;
     }
@@ -12118,7 +12342,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp creation_time = 24;</code>
      */
     public Builder clearCreationTime() {
-      bitField0_ = (bitField0_ & ~0x00800000);
+      bitField0_ = (bitField0_ & ~0x01000000);
       creationTime_ = null;
       if (creationTimeBuilder_ != null) {
         creationTimeBuilder_.dispose();
@@ -12137,7 +12361,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp creation_time = 24;</code>
      */
     public com.google.protobuf.Timestamp.Builder getCreationTimeBuilder() {
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return getCreationTimeFieldBuilder().getBuilder();
     }
@@ -12201,7 +12425,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the expirationDate field is set.
      */
     public boolean hasExpirationDate() {
-      return ((bitField0_ & 0x01000000) != 0);
+      return ((bitField0_ & 0x02000000) != 0);
     }
     /**
      *
@@ -12241,7 +12465,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
       } else {
         expirationDateBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x01000000;
+      bitField0_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -12260,7 +12484,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
       } else {
         expirationDateBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x01000000;
+      bitField0_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -12275,7 +12499,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeExpirationDate(com.google.type.Date value) {
       if (expirationDateBuilder_ == null) {
-        if (((bitField0_ & 0x01000000) != 0)
+        if (((bitField0_ & 0x02000000) != 0)
             && expirationDate_ != null
             && expirationDate_ != com.google.type.Date.getDefaultInstance()) {
           getExpirationDateBuilder().mergeFrom(value);
@@ -12285,7 +12509,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
       } else {
         expirationDateBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x01000000;
+      bitField0_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -12299,7 +12523,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.type.Date expiration_date = 25;</code>
      */
     public Builder clearExpirationDate() {
-      bitField0_ = (bitField0_ & ~0x01000000);
+      bitField0_ = (bitField0_ & ~0x02000000);
       expirationDate_ = null;
       if (expirationDateBuilder_ != null) {
         expirationDateBuilder_.dispose();
@@ -12318,7 +12542,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.type.Date expiration_date = 25;</code>
      */
     public com.google.type.Date.Builder getExpirationDateBuilder() {
-      bitField0_ |= 0x01000000;
+      bitField0_ |= 0x02000000;
       onChanged();
       return getExpirationDateFieldBuilder().getBuilder();
     }
@@ -12362,58 +12586,58 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
       return expirationDateBuilder_;
     }
 
-    private int aggregatedDestinationStatus_ = 0;
+    private int aggregatedReportingContextStatus_ = 0;
     /**
      *
      *
      * <pre>
-     * Aggregated destination status.
+     * Aggregated status.
      * </pre>
      *
      * <code>
-     * optional .google.shopping.merchant.reports.v1beta.ProductView.AggregatedDestinationStatus aggregated_destination_status = 26;
+     * optional .google.shopping.merchant.reports.v1beta.ProductView.AggregatedReportingContextStatus aggregated_reporting_context_status = 26;
      * </code>
      *
-     * @return Whether the aggregatedDestinationStatus field is set.
+     * @return Whether the aggregatedReportingContextStatus field is set.
      */
     @java.lang.Override
-    public boolean hasAggregatedDestinationStatus() {
-      return ((bitField0_ & 0x02000000) != 0);
+    public boolean hasAggregatedReportingContextStatus() {
+      return ((bitField0_ & 0x04000000) != 0);
     }
     /**
      *
      *
      * <pre>
-     * Aggregated destination status.
+     * Aggregated status.
      * </pre>
      *
      * <code>
-     * optional .google.shopping.merchant.reports.v1beta.ProductView.AggregatedDestinationStatus aggregated_destination_status = 26;
+     * optional .google.shopping.merchant.reports.v1beta.ProductView.AggregatedReportingContextStatus aggregated_reporting_context_status = 26;
      * </code>
      *
-     * @return The enum numeric value on the wire for aggregatedDestinationStatus.
+     * @return The enum numeric value on the wire for aggregatedReportingContextStatus.
      */
     @java.lang.Override
-    public int getAggregatedDestinationStatusValue() {
-      return aggregatedDestinationStatus_;
+    public int getAggregatedReportingContextStatusValue() {
+      return aggregatedReportingContextStatus_;
     }
     /**
      *
      *
      * <pre>
-     * Aggregated destination status.
+     * Aggregated status.
      * </pre>
      *
      * <code>
-     * optional .google.shopping.merchant.reports.v1beta.ProductView.AggregatedDestinationStatus aggregated_destination_status = 26;
+     * optional .google.shopping.merchant.reports.v1beta.ProductView.AggregatedReportingContextStatus aggregated_reporting_context_status = 26;
      * </code>
      *
-     * @param value The enum numeric value on the wire for aggregatedDestinationStatus to set.
+     * @param value The enum numeric value on the wire for aggregatedReportingContextStatus to set.
      * @return This builder for chaining.
      */
-    public Builder setAggregatedDestinationStatusValue(int value) {
-      aggregatedDestinationStatus_ = value;
-      bitField0_ |= 0x02000000;
+    public Builder setAggregatedReportingContextStatusValue(int value) {
+      aggregatedReportingContextStatus_ = value;
+      bitField0_ |= 0x04000000;
       onChanged();
       return this;
     }
@@ -12421,23 +12645,24 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Aggregated destination status.
+     * Aggregated status.
      * </pre>
      *
      * <code>
-     * optional .google.shopping.merchant.reports.v1beta.ProductView.AggregatedDestinationStatus aggregated_destination_status = 26;
+     * optional .google.shopping.merchant.reports.v1beta.ProductView.AggregatedReportingContextStatus aggregated_reporting_context_status = 26;
      * </code>
      *
-     * @return The aggregatedDestinationStatus.
+     * @return The aggregatedReportingContextStatus.
      */
     @java.lang.Override
-    public com.google.shopping.merchant.reports.v1beta.ProductView.AggregatedDestinationStatus
-        getAggregatedDestinationStatus() {
-      com.google.shopping.merchant.reports.v1beta.ProductView.AggregatedDestinationStatus result =
-          com.google.shopping.merchant.reports.v1beta.ProductView.AggregatedDestinationStatus
-              .forNumber(aggregatedDestinationStatus_);
+    public com.google.shopping.merchant.reports.v1beta.ProductView.AggregatedReportingContextStatus
+        getAggregatedReportingContextStatus() {
+      com.google.shopping.merchant.reports.v1beta.ProductView.AggregatedReportingContextStatus
+          result =
+              com.google.shopping.merchant.reports.v1beta.ProductView
+                  .AggregatedReportingContextStatus.forNumber(aggregatedReportingContextStatus_);
       return result == null
-          ? com.google.shopping.merchant.reports.v1beta.ProductView.AggregatedDestinationStatus
+          ? com.google.shopping.merchant.reports.v1beta.ProductView.AggregatedReportingContextStatus
               .UNRECOGNIZED
           : result;
     }
@@ -12445,23 +12670,24 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Aggregated destination status.
+     * Aggregated status.
      * </pre>
      *
      * <code>
-     * optional .google.shopping.merchant.reports.v1beta.ProductView.AggregatedDestinationStatus aggregated_destination_status = 26;
+     * optional .google.shopping.merchant.reports.v1beta.ProductView.AggregatedReportingContextStatus aggregated_reporting_context_status = 26;
      * </code>
      *
-     * @param value The aggregatedDestinationStatus to set.
+     * @param value The aggregatedReportingContextStatus to set.
      * @return This builder for chaining.
      */
-    public Builder setAggregatedDestinationStatus(
-        com.google.shopping.merchant.reports.v1beta.ProductView.AggregatedDestinationStatus value) {
+    public Builder setAggregatedReportingContextStatus(
+        com.google.shopping.merchant.reports.v1beta.ProductView.AggregatedReportingContextStatus
+            value) {
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x02000000;
-      aggregatedDestinationStatus_ = value.getNumber();
+      bitField0_ |= 0x04000000;
+      aggregatedReportingContextStatus_ = value.getNumber();
       onChanged();
       return this;
     }
@@ -12469,18 +12695,18 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Aggregated destination status.
+     * Aggregated status.
      * </pre>
      *
      * <code>
-     * optional .google.shopping.merchant.reports.v1beta.ProductView.AggregatedDestinationStatus aggregated_destination_status = 26;
+     * optional .google.shopping.merchant.reports.v1beta.ProductView.AggregatedReportingContextStatus aggregated_reporting_context_status = 26;
      * </code>
      *
      * @return This builder for chaining.
      */
-    public Builder clearAggregatedDestinationStatus() {
-      bitField0_ = (bitField0_ & ~0x02000000);
-      aggregatedDestinationStatus_ = 0;
+    public Builder clearAggregatedReportingContextStatus() {
+      bitField0_ = (bitField0_ & ~0x04000000);
+      aggregatedReportingContextStatus_ = 0;
       onChanged();
       return this;
     }
@@ -12489,11 +12715,11 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
         itemIssues_ = java.util.Collections.emptyList();
 
     private void ensureItemIssuesIsMutable() {
-      if (!((bitField0_ & 0x04000000) != 0)) {
+      if (!((bitField0_ & 0x08000000) != 0)) {
         itemIssues_ =
             new java.util.ArrayList<
                 com.google.shopping.merchant.reports.v1beta.ProductView.ItemIssue>(itemIssues_);
-        bitField0_ |= 0x04000000;
+        bitField0_ |= 0x08000000;
       }
     }
 
@@ -12806,7 +13032,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
     public Builder clearItemIssues() {
       if (itemIssuesBuilder_ == null) {
         itemIssues_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x04000000);
+        bitField0_ = (bitField0_ & ~0x08000000);
         onChanged();
       } else {
         itemIssuesBuilder_.clear();
@@ -12994,7 +13220,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
                 com.google.shopping.merchant.reports.v1beta.ProductView.ItemIssue,
                 com.google.shopping.merchant.reports.v1beta.ProductView.ItemIssue.Builder,
                 com.google.shopping.merchant.reports.v1beta.ProductView.ItemIssueOrBuilder>(
-                itemIssues_, ((bitField0_ & 0x04000000) != 0), getParentForChildren(), isClean());
+                itemIssues_, ((bitField0_ & 0x08000000) != 0), getParentForChildren(), isClean());
         itemIssues_ = null;
       }
       return itemIssuesBuilder_;

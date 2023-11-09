@@ -48,8 +48,8 @@ import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.aiplatform.v1beta1.CreateFeatureGroupOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.CreateFeatureGroupRequest;
+import com.google.cloud.aiplatform.v1beta1.CreateFeatureOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.CreateFeatureRequest;
-import com.google.cloud.aiplatform.v1beta1.CreateRegistryFeatureOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.DeleteFeatureGroupRequest;
 import com.google.cloud.aiplatform.v1beta1.DeleteFeatureRequest;
 import com.google.cloud.aiplatform.v1beta1.DeleteOperationMetadata;
@@ -147,8 +147,7 @@ public class FeatureRegistryServiceStubSettings
   private final OperationCallSettings<DeleteFeatureGroupRequest, Empty, DeleteOperationMetadata>
       deleteFeatureGroupOperationSettings;
   private final UnaryCallSettings<CreateFeatureRequest, Operation> createFeatureSettings;
-  private final OperationCallSettings<
-          CreateFeatureRequest, Feature, CreateRegistryFeatureOperationMetadata>
+  private final OperationCallSettings<CreateFeatureRequest, Feature, CreateFeatureOperationMetadata>
       createFeatureOperationSettings;
   private final UnaryCallSettings<GetFeatureRequest, Feature> getFeatureSettings;
   private final PagedCallSettings<
@@ -389,8 +388,7 @@ public class FeatureRegistryServiceStubSettings
   }
 
   /** Returns the object with the settings used for calls to createFeature. */
-  public OperationCallSettings<
-          CreateFeatureRequest, Feature, CreateRegistryFeatureOperationMetadata>
+  public OperationCallSettings<CreateFeatureRequest, Feature, CreateFeatureOperationMetadata>
       createFeatureOperationSettings() {
     return createFeatureOperationSettings;
   }
@@ -582,7 +580,7 @@ public class FeatureRegistryServiceStubSettings
         deleteFeatureGroupOperationSettings;
     private final UnaryCallSettings.Builder<CreateFeatureRequest, Operation> createFeatureSettings;
     private final OperationCallSettings.Builder<
-            CreateFeatureRequest, Feature, CreateRegistryFeatureOperationMetadata>
+            CreateFeatureRequest, Feature, CreateFeatureOperationMetadata>
         createFeatureOperationSettings;
     private final UnaryCallSettings.Builder<GetFeatureRequest, Feature> getFeatureSettings;
     private final PagedCallSettings.Builder<
@@ -895,7 +893,7 @@ public class FeatureRegistryServiceStubSettings
               ProtoOperationTransformers.ResponseTransformer.create(Feature.class))
           .setMetadataTransformer(
               ProtoOperationTransformers.MetadataTransformer.create(
-                  CreateRegistryFeatureOperationMetadata.class))
+                  CreateFeatureOperationMetadata.class))
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
@@ -1041,7 +1039,7 @@ public class FeatureRegistryServiceStubSettings
     @BetaApi(
         "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
-            CreateFeatureRequest, Feature, CreateRegistryFeatureOperationMetadata>
+            CreateFeatureRequest, Feature, CreateFeatureOperationMetadata>
         createFeatureOperationSettings() {
       return createFeatureOperationSettings;
     }

@@ -1729,6 +1729,180 @@ public class ContactCenterInsightsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Deletes multiple conversations in a single request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   String filter = "filter-1274492040";
+   *   BulkDeleteConversationsResponse response =
+   *       contactCenterInsightsClient.bulkDeleteConversationsAsync(parent, filter).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource to create analyses in. Format:
+   *     projects/{project}/locations/{location}
+   * @param filter Filter used to select the subset of conversations to analyze.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<BulkDeleteConversationsResponse, BulkDeleteConversationsMetadata>
+      bulkDeleteConversationsAsync(LocationName parent, String filter) {
+    BulkDeleteConversationsRequest request =
+        BulkDeleteConversationsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setFilter(filter)
+            .build();
+    return bulkDeleteConversationsAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes multiple conversations in a single request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   String filter = "filter-1274492040";
+   *   BulkDeleteConversationsResponse response =
+   *       contactCenterInsightsClient.bulkDeleteConversationsAsync(parent, filter).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource to create analyses in. Format:
+   *     projects/{project}/locations/{location}
+   * @param filter Filter used to select the subset of conversations to analyze.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<BulkDeleteConversationsResponse, BulkDeleteConversationsMetadata>
+      bulkDeleteConversationsAsync(String parent, String filter) {
+    BulkDeleteConversationsRequest request =
+        BulkDeleteConversationsRequest.newBuilder().setParent(parent).setFilter(filter).build();
+    return bulkDeleteConversationsAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes multiple conversations in a single request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   BulkDeleteConversationsRequest request =
+   *       BulkDeleteConversationsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setMaxDeleteCount(1611707510)
+   *           .setForce(true)
+   *           .build();
+   *   BulkDeleteConversationsResponse response =
+   *       contactCenterInsightsClient.bulkDeleteConversationsAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<BulkDeleteConversationsResponse, BulkDeleteConversationsMetadata>
+      bulkDeleteConversationsAsync(BulkDeleteConversationsRequest request) {
+    return bulkDeleteConversationsOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes multiple conversations in a single request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   BulkDeleteConversationsRequest request =
+   *       BulkDeleteConversationsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setMaxDeleteCount(1611707510)
+   *           .setForce(true)
+   *           .build();
+   *   OperationFuture<BulkDeleteConversationsResponse, BulkDeleteConversationsMetadata> future =
+   *       contactCenterInsightsClient
+   *           .bulkDeleteConversationsOperationCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   BulkDeleteConversationsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          BulkDeleteConversationsRequest,
+          BulkDeleteConversationsResponse,
+          BulkDeleteConversationsMetadata>
+      bulkDeleteConversationsOperationCallable() {
+    return stub.bulkDeleteConversationsOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes multiple conversations in a single request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   BulkDeleteConversationsRequest request =
+   *       BulkDeleteConversationsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setMaxDeleteCount(1611707510)
+   *           .setForce(true)
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       contactCenterInsightsClient.bulkDeleteConversationsCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<BulkDeleteConversationsRequest, Operation>
+      bulkDeleteConversationsCallable() {
+    return stub.bulkDeleteConversationsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Imports conversations and processes them according to the user's configuration.
    *
    * <p>Sample code:
@@ -1808,6 +1982,8 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setConversationConfig(
    *               IngestConversationsRequest.ConversationConfig.newBuilder().build())
+   *           .setRedactionConfig(RedactionConfig.newBuilder().build())
+   *           .setSpeechConfig(SpeechConfig.newBuilder().build())
    *           .build();
    *   IngestConversationsResponse response =
    *       contactCenterInsightsClient.ingestConversationsAsync(request).get();
@@ -1841,6 +2017,8 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setConversationConfig(
    *               IngestConversationsRequest.ConversationConfig.newBuilder().build())
+   *           .setRedactionConfig(RedactionConfig.newBuilder().build())
+   *           .setSpeechConfig(SpeechConfig.newBuilder().build())
    *           .build();
    *   OperationFuture<IngestConversationsResponse, IngestConversationsMetadata> future =
    *       contactCenterInsightsClient.ingestConversationsOperationCallable().futureCall(request);
@@ -1874,6 +2052,8 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setConversationConfig(
    *               IngestConversationsRequest.ConversationConfig.newBuilder().build())
+   *           .setRedactionConfig(RedactionConfig.newBuilder().build())
+   *           .setSpeechConfig(SpeechConfig.newBuilder().build())
    *           .build();
    *   ApiFuture<Operation> future =
    *       contactCenterInsightsClient.ingestConversationsCallable().futureCall(request);

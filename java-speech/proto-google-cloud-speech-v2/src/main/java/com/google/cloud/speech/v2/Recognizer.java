@@ -403,8 +403,12 @@ public final class Recognizer extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Which model to use for recognition requests. Select the model
-   * best suited to your domain to get best results.
+   * Optional. This field is now deprecated. Prefer the
+   * [`model`][google.cloud.speech.v2.RecognitionConfig.model] field in the
+   * [`RecognitionConfig`][google.cloud.speech.v2.RecognitionConfig] message.
+   *
+   * Which model to use for recognition requests. Select the model best suited
+   * to your domain to get best results.
    *
    * Guidance for choosing which model to use can be found in the [Transcription
    * Models
@@ -417,7 +421,7 @@ public final class Recognizer extends com.google.protobuf.GeneratedMessageV3
    * <code>string model = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @deprecated google.cloud.speech.v2.Recognizer.model is deprecated. See
-   *     google/cloud/speech/v2/cloud_speech.proto;l=596
+   *     google/cloud/speech/v2/cloud_speech.proto;l=600
    * @return The model.
    */
   @java.lang.Override
@@ -437,8 +441,12 @@ public final class Recognizer extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Which model to use for recognition requests. Select the model
-   * best suited to your domain to get best results.
+   * Optional. This field is now deprecated. Prefer the
+   * [`model`][google.cloud.speech.v2.RecognitionConfig.model] field in the
+   * [`RecognitionConfig`][google.cloud.speech.v2.RecognitionConfig] message.
+   *
+   * Which model to use for recognition requests. Select the model best suited
+   * to your domain to get best results.
    *
    * Guidance for choosing which model to use can be found in the [Transcription
    * Models
@@ -451,7 +459,7 @@ public final class Recognizer extends com.google.protobuf.GeneratedMessageV3
    * <code>string model = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @deprecated google.cloud.speech.v2.Recognizer.model is deprecated. See
-   *     google/cloud/speech/v2/cloud_speech.proto;l=596
+   *     google/cloud/speech/v2/cloud_speech.proto;l=600
    * @return The bytes for model.
    */
   @java.lang.Override
@@ -477,7 +485,12 @@ public final class Recognizer extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The language of the supplied audio as a
+   * Optional. This field is now deprecated. Prefer the
+   * [`language_codes`][google.cloud.speech.v2.RecognitionConfig.language_codes]
+   * field in the
+   * [`RecognitionConfig`][google.cloud.speech.v2.RecognitionConfig] message.
+   *
+   * The language of the supplied audio as a
    * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
    *
    * Supported languages for each model are listed in the [Table of Supported
@@ -496,7 +509,7 @@ public final class Recognizer extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.speech.v2.Recognizer.language_codes is deprecated. See
-   *     google/cloud/speech/v2/cloud_speech.proto;l=610
+   *     google/cloud/speech/v2/cloud_speech.proto;l=619
    * @return A list containing the languageCodes.
    */
   @java.lang.Deprecated
@@ -507,7 +520,12 @@ public final class Recognizer extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The language of the supplied audio as a
+   * Optional. This field is now deprecated. Prefer the
+   * [`language_codes`][google.cloud.speech.v2.RecognitionConfig.language_codes]
+   * field in the
+   * [`RecognitionConfig`][google.cloud.speech.v2.RecognitionConfig] message.
+   *
+   * The language of the supplied audio as a
    * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
    *
    * Supported languages for each model are listed in the [Table of Supported
@@ -526,7 +544,7 @@ public final class Recognizer extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.speech.v2.Recognizer.language_codes is deprecated. See
-   *     google/cloud/speech/v2/cloud_speech.proto;l=610
+   *     google/cloud/speech/v2/cloud_speech.proto;l=619
    * @return The count of languageCodes.
    */
   @java.lang.Deprecated
@@ -537,7 +555,12 @@ public final class Recognizer extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The language of the supplied audio as a
+   * Optional. This field is now deprecated. Prefer the
+   * [`language_codes`][google.cloud.speech.v2.RecognitionConfig.language_codes]
+   * field in the
+   * [`RecognitionConfig`][google.cloud.speech.v2.RecognitionConfig] message.
+   *
+   * The language of the supplied audio as a
    * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
    *
    * Supported languages for each model are listed in the [Table of Supported
@@ -556,7 +579,7 @@ public final class Recognizer extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.speech.v2.Recognizer.language_codes is deprecated. See
-   *     google/cloud/speech/v2/cloud_speech.proto;l=610
+   *     google/cloud/speech/v2/cloud_speech.proto;l=619
    * @param index The index of the element to return.
    * @return The languageCodes at the given index.
    */
@@ -568,7 +591,12 @@ public final class Recognizer extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The language of the supplied audio as a
+   * Optional. This field is now deprecated. Prefer the
+   * [`language_codes`][google.cloud.speech.v2.RecognitionConfig.language_codes]
+   * field in the
+   * [`RecognitionConfig`][google.cloud.speech.v2.RecognitionConfig] message.
+   *
+   * The language of the supplied audio as a
    * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
    *
    * Supported languages for each model are listed in the [Table of Supported
@@ -587,7 +615,7 @@ public final class Recognizer extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.speech.v2.Recognizer.language_codes is deprecated. See
-   *     google/cloud/speech/v2/cloud_speech.proto;l=610
+   *     google/cloud/speech/v2/cloud_speech.proto;l=619
    * @param index The index of the value to return.
    * @return The bytes of the languageCodes at the given index.
    */
@@ -2313,8 +2341,12 @@ public final class Recognizer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Which model to use for recognition requests. Select the model
-     * best suited to your domain to get best results.
+     * Optional. This field is now deprecated. Prefer the
+     * [`model`][google.cloud.speech.v2.RecognitionConfig.model] field in the
+     * [`RecognitionConfig`][google.cloud.speech.v2.RecognitionConfig] message.
+     *
+     * Which model to use for recognition requests. Select the model best suited
+     * to your domain to get best results.
      *
      * Guidance for choosing which model to use can be found in the [Transcription
      * Models
@@ -2327,7 +2359,7 @@ public final class Recognizer extends com.google.protobuf.GeneratedMessageV3
      * <code>string model = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @deprecated google.cloud.speech.v2.Recognizer.model is deprecated. See
-     *     google/cloud/speech/v2/cloud_speech.proto;l=596
+     *     google/cloud/speech/v2/cloud_speech.proto;l=600
      * @return The model.
      */
     @java.lang.Deprecated
@@ -2346,8 +2378,12 @@ public final class Recognizer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Which model to use for recognition requests. Select the model
-     * best suited to your domain to get best results.
+     * Optional. This field is now deprecated. Prefer the
+     * [`model`][google.cloud.speech.v2.RecognitionConfig.model] field in the
+     * [`RecognitionConfig`][google.cloud.speech.v2.RecognitionConfig] message.
+     *
+     * Which model to use for recognition requests. Select the model best suited
+     * to your domain to get best results.
      *
      * Guidance for choosing which model to use can be found in the [Transcription
      * Models
@@ -2360,7 +2396,7 @@ public final class Recognizer extends com.google.protobuf.GeneratedMessageV3
      * <code>string model = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @deprecated google.cloud.speech.v2.Recognizer.model is deprecated. See
-     *     google/cloud/speech/v2/cloud_speech.proto;l=596
+     *     google/cloud/speech/v2/cloud_speech.proto;l=600
      * @return The bytes for model.
      */
     @java.lang.Deprecated
@@ -2379,8 +2415,12 @@ public final class Recognizer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Which model to use for recognition requests. Select the model
-     * best suited to your domain to get best results.
+     * Optional. This field is now deprecated. Prefer the
+     * [`model`][google.cloud.speech.v2.RecognitionConfig.model] field in the
+     * [`RecognitionConfig`][google.cloud.speech.v2.RecognitionConfig] message.
+     *
+     * Which model to use for recognition requests. Select the model best suited
+     * to your domain to get best results.
      *
      * Guidance for choosing which model to use can be found in the [Transcription
      * Models
@@ -2393,7 +2433,7 @@ public final class Recognizer extends com.google.protobuf.GeneratedMessageV3
      * <code>string model = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @deprecated google.cloud.speech.v2.Recognizer.model is deprecated. See
-     *     google/cloud/speech/v2/cloud_speech.proto;l=596
+     *     google/cloud/speech/v2/cloud_speech.proto;l=600
      * @param value The model to set.
      * @return This builder for chaining.
      */
@@ -2411,8 +2451,12 @@ public final class Recognizer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Which model to use for recognition requests. Select the model
-     * best suited to your domain to get best results.
+     * Optional. This field is now deprecated. Prefer the
+     * [`model`][google.cloud.speech.v2.RecognitionConfig.model] field in the
+     * [`RecognitionConfig`][google.cloud.speech.v2.RecognitionConfig] message.
+     *
+     * Which model to use for recognition requests. Select the model best suited
+     * to your domain to get best results.
      *
      * Guidance for choosing which model to use can be found in the [Transcription
      * Models
@@ -2425,7 +2469,7 @@ public final class Recognizer extends com.google.protobuf.GeneratedMessageV3
      * <code>string model = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @deprecated google.cloud.speech.v2.Recognizer.model is deprecated. See
-     *     google/cloud/speech/v2/cloud_speech.proto;l=596
+     *     google/cloud/speech/v2/cloud_speech.proto;l=600
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -2439,8 +2483,12 @@ public final class Recognizer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Which model to use for recognition requests. Select the model
-     * best suited to your domain to get best results.
+     * Optional. This field is now deprecated. Prefer the
+     * [`model`][google.cloud.speech.v2.RecognitionConfig.model] field in the
+     * [`RecognitionConfig`][google.cloud.speech.v2.RecognitionConfig] message.
+     *
+     * Which model to use for recognition requests. Select the model best suited
+     * to your domain to get best results.
      *
      * Guidance for choosing which model to use can be found in the [Transcription
      * Models
@@ -2453,7 +2501,7 @@ public final class Recognizer extends com.google.protobuf.GeneratedMessageV3
      * <code>string model = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @deprecated google.cloud.speech.v2.Recognizer.model is deprecated. See
-     *     google/cloud/speech/v2/cloud_speech.proto;l=596
+     *     google/cloud/speech/v2/cloud_speech.proto;l=600
      * @param value The bytes for model to set.
      * @return This builder for chaining.
      */
@@ -2482,7 +2530,12 @@ public final class Recognizer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The language of the supplied audio as a
+     * Optional. This field is now deprecated. Prefer the
+     * [`language_codes`][google.cloud.speech.v2.RecognitionConfig.language_codes]
+     * field in the
+     * [`RecognitionConfig`][google.cloud.speech.v2.RecognitionConfig] message.
+     *
+     * The language of the supplied audio as a
      * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
      *
      * Supported languages for each model are listed in the [Table of Supported
@@ -2501,7 +2554,7 @@ public final class Recognizer extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.speech.v2.Recognizer.language_codes is deprecated. See
-     *     google/cloud/speech/v2/cloud_speech.proto;l=610
+     *     google/cloud/speech/v2/cloud_speech.proto;l=619
      * @return A list containing the languageCodes.
      */
     @java.lang.Deprecated
@@ -2513,7 +2566,12 @@ public final class Recognizer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The language of the supplied audio as a
+     * Optional. This field is now deprecated. Prefer the
+     * [`language_codes`][google.cloud.speech.v2.RecognitionConfig.language_codes]
+     * field in the
+     * [`RecognitionConfig`][google.cloud.speech.v2.RecognitionConfig] message.
+     *
+     * The language of the supplied audio as a
      * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
      *
      * Supported languages for each model are listed in the [Table of Supported
@@ -2532,7 +2590,7 @@ public final class Recognizer extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.speech.v2.Recognizer.language_codes is deprecated. See
-     *     google/cloud/speech/v2/cloud_speech.proto;l=610
+     *     google/cloud/speech/v2/cloud_speech.proto;l=619
      * @return The count of languageCodes.
      */
     @java.lang.Deprecated
@@ -2543,7 +2601,12 @@ public final class Recognizer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The language of the supplied audio as a
+     * Optional. This field is now deprecated. Prefer the
+     * [`language_codes`][google.cloud.speech.v2.RecognitionConfig.language_codes]
+     * field in the
+     * [`RecognitionConfig`][google.cloud.speech.v2.RecognitionConfig] message.
+     *
+     * The language of the supplied audio as a
      * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
      *
      * Supported languages for each model are listed in the [Table of Supported
@@ -2562,7 +2625,7 @@ public final class Recognizer extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.speech.v2.Recognizer.language_codes is deprecated. See
-     *     google/cloud/speech/v2/cloud_speech.proto;l=610
+     *     google/cloud/speech/v2/cloud_speech.proto;l=619
      * @param index The index of the element to return.
      * @return The languageCodes at the given index.
      */
@@ -2574,7 +2637,12 @@ public final class Recognizer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The language of the supplied audio as a
+     * Optional. This field is now deprecated. Prefer the
+     * [`language_codes`][google.cloud.speech.v2.RecognitionConfig.language_codes]
+     * field in the
+     * [`RecognitionConfig`][google.cloud.speech.v2.RecognitionConfig] message.
+     *
+     * The language of the supplied audio as a
      * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
      *
      * Supported languages for each model are listed in the [Table of Supported
@@ -2593,7 +2661,7 @@ public final class Recognizer extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.speech.v2.Recognizer.language_codes is deprecated. See
-     *     google/cloud/speech/v2/cloud_speech.proto;l=610
+     *     google/cloud/speech/v2/cloud_speech.proto;l=619
      * @param index The index of the value to return.
      * @return The bytes of the languageCodes at the given index.
      */
@@ -2605,7 +2673,12 @@ public final class Recognizer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The language of the supplied audio as a
+     * Optional. This field is now deprecated. Prefer the
+     * [`language_codes`][google.cloud.speech.v2.RecognitionConfig.language_codes]
+     * field in the
+     * [`RecognitionConfig`][google.cloud.speech.v2.RecognitionConfig] message.
+     *
+     * The language of the supplied audio as a
      * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
      *
      * Supported languages for each model are listed in the [Table of Supported
@@ -2624,7 +2697,7 @@ public final class Recognizer extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.speech.v2.Recognizer.language_codes is deprecated. See
-     *     google/cloud/speech/v2/cloud_speech.proto;l=610
+     *     google/cloud/speech/v2/cloud_speech.proto;l=619
      * @param index The index to set the value at.
      * @param value The languageCodes to set.
      * @return This builder for chaining.
@@ -2644,7 +2717,12 @@ public final class Recognizer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The language of the supplied audio as a
+     * Optional. This field is now deprecated. Prefer the
+     * [`language_codes`][google.cloud.speech.v2.RecognitionConfig.language_codes]
+     * field in the
+     * [`RecognitionConfig`][google.cloud.speech.v2.RecognitionConfig] message.
+     *
+     * The language of the supplied audio as a
      * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
      *
      * Supported languages for each model are listed in the [Table of Supported
@@ -2663,7 +2741,7 @@ public final class Recognizer extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.speech.v2.Recognizer.language_codes is deprecated. See
-     *     google/cloud/speech/v2/cloud_speech.proto;l=610
+     *     google/cloud/speech/v2/cloud_speech.proto;l=619
      * @param value The languageCodes to add.
      * @return This builder for chaining.
      */
@@ -2682,7 +2760,12 @@ public final class Recognizer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The language of the supplied audio as a
+     * Optional. This field is now deprecated. Prefer the
+     * [`language_codes`][google.cloud.speech.v2.RecognitionConfig.language_codes]
+     * field in the
+     * [`RecognitionConfig`][google.cloud.speech.v2.RecognitionConfig] message.
+     *
+     * The language of the supplied audio as a
      * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
      *
      * Supported languages for each model are listed in the [Table of Supported
@@ -2701,7 +2784,7 @@ public final class Recognizer extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.speech.v2.Recognizer.language_codes is deprecated. See
-     *     google/cloud/speech/v2/cloud_speech.proto;l=610
+     *     google/cloud/speech/v2/cloud_speech.proto;l=619
      * @param values The languageCodes to add.
      * @return This builder for chaining.
      */
@@ -2717,7 +2800,12 @@ public final class Recognizer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The language of the supplied audio as a
+     * Optional. This field is now deprecated. Prefer the
+     * [`language_codes`][google.cloud.speech.v2.RecognitionConfig.language_codes]
+     * field in the
+     * [`RecognitionConfig`][google.cloud.speech.v2.RecognitionConfig] message.
+     *
+     * The language of the supplied audio as a
      * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
      *
      * Supported languages for each model are listed in the [Table of Supported
@@ -2736,7 +2824,7 @@ public final class Recognizer extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.speech.v2.Recognizer.language_codes is deprecated. See
-     *     google/cloud/speech/v2/cloud_speech.proto;l=610
+     *     google/cloud/speech/v2/cloud_speech.proto;l=619
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -2751,7 +2839,12 @@ public final class Recognizer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The language of the supplied audio as a
+     * Optional. This field is now deprecated. Prefer the
+     * [`language_codes`][google.cloud.speech.v2.RecognitionConfig.language_codes]
+     * field in the
+     * [`RecognitionConfig`][google.cloud.speech.v2.RecognitionConfig] message.
+     *
+     * The language of the supplied audio as a
      * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
      *
      * Supported languages for each model are listed in the [Table of Supported
@@ -2770,7 +2863,7 @@ public final class Recognizer extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.speech.v2.Recognizer.language_codes is deprecated. See
-     *     google/cloud/speech/v2/cloud_speech.proto;l=610
+     *     google/cloud/speech/v2/cloud_speech.proto;l=619
      * @param value The bytes of the languageCodes to add.
      * @return This builder for chaining.
      */

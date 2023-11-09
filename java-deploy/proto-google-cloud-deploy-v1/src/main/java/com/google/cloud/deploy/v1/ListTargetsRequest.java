@@ -74,7 +74,7 @@ public final class ListTargetsRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Required. The parent, which owns this collection of targets. Format must be
-   * projects/{project_id}/locations/{location_name}.
+   * `projects/{project_id}/locations/{location_name}`.
    * </pre>
    *
    * <code>
@@ -100,7 +100,7 @@ public final class ListTargetsRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Required. The parent, which owns this collection of targets. Format must be
-   * projects/{project_id}/locations/{location_name}.
+   * `projects/{project_id}/locations/{location_name}`.
    * </pre>
    *
    * <code>
@@ -749,7 +749,7 @@ public final class ListTargetsRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The parent, which owns this collection of targets. Format must be
-     * projects/{project_id}/locations/{location_name}.
+     * `projects/{project_id}/locations/{location_name}`.
      * </pre>
      *
      * <code>
@@ -774,7 +774,7 @@ public final class ListTargetsRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The parent, which owns this collection of targets. Format must be
-     * projects/{project_id}/locations/{location_name}.
+     * `projects/{project_id}/locations/{location_name}`.
      * </pre>
      *
      * <code>
@@ -799,7 +799,7 @@ public final class ListTargetsRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The parent, which owns this collection of targets. Format must be
-     * projects/{project_id}/locations/{location_name}.
+     * `projects/{project_id}/locations/{location_name}`.
      * </pre>
      *
      * <code>
@@ -823,7 +823,7 @@ public final class ListTargetsRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The parent, which owns this collection of targets. Format must be
-     * projects/{project_id}/locations/{location_name}.
+     * `projects/{project_id}/locations/{location_name}`.
      * </pre>
      *
      * <code>
@@ -843,7 +843,7 @@ public final class ListTargetsRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The parent, which owns this collection of targets. Format must be
-     * projects/{project_id}/locations/{location_name}.
+     * `projects/{project_id}/locations/{location_name}`.
      * </pre>
      *
      * <code>

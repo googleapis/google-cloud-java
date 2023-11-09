@@ -27,8 +27,8 @@ public interface ListCompilationResultsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The repository in which to list compilation results. Must be in the
-   * format `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;`.
+   * Required. The repository in which to list compilation results. Must be in
+   * the format `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;`.
    * </pre>
    *
    * <code>
@@ -42,8 +42,8 @@ public interface ListCompilationResultsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The repository in which to list compilation results. Must be in the
-   * format `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;`.
+   * Required. The repository in which to list compilation results. Must be in
+   * the format `projects/&#42;&#47;locations/&#42;&#47;repositories/&#42;`.
    * </pre>
    *
    * <code>
@@ -58,8 +58,8 @@ public interface ListCompilationResultsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Maximum number of compilation results to return. The server may return
-   * fewer items than requested. If unspecified, the server will pick an
+   * Optional. Maximum number of compilation results to return. The server may
+   * return fewer items than requested. If unspecified, the server will pick an
    * appropriate default.
    * </pre>
    *
@@ -73,8 +73,8 @@ public interface ListCompilationResultsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Page token received from a previous `ListCompilationResults` call.
-   * Provide this to retrieve the subsequent page.
+   * Optional. Page token received from a previous `ListCompilationResults`
+   * call. Provide this to retrieve the subsequent page.
    *
    * When paginating, all other parameters provided to `ListCompilationResults`
    * must match the call that provided the page token.
@@ -89,8 +89,8 @@ public interface ListCompilationResultsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Page token received from a previous `ListCompilationResults` call.
-   * Provide this to retrieve the subsequent page.
+   * Optional. Page token received from a previous `ListCompilationResults`
+   * call. Provide this to retrieve the subsequent page.
    *
    * When paginating, all other parameters provided to `ListCompilationResults`
    * must match the call that provided the page token.

@@ -191,7 +191,7 @@ public final class CreatePersistentResourceRequest extends com.google.protobuf.G
    * component of the PersistentResource's resource name.
    *
    * The maximum length is 63 characters, and valid characters
-   * are /^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$/.
+   * are `/^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$/`.
    * </pre>
    *
    * <code>string persistent_resource_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -218,7 +218,7 @@ public final class CreatePersistentResourceRequest extends com.google.protobuf.G
    * component of the PersistentResource's resource name.
    *
    * The maximum length is 63 characters, and valid characters
-   * are /^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$/.
+   * are `/^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$/`.
    * </pre>
    *
    * <code>string persistent_resource_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -986,7 +986,7 @@ public final class CreatePersistentResourceRequest extends com.google.protobuf.G
      * component of the PersistentResource's resource name.
      *
      * The maximum length is 63 characters, and valid characters
-     * are /^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$/.
+     * are `/^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$/`.
      * </pre>
      *
      * <code>string persistent_resource_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1012,7 +1012,7 @@ public final class CreatePersistentResourceRequest extends com.google.protobuf.G
      * component of the PersistentResource's resource name.
      *
      * The maximum length is 63 characters, and valid characters
-     * are /^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$/.
+     * are `/^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$/`.
      * </pre>
      *
      * <code>string persistent_resource_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1038,7 +1038,7 @@ public final class CreatePersistentResourceRequest extends com.google.protobuf.G
      * component of the PersistentResource's resource name.
      *
      * The maximum length is 63 characters, and valid characters
-     * are /^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$/.
+     * are `/^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$/`.
      * </pre>
      *
      * <code>string persistent_resource_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1063,7 +1063,7 @@ public final class CreatePersistentResourceRequest extends com.google.protobuf.G
      * component of the PersistentResource's resource name.
      *
      * The maximum length is 63 characters, and valid characters
-     * are /^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$/.
+     * are `/^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$/`.
      * </pre>
      *
      * <code>string persistent_resource_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1084,7 +1084,7 @@ public final class CreatePersistentResourceRequest extends com.google.protobuf.G
      * component of the PersistentResource's resource name.
      *
      * The maximum length is 63 characters, and valid characters
-     * are /^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$/.
+     * are `/^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$/`.
      * </pre>
      *
      * <code>string persistent_resource_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>

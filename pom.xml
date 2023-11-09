@@ -107,7 +107,10 @@
     <module>java-life-sciences</module>
     <module>java-managed-identities</module>
     <module>java-maps-addressvalidation</module>
+    <module>java-maps-fleetengine-delivery</module>
+    <module>java-maps-fleetengine</module>
     <module>java-maps-mapsplatformdatasets</module>
+    <module>java-maps-places</module>
     <module>java-maps-routing</module>
     <module>java-mediatranslation</module>
     <module>java-memcache</module>
@@ -136,6 +139,7 @@
     <module>java-recaptchaenterprise</module>
     <module>java-recommendations-ai</module>
     <module>java-recommender</module>
+    <module>java-redis-cluster</module>
     <module>java-redis</module>
     <module>java-resourcemanager</module>
     <module>java-resource-settings</module>

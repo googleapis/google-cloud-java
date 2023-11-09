@@ -991,9 +991,7 @@ public class FeatureRegistryServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent The resource name of the EntityType or FeatureGroup to create a Feature. Format:
-   *     `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
-   *     `projects/{project}/locations/{location}/featureGroups/{feature_group}`
+   * @param parent
    * @param feature Required. The Feature to create.
    * @param featureId Required. The ID to use for the Feature, which will become the final component
    *     of the Feature's resource name.
@@ -1002,7 +1000,7 @@ public class FeatureRegistryServiceClient implements BackgroundResource {
    *     <p>The value must be unique within an EntityType/FeatureGroup.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Feature, CreateRegistryFeatureOperationMetadata> createFeatureAsync(
+  public final OperationFuture<Feature, CreateFeatureOperationMetadata> createFeatureAsync(
       EntityTypeName parent, Feature feature, String featureId) {
     CreateFeatureRequest request =
         CreateFeatureRequest.newBuilder()
@@ -1035,9 +1033,7 @@ public class FeatureRegistryServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent The resource name of the EntityType or FeatureGroup to create a Feature. Format:
-   *     `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
-   *     `projects/{project}/locations/{location}/featureGroups/{feature_group}`
+   * @param parent
    * @param feature Required. The Feature to create.
    * @param featureId Required. The ID to use for the Feature, which will become the final component
    *     of the Feature's resource name.
@@ -1046,7 +1042,7 @@ public class FeatureRegistryServiceClient implements BackgroundResource {
    *     <p>The value must be unique within an EntityType/FeatureGroup.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Feature, CreateRegistryFeatureOperationMetadata> createFeatureAsync(
+  public final OperationFuture<Feature, CreateFeatureOperationMetadata> createFeatureAsync(
       FeatureGroupName parent, Feature feature, String featureId) {
     CreateFeatureRequest request =
         CreateFeatureRequest.newBuilder()
@@ -1081,9 +1077,7 @@ public class FeatureRegistryServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent The resource name of the EntityType or FeatureGroup to create a Feature. Format:
-   *     `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
-   *     `projects/{project}/locations/{location}/featureGroups/{feature_group}`
+   * @param parent
    * @param feature Required. The Feature to create.
    * @param featureId Required. The ID to use for the Feature, which will become the final component
    *     of the Feature's resource name.
@@ -1092,7 +1086,7 @@ public class FeatureRegistryServiceClient implements BackgroundResource {
    *     <p>The value must be unique within an EntityType/FeatureGroup.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Feature, CreateRegistryFeatureOperationMetadata> createFeatureAsync(
+  public final OperationFuture<Feature, CreateFeatureOperationMetadata> createFeatureAsync(
       String parent, Feature feature, String featureId) {
     CreateFeatureRequest request =
         CreateFeatureRequest.newBuilder()
@@ -1132,7 +1126,7 @@ public class FeatureRegistryServiceClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Feature, CreateRegistryFeatureOperationMetadata> createFeatureAsync(
+  public final OperationFuture<Feature, CreateFeatureOperationMetadata> createFeatureAsync(
       CreateFeatureRequest request) {
     return createFeatureOperationCallable().futureCall(request);
   }
@@ -1159,15 +1153,14 @@ public class FeatureRegistryServiceClient implements BackgroundResource {
    *           .setFeature(Feature.newBuilder().build())
    *           .setFeatureId("featureId-420503887")
    *           .build();
-   *   OperationFuture<Feature, CreateRegistryFeatureOperationMetadata> future =
+   *   OperationFuture<Feature, CreateFeatureOperationMetadata> future =
    *       featureRegistryServiceClient.createFeatureOperationCallable().futureCall(request);
    *   // Do something.
    *   Feature response = future.get();
    * }
    * }</pre>
    */
-  public final OperationCallable<
-          CreateFeatureRequest, Feature, CreateRegistryFeatureOperationMetadata>
+  public final OperationCallable<CreateFeatureRequest, Feature, CreateFeatureOperationMetadata>
       createFeatureOperationCallable() {
     return stub.createFeatureOperationCallable();
   }

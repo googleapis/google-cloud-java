@@ -17,8 +17,14 @@
 package com.google.cloud.dataform.v1beta1;
 
 import com.google.api.core.BetaApi;
+import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.IAMPolicyGrpc.IAMPolicyImplBase;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.protobuf.AbstractMessage;
+import io.grpc.stub.StreamObserver;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -55,5 +61,67 @@ public class MockIAMPolicyImpl extends IAMPolicyImplBase {
   public void reset() {
     requests = new ArrayList<>();
     responses = new LinkedList<>();
+  }
+
+  @Override
+  public void testIamPermissions(
+      TestIamPermissionsRequest request,
+      StreamObserver<TestIamPermissionsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof TestIamPermissionsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((TestIamPermissionsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method TestIamPermissions, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  TestIamPermissionsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void setIamPolicy(SetIamPolicyRequest request, StreamObserver<Policy> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Policy) {
+      requests.add(request);
+      responseObserver.onNext(((Policy) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method SetIamPolicy, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Policy.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getIamPolicy(GetIamPolicyRequest request, StreamObserver<Policy> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Policy) {
+      requests.add(request);
+      responseObserver.onNext(((Policy) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetIamPolicy, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Policy.class.getName(),
+                  Exception.class.getName())));
+    }
   }
 }

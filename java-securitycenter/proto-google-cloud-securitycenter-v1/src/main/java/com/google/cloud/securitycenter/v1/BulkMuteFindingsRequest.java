@@ -232,7 +232,7 @@ public final class BulkMuteFindingsRequest extends com.google.protobuf.Generated
    * <code>string mute_annotation = 3 [deprecated = true];</code>
    *
    * @deprecated google.cloud.securitycenter.v1.BulkMuteFindingsRequest.mute_annotation is
-   *     deprecated. See google/cloud/securitycenter/v1/securitycenter_service.proto;l=766
+   *     deprecated. See google/cloud/securitycenter/v1/securitycenter_service.proto;l=787
    * @return The muteAnnotation.
    */
   @java.lang.Override
@@ -259,7 +259,7 @@ public final class BulkMuteFindingsRequest extends com.google.protobuf.Generated
    * <code>string mute_annotation = 3 [deprecated = true];</code>
    *
    * @deprecated google.cloud.securitycenter.v1.BulkMuteFindingsRequest.mute_annotation is
-   *     deprecated. See google/cloud/securitycenter/v1/securitycenter_service.proto;l=766
+   *     deprecated. See google/cloud/securitycenter/v1/securitycenter_service.proto;l=787
    * @return The bytes for muteAnnotation.
    */
   @java.lang.Override
@@ -1011,7 +1011,7 @@ public final class BulkMuteFindingsRequest extends com.google.protobuf.Generated
      * <code>string mute_annotation = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.securitycenter.v1.BulkMuteFindingsRequest.mute_annotation is
-     *     deprecated. See google/cloud/securitycenter/v1/securitycenter_service.proto;l=766
+     *     deprecated. See google/cloud/securitycenter/v1/securitycenter_service.proto;l=787
      * @return The muteAnnotation.
      */
     @java.lang.Deprecated
@@ -1037,7 +1037,7 @@ public final class BulkMuteFindingsRequest extends com.google.protobuf.Generated
      * <code>string mute_annotation = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.securitycenter.v1.BulkMuteFindingsRequest.mute_annotation is
-     *     deprecated. See google/cloud/securitycenter/v1/securitycenter_service.proto;l=766
+     *     deprecated. See google/cloud/securitycenter/v1/securitycenter_service.proto;l=787
      * @return The bytes for muteAnnotation.
      */
     @java.lang.Deprecated
@@ -1063,7 +1063,7 @@ public final class BulkMuteFindingsRequest extends com.google.protobuf.Generated
      * <code>string mute_annotation = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.securitycenter.v1.BulkMuteFindingsRequest.mute_annotation is
-     *     deprecated. See google/cloud/securitycenter/v1/securitycenter_service.proto;l=766
+     *     deprecated. See google/cloud/securitycenter/v1/securitycenter_service.proto;l=787
      * @param value The muteAnnotation to set.
      * @return This builder for chaining.
      */
@@ -1088,7 +1088,7 @@ public final class BulkMuteFindingsRequest extends com.google.protobuf.Generated
      * <code>string mute_annotation = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.securitycenter.v1.BulkMuteFindingsRequest.mute_annotation is
-     *     deprecated. See google/cloud/securitycenter/v1/securitycenter_service.proto;l=766
+     *     deprecated. See google/cloud/securitycenter/v1/securitycenter_service.proto;l=787
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1109,7 +1109,7 @@ public final class BulkMuteFindingsRequest extends com.google.protobuf.Generated
      * <code>string mute_annotation = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.securitycenter.v1.BulkMuteFindingsRequest.mute_annotation is
-     *     deprecated. See google/cloud/securitycenter/v1/securitycenter_service.proto;l=766
+     *     deprecated. See google/cloud/securitycenter/v1/securitycenter_service.proto;l=787
      * @param value The bytes for muteAnnotation to set.
      * @return This builder for chaining.
      */

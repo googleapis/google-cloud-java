@@ -30,6 +30,7 @@ import com.google.common.util.concurrent.MoreExecutors;
 import com.google.privacy.dlp.v2.ActivateJobTriggerRequest;
 import com.google.privacy.dlp.v2.CancelDlpJobRequest;
 import com.google.privacy.dlp.v2.CreateDeidentifyTemplateRequest;
+import com.google.privacy.dlp.v2.CreateDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.CreateDlpJobRequest;
 import com.google.privacy.dlp.v2.CreateInspectTemplateRequest;
 import com.google.privacy.dlp.v2.CreateJobTriggerRequest;
@@ -39,14 +40,18 @@ import com.google.privacy.dlp.v2.DeidentifyContentResponse;
 import com.google.privacy.dlp.v2.DeidentifyTemplate;
 import com.google.privacy.dlp.v2.DeidentifyTemplateName;
 import com.google.privacy.dlp.v2.DeleteDeidentifyTemplateRequest;
+import com.google.privacy.dlp.v2.DeleteDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.DeleteDlpJobRequest;
 import com.google.privacy.dlp.v2.DeleteInspectTemplateRequest;
 import com.google.privacy.dlp.v2.DeleteJobTriggerRequest;
 import com.google.privacy.dlp.v2.DeleteStoredInfoTypeRequest;
+import com.google.privacy.dlp.v2.DiscoveryConfig;
+import com.google.privacy.dlp.v2.DiscoveryConfigName;
 import com.google.privacy.dlp.v2.DlpJob;
 import com.google.privacy.dlp.v2.DlpJobName;
 import com.google.privacy.dlp.v2.FinishDlpJobRequest;
 import com.google.privacy.dlp.v2.GetDeidentifyTemplateRequest;
+import com.google.privacy.dlp.v2.GetDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.GetDlpJobRequest;
 import com.google.privacy.dlp.v2.GetInspectTemplateRequest;
 import com.google.privacy.dlp.v2.GetJobTriggerRequest;
@@ -63,6 +68,8 @@ import com.google.privacy.dlp.v2.JobTrigger;
 import com.google.privacy.dlp.v2.JobTriggerName;
 import com.google.privacy.dlp.v2.ListDeidentifyTemplatesRequest;
 import com.google.privacy.dlp.v2.ListDeidentifyTemplatesResponse;
+import com.google.privacy.dlp.v2.ListDiscoveryConfigsRequest;
+import com.google.privacy.dlp.v2.ListDiscoveryConfigsResponse;
 import com.google.privacy.dlp.v2.ListDlpJobsRequest;
 import com.google.privacy.dlp.v2.ListDlpJobsResponse;
 import com.google.privacy.dlp.v2.ListInfoTypesRequest;
@@ -86,6 +93,7 @@ import com.google.privacy.dlp.v2.StoredInfoType;
 import com.google.privacy.dlp.v2.StoredInfoTypeConfig;
 import com.google.privacy.dlp.v2.StoredInfoTypeName;
 import com.google.privacy.dlp.v2.UpdateDeidentifyTemplateRequest;
+import com.google.privacy.dlp.v2.UpdateDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.UpdateInspectTemplateRequest;
 import com.google.privacy.dlp.v2.UpdateJobTriggerRequest;
 import com.google.privacy.dlp.v2.UpdateStoredInfoTypeRequest;
@@ -3776,6 +3784,706 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Creates a config for discovery to scan and profile storage.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   DiscoveryConfig discoveryConfig = DiscoveryConfig.newBuilder().build();
+   *   DiscoveryConfig response = dlpServiceClient.createDiscoveryConfig(parent, discoveryConfig);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent resource name.
+   *     <p>The format of this value is as follows:
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   *     <p>The following example `parent` string specifies a parent project with the identifier
+   *     `example-project`, and specifies the `europe-west3` location for processing data:
+   *     <p>parent=projects/example-project/locations/europe-west3
+   * @param discoveryConfig Required. The DiscoveryConfig to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DiscoveryConfig createDiscoveryConfig(
+      LocationName parent, DiscoveryConfig discoveryConfig) {
+    CreateDiscoveryConfigRequest request =
+        CreateDiscoveryConfigRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setDiscoveryConfig(discoveryConfig)
+            .build();
+    return createDiscoveryConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a config for discovery to scan and profile storage.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   DiscoveryConfig discoveryConfig = DiscoveryConfig.newBuilder().build();
+   *   DiscoveryConfig response = dlpServiceClient.createDiscoveryConfig(parent, discoveryConfig);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent resource name.
+   *     <p>The format of this value is as follows:
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   *     <p>The following example `parent` string specifies a parent project with the identifier
+   *     `example-project`, and specifies the `europe-west3` location for processing data:
+   *     <p>parent=projects/example-project/locations/europe-west3
+   * @param discoveryConfig Required. The DiscoveryConfig to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DiscoveryConfig createDiscoveryConfig(
+      String parent, DiscoveryConfig discoveryConfig) {
+    CreateDiscoveryConfigRequest request =
+        CreateDiscoveryConfigRequest.newBuilder()
+            .setParent(parent)
+            .setDiscoveryConfig(discoveryConfig)
+            .build();
+    return createDiscoveryConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a config for discovery to scan and profile storage.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   CreateDiscoveryConfigRequest request =
+   *       CreateDiscoveryConfigRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setDiscoveryConfig(DiscoveryConfig.newBuilder().build())
+   *           .setConfigId("configId-580140035")
+   *           .build();
+   *   DiscoveryConfig response = dlpServiceClient.createDiscoveryConfig(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DiscoveryConfig createDiscoveryConfig(CreateDiscoveryConfigRequest request) {
+    return createDiscoveryConfigCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a config for discovery to scan and profile storage.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   CreateDiscoveryConfigRequest request =
+   *       CreateDiscoveryConfigRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setDiscoveryConfig(DiscoveryConfig.newBuilder().build())
+   *           .setConfigId("configId-580140035")
+   *           .build();
+   *   ApiFuture<DiscoveryConfig> future =
+   *       dlpServiceClient.createDiscoveryConfigCallable().futureCall(request);
+   *   // Do something.
+   *   DiscoveryConfig response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateDiscoveryConfigRequest, DiscoveryConfig>
+      createDiscoveryConfigCallable() {
+    return stub.createDiscoveryConfigCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a discovery configuration.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   DiscoveryConfigName name =
+   *       DiscoveryConfigName.of("[PROJECT]", "[LOCATION]", "[DISCOVERY_CONFIG]");
+   *   DiscoveryConfig discoveryConfig = DiscoveryConfig.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   DiscoveryConfig response =
+   *       dlpServiceClient.updateDiscoveryConfig(name, discoveryConfig, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Resource name of the project and the configuration, for example
+   *     `projects/dlp-test-project/discoveryConfigs/53234423`.
+   * @param discoveryConfig Required. New DiscoveryConfig value.
+   * @param updateMask Mask to control which fields get updated.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DiscoveryConfig updateDiscoveryConfig(
+      DiscoveryConfigName name, DiscoveryConfig discoveryConfig, FieldMask updateMask) {
+    UpdateDiscoveryConfigRequest request =
+        UpdateDiscoveryConfigRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setDiscoveryConfig(discoveryConfig)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateDiscoveryConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a discovery configuration.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   String name =
+   *       DiscoveryConfigName.of("[PROJECT]", "[LOCATION]", "[DISCOVERY_CONFIG]").toString();
+   *   DiscoveryConfig discoveryConfig = DiscoveryConfig.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   DiscoveryConfig response =
+   *       dlpServiceClient.updateDiscoveryConfig(name, discoveryConfig, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Resource name of the project and the configuration, for example
+   *     `projects/dlp-test-project/discoveryConfigs/53234423`.
+   * @param discoveryConfig Required. New DiscoveryConfig value.
+   * @param updateMask Mask to control which fields get updated.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DiscoveryConfig updateDiscoveryConfig(
+      String name, DiscoveryConfig discoveryConfig, FieldMask updateMask) {
+    UpdateDiscoveryConfigRequest request =
+        UpdateDiscoveryConfigRequest.newBuilder()
+            .setName(name)
+            .setDiscoveryConfig(discoveryConfig)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateDiscoveryConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a discovery configuration.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   UpdateDiscoveryConfigRequest request =
+   *       UpdateDiscoveryConfigRequest.newBuilder()
+   *           .setName(
+   *               DiscoveryConfigName.of("[PROJECT]", "[LOCATION]", "[DISCOVERY_CONFIG]")
+   *                   .toString())
+   *           .setDiscoveryConfig(DiscoveryConfig.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   DiscoveryConfig response = dlpServiceClient.updateDiscoveryConfig(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DiscoveryConfig updateDiscoveryConfig(UpdateDiscoveryConfigRequest request) {
+    return updateDiscoveryConfigCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a discovery configuration.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   UpdateDiscoveryConfigRequest request =
+   *       UpdateDiscoveryConfigRequest.newBuilder()
+   *           .setName(
+   *               DiscoveryConfigName.of("[PROJECT]", "[LOCATION]", "[DISCOVERY_CONFIG]")
+   *                   .toString())
+   *           .setDiscoveryConfig(DiscoveryConfig.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<DiscoveryConfig> future =
+   *       dlpServiceClient.updateDiscoveryConfigCallable().futureCall(request);
+   *   // Do something.
+   *   DiscoveryConfig response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateDiscoveryConfigRequest, DiscoveryConfig>
+      updateDiscoveryConfigCallable() {
+    return stub.updateDiscoveryConfigCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a discovery configuration.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   DiscoveryConfigName name =
+   *       DiscoveryConfigName.of("[PROJECT]", "[LOCATION]", "[DISCOVERY_CONFIG]");
+   *   DiscoveryConfig response = dlpServiceClient.getDiscoveryConfig(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Resource name of the project and the configuration, for example
+   *     `projects/dlp-test-project/discoveryConfigs/53234423`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DiscoveryConfig getDiscoveryConfig(DiscoveryConfigName name) {
+    GetDiscoveryConfigRequest request =
+        GetDiscoveryConfigRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getDiscoveryConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a discovery configuration.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   String name =
+   *       DiscoveryConfigName.of("[PROJECT]", "[LOCATION]", "[DISCOVERY_CONFIG]").toString();
+   *   DiscoveryConfig response = dlpServiceClient.getDiscoveryConfig(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Resource name of the project and the configuration, for example
+   *     `projects/dlp-test-project/discoveryConfigs/53234423`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DiscoveryConfig getDiscoveryConfig(String name) {
+    GetDiscoveryConfigRequest request =
+        GetDiscoveryConfigRequest.newBuilder().setName(name).build();
+    return getDiscoveryConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a discovery configuration.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   GetDiscoveryConfigRequest request =
+   *       GetDiscoveryConfigRequest.newBuilder()
+   *           .setName(
+   *               DiscoveryConfigName.of("[PROJECT]", "[LOCATION]", "[DISCOVERY_CONFIG]")
+   *                   .toString())
+   *           .build();
+   *   DiscoveryConfig response = dlpServiceClient.getDiscoveryConfig(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DiscoveryConfig getDiscoveryConfig(GetDiscoveryConfigRequest request) {
+    return getDiscoveryConfigCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a discovery configuration.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   GetDiscoveryConfigRequest request =
+   *       GetDiscoveryConfigRequest.newBuilder()
+   *           .setName(
+   *               DiscoveryConfigName.of("[PROJECT]", "[LOCATION]", "[DISCOVERY_CONFIG]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<DiscoveryConfig> future =
+   *       dlpServiceClient.getDiscoveryConfigCallable().futureCall(request);
+   *   // Do something.
+   *   DiscoveryConfig response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetDiscoveryConfigRequest, DiscoveryConfig>
+      getDiscoveryConfigCallable() {
+    return stub.getDiscoveryConfigCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists discovery configurations.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (DiscoveryConfig element : dlpServiceClient.listDiscoveryConfigs(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent resource name.
+   *     <p>The format of this value is as follows:
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   *     <p>The following example `parent` string specifies a parent project with the identifier
+   *     `example-project`, and specifies the `europe-west3` location for processing data:
+   *     <p>parent=projects/example-project/locations/europe-west3
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListDiscoveryConfigsPagedResponse listDiscoveryConfigs(LocationName parent) {
+    ListDiscoveryConfigsRequest request =
+        ListDiscoveryConfigsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listDiscoveryConfigs(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists discovery configurations.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   for (DiscoveryConfig element : dlpServiceClient.listDiscoveryConfigs(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent resource name.
+   *     <p>The format of this value is as follows:
+   *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
+   *     <p>The following example `parent` string specifies a parent project with the identifier
+   *     `example-project`, and specifies the `europe-west3` location for processing data:
+   *     <p>parent=projects/example-project/locations/europe-west3
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListDiscoveryConfigsPagedResponse listDiscoveryConfigs(String parent) {
+    ListDiscoveryConfigsRequest request =
+        ListDiscoveryConfigsRequest.newBuilder().setParent(parent).build();
+    return listDiscoveryConfigs(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists discovery configurations.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   ListDiscoveryConfigsRequest request =
+   *       ListDiscoveryConfigsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageToken("pageToken873572522")
+   *           .setPageSize(883849137)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   for (DiscoveryConfig element : dlpServiceClient.listDiscoveryConfigs(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListDiscoveryConfigsPagedResponse listDiscoveryConfigs(
+      ListDiscoveryConfigsRequest request) {
+    return listDiscoveryConfigsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists discovery configurations.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   ListDiscoveryConfigsRequest request =
+   *       ListDiscoveryConfigsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageToken("pageToken873572522")
+   *           .setPageSize(883849137)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   ApiFuture<DiscoveryConfig> future =
+   *       dlpServiceClient.listDiscoveryConfigsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (DiscoveryConfig element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListDiscoveryConfigsRequest, ListDiscoveryConfigsPagedResponse>
+      listDiscoveryConfigsPagedCallable() {
+    return stub.listDiscoveryConfigsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists discovery configurations.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   ListDiscoveryConfigsRequest request =
+   *       ListDiscoveryConfigsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageToken("pageToken873572522")
+   *           .setPageSize(883849137)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   while (true) {
+   *     ListDiscoveryConfigsResponse response =
+   *         dlpServiceClient.listDiscoveryConfigsCallable().call(request);
+   *     for (DiscoveryConfig element : response.getDiscoveryConfigsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListDiscoveryConfigsRequest, ListDiscoveryConfigsResponse>
+      listDiscoveryConfigsCallable() {
+    return stub.listDiscoveryConfigsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a discovery configuration.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   DiscoveryConfigName name =
+   *       DiscoveryConfigName.of("[PROJECT]", "[LOCATION]", "[DISCOVERY_CONFIG]");
+   *   dlpServiceClient.deleteDiscoveryConfig(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Resource name of the project and the config, for example
+   *     `projects/dlp-test-project/discoveryConfigs/53234423`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteDiscoveryConfig(DiscoveryConfigName name) {
+    DeleteDiscoveryConfigRequest request =
+        DeleteDiscoveryConfigRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    deleteDiscoveryConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a discovery configuration.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   String name =
+   *       DiscoveryConfigName.of("[PROJECT]", "[LOCATION]", "[DISCOVERY_CONFIG]").toString();
+   *   dlpServiceClient.deleteDiscoveryConfig(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Resource name of the project and the config, for example
+   *     `projects/dlp-test-project/discoveryConfigs/53234423`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteDiscoveryConfig(String name) {
+    DeleteDiscoveryConfigRequest request =
+        DeleteDiscoveryConfigRequest.newBuilder().setName(name).build();
+    deleteDiscoveryConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a discovery configuration.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   DeleteDiscoveryConfigRequest request =
+   *       DeleteDiscoveryConfigRequest.newBuilder()
+   *           .setName(
+   *               DiscoveryConfigName.of("[PROJECT]", "[LOCATION]", "[DISCOVERY_CONFIG]")
+   *                   .toString())
+   *           .build();
+   *   dlpServiceClient.deleteDiscoveryConfig(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteDiscoveryConfig(DeleteDiscoveryConfigRequest request) {
+    deleteDiscoveryConfigCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a discovery configuration.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   DeleteDiscoveryConfigRequest request =
+   *       DeleteDiscoveryConfigRequest.newBuilder()
+   *           .setName(
+   *               DiscoveryConfigName.of("[PROJECT]", "[LOCATION]", "[DISCOVERY_CONFIG]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       dlpServiceClient.deleteDiscoveryConfigCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteDiscoveryConfigRequest, Empty> deleteDiscoveryConfigCallable() {
+    return stub.deleteDiscoveryConfigCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Creates a new job to inspect storage or calculate risk metrics. See
    * https://cloud.google.com/dlp/docs/inspecting-storage and
    * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
@@ -6170,6 +6878,90 @@ public class DlpServiceClient implements BackgroundResource {
     protected ListJobTriggersFixedSizeCollection createCollection(
         List<ListJobTriggersPage> pages, int collectionSize) {
       return new ListJobTriggersFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListDiscoveryConfigsPagedResponse
+      extends AbstractPagedListResponse<
+          ListDiscoveryConfigsRequest,
+          ListDiscoveryConfigsResponse,
+          DiscoveryConfig,
+          ListDiscoveryConfigsPage,
+          ListDiscoveryConfigsFixedSizeCollection> {
+
+    public static ApiFuture<ListDiscoveryConfigsPagedResponse> createAsync(
+        PageContext<ListDiscoveryConfigsRequest, ListDiscoveryConfigsResponse, DiscoveryConfig>
+            context,
+        ApiFuture<ListDiscoveryConfigsResponse> futureResponse) {
+      ApiFuture<ListDiscoveryConfigsPage> futurePage =
+          ListDiscoveryConfigsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListDiscoveryConfigsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListDiscoveryConfigsPagedResponse(ListDiscoveryConfigsPage page) {
+      super(page, ListDiscoveryConfigsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListDiscoveryConfigsPage
+      extends AbstractPage<
+          ListDiscoveryConfigsRequest,
+          ListDiscoveryConfigsResponse,
+          DiscoveryConfig,
+          ListDiscoveryConfigsPage> {
+
+    private ListDiscoveryConfigsPage(
+        PageContext<ListDiscoveryConfigsRequest, ListDiscoveryConfigsResponse, DiscoveryConfig>
+            context,
+        ListDiscoveryConfigsResponse response) {
+      super(context, response);
+    }
+
+    private static ListDiscoveryConfigsPage createEmptyPage() {
+      return new ListDiscoveryConfigsPage(null, null);
+    }
+
+    @Override
+    protected ListDiscoveryConfigsPage createPage(
+        PageContext<ListDiscoveryConfigsRequest, ListDiscoveryConfigsResponse, DiscoveryConfig>
+            context,
+        ListDiscoveryConfigsResponse response) {
+      return new ListDiscoveryConfigsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListDiscoveryConfigsPage> createPageAsync(
+        PageContext<ListDiscoveryConfigsRequest, ListDiscoveryConfigsResponse, DiscoveryConfig>
+            context,
+        ApiFuture<ListDiscoveryConfigsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListDiscoveryConfigsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListDiscoveryConfigsRequest,
+          ListDiscoveryConfigsResponse,
+          DiscoveryConfig,
+          ListDiscoveryConfigsPage,
+          ListDiscoveryConfigsFixedSizeCollection> {
+
+    private ListDiscoveryConfigsFixedSizeCollection(
+        List<ListDiscoveryConfigsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListDiscoveryConfigsFixedSizeCollection createEmptyCollection() {
+      return new ListDiscoveryConfigsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListDiscoveryConfigsFixedSizeCollection createCollection(
+        List<ListDiscoveryConfigsPage> pages, int collectionSize) {
+      return new ListDiscoveryConfigsFixedSizeCollection(pages, collectionSize);
     }
   }
 

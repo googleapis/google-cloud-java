@@ -204,6 +204,112 @@ public class MockDatasetServiceImpl extends DatasetServiceImplBase {
   }
 
   @Override
+  public void createDatasetVersion(
+      CreateDatasetVersionRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateDatasetVersion, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteDatasetVersion(
+      DeleteDatasetVersionRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteDatasetVersion, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getDatasetVersion(
+      GetDatasetVersionRequest request, StreamObserver<DatasetVersion> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof DatasetVersion) {
+      requests.add(request);
+      responseObserver.onNext(((DatasetVersion) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetDatasetVersion, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  DatasetVersion.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listDatasetVersions(
+      ListDatasetVersionsRequest request,
+      StreamObserver<ListDatasetVersionsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListDatasetVersionsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListDatasetVersionsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListDatasetVersions, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListDatasetVersionsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void restoreDatasetVersion(
+      RestoreDatasetVersionRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method RestoreDatasetVersion, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void listDataItems(
       ListDataItemsRequest request, StreamObserver<ListDataItemsResponse> responseObserver) {
     Object response = responses.poll();

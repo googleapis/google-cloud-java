@@ -60,6 +60,14 @@ public final class LineageProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_datacatalog_lineage_v1_OperationMetadata_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_datacatalog_lineage_v1_ProcessOpenLineageRunEventRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_datacatalog_lineage_v1_ProcessOpenLineageRunEventRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_datacatalog_lineage_v1_ProcessOpenLineageRunEventResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_datacatalog_lineage_v1_ProcessOpenLineageRunEventResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_datacatalog_lineage_v1_CreateProcessRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_datacatalog_lineage_v1_CreateProcessRequest_fieldAccessorTable;
@@ -205,7 +213,7 @@ public final class LineageProto {
           + "\001(\tB\004\342A\001\005\022C\n\005links\030\010 \003(\0132..google.cloud."
           + "datacatalog.lineage.v1.EventLinkB\004\342A\001\001\0224"
           + "\n\nstart_time\030\006 \001(\0132\032.google.protobuf.Tim"
-          + "estampB\004\342A\001\001\0222\n\010end_time\030\007 \001(\0132\032.google."
+          + "estampB\004\342A\001\002\0222\n\010end_time\030\007 \001(\0132\032.google."
           + "protobuf.TimestampB\004\342A\001\001:\223\001\352A\217\001\n\'datalin"
           + "eage.googleapis.com/LineageEvent\022dprojec"
           + "ts/{project}/locations/{location}/proces"
@@ -215,7 +223,7 @@ public final class LineageProto {
           + "v1.EntityReferenceB\004\342A\001\002\022J\n\006target\030\002 \001(\013"
           + "24.google.cloud.datacatalog.lineage.v1.E"
           + "ntityReferenceB\004\342A\001\002\"5\n\017EntityReference\022"
-          + "\"\n\024fully_qualified_name\030\001 \001(\tB\004\342A\001\002\"\340\003\n\021"
+          + "\"\n\024fully_qualified_name\030\001 \001(\tB\004\342A\001\002\"\354\003\n\021"
           + "OperationMetadata\022Q\n\005state\030\001 \001(\0162<.googl"
           + "e.cloud.datacatalog.lineage.v1.Operation"
           + "Metadata.StateB\004\342A\001\003\022Y\n\016operation_type\030\002"
@@ -226,191 +234,208 @@ public final class LineageProto {
           + "buf.TimestampB\004\342A\001\003\0222\n\010end_time\030\006 \001(\0132\032."
           + "google.protobuf.TimestampB\004\342A\001\003\"S\n\005State"
           + "\022\025\n\021STATE_UNSPECIFIED\020\000\022\013\n\007PENDING\020\001\022\013\n\007"
-          + "RUNNING\020\002\022\r\n\tSUCCEEDED\020\003\022\n\n\006FAILED\020\004\"(\n\004"
-          + "Type\022\024\n\020TYPE_UNSPECIFIED\020\000\022\n\n\006DELETE\020\001\"\254"
-          + "\001\n\024CreateProcessRequest\022;\n\006parent\030\001 \001(\tB"
-          + "+\342A\001\002\372A$\022\"datalineage.googleapis.com/Pro"
-          + "cess\022C\n\007process\030\002 \001(\0132,.google.cloud.dat"
-          + "acatalog.lineage.v1.ProcessB\004\342A\001\002\022\022\n\nreq"
-          + "uest_id\030\003 \001(\t\"\243\001\n\024UpdateProcessRequest\022C"
-          + "\n\007process\030\001 \001(\0132,.google.cloud.datacatal"
-          + "og.lineage.v1.ProcessB\004\342A\001\002\022/\n\013update_ma"
-          + "sk\030\002 \001(\0132\032.google.protobuf.FieldMask\022\025\n\r"
-          + "allow_missing\030\003 \001(\010\"N\n\021GetProcessRequest"
-          + "\0229\n\004name\030\001 \001(\tB+\342A\001\002\372A$\n\"datalineage.goo"
-          + "gleapis.com/Process\"z\n\024ListProcessesRequ"
-          + "est\022;\n\006parent\030\001 \001(\tB+\342A\001\002\372A$\022\"datalineag"
-          + "e.googleapis.com/Process\022\021\n\tpage_size\030\002 "
-          + "\001(\005\022\022\n\npage_token\030\003 \001(\t\"q\n\025ListProcesses"
-          + "Response\022?\n\tprocesses\030\001 \003(\0132,.google.clo"
-          + "ud.datacatalog.lineage.v1.Process\022\027\n\017nex"
-          + "t_page_token\030\002 \001(\t\"h\n\024DeleteProcessReque"
+          + "RUNNING\020\002\022\r\n\tSUCCEEDED\020\003\022\n\n\006FAILED\020\004\"4\n\004"
+          + "Type\022\024\n\020TYPE_UNSPECIFIED\020\000\022\n\n\006DELETE\020\001\022\n"
+          + "\n\006CREATE\020\002\"\202\001\n!ProcessOpenLineageRunEven"
+          + "tRequest\022\024\n\006parent\030\001 \001(\tB\004\342A\001\002\0223\n\014open_l"
+          + "ineage\030\002 \001(\0132\027.google.protobuf.StructB\004\342"
+          + "A\001\002\022\022\n\nrequest_id\030\003 \001(\t\"\326\001\n\"ProcessOpenL"
+          + "ineageRunEventResponse\0228\n\007process\030\001 \001(\tB"
+          + "\'\372A$\n\"datalineage.googleapis.com/Process"
+          + "\0220\n\003run\030\002 \001(\tB#\372A \n\036datalineage.googleap"
+          + "is.com/Run\022D\n\016lineage_events\030\003 \003(\tB,\372A)\n"
+          + "\'datalineage.googleapis.com/LineageEvent"
+          + "\"\254\001\n\024CreateProcessRequest\022;\n\006parent\030\001 \001("
+          + "\tB+\342A\001\002\372A$\022\"datalineage.googleapis.com/P"
+          + "rocess\022C\n\007process\030\002 \001(\0132,.google.cloud.d"
+          + "atacatalog.lineage.v1.ProcessB\004\342A\001\002\022\022\n\nr"
+          + "equest_id\030\003 \001(\t\"\243\001\n\024UpdateProcessRequest"
+          + "\022C\n\007process\030\001 \001(\0132,.google.cloud.datacat"
+          + "alog.lineage.v1.ProcessB\004\342A\001\002\022/\n\013update_"
+          + "mask\030\002 \001(\0132\032.google.protobuf.FieldMask\022\025"
+          + "\n\rallow_missing\030\003 \001(\010\"N\n\021GetProcessReque"
           + "st\0229\n\004name\030\001 \001(\tB+\342A\001\002\372A$\n\"datalineage.g"
-          + "oogleapis.com/Process\022\025\n\rallow_missing\030\002"
-          + " \001(\010\"\234\001\n\020CreateRunRequest\0227\n\006parent\030\001 \001("
-          + "\tB\'\342A\001\002\372A \022\036datalineage.googleapis.com/R"
-          + "un\022;\n\003run\030\002 \001(\0132(.google.cloud.datacatal"
-          + "og.lineage.v1.RunB\004\342A\001\002\022\022\n\nrequest_id\030\003 "
-          + "\001(\t\"\200\001\n\020UpdateRunRequest\022;\n\003run\030\001 \001(\0132(."
-          + "google.cloud.datacatalog.lineage.v1.RunB"
-          + "\004\342A\001\002\022/\n\013update_mask\030\002 \001(\0132\032.google.prot"
-          + "obuf.FieldMask\"F\n\rGetRunRequest\0225\n\004name\030"
-          + "\001 \001(\tB\'\342A\001\002\372A \n\036datalineage.googleapis.c"
-          + "om/Run\"q\n\017ListRunsRequest\0227\n\006parent\030\001 \001("
-          + "\tB\'\342A\001\002\372A \022\036datalineage.googleapis.com/R"
-          + "un\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001("
-          + "\t\"c\n\020ListRunsResponse\0226\n\004runs\030\001 \003(\0132(.go"
-          + "ogle.cloud.datacatalog.lineage.v1.Run\022\027\n"
-          + "\017next_page_token\030\002 \001(\t\"`\n\020DeleteRunReque"
-          + "st\0225\n\004name\030\001 \001(\tB\'\342A\001\002\372A \n\036datalineage.g"
-          + "oogleapis.com/Run\022\025\n\rallow_missing\030\002 \001(\010"
-          + "\"\301\001\n\031CreateLineageEventRequest\022@\n\006parent"
-          + "\030\001 \001(\tB0\342A\001\002\372A)\022\'datalineage.googleapis."
-          + "com/LineageEvent\022N\n\rlineage_event\030\002 \001(\0132"
-          + "1.google.cloud.datacatalog.lineage.v1.Li"
-          + "neageEventB\004\342A\001\002\022\022\n\nrequest_id\030\003 \001(\t\"X\n\026"
-          + "GetLineageEventRequest\022>\n\004name\030\001 \001(\tB0\342A"
-          + "\001\002\372A)\n\'datalineage.googleapis.com/Lineag"
-          + "eEvent\"\203\001\n\030ListLineageEventsRequest\022@\n\006p"
-          + "arent\030\001 \001(\tB0\342A\001\002\372A)\022\'datalineage.google"
-          + "apis.com/LineageEvent\022\021\n\tpage_size\030\002 \001(\005"
-          + "\022\022\n\npage_token\030\003 \001(\t\"\177\n\031ListLineageEvent"
-          + "sResponse\022I\n\016lineage_events\030\001 \003(\01321.goog"
-          + "le.cloud.datacatalog.lineage.v1.LineageE"
-          + "vent\022\027\n\017next_page_token\030\002 \001(\t\"r\n\031DeleteL"
-          + "ineageEventRequest\022>\n\004name\030\001 \001(\tB0\342A\001\002\372A"
-          + ")\n\'datalineage.googleapis.com/LineageEve"
-          + "nt\022\025\n\rallow_missing\030\002 \001(\010\"\254\002\n\022SearchLink"
-          + "sRequest\022;\n\006parent\030\001 \001(\tB+\342A\001\002\372A$\022\"datal"
-          + "ineage.googleapis.com/Process\022L\n\006source\030"
-          + "\004 \001(\01324.google.cloud.datacatalog.lineage"
-          + ".v1.EntityReferenceB\004\342A\001\001H\000\022L\n\006target\030\005 "
-          + "\001(\01324.google.cloud.datacatalog.lineage.v"
-          + "1.EntityReferenceB\004\342A\001\001H\000\022\027\n\tpage_size\030\002"
-          + " \001(\005B\004\342A\001\001\022\030\n\npage_token\030\003 \001(\tB\004\342A\001\001B\n\n\010"
-          + "criteria\"h\n\023SearchLinksResponse\0228\n\005links"
-          + "\030\001 \003(\0132).google.cloud.datacatalog.lineag"
-          + "e.v1.Link\022\027\n\017next_page_token\030\002 \001(\t\"\205\002\n\004L"
-          + "ink\022\023\n\004name\030\001 \001(\tB\005\342A\002\003\005\022D\n\006source\030\002 \001(\013"
-          + "24.google.cloud.datacatalog.lineage.v1.E"
-          + "ntityReference\022D\n\006target\030\003 \001(\01324.google."
+          + "oogleapis.com/Process\"z\n\024ListProcessesRe"
+          + "quest\022;\n\006parent\030\001 \001(\tB+\342A\001\002\372A$\022\"dataline"
+          + "age.googleapis.com/Process\022\021\n\tpage_size\030"
+          + "\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"q\n\025ListProcess"
+          + "esResponse\022?\n\tprocesses\030\001 \003(\0132,.google.c"
+          + "loud.datacatalog.lineage.v1.Process\022\027\n\017n"
+          + "ext_page_token\030\002 \001(\t\"h\n\024DeleteProcessReq"
+          + "uest\0229\n\004name\030\001 \001(\tB+\342A\001\002\372A$\n\"datalineage"
+          + ".googleapis.com/Process\022\025\n\rallow_missing"
+          + "\030\002 \001(\010\"\234\001\n\020CreateRunRequest\0227\n\006parent\030\001 "
+          + "\001(\tB\'\342A\001\002\372A \022\036datalineage.googleapis.com"
+          + "/Run\022;\n\003run\030\002 \001(\0132(.google.cloud.datacat"
+          + "alog.lineage.v1.RunB\004\342A\001\002\022\022\n\nrequest_id\030"
+          + "\003 \001(\t\"\227\001\n\020UpdateRunRequest\022;\n\003run\030\001 \001(\0132"
+          + "(.google.cloud.datacatalog.lineage.v1.Ru"
+          + "nB\004\342A\001\002\022/\n\013update_mask\030\002 \001(\0132\032.google.pr"
+          + "otobuf.FieldMask\022\025\n\rallow_missing\030\003 \001(\010\""
+          + "F\n\rGetRunRequest\0225\n\004name\030\001 \001(\tB\'\342A\001\002\372A \n"
+          + "\036datalineage.googleapis.com/Run\"q\n\017ListR"
+          + "unsRequest\0227\n\006parent\030\001 \001(\tB\'\342A\001\002\372A \022\036dat"
+          + "alineage.googleapis.com/Run\022\021\n\tpage_size"
+          + "\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"c\n\020ListRunsRe"
+          + "sponse\0226\n\004runs\030\001 \003(\0132(.google.cloud.data"
+          + "catalog.lineage.v1.Run\022\027\n\017next_page_toke"
+          + "n\030\002 \001(\t\"`\n\020DeleteRunRequest\0225\n\004name\030\001 \001("
+          + "\tB\'\342A\001\002\372A \n\036datalineage.googleapis.com/R"
+          + "un\022\025\n\rallow_missing\030\002 \001(\010\"\301\001\n\031CreateLine"
+          + "ageEventRequest\022@\n\006parent\030\001 \001(\tB0\342A\001\002\372A)"
+          + "\022\'datalineage.googleapis.com/LineageEven"
+          + "t\022N\n\rlineage_event\030\002 \001(\01321.google.cloud."
+          + "datacatalog.lineage.v1.LineageEventB\004\342A\001"
+          + "\002\022\022\n\nrequest_id\030\003 \001(\t\"X\n\026GetLineageEvent"
+          + "Request\022>\n\004name\030\001 \001(\tB0\342A\001\002\372A)\n\'dataline"
+          + "age.googleapis.com/LineageEvent\"\203\001\n\030List"
+          + "LineageEventsRequest\022@\n\006parent\030\001 \001(\tB0\342A"
+          + "\001\002\372A)\022\'datalineage.googleapis.com/Lineag"
+          + "eEvent\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030"
+          + "\003 \001(\t\"\177\n\031ListLineageEventsResponse\022I\n\016li"
+          + "neage_events\030\001 \003(\01321.google.cloud.dataca"
+          + "talog.lineage.v1.LineageEvent\022\027\n\017next_pa"
+          + "ge_token\030\002 \001(\t\"r\n\031DeleteLineageEventRequ"
+          + "est\022>\n\004name\030\001 \001(\tB0\342A\001\002\372A)\n\'datalineage."
+          + "googleapis.com/LineageEvent\022\025\n\rallow_mis"
+          + "sing\030\002 \001(\010\"\254\002\n\022SearchLinksRequest\022;\n\006par"
+          + "ent\030\001 \001(\tB+\342A\001\002\372A$\022\"datalineage.googleap"
+          + "is.com/Process\022L\n\006source\030\004 \001(\01324.google."
           + "cloud.datacatalog.lineage.v1.EntityRefer"
-          + "ence\022.\n\nstart_time\030\004 \001(\0132\032.google.protob"
-          + "uf.Timestamp\022,\n\010end_time\030\005 \001(\0132\032.google."
-          + "protobuf.Timestamp\"\232\001\n\037BatchSearchLinkPr"
-          + "ocessesRequest\022;\n\006parent\030\001 \001(\tB+\342A\001\002\372A$\022"
-          + "\"datalineage.googleapis.com/Process\022\023\n\005l"
-          + "inks\030\002 \003(\tB\004\342A\001\002\022\021\n\tpage_size\030\003 \001(\005\022\022\n\np"
-          + "age_token\030\004 \001(\t\"\205\001\n BatchSearchLinkProce"
-          + "ssesResponse\022H\n\rprocess_links\030\001 \003(\01321.go"
-          + "ogle.cloud.datacatalog.lineage.v1.Proces"
-          + "sLinks\022\027\n\017next_page_token\030\002 \001(\t\"\215\001\n\014Proc"
-          + "essLinks\0228\n\007process\030\001 \001(\tB\'\372A$\n\"dataline"
-          + "age.googleapis.com/Process\022C\n\005links\030\002 \003("
-          + "\01324.google.cloud.datacatalog.lineage.v1."
-          + "ProcessLinkInfo\"}\n\017ProcessLinkInfo\022\014\n\004li"
-          + "nk\030\001 \001(\t\022.\n\nstart_time\030\002 \001(\0132\032.google.pr"
-          + "otobuf.Timestamp\022,\n\010end_time\030\003 \001(\0132\032.goo"
-          + "gle.protobuf.Timestamp\"\332\001\n\006Origin\022K\n\013sou"
-          + "rce_type\030\001 \001(\01626.google.cloud.datacatalo"
-          + "g.lineage.v1.Origin.SourceType\022\014\n\004name\030\002"
-          + " \001(\t\"u\n\nSourceType\022\033\n\027SOURCE_TYPE_UNSPEC"
-          + "IFIED\020\000\022\n\n\006CUSTOM\020\001\022\014\n\010BIGQUERY\020\002\022\017\n\013DAT"
-          + "A_FUSION\020\003\022\014\n\010COMPOSER\020\004\022\021\n\rLOOKER_STUDI"
-          + "O\020\0052\240\033\n\007Lineage\022\311\001\n\rCreateProcess\0229.goog"
-          + "le.cloud.datacatalog.lineage.v1.CreatePr"
-          + "ocessRequest\032,.google.cloud.datacatalog."
-          + "lineage.v1.Process\"O\332A\016parent,process\202\323\344"
-          + "\223\0028\"-/v1/{parent=projects/*/locations/*}"
-          + "/processes:\007process\022\326\001\n\rUpdateProcess\0229."
-          + "google.cloud.datacatalog.lineage.v1.Upda"
+          + "enceB\004\342A\001\001H\000\022L\n\006target\030\005 \001(\01324.google.cl"
+          + "oud.datacatalog.lineage.v1.EntityReferen"
+          + "ceB\004\342A\001\001H\000\022\027\n\tpage_size\030\002 \001(\005B\004\342A\001\001\022\030\n\np"
+          + "age_token\030\003 \001(\tB\004\342A\001\001B\n\n\010criteria\"h\n\023Sea"
+          + "rchLinksResponse\0228\n\005links\030\001 \003(\0132).google"
+          + ".cloud.datacatalog.lineage.v1.Link\022\027\n\017ne"
+          + "xt_page_token\030\002 \001(\t\"\205\002\n\004Link\022\023\n\004name\030\001 \001"
+          + "(\tB\005\342A\002\003\005\022D\n\006source\030\002 \001(\01324.google.cloud"
+          + ".datacatalog.lineage.v1.EntityReference\022"
+          + "D\n\006target\030\003 \001(\01324.google.cloud.datacatal"
+          + "og.lineage.v1.EntityReference\022.\n\nstart_t"
+          + "ime\030\004 \001(\0132\032.google.protobuf.Timestamp\022,\n"
+          + "\010end_time\030\005 \001(\0132\032.google.protobuf.Timest"
+          + "amp\"\232\001\n\037BatchSearchLinkProcessesRequest\022"
+          + ";\n\006parent\030\001 \001(\tB+\342A\001\002\372A$\022\"datalineage.go"
+          + "ogleapis.com/Process\022\023\n\005links\030\002 \003(\tB\004\342A\001"
+          + "\002\022\021\n\tpage_size\030\003 \001(\005\022\022\n\npage_token\030\004 \001(\t"
+          + "\"\205\001\n BatchSearchLinkProcessesResponse\022H\n"
+          + "\rprocess_links\030\001 \003(\01321.google.cloud.data"
+          + "catalog.lineage.v1.ProcessLinks\022\027\n\017next_"
+          + "page_token\030\002 \001(\t\"\215\001\n\014ProcessLinks\0228\n\007pro"
+          + "cess\030\001 \001(\tB\'\372A$\n\"datalineage.googleapis."
+          + "com/Process\022C\n\005links\030\002 \003(\01324.google.clou"
+          + "d.datacatalog.lineage.v1.ProcessLinkInfo"
+          + "\"}\n\017ProcessLinkInfo\022\014\n\004link\030\001 \001(\t\022.\n\nsta"
+          + "rt_time\030\002 \001(\0132\032.google.protobuf.Timestam"
+          + "p\022,\n\010end_time\030\003 \001(\0132\032.google.protobuf.Ti"
+          + "mestamp\"\351\001\n\006Origin\022K\n\013source_type\030\001 \001(\0162"
+          + "6.google.cloud.datacatalog.lineage.v1.Or"
+          + "igin.SourceType\022\014\n\004name\030\002 \001(\t\"\203\001\n\nSource"
+          + "Type\022\033\n\027SOURCE_TYPE_UNSPECIFIED\020\000\022\n\n\006CUS"
+          + "TOM\020\001\022\014\n\010BIGQUERY\020\002\022\017\n\013DATA_FUSION\020\003\022\014\n\010"
+          + "COMPOSER\020\004\022\021\n\rLOOKER_STUDIO\020\005\022\014\n\010DATAPRO"
+          + "C\020\0062\274\035\n\007Lineage\022\231\002\n\032ProcessOpenLineageRu"
+          + "nEvent\022F.google.cloud.datacatalog.lineag"
+          + "e.v1.ProcessOpenLineageRunEventRequest\032G"
+          + ".google.cloud.datacatalog.lineage.v1.Pro"
+          + "cessOpenLineageRunEventResponse\"j\332A\023pare"
+          + "nt,open_lineage\202\323\344\223\002N\">/v1/{parent=proje"
+          + "cts/*/locations/*}:processOpenLineageRun"
+          + "Event:\014open_lineage\022\311\001\n\rCreateProcess\0229."
+          + "google.cloud.datacatalog.lineage.v1.Crea"
           + "teProcessRequest\032,.google.cloud.datacata"
-          + "log.lineage.v1.Process\"\\\332A\023process,updat"
-          + "e_mask\202\323\344\223\002@25/v1/{process.name=projects"
-          + "/*/locations/*/processes/*}:\007process\022\260\001\n"
-          + "\nGetProcess\0226.google.cloud.datacatalog.l"
-          + "ineage.v1.GetProcessRequest\032,.google.clo"
-          + "ud.datacatalog.lineage.v1.Process\"<\332A\004na"
-          + "me\202\323\344\223\002/\022-/v1/{name=projects/*/locations"
-          + "/*/processes/*}\022\306\001\n\rListProcesses\0229.goog"
-          + "le.cloud.datacatalog.lineage.v1.ListProc"
-          + "essesRequest\032:.google.cloud.datacatalog."
-          + "lineage.v1.ListProcessesResponse\">\332A\006par"
-          + "ent\202\323\344\223\002/\022-/v1/{parent=projects/*/locati"
-          + "ons/*}/processes\022\371\001\n\rDeleteProcess\0229.goo"
-          + "gle.cloud.datacatalog.lineage.v1.DeleteP"
-          + "rocessRequest\032\035.google.longrunning.Opera"
-          + "tion\"\215\001\312AN\n\025google.protobuf.Empty\0225googl"
-          + "e.cloud.datacatalog.lineage.v1.Operation"
-          + "Metadata\332A\004name\202\323\344\223\002/*-/v1/{name=project"
-          + "s/*/locations/*/processes/*}\022\274\001\n\tCreateR"
-          + "un\0225.google.cloud.datacatalog.lineage.v1"
-          + ".CreateRunRequest\032(.google.cloud.datacat"
-          + "alog.lineage.v1.Run\"N\332A\nparent,run\202\323\344\223\002;"
-          + "\"4/v1/{parent=projects/*/locations/*/pro"
-          + "cesses/*}/runs:\003run\022\305\001\n\tUpdateRun\0225.goog"
-          + "le.cloud.datacatalog.lineage.v1.UpdateRu"
-          + "nRequest\032(.google.cloud.datacatalog.line"
-          + "age.v1.Run\"W\332A\017run,update_mask\202\323\344\223\002?28/v"
-          + "1/{run.name=projects/*/locations/*/proce"
-          + "sses/*/runs/*}:\003run\022\253\001\n\006GetRun\0222.google."
-          + "cloud.datacatalog.lineage.v1.GetRunReque"
-          + "st\032(.google.cloud.datacatalog.lineage.v1"
-          + ".Run\"C\332A\004name\202\323\344\223\0026\0224/v1/{name=projects/"
-          + "*/locations/*/processes/*/runs/*}\022\276\001\n\010Li"
-          + "stRuns\0224.google.cloud.datacatalog.lineag"
-          + "e.v1.ListRunsRequest\0325.google.cloud.data"
-          + "catalog.lineage.v1.ListRunsResponse\"E\332A\006"
-          + "parent\202\323\344\223\0026\0224/v1/{parent=projects/*/loc"
-          + "ations/*/processes/*}/runs\022\370\001\n\tDeleteRun"
-          + "\0225.google.cloud.datacatalog.lineage.v1.D"
-          + "eleteRunRequest\032\035.google.longrunning.Ope"
-          + "ration\"\224\001\312AN\n\025google.protobuf.Empty\0225goo"
-          + "gle.cloud.datacatalog.lineage.v1.Operati"
-          + "onMetadata\332A\004name\202\323\344\223\0026*4/v1/{name=proje"
-          + "cts/*/locations/*/processes/*/runs/*}\022\373\001"
-          + "\n\022CreateLineageEvent\022>.google.cloud.data"
-          + "catalog.lineage.v1.CreateLineageEventReq"
-          + "uest\0321.google.cloud.datacatalog.lineage."
-          + "v1.LineageEvent\"r\332A\024parent,lineage_event"
-          + "\202\323\344\223\002U\"D/v1/{parent=projects/*/locations"
-          + "/*/processes/*/runs/*}/lineageEvents:\rli"
-          + "neage_event\022\326\001\n\017GetLineageEvent\022;.google"
-          + ".cloud.datacatalog.lineage.v1.GetLineage"
-          + "EventRequest\0321.google.cloud.datacatalog."
-          + "lineage.v1.LineageEvent\"S\332A\004name\202\323\344\223\002F\022D"
-          + "/v1/{name=projects/*/locations/*/process"
-          + "es/*/runs/*/lineageEvents/*}\022\351\001\n\021ListLin"
-          + "eageEvents\022=.google.cloud.datacatalog.li"
-          + "neage.v1.ListLineageEventsRequest\032>.goog"
-          + "le.cloud.datacatalog.lineage.v1.ListLine"
-          + "ageEventsResponse\"U\332A\006parent\202\323\344\223\002F\022D/v1/"
-          + "{parent=projects/*/locations/*/processes"
-          + "/*/runs/*}/lineageEvents\022\301\001\n\022DeleteLinea"
-          + "geEvent\022>.google.cloud.datacatalog.linea"
-          + "ge.v1.DeleteLineageEventRequest\032\026.google"
-          + ".protobuf.Empty\"S\332A\004name\202\323\344\223\002F*D/v1/{nam"
-          + "e=projects/*/locations/*/processes/*/run"
-          + "s/*/lineageEvents/*}\022\274\001\n\013SearchLinks\0227.g"
-          + "oogle.cloud.datacatalog.lineage.v1.Searc"
-          + "hLinksRequest\0328.google.cloud.datacatalog"
-          + ".lineage.v1.SearchLinksResponse\":\202\323\344\223\0024\""
-          + "//v1/{parent=projects/*/locations/*}:sea"
-          + "rchLinks:\001*\022\360\001\n\030BatchSearchLinkProcesses"
-          + "\022D.google.cloud.datacatalog.lineage.v1.B"
-          + "atchSearchLinkProcessesRequest\032E.google."
-          + "cloud.datacatalog.lineage.v1.BatchSearch"
-          + "LinkProcessesResponse\"G\202\323\344\223\002A\"</v1/{pare"
-          + "nt=projects/*/locations/*}:batchSearchLi"
-          + "nkProcesses:\001*\032N\312A\032datalineage.googleapi"
-          + "s.com\322A.https://www.googleapis.com/auth/"
-          + "cloud-platformB\362\001\n\'com.google.cloud.data"
-          + "catalog.lineage.v1B\014LineageProtoP\001ZAclou"
-          + "d.google.com/go/datacatalog/lineage/apiv"
-          + "1/lineagepb;lineagepb\252\002#Google.Cloud.Dat"
-          + "aCatalog.Lineage.V1\312\002#Google\\Cloud\\DataC"
-          + "atalog\\Lineage\\V1\352\002\'Google::Cloud::DataC"
-          + "atalog::Lineage::V1b\006proto3"
+          + "log.lineage.v1.Process\"O\332A\016parent,proces"
+          + "s\202\323\344\223\0028\"-/v1/{parent=projects/*/location"
+          + "s/*}/processes:\007process\022\326\001\n\rUpdateProces"
+          + "s\0229.google.cloud.datacatalog.lineage.v1."
+          + "UpdateProcessRequest\032,.google.cloud.data"
+          + "catalog.lineage.v1.Process\"\\\332A\023process,u"
+          + "pdate_mask\202\323\344\223\002@25/v1/{process.name=proj"
+          + "ects/*/locations/*/processes/*}:\007process"
+          + "\022\260\001\n\nGetProcess\0226.google.cloud.datacatal"
+          + "og.lineage.v1.GetProcessRequest\032,.google"
+          + ".cloud.datacatalog.lineage.v1.Process\"<\332"
+          + "A\004name\202\323\344\223\002/\022-/v1/{name=projects/*/locat"
+          + "ions/*/processes/*}\022\306\001\n\rListProcesses\0229."
+          + "google.cloud.datacatalog.lineage.v1.List"
+          + "ProcessesRequest\032:.google.cloud.datacata"
+          + "log.lineage.v1.ListProcessesResponse\">\332A"
+          + "\006parent\202\323\344\223\002/\022-/v1/{parent=projects/*/lo"
+          + "cations/*}/processes\022\371\001\n\rDeleteProcess\0229"
+          + ".google.cloud.datacatalog.lineage.v1.Del"
+          + "eteProcessRequest\032\035.google.longrunning.O"
+          + "peration\"\215\001\312AN\n\025google.protobuf.Empty\0225g"
+          + "oogle.cloud.datacatalog.lineage.v1.Opera"
+          + "tionMetadata\332A\004name\202\323\344\223\002/*-/v1/{name=pro"
+          + "jects/*/locations/*/processes/*}\022\274\001\n\tCre"
+          + "ateRun\0225.google.cloud.datacatalog.lineag"
+          + "e.v1.CreateRunRequest\032(.google.cloud.dat"
+          + "acatalog.lineage.v1.Run\"N\332A\nparent,run\202\323"
+          + "\344\223\002;\"4/v1/{parent=projects/*/locations/*"
+          + "/processes/*}/runs:\003run\022\305\001\n\tUpdateRun\0225."
+          + "google.cloud.datacatalog.lineage.v1.Upda"
+          + "teRunRequest\032(.google.cloud.datacatalog."
+          + "lineage.v1.Run\"W\332A\017run,update_mask\202\323\344\223\002?"
+          + "28/v1/{run.name=projects/*/locations/*/p"
+          + "rocesses/*/runs/*}:\003run\022\253\001\n\006GetRun\0222.goo"
+          + "gle.cloud.datacatalog.lineage.v1.GetRunR"
+          + "equest\032(.google.cloud.datacatalog.lineag"
+          + "e.v1.Run\"C\332A\004name\202\323\344\223\0026\0224/v1/{name=proje"
+          + "cts/*/locations/*/processes/*/runs/*}\022\276\001"
+          + "\n\010ListRuns\0224.google.cloud.datacatalog.li"
+          + "neage.v1.ListRunsRequest\0325.google.cloud."
+          + "datacatalog.lineage.v1.ListRunsResponse\""
+          + "E\332A\006parent\202\323\344\223\0026\0224/v1/{parent=projects/*"
+          + "/locations/*/processes/*}/runs\022\370\001\n\tDelet"
+          + "eRun\0225.google.cloud.datacatalog.lineage."
+          + "v1.DeleteRunRequest\032\035.google.longrunning"
+          + ".Operation\"\224\001\312AN\n\025google.protobuf.Empty\022"
+          + "5google.cloud.datacatalog.lineage.v1.Ope"
+          + "rationMetadata\332A\004name\202\323\344\223\0026*4/v1/{name=p"
+          + "rojects/*/locations/*/processes/*/runs/*"
+          + "}\022\373\001\n\022CreateLineageEvent\022>.google.cloud."
+          + "datacatalog.lineage.v1.CreateLineageEven"
+          + "tRequest\0321.google.cloud.datacatalog.line"
+          + "age.v1.LineageEvent\"r\332A\024parent,lineage_e"
+          + "vent\202\323\344\223\002U\"D/v1/{parent=projects/*/locat"
+          + "ions/*/processes/*/runs/*}/lineageEvents"
+          + ":\rlineage_event\022\326\001\n\017GetLineageEvent\022;.go"
+          + "ogle.cloud.datacatalog.lineage.v1.GetLin"
+          + "eageEventRequest\0321.google.cloud.datacata"
+          + "log.lineage.v1.LineageEvent\"S\332A\004name\202\323\344\223"
+          + "\002F\022D/v1/{name=projects/*/locations/*/pro"
+          + "cesses/*/runs/*/lineageEvents/*}\022\351\001\n\021Lis"
+          + "tLineageEvents\022=.google.cloud.datacatalo"
+          + "g.lineage.v1.ListLineageEventsRequest\032>."
+          + "google.cloud.datacatalog.lineage.v1.List"
+          + "LineageEventsResponse\"U\332A\006parent\202\323\344\223\002F\022D"
+          + "/v1/{parent=projects/*/locations/*/proce"
+          + "sses/*/runs/*}/lineageEvents\022\301\001\n\022DeleteL"
+          + "ineageEvent\022>.google.cloud.datacatalog.l"
+          + "ineage.v1.DeleteLineageEventRequest\032\026.go"
+          + "ogle.protobuf.Empty\"S\332A\004name\202\323\344\223\002F*D/v1/"
+          + "{name=projects/*/locations/*/processes/*"
+          + "/runs/*/lineageEvents/*}\022\274\001\n\013SearchLinks"
+          + "\0227.google.cloud.datacatalog.lineage.v1.S"
+          + "earchLinksRequest\0328.google.cloud.datacat"
+          + "alog.lineage.v1.SearchLinksResponse\":\202\323\344"
+          + "\223\0024\"//v1/{parent=projects/*/locations/*}"
+          + ":searchLinks:\001*\022\360\001\n\030BatchSearchLinkProce"
+          + "sses\022D.google.cloud.datacatalog.lineage."
+          + "v1.BatchSearchLinkProcessesRequest\032E.goo"
+          + "gle.cloud.datacatalog.lineage.v1.BatchSe"
+          + "archLinkProcessesResponse\"G\202\323\344\223\002A\"</v1/{"
+          + "parent=projects/*/locations/*}:batchSear"
+          + "chLinkProcesses:\001*\032N\312A\032datalineage.googl"
+          + "eapis.com\322A.https://www.googleapis.com/a"
+          + "uth/cloud-platformB\362\001\n\'com.google.cloud."
+          + "datacatalog.lineage.v1B\014LineageProtoP\001ZA"
+          + "cloud.google.com/go/datacatalog/lineage/"
+          + "apiv1/lineagepb;lineagepb\252\002#Google.Cloud"
+          + ".DataCatalog.Lineage.V1\312\002#Google\\Cloud\\D"
+          + "ataCatalog\\Lineage\\V1\352\002\'Google::Cloud::D"
+          + "ataCatalog::Lineage::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -492,8 +517,24 @@ public final class LineageProto {
             new java.lang.String[] {
               "State", "OperationType", "Resource", "ResourceUuid", "CreateTime", "EndTime",
             });
-    internal_static_google_cloud_datacatalog_lineage_v1_CreateProcessRequest_descriptor =
+    internal_static_google_cloud_datacatalog_lineage_v1_ProcessOpenLineageRunEventRequest_descriptor =
         getDescriptor().getMessageTypes().get(6);
+    internal_static_google_cloud_datacatalog_lineage_v1_ProcessOpenLineageRunEventRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_datacatalog_lineage_v1_ProcessOpenLineageRunEventRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "OpenLineage", "RequestId",
+            });
+    internal_static_google_cloud_datacatalog_lineage_v1_ProcessOpenLineageRunEventResponse_descriptor =
+        getDescriptor().getMessageTypes().get(7);
+    internal_static_google_cloud_datacatalog_lineage_v1_ProcessOpenLineageRunEventResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_datacatalog_lineage_v1_ProcessOpenLineageRunEventResponse_descriptor,
+            new java.lang.String[] {
+              "Process", "Run", "LineageEvents",
+            });
+    internal_static_google_cloud_datacatalog_lineage_v1_CreateProcessRequest_descriptor =
+        getDescriptor().getMessageTypes().get(8);
     internal_static_google_cloud_datacatalog_lineage_v1_CreateProcessRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_lineage_v1_CreateProcessRequest_descriptor,
@@ -501,7 +542,7 @@ public final class LineageProto {
               "Parent", "Process", "RequestId",
             });
     internal_static_google_cloud_datacatalog_lineage_v1_UpdateProcessRequest_descriptor =
-        getDescriptor().getMessageTypes().get(7);
+        getDescriptor().getMessageTypes().get(9);
     internal_static_google_cloud_datacatalog_lineage_v1_UpdateProcessRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_lineage_v1_UpdateProcessRequest_descriptor,
@@ -509,7 +550,7 @@ public final class LineageProto {
               "Process", "UpdateMask", "AllowMissing",
             });
     internal_static_google_cloud_datacatalog_lineage_v1_GetProcessRequest_descriptor =
-        getDescriptor().getMessageTypes().get(8);
+        getDescriptor().getMessageTypes().get(10);
     internal_static_google_cloud_datacatalog_lineage_v1_GetProcessRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_lineage_v1_GetProcessRequest_descriptor,
@@ -517,7 +558,7 @@ public final class LineageProto {
               "Name",
             });
     internal_static_google_cloud_datacatalog_lineage_v1_ListProcessesRequest_descriptor =
-        getDescriptor().getMessageTypes().get(9);
+        getDescriptor().getMessageTypes().get(11);
     internal_static_google_cloud_datacatalog_lineage_v1_ListProcessesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_lineage_v1_ListProcessesRequest_descriptor,
@@ -525,7 +566,7 @@ public final class LineageProto {
               "Parent", "PageSize", "PageToken",
             });
     internal_static_google_cloud_datacatalog_lineage_v1_ListProcessesResponse_descriptor =
-        getDescriptor().getMessageTypes().get(10);
+        getDescriptor().getMessageTypes().get(12);
     internal_static_google_cloud_datacatalog_lineage_v1_ListProcessesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_lineage_v1_ListProcessesResponse_descriptor,
@@ -533,7 +574,7 @@ public final class LineageProto {
               "Processes", "NextPageToken",
             });
     internal_static_google_cloud_datacatalog_lineage_v1_DeleteProcessRequest_descriptor =
-        getDescriptor().getMessageTypes().get(11);
+        getDescriptor().getMessageTypes().get(13);
     internal_static_google_cloud_datacatalog_lineage_v1_DeleteProcessRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_lineage_v1_DeleteProcessRequest_descriptor,
@@ -541,7 +582,7 @@ public final class LineageProto {
               "Name", "AllowMissing",
             });
     internal_static_google_cloud_datacatalog_lineage_v1_CreateRunRequest_descriptor =
-        getDescriptor().getMessageTypes().get(12);
+        getDescriptor().getMessageTypes().get(14);
     internal_static_google_cloud_datacatalog_lineage_v1_CreateRunRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_lineage_v1_CreateRunRequest_descriptor,
@@ -549,15 +590,15 @@ public final class LineageProto {
               "Parent", "Run", "RequestId",
             });
     internal_static_google_cloud_datacatalog_lineage_v1_UpdateRunRequest_descriptor =
-        getDescriptor().getMessageTypes().get(13);
+        getDescriptor().getMessageTypes().get(15);
     internal_static_google_cloud_datacatalog_lineage_v1_UpdateRunRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_lineage_v1_UpdateRunRequest_descriptor,
             new java.lang.String[] {
-              "Run", "UpdateMask",
+              "Run", "UpdateMask", "AllowMissing",
             });
     internal_static_google_cloud_datacatalog_lineage_v1_GetRunRequest_descriptor =
-        getDescriptor().getMessageTypes().get(14);
+        getDescriptor().getMessageTypes().get(16);
     internal_static_google_cloud_datacatalog_lineage_v1_GetRunRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_lineage_v1_GetRunRequest_descriptor,
@@ -565,7 +606,7 @@ public final class LineageProto {
               "Name",
             });
     internal_static_google_cloud_datacatalog_lineage_v1_ListRunsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(15);
+        getDescriptor().getMessageTypes().get(17);
     internal_static_google_cloud_datacatalog_lineage_v1_ListRunsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_lineage_v1_ListRunsRequest_descriptor,
@@ -573,7 +614,7 @@ public final class LineageProto {
               "Parent", "PageSize", "PageToken",
             });
     internal_static_google_cloud_datacatalog_lineage_v1_ListRunsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(16);
+        getDescriptor().getMessageTypes().get(18);
     internal_static_google_cloud_datacatalog_lineage_v1_ListRunsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_lineage_v1_ListRunsResponse_descriptor,
@@ -581,7 +622,7 @@ public final class LineageProto {
               "Runs", "NextPageToken",
             });
     internal_static_google_cloud_datacatalog_lineage_v1_DeleteRunRequest_descriptor =
-        getDescriptor().getMessageTypes().get(17);
+        getDescriptor().getMessageTypes().get(19);
     internal_static_google_cloud_datacatalog_lineage_v1_DeleteRunRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_lineage_v1_DeleteRunRequest_descriptor,
@@ -589,7 +630,7 @@ public final class LineageProto {
               "Name", "AllowMissing",
             });
     internal_static_google_cloud_datacatalog_lineage_v1_CreateLineageEventRequest_descriptor =
-        getDescriptor().getMessageTypes().get(18);
+        getDescriptor().getMessageTypes().get(20);
     internal_static_google_cloud_datacatalog_lineage_v1_CreateLineageEventRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_lineage_v1_CreateLineageEventRequest_descriptor,
@@ -597,7 +638,7 @@ public final class LineageProto {
               "Parent", "LineageEvent", "RequestId",
             });
     internal_static_google_cloud_datacatalog_lineage_v1_GetLineageEventRequest_descriptor =
-        getDescriptor().getMessageTypes().get(19);
+        getDescriptor().getMessageTypes().get(21);
     internal_static_google_cloud_datacatalog_lineage_v1_GetLineageEventRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_lineage_v1_GetLineageEventRequest_descriptor,
@@ -605,7 +646,7 @@ public final class LineageProto {
               "Name",
             });
     internal_static_google_cloud_datacatalog_lineage_v1_ListLineageEventsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(20);
+        getDescriptor().getMessageTypes().get(22);
     internal_static_google_cloud_datacatalog_lineage_v1_ListLineageEventsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_lineage_v1_ListLineageEventsRequest_descriptor,
@@ -613,7 +654,7 @@ public final class LineageProto {
               "Parent", "PageSize", "PageToken",
             });
     internal_static_google_cloud_datacatalog_lineage_v1_ListLineageEventsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(21);
+        getDescriptor().getMessageTypes().get(23);
     internal_static_google_cloud_datacatalog_lineage_v1_ListLineageEventsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_lineage_v1_ListLineageEventsResponse_descriptor,
@@ -621,7 +662,7 @@ public final class LineageProto {
               "LineageEvents", "NextPageToken",
             });
     internal_static_google_cloud_datacatalog_lineage_v1_DeleteLineageEventRequest_descriptor =
-        getDescriptor().getMessageTypes().get(22);
+        getDescriptor().getMessageTypes().get(24);
     internal_static_google_cloud_datacatalog_lineage_v1_DeleteLineageEventRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_lineage_v1_DeleteLineageEventRequest_descriptor,
@@ -629,7 +670,7 @@ public final class LineageProto {
               "Name", "AllowMissing",
             });
     internal_static_google_cloud_datacatalog_lineage_v1_SearchLinksRequest_descriptor =
-        getDescriptor().getMessageTypes().get(23);
+        getDescriptor().getMessageTypes().get(25);
     internal_static_google_cloud_datacatalog_lineage_v1_SearchLinksRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_lineage_v1_SearchLinksRequest_descriptor,
@@ -637,7 +678,7 @@ public final class LineageProto {
               "Parent", "Source", "Target", "PageSize", "PageToken", "Criteria",
             });
     internal_static_google_cloud_datacatalog_lineage_v1_SearchLinksResponse_descriptor =
-        getDescriptor().getMessageTypes().get(24);
+        getDescriptor().getMessageTypes().get(26);
     internal_static_google_cloud_datacatalog_lineage_v1_SearchLinksResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_lineage_v1_SearchLinksResponse_descriptor,
@@ -645,7 +686,7 @@ public final class LineageProto {
               "Links", "NextPageToken",
             });
     internal_static_google_cloud_datacatalog_lineage_v1_Link_descriptor =
-        getDescriptor().getMessageTypes().get(25);
+        getDescriptor().getMessageTypes().get(27);
     internal_static_google_cloud_datacatalog_lineage_v1_Link_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_lineage_v1_Link_descriptor,
@@ -653,7 +694,7 @@ public final class LineageProto {
               "Name", "Source", "Target", "StartTime", "EndTime",
             });
     internal_static_google_cloud_datacatalog_lineage_v1_BatchSearchLinkProcessesRequest_descriptor =
-        getDescriptor().getMessageTypes().get(26);
+        getDescriptor().getMessageTypes().get(28);
     internal_static_google_cloud_datacatalog_lineage_v1_BatchSearchLinkProcessesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_lineage_v1_BatchSearchLinkProcessesRequest_descriptor,
@@ -661,7 +702,7 @@ public final class LineageProto {
               "Parent", "Links", "PageSize", "PageToken",
             });
     internal_static_google_cloud_datacatalog_lineage_v1_BatchSearchLinkProcessesResponse_descriptor =
-        getDescriptor().getMessageTypes().get(27);
+        getDescriptor().getMessageTypes().get(29);
     internal_static_google_cloud_datacatalog_lineage_v1_BatchSearchLinkProcessesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_lineage_v1_BatchSearchLinkProcessesResponse_descriptor,
@@ -669,7 +710,7 @@ public final class LineageProto {
               "ProcessLinks", "NextPageToken",
             });
     internal_static_google_cloud_datacatalog_lineage_v1_ProcessLinks_descriptor =
-        getDescriptor().getMessageTypes().get(28);
+        getDescriptor().getMessageTypes().get(30);
     internal_static_google_cloud_datacatalog_lineage_v1_ProcessLinks_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_lineage_v1_ProcessLinks_descriptor,
@@ -677,7 +718,7 @@ public final class LineageProto {
               "Process", "Links",
             });
     internal_static_google_cloud_datacatalog_lineage_v1_ProcessLinkInfo_descriptor =
-        getDescriptor().getMessageTypes().get(29);
+        getDescriptor().getMessageTypes().get(31);
     internal_static_google_cloud_datacatalog_lineage_v1_ProcessLinkInfo_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_lineage_v1_ProcessLinkInfo_descriptor,
@@ -685,7 +726,7 @@ public final class LineageProto {
               "Link", "StartTime", "EndTime",
             });
     internal_static_google_cloud_datacatalog_lineage_v1_Origin_descriptor =
-        getDescriptor().getMessageTypes().get(30);
+        getDescriptor().getMessageTypes().get(32);
     internal_static_google_cloud_datacatalog_lineage_v1_Origin_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_lineage_v1_Origin_descriptor,

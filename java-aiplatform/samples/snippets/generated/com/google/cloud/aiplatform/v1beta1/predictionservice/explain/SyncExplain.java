@@ -24,6 +24,7 @@ import com.google.cloud.aiplatform.v1beta1.ExplanationSpecOverride;
 import com.google.cloud.aiplatform.v1beta1.PredictionServiceClient;
 import com.google.protobuf.Value;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class SyncExplain {
 
@@ -47,6 +48,8 @@ public class SyncExplain {
               .addAllInstances(new ArrayList<Value>())
               .setParameters(Value.newBuilder().setBoolValue(true).build())
               .setExplanationSpecOverride(ExplanationSpecOverride.newBuilder().build())
+              .putAllConcurrentExplanationSpecOverride(
+                  new HashMap<String, ExplanationSpecOverride>())
               .setDeployedModelId("deployedModelId-1817547906")
               .build();
       ExplainResponse response = predictionServiceClient.explain(request);

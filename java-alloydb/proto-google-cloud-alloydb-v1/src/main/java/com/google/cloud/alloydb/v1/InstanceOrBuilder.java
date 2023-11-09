@@ -731,7 +731,8 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Read pool specific config.
+   * Read pool instance configuration.
+   * This is required if the value of instanceType is READ_POOL.
    * </pre>
    *
    * <code>.google.cloud.alloydb.v1.Instance.ReadPoolConfig read_pool_config = 14;</code>
@@ -743,7 +744,8 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Read pool specific config.
+   * Read pool instance configuration.
+   * This is required if the value of instanceType is READ_POOL.
    * </pre>
    *
    * <code>.google.cloud.alloydb.v1.Instance.ReadPoolConfig read_pool_config = 14;</code>
@@ -755,7 +757,8 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Read pool specific config.
+   * Read pool instance configuration.
+   * This is required if the value of instanceType is READ_POOL.
    * </pre>
    *
    * <code>.google.cloud.alloydb.v1.Instance.ReadPoolConfig read_pool_config = 14;</code>

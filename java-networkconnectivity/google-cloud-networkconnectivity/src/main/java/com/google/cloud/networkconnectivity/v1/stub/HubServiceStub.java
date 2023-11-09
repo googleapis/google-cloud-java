@@ -16,27 +16,59 @@
 
 package com.google.cloud.networkconnectivity.v1.stub;
 
+import static com.google.cloud.networkconnectivity.v1.HubServiceClient.ListGroupsPagedResponse;
+import static com.google.cloud.networkconnectivity.v1.HubServiceClient.ListHubSpokesPagedResponse;
 import static com.google.cloud.networkconnectivity.v1.HubServiceClient.ListHubsPagedResponse;
+import static com.google.cloud.networkconnectivity.v1.HubServiceClient.ListLocationsPagedResponse;
+import static com.google.cloud.networkconnectivity.v1.HubServiceClient.ListRouteTablesPagedResponse;
+import static com.google.cloud.networkconnectivity.v1.HubServiceClient.ListRoutesPagedResponse;
 import static com.google.cloud.networkconnectivity.v1.HubServiceClient.ListSpokesPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
+import com.google.cloud.networkconnectivity.v1.AcceptHubSpokeRequest;
+import com.google.cloud.networkconnectivity.v1.AcceptHubSpokeResponse;
 import com.google.cloud.networkconnectivity.v1.CreateHubRequest;
 import com.google.cloud.networkconnectivity.v1.CreateSpokeRequest;
 import com.google.cloud.networkconnectivity.v1.DeleteHubRequest;
 import com.google.cloud.networkconnectivity.v1.DeleteSpokeRequest;
+import com.google.cloud.networkconnectivity.v1.GetGroupRequest;
 import com.google.cloud.networkconnectivity.v1.GetHubRequest;
+import com.google.cloud.networkconnectivity.v1.GetRouteRequest;
+import com.google.cloud.networkconnectivity.v1.GetRouteTableRequest;
 import com.google.cloud.networkconnectivity.v1.GetSpokeRequest;
+import com.google.cloud.networkconnectivity.v1.Group;
 import com.google.cloud.networkconnectivity.v1.Hub;
+import com.google.cloud.networkconnectivity.v1.ListGroupsRequest;
+import com.google.cloud.networkconnectivity.v1.ListGroupsResponse;
+import com.google.cloud.networkconnectivity.v1.ListHubSpokesRequest;
+import com.google.cloud.networkconnectivity.v1.ListHubSpokesResponse;
 import com.google.cloud.networkconnectivity.v1.ListHubsRequest;
 import com.google.cloud.networkconnectivity.v1.ListHubsResponse;
+import com.google.cloud.networkconnectivity.v1.ListRouteTablesRequest;
+import com.google.cloud.networkconnectivity.v1.ListRouteTablesResponse;
+import com.google.cloud.networkconnectivity.v1.ListRoutesRequest;
+import com.google.cloud.networkconnectivity.v1.ListRoutesResponse;
 import com.google.cloud.networkconnectivity.v1.ListSpokesRequest;
 import com.google.cloud.networkconnectivity.v1.ListSpokesResponse;
 import com.google.cloud.networkconnectivity.v1.OperationMetadata;
+import com.google.cloud.networkconnectivity.v1.RejectHubSpokeRequest;
+import com.google.cloud.networkconnectivity.v1.RejectHubSpokeResponse;
+import com.google.cloud.networkconnectivity.v1.Route;
+import com.google.cloud.networkconnectivity.v1.RouteTable;
 import com.google.cloud.networkconnectivity.v1.Spoke;
 import com.google.cloud.networkconnectivity.v1.UpdateHubRequest;
 import com.google.cloud.networkconnectivity.v1.UpdateSpokeRequest;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
 import com.google.protobuf.Empty;
@@ -92,6 +124,15 @@ public abstract class HubServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: deleteHubCallable()");
   }
 
+  public UnaryCallable<ListHubSpokesRequest, ListHubSpokesPagedResponse>
+      listHubSpokesPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listHubSpokesPagedCallable()");
+  }
+
+  public UnaryCallable<ListHubSpokesRequest, ListHubSpokesResponse> listHubSpokesCallable() {
+    throw new UnsupportedOperationException("Not implemented: listHubSpokesCallable()");
+  }
+
   public UnaryCallable<ListSpokesRequest, ListSpokesPagedResponse> listSpokesPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: listSpokesPagedCallable()");
   }
@@ -122,6 +163,24 @@ public abstract class HubServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: updateSpokeCallable()");
   }
 
+  public OperationCallable<RejectHubSpokeRequest, RejectHubSpokeResponse, OperationMetadata>
+      rejectHubSpokeOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: rejectHubSpokeOperationCallable()");
+  }
+
+  public UnaryCallable<RejectHubSpokeRequest, Operation> rejectHubSpokeCallable() {
+    throw new UnsupportedOperationException("Not implemented: rejectHubSpokeCallable()");
+  }
+
+  public OperationCallable<AcceptHubSpokeRequest, AcceptHubSpokeResponse, OperationMetadata>
+      acceptHubSpokeOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: acceptHubSpokeOperationCallable()");
+  }
+
+  public UnaryCallable<AcceptHubSpokeRequest, Operation> acceptHubSpokeCallable() {
+    throw new UnsupportedOperationException("Not implemented: acceptHubSpokeCallable()");
+  }
+
   public OperationCallable<DeleteSpokeRequest, Empty, OperationMetadata>
       deleteSpokeOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteSpokeOperationCallable()");
@@ -129,6 +188,69 @@ public abstract class HubServiceStub implements BackgroundResource {
 
   public UnaryCallable<DeleteSpokeRequest, Operation> deleteSpokeCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteSpokeCallable()");
+  }
+
+  public UnaryCallable<GetRouteTableRequest, RouteTable> getRouteTableCallable() {
+    throw new UnsupportedOperationException("Not implemented: getRouteTableCallable()");
+  }
+
+  public UnaryCallable<GetRouteRequest, Route> getRouteCallable() {
+    throw new UnsupportedOperationException("Not implemented: getRouteCallable()");
+  }
+
+  public UnaryCallable<ListRoutesRequest, ListRoutesPagedResponse> listRoutesPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listRoutesPagedCallable()");
+  }
+
+  public UnaryCallable<ListRoutesRequest, ListRoutesResponse> listRoutesCallable() {
+    throw new UnsupportedOperationException("Not implemented: listRoutesCallable()");
+  }
+
+  public UnaryCallable<ListRouteTablesRequest, ListRouteTablesPagedResponse>
+      listRouteTablesPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listRouteTablesPagedCallable()");
+  }
+
+  public UnaryCallable<ListRouteTablesRequest, ListRouteTablesResponse> listRouteTablesCallable() {
+    throw new UnsupportedOperationException("Not implemented: listRouteTablesCallable()");
+  }
+
+  public UnaryCallable<GetGroupRequest, Group> getGroupCallable() {
+    throw new UnsupportedOperationException("Not implemented: getGroupCallable()");
+  }
+
+  public UnaryCallable<ListGroupsRequest, ListGroupsPagedResponse> listGroupsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listGroupsPagedCallable()");
+  }
+
+  public UnaryCallable<ListGroupsRequest, ListGroupsResponse> listGroupsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listGroupsCallable()");
+  }
+
+  public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listLocationsPagedCallable()");
+  }
+
+  public UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listLocationsCallable()");
+  }
+
+  public UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
+    throw new UnsupportedOperationException("Not implemented: getLocationCallable()");
+  }
+
+  public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: setIamPolicyCallable()");
+  }
+
+  public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: getIamPolicyCallable()");
+  }
+
+  public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable() {
+    throw new UnsupportedOperationException("Not implemented: testIamPermissionsCallable()");
   }
 
   @Override

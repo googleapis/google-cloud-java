@@ -1,0 +1,66 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "maps.fleetengine.v1",
+  "libraryPackage": "google.maps.fleetengine.v1",
+  "services": {
+    "TripService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "TripServiceClient",
+          "rpcs": {
+            "CreateTrip": {
+              "methods": ["createTrip", "createTripCallable"]
+            },
+            "GetTrip": {
+              "methods": ["getTrip", "getTripCallable"]
+            },
+            "ReportBillableTrip": {
+              "methods": ["reportBillableTrip", "reportBillableTripCallable"]
+            },
+            "SearchTrips": {
+              "methods": ["searchTrips", "searchTripsPagedCallable", "searchTripsCallable"]
+            },
+            "UpdateTrip": {
+              "methods": ["updateTrip", "updateTripCallable"]
+            }
+          }
+        }
+      }
+    },
+    "VehicleService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "VehicleServiceClient",
+          "rpcs": {
+            "CreateVehicle": {
+              "methods": ["createVehicle", "createVehicleCallable"]
+            },
+            "GetVehicle": {
+              "methods": ["getVehicle", "getVehicleCallable"]
+            },
+            "ListVehicles": {
+              "methods": ["listVehicles", "listVehiclesPagedCallable", "listVehiclesCallable"]
+            },
+            "SearchFuzzedVehicles": {
+              "methods": ["searchFuzzedVehicles", "searchFuzzedVehiclesCallable"]
+            },
+            "SearchVehicles": {
+              "methods": ["searchVehicles", "searchVehiclesCallable"]
+            },
+            "UpdateVehicle": {
+              "methods": ["updateVehicle", "updateVehicleCallable"]
+            },
+            "UpdateVehicleAttributes": {
+              "methods": ["updateVehicleAttributes", "updateVehicleAttributesCallable"]
+            },
+            "UpdateVehicleLocation": {
+              "methods": ["updateVehicleLocation", "updateVehicleLocationCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

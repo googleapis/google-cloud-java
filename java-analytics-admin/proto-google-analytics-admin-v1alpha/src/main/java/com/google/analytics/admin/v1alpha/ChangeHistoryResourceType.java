@@ -222,6 +222,16 @@ public enum ChangeHistoryResourceType implements com.google.protobuf.ProtocolMes
    *
    *
    * <pre>
+   * DataRedactionSettings resource
+   * </pre>
+   *
+   * <code>DATA_REDACTION_SETTINGS = 25;</code>
+   */
+  DATA_REDACTION_SETTINGS(25),
+  /**
+   *
+   *
+   * <pre>
    * SKAdNetworkConversionValueSchema resource
    * </pre>
    *
@@ -455,6 +465,16 @@ public enum ChangeHistoryResourceType implements com.google.protobuf.ProtocolMes
    *
    *
    * <pre>
+   * DataRedactionSettings resource
+   * </pre>
+   *
+   * <code>DATA_REDACTION_SETTINGS = 25;</code>
+   */
+  public static final int DATA_REDACTION_SETTINGS_VALUE = 25;
+  /**
+   *
+   *
+   * <pre>
    * SKAdNetworkConversionValueSchema resource
    * </pre>
    *
@@ -554,6 +574,8 @@ public enum ChangeHistoryResourceType implements com.google.protobuf.ProtocolMes
         return CHANNEL_GROUP;
       case 24:
         return ENHANCED_MEASUREMENT_SETTINGS;
+      case 25:
+        return DATA_REDACTION_SETTINGS;
       case 26:
         return SKADNETWORK_CONVERSION_VALUE_SCHEMA;
       case 27:

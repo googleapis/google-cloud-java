@@ -733,6 +733,8 @@ public class PredictionServiceClient implements BackgroundResource {
    *           .addAllInstances(new ArrayList<Value>())
    *           .setParameters(Value.newBuilder().setBoolValue(true).build())
    *           .setExplanationSpecOverride(ExplanationSpecOverride.newBuilder().build())
+   *           .putAllConcurrentExplanationSpecOverride(
+   *               new HashMap<String, ExplanationSpecOverride>())
    *           .setDeployedModelId("deployedModelId-1817547906")
    *           .build();
    *   ExplainResponse response = predictionServiceClient.explain(request);
@@ -775,6 +777,8 @@ public class PredictionServiceClient implements BackgroundResource {
    *           .addAllInstances(new ArrayList<Value>())
    *           .setParameters(Value.newBuilder().setBoolValue(true).build())
    *           .setExplanationSpecOverride(ExplanationSpecOverride.newBuilder().build())
+   *           .putAllConcurrentExplanationSpecOverride(
+   *               new HashMap<String, ExplanationSpecOverride>())
    *           .setDeployedModelId("deployedModelId-1817547906")
    *           .build();
    *   ApiFuture<ExplainResponse> future =

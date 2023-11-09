@@ -28,7 +28,7 @@ public interface GetTargetRequestOrBuilder
    *
    * <pre>
    * Required. Name of the `Target`. Format must be
-   * projects/{project_id}/locations/{location_name}/targets/{target_name}.
+   * `projects/{project_id}/locations/{location_name}/targets/{target_name}`.
    * </pre>
    *
    * <code>
@@ -43,7 +43,7 @@ public interface GetTargetRequestOrBuilder
    *
    * <pre>
    * Required. Name of the `Target`. Format must be
-   * projects/{project_id}/locations/{location_name}/targets/{target_name}.
+   * `projects/{project_id}/locations/{location_name}/targets/{target_name}`.
    * </pre>
    *
    * <code>

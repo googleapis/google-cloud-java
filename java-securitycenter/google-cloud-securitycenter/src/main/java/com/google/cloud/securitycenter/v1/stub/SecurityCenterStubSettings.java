@@ -112,6 +112,8 @@ import com.google.cloud.securitycenter.v1.SecurityHealthAnalyticsCustomModule;
 import com.google.cloud.securitycenter.v1.SecurityMarks;
 import com.google.cloud.securitycenter.v1.SetFindingStateRequest;
 import com.google.cloud.securitycenter.v1.SetMuteRequest;
+import com.google.cloud.securitycenter.v1.SimulateSecurityHealthAnalyticsCustomModuleRequest;
+import com.google.cloud.securitycenter.v1.SimulateSecurityHealthAnalyticsCustomModuleResponse;
 import com.google.cloud.securitycenter.v1.Source;
 import com.google.cloud.securitycenter.v1.UpdateBigQueryExportRequest;
 import com.google.cloud.securitycenter.v1.UpdateExternalSystemRequest;
@@ -258,6 +260,10 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
   private final UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings;
   private final UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsSettings;
+  private final UnaryCallSettings<
+          SimulateSecurityHealthAnalyticsCustomModuleRequest,
+          SimulateSecurityHealthAnalyticsCustomModuleResponse>
+      simulateSecurityHealthAnalyticsCustomModuleSettings;
   private final UnaryCallSettings<UpdateExternalSystemRequest, ExternalSystem>
       updateExternalSystemSettings;
   private final UnaryCallSettings<UpdateFindingRequest, Finding> updateFindingSettings;
@@ -1249,6 +1255,17 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
     return testIamPermissionsSettings;
   }
 
+  /**
+   * Returns the object with the settings used for calls to
+   * simulateSecurityHealthAnalyticsCustomModule.
+   */
+  public UnaryCallSettings<
+          SimulateSecurityHealthAnalyticsCustomModuleRequest,
+          SimulateSecurityHealthAnalyticsCustomModuleResponse>
+      simulateSecurityHealthAnalyticsCustomModuleSettings() {
+    return simulateSecurityHealthAnalyticsCustomModuleSettings;
+  }
+
   /** Returns the object with the settings used for calls to updateExternalSystem. */
   public UnaryCallSettings<UpdateExternalSystemRequest, ExternalSystem>
       updateExternalSystemSettings() {
@@ -1470,6 +1487,8 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
     setMuteSettings = settingsBuilder.setMuteSettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
     testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
+    simulateSecurityHealthAnalyticsCustomModuleSettings =
+        settingsBuilder.simulateSecurityHealthAnalyticsCustomModuleSettings().build();
     updateExternalSystemSettings = settingsBuilder.updateExternalSystemSettings().build();
     updateFindingSettings = settingsBuilder.updateFindingSettings().build();
     updateMuteConfigSettings = settingsBuilder.updateMuteConfigSettings().build();
@@ -1574,6 +1593,10 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
     private final UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings;
     private final UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsSettings;
+    private final UnaryCallSettings.Builder<
+            SimulateSecurityHealthAnalyticsCustomModuleRequest,
+            SimulateSecurityHealthAnalyticsCustomModuleResponse>
+        simulateSecurityHealthAnalyticsCustomModuleSettings;
     private final UnaryCallSettings.Builder<UpdateExternalSystemRequest, ExternalSystem>
         updateExternalSystemSettings;
     private final UnaryCallSettings.Builder<UpdateFindingRequest, Finding> updateFindingSettings;
@@ -1723,6 +1746,8 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
       setMuteSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      simulateSecurityHealthAnalyticsCustomModuleSettings =
+          UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateExternalSystemSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateFindingSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateMuteConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -1772,6 +1797,7 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
               setMuteSettings,
               setIamPolicySettings,
               testIamPermissionsSettings,
+              simulateSecurityHealthAnalyticsCustomModuleSettings,
               updateExternalSystemSettings,
               updateFindingSettings,
               updateMuteConfigSettings,
@@ -1831,6 +1857,8 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
       setMuteSettings = settings.setMuteSettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
       testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
+      simulateSecurityHealthAnalyticsCustomModuleSettings =
+          settings.simulateSecurityHealthAnalyticsCustomModuleSettings.toBuilder();
       updateExternalSystemSettings = settings.updateExternalSystemSettings.toBuilder();
       updateFindingSettings = settings.updateFindingSettings.toBuilder();
       updateMuteConfigSettings = settings.updateMuteConfigSettings.toBuilder();
@@ -1879,6 +1907,7 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
               setMuteSettings,
               setIamPolicySettings,
               testIamPermissionsSettings,
+              simulateSecurityHealthAnalyticsCustomModuleSettings,
               updateExternalSystemSettings,
               updateFindingSettings,
               updateMuteConfigSettings,
@@ -2079,6 +2108,11 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
           .testIamPermissionsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .simulateSecurityHealthAnalyticsCustomModuleSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .updateExternalSystemSettings()
@@ -2461,6 +2495,17 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
     public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsSettings() {
       return testIamPermissionsSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * simulateSecurityHealthAnalyticsCustomModule.
+     */
+    public UnaryCallSettings.Builder<
+            SimulateSecurityHealthAnalyticsCustomModuleRequest,
+            SimulateSecurityHealthAnalyticsCustomModuleResponse>
+        simulateSecurityHealthAnalyticsCustomModuleSettings() {
+      return simulateSecurityHealthAnalyticsCustomModuleSettings;
     }
 
     /** Returns the builder for the settings used for calls to updateExternalSystem. */

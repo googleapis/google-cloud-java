@@ -31,8 +31,8 @@ import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.aiplatform.v1beta1.CreateFeatureGroupOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.CreateFeatureGroupRequest;
+import com.google.cloud.aiplatform.v1beta1.CreateFeatureOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.CreateFeatureRequest;
-import com.google.cloud.aiplatform.v1beta1.CreateRegistryFeatureOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.DeleteFeatureGroupRequest;
 import com.google.cloud.aiplatform.v1beta1.DeleteFeatureRequest;
 import com.google.cloud.aiplatform.v1beta1.DeleteOperationMetadata;
@@ -246,8 +246,7 @@ public class GrpcFeatureRegistryServiceStub extends FeatureRegistryServiceStub {
   private final OperationCallable<DeleteFeatureGroupRequest, Empty, DeleteOperationMetadata>
       deleteFeatureGroupOperationCallable;
   private final UnaryCallable<CreateFeatureRequest, Operation> createFeatureCallable;
-  private final OperationCallable<
-          CreateFeatureRequest, Feature, CreateRegistryFeatureOperationMetadata>
+  private final OperationCallable<CreateFeatureRequest, Feature, CreateFeatureOperationMetadata>
       createFeatureOperationCallable;
   private final UnaryCallable<GetFeatureRequest, Feature> getFeatureCallable;
   private final UnaryCallable<ListFeaturesRequest, ListFeaturesResponse> listFeaturesCallable;
@@ -635,7 +634,7 @@ public class GrpcFeatureRegistryServiceStub extends FeatureRegistryServiceStub {
   }
 
   @Override
-  public OperationCallable<CreateFeatureRequest, Feature, CreateRegistryFeatureOperationMetadata>
+  public OperationCallable<CreateFeatureRequest, Feature, CreateFeatureOperationMetadata>
       createFeatureOperationCallable() {
     return createFeatureOperationCallable;
   }

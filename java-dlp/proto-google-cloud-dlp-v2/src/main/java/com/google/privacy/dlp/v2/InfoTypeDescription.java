@@ -464,6 +464,56 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
     return categories_.get(index);
   }
 
+  public static final int SENSITIVITY_SCORE_FIELD_NUMBER = 11;
+  private com.google.privacy.dlp.v2.SensitivityScore sensitivityScore_;
+  /**
+   *
+   *
+   * <pre>
+   * The default sensitivity of the infoType.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.SensitivityScore sensitivity_score = 11;</code>
+   *
+   * @return Whether the sensitivityScore field is set.
+   */
+  @java.lang.Override
+  public boolean hasSensitivityScore() {
+    return sensitivityScore_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The default sensitivity of the infoType.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.SensitivityScore sensitivity_score = 11;</code>
+   *
+   * @return The sensitivityScore.
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.SensitivityScore getSensitivityScore() {
+    return sensitivityScore_ == null
+        ? com.google.privacy.dlp.v2.SensitivityScore.getDefaultInstance()
+        : sensitivityScore_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The default sensitivity of the infoType.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.SensitivityScore sensitivity_score = 11;</code>
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.SensitivityScoreOrBuilder getSensitivityScoreOrBuilder() {
+    return sensitivityScore_ == null
+        ? com.google.privacy.dlp.v2.SensitivityScore.getDefaultInstance()
+        : sensitivityScore_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -501,6 +551,9 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
     for (int i = 0; i < categories_.size(); i++) {
       output.writeMessage(10, categories_.get(i));
     }
+    if (sensitivityScore_ != null) {
+      output.writeMessage(11, getSensitivityScore());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -537,6 +590,9 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
     for (int i = 0; i < categories_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, categories_.get(i));
     }
+    if (sensitivityScore_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getSensitivityScore());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -559,6 +615,10 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
     if (!getDescription().equals(other.getDescription())) return false;
     if (!getVersionsList().equals(other.getVersionsList())) return false;
     if (!getCategoriesList().equals(other.getCategoriesList())) return false;
+    if (hasSensitivityScore() != other.hasSensitivityScore()) return false;
+    if (hasSensitivityScore()) {
+      if (!getSensitivityScore().equals(other.getSensitivityScore())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -587,6 +647,10 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
     if (getCategoriesCount() > 0) {
       hash = (37 * hash) + CATEGORIES_FIELD_NUMBER;
       hash = (53 * hash) + getCategoriesList().hashCode();
+    }
+    if (hasSensitivityScore()) {
+      hash = (37 * hash) + SENSITIVITY_SCORE_FIELD_NUMBER;
+      hash = (53 * hash) + getSensitivityScore().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -746,6 +810,11 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
         categoriesBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000020);
+      sensitivityScore_ = null;
+      if (sensitivityScoreBuilder_ != null) {
+        sensitivityScoreBuilder_.dispose();
+        sensitivityScoreBuilder_ = null;
+      }
       return this;
     }
 
@@ -817,6 +886,10 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.sensitivityScore_ =
+            sensitivityScoreBuilder_ == null ? sensitivityScore_ : sensitivityScoreBuilder_.build();
       }
     }
 
@@ -944,6 +1017,9 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
           }
         }
       }
+      if (other.hasSensitivityScore()) {
+        mergeSensitivityScore(other.getSensitivityScore());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1033,6 +1109,13 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
                 }
                 break;
               } // case 82
+            case 90:
+              {
+                input.readMessage(
+                    getSensitivityScoreFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 90
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2296,6 +2379,191 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
         categories_ = null;
       }
       return categoriesBuilder_;
+    }
+
+    private com.google.privacy.dlp.v2.SensitivityScore sensitivityScore_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.privacy.dlp.v2.SensitivityScore,
+            com.google.privacy.dlp.v2.SensitivityScore.Builder,
+            com.google.privacy.dlp.v2.SensitivityScoreOrBuilder>
+        sensitivityScoreBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The default sensitivity of the infoType.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.SensitivityScore sensitivity_score = 11;</code>
+     *
+     * @return Whether the sensitivityScore field is set.
+     */
+    public boolean hasSensitivityScore() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The default sensitivity of the infoType.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.SensitivityScore sensitivity_score = 11;</code>
+     *
+     * @return The sensitivityScore.
+     */
+    public com.google.privacy.dlp.v2.SensitivityScore getSensitivityScore() {
+      if (sensitivityScoreBuilder_ == null) {
+        return sensitivityScore_ == null
+            ? com.google.privacy.dlp.v2.SensitivityScore.getDefaultInstance()
+            : sensitivityScore_;
+      } else {
+        return sensitivityScoreBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The default sensitivity of the infoType.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.SensitivityScore sensitivity_score = 11;</code>
+     */
+    public Builder setSensitivityScore(com.google.privacy.dlp.v2.SensitivityScore value) {
+      if (sensitivityScoreBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        sensitivityScore_ = value;
+      } else {
+        sensitivityScoreBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The default sensitivity of the infoType.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.SensitivityScore sensitivity_score = 11;</code>
+     */
+    public Builder setSensitivityScore(
+        com.google.privacy.dlp.v2.SensitivityScore.Builder builderForValue) {
+      if (sensitivityScoreBuilder_ == null) {
+        sensitivityScore_ = builderForValue.build();
+      } else {
+        sensitivityScoreBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The default sensitivity of the infoType.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.SensitivityScore sensitivity_score = 11;</code>
+     */
+    public Builder mergeSensitivityScore(com.google.privacy.dlp.v2.SensitivityScore value) {
+      if (sensitivityScoreBuilder_ == null) {
+        if (((bitField0_ & 0x00000040) != 0)
+            && sensitivityScore_ != null
+            && sensitivityScore_
+                != com.google.privacy.dlp.v2.SensitivityScore.getDefaultInstance()) {
+          getSensitivityScoreBuilder().mergeFrom(value);
+        } else {
+          sensitivityScore_ = value;
+        }
+      } else {
+        sensitivityScoreBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The default sensitivity of the infoType.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.SensitivityScore sensitivity_score = 11;</code>
+     */
+    public Builder clearSensitivityScore() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      sensitivityScore_ = null;
+      if (sensitivityScoreBuilder_ != null) {
+        sensitivityScoreBuilder_.dispose();
+        sensitivityScoreBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The default sensitivity of the infoType.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.SensitivityScore sensitivity_score = 11;</code>
+     */
+    public com.google.privacy.dlp.v2.SensitivityScore.Builder getSensitivityScoreBuilder() {
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return getSensitivityScoreFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The default sensitivity of the infoType.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.SensitivityScore sensitivity_score = 11;</code>
+     */
+    public com.google.privacy.dlp.v2.SensitivityScoreOrBuilder getSensitivityScoreOrBuilder() {
+      if (sensitivityScoreBuilder_ != null) {
+        return sensitivityScoreBuilder_.getMessageOrBuilder();
+      } else {
+        return sensitivityScore_ == null
+            ? com.google.privacy.dlp.v2.SensitivityScore.getDefaultInstance()
+            : sensitivityScore_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The default sensitivity of the infoType.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.SensitivityScore sensitivity_score = 11;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.privacy.dlp.v2.SensitivityScore,
+            com.google.privacy.dlp.v2.SensitivityScore.Builder,
+            com.google.privacy.dlp.v2.SensitivityScoreOrBuilder>
+        getSensitivityScoreFieldBuilder() {
+      if (sensitivityScoreBuilder_ == null) {
+        sensitivityScoreBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.privacy.dlp.v2.SensitivityScore,
+                com.google.privacy.dlp.v2.SensitivityScore.Builder,
+                com.google.privacy.dlp.v2.SensitivityScoreOrBuilder>(
+                getSensitivityScore(), getParentForChildren(), isClean());
+        sensitivityScore_ = null;
+      }
+      return sensitivityScoreBuilder_;
     }
 
     @java.lang.Override

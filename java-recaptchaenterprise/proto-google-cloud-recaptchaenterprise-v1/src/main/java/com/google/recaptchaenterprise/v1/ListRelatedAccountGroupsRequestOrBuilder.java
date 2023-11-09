@@ -28,7 +28,7 @@ public interface ListRelatedAccountGroupsRequestOrBuilder
    *
    * <pre>
    * Required. The name of the project to list related account groups from, in
-   * the format "projects/{project}".
+   * the format `projects/{project}`.
    * </pre>
    *
    * <code>
@@ -43,7 +43,7 @@ public interface ListRelatedAccountGroupsRequestOrBuilder
    *
    * <pre>
    * Required. The name of the project to list related account groups from, in
-   * the format "projects/{project}".
+   * the format `projects/{project}`.
    * </pre>
    *
    * <code>

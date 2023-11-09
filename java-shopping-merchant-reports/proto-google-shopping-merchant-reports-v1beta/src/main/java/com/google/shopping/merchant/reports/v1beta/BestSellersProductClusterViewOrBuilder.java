@@ -91,7 +91,7 @@ public interface BestSellersProductClusterViewOrBuilder
    * </pre>
    *
    * <code>
-   * optional .google.shopping.merchant.reports.v1beta.ReportGranularity report_granularity = 2;
+   * optional .google.shopping.merchant.reports.v1beta.ReportGranularity.ReportGranularityEnum report_granularity = 2;
    * </code>
    *
    * @return Whether the reportGranularity field is set.
@@ -109,7 +109,7 @@ public interface BestSellersProductClusterViewOrBuilder
    * </pre>
    *
    * <code>
-   * optional .google.shopping.merchant.reports.v1beta.ReportGranularity report_granularity = 2;
+   * optional .google.shopping.merchant.reports.v1beta.ReportGranularity.ReportGranularityEnum report_granularity = 2;
    * </code>
    *
    * @return The enum numeric value on the wire for reportGranularity.
@@ -127,12 +127,13 @@ public interface BestSellersProductClusterViewOrBuilder
    * </pre>
    *
    * <code>
-   * optional .google.shopping.merchant.reports.v1beta.ReportGranularity report_granularity = 2;
+   * optional .google.shopping.merchant.reports.v1beta.ReportGranularity.ReportGranularityEnum report_granularity = 2;
    * </code>
    *
    * @return The reportGranularity.
    */
-  com.google.shopping.merchant.reports.v1beta.ReportGranularity getReportGranularity();
+  com.google.shopping.merchant.reports.v1beta.ReportGranularity.ReportGranularityEnum
+      getReportGranularity();
 
   /**
    *
@@ -219,43 +220,6 @@ public interface BestSellersProductClusterViewOrBuilder
    * @return The reportCategoryId.
    */
   long getReportCategoryId();
-
-  /**
-   *
-   *
-   * <pre>
-   * Google-assigned id of the product cluster.
-   * </pre>
-   *
-   * <code>optional string id = 5;</code>
-   *
-   * @return Whether the id field is set.
-   */
-  boolean hasId();
-  /**
-   *
-   *
-   * <pre>
-   * Google-assigned id of the product cluster.
-   * </pre>
-   *
-   * <code>optional string id = 5;</code>
-   *
-   * @return The id.
-   */
-  java.lang.String getId();
-  /**
-   *
-   *
-   * <pre>
-   * Google-assigned id of the product cluster.
-   * </pre>
-   *
-   * <code>optional string id = 5;</code>
-   *
-   * @return The bytes for id.
-   */
-  com.google.protobuf.ByteString getIdBytes();
 
   /**
    *
@@ -772,7 +736,8 @@ public interface BestSellersProductClusterViewOrBuilder
    * popularity rank in the same category and country.
    * </pre>
    *
-   * <code>optional .google.shopping.merchant.reports.v1beta.RelativeDemand relative_demand = 18;
+   * <code>
+   * optional .google.shopping.merchant.reports.v1beta.RelativeDemand.RelativeDemandEnum relative_demand = 18;
    * </code>
    *
    * @return Whether the relativeDemand field is set.
@@ -786,7 +751,8 @@ public interface BestSellersProductClusterViewOrBuilder
    * popularity rank in the same category and country.
    * </pre>
    *
-   * <code>optional .google.shopping.merchant.reports.v1beta.RelativeDemand relative_demand = 18;
+   * <code>
+   * optional .google.shopping.merchant.reports.v1beta.RelativeDemand.RelativeDemandEnum relative_demand = 18;
    * </code>
    *
    * @return The enum numeric value on the wire for relativeDemand.
@@ -800,12 +766,13 @@ public interface BestSellersProductClusterViewOrBuilder
    * popularity rank in the same category and country.
    * </pre>
    *
-   * <code>optional .google.shopping.merchant.reports.v1beta.RelativeDemand relative_demand = 18;
+   * <code>
+   * optional .google.shopping.merchant.reports.v1beta.RelativeDemand.RelativeDemandEnum relative_demand = 18;
    * </code>
    *
    * @return The relativeDemand.
    */
-  com.google.shopping.merchant.reports.v1beta.RelativeDemand getRelativeDemand();
+  com.google.shopping.merchant.reports.v1beta.RelativeDemand.RelativeDemandEnum getRelativeDemand();
 
   /**
    *
@@ -817,7 +784,7 @@ public interface BestSellersProductClusterViewOrBuilder
    * </pre>
    *
    * <code>
-   * optional .google.shopping.merchant.reports.v1beta.RelativeDemand previous_relative_demand = 19;
+   * optional .google.shopping.merchant.reports.v1beta.RelativeDemand.RelativeDemandEnum previous_relative_demand = 19;
    * </code>
    *
    * @return Whether the previousRelativeDemand field is set.
@@ -833,7 +800,7 @@ public interface BestSellersProductClusterViewOrBuilder
    * </pre>
    *
    * <code>
-   * optional .google.shopping.merchant.reports.v1beta.RelativeDemand previous_relative_demand = 19;
+   * optional .google.shopping.merchant.reports.v1beta.RelativeDemand.RelativeDemandEnum previous_relative_demand = 19;
    * </code>
    *
    * @return The enum numeric value on the wire for previousRelativeDemand.
@@ -849,12 +816,13 @@ public interface BestSellersProductClusterViewOrBuilder
    * </pre>
    *
    * <code>
-   * optional .google.shopping.merchant.reports.v1beta.RelativeDemand previous_relative_demand = 19;
+   * optional .google.shopping.merchant.reports.v1beta.RelativeDemand.RelativeDemandEnum previous_relative_demand = 19;
    * </code>
    *
    * @return The previousRelativeDemand.
    */
-  com.google.shopping.merchant.reports.v1beta.RelativeDemand getPreviousRelativeDemand();
+  com.google.shopping.merchant.reports.v1beta.RelativeDemand.RelativeDemandEnum
+      getPreviousRelativeDemand();
 
   /**
    *
@@ -864,7 +832,7 @@ public interface BestSellersProductClusterViewOrBuilder
    * </pre>
    *
    * <code>
-   * optional .google.shopping.merchant.reports.v1beta.RelativeDemandChangeType relative_demand_change = 20;
+   * optional .google.shopping.merchant.reports.v1beta.RelativeDemandChangeType.RelativeDemandChangeTypeEnum relative_demand_change = 20;
    * </code>
    *
    * @return Whether the relativeDemandChange field is set.
@@ -878,7 +846,7 @@ public interface BestSellersProductClusterViewOrBuilder
    * </pre>
    *
    * <code>
-   * optional .google.shopping.merchant.reports.v1beta.RelativeDemandChangeType relative_demand_change = 20;
+   * optional .google.shopping.merchant.reports.v1beta.RelativeDemandChangeType.RelativeDemandChangeTypeEnum relative_demand_change = 20;
    * </code>
    *
    * @return The enum numeric value on the wire for relativeDemandChange.
@@ -892,10 +860,11 @@ public interface BestSellersProductClusterViewOrBuilder
    * </pre>
    *
    * <code>
-   * optional .google.shopping.merchant.reports.v1beta.RelativeDemandChangeType relative_demand_change = 20;
+   * optional .google.shopping.merchant.reports.v1beta.RelativeDemandChangeType.RelativeDemandChangeTypeEnum relative_demand_change = 20;
    * </code>
    *
    * @return The relativeDemandChange.
    */
-  com.google.shopping.merchant.reports.v1beta.RelativeDemandChangeType getRelativeDemandChange();
+  com.google.shopping.merchant.reports.v1beta.RelativeDemandChangeType.RelativeDemandChangeTypeEnum
+      getRelativeDemandChange();
 }

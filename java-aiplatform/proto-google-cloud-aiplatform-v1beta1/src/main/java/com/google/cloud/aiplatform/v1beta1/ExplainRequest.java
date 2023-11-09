@@ -55,6 +55,17 @@ public final class ExplainRequest extends com.google.protobuf.GeneratedMessageV3
         .internal_static_google_cloud_aiplatform_v1beta1_ExplainRequest_descriptor;
   }
 
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapField internalGetMapField(int number) {
+    switch (number) {
+      case 6:
+        return internalGetConcurrentExplanationSpecOverride();
+      default:
+        throw new RuntimeException("Invalid map field number: " + number);
+    }
+  }
+
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
@@ -377,6 +388,158 @@ public final class ExplainRequest extends com.google.protobuf.GeneratedMessageV3
         : explanationSpecOverride_;
   }
 
+  public static final int CONCURRENT_EXPLANATION_SPEC_OVERRIDE_FIELD_NUMBER = 6;
+
+  private static final class ConcurrentExplanationSpecOverrideDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<
+            java.lang.String, com.google.cloud.aiplatform.v1beta1.ExplanationSpecOverride>
+        defaultEntry =
+            com.google.protobuf.MapEntry
+                .<java.lang.String, com.google.cloud.aiplatform.v1beta1.ExplanationSpecOverride>
+                    newDefaultInstance(
+                        com.google.cloud.aiplatform.v1beta1.PredictionServiceProto
+                            .internal_static_google_cloud_aiplatform_v1beta1_ExplainRequest_ConcurrentExplanationSpecOverrideEntry_descriptor,
+                        com.google.protobuf.WireFormat.FieldType.STRING,
+                        "",
+                        com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                        com.google.cloud.aiplatform.v1beta1.ExplanationSpecOverride
+                            .getDefaultInstance());
+  }
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<
+          java.lang.String, com.google.cloud.aiplatform.v1beta1.ExplanationSpecOverride>
+      concurrentExplanationSpecOverride_;
+
+  private com.google.protobuf.MapField<
+          java.lang.String, com.google.cloud.aiplatform.v1beta1.ExplanationSpecOverride>
+      internalGetConcurrentExplanationSpecOverride() {
+    if (concurrentExplanationSpecOverride_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          ConcurrentExplanationSpecOverrideDefaultEntryHolder.defaultEntry);
+    }
+    return concurrentExplanationSpecOverride_;
+  }
+
+  public int getConcurrentExplanationSpecOverrideCount() {
+    return internalGetConcurrentExplanationSpecOverride().getMap().size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This field is the same as the one above, but supports multiple
+   * explanations to occur in parallel. The key can be any string. Each override
+   * will be run against the model, then its explanations will be grouped
+   * together.
+   *
+   * Note - these explanations are run **In Addition** to the default
+   * Explanation in the deployed model.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.aiplatform.v1beta1.ExplanationSpecOverride&gt; concurrent_explanation_spec_override = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public boolean containsConcurrentExplanationSpecOverride(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetConcurrentExplanationSpecOverride().getMap().containsKey(key);
+  }
+  /** Use {@link #getConcurrentExplanationSpecOverrideMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<
+          java.lang.String, com.google.cloud.aiplatform.v1beta1.ExplanationSpecOverride>
+      getConcurrentExplanationSpecOverride() {
+    return getConcurrentExplanationSpecOverrideMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This field is the same as the one above, but supports multiple
+   * explanations to occur in parallel. The key can be any string. Each override
+   * will be run against the model, then its explanations will be grouped
+   * together.
+   *
+   * Note - these explanations are run **In Addition** to the default
+   * Explanation in the deployed model.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.aiplatform.v1beta1.ExplanationSpecOverride&gt; concurrent_explanation_spec_override = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.Map<
+          java.lang.String, com.google.cloud.aiplatform.v1beta1.ExplanationSpecOverride>
+      getConcurrentExplanationSpecOverrideMap() {
+    return internalGetConcurrentExplanationSpecOverride().getMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This field is the same as the one above, but supports multiple
+   * explanations to occur in parallel. The key can be any string. Each override
+   * will be run against the model, then its explanations will be grouped
+   * together.
+   *
+   * Note - these explanations are run **In Addition** to the default
+   * Explanation in the deployed model.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.aiplatform.v1beta1.ExplanationSpecOverride&gt; concurrent_explanation_spec_override = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public /* nullable */ com.google.cloud.aiplatform.v1beta1.ExplanationSpecOverride
+      getConcurrentExplanationSpecOverrideOrDefault(
+          java.lang.String key,
+          /* nullable */
+          com.google.cloud.aiplatform.v1beta1.ExplanationSpecOverride defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1beta1.ExplanationSpecOverride>
+        map = internalGetConcurrentExplanationSpecOverride().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This field is the same as the one above, but supports multiple
+   * explanations to occur in parallel. The key can be any string. Each override
+   * will be run against the model, then its explanations will be grouped
+   * together.
+   *
+   * Note - these explanations are run **In Addition** to the default
+   * Explanation in the deployed model.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.aiplatform.v1beta1.ExplanationSpecOverride&gt; concurrent_explanation_spec_override = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.ExplanationSpecOverride
+      getConcurrentExplanationSpecOverrideOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1beta1.ExplanationSpecOverride>
+        map = internalGetConcurrentExplanationSpecOverride().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   public static final int DEPLOYED_MODEL_ID_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
@@ -461,6 +624,11 @@ public final class ExplainRequest extends com.google.protobuf.GeneratedMessageV3
     if (explanationSpecOverride_ != null) {
       output.writeMessage(5, getExplanationSpecOverride());
     }
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output,
+        internalGetConcurrentExplanationSpecOverride(),
+        ConcurrentExplanationSpecOverrideDefaultEntryHolder.defaultEntry,
+        6);
     getUnknownFields().writeTo(output);
   }
 
@@ -485,6 +653,21 @@ public final class ExplainRequest extends com.google.protobuf.GeneratedMessageV3
     if (explanationSpecOverride_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(5, getExplanationSpecOverride());
+    }
+    for (java.util.Map.Entry<
+            java.lang.String, com.google.cloud.aiplatform.v1beta1.ExplanationSpecOverride>
+        entry : internalGetConcurrentExplanationSpecOverride().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<
+              java.lang.String, com.google.cloud.aiplatform.v1beta1.ExplanationSpecOverride>
+          concurrentExplanationSpecOverride__ =
+              ConcurrentExplanationSpecOverrideDefaultEntryHolder.defaultEntry
+                  .newBuilderForType()
+                  .setKey(entry.getKey())
+                  .setValue(entry.getValue())
+                  .build();
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              6, concurrentExplanationSpecOverride__);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -512,6 +695,8 @@ public final class ExplainRequest extends com.google.protobuf.GeneratedMessageV3
     if (hasExplanationSpecOverride()) {
       if (!getExplanationSpecOverride().equals(other.getExplanationSpecOverride())) return false;
     }
+    if (!internalGetConcurrentExplanationSpecOverride()
+        .equals(other.internalGetConcurrentExplanationSpecOverride())) return false;
     if (!getDeployedModelId().equals(other.getDeployedModelId())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -537,6 +722,10 @@ public final class ExplainRequest extends com.google.protobuf.GeneratedMessageV3
     if (hasExplanationSpecOverride()) {
       hash = (37 * hash) + EXPLANATION_SPEC_OVERRIDE_FIELD_NUMBER;
       hash = (53 * hash) + getExplanationSpecOverride().hashCode();
+    }
+    if (!internalGetConcurrentExplanationSpecOverride().getMap().isEmpty()) {
+      hash = (37 * hash) + CONCURRENT_EXPLANATION_SPEC_OVERRIDE_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetConcurrentExplanationSpecOverride().hashCode();
     }
     hash = (37 * hash) + DEPLOYED_MODEL_ID_FIELD_NUMBER;
     hash = (53 * hash) + getDeployedModelId().hashCode();
@@ -659,6 +848,26 @@ public final class ExplainRequest extends com.google.protobuf.GeneratedMessageV3
           .internal_static_google_cloud_aiplatform_v1beta1_ExplainRequest_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMapField(int number) {
+      switch (number) {
+        case 6:
+          return internalGetConcurrentExplanationSpecOverride();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
+      switch (number) {
+        case 6:
+          return internalGetMutableConcurrentExplanationSpecOverride();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -698,6 +907,7 @@ public final class ExplainRequest extends com.google.protobuf.GeneratedMessageV3
         explanationSpecOverrideBuilder_.dispose();
         explanationSpecOverrideBuilder_ = null;
       }
+      internalGetMutableConcurrentExplanationSpecOverride().clear();
       deployedModelId_ = "";
       return this;
     }
@@ -762,6 +972,10 @@ public final class ExplainRequest extends com.google.protobuf.GeneratedMessageV3
                 : explanationSpecOverrideBuilder_.build();
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.concurrentExplanationSpecOverride_ = internalGetConcurrentExplanationSpecOverride();
+        result.concurrentExplanationSpecOverride_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.deployedModelId_ = deployedModelId_;
       }
     }
@@ -850,9 +1064,12 @@ public final class ExplainRequest extends com.google.protobuf.GeneratedMessageV3
       if (other.hasExplanationSpecOverride()) {
         mergeExplanationSpecOverride(other.getExplanationSpecOverride());
       }
+      internalGetMutableConcurrentExplanationSpecOverride()
+          .mergeFrom(other.internalGetConcurrentExplanationSpecOverride());
+      bitField0_ |= 0x00000010;
       if (!other.getDeployedModelId().isEmpty()) {
         deployedModelId_ = other.deployedModelId_;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -902,7 +1119,7 @@ public final class ExplainRequest extends com.google.protobuf.GeneratedMessageV3
             case 26:
               {
                 deployedModelId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 26
             case 34:
@@ -918,6 +1135,24 @@ public final class ExplainRequest extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000008;
                 break;
               } // case 42
+            case 50:
+              {
+                com.google.protobuf.MapEntry<
+                        java.lang.String,
+                        com.google.cloud.aiplatform.v1beta1.ExplanationSpecOverride>
+                    concurrentExplanationSpecOverride__ =
+                        input.readMessage(
+                            ConcurrentExplanationSpecOverrideDefaultEntryHolder.defaultEntry
+                                .getParserForType(),
+                            extensionRegistry);
+                internalGetMutableConcurrentExplanationSpecOverride()
+                    .getMutableMap()
+                    .put(
+                        concurrentExplanationSpecOverride__.getKey(),
+                        concurrentExplanationSpecOverride__.getValue());
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2083,6 +2318,246 @@ public final class ExplainRequest extends com.google.protobuf.GeneratedMessageV3
       return explanationSpecOverrideBuilder_;
     }
 
+    private com.google.protobuf.MapField<
+            java.lang.String, com.google.cloud.aiplatform.v1beta1.ExplanationSpecOverride>
+        concurrentExplanationSpecOverride_;
+
+    private com.google.protobuf.MapField<
+            java.lang.String, com.google.cloud.aiplatform.v1beta1.ExplanationSpecOverride>
+        internalGetConcurrentExplanationSpecOverride() {
+      if (concurrentExplanationSpecOverride_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            ConcurrentExplanationSpecOverrideDefaultEntryHolder.defaultEntry);
+      }
+      return concurrentExplanationSpecOverride_;
+    }
+
+    private com.google.protobuf.MapField<
+            java.lang.String, com.google.cloud.aiplatform.v1beta1.ExplanationSpecOverride>
+        internalGetMutableConcurrentExplanationSpecOverride() {
+      if (concurrentExplanationSpecOverride_ == null) {
+        concurrentExplanationSpecOverride_ =
+            com.google.protobuf.MapField.newMapField(
+                ConcurrentExplanationSpecOverrideDefaultEntryHolder.defaultEntry);
+      }
+      if (!concurrentExplanationSpecOverride_.isMutable()) {
+        concurrentExplanationSpecOverride_ = concurrentExplanationSpecOverride_.copy();
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return concurrentExplanationSpecOverride_;
+    }
+
+    public int getConcurrentExplanationSpecOverrideCount() {
+      return internalGetConcurrentExplanationSpecOverride().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field is the same as the one above, but supports multiple
+     * explanations to occur in parallel. The key can be any string. Each override
+     * will be run against the model, then its explanations will be grouped
+     * together.
+     *
+     * Note - these explanations are run **In Addition** to the default
+     * Explanation in the deployed model.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.aiplatform.v1beta1.ExplanationSpecOverride&gt; concurrent_explanation_spec_override = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsConcurrentExplanationSpecOverride(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetConcurrentExplanationSpecOverride().getMap().containsKey(key);
+    }
+    /** Use {@link #getConcurrentExplanationSpecOverrideMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<
+            java.lang.String, com.google.cloud.aiplatform.v1beta1.ExplanationSpecOverride>
+        getConcurrentExplanationSpecOverride() {
+      return getConcurrentExplanationSpecOverrideMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field is the same as the one above, but supports multiple
+     * explanations to occur in parallel. The key can be any string. Each override
+     * will be run against the model, then its explanations will be grouped
+     * together.
+     *
+     * Note - these explanations are run **In Addition** to the default
+     * Explanation in the deployed model.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.aiplatform.v1beta1.ExplanationSpecOverride&gt; concurrent_explanation_spec_override = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<
+            java.lang.String, com.google.cloud.aiplatform.v1beta1.ExplanationSpecOverride>
+        getConcurrentExplanationSpecOverrideMap() {
+      return internalGetConcurrentExplanationSpecOverride().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field is the same as the one above, but supports multiple
+     * explanations to occur in parallel. The key can be any string. Each override
+     * will be run against the model, then its explanations will be grouped
+     * together.
+     *
+     * Note - these explanations are run **In Addition** to the default
+     * Explanation in the deployed model.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.aiplatform.v1beta1.ExplanationSpecOverride&gt; concurrent_explanation_spec_override = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public /* nullable */ com.google.cloud.aiplatform.v1beta1.ExplanationSpecOverride
+        getConcurrentExplanationSpecOverrideOrDefault(
+            java.lang.String key,
+            /* nullable */
+            com.google.cloud.aiplatform.v1beta1.ExplanationSpecOverride defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1beta1.ExplanationSpecOverride>
+          map = internalGetConcurrentExplanationSpecOverride().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field is the same as the one above, but supports multiple
+     * explanations to occur in parallel. The key can be any string. Each override
+     * will be run against the model, then its explanations will be grouped
+     * together.
+     *
+     * Note - these explanations are run **In Addition** to the default
+     * Explanation in the deployed model.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.aiplatform.v1beta1.ExplanationSpecOverride&gt; concurrent_explanation_spec_override = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.ExplanationSpecOverride
+        getConcurrentExplanationSpecOverrideOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1beta1.ExplanationSpecOverride>
+          map = internalGetConcurrentExplanationSpecOverride().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearConcurrentExplanationSpecOverride() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      internalGetMutableConcurrentExplanationSpecOverride().getMutableMap().clear();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field is the same as the one above, but supports multiple
+     * explanations to occur in parallel. The key can be any string. Each override
+     * will be run against the model, then its explanations will be grouped
+     * together.
+     *
+     * Note - these explanations are run **In Addition** to the default
+     * Explanation in the deployed model.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.aiplatform.v1beta1.ExplanationSpecOverride&gt; concurrent_explanation_spec_override = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeConcurrentExplanationSpecOverride(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableConcurrentExplanationSpecOverride().getMutableMap().remove(key);
+      return this;
+    }
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<
+            java.lang.String, com.google.cloud.aiplatform.v1beta1.ExplanationSpecOverride>
+        getMutableConcurrentExplanationSpecOverride() {
+      bitField0_ |= 0x00000010;
+      return internalGetMutableConcurrentExplanationSpecOverride().getMutableMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field is the same as the one above, but supports multiple
+     * explanations to occur in parallel. The key can be any string. Each override
+     * will be run against the model, then its explanations will be grouped
+     * together.
+     *
+     * Note - these explanations are run **In Addition** to the default
+     * Explanation in the deployed model.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.aiplatform.v1beta1.ExplanationSpecOverride&gt; concurrent_explanation_spec_override = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putConcurrentExplanationSpecOverride(
+        java.lang.String key, com.google.cloud.aiplatform.v1beta1.ExplanationSpecOverride value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+      internalGetMutableConcurrentExplanationSpecOverride().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000010;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field is the same as the one above, but supports multiple
+     * explanations to occur in parallel. The key can be any string. Each override
+     * will be run against the model, then its explanations will be grouped
+     * together.
+     *
+     * Note - these explanations are run **In Addition** to the default
+     * Explanation in the deployed model.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.aiplatform.v1beta1.ExplanationSpecOverride&gt; concurrent_explanation_spec_override = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putAllConcurrentExplanationSpecOverride(
+        java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1beta1.ExplanationSpecOverride>
+            values) {
+      internalGetMutableConcurrentExplanationSpecOverride().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000010;
+      return this;
+    }
+
     private java.lang.Object deployedModelId_ = "";
     /**
      *
@@ -2151,7 +2626,7 @@ public final class ExplainRequest extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       deployedModelId_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2170,7 +2645,7 @@ public final class ExplainRequest extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearDeployedModelId() {
       deployedModelId_ = getDefaultInstance().getDeployedModelId();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2194,7 +2669,7 @@ public final class ExplainRequest extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       deployedModelId_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }

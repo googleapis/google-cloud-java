@@ -51,6 +51,14 @@ public final class SpeechResourceProto {
       internal_static_google_cloud_speech_v1_SpeechAdaptation_ABNFGrammar_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_speech_v1_SpeechAdaptation_ABNFGrammar_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_speech_v1_TranscriptNormalization_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_speech_v1_TranscriptNormalization_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_speech_v1_TranscriptNormalization_Entry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_speech_v1_TranscriptNormalization_Entry_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -82,10 +90,14 @@ public final class SpeechResourceProto {
           + "2#.google.cloud.speech.v1.CustomClass\022J\n"
           + "\014abnf_grammar\030\004 \001(\01324.google.cloud.speec"
           + "h.v1.SpeechAdaptation.ABNFGrammar\032#\n\013ABN"
-          + "FGrammar\022\024\n\014abnf_strings\030\001 \003(\tBp\n\032com.go"
-          + "ogle.cloud.speech.v1B\023SpeechResourceProt"
-          + "oP\001Z2cloud.google.com/go/speech/apiv1/sp"
-          + "eechpb;speechpb\370\001\001\242\002\003GCSb\006proto3"
+          + "FGrammar\022\024\n\014abnf_strings\030\001 \003(\t\"\243\001\n\027Trans"
+          + "criptNormalization\022F\n\007entries\030\001 \003(\01325.go"
+          + "ogle.cloud.speech.v1.TranscriptNormaliza"
+          + "tion.Entry\032@\n\005Entry\022\016\n\006search\030\001 \001(\t\022\017\n\007r"
+          + "eplace\030\002 \001(\t\022\026\n\016case_sensitive\030\003 \001(\010Bp\n\032"
+          + "com.google.cloud.speech.v1B\023SpeechResour"
+          + "ceProtoP\001Z2cloud.google.com/go/speech/ap"
+          + "iv1/speechpb;speechpb\370\001\001\242\002\003GCSb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -140,6 +152,24 @@ public final class SpeechResourceProto {
             internal_static_google_cloud_speech_v1_SpeechAdaptation_ABNFGrammar_descriptor,
             new java.lang.String[] {
               "AbnfStrings",
+            });
+    internal_static_google_cloud_speech_v1_TranscriptNormalization_descriptor =
+        getDescriptor().getMessageTypes().get(3);
+    internal_static_google_cloud_speech_v1_TranscriptNormalization_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_speech_v1_TranscriptNormalization_descriptor,
+            new java.lang.String[] {
+              "Entries",
+            });
+    internal_static_google_cloud_speech_v1_TranscriptNormalization_Entry_descriptor =
+        internal_static_google_cloud_speech_v1_TranscriptNormalization_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_speech_v1_TranscriptNormalization_Entry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_speech_v1_TranscriptNormalization_Entry_descriptor,
+            new java.lang.String[] {
+              "Search", "Replace", "CaseSensitive",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

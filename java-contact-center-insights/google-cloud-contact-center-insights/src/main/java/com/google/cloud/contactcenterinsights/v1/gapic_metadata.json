@@ -13,6 +13,9 @@
             "BulkAnalyzeConversations": {
               "methods": ["bulkAnalyzeConversationsAsync", "bulkAnalyzeConversationsAsync", "bulkAnalyzeConversationsAsync", "bulkAnalyzeConversationsOperationCallable", "bulkAnalyzeConversationsCallable"]
             },
+            "BulkDeleteConversations": {
+              "methods": ["bulkDeleteConversationsAsync", "bulkDeleteConversationsAsync", "bulkDeleteConversationsAsync", "bulkDeleteConversationsOperationCallable", "bulkDeleteConversationsCallable"]
+            },
             "CalculateIssueModelStats": {
               "methods": ["calculateIssueModelStats", "calculateIssueModelStats", "calculateIssueModelStats", "calculateIssueModelStatsCallable"]
             },
