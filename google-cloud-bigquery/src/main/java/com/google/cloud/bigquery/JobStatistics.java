@@ -101,9 +101,13 @@ public abstract class JobStatistics implements Serializable {
 
     private final List<Long> destinationUriFileCounts;
 
+    private final Long inputBytes;
+
     static final class Builder extends JobStatistics.Builder<ExtractStatistics, Builder> {
 
       private List<Long> destinationUriFileCounts;
+
+      private Long inputBytes;
 
       private Builder() {}
 
@@ -111,11 +115,17 @@ public abstract class JobStatistics implements Serializable {
         super(statisticsPb);
         if (statisticsPb.getExtract() != null) {
           this.destinationUriFileCounts = statisticsPb.getExtract().getDestinationUriFileCounts();
+          this.inputBytes = statisticsPb.getExtract().getInputBytes();
         }
       }
 
       Builder setDestinationUriFileCounts(List<Long> destinationUriFileCounts) {
         this.destinationUriFileCounts = destinationUriFileCounts;
+        return self();
+      }
+
+      Builder setInputBytes(Long inputBytes) {
+        this.inputBytes = inputBytes;
         return self();
       }
 
@@ -128,6 +138,7 @@ public abstract class JobStatistics implements Serializable {
     private ExtractStatistics(Builder builder) {
       super(builder);
       this.destinationUriFileCounts = builder.destinationUriFileCounts;
+      this.inputBytes = builder.inputBytes;
     }
 
     /**
@@ -137,6 +148,11 @@ public abstract class JobStatistics implements Serializable {
      */
     public List<Long> getDestinationUriFileCounts() {
       return destinationUriFileCounts;
+    }
+
+    /** Returns number of user bytes extracted into the result. */
+    public Long getInputBytes() {
+      return inputBytes;
     }
 
     @Override
@@ -159,9 +175,10 @@ public abstract class JobStatistics implements Serializable {
 
     @Override
     com.google.api.services.bigquery.model.JobStatistics toPb() {
-      com.google.api.services.bigquery.model.JobStatistics statisticsPb = super.toPb();
-      return statisticsPb.setExtract(
-          new JobStatistics4().setDestinationUriFileCounts(destinationUriFileCounts));
+      JobStatistics4 extractStatisticsPb = new JobStatistics4();
+      extractStatisticsPb.setDestinationUriFileCounts(destinationUriFileCounts);
+      extractStatisticsPb.setInputBytes(inputBytes);
+      return super.toPb().setExtract(extractStatisticsPb);
     }
 
     static Builder newBuilder() {

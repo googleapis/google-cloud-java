@@ -87,6 +87,7 @@ import com.google.cloud.bigquery.JobConfiguration;
 import com.google.cloud.bigquery.JobId;
 import com.google.cloud.bigquery.JobInfo;
 import com.google.cloud.bigquery.JobStatistics;
+import com.google.cloud.bigquery.JobStatistics.ExtractStatistics;
 import com.google.cloud.bigquery.JobStatistics.LoadStatistics;
 import com.google.cloud.bigquery.JobStatistics.QueryStatistics;
 import com.google.cloud.bigquery.JobStatistics.QueryStatistics.StatementType;
@@ -5304,6 +5305,8 @@ public class ITBigQueryTest {
     assertNull(remoteLoadJob.getStatus().getError());
     LoadJobConfiguration loadJobConfiguration = remoteLoadJob.getConfiguration();
     assertEquals(labels, loadJobConfiguration.getLabels());
+    LoadStatistics loadStatistics = remoteLoadJob.getStatistics();
+    assertNotNull(loadStatistics);
 
     ExtractJobConfiguration extractConfiguration =
         ExtractJobConfiguration.newBuilder(destinationTable, "gs://" + BUCKET + "/" + EXTRACT_FILE)
@@ -5312,6 +5315,12 @@ public class ITBigQueryTest {
     Job remoteExtractJob = bigquery.create(JobInfo.of(extractConfiguration));
     remoteExtractJob = remoteExtractJob.waitFor();
     assertNull(remoteExtractJob.getStatus().getError());
+
+    ExtractStatistics extractStatistics = remoteExtractJob.getStatistics();
+    assertNotNull(extractStatistics);
+    assertEquals(1L, extractStatistics.getDestinationUriFileCounts().size());
+    assertEquals(
+        loadStatistics.getOutputBytes().longValue(), extractStatistics.getInputBytes().longValue());
 
     String extractedCsv =
         new String(storage.readAllBytes(BUCKET, EXTRACT_FILE), StandardCharsets.UTF_8);

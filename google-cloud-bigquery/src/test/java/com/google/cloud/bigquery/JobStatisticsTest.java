@@ -97,6 +97,7 @@ public class JobStatisticsTest {
           .setEndTime(END_TIME)
           .setStartTime(START_TIME)
           .setDestinationUriFileCounts(FILE_COUNT)
+          .setInputBytes(INPUT_BYTES)
           .build();
   private static final LoadStatistics LOAD_STATISTICS =
       LoadStatistics.newBuilder()
@@ -249,6 +250,7 @@ public class JobStatisticsTest {
     assertEquals(START_TIME, EXTRACT_STATISTICS.getStartTime());
     assertEquals(END_TIME, EXTRACT_STATISTICS.getEndTime());
     assertEquals(FILE_COUNT, EXTRACT_STATISTICS.getDestinationUriFileCounts());
+    assertEquals(INPUT_BYTES, EXTRACT_STATISTICS.getInputBytes());
 
     assertEquals(CREATION_TIME, LOAD_STATISTICS.getCreationTime());
     assertEquals(START_TIME, LOAD_STATISTICS.getStartTime());
@@ -385,6 +387,7 @@ public class JobStatisticsTest {
     assertEquals(expected, value);
     compareStatistics(expected, value);
     assertEquals(expected.getDestinationUriFileCounts(), value.getDestinationUriFileCounts());
+    assertEquals(expected.getInputBytes(), value.getInputBytes());
   }
 
   private void compareLoadStatistics(LoadStatistics expected, LoadStatistics value) {
