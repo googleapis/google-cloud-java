@@ -1,5 +1,23 @@
 # Changelog
 
+## 1.5.0 (2023-11-08)
+
+### Features
+
+* Add disable affinity feature (#167)
+
+## 1.4.1 (2023-01-30)
+
+### Fixes
+
+- Support common labels for multi-endpoint metrics (#160)
+
+## 1.4.0 (2023-01-27)
+
+### Features
+
+- MultiEndpoint metrics (#158)
+
 ## 1.3.2 (2022-12-02)
 
 ### Fixes
