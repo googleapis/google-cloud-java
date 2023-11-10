@@ -1418,6 +1418,7 @@ public class FeaturestoreServiceClientTest {
             .setDisableMonitoring(true)
             .addAllMonitoringStats(new ArrayList<FeatureStatsAnomaly>())
             .addAllMonitoringStatsAnomalies(new ArrayList<Feature.MonitoringStatsAnomaly>())
+            .setVersionColumnName("versionColumnName-997658119")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1481,6 +1482,7 @@ public class FeaturestoreServiceClientTest {
             .setDisableMonitoring(true)
             .addAllMonitoringStats(new ArrayList<FeatureStatsAnomaly>())
             .addAllMonitoringStatsAnomalies(new ArrayList<Feature.MonitoringStatsAnomaly>())
+            .setVersionColumnName("versionColumnName-997658119")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1542,6 +1544,7 @@ public class FeaturestoreServiceClientTest {
             .setDisableMonitoring(true)
             .addAllMonitoringStats(new ArrayList<FeatureStatsAnomaly>())
             .addAllMonitoringStatsAnomalies(new ArrayList<Feature.MonitoringStatsAnomaly>())
+            .setVersionColumnName("versionColumnName-997658119")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1603,6 +1606,7 @@ public class FeaturestoreServiceClientTest {
             .setDisableMonitoring(true)
             .addAllMonitoringStats(new ArrayList<FeatureStatsAnomaly>())
             .addAllMonitoringStatsAnomalies(new ArrayList<Feature.MonitoringStatsAnomaly>())
+            .setVersionColumnName("versionColumnName-997658119")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1669,6 +1673,7 @@ public class FeaturestoreServiceClientTest {
             .setDisableMonitoring(true)
             .addAllMonitoringStats(new ArrayList<FeatureStatsAnomaly>())
             .addAllMonitoringStatsAnomalies(new ArrayList<Feature.MonitoringStatsAnomaly>())
+            .setVersionColumnName("versionColumnName-997658119")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1733,6 +1738,7 @@ public class FeaturestoreServiceClientTest {
             .setDisableMonitoring(true)
             .addAllMonitoringStats(new ArrayList<FeatureStatsAnomaly>())
             .addAllMonitoringStatsAnomalies(new ArrayList<Feature.MonitoringStatsAnomaly>())
+            .setVersionColumnName("versionColumnName-997658119")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1895,6 +1901,7 @@ public class FeaturestoreServiceClientTest {
             .setDisableMonitoring(true)
             .addAllMonitoringStats(new ArrayList<FeatureStatsAnomaly>())
             .addAllMonitoringStatsAnomalies(new ArrayList<Feature.MonitoringStatsAnomaly>())
+            .setVersionColumnName("versionColumnName-997658119")
             .build();
     mockFeaturestoreService.addResponse(expectedResponse);
 
@@ -1949,6 +1956,7 @@ public class FeaturestoreServiceClientTest {
             .setDisableMonitoring(true)
             .addAllMonitoringStats(new ArrayList<FeatureStatsAnomaly>())
             .addAllMonitoringStatsAnomalies(new ArrayList<Feature.MonitoringStatsAnomaly>())
+            .setVersionColumnName("versionColumnName-997658119")
             .build();
     mockFeaturestoreService.addResponse(expectedResponse);
 
@@ -2133,6 +2141,7 @@ public class FeaturestoreServiceClientTest {
             .setDisableMonitoring(true)
             .addAllMonitoringStats(new ArrayList<FeatureStatsAnomaly>())
             .addAllMonitoringStatsAnomalies(new ArrayList<Feature.MonitoringStatsAnomaly>())
+            .setVersionColumnName("versionColumnName-997658119")
             .build();
     mockFeaturestoreService.addResponse(expectedResponse);
 
