@@ -985,14 +985,14 @@ class ConnectionWorker implements AutoCloseable {
         Long offset =
             requestWrapper.message.hasOffset() ? requestWrapper.message.getOffset().getValue() : -1;
         if (isDefaultStreamName(streamName) || offset == -1) {
-          log.fine(
+          log.info(
               String.format(
                   "Retrying default stream message in stream %s for in-stream error: %s, retry count:"
                       + " %s",
                   streamName, errorCode, requestWrapper.retryCount));
           addMessageToFrontOfWaitingQueue(requestWrapper);
         } else {
-          log.fine(
+          log.info(
               String.format(
                   "Retrying exclusive message in stream %s at offset %d for in-stream error: %s, retry"
                       + " count: %s",
@@ -1089,6 +1089,7 @@ class ConnectionWorker implements AutoCloseable {
     // Retries need to happen on the same thread as queue locking may occur
     if (response.hasError()) {
       if (retryOnRetryableError(Code.values()[response.getError().getCode()], requestWrapper)) {
+        log.info("Attempting to retry on error: " + response.getError().toString());
         return;
       }
     }

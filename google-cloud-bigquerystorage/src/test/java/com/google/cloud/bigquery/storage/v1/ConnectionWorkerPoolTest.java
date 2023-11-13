@@ -389,15 +389,15 @@ public class ConnectionWorkerPoolTest {
     // Create some stream writers.
     List<StreamWriter> streamWriterList = new ArrayList<>();
     for (int i = 0; i < 4; i++) {
-      StreamWriter sw =
+      streamWriterList.add(
           StreamWriter.newBuilder(
                   String.format("projects/p1/datasets/d1/tables/t%s/streams/_default", i),
                   externalClient)
+              .setEnableConnectionPool(true)
               .setWriterSchema(createProtoSchema())
               .setTraceId(TEST_TRACE_ID)
-              .setEnableConnectionPool(true)
-              .build();
-      streamWriterList.add(sw);
+              .setLocation("us")
+              .build());
     }
 
     for (long i = 0; i < appendCount; i++) {
