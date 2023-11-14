@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package google.maps.fleetengine.delivery.v1;
+package com.google.maps.fleetengine.delivery.v1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
 

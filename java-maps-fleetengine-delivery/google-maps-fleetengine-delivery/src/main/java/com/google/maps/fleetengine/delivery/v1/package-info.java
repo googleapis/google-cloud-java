@@ -41,6 +41,6 @@
  * }</pre>
  */
 @Generated("by gapic-generator-java")
-package google.maps.fleetengine.delivery.v1;
+package com.google.maps.fleetengine.delivery.v1;
 
 import javax.annotation.Generated;

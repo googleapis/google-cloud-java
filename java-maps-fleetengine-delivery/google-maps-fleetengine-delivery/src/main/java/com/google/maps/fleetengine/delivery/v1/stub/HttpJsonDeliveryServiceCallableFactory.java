@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package google.maps.fleetengine.delivery.v1.stub;
+package com.google.maps.fleetengine.delivery.v1.stub;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;

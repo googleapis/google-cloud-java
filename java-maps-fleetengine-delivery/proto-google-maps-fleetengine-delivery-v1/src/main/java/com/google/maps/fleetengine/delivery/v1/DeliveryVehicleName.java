@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package google.maps.fleetengine.delivery.v1;
+package com.google.maps.fleetengine.delivery.v1;
 
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.resourcenames.ResourceName;

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package google.maps.fleetengine.delivery.v1;
+package com.google.maps.fleetengine.delivery.v1;
 
 import static google.maps.fleetengine.delivery.v1.DeliveryServiceClient.ListDeliveryVehiclesPagedResponse;
 import static google.maps.fleetengine.delivery.v1.DeliveryServiceClient.ListTasksPagedResponse;

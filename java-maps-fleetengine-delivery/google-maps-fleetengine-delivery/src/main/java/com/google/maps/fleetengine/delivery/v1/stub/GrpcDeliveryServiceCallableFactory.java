@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package google.maps.fleetengine.delivery.v1.stub;
+package com.google.maps.fleetengine.delivery.v1.stub;
 
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcCallableFactory;
