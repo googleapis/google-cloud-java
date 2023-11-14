@@ -1091,7 +1091,8 @@ public class StreamWriterTest {
   public void testMessageTooLarge() throws Exception {
     StreamWriter writer = getTestStreamWriter();
 
-    String oversized = Strings.repeat("a", (int) (StreamWriter.getApiMaxRequestBytes() + 1));
+    // There is an oppotunity to allow 20MB requests.
+    String oversized = Strings.repeat("a", (int) (StreamWriter.getApiMaxRequestBytes() * 2 + 1));
     ApiFuture<AppendRowsResponse> appendFuture1 = sendTestMessage(writer, new String[] {oversized});
     assertTrue(appendFuture1.isDone());
     StatusRuntimeException actualError =
