@@ -115,6 +115,18 @@ clirr)
     mvn -B -Denforcer.skip=true clirr:check
     RETURN_CODE=$?
     ;;
+retry_quota)
+    mvn -B ${INTEGRATION_TEST_ARGS} \
+      -Dtest=ITBigQueryWriteQuotaRetryTest \
+      test
+    RETURN_CODE=$?
+    ;;
+retry_non_quota)
+    mvn -B ${INTEGRATION_TEST_ARGS} \
+      -Dtest=ITBigQueryWriteNonQuotaRetryTest \
+      test
+    RETURN_CODE=$?
+    ;;
 *)
     ;;
 esac
