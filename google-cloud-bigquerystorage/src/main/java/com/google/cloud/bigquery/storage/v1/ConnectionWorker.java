@@ -971,15 +971,22 @@ class ConnectionWorker implements AutoCloseable {
       try {
         requestWrapper.retryCount++;
         if (this.retrySettings != null && errorCode == Code.RESOURCE_EXHAUSTED) {
-          // Trigger exponential backoff in append loop when request is resent for quota errors
-          if (requestWrapper.attemptSettings == null) {
-            requestWrapper.attemptSettings = requestWrapper.retryAlgorithm.createFirstAttempt();
-          } else {
-            requestWrapper.attemptSettings =
-                requestWrapper.retryAlgorithm.createNextAttempt(requestWrapper.attemptSettings);
-          }
+          // Trigger exponential backoff in append loop when request is resent for quota errors.
+          // createNextAttempt correctly initializes the retry delay; createfirstAttempt does not
+          // include a positive delay, just 0.
+          requestWrapper.attemptSettings =
+              requestWrapper.retryAlgorithm.createNextAttempt(
+                  requestWrapper.attemptSettings == null
+                      ? requestWrapper.retryAlgorithm.createFirstAttempt()
+                      : requestWrapper.attemptSettings);
           requestWrapper.blockMessageSendDeadline =
               Instant.now().plusMillis(requestWrapper.attemptSettings.getRetryDelay().toMillis());
+          log.info(
+              "Messages blocked for retry for "
+                  + java.time.Duration.between(
+                      java.time.Instant.now(), requestWrapper.blockMessageSendDeadline)
+                  + " until "
+                  + requestWrapper.blockMessageSendDeadline);
         }
 
         Long offset =

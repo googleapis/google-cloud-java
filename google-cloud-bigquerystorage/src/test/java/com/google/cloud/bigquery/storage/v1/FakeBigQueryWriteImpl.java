@@ -20,6 +20,7 @@ import com.google.common.util.concurrent.Uninterruptibles;
 import com.google.rpc.Code;
 import io.grpc.Status;
 import io.grpc.stub.StreamObserver;
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -73,6 +74,7 @@ class FakeBigQueryWriteImpl extends BigQueryWriteGrpc.BigQueryWriteImplBase {
   private final Map<StreamObserver<AppendRowsResponse>, Boolean> connectionToFirstRequest =
       new ConcurrentHashMap<>();
   private Status failedStatus = Status.ABORTED;
+  private ArrayList<Instant> requestReceivedInstants = new ArrayList<>();
 
   /** Class used to save the state of a possible response. */
   public static class Response {
@@ -109,6 +111,10 @@ class FakeBigQueryWriteImpl extends BigQueryWriteGrpc.BigQueryWriteImplBase {
       }
       return appendResponse.get().toString();
     }
+  }
+
+  public ArrayList<Instant> getLatestRequestReceivedInstants() {
+    return requestReceivedInstants;
   }
 
   @Override
@@ -197,6 +203,7 @@ class FakeBigQueryWriteImpl extends BigQueryWriteGrpc.BigQueryWriteImplBase {
         new StreamObserver<AppendRowsRequest>() {
           @Override
           public void onNext(AppendRowsRequest value) {
+            requestReceivedInstants.add(Instant.now());
             recordCount++;
             requests.add(value);
             long offset = value.getOffset().getValue();

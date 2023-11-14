@@ -19,6 +19,8 @@ import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.protobuf.AbstractMessage;
 import io.grpc.ServerServiceDefinition;
 import io.grpc.Status;
+import java.time.Instant;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.ScheduledExecutorService;
@@ -127,5 +129,9 @@ public class FakeBigQueryWrite implements MockGrpcService {
 
   public void setVerifyOffset(boolean verifyOffset) {
     serviceImpl.setVerifyOffset(verifyOffset);
+  }
+
+  public ArrayList<Instant> getLatestRequestReceivedInstants() {
+    return serviceImpl.getLatestRequestReceivedInstants();
   }
 }
