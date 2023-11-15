@@ -44,13 +44,41 @@ mkdir -p "${HOME}/.m2"
 cp settings.xml "${HOME}/.m2"
 
 ### Round 2
+git clone "https://github.com/googleapis/sdk-platform-java" --depth=1
+
+# Update the shared-config version in showcase
+pushd sdk-platform-java/showcase
+modify_shared_config
+popd
+
+pushd sdk-platform-java
+mvn -B -ntp install --projects '!gapic-generator-java' -Dcheckstyle.skip -Dfmt.skip -DskipTests
+popd
+pushd sdk-platform-java/showcase/gapic-showcase
+SHOWCASE_VERSION=$(mvn help:evaluate -Dexpression=gapic-showcase.version -q -DforceStdout)
+popd
+
+## Start showcase server
+mkdir -p /usr/src/showcase
+curl --location https://github.com/googleapis/gapic-showcase/releases/download/v"${SHOWCASE_VERSION}"/gapic-showcase-"${SHOWCASE_VERSION}"-linux-amd64.tar.gz --output /usr/src/showcase/showcase-"${SHOWCASE_VERSION}"-linux-amd64.tar.gz
+pushd /usr/src/showcase/
+tar -xf showcase-*
+./gapic-showcase run &
+popd
+
+# Run showcase tests with `native` profile
+pushd sdk-platform-java/showcase
+mvn test -Pnative,-showcase -Denforcer.skip=true -ntp -B
+popd
+
+
+### Round 3
 # Update the shared-config version in google-cloud-jar-parent
 git clone "https://github.com/googleapis/google-cloud-java.git" --depth=1
 pushd google-cloud-java/google-cloud-pom-parent
 modify_shared_config
 popd
 
-### Round 3
 # Run the updated java-shared-config against google-cloud-java
 pushd google-cloud-java
 source ./.kokoro/common.sh
