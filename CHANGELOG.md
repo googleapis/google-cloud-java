@@ -1,5 +1,26 @@
 # Changelog
 
+## [2.46.0](https://github.com/googleapis/java-bigquerystorage/compare/v2.45.0...v2.46.0) (2023-11-15)
+
+
+### Features
+
+* Add integration tests with RetrySettings enabled. ([#2275](https://github.com/googleapis/java-bigquerystorage/issues/2275)) ([179193a](https://github.com/googleapis/java-bigquerystorage/commit/179193a18ba31c4c82946dc48671512fdac335c8))
+* Add new configuration for nightly retry-related tests. ([#2319](https://github.com/googleapis/java-bigquerystorage/issues/2319)) ([e78b841](https://github.com/googleapis/java-bigquerystorage/commit/e78b84151d1e7f9a4cfc6f252b6215fce4cec670))
+* Enable 20MB request limit, this feature is allowlist only. ([#2311](https://github.com/googleapis/java-bigquerystorage/issues/2311)) ([75c2552](https://github.com/googleapis/java-bigquerystorage/commit/75c2552a2ece47a8e14ad4932d4fcc36c8005cbe))
+
+
+### Bug Fixes
+
+* Add comment/documentation for setRetrySettings ([#2309](https://github.com/googleapis/java-bigquerystorage/issues/2309)) ([664b550](https://github.com/googleapis/java-bigquerystorage/commit/664b550258dbe6037972b4a94eb41acd254849c5))
+* Create next attempt after first attempt to initialize exponential backoff settings. ([#2316](https://github.com/googleapis/java-bigquerystorage/issues/2316)) ([e5884cc](https://github.com/googleapis/java-bigquerystorage/commit/e5884cc0a28a5b3fc6aab6854c6b435431524d42))
+* Enable request limit e2e test. ([#2320](https://github.com/googleapis/java-bigquerystorage/issues/2320)) ([9d8c368](https://github.com/googleapis/java-bigquerystorage/commit/9d8c36859d5dd39f2e5fad26b692aa95308b1f5e))
+
+
+### Dependencies
+
+* Update actions/github-script action to v7 ([#2317](https://github.com/googleapis/java-bigquerystorage/issues/2317)) ([f68064f](https://github.com/googleapis/java-bigquerystorage/commit/f68064f2991768656fdefdce7e089313ee0f1e7e))
+
 ## [2.45.0](https://github.com/googleapis/java-bigquerystorage/compare/v2.44.1...v2.45.0) (2023-11-07)
 
 
