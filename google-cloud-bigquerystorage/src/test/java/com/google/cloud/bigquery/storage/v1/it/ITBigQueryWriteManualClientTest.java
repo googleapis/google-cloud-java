@@ -1559,49 +1559,46 @@ public class ITBigQueryWriteManualClientTest {
     assertEquals("eu", streamWriter3.getLocation());
   }
 
-  // Tested locally but project config is frozen and we need to wait for a while to enable the
-  // test in automatic workflow.
-  // @Test
-  // public void testLargeRequest() throws IOException, InterruptedException, ExecutionException {
-  //   String tableName = "largeRequestTable";
-  //   TableId tableId = TableId.of(DATASET, tableName);
-  //   Field col1 = Field.newBuilder("col1", StandardSQLTypeName.STRING).build();
-  //   Schema originalSchema = Schema.of(col1);
-  //   TableInfo tableInfo =
-  //       TableInfo.newBuilder(tableId, StandardTableDefinition.of(originalSchema)).build();
-  //   bigquery.create(tableInfo);
-  //   TableName parent = TableName.of(ServiceOptions.getDefaultProjectId(), DATASET, tableName);
-  //   try (StreamWriter streamWriter =
-  //       StreamWriter.newBuilder(parent.toString() + "/_default")
-  //           .setWriterSchema(CreateProtoSchemaWithColField())
-  //           .build()) {
-  //     List<Integer> sizeSet = Arrays.asList(15 * 1024 * 1024, 1024);
-  //     List<ApiFuture<AppendRowsResponse>> responseList =
-  //         new ArrayList<ApiFuture<AppendRowsResponse>>();
-  //     Random r = new Random();
-  //     for (int i = 0; i < 50; i++) {
-  //       int size = sizeSet.get(r.nextInt(2));
-  //       LOG.info("Sending size: " + size);
-  //       responseList.add(
-  //           streamWriter.append(
-  //               CreateProtoRows(
-  //                   new String[] {
-  //                     new String(new char[size]).replace('\u0000', (char) (r.nextInt(26) + 'a'))
-  //                   })));
-  //     }
-  //     for (int i = 0; i < 50; i++) {
-  //       assertFalse(responseList.get(i).get().hasError());
-  //     }
-  //     TableResult queryResult =
-  //         bigquery.query(
-  //             QueryJobConfiguration.newBuilder("SELECT count(*) from " + DATASET + '.' +
-  // tableName)
-  //                 .build());
-  //     Iterator<FieldValueList> queryIter = queryResult.getValues().iterator();
-  //     assertTrue(queryIter.hasNext());
-  //     assertEquals("50", queryIter.next().get(0).getStringValue());
-  //   }
-  // }
+  @Test
+  public void testLargeRequest() throws IOException, InterruptedException, ExecutionException {
+    String tableName = "largeRequestTable";
+    TableId tableId = TableId.of(DATASET, tableName);
+    Field col1 = Field.newBuilder("col1", StandardSQLTypeName.STRING).build();
+    Schema originalSchema = Schema.of(col1);
+    TableInfo tableInfo =
+        TableInfo.newBuilder(tableId, StandardTableDefinition.of(originalSchema)).build();
+    bigquery.create(tableInfo);
+    TableName parent = TableName.of(ServiceOptions.getDefaultProjectId(), DATASET, tableName);
+    try (StreamWriter streamWriter =
+        StreamWriter.newBuilder(parent.toString() + "/_default")
+            .setWriterSchema(CreateProtoSchemaWithColField())
+            .build()) {
+      List<Integer> sizeSet = Arrays.asList(15 * 1024 * 1024, 1024);
+      List<ApiFuture<AppendRowsResponse>> responseList =
+          new ArrayList<ApiFuture<AppendRowsResponse>>();
+      Random r = new Random();
+      for (int i = 0; i < 50; i++) {
+        int size = sizeSet.get(r.nextInt(2));
+        LOG.info("Sending size: " + size);
+        responseList.add(
+            streamWriter.append(
+                CreateProtoRows(
+                    new String[] {
+                      new String(new char[size]).replace('\u0000', (char) (r.nextInt(26) + 'a'))
+                    })));
+      }
+      for (int i = 0; i < 50; i++) {
+        assertFalse(responseList.get(i).get().hasError());
+      }
+      TableResult queryResult =
+          bigquery.query(
+              QueryJobConfiguration.newBuilder("SELECT count(*) from " + DATASET + '.' + tableName)
+                  .build());
+      Iterator<FieldValueList> queryIter = queryResult.getValues().iterator();
+      assertTrue(queryIter.hasNext());
+      assertEquals("50", queryIter.next().get(0).getStringValue());
+    }
+  }
 
   @Test
   public void testDefaultRequestLimit()
