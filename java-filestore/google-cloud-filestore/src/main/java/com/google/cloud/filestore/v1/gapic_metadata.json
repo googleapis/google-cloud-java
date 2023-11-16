@@ -49,6 +49,9 @@
             "RestoreInstance": {
               "methods": ["restoreInstanceAsync", "restoreInstanceOperationCallable", "restoreInstanceCallable"]
             },
+            "RevertInstance": {
+              "methods": ["revertInstanceAsync", "revertInstanceOperationCallable", "revertInstanceCallable"]
+            },
             "UpdateBackup": {
               "methods": ["updateBackupAsync", "updateBackupAsync", "updateBackupOperationCallable", "updateBackupCallable"]
             },

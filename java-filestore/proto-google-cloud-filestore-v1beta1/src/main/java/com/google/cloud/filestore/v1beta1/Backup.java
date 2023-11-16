@@ -863,6 +863,24 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
         : satisfiesPzs_;
   }
 
+  public static final int SATISFIES_PZI_FIELD_NUMBER = 14;
+  private boolean satisfiesPzi_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>bool satisfies_pzi = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzi.
+   */
+  @java.lang.Override
+  public boolean getSatisfiesPzi() {
+    return satisfiesPzi_;
+  }
+
   public static final int KMS_KEY_NAME_FIELD_NUMBER = 13;
 
   @SuppressWarnings("serial")
@@ -967,6 +985,9 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kmsKeyName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 13, kmsKeyName_);
     }
+    if (satisfiesPzi_ != false) {
+      output.writeBool(14, satisfiesPzi_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1023,6 +1044,9 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kmsKeyName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, kmsKeyName_);
     }
+    if (satisfiesPzi_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(14, satisfiesPzi_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1057,6 +1081,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     if (hasSatisfiesPzs()) {
       if (!getSatisfiesPzs().equals(other.getSatisfiesPzs())) return false;
     }
+    if (getSatisfiesPzi() != other.getSatisfiesPzi()) return false;
     if (!getKmsKeyName().equals(other.getKmsKeyName())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -1099,6 +1124,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + SATISFIES_PZS_FIELD_NUMBER;
       hash = (53 * hash) + getSatisfiesPzs().hashCode();
     }
+    hash = (37 * hash) + SATISFIES_PZI_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzi());
     hash = (37 * hash) + KMS_KEY_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getKmsKeyName().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
@@ -1280,6 +1307,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
         satisfiesPzsBuilder_.dispose();
         satisfiesPzsBuilder_ = null;
       }
+      satisfiesPzi_ = false;
       kmsKeyName_ = "";
       return this;
     }
@@ -1356,6 +1384,9 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
             satisfiesPzsBuilder_ == null ? satisfiesPzs_ : satisfiesPzsBuilder_.build();
       }
       if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.satisfiesPzi_ = satisfiesPzi_;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         result.kmsKeyName_ = kmsKeyName_;
       }
     }
@@ -1448,9 +1479,12 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
       if (other.hasSatisfiesPzs()) {
         mergeSatisfiesPzs(other.getSatisfiesPzs());
       }
+      if (other.getSatisfiesPzi() != false) {
+        setSatisfiesPzi(other.getSatisfiesPzi());
+      }
       if (!other.getKmsKeyName().isEmpty()) {
         kmsKeyName_ = other.kmsKeyName_;
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1560,9 +1594,15 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
             case 106:
               {
                 kmsKeyName_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 106
+            case 112:
+              {
+                satisfiesPzi_ = input.readBool();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 112
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2968,6 +3008,59 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
       return satisfiesPzsBuilder_;
     }
 
+    private boolean satisfiesPzi_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzi = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The satisfiesPzi.
+     */
+    @java.lang.Override
+    public boolean getSatisfiesPzi() {
+      return satisfiesPzi_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzi = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The satisfiesPzi to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSatisfiesPzi(boolean value) {
+
+      satisfiesPzi_ = value;
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzi = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSatisfiesPzi() {
+      bitField0_ = (bitField0_ & ~0x00001000);
+      satisfiesPzi_ = false;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object kmsKeyName_ = "";
     /**
      *
@@ -3030,7 +3123,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       kmsKeyName_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -3047,7 +3140,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearKmsKeyName() {
       kmsKeyName_ = getDefaultInstance().getKmsKeyName();
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       onChanged();
       return this;
     }
@@ -3069,7 +3162,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       kmsKeyName_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }

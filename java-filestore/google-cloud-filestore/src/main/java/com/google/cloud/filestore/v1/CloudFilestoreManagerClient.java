@@ -957,6 +957,98 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Revert an existing instance's file system to a specified snapshot.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
+   *     CloudFilestoreManagerClient.create()) {
+   *   RevertInstanceRequest request =
+   *       RevertInstanceRequest.newBuilder()
+   *           .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .setTargetSnapshotId("targetSnapshotId-2099459472")
+   *           .build();
+   *   Instance response = cloudFilestoreManagerClient.revertInstanceAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Instance, OperationMetadata> revertInstanceAsync(
+      RevertInstanceRequest request) {
+    return revertInstanceOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Revert an existing instance's file system to a specified snapshot.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
+   *     CloudFilestoreManagerClient.create()) {
+   *   RevertInstanceRequest request =
+   *       RevertInstanceRequest.newBuilder()
+   *           .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .setTargetSnapshotId("targetSnapshotId-2099459472")
+   *           .build();
+   *   OperationFuture<Instance, OperationMetadata> future =
+   *       cloudFilestoreManagerClient.revertInstanceOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Instance response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<RevertInstanceRequest, Instance, OperationMetadata>
+      revertInstanceOperationCallable() {
+    return stub.revertInstanceOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Revert an existing instance's file system to a specified snapshot.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudFilestoreManagerClient cloudFilestoreManagerClient =
+   *     CloudFilestoreManagerClient.create()) {
+   *   RevertInstanceRequest request =
+   *       RevertInstanceRequest.newBuilder()
+   *           .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .setTargetSnapshotId("targetSnapshotId-2099459472")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       cloudFilestoreManagerClient.revertInstanceCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<RevertInstanceRequest, Operation> revertInstanceCallable() {
+    return stub.revertInstanceCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Deletes an instance.
    *
    * <p>Sample code:

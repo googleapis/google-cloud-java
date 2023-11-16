@@ -129,6 +129,18 @@ public class CloudFilestoreManagerSettings extends ClientSettings<CloudFilestore
         .restoreInstanceOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to revertInstance. */
+  public UnaryCallSettings<RevertInstanceRequest, Operation> revertInstanceSettings() {
+    return ((CloudFilestoreManagerStubSettings) getStubSettings()).revertInstanceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to revertInstance. */
+  public OperationCallSettings<RevertInstanceRequest, Instance, OperationMetadata>
+      revertInstanceOperationSettings() {
+    return ((CloudFilestoreManagerStubSettings) getStubSettings())
+        .revertInstanceOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to deleteInstance. */
   public UnaryCallSettings<DeleteInstanceRequest, Operation> deleteInstanceSettings() {
     return ((CloudFilestoreManagerStubSettings) getStubSettings()).deleteInstanceSettings();
@@ -391,6 +403,17 @@ public class CloudFilestoreManagerSettings extends ClientSettings<CloudFilestore
     public OperationCallSettings.Builder<RestoreInstanceRequest, Instance, OperationMetadata>
         restoreInstanceOperationSettings() {
       return getStubSettingsBuilder().restoreInstanceOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to revertInstance. */
+    public UnaryCallSettings.Builder<RevertInstanceRequest, Operation> revertInstanceSettings() {
+      return getStubSettingsBuilder().revertInstanceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to revertInstance. */
+    public OperationCallSettings.Builder<RevertInstanceRequest, Instance, OperationMetadata>
+        revertInstanceOperationSettings() {
+      return getStubSettingsBuilder().revertInstanceOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to deleteInstance. */

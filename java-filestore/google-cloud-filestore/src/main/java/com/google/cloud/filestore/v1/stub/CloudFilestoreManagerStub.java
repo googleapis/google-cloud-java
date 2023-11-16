@@ -42,6 +42,7 @@ import com.google.cloud.filestore.v1.ListInstancesResponse;
 import com.google.cloud.filestore.v1.ListSnapshotsRequest;
 import com.google.cloud.filestore.v1.ListSnapshotsResponse;
 import com.google.cloud.filestore.v1.RestoreInstanceRequest;
+import com.google.cloud.filestore.v1.RevertInstanceRequest;
 import com.google.cloud.filestore.v1.Snapshot;
 import com.google.cloud.filestore.v1.UpdateBackupRequest;
 import com.google.cloud.filestore.v1.UpdateInstanceRequest;
@@ -106,6 +107,15 @@ public abstract class CloudFilestoreManagerStub implements BackgroundResource {
 
   public UnaryCallable<RestoreInstanceRequest, Operation> restoreInstanceCallable() {
     throw new UnsupportedOperationException("Not implemented: restoreInstanceCallable()");
+  }
+
+  public OperationCallable<RevertInstanceRequest, Instance, OperationMetadata>
+      revertInstanceOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: revertInstanceOperationCallable()");
+  }
+
+  public UnaryCallable<RevertInstanceRequest, Operation> revertInstanceCallable() {
+    throw new UnsupportedOperationException("Not implemented: revertInstanceCallable()");
   }
 
   public OperationCallable<DeleteInstanceRequest, Empty, OperationMetadata>
